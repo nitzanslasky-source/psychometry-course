@@ -7,7 +7,7 @@ math videos redone with the AI voice; studio_done tags them "AI redo") and the P
 math video (topics 1-38, 52) that is not the first lesson of its topic (studio_done tags them "AI (planned)"). Topic 51
 is recorded by the teacher (all of it, also pt51-summary). Verbal topics 39-49 are not changed (decision pending).
 """
-import glob, json, os
+import glob, json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -79,7 +79,8 @@ def apply(s, D=None):
         planned = planned_ids(D, studio_done.recorded_ids())
         ids = (ids | set(planned)) - teacher_ids(D)   # topic 51: the teacher records it all
         # 2026-10-13: the topic first lessons have reading scripts now, but she records them herself with the camera on
-        ids -= set(first_lessons(D).values())
+        firsts = set(first_lessons(D).values())   # 2026-10-14: and their parts '<first>-2', '<first>-3' ...
+        ids = {v for v in ids if not any(v == f or re.fullmatch(re.escape(f) + r'-\d+', v) for f in firsts)}
     print('studio_ai: %d AI videos (%d planned: unrecorded non-first math videos; topic 51 is the teacher\'s)' % (len(ids), len(planned)))
     js = JS.replace('__AI_IDS__', json.dumps(sorted(ids))) + 'window.AI_PLANNED=new Set(%s);\n' % json.dumps(planned)
     return s[:k] + js.lstrip() + s[k:]

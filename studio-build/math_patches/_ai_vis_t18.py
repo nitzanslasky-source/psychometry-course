@@ -1255,6 +1255,11 @@ def _stem_parts(vid):
 
 
 
+# 2026-10-14 the camera lesson in parts of about 3-4 minutes (math_patches/_camera_parts.py), before the visual passes
+_cp_spec = importlib.util.spec_from_file_location('_camera_parts', os.path.join(HERE, '_camera_parts.py'))
+CP = importlib.util.module_from_spec(_cp_spec); _cp_spec.loader.exec_module(CP)
+CP.split(globals(), 'digit-puzzles', 'Exercises with Letters', [(1, None), (4, "Let's continue with exercises with letters, and learn how to solve them.")])
+
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v); _write_gap(_v)
 
 

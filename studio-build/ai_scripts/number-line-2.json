@@ -1,0 +1,98 @@
+{
+ "videoId": "number-line-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with the number line, and see how operations move a number."
+  ],
+  [
+   {
+    "say": "How do multiplying and dividing move a positive number? Multiplying by a number bigger than one makes it grow. Nine times two is eighteen, and four times three is twelve.",
+    "at": [
+     "dividing move a",
+     "Multiplying by a number bigger than one",
+     "than one makes"
+    ]
+   },
+   {
+    "say": "Dividing by a number bigger than one makes it shrink. Ten divided by five is two, and twelve divided by four is three.",
+    "at": [
+     "Dividing by a number bigger than one",
+     "than one makes"
+    ]
+   },
+   {
+    "say": "Multiplying by a positive fraction makes it shrink too, because we only take part of it. Ten times one fifth is two, and eight times one half is four.",
+    "at": [
+     "Multiplying by a positive fraction",
+     "makes it shrink"
+    ]
+   },
+   {
+    "say": "Dividing by a fraction is the opposite. Dividing by a fraction is multiplying by its reciprocal. So ten divided by one fifth is ten times five, which is fifty. And three divided by one half is three times two, which is six. The number grows.",
+    "at": [
+     "Dividing by a fraction is the opposite",
+     "Dividing by a fraction is multiplying"
+    ]
+   },
+   "So one is the dividing line. Times one or divided by one changes nothing. On the negative side, the same moves happen as a mirror image, away from zero or toward zero. Multiplying by a negative number is different, because it jumps to the other side of zero, and we'll see that in a later lesson."
+  ],
+  [
+   {
+    "say": "Now the hierarchy. A number in a range further to the right stays bigger after any positive power or root. Here's an example. Which is bigger, the fifth root of eleven tenths, or the square root of seven ninths? Calculating these roots would be a nightmare, so we don't.",
+    "at": [
+     "number in a",
+     "Which is bigger",
+     "root of eleven"
+    ]
+   },
+   "Eleven tenths is not really a fraction, because the top is bigger than the bottom, so it's more than one. A root of a number above one stays above one. Seven ninths is a real fraction, less than one, and its root stays less than one. So the fifth root of eleven tenths is bigger. We ignore the roots and look at the numbers themselves.",
+   {
+    "say": "Another one. Five quarters, cubed, against the square root of three fifths. Five quarters is above one, so its cube is above one too. Three fifths is between zero and one, so its root is too. So five quarters, cubed, is bigger.",
+    "at": [
+     "Five quarters, cubed",
+     "square root of"
+    ]
+   },
+   {
+    "say": "One condition for negative numbers. The hierarchy works for them only with odd powers and odd roots, because an even power makes a negative number positive. That's what we look at next.",
+    "at": [
+     "One condition for negative numbers",
+     "The hierarchy works"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Some powers move a number into a different range. We call them exceptional powers, and we deal with them first. The first kind is a negative number to an even power. Negative five, squared, is twenty-five, and negative three, to the power of four, is eighty-one. Both jumped to the positive side.",
+    "at": [
+     "number into a",
+     "Negative five, squared",
+     "and negative three"
+    ]
+   },
+   {
+    "say": "Careful with the brackets. Negative five, in brackets, squared, is twenty-five. But without brackets, negative five squared means we square only the five, and then put the minus in front. That gives negative twenty-five.",
+    "at": [
+     "Careful with the brackets",
+     "Negative five, in"
+    ]
+   },
+   {
+    "say": "The second kind is a negative exponent. We flip the base and drop the minus. Three eighths to the power of negative two is eight thirds, squared. The base was a fraction, and now it's above one. And five to the power of negative three is one fifth, cubed. The base was above one, and now it's a fraction.",
+    "at": [
+     "The second kind is a negative exponent",
+     "We flip the"
+    ]
+   },
+   {
+    "say": "Here's how it helps. Which is bigger, the square root of four sevenths, or three fifths to the power of negative three? First handle the exceptional power: flip it, and it's five thirds, cubed. Five thirds is above one, so its cube is above one. The square root of four sevenths is less than one. So three fifths to the power of negative three is bigger.",
+    "at": [
+     "First handle the exceptional power",
+     "flip it, and"
+    ]
+   },
+   "In the next lesson you'll meet the arrows, and with the arrows you may keep the minus in the exponent. Both ways give the same answer. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}

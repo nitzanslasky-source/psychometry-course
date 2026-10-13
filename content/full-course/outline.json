@@ -130,29 +130,29 @@
     {
      "id": 13,
      "title": "Absolute Value",
-     "videos": 20,
-     "lessons": 3,
+     "videos": 22,
+     "lessons": 5,
      "questions": 37,
-     "minutes": 78,
-     "steps": 59
+     "minutes": 88,
+     "steps": 61
     },
     {
      "id": 14,
      "title": "Prime Numbers",
-     "videos": 23,
-     "lessons": 4,
+     "videos": 25,
+     "lessons": 6,
      "questions": 45,
-     "minutes": 86,
-     "steps": 71
+     "minutes": 92,
+     "steps": 73
     },
     {
      "id": 15,
      "title": "Division & Remainder",
-     "videos": 19,
-     "lessons": 3,
+     "videos": 22,
+     "lessons": 6,
      "questions": 41,
-     "minutes": 40,
-     "steps": 62
+     "minutes": 81,
+     "steps": 65
     },
     {
      "id": 16,
@@ -160,35 +160,35 @@
      "videos": 26,
      "lessons": 6,
      "questions": 46,
-     "minutes": 50,
+     "minutes": 89,
      "steps": 77
     },
     {
      "id": 17,
      "title": "The Number Line",
-     "videos": 18,
-     "lessons": 4,
+     "videos": 20,
+     "lessons": 6,
      "questions": 31,
-     "minutes": 39,
-     "steps": 51
+     "minutes": 65,
+     "steps": 53
     },
     {
      "id": 18,
      "title": "Exercises with Letters",
-     "videos": 15,
-     "lessons": 3,
+     "videos": 16,
+     "lessons": 4,
      "questions": 37,
-     "minutes": 23,
-     "steps": 54
+     "minutes": 49,
+     "steps": 55
     },
     {
      "id": 19,
      "title": "Defining a New Operation",
-     "videos": 24,
-     "lessons": 3,
+     "videos": 26,
+     "lessons": 5,
      "questions": 48,
-     "minutes": 38,
-     "steps": 73
+     "minutes": 78,
+     "steps": 75
     },
     {
      "id": 20,
@@ -196,7 +196,7 @@
      "videos": 11,
      "lessons": 3,
      "questions": 23,
-     "minutes": 19,
+     "minutes": 32,
      "steps": 36
     }
    ]

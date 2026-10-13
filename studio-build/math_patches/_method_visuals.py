@@ -726,6 +726,8 @@ FIXES = {13: _fix_t13, 14: _fix_t14, 17: _fix_t17, 18: _fix_t18}
 #     written / shown (a new thing) - POINTs on 'choice N' and on a part of the question (she names them) always stay.
 # Shows, marks, slides and their phrases are untouched. Timing is estimated at her reading pace (14 characters a second).
 CALM_IDS = ['absolute-value', 'primes', 'divisibility', 'whole-numbers', 'number-line', 'digit-puzzles', 'new-operation',
+            'absolute-value-2', 'absolute-value-3', 'primes-2', 'primes-3', 'divisibility-2', 'divisibility-3', 'divisibility-4',
+            'number-line-2', 'number-line-3', 'digit-puzzles-2', 'new-operation-2', 'new-operation-3',
             'solve-q-520', 'solve-q-r26-t18-02', 'solve-q-r26-t18-03', 'r26-t18-summary', 'solve-q-541', 'solve-q-542', 'solve-q-543',
             'solve-q-r26-t19-01', 'solve-q-r26-t19-02', 'operation-patterns', 'solve-q-544', 'solve-q-545',
             'solve-q-r26-t19-03', 'solve-q-546', 'solve-q-547', 'solve-q-548', 'solve-q-549', 'solve-q-r26-t19-18',

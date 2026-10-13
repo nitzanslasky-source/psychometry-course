@@ -1,0 +1,94 @@
+{
+ "videoId": "primes-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with prime numbers, and break numbers down into their primes."
+  ],
+  [
+   {
+    "say": "Every whole number bigger than one that isn't prime is built from primes. Writing it as a product of primes is called its prime factorization, and we find it with a factor tree. Let's take a hundred eighty, and start with a divisor we recognize. A hundred eighty is even, so two is an easy start. A hundred eighty is two times ninety.",
+    "at": [
+     "than one that",
+     "Let's take a hundred eighty",
+     "and start with",
+     "two times ninety"
+    ]
+   },
+   {
+    "say": "Ninety is even too, so it's two times forty-five. Forty-five is three times fifteen, and fifteen is three times five. We stop only when every number at the end is a prime.",
+    "at": [
+     "two times forty-five",
+     "Forty-five is three times fifteen",
+     "fifteen is three times five",
+     "We stop only"
+    ]
+   },
+   {
+    "say": "So a hundred eighty is two squared, times three squared, times five. Let's check it by multiplying back. Four times nine is thirty-six, and thirty-six times five is a hundred eighty.",
+    "at": [
+     "So a hundred eighty is two squared",
+     "two squared, times",
+     "Four times nine",
+     "and thirty-six times"
+    ]
+   },
+   {
+    "say": "If you start differently, say with ten times eighteen, you get the same primes at the end. Ten is two times five, and eighteen is two times three times three. Again two twos, two threes and one five.",
+    "at": [
+     "ten times eighteen",
+     "the same primes"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now, is a number a divisor of a hundred eighty? Check its prime ingredients. A number divides a hundred eighty only if each of its primes is in a hundred eighty, at least as many times.",
+    "at": [
+     "a divisor of",
+     "Check its prime ingredients",
+     "A number divides"
+    ]
+   },
+   {
+    "say": "Forty-five is three times three times five. A hundred eighty has two threes and a five, so forty-five divides it. Twelve is two times two times three. A hundred eighty has two twos and a three, so twelve divides it too.",
+    "at": [
+     "Forty-five is three times three times five",
+     "A hundred eighty"
+    ]
+   },
+   {
+    "say": "Now the non-examples. Seven isn't in a hundred eighty at all, so seven doesn't divide it, and neither does fourteen or twenty-one. Eight is two times two times two, so it needs three twos, but a hundred eighty has only two. So eight doesn't divide a hundred eighty either.",
+    "at": [
+     "Now the non-examples",
+     "Seven isn't in"
+    ]
+   },
+   {
+    "say": "And watch for pieces that aren't prime. If x is three times six squared, the six squared hides two twos and two threes. So x is two squared times three cubed, and twelve divides x, because it needs two twos and one three. Always unpack such pieces into primes first.",
+    "at": [
+     "If x is three times six squared",
+     "six squared, the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's sum it up. A prime has exactly two divisors, one and itself. Zero and one are not prime, and two is the only even prime. If two primes give an odd sum or difference, one of them is two. And know the primes up to forty, and ninety-seven.",
+    "at": [
+     "Let's sum it up",
+     "A prime has",
+     "If two primes give an odd sum",
+     "odd sum or"
+    ]
+   },
+   {
+    "say": "To test a bigger number, try the primes up to its root. Divisor means factor. And a number divides another only if all its primes are there, enough times. There's a memory card with the primes and these facts right after this video, and then the questions. Try each one first, and then watch the solution. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "To test a bigger number",
+     "try the primes"
+    ]
+   }
+  ]
+ ]
+}

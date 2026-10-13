@@ -6305,6 +6305,13 @@
             "the smallest prime, two"
           ]
         ]
+      },
+      {
+        "slide": 1,
+        "paragraph": 1,
+        "original": "m squared is two, so m is the square root of two. Is that a whole number? One squared is one, and two squared is four. So root two is between one and two, and it's not whole.",
+        "revised": "m squared is two, so m is the square root of two. Is that a whole number? Let's check the squares. One squared is one, and two squared is four. So root two is between one and two, and it's not whole.",
+        "recording_correction_20261014": "User approved this paragraph as a reread; preserve paragraph indices, existing graphics and original recordings."
       }
     ],
     "solve-q-402": [
@@ -14837,7 +14844,7 @@
         "slide": 1,
         "paragraph": 0,
         "original": "[pause] Another way is to read the differences, with their signs. r minus p, bigger minus smaller, two steps, so two. s minus r, one.",
-        "revised": "[pause] Another way is to use the gaps without choosing actual numbers. On top of the first fraction, r minus p goes two steps to the right, so it is two. On the bottom, s minus r goes one step to the right, so it is one. The first fraction is two over one.",
+        "revised": "[pause] Another way is to use the gaps without choosing actual numbers. The numbers are in the order p, q, r, s, and each gap is one. On top of the first fraction, we have r minus p. To find this difference, start at p and move to r. That's two steps to the right, so r minus p is two. On the bottom, we have s minus r. Start at r and move to s. That's one step to the right, so s minus r is one. The first fraction is two over one, which is two.",
         "cue_anchors": [
           {
             "index": 1,
@@ -14847,9 +14854,10 @@
           {
             "index": 3,
             "original": "smaller, two steps",
-            "revised": "goes two steps"
+            "revised": "two steps to the right"
           }
-        ]
+        ],
+        "recording_correction_20261014": "User approved this paragraph as a reread; preserve paragraph indices, existing graphics and original recordings."
       },
       {
         "slide": 0,
@@ -14878,19 +14886,20 @@
         "slide": 1,
         "paragraph": 1,
         "original": "q minus s, smaller minus bigger, two steps back, negative two. r minus q, one.",
-        "revised": "On top of the second fraction, q minus s goes two steps back, so it is negative two. On the bottom, r minus q goes one step to the right, so it is one. The second fraction is negative two over one.",
+        "revised": "On top of the second fraction, we have q minus s. Start at s and move to q. That's two steps to the left, so q minus s is negative two. On the bottom, we have r minus q. Start at q and move to r. That's one step to the right, so r minus q is one. The second fraction is negative two over one, which is negative two.",
         "cue_anchors": [
           {
             "index": 1,
             "original": "bigger, two steps",
-            "revised": "goes two steps"
+            "revised": "two steps to the left"
           },
           {
             "index": 2,
             "original": "two. r minus",
-            "revised": "two. On the"
+            "revised": "On the bottom"
           }
-        ]
+        ],
+        "recording_correction_20261014": "User approved this paragraph as a reread; preserve paragraph indices, existing graphics and original recordings."
       },
       {
         "slide": 1,

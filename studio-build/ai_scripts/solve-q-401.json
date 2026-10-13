@@ -85,7 +85,7 @@
         ]
       },
       {
-        "say": "m squared is two, so m is the square root of two. Is that a whole number? One squared is one, and two squared is four. So root two is between one and two, and it's not whole.",
+        "say": "m squared is two, so m is the square root of two. Is that a whole number? Let's check the squares. One squared is one, and two squared is four. So root two is between one and two, and it's not whole.",
         "at": [
           "m squared is",
           "m is the",

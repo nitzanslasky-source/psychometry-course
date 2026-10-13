@@ -593,7 +593,7 @@ Check every AI script line by line. The numbers in brackets are evidence from §
 
 ### Topic 13: where each idea is first taught (R29 / R32)
 
-Study-plan order before topic 13: 1, 30, 2, 4, 31, 6, 8, 32, 9, 10, 33, 51, 39, 42, 21, 3, 43, 22, 41, 5, 7, 44, 23, 11, 24, 49, 12, 45, 25, 40, 34. Topic-13 order: the camera lesson `absolute-value`, then q-358, q-359, q-360, q-361, q-362, q-r26-t13-01, q-r26-t13-02, r26-t13-tools, q-363, q-364, q-365, q-366, q-r26-t13-13, q-r26-t13-03, q-367, q-368, q-369, q-370, summary.
+Study-plan order before topic 13: 1, 30, 2, 4, 31, 6, 8, 32, 9, 10, 33, 51, 39, 42, 21, 3, 43, 22, 41, 5, 7, 44, 23, 11, 24, 49, 12, 45, 25, 40, 34. Topic-13 order: the camera lesson in three parts (`absolute-value`, `absolute-value-2`, `absolute-value-3`), then q-358, q-359, q-360, q-361, q-362, q-r26-t13-01, q-r26-t13-02, r26-t13-tools, q-363, q-364, q-365, q-366, q-r26-t13-13, q-r26-t13-03, q-367, q-368, q-369, q-370, summary.
 
 | Idea | First taught (full) | Later (reminder) |
 |---|---|---|
@@ -606,12 +606,12 @@ Study-plan order before topic 13: 1, 30, 2, 4, 31, 6, 8, 32, 9, 10, 33, 51, 39, 
 | √(x²) = \|x\|; squaring positive numbers keeps the order; check answers in the original equation | topic 9 `roots`, `r26-t09-traps`, `r26-t09-summary` | tools, q-366, q-r26-t13-03 |
 | x / \|x\| = 1 or −1 | topic 5 `solve-q-128` | q-362 |
 | Inequalities: sign flips with a negative; double inequality, isolate the middle; x² < 9 bands and rays | topic 12 `inequalities`, `solve-q-335`, `solve-q-328` | q-360, q-361, q-369 |
-| \|x\| = distance from zero, never negative; \|0\| = 0; letters hide their sign (\|x\| = −x for a negative x) | camera lesson, slides 1-2 | q-362, q-r26-t13-02, summary |
-| Inside first, then the bars | camera lesson, slide 3 | summary |
-| \|ab\| = \|a\|\|b\|, \|a/b\| = \|a\|/\|b\|; \|a + b\| ≤ \|a\| + \|b\| (equal with the same signs) | camera lesson, slides 4-5 | q-366, q-r26-t13-13 |
-| Sign clues: \|x\| > x negative, \|x\| = x zero or positive, \|x\| = −x zero or negative | camera lesson, slide 6 | q-358, q-365 |
-| Bars = a number: two cases | camera lesson, slides 7-8 | q-359, q-r26-t13-01, q-r26-t13-03, q-367, q-368 |
-| Bars on the big side: open range (two rays); small side: closed range (one band) | camera lesson, slides 9-10 | q-360, q-361, q-369, summary |
+| \|x\| = distance from zero, never negative; \|0\| = 0; letters hide their sign (\|x\| = −x for a negative x) | camera lesson `absolute-value`, part 1 | q-362, q-r26-t13-02, summary |
+| Inside first, then the bars | camera lesson, part 1 | summary |
+| \|ab\| = \|a\|\|b\|, \|a/b\| = \|a\|/\|b\|; \|a + b\| ≤ \|a\| + \|b\| (equal with the same signs) | camera lesson, part 2 (`absolute-value-2`) | q-366, q-r26-t13-13 |
+| Sign clues: \|x\| > x negative, \|x\| = x zero or positive, \|x\| = −x zero or negative | camera lesson, part 2 | q-358, q-365 |
+| Bars = a number: two cases | camera lesson, part 3 (`absolute-value-3`) | q-359, q-r26-t13-01, q-r26-t13-03, q-367, q-368 |
+| Bars on the big side: open range (two rays); small side: closed range (one band) | camera lesson, part 3 | q-360, q-361, q-369, summary |
 | **\|x − a\| = the distance between x and a; why; x + 7 = the distance from −7; reading the picture** | **q-359 Method 2** (the lesson only names it in one line) | q-360, q-361, tools, summary |
 | Givens about signs say nothing about sizes; the tie-breaker plug (necessarily = for every pair) | q-358 | q-362, q-364, q-368 |
 | "Could be" with two answers and one offered | q-359 | — |
@@ -633,19 +633,19 @@ Study-plan order before topic 13: 1, 30, 2, 4, 31, 6, 8, 32, 9, 10, 33, 51, 39, 
 
 ### Topic 14: where each idea is first taught (R29 / R32)
 
-Topic-14 order: the camera lesson `primes`, then q-387, q-r26-t14-01, q-388, q-386, prime-tools, q-389, q-390, q-398, q-399, q-400, q-401, q-402, r26-t14-more-tools, q-r26-t14-03, q-391, q-392, q-393, q-396, q-394, q-395, q-397, summary. Topics 15 (divisibility) and 16 (even and odd) come after topic 14.
+Topic-14 order: the camera lesson in three parts (`primes`, `primes-2`, `primes-3`), then q-387, q-r26-t14-01, q-388, q-386, prime-tools, q-389, q-390, q-398, q-399, q-400, q-401, q-402, r26-t14-more-tools, q-r26-t14-03, q-391, q-392, q-393, q-396, q-394, q-395, q-397, summary. Topics 15 (divisibility) and 16 (even and odd) come after topic 14.
 
 | Idea | First taught (full) | Later (reminder) |
 |---|---|---|
-| Prime: exactly two divisors; 0, 1, negatives not prime; 2 the only even prime | topic 1 `numbers` (first taste) and the camera lesson `primes`, slides 2-3 | q-391, summary |
-| Odd sum or difference of two primes → one of them is 2 (why: odd ± odd is even) | camera lesson, slide 3 | q-391, summary |
-| The primes up to 40 by heart, and 97 | camera lesson, slide 4 | q-386, q-397, summary |
-| Is it prime? Only the primes up to √n (with the why); fake primes 51, 57, 87, 91, 119 | camera lesson, slide 5 | q-r26-t14-01, q-386, q-391, summary |
+| Prime: exactly two divisors; 0, 1, negatives not prime; 2 the only even prime | topic 1 `numbers` (first taste) and the camera lesson `primes`, part 1 | q-391, summary |
+| Odd sum or difference of two primes → one of them is 2 (why: odd ± odd is even) | camera lesson, part 1 | q-391, summary |
+| The primes up to 40 by heart, and 97 | camera lesson, part 1 | q-386, q-397, summary |
+| Is it prime? Only the primes up to √n (with the why); fake primes 51, 57, 87, 91, 119 | camera lesson, part 2 (`primes-2`) | q-r26-t14-01, q-386, q-391, summary |
 | **The digit-sum test for 3** (the lesson says it in one line) | **q-r26-t14-01** (rule, 51 example, 52 non-example) | q-386, q-391, summary |
 | 7 has no quick test: divide; counting by sevens; "never forget 7" | q-r26-t14-01 | summary |
-| Divisor = factor; prime factors; divisible by every combination of them | camera lesson, slides 6-7 | q-388, q-389, summary |
-| Factor trees / prime factorization (150) | camera lesson, slide 8 | q-389, q-r26-t14-03, every question |
-| Is it a divisor? Its primes, enough copies (50 yes, 20 no) | camera lesson, slide 9 | q-388, q-394, summary |
+| Divisor = factor; prime factors; divisible by every combination of them | camera lesson, part 2 | q-388, q-389, summary |
+| Factor trees / prime factorization (150) | camera lesson, part 3 (`primes-3`) | q-389, q-r26-t14-03, every question |
+| Is it a divisor? Its primes, enough copies (50 yes, 20 no) | camera lesson, part 3 | q-388, q-394, summary |
 | **Unpacking a piece that isn't prime (10² = 2²·5²)** (one line in the lesson) | **q-388** | summary |
 | Trial and error | topic 21 | q-387, q-397 |
 | Primes on a number line: mark and count; "not including x" | q-386 | — |
@@ -671,16 +671,16 @@ Topic-14 order: the camera lesson `primes`, then q-387, q-r26-t14-01, q-388, q-3
 
 ### Topic 15: where each idea is first taught (R29 / R32)
 
-Topic-15 order: the camera lesson `divisibility`, then q-423, q-424, q-425, q-426, q-r26-t15-01, r26-t15-remainder-tools, q-427, q-428, q-429, q-430, q-431, q-r26-t15-15, q-432, q-433, q-434, q-435, q-436, summary. Topic 16 (consecutive numbers, even and odd) comes after topic 15.
+Topic-15 order: the camera lesson in four parts (`divisibility`, `divisibility-2`, `-3`, `-4`), then q-423, q-424, q-425, q-426, q-r26-t15-01, r26-t15-remainder-tools, q-427, q-428, q-429, q-430, q-431, q-r26-t15-15, q-432, q-433, q-434, q-435, q-436, summary. Topic 16 (consecutive numbers, even and odd) comes after topic 15.
 
 | Idea | First taught (full) | Later (reminder) |
 |---|---|---|
-| Divisibility signs for 2, 5, 10, 3, 9, 4, 8 (with the why for 4 and 8) and 11 | camera lesson `divisibility`, slides 2-4 and 6 | q-423, q-427, q-428, q-429, q-433, q-434, summary |
-| A bigger divisor: parts with no common factor (12 = 3·4, the trap 2·6) | camera lesson, slide 5 | q-429, q-430, q-434, summary |
-| Remainder: N = divisor × quotient + remainder, remainder < divisor; 5 ÷ 8 leaves 5 (the trap) | camera lesson, slides 7-8 | q-424, q-425, summary |
-| The biggest remainder is the divisor minus one | camera lesson, slide 9 | q-425, q-436, summary |
-| Dividing by 3 or 9: the same remainder as the digit sum | camera lesson, slide 10 | summary |
-| A number with remainder 4 by 15 is 15k + 4; changing the divisor (only if it divides the old one), with the why | camera lesson, slide 11 | q-426, q-r26-t15-01, q-435, summary |
+| Divisibility signs for 2, 5, 10, 3, 9, 4, 8 (with the why for 4 and 8) and 11 | camera lesson `divisibility`, part 1 (11: part 2) | q-423, q-427, q-428, q-429, q-433, q-434, summary |
+| A bigger divisor: parts with no common factor (12 = 3·4, the trap 2·6) | camera lesson, part 2 (`divisibility-2`) | q-429, q-430, q-434, summary |
+| Remainder: N = divisor × quotient + remainder, remainder < divisor; 5 ÷ 8 leaves 5 (the trap) | camera lesson, part 3 (`divisibility-3`) | q-424, q-425, summary |
+| The biggest remainder is the divisor minus one | camera lesson, part 3 | q-425, q-436, summary |
+| Dividing by 3 or 9: the same remainder as the digit sum | camera lesson, part 3 | summary |
+| A number with remainder 4 by 15 is 15k + 4; changing the divisor (only if it divides the old one), with the why | camera lesson, part 4 (`divisibility-4`) | q-426, q-r26-t15-01, q-435, summary |
 | "What could it be" = rule out what it can't be; a fraction of a fraction: build from the inside, multiply the denominators | q-423 | q-427, summary |
 | Listing numbers with a remainder by hopping by the divisor | q-424 | — |
 | Split off the part that divides; only the last number squared matters | q-426 | — |
@@ -722,11 +722,11 @@ Topic-16 order: the camera lesson `whole-numbers`, then q-457, q-r26-t16-01, con
 
 ### Topic 17: where each idea is first taught (R29 / R32)
 
-Topic-17 order: the camera lesson `number-line`, then q-493, powers-on-number-line, q-494, r26-t17-reading-the-line, q-495 to q-501, q-r26-t17-01 to 05, summary. Topic 36 comes after topic 17 in the study plan.
+Topic-17 order: the camera lesson in three parts (`number-line`, `number-line-2`, `number-line-3`), then q-493, powers-on-number-line, q-494, r26-t17-reading-the-line, q-495 to q-501, q-r26-t17-01 to 05, summary. Topic 36 comes after topic 17 in the study plan.
 
 | Idea | First taught (full) | Later (reminder) |
 |---|---|---|
-| The four ranges, borders, the mirror image; × and ÷ by a number above 1 or a fraction; the hierarchy; exceptional powers; same operation; strong on strong | camera lesson `number-line` | q-493, q-495 to q-497, q-500, q-501, summary |
+| The four ranges, borders, the mirror image; × and ÷ by a number above 1 or a fraction; the hierarchy; exceptional powers; same operation; strong on strong | camera lesson `number-line` (part 1: ranges, borders, mirror; part 2: × and ÷, hierarchy, exceptional powers; part 3: same operation, strong on strong) | q-493, q-495 to q-497, q-500, q-501, summary |
 | The arrows for powers in each range; a root is a smaller power; what counts as odd; the three steps (keep a negative power); finding the range | powers-on-number-line (lesson) | q-494, q-498 to q-500, q-r26-t17-02, summary |
 | Times a negative: the other side of zero, the order flips | r26-t17-reading-the-line (lesson) | summary |
 | The smallest product = the smallest factors; one plug-in for "the smallest" | q-495 | — |
@@ -742,11 +742,11 @@ Topic-17 order: the camera lesson `number-line`, then q-493, powers-on-number-li
 
 ### Topic 18: where each idea is first taught (R29 / R32)
 
-Topic-18 order: the camera lesson `digit-puzzles`, then q-512, q-513, q-514, r26-t18-facts, q-515 to q-520, q-r26-t18-01 to 03, summary. Topic 28 (after the charts units 11-15) comes after topic 18 in the study plan.
+Topic-18 order: the camera lesson in two parts (`digit-puzzles`, `digit-puzzles-2`), then q-512, q-513, q-514, r26-t18-facts, q-515 to q-520, q-r26-t18-01 to 03, summary. Topic 28 (after the charts units 11-15) comes after topic 18 in the study plan.
 
 | Idea | First taught (full) | Later (reminder) |
 |---|---|---|
-| What the letters mean; the four steps; a puzzle in words → 10A + B and collect | camera lesson `digit-puzzles` | q-512, q-515, q-520, summary |
+| What the letters mean; the four steps; a puzzle in words → 10A + B and collect | camera lesson `digit-puzzles` (part 1: what the letters mean, 10A + B; part 2: the four steps, a puzzle in words) | q-512, q-515, q-520, summary |
 | The ones column (nothing carries in); two numbers, more digits → leading digit 1 | q-512 | q-515, q-516, summary |
 | The special digits 0, 1, 5, 6; 5 × even / odd; 6 × even | q-513 | q-517, q-518, summary |
 | Plug in when there is nothing to read; the algebraic form; AB ± BA | q-514 | q-520, q-r26-t18-01, q-r26-t18-02, summary |
@@ -761,16 +761,16 @@ Topic-18 order: the camera lesson `digit-puzzles`, then q-512, q-513, q-514, r26
 
 ### Topic 19: where each idea is first taught (R29 / R32)
 
-Topic-19 order: the camera lesson `new-operation`, then q-541, q-542, q-543, q-r26-t19-01, q-r26-t19-02, operation-patterns, q-544, q-545, q-r26-t19-03, q-546, q-547, q-548, q-549, q-r26-t19-18, q-550, q-551, q-r26-t19-05, q-552, q-553, q-554, q-555, q-556, summary. Topic 19 comes after topic 37 in the study plan. The signature pictures (the same template, inside out, down and back up) are in "Method visuals library".
+Topic-19 order: the camera lesson in three parts (`new-operation`, `new-operation-2`, `new-operation-3`), then q-541, q-542, q-543, q-r26-t19-01, q-r26-t19-02, operation-patterns, q-544, q-545, q-r26-t19-03, q-546, q-547, q-548, q-549, q-r26-t19-18, q-550, q-551, q-r26-t19-05, q-552, q-553, q-554, q-555, q-556, summary. Topic 19 comes after topic 37 in the study plan. The signature pictures (the same template, inside out, down and back up) are in "Method visuals library".
 
 | Idea | First taught (full) | Later (reminder) |
 |---|---|---|
-| A new operation = a definition; the order of the inputs can matter; the exam's symbols | camera lesson `new-operation` | q-r26-t19-02, summary |
-| Every input goes in brackets; an expression goes in whole | camera lesson | q-r26-t19-01, summary |
+| A new operation = a definition; the order of the inputs can matter; the exam's symbols | camera lesson `new-operation`, part 1 | q-r26-t19-02, summary |
+| Every input goes in brackets; an expression goes in whole | camera lesson, part 2 (`new-operation-2`) | q-r26-t19-01, summary |
 | The same template with the input in EVERY slot (the substitution picture) | q-541 | q-544, q-548, q-552, q-554, summary |
-| Inside out: the inner value becomes the outer input; don't stop halfway | camera lesson (rule); q-542 (the picture, the trap) | q-545, q-550, q-551, summary |
-| No definition: put the input into each choice | camera lesson | q-543, summary |
-| "Not always" = one counterexample; "always" = algebra; no equal numbers | camera lesson | q-r26-t19-02, q-555, summary |
+| Inside out: the inner value becomes the outer input; don't stop halfway | camera lesson, part 2 (rule); q-542 (the picture, the trap) | q-545, q-550, q-551, summary |
+| No definition: put the input into each choice | camera lesson, part 3 (`new-operation-3`) | q-543, summary |
+| "Not always" = one counterexample; "always" = algebra; no equal numbers | camera lesson, part 3 | q-r26-t19-02, q-555, summary |
 | Zero as a lazy test number → a second number | q-r26-t19-01 | q-549, summary |
 | The inverse operation: undo the steps in reverse order | operation-patterns (lesson) | summary |
 | An operation on an expression: match the whole input slot | q-544 | summary |
@@ -878,6 +878,11 @@ Z for parallel lines (30; geo 109-124) · gold 30-60-90 and silver "borekas" 45-
 - Topic 18: every column layout (q-512, q-513, q-515, q-516 both layouts, q-518, q-519, q-r26-t18-01) is the COLS figure: a fixed grid in the slide's math font (MathJax outlines, `_mathjax_glyphs.json`), ones under ones, the operator in its own cell, the bar above the result; built rows → bar → result at the words, the column being discussed boxed (each layer is a full snapshot, so the box moves), carries small above the column, the digits found so far in teal under the figure; continuation slides show the figure again with what was found. Renderer (studio_handwrite.py): a positioned figure is pushed below the question and fitted above the choices, and a layer with `of` is drawn at its own figure even when other items come in between.
 - Topic 19: written with SLOT / CHAIN from the start.
 - Carry-over boxes: 25 slides in topics 13-18 (list `CARRY` in `_method_visuals.py`), e.g. q-428 keeps "X = 2, 5, 8" while it checks divisibility by 2.
+
+
+### Camera lessons in parts (teacher, 2026-10-14)
+
+**Rule.** A topic's camera first lesson is split into parts of about 3-4 minutes (2.5-4.5) at idea boundaries, so she can record each part in one or two takes (on camera, cuts are visible). A lesson under about 4.5 minutes stays one part. Write the lesson as ONE spec and split it with `math_patches/_camera_parts.py` (`CP.split(globals(), id, title, [(1, None), (slide, opening line), ...])` right before the visual passes, and `CP.add_to_course(M, S, topic)` at the start of the tNN.py redo hook). Part 1 keeps the lesson id, part k is `<id>-k`, titles "<Title> (Part k of n)". Each part: its own title slide; a later part opens with one short natural line (no recap of the previous part); every part but the last ends with "Okay. I'll see you in the next part."; a new board (a "So far" box only if the part really needs an earlier result). Content, examples and visuals are not changed by the split. Concept maps name the part ("camera lesson, part 2"). Applies to topics 21+ and topic 51 from the first draft.
 
 ## Codex review standard (2026-10-13)
 

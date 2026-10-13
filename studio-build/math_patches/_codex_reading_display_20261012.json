@@ -16,7 +16,8 @@
     "solve-q-r26-t18-02",
     "solve-q-r26-t18-03",
     "r26-t18-summary",
-    "digit-puzzles"
+    "digit-puzzles",
+    "digit-puzzles-2"
   ],
   "lessons": {
     "solve-q-358": {
@@ -1466,7 +1467,7 @@
         ],
         [
           "We must choose a value for the expression named in the given. Choosing a prime for m itself would not satisfy that condition. Here I don't pick m, I pick m squared, because the given is about m squared. m squared is a prime, so let's take the smallest prime, two.",
-          "m squared is two, so m is the square root of two. Is that a whole number? One squared is one, and two squared is four. So root two is between one and two, and it's not whole.",
+          "m squared is two, so m is the square root of two. Is that a whole number? Let's check the squares. One squared is one, and two squared is four. So root two is between one and two, and it's not whole.",
           "So m is root two. Is root two prime? No, only whole numbers can be prime. Even? Odd? No and no. Not an integer? Yes. So choice numbers one, three and four are out.",
           "Three choices are out, so there's no need to try another prime. Choice number two. Okay. I'll see you in the next question."
         ]
@@ -1482,7 +1483,7 @@
         ],
         [
           "We must choose a value for the expression named in the given. Choosing a prime for m itself would not satisfy that condition. Here I don't pick m, I pick m², because the given is about m². m² is a prime, so let's take the smallest prime, two.",
-          "m² is 2, so m is √2. Is that a whole number? 1² is 1, and 2² is 4. So root two is between one and two, and it's not whole.",
+          "m² = 2, so m is √2. Is that a whole number? Let's check the squares.\n1² = 1, and 2² = 4. So √2 is between 1 and 2, and it's not a whole number.",
           "So m is root two. Is root two prime? No, only whole numbers can be prime. Even? Odd? No and no. Not an integer? Yes. So choice numbers 1, 3 and 4 are out.",
           "Three choices are out, so there's no need to try another prime. Choice number 2. Okay. I'll see you in the next question."
         ]
@@ -2855,8 +2856,8 @@
           "If you got zero, check the subtraction between the fractions. The second fraction was negative two, and subtracting negative two means adding two, not subtracting two."
         ],
         [
-          "Another way is to use the gaps without choosing actual numbers. On top of the first fraction, r minus p goes two steps to the right, so it is two. On the bottom, s minus r goes one step to the right, so it is one. The first fraction is two over one.",
-          "On top of the second fraction, q minus s goes two steps back, so it is negative two. On the bottom, r minus q goes one step to the right, so it is one. The second fraction is negative two over one.",
+          "Another way is to use the gaps without choosing actual numbers. The numbers are in the order p, q, r, s, and each gap is one. On top of the first fraction, we have r minus p. To find this difference, start at p and move to r. That's two steps to the right, so r minus p is two. On the bottom, we have s minus r. Start at r and move to s. That's one step to the right, so s minus r is one. The first fraction is two over one, which is two.",
+          "On top of the second fraction, we have q minus s. Start at s and move to q. That's two steps to the left, so q minus s is negative two. On the bottom, we have r minus q. Start at q and move to r. That's one step to the right, so r minus q is one. The second fraction is negative two over one, which is negative two.",
           "Now subtract the fractions. Two over one, minus negative two over one, is two minus negative two. That's two plus two, which is four. Choice number four is our answer. Okay. I'll see you in the next question."
         ]
       ],
@@ -2871,8 +2872,8 @@
           "If you got zero, check the subtraction between the fractions. The second fraction was −2, and subtracting −2 means adding two, not subtracting two."
         ],
         [
-          "Another way is to use the gaps without choosing actual numbers.\nOn top of the first fraction, r − p goes two steps to the right, so it is two.\nOn the bottom, s − r goes one step to the right, so it is one. The first fraction is 2/1.",
-          "On top of the second fraction, q − s goes two steps back, so it is −2.\nOn the bottom, r − q goes one step to the right, so it is one. The second fraction is −2/1.",
+          "Another way is to use the gaps without choosing actual numbers. The numbers are in the order p, q, r, s, and each gap is 1.\nOn top of the first fraction, we have r − p. To find this difference, start at p and move to r.\nThat's 2 steps to the right, so r − p = 2. On the bottom, we have s − r.\nStart at r and move to s. That's 1 step to the right, so s − r = 1.\nThe first fraction is 2/1, which is 2.",
+          "On top of the second fraction, we have q − s. Start at s and move to q.\nThat's 2 steps to the left, so q − s = −2. On the bottom, we have r − q.\nStart at q and move to r. That's 1 step to the right, so r − q = 1.\nThe second fraction is −2/1, which is −2.",
           "Now subtract the fractions. 2/1 − (−2/1) = 2 − (−2). That's 2 + 2, which is four. Choice number 4 is our answer.\nOkay. I'll see you in the next question."
         ]
       ],
@@ -5386,124 +5387,19 @@
       "paras": [],
       "disp": [],
       "recorded_when_published": false,
-      "scope_replacements": {
-        "5.3": [
-          [
-            "Five quarters, cubed, against",
-            "(5/4)³ against"
-          ],
-          [
-            "So five quarters, cubed, is bigger",
-            "So (5/4)³ is bigger"
-          ]
-        ],
-        "6.1": [
-          [
-            "Negative five, squared, is twenty-five, and negative three, to the power of four, is eighty-one",
-            "(−5)² = 25, and (−3)⁴ = 81"
-          ]
-        ],
-        "6.2": [
-          [
-            "Negative five, in brackets, squared, is twenty-five",
-            "(−5)² = 25"
-          ],
-          [
-            "without brackets, negative five squared means we square only the five",
-            "without brackets, −5² means we square only the 5"
-          ]
-        ],
-        "8.4": [
-          [
-            "is three and a half",
-            "is 3.5"
-          ]
-        ]
-      }
+      "scope_replacements": {}
     },
     "new-operation": {
       "paras": [],
       "disp": [],
       "recorded_when_published": false,
-      "scope_replacements": {
-        "5.3": [
-          [
-            "Without brackets, negative two squared means the negative of two squared",
-            "Without brackets, −2² means −(2²)"
-          ]
-        ],
-        "5.2": [
-          [
-            "The bracket negative two, squared, is",
-            "(−2)² is"
-          ]
-        ],
-        "5.4": [
-          [
-            "diamond of x plus two is the bracket x plus two, squared, plus three times the bracket x plus two",
-            "diamond of (x + 2) is (x + 2)² + 3 × (x + 2)"
-          ]
-        ],
-        "5.5": [
-          [
-            "The bracket x plus two, squared, is",
-            "(x + 2)² is"
-          ],
-          [
-            "Three times the bracket x plus two is",
-            "3 × (x + 2) is"
-          ]
-        ],
-        "6.4": [
-          [
-            "diamond of, in brackets, three plus four",
-            "diamond of (3 + 4)"
-          ]
-        ],
-        "7.4": [
-          [
-            "the bracket one star two, star three",
-            "(1 star 2) star 3"
-          ]
-        ],
-        "8.2": [
-          [
-            "Six x is one example",
-            "6x is one example"
-          ]
-        ],
-        "9.3": [
-          [
-            "five times the bracket b plus a",
-            "5 × (b + a)"
-          ]
-        ],
-        "9.4": [
-          [
-            "Four star four equals four star four",
-            "4 star 4 = 4 star 4"
-          ]
-        ],
-        "10.2": [
-          [
-            "five times the bracket k plus two",
-            "5 × (k + 2)"
-          ]
-        ]
-      }
+      "scope_replacements": {}
     },
     "digit-puzzles": {
       "paras": [],
       "disp": [],
       "recorded_when_published": false,
-      "scope_replacements": {
-        "6.1": [
-          [
-            "A four, plus three B, equals seventy-one",
-            "A̅4̅ + 3̅B̅ = 71"
-          ]
-        ]
-      }
+      "scope_replacements": {}
     },
     "algebraic-understanding": {
       "paras": [],
@@ -5653,24 +5549,7 @@
       "paras": [],
       "disp": [],
       "recorded_when_published": false,
-      "scope_replacements": {
-        "6.4": [
-          [
-            "One, minus three, plus three, minus one, is zero",
-            "1 − 3 + 3 − 1 = 0"
-          ],
-          [
-            "Four, minus eight, plus two, is negative two",
-            "4 − 8 + 2 = −2"
-          ]
-        ],
-        "14.3": [
-          [
-            "the biggest one is the divisor minus one",
-            "the biggest one is divisor − 1"
-          ]
-        ]
-      }
+      "scope_replacements": {}
     },
     "absolute-value": {
       "paras": [],
@@ -5682,8 +5561,15 @@
             "three plus negative ten is three minus ten",
             "3 + (−10) = 3 − 10"
           ]
-        ],
-        "5.2": [
+        ]
+      }
+    },
+    "absolute-value-2": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.2": [
           [
             "The absolute value of the whole product, negative four times five, is the absolute value of negative twenty",
             "|−4 × 5| = |−20|"
@@ -5693,31 +5579,38 @@
             "|−4| × |5|"
           ]
         ],
-        "5.4": [
+        "2.4": [
           [
             "The absolute value of the whole sum, a plus b, is smaller than or equal to the absolute value of a, plus the absolute value of b",
             "|a + b| ≤ |a| + |b|"
           ]
         ],
-        "6.1": [
+        "3.1": [
           [
             "Negative three plus negative four",
             "−3 + (−4)"
           ]
         ],
-        "7.3": [
+        "4.3": [
           [
             "minus negative six is six too",
             "−(−6) = 6 too"
           ]
-        ],
-        "8.3": [
+        ]
+      }
+    },
+    "absolute-value-3": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.3": [
           [
             "the absolute value of the whole x plus three equals eight",
             "|x + 3| = 8"
           ]
         ],
-        "9.1": [
+        "3.1": [
           [
             "The absolute value of the whole x minus four is the distance",
             "|x − 4| is the distance"
@@ -5727,10 +5620,177 @@
             "|x − 4| = 2"
           ]
         ],
-        "11.3": [
+        "5.3": [
           [
             "The absolute value of the whole x minus two is smaller than five",
             "|x − 2| < 5"
+          ]
+        ]
+      }
+    },
+    "divisibility-2": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.4": [
+          [
+            "One, minus three, plus three, minus one, is zero",
+            "1 − 3 + 3 − 1 = 0"
+          ],
+          [
+            "Four, minus eight, plus two, is negative two",
+            "4 − 8 + 2 = −2"
+          ]
+        ]
+      }
+    },
+    "divisibility-4": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "4.3": [
+          [
+            "the biggest one is the divisor minus one",
+            "the biggest one is divisor − 1"
+          ]
+        ]
+      }
+    },
+    "number-line-2": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.3": [
+          [
+            "Five quarters, cubed, against",
+            "(5/4)³ against"
+          ],
+          [
+            "So five quarters, cubed, is bigger",
+            "So (5/4)³ is bigger"
+          ]
+        ],
+        "4.1": [
+          [
+            "Negative five, squared, is twenty-five, and negative three, to the power of four, is eighty-one",
+            "(−5)² = 25, and (−3)⁴ = 81"
+          ]
+        ],
+        "4.2": [
+          [
+            "Negative five, in brackets, squared, is twenty-five",
+            "(−5)² = 25"
+          ],
+          [
+            "without brackets, negative five squared means we square only the five",
+            "without brackets, −5² means we square only the 5"
+          ]
+        ]
+      }
+    },
+    "number-line-3": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.4": [
+          [
+            "is three and a half",
+            "is 3.5"
+          ]
+        ]
+      }
+    },
+    "digit-puzzles-2": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.1": [
+          [
+            "A four, plus three B, equals seventy-one",
+            "A̅4̅ + 3̅B̅ = 71"
+          ]
+        ]
+      }
+    },
+    "new-operation-2": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.3": [
+          [
+            "Without brackets, negative two squared means the negative of two squared",
+            "Without brackets, −2² means −(2²)"
+          ]
+        ],
+        "2.2": [
+          [
+            "The bracket negative two, squared, is",
+            "(−2)² is"
+          ]
+        ],
+        "2.4": [
+          [
+            "diamond of x plus two is the bracket x plus two, squared, plus three times the bracket x plus two",
+            "diamond of (x + 2) is (x + 2)² + 3 × (x + 2)"
+          ]
+        ],
+        "2.5": [
+          [
+            "The bracket x plus two, squared, is",
+            "(x + 2)² is"
+          ],
+          [
+            "Three times the bracket x plus two is",
+            "3 × (x + 2) is"
+          ]
+        ],
+        "3.4": [
+          [
+            "diamond of, in brackets, three plus four",
+            "diamond of (3 + 4)"
+          ]
+        ],
+        "4.4": [
+          [
+            "the bracket one star two, star three",
+            "(1 star 2) star 3"
+          ]
+        ]
+      }
+    },
+    "new-operation-3": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.2": [
+          [
+            "Six x is one example",
+            "6x is one example"
+          ]
+        ],
+        "3.3": [
+          [
+            "five times the bracket b plus a",
+            "5 × (b + a)"
+          ]
+        ],
+        "3.4": [
+          [
+            "Four star four equals four star four",
+            "4 star 4 = 4 star 4"
+          ]
+        ],
+        "4.2": [
+          [
+            "five times the bracket k plus two",
+            "5 × (k + 2)"
           ]
         ]
       }

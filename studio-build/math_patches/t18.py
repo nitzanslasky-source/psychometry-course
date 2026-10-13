@@ -1788,10 +1788,11 @@ def _ai18_mod(name):
 
 def ai_redo_t18(M):
     S = _ai18_mod('_ai_vis_t18'); AV = _ai18_mod('_ai_visual')
+    CP = _ai18_mod('_camera_parts'); CP.add_to_course(M, S, 18)   # 2026-10-14 the camera lesson in parts
     for vid in S.ORDER:
         # 2026-10-13 teacher: her camera first lesson is a reading script too now (same style, handwriting, camera on);
         # its old camera takes are replaced by a new take, so it is rebuilt from the spec whatever was recorded before.
-        if vid not in M.D['videos'] or (vid != AI18_CAMERA and _ai18_recorded(vid)): continue
+        if vid not in M.D['videos'] or (not CP.is_part(AI18_CAMERA, vid) and _ai18_recorded(vid)): continue
         S.rebuild(M, vid)
         AV.VIS[vid] = S.vis(vid)
         AV.apply(M, vid)

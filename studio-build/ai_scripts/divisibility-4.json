@@ -1,0 +1,89 @@
+{
+ "videoId": "divisibility-4",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with remainders, and write them with a letter."
+  ],
+  [
+   {
+    "say": "When a number leaves a known remainder, we can write it with a letter. A number that leaves three when divided by four can be written as four k plus three, where k is any whole number. We call this a tag.",
+    "at": [
+     "a known remainder",
+     "four k plus three",
+     "k is any"
+    ]
+   },
+   {
+    "say": "Why does it work? Four k is always divisible by four, and the three on the end is what's left. Let's try. k is zero gives three. k is one gives seven, and seven divided by four leaves three. k is two gives eleven, which also leaves three.",
+    "at": [
+     "Let's try. k is",
+     "k is one"
+    ]
+   },
+   {
+    "say": "Another tag. A number that leaves four when divided by fifteen is fifteen k plus four. For example, nineteen, thirty-four and forty-nine all leave four when divided by fifteen.",
+    "at": [
+     "fifteen k plus four",
+     "For example, nineteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes a question changes the divisor. A number leaves four when divided by fifteen. What does it leave when divided by five? Write it as fifteen k plus four. Fifteen k is five times three k, a whole number of fives, so it divides by five. So the number divided by five leaves four. Check it with nineteen: nineteen divided by five leaves four.",
+    "at": [
+     "the divisor. A",
+     "Write it as fifteen k plus four",
+     "three k, a"
+    ]
+   },
+   {
+    "say": "Now a number that leaves thirteen when divided by fifteen. Fifteen k still divides by five, but thirteen is too big to be a remainder by five. So we divide it again. Thirteen is two fives plus three, so the remainder is three. Check it with twenty-eight: twenty-eight divided by five leaves three.",
+    "at": [
+     "Thirteen is two fives plus three",
+     "Check it with"
+    ]
+   },
+   {
+    "say": "But it doesn't always work. A number leaves two when divided by eight. What does it leave when divided by six? Try two, and it leaves two. Try ten, which also leaves two when divided by eight. Ten divided by six leaves four. Two different answers, so we can't know.",
+    "at": [
+     "Try ten",
+     "two when divided by eight. Ten"
+    ]
+   },
+   {
+    "say": "What's the difference? Five divides fifteen, so fifteen k is made of whole fives, and they drop out. Six doesn't divide eight, so eight k isn't made of whole sixes, and it can leave anything. So changing the divisor works only when the new divisor divides the old one.",
+    "at": [
+     "works only",
+     "divisor divides the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "To sum up. For two, five and ten, look at the last digit. For three and nine, the digit sum. For four, the last two digits, and for eight, the last three. A bigger divisor, split it into parts with no common factor.",
+    "at": [
+     "For two, five and ten",
+     "look at the",
+     "For four, the last",
+     "digits, and for"
+    ]
+   },
+   {
+    "say": "For eleven, the first two digits minus the last one, or the outer digits minus the middle one.",
+    "at": [
+     "For eleven",
+     "digits minus the"
+    ]
+   },
+   {
+    "say": "A remainder is what's left in your hand. It's always smaller than the divisor, and the biggest one is the divisor minus one. Now some questions. Come in focused, because remainders are the part that confuses people. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "A remainder is what",
+     "in your hand"
+    ]
+   }
+  ]
+ ]
+}

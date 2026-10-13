@@ -1,0 +1,99 @@
+{
+ "videoId": "divisibility-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with divisibility, and build signs for more divisors."
+  ],
+  [
+   {
+    "say": "Six is a strange one, because it has no sign of its own. But six is two times three. So a number that divides by two and also by three is divisible by six. Two hundred thirty-four is even, so it divides by two. Its digit sum is two plus three plus four, which is nine, so it divides by three. So two hundred thirty-four is divisible by six.",
+    "at": [
+     "one, because it",
+     "But six is two times three",
+     "So a number",
+     "Two hundred thirty-four is even",
+     "so it divides"
+    ]
+   },
+   {
+    "say": "Now a non-example, a hundred thirty-five. Its digit sum is one plus three plus five, nine, so it divides by three. But it's odd, so it doesn't divide by two. So it's not divisible by six.",
+    "at": [
+     "a hundred thirty-five",
+     "Its digit sum"
+    ]
+   },
+   {
+    "say": "We can build other divisors the same way. Fifteen is three times five. Five hundred ten ends in zero, so it divides by five, and its digit sum is five plus one plus zero, which is six, so it divides by three. So five hundred ten is divisible by fifteen.",
+    "at": [
+     "Fifteen is three times five",
+     "Five hundred ten ends in zero",
+     "five, and its"
+    ]
+   },
+   {
+    "say": "Twelve is three times four, eighteen is two times nine, and twenty-four is three times eight. Check each part with its own sign. If the number divides by both parts, it divides by the big number.",
+    "at": [
+     "Twelve is three times four",
+     "eighteen is two"
+    ]
+   },
+   {
+    "say": "But careful, the two parts must share no factor. Why not split twelve as two times six? Look at eighteen. Eighteen divides by two and by six, but eighteen is not divisible by twelve. Two and six share a two, so this check doesn't work. Three and four share nothing, so for twelve we use three times four.",
+    "at": [
+     "Look at eighteen",
+     "Eighteen divides by"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Eleven is the hardest one. For a two-digit number it's easy, the same digit twice: twenty-two, thirty-three, fifty-five, ninety-nine.",
+    "at": [
+     "Eleven is the hardest one",
+     "For a two-digit"
+    ]
+   },
+   {
+    "say": "For a three-digit number there are two ways. The first way: take the number made by the first two digits, and subtract the last digit. Four hundred eighteen. Forty-one minus eight is thirty-three, and thirty-three divides by eleven, so four hundred eighteen divides by eleven. Four hundred twenty-seven. Forty-two minus seven is thirty-five, which doesn't divide by eleven, so four hundred twenty-seven doesn't either.",
+    "at": [
+     "The first way",
+     "two digits, and"
+    ]
+   },
+   {
+    "say": "The second way: add the two outer digits, and subtract the middle digit. Four hundred eighteen again. Four plus eight is twelve, and twelve minus one is eleven. When the result is zero or eleven, the number divides by eleven.",
+    "at": [
+     "The second way",
+     "two outer digits",
+     "When the result is zero or eleven",
+     "or eleven, the"
+    ]
+   },
+   {
+    "say": "For longer numbers, go digit by digit with plus, minus, plus, minus. One thousand three hundred thirty-one. One, minus three, plus three, minus one, is zero, so it divides by eleven. Four hundred eighty-two. Four, minus eight, plus two, is negative two. That's not zero, eleven or negative eleven, so four hundred eighty-two doesn't divide by eleven.",
+    "at": [
+     "For longer numbers",
+     "One thousand three"
+    ]
+   },
+   {
+    "say": "Most exam numbers are simple, like a hundred forty-three or a hundred sixty-five, but now you're ready for harder ones too.",
+    "at": [
+     "Most exam numbers are simple",
+     "a hundred sixty-five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why do we need these signs? Many exam word problems are really about divisibility. For example, if a quarter of a group wear hats, the size of the group must divide by four, because you can't have a quarter of a person. The signs let us check the answer choices fast, and you'll see questions like this right after this lesson. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "these signs? Many",
+     "if a quarter of a",
+     "group wear hats"
+    ]
+   }
+  ]
+ ]
+}

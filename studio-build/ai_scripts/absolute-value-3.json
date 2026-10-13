@@ -1,0 +1,110 @@
+{
+ "videoId": "absolute-value-3",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   "Let's continue with absolute value in equations and inequalities."
+  ],
+  [
+   {
+    "say": "Now equations. The absolute value of x equals six. Which numbers are six steps from zero? Six, and negative six. One on each side of zero.",
+    "at": [
+     "Which numbers are six steps",
+     "Six, and negative six",
+     "One on each side"
+    ]
+   },
+   {
+    "say": "So an equation with bars splits into two cases. The inside equals the right side, or the inside equals minus the right side. Why minus? Because if the inside is negative six, the bars still turn it into six.",
+    "at": [
+     "splits into two cases",
+     "The inside equals"
+    ]
+   },
+   {
+    "say": "For example, the absolute value of the whole x plus three equals eight. Case one: x plus three is eight, so x is eight minus three, which is five. Case two: x plus three is negative eight, so x is negative eight minus three, which is negative eleven. We use the same inside twice, once with eight and once with negative eight.",
+    "at": [
+     "Case one: x plus three is eight",
+     "eight minus three",
+     "Case two: x plus three is negative eight",
+     "is negative eight minus"
+    ]
+   },
+   {
+    "say": "Let's check both. Five plus three is eight, and its absolute value is eight. Negative eleven plus three is negative eight, and its absolute value is eight too. Both work.",
+    "at": [
+     "Let's check both",
+     "Five plus three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "There's also a picture for this. The absolute value of the whole x minus four is the distance between x and four. You'll see why in the first questions. For now, one example. The absolute value of the whole x minus four equals two means that x is two steps from four. Two steps to the right is six, and two steps to the left is two.",
+    "at": [
+     "the distance between x and four",
+     "You'll see why",
+     "Two steps to the right is six",
+     "two steps to the left is two"
+    ]
+   },
+   {
+    "say": "So x is six or two. Six minus four is two, and two minus four is negative two, and both have an absolute value of two.",
+    "at": [
+     "So x is six or two",
+     "Six minus four"
+    ]
+   }
+  ],
+  [
+   "Inequalities are a little harder. There are two situations: the bars are on the big side of the inequality, or on the small side. And with the absolute value of x, the range is always symmetric. What works on the positive side works on the negative side too.",
+   {
+    "say": "The absolute value of x is bigger than three. Without its sign, x must be more than three. Four and five work. Negative four and negative five work too, because the bars remove the minus. And two? Its absolute value is two, which is not bigger than three, so two doesn't work.",
+    "at": [
+     "The absolute value of x is bigger than three",
+     "Without its sign"
+    ]
+   },
+   {
+    "say": "On the number line, that's two rays going outward, one from three to the right, and one from negative three to the left. The circles are open, because three itself is not bigger than three. So bars on the big side give an open range: x is bigger than three, or x is smaller than negative three.",
+    "at": [
+     "one from three to the right",
+     "one from negative three to the left",
+     "The circles are open",
+     "So bars on the big side",
+     "x is bigger"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the absolute value of x is smaller than three. Without its sign, x must be less than three. Two, one and zero work, and so do negative one and negative two. Negative five? No. The bars turn it into five, which is not smaller than three.",
+    "at": [
+     "Now the absolute value of x is smaller than three",
+     "Without its sign"
+    ]
+   },
+   {
+    "say": "On the number line, that's one band between negative three and three. So bars on the small side give a closed range: x is between negative three and three. It's just like the x squared inequalities you learned. On the small side the range is closed, and on the big side it's open.",
+    "at": [
+     "one band between",
+     "negative three and three",
+     "So bars on the small side",
+     "x is between negative three and three",
+     "It's just like"
+    ]
+   },
+   {
+    "say": "With an expression inside, it's the same idea. The absolute value of the whole x minus two is smaller than five. The bars are on the small side, so the inside, x minus two, is between negative five and five. Now add two to all three parts. Negative five plus two is negative three, and five plus two is seven. So x is between negative three and seven.",
+    "at": [
+     "The absolute value of the whole x minus two",
+     "The bars are",
+     "So x is between negative three and seven"
+    ]
+   }
+  ],
+  [
+   "So bars show up in expressions, in equations and in inequalities. Inside first, then the bars, and the result is never negative. Equations split into two cases, and inequalities give a closed range or an open one. And like in almost every topic, plugging in a number works here too. [pause] Okay. I'll see you in the next video."
+  ]
+ ]
+}

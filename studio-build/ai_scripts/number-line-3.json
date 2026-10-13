@@ -1,0 +1,78 @@
+{
+ "videoId": "number-line-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with the number line, and compare two numbers that go through operations."
+  ],
+  [
+   {
+    "say": "When two positive numbers get exactly the same operation, we can ignore the operation. Whichever number was bigger without it is bigger with it. But first, handle any exceptional power.",
+    "at": [
+     "get exactly the"
+    ]
+   },
+   {
+    "say": "For example, five to the power of negative four against four to the power of negative four. There's a minus in the exponent, so first we flip. That's one fifth to the power of four against one quarter to the power of four. Now both have the same power, so we ignore it. One quarter is bigger than one fifth, so four to the power of negative four is bigger. No calculating.",
+    "at": [
+     "five to the power of negative four",
+     "negative four against"
+    ]
+   },
+   {
+    "say": "Two more. Three quarters to the power of five against two thirds to the power of five: three quarters is bigger, so its power is bigger. And the square root of thirteen against the square root of eleven: thirteen is bigger, so its root is bigger.",
+    "at": [
+     "Three quarters to the power of five",
+     "of five against"
+    ]
+   },
+   {
+    "say": "But this works for positive numbers only. Negative three is smaller than negative two. Squared, negative three gives nine and negative two gives four, so the order flipped. With negative numbers, don't ignore the power.",
+    "at": [
+     "this works for positive numbers only",
+     "Negative three is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The last tool of this lesson is our own slogan: strong on strong, weak on weak. When we compare two products, we match the big factors against each other, and the small factors against each other.",
+    "at": [
+     "this lesson is"
+    ]
+   },
+   {
+    "say": "For example, four times six against three times five. Four beats three, and six beats five. One side wins both matches, so four times six is bigger. Twenty-four is bigger than fifteen. With letters, if a is smaller than b and c is smaller than d, all positive, then a times c is smaller than b times d.",
+    "at": [
+     "four times six against",
+     "Four beats three",
+     "With letters",
+     "smaller than b"
+    ]
+   },
+   {
+    "say": "But if each side wins one match, the rule doesn't decide. Two times nine against three times five. Three beats two, but nine beats five. Here two times nine, eighteen, happens to be bigger, but the rule alone can't tell us that.",
+    "at": [
+     "if each side wins one match",
+     "match, the rule"
+    ]
+   },
+   {
+    "say": "One more push. If one number is already bigger, and we multiply it by a number above one, it gets even bigger. Seven is bigger than five, so seven times three is bigger than five too. But multiplying by a fraction can turn it around. Seven times one half is three and a half, which is smaller than five.",
+    "at": [
+     "One more push",
+     "If one number"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So, in every question, first find the ranges the givens allow. Then handle any exceptional power. Then compare with the hierarchy, the same operation, or strong on strong. This understanding of how numbers grow, shrink and jump between ranges is what makes these questions fast. Next comes a question, and then the arrows for powers. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "first find the ranges",
+     "Then handle any"
+    ]
+   }
+  ]
+ ]
+}

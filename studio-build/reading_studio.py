@@ -327,6 +327,8 @@ CAMERA_FALLBACK = (
     'number-line digit-puzzles new-operation algebraic-understanding wp-001 wp-027 wp-052 wp-067 wp-080 wp-092 wp-106 '
     'wp-123 wp-146 geo-001 geo-009 geo-042 geo-074 geo-104 geo-119 geo-134 geo-154 geo-172 ch52-intro').split()
 FULL_COURSE = os.path.join(os.path.dirname(HERE), 'content', 'full-course')
+CAMERA_PARTS_FALLBACK = set(('absolute-value-2 absolute-value-3 primes-2 primes-3 divisibility-2 divisibility-3 divisibility-4 '
+                             'number-line-2 number-line-3 digit-puzzles-2 new-operation-2 new-operation-3').split())   # 2026-10-14 camera lessons in parts
 
 
 def camera_ids():
@@ -344,10 +346,13 @@ def camera_ids():
                     first = next((v for v in vids if not v.startswith('solve-') and 'summary' not in v), None)
                     if first:
                         ids.add(first)
+                        # 2026-10-14 (Claude, minimal): a camera lesson in parts - '<first>-2', '<first>-3' ... are camera parts too
+                        ids.update(v for v in vids if re.fullmatch(re.escape(first) + r'-\d+', v))
     except Exception:
         ids = set()
     if not ids:
         ids = set(CAMERA_FALLBACK)
+    ids |= CAMERA_PARTS_FALLBACK   # 2026-10-14 (Claude): the camera parts, also before the student export has them
     return (ids | CAMERA_EXTRA) - CAMERA_SKIP
 
 

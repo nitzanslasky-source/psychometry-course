@@ -58,7 +58,7 @@ METHODS = [
     # (2026-10-11 topic-15 redo: the tools lesson no longer has a "Tag it" slide; tags are taught in solve-q-r26-t15-15)
     ('solve-q-r26-t15-15', '*', 'Tag it', 'new'),
     # 18 · digit word equations (digit ratio)
-    ('digit-puzzles', 'The 4 steps', 'Digit ratio (10A + B equations)', 'lines'),
+    ('digit-puzzles-2', 'A puzzle in words', 'Digit ratio (10A + B equations)', 'lines'),   # 2026-10-14: the camera lesson in parts
     ('r26-t18-summary', 'The four steps', 'Digit ratio (10A + B equations)', 'lines'),   # 2026-10-12 topic-18 redo: slide renamed
     ('solve-q-520', 'Method 1 · The algebraic form', 'Digit ratio (10A + B equations)', 'lines'),   # 2026-10-12 topic-18 redo: slide renamed
     # 23 · flip rule, arrow map
