@@ -1,0 +1,144 @@
+{
+ "videoId": "geo-001-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-30 scripts (2026-10-14): math_patches/_ai_vis_t30.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with lines and angles: the bisector, the names of angles, and parallel lines."
+  ],
+  [
+   {
+    "say": "An angle bisector is a line that leaves the vertex of an angle and splits the angle into two equal angles. It goes exactly through the middle. Here's an angle of eighty degrees.",
+    "at": [
+     "An angle bisector is",
+     "line that leaves",
+     "an angle of eighty"
+    ]
+   },
+   {
+    "say": "The bisector cuts it in the middle, so we call both halves alpha. Each half is eighty divided by two, forty. If the whole angle is a hundred thirty, each half is sixty-five, and if it's sixty-four, each half is thirty-two.",
+    "at": [
+     "The bisector cuts it",
+     "so we call both halves",
+     "Each half is",
+     "If the whole angle is",
+     "is sixty-five, and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "This is a good moment to talk about names. I marked this angle with alpha. That's a Greek letter, and we often name angles with Greek letters: alpha, beta, gamma, delta. Students sometimes mix up the names, and that's fine, it doesn't really matter.",
+    "at": [
+     "moment to talk",
+     "I marked this angle",
+     "with alpha",
+     "letter, and we",
+     "alpha, beta, gamma, delta",
+     "Students sometimes mix"
+    ]
+   },
+   {
+    "say": "There's another way to name an angle, with three letters. Put the points B, A and C on the figure. Angle B A C means: start at B, move to A, and continue to C. The letter in the middle, A, is the vertex.",
+    "at": [
+     "Put the points",
+     "and C on",
+     "start at B, move to A",
+     "A, and continue",
+     "The letter in the middle",
+     "A, is the"
+    ]
+   },
+   {
+    "say": "So angle D E F has its vertex at E. And of course, we can also just give the size, like thirty degrees.",
+    "at": [
+     "So angle D E F",
+     "has its vertex"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Parallel lines are lines whose distance from each other never changes. Here are two lines, a and b.",
+    "at": [
+     "whose distance from",
+     "Here are two lines"
+    ]
+   },
+   {
+    "say": "The distance between two lines is always measured on a line that's perpendicular to both of them. Here it's d, here it's d, and here it's d again. As the lines go on, the distance stays the same.",
+    "at": [
+     "The distance between",
+     "Here it",
+     "d, and here"
+    ]
+   },
+   {
+    "say": "So parallel lines never meet. They never cross each other, they just go on side by side. We mark them with small arrows.",
+    "at": [
+     "We mark them"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now two parallel lines, a and b, and a line that cuts both of them. We call it a transversal. It makes eight angles, four at each crossing.",
+    "at": [
+     "Now two parallel lines",
+     "and b, and",
+     "It makes eight",
+     "at each crossing"
+    ]
+   },
+   {
+    "say": "The angles with even numbers, two, four, six and eight, are the small angles. All the small angles are equal. Two and four are vertical angles, and six and eight are equal to them too.",
+    "at": [
+     "are the small angles",
+     "All the small"
+    ]
+   },
+   {
+    "say": "The angles with odd numbers, one, three, five and seven, are the large angles. All the large angles are equal too.",
+    "at": [
+     "are the large angles",
+     "All the large"
+    ]
+   },
+   {
+    "say": "And a small angle plus a large angle is always a hundred eighty. Why? Angles one and two sit side by side on line a, so they make a straight angle.",
+    "at": [
+     "a small angle plus a large angle",
+     "hundred eighty. Why"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's put numbers on it. At line a, the small angle is sixty degrees, so the large angle next to it is a hundred twenty. And around the crossing, sixty, a hundred twenty, sixty, a hundred twenty.",
+    "at": [
+     "Let's put numbers",
+     "At line a",
+     "the small angle is sixty",
+     "next to it"
+    ]
+   },
+   {
+    "say": "Now take this whole circle of angles at line a, as if we cut it out, and move it down to line b. It fits exactly. These are the same angles. So all the small ones are sixty, and all the large ones are a hundred twenty.",
+    "at": [
+     "take this whole circle",
+     "angles at line",
+     "move it down",
+     "b. It fits",
+     "These are the same angles",
+     "are sixty, and"
+    ]
+   },
+   {
+    "say": "Another example: if a small angle is fifty-five, every large angle is a hundred eighty minus fifty-five, a hundred twenty-five. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "Another example",
+     "angle is fifty-five"
+    ]
+   }
+  ]
+ ]
+}

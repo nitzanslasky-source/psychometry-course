@@ -1,0 +1,85 @@
+{
+ "videoId": "solve-q-r26-t30-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-30 scripts (2026-10-14): math_patches/_ai_vis_t30.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In the accompanying figure, lines a and b are both perpendicular to line c. Line d crosses lines a and b. What is the value of x?",
+    "voice": "calm",
+    "at": [
+     "In the accompanying figure"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "x is at line b, and the only number we have, fifty degrees, is at line a. To move an angle from one line to the other, the two lines must be parallel. But the question doesn't say that a is parallel to b. [short pause] So first we'll check if we can prove it.",
+    "at": [
+     "x is at line b",
+     "fifty degrees, is",
+     "from one line",
+     "the question doesn't",
+     "So first we'll"
+    ]
+   },
+   {
+    "say": "[short pause] Look at line c. Line a makes a right angle with it, and line b makes a right angle with it too. The little squares show that.",
+    "at": [
+     "Look at line c",
+     "Line a makes"
+    ]
+   },
+   {
+    "say": "Two lines that are perpendicular to the same line are parallel. They both go straight across, in the same direction, so they never meet. So a is parallel to b, even though the question doesn't write it.",
+    "at": [
+     "Two lines that are perpendicular to the same line",
+     "to the same",
+     "So a is parallel to b",
+     "b, even though"
+    ]
+   },
+   {
+    "say": "Now we don't need line c anymore. It's the usual picture: two parallel lines, a and b, and line d that cuts them.",
+    "at": [
+     "we don't need line c anymore",
+     "anymore. It's the",
+     "line d that cuts them"
+    ]
+   },
+   {
+    "say": "The fifty degrees at line a is a small angle. All the small angles are equal, so the small angle at line b, above b and to the right of d, is fifty degrees too.",
+    "at": [
+     "The fifty degrees at line a",
+     "All the small",
+     "so the small angle at line b",
+     "to the right"
+    ]
+   },
+   {
+    "say": "x is right next to that fifty, on the other side of line d. Together they make the straight line b, so fifty plus x is a hundred eighty.",
+    "at": [
+     "x is right next to that fifty",
+     "that fifty, on",
+     "so fifty plus x",
+     "a hundred eighty"
+    ]
+   },
+   {
+    "say": "x is a hundred eighty minus fifty, which is a hundred thirty. Choice number three is our answer.",
+    "at": [
+     "x is a hundred eighty minus fifty",
+     "which is a hundred thirty",
+     "Choice number three is our answer"
+    ]
+   },
+   {
+    "say": "Careful with choice number four. It's true that the question doesn't write that a is parallel to b, but the two right angles prove it, so x can be found. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Careful with choice number four",
+     "It's true that",
+     "the question doesn't",
+     "prove it, so"
+    ]
+   }
+  ]
+ ]
+}

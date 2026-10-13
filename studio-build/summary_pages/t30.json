@@ -1,0 +1,785 @@
+{
+ "_about": "Topic 30 summary page (replaces the r26-t30-summary and r26-t30-summary-2 videos). Content = the summary scripts and the topic-30 lessons (math_patches/_ai_vis_t30.py), the Hebrew lessons (geo 14-392). Pictures: our GEO teaching figures (colour) and the questions' own figures (black and white, from the built course). Build: python3 summary_pages.py 30.",
+ "topic": 30,
+ "replaces": "r26-t30-summary, r26-t30-summary-2",
+ "intro": "Lines and angles is mostly **rules**. Know the angle sums, find the **Z**, and never trust the picture.",
+ "figures": {
+  "vertical": {
+   "builder": "t30.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        110,
+        180,
+        530,
+        180
+       ],
+       [
+        "seg",
+        475.6,
+        71.0,
+        164.4,
+        289.0
+       ]
+      ]
+     ],
+     [
+      "v",
+      [
+       [
+        "arc",
+        320,
+        180,
+        40,
+        0,
+        35,
+        "small",
+        "35°"
+       ],
+       [
+        "arc",
+        320,
+        180,
+        40,
+        180,
+        215,
+        "small",
+        "35°"
+       ],
+       [
+        "arc",
+        320,
+        180,
+        34,
+        35,
+        180,
+        "large",
+        "145°",
+        62
+       ],
+       [
+        "arc",
+        320,
+        180,
+        34,
+        215,
+        360,
+        "large",
+        "145°",
+        62
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "Vertical angles"
+   }
+  },
+  "parallel": {
+   "builder": "t30.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        90,
+        120,
+        550,
+        120
+       ],
+       [
+        "seg",
+        90,
+        240,
+        550,
+        240
+       ],
+       [
+        "seg",
+        399.6,
+        42.1,
+        240.4,
+        317.9
+       ],
+       [
+        "par",
+        90,
+        120,
+        550,
+        120
+       ],
+       [
+        "par",
+        90,
+        240,
+        550,
+        240
+       ],
+       [
+        "txt",
+        70,
+        120,
+        "a",
+        "ink",
+        26,
+        true
+       ],
+       [
+        "txt",
+        70,
+        240,
+        "b",
+        "ink",
+        26,
+        true
+       ]
+      ]
+     ],
+     [
+      "ang",
+      [
+       [
+        "arc",
+        354.6410161513776,
+        120,
+        34,
+        180,
+        240,
+        "small",
+        "60°"
+       ],
+       [
+        "arc",
+        285.3589838486224,
+        240,
+        34,
+        0,
+        60,
+        "small",
+        "60°"
+       ],
+       [
+        "arc",
+        354.6410161513776,
+        120,
+        28,
+        60,
+        180,
+        "large",
+        "120°",
+        54
+       ]
+      ]
+     ],
+     [
+      "z",
+      [
+       [
+        "path",
+        [
+         [
+          110,
+          120
+         ],
+         [
+          354.6410161513776,
+          120
+         ],
+         [
+          285.3589838486224,
+          240
+         ],
+         [
+          530,
+          240
+         ]
+        ],
+        "teal",
+        7
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "Parallel lines and a transversal"
+   }
+  },
+  "u": {
+   "builder": "t30.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        90,
+        120,
+        550,
+        120
+       ],
+       [
+        "seg",
+        90,
+        240,
+        550,
+        240
+       ],
+       [
+        "seg",
+        399.6,
+        42.1,
+        240.4,
+        317.9
+       ],
+       [
+        "par",
+        90,
+        120,
+        550,
+        120
+       ],
+       [
+        "par",
+        90,
+        240,
+        550,
+        240
+       ]
+      ]
+     ],
+     [
+      "u",
+      [
+       [
+        "path",
+        [
+         [
+          530,
+          120
+         ],
+         [
+          354.6410161513776,
+          120
+         ],
+         [
+          285.3589838486224,
+          240
+         ],
+         [
+          530,
+          240
+         ]
+        ],
+        "orange",
+        7
+       ],
+       [
+        "arc",
+        285.3589838486224,
+        240,
+        32,
+        0,
+        60,
+        "small",
+        "60°"
+       ],
+       [
+        "arc",
+        354.6410161513776,
+        120,
+        30,
+        240,
+        360,
+        "large",
+        "120°",
+        56
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "The U"
+   }
+  },
+  "perp": {
+   "builder": "t30.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        90,
+        120,
+        550,
+        120
+       ],
+       [
+        "seg",
+        90,
+        240,
+        550,
+        240
+       ],
+       [
+        "seg",
+        170,
+        70,
+        170,
+        290
+       ],
+       [
+        "right",
+        170,
+        120,
+        0,
+        270
+       ],
+       [
+        "right",
+        170,
+        240,
+        0,
+        270
+       ],
+       [
+        "txt",
+        70,
+        120,
+        "a",
+        "ink",
+        26,
+        true
+       ],
+       [
+        "txt",
+        70,
+        240,
+        "b",
+        "ink",
+        26,
+        true
+       ],
+       [
+        "txt",
+        170,
+        50,
+        "c",
+        "ink",
+        26,
+        true
+       ],
+       [
+        "par",
+        250,
+        120,
+        550,
+        120
+       ],
+       [
+        "par",
+        250,
+        240,
+        550,
+        240
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "Two lines perpendicular to c"
+   }
+  },
+  "seg": {
+   "builder": "t30.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        80,
+        200,
+        560,
+        200
+       ],
+       [
+        "dot",
+        110,
+        200,
+        "A",
+        0,
+        28
+       ],
+       [
+        "dot",
+        260,
+        200,
+        "B",
+        0,
+        28
+       ],
+       [
+        "dot",
+        380,
+        200,
+        "C",
+        0,
+        28
+       ],
+       [
+        "dot",
+        530,
+        200,
+        "D",
+        0,
+        28
+       ],
+       [
+        "seg",
+        110,
+        150,
+        380,
+        150,
+        "teal",
+        7
+       ],
+       [
+        "txt",
+        245,
+        130,
+        "AC = 12",
+        "teal",
+        24
+       ],
+       [
+        "seg",
+        260,
+        170,
+        530,
+        170,
+        "orange",
+        7
+       ],
+       [
+        "txt",
+        470,
+        130,
+        "BD = 9",
+        "orange",
+        24
+       ],
+       [
+        "tint",
+        [
+         [
+          260,
+          140
+         ],
+         [
+          380,
+          140
+         ],
+         [
+          380,
+          180
+         ],
+         [
+          260,
+          180
+         ]
+        ],
+        "red"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "Overlapping segments"
+   }
+  },
+  "zig": {
+   "builder": "q.geo30-g007"
+  },
+  "over": {
+   "builder": "q.geo30-g006"
+  },
+  "g002": {
+   "builder": "q.geo30-g002"
+  }
+ },
+ "sections": [
+  {
+   "title": "Angles at a point",
+   "blocks": [
+    {
+     "type": "cols",
+     "cols": [
+      [
+       {
+        "type": "rules",
+        "head": [
+         "Rule",
+         "Example"
+        ],
+        "rows": [
+         [
+          "All the angles around a point: $360°$",
+          "$105°+75°+105°+75°=360°$"
+         ],
+         [
+          "A straight angle: $180°$ (half of $360°$)",
+          "Adjacent on a straight line: $47°$ and $x$ $\\Rightarrow x=133°$"
+         ],
+         [
+          "Right angle $=90°$, only if **marked** (square) or **given**",
+          "Acute $<90°<$ obtuse"
+         ],
+         [
+          "Vertical angles are **equal**",
+          "$35°$ faces $35°$, $145°$ faces $145°$"
+         ],
+         [
+          "A bisector splits an angle in half",
+          "$64°\\div2=32°$"
+         ]
+        ]
+       }
+      ],
+      [
+       {
+        "type": "fig",
+        "ref": "vertical",
+        "caption": "Each angle and its neighbour make $180°$, so the facing angles are equal."
+       }
+      ]
+     ]
+    }
+   ],
+   "span": "full"
+  },
+  {
+   "title": "Parallel lines and a transversal",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Eight angles: four **small** and four **large**. All small ones are equal, all large ones are equal, and a **small** plus a **large** angle make $180°$."
+    },
+    {
+     "type": "fig",
+     "ref": "parallel",
+     "caption": "Look for the **Z**: the two angles in its corners are equal ($60°$ and $60°$). A large angle here is $120°$."
+    },
+    {
+     "type": "fig",
+     "ref": "u",
+     "caption": "Inside a **U** (same side, between the lines): the two angles add up to $180°$: $60°+120°$."
+    }
+   ]
+  },
+  {
+   "title": "Parallel or not?",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Figures are **not to scale**. Two lines are parallel only if it is **given** or **proved**:"
+    },
+    {
+     "type": "checklist",
+     "items": [
+      "Both perpendicular to the same line",
+      "Both parallel to the same line",
+      "A transversal makes equal small angles, or small $+$ large $=180°$"
+     ]
+    },
+    {
+     "type": "fig",
+     "ref": "perp",
+     "caption": "$a\\perp c$ and $b\\perp c$ $\\Rightarrow a\\parallel b$"
+    }
+   ]
+  },
+  {
+   "title": "Segments on a line",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "seg",
+     "caption": "$AC$ and $BD$ overlap on $BC$: $AC+BD=AD+BC$"
+    },
+    {
+     "type": "ex",
+     "label": "Example",
+     "lines": [
+      "$AC=12,\\ BD=9,\\ AD=16$",
+      "$12+9=16+BC \\Rightarrow BC=5$"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Equal parts:** count the **gaps**, not the points. $7$ points make $6$ gaps."
+    }
+   ]
+  },
+  {
+   "title": "Harder questions",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "cols",
+     "cols": [
+      [
+       {
+        "type": "h",
+        "text": "A crowded figure"
+       },
+       {
+        "type": "p",
+        "text": "Take **one pair** of parallel lines and its transversal at a time; ignore the rest. Move each angle you know to where you need it, then use a straight angle: $76°+58°+x=180° \\Rightarrow x=46°$. Quick check with last digits: $6+8$ ends in $4$, so $x$ ends in $6$."
+       }
+      ],
+      [
+       {
+        "type": "h",
+        "text": "Letters instead of numbers"
+       },
+       {
+        "type": "fig",
+        "ref": "over",
+        "caption": "Overlapping angles: $m+n+k$ is $360°$ plus $x$ once more, so $x=m+n+k-360°$."
+       },
+       {
+        "type": "p",
+        "text": "Or **plug in** round numbers that look like the figure (the same number for each letter), cross out three choices, and check the four choices come out different."
+       }
+      ],
+      [
+       {
+        "type": "h",
+        "text": "A bent line between parallels"
+       },
+       {
+        "type": "fig",
+        "ref": "zig",
+        "caption": "Draw a line through the bend, parallel to $a$ and $b$: $x=36°+62°=98°$."
+       },
+       {
+        "type": "p",
+        "text": "**Zig-zag rule:** the angles pointing left $=$ the angles pointing right: $50°+70°=x+45° \\Rightarrow x=75°$."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Before each question, ask",
+   "class": "check",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "Is it really $90°$? Marked or given?",
+      "Are the lines really parallel? Given, or proved?",
+      "Small or large? Equal, or a sum of $180°$?",
+      "Where is my anchor: $180°$ or $360°$?",
+      "Segments: did I count the gaps?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "class": "traps",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "**Trusting the picture.** Looks parallel or looks like $90°$ is not enough.",
+      "**Counting points, not gaps.**",
+      "Two angles side by side but **not on one straight line** don't have to add up to $180°$.",
+      "Adding only **one side** of the zig-zag.",
+      "Overlapping angles count a piece **twice**."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Which method when",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "table",
+     "class": "methods",
+     "head": [
+      "The question looks like",
+      "Do this"
+     ],
+     "rows": [
+      [
+       "Two parallel lines and a transversal",
+       "Find the Z (equal) or the U (sum $180°$); small $=$ small, large $=$ large."
+      ],
+      [
+       "Parallel is not written",
+       "Look for a rule that proves it: two right angles to the same line, or a U with $180°$."
+      ],
+      [
+       "Several pairs of lines",
+       "One pair at a time, ignore the rest, then a straight angle $180°$."
+      ],
+      [
+       "Angles given as letters",
+       "Plug in round numbers (same number each), cross out three choices; or an anchor $180°$ / $360°$."
+      ],
+      [
+       "A line that bends between parallels",
+       "A line through each bend, parallel to both; or the zig-zag rule."
+      ],
+      [
+       "Points on a line",
+       "Write each segment as pieces; overlap: $AC+BD=AD+BC$."
+      ],
+      [
+       "Choices that differ in the last digit",
+       "Check the last digit of the sum first."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "105+75+105+75 == 360",
+  "180-47 == 133",
+  "64/2 == 32",
+  "60+120 == 180",
+  "12+9-16 == 5",
+  "7-1 == 6",
+  "180-76-58 == 46",
+  "(76+58+46) % 10 == 0",
+  "36+62 == 98",
+  "50+70-45 == 75",
+  "x=140; 3*x-360 == 180-3*(180-x)",
+  "35+145 == 180"
+ ]
+}

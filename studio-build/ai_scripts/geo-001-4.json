@@ -1,0 +1,134 @@
+{
+ "videoId": "geo-001-4",
+ "style": "the teacher reads it herself (Reading Studio), topic-30 scripts (2026-10-14): math_patches/_ai_vis_t30.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with parallel lines, and learn two shapes that help us find their angles."
+  ],
+  [
+   {
+    "say": "In exam questions, whenever you see two parallel lines, look for this Z. It runs along line a, down the transversal, and along line b.",
+    "at": [
+     "whenever you see two parallel lines",
+     "look for this Z",
+     "It runs along"
+    ]
+   },
+   {
+    "say": "The Z holds two angles, one in each corner. The angle under line a and the angle above line b. They are equal. If this one is forty-eight, that one is forty-eight too.",
+    "at": [
+     "The Z holds two angles",
+     "one in each"
+    ]
+   },
+   {
+    "say": "The Z can also be turned the other way, and it works the same. Here too, forty-eight and forty-eight.",
+    "at": [
+     "turned the other way",
+     "it works the same",
+     "Here too"
+    ]
+   },
+   {
+    "say": "In school these angles have names, but we don't need them. Mark the Z, find the two equal angles inside it, and from there you can get every other angle, either equal or completing to a hundred eighty.",
+    "at": [
+     "In school these",
+     "Mark the Z",
+     "get every other"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more shape, the U. Here the two angles sit inside a U, on the same side of the transversal, between the two lines.",
+    "at": [
+     "One more shape",
+     "Here the two",
+     "sit inside a U",
+     "transversal, between the"
+    ]
+   },
+   {
+    "say": "They're not equal. One is small and one is large. And small plus large is a hundred eighty. So if the small one is sixty-two, the large one is a hundred eighteen.",
+    "at": [
+     "One is small",
+     "And small plus",
+     "the large one is",
+     "a hundred eighteen"
+    ]
+   },
+   {
+    "say": "Another example: seventy-five inside a U goes with a hundred five. So the Z means equal, and the U means they add up to a hundred eighty.",
+    "at": [
+     "Another example",
+     "U goes with"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "When do we know that two lines are parallel? There are three rules. One: two lines that are both perpendicular to the same line are parallel. They both go straight up from it, in the same direction, so they never meet.",
+    "at": [
+     "that two lines",
+     "two lines that are both perpendicular",
+     "perpendicular to the",
+     "so they never meet"
+    ]
+   },
+   {
+    "say": "Two: two lines that are both parallel to a third line are parallel to each other.",
+    "at": [
+     "both parallel to a third line",
+     "parallel to each other"
+    ]
+   },
+   {
+    "say": "Three: if the angles behave like the angles of parallel lines, the lines are parallel. For example, two angles in a U that add up to a hundred eighty, like a hundred ten and seventy.",
+    "at": [
+     "if the angles behave",
+     "the angles of",
+     "like a hundred ten and seventy"
+    ]
+   },
+   {
+    "say": "And the trap: on the exam, figures are not drawn to scale. Two lines can look parallel and not be. They're parallel only if it's given, or one of these rules proves it, and an angle is ninety only if it's marked or given.",
+    "at": [
+     "figures are not drawn to scale",
+     "Two lines can"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's sum up. A line goes on forever, and a segment has two ends. On a line, count the gaps, not the points.",
+    "at": [
+     "A line goes on forever",
+     "and a segment"
+    ]
+   },
+   {
+    "say": "All the angles around a point add up to three hundred sixty. A straight angle is a hundred eighty, and a right angle is ninety, but only if it's marked or given.",
+    "at": [
+     "All the angles around a point",
+     "point add up"
+    ]
+   },
+   {
+    "say": "Adjacent angles on a straight line add up to a hundred eighty. Vertical angles are equal. A bisector cuts an angle into two equal halves.",
+    "at": [
+     "Adjacent angles on a straight line",
+     "line add up"
+    ]
+   },
+   {
+    "say": "Parallel lines and a transversal: all the small angles are equal, all the large ones are equal, and small plus large is a hundred eighty. The Z means equal, and the U means a hundred eighty. And lines are parallel only if it's given or proved. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "Parallel lines and a transversal",
+     "all the small",
+     "The Z means equal",
+     "the U means"
+    ]
+   }
+  ]
+ ]
+}

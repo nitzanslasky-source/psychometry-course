@@ -1,0 +1,28 @@
+{
+ "videoId": "geo-004",
+ "style": "the teacher reads it herself (Reading Studio), topic-30 scripts (2026-10-14): math_patches/_ai_vis_t30.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "In the last lesson we learned the basics of lines and angles. In this lesson we'll practice harder exam questions."
+  ],
+  [
+   {
+    "say": "We'll practice only a few questions, because lines and angles is a fairly narrow topic on the exam. There are questions only about lines and angles, but most of the time these rules are one part of a bigger geometry question. So you'll keep using them in every geometry topic.",
+    "at": [
+     "few questions, because"
+    ]
+   },
+   {
+    "say": "So what makes a lines and angles question harder? Usually one of three things. A crowded figure, with several pairs of lines. Letters instead of numbers. Or a missing line that we have to add ourselves.",
+    "at": [
+     "A crowded figure",
+     "pairs of lines",
+     "Letters instead of numbers",
+     "Or a missing line",
+     "we have to"
+    ]
+   },
+   "We'll see each of them in the next questions, one at a time. [pause] Okay. I'll see you in the next video."
+  ]
+ ]
+}

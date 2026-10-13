@@ -5794,6 +5794,52 @@
           ]
         ]
       }
+    },
+    "geo-001-2": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "5.3": [
+          [
+            "The same hundred forty-five sits on it too",
+            "The same 145 sits on it too"
+          ]
+        ],
+        "5.4": [
+          [
+            "And the angle facing the hundred forty-five",
+            "And the angle facing the 145"
+          ]
+        ]
+      }
+    },
+    "solve-geo30-g006": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "The two one hundred eighties that are left make three hundred sixty",
+            "The two 180s that are left make 360"
+          ],
+          [
+            "move minus m, minus n and minus k",
+            "move −m, −n and −k"
+          ]
+        ],
+        "4.1": [
+          [
+            "three times one hundred forty is four hundred twenty, minus one hundred eighty",
+            "3 × 140 = 420, minus 180"
+          ],
+          [
+            "one hundred forty minus one hundred forty is zero, plus one hundred forty is one hundred forty",
+            "140 − 140 = 0, and 0 + 140 = 140"
+          ]
+        ]
+      }
     }
   }
 }

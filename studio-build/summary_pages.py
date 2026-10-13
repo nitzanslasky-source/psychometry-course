@@ -72,7 +72,23 @@ def _merge(svgs):
     return head + body + '</svg>'
 
 
+_COURSE = []
+
+
+def _question_svg(qid):
+    """2026-10-14 (Claude, minimal): builder "q.<question id>" = the question's own figure as the BUILT course shows it
+    (~/Downloads/Psychometric-Teacher-Studio-v19-hybrid.html, or env SP_COURSE), so the page gets the black-and-white
+    question figures."""
+    if not _COURSE:
+        src = os.environ.get('SP_COURSE', os.path.expanduser('~/Downloads/Psychometric-Teacher-Studio-v19-hybrid.html'))
+        s = open(src, encoding='utf-8').read(); k = s.find('window.COURSE=') + len('window.COURSE=')
+        _COURSE.append(json.JSONDecoder().raw_decode(s[k:])[0])
+    v = _COURSE[0]['questions'][qid].get('questionVisual') or {}
+    return v['svg']
+
+
 def build_figure(f, mods):
+    if f['builder'].startswith('q.'): return _question_svg(f['builder'][2:])
     mod, fn = f['builder'].split('.')
     if mod not in mods: mods[mod] = _module(mod)
     out = getattr(mods[mod], fn)(*([f['name']] if mod.startswith('t') else []) + list(f.get('args', [])),

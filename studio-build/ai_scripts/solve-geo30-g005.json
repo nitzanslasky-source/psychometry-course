@@ -1,0 +1,87 @@
+{
+ "videoId": "solve-geo30-g005",
+ "style": "the teacher reads it herself (Reading Studio), topic-30 scripts (2026-10-14): math_patches/_ai_vis_t30.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In the accompanying figure, a is parallel to b, and c is parallel to d. What is the value of x?",
+    "voice": "calm",
+    "at": [
+     "In the accompanying figure"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We have two pairs of parallel lines, and x sits on line b, right next to two other angles. If we find those two angles, we can complete to one hundred eighty. [short pause] This question can also be solved with triangles or with quadrilaterals, but we haven't learned them yet, so we'll use only the rules of lines. Then we'll see a shortcut with the last digits.",
+    "at": [
+     "of parallel lines",
+     "two angles, we"
+    ]
+   },
+   {
+    "say": "[short pause] Start with the first given, a is parallel to b, and line c cuts both of them. To see it simply, let's look only at these three lines and ignore the rest of the figure.",
+    "at": [
+     "Start with the first given",
+     "a is parallel",
+     "look only at these three lines",
+     "lines and ignore"
+    ]
+   },
+   {
+    "say": "Seventy-seven degrees is a small angle where line c crosses line a. Line c crosses line b with the same angles, and all the small angles are equal. Look for the Z: from line a, down along line c, to line b. The two angles in its corners are equal. So the angle between line c and line b, below line b and to the right of line c, is also seventy-seven.",
+    "at": [
+     "Look for the Z",
+     "line a, down"
+    ]
+   },
+   {
+    "say": "Now the second given, c is parallel to d, and the slanted line cuts both of them. Again, we look only at these three lines. Fifty-six is the small angle between the slanted line and line d. The slanted line crosses line c with the same angles. So the small angle between the slanted line and line c, just below line b, is also fifty-six.",
+    "at": [
+     "we look only at these",
+     "Fifty-six is the small angle",
+     "The slanted line crosses"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now back to the whole figure. Below line b, at the point where the three lines meet, there are three angles side by side, x, fifty-six and seventy-seven. Together they make the straight line b, so they add up to one hundred eighty.",
+    "at": [
+     "Now back to the whole figure",
+     "Below line b",
+     "so they add up to"
+    ]
+   },
+   {
+    "say": "Seventy-seven plus fifty-six. Add the tens, seventy plus fifty is a hundred twenty, and seven plus six is thirteen, so together a hundred thirty-three. x plus a hundred thirty-three is a hundred eighty, so x is a hundred eighty minus a hundred thirty-three, which is forty-seven. Choice number four is our answer.",
+    "at": [
+     "Add the tens",
+     "fifty is a",
+     "so x is a hundred eighty minus",
+     "which is forty-seven",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] We could make the end shorter, with the last digits. Some students don't even write the equation. They say, one angle ends in seven, one ends in six, and x makes the sum a hundred eighty, which ends in zero. Seven plus six is thirteen, which ends in three. So x has to end in seven, because three plus seven makes a ten.",
+    "at": [
+     "end shorter, with",
+     "one angle ends",
+     "Seven plus six is thirteen",
+     "which ends in three"
+    ]
+   },
+   {
+    "say": "Now straight to the choices. Thirty-three ends in three, out. Twenty-one ends in one, out. Fifty-nine ends in nine, out. Forty-seven ends in seven, so choice number four is our answer. On the exam, saving every second matters. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Thirty-three ends in three",
+     "Twenty-one ends in one",
+     "Fifty-nine ends in nine",
+     "so choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

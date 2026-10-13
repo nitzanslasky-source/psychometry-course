@@ -880,6 +880,25 @@ Z for parallel lines (30; geo 109-124) · gold 30-60-90 and silver "borekas" 45-
 - Carry-over boxes: 25 slides in topics 13-18 (list `CARRY` in `_method_visuals.py`), e.g. q-428 keeps "X = 2, 5, 8" while it checks divisibility by 2.
 
 
+### Geometry visual toolkit — Rule V3 (teacher, 2026-10-14)
+
+Teacher: "really think about what's the best way to visualize things. Like sometimes we only want to look at a part of the shape, so we can maybe cut out that part. Or if we want to add a radius, or add lines, or explain something general about the shape: all of this needs to be thought about, what's the best way to explain it." And: "when we cut out something … you also need to think about how the student will follow and understand what he's looking at. Like maybe highlight that shape within the original shape and only then pull it out."
+
+**Rule V3. In every geometry explanation, design the visual for each step BEFORE writing the cues: choose what makes it easiest for a weak student to see the idea, and make every transition followable.** The given figure (the question's own figure) stays black and white; everything we add is in the teaching colours. Builder: `GEO(name, layers)` in `_ai_vis_t30.py` (copy it to later geometry topics), a figure built in layers at the spoken words; elements `seg` (a line; dashed for construction lines), `dot`, `txt`, `arc` / `wedge` (an angle; a label = its value), `right` (the right-angle square with its dot), `tick` (equal sides), `par` (parallel arrows), `path` (a Z or U traced over the lines), `tint` (a region), `dim` (fade what is drawn so far, for focus).
+
+The toolkit:
+- **Step-by-step reveal.** Never show the finished, crowded diagram at once: the lines first, then each angle, mark or value as she names it.
+- **Marking.** Equal sides with tick marks, equal angles with matching arcs, right angles with the square, parallel lines with arrows; a value is written on the figure the moment it is found, so the figure fills up as the solution goes.
+- **Highlighting a region or segment.** A tint (or a thick trace, like the Z) on the part being discussed, held steadily until the subject changes.
+- **Focus / cut-out.** To look at one part (one triangle, the Z, one crossing): first tint and outline it INSIDE the original while she names it; then dim the rest, or show it again as its own enlarged copy next to the original, with the same labels and the same tint, so the link is obvious; the original stays visible (dimmed) with the part still outlined. When going back, the values found are written on the original figure.
+- **Construction lines.** Radii, heights, diagonals and auxiliary lines are drawn IN as she says them, dashed in the teaching colour, distinct from the given figure; point to the endpoints first ("from the bend, parallel to a"), then draw the line.
+- **General shapes and properties.** For a general rule (angles on a line, vertical angles, parallel lines), use a clean generic figure, and show the rule again on a second figure (another angle or position, 2-3 variations), not only the question's figure.
+- **Moving attention.** Never jump to another part of the figure without a cue: highlight the new part as she names it; the old highlight goes.
+- **A new slide or a redrawn figure** keeps the same orientation and labels, and carries the marked values over (V2).
+- **Colour coding is consistent within a lesson:** small angles teal, large angles orange (her green / orange), the part under study always the same tint, construction lines dashed teal, a wrong path red.
+
+Checks: render every step of every slide (not only the final state; `t30/frames.py`) and LOOK at the frames before calling a lesson ready. The review file says which technique each step uses, so she can check.
+
 ### Camera lessons in parts (teacher, 2026-10-14)
 
 **Rule.** A topic's camera first lesson is split into parts of about 3-4 minutes (2.5-4.5) at idea boundaries, so she can record each part in one or two takes (on camera, cuts are visible). A lesson under about 4.5 minutes stays one part. Write the lesson as ONE spec and split it with `math_patches/_camera_parts.py` (`CP.split(globals(), id, title, [(1, None), (slide, opening line), ...])` right before the visual passes, and `CP.add_to_course(M, S, topic)` at the start of the tNN.py redo hook). Part 1 keeps the lesson id, part k is `<id>-k`, titles "<Title> (Part k of n)". Each part: its own title slide; a later part opens with one short natural line (no recap of the previous part); every part but the last ends with "Okay. I'll see you in the next part."; a new board (a "So far" box only if the part really needs an earlier result). Content, examples and visuals are not changed by the split. Concept maps name the part ("camera lesson, part 2"). Applies to topics 21+ and topic 51 from the first draft.

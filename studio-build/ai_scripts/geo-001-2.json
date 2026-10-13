@@ -1,0 +1,129 @@
+{
+ "videoId": "geo-001-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-30 scripts (2026-10-14): math_patches/_ai_vis_t30.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with lines and angles, and get to know the kinds of angles."
+  ],
+  [
+   {
+    "say": "A right angle is exactly ninety degrees. Two lines that make a right angle are called perpendicular. We mark the right angle with a small square, and on the exam there's almost always a dot in the middle of it.",
+    "at": [
+     "exactly ninety degrees",
+     "Two lines that make a right angle",
+     "right angle are",
+     "with a small square",
+     "on the exam"
+    ]
+   },
+   {
+    "say": "Ninety is exactly a quarter of three hundred sixty. Around the point we have a quarter, a quarter, a quarter and a quarter. Ninety, ninety, ninety, ninety.",
+    "at": [
+     "a quarter, a quarter",
+     "quarter and a"
+    ]
+   },
+   {
+    "say": "The rule for the exam: an angle is ninety degrees only if it's marked like this, or it's given. If it only looks like ninety, that's not enough. This angle looks right, but there's no square, so we don't know it.",
+    "at": [
+     "This angle looks right",
+     "there's no square",
+     "don't know it"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "An acute angle is smaller than ninety degrees, like this forty-degree angle. Seventy-five is acute too.",
+    "at": [
+     "An acute angle is",
+     "than ninety degrees",
+     "like this forty-degree",
+     "is acute too"
+    ]
+   },
+   {
+    "say": "An obtuse angle is bigger than ninety degrees, like this one of a hundred thirty. A hundred sixty is obtuse too.",
+    "at": [
+     "An obtuse angle is",
+     "one of a"
+    ]
+   },
+   {
+    "say": "A straight angle is a hundred eighty degrees. It's really just a straight line with a vertex on it. Why a hundred eighty? A whole circle is three hundred sixty, and a straight line cuts it in half, a hundred eighty on this side, and a hundred eighty on the other side.",
+    "at": [
+     "A straight angle is",
+     "hundred eighty degrees"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Adjacent angles are two angles side by side on one straight line. Together they make the straight angle, so they add up to a hundred eighty.",
+    "at": [
+     "side by side on one straight line",
+     "Together they make"
+    ]
+   },
+   {
+    "say": "Here one of them is fifty. So the other one is a hundred eighty minus fifty, a hundred thirty. One is acute, and the one next to it is obtuse. Another example: if one is a hundred eight, the other is seventy-two.",
+    "at": [
+     "Here one of them is fifty",
+     "fifty. So the",
+     "a hundred thirty",
+     "One is acute"
+    ]
+   },
+   {
+    "say": "There's one special case. They can also both be right angles, and ninety plus ninety is a hundred eighty too.",
+    "at": [
+     "both be right angles",
+     "ninety plus ninety"
+    ]
+   },
+   {
+    "say": "But careful. Two angles side by side that are not on one straight line don't have to add up to a hundred eighty. Here, seventy plus eighty is only a hundred fifty.",
+    "at": [
+     "side by side",
+     "that are not on one straight line",
+     "straight line don't",
+     "Here, seventy plus eighty",
+     "only a hundred"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "When two lines cross, the angles that face each other, vertex to vertex, are called vertical angles. Vertical angles are equal. Let's see why.",
+    "at": [
+     "When two lines cross",
+     "angles that face"
+    ]
+   },
+   {
+    "say": "Say this angle is thirty-five degrees. It sits on this straight line, so the angle next to it completes it to a hundred eighty. That's a hundred forty-five.",
+    "at": [
+     "Say this angle is thirty-five",
+     "It sits on this straight line",
+     "line, so the"
+    ]
+   },
+   {
+    "say": "Now look at the other straight line. The same hundred forty-five sits on it too, so the angle on its other side also completes it to a hundred eighty. That's thirty-five again. So the two angles facing each other are equal, thirty-five and thirty-five.",
+    "at": [
+     "Now look at the other straight line",
+     "The same hundred"
+    ]
+   },
+   {
+    "say": "And the angle facing the hundred forty-five is a hundred forty-five too. Another example: if one angle is seventy-two, its neighbor is a hundred eight, and the angle facing it is seventy-two. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "And the angle facing",
+     "hundred forty-five is",
+     "Another example",
+     "is seventy-two, its"
+    ]
+   }
+  ]
+ ]
+}

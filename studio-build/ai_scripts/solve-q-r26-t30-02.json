@@ -1,0 +1,84 @@
+{
+ "videoId": "solve-q-r26-t30-02",
+ "style": "the teacher reads it herself (Reading Studio), topic-30 scripts (2026-10-14): math_patches/_ai_vis_t30.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Points A, B, C and D lie on a line in this order, as shown in the accompanying figure. Given: A C is eleven, B D is fourteen, and A D is twenty. What is the length of B C?",
+    "voice": "calm",
+    "at": [
+     "Points A, B, C and D"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "B C is the short piece in the middle, between B and C. [short pause] We'll solve it two ways, finding the pieces one by one, and then with the overlap rule.",
+    "at": [
+     "the short piece in the middle",
+     "middle, between B"
+    ]
+   },
+   {
+    "say": "[short pause] Let's put each length on the figure. A D is twenty, the whole line from A to D.",
+    "at": [
+     "Let's put each length",
+     "A D is twenty",
+     "whole line from"
+    ]
+   },
+   {
+    "say": "B D is fourteen, the part from B to the end. So what's left at the start, A B, is twenty minus fourteen, which is six.",
+    "at": [
+     "B D is fourteen",
+     "the part from B to the end",
+     "at the start",
+     "twenty minus fourteen"
+    ]
+   },
+   {
+    "say": "Now A C is eleven, and A C is made of A B and B C. A B is six, so B C is eleven minus six, which is five. Choice number three is our answer.",
+    "at": [
+     "Now A C is eleven",
+     "A C is made of",
+     "so B C is eleven minus six",
+     "minus six, which",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the second way, the overlap rule, in one line. Let's draw A C above the line and B D below it.",
+    "at": [
+     "the overlap rule",
+     "Let's draw A C above",
+     "and B D below it"
+    ]
+   },
+   {
+    "say": "Together, A C and B D cover the whole line from A to D, and the middle piece, B C, is covered twice. So A C plus B D is the whole line, A D, plus B C one more time.",
+    "at": [
+     "B D cover",
+     "is covered twice",
+     "So A C plus B D",
+     "D is the"
+    ]
+   },
+   {
+    "say": "Eleven plus fourteen is twenty-five, and the whole line is twenty. So twenty-five is twenty plus B C, and B C is five. Choice number three again.",
+    "at": [
+     "Eleven plus fourteen",
+     "and the whole",
+     "Choice number three again"
+    ]
+   },
+   {
+    "say": "Careful with the other choices. Six, choice number two, is A B, the wrong piece. And twenty-five, choice number four, is A C plus B D, with B C counted twice. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Six, choice number two",
+     "And twenty-five, choice number four"
+    ]
+   }
+  ]
+ ]
+}

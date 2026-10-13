@@ -1,0 +1,88 @@
+{
+ "videoId": "solve-geo30-g007",
+ "style": "the teacher reads it herself (Reading Studio), topic-30 scripts (2026-10-14): math_patches/_ai_vis_t30.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In the accompanying figure, a is parallel to b. What is the value of x?",
+    "voice": "calm",
+    "at": [
+     "In the accompanying figure"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The figure looks simple, two parallel lines, and the angles are numbers. So what makes it hard? The line between a and b is bent, and x is the angle between its two pieces. If one straight line cut both parallel lines, we'd know what to do, but here it's not clear where to start. [short pause] We'll solve it with a line we add ourselves, and then with a shortcut, the zig-zag rule.",
+    "at": [
+     "between a and",
+     "straight line cut"
+    ]
+   },
+   {
+    "say": "[short pause] A line we add to the figure to help us solve it is called an auxiliary line. There are several options here. We could extend one of the pieces until it meets the other parallel line, or draw a line perpendicular to both parallel lines. Those options make triangles, which we'll learn later. If you solved it that way, that's completely fine. Here we'll use only the rules of lines.",
+    "at": [
+     "A line",
+     "There are several",
+     "We could extend"
+    ]
+   },
+   {
+    "say": "So here's our auxiliary line. Start at the bend, the point where x is, and draw a line through it, parallel to line a and to line b.",
+    "at": [
+     "Start at the bend",
+     "point where x",
+     "and draw a line through it",
+     "and to line"
+    ]
+   },
+   {
+    "say": "The new line splits x into two parts. The upper part makes a Z with line a: from line a, along the upper piece, to the new line. The angles in the corners of a Z are equal, so the upper part is thirty-six.",
+    "at": [
+     "The upper part makes a Z",
+     "piece, to the",
+     "so the upper part is thirty-six"
+    ]
+   },
+   {
+    "say": "The lower part makes a Z with line b, the same way. So the lower part is sixty-two.",
+    "at": [
+     "The lower part makes a Z",
+     "So the lower part is sixty-two"
+    ]
+   },
+   {
+    "say": "So x is thirty-six plus sixty-two, which is ninety-eight degrees. Choice number two is our answer. Once you add the line, the question becomes an easy one. The hard part is realizing that a line is needed, and which one.",
+    "at": [
+     "So x is thirty-six plus sixty-two",
+     "sixty-two, which is",
+     "Choice number two is our answer",
+     "the question becomes",
+     "that a line"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a shortcut for a line that zig-zags between two parallel lines. Look at each marked angle and ask, where does its tip, the vertex, point? The thirty-six points left, and the sixty-two points left too. x points right.",
+    "at": [
+     "Now a",
+     "Now a shortcut",
+     "line that zig-zags",
+     "The thirty-six points left",
+     "the sixty-two points",
+     "x points right"
+    ]
+   },
+   {
+    "say": "The rule is, the angles that point left add up to the angles that point right. So x is thirty-six plus sixty-two, ninety-eight, in one step. Choice number two. It works because it's exactly what the line through the bend showed us. If you're not sure, draw the parallel line through the bend. That always works. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "The rule is",
+     "that point left",
+     "ninety-eight, in one step",
+     "number two. It",
+     "bend showed us"
+    ]
+   }
+  ]
+ ]
+}

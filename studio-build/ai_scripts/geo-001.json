@@ -1,0 +1,91 @@
+{
+ "videoId": "geo-001",
+ "style": "the teacher reads it herself (Reading Studio), topic-30 scripts (2026-10-14): math_patches/_ai_vis_t30.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome to geometry. In the quantitative part of the exam, about five questions out of twenty are geometry, so a quarter. Most of them are built on the rules, so if you know the rules well, you'll solve most of them. There are also questions that need a clever idea, but they're rarer. Let's start with the definitions."
+  ],
+  [
+   {
+    "say": "A line passes through two points. Here are two points, A and B, and we draw a line through them.",
+    "at": [
+     "Here are two points",
+     "and B, and",
+     "we draw a line through them"
+    ]
+   },
+   {
+    "say": "There's a basic rule: through two points there is exactly one straight line. Any other line through A and B can't be straight. It has to bend, like this one. And a line never ends. It goes on forever at both ends.",
+    "at": [
+     "two points there",
+     "It has to bend",
+     "this one. And",
+     "a line never ends"
+    ]
+   },
+   {
+    "say": "When we cut a line off between two points, we call it a segment. A segment has two ends, and it doesn't go on. This is segment C D, from C to D.",
+    "at": [
+     "off between two",
+     "This is segment C D",
+     "from C to"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Points on a line make segments, and here's one trap for the exam. Five points, equally spaced. How many gaps are there between them?",
+    "at": [
+     "make segments, and",
+     "Five points, equally spaced",
+     "How many gaps"
+    ]
+   },
+   {
+    "say": "Count the spaces, not the points. One, two, three, four gaps. Five points make four gaps, one less than the number of points.",
+    "at": [
+     "Count the spaces",
+     "One, two, three"
+    ]
+   },
+   {
+    "say": "Lengths live in the gaps. If every gap is three centimeters, then from the first point to the last one is four times three, twelve centimeters, not five times three, fifteen. And seven points in a row make six gaps.",
+    "at": [
+     "If every gap is three",
+     "centimeters, then from",
+     "twelve centimeters",
+     "And seven points"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Intersecting lines are two straight lines that cross each other at one point. Around that point we get a kind of circle of angles, four angles.",
+    "at": [
+     "Intersecting lines are",
+     "lines that cross",
+     "four angles"
+    ]
+   },
+   {
+    "say": "A whole circle of angles is three hundred sixty degrees. For example, here the angles are a hundred five, seventy-five, a hundred five and seventy-five.",
+    "at": [
+     "A whole circle",
+     "seventy-five, a hundred",
+     "a hundred five and",
+     "and seventy-five."
+    ]
+   },
+   {
+    "say": "Together, a hundred five plus seventy-five is a hundred eighty, and twice that is three hundred sixty. All the angles around one point always add up to three hundred sixty, even when more lines cross there. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "plus seventy-five is",
+     "twice that is three hundred sixty",
+     "All the angles around one point",
+     "three hundred sixty, even",
+     "even when more lines"
+    ]
+   }
+  ]
+ ]
+}

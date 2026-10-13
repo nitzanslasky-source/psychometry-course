@@ -1,0 +1,133 @@
+{
+ "videoId": "solve-geo30-g006",
+ "style": "the teacher reads it herself (Reading Studio), topic-30 scripts (2026-10-14): math_patches/_ai_vis_t30.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In the accompanying figure, four lines intersect at one point. Which expression equals x?",
+    "voice": "calm",
+    "at": [
+     "In the accompanying figure"
+    ],
+    "pause": 0.5
+   },
+   "What makes this question hard? Every angle is given with a letter, not a number. That's the main way exam geometry questions are made harder. [short pause] We'll solve it three ways, with the full math, by plugging in numbers instead of the letters, and with an insight, for those who see it.",
+   {
+    "say": "[short pause] Full math first. We need x, and there are many letters, so we need an anchor, a known total. That's either a full turn, three hundred sixty degrees, or a straight angle, one hundred eighty.",
+    "at": [
+     "Full math first",
+     "We need x"
+    ]
+   },
+   {
+    "say": "Start with m. The angle right next to m fills the rest of a straight line together with m, so it's one hundred eighty minus m. In the same way, the angle next to n is one hundred eighty minus n, and the angle next to k is one hundred eighty minus k.",
+    "at": [
+     "Start with m",
+     "line together with",
+     "so it's one",
+     "the angle next to n",
+     "is one hundred",
+     "the angle next to k"
+    ]
+   },
+   {
+    "say": "Now look at this slanted line. On one side of it there are exactly four angles, x and the three angles we just found. Together they make a straight angle, so they add up to one hundred eighty.",
+    "at": [
+     "Now look at this slanted line",
+     "On one side",
+     "so they add up to one hundred eighty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Careful with the brackets. There's a plus in front of each bracket, so we can just drop them. The one hundred eighty on the left and the one hundred eighty on the right cancel. We keep x on the left, and move minus m, minus n and minus k to the right side as plus. The two one hundred eighties that are left make three hundred sixty, and they move across as minus three hundred sixty.",
+    "at": [
+     "Careful with the brackets",
+     "There's a plus"
+    ]
+   },
+   {
+    "say": "So x equals m plus n plus k, minus three hundred sixty. Choice number four is our answer. Once you see the straight angle, the math is short. The hard part is seeing it on the last question of the section.",
+    "at": [
+     "So x equals",
+     "n plus k",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now plugging in numbers. The question was made harder by putting letters instead of numbers, so we put numbers back. Why is that allowed? The right expression equals x for every possible m, n and k, so it also equals x for one example that we choose. We find x in our example, and then a choice that gives a different value is out.",
+    "at": [
+     "The question was",
+     "we put numbers back",
+     "is that allowed"
+    ]
+   },
+   {
+    "say": "Which numbers? Numbers that fit the figure, and are easy. m looks obtuse, about one hundred forty degrees, so m is one hundred forty. And we choose one hundred forty for n and k too. Using the same number everywhere makes the choices much easier to check later.",
+    "at": [
+     "m looks obtuse",
+     "And we choose"
+    ]
+   },
+   {
+    "say": "With numbers the neighbors are easy. The angle next to each one hundred forty is forty. Forty plus forty plus forty is a hundred twenty. With x they make a straight angle, so x is a hundred eighty minus a hundred twenty, which is sixty degrees, in our example.",
+    "at": [
+     "The angle next to each",
+     "one hundred forty",
+     "which is sixty degrees",
+     "in our example"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now put one hundred forty into each choice and look for sixty. Choice number one, three times one hundred forty is four hundred twenty, minus one hundred eighty. That's far more than sixty, so it's out. Choice number two, one hundred forty minus one hundred forty is zero, plus one hundred forty is one hundred forty. Out. Choice number three, zero minus one hundred forty is negative. Out.",
+    "at": [
+     "forty into each",
+     "number one, three",
+     "hundred forty is",
+     "so it's out.",
+     "is one hundred forty. Out",
+     "is negative. Out"
+    ]
+   },
+   {
+    "say": "Choice number four, four hundred twenty minus three hundred sixty, is exactly sixty. Three choices are out, so choice number four is our answer. One more check: the four choices gave four different values, two hundred forty, one hundred forty, a negative and sixty. If two choices had given the same value, we'd plug in again with other numbers.",
+    "at": [
+     "Choice number four, four hundred twenty",
+     "number four, four",
+     "minus three hundred",
+     "so choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And the insight. Look at the three angles m, n and k together. m and k go around most of the turn, and n covers the rest, so together they cover the whole full turn, three hundred sixty degrees. But they overlap. The part where m and n overlap is exactly x, so x is counted twice.",
+    "at": [
+     "Look at the three angles",
+     "m, n and",
+     "m and k go around",
+     "most of the turn",
+     "and n covers the rest",
+     "so together they",
+     "is exactly x",
+     "is counted twice"
+    ]
+   },
+   {
+    "say": "So m plus n plus k is three hundred sixty plus x. Move the three hundred sixty to the other side, and x equals m plus n plus k minus three hundred sixty. Choice number four. Strong students sometimes see this at once. Most students find plugging in numbers easier here, and the answer is just as sure. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So m plus n plus k",
+     "plus x. Move",
+     "minus three hundred sixty. Choice number four",
+     "number four. Strong",
+     "Most students find"
+    ]
+   }
+  ]
+ ]
+}
