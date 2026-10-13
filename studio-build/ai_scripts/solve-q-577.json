@@ -1,0 +1,95 @@
+{
+ "videoId": "solve-q-577",
+ "style": "the teacher reads it herself (Reading Studio), topic-20 scripts (2026-10-13): math_patches/_ai_vis_t20.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: a, b and c are integers, c is smaller than b, which is smaller than a, and a plus b is smaller than sixteen. Which of the following cannot be the value of b plus c?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "They ask what b plus c cannot be. So we'll find the biggest value b plus c can ever have. [short pause] We'll solve it three ways, with the biggest possible value, with numbers that make b plus c as big as possible, and by testing the answers.",
+    "at": [
+     "They ask what b plus c cannot be"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with the second given. a and b are integers, so a plus b is an integer too. Smaller than sixteen means at most fifteen.",
+    "at": [
+     "Let's start",
+     "Smaller than sixteen means"
+    ]
+   },
+   {
+    "say": "Now compare the two sums. a plus b is the sum of the two biggest numbers, and b plus c is the sum of the two smallest. Both sums have b, so the difference between them is a minus c.",
+    "at": [
+     "Now compare the",
+     "Both sums have b",
+     "a minus c"
+    ]
+   },
+   {
+    "say": "How big is a minus c? These are integers, so c is at least one below b, and b is at least one below a. So c is at least two below a, and a minus c is at least two.",
+    "at": [
+     "How big is a minus c",
+     "c? These are",
+     "c is at least one below b",
+     "and b is at least one",
+     "one below a",
+     "So c is at least two below a"
+    ]
+   },
+   {
+    "say": "So b plus c is a plus b, which is at most fifteen, minus a minus c, which is at least two. That's at most thirteen. Fourteen is more than thirteen, so b plus c can never be fourteen. Choice number four is our answer.",
+    "at": [
+     "So b plus",
+     "That's at most thirteen",
+     "Fourteen is more",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way is to build numbers that make b plus c as big as possible. a has to be bigger than b, and a plus b has to stay at most fifteen. To make b as big as it can be, take a and b as close as possible: a is eight and b is seven. Eight plus seven is fifteen, which is allowed.",
+    "at": [
+     "Another way",
+     "a is eight",
+     "Eight plus seven"
+    ]
+   },
+   {
+    "say": "c has to be smaller than b, so the biggest c is six. Then b plus c is seven plus six, which is thirteen. If we try a bigger a, like nine, then b can only be six, and b plus c gets smaller. So thirteen is the biggest b plus c can be, and fourteen is out of reach. Choice number four.",
+    "at": [
+     "so the biggest c is six",
+     "Then b plus",
+     "fourteen is out of reach",
+     "number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And a third way, testing the answers. The question hides a biggest value, so it makes sense to start with the biggest choice, fourteen. Can b plus c be fourteen? c is smaller than b, so b has to be at least eight, with c at most six. Then a is bigger than b, so a is at least nine, and a plus b is at least seventeen. That's not smaller than sixteen.",
+    "at": [
+     "And a",
+     "The question hides",
+     "Can b plus c be fourteen",
+     "c is smaller"
+    ]
+   },
+   {
+    "say": "So b plus c can't be fourteen, and choice number four is our answer. The question asks for the one value that cannot happen, so we can stop here. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "and choice number four is our answer",
+     "The question asks",
+     "so we can"
+    ]
+   }
+  ]
+ ]
+}

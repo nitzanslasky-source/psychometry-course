@@ -78,6 +78,8 @@ def apply(s, D=None):
         import studio_done
         planned = planned_ids(D, studio_done.recorded_ids())
         ids = (ids | set(planned)) - teacher_ids(D)   # topic 51: the teacher records it all
+        # 2026-10-13: the topic first lessons have reading scripts now, but she records them herself with the camera on
+        ids -= set(first_lessons(D).values())
     print('studio_ai: %d AI videos (%d planned: unrecorded non-first math videos; topic 51 is the teacher\'s)' % (len(ids), len(planned)))
     js = JS.replace('__AI_IDS__', json.dumps(sorted(ids))) + 'window.AI_PLANNED=new Set(%s);\n' % json.dumps(planned)
     return s[:k] + js.lstrip() + s[k:]

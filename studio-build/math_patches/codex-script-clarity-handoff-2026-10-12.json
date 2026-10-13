@@ -3422,5 +3422,29 @@
         "recorded": false
       }
     ]
+  },
+  "reread_fit_cleanup_2026_10_13": {
+    "request": "Approved cleanup of audited pending rereads only; restore redundant prefixes to recorded wording and tighten useful clarifications.",
+    "changes": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/work/reread-fit-audit-2026-10-13/fixed/changes.json",
+    "verification": {
+      "changed_paragraphs": 96,
+      "lessons": 51,
+      "regeneration_verified": true,
+      "overlay_idempotent": true,
+      "cue_anchor_checks": 3228,
+      "fonts_controls_and_layout_unchanged": true,
+      "recorded_paragraphs_outside_approved_pending_list_unchanged": true,
+      "paragraph_and_slide_indices_unchanged": true,
+      "no_audio_or_video_files_modified": true,
+      "restored_original_q517_board_items": [
+        "h3",
+        "i3"
+      ],
+      "remaining_rereads": 109,
+      "builtAt": "2026-10-13T17:00:10+03:00",
+      "backup": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/work/reread-fit-audit-2026-10-13/before-fixes"
+    },
+    "integration": "The existing overlay helper is unchanged. Revised entries retain original_cues and reviewed_cues so regeneration preserves the original cue actions and updated speech anchors. In q-517 only, two text board items were restored to the established approach, removing newly introduced shortcuts. Do not remove the overlay.",
+    "lessons_111_onwards": "Review and handoff only in this task: Claude is to rewrite unrecorded scripts with teacher-approved constraints, five lessons at a time."
   }
 }

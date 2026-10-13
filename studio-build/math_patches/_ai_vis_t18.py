@@ -388,6 +388,107 @@ def ZL(name, lo, hi, layers, ticks=(-1, 0, 1), w=1060, col=0, title='Number line
         out.append((key, _svg(VB, b, key)))
     return _layers(name, out, w, col)
 
+# ------------------------------------------------------------------------------------------------ digit-puzzles (camera lesson)
+# 2026-10-13 teacher: her camera first lesson is a reading script too (same style, handwriting, camera on, more examples).
+# Hebrew lesson (alg 18204-18450): letters are digits ("a number in another language"), different digits only when the
+# question says so, the leading digit is never 0 ("not an area code"), the four steps, every puzzle could be plugged in
+# (a computer would), writing a number with its digits (27 = 10·2 + 7, 538, 10A + B, 100A + 10B + C), plugging in is
+# usually faster.  Her worked examples became the question videos (q-512 the ones column and the leading 1, q-513 the
+# special digits, q-514 AB − BA, q-516 subtraction into addition) and are not repeated here.  NEW examples: A4 + 3B = 71
+# built with the COLS figure (V1), two puzzles in words (4 and 7 times the digit sum) with their non-examples.
+_dpm_spec = importlib.util.spec_from_file_location('_method_visuals_dp18', os.path.join(HERE, '_method_visuals.py'))
+_DPM = importlib.util.module_from_spec(_dpm_spec); _dpm_spec.loader.exec_module(_DPM)
+dpc = _DPM.items(_layers, 'dpc', _DPM.COLS(['A4', '3B', '71'], '+', [
+    ('line', dict(n=2, bar=False, res=False)), ('res', dict(bar=True, res=True)), ('o', dict(hl=0)),
+    ('b7', dict(carry={1: '1'}, notes='B=7')), ('t', dict(hl=1)), ('a3', dict(hl=None, notes='A=3, B=7'))], size=50),
+    col=1, own=True)
+dp1 = I('dp1', '$\\overline{AB}$: $\\ A=4,\\ B=7$: $\\ 47$, not $4\\cdot7$', size=34, hand='AB :    A = 4,  B = 7 :    47,   not  4·7')
+dp2 = I('dp2', '$A=2,\\ B=3$: $\\ \\overline{AB}=23$, not $6$', size=34, hand='A = 2,  B = 3 :    AB = 23,   not  6')
+dp3 = I('dp3', '$\\overline{ABC}$: $\\ A=5,\\ B=3,\\ C=8$: $\\ 538$', size=34, hand='ABC :    A = 5,  B = 3,  C = 8 :    538')
+dp4 = I('dp4', '$\\overline{AA}$: $\\ 33,\\ 77$ ✓ $\\quad 37$ ✗', size=34, hand='AA :    33,   77   ✓        37   ✗')
+dp5 = I('dp5', 'Different digits only if the question says so: $\\ $then $\\overline{AB}\\ne22,\\ 55$', size=28)
+dp6 = I('dp6', '$\\overline{AB}$: $\\ A$ from $1$ to $9$, $\\ B$ from $0$ to $9$ $\\quad$ no $08$', size=30)
+dp7 = I('dp7', '$27=10\\cdot2+7 \\qquad 538=100\\cdot5+10\\cdot3+8$', size=32, hand='27 = 10·2 + 7        538 = 100·5 + 10·3 + 8')
+dp8 = I('dp8', '$\\overline{AB}=10A+B \\qquad \\overline{ABC}=100A+10B+C$', size=32, hand='AB = 10A + B        ABC = 100A + 10B + C')
+dp9 = I('dp9', '$A=6,\\ B=1$: $\\ 10\\cdot6+1=61$', size=32, hand='A = 6,  B = 1 :    10·6 + 1 = 61')
+dp10 = I('dp10', '1. Vertically $\\quad$ 2. Ones column $\\quad$ 3. Leftmost digit, size $\\quad$ 4. Plug in', size=28)
+dp11 = I('dp11', 'Plugging in always works. Steps 1-3 save tries.', size=28)
+dp12 = I('dp12', '$34+37=71$ ✓', size=34, hand='34 + 37 = 71   ✓')
+dp13 = I('dp13', '$10A+B=4(A+B)$', size=34, hand='10A + B = 4(A + B)')
+dp14 = I('dp14', '$6A=3B$: $\\ B=2A$', size=34, hand='6A = 3B :    B = 2A')
+dp15 = I('dp15', '$12,\\ 24,\\ 36,\\ 48$ $\\quad A=5$: $\\ B=10$ ✗', size=32, hand='12,   24,   36,   48        A = 5 :    B = 10   ✗')
+dp16 = I('dp16', '$24$: $\\ 4\\cdot(2+4)=24$ ✓', size=32, hand='24 :    4·(2 + 4) = 24   ✓')
+dp17 = I('dp17', '$10A+B=7(A+B)$: $\\ 3A=6B$, $\\ A=2B$', size=32, hand='10A + B = 7(A + B) :    3A = 6B,    A = 2B')
+dp18 = I('dp18', '$21,\\ 42,\\ 63,\\ 84$ $\\quad B=0$: $\\ A=0$ ✗', size=32, hand='21,   42,   63,   84        B = 0 :    A = 0   ✗')
+video('digit-puzzles', 'lesson', slides=[
+    S('Exercises with Letters',
+      L("Welcome. Sometimes a calculation on the exam is written with letters instead of digits. Instead of thirty-two "
+        "plus fifty-seven, we get letters, and each letter stands for a digit. It's a bit like the number puzzles in a "
+        "weekend newspaper, only much smaller. Let's see what the letters mean, and a short technique for these puzzles.")),
+    S('What the letters mean',
+      L("Each letter stands for a digit. A B with a bar on top is a two-digit number. A is its tens digit, and B is its "
+        "ones digit. It is not A times B. For example, if A is four and B is seven, A B is forty-seven, not four times "
+        "seven.", show(dp1, 'if A is four and B is seven')),
+      L("Think of it as a number written in another language. In that language, two is drawn as A, and three is drawn as "
+        "B. So A B is simply twenty-three. It's not two times three, which is six.", show(dp2, 'So A B is simply twenty-three')),
+      L("The bar on top tells us that the letters are the digits of one number. A B C with a bar is a three-digit number. "
+        "If A is five, B is three and C is eight, A B C is five hundred thirty-eight.", show(dp3, 'If A is five, B is three'))),
+    S('Same letter, different letters',
+      L("The same letter always stands for the same digit. So A A can be thirty-three or seventy-seven, but never "
+        "thirty-seven.", show(dp4, 'So A A can be thirty-three')),
+      L("Different letters are different digits only when the question says so. In most exam questions it does say "
+        "different digits, and then A B can't be twenty-two or fifty-five. If the question doesn't say it, A and B may be "
+        "the same digit.", show(dp5, 'only when the question says so')),
+      L("And the leftmost digit is never zero. Nobody writes oh eight. It's not a phone area code, it's just eight. So in "
+        "A B, A is a digit from one to nine, and B can be any digit from zero to nine.", show(dp6, 'So in A B, A is a digit'))),
+    S('A number written with its digits',
+      L("Every number can be written with its digits. Twenty-seven has two tens and seven ones, so it's ten times two, "
+        "plus seven. Five hundred thirty-eight is a hundred times five, plus ten times three, plus eight.",
+        show(dp7, 'Twenty-seven has two tens')),
+      L("Letters work the same way. A B is ten A plus B, because A is in the tens place. And A B C is a hundred A, plus ten "
+        "B, plus C. For example, if A is six and B is one, ten times six plus one is sixty-one.",
+        show(dp8, 'A B is ten A plus B'), show(dp9, 'if A is six and B is one')),
+      L("Some students like to solve with this form. Usually, plugging in two numbers is faster, but this form is what we "
+        "need when a puzzle comes in words.", pt('dp8', 'Some students like to solve'))),
+    S('The four steps',
+      L("Now the technique. Many letter puzzles are solved with four steps. One, write the calculation vertically, with "
+        "the ones digits lined up. Two, check the ones column. Three, check the leftmost digit and the size of the numbers. "
+        "And four, plug in numbers and see what fits. When they ask for one letter, we can plug in the answer choices for "
+        "that letter.", show(dp10, 'Many letter puzzles are solved with four steps')),
+      L("In fact, every letter puzzle could be solved just by plugging in. A computer would simply try every option, and "
+        "it would be fast. We're not computers, so steps one to three are shortcuts. They tell us which numbers we no longer "
+        "need to try. We use the steps that help in the question, not every step every time.",
+        show(dp11, 'every letter puzzle could be solved'))),
+    S('The steps on an example',
+      L("Let's try them. A four, plus three B, equals seventy-one. Step one, we write it vertically, with the ones digits "
+        "lined up.", show(dpc['line'], 'Step one, we write it vertically'), show(dpc['res'], 'with the ones digits')),
+      L("Step two, the ones column. Four plus B ends in one. Four plus seven is eleven, which ends in one, and no other "
+        "digit works. So B is seven, and we carry one to the tens column.", show(dpc['o'], 'Step two, the ones column'),
+        show(dpc['b7'], 'So B is seven')),
+      L("Step three, the tens column, which is the leftmost one here. A plus three, plus the carried one, is seven. So A "
+        "plus four is seven, and A is three.", show(dpc['t'], 'Step three, the tens column'), show(dpc['a3'], 'and A is three')),
+      L("Let's check. Thirty-four plus thirty-seven is seventy-one. It fits, and here we didn't even need step four.",
+        show(dp12, 'Thirty-four plus thirty-seven'))),
+    S('A puzzle in words',
+      L("Sometimes the puzzle comes in words, with no columns. For example, a two-digit number is four times the sum of "
+        "its digits. We write the number as ten A plus B, and its digit sum as A plus B. So ten A plus B equals four times "
+        "the whole bracket, A plus B.", show(dp13, 'So ten A plus B equals four times')),
+      L("Open the bracket: ten A plus B equals four A plus four B. Subtract four A and B from both sides, and six A equals "
+        "three B. Divide both sides by three, and B equals two A. So B is twice A.", show(dp14, 'and six A equals three B')),
+      L("Now the digits that fit. A can't be zero, because it's the leftmost digit. A is one gives B is two, so twelve. "
+        "Then twenty-four, thirty-six and forty-eight. A is five would need B to be ten, and ten is not a digit, so we stop "
+        "there. Let's check one. Twenty-four has the digit sum six, and four times six is twenty-four.",
+        show(dp15, 'A is one gives B is two'), show(dp16, "Let's check one"))),
+    S('A puzzle in words',
+      L("One more. A two-digit number is seven times the sum of its digits. Ten A plus B equals seven A plus seven B. "
+        "Subtract seven A and B from both sides, and three A equals six B, so A equals two B. B is one gives twenty-one, "
+        "and then forty-two, sixty-three and eighty-four. B is zero would make A zero too, and a number can't start with "
+        "zero.", show(dp17, 'A two-digit number is seven times'), show(dp18, 'B is one gives twenty-one')),
+      L("Each question that follows uses these steps, and teaches one more tool. Try each question first, and then watch "
+        "its solution. [pause] Okay. I'll see you in the next video.", pt('dp18', 'Each question that follows')),
+      sb='A puzzle in words'),
+])
+
 # ------------------------------------------------------------------------------------------------ q-512 (Hebrew: lesson example 1)
 # NEW: the ones column - nothing carries in, so "A + A ends in A" means A = 0; the leading-digit rule (two numbers, more
 # digits in the sum -> 1; why: 99 + 99 = 198; only for TWO numbers); B + D = 11 is enough, no need to know B and D.

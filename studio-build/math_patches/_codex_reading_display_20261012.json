@@ -15,7 +15,8 @@
     "solve-q-r26-t18-01",
     "solve-q-r26-t18-02",
     "solve-q-r26-t18-03",
-    "r26-t18-summary"
+    "r26-t18-summary",
+    "digit-puzzles"
   ],
   "lessons": {
     "solve-q-358": {
@@ -5288,6 +5289,448 @@
           [
             "three over the whole a plus one",
             "3/(a + 1)"
+          ]
+        ]
+      }
+    },
+    "whole-numbers": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "negative four times negative five",
+            "(−4) × (−5)"
+          ]
+        ],
+        "2.2": [
+          [
+            "Negative four times five",
+            "(−4) × 5"
+          ]
+        ],
+        "2.3": [
+          [
+            "Negative three times negative six",
+            "(−3) × (−6)"
+          ]
+        ],
+        "3.2": [
+          [
+            "Negative two, times three, times negative one, times negative four",
+            "(−2) × 3 × (−1) × (−4)"
+          ]
+        ],
+        "3.3": [
+          [
+            "negative two, times negative three, times negative one, times negative four",
+            "(−2) × (−3) × (−1) × (−4)"
+          ]
+        ],
+        "4.1": [
+          [
+            "Negative twenty-four divided by negative eight",
+            "(−24) ÷ (−8)"
+          ],
+          [
+            "Negative twenty-four divided by eight",
+            "(−24) ÷ 8"
+          ],
+          [
+            "twenty-four divided by negative eight",
+            "24 ÷ (−8)"
+          ]
+        ],
+        "4.2": [
+          [
+            "Negative six times negative two, over negative three",
+            "((−6) × (−2))/(−3)"
+          ],
+          [
+            "so it's negative four",
+            "so it's −4"
+          ]
+        ],
+        "5.1": [
+          [
+            "negative three, squared, is",
+            "(−3)² is"
+          ]
+        ],
+        "5.2": [
+          [
+            "negative two, cubed, is",
+            "(−2)³ is"
+          ]
+        ],
+        "5.4": [
+          [
+            "If x is negative nine, minus x is nine",
+            "If x = −9, then −x = 9"
+          ],
+          [
+            "If x is five, minus x is negative five",
+            "If x = 5, then −x = −5"
+          ]
+        ],
+        "6.1": [
+          [
+            "Negative three plus negative five",
+            "(−3) + (−5)"
+          ]
+        ]
+      }
+    },
+    "number-line": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "5.3": [
+          [
+            "Five quarters, cubed, against",
+            "(5/4)³ against"
+          ],
+          [
+            "So five quarters, cubed, is bigger",
+            "So (5/4)³ is bigger"
+          ]
+        ],
+        "6.1": [
+          [
+            "Negative five, squared, is twenty-five, and negative three, to the power of four, is eighty-one",
+            "(−5)² = 25, and (−3)⁴ = 81"
+          ]
+        ],
+        "6.2": [
+          [
+            "Negative five, in brackets, squared, is twenty-five",
+            "(−5)² = 25"
+          ],
+          [
+            "without brackets, negative five squared means we square only the five",
+            "without brackets, −5² means we square only the 5"
+          ]
+        ],
+        "8.4": [
+          [
+            "is three and a half",
+            "is 3.5"
+          ]
+        ]
+      }
+    },
+    "new-operation": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "5.3": [
+          [
+            "Without brackets, negative two squared means the negative of two squared",
+            "Without brackets, −2² means −(2²)"
+          ]
+        ],
+        "5.2": [
+          [
+            "The bracket negative two, squared, is",
+            "(−2)² is"
+          ]
+        ],
+        "5.4": [
+          [
+            "diamond of x plus two is the bracket x plus two, squared, plus three times the bracket x plus two",
+            "diamond of (x + 2) is (x + 2)² + 3 × (x + 2)"
+          ]
+        ],
+        "5.5": [
+          [
+            "The bracket x plus two, squared, is",
+            "(x + 2)² is"
+          ],
+          [
+            "Three times the bracket x plus two is",
+            "3 × (x + 2) is"
+          ]
+        ],
+        "6.4": [
+          [
+            "diamond of, in brackets, three plus four",
+            "diamond of (3 + 4)"
+          ]
+        ],
+        "7.4": [
+          [
+            "the bracket one star two, star three",
+            "(1 star 2) star 3"
+          ]
+        ],
+        "8.2": [
+          [
+            "Six x is one example",
+            "6x is one example"
+          ]
+        ],
+        "9.3": [
+          [
+            "five times the bracket b plus a",
+            "5 × (b + a)"
+          ]
+        ],
+        "9.4": [
+          [
+            "Four star four equals four star four",
+            "4 star 4 = 4 star 4"
+          ]
+        ],
+        "10.2": [
+          [
+            "five times the bracket k plus two",
+            "5 × (k + 2)"
+          ]
+        ]
+      }
+    },
+    "digit-puzzles": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "6.1": [
+          [
+            "A four, plus three B, equals seventy-one",
+            "A̅4̅ + 3̅B̅ = 71"
+          ]
+        ]
+      }
+    },
+    "algebraic-understanding": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "5.1": [
+          [
+            "the bracket a plus b, times the bracket a minus b",
+            "(a + b) × (a − b)"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t20-01": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.5": [
+          [
+            "Three over two is one and a half",
+            "3/2 = 1½"
+          ]
+        ],
+        "3.1": [
+          [
+            "x squared minus y squared is, in brackets, x minus y, times, in brackets, x plus y",
+            "x² − y² = (x − y) × (x + y)"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t20-02": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.3": [
+          [
+            "Negative one half, cubed, is negative one half times negative one half times negative one half",
+            "(−½)³ = (−½) × (−½) × (−½)"
+          ],
+          [
+            "so it's negative one eighth",
+            "so it's −1/8"
+          ]
+        ],
+        "1.4": [
+          [
+            "One over negative one half is negative two",
+            "1/(−½) = −2"
+          ]
+        ],
+        "2.2": [
+          [
+            "one over negative one half is negative two, and one over negative one tenth is negative ten",
+            "1/(−½) = −2, and 1/(−1/10) = −10"
+          ]
+        ]
+      }
+    },
+    "solve-q-577": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.6": [
+          [
+            "So b plus c is a plus b, which is at most fifteen, minus a minus c, which is at least two",
+            "So b + c = (a + b) − (a − c), where a + b ≤ 15 and a − c ≥ 2"
+          ]
+        ]
+      }
+    },
+    "solve-q-578": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "the right side becomes the bracket twenty-five b, cubed",
+            "the right side becomes (25b)³"
+          ],
+          [
+            "So the bracket k y, squared, equals the bracket twenty-five b, cubed",
+            "So (ky)² = (25b)³"
+          ]
+        ]
+      }
+    },
+    "solve-q-579": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "r squared over p q",
+            "r²/(pq)"
+          ]
+        ],
+        "1.3": [
+          [
+            "p over q is p squared over p q, and q over p is q squared over p q",
+            "p/q = p²/(pq), and q/p = q²/(pq)"
+          ],
+          [
+            "So the right side is p squared plus q squared, over p q",
+            "So the right side is (p² + q²)/(pq)"
+          ]
+        ]
+      }
+    },
+    "r26-t20-counting": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "there are b minus a, plus one, whole numbers",
+            "there are b − a + 1 whole numbers"
+          ]
+        ]
+      }
+    },
+    "r26-t20-summary": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "5.1": [
+          [
+            "with both ends in, it's b minus a, plus one",
+            "with both ends in, it's b − a + 1"
+          ],
+          [
+            "With both ends out, b minus a, minus one",
+            "With both ends out, b − a − 1"
+          ]
+        ]
+      }
+    },
+    "divisibility": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "6.4": [
+          [
+            "One, minus three, plus three, minus one, is zero",
+            "1 − 3 + 3 − 1 = 0"
+          ],
+          [
+            "Four, minus eight, plus two, is negative two",
+            "4 − 8 + 2 = −2"
+          ]
+        ],
+        "14.3": [
+          [
+            "the biggest one is the divisor minus one",
+            "the biggest one is divisor − 1"
+          ]
+        ]
+      }
+    },
+    "absolute-value": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "4.2": [
+          [
+            "three plus negative ten is three minus ten",
+            "3 + (−10) = 3 − 10"
+          ]
+        ],
+        "5.2": [
+          [
+            "The absolute value of the whole product, negative four times five, is the absolute value of negative twenty",
+            "|−4 × 5| = |−20|"
+          ],
+          [
+            "the absolute value of negative four, times the absolute value of five",
+            "|−4| × |5|"
+          ]
+        ],
+        "5.4": [
+          [
+            "The absolute value of the whole sum, a plus b, is smaller than or equal to the absolute value of a, plus the absolute value of b",
+            "|a + b| ≤ |a| + |b|"
+          ]
+        ],
+        "6.1": [
+          [
+            "Negative three plus negative four",
+            "−3 + (−4)"
+          ]
+        ],
+        "7.3": [
+          [
+            "minus negative six is six too",
+            "−(−6) = 6 too"
+          ]
+        ],
+        "8.3": [
+          [
+            "the absolute value of the whole x plus three equals eight",
+            "|x + 3| = 8"
+          ]
+        ],
+        "9.1": [
+          [
+            "The absolute value of the whole x minus four is the distance",
+            "|x − 4| is the distance"
+          ],
+          [
+            "The absolute value of the whole x minus four equals two",
+            "|x − 4| = 2"
+          ]
+        ],
+        "11.3": [
+          [
+            "The absolute value of the whole x minus two is smaller than five",
+            "|x − 2| < 5"
           ]
         ]
       }

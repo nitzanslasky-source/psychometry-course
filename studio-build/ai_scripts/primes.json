@@ -1,0 +1,264 @@
+{
+ "videoId": "primes",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Prime numbers. This topic comes up a lot on the exam, in questions about primes, about factors and about divisors. So let's start from the base, what a prime number actually is."
+  ],
+  [
+   {
+    "say": "A prime number is a whole positive number, bigger than one, that we can't write as a product of two smaller positive whole numbers. That sounds strange, so let's say it the way you remember it from school. A prime divides only by one and by itself. So a prime has exactly two divisors, one and the number itself.",
+    "at": [
+     "a whole positive",
+     "So a prime has exactly two divisors",
+     "two divisors, one"
+    ]
+   },
+   {
+    "say": "Let's see some examples. Seventeen can't be broken into two smaller numbers, so seventeen is prime. Nineteen can't be broken either, so it's prime. Eleven and seven can't be broken, so they're prime too.",
+    "at": [
+     "Let's see some examples",
+     "Seventeen can't be"
+    ]
+   },
+   {
+    "say": "Now some numbers that aren't prime. Fourteen is two times seven, so fourteen breaks, and it's not prime. Nine is three times three. Twenty-one is three times seven. Sixteen is two times eight. All of these break, so none of them is prime.",
+    "at": [
+     "Fourteen is two times seven",
+     "Nine is three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now some special cases. One is not prime. Its only divisor is one, so it doesn't have two divisors. Zero and the negative numbers are not prime either. A prime is always a whole number bigger than one.",
+    "at": [
+     "One is not prime",
+     "Its only divisor"
+    ]
+   },
+   {
+    "say": "Two is prime, because its only divisors are one and two. And two is the only even prime. Every other even number divides by two as well, so it has more than two divisors. Eighteen divides by two, and so does twenty, so they're not prime.",
+    "at": [
+     "Two is prime",
+     "only divisors are"
+    ]
+   },
+   {
+    "say": "This gives us a strong exam tool. Every prime except two is odd. Odd plus odd is even, and odd minus odd is even too. For example, three plus five is eight, and eleven minus seven is four. So if two primes give an odd sum, or an odd difference, one of them has to be two.",
+    "at": [
+     "Odd plus odd is even",
+     "and odd minus",
+     "So if two primes give an odd sum",
+     "an odd sum"
+    ]
+   },
+   {
+    "say": "For example, if two primes add up to twenty-five, which is odd, one of them is two, and the other is twenty-three. If two primes have a difference of nine, one of them is two, and the other is eleven. But if the sum is even, like sixteen, the rule tells us nothing, because sixteen is three plus thirteen, and also five plus eleven.",
+    "at": [
+     "add up to twenty-five",
+     "is odd, one",
+     "But if the sum is even",
+     "tells us nothing"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "There are infinitely many primes, so we can't know them all. But the primes up to forty, you should know by heart. Two, three, five, seven, eleven, thirteen, seventeen, nineteen, and then twenty-three, twenty-nine, thirty-one and thirty-seven.",
+    "at": [
+     "There are infinitely many primes",
+     "so we can't",
+     "Two, three, five, seven",
+     "thirteen, seventeen, nineteen",
+     "and then twenty-three"
+    ]
+   },
+   {
+    "say": "If a question asks for the primes between thirty and forty, run through the numbers. Thirty-one, yes. Thirty-two, thirty-three, thirty-four, thirty-five and thirty-six, no. Thirty-seven, yes. Thirty-eight and thirty-nine, no. In the same way, between twenty and thirty there are only two primes, twenty-three and twenty-nine.",
+    "at": [
+     "the primes between thirty and forty",
+     "forty, run through"
+    ]
+   },
+   {
+    "say": "It's also worth knowing that the largest two-digit prime is ninety-seven. Knowing these by heart saves you from calculating them in the middle of a question.",
+    "at": [
+     "the largest two-digit prime",
+     "Knowing these by"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "How do we check a bigger number? We divide it by the primes up to its square root, and no further. Why is that enough? If a number breaks into two factors, they can't both be bigger than its square root, because then their product would be bigger than the number. So one of the factors is at most the root, and we'd find it.",
+    "at": [
+     "a bigger number",
+     "We divide it by the primes up to its square root",
+     "primes up to"
+    ]
+   },
+   {
+    "say": "Let's take ninety-one. Nine squared is eighty-one, and ten squared is a hundred, so the root of ninety-one is less than ten. The primes below ten are two, three, five and seven, so we only try those.",
+    "at": [
+     "Let's take ninety-one",
+     "ten squared is"
+    ]
+   },
+   {
+    "say": "Two? Ninety-one is odd, so no. Three? Add the digits. Nine plus one is ten, and ten doesn't divide by three, so no. Five? It doesn't end in zero or five, so no. Seven? Seven times thirteen is ninety-one. So ninety-one is not prime.",
+    "at": [
+     "Seven times thirteen is ninety-one",
+     "So ninety-one is"
+    ]
+   },
+   {
+    "say": "Now a number that is prime, eighty-nine. Its root is less than ten too. Eighty-nine is odd. Its digit sum is seventeen, which doesn't divide by three. It doesn't end in zero or five. And seven times twelve is eighty-four, while seven times thirteen is ninety-one, so seven skips over it. None of them divides it, so eighty-nine is prime.",
+    "at": [
+     "Now a number that is prime",
+     "Its root is"
+    ]
+   },
+   {
+    "say": "Some numbers look prime but aren't, and the exam loves them. Fifty-one, fifty-seven and eighty-seven all divide by three, because their digit sums are six, twelve and fifteen. Ninety-one and a hundred nineteen both divide by seven.",
+    "at": [
+     "Some numbers look prime",
+     "aren't, and the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Two words mean exactly the same thing, divisor and factor. A factor of a number divides it with no remainder. Twenty-eight divides by four, so four is a factor of twenty-eight, or a divisor of twenty-eight. Forty-five divides by nine, so nine is a factor of forty-five.",
+    "at": [
+     "the same thing",
+     "Twenty-eight divides by four",
+     "four is a"
+    ]
+   },
+   {
+    "say": "And a non-example. Six times four is twenty-four, and six times five is thirty, so twenty-eight doesn't divide by six. Six is not a factor of twenty-eight.",
+    "at": [
+     "And a non-example",
+     "Six times four"
+    ]
+   },
+   {
+    "say": "The word divisor confuses a lot of students. Whenever you see it, replace it with factor. It's the same thing.",
+    "at": [
+     "replace it with factor",
+     "the same thing"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A prime factor is a factor that is also a prime. Twenty-eight is two times two times seven, so its prime factors are two and seven. Four is a factor of twenty-eight, but it isn't a prime factor, because four isn't prime.",
+    "at": [
+     "a factor that",
+     "Twenty-eight is two times two times seven",
+     "times seven, so"
+    ]
+   },
+   {
+    "say": "A number divides by all its prime factors, and by every combination of them. Take twenty, which is two times two times five. It divides by two and by five, its prime factors. It also divides by four, which is two times two, by ten, which is two times five, and by twenty, which is all of them together.",
+    "at": [
+     "Take twenty",
+     "It divides by"
+    ]
+   },
+   {
+    "say": "One more. Eighteen is two times three times three. So it divides by two and by three, by six, which is two times three, by nine, which is three times three, and by eighteen itself.",
+    "at": [
+     "Eighteen is two times three",
+     "So it divides"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Every whole number bigger than one that isn't prime is built from primes. Writing it as a product of primes is called its prime factorization, and we find it with a factor tree. Let's take a hundred eighty, and start with a divisor we recognize. A hundred eighty is even, so two is an easy start. A hundred eighty is two times ninety.",
+    "at": [
+     "than one that",
+     "Let's take a hundred eighty",
+     "and start with",
+     "two times ninety"
+    ]
+   },
+   {
+    "say": "Ninety is even too, so it's two times forty-five. Forty-five is three times fifteen, and fifteen is three times five. We stop only when every number at the end is a prime.",
+    "at": [
+     "two times forty-five",
+     "Forty-five is three times fifteen",
+     "fifteen is three times five",
+     "We stop only"
+    ]
+   },
+   {
+    "say": "So a hundred eighty is two squared, times three squared, times five. Let's check it by multiplying back. Four times nine is thirty-six, and thirty-six times five is a hundred eighty.",
+    "at": [
+     "So a hundred eighty is two squared",
+     "two squared, times",
+     "Four times nine",
+     "and thirty-six times"
+    ]
+   },
+   {
+    "say": "If you start differently, say with ten times eighteen, you get the same primes at the end. Ten is two times five, and eighteen is two times three times three. Again two twos, two threes and one five.",
+    "at": [
+     "ten times eighteen",
+     "the same primes"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now, is a number a divisor of a hundred eighty? Check its prime ingredients. A number divides a hundred eighty only if each of its primes is in a hundred eighty, at least as many times.",
+    "at": [
+     "a divisor of",
+     "Check its prime ingredients",
+     "A number divides"
+    ]
+   },
+   {
+    "say": "Forty-five is three times three times five. A hundred eighty has two threes and a five, so forty-five divides it. Twelve is two times two times three. A hundred eighty has two twos and a three, so twelve divides it too.",
+    "at": [
+     "Forty-five is three times three times five",
+     "A hundred eighty"
+    ]
+   },
+   {
+    "say": "Now the non-examples. Seven isn't in a hundred eighty at all, so seven doesn't divide it, and neither does fourteen or twenty-one. Eight is two times two times two, so it needs three twos, but a hundred eighty has only two. So eight doesn't divide a hundred eighty either.",
+    "at": [
+     "Now the non-examples",
+     "Seven isn't in"
+    ]
+   },
+   {
+    "say": "And watch for pieces that aren't prime. If x is three times six squared, the six squared hides two twos and two threes. So x is two squared times three cubed, and twelve divides x, because it needs two twos and one three. Always unpack such pieces into primes first.",
+    "at": [
+     "If x is three times six squared",
+     "six squared, the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's sum it up. A prime has exactly two divisors, one and itself. Zero and one are not prime, and two is the only even prime. If two primes give an odd sum or difference, one of them is two. And know the primes up to forty, and ninety-seven.",
+    "at": [
+     "Let's sum it up",
+     "A prime has",
+     "If two primes give an odd sum",
+     "odd sum or"
+    ]
+   },
+   {
+    "say": "To test a bigger number, try the primes up to its root. Divisor means factor. And a number divides another only if all its primes are there, enough times. There's a memory card with the primes and these facts right after this video, and then the questions. Try each one first, and then watch the solution. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "To test a bigger number",
+     "try the primes"
+    ]
+   }
+  ]
+ ]
+}

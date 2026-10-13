@@ -433,6 +433,171 @@ def IH(name, tex, size=34, col=0):
 # THE SCRIPTS (topic-19 flow order). NEW / REMINDER per video: see ~/Downloads/Topic-19-AI-scripts-review.md.
 # =================================================================================================================
 
+# ------------------------------------------------------------------------------------------------ new-operation (camera lesson)
+# 2026-10-13 teacher: her camera first lesson as a reading script too ("the same style, with the handwriting and all
+# that, but maybe a bit more examples"). Hebrew lesson alg 18767-18985: a new operation is new on the psychometric but
+# needs only known tools; the dot / plus (new symbols) and the small 2 up high and roots (real new operations); the heart
+# (x heart y = 2(x + y)); the exam's $ / hash / brackets; THE SAME TEMPLATE ($(a) = a² - a: put the number where a was);
+# the operation comes before everything except brackets ($a + $b is not $(a + b): 3² + 4² is not 7²; "think what you'd
+# do with a square"); nested: inner brackets first (the inner value coloured, then put in its place); finding the
+# operation from one result (8x was one guess; test the choices; in the exam mark and move on, here check the rest to
+# learn). Kept from the English lesson: brackets on every input (negative, an expression) and the trap; the order can
+# matter (one counterexample; letters for "always"; equal inputs prove nothing); an unknown input = an equation.
+# Every concept gets 2-3 examples and a non-example where it helps; new numbers (not the Hebrew's, not the questions').
+nos1 = SLOT('nos1', '[[a]] ♥ [[b]] = 5·([[a]] + [[b]])', [('in', '{{7}} ♥ {{3}} = 5·({{7}} + {{3}})'), ('calc', '= 5·10 = 50')])
+nos2 = SLOT('nos2', '◆([[a]]) = [[a]]^2 − 3·[[a]]', [('in', '◆({{5}}) = {{5}}^2 − 3·{{5}}'), ('calc', '= 25 − 15 = 10')])
+nos3 = SLOT('nos3', '◆([[x]]) = [[x]]^2 + 3·[[x]]', [('in', '◆({{−2}}) = {{(−2)}}^2 + 3·{{(−2)}}'), ('calc', '= 4 − 6 = −2')])
+noc1 = CHAIN('noc1', [('line', '◆([[◆(2)]])'), ('in', '[[◆(2)]] = 2^2 = {{4}}'), ('out', '◆({{4}}) = 4^2 = {{16}}')])
+no1 = I('no1', '$3\\cdot7$ $\\ \\to\\ $ $3\\times7=21$', size=36)
+no2 = IH('no2', '$5^2=5\\cdot5=25$', size=34)
+no3 = IH('no3', '$2^3=2\\cdot2\\cdot2=8$', size=34)
+no4 = I('no4', '$7\\heartsuit3=\\ ?$', size=36)
+no5 = I('no5', '$2\\heartsuit6=5\\cdot(2+6)=5\\cdot8=40$', size=32)
+no6 = I('no6', '$7\\cdot5+3=38$ ✗ $\\quad$ the $5$ multiplies the whole sum', size=28)
+no7 = I('no7', 'On the exam: $\\ \\$\\ $, $\\ \\#\\ $, brackets $\\quad$ here: $\\ \\blacklozenge$', size=30, col=1)
+no8 = IH('no8', '$\\blacklozenge(2)=2^2-3\\cdot2=4-6=-2$', size=32)
+no9 = I('no9', '$-2^2=-4$ ✗ $\\quad (-2)^2=4$ ✓', size=32, col=1)
+no10 = IH('no10', '$\\blacklozenge(x+2)=(x+2)^2+3(x+2)$', size=32)
+no11 = IH('no11', '$=x^2+4x+4+3x+6=x^2+7x+10$', size=32)
+no12 = I('no12', 'The operation first $\\quad$ only brackets come before it', size=30)
+no13 = IH('no13', '$\\blacklozenge(3)+\\blacklozenge(4)=9+16=25$', size=32)
+no14 = I('no14', '$\\blacklozenge(7)=49$ ✗ $\\quad 3^2+4^2\\ne7^2$', size=32)
+no15 = IH('no15', '$\\blacklozenge(3+4)=\\blacklozenge(7)=49$', size=32)
+no16 = I('no16', '$a\\star b=3a+b^2$', size=34, col=1)
+no17 = IH('no17', '$(1\\star2)\\star3$: $\\ 1\\star2=3+4=7$', size=32)
+no18 = IH('no18', '$7\\star3=21+9=30$', size=32)
+no19 = I('no19', '$\\blacklozenge(5)=30$: $\\ 6x$? $\\ 6\\cdot5=30$ $\\quad 5x+5$? $\\ 25+5=30$', size=30)
+no20 = I('no20', '$x^2+5$: $\\ 25+5=30$ ✓ could be $\\quad 4x+8$: $\\ 20+8=28$ ✗ cannot', size=28)
+no21 = I('no21', '$2\\star4=6+16=22 \\qquad 4\\star2=12+4=16$', size=32)
+no22 = I('no22', 'Not always? One example where it fails.', size=30)
+no23 = I('no23', 'Always? Letters: $\\ b\\heartsuit a=5(b+a)=5(a+b)=a\\heartsuit b$', size=28)
+no24 = I('no24', 'Order questions: equal inputs show nothing ($4\\star4=4\\star4$)', size=28)
+no25 = IH('no25', '$x\\star4=25$: $\\ 3x+16=25$, $\\ 3x=9$, $\\ x=3$', size=32)
+no26 = I('no26', '$k\\heartsuit2=35$: $\\ 5(k+2)=35$, $\\ k+2=7$, $\\ k=5$', size=32)
+no27 = I('no27', 'Read the definition, put each input in its slot, in brackets', size=28)
+no28 = I('no28', 'Operation first $\\quad$ nested: inside out $\\quad$ no definition: test each choice', size=26)
+video('new-operation', 'lesson', slides=[
+    S('Defining a New Operation',
+      L("Welcome to a new topic, defining a new operation. It's a type of question you probably never met at school. It's "
+        "new on the psychometric. But everything you need to solve it, you already know: putting a number in place of a "
+        "letter, opening brackets, powers, fractions, and isolating an unknown.")),
+    S('A new symbol',
+      L("So what is a new operation? You've actually met new operations before, nobody just called them that. Imagine a "
+        "little kid who sees three, then a dot, then seven. What is it? The kid has no idea. Not because they can't "
+        "multiply, but because nobody told them what the dot means.", show(no1, 'three, then a dot, then seven')),
+      L("Once someone explains that the dot means times, it's easy. Three times seven is twenty-one. It was the same with "
+        "the plus sign. Until someone told you that plus means adding, it was just a mark. Those were new symbols for "
+        "things you already knew how to do."),
+      L("And this one really was a new operation: a small two up high, like five with a small two. Someone told you to "
+        "multiply the number by itself, so five times five, twenty-five. Then you learned that a small three means three "
+        "times, so two with a small three is two times two times two, which is eight. Square roots were the same story. A "
+        "symbol, a definition, and then you could solve.", show(no2, 'so five times five'), show(no3, 'two times two times two'))),
+    S('The heart',
+      L("Now I'll teach you a brand-new operation, the heart. What is seven heart three? Right now, nobody can say, "
+        "because I haven't told you what the heart does.", show(no4, 'What is seven heart three')),
+      L("So let's define it. a heart b means: add a and b, and then multiply the sum by five. a is whatever sits before "
+        "the heart, and b is whatever sits after it.", show(nos1['line'], 'a heart b means')),
+      L("Seven sits before the heart, so it goes in the place of a. Three sits after it, so it goes in the place of b. "
+        "Seven plus three is ten, and ten times five is fifty. So seven heart three is fifty.",
+        show(nos1['in'], 'so it goes in the place of a'), show(nos1['calc'], 'ten times five is fifty')),
+      L("One more. Two heart six. Two goes in the place of a, and six goes in the place of b. Two plus six is eight, and "
+        "eight times five is forty.", show(no5, 'Two heart six')),
+      L("Careful to follow the whole rule. If you do seven times five, and then add three, you get thirty-eight. That's a "
+        "different rule, not the heart. In the heart, the five multiplies the whole sum. That's all a new operation is: a "
+        "definition, and then you follow it exactly.", show(no6, 'you get thirty-eight'))),
+    S('The same template',
+      L("On the exam, they rarely use hearts. Most of the time the symbol is a dollar sign. Sometimes it's a hash, or a "
+        "special bracket. In the questions in this course you'll see a diamond. The idea is exactly the same: read the "
+        "definition first, and then substitute.", show(no7, 'Most of the time the symbol')),
+      L("For example, diamond of a is equal to a squared minus three a. What is diamond of five? Whatever goes into the "
+        "diamond takes the place of a, in every spot where a appears. Here a appears in two spots, in a squared and in "
+        "three a. So we write the same template again, and put five in both spots.",
+        show(nos2['line'], 'diamond of a is equal to'), show(nos2['in'], 'put five in both spots')),
+      L("Five squared is twenty-five, and three times five is fifteen. Twenty-five minus fifteen is ten. So diamond of "
+        "five is ten.", show(nos2['calc'], 'Twenty-five minus fifteen')),
+      L("Another one, diamond of two. Again, two goes in both spots. Two squared is four, and three times two is six. Four "
+        "minus six is negative two.", show(no8, 'Two squared is four'))),
+    S('Brackets on every input',
+      L("On the exam, they often put a negative number, or a whole expression, into the operation. So remember this rule. "
+        "Whatever goes in, goes in brackets, every time. Let's take diamond of x equals x squared plus three x. What is "
+        "diamond of negative two? Negative two goes in brackets, in both spots.",
+        show(nos3['line'], 'diamond of x equals x squared plus'), show(nos3['in'], 'goes in brackets, in both spots')),
+      L("The bracket negative two, squared, is positive four, because a negative times a negative is positive. Three times "
+        "negative two is negative six. Four minus six is negative two.", show(nos3['calc'], 'Four minus six')),
+      L("Here's the trap. Without brackets, negative two squared means the negative of two squared, which is negative "
+        "four. That gives a completely different answer. With brackets, it's positive four.", show(no9, "Here's the trap")),
+      L("Now a whole expression, x plus two. The whole x plus two goes where x was, in brackets. So diamond of x plus two "
+        "is the bracket x plus two, squared, plus three times the bracket x plus two.", show(no10, 'The whole x plus two goes')),
+      L("Now open the brackets. The bracket x plus two, squared, is x squared plus four x plus four. Three times the "
+        "bracket x plus two is three x plus six, because the three multiplies both parts. Together, that's x squared plus "
+        "seven x plus ten.", show(no11, 'Together, that'))),
+    S('The operation first',
+      L("Where does a new operation fit in a longer exercise? The new operation comes first, before multiplying, dividing "
+        "and powers. Only brackets come before it.", show(no12, 'The new operation comes first')),
+      L("Let's say diamond of x is x squared. What is diamond of three plus diamond of four? First turn each diamond into a "
+        "plain number. Diamond of three is nine, and diamond of four is sixteen. Then add them. Nine plus sixteen is "
+        "twenty-five.", show(no13, 'First turn each diamond into')),
+      L("Careful, we can't join them into diamond of seven. Diamond of seven is forty-nine, a different number. Think of "
+        "squares: three squared plus four squared is not seven squared. If you're not sure what comes first, ask yourself "
+        "what you would do if it were a square.", show(no14, "we can't join them")),
+      L("But when the plus sits inside the diamond's own brackets, like diamond of, in brackets, three plus four, the "
+        "brackets come first. Three plus four is seven, and diamond of seven is forty-nine.",
+        show(no15, 'when the plus sits inside'))),
+    S('Inside out',
+      L("When an operation sits inside another operation, we start with the inner brackets and work outwards, just like "
+        "brackets inside brackets. Let's say diamond of x is x squared again. What is diamond of diamond of two?",
+        show(noc1['line'], 'What is diamond of diamond of two')),
+      L("The inner one is diamond of two. Two squared is four. Now four takes the place of the whole inner diamond, so "
+        "the outer diamond works on four. Four squared is sixteen.", show(noc1['in'], 'Two squared is four'),
+        show(noc1['out'], 'the outer diamond works on four')),
+      L("The same with an operation of two numbers. Let's define a new one, the star. a star b is three times the first "
+        "number, plus the square of the second.", show(no16, 'a star b is three times')),
+      L("What is the bracket one star two, star three? Inner brackets first. One star two is three times one, plus two "
+        "squared, so three plus four, seven. Now seven takes its place. Seven star three is three times seven, plus three "
+        "squared, so twenty-one plus nine, thirty. The result of the inside becomes the input of the outside.",
+        show(no17, 'One star two is'), show(no18, 'Seven star three is'))),
+    S('No definition',
+      L("Another type: they don't give you the definition at all. They only say that diamond of five is thirty. Someone "
+        "took five, used the diamond, and got thirty. That's all you know."),
+      L("The operation could be many different things. Six x is one example, because six times five is thirty. Five x "
+        "plus five is another, because twenty-five plus five is thirty. So a question like this asks which definition "
+        "cannot be the operation.", show(no19, 'Six x is one example')),
+      L("Your move is to go through the choices and put five into each one. A choice that gives thirty could be the rule. "
+        "The one that doesn't give thirty cannot be the rule. For example, x squared plus five gives twenty-five plus "
+        "five, thirty, so it could be the rule. But four x plus eight gives twenty plus eight, twenty-eight, so it cannot.",
+        show(no20, 'x squared plus five gives')),
+      L("In the exam, the moment you find the one that doesn't fit, you mark it and move on. In some question videos "
+        "we'll check the other choices too, just to learn.")),
+    S('The order can matter',
+      L("Back to the star: three times the first number, plus the square of the second. Two star four is six plus "
+        "sixteen, twenty-two. Four star two is twelve plus four, sixteen. Swap the inputs, and you get a different answer. "
+        "So don't assume a new operation behaves like plus, where the order doesn't matter. Before you calculate, check "
+        "which number goes into which slot.", show(no21, 'Two star four is')),
+      L("A question may ask: is a star b always equal to b star a? To show that it's not always true, one example where it "
+        "fails is enough, like two and four.", show(no22, "To show that it's not always true")),
+      L("To show that it's always true, numbers are not enough, because they only check some cases. Write the rule with "
+        "letters instead. For example, b heart a is five times the bracket b plus a. And b plus a is the same as a plus b, "
+        "so b heart a is always equal to a heart b. For the heart, the order never matters.", show(no23, 'Write the rule with letters')),
+      L("One warning for order questions: don't test with two equal numbers. Four star four equals four star four for "
+        "every operation, so it can't show anything about the order.", show(no24, "don't test with two equal numbers"))),
+    S('An unknown input',
+      L("And if an input is unknown? Write the definition, and it becomes an ordinary equation. For example, x star four "
+        "is twenty-five. By the definition, x star four is three x plus four squared, which is three x plus sixteen. So "
+        "three x plus sixteen equals twenty-five. Subtract sixteen from both sides: three x is nine, so x is three.",
+        show(no25, 'For example, x star four')),
+      L("Let's check it. Three times three is nine, and nine plus sixteen is twenty-five. It works. One more: k heart two "
+        "is thirty-five. By the definition, that's five times the bracket k plus two. So k plus two is seven, and k is "
+        "five.", show(no26, 'k heart two is thirty-five')),
+      L("On the exam you can also work back from the answers: put each choice into the rule, and see which one gives the "
+        "result.")),
+    S('Recap',
+      L("Let's sum up. Read the definition, and put each input in its slot, in brackets.", show(no27, 'Read the definition')),
+      L("Turn each operation into a number first. Nested operations go from the inside out. With no definition, test the "
+        "input in each choice. For order questions, one example can show it's not always true, and letters show it's "
+        "always true. Nothing complicated here, just follow the rule exactly. [pause] Okay. I'll see you in the next video.",
+        show(no28, 'Turn each operation into a number first'))),
+])
+
 # ------------------------------------------------------------------------------------------------ q-541 (Hebrew: lesson 1)
 # REMINDER: read the rule, then substitute (camera lesson).  NEW at the step: the same template with the input in EVERY
 # slot (SLOT, the Hebrew picture); the trap of a half substitution.  Hebrew: one method; a common-factor method is added.

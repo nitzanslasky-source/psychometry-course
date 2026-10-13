@@ -1,0 +1,81 @@
+{
+ "videoId": "solve-q-r26-t20-02",
+ "style": "the teacher reads it herself (Reading Studio), topic-20 scripts (2026-10-13): math_patches/_ai_vis_t20.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: x is between negative one and zero. Which of the following is the smallest?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The answer has to be the smallest for every x in this range. So it's also the smallest at any one number we pick from the range, and one easy number can decide. [short pause] We'll solve it two ways, with one number, and then by placing each choice on the number line without numbers.",
+    "at": [
+     "The answer has to be the smallest",
+     "the smallest for",
+     "it two ways"
+    ]
+   },
+   {
+    "say": "[short pause] Let's take x is negative one half. It's between negative one and zero, and it's easy to work with. Choice number one, x cubed. Negative one half, cubed, is negative one half times negative one half times negative one half. Three negatives multiply to a negative, so it's negative one eighth. Choice number two is x itself, negative one half.",
+    "at": [
+     "Let's take",
+     "Choice number one, x cubed",
+     "number one, x",
+     "Negative one half, cubed",
+     "number two is"
+    ]
+   },
+   {
+    "say": "Choice number three, negative x squared. First x squared: negative one half, squared, is one quarter. Then the minus in front makes it negative one quarter. Choice number four, one over x. One over negative one half is negative two.",
+    "at": [
+     "Choice number three, negative x squared",
+     "number three, negative",
+     "First x squared:",
+     "number four, one"
+    ]
+   },
+   {
+    "say": "Now compare the four values. With negative numbers, the farther a number is from zero, the smaller it is. Negative two is the farthest from zero, so it's the smallest. Choice number four is our answer.",
+    "at": [
+     "Now compare the four values",
+     "With negative numbers",
+     "the farther a number is from zero",
+     "Negative two is",
+     "Choice number four is our answer"
+    ]
+   },
+   {
+    "say": "Careful with choice number one. Cubing a number between negative one and zero brings it closer to zero. So negative one eighth is bigger than negative one half, not smaller.",
+    "at": [
+     "Careful with choice number one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now without numbers. A number between negative one and zero stays between negative one and zero when we cube it. And x squared is between zero and one, so negative x squared is between negative one and zero. So choice numbers one, two and three are all between negative one and zero.",
+    "at": [
+     "Now without",
+     "Now without numbers",
+     "A number between",
+     "So choice numbers one, two and three",
+     "numbers one, two"
+    ]
+   },
+   {
+    "say": "Now one over x. x is closer to zero than negative one, so one over x is farther from zero than negative one. For example, one over negative one half is negative two, and one over negative one tenth is negative ten. So one over x is always below negative one, smaller than the other three. Choice number four. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Now one over x",
+     "x is closer",
+     "For example, one over negative one half",
+     "one half is",
+     "smaller than the other three"
+    ]
+   }
+  ]
+ ]
+}

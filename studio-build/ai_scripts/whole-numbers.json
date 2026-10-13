@@ -1,0 +1,135 @@
+{
+ "videoId": "whole-numbers",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome to integers. Some algebra questions don't ask for a number at all. They ask whether an expression is positive, negative, or whether we can't tell. These questions rest on a few basic sign rules, and usually they're easy, so let's go through the rules one by one."
+  ],
+  [
+   {
+    "say": "Let's start with multiplying. When two numbers have the same sign, the result is positive. Four times five is twenty, and negative four times negative five is also twenty.",
+    "at": [
+     "When two numbers",
+     "Four times five is twenty",
+     "and negative four"
+    ]
+   },
+   {
+    "say": "When the signs are different, the result is negative, and the order doesn't matter. Negative four times five is negative twenty, and four times negative five is negative twenty too.",
+    "at": [
+     "Negative four times five",
+     "negative twenty, and"
+    ]
+   },
+   {
+    "say": "Careful here. A positive product doesn't mean both numbers are positive. Negative three times negative six is eighteen, which is positive, but both numbers are negative. So a positive product only tells us that the two numbers have the same sign. A negative product tells us their signs are different. And a product of zero means at least one of them is zero.",
+    "at": [
+     "A positive product only tells us",
+     "us that the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a time saver. When many numbers are multiplied, the plus signs don't change the sign of the result. Only the minus signs do. So we just count the minuses.",
+    "at": [
+     "When many numbers"
+    ]
+   },
+   {
+    "say": "Negative two, times three, times negative one, times negative four. Let's count the minuses: one, two, three. Three is odd, so the result is negative. Let's check. Two times three times one times four is twenty-four, so the result is negative twenty-four.",
+    "at": [
+     "Let's count the minuses",
+     "Three is odd"
+    ]
+   },
+   {
+    "say": "Now negative two, times negative three, times negative one, times negative four. That's four minuses, an even number, so the result is positive, twenty-four.",
+    "at": [
+     "That's four minuses"
+    ]
+   },
+   {
+    "say": "Why does this work? Negative times negative is positive. So every two minuses cancel into a plus and stop mattering. An even number of minuses cancel completely, and an odd number leaves one minus.",
+    "at": [
+     "Negative times negative"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Division follows exactly the same rules, so there's nothing new to remember. Negative twenty-four divided by negative eight is three, positive, because the signs are the same. Negative twenty-four divided by eight is negative three, and twenty-four divided by negative eight is negative three too, because the signs are different.",
+    "at": [
+     "same rules, so",
+     "Negative twenty-four divided by negative eight",
+     "eight is three"
+    ]
+   },
+   {
+    "say": "So we can count the minuses when we multiply and divide together. Negative six times negative two, over negative three. That's three minuses, so the result is negative. Six times two is twelve, and twelve over three is four, so it's negative four.",
+    "at": [
+     "Negative six times negative two",
+     "over negative three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now powers. A number to an even power is never negative. Three squared is nine, negative three, squared, is also nine, and negative two to the power of four is sixteen. The only way to get zero is a base of zero.",
+    "at": [
+     "to an even",
+     "Three squared is nine",
+     "three, squared, is"
+    ]
+   },
+   {
+    "say": "An odd power keeps the sign of the number. Two cubed is eight, negative two, cubed, is negative eight, and negative one to the power of five is negative one.",
+    "at": [
+     "Two cubed is eight",
+     "two, cubed, is"
+    ]
+   },
+   {
+    "say": "An absolute value is zero or positive. The absolute value of negative seven is seven, the absolute value of seven is seven, and the absolute value of zero is zero. So if y isn't zero, the absolute value of y is positive.",
+    "at": [
+     "The absolute value of negative seven",
+     "seven is seven"
+    ]
+   },
+   {
+    "say": "And a minus in front of a letter doesn't mean the number is negative. It means the opposite number. If x is negative nine, minus x is nine, which is positive. If x is five, minus x is negative five. And zero is neither positive nor negative.",
+    "at": [
+     "If x is negative nine",
+     "If x is five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Adding works differently. Two negative numbers add up to a negative number. Negative three plus negative five is negative eight.",
+    "at": [
+     "negative numbers add",
+     "Negative three plus negative five",
+     "is negative eight"
+    ]
+   },
+   {
+    "say": "With different signs, the number that's farther from zero decides the sign. Negative nine plus four is negative five, because nine is farther from zero than four. But negative four plus nine is five, positive. So counting the minuses works only for multiplying and dividing. Negative two plus seven has one minus, but the result, five, is positive.",
+    "at": [
+     "Negative nine plus four",
+     "negative five, because"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So how do we use all this in a question? First find the pieces that are surely positive, like even powers and absolute values. Then the piece that's left decides the sign. And when the question says that a letter is not zero, it's usually so that the bottom of a fraction isn't zero. You'll see all of this in the next question. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "use all this",
+     "surely positive",
+     "and absolute values"
+    ]
+   }
+  ]
+ ]
+}

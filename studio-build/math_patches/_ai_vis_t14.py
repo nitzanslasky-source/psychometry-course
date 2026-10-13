@@ -408,6 +408,157 @@ def TREE(name, root, steps, w=330, col=1, dx=92, dy=50):
 # THE SCRIPTS (topic-14 flow order). NEW / REMINDER per video: see ~/Downloads/Topic-14-AI-scripts-review.md.
 # =================================================================================================================
 
+# ------------------------------------------------------------------------------------------------ primes (camera lesson)
+# 2026-10-13 teacher: her camera first lesson as a reading script (same style, handwriting, camera on), with more
+# examples. Her Hebrew lesson (alg 13687-13760, 13853-13880 ff.): the definition, can / can't be broken, 1 and 2, the
+# primes to 40 (30-40 run) and 97, divisor = factor, prime factors and their combinations, every non-prime is built from
+# primes, a missing prime is not a divisor (and a piece that isn't prime hides primes). The English lesson's extras stay:
+# the odd sum / difference of two primes, the root test with fake primes, the factor tree, enough copies.
+cp1 = I('cp1', 'Prime: exactly two divisors, $1$ and itself', size=30)
+cp2 = I('cp2', '$17,\\ 19,\\ 11,\\ 7$: can\'t be broken ✓', size=30)
+cp3 = I('cp3', '$14=2\\cdot7,\\ \\ 9=3\\cdot3,\\ \\ 21=3\\cdot7,\\ \\ 16=2\\cdot8$ ✗', size=30, hand='14 = 2·7,    9 = 3·3,    21 = 3·7,    16 = 2·8   ✗')
+cp4 = I('cp4', '$0$, $1$ and negative numbers are not prime', size=30)
+cp5 = I('cp5', '$2$: the only even prime $\\quad 18,\\ 20$ ✗', size=30)
+cp6 = I('cp6', 'Odd $\\pm$ odd $=$ even: $\\ 3+5=8,\\ \\ 11-7=4$', size=30)
+cp7 = I('cp7', 'Two primes, odd sum or difference $\\to$ one is $2$', size=28)
+cp8 = I('cp8', '$25=2+23 \\qquad 9=11-2$', size=32, hand='25 = 2 + 23        9 = 11 − 2')
+cp9 = I('cp9', 'Even sum: $\\ 16=3+13=5+11$ (no rule)', size=28, hand='16 = 3 + 13 = 5 + 11')
+cpS = STRIP('cpS', 1, 40, [('a', [('prime', v) for v in (2, 3, 5, 7, 11, 13, 17, 19)]),
+                           ('b', [('prime', v) for v in (23, 29, 31, 37)])], base=(1, 10, 20, 30, 40), w=1060, col=0)
+cp10 = I('cp10', '$30$ to $40$: $\\ 31,\\ 37$ $\\quad 20$ to $30$: $\\ 23,\\ 29$', size=30)
+cp11 = I('cp11', 'Largest two-digit prime: $\\ 97$', size=30)
+cp12 = I('cp12', 'Is $n$ prime? Try the primes up to $\\sqrt{n}$', size=30)
+cp13 = I('cp13', '$91$: $\\ 9^2=81,\\ 10^2=100$ $\\ \\to\\ $try $2,\\ 3,\\ 5,\\ 7$', size=30, hand='91 :    9^2 = 81,    10^2 = 100    →   try  2, 3, 5, 7')
+cp14 = I('cp14', '$91=7\\cdot13$ ✗', size=32, hand='91 = 7·13   ✗')
+cp15 = I('cp15', '$89$: $\\ 2,\\ 3,\\ 5,\\ 7$ don\'t divide $\\ \\to\\ $prime ✓', size=30)
+cp16 = I('cp16', '$51=3\\cdot17,\\ 57=3\\cdot19,\\ 87=3\\cdot29,\\ 91=7\\cdot13,\\ 119=7\\cdot17$', size=26)
+cp17 = I('cp17', '$28\\div4=7$: $\\ 4$ is a factor $\\quad 45\\div9=5$: $\\ 9$ is a factor', size=28)
+cp18 = I('cp18', '$28\\div6$: $\\ $remainder $\\to$ $6$ is not a factor', size=28)
+cp19 = I('cp19', 'Divisor $=$ factor', size=32)
+cp20 = I('cp20', '$28=2\\cdot2\\cdot7$: $\\ $prime factors $2,\\ 7$', size=30, hand='28 = 2·2·7')
+cp21 = I('cp21', '$20=2\\cdot2\\cdot5$: $\\ 2,\\ 5,\\ 4,\\ 10,\\ 20$', size=30, hand='20 = 2·2·5 :    2,   5,   4,   10,   20')
+cp22 = I('cp22', '$18=2\\cdot3\\cdot3$: $\\ 2,\\ 3,\\ 6,\\ 9,\\ 18$', size=30, hand='18 = 2·3·3 :    2,   3,   6,   9,   18')
+cpT = TREE('cpT', 180, [(2, 90), (2, 45), (3, 15), (3, 5)], w=440, col=1)
+cp23 = I('cp23', '$180=2^2\\cdot3^2\\cdot5$', size=34, hand='180 = 2^2·3^2·5')
+cp24 = I('cp24', '$4\\cdot9=36,\\ \\ 36\\cdot5=180$ ✓', size=30, hand='4·9 = 36,    36·5 = 180   ✓')
+cp25 = I('cp25', '$180=10\\cdot18=(2\\cdot5)\\cdot(2\\cdot3\\cdot3)$', size=30)
+cp26 = I('cp26', '$180=2^2\\cdot3^2\\cdot5$', size=34)
+cp27 = I('cp27', '$45=3\\cdot3\\cdot5$ ✓ $\\quad 12=2\\cdot2\\cdot3$ ✓', size=30, hand='45 = 3·3·5   ✓      12 = 2·2·3   ✓')
+cp28 = I('cp28', '$7$: missing ✗ $\\quad 8=2\\cdot2\\cdot2$: one two too few ✗', size=30)
+cp29 = I('cp29', '$x=3\\cdot6^2=3\\cdot2^2\\cdot3^2=2^2\\cdot3^3$: $\\ 12$ ✓', size=28)
+cpR1 = I('cpR1', 'Prime: only $1$ and itself $\\quad 0,\\ 1$ not prime $\\quad 2$ the only even one', size=26)
+cpR2 = I('cpR2', 'Odd sum or difference of two primes $\\to$ one is $2$ $\\quad$ primes to $40$, and $97$', size=26)
+cpR3 = I('cpR3', 'Prime test: up to $\\sqrt{n}$ $\\quad$ divisor $=$ factor $\\quad$ its primes, enough times', size=26)
+video('primes', 'lesson', slides=[
+    S('Prime Numbers',
+      L("Prime numbers. This topic comes up a lot on the exam, in questions about primes, about factors and about "
+        "divisors. So let's start from the base, what a prime number actually is.")),
+    S('What a prime is',
+      L("A prime number is a whole positive number, bigger than one, that we can't write as a product of two smaller "
+        "positive whole numbers. That sounds strange, so let's say it the way you remember it from school. A prime divides "
+        "only by one and by itself. So a prime has exactly two divisors, one and the number itself.",
+        show(cp1, 'So a prime has exactly two divisors')),
+      L("Let's see some examples. Seventeen can't be broken into two smaller numbers, so seventeen is prime. Nineteen "
+        "can't be broken either, so it's prime. Eleven and seven can't be broken, so they're prime too.",
+        show(cp2, "Let's see some examples")),
+      L("Now some numbers that aren't prime. Fourteen is two times seven, so fourteen breaks, and it's not prime. Nine is "
+        "three times three. Twenty-one is three times seven. Sixteen is two times eight. All of these break, so none of "
+        "them is prime.", show(cp3, 'Fourteen is two times seven'))),
+    S('One, two and zero',
+      L("Now some special cases. One is not prime. Its only divisor is one, so it doesn't have two divisors. Zero and the "
+        "negative numbers are not prime either. A prime is always a whole number bigger than one.",
+        show(cp4, 'One is not prime')),
+      L("Two is prime, because its only divisors are one and two. And two is the only even prime. Every other even number "
+        "divides by two as well, so it has more than two divisors. Eighteen divides by two, and so does twenty, so they're "
+        "not prime.", show(cp5, 'Two is prime')),
+      L("This gives us a strong exam tool. Every prime except two is odd. Odd plus odd is even, and odd minus odd is even "
+        "too. For example, three plus five is eight, and eleven minus seven is four. So if two primes give an odd sum, or "
+        "an odd difference, one of them has to be two.", show(cp6, 'Odd plus odd is even'), show(cp7, 'So if two primes give an odd sum')),
+      L("For example, if two primes add up to twenty-five, which is odd, one of them is two, and the other is twenty-three. "
+        "If two primes have a difference of nine, one of them is two, and the other is eleven. But if the sum is even, "
+        "like sixteen, the rule tells us nothing, because sixteen is three plus thirteen, and also five plus eleven.",
+        show(cp8, 'add up to twenty-five'), show(cp9, 'But if the sum is even'))),
+    S('The primes up to forty',
+      L("There are infinitely many primes, so we can't know them all. But the primes up to forty, you should know by "
+        "heart. Two, three, five, seven, eleven, thirteen, seventeen, nineteen, and then twenty-three, twenty-nine, "
+        "thirty-one and thirty-seven.", show(cpS['line'], 'There are infinitely many primes'), show(cpS['a'], 'Two, three, five, seven'),
+        show(cpS['b'], 'and then twenty-three')),
+      L("If a question asks for the primes between thirty and forty, run through the numbers. Thirty-one, yes. Thirty-two, "
+        "thirty-three, thirty-four, thirty-five and thirty-six, no. Thirty-seven, yes. Thirty-eight and thirty-nine, no. "
+        "In the same way, between twenty and thirty there are only two primes, twenty-three and twenty-nine.",
+        show(cp10, 'the primes between thirty and forty')),
+      L("It's also worth knowing that the largest two-digit prime is ninety-seven. Knowing these by heart saves you from "
+        "calculating them in the middle of a question.", show(cp11, 'the largest two-digit prime'))),
+    S('Is it prime?',
+      L("How do we check a bigger number? We divide it by the primes up to its square root, and no further. Why is that "
+        "enough? If a number breaks into two factors, they can't both be bigger than its square root, because then their "
+        "product would be bigger than the number. So one of the factors is at most the root, and we'd find it.",
+        show(cp12, 'We divide it by the primes up to its square root')),
+      L("Let's take ninety-one. Nine squared is eighty-one, and ten squared is a hundred, so the root of ninety-one is "
+        "less than ten. The primes below ten are two, three, five and seven, so we only try those.", show(cp13, "Let's take ninety-one")),
+      L("Two? Ninety-one is odd, so no. Three? Add the digits. Nine plus one is ten, and ten doesn't divide by three, so "
+        "no. Five? It doesn't end in zero or five, so no. Seven? Seven times thirteen is ninety-one. So ninety-one is not "
+        "prime.", show(cp14, 'Seven times thirteen is ninety-one')),
+      L("Now a number that is prime, eighty-nine. Its root is less than ten too. Eighty-nine is odd. Its digit sum is "
+        "seventeen, which doesn't divide by three. It doesn't end in zero or five. And seven times twelve is eighty-four, "
+        "while seven times thirteen is ninety-one, so seven skips over it. None of them divides it, so eighty-nine is "
+        "prime.", show(cp15, 'Now a number that is prime')),
+      L("Some numbers look prime but aren't, and the exam loves them. Fifty-one, fifty-seven and eighty-seven all divide "
+        "by three, because their digit sums are six, twelve and fifteen. Ninety-one and a hundred nineteen both divide by "
+        "seven.", show(cp16, 'Some numbers look prime'))),
+    S('Divisor = factor',
+      L("Two words mean exactly the same thing, divisor and factor. A factor of a number divides it with no remainder. "
+        "Twenty-eight divides by four, so four is a factor of twenty-eight, or a divisor of twenty-eight. Forty-five "
+        "divides by nine, so nine is a factor of forty-five.", show(cp17, 'Twenty-eight divides by four')),
+      L("And a non-example. Six times four is twenty-four, and six times five is thirty, so twenty-eight doesn't divide by "
+        "six. Six is not a factor of twenty-eight.", show(cp18, 'And a non-example')),
+      L("The word divisor confuses a lot of students. Whenever you see it, replace it with factor. It's the same thing.",
+        show(cp19, 'replace it with factor'))),
+    S('Prime factors',
+      L("A prime factor is a factor that is also a prime. Twenty-eight is two times two times seven, so its prime factors "
+        "are two and seven. Four is a factor of twenty-eight, but it isn't a prime factor, because four isn't prime.",
+        show(cp20, 'Twenty-eight is two times two times seven')),
+      L("A number divides by all its prime factors, and by every combination of them. Take twenty, which is two times two "
+        "times five. It divides by two and by five, its prime factors. It also divides by four, which is two times two, by "
+        "ten, which is two times five, and by twenty, which is all of them together.", show(cp21, 'Take twenty')),
+      L("One more. Eighteen is two times three times three. So it divides by two and by three, by six, which is two times "
+        "three, by nine, which is three times three, and by eighteen itself.", show(cp22, 'Eighteen is two times three'))),
+    S('Break it down',
+      L("Every whole number bigger than one that isn't prime is built from primes. Writing it as a product of primes is "
+        "called its prime factorization, and we find it with a factor tree. Let's take a hundred eighty, and start with a "
+        "divisor we recognize. A hundred eighty is even, so two is an easy start. A hundred eighty is two times ninety.",
+        show(cpT['root'], "Let's take a hundred eighty"), show(cpT[1], 'two times ninety')),
+      L("Ninety is even too, so it's two times forty-five. Forty-five is three times fifteen, and fifteen is three times "
+        "five. We stop only when every number at the end is a prime.", show(cpT[2], 'two times forty-five'),
+        show(cpT[3], 'Forty-five is three times fifteen'), show(cpT[4], 'fifteen is three times five')),
+      L("So a hundred eighty is two squared, times three squared, times five. Let's check it by multiplying back. Four "
+        "times nine is thirty-six, and thirty-six times five is a hundred eighty.", show(cp23, 'So a hundred eighty is two squared'),
+        show(cp24, 'Four times nine')),
+      L("If you start differently, say with ten times eighteen, you get the same primes at the end. Ten is two times five, "
+        "and eighteen is two times three times three. Again two twos, two threes and one five.",
+        show(cp25, 'ten times eighteen'))),
+    S('Is it a divisor?',
+      L("Now, is a number a divisor of a hundred eighty? Check its prime ingredients. A number divides a hundred eighty "
+        "only if each of its primes is in a hundred eighty, at least as many times.", show(cp26, 'Check its prime ingredients')),
+      L("Forty-five is three times three times five. A hundred eighty has two threes and a five, so forty-five divides it. "
+        "Twelve is two times two times three. A hundred eighty has two twos and a three, so twelve divides it too.",
+        show(cp27, 'Forty-five is three times three times five')),
+      L("Now the non-examples. Seven isn't in a hundred eighty at all, so seven doesn't divide it, and neither does "
+        "fourteen or twenty-one. Eight is two times two times two, so it needs three twos, but a hundred eighty has only "
+        "two. So eight doesn't divide a hundred eighty either.", show(cp28, 'Now the non-examples')),
+      L("And watch for pieces that aren't prime. If x is three times six squared, the six squared hides two twos and two "
+        "threes. So x is two squared times three cubed, and twelve divides x, because it needs two twos and one three. "
+        "Always unpack such pieces into primes first.", show(cp29, 'If x is three times six squared'))),
+    S('Recap',
+      L("Let's sum it up. A prime has exactly two divisors, one and itself. Zero and one are not prime, and two is the only "
+        "even prime. If two primes give an odd sum or difference, one of them is two. And know the primes up to forty, "
+        "and ninety-seven.", show(cpR1, "Let's sum it up"), show(cpR2, 'If two primes give an odd sum')),
+      L("To test a bigger number, try the primes up to its root. Divisor means factor. And a number divides another only if "
+        "all its primes are there, enough times. There's a memory card with the primes and these facts right after this "
+        "video, and then the questions. Try each one first, and then watch the solution. [pause] Okay. I'll see you in "
+        "the next video.", show(cpR3, 'To test a bigger number'))),
+])
+
 # ------------------------------------------------------------------------------------------------ q-387 (Q1)
 # NEW: test the prime next to the one the choices point at (9 x 2 = 18 is there, so: could a bigger prime work?); build
 # powers from known ones (3^3 = 27, 3^4 = 81) and stop once it passes two digits (R35); a bigger base gives a bigger

@@ -725,7 +725,8 @@ FIXES = {13: _fix_t13, 14: _fix_t14, 17: _fix_t17, 18: _fix_t18}
 #   - a POINT on a board item comes at least CALM_GAP seconds after the last highlight change, unless that item was just
 #     written / shown (a new thing) - POINTs on 'choice N' and on a part of the question (she names them) always stay.
 # Shows, marks, slides and their phrases are untouched. Timing is estimated at her reading pace (14 characters a second).
-CALM_IDS = ['solve-q-520', 'solve-q-r26-t18-02', 'solve-q-r26-t18-03', 'r26-t18-summary', 'solve-q-541', 'solve-q-542', 'solve-q-543',
+CALM_IDS = ['absolute-value', 'primes', 'divisibility', 'whole-numbers', 'number-line', 'digit-puzzles', 'new-operation',
+            'solve-q-520', 'solve-q-r26-t18-02', 'solve-q-r26-t18-03', 'r26-t18-summary', 'solve-q-541', 'solve-q-542', 'solve-q-543',
             'solve-q-r26-t19-01', 'solve-q-r26-t19-02', 'operation-patterns', 'solve-q-544', 'solve-q-545',
             'solve-q-r26-t19-03', 'solve-q-546', 'solve-q-547', 'solve-q-548', 'solve-q-549', 'solve-q-r26-t19-18',
             'solve-q-550', 'solve-q-551', 'solve-q-r26-t19-05', 'solve-q-552', 'solve-q-553', 'solve-q-554', 'solve-q-555',

@@ -1,0 +1,60 @@
+{
+ "videoId": "solve-q-580",
+ "style": "the teacher reads it herself (Reading Studio), topic-20 scripts (2026-10-13): math_patches/_ai_vis_t20.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A player's score in a computer game is given by a formula. The score increases when the player collects more coins, C, and more stars, S, and decreases when the player makes more mistakes, M. C, S and M are all greater than one. Which of the following expressions cannot give the player's score?",
+    "voice": "calm",
+    "at": [
+     "A player's score"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "There's nothing to calculate here. We check how each expression reacts when one letter grows. [short pause] For each choice, we ask three things. When C grows, does the expression grow? When S grows, does it grow? And when M grows, does it get smaller? A choice that breaks even one of these cannot give the score.",
+    "at": [
+     "For each choice, we ask three things",
+     "When C grows"
+    ]
+   },
+   {
+    "say": "[short pause] Choice number one, C plus S minus M. C and S are added, so when either one grows, the result grows. M is subtracted, so when M grows, the result gets smaller. Every rule fits, so this expression could give the score, and choice number one is out.",
+    "at": [
+     "number one, C",
+     "C and S are added",
+     "so when either",
+     "and choice number one is out"
+    ]
+   },
+   {
+    "say": "Choice number two, C times S times M. All the letters are positive, so a bigger C or a bigger S makes the product bigger. That part is fine. But M is multiplied too, so more mistakes make the product bigger. That's the opposite of the rule. This expression cannot give the score, and choice number two is our answer.",
+    "at": [
+     "number two, C",
+     "so a bigger",
+     "But M is multiplied too",
+     "so more mistakes",
+     "and choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] In the exam you'd mark it and move on. But choice number three teaches something useful about fractions, so let's look at it. C to the power of S, over M. In a fraction with positive parts, a bigger top gives a bigger result, and a bigger bottom gives a smaller result.",
+    "at": [
+     "mark it and",
+     "number three teaches",
+     "about fractions, so",
+     "In a fraction with positive parts",
+     "parts, a bigger"
+    ]
+   },
+   {
+    "say": "When C grows, the top grows. When S grows, C is multiplied by itself more times, and because C is bigger than one, the top grows again. When M grows, the bottom grows, so the result gets smaller. So choice number three fits every rule. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "number three fits"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,243 @@
+{
+ "videoId": "number-line",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome to the number line. You already know it: zero in the middle, positive numbers to the right, and negative numbers to the left. In this topic it becomes a tool. It tells us what multiplying, dividing, powers and roots do to a number, without calculating."
+  ],
+  [
+   {
+    "say": "The rough split you know is positive and negative, with zero as the border. But we cut the line finer, into four ranges. Numbers below negative one. Numbers between negative one and zero, the negative fractions. Numbers between zero and one, the positive fractions. And numbers above one.",
+    "at": [
+     "know is positive",
+     "But we cut the line finer",
+     "finer, into four",
+     "Numbers below negative one",
+     "between negative one",
+     "the negative fractions",
+     "zero and one",
+     "the positive fractions",
+     "And numbers above one"
+    ]
+   },
+   {
+    "say": "Some examples. Negative three and negative seven halves are below negative one. Negative one half and negative two fifths are between negative one and zero. One half and two fifths are between zero and one. And three and seven halves are above one.",
+    "at": [
+     "Some examples",
+     "halves are below"
+    ]
+   },
+   {
+    "say": "Why four ranges, and not just positive and negative? Because numbers in different ranges behave differently when we raise them to a power or multiply them. And every number inside one range reacts the same way. Multiply one half by something, or one quarter by the same thing, and they both move the same way.",
+    "at": [
+     "every number inside one range",
+     "or one quarter"
+    ]
+   },
+   {
+    "say": "Watch the borders too: negative one, zero and one. They don't belong to any range, and they behave in their own way. One to any power is still one, so one to the power of five is one. And zero has no reciprocal, because we can't divide by zero.",
+    "at": [
+     "Watch the borders too",
+     "one, zero and"
+    ]
+   },
+   {
+    "say": "So the first step in every question is to ask which ranges the givens allow. If a question only says x is positive, x could be between zero and one, or above one. And those two ranges can behave differently.",
+    "at": [
+     "which ranges the givens allow",
+     "be between zero"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The second big idea is that the number line is symmetric. The negative side is a mirror image of the positive side. Usually it's easier to look at the positive side first, and then mirror it.",
+    "at": [
+     "the number line is symmetric",
+     "The negative side"
+    ]
+   },
+   {
+    "say": "Fifteen times two is thirty. It moves away from zero. And negative fifteen times two is negative thirty. It also moves away from zero, to the other side. That's the mirror image.",
+    "at": [
+     "Fifteen times two is thirty",
+     "It moves away",
+     "And negative fifteen times two",
+     "It also moves"
+    ]
+   },
+   {
+    "say": "Now times one fifth. Fifteen times one fifth is three, so it moves toward zero. Negative fifteen times one fifth is negative three, and it also moves toward zero. And here's the important part. Negative three is bigger than negative fifteen, because on the negative side, closer to zero means bigger.",
+    "at": [
+     "Fifteen times one fifth is three",
+     "three, so it"
+    ]
+   },
+   {
+    "say": "One more. Eight times three quarters is six, and negative eight times three quarters is negative six. Both move toward zero, and negative six is bigger than negative eight. So instead of plugging in negative numbers and risking a mistake, look at the positive side, and then mirror the picture.",
+    "at": [
+     "Eight times three quarters is six",
+     "six, and negative"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "How do multiplying and dividing move a positive number? Multiplying by a number bigger than one makes it grow. Nine times two is eighteen, and four times three is twelve.",
+    "at": [
+     "dividing move a",
+     "Multiplying by a number bigger than one",
+     "than one makes"
+    ]
+   },
+   {
+    "say": "Dividing by a number bigger than one makes it shrink. Ten divided by five is two, and twelve divided by four is three.",
+    "at": [
+     "Dividing by a number bigger than one",
+     "than one makes"
+    ]
+   },
+   {
+    "say": "Multiplying by a positive fraction makes it shrink too, because we only take part of it. Ten times one fifth is two, and eight times one half is four.",
+    "at": [
+     "Multiplying by a positive fraction",
+     "makes it shrink"
+    ]
+   },
+   {
+    "say": "Dividing by a fraction is the opposite. Dividing by a fraction is multiplying by its reciprocal. So ten divided by one fifth is ten times five, which is fifty. And three divided by one half is three times two, which is six. The number grows.",
+    "at": [
+     "Dividing by a fraction is the opposite",
+     "Dividing by a fraction is multiplying"
+    ]
+   },
+   "So one is the dividing line. Times one or divided by one changes nothing. On the negative side, the same moves happen as a mirror image, away from zero or toward zero. Multiplying by a negative number is different, because it jumps to the other side of zero, and we'll see that in a later lesson."
+  ],
+  [
+   {
+    "say": "Now the hierarchy. A number in a range further to the right stays bigger after any positive power or root. Here's an example. Which is bigger, the fifth root of eleven tenths, or the square root of seven ninths? Calculating these roots would be a nightmare, so we don't.",
+    "at": [
+     "number in a",
+     "Which is bigger",
+     "root of eleven"
+    ]
+   },
+   "Eleven tenths is not really a fraction, because the top is bigger than the bottom, so it's more than one. A root of a number above one stays above one. Seven ninths is a real fraction, less than one, and its root stays less than one. So the fifth root of eleven tenths is bigger. We ignore the roots and look at the numbers themselves.",
+   {
+    "say": "Another one. Five quarters, cubed, against the square root of three fifths. Five quarters is above one, so its cube is above one too. Three fifths is between zero and one, so its root is too. So five quarters, cubed, is bigger.",
+    "at": [
+     "Five quarters, cubed",
+     "square root of"
+    ]
+   },
+   {
+    "say": "One condition for negative numbers. The hierarchy works for them only with odd powers and odd roots, because an even power makes a negative number positive. That's what we look at next.",
+    "at": [
+     "One condition for negative numbers",
+     "The hierarchy works"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Some powers move a number into a different range. We call them exceptional powers, and we deal with them first. The first kind is a negative number to an even power. Negative five, squared, is twenty-five, and negative three, to the power of four, is eighty-one. Both jumped to the positive side.",
+    "at": [
+     "number into a",
+     "Negative five, squared",
+     "and negative three"
+    ]
+   },
+   {
+    "say": "Careful with the brackets. Negative five, in brackets, squared, is twenty-five. But without brackets, negative five squared means we square only the five, and then put the minus in front. That gives negative twenty-five.",
+    "at": [
+     "Careful with the brackets",
+     "Negative five, in"
+    ]
+   },
+   {
+    "say": "The second kind is a negative exponent. We flip the base and drop the minus. Three eighths to the power of negative two is eight thirds, squared. The base was a fraction, and now it's above one. And five to the power of negative three is one fifth, cubed. The base was above one, and now it's a fraction.",
+    "at": [
+     "The second kind is a negative exponent",
+     "We flip the"
+    ]
+   },
+   {
+    "say": "Here's how it helps. Which is bigger, the square root of four sevenths, or three fifths to the power of negative three? First handle the exceptional power: flip it, and it's five thirds, cubed. Five thirds is above one, so its cube is above one. The square root of four sevenths is less than one. So three fifths to the power of negative three is bigger.",
+    "at": [
+     "First handle the exceptional power",
+     "flip it, and"
+    ]
+   },
+   "In the next lesson you'll meet the arrows, and with the arrows you may keep the minus in the exponent. Both ways give the same answer."
+  ],
+  [
+   {
+    "say": "When two positive numbers get exactly the same operation, we can ignore the operation. Whichever number was bigger without it is bigger with it. But first, handle any exceptional power.",
+    "at": [
+     "get exactly the"
+    ]
+   },
+   {
+    "say": "For example, five to the power of negative four against four to the power of negative four. There's a minus in the exponent, so first we flip. That's one fifth to the power of four against one quarter to the power of four. Now both have the same power, so we ignore it. One quarter is bigger than one fifth, so four to the power of negative four is bigger. No calculating.",
+    "at": [
+     "five to the power of negative four",
+     "negative four against"
+    ]
+   },
+   {
+    "say": "Two more. Three quarters to the power of five against two thirds to the power of five: three quarters is bigger, so its power is bigger. And the square root of thirteen against the square root of eleven: thirteen is bigger, so its root is bigger.",
+    "at": [
+     "Three quarters to the power of five",
+     "of five against"
+    ]
+   },
+   {
+    "say": "But this works for positive numbers only. Negative three is smaller than negative two. Squared, negative three gives nine and negative two gives four, so the order flipped. With negative numbers, don't ignore the power.",
+    "at": [
+     "this works for positive numbers only",
+     "Negative three is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The last tool of this lesson is our own slogan: strong on strong, weak on weak. When we compare two products, we match the big factors against each other, and the small factors against each other.",
+    "at": [
+     "this lesson is"
+    ]
+   },
+   {
+    "say": "For example, four times six against three times five. Four beats three, and six beats five. One side wins both matches, so four times six is bigger. Twenty-four is bigger than fifteen. With letters, if a is smaller than b and c is smaller than d, all positive, then a times c is smaller than b times d.",
+    "at": [
+     "four times six against",
+     "Four beats three",
+     "With letters",
+     "smaller than b"
+    ]
+   },
+   {
+    "say": "But if each side wins one match, the rule doesn't decide. Two times nine against three times five. Three beats two, but nine beats five. Here two times nine, eighteen, happens to be bigger, but the rule alone can't tell us that.",
+    "at": [
+     "if each side wins one match",
+     "match, the rule"
+    ]
+   },
+   {
+    "say": "One more push. If one number is already bigger, and we multiply it by a number above one, it gets even bigger. Seven is bigger than five, so seven times three is bigger than five too. But multiplying by a fraction can turn it around. Seven times one half is three and a half, which is smaller than five.",
+    "at": [
+     "One more push",
+     "If one number"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So, in every question, first find the ranges the givens allow. Then handle any exceptional power. Then compare with the hierarchy, the same operation, or strong on strong. This understanding of how numbers grow, shrink and jump between ranges is what makes these questions fast. Next comes a question, and then the arrows for powers. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "first find the ranges",
+     "Then handle any"
+    ]
+   }
+  ]
+ ]
+}

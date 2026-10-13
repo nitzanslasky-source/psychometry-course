@@ -1318,3 +1318,50 @@ _apply_before_choice_order = apply
 def apply(M):
     _apply_before_choice_order(M)
     _co_load().choice_order(M, 20)   # 2026-10-09 choice order: runs LAST
+
+# =====================================================================================================================
+# 2026-10-13 topic 20 for the teacher's own-voice reading, built like topics 13-19 (t19.py ai_redo_t19). Every topic-20
+# video, the camera lesson 'algebraic-understanding' included (she reads it with the camera on), has ONE spec in
+# _ai_vis_t20.py that drives the script (ai_scripts/<vid>.json), the visual plan (_ai_visual.py format, merged into its
+# VIS) and the slides: each video is rebuilt from the spec - its spoken lines ARE the script lines (tags dropped), one
+# studio line per script line, so ai_check lines up - and _ai_visual.apply() adds the click items, POINT highlights and
+# pen marks around them. A non-camera video with a camera take recorded before AI20_CUTOFF (UTC) keeps that version.
+# Runs LAST.
+# =====================================================================================================================
+AI20_CUTOFF = '2026-10-13T15-00-00'
+AI20_CAMERA = 'algebraic-understanding'
+
+
+def _ai20_recorded(vid):
+    import glob, os, re
+    pat = re.compile(re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in glob.glob(os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(os.path.basename(f))
+        if m and m.group(1) < AI20_CUTOFF: return True
+    return False
+
+
+def _ai20_mod(name):
+    import importlib.util, os, sys
+    if name not in sys.modules:
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), name + '.py')
+        spec = importlib.util.spec_from_file_location(name, p); m = importlib.util.module_from_spec(spec)
+        sys.modules[name] = m; spec.loader.exec_module(m)
+    return sys.modules[name]
+
+
+def ai_redo_t20(M):
+    S = _ai20_mod('_ai_vis_t20'); AV = _ai20_mod('_ai_visual')
+    for vid in S.ORDER:
+        if vid not in M.D['videos'] or (vid != AI20_CAMERA and _ai20_recorded(vid)): continue
+        S.rebuild(M, vid)
+        AV.VIS[vid] = S.vis(vid)
+        AV.apply(M, vid)
+
+
+_apply_before_ai_redo_t20 = apply
+
+
+def apply(M):
+    _apply_before_ai_redo_t20(M)
+    ai_redo_t20(M)   # 2026-10-13 topic 20 for the teacher's reading: runs LAST

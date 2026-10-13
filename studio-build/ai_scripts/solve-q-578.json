@@ -1,0 +1,80 @@
+{
+ "videoId": "solve-q-578",
+ "style": "the teacher reads it herself (Reading Studio), topic-20 scripts (2026-10-13): math_patches/_ai_vis_t20.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: b and y are positive, and y squared is equal to b cubed. If b is multiplied by twenty-five, by what factor is y multiplied?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So b changes, and we need to know how y has to change so that the equation still holds. [short pause] We'll solve it two ways. This time we start with plugging in numbers, because here it's the simpler way for most students, and then we'll do the algebra.",
+    "at": [
+     "how y has to change",
+     "so that the",
+     "ways. This time",
+     "with plugging in"
+    ]
+   },
+   {
+    "say": "[short pause] First we need one pair of numbers that fits the equation. The easiest pair is b is one and y is one, because one squared and one cubed are both one. If you don't see it, put b is one. Then y squared is one. y could be one or negative one, but y is positive, so y is one.",
+    "at": [
+     "First we",
+     "put b is one",
+     "y could be"
+    ]
+   },
+   {
+    "say": "Now multiply b by twenty-five, so the new b is twenty-five. Then y squared is twenty-five cubed. Twenty-five is five squared, so twenty-five cubed is five to the power of six.",
+    "at": [
+     "Then y squared is twenty-five cubed",
+     "Twenty-five is five"
+    ]
+   },
+   {
+    "say": "Which positive number, squared, gives five to the power of six? Five cubed, because five cubed times five cubed is five to the power of six. Five cubed is a hundred twenty-five. So y went from one to a hundred twenty-five, which means it was multiplied by a hundred twenty-five. Choice number one is our answer.",
+    "at": [
+     "Five cubed is a hundred twenty-five",
+     "So y went",
+     "Choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the algebra. When b is multiplied by twenty-five, the right side becomes the bracket twenty-five b, cubed. To keep the equation true, y has to be multiplied by some number too. Let's call that number k. So the bracket k y, squared, equals the bracket twenty-five b, cubed.",
+    "at": [
+     "Now the",
+     "Let's call that number k",
+     "So the bracket"
+    ]
+   },
+   {
+    "say": "Open the brackets with the power rules. k squared times y squared equals twenty-five cubed times b cubed. We know that y squared equals b cubed, and it isn't zero, so we can divide both sides by it.",
+    "at": [
+     "Open the brackets",
+     "k squared times"
+    ]
+   },
+   {
+    "say": "That leaves k squared equals twenty-five cubed, which is five to the power of six. y stays positive, so k is positive, and k is five cubed, a hundred twenty-five. Choice number one again.",
+    "at": [
+     "That leaves k squared",
+     "twenty-five cubed, which",
+     "Choice number one again"
+    ]
+   },
+   {
+    "say": "Some students see this in their head. Twenty-five cubed is twenty-five squared times twenty-five, and twenty-five is five squared. So twenty-five cubed is the square of twenty-five times five, which is a hundred twenty-five. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Some students see this in their head",
+     "Twenty-five cubed is"
+    ]
+   }
+  ]
+ ]
+}

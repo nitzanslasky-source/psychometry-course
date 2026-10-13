@@ -1,0 +1,378 @@
+{
+ "videoId": "divisibility",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome. In this lesson we learn two things about dividing whole numbers. First, divisibility signs, quick clues that tell us whether a number divides by another number, without calculating. Then remainders, the part that confuses many students. We only need small, simple divisors, exactly what the exam asks about."
+  ],
+  [
+   {
+    "say": "When we say a number is divisible by two, we mean it divides by two with nothing left over. For example, five hundred thirty-eight divided by two is two hundred sixty-nine, a whole number. So five hundred thirty-eight is divisible by two.",
+    "at": [
+     "number is divisible"
+    ]
+   },
+   {
+    "say": "Let's start with the signs most of us already know. A number is divisible by two when it's even, and that's decided by its last digit. Five hundred thirty-eight ends in eight, which is even, so it's divisible by two. Seven hundred forty-one ends in one, which is odd, so it's not.",
+    "at": [
+     "A number is divisible by two",
+     "two when it's",
+     "Five hundred thirty-eight ends in eight",
+     "eight, which is"
+    ]
+   },
+   {
+    "say": "A number is divisible by five when its last digit is zero or five. Four hundred sixty ends in zero, and three thousand eight hundred fifteen ends in five, so both are divisible by five. Two hundred fifty-three ends in three, so it's not.",
+    "at": [
+     "A number is divisible by five",
+     "five when its",
+     "Four hundred sixty ends in zero",
+     "zero, and three"
+    ]
+   },
+   {
+    "say": "And a number is divisible by ten when its last digit is zero, like nine hundred forty. Nine hundred forty-five ends in five, so it divides by five, but not by ten.",
+    "at": [
+     "divisible by ten when",
+     "last digit is",
+     "like nine hundred forty",
+     "Nine hundred forty-five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the new ones. A number is divisible by three when the sum of its digits is divisible by three. Take nine hundred forty-two. Nine plus four is thirteen, and thirteen plus two is fifteen. Fifteen is divisible by three, so the whole number, nine hundred forty-two, is divisible by three.",
+    "at": [
+     "A number is divisible by three when",
+     "three when the",
+     "Take nine hundred forty-two",
+     "Nine plus four"
+    ]
+   },
+   {
+    "say": "Another one, five hundred twenty-three. Five plus two plus three is ten. Ten is not divisible by three, so five hundred twenty-three is not divisible by three either.",
+    "at": [
+     "Another one, five hundred twenty-three",
+     "Five plus two"
+    ]
+   },
+   {
+    "say": "Nine works exactly the same way. If the digit sum is divisible by nine, the number is divisible by nine. Eight hundred forty-six. Eight plus four is twelve, and twelve plus six is eighteen. Eighteen is divisible by nine, so eight hundred forty-six is too. But nine hundred forty-two has a digit sum of fifteen, which doesn't divide by nine. So it divides by three, but not by nine.",
+    "at": [
+     "Nine works exactly the same way",
+     "If the digit",
+     "Eight hundred forty-six. Eight plus four",
+     "Eight plus four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Four and eight are a little harder. For four, we look only at the number made by the last two digits. Two thousand seven hundred sixteen ends in sixteen, and sixteen is divisible by four, so the whole number is divisible by four.",
+    "at": [
+     "a little harder",
+     "For four, we look only",
+     "at the number",
+     "ends in sixteen",
+     "is divisible by"
+    ]
+   },
+   {
+    "say": "Why only the last two digits? Split the number into two thousand seven hundred, plus sixteen. A hundred is twenty-five fours, so every whole hundred is divisible by four, and so is two thousand seven hundred. That leaves only the last two digits to check.",
+    "at": [
+     "A hundred is twenty-five fours",
+     "so every whole"
+    ]
+   },
+   {
+    "say": "A second example, five hundred thirty-four. The last two digits are thirty-four. Thirty-two is eight fours, and thirty-four is two more, so thirty-four is not divisible by four, and neither is five hundred thirty-four.",
+    "at": [
+     "A second example, five hundred thirty-four",
+     "The last two"
+    ]
+   },
+   {
+    "say": "For eight, we do the same thing with the last three digits, because a thousand is a hundred twenty-five eights. So every whole thousand is divisible by eight. In seven thousand two hundred forty, we check two hundred forty. Two hundred forty is thirty eights, so seven thousand two hundred forty is divisible by eight.",
+    "at": [
+     "For eight, we do the same thing",
+     "same thing with",
+     "a thousand is a hundred twenty-five eights",
+     "So every whole"
+    ]
+   },
+   {
+    "say": "By the way, division by eight is very rare on the exam. And when it comes, the numbers are friendly ones from the times table, like a hundred sixty, three hundred twenty or five hundred sixty.",
+    "at": [
+     "division by eight is very rare",
+     "numbers are friendly"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Six is a strange one, because it has no sign of its own. But six is two times three. So a number that divides by two and also by three is divisible by six. Two hundred thirty-four is even, so it divides by two. Its digit sum is two plus three plus four, which is nine, so it divides by three. So two hundred thirty-four is divisible by six.",
+    "at": [
+     "one, because it",
+     "But six is two times three",
+     "So a number",
+     "Two hundred thirty-four is even",
+     "so it divides"
+    ]
+   },
+   {
+    "say": "Now a non-example, a hundred thirty-five. Its digit sum is one plus three plus five, nine, so it divides by three. But it's odd, so it doesn't divide by two. So it's not divisible by six.",
+    "at": [
+     "a hundred thirty-five",
+     "Its digit sum"
+    ]
+   },
+   {
+    "say": "We can build other divisors the same way. Fifteen is three times five. Five hundred ten ends in zero, so it divides by five, and its digit sum is five plus one plus zero, which is six, so it divides by three. So five hundred ten is divisible by fifteen.",
+    "at": [
+     "Fifteen is three times five",
+     "Five hundred ten ends in zero",
+     "five, and its"
+    ]
+   },
+   {
+    "say": "Twelve is three times four, eighteen is two times nine, and twenty-four is three times eight. Check each part with its own sign. If the number divides by both parts, it divides by the big number.",
+    "at": [
+     "Twelve is three times four",
+     "eighteen is two"
+    ]
+   },
+   {
+    "say": "But careful, the two parts must share no factor. Why not split twelve as two times six? Look at eighteen. Eighteen divides by two and by six, but eighteen is not divisible by twelve. Two and six share a two, so this check doesn't work. Three and four share nothing, so for twelve we use three times four.",
+    "at": [
+     "Look at eighteen",
+     "Eighteen divides by"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Eleven is the hardest one. For a two-digit number it's easy, the same digit twice: twenty-two, thirty-three, fifty-five, ninety-nine.",
+    "at": [
+     "Eleven is the hardest one",
+     "For a two-digit"
+    ]
+   },
+   {
+    "say": "For a three-digit number there are two ways. The first way: take the number made by the first two digits, and subtract the last digit. Four hundred eighteen. Forty-one minus eight is thirty-three, and thirty-three divides by eleven, so four hundred eighteen divides by eleven. Four hundred twenty-seven. Forty-two minus seven is thirty-five, which doesn't divide by eleven, so four hundred twenty-seven doesn't either.",
+    "at": [
+     "The first way",
+     "two digits, and"
+    ]
+   },
+   {
+    "say": "The second way: add the two outer digits, and subtract the middle digit. Four hundred eighteen again. Four plus eight is twelve, and twelve minus one is eleven. When the result is zero or eleven, the number divides by eleven.",
+    "at": [
+     "The second way",
+     "two outer digits",
+     "When the result is zero or eleven",
+     "or eleven, the"
+    ]
+   },
+   {
+    "say": "For longer numbers, go digit by digit with plus, minus, plus, minus. One thousand three hundred thirty-one. One, minus three, plus three, minus one, is zero, so it divides by eleven. Four hundred eighty-two. Four, minus eight, plus two, is negative two. That's not zero, eleven or negative eleven, so four hundred eighty-two doesn't divide by eleven.",
+    "at": [
+     "For longer numbers",
+     "One thousand three"
+    ]
+   },
+   {
+    "say": "Most exam numbers are simple, like a hundred forty-three or a hundred sixty-five, but now you're ready for harder ones too.",
+    "at": [
+     "Most exam numbers are simple",
+     "a hundred sixty-five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why do we need these signs? Many exam word problems are really about divisibility. For example, if a quarter of a group wear hats, the size of the group must divide by four, because you can't have a quarter of a person. The signs let us check the answer choices fast, and you'll see questions like this right after this lesson.",
+    "at": [
+     "these signs? Many",
+     "if a quarter of a",
+     "group wear hats"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now remainders. A remainder is what's left when we divide one number by another. Ten divided by three. Three fits into ten three times, up to nine, and one is left. So the remainder is one.",
+    "at": [
+     "is what's left",
+     "Ten divided by three",
+     "times, up to"
+    ]
+   },
+   {
+    "say": "Another example, fifty-three divided by seven. Seven sevens are forty-nine, and fifty-three minus forty-nine is four. So the remainder is four. The number we divide by, seven, is the divisor, and how many whole times it fits, here also seven, is the quotient. So fifty-three is seven times seven, plus four.",
+    "at": [
+     "The number we divide by",
+     "seven, is the",
+     "So fifty-three is seven times seven",
+     "seven, plus four"
+    ]
+   },
+   {
+    "say": "The remainder is always smaller than the divisor. If seven or more were left, the seven would fit one more time.",
+    "at": [
+     "always smaller than the divisor",
+     "If seven or"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's where students usually go wrong. What's the remainder when we divide five by eight? It's five, not three. The remainder is not the difference between the numbers.",
+    "at": [
+     "What's the remainder when we divide five",
+     "divide five by"
+    ]
+   },
+   {
+    "say": "Think of a shop. Each drink costs eight shekels, and you have thirty-five shekels. You buy as many as you can: eight, sixteen, twenty-four, thirty-two. That's four drinks, and three shekels stay in your hand. Three is the remainder.",
+    "at": [
+     "Think of a shop",
+     "and you have"
+    ]
+   },
+   {
+    "say": "Now you walk in with only five shekels. That's not enough for even one drink. You get zero drinks, and the five shekels stay in your hand. So five divided by eight is zero, with a remainder of five. The remainder is what's left in your hand after you buy as many as you can.",
+    "at": [
+     "only five shekels",
+     "You get zero"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "What remainders can we get when we divide by four? Let's try. One divided by four leaves one. Two leaves two, and three leaves three. Four divides exactly, so it leaves zero. Five leaves one again, and six leaves two.",
+    "at": [
+     "get when we",
+     "One divided by four leaves one",
+     "Four divides exactly"
+    ]
+   },
+   "So the remainders go round and round: one, two, three, zero. The biggest remainder is three, one less than four. With one more, the four would fit again.",
+   {
+    "say": "That's a rule: the biggest remainder is always one less than the divisor. Dividing by ten, the biggest remainder is nine. Dividing by twelve, it's eleven.",
+    "at": [
+     "That's a rule",
+     "remainder is always",
+     "Dividing by ten",
+     "remainder is nine"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The digit sum gives us one more gift, but only for three and nine. Five thousand four hundred thirty-two has a digit sum of five plus four plus three plus two, which is fourteen.",
+    "at": [
+     "us one more",
+     "only for three and nine",
+     "Five thousand four",
+     "has a digit sum of five plus four",
+     "plus two, which"
+    ]
+   },
+   {
+    "say": "Fourteen divided by nine leaves five, so five thousand four hundred thirty-two divided by nine also leaves five. And fourteen divided by three leaves two, so the big number divided by three leaves two as well.",
+    "at": [
+     "Fourteen divided by nine leaves five",
+     "five, so five"
+    ]
+   },
+   {
+    "say": "Another example, two hundred twenty. Its digit sum is two plus two plus zero, which is four. Four divided by three leaves one, so two hundred twenty divided by three leaves one. This works only for three and nine. For four or seven, the digit sum tells us nothing about the remainder.",
+    "at": [
+     "Another example, two hundred twenty",
+     "Its digit sum"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "When a number leaves a known remainder, we can write it with a letter. A number that leaves three when divided by four can be written as four k plus three, where k is any whole number. We call this a tag.",
+    "at": [
+     "a known remainder",
+     "four k plus three",
+     "k is any"
+    ]
+   },
+   {
+    "say": "Why does it work? Four k is always divisible by four, and the three on the end is what's left. Let's try. k is zero gives three. k is one gives seven, and seven divided by four leaves three. k is two gives eleven, which also leaves three.",
+    "at": [
+     "Let's try. k is",
+     "k is one"
+    ]
+   },
+   {
+    "say": "Another tag. A number that leaves four when divided by fifteen is fifteen k plus four. For example, nineteen, thirty-four and forty-nine all leave four when divided by fifteen.",
+    "at": [
+     "fifteen k plus four",
+     "For example, nineteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes a question changes the divisor. A number leaves four when divided by fifteen. What does it leave when divided by five? Write it as fifteen k plus four. Fifteen k is five times three k, a whole number of fives, so it divides by five. So the number divided by five leaves four. Check it with nineteen: nineteen divided by five leaves four.",
+    "at": [
+     "the divisor. A",
+     "Write it as fifteen k plus four",
+     "three k, a"
+    ]
+   },
+   {
+    "say": "Now a number that leaves thirteen when divided by fifteen. Fifteen k still divides by five, but thirteen is too big to be a remainder by five. So we divide it again. Thirteen is two fives plus three, so the remainder is three. Check it with twenty-eight: twenty-eight divided by five leaves three.",
+    "at": [
+     "Thirteen is two fives plus three",
+     "Check it with"
+    ]
+   },
+   {
+    "say": "But it doesn't always work. A number leaves two when divided by eight. What does it leave when divided by six? Try two, and it leaves two. Try ten, which also leaves two when divided by eight. Ten divided by six leaves four. Two different answers, so we can't know.",
+    "at": [
+     "Try ten",
+     "two when divided by eight. Ten"
+    ]
+   },
+   {
+    "say": "What's the difference? Five divides fifteen, so fifteen k is made of whole fives, and they drop out. Six doesn't divide eight, so eight k isn't made of whole sixes, and it can leave anything. So changing the divisor works only when the new divisor divides the old one.",
+    "at": [
+     "works only",
+     "divisor divides the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "To sum up. For two, five and ten, look at the last digit. For three and nine, the digit sum. For four, the last two digits, and for eight, the last three. A bigger divisor, split it into parts with no common factor.",
+    "at": [
+     "For two, five and ten",
+     "look at the",
+     "For four, the last",
+     "digits, and for"
+    ]
+   },
+   {
+    "say": "For eleven, the first two digits minus the last one, or the outer digits minus the middle one.",
+    "at": [
+     "For eleven",
+     "digits minus the"
+    ]
+   },
+   {
+    "say": "A remainder is what's left in your hand. It's always smaller than the divisor, and the biggest one is the divisor minus one. Now some questions. Come in focused, because remainders are the part that confuses people. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "A remainder is what",
+     "in your hand"
+    ]
+   }
+  ]
+ ]
+}

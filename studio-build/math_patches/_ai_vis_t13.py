@@ -38,7 +38,7 @@ _s = importlib.util.spec_from_file_location('_shaded_nl_t13ai', os.path.join(HER
 SNL = importlib.util.module_from_spec(_s); _s.loader.exec_module(SNL)
 
 VIDEOS = {}
-ORDER = []          # topic-13 flow order of the AI videos (absolute-value = the camera lesson, not here)
+ORDER = []          # topic-13 flow order of the scripts (absolute-value = the camera lesson: a reading script too since 2026-10-13)
 TAG = re.compile(r'\[(short pause|pause|long pause)\]')
 
 
@@ -297,6 +297,168 @@ def stats(vid):
 # =================================================================================================================
 # THE SCRIPTS (topic-13 flow order). See the review file ~/Downloads/Topic-13-AI-scripts-review.md for NEW / REMINDER.
 # =================================================================================================================
+
+# ------------------------------------------------------------------------------------------------ absolute-value (camera lesson)
+# 2026-10-13 teacher: her camera first lesson as a reading script too (same style, handwriting, camera on), MORE examples.
+# Hebrew lesson alg 11083-11847, all of it: distance from zero (5, -7, the 3 km walk), the bars, positive stays / negative
+# loses its minus (8, -3, -2/7, 0 -> new numbers), a whole expression inside (4 + (-7) -> new numbers), the rules (never
+# negative = the definition, |ab| = |a||b|, |a + b| <= |a| + |b| "fine if you don't remember it", same / different signs and
+# why), the sign clues (|x| > x, |x| = x, x > |x| impossible), equations: two cases (|x + 4| = 9 -> new numbers), inequalities
+# symmetric, big side open, small side closed, like the x squared inequalities, an expression inside (|x + 4| < 7 -> new).
+# Kept from the English lesson: |x| = -x, letters hide their sign, the fraction rule, plug in a number.  Signature visual: the
+# distance picture (DIST), built at the words.  The full |x - a| = distance method is taught in q-359 (only previewed here).
+av0 = I('av0', '$|x|$', size=50)
+avd = DIST('avd', -9, 9, 0, 7, base=(0,), w=760)
+av1 = I('av1', '$|9|=9 \\qquad |15|=15$', hand='|9| = 9      |15| = 15')
+av2 = I('av2', '$|-4|=4 \\qquad \\left|-\\frac35\\right|=\\frac35$', hand='|−4| = 4      |−{3/5}| = {3/5}')
+av3 = I('av3', '$|0|=0$', hand='|0| = 0')
+av4 = I('av4', '$x=-3$: $\\ |x|=3=-x$ $\\quad x=5$: $\\ |x|=5=x$', size=30, col=1)
+av5 = I('av5', '$|3+(-10)|=|-7|=7$', hand='|3 + (−10)| = |−7| = 7')
+av6 = I('av6', '$3+10=13$ ✗', hand='3 + 10 = 13   ✗')
+av7 = I('av7', '$|5-11|=|-6|=6$', hand='|5 − 11| = |−6| = 6')
+av8 = I('av8', '$|x|\\ge0$', size=44, hand='|x| ≥ 0')
+av9 = I('av9', '$|a\\cdot b|=|a|\\cdot|b| \\qquad \\left|\\frac ab\\right|=\\frac{|a|}{|b|}$', size=34, col=1)
+av10 = I('av10', '$|-4\\cdot5|=|-20|=20 \\qquad |-4|\\cdot|5|=20$', size=30)
+av11 = I('av11', '$\\left|\\frac{-12}{3}\\right|=|-4|=4 \\qquad \\frac{|-12|}{|3|}=\\frac{12}{3}=4$', size=30)
+av12 = I('av12', '$|a+b|\\le|a|+|b|$', size=40, col=1)
+av13 = I('av13', 'Same signs: $\\ |-3+(-4)|=7 \\quad |-3|+|-4|=7$', size=30)
+av14 = I('av14', 'Different signs: $\\ |-3+4|=1 \\quad |-3|+|4|=7$', size=30)
+av15 = I('av15', '$|x|>x\\ \\to\\ x$ is negative $\\quad |-4|=4>-4$', size=30)
+av16 = I('av16', '$|x|=x\\ \\to\\ x\\ge0$ $\\quad |9|=9,\\ |0|=0$', size=30)
+av17 = I('av17', '$|x|=-x\\ \\to\\ x\\le0$ $\\quad |-6|=6=-(-6)$', size=30)
+av18 = I('av18', '$x>|x|\\ \\to\\ $ impossible', size=30)
+ave = DIST('ave', -9, 9, 0, 6, base=(0,), w=760)
+av19 = I('av19', 'inside $=$ right side $\\quad$ or $\\quad$ inside $=-\\,$right side', size=28)
+av20 = I('av20', '$|x+3|=8$: $\\ x+3=8\\ \\to\\ x=5$', size=30, hand='|x + 3| = 8 :   x + 3 = 8  →  x = 5')
+av21 = I('av21', '$x+3=-8\\ \\to\\ x=-11$', size=30, hand='x + 3 = −8  →  x = −11')
+av22 = I('av22', '$|5+3|=8 \\qquad |-11+3|=|-8|=8$ ✓', size=30)
+avf = DIST('avf', -1, 9, 4, 2, base=(0,), w=760)
+av23 = I('av23', '$|x-4|=2$: $\\ $two steps from $4$: $\\ 6$ or $2$', size=30)
+avr = DIST('avr', -8, 8, 0, 3, base=(0,), band='rays', w=760)
+av24 = I('av24', '$|x|>3\\ \\to\\ x>3$ or $x<-3$ $\\quad$ open', size=30, col=1)
+avb = DIST('avb', -8, 8, 0, 3, base=(0,), band='open', w=760)
+av25 = I('av25', '$|x|<3\\ \\to\\ -3<x<3$ $\\quad$ closed', size=30, col=1)
+av26 = I('av26', '$|x-2|<5$: $\\ -5<x-2<5$', size=30, hand='|x − 2| < 5 :   −5 < x − 2 < 5')
+av27 = I('av27', '$-3<x<7$', size=30, hand='−3 < x < 7')
+video('absolute-value', 'lesson', slides=[
+    S('Absolute Value',
+      L("Absolute value. It shows up on the exam in expressions, in equations and in inequalities, and one idea runs the "
+        "whole topic. Let's learn it.")),
+    S('Distance from zero',
+      L("The absolute value of a number is its distance from zero. Five is five steps away from zero, so the absolute value "
+        "of five is five. Negative seven is a negative number, but its distance from zero is seven steps. So the absolute "
+        "value of negative seven is seven.", show(avd['line'], 'its distance from zero'), show(avd['left'], 'Negative seven is a negative number')),
+      L("A distance is never negative. The way from my home to my friend's home isn't minus three kilometers. It's three "
+        "kilometers. That's why an absolute value is always zero or positive."),
+      L("We write it with two straight bars, one on each side of the number. This is the absolute value of x.",
+        show(av0, 'two straight bars'))),
+    S('What the bars do',
+      L("So what do the bars do to a number? A positive number stays exactly the same. The absolute value of nine is nine, "
+        "and the absolute value of fifteen is fifteen.", show(av1, 'The absolute value of nine is nine')),
+      L("A negative number becomes the same number, but positive. The absolute value of negative four is four, and the "
+        "absolute value of negative three fifths is three fifths. With a plain number, the minus simply drops off.",
+        show(av2, 'The absolute value of negative four')),
+      L("And zero? Zero isn't far from zero at all. It's right there. So the absolute value of zero is zero.",
+        show(av3, 'So the absolute value of zero')),
+      L("But careful with letters, because a letter hides its sign. If x is negative three, then minus x is plus three. So "
+        "the absolute value of x is three, which is minus x, not x. If x is five, the absolute value of x is five, which is x "
+        "itself. So with a letter, the minus doesn't just drop off. First ask: is the letter positive or negative?",
+        show(av4, 'If x is negative three'))),
+    S('A whole expression inside',
+      L("When there's a whole expression inside the bars, the bars belong to the whole expression, not to each number "
+        "inside it. So we calculate the inside first, and only then take the bars."),
+      L("For example, the absolute value of three plus, in brackets, negative ten. Inside first: three plus negative ten is "
+        "three minus ten, which is negative seven. Its absolute value is seven.", show(av5, 'Inside first: three plus negative ten')),
+      L("What we must not do is turn the negative ten into ten first, and then add. That gives three plus ten, which is "
+        "thirteen, a different number.", show(av6, 'That gives three plus ten')),
+      L("One more. The absolute value of five minus eleven. Inside first: five minus eleven is negative six, so the absolute "
+        "value is six. Inside first, then the bars.", show(av7, 'Inside first: five minus eleven'))),
+    S('The rules',
+      L("Now three rules. Rule one is really the definition: an absolute value is never negative. It can be zero, and it "
+        "can be positive. So whenever you see bars, think zero or positive.", show(av8, 'an absolute value is never negative')),
+      L("Rule two: for a product, we can put the bars on the whole product, or on each factor, and we get the same result. "
+        "The absolute value of the whole product, negative four times five, is the absolute value of negative twenty, which is twenty. And the "
+        "absolute value of negative four, times the absolute value of five, is four times five, also twenty.",
+        show(av9, 'for a product'), show(av10, 'The absolute value of the whole product')),
+      L("The same works for a fraction: bars on the top, and bars on the bottom. Negative twelve over three is negative "
+        "four, and its absolute value is four. Twelve over three is also four.", show(av11, 'Negative twelve over three')),
+      L("Rule three is about a sum. The absolute value of the whole sum, a plus b, is smaller than or equal to the absolute "
+        "value of a, plus the absolute value of b. It's fine if you don't remember this rule. If a question uses it, you can solve it by "
+        "plugging in numbers or by understanding. But let's see why it's true.", show(av12, 'Rule three is about a sum')),
+      sb='The rules'),
+    S('Same signs, different signs',
+      L("When a and b have the same sign, the two sides are equal. Negative three plus negative four is negative seven, and "
+        "its absolute value is seven. Separately, three plus four is also seven.", show(av13, 'Negative three plus negative four')),
+      L("When they have different signs, the left side is smaller. Negative three plus four is one. Separately, three plus "
+        "four is seven. One is smaller than seven.", show(av14, 'Negative three plus four is one')),
+      L("Why? Taking each one separately makes both of them positive, so their sum is as big as it can be. When one of them "
+        "is negative inside the bars, it eats part of the other one. So same signs, equal. Different signs, smaller.",
+        pt('av14', 'it eats part of the other one'))),
+    S('Sign clues',
+      L("A very useful trick is to compare a number with its own absolute value. It tells you the sign. If the absolute "
+        "value is bigger than the number, the number is negative. For example, the absolute value of negative four is four, "
+        "and four is bigger than negative four.", show(av15, 'If the absolute value is bigger than the number')),
+      L("If the absolute value equals the number, the number is positive or zero. The absolute value of nine is nine, and "
+        "the absolute value of zero is zero. Don't forget the zero.", show(av16, 'If the absolute value equals the number')),
+      L("If the absolute value equals minus the number, the number is negative or zero. For example, the absolute value of "
+        "negative six is six, and minus negative six is six too.", show(av17, 'equals minus the number')),
+      L("And if the number is bigger than its absolute value? That never happens. A negative number is smaller than its "
+        "absolute value, and a positive number is equal to it. So a given like that contradicts itself. These clues come up "
+        "on the exam again and again, and they tell you at once whether a number is positive or negative.",
+        show(av18, 'bigger than its absolute value'))),
+    S('Equations: two cases',
+      L("Now equations. The absolute value of x equals six. Which numbers are six steps from zero? Six, and negative six. "
+        "One on each side of zero.", show(ave['line'], 'Which numbers are six steps'), show(ave['right'], 'Six, and negative six'),
+        show(ave['left'], 'One on each side')),
+      L("So an equation with bars splits into two cases. The inside equals the right side, or the inside equals minus the "
+        "right side. Why minus? Because if the inside is negative six, the bars still turn it into six.",
+        show(av19, 'splits into two cases')),
+      L("For example, the absolute value of the whole x plus three equals eight. Case one: x plus three is eight, so x is eight minus "
+        "three, which is five. Case two: x plus three is negative eight, so x is negative eight minus three, which is "
+        "negative eleven. We use the same inside twice, once with eight and once with negative eight.",
+        show(av20, 'Case one: x plus three is eight'), show(av21, 'Case two: x plus three is negative eight')),
+      L("Let's check both. Five plus three is eight, and its absolute value is eight. Negative eleven plus three is negative "
+        "eight, and its absolute value is eight too. Both work.", show(av22, "Let's check both")),
+      sb='Equations: two cases'),
+    S('Equations: two cases',
+      L("There's also a picture for this. The absolute value of the whole x minus four is the distance between x and four. You'll see "
+        "why in the first questions. For now, one example. The absolute value of the whole x minus four equals two means that x is two "
+        "steps from four. Two steps to the right is six, and two steps to the left is two.",
+        show(avf['line'], 'the distance between x and four'), show(avf['right'], 'Two steps to the right is six'),
+        show(avf['left'], 'two steps to the left is two')),
+      L("So x is six or two. Six minus four is two, and two minus four is negative two, and both have an absolute value of "
+        "two.", show(av23, 'So x is six or two')),
+      sb='Equations: two cases'),
+    S('Inequalities: the big side',
+      L("Inequalities are a little harder. There are two situations: the bars are on the big side of the inequality, or on "
+        "the small side. And with the absolute value of x, the range is always symmetric. What works on the positive side "
+        "works on the negative side too."),
+      L("The absolute value of x is bigger than three. Without its sign, x must be more than three. Four and five work. "
+        "Negative four and negative five work too, because the bars remove the minus. And two? Its absolute value is two, "
+        "which is not bigger than three, so two doesn't work.", show(avr['line'], 'The absolute value of x is bigger than three')),
+      L("On the number line, that's two rays going outward, one from three to the right, and one from negative three to the "
+        "left. The circles are open, because three itself is not bigger than three. So bars on the big side give an open "
+        "range: x is bigger than three, or x is smaller than negative three.", show(avr['right'], 'one from three to the right'),
+        show(avr['left'], 'one from negative three to the left'), show(avr['band'], 'The circles are open'),
+        show(av24, 'So bars on the big side'))),
+    S('Inequalities: the small side',
+      L("Now the absolute value of x is smaller than three. Without its sign, x must be less than three. Two, one and zero "
+        "work, and so do negative one and negative two. Negative five? No. The bars turn it into five, which is not smaller "
+        "than three.", show(avb['line'], 'Now the absolute value of x is smaller than three')),
+      L("On the number line, that's one band between negative three and three. So bars on the small side give a closed "
+        "range: x is between negative three and three. It's just like the x squared inequalities you learned. On the small "
+        "side the range is closed, and on the big side it's open.", show(avb['right'], 'one band between'),
+        show(avb['left'], 'negative three and three'), show(avb['band'], 'So bars on the small side'),
+        show(av25, 'x is between negative three and three')),
+      L("With an expression inside, it's the same idea. The absolute value of the whole x minus two is smaller than five. The bars are "
+        "on the small side, so the inside, x minus two, is between negative five and five. Now add two to all three parts. "
+        "Negative five plus two is negative three, and five plus two is seven. So x is between negative three and seven.",
+        show(av26, 'The absolute value of the whole x minus two'), show(av27, 'So x is between negative three and seven'))),
+    S('Wrap-up',
+      L("So bars show up in expressions, in equations and in inequalities. Inside first, then the bars, and the result is "
+        "never negative. Equations split into two cases, and inequalities give a closed range or an open one. And like in "
+        "almost every topic, plugging in a number works here too. [pause] Okay. I'll see you in the next video.")),
+])
 
 # ------------------------------------------------------------------------------------------------ q-358 (Q1)
 # NEW: "signs only, no sizes", the tie-breaker plug (why: necessarily = for every pair); plugging in finds the signs by trying (y = 3 fails, x = -8 fails) -

@@ -1,57 +1,95 @@
 {
  "videoId": "r26-t20-summary",
- "style": "calm, natural hesitations, like explaining to a friend",
+ "style": "the teacher reads it herself (Reading Studio), topic-20 scripts (2026-10-13): math_patches/_ai_vis_t20.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "So, a quick summary before you practice on your own.",
-   "Everything from algebraic understanding... in about three minutes."
+   "Before you practice, here's a quick summary of the topic. The three tools, how to choose numbers, and the counting tools."
   ],
   [
-   "Now, there's no fixed recipe here. But three tools open almost every question.",
-   "Numbers first, because they're fast and safe. Then the answers. And algebra when the numbers don't decide."
+   {
+    "say": "There's no fixed recipe in this topic, but three tools open almost every question. Plug in numbers, test the answer choices, and use algebra when the numbers don't decide. Numbers are usually the fastest place to start.",
+    "at": [
+     "in this topic",
+     "three tools open almost every question",
+     "Plug in numbers"
+    ]
+   },
+   {
+    "say": "Read the question word first. When it asks what must be true, one allowed case where a choice fails rules that choice out. When it asks what could be true, one allowed example that works is enough.",
+    "at": [
+     "Read the question word first",
+     "When it asks"
+    ]
+   },
+   {
+    "say": "When it asks what cannot be true, look for the one value that never works, often by finding the biggest or the smallest possible value. And not necessarily true means it fails in at least one allowed case.",
+    "at": [
+     "When it asks what cannot be true",
+     "be true, look"
+    ]
+   }
   ],
   [
-   "Must: one case that fails, and it's out. Could: one example is enough.",
-   "Write the word down before you touch the choices. Under pressure, the directions flip."
+   {
+    "say": "Use only numbers the givens allow. Start with an easy one, check the choices right away, and try a number from another region only if more than one choice is left. For positive numbers, the two regions are numbers bigger than one, and numbers between zero and one.",
+    "at": [
+     "Use only numbers the givens allow",
+     "Start with an"
+    ]
+   },
+   {
+    "say": "Different letters can be equal unless the question says they're different. So when equal values are allowed, try them too.",
+    "at": [
+     "Different letters can be equal",
+     "unless the question"
+    ]
+   },
+   {
+    "say": "Between zero and one, squaring makes a number smaller, and the square root makes it bigger. With negative numbers, the farther a number is from zero, the smaller it is. And when the question asks for the smallest or the biggest for every x in a range, one easy number from the range decides.",
+    "at": [
+     "Between zero and one",
+     "makes a number"
+    ]
+   }
   ],
   [
-   "Read the conditions first. And test only numbers they allow.",
-   "Then take one number from each region. For x positive, that's two, and one half.",
-   "Two choices left? Don't guess. Try a number from another region."
+   {
+    "say": "Integers leave gaps. An integer smaller than twenty is at most nineteen. And if a is bigger than b, which is bigger than c, all integers, then a is at least c plus two. Use these gaps to find the biggest or the smallest possible value.",
+    "at": [
+     "Integers leave gaps",
+     "An integer smaller"
+    ]
+   },
+   {
+    "say": "When one letter is multiplied, start from an easy pair that fits, like one and one, then put in the new value. For example, if x squared equals a cubed, x is positive, and a is multiplied by nine, then a is nine, and x squared is nine cubed, which is three to the power of six. So x is three cubed, twenty-seven, and x was multiplied by twenty-seven.",
+    "at": [
+     "When one letter is multiplied",
+     "start from an"
+    ]
+   },
+   {
+    "say": "Sometimes the key is a structure from another topic. If whole numbers fit c squared equals a squared plus b squared, think of a right triangle. c is the longest side, a plus b is longer than c, and the smallest whole numbers that fit are three, four and five.",
+    "at": [
+     "a structure from another topic",
+     "If whole numbers"
+    ]
+   }
   ],
   [
-   "Between zero and one, squaring makes a number smaller, and the root makes it bigger.",
-   "With negatives, the farther from zero, the smaller.",
-   "Which one is the largest for every x in a range? Well, one easy number from the range decides."
-  ],
-  [
-   "Integers leave gaps. So bigger means bigger by at least one.",
-   "Use the gaps to find the biggest, or the smallest, possible value.",
-   "A cannot question with a hidden maximum? Test the most extreme choices first."
-  ],
-  [
-   "One variable is multiplied... so what happens to the other?",
-   "Start from one and one, then put in the new value. Nine cubed is three to the sixth. And its root is three cubed... twenty-seven.",
-   "Or use the rule. x changes by the factor to the power of three halves."
-  ],
-  [
-   "Sometimes a structure from another topic is the key.",
-   "A cycle of ratios cancels to one. So the three can't all be bigger than one.",
-   "But check the givens before you use it. Positive values, nothing equal to zero."
-  ],
-  [
-   "Both ends in? Plus one. Both ends out? Minus one. One end? Just subtract.",
-   "Only odd, or only even numbers? Find the first and the last that count, and then jump by two.",
-   "Not sure? Count a small case on your fingers."
-  ],
-  [
-   "Eight numbers, but only seven remainders when you divide by seven. So two of them share a remainder... and their difference is divisible by seven.",
-   "To be sure? Imagine the worst luck. One in every box. And then one more."
-  ],
-  [
-   "So, before every question, ask yourself:",
-   "The traps: numbers between zero and one, negative numbers, and the forgotten plus one.",
-   "Then practice on your own... and you've finished algebra. Good luck."
+   {
+    "say": "To count whole numbers from a to b: with both ends in, it's b minus a, plus one. With both ends out, b minus a, minus one. With one end in, just b minus a. For only odd or only even numbers, find the first and the last that count, take the difference, divide by two, and add one.",
+    "at": [
+     "To count whole numbers",
+     "a to b:"
+    ]
+   },
+   {
+    "say": "More items than boxes means some box gets two. To be sure, imagine the worst luck, one item in every box, and then add one more. [pause] That's it. Now go practice, and with that you've finished algebra. I'll see you in the next video.",
+    "at": [
+     "More items than boxes",
+     "some box gets"
+    ]
+   }
   ]
  ]
 }

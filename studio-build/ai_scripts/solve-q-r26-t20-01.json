@@ -1,0 +1,104 @@
+{
+ "videoId": "solve-q-r26-t20-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-20 scripts (2026-10-13): math_patches/_ai_vis_t20.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: x and y are positive numbers, and x is bigger than y. Which of the following must be true?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Must be true means true for every allowed pair. So one allowed pair where a choice fails is enough to rule that choice out. [short pause] We'll solve it two ways, plugging in numbers, and then with algebra, to see why the answer always works.",
+    "at": [
+     "Must be true means",
+     "one allowed pair"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with easy whole numbers that fit the givens. x is three and y is two. Both are positive, and three is bigger than two.",
+    "at": [
+     "Let's start",
+     "easy whole numbers",
+     "x is three and y is two",
+     "Both are positive"
+    ]
+   },
+   {
+    "say": "Choice number one, x squared is bigger than x. Three squared is nine, and nine is bigger than three, so it works here. Choice number two, x y is bigger than y. Three times two is six, and six is bigger than two. It works. Choice number three, x squared is bigger than y squared. Nine is bigger than four. It works too.",
+    "at": [
+     "number one, x",
+     "Three squared is nine",
+     "nine is bigger",
+     "number two, x",
+     "and six is",
+     "number three, x",
+     "It works too"
+    ]
+   },
+   {
+    "say": "Choice number four, x over y is bigger than x. Three over two is one and a half, and one and a half is not bigger than three. So choice number four fails for an allowed pair, and it's out.",
+    "at": [
+     "number four, x",
+     "Three over two is",
+     "and a half",
+     "and it's out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Three choices still work, so one pair wasn't enough. Positive numbers can also be between zero and one, and there, squaring makes a number smaller. So let's try x is one half and y is one quarter. Both are positive, and one half is bigger than one quarter.",
+    "at": [
+     "Three choices",
+     "so one pair",
+     "Positive numbers can",
+     "between zero and one",
+     "there, squaring makes",
+     "x is one half and y",
+     "y is one"
+    ]
+   },
+   {
+    "say": "Choice number one. One half squared is one quarter, and one quarter is not bigger than one half, so it's out. Choice number two. One half times one quarter is one eighth, and one eighth is not bigger than one quarter, so it's out too.",
+    "at": [
+     "number one. One",
+     "One half squared is one quarter",
+     "quarter, and one",
+     "so it's out.",
+     "number two. One",
+     "bigger than one quarter",
+     "so it's out too"
+    ]
+   },
+   {
+    "say": "Only choice number three is left, so choice number three is our answer.",
+    "at": [
+     "so choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's see why choice number three is true for every allowed pair. x squared minus y squared is, in brackets, x minus y, times, in brackets, x plus y.",
+    "at": [
+     "Now let's",
+     "number three is",
+     "x squared minus y squared is",
+     "is, in brackets"
+    ]
+   },
+   {
+    "say": "x is bigger than y, so x minus y is positive. Both numbers are positive, so x plus y is positive too. A positive number times a positive number is positive. So x squared minus y squared is positive, which means x squared is bigger than y squared, always. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "so x minus y is positive",
+     "Both numbers are",
+     "bigger than y squared, always"
+    ]
+   }
+  ]
+ ]
+}

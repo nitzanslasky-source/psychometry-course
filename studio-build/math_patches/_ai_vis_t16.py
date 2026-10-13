@@ -410,6 +410,85 @@ def TREE(name, root, steps, w=330, col=1, dx=92, dy=50):
 # THE SCRIPTS (topic-16 flow order). NEW / REMINDER per video: see ~/Downloads/Topic-16-AI-scripts-review.md.
 # =================================================================================================================
 
+# ------------------------------------------------------------------------------------------------ whole-numbers (camera lesson)
+# 2026-10-13 teacher: her camera first lesson as a reading script too ("the same style, with the handwriting ... maybe a
+# bit more examples"), read with the camera on. NEW (the whole topic relies on it): the sign rules for multiplying and
+# dividing (2-3 examples each + the non-example "a positive product is not two positives"), counting the minuses (odd /
+# even, why), even powers, odd powers, absolute value, -x = the opposite, zero, sums (the farther-from-zero number wins;
+# counting minuses does not work there), and the sign-question habit (surely positive pieces first; the given "not
+# zero"). Hebrew lesson (alg 15738-15814): every rule kept; its sample question is q-457.
+wn1 = I('wn1', '$4\\cdot5=20\\qquad(-4)\\cdot(-5)=20$', size=34, hand='4·5 = 20        (−4)·(−5) = 20')
+wn2 = I('wn2', '$(-4)\\cdot5=-20\\qquad4\\cdot(-5)=-20$', size=34, hand='(−4)·5 = −20        4·(−5) = −20')
+wn3 = I('wn3', '$ab>0$: same sign $\\quad ab<0$: different signs $\\quad ab=0$: a zero', size=28)
+wn4 = I('wn4', '$(-2)\\cdot3\\cdot(-1)\\cdot(-4)$: $\\ 3$ minuses $\\to\\ -24$', size=32, hand='(−2)·3·(−1)·(−4) :    3 minuses  →  −24')
+wn5 = I('wn5', '$(-2)\\cdot(-3)\\cdot(-1)\\cdot(-4)$: $\\ 4$ minuses $\\to\\ 24$', size=32, hand='(−2)·(−3)·(−1)·(−4) :    4 minuses  →  24')
+wn6 = I('wn6', '$(-24)\\div(-8)=3\\qquad(-24)\\div8=-3\\qquad24\\div(-8)=-3$', size=30, hand='(−24) ÷ (−8) = 3      (−24) ÷ 8 = −3      24 ÷ (−8) = −3')
+wn7 = I('wn7', '$\\frac{(-6)\\cdot(-2)}{-3}=-4$', size=34, hand='{(−6)·(−2)/−3} = −4')
+wn8 = I('wn8', '$3^2=9\\qquad(-3)^2=9\\qquad(-2)^4=16$', size=34, hand='3^2 = 9        (−3)^2 = 9        (−2)^4 = 16')
+wn9 = I('wn9', '$2^3=8\\qquad(-2)^3=-8\\qquad(-1)^5=-1$', size=34, hand='2^3 = 8        (−2)^3 = −8        (−1)^5 = −1')
+wn10 = I('wn10', '$|-7|=7\\qquad|7|=7\\qquad|0|=0$', size=34, hand='|−7| = 7        |7| = 7        |0| = 0')
+wn11 = I('wn11', '$x=-9\\ \\to\\ -x=9\\qquad x=5\\ \\to\\ -x=-5$', size=32, hand='x = −9  →  −x = 9        x = 5  →  −x = −5')
+wn12 = I('wn12', '$(-3)+(-5)=-8$', size=34, hand='(−3) + (−5) = −8')
+wn13 = I('wn13', '$-9+4=-5\\qquad-4+9=5\\qquad-2+7=5$', size=32, hand='−9 + 4 = −5        −4 + 9 = 5        −2 + 7 = 5')
+wn14 = I('wn14', 'Surely positive first: $\\ $even powers, $|x|$ $\\to$ the rest decides', size=28)
+video('whole-numbers', 'lesson', slides=[
+    S('Integers',
+      L("Welcome to integers. Some algebra questions don't ask for a number at all. They ask whether an expression is "
+        "positive, negative, or whether we can't tell. These questions rest on a few basic sign rules, and usually they're "
+        "easy, so let's go through the rules one by one.")),
+    S('Multiplying',
+      L("Let's start with multiplying. When two numbers have the same sign, the result is positive. Four times five is "
+        "twenty, and negative four times negative five is also twenty.", show(wn1, 'Four times five is twenty')),
+      L("When the signs are different, the result is negative, and the order doesn't matter. Negative four times five is "
+        "negative twenty, and four times negative five is negative twenty too.", show(wn2, 'Negative four times five')),
+      L("Careful here. A positive product doesn't mean both numbers are positive. Negative three times negative six is "
+        "eighteen, which is positive, but both numbers are negative. So a positive product only tells us that the two "
+        "numbers have the same sign. A negative product tells us their signs are different. And a product of zero means "
+        "at least one of them is zero.", show(wn3, 'A positive product only tells us'))),
+    S('Count the minuses',
+      L("Now a time saver. When many numbers are multiplied, the plus signs don't change the sign of the result. Only the "
+        "minus signs do. So we just count the minuses."),
+      L("Negative two, times three, times negative one, times negative four. Let's count the minuses: one, two, three. "
+        "Three is odd, so the result is negative. Let's check. Two times three times one times four is twenty-four, so the "
+        "result is negative twenty-four.", show(wn4, "Let's count the minuses")),
+      L("Now negative two, times negative three, times negative one, times negative four. That's four minuses, an even "
+        "number, so the result is positive, twenty-four.", show(wn5, 'That\'s four minuses')),
+      L("Why does this work? Negative times negative is positive. So every two minuses cancel into a plus and stop "
+        "mattering. An even number of minuses cancel completely, and an odd number leaves one minus.")),
+    S('Dividing',
+      L("Division follows exactly the same rules, so there's nothing new to remember. Negative twenty-four divided by "
+        "negative eight is three, positive, because the signs are the same. Negative twenty-four divided by eight is "
+        "negative three, and twenty-four divided by negative eight is negative three too, because the signs are "
+        "different.", show(wn6, 'Negative twenty-four divided by negative eight')),
+      L("So we can count the minuses when we multiply and divide together. Negative six times negative two, over negative "
+        "three. That's three minuses, so the result is negative. Six times two is twelve, and twelve over three is four, "
+        "so it's negative four.", show(wn7, 'Negative six times negative two'))),
+    S('Powers, absolute value, the opposite',
+      L("Now powers. A number to an even power is never negative. Three squared is nine, negative three, squared, is also "
+        "nine, and negative two to the power of four is sixteen. The only way to get zero is a base of zero.",
+        show(wn8, 'Three squared is nine')),
+      L("An odd power keeps the sign of the number. Two cubed is eight, negative two, cubed, is negative eight, and "
+        "negative one to the power of five is negative one.", show(wn9, 'Two cubed is eight')),
+      L("An absolute value is zero or positive. The absolute value of negative seven is seven, the absolute value of seven "
+        "is seven, and the absolute value of zero is zero. So if y isn't zero, the absolute value of y is positive.",
+        show(wn10, 'The absolute value of negative seven')),
+      L("And a minus in front of a letter doesn't mean the number is negative. It means the opposite number. If x is "
+        "negative nine, minus x is nine, which is positive. If x is five, minus x is negative five. And zero is neither "
+        "positive nor negative.", show(wn11, 'If x is negative nine'))),
+    S('Adding',
+      L("Adding works differently. Two negative numbers add up to a negative number. Negative three plus negative five is "
+        "negative eight.", show(wn12, 'Negative three plus negative five')),
+      L("With different signs, the number that's farther from zero decides the sign. Negative nine plus four is negative "
+        "five, because nine is farther from zero than four. But negative four plus nine is five, positive. So counting the "
+        "minuses works only for multiplying and dividing. Negative two plus seven has one minus, but the result, five, is "
+        "positive.", show(wn13, 'Negative nine plus four'))),
+    S('In a sign question',
+      L("So how do we use all this in a question? First find the pieces that are surely positive, like even powers and "
+        "absolute values. Then the piece that's left decides the sign. And when the question says that a letter is not "
+        "zero, it's usually so that the bottom of a fraction isn't zero. You'll see all of this in the next question. "
+        "[pause] Okay. I'll see you in the next video.", show(wn14, 'surely positive'))),
+])
+
 # ------------------------------------------------------------------------------------------------ q-457 (Q1)
 # NEW: find the pieces that are surely positive, and the one piece left decides the sign; why "a is not 0" is given;
 # the trap "b < 0" (we learn nothing about b's sign).  REMINDER: even powers and absolute values are never negative,

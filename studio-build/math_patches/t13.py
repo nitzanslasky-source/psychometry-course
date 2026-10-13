@@ -2980,8 +2980,9 @@ def _ai13_mod(name):
 def ai_redo_t13(M):
     S = _ai13_mod('_ai_vis_t13'); AV = _ai13_mod('_ai_visual')
     for vid in S.ORDER:
-        assert vid != LESSON, 'the camera lesson stays as it is'
-        if vid not in M.D['videos'] or _ai13_recorded(vid): continue
+        # 2026-10-13 teacher: her camera first lesson is a reading script too now (same style, handwriting, camera on);
+        # its old camera takes are replaced by a new take, so it is rebuilt from the spec whatever was recorded before.
+        if vid not in M.D['videos'] or (vid != LESSON and _ai13_recorded(vid)): continue
         S.rebuild(M, vid)
         AV.VIS[vid] = S.vis(vid)
         AV.apply(M, vid)

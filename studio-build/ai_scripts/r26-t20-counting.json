@@ -1,0 +1,69 @@
+{
+ "videoId": "r26-t20-counting",
+ "style": "the teacher reads it herself (Reading Studio), topic-20 scripts (2026-10-13): math_patches/_ai_vis_t20.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Two more tools that the exam likes. Counting the whole numbers in a range, and the pigeonhole principle."
+  ],
+  [
+   {
+    "say": "From a to b, with both ends included, there are b minus a, plus one, whole numbers. You learned this with consecutive integers. For example, from five to twelve, it's twelve minus five, plus one, which is eight numbers.",
+    "at": [
+     "From a to b",
+     "both ends included"
+    ]
+   },
+   {
+    "say": "Strictly between five and twelve means both ends are out. That leaves six, seven, eight, nine, ten and eleven, which is six numbers. That's twelve minus five, minus one.",
+    "at": [
+     "Strictly between five and twelve",
+     "means both ends"
+    ]
+   },
+   {
+    "say": "With one end in and one end out, it's just b minus a. From five to twelve, with five included and twelve not, that's five to eleven, which is seven numbers.",
+    "at": [
+     "With one end in",
+     "one end out"
+    ]
+   },
+   {
+    "say": "If you're not sure which rule to use, count a small case on your fingers, like from one to three. And if the answer choices have letters, plug in small numbers, count by hand, and see which choice gives your count.",
+    "at": [
+     "If you're not sure",
+     "rule to use"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the pigeonhole principle. If there are more items than boxes, at least one box gets two items. Think of four pigeons and three holes. Even if each of the first three pigeons gets its own hole, the fourth one has to share.",
+    "at": [
+     "If there are more items than boxes",
+     "than boxes, at"
+    ]
+   },
+   {
+    "say": "Another example. Thirteen people, and there are only twelve months. Even if the first twelve were born in twelve different months, the thirteenth shares a month with someone. So at least two of them were born in the same month.",
+    "at": [
+     "Thirteen people",
+     "only twelve months"
+    ]
+   },
+   {
+    "say": "On the exam it often comes with remainders. When we divide a whole number by twelve, the remainder is one of twelve options, zero to eleven. So among any thirteen whole numbers, two have the same remainder.",
+    "at": [
+     "it often comes with remainders",
+     "When we divide"
+    ]
+   },
+   {
+    "say": "And two numbers with the same remainder have a difference that divides by twelve. For example, seventeen and forty-one both leave a remainder of five. Their difference is twenty-four, which is two times twelve. Next, two questions, one on counting odd numbers and one on being sure. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "seventeen and forty-one",
+     "a remainder of"
+    ]
+   }
+  ]
+ ]
+}

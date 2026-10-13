@@ -1,0 +1,58 @@
+{
+ "videoId": "solve-q-r26-t20-04",
+ "style": "the teacher reads it herself (Reading Studio), topic-20 scripts (2026-10-13): math_patches/_ai_vis_t20.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A drawer holds five red socks, seven blue socks and nine green socks. Dana takes socks out of the drawer without looking. What is the smallest number of socks she must take out to be sure she has two socks of the same color?",
+    "voice": "calm",
+    "at": [
+     "A drawer holds"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "To be sure means it has to work even with the worst luck. [short pause] We'll solve it by imagining the worst luck, and then we'll see the pigeonhole principle behind it.",
+    "at": [
+     "To be sure means",
+     "has to work"
+    ]
+   },
+   {
+    "say": "[short pause] With the worst luck, the first socks are all different colors. There are three colors, so the first three socks could be one red, one blue and one green. Three socks, and still no pair. So two or three socks are not enough.",
+    "at": [
+     "With the worst luck",
+     "first socks are",
+     "So two or three socks",
+     "are not enough"
+    ]
+   },
+   {
+    "say": "Now the fourth sock. It's red, blue or green, so whatever it is, it matches one of the socks she already has. So four socks always give a pair, and three socks don't. The smallest number is four. Choice number four is our answer.",
+    "at": [
+     "Now the fourth sock",
+     "It's red, blue",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] This is the pigeonhole principle. The three colors are three boxes, and the socks are the items. Four socks in three boxes means at least one box gets two socks. Choice number four.",
+    "at": [
+     "The three colors are three boxes",
+     "boxes, and the",
+     "at least one box gets two socks",
+     "number four"
+    ]
+   },
+   {
+    "say": "The numbers five, seven and nine don't change the answer, because every color has more than one sock. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "The numbers five, seven and nine",
+     "because every color"
+    ]
+   }
+  ]
+ ]
+}
