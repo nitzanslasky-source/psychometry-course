@@ -5031,6 +5031,101 @@
           ]
         ]
       }
+    },
+    "solve-q-547": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "diamond of, in brackets, x minus one, when x is bigger than one",
+            "diamond of (x − 1) when x > 1"
+          ]
+        ]
+      }
+    },
+    "solve-q-548": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.3": [
+          [
+            "we have five boxes minus four boxes, minus three x",
+            "we have 5 boxes − 4 boxes − 3x"
+          ]
+        ],
+        "1.4": [
+          [
+            "Five boxes minus four boxes is one box",
+            "5 boxes − 4 boxes is 1 box"
+          ]
+        ]
+      }
+    },
+    "solve-q-549": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "x is zero or more",
+            "x ≥ 0"
+          ]
+        ],
+        "1.3": [
+          [
+            "we get six x, squared",
+            "we get (6x)²"
+          ]
+        ],
+        "1.4": [
+          [
+            "Diamond of root x is root x, squared",
+            "Diamond of √x is (√x)²"
+          ]
+        ],
+        "1.5": [
+          [
+            "five x, squared, is",
+            "(5x)² is"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t19-18": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.5": [
+          [
+            "one third over six",
+            "(1/3) ÷ 6"
+          ]
+        ]
+      }
+    },
+    "solve-q-550": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "x to the power of the product y z, plus y to the power of the product x z, plus z to the power of the product x y",
+            "x^(yz) + y^(xz) + z^(xy)"
+          ]
+        ],
+        "2.1": [
+          [
+            "z to the power of one times one",
+            "z^(1×1)"
+          ]
+        ]
+      }
     }
   }
 }

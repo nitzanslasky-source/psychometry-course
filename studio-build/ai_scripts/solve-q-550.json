@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "For every three numbers x, y and z, diamond of x, y, z is equal to x to the power of y z, plus y to the power of x z, plus z to the power of x y. Diamond of one, one, and diamond of two, one, four, is equal to what?",
+    "say": "For every three numbers x, y and z, diamond of x, y, z is equal to x to the power of the product y z, plus y to the power of the product x z, plus z to the power of the product x y. Diamond of one, one, and diamond of two, one, four, is equal to what?",
     "voice": "calm",
     "at": [
      "For every three numbers"
@@ -12,14 +12,13 @@
     "pause": 0.5
    },
    {
-    "say": "A new operation of three numbers, but there are only numbers here, no unknowns. [short pause] We'll solve it two ways, the standard way, and then with a shortcut that looks at the outer diamond first.",
+    "say": "A new operation of three numbers, but there are only numbers here, no unknowns. [short pause] We'll solve it two ways, the standard way, and then by simplifying the outer diamond first.",
     "at": [
      "three numbers, but",
      "only numbers here",
      "We'll solve it",
      "the standard way",
-     "with a shortcut",
-     "at the outer"
+     "by simplifying the"
     ]
    },
    {
@@ -76,10 +75,12 @@
   ],
   [
    {
-    "say": "[pause] Another way is to look at the outer diamond before calculating anything. Its first two numbers are one and one. One to any power is one, so the first two parts are one and one, whatever the inner value is. And the last part is z to the power of one times one, which is just z. So the outer diamond is always two plus z.",
+    "say": "[pause] Another way is to simplify the outer diamond first. We still need the inner value, but the outer step becomes easy. Its first two numbers are one and one. One to any power is one, so the first two parts are one and one, whatever the inner value is. And the last part is z to the power of one times one, which is just z. So the outer diamond is always two plus z.",
     "at": [
      "Another way",
-     "at the outer",
+     "the outer diamond",
+     "We still need",
+     "value, but the",
      "Its first two numbers",
      "one and one",
      "One to any",

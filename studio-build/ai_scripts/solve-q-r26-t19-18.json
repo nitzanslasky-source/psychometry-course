@@ -93,14 +93,21 @@
     ]
    },
    {
-    "say": "The same happens with any number minus x. Ten minus x, and then ten minus that, is ten minus ten plus x, which is x again.",
+    "say": "A rule like ten minus x also comes back when both steps are allowed. Ten minus x, and then ten minus that, is ten minus ten plus x, which is x. But here the diamond is defined only for positive numbers. With x is twenty, ten minus twenty is negative ten, and the diamond can't take that. So ten minus x would not work for every positive x.",
     "at": [
-     "The same happens",
-     "number minus x",
+     "A rule like",
+     "x also comes",
+     "both steps are",
      "Ten minus x, and then",
      "ten minus that",
      "minus ten plus",
-     "is x again"
+     "But here the",
+     "defined only for",
+     "With x is",
+     "minus twenty is",
+     "and the diamond",
+     "So ten minus",
+     "not work for"
     ]
    },
    {

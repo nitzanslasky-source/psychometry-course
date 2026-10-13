@@ -12,22 +12,25 @@
     "pause": 0.5
    },
    {
-    "say": "Look at the choices. The diamond appears in every choice, two or three times. That means a lot of calculating. So here's a tip for the exam. When the operation sits in every choice, skip the question, solve the rest of the section, and come back to it at the end, because it can eat a lot of time. [short pause] We'll solve it two ways, with algebra, and then by plugging in a number.",
+    "say": "Look at the choices. The diamond appears in every choice, two or three times. But each diamond here only squares something, so the work is short, and we solve it now. A tip for the exam: if a question would take a lot of calculating, you can skip it, solve the rest of the section, and come back at the end. Decide by the work it needs, not by how many symbols you see. [short pause] We'll solve it two ways, with algebra, and then by plugging in a number.",
     "at": [
      "The diamond appears",
      "in every choice",
-     "three times. That",
+     "three times. But",
+     "here only squares",
+     "the work is",
+     "we solve it",
+     "tip for the",
+     "a question would",
      "lot of calculating",
-     "a tip for",
-     "When the operation",
-     "skip the question",
-     "rest of the",
-     "come back to",
-     "the end, because",
-     "eat a lot",
-     "We'll solve it",
-     "with algebra, and",
-     "plugging in a"
+     "you can skip it",
+     "the rest of",
+     "and come back",
+     "Decide by the",
+     "needs, not by",
+     "symbols you see",
+     "it two ways",
+     "and then by"
     ]
    },
    {
@@ -90,13 +93,17 @@
   ],
   [
    {
-    "say": "[pause] Now let's plug in a number. It's usually faster, because we don't open anything. x is one, the simplest number allowed. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six times one, thirty-six. Equal. Choice number two. Diamond of one is one, and one times one is one. Diamond of one is one too. Equal.",
+    "say": "[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, a small nonzero value. Zero is allowed too, but with zero, choice number three gives zero on both sides, so it can't show the failure. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six times one, thirty-six. Equal. Choice number two. Diamond of one is one, and one times one is one. Diamond of one is one too. Equal.",
     "at": [
      "Now let's",
      "It's usually faster",
      "don't open anything",
-     "x is one",
-     "number allowed. Choice",
+     "take x is one",
+     "small nonzero value",
+     "allowed too, but",
+     "number three gives",
+     "both sides, so",
+     "show the failure",
      "number one. Diamond",
      "Diamond of six",
      "and thirty-six times",
@@ -109,28 +116,24 @@
     ]
    },
    {
-    "say": "Choice number three. Diamond of five is twenty-five, but five times diamond of one is five times one, which is five. Twenty-five is not five. Choice number four. One minus seven is negative six, and seven minus one is six. Negative six squared and six squared are both thirty-six. Equal.",
+    "say": "Choice number three. Diamond of five is twenty-five, but five times diamond of one is five times one, which is five. Twenty-five is not five, so choice number three fails.",
     "at": [
      "number three. Diamond",
      "Diamond of five is twenty-five",
      "but five times",
      "one is five",
      "which is five",
-     "not five. Choice",
-     "number four. One",
-     "One minus seven",
-     "six, and seven",
-     "Negative six squared",
-     "squared are both"
+     "not five, so",
+     "number three fails"
     ]
    },
    {
-    "say": "One example where a choice fails proves it's not always true. Only one choice can be the answer, and choice number three is the one that broke. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "One allowed example where a choice fails proves it's not always true, so we can stop here without checking choice number four. Choice number three is the one that broke. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "One example where",
-     "fails proves it's",
-     "true. Only one",
-     "be the answer",
+     "a choice fails",
+     "not always true",
+     "can stop here",
+     "number four. Choice",
      "is the one that broke"
     ]
    }

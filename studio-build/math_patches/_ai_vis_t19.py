@@ -771,25 +771,26 @@ c547 = CHAIN('c547', [('line', '◆(7) = [[◆(6)]]'), ('a', '[[◆(6)]] = [[◆
                       ('c', '[[◆(1)]] = {{9}}')])
 video('solve-q-547', 'solution', qid='q-547', slides=[
     S('Down to the start',
-      L("The operation diamond is defined for every positive integer x. Diamond of x is nine when x is one, and diamond of x "
-        "minus one when x is bigger than one. Diamond of seven is equal to what?", pt('stem', 'The operation diamond', 'hl', 8.0),
+      L("The operation diamond is defined for every positive integer x. Diamond of x is nine when x is one, and diamond of, in "
+        "brackets, x minus one, when x is bigger than one. Diamond of seven is equal to what?", pt('stem', 'The operation diamond', 'hl', 8.0),
         voice='calm', pause=0.5),
-      L("Another circular rule. [short pause] So we go down to the start value, the same way as before.",
-        pt('stem', 'Another circular rule')),
-      L("[short pause] Seven is bigger than one, so diamond of seven is diamond of seven minus one, which is diamond of six. "
-        "Six is bigger than one too, so diamond of six is diamond of five. Each step just passes the question down to the "
-        "number below.", show(c547['line'], 'so diamond of seven is'), show(c547['a'], 'so diamond of six is diamond of five')),
+      L("This rule uses itself too, like in the last question. [short pause] So we go down to the start value, the same "
+        "way as before.", pt('stem', 'This rule uses itself too')),
+      L("[short pause] Seven is bigger than one, so we use the second rule. Its input is seven minus one, which is six. So "
+        "diamond of seven is diamond of six. Six is bigger than one too, so diamond of six is diamond of five. Each step "
+        "just passes the question down to the number below.", show(c547['line'], 'so diamond of seven is'), show(c547['a'], 'so diamond of six is diamond of five')),
       L("We keep going down until we reach diamond of one. Two is still bigger than one, so diamond of two is diamond of "
         "one. But one is not bigger than one, so now the first rule works. Diamond of one is nine.",
         show(c547['b'], 'so diamond of two is'), show(c547['c'], 'Diamond of one is nine')),
-      L("Nothing was added or changed on the way down, so every diamond on the chain is nine. Diamond of seven is nine, and "
+      L("On the way down, the rule never adds or subtracts anything from the result. It only says that the diamond of a "
+        "number equals the diamond of the number below it. So every diamond on the chain is nine. Diamond of seven is nine, and "
         "choice number four is our answer. Careful, choice number one is a trap. One is the input where the chain stops, "
         "not its value. [pause] Okay. I'll see you in the next question.", mk('tick', 'choice 4', 'choice number four is our answer'),
         mk('cross', 'choice 1', 'choice number one is a trap'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-548 (Hebrew: lesson 2)
-# NEW: the operation on both sides - treat it as one unknown (a box) and isolate it; very rare on the exam.
+# NEW: the operation on both sides - treat it as one unknown (a box) and isolate it.
 # Hebrew: one method.  The last substitution uses the same template (SLOT).
 q1 = IH('q1', '$5\\blacklozenge(x)-4\\blacklozenge(x)-3x=8$', size=32)
 q2 = IH('q2', '$\\blacklozenge(x)-3x=8$', size=32)
@@ -799,11 +800,11 @@ video('solve-q-548', 'solution', qid='q-548', slides=[
     S('Isolate the operation',
       L("For every number x, five times diamond of x, minus three x, is equal to eight plus four times diamond of x. Diamond "
         "of four is equal to what?", pt('stem', 'For every number x', 'hl', 7.0), voice='calm', pause=0.5),
-      L("Diamond of x appears on both sides of the equation. This type is very rare on the exam, but it's good to know. "
-        "[short pause] We'll treat diamond of x like an unknown, and isolate it.", pt('stem', 'appears on both sides')),
+      L("Diamond of x appears on both sides of the equation. [short pause] We'll treat diamond of x like an unknown, and isolate it.", pt('stem', 'appears on both sides')),
       L("[short pause] Think of diamond of x as one unknown, like a box. On the left there are five boxes, and on the right "
-        "there are four boxes. Let's move the four boxes to the left side. Subtracting four boxes from both sides leaves "
-        "five boxes minus four boxes on the left.", show(q1, 'move the four boxes')),
+        "there are four boxes. To get all the boxes on one side, we subtract four boxes from both sides. On the right, the "
+        "four boxes are gone, and eight is left. On the left, we have five boxes minus four boxes, minus three x.",
+        show(q1, 'subtract four boxes from both sides')),
       L("Five boxes minus four boxes is one box. So diamond of x minus three x is equal to eight. Now add three x to both "
         "sides, and diamond of x is three x plus eight. Now it's an ordinary definition.", show(q2, 'Five boxes minus four boxes'),
         show(q3, 'Now add three x')),
@@ -815,21 +816,22 @@ video('solve-q-548', 'solution', qid='q-548', slides=[
 # ------------------------------------------------------------------------------------------------ q-549 (Hebrew: lesson 2)
 # NEW: the operation in every choice -> skip it, finish the section, come back (her tip); algebra can mark at once;
 # plugging in x = 1 (one failing example proves "not always"; one answer only).  Hebrew: algebra, plugging in.
-r1 = I('r1', 'Operation in every choice: $\\ $skip, come back at the end', size=26, col=1)
+r1 = I('r1', 'A long calculation? $\\ $skip, come back at the end', size=26, col=1)
 r2 = IH('r2', '(1) $(6x)^2=36x^2$ ✓', size=30)
 r3 = IH('r3', '(2) $(\\sqrt{x})^2\\cdot(\\sqrt{x})^2=x\\cdot x=x^2$ ✓', size=30)
 r4 = IH('r4', '(3) $(5x)^2=25x^2\\ne5x^2$ ✗', size=30)
 r5 = IH('r5', '(4) $(x-7)^2=(7-x)^2$ ✓', size=30)
 s1 = I('s1', '$x=1$: $\\ $(1) $36=36$ $\\quad$ (2) $1=1$', size=30)
-s2 = I('s2', '(3) $25\\ne5$ ✗ $\\quad$ (4) $(-6)^2=6^2=36$', size=30)
+s2 = I('s2', '(3) $25\\ne5$ ✗', size=30)
 video('solve-q-549', 'solution', qid='q-549', slides=[
     S('Method 1 · Algebra',
       L("For every number t, diamond of t is equal to t squared. In the choices, x is zero or more. Which of the following "
         "is not always true?", pt('stem', 'For every number t', 'hl', 7.0), voice='calm', pause=0.5),
-      L("Look at the choices. The diamond appears in every choice, two or three times. That means a lot of calculating. So "
-        "here's a tip for the exam. When the operation sits in every choice, skip the question, solve the rest of the "
-        "section, and come back to it at the end, because it can eat a lot of time. [short pause] We'll solve it two ways, "
-        "with algebra, and then by plugging in a number.", pt('choice 1', 'in every choice'), show(r1, 'skip the question')),
+      L("Look at the choices. The diamond appears in every choice, two or three times. But each diamond here only squares "
+        "something, so the work is short, and we solve it now. A tip for the exam: if a question would take a lot of "
+        "calculating, you can skip it, solve the rest of the section, and come back at the end. Decide by the work it "
+        "needs, not by how many symbols you see. [short pause] We'll solve it two ways, with algebra, and then by plugging "
+        "in a number.", pt('choice 1', 'in every choice'), show(r1, 'you can skip it')),
       L("[short pause] With algebra, we write what the diamond does on each side. The diamond squares whatever goes in. "
         "Choice number one. On the left, six x goes in, so we get six x, squared. That's six squared times x squared, "
         "thirty-six x squared. On the right, thirty-six times x squared. Both sides are equal for every x, so this one is "
@@ -844,15 +846,15 @@ video('solve-q-549', 'solution', qid='q-549', slides=[
         "minus x are opposites, and opposites have the same square. So the two sides are always equal.",
         show(r5, 'are opposites'), mk('cross', 'choice 4', 'always equal'))),
     S('Method 2 · Plugging in a number',
-      L("[pause] Now let's plug in a number. It's usually faster, because we don't open anything. x is one, the simplest "
-        "number allowed. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six "
+      L("[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, a small "
+        "nonzero value. Zero is allowed too, but with zero, choice number three gives zero on both sides, so it can't show "
+        "the failure. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six "
         "times one, thirty-six. Equal. Choice number two. Diamond of one is one, and one times one is one. Diamond of one is "
-        "one too. Equal.", show(s1, 'x is one')),
+        "one too. Equal.", show(s1, 'take x is one')),
       L("Choice number three. Diamond of five is twenty-five, but five times diamond of one is five times one, which is "
-        "five. Twenty-five is not five. Choice number four. One minus seven is negative six, and seven minus one is six. "
-        "Negative six squared and six squared are both thirty-six. Equal.", show(s2, 'Diamond of five is twenty-five')),
-      L("One example where a choice fails proves it's not always true. Only one choice can be the answer, and choice "
-        "number three is the one that broke. Choice number three. [pause] Okay. I'll see you in the next question.",
+        "five. Twenty-five is not five, so choice number three fails.", show(s2, 'Diamond of five is twenty-five')),
+      L("One allowed example where a choice fails proves it's not always true, so we can stop here without checking "
+        "choice number four. Choice number three is the one that broke. [pause] Okay. I'll see you in the next question.",
         mk('tick', 'choice 3', 'is the one that broke'))),
 ])
 
@@ -864,7 +866,7 @@ t1b = I('t1b', '(2) $\\ 2,\\ 8,\\ 14$ ✗', size=30)
 t2 = I('t2', '(3) $\\ 2,\\ \\frac13,\\ \\frac1{18}$ ✗', size=30)
 t2b = I('t2b', '(4) $\\ 2,\\ 3,\\ 2$ ✓', size=30)
 u1 = IH('u1', '$\\frac{6}{6/x}=6\\cdot\\frac{x}{6}=x$', size=34)
-u2 = IH('u2', '$10-(10-x)=x$', size=34)
+u2 = I('u2', '$10-(10-x)=x$, $\\ $but $x=20$: $\\ 10-20<0$ ✗', size=30)
 video('solve-q-r26-t19-18', 'solution', qid='q-r26-t19-18', slides=[
     S('Method 1 · Plugging in numbers',
       L("The operation diamond is defined for every positive number x. It is known that for every positive x, diamond of "
@@ -889,8 +891,10 @@ video('solve-q-r26-t19-18', 'solution', qid='q-r26-t19-18', slides=[
       L("[pause] Another way is to know which kind of rule undoes itself. Six over x turns a number into six divided by it. "
         "Do it again, and we divide six by six over x. Dividing by a fraction is multiplying by its reciprocal. So six times "
         "x over six, which is x. It always comes back.", show(u1, 'Do it again')),
-      L("The same happens with any number minus x. Ten minus x, and then ten minus that, is ten minus ten plus x, which is "
-        "x again.", show(u2, 'Ten minus x, and then')),
+      L("A rule like ten minus x also comes back when both steps are allowed. Ten minus x, and then ten minus that, is "
+        "ten minus ten plus x, which is x. But here the diamond is defined only for positive numbers. With x is twenty, "
+        "ten minus twenty is negative ten, and the diamond can't take that. So ten minus x would not work for every "
+        "positive x.", show(u2, 'Ten minus x, and then')),
       L("But six x, x plus six and x over six all keep moving the same way. Times six makes a number bigger, and doing it "
         "again makes it even bigger. So they never come back. Choice number four. [pause] Okay. I'll see you in the next "
         "question.", mk('tick', 'choice 4', 'So they never come back'))),
@@ -908,11 +912,11 @@ w2 = IH('w2', '$2+33=35$', size=32)
 w3 = I('w3', '$\\blacklozenge(z,0,1)=z^{0}+0^{z}+1^{0}=1+0+1=2$', size=30)
 video('solve-q-550', 'solution', qid='q-550', slides=[
     S('Method 1 · The standard way',
-      L("For every three numbers x, y and z, diamond of x, y, z is equal to x to the power of y z, plus y to the power of x "
-        "z, plus z to the power of x y. Diamond of one, one, and diamond of two, one, four, is equal to what?",
+      L("For every three numbers x, y and z, diamond of x, y, z is equal to x to the power of the product y z, plus y to "
+        "the power of the product x z, plus z to the power of the product x y. Diamond of one, one, and diamond of two, one, four, is equal to what?",
         pt('stem', 'For every three numbers', 'hl', 10.0), voice='calm', pause=0.5),
       L("A new operation of three numbers, but there are only numbers here, no unknowns. [short pause] We'll solve it two "
-        "ways, the standard way, and then with a shortcut that looks at the outer diamond first.", pt('stem', 'only numbers here')),
+        "ways, the standard way, and then by simplifying the outer diamond first.", pt('stem', 'only numbers here')),
       L("[short pause] There are two diamonds, so we work from the inside out, like with brackets. The inner one is diamond "
         "of two, one, four. So x is two, y is one, and z is four. Let's write the same template, with these numbers in "
         "their slots.", show(s550['line'], 'The inner one is diamond'), show(s550['in'], 'with these numbers in')),
@@ -926,7 +930,8 @@ video('solve-q-550', 'solution', qid='q-550', slides=[
         "Choice number three is our answer.", mk('cross', 'choice 1', 'waiting as choice number one'),
         show(v3, 'Now the outer diamond'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · The outer diamond first',
-      L("[pause] Another way is to look at the outer diamond before calculating anything. Its first two numbers are one and "
+      L("[pause] Another way is to simplify the outer diamond first. We still need the inner value, but the outer step "
+        "becomes easy. Its first two numbers are one and "
         "one. One to any power is one, so the first two parts are one and one, whatever the inner value is. And the last "
         "part is z to the power of one times one, which is just z. So the outer diamond is always two plus z.",
         show(w1, 'Its first two numbers')),
