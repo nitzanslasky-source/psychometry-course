@@ -25,7 +25,7 @@
     ]
    },
    {
-    "say": "Five hundred fifty-five is thirty-seven times fifteen. Two hundred twenty-two is thirty-seven times six.",
+    "say": "Five hundred fifty-five is five times a hundred eleven, so five times three times thirty-seven, which is thirty-seven times fifteen. Two hundred twenty-two is two times a hundred eleven, so two times three times thirty-seven, which is thirty-seven times six.",
     "at": [
      "Five hundred fifty",
      "fifteen. Two hundred",
@@ -33,7 +33,7 @@
     ]
    },
    {
-    "say": "Now divide a four-digit repeated number, B B B B, by its two-digit version, B B. Both use the same nonzero digit. The answer is always a hundred one. Seven thousand seven hundred seventy-seven divided by seventy-seven gives a hundred one. Three thousand three hundred thirty-three divided by thirty-three gives a hundred one too.",
+    "say": "Now divide a four-digit repeated number, B B B B, by its two-digit version, B B. Both use the same nonzero digit. The answer is always a hundred one. Seven thousand seven hundred seventy-seven divided by seventy-seven gives a hundred one: seventy-seven times a hundred is seven thousand seven hundred, plus one more seventy-seven is seven thousand seven hundred seventy-seven. Three thousand three hundred thirty-three divided by thirty-three gives a hundred one too.",
     "at": [
      "the same nonzero",
      "Seven thousand seven",

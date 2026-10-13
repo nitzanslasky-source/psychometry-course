@@ -1122,7 +1122,7 @@
         "slide": 2,
         "paragraph": 2,
         "original": "Twenty-two. Half of seven thousand five hundred is three thousand seven hundred fifty, and now I divide by eleven. Eleven times three hundred forty is three thousand seven hundred forty, and that leaves ten. A remainder, so twenty-two doesn't divide x.",
-        "revised": "Dividing by twenty-two means dividing by both its factors, two and eleven. Let's check whether both divisions can finish without a remainder. Twenty-two. Half of seven thousand five hundred is three thousand seven hundred fifty, and now I divide by eleven. Eleven times three hundred forty is three thousand seven hundred forty, and that leaves ten. A remainder, so twenty-two doesn't divide x."
+        "revised": "Dividing by twenty-two means dividing by both its factors, two and eleven. Let's check whether both divisions can finish without a remainder. Twenty-two. Half of seven thousand five hundred is three thousand seven hundred fifty, and now I divide by eleven. Eleven times three hundred is three thousand three hundred, and eleven times forty is four hundred forty. Together, eleven times three hundred forty is three thousand seven hundred forty, and that leaves ten. A remainder, so twenty-two doesn't divide x."
       }
     ],
     "solve-q-386": [
@@ -1958,19 +1958,19 @@
         "slide": 0,
         "paragraph": 4,
         "original": "Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, which is a hundred five. And fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty.",
-        "revised": "Three-digit numbers start at a hundred and stop just below a thousand. Let's find the first and last multiples of fifteen inside that range. Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, which is a hundred five. And fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty."
+        "revised": "Three-digit numbers start at a hundred and stop just below a thousand. Let's find the first and last multiples of fifteen inside that range. Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, which is a hundred five. And fifteen times sixty is nine hundred, plus six more fifteens, ninety, so fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty."
       },
       {
         "slide": 1,
         "paragraph": 0,
         "original": "Seventeen, the same way. Seventeen times six is a hundred two, and seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right.",
-        "revised": "We found sixty three-digit multiples of fifteen. Now we'll count the three-digit multiples of seventeen and compare the two counts. Seventeen, the same way. Seventeen times six is a hundred two, and seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right."
+        "revised": "We found sixty three-digit multiples of fifteen. Now we'll count the three-digit multiples of seventeen and compare the two counts. Seventeen, the same way. Seventeen times six is a hundred two. For the last one, start from a round number: seventeen times sixty is a thousand twenty, too big. Take away seventeen twice: a thousand three, then nine hundred eighty-six. So seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right."
       },
       {
         "slide": 1,
         "paragraph": 1,
         "original": "Michal. Twenty-one times five is a hundred five, and twenty-one times forty-seven is nine hundred eighty-seven. Forty-seven minus five is forty-two, and plus one is forty-three. Twenty-six times four is a hundred four, and twenty-six times thirty-eight is nine hundred eighty-eight. Thirty-eight minus four is thirty-four, and plus one is thirty-five.",
-        "revised": "For Michal's claim, we'll do the same count for twenty-one and for twenty-six. Michal. Twenty-one times five is a hundred five, and twenty-one times forty-seven is nine hundred eighty-seven. Forty-seven minus five is forty-two, and plus one is forty-three. Twenty-six times four is a hundred four, and twenty-six times thirty-eight is nine hundred eighty-eight. Thirty-eight minus four is thirty-four, and plus one is thirty-five."
+        "revised": "For Michal's claim, we'll do the same count for twenty-one and for twenty-six. Michal. Twenty-one times five is a hundred five, and twenty-one times fifty is a thousand fifty. Take away sixty-three, that's three times twenty-one, and we get nine hundred eighty-seven, so twenty-one times forty-seven is nine hundred eighty-seven. Forty-seven minus five is forty-two, and plus one is forty-three. Twenty-six times four is a hundred four, and twenty-six times forty is a thousand forty. Take away fifty-two, that's two times twenty-six, and we get nine hundred eighty-eight, so twenty-six times thirty-eight is nine hundred eighty-eight. Thirty-eight minus four is thirty-four, and plus one is thirty-five."
       },
       {
         "slide": 2,
@@ -6930,7 +6930,7 @@
         "slide": 1,
         "paragraph": 1,
         "original": "Choice number one, forty-nine plus one plus five is fifty-five, odd. Out. Choice number two, one plus seven is eight, even. Choice number three, forty-two minus one is forty-one, odd. Out. Choice number four, two forty-five plus four is two forty-nine, odd. Out.",
-        "revised": "Use seven for a and one for b in every choice. Choice number one gives forty-nine plus one plus five, which is fifty-five, odd, so it's out. Choice number two gives one plus seven, which is eight, even. Choice number three gives forty-two minus one, which is forty-one, odd, so it's out. Choice number four gives two hundred forty-five plus four, which is two hundred forty-nine, odd, so it's out.",
+        "revised": "Use seven for a and one for b in every choice. Choice number one gives forty-nine plus one plus five, which is fifty-five, odd, so it's out. Choice number two gives one plus seven, which is eight, even. Choice number three gives forty-two minus one, which is forty-one, odd, so it's out. Choice number four gives five times forty-nine, plus four. Five times forty-nine is odd times odd, so it's odd, and plus four keeps it odd, so it's out.",
         "cue_anchors": [
           {
             "index": 0,
@@ -6955,12 +6955,12 @@
           {
             "index": 7,
             "original": "four, two forty-five",
-            "revised": "four gives two"
+            "revised": "four gives five"
           },
           {
             "index": 8,
             "original": "forty-nine, odd. Out",
-            "revised": "forty-nine, odd"
+            "revised": "keeps it odd"
           }
         ]
       },
@@ -9828,7 +9828,7 @@
         "slide": 2,
         "paragraph": 0,
         "original": "[pause] Now let's try plugging in. It's easier to choose b than y. b is one. One minus three is negative two, and squared is four. One plus eight is nine, and nine cubed is seven twenty-nine. Four plus seven twenty-nine is seven thirty-three, odd.",
-        "revised": "[pause] Now let's try plugging in. Choose b, since y depends on b. Start with the easy value, b is one. One minus three is negative two, whose square is four. One plus eight is nine, and nine cubed is seven hundred twenty-nine. Four plus seven hundred twenty-nine is seven hundred thirty-three, odd. Check the choices now. y is not even, so choice number two is out. And b is not even, so choice number three is out.",
+        "revised": "[pause] Now let's try plugging in. Choose b, since y depends on b. Start with the easy value, b is one. One minus three is negative two, whose square is four. One plus eight is nine, and nine is odd, so nine cubed is odd too. Four plus an odd number is odd, so y is odd. Check the choices now. y is not even, so choice number two is out. And b is not even, so choice number three is out.",
         "original_cues": [
           [
             "show",
@@ -9918,9 +9918,9 @@
             {
               "_name": "x1",
               "_col": 0,
-              "_hand": "b = 1 :    (−2)^2 + 9^3 = 4 + 729 = 733",
+              "_hand": "b = 1 :    (−2)^2 + 9^3 = 4 + odd = odd",
               "k": "t",
-              "t": "$b=1$: $\\ (-2)^2+9^3=4+729=733$",
+              "t": "$b=1$: $\\ (-2)^2+9^3=4+$ odd $=$ odd",
               "size": 32,
               "gap": 16
             },
@@ -15816,7 +15816,7 @@
         "slide": 1,
         "paragraph": 3,
         "original": "And B B B B divided by B B is always one hundred one. Seven thousand seven hundred seventy-seven divided by seventy-seven, and three thousand three hundred thirty-three divided by thirty-three, both give one oh one.",
-        "revised": "Now divide a four-digit repeated number, B B B B, by its two-digit version, B B. Both use the same nonzero digit. The answer is always a hundred one. Seven thousand seven hundred seventy-seven divided by seventy-seven gives a hundred one. Three thousand three hundred thirty-three divided by thirty-three gives a hundred one too.",
+        "revised": "Now divide a four-digit repeated number, B B B B, by its two-digit version, B B. Both use the same nonzero digit. The answer is always a hundred one. Seven thousand seven hundred seventy-seven divided by seventy-seven gives a hundred one: seventy-seven times a hundred is seven thousand seven hundred, plus one more seventy-seven is seven thousand seven hundred seventy-seven. Three thousand three hundred thirty-three divided by thirty-three gives a hundred one too.",
         "cue_anchors": [
           {
             "index": 0,
@@ -15959,7 +15959,7 @@
         "slide": 1,
         "paragraph": 2,
         "original": "Five fifty-five is thirty-seven times fifteen, and two twenty-two is thirty-seven times six.",
-        "revised": "Five hundred fifty-five is thirty-seven times fifteen. Two hundred twenty-two is thirty-seven times six.",
+        "revised": "Five hundred fifty-five is five times a hundred eleven, so five times three times thirty-seven, which is thirty-seven times fifteen. Two hundred twenty-two is two times a hundred eleven, so two times three times thirty-seven, which is thirty-seven times six.",
         "cue_anchors": [
           {
             "index": 0,
@@ -16370,7 +16370,7 @@
         "slide": 1,
         "paragraph": 2,
         "original": "Two? A five, C three, or A six, C four. Thirty-five and forty-six are too big, their squares have four digits. Out. Four? A six and C two, and twenty-six squared is six seventy-six. It fits. Choice number four. [pause] Okay. I'll see you in the next question.",
-        "revised": "Test two: A could be five with C is three, or six with C is four. Those numbers are thirty-five and forty-six. Their squares have four digits, too large for the given result. That choice is out. Test four: use A is six and C is two. Twenty-six squared is six hundred seventy-six. It starts with six and ends with A, so it fits. Choice number four is our answer. Okay. I'll see you in the next question.",
+        "revised": "Test two: A could be five with C is three, or six with C is four. Those numbers are thirty-five and forty-six. Thirty-five squared: three times four is twelve, then twenty-five, twelve hundred twenty-five, four digits, too large for the given result, and forty-six is even bigger. That choice is out. Three choices are out, so it's choice number four: A is six and C is two. Choice number four is our answer. Okay. I'll see you in the next question.",
         "cue_anchors": [
           {
             "index": 0,
@@ -16381,6 +16381,11 @@
             "index": 1,
             "original": "and forty-six are",
             "revised": "and forty-six"
+          },
+          {
+            "index": 2,
+            "original": "their squares have",
+            "revised": "Thirty-five squared: three"
           },
           {
             "index": 3,
@@ -16395,7 +16400,12 @@
           {
             "index": 5,
             "original": "and twenty-six squared",
-            "revised": "Twenty-six squared"
+            "revised": "C is two"
+          },
+          {
+            "index": 6,
+            "original": "It fits. Choice number four",
+            "revised": "Choice number four is our answer"
           }
         ]
       },
@@ -16426,17 +16436,32 @@
         "slide": 0,
         "paragraph": 3,
         "original": "Which twenties? Twenty-four squared is five seventy-six, too small. Twenty-five squared is six twenty-five, twenty-six squared is six seventy-six, and twenty-seven squared is seven twenty-nine, too big. So twenty-five or twenty-six.",
-        "revised": "Which number in the twenties works? Twenty-four squared is five hundred seventy-six, too small. Twenty-five squared is six hundred twenty-five. Twenty-six squared is six hundred seventy-six. Twenty-seven squared is seven hundred twenty-nine, too large. So we only need twenty-five and twenty-six.",
+        "revised": "Which number in the twenties works? A times A must end in A, so A is zero, one, five or six: twenty, twenty-one, twenty-five or twenty-six. Twenty-five squared, the fast way for a number ending in five: two times three is six, then write twenty-five. Six hundred twenty-five. Twenty and twenty-one are smaller, so their squares are below six hundred. Out. Twenty-six squared is one step up: add twenty-five and twenty-six. Six hundred seventy-six. Both start with six.",
         "cue_anchors": [
+          {
+            "index": 0,
+            "original": "Twenty-four squared",
+            "revised": "Twenty-five squared, the fast"
+          },
+          {
+            "index": 1,
+            "original": "Twenty-five squared is",
+            "revised": "two times three is six"
+          },
+          {
+            "index": 2,
+            "original": "twenty-six squared is",
+            "revised": "Twenty and twenty-one are smaller"
+          },
           {
             "index": 3,
             "original": "and twenty-seven squared",
-            "revised": "Twenty-seven squared"
+            "revised": "Twenty-six squared is one step"
           },
           {
             "index": 4,
             "original": "twenty-nine, too big",
-            "revised": "twenty-nine, too"
+            "revised": "Both start with six"
           }
         ]
       },

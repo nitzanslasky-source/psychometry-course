@@ -257,3 +257,6 @@ The "mirror test" was removed from the course (topic 13 addition, not in the Heb
 
 ## 2026-10-13 R36 big-calculation pass
 solve-q-r26-t16-04 (unrecorded), overlay revised texts: p5 63·11 = 693 said as 630 + 63; p7 5·7·9 = 35·9 = 350 − 35 = 315.
+
+## 2026-10-13 R36 recorded-video fixes (teacher approved; re-read flagged)
+Overlay: solve-q-470 paragraph 8 (9³ by parity; reviewed_cues board x1 = 4 + odd = odd), solve-q-462 paragraph 6 (5·49 + 4 by parity; board y3).

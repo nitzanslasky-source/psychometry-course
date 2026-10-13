@@ -289,3 +289,6 @@ Teacher (recording topic 13): "Make the script ... more informative. Sometimes I
 - **solve-q-431** (227 → 236): a = 1 → 6, so claim three can fail.
 - **solve-q-r26-t15-15** (181 → 193), **solve-q-432** (153 → 177), **solve-q-433** (151 → 159), **solve-q-434** (166 → 179), **solve-q-435** (245 → 256), **solve-q-436** (221 → 258): one failing example is enough; why write it as a product; "the sign for ten"; 2 and 3 share no factor → 6; both parts divide by 8; the sum divides by 6 exactly when the remainders add to 0, 6 or 12.
 Total spoken words 4239 → 4881 (+15%), 18 videos. `python3 math_check.py 15 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered: tmp_check/clearer/t15.png (solve-q-426, -430, -r26-t15-01, r26-t15-remainder-tools; boards unchanged).
+
+## 2026-10-13 R36 recorded-video fixes (teacher approved; re-read flagged)
+solve-q-430 paragraphs 5-7 (overlay): last multiples from a round number (15·60 + 90; 17·60 − 34; 21·50 − 63; 26·40 − 52); boards x3, y1, y3, y4.

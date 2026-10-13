@@ -55,11 +55,10 @@
     ]
    },
    {
-    "say": "Three-digit numbers start at a hundred and stop just below a thousand. Let's find the first and last multiples of fifteen inside that range. Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, which is a hundred five. And fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty.",
+    "say": "Three-digit numbers start at a hundred and stop just below a thousand. Let's find the first and last multiples of fifteen inside that range. Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, which is a hundred five. And fifteen times sixty is nine hundred, plus six more fifteens, ninety, so fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty.",
     "at": [
      "still two digits",
      "the first is fifteen times seven",
-     "seven, which is",
      "And fifteen times",
      "nine hundred ninety",
      "one below a",
@@ -70,7 +69,7 @@
   ],
   [
    {
-    "say": "We found sixty three-digit multiples of fifteen. Now we'll count the three-digit multiples of seventeen and compare the two counts. Seventeen, the same way. Seventeen times six is a hundred two, and seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right.",
+    "say": "We found sixty three-digit multiples of fifteen. Now we'll count the three-digit multiples of seventeen and compare the two counts. Seventeen, the same way. Seventeen times six is a hundred two. For the last one, start from a round number: seventeen times sixty is a thousand twenty, too big. Take away seventeen twice: a thousand three, then nine hundred eighty-six. So seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right.",
     "at": [
      "We found",
      "Seventeen times six",
@@ -82,15 +81,13 @@
     ]
    },
    {
-    "say": "For Michal's claim, we'll do the same count for twenty-one and for twenty-six. Michal. Twenty-one times five is a hundred five, and twenty-one times forty-seven is nine hundred eighty-seven. Forty-seven minus five is forty-two, and plus one is forty-three. Twenty-six times four is a hundred four, and twenty-six times thirty-eight is nine hundred eighty-eight. Thirty-eight minus four is thirty-four, and plus one is thirty-five.",
+    "say": "For Michal's claim, we'll do the same count for twenty-one and for twenty-six. Michal. Twenty-one times five is a hundred five, and twenty-one times fifty is a thousand fifty. Take away sixty-three, that's three times twenty-one, and we get nine hundred eighty-seven, so twenty-one times forty-seven is nine hundred eighty-seven. Forty-seven minus five is forty-two, and plus one is forty-three. Twenty-six times four is a hundred four, and twenty-six times forty is a thousand forty. Take away fifty-two, that's two times twenty-six, and we get nine hundred eighty-eight, so twenty-six times thirty-eight is nine hundred eighty-eight. Thirty-eight minus four is thirty-four, and plus one is thirty-five.",
     "at": [
      "Twenty-one times five",
-     "hundred five, and",
      "forty-seven is nine",
      "Forty-seven minus five",
      "and plus one",
      "Twenty-six times four",
-     "hundred four, and",
      "thirty-eight is nine",
      "Thirty-eight minus four",
      "and plus one is thirty-five"

@@ -1487,9 +1487,9 @@ def hebrew_backcheck(M):
     # ---------- q-517: AB·AB = 2CB, B − A could be 5 (= the Hebrew sample question)   ==>   CA·CA = 6BA, A − C could be 4
     _rn_q(M, 'q-517', 'A, B and C represent digits. Given: $\\overline{CA}\\times\\overline{CA}=\\overline{6BA}$\nWhich of the following could be $A-C$?',
           ['$6$', '$2$', '$4$', '$5$'], 3, [
-        'Size first: $24^2=576$ is too small, and $27^2=729$ is too big. So $\\overline{CA}$ is 25 or 26, and $C=2$.',
-        'Ones column: $A\\times A$ ends in $A$, so A is a special digit. Here $A=5$ or $A=6$.',
-        '$25^2=625$ ✓ gives $A-C=5-2=3$, which is not a choice. $26^2=676$ ✓ gives $A-C=6-2=4$.'])
+        'Size first: $20^2=400$ and $30^2=900$, so $\\overline{CA}$ is in the twenties and $C=2$.',
+        'Ones column: $A\\times A$ ends in $A$, so A is a special digit: 20, 21, 25 or 26. 20 and 21 are too small, so $A=5$ or $A=6$.',
+        '$25^2=625$ (ends in 5: $2\\cdot3=6$, then 25) gives $A-C=5-2=3$, which is not a choice. $26^2=625+25+26=676$ ✓ gives $A-C=6-2=4$.'])
     _rn_video(M, 'q-517', [[
         "Method one: the full math. First — estimate the size.",
         "CA times CA is CA squared, and it's six hundred and something.",

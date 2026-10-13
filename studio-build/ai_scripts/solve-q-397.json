@@ -117,13 +117,14 @@
     ]
    },
    {
-    "say": "So the next ones are five squared, twenty-five, seven squared, forty-nine, eleven squared, a hundred twenty-one, and thirteen squared, a hundred sixty-nine. Seventeen squared is two hundred eighty-nine, too big. Six values, choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "So the next ones are five squared, twenty-five, seven squared, forty-nine, eleven squared, a hundred twenty-one, and thirteen squared, a hundred sixty-nine. The next prime, seventeen, is past fifteen, and fifteen squared is already two hundred twenty-five, too big. Six values, choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
      "five squared, twenty-five",
      "forty-nine, eleven squared",
      "twenty-one, and thirteen",
-     "Seventeen squared is",
-     "eighty-nine, too big",
+     "The next prime",
+     "past fifteen, and",
+     "is already two",
      "Six values"
     ]
    }

@@ -497,7 +497,7 @@ video('solve-q-514', 'solution', qid='q-514', slides=[
 # given digit sum (two examples).  REMINDER: units digits of powers repeat in a cycle (topic 21).
 d1 = I('d1', '$\\overline{AA}=11A$: $\\ 77=11\\cdot7,\\ \\ 44=11\\cdot4$', size=36, hand='AA = 11A :    77 = 11·7,    44 = 11·4')
 d2 = I('d2', '$\\overline{AAA}=111A=3\\cdot37\\cdot A$', size=36, hand='AAA = 111A = 3·37·A')
-d3 = I('d3', '$555=37\\cdot15 \\qquad 222=37\\cdot6$', size=36, hand='555 = 37·15        222 = 37·6')
+d3 = I('d3', '$555=5\\cdot111=37\\cdot15 \\qquad 222=2\\cdot111=37\\cdot6$', size=32, hand='555 = 5·111 = 37·15        222 = 2·111 = 37·6')
 d4 = I('d4', '$\\overline{BBBB}\\div\\overline{BB}=101$: $\\ 7777\\div77,\\ \\ 3333\\div33$', size=32, hand='BBBB ÷ BB = 101 :    7777 ÷ 77,    3333 ÷ 33')
 e1 = I('e1', 'Digit sum $8$: $\\ $largest $800$, $\\ $smallest $107$', size=36, hand='Digit sum 8 :    largest 800,    smallest 107')
 e2 = I('e2', 'Digit sum $12$: $\\ $largest $930$, $\\ $smallest $129$', size=36, hand='Digit sum 12 :    largest 930,    smallest 129')
@@ -587,11 +587,11 @@ video('solve-q-516', 'solution', qid='q-516', slides=[
 # Hebrew: the full math (size + units), the insight (units digit + the choices).
 h1 = I('h1', '$\\overline{CA}^2=6\\ldots$', hand='CA^2 = 6 . . .')
 h2 = I('h2', '$20^2=400 \\qquad 30^2=900$: $\\ C=2$', size=32, hand='20^2 = 400        30^2 = 900 :    C = 2')
-h3 = I('h3', '$24^2=576 \\quad 25^2=625 \\quad 26^2=676 \\quad 27^2=729$', size=30, hand='24^2 = 576     25^2 = 625     26^2 = 676     27^2 = 729')
+h3 = I('h3', '$25^2=625\\ (2\\cdot3=6\\,|\\,25) \\quad 26^2=625+25+26=676$', size=30, hand='25^2 = 625   (2·3 = 6 | 25)      26^2 = 625 + 25 + 26 = 676')
 h4 = I('h4', '$25$: $\\ A-C=3$ (not a choice) $\\quad 26$: $\\ A-C=\\hl{f}{4}$', size=30, hand='25 :   A − C = 3  (not a choice)      26 :   A − C = \\hl{f}{4}')
 i1 = I('i1', '$A\\cdot A$ ends in $A$: $\\ A=0,\\ 1,\\ 5,\\ 6$', size=32, hand='A·A  ends in  A :    A = 0,  1,  5,  6')
 i2 = I('i2', '(1) $6$: $\\ C=0$ ✗ $\\quad$ (3) $5$: $\\ 16^2=256$ ✗', size=30, hand='(1)  6 :   C = 0  ✗      (3)  5 :   16^2 = 256  ✗')
-i3 = I('i3', '(2) $2$: $\\ 35^2,\\ 46^2>999$ ✗ $\\quad$ (4) $4$: $\\ 26^2=676$ ✓', size=30, hand='(2)  2 :   35^2,  46^2 > 999  ✗      (4)  4 :   26^2 = 676  ✓')
+i3 = I('i3', '(2) $2$: $\\ 35^2=1225>999$ ✗ $\\quad$ (4) $4$: $\\ A=6,\\ C=2$ ✓', size=30, hand='(2)  2 :   35^2 = 1225 > 999  ✗      (4)  4 :   A = 6,  C = 2  ✓')
 video('solve-q-517', 'solution', qid='q-517', slides=[
     S('Method 1 · The size first',
       L("A, B and C represent digits. Given: C A times C A is equal to six B A. Which of the following could be A minus C?",

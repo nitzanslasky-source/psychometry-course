@@ -111,7 +111,7 @@
     ]
    },
    {
-    "say": "Forty-eight is two to the power of four times three, and sixty is two squared times three times five. The GCD is two squared times three, which is twelve. The LCM takes two to the power of four, three and five, and sixteen times fifteen is two hundred forty.",
+    "say": "Forty-eight is two to the power of four times three, and sixty is two squared times three times five. The GCD is two squared times three, which is twelve. The LCM takes two to the power of four, three and five, and sixteen times fifteen is sixteen times ten, a hundred sixty, plus half of that, eighty. Two hundred forty.",
     "at": [
      "Forty-eight is",
      "power of four",
@@ -122,7 +122,9 @@
      "The LCM takes",
      "the power of four, three",
      "and five, and",
-     "fifteen is two"
+     "fifteen is sixteen",
+     "a hundred sixty",
+     "of that, eighty"
     ]
    },
    {

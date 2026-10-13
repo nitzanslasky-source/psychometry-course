@@ -34,13 +34,13 @@
     ]
    },
    {
-    "say": "Which number in the twenties works? Twenty-four squared is five hundred seventy-six, too small. Twenty-five squared is six hundred twenty-five. Twenty-six squared is six hundred seventy-six. Twenty-seven squared is seven hundred twenty-nine, too large. So we only need twenty-five and twenty-six.",
+    "say": "Which number in the twenties works? A times A must end in A, so A is zero, one, five or six: twenty, twenty-one, twenty-five or twenty-six. Twenty-five squared, the fast way for a number ending in five: two times three is six, then write twenty-five. Six hundred twenty-five. Twenty and twenty-one are smaller, so their squares are below six hundred. Out. Twenty-six squared is one step up: add twenty-five and twenty-six. Six hundred seventy-six. Both start with six.",
     "at": [
-     "Twenty-four squared",
-     "Twenty-five squared is",
-     "twenty-six squared is",
-     "Twenty-seven squared",
-     "twenty-nine, too"
+     "Twenty-five squared, the fast",
+     "two times three is six",
+     "Twenty and twenty-one are smaller",
+     "Twenty-six squared is one step",
+     "Both start with six"
     ]
    },
    {
@@ -82,15 +82,15 @@
     ]
    },
    {
-    "say": "Test two: A could be five with C is three, or six with C is four. Those numbers are thirty-five and forty-six. Their squares have four digits, too large for the given result. That choice is out. Test four: use A is six and C is two. Twenty-six squared is six hundred seventy-six. It starts with six and ends with A, so it fits. Choice number four is our answer. Okay. I'll see you in the next question.",
+    "say": "Test two: A could be five with C is three, or six with C is four. Those numbers are thirty-five and forty-six. Thirty-five squared: three times four is twelve, then twenty-five, twelve hundred twenty-five, four digits, too large for the given result, and forty-six is even bigger. That choice is out. Three choices are out, so it's choice number four: A is six and C is two. Choice number four is our answer. Okay. I'll see you in the next question.",
     "at": [
      "A could be",
      "and forty-six",
-     "their squares have",
+     "Thirty-five squared: three",
      "four digits, too",
      "A is six",
-     "Twenty-six squared",
-     "It fits. Choice number four"
+     "C is two",
+     "Choice number four is our answer"
     ]
    }
   ]

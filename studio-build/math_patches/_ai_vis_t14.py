@@ -565,7 +565,7 @@ k1 = I('k1', 'Not a prime? Unpack it first', size=30, col=1)
 u4 = I('u4', '$x=2^2\\cdot3\\cdot5^4$', size=34, col=1, hand='x = 2^2·3·5^4')
 v1 = I('v1', '$x=3\\cdot25\\cdot100=\\hl{x}{7500}$', hand='x = 3·25·100 = \\hl{x}{7500}')
 v2 = I('v2', '$7500\\div20=375$ ✓', hand='7500 ÷ 20 = 375   ✓')
-v3 = I('v3', '$3750\\div11$: $\\ 11\\cdot340=3740$, $\\ $remainder ✗', size=30, hand='3750 ÷ 11 :   11·340 = 3740,  remainder  ✗')
+v3 = I('v3', '$3750\\div11$: $\\ 11\\cdot340=3300+440=3740$, $\\ $remainder ✗', size=30, hand='3750 ÷ 11 :   11·340 = 3300 + 440 = 3740,  remainder  ✗')
 v4 = I('v4', '$7500\\div75=100$ ✓', col=1, hand='7500 ÷ 75 = 100   ✓')
 v5 = I('v5', '$7500\\div60=125$ ✓', col=1, hand='7500 ÷ 60 = 125   ✓')
 video('solve-q-388', 'solution', qid='q-388', slides=[
@@ -634,7 +634,7 @@ P1 = STRIP('P1', 28, 48, [
 q2 = I('q2', '$x=30$ $\\quad$ ($29$ is prime)', size=34, hand='x = 30    (29 is prime)')
 q3 = I('q3', '$y$: $\\ \\hl{y}{44},\\ 45,\\ 46$', size=34, hand='y :   \\hl{y}{44},  45,  46')
 q4 = I('q4', '$30\\cdot44=\\hl{ans}{1320}$', size=34, hand='30·44 = \\hl{ans}{1320}')
-q5 = I('q5', '$29\\cdot44=1276\\quad 30\\cdot40=1200\\quad 30\\cdot46=1380$', size=30)
+q5 = I('q5', '$29\\cdot44=1276\\quad 30\\cdot40=1200\\quad 30\\cdot46>30\\cdot44$', size=30)
 video('solve-q-386', 'solution', qid='q-386', slides=[
     S('Number line',
       L("x and y are integers that are not prime, and x is smaller than forty, which is smaller than y. Between x and forty "
@@ -672,7 +672,7 @@ video('solve-q-386', 'solution', qid='q-386', slides=[
         show(q4, 'Thirty times forty-four'), mk('circle', 'q4: ans', 'one thousand three hundred twenty'), mk('tick', 'choice 3', 'choice number three is our answer'), voice='calm'),
       L("And look at the other choices, each one is a trap. Twenty-nine times forty-four is one thousand two hundred "
         "seventy-six, forty-four less than before, and that takes x as twenty-nine, which is prime. Thirty times forty is one thousand two "
-        "hundred, but y has to be above forty. And thirty times forty-six is one thousand three hundred eighty, the largest "
+        "hundred, but y has to be above forty. And thirty times forty-six is even bigger than thirty times forty-four, so it's the largest "
         "product, not the smallest.", show(q5, 'each one is a trap'), mk('cross', 'choice 2', 'which is prime'),
         mk('cross', 'choice 1', 'above forty'), mk('cross', 'choice 4', 'the largest')),
       L("[pause] Okay. I'll see you in the next question.")),
@@ -1539,7 +1539,7 @@ v5 = I('v5', 'Only one-digit primes? $\\ 4$ ✗', size=28, col=1, hand='Only one
 t1 = I('t1', '$4$: $\\ 1,2,4$ ✓ $\\quad 6$: $\\ 1,2,3,6\\quad 8$: $\\ 1,2,4,8$', size=30, hand='4 :  1, 2, 4  ✓      6 :  1, 2, 3, 6      8 :  1, 2, 4, 8')
 t2 = I('t2', '$9$: $\\ 1,3,9$ ✓', size=30, hand='9 :  1, 3, 9   ✓')
 t3 = I('t3', '$16$: $\\ 1,2,4,8,16$ $\\ \\to\\ 5$ ✗', size=30, hand='16 :  1, 2, 4, 8, 16   →   5   ✗')
-t4 = I('t4', '$25,\\ 49,\\ 121,\\ 169$ $\\quad 17^2=289$ ✗', size=30, hand='25,  49,  121,  169       17^2 = 289   ✗')
+t4 = I('t4', '$25,\\ 49,\\ 121,\\ 169$ $\\quad 17>15$: $\\ 15^2=225$ ✗', size=30, hand='25,  49,  121,  169       17 > 15 :   15^2 = 225   ✗')
 t5 = I('t5', 'Squares of primes', size=28, col=1)
 video('solve-q-397', 'solution', qid='q-397', slides=[
     S('Method 1 · The rule',
@@ -1569,7 +1569,7 @@ video('solve-q-397', 'solution', qid='q-397', slides=[
         "every square. Sixteen is four squared, and it has one, two, four, eight and sixteen, five divisors, because four "
         "isn't a prime.", show(t5, 'squares of primes'), show(t3, 'Sixteen is four squared')),
       L("So the next ones are five squared, twenty-five, seven squared, forty-nine, eleven squared, a hundred twenty-one, "
-        "and thirteen squared, a hundred sixty-nine. Seventeen squared is two hundred eighty-nine, too big. Six values, "
+        "and thirteen squared, a hundred sixty-nine. The next prime, seventeen, is past fifteen, and fifteen squared is already two hundred twenty-five, too big. Six values, "
         "choice number three. [pause] Okay. I'll see you in the next question.", show(t4, 'five squared, twenty-five'),
         mk('tick', 'choice 3', 'Six values'))),
 ])
@@ -1627,7 +1627,7 @@ video('r26-t14-summary', 'lesson', slides=[
       L("The greatest common divisor is the largest number that divides both numbers. It takes each shared prime at its lower power. "
         "The least common multiple, the LCM, is the smallest positive number divisible by both numbers. "
         "It takes every prime at its higher power.", show(g1s, 'The greatest common divisor')),
-      L("Forty-eight is two to the power of four times three, and sixty is two squared times three times five. The GCD is two squared times three, which is twelve. The LCM takes two to the power of four, three and five, and sixteen times fifteen is two hundred forty.",
+      L("Forty-eight is two to the power of four times three, and sixty is two squared times three times five. The GCD is two squared times three, which is twelve. The LCM takes two to the power of four, three and five, and sixteen times fifteen is sixteen times ten, a hundred sixty, plus half of that, eighty. Two hundred forty.",
         show(g2s, 'Forty-eight is')),
       L("The trap is just multiplying the two numbers, which counts a shared prime twice. And the GCD times the LCM is the "
         "two numbers multiplied.", show(g3s, 'the GCD times the LCM'))),

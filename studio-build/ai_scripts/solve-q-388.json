@@ -172,7 +172,7 @@
     ]
    },
    {
-    "say": "Dividing by twenty-two means dividing by both its factors, two and eleven. Let's check whether both divisions can finish without a remainder. Twenty-two. Half of seven thousand five hundred is three thousand seven hundred fifty, and now I divide by eleven. Eleven times three hundred forty is three thousand seven hundred forty, and that leaves ten. A remainder, so twenty-two doesn't divide x.",
+    "say": "Dividing by twenty-two means dividing by both its factors, two and eleven. Let's check whether both divisions can finish without a remainder. Twenty-two. Half of seven thousand five hundred is three thousand seven hundred fifty, and now I divide by eleven. Eleven times three hundred is three thousand three hundred, and eleven times forty is four hundred forty. Together, eleven times three hundred forty is three thousand seven hundred forty, and that leaves ten. A remainder, so twenty-two doesn't divide x.",
     "at": [
      "Twenty-two. Half",
      "five hundred is",

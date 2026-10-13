@@ -325,3 +325,6 @@ Teacher (recording topic 13): "Make the script of the slides of what I'm doing n
 - **solve-q-394** (327 → 347): the rule — a prime power divides z only if z has that prime at least as many times.
 - **solve-q-397** (229 → 244): why a prime squared has exactly three divisors.
 `python3 math_check.py 13 14 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered: tmp_check/clearer/t14.png (boards unchanged).
+
+## 2026-10-13 R36 recorded-video fixes (teacher approved; re-read flagged)
+Spoken (source spec, not in the overlay): solve-q-386 paragraph 10 (30·46 > 30·44, no product), solve-q-397 paragraph 11 (17 > 15, 15² = 225), r26-t14-summary paragraph 10 (16·15 = 160 + 80). Overlay: solve-q-388 paragraph 14 (11·340 = 3300 + 440). Boards q5, t4, v3.

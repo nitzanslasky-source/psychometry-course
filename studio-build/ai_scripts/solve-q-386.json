@@ -120,7 +120,7 @@
     ]
    },
    {
-    "say": "And look at the other choices, each one is a trap. Twenty-nine times forty-four is one thousand two hundred seventy-six, forty-four less than before, and that takes x as twenty-nine, which is prime. Thirty times forty is one thousand two hundred, but y has to be above forty. And thirty times forty-six is one thousand three hundred eighty, the largest product, not the smallest.",
+    "say": "And look at the other choices, each one is a trap. Twenty-nine times forty-four is one thousand two hundred seventy-six, forty-four less than before, and that takes x as twenty-nine, which is prime. Thirty times forty is one thousand two hundred, but y has to be above forty. And thirty times forty-six is even bigger than thirty times forty-four, so it's the largest product, not the smallest.",
     "at": [
      "each one is a trap",
      "Twenty-nine times forty-four",
@@ -131,7 +131,8 @@
      "forty is one",
      "hundred, but y",
      "above forty",
-     "forty-six is one",
+     "forty-six is even",
+     "thirty times forty-four",
      "the largest"
     ]
    },

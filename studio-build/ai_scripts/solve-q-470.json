@@ -80,7 +80,7 @@
   ],
   [
    {
-    "say": "[pause] Now let's try plugging in. Choose b, since y depends on b. Start with the easy value, b is one. One minus three is negative two, whose square is four. One plus eight is nine, and nine cubed is seven hundred twenty-nine. Four plus seven hundred twenty-nine is seven hundred thirty-three, odd. Check the choices now. y is not even, so choice number two is out. And b is not even, so choice number three is out.",
+    "say": "[pause] Now let's try plugging in. Choose b, since y depends on b. Start with the easy value, b is one. One minus three is negative two, whose square is four. One plus eight is nine, and nine is odd, so nine cubed is odd too. Four plus an odd number is odd, so y is odd. Check the choices now. y is not even, so choice number two is out. And b is not even, so choice number three is out.",
     "at": [
      "Now let",
      "b is one",

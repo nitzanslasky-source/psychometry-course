@@ -823,7 +823,7 @@ x3 = I('x3', '$a+b$: even + even or odd + odd $=$ \\hl{e}{even}', size=32, hand=
 x4 = I('x4', '$8-2=6\\qquad 9-3=6$', size=30, col=1, hand='8 − 2 = 6        9 − 3 = 6')
 y1 = I('y1', '$a=7,\\ b=1$ $\\ $(odd: evens make all even)', size=30, hand='a = 7,  b = 1     (odd: evens make all even)')
 y2 = I('y2', '(1) $49+1+5=55$ ✗ $\\quad$ (2) $1+7=8$ ✓', size=30, hand='(1)   49 + 1 + 5 = 55  ✗      (2)   1 + 7 = 8  ✓')
-y3 = I('y3', '(3) $42-1=41$ ✗ $\\quad$ (4) $245+4=249$ ✗', size=30, hand='(3)   42 − 1 = 41  ✗      (4)   245 + 4 = 249  ✗')
+y3 = I('y3', '(3) $42-1=41$ ✗ $\\quad$ (4) $5\\cdot49+4$: odd ✗', size=30, hand='(3)   42 − 1 = 41  ✗      (4)   5·49 + 4 :  odd  ✗')
 video('solve-q-462', 'solution', qid='q-462', slides=[
     S('Method 1 · Same parity',
       L("a and b are integers. Given: a minus b is equal to six. Which of the following expressions is necessarily even?",

@@ -62,7 +62,7 @@
     ]
    },
    {
-    "say": "Use seven for a and one for b in every choice. Choice number one gives forty-nine plus one plus five, which is fifty-five, odd, so it's out. Choice number two gives one plus seven, which is eight, even. Choice number three gives forty-two minus one, which is forty-one, odd, so it's out. Choice number four gives two hundred forty-five plus four, which is two hundred forty-nine, odd, so it's out.",
+    "say": "Use seven for a and one for b in every choice. Choice number one gives forty-nine plus one plus five, which is fifty-five, odd, so it's out. Choice number two gives one plus seven, which is eight, even. Choice number three gives forty-two minus one, which is forty-one, odd, so it's out. Choice number four gives five times forty-nine, plus four. Five times forty-nine is odd times odd, so it's odd, and plus four keeps it odd, so it's out.",
     "at": [
      "Choice number one",
      "one plus five",
@@ -71,8 +71,8 @@
      "is eight, even",
      "Choice number three",
      "forty-one, odd",
-     "four gives two",
-     "forty-nine, odd"
+     "four gives five",
+     "keeps it odd"
     ]
    },
    {

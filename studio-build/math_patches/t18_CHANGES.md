@@ -254,3 +254,6 @@ TEACHING_STYLE_GUIDE.md. Unrecorded videos only (spoken text in `_codex_script_c
 - solve-q-r26-t18-02 slide 2 p2: 621 − 126 said as 621 − 121 = 500, 5 less = 495.
 - r26-t18-summary slide 5 p1: 444 = 4·111 = 4·3·37 = 37·12.
 - solve-q-517 is recorded (2026-10-13): NOT changed; proposed re-read text is in the R36 report.
+
+## 2026-10-13 R36 recorded-video fixes (teacher approved; re-read flagged)
+Overlay revised texts + cue anchors (`_codex_script_clarity_20261012.json`) and board items in this file's `_ai_vis_t18.py` spec: solve-q-517 paragraphs 4, 8 (25² by the ends-in-5 trick, 26² = 625 + 25 + 26; method 2 ends "three choices are out"; boards h3, i3; written solution updated); r26-t18-facts paragraphs 4, 5 (555 = 5·111 = 37·15, 7777 = 77·100 + 77; board d3).
