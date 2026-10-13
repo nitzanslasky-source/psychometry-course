@@ -385,6 +385,9 @@ def apply_patches(D, only=None):
         spec = importlib.util.spec_from_file_location('mp_t%d' % n, f); mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod); mod.apply(M)
     M.finish()
+    # 2026-10-14 question figures in black and white like the real exam (bw_figures.py; build_verbal.py runs it again
+    # right before the write, for topic 51 and any figure added after the patches)
+    import bw_figures; M.bw = bw_figures.apply(D)
     renumber_guided(D, only or range(1, 39))
     if not only: renumber_modules(D)
     return M

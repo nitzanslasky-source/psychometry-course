@@ -318,7 +318,13 @@ print('arrow parts: %d items in %d videos (%d beats, %d extra clicks); %d record
 _late = sorted({vid for vid, ts in ARW_LATE if vid in ARW['videos']})
 if _late: print('  WARNING: takes recorded after CUTOFF %s for videos that now reveal arrows in parts: %s — if they were made with an older studio file, move CUTOFF later and rebuild' % (studio_arrows.CUTOFF, _late))
 
-# ---------- write ----------
+# ---------- question figures in black and white, like the real NITE exam (bw_figures.py, teacher-approved 2026-10-14) ----------
+# every q.questionVisual.svg + every board / hybrid copy (k:'q' item 'fig'); teaching visuals (k:'vis'), charts (52) keep colour
+import bw_figures
+_bw = bw_figures.apply(D); _bwu = bw_figures.unmapped(D)
+print('b&w figures: %d question figures / board copies, %d changed here, %d unmapped colours' % (_bw['figures'], _bw['changed'], len(_bwu)))
+for _w in _bwu: print('WARNING b&w figures: colour not in bw_figures.TABLE:', _w)
+
 body = json.dumps(D, ensure_ascii=False, separators=(',', ':'))
 s2, i2, j2, _ = load(BASE)   # positions in the base; recompute on the patched html
 k0 = s.find('window.COURSE=') + len('window.COURSE='); k1 = s.find('</script>', k0)
