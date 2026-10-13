@@ -1,110 +1,110 @@
 {
- "videoId": "solve-q-400",
- "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "Dan has three cards with the numbers two, five and seven. He picks two or more of the cards and multiplies their numbers. What is the sum of all the different products he can get?",
-    "voice": "calm",
-    "at": [
-     "Dan has"
+  "videoId": "solve-q-400",
+  "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "Dan has three cards with the numbers two, five and seven. He picks two or more of the cards and multiplies their numbers. What is the sum of all the different products he can get?",
+        "voice": "calm",
+        "at": [
+          "Dan has"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So this time we don't break a number, we build numbers. Two or more cards, multiplied, and then we add up all the products. [short pause] We'll solve it two ways, building every product, and then a quick look at the choices.",
+        "at": [
+          "don't break a",
+          "Two or more cards, multiplied",
+          "and then we",
+          "add up all the",
+          "We'll solve it",
+          "building every product",
+          "a quick look"
+        ]
+      },
+      {
+        "say": "[short pause] So I don't miss any, I go in order, first every pair of cards, and then all three together. Does the order of the cards matter? No, two times five and five times two are the same product, so each pair counts once.",
+        "at": [
+          "So I",
+          "I go in",
+          "first every pair",
+          "and then all",
+          "Does the order",
+          "No, two times",
+          "five times two",
+          "same product, so"
+        ]
+      },
+      {
+        "say": "These are the separate products we can make with two cards. We'll add the results only after finding all the allowed groups. Pairs. Two times five is ten. Two times seven is fourteen. Five times seven is thirty-five.",
+        "voice": "calm",
+        "at": [
+          "Two times five is ten",
+          "Five times seven"
+        ]
+      },
+      {
+        "say": "And now careful, two or more includes all three. A lot of students stop at the pairs. Two times five times seven, ten times seven, is seventy.",
+        "at": [
+          "two or more",
+          "A lot of",
+          "at the pairs",
+          "Two times five times seven",
+          "ten times seven",
+          "is seventy"
+        ]
+      },
+      {
+        "say": "Are they all different? Yes. With different primes, every group gives its own product. Now let's add, starting from the big one. Seventy plus thirty-five is a hundred five. Plus fourteen is a hundred nineteen. Plus ten is a hundred twenty-nine. Choice number one is our answer.",
+        "at": [
+          "Are they all different",
+          "With different primes",
+          "gives its own",
+          "Now let's add",
+          "the big one",
+          "Seventy plus thirty-five",
+          "Plus fourteen is",
+          "nineteen. Plus ten",
+          "hundred twenty-nine.",
+          "Choice number one is our answer"
+        ]
+      },
+      {
+        "say": "And look, if you forget the seventy, you get fifty-nine, and it's right there in the choices, choice number four. And seventy and fourteen are single products, not the sum.",
+        "at": [
+          "if you forget the seventy",
+          "right there in",
+          "choice number four",
+          "And seventy",
+          "and fourteen",
+          "not the sum"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So this time we don't break a number, we build numbers. Two or more cards, multiplied, and then we add up all the products. [short pause] We'll solve it two ways, building every product, and then a quick look at the choices.",
-    "at": [
-     "don't break a",
-     "Two or more cards, multiplied",
-     "and then we",
-     "add up all the",
-     "We'll solve it",
-     "building every product",
-     "a quick look"
+    [
+      {
+        "say": "[pause] Our second method, a quick look at the choices. One of the products is all three cards together, two times five times seven, seventy. And the pairs add more on top of it. So the sum is more than seventy.",
+        "at": [
+          "One of",
+          "all three cards together",
+          "times five times",
+          "the pairs add more",
+          "top of it",
+          "So the sum"
+        ]
+      },
+      {
+        "say": "Which choices are more than seventy? Only a hundred twenty-nine. Seventy, fourteen and fifty-nine are all seventy or less. So choice number one. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "Which choices are more",
+          "seventy? Only a",
+          "Seventy, fourteen",
+          "fourteen and",
+          "fifty-nine are",
+          "So choice number one"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] So I don't miss any, I go in order, first every pair of cards, and then all three together. Does the order of the cards matter? No, two times five and five times two are the same product, so each pair counts once.",
-    "at": [
-     "So I",
-     "I go in",
-     "first every pair",
-     "and then all",
-     "Does the order",
-     "No, two times",
-     "five times two",
-     "same product, so"
-    ]
-   },
-   {
-    "say": "These are the separate products we can make with two cards. We'll add the results only after finding all the allowed groups. Pairs. Two times five is ten. Two times seven is fourteen. Five times seven is thirty-five.",
-    "voice": "calm",
-    "at": [
-     "Two times five is ten",
-     "Five times seven"
-    ]
-   },
-   {
-    "say": "And now careful, two or more includes all three. A lot of students stop at the pairs. Two times five times seven, ten times seven, is seventy.",
-    "at": [
-     "two or more",
-     "A lot of",
-     "at the pairs",
-     "Two times five times seven",
-     "ten times seven",
-     "is seventy"
-    ]
-   },
-   {
-    "say": "Are they all different? Yes. With different primes, every group gives its own product. Now let's add, starting from the big one. Seventy plus thirty-five is a hundred five. Plus fourteen is a hundred nineteen. Plus ten is a hundred twenty-nine. Choice number one is our answer.",
-    "at": [
-     "Are they all different",
-     "With different primes",
-     "gives its own",
-     "Now let's add",
-     "the big one",
-     "Seventy plus thirty-five",
-     "Plus fourteen is",
-     "nineteen. Plus ten",
-     "hundred twenty-nine.",
-     "Choice number one is our answer"
-    ]
-   },
-   {
-    "say": "And look, if you forget the seventy, you get fifty-nine, and it's right there in the choices, choice number four. And seventy and fourteen are single products, not the sum.",
-    "at": [
-     "if you forget the seventy",
-     "right there in",
-     "choice number four",
-     "And seventy",
-     "and fourteen",
-     "not the sum"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] For this approach, we only need a lower bound for the total. One allowed product is already seventy, and the other positive products add to it. One of the products is all three cards together, two times five times seven, seventy. And the pairs add more on top of it. So the sum is more than seventy.",
-    "at": [
-     "One of",
-     "all three cards together",
-     "times five times",
-     "the pairs add more",
-     "top of it",
-     "So the sum"
-    ]
-   },
-   {
-    "say": "Which choices are more than seventy? Only a hundred twenty-nine. Seventy, fourteen and fifty-nine are all seventy or less. So choice number one. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Which choices are more",
-     "seventy? Only a",
-     "Seventy, fourteen",
-     "fourteen and",
-     "fifty-nine are",
-     "So choice number one"
-    ]
-   }
   ]
- ]
 }

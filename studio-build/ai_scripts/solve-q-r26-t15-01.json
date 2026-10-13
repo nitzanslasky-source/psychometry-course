@@ -1,155 +1,155 @@
 {
- "videoId": "solve-q-r26-t15-01",
- "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "a and b are positive integers, and a is bigger than b. When a is divided by seven, the remainder is two. When b is divided by seven, the remainder is five. What will be the remainder if a minus b is divided by seven?",
-    "voice": "calm",
-    "at": [
-     "a and b are"
+  "videoId": "solve-q-r26-t15-01",
+  "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "a and b are positive integers, and a is bigger than b. When a is divided by seven, the remainder is two. When b is divided by seven, the remainder is five. What will be the remainder if a minus b is divided by seven?",
+        "voice": "calm",
+        "at": [
+          "a and b are"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So we know the remainders of a and b, and they ask for the remainder of their difference. And one of the choices says it can't be determined. [short pause] We'll solve it two ways, writing each number as a tag, and then plugging in numbers.",
+        "at": [
+          "remainders of a",
+          "and they ask",
+          "the remainder of their difference",
+          "And one of",
+          "it can't be determined",
+          "solve it two",
+          "each number as",
+          "and then plugging"
+        ]
+      },
+      {
+        "say": "[short pause] Let's write each number as complete groups of seven, plus its remainder. a is seven k plus two, and b is seven m plus five. k and m count the complete groups of seven. We use separate letters because the two numbers do not have to contain the same number of groups.",
+        "at": [
+          "Let's write each number",
+          "complete groups of seven",
+          "plus its remainder",
+          "seven k plus two",
+          "plus two, and",
+          "And b is",
+          "b is seven m plus five",
+          "k and m count",
+          "We use separate letters"
+        ]
+      },
+      {
+        "say": "We want a minus b, so let's subtract the whole expression for b from the whole expression for a. Now subtract. a minus b is seven k minus seven m, plus two minus five. The sevens stay sevens, so seven times, in brackets, k minus m. And two minus five is negative three.",
+        "at": [
+          "Now subtract",
+          "k minus seven",
+          "two minus five",
+          "The sevens stay sevens",
+          "seven times, in",
+          "And two minus"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So we know the remainders of a and b, and they ask for the remainder of their difference. And one of the choices says it can't be determined. [short pause] We'll solve it two ways, writing each number as a tag, and then plugging in numbers.",
-    "at": [
-     "remainders of a",
-     "and they ask",
-     "the remainder of their difference",
-     "And one of",
-     "it can't be determined",
-     "solve it two",
-     "each number as",
-     "and then plugging"
+    [
+      {
+        "say": "Negative three is what we got after subtracting the two remainders, but a division remainder must be between zero and six. Add seven to negative three and we get four. We are not changing a minus b: we can use one fewer complete group of seven and leave four instead. Seven minus three is four, so the total stays the same. For example, four leaves four, and eleven, seven plus four, leaves four too. So a minus b is complete sevens plus four, and its remainder is four.",
+        "at": [
+          "Negative three",
+          "Negative three is what",
+          "a division remainder must",
+          "Add seven to negative three",
+          "we get four",
+          "We are not changing",
+          "one fewer complete group",
+          "leave four instead",
+          "Seven minus three is four",
+          "For example, four leaves four",
+          "eleven, seven plus four",
+          "So a minus b",
+          "plus four, and its remainder",
+          "its remainder is four"
+        ]
+      },
+      {
+        "say": "Let's check it with an actual division. Twenty-three leaves two, because three sevens are twenty-one. Twelve leaves five. Twenty-three minus twelve is eleven, and eleven divided by seven leaves four, because eleven is seven plus four.",
+        "at": [
+          "Let's check it",
+          "Twenty-three leaves two",
+          "sevens are twenty-one",
+          "Twenty-three minus twelve",
+          "and eleven divided",
+          "leaves four, because",
+          "seven plus four"
+        ]
+      },
+      {
+        "say": "So four, choice number four is our answer. And can't be determined is out, because it's four for every pair.",
+        "at": [
+          "choice number four is our answer",
+          "can't be determined is out",
+          "because it's four"
+        ]
+      },
+      {
+        "say": "And what does that mean? Only the remainders matter. For a difference, subtract the remainders, two minus five, negative three. A negative result? Add the divisor. Negative three plus seven is four. For a sum, add them. Nine leaves two and twelve leaves five, and nine plus twelve is twenty-one, three sevens. Two plus five is seven, and that leaves zero, the same. For a product, multiply them. Nine times twelve is a hundred eight, fifteen sevens and three. And two times five is ten, which also leaves three.",
+        "at": [
+          "And what does",
+          "Only the remainders matter",
+          "remainders, two minus",
+          "three. A negative",
+          "Negative three plus",
+          "For a sum, add them",
+          "leaves five, and",
+          "twelve is twenty-one",
+          "Two plus five",
+          "and that leaves",
+          "For a product, multiply them",
+          "hundred eight, fifteen",
+          "And two times",
+          "ten, which also"
+        ]
+      },
+      {
+        "say": "Now careful with the order. A lot of students do five minus two, which is three, and that's choice number three, the trap. It's a minus b, so it's two minus five.",
+        "at": [
+          "careful with the order",
+          "minus two, which",
+          "and that's choice",
+          "the trap",
+          "It's a minus",
+          "it's two minus"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "[pause] Now let's try plugging in numbers. I need an a that leaves two, so nine, which is seven plus two. And a b that leaves five and is smaller than a, so five itself. Nine minus five is four, and four divided by seven leaves four.",
+        "at": [
+          "Now let's",
+          "numbers. I need",
+          "that leaves two",
+          "so nine, which is seven",
+          "And a b",
+          "five and is",
+          "a, so five",
+          "Nine minus five",
+          "and four divided"
+        ]
+      },
+      {
+        "say": "Now check the choices. Our example gives a remainder of four. But one choice says it cannot be determined, so an example alone does not settle that choice. We need to see what changing the numbers can do. Any other allowed a differs from nine by complete sevens. Any other allowed b differs from five by complete sevens too. Their difference can therefore change only by complete sevens, which cannot change the remainder of four.",
+        "at": [
+          "Our example gives",
+          "cannot be determined",
+          "complete sevens, which cannot"
+        ]
+      },
+      {
+        "say": "So the remainder is always four, not just four for our example. That rules out cannot be determined. Choice number four is our answer. We can stop without trying more pairs. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "Choice number four is our answer"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] The letters k and m will count the complete groups of seven in each original number. The given remainders are the parts left outside those groups. Let's start with the tags. Remember, a number that leaves two when divided by seven is seven k plus two, full sevens plus two. And b is seven m plus five. Why m and not k again? a and b are different numbers, so they get different letters.",
-    "at": [
-     "Let's start",
-     "Remember, a number",
-     "two when divided",
-     "seven k plus two",
-     "sevens plus two",
-     "And b is",
-     "Why m and not k",
-     "a and b",
-     "numbers, so they"
-    ]
-   },
-   {
-    "say": "We want a minus b, so let's subtract the whole expression for b from the whole expression for a. Now subtract. a minus b is seven k minus seven m, plus two minus five. The sevens stay sevens, so seven times, in brackets, k minus m. And two minus five is negative three.",
-    "at": [
-     "Now subtract",
-     "k minus seven",
-     "two minus five",
-     "The sevens stay sevens",
-     "seven times, in",
-     "And two minus"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Negative three is the part we got after subtracting, but it isn't yet a valid remainder. We need to express that same number using a remainder between zero and six. But a remainder can't be negative. Dividing by seven, it's zero to six. So add the divisor, seven. Negative three plus seven is four. Why is that allowed? Adding a full seven never changes the remainder. Four leaves four, and eleven, four plus seven, leaves four too. So a minus b is full sevens, plus four, and the remainder is four, for every pair.",
-    "at": [
-     "Negative three",
-     "be negative. Dividing",
-     "it's zero to",
-     "So add the divisor",
-     "Negative three plus",
-     "four. Why is",
-     "Adding a full",
-     "changes the remainder",
-     "Four leaves four",
-     "four plus seven",
-     "too. So a",
-     "is full sevens",
-     "plus four",
-     "is four, for"
-    ]
-   },
-   {
-    "say": "Let's check it with an actual division. Twenty-three leaves two, because three sevens are twenty-one. Twelve leaves five. Twenty-three minus twelve is eleven, and eleven divided by seven leaves four, because eleven is seven plus four.",
-    "at": [
-     "Let's check it",
-     "Twenty-three leaves two",
-     "sevens are twenty-one",
-     "Twenty-three minus twelve",
-     "and eleven divided",
-     "leaves four, because",
-     "seven plus four"
-    ]
-   },
-   {
-    "say": "So four, choice number four is our answer. And can't be determined is out, because it's four for every pair.",
-    "at": [
-     "choice number four is our answer",
-     "can't be determined is out",
-     "because it's four"
-    ]
-   },
-   {
-    "say": "And what does that mean? Only the remainders matter. For a difference, subtract the remainders, two minus five, negative three. A negative result? Add the divisor. Negative three plus seven is four. For a sum, add them. Nine leaves two and twelve leaves five, and nine plus twelve is twenty-one, three sevens. Two plus five is seven, and that leaves zero, the same. For a product, multiply them. Nine times twelve is a hundred eight, fifteen sevens and three. And two times five is ten, which also leaves three.",
-    "at": [
-     "And what does",
-     "Only the remainders matter",
-     "remainders, two minus",
-     "three. A negative",
-     "Negative three plus",
-     "For a sum, add them",
-     "leaves five, and",
-     "twelve is twenty-one",
-     "Two plus five",
-     "and that leaves",
-     "For a product, multiply them",
-     "hundred eight, fifteen",
-     "And two times",
-     "ten, which also"
-    ]
-   },
-   {
-    "say": "Now careful with the order. A lot of students do five minus two, which is three, and that's choice number three, the trap. It's a minus b, so it's two minus five.",
-    "at": [
-     "careful with the order",
-     "minus two, which",
-     "and that's choice",
-     "the trap",
-     "It's a minus",
-     "it's two minus"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] For this method, I'll choose actual values that obey the two remainder conditions and the condition that a is bigger than b. Now let's try plugging in numbers. I need an a that leaves two, so nine, which is seven plus two. And a b that leaves five and is smaller than a, so five itself. Nine minus five is four, and four divided by seven leaves four.",
-    "at": [
-     "Now let's",
-     "numbers. I need",
-     "that leaves two",
-     "so nine, which is seven",
-     "And a b",
-     "five and is",
-     "a, so five",
-     "Nine minus five",
-     "and four divided"
-    ]
-   },
-   {
-    "say": "Now check the choices. Our example gives a remainder of four. But one choice says it cannot be determined, so an example alone does not settle that choice. We need to see what changing the numbers can do. Any other allowed a differs from nine by complete sevens. Any other allowed b differs from five by complete sevens too. Their difference can therefore change only by complete sevens, which cannot change the remainder of four.",
-    "at": [
-     "Our example gives",
-     "cannot be determined",
-     "complete sevens, which cannot"
-    ]
-   },
-   {
-    "say": "So the remainder is always four, not just four for our example. That rules out cannot be determined. Choice number four is our answer. We can stop without trying more pairs. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Choice number four is our answer"
-    ]
-   }
   ]
- ]
 }

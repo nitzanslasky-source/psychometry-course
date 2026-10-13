@@ -1,142 +1,142 @@
 {
- "videoId": "solve-q-387",
- "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "Given: x is a prime number, and x to the power of six is a two-digit number. What is nine x?",
-    "voice": "calm",
-    "at": [
-     "Given"
+  "videoId": "solve-q-387",
+  "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "Given: x is a prime number, and x to the power of six is a two-digit number. What is nine x?",
+        "voice": "calm",
+        "at": [
+          "Given"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So x is a prime, and its sixth power has only two digits. That's a big hint, because a sixth power grows really fast, so x must be a small number. And look, they don't ask for x, they ask for nine x. [short pause] We'll solve it two ways, trial and error first, and then plugging in the answers.",
+        "at": [
+          "x is a prime",
+          "its sixth power",
+          "only two digits",
+          "grows really fast",
+          "must be a",
+          "And look, they",
+          "they ask for nine x",
+          "We'll solve it",
+          "trial and error",
+          "then plugging in"
+        ]
+      },
+      {
+        "say": "[short pause] Remember, with primes we can simply try numbers against the conditions. Let's start with three, a small prime whose powers are easy to build up.",
+        "at": [
+          "Remember, with primes",
+          "simply try numbers",
+          "Let's start with three",
+          "small prime whose",
+          "easy to build up"
+        ]
+      },
+      {
+        "say": "I don't write out three times three times three, six times. I build it from what I know. Three to the power of three is twenty-seven. Times three again, that's three to the power of four, eighty-one.",
+        "at": [
+          "I don't write out",
+          "times three times",
+          "I build it",
+          "Three to the power of",
+          "three is twenty-seven",
+          "Times three again",
+          "to the power of four"
+        ]
+      },
+      {
+        "say": "The condition is about the sixth power, but we can stop as soon as a smaller power has already become too big. And one more three? Eighty-one times three is already past two digits, and we still need one more three after that. So I don't even need the exact number. Three is too big.",
+        "at": [
+          "And one more three",
+          "past two digits",
+          "still need one",
+          "So I don't",
+          "the exact number",
+          "Three is too big"
+        ]
+      },
+      {
+        "say": "And what does that mean? A bigger base only gives a bigger power, so x has to be smaller than three. And the only prime smaller than three is two. So x is two, and I don't even need to calculate it.",
+        "at": [
+          "And what does",
+          "A bigger base only",
+          "a bigger power",
+          "has to be",
+          "And the only",
+          "than three is",
+          "So x is two",
+          "I don't even"
+        ]
+      },
+      {
+        "say": "Now careful, because x isn't the answer. A lot of students find that x is two, and go looking for two in the choices. They ask for nine x. Nine times two is eighteen, so choice number two is our answer.",
+        "at": [
+          "x isn't the answer",
+          "A lot of",
+          "that x is",
+          "go looking for",
+          "They ask for nine x",
+          "Nine times two",
+          "choice number two is our answer"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So x is a prime, and its sixth power has only two digits. That's a big hint, because a sixth power grows really fast, so x must be a small number. And look, they don't ask for x, they ask for nine x. [short pause] We'll solve it two ways, trial and error first, and then plugging in the answers.",
-    "at": [
-     "x is a prime",
-     "its sixth power",
-     "only two digits",
-     "grows really fast",
-     "must be a",
-     "And look, they",
-     "they ask for nine x",
-     "We'll solve it",
-     "trial and error",
-     "then plugging in"
+    [
+      {
+        "say": "[pause] Our second method, plugging in the answers. Each choice is nine x, so to get x back, I divide the choice by nine. Twenty-seven over nine is three, eighteen over nine is two, sixty-three over nine is seven, and forty-five over nine is five.",
+        "at": [
+          "Each choice is nine x",
+          "so to get",
+          "I divide the choice",
+          "Twenty-seven over nine",
+          "eighteen over nine",
+          "sixty-three over nine",
+          "forty-five over nine"
+        ]
+      },
+      {
+        "say": "Are they primes? Three, two, seven and five, yes, all four. So the prime condition doesn't rule anything out here, and the power has to decide.",
+        "at": [
+          "two, seven and",
+          "yes, all four",
+          "prime condition doesn't",
+          "out here, and",
+          "the power has to decide"
+        ]
+      },
+      {
+        "say": "Choice number one gives x is three. Three to the power of three is twenty-seven, and times three is eighty-one. One more three already passes two digits, so choice number one is out.",
+        "at": [
+          "Choice number one gives",
+          "Three to the power of three",
+          "three is eighty-one",
+          "three already passes",
+          "choice number one is out"
+        ]
+      },
+      {
+        "say": "Choice numbers three and four give seven and five. They're bigger than three, so their powers are even bigger. Both out.",
+        "at": [
+          "numbers three and",
+          "give seven and five",
+          "bigger than three",
+          "even bigger",
+          "Both out"
+        ]
+      },
+      {
+        "say": "Three choices are out, and choice number two, x is two, is the only one left. So choice number two is our answer.",
+        "at": [
+          "number two, x",
+          "the only one left",
+          "So choice number two is our answer"
+        ]
+      },
+      "[pause] Okay. I'll see you in the next question."
     ]
-   },
-   {
-    "say": "[short pause] Remember, with primes we can simply try numbers against the conditions. Let's start with three, a small prime whose powers are easy to build up.",
-    "at": [
-     "Remember, with primes",
-     "simply try numbers",
-     "Let's start with three",
-     "small prime whose",
-     "easy to build up"
-    ]
-   },
-   {
-    "say": "I don't write out three times three times three, six times. I build it from what I know. Three to the power of three is twenty-seven. Times three again, that's three to the power of four, eighty-one.",
-    "at": [
-     "I don't write out",
-     "times three times",
-     "I build it",
-     "Three to the power of",
-     "three is twenty-seven",
-     "Times three again",
-     "to the power of four"
-    ]
-   },
-   {
-    "say": "The condition is about the sixth power, but we can stop as soon as a smaller power has already become too big. And one more three? Eighty-one times three is already past two digits, and we still need one more three after that. So I don't even need the exact number. Three is too big.",
-    "at": [
-     "And one more three",
-     "past two digits",
-     "still need one",
-     "So I don't",
-     "the exact number",
-     "Three is too big"
-    ]
-   },
-   {
-    "say": "And what does that mean? A bigger base only gives a bigger power, so x has to be smaller than three. And the only prime smaller than three is two. So x is two, and I don't even need to calculate it.",
-    "at": [
-     "And what does",
-     "A bigger base only",
-     "a bigger power",
-     "has to be",
-     "And the only",
-     "than three is",
-     "So x is two",
-     "I don't even"
-    ]
-   },
-   {
-    "say": "Now careful, because x isn't the answer. A lot of students find that x is two, and go looking for two in the choices. They ask for nine x. Nine times two is eighteen, so choice number two is our answer.",
-    "at": [
-     "x isn't the answer",
-     "A lot of",
-     "that x is",
-     "go looking for",
-     "They ask for nine x",
-     "Nine times two",
-     "choice number two is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Let's work backwards from the proposed result nine x to the value of x. Then we can test that x against the givens. Each choice is nine x, so to get x back, I divide the choice by nine. Twenty-seven over nine is three, eighteen over nine is two, sixty-three over nine is seven, and forty-five over nine is five.",
-    "at": [
-     "Each choice is nine x",
-     "so to get",
-     "I divide the choice",
-     "Twenty-seven over nine",
-     "eighteen over nine",
-     "sixty-three over nine",
-     "forty-five over nine"
-    ]
-   },
-   {
-    "say": "Are they primes? Three, two, seven and five, yes, all four. So the prime condition doesn't rule anything out here, and the power has to decide.",
-    "at": [
-     "two, seven and",
-     "yes, all four",
-     "prime condition doesn't",
-     "out here, and",
-     "the power has to decide"
-    ]
-   },
-   {
-    "say": "Choice number one gives x is three. Three to the power of three is twenty-seven, and times three is eighty-one. One more three already passes two digits, so choice number one is out.",
-    "at": [
-     "Choice number one gives",
-     "Three to the power of three",
-     "three is eighty-one",
-     "three already passes",
-     "choice number one is out"
-    ]
-   },
-   {
-    "say": "Choice numbers three and four give seven and five. They're bigger than three, so their powers are even bigger. Both out.",
-    "at": [
-     "numbers three and",
-     "give seven and five",
-     "bigger than three",
-     "even bigger",
-     "Both out"
-    ]
-   },
-   {
-    "say": "Three choices are out, and choice number two, x is two, is the only one left. So choice number two is our answer.",
-    "at": [
-     "number two, x",
-     "the only one left",
-     "So choice number two is our answer"
-    ]
-   },
-   "[pause] Okay. I'll see you in the next question."
   ]
- ]
 }

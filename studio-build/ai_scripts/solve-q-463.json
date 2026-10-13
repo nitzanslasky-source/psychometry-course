@@ -1,93 +1,93 @@
 {
- "videoId": "solve-q-463",
- "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "n is an odd number. Which of the following is the most precise description of nine n squared minus one, over four?",
-    "voice": "calm",
-    "at": [
-     "n is an odd"
+  "videoId": "solve-q-463",
+  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "n is an odd number. Which of the following is the most precise description of nine n squared minus one, over four?",
+        "voice": "calm",
+        "at": [
+          "n is an odd"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So n is odd, and the whole top, nine n squared minus one, is divided by four. We need the most precise description of the result. We'll start with one allowed value and check the choices. Then [short pause] we'll use the difference-of-squares formula to settle any choices that are still possible.",
+        "at": [
+          "most precise description",
+          "one allowed value"
+        ]
+      },
+      {
+        "say": "[short pause] Let's start by plugging in. n has to be odd, so try n is one. Nine times one is nine, minus one is eight. Eight over four is two.",
+        "at": [
+          "Let's start",
+          "n has to",
+          "n has to",
+          "has to be",
+          "n is one",
+          "minus one is",
+          "eight over four"
+        ]
+      },
+      {
+        "say": "Our result is two, so check the choices now. Choice number two says odd or a non-integer fraction. Two is neither, so that choice is out.",
+        "voice": "calm",
+        "at": [
+          "Our result is two",
+          "Choice number two says",
+          "that choice is out"
+        ]
+      },
+      {
+        "say": "Choice numbers one, three and four all allow an even result, so they all fit our example. More even examples would not tell these choices apart. We need to find out whether an odd result or a non-integer fraction is ever possible.",
+        "voice": "calm",
+        "at": [
+          "Choice numbers one",
+          "so they all",
+          "so they all"
+        ]
+      },
+      {
+        "say": "Instead, let's check whether the expression must always give an even integer. If it does, always even is the most precise description. We can decide that using the difference-of-squares formula.",
+        "at": [
+          "Instead",
+          "always even is the most precise description"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So n is odd, and the whole top, nine n squared minus one, is divided by four. We need the most precise description of the result. We'll start with one allowed value and check the choices. Then [short pause] we'll use the difference-of-squares formula to settle any choices that are still possible.",
-    "at": [
-     "most precise description",
-     "one allowed value"
+    [
+      {
+        "say": "[pause] Rewrite the top using the difference-of-squares formula. Nine n squared is the whole product, three n, squared. So nine n squared minus one is three n minus one, times three n plus one.",
+        "at": [
+          "Nine n",
+          "Nine n squared",
+          "three n minus",
+          "three n minus",
+          "times three n"
+        ]
+      },
+      {
+        "say": "n is odd, so three n is odd too. Three n minus one and three n plus one are the even numbers just before and after it. They are even numbers in a row, and their product always divides by eight.",
+        "at": [
+          "n is odd, so three n",
+          "and three n",
+          "are the even",
+          "before and after",
+          "They are even",
+          "and their product",
+          "always divides by"
+        ]
+      },
+      {
+        "say": "So the top is eight times an integer k. Eight k over four is two k, which is always even. Choice number one is our answer. Okay. I'll see you in the next question.",
+        "at": [
+          "eight times an",
+          "eight k over four",
+          "two k, which",
+          "Choice number one"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start by plugging in. n has to be odd, so try n is one. Nine times one is nine, minus one is eight. Eight over four is two.",
-    "at": [
-     "Let's start",
-     "n has to",
-     "n has to",
-     "has to be",
-     "n is one",
-     "minus one is",
-     "eight over four"
-    ]
-   },
-   {
-    "say": "Our result is two, so check the choices now. Choice number two says odd or a non-integer fraction. Two is neither, so that choice is out.",
-    "voice": "calm",
-    "at": [
-     "Our result is two",
-     "Choice number two says",
-     "that choice is out"
-    ]
-   },
-   {
-    "say": "Choice numbers one, three and four still allow an even result. But choice numbers three and four also allow a non-integer fraction, and choice number three allows an odd result too. Getting more even examples would not show that these other results are impossible. So we will not keep plugging in just to get the same kind of answer.",
-    "voice": "calm",
-    "at": [
-     "Choice numbers one",
-     "choice numbers three",
-     "and four also allow"
-    ]
-   },
-   {
-    "say": "Instead, let's check whether the expression must always give an even integer. If it does, always even is the most precise description. We can decide that using the difference-of-squares formula.",
-    "at": [
-     "Instead",
-     "always even is the most precise description"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Rewrite the top using the difference-of-squares formula. Nine n squared is the whole product, three n, squared. So nine n squared minus one is three n minus one, times three n plus one.",
-    "at": [
-     "Nine n",
-     "Nine n squared",
-     "three n minus",
-     "three n minus",
-     "times three n"
-    ]
-   },
-   {
-    "say": "n is odd, so three n is odd too. Three n minus one and three n plus one are the even numbers just before and after it. They are even numbers in a row, and their product always divides by eight.",
-    "at": [
-     "n is odd, so three n",
-     "and three n",
-     "are the even",
-     "before and after",
-     "They are even",
-     "and their product",
-     "always divides by"
-    ]
-   },
-   {
-    "say": "So the top is eight times an integer k. Eight k over four is two k, which is always even. Choice number one is our answer. Okay. I'll see you in the next question.",
-    "at": [
-     "eight times an",
-     "eight k over four",
-     "two k, which",
-     "Choice number one"
-    ]
-   }
   ]
- ]
 }

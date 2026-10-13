@@ -1,232 +1,232 @@
 {
- "videoId": "solve-q-389",
- "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "p, q, r and s are different prime numbers. Given: x is equal to p cubed, times q squared, times s. And y is equal to p, times q to the power of five, times r, times s squared. What is the greatest common divisor of x and y?",
-    "voice": "calm",
-    "at": [
-     "p, q, r"
+  "videoId": "solve-q-389",
+  "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "p, q, r and s are different prime numbers. Given: x is equal to p cubed, times q squared, times s. And y is equal to p, times q to the power of five, times r, times s squared. What is the greatest common divisor of x and y?",
+        "voice": "calm",
+        "at": [
+          "p, q, r"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So two numbers, already written in primes, and they ask for their greatest common divisor. It sounds like a big name, so let's say it in plain words. A common divisor divides both numbers, and the greatest one is the biggest number that divides both. And divisor means factor, so it's really the greatest common factor. [short pause] We'll solve it two ways, taking out a common factor, and then checking which choices divide both.",
+        "at": [
+          "already written in primes",
+          "they ask for",
+          "common divisor. It",
+          "a big name",
+          "say it in",
+          "A common divisor",
+          "numbers, and the",
+          "the biggest number that divides both",
+          "divisor means factor",
+          "really the greatest",
+          "We'll solve it",
+          "taking out a",
+          "and then checking"
+        ]
+      },
+      {
+        "say": "[short pause] You already know how to take out a common factor. Picture x plus y, and ask what I can take out of both, in front of the brackets. Whatever comes out of both, divides both. And the biggest thing that comes out is the GCD.",
+        "at": [
+          "You already",
+          "take out a",
+          "Picture x plus y",
+          "ask what I",
+          "out of both",
+          "of the brackets",
+          "Whatever comes out of both",
+          "And the biggest",
+          "comes out is"
+        ]
+      },
+      {
+        "say": "So let's go prime by prime. p. x has p to the power of three, three p's, and y has just one p. How many p's are in both? Only one. So one p. Why not p cubed? Because y has only one p, so a number with two or three p's can't divide y.",
+        "at": [
+          "So let's go",
+          "x has p to the power of three",
+          "and y has",
+          "How many p's",
+          "both? Only one",
+          "So one p",
+          "Why not p cubed",
+          "Because y has",
+          "p, so a",
+          "two or three"
+        ]
+      },
+      {
+        "say": "q. x has q squared, two q's, and y has q to the power of five. Both of them have at least two q's, so q squared.",
+        "at": [
+          "x has q squared",
+          "q's, and y",
+          "to the power",
+          "Both of them",
+          "least two q's",
+          "so q squared"
+        ]
+      },
+      {
+        "say": "r. Is r in x? No, only y has it. So r can't divide x, and it stays out.",
+        "at": [
+          "only y has it",
+          "and it stays"
+        ]
+      },
+      {
+        "say": "s. x has one s, and y has s squared, so one s. Each shared prime, at its lower power.",
+        "at": [
+          "x has one s",
+          "y has s",
+          "so one s",
+          "Each shared prime",
+          "at its lower power"
+        ]
+      },
+      {
+        "say": "We found the shared factors p, q squared, and s. Multiply those shared factors to get the greatest common divisor: p times q squared times s. Choice number three is our answer.",
+        "at": [
+          "Multiply those shared factors",
+          "times q squared",
+          "Choice number three is our answer"
+        ]
+      },
+      {
+        "say": "Now careful with choice number two. It takes every prime at its higher power, and that's too big, it doesn't even divide x. That's the smallest number that both of them divide, the least common multiple. It's the tool of the next question.",
+        "at": [
+          "careful with choice number two",
+          "It takes every",
+          "its higher power",
+          "it doesn't even divide x",
+          "That's the smallest",
+          "both of them",
+          "least common multiple",
+          "It's the tool"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So two numbers, already written in primes, and they ask for their greatest common divisor. It sounds like a big name, so let's say it in plain words. A common divisor divides both numbers, and the greatest one is the biggest number that divides both. And divisor means factor, so it's really the greatest common factor. [short pause] We'll solve it two ways, taking out a common factor, and then checking which choices divide both.",
-    "at": [
-     "already written in primes",
-     "they ask for",
-     "common divisor. It",
-     "a big name",
-     "say it in",
-     "A common divisor",
-     "numbers, and the",
-     "the biggest number that divides both",
-     "divisor means factor",
-     "really the greatest",
-     "We'll solve it",
-     "taking out a",
-     "and then checking"
+    [
+      {
+        "say": "Let's see the lower power in numbers. Take a hundred seventy-two and a hundred twelve. What do they share? I have no idea yet, so I start by dividing by two. A hundred seventy-two is two times eighty-six, and eighty-six is two times forty-three. Forty-three is a prime. So a hundred seventy-two is two squared times forty-three.",
+        "at": [
+          "power in numbers",
+          "Take a hundred seventy-two",
+          "a hundred twelve",
+          "I have no",
+          "so I start",
+          "A hundred seventy-two is two times",
+          "times eighty-six, and",
+          "eighty-six is two times",
+          "Forty-three is a",
+          "So a hundred seventy-two is",
+          "two squared times"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "A hundred twelve is two times fifty-six, fifty-six is two times twenty-eight, twenty-eight is two times fourteen, and fourteen is two times seven. So a hundred twelve is two to the power of four, times seven.",
+        "at": [
+          "A hundred twelve is",
+          "A hundred twelve is",
+          "two times fifty-six",
+          "two times twenty-eight",
+          "two times fourteen",
+          "two times seven",
+          "So a hundred twelve is",
+          "two to the",
+          "four, times seven"
+        ]
+      },
+      {
+        "say": "Not sure you broke it down right? Multiply back. Two to the power of four is sixteen, and sixteen times seven is a hundred twelve. Perfect.",
+        "at": [
+          "Not sure you",
+          "Multiply back",
+          "Two to the",
+          "four is sixteen",
+          "times seven is"
+        ]
+      },
+      {
+        "say": "So what do they share? Only twos. A hundred twelve has four of them, but a hundred seventy-two has only two. So the GCD is two squared, just four. A hundred seventy-two over four is forty-three, and a hundred twelve over four is twenty-eight. Such big numbers, and the biggest thing they share is four.",
+        "at": [
+          "So what do",
+          "Only twos",
+          "A hundred twelve",
+          "of them, but",
+          "seventy-two has only",
+          "So the GCD is two squared",
+          "just four",
+          "A hundred seventy-two over",
+          "is forty-three, and",
+          "twelve over four",
+          "Such big numbers",
+          "biggest thing they"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "[pause] Our second method, going through the choices. The GCD has to divide both x and y. So first, I throw out every choice that doesn't divide both, and then, from what's left, I take the biggest.",
+        "at": [
+          "Our second",
+          "going through the choices",
+          "The GCD has",
+          "both x and",
+          "So first, I",
+          "every choice that",
+          "both, and then",
+          "left, I take"
+        ]
+      },
+      {
+        "say": "Choice number one has an r. x has no r at all, so it can't divide x. Out.",
+        "at": [
+          "Choice number one has an r",
+          "number one has",
+          "x has no",
+          "all, so it",
+          "Out."
+        ]
+      },
+      {
+        "say": "Choice number two has p cubed. y has only one p, so p cubed can't divide y. Out.",
+        "at": [
+          "Choice number two has p cubed",
+          "number two has",
+          "y has only",
+          "so p cubed",
+          "Out."
+        ]
+      },
+      {
+        "say": "Choice number three, p, q squared, s. x has three p's, two q's and one s, enough of each. y has one p, five q's and two s's, enough again. So it divides both.",
+        "at": [
+          "Choice number three, p",
+          "number three, p",
+          "x has three p's",
+          "q's and one",
+          "y has one",
+          "q's and two",
+          "again. So it"
+        ]
+      },
+      {
+        "say": "Choice number four, p, q, s, divides both too. But it's smaller, it has only one q, where choice number three has two. And they ask for the greatest. So choice number three. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "Choice number four, p",
+          "number four, p",
+          "But it's smaller",
+          "only one q",
+          "number three has",
+          "And they ask",
+          "So choice number three"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] You already know how to take out a common factor. Picture x plus y, and ask what I can take out of both, in front of the brackets. Whatever comes out of both, divides both. And the biggest thing that comes out is the GCD.",
-    "at": [
-     "You already",
-     "take out a",
-     "Picture x plus y",
-     "ask what I",
-     "out of both",
-     "of the brackets",
-     "Whatever comes out of both",
-     "And the biggest",
-     "comes out is"
-    ]
-   },
-   {
-    "say": "A shared factor cannot use more copies of a prime than either number contains. So the number with fewer copies sets the limit. So let's go prime by prime. p. x has p to the power of three, three p's, and y has just one p. How many p's are in both? Only one. So one p. Why not p cubed? Because y has only one p, so a number with two or three p's can't divide y.",
-    "at": [
-     "So let's go",
-     "x has p to the power of three",
-     "and y has",
-     "How many p's",
-     "both? Only one",
-     "So one p",
-     "Why not p cubed",
-     "Because y has",
-     "p, so a",
-     "two or three"
-    ]
-   },
-   {
-    "say": "q. x has q squared, two q's, and y has q to the power of five. Both of them have at least two q's, so q squared.",
-    "at": [
-     "x has q squared",
-     "q's, and y",
-     "to the power",
-     "Both of them",
-     "least two q's",
-     "so q squared"
-    ]
-   },
-   {
-    "say": "r. Is r in x? No, only y has it. So r can't divide x, and it stays out.",
-    "at": [
-     "only y has it",
-     "and it stays"
-    ]
-   },
-   {
-    "say": "s. x has one s, and y has s squared, so one s. Each shared prime, at its lower power.",
-    "at": [
-     "x has one s",
-     "y has s",
-     "so one s",
-     "Each shared prime",
-     "at its lower power"
-    ]
-   },
-   {
-    "say": "These selected prime factors all fit inside both x and y at the same time. Multiplying them gives the whole common divisor. So the GCD is p, times q squared, times s. Choice number three is our answer.",
-    "at": [
-     "So the GCD is",
-     "times q squared",
-     "Choice number three is our answer"
-    ]
-   },
-   {
-    "say": "Now careful with choice number two. It takes every prime at its higher power, and that's too big, it doesn't even divide x. That's the smallest number that both of them divide, the least common multiple. It's the tool of the next question.",
-    "at": [
-     "careful with choice number two",
-     "It takes every",
-     "its higher power",
-     "it doesn't even divide x",
-     "That's the smallest",
-     "both of them",
-     "least common multiple",
-     "It's the tool"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Let's see the lower power in numbers. Take a hundred seventy-two and a hundred twelve. What do they share? I have no idea yet, so I start by dividing by two. A hundred seventy-two is two times eighty-six, and eighty-six is two times forty-three. Forty-three is a prime. So a hundred seventy-two is two squared times forty-three.",
-    "at": [
-     "power in numbers",
-     "Take a hundred seventy-two",
-     "a hundred twelve",
-     "I have no",
-     "so I start",
-     "A hundred seventy-two is two times",
-     "times eighty-six, and",
-     "eighty-six is two times",
-     "Forty-three is a",
-     "So a hundred seventy-two is",
-     "two squared times"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "A hundred twelve is two times fifty-six, fifty-six is two times twenty-eight, twenty-eight is two times fourteen, and fourteen is two times seven. So a hundred twelve is two to the power of four, times seven.",
-    "at": [
-     "A hundred twelve is",
-     "A hundred twelve is",
-     "two times fifty-six",
-     "two times twenty-eight",
-     "two times fourteen",
-     "two times seven",
-     "So a hundred twelve is",
-     "two to the",
-     "four, times seven"
-    ]
-   },
-   {
-    "say": "Not sure you broke it down right? Multiply back. Two to the power of four is sixteen, and sixteen times seven is a hundred twelve. Perfect.",
-    "at": [
-     "Not sure you",
-     "Multiply back",
-     "Two to the",
-     "four is sixteen",
-     "times seven is"
-    ]
-   },
-   {
-    "say": "So what do they share? Only twos. A hundred twelve has four of them, but a hundred seventy-two has only two. So the GCD is two squared, just four. A hundred seventy-two over four is forty-three, and a hundred twelve over four is twenty-eight. Such big numbers, and the biggest thing they share is four.",
-    "at": [
-     "So what do",
-     "Only twos",
-     "A hundred twelve",
-     "of them, but",
-     "seventy-two has only",
-     "So the GCD is two squared",
-     "just four",
-     "A hundred seventy-two over",
-     "is forty-three, and",
-     "twelve over four",
-     "Such big numbers",
-     "biggest thing they"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Our second method, going through the choices. The GCD has to divide both x and y. So first, I throw out every choice that doesn't divide both, and then, from what's left, I take the biggest.",
-    "at": [
-     "Our second",
-     "going through the choices",
-     "The GCD has",
-     "both x and",
-     "So first, I",
-     "every choice that",
-     "both, and then",
-     "left, I take"
-    ]
-   },
-   {
-    "say": "Choice number one has an r. x has no r at all, so it can't divide x. Out.",
-    "at": [
-     "Choice number one has an r",
-     "number one has",
-     "x has no",
-     "all, so it",
-     "Out."
-    ]
-   },
-   {
-    "say": "Choice number two has p cubed. y has only one p, so p cubed can't divide y. Out.",
-    "at": [
-     "Choice number two has p cubed",
-     "number two has",
-     "y has only",
-     "so p cubed",
-     "Out."
-    ]
-   },
-   {
-    "say": "Choice number three, p, q squared, s. x has three p's, two q's and one s, enough of each. y has one p, five q's and two s's, enough again. So it divides both.",
-    "at": [
-     "Choice number three, p",
-     "number three, p",
-     "x has three p's",
-     "q's and one",
-     "y has one",
-     "q's and two",
-     "again. So it"
-    ]
-   },
-   {
-    "say": "Both remaining choices divide both numbers. The question now is which shared divisor is larger. Choice number four, p, q, s, divides both too. But it's smaller, it has only one q, where choice number three has two. And they ask for the greatest. So choice number three. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Choice number four, p",
-     "number four, p",
-     "But it's smaller",
-     "only one q",
-     "number three has",
-     "And they ask",
-     "So choice number three"
-    ]
-   }
   ]
- ]
 }

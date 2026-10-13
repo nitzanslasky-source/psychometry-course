@@ -12,13 +12,13 @@
     "pause": 0.5
    },
    {
-    "say": "We multiply two two-digit numbers with some unknown digits. We do not need to find A and B separately. We'll use the [short pause] product's last digit and its possible size.",
+    "say": "We multiply two two-digit numbers with some unknown digits. We do not need to find A and B separately. [short pause] We'll use the product's last digit and its possible size.",
     "at": [
-     "A and B",
-     "B separately. We'll",
-     "short pause] product's",
+     "two two-digit numbers",
+     "find A and B",
+     "We'll use the",
      "product's last digit",
-     "and its possible"
+     "its possible size"
     ]
    },
    {
@@ -52,13 +52,13 @@
     ]
    },
    {
-    "say": "Only eight hundred fifty-one remains. Let's check it can actually occur. Use twenty-three times thirty-seven. Twenty-three times thirty is six hundred ninety. Twenty-three times seven is a hundred sixty-one. Add them to get eight hundred fifty-one. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "Only eight hundred fifty-one remains, so choice number two is our answer. Ruling out the other choices already decides it, so in the exam you don't need to search for A and B. Just to see that it really happens, here's one example: twenty-three times thirty-seven. Twenty-three times thirty is six hundred ninety. Twenty-three times seven is a hundred sixty-one. Six hundred ninety plus a hundred sixty-one is eight hundred fifty-one. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "Only eight hundred",
-     "Twenty-three times thirty",
-     "ninety. Twenty-three",
-     "is a hundred",
-     "Choice number two is our answer"
+     "Only eight hundred fifty-one remains",
+     "choice number two is our answer",
+     "Twenty-three times thirty is",
+     "Twenty-three times seven",
+     "Six hundred ninety plus"
     ]
    }
   ]

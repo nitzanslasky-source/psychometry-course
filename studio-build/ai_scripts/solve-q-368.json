@@ -1,165 +1,165 @@
 {
- "videoId": "solve-q-368",
- "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
- "slides": [
-  [
-   {
-    "say": "Given: x plus four y, in absolute value, is equal to four x plus y, in absolute value. Which of the following is necessarily true?",
-    "voice": "calm",
-    "at": [
-     "Given"
+  "videoId": "solve-q-368",
+  "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+  "slides": [
+    [
+      {
+        "say": "Given: x plus four y, in absolute value, is equal to four x plus y, in absolute value. Which of the following is necessarily true?",
+        "voice": "calm",
+        "at": [
+          "Given"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "One equation, two unknowns, and bars on both sides. [short pause] We'll solve it three ways, two cases, squaring both sides, and plugging in numbers.",
+        "at": [
+          "bars on both sides"
+        ]
+      },
+      {
+        "say": "[short pause] Our first method, two cases. Two absolute values are equal when the insides are equal, or when one is the opposite of the other. Why? Equal absolute values mean the same distance from zero. So the insides are the same number, like five and five, or opposites, like five and negative five.",
+        "at": [
+          "Two absolute values are equal"
+        ]
+      },
+      {
+        "say": "Option one, they're equal. x plus four y is four x plus y. Take x and y off both sides. Four y minus y is three y, and four x minus x is three x. So three y is three x, and dividing both by three, y is x.",
+        "voice": "calm",
+        "at": [
+          "Option one",
+          "x plus four",
+          "Take x and",
+          "Four y minus",
+          "Three y is three x"
+        ]
+      },
+      {
+        "say": "The whole inside on one side is the opposite of the whole inside on the other. The minus therefore applies to both terms in the bracket. Option two, they're opposites. x plus four y is minus, open bracket, four x plus y. That's minus four x minus y.",
+        "at": [
+          "x plus four",
+          "That's minus four x"
+        ]
+      },
+      {
+        "say": "Move everything to the left. x plus four x is five x, and four y plus y is five y. So five x plus five y is zero. Divide by five, x plus y is zero, so x is minus y.",
+        "voice": "calm",
+        "at": [
+          "Move everything to",
+          "x plus four",
+          "five x plus five y",
+          "Divide by five"
+        ]
+      },
+      {
+        "say": "So x is y, or x is minus y. Choice number two, x is y, is only half the story, because x could be minus y. But choice number three, the absolute value of x equals the absolute value of y. Equal or opposite, it's the same size in both cases. Always true. Choice number three is our answer.",
+        "at": [
+          "So x is y",
+          "or x is minus y",
+          "only half the story",
+          "number three, the",
+          "Equal or opposite",
+          "Number three is our answer"
+        ]
+      },
+      {
+        "say": "And choice numbers one and four? When x is y, x isn't smaller than y, and y isn't smaller than x. Out.",
+        "at": [
+          "numbers one",
+          "and four",
+          "When x is"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "One equation, two unknowns, and bars on both sides. [short pause] We'll solve it three ways, two cases, squaring both sides, and plugging in numbers.",
-    "at": [
-     "bars on both sides"
+    [
+      {
+        "say": "[pause] Our second method, squaring both sides. Bars on both sides, and both sides are zero or positive. So I'm allowed to square them, and after squaring, the bars are gone.",
+        "at": [
+          "Our second",
+          "Bars on both",
+          "allowed to square them"
+        ]
+      },
+      {
+        "say": "We're squaring the whole sum on each side, including its middle term. Let's expand both brackets separately. Open both with the shortcut formula. On the left, x squared plus eight x y plus sixteen y squared. On the right, sixteen x squared plus eight x y plus y squared.",
+        "voice": "calm",
+        "at": [
+          "Open both",
+          "On the left",
+          "On the right"
+        ]
+      },
+      {
+        "say": "Eight x y is on both sides, so it cancels. Now move the terms. Sixteen y squared minus y squared is fifteen y squared, and sixteen x squared minus x squared is fifteen x squared. So fifteen y squared is fifteen x squared. Divide by fifteen, and y squared is x squared.",
+        "voice": "calm",
+        "at": [
+          "Eight x y",
+          "so it cancels",
+          "fifteen y squared",
+          "So fifteen y",
+          "Divide by fifteen"
+        ]
+      },
+      {
+        "say": "And remember, bars and even powers act alike. If the squares are equal, the absolute values are equal. Choice number three.",
+        "at": [
+          "And remember, bars",
+          "the absolute values are equal",
+          "Number three"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "[pause] Our third method, plugging in numbers. It's not so obvious here, but it's the shortest. Look at the given. If x and y are equal, both sides are the same. So x two and y two. Two plus four times two is two plus eight, ten. And four times two plus two is ten too. Ten on both sides, it works.",
+        "at": [
+          "Our third",
+          "It's not so",
+          "the given. If",
+          "If x and",
+          "So x two and y two",
+          "Two plus four",
+          "And four times",
+          "Ten on both"
+        ]
+      },
+      {
+        "say": "With equal numbers, y smaller than x is false, and x smaller than y is false. Choice numbers one and four are out.",
+        "at": [
+          "y smaller than x is false",
+          "x smaller than y is false",
+          "numbers one and"
+        ]
+      },
+      {
+        "say": "Choice numbers two and three both survive, and the answers give us a hint. Equal, or equal in absolute value. So the tie-breaker is opposite numbers. x two and y minus two. Four times minus two is minus eight, and two minus eight is minus six. Four times two is eight, and eight minus two is six. Six and six in bars, it works.",
+        "at": [
+          "Two and",
+          "three both survive",
+          "Equal, or equal",
+          "So the tie-breaker",
+          "x two and y minus two",
+          "Four times minus",
+          "Four times two",
+          "Six and six"
+        ]
+      },
+      {
+        "say": "So they don't have to be equal, and choice number two is out. Choice number three.",
+        "at": [
+          "don't have to be equal",
+          "Number three."
+        ]
+      },
+      {
+        "say": "And notice, the given doesn't care which one is x and which is y. So y smaller than x can't be necessarily true, and the same goes for x smaller than y. Just swap them.",
+        "at": [
+          "the given doesn't care",
+          "So y smaller than x",
+          "the same goes for"
+        ]
+      },
+      "[pause] Okay. I'll see you in the next question."
     ]
-   },
-   {
-    "say": "[short pause] Our first method, two cases. Two absolute values are equal when the insides are equal, or when one is the opposite of the other. Why? Equal absolute values mean the same distance from zero. So the insides are the same number, like five and five, or opposites, like five and negative five.",
-    "at": [
-     "Two absolute values are equal"
-    ]
-   },
-   {
-    "say": "Option one, they're equal. x plus four y is four x plus y. Take x and y off both sides. Four y minus y is three y, and four x minus x is three x. So three y is three x, and dividing both by three, y is x.",
-    "voice": "calm",
-    "at": [
-     "Option one",
-     "x plus four",
-     "Take x and",
-     "Four y minus",
-     "Three y is three x"
-    ]
-   },
-   {
-    "say": "The whole inside on one side is the opposite of the whole inside on the other. The minus therefore applies to both terms in the bracket. Option two, they're opposites. x plus four y is minus, open bracket, four x plus y. That's minus four x minus y.",
-    "at": [
-     "x plus four",
-     "That's minus four x"
-    ]
-   },
-   {
-    "say": "Move everything to the left. x plus four x is five x, and four y plus y is five y. So five x plus five y is zero. Divide by five, x plus y is zero, so x is minus y.",
-    "voice": "calm",
-    "at": [
-     "Move everything to",
-     "x plus four",
-     "five x plus five y",
-     "Divide by five"
-    ]
-   },
-   {
-    "say": "So x is y, or x is minus y. Choice number two, x is y, is only half the story, because x could be minus y. But choice number three, the absolute value of x equals the absolute value of y. Equal or opposite, it's the same size in both cases. Always true. Choice number three is our answer.",
-    "at": [
-     "So x is y",
-     "or x is minus y",
-     "only half the story",
-     "number three, the",
-     "Equal or opposite",
-     "Number three is our answer"
-    ]
-   },
-   {
-    "say": "And choice numbers one and four? When x is y, x isn't smaller than y, and y isn't smaller than x. Out.",
-    "at": [
-     "numbers one",
-     "and four",
-     "When x is"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Our second method, squaring both sides. Bars on both sides, and both sides are zero or positive. So I'm allowed to square them, and after squaring, the bars are gone.",
-    "at": [
-     "Our second",
-     "Bars on both",
-     "allowed to square them"
-    ]
-   },
-   {
-    "say": "We're squaring the whole sum on each side, including its middle term. Let's expand both brackets separately. Open both with the shortcut formula. On the left, x squared plus eight x y plus sixteen y squared. On the right, sixteen x squared plus eight x y plus y squared.",
-    "voice": "calm",
-    "at": [
-     "Open both",
-     "On the left",
-     "On the right"
-    ]
-   },
-   {
-    "say": "Eight x y is on both sides, so it cancels. Now move the terms. Sixteen y squared minus y squared is fifteen y squared, and sixteen x squared minus x squared is fifteen x squared. So fifteen y squared is fifteen x squared. Divide by fifteen, and y squared is x squared.",
-    "voice": "calm",
-    "at": [
-     "Eight x y",
-     "so it cancels",
-     "fifteen y squared",
-     "So fifteen y",
-     "Divide by fifteen"
-    ]
-   },
-   {
-    "say": "And remember, bars and even powers act alike. If the squares are equal, the absolute values are equal. Choice number three.",
-    "at": [
-     "And remember, bars",
-     "the absolute values are equal",
-     "Number three"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Our third method, plugging in numbers. It's not so obvious here, but it's the shortest. Look at the given. If x and y are equal, both sides are the same. So x two and y two. Two plus four times two is two plus eight, ten. And four times two plus two is ten too. Ten on both sides, it works.",
-    "at": [
-     "Our third",
-     "It's not so",
-     "the given. If",
-     "If x and",
-     "So x two and y two",
-     "Two plus four",
-     "And four times",
-     "Ten on both"
-    ]
-   },
-   {
-    "say": "With equal numbers, y smaller than x is false, and x smaller than y is false. Choice numbers one and four are out.",
-    "at": [
-     "y smaller than x is false",
-     "x smaller than y is false",
-     "numbers one and"
-    ]
-   },
-   {
-    "say": "The surviving choices disagree about equal numbers versus equal sizes. Opposite numbers have equal sizes but are not equal, so they will separate those choices. Choice numbers two and three both survive, and the answers give us a hint. Equal, or equal in absolute value. So the tie-breaker is opposite numbers. x two and y minus two. Four times minus two is minus eight, and two minus eight is minus six. Four times two is eight, and eight minus two is six. Six and six in bars, it works.",
-    "at": [
-     "Two and",
-     "three both survive",
-     "Equal, or equal",
-     "So the tie-breaker",
-     "x two and y minus two",
-     "Four times minus",
-     "Four times two",
-     "Six and six"
-    ]
-   },
-   {
-    "say": "So they don't have to be equal, and choice number two is out. Choice number three.",
-    "at": [
-     "don't have to be equal",
-     "Number three."
-    ]
-   },
-   {
-    "say": "And notice, the given doesn't care which one is x and which is y. So y smaller than x can't be necessarily true, and the same goes for x smaller than y. Just swap them.",
-    "at": [
-     "the given doesn't care",
-     "So y smaller than x",
-     "the same goes for"
-    ]
-   },
-   "[pause] Okay. I'll see you in the next question."
   ]
- ]
 }

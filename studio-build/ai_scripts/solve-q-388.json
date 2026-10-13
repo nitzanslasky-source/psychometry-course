@@ -1,202 +1,202 @@
 {
- "videoId": "solve-q-388",
- "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "Given: x is equal to three, times five squared, times ten squared. Which of the following numbers does not divide x?",
-    "voice": "calm",
-    "at": [
-     "Given"
+  "videoId": "solve-q-388",
+  "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "Given: x is equal to three, times five squared, times ten squared. Which of the following numbers does not divide x?",
+        "voice": "calm",
+        "at": [
+          "Given"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So x is already broken into pieces, and they ask which number does not divide it. Divide is the same as factor, so they're asking which choice is not a factor of x, which one you can't build out of x. And careful, one of the pieces, ten, isn't a prime. [short pause] We'll solve it two ways, breaking everything into primes, and then dividing the real number.",
+        "at": [
+          "already broken into pieces",
+          "they ask which",
+          "does not divide",
+          "is the same",
+          "so they're asking",
+          "is not a",
+          "x, which one",
+          "build out of",
+          "one of the pieces",
+          "isn't a prime",
+          "it two ways",
+          "into primes, and",
+          "the real number"
+        ]
+      },
+      {
+        "say": "[short pause] Remember the check from the lesson. A number divides x only if every prime it needs is in x, at least as many times. So first, every piece of x has to be a prime. Three is a prime, and five is a prime, but ten isn't.",
+        "at": [
+          "Remember the",
+          "lesson. A number",
+          "every prime it needs",
+          "in x, at",
+          "So first, every",
+          "x has to",
+          "prime. Three is",
+          "and five is",
+          "but ten isn't"
+        ]
+      },
+      {
+        "say": "So how do I unpack ten squared? Ten squared is ten times ten. And each ten is two times five. So ten squared is two times five, times two times five. That's two twos and two fives, two squared times five squared.",
+        "at": [
+          "So how do",
+          "Ten squared is ten times ten",
+          "And each ten",
+          "So ten squared",
+          "times five, times",
+          "two twos and two fives",
+          "two squared times"
+        ]
+      },
+      {
+        "say": "Now careful here. A lot of students look at x, don't see a two anywhere, and cross out every even choice. But the twos are hiding inside the tens.",
+        "at": [
+          "lot of students",
+          "don't see a two",
+          "and cross out",
+          "choice. But the",
+          "hiding inside the tens"
+        ]
+      },
+      {
+        "say": "Now count all the copies of each prime, including copies from different parts of the product. Five squared from the start, and five squared from the ten squared, that's four fives. Two twos, and one three. So x is two squared, times three, times five to the power of four.",
+        "at": [
+          "Now count all",
+          "and five squared",
+          "ten squared, that's",
+          "Two twos",
+          "So x is",
+          "times five to the power of four"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So x is already broken into pieces, and they ask which number does not divide it. Divide is the same as factor, so they're asking which choice is not a factor of x, which one you can't build out of x. And careful, one of the pieces, ten, isn't a prime. [short pause] We'll solve it two ways, breaking everything into primes, and then dividing the real number.",
-    "at": [
-     "already broken into pieces",
-     "they ask which",
-     "does not divide",
-     "is the same",
-     "so they're asking",
-     "is not a",
-     "x, which one",
-     "build out of",
-     "one of the pieces",
-     "isn't a prime",
-     "it two ways",
-     "into primes, and",
-     "the real number"
+    [
+      {
+        "say": "Now we'll break each answer choice into primes and compare what it needs with what x contains. Now the choices. Twenty is two times ten, and ten is two times five. So twenty is two squared times five. Two twos, and x has two. One five, and x has four. Everything is in stock, so twenty divides x, and choice number one is out.",
+        "at": [
+          "Now we'll",
+          "Now the choices",
+          "Twenty is two times ten",
+          "and ten is",
+          "So twenty is",
+          "times five. Two",
+          "and x has two",
+          "One five, and",
+          "four. Everything is",
+          "so twenty divides",
+          "choice number one is out"
+        ]
+      },
+      {
+        "say": "Twenty-two is two times eleven. The two is there. But is there an eleven anywhere in x? No. Eleven is a prime that x simply doesn't have, so twenty-two can't divide x.",
+        "at": [
+          "Twenty-two is",
+          "two times eleven",
+          "is there. But",
+          "an eleven anywhere",
+          "No. Eleven",
+          "Eleven is a",
+          "x simply doesn't",
+          "twenty-two can't divide"
+        ]
+      },
+      {
+        "say": "Can I circle it already? In the exam, yes, a missing prime settles it. Here, let's check the other two as well. Seventy-five is three times twenty-five, so three times five squared. One three and two fives, both in stock. Choice number three is out.",
+        "at": [
+          "Can I circle",
+          "In the exam",
+          "missing prime settles",
+          "Here, let's check",
+          "two as well",
+          "Seventy-five is",
+          "three times twenty-five",
+          "times five squared",
+          "One three and",
+          "both in stock",
+          "Choice number three is out"
+        ]
+      },
+      {
+        "say": "Sixty is six times ten, so two times three, times two times five. That's two squared, times three, times five. Two twos, one three and one five, all in stock. Out too. So twenty-two, choice number two is our answer.",
+        "at": [
+          "Sixty is",
+          "six times ten",
+          "times three, times",
+          "That's two squared",
+          "Two twos, one",
+          "one five, all",
+          "Out too",
+          "choice number two is our answer"
+        ]
+      },
+      {
+        "say": "So whenever a piece isn't a prime, like ten or six, unpack it into primes first.",
+        "at": [
+          "isn't a prime",
+          "unpack it into primes first"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "[pause] Our second method, working out x as a number, and simply dividing. Five squared is twenty-five, and ten squared is a hundred. Three times twenty-five is seventy-five, and seventy-five times a hundred is seven thousand five hundred.",
+        "voice": "calm",
+        "at": [
+          "Our second",
+          "working out x",
+          "number, and simply",
+          "Five squared is",
+          "ten squared is",
+          "Three times twenty-five",
+          "and seventy-five times",
+          "seven thousand five hundred"
+        ]
+      },
+      {
+        "say": "Twenty. Seven thousand five hundred over twenty is the same as seven hundred fifty over two, and that's three hundred seventy-five. A whole number, so twenty divides x, and choice number one is out.",
+        "at": [
+          "Twenty. Seven",
+          "over twenty is",
+          "seven hundred fifty over two",
+          "and that's three",
+          "A whole number",
+          "divides x, and",
+          "choice number one is out"
+        ]
+      },
+      {
+        "say": "Dividing by twenty-two means dividing by both its factors, two and eleven. Let's check whether both divisions can finish without a remainder. Twenty-two. Half of seven thousand five hundred is three thousand seven hundred fifty, and now I divide by eleven. Eleven times three hundred is three thousand three hundred, and eleven times forty is four hundred forty. Together, eleven times three hundred forty is three thousand seven hundred forty, and that leaves ten. A remainder, so twenty-two doesn't divide x.",
+        "at": [
+          "Twenty-two. Half",
+          "five hundred is",
+          "seven hundred fifty",
+          "now I divide by eleven",
+          "is three thousand seven hundred forty",
+          "that leaves ten",
+          "A remainder, so"
+        ]
+      },
+      {
+        "say": "Seventy-five. Seventy-five times a hundred is seven thousand five hundred, so it divides exactly. Out. Sixty. Seven thousand five hundred over sixty is seven hundred fifty over six, and that's a hundred twenty-five. Out too. So again, choice number two. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "Seventy-five times a hundred",
+          "seven thousand five",
+          "divides exactly",
+          "thousand five hundred over",
+          "over sixty",
+          "fifty over six",
+          "a hundred twenty-five",
+          "Out too",
+          "again, choice number two"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Remember the check from the lesson. A number divides x only if every prime it needs is in x, at least as many times. So first, every piece of x has to be a prime. Three is a prime, and five is a prime, but ten isn't.",
-    "at": [
-     "Remember the",
-     "lesson. A number",
-     "every prime it needs",
-     "in x, at",
-     "So first, every",
-     "x has to",
-     "prime. Three is",
-     "and five is",
-     "but ten isn't"
-    ]
-   },
-   {
-    "say": "So how do I unpack ten squared? Ten squared is ten times ten. And each ten is two times five. So ten squared is two times five, times two times five. That's two twos and two fives, two squared times five squared.",
-    "at": [
-     "So how do",
-     "Ten squared is ten times ten",
-     "And each ten",
-     "So ten squared",
-     "times five, times",
-     "two twos and two fives",
-     "two squared times"
-    ]
-   },
-   {
-    "say": "Now careful here. A lot of students look at x, don't see a two anywhere, and cross out every even choice. But the twos are hiding inside the tens.",
-    "at": [
-     "lot of students",
-     "don't see a two",
-     "and cross out",
-     "choice. But the",
-     "hiding inside the tens"
-    ]
-   },
-   {
-    "say": "We're making a complete inventory of the prime factors in x. Count the copies from every part of the original product. So let's count. Five squared from the start, and five squared from the ten squared, that's four fives. Two twos, and one three. So x is two squared, times three, times five to the power of four.",
-    "at": [
-     "So let's count",
-     "and five squared",
-     "ten squared, that's",
-     "Two twos",
-     "So x is",
-     "times five to the power of four"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Now we'll break each answer choice into primes and compare what it needs with what x contains. Now the choices. Twenty is two times ten, and ten is two times five. So twenty is two squared times five. Two twos, and x has two. One five, and x has four. Everything is in stock, so twenty divides x, and choice number one is out.",
-    "at": [
-     "Now we'll",
-     "Now the choices",
-     "Twenty is two times ten",
-     "and ten is",
-     "So twenty is",
-     "times five. Two",
-     "and x has two",
-     "One five, and",
-     "four. Everything is",
-     "so twenty divides",
-     "choice number one is out"
-    ]
-   },
-   {
-    "say": "Twenty-two is two times eleven. The two is there. But is there an eleven anywhere in x? No. Eleven is a prime that x simply doesn't have, so twenty-two can't divide x.",
-    "at": [
-     "Twenty-two is",
-     "two times eleven",
-     "is there. But",
-     "an eleven anywhere",
-     "No. Eleven",
-     "Eleven is a",
-     "x simply doesn't",
-     "twenty-two can't divide"
-    ]
-   },
-   {
-    "say": "Can I circle it already? In the exam, yes, a missing prime settles it. Here, let's check the other two as well. Seventy-five is three times twenty-five, so three times five squared. One three and two fives, both in stock. Choice number three is out.",
-    "at": [
-     "Can I circle",
-     "In the exam",
-     "missing prime settles",
-     "Here, let's check",
-     "two as well",
-     "Seventy-five is",
-     "three times twenty-five",
-     "times five squared",
-     "One three and",
-     "both in stock",
-     "Choice number three is out"
-    ]
-   },
-   {
-    "say": "Sixty is six times ten, so two times three, times two times five. That's two squared, times three, times five. Two twos, one three and one five, all in stock. Out too. So twenty-two, choice number two is our answer.",
-    "at": [
-     "Sixty is",
-     "six times ten",
-     "times three, times",
-     "That's two squared",
-     "Two twos, one",
-     "one five, all",
-     "Out too",
-     "choice number two is our answer"
-    ]
-   },
-   {
-    "say": "So whenever a piece isn't a prime, like ten or six, unpack it into primes first.",
-    "at": [
-     "isn't a prime",
-     "unpack it into primes first"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Our second method, working out x as a number, and simply dividing. Five squared is twenty-five, and ten squared is a hundred. Three times twenty-five is seventy-five, and seventy-five times a hundred is seven thousand five hundred.",
-    "voice": "calm",
-    "at": [
-     "Our second",
-     "working out x",
-     "number, and simply",
-     "Five squared is",
-     "ten squared is",
-     "Three times twenty-five",
-     "and seventy-five times",
-     "seven thousand five hundred"
-    ]
-   },
-   {
-    "say": "Twenty. Seven thousand five hundred over twenty is the same as seven hundred fifty over two, and that's three hundred seventy-five. A whole number, so twenty divides x, and choice number one is out.",
-    "at": [
-     "Twenty. Seven",
-     "over twenty is",
-     "seven hundred fifty over two",
-     "and that's three",
-     "A whole number",
-     "divides x, and",
-     "choice number one is out"
-    ]
-   },
-   {
-    "say": "Dividing by twenty-two means dividing by both its factors, two and eleven. Let's check whether both divisions can finish without a remainder. Twenty-two. Half of seven thousand five hundred is three thousand seven hundred fifty, and now I divide by eleven. Eleven times three hundred is three thousand three hundred, and eleven times forty is four hundred forty. Together, eleven times three hundred forty is three thousand seven hundred forty, and that leaves ten. A remainder, so twenty-two doesn't divide x.",
-    "at": [
-     "Twenty-two. Half",
-     "five hundred is",
-     "seven hundred fifty",
-     "now I divide by eleven",
-     "is three thousand seven hundred forty",
-     "that leaves ten",
-     "A remainder, so"
-    ]
-   },
-   {
-    "say": "Seventy-five. Seventy-five times a hundred is seven thousand five hundred, so it divides exactly. Out. Sixty. Seven thousand five hundred over sixty is seven hundred fifty over six, and that's a hundred twenty-five. Out too. So again, choice number two. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Seventy-five times a hundred",
-     "seven thousand five",
-     "divides exactly",
-     "thousand five hundred over",
-     "over sixty",
-     "fifty over six",
-     "a hundred twenty-five",
-     "Out too",
-     "again, choice number two"
-    ]
-   }
   ]
- ]
 }

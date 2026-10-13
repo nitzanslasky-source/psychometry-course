@@ -4802,6 +4802,12 @@
             "two A six, plus B eight, is equal to three A four",
             "two A six + B eight = three A four"
           ]
+        ],
+        "2.3": [
+          [
+            "carry two or three",
+            "carry 2 or 3"
+          ]
         ]
       }
     },
@@ -4835,7 +4841,18 @@
         ]
       ],
       "recorded_when_published": false,
-      "scope_replacements": {}
+      "scope_replacements": {
+        "2.1": [
+          [
+            "the whole bracket, A minus C",
+            "(A − C)"
+          ],
+          [
+            "we need A minus C is five",
+            "we need A − C = 5"
+          ]
+        ]
+      }
     },
     "solve-q-r26-t18-03": {
       "paras": [

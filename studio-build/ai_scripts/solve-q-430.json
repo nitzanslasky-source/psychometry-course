@@ -1,139 +1,139 @@
 {
- "videoId": "solve-q-430",
- "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "Yoav claims: there are more three-digit numbers divisible by both three and five, than three-digit numbers divisible by seventeen. Michal claims: there are more three-digit numbers divisible by both three and seven, than three-digit numbers divisible by both two and thirteen. Which of the following is correct?",
-    "voice": "calm",
-    "at": [
-     "Yoav claims"
+  "videoId": "solve-q-430",
+  "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "Yoav claims: there are more three-digit numbers divisible by both three and five, than three-digit numbers divisible by seventeen. Michal claims: there are more three-digit numbers divisible by both three and seven, than three-digit numbers divisible by both two and thirteen. Which of the following is correct?",
+        "voice": "calm",
+        "at": [
+          "Yoav claims"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So two claims about how many numbers divide by something. Divisible by both three and five means divisible by fifteen, because they share no factor. In the same way, three and seven make twenty-one, and two and thirteen make twenty-six. [short pause] We'll solve it two ways, counting the multiples, and then comparing without counting.",
+        "at": [
+          "how many numbers",
+          "something. Divisible by",
+          "and five means",
+          "divisible by fifteen",
+          "share no factor",
+          "In the same",
+          "and seven make",
+          "two and thirteen",
+          "We'll solve it",
+          "counting the multiples",
+          "comparing without counting"
+        ]
+      },
+      {
+        "say": "[short pause] Let's start with a small count. From one to thirty, how many multiples of five? Five, ten, fifteen, twenty, twenty-five, thirty, six of them. And that's just thirty over five, which is six.",
+        "at": [
+          "Let's start",
+          "From one to thirty",
+          "Five, ten, fifteen",
+          "thirty, six of",
+          "And that's just",
+          "five, which is"
+        ]
+      },
+      {
+        "say": "For our three-digit numbers, we'll count the multipliers that produce numbers in the allowed range. Both endpoint multipliers need to be included. But here the range doesn't start at one. So I find the first and the last multiple, and count from one to the other. Last minus first, plus one. Why plus one? From three to seven there are five numbers, three, four, five, six, seven, and seven minus three is only four. Both ends count.",
+        "at": [
+          "But here the",
+          "start at one",
+          "So I find",
+          "and the last",
+          "count from one",
+          "Last minus first",
+          "Why plus one",
+          "From three to seven",
+          "five, six, seven",
+          "minus three is",
+          "Both ends count"
+        ]
+      },
+      {
+        "say": "Three-digit numbers start at a hundred and stop just below a thousand. Let's find the first and last multiples of fifteen inside that range. Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, which is a hundred five. And fifteen times sixty is nine hundred, plus six more fifteens, ninety, so fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty.",
+        "at": [
+          "still two digits",
+          "the first is fifteen times seven",
+          "And fifteen times",
+          "nine hundred ninety",
+          "one below a",
+          "sixty-six minus seven",
+          "and plus one is sixty"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So two claims about how many numbers divide by something. Divisible by both three and five means divisible by fifteen, because they share no factor. In the same way, three and seven make twenty-one, and two and thirteen make twenty-six. [short pause] We'll solve it two ways, counting the multiples, and then comparing without counting.",
-    "at": [
-     "how many numbers",
-     "something. Divisible by",
-     "and five means",
-     "divisible by fifteen",
-     "share no factor",
-     "In the same",
-     "and seven make",
-     "two and thirteen",
-     "We'll solve it",
-     "counting the multiples",
-     "comparing without counting"
+    [
+      {
+        "say": "We found sixty three-digit multiples of fifteen. Now we'll count the three-digit multiples of seventeen and compare the two counts. Seventeen, the same way. Seventeen times six is a hundred two. For the last one, start from a round number: seventeen times sixty is a thousand twenty, too big. Take away seventeen twice: a thousand three, then nine hundred eighty-six. So seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right.",
+        "at": [
+          "We found",
+          "Seventeen times six",
+          "fifty-eight is nine",
+          "Fifty-eight minus six",
+          "and plus one",
+          "Sixty is more",
+          "so Yoav is"
+        ]
+      },
+      {
+        "say": "For Michal's claim, we'll do the same count for twenty-one and for twenty-six. Twenty-one times five is a hundred five, the first three-digit multiple. To find the last one, twenty-one times fifty is a thousand fifty, too big. Subtract three twenty-ones, sixty-three, and we get nine hundred eighty-seven. So the last multiplier is forty-seven. Forty-seven minus five is forty-two, and plus one is forty-three. Now twenty-six. Twenty-six times four is a hundred four, the first three-digit multiple. Twenty-six times forty is a thousand forty, too big. Subtract two twenty-sixes, fifty-two, and we get nine hundred eighty-eight. So the last multiplier is thirty-eight. Thirty-eight minus four is thirty-four, and plus one is thirty-five.",
+        "at": [
+          "Twenty-one times five",
+          "forty-seven. Forty",
+          "Forty-seven minus five",
+          "and plus one",
+          "Twenty-six times four",
+          "thirty-eight. Thirty",
+          "Thirty-eight minus four",
+          "and plus one is thirty-five"
+        ]
+      },
+      {
+        "say": "Forty-three is more than thirty-five, so Michal is right too. Both are right, choice number three.",
+        "at": [
+          "Forty-three is more",
+          "so Michal is",
+          "Both are right",
+          "choice number three"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "[pause] This time we're comparing how often the multiples appear within the same three-digit range. Another way, without counting at all. Every fifteenth number divides by fifteen, and every seventeenth divides by seventeen. One in every fifteen is more than one in every seventeen. So fifteen has more multiples, and Yoav is right.",
+        "at": [
+          "Another way",
+          "Every fifteenth number",
+          "fifteen, and every",
+          "One in every fifteen",
+          "So fifteen has",
+          "and Yoav is"
+        ]
+      },
+      {
+        "say": "The same for Michal. One in every twenty-one is more than one in every twenty-six. So the smaller the divisor, the more multiples it has, and both are right.",
+        "at": [
+          "One in every twenty-one",
+          "the smaller the divisor",
+          "more multiples it",
+          "both are right"
+        ]
+      },
+      {
+        "say": "Why can we trust it here? The range is long, nine hundred numbers, so the difference is big. In a short range, count exactly. Choice number three. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "Why can we",
+          "The range is long",
+          "hundred numbers, so",
+          "In a short",
+          "Choice number three"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start with a small count. From one to thirty, how many multiples of five? Five, ten, fifteen, twenty, twenty-five, thirty, six of them. And that's just thirty over five, which is six.",
-    "at": [
-     "Let's start",
-     "From one to thirty",
-     "Five, ten, fifteen",
-     "thirty, six of",
-     "And that's just",
-     "five, which is"
-    ]
-   },
-   {
-    "say": "For our three-digit numbers, we'll count the multipliers that produce numbers in the allowed range. Both endpoint multipliers need to be included. But here the range doesn't start at one. So I find the first and the last multiple, and count from one to the other. Last minus first, plus one. Why plus one? From three to seven there are five numbers, three, four, five, six, seven, and seven minus three is only four. Both ends count.",
-    "at": [
-     "But here the",
-     "start at one",
-     "So I find",
-     "and the last",
-     "count from one",
-     "Last minus first",
-     "Why plus one",
-     "From three to seven",
-     "five, six, seven",
-     "minus three is",
-     "Both ends count"
-    ]
-   },
-   {
-    "say": "Three-digit numbers start at a hundred and stop just below a thousand. Let's find the first and last multiples of fifteen inside that range. Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, which is a hundred five. And fifteen times sixty is nine hundred, plus six more fifteens, ninety, so fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty.",
-    "at": [
-     "still two digits",
-     "the first is fifteen times seven",
-     "And fifteen times",
-     "nine hundred ninety",
-     "one below a",
-     "sixty-six minus seven",
-     "and plus one is sixty"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "We found sixty three-digit multiples of fifteen. Now we'll count the three-digit multiples of seventeen and compare the two counts. Seventeen, the same way. Seventeen times six is a hundred two. For the last one, start from a round number: seventeen times sixty is a thousand twenty, too big. Take away seventeen twice: a thousand three, then nine hundred eighty-six. So seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right.",
-    "at": [
-     "We found",
-     "Seventeen times six",
-     "fifty-eight is nine",
-     "Fifty-eight minus six",
-     "and plus one",
-     "Sixty is more",
-     "so Yoav is"
-    ]
-   },
-   {
-    "say": "For Michal's claim, we'll do the same count for twenty-one and for twenty-six. Michal. Twenty-one times five is a hundred five, and twenty-one times fifty is a thousand fifty. Take away sixty-three, that's three times twenty-one, and we get nine hundred eighty-seven, so twenty-one times forty-seven is nine hundred eighty-seven. Forty-seven minus five is forty-two, and plus one is forty-three. Twenty-six times four is a hundred four, and twenty-six times forty is a thousand forty. Take away fifty-two, that's two times twenty-six, and we get nine hundred eighty-eight, so twenty-six times thirty-eight is nine hundred eighty-eight. Thirty-eight minus four is thirty-four, and plus one is thirty-five.",
-    "at": [
-     "Twenty-one times five",
-     "forty-seven is nine",
-     "Forty-seven minus five",
-     "and plus one",
-     "Twenty-six times four",
-     "thirty-eight is nine",
-     "Thirty-eight minus four",
-     "and plus one is thirty-five"
-    ]
-   },
-   {
-    "say": "Forty-three is more than thirty-five, so Michal is right too. Both are right, choice number three.",
-    "at": [
-     "Forty-three is more",
-     "so Michal is",
-     "Both are right",
-     "choice number three"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] This time we're comparing how often the multiples appear within the same three-digit range. Another way, without counting at all. Every fifteenth number divides by fifteen, and every seventeenth divides by seventeen. One in every fifteen is more than one in every seventeen. So fifteen has more multiples, and Yoav is right.",
-    "at": [
-     "Another way",
-     "Every fifteenth number",
-     "fifteen, and every",
-     "One in every fifteen",
-     "So fifteen has",
-     "and Yoav is"
-    ]
-   },
-   {
-    "say": "The same for Michal. One in every twenty-one is more than one in every twenty-six. So the smaller the divisor, the more multiples it has, and both are right.",
-    "at": [
-     "One in every twenty-one",
-     "the smaller the divisor",
-     "more multiples it",
-     "both are right"
-    ]
-   },
-   {
-    "say": "Why can we trust it here? The range is long, nine hundred numbers, so the difference is big. In a short range, count exactly. Choice number three. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Why can we",
-     "The range is long",
-     "hundred numbers, so",
-     "In a short",
-     "Choice number three"
-    ]
-   }
   ]
- ]
 }

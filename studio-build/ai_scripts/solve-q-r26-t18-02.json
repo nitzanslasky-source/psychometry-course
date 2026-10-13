@@ -12,9 +12,9 @@
     "pause": 0.5
    },
    {
-    "say": "We subtract a three-digit number from the number with its digits reversed. [short pause] We'll solve it two ways, writing their place values, and then trying numbers.",
+    "say": "We take the three-digit number A B C and subtract C B A, the same digits in reverse order. [short pause] We'll solve it two ways, writing their place values, and then trying numbers.",
     "at": [
-     "from the number",
+     "subtract C B A",
      "it two ways",
      "place values, and"
     ]
@@ -52,22 +52,22 @@
     ]
    },
    {
-    "say": "Four hundred ninety-five has nine in the middle, and four plus five is nine. It is ninety-nine times five. Choice number three is our answer.",
+    "say": "Four hundred ninety-five has nine in the middle, and four plus five is nine. It is ninety-nine times five. It's the only choice left, so choice number three is our answer.",
     "at": [
      "Four hundred ninety",
      "the middle, and",
      "five is nine",
      "It is ninety",
-     "Choice number three is our answer"
+     "choice number three is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now let's try to make a proposed answer. The question asks what could occur, so one example that satisfies every given is enough. Try four hundred ninety-five, the choice that passed our first check. We found that the difference is ninety-nine times the whole bracket, A minus C. Four hundred ninety-five is ninety-nine times five, so we need A minus C is five. An easy pair is A is six and C is one. Six minus one is five.",
+    "say": "[pause] Now let's build an example. The check for multiples of ninety-nine only ruled out choices. It doesn't show that four hundred ninety-five can really be the difference, because A and C must be digits, with A bigger than C and C bigger than zero. The question asks what could be the value, so one example that satisfies every given is enough. We found that the difference is ninety-nine times the whole bracket, A minus C. Four hundred ninety-five is ninety-nine times five, so we need A minus C is five. An easy pair is A is six and C is one. Six minus one is five.",
     "at": [
-     "Now let",
-     "Try four hundred ninety-five",
+     "Now let's build",
+     "four hundred ninety-five can really",
      "Four hundred ninety-five is ninety-nine times five"
     ]
    },

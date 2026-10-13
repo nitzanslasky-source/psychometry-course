@@ -60,65 +60,46 @@
     ]
    },
    {
-    "say": "This works for any digit A. Use A is five: two hundred fifty-six plus ninety-eight is three hundred fifty-four. So when a column keeps the same last digit, check the carry. Without a carry, the added digit is zero. With a carried one, it is nine. When adding two numbers, the carry is at most one. Adding three or four numbers can carry two or three.",
+    "say": "This works for any digit A. Use A is five: two hundred fifty-six plus ninety-eight is three hundred fifty-four.",
     "at": [
-     "two hundred fifty",
-     "three hundred fifty",
-     "when a column",
-     "keeps the same",
-     "check the carry",
-     "Without a carry",
-     "numbers, the carry",
-     "Three or four",
-     "carry two or"
+     "two hundred fifty-six",
+     "three hundred fifty-four"
     ]
    }
   ],
   [
    {
-    "say": "Compare this with A plus C ends in A from the earlier question. That was the ones column, so nothing carried into it. C had to be zero. With A is five, five plus zero is five, keeping the same last digit.",
+    "say": "Compare this with the earlier question, where A plus C ended in A. That was the ones column, so nothing carried into it, and C had to be zero. With A is five, five plus zero is five.",
     "at": [
      "Compare this",
-     "earlier question. That",
-     "That was the",
+     "A plus C ended in A",
      "That was the",
      "so nothing carried",
      "C had to be zero",
-     "With A is",
-     "zero is five",
-     "digit."
+     "With A is five",
+     "zero is five"
     ]
    },
    {
-    "say": "Here, we are in the tens column and a one has carried in. We add B and that one to A. To keep the last digit A, B plus one must make ten. So B is nine.",
+    "say": "Here, a one has carried into the tens column. With A is five, five plus nine plus that one is fifteen. We write the five and carry one, so the last digit is five again.",
     "at": [
-     "the tens column",
-     "one has carried",
-     "We add B",
-     "that one to",
-     "To keep the",
-     "B plus one",
-     "B plus one",
-     "must make ten",
-     "B is nine"
-    ]
-   },
-   {
-    "say": "With A is five, we add five plus nine plus one, which is fifteen. Write the five and carry the one. So keeping the same last digit does not always mean adding zero. First check if a carry entered the column.",
-    "at": [
+     "carried into the tens column",
      "five plus nine",
-     "Write the five",
-     "carry the one",
-     "So keeping the",
-     "does not always",
-     "First check if",
-     "entered the column"
+     "the last digit is five again"
+    ]
+   },
+   {
+    "say": "So keeping the same last digit does not always mean adding zero. First check whether a carry came into the column. With no carry, the added digit is zero. With a carried one, it is nine. When we add two numbers, the carry is at most one. Adding three or four numbers can carry two or three.",
+    "at": [
+     "First check whether",
+     "With no carry",
+     "With a carried one"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now use place values, without columns. The first number is two hundred six plus ten A. The second is ten B plus eight. The result is three hundred four plus ten A. So two hundred six plus ten A, plus ten B plus eight, equals three hundred four plus ten A. Writing the full values includes the carries in the calculation.",
+    "say": "[pause] Now use place values, without columns. The first number is two hundred six plus ten A. The second is ten B plus eight. The result is three hundred four plus ten A. These are the full values of the numbers, so when we add them, the carries are already included, and we don't need to check each column separately. So two hundred six plus ten A, plus ten B plus eight, equals three hundred four plus ten A.",
     "at": [
      "Now use place values",
      "without columns",

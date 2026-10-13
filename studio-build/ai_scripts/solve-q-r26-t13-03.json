@@ -1,113 +1,113 @@
 {
- "videoId": "solve-q-r26-t13-03",
- "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
- "slides": [
-  [
-   {
-    "say": "Given: x plus four, in absolute value, is equal to three x. Which of the following gives all the possible values of x?",
-    "voice": "calm",
-    "at": [
-     "Given"
+  "videoId": "solve-q-r26-t13-03",
+  "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+  "slides": [
+    [
+      {
+        "say": "Given: x plus four, in absolute value, is equal to three x. Which of the following gives all the possible values of x?",
+        "voice": "calm",
+        "at": [
+          "Given"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "Now there's a letter on the right side too. This is the first time we meet it, and it changes one thing. We'll have to check every answer we get. [short pause] Two ways, two cases with a check, and then a shortcut.",
+        "at": [
+          "a letter on the right side"
+        ]
+      },
+      {
+        "say": "[short pause] Our first method. Two cases, as usual. Case one, x plus four is three x. Take x off both sides, and four is two x. Four divided by two is two, so x is two.",
+        "at": [
+          "Case one",
+          "four is two x",
+          "Four divided by"
+        ]
+      },
+      {
+        "say": "Case two, x plus four is minus three x. Add three x to both sides, x plus three x is four x, so four x plus four is zero. Take four off, and four x is minus four. Minus four divided by four is minus one, so x is minus one.",
+        "voice": "calm",
+        "at": [
+          "Case two",
+          "Add three x",
+          "Four x is minus four",
+          "Minus four divided"
+        ]
+      },
+      {
+        "say": "Now check our values in the original equation. Each case assumed a sign for the expression inside the bars, so solving that case is not enough by itself. The value must also make the original left side equal to the original right side. Here we need the absolute value of x plus four to equal three x.",
+        "at": [
+          "three x.",
+          "three x.",
+          "x.",
+          "x."
+        ]
+      },
+      {
+        "say": "x is two. Two plus four is six, in bars six. And three times two is six. It works.",
+        "voice": "calm",
+        "at": [
+          "x is two",
+          "Two plus four",
+          "And three times"
+        ]
+      },
+      {
+        "say": "x is minus one. Minus one plus four is three, in bars three. But three times minus one is minus three. Three isn't minus three, so minus one is fake.",
+        "voice": "calm",
+        "at": [
+          "x is minus one",
+          "Minus one plus",
+          "But three times",
+          "so minus one is fake"
+        ]
+      },
+      {
+        "say": "Now careful, choice number three keeps the fake answer, and that's the trap. A lot of students stop right after the two cases. So only two, choice number one is our answer.",
+        "at": [
+          "that's the trap",
+          "A lot of",
+          "number one is our answer"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "Now there's a letter on the right side too. This is the first time we meet it, and it changes one thing. We'll have to check every answer we get. [short pause] Two ways, two cases with a check, and then a shortcut.",
-    "at": [
-     "a letter on the right side"
+    [
+      {
+        "say": "[pause] Our second method, a shortcut that starts from the right side. The bars are never negative, so the right side can't be negative. Three x is zero or positive, so x is zero or positive.",
+        "at": [
+          "Our second",
+          "The bars are",
+          "Three x is zero or positive"
+        ]
+      },
+      {
+        "say": "And what does that mean for the bars? If x is zero or positive, x plus four is positive, so the bars do nothing. I can just drop them. x plus four is three x, so four is two x, and four divided by two is two. x is two.",
+        "at": [
+          "And what does",
+          "the bars do nothing",
+          "I can just drop them",
+          "x plus four is three"
+        ]
+      },
+      {
+        "say": "So two is the only value. Choice numbers two and three have minus one in them, and x can't be negative here, so they're out. Choice number four says there's no such number, but two is one, so it's out too. Two only, choice number one.",
+        "at": [
+          "So two is",
+          "Numbers two",
+          "and three have",
+          "Number four says",
+          "Two only, choice number one"
+        ]
+      },
+      {
+        "say": "So a letter on the right side? The right side must be zero or positive, and check every answer in the original equation. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "So a letter",
+          "The right side must be",
+          "every answer in"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Our first method. Two cases, as usual. Case one, x plus four is three x. Take x off both sides, and four is two x. Four divided by two is two, so x is two.",
-    "at": [
-     "Case one",
-     "four is two x",
-     "Four divided by"
-    ]
-   },
-   {
-    "say": "Case two, x plus four is minus three x. Add three x to both sides, x plus three x is four x, so four x plus four is zero. Take four off, and four x is minus four. Minus four divided by four is minus one, so x is minus one.",
-    "voice": "calm",
-    "at": [
-     "Case two",
-     "Add three x",
-     "Four x is minus four",
-     "Minus four divided"
-    ]
-   },
-   {
-    "say": "Solving a sign case gives us a candidate. We still need both sides of the original absolute-value equation to be equal for that candidate. Now the check. Why do we need it here? Because there's an x on both sides. When the other side is a plain number, you don't need to check. When it's a letter, you must.",
-    "at": [
-     "Why do we",
-     "an x on both sides",
-     "When the other",
-     "When it's a"
-    ]
-   },
-   {
-    "say": "x is two. Two plus four is six, in bars six. And three times two is six. It works.",
-    "voice": "calm",
-    "at": [
-     "x is two",
-     "Two plus four",
-     "And three times"
-    ]
-   },
-   {
-    "say": "x is minus one. Minus one plus four is three, in bars three. But three times minus one is minus three. Three isn't minus three, so minus one is fake.",
-    "voice": "calm",
-    "at": [
-     "x is minus one",
-     "Minus one plus",
-     "But three times",
-     "so minus one is fake"
-    ]
-   },
-   {
-    "say": "Now careful, choice number three keeps the fake answer, and that's the trap. A lot of students stop right after the two cases. So only two, choice number one is our answer.",
-    "at": [
-     "that's the trap",
-     "A lot of",
-     "number one is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Our second method, a shortcut that starts from the right side. The bars are never negative, so the right side can't be negative. Three x is zero or positive, so x is zero or positive.",
-    "at": [
-     "Our second",
-     "The bars are",
-     "Three x is zero or positive"
-    ]
-   },
-   {
-    "say": "Once x is zero or positive, the whole inside x plus four is positive too. We can use that sign information to simplify the original equation. And what does that mean for the bars? If x is zero or positive, x plus four is positive, so the bars do nothing. I can just drop them. x plus four is three x, so four is two x, and four divided by two is two. x is two.",
-    "at": [
-     "And what does",
-     "the bars do nothing",
-     "I can just drop them",
-     "x plus four is three"
-    ]
-   },
-   {
-    "say": "So two is the only value. Choice numbers two and three have minus one in them, and x can't be negative here, so they're out. Choice number four says there's no such number, but two is one, so it's out too. Two only, choice number one.",
-    "at": [
-     "So two is",
-     "Numbers two",
-     "and three have",
-     "Number four says",
-     "Two only, choice number one"
-    ]
-   },
-   {
-    "say": "So a letter on the right side? The right side must be zero or positive, and check every answer in the original equation. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "So a letter",
-     "The right side must be",
-     "every answer in"
-    ]
-   }
   ]
- ]
 }

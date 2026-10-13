@@ -1,130 +1,130 @@
 {
- "videoId": "solve-q-r26-t13-02",
- "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
- "slides": [
-  [
-   {
-    "say": "Which of the following has no solution?",
-    "voice": "calm",
-    "at": [
-     "Which"
+  "videoId": "solve-q-r26-t13-02",
+  "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+  "slides": [
+    [
+      {
+        "say": "Which of the following has no solution?",
+        "voice": "calm",
+        "at": [
+          "Which"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So we're looking for the one that no number can satisfy. And before any algebra, look at the right sides. Two of them are negative, and one is zero. That's our hint.",
+        "at": [
+          "Two of",
+          "them are negative",
+          "one is zero"
+        ]
+      },
+      {
+        "say": "Remember, an absolute value is never negative. It can be zero, it can be positive, but it can never go below zero.",
+        "at": [
+          "never negative",
+          "It can be"
+        ]
+      },
+      {
+        "say": "We're looking for a statement with no solution. Finding even one value of x that works is enough to rule a choice out. Number one. The bars are equal to zero. Can that happen? Yes, when the inside is zero. x minus three is zero, so x is three. It has a solution, so it's out.",
+        "at": [
+          "Number one",
+          "The bars are",
+          "Yes, when the",
+          "x minus three is zero",
+          "so it's out"
+        ]
+      },
+      {
+        "say": "Number two. The bars are smaller than negative one. But the bars are never negative, so they can never be below negative one. No number works.",
+        "at": [
+          "Number two",
+          "The bars are",
+          "never negative, so",
+          "No number works"
+        ]
+      },
+      {
+        "say": "Number three looks almost the same, but the sign goes the other way. The bars are bigger than negative one. And that's always true, because the bars are zero or more. Every x works, so it's out.",
+        "at": [
+          "Number three looks",
+          "The bars are",
+          "And that's always",
+          "Every x works",
+          "so it's out"
+        ]
+      },
+      {
+        "say": "Number four. The absolute value of x is at most one. Zero works, because zero is at most one. So it has a solution, and it's out.",
+        "at": [
+          "Number four",
+          "The absolute value",
+          "Zero works",
+          "and it's out"
+        ]
+      },
+      {
+        "say": "So x plus two, in absolute value, smaller than negative one has no solution. Number two is our answer.",
+        "at": [
+          "So x plus",
+          "Number two is our answer"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So we're looking for the one that no number can satisfy. And before any algebra, look at the right sides. Two of them are negative, and one is zero. That's our hint.",
-    "at": [
-     "Two of",
-     "them are negative",
-     "one is zero"
+    [
+      {
+        "say": "[short pause] Now look at numbers two and three again. The same numbers, and a different sign. One is never true, and the other one is always true.",
+        "at": [
+          "Now look",
+          "numbers two",
+          "and three again",
+          "never true",
+          "always true"
+        ]
+      },
+      {
+        "say": "And it works the same way for equations. Bars equal to a negative number, like bars equal to negative five, have no solution at all.",
+        "at": [
+          "And it works",
+          "Bars equal to a negative number",
+          "negative five, have"
+        ]
+      },
+      {
+        "say": "Is there a second way? Sure, try to find one solution for each choice. Number one, try three. Three minus three is zero, so three works.",
+        "at": [
+          "Is there a",
+          "Sure, try to",
+          "Number one, try three",
+          "Three minus three"
+        ]
+      },
+      {
+        "say": "Number three, try zero. Zero plus two is two, and two is bigger than negative one, so zero works. Number four, zero again, and zero is at most one. Works.",
+        "at": [
+          "Number three, try zero",
+          "Zero plus two",
+          "Number four, zero"
+        ]
+      },
+      {
+        "say": "Number two, whatever x I try, x plus two in bars comes out zero or more. Try zero, it's two. Try negative two, it's zero. It never gets below negative one. So no solution, number two.",
+        "at": [
+          "Number two, whatever",
+          "bars comes out",
+          "Try negative two",
+          "It never gets",
+          "So no solution"
+        ]
+      },
+      {
+        "say": "So always look at the right side first. A negative number or a zero there is a gift. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "look at the right side",
+          "A negative number"
+        ]
+      }
     ]
-   },
-   {
-    "say": "Remember, an absolute value is never negative. It can be zero, it can be positive, but it can never go below zero.",
-    "at": [
-     "never negative",
-     "It can be"
-    ]
-   },
-   {
-    "say": "We're looking for a statement with no solution. Finding even one value of x that works is enough to rule a choice out. Number one. The bars are equal to zero. Can that happen? Yes, when the inside is zero. x minus three is zero, so x is three. It has a solution, so it's out.",
-    "at": [
-     "Number one",
-     "The bars are",
-     "Yes, when the",
-     "x minus three is zero",
-     "so it's out"
-    ]
-   },
-   {
-    "say": "Number two. The bars are smaller than negative one. But the bars are never negative, so they can never be below negative one. No number works.",
-    "at": [
-     "Number two",
-     "The bars are",
-     "never negative, so",
-     "No number works"
-    ]
-   },
-   {
-    "say": "Number three looks almost the same, but the sign goes the other way. The bars are bigger than negative one. And that's always true, because the bars are zero or more. Every x works, so it's out.",
-    "at": [
-     "Number three looks",
-     "The bars are",
-     "And that's always",
-     "Every x works",
-     "so it's out"
-    ]
-   },
-   {
-    "say": "Number four. The absolute value of x is at most one. Zero works, because zero is at most one. So it has a solution, and it's out.",
-    "at": [
-     "Number four",
-     "The absolute value",
-     "Zero works",
-     "and it's out"
-    ]
-   },
-   {
-    "say": "So x plus two, in absolute value, smaller than negative one has no solution. Number two is our answer.",
-    "at": [
-     "So x plus",
-     "Number two is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[short pause] The direction of the inequality is what decides whether the nonnegative absolute value can satisfy it. Now look at numbers two and three again. The same numbers, and a different sign. One is never true, and the other one is always true.",
-    "at": [
-     "The direction",
-     "numbers two",
-     "and three again",
-     "never true",
-     "always true"
-    ]
-   },
-   {
-    "say": "And it works the same way for equations. Bars equal to a negative number, like bars equal to negative five, have no solution at all.",
-    "at": [
-     "And it works",
-     "Bars equal to a negative number",
-     "negative five, have"
-    ]
-   },
-   {
-    "say": "Is there a second way? Sure, try to find one solution for each choice. Number one, try three. Three minus three is zero, so three works.",
-    "at": [
-     "Is there a",
-     "Sure, try to",
-     "Number one, try three",
-     "Three minus three"
-    ]
-   },
-   {
-    "say": "Number three, try zero. Zero plus two is two, and two is bigger than negative one, so zero works. Number four, zero again, and zero is at most one. Works.",
-    "at": [
-     "Number three, try zero",
-     "Zero plus two",
-     "Number four, zero"
-    ]
-   },
-   {
-    "say": "Number two, whatever x I try, x plus two in bars comes out zero or more. Try zero, it's two. Try negative two, it's zero. It never gets below negative one. So no solution, number two.",
-    "at": [
-     "Number two, whatever",
-     "bars comes out",
-     "Try negative two",
-     "It never gets",
-     "So no solution"
-    ]
-   },
-   {
-    "say": "So always look at the right side first. A negative number or a zero there is a gift. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "look at the right side",
-     "A negative number"
-    ]
-   }
   ]
- ]
 }

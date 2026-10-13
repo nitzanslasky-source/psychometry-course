@@ -1,162 +1,162 @@
 {
- "videoId": "parity",
- "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   "Welcome back. Now let's look at even and odd numbers, and how addition, subtraction, multiplication and division affect them."
-  ],
-  [
-   {
-    "say": "An even number is an integer divisible by two, like five hundred seventy-two or nine thousand one hundred fifty. Zero is even too, because zero divided by two is an integer. An odd number is an integer that is not divisible by two.",
-    "at": [
-     "is an integer",
-     "by two, like",
-     "five hundred seventy",
-     "one hundred fifty",
-     "An odd number",
-     "integer that is"
+  "videoId": "parity",
+  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      "Welcome back. Now let's look at even and odd numbers, and how addition, subtraction, multiplication and division affect them."
+    ],
+    [
+      {
+        "say": "An even number is an integer divisible by two, like five hundred seventy-two or nine thousand one hundred fifty. Zero is even too, because zero divided by two is an integer. An odd number is an integer that is not divisible by two.",
+        "at": [
+          "is an integer",
+          "by two, like",
+          "five hundred seventy",
+          "one hundred fifty",
+          "An odd number",
+          "integer that is"
+        ]
+      },
+      {
+        "say": "When adding, even plus even is even: eight plus twelve is twenty. Odd plus odd is even too: seven plus eleven is eighteen. Even plus odd is odd: eight plus seven is fifteen. Subtraction follows the same even-and-odd rules.",
+        "at": [
+          "plus even is",
+          "eight plus twelve",
+          "Odd plus odd",
+          "seven plus eleven",
+          "Even plus odd",
+          "eight plus seven",
+          "Subtraction follows the"
+        ]
+      },
+      {
+        "say": "In a longer sum, we don't need to calculate every value to decide whether the result is even or odd. Adding or subtracting an even number does not change that type, so count only the odd terms. In eight plus five minus two plus eleven plus three, the odd terms are five, eleven and three. Two odd terms combine to give an even result. The third odd term makes the total odd. If we calculate the whole expression, the result is twenty-five, which is odd.",
+        "at": [
+          "only the odd",
+          "only the odd",
+          "only the odd",
+          "odd terms. In",
+          "Eight plus five minus two",
+          "the odd terms are",
+          "eleven and three",
+          "Two odd terms",
+          "give an even",
+          "third odd term",
+          "total odd. If"
+        ]
+      },
+      {
+        "say": "Now four plus seven minus ten plus nine. The only odd terms are seven and nine. Their sum is even, and the even terms do not change that. So the result is even. The actual total is ten.",
+        "at": [
+          "Four plus seven minus ten",
+          "only odd terms",
+          "and nine. Their",
+          "that. So the",
+          "ten."
+        ]
+      }
+    ],
+    [
+      {
+        "say": "When multiplying, one even number is enough to make the answer even. That number divides by two, so the whole product divides by two too. Four times fifteen is sixty, and nine times eight is seventy-two. In each example, one of the numbers is even, and the answer is even.",
+        "at": [
+          "one even number",
+          "to make the",
+          "even. That number",
+          "Four times fifteen",
+          "and nine times"
+        ]
+      },
+      {
+        "say": "So a product is odd only when every factor is odd. Seven times three is twenty-one. Both factors are odd, and the product is odd.",
+        "at": [
+          "odd only when",
+          "every factor is odd",
+          "Seven times three"
+        ]
+      },
+      {
+        "say": "Careful with brackets. Two times the whole bracket, x plus seven, is even because the two multiplies everything inside. But two x plus seven is different: the two multiplies only x. Two x is even, and adding seven makes it odd. With x one, the first expression is two times eight, which is sixteen. The second is two plus seven, which is nine.",
+        "at": [
+          "Careful with brackets",
+          "plus seven, is",
+          "the two multiplies",
+          "But two x",
+          "With x one",
+          "is sixteen. The"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "For division, the bottom cannot be zero. Then first check whether the answer is an integer. Even and odd describe integers, not fractions that are not whole numbers. Odd over odd can be an odd integer or a fraction. Twenty-one over seven is three, which is odd. Seven over three is not an integer, so it is neither even nor odd.",
+        "at": [
+          "fractions that are",
+          "Odd over odd",
+          "Twenty-one over seven",
+          "which is odd"
+        ]
+      },
+      {
+        "say": "Even over odd can be an even integer or a fraction. Twelve over three is four, which is even. Eight over three is not an integer, so it is neither even nor odd.",
+        "at": [
+          "Even over odd",
+          "Twelve over three",
+          "which is even"
+        ]
+      },
+      {
+        "say": "Odd over even cannot give an integer. Seven over two and nine over four both give fractions that are not whole numbers. Why? The even number on the bottom divides by two, but the odd number on top does not. So the bottom has a two that cannot cancel with the top.",
+        "at": [
+          "Odd over even",
+          "The even number",
+          "two, but the",
+          "number on top"
+        ]
+      },
+      {
+        "say": "Even over even can give an odd integer, an even integer, or a fraction. Eighteen over six is three, odd. Twelve over two is six, even. Six over four is not an integer. So knowing that the top and bottom are both even does not tell us what kind of answer we'll get.",
+        "at": [
+          "even over even",
+          "Twelve over two",
+          "Six over four"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "Positive whole-number powers keep a number even or odd. Two squared is four, and two cubed is eight. Both are even. Three squared is nine, and three cubed is twenty-seven. Both are odd. A power multiplies the same number again and again. So an even number stays even, and an odd number stays odd. If the question asks only about even and odd, we can check the original numbers without calculating their powers. The actual values change, but whether they are even or odd stays the same.",
+        "at": [
+          "Two squared is four",
+          "Three squared is",
+          "cubed is twenty-seven",
+          "A power multiplies",
+          "same number again",
+          "odd. If the",
+          "about even and"
+        ]
+      },
+      {
+        "say": "When plugging in for addition and multiplication, choose numbers that fit the even-and-odd cases in the question. For example, two times three is six. We chose two for an even number and three for an odd number. The answer is even because one number in the multiplication is even, not because we chose those exact values.",
+        "at": [
+          "for addition and",
+          "even-and-odd",
+          "question. For example",
+          "question. For example",
+          "question. For example",
+          "Two times three",
+          "and three for"
+        ]
+      },
+      {
+        "say": "Division can give different types of answer. Six over two is three, odd. Eight over two is four, even. Ten over four is not an integer. These show what is possible, not three tests we must do every time. In an always question, start with one easy example that fits the given. Check the choices straight away and cross out any that fail. Only one left? Stop. Several left? Try another easy allowed example that tests something different, such as swapping which number is even and which is odd. We do not have to predict how many choices it will rule out. If examples still cannot tell the choices apart, use the rule for that calculation. Working examples alone do not prove always. [pause] Okay. I'll see you in the next video.",
+        "at": [
+          "Six over two",
+          "Eight over two",
+          "Ten over four",
+          "start with one"
+        ]
+      }
     ]
-   },
-   {
-    "say": "When adding, even plus even is even: eight plus twelve is twenty. Odd plus odd is even too: seven plus eleven is eighteen. Even plus odd is odd: eight plus seven is fifteen. Subtraction follows the same even-and-odd rules.",
-    "at": [
-     "plus even is",
-     "eight plus twelve",
-     "Odd plus odd",
-     "seven plus eleven",
-     "Even plus odd",
-     "eight plus seven",
-     "Subtraction follows the"
-    ]
-   },
-   {
-    "say": "In a longer sum, we don't need to calculate every value to decide whether the result is even or odd. Adding or subtracting an even number does not change that type, so count only the odd terms. In eight plus five minus two plus eleven plus three, the odd terms are five, eleven and three. Two odd terms combine to give an even result. The third odd term makes the total odd. If we calculate the whole expression, the result is twenty-five, which is odd.",
-    "at": [
-     "only the odd",
-     "only the odd",
-     "only the odd",
-     "odd terms. In",
-     "Eight plus five minus two",
-     "the odd terms are",
-     "eleven and three",
-     "Two odd terms",
-     "give an even",
-     "third odd term",
-     "total odd. If"
-    ]
-   },
-   {
-    "say": "Now four plus seven minus ten plus nine. The only odd terms are seven and nine. Their sum is even, and the even terms do not change that. So the result is even. The actual total is ten.",
-    "at": [
-     "Four plus seven minus ten",
-     "only odd terms",
-     "and nine. Their",
-     "that. So the",
-     "ten."
-    ]
-   }
-  ],
-  [
-   {
-    "say": "When multiplying, one even number is enough to make the answer even. That number divides by two, so the whole product divides by two too. Four times fifteen is sixty, and nine times eight is seventy-two. In each example, one of the numbers is even, and the answer is even.",
-    "at": [
-     "one even number",
-     "to make the",
-     "even. That number",
-     "Four times fifteen",
-     "and nine times"
-    ]
-   },
-   {
-    "say": "So a product is odd only when every factor is odd. Seven times three is twenty-one. Both factors are odd, and the product is odd.",
-    "at": [
-     "odd only when",
-     "every factor is odd",
-     "Seven times three"
-    ]
-   },
-   {
-    "say": "Careful with brackets. Two times the whole bracket, x plus seven, is even because the two multiplies everything inside. But two x plus seven is different: the two multiplies only x. Two x is even, and adding seven makes it odd. With x one, the first expression is two times eight, which is sixteen. The second is two plus seven, which is nine.",
-    "at": [
-     "Careful with brackets",
-     "plus seven, is",
-     "the two multiplies",
-     "But two x",
-     "With x one",
-     "is sixteen. The"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "For division, the bottom cannot be zero. Then first check whether the answer is an integer. Even and odd describe integers, not fractions that are not whole numbers. Odd over odd can be an odd integer or a fraction. Twenty-one over seven is three, which is odd. Seven over three is not an integer, so it is neither even nor odd.",
-    "at": [
-     "fractions that are",
-     "Odd over odd",
-     "Twenty-one over seven",
-     "which is odd"
-    ]
-   },
-   {
-    "say": "Even over odd can be an even integer or a fraction. Twelve over three is four, which is even. Eight over three is not an integer, so it is neither even nor odd.",
-    "at": [
-     "Even over odd",
-     "Twelve over three",
-     "which is even"
-    ]
-   },
-   {
-    "say": "Odd over even cannot give an integer. Seven over two and nine over four both give fractions that are not whole numbers. Why? The even number on the bottom divides by two, but the odd number on top does not. So the bottom has a two that cannot cancel with the top.",
-    "at": [
-     "Odd over even",
-     "The even number",
-     "two, but the",
-     "number on top"
-    ]
-   },
-   {
-    "say": "Even over even can give an odd integer, an even integer, or a fraction. Eighteen over six is three, odd. Twelve over two is six, even. Six over four is not an integer. So knowing that the top and bottom are both even does not tell us what kind of answer we'll get.",
-    "at": [
-     "even over even",
-     "Twelve over two",
-     "Six over four"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Positive whole-number powers keep a number even or odd. Two squared is four, and two cubed is eight. Both are even. Three squared is nine, and three cubed is twenty-seven. Both are odd. A power multiplies the same number again and again. So an even number stays even, and an odd number stays odd. If the question asks only about even and odd, we can check the original numbers without calculating their powers. The actual values change, but whether they are even or odd stays the same.",
-    "at": [
-     "Two squared is four",
-     "Three squared is",
-     "cubed is twenty-seven",
-     "A power multiplies",
-     "same number again",
-     "odd. If the",
-     "about even and"
-    ]
-   },
-   {
-    "say": "When plugging in for addition and multiplication, choose numbers that fit the even-and-odd cases in the question. For example, two times three is six. We chose two for an even number and three for an odd number. The answer is even because one number in the multiplication is even, not because we chose those exact values.",
-    "at": [
-     "for addition and",
-     "even-and-odd",
-     "question. For example",
-     "question. For example",
-     "question. For example",
-     "Two times three",
-     "and three for"
-    ]
-   },
-   {
-    "say": "Division can give different types of answer. Six over two is three, odd. Eight over two is four, even. Ten over four is not an integer. These examples show the different results that are possible; they are not three tests we must do in every question. In an always question, choose one easy allowed example and check the choices straight away. We do not need to know in advance how many choices it will rule out. If a choice fails, cross it out. If only one choice remains, stop. If several remain, choose another easy example with a different useful feature, such as different even and odd numbers. Several working examples do not prove always. Use the rule when examples cannot separate the remaining choices. [pause] Okay. I'll see you in the next video.",
-    "at": [
-     "Six over two",
-     "Eight over two",
-     "Ten over four",
-     "choose one easy allowed example"
-    ]
-   }
   ]
- ]
 }

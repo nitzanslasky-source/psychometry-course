@@ -1,120 +1,120 @@
 {
- "videoId": "solve-q-364",
- "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
- "slides": [
-  [
-   {
-    "say": "Given: p is smaller than q, which is smaller than zero, which is smaller than r, which is smaller than s. Which of the following is necessarily true?",
-    "voice": "calm",
-    "at": [
-     "Given"
+  "videoId": "solve-q-364",
+  "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+  "slides": [
+    [
+      {
+        "say": "Given: p is smaller than q, which is smaller than zero, which is smaller than r, which is smaller than s. Which of the following is necessarily true?",
+        "voice": "calm",
+        "at": [
+          "Given"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So we know the order of four numbers. And look at the answers, every one of them uses absolute value. And what's absolute value? Distance from zero. So the question is really, who is further from zero? [short pause] Two ways, the number line, and then plugging in numbers.",
+        "at": [
+          "look at the answers",
+          "every one of them",
+          "the question is"
+        ]
+      },
+      {
+        "say": "[short pause] Our first method. Let's put them on the number line. p and q are negative, and p is further to the left. r and s are positive, and s is further to the right.",
+        "at": [
+          "Our first",
+          "on the number line",
+          "p and q",
+          "r and s"
+        ]
+      },
+      {
+        "say": "There are two things we can promise. s is always further from zero than r, both on the right. And p is always further from zero than q, both on the left. We don't know by how much, but always.",
+        "at": [
+          "two things we can promise",
+          "both on the right",
+          "And p is",
+          "We don't know"
+        ]
+      },
+      {
+        "say": "But a negative against a positive? The negatives could be negative one and negative three, and the positives a thousand and seven thousand. Or the other way around. We only know the order, not the numbers.",
+        "at": [
+          "a negative against a positive",
+          "The negatives could",
+          "Or the other",
+          "We only know"
+        ]
+      },
+      {
+        "say": "So number one compares r and p, a positive and a negative. Not necessarily, out. Number three, p and s, different sides again, out. Number four, q and s, different sides, out.",
+        "at": [
+          "number one compares",
+          "Not necessarily, out",
+          "sides again, out",
+          "different sides, out"
+        ]
+      },
+      {
+        "say": "Three are out, so in the exam you'd circle number two and move on. Here, let's see why it's right. q and p are both negative, and p is further from zero. So the absolute value of q is smaller than the absolute value of p. Number two is our answer.",
+        "at": [
+          "circle number two",
+          "Here, let's see",
+          "both negative",
+          "So the absolute",
+          "Number two is our answer"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So we know the order of four numbers. And look at the answers, every one of them uses absolute value. And what's absolute value? Distance from zero. So the question is really, who is further from zero? [short pause] Two ways, the number line, and then plugging in numbers.",
-    "at": [
-     "look at the answers",
-     "every one of them",
-     "the question is"
+    [
+      {
+        "say": "[pause] Our second method, plugging in numbers. The givens only fix the order, not the sizes. So the trick is to try two extreme pictures. First, the negatives far from zero and the positives close to it. p is negative fifty, q negative forty, r one and s three. They're in order, so they obey the given.",
+        "at": [
+          "Our second",
+          "The givens only",
+          "So the trick",
+          "First, the negatives",
+          "p is negative fifty",
+          "They're in order"
+        ]
+      },
+      {
+        "say": "Number one, one smaller than fifty? Yes, it stays. Number two, forty smaller than fifty? Yes, it stays. Number three, fifty smaller than three? No, out. Number four, forty smaller than three? No, out.",
+        "voice": "calm",
+        "at": [
+          "Number one, one",
+          "Number two, forty",
+          "Number three, fifty",
+          "No, out",
+          "forty smaller than three"
+        ]
+      },
+      {
+        "say": "Now the opposite picture, the negatives close to zero and the positives far. p is negative three, q negative one, r forty and s fifty.",
+        "at": [
+          "Now the opposite",
+          "p is negative three"
+        ]
+      },
+      {
+        "say": "Number one, forty smaller than three? No, out. Number two, one smaller than three? Yes, and it worked in the first picture too. So number two survives both pictures. Number two.",
+        "voice": "calm",
+        "at": [
+          "Number one, forty",
+          "No, out",
+          "Number two, one",
+          "Yes, and it",
+          "survives both"
+        ]
+      },
+      {
+        "say": "So when the letters sit on both sides of zero, try one picture with the negatives far away, and one with the positives far away. Same side, you can compare. Different sides, you can't. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "the negatives far away",
+          "the positives far away",
+          "Same side, you"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Our first method. Let's put them on the number line. p and q are negative, and p is further to the left. r and s are positive, and s is further to the right.",
-    "at": [
-     "Our first",
-     "on the number line",
-     "p and q",
-     "r and s"
-    ]
-   },
-   {
-    "say": "There are two things we can promise. s is always further from zero than r, both on the right. And p is always further from zero than q, both on the left. We don't know by how much, but always.",
-    "at": [
-     "two things we can promise",
-     "both on the right",
-     "And p is",
-     "We don't know"
-    ]
-   },
-   {
-    "say": "But a negative against a positive? The negatives could be negative one and negative three, and the positives a thousand and seven thousand. Or the other way around. We only know the order, not the numbers.",
-    "at": [
-     "a negative against a positive",
-     "The negatives could",
-     "Or the other",
-     "We only know"
-    ]
-   },
-   {
-    "say": "The choices compare absolute values, so we're comparing distances from zero. Being on the negative side doesn't by itself tell us that distance. So number one compares r and p, a positive and a negative. Not necessarily, out. Number three, p and s, different sides again, out. Number four, q and s, different sides, out.",
-    "at": [
-     "number one compares",
-     "Not necessarily, out",
-     "sides again, out",
-     "different sides, out"
-    ]
-   },
-   {
-    "say": "Three are out, so in the exam you'd circle number two and move on. Here, let's see why it's right. q and p are both negative, and p is further from zero. So the absolute value of q is smaller than the absolute value of p. Number two is our answer.",
-    "at": [
-     "circle number two",
-     "Here, let's see",
-     "both negative",
-     "So the absolute",
-     "Number two is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Our second method, plugging in numbers. The givens only fix the order, not the sizes. So the trick is to try two extreme pictures. First, the negatives far from zero and the positives close to it. p is negative fifty, q negative forty, r one and s three. They're in order, so they obey the given.",
-    "at": [
-     "Our second",
-     "The givens only",
-     "So the trick",
-     "First, the negatives",
-     "p is negative fifty",
-     "They're in order"
-    ]
-   },
-   {
-    "say": "Number one, one smaller than fifty? Yes, it stays. Number two, forty smaller than fifty? Yes, it stays. Number three, fifty smaller than three? No, out. Number four, forty smaller than three? No, out.",
-    "voice": "calm",
-    "at": [
-     "Number one, one",
-     "Number two, forty",
-     "Number three, fifty",
-     "No, out",
-     "forty smaller than three"
-    ]
-   },
-   {
-    "say": "Now the opposite picture, the negatives close to zero and the positives far. p is negative three, q negative one, r forty and s fifty.",
-    "at": [
-     "Now the opposite",
-     "p is negative three"
-    ]
-   },
-   {
-    "say": "The second picture changes the relative distances across zero while keeping the given order. Let's see which surviving comparison it breaks. Number one, forty smaller than three? No, out. Number two, one smaller than three? Yes, and it worked in the first picture too. So number two survives both pictures. Number two.",
-    "voice": "calm",
-    "at": [
-     "Number one, forty",
-     "No, out",
-     "Number two, one",
-     "Yes, and it",
-     "survives both"
-    ]
-   },
-   {
-    "say": "So when the letters sit on both sides of zero, try one picture with the negatives far away, and one with the positives far away. Same side, you can compare. Different sides, you can't. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "the negatives far away",
-     "the positives far away",
-     "Same side, you"
-    ]
-   }
   ]
- ]
 }
