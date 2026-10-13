@@ -1,107 +1,107 @@
 {
- "videoId": "solve-q-r26-t17-03",
- "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "Given: negative four is smaller than x, which is smaller than negative two. Which of the following is necessarily true?",
-    "voice": "calm",
-    "at": [
-     "Given"
+  "videoId": "solve-q-r26-t17-03",
+  "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "Given: negative four is smaller than x, which is smaller than negative two. Which of the following is necessarily true?",
+        "voice": "calm",
+        "at": [
+          "Given"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So x is between negative four and negative two. The choices give ranges for six over x. [short pause] We'll solve it two ways, using reciprocals, and then calculating with the ends of the given range.",
+        "at": [
+          "between negative four and negative two",
+          "two. The choices",
+          "for six over",
+          "We'll solve it",
+          "using reciprocals, and",
+          "with the ends"
+        ]
+      },
+      {
+        "say": "[short pause] Six over x means six times one over x. Let's first find the range of one over x, the reciprocal. For numbers with the same sign, taking reciprocals reverses their order. Two is smaller than four, but one half is larger than one quarter.",
+        "at": [
+          "six times one",
+          "Let's first find",
+          "over x, the",
+          "For numbers with",
+          "the same sign",
+          "reverses their order",
+          "Two is smaller than four",
+          "but one half",
+          "than one quarter",
+          "quarter.",
+          "quarter."
+        ]
+      },
+      {
+        "say": "The order reverses for negative numbers too. Negative four is smaller than negative two. Their reciprocals are negative one quarter and negative one half, but negative one quarter is larger than negative one half.",
+        "at": [
+          "The order reverses",
+          "numbers too. Negative",
+          "Negative four is smaller",
+          "negative two. Their",
+          "quarter is larger"
+        ]
+      },
+      {
+        "say": "So one over x is between negative one half and negative one quarter. Write negative one half on the left, because it is the smaller value.",
+        "at": [
+          "one over x",
+          "is between negative",
+          "and negative one",
+          "negative one half on"
+        ]
+      },
+      {
+        "say": "Now multiply the whole range by positive six. That keeps the order. Six times negative one half is negative three. Six times negative one quarter is negative three halves. So six over x is between negative three and negative three halves. Choice number three is our answer.",
+        "at": [
+          "Now multiply the",
+          "keeps the order",
+          "Six times negative",
+          "is negative three",
+          "times negative one quarter",
+          "negative three halves",
+          "So six over",
+          "between negative three",
+          "Choice number three is our answer"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So x is between negative four and negative two, and the choices say where six over x is. [short pause] We'll solve it two ways, with reciprocals, and then plugging in the ends.",
-    "at": [
-     "between negative four and negative two",
-     "two, and the",
-     "where six over",
-     "We'll solve it",
-     "with reciprocals, and",
-     "in the ends"
+    [
+      {
+        "say": "[pause] Now calculate with the two ends of the range to find the new ends. x cannot equal these ends, because the given inequalities are strict. Six over negative four is negative three halves. Six over negative two is negative three.",
+        "at": [
+          "Now calculate with the two ends",
+          "Six over negative four",
+          "over negative two"
+        ]
+      },
+      {
+        "say": "So six over x lies between negative three halves and negative three. Put them in order, with the smaller value on the left: negative three, then negative three halves. Choice number three is our answer.",
+        "at": [
+          "So six over",
+          "between negative three",
+          "the smaller value",
+          "value on the",
+          "negative three, then",
+          "Choice number three"
+        ]
+      },
+      {
+        "say": "Now the traps. Choice number one gives the result of multiplying x by six instead of dividing six by x. Choice number two leaves out the negative signs. Choice number four gives the range for x over six instead of six over x. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "Now the traps",
+          "number one gives",
+          "number two leaves",
+          "number four gives",
+          "x over six"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Six over x is six times one over x, so let's start with one over x, the reciprocal. Here's the rule. For numbers with the same sign, the reciprocal flips the order. Two is smaller than four, but one half is bigger than one quarter. One over a bigger number is a smaller piece.",
-    "at": [
-     "six times one",
-     "so let's start",
-     "over x, the",
-     "the rule. For",
-     "the same sign",
-     "flips the order",
-     "Two is smaller than four",
-     "but one half",
-     "than one quarter",
-     "One over a",
-     "is a smaller"
-    ]
-   },
-   {
-    "say": "And on the negative side, the mirror image. Negative four is smaller than negative two, but negative one quarter is bigger than negative one half.",
-    "at": [
-     "And on the",
-     "the mirror image",
-     "Negative four is smaller",
-     "negative two, but",
-     "quarter is bigger"
-    ]
-   },
-   {
-    "say": "So here, one over x is between negative one half and negative one quarter. Negative one half is the smaller end.",
-    "at": [
-     "So here, one over x",
-     "is between negative",
-     "and negative one",
-     "Negative one half is"
-    ]
-   },
-   {
-    "say": "Times six, a positive number, keeps the order. Six times negative one half is negative three, and six times negative one quarter is negative three halves. So six over x is between negative three and negative three halves. Choice number three is our answer.",
-    "at": [
-     "Times six",
-     "keeps the order",
-     "Six times negative",
-     "is negative three",
-     "times negative one quarter",
-     "negative three halves",
-     "So six over",
-     "between negative three",
-     "Choice number three is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Now let's try plugging in the ends. Six over negative four is negative three halves, and six over negative two is negative three.",
-    "at": [
-     "Now let's",
-     "Six over negative four",
-     "over negative two"
-    ]
-   },
-   {
-    "say": "So six over x goes between negative three halves and negative three. The smaller one, negative three, goes on the left. Between negative three and negative three halves, choice number three.",
-    "at": [
-     "So six over",
-     "between negative three",
-     "The smaller one",
-     "goes on the",
-     "negative three and",
-     "choice number three."
-    ]
-   },
-   {
-    "say": "And the traps. Choice number one multiplied instead of dividing, choice number two lost the minus, and choice number four is upside down, x over six. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "And the traps",
-     "number one multiplied",
-     "number two lost",
-     "number four is",
-     "x over six"
-    ]
-   }
   ]
- ]
 }

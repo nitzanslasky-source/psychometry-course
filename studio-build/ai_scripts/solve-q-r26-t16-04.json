@@ -1,98 +1,98 @@
 {
- "videoId": "solve-q-r26-t16-04",
- "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "n is a positive odd number. The product n, times n plus two, times n plus four, is necessarily divisible by:",
-    "voice": "calm",
-    "at": [
-     "n is a positive"
+  "videoId": "solve-q-r26-t16-04",
+  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "n is a positive odd number. The product n, times n plus two, times n plus four, is necessarily divisible by:",
+        "voice": "calm",
+        "at": [
+          "n is a positive"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So n is positive and odd. n, n plus two and n plus four are three odd numbers in a row, and we multiply them. What number is the product always divisible by? [short pause] We'll start with one group and check the choices. If several choices remain, we'll choose another group that helps separate them. Then we'll explain why the answer always works.",
+        "at": [
+          "three odd numbers in a row",
+          "row, and we",
+          "start with one",
+          "and check the"
+        ]
+      },
+      {
+        "say": "[short pause] Start with the smallest group, one, three and five. One times three times five is fifteen. Fifteen is not divisible by forty-five, so choice number one is out.",
+        "at": [
+          "Start with the",
+          "group, one, three",
+          "One times three times five",
+          "forty-five, so",
+          "choice number one is out"
+        ]
+      },
+      {
+        "say": "But fifteen does divide by fifteen, five and three. So all three of those choices still work for this example. We need another group to tell them apart.",
+        "at": [
+          "fifteen does divide",
+          "divide by fifteen",
+          "Fifteen, five and",
+          "three of those",
+          "another group to"
+        ]
+      },
+      {
+        "say": "Let's test whether the product must divide by five. Choose three odd numbers in a row that do not include a multiple of five: seven, nine and eleven. Seven times nine is sixty-three, and sixty-three times eleven is six hundred ninety-three.",
+        "at": [
+          "Choose three odd",
+          "choose three odd",
+          "of five: seven",
+          "seven, nine and eleven",
+          "and sixty-three"
+        ]
+      },
+      {
+        "say": "Six hundred ninety-three ends in three, so it does not divide by five. That also means it does not divide by fifteen. Choice numbers two and four are out. Only three is left, and choice number three is our answer.",
+        "at": [
+          "Six hundred ninety",
+          "That also means",
+          "Choice numbers two",
+          "and four are out",
+          "three is left",
+          "Choice number three"
+        ]
+      },
+      {
+        "say": "Now careful with your choice of numbers. Three times five times seven is a hundred five. Five times seven times nine is three hundred fifteen. Both divide by fifteen because they include a five in the multiplication. They would not rule out fifteen. That's why we chose seven, nine and eleven for the second test.",
+        "at": [
+          "with your choice",
+          "times nine is",
+          "divide by fifteen",
+          "include a five",
+          "fifteen. That's why",
+          "test."
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So three odd numbers in a row, and what always divides their product. [short pause] We'll solve it two ways, the two cases, and then the reason.",
-    "at": [
-     "three odd numbers in a row",
-     "row, and what",
-     "two ways, the",
-     "and then the"
+    [
+      {
+        "say": "[pause] Why does the product always divide by three? Look at the odd multiples of three: three, nine, fifteen and twenty-one. They appear once in every three odd numbers. So any three odd numbers in a row include a multiple of three.",
+        "at": [
+          "Look at the",
+          "The odd multiples of three",
+          "They appear once",
+          "So any three",
+          "in a row"
+        ]
+      },
+      {
+        "say": "Seven, nine and eleven include nine. Eleven, thirteen and fifteen include fifteen. So one number in the multiplication divides by three, and the whole product divides by three too. Choice number three is our answer. Okay. I'll see you in the next question.",
+        "at": [
+          "Seven, nine and",
+          "Eleven, thirteen and",
+          "So one number",
+          "Choice number three"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start with the smallest case, one, three and five. One times three times five is fifteen. Forty-five doesn't divide fifteen, so choice number one is out.",
-    "at": [
-     "Let's start",
-     "case, one, three",
-     "One times three times five",
-     "Forty-five doesn't",
-     "choice number one is out"
-    ]
-   },
-   {
-    "say": "But careful, the smallest case only gives a candidate, the biggest number that could work. Fifteen, five and three all divide fifteen, so I need a second case.",
-    "at": [
-     "only gives a candidate",
-     "biggest number that",
-     "Fifteen, five and",
-     "divide fifteen, so",
-     "a second case"
-    ]
-   },
-   {
-    "say": "Which case? I want to test five, so I choose three odd numbers with no five inside, seven, nine and eleven. Seven times nine is sixty-three, and times eleven is six ninety-three.",
-    "at": [
-     "to test five",
-     "choose three odd",
-     "no five inside",
-     "seven, nine and eleven",
-     "and times eleven"
-    ]
-   },
-   {
-    "say": "It ends in three, so it doesn't divide by five, or by fifteen. Choice numbers two and four are out, and three is left. Choice number three.",
-    "at": [
-     "It ends in three",
-     "or by fifteen",
-     "Choice numbers two",
-     "and four are out",
-     "three is left",
-     "Choice number three"
-    ]
-   },
-   {
-    "say": "Now careful, the trap. Three, five and seven, a hundred five, or five, seven and nine, three fifteen, both divide by fifteen, because each has a five inside. So choose the second case on purpose, avoiding the factor you test.",
-    "at": [
-     "the trap",
-     "and nine, three",
-     "divide by fifteen",
-     "has a five",
-     "So choose the",
-     "on purpose, avoiding"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] And why is three always there? The odd multiples of three are three, nine, fifteen, twenty-one, one in every three odd numbers. So any three odd numbers in a row catch one of them.",
-    "at": [
-     "And why",
-     "The odd multiples of three",
-     "one in every",
-     "So any three",
-     "in a row"
-    ]
-   },
-   {
-    "say": "Seven, nine, eleven has nine. Eleven, thirteen, fifteen has fifteen. So the product always divides by three. Choice number three. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Seven, nine, eleven",
-     "Eleven, thirteen, fifteen",
-     "So the product",
-     "Choice number three"
-    ]
-   }
   ]
- ]
 }

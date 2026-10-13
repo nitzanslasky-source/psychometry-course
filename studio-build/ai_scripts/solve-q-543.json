@@ -1,0 +1,65 @@
+{
+ "videoId": "solve-q-543",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: diamond of three is equal to twenty-one. Which of the following cannot be the definition of the operation diamond?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "This time there's no definition. They took three, did the diamond, and got twenty-one. [short pause] We'll solve it by plugging in three into each choice.",
+    "at": [
+     "They took three",
+     "diamond, and got",
+     "solve it by",
+     "three into each"
+    ]
+   },
+   {
+    "say": "[short pause] The rule could be endless things. Seven x, for example, seven times three is twenty-one. So we look for the one that can not give twenty-one.",
+    "at": [
+     "Seven x, for example",
+     "So we look",
+     "one that can"
+    ]
+   },
+   {
+    "say": "Choice number one, three cubed minus six, twenty-seven minus six, twenty-one. It can be the rule, out. Choice number two, three times seven, twenty-one, out.",
+    "at": [
+     "number one, three",
+     "three cubed minus six",
+     "minus six, twenty-one",
+     "It can be the rule, out",
+     "out. Choice number",
+     "three times seven, twenty-one, out"
+    ]
+   },
+   {
+    "say": "Choice number four, eight times three minus three, twenty-four minus three, twenty-one, out.",
+    "at": [
+     "eight times three",
+     "twenty-four minus three",
+     "twenty-one, out"
+    ]
+   },
+   {
+    "say": "Choice number three, five times three plus five, fifteen plus five, twenty. Not twenty-one, so this can't be the definition. Choice number three is our answer. In the exam, the moment you find it, mark it and move on. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "number three, five",
+     "fifteen plus five",
+     "Not twenty-one, so",
+     "be the definition",
+     "Choice number three is our answer",
+     "In the exam",
+     "you find it",
+     "and move on"
+    ]
+   }
+  ]
+ ]
+}

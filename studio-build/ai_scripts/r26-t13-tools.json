@@ -13,7 +13,7 @@
     ]
    },
    {
-    "say": "Let's see it in numbers. Take negative six. Bars first, the absolute value of negative six is six, and six squared is thirty-six. Without the bars, negative six squared is also thirty-six.",
+    "say": "We'll compare two calculations using the same negative number: take its absolute value and then square it, or square the negative number directly. Let's see it in numbers. Take negative six. Bars first, the absolute value of negative six is six, and six squared is thirty-six. Without the bars, negative six squared is also thirty-six.",
     "at": [
      "Take negative six",
      "Bars first, the",
@@ -78,7 +78,7 @@
     ]
    },
    {
-    "say": "Start at three. Four steps to the left is negative one, and four steps to the right is seven. So x is anywhere between negative one and seven, not including them.",
+    "say": "Those two points are exactly four units from three. The strict inequality keeps x inside them, where the distance is smaller than four. Start at three. Four steps to the left is negative one, and four steps to the right is seven. So x is anywhere between negative one and seven, not including them.",
     "at": [
      "Start at three",
      "Four steps to",

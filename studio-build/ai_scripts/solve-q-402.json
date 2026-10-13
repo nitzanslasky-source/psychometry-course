@@ -35,7 +35,7 @@
     ]
    },
    {
-    "say": "So most numbers have an even number of divisors. When can the count be odd? Only when one divisor has no partner, because it pairs with itself. Sixteen. One times sixteen, two times eight, and four times four. Four is counted once, so sixteen has five divisors, one, two, four, eight and sixteen.",
+    "say": "A factor pair normally contributes two different divisors. If both factors are the same number, that divisor is counted only once. So most numbers have an even number of divisors. When can the count be odd? Only when one divisor has no partner, because it pairs with itself. Sixteen. One times sixteen, two times eight, and four times four. Four is counted once, so sixteen has five divisors, one, two, four, eight and sixteen.",
     "at": [
      "an even number of divisors",
      "When can the",
@@ -61,7 +61,7 @@
   ],
   [
    {
-    "say": "Now exactly three divisors. That's one pair, one times k, plus one middle divisor that pairs with itself. Call the middle divisor d, so d times d is k.",
+    "say": "Exactly three different divisors means the two outside divisors, one and k, plus one divisor in the middle. Now exactly three divisors. That's one pair, one times k, plus one middle divisor that pairs with itself. Call the middle divisor d, so d times d is k.",
     "at": [
      "exactly three divisors",
      "pair, one times",
@@ -91,7 +91,7 @@
     ]
    },
    {
-    "say": "So C, the square root of k, is that middle prime. And a prime has exactly two divisors, one and itself. So two, choice number two is our answer.",
+    "say": "We now know the type of number C is. The question asks how many divisors C has, rather than how many divisors k has. So C, the square root of k, is that middle prime. And a prime has exactly two divisors, one and itself. So two, choice number two is our answer.",
     "at": [
      "So C, the square root",
      "prime. And a",

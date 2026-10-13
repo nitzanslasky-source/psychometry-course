@@ -1,0 +1,93 @@
+{
+ "videoId": "solve-q-549",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "For every number t, diamond of t is equal to t squared. In the choices, x is zero or more. Which of the following is not always true?",
+    "voice": "calm",
+    "at": [
+     "For every number t"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The diamond is in every choice, two or three times. That's a lot of work. So a tip first. In the exam, skip it, solve the rest of the section, and come back at the end. [short pause] We'll solve it two ways, with algebra, and then plugging in numbers.",
+    "at": [
+     "in every choice",
+     "three times. That's",
+     "of work. So",
+     "first. In the",
+     "skip it",
+     "of the section",
+     "back at the",
+     "solve it two",
+     "algebra, and then"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with algebra. The diamond squares its input. Choice number one, six x squared is thirty-six x squared, and thirty-six times x squared is the same. True. Out.",
+    "at": [
+     "Let's start",
+     "The diamond squares",
+     "Choice number one",
+     "six x squared",
+     "x squared, and",
+     "is the same. True"
+    ]
+   },
+   {
+    "say": "Choice number two, root x squared is x, and x times x is x squared. True. Out. Choice number four, x minus seven and seven minus x are opposites, and squared they're equal. True. Out.",
+    "at": [
+     "root x squared",
+     "x squared. True. Out",
+     "number four, x",
+     "and seven minus",
+     "are opposites",
+     "they're equal. True. Out"
+    ]
+   },
+   {
+    "say": "Choice number three, five x squared is twenty-five x squared, but five times x squared is only five x squared. Not equal. Choice number three is our answer.",
+    "at": [
+     "number three, five",
+     "five x squared is",
+     "x squared, but",
+     "x squared is only",
+     "x squared. Not",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way, and it's faster. What's different? No opening at all, just numbers. x is one. Choice number one, diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six. Choice number two, one equals one. Choice number four, negative six and six squared are both thirty-six.",
+    "at": [
+     "Another way",
+     "No opening at",
+     "x is one",
+     "number one, diamond",
+     "is thirty-six, and",
+     "diamond of one",
+     "number two, one",
+     "number four, negative",
+     "six squared are"
+    ]
+   },
+   {
+    "say": "Choice number three, diamond of five is twenty-five, and five times diamond of one is five. Not equal, choice number three. One warning. Zero or one can make a false rule look true. If two choices had survived, we'd try a second number, like two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "number three, diamond",
+     "diamond of five is twenty-five",
+     "and five times",
+     "one is five",
+     "Not equal, choice number",
+     "Zero or one",
+     "a false rule",
+     "If two choices",
+     "we'd try a"
+    ]
+   }
+  ]
+ ]
+}

@@ -750,3 +750,20 @@ Topic-18 order: the camera lesson `digit-puzzles`, then q-512, q-513, q-514, r26
 | A middle column: 0 or 9 and the carry | q-r26-t18-01 | summary |
 | ABC − CBA = 99(A − C) | q-r26-t18-02 | summary |
 | The units digit and the size of a product | q-r26-t18-03 | summary |
+
+## Clarity style (learned from the 2026-10-12 Codex edits — teacher approved 2026-10-13: "easier for the students to understand, with easier English")
+
+Write every NEW script directly in this style (topics 13–18 got it as an overlay: `_codex_script_clarity_20261012.json`, applied by the topic hooks — never remove it or regenerate without it).
+
+- **Make every reasoning step explicit, in plain English.** No compressed shorthand.
+  - Before: "x minus w, x is bigger, so it's positive."
+  - After: "x minus w is positive because x is bigger than w."
+- **Say what is being compared, and say "because".** Name both sides ("bigger than w", "smaller than z"); give the reason as a full clause.
+- **Break algebra into the mini-steps a weak student needs.** E.g. squaring a product: "To square b, square the whole product, two times k. Two squared is four, so b squared is four k squared." Then "Divide the top and bottom by two."
+- **State the conditions that make a step legal** ("b is even and not zero, so … k cannot be zero either").
+- **Name the plug-in numbers and say why they fit** ("w is negative two, x is negative one… both negative numbers are before zero, just as the given says").
+- **Generalise a rule in one sentence before the example** ("A factor pair normally gives two different divisors. If both factors are the same number, that divisor is counted only once.").
+- **Adaptive counterexamples.** Start with easy numbers that fit the givens — not a hindsight-chosen "magic" example. Check the choices after each example. Try another easy example only if needed, and say which different feature it tests. Stop when one choice is left. Never conclude "always" from a few samples.
+- **Overlapping choices:** don't eliminate a broader description with an example that it also allows; use the general rule.
+- **Short sentences, everyday words,** each one easy to read aloud from the teleprompter. Keep the teacher's phrases (phrase bank) and all R1–R35 rules.
+- **Keep cue anchors** (`at` phrases) as natural parts of the new sentences.

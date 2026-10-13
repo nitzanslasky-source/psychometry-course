@@ -21,7 +21,7 @@
     ]
    },
    {
-    "say": "[short pause] Our first method, two cases. Big side means an open range, one part going to the right and one going to the left. So one option, the inside is bigger than eight. Take one off both sides, and x is bigger than seven.",
+    "say": "[short pause] We need a distance from zero greater than eight. The whole inside can be far enough to the right or far enough to the left. Our first method, two cases. Big side means an open range, one part going to the right and one going to the left. So one option, the inside is bigger than eight. Take one off both sides, and x is bigger than seven.",
     "at": [
      "Our first",
      "Big side means",
@@ -31,7 +31,7 @@
     ]
    },
    {
-    "say": "Or, the other option, the inside is smaller than negative eight. Now careful, the sign flips too, because now we're on the negative side. x plus one is smaller than negative eight, so x is smaller than negative nine.",
+    "say": "For the left-hand case, the inside must lie beyond negative eight, farther away from zero. Or, the other option, the inside is smaller than negative eight. Now careful, the sign flips too, because now we're on the negative side. x plus one is smaller than negative eight, so x is smaller than negative nine.",
     "at": [
      "the inside is smaller than negative eight",
      "Now careful, the",
@@ -62,7 +62,7 @@
   ],
   [
    {
-    "say": "[pause] Our second method, the number line. x plus one is the distance from negative one. More than eight steps from negative one means past seven on the right, or past negative nine on the left.",
+    "say": "[pause] This time the fixed point is negative one. We're looking for all the points more than eight units away from it. Our second method, the number line. x plus one is the distance from negative one. More than eight steps from negative one means past seven on the right, or past negative nine on the left.",
     "at": [
      "Our second",
      "the distance from negative one",

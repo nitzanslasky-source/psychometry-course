@@ -30,7 +30,7 @@
     ]
    },
    {
-    "say": "[short pause] Let's start step by step. A fifth of the class are basketball boys, and a fifth of a class has to be a whole number of kids. So the class is divisible by five. And remember the sign for five, the last digit is zero or five.",
+    "say": "[short pause] So what are we checking first? We need the basketball group to contain a whole number of students. Let's start step by step. A fifth of the class are basketball boys, and a fifth of a class has to be a whole number of kids. So the class is divisible by five. And remember the sign for five, the last digit is zero or five.",
     "at": [
      "Let's start",
      "A fifth of the class",
@@ -54,7 +54,7 @@
     ]
    },
    {
-    "say": "Now the second fraction. A third of the basketball boys play the guitar, so the basketball group has to divide by three. Thirty-five over five is seven basketball boys. A third of seven? Seven doesn't divide by three, so there's no such group. Choice number one is out.",
+    "say": "Passing the test for five is only the first condition. We also need to split that basketball group into three equal groups of students. Now the second fraction. A third of the basketball boys play the guitar, so the basketball group has to divide by three. Thirty-five over five is seven basketball boys. A third of seven? Seven doesn't divide by three, so there's no such group. Choice number one is out.",
     "at": [
      "A third of",
      "boys play the",
@@ -77,7 +77,7 @@
   ],
   [
    {
-    "say": "[pause] Another way is to build the class from the inside, from the smallest group out. Call the guitar players k, a whole number of kids. They're a third of the basketball boys, so there are three k basketball boys. And the basketball boys are a fifth of the class, so the class is five times three k, which is fifteen k.",
+    "say": "[pause] Let's work backwards from the guitar players to the whole class. At each step, we're asking how many copies of the smaller group make the next group. Another way is to build the class from the inside, from the smallest group out. Call the guitar players k, a whole number of kids. They're a third of the basketball boys, so there are three k basketball boys. And the basketball boys are a fifth of the class, so the class is five times three k, which is fifteen k.",
     "at": [
      "build the class",
      "inside, from the",
@@ -94,15 +94,19 @@
     ]
    },
    {
-    "say": "k is a whole number, so the class is always a multiple of fifteen. That's the rule. A fraction of a fraction, multiply the denominators. Let's see it in numbers. Half of a quarter of a group? Two times four is eight, so the group divides by eight, not just by four. With eight kids, a quarter is two, and half of that is one.",
+    "say": "k is a whole number, so the class is always a multiple of fifteen. Here both fractions have one on top, one fifth and one third. For nested fractions like these, multiply the denominators. That is not a rule for every fraction of a fraction. Let's see the same idea with half of a quarter of a group. Two times four is eight, so the group divides by eight, not just by four. With eight kids, a quarter is two, and half of that is one.",
     "at": [
      "k is a",
      "so the class",
      "a multiple of",
-     "A fraction of a fraction",
+     "both fractions have one on top",
+     "top, one fifth",
+     "For nested fractions",
      "multiply the denominators",
-     "it in numbers",
-     "Half of a quarter",
+     "That is not",
+     "for every fraction",
+     "fraction. Let's see",
+     "half of a quarter",
      "Two times four",
      "so the group",
      "eight, not just",

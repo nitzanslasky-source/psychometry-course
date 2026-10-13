@@ -1,92 +1,92 @@
 {
- "videoId": "solve-q-498",
- "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "Given: x to the power of eight is smaller than x to the power of seven. In which of the following ranges is x?",
-    "voice": "calm",
-    "at": [
-     "Given"
+  "videoId": "solve-q-498",
+  "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "Given: x to the power of eight is smaller than x to the power of seven. In which of the following ranges is x?",
+        "voice": "calm",
+        "at": [
+          "Given"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So the eighth power is smaller than the seventh power. We need to find x's range. [short pause] We'll solve it two ways, using the arrows, and then trying a number from the answer choices.",
+        "at": [
+          "the eighth power",
+          "the eighth power",
+          "solve it two",
+          "the arrows, and",
+          "from the answer"
+        ]
+      },
+      {
+        "say": "[short pause] Let's start with the signs. If x were negative, its eighth power would be positive and its seventh power would be negative. A positive result cannot be smaller than a negative result. So the negative ranges, choice numbers one and three, are out. x must be positive.",
+        "at": [
+          "signs. If x",
+          "If x were negative",
+          "its eighth power",
+          "power would be",
+          "its seventh power",
+          "A positive result",
+          "than a negative",
+          "the negative ranges",
+          "choice numbers one",
+          "and three, are"
+        ]
+      },
+      {
+        "say": "We increased the power from seven to eight, but the result became smaller. Above one, increasing the power makes the result larger: the arrow points right. That does not fit our given, so this range is out.",
+        "at": [
+          "Above one, increasing",
+          "the arrow points right",
+          "That does not",
+          "given, so this",
+          "range is out",
+          "range is out"
+        ]
+      },
+      {
+        "say": "Between zero and one, increasing the power makes the result smaller: the arrow points left. So the eighth power is smaller than the seventh, just as given. Choice number four is our answer.",
+        "at": [
+          "the arrow points left",
+          "So the eighth",
+          "So the eighth",
+          "eighth power is",
+          "just as given",
+          "Choice number four is our answer"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So it's about how powers behave, and the choices are ranges. [short pause] We'll solve it two ways, with the arrows, and then plugging in the answers.",
-    "at": [
-     "powers behave, and",
-     "the choices are ranges",
-     "solve it two",
-     "the arrows, and",
-     "in the answers"
+    [
+      {
+        "say": "[pause] Now let's try a number from each positive range. For choice number two, x is greater than one, so use two. Two to the eighth is two hundred fifty-six. Two to the seventh is a hundred twenty-eight. The eighth power is not smaller, so this choice is out.",
+        "at": [
+          "Now let's",
+          "positive range. For",
+          "number two, x",
+          "use two. Two",
+          "two hundred fifty",
+          "the seventh is",
+          "not smaller, so"
+        ]
+      },
+      {
+        "say": "For choice number four, use one half. Its eighth power is one over two hundred fifty-six, and its seventh power is one over a hundred twenty-eight. The eighth power is smaller, so this fits. Neither negative range can fit, because its even power is positive and its odd power is negative. Choice number four is our answer. Okay. I'll see you in the next question.",
+        "at": [
+          "number four, use",
+          "use one half",
+          "is one over",
+          "and its seventh",
+          "over a hundred",
+          "The eighth power",
+          "smaller, so this",
+          "negative range can",
+          "its even power",
+          "is positive and"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start with the arrows, and first the exception. If x were negative, x to the eighth, an even power, would be positive, and x to the seventh would be negative. A positive can't be smaller than a negative. So x is positive, and choice numbers one and three are out.",
-    "at": [
-     "arrows, and first",
-     "If x were negative",
-     "to the eighth",
-     "power, would be",
-     "x to the seventh",
-     "A positive can't",
-     "than a negative",
-     "is positive, and",
-     "choice numbers one",
-     "and three are out"
-    ]
-   },
-   {
-    "say": "Now the positive side. Above one, the arrow points right, a bigger power gives a bigger number, so x to the eighth would be bigger. Out.",
-    "at": [
-     "Now the positive side",
-     "the arrow points right",
-     "bigger power gives",
-     "number, so x",
-     "would be bigger. Out",
-     "would be bigger. Out"
-    ]
-   },
-   {
-    "say": "Positive fractions, the arrow points left, a bigger power gives a smaller number. So x to the eighth is smaller, just as given. Choice number four is our answer.",
-    "at": [
-     "the arrow points left",
-     "bigger power gives",
-     "number. So x",
-     "eighth is smaller",
-     "just as given",
-     "Choice number four is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Now let's try plugging in the answers. Choice number two, x bigger than one, so take two. Two to the eighth is two fifty-six, and two to the seventh is one twenty-eight. Two fifty-six isn't smaller. Out.",
-    "at": [
-     "Now let's",
-     "the answers. Choice",
-     "number two, x",
-     "take two",
-     "two fifty-six, and",
-     "the seventh is",
-     "isn't smaller. Out"
-    ]
-   },
-   {
-    "say": "Choice number four, a positive fraction, so take one half. One half to the eighth is one over two fifty-six, and to the seventh, one over one twenty-eight. One over two fifty-six is smaller, it works. And the negative ranges can't work, because an even power is positive. Choice number four. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "number four, a",
-     "take one half",
-     "is one over",
-     "and to the",
-     "over one twenty-eight",
-     "One over two fifty-six is",
-     "smaller, it works",
-     "negative ranges can't",
-     "an even power",
-     "is positive. Choice number four"
-    ]
-   }
   ]
- ]
 }

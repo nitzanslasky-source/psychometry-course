@@ -39,7 +39,7 @@
     ]
    },
    {
-    "say": "A sum is different. Same signs, the sizes add. Opposite signs, they cancel, so the result is smaller. And read it backwards, if the sizes cancelled, the signs were opposite.",
+    "say": "We're comparing the size of the whole sum with the separate sizes of the two numbers. Opposite signs can cancel inside that sum. A sum is different. Same signs, the sizes add. Opposite signs, they cancel, so the result is smaller. And read it backwards, if the sizes cancelled, the signs were opposite.",
     "at": [
      "A sum is different",
      "Same signs, the",
@@ -107,13 +107,13 @@
   ],
   [
    {
-    "say": "Bars on the small side, the inside is trapped in the middle. One band.",
+    "say": "Here the absolute value is less than the given positive boundary, so the whole inside must stay close enough to zero. Bars on the small side, the inside is trapped in the middle. One band.",
     "at": [
      "Bars on the small side"
     ]
    },
    {
-    "say": "Bars on the big side, two rays going outward.",
+    "say": "Here the absolute value is greater than the given positive boundary, so the whole inside must lie beyond the boundary on either side of zero. Bars on the big side, two rays going outward.",
     "at": [
      "Bars on the big side",
      "two rays"
@@ -149,7 +149,7 @@
     ]
    },
    {
-    "say": "And careful with a plus inside. x plus six is the distance from negative six.",
+    "say": "We're reading the absolute value of the whole expression as a distance. When the operation is addition, check which fixed point we measure from. And careful with a plus inside. x plus six is the distance from negative six.",
     "at": [
      "a plus inside",
      "x plus six"

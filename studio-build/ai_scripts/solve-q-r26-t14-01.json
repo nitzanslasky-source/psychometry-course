@@ -25,7 +25,7 @@
     ]
    },
    {
-    "say": "[short pause] Remember, to test a number, I divide it by the primes up to its square root, and no further. If none of them divides it, it's prime. Let's start with ninety-one. Nine squared is eighty-one, and ten squared is a hundred. So the root of ninety-one is between nine and ten, and I only try two, three, five and seven.",
+    "say": "[short pause] For each choice, we're looking for a divisor other than one and the number itself. Finding even one such divisor is enough to rule out a prime. Remember, to test a number, I divide it by the primes up to its square root, and no further. If none of them divides it, it's prime. Let's start with ninety-one. Nine squared is eighty-one, and ten squared is a hundred. So the root of ninety-one is between nine and ten, and I only try two, three, five and seven.",
     "at": [
      "Remember, to",
      "I divide it",
@@ -123,7 +123,7 @@
     ]
    },
    {
-    "say": "In the exam you'd circle the last one and move on. Here, let's see why a hundred thirteen really is prime. Ten squared is a hundred and eleven squared is a hundred twenty-one, so I try two, three, five and seven. It's odd. One plus one plus three is five, not a multiple of three. It ends in three. And seven times sixteen, seventy plus forty-two, is a hundred twelve. So a hundred thirteen leaves a remainder of one.",
+    "say": "Three choices are already out. For this explanation, let's finish the prime test on the remaining number. In the exam you'd circle the last one and move on. Here, let's see why a hundred thirteen really is prime. Ten squared is a hundred and eleven squared is a hundred twenty-one, so I try two, three, five and seven. It's odd. One plus one plus three is five, not a multiple of three. It ends in three. And seven times sixteen, seventy plus forty-two, is a hundred twelve. So a hundred thirteen leaves a remainder of one.",
     "at": [
      "circle the last one",
      "Here, let's see",
@@ -177,7 +177,7 @@
     ]
    },
    {
-    "say": "Seven times thirteen is ninety-one. Then I add seven each time. Ninety-one plus seven is ninety-eight, plus seven is a hundred five, then a hundred twelve, a hundred nineteen, a hundred twenty-six, and a hundred thirty-three.",
+    "say": "We'll use the multiples of seven to check which answer choices contain a seven as a factor. Seven times thirteen is ninety-one. Then I add seven each time. Ninety-one plus seven is ninety-eight, plus seven is a hundred five, then a hundred twelve, a hundred nineteen, a hundred twenty-six, and a hundred thirty-three.",
     "voice": "calm",
     "at": [
      "Seven times thirteen",

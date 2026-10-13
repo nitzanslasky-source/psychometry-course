@@ -35,7 +35,7 @@
     ]
    },
    {
-    "say": "And n is the same distance from zero, but it's a different number. So n is the negative one, n is minus m.",
+    "say": "Now m is positive. A number with absolute value m can be m or minus m, and the given has already ruled out n equal to m. And n is the same distance from zero, but it's a different number. So n is the negative one, n is minus m.",
     "at": [
      "And n is",
      "So n is the negative one"
@@ -90,7 +90,7 @@
     ]
    },
    {
-    "say": "And k? Four k is m, and m is four. So four k is four, and k is one.",
+    "say": "The third given links k to the m we chose. So k is determined by dividing that m by four. And k? Four k is m, and m is four. So four k is four, and k is one.",
     "voice": "calm",
     "at": [
      "Four k is",

@@ -36,7 +36,7 @@
     ]
    },
    {
-    "say": "Now the check. Why do we need it here? Because there's an x on both sides. When the other side is a plain number, you don't need to check. When it's a letter, you must.",
+    "say": "Solving a sign case gives us a candidate. We still need both sides of the original absolute-value equation to be equal for that candidate. Now the check. Why do we need it here? Because there's an x on both sides. When the other side is a plain number, you don't need to check. When it's a letter, you must.",
     "at": [
      "Why do we",
      "an x on both sides",
@@ -82,7 +82,7 @@
     ]
    },
    {
-    "say": "And what does that mean for the bars? If x is zero or positive, x plus four is positive, so the bars do nothing. I can just drop them. x plus four is three x, so four is two x, and four divided by two is two. x is two.",
+    "say": "Once x is zero or positive, the whole inside x plus four is positive too. We can use that sign information to simplify the original equation. And what does that mean for the bars? If x is zero or positive, x plus four is positive, so the bars do nothing. I can just drop them. x plus four is three x, so four is two x, and four divided by two is two. x is two.",
     "at": [
      "And what does",
      "the bars do nothing",

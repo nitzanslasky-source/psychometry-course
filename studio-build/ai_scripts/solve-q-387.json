@@ -49,7 +49,7 @@
     ]
    },
    {
-    "say": "And one more three? Eighty-one times three is already past two digits, and we still need one more three after that. So I don't even need the exact number. Three is too big.",
+    "say": "The condition is about the sixth power, but we can stop as soon as a smaller power has already become too big. And one more three? Eighty-one times three is already past two digits, and we still need one more three after that. So I don't even need the exact number. Three is too big.",
     "at": [
      "And one more three",
      "past two digits",
@@ -87,7 +87,7 @@
   ],
   [
    {
-    "say": "[pause] Each choice is nine x, so to get x back, I divide the choice by nine. Twenty-seven over nine is three, eighteen over nine is two, sixty-three over nine is seven, and forty-five over nine is five.",
+    "say": "[pause] Let's work backwards from the proposed result nine x to the value of x. Then we can test that x against the givens. Each choice is nine x, so to get x back, I divide the choice by nine. Twenty-seven over nine is three, eighteen over nine is two, sixty-three over nine is seven, and forty-five over nine is five.",
     "at": [
      "Each choice is nine x",
      "so to get",

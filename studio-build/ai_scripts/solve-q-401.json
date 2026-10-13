@@ -24,7 +24,7 @@
     ]
    },
    {
-    "say": "[short pause] Remember, a prime can't be broken into two smaller whole numbers. So what if m were a whole number? Then m squared is m times m. Let's see it in numbers. Three squared is nine, three times three, so it breaks, not prime. Four squared is sixteen, four times four, it breaks too.",
+    "say": "[short pause] The prime condition belongs to the square. Let's test whether an integer m could produce a prime when multiplied by itself. Remember, a prime can't be broken into two smaller whole numbers. So what if m were a whole number? Then m squared is m times m. Let's see it in numbers. Three squared is nine, three times three, so it breaks, not prime. Four squared is sixteen, four times four, it breaks too.",
     "at": [
      "Remember, a",
      "broken into two",
@@ -74,7 +74,7 @@
   ],
   [
    {
-    "say": "[pause] Here I don't pick m, I pick m squared, because the given is about m squared. m squared is a prime, so let's take the smallest prime, two.",
+    "say": "[pause] We must choose a value for the expression named in the given. Choosing a prime for m itself would not satisfy that condition. Here I don't pick m, I pick m squared, because the given is about m squared. m squared is a prime, so let's take the smallest prime, two.",
     "at": [
      "Here I",
      "I pick m",

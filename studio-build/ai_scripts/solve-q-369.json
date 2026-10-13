@@ -19,7 +19,7 @@
     ]
    },
    {
-    "say": "[short pause] Our first method, two bands. Two x minus one, in bars, is between seven and nine. So the inside is between seven and nine, or, on the negative side, between minus nine and minus seven.",
+    "say": "[short pause] The absolute value gives a distance from zero between seven and nine. The inside must therefore sit in one of two bands, one positive and one negative. Our first method, two bands. Two x minus one, in bars, is between seven and nine. So the inside is between seven and nine, or, on the negative side, between minus nine and minus seven.",
     "at": [
      "So the inside is",
      "on the negative side"
@@ -34,7 +34,7 @@
     ]
    },
    {
-    "say": "The positive band first. Add one to all three parts. Seven plus one is eight, and nine plus one is ten, so eight, two x, ten. Divide all three by two. Eight over two is four, and ten over two is five. So x is between four and five.",
+    "say": "Each band currently describes two x minus one. To turn it into a band for x, we'll undo the minus one, then divide by two. The positive band first. Add one to all three parts. Seven plus one is eight, and nine plus one is ten, so eight, two x, ten. Divide all three by two. Eight over two is four, and ten over two is five. So x is between four and five.",
     "voice": "calm",
     "at": [
      "The positive band",
@@ -95,7 +95,7 @@
     ]
    },
    {
-    "say": "Both have to hold. Between minus four and five, and above four, gives four to five. Between minus four and five, and below minus three, gives minus four to minus three. And minus four to minus three is choice number three.",
+    "say": "Both parts came from the same original double inequality, so x must satisfy them at the same time. We'll keep only the portions where their allowed ranges overlap. Both have to hold. Between minus four and five, and above four, gives four to five. Between minus four and five, and below minus three, gives minus four to minus three. And minus four to minus three is choice number three.",
     "at": [
      "Both have to hold",
      "Between minus four",
@@ -112,7 +112,7 @@
   ],
   [
    {
-    "say": "[pause] Our third method, plugging in the answers. If a range is possible, every number in it has to work. So I pick an easy number inside each range, and if it breaks the given, the range is out. Choice number one, three and a half. Two times it is seven, minus one, six. Six isn't bigger than seven, out.",
+    "say": "[pause] The choices describe whole ranges. One number inside a proposed range that fails the given is enough to show that range cannot be the answer. Our third method, plugging in the answers. If a range is possible, every number in it has to work. So I pick an easy number inside each range, and if it breaks the given, the range is out. Choice number one, three and a half. Two times it is seven, minus one, six. Six isn't bigger than seven, out.",
     "at": [
      "Our third",
      "If a range",

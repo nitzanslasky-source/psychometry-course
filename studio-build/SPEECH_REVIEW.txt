@@ -1,0 +1,19 @@
+LOCAL TEACHER-VOICE VIDEO REVIEW
+
+reading_to_video.py now runs independent clean-audio verification automatically after normal preparation. It uses the locally cached small.en model by default, with four seconds of context on both sides of each 24-second core window. Set READING_VERIFY_MODEL only when deliberately selecting another locally installed model. No AI voice or remote service is used by this check.
+
+speech_review.py checks short out-of-paragraph fragments, immediate in-paragraph repetitions, long gaps between recognized words, and source cuts falling inside word intervals. It does NOT automatically remove any of them: ASR can hallucinate words, mis-time words, and miss complete spoken explanations. Separate teaching methods, repeated math letters/numbers and valid paraphrases are not grounds for automatic deletion.
+
+Results are in each audio directory's speech-review.json. Times are CLEAN AUDIO times unless clock says original_source_audio. Add the video renderer's lead-in to compare clean times to MP4 times; the three-video pilot uses 0.55 s.
+
+Unresolved findings stop normal preparation from reporting ready. Outputs are preserved, not deleted. To review existing audio, run reading_to_video.py VIDEO_ID --verify-only. For a custom renderer, call speech_review.require_ready(audio_directory) before starting export. This gate does not automatically retrofit unrelated renderers.
+
+Review each finding with its full adjacent sentences, independent transcript, raw recording, mistake marks and waveform. Never infer a cut from one suspicious ASR word alone. Back up an existing video and edited audio/timing before changes; preserve raw WAVs, original fonts/layout, math and teaching method. Any audio cut must retime all paragraph starts/ends, cue times, pen chunks and character-alignment times, followed by new verification and full output validation.
+
+To retain a reviewed candidate, create speech-review-decisions.json in that audio directory:
+{"audio_sha256":"COPY FROM REPORT","manifest_sha256":"COPY FROM REPORT","decisions":[{"id":"FINDING ID","disposition":"keep","reason":"Specific source-backed explanation","reviewer":"Reviewer name"}]}
+Re-run verification. Decisions without a reason/reviewer, stale hashes, and remove/needs_review dispositions do not unlock export. After a real repair, regenerate the check on the new audio; do not simply approve an old finding as repaired. A resolved disposition is for a source-backed diagnostic resolution on the exact current files, not an instruction to cut.
+
+Existing report.json verify.missing_sentences / doubled_sentences / extra_runs remain diagnostic data. They are not proof of errors. Missing optional recaps/closing words, spoken paraphrases and the same statement taught in two separate methods require context. Automatic readiness here certifies only that this check's findings have been resolved; it is not a guarantee of perfect audio or a human listening pass.
+
+Test: python3 -m unittest test_speech_review.py (from studio-build).

@@ -94,13 +94,17 @@
   ],
   [
    {
-    "say": "The greatest common divisor takes each shared prime at its lower power. The greatest number that's guaranteed to divide, the LCM, takes every prime at its higher power.",
+    "say": "For a common divisor, we need factors that fit inside both numbers. For a common multiple, we need a number large enough to contain both sets of factors. The greatest common divisor is the largest number that divides both numbers. It takes each shared prime at its lower power. The least common multiple, the LCM, is the smallest positive number divisible by both numbers. It takes every prime at its higher power.",
     "at": [
      "The greatest common divisor",
-     "each shared prime",
-     "The greatest number",
-     "to divide, the",
-     "every prime at"
+     "the largest number",
+     "It takes each",
+     "at its lower",
+     "The least common",
+     "LCM, is the",
+     "number divisible by",
+     "It takes every",
+     "its higher power"
     ]
    },
    {
@@ -153,7 +157,7 @@
   ],
   [
    {
-    "say": "In a perfect square, every exponent is even. Twenty k a square? Twenty is two squared times five, so it needs one more five. k is five, and twenty times five is a hundred, ten squared.",
+    "say": "The extra multiplier must complete every unpaired prime factor. We choose the smallest multiplier that does that. In a perfect square, every exponent is even. Twenty k a square? Twenty is two squared times five, so it needs one more five. k is five, and twenty times five is a hundred, ten squared.",
     "at": [
      "every exponent is even",
      "Twenty k",

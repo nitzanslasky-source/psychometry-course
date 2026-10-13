@@ -1,117 +1,115 @@
 {
- "videoId": "solve-q-431",
- "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "Given: c is equal to four a, and a is equal to b over five. a, b and c are positive integers. Which claim is not necessarily true?",
-    "voice": "calm",
-    "at": [
-     "Given"
+  "videoId": "solve-q-431",
+  "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "Given: c is equal to four a, and a is equal to b over five. a, b and c are positive integers. Which claim is not necessarily true?",
+        "voice": "calm",
+        "at": [
+          "Given"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So the two givens tell us how a, b and c are related. We're looking for the claim that does not have to be true. That means we need a choice that can fail, even when both givens are satisfied. One example where it fails is enough. [short pause] We'll solve it two ways, writing everything with a, and then plugging in numbers.",
+        "at": [
+          "b and c",
+          "the claim that",
+          "to be true",
+          "where it fails",
+          "short pause] We'll",
+          "it two ways",
+          "with a, and",
+          "plugging in numbers"
+        ]
+      },
+      {
+        "say": "[short pause] Let's start with one letter, a. The first given says c is four a, which means four times a. a is a whole number, so c is always four times a whole number. That means c is always divisible by four. Choice number one is always true, so it's not what we're looking for. Out.",
+        "at": [
+          "Let's start with one letter",
+          "c is four a",
+          "c is four",
+          "whole number. That",
+          "by four. Choice",
+          "always true, so"
+        ]
+      },
+      {
+        "say": "The second given says a is b over five. Multiply both sides by five, and b is five a. So b is always five times a whole number, which means b always divides by five. Choice number two is always true, so it's out too.",
+        "at": [
+          "a is b over five",
+          "Multiply both sides by five",
+          "and b is",
+          "So b is",
+          "five. Choice number",
+          "out too"
+        ]
+      },
+      {
+        "say": "Now let's check a plus b. We already found that b is five a, so replace b with five a. That's a plus five a, which is six a. The sum always divides by six. But does it always divide by twelve, as choice number three claims? Only when a is even. If a is two, a plus b is twelve, and that works. But if a is one, a plus b is six, and six doesn't divide by twelve. So this claim can fail, and choice number three is our answer.",
+        "at": [
+          "That's a plus",
+          "That's a plus five a",
+          "which is six",
+          "The sum always",
+          "six. But does",
+          "Only when a",
+          "If a is",
+          "plus b is",
+          "that works. But",
+          "If a is one",
+          "six doesn't divide",
+          "So this claim",
+          "choice number three is our answer"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So three letters tied together, and we're looking for the claim that doesn't have to be true. One example where it fails is enough to show that. [short pause] We'll solve it two ways, writing everything with one letter, and then plugging in numbers.",
-    "at": [
-     "together, and we're",
-     "the claim that doesn't have to be true",
-     "to be true",
-     "where it fails",
-     "to show that",
-     "it two ways",
-     "with one letter",
-     "plugging in numbers"
+    [
+      {
+        "say": "In the exam you'd circle it and move on. Here, let's check the last choice too. It says a plus b plus c divides by ten. Replace b with five a and c with four a. a plus b plus c is a plus five a plus four a, which is ten a. That's always ten times a whole number, so it is always divisible by ten. This claim is true too.",
+        "at": [
+          "circle it and",
+          "Here, let's check",
+          "a plus b",
+          "a plus b plus c is",
+          "plus four a",
+          "Always divisible by ten"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "[pause] Now let's try plugging in numbers. Our numbers must satisfy both givens and be positive integers. Start with the condition a is b over five. We need that division to give a whole number, so let's choose b is five. Then a is one. Use that same a in the first given: c is four times one, which is four. So our values are a is one, b is five, and c is four.",
+        "at": [
+          "Now let's",
+          "Start with the",
+          "b over five",
+          "give a whole",
+          "let's choose b",
+          "let's choose b",
+          "b is five",
+          "c is four",
+          "which is four"
+        ]
+      },
+      {
+        "say": "Let's check the choices with these values. c is four, divisible by four, so the first claim works for this example. b is five, divisible by five, so the second claim works too. Now the third claim: a plus b is one plus five, which is six. Six is not divisible by twelve, so this claim fails. The question asks what is not necessarily true, and we have found a failure. We can stop at choice number three.",
+        "at": [
+          "c is four",
+          "b is five",
+          "a plus b is one",
+          "choice number three"
+        ]
+      },
+      {
+        "say": "So the third claim fails with numbers that satisfy both givens. That's exactly what not necessarily true means: the claim does not work for every allowed set of numbers. One failing example is all we need. Choice number three is our answer. Okay. I'll see you in the next question.",
+        "at": [
+          "fails with numbers",
+          "one failing example",
+          "Choice number three"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start with one letter, a. c is four a, so c is four times a whole number. It always divides by four, so choice number one is always true. Out.",
-    "at": [
-     "Let's start with one letter",
-     "c is four a",
-     "c is four a, so",
-     "whole number. It",
-     "by four, so",
-     "always true. Out"
-    ]
-   },
-   {
-    "say": "a is b over five. Multiply both sides by five, and b is five a. So b always divides by five. Choice number two is out too.",
-    "at": [
-     "a is b over five",
-     "Multiply both sides by five",
-     "and b is",
-     "So b always",
-     "five. Choice number",
-     "out too"
-    ]
-   },
-   {
-    "say": "Now a plus b. That's a plus five a, which is six a. Six a always divides by six, but by twelve? Only when a is even. If a is two, a plus b is twelve, and that works. But if a is one, a plus b is six, and six doesn't divide by twelve. So this claim can fail, and choice number three is our answer.",
-    "at": [
-     "Now a plus b",
-     "That's a plus five a",
-     "which is six",
-     "Six a always",
-     "six, but by",
-     "Only when a",
-     "If a is",
-     "plus b is",
-     "that works. But",
-     "If a is one",
-     "six doesn't divide",
-     "So this claim",
-     "choice number three is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "In the exam you'd circle it and move on. Here, the last one is a nice check of the idea. a plus b plus c is a plus five a plus four a, which is ten a. Always divisible by ten.",
-    "at": [
-     "circle it and",
-     "Here, the last",
-     "a nice check",
-     "a plus b plus c is",
-     "plus four a",
-     "Always divisible by ten"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Now let's try plugging in numbers. Start with the tricky condition, b over five has to be a whole number. So b divides by five, and the easiest is b is five. Then a is one, and c is four times one, which is four.",
-    "at": [
-     "Now let's",
-     "numbers. Start with",
-     "b over five has to be",
-     "be a whole",
-     "b divides by",
-     "the easiest is",
-     "b is five",
-     "c is four",
-     "which is four"
-    ]
-   },
-   {
-    "say": "c is four, divisible by four. b is five, divisible by five. a plus b is one plus five, which is six, not divisible by twelve. And a plus b plus c is ten, divisible by ten.",
-    "at": [
-     "c is four, divisible",
-     "b is five",
-     "a plus b is one plus five",
-     "not divisible by",
-     "And a plus",
-     "c is ten"
-    ]
-   },
-   {
-    "say": "So the third claim fails with these numbers, and one failing example is all we need. Choice number three. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "fails with these",
-     "one failing example",
-     "Choice number three"
-    ]
-   }
   ]
- ]
 }

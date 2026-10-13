@@ -1,78 +1,72 @@
 {
  "videoId": "solve-q-544",
- "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number one is our answer', the trap told BEFORE the answer as a warning, closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (algebra, 2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, emphasis through wording and punctuation only (2026-10-09, voice eleven_v4: the teacher found the [excited] tags 'just a bit too exaggerated', so no emotion tags), numbers and symbols written as words. PILOT v4 (2026-10-09, teacher feedback on the eleven_v4 pilots): self-contained examples only (no example from another question; no words the clone may say oddly, e.g. 'vases', 'neither'), routine calculation steps said plainly and short, warmer questioning tone only for the key ideas, varied sentence starts, at most one [matter-of-fact] tag per video and [calmly] right before the closing line (calmer ending); never [excited]. VOICE 6 (2026-10-09): eleven_multilingual_v2 again (v4 too high/lively) - no delivery tags; the calm ending is the wording ('Okay. I'll see you in the next question.') after a [pause] (sent to v2 as a <break>). No label words read out ('Notice:', 'Tip:', 'Key idea:') - said as speech. v4 SCRIPT (2026-10-09, teacher on voice 6: 'a bit dry'): warmth through wording - key ideas in their own short sentence after a beat ([short pause]/[pause] = <break> for v2), '...' for stress, at most one CAPITALISED word per video (tested: v2 stresses it - longer, higher, louder), small reactions ('see?', 'that's it', 'pretty simple, right?'), one '!' at the real aha moment; plain calculation lines unchanged; 360 said 'three sixty'. v5 (2026-10-09, teacher picked 'mix 3' + 'add stutters every so often and things that humanize it'): made with ai_narrate.py --segmented; \"voice\": \"calm\" on the question reading and the plain calculation lines (base voice elsewhere); humanizers about 2-4 a minute (a small restart 'the— the', 'um'/'uh' before a choice, 'okay so', 'wait, let me write that down... no, actually', a word self-correction), never in the question reading or in numbers the student copies, every slip corrected at once (tested: v2 says 'the— the', 'um', 'uh' as speech). v6 (2026-10-09, teacher on audio v5): NO single-word stutters ('the— the', 'a— a' sound like a computer glitch) - a restart repeats a short phrase ('of the— of the circle', 'the other— the other choices'); 'um'/'uh' are fine; no fake hesitation about writing ('wait, let me write that down... no, actually'). Statement endings must fall: ai_narrate.py --segmented measures every '.'/'!' ending and re-takes a part that rises. v7 (2026-10-10, teacher on FINAL): 'Is it adding five? No.' was said very weirdly -> its own part in the calm voice: 'So... is it just adding five? No, it's not.'; the closing 'Okay. I'll see you in the next question.' reuses the geometry video's approved take (same text, same base voice).",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
    {
-    "say": "The operation diamond is defined for every number x, so that diamond of two x is equal to x plus five. And they're asking, what's diamond of fourteen?",
+    "say": "The operation diamond is defined for every number x. Diamond of two x is equal to x plus five. Diamond of fourteen is equal to what?",
     "voice": "calm",
+    "at": [
+     "The operation diamond"
+    ],
     "pause": 0.5
    },
    {
-    "say": "So here's the key. An operation is JUST a rule. [short pause] You put a number in, and the rule tells you what comes out. That's it. [short pause] Now look closely. The diamond works on two x, not on x, right? What does this operation actually do? [short pause] So... is it just adding five? No, it's not. [short pause] It takes the number, divides it by two, and then adds five. Two x goes in, and x plus five comes out. So it's half of the number... plus five. Pretty simple, right?",
-    "voice": [
-     "base",
-     "base",
-     "base",
-     "calm",
-     "base"
-    ],
+    "say": "Look closely, the diamond works on two x, not on x. An operation on an expression. [short pause] We'll solve it two ways, matching the input, and then rewriting the rule.",
     "at": [
-     "<The operation diamond is defined",
-     "<And they're asking",
-     "is JUST a rule",
-     "That's it.",
-     "The diamond works on two x",
-     "What does this operation",
-     "divides it by two",
-     "Two x goes in",
-     "x plus five comes out",
-     "half of the number",
-     "Pretty simple"
+     "the diamond works on two x",
+     "x, not on",
+     "operation on an",
+     "solve it two",
+     "the input, and"
     ]
    },
    {
-    "say": "So fourteen is not x. Fourteen is the two x. [short pause] A lot of students put fourteen straight into x plus five. They get nineteen, and nineteen is waiting for them in the choices. That's the trap.",
+    "say": "[short pause] Let's start by matching the input. Fourteen is not x. Fourteen is two x. So two x is fourteen, and x is seven.",
     "at": [
-     "Fourteen is the two x",
-     "straight into x plus five",
-     "They get nineteen",
-     "That's the trap"
+     "Let's start",
+     "Fourteen is not x",
+     "is two x",
+     "So two x",
+     "and x is"
     ]
    },
    {
-    "say": "Two x is equal to fourteen. Divide by two, and x is equal to seven.",
-    "voice": "calm",
+    "say": "The rule says x plus five. Seven plus five is twelve. Choice number one is our answer.",
     "at": [
-     "Two x is equal to fourteen",
-     "x is equal to seven"
-    ]
-   },
-   {
-    "say": "Now the rule says x plus five. Seven plus five is twelve. [short pause] And look... that's exactly half of fourteen, plus five, just like we said. See?",
-    "voice": [
-     "calm",
-     "base"
-    ],
-    "at": [
-     "Now the rule says",
+     "The rule says",
      "Seven plus five",
-     "is twelve",
-     "half of fourteen"
+     "Choice number one is our answer"
     ]
    },
    {
-    "say": "So, um, number one is our answer.",
+    "say": "Now careful, the trap. Fourteen straight into x plus five gives nineteen, and it's waiting in the choices.",
     "at": [
-     "number one"
+     "the trap",
+     "five gives nineteen",
+     "waiting in the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way. What's different? We rewrite the rule so it works on any input directly. Two x goes in, and x plus five comes out. So the diamond halves its input, then adds five.",
+    "at": [
+     "Another way",
+     "We rewrite the",
+     "it works on",
+     "Two x goes in",
+     "So the diamond",
+     "input, then adds"
     ]
    },
    {
-    "say": "So whenever you see an operation like this, first ask yourself what it really does to the number. And only then, use the rule. [pause] Okay. I'll see you in the next question.",
+    "say": "Diamond of n is n over two, plus five. Fourteen over two is seven, and seven plus five is twelve. Choice number one. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "an operation like this",
-     "what it really does",
-     "use the rule"
+     "Diamond of n is",
+     "over two is",
+     "seven plus five is twelve",
+     "Choice number one"
     ]
    }
   ]

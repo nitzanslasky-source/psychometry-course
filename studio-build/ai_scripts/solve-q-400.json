@@ -37,7 +37,7 @@
     ]
    },
    {
-    "say": "Pairs. Two times five is ten. Two times seven is fourteen. Five times seven is thirty-five.",
+    "say": "These are the separate products we can make with two cards. We'll add the results only after finding all the allowed groups. Pairs. Two times five is ten. Two times seven is fourteen. Five times seven is thirty-five.",
     "voice": "calm",
     "at": [
      "Two times five is ten",
@@ -84,7 +84,7 @@
   ],
   [
    {
-    "say": "[pause] One of the products is all three cards together, two times five times seven, seventy. And the pairs add more on top of it. So the sum is more than seventy.",
+    "say": "[pause] For this approach, we only need a lower bound for the total. One allowed product is already seventy, and the other positive products add to it. One of the products is all three cards together, two times five times seven, seventy. And the pairs add more on top of it. So the sum is more than seventy.",
     "at": [
      "One of",
      "all three cards together",

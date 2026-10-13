@@ -57,7 +57,7 @@
   ],
   [
    {
-    "say": "So let's list the pairs that make forty-eight, the small number first. I'll write a, then b plus four, then b, then a plus b.",
+    "say": "For every factor pair, the smaller factor is a and the larger factor is b plus four. We have to subtract four from that larger factor before finding the requested sum. So let's list the pairs that make forty-eight, the small number first. I'll write a, then b plus four, then b, then a plus b.",
     "at": [
      "list the pairs",
      "forty-eight, the small",
@@ -127,7 +127,7 @@
   ],
   [
    {
-    "say": "[pause] Another way is to check seventeen directly. If a plus b is seventeen, then b is seventeen minus a. So b plus four is twenty-one minus a.",
+    "say": "[pause] Let's assume the proposed sum is seventeen and see whether any positive integers can also satisfy the original product equation. Another way is to check seventeen directly. If a plus b is seventeen, then b is seventeen minus a. So b plus four is twenty-one minus a.",
     "at": [
      "Another way",
      "seventeen directly. If",
@@ -148,7 +148,7 @@
     ]
    },
    {
-    "say": "Let's try each. a is one: one times twenty is twenty. a is two: two times nineteen is thirty-eight. a is three: three times eighteen is fifty-four.",
+    "say": "For each allowed a, the sum condition fixes b. We'll test a times the whole bracket b plus four, using twenty-one minus a for that bracket. Let's try each. a is one: one times twenty is twenty. a is two: two times nineteen is thirty-eight. a is three: three times eighteen is fifty-four.",
     "at": [
      "a is one",
      "a is two:",

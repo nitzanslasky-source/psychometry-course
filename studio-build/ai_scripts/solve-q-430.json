@@ -39,7 +39,7 @@
     ]
    },
    {
-    "say": "But here the range doesn't start at one. So I find the first and the last multiple, and count from one to the other. Last minus first, plus one. Why plus one? From three to seven there are five numbers, three, four, five, six, seven, and seven minus three is only four. Both ends count.",
+    "say": "For our three-digit numbers, we'll count the multipliers that produce numbers in the allowed range. Both endpoint multipliers need to be included. But here the range doesn't start at one. So I find the first and the last multiple, and count from one to the other. Last minus first, plus one. Why plus one? From three to seven there are five numbers, three, four, five, six, seven, and seven minus three is only four. Both ends count.",
     "at": [
      "But here the",
      "start at one",
@@ -55,7 +55,7 @@
     ]
    },
    {
-    "say": "Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, which is a hundred five. And fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty.",
+    "say": "Three-digit numbers start at a hundred and stop just below a thousand. Let's find the first and last multiples of fifteen inside that range. Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, which is a hundred five. And fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty.",
     "at": [
      "still two digits",
      "the first is fifteen times seven",
@@ -70,7 +70,7 @@
   ],
   [
    {
-    "say": "Seventeen, the same way. Seventeen times six is a hundred two, and seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right.",
+    "say": "We found sixty three-digit multiples of fifteen. Now we'll count the three-digit multiples of seventeen and compare the two counts. Seventeen, the same way. Seventeen times six is a hundred two, and seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right.",
     "at": [
      "Seventeen times six",
      "fifty-eight is nine",
@@ -81,7 +81,7 @@
     ]
    },
    {
-    "say": "Michal. Twenty-one times five is a hundred five, and twenty-one times forty-seven is nine hundred eighty-seven. Forty-seven minus five is forty-two, and plus one is forty-three. Twenty-six times four is a hundred four, and twenty-six times thirty-eight is nine hundred eighty-eight. Thirty-eight minus four is thirty-four, and plus one is thirty-five.",
+    "say": "For Michal's claim, we'll do the same count for twenty-one and for twenty-six. Michal. Twenty-one times five is a hundred five, and twenty-one times forty-seven is nine hundred eighty-seven. Forty-seven minus five is forty-two, and plus one is forty-three. Twenty-six times four is a hundred four, and twenty-six times thirty-eight is nine hundred eighty-eight. Thirty-eight minus four is thirty-four, and plus one is thirty-five.",
     "at": [
      "Twenty-one times five",
      "hundred five, and",
@@ -107,7 +107,7 @@
   ],
   [
    {
-    "say": "[pause] Another way, without counting at all. Every fifteenth number divides by fifteen, and every seventeenth divides by seventeen. One in every fifteen is more than one in every seventeen. So fifteen has more multiples, and Yoav is right.",
+    "say": "[pause] This time we're comparing how often the multiples appear within the same three-digit range. Another way, without counting at all. Every fifteenth number divides by fifteen, and every seventeenth divides by seventeen. One in every fifteen is more than one in every seventeen. So fifteen has more multiples, and Yoav is right.",
     "at": [
      "Another way",
      "Every fifteenth number",

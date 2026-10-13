@@ -1,76 +1,76 @@
 {
- "videoId": "consecutive-integers",
- "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   "Welcome back. Now consecutive numbers. Questions about them usually have more than one way in, so we'll learn three, and you pick the one that's easiest for you."
-  ],
-  [
-   {
-    "say": "Remember, consecutive numbers are integers in a row, each one more than the one before. Five, six, seven. Negatives count too, negative three, negative two, negative one. And consecutive even numbers, or odd numbers, go up by two, four, six, eight.",
-    "at": [
-     "integers in a",
-     "one more than",
-     "Five, six, seven",
-     "negative two, negative",
-     "And consecutive even",
-     "odd numbers, go",
-     "two, four, six"
+  "videoId": "consecutive-integers",
+  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      "Welcome back. Now let's look at numbers in a row. We can solve these questions three ways: write the numbers with one letter, plug in actual numbers, or use the gaps between them. Let's see how each way works."
+    ],
+    [
+      {
+        "say": "Consecutive integers are numbers in a row, with a gap of one between neighbors. Five, six and seven are consecutive. Negative three, negative two and negative one are consecutive too. Consecutive even numbers have a gap of two, like four, six and eight. Consecutive odd numbers also have a gap of two.",
+        "at": [
+          "in a row",
+          "one between neighbors",
+          "Five, six and",
+          "negative two and",
+          "are consecutive too",
+          "odd numbers also",
+          "two."
+        ]
+      },
+      {
+        "say": "The first way is to write the whole group with one letter. For three numbers, the middle one is usually easiest. Call it b. The number before it is b minus one, and the number after it is b plus one. So the group is b minus one, b, and b plus one. If b is eight, we get seven, eight and nine. If b is twenty, we get nineteen, twenty and twenty-one. For even or odd numbers in a row, use a gap of two instead: b minus two, b, and b plus two. With b eight, that gives six, eight and ten.",
+        "at": [
+          "The first way",
+          "write the whole",
+          "one letter. For",
+          "one is usually",
+          "is b minus",
+          "b plus one",
+          "If b is",
+          "seven, eight and",
+          "b is twenty",
+          "For even or",
+          "plus two. With",
+          "eight, that gives"
+        ]
+      },
+      {
+        "say": "The second way is plugging in numbers. Choose simple values that fit the question, such as one, two and three. First, put those values into the choices. We want the choices to give different answers. If two choices give the same answer, that trial cannot tell them apart. So choose other values.",
+        "at": [
+          "The second way",
+          "the question, such",
+          "First, put those",
+          "put those values",
+          "choices. We want",
+          "If two choices"
+        ]
+      },
+      {
+        "say": "The third way is to use the differences. A difference tells us the gap, but the order of subtraction decides the sign. Bigger minus smaller is positive, and smaller minus bigger is negative. Eight minus seven is one, but seven minus eight is negative one. For numbers two steps apart, nine minus seven is two, but seven minus nine is negative two. The gap is the same in either direction; the sign changes.",
+        "at": [
+          "The third way",
+          "Bigger minus smaller",
+          "and smaller minus",
+          "Eight minus seven",
+          "but seven minus",
+          "For numbers two",
+          "minus seven is two",
+          "seven minus nine",
+          "The gap is",
+          "in either direction",
+          "changes."
+        ]
+      },
+      {
+        "say": "And careful, positive numbers in a row do not have to start at one. Twenty-three, twenty-four and twenty-five also satisfy that condition. Choose values that fit the question, not values you think the question must have meant. [pause] Okay. I'll see you in the next video.",
+        "at": [
+          "positive numbers in",
+          "do not have",
+          "have to start",
+          "Twenty-three, twenty"
+        ]
+      }
     ]
-   },
-   {
-    "say": "The first way, one letter. Write all of them with one letter, and the middle one is usually the neatest. Three in a row are b minus one, b, and b plus one. If b is eight, that's seven, eight, nine, and if b is twenty, nineteen, twenty, twenty-one. For evens or odds, b minus two, b, and b plus two, so with b eight, six, eight, ten.",
-    "at": [
-     "The first way",
-     "Write all of",
-     "one letter, and",
-     "one is usually",
-     "Three in a row are",
-     "b plus one",
-     "If b is",
-     "seven, eight, nine",
-     "b is twenty",
-     "For evens or odds",
-     "plus two, so",
-     "eight, six, eight"
-    ]
-   },
-   {
-    "say": "The second way, plugging in numbers. Take the smallest legal numbers, like one, two, three, because they're the easiest to work with. But first check that the choices come out different with them. If two choices tie, take other numbers.",
-    "at": [
-     "The second way",
-     "the smallest legal numbers",
-     "the easiest to",
-     "But first check",
-     "choices come out",
-     "If two choices"
-    ]
-   },
-   {
-    "say": "The third way, the differences. Bigger minus smaller is one, and smaller minus bigger is negative one. Eight minus seven is one, but seven minus eight is negative one. And two steps apart, nine minus seven is two, and seven minus nine is negative two. The size is the same, but the sign isn't, so watch the sign.",
-    "at": [
-     "The third way",
-     "Bigger minus smaller",
-     "and smaller minus",
-     "Eight minus seven",
-     "but seven minus",
-     "And two steps",
-     "minus seven is two",
-     "seven minus nine",
-     "The size is",
-     "but the sign",
-     "watch the sign"
-    ]
-   },
-   {
-    "say": "And one trap. If they say the numbers are bigger than zero, it doesn't mean they start at one. They could be twenty-three, twenty-four, twenty-five. [pause] Okay. I'll see you in the next video.",
-    "at": [
-     "they say the",
-     "bigger than zero",
-     "mean they start",
-     "They could be"
-    ]
-   }
   ]
- ]
 }

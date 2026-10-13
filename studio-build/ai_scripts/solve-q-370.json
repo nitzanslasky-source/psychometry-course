@@ -19,7 +19,7 @@
    },
    "[short pause] Our first method, two cases. The bars act differently on each side of zero, so that's where we split.",
    {
-    "say": "Case one, x is zero or positive. Then the bars do nothing, the absolute value of x is just x. So x plus x is smaller than twelve. Two x is smaller than twelve, and twelve divided by two is six, so x is smaller than six.",
+    "say": "Within this first case, x is restricted to the zero-or-positive side. Let's find which values on that side satisfy the inequality. Case one, x is zero or positive. Then the bars do nothing, the absolute value of x is just x. So x plus x is smaller than twelve. Two x is smaller than twelve, and twelve divided by two is six, so x is smaller than six.",
     "at": [
      "Case one",
      "Then the bars",
@@ -54,7 +54,7 @@
     ]
    },
    {
-    "say": "Put the two cases together. Every negative number, and the positives below six. That's every number below six. On the number line, one ray going left from six, an open circle at six, and no stop at minus six.",
+    "say": "We need the combined set of values that work in either case, including zero, which works in the first case. Put the two cases together. Every negative number, and the positives below six. That's every number below six. On the number line, one ray going left from six, an open circle at six, and no stop at minus six.",
     "at": [
      "Put the two",
      "the positives below six",
@@ -90,7 +90,7 @@
     ]
    },
    {
-    "say": "Choice numbers one and three both stop at six on top. The difference is the bottom, minus six, or no limit at all. So I test a number below minus six, minus eight.",
+    "say": "The remaining choices agree about the upper boundary but disagree about the lower boundary. Let's test a value that only one of them includes. Choice numbers one and three both stop at six on top. The difference is the bottom, minus six, or no limit at all. So I test a number below minus six, minus eight.",
     "at": [
      "Numbers one",
      "and three both stop",

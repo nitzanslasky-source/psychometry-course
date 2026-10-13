@@ -25,7 +25,7 @@
     ]
    },
    {
-    "say": "[short pause] Let's start by testing the choices, rows of five first. Remember, the remainder is what's left after as many full rows as possible. Twenty-eight. Five rows of five are twenty-five, and twenty-eight minus twenty-five leaves three. We need four, so choice number one is out.",
+    "say": "[short pause] Each answer choice is a possible total number of stamps. For that total, let's make as many complete groups of five as we can, and count the stamps left over. Let's start by testing the choices, rows of five first. Remember, the remainder is what's left after as many full rows as possible. Twenty-eight. Five rows of five are twenty-five, and twenty-eight minus twenty-five leaves three. We need four, so choice number one is out.",
     "at": [
      "the choices, rows",
      "first. Remember, the",
@@ -47,7 +47,7 @@
     ]
    },
    {
-    "say": "Thirty-four. Six rows of five are thirty, and thirty-four minus thirty leaves four. That fits. Now rows of three. Eleven rows of three are thirty-three, and thirty-four minus thirty-three leaves one. That fits too.",
+    "say": "Now let's test thirty-four against both conditions. It needs to leave four when divided by five, and one when divided by three. Thirty-four. Six rows of five are thirty, and thirty-four minus thirty leaves four. That fits. Now rows of three. Eleven rows of three are thirty-three, and thirty-four minus thirty-three leaves one. That fits too.",
     "at": [
      "Six rows of five",
      "thirty, and thirty-four",
@@ -70,7 +70,7 @@
   ],
   [
    {
-    "say": "[pause] Another way is to list the numbers that leave four in rows of five. Start at four, and hop by five. Why hop by five? One more full row of five never changes what's left over. Fourteen is two rows and four, and nineteen is three rows and four. Four, nine, fourteen, nineteen, twenty-four, twenty-nine, thirty-four, thirty-nine.",
+    "say": "[pause] This time we'll build possible totals instead of testing a total straight away. Each total must contain complete groups of five, with four stamps left outside those groups. Another way is to list the numbers that leave four in rows of five. Start at four, and hop by five. Why hop by five? One more full row of five never changes what's left over. Fourteen is two rows and four, and nineteen is three rows and four. Four, nine, fourteen, nineteen, twenty-four, twenty-nine, thirty-four, thirty-nine.",
     "at": [
      "Another way",
      "Another way is to list",

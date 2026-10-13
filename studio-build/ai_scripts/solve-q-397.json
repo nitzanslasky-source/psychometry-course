@@ -34,7 +34,7 @@
     ]
    },
    {
-    "say": "So a is a prime squared, and a is less than two hundred. How big can the prime be? Fourteen squared is a hundred ninety-six, still below two hundred. Fifteen squared is two hundred twenty-five, too big. So the prime is fourteen or less.",
+    "say": "We're choosing the prime whose square will be a. The upper limit of two hundred applies to that square. So a is a prime squared, and a is less than two hundred. How big can the prime be? Fourteen squared is a hundred ninety-six, still below two hundred. Fifteen squared is two hundred twenty-five, too big. So the prime is fourteen or less.",
     "at": [
      "So a is",
      "squared, and a",
@@ -48,7 +48,7 @@
     ]
    },
    {
-    "say": "The primes up to fourteen are two, three, five, seven, eleven and thirteen. Six of them. Their squares are four, nine, twenty-five, forty-nine, a hundred twenty-one and a hundred sixty-nine, all below two hundred.",
+    "say": "Each allowed prime produces one different value of a, so counting the primes will count the possible values of a. The primes up to fourteen are two, three, five, seven, eleven and thirteen. Six of them. Their squares are four, nine, twenty-five, forty-nine, a hundred twenty-one and a hundred sixty-nine, all below two hundred.",
     "at": [
      "The primes up to fourteen",
      "eleven and thirteen",

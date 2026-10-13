@@ -1,0 +1,51 @@
+{
+ "videoId": "solve-q-545",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The operation diamond is defined for every integer x. Diamond of x is four x when x is odd, and x squared minus nine when x is even. Diamond of diamond of diamond of one is equal to what?",
+    "voice": "calm",
+    "at": [
+     "The operation diamond"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A rule with conditions, one for odd and one for even. [short pause] So before each step, we check the input. And three diamonds, so inside out.",
+    "at": [
+     "A rule with conditions",
+     "for odd and",
+     "we check the",
+     "three diamonds, so"
+    ]
+   },
+   {
+    "say": "[short pause] Diamond of one. One is odd, so the odd rule, four x. Four times one is four.",
+    "at": [
+     "Diamond of one",
+     "odd rule, four",
+     "Four times one"
+    ]
+   },
+   {
+    "say": "Now four goes in. Four is even, so switch rules. Four squared minus nine, sixteen minus nine, seven.",
+    "at": [
+     "Now four goes in",
+     "Four squared minus",
+     "minus nine, seven"
+    ]
+   },
+   {
+    "say": "Seven is odd again. Four times seven is twenty-eight. Choice number three is our answer. So check the parity at every step, because the output can switch sides. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Seven is odd again",
+     "Choice number three is our answer",
+     "So check the",
+     "every step, because",
+     "can switch sides"
+    ]
+   }
+  ]
+ ]
+}

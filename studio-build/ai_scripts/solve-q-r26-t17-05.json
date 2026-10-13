@@ -1,68 +1,68 @@
 {
- "videoId": "solve-q-r26-t17-05",
- "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "On a number line, point A is at negative seven, and point B is at five. Point C is between A and B, and its distance from A is one third of the distance A B. What number is at point C?",
-    "voice": "calm",
-    "at": [
-     "On a number line"
+  "videoId": "solve-q-r26-t17-05",
+  "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "On a number line, point A is at negative seven, and point B is at five. Point C is between A and B, and its distance from A is one third of the distance A B. What number is at point C?",
+        "voice": "calm",
+        "at": [
+          "On a number line"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So we know A and B, and C is one third of the distance from A towards B. We need the number at C. [short pause] We'll solve it two ways, finding that distance, and then checking the answer choices.",
+        "at": [
+          "one third of",
+          "two ways, finding",
+          "and then checking"
+        ]
+      },
+      {
+        "say": "[short pause] Let's start with the distance from A to B. Subtract the smaller number from the larger: five minus negative seven. That is five plus seven, which is twelve.",
+        "at": [
+          "distance from A",
+          "Subtract the smaller",
+          "negative seven. That"
+        ]
+      },
+      {
+        "say": "C is one third of the way from A to B. One third of twelve is four, so C is four units from A. A is at negative seven, and B is to its right. Start at negative seven and move four units right. Negative seven plus four is negative three. Choice number three is our answer.",
+        "at": [
+          "C is one",
+          "of the way from A",
+          "to B. One",
+          "four, so C",
+          "move four units",
+          "Negative seven plus",
+          "Choice number three is our answer"
+        ]
+      },
+      {
+        "say": "Careful, four is the distance from A, not the number at C. Negative one is the midpoint: add negative seven and five, then divide their sum by two. But we need one third of the way from A, not halfway.",
+        "at": [
+          "four is the",
+          "Four is the",
+          "C. Negative one",
+          "midpoint: add negative",
+          "then divide their"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So two points, and a point a third of the way from A. [short pause] We'll solve it two ways, with the distance, and then plugging in the answers.",
-    "at": [
-     "a third of the way",
-     "two ways, with",
-     "and then plugging"
+    [
+      {
+        "say": "[pause] Now let's check the answer choices. A to B is twelve units, so C must be one third of that, four units from A. Choice number one gives one, which is eight units from negative seven. That's too far. Negative one is six units from A, so it's out too. Negative three is four units from A and is between A and B. It fits. Choice number three is our answer. Okay. I'll see you in the next question.",
+        "at": [
+          "Now let's",
+          "Choice number one",
+          "Choice number one",
+          "one gives one",
+          "eight units from",
+          "six units from",
+          "four units from A and"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start with the distance from A to B. Bigger minus smaller, five minus negative seven, which is twelve.",
-    "at": [
-     "distance from A",
-     "Bigger minus smaller",
-     "negative seven, which"
-    ]
-   },
-   {
-    "say": "C is a third of the way from A. A third of twelve is four. So start at A and walk four steps right. Negative seven plus four is negative three. Choice number three is our answer.",
-    "at": [
-     "C is a third",
-     "of the way from A",
-     "A third of twelve",
-     "four. So start",
-     "walk four steps",
-     "Negative seven",
-     "Choice number three is our answer"
-    ]
-   },
-   {
-    "say": "Now careful, the traps. Four is the distance, not the point. And negative one is the midpoint, negative seven plus five, over two. Not what they asked.",
-    "at": [
-     "the traps",
-     "Four is the",
-     "And negative one",
-     "midpoint, negative seven",
-     "over two. Not"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Now let's try plugging in the answers. The right point is four away from A. One is eight away, out. Negative one is six away, out. Negative three is four away. Choice number three. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Now let's",
-     "The right point",
-     "away from A",
-     "One is eight away",
-     "eight away, out",
-     "six away, out",
-     "four away. Choice number three"
-    ]
-   }
   ]
- ]
 }

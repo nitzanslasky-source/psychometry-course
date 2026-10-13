@@ -20,7 +20,7 @@
     ]
    },
    {
-    "say": "[short pause] Our first method, the algebra. The inside is trapped, so I take the seven, and I put negative seven on the other side. So negative seven is smaller than x plus three, which is smaller than seven.",
+    "say": "[short pause] The absolute value must be less than seven. So the whole inside must stay less than seven units from zero, on either side. Our first method, the algebra. The inside is trapped, so I take the seven, and I put negative seven on the other side. So negative seven is smaller than x plus three, which is smaller than seven.",
     "at": [
      "Our first",
      "I take the seven",
@@ -55,7 +55,7 @@
   ],
   [
    {
-    "say": "[pause] Our second method, the number line. x plus three is the distance from negative three. So x is less than seven steps away from negative three.",
+    "say": "[pause] The bars around x plus three mean the distance between x and negative three. We're looking for points less than seven units from that fixed point. Our second method, the number line. x plus three is the distance from negative three. So x is less than seven steps away from negative three.",
     "at": [
      "Our second",
      "x plus three is the",
@@ -64,7 +64,7 @@
     ]
    },
    {
-    "say": "Seven steps to the left, negative ten. Seven steps to the right, four. One band in the middle, from negative ten to four. Three is inside it. Five and eleven are past four, and negative twenty-five is way past negative ten, so they're outside. Three, number three.",
+    "say": "Let's find the two boundary points, then keep the points between them because the distance must be less than seven. Seven steps to the left, negative ten. Seven steps to the right, four. One band in the middle, from negative ten to four. Three is inside it. Five and eleven are past four, and negative twenty-five is way past negative ten, so they're outside. Three, number three.",
     "at": [
      "Seven steps to the left",
      "Seven steps to the right",

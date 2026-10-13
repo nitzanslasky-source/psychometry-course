@@ -1,116 +1,116 @@
 {
- "videoId": "r26-t16-summary",
- "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   "Before you practice, here's a quick summary of the topic. Signs, numbers in a row, and even and odd."
-  ],
-  [
-   {
-    "say": "Multiplying and dividing, same signs give plus, and different signs give minus. Negative two times negative five is ten, and negative two times five is negative ten. With many factors, count the minuses.",
-    "at": [
-     "same signs give plus",
-     "different signs give",
-     "Negative two times",
-     "is ten, and",
-     "times five is",
-     "With many factors",
-     "count the minuses"
+  "videoId": "r26-t16-summary",
+  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      "Before you practice, let's review the main rules: positive and negative numbers, numbers in a row, and even and odd numbers."
+    ],
+    [
+      {
+        "say": "When we multiply or divide two numbers, the same signs give a positive result. Different signs give a negative result. Negative two times negative five is ten. Negative two times five is negative ten. When we multiply many numbers, count how many are negative to find the result's sign.",
+        "at": [
+          "same signs give",
+          "different signs give",
+          "Negative two times",
+          "is ten. Negative",
+          "times five is",
+          "When we multiply many",
+          "count how many"
+        ]
+      },
+      {
+        "say": "When we add a positive number and a negative number, compare their sizes without the signs. The larger size decides the result's sign. Negative nine plus four is negative five. Also, a larger number minus a smaller number gives a positive result, even if both are negative. Negative three minus negative eight is five.",
+        "at": [
+          "The larger size",
+          "Negative nine plus",
+          "negative five. Also",
+          "number minus a",
+          "even if both",
+          "Negative three minus"
+        ]
+      },
+      {
+        "say": "An even power gives a result that is positive or zero. An odd power keeps the number's sign. And minus x means the opposite of x, so it is positive when x is negative.",
+        "at": [
+          "An even power",
+          "zero. An odd",
+          "the number's sign",
+          "is positive when"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "For numbers in a row, use one letter for the middle and write the other numbers around it. Even numbers in a row, or odd numbers in a row, have a gap of two.",
+        "at": [
+          "One letter",
+          "and write the"
+        ]
+      },
+      {
+        "say": "For equally spaced numbers, the middle is their average. To find their sum, multiply that middle value by how many numbers there are. From sixteen to twenty, there are five numbers. The middle is eighteen, so their sum is five times eighteen, which is ninety.",
+        "at": [
+          "To find their sum",
+          "Sixteen to twenty",
+          "numbers. The middle"
+        ]
+      },
+      {
+        "say": "From integer a to integer b, including both ends, there are b minus a plus one integers. If a and b are neighboring integers, b squared minus a squared equals a plus b.",
+        "at": [
+          "From integer a",
+          "are b minus",
+          "and b are",
+          "minus a squared"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "To check whether a sum is even or odd, count its odd numbers. The even numbers do not change the result's type. For a product, one even number is enough to make the whole product even.",
+        "at": [
+          "To check whether a sum",
+          "For a product",
+          "number is enough"
+        ]
+      },
+      {
+        "say": "An odd integer divided by a nonzero even integer cannot give an integer. Positive whole-number powers keep a number even or odd. So when that is all we need to check, we can check the numbers without those powers.",
+        "at": [
+          "odd integer divided",
+          "cannot give an",
+          "Positive whole-number powers",
+          "keep a number",
+          "a number even"
+        ]
+      },
+      {
+        "say": "When plugging in numbers, start with one easy example that fits every given. We do not need to know in advance how many choices it will rule out. Check the choices straight away, and cross out each one that fails. If only one choice remains, stop. If several remain, choose another easy example with a different useful feature, and explain why that feature may help. Do not do a fixed number of tests just because there is division. And if examples cannot separate overlapping descriptions, use the rule to decide which description is most precise.",
+        "at": [
+          "start with one easy example",
+          "If only one choice remains",
+          "If several remain"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "Now the rules for products of numbers in a row. Multiply two integers in a row, and their product is divisible by two. For three in a row, the product is divisible by six. For four in a row, it is divisible by twenty-four. And the product of two even numbers in a row is divisible by eight.",
+        "at": [
+          "Multiply two integers",
+          "product is divisible by six",
+          "For four in",
+          "two even numbers"
+        ]
+      },
+      {
+        "say": "To check division by a power of two, count how many twos are in the multiplication. For a divisor that must always work, the smallest allowed example can rule out choices immediately. If several divisors still fit, try another allowed example that does not have one of those extra factors. Stop once only one choice remains. [pause] That's it. Now go practice, and I'll see you in the next video.",
+        "at": [
+          "count how many twos",
+          "If several divisors still fit",
+          "Stop once only one choice remains"
+        ]
+      }
     ]
-   },
-   {
-    "say": "Adding with mixed signs, the bigger size wins. Negative nine plus four is negative five. And bigger minus smaller is positive, even with negatives. Negative three minus negative eight is five.",
-    "at": [
-     "the bigger size wins",
-     "Negative nine plus",
-     "negative five. And",
-     "bigger minus smaller",
-     "even with negatives",
-     "Negative three minus"
-    ]
-   },
-   {
-    "say": "An even power is never negative, an odd power keeps the sign, and minus x is positive when x is negative.",
-    "at": [
-     "An even power",
-     "negative, an odd",
-     "the sign, and",
-     "is positive when"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Numbers in a row? One letter, around the middle. Evens or odds go up by two.",
-    "at": [
-     "One letter",
-     "Evens or odds"
-    ]
-   },
-   {
-    "say": "The sum is the count times the middle. Sixteen to twenty is five numbers, and five times eighteen is ninety.",
-    "at": [
-     "the count times the middle",
-     "Sixteen to twenty",
-     "numbers, and five"
-    ]
-   },
-   {
-    "say": "From a to b there are b minus a plus one integers. And for neighbors, b squared minus a squared is a plus b.",
-    "at": [
-     "From a to b",
-     "are b minus",
-     "And for neighbors",
-     "minus a squared"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "In a sum, only the odd terms count. In a product, one even factor makes it even.",
-    "at": [
-     "only the odd terms count",
-     "In a product",
-     "factor makes it"
-    ]
-   },
-   {
-    "say": "Odd over even is always a fraction, and powers never change parity, so you may drop them.",
-    "at": [
-     "Odd over even",
-     "a fraction, and",
-     "change parity, so"
-    ]
-   },
-   {
-    "say": "Plugging in? One number for each case, and for division, three close ones.",
-    "at": [
-     "One number for each case",
-     "and for division"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Two in a row divide by two, three by six, and four by twenty-four. Two consecutive evens divide by eight.",
-    "at": [
-     "Two in a row",
-     "by two, three",
-     "and four by",
-     "Two consecutive evens"
-    ]
-   },
-   {
-    "say": "Is it a whole number? Count the twos. And the smallest case is only a candidate, so test a second case that avoids the factor. [pause] That's it. Now go practice, and I'll see you in the next video.",
-    "at": [
-     "Is it a",
-     "Count the twos",
-     "And the smallest",
-     "only a candidate",
-     "a second case",
-     "go practice, and"
-    ]
-   }
   ]
- ]
 }

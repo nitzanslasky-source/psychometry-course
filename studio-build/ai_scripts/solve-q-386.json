@@ -43,7 +43,7 @@
     ]
    },
    {
-    "say": "Now x. Counting down from forty, the first prime is thirty-seven, and the second is thirty-one. Those are the two primes between x and forty. So the next prime down, twenty-nine, has to stay out.",
+    "say": "To have exactly two primes in the interval, x must include the first two primes below forty but keep the next one outside the interval. Now x. Counting down from forty, the first prime is thirty-seven, and the second is thirty-one. Those are the two primes between x and forty. So the next prime down, twenty-nine, has to stay out.",
     "at": [
      "Counting down from forty",
      "first prime is",
@@ -80,7 +80,7 @@
     ]
    },
    {
-    "say": "Now y, the same way upwards. The first two primes above forty are forty-one and forty-three, so forty-seven has to stay out. y has to come after forty-three, and it can't go past forty-seven. So y is forty-four, forty-five, forty-six or forty-seven. And forty-seven is prime, so it's not allowed anyway.",
+    "say": "For y, we'll make the same boundary check on the other side of forty. We need exactly two primes between forty and our endpoint. Now y, the same way upwards. The first two primes above forty are forty-one and forty-three, so forty-seven has to stay out. y has to come after forty-three, and it can't go past forty-seven. So y is forty-four, forty-five, forty-six or forty-seven. And forty-seven is prime, so it's not allowed anyway.",
     "at": [
      "Now y, the",
      "The first two primes above forty",

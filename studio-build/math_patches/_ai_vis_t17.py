@@ -433,6 +433,12 @@ video('solve-q-493', 'solution', qid='q-493', slides=[
 ar = ZL('ar', -2, 2, [('r4', [('arrow', 1.2, 1.85, '')]), ('r3', [('arrow', 0.8, 0.15, '')]),
                        ('r2', [('arrow', -0.8, -0.15, 'odd')]), ('r1', [('arrow', -1.2, -1.85, 'odd')])], w=900)
 c1 = I('c1', 'Right $=$ bigger $\\quad$ Left $=$ smaller', size=34)
+# Codex clarity pass 2026-10-12. This is a bridge to topics 8-11, not a second powers course.
+# Narration and reveal phrases below are the graphics handoff; see codex-clarity-handoff-2026-10-12.json.
+cb1 = I('cb1', 'Known: calculate powers and roots', size=26)
+cb2 = I('cb2', 'Here: compare without calculating', size=26)
+cb3 = I('cb3', 'Range first, then sign, then compare', size=26)
+cb_line = NL('cb_line', ar['line']['v']['svg'], w=900)
 d1 = I('d1', '$2<4<8 \\qquad 3<9<27$', size=40, hand='2 < 4 < 8        3 < 9 < 27')
 d2 = I('d2', '$1<x$: $\\ \\sqrt x<x<x^2<x^3$', size=40, hand='1 < x :    √{x} < x < x^2 < x^3')
 e1 = I('e1', '$\\frac12>\\frac14 \\qquad \\frac13>\\frac19>\\frac1{27}$', size=40, hand='{1/2} > {1/4}        {1/3} > {1/9} > {1/27}')
@@ -453,10 +459,20 @@ video('powers-on-number-line', 'lesson', slides=[
       L("Welcome back. Last time we saw the four ranges, and what multiplying and dividing do in each one. Now, what powers "
         "do in each range. The method looks a little strange at first, but practice it a bit, and it becomes one of your "
         "fastest tools.")),
+    S('From calculation to comparison',
+      L("Draw the number line with its four ranges. Below negative one, negative fractions, positive fractions, and above one.",
+        show(cb_line, 'Draw the number line')),
+      L("In the earlier powers and roots topics, we learned how to calculate these expressions. "
+        "Here the question is different. We want to know which result is bigger, without calculating every result. "
+        "With letters, we may not even know the number itself.",
+        show(cb1, 'we learned how to calculate'), show(cb2, 'which result is bigger')),
+      L("So first we place the original number in its range. Then we check the sign of each result. "
+        "For example, an even power of a negative number is positive. That result already beats every negative result. "
+        "For results that keep the same sign, the arrows help us compare their sizes.",
+        show(cb3, 'first we place the original number'))),
     S('The arrows',
-      L("Draw the number line with its four ranges. Below negative one, negative fractions, positive fractions, and above "
-        "one. Each range gets an arrow, and the arrow shows where a number moves when the power gets bigger.",
-        show(ar['line'], 'Draw the number line')),
+      L("Now add an arrow to each range on the number line. The arrow shows where a number moves when the power gets bigger.",
+        show(ar['line'], 'each range on the number line')),
       L("Above one, the arrow points right. Positive fractions, left.", show(ar['r4'], 'Above one'), show(ar['r3'], 'Positive fractions')),
       L("Negative fractions, right, and below negative one, left. On the negative side, only for odd powers.",
         show(ar['r2'], 'Negative fractions, right'), show(ar['r1'], 'below negative one, left')),
@@ -775,23 +791,24 @@ video('solve-q-499', 'solution', qid='q-499', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ q-500 (Hebrew Q6)
-# NEW: a root does the opposite of a power (a positive fraction gets bigger, still below 1); the swap - a number that
-# sits in every choice the same way may be swapped for a small one (6 -> 2), never otherwise.
-# REMINDER: x / ÷ a fraction, the arrows, hierarchy (camera lesson, lesson).  Hebrew: understanding, a smart plug-in.
+# A clean-root plug-in keeps the original constants. A shared constant does not license changing the question.
+# REMINDER: x / ÷ a fraction, the arrows, hierarchy (camera lesson, lesson).
 x1 = I('x1', '(3) $0<t^6<t$', hand='(3)   0 < t^6 < t')
 x2 = I('x2', '(4) $t<\\sqrt[6]{t}<1$', hand='(4)   t < t^{1/6} < 1')
 x3 = I('x3', '(1) $6t<6$', hand='(1)   6t < 6')
 x4 = I('x4', '(2) $\\frac6t>6$ ✓', hand='(2)   {6/t} > 6   ✓')
-y1 = I('y1', 'The $6$ is in every choice: $\\ $swap it for $2$', size=28, col=1)
-y2 = I('y2', '$2t,\\ \\ \\frac2t,\\ \\ t^2,\\ \\ \\sqrt t$', hand='2t,     {2/t},     t^2,     √{t}')
-y3 = I('y3', '$t=\\frac19$: $\\ \\frac29,\\ \\ 18,\\ \\ \\frac1{81},\\ \\ \\frac13$', hand='t = {1/9} :    {2/9},    18,    {1/81},    {1/3}')
-y4 = I('y4', 'Only when the same number is in every choice', size=28, col=1)
+y1 = I('y1', '$t=\\frac1{64}$: a clean sixth root', size=28, col=1)
+y2 = I('y2', '(1) $6t=\\frac6{64}=\\frac3{32}<1$', hand='(1)   6t = {6/64} = {3/32} < 1')
+y3 = I('y3', '(2) $\\frac6t=6\\cdot64=384$', hand='(2)   {6/t} = 6·64 = 384')
+y4 = I('y4', '(3) $0<t^6<1$', hand='(3)   0 < t^6 < 1')
+y5 = I('y5', '(4) $\\sqrt[6]{t}=\\frac12<1$', hand='(4)   t^{1/6} = {1/2} < 1')
+y6 = I('y6', 'Keep the constants; change only $t$', size=26, col=1)
 video('solve-q-500', 'solution', qid='q-500', slides=[
     S('Method 1 · Understanding',
       L("Given: zero is smaller than t, which is smaller than one. Which of the following expressions is the largest?",
         pt('stem', 'Given', 'hl', 5.0), voice='calm', pause=0.5),
       L("So t is a positive fraction, and four expressions. [short pause] We'll solve it two ways, by understanding, and "
-        "then plugging in with a smart swap.", pt('stem', 't is a positive fraction')),
+        "then plugging in a number with a clean sixth root.", pt('stem', 't is a positive fraction')),
       L("[short pause] Let's start with understanding. Choice number three, t to the sixth. For a positive fraction the arrow "
         "points left, so a bigger power makes it smaller. But it stays positive. So it's between zero and t.",
         show(x1, 't to the sixth')),
@@ -803,17 +820,22 @@ video('solve-q-500', 'solution', qid='q-500', slides=[
       L("Choice number two, six over t. Dividing by a positive fraction makes a number bigger, so it's more than six. Below "
         "one, below one, below six, and above six. Choice number two is our answer.", show(x4, 'six over t'),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    S('Method 2 · Plugging in with a swap',
-      L("[pause] Now let's try plugging in. But t to the sixth, or the sixth root of a fraction, with no calculator? Hard. So "
-        "here's a trick. The six sits in every choice, and it only tells us what kind of operation it is, a power, a root, "
-        "times, or over. So swap every six for a two.", show(y1, 'swap every six')),
-      L("Now it's two t, two over t, t squared, and the square root of t. Take t with a clean square root, one ninth. Two "
-        "times one ninth is two ninths. Two over one ninth is eighteen. One ninth squared is one eighty-first. And the "
-        "square root of one ninth is one third. Eighteen is the largest, choice number two.", show(y2, 'two t, two over t'),
-        show(y3, 'one ninth. Two'), mk('tick', 'choice 2', 'Eighteen is the largest')),
-      L("But careful. Swap a number only when the same number sits in every choice, the same way. Otherwise change only t, "
-        "never the numbers in the question, or the order of the choices can change. [pause] Okay. I'll see you in the next "
-        "question.", show(y4, 'Swap a number only'))),
+    S('Method 2 · Plugging in a clean-root number',
+      L("[pause] Now let's try plugging in. The given allows any t between zero and one. "
+        "Choose one over sixty-four, because one half to the sixth is one over sixty-four. "
+        "So its sixth root is easy. We keep every six in the question and change only t.",
+        show(y1, 'Choose one over sixty-four'), show(y6, 'keep every six')),
+      L("Choice number one, six times one over sixty-four, is six over sixty-four. "
+        "Cancel a two and it is three over thirty-two, smaller than one.", show(y2, 'six over sixty-four')),
+      L("Choice number two, six divided by one over sixty-four, is six times sixty-four. "
+        "Six times sixty is three hundred sixty, and six times four is twenty-four. Together that is three hundred eighty-four.",
+        show(y3, 'six times sixty-four')),
+      L("Choice number three, one over sixty-four to the sixth, is still between zero and one. "
+        "We do not need its exact denominator to compare it with three hundred eighty-four.", show(y4, 'still between zero and one')),
+      L("Choice number four, the sixth root of one over sixty-four, is one half. "
+        "The other three results are all below one, so only choice number two can be largest. "
+        "Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+        show(y5, 'is one half'), mk('tick', 'choice 2', 'only choice number two'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-501 (Hebrew Q7)
@@ -1064,8 +1086,8 @@ video('r26-t17-summary', 'lesson', slides=[
         "one third is bigger than one fifth.", show(s11s, 'One over x keeps the sign')),
       L("Not sure? Plug in one number from each allowed range, like two, one half, negative one half, and negative two. A "
         "root in the choices? Pick a number with a clean root, like one ninth for a square root, or negative one eighth for "
-        "a cube root. And change only the letters. Unless the same number sits in every choice, then you may swap it for a "
-        "small one.", show(s12s, 'Plug in one number'))),
+        "a cube root. Change only the letters, and keep the numbers given in the question. "
+        "A number appearing in every choice does not by itself make changing that number safe.", show(s12s, 'Plug in one number'))),
     S('Must or could',
       L("Necessarily true? One example where it fails knocks it out, so push the numbers to the edges of their ranges. A "
         "picture of the line? Write the range of each letter, and trust only the order, not the distances.",
@@ -1353,6 +1375,13 @@ def _stem_parts(vid):
 
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v); _write_gap(_v)
 
+
+# Spoken clarity revision: preserves the complete original board/cue plan.
+_clarity_spec = importlib.util.spec_from_file_location(
+    '_codex_script_clarity_20261012', os.path.join(HERE, '_codex_script_clarity_20261012.py'))
+_clarity_module = importlib.util.module_from_spec(_clarity_spec)
+_clarity_spec.loader.exec_module(_clarity_module)
+_clarity_module.apply(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

@@ -51,7 +51,7 @@
     ]
    },
    {
-    "say": "So two to the power of a, times three to the power of b, is two squared times three cubed. The twos match, so a is two. The threes match, so b is three.",
+    "say": "The exponents a and b count the copies of two and three. Since both sides represent the same number, those copy counts must match. So two to the power of a, times three to the power of b, is two squared times three cubed. The twos match, so a is two. The threes match, so b is three.",
     "at": [
      "So two to the power of a",
      "of a, times",
@@ -86,7 +86,7 @@
   ],
   [
    {
-    "say": "[pause] I divide by two as long as I can, and count. A hundred eight over two is fifty-four. Fifty-four over two is twenty-seven. Twenty-seven is odd, so no more twos. Two halvings, so a is two.",
+    "say": "[pause] Each exact division by two removes one copy of two. Counting those divisions will therefore tell us the exponent a. I divide by two as long as I can, and count. A hundred eight over two is fifty-four. Fifty-four over two is twenty-seven. Twenty-seven is odd, so no more twos. Two halvings, so a is two.",
     "at": [
      "I divide",
      "I divide by two",

@@ -58,7 +58,7 @@
   ],
   [
    {
-    "say": "Here's the classic question. What's the smallest k so that forty-five times k is a perfect square? First, break forty-five. It's nine times five, so three squared times five.",
+    "say": "We want the multiplier to supply only what forty-five is missing to become a square. Here's the classic question. What's the smallest k so that forty-five times k is a perfect square? First, break forty-five. It's nine times five, so three squared times five.",
     "at": [
      "the smallest k",
      "perfect square? First",
@@ -68,7 +68,7 @@
     ]
    },
    {
-    "say": "The three has exponent two, even, fine. The five has exponent one, odd. So the five is missing one copy, and k has to bring it. k is five.",
+    "say": "The threes already form a pair. The single five needs a matching five so every prime factor can be paired. The three has exponent two, even, fine. The five has exponent one, odd. So the five is missing one copy, and k has to bring it. k is five.",
     "at": [
      "The three has exponent two",
      "The five has",

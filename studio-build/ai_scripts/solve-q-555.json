@@ -1,0 +1,117 @@
+{
+ "videoId": "solve-q-555",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "For every number x that's not zero, diamond of x is three over x. Which of the following must be true for all positive a and b?",
+    "voice": "calm",
+    "at": [
+     "For every number x"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A hard one. Must be true, so we try to break each choice. [short pause] We'll solve it two ways, technically, and then by understanding.",
+    "at": [
+     "must be true",
+     "try to break",
+     "We'll solve it",
+     "technically, and then"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start technically. Choice number one, three over a is smaller than three. a is positive, so multiply by a with no flip, and divide by three. One is smaller than a. True only when a is above one, and a could be one half, then three over a is six. Out.",
+    "at": [
+     "Let's start",
+     "Choice number one, three over a",
+     "number one, three",
+     "is smaller than",
+     "a is positive",
+     "by a with",
+     "and divide by",
+     "One is smaller",
+     "True only when",
+     "above one, and",
+     "be one half",
+     "is six. Out"
+    ]
+   },
+   {
+    "say": "Choice number three, three over a divided by three over b. Multiply by the reciprocal, b over a, not a over b. Out.",
+    "at": [
+     "Choice number three",
+     "number three, three",
+     "divided by three",
+     "Multiply by the",
+     "not a over b. Out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number four, three over a smaller than three over a plus one. Both are positive, so cross-multiply with no flip and divide by three. a plus one smaller than a, so one smaller than zero. Never true. Out.",
+    "at": [
+     "Choice number four",
+     "number four, three",
+     "smaller than three",
+     "Both are positive",
+     "with no flip",
+     "a plus one smaller",
+     "a, so one",
+     "Never true. Out"
+    ]
+   },
+   {
+    "say": "Choice number two, three over a, times a. The a cancels, three. And three over b times b, three too. Three equals three for every a and b. Choice number two is our answer.",
+    "at": [
+     "Choice number two",
+     "number two, three",
+     "times a. The",
+     "And three over",
+     "b, three too",
+     "Three equals three",
+     "a and b",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way. What's different? We read what the diamond does, instead of moving terms. Choice number one. For a above one it's true, two gives three halves, three gives one. But a equal to one gives three, and one half gives six.",
+    "at": [
+     "Another way",
+     "We read what",
+     "does, instead of",
+     "number one. For",
+     "For a above one",
+     "three gives one",
+     "But a equal",
+     "gives three, and"
+    ]
+   },
+   {
+    "say": "Choice number three. Three over x is three times x to the negative one, and a minus power means flip. So b over a. Choice number four. A bigger denominator makes a smaller fraction. a is two, three halves is not smaller than one.",
+    "at": [
+     "number three. Three",
+     "three times x to",
+     "power means flip",
+     "over a. Choice",
+     "number four. A",
+     "A bigger denominator",
+     "is not smaller"
+    ]
+   },
+   {
+    "say": "Choice number two. Three over a is three times the reciprocal of a, and a number times its reciprocal is one. So three, every time. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "number two. Three",
+     "is three times",
+     "of a, and",
+     "its reciprocal is one",
+     "three, every time. Choice number two"
+    ]
+   }
+  ]
+ ]
+}

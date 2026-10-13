@@ -184,7 +184,12 @@ function anWrites(mine,b){const add=[];
   let d=c.te!=null&&c.te>c.t?c.te-c.t:n/8;d=Math.max(n/10,Math.min(n/6,d));
   const nx=mine.reduce((a,x)=>x!==c&&x.k!=='say'&&x.t>c.t+.01?Math.min(a,x.t):a,1e9),cap=nx-c.t-.12;if(d>cap)d=Math.max(cap,Math.min(d,n/14));d=Math.max(.35,d);
   add.push({k:'write',t:c.t,dur:d,l:c.l,ap:c});c.t+=d}
- mine.push(...add);mine.sort((x,y)=>x.t-y.t)}
+ mine.push(...add);mine.sort((x,y)=>x.t-y.t);
+ /* items go on the board in their order: an APPEAR never lands before the one of an earlier item, and the pen starts a
+    line only after the previous item is on the board (two writes never overlap) */
+ const ap=mine.filter(c=>c.k==='appear').sort((x,y)=>x.l.appear-y.l.appear);let prev=null;
+ for(const c of ap){const w=add.find(e=>e.ap===c);if(prev){if(w&&w.t<prev.t+.05){const d=prev.t+.05-w.t;w.t+=d;c.t+=d}if(c.t<prev.t+.05)c.t=prev.t+.05}prev=c}
+ mine.sort((x,y)=>x.t-y.t)}
 /* 2026-10-11 guard (every topic, AI or her real reading timings): a POINT / mark on an item that is not on the board yet -
    the pen is still writing it (its APPEAR moves to the end of the writing, anWrites) or her words came a little early -
    would stop the run ("item N is not on the board at this moment"). It waits until just after that item appears. */
@@ -275,8 +280,9 @@ function anTimeline(v,man){const L=man.lines,ev=[];let li=0;
   place(null);
   /* in time order: the board step at each moment, then measure what the cue points at / marks on that board */
   mine.sort((x,y)=>x.t-y.t);anWrites(mine,b);anNotYet(mine,b);let step=0;
-  for(const c of mine){c.bi=bi;if(c.k==='appear'){c.step=++step}else if(c.k==='point'){c.pre=anResolve(c.l.point,v,bi,boardSvg(v,bi,step));if(c.pre.err)throw Error('slide '+(bi+1)+': POINT '+c.l.point+' — '+c.pre.err)}
-   else if(c.k==='mark'){c.mk=anMarkOf(c.l);c.boxes=c.mk.targets.map(tg=>{const r=anResolve(tg,v,bi,boardSvg(v,bi,step));if(r.err)throw Error('slide '+(bi+1)+': '+c.l.draw+' — '+r.err);return r.box})}}
+  for(const c of mine){c.bi=bi;if(c.k==='appear'){c.step=++step}else if(c.k==='point'){c.pre=anResolve(c.l.point,v,bi,boardSvg(v,bi,step));if(c.pre.err){(window.__anDropped=window.__anDropped||[]).push('slide '+(bi+1)+': POINT '+c.l.point+' — '+c.pre.err);c.drop=1}}
+   else if(c.k==='mark'){c.mk=anMarkOf(c.l);c.boxes=c.mk.targets.map(tg=>{const r=anResolve(tg,v,bi,boardSvg(v,bi,step));if(r.err){(window.__anDropped=window.__anDropped||[]).push('slide '+(bi+1)+': '+c.l.draw+' — '+r.err);c.drop=1}return r.box})}}
+  for(let i=mine.length-1;i>=0;i--)if(mine[i].drop)mine.splice(i,1);
   for(const c of mine)if(c.k==='write')anWritePrep(c,v,bi);ev.push(...mine)});
  ev.sort((x,y)=>x.t-y.t);return ev}
 /* during a continuous take the screen shows the same ready canvas over the board (a cheap copy) instead of re-building

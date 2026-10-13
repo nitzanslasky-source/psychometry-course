@@ -1,0 +1,81 @@
+{
+ "videoId": "solve-q-554",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A, B and C are digits from one to nine. For every three-digit number A B C, the operation diamond is defined. Diamond of A B C is A to the fourth, plus B cubed, plus C squared. Which of the following is the smallest?",
+    "voice": "calm",
+    "at": [
+     "A, B and C"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Two topics in one, digits and a defined operation. And every choice has the operation, so we evaluate the choices. [short pause] We'll solve it two ways, the standard way, and then a shortcut.",
+    "at": [
+     "Two topics in one",
+     "and a defined",
+     "every choice has",
+     "so we evaluate",
+     "We'll solve it",
+     "the standard way"
+    ]
+   },
+   {
+    "say": "[short pause] The hundreds digit to the fourth, the tens cubed, the units squared. Two one four, two to the fourth is sixteen, one cubed is one, four squared is sixteen. Thirty-three.",
+    "at": [
+     "The hundreds",
+     "fourth, the tens",
+     "Two one four",
+     "cubed is one",
+     "is sixteen. Thirty-three"
+    ]
+   },
+   {
+    "say": "One four two, one, sixty-four, four, sixty-nine. Bigger, out. Four one two, two fifty-six, one, four, two sixty-one. Out.",
+    "at": [
+     "One four two",
+     "sixty-nine. Bigger, out",
+     "two, two fifty-six",
+     "two sixty-one"
+    ]
+   },
+   {
+    "say": "One two four, one, eight, sixteen, twenty-five. Smaller than thirty-three, so choice number one is out too. Choice number four is our answer.",
+    "at": [
+     "One two four",
+     "sixteen, twenty-five. Smaller",
+     "choice number one is out too",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way. What's different? We think about where the big power goes, instead of calculating. Every choice uses the same digits, one, two and four. The biggest power, the fourth, sits on the hundreds digit, so that digit must be the smallest, one. Choice numbers one and three are out.",
+    "at": [
+     "Another way",
+     "We think about",
+     "big power goes",
+     "Every choice uses",
+     "digits, one, two",
+     "The biggest power",
+     "so that digit",
+     "the smallest, one",
+     "Choice numbers one",
+     "and three are out"
+    ]
+   },
+   {
+    "say": "The next power, the cube, sits on the tens, so the smaller of what's left, two. One two four. Choice number four, with no full calculation. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "The next power",
+     "the smaller of",
+     "One two four. Choice number four",
+     "number four, with"
+    ]
+   }
+  ]
+ ]
+}

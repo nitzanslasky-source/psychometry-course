@@ -1108,8 +1108,8 @@
    "d": "brackets on every input — a whole expression goes in brackets: ◆(x+2) = (x+2)² − 2(x+2), without brackets is the trap; a negative input in brackets ◆(−3) = 15 is one reminder line (topics 4, 8)"
   },
   "operation-patterns#1": {
-   "t": "Inverse operation",
-   "d": "the inverse operation — undo the steps in reverse order: ◆(x) = 2x + 3 → #(y) = (y − 3)/2, then check with a number"
+   "t": "The inverse operation",
+   "d": "2026-10-12 topic-19 redo (your reading): undo the steps in reverse order (2x + 3 → (y − 3)/2; 3x − 4 → (y + 4)/3), check with a number, the trap order"
   },
   "order-of-operations#4": {
    "t": "Minus before brackets",
@@ -1630,6 +1630,18 @@
   "solve-q-516#0": {
    "t": "Flip it into an addition",
    "d": "2026-10-12 topic-18 redo (your reading): your Hebrew tip: flip a subtraction into an addition, with your example AA − BB = BB → BB + BB = AA, B ≤ 4 (55 + 55 too big)"
+  },
+  "solve-q-544#1": {
+   "t": "Method 2 · Rewrite the rule",
+   "d": "2026-10-12 topic-19 redo (your reading): 2x in, x + 5 out → ◆(n) = n/2 + 5"
+  },
+  "solve-q-555#0": {
+   "t": "Method 1 · Technically",
+   "d": "2026-10-12 topic-19 redo (your reading): your technical way, choice by choice (multiply by a positive, no flip); the wrong choices first"
+  },
+  "solve-q-555#2": {
+   "t": "Method 2 · By understanding",
+   "d": "2026-10-12 topic-19 redo (your reading): your understanding way: 3/x = 3·x⁻¹, a bigger denominator gives a smaller fraction, a number times its reciprocal"
   }
  },
  "lines": {
@@ -2622,8 +2634,8 @@
    "d": "73 on top is a strong hint, but one more line makes it sure"
   },
   "solve-q-553#1": {
-   "t": "Method 2 · Insight",
-   "d": "the tops cancel; dividing flips the second bottom"
+   "t": "Method 2 · A sharp insight",
+   "d": "2026-10-12 topic-19 redo (your reading): the same two letters swapped: (a − b)² = (b − a)²"
   },
   "solve-q-555#0": {
    "t": "Choice by choice",
@@ -3266,8 +3278,8 @@
    "d": "clearer explanation / number line added (2026-10-08): number line: z, y left of 0 and the band between y and −y where x can be — left or right of zero, so choice 3 is not necessarily true"
   },
   "solve-q-550#1": {
-   "t": "Method 2 · Insight",
-   "d": "from your Hebrew course (2026-10-08 coverage fix): a zero in the outer call makes the inner value irrelevant - mini example ◆(◆(5, 3, 2), 0, 1) = (…)⁰ + 0^(…) + 1⁰ = 1 + 0 + 1 = 2 (anything to the power 0 is 1, 0 to a positive power is 0, 1 to any power is 1)"
+   "t": "Method 2 · Look at the outside first",
+   "d": "2026-10-12 topic-19 redo (your reading): your insight: a zero outside makes the inside irrelevant; here the two ones give 2 + z"
   },
   "solve-wp21-g015#0": {
    "t": "Plug in the answers",
@@ -3764,6 +3776,74 @@
   "solve-q-518#0": {
    "t": "Flip it into a multiplication",
    "d": "2026-10-12 topic-18 redo (your reading): 7A ends in A → A = 0 or 5, not 0 (a leading digit); 55·17 in easy pieces"
+  },
+  "solve-q-541#0": {
+   "t": "Method 1 · Substitute",
+   "d": "2026-10-12 topic-19 redo (your reading): the input takes a's place everywhere: 36 − 24 = 12"
+  },
+  "solve-q-541#1": {
+   "t": "Method 2 · A common factor",
+   "d": "2026-10-12 topic-19 redo (your reading): a² − 4a = a(a − 4): 6·2 = 12"
+  },
+  "solve-q-542#0": {
+   "t": "Method 1 · Inside out",
+   "d": "2026-10-12 topic-19 redo (your reading): inside out; the trap 25"
+  },
+  "solve-q-542#1": {
+   "t": "Method 2 · Algebra",
+   "d": "2026-10-12 topic-19 redo (your reading): (x²)² = x⁴: 5⁴ = 625"
+  },
+  "solve-q-543#0": {
+   "t": "Plugging in the answers",
+   "d": "2026-10-12 topic-19 redo (your reading): your check of every choice, the ones that CAN be first, so the video ends on the answer"
+  },
+  "solve-q-545#0": {
+   "t": "Conditions, inside out",
+   "d": "2026-10-12 topic-19 redo (your reading): check the parity at every step: 4, 7, 28"
+  },
+  "solve-q-546#0": {
+   "t": "Method 1 · Down, then back up",
+   "d": "2026-10-12 topic-19 redo (your reading): down to ◆(0) = 2, then back up: 7, 2, 7"
+  },
+  "solve-q-546#1": {
+   "t": "Method 2 · The pattern",
+   "d": "2026-10-12 topic-19 redo (your reading): 2, 7, 2, 7: ◆(100) would be instant"
+  },
+  "solve-q-547#0": {
+   "t": "Down to the start",
+   "d": "2026-10-12 topic-19 redo (your reading): each step passes down to ◆(1) = 9"
+  },
+  "solve-q-548#0": {
+   "t": "Isolate the operation",
+   "d": "2026-10-12 topic-19 redo (your reading): very rare on the exam; isolate it like an unknown: ◆(x) = 3x + 8"
+  },
+  "solve-q-550#0": {
+   "t": "Method 1 · The standard way",
+   "d": "2026-10-12 topic-19 redo (your reading): inner first: 33, then 35"
+  },
+  "solve-q-551#1": {
+   "t": "Method 2 · The shortcut formulas",
+   "d": "2026-10-12 topic-19 redo (your reading): (x − y)² and (x + y)²: 4², 1², 17²"
+  },
+  "solve-q-553#0": {
+   "t": "Method 1 · The full math",
+   "d": "2026-10-12 topic-19 redo (your reading): don't open the squared brackets early, they cancel"
+  },
+  "solve-q-553#2": {
+   "t": "Method 3 · Plugging in numbers",
+   "d": "2026-10-12 topic-19 redo (your reading): check the choices differ (1, 1/2, 1/4, 4), then a = 1, b = 2"
+  },
+  "solve-q-554#0": {
+   "t": "Method 1 · The standard way",
+   "d": "2026-10-12 topic-19 redo (your reading): evaluate each choice: 33, 69, 261, 25"
+  },
+  "solve-q-554#1": {
+   "t": "Method 2 · Think minimum",
+   "d": "2026-10-12 topic-19 redo (your reading): your insight: the biggest power needs the smallest digit"
+  },
+  "solve-q-556#1": {
+   "t": "Method 2 · Understanding",
+   "d": "2026-10-12 topic-19 redo (your reading): ×5 adds exactly one five; +5 says nothing; squaring doubles; the count ×5 (5³)"
   }
  }
 }

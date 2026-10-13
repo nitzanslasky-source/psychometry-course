@@ -1,127 +1,127 @@
 {
- "videoId": "consecutive-products",
- "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   "Welcome back. Products of numbers in a row, and of even numbers, follow some very handy rules. Let's build them."
-  ],
-  [
-   {
-    "say": "Remember, two numbers in a row always divide by two, and three in a row by six.",
-    "at": [
-     "two numbers in a row",
-     "three in a"
+  "videoId": "consecutive-products",
+  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      "Welcome back. Let's look at what products of numbers in a row always divide by. Then we'll look at products of even numbers and use the same ideas inside fractions."
+    ],
+    [
+      {
+        "say": "Remember, these rules are about the answer after multiplying. The product of two numbers in a row always divides by two. The product of three numbers in a row always divides by six. A number in the multiplication can bring in a divisor that the whole product then divides by.",
+        "at": [
+          "two numbers in a row",
+          "three numbers in"
+        ]
+      },
+      {
+        "say": "Now take four numbers in a row. One divides by four, and a different number in the group is even. Multiplying those two gives a number that divides by eight. One of the four numbers also divides by three. Eight and three have no shared divisor greater than one. So the whole product divides by eight times three, which is twenty-four.",
+        "at": [
+          "four numbers in",
+          "four, and a",
+          "even. Multiplying those",
+          "One of the",
+          "Eight and three",
+          "So the whole",
+          "eight times three"
+        ]
+      },
+      {
+        "say": "Let's check it in numbers. One times two times three times four is twenty-four. Two times three times four times five is a hundred twenty, which is five times twenty-four. Both products divide by twenty-four.",
+        "at": [
+          "One times two times three",
+          "Two times three times four times",
+          "times five is",
+          "twenty, which is"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "Now take two even numbers. Each one is two times a whole number. When we multiply them, we multiply both twos too. Two times two is four, so their product always divides by four. Two times six is twelve, and four times ten is forty. Both divide by four.",
+        "at": [
+          "Each one is",
+          "always divides by",
+          "Two times six",
+          "and four times",
+          "forty. Both divide"
+        ]
+      },
+      {
+        "say": "If the two even numbers are in a row, we know even more. One always divides by four, and the other divides by two. So their product divides by four times two, which is eight. Two times four is eight, six times eight is forty-eight, and ten times twelve is a hundred twenty, which is fifteen times eight.",
+        "at": [
+          "two even numbers",
+          "One always divides",
+          "by four, and",
+          "by two. So",
+          "divides by four times",
+          "Two times four",
+          "six times eight",
+          "and ten times",
+          "a hundred twenty"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "Now let's check whether a fraction gives an integer. We have m squared, times the whole bracket, n plus one, all divided by eight. m is even and n is odd. m is two times a whole number, so squaring it gives us two twos in the multiplication. And n plus one is even, so that brings in another two. Together we have three twos. Eight is two times two times two, so the whole eight on the bottom can cancel. The fraction always gives an integer.",
+        "at": [
+          "plus one, all",
+          "m is two",
+          "a whole number",
+          "whole number, so",
+          "squaring it gives",
+          "in the multiplication",
+          "plus one is",
+          "three twos. Eight",
+          "eight is two",
+          "times two, so"
+        ]
+      },
+      {
+        "say": "Let's check the same expression with numbers. With m two and n one, we get four times two over eight, which is one. With m two and n three, we get four times four over eight, which is two.",
+        "at": [
+          "m two and",
+          "over eight, which",
+          "m two and n three",
+          "three, we get",
+          "over eight, which is two"
+        ]
+      },
+      {
+        "say": "But if the top is m times the whole bracket, n plus one, without squaring m, we only have two twos for sure. With m two and n one, the fraction is two times two over eight, which is one half. So this version does not always give an integer.",
+        "at": [
+          "plus one, without",
+          "only have two",
+          "one, the fraction",
+          "eight, which is"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "In questions, these products may be written as other expressions. x squared minus one is x minus one, times x plus one. If x is odd, those two numbers are even and in a row. Their product always divides by eight, so x squared minus one does too. With x five, twenty-five minus one is twenty-four. With x seven, forty-nine minus one is forty-eight. Both divide by eight.",
+        "at": [
+          "products may be",
+          "x squared minus one",
+          "plus one. If",
+          "If x is",
+          "two numbers are",
+          "x squared minus one does",
+          "x five, twenty",
+          "one is twenty-four",
+          "x seven, forty",
+          "one is forty-eight"
+        ]
+      },
+      {
+        "say": "And x cubed minus x can be written as the product of three numbers in a row, as we saw earlier. You'll use both these ideas in the next questions. [pause] Okay. I'll see you in the next video.",
+        "at": [
+          "And x cubed",
+          "can be written",
+          "as we saw",
+          "You'll use both"
+        ]
+      }
     ]
-   },
-   {
-    "say": "Four in a row. One of them divides by four, and another one is even, so that's eight. And one of them divides by three. Eight and three share nothing, so the product divides by eight times three, twenty-four.",
-    "at": [
-     "Four in a row",
-     "four, and another",
-     "even, so that's",
-     "And one of",
-     "Eight and three",
-     "so the product",
-     "eight times three"
-    ]
-   },
-   {
-    "say": "Let's see it in numbers. One times two times three times four is twenty-four. Two times three times four times five is a hundred twenty, five twenty-fours.",
-    "at": [
-     "One times two times three",
-     "Two times three times four times",
-     "times five is",
-     "twenty, five twenty-fours"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Now even numbers. Each even number is two times something, so two evens together are four times something. Two times six is twelve, and four times ten is forty, both divide by four.",
-    "at": [
-     "Each even number is two times",
-     "together are four",
-     "Two times six",
-     "and four times",
-     "forty, both divide"
-    ]
-   },
-   {
-    "say": "Two consecutive even numbers are even better. One of them always divides by four, and the other by two, so the product divides by eight. Two times four is eight, six times eight is forty-eight, and ten times twelve is a hundred twenty, fifteen eights.",
-    "at": [
-     "Two consecutive even numbers",
-     "One of them",
-     "by four, and",
-     "by two, so",
-     "divides by eight",
-     "Two times four",
-     "six times eight",
-     "and ten times",
-     "a hundred twenty"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Is a fraction a whole number? Count the twos. m is even and n is odd. m squared over eight, times n plus one. m is even, so m squared has at least two twos. n is odd, so n plus one is even, one more two. Three twos on top, and eight is two times two times two. It cancels, always whole.",
-    "at": [
-     "Count the twos",
-     "m squared over",
-     "n plus one",
-     "m is even, so",
-     "squared has at",
-     "n is odd, so",
-     "plus one is",
-     "Three twos on",
-     "eight is two",
-     "times two. It"
-    ]
-   },
-   {
-    "say": "Let's check. m is two and n is one, four times two over eight is one. m is two and n is three, four times four over eight is two.",
-    "at": [
-     "m is two and n is one",
-     "over eight is",
-     "m is two and n is three",
-     "is three, four",
-     "over eight is two"
-    ]
-   },
-   {
-    "say": "But m times n plus one, over eight, has only two twos for sure. With m two and n one, two times two over eight is a half. Not whole.",
-    "at": [
-     "plus one, over",
-     "only two twos for sure",
-     "one, two times",
-     "eight is a"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "On the exam, the products hide inside expressions. x squared minus one is x minus one, times x plus one, the neighbors of x. If x is odd, they're two consecutive even numbers, so x squared minus one divides by eight. x is five, twenty-five minus one is twenty-four. x is seven, forty-nine minus one is forty-eight.",
-    "at": [
-     "products hide inside",
-     "x squared minus one",
-     "plus one, the",
-     "If x is",
-     "two consecutive even",
-     "x squared minus one divides",
-     "x is five",
-     "one is twenty-four",
-     "x is seven",
-     "one is forty-eight"
-    ]
-   },
-   {
-    "say": "And x cubed minus x is three in a row, as you saw. You'll meet both in the next questions. [pause] Okay. I'll see you in the next video.",
-    "at": [
-     "And x cubed",
-     "is three in",
-     "as you saw",
-     "You'll meet both"
-    ]
-   }
   ]
- ]
 }

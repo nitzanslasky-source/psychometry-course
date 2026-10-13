@@ -27,7 +27,7 @@
     ]
    },
    {
-    "say": "Number one. The bars are equal to zero. Can that happen? Yes, when the inside is zero. x minus three is zero, so x is three. It has a solution, so it's out.",
+    "say": "We're looking for a statement with no solution. Finding even one value of x that works is enough to rule a choice out. Number one. The bars are equal to zero. Can that happen? Yes, when the inside is zero. x minus three is zero, so x is three. It has a solution, so it's out.",
     "at": [
      "Number one",
      "The bars are",
@@ -74,7 +74,7 @@
   ],
   [
    {
-    "say": "[short pause] Now look at numbers two and three again. The same numbers, and a different sign. One is never true, and the other one is always true.",
+    "say": "[short pause] The direction of the inequality is what decides whether the nonnegative absolute value can satisfy it. Now look at numbers two and three again. The same numbers, and a different sign. One is never true, and the other one is always true.",
     "at": [
      "numbers two",
      "and three again",

@@ -1685,6 +1685,13 @@ def _stem_parts(vid):
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v)
 
 
+# Spoken clarity revision: preserves the complete original board/cue plan.
+_clarity_spec = importlib.util.spec_from_file_location(
+    '_codex_script_clarity_20261012', os.path.join(HERE, '_codex_script_clarity_20261012.py'))
+_clarity_module = importlib.util.module_from_spec(_clarity_spec)
+_clarity_spec.loader.exec_module(_clarity_module)
+_clarity_module.apply(VIDEOS)
+
 if __name__ == '__main__':
     for _v in sys.argv[1:] or ORDER:
         _p = check(_v)

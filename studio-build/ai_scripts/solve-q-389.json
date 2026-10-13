@@ -44,7 +44,7 @@
     ]
    },
    {
-    "say": "So let's go prime by prime. p. x has p to the power of three, three p's, and y has just one p. How many p's are in both? Only one. So one p. Why not p cubed? Because y has only one p, so a number with two or three p's can't divide y.",
+    "say": "A shared factor cannot use more copies of a prime than either number contains. So the number with fewer copies sets the limit. So let's go prime by prime. p. x has p to the power of three, three p's, and y has just one p. How many p's are in both? Only one. So one p. Why not p cubed? Because y has only one p, so a number with two or three p's can't divide y.",
     "at": [
      "So let's go",
      "x has p to the power of three",
@@ -87,7 +87,7 @@
     ]
    },
    {
-    "say": "So the GCD is p, times q squared, times s. Choice number three is our answer.",
+    "say": "These selected prime factors all fit inside both x and y at the same time. Multiplying them gives the whole common divisor. So the GCD is p, times q squared, times s. Choice number three is our answer.",
     "at": [
      "So the GCD is",
      "times q squared",
@@ -216,7 +216,7 @@
     ]
    },
    {
-    "say": "Choice number four, p, q, s, divides both too. But it's smaller, it has only one q, where choice number three has two. And they ask for the greatest. So choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "Both remaining choices divide both numbers. The question now is which shared divisor is larger. Choice number four, p, q, s, divides both too. But it's smaller, it has only one q, where choice number three has two. And they ask for the greatest. So choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Choice number four, p",
      "number four, p",

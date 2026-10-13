@@ -1,119 +1,119 @@
 {
- "videoId": "solve-q-468",
- "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "a and b are consecutive even numbers, and c and d are consecutive even numbers. Given: a is smaller than b, c is smaller than d, and a plus d is not zero. What is b squared minus a squared, plus d squared minus c squared, over a plus d?",
-    "voice": "calm",
-    "at": [
-     "a and b are"
+  "videoId": "solve-q-468",
+  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "a and b are consecutive even numbers, and c and d are consecutive even numbers. Given: a is smaller than b, c is smaller than d, and a plus d is not zero. What is b squared minus a squared, plus d squared minus c squared, over a plus d?",
+        "voice": "calm",
+        "at": [
+          "a and b are"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So we have two pairs of even numbers in a row. The choices use only a and c, so let's write b and d using those letters. [short pause] We'll solve it two ways, using the difference-of-squares formula, and then plugging in numbers.",
+        "at": [
+          "even numbers in",
+          "the choices use only a and c",
+          "and c, so",
+          "let's write b",
+          "We'll solve it",
+          "using the difference",
+          "then plugging in"
+        ]
+      },
+      {
+        "say": "[short pause] Let's start with the formula. The gap between even numbers in a row is two. So b is a plus two, and d is c plus two.",
+        "at": [
+          "Let's start",
+          "The gap between",
+          "b is a plus two"
+        ]
+      },
+      {
+        "say": "b squared minus a squared is b minus a, times b plus a. The first bracket, b minus a, is two. The second, b plus a, is two a plus two. So we get two times the whole bracket, two a plus two, which is four a plus four. For example, six squared is thirty-six and four squared is sixteen. Thirty-six minus sixteen is twenty. Four times four plus four is twenty too.",
+        "at": [
+          "b squared minus a squared is",
+          "b plus a",
+          "b minus a, is",
+          "The second, b",
+          "two a plus",
+          "So we get",
+          "a plus two, which",
+          "four a plus",
+          "For example, six squared is",
+          "thirty-six and four",
+          "Thirty-six minus sixteen",
+          "Four times four",
+          "four is twenty"
+        ]
+      },
+      {
+        "say": "Do the same with d squared minus c squared. That gives four c plus four. Now add both results on top: four a plus four, plus four c plus four. We get four a plus four c plus eight. That's four times the whole bracket, a plus c plus two.",
+        "at": [
+          "Do the same",
+          "squared minus c",
+          "four c plus",
+          "Now add both",
+          "eight. That's four",
+          "the whole bracket"
+        ]
+      },
+      {
+        "say": "Now the bottom, a plus d. d is c plus two, so the bottom is a plus c plus two. That's the same bracket we have on top. It cancels, leaving four. Choice number four is our answer.",
+        "at": [
+          "Now the bottom",
+          "plus two. That's",
+          "It cancels, leaving",
+          "Choice number four is our answer"
+        ]
+      },
+      {
+        "say": "Now careful, choice number two comes from using a gap of one. But these are even numbers in a row, and their gap is two.",
+        "at": [
+          "two comes from",
+          "a gap of one",
+          "these are even",
+          "a row, and"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So two pairs of consecutive evens, and the choices use only a and c. So we'll get rid of b and d. [short pause] We'll solve it two ways, with the shortcut formula, and then plugging in numbers.",
-    "at": [
-     "consecutive evens, and",
-     "the choices use only a and c",
-     "and c. So",
-     "rid of b",
-     "We'll solve it",
-     "with the shortcut",
-     "then plugging in"
+    [
+      {
+        "say": "[pause] Now let's try plugging in. Choose a and c, since those are the letters in the choices. First check that the choices give different answers. If a and c are both two, choice number three gives four, and choice number four also gives four. That trial cannot tell them apart, so choose other values.",
+        "at": [
+          "Now let's",
+          "Choose a and",
+          "c, since those",
+          "choices. First check",
+          "choices give different",
+          "If a and c are both two",
+          "number three gives",
+          "number four also",
+          "That trial cannot"
+        ]
+      },
+      {
+        "say": "Use a is two and c is eight. The choices give forty, two, ten and four. All four answers are different, so this trial can tell the choices apart.",
+        "at": [
+          "a is two and c is eight",
+          "The choices give",
+          "ten and four"
+        ]
+      },
+      {
+        "say": "b and d must be the next even numbers, so b is four and d is ten. Use all four values in the fraction. On top, sixteen minus four is twelve, and a hundred minus sixty-four is thirty-six. Add those results: twelve plus thirty-six is forty-eight. On the bottom, two plus ten is twelve. Forty-eight over twelve is four. Choice number four is our answer. Okay. I'll see you in the next question.",
+        "at": [
+          "so b is",
+          "and a hundred",
+          "is thirty-six",
+          "the bottom, two",
+          "ten is twelve",
+          "Forty-eight over twelve",
+          "Choice number four"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start with the formula. Consecutive evens go up by two, so b is a plus two, and d is c plus two.",
-    "at": [
-     "Let's start",
-     "Consecutive evens go",
-     "b is a plus two"
-    ]
-   },
-   {
-    "say": "b squared minus a squared is b minus a, times b plus a. b minus a is two, and b plus a is two a plus two. So it's two times two a plus two, which is four a plus four. For example, six squared is thirty-six and four squared is sixteen. Thirty-six minus sixteen is twenty, and four times four plus four is twenty too.",
-    "at": [
-     "b squared minus a squared is",
-     "b plus a",
-     "b minus a is",
-     "and b plus",
-     "two a plus",
-     "So it's two",
-     "a plus two, which",
-     "four a plus",
-     "For example, six squared is",
-     "thirty-six and four",
-     "Thirty-six minus sixteen",
-     "and four times",
-     "four is twenty"
-    ]
-   },
-   {
-    "say": "In the same way, d squared minus c squared is four c plus four. So the top is four a plus four c plus eight, which is four times, in brackets, a plus c plus two.",
-    "at": [
-     "In the same",
-     "squared minus c",
-     "four c plus",
-     "So the top is",
-     "eight, which is",
-     "in brackets, a"
-    ]
-   },
-   {
-    "say": "And the bottom, a plus d, is a plus c plus two, the same bracket. It cancels, and we get four. Choice number four is our answer.",
-    "at": [
-     "And the bottom",
-     "plus two, the",
-     "It cancels, and",
-     "Choice number four is our answer"
-    ]
-   },
-   {
-    "say": "Now careful, two is the trap. It comes from a gap of one, but these are even numbers, with a gap of two.",
-    "at": [
-     "two is the trap",
-     "a gap of one",
-     "these are even",
-     "a gap of two"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Now let's try plugging in. The choices use a and c, so I choose them. But first, check that the choices come out different. With a and c both two, choice number three gives four, and choice number four gives four. A tie, so that pick is bad.",
-    "at": [
-     "Now let's",
-     "The choices use",
-     "c, so I",
-     "But first, check",
-     "choices come out",
-     "With a and c both two",
-     "number three gives",
-     "number four gives",
-     "A tie, so"
-    ]
-   },
-   {
-    "say": "So a is two and c is eight. The choices give forty, two, ten and four, all different.",
-    "at": [
-     "a is two and c is eight",
-     "The choices give",
-     "ten and four"
-    ]
-   },
-   {
-    "say": "Then b is four and d is ten. Sixteen minus four is twelve, and a hundred minus sixty-four is thirty-six, so the top is forty-eight. The bottom is two plus ten, which is twelve. Forty-eight over twelve is four. Choice number four. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Then b is four",
-     "and a hundred",
-     "is thirty-six, so",
-     "The bottom is",
-     "ten, which is",
-     "Forty-eight over twelve",
-     "Choice number four"
-    ]
-   }
   ]
- ]
 }

@@ -1624,8 +1624,9 @@ video('r26-t14-summary', 'lesson', slides=[
         "like six or ten squared first.", show(f2s, 'Is a number a divisor')),
       L("Most questions just break a number apart, or build numbers from pieces, and look for the missing prime.", show(f3s, 'break a number apart'))),
     S('GCD and LCM',
-      L("The greatest common divisor takes each shared prime at its lower power. The greatest number that's guaranteed to "
-        "divide, the LCM, takes every prime at its higher power.", show(g1s, 'The greatest common divisor')),
+      L("The greatest common divisor is the largest number that divides both numbers. It takes each shared prime at its lower power. "
+        "The least common multiple, the LCM, is the smallest positive number divisible by both numbers. "
+        "It takes every prime at its higher power.", show(g1s, 'The greatest common divisor')),
       L("Forty-eight is two to the power of four times three, and sixty is two squared times three times five. The GCD is two squared times three, which is twelve. The LCM takes two to the power of four, three and five, and sixteen times fifteen is two hundred forty.",
         show(g2s, 'Forty-eight is')),
       L("The trap is just multiplying the two numbers, which counts a shared prime twice. And the GCD times the LCM is the "
@@ -1840,6 +1841,13 @@ def _write_gap(vid):
 
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _write_gap(_v)
 
+
+# Spoken clarity revision: preserves the complete original board/cue plan.
+_clarity_spec = importlib.util.spec_from_file_location(
+    '_codex_script_clarity_20261012', os.path.join(HERE, '_codex_script_clarity_20261012.py'))
+_clarity_module = importlib.util.module_from_spec(_clarity_spec)
+_clarity_spec.loader.exec_module(_clarity_module)
+_clarity_module.apply(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

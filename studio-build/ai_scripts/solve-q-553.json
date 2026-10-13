@@ -1,0 +1,104 @@
+{
+ "videoId": "solve-q-553",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "For every two numbers x and y that are not zero, diamond of x, y is x minus y, squared, over x times y cubed. Given: a and b are two different numbers, and neither of them is zero. Diamond of a, b over diamond of b, a is equal to what?",
+    "voice": "calm",
+    "at": [
+     "For every two numbers"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A hard one. [short pause] We'll solve it three ways, the full math, a sharp insight, and plugging in numbers.",
+    "at": [
+     "A hard one",
+     "it three ways",
+     "math, a sharp",
+     "plugging in numbers"
+    ]
+   },
+   {
+    "say": "[short pause] Top, diamond of a, b, a minus b, squared, over a b cubed. Bottom, diamond of b, a, b minus a, squared, over b a cubed. Dividing by a fraction, multiply by its reciprocal.",
+    "at": [
+     "Top, diamond",
+     "a minus b",
+     "a b cubed",
+     "Bottom, diamond of",
+     "b minus a",
+     "b a cubed",
+     "Dividing by a fraction",
+     "by its reciprocal"
+    ]
+   },
+   {
+    "say": "And a tip. Don't open the squared brackets, they might cancel. And they do. Then one a and one b cancel, and we're left with a squared over b squared. Choice number three is our answer.",
+    "at": [
+     "Don't open the",
+     "they might cancel",
+     "do. Then one",
+     "one b cancel",
+     "a squared over b squared",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way, for students who see the algebra. What's different? We notice it's the same two letters, just swapped. The tops are a minus b and b minus a, squared. Opposites, squared, are equal, so the tops cancel.",
+    "at": [
+     "Another way",
+     "see the algebra",
+     "We notice it's",
+     "two letters, just",
+     "The tops are",
+     "b and b",
+     "Opposites, squared",
+     "the tops cancel"
+    ]
+   },
+   {
+    "say": "Only the bottoms are left, and dividing flips the second one. b a cubed over a b cubed. a squared over b squared. Choice number three.",
+    "at": [
+     "Only the bottoms",
+     "and dividing flips",
+     "b a cubed over",
+     "a squared over b squared. Choice",
+     "number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And the standard psychometric way, plugging in. What's different? No algebra at all. Letters in the choices, so first make sure they come out different. a and b can't be equal or zero. a is one, b is two. The choices give one, one half, one quarter and four. All different.",
+    "at": [
+     "And the",
+     "plugging in. What's",
+     "algebra at all",
+     "Letters in the",
+     "first make sure",
+     "a and b",
+     "equal or zero",
+     "a is one, b is two",
+     "half, one quarter"
+    ]
+   },
+   {
+    "say": "Top, one minus two, squared, is one, over one times eight, one eighth. Bottom, two minus one, squared, is one, over two times one, which is two. One half. One eighth divided by one half is one quarter. Choice number three. Strong in algebra? The insight. Everyone else, just plug in. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Top, one minus two",
+     "eight, one eighth",
+     "Bottom, two minus",
+     "is one, over two",
+     "one, which is",
+     "half. One eighth",
+     "is one quarter. Choice number three",
+     "number three. Strong",
+     "Everyone else, just"
+    ]
+   }
+  ]
+ ]
+}

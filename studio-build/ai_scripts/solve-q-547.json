@@ -1,0 +1,44 @@
+{
+ "videoId": "solve-q-547",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The operation diamond is defined for every positive integer x. Diamond of x is nine when x is one, and diamond of x minus one when x is bigger than one. Diamond of seven is equal to what?",
+    "voice": "calm",
+    "at": [
+     "The operation diamond"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Another circular rule. [short pause] We'll go down to the start value.",
+    "at": [
+     "Another circular rule",
+     "down to the"
+    ]
+   },
+   {
+    "say": "[short pause] Seven is bigger than one, so diamond of seven is diamond of six. Diamond of six is diamond of five, and so on. Each one just passes to the one below, down to diamond of one.",
+    "at": [
+     "Seven is bigger than one",
+     "diamond of six",
+     "Diamond of six is",
+     "of five, and",
+     "Each one just",
+     "the one below",
+     "diamond of one"
+    ]
+   },
+   {
+    "say": "And one is not bigger than one, so the start value. Diamond of one is nine. So diamond of seven is nine. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "one is not bigger",
+     "Diamond of one",
+     "So diamond of",
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

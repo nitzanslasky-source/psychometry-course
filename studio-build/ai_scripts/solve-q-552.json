@@ -1,0 +1,95 @@
+{
+ "videoId": "solve-q-552",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "For every two numbers x and y, diamond of x, y is the square root of eight x squared plus y squared. Given: a is bigger than zero. Diamond of diamond of a, a, and a, over diamond of a, and diamond of a, a, is equal to what?",
+    "voice": "calm",
+    "at": [
+     "For every two numbers"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Unknowns this time. [short pause] We'll solve it two ways, the full math, and then plugging in numbers.",
+    "at": [
+     "Unknowns this time",
+     "it two ways",
+     "math, and then"
+    ]
+   },
+   {
+    "say": "[short pause] Four diamonds, but diamond of a, a is on top and at the bottom, so three calculations. The inner one, the root of eight a squared plus a squared, the root of nine a squared, three a.",
+    "at": [
+     "Four diamonds",
+     "a, a is",
+     "and at the",
+     "The inner one",
+     "of eight a",
+     "a squared, the",
+     "nine a squared"
+    ]
+   },
+   {
+    "say": "Top, three a goes in the first slot. Three a squared is nine a squared, times eight, seventy-two a squared, plus a squared. a root seventy-three.",
+    "at": [
+     "Top, three a",
+     "Three a squared",
+     "a squared, times",
+     "a squared, plus",
+     "a root seventy-three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Bottom, now three a is in the second slot. Eight a squared plus nine a squared. a root seventeen.",
+    "at": [
+     "Bottom, now three a",
+     "Eight a squared",
+     "a squared. a"
+    ]
+   },
+   {
+    "say": "The a's cancel. Root seventy-three over root seventeen, one root of seventy-three seventeenths. Choice number three is our answer.",
+    "at": [
+     "The a's cancel",
+     "one root of",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way, and here it's the recommended one. What's different? No letters at all. The choices are plain numbers, so one plug-in is enough. a is positive, take one. Diamond of one, one is the root of nine, three.",
+    "at": [
+     "Another way",
+     "the recommended one",
+     "No letters at",
+     "The choices are",
+     "so one plug-in",
+     "a is positive",
+     "take one",
+     "the root of"
+    ]
+   },
+   {
+    "say": "Top, diamond of three, one. Three is in the first slot, eight times nine is seventy-two, and seventy-two plus one is seventy-three, so root seventy-three. Some students stop here, only choice number three has seventy-three on top. Bottom, diamond of one, three. Eight plus nine, root seventeen. Choice number three. With unknowns in an operation, plugging in is the way. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Top, diamond of three",
+     "slot, eight times",
+     "seventy-two, and seventy-two",
+     "is seventy-three, so",
+     "Some students stop",
+     "number three has",
+     "Bottom, diamond of",
+     "Eight plus nine, root seventeen",
+     "number three. With",
+     "With unknowns in",
+     "plugging in is"
+    ]
+   }
+  ]
+ ]
+}

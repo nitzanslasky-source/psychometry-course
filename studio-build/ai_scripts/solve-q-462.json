@@ -1,86 +1,86 @@
 {
- "videoId": "solve-q-462",
- "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "a and b are integers. Given: a minus b is equal to six. Which of the following expressions is necessarily even?",
-    "voice": "calm",
-    "at": [
-     "a and b are"
+  "videoId": "solve-q-462",
+  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "a and b are integers. Given: a minus b is equal to six. Which of the following expressions is necessarily even?",
+        "voice": "calm",
+        "at": [
+          "a and b are"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So a minus b is six, an even number. We need to find which expression must also be even. [short pause] We'll solve it two ways, using what that difference tells us about a and b, and then plugging in numbers.",
+        "at": [
+          "need to find",
+          "find which expression",
+          "two ways, using",
+          "and then plugging"
+        ]
+      },
+      {
+        "say": "[short pause] If the difference is even, the numbers are either both even or both odd. They can both be even, like eight and two, whose difference is six. Or they can both be odd, like nine and three, whose difference is also six. One even and one odd would give an odd difference. So a and b are either both even or both odd.",
+        "at": [
+          "If the difference is even",
+          "numbers are either",
+          "both odd. They can",
+          "They can both be even",
+          "eight and two",
+          "be odd, like",
+          "three, whose difference",
+          "So a and b are either"
+        ]
+      },
+      {
+        "say": "Now choice number two, b squared plus a b. b squared is b times b, and a b is a times b. So we can write the expression as b times the whole bracket, b plus a. If a and b are both even, their sum is even. If both are odd, their sum is still even. We multiply b by that even sum, so the answer is always even. Choice number two is our answer.",
+        "at": [
+          "number two, b",
+          "b squared is",
+          "b times the",
+          "the answer is",
+          "is always even",
+          "always even. Choice",
+          "Choice number two is",
+          "Choice number two is",
+          "choice number two is our answer"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So we know the difference, six, and we look for the expression that's always even. [short pause] We'll solve it two ways, with the parities, and then plugging in numbers.",
-    "at": [
-     "the difference, six",
-     "look for the",
-     "two ways, with",
-     "and then plugging"
+    [
+      {
+        "say": "[pause] Now let's try plugging in numbers with a difference of six. If we choose two even numbers, every choice gives an even result, so that trial would not tell the choices apart. Use two odd numbers instead: a is seven and b is one. Seven minus one is six, so the numbers fit the given.",
+        "at": [
+          "Now let's",
+          "numbers with a",
+          "numbers, every choice",
+          "numbers, every choice",
+          "numbers, every choice",
+          "numbers, every choice",
+          "a is seven and b is one"
+        ]
+      },
+      {
+        "say": "Use seven for a and one for b in every choice. Choice number one gives forty-nine plus one plus five, which is fifty-five, odd, so it's out. Choice number two gives one plus seven, which is eight, even. Choice number three gives forty-two minus one, which is forty-one, odd, so it's out. Choice number four gives two hundred forty-five plus four, which is two hundred forty-nine, odd, so it's out.",
+        "at": [
+          "Choice number one",
+          "one plus five",
+          "fifty-five, odd",
+          "number two gives",
+          "is eight, even",
+          "Choice number three",
+          "forty-one, odd",
+          "four gives two",
+          "forty-nine, odd"
+        ]
+      },
+      {
+        "say": "Three choices gave odd results with numbers that fit the given. They cannot be necessarily even, so only choice number two is left. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "so only choice"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start with the parities. Six is even, and when is a difference even? When both are even, like eight minus two, or both are odd, like nine minus three. So a and b have the same parity.",
-    "at": [
-     "Let's start",
-     "Six is even",
-     "is a difference",
-     "both are even",
-     "eight minus two",
-     "are odd, like",
-     "three. So a",
-     "the same parity"
-    ]
-   },
-   {
-    "say": "Now choice number two, b squared plus a b. Take out b, and it's b times, in brackets, b plus a. And b plus a is even plus even or odd plus odd, so it's always even. A product with an even factor is even, so choice number two is our answer.",
-    "at": [
-     "number two, b",
-     "Take out b",
-     "b times, in",
-     "plus a. And",
-     "b plus a is",
-     "odd, so it's",
-     "A product with",
-     "factor is even",
-     "choice number two is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Now let's try plugging in. Which numbers? If I take two even numbers, every choice comes out even, and they won't help. So two odd numbers with a difference of six, a is seven and b is one.",
-    "at": [
-     "Now let's",
-     "If I take",
-     "numbers, every choice",
-     "even, and they",
-     "So two odd",
-     "a difference of",
-     "a is seven and b is one"
-    ]
-   },
-   {
-    "say": "Choice number one, forty-nine plus one plus five is fifty-five, odd. Out. Choice number two, one plus seven is eight, even. Choice number three, forty-two minus one is forty-one, odd. Out. Choice number four, two forty-five plus four is two forty-nine, odd. Out.",
-    "at": [
-     "Choice number one, forty-nine",
-     "one plus five",
-     "fifty-five, odd. Out",
-     "number two, one",
-     "is eight, even",
-     "Choice number three",
-     "forty-one, odd. Out",
-     "four, two forty-five",
-     "forty-nine, odd. Out"
-    ]
-   },
-   {
-    "say": "Three are out, so choice number two. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "so choice number two"
-    ]
-   }
   ]
- ]
 }

@@ -26,7 +26,7 @@
     ]
    },
    {
-    "say": "[short pause] I start with the smallest factor and go up. One isn't allowed, so no one times a hundred. Two times fifty, and the difference is forty-eight. Three? A hundred doesn't divide by three. Four times twenty-five, and the difference is twenty-one.",
+    "say": "[short pause] For each allowed factor pair, we'll multiply to a hundred and then calculate the distance between the two factors. I start with the smallest factor and go up. One isn't allowed, so no one times a hundred. Two times fifty, and the difference is forty-eight. Three? A hundred doesn't divide by three. Four times twenty-five, and the difference is twenty-one.",
     "at": [
      "I start",
      "factor and go",
@@ -63,7 +63,7 @@
     ]
    },
    {
-    "say": "So the biggest A is forty-eight, and the smallest is zero. Forty-eight minus zero is forty-eight, so choice number three is our answer.",
+    "say": "They ask for the difference between the largest and smallest values of A. So we need one final subtraction after listing the possible distances. So the biggest A is forty-eight, and the smallest is zero. Forty-eight minus zero is forty-eight, so choice number three is our answer.",
     "at": [
      "the biggest A",
      "the smallest is zero",
@@ -102,7 +102,7 @@
     ]
    },
    {
-    "say": "When is A smallest? When they're as close as possible. Can they be equal? Only if a hundred is a perfect square, and it is, ten times ten. So the smallest A is ten minus ten, zero.",
+    "say": "The closest possible factors give the smallest distance. Nothing in the question requires x and y to be different. When is A smallest? When they're as close as possible. Can they be equal? Only if a hundred is a perfect square, and it is, ten times ten. So the smallest A is ten minus ten, zero.",
     "at": [
      "as close as possible",
      "they be equal",

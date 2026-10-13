@@ -1,94 +1,125 @@
 {
- "videoId": "solve-q-r26-t16-02",
- "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "The sum of seven consecutive integers is ninety-one. What is the largest of them?",
-    "voice": "calm",
-    "at": [
-     "The sum"
+  "videoId": "solve-q-r26-t16-02",
+  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "The sum of seven consecutive integers is ninety-one. What is the largest of them?",
+        "voice": "calm",
+        "at": [
+          "The sum"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So seven integers in a row add up to ninety-one, and we need the largest integer, not the middle one. [short pause] We'll solve it two ways, using the middle and how many numbers there are, and then writing the numbers with one letter.",
+        "at": [
+          "to ninety-one",
+          "we need the",
+          "ways, using the",
+          "and how many"
+        ]
+      },
+      {
+        "say": "Remember, the average is the sum divided by the number of values. Rearranging that gives the sum is the number of values times the average. We have seven values, so their sum is seven times their average.",
+        "at": [
+          "Remember, the average",
+          "The average is the sum",
+          "divided by the",
+          "Rearranging that gives",
+          "number of values times",
+          "We have seven",
+          "so their sum"
+        ]
+      },
+      {
+        "say": "Why is the average the middle number here? Three numbers are below the middle, and three are above it, at equal gaps. Pair the number one below with the number one above. One is below the middle by exactly as much as the other is above it. So together they equal twice the middle. The same happens with the pair two below and two above, and the pair three below and three above. Each pair has the middle as its average, and the unpaired middle number is already there. So the average of the whole group is the middle number.",
+        "at": [
+          "Why is the",
+          "the middle number",
+          "the middle, and",
+          "equal gaps. Pair",
+          "number one below",
+          "with the number",
+          "number one above",
+          "together they equal",
+          "The same happens",
+          "and two above",
+          "below and three",
+          "as its average",
+          "average of the",
+          "average of the"
+        ]
+      },
+      {
+        "say": "So if we have an odd number of integers in a row, multiply how many numbers we have by the middle number. That gives their sum. Seven is odd, and the middle of seven numbers is the fourth number.",
+        "at": [
+          "So if we",
+          "odd number of",
+          "in a row",
+          "multiply how many",
+          "Seven is odd",
+          "and the middle",
+          "middle of seven"
+        ]
+      },
+      {
+        "say": "Let's check the idea with the examples. Four plus five plus six is fifteen, which is three times the middle, five. The five numbers from ten to fourteen add up to sixty. Their middle is twelve, and five times twelve is sixty.",
+        "at": [
+          "Four plus five plus six",
+          "is fifteen, which",
+          "times the middle",
+          "Ten to fourteen",
+          "add up to",
+          "times twelve is"
+        ]
+      },
+      {
+        "say": "Now use our sum, ninety-one. Divide by the seven numbers: ninety-one over seven is thirteen. That gives the middle, which is the fourth number. There are three integers in a row after it, so the whole group runs from ten to sixteen. To reach the largest, move three places above thirteen.",
+        "at": [
+          "our sum, ninety-one",
+          "ninety-one over seven",
+          "the fourth number",
+          "whole group runs from ten to sixteen"
+        ]
+      },
+      {
+        "say": "The largest is sixteen, so choice number three is our answer.",
+        "at": [
+          "The largest is sixteen",
+          "choice number three is our answer"
+        ]
+      },
+      {
+        "say": "Now careful, thirteen is the middle number we calculated. The question asks for the largest, so don't stop at the middle.",
+        "at": [
+          "thirteen is the",
+          "at the middle"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So seven numbers in a row, and all we know is their sum. [short pause] We'll solve it two ways, with count times middle, and then with one letter.",
-    "at": [
-     "a row, and",
-     "all we know is their sum",
-     "ways, with count",
-     "and then with"
+    [
+      {
+        "say": "[pause] Another way is to write the seven numbers with the middle called b. They run from b minus three to b plus three. When we add all seven, the negative three cancels the positive three, the negative two cancels the positive two, and the negative one cancels the positive one. Seven copies of b remain, so the sum is seven b.",
+        "at": [
+          "Another way",
+          "to write the",
+          "seven numbers with",
+          "b minus three",
+          "the negative three",
+          "remain, so the"
+        ]
+      },
+      {
+        "say": "The given says the sum is ninety-one, so seven b is ninety-one. Divide by seven: b is thirteen. The largest is three above the middle, so it is b plus three, which is sixteen. Choice number three is our answer. Okay. I'll see you in the next question.",
+        "at": [
+          "Seven b is ninety-one",
+          "b is thirteen",
+          "The largest is",
+          "plus three, which",
+          "Choice number three"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Here's the rule. The sum of numbers in a row is the count times the middle one. Why? The numbers pair up around the middle. One below and one above together are like two middles, so every number counts as the middle.",
-    "at": [
-     "Here's the",
-     "of numbers in",
-     "the count times the middle",
-     "The numbers pair",
-     "One below and",
-     "together are like",
-     "so every number"
-    ]
-   },
-   {
-    "say": "Let's see it in numbers. Four plus five plus six is fifteen, and that's three times the middle, five. Ten to fourteen, five numbers, add up to sixty, five times the middle, twelve.",
-    "at": [
-     "Four plus five plus six",
-     "is fifteen, and",
-     "times the middle",
-     "Ten to fourteen",
-     "add up to",
-     "times the middle, twelve"
-    ]
-   },
-   {
-    "say": "So here the middle is the sum over the count, ninety-one over seven, thirteen. That's the fourth number, with three below it and three above it, ten up to sixteen.",
-    "at": [
-     "is the sum",
-     "ninety-one over seven",
-     "the fourth number",
-     "three below it"
-    ]
-   },
-   {
-    "say": "The largest is sixteen, so choice number three is our answer.",
-    "at": [
-     "The largest is sixteen",
-     "choice number three is our answer"
-    ]
-   },
-   {
-    "say": "Now careful, thirteen is the trap. It's the middle, not the largest.",
-    "at": [
-     "thirteen is the trap",
-     "It's the middle"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Another way is one letter, around the middle, b. The seven numbers are b minus three up to b plus three. The minuses and the pluses cancel, so the sum is seven b.",
-    "at": [
-     "Another way",
-     "around the middle",
-     "seven numbers are",
-     "b minus three up to",
-     "The minuses and",
-     "cancel, so the"
-    ]
-   },
-   {
-    "say": "Seven b is ninety-one, so b is ninety-one over seven, thirteen. And the largest is b plus three, sixteen. Choice number three. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Seven b is ninety-one",
-     "b is ninety-one over",
-     "And the largest",
-     "plus three, sixteen",
-     "Choice number three"
-    ]
-   }
   ]
- ]
 }

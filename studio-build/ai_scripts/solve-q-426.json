@@ -26,7 +26,7 @@
     ]
    },
    {
-    "say": "[short pause] Let's start by splitting off the fives. In each choice, the part that divides by five doesn't matter, and only what's left decides. Choice number one, five x plus seven. Five x is always full fives. Seven is one five plus two, so it leaves two, not four. Out.",
+    "say": "[short pause] We need a remainder of four. So in each expression, I'll separate the complete groups of five from the part left over. Let's start by splitting off the fives. In each choice, the part that divides by five doesn't matter, and only what's left decides. Choice number one, five x plus seven. Five x is always full fives. Seven is one five plus two, so it leaves two, not four. Out.",
     "at": [
      "Let's start",
      "In each choice",
@@ -40,15 +40,21 @@
     ]
    },
    {
-    "say": "Choice number two, five x plus two, squared. Let's open it with the formula, a plus b, squared. Five x squared is twenty-five x squared, two times five x times two is twenty x, and two squared is four.",
+    "say": "This choice has brackets squared, so let's expand it and see which terms are complete groups of five. Choice number two, in brackets, five x plus two, all squared. Let's open it with the formula, a plus b, all squared. The first term is five x, all squared. We square both the five and the x, so that is twenty-five x squared. The middle term is two times five x times two, which is twenty x. And the last term is two squared, which is four.",
     "at": [
      "Choice number two",
-     "plus two, squared",
+     "five x plus",
      "Let's open it",
-     "Five x squared",
-     "x squared, two",
-     "x times two",
-     "two squared is four"
+     "The first term",
+     "x, all squared",
+     "We square both",
+     "and the x",
+     "is twenty-five x",
+     "The middle term",
+     "times five x",
+     "which is twenty",
+     "the last term",
+     "two squared, which is four"
     ]
    },
    {
@@ -105,7 +111,7 @@
     ]
    },
    {
-    "say": "With x zero, the choices are seven, two squared, which is four, eight, and five squared, which is twenty-five.",
+    "say": "I'll replace x with zero in every choice. Then we'll divide each result by five and check what is left over. With x zero, the choices are seven, two squared, which is four, eight, and five squared, which is twenty-five.",
     "at": [
      "the choices are seven",
      "squared, which is",

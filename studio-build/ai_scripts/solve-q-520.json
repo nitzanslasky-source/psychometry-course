@@ -1,108 +1,108 @@
 {
- "videoId": "solve-q-520",
- "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "x is a two-digit number. x is equal to the cube of its units digit, plus four times the sum of its digits. What is the tens digit of x?",
-    "voice": "calm",
-    "at": [
-     "x is a two-digit"
+  "videoId": "solve-q-520",
+  "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "x is a two-digit number. x is equal to the cube of its units digit, plus four times the sum of its digits. What is the tens digit of x?",
+        "voice": "calm",
+        "at": [
+          "x is a two-digit"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "This digit puzzle is written in words. We need the tens digit of x. [short pause] We'll solve it two ways, writing the number using its digits, and then testing the answer choices.",
+        "at": [
+          "This digit puzzle",
+          "We need the",
+          "it two ways",
+          "number using its",
+          "testing the answer"
+        ]
+      },
+      {
+        "say": "[short pause] Let's start by calling the tens digit T and the ones digit U. Then x is ten T plus U. Its digit sum is T plus U. The given says x equals U cubed, plus four times the whole bracket, T plus U. The four multiplies both digits' sum, not just T.",
+        "at": [
+          "Let's start",
+          "the tens digit T",
+          "the ones digit U",
+          "x is ten T plus U",
+          "The given says",
+          "U cubed, plus"
+        ]
+      },
+      {
+        "say": "Both expressions equal x, so set them equal. Ten T plus U equals U cubed plus four T plus four U. Subtract four T and U from both sides. On the left, we have six T. On the right, we have U cubed plus three U. So six T equals U cubed plus three U.",
+        "at": [
+          "U cubed plus",
+          "plus four U",
+          "Subtract four T",
+          "U from both",
+          "Six T equals",
+          "Six T equals"
+        ]
+      },
+      {
+        "say": "T is a digit, no larger than nine. So six T cannot be greater than fifty-four. Let's test the small values of U. U is one gives one plus three, which is four. U is two gives eight plus six, which is fourteen. U is three gives twenty-seven plus nine, which is thirty-six. U is four gives sixty-four plus twelve, which is seventy-six, already too large. Among these results, only thirty-six is six times an allowed tens digit.",
+        "at": [
+          "T is a digit",
+          "six T cannot be greater than fifty-four",
+          "Let's test the small values of U",
+          "U is one gives",
+          "U is two gives",
+          "U is three gives",
+          "U is four gives",
+          "already too large",
+          "only thirty-six"
+        ]
+      },
+      {
+        "say": "Six T is thirty-six. Divide by six to get T is six. Choice number three is our answer.",
+        "at": [
+          "Six T is thirty-six",
+          "T is six",
+          "Choice number three is our answer"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "A digit puzzle in words, with no columns. [short pause] We'll solve it two ways, with the algebraic form, and then plugging in the answers.",
-    "at": [
-     "A digit puzzle in words",
-     "with no columns",
-     "it two ways",
-     "algebraic form, and",
-     "in the answers"
+    [
+      {
+        "say": "[pause] Now let's test the answer choices. Each choice gives a possible tens digit T. We still need a ones digit U that fits the original condition. Test seven first. x would be seventy plus U. Its digit sum would be seven plus U, so the condition gives seventy plus U equals U cubed plus twenty-eight plus four U. Subtract twenty-eight and U from both sides. We need U cubed plus three U to equal forty-two. U is three gives thirty-six, and U is four gives seventy-six. Forty-two is between these, so no single digit U works. This choice is out.",
+        "at": [
+          "Test seven first",
+          "Test seven first",
+          "Test seven first",
+          "Test seven first",
+          "seven first. x",
+          "U cubed plus",
+          "Subtract twenty-eight",
+          "U cubed plus three",
+          "U is three",
+          "four gives seventy-six",
+          "no single digit"
+        ]
+      },
+      {
+        "say": "Use the same calculation for the other tens digits. T is five needs U cubed plus three U to be thirty. T is four needs it to be twenty-four. No digit U gives either result, so both choices are out.",
+        "at": [
+          "to be thirty",
+          "to be thirty",
+          "T is four",
+          "digit U gives"
+        ]
+      },
+      {
+        "say": "T is six needs thirty-six, and U is three gives exactly that. So x is sixty-three. Check the original words: three cubed is twenty-seven. The digit sum is nine, and four times nine is thirty-six. Twenty-seven plus thirty-six is sixty-three. It fits. Choice number three is our answer. Okay. I'll see you in the next question.",
+        "at": [
+          "Six needs thirty-six",
+          "three gives exactly",
+          "x is sixty-three",
+          "Three cubed is",
+          "four times nine",
+          "thirty-six is sixty-three"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start with the algebraic form. The tens digit is T and the units digit is U, so x is ten T plus U. And the condition, x equals U cubed, plus four times T plus U.",
-    "at": [
-     "algebraic form. The",
-     "is T and",
-     "digit is U",
-     "x is ten T plus U",
-     "And the condition",
-     "U cubed, plus"
-    ]
-   },
-   {
-    "say": "Open the bracket, four T plus four U. Take four T and one U away from both sides. Six T equals U cubed plus three U.",
-    "at": [
-     "Open the bracket",
-     "plus four U",
-     "Take four T",
-     "U away from",
-     "Six T equals",
-     "plus three U"
-    ]
-   },
-   {
-    "say": "Six T is at most six times nine, fifty-four, so U is small. U one gives one plus three, four. U two, eight plus six, fourteen. U three, twenty-seven plus nine, thirty-six. U four, sixty-four plus twelve, seventy-six, too big. Only thirty-six is six times a digit.",
-    "at": [
-     "Six T is",
-     "six times nine",
-     "U is small",
-     "U one gives",
-     "U two, eight",
-     "U three, twenty-seven",
-     "U four, sixty-four",
-     "seventy-six, too big",
-     "Only thirty-six is"
-    ]
-   },
-   {
-    "say": "Six T is thirty-six, so T is six. Choice number three is our answer.",
-    "at": [
-     "Six T is thirty-six",
-     "T is six",
-     "Choice number three is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Another way, plugging in the answers. What's different? We start from each tens digit they offer. Seven? Then x is seventy plus U, and the condition is U cubed, plus twenty-eight, plus four U. Take twenty-eight and U away, U cubed plus three U is forty-two. U three gives thirty-six, U four gives seventy-six. No digit works. Out.",
-    "at": [
-     "Another way",
-     "answers. What's different",
-     "We start from",
-     "digit they offer",
-     "Seven? Then x",
-     "U cubed, plus",
-     "Take twenty-eight and",
-     "U cubed plus",
-     "U three gives",
-     "four gives seventy-six",
-     "No digit works. Out"
-    ]
-   },
-   {
-    "say": "The same way, five needs thirty, and four needs twenty-four. No digit gives those. Out.",
-    "at": [
-     "five needs thirty",
-     "five needs thirty",
-     "and four needs",
-     "digit gives those"
-    ]
-   },
-   {
-    "say": "Six needs thirty-six, and U three gives exactly that. So x is sixty-three. Three cubed is twenty-seven, and four times nine is thirty-six. Twenty-seven plus thirty-six is sixty-three. Choice number three. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Six needs thirty-six",
-     "three gives exactly",
-     "x is sixty-three",
-     "Three cubed is",
-     "four times nine",
-     "thirty-six is sixty-three"
-    ]
-   }
   ]
- ]
 }

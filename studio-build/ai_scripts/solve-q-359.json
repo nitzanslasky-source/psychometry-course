@@ -24,7 +24,7 @@
     ]
    },
    {
-    "say": "[short pause] Our first method, two cases. Remember, which numbers have an absolute value of nine? Nine, and negative nine. So the inside, x plus seven, is nine, or it's negative nine.",
+    "say": "[short pause] The bars surround the whole expression x plus seven. So we'll first find the possible values of that whole expression, then solve for x. Our first method, two cases. Remember, which numbers have an absolute value of nine? Nine, and negative nine. So the inside, x plus seven, is nine, or it's negative nine.",
     "at": [
      "Our first",
      "Our first method",
@@ -35,7 +35,7 @@
     ]
    },
    {
-    "say": "First case, x plus seven is nine. To get x alone, I take seven off both sides, and x is two.",
+    "say": "We need to undo the plus seven to isolate x. Subtracting seven from both sides keeps the equality. First case, x plus seven is nine. To get x alone, I take seven off both sides, and x is two. Nine minus seven is two, which gives the value of x in this first case.",
     "voice": "calm",
     "at": [
      "First case",
@@ -44,7 +44,7 @@
     ]
    },
    {
-    "say": "Second case, x plus seven is negative nine. Take seven off again, and x is negative sixteen.",
+    "say": "In this case the whole inside equals negative nine. We'll still undo the same plus seven. Second case, x plus seven is negative nine. Take seven off again, and x is negative sixteen. Negative nine minus seven is negative sixteen, so that is the second possible x.",
     "voice": "calm",
     "at": [
      "Second case",
@@ -77,7 +77,7 @@
   ],
   [
    {
-    "say": "[pause] Our second method, the number line. Here we read the bars as a distance. Let's start with an easier one. The absolute value of x minus five is seven. Bars around a difference give the distance between two numbers, so this says x is seven steps away from five. Seven steps to the right, five plus seven is twelve. Seven steps to the left, five minus seven is negative two. So x is twelve, or negative two.",
+    "say": "[pause] We're going to read the absolute value as a distance between points. The expression inside tells us which fixed point to measure from. Our second method, the number line. Here we read the bars as a distance. Let's start with an easier one. The absolute value of x minus five is seven. Bars around a difference give the distance between two numbers, so this says x is seven steps away from five. Seven steps to the right, five plus seven is twelve. Seven steps to the left, five minus seven is negative two. So x is twelve, or negative two.",
     "at": [
      "The absolute value of x minus five",
      "around a difference",
@@ -109,7 +109,7 @@
   ],
   [
    {
-    "say": "[pause] And our third method, plugging in the answers. The choices are numbers, so let's just try them. Sixteen plus seven is twenty-three, and twenty-three isn't nine, so no. Negative two plus seven is five, and five isn't nine, so no again.",
+    "say": "[pause] Each choice is a proposed x. Put it inside the original x plus seven, calculate the whole inside, then take its absolute value. And our third method, plugging in the answers. The choices are numbers, so let's just try them. Sixteen plus seven is twenty-three, and twenty-three isn't nine, so no. Negative two plus seven is five, and five isn't nine, so no again.",
     "voice": [
      "base"
     ],

@@ -1,97 +1,97 @@
 {
- "videoId": "solve-q-467",
- "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "Given: p is bigger than q, and p plus q plus r is smaller than zero. Which of the following additional givens makes r necessarily negative?",
-    "voice": "calm",
-    "at": [
-     "Given"
+  "videoId": "solve-q-467",
+  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "Given: p is bigger than q, and p plus q plus r is smaller than zero. Which of the following additional givens makes r necessarily negative?",
+        "voice": "calm",
+        "at": [
+          "Given"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So we add one choice to the givens. Which choice makes r have to be negative? [short pause] We'll solve it two ways, starting with the choice that is easiest to check, and then ruling out the others with numbers.",
+        "at": [
+          "choice to the",
+          "Which choice makes",
+          "makes r have",
+          "We'll solve it",
+          "starting with the",
+          "and then ruling",
+          "others with numbers"
+        ]
+      },
+      {
+        "say": "[short pause] Each choice gives us another condition. We need to use it together with both givens. Where should we start? Choice number two says p is positive. That still leaves q positive, zero or negative, so there are three cases. Choice number four says q is positive. p is bigger than q, so p is positive too. That leaves only one case, so let's start there.",
+        "at": [
+          "Where should we",
+          "Choice number two says",
+          "That still leaves",
+          "zero or negative",
+          "Choice number four says",
+          "is positive. p",
+          "bigger than q",
+          "is positive too",
+          "one case, so"
+        ]
+      },
+      {
+        "say": "p and q are both positive, so p plus q is positive. But the sum of all three is negative. So r has to pull the sum down, and r must be negative.",
+        "at": [
+          "p and q are both positive",
+          "But the sum",
+          "three is negative",
+          "r has to pull the sum down"
+        ]
+      },
+      {
+        "say": "Let's see it in numbers. p is three and q is two, so five plus r is smaller than zero, and r is smaller than negative five. Choice number four is our answer.",
+        "at": [
+          "p is three and q is two",
+          "r is smaller",
+          "and r is",
+          "Choice number four is our answer"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So we add one choice to the givens, and look for the one that forces r to be negative. [short pause] We'll solve it two ways, starting with the smartest choice, and then knocking out the others with numbers.",
-    "at": [
-     "choice to the",
-     "look for the",
-     "forces r to be negative",
-     "We'll solve it",
-     "starting with the",
-     "and then knocking",
-     "others with numbers"
+    [
+      {
+        "say": "[pause] Another way is to rule out the other choices with numbers. For each choice, we look for a positive r that still fits both givens and that choice. If we find one, r does not have to be negative, so that choice fails.",
+        "at": [
+          "Another way",
+          "out the other",
+          "numbers. For each",
+          "a positive r that still fits",
+          "fits both givens"
+        ]
+      },
+      {
+        "say": "Choice number one, p is negative. p is negative one, q is negative two, and r is one. Negative one plus negative two plus one is negative two, smaller than zero. The givens hold, and r is positive. Out.",
+        "at": [
+          "number one, p",
+          "p is negative one",
+          "Negative one plus",
+          "plus one is",
+          "smaller than zero",
+          "r is positive. Out"
+        ]
+      },
+      {
+        "say": "Choice numbers two and three. p is one, q is negative ten, and r is one. One plus negative ten plus one is negative eight. p is positive and q is negative, so both choices fit, and r is still positive. Both out. So choice number four. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "numbers two and",
+          "p is one, q is negative ten",
+          "One plus negative",
+          "one is negative",
+          "is positive and",
+          "so both choices fit",
+          "r is still",
+          "Both out",
+          "So choice number"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Where do I start? Choice number two says p is positive. Then q could be positive, zero or negative, three cases. Slow. Choice number four says q is positive, and p is bigger than q, so p is positive too. One case only. So let's start there.",
-    "at": [
-     "Where do",
-     "Choice number two says",
-     "Then q could",
-     "zero or negative",
-     "Choice number four says",
-     "is positive, and",
-     "bigger than q",
-     "is positive too",
-     "One case only"
-    ]
-   },
-   {
-    "say": "p and q are both positive, so p plus q is positive. But the sum of all three is negative. So r has to pull the sum down, and r must be negative.",
-    "at": [
-     "p and q are both positive",
-     "But the sum",
-     "three is negative",
-     "r has to pull the sum down"
-    ]
-   },
-   {
-    "say": "Let's see it in numbers. p is three and q is two, so five plus r is smaller than zero, and r is smaller than negative five. Choice number four is our answer.",
-    "at": [
-     "p is three and q is two",
-     "r is smaller",
-     "and r is",
-     "Choice number four is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Another way is to knock out the other choices with numbers. For each one, I look for a positive r that still fits the givens.",
-    "at": [
-     "Another way",
-     "out the other",
-     "numbers. For each",
-     "a positive r that still fits",
-     "fits the givens"
-    ]
-   },
-   {
-    "say": "Choice number one, p is negative. p is negative one, q is negative two, and r is one. Negative one plus negative two plus one is negative two, smaller than zero. The givens hold, and r is positive. Out.",
-    "at": [
-     "number one, p",
-     "p is negative one",
-     "Negative one plus",
-     "plus one is",
-     "smaller than zero",
-     "r is positive. Out"
-    ]
-   },
-   {
-    "say": "Choice numbers two and three. p is one, q is negative ten, and r is one. One plus negative ten plus one is negative eight. p is positive and q is negative, so both choices fit, and r is still positive. Both out. So choice number four. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "numbers two and",
-     "p is one, q is negative ten",
-     "One plus negative",
-     "one is negative",
-     "is positive and",
-     "so both choices fit",
-     "r is still",
-     "Both out",
-     "So choice number"
-    ]
-   }
   ]
- ]
 }

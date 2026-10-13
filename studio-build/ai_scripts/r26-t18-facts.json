@@ -1,87 +1,96 @@
 {
- "videoId": "r26-t18-facts",
- "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   "Welcome back. A few number facts that come back in letter puzzles. You'll meet them in the practice."
-  ],
-  [
-   {
-    "say": "First, numbers made of one repeated digit. A A is eleven times A. Seventy-seven is eleven times seven, and forty-four is eleven times four.",
-    "at": [
-     "one repeated digit",
-     "A A is eleven times A",
-     "and forty-four is"
+  "videoId": "r26-t18-facts",
+  "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      "Welcome back. Let's look at a few number facts that help in digit puzzles. You'll use them in the practice questions."
+    ],
+    [
+      {
+        "say": "First, numbers made from one repeated digit. In A A, both the tens and ones digits are A. So its value is ten A plus A, which is eleven times A. Seventy-seven is eleven times seven, and forty-four is eleven times four.",
+        "at": [
+          "one repeated digit",
+          "A A, both",
+          "and forty-four is"
+        ]
+      },
+      {
+        "say": "In A A A, all three digits are A. Its value is a hundred eleven times A. A hundred eleven is three times thirty-seven, so the repeated-digit number is divisible by both three and thirty-seven.",
+        "at": [
+          "A A A",
+          "A hundred eleven is",
+          "three times thirty-seven",
+          "so the repeated",
+          "divisible by both"
+        ]
+      },
+      {
+        "say": "Five hundred fifty-five is thirty-seven times fifteen. Two hundred twenty-two is thirty-seven times six.",
+        "at": [
+          "Five hundred fifty",
+          "fifteen. Two hundred",
+          "thirty-seven times six"
+        ]
+      },
+      {
+        "say": "Now divide a four-digit repeated number, B B B B, by its two-digit version, B B. Both use the same nonzero digit. The answer is always a hundred one. Seven thousand seven hundred seventy-seven divided by seventy-seven gives a hundred one. Three thousand three hundred thirty-three divided by thirty-three gives a hundred one too.",
+        "at": [
+          "the same nonzero",
+          "Seven thousand seven",
+          "divided by seventy-seven",
+          "thousand three hundred",
+          "by thirty-three"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "Next, find the largest or smallest three-digit number with a given digit sum. The places matter: adding one to the hundreds digit changes the number more than adding one to the tens or ones digit. With a digit sum of eight, put all eight in the hundreds place to get the largest number, eight hundred. For the smallest, the hundreds digit cannot be zero, so use one. Use zero in the tens place and the remaining seven in the ones place. That gives a hundred seven.",
+        "at": [
+          "smallest three-digit",
+          "given digit sum",
+          "hundreds digit changes",
+          "digit sum of",
+          "For the smallest",
+          "the hundreds digit cannot",
+          "zero, so use",
+          "Use zero in",
+          "seven in the",
+          "seven."
+        ]
+      },
+      {
+        "say": "Now use a digit sum of twelve. No digit can be greater than nine. For the largest number, put nine in the hundreds place, three in the tens place, and zero in the ones place. That gives nine hundred thirty. For the smallest, put one in the hundreds place. Put nine in the ones place, and the remaining two in the tens place. That gives a hundred twenty-nine.",
+        "at": [
+          "Now use a",
+          "hundreds place, three",
+          "the smallest, put",
+          "hundreds place. Put",
+          "place, and the",
+          "place. That gives a"
+        ]
+      },
+      {
+        "say": "So for the largest number, put as much of the digit sum as possible on the left. For the smallest, keep the left-hand digits as small as possible and put as much as possible on the right. The first digit cannot be zero, and no digit can be greater than nine. We could start with one in both examples, but not for every digit sum. Also remember the patterns topic: the last digits of powers repeat in a cycle. [pause] Okay. I'll see you in the next video.",
+        "at": [
+          "number, put as",
+          "For the smallest",
+          "For the smallest",
+          "For the smallest",
+          "For the smallest",
+          "For the smallest",
+          "The first digit",
+          "zero, and no",
+          "can be greater",
+          "We could start",
+          "could start with",
+          "not for every",
+          "every digit sum",
+          "Also remember the",
+          "last digits of",
+          "in a cycle"
+        ]
+      }
     ]
-   },
-   {
-    "say": "A A A is a hundred eleven times A. And a hundred eleven is three times thirty-seven. So A A A always divides by three and by thirty-seven.",
-    "at": [
-     "A A A is a hundred eleven",
-     "And a hundred",
-     "three times thirty-seven",
-     "So A A",
-     "divides by three"
-    ]
-   },
-   {
-    "say": "Five fifty-five is thirty-seven times fifteen, and two twenty-two is thirty-seven times six.",
-    "at": [
-     "Five fifty-five",
-     "fifteen, and two",
-     "thirty-seven times six"
-    ]
-   },
-   {
-    "say": "And B B B B divided by B B is always one hundred one. Seven thousand seven hundred seventy-seven divided by seventy-seven, and three thousand three hundred thirty-three divided by thirty-three, both give one oh one.",
-    "at": [
-     "divided by B B",
-     "Seven thousand seven",
-     "divided by seventy-seven",
-     "thousand three hundred",
-     "by thirty-three, both"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Second, the largest or the smallest number with a given digit sum. The largest three-digit number with digit sum eight? Put everything on the left. Eight hundred. The smallest? The leftmost digit can't be zero, so it's one. Then zero, and the rest goes on the right, seven. One oh seven.",
-    "at": [
-     "the smallest number",
-     "given digit sum",
-     "three-digit number with",
-     "digit sum eight",
-     "Eight hundred. The",
-     "The leftmost digit",
-     "zero, so it's",
-     "Then zero, and",
-     "goes on the",
-     "One oh seven"
-    ]
-   },
-   {
-    "say": "Digit sum twelve. The largest, nine on the left, then three, nine thirty. The smallest, one, then the biggest digit on the right, nine, and two in the middle. One twenty-nine.",
-    "at": [
-     "Digit sum twelve",
-     "left, then three",
-     "The smallest, one",
-     "biggest digit on",
-     "nine, and two",
-     "middle. One twenty-nine"
-    ]
-   },
-   {
-    "say": "So for the largest, big digits on the left. For the smallest, one first, then zeros, and the big digits on the right. And remember from patterns, the units digits of powers repeat in a cycle. [pause] Okay. I'll see you in the next video.",
-    "at": [
-     "big digits on the left",
-     "For the smallest",
-     "then zeros, and",
-     "digits on the right",
-     "And remember from",
-     "units digits of",
-     "in a cycle"
-    ]
-   }
   ]
- ]
 }

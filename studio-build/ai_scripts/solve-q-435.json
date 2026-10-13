@@ -1,160 +1,154 @@
 {
- "videoId": "solve-q-435",
- "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "When x is divided by eight, the remainder is four. Yuval claims: two x is necessarily divisible by eight. Noga claims: x is necessarily divisible by four. Itay claims: x is necessarily divisible by twelve. Which of the following is correct?",
-    "voice": "calm",
-    "at": [
-     "When x is"
+  "videoId": "solve-q-435",
+  "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "When x is divided by eight, the remainder is four. Yuval claims: two x is necessarily divisible by eight. Noga claims: x is necessarily divisible by four. Itay claims: x is necessarily divisible by twelve. Which of the following is correct?",
+        "voice": "calm",
+        "at": [
+          "When x is"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So dividing x by eight leaves four. Each person says something about what x divides by. Which claims always work? [short pause] We'll solve it three ways, thinking about the remainder, writing x with a letter, and then plugging in numbers.",
+        "at": [
+          "x by eight",
+          "Each person says",
+          "We'll solve it",
+          "thinking about the",
+          "then plugging in"
+        ]
+      },
+      {
+        "say": "[short pause] Let's start with the meaning of the remainder. x is made of complete groups of eight, with four left over. If eight is divisible by the new divisor, those complete groups also divide without a remainder. So then we only need to check the four left over.",
+        "at": [
+          "Let's start",
+          "x is made of complete",
+          "with four left over",
+          "If eight is divisible",
+          "those complete groups",
+          "divide without a remainder",
+          "only need to check"
+        ]
+      },
+      {
+        "say": "Let's check Yuval's claim that two x divides by eight. Doubling x doubles both its complete groups of eight and the four left over. The doubled groups still divide by eight. And the leftover part becomes two times four, which is eight. That divides by eight too, so two x always divides by eight. Yuval is right.",
+        "at": [
+          "Yuval",
+          "the four left",
+          "the leftover part",
+          "Two times four",
+          "That divides by",
+          "Yuval is right"
+        ]
+      },
+      {
+        "say": "Now let's check Noga's claim that x divides by four. Each complete group of eight contains two complete groups of four. So those groups leave no remainder when divided by four. The leftover four also divides by four: four over four is one, with no remainder. Both parts divide by four, so x always divides by four. Noga is right.",
+        "at": [
+          "Noga",
+          "four over four",
+          "over four is",
+          "over four is",
+          "Noga is right"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So we know the remainder by eight, and three claims about other divisors. [short pause] We'll solve it three ways, by understanding, with algebra, and then plugging in numbers.",
-    "at": [
-     "remainder by eight",
-     "three claims",
-     "We'll solve it",
-     "by understanding, with",
-     "then plugging in"
+    [
+      {
+        "say": "Now let's check Itay's claim that x divides by twelve. Eight does not divide by twelve, so our complete groups of eight do not necessarily divide by twelve. The original remainder is not enough to guarantee this claim. For example, x is four. Four divided by eight leaves four, as required, but four doesn't divide by twelve. This allowed value makes Itay's claim fail, so Itay is wrong.",
+        "at": [
+          "Itay",
+          "Eight does not",
+          "by twelve, so",
+          "by twelve, so",
+          "by twelve, so",
+          "x is four",
+          "four, as required",
+          "by twelve. This"
+        ]
+      },
+      {
+        "say": "Yuval and Noga are right, and only Itay is wrong. So choice number two is our answer.",
+        "at": [
+          "choice number two is our answer"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "[pause] Another way is algebra. We write the same remainder information as an expression. Let k count the complete groups of eight. Then x is eight k plus four: eight k is the part that divides exactly, and four is the remainder.",
+        "at": [
+          "Another way",
+          "We write the",
+          "We write the",
+          "an expression. Let",
+          "count the complete",
+          "groups of eight",
+          "eight k plus four"
+        ]
+      },
+      {
+        "say": "Let's check Yuval's claim by multiplying x by two. x is eight k plus four, so two x is sixteen k plus eight. Sixteen k is eight times two k, and eight is eight times one. So two x is eight times the whole bracket, two k plus one. The bracket gives a whole number, so two x always divides by eight. Yuval is right.",
+        "at": [
+          "Two x is sixteen k",
+          "Sixteen k is",
+          "is eight times",
+          "two k plus",
+          "so two x always",
+          "Yuval is right"
+        ]
+      },
+      {
+        "say": "Now Noga's claim. x is eight k plus four. Eight k is four times two k, and four is four times one. So x is four times the whole bracket, two k plus one. That means x always divides by four. Noga is right.",
+        "at": [
+          "x is eight",
+          "two k, and",
+          "That means x",
+          "Noga is right"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "Now Itay's claim about twelve. We have x is four times the whole bracket, two k plus one. Since twelve is four times three, that bracket would also need to divide by three. But it doesn't always. With k zero, two k plus one is one, and x is four, not divisible by twelve. So Itay is wrong. Choice number two is our answer.",
+        "at": [
+          "times the whole",
+          "is four times three",
+          "But it doesn't",
+          "it doesn't always",
+          "With k zero",
+          "x is four, not",
+          "Itay is wrong. Choice number two",
+          "number two"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "[pause] Now let's try plugging in. Start with x is four. Four divided by eight leaves four, so this value fits the given. Let's check the claims with it before deciding whether we need another value.",
+        "at": [
+          "Now let",
+          "x is four",
+          "fits the given"
+        ]
+      },
+      {
+        "say": "For Yuval's claim, two x is two times four, which is eight. It divides by eight. For Noga's claim, x is four, and it divides by four. For Itay's claim, four does not divide by twelve. This one allowed example makes Itay's claim fail, so it is not necessarily true.",
+        "at": [
+          "For Yuval's claim",
+          "For Noga's claim",
+          "For Itay's claim"
+        ]
+      },
+      {
+        "say": "We do not need to try twelve as well to disprove Itay's claim. One failure is enough. The working examples alone do not guarantee Yuval's and Noga's claims, but our first two methods explained why both always work. Only Itay is wrong, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "One failure is enough",
+          "choice number two is our answer"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start with understanding. x is full eights plus a remainder of four. When the new divisor divides eight, the full eights divide by it too, so only the remainder matters.",
-    "at": [
-     "Let's start",
-     "x is full",
-     "a remainder of",
-     "When the new divisor",
-     "eight, the full",
-     "by it too",
-     "the remainder matters"
-    ]
-   },
-   {
-    "say": "Yuval, two x by eight. The same eight, so only the remainder counts, doubled. Two times four is eight, and eight divides by eight. Yuval is right.",
-    "at": [
-     "Yuval",
-     "The same eight",
-     "the remainder counts",
-     "Two times four",
-     "and eight divides",
-     "Yuval is right"
-    ]
-   },
-   {
-    "say": "Noga, x by four. Four divides eight, so only the remainder matters. Four over four, no remainder. Noga is right.",
-    "at": [
-     "Noga",
-     "Four divides eight",
-     "the remainder matters",
-     "Four over four",
-     "Noga is right"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Itay, x by twelve. Twelve doesn't divide eight, so from a remainder by eight we can't know the remainder by twelve. For example, x is four. Four divided by eight leaves four, and four doesn't divide by twelve. Itay is wrong.",
-    "at": [
-     "Itay",
-     "Twelve doesn't divide eight",
-     "from a remainder",
-     "we can't know",
-     "by twelve. For",
-     "x is four",
-     "four, and four",
-     "by twelve. Itay"
-    ]
-   },
-   {
-    "say": "So only Itay is wrong, choice number two is our answer.",
-    "at": [
-     "choice number two is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Another way is algebra. What's different? Instead of thinking about the remainder, we write x as an expression and take out a common factor. x is full eights plus four, so x is eight k plus four.",
-    "at": [
-     "Another way",
-     "Instead of thinking",
-     "remainder, we write",
-     "an expression and",
-     "a common factor",
-     "full eights plus",
-     "eight k plus four"
-    ]
-   },
-   {
-    "say": "Yuval. Two x is sixteen k plus eight. Take out the eight, and it's eight times, in brackets, two k plus one. So it divides by eight. Yuval is right.",
-    "at": [
-     "Two x is sixteen k",
-     "Take out the",
-     "it's eight times",
-     "two k plus",
-     "So it divides",
-     "Yuval is right"
-    ]
-   },
-   {
-    "say": "Noga. Take out a four from x, and it's four times, in brackets, two k plus one. So it divides by four. Noga is right.",
-    "at": [
-     "Take out a four",
-     "in brackets, two",
-     "So it divides",
-     "Noga is right"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Itay. x is four times two k plus one. For twelve, we'd need a three inside two k plus one, and it isn't always there. With k zero, two k plus one is one, and x is four, not divisible by twelve. Itay is wrong. Choice number two.",
-    "at": [
-     "times two k",
-     "we'd need a three",
-     "two k plus one, and",
-     "it isn't always",
-     "With k zero",
-     "x is four, not",
-     "Itay is wrong. Choice number two",
-     "number two"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Now let's try plugging in numbers that leave four when divided by eight, four and twelve.",
-    "at": [
-     "Now let's",
-     "numbers that leave",
-     "divided by eight",
-     "four and twelve"
-    ]
-   },
-   {
-    "say": "Two x is eight or twenty-four, both divide by eight. Four and twelve both divide by four. But four doesn't divide by twelve, so Itay is wrong.",
-    "at": [
-     "Two x is eight",
-     "Four and twelve",
-     "But four doesn't",
-     "twelve, so Itay"
-    ]
-   },
-   {
-    "say": "Careful, examples that work don't prove Yuval and Noga right, the first two ways do. But one example that fails proves Itay wrong. So choice number two. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "examples that work don't prove",
-     "Yuval and Noga",
-     "first two ways",
-     "But one example",
-     "proves Itay wrong",
-     "So choice number two"
-    ]
-   }
   ]
- ]
 }

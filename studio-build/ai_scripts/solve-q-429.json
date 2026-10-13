@@ -22,7 +22,7 @@
     ]
    },
    {
-    "say": "Remember, split it into parts with no common factor. Twelve is three times four. Let's see it in numbers. Thirty-six, the last two digits are thirty-six, which divides by four, and three plus six is nine, which divides by three. And really, thirty-six is three twelves. Why not two times six? Two and six share a two. Six itself divides by two and by six, and not by twelve. Eighteen too, it divides by two and by six, and eighteen over twelve isn't whole.",
+    "say": "We need a way to check divisibility by twelve using familiar tests. Passing both the test for three and the test for four will give us that check. Remember, split it into parts with no common factor. Twelve is three times four. Let's see it in numbers. Thirty-six, the last two digits are thirty-six, which divides by four, and three plus six is nine, which divides by three. And really, thirty-six is three twelves. Why not two times six? Two and six share a two. Six itself divides by two and by six, and not by twelve. Eighteen too, it divides by two and by six, and eighteen over twelve isn't whole.",
     "at": [
      "parts with no",
      "Twelve is three times four",
@@ -41,7 +41,7 @@
     ]
    },
    {
-    "say": "Four first, the last two digits. Twenty-eight, fifty-two, seventy-two and sixteen all divide by four. So four can't tell them apart, and three decides.",
+    "say": "Let's check the pair of digits at the end of each answer choice, because those digits decide whether the whole number is divisible by four. Four first, the last two digits. Twenty-eight, fifty-two, seventy-two and sixteen all divide by four. So four can't tell them apart, and three decides.",
     "at": [
      "the last two digits",
      "all divide by",
@@ -50,7 +50,7 @@
     ]
    },
    {
-    "say": "Three, the digit sum. One plus four plus two plus eight is fifteen, and fifteen divides by three. So choice number one divides by twelve, and it's out.",
+    "say": "All the choices have already passed the test for four. Now we need to find the one that fails the test for three. Three, the digit sum. One plus four plus two plus eight is fifteen, and fifteen divides by three. So choice number one divides by twelve, and it's out.",
     "at": [
      "One plus four",
      "plus eight is",

@@ -501,7 +501,7 @@ d3 = I('d3', '$555=37\\cdot15 \\qquad 222=37\\cdot6$', size=36, hand='555 = 37·
 d4 = I('d4', '$\\overline{BBBB}\\div\\overline{BB}=101$: $\\ 7777\\div77,\\ \\ 3333\\div33$', size=32, hand='BBBB ÷ BB = 101 :    7777 ÷ 77,    3333 ÷ 33')
 e1 = I('e1', 'Digit sum $8$: $\\ $largest $800$, $\\ $smallest $107$', size=36, hand='Digit sum 8 :    largest 800,    smallest 107')
 e2 = I('e2', 'Digit sum $12$: $\\ $largest $930$, $\\ $smallest $129$', size=36, hand='Digit sum 12 :    largest 930,    smallest 129')
-e3 = I('e3', 'Largest: big digits left $\\quad$ smallest: $1$, zeros, big digits right', size=30)
+e3 = I('e3', 'Largest: big digits left. Smallest: smallest feasible digits left', size=28)
 video('r26-t18-facts', 'lesson', slides=[
     S('Number Facts',
       L("Welcome back. A few number facts that come back in letter puzzles. You'll meet them in the practice.")),
@@ -520,8 +520,10 @@ video('r26-t18-facts', 'lesson', slides=[
         "zero, and the rest goes on the right, seven. One oh seven.", show(e1, 'digit sum eight')),
       L("Digit sum twelve. The largest, nine on the left, then three, nine thirty. The smallest, one, then the biggest digit "
         "on the right, nine, and two in the middle. One twenty-nine.", show(e2, 'Digit sum twelve')),
-      L("So for the largest, big digits on the left. For the smallest, one first, then zeros, and the big digits on the "
-        "right. And remember from patterns, the units digits of powers repeat in a cycle. [pause] Okay. I'll see you in the "
+      L("So for the largest, big digits on the left. For the smallest, choose the smallest possible digit on the left, "
+        "and leave as much of the digit sum as possible for the right. The first digit cannot be zero, "
+        "and each remaining digit can hold at most nine. In our two examples we can start with one, "
+        "but that is not possible for every digit sum. And remember from patterns, the units digits of powers repeat in a cycle. [pause] Okay. I'll see you in the "
         "next video.", show(e3, 'big digits on the left'))),
 ])
 
@@ -718,6 +720,13 @@ n2 = I('n2', 'Ones: $\\ 6+8=14$, $\\ $carry $1$', hand='Ones :    6 + 8 = 14,   
 n3 = I('n3', 'Tens: $\\ A+B+1$ ends in $A$: $\\ B+1=10$, $\\ \\hl{b}{B=9}$', size=32, hand='Tens :    A + B + 1  ends in  A :    B + 1 = 10,    \\hl{b}{B = 9}')
 n4 = I('n4', '$256+98=354$ ✓', hand='256 + 98 = 354   ✓')
 n5 = I('n5', 'Middle column, same digit: $\\ 0$ or $9$', size=28, col=1)
+# Codex clarity pass 2026-10-12: a separate comparison slide avoids crowding the worked addition.
+# These show/point phrases are live graphic cues, not words the teacher should read.
+nc1 = I('nc1', 'No incoming carry: $A+C$ ends in $A$', size=30)
+nc2 = I('nc2', '$C=0$: $5+0=5$', size=36, hand='C = 0 :    5 + 0 = 5')
+nc3 = I('nc3', 'Incoming carry $1$: $A+B+1$ ends in $A$', size=30, col=1)
+nc4 = I('nc4', '$B=9$: $5+9+1=15$', size=36, col=1, hand='B = 9 :    5 + 9 + 1 = 15')
+nc5 = I('nc5', 'Check the incoming carry before choosing the digit', size=26)
 o1 = I('o1', '$206+10A+10B+8=304+10A$', hand='206 + 10A + 10B + 8 = 304 + 10A')
 o2 = I('o2', '$10B=304-214=90$: $\\ B=9$', hand='10B = 304 − 214 = 90 :    B = 9')
 video('solve-q-r26-t18-01', 'solution', qid='q-r26-t18-01', slides=[
@@ -735,6 +744,17 @@ video('solve-q-r26-t18-01', 'solution', qid='q-r26-t18-01', slides=[
       L("With any A. Take five, two fifty-six plus ninety-eight is three fifty-four. So in a middle column, ends in the same "
         "digit means zero or nine, depending on the carry. And a carry from two numbers is at most one. Three or four numbers "
         "can carry two or three.", show(n4, 'two fifty-six'), show(n5, 'in a middle column'))),
+    S('Method 1 · Why the carry changes the digit',
+      L("Compare this with the earlier question where A plus C ended in A. That was the ones column, "
+        "so nothing carried into it. C had to be zero. With A five, five plus zero is five, "
+        "and the digit stays five.", show(nc1, 'A plus C ended in A'), show(nc2, 'C had to be zero')),
+      L("Here we are in the tens column, and one carries in. So we add B and that one to A. "
+        "To end in A again, those additions must make a full ten. B plus one is ten, so B is nine.",
+        show(nc3, 'one carries in'), show(nc4, 'B is nine')),
+      L("With A five, five plus nine plus one is fifteen. We write the five and carry the one. "
+        "So the same ending digit does not always mean add zero. First check whether something carried into the column.",
+        pt('nc4', 'five plus nine plus one is fifteen'), show(nc5, 'First check whether something carried')),
+      sb='Method 1 · The columns'),
     S('Method 2 · The algebraic form',
       L("[pause] Another way, with no columns at all. What's different? Each number is written by its digits, so no carry "
         "can be forgotten. Two hundred six plus ten A, plus ten B plus eight, equals three hundred four plus ten A.",
@@ -842,8 +862,9 @@ video('r26-t18-summary', 'lesson', slides=[
     S('Number facts',
       L("A A A is a hundred eleven times A, so it divides by three and by thirty-seven. Four forty-four is thirty-seven times "
         "twelve.", show(s9s, 'A A A is a hundred eleven')),
-      L("Largest with a given digit sum, big digits on the left. Smallest, one first, then zeros, and the big digits on the "
-        "right. Digit sum ten, nine ten and one oh nine. [pause] That's it. Now go practice, and I'll see you in the next "
+      L("Largest with a given digit sum, big digits on the left. Smallest, choose the smallest possible digits on the left "
+        "while leaving enough room for the rest of the digit sum. The first cannot be zero, and no digit can exceed nine. "
+        "Digit sum ten, the largest is nine hundred ten and the smallest is one hundred nine. [pause] That's it. Now go practice, and I'll see you in the next "
         "video.", show(s10s, 'Largest with a given digit sum'))),
 ])
 
@@ -1116,6 +1137,13 @@ def _stem_parts(vid):
 
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v); _write_gap(_v)
 
+
+# Spoken clarity revision: preserves the complete original board/cue plan.
+_clarity_spec = importlib.util.spec_from_file_location(
+    '_codex_script_clarity_20261012', os.path.join(HERE, '_codex_script_clarity_20261012.py'))
+_clarity_module = importlib.util.module_from_spec(_clarity_spec)
+_clarity_spec.loader.exec_module(_clarity_module)
+_clarity_module.apply(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

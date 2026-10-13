@@ -47,7 +47,7 @@
     ]
    },
    {
-    "say": "So number one compares r and p, a positive and a negative. Not necessarily, out. Number three, p and s, different sides again, out. Number four, q and s, different sides, out.",
+    "say": "The choices compare absolute values, so we're comparing distances from zero. Being on the negative side doesn't by itself tell us that distance. So number one compares r and p, a positive and a negative. Not necessarily, out. Number three, p and s, different sides again, out. Number four, q and s, different sides, out.",
     "at": [
      "number one compares",
      "Not necessarily, out",
@@ -97,7 +97,7 @@
     ]
    },
    {
-    "say": "Number one, forty smaller than three? No, out. Number two, one smaller than three? Yes, and it worked in the first picture too. So number two survives both pictures. Number two.",
+    "say": "The second picture changes the relative distances across zero while keeping the given order. Let's see which surviving comparison it breaks. Number one, forty smaller than three? No, out. Number two, one smaller than three? Yes, and it worked in the first picture too. So number two survives both pictures. Number two.",
     "voice": "calm",
     "at": [
      "Number one, forty",

@@ -1,0 +1,99 @@
+{
+ "videoId": "solve-q-550",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "For every three numbers x, y and z, diamond of x, y, z is equal to x to the power of y z, plus y to the power of x z, plus z to the power of x y. Diamond of one, one, and diamond of two, one, four, is equal to what?",
+    "voice": "calm",
+    "at": [
+     "For every three numbers"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A brand-new operation, but only numbers, no unknowns. [short pause] We'll solve it two ways, the standard way, and then a sharp shortcut.",
+    "at": [
+     "only numbers",
+     "solve it two",
+     "standard way, and"
+    ]
+   },
+   {
+    "say": "[short pause] The diamond appears twice, so we run it twice, and always the inner one first. x is two, y is one, and z is four. Each number goes to the power of the product of the other two.",
+    "at": [
+     "The diamond",
+     "we run it",
+     "always the inner",
+     "x is two, y is one",
+     "Each number goes",
+     "power of the",
+     "the other two"
+    ]
+   },
+   {
+    "say": "One times four is four, and two to the fourth is sixteen. Two times four is eight, and one to the eighth is one. Two times one is two, and four squared is sixteen. Thirty-three.",
+    "at": [
+     "One times four is four",
+     "Two times four",
+     "and one to",
+     "Two times one",
+     "and four squared"
+    ]
+   },
+   {
+    "say": "Now the outer one, one, one, thirty-three. One to any power is one, twice. One times one is one, and thirty-three to the first is thirty-three. One plus one plus thirty-three is thirty-five. Choice number three is our answer.",
+    "at": [
+     "Now the outer one",
+     "One to any",
+     "One times one",
+     "and thirty-three to",
+     "One plus one",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And a shortcut. What's different? We look at the outer diamond before calculating anything. Sometimes a zero there makes the inner value irrelevant. Say the outer call were the inner value, zero, one. The inner value to the power zero is one, zero to a positive power is zero, and one to any power is one. Two, whatever is inside.",
+    "at": [
+     "And a",
+     "We look at",
+     "diamond before calculating",
+     "Sometimes a zero",
+     "the inner value",
+     "Say the outer call",
+     "the inner value, zero",
+     "The inner value to",
+     "power zero is",
+     "to a positive",
+     "zero, and one",
+     "power is one"
+    ]
+   },
+   {
+    "say": "Here there's no zero, but the two ones do something similar. One to any power, twice, and the last number to the power of one times one stays itself. So the outer diamond is two plus whatever is in the third slot.",
+    "at": [
+     "the two ones",
+     "One to any",
+     "and the last",
+     "the power of",
+     "one stays itself",
+     "So the outer",
+     "two plus whatever",
+     "the third slot"
+    ]
+   },
+   {
+    "say": "Two plus thirty-three is thirty-five. Choice number three. Shorter, if you spot it under pressure. If not, the first way always works. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Two plus thirty-three",
+     "is thirty-five. Choice number three",
+     "number three. Shorter",
+     "Shorter, if you",
+     "If not, the"
+    ]
+   }
+  ]
+ ]
+}

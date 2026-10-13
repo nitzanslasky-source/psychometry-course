@@ -66,7 +66,7 @@
     ]
    },
    {
-    "say": "So let's count. Five squared from the start, and five squared from the ten squared, that's four fives. Two twos, and one three. So x is two squared, times three, times five to the power of four.",
+    "say": "We're making a complete inventory of the prime factors in x. Count the copies from every part of the original product. So let's count. Five squared from the start, and five squared from the ten squared, that's four fives. Two twos, and one three. So x is two squared, times three, times five to the power of four.",
     "at": [
      "So let's count",
      "and five squared",
@@ -79,7 +79,7 @@
   ],
   [
    {
-    "say": "Now the choices. Twenty is two times ten, and ten is two times five. So twenty is two squared times five. Two twos, and x has two. One five, and x has four. Everything is in stock, so twenty divides x, and choice number one is out.",
+    "say": "Now we'll break each answer choice into primes and compare what it needs with what x contains. Now the choices. Twenty is two times ten, and ten is two times five. So twenty is two squared times five. Two twos, and x has two. One five, and x has four. Everything is in stock, so twenty divides x, and choice number one is out.",
     "at": [
      "Now the choices",
      "Twenty is two times ten",
@@ -171,7 +171,7 @@
     ]
    },
    {
-    "say": "Twenty-two. Half of seven thousand five hundred is three thousand seven hundred fifty, and now I divide by eleven. Eleven times three hundred forty is three thousand seven hundred forty, and that leaves ten. A remainder, so twenty-two doesn't divide x.",
+    "say": "Dividing by twenty-two means dividing by both its factors, two and eleven. Let's check whether both divisions can finish without a remainder. Twenty-two. Half of seven thousand five hundred is three thousand seven hundred fifty, and now I divide by eleven. Eleven times three hundred forty is three thousand seven hundred forty, and that leaves ten. A remainder, so twenty-two doesn't divide x.",
     "at": [
      "Twenty-two. Half",
      "five hundred is",

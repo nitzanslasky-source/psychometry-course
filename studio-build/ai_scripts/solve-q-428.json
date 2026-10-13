@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "A long story, but the only thing that matters is the twelve tokens. Twelve tokens means the number divides by two and by three. [short pause] We'll solve it two ways, with three first, and then with two first.",
+    "say": "So the number we're checking is six-one-X. Six and one are fixed, and we can change only its last digit, X. We need to count how many digits make that whole three-digit number divisible by both two and three. A long story, but the only thing that matters is the twelve tokens. Twelve tokens means the number divides by two and by three. [short pause] We'll solve it two ways, with three first, and then with two first.",
     "at": [
      "the only thing",
      "twelve tokens",
@@ -22,7 +22,7 @@
     ]
    },
    {
-    "say": "[short pause] Let's start with three. The digit sum must divide by three. Six plus one is seven, so the sum is seven plus X.",
+    "say": "[short pause] For the divisibility-by-three check, we add the digits of our number. If their sum is divisible by three, the whole number is divisible by three too. Let's start with three. The digit sum must divide by three. Six plus one is seven, so the sum is seven plus X.",
     "at": [
      "Let's start",
      "The digit sum",
@@ -31,7 +31,7 @@
     ]
    },
    {
-    "say": "X is one digit, zero to nine, so seven plus X is between seven and sixteen. The multiples of three in there are nine, twelve and fifteen. So X is two, five or eight.",
+    "say": "Now we're looking for the digits that make seven plus X a multiple of three. X is one digit, zero to nine, so seven plus X is between seven and sixteen. The multiples of three in there are nine, twelve and fifteen. So X is two, five or eight. Why those values of X? Seven plus two gives nine, seven plus five gives twelve, and seven plus eight gives fifteen. So these three digits pass the test for three. We still need to test them for two.",
     "at": [
      "zero to nine",
      "plus X is",
@@ -44,7 +44,7 @@
   ],
   [
    {
-    "say": "Now two. Six one two ends in two, even. Six one five ends in five, odd, so it's out. Six one eight ends in eight, even. So X has two values, two and eight, and choice number two is our answer.",
+    "say": "A number is divisible by two when its last digit is even. Here X is that last digit, so let's check which of our three remaining digits are even. Now two. Six one two ends in two, even. Six one five ends in five, odd, so it's out. Six one eight ends in eight, even. So X has two values, two and eight, and choice number two is our answer.",
     "at": [
      "Six one two",
      "Six one five",
@@ -56,7 +56,7 @@
     ]
    },
    {
-    "say": "Now careful, three is the trap. Those are the three digits that work for three, but five makes an odd number.",
+    "say": "The question asks how many digits satisfy both conditions. So we count only the digits that passed both checks. Now careful, three is the trap. Those are the three digits that work for three, but five makes an odd number.",
     "at": [
      "three is the trap",
      "Those are the",
@@ -67,7 +67,7 @@
   ],
   [
    {
-    "say": "[pause] Another way is to start with two. The number must be even, so X is zero, two, four, six or eight.",
+    "say": "[pause] Let's go back to the original number, six-one-X, and reverse the order of the checks. This time we'll choose the even last digits first, then check divisibility by three. Another way is to start with two. The number must be even, so X is zero, two, four, six or eight.",
     "at": [
      "Another way",
      "start with two",
@@ -76,7 +76,7 @@
     ]
    },
    {
-    "say": "Now the digit sums. Seven plus zero is seven, seven plus two is nine, seven plus four is eleven, seven plus six is thirteen, and seven plus eight is fifteen. Only nine and fifteen divide by three, so X is two or eight. Two values, choice number two. [pause] Okay. I'll see you in the next question.",
+    "say": "Every digit on this list already passes the test for two. Now I'll add six, one, and each possible X to see which digit sums also pass the test for three. Now the digit sums. Seven plus zero is seven, seven plus two is nine, seven plus four is eleven, seven plus six is thirteen, and seven plus eight is fifteen. Only nine and fifteen divide by three, so X is two or eight. Two values, choice number two. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Now the digit sums",
      "seven plus two",

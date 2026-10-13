@@ -1,53 +1,53 @@
 {
- "videoId": "solve-q-515",
- "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "A, B and C represent digits. Given: B C A, plus B C, is equal to A A A. C is equal to what?",
-    "voice": "calm",
-    "at": [
-     "A, B and C"
-    ],
-    "pause": 0.5
-   },
-   {
-    "say": "So an addition again, and they ask only for C. [short pause] We'll solve it with the four steps. First, vertically.",
-    "at": [
-     "they ask only for C",
-     "We'll solve it",
-     "First, vertically"
+  "videoId": "solve-q-515",
+  "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "A, B and C represent digits. Given: B C A, plus B C, is equal to A A A. C is equal to what?",
+        "voice": "calm",
+        "at": [
+          "A, B and C"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "We add the three-digit number B C A to the two-digit number B C, and get A A A. We only need C. Use the four steps. First write the addition vertically, lining up the ones digits on the right.",
+        "at": [
+          "C. Use the",
+          "Use the four",
+          "First write the"
+        ]
+      },
+      {
+        "say": "Can the leftmost digit help? A three-digit number plus a two-digit number gives a three-digit sum here. There is no new digit on the left. So we cannot use the rule that a new leading digit must be one.",
+        "at": [
+          "A three-digit number",
+          "two-digit number",
+          "here. There is",
+          "No new digit"
+        ]
+      },
+      {
+        "say": "Now check the ones column. The ones digits we add are A and C, and the result ends in A. So A plus C must end in A again. Nothing carries into this column. The only single digit we can add without changing the last digit is zero. So C is zero. Choice number two is our answer.",
+        "at": [
+          "A plus C",
+          "So C is",
+          "C is zero",
+          "Choice number two is our answer"
+        ]
+      },
+      {
+        "say": "Let's check that it can work. With C is zero, there is no carry from the ones column. The tens column then gives B is A. Three hundred three plus thirty is three hundred thirty-three. Four hundred four plus forty is four hundred forty-four. Both fit. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "With C is",
+          "column then gives",
+          "Three hundred three",
+          "is three hundred",
+          "four hundred four",
+          "is four hundred"
+        ]
+      }
     ]
-   },
-   {
-    "say": "The leftmost digit? A three-digit number plus a two-digit number, and the sum still has three digits. No new digit, so the rule about one doesn't help here.",
-    "at": [
-     "A three-digit number",
-     "two-digit number, and",
-     "still has three",
-     "No new digit"
-    ]
-   },
-   {
-    "say": "So the ones column. A plus C ends in A. Nothing carries into the ones, so adding C changed nothing. C is zero. Choice number two is our answer.",
-    "at": [
-     "A plus C ends in A",
-     "so adding C",
-     "C is zero",
-     "Choice number two is our answer"
-    ]
-   },
-   {
-    "say": "And it's real. With nothing carried, the tens give B equal to A. Three hundred three plus thirty is three hundred thirty-three, and four hundred four plus forty is four hundred forty-four. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "With nothing carried",
-     "give B equal",
-     "Three hundred three",
-     "is three hundred",
-     "four hundred four",
-     "is four hundred"
-    ]
-   }
   ]
- ]
 }

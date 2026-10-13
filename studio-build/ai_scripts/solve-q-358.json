@@ -43,7 +43,7 @@
     ]
    },
    {
-    "say": "When is a number smaller than its own absolute value? Only when it's negative. If y were positive, they'd just be equal, right? Four is equal to its absolute value. But negative four is smaller than four.",
+    "say": "The second given compares y with its own distance from zero. Let's use that comparison to find which sign y must have. When is a number smaller than its own absolute value? Only when it's negative. If y were positive, they'd just be equal, right? Four is equal to its absolute value. But negative four is smaller than four.",
     "at": [
      "its own absolute value",
      "Only when it",
@@ -151,7 +151,7 @@
     ]
    },
    {
-    "say": "Number three, negative three over eight, in absolute value, is three eighths. That's less than one, so number three stays. And number four, the absolute value of eight is eight, so it stays too.",
+    "say": "A choice that works for these numbers stays possible for now. We haven't yet shown that it must work for every allowed pair. Number three, negative three over eight, in absolute value, is three eighths. That's less than one, so number three stays. And number four, the absolute value of eight is eight, so it stays too.",
     "voice": "calm",
     "at": [
      "Number three, negative",

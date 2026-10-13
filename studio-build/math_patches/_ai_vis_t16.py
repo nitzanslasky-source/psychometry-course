@@ -609,6 +609,10 @@ video('r26-t16-consecutive-sums', 'lesson', slides=[
 # ------------------------------------------------------------------------------------------------ q-r26-t16-02 (Q5)
 # NEW: sum of numbers in a row = count x middle (why: the numbers pair up around the middle; 4 + 5 + 6, 10 to 14);
 # the trap 13 (the middle, not the largest).  REMINDER: one letter around the middle (lesson).
+# Codex clarity pass 2026-10-12: narration AND graphics live here, not only in the HTML.
+# See codex-clarity-handoff-2026-10-12.json in this directory for changed IDs and checks.
+n0 = I('n0', 'From averages: sum $=$ count $\\times$ average', size=26, col=1)
+n0b = I('n0b', 'Consecutive, odd count: average $=$ middle', size=26, col=1)
 n1 = I('n1', 'Sum $=$ count $\\times$ middle', size=30, col=1)
 n2 = I('n2', '$4+5+6=15=3\\cdot5$', size=32, col=1, hand='4 + 5 + 6 = 15 = 3·5')
 n3 = I('n3', '$10+\\ldots+14=60=5\\cdot12$', size=32, col=1, hand='10 + 11 + 12 + 13 + 14 = 60 = 5·12')
@@ -622,8 +626,16 @@ video('solve-q-r26-t16-02', 'solution', qid='q-r26-t16-02', slides=[
       L("The sum of seven consecutive integers is ninety-one. What is the largest of them?", pt('stem', 'The sum', 'hl', 5.0), voice='calm', pause=0.5),
       L("So seven numbers in a row, and all we know is their sum. [short pause] We'll solve it two ways, with count times "
         "middle, and then with one letter.", pt('stem: ask', 'all we know is their sum')),
-      L("[short pause] Here's the rule. The sum of numbers in a row is the count times the middle one. Why? The numbers pair "
-        "up around the middle. One below and one above together are like two middles, so every number counts as the middle.",
+      L("Remember what we learned in averages. The average is the sum divided by the number of values. "
+        "So the sum is the number of values times their average. Here we have seven numbers, so their sum is seven times their average.",
+        show(n0, 'The average is the sum')),
+      L("And why is the average the middle number here? The numbers are consecutive, so the gaps are equal. "
+        "The number one below the middle pairs with the number one above it. Together they make twice the middle. "
+        "The same happens two below and two above, and three below and three above. "
+        "So the average is the middle number, and we can use count times middle.",
+        show(n0b, 'The numbers are consecutive'), pt('n0b', 'So the average is the middle')),
+      L("Here's the rule for an odd count of consecutive integers. The sum is the count times the middle number. "
+        "Seven is an odd count, so there is one actual middle number, the fourth.",
         show(n1, 'the count times the middle')),
       L("Let's see it in numbers. Four plus five plus six is fifteen, and that's three times the middle, five. Ten to "
         "fourteen, five numbers, add up to sixty, five times the middle, twelve.", show(n2, 'Four plus five plus six'), show(n3, 'Ten to fourteen')),
@@ -696,7 +708,7 @@ d4 = I('d4', 'Even $\\div$ even: $\\ \\frac{18}{6}=3,\\ \\frac{12}{2}=6,\\ \\fra
 w1 = I('w1', '$2^2=4,\\ 2^3=8\\qquad 3^2=9,\\ 3^3=27$', size=38, hand='2^2 = 4,   2^3 = 8        3^2 = 9,   3^3 = 27')
 w2 = I('w2', 'Powers keep parity: you may drop them', size=36)
 w3 = I('w3', '$+,\\ \\times$: one plug-in per case $\\quad 2\\cdot3=6$', size=34, hand='+,  × :   one plug-in per case      2·3 = 6')
-w4 = I('w4', '$\\div$: three close plug-ins $\\quad \\frac62=3,\\ \\frac82=4,\\ \\frac{10}{4}$', size=34, hand='÷ :   three close plug-ins      {6/2} = 3,   {8/2} = 4,   {10/4}')
+w4 = I('w4', '$\\div$: test different outcomes $\\quad \\frac62=3,\\ \\frac82=4,\\ \\frac{10}{4}$', size=30, hand='÷ :   test different outcomes      {6/2} = 3,   {8/2} = 4,   {10/4}')
 video('parity', 'lesson', slides=[
     S('Even & Odd',
       L("Welcome back. Now even and odd, and how each operation decides whether the result is even or odd.")),
@@ -725,15 +737,16 @@ video('parity', 'lesson', slides=[
       L("And even over even can be anything. Eighteen over six is three, odd. Twelve over two is six, even. Six over four "
         "is a fraction.", show(d4, 'even over even'))),
     S('Powers and plugging in',
-      L("Powers don't change parity. Two squared is four, two cubed is eight, even. Three squared is nine, three cubed is "
+      L("Positive whole-number powers don't change parity. Two squared is four, two cubed is eight, even. Three squared is nine, three cubed is "
         "twenty-seven, odd. A power just multiplies the same number again and again. So in a parity question, you may drop "
         "the powers.", show(w1, 'Two squared is four'), show(w2, 'you may drop')),
       L("And plugging in. For adding and multiplying, the parity of the result depends only on the parities you put in. So "
         "one plug-in for each case settles it. Two times three is six, and even times odd is always even.", show(w3, 'one plug-in for each case')),
-      L("For dividing, plug in three times, with close numbers, because different results can come out. Six over two is "
-        "three, eight over two is four, and ten over four is a fraction. And remember, an example that works proves "
-        "nothing, but one that fails knocks out always. [pause] Okay. I'll see you in the next video.",
-        show(w4, 'plug in three times'))),
+      L("For dividing, test different possible outcomes, not just three nearby numbers. Six over two is three, odd. "
+        "Eight over two is four, even. And ten over four is a fraction, not a whole number. "
+        "Three examples help us see what can happen, but three matches do not prove always. "
+        "One example that fails knocks out an always claim. To establish always, explain why the result holds for every allowed value. "
+        "[pause] Okay. I'll see you in the next video.", show(w4, 'test different possible outcomes'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-460 (Q7)
@@ -792,7 +805,12 @@ video('solve-q-461', 'solution', qid='q-461', slides=[
       L("[pause] Now let's try plugging in. It's division, so three plug-ins, close together. a is one and b is two, six over "
         "four. A fraction. a is three and b is two, eighteen over four, a fraction. a is three and b is four, eighteen over "
         "sixteen, a fraction.", show(v5, 'a is one and b is two')),
-      L("Fraction every time. So always a fraction, choice number two. [pause] Okay. I'll see you in the next question.",
+      L("Each example gives a fraction, but those examples alone do not prove always. "
+        "What makes it certain? b is even and nonzero, so b is two k with k nonzero. "
+        "After cancelling a two, the fraction is three a over two k squared. "
+        "a is odd, so the top is odd and cannot cancel the two on the bottom. "
+        "That applies to every allowed pair, so it is always a fraction, choice number two. "
+        "[pause] Okay. I'll see you in the next question.",
         mk('tick', 'choice 2', 'choice number two'))),
 ])
 
@@ -1316,8 +1334,8 @@ c1s = I('c1s', 'One letter: $\\ b-1,\\ b,\\ b+1$ $\\quad$ evens: $\\ b-2,\\ b,\\
 c2s = I('c2s', 'Sum $=$ count $\\times$ middle $\\quad 16+\\ldots+20=5\\cdot18=90$', size=34)
 c3s = I('c3s', 'From $a$ to $b$: $\\ b-a+1$ $\\quad$ neighbors: $\\ b^2-a^2=a+b$', size=34)
 e1s = I('e1s', 'In a sum, count the odd terms $\\quad$ one even factor: even', size=34)
-e2s = I('e2s', 'Odd $\\div$ even: always a fraction $\\quad$ powers keep parity', size=34)
-e3s = I('e3s', 'Plug in: one per case; division: three close ones', size=34)
+e2s = I('e2s', 'Odd $\\div$ nonzero even: a fraction. Positive integer powers keep parity', size=28)
+e3s = I('e3s', 'Test the cases; examples alone do not prove always', size=30)
 p1s = I('p1s', 'In a row: $2,\\ 3\\to6,\\ 4\\to24$ $\\quad$ consecutive evens $\\to8$', size=34)
 p2s = I('p2s', 'Count the twos $\\quad$ smallest case: only a candidate', size=34)
 video('r26-t16-summary', 'lesson', slides=[
@@ -1338,8 +1356,10 @@ video('r26-t16-summary', 'lesson', slides=[
         show(c3s, 'From a to b'))),
     S('Even and odd',
       L("In a sum, only the odd terms count. In a product, one even factor makes it even.", show(e1s, 'only the odd terms count')),
-      L("Odd over even is always a fraction, and powers never change parity, so you may drop them.", show(e2s, 'Odd over even')),
-      L("Plugging in? One number for each case, and for division, three close ones.", show(e3s, 'One number for each case'))),
+      L("Odd over nonzero even is always a fraction. Positive whole-number powers preserve parity, so you may drop them when judging even or odd.", show(e2s, 'Odd over')),
+      L("Plugging in? Test the relevant cases, and look for different outcomes in division. "
+        "Examples alone do not prove always. Explain why every allowed value works, or rule out the other answer choices with counterexamples.",
+        show(e3s, 'Test the relevant cases'))),
     S('Products',
       L("Two in a row divide by two, three by six, and four by twenty-four. Two consecutive evens divide by eight.", show(p1s, 'Two in a row')),
       L("Is it a whole number? Count the twos. And the smallest case is only a candidate, so test a second case that avoids "
@@ -1629,6 +1649,13 @@ def _stem_parts(vid):
 
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v); _write_gap(_v)
 
+
+# Spoken clarity revision: preserves the complete original board/cue plan.
+_clarity_spec = importlib.util.spec_from_file_location(
+    '_codex_script_clarity_20261012', os.path.join(HERE, '_codex_script_clarity_20261012.py'))
+_clarity_module = importlib.util.module_from_spec(_clarity_spec)
+_clarity_spec.loader.exec_module(_clarity_module)
+_clarity_module.apply(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

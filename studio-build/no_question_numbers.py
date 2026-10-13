@@ -17,7 +17,7 @@ _W = 'one two three four five six seven eight nine ten eleven twelve thirteen fo
      'eighteen nineteen twenty'.split()
 NUM = r'(?:\d+|' + '|'.join(sorted(_W, key=len, reverse=True)) + r'|twenty-\w+|thirty(?:-\w+)?|forty(?:-\w+)?)'
 ORD = r'(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|\w+th)'
-QREF = re.compile(r'\b[Qq]uestions? (?:number )?' + NUM + r'\b', re.I)
+QREF = re.compile(r'\b[Qq]uestions? (?:number )?' + NUM + r'\b(?! ways?\b)', re.I)   # 'these questions three ways' is not a question number
 
 # exact rewordings of lesson lines that point at numbered questions (old text -> new text)
 # (lines about the REAL exam's order - "Questions 1–6 of the section", "why is this question number 6?", "the answer

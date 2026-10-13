@@ -92,24 +92,28 @@ def transcribe(wav, out, script_text, name='transcript.json'):
     return words
 
 
-def transcribe_chunks(wav, p, step=28.0, over=2.0):
-    """for checking only: 30 s windows (2 s overlap), no VAD - whisper's long-form mode silently skipped whole stretches"""
+def transcribe_chunks(wav, p, step=24.0, over=4.0):
+    """Independent verification with context on BOTH sides of every core window.
+    Keep words by midpoint in the core; never cut a word at the ASR window edge.
+    """
     from faster_whisper import WhisperModel
-    m = WhisperModel(os.environ.get('WHISPER', 'medium.en'), device='cpu', compute_type='int8')
+    m = WhisperModel(os.environ.get('READING_VERIFY_MODEL', 'small.en'), device='cpu', compute_type='int8', local_files_only=True)
     y = read_wav(wav); T = len(y) / SR; words, t = [], 0.0
     while t < T:
-        seg = y[int(t * SR):int(min(T, t + step + over) * SR)]
-        if len(seg) < SR * .5: break
+        core_end = min(T, t + step)
+        start = max(0.0, t - over)
+        seg = y[int(start * SR):int(min(T, core_end + over) * SR)]
         seg = seg[:len(seg) // 3 * 3].reshape(-1, 3).mean(axis=1).astype('float32')     # 48 kHz -> the 16 kHz whisper expects
         ss, _ = m.transcribe(seg, beam_size=5, word_timestamps=True, condition_on_previous_text=False, vad_filter=False, language='en')
         for s_ in ss:
             for w in s_.words:
-                a_, b_ = w.start + t, w.end + t
-                if words and a_ < words[-1]['e'] - .05: continue          # already have it from the previous window
-                if t > 0 and w.start < over * .5: continue
+                a_, b_ = w.start + start, w.end + start
+                if not t <= (a_ + b_) / 2 < core_end: continue
                 words.append({'w': w.word.strip(), 's': round(a_, 3), 'e': round(b_, 3), 'p': round(w.probability, 3)})
-        t += step
-    json.dump(words, open(p, 'w'), ensure_ascii=False)
+        print('Independent speech check: %.0f / %.0f seconds' % (core_end, T), flush=True)
+        t = core_end
+    with open(p, 'w') as cache_file:
+        json.dump(words, cache_file, ensure_ascii=False)
     return words
 
 
@@ -326,6 +330,8 @@ def auto_lines(vid, out, man, mp, words, extra_spans, cut, merged, newt, cue_lin
         for c in cs:
             if isinstance(c, tuple):
                 it = c[1]; have.setdefault(si, set()).add(_calc_key(it.get('t') or ''))
+                for part in re.split(r',|\s{2,}', it.get('t') or ''):
+                    if '=' in part: have[si].add(_calc_key(part))
     for w0, w1, a_, b_ in extra_spans:
         ws = words[w0:w1 + 1]
         for c in _parse_calcs(ws):
@@ -343,6 +349,7 @@ def auto_lines(vid, out, man, mp, words, extra_spans, cut, merged, newt, cue_lin
                     rep.setdefault('auto_skipped', []).append([c['text'], 'said at a slide change']); continue
             si = flat[li][0]
             key = _calc_key(c['text'])
+            if any(key in h_ or (h_ and h_ in key) for h_ in have.get(si, set())): key = next(h_ for h_ in have[si] if key in h_ or (h_ and h_ in key))
             if key in have.get(si, set()) or per_slide.get(si, 0) >= MAX_AUTO:
                 rep.setdefault('auto_skipped', []).append([c['text'], 'already on the board' if key in have.get(si, set()) else '3 on this slide already']); continue
             hw = HWR.write(c['text']); ch = write_chunks(c['text'], hw)
@@ -548,6 +555,9 @@ def run(vid):
         a_s = rs_sentences(asread[li_]); keep_s = set(rs_sentences(lines[li_]))
         ks = [k for k, x in enumerate(a_s) if x in keep_s]; rs_ = [k for k, x in enumerate(a_s) if x not in keep_s]
         if not ks or not rs_ or min(rs_) > min(ks): continue
+        # only a removed paragraph before the CLOSING ("Okay. I'll see you..."): a removed method announcement at the
+        # start of a line must not take her whole re-read of that line with it (topic 14, q-388: 48 s)
+        if not all(re.match(r"^(\[[^\]]*\]\s*)*(okay|i'll see you|that's it|now go)", a_s[k], re.I) for k in ks): continue
         pe_ = [Wt[jj][1] for jj, ii in matched.items() if Sl[ii][0] < li_]
         # the kept part starts where 3+ of her words in a row match the line (a lone "the" inside her verdict can match)
         mj = sorted(jj for jj, ii in matched.items() if Sl[ii][0] == li_)
@@ -576,6 +586,10 @@ def run(vid):
             rtoks = [t for _, _, tt in removed for t in tt]
             sm = difflib.SequenceMatcher(None, toks, rtoks, autojunk=False)
             gone = sum(bl.size for bl in sm.get_matching_blocks() if bl.size >= 2) >= .6 * len(toks)
+            if not gone:                       # her own wording of a removed sentence: same first words, about as long
+                for _, _, rt in removed:
+                    if len(rt) >= 3 and len(toks) <= len(rt) + 3 and all(same(toks[q], rt[q]) for q in range(min(3, len(toks), len(rt)))):
+                        gone = True; break
         if gone:
             cut.append((t0, t1, 'removed from the script'))
             rep['cuts'].append({'t': round(t0, 2), 'len': round(t1 - t0, 2), 'why': 'removed from the script after she read it',
@@ -943,19 +957,29 @@ def run(vid):
     print('%s: %.1f s -> %.1f s, %d cuts, %d silences capped, %s, %d extra stretches kept, %d missing, %d marks unused, %d cues unplaced, %d doubled'
           % (vid, rep['raw_s'], rep['clean_s'], rep['n_cuts'], rep.get('silences_capped', 0), rep['words_matched'], len(rep['kept_extra']),
              len(rep['missing']), len(rep['marks_unused']), len(unplaced), len(rep['doubled'])))
-    return rep
+    # Verification is now part of the normal preparation path, not an optional
+    # flag that can leave short off-script fragments unchecked before export.
+    verify(vid)
+    from speech_review import require_ready
+    require_ready(out)
+    return json.load(open(os.path.join(out, 'report.json')))
 
 
 def verify(vid):
     """transcribe the CLEAN audio again and check it against the script: every sentence once, in order; no filler or
     leftover restart. -> report.json['verify']"""
-    out = os.path.join(OUTROOT, vid); spec, _ = A.load(vid); ps, df = A.presets()
-    lines = [A.spoken(A.line_text(l), ps[df]['model_id']) for sl in spec['slides'] for l in sl]
+    out = os.path.join(OUTROOT, vid)
+    man = json.load(open(os.path.join(out, 'manifest.json')))
+    lines = [l['text'] for l in man['lines']]
+    from speech_review import digest, evaluate
     p = os.path.join(out, 'clean_transcript.json')
-    if os.path.exists(p) and os.path.getmtime(p) > os.path.getmtime(os.path.join(out, 'clean.wav')): words = json.load(open(p))
+    meta_path = os.path.join(out, 'clean_transcript-meta.json')
+    cache_key = dict(audio_sha256=digest(os.path.join(out, 'clean.wav')), window_algorithm='two-sided-core-v2', model=os.environ.get('READING_VERIFY_MODEL', 'small.en'))
+    if os.path.exists(p) and os.path.exists(meta_path) and json.load(open(meta_path)) == cache_key: words = json.load(open(p))
     else:
         os.path.exists(p) and os.remove(p)
         words = transcribe_chunks(os.path.join(out, 'clean.wav'), p)
+        json.dump(cache_key, open(meta_path, 'w'), indent=2)
     W, Wt = [], []
     for k, w in enumerate(words):
         for tok in norm_tokens(w['w']): W.append(tok); Wt.append((w['s'], w['e'], k))
@@ -989,6 +1013,8 @@ def verify(vid):
     fill = [{'t': round(Wt[x][0], 2), 'word': W[x]} for x in range(len(W)) if W[x] in FILLERS]
     rp = os.path.join(out, 'report.json'); rep = json.load(open(rp))
     rep['verify'] = {'missing_sentences': missing, 'doubled_sentences': doubled, 'extra_runs': extra, 'fillers': fill}
+    raw_path = os.path.join(out, 'transcript.json')
+    rep['speech_review'] = evaluate(out, words, norm_tokens, rep, json.load(open(raw_path)) if os.path.exists(raw_path) else None)
     json.dump(rep, open(rp, 'w'), indent=1, ensure_ascii=False)
     print('%s verify: %d sentences missing, %d doubled, %d extra runs (3+ words), %d fillers' % (vid, len(missing), len(doubled), len(extra), len(fill)))
     return rep['verify']
@@ -999,4 +1025,6 @@ if __name__ == '__main__':
     ids = [a for a in args if not a.startswith('--')] or sorted(os.listdir(IN))
     for v in ids:
         if '--verify-only' not in args: run(v)
-        if '--verify' in args or '--verify-only' in args: verify(v)
+        if '--verify-only' in args: verify(v)
+        from speech_review import require_ready
+        require_ready(os.path.join(OUTROOT, v))

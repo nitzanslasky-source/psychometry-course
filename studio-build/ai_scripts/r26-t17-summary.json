@@ -1,190 +1,181 @@
 {
- "videoId": "r26-t17-summary",
- "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   "Before you practice, here's a quick summary of the topic. Ranges, powers, and reading the line."
-  ],
-  [
-   {
-    "say": "It all starts with four ranges. Below negative one, negative fractions, positive fractions, and above one. Every number in a range behaves the same way.",
-    "at": [
-     "four ranges",
-     "Below negative one",
-     "positive fractions, and",
-     "Every number in",
-     "behaves the same"
+  "videoId": "r26-t17-summary",
+  "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      "Before you practice, let's review the ranges, the powers, and how to read the number line."
+    ],
+    [
+      {
+        "say": "Start with four ranges: below negative one, between negative one and zero, between zero and one, and above one. The operation rules work the same way for every number within each range.",
+        "at": [
+          "four ranges",
+          "Below negative one",
+          "between zero and",
+          "The operation rules",
+          "work the same"
+        ]
+      },
+      {
+        "say": "Pay attention to negative one, zero and one, which separate the ranges. If we only know that x is positive, it could be between zero and one, equal to one, or greater than one. On the negative side, remember that a number farther from zero is smaller, not larger.",
+        "at": [
+          "Pay attention to",
+          "zero and one",
+          "If we only",
+          "is positive, it",
+          "between zero and",
+          "On the negative",
+          "smaller, not larger"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "For a positive number, multiplying by a number greater than one makes it larger. Dividing by a positive fraction smaller than one also makes it larger. Twelve divided by one third is thirty-six. Dividing by a number greater than one, or multiplying by a positive fraction smaller than one, makes it smaller. Twelve times one third is four.",
+        "at": [
+          "For a positive",
+          "For a positive",
+          "a positive number",
+          "Twelve divided by",
+          "Dividing by a number",
+          "one, or multiplying",
+          "it smaller. Twelve",
+          "Twelve times one"
+        ]
+      },
+      {
+        "say": "For a negative number, these operations still move it away from zero or towards zero. But farther from zero means smaller, and closer to zero means larger. Multiplying by a negative number changes sides and reverses the order. Four is smaller than nine, but negative four is larger than negative nine.",
+        "at": [
+          "For a negative number",
+          "move it away from zero",
+          "or towards zero",
+          "Multiplying by a negative number",
+          "changes sides",
+          "reverses the order",
+          "Four is smaller",
+          "but negative four",
+          "than negative nine"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "If one number is in a higher range than another, taking the same positive power or root keeps that order. Six fifths is above one, and two thirds is between zero and one. So the cube root of six fifths is larger than the cube root of two thirds, without calculating either. For negative numbers, use this rule only with odd powers and odd roots.",
+        "at": [
+          "If one number",
+          "range than another",
+          "positive power or",
+          "Six fifths is",
+          "and two thirds",
+          "So the cube",
+          "six fifths is larger",
+          "either. For negative",
+          "powers and odd"
+        ]
+      },
+      {
+        "say": "When the same operation keeps the order, we can compare the original numbers instead of calculating both results. For positive numbers, the same positive power or root keeps the order. And for products of positive numbers, compare the numbers we multiply in pairs. If both numbers in one product are larger than their matches in the other, that product is larger.",
+        "at": [
+          "The same operation",
+          "positive numbers, the",
+          "And for products",
+          "pairs. If both"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "Some powers move the result into another range, so check them first. The whole number negative three, squared, is positive nine. But a minus sign outside the square gives minus three squared, which is negative nine. The brackets matter. A negative power means take the reciprocal. Two thirds to the negative two is three halves squared, so the result is above one.",
+        "at": [
+          "to another range",
+          "The whole number",
+          "whole number negative",
+          "Negative three, squared",
+          "But a minus",
+          "square gives minus",
+          "squared, which is",
+          "A negative power",
+          "Two thirds to",
+          "negative two is",
+          "halves squared, so"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "The arrows show what happens as we increase the power. Above one, the arrow points right. Between zero and one, left. Between negative one and zero, right. Below negative one, left. For negative numbers, use these arrows only for powers that keep the result negative. Right means larger, and left means smaller.",
+        "at": [
+          "The arrows show",
+          "the power. Above",
+          "right. Between zero",
+          "negative one and",
+          "negative one, left",
+          "that keep the"
+        ]
+      },
+      {
+        "say": "Use three steps: check results that change sign, write roots as powers, then use the arrows. With the arrows, keep negative powers as they are. If we are given the results' order and need the original range, check which range's arrow fits that order. Or test numbers from the ranges.",
+        "at": [
+          "Three steps",
+          "check results that",
+          "the arrows. With",
+          "arrows, keep negative",
+          "they are. If",
+          "need the original",
+          "check which range's"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "One over x, the reciprocal, keeps the sign of nonzero x. For numbers with the same sign, taking reciprocals reverses their order. Three is smaller than five, but one third is larger than one fifth.",
+        "at": [
+          "One over x",
+          "sign of nonzero",
+          "the same sign",
+          "Three is smaller",
+          "but one third",
+          "than one fifth"
+        ]
+      },
+      {
+        "say": "When plugging in, start with an easy number in the allowed range. Two, one half, negative one half and negative two are useful options for different ranges, not a list we must always test. Check the answer choices after the first example. Try another only if more than one choice remains, and choose a different useful feature. If there is a root, use an easy root: one ninth for a square root, or negative one eighth for a cube root. Replace only the letters. Keep the numbers written in the question, even if the same number appears in every choice.",
+        "at": [
+          "start with an easy number",
+          "Check the answer choices",
+          "If there is a root",
+          "Replace only the letters"
+        ]
+      }
+    ],
+    [
+      {
+        "say": "For a statement that must be true, one allowed example where it fails is enough to rule it out. Values near the ends of the ranges can help. For a number-line picture, first write each letter's range. If it is not drawn to scale, trust the order, not the distances.",
+        "at": [
+          "For a statement",
+          "one allowed example",
+          "is enough to",
+          "the ends of",
+          "ends of the",
+          "ends of the",
+          "write each letter's",
+          "drawn to scale",
+          "order, not the"
+        ]
+      },
+      {
+        "say": "To find a distance on the number line, subtract the smaller number from the larger. To find a new point, we also need where we start and which way we move. For one third of the way, take one third of the distance and move that far from the starting point. For the midpoint, find the average of the two ends. [pause] That's it. Now go practice, and I'll see you in the next video.",
+        "at": [
+          "distance on the",
+          "subtract the smaller",
+          "a new point",
+          "take one third",
+          "distance and move",
+          "the midpoint, find",
+          "of the two",
+          "it. Now go"
+        ]
+      }
     ]
-   },
-   {
-    "say": "Watch the borders, negative one, zero and one. If they only say x is positive, it could be a fraction or above one. And the negative side is a mirror of the positive side.",
-    "at": [
-     "Watch the borders",
-     "zero and one",
-     "If they only",
-     "is positive, it",
-     "a fraction or",
-     "And the negative",
-     "a mirror of"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Times a number above one, or divided by a fraction, a positive number gets bigger. Twelve divided by one third is thirty-six. Divided by a number above one, or times a fraction, it gets smaller. Twelve times one third is four.",
-    "at": [
-     "Times a number above one",
-     "or divided by",
-     "a positive number",
-     "Twelve divided by",
-     "Divided by a number above one",
-     "one, or times",
-     "it gets smaller",
-     "Twelve times one"
-    ]
-   },
-   {
-    "say": "A negative number makes the same moves, away from zero or toward zero. And times a negative, you jump to the other side, and the order flips. Four is smaller than nine, but negative four is bigger than negative nine.",
-    "at": [
-     "A negative number",
-     "same moves, away",
-     "or toward zero",
-     "times a negative",
-     "to the other",
-     "the order flips",
-     "Four is smaller",
-     "but negative four",
-     "than negative nine"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "A number in a higher range stays bigger, after any positive power or root. Six fifths is above one, and two thirds is a fraction. So the cube root of six fifths is bigger, no calculating. On the negative side, odd powers and odd roots only.",
-    "at": [
-     "A number in a higher range",
-     "range stays bigger",
-     "positive power or",
-     "Six fifths is",
-     "and two thirds",
-     "So the cube",
-     "six fifths is bigger",
-     "On the negative",
-     "powers and odd"
-    ]
-   },
-   {
-    "say": "The same operation on two positive numbers? Ignore it. And strong on strong, weak times weak loses to strong times strong.",
-    "at": [
-     "The same operation",
-     "positive numbers? Ignore",
-     "And strong on",
-     "times weak loses"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Exceptions move a number to another range, so handle them first. An even power of a negative number is positive. Negative three, squared, is nine. And read the brackets. Without them, it's minus, three squared, minus nine. A negative power flips the number. Two thirds to the power of negative two is three halves, squared, above one.",
-    "at": [
-     "to another range",
-     "An even power of a negative",
-     "negative number is",
-     "Negative three, squared",
-     "And read the",
-     "Without them, it's",
-     "squared, minus nine",
-     "A negative power",
-     "Two thirds to",
-     "of negative two",
-     "halves, squared, above"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "The arrows show what a bigger power does. Above one, right. Positive fractions, left. Negative fractions, right, and below negative one, left, odd powers only. Right means bigger.",
-    "at": [
-     "The arrows show",
-     "bigger power does",
-     "right. Positive fractions",
-     "Negative fractions, right",
-     "negative one, left",
-     "only. Right means"
-    ]
-   },
-   {
-    "say": "Three steps. Exceptions, roots into powers, then the arrows, and with the arrows you may keep a negative power. They give the order and ask for the range? Use the arrows backwards, or plug in.",
-    "at": [
-     "Three steps",
-     "Exceptions, roots into",
-     "the arrows, and",
-     "arrows you may",
-     "They give the",
-     "ask for the",
-     "Use the arrows"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "One over x keeps the sign, and for numbers with the same sign, it flips the order. Three is smaller than five, but one third is bigger than one fifth.",
-    "at": [
-     "One over x keeps the sign",
-     "sign, and for",
-     "the same sign",
-     "Three is smaller",
-     "but one third",
-     "than one fifth"
-    ]
-   },
-   {
-    "say": "Not sure? Plug in one number from each allowed range, like two, one half, negative one half, and negative two. A root in the choices? Pick a number with a clean root, like one ninth for a square root, or negative one eighth for a cube root. And change only the letters. Unless the same number sits in every choice, then you may swap it for a small one.",
-    "at": [
-     "Plug in one number",
-     "each allowed range",
-     "one half, negative",
-     "and negative two",
-     "A root in",
-     "Pick a number",
-     "clean root, like",
-     "for a square",
-     "negative one eighth",
-     "And change only",
-     "Unless the same",
-     "in every choice",
-     "may swap it"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Necessarily true? One example where it fails knocks it out, so push the numbers to the edges of their ranges. A picture of the line? Write the range of each letter, and trust only the order, not the distances.",
-    "at": [
-     "Necessarily true",
-     "One example where",
-     "knocks it out",
-     "the numbers to",
-     "of their ranges",
-     "A picture of",
-     "Write the range",
-     "letter, and trust",
-     "order, not the"
-    ]
-   },
-   {
-    "say": "And distance on the line is bigger minus smaller. A third of the way? Take a third of the distance, and walk it from the start. The midpoint is the average of the two ends. [pause] That's it. Now go practice, and I'll see you in the next video.",
-    "at": [
-     "distance on the line",
-     "bigger minus smaller",
-     "A third of",
-     "Take a third",
-     "distance, and walk",
-     "The midpoint is",
-     "of the two",
-     "it. Now go"
-    ]
-   }
   ]
- ]
 }

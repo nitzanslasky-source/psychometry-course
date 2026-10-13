@@ -422,7 +422,7 @@ a5 = I('a5', 'Only $45$ is left', hand='Only  45  is left')
 b1 = I('b1', 'Guitar: $\\ k$', hand='Guitar :   k')
 b2 = I('b2', 'Basketball: $\\ 3k$', hand='Basketball :   3k')
 b3 = I('b3', 'Class: $\\ 5\\cdot3k=\\hl{c}{15k}$', hand='Class :   5·3k = \\hl{c}{15k}')
-b4 = I('b4', 'A fraction of a fraction: multiply the denominators', size=26, col=1)
+b4 = I('b4', 'Nested fractions with numerator $1$: multiply denominators', size=25, col=1)
 b5 = I('b5', '$\\frac12$ of $\\frac14$: $\\ 2\\cdot4=8$', size=30, col=1, hand='{1/2} of {1/4} :   2·4 = 8')
 b6 = I('b6', 'Multiples of $15$: $\\ 15,\\ 30,\\ \\hl{f}{45}$', hand='Multiples of 15 :   15,  30,  \\hl{f}{45}')
 video('solve-q-423', 'solution', qid='q-423', slides=[
@@ -451,10 +451,12 @@ video('solve-q-423', 'solution', qid='q-423', slides=[
         "basketball boys are a fifth of the class, so the class is five times three k, which is fifteen k.",
         show(b1, 'Call the guitar players k'), show(b2, 'three k basketball boys'), show(b3, 'the class is five times'),
         mk('circle', 'b3: c', 'fifteen k')),
-      L("k is a whole number, so the class is always a multiple of fifteen. That's the rule. A fraction of a fraction, "
-        "multiply the denominators. Let's see it in numbers. Half of a quarter of a group? Two times four is eight, so the "
+      L("k is a whole number, so the class is always a multiple of fifteen. "
+        "Here both fractions have one on top, one fifth and one third. For nested fractions like these, "
+        "multiply the denominators. That is not a rule for every fraction of a fraction. "
+        "Let's see the same idea with half of a quarter of a group. Two times four is eight, so the "
         "group divides by eight, not just by four. With eight kids, a quarter is two, and half of that is one.",
-        show(b4, 'A fraction of a fraction'), show(b5, 'Half of a quarter'), pt('b5', 'With eight kids')),
+        show(b4, 'both fractions have one on top'), show(b5, 'half of a quarter'), pt('b5', 'With eight kids')),
       L("So which choice is a multiple of fifteen? Fifteen, thirty, forty-five. Forty-five, choice number two. Thirty-five, "
         "forty-two and thirty-two aren't on that list.", show(b6, 'Fifteen, thirty'), mk('tick', 'choice 2', 'Forty-five, choice number two'),
         mk('cross', 'choice 1', 'Thirty-five,'), mk('cross', 'choice 3', 'forty-two and'), mk('cross', 'choice 4', "thirty-two aren't")),
@@ -569,9 +571,10 @@ video('solve-q-426', 'solution', qid='q-426', slides=[
         "and only what's left decides. Choice number one, five x plus seven. Five x is always full fives. Seven is one five "
         "plus two, so it leaves two, not four. Out.", pt('choice 1', 'Choice number one'), show(g2, 'Five x is always'),
         mk('cross', 'choice 1', 'not four. Out')),
-      L("Choice number two, five x plus two, squared. Let's open it with the formula, a plus b, squared. Five x squared is "
-        "twenty-five x squared, two times five x times two is twenty x, and two squared is four.",
-        pt('choice 2', 'Choice number two'), show(g3, "Let's open it"), mk('circle', 'g3: r', 'two squared is four')),
+      L("Choice number two, in brackets, five x plus two, all squared. Let's open it with the formula, a plus b, all squared. "
+        "The first term is five x, all squared. We square both the five and the x, so that is twenty-five x squared. "
+        "The middle term is two times five x times two, which is twenty x. And the last term is two squared, which is four.",
+        pt('choice 2', 'Choice number two'), show(g3, "Let's open it"), mk('circle', 'g3: r', 'two squared, which is four')),
       L("Twenty-five x squared and twenty x both divide by five, and what's left is four. That's exactly the remainder we "
         "need, so choice number two is our answer.", pt('g3', 'Twenty-five x squared and'), mk('tick', 'choice 2', 'choice number two is our answer')),
       L("And here's a shortcut for next time. Everything built from five x divides by five too, so I only need the square "
@@ -888,21 +891,24 @@ u6 = I('u6', 'Multiply: $\\ 6k\\cdot9m=54km$', size=28, col=1, hand='Multiply : 
 v1 = I('v1', '$6+9=15$: $\\ $not by $18$, not by $9$', size=32, hand='6 + 9 = 15 :   not by 18,  not by 9')
 v2 = I('v2', '$12+9=21$: $\\ $not by $15$', size=32, hand='12 + 9 = 21 :   not by 15')
 v3 = I('v3', 'Trap: $\\ 18+18=36$ ✗', size=30, col=1, hand='Trap :   18 + 18 = 36   ✗')
-v4 = I('v4', 'Different letters, different values', size=28, col=1)
+v4 = I('v4', 'Independent values: do not assume they are equal', size=26, col=1)
 video('solve-q-r26-t15-15', 'solution', qid='q-r26-t15-15', slides=[
     S('Method 1 · Tag it',
       L("x and y are positive integers. x is divisible by six, and y is divisible by nine. What is the largest number that "
         "x plus y is necessarily divisible by?", pt('stem', 'x and y are', 'hl', 8.0), voice='calm', pause=0.5),
       L("So we add two multiples, and they want the largest number that always divides the sum. [short pause] We'll solve "
         "it two ways, with tags, and then plugging in numbers.", pt('stem: ask', 'the largest number that always divides')),
-      L("[short pause] Let's start with the tags. x is six k, and y is nine m, different letters, because x and y are "
-        "different numbers.", show(u1, 'x is six k')),
+      L("[short pause] Let's start with the tags. x is six k, and y is nine m. "
+        "We use separate letters because each multiple can be chosen independently. Nothing says k and m are equal. "
+        "They may happen to be equal, but we cannot require it.", show(u1, 'x is six k')),
       L("Now, when we add two tags, only the factor they share comes out for sure. Six and nine share a three. So six k plus nine m is three times, in brackets, two k plus three m. Why only the three? What's in the brackets changes with k and m.", show(u4, 'only the factor they share'), show(u2, 'Six and nine share')),
       L("Let's see the rule once more, changing one thing. Multiples of four and of six. Four k plus six m, they share a two, "
         "so two times, in brackets, two k plus three m. Only the two is certain. Four plus six is ten, and ten doesn't even "
         "divide by four. And if we multiplied instead, the tags would multiply, six k times nine m is fifty-four k m.",
         show(u5, 'Multiples of four and of six'), show(u6, 'if we multiplied instead')),
-      L("And two k plus three m? With k and m one, it's five, and with k two and m one, it's seven. It can be anything, so only the three in front is certain. Three, choice number three is our answer.",
+      L("And two k plus three m? With k and m one, it's five, and with k two and m one, it's seven. "
+        "The bracket changes, and five and seven share no factor greater than one. "
+        "So no extra factor from the bracket is guaranteed. Only the three in front is certain. Three, choice number three is our answer.",
         show(u3, 'With k and m one'), mk('circle', 'u2: t', 'only the three in front'), mk('tick', 'choice 3', 'choice number three is our answer'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in numbers, with a different value for each letter. x is six and y is nine. Six "
@@ -1142,11 +1148,11 @@ c1s = I('c1s', '$a$ leaves $5$, $b$ leaves $7$ (by $8$)', size=36)
 c2s = I('c2s', '$a+b$: $\\ 12\\to4\\quad ab$: $\\ 35\\to3\\quad a-b$: $\\ -2+8=6$', size=36)
 c3s = I('c3s', 'Take away the remainder: what is left divides', size=36)
 c4s = I('c4s', 'By $12$ leaves $11$: by $4$ leaves $3$ $\\quad$ by $10$ $\\to$ by $4$: can\'t know', size=32)
-n1s = I('n1s', 'A fraction of a fraction: multiply the denominators', size=36)
+n1s = I('n1s', 'Nested fractions with numerator $1$: multiply denominators', size=30)
 n2s = I('n2s', 'Multiples in a range: last $-$ first $+\\ 1$', size=36)
 n3s = I('n3s', 'Two in a row: $2$ $\\quad$ Three in a row: $6$ $\\quad a^3-a=(a-1)a(a+1)$', size=34)
 n4s = I('n4s', 'Tag it: $6k+9m=3(2k+3m)$ $\\to$ only $3$', size=36)
-n5s = I('n5s', 'Plug in different values; avoid $0$; one failing example knocks a choice out', size=30)
+n5s = I('n5s', 'Choose values independently; avoid $0$; look for counterexamples', size=30)
 z1s = I('z1s', 'Parts with no common factor?', size=38)
 z2s = I('z2s', 'Is my remainder smaller than the divisor?', size=38)
 z3s = I('z3s', 'Negative remainder? Add the divisor.', size=38)
@@ -1175,12 +1181,15 @@ video('r26-t15-summary', 'lesson', slides=[
       L("A new divisor? It must divide the old one. Leaves eleven by twelve? By four, eleven leaves three. But from ten to "
         "four, you can't know.", show(c4s, 'A new divisor'))),
     S('The tools',
-      L("A fraction of a fraction? Multiply the denominators. How many multiples in a range? The last minus the first, plus "
-        "one, because both ends count.", show(n1s, 'A fraction of a fraction'), show(n2s, 'How many multiples')),
+      L("Nested fractions with one on top, like one fifth of one third? Multiply the denominators. "
+        "For other fractions, simplify and check that each group is a whole number. "
+        "How many multiples in a range? Subtract the first multiplier from the last multiplier, then add one, because both ends count.",
+        show(n1s, 'Nested fractions with one on top'), show(n2s, 'How many multiples')),
       L("Two in a row always divide by two, and three in a row by six. And a cubed minus a is three in a row in disguise.",
         show(n3s, 'Two in a row')),
-      L("Necessarily divisible? Tag each condition, and read the number in front. And when you plug in, give different "
-        "letters different values, avoid values that give zero, and remember that one failing example knocks a choice out.",
+      L("Necessarily divisible? Tag each condition, and read the number in front. And when you plug in, choose values independently "
+        "unless a condition links them. Different letters do not have to be unequal, but do not assume they are equal. "
+        "Avoid values that give zero, and remember that one failing example knocks a choice out.",
         show(n4s, 'Tag each condition'), show(n5s, 'when you plug in'))),
     S('Before you practice',
       L("Before each question, ask yourself. Parts with no common factor? Is my remainder smaller than the divisor? A "
@@ -1470,6 +1479,13 @@ def _stem_parts(vid):
 
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v); _write_gap(_v)
 
+
+# Spoken clarity revision: preserves the complete original board/cue plan.
+_clarity_spec = importlib.util.spec_from_file_location(
+    '_codex_script_clarity_20261012', os.path.join(HERE, '_codex_script_clarity_20261012.py'))
+_clarity_module = importlib.util.module_from_spec(_clarity_spec)
+_clarity_spec.loader.exec_module(_clarity_module)
+_clarity_module.apply(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

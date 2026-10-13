@@ -25,7 +25,7 @@
     ]
    },
    {
-    "say": "First case. Two x minus one is seven. To get x alone, add one, and two x is eight. Divide by two, and x is four.",
+    "say": "The inside is two x minus one. We'll undo the subtraction first, then undo multiplication by two. First case. Two x minus one is seven. To get x alone, add one, and two x is eight. Divide by two, and x is four.",
     "voice": "calm",
     "at": [
      "Two x minus one is seven",
@@ -67,7 +67,7 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in the answers. Three of the choices have four in them, so let's test four first. Two times four is eight, minus one, seven. Its absolute value is seven, so four works.",
+    "say": "[pause] A choice here gives a set of possible x values. To be the correct set, it must include every value that works and exclude values that don't. Our second method, plugging in the answers. Three of the choices have four in them, so let's test four first. Two times four is eight, minus one, seven. Its absolute value is seven, so four works.",
     "at": [
      "Our second",
      "Three of the choices",

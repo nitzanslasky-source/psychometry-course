@@ -1,98 +1,98 @@
 {
- "videoId": "solve-q-517",
- "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "A, B and C represent digits. Given: C A times C A is equal to six B A. Which of the following could be A minus C?",
-    "voice": "calm",
-    "at": [
-     "A, B and C"
+  "videoId": "solve-q-517",
+  "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "A, B and C represent digits. Given: C A times C A is equal to six B A. Which of the following could be A minus C?",
+        "voice": "calm",
+        "at": [
+          "A, B and C"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "We square the two-digit number C A and get a three-digit number starting with six. We need a possible value of A minus C. [short pause] We'll solve it two ways, checking the square's size first, and then starting with the choices.",
+        "at": [
+          "the two-digit",
+          "six. We need",
+          "solve it two",
+          "size first, and",
+          "with the choices"
+        ]
+      },
+      {
+        "say": "[short pause] Let's start with the size. C A squared is between six hundred and six hundred ninety-nine. Twenty squared is four hundred, and thirty squared is nine hundred. So C A must be in the twenties. Its tens digit, C, is two.",
+        "at": [
+          "Let's start",
+          "C A squared",
+          "hundred and six",
+          "Twenty squared",
+          "and thirty squared",
+          "So C A",
+          "the twenties. Its"
+        ]
+      },
+      {
+        "say": "Which number in the twenties works? Twenty-four squared is five hundred seventy-six, too small. Twenty-five squared is six hundred twenty-five. Twenty-six squared is six hundred seventy-six. Twenty-seven squared is seven hundred twenty-nine, too large. So we only need twenty-five and twenty-six.",
+        "at": [
+          "Twenty-four squared",
+          "Twenty-five squared is",
+          "twenty-six squared is",
+          "Twenty-seven squared",
+          "twenty-nine, too"
+        ]
+      },
+      {
+        "say": "Now find A minus C for each. With twenty-five, A is five and C is two, so the difference is three. That is not a choice. With twenty-six, A is six and C is two, so the difference is four. That is choice number four. The question asks what could be true, so one working case is enough. Choice number four is our answer.",
+        "at": [
+          "Now find A",
+          "Not a choice",
+          "asks what could",
+          "one working case",
+          "Choice number four is",
+          "Choice number four is our answer"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So a two-digit number squared gives six hundred and something. [short pause] We'll solve it two ways, the size first, and then starting from the choices.",
-    "at": [
-     "a two-digit number squared",
-     "six hundred and",
-     "solve it two",
-     "size first, and",
-     "from the choices"
+    [
+      {
+        "say": "[pause] Now start with the ones column and use the choices. A times A must end in A. So A must be one of the four special digits: zero, one, five or six.",
+        "at": [
+          "Now start with",
+          "Now start with",
+          "start with the",
+          "and use the",
+          "A times A",
+          "special digits: zero"
+        ]
+      },
+      {
+        "say": "Each choice gives a possible A minus C. Test six: among those special digits, we would need A is six and C is zero. But C is a leading digit, so it cannot be zero. That choice is out. Test five: A is five would again need C is zero. The other possibility is A is six and C is one. That gives sixteen, whose square is two hundred fifty-six, not a number starting with six. So this choice is out too.",
+        "at": [
+          "A is six",
+          "C is zero",
+          "leading digit, so",
+          "out. Test five",
+          "five would again",
+          "The other possibility",
+          "C is one",
+          "two hundred fifty",
+          "this choice is"
+        ]
+      },
+      {
+        "say": "Test two: A could be five with C is three, or six with C is four. Those numbers are thirty-five and forty-six. Their squares have four digits, too large for the given result. That choice is out. Test four: use A is six and C is two. Twenty-six squared is six hundred seventy-six. It starts with six and ends with A, so it fits. Choice number four is our answer. Okay. I'll see you in the next question.",
+        "at": [
+          "A could be",
+          "and forty-six",
+          "their squares have",
+          "four digits, too",
+          "A is six",
+          "Twenty-six squared",
+          "It fits. Choice number four"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start with the size. C A squared is six hundred and something. Twenty squared is four hundred, and thirty squared is nine hundred. So C A is in the twenties, and C is two.",
-    "at": [
-     "Let's start",
-     "C A squared is six",
-     "hundred and something",
-     "Twenty squared",
-     "and thirty squared",
-     "So C A",
-     "the twenties, and"
-    ]
-   },
-   {
-    "say": "Which twenties? Twenty-four squared is five seventy-six, too small. Twenty-five squared is six twenty-five, twenty-six squared is six seventy-six, and twenty-seven squared is seven twenty-nine, too big. So twenty-five or twenty-six.",
-    "at": [
-     "Twenty-four squared",
-     "Twenty-five squared is",
-     "twenty-six squared is",
-     "and twenty-seven squared",
-     "twenty-nine, too big"
-    ]
-   },
-   {
-    "say": "Twenty-five gives A minus C, five minus two, three. Not a choice, and they ask what could be, so one option is enough. Twenty-six gives six minus two, four. Choice number four is our answer.",
-    "at": [
-     "Twenty-five gives",
-     "Not a choice",
-     "ask what could",
-     "one option is",
-     "Twenty-six gives six",
-     "Choice number four is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Another way, and it's sharp. What's different? We don't estimate first. We take the ones column, and let the choices do the work. A times A ends in A, so A is a special digit, zero, one, five or six.",
-    "at": [
-     "Another way",
-     "What's different? We",
-     "We take the",
-     "and let the",
-     "A times A ends in A",
-     "special digit, zero"
-    ]
-   },
-   {
-    "say": "A minus C is six? Then A is six and C is zero, but a leading digit is never zero. Out. Five? A five would need C zero, so A is six and C is one, sixteen squared, two fifty-six, not six hundred and something. Out.",
-    "at": [
-     "A minus C is six",
-     "C is zero",
-     "leading digit is",
-     "never zero. Out",
-     "five would need",
-     "so A is",
-     "C is one",
-     "two fifty-six",
-     "and something. Out"
-    ]
-   },
-   {
-    "say": "Two? A five, C three, or A six, C four. Thirty-five and forty-six are too big, their squares have four digits. Out. Four? A six and C two, and twenty-six squared is six seventy-six. It fits. Choice number four. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "A five, C three",
-     "and forty-six are",
-     "their squares have",
-     "four digits. Out",
-     "A six and",
-     "and twenty-six squared",
-     "It fits. Choice number four"
-    ]
-   }
   ]
- ]
 }

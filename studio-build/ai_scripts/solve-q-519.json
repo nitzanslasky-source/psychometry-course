@@ -1,77 +1,77 @@
 {
- "videoId": "solve-q-519",
- "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "A, B, C and D represent different digits, and each of them is a prime number. Given: A B plus B C is equal to C D. C is equal to what?",
-    "voice": "calm",
-    "at": [
-     "A, B, C and D"
+  "videoId": "solve-q-519",
+  "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "A, B, C and D represent different digits, and each of them is a prime number. Given: A B plus B C is equal to C D. C is equal to what?",
+        "voice": "calm",
+        "at": [
+          "A, B, C and D"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "Each letter is a different prime digit. We'll solve it by testing the choices for C. First write the addition vertically. Now list the prime digits: two, three, five and seven. There are four letters, so all four digits must be used.",
+        "at": [
+          "prime digit. We'll",
+          "it by testing",
+          "choices for C",
+          "vertically",
+          "The prime digits",
+          "three, five and",
+          "four letters, so",
+          "digits must be"
+        ]
+      },
+      {
+        "say": "C is the tens digit of the sum. We add A and B in the tens column, and there may also be a carried one. Could C be two or three? The smallest sum of two different prime digits is two plus three, which is five. A carry would only add more. So C cannot be two or three. Choice numbers two and three are out.",
+        "at": [
+          "C be two",
+          "smallest sum of",
+          "sum of two",
+          "of two different",
+          "prime digits is",
+          "plus three, which",
+          "So C cannot",
+          "and three are out"
+        ]
+      },
+      {
+        "say": "Now test C is seven. In the ones column, we add B plus seven to get the last digit D. If B is two, we get nine, which is not prime. If B is three, we get ten, ending in zero, which is not prime either. So B would have to be five. Five plus seven is twelve, giving D is two and a carried one. The tens column then says A plus five plus one is seven. That would make A one, but one is not prime. So C cannot be seven. This choice is out.",
+        "at": [
+          "C is seven",
+          "B is two",
+          "B is three",
+          "ending in zero",
+          "B would have",
+          "D is two",
+          "The tens column",
+          "five plus one",
+          "So C cannot",
+          "out."
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "Prime digits only. [short pause] We'll solve it by plugging in the choices, organized trial and error. First, vertically, and an inventory. The prime digits are two, three, five and seven. Four letters, four different primes, so every one of them is used.",
-    "at": [
-     "Prime digits only",
-     "it by plugging",
-     "choices, organized trial",
-     "vertically",
-     "The prime digits",
-     "three, five and",
-     "Four letters, four",
-     "so every one"
+    [
+      {
+        "say": "That leaves five as the only possible value of C. In the tens column, A and B can be two and three, adding to five. Check which goes in B. With B is two, the ones column gives two plus five is seven. That is the remaining prime digit for D, and there is no carry. So A is three, B is two, and D is seven.",
+        "at": [
+          "In the tens",
+          "the ones column",
+          "and there is",
+          "is no carry",
+          "So A is",
+          "is two, and"
+        ]
+      },
+      {
+        "say": "The addition is thirty-two plus twenty-five equals fifty-seven. It works, and C is five. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "Thirty-two plus twenty-five",
+          "Choice number four is our answer"
+        ]
+      }
     ]
-   },
-   {
-    "say": "C is two or three? In the tens, A plus B, maybe with a carry, has to give C. But two different primes add up to at least two plus three, five. So choice numbers two and three are out.",
-    "at": [
-     "C is two or three",
-     "B, maybe with",
-     "has to give",
-     "But two different",
-     "up to at",
-     "plus three, five",
-     "So choice numbers two",
-     "and three are out"
-    ]
-   },
-   {
-    "say": "C is seven? Then the ones are B plus seven. B two gives nine, and B three gives ten, and nine and zero aren't prime. B five gives twelve, so D is two and one carries. Then the tens, A plus five plus one is seven, so A is one. Not a prime. Out.",
-    "at": [
-     "C is seven",
-     "B two gives",
-     "B three gives",
-     "nine and zero",
-     "B five gives",
-     "D is two",
-     "Then the tens",
-     "five plus one",
-     "so A is",
-     "Not a prime. Out"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "C is five. The tens, A plus B is five, so they're two and three. The ones, B plus five is D. B two gives seven, the prime that's left. So A is three, B is two, and D is seven.",
-    "at": [
-     "C is five",
-     "The ones, B",
-     "B two gives",
-     "prime that's left",
-     "So A is",
-     "is two, and"
-    ]
-   },
-   {
-    "say": "Thirty-two plus twenty-five is fifty-seven. It works. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Thirty-two plus twenty-five",
-     "Choice number four is our answer"
-    ]
-   }
   ]
- ]
 }

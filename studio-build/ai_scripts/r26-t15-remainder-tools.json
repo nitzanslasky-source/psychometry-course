@@ -7,7 +7,7 @@
   ],
   [
    {
-    "say": "First tool. If a number leaves a remainder, take the remainder away, and what's left divides exactly. Sixty-one divided by eight. Seven eights are fifty-six, so it leaves five. Sixty-one minus five is fifty-six, and that's seven times eight, no remainder.",
+    "say": "We're going to remove just the leftover part of the number. That lets us see the complete groups underneath it. First tool. If a number leaves a remainder, take the remainder away, and what's left divides exactly. Sixty-one divided by eight. Seven eights are fifty-six, so it leaves five. Sixty-one minus five is fifty-six, and that's seven times eight, no remainder.",
     "at": [
      "number leaves a",
      "the remainder away",
@@ -51,7 +51,7 @@
   ],
   [
    {
-    "say": "Second tool. A number divisible by four and by six. Is it divisible by twenty-four? Not necessarily. Remember the LCM from primes, every prime at its higher power. Four is two squared, and six is two times three. So two squared times three, which is twelve.",
+    "say": "Here the same number has to pass two divisibility conditions. We want to find the smallest set of prime factors that satisfies both. Second tool. A number divisible by four and by six. Is it divisible by twenty-four? Not necessarily. Remember the LCM from primes, every prime at its higher power. Four is two squared, and six is two times three. So two squared times three, which is twelve.",
     "at": [
      "A number divisible by four and by six",
      "and by six",
@@ -65,7 +65,7 @@
     ]
    },
    {
-    "say": "So the number is a multiple of twelve, twelve k. Twelve, twenty-four, thirty-six, forty-eight, all divide by four and by six. Twenty-four k would miss twelve and thirty-six, and they do divide by both.",
+    "say": "Twelve contains everything needed for division by four and by six, so multiplying twelve by any integer satisfies both conditions. So the number is a multiple of twelve, twelve k. Twelve, twenty-four, thirty-six, forty-eight, all divide by four and by six. Twenty-four k would miss twelve and thirty-six, and they do divide by both.",
     "at": [
      "So the number",
      "multiple of twelve",

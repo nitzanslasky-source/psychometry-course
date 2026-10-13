@@ -75,6 +75,48 @@ _FRAC = {'half': 2, 'halves': 2, 'third': 3, 'thirds': 3, 'quarter': 4, 'quarter
 _TOK = re.compile(r"[A-Za-z]+|[^A-Za-z]")
 
 
+
+# Spoken shorthand is expanded only for display, never for take text/alignment.
+_ORDINAL = dict(zip(
+    'half third quarter fourth fifth sixth seventh eighth ninth tenth eleventh twelfth thirteenth fourteenth fifteenth sixteenth seventeenth eighteenth nineteenth'.split(),
+    [2, 3, 4] + list(range(4, 20))))
+_ORDINAL.update(dict(zip(
+    'twentieth thirtieth fortieth fiftieth sixtieth seventieth eightieth ninetieth'.split(),
+    range(20, 100, 10))))
+for _tens, _value in zip(_TENS, range(20, 100, 10)):
+    for _unit, _uv in dict(first=1, second=2, third=3, fourth=4, fifth=5,
+                           sixth=6, seventh=7, eighth=8, ninth=9).items():
+        _ORDINAL[_tens + '-' + _unit] = _value + _uv
+_FRACTION_WORDS = dict(_ORDINAL)
+_FRACTION_WORDS.update({k + 's': v for k, v in _ORDINAL.items() if k != 'half'})
+_FRACTION_WORDS['halves'] = 2
+_CARDINAL_WORD = '(?:' + '|'.join(_NV) + '|hundred|thousand|and|a)'
+_FRACTION_RX = re.compile(r'\b((?:' + '|'.join(_NV) + r'|a)(?:[ -]+' + _CARDINAL_WORD + r')*) (' +
+                          '|'.join(sorted(_FRACTION_WORDS, key=len, reverse=True)) + r')\b', re.I)
+_SHORT_NUMBER_RX = re.compile(r'\b(' + '|'.join(_UNITS[1:]) + r') (' +
+    '|'.join(_TEENS + [t + r'(?:-(?:' + '|'.join(_UNITS[1:]) + r'))?' for t in _TENS]) +
+    r')\b(?!-[A-Za-z])', re.I)
+
+def _display_number_input(text):
+    """Protect fraction denominators before parsing cardinal-number runs."""
+    fractions = []
+    def fraction(m):
+        encoded, parsed = _numbers(m.group(1))
+        if len(parsed) != 1 or encoded != '\ue0000\ue001':
+            return m.group(0)
+        numerator = parsed[0][1]
+        name = m.group(2).lower()
+        if (numerator == 1) != (not name.endswith('s')):
+            return m.group(0)
+        fractions.append('%d/%d' % (numerator, _FRACTION_WORDS[name]))
+        return '\ue002%d\ue003' % (len(fractions)-1)
+    text = _FRACTION_RX.sub(fraction, text)
+    text = re.sub(r'\b(' + '|'.join(_UNITS[1:]) + r') oh (' + '|'.join(_UNITS) + r')\b',
+        lambda m: m.group(1) + ' hundred ' + m.group(2), text, flags=re.I)
+    text = _SHORT_NUMBER_RX.sub(lambda m: m.group(1) + ' hundred ' + m.group(2), text)
+    return text, fractions
+
+
 def _numbers(text):
     """text with every number phrase replaced by \\ue000<k>\\ue001; returns (text, [(raw, value, words)])"""
     toks = _TOK.findall(text); out = []; nums = []; i = 0
@@ -90,6 +132,13 @@ def _numbers(text):
         while True:
             w = word(j)
             if w is None:
+                break
+            # A digit-count adjective starts a new phrase: "sixty three-digit" is
+            # 60 three-digit numbers, never a 63-digit number.
+            if j > start and toks[j - 1:j] == [' '] and toks[j + 1:j + 2] == ['-'] and word(j + 2) in ('digit', 'digits'):
+                break
+            # Ordinals are not cardinal runs ("twenty-first" must not become "20-first").
+            if toks[j + 1:j + 2] == ['-'] and w + '-' + (word(j + 2) or '') in _ORDINAL:
                 break
             v = _NV.get(w); kind = None
             if w == 'zero':
@@ -130,11 +179,13 @@ def _numbers(text):
 
 _N = r'\d+'
 _L = r"(?<![A-Za-z0-9'’])[b-hj-z](?![A-Za-z0-9'’])"   # a one-letter variable (not a / I)
-_ATOM = r"(?:−?(?:%s|(?<![A-Za-z0-9'’])[b-hj-z](?![A-Za-z0-9'’])|\|[^|\s]+\||√[^\s,.;:?!]+)[⁰¹²³⁴⁵⁶⁷⁸⁹ⁿ^]*)" % _N
+_ATOM = r"(?:−?(?:%s|\d+/\d+|(?<![A-Za-z0-9'’])[b-hj-z](?![A-Za-z0-9'’])|\|[^|\s]+\||√[^\s,.;:?!]+)[⁰¹²³⁴⁵⁶⁷⁸⁹ⁿ^]*)" % _N
 
 
 def math_display(text):
-    s, nums = _numbers(text)
+    display_input, fractions = _display_number_input(text)
+    s, nums = _numbers(display_input)
+    s = re.sub(r'\ue002(\d+)\ue003', lambda m: fractions[int(m.group(1))], s)
     mark = set(i for i, (raw, v, nw) in enumerate(nums) if nw > 1 or v >= 10)
     def m_all(t):
         mark.update(int(k) for k in re.findall(r'(\d+)', t)); return t
@@ -142,16 +193,20 @@ def math_display(text):
         k = re.fullmatch(r'(\d+)', t)
         return nums[int(k.group(1))][1] if k else None
     # negative N / negative x
-    s = re.sub(r'\b[Nn]egative (%s|%s)' % (_N, _L), lambda m: '−' + m_all(m.group(1)), s)
+    s = re.sub(r'\b[Nn]egative (%s|%s)' % (_N + r'|\d+/\d+', _L), lambda m: '−' + m_all(m.group(1)), s)
+    # A negative/fractional base needs brackets; otherwise -2² reads as -(2²).
+    def power_base(base):
+        base = m_all(base)
+        return '(' + base + ')' if base.startswith('−') or '/' in base else base
     # powers
-    s = re.sub(r'(%s) squared\b' % _ATOM, lambda m: m_all(m.group(1)) + '²', s)
-    s = re.sub(r'(%s) cubed\b' % _ATOM, lambda m: m_all(m.group(1)) + '³', s)
+    s = re.sub(r'(%s) squared\b' % _ATOM, lambda m: power_base(m.group(1)) + '²', s)
+    s = re.sub(r'(%s) cubed\b' % _ATOM, lambda m: power_base(m.group(1)) + '³', s)
     def pw(m):
-        base, e = m_all(m.group(1)), m.group(2); v = num_of(e)
+        base, e = power_base(m.group(1)), m.group(2); v = num_of(e)
         return base + (str(v).translate(_SUP) if v is not None else (e.translate(_SUP) if e == 'n' else '^' + e))
     s = re.sub(r'(%s) to the power of (%s|[a-z]\b)' % (_ATOM, _N), pw, s)
     # roots, absolute values (a lone operand, no operator after it)
-    s = re.sub(r'\b(?:the )?square root of (%s)' % _ATOM, lambda m: '√' + (lambda o: '(%s)' % o if re.search('[⁰¹²³⁴⁵⁶⁷⁸⁹ⁿ^]', o) else o)(m_all(m.group(1))), s)
+    s = re.sub(r'\b(?:the )?square root of (%s)' % _ATOM, lambda m: '√' + (lambda o: '(%s)' % o if re.search('[⁰¹²³⁴⁵⁶⁷⁸⁹ⁿ^/]', o) else o)(m_all(m.group(1))), s)
     s = re.sub(r'\b[Tt]he absolute value of (%s)(?!,? (?:times|plus|minus|over|divided)\b)' % _ATOM,
                lambda m: '|' + m_all(m.group(1)) + '|', s)
     # binary operators between two operands (repeat for chains)
@@ -194,6 +249,22 @@ def math_display(text):
         k = int(m.group(1)); raw, v, nw = nums[k]
         return str(v) if k in mark else raw
     return re.sub(r'(\d+)', back, s)
+
+
+_PROMPTER_FORMATTER = None
+
+def prompter_display(video_id, paras):
+    """Presentation only; never change narration or recording paragraph indices."""
+    global _PROMPTER_FORMATTER
+    path = os.path.join(HERE, 'math_patches', '_codex_reading_display_20261012.py')
+    if os.path.exists(path):
+        if _PROMPTER_FORMATTER is None:
+            import importlib.util
+            spec = importlib.util.spec_from_file_location('codex_reading_display', path)
+            _PROMPTER_FORMATTER = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(_PROMPTER_FORMATTER)
+        return _PROMPTER_FORMATTER.display_for(video_id, paras, READING_ROOT, math_display)
+    return [[math_display(p) for p in slide] for slide in paras]
 
 
 def paragraphs(vid):
@@ -354,7 +425,7 @@ def build(topics=(), ids=None, out=OUT):
             if not os.path.exists(sp):
                 sys.exit('missing script: ' + sp)
             v['paras'] = paragraphs(v['id'])                       # the script text (sidecars, change detection)
-            v['disp'] = [[math_display(p) for p in sl] for sl in v['paras']]   # teleprompter only: figures/symbols
+            v['disp'] = prompter_display(v['id'], v['paras'])       # display only; take text stays unchanged
             words = sum(len(p.split()) for sl in v['paras'] for p in sl)
             v['words'] = words
             if not v.get('minutes'):
@@ -400,7 +471,7 @@ button:hover:not(:disabled){border-color:var(--faint)}
 button:disabled{opacity:.45;cursor:default}
 button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .top{display:flex;align-items:center;gap:14px;padding:10px 18px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
-.updated{font:700 14px system-ui;background:#fef3c7;color:#78350f;border:1.5px solid #f59e0b;border-radius:10px;padding:5px 10px;white-space:nowrap}
+.updated{font:700 14px system-ui;background:#fef3c7;color:#78350f;border:1.5px solid #f59e0b;border-radius:10px;padding:5px 10px;white-space:nowrap;margin-left:auto;order:3}
 .updated.old{background:#fee2e2;color:#7f1d1d;border-color:#ef4444}
 .brand{font-weight:700;letter-spacing:.01em}.brand small{font-weight:500;color:var(--muted);margin-left:8px}
 .tips{flex:1 1 420px;display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--muted);font-size:13px}
@@ -489,7 +560,7 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
 <body>
 <div class="top">
   <div class="brand">Reading Studio<small>__LABEL__</small></div>
-  <div class="updated" id="updated" title="When this page was made. If the scripts were changed after this, reload the newest Reading-Studio.html.">Updated: __UPDATED__</div>
+  <div class="updated" id="updated" title="Version saved at this time. Refresh only between takes to load a newer version.">Last updated: __UPDATED__</div>
   <div class="tips">
     <span><b>Quiet room</b>, no fan or AC</span>
     <span><b>Same mic, same distance</b> every time (about a hand-span)</span>
@@ -541,7 +612,7 @@ const DATA=__DATA__;
 /* 2026-10-11: how old is this page? (she sometimes reads from a page opened hours earlier) */
 function pageAge(){const el=document.getElementById('updated');if(!el||!DATA.builtAt)return;const h=(Date.now()-new Date(DATA.builtAt))/36e5;
  const t=h<1?Math.max(1,Math.round(h*60))+' min ago':h<48?Math.round(h)+' h ago':Math.round(h/24)+' days ago';
- el.textContent='Updated: '+new Date(DATA.builtAt).toLocaleString([], {weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})+' · '+t+(h>=3?' · reload the newest page before reading':'');
+ el.textContent='Last updated: '+new Date(DATA.builtAt).toLocaleString([], {day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'})+' · '+t+(h>=3?' · reload the newest page before reading':'');
  el.classList.toggle('old',h>=3)}
 setTimeout(pageAge,0);setInterval(pageAge,60000);
 const $=s=>document.querySelector(s);
@@ -635,7 +706,7 @@ function renderParas(){
   const v=V[S.cur];let k=0;
   $('#vtitle').innerHTML=esc(v.title)+'<small>'+esc(v.id)+' · about '+v.minutes.toFixed(1)+' min · '+v.words+' words</small>';
   const ch=new Set(changedList());
-  $('#paras').innerHTML=(v.disp||v.paras).map(sl=>'<div class="slide">'+sl.map(p=>{const kk=k++;return '<p class="p" data-k="'+kk+'">'+esc(p)+(ch.has(kk)?'<span class="chg">changed</span>':'')+'</p>'}).join('')+'</div>').join('');
+  $('#paras').innerHTML=(v.disp||v.paras).map(sl=>'<div class="slide">'+sl.map(p=>{const kk=k++;return '<p class="p" data-k="'+kk+'">'+esc(p).replace(/\n/g,'<br>')+(ch.has(kk)?'<span class="chg">changed</span>':'')+'</p>'}).join('')+'</div>').join('');
   $('#paras').querySelectorAll('.p').forEach(el=>el.onclick=e=>{e.stopPropagation();const kk=+el.dataset.k;if(S.rec&&!S.rec.paused)nextPara();else if(S.mode==='patch'&&!S.rec){S.sel.has(kk)?S.sel.delete(kk):S.sel.add(kk);if(S.sel.has(kk))S.para=kk;else if(!S.sel.has(S.para))S.para=order()[0]??0;paintParas()}else setPara(kk,'jump')});
   $('#prompter').scrollTop=0;paintParas();
 }

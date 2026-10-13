@@ -49,7 +49,7 @@
     ]
    },
    {
-    "say": "Why does this help? A divisor of forty-four is built only from its primes, twos and elevens, and never more of each than forty-four has. So a divisor chooses how many twos it takes, zero, one or two. That's three options. And how many elevens, zero or one. That's two options.",
+    "say": "Each divisor uses some of the available prime factors, and taking none of a particular prime is allowed too. Why does this help? A divisor of forty-four is built only from its primes, twos and elevens, and never more of each than forty-four has. So a divisor chooses how many twos it takes, zero, one or two. That's three options. And how many elevens, zero or one. That's two options.",
     "at": [
      "A divisor of",
      "built only from its primes",
@@ -62,7 +62,7 @@
     ]
    },
    {
-    "say": "Any choice of twos goes with any choice of elevens, so I multiply the options. Three times two is six, exactly the six divisors we listed.",
+    "say": "The choice of how many twos to take is independent of the choice of how many elevens to take. Each combination gives one divisor. Any choice of twos goes with any choice of elevens, so I multiply the options. Three times two is six, exactly the six divisors we listed.",
     "at": [
      "Any choice of",
      "with any choice",

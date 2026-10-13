@@ -40,7 +40,7 @@
     ]
    },
    {
-    "say": "So if two primes have an odd sum, one of them must be two. Let's take two off each choice, and check whether what's left is a prime.",
+    "say": "One prime is forced to be two. So the other prime would have to be whatever remains after subtracting two from the proposed sum. So if two primes have an odd sum, one of them must be two. Let's take two off each choice, and check whether what's left is a prime.",
     "at": [
      "have an odd",
      "one of them must be two",
@@ -67,7 +67,7 @@
     ]
    },
    {
-    "say": "Fifty-one is two plus forty-nine. Is forty-nine a prime? It looks like one, but no, forty-nine is seven times seven. And without the two, both primes would be odd, and their sum would be even, not fifty-one. So no pair works, and fifty-one can't be the sum.",
+    "say": "We need both parts of the sum to be prime. If the required partner of two isn't prime, this proposed odd sum cannot work. Fifty-one is two plus forty-nine. Is forty-nine a prime? It looks like one, but no, forty-nine is seven times seven. And without the two, both primes would be odd, and their sum would be even, not fifty-one. So no pair works, and fifty-one can't be the sum.",
     "at": [
      "Fifty-one is two plus",
      "Is forty-nine a",

@@ -1,90 +1,78 @@
 {
- "videoId": "solve-q-464",
- "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "n is an integer. The expression n minus n cubed, over three, is always:",
-    "voice": "calm",
-    "at": [
-     "n is an integer"
+  "videoId": "solve-q-464",
+  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "n is an integer. The expression n minus n cubed, over three, is always:",
+        "voice": "calm",
+        "at": [
+          "n is an integer"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So n can be any integer. We subtract n cubed from n, then divide that whole answer by three. What is always true about the result? [short pause] We'll solve it two ways, plugging in numbers, and then writing the top as a multiplication.",
+        "at": [
+          "any integer. We",
+          "always true about",
+          "solve it two",
+          "in numbers, and"
+        ]
+      },
+      {
+        "say": "[short pause] Let's start by plugging in. n is one would give zero. Zero is even and divisible by four, so those two choices would still both fit. Let's try the next small integer instead.",
+        "at": [
+          "n is one"
+        ]
+      },
+      {
+        "say": "Use n is two. Two cubed is eight, so the top is two minus eight, which is negative six. Negative six over three is negative two. Now check the choices with that result.",
+        "at": [
+          "n is two",
+          "top is two minus eight",
+          "Negative six over three"
+        ]
+      },
+      {
+        "say": "Negative two is not divisible by four, so choice number one is out. It is an integer, not a non-integer fraction, so choice number two is out. And it is even, not odd, so choice number four is out.",
+        "at": [
+          "Negative two is not",
+          "choice number one is out",
+          "choice number two is out",
+          "choice number four is out"
+        ]
+      },
+      {
+        "say": "Only choice number three remains, even. That is our answer, and we can stop. There is no need to try n is three or n is four. We have ruled out all three other choices with one allowed example.",
+        "at": [
+          "Only choice number three remains"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So an expression with any integer n, and what's always true about it. [short pause] We'll solve it two ways, plugging in, and then factoring.",
-    "at": [
-     "any integer n",
-     "always true about",
-     "solve it two",
-     "in, and then"
+    [
+      {
+        "say": "[pause] Another way is to rewrite the top as a multiplication. n minus n cubed is the negative of the whole bracket, n cubed minus n. And n cubed minus n is n minus one, times n, times n plus one. Those are three numbers in a row.",
+        "at": [
+          "Another way",
+          "n minus n",
+          "And n cubed",
+          "is n minus",
+          "n, times n",
+          "three numbers in"
+        ]
+      },
+      {
+        "say": "The product of three numbers in a row always divides by six. The minus sign in front does not change that. So the top is a multiple of six. Dividing that by three gives a multiple of two, which is always even. Choice number three is our answer. Okay. I'll see you in the next question.",
+        "at": [
+          "three numbers in",
+          "in front does",
+          "So the top",
+          "Dividing that by",
+          "which is always",
+          "Choice number three"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start by plugging in. Careful, not n is one. One minus one is zero, and zero divides by everything, so it can't rule anything out.",
-    "at": [
-     "Let's start",
-     "not n is one",
-     "and zero divides",
-     "so it can't"
-    ]
-   },
-   {
-    "say": "n is two. Two cubed is eight, two minus eight is negative six, and over three is negative two. n is three. Three cubed is twenty-seven, three minus twenty-seven is negative twenty-four, and over three is negative eight.",
-    "at": [
-     "n is two",
-     "minus eight is",
-     "and over three",
-     "n is three",
-     "minus twenty-seven is",
-     "and over three is negative eight"
-    ]
-   },
-   {
-    "say": "Division, so a third one. n is four. Four cubed is sixty-four, four minus sixty-four is negative sixty, and over three is negative twenty.",
-    "at": [
-     "Division, so a",
-     "n is four",
-     "minus sixty-four is",
-     "and over three"
-    ]
-   },
-   {
-    "say": "Negative two doesn't divide by four, so choice number one is out. None of them is a fraction or odd, so choice numbers two and four are out. Choice number three, even.",
-    "at": [
-     "Negative two doesn't divide",
-     "choice number one is out",
-     "None of them",
-     "fraction or odd",
-     "choice numbers two",
-     "and four are out",
-     "Choice number three, even"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Another way, factoring. n minus n cubed is minus, in brackets, n cubed minus n. And n cubed minus n is n minus one, times n, times n plus one, three in a row.",
-    "at": [
-     "Another way",
-     "n minus n cubed is minus",
-     "And n cubed",
-     "is n minus",
-     "n, times n",
-     "three in a"
-    ]
-   },
-   {
-    "say": "Remember, three in a row divide by six, and the minus in front doesn't change that. So the top is six k, and over three, two k. Always even. Choice number three. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "three in a row divide by six",
-     "in front doesn't",
-     "So the top",
-     "k, and over",
-     "k. Always even",
-     "Choice number three"
-    ]
-   }
   ]
- ]
 }

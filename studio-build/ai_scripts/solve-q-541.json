@@ -1,0 +1,63 @@
+{
+ "videoId": "solve-q-541",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The operation diamond is defined for every number a. Diamond of a is equal to a squared minus four a. Diamond of six is equal to what?",
+    "voice": "calm",
+    "at": [
+     "The operation diamond"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The most basic operation question. [short pause] We'll solve it two ways, substituting, and then taking out a common factor first.",
+    "at": [
+     "The most basic",
+     "We'll solve it",
+     "substituting, and then",
+     "a common factor"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start by substituting. Whatever goes into the diamond takes a's place, everywhere. So six instead of a. Six squared minus four times six.",
+    "at": [
+     "Let's start",
+     "Whatever goes into",
+     "takes a's place",
+     "So six instead of a",
+     "Six squared minus"
+    ]
+   },
+   {
+    "say": "Thirty-six minus twenty-four is twelve. Choice number two is our answer.",
+    "at": [
+     "Thirty-six minus twenty-four",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way. What's different? We simplify the rule before putting the number in. a squared minus four a is a times, in brackets, a minus four.",
+    "at": [
+     "Another way",
+     "We simplify the",
+     "putting the number",
+     "a squared minus four a is",
+     "is a times",
+     "a minus four"
+    ]
+   },
+   {
+    "say": "So diamond of six is six times six minus four, six times two, twelve. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "is six times",
+     "six times two",
+     "six times two, twelve"
+    ]
+   }
+  ]
+ ]
+}

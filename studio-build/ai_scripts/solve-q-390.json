@@ -67,7 +67,7 @@
     ]
    },
    {
-    "say": "So how many of each prime do I need? Twos, only ten has one, so one two. Fives, ten needs one and twenty-five needs two, and two fives cover both. So every prime at its higher power.",
+    "say": "We need enough copies to satisfy both divisibility conditions. The condition that needs more copies of a particular prime sets the requirement for that prime. So how many of each prime do I need? Twos, only ten has one, so one two. Fives, ten needs one and twenty-five needs two, and two fives cover both. So every prime at its higher power.",
     "at": [
      "So how many",
      "prime do I",
@@ -117,7 +117,7 @@
     ]
    },
    {
-    "say": "Multiples of twenty-five. Twenty-five, does ten divide it? No. Fifty, does ten divide it? Yes, fifty is five tens. So fifty is the smallest number that fits.",
+    "say": "We'll count upwards in steps of twenty-five, then check which total also contains complete groups of ten. Multiples of twenty-five. Twenty-five, does ten divide it? No. Fifty, does ten divide it? Yes, fifty is five tens. So fifty is the smallest number that fits.",
     "at": [
      "Multiples of twenty-five",
      "Fifty, does ten",
@@ -165,7 +165,7 @@
     ]
    },
    {
-    "say": "Ten times twenty-five is two hundred fifty. The GCD of ten and twenty-five is five, the one five they share. Two hundred fifty over five is fifty. Choice number three again. [pause] Okay. I'll see you in the next question.",
+    "say": "The formula removes the part that ten and twenty-five share, so that shared part is included only once in the common multiple. Ten times twenty-five is two hundred fifty. The GCD of ten and twenty-five is five, the one five they share. Two hundred fifty over five is fifty. Choice number three again. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Ten times twenty-five",
      "The GCD of",

@@ -25,7 +25,7 @@
     ]
    },
    {
-    "say": "[short pause] Let's start with the rule. x and y are zero or positive, so x times y is biggest when each of them is as big as possible. And remember, the biggest remainder is one less than the divisor. Dividing by eight, the biggest remainder is seven. Why not eight? With eight left over, one more eight would fit.",
+    "say": "[short pause] We're looking for the biggest value of x times y, so let's first find the biggest remainder each letter can represent. Let's start with the rule. x and y are zero or positive, so x times y is biggest when each of them is as big as possible. And remember, the biggest remainder is one less than the divisor. Dividing by eight, the biggest remainder is seven. Why not eight? With eight left over, one more eight would fit.",
     "at": [
      "Let's start",
      "x and y",
@@ -61,7 +61,7 @@
     ]
    },
    {
-    "say": "So x times y is at most seven times two, which is fourteen. Choice number three is our answer.",
+    "say": "We can choose a and b separately, so both of those biggest remainders can occur together. So x times y is at most seven times two, which is fourteen. Choice number three is our answer.",
     "at": [
      "is at most",
      "seven times two",
@@ -83,7 +83,7 @@
   ],
   [
    {
-    "say": "[pause] Another way is to list the remainders by trying numbers. Divide one, two, three and so on by eight. One leaves one, two leaves two, and so on up to seven, which leaves seven. Eight leaves zero, nine leaves one again. So dividing by eight, the remainders go round from zero to seven.",
+    "say": "[pause] Let's look at what can actually be left over after dividing. The pattern repeats whenever we finish another complete group of eight. Another way is to list the remainders by trying numbers. Divide one, two, three and so on by eight. One leaves one, two leaves two, and so on up to seven, which leaves seven. Eight leaves zero, nine leaves one again. So dividing by eight, the remainders go round from zero to seven.",
     "at": [
      "Another way",
      "the remainders by",

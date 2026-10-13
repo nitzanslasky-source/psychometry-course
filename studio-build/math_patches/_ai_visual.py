@@ -275,9 +275,32 @@ def _auto_inject(vid, cues):
     return autos
 
 
+def _stem_parts_all(M, vid, cues, ats):
+    """2026-10-11 teacher ("when I talk about the second given, highlight only the second given"), for every topic: a
+    POINT on the whole question becomes the part her sentence is about (stem: g1 / g2 / given / ask - studio
+    anStemParts), using the topic-13 matcher; the question reading itself (line 1) keeps the whole question"""
+    if not _hw(vid): return
+    qid = (M.video(vid) or {}).get('questionId'); q = (M.D.get('questions') or {}).get(qid) if qid else None
+    if not q or not q.get('stemRich'): return
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import _ai_vis_t13 as T13
+    o = json.load(open(os.path.join(SB, 'ai_scripts', vid + '.json'), encoding='utf-8'))
+    say = [x if isinstance(x, str) else x['say'] for sl in o['slides'] for x in sl]
+    for n, cs in cues.items():
+        if n == 1: continue
+        for k, c in enumerate(cs):
+            if isinstance(c, dict) and c.get('point') == 'stem' and n in ats and k < len(ats[n]):
+                t = say[n - 1]; ph = (ats[n][k] or '').lstrip('<'); p = t.find(ph)
+                if p < 0: continue
+                a = max(t.rfind('.', 0, p), t.rfind('?', 0, p)) + 1
+                b = min([x for x in (t.find('.', p), t.find('?', p)) if x >= 0] or [len(t)])
+                tg = T13._stem_target(q['stemRich'], t[a:b + 1])
+                if tg: c['point'] = 'stem: ' + tg; c['label'] = 'stem: ' + tg
+
+
 def apply(M, vid):
     """rebuild the cue lines + click items of every slide of `vid` around its spoken lines (see the module doc)."""
-    v = M.video(vid); cues, _ = cues_of(vid); autos = _auto_inject(vid, cues)
+    v = M.video(vid); cues, ats = cues_of(vid); _stem_parts_all(M, vid, cues, ats); autos = _auto_inject(vid, cues)
     _merge_title(v)
     for b in v['beats']:                                   # keep the pre-loaded items and the spoken lines only
         b['items'] = b['items'][:b['pre']]; b['lines'] = [l for l in b['lines'] if 'say' in l]

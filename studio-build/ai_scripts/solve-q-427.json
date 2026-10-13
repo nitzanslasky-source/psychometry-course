@@ -33,7 +33,7 @@
     ]
    },
    {
-    "say": "Now build it from the inside. Call a tenth of the club k, a whole number of people. Then the club has ten k members, and three k of them play tennis. So the number of tennis players is always a multiple of three.",
+    "say": "Three tenths means three equal parts out of ten. We're going to describe the club using those ten parts, and then count the three parts that play tennis. Now build it from the inside. Call a tenth of the club k, a whole number of people. Then the club has ten k members, and three k of them play tennis. So the number of tennis players is always a multiple of three.",
     "at": [
      "Now build it",
      "Call a tenth of the club k",
@@ -58,7 +58,7 @@
     ]
    },
    {
-    "say": "And remember the sign for three, the digit sum divides by three. Five thirty, five plus three plus zero is eight, and eight doesn't divide by three. Choice number one is out.",
+    "say": "The choices give possible numbers of tennis players, so we're checking whether each choice is a multiple of three. And remember the sign for three, the digit sum divides by three. Five thirty, five plus three plus zero is eight, and eight doesn't divide by three. Choice number one is out.",
     "at": [
      "the sign for three",
      "digit sum divides",

@@ -66,7 +66,7 @@
     ]
    },
    {
-    "say": "Choice number three, q to the power of s. It needs s copies of q. z has q only r times, and r is smaller than s. Not enough q's, out.",
+    "say": "This choice uses a prime that is present, so the next question is whether enough copies are present. Choice number three, q to the power of s. It needs s copies of q. z has q only r times, and r is smaller than s. Not enough q's, out.",
     "at": [
      "number three, q",
      "power of s",
@@ -112,7 +112,7 @@
     ]
    },
    {
-    "say": "Then z is two to the power of seven, times three to the power of five. Seven twos and five threes.",
+    "say": "These powers describe the factor inventory. We can test the choices using that inventory without calculating the large number z. Then z is two to the power of seven, times three to the power of five. Seven twos and five threes.",
     "at": [
      "Then z is two",
      "the power of",

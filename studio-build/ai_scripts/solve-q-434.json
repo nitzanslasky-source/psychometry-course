@@ -1,106 +1,106 @@
 {
- "videoId": "solve-q-434",
- "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
- "slides": [
-  [
-   {
-    "say": "Yael loaded nine hundred points onto an amusement-park card. The first ride cost x points, the second ride cost two x points, and the third ride cost three x points. Which of the following could be the number of points left on her card after the three rides?",
-    "voice": "calm",
-    "at": [
-     "Yael loaded"
+  "videoId": "solve-q-434",
+  "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+  "slides": [
+    [
+      {
+        "say": "Yael loaded nine hundred points onto an amusement-park card. The first ride cost x points, the second ride cost two x points, and the third ride cost three x points. Which of the following could be the number of points left on her card after the three rides?",
+        "voice": "calm",
+        "at": [
+          "Yael loaded"
+        ],
+        "pause": 0.5
+      },
+      {
+        "say": "So Yael starts with nine hundred points, and each ride costs a multiple of x. The choices give possible amounts left after all three rides. [short pause] We'll solve it two ways, first checking the amount left, and then checking the amount she paid.",
+        "at": [
+          "multiple of x",
+          "The choices give",
+          "give possible amounts",
+          "ways, first checking",
+          "then checking the"
+        ]
+      },
+      {
+        "say": "[short pause] Let's start with what's left. First add the costs of the three rides: x plus two x plus three x is six x. So she paid six x points in total. She started with nine hundred, and we subtract what she paid. The number of points left is nine hundred minus six x.",
+        "at": [
+          "x plus two x plus three x",
+          "six x points",
+          "left is nine",
+          "hundred minus six"
+        ]
+      },
+      {
+        "say": "Now, nine hundred is six times a hundred fifty. And six x is six times x. So both parts of nine hundred minus six x are multiplied by six. We can write the amount left as six times the whole bracket, a hundred fifty minus x. x is a whole number, so the answer inside the bracket is a whole number too. So the amount left always divides by six.",
+        "at": [
+          "Now, nine hundred",
+          "times a hundred",
+          "both parts of",
+          "are multiplied by",
+          "a hundred fifty minus",
+          "x is a",
+          "so the answer",
+          "always divides by"
+        ]
+      },
+      {
+        "say": "Let's check the possible amounts left in the choices. A multiple of six divides by both two and three, so each choice has to fit both conditions. Fifteen is odd, so it doesn't divide by two and cannot divide by six. Out. Twenty-four is six times four, so it is divisible by six. Choice number two is our answer.",
+        "at": [
+          "divides by both",
+          "Fifteen is odd",
+          "so it doesn't",
+          "Twenty-four is six times four",
+          "so it is",
+          "Choice number two is our answer"
+        ]
+      },
+      {
+        "say": "Now careful, fifteen is the trap if you check only divisibility by three. Its digit sum is one plus five, which is six, so fifteen does divide by three. But it is odd, so it doesn't divide by two. We need both conditions for divisibility by six.",
+        "at": [
+          "the trap if",
+          "check only divisibility",
+          "Its digit sum",
+          "so fifteen does",
+          "But it is"
+        ]
+      }
     ],
-    "pause": 0.5
-   },
-   {
-    "say": "So a story with points, but underneath it's a divisibility question. Let's write what she paid, and what's left. [short pause] We'll solve it two ways, with what's left, and then with what she paid.",
-    "at": [
-     "points, but underneath",
-     "divisibility question. Let's",
-     "what she paid",
-     "ways, with what's",
-     "then with what"
+    [
+      {
+        "say": "[pause] Another way is to find how much she paid from each choice. Start with nine hundred points and subtract the amount left in that choice. The answer is the total cost of the three rides. She paid six x, so that cost has to divide by six.",
+        "at": [
+          "Another way",
+          "find how much",
+          "hundred points and",
+          "She paid six",
+          "that cost has",
+          "divide by six"
+        ]
+      },
+      {
+        "say": "If fifteen points are left, she paid nine hundred minus fifteen, which is eight hundred eighty-five. It's odd, so it doesn't divide by six. That choice is out.",
+        "at": [
+          "fifteen points are",
+          "nine hundred minus",
+          "is eight hundred",
+          "It's odd, so",
+          "divide by six",
+          "Out."
+        ]
+      },
+      {
+        "say": "If twenty-four points are left, she paid nine hundred minus twenty-four, which is eight hundred seventy-six. It's even, so it divides by two. Its digit sum is eight plus seven plus six, which is twenty-one, and twenty-one divides by three. So the amount paid divides by both two and three, which means it divides by six. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+        "at": [
+          "twenty-four points",
+          "nine hundred minus",
+          "is eight hundred",
+          "It's even, so",
+          "seven plus six",
+          "and twenty-one",
+          "it divides by six",
+          "Choice number two"
+        ]
+      }
     ]
-   },
-   {
-    "say": "[short pause] Let's start with what's left. She paid x, then two x, then three x, so six x in all. Left on the card, nine hundred minus six x.",
-    "at": [
-     "She paid x",
-     "six x in",
-     "Left on the",
-     "hundred minus six"
-    ]
-   },
-   {
-    "say": "Now, nine hundred is six times a hundred fifty. So I can take out the six. Nine hundred minus six x is six times, in brackets, a hundred fifty minus x. x is a whole number, so what's left is always a multiple of six.",
-    "at": [
-     "Now, nine hundred",
-     "times a hundred",
-     "take out the six",
-     "is six times, in",
-     "a hundred fifty minus",
-     "x is a",
-     "so what's left",
-     "always a multiple of six"
-    ]
-   },
-   {
-    "say": "And a multiple of six divides by two and by three. Fifteen is odd, so it's out. Twenty-four is six times four, so it works. Choice number two is our answer.",
-    "at": [
-     "divides by two and by three",
-     "Fifteen is odd",
-     "so it's out",
-     "Twenty-four is six times four",
-     "so it works",
-     "Choice number two is our answer"
-    ]
-   },
-   {
-    "say": "Now careful, fifteen is the trap for anyone who checks only the three. Its digit sum is six, so it divides by three, but it's odd.",
-    "at": [
-     "the trap for",
-     "checks only the three",
-     "Its digit sum",
-     "so it divides",
-     "but it's odd"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "[pause] Another way is to complete each choice to nine hundred, and ask how much she paid. She paid six x, so the paid part has to divide by six.",
-    "at": [
-     "Another way",
-     "complete each choice",
-     "hundred, and ask",
-     "She paid six",
-     "the paid part",
-     "divide by six"
-    ]
-   },
-   {
-    "say": "Fifteen left means she paid nine hundred minus fifteen, which is eight hundred eighty-five. It's odd, so it doesn't divide by six. Out.",
-    "at": [
-     "Fifteen left means",
-     "nine hundred minus",
-     "is eight hundred",
-     "It's odd, so",
-     "divide by six",
-     "Out."
-    ]
-   },
-   {
-    "say": "Twenty-four left means she paid nine hundred minus twenty-four, which is eight hundred seventy-six. It's even, and eight plus seven plus six is twenty-one, which divides by three. So it divides by six, and choice number two. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Twenty-four left means",
-     "nine hundred minus",
-     "is eight hundred",
-     "It's even, and",
-     "seven plus six",
-     "which divides by",
-     "it divides by",
-     "and choice number two"
-    ]
-   }
   ]
- ]
 }

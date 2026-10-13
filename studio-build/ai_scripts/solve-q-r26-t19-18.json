@@ -1,0 +1,74 @@
+{
+ "videoId": "solve-q-r26-t19-18",
+ "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The operation diamond is defined for every positive number x. It is known that for every positive x, diamond of diamond of x is equal to x. Which of the following can be the definition of the operation diamond?",
+    "voice": "calm",
+    "at": [
+     "The operation diamond"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "No definition, just a property. Do the diamond twice, and you're back at x. [short pause] We'll solve it two ways, plugging in numbers, and then by understanding.",
+    "at": [
+     "just a property",
+     "diamond twice, and",
+     "two ways, plugging",
+     "and then by"
+    ]
+   },
+   {
+    "say": "[short pause] Let's put each rule on trial. Pick a test value, not zero, not one. Two. Six x, two goes to twelve, and twelve goes to seventy-two. Not two, out. x plus six, eight, then fourteen. Out.",
+    "at": [
+     "Let's put",
+     "Pick a test value",
+     "Six x, two",
+     "twelve, and twelve",
+     "Not two, out",
+     "then fourteen. Out"
+    ]
+   },
+   {
+    "say": "x over six, one third, then one eighteenth. Out. Six over x, two goes to three, and three goes back to two. Choice number four is our answer.",
+    "at": [
+     "x over six",
+     "one eighteenth. Out",
+     "Six over x",
+     "to three, and",
+     "back to two",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way. What's different? We know which families undo themselves, c minus x and c over x. Ten minus, ten minus x, is x again. And six over, six over x, is x again.",
+    "at": [
+     "Another way",
+     "know which families",
+     "undo themselves",
+     "Ten minus",
+     "And six over"
+    ]
+   },
+   {
+    "say": "So six over x, choice number four. Watch choice number three, x over six. It looks close, but the x is on top, and it just keeps shrinking. And a step property, like one step up in the input gives three times the result? Test two neighbours, like two and three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So six over x",
+     "number four. Watch",
+     "number three, x",
+     "It looks close",
+     "x is on",
+     "it just keeps",
+     "And a step",
+     "one step up",
+     "input gives three",
+     "Test two neighbours"
+    ]
+   }
+  ]
+ ]
+}

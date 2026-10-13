@@ -35,7 +35,7 @@
     ]
    },
    {
-    "say": "Option two, they're opposites. x plus four y is minus, open bracket, four x plus y. That's minus four x minus y.",
+    "say": "The whole inside on one side is the opposite of the whole inside on the other. The minus therefore applies to both terms in the bracket. Option two, they're opposites. x plus four y is minus, open bracket, four x plus y. That's minus four x minus y.",
     "at": [
      "x plus four",
      "That's minus four x"
@@ -81,7 +81,7 @@
     ]
    },
    {
-    "say": "Open both with the shortcut formula. On the left, x squared plus eight x y plus sixteen y squared. On the right, sixteen x squared plus eight x y plus y squared.",
+    "say": "We're squaring the whole sum on each side, including its middle term. Let's expand both brackets separately. Open both with the shortcut formula. On the left, x squared plus eight x y plus sixteen y squared. On the right, sixteen x squared plus eight x y plus y squared.",
     "voice": "calm",
     "at": [
      "Open both",
@@ -132,7 +132,7 @@
     ]
    },
    {
-    "say": "Choice numbers two and three both survive, and the answers give us a hint. Equal, or equal in absolute value. So the tie-breaker is opposite numbers. x two and y minus two. Four times minus two is minus eight, and two minus eight is minus six. Four times two is eight, and eight minus two is six. Six and six in bars, it works.",
+    "say": "The surviving choices disagree about equal numbers versus equal sizes. Opposite numbers have equal sizes but are not equal, so they will separate those choices. Choice numbers two and three both survive, and the answers give us a hint. Equal, or equal in absolute value. So the tie-breaker is opposite numbers. x two and y minus two. Four times minus two is minus eight, and two minus eight is minus six. Four times two is eight, and eight minus two is six. Six and six in bars, it works.",
     "at": [
      "Two and",
      "three both survive",
