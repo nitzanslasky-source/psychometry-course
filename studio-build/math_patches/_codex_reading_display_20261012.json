@@ -4936,6 +4936,55 @@
       ],
       "recorded_when_published": false,
       "scope_replacements": {}
+    },
+    "solve-q-r26-t19-01": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.3": [
+          [
+            "the bracket x plus one, squared, minus two times the bracket x plus one",
+            "(x + 1)² − 2 × (x + 1)"
+          ]
+        ],
+        "1.4": [
+          [
+            "The bracket x plus one, squared, is",
+            "(x + 1)² is"
+          ],
+          [
+            "minus two times the bracket x plus one is",
+            "−2 × (x + 1) is"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t19-02": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.5": [
+          [
+            "the bracket a minus b, squared, plus a",
+            "(a − b)² + a"
+          ]
+        ]
+      }
+    },
+    "solve-q-541": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "Both parts of a squared minus four a have",
+            "Both parts of a² − 4a have"
+          ]
+        ]
+      }
     }
   }
 }

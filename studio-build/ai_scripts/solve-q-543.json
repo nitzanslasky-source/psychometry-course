@@ -12,14 +12,15 @@
     "pause": 0.5
    },
    {
-    "say": "This time they don't give us the rule. They only tell us one result. Someone took three, used the diamond, and got twenty-one. [short pause] We'll solve it by putting three into every choice.",
+    "say": "This time they don't give us the rule. They only tell us one result. Someone took three, used the diamond, and got twenty-one. [short pause] We'll put three into the choices, one by one, until one of them doesn't give twenty-one.",
     "at": [
      "give us the",
      "only tell us",
      "Someone took three",
      "diamond, and got",
-     "solve it by",
-     "into every choice"
+     "put three into",
+     "one by one",
+     "of them doesn't"
     ]
    },
    {
@@ -58,7 +59,7 @@
     ]
    },
    {
-    "say": "Choice number three, five x plus five. Five times three is fifteen, and fifteen plus five is twenty. Twenty is not twenty-one. So this rule cannot turn three into twenty-one, and it cannot be the definition. Choice number three is our answer.",
+    "say": "Choice number three, five x plus five. Five times three is fifteen, and fifteen plus five is twenty. Twenty is not twenty-one. So this rule cannot turn three into twenty-one, and it cannot be the definition. Choice number three is our answer. That one failure is all the question asks for, so we can stop here without checking choice number four. [pause] Okay. I'll see you in the next question.",
     "at": [
      "number three, five",
      "Five times three is fifteen",
@@ -67,22 +68,11 @@
      "So this rule",
      "three into twenty-one",
      "cannot be the",
-     "Choice number three is our answer"
-    ]
-   },
-   {
-    "say": "In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four, eight x minus three. Eight times three is twenty-four, and twenty-four minus three is twenty-one. It could be the rule, so only choice number three can't. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "In the exam",
-     "it and move",
-     "Here, let's check",
-     "one too. Choice",
-     "number four, eight",
-     "Eight times three",
-     "and twenty-four minus",
-     "It could be the rule, so",
-     "so only choice",
-     "number three can't"
+     "Choice number three is our answer",
+     "answer. That one",
+     "the question asks",
+     "we can stop",
+     "checking choice number"
     ]
    }
   ]

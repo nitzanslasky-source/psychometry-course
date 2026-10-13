@@ -108,6 +108,11 @@ def notation(text,legacy,digits=False):
     for key,value in descriptions.items():s=s.replace(key,value)
     # A slash fraction used as the divisor needs explicit grouping.
     s=re.sub(r'÷ (−?\d+/\d+)',r'÷ (\1)',s)
+    # 2026-10-13 (Codex review standard 9): a minus between two operands is binary ("a² −4a" -> "a² − 4a",
+    # "A −C" -> "A − C"), and a negative factor after a times sign gets brackets ("a × −4" -> "a × (−4)").
+    # Only reached by paragraphs without a cached registry display (cached and recorded paragraphs are unchanged).
+    s=re.sub(r'(?<![A-Za-z])(\d*[A-Za-z][²³⁴⁵⁶⁷⁸⁹⁰ⁿ]*|\d+|[²³⁴⁵⁶⁷⁸⁹)|]) −(?=[A-Za-z0-9(√|])',r'\1 − ',s)
+    s=re.sub(r'× −(\d+|[A-Za-z])(?![\w²³⁴⁵⁶⁷⁸⁹])',r'× (−\1)',s)
     return s
 
 def reading_display(text,legacy,digits=False):

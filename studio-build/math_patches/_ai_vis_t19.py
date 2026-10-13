@@ -446,18 +446,17 @@ video('solve-q-541', 'solution', qid='q-541', slides=[
       L("So we have a rule, and we need to use it on the number six. [short pause] We'll solve it two ways, first by "
         "putting six straight into the rule, and then by simplifying the rule before we use it.", pt('stem', 'use it on the number six')),
       L("[short pause] Remember what the rule means. Whatever goes into the diamond takes the place of a, in every spot "
-        "where a appears. Here a appears in two spots, in a squared and in four a. So let's write the same template again, "
-        "and put six in every spot.", show(s541['line'], 'Whatever goes into the diamond'), show(s541['in'], 'put six in every spot')),
-      L("Careful here. A lot of students put six only into a squared, and forget the four a. But six goes into every a.",
-        pt('s541_line', 'A lot of students')),
+        "where a appears. Here a appears in two spots, in a squared and in four a. So we write the same template again, "
+        "and put six in both spots.", show(s541['line'], 'Whatever goes into the diamond'), show(s541['in'], 'put six in both spots')),
       L("So diamond of six is six squared minus four times six. Six squared is thirty-six. Four times six is twenty-four. "
         "Thirty-six minus twenty-four is twelve.", show(s541['calc'], 'Thirty-six minus twenty-four')),
-      L("So diamond of six is twelve, and choice number two is our answer. Thirty-six, choice number one, is only the first "
-        "part of the rule.", mk('tick', 'choice 2', 'choice number two is our answer'), mk('cross', 'choice 1', 'Thirty-six, choice number one'))),
+      L("So diamond of six is twelve, and choice number two is our answer. Careful, thirty-six, choice number one, is what "
+        "you get if you put six only into a squared and forget the four a.", mk('tick', 'choice 2', 'choice number two is our answer'),
+        pt('s541_in', 'only into a squared'), mk('cross', 'choice 1', 'thirty-six, choice number one'))),
     S('Method 2 · A common factor',
       L("[pause] Another way is to simplify the rule first, and only then put the number in. Both parts of a squared minus "
-        "four a have an a in them. So we can take a out as a common factor. a squared minus four a is a times, in brackets, "
-        "a minus four. Let's check it. a times a is a squared, and a times negative four is negative four a.",
+        "four a have an a in them: a squared is a times a, and four a is a times four. So we can write the whole "
+        "expression as a times something. a squared minus four a is a times, in brackets, a minus four. Let's check it. a times a is a squared, and a times negative four is negative four a.",
         show(a3, 'a squared minus four a is a times')),
       L("Now put six in. Six times, in brackets, six minus four. Six minus four is two, and six times two is twelve. Again "
         "twelve, choice number two. [pause] Okay. I'll see you in the next question.", show(a4, 'Now put six in'),
@@ -486,8 +485,8 @@ video('solve-q-542', 'solution', qid='q-542', slides=[
         "because the outer diamond still has to work on it. So choice number one is the trap, and choice number three is "
         "our answer.", mk('cross', 'choice 1', 'choice number one is the trap'), mk('tick', 'choice 3', 'choice number three is'))),
     S('Method 2 · The rule itself',
-      L("[pause] Another way is to see what two diamonds do to any number. The first diamond squares the number. The second "
-        "diamond squares the result again. So we get x squared, all squared. x squared times x squared is x to the power of "
+      L("[pause] Another way is to write the same two squarings with a power. The first diamond squares the number. The "
+        "second diamond squares the result again. So we get x squared, all squared. x squared times x squared is x to the power of "
         "four.", show(b3, 'So we get x squared')),
       L("So we need five to the power of four. Five squared is twenty-five, and twenty-five squared is six hundred "
         "twenty-five. Choice number three again. [pause] Okay. I'll see you in the next question.",
@@ -501,13 +500,12 @@ c1 = I('c1', 'For example $\\ \\blacklozenge(x)=7x$: $\\ 7\\cdot3=21$', size=28,
 c2 = IH('c2', '(1) $3^3-6=27-6=21$ ✓', size=30)
 c3 = IH('c3', '(2) $3\\cdot(3+4)=3\\cdot7=21$ ✓', size=30)
 c4 = IH('c4', '(3) $5\\cdot3+5=15+5=20$ ✗', size=30)
-c5 = IH('c5', '(4) $8\\cdot3-3=24-3=21$ ✓', size=30)
 video('solve-q-543', 'solution', qid='q-543', slides=[
     S('Plugging in the answers',
       L("Given: diamond of three is equal to twenty-one. Which of the following cannot be the definition of the operation "
         "diamond?", pt('stem', 'Given', 'hl', 6.0), voice='calm', pause=0.5),
       L("This time they don't give us the rule. They only tell us one result. Someone took three, used the diamond, and got "
-        "twenty-one. [short pause] We'll solve it by putting three into every choice.", pt('stem: g1', 'Someone took three')),
+        "twenty-one. [short pause] We'll put three into the choices, one by one, until one of them doesn't give twenty-one.", pt('stem: g1', 'Someone took three')),
       L("[short pause] Many different rules could turn three into twenty-one. Seven x is one example, because seven times "
         "three is twenty-one. So a choice that gives twenty-one could be the rule, and we can't rule it out. We're looking "
         "for the one choice that does not give twenty-one.", show(c1, 'Seven x is one example')),
@@ -519,11 +517,9 @@ video('solve-q-543', 'solution', qid='q-543', slides=[
         mk('cross', 'choice 2', 'so choice number two is out')),
       L("Choice number three, five x plus five. Five times three is fifteen, and fifteen plus five is twenty. Twenty is not "
         "twenty-one. So this rule cannot turn three into twenty-one, and it cannot be the definition. Choice number three is "
-        "our answer.", show(c4, 'Five times three is fifteen'), mk('tick', 'choice 3', 'Choice number three is our answer')),
-      L("In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four, eight x minus "
-        "three. Eight times three is twenty-four, and twenty-four minus three is twenty-one. It could be the rule, so only "
-        "choice number three can't. [pause] Okay. I'll see you in the next question.", show(c5, 'Eight times three'),
-        mk('cross', 'choice 4', 'It could be the rule, so'))),
+        "our answer. That one failure is all the question asks for, so we can stop here without checking choice number "
+        "four. [pause] Okay. I'll see you in the next question.", show(c4, 'Five times three is fifteen'),
+        mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t19-01 (added)
@@ -542,10 +538,11 @@ video('solve-q-r26-t19-01', 'solution', qid='q-r26-t19-01', slides=[
       L("This time the input is not a number. It's a whole expression, x plus one. [short pause] We'll solve it two ways, "
         "with algebra, and then by plugging in numbers.", pt('stem', 'a whole expression')),
       L("[short pause] Remember, whatever goes in takes the place of x, and an expression goes in brackets. So we write the "
-        "same template, with x plus one, in brackets, in both spots.", show(s01['line'], 'whatever goes in takes the place'),
-        show(s01['in'], 'with x plus one, in brackets')),
-      L("Now open the brackets. x plus one, squared, is x squared plus two x plus one. And minus two times, in brackets, x "
-        "plus one, is minus two x minus two. Careful, the minus goes to both parts inside the brackets.",
+        "same template, with the whole x plus one, in brackets, in both spots. Diamond of x plus one is the bracket x plus "
+        "one, squared, minus two times the bracket x plus one.", show(s01['line'], 'whatever goes in takes the place'),
+        show(s01['in'], 'with the whole x plus one')),
+      L("Now open the brackets. The bracket x plus one, squared, is x squared plus two x plus one. And minus two times the "
+        "bracket x plus one is minus two x minus two. Careful, the minus goes to both parts inside the brackets.",
         show(s01['calc'], 'Now open the brackets')),
       L("Now collect. Two x minus two x is zero, so the x terms cancel. One minus two is negative one. So we get x squared "
         "minus one, and choice number two is our answer.", show(s01['res'], 'So we get x squared'),
@@ -557,8 +554,8 @@ video('solve-q-r26-t19-01', 'solution', qid='q-r26-t19-01', slides=[
       L("Now the choices with x is zero. Choice number one gives one. Choice number two gives negative one. Choice number "
         "three gives negative one too. And choice number four gives three. So choice numbers one and four are out.",
         show(e2, 'Now the choices with'), mk('cross', 'choice 1', 'So choice numbers one'), mk('cross', 'choice 4', 'and four are out')),
-      L("But two choices are left with the same value. Zero is a lazy number here, because it wipes out every term with x. "
-        "So we need a second number, x is two. Then the input is three. Diamond of three is nine minus six, which is three.",
+      L("Zero was an easy first test, and it already ruled out two choices. But the two choices that are left both give "
+        "negative one at zero, so zero can't tell them apart. So we try the next easy value, x is two. Then the input is three. Diamond of three is nine minus six, which is three.",
         show(e3, 'x is two')),
       L("Choice number two gives four minus one, which is three. Choice number three gives four minus four minus one, which "
         "is negative one. So choice number three is out, and choice number two is our answer. [pause] Okay. I'll see you in "
@@ -572,7 +569,7 @@ video('solve-q-r26-t19-01', 'solution', qid='q-r26-t19-01', slides=[
 f1 = I('f1', '$a=1,\\ b=2$ $\\quad$ (not equal numbers)', size=30)
 f2 = I('f2', '(1) $1^2\\cdot2=2$, $\\ 2^2\\cdot1=4$ ✗', size=30)
 f3 = I('f3', '(2) $1\\cdot3=3$, $\\ 2\\cdot3=6$ ✗', size=30)
-f4 = I('f4', '(4) $1+1=2$, $\\ 1+2=3$ ✗', size=30)
+f4 = I('f4', '(4) $(1-2)^2+1=2$, $\\ (2-1)^2+2=3$ ✗', size=30)
 f5 = I('f5', '(3) $2+1+2=5$, $\\ 2+2+1=5$ ✓', size=30)
 g1 = I('g1', '$b\\star a=ba+b+a$', size=34)
 g2 = I('g2', '$=ab+a+b=a\\star b$ ✓', size=34)
@@ -590,15 +587,16 @@ video('solve-q-r26-t19-02', 'solution', qid='q-r26-t19-02', slides=[
         "squared times one, which is four. Two is not four, so choice number one is out.", show(f2, 'One star two is one squared'),
         mk('cross', 'choice 1', 'so choice number one is out')),
       L("Choice number two, a times, in brackets, a plus b. One star two is one times three, which is three. Two star one is "
-        "two times three, which is six. Out. Choice number four, a minus b, squared, plus a. One star two is one plus one, "
-        "which is two. Two star one is one plus two, which is three. Out.", show(f3, 'is one times three'),
-        mk('cross', 'choice 2', 'which is six. Out'), show(f4, 'Choice number four, a minus b'), mk('cross', 'choice 4', 'which is three. Out')),
+        "two times three, which is six. Out. Choice number four, the bracket a minus b, squared, plus a. One star two: one minus two is negative one, and "
+        "negative one squared is one. Then we add a, which is one, so one plus one is two. Two star one: two minus one is "
+        "one, and one squared is one. Now a is two, so one plus two is three. Out.", show(f3, 'is one times three'),
+        mk('cross', 'choice 2', 'which is six. Out'), show(f4, 'Choice number four, the bracket'), mk('cross', 'choice 4', 'so one plus two is three')),
       L("Choice number three, a b plus a plus b. One star two is two plus one plus two, which is five. Two star one is two "
         "plus two plus one, which is five too. It stays. Three choices are out, so choice number three is our answer.",
         show(f5, 'is two plus one plus two'), mk('tick', 'choice 3', 'so choice number three is our answer'))),
     S('Method 2 · Algebra',
-      L("[pause] Now let's prove it with algebra. Numbers can show that a rule fails, but one example can't prove that it "
-        "always works. For always, we swap the letters. b star a means b times a, plus b, plus a.", show(g1, 'b star a means')),
+      L("[pause] Ruling out the other three already answers the question. Now let's see why choice number three works "
+        "for every a and b. One example can't show that, so we swap the letters in the rule itself. b star a means b times a, plus b, plus a.", show(g1, 'b star a means')),
       L("b times a is the same as a times b, and b plus a is the same as a plus b. So b star a is a b plus a plus b, which "
         "is exactly a star b, for every a and b. Choice number three. [pause] Okay. I'll see you in the next question.",
         show(g2, 'So b star a is'), mk('tick', 'choice 3', 'exactly a star b'))),

@@ -49,7 +49,7 @@
     ]
    },
    {
-    "say": "Choice number two, a times, in brackets, a plus b. One star two is one times three, which is three. Two star one is two times three, which is six. Out. Choice number four, a minus b, squared, plus a. One star two is one plus one, which is two. Two star one is one plus two, which is three. Out.",
+    "say": "Choice number two, a times, in brackets, a plus b. One star two is one times three, which is three. Two star one is two times three, which is six. Out. Choice number four, the bracket a minus b, squared, plus a. One star two: one minus two is negative one, and negative one squared is one. Then we add a, which is one, so one plus one is two. Two star one: two minus one is one, and one squared is one. Now a is two, so one plus two is three. Out.",
     "at": [
      "number two, a",
      "brackets, a plus",
@@ -57,13 +57,19 @@
      "is three. Two",
      "is two times",
      "which is six. Out",
-     "Choice number four, a minus b",
-     "number four, a",
-     "squared, plus a",
-     "One star two is one plus",
-     "plus one, which",
-     "Two star one is one",
-     "which is three. Out"
+     "Choice number four, the bracket",
+     "number four, the",
+     "minus b, squared",
+     "One star two:",
+     "two is negative",
+     "negative one squared",
+     "Then we add",
+     "is one, so",
+     "one is two. Two",
+     "Two star one:",
+     "one is one",
+     "squared is one. Now",
+     "so one plus two is three"
     ]
    },
    {
@@ -83,13 +89,16 @@
   ],
   [
    {
-    "say": "[pause] Now let's prove it with algebra. Numbers can show that a rule fails, but one example can't prove that it always works. For always, we swap the letters. b star a means b times a, plus b, plus a.",
+    "say": "[pause] Ruling out the other three already answers the question. Now let's see why choice number three works for every a and b. One example can't show that, so we swap the letters in the rule itself. b star a means b times a, plus b, plus a.",
     "at": [
-     "Now let's",
-     "Numbers can show",
-     "rule fails, but",
-     "can't prove that",
-     "For always, we",
+     "Ruling out",
+     "already answers the",
+     "let's see why",
+     "number three works",
+     "a and b",
+     "One example can't",
+     "so we swap",
+     "in the rule",
      "b star a means",
      "times a, plus"
     ]

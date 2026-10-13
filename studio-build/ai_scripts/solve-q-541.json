@@ -23,7 +23,7 @@
     ]
    },
    {
-    "say": "[short pause] Remember what the rule means. Whatever goes into the diamond takes the place of a, in every spot where a appears. Here a appears in two spots, in a squared and in four a. So let's write the same template again, and put six in every spot.",
+    "say": "[short pause] Remember what the rule means. Whatever goes into the diamond takes the place of a, in every spot where a appears. Here a appears in two spots, in a squared and in four a. So we write the same template again, and put six in both spots.",
     "at": [
      "Remember what",
      "Whatever goes into the diamond",
@@ -33,16 +33,7 @@
      "spots, in a",
      "in four a",
      "write the same",
-     "put six in every spot"
-    ]
-   },
-   {
-    "say": "Careful here. A lot of students put six only into a squared, and forget the four a. But six goes into every a.",
-    "at": [
-     "A lot of students",
-     "six only into",
-     "and forget the",
-     "But six goes"
+     "put six in both spots"
     ]
    },
    {
@@ -56,31 +47,35 @@
     ]
    },
    {
-    "say": "So diamond of six is twelve, and choice number two is our answer. Thirty-six, choice number one, is only the first part of the rule.",
+    "say": "So diamond of six is twelve, and choice number two is our answer. Careful, thirty-six, choice number one, is what you get if you put six only into a squared and forget the four a.",
     "at": [
      "is twelve, and",
      "choice number two is our answer",
-     "Thirty-six, choice number one",
-     "only the first"
+     "thirty-six, choice number one",
+     "what you get",
+     "only into a squared",
+     "forget the four"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way is to simplify the rule first, and only then put the number in. Both parts of a squared minus four a have an a in them. So we can take a out as a common factor. a squared minus four a is a times, in brackets, a minus four. Let's check it. a times a is a squared, and a times negative four is negative four a.",
+    "say": "[pause] Another way is to simplify the rule first, and only then put the number in. Both parts of a squared minus four a have an a in them: a squared is a times a, and four a is a times four. So we can write the whole expression as a times something. a squared minus four a is a times, in brackets, a minus four. Let's check it. a times a is a squared, and a times negative four is negative four a.",
     "at": [
      "Another way",
      "the rule first",
      "then put the",
      "Both parts of",
      "minus four a",
-     "a in them",
-     "So we can",
-     "out as a",
-     "a squared minus four a is a times",
+     "a in them:",
      "is a times",
+     "four a is",
+     "So we can",
+     "whole expression as",
+     "a squared minus four a is a times",
+     "is a times, in",
      "a minus four",
-     "a times a",
+     "a times a is",
      "squared, and a",
      "four is negative"
     ]

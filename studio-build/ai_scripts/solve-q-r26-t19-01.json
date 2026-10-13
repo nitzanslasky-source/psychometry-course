@@ -21,25 +21,29 @@
     ]
    },
    {
-    "say": "[short pause] Remember, whatever goes in takes the place of x, and an expression goes in brackets. So we write the same template, with x plus one, in brackets, in both spots.",
+    "say": "[short pause] Remember, whatever goes in takes the place of x, and an expression goes in brackets. So we write the same template, with the whole x plus one, in brackets, in both spots. Diamond of x plus one is the bracket x plus one, squared, minus two times the bracket x plus one.",
     "at": [
      "Remember, whatever",
      "whatever goes in takes the place",
      "place of x",
      "expression goes in",
      "we write the",
-     "with x plus one, in brackets",
-     "brackets, in both"
+     "with the whole x plus one",
+     "one, in brackets",
+     "Diamond of x",
+     "is the bracket",
+     "one, squared, minus"
     ]
    },
    {
-    "say": "Now open the brackets. x plus one, squared, is x squared plus two x plus one. And minus two times, in brackets, x plus one, is minus two x minus two. Careful, the minus goes to both parts inside the brackets.",
+    "say": "Now open the brackets. The bracket x plus one, squared, is x squared plus two x plus one. And minus two times the bracket x plus one is minus two x minus two. Careful, the minus goes to both parts inside the brackets.",
     "at": [
      "Now open the brackets",
-     "x plus one",
-     "x squared plus",
+     "The bracket x",
+     "squared, is x",
+     "two x plus",
      "And minus two",
-     "brackets, x plus",
+     "bracket x plus one is",
      "minus two x",
      "Careful, the minus",
      "both parts inside"
@@ -89,14 +93,16 @@
     ]
    },
    {
-    "say": "But two choices are left with the same value. Zero is a lazy number here, because it wipes out every term with x. So we need a second number, x is two. Then the input is three. Diamond of three is nine minus six, which is three.",
+    "say": "Zero was an easy first test, and it already ruled out two choices. But the two choices that are left both give negative one at zero, so zero can't tell them apart. So we try the next easy value, x is two. Then the input is three. Diamond of three is nine minus six, which is three.",
     "at": [
-     "But two choices",
-     "with the same",
-     "Zero is a",
-     "here, because it",
-     "every term with",
-     "we need a",
+     "Zero was an",
+     "test, and it",
+     "out two choices",
+     "But the two",
+     "are left both",
+     "one at zero",
+     "can't tell them",
+     "we try the",
      "x is two",
      "Diamond of three",
      "minus six, which"

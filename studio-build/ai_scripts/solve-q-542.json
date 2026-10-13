@@ -62,10 +62,10 @@
   ],
   [
    {
-    "say": "[pause] Another way is to see what two diamonds do to any number. The first diamond squares the number. The second diamond squares the result again. So we get x squared, all squared. x squared times x squared is x to the power of four.",
+    "say": "[pause] Another way is to write the same two squarings with a power. The first diamond squares the number. The second diamond squares the result again. So we get x squared, all squared. x squared times x squared is x to the power of four.",
     "at": [
      "Another way",
-     "what two diamonds",
+     "the same two",
      "The first diamond",
      "The second diamond",
      "So we get x squared",
