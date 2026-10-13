@@ -478,6 +478,9 @@ def build(topics=(), ids=None, out=OUT):
     for t in topics:
         r = from_review(t) or from_course(t)
         title, vids = r
+        # 2026-10-14 (Claude, minimal): the topic summary videos are not recorded anymore (teacher: one printable summary
+        # page per topic, summary_pages.py), so they are left out of her reading list. Their files are kept.
+        vids = [v for v in vids if not re.fullmatch(r'r26-t\d+-summary(-\d+)?', v['id'])]
         if not vids:
             sys.exit('topic %d: no videos found (no review file, no ai_scripts in course18.json) - use --ids' % t)
         groups.append(dict(topic=t, title=title, videos=vids))
