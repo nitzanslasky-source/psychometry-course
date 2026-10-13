@@ -1,128 +1,128 @@
 {
-  "videoId": "solve-q-r26-t15-15",
-  "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "x and y are positive integers. x is divisible by six, and y is divisible by nine. What is the largest number that x plus y is necessarily divisible by?",
-        "voice": "calm",
-        "at": [
-          "x and y are"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So x is a multiple of six, and y is a multiple of nine. We add them, and we want the largest number that their sum always divides by, whatever allowed values of x and y we choose. [short pause] We'll solve it two ways, writing each number as a multiplication, and then plugging in numbers.",
-        "at": [
-          "them, and we",
-          "the largest number",
-          "divides by, whatever",
-          "it two ways",
-          "and then plugging"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start by writing the multiples. x is six k, meaning six times some positive whole number k. And y is nine m, meaning nine times some positive whole number m. We use separate letters because we can choose each multiple independently. Nothing says k and m are equal. They may happen to be equal, but we cannot assume that they are.",
-        "at": [
-          "Let's start",
-          "x is six k",
-          "y is nine",
-          "We use separate",
-          "each multiple independently",
-          "Nothing says k",
-          "They may happen",
-          "equal, but we"
-        ]
-      },
-      {
-        "say": "We're looking for a number that the sum always divides by, whatever values k and m have. Let's look at the two parts separately. Six k is three times two k. And nine m is three times three m. So both parts are multiples of three, and adding them gives another multiple of three. We can write six k plus nine m as three times the whole bracket, two k plus three m. k and m are whole numbers, so the calculation inside the bracket also gives a whole number. Our sum is always three times a whole number, so it is always divisible by three. Changing k and m changes the number inside the bracket, but it doesn't remove the three multiplying that bracket.",
-        "at": [
-          "parts separately. Six",
-          "parts separately. Six",
-          "Six k is",
-          "So both parts",
-          "m as three",
-          "bracket, two k",
-          "m. k and",
-          "k and m are",
-          "k and m are"
-        ]
-      },
-      {
-        "say": "Let's see the same idea with multiples of four and of six. Four k plus six m is two times the whole bracket, two k plus three m, because both four k and six m are multiples of two. So their sum is always divisible by two. But it does not have to divide by four: four plus six is ten, and ten doesn't divide by four. Notice that this is a rule about adding. If we multiplied instead, six k times nine m would be fifty-four k m, because six times nine is fifty-four and k times m is k m.",
-        "at": [
-          "Let's see the",
-          "same idea with",
-          "Multiples of four and of six",
-          "Four k plus",
-          "is two times",
-          "two times the",
-          "k plus three",
-          "because both four",
-          "Four plus six",
-          "and ten doesn't",
-          "by four. Notice",
-          "if we multiplied instead",
-          "six k times",
-          "times nine m"
-        ]
-      },
-      {
-        "say": "We know three always divides our sum. Could a bigger number always divide it too? Let's check the number inside the bracket, two k plus three m. With k and m one, it's five. With k two and m one, it's seven. Five and seven share no factor greater than one, so there is no additional factor that must be in that bracket. The only guaranteed factor is the three multiplying it. So three is the largest number that always divides the sum, and choice number three is our answer.",
-        "at": [
-          "bracket, two k",
-          "With k and m one",
-          "two and m",
-          "Five and seven",
-          "and seven share",
-          "greater than one",
-          "so there is",
-          "The only guaranteed",
-          "the three multiplying",
-          "is the largest",
-          "choice number three is our answer"
-        ]
-      }
+ "videoId": "solve-q-r26-t15-15",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "x and y are positive integers. x is divisible by six, and y is divisible by nine. What is the largest number that x plus y is necessarily divisible by?",
+    "voice": "calm",
+    "at": [
+     "x and y are"
     ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in numbers. Choose x is six and y is nine. Both satisfy their divisibility conditions. Six plus nine is fifteen, and fifteen doesn't divide by eighteen or by nine. So choice numbers one and four are out.",
-        "at": [
-          "Now let's",
-          "Choose x is",
-          "x is six",
-          "Six plus nine",
-          "eighteen or by",
-          "choice numbers one",
-          "and four are out"
-        ]
-      },
-      {
-        "say": "Fifteen does divide by fifteen, so our first example hasn't ruled out that choice. Let's try another allowed pair. x is twelve and y is nine. x still divides by six, and y still divides by nine. Twelve plus nine is twenty-one, and twenty-one doesn't divide by fifteen. So fifteen is out too. Only three is left, and choice number three is our answer.",
-        "at": [
-          "Fifteen does divide",
-          "so our first",
-          "x is twelve",
-          "Twelve plus nine",
-          "and twenty-one doesn't",
-          "by fifteen. So",
-          "too. Only three"
-        ]
-      },
-      {
-        "say": "Now careful, here's the trap in choice number one. Eighteen is divisible by both six and nine, so you might choose eighteen for both x and y. Eighteen plus eighteen is thirty-six, and it divides by eighteen. But that only tells us eighteen works for this particular pair. Nothing says x and y must be equal, and we already found an allowed pair where the sum does not divide by eighteen. So eighteen is not guaranteed. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "the trap in",
-          "number one. Eighteen",
-          "eighteen for both",
-          "x and y",
-          "eighteen is thirty-six",
-          "divides by eighteen",
-          "eighteen works for",
-          "says x and",
-          "be equal, and"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So x is a multiple of six, and y is a multiple of nine. We add them, and we want the largest number that their sum always divides by, whatever allowed values of x and y we choose. [short pause] We'll solve it two ways, writing each number as a multiplication, and then plugging in numbers.",
+    "at": [
+     "them, and we",
+     "the largest number",
+     "divides by, whatever",
+     "it two ways",
+     "and then plugging"
     ]
+   },
+   {
+    "say": "[short pause] Let's start by writing the multiples. x is six k, meaning six times some positive whole number k. And y is nine m, meaning nine times some positive whole number m. We use separate letters because we can choose each multiple independently. Nothing says k and m are equal. They may happen to be equal, but we cannot assume that they are.",
+    "at": [
+     "Let's start",
+     "x is six k",
+     "y is nine",
+     "We use separate",
+     "each multiple independently",
+     "Nothing says k",
+     "They may happen",
+     "equal, but we"
+    ]
+   },
+   {
+    "say": "We're looking for a number that the sum always divides by, whatever values k and m have. Let's look at the two parts separately. Six k is three times two k. And nine m is three times three m. So both parts are multiples of three, and adding them gives another multiple of three. We can write six k plus nine m as three times the whole bracket, two k plus three m. k and m are whole numbers, so the calculation inside the bracket also gives a whole number. Our sum is always three times a whole number, so it is always divisible by three. Changing k and m changes the number inside the bracket, but it doesn't remove the three multiplying that bracket.",
+    "at": [
+     "parts separately. Six",
+     "parts separately. Six",
+     "Six k is",
+     "So both parts",
+     "m as three",
+     "bracket, two k",
+     "m. k and",
+     "k and m are",
+     "k and m are"
+    ]
+   },
+   {
+    "say": "Let's see the same idea with multiples of four and of six. Four k plus six m is two times the whole bracket, two k plus three m, because both four k and six m are multiples of two. So their sum is always divisible by two. But it does not have to divide by four: four plus six is ten, and ten doesn't divide by four. Notice that this is a rule about adding. If we multiplied instead, six k times nine m would be fifty-four k m, because six times nine is fifty-four and k times m is k m.",
+    "at": [
+     "Let's see the",
+     "same idea with",
+     "Multiples of four and of six",
+     "Four k plus",
+     "is two times",
+     "two times the",
+     "k plus three",
+     "because both four",
+     "Four plus six",
+     "and ten doesn't",
+     "by four. Notice",
+     "if we multiplied instead",
+     "six k times",
+     "times nine m"
+    ]
+   },
+   {
+    "say": "We know three always divides our sum. Could a bigger number always divide it too? Let's check the number inside the bracket, two k plus three m. With k and m one, it's five. With k two and m one, it's seven. Five and seven share no factor greater than one, so there is no additional factor that must be in that bracket. The only guaranteed factor is the three multiplying it. So three is the largest number that always divides the sum, and choice number three is our answer.",
+    "at": [
+     "bracket, two k",
+     "With k and m one",
+     "two and m",
+     "Five and seven",
+     "and seven share",
+     "greater than one",
+     "so there is",
+     "The only guaranteed",
+     "the three multiplying",
+     "is the largest",
+     "choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in numbers. Choose x is six and y is nine. Both satisfy their divisibility conditions. Six plus nine is fifteen, and fifteen doesn't divide by eighteen or by nine. So choice numbers one and four are out.",
+    "at": [
+     "Now let's",
+     "Choose x is",
+     "x is six",
+     "Six plus nine",
+     "eighteen or by",
+     "choice numbers one",
+     "and four are out"
+    ]
+   },
+   {
+    "say": "Fifteen does divide by fifteen, so our first example hasn't ruled out that choice. Let's try another allowed pair. x is twelve and y is nine. x still divides by six, and y still divides by nine. Twelve plus nine is twenty-one, and twenty-one doesn't divide by fifteen. So fifteen is out too. Only three is left, and choice number three is our answer.",
+    "at": [
+     "Fifteen does divide",
+     "so our first",
+     "x is twelve",
+     "Twelve plus nine",
+     "and twenty-one doesn't",
+     "by fifteen. So",
+     "too. Only three"
+    ]
+   },
+   {
+    "say": "Now careful, here's the trap in choice number one. Eighteen is divisible by both six and nine, so you might choose eighteen for both x and y. Eighteen plus eighteen is thirty-six, and it divides by eighteen. But that only tells us eighteen works for this particular pair. Nothing says x and y must be equal, and we already found an allowed pair where the sum does not divide by eighteen. So eighteen is not guaranteed. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "the trap in",
+     "number one. Eighteen",
+     "eighteen for both",
+     "x and y",
+     "eighteen is thirty-six",
+     "divides by eighteen",
+     "eighteen works for",
+     "says x and",
+     "be equal, and"
+    ]
+   }
   ]
+ ]
 }

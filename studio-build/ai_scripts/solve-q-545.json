@@ -12,38 +12,45 @@
     "pause": 0.5
    },
    {
-    "say": "A rule with conditions, one for odd and one for even. [short pause] So before each step, we check the input. And three diamonds, so inside out.",
+    "say": "This rule has conditions. There's one rule for odd numbers and another for even numbers. And there are three diamonds. [short pause] So we'll work from the inside out, and before every step, we check whether the input is odd or even.",
     "at": [
-     "A rule with conditions",
-     "for odd and",
-     "we check the",
-     "three diamonds, so"
+     "one rule for odd numbers",
+     "and another for",
+     "And there are",
+     "So we'll work",
+     "inside out, and",
+     "step, we check",
+     "input is odd"
     ]
    },
    {
-    "say": "[short pause] Diamond of one. One is odd, so the odd rule, four x. Four times one is four.",
+    "say": "[short pause] The innermost diamond is diamond of one. One is odd, so we use the odd rule, four x. Four times one is four.",
     "at": [
-     "Diamond of one",
-     "odd rule, four",
-     "Four times one"
+     "The innermost diamond",
+     "One is odd",
+     "use the odd",
+     "Four times one is four"
     ]
    },
    {
-    "say": "Now four goes in. Four is even, so switch rules. Four squared minus nine, sixteen minus nine, seven.",
+    "say": "Now four goes into the middle diamond. Careful, four is even, so the rule switches. We use x squared minus nine. Four squared is sixteen, and sixteen minus nine is seven.",
     "at": [
-     "Now four goes in",
-     "Four squared minus",
-     "minus nine, seven"
+     "Now four goes",
+     "Careful, four is",
+     "the rule switches",
+     "We use x",
+     "Four squared is sixteen",
+     "sixteen minus nine"
     ]
    },
    {
-    "say": "Seven is odd again. Four times seven is twenty-eight. Choice number three is our answer. So check the parity at every step, because the output can switch sides. [pause] Okay. I'll see you in the next question.",
+    "say": "Seven goes into the outer diamond. Seven is odd, so we're back to the odd rule. Four times seven is twenty-eight. Choice number three is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "Seven is odd again",
-     "Choice number three is our answer",
-     "So check the",
-     "every step, because",
-     "can switch sides"
+     "Seven goes into",
+     "Seven is odd",
+     "back to the",
+     "Four times seven",
+     "Choice number three is our answer"
     ]
    }
   ]

@@ -12,59 +12,94 @@
     "pause": 0.5
    },
    {
-    "say": "A hard one. [short pause] We'll solve it three ways, the full math, a sharp insight, and plugging in numbers.",
+    "say": "This is a hard one. The same two letters go into the diamond on the top and at the bottom, only in a different order. [short pause] We'll solve it three ways, the full math, a sharp insight, and plugging in numbers.",
     "at": [
-     "A hard one",
-     "it three ways",
-     "math, a sharp",
-     "plugging in numbers"
+     "one. The same",
+     "go into the",
+     "the top and",
+     "only in a different",
+     "We'll solve it",
+     "the full math",
+     "insight, and plugging"
     ]
    },
    {
-    "say": "[short pause] Top, diamond of a, b, a minus b, squared, over a b cubed. Bottom, diamond of b, a, b minus a, squared, over b a cubed. Dividing by a fraction, multiply by its reciprocal.",
+    "say": "[short pause] The top is diamond of a, b, so x is a and y is b. That's a minus b, squared, over a times b cubed. The bottom is diamond of b, a, so now x is b and y is a. That's b minus a, squared, over b times a cubed.",
     "at": [
-     "Top, diamond",
-     "a minus b",
-     "a b cubed",
-     "Bottom, diamond of",
-     "b minus a",
-     "b a cubed",
-     "Dividing by a fraction",
-     "by its reciprocal"
+     "The top",
+     "The top is diamond of a, b",
+     "a, b, so",
+     "a and y",
+     "That's a minus",
+     "over a times",
+     "The bottom is diamond of b, a",
+     "b, a, so",
+     "is b and",
+     "That's b minus",
+     "over b times"
     ]
    },
    {
-    "say": "And a tip. Don't open the squared brackets, they might cancel. And they do. Then one a and one b cancel, and we're left with a squared over b squared. Choice number three is our answer.",
+    "say": "To divide by a fraction, we multiply by its reciprocal. So we flip the bottom fraction and multiply. And a tip, don't open the squared brackets yet, because they might cancel. And they do. a minus b and b minus a are opposites, and opposites have the same square. So the squared parts cancel.",
     "at": [
-     "Don't open the",
+     "To divide by",
+     "we multiply by",
+     "So we flip the bottom",
+     "And a tip",
+     "the squared brackets",
      "they might cancel",
-     "do. Then one",
-     "one b cancel",
-     "a squared over b squared",
+     "a minus b",
+     "minus a are",
+     "opposites have the",
+     "So the squared"
+    ]
+   },
+   {
+    "say": "We're left with b times a cubed, over a times b cubed. One a cancels from a cubed, which leaves a squared on top. One b cancels from b cubed, which leaves b squared at the bottom. So the answer is a squared over b squared. Choice number three is our answer.",
+    "at": [
+     "We're left with",
+     "a cubed, over",
+     "One a cancels",
+     "cubed, which leaves",
+     "One b cancels",
+     "cubed, which leaves b",
+     "at the bottom",
+     "So the answer",
+     "squared over b",
      "Choice number three is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way, for students who see the algebra. What's different? We notice it's the same two letters, just swapped. The tops are a minus b and b minus a, squared. Opposites, squared, are equal, so the tops cancel.",
+    "say": "[pause] Another way is to read the definition before calculating. The top and the bottom use the same two numbers, just swapped. The squared part is x minus y. Swapping x and y gives the opposite number inside, but the square is the same. So the squared parts are equal, and they cancel.",
     "at": [
      "Another way",
-     "see the algebra",
-     "We notice it's",
-     "two letters, just",
-     "The tops are",
-     "b and b",
-     "Opposites, squared",
-     "the tops cancel"
+     "the definition before",
+     "The top and",
+     "use the same",
+     "The squared part",
+     "minus y. Swapping",
+     "y gives the",
+     "but the square is the same",
+     "So the squared",
+     "equal, and they"
     ]
    },
    {
-    "say": "Only the bottoms are left, and dividing flips the second one. b a cubed over a b cubed. a squared over b squared. Choice number three.",
+    "say": "Only the parts under them are left, a b cubed and b a cubed. They're not equal, because the second input gets the power of three. Dividing by the second diamond flips its part to the top, so we get b a cubed over a b cubed. One a and one b cancel, and we get a squared over b squared. Choice number three.",
     "at": [
-     "Only the bottoms",
-     "and dividing flips",
-     "b a cubed over",
+     "Only the parts",
+     "are left, a",
+     "and b a",
+     "They're not equal",
+     "second input gets",
+     "of three. Dividing",
+     "second diamond flips",
+     "to the top",
+     "so we get b a cubed",
+     "One a and",
+     "cancel, and we",
      "a squared over b squared. Choice",
      "number three"
     ]
@@ -72,31 +107,44 @@
   ],
   [
    {
-    "say": "[pause] And the standard psychometric way, plugging in. What's different? No algebra at all. Letters in the choices, so first make sure they come out different. a and b can't be equal or zero. a is one, b is two. The choices give one, one half, one quarter and four. All different.",
+    "say": "[pause] And plugging in numbers. a and b must be different, and neither can be zero. So let's take a is one and b is two. First, check that the choices come out different. One, one half, one quarter and four. All different, so one plug-in is enough.",
     "at": [
-     "And the",
-     "plugging in. What's",
-     "algebra at all",
-     "Letters in the",
-     "first make sure",
+     "And plugging",
      "a and b",
-     "equal or zero",
-     "a is one, b is two",
-     "half, one quarter"
+     "different, and neither",
+     "zero. So let's",
+     "a is one and b",
+     "First, check that",
+     "come out different",
+     "One, one half",
+     "All different, so"
     ]
    },
    {
-    "say": "Top, one minus two, squared, is one, over one times eight, one eighth. Bottom, two minus one, squared, is one, over two times one, which is two. One half. One eighth divided by one half is one quarter. Choice number three. Strong in algebra? The insight. Everyone else, just plug in. [pause] Okay. I'll see you in the next question.",
+    "say": "The top is diamond of one and two. One minus two is negative one, and squared that's one. Below it, one times two cubed is eight. So the top is one eighth. The bottom is diamond of two and one. Two minus one is one, squared one. Below it, two times one cubed is two. So the bottom is one half.",
     "at": [
-     "Top, one minus two",
-     "eight, one eighth",
-     "Bottom, two minus",
-     "is one, over two",
-     "one, which is",
-     "half. One eighth",
-     "is one quarter. Choice number three",
-     "number three. Strong",
-     "Everyone else, just"
+     "The top is diamond of one and two",
+     "one and two",
+     "One minus two",
+     "one, and squared",
+     "Below it, one",
+     "cubed is eight",
+     "So the top",
+     "The bottom is",
+     "two and one",
+     "Two minus one",
+     "Below it, two",
+     "cubed is two",
+     "So the bottom"
+    ]
+   },
+   {
+    "say": "One eighth divided by one half is one eighth times two, which is one quarter. That's choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "One eighth divided by",
+     "half is one",
+     "two, which is",
+     "That's choice number three"
     ]
    }
   ]

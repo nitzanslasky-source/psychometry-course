@@ -12,82 +12,116 @@
     "pause": 0.5
    },
    {
-    "say": "Unknowns this time. [short pause] We'll solve it two ways, the full math, and then plugging in numbers.",
+    "say": "This time there are unknowns inside the operation. And the order of the inputs matters, because only the first one is multiplied by eight. [short pause] We'll solve it two ways, the full math, and then plugging in a number.",
     "at": [
-     "Unknowns this time",
-     "it two ways",
-     "math, and then"
+     "unknowns inside the operation",
+     "the order of",
+     "matters, because only",
+     "one is multiplied",
+     "We'll solve it",
+     "the full math",
+     "plugging in a"
     ]
    },
    {
-    "say": "[short pause] Four diamonds, but diamond of a, a is on top and at the bottom, so three calculations. The inner one, the root of eight a squared plus a squared, the root of nine a squared, three a.",
+    "say": "[short pause] There are four diamonds, but diamond of a, a appears twice, on the top and at the bottom. So we only need three calculations. Start with diamond of a, a. x is a and y is a. Eight a squared plus a squared is nine a squared. The root of nine a squared is three a, because a is positive.",
     "at": [
-     "Four diamonds",
-     "a, a is",
+     "but diamond of",
+     "appears twice, on",
      "and at the",
-     "The inner one",
-     "of eight a",
-     "a squared, the",
-     "nine a squared"
+     "we only need",
+     "Start with diamond of a, a",
+     "x is a and y is a",
+     "Eight a squared",
+     "squared is nine",
+     "The root of nine a squared",
+     "squared is three",
+     "a is positive"
     ]
    },
    {
-    "say": "Top, three a goes in the first slot. Three a squared is nine a squared, times eight, seventy-two a squared, plus a squared. a root seventy-three.",
+    "say": "Now the top, diamond of three a and a. Here three a is in the first slot, so it's the one multiplied by eight. Three a, squared, is nine a squared, and eight times nine a squared is seventy-two a squared. Plus a squared is seventy-three a squared. The root is a times root seventy-three.",
     "at": [
-     "Top, three a",
-     "Three a squared",
-     "a squared, times",
-     "a squared, plus",
-     "a root seventy-three"
+     "Now the top",
+     "Here three a",
+     "the first slot",
+     "the one multiplied",
+     "Three a, squared",
+     "a squared, and",
+     "nine a squared is",
+     "Plus a squared",
+     "The root is"
+    ]
+   },
+   {
+    "say": "Now the bottom, diamond of a and three a. Now three a is in the second slot, so it's not multiplied by eight. Eight a squared plus nine a squared is seventeen a squared. The root is a times root seventeen.",
+    "at": [
+     "Now the bottom",
+     "Now three a",
+     "the second slot",
+     "not multiplied by",
+     "Eight a squared",
+     "a squared is",
+     "The root is"
     ]
    }
   ],
   [
    {
-    "say": "Bottom, now three a is in the second slot. Eight a squared plus nine a squared. a root seventeen.",
+    "say": "So the fraction is a root seventy-three over a root seventeen. The a's cancel, because a is not zero. Root seventy-three over root seventeen is the root of seventy-three over seventeen. Choice number three is our answer.",
     "at": [
-     "Bottom, now three a",
-     "Eight a squared",
-     "a squared. a"
-    ]
-   },
-   {
-    "say": "The a's cancel. Root seventy-three over root seventeen, one root of seventy-three seventeenths. Choice number three is our answer.",
-    "at": [
+     "So the",
+     "a root seventy-three",
      "The a's cancel",
-     "one root of",
+     "is not zero",
+     "Root seventy-three over root",
+     "is the root",
      "Choice number three is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way, and here it's the recommended one. What's different? No letters at all. The choices are plain numbers, so one plug-in is enough. a is positive, take one. Diamond of one, one is the root of nine, three.",
+    "say": "[pause] Now let's plug in a number. All the choices are plain numbers, with no a. So whatever positive a we choose, the answer comes out the same, and one plug-in is enough. Let's take a is one, the easiest positive number. Diamond of one and one is the root of eight plus one, root nine, which is three.",
     "at": [
-     "Another way",
-     "the recommended one",
-     "No letters at",
-     "The choices are",
-     "so one plug-in",
-     "a is positive",
-     "take one",
-     "the root of"
+     "Now let's",
+     "All the choices",
+     "numbers, with no",
+     "So whatever positive",
+     "choose, the answer",
+     "the same, and",
+     "Let's take a",
+     "the easiest positive",
+     "Diamond of one and one",
+     "is the root",
+     "plus one, root"
     ]
    },
    {
-    "say": "Top, diamond of three, one. Three is in the first slot, eight times nine is seventy-two, and seventy-two plus one is seventy-three, so root seventy-three. Some students stop here, only choice number three has seventy-three on top. Bottom, diamond of one, three. Eight plus nine, root seventeen. Choice number three. With unknowns in an operation, plugging in is the way. [pause] Okay. I'll see you in the next question.",
+    "say": "The top is diamond of three and one. Three is in the first slot, so eight times three squared. Three squared is nine, and eight times nine is seventy-two. Plus one squared, one, makes seventy-three. So the top is root seventy-three.",
     "at": [
-     "Top, diamond of three",
-     "slot, eight times",
-     "seventy-two, and seventy-two",
-     "is seventy-three, so",
-     "Some students stop",
-     "number three has",
-     "Bottom, diamond of",
-     "Eight plus nine, root seventeen",
-     "number three. With",
-     "With unknowns in",
-     "plugging in is"
+     "The top is diamond of three",
+     "Three is in",
+     "slot, so eight",
+     "Three squared is",
+     "eight times nine",
+     "Plus one squared",
+     "So the top"
+    ]
+   },
+   {
+    "say": "Some students stop right here, because only choice number three has seventy-three on top. Why is that enough? The bottom has the inputs in the other order, so the eight multiplies one instead of nine, and the bottom is smaller. Let's finish anyway. Eight times one plus three squared is eight plus nine, seventeen. Root seventy-three over root seventeen, choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "only choice number three",
+     "seventy-three on top",
+     "The bottom has",
+     "in the other",
+     "the eight multiplies",
+     "of nine, and",
+     "Let's finish anyway",
+     "squared is eight",
+     "seventeen. Root seventy-three",
+     "seventeen, choice number three"
     ]
    }
   ]

@@ -12,50 +12,86 @@
     "pause": 0.5
    },
    {
-    "say": "The most basic operation question. [short pause] We'll solve it two ways, substituting, and then taking out a common factor first.",
+    "say": "So we have a rule, and we need to use it on the number six. [short pause] We'll solve it two ways, first by putting six straight into the rule, and then by simplifying the rule before we use it.",
     "at": [
-     "The most basic",
-     "We'll solve it",
-     "substituting, and then",
-     "a common factor"
+     "rule, and we",
+     "use it on the number six",
+     "ways, first by",
+     "straight into the",
+     "then by simplifying",
+     "before we use"
     ]
    },
    {
-    "say": "[short pause] Let's start by substituting. Whatever goes into the diamond takes a's place, everywhere. So six instead of a. Six squared minus four times six.",
+    "say": "[short pause] Remember what the rule means. Whatever goes into the diamond takes the place of a, in every spot where a appears. Here a appears in two spots, in a squared and in four a. So let's write the same template again, and put six in every spot.",
     "at": [
-     "Let's start",
-     "Whatever goes into",
-     "takes a's place",
-     "So six instead of a",
-     "Six squared minus"
+     "Remember what",
+     "Whatever goes into the diamond",
+     "takes the place",
+     "in every spot",
+     "Here a appears in",
+     "spots, in a",
+     "in four a",
+     "write the same",
+     "put six in every spot"
     ]
    },
    {
-    "say": "Thirty-six minus twenty-four is twelve. Choice number two is our answer.",
+    "say": "Careful here. A lot of students put six only into a squared, and forget the four a. But six goes into every a.",
     "at": [
-     "Thirty-six minus twenty-four",
-     "Choice number two is our answer"
+     "A lot of students",
+     "six only into",
+     "and forget the",
+     "But six goes"
+    ]
+   },
+   {
+    "say": "So diamond of six is six squared minus four times six. Six squared is thirty-six. Four times six is twenty-four. Thirty-six minus twenty-four is twelve.",
+    "at": [
+     "So diamond of",
+     "six squared minus",
+     "six. Six squared",
+     "Four times six is",
+     "Thirty-six minus twenty-four"
+    ]
+   },
+   {
+    "say": "So diamond of six is twelve, and choice number two is our answer. Thirty-six, choice number one, is only the first part of the rule.",
+    "at": [
+     "is twelve, and",
+     "choice number two is our answer",
+     "Thirty-six, choice number one",
+     "only the first"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. What's different? We simplify the rule before putting the number in. a squared minus four a is a times, in brackets, a minus four.",
+    "say": "[pause] Another way is to simplify the rule first, and only then put the number in. Both parts of a squared minus four a have an a in them. So we can take a out as a common factor. a squared minus four a is a times, in brackets, a minus four. Let's check it. a times a is a squared, and a times negative four is negative four a.",
     "at": [
      "Another way",
-     "We simplify the",
-     "putting the number",
-     "a squared minus four a is",
+     "the rule first",
+     "then put the",
+     "Both parts of",
+     "minus four a",
+     "a in them",
+     "So we can",
+     "out as a",
+     "a squared minus four a is a times",
      "is a times",
-     "a minus four"
+     "a minus four",
+     "a times a",
+     "squared, and a",
+     "four is negative"
     ]
    },
    {
-    "say": "So diamond of six is six times six minus four, six times two, twelve. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "say": "Now put six in. Six times, in brackets, six minus four. Six minus four is two, and six times two is twelve. Again twelve, choice number two. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "is six times",
-     "six times two",
-     "six times two, twelve"
+     "Now put six in",
+     "Six minus four is",
+     "and six times",
+     "Again twelve"
     ]
    }
   ]

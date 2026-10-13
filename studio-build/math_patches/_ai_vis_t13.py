@@ -1692,6 +1692,14 @@ _clarity_module = importlib.util.module_from_spec(_clarity_spec)
 _clarity_spec.loader.exec_module(_clarity_module)
 _clarity_module.apply(VIDEOS)
 
+# 2026-10-13 method visuals + carry-over boxes (math_patches/_method_visuals.py; teacher: "a method with a signature visual
+# is shown with THAT visual, built step by step" and "when you clear the slide, something important should stay"). Runs
+# AFTER the clarity overlay, so the overlay's cue checks see the plan they were made for. Visual only, no spoken text.
+import types as _types
+_mv_spec = importlib.util.spec_from_file_location('_method_visuals', os.path.join(HERE, '_method_visuals.py'))
+_mv = importlib.util.module_from_spec(_mv_spec); _mv_spec.loader.exec_module(_mv)
+_mv.post(_types.SimpleNamespace(**globals()), 13)
+
 if __name__ == '__main__':
     for _v in sys.argv[1:] or ORDER:
         _p = check(_v)

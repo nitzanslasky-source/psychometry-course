@@ -12,52 +12,77 @@
     "pause": 0.5
    },
    {
-    "say": "This time there's no definition. They took three, did the diamond, and got twenty-one. [short pause] We'll solve it by plugging in three into each choice.",
+    "say": "This time they don't give us the rule. They only tell us one result. Someone took three, used the diamond, and got twenty-one. [short pause] We'll solve it by putting three into every choice.",
     "at": [
-     "They took three",
+     "give us the",
+     "only tell us",
+     "Someone took three",
      "diamond, and got",
      "solve it by",
-     "three into each"
+     "into every choice"
     ]
    },
    {
-    "say": "[short pause] The rule could be endless things. Seven x, for example, seven times three is twenty-one. So we look for the one that can not give twenty-one.",
+    "say": "[short pause] Many different rules could turn three into twenty-one. Seven x is one example, because seven times three is twenty-one. So a choice that gives twenty-one could be the rule, and we can't rule it out. We're looking for the one choice that does not give twenty-one.",
     "at": [
-     "Seven x, for example",
-     "So we look",
-     "one that can"
+     "turn three into",
+     "Seven x is one example",
+     "because seven times",
+     "So a choice",
+     "twenty-one could be",
+     "and we can't",
+     "We're looking for",
+     "choice that does"
     ]
    },
    {
-    "say": "Choice number one, three cubed minus six, twenty-seven minus six, twenty-one. It can be the rule, out. Choice number two, three times seven, twenty-one, out.",
+    "say": "Choice number one, x cubed minus six. Three cubed is twenty-seven, and twenty-seven minus six is twenty-one. It gives twenty-one, so it could be the rule. Choice number one is out.",
     "at": [
-     "number one, three",
-     "three cubed minus six",
-     "minus six, twenty-one",
-     "It can be the rule, out",
-     "out. Choice number",
-     "three times seven, twenty-one, out"
+     "number one, x",
+     "Three cubed is",
+     "twenty-seven minus six",
+     "It gives twenty-one",
+     "could be the",
+     "Choice number one is out"
     ]
    },
    {
-    "say": "Choice number four, eight times three minus three, twenty-four minus three, twenty-one, out.",
+    "say": "Choice number two, x times, in brackets, x plus four. Three plus four is seven, and three times seven is twenty-one. It could be the rule too, so choice number two is out.",
     "at": [
-     "eight times three",
-     "twenty-four minus three",
-     "twenty-one, out"
+     "number two, x",
+     "brackets, x plus",
+     "Three plus four is seven",
+     "and three times",
+     "twenty-one. It could",
+     "so choice number two is out"
     ]
    },
    {
-    "say": "Choice number three, five times three plus five, fifteen plus five, twenty. Not twenty-one, so this can't be the definition. Choice number three is our answer. In the exam, the moment you find it, mark it and move on. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice number three, five x plus five. Five times three is fifteen, and fifteen plus five is twenty. Twenty is not twenty-one. So this rule cannot turn three into twenty-one, and it cannot be the definition. Choice number three is our answer.",
     "at": [
      "number three, five",
-     "fifteen plus five",
-     "Not twenty-one, so",
-     "be the definition",
-     "Choice number three is our answer",
+     "Five times three is fifteen",
+     "and fifteen plus",
+     "twenty. Twenty is",
+     "So this rule",
+     "three into twenty-one",
+     "cannot be the",
+     "Choice number three is our answer"
+    ]
+   },
+   {
+    "say": "In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four, eight x minus three. Eight times three is twenty-four, and twenty-four minus three is twenty-one. It could be the rule, so only choice number three can't. [pause] Okay. I'll see you in the next question.",
+    "at": [
      "In the exam",
-     "you find it",
-     "and move on"
+     "it and move",
+     "Here, let's check",
+     "one too. Choice",
+     "number four, eight",
+     "Eight times three",
+     "and twenty-four minus",
+     "It could be the rule, so",
+     "so only choice",
+     "number three can't"
     ]
    }
   ]

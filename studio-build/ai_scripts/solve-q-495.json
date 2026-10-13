@@ -1,87 +1,87 @@
 {
-  "videoId": "solve-q-495",
-  "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "Given: one is smaller than a, which is smaller than b, which is smaller than c. Which of the following expressions is the smallest?",
-        "voice": "calm",
-        "at": [
-          "Given"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So a, b and c are all greater than one, in that order. The choices are products, and we want the smallest. [short pause] We'll solve it two ways, comparing the products, and then plugging in numbers.",
-        "at": [
-          "all greater than",
-          "in that order",
-          "solve it two",
-          "products, and then"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start by writing each square as multiplication. a squared times c means a times a times c. The other choices are a times a times b, a times b times c, and b times b times c. So every choice multiplies three positive numbers.",
-        "at": [
-          "Let's start",
-          "multiplication. a squared",
-          "multiplication. a squared",
-          "multiplication. a squared",
-          "a squared times",
-          "a times a times b",
-          "b times c",
-          "c. So every"
-        ]
-      },
-      {
-        "say": "a is the smallest of our three letters. If we could use a three times, that would give the smallest product: a times a times a. But that is not one of the choices.",
-        "at": [
-          "a is the",
-          "three letters. If",
-          "If we could",
-          "we could use",
-          "could use a",
-          "the smallest product",
-          "But that is"
-        ]
-      },
-      {
-        "say": "Among the actual choices, a times a times b uses the smallest numbers. Compare it with each other product: each replaces at least one of these numbers with a larger one, without making any of the others smaller. That makes the product larger. So a times a times b, choice number two, is our answer.",
-        "at": [
-          "Among the actual choices",
-          "a times a times b uses",
-          "the smallest numbers",
-          "Compare it with each other product",
-          "a larger one",
-          "So a times a times b",
-          "choice number two"
-        ]
-      }
+ "videoId": "solve-q-495",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: one is smaller than a, which is smaller than b, which is smaller than c. Which of the following expressions is the smallest?",
+    "voice": "calm",
+    "at": [
+     "Given"
     ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in. Choose a is two, b is three, and c is five. They fit the order and are all greater than one. Let's compare the four results.",
-        "at": [
-          "Now let's",
-          "Choose a is",
-          "Choose a is",
-          "a is two"
-        ]
-      },
-      {
-        "say": "Choice number one gives four times five, which is twenty. Choice number two gives four times three, which is twelve. Choice number three gives two times three times five, which is thirty. Choice number four gives nine times five, which is forty-five. Twelve is the smallest, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "Choice number one",
-          "number one gives",
-          "is twenty. Choice",
-          "number two gives",
-          "is twelve. Choice",
-          "number three gives",
-          "times five, which is thirty",
-          "number four gives",
-          "the smallest, so"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So a, b and c are all greater than one, in that order. The choices are products, and we want the smallest. [short pause] We'll solve it two ways, comparing the products, and then plugging in numbers.",
+    "at": [
+     "all greater than",
+     "in that order",
+     "solve it two",
+     "products, and then"
     ]
+   },
+   {
+    "say": "[short pause] Let's start by writing each square as multiplication. a squared times c means a times a times c. The other choices are a times a times b, a times b times c, and b times b times c. So every choice multiplies three positive numbers.",
+    "at": [
+     "Let's start",
+     "multiplication. a squared",
+     "multiplication. a squared",
+     "multiplication. a squared",
+     "a squared times",
+     "a times a times b",
+     "b times c",
+     "c. So every"
+    ]
+   },
+   {
+    "say": "a is the smallest of our three letters. If we could use a three times, that would give the smallest product: a times a times a. But that is not one of the choices.",
+    "at": [
+     "a is the",
+     "three letters. If",
+     "If we could",
+     "we could use",
+     "could use a",
+     "the smallest product",
+     "But that is"
+    ]
+   },
+   {
+    "say": "Among the actual choices, a times a times b uses the smallest numbers. Compare it with each other product: each replaces at least one of these numbers with a larger one, without making any of the others smaller. That makes the product larger. So a times a times b, choice number two, is our answer.",
+    "at": [
+     "Among the actual choices",
+     "a times a times b uses",
+     "the smallest numbers",
+     "Compare it with each other product",
+     "a larger one",
+     "So a times a times b",
+     "choice number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in. Choose a is two, b is three, and c is five. They fit the order and are all greater than one. Let's compare the four results.",
+    "at": [
+     "Now let's",
+     "Choose a is",
+     "Choose a is",
+     "a is two"
+    ]
+   },
+   {
+    "say": "Choice number one gives four times five, which is twenty. Choice number two gives four times three, which is twelve. Choice number three gives two times three times five, which is thirty. Choice number four gives nine times five, which is forty-five. Twelve is the smallest, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number one",
+     "number one gives",
+     "is twenty. Choice",
+     "number two gives",
+     "is twelve. Choice",
+     "number three gives",
+     "times five, which is thirty",
+     "number four gives",
+     "the smallest, so"
+    ]
+   }
   ]
+ ]
 }

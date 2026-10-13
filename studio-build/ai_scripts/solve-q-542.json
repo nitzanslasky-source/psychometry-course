@@ -12,47 +12,74 @@
     "pause": 0.5
    },
    {
-    "say": "A diamond inside a diamond. [short pause] We'll solve it two ways, inside out, and then with algebra.",
+    "say": "So a diamond inside a diamond. The question is which one we do first. [short pause] We'll solve it two ways, from the inside out, and then with the rule itself.",
     "at": [
-     "A diamond inside a diamond",
-     "We'll solve it",
-     "inside out, and"
+     "a diamond inside a diamond",
+     "The question is",
+     "we do first",
+     "it two ways",
+     "inside out, and",
+     "the rule itself"
     ]
    },
    {
-    "say": "[short pause] Let's start inside out, like any brackets. The inner one first, diamond of five. The diamond squares, so five squared is twenty-five.",
+    "say": "[short pause] Just like brackets inside brackets, we start with the inner one. The inner one is diamond of five. The diamond squares its input, so diamond of five is five squared, which is twenty-five.",
     "at": [
-     "Let's start",
-     "any brackets. The",
-     "diamond of five",
-     "The diamond squares",
-     "squared is twenty-five"
+     "Just like",
+     "we start with the inner one",
+     "The inner one is",
+     "of five. The",
+     "so diamond of five is",
+     "five squared, which"
     ]
    },
    {
-    "say": "Now twenty-five takes its place, and the outer diamond works on it. Twenty-five squared is six hundred twenty-five. Choice number three is our answer. And careful, stopping at twenty-five is the trap. It's waiting in the choices.",
+    "say": "Now twenty-five takes the place of the whole inner diamond. So the outer diamond works on twenty-five. Twenty-five squared is twenty-five times twenty-five. Twenty times twenty-five is five hundred, and five times twenty-five is a hundred twenty-five. Together, six hundred twenty-five.",
     "at": [
-     "twenty-five takes its place",
-     "the outer diamond",
+     "Now twenty-five takes",
+     "of the whole",
+     "So the outer diamond works",
      "Twenty-five squared is",
-     "Choice number three is our answer",
-     "And careful, stopping",
-     "is the trap",
-     "It's waiting in"
+     "Twenty times twenty-five",
+     "hundred, and five",
+     "is a hundred",
+     "six hundred twenty-five"
+    ]
+   },
+   {
+    "say": "Careful, a lot of students stop after the inner diamond and mark twenty-five. But twenty-five is only halfway, because the outer diamond still has to work on it. So choice number one is the trap, and choice number three is our answer.",
+    "at": [
+     "Careful, a lot",
+     "stop after the",
+     "and mark twenty-five",
+     "But twenty-five is",
+     "because the outer",
+     "has to work",
+     "choice number one is the trap",
+     "choice number three is"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. What's different? We look at the rule itself, not the numbers. Squaring, and then squaring again, is x to the fourth. Five to the fourth is six hundred twenty-five. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "[pause] Another way is to see what two diamonds do to any number. The first diamond squares the number. The second diamond squares the result again. So we get x squared, all squared. x squared times x squared is x to the power of four.",
     "at": [
      "Another way",
-     "We look at",
-     "itself, not the",
-     "Squaring, and then",
-     "is x to",
-     "Five to the fourth",
-     "six hundred twenty-five"
+     "what two diamonds",
+     "The first diamond",
+     "The second diamond",
+     "So we get x squared",
+     "x squared times",
+     "is x to"
+    ]
+   },
+   {
+    "say": "So we need five to the power of four. Five squared is twenty-five, and twenty-five squared is six hundred twenty-five. Choice number three again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "five to the power of four",
+     "Five squared is",
+     "twenty-five squared is",
+     "Choice number three again"
     ]
    }
   ]

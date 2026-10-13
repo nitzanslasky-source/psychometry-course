@@ -12,58 +12,100 @@
     "pause": 0.5
    },
    {
-    "say": "Does the order of the inputs matter? [short pause] We'll solve it two ways, plugging in numbers, and then with algebra.",
+    "say": "So they ask when the order of the two inputs doesn't matter, for every a and b. [short pause] We'll solve it two ways, plugging in numbers to knock out choices, and then algebra to prove the one that's left.",
     "at": [
-     "the order of the inputs",
-     "ways, plugging in",
-     "then with algebra"
+     "the order of the two inputs",
+     "inputs doesn't matter",
+     "a and b",
+     "it two ways",
+     "numbers to knock",
+     "and then algebra",
+     "the one that's"
     ]
    },
    {
-    "say": "[short pause] Let's start with numbers. To knock a choice out, one counterexample is enough. a is one and b is two. Not equal numbers, because with a equal to b, every operation looks fine.",
+    "say": "[short pause] To show that a rule doesn't always work, one example where it fails is enough. Let's take a is one and b is two. Why not two equal numbers? Because with equal numbers, swapping them changes nothing, in every rule. So they can't knock anything out.",
     "at": [
-     "Let's start",
-     "To knock a",
-     "one counterexample is",
-     "a is one and b is two",
-     "a equal to",
-     "operation looks fine"
+     "rule doesn't always",
+     "example where it",
+     "enough. Let's take",
+     "a is one",
+     "Why not two",
+     "Because with equal",
+     "them changes nothing",
+     "So they can't"
     ]
    },
    {
-    "say": "Choice number one, one star two is two, and two star one is four. Out. Choice number two, three and six. Out. Choice number four, two and three. Out.",
+    "say": "Choice number one, a squared times b. One star two is one squared times two, which is two. Two star one is two squared times one, which is four. Two is not four, so choice number one is out.",
     "at": [
-     "one star two is two",
-     "is four. Out",
-     "three and six. Out",
-     "two and three. Out"
+     "number one, a",
+     "One star two is one squared",
+     "squared times two",
+     "Two star one",
+     "squared times one",
+     "four. Two is",
+     "so choice number one is out"
     ]
    },
    {
-    "say": "Choice number three, one times two plus one plus two is five, and the other way, five too. Choice number three is our answer.",
+    "say": "Choice number two, a times, in brackets, a plus b. One star two is one times three, which is three. Two star one is two times three, which is six. Out. Choice number four, a minus b, squared, plus a. One star two is one plus one, which is two. Two star one is one plus two, which is three. Out.",
     "at": [
-     "number three, one",
-     "one times two plus",
-     "the other way",
-     "Choice number three is our answer"
+     "number two, a",
+     "brackets, a plus",
+     "is one times three",
+     "is three. Two",
+     "is two times",
+     "which is six. Out",
+     "Choice number four, a minus b",
+     "number four, a",
+     "squared, plus a",
+     "One star two is one plus",
+     "plus one, which",
+     "Two star one is one",
+     "which is three. Out"
+    ]
+   },
+   {
+    "say": "Choice number three, a b plus a plus b. One star two is two plus one plus two, which is five. Two star one is two plus two plus one, which is five too. It stays. Three choices are out, so choice number three is our answer.",
+    "at": [
+     "number three, a",
+     "a plus b",
+     "is two plus one plus two",
+     "two, which is",
+     "Two star one",
+     "plus two plus",
+     "is five too",
+     "Three choices are",
+     "so choice number three is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. What's different? Numbers can't prove always, algebra can. Swap the letters. b star a is b a, plus b, plus a. b a is a b, and b plus a is a plus b. Exactly a star b. So, not always, one example. Always, swap the letters. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "[pause] Now let's prove it with algebra. Numbers can show that a rule fails, but one example can't prove that it always works. For always, we swap the letters. b star a means b times a, plus b, plus a.",
     "at": [
-     "Another way",
-     "Numbers can't prove",
-     "Swap the letters",
-     "b star a",
-     "a, plus b",
-     "b a is",
+     "Now let's",
+     "Numbers can show",
+     "rule fails, but",
+     "can't prove that",
+     "For always, we",
+     "b star a means",
+     "times a, plus"
+    ]
+   },
+   {
+    "say": "b times a is the same as a times b, and b plus a is the same as a plus b. So b star a is a b plus a plus b, which is exactly a star b, for every a and b. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "b times a",
+     "same as a",
      "and b plus",
-     "a plus b",
-     "Exactly a star b",
-     "So, not always",
-     "Always, swap the"
+     "the same as a plus",
+     "So b star a is",
+     "a b plus",
+     "b, which is",
+     "exactly a star b",
+     "every a and"
     ]
    }
   ]

@@ -3,60 +3,90 @@
  "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Welcome back. Now the more advanced operation questions. Each question that follows shows one type, and teaches it. First, one type that only the practice has, the inverse operation."
+   "Welcome back. Now we move to the more advanced operation questions. Each question that follows shows one type, and teaches it right there. But first, one type that appears only in the practice, the inverse operation."
   ],
   [
    {
-    "say": "The inverse operation undoes the diamond. Put in the result, and you get x back. Take diamond of x equals two x plus three. Read its steps, first times two, then plus three.",
+    "say": "The inverse operation undoes the diamond. You put in the result, and you get the original x back. Let's take diamond of x equals two x plus three. First, read its steps in order. It multiplies x by two, and then it adds three.",
     "at": [
-     "the diamond. Put",
-     "result, and you",
-     "back. Take diamond",
+     "The inverse operation undoes",
+     "You put in",
+     "and you get",
+     "Let's take diamond",
      "equals two x",
-     "Read its steps",
-     "two, then plus"
+     "First, read its",
+     "It multiplies x",
+     "and then it"
     ]
    },
    {
-    "say": "Undo them in reverse order. The last step comes off first, so minus three, and then divide by two. y minus three, over two.",
+    "say": "To undo it, we go backwards, like taking off your shoes before your socks. The last step comes off first. So first we subtract three, and then we divide by two. The inverse is y minus three, over two.",
     "at": [
-     "Undo them in reverse order",
-     "The last step",
-     "first, so minus",
-     "then divide by",
-     "y minus three"
+     "To undo it",
+     "backwards, like taking",
+     "shoes before your",
+     "The last step comes off first",
+     "So first we",
+     "and then we",
+     "The inverse is",
+     "three, over two"
     ]
    },
    {
-    "say": "Check with a number. Four goes to eleven. Eleven minus three is eight, and eight over two is four. Back to the start.",
+    "say": "Let's check it with a number. Four goes into the diamond. Two times four is eight, and eight plus three is eleven. Now undo it. Eleven minus three is eight, and eight over two is four. We're back at four, so the inverse works.",
     "at": [
-     "Four goes to eleven",
+     "Let's check it",
+     "Four goes into the diamond",
+     "Two times four",
+     "and eight plus",
+     "eleven. Now undo",
      "Eleven minus three",
      "and eight over",
-     "four. Back to"
+     "We're back at",
+     "the inverse works"
     ]
    },
    {
-    "say": "And the trap undoes the steps in the wrong order. y over two, minus three. Eleven over two is five and a half, and five and a half minus three is two and a half. Not four.",
+    "say": "Here's the trap. A lot of students undo the steps in the same order, not backwards. First divide by two, then subtract three. That's y over two, minus three. With eleven, eleven over two is five point five, and five point five minus three is two point five. That's not four, so the order matters.",
     "at": [
-     "the trap undoes",
-     "in the wrong",
-     "y over two",
-     "Eleven over two",
-     "and a half",
-     "and a half minus",
-     "is two and"
+     "Here's the trap",
+     "A lot of",
+     "the steps in",
+     "order, not backwards",
+     "First divide by",
+     "That's y over",
+     "With eleven, eleven",
+     "is five point",
+     "five point five minus",
+     "is two point",
+     "That's not four"
     ]
    },
    {
-    "say": "One more. Diamond of x is three x minus four. Undo, plus four, then divide by three. Five goes to eleven, and eleven plus four is fifteen, and fifteen over three is five. Back again. [pause] Okay. I'll see you in the next video.",
+    "say": "One more example. Diamond of x is three x minus four. Its steps are times three, then minus four. So the inverse is plus four first, then divide by three. y plus four, over three. Let's check with five. Three times five is fifteen, and fifteen minus four is eleven. Eleven plus four is fifteen, and fifteen over three is five. Back to five.",
     "at": [
-     "One more",
-     "Undo, plus four",
-     "Five goes to",
-     "eleven plus four",
+     "One more example",
+     "Diamond of x",
+     "x minus four",
+     "Its steps are",
+     "then minus four",
+     "So the inverse",
+     "four first, then",
+     "y plus four",
+     "Let's check with",
+     "Three times five",
+     "and fifteen minus",
+     "Eleven plus four",
      "and fifteen over",
-     "five. Back again"
+     "five. Back to"
+    ]
+   },
+   {
+    "say": "So to undo an operation, read its steps, and undo them in reverse order, the last step first. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "operation, read its",
+     "undo them in reverse order",
+     "the last step"
     ]
    }
   ]

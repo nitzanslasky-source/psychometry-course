@@ -1,93 +1,93 @@
 {
-  "videoId": "solve-q-433",
-  "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "Given: x is equal to fourteen a plus six, a is a positive integer, and x is divisible by ten. Which of the following could be the value of a?",
-        "voice": "calm",
-        "at": [
-          "Given"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So x is fourteen a plus six, and that whole result must be divisible by ten. A number divides by ten when its last digit is zero. [short pause] We'll solve it two ways, working out which last digit a needs, and then testing the choices.",
-        "at": [
-          "Divisible by ten",
-          "by ten when",
-          "We'll solve it",
-          "working out which",
-          "a needs, and"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start with the last digit of x. Remember, a number divides by ten when its last digit is zero. x is fourteen a plus six, and we need that result to end in zero. What last digit could fourteen a have, so that adding six gives a last digit of zero? It must end in four, because four plus six is ten. So fourteen a ends in four.",
-        "at": [
-          "Let's start",
-          "a number divides by ten",
-          "last digit is",
-          "in four, because",
-          "is ten. So",
-          "is ten. So",
-          "So fourteen a ends"
-        ]
-      },
-      {
-        "say": "Now let's find the last digit of a. To find a product's last digit, we only need the last digit of each number we multiply. Fourteen ends in four. So four times the last digit of a has to end in four. Four times one is four, and four times six is twenty-four. No other digit works. So a must end in one or six.",
-        "at": [
-          "digit of a",
-          "each number we",
-          "So four times",
-          "digit of a has",
-          "end in four",
-          "Four times one is four",
-          "and four times",
-          "twenty-four. No other"
-        ]
-      },
-      {
-        "say": "Now check the numbers in the choices. We need a number ending in one or six. Only three hundred forty-six fits: it ends in six. So choice number four is our answer.",
-        "at": [
-          "a number ending",
-          "ends in six",
-          "choice number four is our answer"
-        ]
-      }
+ "videoId": "solve-q-433",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: x is equal to fourteen a plus six, a is a positive integer, and x is divisible by ten. Which of the following could be the value of a?",
+    "voice": "calm",
+    "at": [
+     "Given"
     ],
-    [
-      {
-        "say": "[pause] Another way is to test the choices, with last digits only. Each choice gives a possible a. We need fourteen a plus six to end in zero. Let's test three hundred forty-three. Its last digit is three. Four times three is twelve, so fourteen a would end in two. Two plus six is eight, so x would end in eight, not zero. That choice is out.",
-        "at": [
-          "Another way",
-          "the choices, with",
-          "Let's test three",
-          "Four times three",
-          "so fourteen a",
-          "two plus six",
-          "x would end",
-          "not zero. That"
-        ]
-      },
-      {
-        "say": "Now test three hundred forty-four. Four times four is sixteen, so fourteen a would end in six. Six plus six is twelve, so x ends in two, not zero. Out. Now test three hundred forty-five. Four times five is twenty, so fourteen a would end in zero. Zero plus six is six, so x ends in six, not zero. That choice is out too.",
-        "at": [
-          "Four times four",
-          "so fourteen a",
-          "six plus six",
-          "ends in two",
-          "Four times five",
-          "so fourteen a would end in zero",
-          "plus six is six"
-        ]
-      },
-      {
-        "say": "Three choices are out, leaving three hundred forty-six. So choice number four is our answer. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "leaving three hundred",
-          "choice number four"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So x is fourteen a plus six, and that whole result must be divisible by ten. A number divides by ten when its last digit is zero. [short pause] We'll solve it two ways, working out which last digit a needs, and then testing the choices.",
+    "at": [
+     "Divisible by ten",
+     "by ten when",
+     "We'll solve it",
+     "working out which",
+     "a needs, and"
     ]
+   },
+   {
+    "say": "[short pause] Let's start with the last digit of x. Remember, a number divides by ten when its last digit is zero. x is fourteen a plus six, and we need that result to end in zero. What last digit could fourteen a have, so that adding six gives a last digit of zero? It must end in four, because four plus six is ten. So fourteen a ends in four.",
+    "at": [
+     "Let's start",
+     "a number divides by ten",
+     "last digit is",
+     "in four, because",
+     "is ten. So",
+     "is ten. So",
+     "So fourteen a ends"
+    ]
+   },
+   {
+    "say": "Now let's find the last digit of a. To find a product's last digit, we only need the last digit of each number we multiply. Fourteen ends in four. So four times the last digit of a has to end in four. Four times one is four, and four times six is twenty-four. No other digit works. So a must end in one or six.",
+    "at": [
+     "digit of a",
+     "each number we",
+     "So four times",
+     "digit of a has",
+     "end in four",
+     "Four times one is four",
+     "and four times",
+     "twenty-four. No other"
+    ]
+   },
+   {
+    "say": "Now check the numbers in the choices. We need a number ending in one or six. Only three hundred forty-six fits: it ends in six. So choice number four is our answer.",
+    "at": [
+     "a number ending",
+     "ends in six",
+     "choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way is to test the choices, with last digits only. Each choice gives a possible a. We need fourteen a plus six to end in zero. Let's test three hundred forty-three. Its last digit is three. Four times three is twelve, so fourteen a would end in two. Two plus six is eight, so x would end in eight, not zero. That choice is out.",
+    "at": [
+     "Another way",
+     "the choices, with",
+     "Let's test three",
+     "Four times three",
+     "so fourteen a",
+     "two plus six",
+     "x would end",
+     "not zero. That"
+    ]
+   },
+   {
+    "say": "Now test three hundred forty-four. Four times four is sixteen, so fourteen a would end in six. Six plus six is twelve, so x ends in two, not zero. Out. Now test three hundred forty-five. Four times five is twenty, so fourteen a would end in zero. Zero plus six is six, so x ends in six, not zero. That choice is out too.",
+    "at": [
+     "Four times four",
+     "so fourteen a",
+     "six plus six",
+     "ends in two",
+     "Four times five",
+     "so fourteen a would end in zero",
+     "plus six is six"
+    ]
+   },
+   {
+    "say": "Three choices are out, leaving three hundred forty-six. So choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "leaving three hundred",
+     "choice number four"
+    ]
+   }
   ]
+ ]
 }

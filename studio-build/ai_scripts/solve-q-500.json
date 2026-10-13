@@ -1,131 +1,131 @@
 {
-  "videoId": "solve-q-500",
-  "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "Given: zero is smaller than t, which is smaller than one. Which of the following expressions is the largest?",
-        "voice": "calm",
-        "at": [
-          "Given"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So t is between zero and one, and we want the largest of four results. [short pause] We'll solve it two ways, using the operation rules, and then choosing a number with an easy sixth root.",
-        "at": [
-          "t is between",
-          "and one, and",
-          "it two ways",
-          "and then choosing",
-          "number with a"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start with choice number three, t to the sixth. Between zero and one, increasing the power makes the result smaller: the arrow points left. The result stays positive, so t to the sixth is between zero and t.",
-        "at": [
-          "number three, t",
-          "t to the sixth",
-          "Between zero and",
-          "arrow points left",
-          "The result stays",
-          "The result stays",
-          "so t to"
-        ]
-      },
-      {
-        "say": "Choice number four is the sixth root of t. Its power is one sixth, smaller than the power of one in t itself. So its result is larger than t, but still smaller than one. It is between t and one.",
-        "at": [
-          "number four is",
-          "the sixth root",
-          "of one in",
-          "is between t",
-          "is between t",
-          "is between t",
-          "is between t",
-          "is between t"
-        ]
-      },
-      {
-        "say": "Choice number one is six times t. t is positive and smaller than one. Multiplying six by it gives a result smaller than six.",
-        "at": [
-          "number one is",
-          "six times t",
-          "result smaller than",
-          "than six."
-        ]
-      },
-      {
-        "say": "Choice number two is six over t. Dividing by a positive number smaller than one makes six larger, so this result is greater than six. Now compare all four: the two power and root results are below one, six times t is below six, and six over t is above six. Only choice number two is above six, so it is the largest. That's our answer.",
-        "at": [
-          "number two is",
-          "six over t",
-          "makes six larger",
-          "this result is",
-          "below one, six",
-          "six, and six",
-          "choice number two is above"
-        ]
-      }
+ "videoId": "solve-q-500",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: zero is smaller than t, which is smaller than one. Which of the following expressions is the largest?",
+    "voice": "calm",
+    "at": [
+     "Given"
     ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in. Use t is one over sixty-four. One half to the sixth is one over sixty-four, so the sixth root will be easy. In each choice, replace only t. The sixes stay as they are.",
-        "at": [
-          "Use t is",
-          "is one over",
-          "is one over",
-          "one half to",
-          "is one over sixty-four, so",
-          "so the sixth",
-          "In each choice",
-          "each choice, replace"
-        ]
-      },
-      {
-        "say": "Choice number one is six times one over sixty-four, which is six over sixty-four. Divide the top and bottom by two to get three over thirty-two. That is smaller than one.",
-        "at": [
-          "number one is",
-          "over sixty-four",
-          "six over sixty-four",
-          "get three over"
-        ]
-      },
-      {
-        "say": "Choice number two is six divided by one over sixty-four. Dividing by this fraction means multiplying by sixty-four. Six times sixty is three hundred sixty, and six times four is twenty-four. Add them to get three hundred eighty-four.",
-        "at": [
-          "number two is",
-          "one over sixty-four",
-          "fraction means multiplying",
-          "Six times sixty is",
-          "hundred sixty, and",
-          "four is twenty-four",
-          "Add them to"
-        ]
-      },
-      {
-        "say": "Choice number three raises the whole fraction, one over sixty-four, to the sixth power. Its result is still between zero and one. We do not need the exact number to know it is smaller than three hundred eighty-four.",
-        "at": [
-          "number three raises",
-          "to the sixth",
-          "still between zero and one",
-          "We do not",
-          "exact number to",
-          "is smaller than"
-        ]
-      },
-      {
-        "say": "Choice number four is the sixth root of one over sixty-four, which is one half. Choices one, three and four all give results below one. Choice number two gives three hundred eighty-four, so it is the largest. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "number four is",
-          "of one over",
-          "is one half",
-          "three and four",
-          "Choice number two",
-          "the largest. Choice",
-          "number two is"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So t is between zero and one, and we want the largest of four results. [short pause] We'll solve it two ways, using the operation rules, and then choosing a number with an easy sixth root.",
+    "at": [
+     "t is between",
+     "and one, and",
+     "it two ways",
+     "and then choosing",
+     "number with a"
     ]
+   },
+   {
+    "say": "[short pause] Let's start with choice number three, t to the sixth. Between zero and one, increasing the power makes the result smaller: the arrow points left. The result stays positive, so t to the sixth is between zero and t.",
+    "at": [
+     "number three, t",
+     "t to the sixth",
+     "Between zero and",
+     "arrow points left",
+     "The result stays",
+     "The result stays",
+     "so t to"
+    ]
+   },
+   {
+    "say": "Choice number four is the sixth root of t. Its power is one sixth, smaller than the power of one in t itself. So its result is larger than t, but still smaller than one. It is between t and one.",
+    "at": [
+     "number four is",
+     "the sixth root",
+     "of one in",
+     "is between t",
+     "is between t",
+     "is between t",
+     "is between t",
+     "is between t"
+    ]
+   },
+   {
+    "say": "Choice number one is six times t. t is positive and smaller than one. Multiplying six by it gives a result smaller than six.",
+    "at": [
+     "number one is",
+     "six times t",
+     "result smaller than",
+     "than six."
+    ]
+   },
+   {
+    "say": "Choice number two is six over t. Dividing by a positive number smaller than one makes six larger, so this result is greater than six. Now compare all four: the two power and root results are below one, six times t is below six, and six over t is above six. Only choice number two is above six, so it is the largest. That's our answer.",
+    "at": [
+     "number two is",
+     "six over t",
+     "makes six larger",
+     "this result is",
+     "below one, six",
+     "six, and six",
+     "choice number two is above"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in. Use t is one over sixty-four. One half to the sixth is one over sixty-four, so the sixth root will be easy. In each choice, replace only t. The sixes stay as they are.",
+    "at": [
+     "Use t is",
+     "is one over",
+     "is one over",
+     "one half to",
+     "is one over sixty-four, so",
+     "so the sixth",
+     "In each choice",
+     "each choice, replace"
+    ]
+   },
+   {
+    "say": "Choice number one is six times one over sixty-four, which is six over sixty-four. Divide the top and bottom by two to get three over thirty-two. That is smaller than one.",
+    "at": [
+     "number one is",
+     "over sixty-four",
+     "six over sixty-four",
+     "get three over"
+    ]
+   },
+   {
+    "say": "Choice number two is six divided by one over sixty-four. Dividing by this fraction means multiplying by sixty-four. Six times sixty is three hundred sixty, and six times four is twenty-four. Add them to get three hundred eighty-four.",
+    "at": [
+     "number two is",
+     "one over sixty-four",
+     "fraction means multiplying",
+     "Six times sixty is",
+     "hundred sixty, and",
+     "four is twenty-four",
+     "Add them to"
+    ]
+   },
+   {
+    "say": "Choice number three raises the whole fraction, one over sixty-four, to the sixth power. Its result is still between zero and one. We do not need the exact number to know it is smaller than three hundred eighty-four.",
+    "at": [
+     "number three raises",
+     "to the sixth",
+     "still between zero and one",
+     "We do not",
+     "exact number to",
+     "is smaller than"
+    ]
+   },
+   {
+    "say": "Choice number four is the sixth root of one over sixty-four, which is one half. Choices one, three and four all give results below one. Choice number two gives three hundred eighty-four, so it is the largest. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "number four is",
+     "of one over",
+     "is one half",
+     "three and four",
+     "Choice number two",
+     "the largest. Choice",
+     "number two is"
+    ]
+   }
   ]
+ ]
 }

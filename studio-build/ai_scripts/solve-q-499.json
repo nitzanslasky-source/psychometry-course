@@ -1,149 +1,149 @@
 {
-  "videoId": "solve-q-499",
-  "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "Given: negative one is smaller than y, which is smaller than zero. Which of the following orders of y to the power of seven, y, the cube root of y, and y to the power of negative seven is correct?",
-        "voice": "calm",
-        "at": [
-          "Given"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So y is between negative one and zero. We need to order four results from smallest to largest. [short pause] We'll solve it three ways, using the arrow, plugging in numbers, and then checking the order of the powers directly.",
-        "at": [
-          "y is between",
-          "and zero. We",
-          "four results from",
-          "solve it three",
-          "the arrow, plugging",
-          "and then checking"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start with the arrow. Write the cube root as a power of one third. y is between negative one and zero, where the arrow points right for powers that keep the result negative. Seven is odd, so y to the seventh stays negative. y itself has a power of one and is negative. The cube root is an odd root, so it stays negative too. And the negative seven power also keeps the result negative. So we can use the arrow for all four.",
-        "at": [
-          "Write the cube root",
-          "a power of one third",
-          "y is between negative one and zero",
-          "the arrow points right",
-          "powers that keep the result negative",
-          "Seven is odd",
-          "y itself has a power of one",
-          "The cube root is an odd root",
-          "stays negative too",
-          "the negative seven power"
-        ]
-      },
-      {
-        "say": "That means a larger power gives a larger result. The largest power is seven, so y to the seventh must be last in the list, at the largest end. Choice number one ends with y to the negative seven, and choice number two ends with y itself. Neither can be correct, so both are out.",
-        "at": [
-          "y to the",
-          "y to the",
-          "to the seventh",
-          "last in the",
-          "ends with y to the negative seven",
-          "negative seven, and",
-          "number two ends",
-          "both are out"
-        ]
-      },
-      {
-        "say": "The smallest power is negative seven, so y to the negative seven must come first. Choice number four starts with the root, so it's out. Only choice number three starts with y to the negative seven. That's our answer.",
-        "at": [
-          "the smallest power",
-          "so y to",
-          "must come first",
-          "starts with the",
-          "Choice number three",
-          "y to the negative seven. That's",
-          "That's our answer"
-        ]
-      }
+ "videoId": "solve-q-499",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: negative one is smaller than y, which is smaller than zero. Which of the following orders of y to the power of seven, y, the cube root of y, and y to the power of negative seven is correct?",
+    "voice": "calm",
+    "at": [
+     "Given"
     ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in. Negative one half is usually easy to use, but its cube root is not easy to calculate here. Choose negative one eighth instead. It is in the given range and has a simple cube root.",
-        "at": [
-          "Now let's",
-          "Negative one half",
-          "usually easy to",
-          "its cube root",
-          "is not easy",
-          "easy to calculate",
-          "calculate here. Choose",
-          "negative one eighth"
-        ]
-      },
-      {
-        "say": "Use y is negative one eighth in all four expressions. Its seventh power is negative with a very large number on the bottom, so it is very close to zero. We do not need its exact value. y itself is negative one eighth, and its cube root is negative one half. For y to the negative seven, use the reciprocal, negative eight, and raise it to the seventh power. That gives a negative number very far from zero.",
-        "at": [
-          "expressions. Its seventh",
-          "very large number",
-          "very close to",
-          "We do not",
-          "y itself is",
-          "and its cube",
-          "negative one half",
-          "For y to",
-          "seven, use the",
-          "to the seventh"
-        ]
-      },
-      {
-        "say": "So y to the negative seven is the smallest and must come first. Only choice number three starts with it. Choice number three is our answer.",
-        "at": [
-          "negative seven is",
-          "the smallest and",
-          "must come first",
-          "Only choice number three",
-          "with it. Choice"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "[pause] Now a shortcut: check only the order of the powers. None of these powers makes the negative y positive. As we increase the power, the results move in one direction on the number line. So a correctly ordered list must have powers that keep increasing, or keep decreasing. They cannot go down, then up, then down again. To read the powers, write y as y to the power of one, and the root as y to the power of one third.",
-        "at": [
-          "Now a shortcut",
-          "check only",
-          "the order of the powers",
-          "None of these powers",
-          "makes the negative y positive",
-          "As we increase the power",
-          "one direction on the number line",
-          "keep decreasing",
-          "write y as",
-          "the power of one,",
-          "the root as y"
-        ]
-      },
-      {
-        "say": "Choice number one has powers one, one third, seven, negative seven. They go down, up, then down. That cannot be an ordered list. Choice number two has seven, negative seven, one third, one. They go down, then up, so that choice is out too.",
-        "at": [
-          "Choice number one",
-          "number one has",
-          "seven, negative seven",
-          "down, up, then",
-          "number two has",
-          "one third, one",
-          "down, then up"
-        ]
-      },
-      {
-        "say": "Choice number four has one third, negative seven, one, seven. They go down, then up, so it's out. Choice number three has negative seven, one third, one, seven. They keep increasing, with no change of direction. So choice number three is our answer. Okay. I'll see you in the next question.",
-        "at": [
-          "Choice number four",
-          "number four has",
-          "seven, one, seven",
-          "then up, so",
-          "number three has",
-          "third, one, seven",
-          "They keep increasing"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So y is between negative one and zero. We need to order four results from smallest to largest. [short pause] We'll solve it three ways, using the arrow, plugging in numbers, and then checking the order of the powers directly.",
+    "at": [
+     "y is between",
+     "and zero. We",
+     "four results from",
+     "solve it three",
+     "the arrow, plugging",
+     "and then checking"
     ]
+   },
+   {
+    "say": "[short pause] Let's start with the arrow. Write the cube root as a power of one third. y is between negative one and zero, where the arrow points right for powers that keep the result negative. Seven is odd, so y to the seventh stays negative. y itself has a power of one and is negative. The cube root is an odd root, so it stays negative too. And the negative seven power also keeps the result negative. So we can use the arrow for all four.",
+    "at": [
+     "Write the cube root",
+     "a power of one third",
+     "y is between negative one and zero",
+     "the arrow points right",
+     "powers that keep the result negative",
+     "Seven is odd",
+     "y itself has a power of one",
+     "The cube root is an odd root",
+     "stays negative too",
+     "the negative seven power"
+    ]
+   },
+   {
+    "say": "That means a larger power gives a larger result. The largest power is seven, so y to the seventh must be last in the list, at the largest end. Choice number one ends with y to the negative seven, and choice number two ends with y itself. Neither can be correct, so both are out.",
+    "at": [
+     "y to the",
+     "y to the",
+     "to the seventh",
+     "last in the",
+     "ends with y to the negative seven",
+     "negative seven, and",
+     "number two ends",
+     "both are out"
+    ]
+   },
+   {
+    "say": "The smallest power is negative seven, so y to the negative seven must come first. Choice number four starts with the root, so it's out. Only choice number three starts with y to the negative seven. That's our answer.",
+    "at": [
+     "the smallest power",
+     "so y to",
+     "must come first",
+     "starts with the",
+     "Choice number three",
+     "y to the negative seven. That's",
+     "That's our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in. Negative one half is usually easy to use, but its cube root is not easy to calculate here. Choose negative one eighth instead. It is in the given range and has a simple cube root.",
+    "at": [
+     "Now let's",
+     "Negative one half",
+     "usually easy to",
+     "its cube root",
+     "is not easy",
+     "easy to calculate",
+     "calculate here. Choose",
+     "negative one eighth"
+    ]
+   },
+   {
+    "say": "Use y is negative one eighth in all four expressions. Its seventh power is negative with a very large number on the bottom, so it is very close to zero. We do not need its exact value. y itself is negative one eighth, and its cube root is negative one half. For y to the negative seven, use the reciprocal, negative eight, and raise it to the seventh power. That gives a negative number very far from zero.",
+    "at": [
+     "expressions. Its seventh",
+     "very large number",
+     "very close to",
+     "We do not",
+     "y itself is",
+     "and its cube",
+     "negative one half",
+     "For y to",
+     "seven, use the",
+     "to the seventh"
+    ]
+   },
+   {
+    "say": "So y to the negative seven is the smallest and must come first. Only choice number three starts with it. Choice number three is our answer.",
+    "at": [
+     "negative seven is",
+     "the smallest and",
+     "must come first",
+     "Only choice number three",
+     "with it. Choice"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a shortcut: check only the order of the powers. None of these powers makes the negative y positive. As we increase the power, the results move in one direction on the number line. So a correctly ordered list must have powers that keep increasing, or keep decreasing. They cannot go down, then up, then down again. To read the powers, write y as y to the power of one, and the root as y to the power of one third.",
+    "at": [
+     "Now a shortcut",
+     "check only",
+     "the order of the powers",
+     "None of these powers",
+     "makes the negative y positive",
+     "As we increase the power",
+     "one direction on the number line",
+     "keep decreasing",
+     "write y as",
+     "the power of one,",
+     "the root as y"
+    ]
+   },
+   {
+    "say": "Choice number one has powers one, one third, seven, negative seven. They go down, up, then down. That cannot be an ordered list. Choice number two has seven, negative seven, one third, one. They go down, then up, so that choice is out too.",
+    "at": [
+     "Choice number one",
+     "number one has",
+     "seven, negative seven",
+     "down, up, then",
+     "number two has",
+     "one third, one",
+     "down, then up"
+    ]
+   },
+   {
+    "say": "Choice number four has one third, negative seven, one, seven. They go down, then up, so it's out. Choice number three has negative seven, one third, one, seven. They keep increasing, with no change of direction. So choice number three is our answer. Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number four",
+     "number four has",
+     "seven, one, seven",
+     "then up, so",
+     "number three has",
+     "third, one, seven",
+     "They keep increasing"
+    ]
+   }
   ]
+ ]
 }

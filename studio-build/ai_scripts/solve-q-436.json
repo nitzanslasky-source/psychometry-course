@@ -1,89 +1,89 @@
 {
-  "videoId": "solve-q-436",
-  "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "The sum of three integers is divisible by six. Which of the following statements is not necessarily true?",
-        "voice": "calm",
-        "at": [
-          "The sum"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So the three numbers add up to a number that divides by six. We're looking for a statement that can fail even when that is true. One example that fits the given and makes the statement fail is enough. Remember, when adding numbers, we can add their remainders. The sum divides by six when those remainders add up to a multiple of six, such as zero, six or twelve.",
-        "at": [
-          "a statement that",
-          "even when that",
-          "fail is enough",
-          "when adding numbers",
-          "add their remainders",
-          "The sum divides",
-          "six when those",
-          "add up to a multiple",
-          "a multiple of"
-        ]
-      },
-      {
-        "say": "Choice number one says the greatest possible remainder when dividing by six is five. A remainder must be smaller than the divisor, so it cannot reach six. The largest is five. This statement is always true, so it's out.",
-        "at": [
-          "number one says",
-          "the greatest possible",
-          "A remainder must",
-          "remainder must be",
-          "Out."
-        ]
-      },
-      {
-        "say": "Choice number two says that if one number divides by six, the other two must divide by six too. Let's try twelve, five and seven. Twelve plus five is seventeen, and plus seven is twenty-four. Twenty-four divides by six, so the numbers fit the given. Twelve divides by six, but five and seven don't. Five leaves a remainder of five, and seven leaves one. Those remainders add up to six, so they give another complete group of six, even though neither number divides by six on its own.",
-        "at": [
-          "number two says",
-          "number divides by",
-          "the other two",
-          "too. Let's try",
-          "twelve, five and seven",
-          "Twelve plus five",
-          "plus seven is",
-          "twenty-four divides by",
-          "Twelve divides by",
-          "five and seven don't",
-          "Five leaves a",
-          "add up to"
-        ]
-      },
-      {
-        "say": "So this statement fails with numbers that fit the given. That makes it not necessarily true, and choice number two is our answer.",
-        "at": [
-          "choice number two is our answer"
-        ]
-      },
-      {
-        "say": "In the exam you'd circle it and move on. Here, let's check the other two statements to see the remainder idea. Choice number three says all three numbers can leave four. Four plus four plus four is twelve, a multiple of six, so that is possible. For example, ten, sixteen and twenty-two each leave four when divided by six. They add up to forty-eight, which divides by six. So this statement works, and it's out.",
-        "at": [
-          "In the exam",
-          "it and move",
-          "Here, let's check",
-          "the remainder idea",
-          "number three says",
-          "Four plus four plus four",
-          "six, so that",
-          "sixteen and twenty-two",
-          "add up to",
-          "forty-eight, which"
-        ]
-      },
-      {
-        "say": "Choice number four says that if two of the numbers divide by six, the third must divide by six too. The first two leave no remainder. We also know the whole sum leaves no remainder. So the third cannot contribute a leftover part; it must also divide by six. This statement is always true, so it's out. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "Choice number four",
-          "two of the numbers divide by six",
-          "The first two leave no remainder",
-          "whole sum leaves no remainder",
-          "the third cannot contribute",
-          "always true, so"
-        ]
-      }
+ "videoId": "solve-q-436",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The sum of three integers is divisible by six. Which of the following statements is not necessarily true?",
+    "voice": "calm",
+    "at": [
+     "The sum"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the three numbers add up to a number that divides by six. We're looking for a statement that can fail even when that is true. One example that fits the given and makes the statement fail is enough. Remember, when adding numbers, we can add their remainders. The sum divides by six when those remainders add up to a multiple of six, such as zero, six or twelve.",
+    "at": [
+     "a statement that",
+     "even when that",
+     "fail is enough",
+     "when adding numbers",
+     "add their remainders",
+     "The sum divides",
+     "six when those",
+     "add up to a multiple",
+     "a multiple of"
     ]
+   },
+   {
+    "say": "Choice number one says the greatest possible remainder when dividing by six is five. A remainder must be smaller than the divisor, so it cannot reach six. The largest is five. This statement is always true, so it's out.",
+    "at": [
+     "number one says",
+     "the greatest possible",
+     "A remainder must",
+     "remainder must be",
+     "Out."
+    ]
+   },
+   {
+    "say": "Choice number two says that if one number divides by six, the other two must divide by six too. Let's try twelve, five and seven. Twelve plus five is seventeen, and plus seven is twenty-four. Twenty-four divides by six, so the numbers fit the given. Twelve divides by six, but five and seven don't. Five leaves a remainder of five, and seven leaves one. Those remainders add up to six, so they give another complete group of six, even though neither number divides by six on its own.",
+    "at": [
+     "number two says",
+     "number divides by",
+     "the other two",
+     "too. Let's try",
+     "twelve, five and seven",
+     "Twelve plus five",
+     "plus seven is",
+     "twenty-four divides by",
+     "Twelve divides by",
+     "five and seven don't",
+     "Five leaves a",
+     "add up to"
+    ]
+   },
+   {
+    "say": "So this statement fails with numbers that fit the given. That makes it not necessarily true, and choice number two is our answer.",
+    "at": [
+     "choice number two is our answer"
+    ]
+   },
+   {
+    "say": "In the exam you'd circle it and move on. Here, let's check the other two statements to see the remainder idea. Choice number three says all three numbers can leave four. Four plus four plus four is twelve, a multiple of six, so that is possible. For example, ten, sixteen and twenty-two each leave four when divided by six. They add up to forty-eight, which divides by six. So this statement works, and it's out.",
+    "at": [
+     "In the exam",
+     "it and move",
+     "Here, let's check",
+     "the remainder idea",
+     "number three says",
+     "Four plus four plus four",
+     "six, so that",
+     "sixteen and twenty-two",
+     "add up to",
+     "forty-eight, which"
+    ]
+   },
+   {
+    "say": "Choice number four says that if two of the numbers divide by six, the third must divide by six too. The first two leave no remainder. We also know the whole sum leaves no remainder. So the third cannot contribute a leftover part; it must also divide by six. This statement is always true, so it's out. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number four",
+     "two of the numbers divide by six",
+     "The first two leave no remainder",
+     "whole sum leaves no remainder",
+     "the third cannot contribute",
+     "always true, so"
+    ]
+   }
   ]
+ ]
 }

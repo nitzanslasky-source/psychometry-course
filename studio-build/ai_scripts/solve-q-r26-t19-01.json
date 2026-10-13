@@ -12,65 +12,106 @@
     "pause": 0.5
    },
    {
-    "say": "This time the input is an expression, x plus one. [short pause] We'll solve it two ways, with algebra, and then plugging in numbers.",
+    "say": "This time the input is not a number. It's a whole expression, x plus one. [short pause] We'll solve it two ways, with algebra, and then by plugging in numbers.",
     "at": [
-     "the input is an expression",
+     "is not a",
+     "a whole expression",
+     "ways, with algebra",
+     "by plugging in"
+    ]
+   },
+   {
+    "say": "[short pause] Remember, whatever goes in takes the place of x, and an expression goes in brackets. So we write the same template, with x plus one, in brackets, in both spots.",
+    "at": [
+     "Remember, whatever",
+     "whatever goes in takes the place",
+     "place of x",
+     "expression goes in",
+     "we write the",
+     "with x plus one, in brackets",
+     "brackets, in both"
+    ]
+   },
+   {
+    "say": "Now open the brackets. x plus one, squared, is x squared plus two x plus one. And minus two times, in brackets, x plus one, is minus two x minus two. Careful, the minus goes to both parts inside the brackets.",
+    "at": [
+     "Now open the brackets",
      "x plus one",
-     "it two ways",
-     "and then plugging"
+     "x squared plus",
+     "And minus two",
+     "brackets, x plus",
+     "minus two x",
+     "Careful, the minus",
+     "both parts inside"
     ]
    },
    {
-    "say": "[short pause] Let's start with algebra. The whole x plus one goes where x was, in brackets. x plus one, squared, minus two times x plus one.",
+    "say": "Now collect. Two x minus two x is zero, so the x terms cancel. One minus two is negative one. So we get x squared minus one, and choice number two is our answer.",
     "at": [
-     "Let's start",
-     "The whole x plus one",
-     "x plus one, squared",
-     "two times x"
-    ]
-   },
-   {
-    "say": "Open the brackets. x squared plus two x plus one, minus two x, minus two. The two x's cancel, and one minus two is negative one. x squared minus one, choice number two is our answer. The other choices are the traps, no brackets or a lost minus.",
-    "at": [
-     "Open the brackets",
-     "plus one, minus",
-     "The two x's",
-     "one minus two",
-     "one. x squared",
-     "choice number two is our answer",
-     "The other choices",
-     "traps, no brackets"
+     "Two x minus",
+     "is zero, so",
+     "One minus two",
+     "So we get x squared",
+     "minus one, and",
+     "choice number two is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. Letters in the choices, so plug in a number. x is zero, so the input is one. One minus two is negative one.",
+    "say": "[pause] Now let's try plugging in numbers. There are letters in the choices, so I can pick a value for x and compare. The easiest value is x is zero. Then the input is zero plus one, which is one. Diamond of one is one squared minus two times one, so one minus two, which is negative one.",
     "at": [
-     "Another way",
-     "Letters in the",
-     "plug in a",
-     "x is zero",
-     "One minus two"
+     "Now let's",
+     "There are letters",
+     "choices, so I",
+     "a value for",
+     "The easiest value",
+     "Then the input",
+     "plus one, which",
+     "Diamond of one",
+     "squared minus two",
+     "so one minus",
+     "is negative one"
     ]
    },
    {
-    "say": "The choices with x zero give one, negative one, negative one, and three. Two choices tie. Zero is a lazy number, it wipes out whole terms.",
+    "say": "Now the choices with x is zero. Choice number one gives one. Choice number two gives negative one. Choice number three gives negative one too. And choice number four gives three. So choice numbers one and four are out.",
     "at": [
-     "give one, negative one",
-     "and three. Two choices tie",
-     "Two choices tie",
-     "it wipes out"
+     "Now the choices with",
+     "is zero. Choice",
+     "number one gives",
+     "number two gives",
+     "number three gives",
+     "too. And choice",
+     "number four gives",
+     "So choice numbers one",
+     "and four are out"
     ]
    },
    {
-    "say": "So a second number, x is two. The input is three, nine minus six, three. The choices give one, three, negative one and seven. Only choice number two. [pause] Okay. I'll see you in the next question.",
+    "say": "But two choices are left with the same value. Zero is a lazy number here, because it wipes out every term with x. So we need a second number, x is two. Then the input is three. Diamond of three is nine minus six, which is three.",
     "at": [
+     "But two choices",
+     "with the same",
+     "Zero is a",
+     "here, because it",
+     "every term with",
+     "we need a",
      "x is two",
-     "minus six, three",
-     "give one, three",
-     "and seven. Only",
-     "Only choice number two"
+     "Diamond of three",
+     "minus six, which"
+    ]
+   },
+   {
+    "say": "Choice number two gives four minus one, which is three. Choice number three gives four minus four minus one, which is negative one. So choice number three is out, and choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "number two gives",
+     "gives four minus one",
+     "is three. Choice",
+     "number three gives",
+     "four minus one, which is negative",
+     "So choice number three is out",
+     "and choice number two is our answer"
     ]
    }
   ]

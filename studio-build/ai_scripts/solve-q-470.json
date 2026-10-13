@@ -1,107 +1,107 @@
 {
-  "videoId": "solve-q-470",
-  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "b and y are integers. Given: y is equal to b minus three, squared, plus b plus eight, cubed. Which of the following statements is necessarily true?",
-        "voice": "calm",
-        "at": [
-          "b and y are"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So the choices ask about even and odd. [short pause] We'll solve it three ways, comparing the two numbers inside the brackets, checking without the powers, and then plugging in numbers.",
-        "at": [
-          "about even and odd",
-          "solve it three",
-          "the two numbers",
-          "powers, and then"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start with the two brackets. Both use the same b. From b minus three to b plus eight is a gap of eleven. So the two numbers inside the brackets differ by eleven.",
-        "at": [
-          "Let's start",
-          "Both use the",
-          "From b minus three",
-          "a gap of"
-        ]
-      },
-      {
-        "say": "Eleven is odd. Adding an odd number to an even number gives an odd number, and adding it to an odd number gives an even number. From two, adding eleven gives thirteen. From five, adding eleven gives sixteen. So one bracket is even and the other is odd.",
-        "at": [
-          "Eleven is odd",
-          "to an even",
-          "From two, adding",
-          "From five, adding",
-          "So one bracket",
-          "and the other"
-        ]
-      },
-      {
-        "say": "The square and cube keep each number even or odd. So after the powers, we still have one even number and one odd number. Odd plus even is odd. So y is always odd, and choice number four is our answer.",
-        "at": [
-          "The square and",
-          "one even number",
-          "Odd plus even",
-          "So y is",
-          "Choice number four is our answer"
-        ]
-      }
+ "videoId": "solve-q-470",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "b and y are integers. Given: y is equal to b minus three, squared, plus b plus eight, cubed. Which of the following statements is necessarily true?",
+    "voice": "calm",
+    "at": [
+     "b and y are"
     ],
-    [
-      {
-        "say": "[pause] Another way is to check without calculating the powers. We can do this because a positive whole-number power keeps a number even or odd. We're only checking that type, not finding y's actual value.",
-        "at": [
-          "Another way",
-          "is to check",
-          "to check without",
-          "check without calculating",
-          "without calculating the",
-          "powers. We can",
-          "power keeps a",
-          "We're only checking"
-        ]
-      },
-      {
-        "say": "Without the powers, the sum is b minus three plus b plus eight. Add the b terms and the numbers: two b plus five. Two b is always even. Adding five makes it odd. This simpler sum is odd, so the expression with the powers is odd too. Choice number four is our answer.",
-        "at": [
-          "Without the powers",
-          "Add the b",
-          "Two b is always even",
-          "Adding five makes",
-          "Adding five makes",
-          "so the expression",
-          "number four"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in. Choose b, since y depends on b. Start with the easy value, b is one. One minus three is negative two, whose square is four. One plus eight is nine, and nine cubed is seven hundred twenty-nine. Four plus seven hundred twenty-nine is seven hundred thirty-three, odd. Check the choices now. y is not even, so choice number two is out. And b is not even, so choice number three is out.",
-        "at": [
-          "Now let",
-          "b is one",
-          "choice number two is out",
-          "choice number three is out"
-        ]
-      },
-      {
-        "say": "Choices one and four remain. Choice number one says b must be odd, so let's try a small even value, b is two. That is allowed: any integer b gives an integer y in this expression. b is now even, so the claim that b must be odd fails. Choice number one is out. We do not need to calculate the new y to rule out a claim about b.",
-        "at": [
-          "Choice number one says",
-          "b is two",
-          "Choice number one is out"
-        ]
-      },
-      {
-        "say": "Only choice number four remains, y is odd. That is our answer, and we can stop. Our earlier methods explained why y is odd for every allowed b. Okay. I'll see you in the next question.",
-        "at": [
-          "Only choice number four remains"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So the choices ask about even and odd. [short pause] We'll solve it three ways, comparing the two numbers inside the brackets, checking without the powers, and then plugging in numbers.",
+    "at": [
+     "about even and odd",
+     "solve it three",
+     "the two numbers",
+     "powers, and then"
     ]
+   },
+   {
+    "say": "[short pause] Let's start with the two brackets. Both use the same b. From b minus three to b plus eight is a gap of eleven. So the two numbers inside the brackets differ by eleven.",
+    "at": [
+     "Let's start",
+     "Both use the",
+     "From b minus three",
+     "a gap of"
+    ]
+   },
+   {
+    "say": "Eleven is odd. Adding an odd number to an even number gives an odd number, and adding it to an odd number gives an even number. From two, adding eleven gives thirteen. From five, adding eleven gives sixteen. So one bracket is even and the other is odd.",
+    "at": [
+     "Eleven is odd",
+     "to an even",
+     "From two, adding",
+     "From five, adding",
+     "So one bracket",
+     "and the other"
+    ]
+   },
+   {
+    "say": "The square and cube keep each number even or odd. So after the powers, we still have one even number and one odd number. Odd plus even is odd. So y is always odd, and choice number four is our answer.",
+    "at": [
+     "The square and",
+     "one even number",
+     "Odd plus even",
+     "So y is",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way is to check without calculating the powers. We can do this because a positive whole-number power keeps a number even or odd. We're only checking that type, not finding y's actual value.",
+    "at": [
+     "Another way",
+     "is to check",
+     "to check without",
+     "check without calculating",
+     "without calculating the",
+     "powers. We can",
+     "power keeps a",
+     "We're only checking"
+    ]
+   },
+   {
+    "say": "Without the powers, the sum is b minus three plus b plus eight. Add the b terms and the numbers: two b plus five. Two b is always even. Adding five makes it odd. This simpler sum is odd, so the expression with the powers is odd too. Choice number four is our answer.",
+    "at": [
+     "Without the powers",
+     "Add the b",
+     "Two b is always even",
+     "Adding five makes",
+     "Adding five makes",
+     "so the expression",
+     "number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in. Choose b, since y depends on b. Start with the easy value, b is one. One minus three is negative two, whose square is four. One plus eight is nine, and nine cubed is seven hundred twenty-nine. Four plus seven hundred twenty-nine is seven hundred thirty-three, odd. Check the choices now. y is not even, so choice number two is out. And b is not even, so choice number three is out.",
+    "at": [
+     "Now let",
+     "b is one",
+     "choice number two is out",
+     "choice number three is out"
+    ]
+   },
+   {
+    "say": "Choices one and four remain. Choice number one says b must be odd, so let's try a small even value, b is two. That is allowed: any integer b gives an integer y in this expression. b is now even, so the claim that b must be odd fails. Choice number one is out. We do not need to calculate the new y to rule out a claim about b.",
+    "at": [
+     "Choice number one says",
+     "b is two",
+     "Choice number one is out"
+    ]
+   },
+   {
+    "say": "Only choice number four remains, y is odd. That is our answer, and we can stop. Our earlier methods explained why y is odd for every allowed b. Okay. I'll see you in the next question.",
+    "at": [
+     "Only choice number four remains"
+    ]
+   }
   ]
+ ]
 }

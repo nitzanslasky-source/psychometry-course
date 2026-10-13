@@ -46,6 +46,7 @@
    {
     "say": "A number is divisible by two when its last digit is even. Here X is that last digit, so let's check which of our three remaining digits are even. Now two. Six one two ends in two, even. Six one five ends in five, odd, so it's out. Six one eight ends in eight, even. So X has two values, two and eight, and choice number two is our answer.",
     "at": [
+     "A number",
      "Six one two",
      "Six one five",
      "five, odd, so",

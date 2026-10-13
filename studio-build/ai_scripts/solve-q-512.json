@@ -1,96 +1,99 @@
 {
-  "videoId": "solve-q-512",
-  "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "A, B, C and D represent digits. Given: B A, plus D A, is equal to C C A. B plus C plus D is equal to what?",
-        "voice": "calm",
-        "at": [
-          "A, B, C"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "B A and D A are two-digit numbers. C C A is the three-digit result of adding them. Each letter stands for one digit in those numbers. [short pause] We'll use our four steps to solve the addition.",
-        "at": [
-          "short pause] We'll",
-          "short pause] We'll",
-          "We'll use our"
-        ]
-      },
-      {
-        "say": "[short pause] Step one, write the addition vertically, with the ones digits in one column and the tens digits in the next. Now we can check each column.",
-        "at": [
-          "write the addition",
-          "Now we can",
-          "we can check"
-        ]
-      },
-      {
-        "say": "Step two, the ones column. We add A plus A, and the result must end in A again. So adding another A does not change the last digit. A is a single digit, and nothing carries into the ones column. The only digit we can add without changing that last digit is zero. Five plus zero ends in five, and eight plus zero ends in eight. So A is zero.",
-        "at": [
-          "Step two, the",
-          "A plus A",
-          "nothing carries into",
-          "Nothing carries into",
-          "column. The only",
-          "Five plus zero",
-          "eight plus zero",
-          "So A is"
-        ]
-      }
+ "videoId": "solve-q-512",
+ "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A, B, C and D represent digits. Given: B A, plus D A, is equal to C C A. B plus C plus D is equal to what?",
+    "voice": "calm",
+    "at": [
+     "A, B, C"
     ],
-    [
-      {
-        "say": "Step three, the leftmost digit. We added two two-digit numbers and got a three-digit number. That new hundreds digit can only be one. Here that digit is C, so C is one.",
-        "at": [
-          "digit. We added",
-          "numbers and got",
-          "digit number. That",
-          "number. That new",
-          "That new hundreds"
-        ]
-      },
-      {
-        "say": "Why can it only be one? Even ninety-nine plus ninety-nine is just a hundred ninety-eight, below two hundred. And ninety plus ninety is a hundred eighty. So when two two-digit numbers give a three-digit sum, its hundreds digit is one. This rule is for adding two numbers. Adding three or four numbers can give a larger first digit.",
-        "at": [
-          "ninety-nine plus ninety-nine",
-          "And ninety plus",
-          "This rule is",
-          "rule is for",
-          "Three or four",
-          "give a larger"
-        ]
-      },
-      {
-        "say": "Now check the tens column. A is zero, so zero plus zero carries nothing into this column. C is one, so the result has one in both its tens and hundreds places. That means B plus D is eleven. B and D could be three and eight, or four and seven. We do not need to find them separately.",
-        "at": [
-          "B plus D",
-          "B plus D",
-          "B plus D",
-          "B plus D",
-          "B plus D",
-          "Three and eight",
-          "and seven. We",
-          "need to find"
-        ]
-      },
-      {
-        "say": "The question asks for B plus C plus D. B plus D is eleven, and C is one. Add them to get twelve. Choice number four is our answer.",
-        "at": [
-          "eleven, and C",
-          "Choice number four is our answer"
-        ]
-      },
-      {
-        "say": "We can check the examples: thirty plus eighty is a hundred ten. Forty plus seventy is a hundred ten too. Both fit the addition. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "thirty plus eighty",
-          "ten. Forty plus",
-          "is a hundred ten too"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "B A and D A are two-digit numbers. C C A is the three-digit result of adding them. Each letter stands for one digit in those numbers. [short pause] We'll use our four steps to solve the addition.",
+    "at": [
+     "short pause] We'll",
+     "short pause] We'll",
+     "We'll use our"
     ]
+   },
+   {
+    "say": "[short pause] Step one, write the addition vertically, with the ones digits in one column and the tens digits in the next. Now we can check each column.",
+    "at": [
+     "write the addition",
+     "Now we can",
+     "Now we can check",
+     "we can check"
+    ]
+   },
+   {
+    "say": "Step two, the ones column. We add A plus A, and the result must end in A again. So adding another A does not change the last digit. A is a single digit, and nothing carries into the ones column. The only digit we can add without changing that last digit is zero. Five plus zero ends in five, and eight plus zero ends in eight. So A is zero.",
+    "at": [
+     "Step two, the",
+     "Step two, the ones",
+     "A plus A",
+     "nothing carries into",
+     "Nothing carries into",
+     "column. The only",
+     "Five plus zero",
+     "eight plus zero",
+     "So A is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Step three, the leftmost digit. We added two two-digit numbers and got a three-digit number. That new hundreds digit can only be one. Here that digit is C, so C is one.",
+    "at": [
+     "Step three",
+     "digit. We added",
+     "numbers and got",
+     "digit number. That",
+     "number. That new",
+     "That new hundreds"
+    ]
+   },
+   {
+    "say": "Why can it only be one? Even ninety-nine plus ninety-nine is just a hundred ninety-eight, below two hundred. And ninety plus ninety is a hundred eighty. So when two two-digit numbers give a three-digit sum, its hundreds digit is one. This rule is for adding two numbers. Adding three or four numbers can give a larger first digit.",
+    "at": [
+     "ninety-nine plus ninety-nine",
+     "And ninety plus",
+     "This rule is",
+     "rule is for",
+     "Three or four",
+     "give a larger"
+    ]
+   },
+   {
+    "say": "Now check the tens column. A is zero, so zero plus zero carries nothing into this column. C is one, so the result has one in both its tens and hundreds places. That means B plus D is eleven. B and D could be three and eight, or four and seven. We do not need to find them separately.",
+    "at": [
+     "B plus D",
+     "B plus D",
+     "B plus D",
+     "B plus D",
+     "B plus D",
+     "Three and eight",
+     "and seven. We",
+     "need to find"
+    ]
+   },
+   {
+    "say": "The question asks for B plus C plus D. B plus D is eleven, and C is one. Add them to get twelve. Choice number four is our answer.",
+    "at": [
+     "eleven, and C",
+     "Choice number four is our answer"
+    ]
+   },
+   {
+    "say": "We can check the examples: thirty plus eighty is a hundred ten. Forty plus seventy is a hundred ten too. Both fit the addition. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "thirty plus eighty",
+     "ten. Forty plus",
+     "is a hundred ten too"
+    ]
+   }
   ]
+ ]
 }

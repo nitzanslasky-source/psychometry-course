@@ -751,6 +751,36 @@ Topic-18 order: the camera lesson `digit-puzzles`, then q-512, q-513, q-514, r26
 | ABC − CBA = 99(A − C) | q-r26-t18-02 | summary |
 | The units digit and the size of a product | q-r26-t18-03 | summary |
 
+### Topic 19: where each idea is first taught (R29 / R32)
+
+Topic-19 order: the camera lesson `new-operation`, then q-541, q-542, q-543, q-r26-t19-01, q-r26-t19-02, operation-patterns, q-544, q-545, q-r26-t19-03, q-546, q-547, q-548, q-549, q-r26-t19-18, q-550, q-551, q-r26-t19-05, q-552, q-553, q-554, q-555, q-556, summary. Topic 19 comes after topic 37 in the study plan. The signature pictures (the same template, inside out, down and back up) are in "Method visuals library".
+
+| Idea | First taught (full) | Later (reminder) |
+|---|---|---|
+| A new operation = a definition; the order of the inputs can matter; the exam's symbols | camera lesson `new-operation` | q-r26-t19-02, summary |
+| Every input goes in brackets; an expression goes in whole | camera lesson | q-r26-t19-01, summary |
+| The same template with the input in EVERY slot (the substitution picture) | q-541 | q-544, q-548, q-552, q-554, summary |
+| Inside out: the inner value becomes the outer input; don't stop halfway | camera lesson (rule); q-542 (the picture, the trap) | q-545, q-550, q-551, summary |
+| No definition: put the input into each choice | camera lesson | q-543, summary |
+| "Not always" = one counterexample; "always" = algebra; no equal numbers | camera lesson | q-r26-t19-02, q-555, summary |
+| Zero as a lazy test number → a second number | q-r26-t19-01 | q-549, summary |
+| The inverse operation: undo the steps in reverse order | operation-patterns (lesson) | summary |
+| An operation on an expression: match the whole input slot | q-544 | summary |
+| Conditions: check odd / even at every step | q-545 | q-r26-t19-03, summary |
+| Conditions backwards: keep an answer only if it fits its own rule | q-r26-t19-03 | summary |
+| A circular rule: down to the start value, back up; the pattern | q-546 | q-547, summary |
+| The operation on both sides: isolate it like an unknown (rare) | q-548 | summary |
+| The operation in every choice: skip and come back | q-549 | summary |
+| Rules that undo themselves (c / x, c − x) | q-r26-t19-18 | summary |
+| Read the outer operation first (1, 1, z; a zero in a slot) | q-550 | — |
+| Shortcut formulas inside a definition | q-551 (formulas: topic 4) | summary |
+| f(k) − f(−k): even powers cancel, odd powers double | q-r26-t19-05 | summary |
+| The slot matters; one plug-in when the choices are numbers | q-552 | — |
+| Squared brackets: don't open early; (a − b)² = (b − a)² | q-553 | — |
+| The biggest power needs the smallest digit | q-554 | — |
+| 3/x: reciprocal thinking; a bigger denominator, a smaller fraction | q-555 | — |
+| Counting a prime factor: × 5 adds one five | q-556 (factorization: topic 14) | — |
+
 ## Clarity style (learned from the 2026-10-12 Codex edits — teacher approved 2026-10-13: "easier for the students to understand, with easier English")
 
 Write every NEW script directly in this style (topics 13–18 got it as an overlay: `_codex_script_clarity_20261012.json`, applied by the topic hooks — never remove it or regenerate without it).
@@ -767,3 +797,76 @@ Write every NEW script directly in this style (topics 13–18 got it as an overl
 - **Overlapping choices:** don't eliminate a broader description with an example that it also allows; use the general rule.
 - **Short sentences, everyday words,** each one easy to read aloud from the teleprompter. Keep the teacher's phrases (phrase bank) and all R1–R35 rules.
 - **Keep cue anchors** (`at` phrases) as natural parts of the new sentences.
+
+## Method visuals library (teacher, 2026-10-13: "always check if the visuals change a bit … the V method … the V table and the way it looks, that's what makes it so easy for students to use it. The seesaw method also has special visuals of its own")
+
+**Rule V1. When a method has a signature visual, every video that uses that method must show and build that same visual (same look, built step by step), not a plain list of lines.** Build it in the order she draws it (below), each layer at the spoken words. In the AI-redo plans a figure is a base item plus layers (`over=1`) that must be shown **right after** the base, with no other board item in between (the renderer draws a layer at the y of the last item shown; `_method_visuals.check_layers` enforces it).
+
+**Rule V2. When a slide is cleared mid-solution, the results the next step depends on stay on screen (carry-over box).** A small "So far: x = 2 · choices 2 and 4 left" box is shown with the new slide's first words, in the lighter column (`_method_visuals.carry`, list `CARRY`, or `keep` lists per slide). It is never carried into a new method (each method starts from the givens, R30).
+
+Code: `math_patches/_method_visuals.py` (builders return layers `[('line', base), (key, layer) …]`; `items(_layers, name, out)` turns them into board items; `post(ns, topic)` applies the fixes and the carry-overs at the END of each `_ai_vis_tNN.py`, after Codex's clarity overlay). Every SVG: no width/height on the root, a viewBox, `<title>` + aria-label, strict XML, ink #203344 / teal #087f83 / band #d5f1ed, bold labels, transparent background (layers).
+
+Topic numbers are the course's. Hebrew line refs: alg / wp / geo = `~/Downloads/0N-*-Original-Subtitles.txt`. "Studio" = where the current studio first shows it.
+
+### Algebra
+
+| Method (topic) | What it looks like | Built in this order | First taught (Hebrew → studio) | Builder |
+|---|---|---|---|---|
+| Column arithmetic on a grid (1, 2) | numbers right-aligned, one digit per square, the carry above the column; decimal points one above the other | the numbers → the line → column by column from the right, carry written above | alg 269-275, 1311 → `add-subtract` s6 | renderer `k:'col'` (static) |
+| Fraction shapes (2) | circles cut into equal slices, shaded; two rectangles laid over each other (3/8 + 2/8); mismatched stripes for 3/8 on 2/6 | the whole → cut → shade → (lay over) | alg 642-898, 1091-1203 → `fraction-basics` s2 | `k:'pie'`, `k:'bar'`, `k:'grid'` |
+| Butterfly compare (2, 3) | two fractions side by side, the diagonal products written ABOVE the numerators | fractions → one diagonal → its product on top → the other | alg 1443-1640 (a mantra) | none (typed) |
+| Colour families of like terms (4) | the like terms in one colour per family | expression → colour each family → collect | alg 2315-2320 | none |
+| Solution-set sketch (12) | each inequality's solution as a ray over the axis; the overlap read off | axis → ray 1 → ray 2 → the overlap shaded | alg 9102-9237 → `solve-q-325` | `_shaded_nl.fig` |
+| Distance picture of absolute value (13) | \|x − a\| = steps between x and a: the centre marked, arrows r steps each way, a closed band (small side) or two open rays (big side); symmetric "mirror" | line with the centre → right arrow → left arrow → band / rays | alg 11083-11847 → `solve-q-359` | `DIST` (t13-t19) |
+| Prime strip (14) | the whole numbers in a row, the primes coloured | the strip → the primes → x and y placed | alg 13738-13742 → `solve-q-386` | `STRIP` (t14-t16) |
+| Factor tree (14) | the number at the top, splitting into a circled prime and the rest, down to primes; two trees side by side for "divisible by 9 and 12" | root → each split, prime circled → (cross out the shared prime once) | alg 13812-14068 → camera `primes` s8 (hand-drawn), `solve-q-389` | `TREE` (t14) |
+| Divisibility-signs table (15) | the rules for 2, 3, 4, 5, 6, 8, 9, 10, 11 in one table | row by row | alg 14848-14882 → camera `divisibility` | typed |
+| Four regions + mirror (17) | ticks at −1, 0, 1 cutting the line into 4 ranges; the negatives as the mirror image | line → −1, 0, 1 → name the ranges | alg 17365-17547 → camera `number-line` | `ZL` (t17-t19) |
+| Power arrows (17) | the 4-range line with one arrow per range: right, left, right (odd), left (odd) | the line → the arrow of each range as it is said | alg 17549-17720 → `powers-on-number-line` s3 | `ZL` |
+| Letters on the axis (13, 16, 17) | a < b < 0 < c < d placed on an axis, signs over the factors | axis → each letter in order → plug-in values under them | alg 12234-12411, 16520 → `solve-q-496` | `ZL` |
+| Stacked letter columns (18) | AB + AD = CDB written vertically, letters by place; the ones column read first, then the leftmost digit | the two numbers + line → the result row → box the ones column → the leftmost digit | alg 18215-18450 → camera `digit-puzzles` | `COLS` (new) |
+| The same template (19) | the rule, and under it the SAME template with the input in every slot ("where there was an a, I put the 4") | the rule with its slots → arrows into the copy → the copy with the input → the calculation | alg 18853-18868 | `SLOT` (new) |
+| Inside out, coloured (19) | the inner operation coloured, then replaced by its value, which flows into the outer slot | the nested call, inner boxed → the inner row and its value → the value moves into the outer row | alg 18910-18925 ("צבעתי את זה בכתום") | `CHAIN` (new) |
+| Down and back up (19, circular rule) | one row per call going down to the start value, then the values climbing back up | each row down (the unknown call boxed) → the start value → each value back up | alg 19048-19114 | `CHAIN(..., up=)` (new) |
+
+### Word problems
+
+| Method (topic) | What it looks like | Built in this order | First taught (Hebrew → studio) | Builder |
+|---|---|---|---|---|
+| Then-and-now table (22) | rows today / 3 years ago, columns per person (X, X+4 / X−3, X+1) | header → today row → "I stop and continue my table": the then row → the equation | wp 1942-1990 | `RATIO`-style table (typed today) |
+| Matching arcs (22) | "boys : girls = 4 : 7", two non-crossing arcs boys→4, girls→7 | words → numbers → the two arcs | wp 1690-1697 | none |
+| Fraction bar for stories (22) | the group as a rectangle cut into 8, 7 kept; again for the next stage | rectangle → cut → keep | wp 2213-2267 → `k:'bar'` | `k:'bar'` |
+| Ratio table + the triangle (22; reused 23-29, 36) | a column per quantity, row 1 the known pair, row 2 the new value and "?"; ×k across or down, else the diagonal ("triangle value": multiply along the diagonal, divide by what is left) | headers → row 1 → row 2 → the ×k arrow (or the diagonal) | wp 1278-1439 → `solve-wp22-g029` (arrows hand-drawn) | `RATIO` (new) |
+| Plug 100, written on the stem (23) | the numbers 100, 60, 40 … written right above the words of the question | pick 100 → write each number on its words | wp 3274-3321 | stem POINTs + typed numbers |
+| Percent tree (23) | root = the whole 100%, a split that adds up to 100%, one node splits again (its own 100%); a leaf = the product along its path | root → first split → second split → multiply along the path | wp 3338-3392 (she prefers plugging in 100) | `PCTTREE` (new) |
+| Two circles (24) | sail / motor circles; only-A, both, only-B, neither | circles → both first → each "only" → neither | wp 4330-4392 → `wp-067` s2 | `VENN` (new) |
+| The squares method (24; also 52) | one rectangle cut into 4 boxes: only A, both, only B, neither; brackets over 1-2 (A) and 2-3 (B) | the 4 boxes → bracket A → bracket B → fill "like a sudoku" | wp 4530-4617 → `wp-069` s3 | `STRIP4` (new) |
+| Cube towers (25) | a tower of cubes per value, levelled to the mean | towers → move cubes → level | wp 5175-5253 → `wp-080` s5 | `bars` (legacy) |
+| Balance point (25) | the mean on an axis, two values at equal distances | axis → mean → one value → the mirror value | wp 5329-5387 | `ZL` |
+| The seesaw (25) | exam form: an axis, the values ABOVE the ends, the weights BELOW, the gap cut into w1 + w2 units, the pivot nearer the heavier side | axis → values → weights → units → pivot (+ the two distances) | wp 5643-5918 → `solve-wp25-g083` (hand-drawn split) | `SEESAW` (new) |
+| Formula triangle (26, 27) | work (distance) on top, time × rate (speed) at the bottom; cover the one you want | triangle → the three names | wp 5945-5950, 6999-7014 → `wp-092` s2 | `TRI` (new); legacy `formulaTriangle` |
+| Common-time rows (26) | one line per worker, scaled to the same time, then a sum line | worker lines → scale to 6 h → sum → back to 1 job | wp 6165-6206 | typed |
+| The V method (26) | team \| work \| time (work ALWAYS in the middle); row 1 given, row 2 asked; a V from row-1 team down to row-2 work and up to row-1 time; multiply the V, divide by the other two; upside-down V when the work is unknown | header → row 1 → row 2 → the V → the rule | wp 6226-6354, 6739-6784 ("when 2 factors change") → `wp-097` s4 (V hand-drawn) | `VTABLE` (new) |
+| Merged worker "Avivatya" (26) | two workers bracketed into one named worker | the two → bracket → the new name | wp 6647-6724 | typed (name needs an approved English version) |
+| Motion sketch (27) | a road with the cities, the vehicles, the first-stage distance, the gap left, arrows toward each other | road → ends → first stage → gap → arrows | wp 7560-7567, 7096 | legacy `route` |
+| Motion table (27) | distance \| time \| speed, a row per leg / body, or one "between them" row | header → rows → the unknown | wp 7175, 7550-7599, 7879 → `wp-106` s5 | `DST` (new) |
+| Road in ratio parts (27) | the road cut into 2 + 3 parts, each mover's share | road → the parts → "give them a second" | wp 7244-7419 | none |
+| Crash / chase pictures (27) | two vehicles with arrows: toward = add, same way = subtract | vehicles → arrows → the speeds | wp 7442-7498 | none |
+| Lap track (27) | an oval track, two karts, a lap counter | track → karts → laps | wp 8061-8283 | legacy `circularMotion` |
+| Stage slots (28) | a row of labelled stages with the number of options under each, multiplied | the stages → options under each → × | wp 8289-8627 | typed |
+| Handshake graph (28) | countries on a globe / polygon vertices, lines counted twice | points → lines → ÷ 2 (− sides) | wp 8629-8814 | legacy `network` / `polygon` |
+| Games table (28) | teams \| games added \| total (1 → 0, 2 → 1, 3 → 3 …), on the exam one row 1 + 2 + … | header → row by row → the short row | wp 9528-9706 → `solve-wp28-g143` | typed table |
+| Dice-sum pyramid (29) | sums 2-12, a column of marks for each (1 … 6 … 1); red and blue dice | the sums → the marks → the symmetry | wp 10311-10463 | none (legacy `dice`) |
+
+**Not in the Hebrew** (new material if added): a probability tree, a 3-circle Venn.
+
+### Geometry and charts (one line each; builders are the per-shape figures in t30-t38)
+Z for parallel lines (30; geo 109-124) · gold 30-60-90 and silver "borekas" 45-45-90 triangles (31; geo 1053-1194) · the fold line of symmetry (31-32; geo 577) · the squash / stretch shape family (32; geo 1771) · white = grey, and "grey = what minus what" (32-34; geo 2868-3269) · the sector as a pizza slice + the benchmark angle table (33-34; geo 3794-3837) · hexagon splits (34; geo 5660) · the unrolled cylinder (35; geo 6030) · counting cubes in layers (35-36; geo 6942) · grid paper for similarity, then ratio units (36; geo 7144-7253) · the similarity table small \| large + hourglass (36; geo 7440-7703, uses the ratio table's triangle) · slope stairs (37; geo 8896-8928) · opening angle / anchor / push to the extreme (38; geo 9568-9769) · charts: one data set as table, points, line and bars; the 60% boundary line; hide the trend lines; the squares method in a table (52).
+
+### Audit of topics 13-19 against V1 and V2 (2026-10-13)
+- Topic 13: the summary's "Distance" slide now draws the distance line (|x + 6| measured from −6). The number-line method videos (q-359, q-360, q-361) already build DIST.
+- Topic 14: the 112 ladder in q-389 had a carried item drawn between its root and its layers (it would draw the ladder 14 px off): fixed. The summary's "Break it down" now builds the factor tree of 44.
+- Topic 17: the summary's "The arrows" slide now builds the four arrows. q-r26-t17-02 keeps its typed lines (the question itself shows the number line).
+- Topic 18: q-512 and q-515 now build the stacked columns (numbers + line, then the result row, then the ones column boxed). q-513, q-516, q-518, q-519 and q-r26-t18-01 keep the typed column layouts: their left columns are full, and a built layout there runs into the answer choices once the handwriting is on (to do: a right-column figure that the renderer pushes below the question, like it does for typed items).
+- Topic 19: written with SLOT / CHAIN from the start.
+- Carry-over boxes: 25 slides in topics 13-18 (list `CARRY` in `_method_visuals.py`), e.g. q-428 keeps "X = 2, 5, 8" while it checks divisibility by 2.

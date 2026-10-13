@@ -1,138 +1,139 @@
 {
-  "videoId": "solve-q-r26-t18-01",
-  "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "A and B represent digits. Given: two A six, plus B eight, is equal to three A four. B is equal to what?",
-        "voice": "calm",
-        "at": [
-          "A and B"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "We have an addition with some digits replaced by letters. We need B. [short pause] We'll solve it two ways, checking the columns, and then writing each number using its place values.",
-        "at": [
-          "some digits replaced",
-          "We'll solve it",
-          "checking the columns",
-          "writing each number"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start with the columns. Write the numbers vertically with the ones digits lined up. Six plus eight is fourteen. Write four in the ones column, which matches the result, and carry one to the tens column.",
-        "at": [
-          "Let's start",
-          "start with the columns",
-          "six plus eight",
-          "Write four in"
-        ]
-      },
-      {
-        "say": "In the tens column, we add A plus B plus that carried one. The result must end in A. Careful, this does not mean B is zero. If B were zero, we would still add the carried one, giving A plus one, not the same last digit A. So choice number two is the trap.",
-        "at": [
-          "Careful, this does",
-          "Careful, this does",
-          "Careful, this does",
-          "does not mean",
-          "mean B is",
-          "If B were",
-          "B were zero",
-          "giving A plus",
-          "not the same",
-          "is the trap"
-        ]
-      },
-      {
-        "say": "To get back to the same last digit A, the extra amount we add must be ten. That extra amount is B plus the carried one. So B plus one is ten, which means B is nine. We carry one to the hundreds column, where two plus one is three. It all fits. Choice number four is our answer.",
-        "at": [
-          "B plus one",
-          "the hundreds column",
-          "is three. It",
-          "Choice number four is our answer"
-        ]
-      },
-      {
-        "say": "This works for any digit A. Use A is five: two hundred fifty-six plus ninety-eight is three hundred fifty-four. So when a column keeps the same last digit, check the carry. Without a carry, the added digit is zero. With a carried one, it is nine. When adding two numbers, the carry is at most one. Adding three or four numbers can carry two or three.",
-        "at": [
-          "two hundred fifty",
-          "three hundred fifty",
-          "when a column",
-          "keeps the same",
-          "check the carry",
-          "Without a carry",
-          "numbers, the carry",
-          "Three or four",
-          "carry two or"
-        ]
-      }
+ "videoId": "solve-q-r26-t18-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A and B represent digits. Given: two A six, plus B eight, is equal to three A four. B is equal to what?",
+    "voice": "calm",
+    "at": [
+     "A and B"
     ],
-    [
-      {
-        "say": "Compare this with A plus C ends in A from the earlier question. That was the ones column, so nothing carried into it. C had to be zero. With A is five, five plus zero is five, keeping the same last digit.",
-        "at": [
-          "earlier question. That",
-          "That was the",
-          "That was the",
-          "so nothing carried",
-          "C had to be zero",
-          "With A is",
-          "zero is five",
-          "digit."
-        ]
-      },
-      {
-        "say": "Here, we are in the tens column and a one has carried in. We add B and that one to A. To keep the last digit A, B plus one must make ten. So B is nine.",
-        "at": [
-          "the tens column",
-          "one has carried",
-          "We add B",
-          "that one to",
-          "To keep the",
-          "B plus one",
-          "B plus one",
-          "must make ten",
-          "B is nine"
-        ]
-      },
-      {
-        "say": "With A is five, we add five plus nine plus one, which is fifteen. Write the five and carry the one. So keeping the same last digit does not always mean adding zero. First check if a carry entered the column.",
-        "at": [
-          "five plus nine",
-          "Write the five",
-          "carry the one",
-          "So keeping the",
-          "does not always",
-          "First check if",
-          "entered the column"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "[pause] Now use place values, without columns. The first number is two hundred six plus ten A. The second is ten B plus eight. The result is three hundred four plus ten A. So two hundred six plus ten A, plus ten B plus eight, equals three hundred four plus ten A. Writing the full values includes the carries in the calculation.",
-        "at": [
-          "Now use place values",
-          "without columns",
-          "The first number",
-          "The second",
-          "The result is",
-          "So two hundred six",
-          "equals three hundred four"
-        ]
-      },
-      {
-        "say": "Ten A is on both sides, so subtract it from both. That is why A can be any digit. Two hundred six plus eight is two hundred fourteen. Subtract that from three hundred four to get ten B equals ninety. Divide by ten: B is nine. Choice number four is our answer. Okay. I'll see you in the next question.",
-        "at": [
-          "Ten A is",
-          "sides, so subtract",
-          "why A can",
-          "Two hundred six",
-          "B equals ninety",
-          "Divide by ten"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "We have an addition with some digits replaced by letters. We need B. [short pause] We'll solve it two ways, checking the columns, and then writing each number using its place values.",
+    "at": [
+     "some digits replaced",
+     "We'll solve it",
+     "checking the columns",
+     "writing each number"
     ]
+   },
+   {
+    "say": "[short pause] Let's start with the columns. Write the numbers vertically with the ones digits lined up. Six plus eight is fourteen. Write four in the ones column, which matches the result, and carry one to the tens column.",
+    "at": [
+     "Let's start",
+     "start with the columns",
+     "six plus eight",
+     "Write four in"
+    ]
+   },
+   {
+    "say": "In the tens column, we add A plus B plus that carried one. The result must end in A. Careful, this does not mean B is zero. If B were zero, we would still add the carried one, giving A plus one, not the same last digit A. So choice number two is the trap.",
+    "at": [
+     "Careful, this does",
+     "Careful, this does",
+     "Careful, this does",
+     "does not mean",
+     "mean B is",
+     "If B were",
+     "B were zero",
+     "giving A plus",
+     "not the same",
+     "is the trap"
+    ]
+   },
+   {
+    "say": "To get back to the same last digit A, the extra amount we add must be ten. That extra amount is B plus the carried one. So B plus one is ten, which means B is nine. We carry one to the hundreds column, where two plus one is three. It all fits. Choice number four is our answer.",
+    "at": [
+     "B plus one",
+     "the hundreds column",
+     "is three. It",
+     "Choice number four is our answer"
+    ]
+   },
+   {
+    "say": "This works for any digit A. Use A is five: two hundred fifty-six plus ninety-eight is three hundred fifty-four. So when a column keeps the same last digit, check the carry. Without a carry, the added digit is zero. With a carried one, it is nine. When adding two numbers, the carry is at most one. Adding three or four numbers can carry two or three.",
+    "at": [
+     "two hundred fifty",
+     "three hundred fifty",
+     "when a column",
+     "keeps the same",
+     "check the carry",
+     "Without a carry",
+     "numbers, the carry",
+     "Three or four",
+     "carry two or"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Compare this with A plus C ends in A from the earlier question. That was the ones column, so nothing carried into it. C had to be zero. With A is five, five plus zero is five, keeping the same last digit.",
+    "at": [
+     "Compare this",
+     "earlier question. That",
+     "That was the",
+     "That was the",
+     "so nothing carried",
+     "C had to be zero",
+     "With A is",
+     "zero is five",
+     "digit."
+    ]
+   },
+   {
+    "say": "Here, we are in the tens column and a one has carried in. We add B and that one to A. To keep the last digit A, B plus one must make ten. So B is nine.",
+    "at": [
+     "the tens column",
+     "one has carried",
+     "We add B",
+     "that one to",
+     "To keep the",
+     "B plus one",
+     "B plus one",
+     "must make ten",
+     "B is nine"
+    ]
+   },
+   {
+    "say": "With A is five, we add five plus nine plus one, which is fifteen. Write the five and carry the one. So keeping the same last digit does not always mean adding zero. First check if a carry entered the column.",
+    "at": [
+     "five plus nine",
+     "Write the five",
+     "carry the one",
+     "So keeping the",
+     "does not always",
+     "First check if",
+     "entered the column"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now use place values, without columns. The first number is two hundred six plus ten A. The second is ten B plus eight. The result is three hundred four plus ten A. So two hundred six plus ten A, plus ten B plus eight, equals three hundred four plus ten A. Writing the full values includes the carries in the calculation.",
+    "at": [
+     "Now use place values",
+     "without columns",
+     "The first number",
+     "The second",
+     "The result is",
+     "So two hundred six",
+     "equals three hundred four"
+    ]
+   },
+   {
+    "say": "Ten A is on both sides, so subtract it from both. That is why A can be any digit. Two hundred six plus eight is two hundred fourteen. Subtract that from three hundred four to get ten B equals ninety. Divide by ten: B is nine. Choice number four is our answer. Okay. I'll see you in the next question.",
+    "at": [
+     "Ten A is",
+     "sides, so subtract",
+     "why A can",
+     "Two hundred six",
+     "B equals ninety",
+     "Divide by ten"
+    ]
+   }
   ]
+ ]
 }

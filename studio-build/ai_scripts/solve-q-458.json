@@ -1,93 +1,93 @@
 {
-  "videoId": "solve-q-458",
-  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "p, q and r are consecutive even numbers, and zero is smaller than p, which is smaller than q, which is smaller than r. What is r squared minus p squared, over two q?",
-        "voice": "calm",
-        "at": [
-          "p, q and r"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So p, q and r are positive even numbers in a row, in that order. The gaps are two, not one. We need the value of the fraction in the question. [short pause] We'll solve it two ways, writing the numbers with one letter, and then plugging in numbers.",
-        "at": [
-          "p, q and",
-          "two ways, writing",
-          "and then plugging"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start with the middle number, q. p is the previous even number, so p is q minus two. r is the next even number, so r is q plus two. Now all three numbers are written with q.",
-        "at": [
-          "the middle number",
-          "p is the",
-          "number, so p",
-          "p is q minus two",
-          "r is the"
-        ]
-      },
-      {
-        "say": "The top of the fraction is r squared minus p squared. Use the difference-of-squares formula to write it as r minus p, times r plus p. We'll find those two parts separately.",
-        "at": [
-          "r squared minus",
-          "minus p squared",
-          "the difference-of",
-          "minus p, times"
-        ]
-      },
-      {
-        "say": "First, r minus p. Replace r with q plus two, and subtract the whole expression q minus two. The q terms cancel. Two minus negative two is four, so r minus p is four. Now r plus p. That's q plus two, plus q minus two. The two and negative two cancel, leaving two q.",
-        "at": [
-          "r minus p is",
-          "Now r plus",
-          "q plus two, plus",
-          "minus two. The two"
-        ]
-      },
-      {
-        "say": "So the top is four times two q. The bottom is two q as well. Divide four times two q by two q. The matching two q cancels, leaving four. Choice number four is our answer.",
-        "at": [
-          "four times two q",
-          "is two q",
-          "Choice number four is our answer"
-        ]
-      },
-      {
-        "say": "Now careful, choice number two comes from using a gap of one. These are even numbers in a row, so each gap is two. That's why we used q minus two and q plus two.",
-        "at": [
-          "two comes from",
-          "comes from using",
-          "of one. These",
-          "even numbers in"
-        ]
-      }
+ "videoId": "solve-q-458",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "p, q and r are consecutive even numbers, and zero is smaller than p, which is smaller than q, which is smaller than r. What is r squared minus p squared, over two q?",
+    "voice": "calm",
+    "at": [
+     "p, q and r"
     ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in numbers. We need positive even numbers in a row, so the smallest values we can choose are two, four and six. Use p is two, q is four, and r is six.",
-        "at": [
-          "Now let's",
-          "the smallest values",
-          "we can choose",
-          "choose are two",
-          "two, four and six"
-        ]
-      },
-      {
-        "say": "Calculate the whole top first. Six squared is thirty-six, and two squared is four. Thirty-six minus four is thirty-two. Now the bottom: two times q is two times four, which is eight. Thirty-two over eight is four. Choice number four is our answer. Okay. I'll see you in the next question.",
-        "at": [
-          "Six squared is thirty-six",
-          "squared is four",
-          "minus four is",
-          "two times q",
-          "times four, which",
-          "Thirty-two over eight",
-          "Choice number four"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So p, q and r are positive even numbers in a row, in that order. The gaps are two, not one. We need the value of the fraction in the question. [short pause] We'll solve it two ways, writing the numbers with one letter, and then plugging in numbers.",
+    "at": [
+     "p, q and",
+     "two ways, writing",
+     "and then plugging"
     ]
+   },
+   {
+    "say": "[short pause] Let's start with the middle number, q. p is the previous even number, so p is q minus two. r is the next even number, so r is q plus two. Now all three numbers are written with q.",
+    "at": [
+     "the middle number",
+     "p is the",
+     "number, so p",
+     "p is q minus two",
+     "r is the"
+    ]
+   },
+   {
+    "say": "The top of the fraction is r squared minus p squared. Use the difference-of-squares formula to write it as r minus p, times r plus p. We'll find those two parts separately.",
+    "at": [
+     "r squared minus",
+     "minus p squared",
+     "the difference-of",
+     "minus p, times"
+    ]
+   },
+   {
+    "say": "First, r minus p. Replace r with q plus two, and subtract the whole expression q minus two. The q terms cancel. Two minus negative two is four, so r minus p is four. Now r plus p. That's q plus two, plus q minus two. The two and negative two cancel, leaving two q.",
+    "at": [
+     "r minus p is",
+     "Now r plus",
+     "q plus two, plus",
+     "minus two. The two"
+    ]
+   },
+   {
+    "say": "So the top is four times two q. The bottom is two q as well. Divide four times two q by two q. The matching two q cancels, leaving four. Choice number four is our answer.",
+    "at": [
+     "four times two q",
+     "is two q",
+     "Choice number four is our answer"
+    ]
+   },
+   {
+    "say": "Now careful, choice number two comes from using a gap of one. These are even numbers in a row, so each gap is two. That's why we used q minus two and q plus two.",
+    "at": [
+     "two comes from",
+     "comes from using",
+     "of one. These",
+     "even numbers in"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in numbers. We need positive even numbers in a row, so the smallest values we can choose are two, four and six. Use p is two, q is four, and r is six.",
+    "at": [
+     "Now let's",
+     "the smallest values",
+     "we can choose",
+     "choose are two",
+     "two, four and six"
+    ]
+   },
+   {
+    "say": "Calculate the whole top first. Six squared is thirty-six, and two squared is four. Thirty-six minus four is thirty-two. Now the bottom: two times q is two times four, which is eight. Thirty-two over eight is four. Choice number four is our answer. Okay. I'll see you in the next question.",
+    "at": [
+     "Six squared is thirty-six",
+     "squared is four",
+     "minus four is",
+     "two times q",
+     "times four, which",
+     "Thirty-two over eight",
+     "Choice number four"
+    ]
+   }
   ]
+ ]
 }

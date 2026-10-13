@@ -1,89 +1,89 @@
 {
-  "videoId": "solve-q-471",
-  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "k, a, b and c are integers. Given: two k plus one is equal to a cubed, times b plus one, squared, times c minus five, to the power of four. Which of the numbers k, a, b, c is necessarily odd?",
-        "voice": "calm",
-        "at": [
-          "k, a, b and c"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "It looks complicated, but we only need the rule for an odd product. [short pause] We'll solve it two ways, using that rule, and then plugging in numbers.",
-        "at": [
-          "It looks complicated",
-          "the rule for",
-          "We'll solve it",
-          "using that rule",
-          "plugging in numbers"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start with the left side, two k plus one. Two times any integer is even, and adding one makes it odd. If k is two, we get five. If k is three, we get seven. So the left side is odd, whether k is even or odd.",
-        "at": [
-          "Let's start",
-          "side, two k",
-          "Two times any",
-          "k is two",
-          "If k is three",
-          "seven. So the",
-          "So the left",
-          "the left side is"
-        ]
-      },
-      {
-        "say": "The right side equals the left, so it must be odd too. A product is odd only when every number we multiply is odd. One even number would make the whole product even. The powers keep each number even or odd, so let's check the numbers inside those powers.",
-        "at": [
-          "The right side",
-          "odd too. A",
-          "is odd only",
-          "every number we",
-          "One even number",
-          "The powers keep",
-          "let's check the"
-        ]
-      },
-      {
-        "say": "a cubed is odd, so a must be odd. b plus one must be odd, so b must be even. c minus five must be odd, so c must be even. Only a must be odd. Choice number two is our answer.",
-        "at": [
-          "a cubed is odd",
-          "so b must",
-          "c minus five",
-          "so c must",
-          "a must be odd. Choice",
-          "choice number two is our answer"
-        ]
-      }
+ "videoId": "solve-q-471",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "k, a, b and c are integers. Given: two k plus one is equal to a cubed, times b plus one, squared, times c minus five, to the power of four. Which of the numbers k, a, b, c is necessarily odd?",
+    "voice": "calm",
+    "at": [
+     "k, a, b and c"
     ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in. To rule out the other choices, look for a case where k, b and c are even. Use a is one, b is zero, and c is six. One cubed is one, zero plus one is one, and six minus five is one. Raising those ones to their powers keeps them one. So the whole right side is one.",
-        "at": [
-          "Now let's",
-          "To rule out",
-          "where k, b",
-          "a is one, b is zero",
-          "One cubed is",
-          "plus one is",
-          "six minus five",
-          "So the whole"
-        ]
-      },
-      {
-        "say": "Then two k plus one is one, so k is zero. k, b and c are all even in this example, and the equation works. So choice numbers one, three and four are out. Choice number two is our answer. Okay. I'll see you in the next question.",
-        "at": [
-          "Two k plus one is one",
-          "k, b and",
-          "are all even",
-          "choice numbers one",
-          "three and four",
-          "are out",
-          "Choice number two"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "It looks complicated, but we only need the rule for an odd product. [short pause] We'll solve it two ways, using that rule, and then plugging in numbers.",
+    "at": [
+     "It looks complicated",
+     "the rule for",
+     "We'll solve it",
+     "using that rule",
+     "plugging in numbers"
     ]
+   },
+   {
+    "say": "[short pause] Let's start with the left side, two k plus one. Two times any integer is even, and adding one makes it odd. If k is two, we get five. If k is three, we get seven. So the left side is odd, whether k is even or odd.",
+    "at": [
+     "Let's start",
+     "side, two k",
+     "Two times any",
+     "k is two",
+     "If k is three",
+     "seven. So the",
+     "So the left",
+     "the left side is"
+    ]
+   },
+   {
+    "say": "The right side equals the left, so it must be odd too. A product is odd only when every number we multiply is odd. One even number would make the whole product even. The powers keep each number even or odd, so let's check the numbers inside those powers.",
+    "at": [
+     "The right side",
+     "odd too. A",
+     "is odd only",
+     "every number we",
+     "One even number",
+     "The powers keep",
+     "let's check the"
+    ]
+   },
+   {
+    "say": "a cubed is odd, so a must be odd. b plus one must be odd, so b must be even. c minus five must be odd, so c must be even. Only a must be odd. Choice number two is our answer.",
+    "at": [
+     "a cubed is odd",
+     "so b must",
+     "c minus five",
+     "so c must",
+     "a must be odd. Choice",
+     "choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in. To rule out the other choices, look for a case where k, b and c are even. Use a is one, b is zero, and c is six. One cubed is one, zero plus one is one, and six minus five is one. Raising those ones to their powers keeps them one. So the whole right side is one.",
+    "at": [
+     "Now let's",
+     "To rule out",
+     "where k, b",
+     "a is one, b is zero",
+     "One cubed is",
+     "plus one is",
+     "six minus five",
+     "So the whole"
+    ]
+   },
+   {
+    "say": "Then two k plus one is one, so k is zero. k, b and c are all even in this example, and the equation works. So choice numbers one, three and four are out. Choice number two is our answer. Okay. I'll see you in the next question.",
+    "at": [
+     "Two k plus one is one",
+     "k, b and",
+     "are all even",
+     "choice numbers one",
+     "three and four",
+     "are out",
+     "Choice number two"
+    ]
+   }
   ]
+ ]
 }

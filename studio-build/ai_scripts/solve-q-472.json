@@ -1,132 +1,133 @@
 {
-  "videoId": "solve-q-472",
-  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "a is an odd positive number, and b is an even positive number. Which of the following expressions is not necessarily an integer?",
-        "voice": "calm",
-        "at": [
-          "a is an odd"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "Every choice is a fraction with eight on the bottom. Eight is two times two times two. Three choices always have enough twos on top to cancel that eight, and one does not. [short pause] We'll solve it two ways, counting the twos, and then plugging in the smallest numbers.",
-        "at": [
-          "Every choice is",
-          "on the bottom",
-          "Three choices always",
-          "twos on top",
-          "ways, counting the",
-          "then plugging in"
-        ]
-      },
-      {
-        "say": "[short pause] Let's count the twos. For division by eight to give an integer, the whole top must divide by eight. We need three twos in its multiplication. b is even, so write b as two times an integer k.",
-        "at": [
-          "Let's count",
-          "is even, so",
-          "b as two"
-        ]
-      },
-      {
-        "say": "Choice number one includes b cubed. b is two k, so its cube is eight k cubed. That gives a whole eight on top. Dividing by the eight on the bottom leaves an integer, so this choice is out.",
-        "at": [
-          "number one includes",
-          "b cubed. b",
-          "so its cube",
-          "whole eight on",
-          "out."
-        ]
-      },
-      {
-        "say": "Now choice number two. a is odd, so a plus one and a plus three are even numbers in a row. Their product always divides by eight. So this fraction always gives an integer, and it's out.",
-        "at": [
-          "number two. a",
-          "a plus one and a plus three",
-          "even numbers in",
-          "divides by eight"
-        ]
-      }
+ "videoId": "solve-q-472",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "a is an odd positive number, and b is an even positive number. Which of the following expressions is not necessarily an integer?",
+    "voice": "calm",
+    "at": [
+     "a is an odd"
     ],
-    [
-      {
-        "say": "Now choice number three. Open both squares. The positive two a b and the negative two a b cancel. We have two a squared plus two b squared, minus two a squared. The two a squared parts cancel too, leaving two b squared. b is two k, so b squared is four k squared. Two times that is eight k squared. That divides by eight, so this choice is out.",
-        "at": [
-          "number three. Open",
-          "Open both squares",
-          "cancel. We have",
-          "plus two b",
-          "two a squared. The",
-          "b squared. b",
-          "four k squared",
-          "eight k squared"
-        ]
-      },
-      {
-        "say": "Now choice number four, a times b squared. b squared is four k squared, so we have two twos for sure. a is odd, so it gives no extra two. But eight on the bottom needs three twos to cancel. k might give another two for some values, but not always. So this choice does not have to give an integer. Choice number four is our answer.",
-        "at": [
-          "number four, a",
-          "a times b squared",
-          "squared, so we",
-          "is odd, so",
-          "extra two. But",
-          "twos to cancel",
-          "for some values",
-          "Choice number four is our answer"
-        ]
-      },
-      {
-        "say": "Let's check that with numbers. If a is one and b is two, we get four over eight, which is one half. But if a is one and b is four, we get sixteen over eight, which is two. The result is an integer in the second case, but not in the first.",
-        "at": [
-          "a is one and b is two",
-          "is one half",
-          "But if a",
-          "b is four",
-          "eight, which is two"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in directly. Use the smallest positive values that fit: a is one and b is two. These do not add any extra twos that could make an incorrect choice work.",
-        "at": [
-          "Now let's",
-          "The smallest",
-          "any extra twos"
-        ]
-      },
-      {
-        "say": "Choice number one gives two cubed, which is eight, times three, which is twenty-four. Twenty-four over eight is three. Choice number two gives two times four, which is eight. Eight over eight is one.",
-        "at": [
-          "number one gives",
-          "two cubed, which",
-          "is three. Choice",
-          "number two gives",
-          "is eight. Eight"
-        ]
-      },
-      {
-        "say": "Choice number three gives nine plus one minus two, which is eight. Eight over eight is one. Choice number four gives one times four, which is four. Four over eight is one half, not an integer. So choice number four is our answer.",
-        "at": [
-          "number three gives",
-          "nine plus one minus two",
-          "number four gives",
-          "is four. Four",
-          "not an integer"
-        ]
-      },
-      {
-        "say": "Notice why the small values helped. If b were four, choice number four would give sixteen over eight, which is two. That example would not show the choice can fail. Okay. I'll see you in the next question.",
-        "at": [
-          "Notice why the",
-          "If b were",
-          "number four would",
-          "eight, which is",
-          "not show the"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "Every choice is a fraction with eight on the bottom. Eight is two times two times two. Three choices always have enough twos on top to cancel that eight, and one does not. [short pause] We'll solve it two ways, counting the twos, and then plugging in the smallest numbers.",
+    "at": [
+     "Every choice is",
+     "on the bottom",
+     "Three choices always",
+     "twos on top",
+     "ways, counting the",
+     "then plugging in"
     ]
+   },
+   {
+    "say": "[short pause] Let's count the twos. For division by eight to give an integer, the whole top must divide by eight. We need three twos in its multiplication. b is even, so write b as two times an integer k.",
+    "at": [
+     "Let's count",
+     "is even, so",
+     "b as two"
+    ]
+   },
+   {
+    "say": "Choice number one includes b cubed. b is two k, so its cube is eight k cubed. That gives a whole eight on top. Dividing by the eight on the bottom leaves an integer, so this choice is out.",
+    "at": [
+     "number one includes",
+     "b cubed. b",
+     "so its cube",
+     "whole eight on",
+     "out."
+    ]
+   },
+   {
+    "say": "Now choice number two. a is odd, so a plus one and a plus three are even numbers in a row. Their product always divides by eight. So this fraction always gives an integer, and it's out.",
+    "at": [
+     "number two. a",
+     "a plus one and a plus three",
+     "even numbers in",
+     "divides by eight"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now choice number three. Open both squares. The positive two a b and the negative two a b cancel. We have two a squared plus two b squared, minus two a squared. The two a squared parts cancel too, leaving two b squared. b is two k, so b squared is four k squared. Two times that is eight k squared. That divides by eight, so this choice is out.",
+    "at": [
+     "Now choice",
+     "number three. Open",
+     "Open both squares",
+     "cancel. We have",
+     "plus two b",
+     "two a squared. The",
+     "b squared. b",
+     "four k squared",
+     "eight k squared"
+    ]
+   },
+   {
+    "say": "Now choice number four, a times b squared. b squared is four k squared, so we have two twos for sure. a is odd, so it gives no extra two. But eight on the bottom needs three twos to cancel. k might give another two for some values, but not always. So this choice does not have to give an integer. Choice number four is our answer.",
+    "at": [
+     "number four, a",
+     "a times b squared",
+     "squared, so we",
+     "is odd, so",
+     "extra two. But",
+     "twos to cancel",
+     "for some values",
+     "Choice number four is our answer"
+    ]
+   },
+   {
+    "say": "Let's check that with numbers. If a is one and b is two, we get four over eight, which is one half. But if a is one and b is four, we get sixteen over eight, which is two. The result is an integer in the second case, but not in the first.",
+    "at": [
+     "a is one and b is two",
+     "is one half",
+     "But if a",
+     "b is four",
+     "eight, which is two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in directly. Use the smallest positive values that fit: a is one and b is two. These do not add any extra twos that could make an incorrect choice work.",
+    "at": [
+     "Now let's",
+     "The smallest",
+     "any extra twos"
+    ]
+   },
+   {
+    "say": "Choice number one gives two cubed, which is eight, times three, which is twenty-four. Twenty-four over eight is three. Choice number two gives two times four, which is eight. Eight over eight is one.",
+    "at": [
+     "number one gives",
+     "two cubed, which",
+     "is three. Choice",
+     "number two gives",
+     "is eight. Eight"
+    ]
+   },
+   {
+    "say": "Choice number three gives nine plus one minus two, which is eight. Eight over eight is one. Choice number four gives one times four, which is four. Four over eight is one half, not an integer. So choice number four is our answer.",
+    "at": [
+     "number three gives",
+     "nine plus one minus two",
+     "number four gives",
+     "is four. Four",
+     "not an integer"
+    ]
+   },
+   {
+    "say": "Notice why the small values helped. If b were four, choice number four would give sixteen over eight, which is two. That example would not show the choice can fail. Okay. I'll see you in the next question.",
+    "at": [
+     "Notice why the",
+     "If b were",
+     "number four would",
+     "eight, which is",
+     "not show the"
+    ]
+   }
   ]
+ ]
 }

@@ -1,80 +1,80 @@
 {
-  "videoId": "solve-q-461",
-  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "a and b are integers. a is odd, and b is even and not zero. Which of the following is the most precise description of six a over b squared?",
-        "voice": "calm",
-        "at": [
-          "a and b are"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So the top of the fraction, six a, is even, and the bottom of the fraction, b squared, is even too. But even over even does not decide whether the answer is an integer. We need to use the particular factors in this fraction. [short pause] We'll solve it two ways, simplifying the factors first, and then plugging in numbers.",
-        "at": [
-          "the top of",
-          "is even, and",
-          "squared, is even",
-          "Even over even",
-          "answer is an",
-          "We need to",
-          "two ways, simplifying",
-          "then plugging in"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start by simplifying. b is even and not zero, so write b as two times an integer k. k cannot be zero either. To square b, square the whole product, two times k. Two squared is four, so b squared is four k squared. Our fraction is six a over four k squared. Divide the top and bottom by two. We get three a over two k squared.",
-        "at": [
-          "Let's start",
-          "so b squared",
-          "b squared is",
-          "Two k squared",
-          "two k squared",
-          "two k squared",
-          "two k squared"
-        ]
-      },
-      {
-        "say": "Now look at the simpler fraction. a is odd, so three a is odd. The bottom, two k squared, is even. It has a two that cannot cancel with the odd top. So the fraction cannot give an integer. It is always a fraction that is not a whole number, and choice number two is our answer.",
-        "at": [
-          "so three a",
-          "The bottom, two",
-          "bottom, two k",
-          "odd top. So",
-          "and choice number",
-          "and choice number",
-          "Choice number two is our answer"
-        ]
-      },
-      {
-        "say": "This is why we simplified first. There was a two in the six on top, and it cancelled with one two on the bottom. But another two stayed on the bottom, and it cannot cancel with the odd number on top.",
-        "at": [
-          "on top, and",
-          "and it cancelled",
-          "cancelled with one"
-        ]
-      }
+ "videoId": "solve-q-461",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "a and b are integers. a is odd, and b is even and not zero. Which of the following is the most precise description of six a over b squared?",
+    "voice": "calm",
+    "at": [
+     "a and b are"
     ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in. a must be odd, and b must be even and nonzero. Use a is one and b is two. Six a is six, and b squared is four, so the result is six over four, or three over two. It is not an integer. Now check the choices. Every description includes a fraction, so this example does not separate them. Getting another fraction would not separate them either.",
-        "at": [
-          "Now let",
-          "Use a is one",
-          "Every description includes a fraction"
-        ]
-      },
-      {
-        "say": "We need the most precise description, so ask whether an integer could ever occur. As we saw when simplifying, b is two k, and the fraction becomes three a over two k squared. The top is odd and the bottom is even. The two on the bottom cannot cancel with the odd top, so the result cannot be an integer. It is always a non-integer fraction. Choice number two is our answer. This short rule settles what more examples would not. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "the fraction becomes",
-          "The top is odd",
-          "two on the bottom cannot cancel",
-          "Choice number two is our answer"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So the top of the fraction, six a, is even, and the bottom of the fraction, b squared, is even too. But even over even does not decide whether the answer is an integer. We need to use the particular factors in this fraction. [short pause] We'll solve it two ways, simplifying the factors first, and then plugging in numbers.",
+    "at": [
+     "the top of",
+     "is even, and",
+     "squared, is even",
+     "Even over even",
+     "answer is an",
+     "We need to",
+     "two ways, simplifying",
+     "then plugging in"
     ]
+   },
+   {
+    "say": "[short pause] Let's start by simplifying. b is even and not zero, so write b as two times an integer k. k cannot be zero either. To square b, square the whole product, two times k. Two squared is four, so b squared is four k squared. Our fraction is six a over four k squared. Divide the top and bottom by two. We get three a over two k squared.",
+    "at": [
+     "Let's start",
+     "so b squared",
+     "b squared is",
+     "Two k squared",
+     "two k squared",
+     "two k squared",
+     "two k squared"
+    ]
+   },
+   {
+    "say": "Now look at the simpler fraction. a is odd, so three a is odd. The bottom, two k squared, is even. It has a two that cannot cancel with the odd top. So the fraction cannot give an integer. It is always a fraction that is not a whole number, and choice number two is our answer.",
+    "at": [
+     "so three a",
+     "The bottom, two",
+     "bottom, two k",
+     "odd top. So",
+     "and choice number",
+     "and choice number",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "This is why we simplified first. There was a two in the six on top, and it cancelled with one two on the bottom. But another two stayed on the bottom, and it cannot cancel with the odd number on top.",
+    "at": [
+     "on top, and",
+     "and it cancelled",
+     "cancelled with one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in. a must be odd, and b must be even and nonzero. Use a is one and b is two. Six a is six, and b squared is four, so the result is six over four, or three over two. It is not an integer. Now check the choices. Every description includes a fraction, so this example does not separate them. Getting another fraction would not separate them either.",
+    "at": [
+     "Now let",
+     "Use a is one",
+     "Every description includes a fraction"
+    ]
+   },
+   {
+    "say": "We need the most precise description, so ask whether an integer could ever occur. As we saw when simplifying, b is two k, and the fraction becomes three a over two k squared. The top is odd and the bottom is even. The two on the bottom cannot cancel with the odd top, so the result cannot be an integer. It is always a non-integer fraction. Choice number two is our answer. This short rule settles what more examples would not. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "the fraction becomes",
+     "The top is odd",
+     "two on the bottom cannot cancel",
+     "Choice number two is our answer"
+    ]
+   }
   ]
+ ]
 }

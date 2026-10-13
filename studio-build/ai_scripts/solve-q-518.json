@@ -1,65 +1,65 @@
 {
-  "videoId": "solve-q-518",
-  "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "A, B and C represent digits. Given: C B A over A A is equal to seventeen. A plus B plus C is equal to what?",
-        "voice": "calm",
-        "at": [
-          "A, B and C"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "The three-digit number C B A is divided by the two-digit number A A, and the answer is seventeen. We can read the same equality as multiplication: A A times seventeen equals C B A. That lets us check the last digits.",
-        "at": [
-          "can read the",
-          "read the same",
-          "same equality as",
-          "equality as multiplication",
-          "A A times seventeen",
-          "C B A. That"
-        ]
-      },
-      {
-        "say": "In the ones column, A times seven must end in A. Subtract A from that product, and six times A must end in zero. The only digit values for A that do that are zero and five. Check five: seven times five is thirty-five, ending in five.",
-        "at": [
-          "seven must end",
-          "must end in zero",
-          "The only digit",
-          "Check five: seven",
-          "is thirty-five"
-        ]
-      },
-      {
-        "say": "Could A be zero? Then A A would start with zero, so it would not be a two-digit number. That is not allowed. So A is five.",
-        "at": [
-          "Zero? Then A A",
-          "start with zero",
-          "start with zero",
-          "A is five"
-        ]
-      },
-      {
-        "say": "Now A A is fifty-five. Multiply the whole number by seventeen. Ten times fifty-five is five hundred fifty. Seven times fifty-five is three hundred eighty-five. Add them to get nine hundred thirty-five, which ends in five as required.",
-        "at": [
-          "by seventeen. Ten",
-          "Ten times fifty-five",
-          "fifty. Seven times",
-          "is three hundred",
-          "which ends in"
-        ]
-      },
-      {
-        "say": "Read the digits of nine hundred thirty-five: C is nine, B is three, and A is five. Their sum is nine plus three plus five, which is seventeen. Choice number one is our answer. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "Read the digits",
-          "is three, and",
-          "Nine plus three plus five",
-          "Choice number one is our answer"
-        ]
-      }
+ "videoId": "solve-q-518",
+ "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A, B and C represent digits. Given: C B A over A A is equal to seventeen. A plus B plus C is equal to what?",
+    "voice": "calm",
+    "at": [
+     "A, B and C"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The three-digit number C B A is divided by the two-digit number A A, and the answer is seventeen. We can read the same equality as multiplication: A A times seventeen equals C B A. That lets us check the last digits.",
+    "at": [
+     "can read the",
+     "read the same",
+     "same equality as",
+     "equality as multiplication",
+     "A A times seventeen",
+     "C B A. That"
     ]
+   },
+   {
+    "say": "In the ones column, A times seven must end in A. Subtract A from that product, and six times A must end in zero. The only digit values for A that do that are zero and five. Check five: seven times five is thirty-five, ending in five.",
+    "at": [
+     "seven must end",
+     "must end in zero",
+     "The only digit",
+     "Check five: seven",
+     "is thirty-five"
+    ]
+   },
+   {
+    "say": "Could A be zero? Then A A would start with zero, so it would not be a two-digit number. That is not allowed. So A is five.",
+    "at": [
+     "Zero? Then A A",
+     "start with zero",
+     "start with zero",
+     "A is five"
+    ]
+   },
+   {
+    "say": "Now A A is fifty-five. Multiply the whole number by seventeen. Ten times fifty-five is five hundred fifty. Seven times fifty-five is three hundred eighty-five. Add them to get nine hundred thirty-five, which ends in five as required.",
+    "at": [
+     "by seventeen. Ten",
+     "Ten times fifty-five",
+     "fifty. Seven times",
+     "is three hundred",
+     "which ends in"
+    ]
+   },
+   {
+    "say": "Read the digits of nine hundred thirty-five: C is nine, B is three, and A is five. Their sum is nine plus three plus five, which is seventeen. Choice number one is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Read the digits",
+     "is three, and",
+     "Nine plus three plus five",
+     "Choice number one is our answer"
+    ]
+   }
   ]
+ ]
 }

@@ -1,118 +1,120 @@
 {
-  "videoId": "solve-q-501",
-  "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "Given: p squared is smaller than p, which is smaller than r times q, which is smaller than q, which is smaller than r. Which of the following statements is possible but not necessarily true?",
-        "voice": "calm",
-        "at": [
-          "Given"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "Let's read the given chain step by step before checking the choices. First, p squared is smaller than p. p cannot be negative: its square would be positive and larger than p. So p is positive. Squaring it made it smaller, which means p is between zero and one.",
-        "at": [
-          "the given chain",
-          "step before checking",
-          "First, p squared",
-          "than p. p",
-          "Its square would",
-          "and larger than",
-          "So p is",
-          "Squaring it made",
-          "which means p"
-        ]
-      },
-      {
-        "say": "Everything to the right of p in the chain is larger than p, so those expressions are positive too. Now look at r times q is smaller than q. q is positive, so divide both sides by q without reversing the inequality. We get r is smaller than one.",
-        "at": [
-          "p in the",
-          "in the chain",
-          "Now look at",
-          "q is positive",
-          "both sides by",
-          "r is smaller"
-        ]
-      },
-      {
-        "say": "So p, q and r are all between zero and one. p is the smallest, and r is the largest.",
-        "at": [
-          "So p, q",
-          "p is the"
-        ]
-      }
+ "videoId": "solve-q-501",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: p squared is smaller than p, which is smaller than r times q, which is smaller than q, which is smaller than r. Which of the following statements is possible but not necessarily true?",
+    "voice": "calm",
+    "at": [
+     "Given"
     ],
-    [
-      {
-        "say": "The question asks for a statement that can be true but is not always true. A statement that is always true is out. A statement that can never be true is out too.",
-        "at": [
-          "The question asks",
-          "always true. A",
-          "is always true",
-          "A statement that can never"
-        ]
-      },
-      {
-        "say": "Choice number three compares p times q with p plus q. q is between zero and one, so multiplying p by q makes p smaller. But adding positive q makes p larger. So p times q is always smaller than p plus q. This choice is always true, so it's out.",
-        "at": [
-          "number three compares",
-          "p times q",
-          "q makes p larger",
-          "is always smaller",
-          "plus q. This",
-          "so it's out",
-          "it's out."
-        ]
-      },
-      {
-        "say": "Choice number one: divide both sides by positive p. The inequality sign stays the same, and we get p times q is smaller than r. p times q is smaller than q, because p is between zero and one. q is smaller than r, so the statement is always true and this choice is out. We can also compare the original products directly. p squared is smaller than p, and q is smaller than r. Both numbers in the left product are smaller than their matches in the right product. So the left product is smaller.",
-        "at": [
-          "number one: divide",
-          "Divide both sides by p",
-          "smaller than r",
-          "p times q is smaller than q",
-          "q, because p",
-          "Both numbers in",
-          "left product are",
-          "smaller than their",
-          "the right product"
-        ]
-      },
-      {
-        "say": "Choice number two says p times q is greater than one. Both p and q are positive and smaller than one, so their product is smaller than one too. This statement can never be true, so it's out.",
-        "at": [
-          "number two says",
-          "Both p and",
-          "is smaller than",
-          "never be true"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "Choice number four says p plus r is smaller than one. We need a case where it works and a case where it fails, while keeping the whole given chain true. Use p is zero point one, q is zero point five, and r is zero point six. The chain holds, and p plus r is zero point seven, smaller than one. Now use p is zero point three, q is zero point eight, and r is zero point nine. The chain still holds, but p plus r is one point two, greater than one. So this statement can be true, but is not always true. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "number four says",
-          "smaller than one",
-          "case where it",
-          "where it fails",
-          "p is zero point one",
-          "r is zero",
-          "The chain holds",
-          "plus r is zero",
-          "seven, smaller than",
-          "Now use p",
-          "q is zero point eight",
-          "r is zero point nine",
-          "The chain still",
-          "p plus r is one",
-          "point two, greater",
-          "So this statement",
-          "Choice number four is our answer"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "Let's read the given chain step by step before checking the choices. First, p squared is smaller than p. p cannot be negative: its square would be positive and larger than p. So p is positive. Squaring it made it smaller, which means p is between zero and one.",
+    "at": [
+     "the given chain",
+     "step before checking",
+     "First, p squared",
+     "than p. p",
+     "Its square would",
+     "and larger than",
+     "So p is",
+     "Squaring it made",
+     "which means p"
     ]
+   },
+   {
+    "say": "Everything to the right of p in the chain is larger than p, so those expressions are positive too. Now look at r times q is smaller than q. q is positive, so divide both sides by q without reversing the inequality. We get r is smaller than one.",
+    "at": [
+     "p in the",
+     "in the chain",
+     "Now look at",
+     "q is positive",
+     "both sides by",
+     "r is smaller"
+    ]
+   },
+   {
+    "say": "So p, q and r are all between zero and one. p is the smallest, and r is the largest.",
+    "at": [
+     "So p, q",
+     "p is the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The question asks for a statement that can be true but is not always true. A statement that is always true is out. A statement that can never be true is out too.",
+    "at": [
+     "The question",
+     "The question asks",
+     "always true. A",
+     "is always true",
+     "A statement that can never"
+    ]
+   },
+   {
+    "say": "Choice number three compares p times q with p plus q. q is between zero and one, so multiplying p by q makes p smaller. But adding positive q makes p larger. So p times q is always smaller than p plus q. This choice is always true, so it's out.",
+    "at": [
+     "number three compares",
+     "p times q",
+     "q makes p larger",
+     "is always smaller",
+     "plus q. This",
+     "so it's out",
+     "it's out."
+    ]
+   },
+   {
+    "say": "Choice number one: divide both sides by positive p. The inequality sign stays the same, and we get p times q is smaller than r. p times q is smaller than q, because p is between zero and one. q is smaller than r, so the statement is always true and this choice is out. We can also compare the original products directly. p squared is smaller than p, and q is smaller than r. Both numbers in the left product are smaller than their matches in the right product. So the left product is smaller.",
+    "at": [
+     "number one: divide",
+     "Divide both sides by p",
+     "smaller than r",
+     "p times q is smaller than q",
+     "q, because p",
+     "Both numbers in",
+     "left product are",
+     "smaller than their",
+     "the right product"
+    ]
+   },
+   {
+    "say": "Choice number two says p times q is greater than one. Both p and q are positive and smaller than one, so their product is smaller than one too. This statement can never be true, so it's out.",
+    "at": [
+     "number two says",
+     "Both p and",
+     "is smaller than",
+     "never be true"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number four says p plus r is smaller than one. We need a case where it works and a case where it fails, while keeping the whole given chain true. Use p is zero point one, q is zero point five, and r is zero point six. The chain holds, and p plus r is zero point seven, smaller than one. Now use p is zero point three, q is zero point eight, and r is zero point nine. The chain still holds, but p plus r is one point two, greater than one. So this statement can be true, but is not always true. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number",
+     "number four says",
+     "smaller than one",
+     "case where it",
+     "where it fails",
+     "p is zero point one",
+     "r is zero",
+     "The chain holds",
+     "plus r is zero",
+     "seven, smaller than",
+     "Now use p",
+     "q is zero point eight",
+     "r is zero point nine",
+     "The chain still",
+     "p plus r is one",
+     "point two, greater",
+     "So this statement",
+     "Choice number four is our answer"
+    ]
+   }
   ]
+ ]
 }

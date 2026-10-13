@@ -12,104 +12,155 @@
     "pause": 0.5
    },
    {
-    "say": "A hard one. Must be true, so we try to break each choice. [short pause] We'll solve it two ways, technically, and then by understanding.",
+    "say": "A hard one. Must be true means true for every positive a and b. So for each choice, we try to show it can fail. [short pause] We'll solve it two ways, technically, by working with each inequality or equation, and then by understanding what the diamond does.",
     "at": [
      "must be true",
-     "try to break",
-     "We'll solve it",
-     "technically, and then"
+     "for every positive",
+     "b. So for",
+     "we try to",
+     "two ways, technically",
+     "with each inequality",
+     "and then by",
+     "the diamond does"
     ]
    },
    {
-    "say": "[short pause] Let's start technically. Choice number one, three over a is smaller than three. a is positive, so multiply by a with no flip, and divide by three. One is smaller than a. True only when a is above one, and a could be one half, then three over a is six. Out.",
+    "say": "[short pause] Let's start technically. Choice number one says three over a is smaller than three. a is positive, so we can multiply both sides by a without flipping the sign. We get three is smaller than three a. Divide both sides by three, and one is smaller than a. That's true only when a is bigger than one. But a could be one half. Then three over one half is six, and six is not smaller than three. So choice number one is out.",
     "at": [
      "Let's start",
-     "Choice number one, three over a",
-     "number one, three",
-     "is smaller than",
+     "Choice number one says",
+     "number one says",
+     "a is smaller",
      "a is positive",
-     "by a with",
-     "and divide by",
-     "One is smaller",
-     "True only when",
-     "above one, and",
-     "be one half",
-     "is six. Out"
+     "can multiply both",
+     "a without flipping",
+     "We get three",
+     "than three a",
+     "Divide both sides",
+     "and one is",
+     "That's true only",
+     "is bigger than",
+     "But a could",
+     "Then three over",
+     "is six, and",
+     "not smaller than",
+     "So choice number one is out"
     ]
    },
    {
-    "say": "Choice number three, three over a divided by three over b. Multiply by the reciprocal, b over a, not a over b. Out.",
+    "say": "Choice number three. Three over a, divided by three over b. To divide by a fraction, multiply by its reciprocal. Three over a times b over three. The threes cancel, and we get b over a, not a over b. So choice number three is out.",
     "at": [
-     "Choice number three",
-     "number three, three",
-     "divided by three",
-     "Multiply by the",
-     "not a over b. Out"
+     "Choice number three. Three over a",
+     "number three. Three",
+     "Three over a",
+     "three over b",
+     "To divide by",
+     "multiply by its",
+     "Three over a times",
+     "The threes cancel",
+     "get b over",
+     "a over b",
+     "So choice number three is"
     ]
    }
   ],
   [
    {
-    "say": "Choice number four, three over a smaller than three over a plus one. Both are positive, so cross-multiply with no flip and divide by three. a plus one smaller than a, so one smaller than zero. Never true. Out.",
+    "say": "Choice number four says three over a is smaller than three over a plus one. Both bottoms are positive, so we can multiply both sides by a and by a plus one without flipping. We get three times, in brackets, a plus one, is smaller than three a. Divide by three, and a plus one is smaller than a. Take a off both sides, and one is smaller than zero. That's never true. So choice number four is out.",
     "at": [
-     "Choice number four",
-     "number four, three",
-     "smaller than three",
-     "Both are positive",
-     "with no flip",
-     "a plus one smaller",
-     "a, so one",
-     "Never true. Out"
+     "Choice number",
+     "Choice number four says",
+     "number four says",
+     "a is smaller",
+     "over a plus",
+     "Both bottoms are",
+     "we can multiply",
+     "by a and",
+     "plus one without",
+     "We get three",
+     "brackets, a plus",
+     "smaller than three a",
+     "Divide by three",
+     "plus one is",
+     "Take a off",
+     "and one is",
+     "zero. That's never",
+     "So choice number four is out"
     ]
    },
    {
-    "say": "Choice number two, three over a, times a. The a cancels, three. And three over b times b, three too. Three equals three for every a and b. Choice number two is our answer.",
+    "say": "Choice number two. Three over a, times a. The a cancels, and we get three. And three over b, times b, is three too. Three equals three for every a and b. So choice number two must be true, and it's our answer.",
     "at": [
-     "Choice number two",
-     "number two, three",
-     "times a. The",
+     "Choice number two. Three over a",
+     "number two. Three",
+     "Three over a",
+     "The a cancels",
      "And three over",
-     "b, three too",
+     "b, is three",
      "Three equals three",
      "a and b",
-     "Choice number two is our answer"
+     "number two must",
+     "and it's our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. What's different? We read what the diamond does, instead of moving terms. Choice number one. For a above one it's true, two gives three halves, three gives one. But a equal to one gives three, and one half gives six.",
+    "say": "[pause] Now by understanding. Three over x means three divided by x. Choice number one. For a bigger than one it works. Three over two is smaller than three. But for a equal to one, we get three, which isn't smaller than three. And for a fraction like one half, we get six. So not always.",
     "at": [
-     "Another way",
-     "We read what",
-     "does, instead of",
+     "Now by",
+     "Three over x",
+     "divided by x",
      "number one. For",
-     "For a above one",
-     "three gives one",
-     "But a equal",
-     "gives three, and"
+     "For a bigger than one",
+     "Three over two",
+     "But for a",
+     "one, we get",
+     "isn't smaller than",
+     "And for a",
+     "one half, we",
+     "So not always"
     ]
    },
    {
-    "say": "Choice number three. Three over x is three times x to the negative one, and a minus power means flip. So b over a. Choice number four. A bigger denominator makes a smaller fraction. a is two, three halves is not smaller than one.",
+    "say": "Choice number three. Dividing by three over b is like multiplying by b over three. So the a ends up at the bottom and the b on top, b over a. Not a over b.",
     "at": [
-     "number three. Three",
-     "three times x to",
-     "power means flip",
-     "over a. Choice",
+     "number three. Dividing",
+     "Dividing by three over b",
+     "is like multiplying",
+     "So the a",
+     "at the bottom",
+     "b on top",
+     "a. Not a"
+    ]
+   },
+   {
+    "say": "Choice number four. A bigger denominator makes a smaller fraction. a plus one is bigger than a, so three over a plus one is smaller than three over a. That's the opposite of what the choice says, so it's never true.",
+    "at": [
      "number four. A",
      "A bigger denominator",
-     "is not smaller"
+     "a plus one",
+     "than a, so",
+     "a plus one is smaller",
+     "than three over",
+     "That's the opposite",
+     "the choice says"
     ]
    },
    {
-    "say": "Choice number two. Three over a is three times the reciprocal of a, and a number times its reciprocal is one. So three, every time. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice number two. Three over a is three times one over a, and one over a is the reciprocal of a. A number times its reciprocal is one. So three over a, times a, is three times one, three, for every a. The same for b. So it's always three equals three, choice number two. [pause] Okay. I'll see you in the next question.",
     "at": [
      "number two. Three",
-     "is three times",
-     "of a, and",
-     "its reciprocal is one",
-     "three, every time. Choice number two"
+     "Three over a",
+     "times one over",
+     "one over a is",
+     "reciprocal of a",
+     "A number times its reciprocal",
+     "So three over",
+     "a, is three",
+     "three, for every",
+     "same for b",
+     "always three equals three"
     ]
    }
   ]

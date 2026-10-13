@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "A, B and C are digits from one to nine. For every three-digit number A B C, the operation diamond is defined. Diamond of A B C is A to the fourth, plus B cubed, plus C squared. Which of the following is the smallest?",
+    "say": "A, B and C are digits from one to nine. For every three-digit number A B C, the operation diamond is defined. Diamond of A B C is A to the power of four, plus B cubed, plus C squared. Which of the following is the smallest?",
     "voice": "calm",
     "at": [
      "A, B and C"
@@ -12,68 +12,99 @@
     "pause": 0.5
    },
    {
-    "say": "Two topics in one, digits and a defined operation. And every choice has the operation, so we evaluate the choices. [short pause] We'll solve it two ways, the standard way, and then a shortcut.",
+    "say": "Two topics in one question, digits and a new operation. And the diamond is in every choice, so we have to work out the choices. [short pause] We'll solve it two ways, calculating each choice, and then a shortcut that thinks about where the biggest power goes.",
     "at": [
-     "Two topics in one",
-     "and a defined",
-     "every choice has",
-     "so we evaluate",
+     "Two topics in one question",
+     "digits and a",
+     "And the diamond",
+     "every choice, so",
+     "to work out",
      "We'll solve it",
-     "the standard way"
+     "calculating each choice",
+     "a shortcut that",
+     "where the biggest"
     ]
    },
    {
-    "say": "[short pause] The hundreds digit to the fourth, the tens cubed, the units squared. Two one four, two to the fourth is sixteen, one cubed is one, four squared is sixteen. Thirty-three.",
+    "say": "[short pause] The hundreds digit goes to the power of four, the tens digit is cubed, and the units digit is squared. Choice number one, two one four. Two to the power of four is sixteen. One cubed is one. Four squared is sixteen. Sixteen plus one plus sixteen is thirty-three.",
     "at": [
-     "The hundreds",
-     "fourth, the tens",
-     "Two one four",
-     "cubed is one",
-     "is sixteen. Thirty-three"
+     "The hundreds digit goes",
+     "the power of",
+     "tens digit is",
+     "the units digit",
+     "Choice number one, two one four",
+     "number one, two",
+     "Two to the",
+     "four is sixteen",
+     "is one. Four",
+     "Sixteen plus one plus sixteen"
     ]
    },
    {
-    "say": "One four two, one, sixty-four, four, sixty-nine. Bigger, out. Four one two, two fifty-six, one, four, two sixty-one. Out.",
+    "say": "Choice number two, one four two. One to the power of four is one. Four cubed is sixty-four. Two squared is four. One plus sixty-four plus four is sixty-nine. That's bigger than thirty-three, so choice number two is out.",
     "at": [
-     "One four two",
-     "sixty-nine. Bigger, out",
-     "two, two fifty-six",
-     "two sixty-one"
+     "number two, one",
+     "One to the",
+     "four is one",
+     "is sixty-four. Two",
+     "One plus sixty-four",
+     "is sixty-nine. That's",
+     "so choice number two is out"
     ]
    },
    {
-    "say": "One two four, one, eight, sixteen, twenty-five. Smaller than thirty-three, so choice number one is out too. Choice number four is our answer.",
+    "say": "Choice number three, four one two. Four to the power of four is two hundred fifty-six. That's already much bigger than thirty-three, so we don't need the rest. Out.",
     "at": [
-     "One two four",
-     "sixteen, twenty-five. Smaller",
-     "choice number one is out too",
-     "Choice number four is our answer"
+     "number three, four",
+     "Four to the power of four",
+     "four is two",
+     "That's already much",
+     "thirty-three, so we",
+     "the rest. Out"
+    ]
+   },
+   {
+    "say": "Choice number four, one two four. One to the power of four is one, two cubed is eight, and four squared is sixteen. One plus eight plus sixteen is twenty-five. Twenty-five is smaller than thirty-three, so choice number one is out too, and choice number four is our answer.",
+    "at": [
+     "number four, one",
+     "One to the",
+     "four is one",
+     "is eight, and",
+     "One plus eight plus sixteen",
+     "is twenty-five. Twenty-five",
+     "so choice number one",
+     "and choice number four is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. What's different? We think about where the big power goes, instead of calculating. Every choice uses the same digits, one, two and four. The biggest power, the fourth, sits on the hundreds digit, so that digit must be the smallest, one. Choice numbers one and three are out.",
+    "say": "[pause] Another way is to think instead of calculating. Every choice uses the same three digits, one, two and four. The biggest power, the fourth power, is on the hundreds digit. To keep the result small, the smallest digit should get the biggest power. So the hundreds digit should be one. Choice numbers one and three start with two and four, so they're out.",
     "at": [
      "Another way",
-     "We think about",
-     "big power goes",
+     "instead of calculating",
      "Every choice uses",
-     "digits, one, two",
+     "three digits, one",
      "The biggest power",
-     "so that digit",
-     "the smallest, one",
-     "Choice numbers one",
-     "and three are out"
+     "power, is on",
+     "To keep the",
+     "the smallest digit",
+     "the biggest power. So",
+     "So the hundreds",
+     "Choice numbers one and three",
+     "start with two",
+     "so they're out"
     ]
    },
    {
-    "say": "The next power, the cube, sits on the tens, so the smaller of what's left, two. One two four. Choice number four, with no full calculation. [pause] Okay. I'll see you in the next question.",
+    "say": "Between one four two and one two four, look at the next power, the cube, on the tens digit. The smaller digit should be there, so two, not four. One two four, choice number four. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "The next power",
-     "the smaller of",
-     "One two four. Choice number four",
-     "number four, with"
+     "and one two",
+     "look at the next power",
+     "the cube, on",
+     "The smaller digit",
+     "there, so two",
+     "One two four, choice number four"
     ]
    }
   ]

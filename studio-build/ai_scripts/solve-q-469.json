@@ -1,117 +1,117 @@
 {
-  "videoId": "solve-q-469",
-  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "x, y and z are consecutive integers, and x is smaller than y, which is smaller than z. Given: x squared plus y squared is equal to z squared. Which of the following could be the value of x plus z?",
-        "voice": "calm",
-        "at": [
-          "x, y and z"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So we have three numbers in a row and an equation with their squares. We need a possible value of x plus z. [short pause] We'll solve it two ways, writing the numbers with one letter, and then trying the answer choices.",
-        "at": [
-          "a row and",
-          "an equation with",
-          "two ways, writing",
-          "and then trying"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start with the middle number, y. x is one below it, so x is y minus one. z is one above it, so z is y plus one. Replace x and z in the equation. The whole bracket, y minus one, squared, plus y squared, equals the whole bracket, y plus one, squared.",
-        "at": [
-          "Let's start",
-          "the middle number",
-          "So x is",
-          "one. z is",
-          "plus one. Replace",
-          "Replace x and z in the equation",
-          "one, squared, plus",
-          "equals the whole"
-        ]
-      },
-      {
-        "say": "Use the square formulas to open both brackets. On the left, we get y squared minus two y plus one, plus y squared. On the right, we get y squared plus two y plus one.",
-        "at": [
-          "open both brackets",
-          "On the left",
-          "minus two y",
-          "plus y squared",
-          "On the right",
-          "plus two y"
-        ]
-      },
-      {
-        "say": "Subtract y squared and one from both sides. Then add two y to both sides. We get y squared equals four y. Careful, do not divide by y, because y could be zero. Instead, subtract four y from both sides and write the left as y times the whole bracket, y minus four. That product is zero.",
-        "at": [
-          "Subtract y squared",
-          "from both sides",
-          "two y to",
-          "y squared equals four y",
-          "do not divide",
-          "y could be",
-          "Instead, subtract four",
-          "times the whole",
-          "four. That product"
-        ]
-      },
-      {
-        "say": "So y is four, or y is zero. Find x plus z for each case, since that is what the question asks for. If y is four, the three numbers are three, four and five. x plus z is three plus five, which is eight. If y is zero, the numbers are negative one, zero and one. x plus z is zero. Eight is in the choices, so choice number two is our answer.",
-        "at": [
-          "So y is four",
-          "four and five",
-          "z is three",
-          "y is zero, the",
-          "one, zero and",
-          "plus z is zero",
-          "choices, so choice",
-          "choice number two is our answer"
-        ]
-      },
-      {
-        "say": "Careful, adding three, four and five gives twelve. But the question asks for x plus z, not the sum of all three.",
-        "at": [
-          "adding three, four",
-          "adding three, four and five",
-          "asks for x"
-        ]
-      }
+ "videoId": "solve-q-469",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "x, y and z are consecutive integers, and x is smaller than y, which is smaller than z. Given: x squared plus y squared is equal to z squared. Which of the following could be the value of x plus z?",
+    "voice": "calm",
+    "at": [
+     "x, y and z"
     ],
-    [
-      {
-        "say": "[pause] Now let's try the answer choices. Each choice gives a possible x plus z. x is one below the middle and z is one above it, so their sum is twice the middle. Divide a choice by two to find the middle. Then find its neighbors and check the equation in the question.",
-        "at": [
-          "Now let's",
-          "Each choice gives",
-          "x is one below",
-          "z is one above",
-          "their sum is",
-          "twice the middle",
-          "Divide a choice by two"
-        ]
-      },
-      {
-        "say": "Let's test ten. Ten over two is five, so the middle is five and the numbers are four, five and six. Four squared plus five squared is sixteen plus twenty-five, which is forty-one. Six squared is thirty-six. Forty-one does not equal thirty-six, so this choice is out.",
-        "at": [
-          "the middle is five",
-          "Sixteen plus twenty-five",
-          "Six squared is",
-          "not equal thirty"
-        ]
-      },
-      {
-        "say": "Now test eight. Eight over two is four, so the numbers are three, four and five. Nine plus sixteen is twenty-five, and five squared is twenty-five too. The equation works, so choice number two is our answer. Okay. I'll see you in the next question.",
-        "at": [
-          "Eight over two",
-          "three, four and",
-          "Nine plus sixteen",
-          "and five squared",
-          "too. The equation"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So we have three numbers in a row and an equation with their squares. We need a possible value of x plus z. [short pause] We'll solve it two ways, writing the numbers with one letter, and then trying the answer choices.",
+    "at": [
+     "a row and",
+     "an equation with",
+     "two ways, writing",
+     "and then trying"
     ]
+   },
+   {
+    "say": "[short pause] Let's start with the middle number, y. x is one below it, so x is y minus one. z is one above it, so z is y plus one. Replace x and z in the equation. The whole bracket, y minus one, squared, plus y squared, equals the whole bracket, y plus one, squared.",
+    "at": [
+     "Let's start",
+     "the middle number",
+     "So x is",
+     "one. z is",
+     "plus one. Replace",
+     "Replace x and z in the equation",
+     "one, squared, plus",
+     "equals the whole"
+    ]
+   },
+   {
+    "say": "Use the square formulas to open both brackets. On the left, we get y squared minus two y plus one, plus y squared. On the right, we get y squared plus two y plus one.",
+    "at": [
+     "open both brackets",
+     "On the left",
+     "minus two y",
+     "plus y squared",
+     "On the right",
+     "plus two y"
+    ]
+   },
+   {
+    "say": "Subtract y squared and one from both sides. Then add two y to both sides. We get y squared equals four y. Careful, do not divide by y, because y could be zero. Instead, subtract four y from both sides and write the left as y times the whole bracket, y minus four. That product is zero.",
+    "at": [
+     "Subtract y squared",
+     "from both sides",
+     "two y to",
+     "y squared equals four y",
+     "do not divide",
+     "y could be",
+     "Instead, subtract four",
+     "times the whole",
+     "four. That product"
+    ]
+   },
+   {
+    "say": "So y is four, or y is zero. Find x plus z for each case, since that is what the question asks for. If y is four, the three numbers are three, four and five. x plus z is three plus five, which is eight. If y is zero, the numbers are negative one, zero and one. x plus z is zero. Eight is in the choices, so choice number two is our answer.",
+    "at": [
+     "So y is four",
+     "four and five",
+     "z is three",
+     "y is zero, the",
+     "one, zero and",
+     "plus z is zero",
+     "choices, so choice",
+     "choice number two is our answer"
+    ]
+   },
+   {
+    "say": "Careful, adding three, four and five gives twelve. But the question asks for x plus z, not the sum of all three.",
+    "at": [
+     "adding three, four",
+     "adding three, four and five",
+     "asks for x"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try the answer choices. Each choice gives a possible x plus z. x is one below the middle and z is one above it, so their sum is twice the middle. Divide a choice by two to find the middle. Then find its neighbors and check the equation in the question.",
+    "at": [
+     "Now let's",
+     "Each choice gives",
+     "x is one below",
+     "z is one above",
+     "their sum is",
+     "twice the middle",
+     "Divide a choice by two"
+    ]
+   },
+   {
+    "say": "Let's test ten. Ten over two is five, so the middle is five and the numbers are four, five and six. Four squared plus five squared is sixteen plus twenty-five, which is forty-one. Six squared is thirty-six. Forty-one does not equal thirty-six, so this choice is out.",
+    "at": [
+     "the middle is five",
+     "Sixteen plus twenty-five",
+     "Six squared is",
+     "not equal thirty"
+    ]
+   },
+   {
+    "say": "Now test eight. Eight over two is four, so the numbers are three, four and five. Nine plus sixteen is twenty-five, and five squared is twenty-five too. The equation works, so choice number two is our answer. Okay. I'll see you in the next question.",
+    "at": [
+     "Eight over two",
+     "three, four and",
+     "Nine plus sixteen",
+     "and five squared",
+     "too. The equation"
+    ]
+   }
   ]
+ ]
 }

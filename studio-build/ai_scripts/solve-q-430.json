@@ -72,6 +72,7 @@
    {
     "say": "We found sixty three-digit multiples of fifteen. Now we'll count the three-digit multiples of seventeen and compare the two counts. Seventeen, the same way. Seventeen times six is a hundred two, and seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right.",
     "at": [
+     "We found",
      "Seventeen times six",
      "fifty-eight is nine",
      "Fifty-eight minus six",

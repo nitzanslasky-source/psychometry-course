@@ -12,38 +12,50 @@
     "pause": 0.5
    },
    {
-    "say": "The diamond is on both sides. It's very rare on the exam, but good to know. [short pause] We treat the diamond like an unknown, and isolate it.",
+    "say": "Diamond of x appears on both sides of the equation. This type is very rare on the exam, but it's good to know. [short pause] We'll treat diamond of x like an unknown, and isolate it.",
     "at": [
-     "The diamond is on both sides",
-     "sides. It's very",
-     "the exam, but",
+     "appears on both sides",
+     "the equation. This",
+     "very rare on",
+     "but it's good",
+     "We'll treat diamond",
      "like an unknown"
     ]
    },
    {
-    "say": "[short pause] Move the four diamonds to the left, as a minus, and the minus three x to the right, as a plus. Five diamonds minus four diamonds is one diamond.",
+    "say": "[short pause] Think of diamond of x as one unknown, like a box. On the left there are five boxes, and on the right there are four boxes. Let's move the four boxes to the left side. Subtracting four boxes from both sides leaves five boxes minus four boxes on the left.",
     "at": [
-     "Move the four diamonds",
-     "the left, as",
-     "and the minus",
-     "to the right",
-     "Five diamonds minus",
-     "is one diamond"
+     "x as one",
+     "a box. On",
+     "there are five",
+     "on the right",
+     "four boxes. Let's",
+     "move the four boxes",
+     "the left side",
+     "Subtracting four boxes",
+     "sides leaves five",
+     "four boxes on"
     ]
    },
    {
-    "say": "So diamond of x is three x plus eight. Now it's an ordinary definition.",
+    "say": "Five boxes minus four boxes is one box. So diamond of x minus three x is equal to eight. Now add three x to both sides, and diamond of x is three x plus eight. Now it's an ordinary definition.",
     "at": [
-     "three x plus eight",
+     "Five boxes minus four boxes",
+     "is one box",
+     "So diamond of",
+     "three x is",
+     "Now add three x",
+     "both sides, and",
+     "x is three",
      "Now it's an"
     ]
    },
    {
-    "say": "Diamond of four is three times four plus eight, twelve plus eight, twenty. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "Now put four into the same template. Three times four is twelve, and twelve plus eight is twenty. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "Diamond of four is",
-     "times four plus",
-     "plus eight, twenty",
+     "Now put four",
+     "Three times four is twelve",
+     "and twelve plus",
      "Choice number two is our answer"
     ]
    }

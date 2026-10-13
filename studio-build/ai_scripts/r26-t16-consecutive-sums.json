@@ -1,84 +1,84 @@
 {
-  "videoId": "r26-t16-consecutive-sums",
-  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      "Welcome back. Before the next two questions, let's review two tools for numbers in a row. We'll use them when learning how to find a sum from how many numbers there are and the middle value."
-    ],
-    [
-      {
-        "say": "How many integers are there from three to ten, including both ends? Subtract the first from the last, then add one. Ten minus three is seven. That counts the gaps between the numbers, so add one to include the starting number too. There are eight integers.",
-        "at": [
-          "from three to ten",
-          "add one. Ten",
-          "Ten minus three",
-          "That counts the"
-        ]
-      },
-      {
-        "say": "Now count only the even numbers from four to twenty. Each gap is two. Twenty minus four is sixteen, so the distance from the first to the last is sixteen. Divide by the gap of two: sixteen over two is eight gaps. Then add one for the starting number. There are nine even numbers.",
-        "at": [
-          "only the even numbers",
-          "four to twenty",
-          "Each gap is",
-          "Twenty minus four",
-          "minus four is",
-          "over two is",
-          "Then add one"
-        ]
-      },
-      {
-        "say": "Count odd numbers in a row the same way, because their gaps are also two. From three to eleven, eleven minus three is eight. Eight over two is four gaps, and plus one is five numbers. We can check the list: three, five, seven, nine and eleven.",
-        "at": [
-          "odd numbers in",
-          "From three to eleven",
-          "minus three is",
-          "over two is",
-          "and plus one",
-          "numbers. We can"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "The second tool is the difference-of-squares shortcut formula. b squared minus a squared is b minus a, times b plus a. This rewrites the same subtraction as a multiplication.",
-        "at": [
-          "minus a squared",
-          "b minus a",
-          "minus a, times"
-        ]
-      },
-      {
-        "say": "If a and b are integers in a row, with b bigger, then b minus a is one. So b squared minus a squared becomes one times the whole bracket, b plus a. Multiplying by one leaves the other number unchanged. So b squared minus a squared equals a plus b for these neighbors.",
-        "at": [
-          "If a and",
-          "b minus a",
-          "So b squared",
-          "squared equals a"
-        ]
-      },
-      {
-        "say": "Let's see it in numbers. Five squared is twenty-five, and four squared is sixteen. Twenty-five minus sixteen is nine. Four plus five is also nine. Now eight and seven: eight squared is sixty-four, and seven squared is forty-nine. Sixty-four minus forty-nine is fifteen, and seven plus eight is fifteen too.",
-        "at": [
-          "Five squared is twenty-five",
-          "four squared is",
-          "Twenty-five minus sixteen",
-          "Four plus five",
-          "Eight squared is sixty-four",
-          "seven squared is",
-          "Sixty-four minus forty-nine",
-          "and seven plus"
-        ]
-      },
-      {
-        "say": "Careful, replacing the difference of squares with the sum works here because the numbers are neighbors. Six and four are not neighbors. Six squared is thirty-six, and four squared is sixteen. Their difference is twenty, not six plus four, which is ten. [pause] Okay. I'll see you in the next video.",
-        "at": [
-          "here because the",
-          "four squared is",
-          "Their difference is",
-          "not six plus"
-        ]
-      }
+ "videoId": "r26-t16-consecutive-sums",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Before the next two questions, let's review two tools for numbers in a row. We'll use them when learning how to find a sum from how many numbers there are and the middle value."
+  ],
+  [
+   {
+    "say": "How many integers are there from three to ten, including both ends? Subtract the first from the last, then add one. Ten minus three is seven. That counts the gaps between the numbers, so add one to include the starting number too. There are eight integers.",
+    "at": [
+     "from three to ten",
+     "add one. Ten",
+     "Ten minus three",
+     "That counts the"
     ]
+   },
+   {
+    "say": "Now count only the even numbers from four to twenty. Each gap is two. Twenty minus four is sixteen, so the distance from the first to the last is sixteen. Divide by the gap of two: sixteen over two is eight gaps. Then add one for the starting number. There are nine even numbers.",
+    "at": [
+     "only the even numbers",
+     "four to twenty",
+     "Each gap is",
+     "Twenty minus four",
+     "minus four is",
+     "over two is",
+     "Then add one"
+    ]
+   },
+   {
+    "say": "Count odd numbers in a row the same way, because their gaps are also two. From three to eleven, eleven minus three is eight. Eight over two is four gaps, and plus one is five numbers. We can check the list: three, five, seven, nine and eleven.",
+    "at": [
+     "odd numbers in",
+     "From three to eleven",
+     "minus three is",
+     "over two is",
+     "and plus one",
+     "numbers. We can"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The second tool is the difference-of-squares shortcut formula. b squared minus a squared is b minus a, times b plus a. This rewrites the same subtraction as a multiplication.",
+    "at": [
+     "minus a squared",
+     "b minus a",
+     "minus a, times"
+    ]
+   },
+   {
+    "say": "If a and b are integers in a row, with b bigger, then b minus a is one. So b squared minus a squared becomes one times the whole bracket, b plus a. Multiplying by one leaves the other number unchanged. So b squared minus a squared equals a plus b for these neighbors.",
+    "at": [
+     "If a and",
+     "b minus a",
+     "So b squared",
+     "squared equals a"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. Five squared is twenty-five, and four squared is sixteen. Twenty-five minus sixteen is nine. Four plus five is also nine. Now eight and seven: eight squared is sixty-four, and seven squared is forty-nine. Sixty-four minus forty-nine is fifteen, and seven plus eight is fifteen too.",
+    "at": [
+     "Five squared is twenty-five",
+     "four squared is",
+     "Twenty-five minus sixteen",
+     "Four plus five",
+     "Eight squared is sixty-four",
+     "seven squared is",
+     "Sixty-four minus forty-nine",
+     "and seven plus"
+    ]
+   },
+   {
+    "say": "Careful, replacing the difference of squares with the sum works here because the numbers are neighbors. Six and four are not neighbors. Six squared is thirty-six, and four squared is sixteen. Their difference is twenty, not six plus four, which is ten. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "here because the",
+     "four squared is",
+     "Their difference is",
+     "not six plus"
+    ]
+   }
   ]
+ ]
 }

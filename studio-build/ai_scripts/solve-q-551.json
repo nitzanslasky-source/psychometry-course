@@ -12,75 +12,97 @@
     "pause": 0.5
    },
    {
-    "say": "Two operations in one question. [short pause] We'll solve it two ways, the standard way, and then with the shortcut formulas.",
+    "say": "Two operations in one question, the diamond and the hash. [short pause] We'll solve it two ways, the standard way, and then with the shortcut formulas.",
     "at": [
-     "Two operations",
+     "Two operations in one question",
+     "the diamond and",
      "We'll solve it",
      "the standard way",
      "with the shortcut"
     ]
    },
    {
-    "say": "[short pause] The diamond appears twice inside, and then the hash works on both results. Three calculations. The left diamond. Ten squared is a hundred. Two times ten times six is a hundred twenty, so minus a hundred twenty. Six squared is thirty-six. A hundred minus a hundred twenty plus thirty-six is sixteen.",
+    "say": "[short pause] Inside the hash there are two diamonds. So we calculate both diamonds first, and then the hash works on the two results. That's three calculations. The left diamond is diamond of ten and six, so x is ten and y is six. Ten squared is a hundred. Two times ten times six is a hundred twenty, and it's subtracted. Six squared is thirty-six. A hundred minus a hundred twenty is negative twenty, plus thirty-six is sixteen.",
     "at": [
-     "The diamond",
-     "and then the",
-     "on both results",
+     "Inside the",
+     "Inside the hash there are",
+     "So we calculate",
+     "first, and then",
+     "works on the",
+     "That's three calculations",
      "The left diamond",
+     "of ten and",
+     "x is ten",
+     "Ten squared is a hundred",
      "Two times ten",
      "is a hundred twenty",
-     "minus a hundred",
-     "squared is thirty-six",
+     "it's subtracted. Six",
      "A hundred minus",
-     "twenty plus thirty-six"
+     "twenty is negative",
+     "thirty-six is sixteen"
     ]
    },
    {
-    "say": "The right diamond, twenty-five, minus forty, plus sixteen. One.",
+    "say": "The right diamond is diamond of five and four. Five squared is twenty-five. Two times five times four is forty, subtracted. Four squared is sixteen. Twenty-five minus forty is negative fifteen, plus sixteen is one.",
     "at": [
      "The right diamond",
-     "forty, plus sixteen"
+     "of five and",
+     "Five squared is twenty-five",
+     "Two times five",
+     "is forty, subtracted",
+     "Twenty-five minus forty",
+     "fifteen, plus sixteen"
     ]
    },
    {
-    "say": "Now the hash of sixteen and one. Two fifty-six, plus two times sixteen times one, thirty-two, plus one. Two eighty-nine. Choice number two is our answer.",
+    "say": "Now the hash of sixteen and one. Sixteen squared is two hundred fifty-six. Two times sixteen times one is thirty-two. One squared is one. Two hundred fifty-six plus thirty-two is two hundred eighty-eight, plus one is two hundred eighty-nine. Choice number two is our answer.",
     "at": [
      "Now the hash",
-     "Two fifty-six, plus",
-     "sixteen times one",
-     "one. Two eighty-nine",
+     "Sixteen squared is",
+     "Two times sixteen",
+     "is thirty-two. One",
+     "Two hundred fifty-six plus",
+     "is two hundred eighty-eight",
+     "one is two",
      "Choice number two is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. What's different? We recognize the shortcut formulas in the definitions. x squared minus two x y plus y squared is x minus y, squared. And the hash is x plus y, squared.",
+    "say": "[pause] Another way is to recognize the shortcut formulas inside the definitions. x squared minus two x y plus y squared is the formula for x minus y, all squared. And x squared plus two x y plus y squared is x plus y, all squared.",
     "at": [
      "Another way",
-     "We recognize the",
-     "in the definitions",
-     "minus two x",
-     "y squared is",
-     "x minus y, squared",
-     "And the hash",
-     "plus y, squared"
+     "the shortcut formulas",
+     "definitions. x squared",
+     "x y plus",
+     "is the formula for",
+     "minus y, all",
+     "And x squared",
+     "x y plus y squared is x",
+     "is x plus"
     ]
    },
    {
-    "say": "Ten minus six, squared, sixteen. Five minus four, squared, one.",
+    "say": "So diamond of ten and six is ten minus six, which is four, squared, sixteen. Diamond of five and four is five minus four, which is one, squared, one.",
     "at": [
-     "Ten minus six",
-     "Five minus four"
+     "is ten minus six",
+     "Diamond of five",
+     "is five minus",
+     "is one, squared"
     ]
    },
    {
-    "say": "Sixteen plus one, squared, seventeen squared, two eighty-nine. Choice number two. Much shorter, if you see it. [pause] Okay. I'll see you in the next question.",
+    "say": "And the hash of sixteen and one is sixteen plus one, which is seventeen, squared. Seventeen squared is seventeen times seventeen. Seventeen times ten is a hundred seventy, and seventeen times seven is a hundred nineteen. Together, two hundred eighty-nine. Choice number two. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "Sixteen plus one",
-     "seventeen squared",
-     "number two. Much",
-     "Much shorter, if"
+     "sixteen and one",
+     "sixteen plus one",
+     "Seventeen squared is",
+     "Seventeen times ten",
+     "hundred seventy, and",
+     "seven is a",
+     "Together, two hundred",
+     "Choice number two."
     ]
    }
   ]

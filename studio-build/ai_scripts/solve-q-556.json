@@ -12,86 +12,94 @@
     "pause": 0.5
    },
    {
-    "say": "Operations meet prime numbers. [short pause] We'll solve it two ways, plugging in numbers, and then by understanding.",
+    "say": "This question mixes a new operation with prime factors. [short pause] We'll solve it two ways, plugging in a number, and then by understanding.",
     "at": [
-     "Operations meet prime numbers",
-     "solve it two",
-     "in numbers, and"
+     "mixes a new operation",
+     "two ways, plugging",
+     "number, and then"
     ]
    },
    {
-    "say": "[short pause] A definition in words is easy to misread, so a few examples first. Fifty has two fives. Seventy-five is three times five times five, two fives as well. And seven has no fives, zero.",
+    "say": "[short pause] A definition in words is easy to misread, so let's see it in numbers first. Fifty is two times five times five, so it has two fives. Seventy-five is three times five times five, two fives as well. And seven has no fives at all, so its count is zero.",
     "at": [
      "A definition",
      "easy to misread",
-     "a few examples first",
-     "has two fives",
+     "let's see it in numbers",
+     "Fifty is two",
+     "times five, so",
      "Seventy-five is three",
      "times five, two",
-     "And seven has"
+     "And seven has",
+     "at all, so"
     ]
    },
    {
-    "say": "Now plug in the simplest value, x is one, no fives at all. Choice number one, five has one five, and one squared has none. One against zero. Out. Choice number two, six has none, but zero plus one is one. Out. Choice number three, one against five times zero. Out.",
+    "say": "Now let's plug in the simplest value, x is one. One has no fives, so its count is zero. Choice number one. Five times one is five, which has one five. One squared is one, with no fives. One is not zero, so choice number one is out. Choice number two. One plus five is six, and six is two times three, no fives, so zero. On the right, zero plus one is one. Zero is not one, out. Choice number three. Five has one five, but five times zero is zero. One is not zero, out.",
     "at": [
-     "x is one, no fives",
-     "at all. Choice",
-     "number one, five",
-     "five, and one",
-     "One against zero. Out",
-     "number two, six",
-     "zero plus one is one. Out",
-     "Out. Choice number three",
-     "five times zero. Out"
+     "plug in the simplest value",
+     "x is one",
+     "One has no",
+     "its count is",
+     "number one. Five",
+     "Five times one",
+     "which has one",
+     "One squared is",
+     "no fives. One",
+     "so choice number one is",
+     "number two. One",
+     "One plus five",
+     "and six is",
+     "three, no fives",
+     "On the right",
+     "one is one",
+     "Zero is not one, out",
+     "number three. Five",
+     "Five has one",
+     "five times zero",
+     "not zero, out"
     ]
    },
    {
-    "say": "Choice number four, five has one five, and zero plus one is one. True. Three are out, so choice number four is our answer. One is a risky number, it can make a false rule look true, but here three failed and one survived.",
+    "say": "Choice number four. Five has one five, and zero plus one is one. One equals one. Three choices are out, so choice number four is our answer.",
     "at": [
-     "Choice number four, five has",
-     "number four, five",
-     "five, and zero",
-     "is one. True",
-     "choice number four is our",
-     "One is a",
-     "it can make",
-     "rule look true",
-     "three failed and"
+     "number four. Five",
+     "zero plus one is one. One equals",
+     "One equals one",
+     "are out, so",
+     "number four is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now why. What's different? We reason about the factors instead of trying numbers. Choice number two adds five, and adding says nothing about the factors. Choice number one squares x, and squaring doubles the number of fives.",
+    "say": "[pause] Now let's see why it's always true. When we multiply x by five, we add exactly one more five to its prime factors, whatever x is. So the count of fives goes up by exactly one. That's choice number four, for every x. For example, fifty has two fives, and two hundred fifty has three.",
     "at": [
-     "Now why",
-     "We reason about",
-     "instead of trying",
-     "number two adds",
-     "adds five",
-     "nothing about the",
-     "number one squares",
-     "squaring doubles the"
-    ]
-   },
-   {
-    "say": "Choice number three multiplies the count by five. x is five cubed, times five gives four fives, not fifteen.",
-    "at": [
-     "number three multiplies",
-     "multiplies the count",
-     "x is five",
-     "five gives four"
-    ]
-   },
-   {
-    "say": "And choice number four. Multiply x by five, and you add exactly one more five to its factors. So the count goes up by exactly one, every time. Choice number four. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "number four. Multiply",
-     "Multiply x by",
-     "you add exactly",
+     "Now let's",
+     "always true. When",
+     "x by five",
+     "we add exactly one more five",
      "five to its",
-     "the count goes",
-     "by exactly one, every time"
+     "whatever x is",
+     "So the count",
+     "goes up by",
+     "That's choice number four",
+     "For example, fifty",
+     "fives, and two"
+    ]
+   },
+   {
+    "say": "The others don't always work. Adding five says nothing about the factors. Squaring doubles the count of fives, it doesn't add one. And multiplying the count by five is far too much. For example, x is a hundred twenty-five, which is five cubed, with three fives. Five x has four fives, but five times three is fifteen. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "The others don't",
+     "Adding five says",
+     "Squaring doubles the",
+     "fives, it doesn't",
+     "And multiplying the",
+     "five is far",
+     "x is a hundred twenty-five",
+     "which is five",
+     "Five x has",
+     "but five times"
     ]
    }
   ]

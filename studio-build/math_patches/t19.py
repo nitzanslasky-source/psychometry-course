@@ -2106,6 +2106,9 @@ def _ai_visual(M, vid):
 
 
 def ai_pilot(M):
+    # 2026-10-13: the AI pilot is retired - solve-q-544 is a reading script like every other topic-19 video, rebuilt by
+    # ai_redo_t19() below from _ai_vis_t19.py (it is no longer AI-voiced). Its old pilot slides are not patched here.
+    return
     from dsl import A, T, PT, D
     vid, title = 'solve-q-544', 'Method 1 · Understanding'
     if _ai_recorded(vid): return

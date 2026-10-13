@@ -1,150 +1,151 @@
 {
-  "videoId": "solve-q-496",
-  "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "Given: zero is smaller than a, which is smaller than b, which is smaller than one, which is smaller than c, which is smaller than d. Which of the following statements is not necessarily true?",
-        "voice": "calm",
-        "at": [
-          "Given"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So a and b are between zero and one, and c and d are greater than one. We need the statement that is not always true. [short pause] We'll solve it two ways, using the number line and the operation rules, and then using algebra.",
-        "at": [
-          "a and b",
-          "one, and c",
-          "are greater than",
-          "statement that is",
-          "short pause] We'll",
-          "two ways, using",
-          "then using algebra"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start by placing the letters on the number line. a and b are between zero and one, with a first. c and d are to the right of one, with c first.",
-        "at": [
-          "placing the letters",
-          "a and b",
-          "and one, with",
-          "c and d"
-        ]
-      },
-      {
-        "say": "Choice number one compares c with c over a. Dividing a positive number by a positive fraction smaller than one makes it larger. For example, two divided by one third is six. So c over a is larger than c. This statement is always true, so it's out.",
-        "at": [
-          "number one compares",
-          "Dividing a positive",
-          "makes it larger",
-          "Two divided by",
-          "is six. So",
-          "larger than c"
-        ]
-      },
-      {
-        "say": "Choice number three compares b times d with d. Multiplying a positive number by a positive fraction smaller than one makes it smaller. Six times one half is three. So b times d is smaller than d. This statement is always true too, so it's out.",
-        "at": [
-          "number three compares",
-          "Multiplying a positive",
-          "smaller than one",
-          "it smaller. Six",
-          "Six times one",
-          "three. So b",
-          "smaller than d"
-        ]
-      }
+ "videoId": "solve-q-496",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: zero is smaller than a, which is smaller than b, which is smaller than one, which is smaller than c, which is smaller than d. Which of the following statements is not necessarily true?",
+    "voice": "calm",
+    "at": [
+     "Given"
     ],
-    [
-      {
-        "say": "Choice number four compares c minus b with d minus a. These are distances on the number line: from b to c, and from a to d. a is to the left of b, and d is to the right of c. So the distance from a to d extends farther at both ends. It is longer. The statement is always true, so this choice is out.",
-        "at": [
-          "number four compares",
-          "with d minus",
-          "These are distances",
-          "to the right",
-          "So the distance",
-          "So the distance",
-          "longer. The statement"
-        ]
-      },
-      {
-        "say": "That leaves choice number two. In the exam, we can mark it now. Let's see why it is not always true. It compares c plus b with d plus a. d is larger than c, which helps the right side. But b is larger than a, which helps the left side. We do not know which difference is larger, so we cannot decide the sums from the given order alone.",
-        "at": [
-          "number two. In",
-          "In the exam",
-          "it now. Let's",
-          "now. Let's see",
-          "c plus b",
-          "plus a. d",
-          "d is larger",
-          "But b is",
-          "a, which helps",
-          "We do not"
-        ]
-      },
-      {
-        "say": "To show this statement can fail, choose c and d close together, but a and b farther apart. Use a is zero point two, b is zero point eight, c is one point two, and d is one point three. These fit every given. c plus b is two. d plus a is one point five. Two is not smaller than one point five, so the statement fails. Choice number two is our answer.",
-        "at": [
-          "d close together",
-          "b farther apart",
-          "a is zero point two",
-          "c is one",
-          "and d is",
-          "c plus b",
-          "d plus a",
-          "one point five",
-          "smaller than one",
-          "choice number two is our answer"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "[pause] Now let's use algebra. Choice number one says c is smaller than c over a. Multiply both sides by a, then divide both by c. Both are positive, so the inequality sign stays the same. We get a is smaller than one. That is given, so this choice is always true and is out.",
-        "at": [
-          "Now let's use",
-          "Choice number one",
-          "Choice number one",
-          "Choice number one",
-          "number one says",
-          "than c over",
-          "Multiply both sides by a",
-          "then divide both",
-          "by c. Both",
-          "a is smaller"
-        ]
-      },
-      {
-        "say": "Choice number three says b times d is smaller than d. Divide both sides by positive d. We get b is smaller than one. That is given too, so this choice is out.",
-        "at": [
-          "number three says",
-          "smaller than d",
-          "Divide both sides",
-          "We get b",
-          "b is smaller"
-        ]
-      },
-      {
-        "say": "Choice number four says c minus b is smaller than d minus a. Add a and b to both sides. We get c plus a is smaller than d plus b. d is larger than c, and b is larger than a. Both numbers in the right-hand sum are larger, so that sum is larger. The statement is always true, so it's out.",
-        "at": [
-          "number four says",
-          "says c minus",
-          "b to both",
-          "d plus b",
-          "d is larger",
-          "c, and b",
-          "b is larger",
-          "the right-hand"
-        ]
-      },
-      {
-        "say": "Three choices are always true. So choice number two is the one that is not necessarily true. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "so choice number two"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So a and b are between zero and one, and c and d are greater than one. We need the statement that is not always true. [short pause] We'll solve it two ways, using the number line and the operation rules, and then using algebra.",
+    "at": [
+     "a and b",
+     "one, and c",
+     "are greater than",
+     "statement that is",
+     "short pause] We'll",
+     "two ways, using",
+     "then using algebra"
     ]
+   },
+   {
+    "say": "[short pause] Let's start by placing the letters on the number line. a and b are between zero and one, with a first. c and d are to the right of one, with c first.",
+    "at": [
+     "placing the letters",
+     "a and b",
+     "and one, with",
+     "c and d"
+    ]
+   },
+   {
+    "say": "Choice number one compares c with c over a. Dividing a positive number by a positive fraction smaller than one makes it larger. For example, two divided by one third is six. So c over a is larger than c. This statement is always true, so it's out.",
+    "at": [
+     "number one compares",
+     "Dividing a positive",
+     "makes it larger",
+     "Two divided by",
+     "is six. So",
+     "larger than c"
+    ]
+   },
+   {
+    "say": "Choice number three compares b times d with d. Multiplying a positive number by a positive fraction smaller than one makes it smaller. Six times one half is three. So b times d is smaller than d. This statement is always true too, so it's out.",
+    "at": [
+     "number three compares",
+     "Multiplying a positive",
+     "smaller than one",
+     "it smaller. Six",
+     "Six times one",
+     "three. So b",
+     "smaller than d"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number four compares c minus b with d minus a. These are distances on the number line: from b to c, and from a to d. a is to the left of b, and d is to the right of c. So the distance from a to d extends farther at both ends. It is longer. The statement is always true, so this choice is out.",
+    "at": [
+     "Choice number",
+     "number four compares",
+     "with d minus",
+     "These are distances",
+     "to the right",
+     "So the distance",
+     "So the distance",
+     "longer. The statement"
+    ]
+   },
+   {
+    "say": "That leaves choice number two. In the exam, we can mark it now. Let's see why it is not always true. It compares c plus b with d plus a. d is larger than c, which helps the right side. But b is larger than a, which helps the left side. We do not know which difference is larger, so we cannot decide the sums from the given order alone.",
+    "at": [
+     "number two. In",
+     "In the exam",
+     "it now. Let's",
+     "now. Let's see",
+     "c plus b",
+     "plus a. d",
+     "d is larger",
+     "But b is",
+     "a, which helps",
+     "We do not"
+    ]
+   },
+   {
+    "say": "To show this statement can fail, choose c and d close together, but a and b farther apart. Use a is zero point two, b is zero point eight, c is one point two, and d is one point three. These fit every given. c plus b is two. d plus a is one point five. Two is not smaller than one point five, so the statement fails. Choice number two is our answer.",
+    "at": [
+     "d close together",
+     "b farther apart",
+     "a is zero point two",
+     "c is one",
+     "and d is",
+     "c plus b",
+     "d plus a",
+     "one point five",
+     "smaller than one",
+     "choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's use algebra. Choice number one says c is smaller than c over a. Multiply both sides by a, then divide both by c. Both are positive, so the inequality sign stays the same. We get a is smaller than one. That is given, so this choice is always true and is out.",
+    "at": [
+     "Now let's use",
+     "Choice number one",
+     "Choice number one",
+     "Choice number one",
+     "number one says",
+     "than c over",
+     "Multiply both sides by a",
+     "then divide both",
+     "by c. Both",
+     "a is smaller"
+    ]
+   },
+   {
+    "say": "Choice number three says b times d is smaller than d. Divide both sides by positive d. We get b is smaller than one. That is given too, so this choice is out.",
+    "at": [
+     "number three says",
+     "smaller than d",
+     "Divide both sides",
+     "We get b",
+     "b is smaller"
+    ]
+   },
+   {
+    "say": "Choice number four says c minus b is smaller than d minus a. Add a and b to both sides. We get c plus a is smaller than d plus b. d is larger than c, and b is larger than a. Both numbers in the right-hand sum are larger, so that sum is larger. The statement is always true, so it's out.",
+    "at": [
+     "number four says",
+     "says c minus",
+     "b to both",
+     "d plus b",
+     "d is larger",
+     "c, and b",
+     "b is larger",
+     "the right-hand"
+    ]
+   },
+   {
+    "say": "Three choices are always true. So choice number two is the one that is not necessarily true. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "so choice number two"
+    ]
+   }
   ]
+ ]
 }

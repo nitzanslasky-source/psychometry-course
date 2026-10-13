@@ -12,31 +12,51 @@
     "pause": 0.5
    },
    {
-    "say": "Another circular rule. [short pause] We'll go down to the start value.",
+    "say": "Another circular rule. [short pause] So we go down to the start value, the same way as before.",
     "at": [
      "Another circular rule",
-     "down to the"
+     "go down to",
+     "value, the same"
     ]
    },
    {
-    "say": "[short pause] Seven is bigger than one, so diamond of seven is diamond of six. Diamond of six is diamond of five, and so on. Each one just passes to the one below, down to diamond of one.",
+    "say": "[short pause] Seven is bigger than one, so diamond of seven is diamond of seven minus one, which is diamond of six. Six is bigger than one too, so diamond of six is diamond of five. Each step just passes the question down to the number below.",
     "at": [
-     "Seven is bigger than one",
-     "diamond of six",
-     "Diamond of six is",
-     "of five, and",
-     "Each one just",
-     "the one below",
-     "diamond of one"
+     "so diamond of seven is",
+     "diamond of seven minus",
+     "which is diamond",
+     "Six is bigger",
+     "so diamond of six is diamond of five",
+     "diamond of five",
+     "the question down"
     ]
    },
    {
-    "say": "And one is not bigger than one, so the start value. Diamond of one is nine. So diamond of seven is nine. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "We keep going down until we reach diamond of one. Two is still bigger than one, so diamond of two is diamond of one. But one is not bigger than one, so now the first rule works. Diamond of one is nine.",
     "at": [
-     "one is not bigger",
-     "Diamond of one",
-     "So diamond of",
-     "Choice number four is our answer"
+     "We keep going",
+     "we reach diamond",
+     "Two is still",
+     "so diamond of two is",
+     "diamond of one. But",
+     "But one is",
+     "than one, so now",
+     "first rule works",
+     "Diamond of one is nine"
+    ]
+   },
+   {
+    "say": "Nothing was added or changed on the way down, so every diamond on the chain is nine. Diamond of seven is nine, and choice number four is our answer. Careful, choice number one is a trap. One is the input where the chain stops, not its value. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Nothing was added",
+     "on the way",
+     "every diamond on",
+     "is nine. Diamond",
+     "is nine, and",
+     "choice number four is our answer",
+     "choice number one is a trap",
+     "One is the",
+     "the chain stops"
     ]
    }
   ]

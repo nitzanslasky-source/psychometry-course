@@ -1,152 +1,152 @@
 {
-  "videoId": "solve-q-366",
-  "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
-  "slides": [
-    [
-      {
-        "say": "x and y are integers. Given: three is smaller than x plus y, in absolute value. Which of the following is possible but not necessarily true?",
-        "voice": "calm",
-        "at": [
-          "x and y"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "Unlike the last few questions, this is a technique question. And before we start, let's understand the wording. Possible, but not necessarily true.",
-        "at": [
-          "the wording"
-        ]
-      },
-      {
-        "say": "So anything that's never true is not possible, and it's out. And anything that's always true is necessarily true, so it's out too. We want the one that's sometimes true and sometimes not. [short pause] Two ways, the rules first, and then plugging in numbers.",
-        "at": [
-          "never true",
-          "always true",
-          "We want the"
-        ]
-      },
-      {
-        "say": "[short pause] Our first method. Choice number one looks like the given, with brackets instead of bars, and a square. Both sides of the given are positive, so I'm allowed to square them. Why? Remember, with positive numbers, the bigger number also has the bigger square. Three squared, three times three, is nine.",
-        "at": [
-          "Number one looks",
-          "bars, and a",
-          "square them",
-          "Remember, with positive",
-          "Three squared, three"
-        ]
-      },
-      {
-        "say": "And x plus y in absolute value, squared, is the same as x plus y, squared. A square doesn't care about the sign. So choice number one is always true, and it's out.",
-        "at": [
-          "is the same as",
-          "A square doesn't",
-          "and it's out"
-        ]
-      },
-      {
-        "say": "And there's a much simpler way to see it. Bars and an even power behave the same way. What's true with bars is true with a square.",
-        "at": [
-          "And there's a",
-          "Bars and an even power",
-          "What's true with"
-        ]
-      },
-      {
-        "say": "Choice number two, let's leave it for the end.",
-        "at": [
-          "Number two"
-        ]
-      },
-      {
-        "say": "Choice number three. The absolute value of x y, against the absolute value of x times the absolute value of y. Remember, you can split the bars over multiplication. So these two are always equal, never smaller. Never true, so it's out.",
-        "at": [
-          "Number three",
-          "The absolute value",
-          "you can split the bars",
-          "So these two",
-          "Never true, so it's out"
-        ]
-      },
-      {
-        "say": "Five multiplies the whole sum inside these bars. Let's separate that positive common factor from the absolute value of the sum. Choice number four. Inside the bars I have five x plus five y. Take out the common factor five, and it's five times x plus y. Then split the bars. That's five times the absolute value of x plus y.",
-        "at": [
-          "Number four",
-          "Inside the bars",
-          "Take out the common factor",
-          "x plus y",
-          "That's five times"
-        ]
-      },
-      {
-        "say": "So it says something is smaller than five times itself. That's true for every positive number. Could it fail? Only if x plus y were zero, but the given says it's more than three in absolute value. So it's always true, out.",
-        "at": [
-          "smaller than five times itself",
-          "That's true for",
-          "the given says",
-          "always true, out"
-        ]
-      },
-      {
-        "say": "This choice compares the absolute value of the whole sum with the two separate absolute values added together. The signs determine whether those two results are equal. Three are out, so in the exam you'd circle choice number two. Here, let's see why it's right. The rule from the lesson says the absolute value of a sum is smaller than or equal to the sum of the absolute values. They're equal when x and y have the same sign, and it's smaller when the signs are opposite. So sometimes true, sometimes not. Choice number two is our answer.",
-        "at": [
-          "circle choice number two",
-          "Here, let's see",
-          "The rule from the lesson",
-          "a sum is",
-          "They're equal when",
-          "So sometimes true",
-          "Number two is our answer"
-        ]
-      }
+ "videoId": "solve-q-366",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   {
+    "say": "x and y are integers. Given: three is smaller than x plus y, in absolute value. Which of the following is possible but not necessarily true?",
+    "voice": "calm",
+    "at": [
+     "x and y"
     ],
-    [
-      {
-        "say": "[pause] Our second method is plugging in numbers. We need a statement that can be true but does not have to be true. Start with x is four and y is one, small and easy. Four plus one is five, and five is bigger than three, so they fit the given. Let's check the choices with this pair before choosing any more numbers.",
-        "at": [
-          "Our second",
-          "We need a",
-          "x is four",
-          "plus one is",
-          "the given"
-        ]
-      },
-      {
-        "say": "Choice number one, five squared is twenty-five, and twenty-five is bigger than nine, true. Choice number two, the absolute value of four plus one is five, and four plus one is also five. Five smaller than five? No. Choice number three, four times one is four, in bars four, and four times one is four. Four smaller than four? No. Choice number four, five times five is twenty-five, and five is smaller than twenty-five, true.",
-        "voice": "calm",
-        "at": [
-          "number one, five",
-          "five squared is twenty-five",
-          "number two, the",
-          "five, and four",
-          "number three, four",
-          "number four, five"
-        ]
-      },
-      {
-        "say": "Now opposite signs. Why x six and y negative two? Because with opposite signs they cancel, so I need one of them much bigger, to keep the sum above three. Six plus negative two is four, and four is bigger than three, so they fit.",
-        "at": [
-          "Why x six",
-          "Because with opposite",
-          "Six plus negative"
-        ]
-      },
-      {
-        "say": "Now check choice number two with this new pair. The absolute value of the sum is four. The separate absolute values are six and two, adding up to eight. Four is smaller than eight, so this statement is true this time.",
-        "voice": "calm",
-        "at": [
-          "choice number two",
-          "The absolute value",
-          "true this time"
-        ]
-      },
-      {
-        "say": "Choice number two was false for our first allowed pair and true for our second. That is exactly what possible but not necessarily means. We have found both outcomes for this statement, so we can stop. Choice number two is our answer.",
-        "at": [
-          "Choice number two was",
-          "Choice number two is our answer"
-        ]
-      },
-      "[pause] Okay. I'll see you in the next question."
+    "pause": 0.5
+   },
+   {
+    "say": "Unlike the last few questions, this is a technique question. And before we start, let's understand the wording. Possible, but not necessarily true.",
+    "at": [
+     "the wording"
     ]
+   },
+   {
+    "say": "So anything that's never true is not possible, and it's out. And anything that's always true is necessarily true, so it's out too. We want the one that's sometimes true and sometimes not. [short pause] Two ways, the rules first, and then plugging in numbers.",
+    "at": [
+     "never true",
+     "always true",
+     "We want the"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method. Choice number one looks like the given, with brackets instead of bars, and a square. Both sides of the given are positive, so I'm allowed to square them. Why? Remember, with positive numbers, the bigger number also has the bigger square. Three squared, three times three, is nine.",
+    "at": [
+     "Number one looks",
+     "bars, and a",
+     "square them",
+     "Remember, with positive",
+     "Three squared, three"
+    ]
+   },
+   {
+    "say": "And x plus y in absolute value, squared, is the same as x plus y, squared. A square doesn't care about the sign. So choice number one is always true, and it's out.",
+    "at": [
+     "is the same as",
+     "A square doesn't",
+     "and it's out"
+    ]
+   },
+   {
+    "say": "And there's a much simpler way to see it. Bars and an even power behave the same way. What's true with bars is true with a square.",
+    "at": [
+     "And there's a",
+     "Bars and an even power",
+     "What's true with"
+    ]
+   },
+   {
+    "say": "Choice number two, let's leave it for the end.",
+    "at": [
+     "Number two"
+    ]
+   },
+   {
+    "say": "Choice number three. The absolute value of x y, against the absolute value of x times the absolute value of y. Remember, you can split the bars over multiplication. So these two are always equal, never smaller. Never true, so it's out.",
+    "at": [
+     "Number three",
+     "The absolute value",
+     "you can split the bars",
+     "So these two",
+     "Never true, so it's out"
+    ]
+   },
+   {
+    "say": "Five multiplies the whole sum inside these bars. Let's separate that positive common factor from the absolute value of the sum. Choice number four. Inside the bars I have five x plus five y. Take out the common factor five, and it's five times x plus y. Then split the bars. That's five times the absolute value of x plus y.",
+    "at": [
+     "Number four",
+     "Inside the bars",
+     "Take out the common factor",
+     "x plus y",
+     "That's five times"
+    ]
+   },
+   {
+    "say": "So it says something is smaller than five times itself. That's true for every positive number. Could it fail? Only if x plus y were zero, but the given says it's more than three in absolute value. So it's always true, out.",
+    "at": [
+     "smaller than five times itself",
+     "That's true for",
+     "the given says",
+     "always true, out"
+    ]
+   },
+   {
+    "say": "This choice compares the absolute value of the whole sum with the two separate absolute values added together. The signs determine whether those two results are equal. Three are out, so in the exam you'd circle choice number two. Here, let's see why it's right. The rule from the lesson says the absolute value of a sum is smaller than or equal to the sum of the absolute values. They're equal when x and y have the same sign, and it's smaller when the signs are opposite. So sometimes true, sometimes not. Choice number two is our answer.",
+    "at": [
+     "circle choice number two",
+     "Here, let's see",
+     "The rule from the lesson",
+     "a sum is",
+     "They're equal when",
+     "So sometimes true",
+     "Number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method is plugging in numbers. We need a statement that can be true but does not have to be true. Start with x is four and y is one, small and easy. Four plus one is five, and five is bigger than three, so they fit the given. Let's check the choices with this pair before choosing any more numbers.",
+    "at": [
+     "Our second",
+     "We need a",
+     "x is four",
+     "plus one is",
+     "the given"
+    ]
+   },
+   {
+    "say": "Choice number one, five squared is twenty-five, and twenty-five is bigger than nine, true. Choice number two, the absolute value of four plus one is five, and four plus one is also five. Five smaller than five? No. Choice number three, four times one is four, in bars four, and four times one is four. Four smaller than four? No. Choice number four, five times five is twenty-five, and five is smaller than twenty-five, true.",
+    "voice": "calm",
+    "at": [
+     "number one, five",
+     "five squared is twenty-five",
+     "number two, the",
+     "five, and four",
+     "number three, four",
+     "number four, five"
+    ]
+   },
+   {
+    "say": "Now opposite signs. Why x six and y negative two? Because with opposite signs they cancel, so I need one of them much bigger, to keep the sum above three. Six plus negative two is four, and four is bigger than three, so they fit.",
+    "at": [
+     "Why x six",
+     "Because with opposite",
+     "Six plus negative"
+    ]
+   },
+   {
+    "say": "Now check choice number two with this new pair. The absolute value of the sum is four. The separate absolute values are six and two, adding up to eight. Four is smaller than eight, so this statement is true this time.",
+    "voice": "calm",
+    "at": [
+     "choice number two",
+     "The absolute value",
+     "true this time"
+    ]
+   },
+   {
+    "say": "Choice number two was false for our first allowed pair and true for our second. That is exactly what possible but not necessarily means. We have found both outcomes for this statement, so we can stop. Choice number two is our answer.",
+    "at": [
+     "Choice number two was",
+     "Choice number two is our answer"
+    ]
+   },
+   "[pause] Okay. I'll see you in the next question."
   ]
+ ]
 }

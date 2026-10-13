@@ -12,61 +12,95 @@
     "pause": 0.5
    },
    {
-    "say": "Look closely, the diamond works on two x, not on x. An operation on an expression. [short pause] We'll solve it two ways, matching the input, and then rewriting the rule.",
+    "say": "Look closely at the rule. The diamond works on two x, not on x. So this is an operation on an expression. [short pause] We'll solve it two ways, matching the input, and then rewriting the rule for any input.",
     "at": [
-     "the diamond works on two x",
+     "The diamond works on two x",
      "x, not on",
-     "operation on an",
-     "solve it two",
-     "the input, and"
+     "this is an",
+     "two ways, matching",
+     "and then rewriting",
+     "for any input"
     ]
    },
    {
-    "say": "[short pause] Let's start by matching the input. Fourteen is not x. Fourteen is two x. So two x is fourteen, and x is seven.",
+    "say": "[short pause] In the rule, the input slot holds two x. In the question, fourteen sits in that same slot. So fourteen is not x. Fourteen is two x.",
     "at": [
-     "Let's start",
-     "Fourteen is not x",
-     "is two x",
-     "So two x",
-     "and x is"
+     "In the",
+     "the input slot holds two x",
+     "x. In the",
+     "fourteen sits in that same slot",
+     "So fourteen is",
+     "Fourteen is two"
     ]
    },
    {
-    "say": "The rule says x plus five. Seven plus five is twelve. Choice number one is our answer.",
+    "say": "Careful, this is the trap. A lot of students put fourteen straight into x plus five. Fourteen plus five is nineteen, and it's waiting in the choices, choice number two. But fourteen is two x, not x.",
     "at": [
-     "The rule says",
-     "Seven plus five",
-     "Choice number one is our answer"
+     "Careful, this is",
+     "A lot of",
+     "fourteen straight into",
+     "five. Fourteen plus",
+     "nineteen, and it's",
+     "choice number two",
+     "But fourteen is"
     ]
    },
    {
-    "say": "Now careful, the trap. Fourteen straight into x plus five gives nineteen, and it's waiting in the choices.",
+    "say": "So two x is fourteen. To find x, divide fourteen by two, which is seven.",
     "at": [
-     "the trap",
-     "five gives nineteen",
-     "waiting in the"
+     "So two x is fourteen",
+     "To find x",
+     "by two, which"
+    ]
+   },
+   {
+    "say": "Now the rule says the output is x plus five. x is seven, so seven plus five is twelve. Diamond of fourteen is twelve, and choice number one is our answer.",
+    "at": [
+     "Now the rule",
+     "output is x",
+     "x is seven",
+     "seven plus five is twelve",
+     "Diamond of fourteen",
+     "choice number one is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. What's different? We rewrite the rule so it works on any input directly. Two x goes in, and x plus five comes out. So the diamond halves its input, then adds five.",
+    "say": "[pause] Another way is to rewrite the rule so it works on any input. Two x goes in, and x plus five comes out. What does the diamond do to its input? x is half of two x. So the diamond takes half of its input, and then adds five.",
     "at": [
      "Another way",
-     "We rewrite the",
-     "it works on",
-     "Two x goes in",
-     "So the diamond",
-     "input, then adds"
+     "the rule so",
+     "on any input",
+     "Two x goes",
+     "x plus five",
+     "What does the",
+     "to its input",
+     "x is half",
+     "x. So the",
+     "takes half of its input",
+     "and then adds"
     ]
    },
    {
-    "say": "Diamond of n is n over two, plus five. Fourteen over two is seven, and seven plus five is twelve. Choice number one. [pause] Okay. I'll see you in the next question.",
+    "say": "Let's check this with a number we know. If x is three, the input is six, and the rule gives three plus five, eight. Half of six is three, and three plus five is eight. It matches.",
     "at": [
-     "Diamond of n is",
-     "over two is",
-     "seven plus five is twelve",
-     "Choice number one"
+     "Let's check this",
+     "number we know",
+     "If x is",
+     "input is six",
+     "rule gives three",
+     "Half of six is three",
+     "and three plus",
+     "eight. It matches"
+    ]
+   },
+   {
+    "say": "Now fourteen. Half of fourteen is seven, and seven plus five is twelve. Choice number one again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Half of fourteen is seven",
+     "and seven plus",
+     "Choice number one again"
     ]
    }
   ]

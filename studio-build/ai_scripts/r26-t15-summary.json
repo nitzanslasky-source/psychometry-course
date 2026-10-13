@@ -1,161 +1,161 @@
 {
-  "videoId": "r26-t15-summary",
-  "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      "Before you practice, let's review the main rules for divisibility and remainders."
-    ],
-    [
-      {
-        "say": "For each divisor, check the part of the number that decides divisibility. For two, five and ten, look at the last digit. For three and nine, add the digits and check that sum. For four, check the number formed by the last two digits. For eight, check the number formed by the last three digits.",
-        "at": [
-          "Two, five and ten",
-          "at the last",
-          "Three and nine",
-          "four, check the",
-          "For eight, check"
-        ]
-      },
-      {
-        "say": "For eleven, alternate subtraction and addition across the digits. For nine hundred thirteen, calculate nine minus one plus three, which is eleven. Eleven divides by eleven, so the original number does too.",
-        "at": [
-          "eleven, alternate subtraction",
-          "across the digits",
-          "nine hundred thirteen",
-          "plus three, which",
-          "Eleven divides by"
-        ]
-      },
-      {
-        "say": "For a larger divisor, split it into two numbers that multiply to make it. No number greater than one should divide both of them. For thirty-six, use four times nine. Check divisibility by both four and nine. Checking six twice only repeats the same condition, so six times six is not the right split for this test.",
-        "at": [
-          "a larger divisor",
-          "Split it into",
-          "No number greater",
-          "thirty-six, use",
-          "Check divisibility by"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "When we divide, we get complete groups and sometimes a remainder. The original number is the divisor times the number of complete groups, plus the remainder. The remainder must be smaller than the divisor. So the biggest remainder is the divisor minus one. If the number is smaller than the divisor, we cannot make even one complete group. Five divided by eight leaves five, not three.",
-        "at": [
-          "the divisor times",
-          "plus the remainder",
-          "remainder must be",
-          "the divisor. So",
-          "the biggest remainder",
-          "divisor minus one",
-          "If the number",
-          "leaves five, not"
-        ]
-      },
-      {
-        "say": "When dividing by three or nine, the original number and its digit sum have the same remainder. For four thousand eight hundred twenty-six, the digit sum is twenty. Twenty divided by nine leaves two, so the original number also leaves two when divided by nine.",
-        "at": [
-          "Dividing by three or nine",
-          "the original number",
-          "remainder. For four",
-          "Four thousand eight",
-          "the digit sum is",
-          "Twenty divided by"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "For addition, subtraction and multiplication, work with the remainders instead of the whole numbers. Say a leaves five and b leaves seven when divided by eight. For a plus b, five plus seven is twelve. Twelve leaves four when divided by eight, so the sum leaves four. For a times b, five times seven is thirty-five. Thirty-five leaves three, so the product leaves three. For a minus b, five minus seven is negative two. A remainder cannot be negative, so add eight. Negative two plus eight is six, which is the remainder. The divisor stays eight in all three checks.",
-        "at": [
-          "a leaves five",
-          "leaves seven when",
-          "a plus b",
-          "seven is twelve",
-          "a times b",
-          "seven is thirty-five",
-          "a minus b",
-          "seven is negative",
-          "add eight. Negative"
-        ]
-      },
-      {
-        "say": "Subtract the remainder from the original number. The part left divides exactly, with no remainder.",
-        "at": [
-          "Subtract the remainder",
-          "part left divides"
-        ]
-      },
-      {
-        "say": "If we change the number we're dividing by, can we use the remainder we already know? Yes, if the old divisor divides by the new one. Suppose a number leaves eleven when divided by twelve. Twelve divides by four, so all the complete twelves divide by four too. We only need to check the eleven left over. Eleven leaves three when divided by four, so the original number leaves three too. But ten does not divide by four. So knowing a remainder for ten does not tell us the remainder for four.",
-        "at": [
-          "If we change",
-          "does not divide",
-          "by four. So",
-          "by four. So",
-          "remainder for ten",
-          "remainder for ten"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "For a fraction of another fraction, with one on top of each, multiply the bottom numbers. One fifth of one third is one over fifteen, because five times three is fifteen. For other fractions, simplify first and check that each group is a whole number. To count multiples in a range, find the first and last multipliers. Subtract the first multiplier from the last, then add one because both ends count.",
-        "at": [
-          "a fraction of",
-          "top of each",
-          "one third is",
-          "For other fractions",
-          "check that each",
-          "a whole number",
-          "To count multiples",
-          "Subtract the first",
-          "the last, then",
-          "one because both"
-        ]
-      },
-      {
-        "say": "For integers in a row, these rules are about their product. The product of two numbers in a row always divides by two. The product of three numbers in a row always divides by six. And a cubed minus a can be written as a minus one, times a, times a plus one, which are three numbers in a row.",
-        "at": [
-          "in a row",
-          "divides by two",
-          "in a row always divides by six",
-          "And a cubed",
-          "can be written"
-        ]
-      },
-      {
-        "say": "If a number must divide by something, write it as that divisor times a whole number. Then we can see what it always divides by. When plugging in, choose values that fit every given. Different letters can have equal values, but do not assume they must be equal. Avoid values that give zero if zero makes every choice work. One example that fits the given and makes a claim fail is enough to rule that claim out.",
-        "at": [
-          "by something, write",
-          "Then we can",
-          "When plugging in",
-          "values that fit",
-          "Different letters can",
-          "equal values, but",
-          "not assume they",
-          "Avoid values that",
-          "and makes a",
-          "claim out."
-        ]
-      }
-    ],
-    [
-      {
-        "say": "Before solving, check which rule you need. For a combined divisor, do its factors share anything greater than one? For a remainder, is it smaller than the divisor? If your remainder calculation is negative, add the divisor. And if you change divisors, does the old divisor divide by the new one?",
-        "at": [
-          "do its factors",
-          "is it smaller",
-          "If your remainder",
-          "does the old",
-          "the new one"
-        ]
-      },
-      {
-        "say": "That's it. Now go practice, and I'll see you in the next video.",
-        "at": [
-          "go practice"
-        ]
-      }
+ "videoId": "r26-t15-summary",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Before you practice, let's review the main rules for divisibility and remainders."
+  ],
+  [
+   {
+    "say": "For each divisor, check the part of the number that decides divisibility. For two, five and ten, look at the last digit. For three and nine, add the digits and check that sum. For four, check the number formed by the last two digits. For eight, check the number formed by the last three digits.",
+    "at": [
+     "Two, five and ten",
+     "at the last",
+     "Three and nine",
+     "four, check the",
+     "For eight, check"
     ]
+   },
+   {
+    "say": "For eleven, alternate subtraction and addition across the digits. For nine hundred thirteen, calculate nine minus one plus three, which is eleven. Eleven divides by eleven, so the original number does too.",
+    "at": [
+     "eleven, alternate subtraction",
+     "across the digits",
+     "nine hundred thirteen",
+     "plus three, which",
+     "Eleven divides by"
+    ]
+   },
+   {
+    "say": "For a larger divisor, split it into two numbers that multiply to make it. No number greater than one should divide both of them. For thirty-six, use four times nine. Check divisibility by both four and nine. Checking six twice only repeats the same condition, so six times six is not the right split for this test.",
+    "at": [
+     "a larger divisor",
+     "Split it into",
+     "No number greater",
+     "thirty-six, use",
+     "Check divisibility by"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "When we divide, we get complete groups and sometimes a remainder. The original number is the divisor times the number of complete groups, plus the remainder. The remainder must be smaller than the divisor. So the biggest remainder is the divisor minus one. If the number is smaller than the divisor, we cannot make even one complete group. Five divided by eight leaves five, not three.",
+    "at": [
+     "the divisor times",
+     "plus the remainder",
+     "remainder must be",
+     "the divisor. So",
+     "the biggest remainder",
+     "divisor minus one",
+     "If the number",
+     "leaves five, not"
+    ]
+   },
+   {
+    "say": "When dividing by three or nine, the original number and its digit sum have the same remainder. For four thousand eight hundred twenty-six, the digit sum is twenty. Twenty divided by nine leaves two, so the original number also leaves two when divided by nine.",
+    "at": [
+     "Dividing by three or nine",
+     "the original number",
+     "remainder. For four",
+     "Four thousand eight",
+     "the digit sum is",
+     "Twenty divided by"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "For addition, subtraction and multiplication, work with the remainders instead of the whole numbers. Say a leaves five and b leaves seven when divided by eight. For a plus b, five plus seven is twelve. Twelve leaves four when divided by eight, so the sum leaves four. For a times b, five times seven is thirty-five. Thirty-five leaves three, so the product leaves three. For a minus b, five minus seven is negative two. A remainder cannot be negative, so add eight. Negative two plus eight is six, which is the remainder. The divisor stays eight in all three checks.",
+    "at": [
+     "a leaves five",
+     "leaves seven when",
+     "a plus b",
+     "seven is twelve",
+     "a times b",
+     "seven is thirty-five",
+     "a minus b",
+     "seven is negative",
+     "add eight. Negative"
+    ]
+   },
+   {
+    "say": "Subtract the remainder from the original number. The part left divides exactly, with no remainder.",
+    "at": [
+     "Subtract the remainder",
+     "part left divides"
+    ]
+   },
+   {
+    "say": "If we change the number we're dividing by, can we use the remainder we already know? Yes, if the old divisor divides by the new one. Suppose a number leaves eleven when divided by twelve. Twelve divides by four, so all the complete twelves divide by four too. We only need to check the eleven left over. Eleven leaves three when divided by four, so the original number leaves three too. But ten does not divide by four. So knowing a remainder for ten does not tell us the remainder for four.",
+    "at": [
+     "If we change",
+     "does not divide",
+     "by four. So",
+     "by four. So",
+     "remainder for ten",
+     "remainder for ten"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "For a fraction of another fraction, with one on top of each, multiply the bottom numbers. One fifth of one third is one over fifteen, because five times three is fifteen. For other fractions, simplify first and check that each group is a whole number. To count multiples in a range, find the first and last multipliers. Subtract the first multiplier from the last, then add one because both ends count.",
+    "at": [
+     "a fraction of",
+     "top of each",
+     "one third is",
+     "For other fractions",
+     "check that each",
+     "a whole number",
+     "To count multiples",
+     "Subtract the first",
+     "the last, then",
+     "one because both"
+    ]
+   },
+   {
+    "say": "For integers in a row, these rules are about their product. The product of two numbers in a row always divides by two. The product of three numbers in a row always divides by six. And a cubed minus a can be written as a minus one, times a, times a plus one, which are three numbers in a row.",
+    "at": [
+     "in a row",
+     "divides by two",
+     "in a row always divides by six",
+     "And a cubed",
+     "can be written"
+    ]
+   },
+   {
+    "say": "If a number must divide by something, write it as that divisor times a whole number. Then we can see what it always divides by. When plugging in, choose values that fit every given. Different letters can have equal values, but do not assume they must be equal. Avoid values that give zero if zero makes every choice work. One example that fits the given and makes a claim fail is enough to rule that claim out.",
+    "at": [
+     "by something, write",
+     "Then we can",
+     "When plugging in",
+     "values that fit",
+     "Different letters can",
+     "equal values, but",
+     "not assume they",
+     "Avoid values that",
+     "and makes a",
+     "claim out."
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Before solving, check which rule you need. For a combined divisor, do its factors share anything greater than one? For a remainder, is it smaller than the divisor? If your remainder calculation is negative, add the divisor. And if you change divisors, does the old divisor divide by the new one?",
+    "at": [
+     "do its factors",
+     "is it smaller",
+     "If your remainder",
+     "does the old",
+     "the new one"
+    ]
+   },
+   {
+    "say": "That's it. Now go practice, and I'll see you in the next video.",
+    "at": [
+     "go practice"
+    ]
+   }
   ]
+ ]
 }

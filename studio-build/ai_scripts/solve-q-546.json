@@ -12,57 +12,88 @@
     "pause": 0.5
    },
    {
-    "say": "A circular rule, the operation appears inside its own definition. [short pause] We'll solve it two ways, going down and back up, and then with the pattern.",
+    "say": "This is a circular rule. The diamond appears inside its own definition, so it keeps calling itself. [short pause] We'll solve it two ways, going down to the start value and back up, and then with the pattern.",
     "at": [
-     "A circular rule",
-     "appears inside its",
-     "We'll solve it",
-     "going down and",
-     "and then with"
+     "This is a circular rule",
+     "The diamond appears",
+     "own definition, so",
+     "two ways, going",
+     "the start value",
+     "up, and then"
     ]
    },
    {
-    "say": "[short pause] Diamond of six is nine minus diamond of four. We don't know that yet, so keep going. Diamond of four is nine minus diamond of two.",
+    "say": "[short pause] Six is two or more, so we use the second rule. Diamond of six is nine minus diamond of six minus two, which is diamond of four. But we don't know diamond of four yet, so we keep going down.",
     "at": [
-     "Diamond of six is",
+     "Six is",
+     "so we use",
+     "Diamond of six is nine minus",
      "minus diamond of",
-     "We don't know",
-     "so keep going",
+     "two, which is",
+     "But we don't",
+     "of four yet",
+     "keep going down"
+    ]
+   },
+   {
+    "say": "Diamond of four is nine minus diamond of two. And diamond of two is nine minus diamond of zero.",
+    "at": [
      "Diamond of four is",
-     "minus diamond of two"
+     "minus diamond of",
+     "And diamond of two is",
+     "nine minus diamond of zero"
     ]
    },
    {
-    "say": "Diamond of two is nine minus diamond of zero. And diamond of zero is given, two. Now only numbers are left.",
+    "say": "Diamond of zero is given, it's two. This is where the chain stops, because now we have a real number.",
     "at": [
-     "Diamond of two is",
-     "And diamond of",
-     "Now only numbers"
+     "Diamond of zero is given",
+     "This is where",
+     "stops, because now",
+     "a real number"
     ]
    },
    {
-    "say": "Climb back up. Nine minus two is seven, so diamond of two is seven. Nine minus seven is two. And nine minus two is seven. Diamond of six is seven. Choice number four is our answer.",
+    "say": "Now we climb back up. Diamond of two is nine minus two, which is seven. Diamond of four is nine minus seven, which is two. And diamond of six is nine minus two, which is seven. Choice number four is our answer.",
     "at": [
-     "Climb back up",
-     "so diamond of",
-     "Nine minus seven",
-     "And nine minus",
-     "Diamond of six",
+     "Now we climb",
+     "Diamond of two is nine minus two",
+     "minus two, which",
+     "Diamond of four is nine minus seven",
+     "minus seven, which",
+     "And diamond of six is",
+     "nine minus two, which is seven. Choice",
      "Choice number four is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. What's different? We look for the pattern instead of climbing every step. Two, seven, two, seven. Zero, four and eight give two, and two and six give seven. So six gives seven, choice number four, and even diamond of a hundred would be instant. [pause] Okay. I'll see you in the next question.",
+    "say": "[pause] Another way is to look for a pattern. Let's list the values from the start. Diamond of zero is two. Each next value is nine minus the one before it. Nine minus two is seven. Nine minus seven is two. So the values go two, seven, two, seven.",
     "at": [
      "Another way",
-     "We look for",
-     "instead of climbing",
-     "Two, seven, two",
-     "two, and two",
-     "So six gives seven",
-     "number four, and",
+     "for a pattern",
+     "list the values",
+     "Diamond of zero",
+     "Each next value",
+     "minus the one",
+     "Nine minus two",
+     "Nine minus seven",
+     "So the values go",
+     "seven, two, seven"
+    ]
+   },
+   {
+    "say": "So zero, four and eight give two, and two and six give seven. Six gives seven, choice number four. And the pattern also gives big inputs at once. A hundred is like zero, four and eight, so diamond of a hundred is two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So zero, four",
+     "give two, and",
+     "six give seven",
+     "Six gives seven",
+     "And the pattern",
+     "big inputs at",
+     "A hundred is",
+     "four and eight, so",
      "of a hundred"
     ]
    }

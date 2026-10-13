@@ -1,104 +1,104 @@
 {
-  "videoId": "solve-q-493",
-  "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "Given: one is smaller than p, which is smaller than q, which is smaller than r, which is smaller than s. Which of the following statements is not correct?",
-        "voice": "calm",
-        "at": [
-          "Given"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So p, q, r and s are all greater than one, in that order. We need the statement that is not correct. [short pause] We'll solve it two ways, comparing the numbers we multiply, and then plugging in numbers.",
-        "at": [
-          "all greater than",
-          "order. We need",
-          "the statement that",
-          "We'll solve it",
-          "comparing the numbers",
-          "plugging in numbers"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start by comparing products. All our numbers are positive. Match the larger number in one product with the larger number in the other, and do the same with the smaller numbers. If both numbers in one product are larger, that product is larger too. For example, compare two times three with four times five. Four is larger than two, and five is larger than three. So four times five is larger.",
-        "at": [
-          "Let's start",
-          "by comparing products",
-          "Match the larger",
-          "the larger number in the",
-          "are larger, that",
-          "that product is",
-          "larger too. For",
-          "two times three",
-          "Four is larger",
-          "is larger than three",
-          "five is larger."
-        ]
-      },
-      {
-        "say": "Choice number one compares p times q with r squared. r squared means r times r. r is larger than p, and r is larger than q. So r times r is larger than p times q. The statement is correct, so this choice is out.",
-        "at": [
-          "number one compares",
-          "r squared. r",
-          "r is larger",
-          "The statement is",
-          "so this choice",
-          "out."
-        ]
-      },
-      {
-        "say": "Choice number two compares q with s times p. s is already larger than q. Multiplying s by p makes it even larger, because p is greater than one. So q is smaller than s times p. This statement is correct too, so it's out.",
-        "at": [
-          "number two compares",
-          "q with s",
-          "s is already",
-          "it even larger",
-          "greater than one",
-          "So q is"
-        ]
-      },
-      {
-        "say": "Choice number three compares r times p with q. r is already larger than q, and multiplying by p makes r larger still. So r times p is larger than q. But the choice says it is smaller. That's the incorrect statement, so choice number three is our answer.",
-        "at": [
-          "number three compares",
-          "r times p",
-          "r is already",
-          "So r times",
-          "larger than q. But",
-          "statement, so choice",
-          "choice number three is our answer"
-        ]
-      }
+ "videoId": "solve-q-493",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: one is smaller than p, which is smaller than q, which is smaller than r, which is smaller than s. Which of the following statements is not correct?",
+    "voice": "calm",
+    "at": [
+     "Given"
     ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in. Choose numbers that are all greater than one and in the given order: p is two, q is three, r is four, and s is five.",
-        "at": [
-          "Now let's",
-          "numbers that are",
-          "greater than one",
-          "p is two",
-          "s is five"
-        ]
-      },
-      {
-        "say": "Choice number one: two times three is six, and four squared is sixteen. Six is smaller than sixteen, so the statement works. Choice number two: five times two is ten, and three is smaller than ten. That statement works too. Choice number three: four times two is eight, but eight is not smaller than three. That statement fails. So choice number three is our answer. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "Choice number one",
-          "number one: two",
-          "is six, and",
-          "Six is smaller",
-          "number two: five",
-          "and three is",
-          "number three: four",
-          "is eight, but",
-          "smaller than three",
-          "So choice number three"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So p, q, r and s are all greater than one, in that order. We need the statement that is not correct. [short pause] We'll solve it two ways, comparing the numbers we multiply, and then plugging in numbers.",
+    "at": [
+     "all greater than",
+     "order. We need",
+     "the statement that",
+     "We'll solve it",
+     "comparing the numbers",
+     "plugging in numbers"
     ]
+   },
+   {
+    "say": "[short pause] Let's start by comparing products. All our numbers are positive. Match the larger number in one product with the larger number in the other, and do the same with the smaller numbers. If both numbers in one product are larger, that product is larger too. For example, compare two times three with four times five. Four is larger than two, and five is larger than three. So four times five is larger.",
+    "at": [
+     "Let's start",
+     "by comparing products",
+     "Match the larger",
+     "the larger number in the",
+     "are larger, that",
+     "that product is",
+     "larger too. For",
+     "two times three",
+     "Four is larger",
+     "is larger than three",
+     "five is larger."
+    ]
+   },
+   {
+    "say": "Choice number one compares p times q with r squared. r squared means r times r. r is larger than p, and r is larger than q. So r times r is larger than p times q. The statement is correct, so this choice is out.",
+    "at": [
+     "number one compares",
+     "r squared. r",
+     "r is larger",
+     "The statement is",
+     "so this choice",
+     "out."
+    ]
+   },
+   {
+    "say": "Choice number two compares q with s times p. s is already larger than q. Multiplying s by p makes it even larger, because p is greater than one. So q is smaller than s times p. This statement is correct too, so it's out.",
+    "at": [
+     "number two compares",
+     "q with s",
+     "s is already",
+     "it even larger",
+     "greater than one",
+     "So q is"
+    ]
+   },
+   {
+    "say": "Choice number three compares r times p with q. r is already larger than q, and multiplying by p makes r larger still. So r times p is larger than q. But the choice says it is smaller. That's the incorrect statement, so choice number three is our answer.",
+    "at": [
+     "number three compares",
+     "r times p",
+     "r is already",
+     "So r times",
+     "larger than q. But",
+     "statement, so choice",
+     "choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in. Choose numbers that are all greater than one and in the given order: p is two, q is three, r is four, and s is five.",
+    "at": [
+     "Now let's",
+     "numbers that are",
+     "greater than one",
+     "p is two",
+     "s is five"
+    ]
+   },
+   {
+    "say": "Choice number one: two times three is six, and four squared is sixteen. Six is smaller than sixteen, so the statement works. Choice number two: five times two is ten, and three is smaller than ten. That statement works too. Choice number three: four times two is eight, but eight is not smaller than three. That statement fails. So choice number three is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number one",
+     "number one: two",
+     "is six, and",
+     "Six is smaller",
+     "number two: five",
+     "and three is",
+     "number three: four",
+     "is eight, but",
+     "smaller than three",
+     "So choice number three"
+    ]
+   }
   ]
+ ]
 }

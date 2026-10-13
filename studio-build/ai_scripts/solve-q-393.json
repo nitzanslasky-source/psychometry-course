@@ -59,6 +59,7 @@
    {
     "say": "For every factor pair, the smaller factor is a and the larger factor is b plus four. We have to subtract four from that larger factor before finding the requested sum. So let's list the pairs that make forty-eight, the small number first. I'll write a, then b plus four, then b, then a plus b.",
     "at": [
+     "For every",
      "list the pairs",
      "forty-eight, the small",
      "I'll write a",

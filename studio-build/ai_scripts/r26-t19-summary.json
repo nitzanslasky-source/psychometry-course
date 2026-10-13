@@ -3,111 +3,134 @@
  "style": "the teacher reads it herself (Reading Studio), topic-19 redo (2026-10-12): math_patches/_ai_vis_t19.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Before you practice, here's a quick summary of the topic. Reading a definition, the types, and the shortcuts."
+   "Before you practice, here's a quick summary of the topic. How to read a definition, the types of questions, and the shortcuts."
   ],
   [
    {
-    "say": "A new operation is just a definition. Read it, then follow the whole recipe. a heart b is three times a plus b, so four heart two is eighteen. And the order can matter, two star five isn't always five star two.",
+    "say": "A new operation is just a definition. Read it, and then follow the whole rule. Whatever goes in takes the place of the letter, in every spot, and in brackets. Diamond of x is x squared minus five x. So diamond of negative two is negative two, squared, minus five times negative two. That's four plus ten, which is fourteen.",
     "at": [
-     "A new operation",
-     "Read it, then",
-     "a heart b",
-     "times a plus",
-     "four heart two",
-     "And the order",
-     "two star five",
-     "five star two"
-    ]
-   },
-   {
-    "say": "Whatever goes in, goes in brackets. Diamond of x is x squared minus five x, so diamond of negative two is four plus ten, fourteen.",
-    "at": [
-     "goes in brackets",
+     "A new operation is just",
+     "Read it, and",
+     "the whole rule",
+     "Whatever goes in",
+     "place of the",
+     "every spot, and",
      "Diamond of x",
      "squared minus five",
-     "diamond of negative",
-     "four plus ten"
+     "So diamond of negative two",
+     "is negative two",
+     "five times negative",
+     "That's four plus"
     ]
    },
    {
-    "say": "Inside a longer exercise, turn each operation into a number first. Nested? Inside out, and don't stop halfway.",
+    "say": "Read which input goes in which slot. a heart b is three times, in brackets, a plus b, so four heart two is three times six, eighteen. And the order can matter, so don't assume that two star five is five star two.",
+    "at": [
+     "Read which input",
+     "a heart b",
+     "times, in brackets",
+     "b, so four",
+     "is three times six",
+     "And the order",
+     "so don't assume",
+     "star five is"
+    ]
+   },
+   {
+    "say": "Inside a longer exercise, turn each operation into a number first. And nested operations go from the inside out. The inner result becomes the outer input, so don't stop halfway.",
     "at": [
      "turn each operation",
-     "number first. Nested",
-     "Inside out, and"
+     "And nested operations",
+     "the inside out",
+     "The inner result",
+     "outer input, so"
     ]
    }
   ],
   [
    {
-    "say": "The operation works on an expression? Match the whole input first. F of four t is t plus three, so for F of twenty, t is five, and the answer is eight.",
+    "say": "The operation works on an expression? Match the whole input first. F of four t is t plus three. For F of twenty, four t is twenty, so t is five, and the answer is five plus three, eight.",
     "at": [
      "Match the whole input",
      "F of four",
      "t plus three",
-     "F of twenty",
-     "five, and the"
+     "For F of",
+     "t is twenty",
+     "is five, and",
+     "is five plus"
     ]
    },
    {
-    "say": "No definition? Put the input into each choice. An unknown input? Write the definition, and it's an equation.",
+    "say": "No definition? Put the input into each choice. An unknown input? Write the definition, and it's an ordinary equation.",
     "at": [
      "No definition",
      "Put the input",
      "choice. An unknown",
-     "Write the definition"
+     "Write the definition",
+     "an ordinary equation"
     ]
    },
    {
-    "say": "Conditions? Check which rule at every step. Backwards? Try every rule, and keep an answer only if it fits.",
+    "say": "Conditions? Check which rule to use at every step, because the input changes. Backwards? Try every rule, and keep an answer only if it fits the rule it came from.",
     "at": [
-     "Conditions",
+     "Conditions?",
      "Check which rule",
+     "at every step",
+     "input changes. Backwards",
      "Try every rule",
-     "an answer only"
+     "an answer only",
+     "fits the rule"
     ]
    },
    {
-    "say": "Circular? Go down to the start value, then climb back up. On both sides? Isolate it like an unknown.",
+    "say": "Circular? Go down to the start value, then climb back up. The operation on both sides? Isolate it like an unknown.",
     "at": [
-     "Circular",
+     "Circular?",
      "Go down to",
      "value, then climb",
-     "On both sides",
+     "The operation on",
      "Isolate it like"
     ]
    }
   ],
   [
    {
-    "say": "Not always? One example. Always? Swap the letters. Must be true? Plug in, but not zero, one or equal values, and try a second number if two survive. And a must-be-true question can eat your time, skip it and come back.",
+    "say": "Not always? One example where it fails is enough. Always? Swap the letters, or use algebra. Must be true? Plug in, but not equal values, and try a second number if two choices survive. And when the operation is in every choice, skip the question and come back to it at the end.",
     "at": [
-     "Not always",
+     "Not always?",
+     "One example where",
+     "is enough. Always",
      "Swap the letters",
+     "algebra. Must be",
      "Plug in, but",
-     "one or equal",
-     "try a second",
-     "And a must-be-true",
-     "eat your time",
-     "and come back"
+     "values, and try",
+     "number if two",
+     "And when the",
+     "in every choice",
+     "question and come",
+     "it at the"
     ]
    },
    {
-    "say": "Two families undo themselves, c minus x and c over x. An inverse operation undoes the steps in reverse order.",
+    "say": "Two kinds of rules undo themselves, a number minus x, and a number over x. And an inverse operation undoes the steps in reverse order.",
     "at": [
-     "Two families",
-     "minus x and",
-     "An inverse operation",
-     "steps in reverse"
+     "Two kinds of rules",
+     "themselves, a number",
+     "and a number",
+     "And an inverse",
+     "the steps in"
     ]
    },
    {
-    "say": "A number minus its opposite? The even powers cancel, the odd ones double. And look for the shortcut formulas. [pause] That's it. Now go practice, and I'll see you in the next video.",
+    "say": "A value minus its value at the opposite number? The even powers cancel, and the odd powers double. And look for the shortcut formulas inside a definition. [pause] That's it. Now go practice, and I'll see you in the next video.",
     "at": [
-     "A number minus its opposite",
+     "A value minus its value",
+     "at the opposite",
      "The even powers",
-     "odd ones double",
-     "And look for"
+     "the odd powers",
+     "And look for",
+     "formulas inside a",
+     "it. Now go"
     ]
    }
   ]

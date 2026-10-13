@@ -63,6 +63,7 @@
    {
     "say": "Exactly three different divisors means the two outside divisors, one and k, plus one divisor in the middle. Now exactly three divisors. That's one pair, one times k, plus one middle divisor that pairs with itself. Call the middle divisor d, so d times d is k.",
     "at": [
+     "Exactly three",
      "exactly three divisors",
      "pair, one times",
      "one middle divisor",

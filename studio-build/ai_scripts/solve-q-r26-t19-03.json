@@ -12,55 +12,86 @@
     "pause": 0.5
    },
    {
-    "say": "Conditions again, but backwards. They give the result. [short pause] We'll solve it two ways, two cases, and then plugging in the answers.",
+    "say": "This time it's backwards. They give us the result, twenty-four, and we need the input. And we don't know if x is odd or even. [short pause] We'll solve it two ways, trying both rules, and then plugging in the answers.",
     "at": [
-     "They give the result",
-     "solve it two",
-     "cases, and then"
+     "They give us the result",
+     "twenty-four, and we",
+     "input. And we",
+     "if x is",
+     "ways, trying both",
+     "then plugging in"
     ]
    },
    {
-    "say": "[short pause] We don't know if x is odd or even, so try both rules. The odd rule, three x is twenty-four, so x is eight. But eight is even, and an even number never uses the odd rule. Throw it out.",
+    "say": "[short pause] Let's try both rules. First the odd rule. Three x is twenty-four, so x is twenty-four divided by three, which is eight. But wait. Eight is even, and an even number never uses the odd rule. So eight doesn't fit the rule it came from, and we throw it out.",
     "at": [
-     "We don't",
-     "is odd or",
-     "try both rules",
-     "The odd rule",
-     "But eight is",
-     "an even number",
-     "the odd rule. Throw"
+     "Let's try",
+     "First the odd rule",
+     "x is twenty-four divided",
+     "three, which is",
+     "Eight is even",
+     "even number never",
+     "So eight doesn't",
+     "rule it came",
+     "we throw it"
     ]
    },
    {
-    "say": "The even rule, x squared minus twelve is twenty-four, so x squared is thirty-six. x is positive, so six. And six is even, it fits. Choice number two is our answer. The traps are eight, and six or eight.",
+    "say": "Now the even rule. x squared minus twelve is twenty-four. Add twelve to both sides, so x squared is thirty-six. x is positive, so x is six. And six is even, so it really uses the even rule. It fits.",
     "at": [
-     "The even rule",
-     "x squared is",
+     "Now the even rule",
+     "Add twelve to",
+     "so x squared",
      "x is positive",
      "And six is",
-     "Choice number two is our answer",
-     "The traps are",
-     "six or eight"
+     "it really uses",
+     "rule. It fits"
+    ]
+   },
+   {
+    "say": "So x is six, and choice number two is our answer. Choice numbers one and three keep the eight, which came from the wrong rule.",
+    "at": [
+     "choice number two is our answer",
+     "Choice numbers one",
+     "and three keep the eight",
+     "which came from"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. What's different? We put each offered x into the operation, so the condition is checked for us. Eight is even, sixty-four minus twelve, fifty-two. Not twenty-four. Out.",
+    "say": "[pause] Now let's plug in the answers. Each choice tells us x, so we first check if it's odd or even, and then use the right rule. Choice number one is eight. Eight is even, so the even rule. Eight squared is sixty-four, and sixty-four minus twelve is fifty-two. That's not twenty-four, so eight is out.",
     "at": [
-     "Another way",
-     "We put each",
-     "into the operation",
-     "condition is checked",
+     "Now let's",
+     "Each choice tells",
+     "so we first",
+     "it's odd or",
+     "then use the",
+     "number one is",
      "Eight is even",
-     "Not twenty-four. Out"
+     "Eight squared is",
+     "sixty-four minus twelve",
+     "That's not twenty-four",
+     "so eight is out"
     ]
    },
    {
-    "say": "Six is even, thirty-six minus twelve, twenty-four. Found it. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice number two is six. Six is even, so again the even rule. Six squared is thirty-six, and thirty-six minus twelve is twenty-four. It works.",
     "at": [
+     "number two is",
      "Six is even",
-     "Found it. Choice number two"
+     "Six squared is",
+     "thirty-six minus twelve"
+    ]
+   },
+   {
+    "say": "Eight is out, so choice number three, six or eight, is out too. And six works, so choice number four, no such x, is out. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "choice number three",
+     "is out too",
+     "works, so choice",
+     "no such x, is",
+     "Choice number two is our answer"
     ]
    }
   ]

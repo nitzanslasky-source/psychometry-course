@@ -1,79 +1,79 @@
 {
-  "videoId": "solve-q-513",
-  "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "A, B and C represent digits. Given: C B, times B, is equal to A C B. Which of the following could be B?",
-        "voice": "calm",
-        "at": [
-          "A, B and C"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "C B is a two-digit number. We multiply it by the digit B and get the three-digit number A C B. We need a possible value of B. Write the multiplication [short pause] vertically and check the ones column.",
-        "at": [
-          "short pause] vertically",
-          "vertically and check",
-          "check the ones"
-        ]
-      },
-      {
-        "say": "In the ones column, we multiply B by B, and the result must end in B. We only need its last digit, not the whole product. Which digits keep the same last digit when squared? Zero, one, five and six. Zero times zero is zero. One times one is one. Five times five is twenty-five, ending in five. Six times six is thirty-six, ending in six.",
-        "at": [
-          "digits keep the",
-          "last digit when",
-          "when squared? Zero",
-          "when squared? Zero",
-          "squared? Zero, one",
-          "Zero times zero",
-          "five times five",
-          "ending in five",
-          "ending in six"
-        ]
-      },
-      {
-        "say": "No other digit keeps that last digit. Seven times seven is forty-nine, ending in nine, not seven. Four times four is sixteen, ending in six, not four. So choice numbers one and four are out.",
-        "at": [
-          "No other digit",
-          "Seven times seven",
-          "ending in nine",
-          "So choice numbers one",
-          "and four are out"
-        ]
-      },
-      {
-        "say": "There are two more useful facts about five and six. Five times an even number ends in zero: five times four is twenty. Five times an odd number ends in five: five times three is fifteen. Six times an even number keeps that even number's last digit. Six times four is twenty-four, and six times eight is forty-eight.",
-        "at": [
-          "two more useful",
-          "Five times an even",
-          "four is twenty",
-          "Five times an odd",
-          "ends in five",
-          "three is fifteen",
-          "six times an even",
-          "Six times four",
-          "and six times eight"
-        ]
-      },
-      {
-        "say": "Among the choices, only five and zero are left. Check zero against the whole multiplication. Zero times any number is zero, so it cannot give the three-digit result A C B. That choice is out.",
-        "at": [
-          "only five and zero are left",
-          "Zero times any number",
-          "cannot give the three-digit result"
-        ]
-      },
-      {
-        "say": "So B is five. It fits: twenty-five times five is a hundred twenty-five. C B is twenty-five, B is five, and A C B is a hundred twenty-five. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "So B is",
-          "It fits: twenty",
-          "Twenty-five times five",
-          "Choice number two is our answer"
-        ]
-      }
+ "videoId": "solve-q-513",
+ "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A, B and C represent digits. Given: C B, times B, is equal to A C B. Which of the following could be B?",
+    "voice": "calm",
+    "at": [
+     "A, B and C"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "C B is a two-digit number. We multiply it by the digit B and get the three-digit number A C B. We need a possible value of B. Write the multiplication [short pause] vertically and check the ones column.",
+    "at": [
+     "short pause] vertically",
+     "vertically and check",
+     "check the ones"
     ]
+   },
+   {
+    "say": "In the ones column, we multiply B by B, and the result must end in B. We only need its last digit, not the whole product. Which digits keep the same last digit when squared? Zero, one, five and six. Zero times zero is zero. One times one is one. Five times five is twenty-five, ending in five. Six times six is thirty-six, ending in six.",
+    "at": [
+     "digits keep the",
+     "last digit when",
+     "when squared? Zero",
+     "when squared? Zero",
+     "squared? Zero, one",
+     "Zero times zero",
+     "five times five",
+     "ending in five",
+     "ending in six"
+    ]
+   },
+   {
+    "say": "No other digit keeps that last digit. Seven times seven is forty-nine, ending in nine, not seven. Four times four is sixteen, ending in six, not four. So choice numbers one and four are out.",
+    "at": [
+     "No other digit",
+     "Seven times seven",
+     "ending in nine",
+     "So choice numbers one",
+     "and four are out"
+    ]
+   },
+   {
+    "say": "There are two more useful facts about five and six. Five times an even number ends in zero: five times four is twenty. Five times an odd number ends in five: five times three is fifteen. Six times an even number keeps that even number's last digit. Six times four is twenty-four, and six times eight is forty-eight.",
+    "at": [
+     "two more useful",
+     "Five times an even",
+     "four is twenty",
+     "Five times an odd",
+     "ends in five",
+     "three is fifteen",
+     "six times an even",
+     "Six times four",
+     "and six times eight"
+    ]
+   },
+   {
+    "say": "Among the choices, only five and zero are left. Check zero against the whole multiplication. Zero times any number is zero, so it cannot give the three-digit result A C B. That choice is out.",
+    "at": [
+     "only five and zero are left",
+     "Zero times any number",
+     "cannot give the three-digit result"
+    ]
+   },
+   {
+    "say": "So B is five. It fits: twenty-five times five is a hundred twenty-five. C B is twenty-five, B is five, and A C B is a hundred twenty-five. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So B is",
+     "It fits: twenty",
+     "Twenty-five times five",
+     "Choice number two is our answer"
+    ]
+   }
   ]
+ ]
 }

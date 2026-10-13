@@ -1,73 +1,73 @@
 {
-  "videoId": "solve-q-r26-t16-01",
-  "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "Given: x is smaller than zero, which is smaller than y, and x plus y is bigger than zero. Which of the following is necessarily true?",
-        "voice": "calm",
-        "at": [
-          "Given"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So x is negative, y is positive, and their sum is positive. We need to find what must follow from those two givens. [short pause] We'll solve it two ways, comparing their distances from zero, and then plugging in numbers.",
-        "at": [
-          "x is negative",
-          "is positive, and",
-          "their sum is positive",
-          "solve it two",
-          "distances from zero"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start with their distances from zero. When adding a negative and a positive, subtract their distances from zero. The answer has the sign of the number farther from zero. Negative two plus five is three, positive, because five is farther from zero than negative two. Negative five plus two is negative three, because negative five is farther from zero than two.",
-        "at": [
-          "Let's start",
-          "When adding a",
-          "and a positive",
-          "The answer has",
-          "Negative two plus five",
-          "three, positive, because",
-          "farther from zero than",
-          "Negative five plus"
-        ]
-      },
-      {
-        "say": "Here the sum is positive. So the positive number, y, must be farther from zero than the negative number, x. That's what choice number two says, and choice number two is our answer. Choice number one says the opposite, so it's out.",
-        "at": [
-          "the positive number",
-          "Choice number two is our answer",
-          "answer. Choice number",
-          "says the opposite"
-        ]
-      }
+ "videoId": "solve-q-r26-t16-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: x is smaller than zero, which is smaller than y, and x plus y is bigger than zero. Which of the following is necessarily true?",
+    "voice": "calm",
+    "at": [
+     "Given"
     ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in numbers that fit both givens. Choose x is negative one and y is three. x is negative and y is positive. Negative one plus three is two, which is positive, so the sum condition works too.",
-        "at": [
-          "Now let's",
-          "numbers that fit",
-          "x is negative one",
-          "Negative one plus",
-          "two, which is"
-        ]
-      },
-      {
-        "say": "Use those same values in each choice. Choice number one says x has the larger distance from zero. Here those distances are one and three, and one is not bigger than three. Out. Choice number three says the product is positive. Negative one times three is negative three, which is not bigger than zero. Out. Choice number four says x minus y is positive. Negative one minus three is negative four, which is not positive. Out. Three choices are out, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "Choice number one",
-          "than three. Out",
-          "three says the",
-          "is negative three",
-          "zero. Out. Choice",
-          "negative one minus",
-          "negative four, which",
-          "so choice number two"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So x is negative, y is positive, and their sum is positive. We need to find what must follow from those two givens. [short pause] We'll solve it two ways, comparing their distances from zero, and then plugging in numbers.",
+    "at": [
+     "x is negative",
+     "is positive, and",
+     "their sum is positive",
+     "solve it two",
+     "distances from zero"
     ]
+   },
+   {
+    "say": "[short pause] Let's start with their distances from zero. When adding a negative and a positive, subtract their distances from zero. The answer has the sign of the number farther from zero. Negative two plus five is three, positive, because five is farther from zero than negative two. Negative five plus two is negative three, because negative five is farther from zero than two.",
+    "at": [
+     "Let's start",
+     "When adding a",
+     "and a positive",
+     "The answer has",
+     "Negative two plus five",
+     "three, positive, because",
+     "farther from zero than",
+     "Negative five plus"
+    ]
+   },
+   {
+    "say": "Here the sum is positive. So the positive number, y, must be farther from zero than the negative number, x. That's what choice number two says, and choice number two is our answer. Choice number one says the opposite, so it's out.",
+    "at": [
+     "the positive number",
+     "Choice number two is our answer",
+     "answer. Choice number",
+     "says the opposite"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in numbers that fit both givens. Choose x is negative one and y is three. x is negative and y is positive. Negative one plus three is two, which is positive, so the sum condition works too.",
+    "at": [
+     "Now let's",
+     "numbers that fit",
+     "x is negative one",
+     "Negative one plus",
+     "two, which is"
+    ]
+   },
+   {
+    "say": "Use those same values in each choice. Choice number one says x has the larger distance from zero. Here those distances are one and three, and one is not bigger than three. Out. Choice number three says the product is positive. Negative one times three is negative three, which is not bigger than zero. Out. Choice number four says x minus y is positive. Negative one minus three is negative four, which is not positive. Out. Three choices are out, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number one",
+     "than three. Out",
+     "three says the",
+     "is negative three",
+     "zero. Out. Choice",
+     "negative one minus",
+     "negative four, which",
+     "so choice number two"
+    ]
+   }
   ]
+ ]
 }

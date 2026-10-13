@@ -1,123 +1,128 @@
 {
-  "videoId": "solve-q-r26-t13-13",
-  "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
-  "slides": [
-    [
-      {
-        "say": "Given: the absolute value of a is seven, the absolute value of b is three, and a plus b, in absolute value, is smaller than a minus b, in absolute value. What is the absolute value of a plus b?",
-        "voice": "calm",
-        "at": [
-          "Given"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So three givens. The first two give sizes, and the third one hides the signs. [short pause] We'll solve it two ways, understanding, and then trying all the sign options.",
-        "at": [
-          "The first two",
-          "the third one"
-        ]
-      },
-      {
-        "say": "[short pause] Seven and three are the sizes of the numbers, not yet their signed values. Let's compare the possible size of their sum when the signs match or differ. Our first method. a is seven away from zero, and b is three away. Their signs, we don't know yet. So what can a plus b be? Same signs add up, seven plus three is ten. Opposite signs cancel, seven minus three is four.",
-        "at": [
-          "Our first",
-          "a is seven",
-          "Their signs, we",
-          "So what can",
-          "Same signs add up",
-          "Opposite signs cancel"
-        ]
-      },
-      {
-        "say": "We're comparing absolute values here. The given says changing from adding b to subtracting b makes the size of the result larger. Now the third given. a minus b is just a plus b with the sign of b flipped. So flipping one sign made it bigger. What does that mean? Before the flip, they were cancelling. So a and b have opposite signs.",
-        "at": [
-          "Now the third given",
-          "a minus b",
-          "So flipping one",
-          "So a and b have opposite signs"
-        ]
-      },
-      {
-        "say": "Now careful, a lot of people think this means b is negative. It doesn't. It only means b has the opposite sign of a. a could be negative seven, and b three.",
-        "at": [
-          "a lot of people",
-          "It only means",
-          "a could be"
-        ]
-      },
-      {
-        "say": "So it's the cancelling case. The bigger size minus the smaller one, seven minus three, four.",
-        "voice": "calm",
-        "at": [
-          "the cancelling case",
-          "seven minus three"
-        ]
-      },
-      {
-        "say": "So four, choice number four is our answer. Ten is the same-signs case, and the third given throws it out. Negative four can't be, because the bars are never negative. And cannot be determined is the trap for anyone who skips the third given.",
-        "at": [
-          "number four is our answer",
-          "Ten is the same-signs",
-          "Negative four",
-          "cannot be determined"
-        ]
-      }
+ "videoId": "solve-q-r26-t13-13",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   {
+    "say": "Given: the absolute value of a is seven, the absolute value of b is three, and a plus b, in absolute value, is smaller than a minus b, in absolute value. What is the absolute value of a plus b?",
+    "voice": "calm",
+    "at": [
+     "Given"
     ],
-    [
-      "[pause] The exam can say the same idea in other words, so let's see two of them.",
-      {
-        "say": "The absolute value of x plus y, equals the absolute value of x, minus the absolute value of y. The sizes subtract. That's cancelling, so x and y have opposite signs, and x is the bigger one in size.",
-        "at": [
-          "The sizes subtract",
-          "That's cancelling, so"
-        ]
-      },
-      {
-        "say": "And if a plus b, in absolute value, is smaller than the absolute value of a, then adding b made it smaller. So again they cancelled, opposite signs. For example, a five and b negative two. Five plus negative two is three, and three is smaller than five.",
-        "at": [
-          "smaller than the",
-          "adding b made it smaller",
-          "So again they",
-          "For example",
-          "Five plus negative"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "[pause] Our second method is trying the signs. a can be seven or negative seven, and b can be three or negative three. Start with the positive values, and check whether they fit all three givens before using their sum.",
-        "at": [
-          "Our second method",
-          "a can be",
-          "all three givens"
-        ]
-      },
-      {
-        "say": "With a is seven and b is three, the sum is ten and the difference is four. Their absolute values are ten and four. But the third given says the absolute value of the sum must be smaller than the absolute value of the difference. Ten is not smaller than four, so this pair does not fit. We cannot use it as an answer.",
-        "voice": "calm",
-        "at": [
-          "With a is seven",
-          "the third given",
-          "Ten is not smaller"
-        ]
-      },
-      {
-        "say": "Let's change b to negative three. Seven plus negative three is four. Seven minus negative three is ten. Four is smaller than ten, so this pair fits all three givens. The absolute value of the sum is four.",
-        "voice": "calm",
-        "at": [
-          "Let's change b",
-          "Seven minus negative three",
-          "absolute value of the sum is four"
-        ]
-      },
-      {
-        "say": "The first method showed that the signs must be opposite. If we switch both signs in our working pair, the sum changes from four to negative four, but its absolute value stays four. So either allowed sign order gives the same answer. Choice number four [short pause] is our answer. We do not need to calculate every sign pair separately. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "absolute value stays four",
-          "Choice number four"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So three givens. The first two give sizes, and the third one hides the signs. [short pause] We'll solve it two ways, understanding, and then trying all the sign options.",
+    "at": [
+     "The first two",
+     "the third one"
     ]
+   },
+   {
+    "say": "[short pause] Seven and three are the sizes of the numbers, not yet their signed values. Let's compare the possible size of their sum when the signs match or differ. Our first method. a is seven away from zero, and b is three away. Their signs, we don't know yet. So what can a plus b be? Same signs add up, seven plus three is ten. Opposite signs cancel, seven minus three is four.",
+    "at": [
+     "Our first",
+     "a is seven",
+     "Their signs, we",
+     "So what can",
+     "Same signs add up",
+     "Opposite signs cancel"
+    ]
+   },
+   {
+    "say": "We're comparing absolute values here. The given says changing from adding b to subtracting b makes the size of the result larger. Now the third given. a minus b is just a plus b with the sign of b flipped. So flipping one sign made it bigger. What does that mean? Before the flip, they were cancelling. So a and b have opposite signs.",
+    "at": [
+     "Now the third given",
+     "a minus b",
+     "So flipping one",
+     "So a and b have opposite signs"
+    ]
+   },
+   {
+    "say": "Now careful, a lot of people think this means b is negative. It doesn't. It only means b has the opposite sign of a. a could be negative seven, and b three.",
+    "at": [
+     "a lot of people",
+     "It only means",
+     "a could be"
+    ]
+   },
+   {
+    "say": "So it's the cancelling case. The bigger size minus the smaller one, seven minus three, four.",
+    "voice": "calm",
+    "at": [
+     "the cancelling case",
+     "seven minus three"
+    ]
+   },
+   {
+    "say": "So four, choice number four is our answer. Ten is the same-signs case, and the third given throws it out. Negative four can't be, because the bars are never negative. And cannot be determined is the trap for anyone who skips the third given.",
+    "at": [
+     "number four is our answer",
+     "Ten is the same-signs",
+     "Negative four",
+     "cannot be determined"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] The exam can say the same idea in other words, so let's see two of them.",
+    "at": [
+     "The exam"
+    ]
+   },
+   {
+    "say": "The absolute value of x plus y, equals the absolute value of x, minus the absolute value of y. The sizes subtract. That's cancelling, so x and y have opposite signs, and x is the bigger one in size.",
+    "at": [
+     "The sizes subtract",
+     "That's cancelling, so"
+    ]
+   },
+   {
+    "say": "And if a plus b, in absolute value, is smaller than the absolute value of a, then adding b made it smaller. So again they cancelled, opposite signs. For example, a five and b negative two. Five plus negative two is three, and three is smaller than five.",
+    "at": [
+     "smaller than the",
+     "adding b made it smaller",
+     "So again they",
+     "For example",
+     "Five plus negative"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method is trying the signs. a can be seven or negative seven, and b can be three or negative three. Start with the positive values, and check whether they fit all three givens before using their sum.",
+    "at": [
+     "Our second method",
+     "a can be",
+     "all three givens"
+    ]
+   },
+   {
+    "say": "With a is seven and b is three, the sum is ten and the difference is four. Their absolute values are ten and four. But the third given says the absolute value of the sum must be smaller than the absolute value of the difference. Ten is not smaller than four, so this pair does not fit. We cannot use it as an answer.",
+    "voice": "calm",
+    "at": [
+     "With a is seven",
+     "the third given",
+     "Ten is not smaller"
+    ]
+   },
+   {
+    "say": "Let's change b to negative three. Seven plus negative three is four. Seven minus negative three is ten. Four is smaller than ten, so this pair fits all three givens. The absolute value of the sum is four.",
+    "voice": "calm",
+    "at": [
+     "Let's change b",
+     "Seven minus negative three",
+     "absolute value of the sum is four"
+    ]
+   },
+   {
+    "say": "The first method showed that the signs must be opposite. If we switch both signs in our working pair, the sum changes from four to negative four, but its absolute value stays four. So either allowed sign order gives the same answer. Choice number four [short pause] is our answer. We do not need to calculate every sign pair separately. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "absolute value stays four",
+     "Choice number four"
+    ]
+   }
   ]
+ ]
 }

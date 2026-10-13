@@ -1,66 +1,66 @@
 {
-  "videoId": "solve-q-r26-t18-03",
-  "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "A and B represent digits. Which of the following could be the value of A three, times B seven?",
-        "voice": "calm",
-        "at": [
-          "A and B"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "We multiply two two-digit numbers with some unknown digits. We do not need to find A and B separately. We'll use the [short pause] product's last digit and its possible size.",
-        "at": [
-          "A and B",
-          "B separately. We'll",
-          "short pause] product's",
-          "product's last digit",
-          "and its possible"
-        ]
-      },
-      {
-        "say": "[short pause] A three ends in three, and B seven ends in seven. Only those ones digits decide the product's last digit. Three times seven is twenty-one, so the product must end in one. Eight hundred fifty-seven ends in seven, so that choice is out.",
-        "at": [
-          "ones digits decide",
-          "digit. Three times",
-          "Three times seven",
-          "so the product",
-          "one. Eight hundred",
-          "ends in seven, so"
-        ]
-      },
-      {
-        "say": "Now check the smallest possible product. The numbers are two-digit numbers, so the smallest they can be are thirteen and seventeen. Thirteen times seventeen is two hundred twenty-one. Ninety-one is smaller than that, so it cannot be the product. This choice is out.",
-        "at": [
-          "the smallest they",
-          "thirteen times seventeen",
-          "Ninety-one is",
-          "smaller than that"
-        ]
-      },
-      {
-        "say": "The largest possible numbers are ninety-three and ninety-seven. Their product is smaller than a hundred times a hundred, which is ten thousand. So ten thousand and one is too large. That choice is out.",
-        "at": [
-          "ninety-three and",
-          "a hundred times",
-          "ten thousand. So",
-          "and one is",
-          "too large. That"
-        ]
-      },
-      {
-        "say": "Only eight hundred fifty-one remains. Let's check it can actually occur. Use twenty-three times thirty-seven. Twenty-three times thirty is six hundred ninety. Twenty-three times seven is a hundred sixty-one. Add them to get eight hundred fifty-one. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "Only eight hundred",
-          "Twenty-three times thirty",
-          "ninety. Twenty-three",
-          "is a hundred",
-          "Choice number two is our answer"
-        ]
-      }
+ "videoId": "solve-q-r26-t18-03",
+ "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A and B represent digits. Which of the following could be the value of A three, times B seven?",
+    "voice": "calm",
+    "at": [
+     "A and B"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We multiply two two-digit numbers with some unknown digits. We do not need to find A and B separately. We'll use the [short pause] product's last digit and its possible size.",
+    "at": [
+     "A and B",
+     "B separately. We'll",
+     "short pause] product's",
+     "product's last digit",
+     "and its possible"
     ]
+   },
+   {
+    "say": "[short pause] A three ends in three, and B seven ends in seven. Only those ones digits decide the product's last digit. Three times seven is twenty-one, so the product must end in one. Eight hundred fifty-seven ends in seven, so that choice is out.",
+    "at": [
+     "ones digits decide",
+     "digit. Three times",
+     "Three times seven",
+     "so the product",
+     "one. Eight hundred",
+     "ends in seven, so"
+    ]
+   },
+   {
+    "say": "Now check the smallest possible product. The numbers are two-digit numbers, so the smallest they can be are thirteen and seventeen. Thirteen times seventeen is two hundred twenty-one. Ninety-one is smaller than that, so it cannot be the product. This choice is out.",
+    "at": [
+     "the smallest they",
+     "thirteen times seventeen",
+     "Ninety-one is",
+     "smaller than that"
+    ]
+   },
+   {
+    "say": "The largest possible numbers are ninety-three and ninety-seven. Their product is smaller than a hundred times a hundred, which is ten thousand. So ten thousand and one is too large. That choice is out.",
+    "at": [
+     "ninety-three and",
+     "a hundred times",
+     "ten thousand. So",
+     "and one is",
+     "too large. That"
+    ]
+   },
+   {
+    "say": "Only eight hundred fifty-one remains. Let's check it can actually occur. Use twenty-three times thirty-seven. Twenty-three times thirty is six hundred ninety. Twenty-three times seven is a hundred sixty-one. Add them to get eight hundred fifty-one. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Only eight hundred",
+     "Twenty-three times thirty",
+     "ninety. Twenty-three",
+     "is a hundred",
+     "Choice number two is our answer"
+    ]
+   }
   ]
+ ]
 }

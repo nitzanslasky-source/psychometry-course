@@ -1,81 +1,81 @@
 {
-  "videoId": "solve-q-r26-t17-01",
-  "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "The figure shows the numbers a, b, c and d on a number line. The figure is not drawn to scale. Which of the following is necessarily negative?",
-        "voice": "calm",
-        "at": [
-          "The figure"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "First find each letter's range on the number line. The figure is not drawn to scale, so use the order of the points, not the distances between them. We'll solve it two ways, checking the ranges, and then plugging in numbers.",
-        "at": [
-          "The figure is",
-          "figure is not",
-          "not drawn to scale",
-          "use the order",
-          "not the distances",
-          "it two ways",
-          "ranges, and then"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start with the ranges. a is below negative one. b is between negative one and zero, so it is negative. c is between zero and one, so it is positive. d is above one, so it is positive too.",
-        "at": [
-          "Let's start",
-          "a is below negative one",
-          "c is between",
-          "d is above"
-        ]
-      },
-      {
-        "say": "Choice number one is a over b. Both are negative, and a negative divided by a negative is positive. We need a negative result, so this choice is out.",
-        "at": [
-          "number one is",
-          "a over b",
-          "divided by a",
-          "is positive. We"
-        ]
-      },
-      {
-        "say": "Choice number two is b times c times d. b is negative, and c and d are positive. One negative number multiplied by two positive numbers gives a negative result. That is always true here, so choice number two is our answer.",
-        "at": [
-          "number two is",
-          "b times c times d",
-          "so choice number",
-          "Choice number two is our answer"
-        ]
-      }
+ "videoId": "solve-q-r26-t17-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The figure shows the numbers a, b, c and d on a number line. The figure is not drawn to scale. Which of the following is necessarily negative?",
+    "voice": "calm",
+    "at": [
+     "The figure"
     ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in numbers that fit the picture. Use a is negative two, b is negative one half, c is one half, and d is two.",
-        "at": [
-          "Now let's",
-          "numbers that fit",
-          "a is negative two",
-          "is one half"
-        ]
-      },
-      {
-        "say": "Use those same values for every choice. Choice number one, a over b, gives four, which is positive, so it's out. Choice number three, a plus d, gives zero. Zero is not negative, so it's out too. Choice number four is b cubed minus b. b cubed is negative one eighth. Subtracting negative one half adds one half, giving positive three eighths. So that choice is out. Three choices have failed to give a negative result, leaving choice number two. That's our answer. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "a over b",
-          "is positive, so",
-          "number three, a",
-          "is not negative",
-          "not negative, so",
-          "number four is",
-          "negative one eighth",
-          "half adds one",
-          "three eighths",
-          "leaving choice number"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "First find each letter's range on the number line. The figure is not drawn to scale, so use the order of the points, not the distances between them. We'll solve it two ways, checking the ranges, and then plugging in numbers.",
+    "at": [
+     "The figure is",
+     "figure is not",
+     "not drawn to scale",
+     "use the order",
+     "not the distances",
+     "it two ways",
+     "ranges, and then"
     ]
+   },
+   {
+    "say": "[short pause] Let's start with the ranges. a is below negative one. b is between negative one and zero, so it is negative. c is between zero and one, so it is positive. d is above one, so it is positive too.",
+    "at": [
+     "Let's start",
+     "a is below negative one",
+     "c is between",
+     "d is above"
+    ]
+   },
+   {
+    "say": "Choice number one is a over b. Both are negative, and a negative divided by a negative is positive. We need a negative result, so this choice is out.",
+    "at": [
+     "number one is",
+     "a over b",
+     "divided by a",
+     "is positive. We"
+    ]
+   },
+   {
+    "say": "Choice number two is b times c times d. b is negative, and c and d are positive. One negative number multiplied by two positive numbers gives a negative result. That is always true here, so choice number two is our answer.",
+    "at": [
+     "number two is",
+     "b times c times d",
+     "so choice number",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in numbers that fit the picture. Use a is negative two, b is negative one half, c is one half, and d is two.",
+    "at": [
+     "Now let's",
+     "numbers that fit",
+     "a is negative two",
+     "is one half"
+    ]
+   },
+   {
+    "say": "Use those same values for every choice. Choice number one, a over b, gives four, which is positive, so it's out. Choice number three, a plus d, gives zero. Zero is not negative, so it's out too. Choice number four is b cubed minus b. b cubed is negative one eighth. Subtracting negative one half adds one half, giving positive three eighths. So that choice is out. Three choices have failed to give a negative result, leaving choice number two. That's our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "a over b",
+     "is positive, so",
+     "number three, a",
+     "is not negative",
+     "not negative, so",
+     "number four is",
+     "negative one eighth",
+     "half adds one",
+     "three eighths",
+     "leaving choice number"
+    ]
+   }
   ]
+ ]
 }

@@ -152,7 +152,8 @@
     "say": "We're reading the absolute value of the whole expression as a distance. When the operation is addition, check which fixed point we measure from. And careful with a plus inside. x plus six is the distance from negative six.",
     "at": [
      "a plus inside",
-     "x plus six"
+     "x plus six",
+     "the distance from negative six"
     ]
    }
   ],

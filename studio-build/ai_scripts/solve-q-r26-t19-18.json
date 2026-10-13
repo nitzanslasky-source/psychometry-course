@@ -12,61 +12,108 @@
     "pause": 0.5
    },
    {
-    "say": "No definition, just a property. Do the diamond twice, and you're back at x. [short pause] We'll solve it two ways, plugging in numbers, and then by understanding.",
+    "say": "There's no rule here, only a property. Doing the diamond twice brings us back to x. [short pause] We'll solve it two ways, testing each rule with a number, and then by understanding which rules undo themselves.",
     "at": [
-     "just a property",
-     "diamond twice, and",
-     "two ways, plugging",
-     "and then by"
+     "only a property",
+     "diamond twice brings",
+     "two ways, testing",
+     "with a number",
+     "by understanding which"
     ]
    },
    {
-    "say": "[short pause] Let's put each rule on trial. Pick a test value, not zero, not one. Two. Six x, two goes to twelve, and twelve goes to seventy-two. Not two, out. x plus six, eight, then fourteen. Out.",
+    "say": "[short pause] For each choice, let's apply the rule twice and see if we get back to where we started. Let's take x is two. Why two? It's easy to calculate, and it isn't one, because one can stay one under some rules and fool us.",
     "at": [
-     "Let's put",
-     "Pick a test value",
-     "Six x, two",
-     "twelve, and twelve",
-     "Not two, out",
-     "then fourteen. Out"
+     "For each",
+     "apply the rule twice",
+     "see if we",
+     "to where we",
+     "Let's take x",
+     "It's easy to",
+     "it isn't one",
+     "can stay one",
+     "rules and fool"
     ]
    },
    {
-    "say": "x over six, one third, then one eighteenth. Out. Six over x, two goes to three, and three goes back to two. Choice number four is our answer.",
+    "say": "Choice number one, six x. Two goes to twelve, and twelve goes to seventy-two. Seventy-two is not two, so choice number one is out. Choice number two, x plus six. Two goes to eight, and eight goes to fourteen. Not two, out.",
     "at": [
-     "x over six",
-     "one eighteenth. Out",
-     "Six over x",
-     "to three, and",
-     "back to two",
-     "Choice number four is our answer"
+     "number one, six",
+     "Two goes to twelve",
+     "twelve goes to",
+     "is not two",
+     "so choice number one is out",
+     "Choice number two, x plus six",
+     "number two, x",
+     "Two goes to eight",
+     "eight goes to",
+     "Not two, out"
+    ]
+   },
+   {
+    "say": "Choice number three, x over six. Two goes to two sixths, which is one third. And one third over six is one eighteenth. Not two, out. Choice number four, six over x. Two goes to six over two, which is three. And three goes to six over three, which is two. We're back at two.",
+    "at": [
+     "number three, x",
+     "Two goes to two sixths",
+     "which is one",
+     "one third over",
+     "eighteenth. Not two, out",
+     "Choice number four, six over x",
+     "number four, six",
+     "Two goes to six",
+     "two, which is",
+     "And three goes",
+     "over three, which",
+     "We're back at"
+    ]
+   },
+   {
+    "say": "One example can't prove always, but the other three are out, so choice number four is our answer.",
+    "at": [
+     "always, but the",
+     "so choice number four is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. What's different? We know which families undo themselves, c minus x and c over x. Ten minus, ten minus x, is x again. And six over, six over x, is x again.",
+    "say": "[pause] Another way is to know which kind of rule undoes itself. Six over x turns a number into six divided by it. Do it again, and we divide six by six over x. Dividing by a fraction is multiplying by its reciprocal. So six times x over six, which is x. It always comes back.",
     "at": [
      "Another way",
-     "know which families",
-     "undo themselves",
-     "Ten minus",
-     "And six over"
+     "which kind of",
+     "Six over x",
+     "number into six",
+     "Do it again",
+     "divide six by",
+     "Dividing by a",
+     "multiplying by its",
+     "So six times",
+     "six, which is",
+     "always comes back"
     ]
    },
    {
-    "say": "So six over x, choice number four. Watch choice number three, x over six. It looks close, but the x is on top, and it just keeps shrinking. And a step property, like one step up in the input gives three times the result? Test two neighbours, like two and three. [pause] Okay. I'll see you in the next question.",
+    "say": "The same happens with any number minus x. Ten minus x, and then ten minus that, is ten minus ten plus x, which is x again.",
     "at": [
-     "So six over x",
-     "number four. Watch",
-     "number three, x",
-     "It looks close",
-     "x is on",
-     "it just keeps",
-     "And a step",
-     "one step up",
-     "input gives three",
-     "Test two neighbours"
+     "The same happens",
+     "number minus x",
+     "Ten minus x, and then",
+     "ten minus that",
+     "minus ten plus",
+     "is x again"
+    ]
+   },
+   {
+    "say": "But six x, x plus six and x over six all keep moving the same way. Times six makes a number bigger, and doing it again makes it even bigger. So they never come back. Choice number four. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "But six x",
+     "six and x",
+     "all keep moving",
+     "Times six makes",
+     "bigger, and doing",
+     "makes it even",
+     "So they never come back",
+     "Choice number four"
     ]
    }
   ]
