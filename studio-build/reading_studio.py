@@ -623,6 +623,35 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
 .opts label{display:flex;gap:5px;align-items:center;cursor:pointer}
 #toast{position:fixed;left:50%;bottom:70px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .25s;max-width:90vw;z-index:9}
 #toast.show{opacity:1}
+
+/* 2026-10-14 CAMERA LAYOUT (teacher: "the script at the top in the middle, so I can look at the camera as I speak"):
+   with "Camera on" the current paragraph sits in a narrow column at the TOP CENTRE of the screen, right under a MacBook's
+   camera; the next paragraph small and faded under it, the past ones hidden. Everything else moves below, compact; the
+   self-preview goes to the bottom-right corner. Audio-only keeps the normal layout. */
+body.camlayout{--band:44vh;padding-top:var(--band)}
+.camlayout .top{display:none}
+.camlayout .prompter{position:fixed;top:0;left:50%;transform:translateX(-50%);width:min(46vw,780px);height:var(--band);z-index:5;
+  padding:10px 20px 12px;background:var(--panel);border:1px solid var(--line);border-top:0;border-radius:0 0 16px 16px;box-shadow:0 6px 24px #0002;scroll-behavior:auto}
+.camlayout .prompter::before{content:"";position:fixed;top:4px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--faint);opacity:.6}
+.camlayout .prompter .inner{max-width:none}
+.camlayout.mirror .prompter .inner{transform:scaleX(-1)}
+.camlayout .slide{border:0;margin:0;padding:0}
+.camlayout #paras:not(.selecting) .p{display:none}
+.camlayout #paras:not(.selecting) .p.cur{display:block;font-size:calc(var(--prompt)*1.12);line-height:1.42;color:var(--ink);background:none;border-left-color:transparent;padding:.15em .1em;margin:0 0 .5em;text-align:center}
+.camlayout #paras:not(.selecting) .p.nextp{display:block;font-size:calc(var(--prompt)*.62);line-height:1.4;color:var(--muted);opacity:.55;padding:.1em;text-align:center;border-left-color:transparent}
+.camlayout #paras:not(.selecting) .p.cur::before,.camlayout #paras:not(.selecting) .p.nextp::before{display:none}
+.camlayout aside{width:250px;padding:6px 6px 14px}
+.camlayout .vid{padding:5px 8px}.camlayout .vid .t{font-size:12.5px}.camlayout .grp{padding:6px 8px 4px}
+.camlayout .bar{padding:6px 14px;gap:4px 14px}
+.camlayout .folder,.camlayout .mic,.camlayout .cam{flex:1 1 auto;font-size:12px}
+.camlayout .micinfo{display:none}
+.camlayout .head{padding:6px 14px 4px}.camlayout .head h1{font-size:15px}
+.camlayout .ctrl{padding:0 14px 6px}.camlayout .timer{font-size:28px;min-width:110px}.camlayout .big{padding:7px 13px}
+.camlayout .pbar{margin:0 14px 6px}
+.camlayout .foot{padding:6px 14px}
+.camlayout .work{overflow:auto}
+.camlayout #camPrev{position:fixed;right:14px;bottom:14px;width:120px;height:120px;z-index:6}
+.opts .mirrorbox{display:none}.camlayout .opts .mirrorbox{display:flex}
 @media (max-width:820px){.main{flex-direction:column}aside{width:auto;max-height:30vh;border-right:0;border-bottom:1px solid var(--line)}:root{--prompt:22px}.keys{display:none}}
 </style>
 </head>
@@ -660,6 +689,7 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
       <div class="opts">
         <span class="mode" title="Full read = the whole script. Re-read = only the paragraphs you select (a patch take)."><button id="mFull" class="on">Full read</button><button id="mPatch">Re-read paragraphs</button></span>
         <label><input type="checkbox" id="auto" checked> Auto-scroll</label>
+        <label class="mirrorbox" title="Flip the script left-right, for a teleprompter glass in front of the camera"><input type="checkbox" id="mirror"> Mirror</label>
         <button id="aMinus" title="Smaller text">A−</button><button id="aPlus" title="Bigger text">A+</button>
       </div>
     </div>
@@ -790,13 +820,16 @@ function order(){const n=flat(V[S.cur]).length;return S.mode==='patch'?[...S.sel
 function paintParas(){
   const patch=S.mode==='patch',patching=patch&&!!S.rec,sel=S.sel,ch=changedList();
   document.body.classList.toggle('patch',patch);$('#paras').classList.toggle('patching',patching);
+  {const o=order(),nk=o[o.indexOf(S.para)+1];$('#paras').classList.toggle('selecting',patch&&!patching);
+   document.querySelectorAll('#paras .p').forEach(el=>el.classList.toggle('nextp',nk!=null&&+el.dataset.k===nk))}
   document.querySelectorAll('#paras .p').forEach(el=>{const k=+el.dataset.k;el.classList.toggle('cur',k===S.para&&(!patch||sel.has(k)));el.classList.toggle('done',!patch&&k<S.para);
     el.classList.toggle('sel',patch&&sel.has(k));el.classList.toggle('ctx',patching&&!sel.has(k)&&(sel.has(k-1)||sel.has(k+1)))});
   document.querySelectorAll('#paras .slide').forEach(sd=>sd.classList.toggle('empty',patching&&!sd.querySelector('.p.sel,.p.ctx')));
   if(patch){const nc=[...sel].filter(k=>ch.includes(k)).length;const o=order(),pos=o.indexOf(S.para)+1;$('#pNext').hidden=!patching||pos>=o.length;
   $('#pinfo').innerHTML=patching?(pos<o.length?'<b>Paragraph '+pos+' of '+o.length+'</b> — press <kbd>Space</kbd> (or Next ▸) for the next paragraph':'<b>Paragraph '+pos+' of '+o.length+'</b> — the last one. Press Stop &amp; save when you finish')+' <span style="color:var(--muted)">· greyed lines are context, do not read them</span>':
     'Re-read mode: click paragraphs to select them. <b>'+sel.size+' selected</b>'+(ch.length?' · '+ch.length+' changed since your last take'+(nc?' ('+nc+' selected)':''):' · no changed paragraphs');$('#pChanged').hidden=patching||!ch.length;$('#pClear').hidden=patching}
-  if($('#auto').checked){const el=document.querySelector('#paras .p.cur');if(el){const pr=$('#prompter');const top=el.offsetTop-pr.offsetTop-pr.clientHeight*.3;pr.scrollTo({top:Math.max(0,top),behavior:'smooth'})}}
+  if(document.body.classList.contains('camlayout')&&!$('#paras').classList.contains('selecting')){$('#prompter').scrollTop=0}
+  else if($('#auto').checked){const el=document.querySelector('#paras .p.cur');if(el){const pr=$('#prompter');const top=el.offsetTop-pr.offsetTop-pr.clientHeight*.3;pr.scrollTo({top:Math.max(0,top),behavior:'smooth'})}}
 }
 function step(d){const o=order();if(!o.length)return;let i=o.indexOf(S.para);if(i<0)i=d>0?-1:o.length;const j=i+d;if(j<0||j>=o.length){if(d>0&&S.rec)toast('Last paragraph. Press Stop & save when you finish.');return}setPara(o[j],d>0?'next':'back')}
 function setPara(k,why){const n=flat(V[S.cur]).length;k=Math.max(0,Math.min(n-1,k));if(k===S.para&&why!=='start')return;S.para=k;
@@ -811,6 +844,8 @@ $('#pNext').onclick=e=>{e.currentTarget.blur();if(S.rec&&!S.rec.paused)nextPara(
 $('#prompter').onclick=()=>{if(S.rec&&!S.rec.paused)nextPara()};
 function fontSize(d){let f=LS.get('font',30);f=Math.max(18,Math.min(48,f+d));LS.set('font',f);document.documentElement.style.setProperty('--prompt',f+'px')}
 $('#aMinus').onclick=()=>fontSize(-2);$('#aPlus').onclick=()=>fontSize(2);
+$('#mirror').checked=LS.get('mirror',false);document.body.classList.toggle('mirror',$('#mirror').checked);
+$('#mirror').onchange=()=>{LS.set('mirror',$('#mirror').checked);document.body.classList.toggle('mirror',$('#mirror').checked)};
 $('#auto').checked=LS.get('auto',true);$('#auto').onchange=()=>{LS.set('auto',$('#auto').checked);paintParas()};
 
 /* ---------------- microphone: processing OFF, mono, 48 kHz ---------------- */
@@ -888,6 +923,7 @@ async function fillCams(cur){const sel=$('#camSel');const ds=(await navigator.me
 function camFmt(){const m=camMime();return m.startsWith('video/mp4')?'MP4 (H.264)':m?'WebM ('+(m.includes('vp9')?'VP9':'VP8')+')':'no video recorder'}
 function paintCam(){
   const v=V[S.cur],want=camWanted(v),box=$('#camBox'),info=$('#caminfo');$('#camOn').checked=want;box.classList.toggle('on',want);
+  if(document.body.classList.contains('camlayout')!==want){document.body.classList.toggle('camlayout',want);if(typeof paintParas==='function')paintParas()}
   if(!want){info.textContent=(v.camera?'Camera lesson, but camera switched off: ':'')+'audio only for this video.';$('#camSel').hidden=true;$('#camPrev').hidden=true;return}
   if(CAM.stream){const s=CAM.settings||{};info.innerHTML=esc(CAM.label||'Camera')+' · '+(s.width||'?')+'×'+(s.height||'?')+' · '+Math.round(s.frameRate||0)+' fps · '+camFmt()+(s.height&&s.height<720?' · <span class="bad">low resolution</span>':'')+' · recorded with every take of this video';return}
   info.innerHTML=CAM.err?'<span class="bad">Camera '+(CAM.err==='NotAllowedError'?'blocked: allow it in the address bar':CAM.err==='disconnected'?'disconnected':'not available ('+esc(CAM.err)+')')+'.</span> Click “Camera on” again to retry, or untick it to record audio only.':
