@@ -1,0 +1,84 @@
+{
+ "videoId": "solve-geo33-g089",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The circumference of the smaller circle is ten pi centimeters, and the shaded area, inside the larger circle but outside the smaller one, is thirty-nine pi square centimeters. Between which two values is the circumference of the larger circle, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "The circumference of the smaller circle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We need the circumference of the large circle, so we need its radius. [short pause] We'll go from the small circle to the large one, one given at a time.",
+    "at": [
+     "We need the circumference",
+     "the large circle"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with the first given. The circumference of the small circle is ten pi. If we know a circle's circumference, can we find its radius? Yes. The circumference is two pi r, so two pi r equals ten pi.",
+    "at": [
+     "so two pi r equals ten pi"
+    ]
+   },
+   {
+    "say": "We can cancel pi on both sides, so two r is ten. Two radii make a diameter, so the diameter is ten, and the radius is five. That's the radius of the small circle.",
+    "at": [
+     "We can cancel",
+     "and the radius is five",
+     "That's the radius"
+    ]
+   },
+   {
+    "say": "Now its area. The area of a circle is pi r squared. Pi times five squared is twenty-five pi. That's the area of the small white circle.",
+    "at": [
+     "Pi times five squared",
+     "That's the area"
+    ]
+   },
+   {
+    "say": "On to the second given. The shaded ring is thirty-nine pi. The ring and the white circle together make the whole large circle. So the area of the large circle is twenty-five pi plus thirty-nine pi, which is sixty-four pi.",
+    "at": [
+     "On to the second given",
+     "together make the whole",
+     "So the area of the large circle",
+     "large circle is"
+    ]
+   },
+   {
+    "say": "If we know the area, we can find the radius. Pi R squared is sixty-four pi. Cancel pi, and R squared is sixty-four. So R is eight. Let's remember that.",
+    "at": [
+     "So R is eight"
+    ]
+   },
+   {
+    "say": "Now let's see what they asked. The circumference of the large circle. Two pi R is two pi times eight, which is sixteen pi.",
+    "at": [
+     "Now let's see",
+     "Two pi R is two pi times eight",
+     "pi times eight"
+    ]
+   },
+   "But sixteen pi isn't in the choices. The choices are ranges, so they want us to estimate. How much is pi? Pi is three point one four, and its digits go on forever.",
+   {
+    "say": "So sixteen pi is sixteen times three point one four. Sixteen times three is forty-eight. Sixteen times point one four: sixteen times fourteen is two hundred twenty-four, so it's two point two four. Together, fifty point two four, and a little more. That's between fifty and fifty-one. Choice number four is our answer.",
+    "at": [
+     "Sixteen times three is forty-eight",
+     "Sixteen times point",
+     "Choice number four is our answer"
+    ]
+   },
+   {
+    "say": "Careful with the trap. If you round pi down to three, you get exactly forty-eight, and choice number one looks right. But here the point one four matters. It adds more than two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "If you round pi down to three",
+     "to three, you",
+     "choice number one looks right"
+    ]
+   }
+  ]
+ ]
+}

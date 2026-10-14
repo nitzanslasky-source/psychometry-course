@@ -1,0 +1,104 @@
+{
+ "videoId": "solve-geo33-g092",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Three circles with centers A, B and C touch one another from the outside. Their radii are six centimeters, fourteen centimeters and fifteen centimeters. What is the length of the highlighted arc of the circle with center A, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "Three circles with centers"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We need the length of an arc. An arc is part of the circumference. Its length is the angle out of three hundred sixty, times two pi r, the whole circumference.",
+    "at": [
+     "We need the length of an arc",
+     "An arc is"
+    ]
+   },
+   {
+    "say": "[short pause] The radius of circle A is given, so the whole circumference is easy. Two pi r is two pi times six, which is twelve pi.",
+    "at": [
+     "Two pi r is two pi times six",
+     "pi times six"
+    ]
+   },
+   {
+    "say": "Let's peek at the choices. Choice number one is twelve pi. That's the whole circle, and the highlighted arc is only part of it, so it has to be less. Choice number one is out.",
+    "at": [
+     "number one is",
+     "part of it",
+     "Choice number one is out"
+    ]
+   },
+   {
+    "say": "Sharp-eyed students cross out choice number four too. Six pi is exactly half the circle. For that, the angle at A, between the lines to B and to C, would have to be one hundred eighty. But connect the three centers, and that angle is an angle of triangle A B C. An angle of a triangle is less than one hundred eighty. So choice number four is out too.",
+    "at": [
+     "number four too",
+     "A, between the",
+     "connect the three centers",
+     "that angle is",
+     "So choice number four"
+    ]
+   },
+   {
+    "say": "Choice number two and choice number three can't be split with a quick idea, so we have to solve. But if you're out of time, guess one of the two. That's a one in two chance instead of one in four.",
+    "at": [
+     "number two and",
+     "number three can't",
+     "But if you're"
+    ]
+   },
+   {
+    "say": "[short pause] Let's put in the givens. The radius of circle A is six, so we write six and six on its two radii. Circle B, fourteen and fourteen. Circle C, fifteen and fifteen.",
+    "at": [
+     "the givens. The",
+     "we write six and six",
+     "on its two",
+     "Circle B, fourteen",
+     "Circle C, fifteen"
+    ]
+   },
+   {
+    "say": "The circles touch, so the line between two centers passes through the point where they touch. It's made of the two radii. So A B is six plus fourteen, twenty. A C is six plus fifteen, twenty-one. And B C is fourteen plus fifteen, twenty-nine.",
+    "at": [
+     "The circles touch",
+     "So A B is six plus fourteen",
+     "plus fourteen, twenty"
+    ]
+   },
+   {
+    "say": "Twenty, twenty-one, twenty-nine. Let's check Pythagoras. Twenty squared is four hundred, and twenty-one squared is four hundred forty-one. Together, eight hundred forty-one. And twenty-nine squared? It's twenty-nine times thirty, minus twenty-nine. Twenty-nine times thirty is eight hundred seventy, and eight hundred seventy minus twenty-nine is eight hundred forty-one. The same, so it's a Pythagorean triple.",
+    "at": [
+     "Together, eight hundred forty-one",
+     "It's twenty-nine times"
+    ]
+   },
+   {
+    "say": "B C, twenty-nine, is the hypotenuse, so the angle across from it, the angle at A, is ninety degrees.",
+    "at": [
+     "the angle at A, is ninety"
+    ]
+   },
+   {
+    "say": "So the arc we don't need, inside that angle, is ninety out of three hundred sixty. That's a quarter of the circle. And the highlighted arc is the rest, three quarters of the circumference.",
+    "at": [
+     "don't need, inside",
+     "is ninety out of three hundred sixty",
+     "That's a quarter",
+     "three quarters of the circumference"
+    ]
+   },
+   {
+    "say": "Three quarters of twelve pi. A quarter of twelve pi is three pi, so three quarters is nine pi. Choice number three is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Three quarters of",
+     "so three quarters is nine pi",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

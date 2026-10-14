@@ -1,0 +1,121 @@
+{
+ "videoId": "geo-074-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with circles, with one more arc and a few more words."
+  ],
+  [
+   {
+    "say": "Here's one more arc, a bigger one, from P to Q, along the bottom. The central angle at O intercepts it. And an inscribed angle from D, up at the top, intercepts it too. Stand at D and look down between the two chords. What you see is the arc P Q. So the arc an angle intercepts is always the one between its arms, on the side it opens to.",
+    "at": [
+     "Here's one more arc",
+     "bigger one, from",
+     "The central angle at O",
+     "And an inscribed angle from D",
+     "D, up at",
+     "Stand at D",
+     "down between the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A few more words that come up a lot. A tangent is a straight line that touches the circle at exactly one point. Here's a tangent. It touches the circle at T, and it doesn't go inside.",
+    "at": [
+     "that come up",
+     "A tangent is a straight line",
+     "line that touches",
+     "Here's a tangent",
+     "It touches the"
+    ]
+   },
+   {
+    "say": "We can draw a tangent at any point of the circle. Here's one, and here's another. Each one touches the circle at just one point.",
+    "at": [
+     "Here's one, and here's another",
+     "Each one touches",
+     "at just one point"
+    ]
+   },
+   {
+    "say": "A line that goes through the circle, and crosses it at two points, is not a tangent. And a line that misses the circle isn't one either. The rules of tangents get their own lesson.",
+    "at": [
+     "through the circle",
+     "crosses it at two points",
+     "is not a",
+     "misses the circle",
+     "The rules of"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A sector. Take two radii, O A and O B, and the arc between them. The part of the circle they close off is a sector. It's a slice of the circle, like a slice of pizza.",
+    "at": [
+     "A sector",
+     "Take two radii",
+     "and O B",
+     "is a sector",
+     "It's a slice"
+    ]
+   },
+   {
+    "say": "A sector can be a thin slice. It can be a quarter of the circle, when the central angle is ninety degrees. And a half, a semicircle, is a sector too. We'll learn the area of a sector in its own lesson.",
+    "at": [
+     "a thin slice",
+     "a quarter of the circle",
+     "when the central",
+     "a semicircle",
+     "We'll learn the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And the last one, a segment. Take a chord, A B. The part of the circle between the chord and its arc is called a segment.",
+    "at": [
+     "And the last one",
+     "Take a chord",
+     "The part of",
+     "between the chord and its arc"
+    ]
+   },
+   {
+    "say": "Don't mix it up with a sector. A sector goes all the way to the center, with two radii. A segment is cut off by a chord, and it doesn't reach the center. A segment can be small, or big, more than half the circle. On the exam it usually appears as a shaded region between a chord and an arc.",
+    "at": [
+     "Don't mix it",
+     "A sector goes all the way",
+     "way to the",
+     "A segment is cut off",
+     "by a chord",
+     "or big",
+     "On the exam"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's put it all together on one circle. Try to name each line before I do. O A goes from the center to the circle, so it's a radius. B C goes through the center, so it's a diameter. And it's also a chord, the longest one.",
+    "at": [
+     "Let's put it all together",
+     "on one circle",
+     "O A goes from the center",
+     "center to the",
+     "B C goes through the center",
+     "center, so it's"
+    ]
+   },
+   {
+    "say": "D E joins two points on the circle, but it doesn't go through the center, so it's just a chord. And the line at T touches the circle at one point only, so it's a tangent.",
+    "at": [
+     "D E joins two points",
+     "on the circle",
+     "the line at T touches",
+     "the circle at"
+    ]
+   },
+   "That's it for the words we use in a circle. In the next lesson we start on the rules, the angles in a circle, and what we know about them. [pause] Okay. I'll see you in the next video."
+  ]
+ ]
+}

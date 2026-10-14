@@ -1,0 +1,118 @@
+{
+ "videoId": "solve-geo33-g086",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "An isosceles triangle A B C is inscribed in a circle with center O, and A B equals A C. Given: angle B A C is fifty-six degrees. What is angle A B O?",
+    "voice": "calm",
+    "at": [
+     "An isosceles triangle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Angle A B O is the angle marked x, at B, between B A and the radius B O. [short pause] There are two ways to solve this, a math way and a shorter psychometric way. Let's start with the math.",
+    "at": [
+     "Angle A B O is the angle marked x",
+     "the angle marked"
+    ]
+   },
+   {
+    "say": "Angle B A C is an inscribed angle, and it intercepts the arc B C. Angle B O C is a central angle, and it intercepts the same arc.",
+    "at": [
+     "it intercepts the arc B C",
+     "Angle B O"
+    ]
+   },
+   {
+    "say": "Remember, a central angle is twice the inscribed angle on the same arc. So angle B O C is two times fifty-six, which is one hundred twelve.",
+    "at": [
+     "So angle B O C is two times",
+     "is two times"
+    ]
+   },
+   {
+    "say": "Now look at triangle B O C. O B and O C are both radii, so they're equal, and the triangle is isosceles. This time the top angle is one hundred twelve, not sixty, so it isn't equilateral.",
+    "at": [
+     "Now look at triangle B O C",
+     "O B and"
+    ]
+   },
+   {
+    "say": "The two base angles share one hundred eighty minus one hundred twelve, which is sixty-eight. Half of sixty-eight is thirty-four. So angle O B C is thirty-four, and so is angle O C B.",
+    "at": [
+     "Half of sixty-eight",
+     "So angle O"
+    ]
+   },
+   {
+    "say": "Careful, thirty-four is angle O B C, not our x. It's choice number two, and it's a trap if you stop here.",
+    "at": [
+     "It's choice number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's use the given we haven't used yet. A B equals A C, so triangle A B C is isosceles, and its base angles, at B and at C, are equal.",
+    "at": [
+     "Now let's use the given",
+     "we haven't used",
+     "A B equals A C, so triangle",
+     "angles, at B"
+    ]
+   },
+   {
+    "say": "The top angle is fifty-six. So the angles at B and C share one hundred eighty minus fifty-six, which is one hundred twenty-four. Half of one hundred twenty-four is sixty-two. So the whole angle A B C is sixty-two.",
+    "at": [
+     "Half of one hundred twenty-four",
+     "So the whole"
+    ]
+   },
+   {
+    "say": "The whole angle at B is sixty-two, and its lower part, O B C, is thirty-four. So x is what's left, sixty-two minus thirty-four, which is twenty-eight. Choice number one is our answer. Notice that sixty-two, choice number three, is the whole angle, not x.",
+    "at": [
+     "So x is what's left",
+     "sixty-two minus thirty-four",
+     "Choice number one is our answer",
+     "choice number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] The math solution was quite short. Now the psychometric solution. It uses symmetry and a helper line.",
+    "at": [
+     "Now the psychometric solution",
+     "It uses symmetry"
+    ]
+   },
+   {
+    "say": "From the center O, let's draw a radius to the vertex A.",
+    "at": [
+     "let's draw a radius",
+     "the vertex A"
+    ]
+   },
+   {
+    "say": "Triangle A B C is isosceles, and an isosceles triangle is symmetric. So the radius O A cuts the angle at A into two equal parts. Fifty-six divided by two is twenty-eight, so we get twenty-eight and twenty-eight.",
+    "at": [
+     "Fifty-six divided by two",
+     "twenty-eight, so we"
+    ]
+   },
+   "We don't need to prove it. This isn't a school math exam. It's an easy question early in the section, and none of the choices says the answer can't be found. So we can trust the symmetry.",
+   {
+    "say": "Now look at triangle A O B. O A and O B are both radii, so it's isosceles too, and its base angles are equal. So x equals angle O A B, which is twenty-eight. Choice number one again. This way is shorter, with fewer calculations. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Now look at triangle A O B",
+     "O A and",
+     "So x equals angle O A B",
+     "A B, which",
+     "Choice number one again"
+    ]
+   }
+  ]
+ ]
+}

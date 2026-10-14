@@ -1,0 +1,143 @@
+{
+ "videoId": "solve-q-r26-t33-04",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In a circle with center O and radius six centimeters, angle A O B is sixty degrees. What is the area of the shaded region between the chord A B and the arc A B, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "In a circle with center O"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A shaded area again. In shaded areas, the most common way is subtracting areas. So first a scheme. What minus what gives the shaded part?",
+    "at": [
+     "A shaded area again",
+     "first a scheme",
+     "what gives the"
+    ]
+   },
+   {
+    "say": "[short pause] The shaded part sits between a chord and its arc. A region like this is called a segment. It's thin, so let's look at it bigger, with the same labels.",
+    "at": [
+     "The shaded part sits",
+     "a chord and",
+     "is called a segment",
+     "so let's look at it bigger",
+     "bigger, with the"
+    ]
+   },
+   {
+    "say": "Take the sector A O B, the slice from O out to the arc. Then take away triangle A O B. What's left is exactly the segment. So the segment is the sector minus the triangle.",
+    "at": [
+     "Take the sector",
+     "out to the",
+     "Then take away triangle",
+     "So the segment is",
+     "sector minus the"
+    ]
+   },
+   {
+    "say": "The sector first. Sixty degrees is a sixth of the circle, because six times sixty is three hundred sixty. The whole circle is pi times six squared, thirty-six pi. A sixth of thirty-six pi is six pi.",
+    "at": [
+     "A sixth of thirty-six pi",
+     "is six pi"
+    ]
+   },
+   {
+    "say": "Before we work on the triangle, let's look at the choices. The answer must be six pi minus the triangle. Choice number two starts with twelve pi, and choice number four starts with three pi. So both are out.",
+    "at": [
+     "Choice number two starts",
+     "choice number four starts"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now triangle A O B. O A and O B are both radii, so both are six, and the triangle is isosceles. The angle between them is sixty. So the two base angles share a hundred eighty minus sixty, which is a hundred twenty. That's sixty each.",
+    "at": [
+     "Now triangle A O B",
+     "O A and",
+     "so both are six",
+     "The angle between",
+     "That's sixty each"
+    ]
+   },
+   {
+    "say": "Sixty, sixty and sixty. So it's an equilateral triangle, and A B is six too.",
+    "at": [
+     "So it's an",
+     "A B is six too"
+    ]
+   },
+   {
+    "say": "The area of an equilateral triangle is a squared, times root three, over four. Six squared is thirty-six, and thirty-six over four is nine. So the area is nine root three.",
+    "at": [
+     "The area of",
+     "Six squared is thirty-six",
+     "thirty-six over four"
+    ]
+   },
+   {
+    "say": "If you don't remember the formula, draw the height from O. It cuts the triangle into two gold triangles. The short leg is three, so the height is three root three. Six times three root three, over two, is nine root three again.",
+    "at": [
+     "draw the height from O",
+     "It cuts the",
+     "Six times three root three",
+     "over two, is"
+    ]
+   },
+   {
+    "say": "So the segment is six pi minus nine root three. Choice number three is our answer. In the exam, we mark it and move on.",
+    "at": [
+     "So the segment is",
+     "pi minus nine",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] We're in a lesson, so let's see where the other choices come from. Choice number one is six pi minus eighteen. Eighteen is six times six, over two. That's the area of a right triangle with two legs of six, but our angle is sixty, not ninety.",
+    "at": [
+     "We're in a lesson",
+     "let's see where",
+     "number one is",
+     "Eighteen is six times six",
+     "over two. That's",
+     "not ninety"
+    ]
+   },
+   {
+    "say": "Choice number two is twelve pi minus nine root three. Twelve pi is a third of the circle. That's the sector of a hundred twenty degrees, not sixty.",
+    "at": [
+     "number two is",
+     "Twelve pi is a third",
+     "of the circle",
+     "not sixty"
+    ]
+   },
+   {
+    "say": "And choice number four, three pi minus nine root three. Is it even positive? Pi is less than four, so three pi is less than twelve. And nine is the root of eighty-one, so nine root three is the root of two hundred forty-three. That's more than the root of a hundred forty-four, which is twelve.",
+    "at": [
+     "number four, three",
+     "Pi is less than four",
+     "so three pi",
+     "And nine is the root",
+     "three is the"
+    ]
+   },
+   {
+    "say": "So three pi minus nine root three is a number below twelve, minus a number above twelve. It's negative, and an area can't be negative. They do that a lot, a negative answer hidden behind pi and roots.",
+    "at": [
+     "It's negative",
+     "area can't be negative",
+     "They do that"
+    ]
+   },
+   "So when a shaded region sits between a chord and its arc, think sector minus triangle. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

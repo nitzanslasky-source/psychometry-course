@@ -1,0 +1,134 @@
+{
+ "videoId": "geo-074-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with circles, this time with the angles and the arcs."
+  ],
+  [
+   {
+    "say": "Now the angles in a circle. The first one is the inscribed angle. An inscribed angle is an angle between two chords. Let's take a point C on the circle, and draw two chords from it, to A and to B.",
+    "at": [
+     "Now the angles in a circle",
+     "The first one",
+     "Let's take a point C",
+     "on the circle",
+     "draw two chords from it"
+    ]
+   },
+   {
+    "say": "Its vertex, the point of the angle, is on the circle. That's why it's called inscribed. And the angle is exactly between the two chords.",
+    "at": [
+     "of the angle",
+     "is on the circle",
+     "And the angle"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's another inscribed angle, and another one, a big one. In both, the vertex is on the circle.",
+    "at": [
+     "Here's another inscribed angle",
+     "a big one",
+     "In both, the"
+    ]
+   },
+   {
+    "say": "But notice. If we just drew two lines and stopped somewhere in the middle of the circle, the vertex would be inside the circle. Or if they met out here, the vertex would be outside it. Those are not inscribed angles. An inscribed angle has its vertex on the circle.",
+    "at": [
+     "stopped somewhere in the middle",
+     "of the circle",
+     "if they met out here",
+     "the vertex would be outside"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Central angle. You can guess this one from the name. Its vertex is at the center of the circle, at O. And it's between two radii. Here's a radius, and here's a radius, and the angle between them is a central angle.",
+    "at": [
+     "Central angle",
+     "You can guess",
+     "Here's a radius",
+     "a radius, and the",
+     "the angle between them"
+    ]
+   },
+   {
+    "say": "It can be small, like forty-five degrees. It can be big, like a hundred twenty. And when the two radii make a straight line, a diameter, it's a central angle of a hundred eighty degrees.",
+    "at": [
+     "like forty-five degrees",
+     "like a hundred twenty",
+     "when the two radii make a straight line",
+     "a straight line"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Arc. An arc is a part of the circle, a piece of the round line. Let's mark a piece of the circle. That's an arc. An arc can be short. It can be longer. And it can be very long, almost the whole circle.",
+    "at": [
+     "a part of",
+     "Let's mark a piece of the circle",
+     "the circle. That's",
+     "It can be longer",
+     "it can be very",
+     "almost the whole circle"
+    ]
+   },
+   {
+    "say": "An arc can be closed off by a chord. Here's a chord, A B. It splits the circle into two arcs. There's the arc on this side, the short one. On the exam it's called the minor arc.",
+    "at": [
+     "closed off by a chord",
+     "Here's a chord",
+     "It splits the",
+     "the short one",
+     "On the exam"
+    ]
+   },
+   {
+    "say": "And there's another arc, a bigger one, all the way around the other side. That's the major arc. People often think an arc is always something short. But this whole long piece is an arc too, even though it's more than half the circle.",
+    "at": [
+     "a bigger one",
+     "way around the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now here's an arc, from A to B. We can close it off with two radii. That's a central angle that closes off our arc.",
+    "at": [
+     "Now here's an arc",
+     "from A to B",
+     "can close it",
+     "with two radii",
+     "closes off our"
+    ]
+   },
+   {
+    "say": "When an angle closes off an arc like this, we say that the angle intercepts the arc. What does that mean? Imagine I'm standing inside the angle, at O. The two radii are walls, tall walls. From where I stand, the part of the circle I can see is only this arc.",
+    "at": [
+     "The two radii are walls",
+     "From where I"
+    ]
+   },
+   {
+    "say": "We can also close off the same arc with an inscribed angle. Take a point C on the circle, and draw two chords to A and to B. If I stand at C, the chords are tall walls, and again, the part of the circle I can see is only this arc.",
+    "at": [
+     "Take a point C",
+     "the circle, and",
+     "the chords are tall walls",
+     "and again, the"
+    ]
+   },
+   {
+    "say": "So this central angle and this inscribed angle both intercept the same arc, the teal arc A B. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "both intercept the same arc",
+     "the teal arc"
+    ]
+   }
+  ]
+ ]
+}

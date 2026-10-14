@@ -1,0 +1,159 @@
+{
+ "videoId": "geo-074",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Circles. Before we go through the rules we have in circles, the theorems, let's first get to know the lines and the angles we have in a circle."
+  ],
+  [
+   {
+    "say": "So this is a circle. The round line we see here, going all the way around.",
+    "at": [
+     "So this is a circle",
+     "The round line"
+    ]
+   },
+   {
+    "say": "By the way, just for general knowledge. Most people don't know this, but strictly speaking, the circle is only the round line itself, the line around the outside. Everything inside it, the whole flat shape, is the inside of the circle, and in math it even has its own name. Think of a round wooden board. Its edge is the circle, and all the wood is the inside.",
+    "at": [
+     "the circle is only",
+     "round line itself",
+     "Everything inside it",
+     "flat shape, is"
+    ]
+   },
+   {
+    "say": "On the exam they don't keep this difference, and they don't use that name. They say circle for both. The area of the circle means the area inside, and the circumference is the length of the round line. That's fine, as long as we know which is which.",
+    "at": [
+     "They say circle for both",
+     "The area of"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Radius. A radius is a straight line from the center of the circle to any point on the circle. We call the center O. Here's a radius, from O to the circle.",
+    "at": [
+     "a straight line",
+     "We call the center O",
+     "Here's a radius",
+     "to the circle"
+    ]
+   },
+   {
+    "say": "All the radii of one circle are equal. Even if I draw more lines from the center to the circle, they're all the same length. Look. It's the same radius, just spinning around, and it's the same length in every direction.",
+    "at": [
+     "It's the same radius, just spinning around",
+     "and it's the same length",
+     "in every direction"
+    ]
+   },
+   {
+    "say": "We usually mark the radius with the letter r.",
+    "at": [
+     "with the letter r"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So every circle has its own radius. Here's a circle with radius two. Every radius in it is two. A circle with radius three. Every radius in it is three. And a circle with radius five. Every radius is five. A different circle can have a different radius, but inside one circle, they're all the same.",
+    "at": [
+     "its own radius",
+     "Here's a circle with radius two",
+     "Every radius in",
+     "A circle with radius three",
+     "And a circle with radius five",
+     "five. Every radius"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why does this matter so much? Take two points on the circle, and join each one to the center. That's two radii. Now join the two points too. We get a triangle with two equal sides, an isosceles triangle. And we know from triangles that the two base angles of an isosceles triangle are equal.",
+    "at": [
+     "Take two points on the circle",
+     "circle, and join"
+    ]
+   },
+   {
+    "say": "Narrow, wide, or very wide, it's always the same. Two radii give an isosceles triangle. In questions, when you see two radii, mark them equal right away.",
+    "at": [
+     "Narrow, wide",
+     "or very wide",
+     "Two radii give an isosceles",
+     "In questions, when"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Chord. A chord is a straight line that joins two points on the circle. Let's mark two points on the circle, A and B, and join them. That's a chord. Two more points, C and D. Join them. That's also a chord.",
+    "at": [
+     "a straight line",
+     "Let's mark two points",
+     "A and B, and join them",
+     "them. That's a",
+     "Two more points"
+    ]
+   },
+   {
+    "say": "We can draw as many chords as we like in a circle. And notice, they're not equal in length. A chord can be long, it can be short, and if I draw one here, it's a very short chord.",
+    "at": [
+     "We can draw",
+     "if I draw one here",
+     "it's a very short chord"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So which chord is the longest? Look at what happens when a chord moves toward the middle. Here's a short one. Closer to the middle, it's longer. Closer still, it's longer again.",
+    "at": [
+     "So which chord is the longest",
+     "Look at what",
+     "Here's a short one",
+     "Closer to the middle",
+     "Closer still"
+    ]
+   },
+   {
+    "say": "The longest chord we can draw is the one that goes exactly through the middle, through the center. A chord like that is called a diameter.",
+    "at": [
+     "can draw is",
+     "exactly through the middle",
+     "A chord like"
+    ]
+   },
+   {
+    "say": "Its length is two r, because it's made of two radii. From A to the center is one radius, and from the center to B is another radius. So the diameter is r plus r, which is two r.",
+    "at": [
+     "From A to the center",
+     "is one radius",
+     "which is two r"
+    ]
+   },
+   {
+    "say": "So if the diameter is fourteen, the radius is half of it, seven. And if the radius is six, the diameter is twelve. Many questions give you one and use the other, so switch between them right away.",
+    "at": [
+     "if the diameter is fourteen",
+     "the radius is",
+     "if the radius is six",
+     "Many questions give"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A diameter also cuts the circle in half, into two equal halves. Each half is called a semicircle. And it doesn't matter which way we draw it. Across, at a slant, or another slant, it always goes through the center and makes two semicircles. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "cuts the circle in half",
+     "into two equal",
+     "at a slant",
+     "or another slant",
+     "goes through the"
+    ]
+   }
+  ]
+ ]
+}

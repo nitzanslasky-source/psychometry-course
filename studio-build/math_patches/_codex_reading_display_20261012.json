@@ -6845,6 +6845,1510 @@
           ]
         ]
       }
+    },
+    "geo-074": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {}
+    },
+    "geo-075": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "7.2": [
+          [
+            "That's five, twelve, thirteen, doubled",
+            "That's 5, 12, 13, doubled"
+          ]
+        ],
+        "10.1": [
+          [
+            "Call angle A alpha, and angle C beta",
+            "Call angle A α, and angle C β"
+          ]
+        ],
+        "10.2": [
+          [
+            "is two alpha",
+            "is 2α"
+          ],
+          [
+            "is two beta",
+            "is 2β"
+          ]
+        ],
+        "10.3": [
+          [
+            "two alpha plus two beta is three hundred sixty",
+            "2α + 2β = 360"
+          ],
+          [
+            "alpha plus beta is a hundred eighty",
+            "α + β = 180"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g076": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "4.2": [
+          [
+            "Call them alpha",
+            "Call them α"
+          ],
+          [
+            "call them beta",
+            "call them β"
+          ],
+          [
+            "x is alpha plus beta",
+            "x = α + β"
+          ]
+        ],
+        "4.3": [
+          [
+            "one hundred eighty minus two alpha",
+            "180 − 2α"
+          ],
+          [
+            "one hundred eighty minus two beta",
+            "180 − 2β"
+          ]
+        ],
+        "4.4": [
+          [
+            "three hundred sixty, minus two alpha, minus two beta, is one hundred four",
+            "360 − 2α − 2β = 104"
+          ],
+          [
+            "two alpha plus two beta is three hundred sixty minus one hundred four",
+            "2α + 2β = 360 − 104"
+          ],
+          [
+            "alpha plus beta is half of that",
+            "α + β is half of that"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t33-01": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.2": [
+          [
+            "two times pi times r",
+            "2 · π · r"
+          ],
+          [
+            "Pi is a fixed number",
+            "π is a fixed number"
+          ]
+        ],
+        "1.8": [
+          [
+            "Six, eight, ten is three, four, five, doubled",
+            "6, 8, 10 is 3, 4, 5, doubled"
+          ]
+        ],
+        "1.9": [
+          [
+            "two pi times ten, which is twenty pi",
+            "2π · 10, which is 20π"
+          ]
+        ],
+        "1.10": [
+          [
+            "One hundred pi is pi r squared",
+            "100π is πr²"
+          ],
+          [
+            "Ten pi",
+            "10π"
+          ],
+          [
+            "sixteen pi",
+            "16π"
+          ]
+        ]
+      }
+    },
+    "geo-077": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "4.5": [
+          [
+            "five and thirteen should remind you of the triple five, twelve, thirteen",
+            "5 and 13 should remind you of the triple 5, 12, 13"
+          ]
+        ],
+        "5.5": [
+          [
+            "so it's a kite, five, five, twelve, twelve",
+            "so it's a kite, 5, 5, 12, 12"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g078": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.6": [
+          [
+            "need another hundred eighty",
+            "need another 180"
+          ]
+        ],
+        "1.9": [
+          [
+            "the same arc as the hundred twelve",
+            "the same arc as the 112"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t33-02": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.3": [
+          [
+            "Eight, fifteen, seventeen is a Pythagorean triple",
+            "8, 15, 17 is a Pythagorean triple"
+          ]
+        ],
+        "1.7": [
+          [
+            "eight minus r plus fifteen minus r is seventeen",
+            "(8 − r) + (15 − r) = 17"
+          ]
+        ]
+      }
+    },
+    "geo-079": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "its formula is pi r squared",
+            "its formula is πr²"
+          ]
+        ],
+        "2.2": [
+          [
+            "its formula is two pi r",
+            "its formula is 2πr"
+          ]
+        ],
+        "3.5": [
+          [
+            "the circumference is two pi r",
+            "the circumference is 2πr"
+          ],
+          [
+            "So two pi is a bit more than six, and pi is a bit more than three",
+            "So 2π is a bit more than 6, and π is a bit more than 3"
+          ]
+        ],
+        "4.3": [
+          [
+            "So the area, pi r squared, is a bit more than three times r squared",
+            "So the area, πr², is a bit more than 3r²"
+          ]
+        ],
+        "4.4": [
+          [
+            "is four pi more than twelve",
+            "is 4π more than 12"
+          ],
+          [
+            "so four pi is a bit more than twelve",
+            "so 4π is a bit more than 12"
+          ]
+        ],
+        "5.2": [
+          [
+            "The area is pi r squared, so pi times six squared",
+            "The area is πr², so π × 6²"
+          ],
+          [
+            "so the area is thirty-six pi",
+            "so the area is 36π"
+          ]
+        ],
+        "5.3": [
+          [
+            "The circumference is two pi r, so two pi times six, which is twelve pi",
+            "The circumference is 2πr, so 2π × 6, which is 12π"
+          ]
+        ],
+        "6.3": [
+          [
+            "The area is pi times seven squared, which is forty-nine pi, and not pi times fourteen squared",
+            "The area is π × 7², which is 49π, and not π × 14²"
+          ],
+          [
+            "two pi times seven, which is fourteen pi",
+            "2π × 7, which is 14π"
+          ]
+        ],
+        "7.1": [
+          [
+            "the circumference is twenty-two pi",
+            "the circumference is 22π"
+          ]
+        ],
+        "7.2": [
+          [
+            "Two pi r equals twenty-two pi",
+            "2πr = 22π"
+          ]
+        ],
+        "7.3": [
+          [
+            "Divide both sides by two pi",
+            "Divide both sides by 2π"
+          ],
+          [
+            "twenty-two pi divided by two pi is eleven",
+            "22π ÷ 2π is 11"
+          ]
+        ],
+        "8.1": [
+          [
+            "whose area is a hundred twenty-one pi",
+            "whose area is 121π"
+          ],
+          [
+            "so pi r squared equals a hundred twenty-one pi",
+            "so πr² = 121π"
+          ]
+        ],
+        "9.2": [
+          [
+            "two pi times ten, which is twenty pi centimeters",
+            "2π × 10, which is 20π centimeters"
+          ]
+        ],
+        "9.3": [
+          [
+            "a road of ten pi meters",
+            "a road of 10π meters"
+          ],
+          [
+            "so ten pi meters are a thousand pi centimeters",
+            "so 10π meters are 1,000π centimeters"
+          ]
+        ],
+        "9.4": [
+          [
+            "A thousand pi divided by twenty pi is fifty",
+            "1,000π ÷ 20π is 50"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g080": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.4": [
+          [
+            "The area is pi r squared",
+            "The area is πr²"
+          ],
+          [
+            "The circumference is two pi r, and four times it is four times two pi r",
+            "The circumference is 2πr, and four times it is 4 × 2πr"
+          ]
+        ],
+        "1.5": [
+          [
+            "Four times two pi r is eight pi r",
+            "4 × 2πr is 8πr"
+          ],
+          [
+            "the two of two pi r",
+            "the 2 of 2πr"
+          ]
+        ],
+        "1.6": [
+          [
+            "divide both sides by pi",
+            "divide both sides by π"
+          ]
+        ],
+        "2.1": [
+          [
+            "the area is pi times eight squared, sixty-four pi",
+            "the area is π × 8², 64π"
+          ],
+          [
+            "two pi times eight, sixteen pi",
+            "2π × 8, 16π"
+          ]
+        ],
+        "2.2": [
+          [
+            "four times sixteen pi is sixty-four pi",
+            "4 × 16π is 64π"
+          ]
+        ],
+        "3.1": [
+          [
+            "Pi r squared over two pi r",
+            "πr²/(2πr)"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t33-03": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.4": [
+          [
+            "The circumference is two pi r. Two pi never changes",
+            "The circumference is 2πr. 2π never changes"
+          ]
+        ],
+        "1.5": [
+          [
+            "Three over two, squared, is nine over four",
+            "(3/2)² is 9/4"
+          ]
+        ],
+        "2.2": [
+          [
+            "two pi times two, four pi",
+            "2π × 2, 4π"
+          ],
+          [
+            "Half of four pi is two pi, so the new circumference is six pi",
+            "Half of 4π is 2π, so the new circumference is 6π"
+          ]
+        ],
+        "2.3": [
+          [
+            "Pi times two squared is four pi, and pi times three squared is nine pi",
+            "π × 2² is 4π, and π × 3² is 9π"
+          ],
+          [
+            "went up by five pi",
+            "went up by 5π"
+          ]
+        ],
+        "2.4": [
+          [
+            "Out of the old four pi, that's five pi over four pi",
+            "Out of the old 4π, that's 5π/4π"
+          ]
+        ]
+      }
+    },
+    "geo-081": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.1": [
+          [
+            "pi r squared",
+            "πr²"
+          ]
+        ],
+        "4.4": [
+          [
+            "pi times six squared, thirty-six pi",
+            "π × 6², 36π"
+          ],
+          [
+            "A quarter of it is nine pi",
+            "A quarter of it is 9π"
+          ],
+          [
+            "nine pi over two",
+            "9π/2"
+          ]
+        ],
+        "5.1": [
+          [
+            "forty pi. Then",
+            "40π. Then"
+          ],
+          [
+            "forty pi divided by five, eight pi",
+            "40π ÷ 5, 8π"
+          ]
+        ],
+        "6.2": [
+          [
+            "two pi r",
+            "2πr"
+          ]
+        ],
+        "7.2": [
+          [
+            "two pi times nine, eighteen pi",
+            "2π × 9, 18π"
+          ],
+          [
+            "three pi",
+            "3π"
+          ]
+        ],
+        "7.3": [
+          [
+            "eighteen pi divided by three, six pi",
+            "18π ÷ 3, 6π"
+          ]
+        ],
+        "10.1": [
+          [
+            "a sixth of eighteen pi, which is three pi",
+            "a sixth of 18π, which is 3π"
+          ]
+        ],
+        "10.2": [
+          [
+            "three pi plus nine plus nine, which is three pi plus eighteen",
+            "3π + 9 + 9, which is 3π + 18"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g082": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "four pi centimeters",
+            "4π centimeters"
+          ]
+        ],
+        "1.2": [
+          [
+            "Alpha over three hundred sixty, times two pi r, equals four pi",
+            "α/360 × 2πr = 4π"
+          ]
+        ],
+        "1.3": [
+          [
+            "the arc is four pi",
+            "the arc is 4π"
+          ],
+          [
+            "Two pi r is two pi times ten, which is twenty pi",
+            "2πr is 2π × 10, which is 20π"
+          ]
+        ],
+        "1.4": [
+          [
+            "the whole circle is twenty pi, and the arc is four pi",
+            "the whole circle is 20π, and the arc is 4π"
+          ],
+          [
+            "Four pi out of twenty pi",
+            "4π out of 20π"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g083": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.5": [
+          [
+            "Pi r squared is pi times three squared, which is nine pi",
+            "πr² is π × 3², which is 9π"
+          ],
+          [
+            "six pi, would give eight pi over three",
+            "6π, would give 8π/3"
+          ]
+        ],
+        "1.6": [
+          [
+            "Nine pi divided by nine is pi, and four times that is four pi",
+            "9π ÷ 9 is π, and four times that is 4π"
+          ]
+        ],
+        "1.7": [
+          [
+            "A ninth of nine pi is pi, and a third of nine pi is three pi",
+            "A ninth of 9π is π, and a third of 9π is 3π"
+          ],
+          [
+            "Together it's four pi again",
+            "Together it's 4π again"
+          ],
+          [
+            "don't stop at three pi",
+            "don't stop at 3π"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g085": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.3": [
+          [
+            "a squared, times root three, over four",
+            "a²·√3 / 4"
+          ]
+        ],
+        "2.4": [
+          [
+            "one hundred root three, over four",
+            "100√3 / 4"
+          ],
+          [
+            "the area is twenty-five root three",
+            "the area is 25√3"
+          ]
+        ],
+        "3.3": [
+          [
+            "times root three",
+            "times √3"
+          ],
+          [
+            "the height is five root three",
+            "the height is 5√3"
+          ]
+        ],
+        "3.4": [
+          [
+            "Ten times five root three is fifty root three",
+            "10 × 5√3 = 50√3"
+          ],
+          [
+            "over two it's twenty-five root three",
+            "over two it's 25√3"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g087": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "4.1": [
+          [
+            "Is A C five root three?",
+            "Is AC = 5√3?"
+          ]
+        ],
+        "4.3": [
+          [
+            "the leg times root two",
+            "the leg times √2"
+          ]
+        ],
+        "4.4": [
+          [
+            "So A C is five root two, not five root three",
+            "So AC = 5√2, not 5√3"
+          ],
+          [
+            "Root three belongs",
+            "√3 belongs"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g088": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.2": [
+          [
+            "the leg times root two",
+            "the leg times √2"
+          ],
+          [
+            "the sides are x, x root three and two x",
+            "the sides are x, x√3 and 2x"
+          ]
+        ],
+        "4.3": [
+          [
+            "Three hundred sixty minus ninety and ninety is one hundred eighty, and minus sixty is one hundred twenty",
+            "360 − 90 − 90 = 180, and 180 − 60 = 120"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g089": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.3": [
+          [
+            "so two pi r equals ten pi",
+            "so 2πr = 10π"
+          ]
+        ],
+        "1.5": [
+          [
+            "Pi times five squared is twenty-five pi",
+            "π · 5² is 25π"
+          ]
+        ],
+        "1.6": [
+          [
+            "twenty-five pi plus thirty-nine pi, which is sixty-four pi",
+            "25π + 39π, which is 64π"
+          ]
+        ],
+        "1.7": [
+          [
+            "Pi R squared is sixty-four pi",
+            "πR² is 64π"
+          ]
+        ],
+        "1.8": [
+          [
+            "Two pi R is two pi times eight, which is sixteen pi",
+            "2πR is 2π · 8, which is 16π"
+          ]
+        ],
+        "1.10": [
+          [
+            "Sixteen times point one four",
+            "16 × 0.14"
+          ]
+        ],
+        "1.11": [
+          [
+            "the point one four matters",
+            "the 0.14 matters"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g090": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.7": [
+          [
+            "Two pi r is two r times pi",
+            "2πr is 2r · π"
+          ],
+          [
+            "the diameter times pi, thirty-seven pi",
+            "diameter · π, 37π"
+          ]
+        ],
+        "2.8": [
+          [
+            "Two pi times thirty-seven gives seventy-four pi",
+            "2π · 37 gives 74π"
+          ],
+          [
+            "eighteen and a half pi",
+            "18.5π"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g091": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "root thirty-five centimeters",
+            "√35 centimeters"
+          ]
+        ],
+        "1.4": [
+          [
+            "Root thirty-five, squared",
+            "(√35)²"
+          ]
+        ],
+        "1.7": [
+          [
+            "five alpha plus five beta is three hundred sixty",
+            "5α + 5β = 360"
+          ]
+        ],
+        "1.9": [
+          [
+            "Five times the sum, alpha plus beta, is three hundred sixty",
+            "5(α + β) = 360"
+          ],
+          [
+            "alpha plus beta is seventy-two",
+            "α + β = 72"
+          ]
+        ],
+        "1.12": [
+          [
+            "seventy-two out of three hundred sixty",
+            "72/360"
+          ]
+        ],
+        "1.13": [
+          [
+            "one fifth of thirty-five pi, which is seven pi",
+            "1/5 of 35π, which is 7π"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g092": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.2": [
+          [
+            "the angle out of three hundred sixty, times two pi r",
+            "(angle/360) · 2πr"
+          ]
+        ],
+        "1.3": [
+          [
+            "Two pi r is two pi times six, which is twelve pi",
+            "2πr is 2π · 6, which is 12π"
+          ]
+        ],
+        "1.12": [
+          [
+            "Three quarters of twelve pi",
+            "3/4 of 12π"
+          ],
+          [
+            "A quarter of twelve pi is three pi",
+            "1/4 of 12π is 3π"
+          ],
+          [
+            "so three quarters is nine pi",
+            "so 3/4 is 9π"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g094": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.3": [
+          [
+            "eighteen pi minus eighteen",
+            "18π − 18"
+          ]
+        ],
+        "3.5": [
+          [
+            "eighteen pi minus eighteen",
+            "18π − 18"
+          ]
+        ],
+        "2.4": [
+          [
+            "eighteen minus nine pi",
+            "18 − 9π"
+          ]
+        ],
+        "3.4": [
+          [
+            "eighteen minus nine pi",
+            "18 − 9π"
+          ]
+        ],
+        "2.5": [
+          [
+            "seventy-two minus nine pi",
+            "72 − 9π"
+          ]
+        ],
+        "3.6": [
+          [
+            "seventy-two minus nine pi",
+            "72 − 9π"
+          ]
+        ],
+        "2.6": [
+          [
+            "thirty-six minus nine pi",
+            "36 − 9π"
+          ]
+        ],
+        "2.9": [
+          [
+            "thirty-six minus nine pi",
+            "36 − 9π"
+          ]
+        ],
+        "3.7": [
+          [
+            "thirty-six minus nine pi",
+            "36 − 9π"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g095": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.4": [
+          [
+            "four root three",
+            "4√3"
+          ]
+        ],
+        "2.5": [
+          [
+            "Four times four root three is sixteen root three",
+            "4 × 4√3 is 16√3"
+          ],
+          [
+            "eight root three",
+            "8√3"
+          ]
+        ],
+        "2.10": [
+          [
+            "sixteen pi over six",
+            "16π/6"
+          ],
+          [
+            "eight pi over three",
+            "8π/3"
+          ]
+        ],
+        "2.11": [
+          [
+            "four pi over three",
+            "4π/3"
+          ],
+          [
+            "eight root three minus eight pi over three",
+            "8√3 − 8π/3"
+          ]
+        ],
+        "2.12": [
+          [
+            "something minus eight pi over three",
+            "something − 8π/3"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g096": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.10": [
+          [
+            "pi r plus two r, over three r",
+            "(πr + 2r)/3r"
+          ],
+          [
+            "pi plus two, over three",
+            "(π + 2)/3"
+          ]
+        ],
+        "2.3": [
+          [
+            "pi plus two, over three",
+            "(π + 2)/3"
+          ]
+        ],
+        "2.4": [
+          [
+            "pi plus two, over three",
+            "(π + 2)/3"
+          ]
+        ],
+        "2.6": [
+          [
+            "two pi plus four, over six",
+            "(2π + 4)/6"
+          ],
+          [
+            "pi plus two, over three",
+            "(π + 2)/3"
+          ]
+        ],
+        "2.7": [
+          [
+            "pi plus two over six",
+            "(π + 2)/6"
+          ]
+        ],
+        "2.8": [
+          [
+            "pi plus two, over three",
+            "(π + 2)/3"
+          ]
+        ],
+        "4.1": [
+          [
+            "pi plus two over six",
+            "(π + 2)/6"
+          ],
+          [
+            "pi plus two over nine",
+            "(π + 2)/9"
+          ]
+        ],
+        "4.6": [
+          [
+            "pi plus two, over three",
+            "(π + 2)/3"
+          ],
+          [
+            "about five plus over three",
+            "about (5+)/3"
+          ]
+        ],
+        "3.4": [
+          [
+            "about five plus, over three",
+            "about (5+)/3"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g097": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.7": [
+          [
+            "Two times two, over two, is two",
+            "(2 × 2)/2 is two"
+          ]
+        ]
+      }
+    },
+    "geo-097-after": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.4": [
+          [
+            "pi times root two, squared",
+            "π · (√2)²"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g098": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.1": [
+          [
+            "two pi times eight, sixteen pi",
+            "2π × 8 = 16π"
+          ]
+        ],
+        "3.2": [
+          [
+            "one quarter of sixteen pi is four pi",
+            "¼ × 16π = 4π"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g099": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.8": [
+          [
+            "pi r squared, pi times six squared, thirty-six pi",
+            "πr² = π × 6² = 36π"
+          ],
+          [
+            "three quarters of thirty-six pi is twenty-seven pi",
+            "¾ × 36π = 27π"
+          ]
+        ],
+        "1.9": [
+          [
+            "twenty-seven pi, plus thirty-six, plus twenty-seven pi, which is fifty-four pi plus thirty-six",
+            "27π + 36 + 27π = 54π + 36"
+          ]
+        ],
+        "2.4": [
+          [
+            "six times six over two, eighteen",
+            "(6 × 6)/2 = 18"
+          ],
+          [
+            "nine pi minus eighteen",
+            "9π − 18"
+          ],
+          [
+            "eighteen pi minus thirty-six",
+            "18π − 36"
+          ]
+        ],
+        "2.5": [
+          [
+            "Seventy-two pi minus, the bracket, eighteen pi minus thirty-six",
+            "72π − (18π − 36)"
+          ],
+          [
+            "fifty-four pi plus thirty-six",
+            "54π + 36"
+          ]
+        ],
+        "3.2": [
+          [
+            "thirty-six pi plus eighteen pi, fifty-four pi",
+            "36π + 18π = 54π"
+          ]
+        ],
+        "3.3": [
+          [
+            "Twenty-seven pi plus eighteen, and twenty-seven pi plus thirty-six",
+            "27π + 18, and 27π + 36"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g100": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.4": [
+          [
+            "pi r squared, pi times four squared, sixteen pi",
+            "πr² = π × 4² = 16π"
+          ],
+          [
+            "eight times B C is sixteen pi",
+            "8 × BC = 16π"
+          ]
+        ],
+        "1.5": [
+          [
+            "Sixteen pi over eight is two pi",
+            "16π/8 = 2π"
+          ]
+        ],
+        "2.3": [
+          [
+            "three pi is more than nine",
+            "3π > 9"
+          ],
+          [
+            "four pi is more than twelve",
+            "4π > 12"
+          ],
+          [
+            "eight pi is more than twenty-four",
+            "8π > 24"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g101": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.3": [
+          [
+            "pi R squared minus pi r squared is sixty-five pi",
+            "πR² − πr² = 65π"
+          ]
+        ],
+        "1.5": [
+          [
+            "two r plus ten, over two",
+            "(2r + 10)/2"
+          ]
+        ],
+        "2.1": [
+          [
+            "Pi times, the bracket r plus five, squared, minus pi r squared, is sixty-five pi",
+            "π(r + 5)² − πr² = 65π"
+          ]
+        ],
+        "2.2": [
+          [
+            "the bracket r plus five, squared, minus r squared, equals sixty-five",
+            "(r + 5)² − r² = 65"
+          ]
+        ],
+        "2.3": [
+          [
+            "A plus b, squared, is a squared plus two a b plus b squared",
+            "(a + b)² = a² + 2ab + b²"
+          ],
+          [
+            "r plus five, squared, is r squared, plus two times five times r, which is ten r, plus twenty-five",
+            "(r + 5)² = r² + 2 × 5 × r + 25 = r² + 10r + 25"
+          ]
+        ],
+        "3.3": [
+          [
+            "sixty-four pi minus nine pi, fifty-five pi",
+            "64π − 9π = 55π"
+          ]
+        ],
+        "3.5": [
+          [
+            "Eighty-one pi minus sixteen pi is sixty-five pi",
+            "81π − 16π = 65π"
+          ]
+        ]
+      }
+    },
+    "solve-geo33-g102": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.3": [
+          [
+            "Together they're a hundred eighty minus four theta",
+            "Together they're 180° − 4θ"
+          ],
+          [
+            "each base angle is ninety minus two theta",
+            "each base angle is 90° − 2θ"
+          ]
+        ],
+        "2.1": [
+          [
+            "Angle B is still ninety minus two theta",
+            "Angle B is still 90° − 2θ"
+          ]
+        ],
+        "2.2": [
+          [
+            "two times, ninety minus two theta, which is a hundred eighty minus four theta",
+            "2(90° − 2θ) = 180° − 4θ"
+          ]
+        ],
+        "3.1": [
+          [
+            "a hundred eighty minus four theta, over three hundred sixty, times two pi r",
+            "(180 − 4θ)/360 × 2πr"
+          ]
+        ],
+        "3.3": [
+          [
+            "a hundred eighty over a hundred eighty, minus four theta over a hundred eighty",
+            "180/180 − 4θ/180"
+          ]
+        ],
+        "3.4": [
+          [
+            "pi r, times the bracket one minus theta over forty-five",
+            "πr(1 − θ/45)"
+          ]
+        ],
+        "4.4": [
+          [
+            "two pi over three",
+            "2π/3"
+          ]
+        ],
+        "5.1": [
+          [
+            "two pi over three",
+            "2π/3"
+          ]
+        ]
+      }
+    },
+    "r26-t33-more-tools": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "4.1": [
+          [
+            "thirty-six pi",
+            "36π"
+          ],
+          [
+            "so it's twelve pi",
+            "so it's 12π"
+          ]
+        ],
+        "4.2": [
+          [
+            "a squared, times root three, over four",
+            "a²·√3/4"
+          ],
+          [
+            "so each one is nine root three",
+            "so each one is 9√3"
+          ]
+        ],
+        "4.3": [
+          [
+            "the same as one equilateral triangle, nine root three",
+            "the same as one equilateral triangle, 9√3"
+          ]
+        ],
+        "4.4": [
+          [
+            "twelve pi minus nine root three",
+            "12π − 9√3"
+          ],
+          [
+            "twenty-four pi minus eighteen root three",
+            "24π − 18√3"
+          ]
+        ],
+        "5.1": [
+          [
+            "pi R squared minus pi r squared",
+            "πR² − πr²"
+          ]
+        ],
+        "5.5": [
+          [
+            "Pi R squared minus pi r squared is pi times, R squared minus r squared",
+            "πR² − πr² = π(R² − r²)"
+          ],
+          [
+            "That's pi times h squared",
+            "That's πh²"
+          ]
+        ],
+        "6.1": [
+          [
+            "the ring is twenty-five pi",
+            "the ring is 25π"
+          ]
+        ],
+        "6.2": [
+          [
+            "A hundred sixty-nine pi minus a hundred forty-four pi is twenty-five pi",
+            "169π − 144π = 25π"
+          ]
+        ],
+        "6.3": [
+          [
+            "Radii five and five root two",
+            "Radii 5 and 5√2"
+          ],
+          [
+            "Five root two, squared, is fifty",
+            "(5√2)² = 50"
+          ],
+          [
+            "Fifty pi minus twenty-five pi is twenty-five pi again",
+            "50π − 25π = 25π again"
+          ]
+        ],
+        "6.4": [
+          [
+            "twenty-five pi",
+            "25π"
+          ]
+        ],
+        "6.5": [
+          [
+            "pi times half the chord, squared",
+            "π(chord/2)²"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t33-04": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.5": [
+          [
+            "pi times six squared, thirty-six pi",
+            "π · 6² = 36π"
+          ],
+          [
+            "A sixth of thirty-six pi is six pi",
+            "A sixth of 36π is 6π"
+          ]
+        ],
+        "1.6": [
+          [
+            "six pi minus the triangle",
+            "6π minus the triangle"
+          ],
+          [
+            "starts with twelve pi",
+            "starts with 12π"
+          ],
+          [
+            "starts with three pi",
+            "starts with 3π"
+          ]
+        ],
+        "2.3": [
+          [
+            "a squared, times root three, over four",
+            "a²·√3/4"
+          ],
+          [
+            "So the area is nine root three",
+            "So the area is 9√3"
+          ]
+        ],
+        "2.4": [
+          [
+            "so the height is three root three",
+            "so the height is 3√3"
+          ],
+          [
+            "Six times three root three, over two, is nine root three again",
+            "6 · 3√3 / 2 = 9√3 again"
+          ]
+        ],
+        "2.5": [
+          [
+            "six pi minus nine root three",
+            "6π − 9√3"
+          ]
+        ],
+        "3.1": [
+          [
+            "six pi minus eighteen",
+            "6π − 18"
+          ],
+          [
+            "Eighteen is six times six, over two",
+            "18 = 6 × 6 / 2"
+          ]
+        ],
+        "3.2": [
+          [
+            "twelve pi minus nine root three",
+            "12π − 9√3"
+          ],
+          [
+            "Twelve pi is a third",
+            "12π is a third"
+          ]
+        ],
+        "3.3": [
+          [
+            "three pi minus nine root three",
+            "3π − 9√3"
+          ],
+          [
+            "so three pi is less than twelve",
+            "so 3π is less than 12"
+          ],
+          [
+            "nine is the root of eighty-one, so nine root three is the root of two hundred forty-three",
+            "9 = √81, so 9√3 = √243"
+          ],
+          [
+            "the root of a hundred forty-four",
+            "√144"
+          ]
+        ],
+        "3.4": [
+          [
+            "So three pi minus nine root three",
+            "So 3π − 9√3"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t33-05": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.3": [
+          [
+            "the whole radius A D, minus E D",
+            "the whole radius AD − ED"
+          ]
+        ],
+        "2.4": [
+          [
+            "ten squared minus six squared is a hundred minus thirty-six, sixty-four",
+            "10² − 6² = 100 − 36 = 64"
+          ],
+          [
+            "the root of sixty-four is eight",
+            "√64 = 8"
+          ]
+        ],
+        "3.2": [
+          [
+            "Two root thirty-four, choice number four",
+            "2√34, choice number 4"
+          ],
+          [
+            "the root of a hundred thirty-six is two root thirty-four",
+            "√136 = 2√34"
+          ],
+          [
+            "Two root thirty-four is more than ten",
+            "2√34 is more than 10"
+          ]
+        ],
+        "3.3": [
+          [
+            "D C is two times the root of R times r",
+            "DC = 2√(Rr)"
+          ],
+          [
+            "two times the root of eight times two, two times the root of sixteen",
+            "2√(8 · 2) = 2√16"
+          ]
+        ],
+        "3.4": [
+          [
+            "two times the root of thirty-six, two times six, twelve",
+            "2√36 = 2 × 6 = 12"
+          ]
+        ]
+      }
     }
   }
 }

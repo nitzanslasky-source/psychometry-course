@@ -1,0 +1,104 @@
+{
+ "videoId": "solve-geo33-g090",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The sides of triangle A B C are twelve centimeters, thirty-five centimeters, and thirty-seven centimeters. What is the circumference of the circle circumscribed about the triangle, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "The sides of triangle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A circle circumscribed about a triangle passes through all three of its vertices. But wait, there's no circle in the figure at all. [short pause] To solve this, we need two rules.",
+    "at": [
+     "a triangle passes",
+     "solve this, we"
+    ]
+   },
+   {
+    "say": "[short pause] Rule one. Every triangle can be circumscribed. Every triangle has a circle that passes through all three of its vertices. Here's an acute triangle with its circle, and here's an obtuse one with its circle.",
+    "at": [
+     "Rule one",
+     "Every triangle can",
+     "Here's an acute triangle",
+     "and here's an obtuse one"
+    ]
+   },
+   {
+    "say": "Rule two. There's only one such circle, with one radius. That's true for every triangle. So this triangle has exactly one circumscribed circle, and we need to find its size.",
+    "at": [
+     "There's only one such circle",
+     "with one radius"
+    ]
+   },
+   {
+    "say": "[short pause] So let's look for something special in this triangle. Its sides are twelve, thirty-five and thirty-seven.",
+    "at": [
+     "Its sides are twelve"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's check Pythagoras. Does twelve squared plus thirty-five squared equal thirty-seven squared? Twelve squared is one hundred forty-four. Thirty-five squared is thirty-five times thirty-five, one thousand two hundred twenty-five. Together, one thousand three hundred sixty-nine.",
+    "at": [
+     "Let's check Pythagoras",
+     "Does twelve squared",
+     "Twelve squared is",
+     "Thirty-five squared is"
+    ]
+   },
+   {
+    "say": "And thirty-seven squared? Thirty-seven times thirty is one thousand one hundred ten, and thirty-seven times seven is two hundred fifty-nine. Together, one thousand three hundred sixty-nine. The same.",
+    "at": [
+     "Together, one thousand three hundred sixty-nine. The same",
+     "sixty-nine. The same"
+    ]
+   },
+   {
+    "say": "The sides satisfy Pythagoras, so the triangle must be a right triangle. The right angle is across from the longest side, thirty-seven. That's the angle at A.",
+    "at": [
+     "The right angle is across",
+     "from the longest"
+    ]
+   },
+   "This is new. Until now, they gave us a right triangle with two of its sides, and we found the third. Here they gave us all three sides, and we had to see from them that the triangle is a right triangle.",
+   {
+    "say": "Now let's draw the circle around the triangle, and remember one more rule. The angle at A sits on the circle, so it's an inscribed angle. We learned that an inscribed angle that rests on a diameter is ninety degrees. And the other way around. If an inscribed angle is ninety degrees, it must rest on a diameter.",
+    "at": [
+     "let's draw the circle around",
+     "the triangle, and"
+    ]
+   },
+   {
+    "say": "So B C, the hypotenuse, is a diameter of the circle. The diameter is thirty-seven.",
+    "at": [
+     "is a diameter of the circle",
+     "circle. The diameter"
+    ]
+   },
+   {
+    "say": "Now the question is simple. What's the circumference of a circle with a diameter of thirty-seven? It's two pi r. We could halve thirty-seven to get the radius, and then double it again. But there's a simpler way. Two pi r is two r times pi, and two r is the diameter. So the circumference is the diameter times pi, thirty-seven pi. Choice number two is our answer.",
+    "at": [
+     "the question is",
+     "thirty-seven? It's two",
+     "So the circumference is the diameter times pi",
+     "diameter times pi",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "Careful with the traps. Thirty-seven is the diameter, not the radius. Two pi times thirty-seven gives seventy-four pi, choice number one. And eighteen and a half pi, choice number three, is pi times the radius. It forgets the two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Two pi times thirty-seven",
+     "choice number one",
+     "and a half",
+     "choice number three"
+    ]
+   }
+  ]
+ ]
+}

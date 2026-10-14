@@ -3193,6 +3193,10 @@ def ai_pointers(M):
     from dsl import PT
     vid = 'solve-geo33-g091'
     if _ai_recorded(vid): return
+    # 2026-10-14 (Claude): superseded by the topic-33 reading script (ai_redo_t33 rebuilds this video from _ai_vis_t33.py,
+    # and _ai_visual's VIS for it is now that spec's, which does not fit the old slides)
+    import os
+    if os.path.exists(os.environ.get('AIVIS_T33') or os.path.join(os.path.dirname(os.path.abspath(__file__)), '_ai_vis_t33.py')): return
 
     def slide(title):
         return M.video(vid)['beats'][CF.n_of(M, vid, title) - 1]
@@ -3277,3 +3281,53 @@ _apply_before_choice_order = apply
 def apply(M):
     _apply_before_choice_order(M)
     _co_load().choice_order(M, 33)   # 2026-10-09 choice order: runs LAST
+# =====================================================================================================================
+# 2026-10-14 topic 33 for the teacher's own-voice reading, built like topics 13-20 (t20.py ai_redo_t20). Every topic-33
+# video, the camera lesson 'geo-074' included (she reads it with the camera on, in parts of about 3-4 minutes,
+# math_patches/_camera_parts.py), has ONE spec in _ai_vis_t33.py that drives the script (ai_scripts/<vid>.json), the visual
+# plan (_ai_visual.py format) and the slides: each video is rebuilt from the spec and _ai_visual.apply() adds the click
+# items, POINT highlights and pen marks around it. A non-camera video with a camera take recorded before AI33_CUTOFF (UTC)
+# keeps that version. The question figures are NOT touched here. Runs LAST. (env AIVIS_T33 = another spec file, for tests)
+# =====================================================================================================================
+AI33_CUTOFF = '2026-10-14T00-00-00'
+AI33_CAMERA = 'geo-074'
+
+
+def _ai33_recorded(vid):
+    import glob, os, re
+    pat = re.compile(re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in glob.glob(os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(os.path.basename(f))
+        if m and m.group(1) < AI33_CUTOFF: return True
+    return False
+
+
+def _ai33_mod(name, path=None):
+    import importlib.util, os, sys
+    if name not in sys.modules:
+        p = path or os.path.join(os.path.dirname(os.path.abspath(__file__)), name + '.py')
+        if not os.path.exists(p): return None
+        spec = importlib.util.spec_from_file_location(name, p); m = importlib.util.module_from_spec(spec)
+        sys.modules[name] = m; spec.loader.exec_module(m)
+    return sys.modules[name]
+
+
+def ai_redo_t33(M):
+    import os
+    S = _ai33_mod('_ai_vis_t33', os.environ.get('AIVIS_T33'))
+    if S is None: return
+    AV = _ai33_mod('_ai_visual')
+    CP = _ai33_mod('_camera_parts'); CP.add_to_course(M, S, 33)
+    for vid in S.ORDER:
+        if vid not in M.D['videos'] or (not CP.is_part(AI33_CAMERA, vid) and _ai33_recorded(vid)): continue
+        S.rebuild(M, vid)
+        AV.VIS[vid] = S.vis(vid)
+        AV.apply(M, vid)
+
+
+_apply_before_ai_redo_t33 = apply
+
+
+def apply(M):
+    _apply_before_ai_redo_t33(M)
+    ai_redo_t33(M)   # 2026-10-14 topic 33 for the teacher's reading: runs LAST

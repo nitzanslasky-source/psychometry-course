@@ -1,0 +1,134 @@
+{
+ "videoId": "solve-q-r26-t33-05",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Two circles with centers A and B touch each other from the outside. Their radii are eight centimeters and two centimeters. A line touches the two circles at D and C, as in the figure. What is the length of D C, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "Two circles with centers A and B"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We need a length, D C, but the figure has only two circles and a line. So let's go to the givens and see what each one gives us. We'll build a right triangle, and at the end there's a short formula too.",
+    "at": [
+     "We need a length",
+     "the givens and"
+    ]
+   },
+   {
+    "say": "[short pause] Let's look at the bottom part of the figure, bigger. D and C are points of tangency. So the automatic helper line, a radius to each point of tangency. Draw A D and B C. A radius is perpendicular to the tangent, so there's a right angle at D and at C.",
+    "at": [
+     "Let's look at the bottom part",
+     "part of the",
+     "D and C are points",
+     "So the automatic",
+     "Draw A D and B C",
+     "A radius is"
+    ]
+   },
+   {
+    "say": "A D is a radius of the big circle, eight. B C is a radius of the small circle, two. Both are perpendicular to the same line, so they're parallel to each other.",
+    "at": [
+     "A D is a radius",
+     "of the big"
+    ]
+   },
+   {
+    "say": "The circles touch, so a second helper line. Join the centers. A B passes through the point where the circles touch. The first part is a radius of the big circle, eight, and the second part is a radius of the small one, two. So A B is eight plus two, ten.",
+    "at": [
+     "Join the centers",
+     "A B passes",
+     "So A B is eight plus two",
+     "plus two, ten"
+    ]
+   },
+   {
+    "say": "Now look at A B C D. It has two right angles, at D and at C, and two parallel sides. It's a right trapezoid, and D C, the side we want, is its bottom.",
+    "at": [
+     "Now look at A B C D",
+     "at D and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "To use Pythagoras, we need a right triangle with D C in it, or a copy of D C. So from B, draw a line parallel to D C, until it meets A D. Call that point E.",
+    "at": [
+     "To use Pythagoras",
+     "a right triangle",
+     "from B, draw a line",
+     "parallel to D"
+    ]
+   },
+   {
+    "say": "E B C D is a rectangle, because all its angles are right angles. So E D equals B C, which is two. And E B equals D C, the length we want.",
+    "at": [
+     "E B C D is a rectangle",
+     "a rectangle, because"
+    ]
+   },
+   {
+    "say": "Now A E is the whole radius A D, minus E D. Eight minus two is six.",
+    "at": [
+     "Eight minus two"
+    ]
+   },
+   {
+    "say": "Look at the right triangle A B E. The hypotenuse A B is ten, and one leg, A E, is six. Six and ten, that's the six, eight, ten triangle, so the other leg, B E, is eight. With Pythagoras, ten squared minus six squared is a hundred minus thirty-six, sixty-four. And the root of sixty-four is eight.",
+    "at": [
+     "Look at the right triangle",
+     "A B E",
+     "so the other leg",
+     "E, is eight"
+    ]
+   },
+   {
+    "say": "B E equals D C, so D C is eight. Choice number two is our answer.",
+    "at": [
+     "so D C is eight",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the traps. Ten, choice number one, is A B, the distance between the centers. It's not the tangent. And six, choice number three, is only A E, the difference between the radii.",
+    "at": [
+     "Now the traps",
+     "Ten, choice number one",
+     "the distance between the centers",
+     "It's not the",
+     "And six, choice number three",
+     "the difference between the radii"
+    ]
+   },
+   {
+    "say": "Two root thirty-four, choice number four, comes from adding the squares. Thirty-six plus a hundred is a hundred thirty-six, and the root of a hundred thirty-six is two root thirty-four. But A B is the hypotenuse, the longest side. Two root thirty-four is more than ten, and a leg can't be longer than the hypotenuse.",
+    "at": [
+     "number four, comes",
+     "comes from adding the squares",
+     "a hundred thirty-six",
+     "a leg can't be longer"
+    ]
+   },
+   {
+    "say": "And now the short formula, for two circles that touch from the outside. D C is two times the root of R times r. Here that's two times the root of eight times two, two times the root of sixteen. Two times four is eight.",
+    "at": [
+     "D C is two times the root",
+     "the root of"
+    ]
+   },
+   {
+    "say": "Let's check it on other circles, with radii nine and four. The centers are thirteen apart, and the difference of the radii is five. Five, twelve, thirteen, so the tangent is twelve. And the formula gives two times the root of thirty-six, two times six, twelve. The same.",
+    "at": [
+     "with radii nine and four",
+     "The centers are"
+    ]
+   },
+   "The formula only works when the circles touch. If they don't, cut off the same right triangle, with the distance between the centers as its hypotenuse. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

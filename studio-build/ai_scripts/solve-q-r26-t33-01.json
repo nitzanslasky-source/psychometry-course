@@ -1,0 +1,76 @@
+{
+ "videoId": "solve-q-r26-t33-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Chord A B of a circle with center O is sixteen centimeters long. The distance from O to A B is six centimeters. What is the circumference of the circle, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "Chord A B of a circle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "They ask for the circumference. That's the length all the way around the circle. Its formula is two times pi times r, where r is the radius. Pi is a fixed number, a bit more than three, and there's a lesson on it soon. So really, they're asking for the radius.",
+    "at": [
+     "They ask for the circumference",
+     "the length all the way around",
+     "around the circle"
+    ]
+   },
+   "[short pause] We have a chord and its distance from the center, so one helper line will connect them.",
+   {
+    "say": "[short pause] First, what is the distance from a point to a line? It's the shortest way, and that's the perpendicular. So from O we draw a line down to the chord, at ninety degrees. Call its foot M. O M is six.",
+    "at": [
+     "So from O we draw a line",
+     "a line down"
+    ]
+   },
+   {
+    "say": "We learned that a perpendicular from the center cuts the chord in half. Sixteen divided by two is eight, so A M is eight, and M B is eight.",
+    "at": [
+     "Sixteen divided by two",
+     "eight, so A"
+    ]
+   },
+   {
+    "say": "Now the radius. We draw it from the center O to the end of the chord, B. O B is a radius, so it's r.",
+    "at": [
+     "We draw it from the center O",
+     "center O to"
+    ]
+   },
+   {
+    "say": "[short pause] Look at triangle O M B. It has a right angle at M, its legs are six and eight, and the radius is its hypotenuse. Here it is, bigger.",
+    "at": [
+     "Look at triangle O M B",
+     "It has a"
+    ]
+   },
+   {
+    "say": "By Pythagoras, r squared is six squared plus eight squared. Thirty-six plus sixty-four is one hundred, so r squared is one hundred, and r is ten. You can also spot the triple. Six, eight, ten is three, four, five, doubled.",
+    "at": [
+     "By Pythagoras",
+     "six squared plus"
+    ]
+   },
+   {
+    "say": "So the circumference is two pi times ten, which is twenty pi. Choice number three is our answer.",
+    "at": [
+     "So the circumference is",
+     "pi times ten",
+     "Choice number three is our answer"
+    ]
+   },
+   {
+    "say": "In the exam you'd mark it and move on. Here, let's see where the other choices come from. One hundred pi is pi r squared. That's the area, the inside of the circle, and we'll meet it in that lesson too. Ten pi is what you get if you take ten as the diameter. And sixteen pi comes from taking the chord as a diameter. But this chord doesn't pass through the center, so it's not a diameter. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "One hundred pi is pi r",
+     "Ten pi is what you get",
+     "And sixteen pi comes"
+    ]
+   }
+  ]
+ ]
+}

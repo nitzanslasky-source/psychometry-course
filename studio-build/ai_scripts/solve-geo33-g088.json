@@ -1,0 +1,126 @@
+{
+ "videoId": "solve-geo33-g088",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Two congruent circles, with centers O and M, touch each other from the outside. Each one has a radius of seven centimeters. M A and M B are tangent to the circle with center O, at A and B. What is the smaller angle A O B?",
+    "voice": "calm",
+    "at": [
+     "Two congruent circles"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We need an angle, but the only number we have is a length, the radius seven. [short pause] It's not clear yet how we'll get there, so let's start from the givens and see what each one gives us.",
+    "at": [
+     "We need an angle",
+     "the only number",
+     "the givens and"
+    ]
+   },
+   {
+    "say": "M A and M B are two tangents that come out of the same point, M. Remember, two tangents from the same point are equal. And together with the radii to the points of tangency, they make a kite.",
+    "at": [
+     "are two tangents",
+     "two tangents from the same point are",
+     "point are equal"
+    ]
+   },
+   {
+    "say": "But right now there's no kite in the drawing, because the radii aren't there. We need a helper line. A helper line is something we add to the drawing ourselves, so that we can solve the question. One of the most common helper lines is a radius to the point of tangency.",
+    "at": [
+     "the question. One",
+     "to the point"
+    ]
+   },
+   {
+    "say": "So let's draw the radius from O to A, and from O to B. Both are seven. A radius to the point of tangency is perpendicular to the tangent, so we get ninety degrees at A, and ninety at B.",
+    "at": [
+     "So let's draw the radius",
+     "from O to B"
+    ]
+   },
+   {
+    "say": "Now we have a kite. Its angles add up to three hundred sixty. Ninety plus ninety is one hundred eighty, so the angles at O and at M share the other one hundred eighty. But we can't split it yet, so it's still not enough.",
+    "at": [
+     "Now we have a kite",
+     "Its angles add"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] There's a given we haven't used. The two circles are congruent, and they touch each other. To use it, we need a second helper line. It's less common, but this question asks for it. We join the two centers, O and M.",
+    "at": [
+     "There's a given we haven't used",
+     "The two circles",
+     "We join the two centers",
+     "O and M"
+    ]
+   },
+   {
+    "say": "When two circles touch, the touching point lies on the line between the centers. So the first part of O M is a radius of circle O, seven. The second part is a radius of circle M, and the circles are congruent, so it's seven too. So O M is seven plus seven, which is fourteen.",
+    "at": [
+     "So the first part of O M",
+     "O M is"
+    ]
+   },
+   "By the way, if one circle sat inside the other and they touched, the distance between the centers would be the big radius minus the small one."
+  ],
+  [
+   {
+    "say": "[pause] Now look at the right triangle O A M. One leg, O A, is seven, and the hypotenuse, O M, is fourteen.",
+    "at": [
+     "Now look at the right triangle",
+     "triangle O A",
+     "One leg, O A, is seven",
+     "M, is fourteen"
+    ]
+   },
+   "To get an angle from the sides, it has to be a triangle we know, the silver one or the gold one. In the silver triangle, the hypotenuse is the leg times root two. In the gold triangle, thirty, sixty, ninety, the sides are x, x root three and two x. So the hypotenuse is exactly twice the short leg.",
+   {
+    "say": "Here the hypotenuse is exactly twice the leg, fourteen and seven. That only happens in the gold triangle. So O A is the short leg, and the angle across from it, at M, is thirty degrees.",
+    "at": [
+     "the angle across from it",
+     "at M, is"
+    ]
+   },
+   {
+    "say": "The lower triangle, O B M, is the same triangle, so the angle at M there is thirty too. This time we went backwards, from the sides to the angle.",
+    "at": [
+     "The lower triangle",
+     "so the angle"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] In each gold triangle, the angles are thirty, sixty and ninety. The thirty is at M and the ninety is at A, so the sixty is at O. It's the same in both triangles.",
+    "at": [
+     "In each gold triangle",
+     "angles are thirty",
+     "so the sixty is at O",
+     "It's the same"
+    ]
+   },
+   {
+    "say": "So angle A O B is sixty plus sixty, which is one hundred twenty. Choice number three is our answer. Sixty, choice number one, is only half of the angle.",
+    "at": [
+     "So angle A O B is sixty plus sixty",
+     "is one hundred",
+     "Choice number three is our answer",
+     "Sixty, choice"
+    ]
+   },
+   {
+    "say": "You can also finish with the kite. The angle at M is thirty plus thirty, which is sixty. The kite's angles add up to three hundred sixty. Three hundred sixty minus ninety and ninety is one hundred eighty, and minus sixty is one hundred twenty. The same answer.",
+    "at": [
+     "You can also finish with the kite",
+     "The angle at"
+    ]
+   },
+   "So again, what did we do? We needed two helper lines. A very common one, the radius to the point of tangency, and a less common one that this question asked for, the line between the centers. And we spotted a gold triangle from its sides. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

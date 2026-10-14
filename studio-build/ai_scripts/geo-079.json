@@ -1,0 +1,259 @@
+{
+ "videoId": "geo-079",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Area and circumference of a circle. These are two very basic formulas, and we use them a lot in exam questions."
+  ],
+  [
+   {
+    "say": "Here's a circle with radius r. The area of a circle is the space inside it, and its formula is pi r squared.",
+    "at": [
+     "Here's a circle with radius r",
+     "r. The area",
+     "the space inside it",
+     "pi r squared"
+    ]
+   },
+   {
+    "say": "The circumference is the length all the way around the circle, and its formula is two pi r.",
+    "at": [
+     "the length all the way around",
+     "around the circle",
+     "two pi r"
+    ]
+   },
+   {
+    "say": "This sign is a letter called pi, and the radius we know. Notice that only the area has r squared. The area is in square centimeters, and the circumference is a length, so it's in centimeters.",
+    "at": [
+     "This sign is a letter",
+     "called pi, and",
+     "only the area has r squared",
+     "The area is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So what is pi? Let's really see. Take a circle, and here is its diameter, d.",
+    "at": [
+     "Let's really see",
+     "Take a circle"
+    ]
+   },
+   {
+    "say": "Now peel off the circumference, and lay it out as a straight line.",
+    "at": [
+     "Now peel off",
+     "and lay it"
+    ]
+   },
+   {
+    "say": "How many times does the diameter fit into it? Once, twice, three times, and a little bit is left over.",
+    "at": [
+     "Once",
+     "twice",
+     "three times",
+     "a little bit is left"
+    ]
+   },
+   {
+    "say": "So the circumference is three diameters and a bit. One diameter is two r, so three diameters are six r. So the circumference is a bit more than six r.",
+    "at": [
+     "So the circumference is three diameters",
+     "diameters and a"
+    ]
+   },
+   {
+    "say": "And the formula says the circumference is two pi r. So two pi is a bit more than six, and pi is a bit more than three.",
+    "at": [
+     "So two pi is a bit more than six",
+     "bit more than",
+     "and pi is a bit more than three",
+     "more than three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So pi is a number. It's a fixed number, always the same. It's not an unknown like x or y in an equation.",
+    "at": [
+     "It's a fixed number",
+     "It's not an"
+    ]
+   },
+   "It just isn't a round number. Its digits after the point never end, so instead of writing them, we give it a special sign, the letter pi. That's easier to write and easier to see in the formula.",
+   {
+    "say": "So the area, pi r squared, is a bit more than three times r squared. And for the exam, that's all we need to know about pi. It's a bit more than three.",
+    "at": [
+     "is a bit more than three times",
+     "three times r"
+    ]
+   },
+   {
+    "say": "For example, is four pi more than twelve? Four times three is twelve, and pi is a bit more than three, so four pi is a bit more than twelve. Yes.",
+    "at": [
+     "is four pi more than twelve",
+     "Four times three"
+    ]
+   },
+   {
+    "say": "And when the answers have pi in them, keep the pi. Don't change it into a number.",
+    "at": [
+     "keep the pi",
+     "Don't change it"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's see simple examples. Say the radius is six.",
+    "at": [
+     "Let's see simple examples",
+     "Say the radius is six"
+    ]
+   },
+   {
+    "say": "The area is pi r squared, so pi times six squared. Six squared is thirty-six, so the area is thirty-six pi.",
+    "at": [
+     "so pi times six squared",
+     "Six squared is",
+     "so the area is thirty-six pi"
+    ]
+   },
+   {
+    "say": "The circumference is two pi r, so two pi times six, which is twelve pi.",
+    "at": [
+     "so two pi times six",
+     "which is twelve pi"
+    ]
+   },
+   {
+    "say": "I put six in place of the radius and found the area. I put six in place of the radius and found the circumference.",
+    "at": [
+     "I put six in place",
+     "of the radius"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a circle with a diameter of fourteen. Careful here. The formulas use the radius, not the diameter.",
+    "at": [
+     "Now a circle with a diameter",
+     "diameter of fourteen"
+    ]
+   },
+   {
+    "say": "So first, the radius is half of fourteen, which is seven.",
+    "at": [
+     "So first, the radius",
+     "half of fourteen",
+     "which is seven"
+    ]
+   },
+   {
+    "say": "The area is pi times seven squared, which is forty-nine pi, and not pi times fourteen squared. The circumference is two pi times seven, which is fourteen pi.",
+    "at": [
+     "The area is pi times seven squared",
+     "seven squared, which",
+     "The circumference is two pi times seven",
+     "times seven, which"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Another example. I don't know the radius, but I'm given that the circumference is twenty-two pi. Let's find the radius.",
+    "at": [
+     "I don't know the radius",
+     "but I'm given",
+     "the circumference is twenty-two pi"
+    ]
+   },
+   {
+    "say": "I put it into the circumference formula. Two pi r equals twenty-two pi.",
+    "at": [
+     "I put it",
+     "Two pi r equals"
+    ]
+   },
+   {
+    "say": "Divide both sides by two pi. On the left I get r, and on the right, twenty-two pi divided by two pi is eleven. So the radius is eleven.",
+    "at": [
+     "Divide both sides by two pi",
+     "On the left",
+     "So the radius is eleven"
+    ]
+   },
+   {
+    "say": "I used the formula backwards. Instead of going from the radius to the circumference, I went from the circumference to the radius.",
+    "at": [
+     "I used the formula backwards",
+     "radius to the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a circle whose area is a hundred twenty-one pi. Again, I don't know the radius. I put the area into the formula, so pi r squared equals a hundred twenty-one pi.",
+    "at": [
+     "Now a circle whose area",
+     "is a hundred",
+     "Again, I don",
+     "into the formula",
+     "so pi r squared equals"
+    ]
+   },
+   {
+    "say": "Divide both sides by pi, and r squared is a hundred twenty-one. Take the root of both sides, and r is eleven.",
+    "at": [
+     "Divide both sides by pi",
+     "and r squared",
+     "Take the root",
+     "and r is eleven"
+    ]
+   },
+   {
+    "say": "Minus eleven isn't relevant here, because a radius is a length. It's positive, never negative.",
+    "at": [
+     "Minus eleven",
+     "length. It's positive"
+    ]
+   },
+   "So from the radius we find the area and the circumference, and from the area or the circumference we find the radius."
+  ],
+  [
+   {
+    "say": "One more idea that the exam likes, wheels. In one full turn, a wheel rolls exactly one circumference. Look at the red point. After one turn, it's at the bottom again, one circumference further.",
+    "at": [
+     "One more idea",
+     "exam likes, wheels",
+     "In one full turn",
+     "Look at the"
+    ]
+   },
+   {
+    "say": "Say a wheel has a radius of ten centimeters. One turn is two pi times ten, which is twenty pi centimeters.",
+    "at": [
+     "One turn is two pi times ten"
+    ]
+   },
+   {
+    "say": "How many turns does it make along a road of ten pi meters? First the same units. One meter is a hundred centimeters, so ten pi meters are a thousand pi centimeters.",
+    "at": [
+     "How many turns",
+     "First the same units",
+     "One meter is"
+    ]
+   },
+   {
+    "say": "A thousand pi divided by twenty pi is fifty, so the wheel makes fifty turns. Now let's see an exam question. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "A thousand pi divided by twenty pi",
+     "twenty pi is"
+    ]
+   }
+  ]
+ ]
+}

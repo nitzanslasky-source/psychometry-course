@@ -1,0 +1,105 @@
+{
+ "videoId": "solve-geo33-g080",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The numerical value of a circle's area in square centimeters is four times as much as the numerical value of its circumference in centimeters. What is its radius, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "The numerical value"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "All the question tells us is how the area and the circumference compare, and we want the radius. Both formulas have r in them. [short pause] So we'll simply write the given as an equation, and solve it.",
+    "at": [
+     "how the area and the circumference compare",
+     "circumference compare, and",
+     "the given as"
+    ]
+   },
+   {
+    "say": "[short pause] What I need to do is simply work from the data. You can ignore the square centimeters and the centimeters. Just read it as, the area is four times the circumference.",
+    "at": [
+     "is simply work",
+     "the area is four times"
+    ]
+   },
+   {
+    "say": "The area is pi r squared. The circumference is two pi r, and four times it is four times two pi r.",
+    "at": [
+     "The area is pi r squared",
+     "The circumference is two pi r",
+     "four times it is",
+     "times two pi"
+    ]
+   },
+   {
+    "say": "Four times two pi r is eight pi r. Careful not to lose the two of two pi r. Someone who loses it gets four, and that's choice number four.",
+    "at": [
+     "Four times two pi r is eight pi r",
+     "is eight pi",
+     "that's choice number four"
+    ]
+   },
+   {
+    "say": "Now divide both sides by pi. On the left I get r squared, and on the right, eight r.",
+    "at": [
+     "Now divide both sides by pi",
+     "On the left"
+    ]
+   },
+   {
+    "say": "Then divide both sides by r. We're allowed to, because r is a radius, so it isn't zero. r squared divided by r is r, and eight r divided by r is eight. So r is eight. Choice number one is our answer.",
+    "at": [
+     "Then divide both sides by r",
+     "We're allowed to",
+     "So r is eight",
+     "Choice number one is our answer"
+    ]
+   },
+   {
+    "say": "Sixteen is in the choices too. That's the diameter, two times eight, but the question asks for the radius.",
+    "at": [
+     "Sixteen is in",
+     "That's the diameter"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "In the exam you'd mark it and move on. Here, let's really check. With a radius of eight, the area is pi times eight squared, sixty-four pi. The circumference is two pi times eight, sixteen pi.",
+    "at": [
+     "mark it and",
+     "Here, let's really check",
+     "the area is"
+    ]
+   },
+   {
+    "say": "And four times sixteen pi is sixty-four pi. So the area really is four times the circumference.",
+    "at": [
+     "And four times sixteen pi",
+     "is sixty-four pi"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] There's also a short way. Divide the area by the circumference. Pi r squared over two pi r. The pi cancels, one r cancels, and we're left with r over two.",
+    "at": [
+     "Divide the area by the circumference",
+     "Pi r squared"
+    ]
+   },
+   {
+    "say": "Here the area is four times the circumference, so r over two is four, and r is eight. Choice number one again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "so r over two is four",
+     "four, and r",
+     "Choice number one again"
+    ]
+   }
+  ]
+ ]
+}

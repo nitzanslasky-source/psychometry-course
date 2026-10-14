@@ -1,0 +1,107 @@
+{
+ "videoId": "solve-geo33-g098",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A circle with center O has a radius of eight centimeters. A, G, F, E and D lie on the same arc, in that order, and B and C lie on the other arc between A and D. Angle A B F is twenty-eight degrees, angle F C D is fifty-seven degrees, and angle G O E is eighty degrees. What is the sum of the lengths of the highlighted arcs, A G and E D?",
+    "voice": "calm",
+    "at": [
+     "A circle with center O"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they want the two bold arcs together. To find the length of an arc, we first need its central angle. But no central angle stands on arc A G, or on arc E D. So we need a construction, and it's a natural one, because we must have central angles. Let's draw the radius O A and the radius O D.",
+    "at": [
+     "So they want",
+     "the two bold arcs together",
+     "To find the",
+     "Let's draw the radius O A",
+     "A and the"
+    ]
+   },
+   {
+    "say": "Now let's use the givens. Angle B is twenty-eight degrees. Which arc does it stand on? On A G plus G F, so on the whole arc A F. An inscribed angle doesn't give us a central angle directly. But remember, the central angle on the same arc is twice as big.",
+    "at": [
+     "the givens. Angle",
+     "Angle B is twenty-eight degrees",
+     "On A G"
+    ]
+   },
+   {
+    "say": "No central angle is drawn on arc A F, so let's draw one more radius, O F. Now angle A O F is two times twenty-eight, fifty-six degrees.",
+    "at": [
+     "one more radius, O F",
+     "Now angle A"
+    ]
+   },
+   {
+    "say": "Next, angle C is fifty-seven degrees, and it stands on arc F D. The central angle on that arc is twice as big, two times fifty-seven, a hundred fourteen degrees.",
+    "at": [
+     "angle C is fifty-seven",
+     "and it stands"
+    ]
+   },
+   {
+    "say": "That's a lot of givens and a lot of lines, so let's find our way. We need the two angles at the ends, angle A O G and angle E O D. We can't find each one alone. But we can find their sum.",
+    "at": [
+     "We need the two angles at the ends",
+     "at the ends"
+    ]
+   },
+   {
+    "say": "Together with the middle angle, G O E, they make the whole angle A O D. That's fifty-six plus a hundred fourteen, a hundred seventy degrees. Take away the middle angle, eighty, and the two end angles together are a hundred seventy minus eighty, ninety degrees.",
+    "at": [
+     "Take away the middle angle",
+     "eighty, and the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "How is the ninety split between the two? Maybe forty-five and forty-five, maybe twenty and seventy. We don't know, and it doesn't matter. Let's see why. Here's only what we need, the angle A O D, a hundred seventy degrees.",
+    "at": [
+     "split between the",
+     "forty-five and forty-five",
+     "Here's only what we need",
+     "the angle A"
+    ]
+   },
+   {
+    "say": "Say the middle part, the eighty, sits here, in grey. Then the end angles are twenty and seventy, and together they're ninety.",
+    "at": [
+     "Say the middle part",
+     "eighty, sits here"
+    ]
+   },
+   {
+    "say": "Now slide the whole middle part along the circle. The end angles change, to fifty and forty, but together they're still ninety. Wherever the middle part sits, the two ends always add up to a hundred seventy minus eighty.",
+    "at": [
+     "slide the whole middle part",
+     "along the circle"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the length. An arc is a part of the circumference. The radius is eight, so the whole circumference is two pi times eight, sixteen pi.",
+    "at": [
+     "Now the length",
+     "An arc is",
+     "the whole circumference",
+     "pi times eight"
+    ]
+   },
+   {
+    "say": "Which part of it do we need? Ninety degrees out of three hundred sixty is one quarter. And one quarter of sixteen pi is four pi. Choice number three is our answer.",
+    "at": [
+     "Ninety degrees out of",
+     "hundred sixty is",
+     "Choice number three is our answer"
+    ]
+   },
+   "When you can't find each part alone, look for the sum. Here it was the whole angle minus the middle part. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

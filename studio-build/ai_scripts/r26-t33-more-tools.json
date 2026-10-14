@@ -1,0 +1,203 @@
+{
+ "videoId": "r26-t33-more-tools",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "More circle tools. These two tools show up in the hardest circle questions, near the end of the section. And right after this lesson, two questions teach two more tools."
+  ],
+  [
+   {
+    "say": "The first tool. Two equal circles, and each one passes through the center of the other. Here's a circle with center O, and an equal circle with center P. P is on the first circle, and O is on the second one.",
+    "at": [
+     "equal circles, and",
+     "Here's a circle with center O",
+     "O, and an"
+    ]
+   },
+   {
+    "say": "The circles cross at two points, A and B. What can we say about this shape? No angle is given, so we add helper lines. We join the centers to the crossing points.",
+    "at": [
+     "The circles cross at two points",
+     "points, A and",
+     "We join the centers",
+     "the crossing points"
+    ]
+   },
+   {
+    "say": "O A and O B are radii of the first circle. P A and P B are radii of the second circle. And O P? P is on the first circle, so O P is also a radius. The circles are equal, so all five lines have the same length, r.",
+    "at": [
+     "so O P is also a radius",
+     "a radius. The",
+     "all five lines",
+     "same length, r"
+    ]
+   },
+   {
+    "say": "So triangle O A P has three equal sides. It's equilateral, and triangle O B P is equilateral too. Every angle in them is sixty degrees.",
+    "at": [
+     "So triangle O A P",
+     "It's equilateral, and"
+    ]
+   },
+   {
+    "say": "Now the angle A O B. It's sixty plus sixty, a hundred twenty degrees. And a hundred twenty degrees is a third of the circle, because three times a hundred twenty is three hundred sixty.",
+    "at": [
+     "It's sixty plus sixty",
+     "hundred twenty degrees",
+     "is a third of",
+     "circle, because three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Questions love the region the two circles share, the shape in the middle. Draw the chord A B. It cuts this shape into two equal pieces.",
+    "at": [
+     "Questions love the region",
+     "two circles share",
+     "the shape in the middle",
+     "Draw the chord A B",
+     "It cuts this"
+    ]
+   },
+   {
+    "say": "Look at the right piece. It's between the chord A B and an arc of the circle with center O. Take the sector A O B, a third of that circle. Then take away triangle A O B. What's left is exactly the right piece.",
+    "at": [
+     "Look at the right piece",
+     "It's between the",
+     "Take the sector",
+     "B, a third",
+     "Then take away triangle",
+     "What's left is"
+    ]
+   },
+   {
+    "say": "The left piece is the same, in the circle with center P. So the shared region is two times, the sector minus the triangle.",
+    "at": [
+     "So the shared region",
+     "two times, the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's see it in numbers. Say the radius is six. The whole circle is pi times six squared, thirty-six pi. The sector A O B is a third of it, so it's twelve pi.",
+    "at": [
+     "Say the radius is six",
+     "The whole circle",
+     "The sector A O B",
+     "is a third",
+     "so it's twelve pi"
+    ]
+   },
+   {
+    "say": "Now triangle A O B. The four radii make a rhombus, O A P B. Let's take it out. O P cuts it into our two equilateral triangles. Remember, the area of an equilateral triangle is a squared, times root three, over four. Six squared is thirty-six, and thirty-six over four is nine, so each one is nine root three.",
+    "at": [
+     "Now triangle A",
+     "make a rhombus",
+     "Let's take it out",
+     "O P cuts it",
+     "our two equilateral"
+    ]
+   },
+   {
+    "say": "Now cut the same rhombus the other way, with the chord A B. A diagonal cuts a rhombus into two equal halves, and triangle A O B is one of them. So it's half of the rhombus, the same as one equilateral triangle, nine root three.",
+    "at": [
+     "with the chord A B",
+     "A diagonal cuts"
+    ]
+   },
+   {
+    "say": "So one piece is twelve pi minus nine root three. The shared region is two pieces, twenty-four pi minus eighteen root three.",
+    "at": [
+     "So one piece",
+     "pi minus nine",
+     "The shared region is two pieces",
+     "pieces, twenty-four pi"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The second tool is a ring. Two circles with the same center, O, and the ring between them. The ring is the big circle minus the small circle, pi R squared minus pi r squared.",
+    "at": [
+     "Two circles with the same center",
+     "center, O, and",
+     "The ring is the big circle",
+     "circle minus the"
+    ]
+   },
+   {
+    "say": "Now a chord A B of the big circle that just touches the small circle, at the point M. M is a point of tangency, so the automatic helper line is the radius O M. It's perpendicular to the chord.",
+    "at": [
+     "Now a chord A B",
+     "of the big",
+     "the automatic helper line",
+     "the radius O"
+    ]
+   },
+   {
+    "say": "Draw O A and O B too. They're radii of the big circle, so triangle A O B is isosceles. O M is the height to its base, and in an isosceles triangle that height is also a median. So M cuts the chord in half. Call each half h.",
+    "at": [
+     "Draw O A and O B",
+     "They're radii of",
+     "So M cuts the chord in half",
+     "in half. Call"
+    ]
+   },
+   {
+    "say": "Look at the right triangle O M B. Its legs are r and h, and its hypotenuse is R. By Pythagoras, r squared plus h squared is R squared. So R squared minus r squared is h squared.",
+    "at": [
+     "Look at the right triangle",
+     "O M B",
+     "By Pythagoras",
+     "h squared is"
+    ]
+   },
+   {
+    "say": "And the ring? Pi R squared minus pi r squared is pi times, R squared minus r squared. That's pi times h squared. So the ring depends only on the chord.",
+    "at": [
+     "And the ring",
+     "Pi R squared"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So if the chord is ten, then h is five, and the ring is twenty-five pi. We don't need either radius.",
+    "at": [
+     "So if the chord is ten",
+     "ten, then h"
+    ]
+   },
+   {
+    "say": "Let's check it on rings with a chord of ten. Radii twelve and thirteen, the five, twelve, thirteen triangle. A hundred sixty-nine pi minus a hundred forty-four pi is twenty-five pi.",
+    "at": [
+     "Radii twelve and thirteen",
+     "five, twelve, thirteen"
+    ]
+   },
+   {
+    "say": "Radii five and five root two, a silver triangle with legs five and five. Five root two, squared, is fifty. Fifty pi minus twenty-five pi is twenty-five pi again.",
+    "at": [
+     "Radii five and five root two",
+     "two, a silver"
+    ]
+   },
+   {
+    "say": "And if the small circle shrinks to a single point? Then the chord is a diameter of ten, and the ring is a whole circle with radius five, twenty-five pi. The same answer.",
+    "at": [
+     "shrinks to a single point",
+     "Then the chord"
+    ]
+   },
+   {
+    "say": "So when a chord of the big circle touches the small circle, the ring is pi times half the chord, squared. Now let's see the other two tools in questions. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "So when a chord",
+     "the big circle"
+    ]
+   }
+  ]
+ ]
+}

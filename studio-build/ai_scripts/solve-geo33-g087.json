@@ -1,0 +1,138 @@
+{
+ "videoId": "solve-geo33-g087",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A E is a diameter of a circle with center O. B, C and D lie on the same semicircle, in that order. Given: A B, B C, C D and D E are all equal, and A O is five centimeters. Which of the following statements is not true?",
+    "voice": "calm",
+    "at": [
+     "A E is a diameter"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We're looking for the one statement that is surely not true. [short pause] So we go statement by statement. A statement that's always true, or even possible, is out, and we hope to be left with one.",
+    "at": [
+     "one statement that",
+     "So we go statement by statement",
+     "A statement that's"
+    ]
+   },
+   {
+    "say": "Statement one. Angle D A E equals angle C A D. Lots of letters, so let's go slowly. D A E is the angle at A between A E and A D. Let's call it alpha.",
+    "at": [
+     "Statement one",
+     "D A E is",
+     "Let's call it alpha"
+    ]
+   },
+   {
+    "say": "C A D is the angle at A between A D and A C. Let's call it beta.",
+    "at": [
+     "C A D",
+     "Let's call it beta"
+    ]
+   },
+   {
+    "say": "Both are inscribed angles. Alpha intercepts the arc D E, and beta intercepts the arc C D. The chords D E and C D are equal, so their arcs are equal too. And inscribed angles on equal arcs are equal. So alpha equals beta.",
+    "at": [
+     "Alpha intercepts the arc",
+     "E, and beta"
+    ]
+   },
+   {
+    "say": "Statement one is surely true, so choice number one is out.",
+    "at": [
+     "so choice number one is out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Statement two. Angle B O C is forty-five degrees. Let's call it x. Its vertex is at the center, so it's a central angle. To see it, let's draw the radii from O to B, to C and to D.",
+    "at": [
+     "Statement two",
+     "C is forty-five",
+     "Let's call it x",
+     "Its vertex is",
+     "let's draw the radii",
+     "O to B"
+    ]
+   },
+   {
+    "say": "Equal chords give equal central angles. All four chords are equal, so all four central angles are x.",
+    "at": [
+     "so all four central angles are x"
+    ]
+   },
+   {
+    "say": "Together, the four angles make the straight angle A O E, one hundred eighty degrees. So four x is one hundred eighty. To divide by four, you can halve twice. Half of one hundred eighty is ninety, and half of ninety is forty-five. So x really is forty-five, and choice number two is out.",
+    "at": [
+     "Together, the four",
+     "So four x is",
+     "To divide by",
+     "and choice number two is out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Statement three. Angle A D E is ninety degrees. That's the angle at D, between D A and D E.",
+    "at": [
+     "Statement three",
+     "Angle A D E is ninety",
+     "That's the angle at D",
+     "between D A"
+    ]
+   },
+   {
+    "say": "It's an inscribed angle that lies on the diameter A E. An inscribed angle on a diameter is always ninety, because it's half of the central angle, and the central angle on a diameter is a straight angle, one hundred eighty. So it's true, and choice number three is out.",
+    "at": [
+     "lies on the diameter",
+     "An inscribed angle on a diameter",
+     "diameter is always",
+     "and choice number three is out"
+    ]
+   },
+   {
+    "say": "On the exam, we're done. Three statements are out, so you mark choice number four and move on. There's no time to check it.",
+    "at": [
+     "so you mark choice number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] But we're in a lesson, so let's check it. Is A C five root three? Look at triangle A O C. We need O C, so let's draw it, from O to C.",
+    "at": [
+     "so let's check it",
+     "Is A C",
+     "let's draw it"
+    ]
+   },
+   {
+    "say": "A O is a radius, five. O C is a radius too, so it's also five. And angle A O C is forty-five plus forty-five, which is ninety.",
+    "at": [
+     "A O is a radius",
+     "O C is"
+    ]
+   },
+   {
+    "say": "So triangle A O C is a right triangle with two equal legs. That's the silver triangle, forty-five, forty-five, ninety. In the silver triangle, the hypotenuse is the leg times root two.",
+    "at": [
+     "That's the silver triangle",
+     "In the silver"
+    ]
+   },
+   {
+    "say": "So A C is five root two, not five root three. Root three belongs to the gold triangle. So statement four is the one that's not true. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So A C is five root two",
+     "root two, not",
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

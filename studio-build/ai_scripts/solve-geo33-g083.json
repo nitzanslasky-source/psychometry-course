@@ -1,0 +1,63 @@
+{
+ "videoId": "solve-geo33-g083",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A circle with center O has a radius of three centimeters. Two shaded sectors that don't overlap have central angles of forty degrees and a hundred twenty degrees. What is their total area, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "A circle with center O"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Here too, we could put the numbers into the formula, but let's save ourselves that. We have a forty and a hundred twenty, and we know what part of the circle each one is.",
+    "at": [
+     "Here too, we could",
+     "the numbers into"
+    ]
+   },
+   {
+    "say": "[short pause] A hundred twenty degrees is a third of the circle. Forty degrees is a ninth, because three hundred sixty divided by nine is forty.",
+    "at": [
+     "A hundred twenty degrees is a third",
+     "a third of",
+     "Forty degrees is a ninth",
+     "by nine is"
+    ]
+   },
+   {
+    "say": "Together, that's a third plus a ninth. In ninths, a third is three ninths, and three ninths plus one ninth is four ninths. So the shaded part is four ninths of the circle's area.",
+    "at": [
+     "Together, that",
+     "In ninths, a"
+    ]
+   },
+   {
+    "say": "Now the area of the circle. Pi r squared is pi times three squared, which is nine pi. Careful, we need the area here, not the circumference. Four ninths of the circumference, six pi, would give eight pi over three, and that's choice number two, a trap.",
+    "at": [
+     "Pi r squared is",
+     "times three squared",
+     "a trap"
+    ]
+   },
+   {
+    "say": "I don't need the whole circle, only four ninths of it. Nine pi divided by nine is pi, and four times that is four pi. Choice number three is our answer.",
+    "at": [
+     "Nine pi divided by nine",
+     "is pi, and",
+     "Choice number three is our answer"
+    ]
+   },
+   {
+    "say": "We can also take each sector separately. A ninth of nine pi is pi, and a third of nine pi is three pi. Together it's four pi again. Just don't stop at three pi, that's only the big sector. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "We can also take each sector",
+     "A ninth of",
+     "that's only the big sector"
+    ]
+   }
+  ]
+ ]
+}

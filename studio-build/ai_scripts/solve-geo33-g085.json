@@ -1,0 +1,117 @@
+{
+ "videoId": "solve-geo33-g085",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B is a diameter of a circle with center O, and A B is twenty centimeters. Given: angle A O C is one hundred twenty degrees. What is the area of the shaded triangle O B C, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "A B is a diameter"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We want the area of a triangle, and we know one angle and one length. [short pause] Let's start with the first given, the angle, and see what it tells us about the triangle.",
+    "at": [
+     "We want the area",
+     "a triangle, and"
+    ]
+   },
+   {
+    "say": "Angle A O C is one hundred twenty. A B is a straight line, so the angle next to it completes it to one hundred eighty. One hundred eighty minus one hundred twenty is sixty. So angle B O C is sixty degrees.",
+    "at": [
+     "Angle A O C is one hundred twenty",
+     "to it completes",
+     "So angle B O C is sixty",
+     "is sixty degrees"
+    ]
+   },
+   {
+    "say": "Now notice something. Inside a circle, isosceles triangles usually hide, because all the radii are equal. O B and O C are both radii, so they're equal, and the shaded triangle is at least isosceles.",
+    "at": [
+     "O B and O C are both radii",
+     "are both radii"
+    ]
+   },
+   {
+    "say": "Its top angle, at O, is sixty. The three angles add up to one hundred eighty, so the two base angles share one hundred eighty minus sixty, which is one hundred twenty. They're equal, so each one is half of it, sixty.",
+    "at": [
+     "so the two base angles share",
+     "share one hundred"
+    ]
+   },
+   {
+    "say": "So all three angles are sixty. As we said in the triangles topic, an isosceles triangle with a sixty-degree angle is always equilateral.",
+    "at": [
+     "So all three angles are sixty",
+     "As we said"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Let's take the shaded triangle out and make it bigger, so it's easier to see.",
+    "at": [
+     "Let's take the shaded triangle out",
+     "out and make"
+    ]
+   },
+   {
+    "say": "Now the second given. A B is twenty, and A B is a diameter. A diameter is two radii, so one radius is twenty divided by two, which is ten. So O B is ten. And the triangle is equilateral, so all its sides are ten.",
+    "at": [
+     "A diameter is two radii",
+     "so one radius",
+     "so all its sides are ten"
+    ]
+   },
+   {
+    "say": "They ask for the area of an equilateral triangle with side ten. We have a formula for that. Remember the count, a-two-three-four. It's a squared, times root three, over four, where a is the side.",
+    "at": [
+     "They ask for"
+    ]
+   },
+   {
+    "say": "We put ten in place of a. Ten squared is one hundred, so we get one hundred root three, over four. One hundred over four is twenty-five, so the area is twenty-five root three. Choice number four is our answer.",
+    "at": [
+     "We put ten in place of a",
+     "Ten squared is",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And if you don't remember the formula, there's another way. We already know the triangle is equilateral, with side ten. Let's draw its height, from C straight down to O B.",
+    "at": [
+     "remember the formula",
+     "there's another way",
+     "We already know",
+     "Let's draw its height",
+     "C straight down"
+    ]
+   },
+   {
+    "say": "In an equilateral triangle, the height cuts the base in half, so we get five and five. Each half is a gold triangle, thirty, sixty, ninety.",
+    "at": [
+     "so we get five and five",
+     "Each half is"
+    ]
+   },
+   {
+    "say": "Five is the short leg. The long leg is the short leg times root three, so the height is five root three.",
+    "at": [
+     "so the height is five root three"
+    ]
+   },
+   {
+    "say": "Now base times height, over two. Ten times five root three is fifty root three, and over two it's twenty-five root three. Again choice number four. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Now base times height",
+     "Ten times five",
+     "Again choice number four"
+    ]
+   }
+  ]
+ ]
+}

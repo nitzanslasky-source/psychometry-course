@@ -178,7 +178,7 @@
      "videos": 16,
      "lessons": 4,
      "questions": 37,
-     "minutes": 49,
+     "minutes": 48,
      "steps": 55
     },
     {
@@ -322,11 +322,11 @@
     {
      "id": 33,
      "title": "Circles",
-     "videos": 38,
-     "lessons": 11,
+     "videos": 40,
+     "lessons": 13,
      "questions": 76,
-     "minutes": 88,
-     "steps": 118
+     "minutes": 165,
+     "steps": 120
     },
     {
      "id": 34,

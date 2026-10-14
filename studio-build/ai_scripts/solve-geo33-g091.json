@@ -1,122 +1,81 @@
 {
  "videoId": "solve-geo33-g091",
- "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), talks to one student, reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number two is our answer', closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; generated with ai_narrate.py --continuous (one request, word-timed cues). AI auto-narrate PILOT v2 (2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, emphasis through wording and punctuation only (2026-10-09, voice eleven_v4: the teacher found the [excited] tags 'just a bit too exaggerated', so no emotion tags), numbers and symbols written as words. PILOT v4 (2026-10-09, teacher feedback on the eleven_v4 pilots): self-contained examples only (no example from another question; no words the clone may say oddly, e.g. 'vases', 'neither'), routine calculation steps said plainly and short, warmer questioning tone only for the key ideas, varied sentence starts, at most one [matter-of-fact] tag per video and [calmly] right before the closing line (calmer ending); never [excited]. VOICE 6 (2026-10-09): eleven_multilingual_v2 again (v4 too high/lively) - no delivery tags; the calm ending is the wording ('Okay. I'll see you in the next question.') after a [pause] (sent to v2 as a <break>). No label words read out ('Notice:', 'Tip:', 'Key idea:') - said as speech. v4 SCRIPT (2026-10-09, teacher on voice 6: 'a bit dry'): warmth through wording - key ideas in their own short sentence after a beat ([short pause]/[pause] = <break> for v2), '...' for stress, at most one CAPITALISED word per video (tested: v2 stresses it - longer, higher, louder), small reactions ('see?', 'that's it', 'pretty simple, right?'), one '!' at the real aha moment; plain calculation lines unchanged; 360 said 'three sixty'. Alpha/beta named only where the viewer links them to the figure. v5 (2026-10-09, teacher picked 'mix 3' + 'add stutters every so often and things that humanize it'): made with ai_narrate.py --segmented; \"voice\": \"calm\" on the question reading and the plain calculation lines (base voice elsewhere); humanizers about 2-4 a minute (a small restart 'the— the', 'um'/'uh' before a choice, 'okay so', 'wait, let me write that down... no, actually', a word self-correction), never in the question reading or in numbers the student copies, every slip corrected at once (tested: v2 says 'the— the', 'um', 'uh' as speech). v6 (2026-10-09, teacher on audio v5): NO single-word stutters ('the— the', 'a— a' sound like a computer glitch) - a restart repeats a short phrase ('of the— of the circle', 'the other— the other choices'); 'um'/'uh' are fine; no fake hesitation about writing ('wait, let me write that down... no, actually'). Statement endings must fall: ai_narrate.py --segmented measures every '.'/'!' ending and re-takes a part that rises.",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
    {
-    "say": "A circle has a radius of root thirty-five centimeters. Its ten central angles take turns, alpha, then beta, five of each, like in the figure. One sector of each kind is shaded. What's their total area?",
+    "say": "A circle has a radius of root thirty-five centimeters. Its central angles are alpha and beta in turn, five of each, as in the figure. One sector with angle alpha and one sector with angle beta are shaded. What is their total area, in square centimeters?",
     "voice": "calm",
+    "at": [
+     "A circle has a radius"
+    ],
     "pause": 0.5
    },
    {
-    "say": "Now, here's the thing. We can't find the two angles separately. And... we don't even need to.",
+    "say": "The shaded part is part of the circle's area. So we need two things. The area of the whole circle, and which part of it is shaded.",
     "at": [
-     "<A circle has a radius",
-     "<alpha, then",
-     "<then beta",
-     "<One sector of each kind is shaded",
-     "<What's their total area",
-     "the two angles",
-     "separately"
+     "The shaded part is part",
+     "of the circle's"
     ]
    },
+   "[short pause] Let's start with the area of the circle. The radius is given, so it's easy. Pi r squared.",
    {
-    "say": "Look at the shaded part. It's one alpha and one beta, sitting side by side.",
+    "say": "Root thirty-five, squared, is thirty-five, because the square cancels the root. So the area is thirty-five pi. That's the whole circle.",
     "at": [
-     "shaded part"
+     "So the area is thirty-five pi",
+     "pi. That's the"
     ]
    },
+   "Now, which part. For that we need alpha and beta, but we don't get a number for either of them. So what can we say?",
    {
-    "say": "So what do I actually need? The shaded part is just a piece of the— of the circle. So I need two things. The area of the whole circle, and how much of it is shaded.",
-    "at": [
-     "The shaded part is just",
-     "So I need two things",
-     "The area of the whole circle",
-     "how much of it is shaded"
-    ]
-   },
-   {
-    "say": "The area of a circle is pi r squared. Here r is root thirty-five. Squaring cancels the root, so r squared is thirty-five. The whole circle is thirty-five pi.",
-    "voice": "calm",
-    "at": [
-     "pi r squared",
-     "Here r is root",
-     "Squaring cancels",
-     "The whole circle is",
-     "thirty-five pi."
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Now, how much of it is shaded? For that I need the angles, and, uh, they don't give me a single number. So what can I say about them?",
-    "at": [
-     "how much of it is shaded",
-     "I need the angles",
-     "they don't give me"
-    ]
-   },
-   {
-    "say": "Let's count. Here are the five alphas, and here are the five betas. Together, they go all the way around the circle. So five alpha plus five beta is equal to three sixty degrees.",
+    "say": "Let's count them. One, two, three, four, five alphas. And five betas.",
     "at": [
      "five alphas",
-     "five betas",
-     "five alpha plus five beta",
-     "three sixty degrees"
+     "And five betas"
     ]
    },
    {
-    "say": "Look at this side. One equation, two unknowns. So I can't get each angle on its own, right? [short pause] But I CAN get their sum!",
+    "say": "All ten angles go around the center, so together they make three hundred sixty degrees. So five alpha plus five beta is three hundred sixty.",
     "at": [
-     "this side",
-     "two unknowns",
-     "their sum"
-    ],
-    "pause": 0.4
+     "All ten angles",
+     "So five alpha plus five beta",
+     "beta is three"
+    ]
    },
+   "That's one equation with two unknowns. We can't find alpha or beta on its own, but we can find their sum.",
    {
-    "say": "Divide both sides by five, and alpha plus beta is equal to seventy-two degrees.",
-    "voice": "calm",
+    "say": "If you see it, just divide by five. If not, take out the common factor five. Five times the sum, alpha plus beta, is three hundred sixty. Divide by five, and alpha plus beta is seventy-two.",
     "at": [
-     "Divide both sides",
-     "alpha plus beta is equal",
-     "seventy-two degrees"
+     "take out the common factor five",
+     "Five times the"
     ]
    },
    {
-    "say": "Okay so, could they be thirty and forty-two? Sure. Twelve and sixty? That works too. It doesn't matter... all I need is their sum.",
+    "say": "What does that tell us about alpha and beta? We don't know. Alpha could be thirty and beta forty-two. Or twelve and sixty. There are endless options. But it doesn't matter.",
     "at": [
-     "thirty and forty-two",
-     "Twelve and sixty",
-     "all I need is their sum"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "A sector takes the same part of the circle's area as its angle takes out of three sixty. Here the two shaded sectors are seventy-two out of three sixty. And seventy-two over three sixty is one fifth.",
-    "voice": "calm",
-    "at": [
-     "A sector takes",
-     "the two shaded sectors",
-     "seventy-two out of three sixty",
-     "is one fifth"
+     "Alpha could be thirty",
+     "beta forty-two. Or"
     ]
    },
    {
-    "say": "So one fifth of thirty-five pi... that's seven pi.",
+    "say": "One alpha and one beta together are seventy-two degrees, and the circle is made of five such pairs.",
+    "at": [
+     "the circle is made of five such pairs",
+     "five such pairs"
+    ]
+   },
+   {
+    "say": "The two shaded sectors are one pair. So they're seventy-two out of three hundred sixty, which is one fifth of the circle.",
+    "at": [
+     "which is one fifth"
+    ]
+   },
+   {
+    "say": "So the shaded area is one fifth of thirty-five pi, which is seven pi. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
      "one fifth of thirty-five pi",
-     "that's seven pi"
-    ]
-   },
-   {
-    "say": "So, um, number two is our answer. And see? We never even found the angles themselves. We only needed their sum. So when you can't find each one on its own... it's worth looking for their sum. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "number two",
-     "We never even found",
-     "So when you can't find",
-     "looking for their sum"
+     "which is seven",
+     "Choice number two is our answer"
     ]
    }
   ]

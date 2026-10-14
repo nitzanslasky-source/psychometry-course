@@ -1,0 +1,214 @@
+{
+ "videoId": "geo-081",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Sectors and arcs. First, let's understand what a sector is and what an arc is."
+  ],
+  [
+   {
+    "say": "Here's a circle with its center. Let's draw two radii. Between them, there's an arc, a piece of the circle. The part enclosed by the two radii and the arc between them is called a sector. It's a bit like a slice of pizza.",
+    "at": [
+     "Here's a circle",
+     "Let's draw two radii",
+     "Between them, there's an arc",
+     "a piece of",
+     "is called a sector",
+     "It's a bit"
+    ]
+   },
+   {
+    "say": "A sector can be thin or wide. This one is wider, but it's still two radii and the arc between them.",
+    "at": [
+     "This one is wider",
+     "it's still two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The area of a sector is its share of the whole circle. There's a formula for it. The angle of the sector at the center is its central angle, alpha. We take alpha over three hundred sixty, times the area of the circle, pi r squared.",
+    "at": [
+     "The area of a sector",
+     "is its share",
+     "its central angle",
+     "We take alpha over",
+     "hundred sixty, times"
+    ]
+   },
+   {
+    "say": "I strongly recommend not using this formula, unless it's really the only way you understand it. It's much better to see which part of the circle it is. Let's see what I mean.",
+    "at": [
+     "which part of the circle it is",
+     "Let's see what"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's a circle. Let's cut it into four equal parts. This sector is a quarter of the circle. Three hundred sixty divided by four is ninety, so its angle is ninety degrees.",
+    "at": [
+     "Here's a circle",
+     "cut it into four",
+     "This sector is a quarter",
+     "of the circle"
+    ]
+   },
+   "Instead of the formula, all I need to see is that it's a quarter. So I take the area of the circle, and divide it by four.",
+   {
+    "say": "Now let's cut a circle into eight. This sector, a real slice of family-size pizza, is an eighth of the circle. Its angle is forty-five, half of ninety. Good to know, but what matters is that it's an eighth.",
+    "at": [
+     "cut a circle into eight",
+     "This sector, a",
+     "is an eighth of the circle",
+     "Its angle is"
+    ]
+   },
+   {
+    "say": "For example, with a radius of six, the area of the circle is pi times six squared, thirty-six pi. A quarter of it is nine pi, and an eighth is half of that, nine pi over two.",
+    "at": [
+     "pi times six squared",
+     "A quarter of it",
+     "nine pi, and",
+     "an eighth is half of that",
+     "that, nine pi"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "This circle is cut into five equal sectors, so the angle is three hundred sixty divided by five, seventy-two degrees. But what matters is that the sector is a fifth of the circle. Say the circle's area is forty pi. Then the sector is forty pi divided by five, eight pi.",
+    "at": [
+     "This circle is cut into five",
+     "five equal sectors",
+     "so the angle is three hundred sixty",
+     "hundred sixty divided",
+     "the sector is a fifth",
+     "of the circle",
+     "Then the sector is",
+     "pi divided by"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the arc. An arc is simply a piece of the circle itself. Its length is also its share of the whole circle.",
+    "at": [
+     "An arc is simply",
+     "piece of the",
+     "its share of the whole circle"
+    ]
+   },
+   {
+    "say": "There's a formula here too. Alpha over three hundred sixty, but this time times the circumference, two pi r. Before, it was times the area, because we wanted an area. Now we want a length. But here too, my advice is to leave the formula, and solve it by understanding.",
+    "at": [
+     "There's a formula here too",
+     "Alpha over three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "This circle is cut into six equal parts, so this arc is a sixth of the circle. We find the circumference and divide it by six. The angle, by the way, is sixty degrees, three hundred sixty divided by six.",
+    "at": [
+     "This circle is cut into six",
+     "six equal parts",
+     "so this arc is a sixth",
+     "divide it by"
+    ]
+   },
+   {
+    "say": "With a radius of nine, the circumference is two pi times nine, eighteen pi. A sixth of it is three pi.",
+    "at": [
+     "two pi times nine",
+     "A sixth of it"
+    ]
+   },
+   {
+    "say": "Now a circle cut into three. The arc is a third, so eighteen pi divided by three, six pi. And the angle is a hundred twenty, three hundred sixty divided by three.",
+    "at": [
+     "a circle cut into three",
+     "The arc is a third",
+     "so eighteen pi divided by",
+     "three, six pi"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A slightly harder one. Again the circle is cut into five, so every angle is seventy-two. But this arc covers two of those parts. It's one fifth here, and another fifth here, so together it's two fifths of the circle. And its angle is seventy-two plus seventy-two, a hundred forty-four.",
+    "at": [
+     "Again the circle is cut into five",
+     "into five, so",
+     "one fifth here",
+     "and another fifth here",
+     "together it's two fifths",
+     "the circle. And",
+     "seventy-two plus seventy-two"
+    ]
+   },
+   {
+    "say": "So yes, the formulas work. But it's much simpler to see which part of the circle it is, a third, a quarter, a fifth, a sixth. Then find the circumference or the area, and divide.",
+    "at": [
+     "So yes, the",
+     "which part of the circle it is",
+     "Then find the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here are the angles worth remembering. Ninety degrees is a quarter. Forty-five is an eighth, because it's half of ninety, and half of a quarter is an eighth. Sixty is a sixth.",
+    "at": [
+     "Ninety degrees is a quarter",
+     "Forty-five is an"
+    ]
+   },
+   {
+    "say": "Forty is a ninth, because three hundred sixty divided by nine is forty. Thirty-six is a tenth, three hundred sixty divided by ten. And seventy-two is a fifth.",
+    "at": [
+     "Forty is a ninth",
+     "three hundred sixty"
+    ]
+   },
+   {
+    "say": "We can also build bigger angles from them. Two hundred seventy is three times ninety, so it's three quarters. A hundred forty-four is twice seventy-two, so it's two fifths. A hundred twenty is a third. You can just know it, but it's also a sixth times two, or a ninth times three.",
+    "at": [
+     "Two hundred seventy is",
+     "times ninety, so",
+     "hundred forty-four is twice",
+     "so it's two",
+     "A hundred twenty is a third",
+     "You can just"
+    ]
+   },
+   {
+    "say": "Remember these, and you'll find arcs and sectors in seconds. On the exam, these are the angles you'll get, not twenty-three and a half degrees. They check whether you understand that sixty degrees is a sixth of the circle.",
+    "at": [
+     "They check whether you understand",
+     "that sixty degrees"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One last thing. The arc is only the curved part. Say the radius is nine and the angle is sixty degrees. The arc is a sixth of eighteen pi, which is three pi.",
+    "at": [
+     "One last thing",
+     "The arc is only",
+     "Say the radius",
+     "a sixth of eighteen pi",
+     "which is three"
+    ]
+   },
+   {
+    "say": "The perimeter of the sector goes all the way around it, the arc plus the two radii. So it's three pi plus nine plus nine, which is three pi plus eighteen. Read carefully what the question asks for. Now let's go to examples. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "the arc plus the two radii",
+     "So it's three pi plus nine",
+     "nine plus nine"
+    ]
+   }
+  ]
+ ]
+}

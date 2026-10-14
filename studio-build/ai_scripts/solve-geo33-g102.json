@@ -1,0 +1,171 @@
+{
+ "videoId": "solve-geo33-g102",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C is an isosceles triangle, with A B equal to A C, and angle B A C is four theta degrees, where theta is between zero and forty-five. B lies on a circle with center O and radius r. A B and B C meet the circle again at D and E. What is the length of the arc D E that does not contain B?",
+    "voice": "calm",
+    "at": [
+     "A B C is an isosceles triangle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "There are letters everywhere, so we'll solve it two ways, with the full math, and then by plugging in numbers. [short pause] The full math first. We need an arc length, and for that we first need a central angle.",
+    "at": [
+     "The full math first",
+     "We need an"
+    ]
+   },
+   {
+    "say": "Let's start with the isosceles triangle. A B equals A C, so angle B equals angle C. Together they're a hundred eighty minus four theta. They're equal, so each one is half of that. Half of a hundred eighty is ninety, and half of four theta is two theta. So each base angle is ninety minus two theta.",
+    "at": [
+     "so angle B equals angle C",
+     "Together they're a",
+     "So each base angle",
+     "ninety minus two"
+    ]
+   },
+   {
+    "say": "The arc we need is on the circle, around B. So let's take this part of the figure and look at it bigger.",
+    "at": [
+     "The arc we need is on the circle",
+     "So let's take"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's the circle around B, bigger. Angle B is still ninety minus two theta. Its sides go through D and E, so it's an inscribed angle in the circle, and it stands on the bold arc D E. The central angle on the same arc is twice as big.",
+    "at": [
+     "Here's the circle around B",
+     "Angle B is",
+     "Its sides go through D and E",
+     "and E, so"
+    ]
+   },
+   {
+    "say": "So let's draw the radii O D and O E. The central angle is two times, ninety minus two theta, which is a hundred eighty minus four theta.",
+    "at": [
+     "draw the radii O D and O E",
+     "and O E",
+     "The central angle is two times",
+     "which is a"
+    ]
+   },
+   "Did you notice? We divided by two, and then we multiplied by two. If you see that early, you can write a hundred eighty minus four theta right away."
+  ],
+  [
+   {
+    "say": "An arc is the part of the circumference set by the central angle, out of three hundred sixty. So the arc is a hundred eighty minus four theta, over three hundred sixty, times two pi r.",
+    "at": [
+     "An arc is the part",
+     "of the circumference",
+     "So the arc is",
+     "hundred eighty minus"
+    ]
+   },
+   {
+    "say": "There are many letters, so let's glance at the choices and work toward them. Every choice has pi r, and we have two pi r. So we cancel the two with the three hundred sixty, and we're left with a hundred eighty at the bottom, times pi r.",
+    "at": [
+     "So we cancel the two",
+     "with the three"
+    ]
+   },
+   {
+    "say": "Every choice also has a one in the bracket. So we split our fraction into two fractions with the same bottom, a hundred eighty over a hundred eighty, minus four theta over a hundred eighty. Why is that allowed? Two fractions with the same bottom are subtracted by subtracting the tops, so we can also go back the other way.",
+    "at": [
+     "So we split our fraction",
+     "into two fractions"
+    ]
+   },
+   {
+    "say": "A hundred eighty over a hundred eighty is one. And four over a hundred eighty is one over forty-five, because a hundred eighty divided by four is forty-five. So the arc is pi r, times the bracket one minus theta over forty-five. Choice number four is our answer.",
+    "at": [
+     "So the arc is pi r",
+     "r, times the",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] The algebra got a bit tangled at the end. Now a shorter way, plugging in numbers. The right choice must be true for every theta and every r that the question allows. So it must also be true for one example that we choose. We pick easy numbers, find the arc, and then put the same numbers in the choices.",
+    "at": [
+     "bit tangled at",
+     "Now a shorter way",
+     "in numbers. The",
+     "the question allows",
+     "We pick easy"
+    ]
+   },
+   {
+    "say": "Which example is the easiest? An equilateral triangle, with all its angles sixty degrees. Then four theta is sixty, so theta is fifteen. That's between zero and forty-five, so it's allowed.",
+    "at": [
+     "An equilateral triangle",
+     "its angles sixty"
+    ]
+   },
+   {
+    "say": "So angle B is sixty, and the central angle on the bold arc is twice as big, a hundred twenty. The radius isn't given either, so let's take r as one, an easy number.",
+    "at": [
+     "the central angle on the bold arc",
+     "bold arc is"
+    ]
+   },
+   {
+    "say": "The whole circumference is two pi times one, two pi. A hundred twenty out of three hundred sixty is one third. So the arc is a third of two pi, two pi over three.",
+    "at": [
+     "The whole circumference",
+     "pi times one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now we put theta fifteen and r one in every choice, and cross out any choice that doesn't give two pi over three. Even if one fits early, we check them all, because an example can fit more than one choice.",
+    "at": [
+     "Now we put theta",
+     "and r one"
+    ]
+   },
+   {
+    "say": "Choice number one: fifteen over fifteen is one, and one minus one is zero. Zero, so it's out.",
+    "at": [
+     "Choice number one",
+     "number one: fifteen",
+     "is one, and",
+     "so it's out"
+    ]
+   },
+   {
+    "say": "Choice number two: fifteen over thirty is a half, and one minus a half is a half. That gives pi over two, out.",
+    "at": [
+     "Choice number two",
+     "number two: fifteen",
+     "is a half",
+     "That gives pi over two"
+    ]
+   },
+   {
+    "say": "Choice number three: fifteen over ninety is a sixth, and one minus a sixth is five sixths. Five pi over six, out.",
+    "at": [
+     "Choice number three",
+     "number three: fifteen",
+     "is a sixth",
+     "Five pi over six"
+    ]
+   },
+   {
+    "say": "Choice number four: fifteen over forty-five is a third, and one minus a third is two thirds. Two pi over three, it fits, and the other three are out. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number four:",
+     "number four: fifteen",
+     "is a third",
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,155 @@
+{
+ "videoId": "solve-geo33-g076",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A, B and C lie on a circle with center O, and B is on the short arc A C. Angle A O C is one hundred four degrees. What is angle A B C?",
+    "voice": "calm",
+    "at": [
+     "A, B and C lie on a circle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we want the angle at B, marked x, and the only angle we know is the central angle at O. [short pause] We just learned about quadrilaterals in a circle, and A O C B looks like one. But careful. For a quadrilateral to be inscribed, all four corners must be on the circle.",
+    "at": [
+     "So we want the angle at B",
+     "at B, marked"
+    ]
+   },
+   {
+    "say": "O is the center, so it's not on the circle. So A O C B is not an inscribed quadrilateral, and we can't say that its opposite angles add up to one hundred eighty.",
+    "at": [
+     "O is the center",
+     "it's not on"
+    ]
+   },
+   {
+    "say": "And that's exactly the trap. One hundred eighty minus one hundred four is seventy-six, and seventy-six is in the choices. Cross it out. You can see it in the figure too. The angle at B is much bigger than ninety, so it can't be seventy-six.",
+    "at": [
+     "One hundred eighty minus one hundred four",
+     "hundred four is",
+     "Cross it out"
+    ]
+   },
+   "We'll solve it in two ways, and then I'll show you one more route."
+  ],
+  [
+   {
+    "say": "[pause] Let's start with the main rule. An inscribed angle is half of the central angle on the same arc. The one hundred four at O intercepts the short arc A C, the arc that B sits on. So let's draw an inscribed angle on that same arc. We take a point D on the other side, on the long arc, and join it to A and to C.",
+    "at": [
+     "main rule. An",
+     "is half of",
+     "the central angle on the same arc",
+     "The one hundred",
+     "We take a point D",
+     "on the other"
+    ]
+   },
+   {
+    "say": "Angle A D C intercepts the same arc as the one hundred four. So it's half of it. Half of one hundred four is fifty-two.",
+    "at": [
+     "So it's half of it",
+     "Half of one"
+    ]
+   },
+   {
+    "say": "Now look at A B C D. All four corners are on the circle, so this time it really is an inscribed quadrilateral. Angles B and D are opposite, so they add up to one hundred eighty.",
+    "at": [
+     "Now look at A B C D",
+     "All four corners"
+    ]
+   },
+   {
+    "say": "So x is one hundred eighty minus fifty-two, which is one hundred twenty-eight. Choice number two is our answer.",
+    "at": [
+     "So x is one hundred eighty",
+     "eighty minus fifty-two",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "In the exam you'd mark it and move on. Here, let's see where the other choices come from. Fifty-two is angle D, not angle B. And one hundred four is the central angle itself.",
+    "at": [
+     "Fifty-two is angle D",
+     "one hundred four is the central angle itself"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now another way. It's not hard to understand, but some students find it hard to see.",
+    "at": [
+     "Now another way",
+     "It's not hard"
+    ]
+   },
+   {
+    "say": "The angle at O is one hundred four. The angle that completes it to a full circle, three hundred sixty, is three hundred sixty minus one hundred four. That's two hundred fifty-six.",
+    "at": [
+     "The angle that completes it",
+     "to a full"
+    ]
+   },
+   {
+    "say": "This two hundred fifty-six is also a central angle. It's very big and wide open, but its vertex is at the center, and it's between two radii. It intercepts the long arc, all the way around from A to C.",
+    "at": [
+     "It intercepts the long arc",
+     "all the way"
+    ]
+   },
+   {
+    "say": "Now stand at B. The chords B A and B C are your walls. What part of the circle do you see? The long arc, the same one. So angle A B C is the inscribed angle on the long arc.",
+    "at": [
+     "Now stand at B",
+     "B C are"
+    ]
+   },
+   {
+    "say": "So it's half of two hundred fifty-six. Half of two hundred is one hundred, and half of fifty-six is twenty-eight. Together, one hundred twenty-eight. Choice number two again.",
+    "at": [
+     "So it's half of two hundred",
+     "Half of two hundred is",
+     "Choice number two again"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And one more route, step by step, just so you've seen it. Draw the radius O B. Now O A, O B and O C are all radii, so they're equal.",
+    "at": [
+     "And one more route",
+     "by step, just",
+     "Draw the radius O B",
+     "and O C"
+    ]
+   },
+   {
+    "say": "So we get two isosceles triangles, A O B and B O C. Here they are, bigger. In triangle A O B, the base angles are equal. Call them alpha. In triangle B O C, call them beta. Angle A B C is made of both, so x is alpha plus beta.",
+    "at": [
+     "So we get two isosceles",
+     "triangles, A O",
+     "Here they are, bigger",
+     "In triangle A O B, the base",
+     "the base angles"
+    ]
+   },
+   {
+    "say": "The angles of a triangle add up to one hundred eighty. So the angle at O in the first triangle is one hundred eighty minus two alpha, and in the second, one hundred eighty minus two beta. Together, they make the one hundred four.",
+    "at": [
+     "Together, they make"
+    ]
+   },
+   {
+    "say": "So three hundred sixty, minus two alpha, minus two beta, is one hundred four. Then two alpha plus two beta is three hundred sixty minus one hundred four, which is two hundred fifty-six. And alpha plus beta is half of that, one hundred twenty-eight. Choice number two once more. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So three hundred",
+     "Then two alpha plus two beta",
+     "beta is three",
+     "Choice number two once more"
+    ]
+   }
+  ]
+ ]
+}

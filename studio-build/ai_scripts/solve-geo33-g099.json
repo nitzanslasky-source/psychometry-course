@@ -1,0 +1,151 @@
+{
+ "videoId": "solve-geo33-g099",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Two congruent circles, with centers O and P, have a radius of six centimeters, and they intersect at A and B. The minor arc A B is one quarter of the circumference of each circle. What is the area of the union of the two circles?",
+    "voice": "calm",
+    "at": [
+     "Two congruent circles"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The union is everything that is inside at least one of the circles, the whole grey shape. It's a shaded-area question, but until now we usually subtracted, and here there's nothing to subtract from. Some students think, it's a circle plus an extra bit. But how do we find that bit? It's not clear. [short pause] We'll solve it two ways, by cutting it into pieces we know, and by taking away the overlap. Then we'll see what estimating can do.",
+    "at": [
+     "The union is everything",
+     "is inside at"
+    ]
+   },
+   {
+    "say": "In a case like this, we go to the givens and see what we can get out of them. The minor arc A B is a quarter of the circumference of circle O. A quarter of the circle means a central angle of a quarter of three hundred sixty, ninety degrees.",
+    "at": [
+     "the givens and",
+     "The minor arc A B is a quarter",
+     "is a quarter"
+    ]
+   },
+   {
+    "say": "But no central angle is drawn, so we draw one. A radius from O to A, and a radius from O to B. The angle between them is ninety degrees, and each radius is six.",
+    "at": [
+     "A radius from O to A",
+     "A, and a"
+    ]
+   },
+   {
+    "say": "The same in circle P. The circles are congruent, so P A and P B are also six, and the angle at P is also ninety.",
+    "at": [
+     "The same in circle P",
+     "The circles are"
+    ]
+   },
+   {
+    "say": "Now look at O A P B. All four sides are six, so it's at least a rhombus. And its angle at O is ninety degrees. A rhombus with a right angle is a square, so O A P B is a square.",
+    "at": [
+     "Now look at O A P B",
+     "All four sides"
+    ]
+   },
+   {
+    "say": "Now I see how to find the grey area. It's the left Pac-Man, plus the square, plus the right Pac-Man. Each Pac-Man is a circle without its quarter, so it's three quarters of the circle.",
+    "at": [
+     "the left Pac-Man",
+     "square, plus the"
+    ]
+   },
+   {
+    "say": "One whole circle is pi r squared, pi times six squared, thirty-six pi. A quarter of thirty-six is nine, so three quarters of thirty-six pi is twenty-seven pi.",
+    "at": [
+     "One whole circle",
+     "r squared, pi"
+    ]
+   },
+   {
+    "say": "The square is six squared, thirty-six. So the union is twenty-seven pi, plus thirty-six, plus twenty-seven pi, which is fifty-four pi plus thirty-six. Choice number three is our answer.",
+    "at": [
+     "So the union is",
+     "pi, plus thirty-six",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a second way. Take the two whole circles. Each one is thirty-six pi, so together they're seventy-two pi.",
+    "at": [
+     "Now a second way",
+     "Take the two whole circles",
+     "Each one is"
+    ]
+   },
+   {
+    "say": "But the middle part, where the circles overlap, is inside both circles. So we counted it twice, and we must take it away once.",
+    "at": [
+     "where the circles overlap",
+     "inside both circles"
+    ]
+   },
+   {
+    "say": "How big is the overlap? The chord A B cuts it into two equal pieces. Look at the right piece, in circle O. It's the quarter circle A O B, minus the triangle A O B.",
+    "at": [
+     "Look at the right piece",
+     "in circle O",
+     "minus the triangle A O B"
+    ]
+   },
+   {
+    "say": "The quarter circle is a quarter of thirty-six pi, nine pi. The triangle has two legs of six and a right angle, so its area is six times six over two, eighteen. So one piece is nine pi minus eighteen, and the whole overlap is two times that, eighteen pi minus thirty-six.",
+    "at": [
+     "The quarter circle",
+     "the whole overlap",
+     "times that, eighteen"
+    ]
+   },
+   {
+    "say": "Now take it away. Seventy-two pi minus, the bracket, eighteen pi minus thirty-six. The minus before the bracket turns minus thirty-six into plus thirty-six. So we get fifty-four pi plus thirty-six, choice number three again.",
+    "at": [
+     "Seventy-two pi minus",
+     "eighteen pi minus",
+     "choice number three again"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Students often ask, can we just estimate the size here? It's hard to finish that way, but it's easy to rule out two choices. The left circle alone is thirty-six pi.",
+    "at": [
+     "Students often ask",
+     "just estimate the",
+     "The left circle alone"
+    ]
+   },
+   {
+    "say": "And the grey shape has more than that. It also has the right half of circle P, eighteen pi, and a bit more in the middle. So the union is more than thirty-six pi plus eighteen pi, fifty-four pi.",
+    "at": [
+     "And the grey",
+     "the right half of circle P",
+     "P, eighteen pi",
+     "So the union is more than",
+     "than thirty-six pi"
+    ]
+   },
+   {
+    "say": "Twenty-seven pi plus eighteen, and twenty-seven pi plus thirty-six, are much too small, so choice numbers one and four are out. But choice numbers two and three both have fifty-four pi, plus eighteen or plus thirty-six. That's too close to decide by estimating.",
+    "at": [
+     "are much too small",
+     "four are out",
+     "numbers two and",
+     "or plus thirty-six"
+    ]
+   },
+   {
+    "say": "So estimating raised our chances to fifty-fifty, but it can't settle it. If you're out of time, it's a reasonable guess between the two. With time, use one of the full solutions. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "estimating raised our chances",
+     "If you're out"
+    ]
+   }
+  ]
+ ]
+}

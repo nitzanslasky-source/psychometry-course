@@ -1,0 +1,219 @@
+{
+ "videoId": "solve-geo33-g094",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B is tangent to a circle with center O and radius six centimeters. Given, O A equals O B, and angle A O B is ninety degrees. What is the area inside triangle A O B but outside the circle, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "A B is tangent to a circle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for the shaded area, the part of the triangle that is outside the circle. [short pause] We'll solve it with the full math, and then we'll see two quick exam ways.",
+    "at": [
+     "So they ask for the shaded area",
+     "with the full"
+    ]
+   },
+   {
+    "say": "[short pause] Shaded areas. We met them in quadrilaterals, and the most common way to solve them is to subtract areas. In the hard circle questions at the end of the section, shaded areas come back again and again.",
+    "at": [
+     "Shaded areas. We met them",
+     "We met them"
+    ]
+   },
+   {
+    "say": "So first we build a scheme. What minus what gives the shaded part? Look at the whole triangle A O B.",
+    "at": [
+     "Look at the whole triangle",
+     "A O B"
+    ]
+   },
+   {
+    "say": "Inside it there's a sector of the circle. If we take the triangle and remove the sector, what's left is exactly the shaded part. So the shaded area is the triangle minus the sector. That's our scheme.",
+    "at": [
+     "there's a sector of the circle",
+     "remove the sector",
+     "is exactly the"
+    ]
+   },
+   {
+    "say": "Now let's put in the givens. O A equals O B, so we mark them equal. And the angle at O is ninety degrees.",
+    "at": [
+     "the givens. O",
+     "O A equals O B",
+     "is ninety degrees"
+    ]
+   },
+   {
+    "say": "So triangle A O B isn't just a right triangle. It's right and isosceles, a silver triangle. In a silver triangle, the two base angles are forty-five degrees each.",
+    "at": [
+     "the two base angles",
+     "forty-five degrees each"
+    ]
+   },
+   {
+    "say": "The next given, A B is tangent to the circle. We learned an automatic construction. When there's a point of tangency, we draw the radius to it. Let's call that point C.",
+    "at": [
+     "Let's call that point C"
+    ]
+   },
+   {
+    "say": "We draw the radius from O to C. The radius is perpendicular to the tangent, so the angle at C is ninety degrees.",
+    "at": [
+     "We draw the radius from O to C",
+     "O to C"
+    ]
+   },
+   {
+    "say": "Triangle A O B is isosceles, and O C is the height to its base. In an isosceles triangle, this height is also an angle bisector and a median. So it cuts the angle at O into two angles of forty-five degrees.",
+    "at": [
+     "two angles of forty-five"
+    ]
+   },
+   {
+    "say": "The radius is six, so O C is six. And triangle O C B is a silver triangle too, so C B equals O C, six. On the other side, A C is six too. So A B is six plus six, twelve.",
+    "at": [
+     "so O C is six",
+     "And triangle O"
+    ]
+   },
+   "Now the triangle's area. The best way is base times height, over two. The base is A B, twelve, and the height is O C, six.",
+   "A lot of students say, I have the hypotenuse of a silver triangle, so I'll find the two legs, multiply them, and divide by two. I ask, why? You already have a base and a height. Don't work for nothing, there's no time on the exam.",
+   {
+    "say": "Twelve times six is seventy-two, and over two it's thirty-six. So the triangle is thirty-six.",
+    "at": [
+     "Twelve times six",
+     "and over two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now we could go on and find the sector. But wait. On the exam we also have the choices, and they often help us.",
+    "at": [
+     "Now we could go on",
+     "and find the"
+    ]
+   },
+   {
+    "say": "We stop halfway, and we use what we already know to rule out choices. This is called a partial calculation. The shaded area is thirty-six, minus the sector. A sector is a part of a circle, so its area has pi in it. So we're looking for thirty-six minus something with pi.",
+    "at": [
+     "So we're looking for thirty-six",
+     "minus something with"
+    ]
+   },
+   {
+    "say": "Choice number three is eighteen pi minus eighteen. The pi is in the wrong place. That's like a circle minus a triangle, not a triangle minus a sector. So it's out.",
+    "at": [
+     "number three is",
+     "That's like a",
+     "So it's out"
+    ]
+   },
+   {
+    "say": "Choice number one is eighteen minus nine pi. The pi is in the right place, but the triangle is thirty-six, not eighteen. It's out too.",
+    "at": [
+     "number one is",
+     "is thirty-six, not",
+     "It's out too"
+    ]
+   },
+   {
+    "say": "Choice number four is seventy-two minus nine pi. It's the same problem, because we need thirty-six minus something. It's out.",
+    "at": [
+     "number four is",
+     "problem, because we",
+     "something. It's out"
+    ]
+   },
+   {
+    "say": "Only choice number two is left, thirty-six minus nine pi. We started with the math, and halfway we switched to an exam shortcut. On the exam, we mark it and move on.",
+    "at": [
+     "Only choice number two is left"
+    ]
+   },
+   {
+    "say": "[pause] But we're in a lesson, so let's also find the sector. A sector is a part of the circle. The whole circle is pi r squared, pi times six squared, thirty-six pi.",
+    "at": [
+     "The whole circle",
+     "r squared, pi"
+    ]
+   },
+   {
+    "say": "Which part? The central angle decides it, and here it's ninety degrees. Some of you know by heart that ninety degrees is a quarter of the circle. Wonderful. If not, ninety out of three hundred sixty is a quarter. A quarter of thirty-six pi is nine pi.",
+    "at": [
+     "Which part",
+     "The central angle"
+    ]
+   },
+   {
+    "say": "So the shaded area is thirty-six minus nine pi. The answer we found is really right, choice number two.",
+    "at": [
+     "choice number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] One more way, a full exam shortcut. It's called estimating sizes. Maybe you put in the givens and don't know how to go on. Or maybe you run out of time, because this is one of the last questions in the section.",
+    "at": [
+     "full exam shortcut",
+     "estimating sizes",
+     "the givens and",
+     "how to go"
+    ]
+   },
+   {
+    "say": "What do we know? The triangle is thirty-six, and the shaded part is only a piece of it. So the shaded area is less than thirty-six. And by eye, it's even less than half of the triangle, less than eighteen.",
+    "at": [
+     "So the shaded area is",
+     "less than thirty-six"
+    ]
+   },
+   {
+    "say": "Now the choices. We need the size of pi. Pi is a bit more than three, and less than four. So nine pi is more than twenty-seven, and less than thirty-six.",
+    "at": [
+     "Pi is a bit more than three",
+     "than three, and"
+    ]
+   },
+   {
+    "say": "Choice number one, eighteen minus nine pi. Nine pi is more than twenty-seven, so eighteen minus it is a negative number. They do this a lot on the exam, they hide a negative answer behind letters. An area can't be negative, so it's out.",
+    "at": [
+     "number one, eighteen",
+     "twenty-seven, so eighteen",
+     "An area can't be negative"
+    ]
+   },
+   {
+    "say": "Choice number three, eighteen pi minus eighteen. Eighteen pi is more than eighteen times three, fifty-four. Minus eighteen, it's still more than thirty-six. That's bigger than the whole triangle, so it's out.",
+    "at": [
+     "number three, eighteen",
+     "eighteen times three",
+     "That's bigger than the whole triangle"
+    ]
+   },
+   {
+    "say": "Choice number four, seventy-two minus nine pi. Nine pi is less than thirty-six, so seventy-two minus it is more than thirty-six. Too big again, it's out.",
+    "at": [
+     "number four, seventy-two",
+     "thirty-six, so seventy-two",
+     "Too big again"
+    ]
+   },
+   {
+    "say": "Choice number two, thirty-six minus nine pi. Nine pi is between twenty-seven and thirty-six, so this is between zero and nine. That's a small piece of the triangle, just like the shaded part we see. Choice number two again.",
+    "at": [
+     "number two, thirty-six",
+     "and thirty-six, so",
+     "Choice number two again"
+    ]
+   },
+   "Estimating doesn't always rule out three choices. Sometimes it rules out only one or two. But when you're stuck or out of time, it's a great card up your sleeve. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

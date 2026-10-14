@@ -1,0 +1,51 @@
+{
+ "videoId": "geo-084",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Circles in questions. In the last lessons we learned the rules of the circle."
+  ],
+  [
+   {
+    "say": "Now we'll practice exam questions, basic ones and a bit more advanced ones, that use only these rules. Try each question yourself first, and then watch the solution.",
+    "at": [
+     "questions, basic ones"
+    ]
+   },
+   {
+    "say": "Most circle questions come back to a few rules. First, all the radii of a circle are equal. So two radii and the chord between them make an isosceles triangle. Isosceles triangles hide inside almost every circle.",
+    "at": [
+     "Most circle questions",
+     "to a few",
+     "all the radii of a circle",
+     "radii and the",
+     "make an isosceles triangle",
+     "Isosceles triangles hide"
+    ]
+   },
+   {
+    "say": "Second, a central angle is twice the inscribed angle on the same arc. A central angle of one hundred degrees gives an inscribed angle of fifty.",
+    "at": [
+     "a central angle is twice",
+     "the inscribed angle",
+     "A central angle of one hundred",
+     "hundred degrees gives"
+    ]
+   },
+   {
+    "say": "And third, a radius to the point of tangency is perpendicular to the tangent, so we get ninety degrees.",
+    "at": [
+     "And third",
+     "the point of",
+     "is perpendicular to the tangent"
+    ]
+   },
+   {
+    "say": "Notice that this radius wasn't in the drawing. We added it ourselves. A line we add like this is called a helper line, and many circle questions only open up after we draw one. So watch for them in the solutions. Let's start with a sample question. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "Notice that this"
+    ]
+   }
+  ]
+ ]
+}

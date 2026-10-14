@@ -1,0 +1,279 @@
+{
+ "videoId": "geo-075",
+ "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Angles in a circle. Last lesson we learned the words of the circle. Now we start the rules. They come up in almost every circle question, and really, there's one main rule, and the others come from it."
+  ],
+  [
+   {
+    "say": "The main rule. A central angle is twice the inscribed angle that intercepts the same arc. Here's a circle with its center O, and two points, A and B.",
+    "at": [
+     "central angle is",
+     "Here's a circle",
+     "center O, and"
+    ]
+   },
+   {
+    "say": "Here's the arc from A to B, and a central angle on it, a hundred twenty degrees. Its vertex is at the center, and its two radii close off the arc.",
+    "at": [
+     "Here's the arc",
+     "and a central angle on it",
+     "it, a hundred"
+    ]
+   },
+   {
+    "say": "And here's an inscribed angle at C. Stand at C, between the two chords, and you see the same arc. Careful, the vertex of an inscribed angle must be on the circle, not inside it.",
+    "at": [
+     "here's an inscribed angle",
+     "Stand at C"
+    ]
+   },
+   {
+    "say": "The inscribed angle is half of the central angle. Or the central angle is twice the inscribed angle. It's the same thing. So here it's half of a hundred twenty, sixty.",
+    "at": [
+     "The inscribed angle is half",
+     "of the central",
+     "So here it's half",
+     "a hundred twenty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Another example, on a narrow arc. The inscribed angle at C is thirty-eight, so the central angle is twice that, seventy-six. Here the center is outside the angle, and the rule still works.",
+    "at": [
+     "Another example",
+     "The inscribed angle at C",
+     "so the central angle",
+     "twice that, seventy-six"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why is it true? Let's draw the diameter from C, through the center, to D.",
+    "at": [
+     "Why is it true",
+     "Let's draw the diameter",
+     "C, through the"
+    ]
+   },
+   {
+    "say": "Triangle O C A has two radii, so it's isosceles, and its base angles are equal. Call them x. The angle at O inside it is a hundred eighty minus two x, so the angle next to it on the straight line is two x.",
+    "at": [
+     "Triangle O C A",
+     "and its base",
+     "The angle at O",
+     "it is a"
+    ]
+   },
+   {
+    "say": "The same on the other side, with y. So the inscribed angle is x plus y, and the central angle is two x plus two y, exactly twice as much.",
+    "at": [
+     "The same on the other side",
+     "side, with y",
+     "So the inscribed angle",
+     "central angle is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The second rule. Inscribed angles that intercept the same arc are equal. Here the central angle on arc A B is a hundred.",
+    "at": [
+     "angles that intercept",
+     "Here the central angle",
+     "arc A B",
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "An inscribed angle at C is half of it, fifty. Now let's move the vertex. Here at D, and here at E. It doesn't matter where we put it, each one is fifty.",
+    "at": [
+     "An inscribed angle at C",
+     "Now let's move",
+     "Here at D",
+     "and here at E",
+     "put it, each"
+    ]
+   },
+   {
+    "say": "Why? Each one is half of the same central angle, so they're all equal. And it's the same for two equal arcs.",
+    "at": [
+     "Each one is half",
+     "And it's the"
+    ]
+   },
+   {
+    "say": "But careful. Here at F, the vertex is on the arc A B itself. From F you see the long arc, so this angle is not fifty. Always check which arc the angle sees.",
+    "at": [
+     "Here at F",
+     "is on the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The third rule. An inscribed angle on a diameter is ninety degrees. Here's a diameter, A B, and an inscribed angle on it, at C. Its chords go to the two ends of the diameter.",
+    "at": [
+     "inscribed angle on",
+     "Here's a diameter",
+     "and an inscribed angle",
+     "it, at C"
+    ]
+   },
+   {
+    "say": "Why? It's the main rule again. The central angle on a diameter is the straight line at O, a hundred eighty. Half of a hundred eighty is ninety.",
+    "at": [
+     "The central angle on a diameter",
+     "diameter is the",
+     "Half of a hundred eighty"
+    ]
+   },
+   {
+    "say": "And wherever C is, here, here, or even on the bottom half, it's always ninety. This one is very, very important for the exam. Really, these first three rules are used all the time.",
+    "at": [
+     "And wherever C is",
+     "here, or even"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "It also works backwards. When a right triangle has all three corners on a circle, its hypotenuse is a diameter.",
+    "at": [
+     "When a right triangle",
+     "all three corners",
+     "its hypotenuse is a diameter"
+    ]
+   },
+   {
+    "say": "Say the legs are ten and twenty-four. That's five, twelve, thirteen, doubled, so the hypotenuse is twenty-six. Careful, many students call that the radius. But twenty-six is the diameter, so the radius is thirteen. And in a rectangle inside a circle, each diagonal is a diameter.",
+    "at": [
+     "Say the legs",
+     "That's five, twelve",
+     "And in a rectangle",
+     "a circle, each"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The fourth rule. An inscribed quadrilateral has all four corners on the circle, like this one.",
+    "at": [
+     "inscribed quadrilateral has",
+     "like this one"
+    ]
+   },
+   {
+    "say": "If even one corner is inside the circle, or outside it, it's not inscribed. A corner at the center doesn't count either, because the center is not on the circle.",
+    "at": [
+     "If even one corner",
+     "inside the circle",
+     "A corner at the center",
+     "doesn't count either"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "In an inscribed quadrilateral, opposite angles add up to a hundred eighty. So if angle A is seventy-five, the angle opposite it, C, is a hundred eighty minus seventy-five, a hundred five. The same for B and D.",
+    "at": [
+     "In an inscribed quadrilateral",
+     "angles add up",
+     "So if angle A is seventy-five",
+     "C, is a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's prove it. Call angle A alpha, and angle C beta. We draw two radii, to B and to D.",
+    "at": [
+     "Call angle A alpha",
+     "angle C beta",
+     "We draw two radii"
+    ]
+   },
+   {
+    "say": "The central angle on the arc through C is two alpha, because angle A intercepts that arc and is half of it. In the same way, the central angle on the other side is two beta.",
+    "at": [
+     "The central angle on the arc",
+     "arc through C",
+     "In the same way",
+     "central angle on the other"
+    ]
+   },
+   {
+    "say": "Together they make a full circle, so two alpha plus two beta is three hundred sixty. Divide by two, and alpha plus beta is a hundred eighty.",
+    "at": [
+     "Together they make",
+     "circle, so two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Two more facts, about chords. In the same circle, equal chords cut off equal arcs and have equal central angles. Why? Join each chord's ends to the center. Both triangles have two radii and the same chord, so they're the same triangle, and the angles at O are equal.",
+    "at": [
+     "In the same circle",
+     "chords cut off",
+     "Join each chord",
+     "the center. Both",
+     "and the angles at O"
+    ]
+   },
+   {
+    "say": "So if angle A O B is seventy, angle C O D is seventy too, and the arcs are equal. An inscribed angle on either arc is half of seventy, thirty-five. It works backwards too, but only in the same circle.",
+    "at": [
+     "O B is",
+     "and the arcs are equal",
+     "An inscribed angle",
+     "but only"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And a line from the center that is perpendicular to a chord cuts the chord in half. A chord of fourteen gives seven and seven. And this line, O M, is also the distance of the chord from the center.",
+    "at": [
+     "And a line from the center",
+     "is perpendicular",
+     "cuts the chord",
+     "A chord of fourteen",
+     "And this line"
+    ]
+   },
+   {
+    "say": "Why? O A and O B are radii, so triangle O A B is isosceles, and its height cuts the base in half.",
+    "at": [
+     "O A and O B are radii",
+     "are radii, so"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So, one main rule. An inscribed angle is half of the central angle on the same arc. From it, inscribed angles on the same arc are equal, an angle on a diameter is ninety, and opposite angles in an inscribed quadrilateral add up to a hundred eighty.",
+    "at": [
+     "An inscribed angle is half",
+     "of the central",
+     "inscribed angles on",
+     "arc are equal",
+     "an angle on a diameter",
+     "and opposite angles",
+     "inscribed quadrilateral add"
+    ]
+   },
+   {
+    "say": "And for chords, equal chords cut off equal arcs, and a perpendicular from the center cuts a chord in half. Learn these by heart. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "equal chords cut off",
+     "and a perpendicular from the center",
+     "center cuts a"
+    ]
+   }
+  ]
+ ]
+}

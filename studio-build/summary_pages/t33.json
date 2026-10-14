@@ -1,0 +1,887 @@
+{
+ "_about": "Topic 33 summary page (replaces r26-t33-summary and r26-t33-summary-2). Content = the topic-33 scripts (math_patches/_ai_vis_t33.py) and the Hebrew lessons (geo 3446-5095). Build: python3 summary_pages.py 33.",
+ "topic": 33,
+ "replaces": "r26-t33-summary, r26-t33-summary-2",
+ "intro": "In a circle, **draw the radii first**: they are all equal. Know the **angle rules**, the **tangent rules**, and think of arcs and sectors as **a part of the whole circle**.",
+ "figures": {
+  "radii": {
+   "builder": "t33.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "circ",
+        200,
+        170,
+        120
+       ],
+       [
+        "dot",
+        200,
+        170,
+        "O",
+        0,
+        24
+       ]
+      ]
+     ],
+     [
+      "r",
+      [
+       [
+        "tint",
+        [
+         [
+          200,
+          170
+         ],
+         [
+          96.1,
+          110.0
+         ],
+         [
+          291.9,
+          92.9
+         ]
+        ],
+        "teal"
+       ],
+       [
+        "seg",
+        200,
+        170,
+        96.1,
+        110.0,
+        "teal",
+        3,
+        false
+       ],
+       [
+        "seg",
+        200,
+        170,
+        291.9,
+        92.9,
+        "teal",
+        3,
+        false
+       ],
+       [
+        "seg",
+        96.1,
+        110.0,
+        291.9,
+        92.9,
+        "ink",
+        3,
+        false
+       ],
+       [
+        "txt",
+        134.05,
+        124.0,
+        "r",
+        "teal",
+        24,
+        true
+       ],
+       [
+        "txt",
+        251.95,
+        151.45,
+        "r",
+        "teal",
+        24,
+        true
+       ],
+       [
+        "tick",
+        200,
+        170,
+        96.1,
+        110.0,
+        1
+       ],
+       [
+        "tick",
+        200,
+        170,
+        291.9,
+        92.9,
+        1
+       ]
+      ]
+     ],
+     [
+      "d",
+      [
+       [
+        "seg",
+        87.2,
+        211.0,
+        312.8,
+        129.0,
+        "orange",
+        3,
+        false
+       ],
+       [
+        "txt",
+        200,
+        240,
+        "d = 2r",
+        "orange",
+        22,
+        false
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "vb": "0 0 400 320",
+    "title": "Radii"
+   }
+  },
+  "central": {
+   "builder": "t33.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "circ",
+        200,
+        170,
+        120
+       ],
+       [
+        "dot",
+        200,
+        170,
+        "O",
+        0,
+        -22
+       ]
+      ]
+     ],
+     [
+      "c",
+      [
+       [
+        "seg",
+        200,
+        170,
+        303.9,
+        230.0,
+        "orange",
+        3,
+        false
+       ],
+       [
+        "seg",
+        200,
+        170,
+        96.1,
+        230.0,
+        "orange",
+        3,
+        false
+       ],
+       [
+        "arc",
+        200,
+        170,
+        34,
+        210,
+        330,
+        "orange",
+        "2α",
+        56
+       ]
+      ]
+     ],
+     [
+      "i",
+      [
+       [
+        "seg",
+        200.0,
+        50.0,
+        303.9,
+        230.0,
+        "teal",
+        3,
+        false
+       ],
+       [
+        "seg",
+        200.0,
+        50.0,
+        96.1,
+        230.0,
+        "teal",
+        3,
+        false
+       ],
+       [
+        "arc",
+        200.0,
+        50.0,
+        40,
+        240,
+        300,
+        "teal",
+        "α",
+        62
+       ],
+       [
+        "arcw",
+        200,
+        170,
+        120,
+        210,
+        330,
+        "teal",
+        6
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "vb": "0 0 400 320",
+    "title": "Central and inscribed"
+   }
+  },
+  "tangent": {
+   "builder": "t33.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "circ",
+        200,
+        170,
+        120
+       ],
+       [
+        "dot",
+        200,
+        170,
+        "O",
+        -20,
+        0
+       ],
+       [
+        "dot",
+        439.99999999999994,
+        170,
+        "P",
+        20,
+        0
+       ],
+       [
+        "seg",
+        439.99999999999994,
+        170,
+        260.0,
+        66.1,
+        "ink",
+        3,
+        false
+       ],
+       [
+        "seg",
+        439.99999999999994,
+        170,
+        260.0,
+        273.9,
+        "ink",
+        3,
+        false
+       ]
+      ]
+     ],
+     [
+      "r",
+      [
+       [
+        "seg",
+        200,
+        170,
+        260.0,
+        66.1,
+        "teal",
+        3,
+        false
+       ],
+       [
+        "seg",
+        200,
+        170,
+        260.0,
+        273.9,
+        "teal",
+        3,
+        false
+       ],
+       [
+        "right",
+        260.0,
+        66.1,
+        240,
+        330,
+        14,
+        "teal"
+       ],
+       [
+        "right",
+        260.0,
+        273.9,
+        30,
+        120,
+        14,
+        "teal"
+       ],
+       [
+        "tick",
+        439.99999999999994,
+        170,
+        260.0,
+        66.1,
+        2,
+        "orange"
+       ],
+       [
+        "tick",
+        439.99999999999994,
+        170,
+        260.0,
+        273.9,
+        2,
+        "orange"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "vb": "0 0 470 320",
+    "title": "Tangents"
+   }
+  },
+  "sector": {
+   "builder": "t33.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "circ",
+        200,
+        170,
+        120
+       ],
+       [
+        "dot",
+        200,
+        170
+       ]
+      ]
+     ],
+     [
+      "s",
+      [
+       [
+        "wedge",
+        200,
+        170,
+        120,
+        20,
+        80,
+        "teal"
+       ],
+       [
+        "arcw",
+        200,
+        170,
+        120,
+        20,
+        80,
+        "orange",
+        7
+       ],
+       [
+        "seg",
+        200,
+        170,
+        312.8,
+        129.0,
+        "teal",
+        3,
+        false
+       ],
+       [
+        "seg",
+        200,
+        170,
+        220.8,
+        51.8,
+        "teal",
+        3,
+        false
+       ],
+       [
+        "arc",
+        200,
+        170,
+        30,
+        20,
+        80,
+        "teal",
+        "60°",
+        52
+       ],
+       [
+        "txt",
+        300,
+        30,
+        "1/6",
+        "orange",
+        26,
+        false
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "vb": "0 0 400 320",
+    "title": "Sector and arc"
+   }
+  },
+  "segment": {
+   "builder": "t33.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "circ",
+        200,
+        170,
+        120
+       ],
+       [
+        "dot",
+        200,
+        170,
+        "O",
+        0,
+        24
+       ]
+      ]
+     ],
+     [
+      "s",
+      [
+       [
+        "cseg",
+        200,
+        170,
+        120,
+        60,
+        120,
+        "orange"
+       ],
+       [
+        "seg",
+        200,
+        170,
+        260.0,
+        66.1,
+        "teal",
+        3,
+        false
+       ],
+       [
+        "seg",
+        200,
+        170,
+        140.0,
+        66.1,
+        "teal",
+        3,
+        false
+       ],
+       [
+        "seg",
+        260.0,
+        66.1,
+        140.0,
+        66.1,
+        "ink",
+        3,
+        false
+       ],
+       [
+        "tint",
+        [
+         [
+          200,
+          170
+         ],
+         [
+          260.0,
+          66.1
+         ],
+         [
+          140.0,
+          66.1
+         ]
+        ],
+        "teal"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "vb": "0 0 400 320",
+    "title": "Segment"
+   }
+  },
+  "nested": {
+   "builder": "t33.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        80,
+        50,
+        320,
+        50
+       ],
+       [
+        "seg",
+        320,
+        50,
+        320,
+        290
+       ],
+       [
+        "seg",
+        320,
+        290,
+        80,
+        290
+       ],
+       [
+        "seg",
+        80,
+        290,
+        80,
+        50
+       ],
+       [
+        "circ",
+        200,
+        170,
+        120
+       ]
+      ]
+     ],
+     [
+      "in",
+      [
+       [
+        "tint",
+        [
+         [
+          115.1471862576143,
+          85.1471862576143
+         ],
+         [
+          284.8528137423857,
+          85.1471862576143
+         ],
+         [
+          284.8528137423857,
+          254.8528137423857
+         ],
+         [
+          115.1471862576143,
+          254.8528137423857
+         ]
+        ],
+        "teal"
+       ],
+       [
+        "seg",
+        115.1471862576143,
+        85.1471862576143,
+        284.8528137423857,
+        85.1471862576143,
+        "teal"
+       ],
+       [
+        "seg",
+        284.8528137423857,
+        85.1471862576143,
+        284.8528137423857,
+        254.8528137423857,
+        "teal"
+       ],
+       [
+        "seg",
+        284.8528137423857,
+        254.8528137423857,
+        115.1471862576143,
+        254.8528137423857,
+        "teal"
+       ],
+       [
+        "seg",
+        115.1471862576143,
+        254.8528137423857,
+        115.1471862576143,
+        85.1471862576143,
+        "teal"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "vb": "0 0 400 320",
+    "title": "Square, circle, square"
+   }
+  }
+ },
+ "sections": [
+  {
+   "title": "The rules",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "table",
+     "class": "methods",
+     "head": [
+      "Rule",
+      "What it gives",
+      "Example"
+     ],
+     "rows": [
+      [
+       "All radii of a circle are equal",
+       "two radii + a chord = an **isosceles** triangle",
+       "diameter $30\\Rightarrow r=15$"
+      ],
+      [
+       "Central angle $=2\\times$ inscribed angle (same arc)",
+       "stand at the vertex: the arc you see is its arc",
+       "central $100°\\Rightarrow$ inscribed $50°$"
+      ],
+      [
+       "Inscribed angles on the same arc are equal",
+       "move the vertex along the circle: the angle stays",
+       ""
+      ],
+      [
+       "An inscribed angle on a diameter is $90°$",
+       "a right triangle in a circle: its hypotenuse is a diameter",
+       ""
+      ],
+      [
+       "Inscribed quadrilateral: opposite angles add up to $180°$",
+       "all four vertices must be on the circle",
+       "$65°\\Rightarrow115°$"
+      ],
+      [
+       "The perpendicular from the center halves a chord",
+       "$d^2+\\left(\\frac{\\text{chord}}{2}\\right)^2=r^2$",
+       "$r=17,\\ d=8\\Rightarrow$ chord $30$"
+      ],
+      [
+       "Equal chords $\\Leftrightarrow$ equal arcs $\\Leftrightarrow$ equal central angles",
+       "",
+       ""
+      ],
+      [
+       "Radius to the touching point $\\perp$ tangent",
+       "see a tangent: draw that radius",
+       ""
+      ],
+      [
+       "Two tangents from one point are equal",
+       "with the radii: a kite with two right angles",
+       ""
+      ],
+      [
+       "Touching circles: join the centers",
+       "outside: $R+r$; one inside the other: $R-r$",
+       ""
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pictures",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "cols",
+     "cols": [
+      [
+       {
+        "type": "fig",
+        "ref": "radii",
+        "caption": "All radii are equal: an isosceles triangle. The diameter is $2r$."
+       },
+       {
+        "type": "fig",
+        "ref": "sector",
+        "caption": "$60°$ is $\\frac16$ of the circle: the sector and the arc are $\\frac16$."
+       }
+      ],
+      [
+       {
+        "type": "fig",
+        "ref": "central",
+        "caption": "The central angle is twice the inscribed angle on the same arc."
+       },
+       {
+        "type": "fig",
+        "ref": "segment",
+        "caption": "A segment = the sector minus the triangle."
+       }
+      ],
+      [
+       {
+        "type": "fig",
+        "ref": "tangent",
+        "caption": "Radius $\\perp$ tangent; two tangents from P are equal."
+       },
+       {
+        "type": "fig",
+        "ref": "nested",
+        "caption": "Square, circle, square: the outer square is twice the inner one."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Formulas",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Formula",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Area $S=\\pi r^2$, circumference $C=2\\pi r$",
+       "$r=6$: $S=36\\pi$, $C=12\\pi$"
+      ],
+      [
+       "Given $S$ or $C$? Go back to $r$ first",
+       "$S=49\\pi\\Rightarrow r=7$"
+      ],
+      [
+       "Arc and sector: the part of the circle, $\\frac{\\alpha}{360°}$",
+       "$90°=\\frac14,\\ 60°=\\frac16,\\ 72°=\\frac15,\\ 45°=\\frac18,\\ 120°=\\frac13$"
+      ],
+      [
+       "Sector perimeter $=$ arc $+\\,2r$",
+       "$r=6,\\ 60°$: $2\\pi+12$"
+      ],
+      [
+       "$r\\times k$: lengths $\\times k$, areas $\\times k^2$",
+       "$r\\times3\\Rightarrow$ area $\\times9$"
+      ],
+      [
+       "$\\pi$ is a bit more than $3$; answers keep the $\\pi$",
+       ""
+      ]
+     ]
+    }
+   ],
+   "span": "full"
+  },
+  {
+   "title": "Advanced tools",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Shaded areas: **what minus what?** A segment is a sector minus a triangle. Nested shapes: square-circle-square and circle-square-circle **twice**, triangle-circle-triangle **four times**. Radii and tangents make right, **gold** ($30°$-$60°$-$90°$) and **silver** ($45°$-$45°$-$90°$) triangles; two radii with $60°$ make an equilateral triangle. They ask for a total? Find the total directly."
+    }
+   ]
+  },
+  {
+   "title": "Before each question, ask",
+   "class": "check",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "Did I draw the helper lines: radii, the radius to a tangent point, the line between the centers?",
+      "Which arc does the angle stand on: the small or the big one?",
+      "Radius or diameter? Area or circumference? Arc or perimeter?",
+      "What minus what? Write the scheme before calculating.",
+      "Is a special triangle hiding here?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "class": "traps",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "Mixing up the radius and the diameter.",
+      "Areas grow like $r^2$, not like $r$.",
+      "An inscribed quadrilateral only when all four vertices are on the circle.",
+      "Taking the wrong fraction of the circle (the big arc instead of the small one).",
+      "Trusting the drawing: figures are not to scale."
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "30/2 == 15",
+  "100/2 == 50",
+  "180-65 == 115",
+  "sqrt(17**2-8**2)*2 == 30",
+  "6*6 == 36",
+  "2*6 == 12",
+  "49 == 7*7",
+  "360/90 == 4",
+  "360/60 == 6",
+  "360/72 == 5",
+  "360/45 == 8",
+  "360/120 == 3",
+  "12/6 + 0 == 2",
+  "3**2 == 9"
+ ]
+}
