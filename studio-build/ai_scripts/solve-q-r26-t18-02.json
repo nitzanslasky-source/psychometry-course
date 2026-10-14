@@ -11,54 +11,52 @@
     ],
     "pause": 0.5
    },
-   "We take the three-digit number A B C and subtract C B A, the same digits in reverse order. [short pause] We'll solve it two ways, writing their place values, and then trying numbers.",
    {
-    "say": "[short pause] Let's start with the place values. A B C is a hundred A plus ten B plus C. C B A is a hundred C plus ten B plus A. Subtract the second from the first. The ten B parts cancel because B is in the same place in both numbers. The A parts leave ninety-nine A, and the C parts leave minus ninety-nine C.",
+    "say": "So we take the three-digit number A B C and subtract C B A, which is the same digits, just in reverse order. [short pause] We'll solve it in two different ways, writing their place values, and then trying numbers.",
     "at": [
-     "Let's start",
-     "A B C is a hundred A",
-     "C B A"
+     "the three-digit number A B C",
+     "subtract C B A"
     ]
    },
    {
-    "say": "So the result is ninety-nine times the whole bracket, A minus C. It must be a multiple of ninety-nine.",
+    "say": "[short pause] Let's start with the place values. A B C equals a hundred A plus ten B plus C. C B A equals a hundred C plus ten B plus A. Subtract the second from the first, and the ten B parts cancel because B is in the same place in both of them. The A parts leave ninety-nine A, and the C parts leave minus ninety-nine C.",
     "at": [
-     "ninety-nine times",
-     "It must be"
+     "A B C equals a hundred A",
+     "C B A equals a",
+     "Subtract the second from the first",
+     "the ten B parts cancel",
+     "The A parts leave"
     ]
    },
    {
-    "say": "Now check the answer choices as possible results. Three-digit multiples of ninety-nine have nine in the middle, and their first and last digits add to nine. A hundred ninety-eight, two hundred ninety-seven, and three hundred ninety-six follow that pattern. Four hundred fifty-nine has five in the middle, so it's out. Four hundred eighty-four has eight in the middle, so it's out. Five hundred forty has four in the middle, so it's out too.",
+    "say": "So the result is ninety-nine times A minus C. So it must be a multiple of ninety-nine.",
     "at": [
-     "A hundred ninety",
-     "ninety-six follow",
-     "five in the",
-     "Four hundred eighty",
-     "Five hundred forty"
-    ]
-   },
-   {
-    "say": "Four hundred ninety-five has nine in the middle, and four plus five is nine. It is ninety-nine times five. It's the only choice left, so choice number three is our answer.",
-    "at": [
-     "It is ninety",
-     "choice number three is our answer"
+     "ninety-nine times"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now let's build an example. The check for multiples of ninety-nine only ruled out choices. It doesn't show that four hundred ninety-five can really be the difference, because A and C must be digits, with A bigger than C and C bigger than zero. The question asks what could be the value, so one example that satisfies every given is enough. We found that the difference is ninety-nine times the whole bracket, A minus C. Four hundred ninety-five is ninety-nine times five, so we need A minus C is five. An easy pair is A is six and C is one. Six minus one is five.",
+    "say": "Now let's check the answer choices, and we'll see which of the answer choices is divisible by ninety-nine. So one way for me to do this is to just count up from ninety-nine, right? So ninety-nine plus ninety-nine. Another way for me to do this, it's like doing plus a hundred minus one, right? That's the same as plus ninety-nine. So ninety-nine plus a hundred minus one is a hundred ninety-eight. A hundred ninety-eight plus a hundred minus one is two hundred ninety-seven. Two hundred ninety-seven plus a hundred minus one is three hundred ninety-six.",
     "at": [
-     "Now let's build",
-     "four hundred ninety-five can really",
-     "Four hundred ninety-five is ninety-nine times five"
+     "Now let's check",
+     "and we'll see which",
+     "like doing plus a hundred",
+     "So ninety-nine plus a hundred",
+     "A hundred ninety-eight plus",
+     "Two hundred ninety-seven plus"
     ]
    },
    {
-    "say": "B cancels in the subtraction, so use an easy digit, two. That gives six hundred twenty-one and its reversal, a hundred twenty-six. A is six and C is one, so A is greater than C and C is not zero. Six hundred twenty-one minus a hundred twenty-six: taking away a hundred twenty-one leaves five hundred, and five more leaves four hundred ninety-five. It fits every given, so choice number three is our answer. We can stop without trying more digit pairs. Okay. I'll see you in the next question.",
+    "say": "Now we see that the pattern is that every time, we go up by one in the hundreds and down by one in the ones, right? Between two hundred ninety-seven and three hundred ninety-six, the hundreds digit goes up by one and the ones digit goes down by one. So now from three hundred ninety-six, I'll go up to four hundred ninety-five, right? And that's exactly our answer, four hundred ninety-five. So choice number three is our answer. [pause] I'll see you in the next question.",
     "at": [
-     "That gives six hundred twenty-one",
-     "choice number three is our answer"
+     "Now we see that the pattern",
+     "up by one in the hundreds",
+     "down by one in the ones",
+     "Between two hundred",
+     "I'll go up to four hundred ninety-five",
+     "that's exactly our answer",
+     "So choice number three is our answer"
     ]
    }
   ]

@@ -75,6 +75,12 @@ def norm_tokens(t):
     return out
 
 
+def a_hundred(toks):
+    """2026-10-14 (q-r26-t18-02): "a hundred" (the script) = "100" -> "one hundred" (whisper): the same number. The
+    'a' / 'one' mismatch made "is 198. 198 plus" a "repeat" and "100" a "restart", and cut 12 s of her take."""
+    return ['one' if t == 'a' and k + 1 < len(toks) and toks[k + 1] == 'hundred' else t for k, t in enumerate(toks)]
+
+
 EQUIV = {'equals': 'is', 'equal': 'is', 'minus': 'negative', 'okay': 'ok', 'ok': 'ok', 'aaand': 'and', "it's": 'its',
          'smaller': 'less', 'bigger': 'more', 'greater': 'more'}
 
@@ -173,9 +179,13 @@ def back_to_start(W, Wt, a, b, t0, look=20.0):
     return best
 
 
-def mark_cuts(W, Wt, marks, words, floor=None, onset=None):
+def mark_cuts(W, Wt, marks, words, floor=None, onset=None, heads=None):
     """each mistake mark at t: she re-reads a sentence right after it. The repeat starts at her first word after t; the
-    failed attempt is the latest earlier place (within 25 s) where she said the same first words -> cut [failed, repeat)."""
+    failed attempt is the latest earlier place (within 25 s) where she said the same first words -> cut [failed, repeat).
+    heads = {t: the first script tokens of the mark's paragraph}: a re-read that starts with them is a restart of the
+    WHOLE paragraph (2026-10-14, q-r26-t18-02: two minutes of other attempts, worded differently, before her restart
+    "Now let's check the answer choices") -> the cut reaches back to the paragraph's start (its Space press, `floor`),
+    when that adds 20 s or more to the cut."""
     out = []
     for t in marks:
         lo = (floor or {}).get(t, t - 25)          # never reach back before the start of the paragraph she was reading
@@ -205,6 +215,13 @@ def mark_cuts(W, Wt, marks, words, floor=None, onset=None):
                 if Wt[p][0] < lo - .5 or Wt[r][0] - Wt[p][0] > 20: break
                 prev_w = words[Wt[p - 1][2]]['w'] if p > 0 else '.'
                 if prev_w.rstrip().endswith(('.', '?', '!')) and Wt[p][2] != Wt[p - 1][2]: best = p; break
+        hd = (heads or {}).get(t)
+        if hd and floor and t in floor:
+            hit = sum(bl.size for bl in difflib.SequenceMatcher(None, X, hd, autojunk=False).get_matching_blocks())
+            p0 = next((p for p in range(r) if Wt[p][0] >= floor[t] - .05), None)
+            # only a LONG abandoned attempt (20 s+ of the paragraph before the cut the rules above found): shorter
+            # differences are left to the sentence rule, so earlier recorded videos keep their cuts
+            if hit >= max(3, int(.66 * len(X))) and p0 is not None and (best is None or Wt[best][0] - Wt[p0][0] >= 20): best = p0
         # the re-read can start before whisper's first word after the mark (q-362: "Which choice gives" re-read at
         # 98.1 s, whisper's next word "six" at 98.9 - the cut ate the re-read): end the cut at her voice onset
         end = Wt[r][0]
@@ -533,6 +550,7 @@ def run(vid):
     for li, t in enumerate(lines):
         for m in re.finditer(r"\S+", t):
             for tok in norm_tokens(m.group(0)): S.append(tok); Sl.append((li, m.start(), m.end()))
+    W, S = a_hundred(W), a_hundred(S)
     rep = {'cuts': [], 'kept_extra': [], 'missing': [], 'marks_unused': []}
     extra_spans = []                             # her own words kept: (first word, last word, first token, end token)
     cut = []                                     # (t0, t1, why) in the original WAV
@@ -550,7 +568,12 @@ def run(vid):
             if _sv[k:k + 10].all(): return k / 100.0
             k += 1
         return None
-    for t0, t1, x in mark_cuts(W, Wt, marks, words, pstart, _onset_after):
+    heads = {}
+    for mk_ in side.get('mistakes', []):
+        real = any(q['para'] == mk_.get('para') and q['t'] <= mk_['t'] for q in side.get('paragraphStarts', []))
+        if real and 0 <= mk_.get('para', -1) < len(lines):                 # only a logged paragraph start (no guess)
+            heads[mk_['t']] = [t for w_ in lines[mk_['para']].split()[:8] for t in norm_tokens(w_)][:7]
+    for t0, t1, x in mark_cuts(W, Wt, marks, words, pstart, _onset_after, heads):
         cut.append((t0, t1, 'mistake mark')); used.add(x)
         rep['cuts'].append({'t': round(t0, 2), 'len': round(t1 - t0, 2), 'why': 'mistake mark (failed attempt before it)',
                             'words': ' '.join(w['w'] for w in words if t0 - .01 <= w['s'] < t1)})
@@ -1345,6 +1368,7 @@ def verify(vid):
             st = norm_tokens(sm)
             if st: sents.append((li + 1, sm.strip(), st))
     S = [tok for _, _, st in sents for tok in st]; owner = [k for k, (_, _, st) in enumerate(sents) for _ in st]
+    W, S = a_hundred(W), a_hundred(S)
     pairs, eq = align(S, W)
     hit = {}
     for i, j in pairs:

@@ -885,36 +885,100 @@ video('solve-q-r26-t18-01', 'solution', qid='q-r26-t18-01', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t18-02 (added)
-# NEW: ABC - CBA = 99(A - C) (why: the middle digit cancels); three-digit multiples of 99: middle digit 9, outer digits
-# add up to 9 (198, 297, 396 ...).  Methods: the algebraic form, plugging in numbers.
-p1 = I('p1', '$(100A+10B+C)-(100C+10B+A)=99A-99C$', size=30, hand='(100A + 10B + C) − (100C + 10B + A) = 99A − 99C')
-p2 = I('p2', '$=99(A-C)$', hand='= 99(A − C)')
-p3 = I('p3', '$99k$: $\\ 198,\\ 297,\\ 396,\\ 495\\ldots$: $\\ $middle $9$', size=32, hand='99k :    198,   297,   396,   495 . . . :    middle 9')
-p4 = I('p4', '$495=99\\cdot5$ ✓', hand='495 = 99·5   ✓')
-q1 = I('q1', '$312-213=99 \\qquad 523-325=198$', size=34, hand='312 − 213 = 99        523 − 325 = 198')
-q2 = I('q2', '$A-C=5$: $\\ 621-126=495$ ✓', size=34, hand='A − C = 5 :    621 − 126 = 495   ✓')
+# NEW: ABC - CBA = 99(A - C) (why: the tens parts cancel).
+# 2026-10-14 (teacher, her reading of 2026-10-14T07:33: "In 124 I changed it up a bit, because it seemed less complicated
+# the way I did it"): the script now IS her reading (stumbles and failed takes left out). Her flow: the place values ->
+# 99(A - C), a multiple of 99 -> count up from 99, adding 99 as "plus a hundred, minus one" (198, 297, 396) -> the
+# pattern (hundreds digit up one, ones digit down one) -> 495 = choice 3. She dropped the old "nine in the middle" check
+# (and its crosses) and the "build an example" part (621 - 126), so their visuals are gone. The clarity overlay entry of
+# this lesson is reconciled (emptied): this spec holds her text directly. Visuals (all defined here, so the cue passes
+# see them): the COLS figure of ABC - CBA (_method_visuals.COLS, built at her words, the tens column boxed when "the ten
+# B parts cancel"), a "So far" box on slide 2 (Rule V2, the same item carry() makes), the +100 - 1 lines hand-written in
+# chunks as she says them, and STACK99 below: the multiples in place-value columns (the COLS look), the hundreds column
+# (+1) and the ones column (-1) boxed as she names them, 495 added in teal.
+_mvs_spec = importlib.util.spec_from_file_location('_method_visuals_t18_stack', os.path.join(HERE, '_method_visuals.py'))
+_MVS = importlib.util.module_from_spec(_mvs_spec); _mvs_spec.loader.exec_module(_MVS)
+
+
+def STACK99(name, rows, steps, size=58, col=1):
+    """three-digit numbers stacked in place-value columns, in the COLS look (fixed cells, the slide's math font, the
+    teal box on a column): steps = [(key, change)], change: n = rows shown, h / o = the hundreds / ones column boxed
+    with +1 / -1 between the rows, teal = indexes of the rows drawn in teal (the new one). Full snapshots, like COLS.
+    -> {key: item} (the base 'line' first, then the layers in order)"""
+    em = size; cw = em * 1.08; lab = em * 1.25; pad = em * .3; gap = em * 1.32; top = em * .55
+    nrow = len(rows); W = int(2 * lab + 3 * cw + 2 * pad)
+    Y = lambda r: top + em * .78 + gap * r
+    H = int(Y(nrow - 1) + em * .5)
+    X = lambda c: lab + pad + cw * (2 - c + .5)              # c = 0 ones, 1 tens, 2 hundreds
+    st = dict(n=nrow, h=False, o=False, teal=())
+    out = []
+    for k, (key, ch) in enumerate(steps):
+        st = dict(st, **ch)
+        body = '<rect x="0" y="0" width="%d" height="%d" fill="#ffffff"/>' % (W, H) if k else ''
+        yb0, yb1 = top - em * .05, Y(st['n'] - 1) + em * .3
+        for on, c in ((st['h'], 2), (st['o'], 0)):
+            if on:
+                body += ('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="10" fill="%s" stroke="%s" stroke-width="3"/>'
+                         % (X(c) - cw * .46, yb0, cw * .92, yb1 - yb0, _MVS.BAND, _MVS.TEAL))
+        for r in range(st['n']):
+            for c, d in enumerate(reversed(rows[r])):
+                body += _MVS._glyph(d, X(c), Y(r), em, _MVS.TEAL if r in st['teal'] else _MVS.INK)[0]
+        ls = em * .62
+        for r in range(st['n'] - 1):
+            ym = (Y(r) + Y(r + 1)) / 2 - em * .36 + ls * .36
+            if st['h']: body += _MVS._gtext('+1', X(2) - cw * .5 - ls * 1.45, ym, ls, _MVS.TEAL)
+            if st['o']: body += _MVS._gtext('−1', X(0) + cw * .5 + ls * .25, ym, ls, _MVS.TEAL)
+        title = ('Multiples of 99 in columns: %s' % ', '.join(rows[:st['n']])) if not k else '%s: %s' % (key, ', '.join(rows[:st['n']]))
+        out.append((key, _MVS._svg(W, H, body, title)))
+    its = _MVS.items(_layers, name, out, col=col, own=True)
+    return its
+
+
+abc = _MVS.items(_layers, 'abc', _MVS.COLS(['ABC', 'CBA', ''], '−', [('line', dict(n=1, bar=False, res=False)),
+                ('sub', dict(n=2, bar=True)), ('t', dict(hl=1, notes='10B − 10B = 0'))]), col=1, own=True)
+keep1 = I('keep1', 'So far: $\\overline{ABC}-\\overline{CBA}=99(A-C)$', size=26, col=1); keep1['keep'] = 1
+u1 = I('u1', '$\\overline{ABC}=100A+10B+C$', hand='ABC = 100A + 10B + C')
+u2 = I('u2', '$\\overline{CBA}=100C+10B+A$', hand='CBA = 100C + 10B + A')
+u3 = I('u3', '$\\overline{ABC}-\\overline{CBA}$', hand='ABC − CBA')
+u4 = I('u4', '$=99A-99C$', hand='= 99A  − 99C')
+u5 = I('u5', '$=99(A-C)$: $\\ $a multiple of $99$', hand='= 99(A − C) :  a multiple of 99')
+c1 = I('c1', '$+100-1=+99$', hand='+100 − 1 = +99')
+c2 = I('c2', '$99+100-1=198$', hand='99 + 100 − 1 = 198')
+c3 = I('c3', '$198+100-1=297$', hand='198 + 100 − 1 = 297')
+c4 = I('c4', '$297+100-1=396$', hand='297 + 100 − 1 = 396')
+k99 = STACK99('k99', ['198', '297', '396', '495'], [('line', dict(n=3)), ('h', dict(h=True)), ('o', dict(o=True)),
+                                                    ('n', dict(n=4, teal=(3,)))])
 video('solve-q-r26-t18-02', 'solution', qid='q-r26-t18-02', slides=[
-    S('Method 1 · The algebraic form',
+    S('Place values',
       L("A, B and C represent digits, and A is bigger than C, which is bigger than zero. Which of the following could be "
         "the value of A B C minus C B A?", pt('stem', 'A, B and C', 'hl', 7.0), voice='calm', pause=0.5),
-      L("A three-digit number minus its reversal. [short pause] We'll solve it two ways, with the algebraic form, and then "
-        "plugging in numbers.", pt('stem', 'minus its reversal')),
-      L("[short pause] Let's start with the algebraic form. A B C is a hundred A, plus ten B, plus C. C B A is a hundred C, "
-        "plus ten B, plus A. Subtract, and the middle digit cancels. Ninety-nine A minus ninety-nine C.", show(p1, 'A B C is a hundred A')),
-      L("That's ninety-nine times, in brackets, A minus C. So the answer must be a multiple of ninety-nine.", show(p2, 'ninety-nine times')),
-      L("Three-digit multiples of ninety-nine have nine in the middle, and the outer digits add up to nine. One ninety-eight, "
-        "two ninety-seven, three ninety-six. Four fifty-nine has five in the middle, out. Four eighty-four, eight, out. Five "
-        "forty, four, out.", show(p3, 'One ninety-eight'), mk('cross', 'choice 1', 'five in the middle, out'),
-        mk('cross', 'choice 2', 'Four eighty-four, eight, out'), mk('cross', 'choice 4', 'forty, four, out')),
-      L("Four ninety-five has nine in the middle, and four plus five is nine. It's ninety-nine times five. Choice number "
-        "three is our answer.", show(p4, "It's ninety-nine times five"), mk('tick', 'choice 3', 'Choice number three is our answer'))),
-    S('Method 2 · Plugging in numbers',
-      L("[pause] Another way, plugging in numbers. What's different? We don't write any algebra, we let a few examples show "
-        "the pattern. Three twelve minus two thirteen is ninety-nine. Five twenty-three minus three twenty-five is one "
-        "ninety-eight. Always multiples of ninety-nine.", show(q1, 'Three twelve minus')),
-      L("And four ninety-five can really happen. With A minus C five, six twenty-one minus one twenty-six is four ninety-five. "
-        "Choice number three. [pause] Okay. I'll see you in the next question.", show(q2, 'six twenty-one'),
-        mk('tick', 'choice 3', 'is four ninety-five. Choice number three'))),
+      L("So we take the three-digit number A B C and subtract C B A, which is the same digits, just in reverse order. "
+        "[short pause] We'll solve it in two different ways, writing their place values, and then trying numbers.",
+        show(abc['line'], 'the three-digit number A B C'), show(abc['sub'], 'subtract C B A')),
+      L("[short pause] Let's start with the place values. A B C equals a hundred A plus ten B plus C. C B A equals a "
+        "hundred C plus ten B plus A. Subtract the second from the first, and the ten B parts cancel because B is in the "
+        "same place in both of them. The A parts leave ninety-nine A, and the C parts leave minus ninety-nine C.",
+        show(u1, 'A B C equals a hundred A'), show(u2, 'C B A equals a'), show(u3, 'Subtract the second from the first'),
+        show(abc['t'], 'the ten B parts cancel'), show(u4, 'The A parts leave')),
+      L("So the result is ninety-nine times A minus C. So it must be a multiple of ninety-nine.",
+        show(u5, 'ninety-nine times'))),
+    S('Trying numbers: count up by 99',
+      L("Now let's check the answer choices, and we'll see which of the answer choices is divisible by ninety-nine. So one "
+        "way for me to do this is to just count up from ninety-nine, right? So ninety-nine plus ninety-nine. Another way for "
+        "me to do this, it's like doing plus a hundred minus one, right? That's the same as plus ninety-nine. So "
+        "ninety-nine plus a hundred minus one is a hundred ninety-eight. A hundred ninety-eight plus a hundred minus one is "
+        "two hundred ninety-seven. Two hundred ninety-seven plus a hundred minus one is three hundred ninety-six.",
+        show(keep1, "Now let's check"), pt('keep1', "and we'll see which"), show(c1, 'like doing plus a hundred'), show(c2, 'So ninety-nine plus a hundred'),
+        show(c3, 'A hundred ninety-eight plus'), show(c4, 'Two hundred ninety-seven plus')),
+      L("Now we see that the pattern is that every time, we go up by one in the hundreds and down by one in the ones, "
+        "right? Between two hundred ninety-seven and three hundred ninety-six, the hundreds digit goes up by one and the "
+        "ones digit goes down by one. So now from three hundred ninety-six, I'll go up to four hundred ninety-five, right? "
+        "And that's exactly our answer, four hundred ninety-five. So choice number three is our answer. [pause] I'll see "
+        "you in the next question.",
+        show(k99['line'], 'Now we see that the pattern'), show(k99['h'], 'up by one in the hundreds'),
+        show(k99['o'], 'down by one in the ones'), show(k99['n'], "I'll go up to four hundred ninety-five"),
+        pt('choice 3', "that's exactly our answer"), mk('tick', 'choice 3', 'So choice number three is our answer')),
+      sb='Trying numbers'),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t18-03 (added)
@@ -1277,6 +1341,21 @@ import types as _types
 _mv_spec = importlib.util.spec_from_file_location('_method_visuals', os.path.join(HERE, '_method_visuals.py'))
 _mv = importlib.util.module_from_spec(_mv_spec); _mv_spec.loader.exec_module(_mv)
 _mv.post(_types.SimpleNamespace(**globals()), 18)
+
+# 2026-10-14 (q-r26-t18-02, her own reading): her hand-written lines are written in chunks while she says each part
+# ("= 198" only at "is a hundred ninety-eight"), so an auto POINT on such a line in the same paragraph would light a
+# half-written line; the writing itself is the focus there (calm highlights). Drop those POINTs, and a POINT on a figure
+# less than ~2 s (28 characters) after one of its layers was drawn (the new layer is what she is talking about).
+for _ln in [l for _sl in VIDEOS['solve-q-r26-t18-02']['slides'] for l in _sl['lines']]:
+    _hand = {c[1]['_name'] for c in _ln['cues'] if c[0] == 'show' and c[1].get('_hand')}
+    _keep = []
+    for c in _ln['cues']:
+        _prev = _keep[-1] if _keep else None
+        _just = (_prev and _prev[0] == 'show' and _base(_prev[1]['_name']) == c[1]
+                 and 0 <= _phrase_pos(_ln['say'], c) - _phrase_pos(_ln['say'], _prev) < 28)
+        if c[0] == 'point' and (c[1] in _hand or _just): continue
+        _keep.append(c)
+    _ln['cues'] = _keep
 
 if __name__ == '__main__':
     _bad = 0
