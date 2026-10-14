@@ -1,0 +1,120 @@
+{
+ "videoId": "solve-pt-q17",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Root two, over the bracket two plus root two. What does it equal?",
+    "voice": "calm",
+    "at": [
+     "Root two, over the bracket"
+    ],
+    "pause": 0.5
+   },
+   "It's a fraction with a root on the bottom, and none of the choices is a fraction. So we need to get rid of the bottom. [short pause] We'll solve it two ways, with algebra, and then with an estimate.",
+   {
+    "say": "In the roots topic we learned how. When the bottom is a sum with a root, we multiply the top and the bottom by its partner. The partner of two plus root two is two minus root two. The top and the bottom are multiplied by the same thing, so it's like multiplying by one, and the value doesn't change.",
+    "at": [
+     "In the",
+     "we multiply the top and the bottom",
+     "the bottom by"
+    ]
+   },
+   {
+    "say": "Why the partner? On the bottom we get two plus root two, times two minus root two. That's the difference of squares, a squared minus b squared. Two squared is four, and root two squared is two. Four minus two is two, so the root is gone.",
+    "at": [
+     "On the bottom we get",
+     "two plus root"
+    ]
+   },
+   {
+    "say": "On the top, root two times two is two root two. And root two times root two is two. So the top is two root two minus two.",
+    "at": [
+     "On the top",
+     "times two is"
+    ]
+   },
+   {
+    "say": "So we have two root two minus two, over two. We divide each part by two, and we get root two minus one. Choice number four is our answer.",
+    "at": [
+     "We divide each part by two",
+     "two, and we",
+     "Choice number four is our answer"
+    ]
+   },
+   "Many students don't think of the partner here, and they get stuck. That's exactly when an estimate helps."
+  ],
+  [
+   {
+    "say": "[pause] Now the estimate. We don't need root two exactly. We only need to know between which numbers it is.",
+    "at": [
+     "Now the"
+    ]
+   },
+   {
+    "say": "One squared is one, and two squared is four. Two is between them, so root two is between one and two.",
+    "at": [
+     "One squared is one",
+     "two squared is"
+    ]
+   },
+   {
+    "say": "We need a bit more. One and a half squared is two and a quarter. That's more than two, so root two is less than one and a half. So root two is between one and one and a half.",
+    "at": [
+     "One and a half squared",
+     "is two and"
+    ]
+   },
+   {
+    "say": "Now the size of our fraction. The bottom is the top plus two, so the bottom is bigger than the top. That means the fraction is less than one.",
+    "at": [
+     "The bottom is the top plus two",
+     "plus two, so"
+    ]
+   },
+   {
+    "say": "Choice number two, two root two, is more than two, because root two is more than one. Choice number three, root two plus one, is also more than two. Both are more than one, so both are out.",
+    "at": [
+     "Choice number two, two root two",
+     "is more than two, because",
+     "root two is",
+     "number three, root",
+     "so both are out"
+    ]
+   },
+   {
+    "say": "Two choices are left. Choice number four, root two minus one, is less than a half, because root two is less than one and a half.",
+    "at": [
+     "Choice number four, root two minus one",
+     "number four, root",
+     "one, is less"
+    ]
+   },
+   {
+    "say": "Choice number one is the same number, squared. A half squared is a quarter, and a smaller number squared is even smaller. So choice number one is less than a quarter.",
+    "at": [
+     "Choice number one is the same number",
+     "number one is",
+     "A half squared",
+     "number one is less"
+    ]
+   },
+   {
+    "say": "So is our fraction more than a quarter? The top, root two, is more than one. The bottom, two plus root two, is less than two plus two, which is four. A bigger top and a smaller bottom both make a fraction bigger. So the fraction is more than one over four, a quarter.",
+    "at": [
+     "than a quarter",
+     "The top, root two, is more than one",
+     "more than one"
+    ]
+   },
+   {
+    "say": "So choice number one is out, because it's less than a quarter. Choice number four is our answer again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So choice number one is out",
+     "because it's less than a quarter",
+     "Choice number four is our answer again"
+    ]
+   }
+  ]
+ ]
+}

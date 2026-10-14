@@ -172,6 +172,52 @@ def _layout(vid):
     return names, per
 
 
+# 2026-10-14 Rule V4.8 (camera lessons: the face bubble never covers math). Her bubble is composited top right (board
+# x >= 1344, y <= 256). In the camera lesson and its parts: a right-column stack that would start above y 262 moves down
+# as a whole (its own order and spacing kept), and a left-column item is at most 920 wide (ends left of x 1330; a figure
+# and its layers are scaled down together, text wraps). Other videos are unchanged.
+CAM_BASE = 'whole-numbers'
+CAM_W, CAM_Y = 920, 280
+
+
+def _cam_width(d, hand=None):
+    """the drawn width of a board item, roughly (a figure: its box; a hand-written line: its pen strokes at the
+    hand-written size, 1.2x; text: ~half the size per visible character)"""
+    if d['k'] == 'vis': return d.get('w') or 540
+    if hand:
+        import studio_handwrite as _HW
+        return min(d.get('w') or 1130, _HW.write(hand)['w'] * round(d.get('size', 36) * 1.2) / 100.0)
+    t = re.sub(r'\\(quad|qquad)', '    ', d.get('t') or ''); t = re.sub(r'\\frac\{([^}]*)\}\{([^}]*)\}', r'\1', t)
+    t = re.sub(r'\\[a-zA-Z]+', 'x', t)
+    for ch in '${}\\': t = t.replace(ch, '')
+    return min(d.get('w') or 1130, len(t) * d.get('size', 36) * (0.6 if d['k'] == 'hw' else 0.5))
+_layout_plain = _layout
+
+
+def _layout(vid):
+    names, per = _layout_plain(vid)
+    if not re.fullmatch(re.escape(CAM_BASE) + r'(-\d+)?', vid) or VIDEOS[vid]['kind'] != 'lesson': return names, per
+    for sl in per:
+        right = [d for it, d in sl if d.get('x') == 1010 and d.get('y') is not None]
+        if any(d.get('x') == 1010 and d.get('y') is not None and d['y'] < CAM_Y - 18 and not d.get('over')
+               and 1010 + _cam_width(d, it.get('_hand')) > 1335 for it, d in sl):
+            top, yl = CAM_Y, 78                    # ... and below a left-column figure that reaches under the right column
+            for it2, d2 in sl:
+                if d2.get('x') is not None or d2.get('y') is not None or d2.get('over'): continue
+                h2 = d2['h'] if d2['k'] == 'vis' else d2.get('size', 36) * 1.55 * (1.2 if it2.get('_hand') else 1)
+                if d2['k'] == 'vis' and 410 + (d2.get('w') or 0) > 1000: top = max(top, int(yl + h2 + 16))
+                yl += h2 + 16
+            dy = top - min(d['y'] for d in right)
+            for d in right: d['y'] += dy
+        for it, d in sl:
+            if d.get('x') is not None or d.get('y') is not None: continue
+            if d['k'] == 'vis' and d.get('w', 0) > CAM_W:
+                d['h'] = int(round(d['h'] * CAM_W / d['w'])); d['w'] = CAM_W
+            elif d['k'] in ('t', 'hw') and (d.get('w') or 1130) > CAM_W:
+                d['w'] = CAM_W
+    return names, per
+
+
 def _target(vid, names, si, t):
     if t in ('stem',) or re.fullmatch(r'stem: (g\d|given|ask)', t) or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
     nm, _, part = t.partition(':')
@@ -419,11 +465,15 @@ def TREE(name, root, steps, w=330, col=1, dx=92, dy=50):
 # zero"). Hebrew lesson (alg 15738-15814): every rule kept; its sample question is q-457.
 wn1 = I('wn1', '$4\\cdot5=20\\qquad(-4)\\cdot(-5)=20$', size=34, hand='4·5 = 20        (−4)·(−5) = 20')
 wn2 = I('wn2', '$(-4)\\cdot5=-20\\qquad4\\cdot(-5)=-20$', size=34, hand='(−4)·5 = −20        4·(−5) = −20')
-wn3 = I('wn3', '$ab>0$: same sign $\\quad ab<0$: different signs $\\quad ab=0$: a zero', size=28)
+wn2b = I('wn2b', '$(-3)\\cdot(-6)=18$', size=34, hand='(−3)·(−6) = 18')
+wn3 = I('wn3', '$ab>0$: same sign', size=28)
+wn3b = I('wn3b', '$ab<0$: different signs', size=28)
+wn3c = I('wn3c', '$ab=0$: at least one is $0$', size=28)
 wn4 = I('wn4', '$(-2)\\cdot3\\cdot(-1)\\cdot(-4)$: $\\ 3$ minuses $\\to\\ -24$', size=32, hand='(−2)·3·(−1)·(−4) :    3 minuses  →  −24')
 wn5 = I('wn5', '$(-2)\\cdot(-3)\\cdot(-1)\\cdot(-4)$: $\\ 4$ minuses $\\to\\ 24$', size=32, hand='(−2)·(−3)·(−1)·(−4) :    4 minuses  →  24')
 wn6 = I('wn6', '$(-24)\\div(-8)=3\\qquad(-24)\\div8=-3\\qquad24\\div(-8)=-3$', size=30, hand='(−24) ÷ (−8) = 3      (−24) ÷ 8 = −3      24 ÷ (−8) = −3')
-wn7 = I('wn7', '$\\frac{(-6)\\cdot(-2)}{-3}=-4$', size=34, hand='{(−6)·(−2)/−3} = −4')
+wn7 = I('wn7', '$\\frac{(-6)\\cdot(-2)}{-3}$: $\\ 3$ minuses', size=34, hand='{(−6)·(−2)/−3} :    3 minuses')
+wn7b = I('wn7b', '$6\\cdot2=12,\\ \\ \\frac{12}{3}=4\\ \\to\\ -4$', size=34, hand='6·2 = 12,    {12/3} = 4   →   −4')
 wn8 = I('wn8', '$3^2=9\\qquad(-3)^2=9\\qquad(-2)^4=16$', size=34, hand='3^2 = 9        (−3)^2 = 9        (−2)^4 = 16')
 wn9 = I('wn9', '$2^3=8\\qquad(-2)^3=-8\\qquad(-1)^5=-1$', size=34, hand='2^3 = 8        (−2)^3 = −8        (−1)^5 = −1')
 wn10 = I('wn10', '$|-7|=7\\qquad|7|=7\\qquad|0|=0$', size=34, hand='|−7| = 7        |7| = 7        |0| = 0')
@@ -444,7 +494,8 @@ video('whole-numbers', 'lesson', slides=[
       L("Careful here. A positive product doesn't mean both numbers are positive. Negative three times negative six is "
         "eighteen, which is positive, but both numbers are negative. So a positive product only tells us that the two "
         "numbers have the same sign. A negative product tells us their signs are different. And a product of zero means "
-        "at least one of them is zero.", show(wn3, 'A positive product only tells us'))),
+        "at least one of them is zero.", show(wn2b, 'Negative three times negative six'),
+        show(wn3, 'A positive product only tells us'), show(wn3b, 'A negative product tells us'), show(wn3c, 'And a product of zero'))),
     S('Count the minuses',
       L("Now a time saver. When many numbers are multiplied, the plus signs don't change the sign of the result. Only the "
         "minus signs do. So we just count the minuses."),
@@ -462,7 +513,7 @@ video('whole-numbers', 'lesson', slides=[
         "different.", show(wn6, 'Negative twenty-four divided by negative eight')),
       L("So we can count the minuses when we multiply and divide together. Negative six times negative two, over negative "
         "three. That's three minuses, so the result is negative. Six times two is twelve, and twelve over three is four, "
-        "so it's negative four.", show(wn7, 'Negative six times negative two'))),
+        "so it's negative four.", show(wn7, 'Negative six times negative two'), show(wn7b, 'Six times two is twelve'))),
     S('Powers, absolute value, the opposite',
       L("Now powers. A number to an even power is never negative. Three squared is nine, negative three, squared, is also "
         "nine, and negative two to the power of four is sixteen. The only way to get zero is a base of zero.",

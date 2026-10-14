@@ -1,0 +1,156 @@
+{
+ "videoId": "pt51-estimation-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with estimation, and use the numbers we know."
+  ],
+  [
+   {
+    "say": "Now let's use these numbers. Which number is closest to root ninety plus root twenty-six? The choices are eight, eleven, fifteen and twenty-five.",
+    "at": [
+     "Which number is closest",
+     "root ninety plus"
+    ]
+   },
+   {
+    "say": "Root ninety first. Ninety is between eighty-one and a hundred, so root ninety is between nine and ten.",
+    "at": [
+     "Ninety is between",
+     "a hundred, so"
+    ]
+   },
+   {
+    "say": "Now root twenty-six. Twenty-six is between twenty-five and thirty-six, so root twenty-six is between five and six.",
+    "at": [
+     "Twenty-six is between",
+     "thirty-six, so root"
+    ]
+   },
+   {
+    "say": "Let's add the small ends, nine plus five is fourteen. And the big ends, ten plus six is sixteen. So the sum is between fourteen and sixteen.",
+    "at": [
+     "Let's add the small ends",
+     "And the big"
+    ]
+   },
+   {
+    "say": "Here it is on a number line, with the four choices. Our sum is somewhere in this band, between fourteen and sixteen.",
+    "at": [
+     "Here it is on a number line",
+     "with the four choices",
+     "Our sum is somewhere",
+     "this band, between"
+    ]
+   },
+   {
+    "say": "Eight, eleven and twenty-five are far from the band, so they're out. Fifteen is right in the middle of it. So fifteen is the closest, and we never found either root exactly.",
+    "at": [
+     "are far from the band",
+     "so they're out",
+     "Fifteen is right in the middle",
+     "and we never"
+    ]
+   },
+   {
+    "say": "And watch out for eleven. Some students add under the root, ninety plus twenty-six, and take the root of a hundred sixteen. That's between ten and eleven. But roots don't add like that, so eleven is a trap.",
+    "at": [
+     "Some students add under the root",
+     "root, ninety plus"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more example, with fractions. Which number is closest to twenty-nine over fifty-nine, plus thirty-nine over eighty-one? The choices are one tenth, a half, one, and two.",
+    "at": [
+     "One more example",
+     "Which number is"
+    ]
+   },
+   {
+    "say": "Twenty-nine over fifty-nine doesn't reduce nicely. So we look for a close fraction that does. Twenty-nine is almost thirty, and fifty-nine is almost sixty. Thirty over sixty is a half.",
+    "at": [
+     "Twenty-nine is almost thirty",
+     "fifty-nine is almost"
+    ]
+   },
+   {
+    "say": "In the same way, thirty-nine over eighty-one is close to forty over eighty. That's also a half.",
+    "at": [
+     "thirty-nine over eighty-one is close",
+     "to forty over"
+    ]
+   },
+   {
+    "say": "A half plus a half is one. Each fraction is a little less than a half, so the sum is a little less than one. But it's much closer to one than to a half or to two. So the answer is one.",
+    "at": [
+     "A half plus a half is one",
+     "Each fraction is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So when do I estimate? The first sign is the choices. They're far apart in size. One is ten times another, or some are clearly too big or too small.",
+    "at": [
+     "The first sign",
+     "They're far apart"
+    ]
+   },
+   {
+    "say": "The second sign. The exact way is a long calculation, or I'm stuck. For example, a geometry question where I don't see the helper line, or an expression where I don't know where to start.",
+    "at": [
+     "The second sign",
+     "The exact way"
+    ]
+   },
+   {
+    "say": "The third sign is in the words. When the question says about, approximately, or which number is closest to, it's asking for an estimate.",
+    "at": [
+     "The third sign",
+     "When the question"
+    ]
+   },
+   {
+    "say": "And estimates are very strong in areas and volumes, when the choices have pi or roots in them. We'll see that in the next questions.",
+    "at": [
+     "in areas and volumes",
+     "the choices have"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the trap. An estimate works only when the choices are far apart. Look at twenty-nine times forty-one. The choices are one thousand one hundred eighty-nine, one thousand one hundred ninety-six, one thousand two hundred four, and one thousand two hundred twelve.",
+    "at": [
+     "estimate works only",
+     "Look at twenty-nine times",
+     "The choices are one thousand",
+     "one hundred eighty-nine"
+    ]
+   },
+   {
+    "say": "Thirty times forty is twelve hundred. But all four choices are close to twelve hundred, so the estimate can't choose. If I just mark the choice nearest to twelve hundred, I'll mark a wrong one.",
+    "at": [
+     "Thirty times forty is twelve hundred",
+     "But all four"
+    ]
+   },
+   {
+    "say": "When the choices are close, use another tool. Here the last digit works. Nine times one is nine, so the answer ends in nine. Only one thousand one hundred eighty-nine ends in nine.",
+    "at": [
+     "Here the last digit works",
+     "so the answer"
+    ]
+   },
+   {
+    "say": "So before you estimate, look at the choices. If they're far apart, estimate. If they're close, calculate, or check the last digit. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "So before you estimate",
+     "at the choices"
+    ]
+   }
+  ]
+ ]
+}

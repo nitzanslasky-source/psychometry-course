@@ -176,6 +176,52 @@ def _layout(vid):
     return names, per
 
 
+# 2026-10-14 Rule V4.8 (camera lessons: the face bubble never covers math). Her bubble is composited top right (board
+# x >= 1344, y <= 256). In the camera lesson and its parts: a right-column stack that would start above y 262 moves down
+# as a whole (its own order and spacing kept), and a left-column item is at most 920 wide (ends left of x 1330; a figure
+# and its layers are scaled down together, text wraps). Other videos are unchanged.
+CAM_BASE = 'geo-009'
+CAM_W, CAM_Y = 920, 280
+
+
+def _cam_width(d, hand=None):
+    """the drawn width of a board item, roughly (a figure: its box; a hand-written line: its pen strokes at the
+    hand-written size, 1.2x; text: ~half the size per visible character)"""
+    if d['k'] == 'vis': return d.get('w') or 540
+    if hand:
+        import studio_handwrite as _HW
+        return min(d.get('w') or 1130, _HW.write(hand)['w'] * round(d.get('size', 36) * 1.2) / 100.0)
+    t = re.sub(r'\\(quad|qquad)', '    ', d.get('t') or ''); t = re.sub(r'\\frac\{([^}]*)\}\{([^}]*)\}', r'\1', t)
+    t = re.sub(r'\\[a-zA-Z]+', 'x', t)
+    for ch in '${}\\': t = t.replace(ch, '')
+    return min(d.get('w') or 1130, len(t) * d.get('size', 36) * (0.6 if d['k'] == 'hw' else 0.5))
+_layout_plain = _layout
+
+
+def _layout(vid):
+    names, per = _layout_plain(vid)
+    if not re.fullmatch(re.escape(CAM_BASE) + r'(-\d+)?', vid) or VIDEOS[vid]['kind'] != 'lesson': return names, per
+    for sl in per:
+        right = [d for it, d in sl if d.get('x') == 1010 and d.get('y') is not None]
+        if any(d.get('x') == 1010 and d.get('y') is not None and d['y'] < CAM_Y - 18 and not d.get('over')
+               and 1010 + _cam_width(d, it.get('_hand')) > 1335 for it, d in sl):
+            top, yl = CAM_Y, 78                    # ... and below a left-column figure that reaches under the right column
+            for it2, d2 in sl:
+                if d2.get('x') is not None or d2.get('y') is not None or d2.get('over'): continue
+                h2 = d2['h'] if d2['k'] == 'vis' else d2.get('size', 36) * 1.55 * (1.2 if it2.get('_hand') else 1)
+                if d2['k'] == 'vis' and 410 + (d2.get('w') or 0) > 1000: top = max(top, int(yl + h2 + 16))
+                yl += h2 + 16
+            dy = top - min(d['y'] for d in right)
+            for d in right: d['y'] += dy
+        for it, d in sl:
+            if d.get('x') is not None or d.get('y') is not None: continue
+            if d['k'] == 'vis' and d.get('w', 0) > CAM_W:
+                d['h'] = int(round(d['h'] * CAM_W / d['w'])); d['w'] = CAM_W
+            elif d['k'] in ('t', 'hw') and (d.get('w') or 1130) > CAM_W:
+                d['w'] = CAM_W
+    return names, per
+
+
 def _target(vid, names, si, t):
     if t in ('stem',) or re.fullmatch(r'stem: (g\d|given|ask)', t) or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
     nm, _, part = t.partition(':')
@@ -789,7 +835,7 @@ f1ineq = GEO('f1ineq', [
               ('txt', _t4[0] - 40, _t4[1] - 4, '4', 'teal', 24), ('txt', _t5[0] + 40, _t5[1] - 4, '5', 'orange', 24),
               ('seg', _t4[0], _t4[1], _t5[0], _t5[1], 'red', 3, True), ('txt', 300, 150, 'a gap', 'red', 24)]),
 ], vb='80 100 440 210', w=700, col=0, title='Two sides of 4 and 5 cannot close a triangle on a side of 9')
-f1in1 = I('f1in1', '$4+5=9$: $\\ $no triangle', size=30, col=1)
+f1in1 = IH('f1in1', '$4+5=9$: $\\ $no triangle', size=30, col=1)
 f1in2 = IH('f1in2', '$5,\\ 6,\\ 9$: $\\ 5+6=11>9$ ✓', size=30, col=1)
 f1in3 = IH('f1in3', '$2,\\ 3,\\ 8$: $\\ 2+3=5<8$ ✗', size=30, col=1)
 
@@ -2494,7 +2540,7 @@ F5DIV_t2 = IH('f5v2', '$\\frac{9}{\\sqrt3}=(9\\div3)\\sqrt3=3\\sqrt3$', size=34,
 F5DIV_t3 = IH('f5v3', 'Why: $\\ \\frac{9\\cdot\\sqrt3}{\\sqrt3\\cdot\\sqrt3}=\\frac{9\\sqrt3}{3}=3\\sqrt3$', size=32, col=0)
 F5DIV_t4 = IH('f5v4', 'Short $3\\sqrt3\\ \\to\\ $ hypotenuse $6\\sqrt3$', size=32, col=0)
 F5DIV_t5 = IH('f5v5', 'Another one: $\\ \\frac{6}{\\sqrt3}=(6\\div3)\\sqrt3=2\\sqrt3$', size=30, col=0)
-F5CAN_t1 = IH('f5c1', 'Long $12\\sqrt3\\ \\to\\ $ short $12\\ \\to\\ $ hypotenuse $24$', size=32, col=0)
+F5CAN_t1 = IH('f5c1', 'Long $12\\sqrt{3}\\ \\to\\ $ short $12\\ \\to\\ $ hypotenuse $24$', size=32, col=0)
 # the 30-30-120 triangle: legs 300 (a), T at the top
 _f5T, _f5L, _f5Rt, _f5M = (320.0, 100.0), (320.0 - 259.8, 250.0), (320.0 + 259.8, 250.0), (320.0, 250.0)
 F5ISO = GEO('f5iso', [
@@ -2678,8 +2724,8 @@ F5AR_t3 = IH('f5a3', '$h=\\frac{a\\sqrt3}{2}$', size=34, col=1)
 F5AR_t4 = IH('f5a4', '$S=\\frac{a\\cdot\\frac{a\\sqrt3}{2}}{2}=\\frac{a^2\\sqrt3}{4}$', size=36, col=0)
 F5AR_t5 = I('f5a5', '$a\\ \\ $ two $\\ \\ $ three $\\ \\ $ four', size=36, col=0)
 F5AR_t6 = I('f5a6', '$a^2\\qquad\\sqrt3\\qquad\\div4$', size=36, col=0)
-F5AR_t7 = IH('f5a7', 'Side $8$: $\\ \\frac{8^2\\sqrt3}{4}=\\frac{64\\sqrt3}{4}=16\\sqrt3$', size=32, col=0)
-F5AR_t8 = IH('f5a8', 'Side $6$: $\\ \\frac{6^2\\sqrt3}{4}=\\frac{36\\sqrt3}{4}=9\\sqrt3$', size=32, col=0)
+F5AR_t7 = I('f5a7', 'Side $8$: $\\ \\frac{8^2\\sqrt3}{4}=\\frac{64\\sqrt3}{4}=16\\sqrt3$', size=32, col=0, hand='Side 8 :    {8^2√{3}/4} = {64√{3}/4} = 16√{3}')
+F5AR_t8 = I('f5a8', 'Side $6$: $\\ \\frac{6^2\\sqrt3}{4}=\\frac{36\\sqrt3}{4}=9\\sqrt3$', size=32, col=0, hand='Side 6 :    {6^2√{3}/4} = {36√{3}/4} = 9√{3}')
 video('geo-017-after', 'lesson', slides=[
     S('Equilateral Triangle Area',
       L("Now let's see how we find the area of an equilateral triangle. Now that we know the gold triangle, it's quick.")),
@@ -2749,7 +2795,7 @@ F518 = GEO('f518', [
 ], vb='150 30 680 300', w=500, title='Triangle ABC with the midpoints D and E, and DBE enlarged')
 F518_t1 = IH('f518a', '$S_{ABC}=\\frac{10^2\\sqrt3}{4}=\\frac{100\\sqrt3}{4}$', size=30, col=1)
 F518_t2 = IH('f518b', '$S_{DBE}=\\frac{5^2\\sqrt3}{4}=\\frac{25\\sqrt3}{4}$', size=30, col=1)
-F518_t3 = IH('f518c', '$S_{ADEC}=\\frac{100\\sqrt3}{4}-\\frac{25\\sqrt3}{4}=\\frac{75\\sqrt3}{4}$', size=28, col=1)
+F518_t3 = I('f518c', '$S_{ADEC}=\\frac{100\\sqrt3}{4}-\\frac{25\\sqrt3}{4}=\\frac{75\\sqrt3}{4}$', size=28, col=1, hand='S_{ADEC} = {100√{3}/4} − {25√{3}/4} = {75√{3}/4}')
 F518_t4 = IH('f518d', 'Side $\\times\\frac12$ $\\ \\to\\ $ area $\\times\\frac14$', size=32, col=1)
 F518_t5 = IH('f518e', '$\\frac34\\cdot\\frac{100\\sqrt3}{4}=\\frac{75\\sqrt3}{4}$', size=32, col=1)
 video('solve-geo31-g018', 'solution', qid='geo31-g018', slides=[
@@ -2812,9 +2858,9 @@ F5SV_t1 = IH('f5s1', '$a^2+a^2=2a^2$', size=34, col=1)
 F5SV_t2 = IH('f5s2', 'hypotenuse $=\\sqrt{2a^2}=a\\sqrt2$', size=32, col=1)
 F5SV_t3 = I('f5s3', '$a\\ :\\ a\\ :\\ a\\sqrt2$', size=40, col=1)
 F5SV_t4 = IH('f5s4', 'Leg $7\\ \\to\\ $ hypotenuse $7\\sqrt2$', size=32, col=0)
-F5SV_t5 = IH('f5s5', 'Hypotenuse $16\\ \\to\\ $ leg $\\frac{16}{\\sqrt2}=8\\sqrt2$', size=32, col=0)
+F5SV_t5 = I('f5s5', 'Hypotenuse $16\\ \\to\\ $ leg $\\frac{16}{\\sqrt2}=8\\sqrt2$', size=32, col=0, hand='Hypotenuse 16   →   leg  {16/√{2}} = 8√{2}')
 F5SV_t6 = IH('f5s6', 'Hypotenuse $6\\sqrt2\\ \\to\\ $ leg $6$', size=32, col=0)
-F5SV_t7 = I('f5s7', "A square's diagonal $=$ side $\\cdot\\sqrt2$", size=30, col=0)
+F5SV_t7 = IH('f5s7', "A square's diagonal $=$ side $\\cdot\\sqrt{2}$", size=30, col=0)
 video('geo-027-after', 'lesson', slides=[
     S('The 45°-45°-90° Triangle',
       L("Let's continue to the silver triangle. The silver triangle is our own name, there isn't really such a name. We gave "
@@ -2959,9 +3005,10 @@ f6g31p = GEO('f6g31p', [
 f6k31a = IH('f6k31a', '$60°+y+(180°-x)=180°$', size=30)
 f6k31b = IH('f6k31b', '$y=x-60°$', size=32)
 f6k31c = IH('f6k31c', '$x=60°+y$', size=32)
-f6k31d = I('f6k31d', '$x=110°$: $\\ $(1) $70°$ ✗ $\\ $(2) $50°$ ✓\n(3) $80°$ ✗ $\\ $(4) $30°$ ✗', size=28)
+f6k31d = I('f6k31d', '$x=110°$: $\\ $(1) $70°$ ✗ $\\ $(2) $50°$ ✓', size=28, hand='x = 110° :    (1) 70° ✗     (2) 50° ✓')
+f6k31e = I('f6k31e', '(3) $80°$ ✗ $\\ $(4) $30°$ ✗', size=28, hand='(3) 80° ✗     (4) 30° ✗')
 # placement (right column, below the question text, above the choices): explicit board y
-for _it, _y in [(f6g31, 200), (f6g31x, 200), (f6g31p, 200), (f6k31a, 230), (f6k31b, 285), (f6k31c, 545), (f6k31d, 500)]:
+for _it, _y in [(f6g31, 200), (f6g31x, 200), (f6g31p, 200), (f6k31a, 230), (f6k31b, 285), (f6k31c, 545), (f6k31d, 500), (f6k31e, 556)]:
     _R(_it, _y)
 
 video('solve-geo31-g031', 'solution', qid='geo31-g031', slides=[
@@ -3005,7 +3052,8 @@ video('solve-geo31-g031', 'solution', qid='geo31-g031', slides=[
         "hundred eighty minus one hundred ten is seventy. Out. Choice number two, one hundred ten minus sixty is fifty. It "
         "stays. Choice number three, twice one hundred ten is two hundred twenty, minus one hundred forty is eighty. Out. "
         "Choice number four, one hundred forty minus one hundred ten is thirty. Out.", show(f6k31d, 'Now put one hundred ten'),
-        mk('cross', 'choice 1', 'is seventy. Out'), mk('cross', 'choice 3', 'is eighty. Out'), mk('cross', 'choice 4', 'is thirty. Out')),
+        mk('cross', 'choice 1', 'is seventy. Out'), show(f6k31e, 'Choice number three, twice'),
+        mk('cross', 'choice 3', 'is eighty. Out'), mk('cross', 'choice 4', 'is thirty. Out')),
       L("Three choices are out, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
         mk('tick', 'choice 2', 'so choice number two is our answer'))),
 ])
@@ -3397,10 +3445,10 @@ f7g37c = GEO('f7g37c', [
     ('t1', [('txt', 105, 262, 'S = 3√3 · 4 ÷ 2 = 6√3', 'ink', 26)]),
     ('t2', [('txt', 105, 302, '2 · 6√3 = 12√3', 'red', 28)]),
 ], vb='-40 -50 440 370', w=340, title='Triangles A D C and A D B, enlarged and turned')
-f7k2 = I('f7k2', '$S_{ABC}=\\frac{8\\cdot7\\sqrt3}{2}=28\\sqrt3$', size=32)
-f7k3 = I('f7k3', '$S_{DBC}=\\frac{8\\cdot4\\sqrt3}{2}=16\\sqrt3$', size=32)
-f7k4 = I('f7k4', 'or $\\ \\frac{a^2\\sqrt3}{4}=\\frac{64\\sqrt3}{4}=16\\sqrt3$', size=30)
-f7k5 = I('f7k5', '$28\\sqrt3-16\\sqrt3=12\\sqrt3$', size=32)
+f7k2 = I('f7k2', '$S_{ABC}=\\frac{8\\cdot7\\sqrt3}{2}=28\\sqrt3$', size=32, hand='S_{ABC} = {8·7√{3}/2} = 28√{3}')
+f7k3 = I('f7k3', '$S_{DBC}=\\frac{8\\cdot4\\sqrt3}{2}=16\\sqrt3$', size=32, hand='S_{DBC} = {8·4√{3}/2} = 16√{3}')
+f7k4 = I('f7k4', 'or $\\ \\frac{a^2\\sqrt3}{4}=\\frac{64\\sqrt3}{4}=16\\sqrt3$', size=30, hand='or    {a^2√{3}/4} = {64√{3}/4} = 16√{3}')
+f7k5 = I('f7k5', '$28\\sqrt3-16\\sqrt3=12\\sqrt3$', size=32, hand='28√{3} − 16√{3} = 12√{3}')
 f7s37 = I('f7s37', 'So far: $\\ BC=8,\\ \\ DE=4\\sqrt3,\\ \\ AE=7\\sqrt3$', size=26)   # V2, in the right column (a carry box would sit on the question figure)
 video('solve-geo31-g037', 'solution', qid='geo31-g037', slides=[
     SM('Method 1 · Subtract areas', 'Big minus small',
@@ -3483,10 +3531,10 @@ f7g38b = GEO('f7g38b', [
 ], vb='60 60 520 245', w=440, title='DC cut into three pieces as long as BD')
 f7m1 = I('f7m1', '$S_{ABC}=\\frac{4x\\cdot h}{2}=56$', size=32)
 f7m2 = IH('f7m2', '$x\\cdot h=28$', size=32)
-f7m3 = I('f7m3', '$S_{ADC}=\\frac{3x\\cdot h}{2}=\\frac{3\\cdot28}{2}=42$', size=30)
+f7m3 = IH('f7m3', '$S_{ADC}=\\frac{3x\\cdot h}{2}=\\frac{3\\cdot28}{2}=42$', size=30)
 f7m4 = I('f7m4', '$S_{ABD}=\\frac{x\\cdot h}{2}=\\frac{28}{2}=14$', size=30)
 f7m5 = I('f7m5', '$42-14=28$', size=30)
-f7m6 = I('f7m6', '$56\\div4=14$: $\\ 3\\cdot14=42$, $\\ 42-14=28$', size=30)
+f7m6 = IH('f7m6', '$56\\div4=14$: $\\ 3\\cdot14=42$, $\\ 42-14=28$', size=30)
 video('solve-geo31-g038', 'solution', qid='geo31-g038', slides=[
     SM('Method 1 · Algebra', 'Letters for the sides',
       L("Triangle A B C has an area of fifty-six square centimeters. Point D lies on B C, and D C is three times B D. What is "
@@ -3634,7 +3682,7 @@ f7r1 = IH('f7r1', '$b+b+(b-a)=3\\cdot3a$', size=28)
 f7r2 = IH('f7r2', '$3b-a=9a$, $\\ 3b=10a$', size=28)
 f7r3 = I('f7r3', '$\\to\\ 3:10$', size=28)
 f7r4 = I('f7r4', '(1) $a=b$: $\\ $but $a<b$ ✗', size=30)
-f7r5 = I('f7r5', '(2) $a=3,\\ b=10$: $\\ 10+10+7=27=3\\cdot9$ ✓', size=28)
+f7r5 = IH('f7r5', '(2) $a=3,\\ b=10$: $\\ 10+10+7=27=3\\cdot9$ ✓', size=28)
 video('solve-geo31-g040', 'solution', qid='geo31-g040', slides=[
     SM('Method 1 · Algebra', 'The bold line',
       L("The accompanying figure shows two equilateral triangles with side lengths a and b, where a is smaller than b. The "

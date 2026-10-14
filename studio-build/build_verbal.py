@@ -266,6 +266,13 @@ for t in sorted(MODS):
                                 'minutes': round(words / 130, 1), 'navLabel': m['title'], 'hybrid': hy}
         if m.get('guided'): D['videos'][m['id']]['questionId'] = m['qid']
 D['meta']['videos'] = len(D['videos'])
+# 2026-10-14 (Claude, minimal): topic 51 for the teacher's own reading ON CAMERA - math_patches/_t51_reading.py rebuilds
+# every topic-51 video from its spec math_patches/_ai_vis_t51.py, the same way tNN.py ai_redo_tNN() does for the math topics
+if 51 in MODS and os.path.exists(os.path.join(HERE, 'math_patches', '_t51_reading.py')):
+    import importlib.util as _iu51
+    _sp51 = _iu51.spec_from_file_location('_t51_reading', os.path.join(HERE, 'math_patches', '_t51_reading.py'))
+    _m51 = _iu51.module_from_spec(_sp51); _sp51.loader.exec_module(_m51); _m51.ai_redo_t51(MATH)
+    D['meta']['videos'] = len(D['videos'])
 
 # ---------- memory cards ----------
 PLACED = set()

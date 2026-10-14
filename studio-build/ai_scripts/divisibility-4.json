@@ -35,14 +35,17 @@
     "at": [
      "the divisor. A",
      "Write it as fifteen k plus four",
-     "three k, a"
+     "three k, a",
+     "Check it with nineteen"
     ]
    },
    {
     "say": "Now a number that leaves thirteen when divided by fifteen. Fifteen k still divides by five, but thirteen is too big to be a remainder by five. So we divide it again. Thirteen is two fives plus three, so the remainder is three. Check it with twenty-eight: twenty-eight divided by five leaves three.",
     "at": [
+     "Now a number",
      "Thirteen is two fives plus three",
-     "Check it with"
+     "Check it with twenty-eight",
+     "divided by five"
     ]
    },
    {

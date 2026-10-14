@@ -1,0 +1,101 @@
+{
+ "videoId": "solve-pt-q01",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The square root of nineteen thousand forty-four. What is it equal to?",
+    "voice": "calm",
+    "at": [
+     "The square root"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We need the number that, times itself, gives nineteen thousand forty-four. To find it exactly, I'd need a calculator, and on the exam there's no calculator. [short pause] No calculator, but I do have four answers.",
+    "at": [
+     "I do have four answers"
+    ]
+   },
+   {
+    "say": "The calculating way is to multiply each answer by itself, and see which one gives our number. But that's a long multiplication, maybe four times. That's where the shortcut comes in. We'll use the choices, with two quick checks, the last digit and the size.",
+    "at": [
+     "to multiply each"
+    ]
+   },
+   {
+    "say": "First, the last digit. Our number ends in four. So the answer, times itself, must end in four.",
+    "at": [
+     "Our number ends in four",
+     "So the answer"
+    ]
+   },
+   {
+    "say": "And to see how a square ends, we only need the last digit. Why? Take a hundred fifty-six. It's a hundred fifty plus six. Everything that comes from the hundred fifty is a whole number of tens, so it ends in zero. Only six times six reaches the units.",
+    "at": [
+     "It's a hundred fifty plus six",
+     "Everything that comes"
+    ]
+   },
+   {
+    "say": "Six times six is thirty-six, so a hundred fifty-six squared ends in six. Six is not four, so I don't need to keep calculating. Choice number two is out.",
+    "at": [
+     "Six times six is thirty-six",
+     "so a hundred",
+     "Choice number two is out"
+    ]
+   },
+   {
+    "say": "The same way, a hundred ninety-four. Four times four is sixteen, so it ends in six again. Choice number three is out too.",
+    "at": [
+     "Four times four is sixteen",
+     "so it ends",
+     "Choice number three is out"
+    ]
+   },
+   {
+    "say": "A hundred thirty-eight: eight times eight is sixty-four, which ends in four, so it fits. Two hundred twelve: two times two is four, so it fits too.",
+    "at": [
+     "A hundred thirty-eight: eight",
+     "eight is sixty-four",
+     "Two hundred twelve: two",
+     "two is four"
+    ]
+   },
+   "So the last digit ruled out two answers, and two are still left. That's its limit. It can only rule choices out. When two choices both end the right way, it can't choose between them."
+  ],
+  [
+   {
+    "say": "So we need a second shortcut, the size. Let's compare with a round number that's easy to square. How much is two hundred times two hundred? Two times two is four, and we add the four zeros. Forty thousand.",
+    "at": [
+     "So we",
+     "second shortcut, the",
+     "How much is two hundred times two hundred",
+     "times two hundred"
+    ]
+   },
+   {
+    "say": "Our number, nineteen thousand forty-four, is much less than forty thousand.",
+    "at": [
+     "Our number",
+     "is much less"
+    ]
+   },
+   {
+    "say": "And two hundred twelve is more than two hundred, so its square is even more than forty thousand. Why? When we square a bigger positive number, we get a bigger result. So two hundred twelve is far too big, and choice number four is out.",
+    "at": [
+     "And two hundred twelve",
+     "more than two",
+     "choice number four is out"
+    ]
+   },
+   {
+    "say": "Three choices are out, and one of the four must be right. So a hundred thirty-eight is the answer, and I don't even need to check it. Choice number one is our answer.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   },
+   "We solved it without calculating at all. The last digit, and then an order-of-magnitude estimate. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}

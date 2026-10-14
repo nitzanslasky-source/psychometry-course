@@ -24,7 +24,7 @@
     "say": "Now let's plug in the simplest value, x is one. One has no fives, so its count is zero. Choice number one. Five times one is five, which has one five. One squared is one, with no fives. One is not zero, so choice number one is out. Choice number two. One plus five is six, and six is two times three, no fives, so zero. On the right, zero plus one is one. Zero is not one, out. Choice number three. Five has one five, but five times zero is zero. One is not zero, out.",
     "at": [
      "plug in the simplest value",
-     "x is one",
+     "One has no",
      "number one. Five",
      "One squared is",
      "so choice number one is",
@@ -59,7 +59,7 @@
     "say": "The others don't always work. Adding five doesn't necessarily add one factor of five. Squaring doubles the count of fives, and doubling is not the same as adding one. And multiplying the count by five is not the same as adding one either. In the example of x is a hundred twenty-five, which is five cubed, with three fives, five x has four fives, but five times three is fifteen. [pause] Okay. I'll see you in the next question.",
     "at": [
      "In the example of x is a hundred twenty-five",
-     "is a hundred"
+     "is five cubed"
     ]
    }
   ]

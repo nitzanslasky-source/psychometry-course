@@ -9,13 +9,21 @@
    {
     "say": "The absolute value of a number is its distance from zero. Five is five steps away from zero, so the absolute value of five is five. Negative seven is a negative number, but its distance from zero is seven steps. So the absolute value of negative seven is seven.",
     "at": [
+     "The absolute value of a number",
      "its distance from zero",
-     "Five is five",
+     "Five is five steps",
+     "so the absolute value of five",
      "Negative seven is a negative number",
-     "So the absolute value of negative"
+     "So the absolute value of negative seven"
     ]
    },
-   "A distance is never negative. The way from my home to my friend's home isn't minus three kilometers. It's three kilometers. That's why an absolute value is always zero or positive.",
+   {
+    "say": "A distance is never negative. The way from my home to my friend's home isn't minus three kilometers. It's three kilometers. That's why an absolute value is always zero or positive.",
+    "at": [
+     "A distance is",
+     "That's why an absolute value"
+    ]
+   },
    {
     "say": "We write it with two straight bars, one on each side of the number. This is the absolute value of x.",
     "at": [
@@ -50,15 +58,24 @@
     "at": [
      "But careful with",
      "If x is negative three",
-     "So the absolute"
+     "then minus x is plus three",
+     "So the absolute value of x is three",
+     "If x is five",
+     "So with a"
     ]
    }
   ],
   [
-   "When there's a whole expression inside the bars, the bars belong to the whole expression, not to each number inside it. So we calculate the inside first, and only then take the bars.",
+   {
+    "say": "When there's a whole expression inside the bars, the bars belong to the whole expression, not to each number inside it. So we calculate the inside first, and only then take the bars.",
+    "at": [
+     "So we calculate the inside first"
+    ]
+   },
    {
     "say": "For example, the absolute value of three plus, in brackets, negative ten. Inside first: three plus negative ten is three minus ten, which is negative seven. Its absolute value is seven.",
     "at": [
+     "For example, the",
      "Inside first: three plus negative ten",
      "Its absolute value"
     ]

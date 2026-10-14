@@ -24,6 +24,12 @@
    {
     "say": "Two? Ninety-one is odd, so no. Three? Add the digits. Nine plus one is ten, and ten doesn't divide by three, so no. Five? It doesn't end in zero or five, so no. Seven? Seven times thirteen is ninety-one. So ninety-one is not prime.",
     "at": [
+     "Ninety-one is odd",
+     "Three? Add the",
+     "Nine plus one is ten",
+     "and ten doesn't",
+     "It doesn't end in zero or five",
+     "or five, so",
      "Seven times thirteen is ninety-one",
      "So ninety-one is"
     ]
@@ -31,15 +37,26 @@
    {
     "say": "Now a number that is prime, eighty-nine. Its root is less than ten too. Eighty-nine is odd. Its digit sum is seventeen, which doesn't divide by three. It doesn't end in zero or five. And seven times twelve is eighty-four, while seven times thirteen is ninety-one, so seven skips over it. None of them divides it, so eighty-nine is prime.",
     "at": [
-     "Now a number that is prime",
-     "Its root is"
+     "Its root is less than ten too",
+     "Eighty-nine is odd",
+     "Its digit sum is seventeen",
+     "which doesn't divide",
+     "It doesn't end in zero or five",
+     "And seven times twelve",
+     "eighty-four, while seven",
+     "None of them divides it",
+     "so eighty-nine is"
     ]
    },
    {
     "say": "Some numbers look prime but aren't, and the exam loves them. Fifty-one, fifty-seven and eighty-seven all divide by three, because their digit sums are six, twelve and fifteen. Ninety-one and a hundred nineteen both divide by seven.",
     "at": [
-     "Some numbers look prime",
-     "aren't, and the"
+     "Fifty-one, fifty-seven and eighty-seven",
+     "divide by three",
+     "their digit sums are",
+     "twelve and fifteen",
+     "Ninety-one and a hundred nineteen",
+     "both divide by"
     ]
    }
   ],
@@ -49,14 +66,18 @@
     "at": [
      "the same thing",
      "Twenty-eight divides by four",
-     "four is a"
+     "four is a",
+     "Forty-five divides by nine",
+     "nine is a"
     ]
    },
    {
     "say": "And a non-example. Six times four is twenty-four, and six times five is thirty, so twenty-eight doesn't divide by six. Six is not a factor of twenty-eight.",
     "at": [
-     "And a non-example",
-     "Six times four"
+     "Six times four is twenty-four",
+     "and six times",
+     "so twenty-eight doesn't divide by six",
+     "Six is not"
     ]
    },
    {
@@ -80,14 +101,18 @@
     "say": "A number divides by all its prime factors, and by every combination of them. Take twenty, which is two times two times five. It divides by two and by five, its prime factors. It also divides by four, which is two times two, by ten, which is two times five, and by twenty, which is all of them together.",
     "at": [
      "Take twenty",
-     "It divides by"
+     "It divides by",
+     "It also divides by four",
+     "which is two times two, by"
     ]
    },
    {
     "say": "One more. Eighteen is two times three times three. So it divides by two and by three, by six, which is two times three, by nine, which is three times three, and by eighteen itself. [pause] Okay. I'll see you in the next part.",
     "at": [
      "Eighteen is two times three",
-     "So it divides"
+     "times three. So",
+     "by six, which is",
+     "times three, by"
     ]
    }
   ]

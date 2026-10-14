@@ -17,6 +17,8 @@
    {
     "say": "Another example, fifty-three divided by seven. Seven sevens are forty-nine, and fifty-three minus forty-nine is four. So the remainder is four. The number we divide by, seven, is the divisor, and how many whole times it fits, here also seven, is the quotient. So fifty-three is seven times seven, plus four.",
     "at": [
+     "Seven sevens are forty-nine",
+     "fifty-three minus forty-nine",
      "The number we divide by",
      "seven, is the",
      "So fifty-three is seven times seven",
@@ -79,8 +81,6 @@
     "say": "The digit sum gives us one more gift, but only for three and nine. Five thousand four hundred thirty-two has a digit sum of five plus four plus three plus two, which is fourteen.",
     "at": [
      "us one more",
-     "only for three and nine",
-     "Five thousand four",
      "has a digit sum of five plus four",
      "plus two, which"
     ]
@@ -89,7 +89,8 @@
     "say": "Fourteen divided by nine leaves five, so five thousand four hundred thirty-two divided by nine also leaves five. And fourteen divided by three leaves two, so the big number divided by three leaves two as well.",
     "at": [
      "Fourteen divided by nine leaves five",
-     "five, so five"
+     "five, so five",
+     "leaves two as well"
     ]
    },
    {

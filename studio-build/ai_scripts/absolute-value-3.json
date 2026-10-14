@@ -9,7 +9,9 @@
    {
     "say": "Now equations. The absolute value of x equals six. Which numbers are six steps from zero? Six, and negative six. One on each side of zero.",
     "at": [
+     "The absolute value of x equals six",
      "Which numbers are six steps",
+     "Six, and negative six",
      "Six, and negative six",
      "One on each side"
     ]
@@ -42,8 +44,10 @@
    {
     "say": "There's also a picture for this. The absolute value of the whole x minus four is the distance between x and four. You'll see why in the first questions. For now, one example. The absolute value of the whole x minus four equals two means that x is two steps from four. Two steps to the right is six, and two steps to the left is two.",
     "at": [
+     "The absolute value of the whole x minus four is",
      "the distance between x and four",
      "You'll see why",
+     "minus four equals two",
      "Two steps to the right is six",
      "two steps to the left is two"
     ]
@@ -52,7 +56,8 @@
     "say": "So x is six or two. Six minus four is two, and two minus four is negative two, and both have an absolute value of two.",
     "at": [
      "So x is six or two",
-     "Six minus four"
+     "Six minus four is two",
+     "both have an absolute value"
     ]
    }
   ],
@@ -62,14 +67,20 @@
     "say": "The absolute value of x is bigger than three. Without its sign, x must be more than three. Four and five work. Negative four and negative five work too, because the bars remove the minus. And two? Its absolute value is two, which is not bigger than three, so two doesn't work.",
     "at": [
      "The absolute value of x is bigger than three",
-     "Without its sign"
+     "The absolute value of x is bigger than three",
+     "Without its sign",
+     "Four and five work",
+     "Four and five work",
+     "Negative four and negative five",
+     "Negative four and negative five",
+     "Its absolute value is two"
     ]
    },
    {
     "say": "On the number line, that's two rays going outward, one from three to the right, and one from negative three to the left. The circles are open, because three itself is not bigger than three. So bars on the big side give an open range: x is bigger than three, or x is smaller than negative three.",
     "at": [
-     "one from three to the right",
-     "one from negative three to the left",
+     "that's two rays going outward",
+     "right, and one",
      "The circles are open",
      "So bars on the big side",
      "x is bigger"
@@ -81,7 +92,12 @@
     "say": "Now the absolute value of x is smaller than three. Without its sign, x must be less than three. Two, one and zero work, and so do negative one and negative two. Negative five? No. The bars turn it into five, which is not smaller than three.",
     "at": [
      "Now the absolute value of x is smaller than three",
-     "Without its sign"
+     "Now the absolute value of x is smaller than three",
+     "Without its sign",
+     "must be less than three",
+     "Two, one and zero work",
+     "Negative five? No",
+     "The bars turn"
     ]
    },
    {
@@ -90,8 +106,7 @@
      "one band between",
      "negative three and three",
      "So bars on the small side",
-     "x is between negative three and three",
-     "It's just like"
+     "x is between"
     ]
    },
    {
@@ -99,12 +114,23 @@
     "at": [
      "The absolute value of the whole x minus two",
      "The bars are",
+     "Now add two to all three parts",
+     "Negative five plus",
      "So x is between negative three and seven"
     ]
    }
   ],
   [
-   "So bars show up in expressions, in equations and in inequalities. Inside first, then the bars, and the result is never negative. Equations split into two cases, and inequalities give a closed range or an open one. And like in almost every topic, plugging in a number works here too. [pause] Okay. I'll see you in the next video."
+   {
+    "say": "So bars show up in expressions, in equations and in inequalities. Inside first, then the bars, and the result is never negative. Equations split into two cases, and inequalities give a closed range or an open one. And like in almost every topic, plugging in a number works here too. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "Inside first, then the bars",
+     "Equations split into two cases",
+     "and inequalities give",
+     "And like in",
+     "plugging in a number works"
+    ]
+   }
   ]
  ]
 }

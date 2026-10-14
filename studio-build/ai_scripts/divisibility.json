@@ -9,7 +9,9 @@
    {
     "say": "When we say a number is divisible by two, we mean it divides by two with nothing left over. For example, five hundred thirty-eight divided by two is two hundred sixty-nine, a whole number. So five hundred thirty-eight is divisible by two.",
     "at": [
-     "number is divisible"
+     "number is divisible",
+     "five hundred thirty-eight divided by two",
+     "two is two"
     ]
    },
    {
@@ -63,7 +65,9 @@
      "Nine works exactly the same way",
      "If the digit",
      "Eight hundred forty-six. Eight plus four",
-     "Eight plus four"
+     "Eight plus four",
+     "But nine hundred forty-two",
+     "a digit sum"
     ]
    }
   ],
@@ -98,7 +102,9 @@
      "For eight, we do the same thing",
      "same thing with",
      "a thousand is a hundred twenty-five eights",
-     "So every whole"
+     "So every whole",
+     "In seven thousand two hundred forty",
+     "forty, we check"
     ]
    },
    {

@@ -1,0 +1,161 @@
+{
+ "videoId": "pt51-plug-numbers-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with two more cases, and one more rule."
+  ],
+  [
+   {
+    "say": "A third case. Sometimes there are no letters at all, but an amount is unknown, and they ask for a ratio or a part. In a ratio, the actual numbers don't matter. One to two, two to four and ten to twenty are the same ratio.",
+    "at": [
+     "there are no",
+     "One to two, two to four",
+     "four and ten"
+    ]
+   },
+   {
+    "say": "So I may choose the amount myself. For example, half of a number plus a third of the same number. What part of the number is it?",
+    "at": [
+     "half of a number plus a third",
+     "a third of"
+    ]
+   },
+   {
+    "say": "Which number? Six, because both two and three go into it. Half of six is three, and a third of six is two. Together five, out of six. So it's five sixths of the number, whatever the number is.",
+    "at": [
+     "Half of six is three",
+     "and a third",
+     "Together five",
+     "So it's five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The fourth case. An equation, but with more letters than equations, and they ask for one value. For example, four x plus six y equals eighteen. What is six x plus nine y?",
+    "at": [
+     "equation, but with",
+     "For example, four x",
+     "six y equals"
+    ]
+   },
+   "One equation with two letters has many solutions. But they ask for one number, so it must come out the same for every solution. So I may take the easiest solution.",
+   {
+    "say": "I give one letter a value, and I solve the equation for the other. x equals zero, because zero kills a whole term. Then six y equals eighteen, so y is three.",
+    "at": [
+     "I give one letter a value",
+     "value, and I",
+     "x equals zero",
+     "kills a whole"
+    ]
+   },
+   {
+    "say": "Now what they ask. Six times zero is zero, and nine times three is twenty-seven. So six x plus nine y is twenty-seven.",
+    "at": [
+     "Six times zero is zero",
+     "and nine times"
+    ]
+   },
+   "Here zero is perfect, because the answer is a number, so there's nothing to tie. And I chose only x. If I chose both letters, the equation probably wouldn't hold.",
+   {
+    "say": "And it's really true. Six x plus nine y is one and a half times four x plus six y. And one and a half times eighteen is twenty-seven.",
+    "at": [
+     "And it's really true",
+     "Six x plus"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more trick for choosing the number. In a story with letters, look for the value where nothing happens. Then you know the answer without any formula.",
+    "at": [
+     "choosing the number"
+    ]
+   },
+   {
+    "say": "For example, n friends rent a boat for P shekels and share the cost. Then k more friends join, and they share it again. By how much less does each one pay?",
+    "at": [
+     "For example, n friends",
+     "a boat for"
+    ]
+   },
+   {
+    "say": "Plug in k equals zero. Nobody joined, so nobody pays less, and the answer must be zero. So every choice that doesn't give zero when k is zero is out, with no calculation at all.",
+    "at": [
+     "Plug in k equals zero",
+     "Nobody joined, so",
+     "So every choice",
+     "give zero when"
+    ]
+   },
+   {
+    "say": "This value often leaves two choices. Then use a tie-breaker, an ordinary number like k equals one, and check only the two that are left.",
+    "at": [
+     "This value often leaves",
+     "Then use a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Last, questions about what is always true, or not always true. To show that something is not always true, one example where it fails is enough.",
+    "at": [
+     "is always true"
+    ]
+   },
+   {
+    "say": "For example, is a squared plus b squared always equal to the bracket a plus b, squared? Let a equal one and b equal two. One plus four is five, and three squared is nine. Five is not nine, so it's not always true. One counterexample, and we're done.",
+    "at": [
+     "For example, is a squared",
+     "plus b squared",
+     "Let a equal one",
+     "One plus four",
+     "One counterexample"
+    ]
+   },
+   {
+    "say": "But always is different. A few examples that work don't prove always, because the next number might fail. In a question with choices, we don't prove it. We rule out the other three choices, and the one that's left is the answer.",
+    "at": [
+     "But always is different",
+     "A few examples"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So, when do I plug in numbers? When there's an expression with a letter and the choices are numbers. When there are letters in the choices. When the amount doesn't matter, like in a ratio. And when there are more letters than equations.",
+    "at": [
+     "when do I plug in numbers",
+     "When there's an",
+     "When the amount",
+     "like in a"
+    ]
+   },
+   {
+    "say": "And how? Say which number and why, before you use it. Check that the choices come out different, so when the choices have letters, skip zero and one, because they often make choices tie.",
+    "at": [
+     "Say which number and why",
+     "before you use",
+     "Check that the choices",
+     "out different, so"
+    ]
+   },
+   {
+    "say": "Give different letters different numbers. Rule out three choices, and if two are left, use a tie-breaker number. And remember, it's your safety net.",
+    "at": [
+     "Give different letters",
+     "Rule out three choices",
+     "if two are",
+     "it's your safety net"
+    ]
+   },
+   {
+    "say": "It's the most important technique on the exam, so practice it a lot. Now let's see it in sample questions. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "It's the most"
+    ]
+   }
+  ]
+ ]
+}

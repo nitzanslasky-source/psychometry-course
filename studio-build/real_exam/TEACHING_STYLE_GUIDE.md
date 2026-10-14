@@ -899,6 +899,24 @@ The toolkit:
 
 Checks: render every step of every slide (not only the final state; `t30/frames.py`) and LOOK at the frames before calling a lesson ready. The review file says which technique each step uses, so she can check.
 
+### Written working at the spoken clause — Rule V4 (teacher, 2026-10-14: Codex's camera-lesson review is the standard)
+
+Source: Codex's review of the six recorded camera lessons (absolute-value 1-3, primes 1-3; …/Codex/2026-10-11/…/work/camera-visual-review-2026-10-14/), ported into `_ai_vis_t13.py` / `_ai_vis_t14.py` on 2026-10-14. A student must be able to follow the mathematics on the board without rebuilding expressions from speech.
+
+**Rule V4. Every piece of mathematics she says is written on the board at the clause where she says it, and stays there.**
+1. **The starting statement first.** The expression, equation or inequality being discussed is written the moment it is mentioned ("The absolute value of x is bigger than three" -> `|x| > 3` at those words), before any picture, example or answer.
+2. **One step per clause.** Each substitution, sign change and intermediate calculation is its own board line (or chunk), shown at its own clause: `x = −3`, then `−x = −(−3) = 3`, then `|x| = 3 = −x`; `−5 + 2 < x − 2 + 2 < 5 + 2` before `−3 < x < 7`.
+3. **Completed work stays.** A line is not replaced or cleared while the explanation still leans on it (clearing a slide: V2 carry-over box).
+4. **No early answers.** A final answer or result line appears only when she reaches it, even if an earlier sentence mentions the same number.
+5. **Pictures support, they don't replace.** A number line, tree or figure never stands in for the starting mathematical statement; both are on the board.
+6. **No compressed captions.** A caption that packs several worked steps or several results into one line is split into individually timed lines (e.g. `|ab| = |a||b|` and `|a/b| = |a|/|b|, b ≠ 0` as two cues; `180 = 10·18`, `10 = 2·5`, `18 = 2·3·3` as three).
+7. **Ad-libs are written too.** In a recorded take, a calculation she adds in her own words (e.g. "fourteen is fourteen times one", "two squared is four, three squared is nine") gets its written working at those words (anchor on the nearest script words, or `reading_to_video` auto lines for simple `a op b = c` calculations).
+8. **Camera lessons: the face bubble never covers math.** The bubble is top right (board x ≥ 1344, y ≤ 256): any item that starts above y = 262 must end left of x ≈ 1330 (use `w` ≤ 850 at x = 410, or move it below the bubble).
+9. **Visual cues lead slightly.** Board events (appear, write, highlight, mark) fire about 250 ms before the anchored word (`studio_autonarrate.py` AN_VISUAL_LEAD; audio, slide changes and speed unchanged). A cue that is late by seconds needs a re-anchored phrase, not a bigger lead.
+10. **Endpoint wording.** Captions say inside / outside (or show the inequality) for the solution region, never "open / closed" in that sense; strict `<` / `>` means the endpoint circles are open (not included), `≤` / `≥` filled, and the caption says so ("endpoints −3 and 3 not included").
+
+Anchors are always script phrases of the line where she says the words (never time offsets): a recorded take's times change with every re-read and edit.
+
 ### Camera lessons in parts (teacher, 2026-10-14)
 
 **Rule.** A topic's camera first lesson is split into parts of about 3-4 minutes (2.5-4.5) at idea boundaries, so she can record each part in one or two takes (on camera, cuts are visible). A lesson under about 4.5 minutes stays one part. Write the lesson as ONE spec and split it with `math_patches/_camera_parts.py` (`CP.split(globals(), id, title, [(1, None), (slide, opening line), ...])` right before the visual passes, and `CP.add_to_course(M, S, topic)` at the start of the tNN.py redo hook). Part 1 keeps the lesson id, part k is `<id>-k`, titles "<Title> (Part k of n)". Each part: its own title slide; a later part opens with one short natural line (no recap of the previous part); every part but the last ends with "Okay. I'll see you in the next part."; a new board (a "So far" box only if the part really needs an earlier result). Content, examples and visuals are not changed by the split. Concept maps name the part ("camera lesson, part 2"). Applies to topics 21+ and topic 51 from the first draft.

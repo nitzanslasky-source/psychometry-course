@@ -41,6 +41,8 @@
    {
     "say": "But careful, the two parts must share no factor. Why not split twelve as two times six? Look at eighteen. Eighteen divides by two and by six, but eighteen is not divisible by twelve. Two and six share a two, so this check doesn't work. Three and four share nothing, so for twelve we use three times four.",
     "at": [
+     "the two parts must share no factor",
+     "Why not split",
      "Look at eighteen",
      "Eighteen divides by"
     ]

@@ -1,0 +1,107 @@
+{
+ "videoId": "solve-pt-q04-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with this question, now with an estimate."
+  ],
+  [
+   {
+    "say": "[pause] Now the psychometric way, our third super-method, order-of-magnitude estimation. We used it already in the question with the root, when two hundred squared was forty thousand. Here we don't calculate the exact volume. We only ask how big it can be.",
+    "at": [
+     "Now the psychometric way",
+     "third super-method, order-of-magnitude",
+     "the question with",
+     "Here we don't"
+    ]
+   },
+   {
+    "say": "The volume of a cube is its edge, times itself three times. Three a times three a times three a. Three times three times three is twenty-seven, so the cube is twenty-seven a cubed.",
+    "at": [
+     "Three times three times three",
+     "is twenty-seven, so"
+    ]
+   },
+   {
+    "say": "The cylinder is inside the cube, so its volume must be less than the cube's. How much less? We don't know, and we don't need to. A part can't be bigger than the whole.",
+    "at": [
+     "The cylinder is inside the cube",
+     "cube, so its"
+    ]
+   },
+   {
+    "say": "Every choice has a cubed with pi in front. Pi is a little more than three, and for an estimate, three is enough.",
+    "at": [
+     "three is enough"
+    ]
+   },
+   {
+    "say": "Choice number one. Twenty-seven times three is eighty-one, and over two, that's forty and a half. That's more than twenty-seven, so the cylinder would be bigger than the cube. That makes no sense, so choice number one is out.",
+    "at": [
+     "number one. Twenty-seven",
+     "Twenty-seven times three is eighty-one",
+     "and over two",
+     "so choice number one is out"
+    ]
+   },
+   {
+    "say": "Choice number two. Twenty-seven times three is eighty-one, three times the cube. Choice number two is out.",
+    "at": [
+     "Choice number two. Twenty",
+     "number two. Twenty-seven",
+     "Twenty-seven times three",
+     "Choice number two is out"
+    ]
+   },
+   {
+    "say": "Choice number three. Thirty-six times three is a hundred eight, four times the cube. Choice number three is out too.",
+    "at": [
+     "number three. Thirty-six",
+     "Thirty-six times three",
+     "hundred eight, four",
+     "Choice number three is out"
+    ]
+   },
+   {
+    "say": "Three choices make no sense, so we can mark choice number four.",
+    "at": [
+     "so we can mark choice number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "By the way, choice number four with pi as three is eighty-one over four, a bit more than twenty. That's about three quarters of twenty-seven, and that makes sense for a cylinder inside a cube.",
+    "at": [
+     "By the way, choice number four",
+     "number four with",
+     "three is eighty-one"
+    ]
+   },
+   "Look at the choices they gave. Not three quarters, two thirds and four fifths of the cube, which would be hard to tell apart. They gave three choices that are each bigger than the whole cube. That's the exam's way of giving an advantage to whoever thinks. If you calculate the long way, it takes time, and you might slip. If you estimate, the choices help you.",
+   {
+    "say": "So when do I estimate? When the choices are far apart in size, and you can compare the answer with something you know, like the whole shape around it. Replace pi with three, and rule out what's too big or too small.",
+    "at": [
+     "So when do I estimate",
+     "When the choices"
+    ]
+   },
+   {
+    "say": "One more example. A circle is inside a square with side ten, and it touches all four sides. What's the area of the circle, if the choices are twenty-five pi, fifty pi, a hundred pi, and two hundred pi?",
+    "at": [
+     "One more example",
+     "A circle is"
+    ]
+   },
+   {
+    "say": "The square's area is ten times ten, a hundred, so the circle is less than a hundred. With pi as three, twenty-five pi is seventy-five, and fifty pi is a hundred fifty. The other two are even bigger. Only twenty-five pi fits. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "The square's area",
+     "times ten, a",
+     "With pi as three",
+     "pi is seventy-five"
+    ]
+   }
+  ]
+ ]
+}

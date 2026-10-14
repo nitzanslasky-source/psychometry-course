@@ -1,0 +1,95 @@
+{
+ "videoId": "solve-pt-q01-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with two more examples of these shortcuts."
+  ],
+  [
+   {
+    "say": "Let's see each shortcut once more, on a new example. First the last digit. Twenty-three times forty-seven. The choices are one thousand seventy-nine, one thousand eighty-one, one thousand eighty-four, and one thousand eighty-six.",
+    "at": [
+     "once more, on",
+     "Twenty-three times forty-seven",
+     "The choices are",
+     "seventy-nine, one thousand"
+    ]
+   },
+   {
+    "say": "They're all close in size, so the size won't help here. But they all end in different digits. So we look only at the last digits. Three times seven is twenty-one, so the result ends in one.",
+    "at": [
+     "Three times seven",
+     "so the result"
+    ]
+   },
+   {
+    "say": "Only one thousand eighty-one ends in one, so that's the answer, with no long multiplication.",
+    "at": [
+     "Only one thousand eighty-one",
+     "in one, so"
+    ]
+   },
+   {
+    "say": "So when do I use the last digit? When the question is a calculation with whole numbers, like a product, a square, or a square root, and the choices end in different digits. Then one small multiplication can rule out choices.",
+    "at": [
+     "So when do I use the last digit",
+     "the last digit",
+     "the question is",
+     "product, a square"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the size. The square root of one thousand eight hundred forty-nine. The choices are thirty-three, forty-three, fifty-three, and sixty-three.",
+    "at": [
+     "The square root of one thousand",
+     "thousand eight hundred",
+     "The choices are",
+     "fifty-three, and sixty-three"
+    ]
+   },
+   {
+    "say": "Let's try the last digit first. Three times three is nine, and our number ends in nine. But all four choices end in three, so they all fit, and the last digit can't help at all.",
+    "at": [
+     "Three times three is nine",
+     "and our number"
+    ]
+   },
+   {
+    "say": "So we use the size. Forty squared is one thousand six hundred, and fifty squared is two thousand five hundred.",
+    "at": [
+     "So we use the size",
+     "Forty squared",
+     "six hundred, and"
+    ]
+   },
+   {
+    "say": "Our number is between them, so its root is between forty and fifty. And the only choice between forty and fifty is forty-three. The others are out.",
+    "at": [
+     "Our number is between them",
+     "so its root",
+     "the only choice between",
+     "and fifty is",
+     "The others are out"
+    ]
+   },
+   {
+    "say": "So when do I use the size? When the choices are far apart from each other. Then compare with a round number you can square or multiply in your head, like forty, fifty, or two hundred.",
+    "at": [
+     "So when do I use the size",
+     "When the choices"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So what did we learn from this question? First, on the exam, the answers are part of the question. Without them, this is a calculator question. With them, the answers help us solve it.",
+    "at": [
+     "learn from this"
+    ]
+   },
+   "Second, thinking versus calculating. You can always calculate the way we know from school. But often there's a shortcut, and it gets you to the answer faster. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

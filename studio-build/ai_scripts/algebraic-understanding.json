@@ -9,11 +9,18 @@
    {
     "say": "Sometimes the solution is algebra, sometimes it's understanding what the givens really say, and sometimes it's one of the tools from psychometric thinking, plugging in numbers or testing the answers. To be honest, it's a fairly small part of the exam, and the questions don't repeat themselves. There's no single rule I can give you that solves them all.",
     "at": [
-     "Sometimes the solution is algebra",
-     "sometimes it's understanding"
+     "algebra, sometimes it's"
     ]
    },
-   "But the questions in this topic, and the practice after them, give you tools that open your head for questions like these. Three tools open almost all of them. Plug in numbers, test the answers, and use algebra and understanding. Try numbers first, because they're fast and safe, and use algebra when the numbers don't decide."
+   {
+    "say": "But the questions in this topic, and the practice after them, give you tools that open your head for questions like these. Three tools open almost all of them. Plug in numbers, test the answers, and use algebra and understanding. Try numbers first, because they're fast and safe, and use algebra when the numbers don't decide.",
+    "at": [
+     "Plug in numbers, test",
+     "test the answers, and",
+     "and use algebra and understanding",
+     "Try numbers first"
+    ]
+   }
   ],
   [
    {
@@ -24,12 +31,20 @@
      "Three squared is"
     ]
    },
-   "But positive numbers can also be between zero and one. Try a is one third. One third squared is one ninth, and one ninth is smaller than one third. So a squared is not always bigger than a. One allowed number where it fails is enough to say not always.",
+   {
+    "say": "But positive numbers can also be between zero and one. Try a is one third. One third squared is one ninth, and one ninth is smaller than one third. So a squared is not always bigger than a. One allowed number where it fails is enough to say not always.",
+    "at": [
+     "Try a is one third",
+     "One third squared"
+    ]
+   },
    {
     "say": "And use only numbers that the givens allow. If the question said a is negative, three and one third would not be allowed at all. Then we'd try a negative number, like negative two. Negative two squared is four, and four is bigger than negative two.",
     "at": [
      "use only numbers that the givens allow",
-     "If the question"
+     "If the question",
+     "Negative two squared is four",
+     "and four is"
     ]
    }
   ],
@@ -37,9 +52,12 @@
    {
     "say": "The second tool, testing the answers. Say x squared minus x is six, and the choices are two, three, four and six. We don't have to solve anything. We put each choice into the question. Two squared minus two is four minus two, which is two, not six. Three squared minus three is nine minus three, which is six. So three works.",
     "at": [
-     "the answers. Say",
+     "Say x squared minus x is six",
+     "is six, and",
      "Two squared minus two",
-     "four minus two"
+     "four minus two",
+     "Three squared minus three",
+     "nine minus three"
     ]
    }
   ],
@@ -47,14 +65,17 @@
    {
     "say": "The third tool, algebra and understanding. Say a plus b is ten, a minus b is four, and they ask for a squared minus b squared. We don't need to find a and b. a squared minus b squared is the bracket a plus b, times the bracket a minus b. That's ten times four, which is forty.",
     "at": [
-     "and understanding. Say",
-     "We don't need to find a and b",
-     "a and b"
+     "Say a plus b is ten",
+     "ten, a minus",
+     "a squared minus b squared is the bracket",
+     "is the bracket",
+     "That's ten times four"
     ]
    },
    {
     "say": "Understanding also means reading what a given really says. If n is an integer and n is smaller than five, then n is at most four, because there's no integer between four and five. Gaps like this will help us find the biggest or smallest possible value.",
     "at": [
+     "Understanding also means",
      "If n is an integer",
      "and n is"
     ]

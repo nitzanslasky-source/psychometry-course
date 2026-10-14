@@ -26,7 +26,10 @@ def is_part(base, vid):
 
 def split(ns, base, title, parts):
     V = ns['VIDEOS'][base]
-    assert V['kind'] == 'lesson' and parts[0] == (1, None), (base, 'a lesson, split after its title slide')
+    # 2026-10-14 topic 51 (every video on camera): a long QUESTION video can be split too - its parts keep the question on
+    # every slide (kind 'solution'), part 1 starts at slide 0 (the question reading): parts = [(0, None), (k, opening), ...]
+    sol = V['kind'] == 'solution'
+    assert parts[0] == ((0, None) if sol else (1, None)), (base, 'a lesson splits after its title slide, a question at its start')
     slides = V['slides']; n = len(parts)
     starts = [p[0] for p in parts] + [len(slides)]
     assert starts == sorted(starts) and starts[-2] < len(slides), (base, starts)
@@ -36,7 +39,9 @@ def split(ns, base, title, parts):
     for k in range(n):
         ttl = '%s (Part %d of %d)' % (title, k + 1, n)
         body = slides[starts[k]:starts[k + 1]]
-        if k == 0:
+        if sol:
+            head = None if k == 0 else ns['S'](ttl, ns['L'](parts[k][1]))
+        elif k == 0:
             head = dict(slides[0]); head['title'] = ttl; head['sb'] = ttl
         else:
             head = ns['S'](ttl, ns['L'](parts[k][1]))
@@ -44,7 +49,7 @@ def split(ns, base, title, parts):
             last = body[-1]['lines'][-1]
             assert "see you" not in last['say'], (base, 'part %d already ends with a closing' % (k + 1))
             last['say'] = last['say'].rstrip() + CLOSE
-        nv = dict(V); nv['slides'] = [head] + list(body); nv['title'] = ttl
+        nv = dict(V); nv['slides'] = ([head] if head else []) + list(body); nv['title'] = ttl
         ns['VIDEOS'][ids[k]] = nv
         if k: order.insert(i + k, ids[k])
         titles[ids[k]] = ttl
@@ -61,7 +66,9 @@ def add_to_course(M, S, topic):
             title = S.PART_TITLES[vid]
             if vid not in M.D['videos']:
                 beats, sb = S.studio_slides(vid)
-                M.new_video(vid, topic, title, sb, beats, sec, after=prev)
+                V = S.VIDEOS[vid]       # 2026-10-14: a question video's parts stay question videos (topic 51)
+                M.new_video(vid, topic, title, sb, beats, sec, after=prev,
+                            **({'kind': 'solution', 'qid': V['qid']} if V['kind'] == 'solution' else {}))
             v = M.video(vid); v['title'] = title; v['navLabel'] = title
             v.setdefault('hybrid', {})['title'] = title
             prev = vid

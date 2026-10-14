@@ -176,6 +176,52 @@ def _layout(vid):
     return names, per
 
 
+# 2026-10-14 Rule V4.8 (camera lessons: the face bubble never covers math). Her bubble is composited top right (board
+# x >= 1344, y <= 256). In the camera lesson and its parts: a right-column stack that would start above y 262 moves down
+# as a whole (its own order and spacing kept), and a left-column item is at most 920 wide (ends left of x 1330; a figure
+# and its layers are scaled down together, text wraps). Other videos are unchanged.
+CAM_BASE = 'geo-042'
+CAM_W, CAM_Y = 920, 280
+
+
+def _cam_width(d, hand=None):
+    """the drawn width of a board item, roughly (a figure: its box; a hand-written line: its pen strokes at the
+    hand-written size, 1.2x; text: ~half the size per visible character)"""
+    if d['k'] == 'vis': return d.get('w') or 540
+    if hand:
+        import studio_handwrite as _HW
+        return min(d.get('w') or 1130, _HW.write(hand)['w'] * round(d.get('size', 36) * 1.2) / 100.0)
+    t = re.sub(r'\\(quad|qquad)', '    ', d.get('t') or ''); t = re.sub(r'\\frac\{([^}]*)\}\{([^}]*)\}', r'\1', t)
+    t = re.sub(r'\\[a-zA-Z]+', 'x', t)
+    for ch in '${}\\': t = t.replace(ch, '')
+    return min(d.get('w') or 1130, len(t) * d.get('size', 36) * (0.6 if d['k'] == 'hw' else 0.5))
+_layout_plain = _layout
+
+
+def _layout(vid):
+    names, per = _layout_plain(vid)
+    if not re.fullmatch(re.escape(CAM_BASE) + r'(-\d+)?', vid) or VIDEOS[vid]['kind'] != 'lesson': return names, per
+    for sl in per:
+        right = [d for it, d in sl if d.get('x') == 1010 and d.get('y') is not None]
+        if any(d.get('x') == 1010 and d.get('y') is not None and d['y'] < CAM_Y - 18 and not d.get('over')
+               and 1010 + _cam_width(d, it.get('_hand')) > 1335 for it, d in sl):
+            top, yl = CAM_Y, 78                    # ... and below a left-column figure that reaches under the right column
+            for it2, d2 in sl:
+                if d2.get('x') is not None or d2.get('y') is not None or d2.get('over'): continue
+                h2 = d2['h'] if d2['k'] == 'vis' else d2.get('size', 36) * 1.55 * (1.2 if it2.get('_hand') else 1)
+                if d2['k'] == 'vis' and 410 + (d2.get('w') or 0) > 1000: top = max(top, int(yl + h2 + 16))
+                yl += h2 + 16
+            dy = top - min(d['y'] for d in right)
+            for d in right: d['y'] += dy
+        for it, d in sl:
+            if d.get('x') is not None or d.get('y') is not None: continue
+            if d['k'] == 'vis' and d.get('w', 0) > CAM_W:
+                d['h'] = int(round(d['h'] * CAM_W / d['w'])); d['w'] = CAM_W
+            elif d['k'] in ('t', 'hw') and (d.get('w') or 1130) > CAM_W:
+                d['w'] = CAM_W
+    return names, per
+
+
 def _target(vid, names, si, t):
     if t in ('stem',) or re.fullmatch(r'stem: (g\d|given|ask)', t) or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
     nm, _, part = t.partition(':')
@@ -978,7 +1024,7 @@ f2_sq3 = f2_pin(GEO('f2sq3', [
     ('halfsq', [('tint', [(210, 60), (210, 300), (450, 300)], 'orange'), ('right', 210, 300, 0, 90, 18, 'orange')]),
 ], vb='150 20 360 320', w=560, col=0, title='Silver triangles in a square'))
 f2_k43b = I('f2k43b', 'Side $s$ $\\to$ diagonal $s\\sqrt2$', size=30, col=1)
-f2_k43c = I('f2k43c', '$5\\to5\\sqrt2 \\qquad 7\\to7\\sqrt2$', size=30, col=1)
+f2_k43c = IH('f2k43c', '$5\\to5\\sqrt{2} \\qquad 7\\to7\\sqrt{2}$', size=30, col=1)
 f2_sq4 = f2_pin(GEO('f2sq4', [
     ('line', f2_poly([(150, 40), (150, 310), (420, 310), (420, 40)])),
     ('grid', f2_grid(150, 40, 6, 6, 45)),
@@ -1692,12 +1738,12 @@ f3r4 = GEO('f3r4', [
            ('txt', 380, 200, 'd₂/2', 'teal', 22)]),
 ], vb='140 -15 360 370', w=520, col=0, title='One of the four right triangles')
 for _g in (f3r1, f3r2, f3r3, f3r4): f3_pin(_g)
-f3r_t1 = I('f3r_t1', 'Side $7$: $\\ P=4\\cdot7=28$', size=30, col=1)
+f3r_t1 = IH('f3r_t1', 'Side $7$: $\\ P=4\\cdot7=28$', size=30, col=1)
 f3r_t2 = I('f3r_t2', '$60°$ and $60°$, $\\ 120°$ and $120°$', size=30, col=1)
 f3r_t3 = I('f3r_t3', 'Equal diagonals $\\to$ a square', size=30, col=1)
 f3r_t4 = I('f3r_t4', '$S=\\frac{d_1\\cdot d_2}{2}$', size=36, col=1)
 f3r_t5 = I('f3r_t5', '$10$ and $6$: $\\ \\frac{10\\cdot6}{2}=30$', size=30, col=1)
-f3r_t6 = I('f3r_t6', '$8$ and $12$: $\\ \\frac{8\\cdot12}{2}=48$', size=30, col=1)
+f3r_t6 = IH('f3r_t6', '$8$ and $12$: $\\ \\frac{8\\cdot12}{2}=48$', size=30, col=1)
 f3r_t7 = I('f3r_t7', 'Symmetric: right $=$ left, top $=$ bottom', size=28, col=1)
 
 video('geo-050', 'lesson', slides=[
@@ -3529,8 +3575,8 @@ f8g71b = f8_pin(GEO('f8g71b', [
     ('x', [('arc', *f8E, 26, f8_aED, 180, 'red', '50°', 48)]),
 ], vb='130 30 410 300', w=360, title='The same figure with alpha = 110 and beta = 80'))
 f8p0 = I('f8p0', '$\\frac\\alpha2=55,\\ \\ \\frac\\beta2=40$, $\\ $we need $\\ 50$', size=28)
-f8p3 = I('f8p3', '(1) $65+55-40=80$ ✗', size=28)
-f8p6 = I('f8p6', '(2) $130+55-40=145$ ✗', size=28)
+f8p3 = IH('f8p3', '(1) $65+55-40=80$ ✗', size=28)
+f8p6 = IH('f8p6', '(2) $130+55-40=145$ ✗', size=28)
 f8p4 = I('f8p4', '(3) $65-55+40=50$ ✓', size=28)
 f8p5 = I('f8p5', '(4) $130-55+40=115$ ✗', size=28)
 video('solve-geo32-g071', 'solution', qid='geo32-g071', slides=[
@@ -3578,7 +3624,7 @@ video('solve-geo32-g071', 'solution', qid='geo32-g071', slides=[
     SM('Method 2 · Plugging in numbers', 'Check the choices',
       L("Now we put alpha a hundred ten and beta eighty into each choice. Half alpha is fifty-five, and half beta is forty. "
         "Choice number one: sixty-five plus fifty-five minus forty is eighty. Not fifty, out. Choice number two: a hundred "
-        "thirty plus fifty-five minus forty is a hundred forty-five. Out.", show(f8p0, 'Now we put alpha'), show(f8p3, 'Choice number one'), show(f8p6, 'Choice number two'),
+        "thirty plus fifty-five minus forty is a hundred forty-five. Out.", show(f8p0, 'Half alpha is fifty-five'), show(f8p3, 'Choice number one'), show(f8p6, 'Choice number two'),
         mk('cross', 'choice 1', 'Not fifty, out'), mk('cross', 'choice 2', 'is a hundred forty-five. Out')),
       L("Choice number three: sixty-five minus fifty-five plus forty is fifty. It matches. But one match isn't enough to be "
         "sure: to mark it, we cross out the other choices too. That's the drawback of plugging in. If you're out of time, "
@@ -3617,8 +3663,8 @@ f8g72 = f8_pin(GEO('f8g72', [
 f8r2 = I('f8r2', '$P=2(4x+6x)=20x=40\\ \\Rightarrow\\ x=2$', size=25)
 f8r2b = I('f8r2b', '$4x=8,\\ \\ 6x=12$', size=30)
 f8r3 = I('f8r3', '$S=4x\\cdot6x=8\\cdot12=96$', size=30)
-f8r4 = I('f8r4', 'sides $4x:6x=2:3$, $\\ $half the perimeter $20$', size=26)
-f8r5 = I('f8r5', '$20\\div5=4$: $\\ 2\\cdot4=8,\\ \\ 3\\cdot4=12$', size=28)
+f8r4 = IH('f8r4', 'sides $4x:6x=2:3$, $\\ $half the perimeter $20$', size=26)
+f8r5 = IH('f8r5', '$20\\div5=4$: $\\ 2\\cdot4=8,\\ \\ 3\\cdot4=12$', size=28)
 video('solve-geo32-g072', 'solution', qid='geo32-g072', slides=[
     SM('Method 1 · The hidden ratio', 'The hidden ratio',
       L("Rectangle A B C D consists of six congruent rectangles, arranged as in the accompanying figure. The perimeter of A B "
@@ -3670,7 +3716,7 @@ f8cut = f8_pin(GEO('f8cut', [
 ], vb='90 20 470 300', w=600, col=0, title='A 10 by 6 rectangle cut into two'))
 f8c1 = I('f8c1', '$P_1+P_2=20+24=44$', size=30)
 f8c2 = I('f8c2', '$44=32+2\\cdot6$', size=30)
-f8c3 = I('f8c3', 'Cut across: $\\ 24+28=52=32+2\\cdot10$', size=28)
+f8c3 = IH('f8c3', 'Cut across: $\\ 24+28=52=32+2\\cdot10$', size=28)
 f8c4 = I('f8c4', 'Pieces $=$ original $+\\ 2\\times$ each cut', size=28)
 f8ny = f8Y0 + 2 * f8u; f8n1x, f8n2x = f8X0 + 4 * f8u, f8X0 + 7 * f8u
 f8notch = f8_pin(GEO('f8notch', [
@@ -3774,7 +3820,7 @@ f8g07 = f8_pin(GEO('f8g07', [
              ('txt', 405, 125, 'a² + b² = 169', 'orange', 26)]),
 ], vb='100 50 440 270', w=380, title='Rectangle ABCD with the diagonal AC'))
 f8e1 = I('f8e1', '$a+b=17\\qquad a^2+b^2=169$', size=30)
-f8e2 = I('f8e2', '$(a+b)^2=a^2+2ab+b^2$', size=30)
+f8e2 = IH('f8e2', '$(a+b)^2=a^2+2ab+b^2$', size=30)
 f8e3 = I('f8e3', '$289=169+2ab\\ \\Rightarrow\\ 2ab=120,\\ \\ ab=60$', size=25)
 f8g07b = f8_pin(GEO('f8g07b', [
     ('line', f8_07base),

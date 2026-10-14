@@ -19,14 +19,18 @@
      "for a product",
      "whole product, or",
      "The absolute value of the whole product",
-     "five, is the"
+     "five, is the",
+     "And the absolute value of negative four",
+     "value of five"
     ]
    },
    {
     "say": "The same works for a fraction: bars on the top, and bars on the bottom. Negative twelve over three is negative four, and its absolute value is four. Twelve over three is also four.",
     "at": [
+     "The same works for a fraction",
+     "bars on the bottom",
      "Negative twelve over three",
-     "Twelve over three is also"
+     "Twelve over three is also four"
     ]
    },
    {
@@ -42,17 +46,26 @@
     "say": "When a and b have the same sign, the two sides are equal. Negative three plus negative four is negative seven, and its absolute value is seven. Separately, three plus four is also seven.",
     "at": [
      "Negative three plus negative four",
-     "Separately, three plus"
+     "Separately, three plus four",
+     "also seven"
     ]
    },
    {
     "say": "When they have different signs, the left side is smaller. Negative three plus four is one. Separately, three plus four is seven. One is smaller than seven.",
     "at": [
+     "When they have",
      "Negative three plus four is one",
-     "Separately, three plus"
+     "Separately, three plus",
+     "One is smaller than seven"
     ]
    },
-   "Why? Taking each one separately makes both of them positive, so their sum is as big as it can be. When one of them is negative inside the bars, it eats part of the other one. So same signs, equal. Different signs, smaller."
+   {
+    "say": "Why? Taking each one separately makes both of them positive, so their sum is as big as it can be. When one of them is negative inside the bars, it eats part of the other one. So same signs, equal. Different signs, smaller.",
+    "at": [
+     "Taking each one",
+     "it eats part of the other one"
+    ]
+   }
   ],
   [
    {

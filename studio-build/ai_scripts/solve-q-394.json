@@ -1,176 +1,176 @@
 {
-  "videoId": "solve-q-394",
-  "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "p, q, r and s are prime numbers, and p is smaller than q, which is smaller than r, which is smaller than s. Given: z is equal to p to the power of s, times q to the power of r. Which of the following necessarily divides z?",
-        "voice": "calm",
-        "at": [
-          "p, q, r"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "A hard one, all letters. But underneath, it's a factor question. What is z built from? [short pause] We'll solve it two ways, understanding with the letters, and then the same idea with numbers.",
-        "at": [
-          "letters. But underneath",
-          "What is z built from",
-          "We'll solve it",
-          "understanding with the",
-          "then the same"
-        ]
-      },
-      {
-        "say": "[short pause] z is p to the power of s, times q to the power of r. So z contains the prime p, s times, and the prime q, r times. And nothing else.",
-        "at": [
-          "z is",
-          "power of s",
-          "to the power of r",
-          "So z contains the prime p",
-          "prime q, r"
-        ]
-      },
-      {
-        "say": "Now careful, a lot of students see r and s in z, and think they're factors of z. They're not. They're only exponents, they count how many times p and q appear. The primes r and s themselves aren't inside z at all.",
-        "at": [
-          "see r and s in z",
-          "z, and think",
-          "of z. They're",
-          "They're only exponents",
-          "how many times",
-          "The primes r",
-          "themselves aren't inside"
-        ]
-      },
-      {
-        "say": "And remember the check. A power of a prime divides z only if z has that prime at least as many times.",
-        "at": [
-          "remember the check",
-          "A power of",
-          "divides z only",
-          "has that prime",
-          "as many times"
-        ]
-      },
-      {
-        "say": "Choice number one, r. r isn't a factor of z, so it's out. Choice number four, s to the power of q. There's no s in z at all. Out.",
-        "at": [
-          "number one, r",
-          "a factor of",
-          "so it's out",
-          "number four, s",
-          "power of q",
-          "no s in z",
-          "at all. Out"
-        ]
-      },
-      {
-        "say": "Choice number three, q to the power of s. It needs s copies of q. z has q only r times, and r is smaller than s. Not enough q's, out.",
-        "at": [
-          "number three, q",
-          "power of s",
-          "It needs s copies",
-          "times, and r",
-          "Not enough q's"
-        ]
-      },
-      {
-        "say": "Three are out, so in the exam you'd circle choice number two. Here, let's see why it works. p to the power of r needs r copies of p. z has s of them, and r is smaller than s, so there are enough. q to the power of q needs q copies of q. z has r of them, and q is smaller than r, so enough again. So choice number two is our answer.",
-        "at": [
-          "in the exam",
-          "number two. Here",
-          "Here, let's see",
-          "p to the power of r",
-          "z has s",
-          "and r is",
-          "s, so there",
-          "q to the",
-          "q needs q",
-          "z has r",
-          "and q is",
-          "r, so enough",
-          "So choice number two is our answer"
-        ]
-      }
+ "videoId": "solve-q-394",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "p, q, r and s are prime numbers, and p is smaller than q, which is smaller than r, which is smaller than s. Given: z is equal to p to the power of s, times q to the power of r. Which of the following necessarily divides z?",
+    "voice": "calm",
+    "at": [
+     "p, q, r"
     ],
-    [
-      {
-        "say": "[pause] Now let's do the same with numbers, by plugging them in. When the primes are letters, plug in the smallest primes, in the right order. Why the smallest? Any primes in that order fit the givens, and small ones are the easiest to work with. So p is two, q is three, r is five, and s is seven.",
-        "at": [
-          "Now let's",
-          "with numbers, by",
-          "in. When the",
-          "letters, plug in",
-          "in the right order",
-          "the smallest? Any",
-          "that order fit",
-          "the givens, and",
-          "are the easiest",
-          "So p is two",
-          "and s is"
-        ]
-      },
-      {
-        "say": "Then z is two to the power of seven, times three to the power of five. That means seven factors of two and five factors of three. We can check which factors each choice needs without calculating the full value of z.",
-        "at": [
-          "Then z is two",
-          "the power of",
-          "three to the",
-          "seven factors of"
-        ]
-      },
-      {
-        "say": "Choice number one, r is five. z is built only from twos and threes, so five doesn't divide it. Out.",
-        "at": [
-          "number one, r",
-          "z is built",
-          "twos and threes",
-          "doesn't divide it",
-          "Out."
-        ]
-      },
-      {
-        "say": "Choice number two, p to the power of r times q to the power of q, is two to the power of five, times three cubed. Five twos, and z has seven. Three threes, and z has five. It fits.",
-        "at": [
-          "Choice number two, p",
-          "number two, p",
-          "power of r",
-          "to the power of q",
-          "is two to",
-          "of five, times",
-          "Five twos, and",
-          "z has seven",
-          "Three threes, and",
-          "five. It fits"
-        ]
-      },
-      {
-        "say": "Can I circle it already? No. I'm plugging in numbers, so it might work only for these numbers. I have to knock out the other two first.",
-        "at": [
-          "Can I circle",
-          "I'm plugging in",
-          "it might work",
-          "these numbers. I",
-          "knock out"
-        ]
-      },
-      {
-        "say": "Choice number three, q to the power of s, is three to the power of seven. Seven threes, and z has only five. Out. Choice number four, s to the power of q, is seven cubed, and there's no seven in z at all. Out. So choice number two. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "Choice number three, q",
-          "number three, q",
-          "power of s",
-          "to the power of seven",
-          "Seven threes, and",
-          "only five. Out",
-          "four, s to",
-          "of q, is",
-          "and there's no",
-          "at all. Out",
-          "So choice number two"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "A hard one, all letters. But underneath, it's a factor question. What is z built from? [short pause] We'll solve it two ways, understanding with the letters, and then the same idea with numbers.",
+    "at": [
+     "letters. But underneath",
+     "What is z built from",
+     "We'll solve it",
+     "understanding with the",
+     "then the same"
     ]
+   },
+   {
+    "say": "[short pause] z is p to the power of s, times q to the power of r. So z contains the prime p, s times, and the prime q, r times. And nothing else.",
+    "at": [
+     "z is",
+     "power of s",
+     "to the power of r",
+     "So z contains the prime p",
+     "prime q, r"
+    ]
+   },
+   {
+    "say": "Now careful, a lot of students see r and s in z, and think they're factors of z. They're not. They're only exponents, they count how many times p and q appear. The primes r and s themselves aren't inside z at all.",
+    "at": [
+     "see r and s in z",
+     "z, and think",
+     "of z. They're",
+     "They're only exponents",
+     "how many times",
+     "The primes r",
+     "themselves aren't inside"
+    ]
+   },
+   {
+    "say": "And remember the check. A power of a prime divides z only if z has that prime at least as many times.",
+    "at": [
+     "remember the check",
+     "A power of",
+     "divides z only",
+     "has that prime",
+     "as many times"
+    ]
+   },
+   {
+    "say": "Choice number one, r. r isn't a factor of z, so it's out. Choice number four, s to the power of q. There's no s in z at all. Out.",
+    "at": [
+     "number one, r",
+     "a factor of",
+     "so it's out",
+     "number four, s",
+     "power of q",
+     "no s in z",
+     "at all. Out"
+    ]
+   },
+   {
+    "say": "Choice number three, q to the power of s. It needs s copies of q. z has q only r times, and r is smaller than s. Not enough q's, out.",
+    "at": [
+     "number three, q",
+     "power of s",
+     "It needs s copies",
+     "times, and r",
+     "Not enough q's"
+    ]
+   },
+   {
+    "say": "Three are out, so in the exam you'd circle choice number two. Here, let's see why it works. p to the power of r needs r copies of p. z has s of them, and r is smaller than s, so there are enough. q to the power of q needs q copies of q. z has r of them, and q is smaller than r, so enough again. So choice number two is our answer.",
+    "at": [
+     "in the exam",
+     "number two. Here",
+     "Here, let's see",
+     "p to the power of r",
+     "z has s",
+     "and r is",
+     "s, so there",
+     "q to the",
+     "q needs q",
+     "z has r",
+     "and q is",
+     "r, so enough",
+     "So choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's do the same with numbers, by plugging them in. When the primes are letters, plug in the smallest primes, in the right order. Why the smallest? Any primes in that order fit the givens, and small ones are the easiest to work with. So p is two, q is three, r is five, and s is seven.",
+    "at": [
+     "Now let's",
+     "with numbers, by",
+     "in. When the",
+     "letters, plug in",
+     "in the right order",
+     "the smallest? Any",
+     "that order fit",
+     "the givens, and",
+     "are the easiest",
+     "So p is two",
+     "and s is"
+    ]
+   },
+   {
+    "say": "Then z is two to the power of seven, times three to the power of five. That means seven factors of two and five factors of three. We can check which factors each choice needs without calculating the full value of z.",
+    "at": [
+     "Then z is two",
+     "the power of",
+     "three to the",
+     "seven factors of"
+    ]
+   },
+   {
+    "say": "Choice number one, r is five. z is built only from twos and threes, so five doesn't divide it. Out.",
+    "at": [
+     "number one, r",
+     "z is built",
+     "twos and threes",
+     "doesn't divide it",
+     "Out."
+    ]
+   },
+   {
+    "say": "Choice number two, p to the power of r times q to the power of q, is two to the power of five, times three cubed. Five twos, and z has seven. Three threes, and z has five. It fits.",
+    "at": [
+     "Choice number two, p",
+     "number two, p",
+     "power of r",
+     "to the power of q",
+     "is two to",
+     "of five, times",
+     "Five twos, and",
+     "z has seven",
+     "Three threes, and",
+     "five. It fits"
+    ]
+   },
+   {
+    "say": "Can I circle it already? No. I'm plugging in numbers, so it might work only for these numbers. I have to knock out the other two first.",
+    "at": [
+     "Can I circle",
+     "I'm plugging in",
+     "it might work",
+     "these numbers. I",
+     "knock out"
+    ]
+   },
+   {
+    "say": "Choice number three, q to the power of s, is three to the power of seven. Seven threes, and z has only five. Out. Choice number four, s to the power of q, is seven cubed, and there's no seven in z at all. Out. So choice number two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number three, q",
+     "number three, q",
+     "power of s",
+     "to the power of seven",
+     "Seven threes, and",
+     "only five. Out",
+     "four, s to",
+     "of q, is",
+     "and there's no",
+     "at all. Out",
+     "So choice number two"
+    ]
+   }
   ]
+ ]
 }

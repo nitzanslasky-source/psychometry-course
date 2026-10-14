@@ -176,6 +176,52 @@ def _layout(vid):
     return names, per
 
 
+# 2026-10-14 Rule V4.8 (camera lessons: the face bubble never covers math). Her bubble is composited top right (board
+# x >= 1344, y <= 256). In the camera lesson and its parts: a right-column stack that would start above y 262 moves down
+# as a whole (its own order and spacing kept), and a left-column item is at most 920 wide (ends left of x 1330; a figure
+# and its layers are scaled down together, text wraps). Other videos are unchanged.
+CAM_BASE = 'geo-001'
+CAM_W, CAM_Y = 920, 280
+
+
+def _cam_width(d, hand=None):
+    """the drawn width of a board item, roughly (a figure: its box; a hand-written line: its pen strokes at the
+    hand-written size, 1.2x; text: ~half the size per visible character)"""
+    if d['k'] == 'vis': return d.get('w') or 540
+    if hand:
+        import studio_handwrite as _HW
+        return min(d.get('w') or 1130, _HW.write(hand)['w'] * round(d.get('size', 36) * 1.2) / 100.0)
+    t = re.sub(r'\\(quad|qquad)', '    ', d.get('t') or ''); t = re.sub(r'\\frac\{([^}]*)\}\{([^}]*)\}', r'\1', t)
+    t = re.sub(r'\\[a-zA-Z]+', 'x', t)
+    for ch in '${}\\': t = t.replace(ch, '')
+    return min(d.get('w') or 1130, len(t) * d.get('size', 36) * (0.6 if d['k'] == 'hw' else 0.5))
+_layout_plain = _layout
+
+
+def _layout(vid):
+    names, per = _layout_plain(vid)
+    if not re.fullmatch(re.escape(CAM_BASE) + r'(-\d+)?', vid) or VIDEOS[vid]['kind'] != 'lesson': return names, per
+    for sl in per:
+        right = [d for it, d in sl if d.get('x') == 1010 and d.get('y') is not None]
+        if any(d.get('x') == 1010 and d.get('y') is not None and d['y'] < CAM_Y - 18 and not d.get('over')
+               and 1010 + _cam_width(d, it.get('_hand')) > 1335 for it, d in sl):
+            top, yl = CAM_Y, 78                    # ... and below a left-column figure that reaches under the right column
+            for it2, d2 in sl:
+                if d2.get('x') is not None or d2.get('y') is not None or d2.get('over'): continue
+                h2 = d2['h'] if d2['k'] == 'vis' else d2.get('size', 36) * 1.55 * (1.2 if it2.get('_hand') else 1)
+                if d2['k'] == 'vis' and 410 + (d2.get('w') or 0) > 1000: top = max(top, int(yl + h2 + 16))
+                yl += h2 + 16
+            dy = top - min(d['y'] for d in right)
+            for d in right: d['y'] += dy
+        for it, d in sl:
+            if d.get('x') is not None or d.get('y') is not None: continue
+            if d['k'] == 'vis' and d.get('w', 0) > CAM_W:
+                d['h'] = int(round(d['h'] * CAM_W / d['w'])); d['w'] = CAM_W
+            elif d['k'] in ('t', 'hw') and (d.get('w') or 1130) > CAM_W:
+                d['w'] = CAM_W
+    return names, per
+
+
 def _target(vid, names, si, t):
     if t in ('stem',) or re.fullmatch(r'stem: (g\d|given|ask)', t) or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
     nm, _, part = t.partition(':')
@@ -790,8 +836,9 @@ video('geo-001', 'lesson', slides=[
         "number of points.", show(G1B['gaps'], 'Count the spaces')),
       L("Lengths live in the gaps. If every gap is three centimeters, then from the first point to the last one is four "
         "times three, twelve centimeters, not five times three, fifteen. And seven points in a row make six gaps.",
-        show(G1B['len'], 'If every gap is three'), show(I('g1bt', '$4\\cdot3=12$, $\\ $not $5\\cdot3=15$ $\\quad$ 7 points: 6 gaps', size=28, col=0),
-                                                         'twelve centimeters'))),
+        show(G1B['len'], 'If every gap is three'), show(I('g1bt', '$4\\cdot3=12$, $\\ $not $5\\cdot3=15$', size=28, col=0),
+                                                         'twelve centimeters'),
+        show(I('g1bt2', '7 points: 6 gaps', size=28, col=0), 'And seven points in a row'))),
     S('Angles around a point',
       L("Intersecting lines are two straight lines that cross each other at one point. Around that point we get a kind "
         "of circle of angles, four angles.", show(G1C['line'], 'Intersecting lines are'), show(G1C['a1'], 'four angles')),
@@ -887,7 +934,7 @@ video('geo-001', 'lesson', slides=[
         "twenty.", show(G1M['ring'], 'take this whole circle'), show(G1M['move'], 'move it down'),
         show(G1M['bot'], 'These are the same angles')),
       L("Another example: if a small angle is fifty-five, every large angle is a hundred eighty minus fifty-five, a "
-        "hundred twenty-five.", show(G1M_t2, 'Another example'))),
+        "hundred twenty-five.", show(G1M_t2, 'a hundred eighty minus fifty-five'))),
     S('The Z',
       L("In exam questions, whenever you see two parallel lines, look for this Z. It runs along line a, down the "
         "transversal, and along line b.", show(G1N['line'], 'whenever you see two parallel lines'),

@@ -1,195 +1,195 @@
 {
-  "videoId": "r26-t13-summary",
-  "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
-  "slides": [
-    [
-      "Before you practice, here's a quick summary of absolute value. Everything important, in a few minutes."
-    ],
-    [
-      {
-        "say": "Absolute value is the distance from zero. So it's zero or positive, never negative. The absolute value of three is three, of negative ten it's ten, and of zero it's zero.",
-        "at": [
-          "the distance from zero",
-          "So it's zero",
-          "The absolute value of three",
-          "it's ten, and"
-        ]
-      },
-      {
-        "say": "With a plain number, the minus just drops off. But a letter hides its sign. If x is negative seven, its absolute value is seven, and that's minus x.",
-        "at": [
-          "With a plain",
-          "a letter hides its sign",
-          "If x is"
-        ]
-      },
-      {
-        "say": "And with an expression inside, calculate the whole inside first, and only then the bars.",
-        "at": [
-          "calculate the whole inside"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "A product, or a fraction? The bars can go on each part.",
-        "at": [
-          "A product",
-          "The bars can"
-        ]
-      },
-      {
-        "say": "For a sum, compare the absolute value of the whole sum with the absolute values of the two numbers separately. With the same signs, their sizes add. With opposite signs, they partly or completely cancel, so the sum has a smaller absolute value. And read it backwards: if that cancellation made the absolute value smaller, the signs were opposite.",
-        "at": [
-          "For a sum",
-          "With the same signs",
-          "With opposite signs",
-          "And read it backwards"
-        ]
-      },
-      {
-        "say": "A square and the bars both remove the sign. The square root of x squared is the absolute value of x, not x. And the order inside the bars doesn't matter.",
-        "at": [
-          "A square and the bars",
-          "The square root",
-          "And the order"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "Compare a number with its absolute value, and you know its sign. A bigger absolute value means the number is negative. Equal means zero or positive. Equal to minus the number means zero or negative.",
-        "at": [
-          "Compare a number",
-          "A bigger absolute",
-          "Equal means zero",
-          "Equal to minus the number"
-        ]
-      },
-      {
-        "say": "Don't forget the zero, it's the favorite trap.",
-        "at": [
-          "Don't forget the zero"
-        ]
-      },
-      {
-        "say": "A positive product means same signs, and a negative product means opposite signs. And x over its absolute value is one, or minus one.",
-        "at": [
-          "A positive product",
-          "And x over"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "Bars equal to a number? Two cases, plus and minus. x plus two, in bars, is ten. So x plus two is ten, and ten minus two is eight. Or x plus two is minus ten, and minus ten minus two is minus twelve. Keep both.",
-        "at": [
-          "Two cases",
-          "x plus two",
-          "ten minus two is eight",
-          "Or x plus"
-        ]
-      },
-      {
-        "say": "A letter on the right side? The right side must be zero or positive, and check every answer in the original equation.",
-        "at": [
-          "A letter on the right side",
-          "The right side must"
-        ]
-      },
-      {
-        "say": "Bars on both sides? Both sides are zero or positive, so you're allowed to square them.",
-        "at": [
-          "Bars on both sides",
-          "Both sides are"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "Here the absolute value is less than the given positive boundary, so the whole inside must stay close enough to zero. Bars on the small side, the inside is trapped in the middle. One band.",
-        "at": [
-          "Bars on the small side"
-        ]
-      },
-      {
-        "say": "Here the absolute value is greater than the given positive boundary, so the whole inside must lie beyond the boundary on either side of zero. Bars on the big side, two rays going outward.",
-        "at": [
-          "Bars on the big side",
-          "two rays"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "Look at the right side before any algebra. Bars smaller than a negative number? Never, no solution.",
-        "at": [
-          "Bars smaller than"
-        ]
-      },
-      {
-        "say": "Bars bigger than a negative number? Always, every x works.",
-        "at": [
-          "Bars bigger than"
-        ]
-      },
-      {
-        "say": "And bars at most zero? The inside must be zero, so there's one solution.",
-        "at": [
-          "bars at most zero",
-          "The inside must"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "The absolute value of x minus a is the distance between x and a.",
-        "at": [
-          "the distance between"
-        ]
-      },
-      {
-        "say": "And careful with a plus inside the bars. The absolute value of x plus six is the distance from negative six to x. That is because x plus six is x minus negative six.",
-        "at": [
-          "a plus inside",
-          "x plus six",
-          "the distance from negative six"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "Asked what an expression equals? Plug in a number that fits the conditions, and check that the choices come out different. Two survive? Plug in again.",
-        "at": [
-          "Plug in a number",
-          "check that the choices"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "Before each question, ask yourself. Is the letter positive, negative, or zero? Did I keep both cases? Is the right side negative or zero?",
-        "at": [
-          "Is the letter",
-          "Did I keep",
-          "Is the right side"
-        ]
-      },
-      {
-        "say": "Did I check every answer when there's a letter on the right? And what exactly are they asking, must, could, cannot, or not necessarily?",
-        "at": [
-          "Did I check",
-          "what exactly"
-        ]
-      },
-      {
-        "say": "The common traps are forgetting the zero, losing the second case, and keeping a fake answer. [pause] That's it. Now go practice, and I'll see you in the next video.",
-        "at": [
-          "forgetting the zero",
-          "losing the second case",
-          "keeping a fake answer"
-        ]
-      }
+ "videoId": "r26-t13-summary",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   "Before you practice, here's a quick summary of absolute value. Everything important, in a few minutes."
+  ],
+  [
+   {
+    "say": "Absolute value is the distance from zero. So it's zero or positive, never negative. The absolute value of three is three, of negative ten it's ten, and of zero it's zero.",
+    "at": [
+     "the distance from zero",
+     "So it's zero",
+     "The absolute value of three",
+     "it's ten, and"
     ]
+   },
+   {
+    "say": "With a plain number, the minus just drops off. But a letter hides its sign. If x is negative seven, its absolute value is seven, and that's minus x.",
+    "at": [
+     "With a plain",
+     "a letter hides its sign",
+     "If x is"
+    ]
+   },
+   {
+    "say": "And with an expression inside, calculate the whole inside first, and only then the bars.",
+    "at": [
+     "calculate the whole inside"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A product, or a fraction? The bars can go on each part.",
+    "at": [
+     "A product",
+     "The bars can"
+    ]
+   },
+   {
+    "say": "For a sum, compare the absolute value of the whole sum with the absolute values of the two numbers separately. With the same signs, their sizes add. With opposite signs, they partly or completely cancel, so the sum has a smaller absolute value. And read it backwards: if that cancellation made the absolute value smaller, the signs were opposite.",
+    "at": [
+     "For a sum",
+     "With the same signs",
+     "With opposite signs",
+     "And read it backwards"
+    ]
+   },
+   {
+    "say": "A square and the bars both remove the sign. The square root of x squared is the absolute value of x, not x. And the order inside the bars doesn't matter.",
+    "at": [
+     "A square and the bars",
+     "The square root",
+     "And the order"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Compare a number with its absolute value, and you know its sign. A bigger absolute value means the number is negative. Equal means zero or positive. Equal to minus the number means zero or negative.",
+    "at": [
+     "Compare a number",
+     "A bigger absolute",
+     "Equal means zero",
+     "Equal to minus the number"
+    ]
+   },
+   {
+    "say": "Don't forget the zero, it's the favorite trap.",
+    "at": [
+     "Don't forget the zero"
+    ]
+   },
+   {
+    "say": "A positive product means same signs, and a negative product means opposite signs. And x over its absolute value is one, or minus one.",
+    "at": [
+     "A positive product",
+     "And x over"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Bars equal to a number? Two cases, plus and minus. x plus two, in bars, is ten. So x plus two is ten, and ten minus two is eight. Or x plus two is minus ten, and minus ten minus two is minus twelve. Keep both.",
+    "at": [
+     "Two cases",
+     "x plus two",
+     "ten minus two is eight",
+     "Or x plus"
+    ]
+   },
+   {
+    "say": "A letter on the right side? The right side must be zero or positive, and check every answer in the original equation.",
+    "at": [
+     "A letter on the right side",
+     "The right side must"
+    ]
+   },
+   {
+    "say": "Bars on both sides? Both sides are zero or positive, so you're allowed to square them.",
+    "at": [
+     "Bars on both sides",
+     "Both sides are"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here the absolute value is less than the given positive boundary, so the whole inside must stay close enough to zero. Bars on the small side, the inside is trapped in the middle. One band.",
+    "at": [
+     "Bars on the small side"
+    ]
+   },
+   {
+    "say": "Here the absolute value is greater than the given positive boundary, so the whole inside must lie beyond the boundary on either side of zero. Bars on the big side, two rays going outward.",
+    "at": [
+     "Bars on the big side",
+     "two rays"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Look at the right side before any algebra. Bars smaller than a negative number? Never, no solution.",
+    "at": [
+     "Bars smaller than"
+    ]
+   },
+   {
+    "say": "Bars bigger than a negative number? Always, every x works.",
+    "at": [
+     "Bars bigger than"
+    ]
+   },
+   {
+    "say": "And bars at most zero? The inside must be zero, so there's one solution.",
+    "at": [
+     "bars at most zero",
+     "The inside must"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The absolute value of x minus a is the distance between x and a.",
+    "at": [
+     "the distance between"
+    ]
+   },
+   {
+    "say": "And careful with a plus inside the bars. The absolute value of x plus six is the distance from negative six to x. That is because x plus six is x minus negative six.",
+    "at": [
+     "a plus inside",
+     "x plus six",
+     "the distance from negative six"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Asked what an expression equals? Plug in a number that fits the conditions, and check that the choices come out different. Two survive? Plug in again.",
+    "at": [
+     "Plug in a number",
+     "check that the choices"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Before each question, ask yourself. Is the letter positive, negative, or zero? Did I keep both cases? Is the right side negative or zero?",
+    "at": [
+     "Is the letter",
+     "Did I keep",
+     "Is the right side"
+    ]
+   },
+   {
+    "say": "Did I check every answer when there's a letter on the right? And what exactly are they asking, must, could, cannot, or not necessarily?",
+    "at": [
+     "Did I check",
+     "what exactly"
+    ]
+   },
+   {
+    "say": "The common traps are forgetting the zero, losing the second case, and keeping a fake answer. [pause] That's it. Now go practice, and I'll see you in the next video.",
+    "at": [
+     "forgetting the zero",
+     "losing the second case",
+     "keeping a fake answer"
+    ]
+   }
   ]
+ ]
 }

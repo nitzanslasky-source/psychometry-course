@@ -175,6 +175,52 @@ def _layout(vid):
     return names, per
 
 
+# 2026-10-14 Rule V4.8 (camera lessons: the face bubble never covers math). Her bubble is composited top right (board
+# x >= 1344, y <= 256). In the camera lesson and its parts: a right-column stack that would start above y 262 moves down
+# as a whole (its own order and spacing kept), and a left-column item is at most 920 wide (ends left of x 1330; a figure
+# and its layers are scaled down together, text wraps). Other videos are unchanged.
+CAM_BASE = 'new-operation'
+CAM_W, CAM_Y = 920, 280
+
+
+def _cam_width(d, hand=None):
+    """the drawn width of a board item, roughly (a figure: its box; a hand-written line: its pen strokes at the
+    hand-written size, 1.2x; text: ~half the size per visible character)"""
+    if d['k'] == 'vis': return d.get('w') or 540
+    if hand:
+        import studio_handwrite as _HW
+        return min(d.get('w') or 1130, _HW.write(hand)['w'] * round(d.get('size', 36) * 1.2) / 100.0)
+    t = re.sub(r'\\(quad|qquad)', '    ', d.get('t') or ''); t = re.sub(r'\\frac\{([^}]*)\}\{([^}]*)\}', r'\1', t)
+    t = re.sub(r'\\[a-zA-Z]+', 'x', t)
+    for ch in '${}\\': t = t.replace(ch, '')
+    return min(d.get('w') or 1130, len(t) * d.get('size', 36) * (0.6 if d['k'] == 'hw' else 0.5))
+_layout_plain = _layout
+
+
+def _layout(vid):
+    names, per = _layout_plain(vid)
+    if not re.fullmatch(re.escape(CAM_BASE) + r'(-\d+)?', vid) or VIDEOS[vid]['kind'] != 'lesson': return names, per
+    for sl in per:
+        right = [d for it, d in sl if d.get('x') == 1010 and d.get('y') is not None]
+        if any(d.get('x') == 1010 and d.get('y') is not None and d['y'] < CAM_Y - 18 and not d.get('over')
+               and 1010 + _cam_width(d, it.get('_hand')) > 1335 for it, d in sl):
+            top, yl = CAM_Y, 78                    # ... and below a left-column figure that reaches under the right column
+            for it2, d2 in sl:
+                if d2.get('x') is not None or d2.get('y') is not None or d2.get('over'): continue
+                h2 = d2['h'] if d2['k'] == 'vis' else d2.get('size', 36) * 1.55 * (1.2 if it2.get('_hand') else 1)
+                if d2['k'] == 'vis' and 410 + (d2.get('w') or 0) > 1000: top = max(top, int(yl + h2 + 16))
+                yl += h2 + 16
+            dy = top - min(d['y'] for d in right)
+            for d in right: d['y'] += dy
+        for it, d in sl:
+            if d.get('x') is not None or d.get('y') is not None: continue
+            if d['k'] == 'vis' and d.get('w', 0) > CAM_W:
+                d['h'] = int(round(d['h'] * CAM_W / d['w'])); d['w'] = CAM_W
+            elif d['k'] in ('t', 'hw') and (d.get('w') or 1130) > CAM_W:
+                d['w'] = CAM_W
+    return names, per
+
+
 def _target(vid, names, si, t):
     if t in ('stem',) or re.fullmatch(r'stem: (g\d|given|ask)', t) or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
     nm, _, part = t.partition(':')
@@ -452,11 +498,12 @@ no1 = I('no1', '$3\\cdot7$ $\\ \\to\\ $ $3\\times7=21$', size=36)
 no2 = IH('no2', '$5^2=5\\cdot5=25$', size=34)
 no3 = IH('no3', '$2^3=2\\cdot2\\cdot2=8$', size=34)
 no4 = I('no4', '$7\\heartsuit3=\\ ?$', size=36)
-no5 = I('no5', '$2\\heartsuit6=5\\cdot(2+6)=5\\cdot8=40$', size=32)
+no5 = I('no5', '$2\\heartsuit6=5\\cdot(2+6)$', size=32)
+no5b = I('no5b', '$=5\\cdot8=40$', size=32)
 no6 = I('no6', '$7\\cdot5+3=38$ ✗ $\\quad$ the $5$ multiplies the whole sum', size=28)
-no7 = I('no7', 'On the exam: $\\ \\$\\ $, $\\ \\#\\ $, brackets $\\quad$ here: $\\ \\blacklozenge$', size=30, col=1)
+no7 = I('no7', 'On the exam: a dollar sign, $\\#$, brackets $\\quad$ here: $\\blacklozenge$', size=30, col=1)   # 2026-10-14: a literal \\$ broke the caption's math
 no8 = IH('no8', '$\\blacklozenge(2)=2^2-3\\cdot2=4-6=-2$', size=32)
-no9 = I('no9', '$-2^2=-4$ ✗ $\\quad (-2)^2=4$ ✓', size=32, col=1)
+no9 = IH('no9', '$-2^2=-4$ ✗ $\\quad (-2)^2=4$ ✓', size=32, col=1)
 no10 = IH('no10', '$\\blacklozenge(x+2)=(x+2)^2+3(x+2)$', size=32)
 no11 = IH('no11', '$=x^2+4x+4+3x+6=x^2+7x+10$', size=32)
 no12 = I('no12', 'The operation first $\\quad$ only brackets come before it', size=30)
@@ -464,16 +511,24 @@ no13 = IH('no13', '$\\blacklozenge(3)+\\blacklozenge(4)=9+16=25$', size=32)
 no14 = I('no14', '$\\blacklozenge(7)=49$ ✗ $\\quad 3^2+4^2\\ne7^2$', size=32)
 no15 = IH('no15', '$\\blacklozenge(3+4)=\\blacklozenge(7)=49$', size=32)
 no16 = I('no16', '$a\\star b=3a+b^2$', size=34, col=1)
-no17 = IH('no17', '$(1\\star2)\\star3$: $\\ 1\\star2=3+4=7$', size=32)
+no17 = IH('no17', '$(1\\star2)\\star3$', size=32)
+no17b = IH('no17b', '$1\\star2=3+4=7$', size=32)
 no18 = IH('no18', '$7\\star3=21+9=30$', size=32)
-no19 = I('no19', '$\\blacklozenge(5)=30$: $\\ 6x$? $\\ 6\\cdot5=30$ $\\quad 5x+5$? $\\ 25+5=30$', size=30)
-no20 = I('no20', '$x^2+5$: $\\ 25+5=30$ ✓ could be $\\quad 4x+8$: $\\ 20+8=28$ ✗ cannot', size=28)
-no21 = I('no21', '$2\\star4=6+16=22 \\qquad 4\\star2=12+4=16$', size=32)
+no19 = I('no19', '$\\blacklozenge(5)=30$: $\\ 6x$? $\\ 6\\cdot5=30$', size=30)
+no19b = I('no19b', '$5x+5$? $\\ 25+5=30$', size=30)
+no20 = I('no20', '$x^2+5$: $\\ 25+5=30$ ✓ could be', size=28)
+no20b = I('no20b', '$4x+8$: $\\ 20+8=28$ ✗ cannot', size=28)
+no21 = IH('no21', '$2\\star4=6+16=22$', size=32)
+no21b = IH('no21b', '$4\\star2=12+4=16$', size=32)
 no22 = I('no22', 'Not always? One example where it fails.', size=30)
-no23 = I('no23', 'Always? Letters: $\\ b\\heartsuit a=5(b+a)=5(a+b)=a\\heartsuit b$', size=28)
+no23 = I('no23', 'Always? Use letters', size=28)
+no23b = I('no23b', '$b\\heartsuit a=5(b+a)=5(a+b)=a\\heartsuit b$', size=28)
 no24 = I('no24', 'Order questions: equal inputs show nothing ($4\\star4=4\\star4$)', size=28)
-no25 = IH('no25', '$x\\star4=25$: $\\ 3x+16=25$, $\\ 3x=9$, $\\ x=3$', size=32)
-no26 = I('no26', '$k\\heartsuit2=35$: $\\ 5(k+2)=35$, $\\ k+2=7$, $\\ k=5$', size=32)
+no25 = IH('no25', '$x\\star4=25$: $\\ 3x+16=25$', size=32)
+no25b = IH('no25b', '$3x=9,\\ \\ x=3$', size=32)
+no25c = IH('no25c', '$3\\cdot3+16=9+16=25$ ✓', size=32)
+no26 = I('no26', '$k\\heartsuit2=35$: $\\ 5(k+2)=35$', size=32)
+no26b = IH('no26b', '$k+2=7,\\ \\ k=5$', size=32)
 no27 = I('no27', 'Read the definition, put each input in its slot, in brackets', size=28)
 no28 = I('no28', 'Operation first $\\quad$ nested: inside out $\\quad$ no definition: test each choice', size=26)
 video('new-operation', 'lesson', slides=[
@@ -501,7 +556,7 @@ video('new-operation', 'lesson', slides=[
         "Seven plus three is ten, and ten times five is fifty. So seven heart three is fifty.",
         show(nos1['in'], 'so it goes in the place of a'), show(nos1['calc'], 'ten times five is fifty')),
       L("One more. Two heart six. Two goes in the place of a, and six goes in the place of b. Two plus six is eight, and "
-        "eight times five is forty.", show(no5, 'Two heart six')),
+        "eight times five is forty.", show(no5, 'Two heart six'), show(no5b, 'Two plus six is eight')),
       L("Careful to follow the whole rule. If you do seven times five, and then add three, you get thirty-eight. That's a "
         "different rule, not the heart. In the heart, the five multiplies the whole sum. That's all a new operation is: a "
         "definition, and then you follow it exactly.", show(no6, 'you get thirty-eight'))),
@@ -530,13 +585,13 @@ video('new-operation', 'lesson', slides=[
         "is the bracket x plus two, squared, plus three times the bracket x plus two.", show(no10, 'The whole x plus two goes')),
       L("Now open the brackets. The bracket x plus two, squared, is x squared plus four x plus four. Three times the "
         "bracket x plus two is three x plus six, because the three multiplies both parts. Together, that's x squared plus "
-        "seven x plus ten.", show(no11, 'Together, that'))),
+        "seven x plus ten.", show(no11, 'is x squared plus four x plus four'))),
     S('The operation first',
       L("Where does a new operation fit in a longer exercise? The new operation comes first, before multiplying, dividing "
         "and powers. Only brackets come before it.", show(no12, 'The new operation comes first')),
       L("Let's say diamond of x is x squared. What is diamond of three plus diamond of four? First turn each diamond into a "
         "plain number. Diamond of three is nine, and diamond of four is sixteen. Then add them. Nine plus sixteen is "
-        "twenty-five.", show(no13, 'First turn each diamond into')),
+        "twenty-five.", show(no13, 'What is diamond of three plus')),
       L("Careful, we can't join them into diamond of seven. Diamond of seven is forty-nine, a different number. Think of "
         "squares: three squared plus four squared is not seven squared. If you're not sure what comes first, ask yourself "
         "what you would do if it were a square.", show(no14, "we can't join them")),
@@ -555,39 +610,41 @@ video('new-operation', 'lesson', slides=[
       L("What is the bracket one star two, star three? Inner brackets first. One star two is three times one, plus two "
         "squared, so three plus four, seven. Now seven takes its place. Seven star three is three times seven, plus three "
         "squared, so twenty-one plus nine, thirty. The result of the inside becomes the input of the outside.",
-        show(no17, 'One star two is'), show(no18, 'Seven star three is'))),
+        show(no17, 'What is the bracket one star two'), show(no17b, 'One star two is'), show(no18, 'Seven star three is'))),
     S('No definition',
       L("Another type: they don't give you the definition at all. They only say that diamond of five is thirty. Someone "
         "took five, used the diamond, and got thirty. That's all you know."),
       L("The operation could be many different things. Six x is one example, because six times five is thirty. Five x "
         "plus five is another, because twenty-five plus five is thirty. So a question like this asks which definition "
-        "cannot be the operation.", show(no19, 'Six x is one example')),
+        "cannot be the operation.", show(no19, 'Six x is one example'),
+        show(no19b, 'Five x plus five is another')),
       L("Your move is to go through the choices and put five into each one. A choice that gives thirty could be the rule. "
         "The one that doesn't give thirty cannot be the rule. For example, x squared plus five gives twenty-five plus "
         "five, thirty, so it could be the rule. But four x plus eight gives twenty plus eight, twenty-eight, so it cannot.",
-        show(no20, 'x squared plus five gives')),
+        show(no20, 'x squared plus five gives'), show(no20b, 'But four x plus eight')),
       L("In the exam, the moment you find the one that doesn't fit, you mark it and move on. In some question videos "
         "we'll check the other choices too, just to learn.")),
     S('The order can matter',
       L("Back to the star: three times the first number, plus the square of the second. Two star four is six plus "
         "sixteen, twenty-two. Four star two is twelve plus four, sixteen. Swap the inputs, and you get a different answer. "
         "So don't assume a new operation behaves like plus, where the order doesn't matter. Before you calculate, check "
-        "which number goes into which slot.", show(no21, 'Two star four is')),
+        "which number goes into which slot.", show(no21, 'Two star four is'), show(no21b, 'Four star two is')),
       L("A question may ask: is a star b always equal to b star a? To show that it's not always true, one example where it "
         "fails is enough, like two and four.", show(no22, "To show that it's not always true")),
       L("To show that it's always true, numbers are not enough, because they only check some cases. Write the rule with "
         "letters instead. For example, b heart a is five times the bracket b plus a. And b plus a is the same as a plus b, "
-        "so b heart a is always equal to a heart b. For the heart, the order never matters.", show(no23, 'Write the rule with letters')),
+        "so b heart a is always equal to a heart b. For the heart, the order never matters.", show(no23, 'Write the rule with letters'), show(no23b, 'For example, b heart a')),
       L("One warning for order questions: don't test with two equal numbers. Four star four equals four star four for "
         "every operation, so it can't show anything about the order.", show(no24, "don't test with two equal numbers"))),
     S('An unknown input',
       L("And if an input is unknown? Write the definition, and it becomes an ordinary equation. For example, x star four "
         "is twenty-five. By the definition, x star four is three x plus four squared, which is three x plus sixteen. So "
         "three x plus sixteen equals twenty-five. Subtract sixteen from both sides: three x is nine, so x is three.",
-        show(no25, 'For example, x star four')),
+        show(no25, 'For example, x star four'), show(no25b, 'Subtract sixteen from both sides')),
       L("Let's check it. Three times three is nine, and nine plus sixteen is twenty-five. It works. One more: k heart two "
         "is thirty-five. By the definition, that's five times the bracket k plus two. So k plus two is seven, and k is "
-        "five.", show(no26, 'k heart two is thirty-five')),
+        "five.", show(no25c, "Let's check it"), show(no26, 'k heart two is thirty-five'),
+        show(no26b, 'So k plus two is seven')),
       L("On the exam you can also work back from the answers: put each choice into the rule, and see which one gives the "
         "result.")),
     S('Recap',
@@ -735,9 +792,9 @@ video('solve-q-r26-t19-01', 'solution', qid='q-r26-t19-01', slides=[
 # REMINDER: the order can matter; "not always" = one counterexample, "always" = swap the letters; no equal numbers
 # (camera lesson).  Methods: plugging in numbers, algebra.
 f1 = I('f1', '$a=1,\\ b=2$ $\\quad$ (not equal numbers)', size=30)
-f2 = I('f2', '(1) $1^2\\cdot2=2$, $\\ 2^2\\cdot1=4$ ✗', size=30)
-f3 = I('f3', '(2) $1\\cdot3=3$, $\\ 2\\cdot3=6$ ✗', size=30)
-f4 = I('f4', '(4) $(1-2)^2+1=2$, $\\ (2-1)^2+2=3$ ✗', size=30)
+f2 = IH('f2', '(1) $1^2\\cdot2=2$, $\\ 2^2\\cdot1=4$ ✗', size=30)
+f3 = IH('f3', '(2) $1\\cdot3=3$, $\\ 2\\cdot3=6$ ✗', size=30)
+f4 = IH('f4', '(4) $(1-2)^2+1=2$, $\\ (2-1)^2+2=3$ ✗', size=30)
 f5 = I('f5', '(3) $2+1+2=5$, $\\ 2+2+1=5$ ✓', size=30)
 g1 = I('g1', '$b\\star a=ba+b+a$', size=34)
 g2 = I('g2', '$=ab+a+b=a\\star b$ ✓', size=34)
@@ -777,7 +834,7 @@ h1 = I('h1', '$\\blacklozenge(x)=2x+3$: $\\ \\times2$, then $+3$', size=36)
 h2 = I('h2', 'Undo $y$: $\\ -3$, then $\\div2$: $\\ \\frac{y-3}{2}$', size=36)
 h3 = IH('h3', '$4$ in, $11$ out: $\\ \\frac{11-3}{2}=\\frac82=4$ ✓', size=36)
 h4 = I('h4', 'Wrong order: $\\ \\frac{11}{2}-3=2.5$ ✗', size=34)
-h5 = I('h5', '$\\blacklozenge(x)=3x-4$: $\\ $undo $\\ \\frac{y+4}{3}$: $\\ \\frac{11+4}{3}=5$ ✓', size=34)
+h5 = IH('h5', '$\\blacklozenge(x)=3x-4$: $\\ $undo $\\ \\frac{y+4}{3}$: $\\ \\frac{11+4}{3}=5$ ✓', size=34)
 video('operation-patterns', 'lesson', slides=[
     S('Operation Patterns',
       L("Welcome back. Now we move to the more advanced operation questions. Each question that follows shows one type, and "
@@ -1077,7 +1134,7 @@ s550 = SLOT('s550', '◆([[x]], [[y]], [[z]]) = [[x]]^{yz} + [[y]]^{xz} + [[z]]^
 v3 = IH('v3', '$\\blacklozenge(1,1,33)=1+1+33=35$', size=32)
 w1 = I('w1', '$\\blacklozenge(1,1,z)=1^{z}+1^{z}+z^{1\\cdot1}=2+z$', size=32)
 w2 = IH('w2', '$2+33=35$', size=32)
-w3 = I('w3', '$\\blacklozenge(z,0,1)=z^{0}+0^{z}+1^{0}=1+0+1=2$', size=30)
+w3 = IH('w3', '$\\blacklozenge(z,0,1)=z^{0}+0^{z}+1^{0}=1+0+1=2$', size=30)
 video('solve-q-550', 'solution', qid='q-550', slides=[
     S('Method 1 · The standard way',
       L("For every three numbers x, y and z, diamond of x, y, z is equal to x to the power of the product y z, plus y to "
@@ -1253,7 +1310,7 @@ c5 = IH('c5', '$\\frac{(a-b)^2}{ab^3}\\cdot\\frac{ba^3}{(b-a)^2}$', size=32)
 c6 = IH('c6', '$=\\frac{ba^3}{ab^3}=\\frac{a^2}{b^2}$', size=32)
 d5 = IH('d5', '$(a-b)^2=(b-a)^2$', size=32)
 d6 = IH('d6', '$\\frac{ba^3}{ab^3}=\\frac{a^2}{b^2}$', size=32)
-e5 = I('e5', '$a=1,\\ b=2$: $\\ 1,\\ \\frac12,\\ \\frac14,\\ 4$ $\\ $(all different)', size=30)
+e5 = IH('e5', '$a=1,\\ b=2$: $\\ 1,\\ \\frac{1}{2},\\ \\frac{1}{4},\\ 4$ $\\ $(all different)', size=30)
 e6 = IH('e6', '$\\blacklozenge(1,2)=\\frac{1}{1\\cdot8}=\\frac18 \\qquad \\blacklozenge(2,1)=\\frac{1}{2\\cdot1}=\\frac12$', size=30)
 e7 = IH('e7', '$\\frac18\\div\\frac12=\\frac18\\cdot2=\\frac14$', size=32)
 video('solve-q-553', 'solution', qid='q-553', slides=[
@@ -1343,11 +1400,11 @@ video('solve-q-554', 'solution', qid='q-554', slides=[
 # NEW: "must be true for all positive a, b" - break each choice; with algebra (multiply by a positive: no flip) and by
 # understanding (3/x = 3 times the reciprocal; a bigger denominator, a smaller fraction).  Hebrew: both, choice by
 # choice -> two methods here; the wrong choices first, so each method ends on the answer.
-h6 = IH('h6', '(1) $\\frac3a<3\\ \\to\\ 1<a$: $\\ a=\\frac12$: $\\ 6$ ✗', size=30)
+h6 = IH('h6', '(1) $\\frac{3}{a}<3\\ \\to\\ 1<a$: $\\ a=\\frac{1}{2}$: $\\ 6$ ✗', size=30)
 h7 = IH('h7', '(3) $\\frac3a\\cdot\\frac b3=\\frac ba$ ✗', size=30)
 h8 = IH('h8', '(4) $3(a+1)<3a\\ \\to\\ 1<0$ ✗', size=30)
 h9 = IH('h9', '(2) $\\frac3a\\cdot a=3=\\frac3b\\cdot b$ ✓', size=30)
-i6 = I('i6', '(1) $a=2$: $\\ \\frac32<3$ ✓ $\\quad a=1$: $\\ 3$ ✗ $\\quad a=\\frac12$: $\\ 6$ ✗', size=28)
+i6 = IH('i6', '(1) $a=2$: $\\ \\frac{3}{2}<3$ ✓ $\\quad a=1$: $\\ 3$ ✗ $\\quad a=\\frac{1}{2}$: $\\ 6$ ✗', size=28)
 i7 = I('i7', '(3) $\\div\\frac3b=\\times\\frac b3$: $\\ \\frac ba$ ✗', size=28)
 i8 = I('i8', '(4) bigger denominator, smaller fraction ✗', size=28)
 i9 = I('i9', '(2) a number times its reciprocal is $1$: $\\ 3\\cdot1=3$ ✓', size=28)
@@ -1398,11 +1455,11 @@ video('solve-q-555', 'solution', qid='q-555', slides=[
 # NEW: a definition in words - see it in numbers first (50, 75, 7); x = 1 knocks out three; why: times 5 adds exactly one
 # five, squaring doubles the count, adding 5 says nothing (x = 125: 4 fives, not 15).  REMINDER: prime factors (14).
 # Hebrew: plugging in numbers, understanding.
-j5 = I('j5', '$50=2\\cdot5\\cdot5$: $\\ 2 \\qquad 75=3\\cdot5\\cdot5$: $\\ 2 \\qquad 7$: $\\ 0$', size=30)
-j6 = I('j6', '$x=1$: $\\ $(1) $1\\ne0$ ✗ $\\quad$ (2) $0\\ne1$ ✗ $\\quad$ (3) $1\\ne0$ ✗', size=30)
+j5 = IH('j5', '$50=2\\cdot5\\cdot5$: $\\ 2 \\qquad 75=3\\cdot5\\cdot5$: $\\ 2 \\qquad 7$: $\\ 0$', size=30)
+j6 = IH('j6', '$x=1$: $\\ $(1) $1\\ne0$ ✗ $\\quad$ (2) $0\\ne1$ ✗ $\\quad$ (3) $1\\ne0$ ✗', size=30)
 j7 = I('j7', '(4) $1=0+1$ ✓', size=30)
-k5 = I('k5', '$\\times5$: $\\ $one more five $\\quad 50\\to250$: $\\ 2\\to3$', size=30)
-k6 = I('k6', '$x=125=5^3$: $\\ 5x$ has $4$ fives, not $15$', size=30)
+k5 = IH('k5', '$\\times5$: $\\ $one more five $\\quad 50\\to250$: $\\ 2\\to3$', size=30)
+k6 = IH('k6', '$x=125=5^3$: $\\ 5x$ has $4$ fives, not $15$', size=30)
 video('solve-q-556', 'solution', qid='q-556', slides=[
     S('Method 1 · Plugging in numbers',
       L("For every positive integer x, the double bracket of x is the number of times five appears in the prime "

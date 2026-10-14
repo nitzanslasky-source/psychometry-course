@@ -1,111 +1,111 @@
 {
-  "videoId": "solve-q-425",
-  "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "a and b are positive integers. x is the remainder when a is divided by eight, and y is the remainder when b is divided by three. What is the greatest possible value of x times y?",
-        "voice": "calm",
-        "at": [
-          "a and b are"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So x and y are remainders, and they want the biggest possible product. a and b can be any positive integers, so we get to choose them. [short pause] We'll solve it two ways, with the biggest-remainder rule, and then by listing the remainders.",
-        "at": [
-          "are remainders, and",
-          "the biggest possible product",
-          "and b can",
-          "positive integers, so",
-          "we get to choose them",
-          "We'll solve it",
-          "with the biggest-remainder",
-          "then by listing"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start with the rule. x and y are zero or positive, so x times y is biggest when each of them is as big as possible. And remember, the biggest remainder is one less than the divisor. Dividing by eight, the biggest remainder is seven. Why not eight? With eight left over, one more eight would fit.",
-        "at": [
-          "Let's start",
-          "x and y",
-          "or positive, so",
-          "y is biggest",
-          "of them is",
-          "as possible. And",
-          "the biggest remainder is one less",
-          "less than the",
-          "Dividing by eight",
-          "remainder is seven",
-          "With eight left",
-          "more eight would"
-        ]
-      },
-      {
-        "say": "For example, a is twenty-three. Two eights are sixteen, and twenty-three minus sixteen leaves seven.",
-        "at": [
-          "a is twenty-three",
-          "are sixteen, and",
-          "leaves seven"
-        ]
-      },
-      {
-        "say": "Dividing by three, the biggest remainder is two. For example, b is eleven. Three threes are nine, and eleven minus nine leaves two.",
-        "at": [
-          "Dividing by three",
-          "remainder is two",
-          "For example, b",
-          "Three threes are",
-          "eleven minus nine",
-          "leaves two"
-        ]
-      },
-      {
-        "say": "We can choose a and b separately, so both of those biggest remainders can occur together. So x times y is at most seven times two, which is fourteen. Choice number three is our answer.",
-        "at": [
-          "is at most",
-          "seven times two",
-          "Choice number three is our answer"
-        ]
-      },
-      {
-        "say": "Now careful, twenty-four is the trap. That's eight times three, the divisors themselves, and a remainder never reaches the divisor. And seven and two are each just one of the remainders, not the product.",
-        "at": [
-          "twenty-four is the trap",
-          "eight times three",
-          "themselves, and a",
-          "never reaches the divisor",
-          "And seven and",
-          "two are each",
-          "of the remainders"
-        ]
-      }
+ "videoId": "solve-q-425",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "a and b are positive integers. x is the remainder when a is divided by eight, and y is the remainder when b is divided by three. What is the greatest possible value of x times y?",
+    "voice": "calm",
+    "at": [
+     "a and b are"
     ],
-    [
-      {
-        "say": "[pause] Another way is to list the remainders by trying numbers. Divide one, two, three and so on by eight. One leaves one, two leaves two, and so on up to seven, which leaves seven. Eight leaves zero, nine leaves one again. So dividing by eight, the remainders go round from zero to seven.",
-        "at": [
-          "Another way",
-          "the remainders by",
-          "Divide one, two, three",
-          "One leaves one",
-          "two, and so",
-          "to seven, which",
-          "Eight leaves zero",
-          "So dividing by",
-          "remainders go round"
-        ]
-      },
-      {
-        "say": "Dividing by three, they go round zero, one, two. So the biggest are seven and two, and seven times two is fourteen. Choice number three. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "Dividing by three",
-          "round zero, one",
-          "the biggest are",
-          "seven times two is fourteen",
-          "Choice number three"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So x and y are remainders, and they want the biggest possible product. a and b can be any positive integers, so we get to choose them. [short pause] We'll solve it two ways, with the biggest-remainder rule, and then by listing the remainders.",
+    "at": [
+     "are remainders, and",
+     "the biggest possible product",
+     "and b can",
+     "positive integers, so",
+     "we get to choose them",
+     "We'll solve it",
+     "with the biggest-remainder",
+     "then by listing"
     ]
+   },
+   {
+    "say": "[short pause] Let's start with the rule. x and y are zero or positive, so x times y is biggest when each of them is as big as possible. And remember, the biggest remainder is one less than the divisor. Dividing by eight, the biggest remainder is seven. Why not eight? With eight left over, one more eight would fit.",
+    "at": [
+     "Let's start",
+     "x and y",
+     "or positive, so",
+     "y is biggest",
+     "of them is",
+     "as possible. And",
+     "the biggest remainder is one less",
+     "less than the",
+     "Dividing by eight",
+     "remainder is seven",
+     "With eight left",
+     "more eight would"
+    ]
+   },
+   {
+    "say": "For example, a is twenty-three. Two eights are sixteen, and twenty-three minus sixteen leaves seven.",
+    "at": [
+     "a is twenty-three",
+     "are sixteen, and",
+     "leaves seven"
+    ]
+   },
+   {
+    "say": "Dividing by three, the biggest remainder is two. For example, b is eleven. Three threes are nine, and eleven minus nine leaves two.",
+    "at": [
+     "Dividing by three",
+     "remainder is two",
+     "For example, b",
+     "Three threes are",
+     "eleven minus nine",
+     "leaves two"
+    ]
+   },
+   {
+    "say": "We can choose a and b separately, so both of those biggest remainders can occur together. So x times y is at most seven times two, which is fourteen. Choice number three is our answer.",
+    "at": [
+     "is at most",
+     "seven times two",
+     "Choice number three is our answer"
+    ]
+   },
+   {
+    "say": "Now careful, twenty-four is the trap. That's eight times three, the divisors themselves, and a remainder never reaches the divisor. And seven and two are each just one of the remainders, not the product.",
+    "at": [
+     "twenty-four is the trap",
+     "eight times three",
+     "themselves, and a",
+     "never reaches the divisor",
+     "And seven and",
+     "two are each",
+     "of the remainders"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way is to list the remainders by trying numbers. Divide one, two, three and so on by eight. One leaves one, two leaves two, and so on up to seven, which leaves seven. Eight leaves zero, nine leaves one again. So dividing by eight, the remainders go round from zero to seven.",
+    "at": [
+     "Another way",
+     "the remainders by",
+     "Divide one, two, three",
+     "One leaves one",
+     "two, and so",
+     "to seven, which",
+     "Eight leaves zero",
+     "So dividing by",
+     "remainders go round"
+    ]
+   },
+   {
+    "say": "Dividing by three, they go round zero, one, two. So the biggest are seven and two, and seven times two is fourteen. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Dividing by three",
+     "round zero, one",
+     "the biggest are",
+     "seven times two is fourteen",
+     "Choice number three"
+    ]
+   }
   ]
+ ]
 }

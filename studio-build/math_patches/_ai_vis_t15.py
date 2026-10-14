@@ -172,6 +172,52 @@ def _layout(vid):
     return names, per
 
 
+# 2026-10-14 Rule V4.8 (camera lessons: the face bubble never covers math). Her bubble is composited top right (board
+# x >= 1344, y <= 256). In the camera lesson and its parts: a right-column stack that would start above y 262 moves down
+# as a whole (its own order and spacing kept), and a left-column item is at most 920 wide (ends left of x 1330; a figure
+# and its layers are scaled down together, text wraps). Other videos are unchanged.
+CAM_BASE = 'divisibility'
+CAM_W, CAM_Y = 920, 280
+
+
+def _cam_width(d, hand=None):
+    """the drawn width of a board item, roughly (a figure: its box; a hand-written line: its pen strokes at the
+    hand-written size, 1.2x; text: ~half the size per visible character)"""
+    if d['k'] == 'vis': return d.get('w') or 540
+    if hand:
+        import studio_handwrite as _HW
+        return min(d.get('w') or 1130, _HW.write(hand)['w'] * round(d.get('size', 36) * 1.2) / 100.0)
+    t = re.sub(r'\\(quad|qquad)', '    ', d.get('t') or ''); t = re.sub(r'\\frac\{([^}]*)\}\{([^}]*)\}', r'\1', t)
+    t = re.sub(r'\\[a-zA-Z]+', 'x', t)
+    for ch in '${}\\': t = t.replace(ch, '')
+    return min(d.get('w') or 1130, len(t) * d.get('size', 36) * (0.6 if d['k'] == 'hw' else 0.5))
+_layout_plain = _layout
+
+
+def _layout(vid):
+    names, per = _layout_plain(vid)
+    if not re.fullmatch(re.escape(CAM_BASE) + r'(-\d+)?', vid) or VIDEOS[vid]['kind'] != 'lesson': return names, per
+    for sl in per:
+        right = [d for it, d in sl if d.get('x') == 1010 and d.get('y') is not None]
+        if any(d.get('x') == 1010 and d.get('y') is not None and d['y'] < CAM_Y - 18 and not d.get('over')
+               and 1010 + _cam_width(d, it.get('_hand')) > 1335 for it, d in sl):
+            top, yl = CAM_Y, 78                    # ... and below a left-column figure that reaches under the right column
+            for it2, d2 in sl:
+                if d2.get('x') is not None or d2.get('y') is not None or d2.get('over'): continue
+                h2 = d2['h'] if d2['k'] == 'vis' else d2.get('size', 36) * 1.55 * (1.2 if it2.get('_hand') else 1)
+                if d2['k'] == 'vis' and 410 + (d2.get('w') or 0) > 1000: top = max(top, int(yl + h2 + 16))
+                yl += h2 + 16
+            dy = top - min(d['y'] for d in right)
+            for d in right: d['y'] += dy
+        for it, d in sl:
+            if d.get('x') is not None or d.get('y') is not None: continue
+            if d['k'] == 'vis' and d.get('w', 0) > CAM_W:
+                d['h'] = int(round(d['h'] * CAM_W / d['w'])); d['w'] = CAM_W
+            elif d['k'] in ('t', 'hw') and (d.get('w') or 1130) > CAM_W:
+                d['w'] = CAM_W
+    return names, per
+
+
 def _target(vid, names, si, t):
     if t in ('stem',) or re.fullmatch(r'stem: (g\d|given|ask)', t) or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
     nm, _, part = t.partition(':')
@@ -424,6 +470,7 @@ def TREE(name, root, steps, w=330, col=1, dx=92, dy=50):
 # q-423 (the zebras), q-424 (the towers), q-425 (the biggest x·y) and q-426 (4x + 1), so here they get one line only.
 # Divisibility-signs table (method visual, V1): one row per sign, built row by row in the left column, the examples in
 # the right column.
+dv0 = I('dv0', '$538\\div2=269$', size=32, hand='538 ÷ 2 = 269')
 dv2 = I('dv2', '$\\div2$: $\\ $the last digit is even', size=32)
 dv2e = I('dv2e', '$538$ ✓ $\\quad 741$ ✗', size=32, col=1, hand='538  ✓      741  ✗')
 dv5 = I('dv5', '$\\div5$: $\\ $the last digit is $0$ or $5$', size=32)
@@ -434,27 +481,31 @@ dv3 = I('dv3', '$\\div3$: $\\ $the digit sum divides by $3$', size=32)
 dv3e = I('dv3e', '$942$: $\\ 9+4+2=15$ ✓', size=32, col=1, hand='942 :   9 + 4 + 2 = 15   ✓')
 dv3n = I('dv3n', '$523$: $\\ 5+2+3=10$ ✗', size=32, col=1, hand='523 :   5 + 2 + 3 = 10   ✗')
 dv9 = I('dv9', '$\\div9$: $\\ $the digit sum divides by $9$', size=32)
-dv9e = I('dv9e', '$846$: $\\ 8+4+6=18$ ✓ $\\quad 942$: $\\ 15$ ✗', size=30, col=1, hand='846 :   18  ✓      942 :   15  ✗')
+dv9e = I('dv9e', '$846$: $\\ 8+4+6=18$ ✓', size=30, col=1, hand='846 :   8 + 4 + 6 = 18   ✓')
+dv9n = I('dv9n', '$942$: $\\ 15$ ✗', size=30, col=1, hand='942 :   15   ✗')
 dv4 = I('dv4', '$\\div4$: $\\ $the last two digits divide by $4$', size=32)
 dv4e = I('dv4e', '$2{,}716=2{,}700+16$ ✓', size=32, col=1, hand='2716 = 2700 + 16   ✓')
 dv4w = I('dv4w', '$100=25\\cdot4$', size=32, col=1, hand='100 = 25·4')
 dv4n = I('dv4n', '$534$: $\\ 34$ ✗', size=32, col=1, hand='534 :   34   ✗')
 dv8 = I('dv8', '$\\div8$: $\\ $the last three digits divide by $8$', size=32)
-dv8e = I('dv8e', '$1{,}000=125\\cdot8$ $\\quad 7{,}240$: $\\ 240=30\\cdot8$ ✓', size=28, col=1, hand='1000 = 125·8      7240 :   240 = 30·8   ✓')
+dv8w = I('dv8w', '$1{,}000=125\\cdot8$', size=28, col=1, hand='1000 = 125·8')
+dv8e = I('dv8e', '$7{,}240$: $\\ 240=30\\cdot8$ ✓', size=28, col=1, hand='7240 :   240 = 30·8   ✓')
 dv6 = I('dv6', '$\\div6$: $\\ $by $2$ and by $3$', size=32)
 dv6e = I('dv6e', '$234$: $\\ $even, $\\ 2+3+4=9$ ✓', size=32, col=1, hand='234 :   even,   2 + 3 + 4 = 9   ✓')
 dv6n = I('dv6n', '$135$: $\\ 1+3+5=9$, $\\ $odd ✗', size=32, col=1, hand='135 :   1 + 3 + 5 = 9,   odd   ✗')
 dv15 = I('dv15', '$\\div15$: $\\ $by $3$ and by $5$', size=32)
 dv15e = I('dv15e', '$510$: $\\ $ends in $0$, $\\ 5+1+0=6$ ✓', size=32, col=1, hand='510 :   ends in 0,   5 + 1 + 0 = 6   ✓')
-dvbig = I('dvbig', 'Parts with no common factor: $\\ 12=3\\cdot4\\quad 18=2\\cdot9\\quad 24=3\\cdot8$', size=28)
+dvbig = I('dvbig', '$12=3\\cdot4\\quad 18=2\\cdot9\\quad 24=3\\cdot8$', size=28, hand='12 = 3·4      18 = 2·9      24 = 3·8')
+dvnc = I('dvnc', 'The parts share no common factor', size=28)
 dvtrap = I('dvtrap', '$12=2\\cdot6$ ✗: $\\ 18$ divides by $2$ and $6$, not by $12$', size=28, col=1)
-dv11 = I('dv11', '$\\div11$: $\\ 22,\\ 33,\\ 55,\\ 99$', size=32)
+dv11 = I('dv11', '$\\div11$: $\\ 22,\\ 33,\\ 55,\\ 99$', size=32, hand='÷11 :   22,   33,   55,   99')
 dv11a = I('dv11a', '$418$: $\\ 41-8=33$ ✓ $\\quad 427$: $\\ 42-7=35$ ✗', size=30, col=1, hand='418 :   41 − 8 = 33  ✓      427 :   42 − 7 = 35  ✗')
 dv11b = I('dv11b', '$418$: $\\ 4+8-1=11$ ✓', size=30, col=1, hand='418 :   4 + 8 − 1 = 11   ✓')
 dv11c = I('dv11c', '$1{,}331$: $\\ 1-3+3-1=0$ ✓ $\\quad 482$: $\\ 4-8+2=-2$ ✗', size=28, col=1, hand='1331 :   1 − 3 + 3 − 1 = 0  ✓      482 :   4 − 8 + 2 = −2  ✗')
 dv11r = I('dv11r', 'The result is $0$, $11$ or $-11$', size=30)
 dvwhy = I('dvwhy', 'A quarter of a group $\\to$ the group divides by $4$', size=30)
 dvr1 = I('dvr1', '$10\\div3$: $\\ 3\\cdot3=9$, $\\ $remainder $1$', size=32, hand='10 ÷ 3 :   3·3 = 9,   remainder 1')
+dvr1b = I('dvr1b', '$7\\cdot7=49,\\ \\ 53-49=4$', size=32, hand='7·7 = 49,    53 − 49 = 4')
 dvr2 = I('dvr2', '$53=7\\cdot7+4$', size=32, hand='53 = 7·7 + 4')
 dvr3 = I('dvr3', 'Number $=$ divisor $\\cdot$ quotient $+$ remainder', size=30)
 dvr4 = I('dvr4', 'Remainder $<$ divisor', size=30)
@@ -472,7 +523,9 @@ dvk1 = I('dvk1', 'Leaves $3$ by $4$: $\\ 4k+3$ $\\quad$ ($k$ a whole number)', s
 dvk2 = I('dvk2', '$k=0,1,2$: $\\ 3,\\ 7,\\ 11$', size=32, col=1, hand='k = 0, 1, 2 :   3,   7,   11')
 dvk3 = I('dvk3', 'Leaves $4$ by $15$: $\\ 15k+4$: $\\ 19,\\ 34,\\ 49$', size=30, hand='15k + 4 :   19,   34,   49')
 dvc1 = I('dvc1', '$15k+4$ by $5$: $\\ 15k=5\\cdot3k$ $\\to$ remainder $4$', size=30, hand='15k + 4  by 5 :   15k = 5·3k   →   remainder 4')
+dvc1k = I('dvc1k', '$19\\div5$: $\\ $remainder $4$ ✓', size=30, hand='19 ÷ 5 :   remainder 4   ✓')
 dvc2 = I('dvc2', '$15k+13$ by $5$: $\\ 13=2\\cdot5+3$ $\\to$ remainder $3$', size=30, hand='15k + 13  by 5 :   13 = 2·5 + 3   →   remainder 3')
+dvc2k = I('dvc2k', '$28\\div5$: $\\ $remainder $3$ ✓', size=30, hand='28 ÷ 5 :   remainder 3   ✓')
 dvc3 = I('dvc3', '$8k+2$ by $6$: $\\ 2\\to2,\\ \\ 10\\to4$ ✗', size=30, hand='8k + 2  by 6 :   2 → 2,    10 → 4   ✗')
 dvc4 = I('dvc4', 'Only if the new divisor divides the old one', size=30)
 dvs1 = I('dvs1', '$2,5,10$: $\\ $last digit $\\quad 3,9$: $\\ $digit sum', size=30)
@@ -486,7 +539,7 @@ video('divisibility', 'lesson', slides=[
         "confuses many students. We only need small, simple divisors, exactly what the exam asks about.")),
     S('By 2, 5 and 10',
       L("When we say a number is divisible by two, we mean it divides by two with nothing left over. For example, five hundred thirty-eight divided by two is two "
-        "hundred sixty-nine, a whole number. So five hundred thirty-eight is divisible by two."),
+        "hundred sixty-nine, a whole number. So five hundred thirty-eight is divisible by two.", show(dv0, 'five hundred thirty-eight divided by two')),
       L("Let's start with the signs most of us already know. A number is divisible by two when it's even, and that's "
         "decided by its last digit. Five hundred thirty-eight ends in eight, which is even, so it's divisible by two. Seven "
         "hundred forty-one ends in one, which is odd, so it's not.", show(dv2, 'A number is divisible by two'),
@@ -508,7 +561,8 @@ video('divisibility', 'lesson', slides=[
         "hundred forty-six. Eight plus four is twelve, and twelve plus six is eighteen. Eighteen is divisible by nine, so "
         "eight hundred forty-six is too. But nine hundred forty-two has a digit sum of fifteen, which doesn't divide by "
         "nine. So it divides by three, but not by nine.", show(dv9, 'Nine works exactly the same way'),
-        show(dv9e, 'Eight hundred forty-six. Eight plus four'))),
+        show(dv9e, 'Eight hundred forty-six. Eight plus four'),
+        show(dv9n, 'But nine hundred forty-two'))),
     S('By 4 and 8',
       L("Four and eight are a little harder. For four, we look only at the number made by the last two digits. Two "
         "thousand seven hundred sixteen ends in sixteen, and sixteen is divisible by four, so the whole number is "
@@ -522,7 +576,8 @@ video('divisibility', 'lesson', slides=[
       L("For eight, we do the same thing with the last three digits, because a thousand is a hundred twenty-five eights. "
         "So every whole thousand is divisible by eight. In seven thousand two hundred forty, we check two hundred forty. "
         "Two hundred forty is thirty eights, so seven thousand two hundred forty is divisible by eight.",
-        show(dv8, 'For eight, we do the same thing'), show(dv8e, 'a thousand is a hundred twenty-five eights')),
+        show(dv8, 'For eight, we do the same thing'), show(dv8w, 'a thousand is a hundred twenty-five eights'),
+        show(dv8e, 'In seven thousand two hundred forty')),
       L("By the way, division by eight is very rare on the exam. And when it comes, the numbers are friendly ones from the "
         "times table, like a hundred sixty, three hundred twenty or five hundred sixty.", pt('dv8', 'division by eight is very rare'))),
     S('Build a divisor',
@@ -539,7 +594,8 @@ video('divisibility', 'lesson', slides=[
         "its own sign. If the number divides by both parts, it divides by the big number.", show(dvbig, 'Twelve is three times four')),
       L("But careful, the two parts must share no factor. Why not split twelve as two times six? Look at eighteen. Eighteen "
         "divides by two and by six, but eighteen is not divisible by twelve. Two and six share a two, so this check doesn't "
-        "work. Three and four share nothing, so for twelve we use three times four.", show(dvtrap, 'Look at eighteen'))),
+        "work. Three and four share nothing, so for twelve we use three times four.", show(dvnc, 'the two parts must share no factor'),
+        show(dvtrap, 'Look at eighteen'))),
     S('By 11',
       L("Eleven is the hardest one. For a two-digit number it's easy, the same digit twice: twenty-two, thirty-three, "
         "fifty-five, ninety-nine.", show(dv11, 'Eleven is the hardest one')),
@@ -567,7 +623,7 @@ video('divisibility', 'lesson', slides=[
       L("Another example, fifty-three divided by seven. Seven sevens are forty-nine, and fifty-three minus forty-nine is "
         "four. So the remainder is four. The number we divide by, seven, is the divisor, and how many whole times it fits, "
         "here also seven, is the quotient. So fifty-three is seven times seven, plus four.",
-        show(dvr2, 'So fifty-three is seven times seven'), show(dvr3, 'The number we divide by')),
+        show(dvr1b, 'Seven sevens are forty-nine'), show(dvr2, 'So fifty-three is seven times seven'), show(dvr3, 'The number we divide by')),
       L("The remainder is always smaller than the divisor. If seven or more were left, the seven would fit one more time.",
         show(dvr4, 'always smaller than the divisor'))),
     S('The remainder trap',
@@ -589,11 +645,10 @@ video('divisibility', 'lesson', slides=[
         "is nine. Dividing by twelve, it's eleven.", show(dvm2, "That's a rule"), show(dvm3, 'Dividing by ten'))),
     S('Digit sum and remainder',
       L("The digit sum gives us one more gift, but only for three and nine. Five thousand four hundred thirty-two has a "
-        "digit sum of five plus four plus three plus two, which is fourteen.", show(dvd1, 'only for three and nine'),
-        show(dvd2, 'has a digit sum of five plus four')),
+        "digit sum of five plus four plus three plus two, which is fourteen.", show(dvd2, 'has a digit sum of five plus four')),
       L("Fourteen divided by nine leaves five, so five thousand four hundred thirty-two divided by nine also leaves five. "
         "And fourteen divided by three leaves two, so the big number divided by three leaves two as well.",
-        show(dvd3, 'Fourteen divided by nine leaves five')),
+        show(dvd3, 'Fourteen divided by nine leaves five'), show(dvd1, 'leaves two as well')),
       L("Another example, two hundred twenty. Its digit sum is two plus two plus zero, which is four. Four divided by three "
         "leaves one, so two hundred twenty divided by three leaves one. This works only for three and nine. For four or "
         "seven, the digit sum tells us nothing about the remainder.", show(dvd4, 'Another example, two hundred twenty'))),
@@ -610,10 +665,12 @@ video('divisibility', 'lesson', slides=[
       L("Sometimes a question changes the divisor. A number leaves four when divided by fifteen. What does it leave when "
         "divided by five? Write it as fifteen k plus four. Fifteen k is five times three k, a whole number of fives, so it "
         "divides by five. So the number divided by five leaves four. Check it with nineteen: nineteen divided by five "
-        "leaves four.", show(dvc1, 'Write it as fifteen k plus four')),
+        "leaves four.", show(dvc1, 'Write it as fifteen k plus four'),
+        show(dvc1k, 'Check it with nineteen')),
       L("Now a number that leaves thirteen when divided by fifteen. Fifteen k still divides by five, but thirteen is too "
         "big to be a remainder by five. So we divide it again. Thirteen is two fives plus three, so the remainder is three. "
-        "Check it with twenty-eight: twenty-eight divided by five leaves three.", show(dvc2, 'Thirteen is two fives plus three')),
+        "Check it with twenty-eight: twenty-eight divided by five leaves three.", show(dvc2, 'Thirteen is two fives plus three'),
+        show(dvc2k, 'Check it with twenty-eight')),
       L("But it doesn't always work. A number leaves two when divided by eight. What does it leave when divided by six? Try "
         "two, and it leaves two. Try ten, which also leaves two when divided by eight. Ten divided by six leaves four. Two "
         "different answers, so we can't know.", show(dvc3, 'Try ten')),

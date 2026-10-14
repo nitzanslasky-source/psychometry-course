@@ -18,7 +18,7 @@
     "say": "Dividing by a number bigger than one makes it shrink. Ten divided by five is two, and twelve divided by four is three.",
     "at": [
      "Dividing by a number bigger than one",
-     "than one makes"
+     "Ten divided by"
     ]
    },
    {
@@ -32,7 +32,7 @@
     "say": "Dividing by a fraction is the opposite. Dividing by a fraction is multiplying by its reciprocal. So ten divided by one fifth is ten times five, which is fifty. And three divided by one half is three times two, which is six. The number grows.",
     "at": [
      "Dividing by a fraction is the opposite",
-     "Dividing by a fraction is multiplying"
+     "multiplying by its"
     ]
    },
    "So one is the dividing line. Times one or divided by one changes nothing. On the negative side, the same moves happen as a mirror image, away from zero or toward zero. Multiplying by a negative number is different, because it jumps to the other side of zero, and we'll see that in a later lesson."
@@ -46,12 +46,19 @@
      "root of eleven"
     ]
    },
-   "Eleven tenths is not really a fraction, because the top is bigger than the bottom, so it's more than one. A root of a number above one stays above one. Seven ninths is a real fraction, less than one, and its root stays less than one. So the fifth root of eleven tenths is bigger. We ignore the roots and look at the numbers themselves.",
+   {
+    "say": "Eleven tenths is not really a fraction, because the top is bigger than the bottom, so it's more than one. A root of a number above one stays above one. Seven ninths is a real fraction, less than one, and its root stays less than one. So the fifth root of eleven tenths is bigger. We ignore the roots and look at the numbers themselves.",
+    "at": [
+     "So the fifth root of eleven tenths is bigger",
+     "eleven tenths is bigger"
+    ]
+   },
    {
     "say": "Another one. Five quarters, cubed, against the square root of three fifths. Five quarters is above one, so its cube is above one too. Three fifths is between zero and one, so its root is too. So five quarters, cubed, is bigger.",
     "at": [
      "Five quarters, cubed",
-     "square root of"
+     "square root of",
+     "So five quarters, cubed, is bigger"
     ]
    },
    {
@@ -88,8 +95,12 @@
    {
     "say": "Here's how it helps. Which is bigger, the square root of four sevenths, or three fifths to the power of negative three? First handle the exceptional power: flip it, and it's five thirds, cubed. Five thirds is above one, so its cube is above one. The square root of four sevenths is less than one. So three fifths to the power of negative three is bigger.",
     "at": [
-     "First handle the exceptional power",
-     "flip it, and"
+     "Which is bigger, the square root of four sevenths",
+     "root of four",
+     "flip it",
+     "Five thirds is",
+     "So three fifths to the power of negative",
+     "power of negative three is"
     ]
    },
    "In the next lesson you'll meet the arrows, and with the arrows you may keep the minus in the exponent. Both ways give the same answer. [pause] Okay. I'll see you in the next part."

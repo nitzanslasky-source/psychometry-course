@@ -82,9 +82,9 @@ METHODS = [
     # 29 · which door?
     ('r26-t29-summary', 'Which door?', 'Which door?', 'new'),
     # 51 · pick values that fit (modulesV51.py, 2026-10-06)
-    ('pt51-plug-numbers', 'Case 4: pick values', 'Pick values that fit', 'new'),
-    ('pt51-plug-numbers', 'Pick values: watch out', 'Pick values that fit', 'new'),
-    ('pt51-plug-numbers', 'Nothing-changes value', 'Pick values that fit', 'new'),
+    # 2026-10-14 (Claude): the topic-51 reading scripts split the lesson into camera parts; these slides are in part 3 now
+    ('pt51-plug-numbers-3', 'Case 4: pick values', 'Pick values that fit', 'new'),
+    ('pt51-plug-numbers-3', 'Nothing-changes value', 'Pick values that fit', 'new'),
     ('solve-pt-q24', '*', 'Pick values that fit', 'new'),
 ]
 

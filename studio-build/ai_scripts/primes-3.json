@@ -29,6 +29,7 @@
     "at": [
      "So a hundred eighty is two squared",
      "two squared, times",
+     "multiplying back",
      "Four times nine",
      "and thirty-six times"
     ]
@@ -37,7 +38,11 @@
     "say": "If you start differently, say with ten times eighteen, you get the same primes at the end. Ten is two times five, and eighteen is two times three times three. Again two twos, two threes and one five.",
     "at": [
      "ten times eighteen",
-     "the same primes"
+     "the same primes",
+     "Ten is two times five",
+     "eighteen is two times three times three",
+     "Again two twos",
+     "and one five"
     ]
    }
   ],
@@ -60,15 +65,23 @@
    {
     "say": "Now the non-examples. Seven isn't in a hundred eighty at all, so seven doesn't divide it, and neither does fourteen or twenty-one. Eight is two times two times two, so it needs three twos, but a hundred eighty has only two. So eight doesn't divide a hundred eighty either.",
     "at": [
-     "Now the non-examples",
-     "Seven isn't in"
+     "Seven isn't in",
+     "eighty at all",
+     "neither does fourteen",
+     "Eight is two times two times two",
+     "times two, so"
     ]
    },
    {
     "say": "And watch for pieces that aren't prime. If x is three times six squared, the six squared hides two twos and two threes. So x is two squared times three cubed, and twelve divides x, because it needs two twos and one three. Always unpack such pieces into primes first.",
     "at": [
      "If x is three times six squared",
-     "six squared, the"
+     "the six squared hides",
+     "twos and two",
+     "So x is two squared times three cubed",
+     "times three cubed",
+     "because it needs two twos",
+     "and one three"
     ]
    }
   ],

@@ -98,6 +98,11 @@ def apply(html):
     k = html.find('function hyPie(')
     assert k > 0
     html = html[:k] + FUNCS.lstrip() + html[k:]
+    # 2026-10-14 (Claude, minimal): a question item may narrow its stem (it.stemw = a fraction of the width) - topic 51 is all
+    # camera, and the face bubble sits top right: the stem stays left of it. No effect on items without stemw.
+    _so = "let z=it.size||40,r=richSvg(stem,x,y,w,z);while(r.height>230&&z>26)r=richSvg(stem,x,y,w,--z);"
+    assert html.count(_so) == 1, 'question stem code not found'
+    html = html.replace(_so, "let z=it.size||40,_sw=w*(it.stemw||1),r=richSvg(stem,x,y,_sw,z);while(r.height>230&&z>26)r=richSvg(stem,x,y,_sw,--z);")
     # 2026-10-10 hand-written board items (k 'hw', studio_handwrite.py); no effect on other items
     import studio_handwrite
     return studio_handwrite.apply(html)

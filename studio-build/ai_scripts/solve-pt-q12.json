@@ -1,0 +1,151 @@
+{
+ "videoId": "solve-pt-q12",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "a is a positive integer. a factorial, times the bracket a plus two, factorial. What does it equal?",
+    "voice": "calm",
+    "at": [
+     "a is a positive integer"
+    ],
+    "pause": 0.5
+   },
+   "First, what is this exclamation mark? It's called a factorial. It means we multiply all the whole numbers from that number down to one.",
+   {
+    "say": "For example, five factorial is five times four times three times two times one. Four factorial is four times three times two times one, twenty-four.",
+    "at": [
+     "five factorial",
+     "four times three",
+     "Four factorial",
+     "three times two times one, twenty-four"
+    ]
+   },
+   {
+    "say": "Three factorial is three times two times one, six. Two factorial is two times one, two. And one factorial is just one.",
+    "at": [
+     "Three factorial",
+     "two times one"
+    ]
+   },
+   {
+    "say": "Few students solve this with algebra. But it's an expression with a letter, and the choices have letters. So we can plug in numbers. [short pause] We'll solve it by plugging in, and then see the short algebra too.",
+    "at": [
+     "an expression with a letter",
+     "So we can"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Which number? a must be a positive whole number, so the smallest is one. It keeps the factorials tiny.",
+    "at": [
+     "Which number",
+     "the smallest is one",
+     "It keeps the"
+    ]
+   },
+   {
+    "say": "One factorial is one. One plus two is three, and three factorial is six. One times six is six. So the right choice must give six.",
+    "at": [
+     "One times six",
+     "So the right"
+    ]
+   },
+   {
+    "say": "Choice number one, two a plus two, factorial. Two plus two is four, and four factorial is twenty-four. Not six, so it's out.",
+    "at": [
+     "number one, two",
+     "Two plus two is four",
+     "and four factorial",
+     "so it"
+    ]
+   },
+   {
+    "say": "Choice number two, a squared plus two a, factorial. One plus two is three, and three factorial is six. It fits, so it stays for now.",
+    "at": [
+     "number two, a",
+     "One plus two is three, and three factorial",
+     "and three factorial"
+    ]
+   },
+   {
+    "say": "Choice number three, a factorial squared, times a plus two. One squared is one, and one times three is three. Out.",
+    "at": [
+     "number three, a",
+     "One squared is one",
+     "times three is three"
+    ]
+   },
+   {
+    "say": "Choice number four, a factorial squared, times a plus one, times a plus two. One times two times three is six. It stays too.",
+    "at": [
+     "number four, a",
+     "times a plus",
+     "One times two times three",
+     "is six. It"
+    ]
+   },
+   {
+    "say": "Only two choices are out, and we need three. Why the tie? Because of the number one. One squared is one, and one factorial is one, so it hides the differences between the choices.",
+    "at": [
+     "number one. One",
+     "it hides the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So we plug in a second number, a tie-breaker, and we check only the two choices that are left. The ones that are out stay out. a equals two, the next positive whole number.",
+    "at": [
+     "So we",
+     "a second number"
+    ]
+   },
+   {
+    "say": "Two factorial is two. Two plus two is four, and four factorial is twenty-four. Two times twenty-four is forty-eight.",
+    "at": [
+     "Two factorial is two",
+     "Two plus two",
+     "Two times twenty-four"
+    ]
+   },
+   {
+    "say": "Choice number two. Two squared is four, and two times two is four. Four plus four is eight, so it's eight factorial. Eight times seven is already fifty-six. That's more than forty-eight, and we still have more numbers to multiply. So it's out, without finishing.",
+    "at": [
+     "number two. Two",
+     "Two squared is four",
+     "two times two",
+     "Eight times seven",
+     "That's more than",
+     "without finishing"
+    ]
+   },
+   {
+    "say": "Three choices are out, so choice number four is our answer.",
+    "at": [
+     "Three choices are out",
+     "so choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the short algebra. The bracket a plus two, factorial, is a plus two, times a plus one, times a, times all the numbers below a. And a times all the numbers below it is just a factorial.",
+    "at": [
+     "Now the",
+     "Now the short algebra",
+     "The bracket a"
+    ]
+   },
+   {
+    "say": "So the question is a factorial, times a factorial, times a plus one, times a plus two. That's a factorial squared, times a plus one, times a plus two. Choice number four again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So the question is",
+     "factorial, times a",
+     "Choice number four again"
+    ]
+   }
+  ]
+ ]
+}

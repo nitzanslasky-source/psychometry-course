@@ -1,0 +1,101 @@
+{
+ "videoId": "solve-pt-q24",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: x is not equal to negative five. x y plus five y equals two x plus ten. What is y?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "One equation with two letters, x and y, and they ask for one value. Some students say, one equation and two letters, it can't be solved. So they choose cannot be determined. That's the trap.",
+    "at": [
+     "letters, x and",
+     "they choose cannot be determined",
+     "That's the trap"
+    ]
+   },
+   {
+    "say": "This is the case of more letters than equations. [short pause] We'll solve it by picking values, and then see why it works with algebra.",
+    "at": [
+     "This is",
+     "more letters than equations",
+     "solve it by"
+    ]
+   },
+   {
+    "say": "If y has one value, it's the same for every allowed x. So I may choose x myself. Which x? Zero, because it kills every term with x. And it's allowed, because the only condition is that x isn't negative five.",
+    "at": [
+     "the only condition"
+    ]
+   },
+   {
+    "say": "So x equals zero. x y is zero, and two x is zero. We're left with five y equals ten, so y is two.",
+    "at": [
+     "x y is",
+     "We're left with five y",
+     "equals ten, so"
+    ]
+   },
+   {
+    "say": "With x equal to zero, y is two. So y is not negative five, and it's not negative two. Choice numbers one and three are out.",
+    "at": [
+     "Choice numbers one",
+     "and three are out"
+    ]
+   },
+   {
+    "say": "Two choices are left, two, and cannot be determined. If y changed when x changes, the answer would be cannot be determined. So the tie-breaker is a different x. Let's take x equals one.",
+    "at": [
+     "Two choices are left",
+     "changes, the answer"
+    ]
+   },
+   {
+    "say": "y plus five y is six y, and two plus ten is twelve. Six y equals twelve, so y is two again.",
+    "at": [
+     "Six y equals twelve",
+     "y is two"
+    ]
+   },
+   {
+    "say": "Two examples gave the same y. That's a strong hint, but a few examples never prove always. So let's see why it's always two.",
+    "at": [
+     "a few examples never prove always",
+     "So let's see"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] On the left, take y out. x y plus five y is y times the bracket x plus five. On the right, take two out. Two x plus ten is two times the bracket x plus five.",
+    "at": [
+     "On the",
+     "On the left, take y out",
+     "x y plus"
+    ]
+   },
+   {
+    "say": "x plus five is not zero, because x is not negative five. So we may divide both sides by it, and y is two, for every allowed x. Choice number two is our answer.",
+    "at": [
+     "x plus five is not zero",
+     "zero, because x",
+     "and y is two",
+     "every allowed x",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "Now you see why they gave the condition. If x were negative five, both sides would be zero, and y could be anything. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "why they gave the condition",
+     "and y could"
+    ]
+   }
+  ]
+ ]
+}

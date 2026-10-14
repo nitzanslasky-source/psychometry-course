@@ -4776,7 +4776,7 @@
           "Both expressions equal x, so we set them equal. Ten T plus U equals U cubed plus four T plus four U. Now subtract four T and U from both sides. On the left, ten T minus four T leaves six T. On the right, four U minus U leaves three U. So six T equals U cubed plus three U."
         ],
         [
-          "T is a digit, so it's at most nine, and six T is at most fifty-four. U can't be zero, because then U cubed plus three U is zero, so six T is zero and T is zero, and a two-digit number can't start with zero. So we test U from one.",
+          "T is a digit, so it's at most nine, and six T is at most fifty-four. Can U be zero? Then U cubed plus three U is zero, so six T is zero, and T is zero. But T is the tens digit, and a two-digit number can't start with zero. So U isn't zero, and we test U from one.",
           "U is one gives one plus three, which is four. U is two gives eight plus six, which is fourteen. U is three gives twenty-seven plus nine, which is thirty-six. U is four gives sixty-four plus twelve, which is seventy-six, already more than fifty-four. A bigger U only makes U cubed plus three U bigger, so we can stop.",
           "Four and fourteen are not six times a digit, but thirty-six is. Six T is thirty-six, so T is six. Choice number three is our answer."
         ],
@@ -4796,7 +4796,7 @@
           "Both expressions equal x, so we set them equal. 10T + U = U³ + 4T + 4U.\nNow subtract 4T and U from both sides. On the left, 10T − 4T leaves 6T. On the right, 4U − U leaves 3U.\nSo 6T = U³ + 3U."
         ],
         [
-          "T is a digit, so it's at most 9, and 6T is at most 54.\nU can't be zero, because then U³ + 3U = 0, so 6T = 0 and T = 0, and a two-digit number can't start with zero.\nSo we test U from one.",
+          "T is a digit, so it's at most 9, and 6T is at most 54.\nCan U be zero? Then U³ + 3U = 0, so 6T = 0, and T = 0.\nBut T is the tens digit, and a two-digit number can't start with zero.\nSo U isn't zero, and we test U from one.",
           "U is one gives 1 + 3, which is four. U is two gives 8 + 6, which is 14.\nU is three gives 27 + 9, which is 36. U is four gives 64 + 12, which is 76, already more than 54.\nA bigger U only makes U³ + 3U bigger, so we can stop.",
           "Four and 14 are not six times a digit, but 36 is. 6T = 36, so T = 6.\nChoice number 3 is our answer."
         ],
@@ -8346,6 +8346,792 @@
           [
             "two times the root of thirty-six, two times six, twelve",
             "2√36 = 2 × 6 = 12"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q01": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "The square root of nineteen thousand forty-four",
+            "√19,044"
+          ]
+        ],
+        "1.2": [
+          [
+            "gives nineteen thousand forty-four",
+            "gives 19,044"
+          ]
+        ],
+        "1.5": [
+          [
+            "Everything that comes from the hundred fifty",
+            "Everything that comes from the 150"
+          ]
+        ],
+        "2.1": [
+          [
+            "Forty thousand",
+            "40,000"
+          ]
+        ],
+        "2.2": [
+          [
+            "nineteen thousand forty-four, is much less than forty thousand",
+            "19,044, is much less than 40,000"
+          ]
+        ],
+        "2.3": [
+          [
+            "even more than forty thousand",
+            "even more than 40,000"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q01-2": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "one thousand seventy-nine, one thousand eighty-one, one thousand eighty-four, and one thousand eighty-six",
+            "1,079, 1,081, 1,084, and 1,086"
+          ]
+        ],
+        "2.3": [
+          [
+            "Only one thousand eighty-one ends in one",
+            "Only 1,081 ends in 1"
+          ]
+        ],
+        "3.1": [
+          [
+            "The square root of one thousand eight hundred forty-nine",
+            "√1,849"
+          ]
+        ],
+        "3.3": [
+          [
+            "Forty squared is one thousand six hundred, and fifty squared is two thousand five hundred",
+            "40² = 1,600, and 50² = 2,500"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q03": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "a squared plus b squared, plus the bracket a minus b, squared, all over two a b, plus one",
+            "(a² + b² + (a − b)²)/(2ab) + 1"
+          ]
+        ],
+        "1.3": [
+          [
+            "the bracket a minus b, squared",
+            "(a − b)²"
+          ],
+          [
+            "a minus b, squared, is a squared minus two a b plus b squared",
+            "(a − b)² is a² − 2ab + b²"
+          ]
+        ],
+        "1.4": [
+          [
+            "a squared minus two a b plus b squared",
+            "a² − 2ab + b²"
+          ],
+          [
+            "And the minus two a b stays",
+            "And the −2ab stays"
+          ]
+        ],
+        "2.2": [
+          [
+            "two a b over two a b",
+            "2ab/2ab"
+          ],
+          [
+            "minus one and plus one",
+            "−1 and +1"
+          ]
+        ],
+        "2.3": [
+          [
+            "two a squared over two a b",
+            "2a²/2ab"
+          ],
+          [
+            "two b squared over two a b",
+            "2b²/2ab"
+          ],
+          [
+            "and a b cancels too",
+            "and one b cancels too"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q03-2": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.4": [
+          [
+            "One squared is one, plus one squared, one",
+            "1² is 1, plus 1², 1"
+          ]
+        ],
+        "3.2": [
+          [
+            "One over one is one, plus one over one, one",
+            "1/1 is 1, plus 1/1, 1"
+          ]
+        ],
+        "4.2": [
+          [
+            "Two to the power of x plus one, plus two to the power of x",
+            "2^(x+1) + 2^x"
+          ],
+          [
+            "two to the power of two x plus one",
+            "2^(2x+1)"
+          ],
+          [
+            "two to the power of x plus three",
+            "2^(x+3)"
+          ]
+        ],
+        "4.3": [
+          [
+            "Two squared is four, plus two to the power of one, two",
+            "2² is 4, plus 2¹, 2"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q04": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.2": [
+          [
+            "twenty-seven pi a cubed over two",
+            "27πa³/2"
+          ]
+        ],
+        "2.3": [
+          [
+            "Three a, squared, is nine a squared",
+            "(3a)² is 9a²"
+          ]
+        ],
+        "2.4": [
+          [
+            "twenty-seven pi a cubed over four",
+            "27πa³/4"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q04-2": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "two hundred squared was forty thousand",
+            "200² was 40,000"
+          ]
+        ]
+      }
+    },
+    "pt51-plug-answers": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "4.1": [
+          [
+            "x times, the bracket x plus three, equals forty",
+            "x(x + 3) = 40"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q06": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.2": [
+          [
+            "three times one is three, plus six is nine",
+            "3 × 1 = 3, and 3 + 6 = 9"
+          ]
+        ],
+        "3.2": [
+          [
+            "three times minus four is minus twelve, plus six is minus six",
+            "3 × (−4) = −12, and −12 + 6 = −6"
+          ]
+        ]
+      }
+    },
+    "pt51-insights": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "5.1": [
+          [
+            "Forty-eight plus seventy-three plus ninety-six, minus, the bracket forty-six plus seventy-one plus ninety-four",
+            "(48 + 73 + 96) − (46 + 71 + 94)"
+          ]
+        ],
+        "5.2": [
+          [
+            "Forty-eight plus seventy-three is a hundred twenty-one, plus ninety-six is two hundred seventeen",
+            "48 + 73 = 121, and 121 + 96 = 217"
+          ],
+          [
+            "Forty-six plus seventy-one is a hundred seventeen, plus ninety-four is two hundred eleven",
+            "46 + 71 = 117, and 117 + 94 = 211"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q20": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "One fifth plus one sixth, divided by two fifths plus two sixths",
+            "(1/5 + 1/6) ÷ (2/5 + 2/6)"
+          ]
+        ],
+        "2.2": [
+          [
+            "two times, the bracket one fifth plus one sixth",
+            "2 · (1/5 + 1/6)"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q21": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "sixty thousand shekels",
+            "60,000 shekels"
+          ]
+        ],
+        "3.1": [
+          [
+            "eight percent of thirty thousand",
+            "8% of 30,000"
+          ],
+          [
+            "One percent of thirty thousand is three hundred",
+            "1% of 30,000 is 300"
+          ],
+          [
+            "two thousand four hundred",
+            "2,400"
+          ]
+        ],
+        "3.2": [
+          [
+            "half of two thousand four hundred, one thousand two hundred",
+            "half of 2,400, 1,200"
+          ],
+          [
+            "four thousand eight hundred",
+            "4,800"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q22": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.3": [
+          [
+            "B E plus A D, minus E C",
+            "BE + AD − EC"
+          ]
+        ],
+        "2.5": [
+          [
+            "two times, the bracket x minus y",
+            "2(x − y)"
+          ]
+        ]
+      }
+    },
+    "pt51-plug-numbers": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.3": [
+          [
+            "x squared y",
+            "x²y"
+          ]
+        ],
+        "4.1": [
+          [
+            "the bracket x plus two, squared, minus x times the bracket x plus four",
+            "(x + 2)² − x(x + 4)"
+          ]
+        ],
+        "5.1": [
+          [
+            "The bracket x plus three, squared, minus the bracket x plus one, squared",
+            "(x + 3)² − (x + 1)²"
+          ]
+        ]
+      }
+    },
+    "pt51-plug-numbers-2": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.1": [
+          [
+            "x squared times x cubed, over x",
+            "(x² · x³)/x"
+          ]
+        ],
+        "4.1": [
+          [
+            "a squared b, and a b squared",
+            "a²b, and ab²"
+          ]
+        ],
+        "4.3": [
+          [
+            "a squared b is four times three",
+            "a²b is 4 × 3"
+          ],
+          [
+            "a b squared is two times nine",
+            "ab² is 2 × 9"
+          ]
+        ],
+        "5.1": [
+          [
+            "x times the bracket x plus one",
+            "x(x + 1)"
+          ]
+        ]
+      }
+    },
+    "pt51-plug-numbers-3": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.6": [
+          [
+            "one and a half times four x plus six y",
+            "1½ × (4x + 6y)"
+          ]
+        ],
+        "5.2": [
+          [
+            "the bracket a plus b, squared",
+            "(a + b)²"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q10": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "The square root of x plus two, minus the square root of x squared minus eight x plus sixteen",
+            "√(x + 2 − √(x² − 8x + 16))"
+          ]
+        ],
+        "1.6": [
+          [
+            "the root of four plus two, minus zero",
+            "√(4 + 2 − 0)"
+          ]
+        ],
+        "2.1": [
+          [
+            "The bracket x minus four, squared",
+            "(x − 4)²"
+          ]
+        ],
+        "2.2": [
+          [
+            "x minus four is zero or more",
+            "x − 4 is 0 or more"
+          ]
+        ],
+        "2.3": [
+          [
+            "the bracket x minus four",
+            "(x − 4)"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q11": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.1": [
+          [
+            "two times the bracket ninety minus alpha",
+            "2(90 − α)"
+          ],
+          [
+            "a hundred eighty minus two alpha",
+            "180 − 2α"
+          ]
+        ],
+        "3.2": [
+          [
+            "a hundred eighty minus two alpha",
+            "180 − 2α"
+          ],
+          [
+            "four alpha minus a hundred eighty",
+            "4α − 180"
+          ]
+        ],
+        "3.3": [
+          [
+            "A hundred eighty, minus four alpha plus a hundred eighty, minus ninety plus alpha",
+            "180 − 4α + 180 − 90 + α"
+          ],
+          [
+            "two hundred seventy minus three alpha",
+            "270 − 3α"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q12": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "a factorial, times the bracket a plus two, factorial",
+            "a! · (a + 2)!"
+          ]
+        ],
+        "2.3": [
+          [
+            "two a plus two, factorial",
+            "(2a + 2)!"
+          ]
+        ],
+        "2.4": [
+          [
+            "a squared plus two a, factorial",
+            "(a² + 2a)!"
+          ]
+        ],
+        "2.5": [
+          [
+            "a factorial squared, times a plus two",
+            "(a!)² · (a + 2)"
+          ]
+        ],
+        "2.6": [
+          [
+            "a factorial squared, times a plus one, times a plus two",
+            "(a!)² · (a + 1)(a + 2)"
+          ]
+        ],
+        "4.1": [
+          [
+            "The bracket a plus two, factorial",
+            "(a + 2)!"
+          ]
+        ],
+        "4.2": [
+          [
+            "a factorial squared, times a plus one, times a plus two",
+            "(a!)² · (a + 1)(a + 2)"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q13": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "x cubed times y",
+            "x³y"
+          ]
+        ],
+        "1.2": [
+          [
+            "divide x cubed y by x over y",
+            "divide x³y by x/y"
+          ]
+        ],
+        "1.5": [
+          [
+            "x squared y squared and x cubed y",
+            "x²y² and x³y"
+          ]
+        ],
+        "1.8": [
+          [
+            "x cubed times y",
+            "x³y"
+          ]
+        ],
+        "1.9": [
+          [
+            "x squared y squared",
+            "x²y²"
+          ]
+        ],
+        "2.2": [
+          [
+            "x cubed y divided by x over y",
+            "x³y ÷ (x/y)"
+          ],
+          [
+            "x squared y squared, choice",
+            "x²y², choice"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q14": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.7": [
+          [
+            "forty times a hundred, over sixty plus forty",
+            "(40 × 100)/(60 + 40)"
+          ]
+        ],
+        "1.8": [
+          [
+            "forty times sixty, over a hundred",
+            "(40 × 60)/100"
+          ]
+        ],
+        "1.9": [
+          [
+            "sixty plus forty, over a hundred",
+            "(60 + 40)/100"
+          ]
+        ],
+        "1.10": [
+          [
+            "a hundred times a hundred, over forty",
+            "(100 × 100)/40"
+          ]
+        ],
+        "2.1": [
+          [
+            "forty out of x plus forty, times a hundred",
+            "40/(x + 40) × 100"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q24": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "x y plus five y equals two x plus ten",
+            "xy + 5y = 2x + 10"
+          ]
+        ],
+        "1.5": [
+          [
+            "x y is zero",
+            "xy is 0"
+          ]
+        ],
+        "2.1": [
+          [
+            "x y plus five y is y times the bracket x plus five",
+            "xy + 5y is y(x + 5)"
+          ],
+          [
+            "two times the bracket x plus five",
+            "2(x + 5)"
+          ]
+        ]
+      }
+    },
+    "pt51-estimation": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.1": [
+          [
+            "ninety-six point nine",
+            "96.9"
+          ],
+          [
+            "nine thousand six hundred ninety",
+            "9,690"
+          ],
+          [
+            "ninety-six thousand nine hundred",
+            "96,900"
+          ]
+        ],
+        "4.5": [
+          [
+            "so root two is less than one and a half",
+            "so √2 < 1½"
+          ],
+          [
+            "so root three is more than one and a half, but less than two",
+            "so √3 is more than 1½, but less than 2"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q16": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.2": [
+          [
+            "pi over two, minus two",
+            "π/2 − 2"
+          ],
+          [
+            "so pi over two is less than four over two, which is two",
+            "so π/2 < 4/2, which is 2"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q17": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.4": [
+          [
+            "two plus root two, times two minus root two",
+            "(2 + √2)(2 − √2)"
+          ],
+          [
+            "root two squared is two",
+            "(√2)² = 2"
+          ]
+        ],
+        "1.5": [
+          [
+            "So the top is two root two minus two",
+            "So the top is 2√2 − 2"
+          ]
+        ],
+        "1.6": [
+          [
+            "two root two minus two, over two",
+            "(2√2 − 2)/2"
+          ],
+          [
+            "we get root two minus one",
+            "we get √2 − 1"
+          ]
+        ],
+        "2.3": [
+          [
+            "so root two is less than one and a half",
+            "so √2 < 1½"
+          ],
+          [
+            "So root two is between one and one and a half",
+            "So √2 is between 1 and 1½"
+          ]
+        ],
+        "2.6": [
+          [
+            "root two minus one, is less than a half",
+            "√2 − 1, is less than ½"
+          ],
+          [
+            "because root two is less than one and a half",
+            "because √2 < 1½"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q18": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.4": [
+          [
+            "So root two is less than one and a half, and sixteen root two is less than twenty-four",
+            "So √2 < 1½, and 16√2 < 24"
+          ]
+        ]
+      }
+    },
+    "solve-pt-q19": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.4": [
+          [
+            "Three point two divided by ten is zero point three two",
+            "3.2 ÷ 10 = 0.32"
+          ]
+        ],
+        "2.3": [
+          [
+            "zero point six four plus zero point two",
+            "0.64 + 0.2"
           ]
         ]
       }

@@ -1,0 +1,81 @@
+{
+ "videoId": "solve-pt-q20",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "One fifth plus one sixth, divided by two fifths plus two sixths. What is it?",
+    "voice": "calm",
+    "at": [
+     "One fifth plus one sixth"
+    ],
+    "pause": 0.5
+   },
+   "We'll solve it two ways. First we calculate, and then we'll see the insight.",
+   {
+    "say": "The top has two fractions to add. Five and six have a common denominator of thirty. One fifth is six thirtieths, and one sixth is five thirtieths. Together, eleven thirtieths.",
+    "at": [
+     "One fifth is six thirtieths",
+     "and one sixth",
+     "Together, eleven thirtieths"
+    ]
+   },
+   {
+    "say": "The bottom has two fractions too, with the same common denominator, thirty. Two fifths is twelve thirtieths, and two sixths is ten thirtieths. Together, twenty-two thirtieths.",
+    "at": [
+     "The bottom has",
+     "Two fifths is twelve thirtieths",
+     "and two sixths",
+     "Together, twenty-two thirtieths"
+    ]
+   },
+   {
+    "say": "Now we divide. Dividing by a fraction means multiplying by it upside down. So it's eleven over thirty, times thirty over twenty-two. The thirties cancel, and we're left with eleven over twenty-two, which is one half.",
+    "at": [
+     "Dividing by a",
+     "So it's eleven over thirty",
+     "times thirty over",
+     "The thirties cancel",
+     "left with eleven"
+    ]
+   },
+   {
+    "say": "Careful to keep the top on top. If you flip it, you get two, and two is waiting as choice number two. Choice number one is our answer.",
+    "at": [
+     "two is waiting as choice number two",
+     "Choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the insight. Some students look at this and see right away that it's one half. How? Look at the bottom. Two fifths is exactly twice one fifth, and two sixths is exactly twice one sixth.",
+    "at": [
+     "students look at"
+    ]
+   },
+   {
+    "say": "So every part of the bottom is twice its partner on the top, and the whole bottom is twice the whole top. Why? Two fifths plus two sixths is two times, the bracket one fifth plus one sixth. And a number over twice itself is always one half.",
+    "at": [
+     "Two fifths plus two sixths is two times",
+     "is two times"
+    ]
+   },
+   {
+    "say": "Maybe it's easier to see it like this. On top we have a banana and an apple, and on the bottom, two bananas and two apples. The bottom is exactly double the top, so it's one half.",
+    "at": [
+     "On top we have a banana",
+     "banana and an"
+    ]
+   },
+   {
+    "say": "By the way, notice that the exam wrote two sixths, and not one third. They're the same number, but two sixths shows us that it's double one sixth. They wanted us to see it.",
+    "at": [
+     "the exam wrote two sixths",
+     "two sixths shows"
+    ]
+   },
+   "Honestly, I love this question. Even in an easy calculation, the exam gives an advantage to whoever stops and looks first. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

@@ -1,113 +1,113 @@
 {
-  "videoId": "solve-q-398",
-  "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "A lock code has three digits, and each digit is one, three or five. A digit may repeat. Which of the following cannot be the product of the three digits?",
-        "voice": "calm",
-        "at": [
-          "A lock code"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So we build a product out of three digits, and every digit is one, three or five. The question is which number can't be built, and that's really a question about a missing prime. [short pause] We'll solve it two ways, breaking each choice into primes, and then even and odd.",
-        "at": [
-          "product out of",
-          "every digit is one, three or five",
-          "or five. The",
-          "which number can't be built",
-          "and that's really",
-          "about a missing",
-          "solve it two",
-          "each choice into",
-          "then even and"
-        ]
-      },
-      {
-        "say": "[short pause] Our first method. What primes can the digits bring? One brings nothing, it doesn't change a product. Three brings a three, and five brings a five. So any product we build has only threes and fives in it, and at most three of them, because there are three digits.",
-        "at": [
-          "digits bring? One",
-          "it doesn't change",
-          "Three brings a",
-          "five brings a",
-          "any product we",
-          "only threes and fives",
-          "at most three of them",
-          "because there are"
-        ]
-      },
-      {
-        "say": "Forty-five. Forty-five is nine times five, and nine is three times three. So three, three, five. Exactly three digits, the code three, three, five. It works, so choice number one is out.",
-        "at": [
-          "Forty-five is nine times five",
-          "and nine is",
-          "three. So three",
-          "Exactly three digits",
-          "three, three, five. It",
-          "choice number one is out"
-        ]
-      },
-      {
-        "say": "Thirty. Thirty is two times fifteen, so two times three times five. It needs a two. Can any digit bring a two? One, three, five, no. So thirty can't be built.",
-        "at": [
-          "Thirty is two times fifteen",
-          "so two times",
-          "It needs a two",
-          "Can any digit",
-          "two? One, three",
-          "So thirty can't"
-        ]
-      },
-      {
-        "say": "In the exam you'd circle it and move on. Here, let's check the rest. Twenty-five is five times five. The code needs three digits, so use one for the third digit. Multiplying by one does not change twenty-five. The code is one, five, five, so choice number three is out.",
-        "at": [
-          "circle it",
-          "Here, let's check",
-          "Twenty-five is five times five",
-          "The code needs",
-          "the third digit",
-          "The code is",
-          "Choice number three is out"
-        ]
-      },
-      {
-        "say": "Fifteen is three times five, and again a one for the third digit, one, three, five. Choice number four is out. So thirty, choice number two is our answer.",
-        "at": [
-          "Fifteen is three times five",
-          "and again a",
-          "the third digit",
-          "Choice number four is out",
-          "choice number two is our answer"
-        ]
-      }
+ "videoId": "solve-q-398",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A lock code has three digits, and each digit is one, three or five. A digit may repeat. Which of the following cannot be the product of the three digits?",
+    "voice": "calm",
+    "at": [
+     "A lock code"
     ],
-    [
-      {
-        "say": "[pause] All the digits are odd. And odd times odd is always odd. Three times five is fifteen, and five times five is twenty-five, odd every time. Why? An even product needs a factor of two somewhere, and odd numbers don't have a two in them.",
-        "at": [
-          "All the",
-          "odd times odd is always odd",
-          "Three times five",
-          "and five times",
-          "twenty-five, odd every",
-          "An even product needs",
-          "factor of two",
-          "odd numbers don't",
-          "two in them"
-        ]
-      },
-      {
-        "say": "So a product of three odd digits is always odd. Thirty is even, so it can't be the product. Choice number two. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "So a product",
-          "odd digits is",
-          "Thirty is even",
-          "can't be the",
-          "Choice number two"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So we build a product out of three digits, and every digit is one, three or five. The question is which number can't be built, and that's really a question about a missing prime. [short pause] We'll solve it two ways, breaking each choice into primes, and then even and odd.",
+    "at": [
+     "product out of",
+     "every digit is one, three or five",
+     "or five. The",
+     "which number can't be built",
+     "and that's really",
+     "about a missing",
+     "solve it two",
+     "each choice into",
+     "then even and"
     ]
+   },
+   {
+    "say": "[short pause] Our first method. What primes can the digits bring? One brings nothing, it doesn't change a product. Three brings a three, and five brings a five. So any product we build has only threes and fives in it, and at most three of them, because there are three digits.",
+    "at": [
+     "digits bring? One",
+     "it doesn't change",
+     "Three brings a",
+     "five brings a",
+     "any product we",
+     "only threes and fives",
+     "at most three of them",
+     "because there are"
+    ]
+   },
+   {
+    "say": "Forty-five. Forty-five is nine times five, and nine is three times three. So three, three, five. Exactly three digits, the code three, three, five. It works, so choice number one is out.",
+    "at": [
+     "Forty-five is nine times five",
+     "and nine is",
+     "three. So three",
+     "Exactly three digits",
+     "three, three, five. It",
+     "choice number one is out"
+    ]
+   },
+   {
+    "say": "Thirty. Thirty is two times fifteen, so two times three times five. It needs a two. Can any digit bring a two? One, three, five, no. So thirty can't be built.",
+    "at": [
+     "Thirty is two times fifteen",
+     "so two times",
+     "It needs a two",
+     "Can any digit",
+     "two? One, three",
+     "So thirty can't"
+    ]
+   },
+   {
+    "say": "In the exam you'd circle it and move on. Here, let's check the rest. Twenty-five is five times five. The code needs three digits, so use one for the third digit. Multiplying by one does not change twenty-five. The code is one, five, five, so choice number three is out.",
+    "at": [
+     "circle it",
+     "Here, let's check",
+     "Twenty-five is five times five",
+     "The code needs",
+     "the third digit",
+     "The code is",
+     "Choice number three is out"
+    ]
+   },
+   {
+    "say": "Fifteen is three times five, and again a one for the third digit, one, three, five. Choice number four is out. So thirty, choice number two is our answer.",
+    "at": [
+     "Fifteen is three times five",
+     "and again a",
+     "the third digit",
+     "Choice number four is out",
+     "choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] All the digits are odd. And odd times odd is always odd. Three times five is fifteen, and five times five is twenty-five, odd every time. Why? An even product needs a factor of two somewhere, and odd numbers don't have a two in them.",
+    "at": [
+     "All the",
+     "odd times odd is always odd",
+     "Three times five",
+     "and five times",
+     "twenty-five, odd every",
+     "An even product needs",
+     "factor of two",
+     "odd numbers don't",
+     "two in them"
+    ]
+   },
+   {
+    "say": "So a product of three odd digits is always odd. Thirty is even, so it can't be the product. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So a product",
+     "odd digits is",
+     "Thirty is even",
+     "can't be the",
+     "Choice number two"
+    ]
+   }
   ]
+ ]
 }

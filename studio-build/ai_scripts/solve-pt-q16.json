@@ -1,0 +1,155 @@
+{
+ "videoId": "solve-pt-q16",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A O B is a sector of a circle with center O and a radius of two centimeters. Based on this and the figure, what is the area of the shaded region, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "A O B is a sector"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The shaded region is the sector, minus the right triangle inside it. So shaded equals sector minus triangle. [short pause] We'll solve it two ways, by estimating the choices, and then with a partial calculation.",
+    "at": [
+     "The shaded region",
+     "is the sector",
+     "minus the right triangle",
+     "So shaded equals",
+     "ways, by estimating"
+    ]
+   },
+   "With an estimate, we don't look for the right answer. We rule out three. And in an area question, the first thing to check is where the pi is.",
+   {
+    "say": "The area of a sector is a part of the circle's area, pi r squared, so it has pi in it. The triangle's area is base times height over two. That's a plain number, with no pi.",
+    "at": [
+     "The area of a sector",
+     "is a part"
+    ]
+   },
+   {
+    "say": "So the shaded area must look like this. Some amount of pi, minus a number.",
+    "at": [
+     "Some amount of pi, minus a number"
+    ]
+   },
+   {
+    "say": "Choice number one is four minus pi. That's a number minus pi, the opposite order, so it's out.",
+    "at": [
+     "number one is",
+     "pi. That's a",
+     "the opposite order"
+    ]
+   },
+   {
+    "say": "Choice number three is pi over root two. There's no minus at all, so nothing was taken away. It's out too.",
+    "at": [
+     "number three is",
+     "There's no minus at all",
+     "so nothing was"
+    ]
+   },
+   {
+    "say": "Choice number two and choice number four both have pi minus a number, so they stay. Two choices are out, just from where the pi is. In some questions every choice has the pi in the right place, and this check rules out nothing. In others, it rules out three choices at once.",
+    "at": [
+     "number two and",
+     "number four both",
+     "from where the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Two choices are left. Now let's estimate their size. Pi is a bit more than three, and less than four.",
+    "at": [
+     "Two choices are left",
+     "Now let's estimate",
+     "Pi is a bit more than three",
+     "than three, and"
+    ]
+   },
+   {
+    "say": "Look at choice number two. Inside the bracket, we have pi over two, minus two. Pi is less than four, so pi over two is less than four over two, which is two.",
+    "at": [
+     "number two. Inside",
+     "Pi is less than four",
+     "so pi over"
+    ]
+   },
+   {
+    "say": "If we take two away from something less than two, we get a negative number. And half of a negative number is still negative. So choice number two is a negative number.",
+    "at": [
+     "If we take two away",
+     "from something less",
+     "number two is"
+    ]
+   },
+   {
+    "say": "But an area can't be negative, so choice number two is out. The exam won't write minus five. It hides the minus behind the pi, and an estimate shows it at once.",
+    "at": [
+     "But an area can't be negative",
+     "so choice number two is out",
+     "The exam won't"
+    ]
+   },
+   {
+    "say": "Three choices are out, so choice number four is our answer.",
+    "at": [
+     "so choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a second way, for whoever wants to calculate. Even then, we don't have to calculate everything. Let's find only the sector.",
+    "at": [
+     "Now a second way",
+     "whoever wants to"
+    ]
+   },
+   {
+    "say": "What part of the circle is the sector? Think of a pizza. If we cut it into four slices, each slice has ninety degrees. If we cut it into eight, each slice has forty-five degrees.",
+    "at": [
+     "into four slices",
+     "has ninety degrees",
+     "If we cut it into eight"
+    ]
+   },
+   {
+    "say": "Our angle is forty-five degrees, so the sector is one of eight equal slices. It's one eighth of the circle.",
+    "at": [
+     "Our angle is forty-five"
+    ]
+   },
+   {
+    "say": "The area of the circle is pi r squared. The radius is two, and two squared is four, so the circle is four pi. One eighth of four pi is four pi over eight, which is pi over two.",
+    "at": [
+     "The area of the circle",
+     "is pi r",
+     "One eighth of four pi",
+     "is four pi over"
+    ]
+   },
+   {
+    "say": "Now, instead of calculating the triangle, let's peek at the choices. The shaded area is pi over two, minus the triangle. Only choice number four starts with pi over two.",
+    "at": [
+     "The shaded area is pi over two",
+     "over two, minus",
+     "Only choice number four"
+    ]
+   },
+   {
+    "say": "Choice number two has a half in front of the bracket. Half of pi over two is pi over four, not pi over two, so it doesn't fit. Choice number four again, and we never calculated the triangle.",
+    "at": [
+     "number two has",
+     "is pi over",
+     "so it doesn't fit",
+     "Choice number four again"
+    ]
+   },
+   "This is called a partial calculation. We calculate only the part that tells the choices apart, and then we look at the choices. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

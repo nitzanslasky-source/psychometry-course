@@ -1,121 +1,121 @@
 {
-  "videoId": "solve-q-r26-t14-03",
-  "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "a and b are positive integers. Given: two to the power of a, times three to the power of b, is equal to a hundred eight. What is a minus b?",
-        "voice": "calm",
-        "at": [
-          "a and b are"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So the left side is written in primes, and the right side is a plain number. The idea is to write a hundred eight in primes too, and match. [short pause] We'll solve it two ways, breaking and matching, and then dividing down.",
-        "at": [
-          "written in primes",
-          "right side is",
-          "a plain number",
-          "is to write",
-          "eight in primes",
-          "ways, breaking and",
-          "then dividing down"
-        ]
-      },
-      {
-        "say": "[short pause] Why does matching work? A number breaks into primes in only one way. Wherever you start the factor tree, you end with the same primes. For example, eighteen. Two times nine breaks into two, three, three, and three times six breaks into three, two, three. The same primes, just in another order.",
-        "at": [
-          "A number breaks",
-          "in only one way",
-          "Wherever you start",
-          "tree, you end",
-          "For example, eighteen",
-          "Two times nine",
-          "two, three, three",
-          "times six breaks",
-          "The same primes, just"
-        ]
-      },
-      {
-        "say": "So if both sides are the same number, they must have the same twos and the same threes. Now a hundred eight. It's four times twenty-seven, because four times twenty-five is a hundred, and four times two is eight. Four is two squared, and twenty-seven is three cubed.",
-        "at": [
-          "are the same",
-          "the same twos",
-          "Now a hundred eight",
-          "It's four times",
-          "four times twenty-five",
-          "hundred, and four",
-          "Four is two",
-          "twenty-seven is three"
-        ]
-      },
-      {
-        "say": "So two to the power of a, times three to the power of b, is two squared times three cubed. The exponent tells us how many copies of that prime we multiply. There are two copies of two, so a is two. There are three copies of three, so b is three.",
-        "at": [
-          "So two to the power of a",
-          "of a, times",
-          "the power of b",
-          "two squared times",
-          "The exponent tells",
-          "so a is two",
-          "so b is three",
-          "so b is three"
-        ]
-      },
-      {
-        "say": "Now careful, they ask for a minus b, not b minus a. Two minus three is negative one, so choice number three is our answer.",
-        "at": [
-          "Now careful, they",
-          "a minus b",
-          "Two minus three",
-          "choice number three is our answer"
-        ]
-      },
-      {
-        "say": "Choice number one, positive one, is what you get when you swap a and b. Choice number four, five, is a plus b. And two is just a.",
-        "at": [
-          "one, is what",
-          "when you swap",
-          "swap a and b",
-          "number four, five",
-          "is a plus b",
-          "two is just a"
-        ]
-      }
+ "videoId": "solve-q-r26-t14-03",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "a and b are positive integers. Given: two to the power of a, times three to the power of b, is equal to a hundred eight. What is a minus b?",
+    "voice": "calm",
+    "at": [
+     "a and b are"
     ],
-    [
-      {
-        "say": "[pause] Our second method, dividing down. Each exact division by two removes one factor of two. Count how many times we can do that to find a. A hundred eight over two is fifty-four. Fifty-four over two is twenty-seven. Twenty-seven is odd, so no more twos. Two halvings, so a is two.",
-        "at": [
-          "Our second method",
-          "A hundred eight",
-          "A hundred eight",
-          "A hundred eight",
-          "over two is fifty-four",
-          "Fifty-four over two",
-          "Twenty-seven is odd",
-          "Two halvings"
-        ]
-      },
-      {
-        "say": "Then the threes. Twenty-seven over three is nine, nine over three is three, and three over three is one. Three times, so b is three.",
-        "at": [
-          "Twenty-seven over three",
-          "nine over three",
-          "and three over",
-          "Three times",
-          "so b is three"
-        ]
-      },
-      {
-        "say": "a minus b, two minus three, negative one. Choice number three again. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "a minus b",
-          "three, negative one",
-          "Choice number three again"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So the left side is written in primes, and the right side is a plain number. The idea is to write a hundred eight in primes too, and match. [short pause] We'll solve it two ways, breaking and matching, and then dividing down.",
+    "at": [
+     "written in primes",
+     "right side is",
+     "a plain number",
+     "is to write",
+     "eight in primes",
+     "ways, breaking and",
+     "then dividing down"
     ]
+   },
+   {
+    "say": "[short pause] Why does matching work? A number breaks into primes in only one way. Wherever you start the factor tree, you end with the same primes. For example, eighteen. Two times nine breaks into two, three, three, and three times six breaks into three, two, three. The same primes, just in another order.",
+    "at": [
+     "A number breaks",
+     "in only one way",
+     "Wherever you start",
+     "tree, you end",
+     "For example, eighteen",
+     "Two times nine",
+     "two, three, three",
+     "times six breaks",
+     "The same primes, just"
+    ]
+   },
+   {
+    "say": "So if both sides are the same number, they must have the same twos and the same threes. Now a hundred eight. It's four times twenty-seven, because four times twenty-five is a hundred, and four times two is eight. Four is two squared, and twenty-seven is three cubed.",
+    "at": [
+     "are the same",
+     "the same twos",
+     "Now a hundred eight",
+     "It's four times",
+     "four times twenty-five",
+     "hundred, and four",
+     "Four is two",
+     "twenty-seven is three"
+    ]
+   },
+   {
+    "say": "So two to the power of a, times three to the power of b, is two squared times three cubed. The exponent tells us how many copies of that prime we multiply. There are two copies of two, so a is two. There are three copies of three, so b is three.",
+    "at": [
+     "So two to the power of a",
+     "of a, times",
+     "the power of b",
+     "two squared times",
+     "The exponent tells",
+     "so a is two",
+     "so b is three",
+     "so b is three"
+    ]
+   },
+   {
+    "say": "Now careful, they ask for a minus b, not b minus a. Two minus three is negative one, so choice number three is our answer.",
+    "at": [
+     "Now careful, they",
+     "a minus b",
+     "Two minus three",
+     "choice number three is our answer"
+    ]
+   },
+   {
+    "say": "Choice number one, positive one, is what you get when you swap a and b. Choice number four, five, is a plus b. And two is just a.",
+    "at": [
+     "one, is what",
+     "when you swap",
+     "swap a and b",
+     "number four, five",
+     "is a plus b",
+     "two is just a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, dividing down. Each exact division by two removes one factor of two. Count how many times we can do that to find a. A hundred eight over two is fifty-four. Fifty-four over two is twenty-seven. Twenty-seven is odd, so no more twos. Two halvings, so a is two.",
+    "at": [
+     "Our second method",
+     "A hundred eight",
+     "A hundred eight",
+     "A hundred eight",
+     "over two is fifty-four",
+     "Fifty-four over two",
+     "Twenty-seven is odd",
+     "Two halvings"
+    ]
+   },
+   {
+    "say": "Then the threes. Twenty-seven over three is nine, nine over three is three, and three over three is one. Three times, so b is three.",
+    "at": [
+     "Twenty-seven over three",
+     "nine over three",
+     "and three over",
+     "Three times",
+     "so b is three"
+    ]
+   },
+   {
+    "say": "a minus b, two minus three, negative one. Choice number three again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "a minus b",
+     "three, negative one",
+     "Choice number three again"
+    ]
+   }
   ]
+ ]
 }

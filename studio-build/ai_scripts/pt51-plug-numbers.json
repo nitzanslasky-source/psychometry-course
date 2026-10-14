@@ -1,0 +1,144 @@
+{
+ "videoId": "pt51-plug-numbers",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Psychometric thinking, plugging in numbers. Of all our super-methods, this is the one you'll use the most."
+  ],
+  [
+   {
+    "say": "On the exam, many hard questions are full of letters. An expression with x, or choices with x and y. The school way is to work with the letters. That takes time, and it's easy to make a mistake on the way.",
+    "at": [
+     "hard questions are"
+    ]
+   },
+   {
+    "say": "Plugging in numbers turns the letters into numbers that we choose ourselves. Then a hard question from the end of the section becomes an easy one, like a question from the beginning. It makes the question easier, and it saves time.",
+    "at": [
+     "turns the letters into numbers",
+     "that we choose",
+     "Then a hard question",
+     "the end of"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So when do I use it? Look for letters. There are two main signs.",
+    "at": [
+     "use it? Look"
+    ]
+   },
+   {
+    "say": "The first sign. The question has an expression with a letter, and it asks what it equals. Something equals a question mark. And the choices are numbers.",
+    "at": [
+     "The first sign",
+     "The question has"
+    ]
+   },
+   {
+    "say": "The second sign. The choices have letters in them, like x plus four, or x squared y.",
+    "at": [
+     "The second sign",
+     "The choices have"
+    ]
+   },
+   {
+    "say": "Careful, an equation with one letter is different. In three x plus five equals twenty, x has one fixed value, so I can't choose it. There I plug in the answer choices instead. That's the method from the last lesson.",
+    "at": [
+     "an equation with one letter",
+     "In three x"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why does it work? Let's see an example. What is the bracket x plus two, squared, minus x times the bracket x plus four? And the choices are numbers.",
+    "at": [
+     "Let's see an example",
+     "What is the"
+    ]
+   },
+   "x can be any number here. But the answer is one number, so the expression must give the same number for every x. And if it's right for every number, then it's right for the number I choose.",
+   {
+    "say": "So which number? x equals one, because it's small and easy. One plus two is three, and three squared is nine. One times five is five. Nine minus five is four.",
+    "at": [
+     "x equals one, because",
+     "small and easy",
+     "Nine minus five"
+    ]
+   },
+   {
+    "say": "Let's check with another number, x equals three. Three plus two is five, and five squared is twenty-five. Three times seven is twenty-one. Twenty-five minus twenty-one is four again.",
+    "at": [
+     "x equals three",
+     "and five squared",
+     "Twenty-five minus twenty-one"
+    ]
+   },
+   {
+    "say": "Four both times. And the algebra agrees. When we open the brackets, everything with x cancels, and four is left for every x. So when the choices are numbers, one number is enough.",
+    "at": [
+     "And the algebra agrees",
+     "When we open"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the second sign, letters in the choices. The bracket x plus three, squared, minus the bracket x plus one, squared. The choices are four x plus eight, two x plus eight, four x plus ten, and eight.",
+    "at": [
+     "Now the second sign",
+     "in the choices",
+     "The choices are",
+     "plus eight, two"
+    ]
+   },
+   {
+    "say": "First I say which number and why, before I use it. x equals two, because it's small, and two squared is easy.",
+    "at": [
+     "x equals two, because",
+     "small, and two"
+    ]
+   },
+   {
+    "say": "Two plus three is five, and five squared is twenty-five. Two plus one is three, and three squared is nine. Twenty-five minus nine is sixteen. So the right choice must give sixteen when x is two.",
+    "at": [
+     "Twenty-five minus nine",
+     "So the right"
+    ]
+   },
+   {
+    "say": "Now we don't hunt for the right choice. We rule out the wrong ones. Four times two plus eight is sixteen, so it stays. Two times two plus eight is twelve, not sixteen, so it's out.",
+    "at": [
+     "Four times two plus eight",
+     "is sixteen, so",
+     "Two times two plus eight",
+     "is twelve, not"
+    ]
+   },
+   {
+    "say": "Four times two plus ten is eighteen, out. And eight is not sixteen, out.",
+    "at": [
+     "Four times two plus ten",
+     "is eighteen, out",
+     "And eight is not sixteen"
+    ]
+   },
+   {
+    "say": "Three choices are out, so the one that's left is the answer, four x plus eight. We don't need to check it, because one of the four must be right. And why not stop at the first one that gave sixteen? Because another choice can give sixteen too, by chance. We'll see that in a minute.",
+    "at": [
+     "Three choices are out",
+     "the one that's"
+    ]
+   },
+   {
+    "say": "That's why plugging in is a safety net. When you know the algebra, a number checks it. And when the algebra gets stuck, a number still gets you to the answer. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "a safety net",
+     "When you know"
+    ]
+   }
+  ]
+ ]
+}

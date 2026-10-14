@@ -24,8 +24,14 @@
    {
     "say": "Careful here. A positive product doesn't mean both numbers are positive. Negative three times negative six is eighteen, which is positive, but both numbers are negative. So a positive product only tells us that the two numbers have the same sign. A negative product tells us their signs are different. And a product of zero means at least one of them is zero.",
     "at": [
+     "Negative three times negative six",
+     "is eighteen, which",
      "A positive product only tells us",
-     "us that the"
+     "us that the",
+     "A negative product tells us",
+     "their signs are",
+     "And a product of zero",
+     "means at least"
     ]
    }
   ],
@@ -69,7 +75,9 @@
     "say": "So we can count the minuses when we multiply and divide together. Negative six times negative two, over negative three. That's three minuses, so the result is negative. Six times two is twelve, and twelve over three is four, so it's negative four.",
     "at": [
      "Negative six times negative two",
-     "over negative three"
+     "over negative three",
+     "Six times two is twelve",
+     "and twelve over"
     ]
    }
   ],

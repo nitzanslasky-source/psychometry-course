@@ -174,6 +174,52 @@ def _layout(vid):
     return names, per
 
 
+# 2026-10-14 Rule V4.8 (camera lessons: the face bubble never covers math). Her bubble is composited top right (board
+# x >= 1344, y <= 256). In the camera lesson and its parts: a right-column stack that would start above y 262 moves down
+# as a whole (its own order and spacing kept), and a left-column item is at most 920 wide (ends left of x 1330; a figure
+# and its layers are scaled down together, text wraps). Other videos are unchanged.
+CAM_BASE = 'digit-puzzles'
+CAM_W, CAM_Y = 920, 280
+
+
+def _cam_width(d, hand=None):
+    """the drawn width of a board item, roughly (a figure: its box; a hand-written line: its pen strokes at the
+    hand-written size, 1.2x; text: ~half the size per visible character)"""
+    if d['k'] == 'vis': return d.get('w') or 540
+    if hand:
+        import studio_handwrite as _HW
+        return min(d.get('w') or 1130, _HW.write(hand)['w'] * round(d.get('size', 36) * 1.2) / 100.0)
+    t = re.sub(r'\\(quad|qquad)', '    ', d.get('t') or ''); t = re.sub(r'\\frac\{([^}]*)\}\{([^}]*)\}', r'\1', t)
+    t = re.sub(r'\\[a-zA-Z]+', 'x', t)
+    for ch in '${}\\': t = t.replace(ch, '')
+    return min(d.get('w') or 1130, len(t) * d.get('size', 36) * (0.6 if d['k'] == 'hw' else 0.5))
+_layout_plain = _layout
+
+
+def _layout(vid):
+    names, per = _layout_plain(vid)
+    if not re.fullmatch(re.escape(CAM_BASE) + r'(-\d+)?', vid) or VIDEOS[vid]['kind'] != 'lesson': return names, per
+    for sl in per:
+        right = [d for it, d in sl if d.get('x') == 1010 and d.get('y') is not None]
+        if any(d.get('x') == 1010 and d.get('y') is not None and d['y'] < CAM_Y - 18 and not d.get('over')
+               and 1010 + _cam_width(d, it.get('_hand')) > 1335 for it, d in sl):
+            top, yl = CAM_Y, 78                    # ... and below a left-column figure that reaches under the right column
+            for it2, d2 in sl:
+                if d2.get('x') is not None or d2.get('y') is not None or d2.get('over'): continue
+                h2 = d2['h'] if d2['k'] == 'vis' else d2.get('size', 36) * 1.55 * (1.2 if it2.get('_hand') else 1)
+                if d2['k'] == 'vis' and 410 + (d2.get('w') or 0) > 1000: top = max(top, int(yl + h2 + 16))
+                yl += h2 + 16
+            dy = top - min(d['y'] for d in right)
+            for d in right: d['y'] += dy
+        for it, d in sl:
+            if d.get('x') is not None or d.get('y') is not None: continue
+            if d['k'] == 'vis' and d.get('w', 0) > CAM_W:
+                d['h'] = int(round(d['h'] * CAM_W / d['w'])); d['w'] = CAM_W
+            elif d['k'] in ('t', 'hw') and (d.get('w') or 1130) > CAM_W:
+                d['w'] = CAM_W
+    return names, per
+
+
 def _target(vid, names, si, t):
     if t in ('stem',) or re.fullmatch(r'stem: (g\d|given|ask)', t) or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
     nm, _, part = t.partition(':')
@@ -411,10 +457,14 @@ dp6 = I('dp6', '$\\overline{AB}$: $\\ A$ from $1$ to $9$, $\\ B$ from $0$ to $9$
 dp7 = I('dp7', '$27=10\\cdot2+7 \\qquad 538=100\\cdot5+10\\cdot3+8$', size=32, hand='27 = 10·2 + 7        538 = 100·5 + 10·3 + 8')
 dp8 = I('dp8', '$\\overline{AB}=10A+B \\qquad \\overline{ABC}=100A+10B+C$', size=32, hand='AB = 10A + B        ABC = 100A + 10B + C')
 dp9 = I('dp9', '$A=6,\\ B=1$: $\\ 10\\cdot6+1=61$', size=32, hand='A = 6,  B = 1 :    10·6 + 1 = 61')
-dp10 = I('dp10', '1. Vertically $\\quad$ 2. Ones column $\\quad$ 3. Leftmost digit, size $\\quad$ 4. Plug in', size=28)
+dp10 = I('dp10', '1. Write it vertically', size=28)
+dp10b = I('dp10b', '2. The ones column', size=28)
+dp10c = I('dp10c', '3. The leftmost digit, the size', size=28)
+dp10d = I('dp10d', '4. Plug in', size=28)
 dp11 = I('dp11', 'Plugging in always works. Steps 1-3 save tries.', size=28)
 dp12 = I('dp12', '$34+37=71$ ✓', size=34, hand='34 + 37 = 71   ✓')
 dp13 = I('dp13', '$10A+B=4(A+B)$', size=34, hand='10A + B = 4(A + B)')
+dp13b = I('dp13b', '$10A+B=4A+4B$', size=34, hand='10A + B = 4A + 4B')
 dp14 = I('dp14', '$6A=3B$: $\\ B=2A$', size=34, hand='6A = 3B :    B = 2A')
 dp15 = I('dp15', '$12,\\ 24,\\ 36,\\ 48$ $\\quad A=5$: $\\ B=10$ ✗', size=32, hand='12,   24,   36,   48        A = 5 :    B = 10   ✗')
 dp16 = I('dp16', '$24$: $\\ 4\\cdot(2+4)=24$ ✓', size=32, hand='24 :    4·(2 + 4) = 24   ✓')
@@ -454,7 +504,8 @@ video('digit-puzzles', 'lesson', slides=[
       L("Now the technique. Many letter puzzles are solved with four steps. One, write the calculation vertically, with "
         "the ones digits lined up. Two, check the ones column. Three, check the leftmost digit and the size of the numbers. "
         "And four, plug in numbers and see what fits. When they ask for one letter, we can plug in the answer choices for "
-        "that letter.", show(dp10, 'Many letter puzzles are solved with four steps')),
+        "that letter.", show(dp10, 'One, write the calculation vertically'),
+        show(dp10b, 'Two, check the ones column'), show(dp10c, 'Three, check the leftmost digit'), show(dp10d, 'And four, plug in numbers')),
       L("In fact, every letter puzzle could be solved just by plugging in. A computer would simply try every option, and "
         "it would be fast. We're not computers, so steps one to three are shortcuts. They tell us which numbers we no longer "
         "need to try. We use the steps that help in the question, not every step every time.",
@@ -474,7 +525,7 @@ video('digit-puzzles', 'lesson', slides=[
         "its digits. We write the number as ten A plus B, and its digit sum as A plus B. So ten A plus B equals four times "
         "the whole bracket, A plus B.", show(dp13, 'So ten A plus B equals four times')),
       L("Open the bracket: ten A plus B equals four A plus four B. Subtract four A and B from both sides, and six A equals "
-        "three B. Divide both sides by three, and B equals two A. So B is twice A.", show(dp14, 'and six A equals three B')),
+        "three B. Divide both sides by three, and B equals two A. So B is twice A.", show(dp13b, 'Open the bracket'), show(dp14, 'and six A equals three B')),
       L("Now the digits that fit. A can't be zero, because it's the leftmost digit. A is one gives B is two, so twelve. "
         "Then twenty-four, thirty-six and forty-eight. A is five would need B to be ten, and ten is not a digit, so we stop "
         "there. Let's check one. Twenty-four has the digit sum six, and four times six is twenty-four.",
@@ -804,9 +855,10 @@ video('solve-q-520', 'solution', qid='q-520', slides=[
         "four T and U from both sides. On the left, ten T minus four T leaves six T. On the right, four U minus U leaves "
         "three U. So six T equals U cubed plus three U.", show(l3, 'so we set them equal'), show(l3b, 'So six T equals'))),
     S('Method 1 · The algebraic form',
-      L("T is a digit, so it's at most nine, and six T is at most fifty-four. U can't be zero, because then U cubed plus "
-        "three U is zero, so six T is zero and T is zero, and a two-digit number can't start with zero. So we test U from "
-        "one."),
+      # 2026-10-14 teacher-approved video correction (paragraph 6 re-read): say clearly that a two-digit number can't start with zero
+      L("T is a digit, so it's at most nine, and six T is at most fifty-four. Can U be zero? Then U cubed plus three U is "
+        "zero, so six T is zero, and T is zero. But T is the tens digit, and a two-digit number can't start with zero. So U "
+        "isn't zero, and we test U from one."),
       L("U is one gives one plus three, which is four. U is two gives eight plus six, which is fourteen. U is three gives "
         "twenty-seven plus nine, which is thirty-six. U is four gives sixty-four plus twelve, which is seventy-six, already "
         "more than fifty-four. A bigger U only makes U cubed plus three U bigger, so we can stop.", show(l4, 'U is one gives')),

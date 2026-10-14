@@ -52,7 +52,7 @@
     "say": "The area of A D C is three x h over two. That's three times twenty-eight over two, which is forty-two. The area of A B D is x h over two, twenty-eight over two, which is fourteen.",
     "at": [
      "The area of A D C",
-     "C is three",
+     "That's three times",
      "The area of A B D",
      "D is x"
     ]
@@ -93,7 +93,7 @@
     "say": "A D C has three of them, forty-two, and A B D has one, fourteen. The difference is two pieces, twenty-eight, choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
      "A D C has three of them",
-     "of them, forty-two",
+     "B D has",
      "The difference is two pieces"
     ]
    }

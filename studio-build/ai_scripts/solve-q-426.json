@@ -1,134 +1,134 @@
 {
-  "videoId": "solve-q-426",
-  "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
-  "slides": [
-    [
-      {
-        "say": "A number leaves a remainder of four when divided by five. Which of the following expressions could represent the number? x is an integer.",
-        "voice": "calm",
-        "at": [
-          "A number leaves"
-        ],
-        "pause": 0.5
-      },
-      {
-        "say": "So we know the remainder by five, and every choice is an expression with x. Remember, a number that leaves four when divided by five is five k plus four, full fives plus four. [short pause] We'll solve it two ways, splitting off the fives in each choice, and then plugging in a number.",
-        "at": [
-          "remainder by five",
-          "every choice is an expression",
-          "with x. Remember",
-          "that leaves four",
-          "by five is",
-          "five k plus four",
-          "it two ways",
-          "the fives in",
-          "and then plugging"
-        ]
-      },
-      {
-        "say": "[short pause] Let's start by splitting off the fives. In each choice, the part that divides by five doesn't matter, and only what's left decides. Choice number one, five x plus seven. Five x is always full fives. Seven is one five plus two, so it leaves two, not four. Out.",
-        "at": [
-          "Let's start",
-          "In each choice",
-          "that divides by",
-          "matter, and only",
-          "Choice number one",
-          "Five x is always",
-          "fives. Seven is",
-          "plus two, so",
-          "not four. Out"
-        ]
-      },
-      {
-        "say": "This choice has brackets squared, so let's expand it and see which terms are complete groups of five. Choice number two, in brackets, five x plus two, all squared. Let's open it with the formula, a plus b, all squared. The first term is five x, all squared. We square both the five and the x, so that is twenty-five x squared. The middle term is two times five x times two, which is twenty x. And the last term is two squared, which is four.",
-        "at": [
-          "Choice number two",
-          "five x plus",
-          "Let's open it",
-          "The first term",
-          "x, all squared",
-          "We square both",
-          "and the x",
-          "is twenty-five x",
-          "The middle term",
-          "times five x",
-          "which is twenty",
-          "the last term",
-          "two squared, which is four"
-        ]
-      },
-      {
-        "say": "Twenty-five x squared and twenty x both divide by five, and what's left is four. That's exactly the remainder we need, so choice number two is our answer.",
-        "at": [
-          "Twenty-five x squared and",
-          "x both divide",
-          "and what's left",
-          "That's exactly the",
-          "choice number two is our answer"
-        ]
-      },
-      {
-        "say": "And here's a shortcut for next time. Everything built from five x divides by five too, so I only need the square of the number at the end, two squared, four.",
-        "at": [
-          "here's a shortcut",
-          "Everything built from",
-          "divides by five",
-          "I only need",
-          "of the number",
-          "end, two squared"
-        ]
-      }
+ "videoId": "solve-q-426",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A number leaves a remainder of four when divided by five. Which of the following expressions could represent the number? x is an integer.",
+    "voice": "calm",
+    "at": [
+     "A number leaves"
     ],
-    [
-      {
-        "say": "In the exam you'd circle it and move on. Here, the other two with the shortcut. Ten x plus eight. Ten x is full fives, and eight is one five plus three. Out. Five x plus five, squared. The last number is five, and five squared is twenty-five, exactly five fives, nothing left. Out.",
-        "at": [
-          "In the",
-          "circle it and",
-          "Here, the other",
-          "Ten x plus eight",
-          "x is full",
-          "eight is one",
-          "plus three. Out",
-          "Five x plus five",
-          "The last number",
-          "and five squared",
-          "exactly five fives",
-          "nothing left. Out"
-        ]
-      }
-    ],
-    [
-      {
-        "say": "[pause] Now let's try plugging in a number. x is any integer, so I'll take zero. Why zero? Here every choice leaves the same remainder for every x, because the x part is always full fives. So the easiest number is the best.",
-        "at": [
-          "Now let's",
-          "x is any",
-          "I'll take zero",
-          "Here every choice",
-          "same remainder for",
-          "the x part is always full fives",
-          "So the easiest"
-        ]
-      },
-      {
-        "say": "With x zero, the choices are seven, two squared, which is four, eight, and five squared, which is twenty-five.",
-        "at": [
-          "the choices are seven",
-          "squared, which is",
-          "and five squared"
-        ]
-      },
-      {
-        "say": "Divided by five, seven leaves two, four leaves four, eight leaves three, and twenty-five leaves nothing. Only four leaves four, so choice number two. [pause] Okay. I'll see you in the next question.",
-        "at": [
-          "Divided by five",
-          "two, four leaves",
-          "leaves three, and",
-          "Only four leaves four",
-          "so choice number two"
-        ]
-      }
+    "pause": 0.5
+   },
+   {
+    "say": "So we know the remainder by five, and every choice is an expression with x. Remember, a number that leaves four when divided by five is five k plus four, full fives plus four. [short pause] We'll solve it two ways, splitting off the fives in each choice, and then plugging in a number.",
+    "at": [
+     "remainder by five",
+     "every choice is an expression",
+     "with x. Remember",
+     "that leaves four",
+     "by five is",
+     "five k plus four",
+     "it two ways",
+     "the fives in",
+     "and then plugging"
     ]
+   },
+   {
+    "say": "[short pause] Let's start by splitting off the fives. In each choice, the part that divides by five doesn't matter, and only what's left decides. Choice number one, five x plus seven. Five x is always full fives. Seven is one five plus two, so it leaves two, not four. Out.",
+    "at": [
+     "Let's start",
+     "In each choice",
+     "that divides by",
+     "matter, and only",
+     "Choice number one",
+     "Five x is always",
+     "fives. Seven is",
+     "plus two, so",
+     "not four. Out"
+    ]
+   },
+   {
+    "say": "This choice has brackets squared, so let's expand it and see which terms are complete groups of five. Choice number two, in brackets, five x plus two, all squared. Let's open it with the formula, a plus b, all squared. The first term is five x, all squared. We square both the five and the x, so that is twenty-five x squared. The middle term is two times five x times two, which is twenty x. And the last term is two squared, which is four.",
+    "at": [
+     "Choice number two",
+     "five x plus",
+     "Let's open it",
+     "The first term",
+     "x, all squared",
+     "We square both",
+     "and the x",
+     "is twenty-five x",
+     "The middle term",
+     "times five x",
+     "which is twenty",
+     "the last term",
+     "two squared, which is four"
+    ]
+   },
+   {
+    "say": "Twenty-five x squared and twenty x both divide by five, and what's left is four. That's exactly the remainder we need, so choice number two is our answer.",
+    "at": [
+     "Twenty-five x squared and",
+     "x both divide",
+     "and what's left",
+     "That's exactly the",
+     "choice number two is our answer"
+    ]
+   },
+   {
+    "say": "And here's a shortcut for next time. Everything built from five x divides by five too, so I only need the square of the number at the end, two squared, four.",
+    "at": [
+     "here's a shortcut",
+     "Everything built from",
+     "divides by five",
+     "I only need",
+     "of the number",
+     "end, two squared"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "In the exam you'd circle it and move on. Here, the other two with the shortcut. Ten x plus eight. Ten x is full fives, and eight is one five plus three. Out. Five x plus five, squared. The last number is five, and five squared is twenty-five, exactly five fives, nothing left. Out.",
+    "at": [
+     "In the",
+     "circle it and",
+     "Here, the other",
+     "Ten x plus eight",
+     "x is full",
+     "eight is one",
+     "plus three. Out",
+     "Five x plus five",
+     "The last number",
+     "and five squared",
+     "exactly five fives",
+     "nothing left. Out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in a number. x is any integer, so I'll take zero. Why zero? Here every choice leaves the same remainder for every x, because the x part is always full fives. So the easiest number is the best.",
+    "at": [
+     "Now let's",
+     "x is any",
+     "I'll take zero",
+     "Here every choice",
+     "same remainder for",
+     "the x part is always full fives",
+     "So the easiest"
+    ]
+   },
+   {
+    "say": "With x zero, the choices are seven, two squared, which is four, eight, and five squared, which is twenty-five.",
+    "at": [
+     "the choices are seven",
+     "squared, which is",
+     "and five squared"
+    ]
+   },
+   {
+    "say": "Divided by five, seven leaves two, four leaves four, eight leaves three, and twenty-five leaves nothing. Only four leaves four, so choice number two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Divided by five",
+     "two, four leaves",
+     "leaves three, and",
+     "Only four leaves four",
+     "so choice number two"
+    ]
+   }
   ]
+ ]
 }

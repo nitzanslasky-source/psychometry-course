@@ -1,0 +1,72 @@
+{
+ "videoId": "solve-pt-q02",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Basket A contains five hundred eggs, and basket B contains six hundred eggs. How many eggs must be moved from basket A to basket B, so that basket A will contain nine thirteenths of the number of eggs in basket B?",
+    "voice": "calm",
+    "at": [
+     "Basket A contains"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So eggs move from A to B, and after the move, A should have nine thirteenths of what B has. [short pause] We'll solve it two ways, with an equation, and then by plugging in the answers.",
+    "at": [
+     "A to B"
+    ]
+   },
+   {
+    "say": "Let's put the numbers in order, before and after. Before the move, A has five hundred and B has six hundred. We don't know how many eggs we move, so let's call that number x.",
+    "at": [
+     "Before the move",
+     "We don't know"
+    ]
+   },
+   {
+    "say": "After the move, A has lost x eggs, so it has five hundred minus x. And those same x eggs went into B, so B has six hundred plus x.",
+    "at": [
+     "After the move",
+     "has five hundred"
+    ]
+   },
+   {
+    "say": "Now the condition. A after the move is nine thirteenths of B after the move. So five hundred minus x equals nine thirteenths, times the bracket six hundred plus x.",
+    "at": [
+     "So five hundred minus x equals",
+     "equals nine thirteenths"
+    ]
+   },
+   {
+    "say": "To get rid of the fraction, we multiply both sides by thirteen. Thirteen times the bracket five hundred minus x, equals nine times the bracket six hundred plus x.",
+    "at": [
+     "we multiply both sides by thirteen",
+     "Thirteen times the"
+    ]
+   },
+   {
+    "say": "Open the brackets. Thirteen times five hundred is six thousand five hundred, and thirteen times x is thirteen x. Nine times six hundred is five thousand four hundred, and nine times x is nine x.",
+    "at": [
+     "Open the brackets",
+     "six thousand five"
+    ]
+   },
+   {
+    "say": "Now we add thirteen x to both sides, and take five thousand four hundred off both sides. Six thousand five hundred minus five thousand four hundred is one thousand one hundred. And nine x plus thirteen x is twenty-two x.",
+    "at": [
+     "Six thousand five hundred minus",
+     "five thousand four hundred is"
+    ]
+   },
+   {
+    "say": "Instead of dividing by twenty-two in one go, let's divide both sides by eleven first. That gives a hundred equals two x, so x is fifty. We move fifty eggs, and choice number two is our answer. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "divide both sides by eleven first",
+     "That gives a",
+     "choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

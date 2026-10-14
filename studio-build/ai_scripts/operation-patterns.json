@@ -38,7 +38,7 @@
     "say": "One more example. Diamond of x is three x minus four. Its steps are times three, then minus four. Again, y is the result we want to undo. So the inverse adds four first, and then divides the whole y plus four by three. That's the whole bracket, y plus four, over three. Let's check with five. Three times five is fifteen, and fifteen minus four is eleven. Eleven plus four is fifteen, and fifteen over three is five. Back to five.",
     "at": [
      "One more example",
-     "Diamond of x"
+     "x minus four"
     ]
    },
    "So to undo an operation, read its steps, and undo them in reverse order, the last step first. [pause] Okay. I'll see you in the next video."

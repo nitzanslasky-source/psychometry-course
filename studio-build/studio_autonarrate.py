@@ -269,11 +269,17 @@ async function anPrerender(v){const pre=new Map();pre.svg={};
    alignment in the manifest (2026-10-11: at = -1 = the reader skipped those words, the cue is not fired at all). A cue belongs to the NEXT spoken line; the AI line's `at` phrase times it, else:
    APPEAR just before the line starts, a mark at its start, POINT at fraction `at` of the line. Slide changes sit in the
    pause before the slide's first line. All geometry is measured now, not during the take. */
-function anTimeline(v,man){const L=man.lines,ev=[];let li=0;
+/* 2026-10-14 (Codex camera review, Rule V4.9): every VISUAL cue (appear / hand-writing chunks / POINT / mark) fires a little
+   before its anchored word - AN_VISUAL_LEAD s (0.25), per video manifest "visualLead" (0 = off). The audio, the slide
+   changes, the speed and the manifest times themselves are unchanged; a cue never moves before its slide's change. */
+var AN_VISUAL_LEAD=.25;
+function anLead(man){const x=man&&man.visualLead;return typeof x==='number'&&isFinite(x)?Math.max(0,Math.min(1,x)):AN_VISUAL_LEAD}
+function anTimeline(v,man){const L=man.lines,ev=[],lead=anLead(man);let li=0;
  v.beats.forEach((b,bi)=>{const ls=hyLines(v,bi),slideT=bi?(()=>{const pe=L[li-1]?.end??0,ns=L[li]?.slide===bi?L[li].start:pe+.5;return Math.max(pe+.05,Math.min(ns-.3,(pe+ns)/2))})():0;
   if(bi)ev.push({t:slideT,k:'slide',bi});const mine=[];let pend=[],lastEnd=slideT,lastAp=slideT;
   const place=(m)=>{pend.forEach((c,k)=>{let t=m?(m.at?.[k]??null):null;c.te=m?(m.atEnd?.[k]??null):null;c.wr=m?(m.writes?.[k]??null):null;if(t===-1)return;
     if(t==null)t=!m?lastEnd+.15+.35*k:c.l.appear!=null?m.start-.12:c.l.point!=null?m.start+Math.max(0,Math.min(.95,+c.l.at||0))*(m.end-m.start):m.start+.05;
+    if(lead){t-=lead;if(c.te!=null)c.te-=lead;if(c.wr)c.wr=c.wr.map(w=>[w[0]-lead,w[1]-lead].concat(w.slice(2)))}
     c.t=Math.max(slideT+.05,t);if(c.k==='appear'){c.t=Math.max(c.t,lastAp+.05);lastAp=c.t}mine.push(c)});pend=[]};
   for(const l of ls){if(l.say!=null){const m=L[li++];if(!m)break;place(m);mine.push({t:m.start,k:'say',n:li,l});lastEnd=m.end}
    else if(l.appear!=null)pend.push({k:'appear',l});else if(l.draw!=null)pend.push({k:'mark',l});else if(l.point!=null)pend.push({k:'point',l})}

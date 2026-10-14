@@ -114,8 +114,9 @@
    {
     "say": "Now we put alpha a hundred ten and beta eighty into each choice. Half alpha is fifty-five, and half beta is forty. Choice number one: sixty-five plus fifty-five minus forty is eighty. Not fifty, out. Choice number two: a hundred thirty plus fifty-five minus forty is a hundred forty-five. Out.",
     "at": [
-     "Now we put alpha",
-     "hundred ten and",
+     "a hundred ten",
+     "Half alpha is fifty-five",
+     "half beta is",
      "Choice number one",
      "number one: sixty-five",
      "minus forty is",

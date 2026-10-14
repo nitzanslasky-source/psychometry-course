@@ -107,10 +107,11 @@
     "say": "Now put one hundred ten into each choice, and cross out everything that isn't fifty. Choice number one, one hundred eighty minus one hundred ten is seventy. Out. Choice number two, one hundred ten minus sixty is fifty. It stays. Choice number three, twice one hundred ten is two hundred twenty, minus one hundred forty is eighty. Out. Choice number four, one hundred forty minus one hundred ten is thirty. Out.",
     "at": [
      "Now put one hundred ten",
-     "into each choice",
+     "out everything that",
      "is seventy. Out",
      "number two, one",
-     "one hundred ten is two",
+     "Choice number three, twice",
+     "hundred ten is two",
      "is eighty. Out",
      "is thirty. Out"
     ]

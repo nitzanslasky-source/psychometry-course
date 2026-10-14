@@ -118,6 +118,13 @@ def pt(target, phrase, style=None, dur=None): return ('point', target, phrase, s
 def mk(kind, target, phrase): return ('mark', kind, target, phrase)
 
 
+def at(item, **pos):
+    """2026-10-14 (Codex camera review, Rule V4): a board item at a FIXED place - x / y / w (and size) override the
+    automatic column layout (see _ai_vis_t13.at). A slide that mixes fixed and automatic items must fix every item."""
+    item['_pos'] = dict(item.get('_pos') or {}, **pos)
+    return item
+
+
 def L(say, *cues, voice=None, pause=None):
     return {'say': say, 'cues': list(cues), 'voice': voice, 'pause': pause}
 
@@ -138,9 +145,17 @@ def fig(*a, **k): return SNL.fig(*a, **k)
 def _plain(say): return re.sub(r'\s+', ' ', TAG.sub(' ', say)).strip()
 
 
+CAM_TOP, CAM_W = 328, 850   # 2026-10-14 camera lessons: her face bubble is top right (board x >= 1344, y <= 256), so
+                            # the right column starts below it and left-column lines end left of it (Rule V4.8)
+
+
+def _is_camera(vid):
+    return any(vid in ids for ids in globals().get('CAMERA_PARTS', {}).values())
+
+
 def _layout(vid):
     """item dicts per slide (placed), name -> (slide index, item index); raises on a bad spec."""
-    V = VIDEOS[vid]; names = {}; per = []
+    V = VIDEOS[vid]; names = {}; per = []; cam = _is_camera(vid)
     for si, sl in enumerate(V['slides']):
         lesson_title = V['kind'] == 'lesson' and si == 0
         pre = 1 if V['kind'] == 'solution' else 0
@@ -154,7 +169,7 @@ def _layout(vid):
                     names[it['_name']] = (si, pre + len(items)); items.append(it)
         right = any(it['_col'] == 1 for it in items)
         solo = right and not any(it['_col'] == 0 for it in items)   # only right-column items: use the left column
-        out = []; ycol = 100 if V['kind'] == 'solution' else 78
+        out = []; ycol = CAM_TOP if cam else 100 if V['kind'] == 'solution' else 78
         for it in items:
             d = {k: v for k, v in it.items() if not k.startswith('_')}
             if it['_col'] == 1 and not solo:
@@ -165,6 +180,9 @@ def _layout(vid):
                 d.update(x=1010, w=d['w'] if d['k'] == 'vis' else 540, y=y_here)
             elif right and d['k'] == 't':
                 d['w'] = 560
+            elif cam and d['k'] == 't':
+                d['w'] = min(d.get('w') or CAM_W, CAM_W)
+            d.update(it.get('_pos') or {})
             out.append((it, d))
         per.append(out)
     return names, per
@@ -339,7 +357,7 @@ def _layers(name, out, w, col):
 RED = '#d62d48'
 
 
-def STRIP(name, lo, hi, layers, base=(), w=1060, col=0):
+def STRIP(name, lo, hi, layers, base=(), w=1060, col=0, top=False):
     """a number strip from lo to hi: a short tick at EVERY whole number, a label under each number in `base`.
     layers = [(key, [mark, ...]), ...] drawn on top, in order. Marks:
       ('prime', v)          a teal dot on v and a bold teal label (a prime)
@@ -347,16 +365,18 @@ def STRIP(name, lo, hi, layers, base=(), w=1060, col=0):
       ('cross', v)          a red cross over v's label (ruled out)
       ('ring', v)           a teal ring around v's label (the pick)
       ('span', a, b, text)  a teal bracket above the line from a to b, with text above it
+    top=True (2026-10-14, Codex camera review): the `base` labels go ABOVE the line, so they never collide with the prime
+    labels under it (10 / 11, 19 / 20, 29 / 30 / 31); not with 'span' marks.
     -> {key: item}; show them in order (the base line is key 'line')."""
     L_, R_, Y_ = 30, 610, 70
     X = lambda v: L_ + 14 + (v - lo) / float(hi - lo) * (R_ - L_ - 28)
     INK, TEAL, FONT = SNL.INK, SNL.TEAL, SNL.FONT
-    lab = lambda v, col_, fw='bold': ('<text x="%.1f" y="%d" text-anchor="middle" fill="%s" %s font-size="19" font-weight="%s">%d</text>'
-                                     % (X(v), Y_ + 32, col_, FONT, fw, v))
+    lab = lambda v, col_, fw='bold', y=None: ('<text x="%.1f" y="%d" text-anchor="middle" fill="%s" %s font-size="19" font-weight="%s">%d</text>'
+                                     % (X(v), Y_ + 32 if y is None else y, col_, FONT, fw, v))
     body = ('<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="%s" stroke-width="2.5"/>' % (L_ - 6, Y_, R_ + 6, Y_, INK) +
             '<path d="M %d %d l 11 -6 l 0 12 Z" fill="%s"/>' % (L_ - 10, Y_, INK) + '<path d="M %d %d l -11 -6 l 0 12 Z" fill="%s"/>' % (R_ + 10, Y_, INK) +
             ''.join('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-width="1.6"/>' % (X(v), Y_ - 7, X(v), Y_ + 7, INK) for v in range(lo, hi + 1)) +
-            ''.join(lab(v, INK) for v in base))
+            ''.join(lab(v, INK, y=Y_ - 16 if top else None) for v in base))
     out = [('line', _svg('0 10 640 112', body, 'Whole numbers from %d to %d' % (lo, hi)))]
     for key, marks in layers:
         b = ''
@@ -414,38 +434,73 @@ def TREE(name, root, steps, w=330, col=1, dx=92, dy=50):
 # primes to 40 (30-40 run) and 97, divisor = factor, prime factors and their combinations, every non-prime is built from
 # primes, a missing prime is not a divisor (and a piece that isn't prime hides primes). The English lesson's extras stay:
 # the odd sum / difference of two primes, the root test with fake primes, the factor tree, enough copies.
+# 2026-10-14 Codex camera review ported (Rule V4; …/Codex/…/work/camera-visual-review-2026-10-14): the definition written
+# when she says it; her ad-libs on the recorded takes written at the script words next to them (14 = 14·1 at "Fourteen is two
+# times seven", 506 = 2·253 at "so they're not prime", 2² = 4 and 3² = 9 at "multiplying back"); each test of 91 and 89 its own
+# line at its clause (the 89 tests in the right column: primes-2 paragraphs 5 and 6 are re-read, anchored to that text); the
+# combined captions split (cp5, cp6, cp16, cp17, cp28, cp29, cp25 -> 180 = 10·18, 10 = 2·5, 18 = 2·3·3, two 2s two 3s one 5);
+# the multiplicity comparisons (8 = 2³ needs three 2s, 6² = (2·3)² = 2²·3², 12 = 2²·3); camera layout (bubble top right).
+cp0 = I('cp0', 'Prime numbers are positive whole numbers greater than $1$.', size=30)
 cp1 = I('cp1', 'Prime: exactly two divisors, $1$ and itself', size=30)
 cp2 = I('cp2', '$17,\\ 19,\\ 11,\\ 7$: can\'t be broken ✓', size=30)
+cp3a = I('cp3a', '$14=14\\cdot1$ does not decide whether $14$ is prime.', size=28)
 cp3 = I('cp3', '$14=2\\cdot7,\\ \\ 9=3\\cdot3,\\ \\ 21=3\\cdot7,\\ \\ 16=2\\cdot8$ ✗', size=30, hand='14 = 2·7,    9 = 3·3,    21 = 3·7,    16 = 2·8   ✗')
 cp4 = I('cp4', '$0$, $1$ and negative numbers are not prime', size=30)
-cp5 = I('cp5', '$2$: the only even prime $\\quad 18,\\ 20$ ✗', size=30)
-cp6 = I('cp6', 'Odd $\\pm$ odd $=$ even: $\\ 3+5=8,\\ \\ 11-7=4$', size=30)
+cp5 = I('cp5', '$2$: the only even prime', size=30)
+cp5b = I('cp5b', '$18,\\ 20$: divide by $2$ ✗', size=30)
+cp5c = I('cp5c', '$506=2\\cdot253$ : not prime', size=30)
+cp6 = I('cp6', 'Odd $\\pm$ odd $=$ even', size=30)
+cp6b = I('cp6b', '$3+5=8,\\ \\ 11-7=4$', size=30)
 cp7 = I('cp7', 'Two primes, odd sum or difference $\\to$ one is $2$', size=28)
 cp8 = I('cp8', '$25=2+23 \\qquad 9=11-2$', size=32, hand='25 = 2 + 23        9 = 11 − 2')
 cp9 = I('cp9', 'Even sum: $\\ 16=3+13=5+11$ (no rule)', size=28, hand='16 = 3 + 13 = 5 + 11')
 cpS = STRIP('cpS', 1, 40, [('a', [('prime', v) for v in (2, 3, 5, 7, 11, 13, 17, 19)]),
-                           ('b', [('prime', v) for v in (23, 29, 31, 37)])], base=(1, 10, 20, 30, 40), w=1060, col=0)
-cp10 = I('cp10', '$30$ to $40$: $\\ 31,\\ 37$ $\\quad 20$ to $30$: $\\ 23,\\ 29$', size=30)
-cp11 = I('cp11', 'Largest two-digit prime: $\\ 97$', size=30)
-cp12 = I('cp12', 'Is $n$ prime? Try the primes up to $\\sqrt{n}$', size=30)
-cp13 = I('cp13', '$91$: $\\ 9^2=81,\\ 10^2=100$ $\\ \\to\\ $try $2,\\ 3,\\ 5,\\ 7$', size=30, hand='91 :    9^2 = 81,    10^2 = 100    →   try  2, 3, 5, 7')
+                           ('b', [('prime', v) for v in (23, 29, 31, 37)])], base=(1, 10, 20, 30, 40), w=1060, col=0, top=True)
+at(cpS['line'], y=328)                                        # camera: the wide strip below her face bubble
+cp10 = at(I('cp10', '$30$ to $40$: $\\ 31,\\ 37$ $\\quad 20$ to $30$: $\\ 23,\\ 29$', size=30), x=410, y=548, w=850)
+cp11 = at(I('cp11', 'Largest two-digit prime: $\\ 97$', size=30), x=410, y=630, w=850)
+cp12 = at(I('cp12', 'Is $n$ prime? Try the primes up to $\\sqrt{n}$', size=30), w=850)
+cp13 = at(I('cp13', '$91$: $\\ 9^2=81,\\ 10^2=100$ $\\ \\to\\ $try $2,\\ 3,\\ 5,\\ 7$', size=30, hand='91 :    9^2 = 81,    10^2 = 100    →   try  2, 3, 5, 7'), w=850)
+c91a = I('c91a', '$91$ is odd: not divisible by $2$', size=28)
+c91b = I('c91b', '$9+1=10$: not divisible by $3$', size=28)
+c91c = I('c91c', 'Last digit $1$: not divisible by $5$', size=28)
 cp14 = I('cp14', '$91=7\\cdot13$ ✗', size=32, hand='91 = 7·13   ✗')
-cp15 = I('cp15', '$89$: $\\ 2,\\ 3,\\ 5,\\ 7$ don\'t divide $\\ \\to\\ $prime ✓', size=30)
-cp16 = I('cp16', '$51=3\\cdot17,\\ 57=3\\cdot19,\\ 87=3\\cdot29,\\ 91=7\\cdot13,\\ 119=7\\cdot17$', size=26)
-cp17 = I('cp17', '$28\\div4=7$: $\\ 4$ is a factor $\\quad 45\\div9=5$: $\\ 9$ is a factor', size=28)
+c89 = I('c89', '$89$: $\\ \\sqrt{89}<10$, try $2,\\ 3,\\ 5,\\ 7$', size=28, col=1)
+c89a = I('c89a', '$89$ is odd: not divisible by $2$', size=28, col=1)
+c89b = I('c89b', '$8+9=17$: not divisible by $3$', size=28, col=1)
+c89c = I('c89c', 'Last digit $9$: not divisible by $5$', size=28, col=1)
+c89d = I('c89d', '$7\\cdot12=84<89<91=7\\cdot13$', size=28, col=1)
+cp15 = I('cp15', '$89$: $\\ 2,\\ 3,\\ 5,\\ 7$ don\'t divide $\\ \\to\\ $prime ✓', size=28, col=1)
+cp16 = I('cp16', '$51=3\\cdot17,\\ \\ 57=3\\cdot19,\\ \\ 87=3\\cdot29$', size=26)
+cp16s = I('cp16s', '$5+1=6,\\ \\ 5+7=12,\\ \\ 8+7=15$', size=28)
+cp16b = I('cp16b', '$91=7\\cdot13,\\ \\ 119=7\\cdot17$', size=26)
+cp17 = I('cp17', '$28\\div4=7$: $\\ 4$ is a factor', size=28)
+cp17b = I('cp17b', '$45\\div9=5$: $\\ 9$ is a factor', size=28)
+cp18a = I('cp18a', '$6\\cdot4=24<28<30=6\\cdot5$', size=30)
 cp18 = I('cp18', '$28\\div6$: $\\ $remainder $\\to$ $6$ is not a factor', size=28)
 cp19 = I('cp19', 'Divisor $=$ factor', size=32)
 cp20 = I('cp20', '$28=2\\cdot2\\cdot7$: $\\ $prime factors $2,\\ 7$', size=30, hand='28 = 2·2·7')
 cp21 = I('cp21', '$20=2\\cdot2\\cdot5$: $\\ 2,\\ 5,\\ 4,\\ 10,\\ 20$', size=30, hand='20 = 2·2·5 :    2,   5,   4,   10,   20')
+cp21b = I('cp21b', '$4=2\\cdot2\\quad10=2\\cdot5\\quad20=2\\cdot2\\cdot5$', size=28)
 cp22 = I('cp22', '$18=2\\cdot3\\cdot3$: $\\ 2,\\ 3,\\ 6,\\ 9,\\ 18$', size=30, hand='18 = 2·3·3 :    2,   3,   6,   9,   18')
+cp22b = I('cp22b', '$6=2\\cdot3\\quad9=3\\cdot3\\quad18=2\\cdot3\\cdot3$', size=28)
 cpT = TREE('cpT', 180, [(2, 90), (2, 45), (3, 15), (3, 5)], w=440, col=1)
 cp23 = I('cp23', '$180=2^2\\cdot3^2\\cdot5$', size=34, hand='180 = 2^2·3^2·5')
+cp23b = I('cp23b', '$2^2=4\\qquad3^2=9$', size=30)
 cp24 = I('cp24', '$4\\cdot9=36,\\ \\ 36\\cdot5=180$ ✓', size=30, hand='4·9 = 36,    36·5 = 180   ✓')
-cp25 = I('cp25', '$180=10\\cdot18=(2\\cdot5)\\cdot(2\\cdot3\\cdot3)$', size=30)
+cp25 = I('cp25', '$180=10\\cdot18$', size=30)
+cp25b = I('cp25b', '$10=2\\cdot5$', size=30)
+cp25c = I('cp25c', '$18=2\\cdot3\\cdot3$', size=30)
+cp25d = I('cp25d', 'Two $2$s, two $3$s, one $5$', size=28)
 cp26 = I('cp26', '$180=2^2\\cdot3^2\\cdot5$', size=34)
 cp27 = I('cp27', '$45=3\\cdot3\\cdot5$ ✓ $\\quad 12=2\\cdot2\\cdot3$ ✓', size=30, hand='45 = 3·3·5   ✓      12 = 2·2·3   ✓')
-cp28 = I('cp28', '$7$: missing ✗ $\\quad 8=2\\cdot2\\cdot2$: one two too few ✗', size=30)
-cp29 = I('cp29', '$x=3\\cdot6^2=3\\cdot2^2\\cdot3^2=2^2\\cdot3^3$: $\\ 12$ ✓', size=28)
+cp28 = I('cp28', '$7$: not in $180$ ✗', size=30)
+cp28b = I('cp28b', '$14=2\\cdot7\\quad21=3\\cdot7$ : missing $7$ ✗', size=30)
+cp28c = I('cp28c', '$8=2^3$ needs three $2$s; $180$ has only two ✗', size=30)
+cp29 = I('cp29', '$x=3\\cdot6^2$', size=30)
+cp29b = I('cp29b', '$6^2=(2\\cdot3)^2=2^2\\cdot3^2$', size=30)
+cp29c = I('cp29c', '$x=3\\cdot2^2\\cdot3^2=2^2\\cdot3^3$', size=30)
+cp29d = I('cp29d', '$12=2^2\\cdot3$ ✓ : enough $2$s and $3$s', size=30)
 cpR1 = I('cpR1', 'Prime: only $1$ and itself $\\quad 0,\\ 1$ not prime $\\quad 2$ the only even one', size=26)
 cpR2 = I('cpR2', 'Odd sum or difference of two primes $\\to$ one is $2$ $\\quad$ primes to $40$, and $97$', size=26)
 cpR3 = I('cpR3', 'Prime test: up to $\\sqrt{n}$ $\\quad$ divisor $=$ factor $\\quad$ its primes, enough times', size=26)
@@ -457,23 +512,24 @@ video('primes', 'lesson', slides=[
       L("A prime number is a whole positive number, bigger than one, that we can't write as a product of two smaller "
         "positive whole numbers. That sounds strange, so let's say it the way you remember it from school. A prime divides "
         "only by one and by itself. So a prime has exactly two divisors, one and the number itself.",
-        show(cp1, 'So a prime has exactly two divisors')),
+        show(cp0, 'A prime number is a whole positive number'), show(cp1, 'So a prime has exactly two divisors')),
       L("Let's see some examples. Seventeen can't be broken into two smaller numbers, so seventeen is prime. Nineteen "
         "can't be broken either, so it's prime. Eleven and seven can't be broken, so they're prime too.",
         show(cp2, "Let's see some examples")),
       L("Now some numbers that aren't prime. Fourteen is two times seven, so fourteen breaks, and it's not prime. Nine is "
         "three times three. Twenty-one is three times seven. Sixteen is two times eight. All of these break, so none of "
-        "them is prime.", show(cp3, 'Fourteen is two times seven'))),
+        "them is prime.", show(cp3a, 'Fourteen is two times seven'), show(cp3, 'Fourteen is two times seven'))),
     S('One, two and zero',
       L("Now some special cases. One is not prime. Its only divisor is one, so it doesn't have two divisors. Zero and the "
         "negative numbers are not prime either. A prime is always a whole number bigger than one.",
         show(cp4, 'One is not prime')),
       L("Two is prime, because its only divisors are one and two. And two is the only even prime. Every other even number "
         "divides by two as well, so it has more than two divisors. Eighteen divides by two, and so does twenty, so they're "
-        "not prime.", show(cp5, 'Two is prime')),
+        "not prime.", show(cp5, 'Two is prime'), show(cp5b, 'Eighteen divides by two'), show(cp5c, "so they're not prime")),
       L("This gives us a strong exam tool. Every prime except two is odd. Odd plus odd is even, and odd minus odd is even "
         "too. For example, three plus five is eight, and eleven minus seven is four. So if two primes give an odd sum, or "
-        "an odd difference, one of them has to be two.", show(cp6, 'Odd plus odd is even'), show(cp7, 'So if two primes give an odd sum')),
+        "an odd difference, one of them has to be two.", show(cp6, 'Odd plus odd is even'), show(cp6b, 'For example, three plus five'),
+        show(cp7, 'So if two primes give an odd sum')),
       L("For example, if two primes add up to twenty-five, which is odd, one of them is two, and the other is twenty-three. "
         "If two primes have a difference of nine, one of them is two, and the other is eleven. But if the sum is even, "
         "like sixteen, the rule tells us nothing, because sixteen is three plus thirteen, and also five plus eleven.",
@@ -498,20 +554,26 @@ video('primes', 'lesson', slides=[
         "less than ten. The primes below ten are two, three, five and seven, so we only try those.", show(cp13, "Let's take ninety-one")),
       L("Two? Ninety-one is odd, so no. Three? Add the digits. Nine plus one is ten, and ten doesn't divide by three, so "
         "no. Five? It doesn't end in zero or five, so no. Seven? Seven times thirteen is ninety-one. So ninety-one is not "
-        "prime.", show(cp14, 'Seven times thirteen is ninety-one')),
+        "prime.", show(c91a, 'Ninety-one is odd'), show(c91b, 'Nine plus one is ten'), show(c91c, "It doesn't end in zero or five"),
+        show(cp14, 'Seven times thirteen is ninety-one')),
       L("Now a number that is prime, eighty-nine. Its root is less than ten too. Eighty-nine is odd. Its digit sum is "
         "seventeen, which doesn't divide by three. It doesn't end in zero or five. And seven times twelve is eighty-four, "
         "while seven times thirteen is ninety-one, so seven skips over it. None of them divides it, so eighty-nine is "
-        "prime.", show(cp15, 'Now a number that is prime')),
+        "prime.", show(c89, 'Its root is less than ten too'), show(c89a, 'Eighty-nine is odd'),
+        show(c89b, 'Its digit sum is seventeen'), show(c89c, "It doesn't end in zero or five"),
+        show(c89d, 'And seven times twelve'), show(cp15, 'None of them divides it')),
       L("Some numbers look prime but aren't, and the exam loves them. Fifty-one, fifty-seven and eighty-seven all divide "
         "by three, because their digit sums are six, twelve and fifteen. Ninety-one and a hundred nineteen both divide by "
-        "seven.", show(cp16, 'Some numbers look prime'))),
+        "seven.", show(cp16, 'Fifty-one, fifty-seven and eighty-seven'), show(cp16s, 'their digit sums are'),
+        show(cp16b, 'Ninety-one and a hundred nineteen'))),
     S('Divisor = factor',
       L("Two words mean exactly the same thing, divisor and factor. A factor of a number divides it with no remainder. "
         "Twenty-eight divides by four, so four is a factor of twenty-eight, or a divisor of twenty-eight. Forty-five "
-        "divides by nine, so nine is a factor of forty-five.", show(cp17, 'Twenty-eight divides by four')),
+        "divides by nine, so nine is a factor of forty-five.", show(cp17, 'Twenty-eight divides by four'),
+        show(cp17b, 'Forty-five divides by nine')),
       L("And a non-example. Six times four is twenty-four, and six times five is thirty, so twenty-eight doesn't divide by "
-        "six. Six is not a factor of twenty-eight.", show(cp18, 'And a non-example')),
+        "six. Six is not a factor of twenty-eight.", show(cp18a, 'Six times four is twenty-four'),
+        show(cp18, "so twenty-eight doesn't divide by six")),
       L("The word divisor confuses a lot of students. Whenever you see it, replace it with factor. It's the same thing.",
         show(cp19, 'replace it with factor'))),
     S('Prime factors',
@@ -520,9 +582,11 @@ video('primes', 'lesson', slides=[
         show(cp20, 'Twenty-eight is two times two times seven')),
       L("A number divides by all its prime factors, and by every combination of them. Take twenty, which is two times two "
         "times five. It divides by two and by five, its prime factors. It also divides by four, which is two times two, by "
-        "ten, which is two times five, and by twenty, which is all of them together.", show(cp21, 'Take twenty')),
+        "ten, which is two times five, and by twenty, which is all of them together.", show(cp21, 'Take twenty'),
+        show(cp21b, 'It also divides by four')),
       L("One more. Eighteen is two times three times three. So it divides by two and by three, by six, which is two times "
-        "three, by nine, which is three times three, and by eighteen itself.", show(cp22, 'Eighteen is two times three'))),
+        "three, by nine, which is three times three, and by eighteen itself.", show(cp22, 'Eighteen is two times three'),
+        show(cp22b, 'by six, which is'))),
     S('Break it down',
       L("Every whole number bigger than one that isn't prime is built from primes. Writing it as a product of primes is "
         "called its prime factorization, and we find it with a factor tree. Let's take a hundred eighty, and start with a "
@@ -533,10 +597,11 @@ video('primes', 'lesson', slides=[
         show(cpT[3], 'Forty-five is three times fifteen'), show(cpT[4], 'fifteen is three times five')),
       L("So a hundred eighty is two squared, times three squared, times five. Let's check it by multiplying back. Four "
         "times nine is thirty-six, and thirty-six times five is a hundred eighty.", show(cp23, 'So a hundred eighty is two squared'),
-        show(cp24, 'Four times nine')),
+        show(cp23b, 'multiplying back'), show(cp24, 'Four times nine')),
       L("If you start differently, say with ten times eighteen, you get the same primes at the end. Ten is two times five, "
         "and eighteen is two times three times three. Again two twos, two threes and one five.",
-        show(cp25, 'ten times eighteen'))),
+        show(cp25, 'ten times eighteen'), show(cp25b, 'Ten is two times five'),
+        show(cp25c, 'eighteen is two times three times three'), show(cp25d, 'Again two twos'))),
     S('Is it a divisor?',
       L("Now, is a number a divisor of a hundred eighty? Check its prime ingredients. A number divides a hundred eighty "
         "only if each of its primes is in a hundred eighty, at least as many times.", show(cp26, 'Check its prime ingredients')),
@@ -545,10 +610,13 @@ video('primes', 'lesson', slides=[
         show(cp27, 'Forty-five is three times three times five')),
       L("Now the non-examples. Seven isn't in a hundred eighty at all, so seven doesn't divide it, and neither does "
         "fourteen or twenty-one. Eight is two times two times two, so it needs three twos, but a hundred eighty has only "
-        "two. So eight doesn't divide a hundred eighty either.", show(cp28, 'Now the non-examples')),
+        "two. So eight doesn't divide a hundred eighty either.", show(cp28, "Seven isn't in"),
+        show(cp28b, 'neither does fourteen'), show(cp28c, 'Eight is two times two times two')),
       L("And watch for pieces that aren't prime. If x is three times six squared, the six squared hides two twos and two "
         "threes. So x is two squared times three cubed, and twelve divides x, because it needs two twos and one three. "
-        "Always unpack such pieces into primes first.", show(cp29, 'If x is three times six squared'))),
+        "Always unpack such pieces into primes first.", show(cp29, 'If x is three times six squared'),
+        show(cp29b, 'the six squared hides'), show(cp29c, 'So x is two squared times three cubed'),
+        show(cp29d, 'because it needs two twos'))),
     S('Recap',
       L("Let's sum it up. A prime has exactly two divisors, one and itself. Zero and one are not prime, and two is the only "
         "even prime. If two primes give an odd sum or difference, one of them is two. And know the primes up to forty, "

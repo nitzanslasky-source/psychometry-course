@@ -1,0 +1,79 @@
+{
+ "videoId": "solve-pt-q04",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A cylinder is inscribed in a cube whose edge is three a, see the figure. What is the volume of the cylinder?",
+    "voice": "calm",
+    "at": [
+     "A cylinder is inscribed"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Inscribed means the cylinder sits inside the cube, and touches its sides. They ask for the volume of the cylinder. [short pause] We'll solve it two ways, with the formula, and then with an estimate.",
+    "at": [
+     "Inscribed means",
+     "inside the cube"
+    ]
+   },
+   {
+    "say": "The volume of a cylinder is pi r squared, times h. If you don't remember it, it's on the formula sheet. Pi r squared is the area of the round base, and h is the height. Why multiply? A cylinder is like a stack of equal circles, so it's the area of one circle, times how tall the stack is.",
+    "at": [
+     "The volume of a cylinder",
+     "is pi r"
+    ]
+   },
+   {
+    "say": "So we need the radius of the base. The edge of the cube is three a. If we slide the front edge inward, we see that the diameter of the base is exactly as long as the edge. So the diameter is three a.",
+    "at": [
+     "The edge of the cube is three a",
+     "is three a",
+     "If we slide the front edge inward",
+     "the diameter of"
+    ]
+   },
+   {
+    "say": "A diameter is two radii, so the radius is half of three a, which is three a over two. And the height of the cylinder is the height of the cube, three a.",
+    "at": [
+     "A diameter is two radii",
+     "so the radius is half",
+     "of three a",
+     "And the height of the",
+     "the height of the cube"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now into the formula. Pi, times the radius squared, times the height.",
+    "at": [
+     "Now into the formula",
+     "Pi, times the"
+    ]
+   },
+   {
+    "say": "Careful here. Many students write three a over two without brackets. Then they square the three a, but not the two. They get twenty-seven pi a cubed over two, which is choice number one. They mark it, and they're wrong.",
+    "at": [
+     "which is choice number one"
+    ]
+   },
+   {
+    "say": "If the radius is a fraction, put it in brackets, and square both the top and the bottom. Three a, squared, is nine a squared, and two squared is four. So the radius squared is nine a squared over four.",
+    "at": [
+     "put it in brackets",
+     "square both the"
+    ]
+   },
+   {
+    "say": "Now times the height, three a. Nine times three is twenty-seven, and a squared times a is a cubed. So the volume is twenty-seven pi a cubed over four, and choice number four is our answer. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "Now times the height",
+     "Nine times three",
+     "choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

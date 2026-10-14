@@ -1,0 +1,85 @@
+{
+ "videoId": "solve-pt-q02-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with this question, now with psychometric thinking."
+  ],
+  [
+   {
+    "say": "[pause] Now a second way, with psychometric thinking. One of our super-methods is plugging in the answers. What does that mean? They ask for one number, and they already give us four options. One of them must be the answer. So instead of building an equation, we put a choice into the story and check if it works.",
+    "at": [
+     "Now a"
+    ]
+   },
+   "Why is that easier? A check is just arithmetic. We add, we subtract, and we compare. Building the equation and solving it took several steps, and in each one we could slip.",
+   {
+    "say": "Let's start with choice number one, twenty-five. If we move twenty-five, A has four hundred seventy-five, and B has six hundred twenty-five. Is four hundred seventy-five over six hundred twenty-five equal to nine thirteenths? We could reduce it bit by bit, but that's a fairly long calculation.",
+    "at": [
+     "number one, twenty-five",
+     "If we move twenty-five",
+     "has four hundred"
+    ]
+   },
+   {
+    "say": "But we don't have to check the choices in order. A very important rule in plugging in the answers is to start with the answer that's most convenient for you, usually a round one. Here, that's fifty, choice number two.",
+    "at": [
+     "A very important rule",
+     "plugging in the",
+     "number two"
+    ]
+   },
+   {
+    "say": "If we move fifty eggs, A has five hundred minus fifty, four hundred fifty. And careful here, the same fifty eggs go into B. So B has six hundred plus fifty, six hundred fifty. A lot of students take the eggs out of A, and forget to add them to B.",
+    "at": [
+     "If we move fifty eggs",
+     "fifty, four hundred"
+    ]
+   },
+   {
+    "say": "Now we compare. Four hundred fifty over six hundred fifty. Drop a zero from the top and the bottom, and we get forty-five over sixty-five. Both divide by five. Forty-five divided by five is nine, and sixty-five divided by five is thirteen. Nine thirteenths, exactly what the question asked. Choice number two is our answer.",
+    "at": [
+     "Now we compare",
+     "Drop a zero",
+     "the question asked",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "Once a choice fits, we can mark it, because a question has only one correct answer. By the way, in many questions where we plug in the answers, the round answer we try first really is the right one. Why? Because the exam gives an advantage to whoever thinks this way. Not in every question, but in quite a few.",
+    "at": [
+     "Once a choice"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So when do I plug in the answers? When the question asks for one number, the choices are plain numbers, and it's easy to put a choice back into the question. It helps most when the equation is long, or when you don't know how to solve it at all. It's a safety net.",
+    "at": [
+     "So when do I plug in the answers",
+     "in the answers",
+     "the question asks",
+     "numbers, and it's",
+     "the question. It",
+     "you don't know"
+    ]
+   },
+   {
+    "say": "Let's see one more example. x squared plus x equals a hundred ten. What is x, if the choices are nine, ten, eleven, and twelve? An equation with x squared and x together, we haven't learned to solve yet. But we don't need to.",
+    "at": [
+     "x squared plus x equals",
+     "a hundred ten",
+     "if the choices are",
+     "ten, eleven, and"
+    ]
+   },
+   {
+    "say": "Start with the round answer, ten. Ten squared is a hundred, and a hundred plus ten is a hundred ten. It fits. So x is ten, and we're done without solving anything. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Ten squared is a hundred",
+     "is a hundred ten"
+    ]
+   }
+  ]
+ ]
+}

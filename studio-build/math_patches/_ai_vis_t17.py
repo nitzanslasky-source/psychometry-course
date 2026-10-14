@@ -174,6 +174,52 @@ def _layout(vid):
     return names, per
 
 
+# 2026-10-14 Rule V4.8 (camera lessons: the face bubble never covers math). Her bubble is composited top right (board
+# x >= 1344, y <= 256). In the camera lesson and its parts: a right-column stack that would start above y 262 moves down
+# as a whole (its own order and spacing kept), and a left-column item is at most 920 wide (ends left of x 1330; a figure
+# and its layers are scaled down together, text wraps). Other videos are unchanged.
+CAM_BASE = 'number-line'
+CAM_W, CAM_Y = 920, 280
+
+
+def _cam_width(d, hand=None):
+    """the drawn width of a board item, roughly (a figure: its box; a hand-written line: its pen strokes at the
+    hand-written size, 1.2x; text: ~half the size per visible character)"""
+    if d['k'] == 'vis': return d.get('w') or 540
+    if hand:
+        import studio_handwrite as _HW
+        return min(d.get('w') or 1130, _HW.write(hand)['w'] * round(d.get('size', 36) * 1.2) / 100.0)
+    t = re.sub(r'\\(quad|qquad)', '    ', d.get('t') or ''); t = re.sub(r'\\frac\{([^}]*)\}\{([^}]*)\}', r'\1', t)
+    t = re.sub(r'\\[a-zA-Z]+', 'x', t)
+    for ch in '${}\\': t = t.replace(ch, '')
+    return min(d.get('w') or 1130, len(t) * d.get('size', 36) * (0.6 if d['k'] == 'hw' else 0.5))
+_layout_plain = _layout
+
+
+def _layout(vid):
+    names, per = _layout_plain(vid)
+    if not re.fullmatch(re.escape(CAM_BASE) + r'(-\d+)?', vid) or VIDEOS[vid]['kind'] != 'lesson': return names, per
+    for sl in per:
+        right = [d for it, d in sl if d.get('x') == 1010 and d.get('y') is not None]
+        if any(d.get('x') == 1010 and d.get('y') is not None and d['y'] < CAM_Y - 18 and not d.get('over')
+               and 1010 + _cam_width(d, it.get('_hand')) > 1335 for it, d in sl):
+            top, yl = CAM_Y, 78                    # ... and below a left-column figure that reaches under the right column
+            for it2, d2 in sl:
+                if d2.get('x') is not None or d2.get('y') is not None or d2.get('over'): continue
+                h2 = d2['h'] if d2['k'] == 'vis' else d2.get('size', 36) * 1.55 * (1.2 if it2.get('_hand') else 1)
+                if d2['k'] == 'vis' and 410 + (d2.get('w') or 0) > 1000: top = max(top, int(yl + h2 + 16))
+                yl += h2 + 16
+            dy = top - min(d['y'] for d in right)
+            for d in right: d['y'] += dy
+        for it, d in sl:
+            if d.get('x') is not None or d.get('y') is not None: continue
+            if d['k'] == 'vis' and d.get('w', 0) > CAM_W:
+                d['h'] = int(round(d['h'] * CAM_W / d['w'])); d['w'] = CAM_W
+            elif d['k'] in ('t', 'hw') and (d.get('w') or 1130) > CAM_W:
+                d['w'] = CAM_W
+    return names, per
+
+
 def _target(vid, names, si, t):
     if t in ('stem',) or re.fullmatch(r'stem: (g\d|given|ask)', t) or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
     nm, _, part = t.partition(':')
@@ -399,29 +445,38 @@ nlr = ZL('nlr', -2, 2, [('r1', [('below', -1.5, 'below −1')]), ('r2', [('below
                          ('r3', [('below', 0.5, '0 to 1')]), ('r4', [('below', 1.5, 'above 1')])], w=900)
 nle = I('nle', '$-3,\\ -\\frac72 \\quad\\ -\\frac12,\\ -\\frac25 \\quad\\ \\frac12,\\ \\frac25 \\quad\\ 3,\\ \\frac72$', size=34,
         hand='−3,  −{7/2}      −{1/2},  −{2/5}      {1/2},  {2/5}      3,  {7/2}')
-nlb = I('nlb', 'Borders: $\\ 1^5=1$, $\\ 0$ has no reciprocal', size=32)
+nlb = I('nlb', 'Borders: $\\ -1,\\ 0,\\ 1$', size=32)
+nlb2 = I('nlb2', '$1^5=1$', size=32, hand='1^5 = 1')
+nlb3 = I('nlb3', '$0$: $\\ $no reciprocal', size=32)
 nlm = ZL('nlm', -40, 40, [('a', [('ink', 15, '15'), ('arrow', 16, 29, '×2'), ('pt', 30, '30')]),
                            ('b', [('ink', -15, '−15'), ('arrow', -16, -29, '×2'), ('pt', -30, '−30')])], ticks=(0,), w=900)
 nlm2 = I('nlm2', '$15\\cdot\\frac15=3 \\qquad -15\\cdot\\frac15=-3$', size=36, hand='15·{1/5} = 3        −15·{1/5} = −3')
 nlm3 = I('nlm3', '$8\\cdot\\frac34=6 \\qquad -8\\cdot\\frac34=-6$', size=36, hand='8·{3/4} = 6        −8·{3/4} = −6')
-nmd1 = I('nmd1', '$\\times$ more than $1$: $\\ 9\\cdot2=18,\\ \\ 4\\cdot3=12$', size=32)
-nmd2 = I('nmd2', '$\\div$ more than $1$: $\\ 10\\div5=2,\\ \\ 12\\div4=3$', size=32)
-nmd3 = I('nmd3', '$\\times$ a fraction: $\\ 10\\cdot\\frac15=2,\\ \\ 8\\cdot\\frac12=4$', size=32)
-nmd4 = I('nmd4', '$\\div$ a fraction: $\\ 10\\div\\frac15=10\\cdot5=50,\\ \\ 3\\div\\frac12=6$', size=32)
-nh1 = I('nh1', '$\\sqrt[5]{\\frac{11}{10}}>1>\\sqrt{\\frac79}$', size=36)
-nh2 = I('nh2', '$\\left(\\frac54\\right)^3>1>\\sqrt{\\frac35}$', size=36)
+nmd1 = I('nmd1', '$\\times$ more than $1$: $\\ 9\\cdot2=18,\\ \\ 4\\cdot3=12$', size=32, hand='× more than 1 :   9·2 = 18,    4·3 = 12')
+nmd2 = I('nmd2', '$\\div$ more than $1$: $\\ 10\\div5=2,\\ \\ 12\\div4=3$', size=32, hand='÷ more than 1 :   10 ÷ 5 = 2,    12 ÷ 4 = 3')
+nmd3 = I('nmd3', '$\\times$ a fraction: $\\ 10\\cdot\\frac15=2,\\ \\ 8\\cdot\\frac12=4$', size=32, hand='× a fraction :   10·{1/5} = 2,    8·{1/2} = 4')
+nmd4 = I('nmd4', '$\\div$ a fraction: $\\ 10\\div\\frac15=10\\cdot5=50,\\ \\ 3\\div\\frac12=3\\cdot2=6$', size=32, hand='÷ a fraction :   10 ÷ {1/5} = 10·5 = 50,    3 ÷ {1/2} = 3·2 = 6')
+nh1 = I('nh1', '$\\sqrt[5]{\\frac{11}{10}}$ $\\ $vs$\\ $ $\\sqrt{\\frac79}$', size=36)
+nh1r = I('nh1r', '$\\frac{11}{10}>1>\\frac79\\ \\to\\ \\sqrt[5]{\\frac{11}{10}}>1>\\sqrt{\\frac79}$', size=34)
+nh2 = I('nh2', '$\\left(\\frac54\\right)^3$ $\\ $vs$\\ $ $\\sqrt{\\frac35}$', size=36)
+nh2r = I('nh2r', '$\\left(\\frac54\\right)^3>1>\\sqrt{\\frac35}$', size=36)
 nh3 = I('nh3', 'Negatives: odd powers and roots only', size=30)
 nx1 = I('nx1', '$(-5)^2=25 \\qquad (-3)^4=81$', size=36, hand='(−5)^2 = 25        (−3)^4 = 81')
 nx2 = I('nx2', '$(-5)^2=25 \\quad$ but $\\quad -5^2=-25$', size=36)
 nx3 = I('nx3', '$\\left(\\frac38\\right)^{-2}=\\left(\\frac83\\right)^2 \\qquad 5^{-3}=\\left(\\frac15\\right)^3$', size=36)
-nx4 = I('nx4', '$\\sqrt{\\frac47}\\ <1<\\ \\left(\\frac35\\right)^{-3}=\\left(\\frac53\\right)^3$', size=36)
-ns1 = I('ns1', '$5^{-4}=\\left(\\frac15\\right)^4 \\quad 4^{-4}=\\left(\\frac14\\right)^4$: $\\ \\frac14>\\frac15$', size=34)
-ns2 = I('ns2', '$\\left(\\frac34\\right)^5>\\left(\\frac23\\right)^5$ $\\quad \\sqrt{13}>\\sqrt{11}$', size=34)
-ns3 = I('ns3', '$-3<-2\\ $ but $\\ (-3)^2=9>(-2)^2=4$', size=34)
-nk1 = I('nk1', '$4\\cdot6$ vs $3\\cdot5$: $\\ 4>3,\\ 6>5$: $\\ 24>15$', size=34)
+nx4 = I('nx4', '$\\sqrt{\\frac47}$ $\\ $vs$\\ $ $\\left(\\frac35\\right)^{-3}$', size=36)
+nx4b = I('nx4b', '$\\left(\\frac35\\right)^{-3}=\\left(\\frac53\\right)^3>1$', size=36)
+nx4c = I('nx4c', '$\\sqrt{\\frac47}<1<\\left(\\frac35\\right)^{-3}$', size=36)
+ns1 = I('ns1', '$5^{-4}$ $\\ $vs$\\ $ $4^{-4}$', size=32)
+ns1b = I('ns1b', '$\\left(\\frac15\\right)^4$ $\\ $vs$\\ $ $\\left(\\frac14\\right)^4$', size=32)
+ns1c = I('ns1c', '$\\frac14>\\frac15\\ \\to\\ 4^{-4}>5^{-4}$', size=32)
+ns2 = I('ns2', '$\\left(\\frac34\\right)^5$ $\\ $vs$\\ $ $\\left(\\frac23\\right)^5$: $\\ \\frac34>\\frac23$', size=30, hand='({3/4})^5  vs  ({2/3})^5 :    {3/4} > {2/3}')
+ns2b = I('ns2b', '$\\sqrt{13}$ $\\ $vs$\\ $ $\\sqrt{11}$: $\\ 13>11$', size=30, hand='√{13}  vs  √{11} :    13 > 11')
+ns3 = I('ns3', '$-3<-2\\ $ but $\\ (-3)^2=9>(-2)^2=4$', size=34, hand='−3 < −2      but      (−3)^2 = 9  >  (−2)^2 = 4')
+nk1 = I('nk1', '$4\\cdot6$ vs $3\\cdot5$: $\\ 4>3,\\ 6>5$: $\\ 24>15$', size=34, hand='4·6  vs  3·5 :   4 > 3,   6 > 5 :   24 > 15')
 nk2 = I('nk2', '$0<a<b,\\ 0<c<d\\ \\to\\ ac<bd$', size=34)
 nk3 = I('nk3', '$2\\cdot9$ vs $3\\cdot5$: $\\ $one win each, no decision', size=32)
-nk4 = I('nk4', '$7>5$: $\\ 7\\cdot3>5$ $\\quad$ but $\\ 7\\cdot\\frac12=3.5<5$', size=32)
+nk4 = I('nk4', '$7>5$: $\\ 7\\cdot3>5$ $\\quad$ but $\\ 7\\cdot\\frac12=3.5<5$', size=32, hand='7 > 5 :   7·3 > 5      but   7·{1/2} = 3.5 < 5')
 nr = I('nr', 'Range first $\\to$ exceptional powers $\\to$ compare', size=32)
 video('number-line', 'lesson', slides=[
     S('The Number Line',
@@ -442,7 +497,8 @@ video('number-line', 'lesson', slides=[
         "half by something, or one quarter by the same thing, and they both move the same way.", pt('nlr_line', 'every number inside one range')),
       L("Watch the borders too: negative one, zero and one. They don't belong to any range, and they behave in their own way. "
         "One to any power is still one, so one to the power of five is one. And zero has no reciprocal, because we can't "
-        "divide by zero.", show(nlb, 'Watch the borders too')),
+        "divide by zero.", show(nlb, 'Watch the borders too'), show(nlb2, 'so one to the power of five'),
+        show(nlb3, 'And zero has no reciprocal')),
       L("So the first step in every question is to ask which ranges the givens allow. If a question only says x is "
         "positive, x could be between zero and one, or above one. And those two ranges can behave differently.",
         pt('nlr_line', 'which ranges the givens allow'))),
@@ -478,10 +534,10 @@ video('number-line', 'lesson', slides=[
       L("Eleven tenths is not really a fraction, because the top is bigger than the bottom, so it's more than one. A root "
         "of a number above one stays above one. Seven ninths is a real fraction, less than one, and its root stays less "
         "than one. So the fifth root of eleven tenths is bigger. We ignore the roots and look at the numbers themselves.",
-        pt('nh1', 'Eleven tenths is not really a fraction')),
+        pt('nh1', 'Eleven tenths is not really a fraction'), show(nh1r, 'So the fifth root of eleven tenths is bigger')),
       L("Another one. Five quarters, cubed, against the square root of three fifths. Five quarters is above one, so its cube "
         "is above one too. Three fifths is between zero and one, so its root is too. So five quarters, cubed, is bigger.",
-        show(nh2, 'Five quarters, cubed')),
+        show(nh2, 'Five quarters, cubed'), show(nh2r, 'So five quarters, cubed, is bigger')),
       L("One condition for negative numbers. The hierarchy works for them only with odd powers and odd roots, because an "
         "even power makes a negative number positive. That's what we look at next.", show(nh3, 'One condition for negative numbers'))),
     S('Exceptional powers',
@@ -496,19 +552,22 @@ video('number-line', 'lesson', slides=[
       L("Here's how it helps. Which is bigger, the square root of four sevenths, or three fifths to the power of negative "
         "three? First handle the exceptional power: flip it, and it's five thirds, cubed. Five thirds is above one, so its "
         "cube is above one. The square root of four sevenths is less than one. So three fifths to the power of negative "
-        "three is bigger.", show(nx4, 'First handle the exceptional power')),
+        "three is bigger.", show(nx4, 'Which is bigger, the square root of four sevenths'),
+        show(nx4b, 'flip it'), show(nx4c, 'So three fifths to the power of negative')),
       L("In the next lesson you'll meet the arrows, and with the arrows you may keep the minus in the exponent. Both ways "
-        "give the same answer.", pt('nx4', 'In the next lesson'))),
+        "give the same answer.", pt('nx4b', 'In the next lesson'))),
     S('Same operation',
       L("When two positive numbers get exactly the same operation, we can ignore the operation. Whichever number was bigger "
         "without it is bigger with it. But first, handle any exceptional power."),
       L("For example, five to the power of negative four against four to the power of negative four. There's a minus in "
         "the exponent, so first we flip. That's one fifth to the power of four against one quarter to the power of four. "
         "Now both have the same power, so we ignore it. One quarter is bigger than one fifth, so four to the power of "
-        "negative four is bigger. No calculating.", show(ns1, 'five to the power of negative four')),
+        "negative four is bigger. No calculating.", show(ns1, 'five to the power of negative four'),
+        show(ns1b, 'one fifth to the power of four against'), show(ns1c, 'One quarter is bigger than one fifth')),
       L("Two more. Three quarters to the power of five against two thirds to the power of five: three quarters is bigger, "
         "so its power is bigger. And the square root of thirteen against the square root of eleven: thirteen is bigger, so "
-        "its root is bigger.", show(ns2, 'Three quarters to the power of five')),
+        "its root is bigger.", show(ns2, 'Three quarters to the power of five'),
+        show(ns2b, 'And the square root of thirteen')),
       L("But this works for positive numbers only. Negative three is smaller than negative two. Squared, negative three "
         "gives nine and negative two gives four, so the order flipped. With negative numbers, don't ignore the power.",
         show(ns3, 'this works for positive numbers only'))),

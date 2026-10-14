@@ -1,0 +1,100 @@
+{
+ "videoId": "solve-pt-q14",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Dana bought a dress at a discount of forty shekels. The price of the dress after the discount was x shekels. What was the discount on the dress, in percent?",
+    "voice": "calm",
+    "at": [
+     "Dana bought a dress"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "There's an x in the choices, so we can plug in numbers. [short pause] We'll solve it by plugging in, and then with a line of algebra.",
+    "at": [
+     "There's an x in the choices",
+     "choices, so we"
+    ]
+   },
+   {
+    "say": "First, what is a percent? Percent means out of a hundred. A discount of forty shekels on a price of a hundred shekels is a discount of forty percent. The percent always compares to the whole price, the price before the discount.",
+    "at": [
+     "First, what",
+     "Percent means out of a hundred",
+     "A discount of"
+    ]
+   },
+   {
+    "say": "So where do we put a number? In percent questions we put a hundred, and we put it at the whole. Why? Some students put the hundred at x, the price after the discount. Then the price before is a hundred forty, and we'd need forty out of a hundred forty. That's not a nice calculation.",
+    "at": [
+     "Some students put the hundred at x",
+     "at x, the"
+    ]
+   },
+   {
+    "say": "So we put the hundred at the price before. The discount is forty, so the price after is a hundred minus forty, sixty. So x is sixty.",
+    "at": [
+     "The discount is forty, so",
+     "hundred minus forty"
+    ]
+   },
+   {
+    "say": "And the discount is forty out of a hundred, forty percent. So the right choice must give forty when x is sixty.",
+    "at": [
+     "And the discount is forty",
+     "out of a"
+    ]
+   },
+   {
+    "say": "Now we rule out whatever isn't forty. Choice number one, forty times a hundred, over sixty plus forty. Sixty plus forty is a hundred, and the hundreds cancel. That leaves forty, so it stays.",
+    "at": [
+     "number one, forty",
+     "Sixty plus forty is",
+     "so it stays"
+    ]
+   },
+   {
+    "say": "Choice number two, forty times sixty, over a hundred. Forty times sixty is two thousand four hundred, and over a hundred is twenty-four. Out.",
+    "at": [
+     "number two, forty",
+     "over a hundred",
+     "is twenty-four",
+     "is twenty-four"
+    ]
+   },
+   {
+    "say": "Choice number three, sixty plus forty, over a hundred. A hundred over a hundred is one. Out.",
+    "at": [
+     "number three, sixty",
+     "over a hundred",
+     "is one. Out",
+     "is one. Out"
+    ]
+   },
+   {
+    "say": "Choice number four, a hundred times a hundred, over forty. A hundred over forty is two and a half, and times a hundred it's two hundred fifty. Out. So choice number one is our answer.",
+    "at": [
+     "number four, a",
+     "a hundred, over",
+     "it's two hundred fifty",
+     "it's two hundred fifty",
+     "So choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] With algebra, the price before is x plus forty. The discount in percent is forty out of x plus forty, times a hundred. That's choice number one. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "With algebra",
+     "the price before is x plus forty",
+     "The discount in percent",
+     "forty out of",
+     "That's choice number one"
+    ]
+   }
+  ]
+ ]
+}

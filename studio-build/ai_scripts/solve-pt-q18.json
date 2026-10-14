@@ -1,0 +1,140 @@
+{
+ "videoId": "solve-pt-q18",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In the figure, each vertex of rectangle A B C D is the center of a circle with a radius of two centimeters. Point O is the center of a circle that is tangent to the four quarter circles, and to sides A D and B C. What is the area of rectangle A B C D, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "In the figure"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The area of a rectangle is length times width. The short side, A B, is four, and it's written in the figure. So we need the long side, A D.",
+    "at": [
+     "The area of a rectangle",
+     "is length times"
+    ]
+   },
+   {
+    "say": "Along A D, the first part is a radius of the quarter circle at A, so it's two. The last part is a radius of the quarter circle at D, so it's also two.",
+    "at": [
+     "the first part is a radius",
+     "radius of the"
+    ]
+   },
+   {
+    "say": "But the part in the middle is hard. To calculate it, we need a helper line and Pythagoras. And if we don't see the helper line, we're stuck. So we'll solve it with an estimate.",
+    "at": [
+     "the part in the middle",
+     "To calculate it"
+    ]
+   },
+   "But wait. On the exam, a figure is not necessarily drawn to scale. So can I estimate from the figure?",
+   {
+    "say": "Usually, yes. First, most figures on the exam are drawn quite accurately. Second, a rule of thumb. With regular shapes, like a square, a circle, an equilateral triangle or a cube, the figure is accurate.",
+    "at": [
+     "With regular shapes",
+     "square, a circle"
+    ]
+   },
+   {
+    "say": "Why? Here, the circle in the middle touches the four quarter circles and two sides. There's only one way to draw that. If we make the figure bigger or smaller, all the parts keep the same ratios. So we can trust this figure. There's a whole lesson later about when a figure is accurate.",
+    "at": [
+     "There's only one way to draw",
+     "If we make"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] So let's compare the middle part with lengths we know. Here it is again, under the rectangle.",
+    "at": [
+     "let's compare the middle part",
+     "with lengths we"
+    ]
+   },
+   {
+    "say": "It's longer than a radius, which is two. And it's shorter than the diameter of the circle in the middle, which is four.",
+    "at": [
+     "It's longer than a radius",
+     "which is two",
+     "it's shorter than the diameter",
+     "middle, which is"
+    ]
+   },
+   "If it's hard to see, use your eraser on the exam. Mark the length of a radius on it, and compare.",
+   {
+    "say": "So the middle part is between two and four.",
+    "at": [
+     "So the middle part is between",
+     "between two and"
+    ]
+   },
+   {
+    "say": "The whole side A D is made of two, plus the middle, plus two. Two plus two plus two is six, and two plus four plus two is eight. So A D is between six and eight.",
+    "at": [
+     "The whole side A D",
+     "is made of",
+     "So A D is between",
+     "six and eight"
+    ]
+   },
+   {
+    "say": "The area is four times A D. Four times six is twenty-four, and four times eight is thirty-two. So the area is between twenty-four and thirty-two, and it isn't equal to either one.",
+    "at": [
+     "The area is four times",
+     "and four times"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the choices. Choice number four, forty, is more than thirty-two. It's out.",
+    "at": [
+     "Now the choices",
+     "Choice number four, forty",
+     "number four, forty",
+     "It's out"
+    ]
+   },
+   {
+    "say": "Choice number three, thirty-two. The middle part is less than four, so the area is less than thirty-two. It's out too.",
+    "at": [
+     "Choice number three, thirty-two",
+     "number three, thirty-two",
+     "The middle part",
+     "It's out too"
+    ]
+   },
+   {
+    "say": "Choice number two, sixteen root two. Sixteen times one and a half is sixteen plus eight, twenty-four. So to pass twenty-four, the root has to be more than one and a half.",
+    "at": [
+     "number two, sixteen",
+     "Sixteen times one and a half",
+     "half is sixteen"
+    ]
+   },
+   {
+    "say": "But one and a half squared is two and a quarter, which is more than two. So root two is less than one and a half, and sixteen root two is less than twenty-four. It's out.",
+    "at": [
+     "But one and a half squared",
+     "squared is two",
+     "sixteen root two is less than twenty-four",
+     "It's out"
+    ]
+   },
+   {
+    "say": "Three choices are out, so choice number one, sixteen root three, is our answer.",
+    "at": [
+     "Three choices are out",
+     "so choice number one",
+     "root three, is"
+    ]
+   },
+   "This is a hard question from the end of the section, and we never found the middle part. A rough size and the choices were enough. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

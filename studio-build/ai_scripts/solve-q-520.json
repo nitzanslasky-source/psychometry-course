@@ -40,7 +40,7 @@
   ],
   [
    {
-    "say": "T is a digit, so it's at most nine, and six T is at most fifty-four. U can't be zero, because then U cubed plus three U is zero, so six T is zero and T is zero, and a two-digit number can't start with zero. So we test U from one.",
+    "say": "T is a digit, so it's at most nine, and six T is at most fifty-four. Can U be zero? Then U cubed plus three U is zero, so six T is zero, and T is zero. But T is the tens digit, and a two-digit number can't start with zero. So U isn't zero, and we test U from one.",
     "at": [
      "T is",
      "so it's at"

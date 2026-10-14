@@ -9,7 +9,8 @@
    {
     "say": "A prime number is a whole positive number, bigger than one, that we can't write as a product of two smaller positive whole numbers. That sounds strange, so let's say it the way you remember it from school. A prime divides only by one and by itself. So a prime has exactly two divisors, one and the number itself.",
     "at": [
-     "a whole positive",
+     "A prime number is a whole positive number",
+     "whole positive number",
      "So a prime has exactly two divisors",
      "two divisors, one"
     ]
@@ -24,6 +25,7 @@
    {
     "say": "Now some numbers that aren't prime. Fourteen is two times seven, so fourteen breaks, and it's not prime. Nine is three times three. Twenty-one is three times seven. Sixteen is two times eight. All of these break, so none of them is prime.",
     "at": [
+     "Fourteen is two times seven",
      "Fourteen is two times seven",
      "Nine is three"
     ]
@@ -41,14 +43,20 @@
     "say": "Two is prime, because its only divisors are one and two. And two is the only even prime. Every other even number divides by two as well, so it has more than two divisors. Eighteen divides by two, and so does twenty, so they're not prime.",
     "at": [
      "Two is prime",
-     "only divisors are"
+     "only divisors are",
+     "Eighteen divides by two",
+     "so does twenty",
+     "so they're not prime"
     ]
    },
    {
     "say": "This gives us a strong exam tool. Every prime except two is odd. Odd plus odd is even, and odd minus odd is even too. For example, three plus five is eight, and eleven minus seven is four. So if two primes give an odd sum, or an odd difference, one of them has to be two.",
     "at": [
+     "This gives us",
      "Odd plus odd is even",
      "and odd minus",
+     "For example, three plus five",
+     "is eight, and",
      "So if two primes give an odd sum",
      "an odd sum"
     ]

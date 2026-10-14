@@ -1,0 +1,102 @@
+{
+ "videoId": "solve-pt-q13",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "One pen holds x cubic centimeters of ink. To write one word, you need y cubic centimeters of ink. Hagai's pens were enough for him to write x cubed times y words. How many pens did Hagai have?",
+    "voice": "calm",
+    "at": [
+     "One pen holds"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Let's try to understand it. A pen has x of ink, and a word needs y, so one pen writes x over y words. Then we'd divide x cubed y by x over y, and that's where many students get tangled.",
+    "at": [
+     "we'd divide x"
+    ]
+   },
+   {
+    "say": "But look at the choices. They have x and y in them, so we can plug in numbers. [short pause] We'll solve it by plugging in, and then finish the algebra.",
+    "at": [
+     "But look",
+     "look at the choices"
+    ]
+   },
+   {
+    "say": "Which numbers? The easiest would be x and y both one. But look at the choices first. They have powers, a product and fractions. With ones, every choice is one, and nothing is ruled out. So one can't tell them apart here.",
+    "at": [
+     "With ones, every choice is one",
+     "one, and nothing"
+    ]
+   },
+   {
+    "say": "So let's take x equals two. And y? If y is two as well, x squared y squared and x cubed y are both sixteen, a tie again. Different letters, different numbers.",
+    "at": [
+     "If y is two as well",
+     "and x cubed"
+    ]
+   },
+   {
+    "say": "So y equals one, which keeps the story easy. Now the choices give four, eight, a quarter and an eighth. They're all different, good.",
+    "at": [
+     "So y equals one",
+     "keeps the story"
+    ]
+   },
+   {
+    "say": "Now the story with these numbers. A pen holds two cubic centimeters, and a word needs one. So each pen writes two words.",
+    "at": [
+     "A pen holds two cubic",
+     "centimeters, and a"
+    ]
+   },
+   {
+    "say": "He wrote x cubed times y words. Two cubed is eight, and eight times one is eight words. Eight words, two words a pen, so he had four pens.",
+    "at": [
+     "Two cubed is eight",
+     "eight times one",
+     "Eight words, two words a pen",
+     "pen, so he"
+    ]
+   },
+   {
+    "say": "Choice number one, x squared y squared, gives four. It fits. Choice number two gives eight, out. Choice numbers three and four are fractions, a quarter and an eighth, out. So choice number one is our answer.",
+    "at": [
+     "Choice number one, x squared",
+     "number one, x",
+     "squared, gives four",
+     "Choice number two gives",
+     "gives eight, out",
+     "Choice numbers three",
+     "a quarter and an eighth",
+     "and an eighth, out",
+     "So choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the algebra we started. One pen writes x over y words. The number of pens is all the words, divided by the words a pen writes.",
+    "at": [
+     "Now the",
+     "One pen writes x over y",
+     "The number of"
+    ]
+   },
+   {
+    "say": "So it's x cubed y divided by x over y. Dividing by a fraction is multiplying by its flip, y over x. An x cancels, so x cubed becomes x squared, and y times y is y squared. x squared y squared, choice number one again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So it",
+     "divided by x",
+     "Dividing by a fraction",
+     "multiplying by its",
+     "An x cancels",
+     "cubed becomes x",
+     "choice number one again"
+    ]
+   }
+  ]
+ ]
+}

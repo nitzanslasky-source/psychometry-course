@@ -9,8 +9,14 @@
    {
     "say": "Now the technique. Many letter puzzles are solved with four steps. One, write the calculation vertically, with the ones digits lined up. Two, check the ones column. Three, check the leftmost digit and the size of the numbers. And four, plug in numbers and see what fits. When they ask for one letter, we can plug in the answer choices for that letter.",
     "at": [
-     "Many letter puzzles are solved with four steps",
-     "with four steps"
+     "letter puzzles are",
+     "One, write the calculation vertically",
+     "with the ones",
+     "Two, check the ones column",
+     "Three, check the leftmost digit",
+     "and the size",
+     "And four, plug in numbers",
+     "and see what"
     ]
    },
    {
@@ -67,6 +73,8 @@
    {
     "say": "Open the bracket: ten A plus B equals four A plus four B. Subtract four A and B from both sides, and six A equals three B. Divide both sides by three, and B equals two A. So B is twice A.",
     "at": [
+     "Open the bracket",
+     "plus B equals",
      "and six A equals three B",
      "Divide both sides"
     ]

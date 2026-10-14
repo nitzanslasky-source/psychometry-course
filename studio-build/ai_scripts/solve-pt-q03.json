@@ -1,0 +1,71 @@
+{
+ "videoId": "solve-pt-q03",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given, a is not zero, and b is not zero. a squared plus b squared, plus the bracket a minus b, squared, all over two a b, plus one. What is it equal to?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "What does what is it equal to mean here? It means one of the choices is the same expression, written another way. It gives the same value for every a and b that we're allowed to use. [short pause] We'll solve it two ways, with algebra, and then by plugging in numbers.",
+    "at": [
+     "It means one",
+     "the same value",
+     "it two ways"
+    ]
+   },
+   {
+    "say": "Algebra first. We simplify the expression until it looks like one of the choices. We have the bracket a minus b, squared, so let's use the formula from expressions. a minus b, squared, is a squared minus two a b plus b squared.",
+    "at": [
+     "Algebra first",
+     "a minus b, squared, is",
+     "a squared minus"
+    ]
+   },
+   {
+    "say": "So the top is a squared plus b squared, plus a squared minus two a b plus b squared. Now collect the like terms. a squared plus a squared is two a squared. b squared plus b squared is two b squared. And the minus two a b stays.",
+    "at": [
+     "So the top is",
+     "squared plus b",
+     "Now collect the like terms",
+     "a squared plus a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A lot of students take out two as a common factor here, and then get a bit tangled. Instead, let's split the fraction into three fractions with the same bottom. Why is that allowed? Fractions with the same bottom are added by adding the tops, so we can also go back the other way.",
+    "at": [
+     "take out two",
+     "let's split the fraction",
+     "three fractions with"
+    ]
+   },
+   {
+    "say": "Why split it? Because the third fraction, two a b over two a b, is one. So we have minus one and plus one, and they cancel each other.",
+    "at": [
+     "two a b over two a b",
+     "cancel each other"
+    ]
+   },
+   {
+    "say": "Now reduce the other two. In two a squared over two a b, the twos cancel, and one a cancels, so we're left with a over b. In two b squared over two a b, the twos cancel, and a b cancels too, so we get b over a.",
+    "at": [
+     "Now reduce the other two",
+     "In two a"
+    ]
+   },
+   {
+    "say": "So the expression is a over b plus b over a, and choice number one is our answer. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

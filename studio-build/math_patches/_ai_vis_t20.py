@@ -176,6 +176,52 @@ def _layout(vid):
     return names, per
 
 
+# 2026-10-14 Rule V4.8 (camera lessons: the face bubble never covers math). Her bubble is composited top right (board
+# x >= 1344, y <= 256). In the camera lesson and its parts: a right-column stack that would start above y 262 moves down
+# as a whole (its own order and spacing kept), and a left-column item is at most 920 wide (ends left of x 1330; a figure
+# and its layers are scaled down together, text wraps). Other videos are unchanged.
+CAM_BASE = 'algebraic-understanding'
+CAM_W, CAM_Y = 920, 280
+
+
+def _cam_width(d, hand=None):
+    """the drawn width of a board item, roughly (a figure: its box; a hand-written line: its pen strokes at the
+    hand-written size, 1.2x; text: ~half the size per visible character)"""
+    if d['k'] == 'vis': return d.get('w') or 540
+    if hand:
+        import studio_handwrite as _HW
+        return min(d.get('w') or 1130, _HW.write(hand)['w'] * round(d.get('size', 36) * 1.2) / 100.0)
+    t = re.sub(r'\\(quad|qquad)', '    ', d.get('t') or ''); t = re.sub(r'\\frac\{([^}]*)\}\{([^}]*)\}', r'\1', t)
+    t = re.sub(r'\\[a-zA-Z]+', 'x', t)
+    for ch in '${}\\': t = t.replace(ch, '')
+    return min(d.get('w') or 1130, len(t) * d.get('size', 36) * (0.6 if d['k'] == 'hw' else 0.5))
+_layout_plain = _layout
+
+
+def _layout(vid):
+    names, per = _layout_plain(vid)
+    if not re.fullmatch(re.escape(CAM_BASE) + r'(-\d+)?', vid) or VIDEOS[vid]['kind'] != 'lesson': return names, per
+    for sl in per:
+        right = [d for it, d in sl if d.get('x') == 1010 and d.get('y') is not None]
+        if any(d.get('x') == 1010 and d.get('y') is not None and d['y'] < CAM_Y - 18 and not d.get('over')
+               and 1010 + _cam_width(d, it.get('_hand')) > 1335 for it, d in sl):
+            top, yl = CAM_Y, 78                    # ... and below a left-column figure that reaches under the right column
+            for it2, d2 in sl:
+                if d2.get('x') is not None or d2.get('y') is not None or d2.get('over'): continue
+                h2 = d2['h'] if d2['k'] == 'vis' else d2.get('size', 36) * 1.55 * (1.2 if it2.get('_hand') else 1)
+                if d2['k'] == 'vis' and 410 + (d2.get('w') or 0) > 1000: top = max(top, int(yl + h2 + 16))
+                yl += h2 + 16
+            dy = top - min(d['y'] for d in right)
+            for d in right: d['y'] += dy
+        for it, d in sl:
+            if d.get('x') is not None or d.get('y') is not None: continue
+            if d['k'] == 'vis' and d.get('w', 0) > CAM_W:
+                d['h'] = int(round(d['h'] * CAM_W / d['w'])); d['w'] = CAM_W
+            elif d['k'] in ('t', 'hw') and (d.get('w') or 1130) > CAM_W:
+                d['w'] = CAM_W
+    return names, per
+
+
 def _target(vid, names, si, t):
     if t in ('stem',) or re.fullmatch(r'stem: (g\d|given|ask)', t) or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
     nm, _, part = t.partition(':')
@@ -446,11 +492,19 @@ def IH(name, tex, size=34, col=0):
 # give tools that "open your head". English additions kept: the three tools in order, numbers first.
 # NEW here, with examples: plugging in (two regions + a non-allowed number), testing the answers, algebra / understanding
 # (a shortcut formula instead of finding the letters; integer gaps).  Reminders later: q-r26-t20-01, q-577, q-578, q-579.
-w0 = I('w0', '1 · Plug in numbers $\\quad$ 2 · Test the answers $\\quad$ 3 · Algebra and understanding', size=28)
-w1 = I('w1', '$a>0$: $\\ a=3$: $\\ 9>3$ ✓ $\\quad a=\\frac13$: $\\ \\frac19<\\frac13$ ✗', size=30)
-w2 = I('w2', '$a<0$: $\\ 3$ is not allowed $\\quad a=-2$: $\\ 4>-2$', size=30)
-w3 = I('w3', '$x^2-x=6$: $\\ x=2\\to2$ ✗ $\\quad x=3\\to6$ ✓', size=30)
-w4 = I('w4', '$a+b=10,\\ a-b=4$: $\\ a^2-b^2=(a+b)(a-b)=40$', size=30)
+w0 = I('w0', '1 · Plug in numbers', size=28)
+w0b = I('w0b', '2 · Test the answers', size=28)
+w0c = I('w0c', '3 · Algebra and understanding', size=28)
+w1 = I('w1', '$a>0$: $\\ a=3$: $\\ 9>3$ ✓', size=30)
+w1b = I('w1b', '$a=\\frac13$: $\\ \\frac19<\\frac13$ ✗', size=30)
+w2 = I('w2', '$a<0$: $\\ 3$ is not allowed', size=30)
+w2b = I('w2b', '$a=-2$: $\\ 4>-2$', size=30)
+w3 = I('w3', '$x^2-x=6$', size=30)
+w3b = I('w3b', '$x=2$: $\\ 2^2-2=4-2=2$ ✗', size=30)
+w3c = I('w3c', '$x=3$: $\\ 3^2-3=9-3=6$ ✓', size=30)
+w4 = I('w4', '$a+b=10,\\ a-b=4$: $\\ a^2-b^2=\\ ?$', size=30)
+w4b = I('w4b', '$a^2-b^2=(a+b)(a-b)$', size=30)
+w4c = I('w4c', '$=10\\cdot4=40$', size=30)
 w5 = I('w5', 'Integer $n<5\\ \\to\\ n\\le4$', size=30)
 video('algebraic-understanding', 'lesson', slides=[
     S('Algebraic Understanding',
@@ -460,30 +514,32 @@ video('algebraic-understanding', 'lesson', slides=[
       L("Sometimes the solution is algebra, sometimes it's understanding what the givens really say, and sometimes it's one "
         "of the tools from psychometric thinking, plugging in numbers or testing the answers. To be honest, it's a fairly "
         "small part of the exam, and the questions don't repeat themselves. There's no single rule I can give you that "
-        "solves them all.", show(w0, 'Sometimes the solution is algebra')),
+        "solves them all."),
       L("But the questions in this topic, and the practice after them, give you tools that open your head for questions "
         "like these. Three tools open almost all of them. Plug in numbers, test the answers, and use algebra and "
         "understanding. Try numbers first, because they're fast and safe, and use algebra when the numbers don't decide.",
-        pt('w0', 'Three tools open almost all of them'))),
+        show(w0, 'Plug in numbers, test'), show(w0b, 'test the answers, and'), show(w0c, 'and use algebra and understanding'))),
     S('Plug in numbers',
       L("The first tool, plugging in numbers. Say a is a positive number, and the question asks if a squared is always "
         "bigger than a. Try a is three. Three squared is nine, and nine is bigger than three. So far, yes.",
         show(w1, 'Try a is three')),
       L("But positive numbers can also be between zero and one. Try a is one third. One third squared is one ninth, and one "
         "ninth is smaller than one third. So a squared is not always bigger than a. One allowed number where it fails is "
-        "enough to say not always.", pt('w1', 'Try a is one third')),
+        "enough to say not always.", show(w1b, 'Try a is one third')),
       L("And use only numbers that the givens allow. If the question said a is negative, three and one third would not be "
         "allowed at all. Then we'd try a negative number, like negative two. Negative two squared is four, and four is "
-        "bigger than negative two.", show(w2, 'use only numbers that the givens allow'))),
+        "bigger than negative two.", show(w2, 'use only numbers that the givens allow'),
+        show(w2b, 'Negative two squared is four'))),
     S('Test the answers',
       L("The second tool, testing the answers. Say x squared minus x is six, and the choices are two, three, four and six. "
         "We don't have to solve anything. We put each choice into the question. Two squared minus two is four minus two, "
         "which is two, not six. Three squared minus three is nine minus three, which is six. So three works.",
-        show(w3, 'Two squared minus two'))),
+        show(w3, 'Say x squared minus x is six'), show(w3b, 'Two squared minus two'), show(w3c, 'Three squared minus three'))),
     S('Algebra and understanding',
       L("The third tool, algebra and understanding. Say a plus b is ten, a minus b is four, and they ask for a squared minus "
         "b squared. We don't need to find a and b. a squared minus b squared is the bracket a plus b, times the bracket a "
-        "minus b. That's ten times four, which is forty.", show(w4, 'We don\'t need to find a and b')),
+        "minus b. That's ten times four, which is forty.", show(w4, 'Say a plus b is ten'), show(w4b, 'a squared minus b squared is the bracket'),
+        show(w4c, "That's ten times four")),
       L("Understanding also means reading what a given really says. If n is an integer and n is smaller than five, then n "
         "is at most four, because there's no integer between four and five. Gaps like this will help us find the biggest "
         "or smallest possible value.", show(w5, 'If n is an integer')),
@@ -498,7 +554,7 @@ video('algebraic-understanding', 'lesson', slides=[
 z1 = ZL('z1', -0.4, 3.6, [('a', [('pt', 3, 'x'), ('pt', 2, 'y')])], ticks=(0, 1), w=760, col=1)
 z2 = ZL('z2', -0.4, 3.6, [('a', [('pt', 0.62, 'x'), ('pt', 0.3, 'y'), ('below', 0.62, '½'), ('below', 0.3, '¼')])],
         ticks=(0, 1), w=760, col=1)
-a1 = I('a1', '$x=3,\\ y=2$: $\\ $(1) $9>3$ ✓ $\\ $(2) $6>2$ ✓ $\\ $(3) $9>4$ ✓', size=28)
+a1 = IH('a1', '$x=3,\\ y=2$: $\\ $(1) $9>3$ ✓ $\\ $(2) $6>2$ ✓ $\\ $(3) $9>4$ ✓', size=28)
 a2 = IH('a2', '(4) $\\frac32>3$ ✗', size=30)
 a3 = I('a3', '$x=\\frac12,\\ y=\\frac14$: $\\ $(1) $\\frac14>\\frac12$ ✗ $\\quad$ (2) $\\frac18>\\frac14$ ✗', size=28)
 b1 = IH('b1', '$x^2-y^2=(x-y)(x+y)$', size=32)
@@ -546,7 +602,7 @@ n1 = ZL('n1', -2.4, 0.3, [('a', [('pt', -2, '−2'), ('pt', -0.78, '−½'), ('p
         ticks=(-1, 0), w=760, col=1)
 n2 = ZL('n2', -2.4, 0.3, [('a', [('shade', -1, 0), ('below', -0.5, '(1), (2), (3)')]), ('b', [('pt', -1.75, '1/x')])],
         ticks=(-1, 0), w=760, col=1)
-c1 = IH('c1', '$x=-\\frac12$: $\\ $(1) $-\\frac18$ $\\quad$ (2) $-\\frac12$', size=30)
+c1 = IH('c1', '$x=-\\frac{1}{2}$: $\\ $(1) $-\\frac{1}{8}$ $\\quad$ (2) $-\\frac{1}{2}$', size=30)
 c2 = IH('c2', '(3) $-\\frac14$ $\\quad$ (4) $-2$', size=30)
 c3 = I('c3', '$\\frac{1}{-1/2}=-2,\\quad \\frac{1}{-1/10}=-10$', size=30)
 video('solve-q-r26-t20-02', 'solution', qid='q-r26-t20-02', slides=[
@@ -627,7 +683,7 @@ e2 = IH('e2', '$b+c=(a+b)-(a-c)$', size=32)
 e3 = IH('e3', '$b+c\\le15-2=13$', size=32)
 f1 = IH('f1', '$a=8,\\ b=7$: $\\ 8+7=15$', size=32)
 f2 = IH('f2', '$c=6$: $\\ b+c=13$', size=32)
-f3 = I('f3', '$b+c=14$: $\\ b\\ge8,\\ a\\ge9$: $\\ a+b\\ge17$ ✗', size=32)
+f3 = IH('f3', '$b+c=14$: $\\ b\\ge8,\\ a\\ge9$: $\\ a+b\\ge17$ ✗', size=32)
 video('solve-q-577', 'solution', qid='q-577', slides=[
     S('Method 1 · The biggest value',
       L("Given: a, b and c are integers, c is smaller than b, which is smaller than a, and a plus b is smaller than "

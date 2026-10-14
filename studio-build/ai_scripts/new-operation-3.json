@@ -16,14 +16,18 @@
     "say": "The operation could be many different things. Six x is one example, because six times five is thirty. Five x plus five is another, because twenty-five plus five is thirty. So a question like this asks which definition cannot be the operation.",
     "at": [
      "Six x is one example",
-     "because six times"
+     "because six times",
+     "Five x plus five is another",
+     "another, because twenty-five"
     ]
    },
    {
     "say": "Your move is to go through the choices and put five into each one. A choice that gives thirty could be the rule. The one that doesn't give thirty cannot be the rule. For example, x squared plus five gives twenty-five plus five, thirty, so it could be the rule. But four x plus eight gives twenty plus eight, twenty-eight, so it cannot.",
     "at": [
      "x squared plus five gives",
-     "twenty-five plus five"
+     "twenty-five plus five",
+     "But four x plus eight",
+     "gives twenty plus"
     ]
    },
    "In the exam, the moment you find the one that doesn't fit, you mark it and move on. In some question videos we'll check the other choices too, just to learn."
@@ -34,7 +38,9 @@
     "at": [
      "three times the",
      "Two star four is",
-     "plus sixteen, twenty-two"
+     "plus sixteen, twenty-two",
+     "Four star two is",
+     "plus four, sixteen"
     ]
    },
    {
@@ -48,7 +54,8 @@
     "say": "To show that it's always true, numbers are not enough, because they only check some cases. Write the rule with letters instead. For example, b heart a is five times the bracket b plus a. And b plus a is the same as a plus b, so b heart a is always equal to a heart b. For the heart, the order never matters.",
     "at": [
      "Write the rule with letters",
-     "For example, b"
+     "For example, b heart a",
+     "is five times"
     ]
    },
    {
@@ -65,14 +72,20 @@
     "at": [
      "is unknown? Write",
      "For example, x star four",
-     "By the definition"
+     "By the definition",
+     "Subtract sixteen from both sides",
+     "three x is"
     ]
    },
    {
     "say": "Let's check it. Three times three is nine, and nine plus sixteen is twenty-five. It works. One more: k heart two is thirty-five. By the definition, that's five times the bracket k plus two. So k plus two is seven, and k is five.",
     "at": [
+     "Let's check it",
+     "and nine plus",
      "k heart two is thirty-five",
-     "By the definition"
+     "By the definition",
+     "So k plus two is seven",
+     "seven, and k"
     ]
    },
    "On the exam you can also work back from the answers: put each choice into the rule, and see which one gives the result."

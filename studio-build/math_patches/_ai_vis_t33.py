@@ -176,6 +176,52 @@ def _layout(vid):
     return names, per
 
 
+# 2026-10-14 Rule V4.8 (camera lessons: the face bubble never covers math). Her bubble is composited top right (board
+# x >= 1344, y <= 256). In the camera lesson and its parts: a right-column stack that would start above y 262 moves down
+# as a whole (its own order and spacing kept), and a left-column item is at most 920 wide (ends left of x 1330; a figure
+# and its layers are scaled down together, text wraps). Other videos are unchanged.
+CAM_BASE = 'geo-074'
+CAM_W, CAM_Y = 920, 280
+
+
+def _cam_width(d, hand=None):
+    """the drawn width of a board item, roughly (a figure: its box; a hand-written line: its pen strokes at the
+    hand-written size, 1.2x; text: ~half the size per visible character)"""
+    if d['k'] == 'vis': return d.get('w') or 540
+    if hand:
+        import studio_handwrite as _HW
+        return min(d.get('w') or 1130, _HW.write(hand)['w'] * round(d.get('size', 36) * 1.2) / 100.0)
+    t = re.sub(r'\\(quad|qquad)', '    ', d.get('t') or ''); t = re.sub(r'\\frac\{([^}]*)\}\{([^}]*)\}', r'\1', t)
+    t = re.sub(r'\\[a-zA-Z]+', 'x', t)
+    for ch in '${}\\': t = t.replace(ch, '')
+    return min(d.get('w') or 1130, len(t) * d.get('size', 36) * (0.6 if d['k'] == 'hw' else 0.5))
+_layout_plain = _layout
+
+
+def _layout(vid):
+    names, per = _layout_plain(vid)
+    if not re.fullmatch(re.escape(CAM_BASE) + r'(-\d+)?', vid) or VIDEOS[vid]['kind'] != 'lesson': return names, per
+    for sl in per:
+        right = [d for it, d in sl if d.get('x') == 1010 and d.get('y') is not None]
+        if any(d.get('x') == 1010 and d.get('y') is not None and d['y'] < CAM_Y - 18 and not d.get('over')
+               and 1010 + _cam_width(d, it.get('_hand')) > 1335 for it, d in sl):
+            top, yl = CAM_Y, 78                    # ... and below a left-column figure that reaches under the right column
+            for it2, d2 in sl:
+                if d2.get('x') is not None or d2.get('y') is not None or d2.get('over'): continue
+                h2 = d2['h'] if d2['k'] == 'vis' else d2.get('size', 36) * 1.55 * (1.2 if it2.get('_hand') else 1)
+                if d2['k'] == 'vis' and 410 + (d2.get('w') or 0) > 1000: top = max(top, int(yl + h2 + 16))
+                yl += h2 + 16
+            dy = top - min(d['y'] for d in right)
+            for d in right: d['y'] += dy
+        for it, d in sl:
+            if d.get('x') is not None or d.get('y') is not None: continue
+            if d['k'] == 'vis' and d.get('w', 0) > CAM_W:
+                d['h'] = int(round(d['h'] * CAM_W / d['w'])); d['w'] = CAM_W
+            elif d['k'] in ('t', 'hw') and (d.get('w') or 1130) > CAM_W:
+                d['w'] = CAM_W
+    return names, per
+
+
 def _target(vid, names, si, t):
     if t in ('stem',) or re.fullmatch(r'stem: (g\d|given|ask)', t) or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
     nm, _, part = t.partition(':')
@@ -2141,7 +2187,7 @@ f3c1 = I('f3c1', 'Area $=4\\cdot$ circumference', size=34)
 f3c2 = IH('f3c2', '$πr^2=4\\cdot2πr$', size=34)
 f3c3 = IH('f3c3', '$πr^2=8πr$', size=34)
 f3c4 = IH('f3c4', '$r^2=8r$', size=34)
-f3c5 = I('f3c5', '$r=8$ $\\quad$ ($r\\ne0$)', size=34)
+f3c5 = IH('f3c5', '$r=8$ $\\quad$ ($r\\ne0$)', size=34)
 f3c6 = IH('f3c6', '$S=π\\cdot8^2=64π$, $\\ C=2π\\cdot8=16π$', size=30)
 f3c7 = IH('f3c7', '$4\\cdot16π=64π$ ✓', size=30)
 f3c8 = I('f3c8', '$\\dfrac{S}{C}=\\dfrac{πr^2}{2πr}=\\dfrac{r}{2}$', size=34)
@@ -2372,8 +2418,7 @@ f4p = PIN(GEO('f4p', [
                ('txt', _c[0] - 18, _c[1] - 62, '9', 'orange', 26), ('txt', _c[0] + 62, _c[1] - 8, '9', 'orange', 26)]),
 ], vb='40 15 280 300', w=520, col=0, title='The arc and the perimeter of a sector'))
 f4k20 = IH('f4k20', 'arc: $18\\pi\\div6=3\\pi$', size=32, col=1)
-f4k21 = IH('f4k21', 'perimeter: $3\\pi+9+9=3\\pi+18$', size=32, col=1)
-
+f4k21 = I('f4k21', 'perimeter: $3\\pi+9+9=3\\pi+18$', size=32, col=1, hand='perimeter :   3π + 9 + 9 = 3π + 18')
 video('geo-081', 'lesson', slides=[
     S('Sectors and Arcs',
       L("Sectors and arcs. First, let's understand what a sector is and what an arc is.")),
@@ -4022,7 +4067,7 @@ f8mv = PIN(GEO('f8mv', [
     ('p2', f8_split(*f8mv_r, 50, 130, 0, 170)),
 ], vb='30 25 590 300', w=560, title='The middle part in two places'))
 f8a1 = I('f8a1', '$2\\pi\\cdot8=16\\pi$', size=32, col=1)
-f8a2 = I('f8a2', '$\\frac{90}{360}=\\frac14,\\quad \\frac14\\cdot16\\pi=4\\pi$', size=32, col=1)
+f8a2 = I('f8a2', '$\\frac{90}{360}=\\frac14,\\quad \\frac14\\cdot16\\pi=4\\pi$', size=32, col=1, hand='{90/360} = {1/4},     {1/4}·16π = 4π')
 f8k98 = I('f8k98', 'So far: $\\ \\angle AOG+\\angle EOD=90°$', size=26, col=1)
 video('solve-geo33-g098', 'solution', qid='geo33-g098', slides=[
     SM('Central angles', 'Central angles',
@@ -4261,14 +4306,14 @@ f8g101 = PIN(GEO('f8g101', [
     ('rr', [('txt', 600, 200, '= 2(r + 5) ÷ 2', 'orange', 28), ('txt', 600, 240, '= r + 5', 'orange', 28),
             ('txt', 320, 40, 'R = r + 5', 'orange', 28, True)]),
 ], vb='165 20 580 300', w=560, title='Two circles tangent at A'))
-f8d2 = I('f8d2', '$\\pi(r+5)^2-\\pi r^2=65\\pi$', size=32)
-f8d3 = I('f8d3', '$(r+5)^2-r^2=65$', size=32)
+f8d2 = I('f8d2', '$\\pi(r+5)^2-\\pi r^2=65\\pi$', size=32, hand='π(r + 5)^2 − πr^2 = 65π')
+f8d3 = IH('f8d3', '$(r+5)^2-r^2=65$', size=32)
 f8d4 = I('f8d4', '$r^2+10r+25-r^2=65$', size=32)
-f8d5 = I('f8d5', '$10r+25=65\\ \\Rightarrow\\ 10r=40\\ \\Rightarrow\\ r=4$', size=32)
+f8d5 = I('f8d5', '$10r+25=65\\ \\Rightarrow\\ 10r=40\\ \\Rightarrow\\ r=4$', size=32, hand='10r + 25 = 65   →   10r = 40   →   r = 4')
 f8d6 = I('f8d6', 'In order: $\\ 2,\\ 3,\\ 4,\\ 5$', size=32)
-f8d7 = I('f8d7', '$r=3$: $\\ AB=6+10=16,\\ \\ R=8$', size=30)
+f8d7 = IH('f8d7', '$r=3$: $\\ AB=6+10=16,\\ \\ R=8$', size=30)
 f8d8 = I('f8d8', '$64\\pi-9\\pi=55\\pi$ ✗ $\\ $too small', size=30)
-f8d9 = I('f8d9', '$r=4$: $\\ AB=8+10=18,\\ \\ R=9$', size=30)
+f8d9 = IH('f8d9', '$r=4$: $\\ AB=8+10=18,\\ \\ R=9$', size=30)
 f8d10 = I('f8d10', '$81\\pi-16\\pi=65\\pi$ ✓', size=30)
 f8k101 = I('f8k101', 'So far: $\\ \\pi R^2-\\pi r^2=65\\pi,\\quad R=r+5$', size=26, col=1)
 video('solve-geo33-g101', 'solution', qid='geo33-g101', slides=[

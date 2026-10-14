@@ -26,7 +26,7 @@
     "say": "Here's the trap. Without brackets, negative two squared means the negative of two squared, which is negative four. That gives a completely different answer. With brackets, it's positive four.",
     "at": [
      "Here's the trap",
-     "Without brackets, negative"
+     "means the negative"
     ]
    },
    {
@@ -39,8 +39,8 @@
    {
     "say": "Now open the brackets. The bracket x plus two, squared, is x squared plus four x plus four. Three times the bracket x plus two is three x plus six, because the three multiplies both parts. Together, that's x squared plus seven x plus ten.",
     "at": [
-     "Together, that",
-     "seven x plus"
+     "is x squared plus four x plus four",
+     "Three times the"
     ]
    }
   ],
@@ -56,8 +56,8 @@
    {
     "say": "Let's say diamond of x is x squared. What is diamond of three plus diamond of four? First turn each diamond into a plain number. Diamond of three is nine, and diamond of four is sixteen. Then add them. Nine plus sixteen is twenty-five.",
     "at": [
-     "First turn each diamond into",
-     "a plain number"
+     "What is diamond of three plus",
+     "plus diamond of"
     ]
    },
    {
@@ -103,6 +103,8 @@
    {
     "say": "What is the bracket one star two, star three? Inner brackets first. One star two is three times one, plus two squared, so three plus four, seven. Now seven takes its place. Seven star three is three times seven, plus three squared, so twenty-one plus nine, thirty. The result of the inside becomes the input of the outside. [pause] Okay. I'll see you in the next part.",
     "at": [
+     "What is the bracket one star two",
+     "star two, star",
      "One star two is",
      "times one, plus",
      "Seven star three is",

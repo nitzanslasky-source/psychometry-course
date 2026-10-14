@@ -16,14 +16,20 @@
     "say": "For example, five to the power of negative four against four to the power of negative four. There's a minus in the exponent, so first we flip. That's one fifth to the power of four against one quarter to the power of four. Now both have the same power, so we ignore it. One quarter is bigger than one fifth, so four to the power of negative four is bigger. No calculating.",
     "at": [
      "five to the power of negative four",
-     "negative four against"
+     "negative four against",
+     "one fifth to the power of four against",
+     "of four against",
+     "One quarter is bigger than one fifth",
+     "one fifth, so"
     ]
    },
    {
     "say": "Two more. Three quarters to the power of five against two thirds to the power of five: three quarters is bigger, so its power is bigger. And the square root of thirteen against the square root of eleven: thirteen is bigger, so its root is bigger.",
     "at": [
      "Three quarters to the power of five",
-     "of five against"
+     "to the power of five:",
+     "And the square root of thirteen",
+     "thirteen against the"
     ]
    },
    {
@@ -61,7 +67,7 @@
     "say": "One more push. If one number is already bigger, and we multiply it by a number above one, it gets even bigger. Seven is bigger than five, so seven times three is bigger than five too. But multiplying by a fraction can turn it around. Seven times one half is three and a half, which is smaller than five.",
     "at": [
      "One more push",
-     "If one number"
+     "bigger, and we"
     ]
    }
   ],

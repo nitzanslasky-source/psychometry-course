@@ -1,0 +1,120 @@
+{
+ "videoId": "pt51-insights",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Psychometric thinking, insight questions."
+  ],
+  [
+   {
+    "say": "By now we already know that the questions on this exam are special. They give an advantage to students who think in a more creative way.",
+    "at": [
+     "know that the"
+    ]
+   },
+   {
+    "say": "In the previous lessons we learned three super-methods, plugging in the answers, plugging in numbers, and estimating. They help us solve a large part of the exam questions faster and more easily.",
+    "at": [
+     "plugging in the answers, plugging",
+     "plugging in numbers, and",
+     "and estimating",
+     "They help us"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here and there, there are also questions we call insight questions. To solve them, you need one creative idea, and that idea doesn't repeat. It belongs to that one question. What works in one question won't work in another.",
+    "at": [
+     "questions we call insight questions",
+     "To solve them"
+    ]
+   },
+   "These questions are rarer. Most questions fit our super-methods. But they're on the exam, so we'll practice them too."
+  ],
+  [
+   {
+    "say": "So how do we find the idea? Before you start calculating, stop for a few seconds and look at the question. Ask yourself, what's special here?",
+    "at": [
+     "find the idea",
+     "Before you start calculating",
+     "for a few"
+    ]
+   },
+   {
+    "say": "Look for numbers that repeat, for something that's exactly double or half of something else, for parts that two things share, or for something in the story that doesn't change.",
+    "at": [
+     "Look for numbers that repeat",
+     "for something that's exactly double",
+     "or half of",
+     "for parts that two",
+     "or for something in the story",
+     "story that doesn't"
+    ]
+   },
+   {
+    "say": "Why does it work? Because the people who write the exam choose the numbers on purpose. When a question looks long, there's often a short way hidden in its numbers, and the exam rewards the student who spots it.",
+    "at": [
+     "choose the numbers on purpose",
+     "there's often a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's a short example. Forty-eight plus seventy-three plus ninety-six, minus, the bracket forty-six plus seventy-one plus ninety-four. What is it?",
+    "at": [
+     "Here's a short example",
+     "minus, the bracket"
+    ]
+   },
+   {
+    "say": "One way is to calculate. Forty-eight plus seventy-three is a hundred twenty-one, plus ninety-six is two hundred seventeen. Forty-six plus seventy-one is a hundred seventeen, plus ninety-four is two hundred eleven. Two hundred seventeen minus two hundred eleven is six. It works, but it takes time, and it's easy to slip.",
+    "at": [
+     "Forty-eight plus seventy-three is",
+     "plus ninety-six is two hundred seventeen",
+     "Forty-six plus seventy-one",
+     "plus ninety-four is",
+     "Two hundred seventeen minus",
+     "hundred eleven is"
+    ]
+   },
+   {
+    "say": "Now let's look before we calculate. Every number in the first bracket has a partner in the second bracket that's a little smaller. Forty-eight and forty-six, seventy-three and seventy-one, ninety-six and ninety-four.",
+    "at": [
+     "Forty-eight and forty-six",
+     "seventy-one, ninety-six and"
+    ]
+   },
+   {
+    "say": "Each partner is smaller by two. There are three pairs, so the whole difference is two plus two plus two, six. No big sums at all.",
+    "at": [
+     "Each partner is smaller by two",
+     "two. There are",
+     "so the whole difference",
+     "two plus two"
+    ]
+   },
+   "Why is that allowed? When we take away a sum, we take away each of its numbers. So we can match each number with its partner, in any order we like."
+  ],
+  [
+   {
+    "say": "So when do we look for an insight? When the calculation looks long or messy, and the numbers look chosen on purpose. When they repeat, when one is double another, or when two things share parts. That's the sign to stop and look before you calculate.",
+    "at": [
+     "look for an",
+     "When the calculation looks long",
+     "and the numbers look chosen",
+     "When they repeat"
+    ]
+   },
+   {
+    "say": "And the trap is the opposite. Starting to calculate right away, before you even looked at the question.",
+    "at": [
+     "And the trap is the opposite",
+     "before you even"
+    ]
+   },
+   "How do we get ready for these questions? Simply by practicing as many of them as we can. That opens your mind, and it will help you on the exam. Let's see a few sample questions like this. [pause] Okay. I'll see you in the next video."
+  ]
+ ]
+}

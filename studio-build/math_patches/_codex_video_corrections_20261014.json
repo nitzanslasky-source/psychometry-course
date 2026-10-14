@@ -41,85 +41,19 @@
       }
     },
     "solve-q-520": {
-      "mode": "full",
+      "mode": "paragraphs",
       "paragraphs": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
+        5
       ],
       "notes": [
         {
-          "index": 0,
-          "note": "Use the current script in a new complete take."
-        },
-        {
-          "index": 1,
-          "note": "Include this paragraph in the new full take."
-        },
-        {
-          "index": 2,
-          "note": "Include this paragraph in the new full take."
-        },
-        {
-          "index": 3,
-          "note": "Include this paragraph in the new full take."
-        },
-        {
-          "index": 4,
-          "note": "Include this paragraph in the new full take."
-        },
-        {
           "index": 5,
-          "note": "Include this paragraph in the new full take."
-        },
-        {
-          "index": 6,
-          "note": "Include this paragraph in the new full take."
-        },
-        {
-          "index": 7,
-          "note": "Include this paragraph in the new full take."
-        },
-        {
-          "index": 8,
-          "note": "Include this paragraph in the new full take."
-        },
-        {
-          "index": 9,
-          "note": "Include this paragraph in the new full take."
-        },
-        {
-          "index": 10,
-          "note": "Include this paragraph in the new full take."
-        },
-        {
-          "index": 11,
-          "note": "Include this paragraph in the new full take."
+          "note": "Say clearly: a two-digit number cannot start with zero. Only paragraph6 needs rerecording; all other paragraphs of the new full take remain usable."
         }
       ],
-      "requestedAt": "2026-10-14T06:48:41.354Z",
+      "requestedAt": "2026-10-14T12:59:41.463Z",
       "scriptParagraphs": {
-        "0": "x is a two-digit number. x is equal to the cube of its units digit, plus four times the sum of its digits. What is the tens digit of x?",
-        "1": "This digit puzzle is written in words, so first we turn the words into an equation. We need the tens digit of x. We'll solve it two ways, writing the number with its digits, and then testing the answer choices.",
-        "2": "Let's call the tens digit T and the ones digit U. A two-digit number is ten times its tens digit, plus its ones digit, so x is ten T plus U. The sum of its digits is T plus U.",
-        "3": "Now the words of the question. The cube of the units digit is U cubed. Four times the sum of the digits is four times the whole bracket, T plus U. So x equals U cubed, plus four times the bracket T plus U. The four multiplies both digits, not just T.",
-        "4": "Both expressions equal x, so we set them equal. Ten T plus U equals U cubed plus four T plus four U. Now subtract four T and U from both sides. On the left, ten T minus four T leaves six T. On the right, four U minus U leaves three U. So six T equals U cubed plus three U.",
-        "5": "T is a digit, so it's at most nine, and six T is at most fifty-four. U can't be zero, because then U cubed plus three U is zero, so six T is zero and T is zero, and a two-digit number can't start with zero. So we test U from one.",
-        "6": "U is one gives one plus three, which is four. U is two gives eight plus six, which is fourteen. U is three gives twenty-seven plus nine, which is thirty-six. U is four gives sixty-four plus twelve, which is seventy-six, already more than fifty-four. A bigger U only makes U cubed plus three U bigger, so we can stop.",
-        "7": "Four and fourteen are not six times a digit, but thirty-six is. Six T is thirty-six, so T is six. Choice number three is our answer.",
-        "8": "Now let's test the answer choices. Each choice gives a possible tens digit T, and then we need a digit U that fits the words of the question. Start with choice number one, seven. Then x is seventy plus U, and its digit sum is seven plus U. So seventy plus U must equal U cubed plus twenty-eight plus four U. Subtract twenty-eight and U from both sides, and U cubed plus three U must be forty-two.",
-        "9": "U is three gives twenty-seven plus nine, which is thirty-six, and U is four gives sixty-four plus twelve, which is seventy-six. As U grows, U cubed plus three U only grows, so it jumps from thirty-six straight to seventy-six. Forty-two is in between, so no digit U works, and choice number one is out.",
-        "10": "The other tens digits work the same way. T is five needs U cubed plus three U to be thirty, and T is four needs it to be twenty-four. U is two gives only fourteen, and U is three already gives thirty-six. Thirty and twenty-four are in between, so no digit works, and choice numbers two and four are out.",
-        "11": "T is six needs thirty-six, and U is three gives exactly that. So x is sixty-three. Let's check it in the words of the question. The units digit is three, and three cubed is twenty-seven. The digit sum is nine, and four times nine is thirty-six. Twenty-seven plus thirty-six is sixty-three. It fits, so choice number three is our answer. Okay. I'll see you in the next question."
+        "5": "T is a digit, so it's at most nine, and six T is at most fifty-four. Can U be zero? Then U cubed plus three U is zero, so six T is zero, and T is zero. But T is the tens digit, and a two-digit number can't start with zero. So U isn't zero, and we test U from one."
       }
     },
     "solve-q-r26-t17-01": {
@@ -158,6 +92,44 @@
       "scriptParagraphs": {
         "3": "Five hundred fifty-five is five times a hundred eleven, so five times three times thirty-seven, which is thirty-seven times fifteen. Two hundred twenty-two is two times a hundred eleven, so two times three times thirty-seven, which is thirty-seven times six.",
         "5": "Next, find the largest or smallest three-digit number with a given digit sum. The places matter: adding one to the hundreds digit changes the number more than adding one to the tens or ones digit. With a digit sum of eight, put all eight in the hundreds place to get the largest number, eight hundred. For the smallest, the hundreds digit cannot be zero, so use one. Use zero in the tens place and the remaining seven in the ones place. That gives a hundred seven."
+      }
+    },
+    "primes-2": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        4,
+        5
+      ],
+      "notes": [
+        {
+          "index": 4,
+          "note": "While explaining89, say89isodd, not81. Keep the rest of paragraph5 as written."
+        },
+        {
+          "index": 5,
+          "note": "For87, its digit sum is8+7=15, not13. Read the complete paragraph6 with6,12and15."
+        }
+      ],
+      "requestedAt": "2026-10-14T12:59:41.463Z",
+      "scriptParagraphs": {
+        "4": "Now a number that is prime, eighty-nine. Its root is less than ten too. Eighty-nine is odd. Its digit sum is seventeen, which doesn't divide by three. It doesn't end in zero or five. And seven times twelve is eighty-four, while seven times thirteen is ninety-one, so seven skips over it. None of them divides it, so eighty-nine is prime.",
+        "5": "Some numbers look prime but aren't, and the exam loves them. Fifty-one, fifty-seven and eighty-seven all divide by three, because their digit sums are six, twelve and fifteen. Ninety-one and a hundred nineteen both divide by seven."
+      }
+    },
+    "solve-q-543": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        5
+      ],
+      "notes": [
+        {
+          "index": 5,
+          "note": "In paragraph 6, say clearly: 5 × 3 = 15, and 15 + 5 = 20. The recording sounded like x × 3 = 15. Please rerecord this whole paragraph only; the other paragraphs remain usable."
+        }
+      ],
+      "requestedAt": "2026-10-14T13:15:05.924Z",
+      "scriptParagraphs": {
+        "5": "Choice number three, five x plus five. Five times three is fifteen, and fifteen plus five is twenty. Twenty is not twenty-one. So this rule cannot turn three into twenty-one, and it cannot be the definition. Choice number three is our answer."
       }
     }
   }

@@ -1,0 +1,166 @@
+{
+ "videoId": "pt51-plug-answers",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Psychometric thinking, plugging in the answers. In the intro lesson we met our super-methods for the first time. Now let's go deeper into the first one, plugging in the answers."
+  ],
+  [
+   {
+    "say": "On the exam, every question has four choices, and exactly one of them is right. That's not only a rule of the exam. It's a tool we can use.",
+    "at": [
+     "question has four",
+     "exactly one of them is right",
+     "That's not only"
+    ]
+   },
+   {
+    "say": "Instead of solving the question the way we learned at school, we take a choice, put it into the question, and check if it fits everything they tell us.",
+    "at": [
+     "we take a choice",
+     "it into the"
+    ]
+   },
+   {
+    "say": "Why does this work? The right answer is the number the question is talking about, so it must fit every given. A wrong choice breaks at least one of them. So we're not guessing here. We're checking.",
+    "at": [
+     "so it must fit every given",
+     "A wrong choice"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So when do we use it? There are two signs. The first sign is in the choices. They're plain numbers, like four, twelve or seventy-five.",
+    "at": [
+     "use it? There",
+     "The first sign",
+     "They're plain numbers"
+    ]
+   },
+   {
+    "say": "The second sign is in the question. It gives us conditions we can check with a number. An equation, a story with numbers, or a condition like less than zero.",
+    "at": [
+     "The second sign",
+     "It gives us"
+    ]
+   },
+   "With both signs, each check is short, and often much shorter than the math way.",
+   {
+    "say": "And when the choices have letters, like two x, that's a different method, plugging in numbers. We'll learn it in the next lesson.",
+    "at": [
+     "when the choices have letters",
+     "like two x"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's see it in a short example. x is a positive number, and x times, the bracket x plus three, equals forty. What is x? The choices are two, four, five and eight.",
+    "at": [
+     "a short example",
+     "x is a positive number",
+     "and x times",
+     "The choices are two",
+     "five and eight"
+    ]
+   },
+   {
+    "say": "Opening the bracket gives x squared plus three x equals forty, and we haven't learned to solve that yet. But the choices are numbers, and we have an equation to check. Both signs are here, so let's plug in the answers.",
+    "at": [
+     "we have an equation to check"
+    ]
+   },
+   {
+    "say": "Which choice do we try first? Here the choices are in order, from the smallest to the biggest. So we start in the middle. Why? Because then one try tells us more than yes or no. It also tells us if we need a bigger number or a smaller one.",
+    "at": [
+     "Which choice do"
+    ]
+   },
+   {
+    "say": "Let's try four. Four plus three is seven, and four times seven is twenty-eight. We need forty, so twenty-eight is too small.",
+    "at": [
+     "Four plus three is seven",
+     "four times seven is twenty-eight",
+     "We need forty"
+    ]
+   },
+   {
+    "say": "Too small means we need a bigger x. Why? When x gets bigger, both x and x plus three get bigger, so their product gets bigger too. So four is out, and two is out as well, because two gives even less.",
+    "at": [
+     "So four is out",
+     "two is out"
+    ]
+   },
+   {
+    "say": "Five and eight are left. Let's try the next one up, five. Five plus three is eight, and five times eight is forty. It fits, so x is five.",
+    "at": [
+     "Five plus three is eight",
+     "five times eight is",
+     "It fits, so x is five"
+    ]
+   },
+   {
+    "say": "Do we need to check eight? No. Only one choice is right, and five fits the equation, so five is the answer.",
+    "at": [
+     "Do we need to check eight?"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "That's the main rule of this method. When we plug in the answers, the moment a choice fits every given, we mark it, and we don't check the others. Why? Because we tested the answer itself, and only one answer can be right.",
+    "at": [
+     "of this method",
+     "the moment a choice fits every given",
+     "every given, we"
+    ]
+   },
+   "In the next lesson you'll see plugging in numbers, and there it's different. There we test a number we chose ourselves, so two choices can fit by chance, and we rule out three. Here we test the real answer, so one fit is enough.",
+   {
+    "say": "The same rule works the other way too. If three choices are out, the fourth one is right, and we don't even need to check it.",
+    "at": [
+     "If three choices are out",
+     "the fourth one"
+    ]
+   },
+   {
+    "say": "Just be careful with one thing. A choice must fit every given, not only one of them. A choice can pass one condition and fail another, and that's a common trap. We'll see it in the next question.",
+    "at": [
+     "A choice must fit every given",
+     "given, not only"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So which choice do we try first? First, cross out choices that make no sense, without calculating at all. Sometimes a quick look at the size of a choice is enough.",
+    "at": [
+     "we try first",
+     "cross out choices that make no sense",
+     "no sense, without"
+    ]
+   },
+   {
+    "say": "Then start with a convenient choice, a round number that's easy to work with. The right answer is often there. Not always, but often.",
+    "at": [
+     "Then start with a convenient choice",
+     "choice, a round"
+    ]
+   },
+   {
+    "say": "And when the choices are in order, start in the middle, so one try tells you if you need bigger or smaller, like we just did with four.",
+    "at": [
+     "when the choices are in order",
+     "order, start in"
+    ]
+   },
+   {
+    "say": "We'll use each of these in the next questions. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "We'll use each of these"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,143 @@
+{
+ "videoId": "solve-pt-q11",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In the figure, A B C is a right triangle, and D B C is an isosceles triangle, with D B equal to D C. A B bisects angle D B C. What is beta?",
+    "voice": "calm",
+    "at": [
+     "In the figure"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Beta is the angle where A B crosses D C. And all the choices have alpha in them. Letters in the choices, that's the second sign for plugging in numbers. [short pause] We'll solve it two ways, by plugging in a number, and then with the angles in letters.",
+    "at": [
+     "Beta is the angle",
+     "A B crosses"
+    ]
+   },
+   {
+    "say": "For every alpha there's a matching beta. So let's choose one alpha and calculate beta. Which number? One that fits the figure. Alpha is in a right triangle, so it's less than ninety, and in the drawing it looks like about fifty or sixty. Let's take fifty, a round number.",
+    "at": [
+     "Let's take fifty"
+    ]
+   },
+   {
+    "say": "In triangle A B C, the angles are fifty and ninety. They add up to a hundred eighty, so angle B is forty.",
+    "at": [
+     "In triangle A",
+     "so angle B is forty"
+    ]
+   },
+   {
+    "say": "A B bisects angle D B C, so the angle above it is also forty. So the whole angle D B C is eighty.",
+    "at": [
+     "D B C",
+     "the angle above it is also forty",
+     "B C is"
+    ]
+   },
+   {
+    "say": "D B equals D C, so the base angles are equal, and angle C is also eighty. That's also why the number must fit the figure. With alpha forty, the base angles would be a hundred each, and a triangle can't have two angles of a hundred.",
+    "at": [
+     "angle C is also eighty",
+     "That's also why"
+    ]
+   },
+   {
+    "say": "Eighty plus eighty is a hundred sixty. So angle D is a hundred eighty minus a hundred sixty, twenty degrees.",
+    "at": [
+     "So angle D is",
+     "hundred eighty minus"
+    ]
+   },
+   {
+    "say": "Now look at the triangle with corners D, B and the crossing point. Its angles are twenty at D and forty at B. Twenty plus forty is sixty, so beta is a hundred eighty minus sixty, a hundred twenty degrees.",
+    "at": [
+     "Now look at the triangle",
+     "with corners D"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now which choice gives a hundred twenty? Actually, we don't look for it. We rule out three choices, with alpha equal to fifty.",
+    "at": [
+     "Now which choice",
+     "Actually, we don't"
+    ]
+   },
+   {
+    "say": "Choice number one, sixty plus fifty, is a hundred ten. Out.",
+    "at": [
+     "is a hundred ten",
+     "is a hundred ten"
+    ]
+   },
+   {
+    "say": "Choice number two, ninety plus half of fifty. Half of fifty is twenty-five, so the result ends in five, and a hundred twenty ends in zero. Out, without finishing.",
+    "at": [
+     "number two, ninety",
+     "of fifty. Half",
+     "so the result ends in five",
+     "five, and a",
+     "Out, without finishing"
+    ]
+   },
+   {
+    "say": "Choice number three. Four times fifty is two hundred, and two hundred minus a hundred eighty is twenty. That's angle D, not beta. Out.",
+    "at": [
+     "number three. Four",
+     "a hundred eighty",
+     "That's angle D",
+     "That's angle D"
+    ]
+   },
+   {
+    "say": "Three choices are out, so choice number four is our answer, without checking it. One choice must be right, and we showed the other three are wrong.",
+    "at": [
+     "so choice number four is our answer",
+     "so choice number four is our answer",
+     "our answer, without"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the same steps with alpha. In triangle A B C, angle B is ninety minus alpha. The angle above it is the same, so angle D B C is two times the bracket ninety minus alpha, a hundred eighty minus two alpha.",
+    "at": [
+     "with alpha. In",
+     "angle B is ninety minus alpha",
+     "alpha. The angle",
+     "so angle D B C is",
+     "is two times"
+    ]
+   },
+   {
+    "say": "Angle C is the same, a hundred eighty minus two alpha. So angle D is a hundred eighty minus two times that. That's a hundred eighty minus three hundred sixty plus four alpha, so four alpha minus a hundred eighty.",
+    "at": [
+     "So angle D is",
+     "hundred eighty minus two times",
+     "so four alpha minus"
+    ]
+   },
+   {
+    "say": "And beta is a hundred eighty, minus angle D, minus angle B. A hundred eighty, minus four alpha plus a hundred eighty, minus ninety plus alpha. That's two hundred seventy minus three alpha, choice number four again.",
+    "at": [
+     "And beta is a hundred eighty",
+     "eighty, minus angle",
+     "That's two hundred seventy",
+     "choice number four again"
+    ]
+   },
+   {
+    "say": "Look at what the number did. With fifty instead of alpha, this is an easy angle question from the beginning of the section. The letters are what made it hard. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Look at what the number did"
+    ]
+   }
+  ]
+ ]
+}
