@@ -961,3 +961,178 @@ Apply this standard at first draft, not as a blanket sentence-prefix pass afterw
 - Prompter display (standard 9): the teleprompter formatter does not know the scope of a spoken bracket such as "the bracket x plus one, squared". Read every changed paragraph's display and add a `scope_replacements` entry in math_patches/_codex_reading_display_20261012.json (key "slide.paragraph", 1-based) whenever grouping is wrong: (x + 1)², (a − b)² + a, (y − 3)/2, √(8x² + y²), 3/(a + 1), 8 − (−8).
 - Highlights (standard 10): the densify pass adds many POINTs; `_method_visuals.calm()` thins them (no header points, no re-points of the lit target, ≥4 s between changes unless she names a choice / a part of the question / a just-written item). Add a new topic's unrecorded lessons to CALM_IDS.
 - Topic-18 lessons are edited through the clarity overlay (original/revised + cue_anchors or reviewed_cues); topic 19+ through the spec itself.
+
+## How Nitzan reads our scripts (Oct 2026 readings)
+
+**Source.** These are her Reading Studio takes from 11-14 Oct 2026 (`~/Documents/Course.recordings/_reading/<id>/`), mostly topics 13-19. There are 121 videos: 21 lessons and 100 question videos.
+- The **M marks** were counted in all 121 videos: 1,857 marks over 1,327 paragraphs.
+- The **word-level comparison** covers 99 videos, about 413 minutes of final reading. It uses the latest full take of each video plus its patch takes.
+- 77 of those 99 reuse existing faster-whisper transcripts (`_voice_real`, Codex `work/*/audio`). The other 22 were queued for small.en and are not in these counts: parity, r26-t14-summary, r26-t15-remainder-tools, r26-t15-01, r26-t15-15, r26-t18-02, and q-395, 397, 423, 425-427, 431, 435, 460-466, 470.
+- Attempts she marked with M were taken out before comparing, so these counts describe her **final** reading.
+- Whisper writes numbers as digits and sometimes mishears words, so a count of ±10% is noise.
+- Scripts are the sidecar `paragraphs`, which is what the prompter showed. The prompter shows math partly as symbols (`math_display`: ³, ², −3, 3/5).
+- Analysis files are in `scratchpad/rd/` (`final.json` per paragraph, `agg.json`, `pararows.json`).
+
+### What the numbers say
+- **She says about 22% more than the script:** 52,980 words against 43,436. In 357 of 1,051 paragraphs she added a real phrase of 6 or more content words. Most of the rest of the extra words are joints: "so" (934 in the scripts → 1,660 from her), "right?" (3 → 270, about 0.65 a minute), "now" (173 → 369), "also" (36 → 178), "just" (38 → 165), "we have" (16 → 155), "because" (69 → 174), "let's say" (2 → 43).
+- **She almost never drops a whole sentence.** Only 91 script sentences (2%) were mostly unsaid, and they fall into a few types (see Simplifications below).
+- **Pace while reading:** about 157 words a minute, with pauses capped at 0.6 s. That is the same in lessons and in solutions, and slower than her free teaching (about 200, §13).
+- **Stumbles.** She pressed M 3.4 times per 100 script words. The median is 13 marks per video, and 57% of paragraphs got at least one M. After an M she starts the **paragraph** again from its first word.
+  - In 970 of about 1,390 failed attempts the words were the script's own, so these were reading slips.
+  - In 107 she was rewording or adding something when she stopped.
+
+### 1. Elaborations: what she adds, and what triggers it
+These are counted by paragraph, with keyword tagging, so the counts are approximate. The quotes are her words from the final reading.
+
+| What she adds | ≈ paragraphs | Typical trigger in our script | Her words |
+|---|---|---|---|
+| A **reason** ("because…", "that's why") | 78 | a rule or claim stated bare; a choice ruled out with no why | q-366: "because we're looking for something that is sometimes true and sometimes not, and this one is always" · q-457: "because it can't be negative and it can't be zero" |
+| **Her own number example** after a rule | 32 | a divisibility or consecutive-numbers rule with one example or none | q-432: "Let's say I say seven, eight, and nine. So nine divides by three. Let's say I say eight, nine, and ten. Again, nine divides by three, right? Every three numbers, I'll have a number that divides by three" |
+| **Link back** ("remember", "we said") | 25 | a tool from the lesson used with no reminder | absolute-value-3: "let's remember that bars on the small side … give us a closed range" · primes: "because we said that two is the only prime that's even" |
+| **Factor or mental-math steps** spelled out | 19 (plus many short ones) | "forty-five is nine times five…", "its digit sum is five" | r26-t14-01: "Let's take fifty-one: five plus one is six, and six divides by three … fifty-two: five plus two is seven, so fifty-two does not divide by three" · primes-2: "seventy is ten times seven and seven times three is twenty-one, so seventy plus twenty-one … ninety-one is thirteen times seven" |
+| **Meaning in plain words** ("What does that mean? It means…") | 17 | a given in symbols | q-468: "a plus d is not zero. What does that mean? It means they're not opposite numbers" · r26-t18-facts: "What does that mean? It means it's divisible by eleven, right?" |
+| A **general rule after the answer** | ≈10 (long ones) | a question that hides a reusable fact | q-402: "any prime number, I square it … it has three divisors always … two to the power of three … one, two, four and eight" · q-514: "when we subtract AB with BA we'll get a multiple of nine, and when we add AB to BA we'll get a multiple of eleven" · consecutive-sums: "seventeen squared minus sixteen squared, that's just seventeen plus sixteen, which is thirty-three" |
+| A **warning** at the step | 10 | a result that is not yet the answer; a look-alike rule | q-r26-t16-02: "we got to thirteen but thirteen isn't our final answer" · r26-t16-03: "let's not confuse this with multiplication" |
+| **Study / exam advice** | 10 | lesson ends; a rule list; a "funny operation" question | primes: "take the time memorizing this" · q-541: "what I highly recommend in these questions is to always say out loud what's happening here" |
+| **The question type, said again at the check** | 8 | an elimination in an "always / could be / necessarily" question | q-358: "a necessarily true type of question has to work for every pair that fits the givens" |
+| **An easier warm-up example** before the real one | several | a picture or method used on the real numbers straight away | q-359: "Let's start with an easier example. The absolute value of x minus five is seven … five plus seven is twelve … five minus seven is negative two" |
+| **"Two / three different ways"** | 51 (0 in the scripts) | the roadmap line | She says it at the start of the first method: "We'll solve it in three different ways. Our first method, the algebra." |
+
+**The pattern: she elaborates exactly where a line is a *claim without numbers* or a *result without its step*.** Lines that already give the numbers and the step ("Five squared is twenty-five, and four squared is sixteen. Twenty-five minus sixteen is nine.") she reads almost word for word.
+
+### 2. Simplifications: what she shortens or skips
+| Kind of sentence | What she does | Count / example |
+|---|---|---|
+| **Inequality chains in the given** ("one is smaller than p, which is smaller than q, which is smaller than r…") | She reads them from the big end with "bigger than", or squeezes them into "this chain of ranges" | 8 stems, plus 14 "smaller → bigger" swaps. q-493: "Given s is bigger than r, bigger than q, bigger than p, and bigger than one" · q-496: "So we have this given of ranges, and then we're asked…" (also q-497, q-501, r26-t17-04) |
+| **Roadmap at the end of the reasoning paragraph** ("We'll solve it three ways.") | She moves it to the start of the method paragraph | q-360, q-361, q-369, q-457 |
+| **Bare "Our first method."** | She drops it or merges it ("Our first method is breaking up into primes") | 5 |
+| **Verdicts and forced morals** ("Which way is better?", "Pick what feels comfortable for you", "But know the two bands too…") | She drops them or says them half-heartedly | q-358, q-362, q-367, q-368, q-369, q-r26-t13-01: 6 of 6 |
+| **Rule lists and checklists in summaries** (5 rules, or 4 questions in a row) | She replaces them with "take another look at the rules. Take a moment to memorize this" | r26-t15-summary p11-12: 9 sentences |
+| **An example packed into the opening / roadmap paragraph** | She skips it | q-457 p1: all four "negative two cubed, times four, over two" sentences |
+| **Teasers and tiny confirmations** ("It's the tool of the next question.", "That's our hint.", "It works.", "That choice is out.") | She drops them | about 10 |
+| **"Okay." before the goodbye** | She joins it to the answer instead: "…choice number two is our answer, and I'll see you in the next question" | "Okay. I'll see you" 89 → 6; "and I'll see you" 1 → 40 |
+| **Spoken bracket cues** ("times the whole bracket, n plus one", "in brackets") | She reads the math and leaves the cue out | "the whole bracket" 14 → 0; "in brackets" 7 → 3 |
+| **Long trailing clauses** | She stops at the main clause | q-r26-t17-03: "Now calculate with the two ends." (of "…of the range to find the new ends") · q-520: dropped "so no digit works, and choice numbers two and four are out" |
+
+### 3. Rewordings: our phrase → her phrase (counts are script total → her total in the same paragraphs)
+| We write | She says | Count |
+|---|---|---|
+| "negative three" (a number in a calculation) | **"minus three"** | 83 direct swaps; "negative" 574 → 427, "minus" 358 → 543. She keeps "negative" for the sign idea ("x is negative") |
+| "x is two" / "equals" (in a calculation or given) | **"is equal to"** | "equal to" 67 → 386 (213 insertions) |
+| "cubed" | **"to the power of three"** | 47 → 3, and "power of three" 3 → 52. ("squared" is kept: 212 → 211, plus 34 "to the power of two") |
+| "three fifths", "one twenty-seventh" | "three over five" | 6 swaps (the prompter shows 3/5) |
+| "over" (as an operation) | "divided by" | 18 swaps; 25 → 57 |
+| "larger" | "bigger" | 12 swaps; "bigger" 68 → 118 |
+| "smaller than" chains | "bigger than", read backwards | 14 |
+| "cannot", "it is", "do not" | "can't", "it's", "don't" | 17 / 17 / 5 |
+| "GCD" | "greatest common divisor" | 7 → 0 |
+| "divides by" | also "is divisible by" | "divisible" 31 → 80 |
+| "is" (as a step) | "and therefore … is", "has to be", "must be" | 11 |
+| "Choice number three." (as the last line) | "Choice number three is our answer." | almost always |
+| "We'll solve it two ways" | "two different ways" | 0 → 51 |
+| "Given: …" (in the middle of a stem) | "and it's given that…" | 1 → 7 |
+| "This is…" (pointing at the board) | "So we have here…", "over here" | "we have" 16 → 155, "over here" 0 → 13 |
+
+### 4. Stumbles: where the M marks fall
+Marks per sentence, located from the point where the failed attempt broke off (99 videos):
+
+| Sentence | Marks per sentence |
+|---|---|
+| 1-6 words | 0.09 |
+| 6-10 words | 0.21 |
+| 10-14 words | 0.31 |
+| **14-18 words** | **0.45** |
+| **18-22 words** | **0.51** |
+| **Method announcement / abstract procedure** ("Third, find the number's range, draw its arrow, and compare the powers.") | **0.51** (7.5 per 100 words, 2.7× the average) |
+| Contains "multiple(s)" | 0.70 |
+| Contains "bracket" / "root" / "divisible-divisor" | 0.43 / 0.42 / 0.39 |
+| No number words at all | 3.6 per 100 words |
+| 4 or more number words | 0.85 per 100 words (concrete calculations flow) |
+| Contains "absolute value" (a familiar topic) | 0.16 (lowest) |
+
+- **Paragraph types.** Paragraphs that write remainders as tags (seven k plus two, seven m plus five) average **3.0 marks** each. Paragraphs with a "Why?" self-question average 2.3, and the overall average is 1.4.
+- **Most-marked videos** (marks per 100 words): q-427 8.4, q-r26-t15-01 7.9, q-430 7.5, q-426 6.5, powers-on-number-line 6.5, q-470 6.4, r26-t15-summary 6.4. These are all abstract remainder or divisibility procedure, or "range, arrow, power" method talk.
+- **Typical stumble spots:**
+  - a name before a colon: q-430 "Yoav claims:" came out as "You have have have have claims"
+  - a look-alike word: q-365 "sign of x" read as "sine of x"
+  - an abbreviation with its long name: q-390 "the LCM, the least common multiple, the…"
+  - an abstract rule with no number: powers-on-number-line "Keep negative powers as they are when using this method"
+  - a choice number she said ahead of the script: q-364 "circle number three" where the script said two
+
+### 5. Order and method changes
+- **q-r26-t18-02.** She replaced "three-digit multiples of 99 have 9 in the middle and the outer digits add to 9" with **counting up by 99**: "it's like doing plus a hundred minus one … 198, 297, 396 … 495". She did not do the scripted second method (plugging in reversed numbers).
+- **q-436.** She added a no-numbers version: "when one number divides by six, the other two have to add up to divide by six … with a bit less calculations".
+- **q-r26-t14-01.** She gives two ways to test 3: "ninety is divisible by three, so ninety-one can't be", then the digit sum.
+- **q-359.** She puts an easier example, |x − 5| = 7, before the scripted |x + 7| = 9 on the number line.
+- **q-458.** She turns the trap into "that's what you would get if you would use q plus one and q minus one instead". The scripted "each gap is two" lines are gone.
+- **q-472, q-388, q-471.** She says "we can circle it and move on, but let's prove it anyway" before the remaining choices. She places the exam/lesson switch (R24) herself.
+- **Roadmaps** move from the end of the reasoning paragraph to the start of the first method (q-360, q-361, q-369).
+
+### 6. Her speaking style while reading
+- **Openers.**
+  - Lessons start with "Welcome back" (9 in the scripts → 13 from her; she adds it where the script opens "Prime numbers. This topic…") and "today we're going to be learning about…".
+  - Stems are read flat: "Given, x plus seven in absolute value is equal to nine."
+- **Joints.** "So" starts most sentences (4 a minute). "Now" starts a new step. "right?" comes after a fact (0.65 a minute). "and therefore" comes before a conclusion. She narrates the board with "so we have here…".
+- **Numbers.**
+  - She says "minus 7", "x to the power of 3", "3 over 5", "a half", "a quarter".
+  - "AB" is said as one word-pair.
+  - "a hundred" vs "one hundred" is not measurable here (whisper writes 100).
+- **Closings.**
+  - Questions: "Choice number N is our answer, and I'll see you in the next question." She said "next lesson" by mistake 5 times.
+  - Lessons: "Take a moment to memorize this … and I'll see you in the next video."
+
+### WRITING RULES for scripts she will read (topic 21 onward): W1-W16
+These add to R1-R36 and the Codex review standard. Where they differ from the AI-voice rules, these apply to **teacher-read** scripts.
+
+1. **W1. Keep sentences short.** Aim for 6-12 words and split anything over 14. Her M rate doubles from 0.21 per sentence (6-10 words) to 0.45-0.51 (14-22 words). Put a trailing clause in its own sentence ("Now calculate with the two ends. That gives the new range.").
+2. **W2. No abstract method announcements.** Don't write "Third, find the range, draw its arrow, and compare the powers." Start the method with its first concrete action: "Let's start with the place values. ABC is a hundred A, plus ten B, plus C." One short roadmap line goes at the start of the first method paragraph: "We'll solve it in two different ways." Never put it at the end of the paragraph before.
+3. **W3. Givens with inequality chains.** Never spell out a chain of three or more "which is smaller than" in words.
+   - Write "Given this chain, from smallest to biggest: one, p, q, r, s." and let the board show 1 < p < q < r < s.
+   - Or write it the way she reads it: "s is bigger than r, which is bigger than q…".
+   - Then add the meaning: "So all four letters are bigger than one."
+4. **W4. Write her words.**
+   - Use **"minus three"** for a number in a calculation. Keep **"negative"** for the sign ("x is negative").
+   - Use **"is equal to"** in givens and calculation lines.
+   - Write **"to the power of three"**, never "cubed". "Squared" is fine.
+   - Use **"bigger"**, not "larger".
+   - Use **"divided by"** for the operation. Use "three over five" for a fraction you calculate with.
+   - Use contractions (can't, it's, don't).
+   - Write **"greatest common divisor"** (never GCD) and "least common multiple" (spell it out). Say "two **different** ways".
+5. **W5. No spoken bracket cues.** Drop "the whole bracket" and "in brackets"; she drops them every time (14 of 14). Put the grouping on the board and in the prompter display (`scope_replacements`), and write the expression plainly ("m squared times n plus one, all divided by eight").
+6. **W6. Every rule or claim line gets a number example right after it, and a second run for "every / always" rules.** She adds about 32 own examples and about 78 reasons. Examples:
+   - "Every third integer divides by three. Five, six, seven: six. Seven, eight, nine: nine."
+   - "Two even numbers in a row: two times four is eight."
+7. **W7. Give the step, not just the result.**
+   - **Factor trees:** each break in its own clause ("ninety is nine times ten. Nine is three times three, and ten is two times five").
+   - **Divisibility tests:** say the test with the numbers ("five plus one is six, and six divides by three, so fifty-one divides by three").
+   - **Primality:** first the root bound ("ten squared is a hundred, so we only check two, three, five and seven").
+8. **W8. Translate each given in symbols with "What does that mean? It means…".** For example: "a plus d is not zero. What does that mean? It means they're not opposites."
+9. **W9. At each elimination, restate the question type in plain words.** For example: "We need something that is sometimes true and sometimes not. This one is always true, so it's out."
+10. **W10. Teach by an easier example first** whenever a picture or method appears for the first time in a question. For example: "|x − 5| = 7 means seven steps from five: twelve or minus two." Then do the real numbers.
+11. **W11. One reusable fact after the answer, when the question hides one.** This is in line with R16. Examples: "A prime squared always has exactly three divisors." "AB plus BA is always a multiple of eleven." "Seventeen squared minus sixteen squared is seventeen plus sixteen." **Never** "Which way is better?" or "Pick what feels comfortable": she dropped 6 of 6.
+12. **W12. Closings.**
+    - Questions end with "Choice number N is our answer, and I'll see you in the next question." This replaces "Choice number N. Okay. I'll see you…".
+    - Lessons end with one nudge ("Take a moment to memorize this.") plus "I'll see you in the next video".
+    - No checklist of four questions or five rules read aloud. Put such lists on the board and say one line about them.
+13. **W13. Keep the opening paragraph clean.** The "what they ask + roadmap" paragraph holds no worked example (q-457 lost four sentences). Put the example in the method paragraph.
+14. **W14. Avoid these, because she stumbles on them:**
+    - "multiple(s)" in a long sentence (0.70 marks per sentence). Say "divides by".
+    - Tag algebra without a number first. Write "Nine leaves two, because nine is seven plus two. So a is seven k plus two." Not "a is seven k plus two, full sevens plus two."
+    - Names right before a colon ("Yoav claims:"). Use an easy name and "says that".
+    - "sign" next to math words (read as "sine"): write "positive or negative".
+    - Abbreviation + long name pairs.
+    - "respectively" and "multipliers", and formal terms in general (0.57 marks per sentence).
+15. **W15. Keep "Why?" with its answer in the same line.** For example: "Why m and not k? Because a and b are different numbers." A lone "Why?" line gets 2.3 marks per paragraph.
+16. **W16. Don't script her fillers.** She adds "so", "right?", "now", "just" and "also" by herself (270 "right?" with 3 in the scripts). Write at most one "right?" per paragraph, and no "Okay." before the goodbye.
+
+**Put her most frequent elaborations in the script from the start:**
+1. the reason after each claim;
+2. a second and third run of number examples for "every / always" rules;
+3. the plain meaning of each given;
+4. the factor or divisibility step said with its numbers;
+5. "remember, we said…" before a tool from the lesson;
+6. the question type at each elimination;
+7. an easier warm-up example before a first-time picture;
+8. the warning "this isn't our final answer yet" when an intermediate value appears in the choices;
+9. one reusable fact after the answer;
+10. "We'll solve it in two different ways." at the start of the first method.

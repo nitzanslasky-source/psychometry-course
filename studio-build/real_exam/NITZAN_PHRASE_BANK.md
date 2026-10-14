@@ -370,3 +370,58 @@ Whisper removes "um" and "uh", so these come from the audio (word timestamps plu
 - never negative vs always positive
 - opposites vs reciprocals
 - multiply vs divide by x
+
+---
+
+## 19. Reading-time phrases (Reading Studio, Oct 2026)
+
+**Source.** Her final readings of our scripts in 99 videos (topics 13-19), compared word for word with the prompter text. The method is in `TEACHING_STYLE_GUIDE.md` › "How Nitzan reads our scripts (Oct 2026 readings)". Counts are "in our scripts → in her reading".
+
+**Words she adds to almost every paragraph**
+
+| Phrase | Count | Use in teacher-read scripts |
+|---|---|---|
+| "So …" opening a sentence | 934 → 1,660 (4 a minute) | She adds it herself. Don't script more |
+| "…, right?" after a fact | 3 → 270 (0.65 a minute) | At most one per paragraph |
+| "Now …" at a new step | 173 → 369 | Yes, one per new step |
+| "also" ("also the top and also the bottom") | 36 → 178 | Yes |
+| "just" ("it's just one", "just move on") | 38 → 165 | Rarely |
+| "so we have (here)…" / "over here" | 16 → 155 / 0 → 13 | Yes, when the board shows it |
+| "because …" | 69 → 174 | Yes, after each claim |
+| "let's say …" before her own number | 2 → 43 | Yes: "Let's say x is three." |
+| "which is …" chaining results | 137 → 212 | Yes |
+| "two / three **different** ways" | 0 → 51 | Yes: "We'll solve it in two different ways." |
+| "and therefore …" / "has to be" / "must be" for a conclusion | 11 swaps for a bare "is" | Yes |
+| "What does that mean? It means …" | 5 → 13 (and "which means" 6 → 23) | Yes, after a given in symbols |
+| "and it's given that …" | 1 → 7 | Yes, for a second given in the stem |
+
+**Swaps she makes every time**
+
+| Our wording | Her wording |
+|---|---|
+| "negative three" (in a calculation) | "minus three" (83 swaps); "negative" stays for the sign idea |
+| "x is two" / "equals" | "x is equal to two" (213 insertions of "equal to") |
+| "cubed" | "to the power of three" (47 → 3) |
+| "three fifths" | "three over five" |
+| "over" (as an operation) | "divided by" |
+| "larger" | "bigger" |
+| "one is smaller than p, which is smaller than q…" | "q is bigger than p, and bigger than one" (read from the big end), or "we have this chain of ranges" |
+| "GCD" | "greatest common divisor" |
+| "cannot / it is / do not" | "can't / it's / don't" |
+| "Choice number three." | "Choice number three is our answer." |
+| "Okay. I'll see you in the next question." | "…, and I'll see you in the next question." (89 → 6 "Okay. I'll see you") |
+| "times the whole bracket, n plus one" | "times n plus one" (14 → 0) |
+
+**Her own reading-time moves, with quotes (copy these into scripts)**
+- **Reason:** "right? Because if, let's say, we have minus ten … the absolute value of minus ten is actually bigger than the absolute value of three, even though three is bigger than minus ten" (q-358).
+- **Runs of examples:** "Let's say I say five, six, and seven. So six divides by three. Let's say I say seven, eight, and nine. So nine divides by three." (q-432)
+- **Question type at the check:** "we're looking for something that is sometimes true and sometimes not, and this one is just never" (q-366).
+- **Plain meaning:** "a plus d is not zero. What does that mean? It means they're not opposite numbers." (q-468)
+- **Exam switch:** "we can circle it and move on, but let's prove it anyway" (q-472); "In the exam, you could circle this and just move on." (q-359)
+- **Easier example first:** "Let's start with an easier example. The absolute value of x minus five is seven." (q-359)
+- **Fact after the answer:** "Now what's important to take from here is … any number that has three divisors, it means it's a prime number that's squared." (q-402)
+- **Study advice:** "take the time memorizing this" (primes); "Take a moment to memorize this, to have it fresh in your mind" (r26-t15-summary); "what I highly recommend in these questions is to always say out loud what's happening here" (q-541).
+- **Warning at the step:** "we have to be careful, right? Because we got to thirteen, but thirteen isn't our final answer" (q-r26-t16-02); "let's not get this confused" (q-393, q-458, q-520).
+- **Lesson opener:** "Welcome back, and today we're going to be learning about absolute value." / "Welcome back, and let's continue with primes."
+
+**Reading-time slips (correct them, don't copy):** "I'll see you in the next lesson" at the end of a question (5×); "equals to"; "is our answers"; "sine of x" for "sign of x"; doubled starts ("let's look at, let's look at", "now, now, now").
