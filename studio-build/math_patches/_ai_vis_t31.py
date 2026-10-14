@@ -750,11 +750,11 @@ R1A, R1B, R1C = (110, 290), (300, 70), (430, 290)
 f1rt = GEO('f1rt', [
     ('line', f1_tri(R1A, R1B, R1C) + [('seg', R1C[0], R1C[1], 600, 290, 'teal', 3, True)]),
     ('given', [f1_arcpts(R1A, R1C, R1B, 40, 'red', '47°', 66), f1_arcpts(R1B, R1A, R1C, 30, 'red', '68°', 54)]),
-    ('ex', [f1_arcpts(R1C, (600, 290), R1B, 34, 'teal', '115°', 66), ('txt', 495, 60, 'Shortcut: 47° + 68° = 115°', 'teal', 18)]),
-    ('in', [f1_arcpts(R1C, R1A, R1B, 26, 'orange', '65°', 50), ('txt', 495, 100, 'Long way: 180° − 47° − 68° = 65°', 'orange', 18),
-            ('txt', 495, 128, '180° − 65° = 115°', 'orange', 18)]),
-    ('more', [('txt', 495, 175, 'Another: 30° + 80° = 110°', 'red', 18)]),
-], vb='60 30 580 290', w=700, col=0, title='The exterior angle: the shortcut and the long way')
+    ('ex', [f1_arcpts(R1C, (600, 290), R1B, 34, 'teal', '115°', 66), ('txt', 700, 70, 'Shortcut: 47° + 68° = 115°', 'teal', 26)]),
+    ('in', [f1_arcpts(R1C, R1A, R1B, 26, 'orange', '65°', 50), ('txt', 700, 130, 'Long way: 180° − 47° − 68° = 65°', 'orange', 26),
+            ('txt', 700, 170, '180° − 65° = 115°', 'orange', 26)]),
+    ('more', [('txt', 700, 240, 'Another: 30° + 80° = 110°', 'red', 26)]),
+], vb='60 30 860 290', w=1060, col=0, title='The exterior angle: the shortcut and the long way')
 
 # ---- slide: side against angle
 K1A, K1B, K1C = (110, 290), (560, 290), (256.9, 35.6)   # angles 60, 40, 80 exactly
@@ -764,18 +764,18 @@ f1sa = GEO('f1sa', [
               f1_arcpts(K1C, K1A, K1B, 28, 'red', '80°', 50)]),
     ('small', [('seg', K1A[0], K1A[1], K1C[0], K1C[1], 'teal', 7), ('txt', 120, 170, 'shortest', 'teal', 22)]),
     ('big', [('seg', K1A[0], K1A[1], K1B[0], K1B[1], 'red', 7), ('txt', 335, 320, 'longest', 'red', 22)]),
-    ('mid', [('seg', K1B[0], K1B[1], K1C[0], K1C[1], 'orange', 7), ('txt', 430, 160, 'middle', 'orange', 22)]),
+    ('mid', [('seg', K1B[0], K1B[1], K1C[0], K1C[1], 'orange', 7), ('txt', 462, 132, 'middle', 'orange', 22)]),
 ], vb='60 0 560 340', w=600, col=0, title='The largest side lies opposite the largest angle')
 f1sa_t = I('f1sat', 'Larger angle $\\leftrightarrow$ longer side opposite it', size=28, col=1)
 # the opening angle: two sides of fixed length, the angle opens, the side opposite grows
 f1open = GEO('f1open', [
     ('line', [('seg', 60, 200, 260, 200), ('seg', 60, 200, 60 + 200 * _f1m.cos(_f1m.radians(35)), 200 - 200 * _f1m.sin(_f1m.radians(35))),
               ('seg', 260, 200, 60 + 200 * _f1m.cos(_f1m.radians(35)), 200 - 200 * _f1m.sin(_f1m.radians(35)), 'teal', 5),
-              ('arc', 60, 200, 34, 0, 35, 'teal', '35°', 58)]),
+              ('arc', 60, 200, 40, 0, 35, 'teal', '35°', 78)]),
     ('wide', [('seg', 330, 200, 530, 200), ('seg', 330, 200, 330 + 200 * _f1m.cos(_f1m.radians(110)), 200 - 200 * _f1m.sin(_f1m.radians(110))),
               ('seg', 530, 200, 330 + 200 * _f1m.cos(_f1m.radians(110)), 200 - 200 * _f1m.sin(_f1m.radians(110)), 'red', 5),
-              ('arc', 330, 200, 30, 0, 110, 'red', '110°', 56)]),
-], vb='20 0 560 230', w=520, col=1, title='Open the angle wider, and the side opposite it gets longer')
+              ('arc', 330, 200, 36, 0, 110, 'red', '110°', 74)]),
+], vb='20 0 560 230', w=640, col=0, title='Open the angle wider, and the side opposite it gets longer')
 
 # ---- slide: two sides are more than the third
 T1L, T1R = (120, 260), (480, 260)        # the side 9 (40 px per cm)
@@ -1344,21 +1344,30 @@ f2_g15ticks = [('tick', 130, 262, 510, 262), ('tick', 130, 262, 465.52, 83.601),
                ('tick', 510, 262, 465.52, 83.601, 2), ('tick', 465.52, 83.601, 421.04, 262, 2)]
 f2_g15all = f2_tri(f2_A5, f2_B5, f2_C5) + [('seg', 465.52, 83.601, 421.04, 262)] \
     + f2_lab((112, 280, 'A'), (528, 280, 'B'), (465.5, 60, 'C'), (421, 286, 'D')) + f2_g15ticks
+f2_T = lambda p: (580 + (p[0] - 421.04) * 1.9, 55 + (p[1] - 83.601) * 1.9)   # the enlarged cut-out of BCD (x1.9)
+f2_eB, f2_eC, f2_eD = f2_T(f2_B5), f2_T(f2_C5), f2_T(f2_D5)
 f2_g15 = GEO('f2g15', [
     ('line', f2_g15all + [('arc', 130, 262, 70, 0, 28, 'ink', '28°', 94), ('arc', 465.52, 83.601, 46, 208, 256, 'ink', 'x', 64)]),
     ('big', [('tint', [f2_A5, f2_B5, f2_C5], 'teal')]),
     ('b76', [('arc', 510, 262, 22, 104, 180, 'small'), ('txt', 489, 246, '76°', 'small', 18), ('arc', 465.52, 83.601, 34, 208, 284, 'small'),
              ('txt', 505, 92, '76°', 'small', 22)]),
-    ('focus', [('dim', 95, 40, 460, 265)] + f2_tri(f2_B5, f2_C5, f2_D5, 'ink', 3.5)
-              + [('tint', [f2_B5, f2_C5, f2_D5], 'orange'), ('tick', 510, 262, 465.52, 83.601, 2), ('tick', 465.52, 83.601, 421.04, 262, 2)]
-              + f2_lab((528, 280, 'B'), (465.5, 60, 'C'), (421, 286, 'D')) + [('arc', 510, 262, 22, 104, 180, 'small'), ('txt', 489, 246, '76°', 'small', 18)]),
-    ('d76', [('arc', 421.04, 262, 22, 0, 76, 'small'), ('txt', 443, 246, '76°', 'small', 18)]),
-    ('c28', [('arc', 465.52, 83.601, 58, 256, 284, 'orange'), ('txt', 465.5, 205, '28°', 'orange', 20)]),
+    # 1. the small triangle tinted and outlined inside the copy while it is named
+    ('mark', [('tint', [f2_B5, f2_C5, f2_D5], 'orange')] + f2_tri(f2_B5, f2_C5, f2_D5, 'orange', 3.5)),
+    # 2. the rest dimmed (BCD still outlined), and BCD as its own enlarged copy with the same labels and tint
+    ('focus', [('dim', 95, 40, 470, 265)] + f2_tri(f2_B5, f2_C5, f2_D5, 'orange', 3.5)
+              + [('tint', [f2_eB, f2_eC, f2_eD], 'orange')] + f2_tri(f2_eB, f2_eC, f2_eD, 'ink', 3)
+              + [('tick', f2_eB[0], f2_eB[1], f2_eC[0], f2_eC[1], 2), ('tick', f2_eC[0], f2_eC[1], f2_eD[0], f2_eD[1], 2)]
+              + f2_lab((f2_eB[0] + 18, f2_eB[1] + 20, 'B'), (f2_eC[0], f2_eC[1] - 22, 'C'), (f2_eD[0] - 18, f2_eD[1] + 20, 'D'))
+              + [('arc', f2_eB[0], f2_eB[1], 34, 104, 180, 'small', '76°', 62)]),
+    # 3. the values on the enlarged part
+    ('d76', [('arc', f2_eD[0], f2_eD[1], 34, 0, 76, 'small', '76°', 62)]),
+    ('c28', [('arc', f2_eC[0], f2_eC[1], 70, 256, 284, 'orange', '28°', 100)]),
+    # back to the whole copy: redrawn over the dim, with the values found written on it too
     ('back', f2_g15all + [('arc', 130, 262, 70, 0, 28, 'ink', '28°', 94), ('arc', 510, 262, 22, 104, 180, 'small'), ('txt', 489, 246, '76°', 'small', 18),
                           ('arc', 421.04, 262, 22, 0, 76, 'small'), ('txt', 443, 246, '76°', 'small', 18), ('arc', 465.52, 83.601, 58, 256, 284, 'orange'), ('txt', 465.5, 205, '28°', 'orange', 20),
                           ('arc', 465.52, 83.601, 46, 208, 256, 'red', 'x', 64)]),
-    ('e3', [('txt', 325, 336, 'x = 76° − 28° = 48°', 'red', 28)]),
-], vb='95 40 460 315', w=480, title='Triangle ABC with point D on AB')
+    ('e3', [('txt', 330, 345, 'x = 76° − 28° = 48°', 'red', 36)]),
+], vb='95 20 690 410', w=500, title='Triangle ABC with point D on AB, and triangle BCD enlarged')
 video('solve-geo31-g015', 'solution', qid='geo31-g015', slides=[
     S('Two isosceles triangles',
       L("In triangle A B C, point D lies on A B. Given: A B equals A C, angle B A C is twenty-eight degrees, and B C "
@@ -1374,7 +1383,7 @@ video('solve-geo31-g015', 'solution', qid='geo31-g015', slides=[
       L("That already rules out choice number four. x is only part of the angle at C, so it can't be the whole "
         "seventy-six.", mk('cross', 'choice 4', 'That already rules out choice number four')),
       L("Now the small triangle, B C D. Let's look only at it. B C equals C D, so its base angles, at B and at D, are "
-        "equal. The angle at B is seventy-six, so the angle at D is seventy-six too.", show(f2_g15['focus'], "Let's look only at it"),
+        "equal. The angle at B is seventy-six, so the angle at D is seventy-six too.", show(f2_g15['mark'], 'Now the small triangle'), show(f2_g15['focus'], "Let's look only at it"),
         show(f2_g15['d76'], 'so the angle at D')),
       L("In triangle B C D, seventy-six plus seventy-six is one hundred fifty-two. So the angle at C, between C D and C B, "
         "is one hundred eighty minus one hundred fifty-two, which is twenty-eight.", show(f2_g15['c28'], 'So the angle at C, between')),
@@ -2306,9 +2315,14 @@ f4g = GEO('f4g', [
     ('line', _g25lines + _g25giv),
     ('abc', _f4focus([_gA, _gB, _gC], [('txt', 156, 62, '15', 'ink', 22), ('txt', 134, 172, '39', 'ink', 22),
                                          ('txt', 184, 58, 'A', 'ink', 24, True), ('txt', 104, 70, 'B', 'ink', 24, True), ('txt', 176, 264, 'C', 'ink', 24, True)])),
+    ('abcz', [('dim', 380, 40, 250, 300), ('dim', 380, 40, 250, 300), ('dim', 380, 40, 250, 300),
+              ('tint', [(538.0, 62.0), (430.0, 62.0), (538.0, 321.2)], 'teal'),
+              ('seg', 430.0, 62.0, 538.0, 62.0, 'ink', 4), ('seg', 538.0, 62.0, 538.0, 321.2, 'ink', 4), ('seg', 430.0, 62.0, 538.0, 321.2, 'ink', 4),
+              ('right', 538.0, 62.0, 180, 270, 16), ('txt', 544.0, 42.0, 'A', 'ink', 26, True), ('txt', 412.0, 54.0, 'B', 'ink', 26, True),
+              ('txt', 558.0, 327.2, 'C', 'ink', 26, True), ('txt', 484.0, 46.0, '15', 'ink', 26), ('txt', 462.0, 197.6, '39', 'ink', 26)]),
     ('t1', [('txt', 225, 360, '15 = 5·3,  39 = 13·3', 'teal', 21)]),
-    ('ac', [_v36, ('txt', 225, 395, 'AC = 12·3 = 36', 'teal', 21)]),
-    ('ace', _f4focus([_gA, _gC, _gE], [_v36, ('txt', 298, 62, '48', 'ink', 22), ('txt', 184, 58, 'A', 'ink', 24, True),
+    ('ac', [_v36, ('txt', 564.0, 191.6, '36', 'teal', 28), ('txt', 225, 395, 'AC = 12·3 = 36', 'teal', 21)]),
+    ('ace', [('dim', 380, 40, 250, 300)] * 3 + _f4focus([_gA, _gC, _gE], [_v36, ('txt', 298, 62, '48', 'ink', 22), ('txt', 184, 58, 'A', 'ink', 24, True),
                                         ('txt', 176, 264, 'C', 'ink', 24, True), ('txt', 406, 58, 'E', 'ink', 24, True)])
              + [('txt', 225, 360, '15 = 5·3,  39 = 13·3', 'teal', 21), ('txt', 225, 395, 'AC = 12·3 = 36', 'teal', 21)]),
     ('t2', [('txt', 495, 360, '36 = 3·12,  48 = 4·12', 'teal', 21)]),
@@ -2332,7 +2346,7 @@ video('solve-geo31-g025', 'solution', qid='geo31-g025', slides=[
         "fifteen, is a leg. We could use the theorem, thirty-nine squared minus fifteen squared. But look at the numbers. "
         "Fifteen is five times three, and thirty-nine is thirteen times three. That's the triple five, twelve, thirteen, "
         "times three. So A C is twelve times three, which is thirty-six.", show(f4g['line'], 'Start with triangle A B C'),
-        show(f4g['abc'], 'The right angle is at A'), show(f4g['t1'], 'Fifteen is five times three'), show(f4g['ac'], 'So A C is twelve times three')),
+        show(f4g['abc'], 'The right angle is at A'), show(f4g['abcz'], 'We could use the theorem'), show(f4g['t1'], 'Fifteen is five times three'), show(f4g['ac'], 'So A C is twelve times three')),
       L("Now triangle A C E. It's also right-angled at A, with legs A C, thirty-six, and A E, forty-eight. After some "
         "practice, these numbers jump out. Thirty-six is three times twelve, and forty-eight is four times twelve. That's "
         "three, four, five, times twelve. So the hypotenuse C E is five times twelve, which is sixty.",
@@ -2689,6 +2703,7 @@ video('geo-017-after', 'lesson', slides=[
 # V3: the given highlighted part by part; the colour copy; 10 on each side, then 5 and 5; the small triangle DBE tinted
 # inside the big one with its 60° angle and equal sides; then the quadrilateral tinted when it is found.
 _g18A, _g18B, _g18C, _g18D, _g18E = (320.0, 76.4), (199.2, 285.7), (440.8, 285.7), (259.6, 181.1), (320.0, 285.7)
+_g18cB, _g18cE, _g18cD = (520.0, 300.0), (780.0, 300.0), (650.0, 300.0 - 225.2)
 F518 = GEO('f518', [
     ('line', _f5tri(_g18A, _g18B, _g18C) + [('seg', _g18D[0], _g18D[1], _g18E[0], _g18E[1], 'ink', 3),
                                             ('txt', 320, 56, 'A', 'ink', 26, True), ('txt', 180, 302, 'B', 'ink', 26, True),
@@ -2699,8 +2714,18 @@ F518 = GEO('f518', [
               ('txt', 382, 312, '5', 'small', 28)]),
     ('small', [('tint', [_g18D, _g18B, _g18E], 'teal'), ('arc', _g18B[0], _g18B[1], 30, 0, 60, 'small', '60°', 52),
                ('tick', _g18B[0], _g18B[1], _g18D[0], _g18D[1]), ('tick', _g18B[0], _g18B[1], _g18E[0], _g18E[1])]),
-    ('quad', [('tint', [_g18A, _g18D, _g18E, _g18C], 'orange')]),
-], vb='150 30 340 300', w=310, title='Triangle ABC with the midpoints D and E')
+    # enlarged cut-out of DBE (same letters, same tint); the copy stays, dimmed, with DBE still outlined
+    ('cut', [('dim', 150, 30, 340, 300), ('tint', [_g18D, _g18B, _g18E], 'teal')] + _f5tri(_g18D, _g18B, _g18E, 'teal', 3) +
+            [('tint', [_g18cD, _g18cB, _g18cE], 'teal')] + _f5tri(_g18cD, _g18cB, _g18cE) +
+            [('txt', 650, 52, 'D', 'ink', 30, True), ('txt', 506, 318, 'B', 'ink', 30, True), ('txt', 794, 318, 'E', 'ink', 30, True),
+             _f5lab(_g18cB, _g18cD, '5', 26, 'small', 34, 1), _f5lab(_g18cB, _g18cE, '5', 28, 'small', 34, -1),
+             ('tick', _g18cB[0], _g18cB[1], _g18cD[0], _g18cD[1]), ('tick', _g18cB[0], _g18cB[1], _g18cE[0], _g18cE[1]),
+             ('arc', _g18cB[0], _g18cB[1], 44, 0, 60, 'small', '60°', 72)]),
+    ('eqv', [('arc', _g18cD[0], _g18cD[1], 40, 240, 300, 'small', '60°', 68), ('arc', _g18cE[0], _g18cE[1], 44, 120, 180, 'small', '60°', 72),
+             _f5lab(_g18cD, _g18cE, '5', 26, 'small', 34, 1), ('txt', 298, 226, '5', 'small', 24)]),
+    ('quad', [('tint', [_g18A, _g18D, _g18E, _g18C], 'orange')] + _f5tri(_g18A, _g18B, _g18C) +
+             [('seg', _g18D[0], _g18D[1], _g18E[0], _g18E[1], 'ink', 3)]),
+], vb='150 30 680 300', w=500, title='Triangle ABC with the midpoints D and E, and DBE enlarged')
 F518_t1 = IH('f518a', '$S_{ABC}=\\frac{10^2\\sqrt3}{4}=\\frac{100\\sqrt3}{4}$', size=30, col=1)
 F518_t2 = IH('f518b', '$S_{DBE}=\\frac{5^2\\sqrt3}{4}=\\frac{25\\sqrt3}{4}$', size=30, col=1)
 F518_t3 = IH('f518c', '$S_{ADEC}=\\frac{100\\sqrt3}{4}-\\frac{25\\sqrt3}{4}=\\frac{75\\sqrt3}{4}$', size=28, col=1)
@@ -2720,7 +2745,8 @@ video('solve-geo31-g018', 'solution', qid='geo31-g018', slides=[
       L("Now look at the small triangle, D B E. B D is five and B E is five, so it's isosceles. And the angle at B is sixty, "
         "because B is a corner of the equilateral triangle. Its other two angles are equal and share a hundred eighty minus "
         "sixty, which is a hundred twenty, so sixty and sixty. All its angles are sixty, so D B E is equilateral too, with "
-        "side five.", show(F518['small'], 'Now look at the small triangle')),
+        "side five.", show(F518['small'], 'Now look at the small triangle'), show(F518['cut'], 'B D is five'),
+        show(F518['eqv'], 'so sixty and sixty')),
       L("So the quadrilateral is the big triangle, A B C, minus the small triangle, D B E.", show(F518['quad'], 'So the quadrilateral'))),
     SM('Method 1 · Big minus small', 'Big minus small',
       L("Area of A B C, by the formula, a-two-three-four. The side is ten, so ten squared, a hundred, times root three, over "
@@ -3156,19 +3182,39 @@ f6g35_lines = ([('seg', f6a[0], f6a[1], f6b[0], f6b[1], 'ink', 3), ('seg', f6b[0
                 ('txt', 262, 283, '12', 'ink', 17), ('txt', 340, 300, '16', 'ink', 17), ('txt', 300, 160, '52', 'ink', 17)]
                + f6_lab([f6a, f6b, f6c, f6d], 'ABCD', [(-13, 0), (0, 15), (13, 4), (12, -8)]))
 f6V35 = dict(vb='235 45 425 300', w=520)
+
+
+def f6_big35(p, k=2.3, o=(425.0, 130.0)):
+    """the enlarged cut-out of triangle ABC (A lands on o)"""
+    return (o[0] + (p[0] - f6a[0]) * k, o[1] + (p[1] - f6a[1]) * k)
+
+
+f6A2, f6B2, f6C2 = f6_big35(f6a), f6_big35(f6b), f6_big35(f6c)
+f6g35_big = ([('tint', [f6A2, f6B2, f6C2], 'teal')] + f6_tri(f6A2, f6B2, f6C2, 'small', 4)
+             + [('right', f6B2[0], f6B2[1], gdir(*f6B2, *f6A2), gdir(*f6B2, *f6C2), 14, 'small'),
+                ('txt', f6A2[0] - 16, f6A2[1], 'A', 'ink', 24, True), ('txt', f6B2[0], f6B2[1] + 20, 'B', 'ink', 24, True),
+                ('txt', f6C2[0] + 16, f6C2[1], 'C', 'ink', 24, True), ('txt', (f6A2[0] + f6B2[0]) / 2 - 16, (f6A2[1] + f6B2[1]) / 2 + 10, '12', 'ink', 22), ('txt', (f6B2[0] + f6C2[0]) / 2 + 18, (f6B2[1] + f6C2[1]) / 2 + 10, '16', 'ink', 22)])
+f6g35_abc_ol = [('seg', f6a[0], f6a[1], f6b[0], f6b[1], 'small', 5), ('seg', f6b[0], f6b[1], f6c[0], f6c[1], 'small', 5),
+                ('seg', f6c[0], f6c[1], f6a[0], f6a[1], 'small', 5)]
+f6g35_acd_ol = [('seg', f6a[0], f6a[1], f6c[0], f6c[1], 'orange', 4), ('seg', f6c[0], f6c[1], f6d[0], f6d[1], 'orange', 4),
+                ('seg', f6d[0], f6d[1], f6a[0], f6a[1], 'orange', 4)]
+f6DIM35 = ('dim', 235, 45, 165, 300)
 f6g35 = GEO('f6g35', [
     ('line', f6g35_lines),
-    ('t1', [('tint', [f6a, f6b, f6c], 'teal'), ('txt', 316, 259, '20', 'small', 18), ('txt', 540, 110, '12, 16, 20:', 'small', 22),
-            ('txt', 540, 140, '3, 4, 5 times 4', 'small', 22)]),
-    ('t2', [('tint', [f6a, f6c, f6d], 'orange'), ('txt', 372, 168, '48', 'orange', 18), ('txt', 540, 190, '20, 48, 52:', 'orange', 22),
-            ('txt', 540, 220, '5, 12, 13 times 4', 'orange', 22)]),
+    ('t1', [('tint', [f6a, f6b, f6c], 'teal')] + f6g35_abc_ol),
+    ('cut', [f6DIM35] + f6g35_abc_ol + f6g35_big),
+    ('t1v', [('txt', 316, 259, '20', 'small', 18), ('txt', (f6A2[0] + f6C2[0]) / 2, f6A2[1] - 14, '20', 'small', 24),
+             ('txt', 540, 75, '12, 16, 20: 3, 4, 5 times 4', 'small', 20)]),
+    ('t2', [('tint', [f6a, f6c, f6d], 'orange')] + f6g35_acd_ol + [('txt', 372, 168, '48', 'orange', 18),
+            ('txt', 540, 290, '20, 48, 52:', 'orange', 22), ('txt', 540, 318, '5, 12, 13 times 4', 'orange', 22)]),
 ], title='Two right triangles: ABC and ACD', **f6V35)
 f6g35b = GEO('f6g35b', [
-    ('line', f6g35_lines + [('tint', [f6a, f6b, f6c], 'teal'), ('tint', [f6a, f6c, f6d], 'orange'),
-                            ('txt', 316, 259, '20', 'small', 18), ('txt', 372, 168, '48', 'orange', 18)]),
-    ('a1', [('txt', 290, 330, '96', 'small', 18), ('txt', 540, 110, '12 × 16 ÷ 2 = 96', 'small', 22)]),
-    ('a2', [('txt', 330, 215, '480', 'orange', 18), ('txt', 540, 160, '20 × 48 ÷ 2 = 480', 'orange', 22)]),
-    ('sum', [('txt', 540, 215, '96 + 480 = 576', 'ink', 26)]),
+    ('line', f6g35_lines + [('tint', [f6a, f6b, f6c], 'teal'), ('tint', [f6a, f6c, f6d], 'orange'), f6DIM35] + f6g35_abc_ol + f6g35_acd_ol
+             + f6g35_big + [('txt', 316, 259, '20', 'small', 18), ('txt', 372, 168, '48', 'orange', 18),
+                            ('txt', (f6A2[0] + f6C2[0]) / 2, f6A2[1] - 14, '20', 'small', 24)]),
+    ('a1', [('txt', (f6A2[0] + f6B2[0] + f6C2[0]) / 3, (f6A2[1] + f6B2[1] + f6C2[1]) / 3 - 4, '96', 'small', 24), ('txt', 540, 75, '12 × 16 ÷ 2 = 96', 'small', 22)]),
+    ('a2', [('txt', 330, 215, '480', 'orange', 18), ('txt', 540, 290, '20 × 48 ÷ 2 = 480', 'orange', 22)]),
+    ('sum', [('txt', 540, 325, '96 + 480 = 576', 'ink', 26)]),
 ], title='The two areas', **f6V35)
 for _it, _y in [(f6g35, 200), (f6g35b, 200)]:
     _R(_it, _y)
@@ -3182,7 +3228,8 @@ video('solve-geo31-g035', 'solution', qid='geo31-g035', slides=[
         "with Pythagorean triples it's much faster.", show(f6g35['line'], 'The quadrilateral is made of two right triangles')),
       L("[short pause] Start with triangle A B C. Its legs are twelve and sixteen. That's three, four, five, times four, so "
         "the hypotenuse A C is five times four, which is twenty. No need for the full theorem.",
-        pt('fig: 12', 'Its legs are twelve'), show(f6g35['t1'], "That's three, four, five")),
+        show(f6g35['t1'], 'Start with triangle A B C'), show(f6g35['cut'], 'Its legs are twelve'),
+        show(f6g35['t1v'], "That's three, four, five")),
       L("Now triangle A C D. The leg A C is twenty, and the hypotenuse A D is fifty-two. Another triple we learned is five, "
         "twelve, thirteen. Times four, that's twenty, forty-eight and fifty-two. We have twenty and fifty-two, so the "
         "missing leg C D is forty-eight.", pt('fig: 52', 'the hypotenuse A D is fifty-two'),
@@ -3221,14 +3268,27 @@ f6g36 = GEO('f6g36', [
     ('bd', [('txt', 294, 231, '10', 'small', 20), ('txt', 530, 110, 'BD = 20 ÷ 2 = 10', 'small', 22)]),
     ('ab', [('txt', 238, 150, '10√3', 'small', 20), ('txt', 530, 150, 'AB = 10√3', 'small', 22)]),
 ], title='Triangle ABD, the golden triangle', **f6V36)
+def f6_big36(p, k=1.7, o=(430.0, 198.0)):
+    """the enlarged cut-out of triangle BCD (B lands on o)"""
+    return (o[0] + (p[0] - f6q[0]) * k, o[1] + (p[1] - f6q[1]) * k)
+
+
+f6B3, f6C3, f6D3 = f6_big36(f6q), f6_big36(f6r), f6_big36(f6s)
+f6g36_bcd_ol = [('seg', f6q[0], f6q[1], f6r[0], f6r[1], 'orange', 4), ('seg', f6r[0], f6r[1], f6s[0], f6s[1], 'orange', 4),
+                ('seg', f6q[0], f6q[1], f6s[0], f6s[1], 'orange', 5)]
 f6g36b = GEO('f6g36b', [
     ('line', f6g36_lines + [('txt', 294, 231, '10', 'small', 20), ('txt', 238, 150, '10√3', 'small', 20)]),
-    ('bcd', [('tint', [f6q, f6r, f6s], 'orange'), ('seg', f6q[0], f6q[1], f6s[0], f6s[1], 'orange', 5),
-             ('arc', f6q[0], f6q[1], 18, 315, 360, 'orange'), ('arc', f6s[0], f6s[1], 18, 180, 225, 'orange'),
-             ('txt', 530, 90, '45°, 45°, 90°', 'orange', 22)]),
-    ('legs', [('txt', 280, 280, '5√2', 'orange', 18), ('txt', 362, 280, '5√2', 'orange', 18), ('txt', 530, 125, '10 ÷ √2 = 5√2', 'orange', 22)]),
-    ('per', [('path', [f6p, f6q, f6r, f6s, f6p], 'teal', 8), ('txt', 530, 180, '20 + 10√3', 'ink', 24), ('txt', 530, 212, '+ 5√2 + 5√2', 'ink', 24),
-             ('txt', 530, 250, '= 20 + 10√3 + 10√2', 'ink', 22)]),
+    ('bcd', [('tint', [f6q, f6r, f6s], 'orange')] + f6g36_bcd_ol),
+    ('cut', [('dim', 215, 35, 175, 290)] + f6g36_bcd_ol + [('tint', [f6B3, f6C3, f6D3], 'orange')] + f6_tri(f6B3, f6C3, f6D3, 'orange', 4)
+            + [('right', f6C3[0], f6C3[1], 45, 135, 14, 'orange'), ('arc', f6B3[0], f6B3[1], 30, 315, 360, 'orange', '45°', 52),
+               ('arc', f6D3[0], f6D3[1], 30, 180, 225, 'orange', '45°', 52), ('txt', f6B3[0] - 16, f6B3[1], 'B', 'ink', 24, True),
+               ('txt', f6C3[0], f6C3[1] + 20, 'C', 'ink', 24, True), ('txt', f6D3[0] + 16, f6D3[1], 'D', 'ink', 24, True),
+               ('txt', (f6B3[0] + f6D3[0]) / 2, f6B3[1] - 14, '10', 'small', 24)]),
+    ('legs', [('txt', (f6B3[0] + f6C3[0]) / 2 - 26, (f6B3[1] + f6C3[1]) / 2 + 12, '5√2', 'orange', 22),
+              ('txt', (f6D3[0] + f6C3[0]) / 2 + 26, (f6D3[1] + f6C3[1]) / 2 + 12, '5√2', 'orange', 22), ('txt', 280, 280, '5√2', 'orange', 16),
+              ('txt', 362, 280, '5√2', 'orange', 16), ('txt', 530, 80, '10 ÷ √2 = 5√2', 'orange', 22)]),
+    ('per', [('path', [f6p, f6q, f6r, f6s, f6p], 'teal', 8), ('txt', 530, 115, '20 + 10√3 + 5√2 + 5√2', 'ink', 20),
+             ('txt', 530, 145, '= 20 + 10√3 + 10√2', 'ink', 22)]),
 ], title='Triangle BCD, the silver triangle, and the perimeter', **f6V36)
 for _it, _y in [(f6g36, 200), (f6g36b, 200)]:
     _R(_it, _y)
@@ -3250,7 +3310,7 @@ video('solve-geo31-g036', 'solution', qid='geo31-g036', slides=[
     S('The silver triangle',
       L("Now triangle B C D. It's a silver triangle, forty-five, ninety, forty-five, a right isosceles triangle. Careful: "
         "in the first triangle B D was a leg, but here it's the hypotenuse, across from the right angle at C.",
-        show(f6g36b['line'], 'Now triangle B C D'), show(f6g36b['bcd'], "It's a silver triangle")),
+        show(f6g36b['line'], 'Now triangle B C D'), show(f6g36b['bcd'], "It's a silver triangle"), show(f6g36b['cut'], 'Careful')),
       L("From the hypotenuse to a leg, we divide by root two. How much is ten over root two? The way we learned: ignore "
         "the root, ten over two is five, and stick the root two back on. Five root two. So B C and C D are each five root "
         "two.", show(f6g36b['legs'], 'Five root two. So')),

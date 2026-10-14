@@ -32,7 +32,11 @@
     "say": "Now look at the small triangle, D B E. B D is five and B E is five, so it's isosceles. And the angle at B is sixty, because B is a corner of the equilateral triangle. Its other two angles are equal and share a hundred eighty minus sixty, which is a hundred twenty, so sixty and sixty. All its angles are sixty, so D B E is equilateral too, with side five.",
     "at": [
      "Now look at the small triangle",
-     "triangle, D B"
+     "triangle, D B",
+     "B D is five",
+     "And the angle",
+     "so sixty and sixty",
+     "All its angles"
     ]
    },
    {

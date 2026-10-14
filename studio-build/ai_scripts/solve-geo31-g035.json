@@ -21,6 +21,7 @@
    {
     "say": "[short pause] Start with triangle A B C. Its legs are twelve and sixteen. That's three, four, five, times four, so the hypotenuse A C is five times four, which is twenty. No need for the full theorem.",
     "at": [
+     "Start with triangle A B C",
      "Its legs are twelve",
      "That's three, four, five",
      "four, so the"
