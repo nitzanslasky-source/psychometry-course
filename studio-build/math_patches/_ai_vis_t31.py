@@ -1653,21 +1653,43 @@ video('solve-geo31-g017', 'solution', qid='geo31-g017', slides=[
 
 # ------------------------------------------------------------------------------------------------ q-r26-t31-01 (added)
 # REMINDER: area = a side times the altitude to it, over 2 (geo-016); legs (geo-013); the median to the hypotenuse is
-# half of it (geo-013). NEW at the step: an altitude -> the area two ways, set equal. V3: the legs traced teal (a side and
-# its altitude), the area written inside; AB and CD traced orange; each equation written on the board as it is said and
-# the found CD written next to it.
+# half of it (geo-013). NEW at the step: an altitude -> the area two ways, set equal.
+# V3 (cut-out in place): the triangle outlined teal ON the question figure as it is named; then the question figure is
+# dimmed and the colour copy is drawn over it at the same place and size (same labels A, B, C, D, 15, 20, 25); the legs
+# traced teal (a side and its altitude), the area tinted with 150 written inside; AB and CD traced orange; the equations
+# written in the free right part of the board as they are said; CD = 12 written on the copy.
+# The layers are drawn over the question figure (over=1, of='question-figure'); box measured in the studio with
+# ../t30/qbox.py: the figure svg at board x 410, y 349.8, width 602.09, viewBox 120 100 400 230 (scale 1.505).
 FIG_LEFT.update({'solve-q-r26-t31-01'})
+_F3QY, _F3BL, _F3BR, _F3CT = 80.0, 410.0, 1540.0, 705.0
+
+
+def _f3OV(name, layers, box, title):
+    X0, Y0, W, (u0, v0, uw, vh) = box; sc = W / uw
+    ua, ub = u0 + (_F3BL - X0) / sc, u0 + (_F3BR - X0) / sc
+    va, vb_ = v0 + (_F3QY - Y0) / sc, v0 + (_F3CT - Y0) / sc
+    out = GEO(name, layers, vb='%.3f %.3f %.3f %.3f' % (ua, va, ub - ua, vb_ - va), w=round((ub - ua) * sc, 3), col=0, title=title)
+    for _it in out.values(): _it['over'] = 1; _it['of'] = 'question-figure'; _it['_x'] = _F3BL
+    return out
+
+
 _f3qA, _f3qB, _f3qC, _f3qD = (170, 290), (470, 290), (278, 146), (278, 290)
-F3Q = GEO('f3q', [
-    ('line', _f3tri(_f3qA, _f3qB, _f3qC) + [('seg', 278, 146, 278, 290), ('right', 278, 290, 0, 90, 12), ('right', 278, 146, gdir(278, 146, 170, 290), gdir(278, 146, 470, 290), 13),
-              ('txt', 154, 304, 'A', 'ink', 24, True), ('txt', 486, 304, 'B', 'ink', 24, True), ('txt', 278, 126, 'C', 'ink', 24, True),
-              ('txt', 278, 316, 'D', 'ink', 24, True), ('txt', 206, 206, '15', 'ink', 22), ('txt', 392, 206, '20', 'ink', 22), ('txt', 400, 314, '25', 'ink', 22)]),
-    ('legs', [('seg', 170, 290, 278, 146, 'teal', 6), ('seg', 278, 146, 470, 290, 'teal', 6), ('right', 278, 146, gdir(278, 146, 170, 290), gdir(278, 146, 470, 290), 13)]),
-    ('area', [('tint', [_f3qA, _f3qB, _f3qC], 'teal'), ('txt', 340, 262, '150', 'teal', 30)]),
-    ('hyp', [('seg', 170, 290, 470, 290, 'orange', 6), ('seg', 278, 146, 278, 290, 'orange', 5)]),
-], vb='130 100 400 230', w=380, title='Triangle ABC, right at C, with the altitude CD')
-F3Qa = I('f3qa', '$\\frac{15\\times20}{2}=150$', size=28)
-F3Qb = I('f3qb', '$\\frac{25\\times CD}{2}=150\\ \\to\\ CD=12$', size=26)
+_f3qr = ('right', 278, 146, gdir(278, 146, 170, 290), gdir(278, 146, 470, 290), 13)
+_f3qlab = [('txt', 152, 302, 'A', 'ink', 20, True), ('txt', 488, 302, 'B', 'ink', 20, True), ('txt', 278, 126, 'C', 'ink', 20, True),
+           ('txt', 278, 312, 'D', 'ink', 20, True), ('txt', 208, 206, '15', 'ink', 20), ('txt', 390, 206, '20', 'ink', 20),
+           ('txt', 392, 312, '25', 'ink', 20)]
+F3Q = _f3OV('f3q', [
+    ('line', [('seg', 170, 290, 470, 290, 'teal', 3), ('seg', 470, 290, 278, 146, 'teal', 3), ('seg', 278, 146, 170, 290, 'teal', 3)]),
+    ('big', [('dim', 110, 90, 420, 240)] + _f3tri(_f3qA, _f3qB, _f3qC, 'ink', 2.5) + [('seg', 278, 146, 278, 290, 'ink', 2.5),
+             ('right', 278, 290, 0, 90, 12), _f3qr] + _f3qlab),
+    ('legs', [('seg', 170, 290, 278, 146, 'teal', 5), ('seg', 278, 146, 470, 290, 'teal', 5), _f3qr]),
+    ('area', [('tint', [_f3qA, _f3qB, _f3qC], 'teal'), ('txt', 350, 262, '150', 'teal', 22)]),
+    ('hyp', [('seg', 170, 290, 470, 290, 'orange', 5), ('seg', 278, 146, 278, 290, 'orange', 4)]),
+    ('eq1', [('txt', 700, 150, '15 × 20 ÷ 2 = 150', 'teal', 20)]),
+    ('eq2', [('txt', 700, 195, '25 × CD ÷ 2 = 150', 'orange', 20)]),
+    ('eq3', [('txt', 700, 240, '25 × CD = 300', 'ink', 20), ('txt', 700, 285, 'CD = 12', 'orange', 22),
+             ('txt', 300, 228, '12', 'orange', 20)]),
+], (410.0, 349.796, 602.094, (120, 100, 400, 230)), title='Triangle ABC, right at C, with the altitude CD')
 video('solve-q-r26-t31-01', 'solution', qid='q-r26-t31-01', slides=[
     S('The area two ways',
       L("Triangle A B C is right at C, and C D is the altitude to A B. Given: A C is fifteen centimeters, B C is twenty "
@@ -1677,13 +1699,13 @@ video('solve-q-r26-t31-01', 'solution', qid='q-r26-t31-01', slides=[
         "in two ways, and then set them equal.", pt('fig: D', 'C D is an altitude')),
       L("[short pause] First way, with the legs. The right angle is at C, so A C and B C are perpendicular. That means B C is "
         "the altitude to the side A C. So the area is fifteen times twenty, over two. Fifteen times twenty is three hundred, "
-        "and half of that is a hundred fifty.", show(F3Q['line'], 'First way'), show(F3Q['legs'], 'The right angle is at C'),
+        "and half of that is a hundred fifty.", show(F3Q['line'], 'First way'), show(F3Q['big'], 'with the legs'), show(F3Q['legs'], 'The right angle is at C'),
         show(F3Q['area'], 'So the area is fifteen')),
       L("Second way, with the side A B, which is twenty-five, and the altitude to it, which is C D. So the area is also "
         "twenty-five times C D, over two.", show(F3Q['hyp'], 'Second way')),
       L("It's the same triangle, so it's the same area. Twenty-five times C D, over two, is a hundred fifty, so twenty-five "
         "times C D is three hundred. Three hundred divided by twenty-five is twelve, so C D is twelve. Choice number two is "
-        "our answer.", show(F3Qa, "It's the same triangle"), show(F3Qb, 'Twenty-five times C D, over two, is'),
+        "our answer.", show(F3Q['eq1'], "It's the same triangle"), show(F3Q['eq2'], 'Twenty-five times C D, over two, is'), show(F3Q['eq3'], 'so twenty-five times C D is three hundred'),
         mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("Careful with two traps. Six, choice number one, is a hundred fifty divided by twenty-five: someone forgot to double "
         "the area first. And twelve and a half, choice number three, is half of A B. That's the median to the hypotenuse, "
@@ -1888,8 +1910,7 @@ video('geo-019', 'lesson', slides=[
 
 # placement of the question videos' board (right column, below the question text)
 for _f3g in (F3G, F3G2): _R(_f3g, 235)
-_R(F3Q, 215)
-for _f3it, _f3y in ((F3Ga, 490), (F3Gb, 590), (F3Qa, 425), (F3Qb, 478), (F3Wa, 380), (F3Wb, 470)): _R(_f3it, _f3y)
+for _f3it, _f3y in ((F3Ga, 490), (F3Gb, 590), (F3Wa, 380), (F3Wb, 470)): _R(_f3it, _f3y)
 
 # =================================================================================================================
 # Topic-31 fragment f4 (written 2026-10-14): the Pythagorean theorem in use - g020, g021, g022, q-r26-t31-03, the
@@ -3354,18 +3375,32 @@ f7g37 = GEO('f7g37', [
 ], vb='180 22 290 320', w=290, title='Triangle ABC with the equilateral triangle DBC')
 f7g37b = GEO('f7g37b', [
     ('line', f7_37base),
-    ('adc', [('tint', [f7A, f7C, f7D], 'orange'), ('path', [f7A, f7D], 'teal', 8), ('txt', 292, 110, '3√3', 'teal', 22)]),
-    ('h', [('seg', f7E[0], f7E[1], f7C[0], f7C[1], 'red', 6), ('seg', f7D[0], f7D[1], f7E[0], f7E[1], 'teal', 3, True),
-           ('txt', 362, 318, '4', 'red', 24)]),
-    ('v1', [('txt', 338, 214, '6√3', 'orange', 20)]),
-    ('adb', [('tint', [f7A, f7B, f7D], 'orange'), ('txt', 302, 214, '6√3', 'orange', 20)]),
-], vb='180 22 290 320', w=240, title='The shaded part as two triangles')
+    ('adc', [('tint', [f7A, f7C, f7D], 'orange'), ('path', [f7A, f7C, f7D, f7A], 'orange', 6)]),
+    ('dim', [('dim', 180, 22, 290, 320), ('path', [f7A, f7C, f7D, f7A], 'orange', 6)]),
+], vb='180 22 290 320', w=140, title='The shaded part as two triangles')
+# V3 enlarged cut-out: A D C (and its mirror A D B) turned so that the base A D is horizontal ("turn your head"), scale 1.35
+def f7rot(p):
+    return (40 + (p[1] - 58.07) * 1.35, 120 + (p[0] - 320) * 2.0)   # widened across (exaggerated, her habit)
+f7rA, f7rB, f7rC, f7rD, f7rE = f7rot(f7A), f7rot(f7B), f7rot(f7C), f7rot(f7D), f7rot(f7E)
+f7g37c = GEO('f7g37c', [
+    ('line', [('tint', [f7rA, f7rC, f7rD], 'orange'), ('seg', f7rA[0], f7rA[1], f7rD[0], f7rD[1]), ('seg', f7rD[0], f7rD[1], f7rC[0], f7rC[1]),
+              ('seg', f7rA[0], f7rA[1], f7rC[0], f7rC[1]), ('path', [f7rA, f7rC, f7rD, f7rA], 'orange', 6),
+              ('txt', f7rA[0] - 18, f7rA[1], 'A', 'ink', 24, True), ('txt', f7rD[0] - 8, f7rD[1] + 22, 'D', 'ink', 24, True),
+              ('txt', f7rC[0] + 18, f7rC[1] + 8, 'C', 'ink', 24, True)]),
+    ('ab', [('path', [f7rA, f7rD], 'teal', 8), ('txt', (f7rA[0] + f7rD[0]) / 2, f7rA[1] - 18, '3√3', 'teal', 24)]),
+    ('h', [('dot', f7rC[0], f7rC[1]), ('seg', f7rD[0], f7rD[1], f7rE[0], f7rE[1], 'teal', 3, True), ('right', f7rE[0], f7rE[1], 180, 270, 12),
+           ('seg', f7rE[0], f7rE[1], f7rC[0], f7rC[1], 'red', 6), ('txt', f7rE[0] + 18, f7rE[1], 'E', 'ink', 24, True),
+           ('txt', f7rE[0] + 18, (f7rE[1] + f7rC[1]) / 2, '4', 'red', 26)]),
+    ('v1', [('txt', 238, 190, '6√3', 'orange', 24)]),
+    ('adb', [('tint', [f7rA, f7rB, f7rD], 'orange'), ('seg', f7rA[0], f7rA[1], f7rB[0], f7rB[1]), ('seg', f7rD[0], f7rD[1], f7rB[0], f7rB[1]),
+             ('txt', f7rB[0] + 18, f7rB[1], 'B', 'ink', 24, True), ('txt', 238, 50, '6√3', 'orange', 24)]),
+    ('t1', [('txt', 105, 262, 'S = 3√3 · 4 ÷ 2 = 6√3', 'ink', 26)]),
+    ('t2', [('txt', 105, 302, '2 · 6√3 = 12√3', 'red', 28)]),
+], vb='-40 -50 440 370', w=340, title='Triangles A D C and A D B, enlarged and turned')
 f7k2 = I('f7k2', '$S_{ABC}=\\frac{8\\cdot7\\sqrt3}{2}=28\\sqrt3$', size=32)
 f7k3 = I('f7k3', '$S_{DBC}=\\frac{8\\cdot4\\sqrt3}{2}=16\\sqrt3$', size=32)
 f7k4 = I('f7k4', 'or $\\ \\frac{a^2\\sqrt3}{4}=\\frac{64\\sqrt3}{4}=16\\sqrt3$', size=30)
 f7k5 = I('f7k5', '$28\\sqrt3-16\\sqrt3=12\\sqrt3$', size=32)
-f7k6 = I('f7k6', '$S_{ADC}=\\frac{3\\sqrt3\\cdot4}{2}=6\\sqrt3$', size=26)
-f7k7 = I('f7k7', '$2\\cdot6\\sqrt3=12\\sqrt3$', size=26)
 f7s37 = I('f7s37', 'So far: $\\ BC=8,\\ \\ DE=4\\sqrt3,\\ \\ AE=7\\sqrt3$', size=26)   # V2, in the right column (a carry box would sit on the question figure)
 video('solve-geo31-g037', 'solution', qid='geo31-g037', slides=[
     SM('Method 1 · Subtract areas', 'Big minus small',
@@ -3403,12 +3438,13 @@ video('solve-geo31-g037', 'solution', qid='geo31-g037', slides=[
         "the right, and A D B on the left.", show(f7g37b['line'], 'There\'s a shorter way'), show(f7g37b['adc'], 'A D C on the right')),
       L("For the area of A D C we need a base and its height. The base is given, A D, three root three. The height to it, "
         "from C, is outside the triangle, because A D C has an obtuse angle at D. We extend the base A D down to E. E C is "
-        "perpendicular to that line, and E C is four, the same as B E. So the height is four.", show(f7g37b['h'], 'We extend the base A D')),
+        "perpendicular to that line, and E C is four, the same as B E. So the height is four.", show(f7g37b['dim'], 'For the area of A D C'),
+        show(f7g37c['line'], 'we need a base'), show(f7g37c['ab'], 'The base is given'), show(f7g37c['h'], 'We extend the base A D')),
       L("Three root three times four, over two, is six root three. That's one shaded triangle. The other one, A D B, is its "
         "mirror image, so it's six root three too. Twice six root three is twelve root three, choice number two again, "
-        "with almost no calculating.", show(f7g37b['v1'], 'Three root three times four'), show(f7g37b['adb'], 'The other one, A D B'),
-        show(f7k6, 'so it\'s six root three too'),
-        show(f7k7, 'Twice six root three'), mk('tick', 'choice 2', 'choice number two again')),
+        "with almost no calculating.", show(f7g37c['v1'], 'Three root three times four'), show(f7g37c['adb'], 'The other one, A D B'),
+        show(f7g37c['t1'], 'so it\'s six root three too'),
+        show(f7g37c['t2'], 'Twice six root three'), mk('tick', 'choice 2', 'choice number two again')),
       L("Careful, six root three, choice number three, is only one of the two shaded triangles. [pause] Okay. I'll see you "
         "in the next question.", mk('cross', 'choice 3', 'six root three, choice number three'))),
 ])
@@ -3633,14 +3669,15 @@ video('solve-geo31-g040', 'solution', qid='geo31-g040', slides=[
 
 
 # placement: the question figure on the left, our board in the right column (explicit y; the choices start near y 590)
-for _g in (f7g37, f7g37b, f7g38, f7g38c, f7g38b, f7g39, f7g39b): _R(_g, 235)
+for _g in (f7g37, f7g38, f7g38c, f7g38b, f7g39, f7g39b): _R(_g, 235)
 _R(f7g40, 208)
-for _it, _y in ((f7s37, 245), (f7k2, 305), (f7k3, 370), (f7k4, 435), (f7k5, 500), (f7k6, 515), (f7k7, 552),
+for _it, _y in ((f7s37, 245), (f7k2, 305), (f7k3, 370), (f7k4, 435), (f7k5, 500),
                 (f7m1, 485), (f7m2, 535), (f7m3, 430), (f7m4, 478), (f7m5, 526), (f7m6, 470),
                 (f7p2, 512), (f7s39, 245), (f7p3, 305), (f7p4, 365), (f7p5, 425), (f7p6, 512), (f7p7, 260), (f7p8, 320), (f7p9, 380),
                 (f7r1, 470), (f7r2, 506), (f7r4, 260), (f7r5, 320)):
     _R(_it, _y)
 _R(f7r3, 506, x=1330)
+_R(f7g37b, 235); _R(f7g37c, 230, x=1240)
 
 # carry-over boxes on the continuation slides (V2): the next step uses these results
 CARRY31 = globals().get('CARRY31', {})

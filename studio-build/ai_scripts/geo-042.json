@@ -1,0 +1,124 @@
+{
+ "videoId": "geo-042",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Quadrilaterals. So far we've finished lines, angles and triangles. Now we're entering the kingdom of quadrilaterals. Let's start with a general quadrilateral."
+  ],
+  [
+   {
+    "say": "A quadrilateral is a closed shape with four sides. Here are four points. Let's join them. One side, two, three, and four, back to where we started. The shape is closed, and it has four sides, so it's a quadrilateral.",
+    "at": [
+     "closed shape with",
+     "Here are four points",
+     "One side",
+     "two, three",
+     "three, and four",
+     "back to where we started",
+     "The shape is"
+    ]
+   },
+   "Its sides don't have to be equal, and its angles don't have to be right angles. If the question doesn't say so, don't add it yourself."
+  ],
+  [
+   {
+    "say": "Here are two more quadrilaterals. They look different, but each one is closed and has four sides. And here are two shapes that are not quadrilaterals. This one has four sides, but it isn't closed. And this one is closed, but it has five sides.",
+    "at": [
+     "Here are two more quadrilaterals",
+     "They look different",
+     "one is closed",
+     "but it isn't closed",
+     "this one is",
+     "it has five sides"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A quadrilateral can also look like this. Its angles don't all have to be smaller than a hundred eighty degrees. One angle can even be bigger than a hundred eighty, like the angle at C here.",
+    "at": [
+     "A quadrilateral can also look like this",
+     "Its angles don't",
+     "One angle can even be bigger",
+     "bigger than a"
+    ]
+   },
+   {
+    "say": "It still has four sides, and it's closed, so it's still a quadrilateral.",
+    "at": [
+     "It still has four sides",
+     "and it's closed"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the sum of the angles in a quadrilateral. Here's a quadrilateral, A B C D. Let's draw a diagonal, a line from B to D. It splits the quadrilateral into two triangles.",
+    "at": [
+     "the angles in",
+     "Here's a quadrilateral",
+     "Let's draw a diagonal",
+     "line from B"
+    ]
+   },
+   {
+    "say": "We know that the angles in a triangle add up to a hundred eighty degrees. So the three teal angles of triangle A B D add up to a hundred eighty. And the three orange angles of triangle B C D add up to a hundred eighty too.",
+    "at": [
+     "So the three teal angles",
+     "of triangle A",
+     "And the three orange angles",
+     "of triangle B"
+    ]
+   },
+   {
+    "say": "Now look at the corners of the quadrilateral. The angles at A and at C are whole. The angles at B and at D are each made of a teal piece and an orange piece. So all the pieces together are exactly the four angles of the quadrilateral. A hundred eighty plus a hundred eighty is three hundred sixty.",
+    "at": [
+     "A hundred eighty plus a hundred eighty",
+     "hundred eighty is"
+    ]
+   },
+   {
+    "say": "So the angles in a quadrilateral add up to three hundred sixty degrees. That's almost the only rule we have for a general quadrilateral, at least the only one that matters for the exam.",
+    "at": [
+     "So the angles in a quadrilateral",
+     "That's almost the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's use it. Here the angles are eighty, ninety-five and a hundred ten degrees, and we want x. Eighty plus ninety-five is a hundred seventy-five, and plus a hundred ten is two hundred eighty-five. Three hundred sixty minus two hundred eighty-five is seventy-five, so x is seventy-five degrees.",
+    "at": [
+     "Here the angles are eighty",
+     "ninety-five and a",
+     "Eighty plus ninety-five",
+     "hundred ten is",
+     "so x is seventy-five"
+    ]
+   },
+   {
+    "say": "Another one. Two right angles and a hundred twenty degrees. Ninety plus ninety plus a hundred twenty is three hundred, so y is three hundred sixty minus three hundred, which is sixty degrees.",
+    "at": [
+     "Two right angles",
+     "hundred twenty degrees",
+     "Ninety plus ninety",
+     "so y is",
+     "which is sixty degrees"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And one with an angle bigger than a hundred eighty. Thirty, forty and fifty degrees add up to a hundred twenty, so the angle at the inward corner is three hundred sixty minus a hundred twenty, which is two hundred forty degrees. The rule still works for every quadrilateral. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "And one with an angle bigger",
+     "bigger than a",
+     "Thirty, forty and fifty",
+     "twenty, so the",
+     "which is two hundred forty",
+     "The rule still"
+    ]
+   }
+  ]
+ ]
+}

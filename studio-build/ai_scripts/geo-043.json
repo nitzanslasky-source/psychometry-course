@@ -1,0 +1,204 @@
+{
+ "videoId": "geo-043",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "The square. It's a shape almost all of us know, so let's go over its properties."
+  ],
+  [
+   {
+    "say": "All four sides of a square are equal, and all four angles are ninety degrees.",
+    "at": [
+     "All four sides",
+     "sides of a square are equal",
+     "all four angles"
+    ]
+   },
+   {
+    "say": "If the square is turned on the page, it's still a square. What decides is what the question says, not how the figure is drawn.",
+    "at": [
+     "If the square is turned",
+     "on the page"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the diagonals of the square. First, they're equal to each other.",
+    "at": [
+     "Now the diagonals",
+     "they're equal to each other"
+    ]
+   },
+   {
+    "say": "They also cut each other in half. So all four halves are equal: this one, this one, this one and this one.",
+    "at": [
+     "They also cut each other in half",
+     "So all four"
+    ]
+   },
+   {
+    "say": "They're perpendicular to each other: they meet at ninety degrees.",
+    "at": [
+     "They're perpendicular",
+     "they meet at"
+    ]
+   },
+   {
+    "say": "And they cut the square's angles in half. Each ninety splits into forty-five and forty-five, in every corner.",
+    "at": [
+     "And they cut the square's angles in half",
+     "angles in half",
+     "in every corner"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Look at one of the four small triangles. Its angle in the middle is ninety degrees, because the diagonals are perpendicular. And its two legs are equal, because they're halves of equal diagonals. That's a silver triangle, forty-five, forty-five, ninety. So the square is made of four silver triangles.",
+    "at": [
+     "Look at one of the four",
+     "four small triangles",
+     "Its angle in the middle",
+     "diagonals are perpendicular"
+    ]
+   },
+   {
+    "say": "It's also made of two silver triangles, depending on how we look. Take half the square, cut along one diagonal. It has a ninety-degree angle and two equal legs, the sides of the square. And if we keep drawing more crossing lines, we can cut the square into more and more silver triangles.",
+    "at": [
+     "Take half the square",
+     "along one diagonal"
+    ]
+   },
+   {
+    "say": "In a silver triangle, the hypotenuse is a leg times root two. In the half square, the hypotenuse is the diagonal, so the diagonal is the side times root two. A side of five gives a diagonal of five root two, and a side of seven gives seven root two.",
+    "at": [
+     "the diagonal is the side times",
+     "times root two. A",
+     "A side of five",
+     "a diagonal of"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The area of a square is its side, squared. That's actually where the word squared comes from. If the side is a, the area is a squared.",
+    "at": [
+     "square is its",
+     "If the side is a",
+     "the area is"
+    ]
+   },
+   {
+    "say": "Say each little square here is one square centimeter. Count the side: one, two, three, four, five, six. The side is six, so the area is six squared, thirty-six. And really, there are thirty-six little squares.",
+    "at": [
+     "Say each little square",
+     "here is one square",
+     "Count the side",
+     "three, four, five",
+     "the area is six squared",
+     "And really"
+    ]
+   },
+   {
+    "say": "Another example: a side of nine gives nine squared, which is eighty-one square centimeters.",
+    "at": [
+     "a side of nine",
+     "nine squared, which"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "There's another way to find the area of a square. It's less known and less used: with the diagonals. Multiply the diagonals and divide by two. The two diagonals are equal, so it's the diagonal squared, over two.",
+    "at": [
+     "find the area",
+     "Multiply the diagonals",
+     "The two diagonals"
+    ]
+   },
+   {
+    "say": "Why does it work? Say the diagonal is twelve. Then half the diagonal is six.",
+    "at": [
+     "Why does it work",
+     "Say the diagonal is twelve",
+     "Then half the diagonal"
+    ]
+   },
+   {
+    "say": "Look at one small triangle. Its legs are two halves, six and six, and they're perpendicular. So its area is six times six over two, which is eighteen.",
+    "at": [
+     "Look at one small triangle",
+     "Its legs are"
+    ]
+   },
+   {
+    "say": "The square is four of these triangles. Four times eighteen is seventy-two. And twelve squared over two is a hundred forty-four over two, also seventy-two.",
+    "at": [
+     "The square is four",
+     "Four times eighteen",
+     "And twelve squared"
+    ]
+   },
+   {
+    "say": "One more: a diagonal of ten gives ten squared, a hundred, over two, which is fifty.",
+    "at": [
+     "a diagonal of ten",
+     "ten squared, a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more fact about area, and it's true for every shape. Double the side of a square, from three to six.",
+    "at": [
+     "area, and it's",
+     "Double the side",
+     "from three to six"
+    ]
+   },
+   {
+    "say": "The area doesn't double. It goes from nine to thirty-six, four times as much. Count the little squares: every row is twice as long, and there are twice as many rows. Two times two is four.",
+    "at": [
+     "The area doesn't double",
+     "It goes from",
+     "Count the little squares",
+     "row is twice"
+    ]
+   },
+   {
+    "say": "So when every length is multiplied by some number k, the area is multiplied by k squared. For example, if every length is three times as long, the area is nine times as big.",
+    "at": [
+     "So when every length",
+     "multiplied by some",
+     "For example",
+     "is three times"
+    ]
+   },
+   {
+    "say": "Careful, this works only when all the lengths grow. If only one side grows, the area grows only by that side's number.",
+    "at": [
+     "Careful, this works",
+     "the area grows"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "That's the square, the simplest and the most perfect quadrilateral. For every property we ask about, the square's answer is yes.",
+    "at": [
+     "simplest and the",
+     "For every property",
+     "about, the square's"
+    ]
+   },
+   {
+    "say": "Are the sides equal? Yes. Are the diagonals equal? Yes. Are they perpendicular? Yes. Do they cut the angles in half? Yes. Everything is yes. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "Are the sides equal",
+     "Are the diagonals"
+    ]
+   }
+  ]
+ ]
+}

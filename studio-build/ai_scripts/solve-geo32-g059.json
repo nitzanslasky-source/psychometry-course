@@ -1,0 +1,118 @@
+{
+ "videoId": "solve-geo32-g059",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The diagonals of rectangle A B C D intersect at E. Given: B C is twenty-four centimeters, and the perimeter of triangle E B C is fifty centimeters. What is the area of triangle A B E, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "The diagonals of rectangle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We have a rectangle, the perimeter of one triangle, and a question about another triangle. [short pause] First we'll find the missing lengths, and then we'll see three ways to get the area. It's worth knowing all three.",
+    "at": [
+     "We have a rectangle",
+     "perimeter of one"
+    ]
+   },
+   {
+    "say": "[short pause] We'll probably need a property of the rectangle's diagonals. In a rectangle, the diagonals cut each other in half, and they're equal. So all four pieces, A E, E B, E C and E D, are equal.",
+    "at": [
+     "So all four pieces",
+     "E, E B"
+    ]
+   },
+   {
+    "say": "The perimeter of triangle E B C is E B plus twenty-four plus E C, and that's fifty. So E B and E C together are twenty-six. They're equal, so each one is thirteen. Then A E and E D are thirteen too, and the whole diagonal A C is twenty-six.",
+    "at": [
+     "The perimeter of triangle E B C",
+     "B C is",
+     "so each one is thirteen",
+     "Then A E"
+    ]
+   },
+   {
+    "say": "Now the right triangle A B C. We know its hypotenuse, twenty-six, and one leg, twenty-four. That's the triple five, twelve, thirteen, doubled, ten, twenty-four, twenty-six. So A B is ten.",
+    "at": [
+     "Now the right triangle",
+     "We know its",
+     "So A B is ten"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the area of A B E. The first way uses the median. Look at triangle A B C. E is the middle of A C, so B E is a median.",
+    "at": [
+     "A B E",
+     "way uses the",
+     "Look at triangle A B C",
+     "C. E is",
+     "so B E is a median"
+    ]
+   },
+   {
+    "say": "A median cuts a triangle into two triangles of equal area. Why? A E equals E C, so the two triangles have equal bases, and they share the same height from B to the line A C.",
+    "at": [
+     "into two triangles",
+     "they share the same height",
+     "from B to"
+    ]
+   },
+   {
+    "say": "Triangle A B C is easy. Ten times twenty-four, over two, is one hundred twenty. A B E is half of it, sixty. Choice number two is our answer.",
+    "at": [
+     "Ten times twenty-four",
+     "is one hundred",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] The second way. The diagonals of a rectangle always cut it into four triangles of equal area. By the way, that's true in every parallelogram, so also in a rhombus and in a square.",
+    "at": [
+     "The second way",
+     "The diagonals of"
+    ]
+   },
+   {
+    "say": "Why? The top triangle and the bottom triangle are the same triangle, and so are the left one and the right one. And we just saw that the left one and the bottom one have equal areas. So all four are equal.",
+    "at": [
+     "The top triangle and the bottom",
+     "bottom triangle are"
+    ]
+   },
+   {
+    "say": "The rectangle is ten times twenty-four, which is two hundred forty. One triangle is a quarter of it, two hundred forty divided by four, which is sixty. Choice number two again.",
+    "at": [
+     "The rectangle is ten times",
+     "twenty-four, which is",
+     "Choice number two again"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And the third way, the most basic one, base times height over two. The base is A B, ten. We need the height from E to A B.",
+    "at": [
+     "the most basic one",
+     "times height over"
+    ]
+   },
+   {
+    "say": "The height from E to A B is the same as half of B C, because E is exactly in the middle. Half of twenty-four is twelve. So the area is ten times twelve, over two, which is sixty. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "The height from E to A B",
+     "A B is",
+     "So the area is ten times twelve",
+     "times twelve, over",
+     "which is sixty. Choice number two"
+    ]
+   }
+  ]
+ ]
+}

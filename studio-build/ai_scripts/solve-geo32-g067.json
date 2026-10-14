@@ -1,0 +1,103 @@
+{
+ "videoId": "solve-geo32-g067",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C D is a rectangle, and E lies on A D. The areas of triangles A B E and E C D are six square centimeters and fifteen square centimeters. What is the area of the shaded triangle E B C, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "A B C D is a rectangle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We know the two white corner triangles and need the shaded one in the middle. [short pause] We'll solve it two ways, the math way with letters, and then a short way with symmetry.",
+    "at": [
+     "white corner triangles",
+     "two ways, the"
+    ]
+   },
+   {
+    "say": "[short pause] Start with triangle A B E. It's a right triangle, because every angle of a rectangle is ninety. So its area is leg times leg, over two. But neither leg is given, so we give them letters.",
+    "at": [
+     "Start with triangle A B E",
+     "It's a right triangle",
+     "every angle of"
+    ]
+   },
+   {
+    "say": "A B is the height of the rectangle. Let's call it h. A E is a part of the rectangle's length. Let's call it x. So x times h, over two, is six. Multiply both sides by two, and x h is twelve.",
+    "at": [
+     "Let's call it h",
+     "A E is",
+     "Let's call it x",
+     "So x times"
+    ]
+   },
+   {
+    "say": "Now triangle E C D. It's a right triangle too, with the same height h. E D is another part of the length, not x. So it's a new unknown, y. y times h, over two, is fifteen, so y h is thirty.",
+    "at": [
+     "So it's a new unknown",
+     "y times h"
+    ]
+   },
+   {
+    "say": "Now the shaded triangle E B C. Its base, B C, is the whole length, x plus y. And its height? We drop it from E to B C, and it's exactly the height of the rectangle, h.",
+    "at": [
+     "Its base, B C",
+     "the whole length",
+     "We drop it from E",
+     "to B C"
+    ]
+   },
+   {
+    "say": "So its area is x plus y, times h, over two. Open the brackets. It's x h plus y h, over two, so twelve plus thirty, over two. That's forty-two over two, which is twenty-one. Choice number two is our answer.",
+    "at": [
+     "So its area is",
+     "plus y, times",
+     "Choice number two is our answer"
+    ]
+   },
+   "This was a long and tiring solution. But it's an important base. We won't always see the short way, and then we have something solid to work with."
+  ],
+  [
+   {
+    "say": "[pause] Now the short way, with symmetry. Symmetry is a very important tool in geometry, especially in quadrilaterals. From the point E, let's drop a height down to B C, and call its foot F.",
+    "at": [
+     "Now the short way",
+     "Symmetry is a",
+     "From the point E",
+     "drop a height"
+    ]
+   },
+   {
+    "say": "Now we have a rectangle on the left, A B F E. Its diagonal E B cuts it into two triangles. A diagonal cuts a rectangle into two triangles with the same area. So the shaded triangle E B F is six, like the white triangle A B E.",
+    "at": [
+     "Now we have a rectangle on the left",
+     "on the left",
+     "So the shaded triangle E B F",
+     "B F is"
+    ]
+   },
+   {
+    "say": "The same on the right. E F C D is a rectangle, its diagonal is E C, and the white triangle E C D is fifteen. So the shaded triangle E F C is fifteen too.",
+    "at": [
+     "The same on the right",
+     "E F C",
+     "So the shaded triangle E F C",
+     "F C is"
+    ]
+   },
+   {
+    "say": "So the shaded area is equal to the two white areas together, six plus fifteen, which is twenty-one. Choice number two. Much shorter. That's why this question counts as easy-plus. On the exam it's about question five or six. The math is long, but the short way is quick.",
+    "at": [
+     "six plus fifteen",
+     "Choice number two. Much shorter",
+     "That's why this"
+    ]
+   },
+   "This idea is very important, and in the next lesson we'll stretch it to more shapes. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

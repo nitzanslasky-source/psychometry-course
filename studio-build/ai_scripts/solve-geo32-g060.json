@@ -1,0 +1,127 @@
+{
+ "videoId": "solve-geo32-g060",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C D is a rhombus. Given: B D is ten centimeters, and angle A B D is sixty degrees. What is the area of the rhombus, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "A B C D is a rhombus"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We learned two formulas for the area of a rhombus. A rhombus is a parallelogram with all its sides equal, so one formula is side times the height to that side. The other is the two diagonals multiplied, over two. That one works for any quadrilateral whose diagonals are perpendicular. [short pause] A diagonal is given here, so we'll start with the diagonal formula.",
+    "at": [
+     "We learned two formulas",
+     "the area of"
+    ]
+   },
+   {
+    "say": "[short pause] In a rhombus, the diagonals cut each other in half. So let's draw the other diagonal, from A to C. It cuts B D into five and five.",
+    "at": [
+     "from A to C",
+     "It cuts B D into five and five",
+     "five and five"
+    ]
+   },
+   {
+    "say": "The diagonals of a rhombus are also perpendicular, so the angle at O is ninety. That makes a special triangle, A B O. It's a right triangle with a sixty-degree angle, so it's a golden triangle, thirty, sixty, ninety.",
+    "at": [
+     "That makes a special triangle",
+     "A B O"
+    ]
+   },
+   {
+    "say": "In a golden triangle the sides have a fixed ratio. Five is across from the thirty-degree angle, so it's the short leg. To get the long leg, we multiply by root three. So A O is five root three.",
+    "at": [
+     "So A O is five root three"
+    ]
+   },
+   {
+    "say": "The diagonals cut each other in half, so the bottom part, O C, is five root three too. The whole diagonal A C is five root three plus five root three, which is ten root three.",
+    "at": [
+     "other in half",
+     "so the bottom part",
+     "The whole diagonal"
+    ]
+   },
+   {
+    "say": "Now the formula. The diagonals multiplied, over two, is ten times ten root three, over two. Ten over two is five, and five times ten root three is fifty root three. Choice number two is our answer.",
+    "at": [
+     "Now the formula",
+     "The diagonals multiplied",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Once you've found all the inner pieces, you can add up the area in other ways too. Some students take the golden triangle, base five and height five root three, and multiply its area by four.",
+    "at": [
+     "Once you've found all the inner pieces",
+     "inner pieces, you",
+     "Some students take the golden triangle",
+     "triangle, base five"
+    ]
+   },
+   {
+    "say": "Some take the top triangle, B D A, with base ten and height five root three, twice. And some take the triangle on the right, A D C, with base ten root three and height five, twice too. There are many ways, and at this stage it's good to know them all.",
+    "at": [
+     "Some take the top triangle",
+     "B D A",
+     "And some take the triangle on",
+     "on the right"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And one more way. Well done if you saw this one. Some students notice the sixty degrees and say, wait, that's a hint.",
+    "at": [
+     "Well done if",
+     "notice the sixty degrees",
+     "say, wait, that's"
+    ]
+   },
+   {
+    "say": "In a rhombus all the sides are equal, so A B equals A D. That makes triangle A B D isosceles, and angle A D B is sixty too.",
+    "at": [
+     "so A B equals A D",
+     "That makes triangle"
+    ]
+   },
+   {
+    "say": "Sixty plus sixty is one hundred twenty, so the top angle is sixty as well. The triangle is equilateral. It's worth remembering that an isosceles triangle with a sixty-degree angle is always equilateral. B D is ten, so A B and A D are ten.",
+    "at": [
+     "so the top angle is sixty as well",
+     "sixty as well"
+    ]
+   },
+   {
+    "say": "All the sides of a rhombus are equal, so D C and B C are ten too. So the rhombus is two equilateral triangles.",
+    "at": [
+     "so D C and B C are ten too",
+     "C are ten"
+    ]
+   },
+   {
+    "say": "The area of one equilateral triangle is the side squared, times root three, over four. Twice that is two times one hundred root three, over four, which is fifty root three. That's the shorter way. Choice number two.",
+    "at": [
+     "Twice that is two times",
+     "one hundred root",
+     "That's the shorter way. Choice number two",
+     "number two"
+    ]
+   },
+   {
+    "say": "And one more link to the triangles topic. Angle A B C is sixty plus sixty, one hundred twenty. So triangle A B C is the thirty, thirty, one hundred twenty triangle with sides ten and ten, and its long side, A C, is ten root three straight away. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Angle A B C is sixty plus sixty",
+     "sixty plus sixty"
+    ]
+   }
+  ]
+ ]
+}

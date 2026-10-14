@@ -1,0 +1,100 @@
+{
+ "videoId": "solve-geo32-g048",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In parallelogram A B C D, the marked parts of angle B are three alpha and two alpha, and the marked parts of angle C are three beta and two beta. The segments B E and C E meet as in the accompanying figure. What is x?",
+    "voice": "calm",
+    "at": [
+     "In parallelogram A B C D"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "There are only angles here, and letters instead of numbers. We need x, the angle at E between B E and C E. [short pause] We'll solve it two ways, with the angle rules of a parallelogram, and then by plugging in numbers.",
+    "at": [
+     "We need x",
+     "at E between",
+     "it two ways"
+    ]
+   },
+   {
+    "say": "[short pause] What do we know about the angles of a parallelogram? Opposite angles are equal, and two angles next to each other add up to one hundred eighty. Angles B and C are next to each other, at the two ends of side B C.",
+    "at": [
+     "What do we know",
+     "the angles of"
+    ]
+   },
+   {
+    "say": "All of angle B is three alpha plus two alpha, which is five alpha. All of angle C is three beta plus two beta, five beta. Together they make one hundred eighty.",
+    "at": [
+     "All of angle B",
+     "three alpha plus",
+     "All of angle C",
+     "three beta plus",
+     "Together they make"
+    ]
+   },
+   {
+    "say": "Divide both sides by five, and alpha plus beta is thirty-six. We don't know alpha or beta on their own, but we know their sum.",
+    "at": [
+     "Divide both sides by five",
+     "and alpha plus"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now look at triangle B C E, the small triangle at the bottom. Its angles are three alpha at B, three beta at C, and x at E. The angles of a triangle add up to one hundred eighty.",
+    "at": [
+     "Now look at triangle",
+     "C E, the",
+     "Its angles are three alpha",
+     "at B, three"
+    ]
+   },
+   {
+    "say": "So x is one hundred eighty minus three alpha minus three beta. Three alpha plus three beta is three times alpha plus beta, three times thirty-six, which is a hundred eight. So x is one hundred eighty minus a hundred eight, seventy-two.",
+    "at": [
+     "So x is one hundred eighty minus three alpha",
+     "eighty minus three",
+     "seventy-two"
+    ]
+   },
+   {
+    "say": "We never found alpha or beta, but x is seventy-two. Choice number two is our answer.",
+    "at": [
+     "We never found",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a faster way, plugging in numbers. Only the sum of alpha and beta is fixed, thirty-six. The question expects one value of x, so any alpha and beta that add up to thirty-six must give that same x. So we can choose easy numbers that fit.",
+    "at": [
+     "plugging in numbers",
+     "The question expects",
+     "choose easy numbers"
+    ]
+   },
+   {
+    "say": "Let's take them equal, eighteen and eighteen. Then angle B is five times eighteen, ninety, and angle C is ninety too. The parallelogram becomes a rectangle, and that's allowed, because a rectangle is a parallelogram.",
+    "at": [
+     "Let's take them equal",
+     "Then angle B is five times eighteen",
+     "times eighteen, ninety"
+    ]
+   },
+   {
+    "say": "In triangle B C E, three alpha is three times eighteen, fifty-four, and three beta is fifty-four too. So x is one hundred eighty minus fifty-four minus fifty-four, which is seventy-two. Choice number two again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "three alpha is three times eighteen",
+     "eighteen, fifty-four, and",
+     "Choice number two again"
+    ]
+   }
+  ]
+ ]
+}

@@ -396,7 +396,10 @@ def _manual(D, stats, seen):
     """hand edits that a regex cannot do safely"""
     v = D['videos'].get('geo-042')
     # (only when geo-042 has its patched layout - a partial build such as `math_check.py 9` leaves it unpatched)
-    if v and len(v['beats']) > 5 and len(v['beats'][4].get('items') or []) > 4 and v['beats'][5].get('items'):
+    # 2026-10-14 (Claude): geo-042 is now rebuilt from its reading-script spec (_ai_vis_t32.py, "(deltoid)" already in it);
+    # only touch the OLD layout - both items must be figures with an svg, otherwise skip (no crash on a new layout)
+    _ok = lambda b, k: len(b.get('items') or []) > k and isinstance(b['items'][k].get('v'), dict) and 'svg' in b['items'][k]['v']
+    if v and len(v['beats']) > 5 and _ok(v['beats'][4], 4) and _ok(v['beats'][5], 0):
         # "The family" slide: the kite drawing's label gets a second line; "Who is also who?" tree: two lines inside the box
         it = v['beats'][4]['items'][4]['v']
         old = it['svg']

@@ -1,0 +1,133 @@
+{
+ "videoId": "geo-067-after",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "In the last question, the shaded triangle was exactly as big as the two white triangles together. Let's take that idea and stretch it."
+  ],
+  [
+   {
+    "say": "A rectangle, and a diagonal in it. The diagonal cuts the rectangle into two triangles, and they are exactly the same size. So the shaded half equals the white half, and each one is half of the rectangle. That's clear to all of us.",
+    "at": [
+     "A rectangle, and a diagonal",
+     "The diagonal cuts",
+     "into two triangles",
+     "So the shaded half equals",
+     "the white half",
+     "each one is half",
+     "That's clear to"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a shaded triangle inside a rectangle, like in the last question. Its base is the bottom side, and its tip, E, is on the top side. Here too, the shaded part is half of the rectangle, and the white parts together are the other half.",
+    "at": [
+     "Now a shaded triangle",
+     "a rectangle, like"
+    ]
+   },
+   {
+    "say": "Why? From E, drop a height down to the bottom side. It cuts the rectangle into two smaller rectangles, and each small rectangle has a diagonal.",
+    "at": [
+     "drop a height",
+     "the bottom side"
+    ]
+   },
+   {
+    "say": "In the left rectangle, the shaded piece and the white piece are the two halves, so they're equal. In the right rectangle too. So each shaded piece equals its white twin.",
+    "at": [
+     "In the left rectangle",
+     "shaded piece and",
+     "In the right rectangle too",
+     "So each shaded"
+    ]
+   },
+   {
+    "say": "And it doesn't matter where E is along the top side. Move it, and the shaded triangle is still half of the rectangle.",
+    "at": [
+     "Move it",
+     "still half"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "It's true here as well. It doesn't matter how many triangles there are inside the rectangle, as long as their bases fill the bottom side, one after the other, and their tips are on the top side.",
+    "at": [
+     "It's true here as well",
+     "It doesn't matter",
+     "how many triangles",
+     "their bases fill",
+     "side, one after",
+     "their tips are on the top side"
+    ]
+   },
+   {
+    "say": "Then the shaded parts always add up to the white parts, and each is half of the rectangle.",
+    "at": [
+     "the shaded parts always",
+     "up to the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "By the way, this isn't only true in a rectangle. It's true in the whole parallelogram family: a parallelogram, a rectangle, a rhombus and a square. A diagonal in a parallelogram also cuts it into two triangles with the same area.",
+    "at": [
+     "isn't only true",
+     "In the whole parallelogram family",
+     "a parallelogram, a",
+     "A diagonal in a parallelogram",
+     "also cuts it",
+     "two triangles with the same"
+    ]
+   },
+   {
+    "say": "And this one? A shaded triangle on the bottom side of a parallelogram, with its tip on the top side. It's harder to see, but from the tip, draw a line parallel to the slanted sides.",
+    "at": [
+     "And this one",
+     "A shaded triangle",
+     "draw a line parallel",
+     "the slanted sides"
+    ]
+   },
+   {
+    "say": "Now we have two parallelograms, a left one and a right one. In each of them, the shaded piece and the white piece are the two halves. So the shaded triangle is half of the whole parallelogram. Same base and same height, and it doesn't matter how many triangles.",
+    "at": [
+     "Now we have two parallelograms",
+     "In each of",
+     "Same base and same height",
+     "and it doesn't"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A slightly more advanced one. The bottom side is cut into four equal pieces. The shaded triangle stands on one piece, and its tip is on the top side. What part of the rectangle is it?",
+    "at": [
+     "one. The bottom",
+     "cut into four equal pieces",
+     "The shaded triangle stands",
+     "one piece, and"
+    ]
+   },
+   {
+    "say": "A triangle on the whole bottom side, with its tip on the top side, would be half of the rectangle. Ours has the same height, but it stands on only a quarter of the bottom side. So it's a quarter of that half.",
+    "at": [
+     "A triangle on the whole bottom side",
+     "bottom side, with",
+     "So it's a quarter of that half"
+    ]
+   },
+   {
+    "say": "A quarter of a half is an eighth. So the shaded triangle is an eighth of the rectangle.",
+    "at": [
+     "A quarter of a half",
+     "is an eighth"
+    ]
+   },
+   "This symmetry principle is very important. Some exam questions become easy with it, and we'll see one in the next question. [pause] Okay. I'll see you in the next video."
+  ]
+ ]
+}

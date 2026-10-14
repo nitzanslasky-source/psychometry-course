@@ -97,6 +97,10 @@
    {
     "say": "For the area of A D C we need a base and its height. The base is given, A D, three root three. The height to it, from C, is outside the triangle, because A D C has an obtuse angle at D. We extend the base A D down to E. E C is perpendicular to that line, and E C is four, the same as B E. So the height is four.",
     "at": [
+     "For the area of A D C",
+     "we need a base",
+     "The base is given",
+     "D, three root",
      "We extend the base A D",
      "D down to"
     ]

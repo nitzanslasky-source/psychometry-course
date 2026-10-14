@@ -1,0 +1,74 @@
+{
+ "videoId": "r26-t32-perimeter",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Perimeter tricks. Two quick rules that turn long perimeter questions into one line, and a third one in the next question."
+  ],
+  [
+   {
+    "say": "Here's a rectangle, ten by six. Its perimeter is two times, ten plus six, which is thirty-two. Now cut it into two smaller rectangles, four by six and six by six.",
+    "at": [
+     "Here's a rectangle",
+     "Its perimeter is",
+     "Now cut it",
+     "four by six and six by six"
+    ]
+   },
+   {
+    "say": "The perimeter of the first piece is two times, four plus six, twenty. The second is two times, six plus six, twenty-four. Together, forty-four. That's more than thirty-two. Why?",
+    "at": [
+     "The perimeter of",
+     "Together, forty-four"
+    ]
+   },
+   {
+    "say": "Every outside side is counted once, just like before. But the cut is a side of both pieces, so it's counted twice. The cut is six, so the pieces add up to thirty-two plus two times six, forty-four.",
+    "at": [
+     "Every outside side",
+     "so it's counted twice",
+     "cut is six",
+     "the pieces add up to thirty-two",
+     "thirty-two plus two"
+    ]
+   },
+   {
+    "say": "Cut the same rectangle across instead, into ten by two and ten by four. Twenty-four plus twenty-eight is fifty-two, and that's thirty-two plus two times ten, because this cut is ten long. So the rule: the pieces add up to the original perimeter plus two times each cut.",
+    "at": [
+     "Cut the same rectangle across",
+     "instead, into ten",
+     "So the rule",
+     "add up to"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a notch: the border goes into the shape and comes back out. Here the notch is two deep. Push the bottom of the notch up to the top line, and the width is still covered, ten, just like the plain rectangle.",
+    "at": [
+     "Now a notch",
+     "goes into the",
+     "Push the bottom of the notch up",
+     "notch up to"
+    ]
+   },
+   {
+    "say": "But the two walls of the notch have nowhere to go. They are extra. Each one is two, so the perimeter is thirty-two plus two times two, thirty-six. A notch three deep would add six, so thirty-eight.",
+    "at": [
+     "But the two walls",
+     "the notch have",
+     "thirty-two plus two times two",
+     "A notch three deep",
+     "add six, so"
+    ]
+   },
+   {
+    "say": "Careful, a step cut out at a corner is not a notch. Its two sides can both be pushed out to the border, so it adds nothing. You'll see that in the next question. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "a step cut out at a corner",
+     "a corner is"
+    ]
+   }
+  ]
+ ]
+}

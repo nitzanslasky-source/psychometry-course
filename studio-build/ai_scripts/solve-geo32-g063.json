@@ -1,0 +1,93 @@
+{
+ "videoId": "solve-geo32-g063",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C D is an isosceles trapezoid, with A D parallel to B C. Given: A B and A D are seven centimeters, and angle A B D is thirty degrees. What is its perimeter, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "A B C D is an isosceles trapezoid"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The perimeter is the sum of the four sides. Three of them are given, A B, A D, and C D, which equals A B because the trapezoid is isosceles. [short pause] We need the fourth side, B C.",
+    "at": [
+     "The perimeter is the sum",
+     "of the four"
+    ]
+   },
+   {
+    "say": "[short pause] Start with the first given. A B equals A D, so triangle A B D is isosceles. In an isosceles triangle the base angles are equal. Angle A B D is thirty, so angle A D B is thirty too.",
+    "at": [
+     "so triangle A B D is isosceles",
+     "In an isosceles"
+    ]
+   },
+   {
+    "say": "Thirty and thirty. So the top angle, A, is one hundred eighty minus sixty, which is one hundred twenty.",
+    "at": [
+     "So the top angle",
+     "is one hundred"
+    ]
+   },
+   {
+    "say": "In every trapezoid, the two angles on the same leg add up to one hundred eighty. A is one hundred twenty, so all of angle B is sixty. Its lower part, angle D B C, is sixty minus thirty, which is thirty.",
+    "at": [
+     "so all of angle B is sixty",
+     "Its lower part"
+    ]
+   },
+   {
+    "say": "Another way to see the thirty is our familiar Z. The bases are parallel, so the two angles in the corners of the Z are equal. Thirty and thirty.",
+    "at": [
+     "our familiar Z",
+     "The bases are"
+    ]
+   },
+   {
+    "say": "The trapezoid is isosceles, so the two angles on the bottom base are equal. Angle C equals angle B, sixty. You can also see it because angle C completes angle A to one hundred eighty.",
+    "at": [
+     "Angle C equals angle B",
+     "You can also"
+    ]
+   },
+   {
+    "say": "What did we get? Triangle B C D has thirty and sixty, together ninety. So the angle at D completes it to one hundred eighty, and it's ninety. It's not just a right triangle. It's a gold triangle, thirty, sixty, ninety.",
+    "at": [
+     "Triangle B C D has thirty and sixty",
+     "thirty and sixty"
+    ]
+   },
+   {
+    "say": "Its short leg is the one across from the thirty, C D. The trapezoid is isosceles, so C D equals A B, seven.",
+    "at": [
+     "so C D equals A B"
+    ]
+   },
+   {
+    "say": "When we know the short leg, the hypotenuse is easy. It's exactly twice the short leg. So B C is fourteen.",
+    "at": [
+     "When we know",
+     "So B C is fourteen"
+    ]
+   },
+   {
+    "say": "The perimeter is seven plus seven plus seven plus fourteen, which is thirty-five. Choice number two is our answer.",
+    "at": [
+     "The perimeter is seven plus",
+     "seven plus seven plus fourteen",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "One more link. Triangle A B D has angles thirty, thirty and one hundred twenty, the triangle we met with the special triangles. So B D is seven root three. That matches the gold triangle, where the long leg is the short leg times root three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So B D is seven root three",
+     "That matches the"
+    ]
+   }
+  ]
+ ]
+}

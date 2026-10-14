@@ -1,0 +1,107 @@
+{
+ "videoId": "geo-045",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "The rectangle. A rectangle is really a square that someone stretched a little sideways."
+  ],
+  [
+   {
+    "say": "Take a square and stretch it sideways. We get a rectangle, so it keeps some of the square's rules.",
+    "at": [
+     "Take a square",
+     "We get a rectangle",
+     "it keeps some"
+    ]
+   },
+   {
+    "say": "Opposite sides are equal: the top equals the bottom, and the left side equals the right side.",
+    "at": [
+     "Opposite sides are equal",
+     "top equals the"
+    ]
+   },
+   {
+    "say": "All the angles are still ninety degrees, because we didn't touch the angles. And opposite sides are parallel.",
+    "at": [
+     "All the angles are still",
+     "ninety degrees, because"
+    ]
+   },
+   {
+    "say": "But two sides next to each other don't have to be equal. If they are equal, it's a square.",
+    "at": [
+     "two sides next to each other",
+     "other don't have"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the diagonals. First, they're equal to each other, because the rectangle is symmetric.",
+    "at": [
+     "Now the diagonals",
+     "they're equal to each other",
+     "because the rectangle"
+    ]
+   },
+   {
+    "say": "They also cut each other in half, so all four halves are equal.",
+    "at": [
+     "They also cut each other",
+     "so all four halves"
+    ]
+   },
+   {
+    "say": "Now pay attention. Are they perpendicular? Not necessarily. Here you can see that they don't meet at ninety degrees.",
+    "at": [
+     "Are they perpendicular",
+     "Here you can"
+    ]
+   },
+   {
+    "say": "Do they cut the rectangle's angles in half? Not necessarily either. At corner A, the two parts are not equal.",
+    "at": [
+     "At corner A",
+     "parts are not"
+    ]
+   },
+   {
+    "say": "In a square, the diagonals always do both, and a square is a special rectangle. But in a general rectangle, don't assume it.",
+    "at": [
+     "But in a general rectangle",
+     "don't assume it"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The area of a rectangle works like the square's. In the square we squared the side. Here the length and the width aren't equal, so we multiply them: length times width, or base times height.",
+    "at": [
+     "rectangle works like",
+     "so we multiply them",
+     "times width, or"
+    ]
+   },
+   {
+    "say": "For example, a length of eight and a width of three. Eight times three is twenty-four. And really, there are three rows of eight little squares. We don't divide by two here, because it's the whole rectangle.",
+    "at": [
+     "For example",
+     "a length of eight",
+     "a width of",
+     "Eight times three",
+     "is twenty-four",
+     "And really",
+     "rows of eight"
+    ]
+   },
+   {
+    "say": "Another example: a length of seven and a width of four give seven times four, which is twenty-eight square centimeters. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "Another example",
+     "seven and a"
+    ]
+   }
+  ]
+ ]
+}

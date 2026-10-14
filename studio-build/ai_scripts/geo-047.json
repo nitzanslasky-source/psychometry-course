@@ -1,0 +1,217 @@
+{
+ "videoId": "geo-047",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "The parallelogram. It's like a rectangle that someone squashed a little sideways."
+  ],
+  [
+   {
+    "say": "Take a rectangle and squash it a little sideways. That's a parallelogram.",
+    "at": [
+     "Take a rectangle",
+     "it a little",
+     "That's a parallelogram"
+    ]
+   },
+   {
+    "say": "Its opposite sides are equal and parallel. A D is equal and parallel to B C, and A B is equal and parallel to D C.",
+    "at": [
+     "A D is equal",
+     "parallel to B",
+     "and A B is equal",
+     "and parallel to D C"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "What do we know about the angles? Opposite angles are equal. Angle A equals angle C, and angle B equals angle D.",
+    "at": [
+     "What do we know",
+     "Opposite angles are equal",
+     "Angle A equals",
+     "and angle B"
+    ]
+   },
+   {
+    "say": "And any two angles next to each other add up to a hundred eighty. D and C, a hundred eighty. A and D, a hundred eighty. B and C, and A and B, also a hundred eighty.",
+    "at": [
+     "And any two angles",
+     "to each other"
+    ]
+   },
+   {
+    "say": "For example, if angle B is seventy, then angle D is seventy too, and angles A and C are each a hundred ten. And if an angle is a hundred twenty-five, the angle next to it is fifty-five.",
+    "at": [
+     "For example",
+     "is seventy, then",
+     "And if an angle",
+     "next to it"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's see why. The opposite sides are parallel, so let's extend them into long parallel lines. These two sides are parallel too, so we extend them as well.",
+    "at": [
+     "Let's see why",
+     "sides are parallel",
+     "so let's extend them",
+     "These two sides",
+     "too, so we"
+    ]
+   },
+   "Remember, two parallel lines and a line that cuts them make small angles and large angles. And it's the same crossing at every corner of the parallelogram.",
+   {
+    "say": "So all the large angles are equal, we'll call them beta, and all the small ones are equal, we'll call them alpha. That's the first rule: opposite angles are equal.",
+    "at": [
+     "So all the large angles",
+     "are equal, we'll"
+    ]
+   },
+   {
+    "say": "And a small angle plus a large angle is a hundred eighty. So two angles next to each other add up to a hundred eighty: alpha plus beta is a hundred eighty.",
+    "at": [
+     "alpha plus beta"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the diagonals. Are they equal? Not necessarily. Here there's a longer diagonal and a shorter one.",
+    "at": [
+     "Now the diagonals",
+     "equal? Not necessarily",
+     "Here there's a longer"
+    ]
+   },
+   {
+    "say": "What we do know is that they cut each other in half. This part equals this part, and this part equals this one.",
+    "at": [
+     "they cut each other in half",
+     "This part equals"
+    ]
+   },
+   {
+    "say": "Do they cut the parallelogram's angles in half? Not necessarily, even though sometimes it looks like it. And they're not necessarily perpendicular either.",
+    "at": [
+     "Do they cut",
+     "angles in half"
+    ]
+   },
+   {
+    "say": "If you're not sure, exaggerate. Draw a very wide, very low parallelogram, and draw a diagonal. You'll see right away that it doesn't cut the angle in half.",
+    "at": [
+     "Draw a very wide",
+     "low parallelogram, and"
+    ]
+   },
+   {
+    "say": "Two more facts: if the diagonals are equal, it's a rectangle, and if they're perpendicular, it's a rhombus. A general parallelogram promises only one thing about its diagonals: they cut each other in half.",
+    "at": [
+     "Two more facts",
+     "diagonals are equal",
+     "A general parallelogram",
+     "one thing about"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The area of a parallelogram is simply base times height, a times h. The height is perpendicular to the base.",
+    "at": [
+     "The area of a parallelogram",
+     "is simply base",
+     "a times h",
+     "The height is perpendicular"
+    ]
+   },
+   {
+    "say": "It's not the sloping side. The sloping side is longer than the height.",
+    "at": [
+     "It's not the sloping side",
+     "The sloping side is"
+    ]
+   },
+   {
+    "say": "Be careful where you drop it. From A, the foot of the height lands on B C. From D, it would land outside B C, so first we extend B C.",
+    "at": [
+     "From D",
+     "outside B C"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why base times height? Say we don't know the area of a parallelogram, but we do know the area of a rectangle. Let's draw a rectangle on the same base, with the same height.",
+    "at": [
+     "Why base times height",
+     "Say we don't",
+     "Let's draw a rectangle",
+     "the same base"
+    ]
+   },
+   {
+    "say": "The difference between them is a triangle. This triangle on the left is in the rectangle, but not in the parallelogram.",
+    "at": [
+     "This triangle on the left",
+     "is in the"
+    ]
+   },
+   {
+    "say": "If we cut it out of the rectangle and move it to the right side, it fills exactly the part of the parallelogram that was missing. So the parallelogram has the same area as the rectangle.",
+    "at": [
+     "If we cut it out",
+     "of the rectangle"
+    ]
+   },
+   {
+    "say": "The rectangle's area is base times height, so the parallelogram's area is a times h too.",
+    "at": [
+     "The rectangle's area",
+     "times height, so"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Exam questions love a parallelogram with a special angle: thirty, forty-five or sixty degrees. For example, sides of eight and six, with an angle of thirty degrees at B. What is the area?",
+    "at": [
+     "parallelogram with a",
+     "For example",
+     "and six, with"
+    ]
+   },
+   {
+    "say": "Drop the height from A. A right triangle forms, with a thirty-degree angle: a gold triangle.",
+    "at": [
+     "Drop the height",
+     "A right triangle forms",
+     "a thirty-degree angle:"
+    ]
+   },
+   {
+    "say": "The height is across from the thirty, so it's the short leg, half of the hypotenuse. The hypotenuse is the side of six, so the height is three. And the area is eight times three, which is twenty-four.",
+    "at": [
+     "And the area",
+     "times three, which"
+    ]
+   },
+   {
+    "say": "A lot of students multiply eight times six, but the sloping side is not the height.",
+    "at": [
+     "A lot of students",
+     "eight times six"
+    ]
+   },
+   {
+    "say": "With forty-five degrees, it's a silver triangle, and the height is the side over root two. With sixty, it's again a gold triangle, and the height is half the side times root three. And with an obtuse angle, like a hundred fifty, look at the angle next to it, which is thirty. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "With forty-five degrees",
+     "silver triangle, and"
+    ]
+   }
+  ]
+ ]
+}

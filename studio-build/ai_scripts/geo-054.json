@@ -1,0 +1,179 @@
+{
+ "videoId": "geo-054",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "And the last quadrilateral, the trapezoid."
+  ],
+  [
+   {
+    "say": "A trapezoid has four sides. The bottom side and the top side are called the bases. The two sides on the sides are called the legs.",
+    "at": [
+     "A trapezoid has four sides",
+     "The bottom side",
+     "are called the bases",
+     "two sides on",
+     "are called the legs"
+    ]
+   },
+   {
+    "say": "The bases are parallel to each other. They're not equal, but they're parallel. The legs are not parallel. If they were parallel too, it wouldn't be a trapezoid anymore. It would be a parallelogram.",
+    "at": [
+     "The bases are parallel",
+     "The legs are",
+     "If they were parallel too",
+     "It would be"
+    ]
+   },
+   "So a trapezoid has exactly one pair of parallel sides, the bases."
+  ],
+  [
+   {
+    "say": "Two angles that sit on the same leg add up to one hundred eighty. Look at the leg A B. The bases are two parallel lines, and the leg cuts both of them. It's the U from lines and angles, a small angle plus a large angle, one hundred eighty.",
+    "at": [
+     "Two angles that sit",
+     "the same leg",
+     "It's the U from lines",
+     "and angles, a"
+    ]
+   },
+   {
+    "say": "For example, if the angle at B is seventy, then the angle at A is one hundred eighty minus seventy, which is one hundred ten.",
+    "at": [
+     "if the angle at B is seventy",
+     "then the angle at A",
+     "is one hundred",
+     "which is one hundred ten"
+    ]
+   },
+   {
+    "say": "The same is true on the other leg, C D. A small angle at C plus a large angle at D make one hundred eighty.",
+    "at": [
+     "The same is true",
+     "the other leg"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's call the bases a and b, and the height h. The height is the distance between the two bases, so it's perpendicular to them.",
+    "at": [
+     "Let's call the bases",
+     "and the height h",
+     "The height is"
+    ]
+   },
+   {
+    "say": "The area of a trapezoid is the sum of the bases, times the height, over two.",
+    "at": [
+     "The area of a trapezoid",
+     "is the sum"
+    ]
+   },
+   {
+    "say": "Why? Here's a simple way to see it. Make a copy of the trapezoid, turn it upside down, and attach it on the right. The two trapezoids together make one big parallelogram.",
+    "at": [
+     "Make a copy",
+     "trapezoid, turn it"
+    ]
+   },
+   {
+    "say": "The base of this parallelogram is a plus b, and its height is h. A parallelogram's area is its base times its height, so a plus b, times h. Our trapezoid is only half of it, so it's a plus b, times h, over two.",
+    "at": [
+     "The base of this parallelogram",
+     "is a plus"
+    ]
+   },
+   {
+    "say": "In the exam you won't prove formulas, so what matters is to remember it. For example, bases ten and six, and height four. Ten plus six is sixteen, times four is sixty-four, over two is thirty-two. Another one, bases nine and three, height five. Nine plus three is twelve, twelve times five is sixty, over two is thirty.",
+    "at": [
+     "For example, bases ten and six",
+     "six, and height",
+     "Another one, bases nine",
+     "three, height five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "An isosceles trapezoid is a trapezoid whose legs are equal, just like its name says. The left side equals the right side.",
+    "at": [
+     "An isosceles trapezoid",
+     "whose legs are equal",
+     "like its name"
+    ]
+   },
+   {
+    "say": "Its two base angles at the bottom are equal, beta and beta. Each leg's two angles add up to one hundred eighty, so the top angles are equal too, alpha and alpha.",
+    "at": [
+     "Its two base angles",
+     "the bottom are",
+     "so the top angles",
+     "equal too, alpha"
+    ]
+   },
+   {
+    "say": "It's symmetric from right to left, a bit like an isosceles triangle. In fact, if we continued the legs up, they would close into an isosceles triangle.",
+    "at": [
+     "It's symmetric from right",
+     "left, a bit",
+     "if we continued the legs up",
+     "up, they would"
+    ]
+   },
+   {
+    "say": "For example, if a base angle is sixty-five, the other base angle is sixty-five too, and each top angle is one hundred eighty minus sixty-five, which is one hundred fifteen.",
+    "at": [
+     "if a base angle is sixty-five",
+     "is sixty-five too"
+    ]
+   },
+   {
+    "say": "Its diagonals are equal too. And they cut each other into matching pieces. The top pieces are equal to each other, and the bottom pieces are equal to each other.",
+    "at": [
+     "Its diagonals are equal too",
+     "And they cut"
+    ]
+   },
+   {
+    "say": "And since alpha plus beta is one hundred eighty, opposite angles, like A and C, also add up to one hundred eighty. That's useful in angle questions.",
+    "at": [
+     "opposite angles, like A and C",
+     "C, also add"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A right trapezoid is simply a trapezoid with right angles. It always has two of them, never just one.",
+    "at": [
+     "A right trapezoid",
+     "with right angles",
+     "It always has"
+    ]
+   },
+   {
+    "say": "Why? If the angle at B is ninety, then the angle at A, on the same leg, is one hundred eighty minus ninety, which is ninety too.",
+    "at": [
+     "then the angle at A",
+     "on the same"
+    ]
+   },
+   {
+    "say": "In questions, it helps to drop a height from D to the bottom base. Then the trapezoid splits into a rectangle and a right triangle, and Pythagoras does the rest.",
+    "at": [
+     "drop a height from D",
+     "to the bottom",
+     "splits into a rectangle",
+     "a right triangle"
+    ]
+   },
+   {
+    "say": "So we've seen a general trapezoid, the isosceles trapezoid, which is symmetric, and the right trapezoid, with its two right angles. Next, let's see a question. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "the right trapezoid, with its"
+    ]
+   }
+  ]
+ ]
+}

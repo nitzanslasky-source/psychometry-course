@@ -1,0 +1,155 @@
+{
+ "videoId": "solve-geo32-g071",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In quadrilateral A B C D, angle A is alpha, angle B is a hundred thirty degrees, and angle C is beta. E lies on A B, and D E bisects angle A D C. Which expression equals angle A E D?",
+    "voice": "calm",
+    "at": [
+     "In quadrilateral A B C D"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "What makes this hard? We have to go through the whole quadrilateral to find angle D, cut it in half, and then work in triangle A E D. And all of it with letters, in about a minute, when it's one of the last questions in the section. [short pause] We'll solve it two ways, with the full algebra, and then by plugging in numbers.",
+    "at": [
+     "We have to",
+     "triangle A E D",
+     "all of it"
+    ]
+   },
+   {
+    "say": "[short pause] Here's the plan on the figure. The four angles of the quadrilateral add up to three hundred sixty degrees, and only angle D is missing.",
+    "at": [
+     "Here's the plan on the figure",
+     "The four angles of the quadrilateral",
+     "quadrilateral add up"
+    ]
+   },
+   {
+    "say": "D E bisects angle D, so it cuts it into two equal halves.",
+    "at": [
+     "D E bisects angle D",
+     "so it cuts"
+    ]
+   },
+   {
+    "say": "And x is an angle of triangle A E D, whose angles add up to a hundred eighty. Its other two angles are alpha and half of angle D.",
+    "at": [
+     "And x is an angle of triangle A E D",
+     "of triangle A"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the algebra. Angle D plus alpha plus a hundred thirty plus beta is three hundred sixty. Three hundred sixty minus a hundred thirty is two hundred thirty. So angle D is two hundred thirty, minus alpha, minus beta.",
+    "at": [
+     "D plus alpha",
+     "sixty minus a",
+     "So angle D is two hundred thirty",
+     "hundred thirty, minus"
+    ]
+   },
+   {
+    "say": "Half of two hundred thirty is a hundred fifteen. So each half, angle A D E, is a hundred fifteen, minus half alpha, minus half beta.",
+    "at": [
+     "So each half",
+     "D E, is"
+    ]
+   },
+   {
+    "say": "In triangle A E D, x is a hundred eighty, minus alpha, minus the whole bracket, a hundred fifteen minus half alpha minus half beta.",
+    "at": [
+     "In triangle A E D",
+     "x is a"
+    ]
+   },
+   {
+    "say": "A hundred eighty minus a hundred fifteen is sixty-five. So the number in the answer is sixty-five, and choice numbers two and four are out, because they have a hundred thirty. The minus in front of the bracket turns minus half beta into plus half beta, so choice number one is out too. And minus alpha plus half alpha leaves minus half alpha. So x is sixty-five, minus half alpha, plus half beta. Choice number three is our answer.",
+    "at": [
+     "choice numbers two and four are out",
+     "because they have a hundred thirty",
+     "so choice number one is out too",
+     "So x is sixty-five",
+     "half alpha, plus",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] That was long and tiring. Now a shorter way: plugging in numbers. The right answer has to be true for every alpha and beta that the drawing allows. So it must also be true for one example that we choose. We choose easy numbers that look like the drawing, put them in the drawing and in the choices, and keep the choice that matches.",
+    "at": [
+     "Now a shorter way",
+     "The right answer"
+    ]
+   },
+   {
+    "say": "Alpha looks obtuse, so let's take a hundred ten. Beta looks a little less than ninety, so let's take eighty. You could choose other numbers too, as long as they fit the drawing.",
+    "at": [
+     "so let's take a hundred ten",
+     "Beta looks a"
+    ]
+   },
+   {
+    "say": "Angle D: a hundred ten plus a hundred thirty plus eighty is three hundred twenty. Three hundred sixty minus three hundred twenty is forty. D E cuts it in half, so each half is twenty.",
+    "at": [
+     "Three hundred sixty minus three",
+     "hundred twenty is",
+     "so each half is twenty"
+    ]
+   },
+   {
+    "say": "Now x is easy. In triangle A E D, a hundred ten plus twenty is a hundred thirty, and a hundred eighty minus a hundred thirty is fifty. So with these numbers, x is fifty degrees.",
+    "at": [
+     "In triangle A",
+     "So with these numbers",
+     "is fifty degrees"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now we put alpha a hundred ten and beta eighty into each choice. Half alpha is fifty-five, and half beta is forty. Choice number one: sixty-five plus fifty-five minus forty is eighty. Not fifty, out. Choice number two: a hundred thirty plus fifty-five minus forty is a hundred forty-five. Out.",
+    "at": [
+     "Now we put alpha",
+     "hundred ten and",
+     "Choice number one",
+     "number one: sixty-five",
+     "minus forty is",
+     "Not fifty, out",
+     "Choice number two",
+     "thirty plus fifty-five",
+     "is a hundred forty-five. Out"
+    ]
+   },
+   {
+    "say": "Choice number three: sixty-five minus fifty-five plus forty is fifty. It matches. But one match isn't enough to be sure: to mark it, we cross out the other choices too. That's the drawback of plugging in. If you're out of time, though, it's a very reasonable guess.",
+    "at": [
+     "Choice number three",
+     "number three: sixty-five",
+     "plus forty is",
+     "It matches",
+     "it, we cross"
+    ]
+   },
+   {
+    "say": "Choice number four: a hundred thirty minus fifty-five plus forty is a hundred fifteen. Out. So choice number three is our answer.",
+    "at": [
+     "Choice number four",
+     "thirty minus fifty-five",
+     "is a hundred fifteen. Out",
+     "So choice number three is our answer"
+    ]
+   },
+   {
+    "say": "If you're strong in algebra and can do the full solution in about a minute, that's great. For most students, at the end of a section, plugging in numbers is much easier. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "plugging in numbers is much easier"
+    ]
+   }
+  ]
+ ]
+}

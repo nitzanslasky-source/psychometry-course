@@ -1,0 +1,92 @@
+{
+ "videoId": "solve-geo32-g069",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C D is an isosceles trapezoid. A D is parallel to B C, A D is five centimeters and B C is twenty centimeters. The shaded triangle A B D has an area of fifteen square centimeters. What is the area of the trapezoid?",
+    "voice": "calm",
+    "at": [
+     "A B C D is an isosceles trapezoid"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We know the area of the shaded triangle, and we need the area of the whole trapezoid. [short pause] We'll solve it two ways, with the full math, and then with a ratio principle.",
+    "at": [
+     "We know the area",
+     "the shaded triangle",
+     "two ways, with"
+    ]
+   },
+   {
+    "say": "[short pause] The full math first. The shaded part is a triangle, an obtuse one. Its area is base times height, over two, and the only base we know is A D, five.",
+    "at": [
+     "The full math first",
+     "The shaded part",
+     "the only base we know is A D",
+     "is A D"
+    ]
+   },
+   {
+    "say": "Where is the height to A D? In an obtuse triangle the height is outside. So we extend A D, and from B we drop the shortest line to it, at a right angle. That's the height, h.",
+    "at": [
+     "we extend A D",
+     "from B we drop",
+     "shortest line to"
+    ]
+   },
+   {
+    "say": "So five times h, over two, is fifteen. Five h is thirty, so h is six.",
+    "at": [
+     "So five times h",
+     "two, is fifteen"
+    ]
+   },
+   {
+    "say": "And look, this height is also the height of the trapezoid, the distance between the two parallel sides. The area of a trapezoid is the sum of the bases, times the height, over two. Five plus twenty is twenty-five, times six is a hundred fifty, over two is seventy-five. Choice number three is our answer.",
+    "at": [
+     "The area of a trapezoid",
+     "is the sum",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Not too bad, but there's a much shorter way, with a ratio principle. Look at the shaded triangle A B D and the white triangle B C D. They have the same height, the height of the trapezoid. In the white one it's easy to see. In the shaded one, it's the outside height we drew.",
+    "at": [
+     "there's a much",
+     "Look at the shaded triangle",
+     "A B D"
+    ]
+   },
+   {
+    "say": "When two triangles have the same height, the ratio of their areas is the ratio of their bases. The shaded base is five, and the white base is twenty, four times bigger. So the white area is four times bigger too.",
+    "at": [
+     "the ratio of their areas",
+     "is the ratio"
+    ]
+   },
+   {
+    "say": "Let's see it. Cut B C into four pieces of five, and draw lines from D. Now every triangle here has the same base, five, and the same height. A B and the first piece even make a parallelogram, with B D as its diagonal.",
+    "at": [
+     "Cut B C into four pieces",
+     "pieces of five",
+     "make a parallelogram",
+     "D as its"
+    ]
+   },
+   {
+    "say": "So all the triangles have the same area, fifteen each. The whole trapezoid is fifteen plus four times fifteen, which is seventy-five. Choice number three again. Careful, sixty is only the white triangle, so choice number two is a trap.",
+    "at": [
+     "fifteen each",
+     "The whole trapezoid",
+     "Choice number three again",
+     "choice number two is a trap"
+    ]
+   },
+   "Same height, so the area ratio follows the base ratio. If the base were three times bigger, the area would be three times bigger. You barely write anything, you just see it. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

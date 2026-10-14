@@ -1,0 +1,102 @@
+{
+ "videoId": "solve-geo32-g053",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C D is a deltoid. Given: A B is equal to A D, C B and C D are both ten centimeters, angle A B D is forty-five degrees, and angle D B C is sixty degrees. What is the perimeter of the deltoid, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "A B C D is a deltoid"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "For the perimeter we need all four sides. We know two of them, the tens. The line B D cuts the kite into two triangles, so let's look at them one at a time. [short pause] We'll start with the bottom one.",
+    "at": [
+     "need all four",
+     "the tens. The"
+    ]
+   },
+   {
+    "say": "[short pause] Triangle B D C. In a kite, the two bottom sides are equal, so C B is ten and C D is ten. That makes the triangle isosceles, and it also has a sixty-degree angle at B.",
+    "at": [
+     "Triangle B D C",
+     "the two bottom sides are equal",
+     "equal, so C"
+    ]
+   },
+   {
+    "say": "An isosceles triangle with a sixty-degree angle must be equilateral. The angle at D equals the angle at B, so it's sixty too, and then the angle at C is one hundred eighty minus one hundred twenty, which is sixty. Sixty, sixty, sixty. So all its sides are equal, and B D is ten as well.",
+    "at": [
+     "The angle at D equals",
+     "the angle at B",
+     "and B D is ten as well"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the top triangle, A B D. Its angle at B is forty-five. A B equals A D, so it's isosceles, and the angle at D is forty-five too. What's left for A is ninety.",
+    "at": [
+     "Now the top triangle",
+     "Its angle at B",
+     "forty-five. A B",
+     "and the angle at D",
+     "is forty-five too",
+     "What's left for A"
+    ]
+   },
+   {
+    "say": "Forty-five, forty-five, ninety. That's our silver triangle. Its hypotenuse is B D, ten. To get from the hypotenuse to a leg, we divide by root two. Ignore the root for a moment: ten divided by two is five. Then put the root back: five root two. So A B and A D are both five root two.",
+    "at": [
+     "our silver triangle",
+     "Its hypotenuse is B D",
+     "hypotenuse to a",
+     "we divide by root two",
+     "Ignore the root",
+     "So A B and A D",
+     "D are both"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the perimeter. The two tens make twenty. Before adding the rest, look at the choices. Only two of them start with twenty, choice numbers one and three. So that already rules out the other two.",
+    "at": [
+     "Now the perimeter",
+     "Now the perimeter",
+     "The two tens make twenty",
+     "Before adding the",
+     "Only two of them",
+     "numbers one and",
+     "So that already rules out"
+    ]
+   },
+   {
+    "say": "One of them has root three, and the other has root two. We're in a silver triangle, so the answer will have a root two. A whole-number hypotenuse gives a leg with root two, and the other way round. Root three belongs to the gold triangle, not here.",
+    "at": [
+     "One of them",
+     "We're in a silver triangle",
+     "so the answer",
+     "Root three belongs"
+    ]
+   },
+   {
+    "say": "And if we add it all to the end, twenty plus five root two plus five root two is twenty plus ten root two. Choice number three is our answer.",
+    "at": [
+     "And if we add it all",
+     "all to the",
+     "Choice number three is our answer"
+    ]
+   },
+   {
+    "say": "So the kite is symmetric, but only from right to left. Remember that, and you don't need to memorize all its rules. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So the kite is symmetric",
+     "need to memorize"
+    ]
+   }
+  ]
+ ]
+}

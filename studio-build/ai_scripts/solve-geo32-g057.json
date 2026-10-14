@@ -1,0 +1,67 @@
+{
+ "videoId": "solve-geo32-g057",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The accompanying figure shows quadrilateral A B C D. Given: angle A is one hundred eighteen degrees, and angle B is ninety-six degrees. Which of the following cannot be the value of alpha?",
+    "voice": "calm",
+    "at": [
+     "The accompanying figure"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We know two angles, and the question asks about alpha, the angle at C. The angle at D has no number at all. [short pause] So we'll use the rule that connects all four angles of a quadrilateral.",
+    "at": [
+     "and the question",
+     "The angle at D has no number",
+     "no number at"
+    ]
+   },
+   {
+    "say": "[short pause] The angles of every quadrilateral add up to three hundred sixty degrees. Let's call the angle at D beta. So one hundred eighteen, plus ninety-six, plus alpha, plus beta, is three hundred sixty.",
+    "at": [
+     "Let's call the angle at D",
+     "So one hundred eighteen, plus",
+     "ninety-six, plus alpha"
+    ]
+   },
+   {
+    "say": "One hundred eighteen plus ninety-six is two hundred fourteen. Three hundred sixty minus two hundred fourteen is one hundred forty-six. So alpha and beta together are one hundred forty-six.",
+    "at": [
+     "Three hundred sixty minus",
+     "hundred fourteen is",
+     "So alpha and beta together",
+     "are one hundred"
+    ]
+   },
+   {
+    "say": "What does that tell us? The two angles share one hundred forty-six between them. They could be seventy-three each. Or alpha could be one hundred, and beta forty-six. But neither of them can be one hundred forty-six or more. If alpha were one hundred forty-six, beta would be zero, and an angle of zero degrees isn't a real angle. So alpha can't be one hundred forty-six, and choice number four is our answer.",
+    "at": [
+     "If alpha were",
+     "forty-six, beta would",
+     "and choice number four is our answer"
+    ]
+   },
+   {
+    "say": "In the exam you'd mark it and move on. But here, let's check the other choices too, because one of them hides a trap. Alpha twenty-six gives beta one hundred twenty, together one hundred forty-six, so it's possible. Alpha seventy gives beta seventy-six, also possible.",
+    "at": [
+     "Alpha twenty-six gives",
+     "hundred twenty, together",
+     "so it's possible",
+     "also possible"
+    ]
+   },
+   {
+    "say": "Now alpha one hundred twenty-four. Some students say, wait, alpha looks acute in the figure, so it can't be one hundred twenty-four. But figures on the exam are not drawn to scale. An angle can be drawn acute and still be obtuse. Alpha one hundred twenty-four gives beta twenty-two, and that's possible too. So only one hundred forty-six is impossible, choice number four. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "figures on the exam are not drawn to scale",
+     "not drawn to",
+     "and that's possible too",
+     "forty-six is impossible"
+    ]
+   }
+  ]
+ ]
+}

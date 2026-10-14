@@ -1,0 +1,81 @@
+{
+ "videoId": "solve-geo32-g058",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C D is a parallelogram, and E lies on A D. Given: A B is nine centimeters, A E is four centimeters, angle A B C is seventy-two degrees, and angle B C E is fifty-four degrees. What is the perimeter of the parallelogram, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "A B C D is a parallelogram"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The perimeter is the sum of the four sides, A B plus B C plus C D plus A D. We know only one side, A B, and a piece of A D. [short pause] So we'll find the missing sides one at a time, with the rules of the parallelogram.",
+    "at": [
+     "The perimeter is the sum",
+     "of the four"
+    ]
+   },
+   {
+    "say": "[short pause] In a parallelogram, opposite sides are parallel and equal. A B is nine, so C D is nine too. B C and A D are equal to each other, but we don't know them yet. We do know part of A D. A E is four, and that will probably help.",
+    "at": [
+     "so C D is nine too",
+     "B C and",
+     "A E is four"
+    ]
+   },
+   {
+    "say": "Now the angles. Angle B is seventy-two. Opposite angles in a parallelogram are equal, so angle D is seventy-two too. Angles next to each other add up to one hundred eighty, so the whole angle C is one hundred eighty minus seventy-two, which is one hundred eight.",
+    "at": [
+     "B is seventy-two",
+     "so angle D is seventy-two",
+     "too. Angles next",
+     "so the whole angle C",
+     "is one hundred"
+    ]
+   },
+   {
+    "say": "Angle B C E is fifty-four, so the rest of angle C, angle E C D, is one hundred eight minus fifty-four, which is fifty-four too. So C E cuts angle C into two equal halves. It's an angle bisector.",
+    "at": [
+     "so the rest of angle C",
+     "C, angle E"
+    ]
+   },
+   {
+    "say": "Now look at triangle E D C. Two of its angles are known, seventy-two at D and fifty-four at C. The angles of a triangle add up to one hundred eighty. Seventy-two plus fifty-four is one hundred twenty-six, and one hundred eighty minus one hundred twenty-six is fifty-four. So angle D E C is fifty-four.",
+    "at": [
+     "Now look at triangle",
+     "Two of its",
+     "So angle D E C is fifty-four"
+    ]
+   },
+   {
+    "say": "There's also a shorter way to see it. E D is parallel to B C, so we get a Z, and the angles inside a Z are equal. So angle D E C equals angle B C E, fifty-four, right away.",
+    "at": [
+     "There's also a",
+     "so we get a Z",
+     "and the angles"
+    ]
+   },
+   {
+    "say": "In triangle E D C, the angles at E and at C are both fifty-four. Equal angles face equal sides, so the triangle is isosceles, and E D equals C D, which is nine. Remember this pattern. An angle bisector in a parallelogram cuts off an isosceles triangle.",
+    "at": [
+     "and E D equals C D",
+     "D, which is"
+    ]
+   },
+   {
+    "say": "Almost done. All of A D is four plus nine, which is thirteen, and B C is thirteen too, because opposite sides are equal. The perimeter is nine plus thirteen plus nine plus thirteen. Nine and nine is eighteen, thirteen and thirteen is twenty-six, and together forty-four. Choice number three is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "All of A D is four plus nine",
+     "four plus nine",
+     "The perimeter is nine",
+     "thirteen plus nine",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

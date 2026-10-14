@@ -1,0 +1,126 @@
+{
+ "videoId": "geo-050",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "The rhombus."
+  ],
+  [
+   {
+    "say": "A rhombus is a quadrilateral with all four sides equal. Its opposite angles are equal too.",
+    "at": [
+     "A rhombus is a quadrilateral",
+     "with all four",
+     "Its opposite angles"
+    ]
+   },
+   {
+    "say": "A rhombus is like a perfected parallelogram. Like a parallelogram, its opposite sides are equal and parallel, and on top of that, all four sides are equal. In the quadrilaterals lesson, we shortened a parallelogram until all its sides were equal, and that gave us a rhombus.",
+    "at": [
+     "A rhombus is",
+     "its opposite sides are equal and parallel",
+     "and parallel, and"
+    ]
+   },
+   {
+    "say": "For example, a rhombus with side seven has a perimeter of four times seven, twenty-eight. And if one angle is sixty degrees, the opposite angle is sixty too, and the other two are one hundred twenty each, because two angles next to each other add up to one hundred eighty, like in every parallelogram.",
+    "at": [
+     "a rhombus with side seven",
+     "has a perimeter",
+     "if one angle is sixty",
+     "degrees, the opposite"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the diagonals. They're perpendicular to each other, so they meet at a right angle.",
+    "at": [
+     "Now the diagonals",
+     "They're perpendicular",
+     "so they meet"
+    ]
+   },
+   {
+    "say": "Are they equal? Not necessarily. Usually there's a long diagonal and a short one. If the two diagonals are equal, the rhombus is a square.",
+    "at": [
+     "Usually there's a long diagonal",
+     "and a short",
+     "If the two diagonals are equal",
+     "equal, the rhombus"
+    ]
+   },
+   {
+    "say": "They cut each other in half, and they also cut the angles of the rhombus in half.",
+    "at": [
+     "They cut each other in half",
+     "they also cut the angles",
+     "of the rhombus"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Instead of remembering all these rules, the sides, the angles and the diagonals, just remember the shape, and remember that it's symmetric.",
+    "at": [
+     "these rules, the",
+     "just remember the shape",
+     "remember that it's symmetric"
+    ]
+   },
+   {
+    "say": "This diagonal is a line of symmetry. The triangle on the right is exactly like the triangle on the left. So the sides up here are equal, the sides down here are equal, and the angle on the right equals the angle on the left.",
+    "at": [
+     "This diagonal is a line of symmetry",
+     "The triangle on"
+    ]
+   },
+   {
+    "say": "And it's not only symmetric right to left, it's also symmetric top to bottom. The top triangle is exactly like the bottom one, and the top angle equals the bottom angle.",
+    "at": [
+     "it's also symmetric top to bottom",
+     "The top triangle"
+    ]
+   },
+   {
+    "say": "So all the sides are equal, opposite angles are equal, and the diagonals are perpendicular, cut each other in half, and cut the angles in half.",
+    "at": [
+     "So all the sides are equal",
+     "cut each other"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The area of a rhombus is the product of the diagonals, over two. Why? Take half of one diagonal and half of the other. They're the legs of a small right triangle.",
+    "at": [
+     "The area of a rhombus",
+     "is the product",
+     "Take half of one diagonal",
+     "and half of"
+    ]
+   },
+   {
+    "say": "Its area is leg times leg, over two. The rhombus is four of these triangles, so we multiply by four. What we end up with is diagonal times diagonal, over two.",
+    "at": [
+     "diagonal times diagonal"
+    ]
+   },
+   {
+    "say": "For example, diagonals ten and six. Ten times six is sixty, over two, thirty. Another one, diagonals eight and twelve. Eight times twelve is ninety-six, over two, forty-eight.",
+    "at": [
+     "diagonals ten and six",
+     "Ten times six",
+     "diagonals eight and twelve",
+     "Eight times twelve"
+    ]
+   },
+   {
+    "say": "And a rhombus is also a parallelogram, so base times height works too, if that's what you're given. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "base times height works too"
+    ]
+   }
+  ]
+ ]
+}

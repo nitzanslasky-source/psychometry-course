@@ -1,0 +1,68 @@
+{
+ "videoId": "solve-q-r26-t32-02",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C D is a right trapezoid, with A D parallel to B C, and angle A B C is ninety degrees. Given: A D is nine centimeters, B C is fifteen centimeters, and C D is ten centimeters. What is the area of the trapezoid, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "A B C D is a right trapezoid"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "For the area we need the two bases, which we have, nine and fifteen, and the height. A B is a height, because it's perpendicular to both bases, but we don't know its length.",
+    "at": [
+     "For the area we need",
+     "the two bases",
+     "A B is a height",
+     "because it's perpendicular"
+    ]
+   },
+   {
+    "say": "[short pause] So let's drop a height from D down to B C, and call its foot E. Now the trapezoid is a rectangle, A B E D, and a right triangle, D E C.",
+    "at": [
+     "let's drop a height from D",
+     "D down to",
+     "Now the trapezoid is a rectangle",
+     "rectangle, A B"
+    ]
+   },
+   {
+    "say": "In the rectangle, B E equals A D, nine. So E C is fifteen minus nine, which is six.",
+    "at": [
+     "In the rectangle",
+     "equals A D",
+     "which is six"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the right triangle D E C. Its hypotenuse is C D, ten, and one leg is six. That's the triple six, eight, ten, so the other leg, D E, is eight. That's the height.",
+    "at": [
+     "Now the right triangle",
+     "Its hypotenuse is C D",
+     "ten, and one",
+     "That's the triple",
+     "ten, so the"
+    ]
+   },
+   {
+    "say": "Now the area. Nine plus fifteen is twenty-four. Times eight, over two. Twenty-four over two is twelve, and twelve times eight is ninety-six. Choice number two is our answer.",
+    "at": [
+     "Now the area",
+     "Times eight, over",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "If you got one hundred twenty, you used C D, ten, as the height. But the slanted leg is not the height. The height is perpendicular to the bases. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "If you got one hundred twenty"
+    ]
+   }
+  ]
+ ]
+}

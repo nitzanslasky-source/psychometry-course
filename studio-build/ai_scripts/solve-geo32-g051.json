@@ -1,0 +1,71 @@
+{
+ "videoId": "solve-geo32-g051",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The sum of the lengths of the diagonals of a rhombus is forty-six centimeters. The absolute difference between their lengths is fourteen centimeters. What is its perimeter, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "The sum of the lengths"
+    ],
+    "pause": 0.5
+   },
+   "Why does it say absolute difference? So we don't get tangled up with big minus small or small minus big. A length can't be negative, so the difference is simply the big one minus the small one. [short pause] We'll find the two diagonals first, and then use them to find the side.",
+   {
+    "say": "[short pause] Let's call the diagonals a and b, with a the bigger one. Then a plus b is forty-six, and a minus b is fourteen. Two equations, two unknowns.",
+    "at": [
+     "Then a plus b is forty-six",
+     "and a minus b",
+     "fourteen. Two equations"
+    ]
+   },
+   {
+    "say": "Add the two equations. Plus b and minus b cancel, so two a is sixty, and a is thirty. That's the bigger diagonal. And b, thirty minus what gives fourteen? Sixteen. So b is sixteen.",
+    "at": [
+     "so two a is sixty",
+     "the bigger diagonal"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the figure. The long diagonal is thirty, and the short one is sixteen. The diagonals of a rhombus cut each other in half, so we split thirty into fifteen and fifteen, and sixteen into eight and eight.",
+    "at": [
+     "Now the figure",
+     "The long diagonal is thirty",
+     "and the short one is sixteen",
+     "sixteen. The diagonals",
+     "so we split thirty",
+     "fifteen and fifteen"
+    ]
+   },
+   {
+    "say": "We need the perimeter, so we need the side. The diagonals are perpendicular, so each quarter of the rhombus is a right triangle, with legs eight and fifteen, and the side as its hypotenuse. Here it is, bigger.",
+    "at": [
+     "each quarter of the rhombus",
+     "is a right",
+     "Here it is, bigger"
+    ]
+   },
+   {
+    "say": "Eight, fifteen, seventeen is a Pythagorean triple. So the side is seventeen.",
+    "at": [
+     "Eight, fifteen, seventeen",
+     "So the side is seventeen"
+    ]
+   },
+   {
+    "say": "All four sides of a rhombus are equal, so the perimeter is four times seventeen, sixty-eight. Choice number two is our answer. Careful, two hundred forty is thirty times sixteen over two, the area, not the perimeter.",
+    "at": [
+     "a rhombus are",
+     "four times seventeen",
+     "Choice number two is our answer",
+     "Careful, two hundred forty",
+     "thirty times sixteen"
+    ]
+   },
+   "One tip to take from here. Instead of remembering all the rules of a rhombus, remember that it's symmetric, right equals left and top equals bottom. Then you can always see its angles, its sides and its diagonals. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

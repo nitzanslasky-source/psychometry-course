@@ -1,0 +1,115 @@
+{
+ "videoId": "solve-geo32-g055",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The area of isosceles trapezoid A B C D is sixty-five square centimeters. D E is an altitude, D E is five centimeters, and the area of triangle D E C is ten square centimeters. What is A D, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "The area of isosceles trapezoid"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A D is the short base at the top. [short pause] We'll solve it two ways, by using the symmetry, and then with the trapezoid area formula.",
+    "at": [
+     "A D is the short base",
+     "base at the"
+    ]
+   },
+   {
+    "say": "[short pause] Start with the small triangle D E C on the right. Its area is ten, and it's a right triangle, so its area is one leg times the other, over two. Five times E C, over two, equals ten. So E C is four.",
+    "at": [
+     "Start with the small triangle",
+     "D E C",
+     "Its area is ten",
+     "its area is one",
+     "Five times E C",
+     "two, equals ten",
+     "So E C is four"
+    ]
+   },
+   {
+    "say": "Here's a tip for every trapezoid question: drop the heights, both of them. One height is already given, so we drop the second one, from A down to the base. Call its foot F.",
+    "at": [
+     "trapezoid question: drop",
+     "from A down to the base",
+     "base. Call its"
+    ]
+   },
+   {
+    "say": "The trapezoid is isosceles, so it's symmetric. Right equals left. So B F is four too, and the triangle A B F on the left also has area ten.",
+    "at": [
+     "So B F is four too",
+     "too, and the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The middle part, A F E D, is a rectangle. Its top is A D, and its bottom, F E, is the same length. Let's call it x.",
+    "at": [
+     "The middle part",
+     "The middle part",
+     "E D, is"
+    ]
+   },
+   {
+    "say": "Careful, here's a common mistake. In the drawing it looks like a square, but drawings on the exam don't have to be accurate. We don't know that x equals five. It's a rectangle.",
+    "at": [
+     "In the drawing it looks like a square",
+     "like a square"
+    ]
+   },
+   {
+    "say": "The whole trapezoid is sixty-five, and the two triangles are ten each. So what's left in the middle is sixty-five minus ten minus ten, which is forty-five.",
+    "at": [
+     "So what's left in the middle",
+     "middle is sixty-five",
+     "which is forty-five"
+    ]
+   },
+   {
+    "say": "The area of a rectangle is length times width. Five times x is forty-five, so x is nine. A D is nine, and choice number two is our answer.",
+    "at": [
+     "The area of",
+     "Five times x is forty-five",
+     "so x is",
+     "A D is nine",
+     "choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now, if you hadn't noticed the symmetry, you'd probably use the trapezoid formula, because the question is about a trapezoid's area. It works, but look how much longer it is.",
+    "at": [
+     "noticed the symmetry",
+     "look how much"
+    ]
+   },
+   {
+    "say": "The top base is x. The bottom base is four, plus x, plus four, so x plus eight. The sum of the bases is x plus x plus eight. Times the height, five, over two, equals sixty-five.",
+    "at": [
+     "The top base is x",
+     "The bottom base is four",
+     "plus x, plus",
+     "The sum of the bases",
+     "is x plus"
+    ]
+   },
+   {
+    "say": "Multiply both sides by two: two x plus eight, times five, is one hundred thirty. Open the bracket: ten x plus forty is one hundred thirty. So ten x is ninety, and x is nine. Choice number two again.",
+    "at": [
+     "Multiply both sides by two",
+     "two x plus",
+     "Open the bracket",
+     "plus forty is",
+     "Choice number two again"
+    ]
+   },
+   "Same answer, but much longer. The first way saved all that, just by seeing that the trapezoid is symmetric, so the middle must be forty-five. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

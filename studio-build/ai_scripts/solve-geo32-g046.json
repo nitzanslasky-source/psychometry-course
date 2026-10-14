@@ -1,0 +1,92 @@
+{
+ "videoId": "solve-geo32-g046",
+ "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The diagonals of rectangle A B C D intersect at E. Given: C D is five centimeters, and angle B E C is a hundred twenty degrees. What is the area of the rectangle, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "The diagonals of rectangle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "For the area we need the length and the width. C D is five, so we still need B C. [short pause] The angle at E will lead us there.",
+    "at": [
+     "need the length",
+     "we still need",
+     "lead us there"
+    ]
+   },
+   {
+    "say": "[short pause] In a rectangle, the diagonals are equal, and they cut each other in half. So E B and E C are halves of equal diagonals, and they're equal. Triangle B E C is isosceles.",
+    "at": [
+     "In a rectangle",
+     "are equal, and",
+     "So E B and E C",
+     "C are halves"
+    ]
+   },
+   {
+    "say": "Its top angle is a hundred twenty, so the two base angles share the rest. A hundred eighty minus a hundred twenty is sixty, and half of that is thirty. So angle E B C is thirty, and angle E C B is thirty.",
+    "at": [
+     "A hundred eighty minus",
+     "hundred twenty is",
+     "So angle E B C is thirty",
+     "is thirty, and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now look at triangle D B C. Its angle at C is ninety, because it's a corner of the rectangle. Its angle at B is the same thirty we just found. So the last angle, at D, is sixty.",
+    "at": [
+     "Now look at triangle",
+     "Its angle at C",
+     "ninety, because it's"
+    ]
+   },
+   {
+    "say": "Thirty, sixty, ninety: that's the gold triangle. Its sides are in the ratio a, a root three, two a. The short leg, a, is across from the thirty. Across from the thirty at B is C D, so a is five.",
+    "at": [
+     "that's the gold triangle",
+     "Its sides are",
+     "Across from the thirty at B",
+     "B is C"
+    ]
+   },
+   {
+    "say": "The long leg is the short leg times root three. So B C is five root three.",
+    "at": [
+     "So B C is"
+    ]
+   },
+   {
+    "say": "Now the area of the rectangle, length times width: five root three times five, which is twenty-five root three. Choice number three is our answer.",
+    "at": [
+     "Now the area",
+     "rectangle, length times",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "If you're not sure about a rule of the diagonals in the exam, draw an exaggerated rectangle, very low and very wide, and look at it. You'll see right away that the diagonals aren't perpendicular and don't cut the angles in half.",
+    "at": [
+     "about a rule",
+     "draw an exaggerated rectangle",
+     "low and very"
+    ]
+   },
+   {
+    "say": "And notice how a gold triangle was hiding inside the rectangle. Triangles live inside quadrilateral questions, and later in circles too. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "a gold triangle was hiding",
+     "and later in"
+    ]
+   }
+  ]
+ ]
+}
