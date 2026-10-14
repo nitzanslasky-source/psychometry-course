@@ -708,6 +708,7 @@ body.camlayout{--band:44vh;padding-top:var(--band)}
     <span><b>Same mic, same distance</b> every time (about a hand-span)</span>
     <span><b>Read like you teach</b>, to one student</span>
     <span>Stumbled? Press <kbd>M</kbd> and <b>repeat the sentence</b></span>
+    <span title="The laptop keys sit next to the built-in microphone: every press is heard. A clicker or a foot pedal is quiet."><b>Quietest:</b> a clicker or foot pedal instead of the laptop keys</span>
   </div>
 </div>
 <div class="main">
@@ -745,7 +746,7 @@ body.camlayout{--band:44vh;padding-top:var(--band)}
       <button class="big" id="bStop" disabled>Stop &amp; save</button>
       <button class="big" id="bMist" disabled title="I stumbled; I'll repeat this sentence (M)">Mistake</button>
       <span class="state" id="state">Ready.</span>
-      <span class="keys"><kbd>Space</kbd> / click next paragraph · <kbd>←</kbd> back · <kbd>M</kbd> mistake · <kbd>P</kbd> pause</span>
+      <span class="keys"><kbd>Space</kbd> / click next paragraph · <kbd>←</kbd> back · <kbd>M</kbd> mistake · <kbd>P</kbd> pause<br><b>Quieter:</b> clicker / foot pedal <kbd>PageDown</kbd> next · <kbd>PageUp</kbd> back · <kbd>B</kbd> or <kbd>.</kbd> mistake</span>
     </div>
     <div class="pbar" id="pbar"><span id="pinfo"></span><button id="pChanged">Select changed</button><button id="pClear">Clear</button><button id="pNext" class="big" hidden>Next ▸</button></div>
     <div class="prompter" id="prompter" tabindex="-1"><div class="inner" id="paras"></div></div>
@@ -1116,9 +1117,21 @@ function setUI(){const r=S.rec,t=$('#timer');
   if(!r)t.textContent=fmt(0,true)}
 $('#bRec').onclick=startRec;$('#bPause').onclick=togglePause;$('#bStop').onclick=stopRec;$('#bMist').onclick=mistake;
 $('#bNext').onclick=()=>selectVideo(S.cur+1);
+/* 2026-10-14 (Claude, minimal) CLICKER / FOOT PEDAL: the laptop keys sit on the same body as the built-in mic, so every
+   press is a click in the take (measured: M ~20 dB under her voice, clearly heard in the pauses). A presentation
+   clicker or a Bluetooth page-turner pedal is quiet and away from the mic. They send PageDown / PageUp (or the arrows,
+   Space) and B or "." from the "blank screen" button: PageDown = next, PageUp = back, B / . = mistake. These keys work
+   even when a checkbox has the focus, a held pedal does not repeat, and F5 from a clicker's "present" button cannot
+   reload the page while recording. Not recording: a toast confirms each clicker key (to test the clicker). */
+const CLICKER={PageDown:'next paragraph',PageUp:'back',b:'mistake',B:'mistake','.':'mistake'};
 document.addEventListener('keydown',e=>{
-  if(e.target.closest&&e.target.closest('select,input,textarea'))return;if(e.metaKey||e.ctrlKey||e.altKey)return;
   const k=e.key;
+  if(k==='F5'&&S.rec){e.preventDefault();toast('Reload blocked while recording (a clicker\'s “present” button sends F5).');return}
+  if(CLICKER[k]&&!(e.metaKey||e.ctrlKey||e.altKey)&&!(e.target.closest&&e.target.closest('select,textarea,input:not([type=checkbox])'))){
+    e.preventDefault();if(e.repeat)return;if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();
+    if(!S.rec)toast('Clicker: '+(k==='.'?'“.”':k)+' = '+CLICKER[k]+(CLICKER[k]==='mistake'?' (works while recording)':''),1800);
+    if(CLICKER[k]==='next paragraph'){if(!S.rec||!S.rec.paused)nextPara()}else if(CLICKER[k]==='back')step(-1);else mistake();return}
+  if(e.target.closest&&e.target.closest('select,input,textarea'))return;if(e.metaKey||e.ctrlKey||e.altKey)return;
   if(k===' '||k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'){e.preventDefault();if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();if(!S.rec||!S.rec.paused)nextPara()}
   else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){e.preventDefault();step(-1)}
   else if(k==='m'||k==='M'){e.preventDefault();mistake()}

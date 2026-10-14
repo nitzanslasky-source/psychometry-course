@@ -15,6 +15,8 @@ What this does (run it with the Python that has faster-whisper + numpy, e.g. the
      script is CUT when it is a restart (its words are re-read right after it), a filler (um / uh / er), or when a
      mistake mark falls in it / right after it; any other extra words are her own rewording and are KEPT (reported).
      Before the first script word and after the last one: cut.
+  2b. (2026-10-14) key clicks removed from every source take before anything is cut or spliced: declick() below,
+     report.json['declick']; READING_DECLICK=0 turns it off.
   3. silences capped at 0.7 s (0.9 s at a slide change = method change); her shorter pauses stay. Cuts at the
      lowest-energy 10 ms point near the boundary, 15 ms crossfades. Gentle 70 Hz high-pass, loudness -16 LUFS (two-pass
      linear loudnorm, no compression, no denoise).
@@ -419,6 +421,211 @@ def frames_db(y, fr=480):
     return 20 * np.log10(e)
 
 
+# ------------------------------------------------------------------------------------------------ key-click removal
+# 2026-10-14: she reads on the MacBook's built-in mic, which hears every key she presses (Space / arrows / M / P, or
+# a trackpad click). Measured on 6 of her takes (~470 logged events): an M press is a press + release click pair
+# ~80 ms apart, the press 25-145 ms (median ~90 ms) AFTER the logged time (the page counts recorded samples in
+# 85 ms blocks, so its clock runs a little behind); ~20 dB under her speech level, 30+ dB over the room tone, i.e.
+# clearly audible in her pauses. Space presses are softer (~30 dB under speech) and later (median ~250 ms).
+# So, per SOURCE take (the full take and every patch take, before any cut / splice, so every later time stays valid):
+#   each logged event (paragraphStarts except the first 'start', mistakes, pauses) -> search a window after it for
+#   click-like transients: a sudden rise of the >5 kHz energy (1 ms frames, 15+ dB over the 20 ms before), that dies
+#   away within ~12-35 ms (a sibilant does not), above the take's HF floor.
+#   - both sides quiet (her pause): the click (+ its low "thump" tail, up to 90 ms) is replaced with room tone copied
+#     from a quiet stretch next to it (3 ms crossfades); no clean room tone near -> a short dip to the pause level.
+#   - her voice next to it (M / P presses only - the ones found at Space presses were no more than chance): only a
+#     transient with the full click signature (rise 18+ dB, decay 16+ dB, a low-band
+#     thump 3+ dB over the 15 ms before it; random places in her speech pass this 3% of the time) is touched, and
+#     only gently: a short spectral repair (5 ms STFT frames) that lowers each bin above ~700 Hz to at most the
+#     louder of the same bin just before / just after the click. Nothing below 400 Hz is touched; nothing is cut;
+#     the length of the take never changes.
+# report.json['declick'] lists every event and what was done. READING_DECLICK=0 turns it off. The camera file's own
+# audio is not touched (it is only used to sync the camera to the WAV).
+DECLICK = os.environ.get('READING_DECLICK', '1') != '0'
+DC_F = 48                                    # 1 ms frames at 48 kHz
+
+
+def _hp_fft(x, fc=5000.0):
+    n = len(x); f = np.fft.rfftfreq(n, 1 / SR)
+    g = np.clip((f - fc / 2) / (fc / 2), 0, 1); g = .5 - .5 * np.cos(np.pi * g)
+    return np.fft.irfft(np.fft.rfft(x) * g, n)
+
+
+def _ms_db(x, fr=DC_F):
+    n = len(x) // fr
+    return 10 * np.log10(np.mean(np.asarray(x[:n * fr], 'float64').reshape(n, fr) ** 2, axis=1) + 1e-14)
+
+
+def _band_e(x, lo, hi):
+    n = len(x); X = np.fft.rfft(x * np.hanning(n)); f = np.fft.rfftfreq(n, 1 / SR)
+    return float(np.sum(np.abs(X[(f >= lo) & (f < hi)]) ** 2) + 1e-20)
+
+
+def click_events(side):
+    """the logged key presses of a take: [(t, kind)] (kind para / back / jump / mistake / pause)"""
+    ev = [(float(p['t']), p.get('how', 'para')) for p in side.get('paragraphStarts', []) if p.get('how') != 'start' and p['t'] > .2]
+    ev += [(float(m['t']), 'mistake') for m in side.get('mistakes', [])]
+    ev += [(float(p['at']), 'pause') for p in side.get('pauses', []) if 'at' in p]
+    return sorted(ev)
+
+
+def find_clicks(y, side):
+    """-> (clicks, events, levels): click-like transients near each logged key press of this take (not repaired)"""
+    T = len(y) / SR
+    # take levels: speech (90th pct of 10 ms frames, as the rest of this file), room tone, HF floor (1 ms frames)
+    db10 = frames_db(y); live = db10[db10 > -80]
+    speech_db = float(np.percentile(live, 90)) if len(live) else -30.0
+    room_db = float(np.percentile(live, 5)) if len(live) else -80.0
+    hfe = np.concatenate([_ms_db(_hp_fft(y[int(s * SR):int(s * SR) + SR // 4])) for s in np.linspace(.5, max(.5, T - .6), 60)]) if T > 1.5 else np.array([-120.0])
+    hf_floor = float(np.percentile(hfe, 10))
+    voice_db = speech_db - 30                                   # her voice (the silence capping threshold)
+    # voice = 120 ms or more in a row over that level: a click and its low "thump" ring (up to ~100 ms) is not voice
+    vo = db10 > voice_db; voiced = np.zeros(len(vo), bool); k = 0
+    while k < len(vo):
+        if vo[k]:
+            k0 = k
+            while k < len(vo) and vo[k]: k += 1
+            if k - k0 >= 12: voiced[k0:k] = True
+        else: k += 1
+    out, evs = [], []
+    for t, kind in click_events(side):
+        lo, hi = (-.04, .30) if kind in ('mistake', 'pause') else (-.10, .50)
+        a0 = int((t + lo - .06) * SR); b0 = int((t + hi + .08) * SR)
+        if a0 < 0 or b0 > len(y): evs.append(dict(t=round(t, 3), kind=kind, clicks=[])); continue
+        seg = np.asarray(y[a0:b0], 'float64'); e = _ms_db(_hp_fft(seg)); bb = _ms_db(seg)
+        found = []
+        for k in range(25, len(e) - 40):
+            tk = (a0 + k * DC_F) / SR - t
+            if not lo <= tk < hi: continue
+            if e[k] < e[k - 1] or e[k] < e[k + 1]: continue
+            jump = e[k] - np.median(e[k - 25:k - 4])
+            if jump < 15 or e[k] < hf_floor + 12: continue
+            dec = e[k:k + 4].max() - np.median(e[k + 12:k + 35])
+            if dec < 12: continue
+            c = a0 + k * DC_F - DC_F                                    # 1 ms before the onset frame's peak
+            low = 10 * np.log10(_band_e(seg[k * DC_F - DC_F:k * DC_F + 8 * DC_F], 50, 1500) / _band_e(seg[k * DC_F - 16 * DC_F:k * DC_F - 2 * DC_F], 50, 1500))
+            # its end: the HF energy back within 6 dB of the level before it (at least 8 ms, at most 40 ms)
+            base = np.median(e[k - 25:k - 4]); m = k + 8
+            while m < min(len(e) - 1, k + 40) and e[m] > base + 6: m += 1
+            # ... and the broadband "thump" (it can ring ~100 ms) back near the level before it (at most 90 ms)
+            bbase = np.median(bb[max(0, k - 60):k - 5]); m2 = m
+            while m2 < min(len(bb) - 2, k + 90) and max(bb[m2], bb[m2 + 1]) > bbase + 4: m2 += 1
+            found.append(dict(c=c, jump=float(jump), dec=float(dec), low=float(low), hf_end=a0 + m * DC_F, end=a0 + m2 * DC_F))
+        # strongest per 20 ms, at most 3 per press (press, release, a bounce)
+        found.sort(key=lambda f: -f['jump']); keep = []
+        for f in found:
+            if all(abs(f['c'] - g['c']) > .02 * SR for g in keep): keep.append(f)
+        keep = sorted(keep[:3], key=lambda f: f['c'])
+        cl = []
+        for f in keep:
+            c, end = f['c'], f['end']
+            side_lv = lambda x0, x1: float(np.percentile(db10[max(0, x0 // 480):max(x0 // 480 + 1, x1 // 480)], 75))
+            before = side_lv(c - int(.08 * SR), c - int(.005 * SR)); after = side_lv(end + int(.005 * SR), end + int(.10 * SR))
+            quiet = not voiced[max(0, (c - int(.10 * SR)) // 480):max(0, (c - int(.005 * SR)) // 480)].any() \
+                and not voiced[(end + int(.005 * SR)) // 480:(end + int(.12 * SR)) // 480].any()
+            # next to her voice only for M / P presses: at Space presses the clicks are soft (~35 dB under her voice) and
+            # the ones found next to her voice were no more than at random places (6 in 100) - so those are left alone
+            ok = (f['jump'] >= 15 and f['dec'] >= 12) if quiet else (kind in ('mistake', 'pause') and f['jump'] >= 18 and f['dec'] >= 16 and f['low'] >= 3)
+            seg_c = np.asarray(y[c:c + 480], 'float64')
+            lvl = 10 * np.log10(np.mean(seg_c ** 2) + 1e-14)
+            cl.append(dict(at=round(c / SR, 4), lag_ms=round((c / SR - t) * 1000), len_ms=round((end - c) / SR * 1000), quiet=quiet, ok=ok,
+                           jump=round(f['jump'], 1), decay=round(f['dec'], 1), thump=round(f['low'], 1),
+                           level_vs_speech_db=round(lvl - speech_db, 1), over_room_db=round(lvl - room_db, 1),
+                           before_vs_speech_db=round(before - speech_db, 1), after_vs_speech_db=round(after - speech_db, 1), _c=c, _end=end, _hf_end=f['hf_end']))
+        evs.append(dict(t=round(t, 3), kind=kind, clicks=cl))
+        out += [x for x in cl if x['ok']]
+    return out, evs, dict(speech_db=round(speech_db, 1), room_db=round(room_db, 1), hf_floor_db=round(hf_floor, 1))
+
+
+def _room_tone(y, a, b, avoid, room_lv):
+    """a quiet stretch as long as [a, b) within 0.4 s of it, not overlapping `avoid` spans, no transient in it"""
+    n = b - a; best = None
+    for off in list(range(-n - int(.02 * SR), -int(.4 * SR), -int(.005 * SR))) + list(range(n + int(.02 * SR), int(.4 * SR), int(.005 * SR))):
+        s = a + off if off < 0 else b + off - n
+        if s < 0 or s + n > len(y) or any(s < q1 and s + n > q0 for q0, q1 in avoid): continue
+        x = np.asarray(y[s:s + n], 'float64'); fr = _ms_db(x, 96) if n >= 96 else np.array([10 * np.log10(np.mean(x ** 2) + 1e-14)])
+        if fr.max() > room_lv + 6: continue                       # not room tone (voice, a breath, a click)
+        sc = fr.max()
+        if best is None or sc < best[0]: best = (sc, s)
+    return None if best is None else best[1]
+
+
+def _spectral_repair(y, c, end, avoid=()):
+    """lower each bin (>700 Hz, ramp from 400) in the frames over [c, end) to at most the louder of its level just
+    before / just after (frames not touching another click) - the voice under the click stays, only what the click
+    adds on top goes"""
+    N, H = 256, 64; pad = int(.08 * SR)
+    a, b = max(0, c - pad), min(len(y), end + pad)
+    x = np.asarray(y[a:b], 'float64'); n = len(x)
+    w = np.hanning(N + 1)[:N]
+    starts = list(range(0, n - N + 1, H))
+    if len(starts) < 8: return 0.0
+    X = np.array([np.fft.rfft(x[s:s + N] * w) for s in starts]); M = np.abs(X)
+    f = np.fft.rfftfreq(N, 1 / SR); g = np.clip((f - 400) / 300, 0, 1)        # 0 below 400 Hz, 1 above 700 Hz
+    c0, c1 = c - a - int(.004 * SR), end - a + int(.002 * SR)
+    clean = lambda s: not any(a + s < q1 and a + s + N > q0 for q0, q1 in avoid)
+    pre = [i for i, s in enumerate(starts) if s + N <= c0 and clean(s)][-4:]; post = [i for i, s in enumerate(starts) if s >= c1 and clean(s)][:4]
+    hit = [i for i, s in enumerate(starts) if s < c1 and s + N > c0]
+    if not pre or not post or not hit: return 0.0
+    ref = np.maximum(np.median(M[pre], axis=0), np.median(M[post], axis=0))
+    removed = 0.0
+    for i in hit:
+        lim = np.minimum(M[i], ref); newm = M[i] * (1 - g) + lim * g
+        removed += float(np.sum(M[i] ** 2 - newm ** 2))
+        X[i] = X[i] * (newm / np.maximum(M[i], 1e-12))
+    # weighted overlap-add of every frame (unchanged frames give back the original exactly)
+    out = np.zeros(n); wsum = np.zeros(n)
+    for i, s in enumerate(starts):
+        out[s:s + N] += np.fft.irfft(X[i], N) * w; wsum[s:s + N] += w * w
+    ok = wsum > 1e-3
+    seg = x.copy(); seg[ok] = out[ok] / wsum[ok]
+    # only the frames near the click change: blend back to the original exactly at the region edges (2 ms)
+    r = int(.002 * SR); keep = np.zeros(n); keep[max(0, c0 - N):min(n, c1 + N)] = 1
+    ramp = np.convolve(keep, np.ones(r) / r, 'same')
+    y[a:b] = (x * (1 - ramp) + seg * ramp).astype(y.dtype)
+    tot = float(np.sum(M[hit] ** 2)) + 1e-20
+    return round(10 * np.log10(max(1e-6, 1 - removed / tot)), 1)                  # dB change of the hit frames
+
+
+def declick(y, side, label=''):
+    """remove the key clicks near this take's logged key presses, in place -> log entries (see the note above)"""
+    if not DECLICK: return [dict(take=label, off='READING_DECLICK=0')]
+    clicks, evs, lv = find_clicks(y, side)
+    avoid = [(x['_c'] - int(.003 * SR), x['_end'] + int(.015 * SR)) for x in clicks]
+    f3 = int(.003 * SR)
+    for x in clicks:
+        c, end = x['_c'], x['_end']
+        if x['quiet']:
+            a, b = max(f3, c - int(.004 * SR)), min(len(y) - f3, end + int(.015 * SR))      # its first ms can lead the onset frame
+            pre = np.asarray(y[max(0, c - int(.15 * SR)):c - int(.005 * SR)], 'float64')
+            local = float(np.median(_ms_db(pre, 480))) if len(pre) >= 480 else lv['room_db']      # this pause's own level
+            src = _room_tone(y, a - f3, b + f3, avoid, max(lv['room_db'], local))
+            if src is not None:
+                n = b - a + 2 * f3; tone = np.asarray(y[src:src + n], 'float64'); orig = np.asarray(y[a - f3:b + f3], 'float64')
+                fade = np.ones(n); ramp = np.sin(np.linspace(0, np.pi / 2, f3)); fade[:f3] = ramp; fade[-f3:] = ramp[::-1]
+                y[a - f3:b + f3] = (orig * np.sqrt(1 - fade ** 2) + tone * fade).astype(y.dtype)       # equal-power (uncorrelated noise)
+                x['did'] = 'room tone'
+            else:
+                # no clean room tone near: dip to the level of the pause (-> about the room tone), 3 ms ramps
+                seg = np.asarray(y[a:b], 'float64'); lvl = 10 * np.log10(np.mean(seg ** 2) + 1e-14)
+                gain = 10 ** (min(0.0, max(lv['room_db'], local) - lvl) / 20); env = np.full(b - a, gain)
+                rr = np.linspace(1, gain, f3); env[:f3] = rr; env[-f3:] = rr[::-1]
+                y[a:b] = (seg * env).astype(y.dtype); x['did'] = 'fade (%.0f dB)' % (20 * np.log10(gain))
+            x['span_ms'] = [round(a / SR, 3), round(b / SR, 3)]
+        else:
+            ch = _spectral_repair(y, c, min(end, x['_hf_end'] + int(.01 * SR)), [q for q in avoid if not q[0] <= c <= q[1]])
+            x['did'] = 'spectral repair (%+.1f dB over the click frames)' % ch
+    log = []
+    for ev in evs:
+        e2 = dict(ev, take=label, clicks=[{k: v for k, v in x.items() if not k.startswith('_')} for x in ev['clicks']])
+        for x in e2['clicks']:
+            if not x['ok']: x['did'] = 'left (not a clear key click%s)' % ('' if x['quiet'] else ' next to her voice')
+        e2['result'] = ('no click found' if not ev['clicks'] else
+                        '; '.join('%+d ms %s' % (x['lag_ms'], x['did']) for x in e2['clicks']))
+        log.append(e2)
+    return [dict(take=label, levels=lv, events=len(evs), repaired=len(clicks))] + log
+
+
 def low_point(db, t, lo, hi):
     """the quietest 10 ms frame time within [t+lo, t+hi]"""
     a, b = max(0, int((t + lo) * 100)), min(len(db) - 1, int((t + hi) * 100))
@@ -454,7 +661,7 @@ def splice_patches(vid, base, side, y, words, lines, out):
     def reached(i):
         ts = [q['t'] for q in starts if q['para'] == i]
         return max(ts) if ts else None
-    patched = {}
+    patched = {}; _dc_done = {}
     for i in sorted(newest, reverse=True):        # from the end, so earlier times stay valid
         f, ps_, pw = newest[i]
         t_a = reached(i); nxt = [q['t'] for q in starts if q['t'] > (t_a or 0) and q['para'] != i]
@@ -474,6 +681,11 @@ def splice_patches(vid, base, side, y, words, lines, out):
             return k / 100.0
         a = (_end(before[-1]['e']) + .15) if before else 0.0; b = (_on(after[0]['s']) - .1) if after else len(y) / SR
         py = read_wav(os.path.join(d, f))
+        if f not in _dc_done:                        # key clicks out of the patch take (its own event times)
+            _dc_done[f] = declick(py, json.load(open(os.path.join(d, f[:-4] + '.json'))), f)
+            side.setdefault('_declick', []).extend(_dc_done[f])
+        else: py = _dc_done.get('_y_' + f, py)
+        _dc_done['_y_' + f] = py
         # a patch take that covers SEVERAL paragraphs: only this paragraph's part of it (from her Space press for it to
         # the next one) - the whole take spliced in per paragraph doubled q-359's re-read (2026-10-11)
         pst = sorted(q['t'] for q in ps_.get('paragraphStarts', []) if q['para'] == i)
@@ -526,6 +738,8 @@ def run(vid):
     assert len(lines) == len(asread), vid + ': the script has a different number of lines than her reading'
     out = os.path.join(OUTROOT, vid); os.makedirs(out, exist_ok=True)
     y = read_wav(base + '.wav')
+    # key clicks out first, on the source take itself (its own event times; before any cut / patch splice)
+    side['_declick'] = declick(y, side, os.path.basename(base) + '.wav')
     words = transcribe(base + '.wav', out, ' '.join(lines))
     y, words, side, patched = splice_patches(vid, base, side, y, words, lines, out)
     changed = [i + 1 for i in range(len(lines)) if lines[i] != asread[i] and i not in patched
@@ -552,6 +766,13 @@ def run(vid):
             for tok in norm_tokens(m.group(0)): S.append(tok); Sl.append((li, m.start(), m.end()))
     W, S = a_hundred(W), a_hundred(S)
     rep = {'cuts': [], 'kept_extra': [], 'missing': [], 'marks_unused': []}
+    rep['declick'] = side.get('_declick') or []
+    _hd = [x for x in rep['declick'] if 'events' in x and 'kind' not in x]
+    if _hd and 'off' not in _hd[0]:
+        _ev = [x for x in rep['declick'] if 'kind' in x]
+        print('%s declick: %d clicks taken out at %d of %d key presses (%d in her pauses -> room tone, %d next to her voice -> spectral repair)'
+              % (vid, sum(h['repaired'] for h in _hd), sum(1 for e in _ev if any(c.get('ok') for c in e['clicks'])), len(_ev),
+                 sum(1 for e in _ev for c in e['clicks'] if c.get('ok') and c['quiet']), sum(1 for e in _ev for c in e['clicks'] if c.get('ok') and not c['quiet'])))
     extra_spans = []                             # her own words kept: (first word, last word, first token, end token)
     cut = []                                     # (t0, t1, why) in the original WAV
     # 1) her mistake marks FIRST: each one cuts the failed attempt before it (she knows best which take failed); those
