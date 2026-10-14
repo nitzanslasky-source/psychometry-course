@@ -1,0 +1,126 @@
+{
+ "videoId": "solve-geo31-g039",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Four congruent squares, each with a side of five centimeters, are arranged as in the accompanying figure. What is the perimeter of A E F minus the perimeter of A F G, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "Four congruent squares"
+    ],
+    "pause": 0.5
+   },
+   "[short pause] We'll solve it three ways. First the full math, every side of both triangles. Then a shortcut, cancelling the sides they share. And then a quick check for when you have only a few seconds.",
+   {
+    "say": "[short pause] The four squares are identical, so every side of every square is five. Now the length A E. It goes through two small squares, corner to corner, so it's made of two diagonals of the small squares.",
+    "at": [
+     "The four squares are identical",
+     "so every side"
+    ]
+   },
+   {
+    "say": "Look at the small square at the top left. Its diagonal cuts it into two silver triangles, forty-five, forty-five, ninety. The legs are five and five, so the diagonal is five root two. The second diagonal is five root two as well, so A E is ten root two.",
+    "at": [
+     "the small square at the top left",
+     "Its diagonal cuts",
+     "The second diagonal",
+     "root two as"
+    ]
+   },
+   {
+    "say": "Now A F. It's the longest side of the right triangle A G F. One leg, A G, is ten, two sides of a square. The other leg, G F, is five. By Pythagoras, A F squared is ten squared plus five squared, a hundred plus twenty-five, a hundred twenty-five. A hundred twenty-five is twenty-five times five, so A F is five root five.",
+    "at": [
+     "Now A F",
+     "the right triangle",
+     "By Pythagoras",
+     "is ten squared"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the perimeters. A E F has A F, five root five, plus E F, five, plus A E, ten root two. A F G has A F, five root five, plus F G, five, plus A G, ten.",
+    "at": [
+     "Now the perimeters",
+     "A E F has A F",
+     "F, five root",
+     "A F G has A F",
+     "F, five root five, plus F"
+    ]
+   },
+   {
+    "say": "Subtract. Five root five minus five root five is zero. Five minus five is zero. What's left is ten root two minus ten. Choice number four is our answer.",
+    "at": [
+     "What's left",
+     "two minus ten",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Could we make it shorter? Yes, by cancelling sides. Look at the two triangles side by side. A F is a side of both, so it cancels in the difference. We don't need its length at all.",
+    "at": [
+     "Could we make it shorter",
+     "Yes, by cancelling",
+     "Look at the two triangles",
+     "A F is a side of both",
+     "of both, so"
+    ]
+   },
+   {
+    "say": "Next, E F and F G are both sides of a small square, five each. They're equal, so they cancel too.",
+    "at": [
+     "E F and F G are both",
+     "are both sides"
+    ]
+   },
+   {
+    "say": "All that's left is A E, ten root two, minus A G, ten. Ten root two minus ten, choice number four, and no Pythagoras at all.",
+    "at": [
+     "All that's left",
+     "E, ten root",
+     "Ten root two minus ten",
+     "choice number four, and no",
+     "Pythagoras at all"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] One more idea. Say you reach this question at the very end of the exam, with ten or twenty seconds left. Sometimes you can rule out choices just by their sign. The answer here must be positive. A E F and A F G share A F, and E F equals F G, so the difference is A E minus A G. A E is the longest side of the big right triangle A G E, so it's longer than A G, and the difference is positive.",
+    "at": [
+     "you reach this"
+    ]
+   },
+   {
+    "say": "Root two and root three are both bigger than one, because one times one is only one. Choice number one, five root three minus five. Five root three is more than five, so this is positive. We can't rule it out.",
+    "at": [
+     "Choice number one, five root",
+     "number one, five",
+     "Five root three is"
+    ]
+   },
+   {
+    "say": "Choice number two, ten minus ten root two. Ten root two is more than ten, so this is negative. Out. Choice number three, five minus five root three, is negative too. Out.",
+    "at": [
+     "Choice number two, ten minus",
+     "number two, ten",
+     "root two. Ten",
+     "so this is negative. Out",
+     "Choice number three, five minus",
+     "five root three",
+     "is negative too"
+    ]
+   },
+   {
+    "say": "Two choices are left, and the sign can't separate them. But with no time left, a guess between two is much better than a guess between four. This trick does show up on the exam. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Two choices are left",
+     "But with no"
+    ]
+   }
+  ]
+ ]
+}

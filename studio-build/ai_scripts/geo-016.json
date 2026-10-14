@@ -1,0 +1,199 @@
+{
+ "videoId": "geo-016",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Area of triangles. Before we find the area of a triangle, let's first understand what area even is."
+  ],
+  [
+   {
+    "say": "Until now, we measured lengths, like a line, a distance or a side. We measure a length in centimeters, or in meters or kilometers.",
+    "at": [
+     "lengths, like a"
+    ]
+   },
+   {
+    "say": "Area is measured in square centimeters, or square meters, or square kilometers. What does that mean? Take a square whose side is one centimeter. One side is a centimeter, and the other side is a centimeter too. Its area is one square centimeter.",
+    "at": [
+     "Take a square",
+     "is one centimeter",
+     "One side is a centimeter",
+     "a centimeter too",
+     "Its area is one square"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now take squares like that, and build a rectangle out of them. Here we have three rows, and five squares in every row.",
+    "at": [
+     "build a rectangle",
+     "Here we have three rows",
+     "five squares in every"
+    ]
+   },
+   {
+    "say": "So to find the area, we take the length, five, times the width, three. Five times three is fifteen, so the area is fifteen square centimeters. That's three rows of five squares, and each square is one square centimeter.",
+    "at": [
+     "So to find",
+     "Five times three is fifteen",
+     "so the area"
+    ]
+   },
+   {
+    "say": "In the same way, a rectangle six centimeters long and two centimeters wide has two rows of six squares. Six times two is twelve square centimeters. That's how we find the area of a rectangle, length times width.",
+    "at": [
+     "Six times two is twelve",
+     "That's how we"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the area of a right triangle. A right triangle is really half of a rectangle. Here's a rectangle, six by three. Draw its diagonal, and it cuts the rectangle into two equal triangles.",
+    "at": [
+     "a right triangle",
+     "Here's a rectangle",
+     "Draw its diagonal",
+     "cuts the rectangle"
+    ]
+   },
+   {
+    "say": "Each of them is a right triangle. This one has its right angle down here, and its two legs are six and three. The legs are the two sides that make the right angle.",
+    "at": [
+     "This one has its right angle",
+     "angle down here"
+    ]
+   },
+   {
+    "say": "The rectangle is six times three, which is eighteen. The triangle is exactly half of it, so its area is eighteen over two, which is nine.",
+    "at": [
+     "The triangle is exactly half",
+     "so its area is eighteen",
+     "over two, which"
+    ]
+   },
+   {
+    "say": "So the area of a right triangle is one leg times the other leg, divided by two, because the legs are like the length and the width of the rectangle. Another example: legs eight and five. Eight times five is forty, and half of forty is twenty.",
+    "at": [
+     "So the area of a right triangle",
+     "right triangle is",
+     "Eight times five is forty",
+     "and half of"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now any triangle. We can put it inside a rectangle too. But is it really half of the rectangle? With the right triangle it was easy to see, but here it's not so clear.",
+    "at": [
+     "Now any triangle",
+     "inside a rectangle too",
+     "But is it"
+    ]
+   },
+   {
+    "say": "Let's drop an altitude from the top vertex, straight down to the bottom side. Now the big rectangle is cut into two rectangles.",
+    "at": [
+     "drop an altitude",
+     "top vertex, straight"
+    ]
+   },
+   {
+    "say": "Look at the left rectangle. The side of the triangle cuts it along its diagonal, so the shaded part is exactly half of it, and the white part is the other half. The right rectangle is the same, a shaded half and a white half.",
+    "at": [
+     "Look at the left rectangle",
+     "The side of",
+     "The right rectangle is the same",
+     "same, a shaded"
+    ]
+   },
+   {
+    "say": "So altogether, the triangle is half of the big rectangle. The rectangle's height is exactly the height of the triangle. So the area of a triangle is the base times the height, over two. Or, to say it more exactly, a side, times the altitude to that side, over two.",
+    "at": [
+     "So the area of a triangle",
+     "triangle is the"
+    ]
+   },
+   {
+    "say": "For example, a side of nine, and the altitude to that side is six. Nine times six is fifty-four, and half of that is twenty-seven.",
+    "at": [
+     "Nine times six is",
+     "and half of"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why do I say a side, and not the base? Because we can look at a triangle from another direction. We can turn it. A triangle doesn't really have a base. The base is only the side we happen to look from.",
+    "at": [
+     "a side, and",
+     "we can look at a triangle",
+     "triangle from another"
+    ]
+   },
+   {
+    "say": "Here, take the side B C, which is twelve, and the altitude to it from A, which is six. Now take the side A B, which is nine. The altitude to A B comes from C, and it's eight. What matters is a side, and the altitude that goes to that same side.",
+    "at": [
+     "take the side B C",
+     "which is twelve",
+     "Now take the side A B",
+     "B, which is"
+    ]
+   },
+   {
+    "say": "Twelve times six is seventy-two, and half of that is thirty-six. Nine times eight is also seventy-two, and half of that is thirty-six too. Any side with its own altitude gives the same area.",
+    "at": [
+     "Twelve times six is",
+     "and half of",
+     "Nine times eight is",
+     "seventy-two, and half of that is thirty-six too"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "In an obtuse triangle, we do exactly the same thing, but the altitude falls outside the triangle. Take the side B C, which is seven.",
+    "at": [
+     "In an obtuse triangle",
+     "do exactly the",
+     "Take the side B C",
+     "which is seven"
+    ]
+   },
+   {
+    "say": "To drop the altitude from A, we first extend the side B C, and then we drop the altitude to that line, outside the triangle. Here it's four.",
+    "at": [
+     "we first extend",
+     "B C, and",
+     "then we drop the altitude",
+     "triangle. Here it's"
+    ]
+   },
+   {
+    "say": "The area is still the side times the altitude to it, over two. Seven times four is twenty-eight, and half of that is fourteen. Careful, we don't use the whole extended line, from B all the way to the altitude. That's ten, and it would give twenty, which is wrong. Only the side of the triangle itself counts.",
+    "at": [
+     "Seven times four is",
+     "and half of",
+     "we don't use the whole extended line",
+     "extended line, from"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So, a rectangle is length times width. A right triangle is one leg times the other leg, over two. Any triangle is a side times the altitude to that side, over two. And when the altitude falls outside, we still use only the side itself.",
+    "at": [
+     "a rectangle is length",
+     "A right triangle is one leg",
+     "leg times the",
+     "Any triangle is a side",
+     "times the altitude",
+     "when the altitude falls outside",
+     "we still use"
+    ]
+   },
+   "Now let's see an example. [pause] Okay. I'll see you in the next video."
+  ]
+ ]
+}

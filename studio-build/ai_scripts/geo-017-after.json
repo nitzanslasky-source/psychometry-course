@@ -1,0 +1,94 @@
+{
+ "videoId": "geo-017-after",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now let's see how we find the area of an equilateral triangle. Now that we know the gold triangle, it's quick."
+  ],
+  [
+   {
+    "say": "For an area we need a side and the height to it. So here's an equilateral triangle, A B C, and every side is a. From the top vertex we drop an altitude to the base.",
+    "at": [
+     "need a side",
+     "So here's an equilateral triangle",
+     "A B C",
+     "From the top vertex",
+     "we drop an altitude"
+    ]
+   },
+   {
+    "say": "The altitude is also a median, so it cuts the base into a over two and a over two. Now look at the half on the right. Its angles are ninety, sixty and thirty, so it's a gold triangle. Its hypotenuse is a, and its short leg, opposite the thirty, is a over two.",
+    "at": [
+     "The altitude is",
+     "Now look at the half on the right",
+     "on the right"
+    ]
+   },
+   {
+    "say": "The height is the long leg, so it's the short leg times root three. a over two, times root three, is a root three over two.",
+    "at": [
+     "The height is the long leg",
+     "leg, so it's",
+     "a over two, times root three",
+     "three, is a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "You can also get the height with Pythagoras, the same half triangle. The hypotenuse squared, minus the short leg squared. a over two, squared, is a squared over four, because the top and the bottom are both squared.",
+    "at": [
+     "the height with",
+     "the same half triangle",
+     "The hypotenuse squared"
+    ]
+   },
+   {
+    "say": "a squared minus a quarter of a squared is three quarters of a squared. Take the root, and the height is a root three over two. The same height. The gold triangle just gets there faster.",
+    "at": [
+     "Take the root",
+     "height is a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the area. A side, times the height to that side, divided by two. The side is a, the height is a root three over two, and we divide by two. a times a is a squared, and dividing by two and then by two again is dividing by four. So the area of an equilateral triangle is a squared times root three, over four.",
+    "at": [
+     "A side, times the height",
+     "to that side"
+    ]
+   },
+   "Why learn it by heart? Because the area of an equilateral triangle comes up a lot on the exam, and we don't want to find the height every time and only then the area."
+  ],
+  [
+   {
+    "say": "At first the formula looks a bit complicated, but there's an easy way to remember it. Think of a folk dance teacher counting the beat, a-two-three-four, a-two-three-four.",
+    "at": [
+     "looks a bit",
+     "a-two-three-four, a-two"
+    ]
+   },
+   {
+    "say": "That's the formula. a, squared, root three, over four.",
+    "at": [
+     "a, squared, root three"
+    ]
+   },
+   {
+    "say": "Let's try it. Side eight. Eight squared is sixty-four, times root three, over four. Sixty-four divided by four is sixteen, so sixteen root three.",
+    "at": [
+     "Side eight",
+     "Eight squared is"
+    ]
+   },
+   {
+    "say": "Side six. Six squared is thirty-six, times root three, over four. Thirty-six divided by four is nine, so nine root three. A little practice, and it'll stick. And the thirty, thirty, a hundred twenty triangle with legs a, from the last lesson, has the same area, a squared root three over four. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "Side six",
+     "Six squared is"
+    ]
+   }
+  ]
+ ]
+}

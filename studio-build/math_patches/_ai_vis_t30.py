@@ -430,7 +430,8 @@ def gcross(p1, p2, p3, p4):
 
 def _gtxt(x, y, t, c=GINK, size=26, italic=False):
     return ('<text x="%.1f" y="%.1f" text-anchor="middle" dominant-baseline="middle" fill="%s" %s font-size="%d" '
-            'font-weight="bold"%s>%s</text>' % (x, y, c, GFONT, size, ' font-style="italic"' if italic else '', t))
+            'font-weight="bold"%s>%s</text>' % (x, y, c, GFONT, size, ' font-style="italic"' if italic else '',
+                                                 str(t).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')))
 
 
 def _gel(e):

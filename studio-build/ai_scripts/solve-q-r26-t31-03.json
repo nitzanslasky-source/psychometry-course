@@ -1,0 +1,75 @@
+{
+ "videoId": "solve-q-r26-t31-03",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In triangle A B C, A B is six centimeters, B C is seven centimeters, and A C is ten centimeters. Which of the following is true?",
+    "voice": "calm",
+    "at": [
+     "In triangle A B C"
+    ],
+    "pause": 0.5
+   },
+   "We only have the three sides, with no figure and no angles. The choices ask if the triangle is acute, right or obtuse, and where the special angle is. [short pause] We'll compare the square of the longest side with the squares of the other two sides.",
+   {
+    "say": "[short pause] First, why the squares? Take two sides, six and seven, joined at a corner, and look at the angle between them. When that angle is exactly ninety degrees, the side across from it is the hypotenuse, so its square is six squared plus seven squared, which is eighty-five.",
+    "at": [
+     "Take two sides, six and seven",
+     "seven, joined at"
+    ]
+   },
+   {
+    "say": "If the angle is smaller than ninety, the two sides close up, and the side across from it gets shorter. Its square is less than eighty-five. If the angle is bigger than ninety, the sides open wider, and the side across gets longer. Its square is more than eighty-five.",
+    "at": [
+     "If the angle is smaller than ninety",
+     "than ninety, the",
+     "If the angle is bigger than ninety",
+     "than ninety, the sides"
+    ]
+   },
+   {
+    "say": "So we square the longest side and compare it with the other two squares added. Equal means a right angle. Bigger means an obtuse angle. Smaller means every angle is acute.",
+    "at": [
+     "So we square the longest side",
+     "side and compare"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The longest side here is A C, ten. Ten squared is a hundred. The other two, six squared plus seven squared, are thirty-six plus forty-nine, which is eighty-five.",
+    "at": [
+     "The longest side here",
+     "A C, ten",
+     "Ten squared is a hundred",
+     "plus seven squared",
+     "thirty-six plus forty-nine"
+    ]
+   },
+   {
+    "say": "A hundred is more than eighty-five, so A C is too long for a right angle, and the angle across from A C is obtuse. So the triangle isn't acute and isn't right. Choice numbers one and two are out.",
+    "at": [
+     "A hundred is more than",
+     "eighty-five, so A",
+     "Choice numbers one",
+     "and two are out"
+    ]
+   },
+   {
+    "say": "Which angle is obtuse? The angle across from the longest side, at the corner that A C doesn't touch. A C goes from A to C, so the corner it doesn't touch is B. The obtuse angle is at B, and choice number three is our answer.",
+    "at": [
+     "so the corner it doesn",
+     "touch is B",
+     "and choice number three is our answer"
+    ]
+   },
+   {
+    "say": "Choice number four is the trap. C is one end of A C, so it's next to the longest side, not across from it. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number four is the trap"
+    ]
+   }
+  ]
+ ]
+}

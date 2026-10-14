@@ -1,0 +1,184 @@
+{
+ "videoId": "geo-013",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "In the last lesson we learned the general triangle, the angle sum of one hundred eighty and so on. Now, special triangles. You probably remember them a little from school, the isosceles triangle, the equilateral triangle and the right triangle. Let's get to know them."
+  ],
+  [
+   {
+    "say": "First, the isosceles triangle. An isosceles triangle has two equal sides. We mark equal sides with the same small line. These two equal sides are called the legs, and the third side is called the base.",
+    "at": [
+     "An isosceles triangle has",
+     "We mark equal sides",
+     "the same small",
+     "the third side"
+    ]
+   },
+   {
+    "say": "The two angles that sit on the base, between the base and each leg, are equal. They're called the base angles. The angle left at the top is called the vertex angle.",
+    "at": [
+     "The two angles that sit on the base",
+     "on the base",
+     "The angle left at the top",
+     "top is called"
+    ]
+   },
+   {
+    "say": "For example, if the vertex angle is forty-four degrees, the two base angles share the rest. One hundred eighty minus forty-four is one hundred thirty-six, and half of that is sixty-eight. So each base angle is sixty-eight.",
+    "at": [
+     "For example, if the vertex angle",
+     "angle is forty-four",
+     "One hundred eighty minus forty-four",
+     "is one hundred"
+    ]
+   },
+   {
+    "say": "Another example. If each base angle is seventy, together they make one hundred forty. So the vertex angle is one hundred eighty minus one hundred forty, which is forty.",
+    "at": [
+     "Another example",
+     "seventy, together they"
+    ]
+   },
+   {
+    "say": "And it works backwards too. If two angles of a triangle are equal, the sides opposite them are equal, so the triangle is isosceles. But a triangle with angles fifty, sixty and seventy has no two equal angles, so it has no two equal sides.",
+    "at": [
+     "And it works backwards too",
+     "If two angles",
+     "But a triangle with angles",
+     "fifty, sixty and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a special line in the isosceles triangle. It goes from the vertex angle, at the top, down to the middle of the base.",
+    "at": [
+     "Now a special line",
+     "the isosceles triangle",
+     "It goes from the vertex angle",
+     "down to the middle of the base"
+    ]
+   },
+   {
+    "say": "This one line does three jobs. It cuts the base into two equal halves, so it's a median. It's perpendicular to the base, so it's the altitude. And it cuts the vertex angle into two equal halves, so it's also the angle bisector.",
+    "at": [
+     "This one line",
+     "It cuts the base into two equal",
+     "It's perpendicular",
+     "so it's the",
+     "And it cuts the vertex angle",
+     "so it's also"
+    ]
+   },
+   {
+    "say": "Only this line does all three. A line from a corner of the base to the middle of a leg is a median too, but it isn't perpendicular, and it doesn't cut the angle in half.",
+    "at": [
+     "A line from a corner of the base",
+     "of the base",
+     "doesn't cut the angle in half"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's the easy way to remember all of this. Imagine the triangle is a piece of paper, and you fold it along the dashed line. The left half lands exactly on the right half. They're two identical triangles, mirror images of each other.",
+    "at": [
+     "to remember all",
+     "Imagine the triangle",
+     "piece of paper",
+     "The left half",
+     "lands exactly on the right half",
+     "They're two identical"
+    ]
+   },
+   "So everything on the right equals the left. The legs are equal, the base angles are equal, the two halves of the base are equal, and the two angles at the middle of the base are equal. Together they make one hundred eighty, so each one is ninety.",
+   "So instead of memorizing all the rules of the isosceles triangle, remember one thing. We're not writing a formal proof here. An isosceles triangle is symmetric. Draw the symmetry line, and everything on the right equals the left."
+  ],
+  [
+   {
+    "say": "The next one is the equilateral triangle. Just like its name, all three sides are equal.",
+    "at": [
+     "The next one",
+     "equilateral triangle. Just",
+     "all three sides are equal"
+    ]
+   },
+   {
+    "say": "In an equilateral triangle, all the angles are sixty degrees. Why? The three angles add up to one hundred eighty, and they're all equal, so each one is one hundred eighty divided by three, which is sixty.",
+    "at": [
+     "all the angles are sixty",
+     "degrees. Why? The",
+     "one hundred eighty divided by three",
+     "three, which is"
+    ]
+   },
+   {
+    "say": "An equilateral triangle is like an isosceles triangle, only from every direction. Here's the symmetry line from the top. But we can turn the triangle, and draw the same line from this corner, and from this one too. So everything we said about the isosceles triangle is true here from all three directions.",
+    "at": [
+     "Here's the symmetry line",
+     "the top. But",
+     "from this corner",
+     "and from this one too",
+     "So everything we"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the right triangle. It has one right angle, so two of its sides are perpendicular to each other. These two sides are called the legs.",
+    "at": [
+     "Now the right triangle",
+     "It has one",
+     "These two sides are called"
+    ]
+   },
+   {
+    "say": "The third side, across from the right angle, is called the hypotenuse. It's the longest side, longer than each leg, because it's across from the biggest angle.",
+    "at": [
+     "The third side",
+     "the right angle",
+     "It's the longest side",
+     "than each leg"
+    ]
+   },
+   {
+    "say": "Here's a little trick. Find the square mark of the right angle first, and then look straight across from it. That's the hypotenuse, however the triangle is turned. In this second triangle, the square is at the top, so the hypotenuse is the bottom side.",
+    "at": [
+     "Find the square mark",
+     "the right angle",
+     "so the hypotenuse is the bottom side"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more rule about the right triangle. It's rare on the exam, but let's learn it anyway. Take the right-angle corner and the middle of the hypotenuse, and draw the median between them.",
+    "at": [
+     "One more rule",
+     "It's rare on",
+     "Take the right-angle",
+     "the middle of",
+     "draw the median"
+    ]
+   },
+   {
+    "say": "This median is equal to half of the hypotenuse. So the median and the two halves of the hypotenuse are all the same length. If the hypotenuse is fourteen, the median is seven. If the hypotenuse is ten, the median is five.",
+    "at": [
+     "This median is",
+     "are all the same length",
+     "If the hypotenuse is fourteen",
+     "the median is"
+    ]
+   },
+   {
+    "say": "And look what we get. The median makes two isosceles triangles, this one and this one, because each has two equal sides. Now let's see some sample questions. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "this one and",
+     "and this one, because",
+     "has two equal"
+    ]
+   }
+  ]
+ ]
+}

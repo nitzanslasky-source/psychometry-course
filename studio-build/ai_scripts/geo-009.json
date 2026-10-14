@@ -1,0 +1,137 @@
+{
+ "videoId": "geo-009",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Triangles. In this lesson we'll get to know the rules of triangles, the sides, the angles, the connection between them, and a few special lines that are important to know. Let's start."
+  ],
+  [
+   {
+    "say": "The first line is called a median. A median is a segment that joins a vertex of the triangle to the middle of the side opposite it. Here's a triangle, A B C. The side opposite C is A B, and its middle point is M.",
+    "at": [
+     "called a median",
+     "Here's a triangle",
+     "C. The side",
+     "its middle point is M"
+    ]
+   },
+   {
+    "say": "The median goes from C to M, so it splits the side A B into two equal pieces. We mark equal pieces with the same little line. For example, if A B is ten, then A M is five and M B is five.",
+    "at": [
+     "The median goes from C to M",
+     "to M, so",
+     "We mark equal pieces",
+     "the same little"
+    ]
+   },
+   {
+    "say": "That's all a median promises, two equal pieces. It doesn't make a right angle with the side, and it doesn't split the angle at C into two equal angles.",
+    "at": [
+     "It doesn't make a right angle",
+     "angle with the"
+    ]
+   },
+   {
+    "say": "Every triangle has three medians, one from each vertex. Here's one from A to the middle of B C, and one from B to the middle of A C. And look, the three medians meet at one point. There's also a rule about how they divide each other, two to one, but it isn't needed for the exam. If you know it, fine, and if you don't, that's fine too.",
+    "at": [
+     "one from each vertex",
+     "Here's one from",
+     "the three medians meet",
+     "There's also a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The second line is the altitude. An altitude is a segment from a vertex to the opposite side, or to its extension, that makes a ninety degree angle with it. Here, from C, we go down to A B, straight down.",
+    "at": [
+     "The second line is the altitude",
+     "An altitude is",
+     "from C, we go down to A B",
+     "to A B"
+    ]
+   },
+   {
+    "say": "The little square tells us it's a right angle. Here the triangle is acute, all its angles are smaller than ninety, so the altitude falls inside the triangle.",
+    "at": [
+     "The little square",
+     "Here the triangle"
+    ]
+   },
+   {
+    "say": "Careful, an altitude doesn't promise the middle. H, where it meets the side, is not the middle of A B here. An altitude gives a right angle, not equal pieces.",
+    "at": [
+     "an altitude doesn't promise the middle",
+     "H, where it"
+    ]
+   },
+   {
+    "say": "There are three altitudes too, one from each vertex. From A, and from B. And here too, the three altitudes meet at one point.",
+    "at": [
+     "From A, and from B",
+     "And here too"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now an obtuse triangle. The angle at A is bigger than ninety degrees. Let's drop the altitude from C.",
+    "at": [
+     "Now an obtuse triangle",
+     "The angle at A is bigger",
+     "bigger than ninety"
+    ]
+   },
+   {
+    "say": "If I try to go down to the side A B itself, I can't make a right angle. The line comes out slanted, and the altitude must be at ninety degrees. So we continue the side A B beyond A. That's its extension.",
+    "at": [
+     "The line comes out slanted",
+     "and the altitude",
+     "So we continue the side",
+     "A B beyond"
+    ]
+   },
+   {
+    "say": "The altitude from C comes down to the extension, at a right angle. It's outside the triangle, but it's still the altitude of the triangle. Imagine that this line is the floor. Then this is simply the height of the triangle above the floor.",
+    "at": [
+     "The altitude from C comes down",
+     "down to the",
+     "Imagine that this line is the floor",
+     "Then this is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The third special line is the angle bisector. You met it with lines and angles. It splits an angle into two equal angles. Here it starts at C, splits the angle at C, and goes down to the side opposite it, at D.",
+    "at": [
+     "The third special line",
+     "the angle bisector",
+     "Here it starts at C",
+     "splits the angle"
+    ]
+   },
+   {
+    "say": "The two halves are equal, so we call both of them alpha. For example, if the angle at C is seventy degrees, each half is thirty-five.",
+    "at": [
+     "The two halves are equal",
+     "so we call"
+    ]
+   },
+   {
+    "say": "That's all it promises, two equal angles. It doesn't split the side into equal pieces. Look, A D is shorter than D B here. And it doesn't make a right angle.",
+    "at": [
+     "Look, A D is shorter",
+     "than D B"
+    ]
+   },
+   {
+    "say": "So these are three different lines. A median gives equal pieces, an altitude gives a right angle, and a bisector gives equal angles. In special triangles, which we'll meet in a later lesson, they can become one line. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "So these are three different lines",
+     "A median gives"
+    ]
+   }
+  ]
+ ]
+}

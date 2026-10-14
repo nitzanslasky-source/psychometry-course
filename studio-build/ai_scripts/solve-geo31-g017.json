@@ -1,0 +1,92 @@
+{
+ "videoId": "solve-geo31-g017",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Points A and B lie on one line, and C, D and E lie on a parallel line. Given: D E is equal to five times C D. What is the area of B D E divided by the area of A C D?",
+    "voice": "calm",
+    "at": [
+     "Points A and B"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Look, there are no numbers here at all, no area and no length. So how do we start? Simply from the givens. [short pause] We'll solve it two ways, with letters, and then by cutting the big triangle into small ones.",
+    "at": [
+     "there are no numbers here",
+     "we start? Simply"
+    ]
+   },
+   {
+    "say": "[short pause] D E is five times C D. So let's call C D x, and then D E is five x.",
+    "at": [
+     "D E is five times",
+     "C D. So",
+     "let's call C D x"
+    ]
+   },
+   {
+    "say": "We don't know the heights, but let's draw them anyway, and call them h. The height of A C D is the distance from A down to the bottom line. The height of B D E is the distance from B down to the same line. The lines are parallel, so the distance between them is the same everywhere. So both triangles have the same height, h.",
+    "at": [
+     "but let's draw",
+     "The height of A C D",
+     "D is the",
+     "The height of B D E",
+     "E is the"
+    ]
+   },
+   {
+    "say": "Now the areas. The area of a triangle is a side times the altitude to that side, over two. Triangle B D E has the side five x and the height h, so its area is five x times h, over two. Triangle A C D has the side x and the same height h, so its area is x times h, over two.",
+    "at": [
+     "Triangle B D E has",
+     "the side five",
+     "Triangle A C D has",
+     "the side x",
+     "so its area is x times h"
+    ]
+   },
+   {
+    "say": "Now divide. To divide by a fraction, we multiply by its reciprocal, so we flip the bottom fraction. x times h cancels, and the twos cancel, so we get five. Choice number one is our answer.",
+    "at": [
+     "by a fraction",
+     "flip the bottom fraction",
+     "x times h",
+     "Choice number one is our answer"
+    ]
+   },
+   {
+    "say": "Careful, twenty-five, choice number three, would be right only if the heights were five times bigger too. But the heights are equal, so only the bases count.",
+    "at": [
+     "twenty-five, choice number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way, without any of that calculation. D E is five x, so we can cut it into five pieces, each of length x. Then we join B to each cutting point. Now B D E is made of five small triangles, and each one has a base of x.",
+    "at": [
+     "Another way",
+     "D E is",
+     "we join B to each",
+     "cutting point. Now",
+     "B D E is made of five",
+     "each one has"
+    ]
+   },
+   {
+    "say": "All five small triangles, and A C D too, have the same base, x, and the same height, h, because they all sit between the same two parallel lines. So all six triangles have the same area.",
+    "at": [
+     "So all six triangles",
+     "the same area"
+    ]
+   },
+   {
+    "say": "B D E is five of them, and A C D is one of them, so the ratio is five. Choice number one again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number one again"
+    ]
+   }
+  ]
+ ]
+}

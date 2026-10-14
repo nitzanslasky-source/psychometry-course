@@ -1,0 +1,102 @@
+{
+ "videoId": "solve-geo31-g038",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Triangle A B C has an area of fifty-six square centimeters. Point D lies on B C, and D C is three times B D. What is the difference between the areas of A D C and A B D, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "Triangle A B C"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We know only the area of the whole triangle and how B C is split. [short pause] We'll solve it two ways, with algebra, and then with an insight about area ratios.",
+    "at": [
+     "area of the"
+    ]
+   },
+   {
+    "say": "[short pause] Neither the base nor the height is given, so we give them letters. B D is x. D C is three times B D, so D C is three x. Now draw the altitude from vertex A down to the line B C, and call it h.",
+    "at": [
+     "the height is",
+     "so we give them letters",
+     "B D is",
+     "Now draw the altitude",
+     "vertex A down"
+    ]
+   },
+   {
+    "say": "The whole triangle A B C has the base B C, which is x plus three x, four x. Its height is h. So its area is four x times h, over two, and that's fifty-six. Two x h is fifty-six, so x h is twenty-eight. Let's keep that.",
+    "at": [
+     "So its area is",
+     "x times h",
+     "so x h is twenty-eight",
+     "Let's keep that"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now A D C. Its base is three x, and its height is the same h. And A B D. Its base is x. A B D has an obtuse angle at D, so its height falls outside it, but it's the same altitude h from A.",
+    "at": [
+     "Now A D C",
+     "Its base is three x",
+     "and its height",
+     "And A B D",
+     "A B D has"
+    ]
+   },
+   {
+    "say": "The area of A D C is three x h over two. That's three times twenty-eight over two, which is forty-two. The area of A B D is x h over two, twenty-eight over two, which is fourteen.",
+    "at": [
+     "The area of A D C",
+     "C is three",
+     "The area of A B D",
+     "D is x"
+    ]
+   },
+   {
+    "say": "The difference is forty-two minus fourteen, which is twenty-eight. Choice number three is our answer.",
+    "at": [
+     "The difference is",
+     "fourteen, which is",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the insight, about area ratios. Two triangles with the same base and the same height have the same area. And if the height is the same but one base is three times as long, that area is three times as big.",
+    "at": [
+     "Now the insight",
+     "Two triangles with"
+    ]
+   },
+   {
+    "say": "That's exactly our case. A B D and A D C have the same height, the altitude from A, and D C is three times B D. So A D C is three parts and A B D is one part. Together that's four equal parts of fifty-six.",
+    "at": [
+     "A B D and A D C have the same height",
+     "D C have"
+    ]
+   },
+   {
+    "say": "You can even see the parts. Cut D C into three pieces, each as long as B D, and draw lines from A to the cuts. Now there are four small triangles, all with the same base and the same height, so they all have the same area. Fifty-six over four is fourteen.",
+    "at": [
+     "Cut D C into three pieces",
+     "pieces, each as",
+     "Fifty-six over four"
+    ]
+   },
+   {
+    "say": "A D C has three of them, forty-two, and A B D has one, fourteen. The difference is two pieces, twenty-eight, choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "A D C has three of them",
+     "of them, forty-two",
+     "The difference is two pieces"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "videoId": "solve-geo31-g014",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C is an equilateral triangle. Point D lies on B C. Given: angle D A C is thirty degrees, and D C is seven centimeters. What is A B, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "A B C is an equilateral"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A B is a side of the triangle, and in an equilateral triangle all the sides are equal. So we're really looking for the side. We know two things, the thirty degrees at A, and D C is seven. [short pause] We'll see what the line A D does in this triangle.",
+    "at": [
+     "side of the",
+     "we're really looking",
+     "and D C is seven",
+     "We'll see what"
+    ]
+   },
+   {
+    "say": "[short pause] A B C is equilateral, so all its angles are sixty. So the whole angle at A is sixty. Thirty of it is between A D and A C, so the other part, between A B and A D, is sixty minus thirty, which is thirty too.",
+    "at": [
+     "A B C is equilateral",
+     "so all its",
+     "So the whole angle at A",
+     "it is between",
+     "so the other part",
+     "is sixty minus"
+    ]
+   },
+   {
+    "say": "So A D cuts the angle at A into two equal halves. It's the angle bisector. An equilateral triangle is symmetric from every direction, so this line from the top is also the altitude and the median. As a median, it cuts B C into two equal parts.",
+    "at": [
+     "So A D cuts the angle",
+     "angle at A",
+     "As a median",
+     "B C into"
+    ]
+   },
+   {
+    "say": "So B D is seven too, and the whole side B C is seven plus seven, which is fourteen. All the sides are equal, so A B is fourteen. Choice number two is our answer.",
+    "at": [
+     "So B D is seven too",
+     "B C is",
+     "seven plus seven",
+     "so A B is fourteen",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "Careful, seven, choice number one, is only half of the side. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "seven, choice number one",
+     "only half of"
+    ]
+   }
+  ]
+ ]
+}

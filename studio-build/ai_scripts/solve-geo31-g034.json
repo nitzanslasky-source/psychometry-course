@@ -1,0 +1,100 @@
+{
+ "videoId": "solve-geo31-g034",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Which of the following triangles is not necessarily isosceles?",
+    "voice": "calm",
+    "at": [
+     "Which of the following triangles"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Not necessarily isosceles means it may be isosceles, but it doesn't have to be. Three of the choices are always isosceles, and we're looking for the one that can fail. [short pause] First, let's remember what we know about an isosceles triangle.",
+    "at": [
+     "Not necessarily isosceles means"
+    ]
+   },
+   {
+    "say": "[short pause] In an isosceles triangle, the two legs are equal, and the base angles across from them are equal too.",
+    "at": [
+     "In an isosceles triangle",
+     "the two legs are equal",
+     "and the base angles",
+     "from them are"
+    ]
+   },
+   {
+    "say": "And the altitude to the base is a line of symmetry. That one line is also the angle bisector, and also the median, because it cuts the base into two equal halves. Now let's go through the choices, starting with the ones we can decide quickly.",
+    "at": [
+     "the altitude to the base is a line of symmetry",
+     "is a line"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number one, a triangle with angles sixty-four and fifty-eight. Find the third angle. One hundred eighty minus sixty-four is one hundred sixteen, and minus fifty-eight is fifty-eight. Two equal angles mean two equal sides, so it's always isosceles. Out.",
+    "at": [
+     "number one, a",
+     "angles sixty-four and",
+     "Find the third angle",
+     "is one hundred",
+     "so it's always isosceles. Out"
+    ]
+   },
+   {
+    "say": "Choice number four, an altitude that also bisects the angle it starts from. An altitude that is also a bisector is a line of symmetry, so the triangle is always isosceles. Out.",
+    "at": [
+     "number four, an",
+     "An altitude that is also a bisector",
+     "a bisector is",
+     "so the triangle is always isosceles. Out"
+    ]
+   },
+   {
+    "say": "Choice number three, a median of seven to a side of ten. It's a median, so it cuts the side into two halves. But it's not given as an altitude or as a bisector, and it's not clear what to do with these numbers. So we skip it, go to the next choice, and hope to cross that one out.",
+    "at": [
+     "a median of seven",
+     "cuts the side"
+    ]
+   },
+   {
+    "say": "Choice number two, a median that is perpendicular to the side it meets. Sometimes the right angle is hidden: the median makes two equal angles, alpha and alpha, on a straight line. Two alphas are one hundred eighty, so each alpha is ninety. So the median is also an altitude. That's a line of symmetry, so the triangle is isosceles. Out.",
+    "at": [
+     "number two, a",
+     "Sometimes the right",
+     "Two alphas are one hundred eighty",
+     "eighty, so each",
+     "so the triangle is isosceles. Out"
+    ]
+   },
+   {
+    "say": "Three choices are out, so we mark choice number three, the one that wasn't clear.",
+    "at": [
+     "so we mark choice number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's see why it can fail. Here's a side of ten, and its middle point, five and five. From the middle, a median of seven, leaning to one side.",
+    "at": [
+     "Here's a side of ten",
+     "and its middle",
+     "a median of seven",
+     "to one side"
+    ]
+   },
+   {
+    "say": "Its top is the third corner. Join it to both ends of the side. One side comes out long, and the other short. So a median of seven to a side of ten doesn't make the triangle isosceles. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Join it to both ends",
+     "of the side"
+    ]
+   }
+  ]
+ ]
+}

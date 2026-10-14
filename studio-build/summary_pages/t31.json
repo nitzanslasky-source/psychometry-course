@@ -1,0 +1,759 @@
+{
+ "_about": "Topic 31 summary page (replaces r26-t31-summary and r26-t31-summary-2). Content = the topic-31 scripts (math_patches/_ai_vis_t31.py) and the Hebrew lessons (geo 404-1727). Build: python3 summary_pages.py 31.",
+ "topic": 31,
+ "replaces": "r26-t31-summary, r26-t31-summary-2",
+ "intro": "Triangles are the heart of exam geometry. The **angle sum**, **Pythagoras**, the **special triangles** and **area** solve most questions.",
+ "figures": {
+  "lines": {
+   "builder": "t31.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        200,
+        60,
+        80,
+        300
+       ],
+       [
+        "seg",
+        80,
+        300,
+        520,
+        300
+       ],
+       [
+        "seg",
+        520,
+        300,
+        200,
+        60
+       ],
+       [
+        "txt",
+        200,
+        40,
+        "A",
+        "ink",
+        24,
+        true
+       ],
+       [
+        "txt",
+        62,
+        312,
+        "B",
+        "ink",
+        24,
+        true
+       ],
+       [
+        "txt",
+        538,
+        312,
+        "C",
+        "ink",
+        24,
+        true
+       ]
+      ]
+     ],
+     [
+      "m",
+      [
+       [
+        "dot",
+        300,
+        300
+       ],
+       [
+        "seg",
+        200,
+        60,
+        300,
+        300,
+        "teal",
+        3
+       ],
+       [
+        "tick",
+        80,
+        300,
+        300,
+        300,
+        1
+       ],
+       [
+        "tick",
+        300,
+        300,
+        520,
+        300,
+        1
+       ],
+       [
+        "txt",
+        320,
+        330,
+        "median",
+        "teal",
+        20
+       ]
+      ]
+     ],
+     [
+      "h",
+      [
+       [
+        "seg",
+        200,
+        60,
+        200,
+        300,
+        "orange",
+        3,
+        true
+       ],
+       [
+        "right",
+        200,
+        300,
+        0,
+        90,
+        14,
+        "orange"
+       ],
+       [
+        "txt",
+        160,
+        330,
+        "altitude",
+        "orange",
+        20
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "Median and altitude"
+   }
+  },
+  "ext": {
+   "builder": "t31.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        100,
+        300,
+        440,
+        300
+       ],
+       [
+        "seg",
+        440,
+        300,
+        260,
+        90
+       ],
+       [
+        "seg",
+        260,
+        90,
+        100,
+        300
+       ],
+       [
+        "seg",
+        440,
+        300,
+        580,
+        300,
+        "ink",
+        3,
+        true
+       ]
+      ]
+     ],
+     [
+      "a",
+      [
+       [
+        "arc",
+        100,
+        300,
+        30,
+        0,
+        53,
+        "teal",
+        "α"
+       ],
+       [
+        "arc",
+        260,
+        90,
+        30,
+        233,
+        310,
+        "teal",
+        "β",
+        52
+       ],
+       [
+        "arc",
+        440,
+        300,
+        30,
+        0,
+        130,
+        "orange",
+        "α + β",
+        58
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "The exterior angle"
+   }
+  },
+  "side": {
+   "builder": "t31.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        200,
+        60,
+        80,
+        300
+       ],
+       [
+        "seg",
+        80,
+        300,
+        520,
+        300
+       ],
+       [
+        "seg",
+        520,
+        300,
+        200,
+        60
+       ]
+      ]
+     ],
+     [
+      "s",
+      [
+       [
+        "seg",
+        80,
+        300,
+        520,
+        300,
+        "orange",
+        6
+       ],
+       [
+        "txt",
+        300,
+        330,
+        "longest side",
+        "orange",
+        20
+       ],
+       [
+        "arc",
+        200,
+        60,
+        30,
+        240,
+        310,
+        "orange"
+       ],
+       [
+        "txt",
+        330,
+        62,
+        "← largest angle",
+        "orange",
+        20
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "The longest side faces the largest angle"
+   }
+  },
+  "gold": {
+   "builder": "t31.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        100,
+        300,
+        100,
+        80
+       ],
+       [
+        "seg",
+        100,
+        300,
+        480,
+        300
+       ],
+       [
+        "seg",
+        100,
+        80,
+        480,
+        300
+       ],
+       [
+        "right",
+        100,
+        300,
+        0,
+        90,
+        16
+       ]
+      ]
+     ],
+     [
+      "l",
+      [
+       [
+        "txt",
+        70,
+        190,
+        "a",
+        "teal",
+        28,
+        true
+       ],
+       [
+        "txt",
+        290,
+        330,
+        "a√3",
+        "orange",
+        26,
+        true
+       ],
+       [
+        "txt",
+        310,
+        170,
+        "2a",
+        "red",
+        26,
+        true
+       ],
+       [
+        "arc",
+        480,
+        300,
+        50,
+        150,
+        180,
+        "teal",
+        "30°",
+        72
+       ],
+       [
+        "arc",
+        100,
+        80,
+        40,
+        270,
+        330,
+        "orange",
+        "60°",
+        62
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "The 30-60-90 triangle"
+   }
+  },
+  "silver": {
+   "builder": "t31.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        120,
+        300,
+        120,
+        90
+       ],
+       [
+        "seg",
+        120,
+        300,
+        330,
+        300
+       ],
+       [
+        "seg",
+        120,
+        90,
+        330,
+        300
+       ],
+       [
+        "right",
+        120,
+        300,
+        0,
+        90,
+        16
+       ]
+      ]
+     ],
+     [
+      "l",
+      [
+       [
+        "txt",
+        90,
+        195,
+        "a",
+        "teal",
+        28,
+        true
+       ],
+       [
+        "txt",
+        225,
+        330,
+        "a",
+        "teal",
+        28,
+        true
+       ],
+       [
+        "txt",
+        250,
+        180,
+        "a√2",
+        "orange",
+        26,
+        true
+       ],
+       [
+        "arc",
+        330,
+        300,
+        44,
+        135,
+        180,
+        "teal",
+        "45°",
+        66
+       ],
+       [
+        "arc",
+        120,
+        90,
+        40,
+        270,
+        315,
+        "teal",
+        "45°",
+        62
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "The 45-45-90 triangle"
+   }
+  },
+  "g017": {
+   "builder": "q.geo31-g017"
+  },
+  "g025": {
+   "builder": "q.geo31-g025"
+  }
+ },
+ "sections": [
+  {
+   "title": "Lines in a triangle",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "lines",
+     "caption": "**Median**: to the middle of the opposite side. **Altitude**: at $90°$ to the opposite side (outside the triangle when the angle is obtuse). **Bisector**: splits the angle in half."
+    }
+   ]
+  },
+  {
+   "title": "Angles",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "The angles add up to $180°$",
+       "$50°,\\ 60° \\Rightarrow 70°$"
+      ],
+      [
+       "At most one right or obtuse angle",
+       "$100°$ and $95°$: impossible"
+      ],
+      [
+       "Exterior angle $=$ the two far angles",
+       "$47°+68°=115°$"
+      ]
+     ]
+    },
+    {
+     "type": "fig",
+     "ref": "ext",
+     "caption": "The exterior angle saves a step."
+    }
+   ]
+  },
+  {
+   "title": "Sides",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "side",
+     "caption": "The longest side faces the largest angle; the shortest side faces the smallest."
+    },
+    {
+     "type": "p",
+     "text": "**Two sides together are longer than the third.** So a third side is **between the difference and the sum**: sides $4$ and $9$ give $5<c<13$."
+    }
+   ]
+  },
+  {
+   "title": "Special triangles",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Triangle",
+      "What you know"
+     ],
+     "rows": [
+      [
+       "Isosceles",
+       "Equal base angles; the line from the top is a median, altitude and bisector at once"
+      ],
+      [
+       "Equilateral",
+       "All angles $60°$; area $\\frac{a^2\\sqrt3}{4}$"
+      ],
+      [
+       "Right",
+       "The hypotenuse is the longest side; the median to it is half of it"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pythagoras",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Only in a **right** triangle: $a^2+b^2=c^2$, $c$ = the hypotenuse. Add to find $c$, subtract to find a leg: $6,8\\Rightarrow10$; $\\ 13,5\\Rightarrow12$."
+    },
+    {
+     "type": "p",
+     "text": "**Triples**: $3,4,5$ and $5,12,13$ and their multiples ($9,12,15$; $\\ 15,36,39$). Check which side is the hypotenuse."
+    },
+    {
+     "type": "fig",
+     "ref": "g025",
+     "caption": "Triangle by triangle: each triple gives the next side."
+    }
+   ]
+  },
+  {
+   "title": "Gold and silver",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "cols",
+     "cols": [
+      [
+       {
+        "type": "fig",
+        "ref": "gold",
+        "caption": "**Gold** $30°$-$60°$-$90°$: $a,\\ a\\sqrt3,\\ 2a$"
+       }
+      ],
+      [
+       {
+        "type": "fig",
+        "ref": "silver",
+        "caption": "**Silver** $45°$-$45°$-$90°$: $a,\\ a,\\ a\\sqrt2$"
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Divide by a root: $\\frac{9}{\\sqrt3}=3\\sqrt3$; $\\ \\frac{18}{\\sqrt2}=9\\sqrt2$."
+    }
+   ]
+  },
+  {
+   "title": "Area",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "cols",
+     "cols": [
+      [
+       {
+        "type": "p",
+        "text": "$S=\\frac{\\text{side}\\times\\text{its altitude}}{2}$. Any side works, with **its own** altitude: $\\frac{12\\cdot6}{2}=\\frac{9\\cdot8}{2}=36$."
+       },
+       {
+        "type": "p",
+        "text": "Right triangle: $\\text{leg}\\times\\text{leg}=\\text{hypotenuse}\\times\\text{altitude}$."
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "text": "**A median halves the area.** Same base and same height mean the same area. Triangles between parallel lines share their height."
+       },
+       {
+        "type": "fig",
+        "ref": "g017",
+        "caption": "Same height $\\Rightarrow$ the areas are in the ratio of the bases."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Before each question, ask",
+   "class": "check",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "Is there a right angle (marked)? Pythagoras or a triple?",
+      "A $30°$, $60°$ or $45°$ angle? Gold or silver?",
+      "Equal sides? Mark them, look for isosceles.",
+      "Area: which side, and ITS altitude?",
+      "Do the three sides really make a triangle?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "class": "traps",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "Pythagoras in a triangle with no right angle.",
+      "Adding when you should subtract (finding a leg).",
+      "Mixing the long leg $a\\sqrt3$ with the hypotenuse $2a$.",
+      "The altitude of an obtuse triangle lands outside it.",
+      "A side as long as the sum of the other two: no triangle."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Which method when",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "table",
+     "class": "methods",
+     "head": [
+      "The question looks like",
+      "Do this"
+     ],
+     "rows": [
+      [
+       "Two angles known",
+       "Angle sum $180°$, or the exterior angle."
+      ],
+      [
+       "Two sides, the third unknown",
+       "Between the difference and the sum."
+      ],
+      [
+       "A right triangle with two sides",
+       "Look for a triple first, then Pythagoras."
+      ],
+      [
+       "A $30°$, $60°$ or $45°$ angle",
+       "Write the gold or silver ratio on the triangle."
+      ],
+      [
+       "Areas of triangles that share a height",
+       "Compare the bases (ratio)."
+      ],
+      [
+       "Letters instead of numbers",
+       "Get down to one letter, or plug in numbers that fit the figure."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "50+60+70 == 180",
+  "47+68 == 115",
+  "9-4 == 5 and 9+4 == 13",
+  "6*6+8*8 == 10*10",
+  "13*13-5*5 == 12*12",
+  "15*15+36*36 == 39*39",
+  "12*6/2 == 9*8/2 == 36",
+  "abs(9/sqrt(3) - 3*sqrt(3)) < 1e-9",
+  "abs(18/sqrt(2) - 9*sqrt(2)) < 1e-9",
+  "9*9+12*12 == 15*15"
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "videoId": "geo-009-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with triangles, this time with their angles."
+  ],
+  [
+   {
+    "say": "The angles of a triangle add up to a hundred eighty degrees. Alpha plus beta plus gamma equals a hundred eighty. Most of you know this rule, but have you ever thought about why it's true? Let's prove it quickly.",
+    "at": [
+     "The angles of a triangle",
+     "add up to",
+     "Alpha plus beta plus gamma",
+     "equals a hundred"
+    ]
+   },
+   {
+    "say": "Through the top vertex, C, we draw a line parallel to the side A B.",
+    "at": [
+     "we draw a line parallel",
+     "to the side"
+    ]
+   },
+   {
+    "say": "Now we have parallel lines, so we look for the Z. Here's a Z on the left. The angle in its top corner equals alpha. And here's a Z on the right. The angle in its top corner equals beta.",
+    "at": [
+     "Here's a Z on the left",
+     "The angle in",
+     "And here's a Z on the right",
+     "The angle in its top corner equals beta"
+    ]
+   },
+   {
+    "say": "Now look at the top. Alpha, gamma and beta sit side by side on one straight line, so together they make a straight angle, a hundred eighty. So the three angles of the triangle add up to a hundred eighty.",
+    "at": [
+     "sit side by side on one straight line",
+     "one straight line",
+     "So the three angles of the triangle",
+     "the triangle add"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's use it. Two angles are fifty and sixty. Fifty plus sixty is a hundred ten, so the third angle is a hundred eighty minus a hundred ten, which is seventy.",
+    "at": [
+     "Two angles are fifty and sixty",
+     "Fifty plus sixty"
+    ]
+   },
+   {
+    "say": "Another one. A right triangle has a ninety degree angle and a thirty-five degree angle. Ninety plus thirty-five is a hundred twenty-five, so the third angle is fifty-five.",
+    "at": [
+     "A right triangle",
+     "thirty-five degree angle"
+    ]
+   },
+   {
+    "say": "And a non-example. Can a triangle have one angle of a hundred degrees and another of ninety-five degrees? No. Together they're already more than a hundred eighty. So a triangle has at most one obtuse angle, or one right angle.",
+    "at": [
+     "And a non-example",
+     "Can a triangle"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the exterior angle. First, what is it? We continue one side of the triangle, here A C beyond C. The angle between this extension and the side C B is an exterior angle. It's outside the triangle. Let's call it delta.",
+    "at": [
+     "Now the exterior angle",
+     "what is it",
+     "We continue one side",
+     "The angle between",
+     "Let's call it delta"
+    ]
+   },
+   {
+    "say": "The rule says that an exterior angle equals the sum of the two angles inside the triangle that are not next to it. Gamma is next to delta, so the rule is about alpha and beta. Delta equals alpha plus beta.",
+    "at": [
+     "The rule says",
+     "Gamma is next to delta",
+     "so the rule is about alpha and beta",
+     "alpha and beta"
+    ]
+   },
+   {
+    "say": "Why? Gamma and delta sit side by side on a straight line, so gamma plus delta is a hundred eighty. And the angle sum says alpha plus beta plus gamma is also a hundred eighty. Both sums have gamma, and both make a hundred eighty, so what's left must be equal. Delta equals alpha plus beta.",
+    "at": [
+     "Gamma and delta sit side by side",
+     "by side on",
+     "And the angle sum says",
+     "alpha plus beta",
+     "Delta equals alpha plus beta."
+    ]
+   }
+  ],
+  [
+   {
+    "say": "This rule isn't used very often on the exam, and you don't really need it. We can always find the angle next to the exterior angle, and use the angle sum. But if you know it, it can save you time. For example, the two angles inside are forty-seven and sixty-eight.",
+    "at": [
+     "This rule isn't used very often",
+     "often on the",
+     "the two angles inside are",
+     "forty-seven and sixty-eight"
+    ]
+   },
+   {
+    "say": "With the rule, it's one step. Forty-seven plus sixty-eight is a hundred fifteen. That's the exterior angle.",
+    "at": [
+     "With the rule",
+     "Forty-seven plus sixty-eight"
+    ]
+   },
+   {
+    "say": "The long way gives the same thing. The third angle is a hundred eighty minus forty-seven minus sixty-eight, which is sixty-five. And the exterior angle completes sixty-five to a hundred eighty, so it's a hundred fifteen again.",
+    "at": [
+     "The third angle is",
+     "hundred eighty minus"
+    ]
+   },
+   {
+    "say": "One more. If the two angles inside are thirty and eighty, the exterior angle next to the third angle is thirty plus eighty, a hundred ten. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "thirty plus eighty"
+    ]
+   }
+  ]
+ ]
+}

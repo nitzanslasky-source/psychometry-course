@@ -1,0 +1,62 @@
+{
+ "videoId": "solve-q-r26-t31-02",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In triangle A B C, A B is six centimeters, and B C is eight centimeters. Which of the following could be the area of the triangle, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "In triangle A B C"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We know two sides, but not the angle between them, so the area isn't fixed. It changes when the angle at B changes. [short pause] So first we'll find the biggest area this triangle can have, and then we'll check the choices.",
+    "at": [
+     "We know two sides",
+     "It changes when",
+     "we'll find the"
+    ]
+   },
+   {
+    "say": "[short pause] Put the side B C, which is eight, on the floor. The height of the triangle is the distance from A straight down to the floor. A is always six away from B, because A B is six, but the side A B can lean at different angles.",
+    "at": [
+     "Put the side B C",
+     "which is eight"
+    ]
+   },
+   {
+    "say": "When A B leans low, the height is small. When A B leans back, the height is bigger. The height is a leg of a small right triangle, and A B is its hypotenuse, the longest side. So the height can never be more than six. It's exactly six only when A B stands straight up, with a right angle at B.",
+    "at": [
+     "When A B leans low",
+     "the height is",
+     "When A B leans back",
+     "The height is a",
+     "It's exactly six only when",
+     "A B stands"
+    ]
+   },
+   {
+    "say": "So the biggest area is eight times six, over two, which is twenty-four. Twenty-five, forty-eight and twenty-eight are all more than twenty-four, so they're impossible.",
+    "at": [
+     "So the biggest area",
+     "eight times six",
+     "Twenty-five, forty-eight",
+     "forty-eight and twenty-eight",
+     "so they're impossible"
+    ]
+   },
+   {
+    "say": "The question asks what could be the area, so let's check that twenty really can happen. If A leans so that the height is five, the area is eight times five, over two, which is twenty. Five is less than six, so that's possible. Choice number three is our answer.",
+    "at": [
+     "The question asks",
+     "If A leans so that the height is five",
+     "the height is",
+     "Choice number three is our answer"
+    ]
+   },
+   "Careful, forty-eight is six times eight: someone forgot to divide by two. And many students find twenty-four and stop, but nobody said that the angle at B is ninety degrees. With two sides and no angle, the area can be anything up to half of their product. [pause] Okay. I'll see you in the next question."
+  ]
+ ]
+}

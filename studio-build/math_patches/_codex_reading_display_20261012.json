@@ -5840,6 +5840,442 @@
           ]
         ]
       }
+    },
+    "geo-009": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "5.2": [
+          [
+            "The two halves are equal",
+            "The two halves are equal"
+          ]
+        ]
+      }
+    },
+    "geo-009-3": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "5.4": [
+          [
+            "A quick count is twice the shorter side, minus one",
+            "A quick count is 2 × the shorter side − 1"
+          ],
+          [
+            "Twice four is eight, minus one is seven",
+            "2 × 4 = 8, and 8 − 1 = 7"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g031": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "sixty, plus y, plus one hundred eighty minus x, equals one hundred eighty",
+            "60 + y + (180 − x) = 180"
+          ]
+        ],
+        "2.2": [
+          [
+            "move minus x to the right side as plus x",
+            "move −x to the right side as +x"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g034": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "One hundred eighty minus sixty-four is one hundred sixteen, and minus fifty-eight is fifty-eight",
+            "180 − 64 = 116, and 116 − 58 = 58"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g035": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.3": [
+          [
+            "That's three, four, five, times four, so the hypotenuse A C is five times four",
+            "That's 3, 4, 5 times 4, so the hypotenuse A C is 5 × 4"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g036": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.3": [
+          [
+            "Twenty, plus ten root three, plus five root two, plus five root two",
+            "20 + 10√3 + 5√2 + 5√2"
+          ],
+          [
+            "Five root two plus five root two is ten root two",
+            "5√2 + 5√2 = 10√2"
+          ]
+        ]
+      }
+    },
+    "geo-026": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.3": [
+          [
+            "Two a, squared, is four a squared",
+            "(2a)² is 4a²"
+          ]
+        ],
+        "7.3": [
+          [
+            "nine root three over three",
+            "9√3 / 3"
+          ]
+        ],
+        "9.2": [
+          [
+            "cuts the hundred twenty",
+            "cuts the 120"
+          ]
+        ],
+        "9.4": [
+          [
+            "a over two times root three, a root three over two",
+            "a/2 × √3 = a√3 / 2"
+          ]
+        ],
+        "10.2": [
+          [
+            "the height a over two, divided by two",
+            "the height a/2, divided by 2"
+          ],
+          [
+            "a squared root three over four",
+            "a²√3 / 4"
+          ]
+        ]
+      }
+    },
+    "geo-017-after": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.3": [
+          [
+            "a over two, times root three, is a root three over two",
+            "a/2 × √3 = a√3 / 2"
+          ]
+        ],
+        "3.1": [
+          [
+            "a over two, squared, is a squared over four",
+            "(a/2)² is a²/4"
+          ]
+        ],
+        "3.2": [
+          [
+            "a root three over two",
+            "a√3 / 2"
+          ]
+        ],
+        "4.1": [
+          [
+            "the height is a root three over two",
+            "the height is a√3 / 2"
+          ],
+          [
+            "a squared times root three, over four",
+            "a² × √3 / 4"
+          ]
+        ],
+        "5.2": [
+          [
+            "a, squared, root three, over four",
+            "a, squared, √3, over 4"
+          ]
+        ],
+        "5.3": [
+          [
+            "times root three, over four",
+            "× √3, over 4"
+          ]
+        ],
+        "5.4": [
+          [
+            "a squared root three over four",
+            "a²√3 / 4"
+          ],
+          [
+            "times root three, over four",
+            "× √3, over 4"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g018": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "times root three, over four",
+            "× √3, over 4"
+          ]
+        ],
+        "2.2": [
+          [
+            "twenty-five root three over four",
+            "25√3 / 4"
+          ]
+        ],
+        "2.3": [
+          [
+            "seventy-five root three over four",
+            "75√3 / 4"
+          ]
+        ],
+        "3.2": [
+          [
+            "a hundred root three over four is seventy-five root three over four",
+            "100√3/4 is 75√3/4"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g028": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.5": [
+          [
+            "nine root two plus nine root two plus eighteen",
+            "9√2 + 9√2 + 18"
+          ]
+        ]
+      }
+    },
+    "geo-023": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "5.2": [
+          [
+            "the bracket a plus b, squared",
+            "(a + b)²"
+          ]
+        ],
+        "5.1": [
+          [
+            "a b over two",
+            "ab/2"
+          ]
+        ],
+        "5.3": [
+          [
+            "four times a b over two is two a b",
+            "4 · ab/2 is 2ab"
+          ],
+          [
+            "two a b plus b squared",
+            "2ab + b²"
+          ],
+          [
+            "Two a b is on both sides",
+            "2ab is on both sides"
+          ]
+        ]
+      }
+    },
+    "geo-024": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.2": [
+          [
+            "five, twelve, thirteen times three",
+            "5, 12, 13 × 3"
+          ]
+        ],
+        "5.1": [
+          [
+            "that's three and four, times nine",
+            "that's 3 and 4, × 9"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g025": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.3": [
+          [
+            "the triple five, twelve, thirteen, times three",
+            "the triple 5, 12, 13, × 3"
+          ]
+        ],
+        "1.4": [
+          [
+            "three, four, five, times twelve",
+            "3, 4, 5, × 12"
+          ]
+        ],
+        "2.2": [
+          [
+            "the root of two, times sixty",
+            "√2 × 60"
+          ],
+          [
+            "sixty root two",
+            "60√2"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g011": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.5": [
+          [
+            "Minus k and plus k cancel",
+            "Minus k and plus k cancel"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g012": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.4": [
+          [
+            "So x is less than thirteen plus six, which is nineteen",
+            "So x < 13 + 6, which is 19"
+          ],
+          [
+            "more than thirteen minus six, which is seven",
+            "more than 13 − 6, which is 7"
+          ],
+          [
+            "between seven and nineteen",
+            "between 7 and 19"
+          ]
+        ]
+      }
+    },
+    "geo-019": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "4.2": [
+          [
+            "thirteen times ten is a hundred thirty, plus thirteen times three, thirty-nine, so a hundred sixty-nine",
+            "13 × 10 = 130, plus 13 × 3 = 39, so 169"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t31-01": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.6": [
+          [
+            "twelve and a half",
+            "12.5"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g017": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.5": [
+          [
+            "five x times h, over two",
+            "5x × h / 2"
+          ],
+          [
+            "x times h, over two",
+            "x × h / 2"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g037": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "Eight times seven root three, over two",
+            "8 × 7√3 / 2"
+          ]
+        ],
+        "2.2": [
+          [
+            "Eight times four root three, over two",
+            "8 × 4√3 / 2"
+          ]
+        ],
+        "2.3": [
+          [
+            "times root three, over four",
+            "× √3 / 4"
+          ]
+        ],
+        "3.3": [
+          [
+            "Three root three times four, over two",
+            "3√3 × 4 / 2"
+          ]
+        ]
+      }
+    },
+    "solve-geo31-g039": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "3.3": [
+          [
+            "minus A G, ten",
+            "− A G, 10"
+          ]
+        ]
+      }
     }
   }
 }

@@ -1,0 +1,89 @@
+{
+ "videoId": "solve-geo31-g018",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C is an equilateral triangle with perimeter thirty centimeters. Points D and E are the midpoints of A B and B C, respectively. What is the area of quadrilateral A D E C, in square centimeters?",
+    "voice": "calm",
+    "at": [
+     "A B C is an equilateral triangle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "What does respectively mean? The first point goes with the first side. So D is the midpoint of A B, and E is the midpoint of B C. [short pause] We'll solve it with the big triangle minus the small one, and then with a quicker ratio.",
+    "at": [
+     "So D is the midpoint",
+     "of A B"
+    ]
+   },
+   {
+    "say": "[short pause] The perimeter is thirty, and the three sides are equal, so each side is ten. D and E are midpoints, so A B is cut into five and five, and B C too.",
+    "at": [
+     "The perimeter is thirty",
+     "the three sides",
+     "so each side is ten",
+     "so A B is cut into five and five",
+     "into five and"
+    ]
+   },
+   {
+    "say": "Now look at the small triangle, D B E. B D is five and B E is five, so it's isosceles. And the angle at B is sixty, because B is a corner of the equilateral triangle. Its other two angles are equal and share a hundred eighty minus sixty, which is a hundred twenty, so sixty and sixty. All its angles are sixty, so D B E is equilateral too, with side five.",
+    "at": [
+     "Now look at the small triangle",
+     "triangle, D B"
+    ]
+   },
+   {
+    "say": "So the quadrilateral is the big triangle, A B C, minus the small triangle, D B E.",
+    "at": [
+     "So the quadrilateral",
+     "big triangle, A"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Area of A B C, by the formula, a-two-three-four. The side is ten, so ten squared, a hundred, times root three, over four. We could simplify the four, but let's leave it. It'll help with the subtraction.",
+    "at": [
+     "Area of A B C",
+     "by the formula"
+    ]
+   },
+   {
+    "say": "Area of D B E. The side is five, so twenty-five root three over four.",
+    "at": [
+     "Area of D B E",
+     "The side is"
+    ]
+   },
+   {
+    "say": "Now subtract. You see why we kept the four? Both have the same denominator, so there's no common denominator to find. A hundred minus twenty-five is seventy-five, so seventy-five root three over four. Choice number two is our answer.",
+    "at": [
+     "Now subtract",
+     "You see why",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way, from the formula itself. The small triangle has half the side of the big one. In the formula, the side is squared, so half the side gives a half squared, a quarter of the area.",
+    "at": [
+     "formula itself. The",
+     "the side is squared",
+     "half the side gives"
+    ]
+   },
+   {
+    "say": "So the small triangle is a quarter of the big one, and the quadrilateral is the other three quarters. Three quarters of a hundred root three over four is seventy-five root three over four. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Three quarters of a hundred",
+     "root three over",
+     "Choice number two. "
+    ]
+   }
+  ]
+ ]
+}

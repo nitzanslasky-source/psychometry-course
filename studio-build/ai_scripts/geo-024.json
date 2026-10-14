@@ -1,0 +1,89 @@
+{
+ "videoId": "geo-024",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Pythagorean triples, a shortcut for the Pythagorean theorem when all the sides are whole numbers."
+  ],
+  [
+   {
+    "say": "A Pythagorean triple is three whole numbers that fit the theorem, a squared plus b squared equals c squared. The best-known one is three, four and five. Five is the hypotenuse, because the hypotenuse is always the longest side. Three squared plus four squared is nine plus sixteen, which is twenty-five, and five squared is twenty-five. It works.",
+    "at": [
+     "three whole numbers",
+     "The best-known one",
+     "four and five"
+    ]
+   },
+   {
+    "say": "Another triple that shows up on the exam is five, twelve and thirteen. Five squared plus twelve squared is twenty-five plus a hundred forty-four, which is a hundred sixty-nine, and thirteen squared is a hundred sixty-nine. It works too.",
+    "at": [
+     "Another triple",
+     "on the exam"
+    ]
+   },
+   {
+    "say": "This is quite rare. Most pairs of legs don't give a whole hypotenuse. Legs two and five give four plus twenty-five, which is twenty-nine, so the hypotenuse is the root of twenty-nine. Almost any pair gives a root somewhere, in a leg or in the hypotenuse. That's a fine answer, so don't force a whole number.",
+    "at": [
+     "Legs two and five",
+     "four plus twenty-five"
+    ]
+   },
+   {
+    "say": "That's exactly why the exam loves triples. Everything stays whole, with no messy roots. Most of the time, the exam uses these two triples: three, four, five, and five, twelve, thirteen. There are others, like eight, fifteen and seventeen, but they're very rare, so don't bother learning them. If one shows up, the ordinary theorem still works.",
+    "at": [
+     "the exam uses these two",
+     "triples: three, four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A triple is really a ratio of the sides, three to four to five. A ratio means we can multiply all three sides by the same number, and it still works. Multiply three, four and five by seven: twenty-one, twenty-eight and thirty-five. It's the same shape, just bigger, so it's also a right triangle.",
+    "at": [
+     "A triple is really a ratio",
+     "ratio of the",
+     "Multiply three, four and five by seven",
+     "by seven: twenty-one",
+     "It's the same shape",
+     "bigger, so it's"
+    ]
+   },
+   "In the same way, five, twelve, thirteen times three is fifteen, thirty-six and thirty-nine. We can multiply by two, by four, by ten, and it always works, as long as the same number multiplies all three sides. And the longest side is always the hypotenuse.",
+   {
+    "say": "Why does it work? Multiply every side by some number k. Then every square is multiplied by k squared: nine k squared plus sixteen k squared is twenty-five k squared. So any positive number works, even a half. Half of three, four, five is one and a half, two, and two and a half.",
+    "at": [
+     "Then every square is multiplied",
+     "by k squared:",
+     "Half of three",
+     "is one and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "How do we remember them? Three, four, five is easy, three numbers in a row. For five, twelve, thirteen: high five, a dozen, and one more. Give me a high five, that's five. A dozen, like a box of eggs, that's twelve. And one more, thirteen.",
+    "at": [
+     "How do we remember them",
+     "Three, four, five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One trap. In a right triangle, you see twenty-seven and thirty-six. If both of them are legs, that's three and four, times nine, so the hypotenuse is five times nine, which is forty-five.",
+    "at": [
+     "right triangle, you",
+     "If both of them are legs",
+     "legs, that's three"
+    ]
+   },
+   {
+    "say": "But if thirty-six is the hypotenuse, the numbers aren't in the same places as three, four, five, and the triple doesn't fit. So first find the right angle, then match the triple. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "But if thirty-six is the hypotenuse",
+     "hypotenuse, the numbers"
+    ]
+   }
+  ]
+ ]
+}

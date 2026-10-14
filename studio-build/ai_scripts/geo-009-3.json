@@ -1,0 +1,164 @@
+{
+ "videoId": "geo-009-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with triangles, this time with their sides."
+  ],
+  [
+   {
+    "say": "In every triangle, the largest side lies opposite the largest angle, and the smallest side lies opposite the smallest angle. Here the angles are sixty at A, forty at B and eighty at C.",
+    "at": [
+     "In every triangle",
+     "side lies opposite",
+     "Here the angles are",
+     "at A, forty"
+    ]
+   },
+   {
+    "say": "Forty is the smallest angle. The side opposite B is the side that doesn't touch B, that's A C. So A C is the shortest side. Eighty is the largest angle, so the side opposite C, A B, is the longest. And sixty is in the middle, so its side, B C, is in the middle.",
+    "at": [
+     "So A C is the",
+     "Eighty is the largest angle",
+     "so the side",
+     "And sixty is in the",
+     "middle, so its"
+    ]
+   },
+   {
+    "say": "It works both ways. Opposite the longest side is the largest angle. So in a right triangle, the right angle is the largest angle, and the side opposite it is the longest side.",
+    "at": [
+     "It works both ways",
+     "Opposite the longest"
+    ]
+   },
+   {
+    "say": "And it makes sense. Imagine two sides of a fixed length and the angle between them. When the angle opens wider, the side opposite it gets longer. When it closes, that side gets shorter.",
+    "at": [
+     "Imagine two sides",
+     "fixed length and",
+     "When the angle opens wider",
+     "the side opposite"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's another rule about sides. Any two sides of a triangle together are longer than the third side. Let's see what that means. Say one side is nine.",
+    "at": [
+     "sides. Any two",
+     "Say one side is nine"
+    ]
+   },
+   {
+    "say": "And the other two sides are four and five, exactly nine together. Lying flat, they cover the nine exactly.",
+    "at": [
+     "And the other",
+     "Lying flat"
+    ]
+   },
+   {
+    "say": "Now let's try to close a triangle. I lift the four up on one side and the five on the other. As soon as they rise, there's a gap between them. They don't meet. To close a triangle, one of them, or both, would have to be longer. So the two sides together must be more than nine, not just equal to it.",
+    "at": [
+     "Now let's try",
+     "As soon as they rise",
+     "there's a gap",
+     "They don't meet",
+     "To close a triangle, one"
+    ]
+   },
+   {
+    "say": "For example, five, six and nine can be a triangle, because five plus six is eleven, more than nine. But two, three and eight can't, because two plus three is only five, less than eight.",
+    "at": [
+     "five, six and nine",
+     "be a triangle",
+     "But two, three and eight",
+     "can't, because two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "There's another way to see it. Say this is my home, and this is the sports club.",
+    "at": [
+     "Say this is my home",
+     "and this is"
+    ]
+   },
+   {
+    "say": "Let's send two friends from home to the club, each on a different route. The first walks in a straight line. The second stops somewhere on the way, and then goes on to the club.",
+    "at": [
+     "The first walks",
+     "The second stops",
+     "the way, and"
+    ]
+   },
+   {
+    "say": "Who arrives first? The one who walked in a straight line, because his road is shorter. The one who stopped walked more. A straight line is always the shortest way between two points, so two sides together are longer than the third.",
+    "at": [
+     "so two sides together",
+     "longer than the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's extend this rule. Side c is less than a plus b, because two sides together are longer than the third. But c and b are also two sides, so together they're longer than a. Move b to the other side, and c is more than a minus b.",
+    "at": [
+     "Side c is less than",
+     "sides together are"
+    ]
+   },
+   {
+    "say": "Together: a side of a triangle is less than the sum of the other two sides, and more than their difference. The difference is always the big one minus the small one, and it can't be equal to either end.",
+    "at": [
+     "Together",
+     "triangle is less"
+    ]
+   },
+   {
+    "say": "For example, two sides are four and nine. The third side is more than nine minus four, five, and less than nine plus four, thirteen.",
+    "at": [
+     "two sides are four and nine",
+     "nine. The third",
+     "nine minus four",
+     "and less than nine"
+    ]
+   },
+   {
+    "say": "If the third side is a whole number, it can be six, seven, and so on up to twelve. That's seven lengths. A quick count is twice the shorter side, minus one. Twice four is eight, minus one is seven. With sides three and eight, the third side is between five and eleven, so six to ten, five lengths, and twice three minus one is five too.",
+    "at": [
+     "is a whole",
+     "it can be six, seven",
+     "twelve. That's seven",
+     "A quick count",
+     "the shorter side",
+     "With sides three and eight",
+     "the third side is between"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So, a median goes to the middle, an altitude makes a right angle, and a bisector splits the angle. The angles add up to a hundred eighty, and an exterior angle equals the two angles inside that are not next to it.",
+    "at": [
+     "a median goes to the middle",
+     "middle, an altitude",
+     "The angles add",
+     "a hundred eighty",
+     "an exterior angle",
+     "two angles inside"
+    ]
+   },
+   {
+    "say": "The largest side is opposite the largest angle, and a side is between the difference and the sum of the other two. The most important rule to take from here is the angle sum. If you remember the exterior angle too, it can save you a few seconds. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "The largest side",
+     "the largest angle",
+     "a side is between",
+     "difference and the"
+    ]
+   }
+  ]
+ ]
+}

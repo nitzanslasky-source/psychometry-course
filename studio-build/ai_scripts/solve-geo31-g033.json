@@ -1,0 +1,83 @@
+{
+ "videoId": "solve-geo31-g033",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C is an obtuse triangle, with angle A C B bigger than ninety degrees, and A B is ten centimeters. Which of the following could be its perimeter, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "A B C is an obtuse triangle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We know only one side, so we can't calculate the perimeter exactly. But we can find a number the perimeter must be bigger than, and a number it must be smaller than. [short pause] So this is a minimum and maximum question.",
+    "at": [
+     "We know only one side",
+     "so we can't",
+     "a minimum and"
+    ]
+   },
+   {
+    "say": "[short pause] Start with the minimum. In any triangle, two sides together are always longer than the third side. So A C plus B C is more than A B, which is ten.",
+    "at": [
+     "Start with the minimum",
+     "In any triangle",
+     "So A C plus B C",
+     "C is more"
+    ]
+   },
+   {
+    "say": "The perimeter is ten, plus A C plus B C. That's ten plus something bigger than ten, so the perimeter is more than twenty. A choice of twenty or less can't be the perimeter. Twenty itself is out.",
+    "at": [
+     "so the perimeter is more than",
+     "A choice of",
+     "Twenty itself is out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Before we find the maximum, look at the choices that are left, twenty-four, thirty and thirty-five. Only one of them is right. The others are out because they're too big.",
+    "at": [
+     "look at the choices that are left",
+     "twenty-four, thirty",
+     "Only one of",
+     "The others are"
+    ]
+   },
+   {
+    "say": "The perimeter can be anything between twenty and some top limit. If thirty-five were inside that range, then twenty-four and thirty, which are between twenty and thirty-five, would be inside it too, and we'd have three right answers. That can't happen. So the right answer has to be the smallest choice above twenty, twenty-four.",
+    "at": [
+     "between twenty and some top limit",
+     "If thirty-five were",
+     "So the right answer",
+     "the smallest choice above twenty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Let's check it with the full maximum too. The angle at C is more than ninety, so it's the biggest angle of the triangle. The longest side is across from the biggest angle, so A B is the longest side.",
+    "at": [
+     "the full maximum",
+     "The angle at C is more than",
+     "more than ninety",
+     "so A B is the longest side"
+    ]
+   },
+   {
+    "say": "So A C is shorter than ten, and B C is shorter than ten. The perimeter is ten, plus less than ten, plus less than ten, so it's less than thirty. Thirty and thirty-five are too big, and only twenty-four is between twenty and thirty. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So A C",
+     "so it's less than thirty",
+     "Thirty and thirty-five",
+     "are too big",
+     "twenty-four is between",
+     "Choice number three"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "videoId": "solve-geo31-g020",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Triangle A B C is a right triangle. Given: angle A B C is ninety degrees, A B is twenty centimeters, and B C is twenty-one centimeters. What is A C, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "Triangle A B C"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The right angle is at B, and we need the side A C. [short pause] Before we calculate anything, let's look at the choices, because some of them can't be the answer at all. Then we'll find A C exactly, with the Pythagorean theorem.",
+    "at": [
+     "at B, and",
+     "let's look at"
+    ]
+   },
+   {
+    "say": "[short pause] Which side is A C? It's the side across from the right angle, the side that doesn't touch B. So A C is the hypotenuse, and in a right triangle the hypotenuse is always the longest side. So A C must be longer than twenty and longer than twenty-one.",
+    "at": [
+     "Which side is A C",
+     "It's the side",
+     "So A C is the hypotenuse",
+     "hypotenuse, and in"
+    ]
+   },
+   {
+    "say": "So choice number three, twenty-one, and choice number four, twenty, are out. A C could be twenty-one and a little bit, but it can't be twenty-one or less.",
+    "at": [
+     "So choice number three",
+     "and choice number four, twenty, are out"
+    ]
+   },
+   {
+    "say": "What about forty-one? That's twenty plus twenty-one. Remember, two sides of a triangle together are always longer than the third side. If A C were forty-one, the other two sides would lie flat on it, and there would be no room for a triangle. So choice number one is out too. Only twenty-nine is left, so choice number two is our answer.",
+    "at": [
+     "That's twenty plus twenty-one",
+     "Remember, two sides",
+     "So choice number one is out too",
+     "so choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's also find A C with the theorem, because in most questions we can't rule out three choices. In a right triangle, leg squared plus leg squared equals the hypotenuse squared. Here the legs are A B and B C, so A B squared plus B C squared equals A C squared.",
+    "at": [
+     "Now let's also find A C",
+     "C with the",
+     "so A B squared plus",
+     "B C squared"
+    ]
+   },
+   {
+    "say": "Twenty squared is four hundred, and twenty-one squared is four hundred forty-one. Four hundred plus four hundred forty-one is eight hundred forty-one. That's A C squared, not A C itself.",
+    "at": [
+     "Twenty squared is four hundred",
+     "and twenty-one squared"
+    ]
+   },
+   {
+    "say": "To get A C, we take the root. Which number times itself is eight hundred forty-one? Thirty times thirty is nine hundred, a little too much. Try twenty-nine. Twenty-nine times thirty is eight hundred seventy, and twenty-nine less is eight hundred forty-one. So A C is twenty-nine. A length is positive, so we don't need the negative root. Choice number two again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Twenty-nine times thirty",
+     "hundred seventy, and",
+     "Choice number two again"
+    ]
+   }
+  ]
+ ]
+}

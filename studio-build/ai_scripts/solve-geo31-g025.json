@@ -1,0 +1,71 @@
+{
+ "videoId": "solve-geo31-g025",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The accompanying figure shows three right triangles. The marked side lengths are in centimeters. What is C D, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "The accompanying figure"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Three right triangles, one next to the other, and we need C D, the bottom side. [short pause] We'll go triangle by triangle, and each one gives us a side for the next one.",
+    "at": [
+     "and we need C D",
+     "the bottom side"
+    ]
+   },
+   {
+    "say": "[short pause] Start with triangle A B C. The right angle is at A, so B C, thirty-nine, is the hypotenuse, and A B, fifteen, is a leg. We could use the theorem, thirty-nine squared minus fifteen squared. But look at the numbers. Fifteen is five times three, and thirty-nine is thirteen times three. That's the triple five, twelve, thirteen, times three. So A C is twelve times three, which is thirty-six.",
+    "at": [
+     "Start with triangle A B C",
+     "The right angle is at A",
+     "A, so B",
+     "Fifteen is five times three",
+     "and thirty-nine is",
+     "So A C is twelve times three",
+     "times three, which"
+    ]
+   },
+   {
+    "say": "Now triangle A C E. It's also right-angled at A, with legs A C, thirty-six, and A E, forty-eight. After some practice, these numbers jump out. Thirty-six is three times twelve, and forty-eight is four times twelve. That's three, four, five, times twelve. So the hypotenuse C E is five times twelve, which is sixty.",
+    "at": [
+     "Now triangle A C E",
+     "It's also right-angled",
+     "Thirty-six is three times twelve",
+     "and forty-eight is",
+     "So the hypotenuse C E",
+     "is five times"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now triangle C E D. The right angle is at E, and both legs are sixty. Sixty and sixty aren't in a triple. There is a shortcut for this kind of triangle, and we'll learn it soon. For now, the theorem: C D squared is sixty squared plus sixty squared.",
+    "at": [
+     "Now triangle C E D",
+     "The right angle is at E",
+     "E, and both",
+     "For now, the theorem",
+     "D squared is"
+    ]
+   },
+   {
+    "say": "Instead of adding it up, I write it as two times sixty squared, because I know the root will be simpler. The root of two times sixty squared is the root of two, times sixty. So C D is sixty root two, and choice number three is our answer.",
+    "at": [
+     "So C D is sixty root two",
+     "and choice number three is our answer"
+    ]
+   },
+   {
+    "say": "Without the triples, we'd have to square numbers like thirty-nine and forty-eight. Noticing the triples saved all of that. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Without the triples"
+    ]
+   }
+  ]
+ ]
+}

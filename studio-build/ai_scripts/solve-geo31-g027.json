@@ -1,0 +1,71 @@
+{
+ "videoId": "solve-geo31-g027",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Triangle A B C is a right triangle. Given: angle A B C is ninety degrees, angle A C B is thirty degrees, and A B is five centimeters. What is the perimeter of the triangle, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "Triangle A B C is a right triangle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A right triangle with a thirty degree angle, so the third angle is sixty. It's a gold triangle. For the perimeter we need all three sides, and we know only one. [short pause] We'll solve it with the side ratio, and then check it with Pythagoras.",
+    "at": [
+     "A right triangle with a thirty degree angle",
+     "thirty degree angle",
+     "a gold triangle",
+     "the side ratio"
+    ]
+   },
+   {
+    "say": "[short pause] In a gold triangle the sides are a, a root three, and two a. Which side is A B? It's opposite the thirty degree angle at C, so it's the short leg. So a is five.",
+    "at": [
+     "In a gold triangle",
+     "sides are a",
+     "It's opposite the thirty",
+     "angle at C"
+    ]
+   },
+   {
+    "say": "The hypotenuse, A C, is double the short leg, so ten. The long leg, B C, is five times root three, five root three. Once you've practiced enough, you can write these straight on the triangle. If it's still hard, write it with a. a is five, so a root three is five root three, and two a is ten.",
+    "at": [
+     "is double the short leg",
+     "so ten. The",
+     "five root three. Once",
+     "Once you've practiced",
+     "If it's still hard",
+     "it with a"
+    ]
+   },
+   {
+    "say": "The perimeter is the sum of the sides. Five plus ten is fifteen, and the five root three stays separate, because only one side has a root. So fifteen plus five root three. Choice number one is our answer.",
+    "at": [
+     "Five plus ten is fifteen",
+     "and the five",
+     "Choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Let's check the long leg with Pythagoras. The hypotenuse is double the short leg, ten. The long leg squared is ten squared minus five squared, a hundred minus twenty-five, which is seventy-five.",
+    "at": [
+     "leg with Pythagoras",
+     "The long leg squared",
+     "a hundred minus"
+    ]
+   },
+   {
+    "say": "Seventy-five is twenty-five times three, so its root is five root three. The same length. The ratio just gets there faster. Choice number one. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Seventy-five is twenty-five",
+     "so its root",
+     "Choice number one. "
+    ]
+   }
+  ]
+ ]
+}

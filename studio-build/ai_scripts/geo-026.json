@@ -1,0 +1,241 @@
+{
+ "videoId": "geo-026",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "As promised, now we learn special right triangles. Some of you may remember the gold triangle from school. It's a triangle with angles of thirty, sixty and ninety degrees, and its sides always keep the same ratio."
+  ],
+  [
+   {
+    "say": "Let's see where it comes from. Take an equilateral triangle, A B C. All its sides are equal, so let's call each side two a. And all its angles are sixty degrees.",
+    "at": [
+     "Take an equilateral triangle",
+     "B C. All",
+     "let's call each side two a",
+     "And all its"
+    ]
+   },
+   {
+    "say": "Now from the top vertex, A, we drop an altitude straight down to the base. In an equilateral triangle the altitude is also a median, so it cuts the base exactly in the middle, into a and a.",
+    "at": [
+     "from the top vertex",
+     "we drop an altitude",
+     "down to the"
+    ]
+   },
+   {
+    "say": "Look at the half on the right, the triangle A D C. Its angle at D is ninety. Its angle at C is sixty, because C is a corner of the equilateral triangle. So the angle left at A is thirty. That's the gold triangle, thirty, sixty, ninety.",
+    "at": [
+     "Look at the half on the right",
+     "the right, the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's take that half out and look at it bigger. The same triangle, the same letters. The short leg, D C, is a. The hypotenuse, A C, is two a.",
+    "at": [
+     "Let's take that half out",
+     "and look at"
+    ]
+   },
+   {
+    "say": "We need the long leg, A D. How? With Pythagoras. The hypotenuse squared, minus the leg squared, gives the other leg squared.",
+    "at": [
+     "We need the long leg",
+     "A D. How"
+    ]
+   },
+   {
+    "say": "Two a, squared, is four a squared. Careful, the two is squared too, so it's four, not two. Four a squared minus a squared is three a squared. Now take the root, and the long leg is a times root three.",
+    "at": [
+     "Two a, squared",
+     "Careful, the two",
+     "Now take the root",
+     "the long leg is a times",
+     "times root three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "We found it with a letter, not with numbers, so it's true for every gold triangle. The sides are always a, a root three, and two a. Short leg, long leg, hypotenuse.",
+    "at": [
+     "a letter, not",
+     "The sides are always",
+     "a root three",
+     "Short leg, long leg"
+    ]
+   },
+   {
+    "say": "How do we know which side is which? By the angles, not by how the drawing is turned. The short leg is opposite the thirty degree angle. The long leg is opposite the sixty. And the hypotenuse is opposite the ninety.",
+    "at": [
+     "How do we know which side",
+     "side is which",
+     "The short leg is opposite",
+     "the thirty degree",
+     "The long leg is opposite",
+     "And the hypotenuse"
+    ]
+   },
+   {
+    "say": "And here's something nice. The short leg is always half the hypotenuse. If the short leg is eleven, the hypotenuse is twenty-two. To go from the short leg to the long leg, multiply by root three. Ten becomes ten root three. And from the long leg back to the short leg, divide by root three.",
+    "at": [
+     "The short leg",
+     "If the short leg is eleven",
+     "To go from",
+     "Ten becomes ten root",
+     "And from the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's practice. Both of these are gold triangles, thirty, sixty, ninety, but they're turned differently. Until now, with Pythagoras, we always needed two sides to find the third. Here one side is enough to find the other two.",
+    "at": [
+     "Let's practice",
+     "Both of these"
+    ]
+   },
+   {
+    "say": "On the left, the seven is opposite the thirty, so it's the short leg. The hypotenuse is double, fourteen. The long leg is seven times root three, seven root three. We could use Pythagoras, but we don't need to, we just multiply.",
+    "at": [
+     "The hypotenuse is double",
+     "The long leg"
+    ]
+   },
+   {
+    "say": "On the right, the eighteen is opposite the ninety, so it's the hypotenuse. The short leg is half of it, nine. From the short leg to the long leg, times root three, nine root three.",
+    "at": [
+     "The short leg is half of it",
+     "of it, nine"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now here's a five, but look where it is. It's opposite the sixty degree angle, so it's the long leg, not the short leg.",
+    "at": [
+     "Now here's a five",
+     "look where it",
+     "opposite the sixty degree angle",
+     "so it's the"
+    ]
+   },
+   {
+    "say": "So we can't say the hypotenuse is ten, or the long leg is five root three. To go from the long leg to the short leg, we divide by root three. The short leg is five over root three.",
+    "at": [
+     "The short leg is five over",
+     "over root three"
+    ]
+   },
+   {
+    "say": "And the hypotenuse is double the short leg, so ten over root three. Careful, we only ever double the short leg, never the long one. That's the most common mix-up.",
+    "at": [
+     "so ten over root three",
+     "we only ever double",
+     "short leg, never"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more. A long leg of nine. To get the short leg, we divide by root three. Nine over root three. There's a nice way to do this.",
+    "at": [
+     "A long leg of nine",
+     "To get the"
+    ]
+   },
+   {
+    "say": "To divide a whole number by a root, first ignore the root for a moment. Nine divided by three is three. Now put the root three back. So nine over root three is three root three.",
+    "at": [
+     "Nine divided by three is three",
+     "Now put the"
+    ]
+   },
+   {
+    "say": "Why does it work? Multiply the top and the bottom by root three. Root three times root three is three. So we get nine root three over three, which is three root three. So the short leg is three root three, and the hypotenuse is double, six root three.",
+    "at": [
+     "Multiply the top and the bottom",
+     "bottom by root",
+     "and the hypotenuse is",
+     "six root three"
+    ]
+   },
+   {
+    "say": "Let's try one more on our own. Six over root three. Ignore the root, six divided by three is two, and put the root back, two root three.",
+    "at": [
+     "Six over root three",
+     "Ignore the root"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes the long leg already has a root three in it. Twelve root three, divided by root three. The roots cancel, so the short leg is twelve, and the hypotenuse is twenty-four. It looks harder, but it's actually shorter.",
+    "at": [
+     "already has a",
+     "Twelve root three",
+     "The roots cancel"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more triangle, and it comes straight from the gold one. An isosceles triangle with a hundred twenty degrees at the top. The two base angles share what's left, a hundred eighty minus a hundred twenty, which is sixty, so thirty and thirty.",
+    "at": [
+     "it comes straight",
+     "An isosceles triangle",
+     "hundred twenty degrees"
+    ]
+   },
+   {
+    "say": "It's not a right triangle. But from the top vertex, drop the altitude. In an isosceles triangle, the altitude is also a median and an angle bisector. So it cuts the hundred twenty into sixty and sixty, and the base into two equal halves.",
+    "at": [
+     "from the top vertex",
+     "drop the altitude",
+     "In an isosceles"
+    ]
+   },
+   {
+    "say": "Now each half has thirty, sixty and ninety. Two gold triangles, back to back. The leg a is the hypotenuse of each half. The short leg, opposite the thirty, is half of it, a over two. That's the height.",
+    "at": [
+     "Two gold triangles",
+     "The leg a",
+     "a over two"
+    ]
+   },
+   {
+    "say": "The long leg is a over two times root three, a root three over two. The base is two of those, a root three. So the sides are a, a and a root three. Leg, leg, base. Nothing new to memorize, just cut it in half.",
+    "at": [
+     "a over two",
+     "a root three over two",
+     "The base is two of those",
+     "those, a root",
+     "Leg, leg, base",
+     "Nothing new to"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here too, one side is enough. Legs of eight, the base is eight root three, and the height, half a leg, is four. A base of six root three, divide by root three, and each leg is six. The height is three.",
+    "at": [
+     "Legs of eight",
+     "is eight root",
+     "A base of six root three",
+     "three, divide by"
+    ]
+   },
+   {
+    "say": "And its area. The base a root three, times the height a over two, divided by two. That's a squared root three over four. Keep this in mind, you'll see it again in the next lesson. Where do we meet this triangle? In a rhombus with a hundred twenty degree angle, the long diagonal cuts it into two of these. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "And its area",
+     "The base a",
+     "Where do we meet",
+     "In a rhombus"
+    ]
+   }
+  ]
+ ]
+}

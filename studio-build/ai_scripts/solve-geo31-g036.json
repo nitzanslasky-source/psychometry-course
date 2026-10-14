@@ -1,0 +1,71 @@
+{
+ "videoId": "solve-geo31-g036",
+ "style": "the teacher reads it herself (Reading Studio), topic-31 scripts (2026-10-14): math_patches/_ai_vis_t31.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In the accompanying figure, triangles A B D and B C D are right triangles. Given: A D is twenty centimeters. What is the perimeter of quadrilateral A B C D, in centimeters?",
+    "voice": "calm",
+    "at": [
+     "In the accompanying figure"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "This question is about moving from a golden triangle to a silver triangle. [short pause] We'll find the sides one triangle at a time.",
+    "at": [
+     "moving from a golden triangle",
+     "to a silver"
+    ]
+   },
+   {
+    "say": "[short pause] Look at triangle A B D. The angle at A is thirty degrees, and the angle at B is ninety, so the angle at D is sixty. It's a golden triangle, thirty, sixty, ninety.",
+    "at": [
+     "Look at triangle A B D",
+     "The angle at A is thirty",
+     "the angle at D"
+    ]
+   },
+   {
+    "say": "Its hypotenuse is A D, which is twenty. In a golden triangle, to go from the hypotenuse to the short leg, we divide by two. The short leg is across from the thirty degrees, so B D is ten.",
+    "at": [
+     "Its hypotenuse is A D",
+     "go from the",
+     "so B D is ten"
+    ]
+   },
+   {
+    "say": "To go from the short leg to the long leg, across from the sixty, we multiply by root three. So A B is ten root three.",
+    "at": [
+     "To go from",
+     "So A B is ten root three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now triangle B C D. It's a silver triangle, forty-five, ninety, forty-five, a right isosceles triangle. Careful: in the first triangle B D was a leg, but here it's the hypotenuse, across from the right angle at C.",
+    "at": [
+     "Now triangle B C D",
+     "It's a silver triangle",
+     "ninety, forty-five, a"
+    ]
+   },
+   {
+    "say": "From the hypotenuse to a leg, we divide by root two. How much is ten over root two? The way we learned: ignore the root, ten over two is five, and stick the root two back on. Five root two. So B C and C D are each five root two.",
+    "at": [
+     "Five root two. So",
+     "So B C"
+    ]
+   },
+   {
+    "say": "Now the perimeter, only the outside sides, not B D. Twenty, plus ten root three, plus five root two, plus five root two. Five root two plus five root two is ten root two. So the perimeter is twenty plus ten root three plus ten root two. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Now the perimeter",
+     "outside sides, not",
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}
