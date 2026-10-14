@@ -725,7 +725,8 @@ FIXES = {13: _fix_t13, 14: _fix_t14, 17: _fix_t17, 18: _fix_t18}
 #   - a POINT on a board item comes at least CALM_GAP seconds after the last highlight change, unless that item was just
 #     written / shown (a new thing) - POINTs on 'choice N' and on a part of the question (she names them) always stay.
 # Shows, marks, slides and their phrases are untouched. Timing is estimated at her reading pace (14 characters a second).
-CALM_IDS = ['geo-009', 'geo-009-2', 'geo-009-3', 'solve-geo31-g010', 'solve-geo31-g011', 'solve-geo31-g012', 'geo-013',
+CALM_IDS = ['geo-042', 'geo-042-2', 'geo-043', 'solve-geo32-g044', 'geo-045', 'solve-geo32-g046', 'geo-047', 'solve-geo32-g048', 'solve-geo32-g049', 'solve-q-r26-t32-01', 'geo-050', 'solve-geo32-g051', 'geo-052', 'solve-geo32-g053', 'geo-054', 'solve-geo32-g055', 'solve-q-r26-t32-02', 'geo-056', 'solve-geo32-g057', 'solve-geo32-g058', 'solve-geo32-g059', 'solve-geo32-g060', 'solve-geo32-g061', 'solve-geo32-g062', 'solve-geo32-g063', 'geo-065', 'solve-geo32-g066', 'solve-geo32-g067', 'geo-067-after', 'solve-geo32-g068', 'solve-geo32-g069', 'solve-geo32-g070', 'solve-geo32-g071', 'solve-geo32-g072', 'r26-t32-perimeter', 'solve-q-r26-t32-06', 'solve-q-r26-t32-07',
+            'geo-009', 'geo-009-2', 'geo-009-3', 'solve-geo31-g010', 'solve-geo31-g011', 'solve-geo31-g012', 'geo-013',
             'solve-geo31-g014', 'solve-geo31-g015', 'geo-016', 'solve-geo31-g017', 'solve-q-r26-t31-01', 'solve-q-r26-t31-02',
             'geo-018-after', 'geo-019', 'solve-geo31-g020', 'solve-geo31-g021', 'solve-geo31-g022', 'solve-q-r26-t31-03', 'geo-023',
             'geo-024', 'solve-geo31-g025', 'geo-026', 'solve-geo31-g027', 'geo-017-after', 'solve-geo31-g018', 'geo-027-after',

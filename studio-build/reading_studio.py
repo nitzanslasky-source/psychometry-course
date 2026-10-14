@@ -438,6 +438,34 @@ def covered(t, known):
     return False
 
 
+
+def video_correction_requests():
+    """Independent audio-error rereads, including when the script itself was already correct."""
+    path = os.path.join(HERE, 'math_patches', '_codex_video_corrections_20261014.json')
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding='utf-8') as f:
+        return json.load(f)['lessons']
+
+
+def pending_video_corrections(vid, current, full_side, patch_sides):
+    task = video_correction_requests().get(vid)
+    if not task:
+        return []
+    wanted = task['paragraphs']
+    done = set()
+    for side in [full_side] + list(patch_sides):
+        if not side or side.get('recordedAt', '') <= task['requestedAt']:
+            continue
+        text = {p['i']: p['text'] for p in side.get('paragraphs', []) if isinstance(p, dict) and 'i' in p and 'text' in p}
+        read = set(side['read'] if 'read' in side else [p['para'] for p in side.get('paragraphStarts', [])])
+        reached = {i for i in wanted if i in read and i in text and i < len(current) and norm(text[i]) == norm(current[i])}
+        if task['mode'] == 'full' and (side.get('kind') == 'patch' or reached != set(wanted)):
+            continue
+        done |= reached
+    return [i for i in wanted if i not in done]
+
+
 def scan_recorded(videos):
     """{id: {takes, latest, seconds, patches, changed}} from ~/Documents/Course.recordings/_reading (build-time
     status; the page re-scans the folder live when it has permission, with the same rules)"""
@@ -466,8 +494,10 @@ def scan_recorded(videos):
                 except Exception:
                     pass
         cur = [p for sl in v['paras'] for p in sl]
+        corrections = pending_video_corrections(vid, cur, side, later)
+        changed = changed_paragraphs(cur, side, later)
         rec[vid] = dict(takes=len(fulls), latest=last, seconds=secs, patches=len(later),
-                        changed=changed_paragraphs(cur, side, later))
+                        videoCorrections=corrections, changed=sorted(set((changed or []) + corrections)))
     return rec
 
 
@@ -505,7 +535,7 @@ def build(topics=(), ids=None, out=OUT):
     import datetime as _dt
     now = _dt.datetime.now().astimezone()
     data = dict(groups=[dict(topic=g['topic'], title=g['title'], ids=[v['id'] for v in g['videos']]) for g in groups],
-                videos=allv, recorded=scan_recorded(allv), builtAt=now.isoformat(timespec='seconds'))
+                videos=allv, recorded=scan_recorded(allv), videoCorrections=video_correction_requests(), builtAt=now.isoformat(timespec='seconds'))
     js = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
     label = ', '.join(('Topic %d' % g['topic']) + (' · ' + g['title'] if g['title'] else '') if g['topic'] else 'Videos'
                       for g in groups)
@@ -623,6 +653,12 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
 .patching .p.ctx{opacity:.45;font-size:.8em;cursor:default}
 .patching .p::before{display:none}
 .pill.chg{background:var(--warn-soft);color:var(--warn)}
+
+/* Separate audio/video-QA corrections from ordinary changed-script rereads. */
+.pill.vfix,.p .vfix{background:#ede9fe;color:#5b21b6;border:1px solid #a78bfa}
+.p .vfix{font:700 12px ui-sans-serif,sans-serif;border-radius:999px;padding:2px 8px;margin-left:8px;vertical-align:4px}
+.correction-note{margin:0 22px 12px;padding:10px 14px;border:1px solid #a78bfa;border-left:5px solid #7c3aed;border-radius:9px;background:#ede9fe;color:#3b0764;font:14px/1.5 system-ui}
+.correction-note[hidden]{display:none}
 @keyframes fl{0%{background:color-mix(in srgb,var(--mist) 25%,transparent)}100%{}}
 .foot{display:flex;gap:12px;align-items:center;padding:10px 22px;border-top:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
 .foot audio{height:34px;flex:1;min-width:240px;max-width:520px}
@@ -701,6 +737,7 @@ body.camlayout{--band:44vh;padding-top:var(--band)}
         <button id="aMinus" title="Smaller text">A−</button><button id="aPlus" title="Bigger text">A+</button>
       </div>
     </div>
+    <div class="correction-note" id="videoCorrectionNote" role="note" hidden></div>
     <div class="ctrl">
       <div class="timer" id="timer">0:00.0</div>
       <button class="big" id="bRec"><span class="dot"></span>Record</button>
@@ -777,6 +814,18 @@ async function readJson(d,n){try{return JSON.parse(await (await (await d.getFile
 function patchReadTexts(side){/* only the paragraphs she REACHED count: 'read', or for older sidecars the paragraphStarts */
   const text={};for(const p of (side.paragraphs||[]))if(p&&p.i!=null)text[p.i]=p.text;
   const read=side.read||(side.paragraphStarts||[]).map(e=>e.para);return read.filter(i=>i in text).map(i=>text[i])}
+/* Video corrections are audio errors, not necessarily script changes. Only new reached takes clear them. */
+function completedCorrectionIndices(id,side){
+  const task=(DATA.videoCorrections||{})[id];if(!task||!side||!side.recordedAt||side.recordedAt<=task.requestedAt)return [];
+  const text=new Map((side.paragraphs||[]).filter(p=>p&&p.i!=null&&p.text!=null).map(p=>[p.i,p.text]));
+  const read=new Set(side.read??(side.paragraphStarts||[]).map(p=>p.para)),current=flat(BYID[id]);
+  const reached=task.paragraphs.filter(i=>read.has(i)&&text.has(i)&&norm(text.get(i))===norm(current[i]));
+  return task.mode==='full'&&(side.kind==='patch'||reached.length!==task.paragraphs.length)?[]:reached;
+}
+function pendingVideoCorrections(id,full,patches){const task=(DATA.videoCorrections||{})[id];if(!task)return [];
+  const done=new Set([full,...patches].flatMap(s=>completedCorrectionIndices(id,s)));return task.paragraphs.filter(i=>!done.has(i))}
+function videoCorrectionList(id=V[S.cur].id){return (S.status[id]||{}).videoCorrections||[]}
+function correctionBadge(id){const pending=videoCorrectionList(id),task=(DATA.videoCorrections||{})[id];return pending.length?'<span class="pill vfix">Video correction · '+(task.mode==='full'?'new full take':pending.length+' paragraph'+(pending.length>1?'s':''))+'</span>':''}
 function changedOf(id,full,patches){/* same rule as the generator: current paragraphs not in the last full take's sidecar nor in a later patch */
   if(!full||!full.paragraphs)return null;const known=new Set(full.paragraphs.map(p=>norm(p.text!=null?p.text:p)));
   for(const ps of patches)for(const t of patchReadTexts(ps))known.add(norm(t));
@@ -792,7 +841,8 @@ async function scanVideo(id){
     if(!fulls.length){delete S.status[id];return}const last=fulls[fulls.length-1],lastT=last.match(TAKE_RE)[2];let secs=null;
     const side=await readJson(d,last.replace(/\.wav$/,'.json'));if(side)secs=side.duration;else{try{const f=await (await d.getFileHandle(last)).getFile();secs=(f.size-44)/(SR*2)}catch{}}
     const later=[];for(const n of patches)if(n.match(PATCH_RE)[2]>lastT){const j=await readJson(d,n.replace(/\.wav$/,'.json'));if(j)later.push(j)}
-    S.status[id]={takes:fulls.length,latest:last,seconds:secs,patches:later.length,changed:changedOf(id,side,later)}}catch(e){/* no folder for this video yet */}
+    const corrections=pendingVideoCorrections(id,side,later),changed=changedOf(id,side,later);
+    S.status[id]={takes:fulls.length,latest:last,seconds:secs,patches:later.length,videoCorrections:corrections,changed:[...new Set([...(changed||[]),...corrections])].sort((a,b)=>a-b)}}catch(e){/* no folder for this video yet */}
 }
 async function scanAll(){if(RF.perm!=='granted')return;try{await readingDir(false)}catch{renderList();return}await Promise.all(V.map(v=>scanVideo(v.id)));renderList();loadLatestTake()}
 
@@ -803,7 +853,7 @@ function renderList(){
     h+='<div class="grp"><span>'+esc(g.topic?('Topic '+g.topic+(g.title?' · '+g.title:'')):g.title)+'</span><span>'+done+'/'+g.ids.length+'</span></div>';
     for(const id of g.ids){const v=BYID[id],i=V.indexOf(v),st=S.status[id];n++;
       h+='<div class="vid'+(i===S.cur?' cur':'')+'" data-i="'+i+'"><span class="n">'+(i+1)+'</span><span class="t" title="'+esc(v.title)+'">'+esc(v.title)+'</span><span class="m">'+v.minutes.toFixed(1)+' min</span>'+
-        '<span class="id">'+esc(id)+'</span><span class="st">'+(st?'<span class="pill yes">recorded ✓'+(st.seconds?' · '+fmt(st.seconds):'')+(st.takes>1?' · '+st.takes+' takes':'')+(st.patches?' · '+st.patches+' patch'+(st.patches>1?'es':''):'')+'</span>'+(st.changed&&st.changed.length?' <span class="pill chg">needs re-read: '+st.changed.length+' paragraph'+(st.changed.length>1?'s':'')+'</span>':''):'<span class="pill no">not recorded</span>')+(camWanted(v)?' <span class="pill cam" title="Recorded with the camera on">camera</span>':'')+'</span></div>'}}
+        '<span class="id">'+esc(id)+'</span><span class="st">'+(st?'<span class="pill yes">recorded ✓'+(st.seconds?' · '+fmt(st.seconds):'')+(st.takes>1?' · '+st.takes+' takes':'')+(st.patches?' · '+st.patches+' patch'+(st.patches>1?'es':''):'')+'</span>'+(st.changed&&st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length?' <span class="pill chg">script re-read: '+st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length+'</span>':''):'<span class="pill no">not recorded</span>')+correctionBadge(id)+(camWanted(v)?' <span class="pill cam" title="Recorded with the camera on">camera</span>':'')+'</span></div>'}}
   L.innerHTML=h;
   L.querySelectorAll('.vid').forEach(el=>el.onclick=()=>selectVideo(+el.dataset.i));
 }
@@ -818,8 +868,10 @@ function selectVideo(i){
 function renderParas(){
   const v=V[S.cur];let k=0;
   $('#vtitle').innerHTML=esc(v.title)+'<small>'+esc(v.id)+' · about '+v.minutes.toFixed(1)+' min · '+v.words+' words</small>';
-  const ch=new Set(changedList());
-  $('#paras').innerHTML=(v.disp||v.paras).map(sl=>'<div class="slide">'+sl.map(p=>{const kk=k++;return '<p class="p" data-k="'+kk+'">'+esc(p).replace(/\n/g,'<br>')+(ch.has(kk)?'<span class="chg">changed</span>':'')+'</p>'}).join('')+'</div>').join('');
+  const ch=new Set(changedList()),corrections=new Set(videoCorrectionList()),task=(DATA.videoCorrections||{})[v.id],note=$('#videoCorrectionNote');
+  note.hidden=!corrections.size;
+  note.textContent=corrections.size?'VIDEO CORRECTION — '+(task.mode==='full'?'Choose Full read and record a new complete take using the current script.':'Choose Re-read paragraphs; the marked paragraphs are preselected. '+task.notes.filter(n=>corrections.has(n.index)).map(n=>'Paragraph '+(n.index+1)+': '+n.note).join(' '))+' This is an instruction, not part of the spoken script.':'';
+  $('#paras').innerHTML=(v.disp||v.paras).map(sl=>'<div class="slide">'+sl.map(p=>{const kk=k++;return '<p class="p" data-k="'+kk+'">'+esc(p).replace(/\n/g,'<br>')+(corrections.has(kk)?'<span class="vfix">Video correction · rerecord</span>':ch.has(kk)?'<span class="chg">changed</span>':'')+'</p>'}).join('')+'</div>').join('');
   $('#paras').querySelectorAll('.p').forEach(el=>el.onclick=e=>{e.stopPropagation();const kk=+el.dataset.k;if(S.rec&&!S.rec.paused)nextPara();else if(S.mode==='patch'&&!S.rec){S.sel.has(kk)?S.sel.delete(kk):S.sel.add(kk);if(S.sel.has(kk))S.para=kk;else if(!S.sel.has(S.para))S.para=order()[0]??0;paintParas()}else setPara(kk,'jump')});
   $('#prompter').scrollTop=0;paintParas();
 }
@@ -963,6 +1015,7 @@ async function startRec(){
   if(window.showDirectoryPicker&&RF.handle&&RF.perm!=='granted'){RF.perm=await rfPerm(true);paintFolder();if(RF.perm==='granted')scanAll()}
   if(window.showDirectoryPicker&&!RF.handle)toast('No folder chosen: this take will go to Downloads. Choose Course.recordings to save it in place.',6000);
   const v=V[S.cur],patch=S.mode==='patch';
+  if(patch&&videoCorrectionList(v.id).length&&(DATA.videoCorrections||{})[v.id]?.mode==='full'){toast('This video needs a new full take. Choose Full read.',6000);return}
   if(patch&&!S.sel.size){toast('Select the paragraphs to re-read first (click them).');return}
   const useCam=camWanted(v);
   if(useCam&&!CAM.stream){try{await openCam(LS.get('cam',''))}catch{toast('“Camera on” is ticked, but the camera is not available. Allow it, or untick “Camera on” to record audio only.',7000);return}}
@@ -1013,6 +1066,10 @@ async function stopRec(){
   const st=S.status[r.video]||{takes:0,patches:0,changed:null};
   if(r.patch){const done=new Set(read.map(i=>norm(ps[i])));S.status[r.video]={...st,patches:(st.patches||0)+1,changed:st.changed?st.changed.filter(i=>!done.has(norm(ps[i]))):st.changed}}
   else S.status[r.video]={takes:(st.takes||0)+1,latest:name,seconds:dur,patches:0,changed:[]};
+  const corrected=new Set(completedCorrectionIndices(r.video,side));
+  const remaining=(st.videoCorrections||[]).filter(i=>!corrected.has(i));
+  S.status[r.video].videoCorrections=remaining;
+  S.status[r.video].changed=[...new Set([...(S.status[r.video].changed||[]),...remaining])].sort((a,b)=>a-b);
   if(where)await scanVideo(r.video);renderList();
   if(V[S.cur].id===r.video){const keep=S.para;S.sel=new Set([...S.sel].filter(i=>changedList().includes(i)));renderParas();S.para=keep;paintParas()}
   $('#state').textContent=where?'Saved '+fmt(dur)+' → '+where:'Downloaded '+name+(files.length>2?' (and its camera video and .json). Move all three':' (and its .json). Move both')+' to Course.recordings/_reading/'+r.video+'/';

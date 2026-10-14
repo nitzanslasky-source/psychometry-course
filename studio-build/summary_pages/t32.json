@@ -1,0 +1,917 @@
+{
+ "_about": "Topic 32 summary page (replaces r26-t32-summary and r26-t32-summary-2). Content = the topic-32 scripts (math_patches/_ai_vis_t32.py) and the Hebrew lessons (geo 1729-3443). Build: python3 summary_pages.py 32.",
+ "topic": 32,
+ "replaces": "r26-t32-summary, r26-t32-summary-2",
+ "intro": "Every quadrilateral has angles that add up to **360°**. Know each family member's properties and its **area formula**, and look for the triangles inside.",
+ "figures": {
+  "square": {
+   "builder": "t32.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        120,
+        60,
+        320,
+        60
+       ],
+       [
+        "seg",
+        320,
+        60,
+        320,
+        260
+       ],
+       [
+        "seg",
+        320,
+        260,
+        120,
+        260
+       ],
+       [
+        "seg",
+        120,
+        260,
+        120,
+        60
+       ],
+       [
+        "right",
+        120,
+        260,
+        0,
+        90,
+        14
+       ]
+      ]
+     ],
+     [
+      "d",
+      [
+       [
+        "seg",
+        120,
+        60,
+        320,
+        260,
+        "teal",
+        3
+       ],
+       [
+        "seg",
+        320,
+        60,
+        120,
+        260,
+        "orange",
+        3,
+        true
+       ],
+       [
+        "txt",
+        220,
+        40,
+        "a",
+        "ink",
+        24,
+        true
+       ],
+       [
+        "txt",
+        285,
+        215,
+        "a√2",
+        "teal",
+        22
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "Square"
+   }
+  },
+  "para": {
+   "builder": "t32.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        100,
+        260,
+        420,
+        260
+       ],
+       [
+        "seg",
+        420,
+        260,
+        500,
+        100
+       ],
+       [
+        "seg",
+        500,
+        100,
+        180,
+        100
+       ],
+       [
+        "seg",
+        180,
+        100,
+        100,
+        260
+       ],
+       [
+        "par",
+        100,
+        260,
+        420,
+        260
+       ],
+       [
+        "par",
+        180,
+        100,
+        500,
+        100
+       ]
+      ]
+     ],
+     [
+      "h",
+      [
+       [
+        "seg",
+        180,
+        100,
+        180,
+        260,
+        "orange",
+        3,
+        true
+       ],
+       [
+        "right",
+        180,
+        260,
+        0,
+        90,
+        14,
+        "orange"
+       ],
+       [
+        "txt",
+        160,
+        180,
+        "h",
+        "orange",
+        24,
+        true
+       ],
+       [
+        "txt",
+        260,
+        285,
+        "a",
+        "ink",
+        24,
+        true
+       ],
+       [
+        "tint",
+        [
+         [
+          100,
+          260
+         ],
+         [
+          180,
+          260
+         ],
+         [
+          180,
+          100
+         ]
+        ],
+        "teal"
+       ],
+       [
+        "tint",
+        [
+         [
+          420,
+          260
+         ],
+         [
+          500,
+          260
+         ],
+         [
+          500,
+          100
+         ]
+        ],
+        "teal"
+       ],
+       [
+        "seg",
+        420,
+        260,
+        500,
+        260,
+        "teal",
+        2,
+        true
+       ],
+       [
+        "seg",
+        500,
+        260,
+        500,
+        100,
+        "teal",
+        2,
+        true
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "Parallelogram"
+   }
+  },
+  "rhombus": {
+   "builder": "t32.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        300,
+        40,
+        420,
+        170
+       ],
+       [
+        "seg",
+        420,
+        170,
+        300,
+        300
+       ],
+       [
+        "seg",
+        300,
+        300,
+        180,
+        170
+       ],
+       [
+        "seg",
+        180,
+        170,
+        300,
+        40
+       ],
+       [
+        "tick",
+        300,
+        40,
+        420,
+        170
+       ],
+       [
+        "tick",
+        420,
+        170,
+        300,
+        300
+       ],
+       [
+        "tick",
+        300,
+        300,
+        180,
+        170
+       ],
+       [
+        "tick",
+        180,
+        170,
+        300,
+        40
+       ]
+      ]
+     ],
+     [
+      "d",
+      [
+       [
+        "seg",
+        300,
+        40,
+        300,
+        300,
+        "teal",
+        3,
+        true
+       ],
+       [
+        "seg",
+        180,
+        170,
+        420,
+        170,
+        "orange",
+        3,
+        true
+       ],
+       [
+        "right",
+        300,
+        170,
+        0,
+        90,
+        14
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "Rhombus"
+   }
+  },
+  "kite": {
+   "builder": "t32.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        300,
+        40,
+        400,
+        140
+       ],
+       [
+        "seg",
+        400,
+        140,
+        300,
+        320
+       ],
+       [
+        "seg",
+        300,
+        320,
+        200,
+        140
+       ],
+       [
+        "seg",
+        200,
+        140,
+        300,
+        40
+       ],
+       [
+        "tick",
+        300,
+        40,
+        400,
+        140
+       ],
+       [
+        "tick",
+        200,
+        140,
+        300,
+        40
+       ],
+       [
+        "tick",
+        400,
+        140,
+        300,
+        320,
+        2
+       ],
+       [
+        "tick",
+        300,
+        320,
+        200,
+        140,
+        2
+       ]
+      ]
+     ],
+     [
+      "d",
+      [
+       [
+        "seg",
+        300,
+        40,
+        300,
+        320,
+        "teal",
+        3,
+        true
+       ],
+       [
+        "seg",
+        200,
+        140,
+        400,
+        140,
+        "orange",
+        3,
+        true
+       ],
+       [
+        "right",
+        300,
+        140,
+        0,
+        90,
+        14
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "Kite"
+   }
+  },
+  "trap": {
+   "builder": "t32.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        100,
+        260,
+        500,
+        260
+       ],
+       [
+        "seg",
+        500,
+        260,
+        400,
+        90
+       ],
+       [
+        "seg",
+        400,
+        90,
+        220,
+        90
+       ],
+       [
+        "seg",
+        220,
+        90,
+        100,
+        260
+       ],
+       [
+        "par",
+        220,
+        90,
+        400,
+        90
+       ],
+       [
+        "par",
+        100,
+        260,
+        500,
+        260
+       ]
+      ]
+     ],
+     [
+      "h",
+      [
+       [
+        "seg",
+        220,
+        90,
+        220,
+        260,
+        "orange",
+        3,
+        true
+       ],
+       [
+        "right",
+        220,
+        260,
+        0,
+        90,
+        14,
+        "orange"
+       ],
+       [
+        "txt",
+        300,
+        70,
+        "b",
+        "ink",
+        24,
+        true
+       ],
+       [
+        "txt",
+        300,
+        290,
+        "a",
+        "ink",
+        24,
+        true
+       ],
+       [
+        "txt",
+        205,
+        180,
+        "h",
+        "orange",
+        24,
+        true
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "Trapezoid"
+   }
+  },
+  "half": {
+   "builder": "t32.GEO",
+   "args": [
+    [
+     [
+      "line",
+      [
+       [
+        "seg",
+        80,
+        260,
+        500,
+        260
+       ],
+       [
+        "seg",
+        500,
+        260,
+        500,
+        80
+       ],
+       [
+        "seg",
+        500,
+        80,
+        80,
+        80
+       ],
+       [
+        "seg",
+        80,
+        80,
+        80,
+        260
+       ]
+      ]
+     ],
+     [
+      "t",
+      [
+       [
+        "tint",
+        [
+         [
+          80,
+          260
+         ],
+         [
+          500,
+          260
+         ],
+         [
+          300,
+          80
+         ]
+        ],
+        "teal"
+       ],
+       [
+        "seg",
+        80,
+        260,
+        300,
+        80,
+        "teal",
+        3
+       ],
+       [
+        "seg",
+        500,
+        260,
+        300,
+        80,
+        "teal",
+        3
+       ],
+       [
+        "seg",
+        300,
+        80,
+        300,
+        260,
+        "orange",
+        2,
+        true
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "title": "Half the rectangle"
+   }
+  },
+  "g070": {
+   "builder": "q.geo32-g070"
+  }
+ },
+ "sections": [
+  {
+   "title": "The family",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "table",
+     "class": "methods",
+     "head": [
+      "Shape",
+      "Sides",
+      "Angles",
+      "Diagonals",
+      "Area"
+     ],
+     "rows": [
+      [
+       "Square",
+       "all equal",
+       "all $90°$",
+       "equal, perpendicular, halve each other, $45°$ to the sides; $d=a\\sqrt2$",
+       "$a^2=\\frac{d^2}{2}$"
+      ],
+      [
+       "Rectangle",
+       "opposite equal",
+       "all $90°$",
+       "equal, halve each other",
+       "$a\\cdot b$"
+      ],
+      [
+       "Parallelogram",
+       "opposite equal and parallel",
+       "opposite equal; neighbours add to $180°$",
+       "halve each other",
+       "$a\\cdot h$"
+      ],
+      [
+       "Rhombus",
+       "all equal",
+       "opposite equal",
+       "perpendicular, halve each other",
+       "$\\frac{d_1\\cdot d_2}{2}$"
+      ],
+      [
+       "Kite (deltoid)",
+       "two pairs of equal neighbours",
+       "one pair equal",
+       "perpendicular; one is cut in half",
+       "$\\frac{d_1\\cdot d_2}{2}$"
+      ],
+      [
+       "Trapezoid",
+       "one pair parallel (the bases)",
+       "on each leg: $180°$",
+       "—",
+       "$\\frac{(a+b)\\cdot h}{2}$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pictures",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "cols",
+     "cols": [
+      [
+       {
+        "type": "fig",
+        "ref": "square",
+        "caption": "Square: the diagonal is $a\\sqrt2$ (silver triangles)."
+       },
+       {
+        "type": "fig",
+        "ref": "rhombus",
+        "caption": "Rhombus: perpendicular diagonals, area $\\frac{d_1 d_2}{2}$."
+       }
+      ],
+      [
+       {
+        "type": "fig",
+        "ref": "para",
+        "caption": "Parallelogram: cut a triangle and move it, a rectangle $a\\cdot h$."
+       },
+       {
+        "type": "fig",
+        "ref": "kite",
+        "caption": "Kite: the same area formula as the rhombus."
+       }
+      ],
+      [
+       {
+        "type": "fig",
+        "ref": "trap",
+        "caption": "Trapezoid: the average of the bases times the height."
+       },
+       {
+        "type": "fig",
+        "ref": "half",
+        "caption": "A triangle with its tip on the far side is half the rectangle."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Useful facts",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Fact",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Angles add up to $360°$",
+       "$80°+95°+110°\\Rightarrow75°$"
+      ],
+      [
+       "Scale the sides by $k$: the area by $k^2$",
+       "sides $\\times3\\Rightarrow$ area $\\times9$"
+      ],
+      [
+       "A diagonal splits a parallelogram into two equal halves",
+       "the white = the grey"
+      ],
+      [
+       "A bisector in a parallelogram cuts off an isosceles triangle",
+       "two equal sides"
+      ],
+      [
+       "Perimeter of a staircase = its rectangle's",
+       "push the steps out"
+      ]
+     ]
+    }
+   ],
+   "span": "full"
+  },
+  {
+   "title": "Hidden triangles",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Inside quadrilaterals look for **right triangles** (Pythagoras, triples), **gold** ($30°$-$60°$-$90°$: $a, a\\sqrt3, 2a$) and **silver** ($45°$-$45°$-$90°$: $a, a, a\\sqrt2$) triangles, and **isosceles** triangles."
+    },
+    {
+     "type": "fig",
+     "ref": "g070",
+     "caption": "An area in a grid: subtract the white corners, or add rectangles."
+    }
+   ]
+  },
+  {
+   "title": "Before each question, ask",
+   "class": "check",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "Which shape is it really? Only what is given or proved.",
+      "Which diagonal property do I need?",
+      "Is there a right, gold or silver triangle inside?",
+      "Area: side and ITS height?",
+      "Would a cut, a move, or a subtraction be shorter?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "class": "traps",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "The parallelogram's slanted side is not its height.",
+      "A rectangle's diagonals are not perpendicular.",
+      "A square's area from the diagonal: $\\frac{d^2}{2}$, not $d^2$.",
+      "The trapezoid: add both bases before halving.",
+      "Trusting the drawing: figures are not to scale."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Which method when",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "table",
+     "class": "methods",
+     "head": [
+      "The question looks like",
+      "Do this"
+     ],
+     "rows": [
+      [
+       "A diagonal or a side is given, the area is asked",
+       "Find the right / gold / silver triangle inside, then use the shape's area formula."
+      ],
+      [
+       "A parallelogram with an angle",
+       "Draw the height; with $30°$, $45°$ or $60°$ it is a gold or silver triangle."
+      ],
+      [
+       "Angles inside a quadrilateral",
+       "$360°$ in all; in a parallelogram, neighbours add to $180°$."
+      ],
+      [
+       "A bisector in a parallelogram",
+       "Look for the isosceles triangle it cuts off."
+      ],
+      [
+       "Shaded areas inside a rectangle",
+       "Same base and same height: half the rectangle; or subtract the white parts."
+      ],
+      [
+       "Letters instead of numbers",
+       "Algebra, or plug in numbers that fit the figure and check the choices."
+      ],
+      [
+       "A staircase or a notch",
+       "Push the steps out; a notch adds its two walls."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "80+95+110+75 == 360",
+  "3*3 == 9",
+  "14*14/2 == 98",
+  "8*3 == 24",
+  "(5+20)*6/2 == 75",
+  "12*10/2 == 60",
+  "2*(12+8) == 40"
+ ]
+}

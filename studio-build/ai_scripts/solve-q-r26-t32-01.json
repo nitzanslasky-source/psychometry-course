@@ -47,6 +47,8 @@
    {
     "say": "Triangle A B H has a right angle and a thirty degree angle, so it's a gold triangle, thirty, sixty, ninety. A B is its hypotenuse, ten. The height A H is across from the thirty, so it's the short leg, and the short leg is half the hypotenuse. Half of ten is five.",
     "at": [
+     "Triangle A B H has",
+     "a right angle",
      "Half of ten is five",
      "Half of ten"
     ]

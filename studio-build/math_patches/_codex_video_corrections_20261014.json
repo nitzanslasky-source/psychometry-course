@@ -1,0 +1,164 @@
+{
+  "label": "Video correction",
+  "purpose": "User-approved rerecords from video/audio QA; preserve scripts, originals, indices and original recording workflow.",
+  "lessons": {
+    "solve-q-401": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        7
+      ],
+      "notes": [
+        {
+          "index": 7,
+          "note": "Read the correct squares clearly: 1² = 1, 2² = 4, so √2 is between 1 and 2."
+        }
+      ],
+      "requestedAt": "2026-10-14T06:48:41.354Z",
+      "scriptParagraphs": {
+        "7": "m squared is two, so m is the square root of two. Is that a whole number? Let's check the squares. One squared is one, and two squared is four. So root two is between one and two, and it's not whole."
+      }
+    },
+    "solve-q-459": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        7,
+        8
+      ],
+      "notes": [
+        {
+          "index": 7,
+          "note": "For r − p, start at p and move right to r (+2). For s − r, start at r and move right to s (+1)."
+        },
+        {
+          "index": 8,
+          "note": "For q − s, start at s and move left to q (−2). For r − q, start at q and move right to r (+1)."
+        }
+      ],
+      "requestedAt": "2026-10-14T06:48:41.354Z",
+      "scriptParagraphs": {
+        "7": "Another way is to use the gaps without choosing actual numbers. The numbers are in the order p, q, r, s, and each gap is one. On top of the first fraction, we have r minus p. To find this difference, start at p and move to r. That's two steps to the right, so r minus p is two. On the bottom, we have s minus r. Start at r and move to s. That's one step to the right, so s minus r is one. The first fraction is two over one, which is two.",
+        "8": "On top of the second fraction, we have q minus s. Start at s and move to q. That's two steps to the left, so q minus s is negative two. On the bottom, we have r minus q. Start at q and move to r. That's one step to the right, so r minus q is one. The second fraction is negative two over one, which is negative two."
+      }
+    },
+    "solve-q-520": {
+      "mode": "full",
+      "paragraphs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "notes": [
+        {
+          "index": 0,
+          "note": "Use the current script in a new complete take."
+        },
+        {
+          "index": 1,
+          "note": "Include this paragraph in the new full take."
+        },
+        {
+          "index": 2,
+          "note": "Include this paragraph in the new full take."
+        },
+        {
+          "index": 3,
+          "note": "Include this paragraph in the new full take."
+        },
+        {
+          "index": 4,
+          "note": "Include this paragraph in the new full take."
+        },
+        {
+          "index": 5,
+          "note": "Include this paragraph in the new full take."
+        },
+        {
+          "index": 6,
+          "note": "Include this paragraph in the new full take."
+        },
+        {
+          "index": 7,
+          "note": "Include this paragraph in the new full take."
+        },
+        {
+          "index": 8,
+          "note": "Include this paragraph in the new full take."
+        },
+        {
+          "index": 9,
+          "note": "Include this paragraph in the new full take."
+        },
+        {
+          "index": 10,
+          "note": "Include this paragraph in the new full take."
+        },
+        {
+          "index": 11,
+          "note": "Include this paragraph in the new full take."
+        }
+      ],
+      "requestedAt": "2026-10-14T06:48:41.354Z",
+      "scriptParagraphs": {
+        "0": "x is a two-digit number. x is equal to the cube of its units digit, plus four times the sum of its digits. What is the tens digit of x?",
+        "1": "This digit puzzle is written in words, so first we turn the words into an equation. We need the tens digit of x. We'll solve it two ways, writing the number with its digits, and then testing the answer choices.",
+        "2": "Let's call the tens digit T and the ones digit U. A two-digit number is ten times its tens digit, plus its ones digit, so x is ten T plus U. The sum of its digits is T plus U.",
+        "3": "Now the words of the question. The cube of the units digit is U cubed. Four times the sum of the digits is four times the whole bracket, T plus U. So x equals U cubed, plus four times the bracket T plus U. The four multiplies both digits, not just T.",
+        "4": "Both expressions equal x, so we set them equal. Ten T plus U equals U cubed plus four T plus four U. Now subtract four T and U from both sides. On the left, ten T minus four T leaves six T. On the right, four U minus U leaves three U. So six T equals U cubed plus three U.",
+        "5": "T is a digit, so it's at most nine, and six T is at most fifty-four. U can't be zero, because then U cubed plus three U is zero, so six T is zero and T is zero, and a two-digit number can't start with zero. So we test U from one.",
+        "6": "U is one gives one plus three, which is four. U is two gives eight plus six, which is fourteen. U is three gives twenty-seven plus nine, which is thirty-six. U is four gives sixty-four plus twelve, which is seventy-six, already more than fifty-four. A bigger U only makes U cubed plus three U bigger, so we can stop.",
+        "7": "Four and fourteen are not six times a digit, but thirty-six is. Six T is thirty-six, so T is six. Choice number three is our answer.",
+        "8": "Now let's test the answer choices. Each choice gives a possible tens digit T, and then we need a digit U that fits the words of the question. Start with choice number one, seven. Then x is seventy plus U, and its digit sum is seven plus U. So seventy plus U must equal U cubed plus twenty-eight plus four U. Subtract twenty-eight and U from both sides, and U cubed plus three U must be forty-two.",
+        "9": "U is three gives twenty-seven plus nine, which is thirty-six, and U is four gives sixty-four plus twelve, which is seventy-six. As U grows, U cubed plus three U only grows, so it jumps from thirty-six straight to seventy-six. Forty-two is in between, so no digit U works, and choice number one is out.",
+        "10": "The other tens digits work the same way. T is five needs U cubed plus three U to be thirty, and T is four needs it to be twenty-four. U is two gives only fourteen, and U is three already gives thirty-six. Thirty and twenty-four are in between, so no digit works, and choice numbers two and four are out.",
+        "11": "T is six needs thirty-six, and U is three gives exactly that. So x is sixty-three. Let's check it in the words of the question. The units digit is three, and three cubed is twenty-seven. The digit sum is nine, and four times nine is thirty-six. Twenty-seven plus thirty-six is sixty-three. It fits, so choice number three is our answer. Okay. I'll see you in the next question."
+      }
+    },
+    "solve-q-r26-t17-01": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        6
+      ],
+      "notes": [
+        {
+          "index": 6,
+          "note": "Say the negative explicitly: subtracting −1/2 means adding 1/2. Then −1/8 + 1/2 = 3/8."
+        }
+      ],
+      "requestedAt": "2026-10-14T06:48:41.354Z",
+      "scriptParagraphs": {
+        "6": "Use those same values for every choice. Choice number one, a over b, gives four, which is positive, so it's out. Choice number three, a plus d, gives zero. Zero is not negative, so it's out too. Choice number four is b cubed minus b. b cubed is negative one eighth. Subtracting negative one half adds one half, giving positive three eighths. So that choice is out. Three choices have failed to give a negative result, leaving choice number two. That's our answer. Okay. I'll see you in the next question."
+      }
+    },
+    "r26-t18-facts": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        3,
+        5
+      ],
+      "notes": [
+        {
+          "index": 3,
+          "note": "Read 222 clearly, not 212: 222 = 2 × 111 = 2 × 3 × 37 = 37 × 6."
+        },
+        {
+          "index": 5,
+          "note": "With digit sum 8, 800 is the largest three-digit number; 107 is the smallest."
+        }
+      ],
+      "requestedAt": "2026-10-14T06:48:41.354Z",
+      "scriptParagraphs": {
+        "3": "Five hundred fifty-five is five times a hundred eleven, so five times three times thirty-seven, which is thirty-seven times fifteen. Two hundred twenty-two is two times a hundred eleven, so two times three times thirty-seven, which is thirty-seven times six.",
+        "5": "Next, find the largest or smallest three-digit number with a given digit sum. The places matter: adding one to the hundreds digit changes the number more than adding one to the tens or ones digit. With a digit sum of eight, put all eight in the hundreds place to get the largest number, eight hundred. For the smallest, the hundreds digit cannot be zero, so use one. Use zero in the tens place and the remaining seven in the ones place. That gives a hundred seven."
+      }
+    }
+  }
+}

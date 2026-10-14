@@ -27,14 +27,14 @@
     ]
    },
    {
-    "say": "The diagonals of a rhombus are also perpendicular, so the angle at O is ninety. That makes a special triangle, A B O. It's a right triangle with a sixty-degree angle, so it's a golden triangle, thirty, sixty, ninety.",
+    "say": "The diagonals of a rhombus are also perpendicular, so the angle at O is ninety. That makes a special triangle, A B O. It's a right triangle with a sixty-degree angle, so it's a gold triangle, thirty, sixty, ninety.",
     "at": [
      "That makes a special triangle",
      "A B O"
     ]
    },
    {
-    "say": "In a golden triangle the sides have a fixed ratio. Five is across from the thirty-degree angle, so it's the short leg. To get the long leg, we multiply by root three. So A O is five root three.",
+    "say": "In a gold triangle the sides have a fixed ratio. Five is across from the thirty-degree angle, so it's the short leg. To get the long leg, we multiply by root three. So A O is five root three.",
     "at": [
      "So A O is five root three"
     ]
@@ -58,11 +58,11 @@
   ],
   [
    {
-    "say": "[pause] Once you've found all the inner pieces, you can add up the area in other ways too. Some students take the golden triangle, base five and height five root three, and multiply its area by four.",
+    "say": "[pause] Once you've found all the inner pieces, you can add up the area in other ways too. Some students take the gold triangle, base five and height five root three, and multiply its area by four.",
     "at": [
      "Once you've found all the inner pieces",
      "inner pieces, you",
-     "Some students take the golden triangle",
+     "Some students take the gold triangle",
      "triangle, base five"
     ]
    },
