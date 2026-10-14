@@ -1,0 +1,1020 @@
+{
+ "absolute-value": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/camera-visual-review-2026-10-14/videos/01 absolute-value - clearer visuals.mp4",
+  "rendered_at": "2026-10-14T16:54:21+03:00",
+  "source": "seed",
+  "note": "visual cues in the script changed 14 Oct after render; visual plan changed 14 Oct after render",
+  "made_from": "2026-10-14T16:25:14+03:00"
+ },
+ "absolute-value-2": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/camera-visual-spacing-2026-10-14/videos/02 absolute-value-2 - clearer visuals.mp4",
+  "rendered_at": "2026-10-14T17:15:51+03:00",
+  "source": "seed",
+  "note": "visual cues in the script changed 14 Oct after render; visual plan changed 14 Oct after render",
+  "made_from": "2026-10-14T16:25:14+03:00"
+ },
+ "absolute-value-3": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/camera-visual-review-2026-10-14/videos/03 absolute-value-3 - clearer visuals.mp4",
+  "rendered_at": "2026-10-14T16:45:02+03:00",
+  "source": "seed",
+  "note": "visual cues in the script changed 14 Oct after render; visual plan changed 14 Oct after render",
+  "made_from": "2026-10-14T16:25:14+03:00"
+ },
+ "consecutive-integers": {
+  "state": "done",
+  "fingerprint": "af91cee4a7ed13b58dcce45e0bb07ef601430059974b8f59f3654ba29a954118",
+  "parts": {
+   "spoken": "c50f1fe00d50713640426256bb8fb950c000c77e3c8065a76905fedee0ded865",
+   "visual": "6845b23ad48c4835ef35122805721623a634fc4d5350aef33a60c7d0c7a984e5",
+   "takes": "1b72e14d803a73749e49638012fe529df9a0398368197dad08ef9fe77d7c5acd"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports/066 Consecutive Integers.mp4",
+  "rendered_at": "2026-10-13T19:25:59+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "consecutive-products": {
+  "state": "done",
+  "fingerprint": "5b15dac8d0eda267d9b58f8e0aa0196161f4459052ff946e32fd311e9739285a",
+  "parts": {
+   "spoken": "3a1d8c6b3096e410102a2ed3fe922a9f93d21513f173c73a86c3f5a7762eacc7",
+   "visual": "45035f848bbad3915dc46863bd9ba86619aceb891224fc6152b4264dd27133f8",
+   "takes": "fd0df879e8312af62dfb2dfb66bc0389e6d1fd0f298256d3095d3594df89fa09"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports/076 Products of Consecutive Integers.mp4",
+  "rendered_at": "2026-10-13T22:27:22+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "powers-on-number-line": {
+  "state": "done",
+  "fingerprint": "2ad9c78c364799b0b1f5968fac4978f5300eea79b7359bab0885d02f6c28042c",
+  "parts": {
+   "spoken": "07590c476dab59b25a991fe2b9d92f911d5eb153dd8223e176a33c957727f557",
+   "visual": "0033b9231a6e8510360b4ef3dd9a05e70943280f5bc8f43ff8e51871f930b356",
+   "takes": "66e1a04eba5b86392f3eb44e827f2c898d5de54103852f7aa13e4eec58bfb682"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports/091 Powers on the Number Line.mp4",
+  "rendered_at": "2026-10-13T22:58:55+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "primes": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/camera-visual-review-2026-10-14/videos/22 primes - clearer visuals.mp4",
+  "rendered_at": "2026-10-14T16:46:09+03:00",
+  "source": "seed",
+  "note": "visual cues in the script changed 14 Oct after render; visual plan changed 14 Oct after render",
+  "made_from": "2026-10-14T16:25:14+03:00"
+ },
+ "primes-3": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/camera-visual-review-2026-10-14/videos/24 primes-3 - clearer visuals.mp4",
+  "rendered_at": "2026-10-14T17:01:54+03:00",
+  "source": "seed",
+  "note": "visual cues in the script changed 14 Oct after render; visual plan changed 14 Oct after render",
+  "made_from": "2026-10-14T16:25:14+03:00"
+ },
+ "r26-t13-tools": {
+  "state": "check",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/08 r26-t13-tools - repaired.mp4",
+  "rendered_at": "2026-10-12T13:56:36+03:00",
+  "source": "seed",
+  "note": "rendered 12 Oct - only an older export that Codex has not checked",
+  "made_from": "2026-10-12T13:56:36+03:00"
+ },
+ "r26-t16-consecutive-sums": {
+  "state": "done",
+  "fingerprint": "8087180a2fcf4811efb2a48efa502eb8a11ca7362e0f3a14a41a7f8967333f1c",
+  "parts": {
+   "spoken": "3ae62fe6a5a48d44fbcdef6d963117c3f798a655f4b43a370c89564ea0b379d1",
+   "visual": "3225476876c7bf133597915d2f5e466a84dde482314c46ffa8459eeb39b93c97",
+   "takes": "c10c345d99c8aafa9a37eddbcd0e2266b20ff7ecbe5ad13d56fa99c4e82af257"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports/069 Sums of Consecutive Integers.mp4",
+  "rendered_at": "2026-10-13T20:20:48+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "r26-t17-reading-the-line": {
+  "state": "done",
+  "fingerprint": "665ee3140ba5f4273599f10fd8111d08d84d1736e9400bfb67d209caaa070cc0",
+  "parts": {
+   "spoken": "7f6e49e082218028510b3a0bcd996f267d5e461559931dea918b438b6722a446",
+   "visual": "a8226b290291f5425c0d10d36e65e4dce695ee619280b7baabec49f26b8e6d64",
+   "takes": "07beaa851e71df9ba01b7f010b6530b03062b5c31e6aaed5d760f7b73a97f371"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports/093 Reading the Number Line.mp4",
+  "rendered_at": "2026-10-13T22:48:02+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "r26-t18-facts": {
+  "state": "done",
+  "fingerprint": "5ff0b945564783139eb1a4396f93d5217684a4d00483ed19ad2e9a3d7ad3cadf",
+  "parts": {
+   "spoken": "e6b5f4354aac1c796479b29faf2c551f15d9a9775c8d59e8e9762c07ba214b90",
+   "visual": "d15887a3a03b40383fbe992ba3064207a4b8258ca384c8cf4d354ddc34cb9d95",
+   "takes": "2229b4148ebf62ce3d54bc23dae8d54dcc1f983c669f492b4ff1ca4d000432bb"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October follow-up/116 r26-t18-facts.mp4",
+  "rendered_at": "2026-10-14T13:18:03+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T10:52:10+03:00"
+ },
+ "solve-q-358": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/01 q-358 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:49:00+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:49:00+03:00"
+ },
+ "solve-q-359": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/02 q-359 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:50:18+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:50:18+03:00"
+ },
+ "solve-q-360": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/03 q-360 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:51:16+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render; visual plan changed 14 Oct after render",
+  "made_from": "2026-10-12T13:51:16+03:00"
+ },
+ "solve-q-361": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/04 q-361 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:52:26+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render; visual plan changed 14 Oct after render",
+  "made_from": "2026-10-12T13:52:26+03:00"
+ },
+ "solve-q-362": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/05 q-362 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:53:24+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:53:24+03:00"
+ },
+ "solve-q-363": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/09 q-363 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:57:58+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:57:58+03:00"
+ },
+ "solve-q-364": {
+  "state": "check",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/10 q-364 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:59:22+03:00",
+  "source": "seed",
+  "note": "rendered 12 Oct - only an older export that Codex has not checked",
+  "made_from": "2026-10-12T13:59:22+03:00"
+ },
+ "solve-q-365": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/11 q-365 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:48:34+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:48:34+03:00"
+ },
+ "solve-q-366": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/12 q-366 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:50:36+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:50:36+03:00"
+ },
+ "solve-q-367": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/15 q-367 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:55:46+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:55:46+03:00"
+ },
+ "solve-q-368": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/16 q-368 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:58:02+03:00",
+  "source": "seed",
+  "note": "new patch take 14 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:58:02+03:00"
+ },
+ "solve-q-369": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/17 q-369 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:59:46+03:00",
+  "source": "seed",
+  "note": "new patch take 14 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:59:46+03:00"
+ },
+ "solve-q-370": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/18 q-370 - repaired.mp4",
+  "rendered_at": "2026-10-12T14:00:28+03:00",
+  "source": "seed",
+  "note": "new patch take 14 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T14:00:28+03:00"
+ },
+ "solve-q-387": {
+  "state": "done",
+  "fingerprint": "5b8c0c39f8a7c658726b3242e615dcb3e64a8ac398cc86c33b24f56124e020ab",
+  "parts": {
+   "spoken": "a088eb7f9e3f05cc4bf97f0cf9811951f15d2360808a0000e8897bc8b864d0d4",
+   "visual": "ee9aa707ea966dac48d77168b39495a060e81e07cb7e35ee847a37449fe987cf",
+   "takes": "cf621a44a774a05941dc491807318c358848d22d2113cfdd8ccc4441bdffc218"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 14 - Prime Numbers/New checked exports - 14 October/025 q-387.mp4",
+  "rendered_at": "2026-10-14T01:52:35+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-390": {
+  "state": "done",
+  "fingerprint": "06bb3c2b19fdf80f068d142d8cf64144786dd7ed40373ccc492cd24b91f505cf",
+  "parts": {
+   "spoken": "7d658dab5a160a6825495764815b62c8cb4a6e3a5b84e6846ce2ae88f2b518f7",
+   "visual": "cb3b1a9bd97893aafd4a05b74bab1f6912dab496dd525d55342b6da8e3515582",
+   "takes": "bb7ff0a6edf20ff6cbb4654854e5917bd37554c3d2e00fbe2311f34d90ba89f3"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 14 - Prime Numbers/New checked exports/028 q-390.mp4",
+  "rendered_at": "2026-10-13T18:52:48+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-391": {
+  "state": "done",
+  "fingerprint": "f10546ae9c1ad2b02116e39f19d852476e9aa9c8ae8cfd064afa11dd87e17546",
+  "parts": {
+   "spoken": "32fc36b42a41b520e251b3089b53c404ec2d3a9f1514d8bafcd03a5ee2dd1b9f",
+   "visual": "e1564c40af90f0249cf7c86227d2a7c888250a75131269872d571ac40bd88612",
+   "takes": "24be260bd76d372df03e3559b893fd5e35f70f40f497907b85316ca0d5e4eebc"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 14 - Prime Numbers/New checked exports/036 q-391.mp4",
+  "rendered_at": "2026-10-13T18:56:12+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-393": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 14 - Prime Numbers/Previous exports - reread pending/36 q-393 - edited.mp4",
+  "rendered_at": "2026-10-13T00:11:27+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T00:11:27+03:00"
+ },
+ "solve-q-394": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 14 - Prime Numbers/Previous exports - reread pending/38 q-394 - edited.mp4",
+  "rendered_at": "2026-10-13T10:51:10+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T10:51:10+03:00"
+ },
+ "solve-q-396": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 14 - Prime Numbers/Previous exports - reread pending/37 q-396 - edited.mp4",
+  "rendered_at": "2026-10-13T00:58:43+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T00:58:43+03:00"
+ },
+ "solve-q-401": {
+  "state": "done",
+  "fingerprint": "bb72e37cbc102b212402553d385011e039a675685b94a621c7c3d6b5cd68e249",
+  "parts": {
+   "spoken": "80c1dfa9675b0d69369b79e4400d2a3fb63c101265b38028d7441c97b6d5aa10",
+   "visual": "365e697a4544c8ca6cfabe3acfb3a7e700e6914330f66ad1c21e03f370b74c35",
+   "takes": "329595c930c909a124db9e0cf418083b3b006fab6f5c15a13ffc9330f9f9473c"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 14 - Prime Numbers/New checked exports - 14 October follow-up/035 q-401.mp4",
+  "rendered_at": "2026-10-14T13:14:40+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T10:52:10+03:00"
+ },
+ "solve-q-424": {
+  "state": "done",
+  "fingerprint": "b1386625d85db4904eaa4d9574982c0f05fb598200ce02ce8f96acd823af15ec",
+  "parts": {
+   "spoken": "f86c6fb417ea6e7afd330f23b35caa55233e287be8ee73fc240f6b2369da856c",
+   "visual": "6dd1f42fd6d711926b7394380fff9624e84f68fa1f22a43bfab845c4760a2f85",
+   "takes": "accb8aa90f1e302d2ef9355304982a4b18ff8e3010f4ce7388c4973f1488b8bd"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 15 - Division & Remainder/New checked exports/046 q-424.mp4",
+  "rendered_at": "2026-10-13T19:22:53+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-428": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 15 - Division & Remainder/Previous checked exports/49 q-428 - edited.mp4",
+  "rendered_at": "2026-10-13T12:58:42+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T12:58:42+03:00"
+ },
+ "solve-q-429": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 15 - Division & Remainder/Previous checked exports/50 q-429 - edited.mp4",
+  "rendered_at": "2026-10-13T12:59:54+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T12:59:54+03:00"
+ },
+ "solve-q-430": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 15 - Division & Remainder/Previous exports - reread pending/51 q-430 - edited.mp4",
+  "rendered_at": "2026-10-13T13:21:40+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T13:21:40+03:00"
+ },
+ "solve-q-432": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 15 - Division & Remainder/Previous checked exports/54 q-432 - edited.mp4",
+  "rendered_at": "2026-10-13T13:05:05+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T13:05:05+03:00"
+ },
+ "solve-q-433": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 15 - Division & Remainder/Previous checked exports/55 q-433 - edited.mp4",
+  "rendered_at": "2026-10-13T13:25:16+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T13:25:16+03:00"
+ },
+ "solve-q-434": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 15 - Division & Remainder/Previous checked exports/56 q-434 - edited.mp4",
+  "rendered_at": "2026-10-13T13:08:47+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T13:08:47+03:00"
+ },
+ "solve-q-436": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 15 - Division & Remainder/Previous checked exports/58 q-436 - edited.mp4",
+  "rendered_at": "2026-10-13T13:26:33+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T13:26:33+03:00"
+ },
+ "solve-q-457": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/Previous checked exports/60 q-457 - edited.mp4",
+  "rendered_at": "2026-10-13T13:54:01+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T13:54:01+03:00"
+ },
+ "solve-q-458": {
+  "state": "done",
+  "fingerprint": "7a9849a396c6df6aa0e27b736a1f362e1a7b45fa2a4db5972f9fe4859312b631",
+  "parts": {
+   "spoken": "05e6bc76bd1427f1cb1539cb2b716cb9d933ca5f6679c111432130f0dcfa726e",
+   "visual": "6fad1a9eb2d7aa666f500040dfb1d54ac4a09591662f1b588de377902da19130",
+   "takes": "60db6c76d74e50a3876eda8668f43cb9ef734a01979396a26f190db27a58b23c"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports/067 q-458.mp4",
+  "rendered_at": "2026-10-13T19:36:01+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-459": {
+  "state": "done",
+  "fingerprint": "58bb5647e4632e4cc3d9f790c85c75ff66d8576a993c76de5f9215adc6315cde",
+  "parts": {
+   "spoken": "91b956d752a5bb2012da716d6ab8931e4907eea91168efe4ee49bbda040230ff",
+   "visual": "6dba74cef275dda8f2dadd13c4bcd219f7214f52a3218321b9869e7fa8850741",
+   "takes": "15b840371f3a0a3e30267512ef158e5325b30ab65636244e7e3f41fcd992745f"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports - 14 October follow-up/072 q-459.mp4",
+  "rendered_at": "2026-10-14T13:15:34+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T10:52:10+03:00"
+ },
+ "solve-q-467": {
+  "state": "done",
+  "fingerprint": "33dcff2350a73f69953a132110f6fc52379864b91d12d1295384f4ac208ef5c1",
+  "parts": {
+   "spoken": "9b678d1dae5c1c3317eb6ebe6edad1c6d218c4593fdf92543cc158806481ad67",
+   "visual": "e85c4de501e676358f5df27d254fd24fb0075298de4208caac86de4be0109a97",
+   "takes": "34b8cb65d281a183c4dd0f2ab8c97867d1f0992000cd5195ba5ede5b829b37cd"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports/082 q-467.mp4",
+  "rendered_at": "2026-10-13T22:28:12+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-468": {
+  "state": "done",
+  "fingerprint": "f956a0d61943ac1e6dadea7395cf8aff673675fc5073295661f9174d1ff3ef82",
+  "parts": {
+   "spoken": "ccf9a08ed31620c1eb1157c62695a30c4144bfa89d9e07ab7ddd1b5c12f2af0b",
+   "visual": "3b70d17844c7f40478092661953085a238ba0509d95722e701e2fdda6bacbbb1",
+   "takes": "bce9c2e355834be51fccb6040c5d5994cf3fb92c397ee88fdc7a9769529a5066"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports/083 q-468.mp4",
+  "rendered_at": "2026-10-13T22:41:46+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-469": {
+  "state": "done",
+  "fingerprint": "c49a67b54f715b76c22981c8f9fdef0034f8c13ac57375aa15af75e919f36c6c",
+  "parts": {
+   "spoken": "345541ba5560e7bc35308cc06686d57d6de013069e72707113373627cfda295c",
+   "visual": "814fe69807216c097dcd816e750b514c97a6200246371e082bd3658c1b288c24",
+   "takes": "7ea9bd6bde73008abf3bd1c768dbdfb481d7f2670b65211ba4c0150cbb2a205d"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports/084 q-469.mp4",
+  "rendered_at": "2026-10-13T22:42:13+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-471": {
+  "state": "done",
+  "fingerprint": "83a576c6cc7347cf03f539011f7eea461a92c2fa227e16c904a31061be6981aa",
+  "parts": {
+   "spoken": "68be974c2f461602082ca60ebe45c69c57c0a953dd5b9dc4cfbc5750d0e8b9d5",
+   "visual": "d3ae74343f71a7f62f54074149e45d3e03accc0057c7dc8e064da3f3e566fe00",
+   "takes": "d0a3bdf2ee08c7a793596dd26888780314194c7882d1507ed677fee47c8da899"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports/086 q-471.mp4",
+  "rendered_at": "2026-10-13T22:51:46+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-472": {
+  "state": "done",
+  "fingerprint": "1d84aece5fb06ebf3d449d3ad2999d9e5b9460fec0855522b11a532db8fd0262",
+  "parts": {
+   "spoken": "48635e91151f3297e5c596c0e29ab23177643d901fcf300a3d4d4404cbd907d3",
+   "visual": "8239a38f31751c7cb49b0ef98bd8facb1152455390395b3c52e3472d502eb1e3",
+   "takes": "69184f67e6c1790c54428cbf05c722db33ebf25274065515d68e63d57858f0e0"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports/087 q-472.mp4",
+  "rendered_at": "2026-10-13T22:50:43+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-493": {
+  "state": "done",
+  "fingerprint": "d1732e05403b76261d3f71109f57e6c24ab98f274ebeeec64b5f4c9b8754dcae",
+  "parts": {
+   "spoken": "29c2bef9dcce9724ddf286b9532eb738bfafc26f673baef459c6aa52fa33e7c9",
+   "visual": "a6cf716a47d84f0a8def90c38c229f9a4c906e1299040d11856168c480683b63",
+   "takes": "729017238906af544e661c3e283829ae0d749db5e58628293e981c98d3d8f494"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports/090 q-493.mp4",
+  "rendered_at": "2026-10-13T22:39:09+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-494": {
+  "state": "done",
+  "fingerprint": "0c167604568b2738594ff9b40f08cb3e806d05e396266900240a119b55e65ee2",
+  "parts": {
+   "spoken": "5f93b9f8e21707b4ba3dd1d80ae90d04967e12241adec7493e7c1604c15d1fb0",
+   "visual": "0212ba1b097cd1838fce907ecb3cdbc0910ebe286422e92deeb884c463c8c111",
+   "takes": "e99f4e653d4dbb85d32c0e9d730d2ec5d5ac9175d2795b296e588a3d02db7898"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports/092 q-494.mp4",
+  "rendered_at": "2026-10-13T22:56:57+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-495": {
+  "state": "done",
+  "fingerprint": "d8a36bfd66501c8945a67e0645007887944db1455ef839346d4a9f3c95f4be91",
+  "parts": {
+   "spoken": "21016585f62aaae51b6a315e6245afbc43afcc2fd78c00edcb4fa180f580dec8",
+   "visual": "2b1a67cd460b02e5e0e098a789546eacdccb5a8aa02be8b849a3cd1029ed6b8e",
+   "takes": "52ed2e6f74b4f41328fc9391e4f3b508c07016401b816489ae5888f346bb2489"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports/094 q-495.mp4",
+  "rendered_at": "2026-10-13T22:52:25+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-496": {
+  "state": "done",
+  "fingerprint": "319e0a5d9b04c50d68498d28bc92f4322ce406f9cd8905d35b8bccc90acf87b4",
+  "parts": {
+   "spoken": "bc32a323ee22c77c940f9bdccb92d77f5633162f8f54893df94eccf8841e4c76",
+   "visual": "87aed2d8d24a2d776042c3576f070b38cc788cd365a36130feae24c38112ec18",
+   "takes": "439ceabe6fa9afbdd5874d7ad2c4b32784c53ac58a6220a814edc139a9d0edf2"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports/095 q-496.mp4",
+  "rendered_at": "2026-10-13T23:02:34+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-497": {
+  "state": "done",
+  "fingerprint": "0a477397a4b9723c99cf975847346ca5320d6576cb13cdf8d39ddf439538759f",
+  "parts": {
+   "spoken": "23569cef915e327ff7bb41842a207838a5f29f3d155f39abc31e01ee47e98102",
+   "visual": "fa313502c087f7858953b2f8c1e0868cb55424457e05c760eb0ab0414add36a0",
+   "takes": "d2648516cbb7fc975043d67434c1f08c66f5b10858d4f76df4e0dde4e7ca494b"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October/101 q-497.mp4",
+  "rendered_at": "2026-10-14T04:08:20+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-498": {
+  "state": "done",
+  "fingerprint": "8a4e8ac8d6acb32b78cd72cd7d8cc2b79a8ae4805161e15eba58b6279c669682",
+  "parts": {
+   "spoken": "201c02a03239a6bf59925532a51b9b5adb97ad0947f9e1cbd650f58720fe248c",
+   "visual": "daab28903f5ff978d2587e9f959c40d20385e8c77e0a9b3c09e1b9e8115dca98",
+   "takes": "7f4d2ec9623bee42a2bc8b7111169700dbc44de10b8162a2bf26260733a52dd8"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October/102 q-498.mp4",
+  "rendered_at": "2026-10-14T03:08:15+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-499": {
+  "state": "done",
+  "fingerprint": "f5a16c5924eb0c3fc2ec16ddec919db41047efd90a4830d3b89b1e5d31bd9792",
+  "parts": {
+   "spoken": "598aa8a6b362816e70719f06217fa1392b2ecfa58fc04da114cdc74f4b852417",
+   "visual": "47a18a7d9e96a3cea12cf999f42b48da2f2957e994771aa1e65aaa3f10d42ce5",
+   "takes": "ef4f9d6c79d079f9626fe195b4cf48c4b0c238cf76f0f28cf39fd75bd5031dfe"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October/103 q-499.mp4",
+  "rendered_at": "2026-10-14T04:09:19+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-500": {
+  "state": "done",
+  "fingerprint": "d19ede4686da872f6272476ef875ce2fcb8dfe143803a7b6079ee3c23640ef5e",
+  "parts": {
+   "spoken": "0d169f3300d2932714a36ab4ea8640ab3451194fbbc5a2541ed2da94313827d0",
+   "visual": "81a23c2532c3731ecc375aa273b4ee6dbee2340936037d0b30eec9e0fbea7d07",
+   "takes": "33fe3cd88dbeea8bdce8075968808f0f71cfc073da5ea9b3400988d02cfac174"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October/104 q-500.mp4",
+  "rendered_at": "2026-10-14T04:03:20+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-501": {
+  "state": "done",
+  "fingerprint": "2a84bd279b42ddf708e346c41efa2df15a868bec13e41ddcb1f2916003c52423",
+  "parts": {
+   "spoken": "3f0d50976c53045ca3f24b6e1849aa3d0380ba607611c837c0ee0face440628a",
+   "visual": "0ec7e2f6d0ee459452ecf70b24353ab53fe93496887ed2c427740d24fecb9d96",
+   "takes": "bea9a4ac4ea2707e198e7d62dfe8d172f683d7eafba8a951c792866ed976f5a1"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October/105 q-501.mp4",
+  "rendered_at": "2026-10-14T04:11:56+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-512": {
+  "state": "done",
+  "fingerprint": "0e78b1e5fab70060f4224899c9a7eacc0109ef10b33ad92699fbb4a4e8944214",
+  "parts": {
+   "spoken": "eab1e76a07f77504bce9e022d85609872e09ce0a9f329c9e02664e118c4038c8",
+   "visual": "d2e94be8b54b1c2a06bb60d1de2e47ea79c64c3a0b88f5efdc704d82a5b05f47",
+   "takes": "0283729188c49598bd3eeb4ed22868172770c0692c793905187294cbd57cd87f"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October/113 q-512.mp4",
+  "rendered_at": "2026-10-14T04:58:56+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-513": {
+  "state": "done",
+  "fingerprint": "c47a15ca8b9d9a681ae863044697ff12065036bd15c74840ef6609a7c7c88647",
+  "parts": {
+   "spoken": "32adc25c78bffa2eb8f78ca83d731815a0638dd487fb74a0b890fcd0d210d289",
+   "visual": "01da45241eee37c0760059492b2d4eba30ceb8505cecbd361b8bd4c39136800f",
+   "takes": "7f0c56518353138fddfc11197d88782cac745660b4962f43767aca8f211532d9"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October/114 q-513.mp4",
+  "rendered_at": "2026-10-14T04:59:31+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-514": {
+  "state": "done",
+  "fingerprint": "cad83f677a492ded42d0e340da94a7aab71ffcb8bb5f7e10fddeb9dc78b3edcc",
+  "parts": {
+   "spoken": "13326c1a7c014368277c3df9a766cc606463eec9203a493b50af00115068ae48",
+   "visual": "255872717a3c24715595e5ab03ead349ec6c531c0b107be593f3a50a333f415c",
+   "takes": "0bc2c464e2c7c1e4b3652fd5fbc121a4b0afeb66d9c5fd69c84086d4bc2233b1"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October/115 q-514.mp4",
+  "rendered_at": "2026-10-14T04:53:47+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-515": {
+  "state": "done",
+  "fingerprint": "e458f194350c21d9fb980b1e7968aa4ceb0412b84969898412fe599eb7b7929d",
+  "parts": {
+   "spoken": "cf2c26ab2397314e054b92a5b80b799fef5b018145c4728e184798265b31bbf5",
+   "visual": "9f5363651f200f32fe999c8a9f68cc5fe2f34534b936794632190ef9ca02d16d",
+   "takes": "0d410a6ea63aa8d354cd71efa0548eb48e3ecc8dac26e78da3dc644007b765f3"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October/117 q-515.mp4",
+  "rendered_at": "2026-10-14T04:59:57+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-516": {
+  "state": "done",
+  "fingerprint": "f75a218d331dd65fcea86a7e81b138ca29e5f3e1414c20a4f175e4ca9eb80353",
+  "parts": {
+   "spoken": "a04dcb9dfcbd16a1bb61b011883714a21e65da62bb4b8d19668b00d87372e875",
+   "visual": "3adc46ce14db3cb92a4664cb071a2f07856cb1d604a2e50a615b32f6d28b7260",
+   "takes": "5e49b1cd0dfb12ff327fd2a9d655e5406980a1b99f6b767954510d0792a4bed5"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October/118 q-516.mp4",
+  "rendered_at": "2026-10-14T05:45:31+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-517": {
+  "state": "done",
+  "fingerprint": "ebdd74347c16e464ceded5d57988d6201f038dd7112520fa74aeda3e8ec46c60",
+  "parts": {
+   "spoken": "760d3b2d5bafa2b8288de26083a45fc32d082c202397e4adbdf4e9b1b2193ab1",
+   "visual": "46a4731e8e7f95887e2bf86592008af214979a9840a37e44cff01d88b5a9a5f9",
+   "takes": "d0b4eb18ba67614a288e165a73c9957baaf2b7c3d0c481272979b248f83324e6"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October/119 q-517.mp4",
+  "rendered_at": "2026-10-14T05:47:11+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-518": {
+  "state": "done",
+  "fingerprint": "ea07cba925627f2bb6602cc9a35746ef08a41ad7de816eb26aed59ae4a0201f7",
+  "parts": {
+   "spoken": "f2ce8958ed3361fd94826d736d1432d48bc6849138da24cc34f6292a1d8bae8c",
+   "visual": "4763549d934ebd331f5c92520a7b658fbad1c21856b17e5034b9dedf4cacad9b",
+   "takes": "dbcbf337591cb7297e7a36ac0222bcbbef6182cd9182c9082591315332b5d572"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October/120 q-518.mp4",
+  "rendered_at": "2026-10-14T05:48:13+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-519": {
+  "state": "done",
+  "fingerprint": "c47f6d2b5b598a9d1fc6af87526aad222ae1cdcfd33185ac6e8840172f2ab286",
+  "parts": {
+   "spoken": "3ff98912dc627545db3210ca1610e955fbf8b7666b37583928a84464b1f7073a",
+   "visual": "f896ab1047aeb058296f5b9b17e5ad14148e428f341fd6f3f779c2a77d7810f2",
+   "takes": "7cf88e904dfd62ce6e7c36f848e5594035d17568149d6ea2dbbdfc0faa66188e"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October/121 q-519.mp4",
+  "rendered_at": "2026-10-14T05:52:17+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-541": {
+  "state": "done",
+  "fingerprint": "016f7c879ec2da531f2a18e641337dbbe31aba9ec0d99f701dedb1444bc14e9c",
+  "parts": {
+   "spoken": "10cfc1feb499f0f230f31528abede06fc84483c5284ba1d9d014935c175e34ca",
+   "visual": "5d8616e01273af74c04d5de863a84a6981b146ae1ca371fa10c877b6b5d7f261",
+   "takes": "651af6cec1bbe0536c73d69627d2e0f28a4a3b4972768858729b38085604ac57"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/ready-recordings-2026-10-14/videos/129 q-541 - edited.mp4",
+  "rendered_at": "2026-10-14T16:17:51+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T14:38:57+03:00"
+ },
+ "solve-q-542": {
+  "state": "done",
+  "fingerprint": "cb8a2ae11e07ed63996b72ae07eb6ddfe90d61457be50ff7264932d5eb9e3b23",
+  "parts": {
+   "spoken": "05314b898375ae18405dbfa98c357120a5e98221d36197cdde316e266e1a1c07",
+   "visual": "f42a5c5363e08f82610559023d6ac0a8609104ddd9731790a130b34970d033dd",
+   "takes": "97aa20737da482615c50edf996dd2ac2efdfdaf65c29d4aa9065dec370dcc1bf"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/ready-recordings-2026-10-14/videos/130 q-542 - edited.mp4",
+  "rendered_at": "2026-10-14T16:21:14+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T14:38:57+03:00"
+ },
+ "solve-q-r26-t13-01": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/06 q-r26-t13-01 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:54:24+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:54:24+03:00"
+ },
+ "solve-q-r26-t13-02": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/07 q-r26-t13-02 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:55:18+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:55:18+03:00"
+ },
+ "solve-q-r26-t13-03": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/14 q-r26-t13-03 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:53:38+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:53:38+03:00"
+ },
+ "solve-q-r26-t13-13": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/13 q-r26-t13-13 - repaired.mp4",
+  "rendered_at": "2026-10-12T13:52:22+03:00",
+  "source": "seed",
+  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
+  "made_from": "2026-10-12T13:52:22+03:00"
+ },
+ "solve-q-r26-t14-01": {
+  "state": "done",
+  "fingerprint": "51f0cf8e35c0c33d9ccbf15eb19f03b4e119fa09ab0508d53f30704a5e06a096",
+  "parts": {
+   "spoken": "f03f62cfdf8bc001244466ef462145da1204bb5aaa9c6112b86c355c3d1d6129",
+   "visual": "66329efddaa1eb880b592a9d26295e990aa9bbb1ad7de30f387a4c7ff86033fe",
+   "takes": "38ddca81ecebe76831db1e2b28f393c62dc584ef49d3e5f93bda01035a8f9812"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 14 - Prime Numbers/New checked exports - 14 October/026 q-r26-t14-01.mp4",
+  "rendered_at": "2026-10-14T02:29:35+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-r26-t16-01": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/Previous checked exports/61 q-r26-t16-01 - edited.mp4",
+  "rendered_at": "2026-10-13T13:55:04+03:00",
+  "source": "seed",
+  "note": "script changed 13 Oct after render",
+  "made_from": "2026-10-13T13:55:04+03:00"
+ },
+ "solve-q-r26-t16-02": {
+  "state": "done",
+  "fingerprint": "ad93366c65adcf52ef368eff2b863f21b2df01720d8b9d5c24d4966031cfa392",
+  "parts": {
+   "spoken": "f97eb8e5e2965c98644ab37981aac5b983d563201086b1861814e286324d8ba4",
+   "visual": "cf1f0c9261d890c6fd7b3ffbbe4687aa62bb6316264384f07179422fe835240a",
+   "takes": "461205cb9126b574198b4f749d6f67ec1e395c42f1958cf98a469ee5a2d2892a"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports/070 q-r26-t16-02.mp4",
+  "rendered_at": "2026-10-13T22:05:54+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-r26-t16-03": {
+  "state": "done",
+  "fingerprint": "4055af8d5706421c1a2ba9635ad553ee7a2096f6b4a0880bf9f9b480883c33ea",
+  "parts": {
+   "spoken": "291d8ed5b79b79aabdc7b649b231b9fe9e225f970e5a49c717d5ce98befa49c5",
+   "visual": "6813aaf639e805a28a260e79dfdb73ccbd7d72e93c9154b06e17b587c0e1f8b5",
+   "takes": "3e97644fc0d43ffc69fe6821c2680c8eb462c90a8686e60a8de1f1c64a312bbb"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 16 - Integers/New checked exports/071 q-r26-t16-03.mp4",
+  "rendered_at": "2026-10-13T22:25:35+03:00",
+  "source": "seed",
+  "note": "rendered 13 Oct, nothing changed since",
+  "made_from": "2026-10-13T18:14:36+03:00"
+ },
+ "solve-q-r26-t17-01": {
+  "state": "done",
+  "fingerprint": "72aadc2008d54c16cd1016ddf7e56ae8863026c61714ad8a1ffc7dcb5bdd2701",
+  "parts": {
+   "spoken": "f652db882e662d304c396aa7e921d52dbfee6d7a451850a1c51b6254026f687b",
+   "visual": "988554e7a60d5f7a1fe771335f55b6042074005d5d3033b7cd9dc4e532cf5755",
+   "takes": "c88603f7ebe06aeeb317a115d8c4ae66342f2c380d553c9875cdd4153f404a92"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October follow-up/106 q-r26-t17-01.mp4",
+  "rendered_at": "2026-10-14T13:16:14+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T10:52:10+03:00"
+ },
+ "solve-q-r26-t17-02": {
+  "state": "done",
+  "fingerprint": "e980f5419641d88c259a5a9058bebc5f41b5244a4ef016ac476fb63002d573dd",
+  "parts": {
+   "spoken": "24453255c7480ba25ab7a62e064224a4246e069171f38bcaf5fca715b601a80f",
+   "visual": "352db79102b5cdfb9fa3c95e47c8913ba43d07f1e76868e83545bf99bf3bb3df",
+   "takes": "21f34ad2b1a98038fef54d833df0d25bbe070159cbdd223bfa51de66683c463a"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/Visual updates - 14 October/107 q-r26-t17-02.mp4",
+  "rendered_at": "2026-10-14T11:06:00+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T10:52:10+03:00"
+ },
+ "solve-q-r26-t17-03": {
+  "state": "done",
+  "fingerprint": "6629061e1dadfc6ffa883785f4d6659a9f9068c9bd3a7feecdc552a0f6dbece4",
+  "parts": {
+   "spoken": "6670c8860dd137b5c4192fcc826e1d464a269b6a8385b6c0473ccd91a7333c63",
+   "visual": "9b13d7bd0ba66305bbdeaa3cc635a698b7253137a2c15f6796d8caaf00a95497",
+   "takes": "f4d2fc93ed01b847161878561791ff328914346a6b7b6b6ebc590c2ebad14cdc"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October/108 q-r26-t17-03.mp4",
+  "rendered_at": "2026-10-14T04:10:10+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-r26-t17-04": {
+  "state": "done",
+  "fingerprint": "2d931ad05d5196e08768110d0a712c04dedc7dc6f763d9f5fe9b1e79071732cb",
+  "parts": {
+   "spoken": "f76dd36ad9cc0285f00ff2cb13303674c61b6676b0509868a03a85ca32c804ee",
+   "visual": "05fa4c881e5bbcc2c4b84c0c682f0080993c9d1a0d60a658e7d6f4b58e5becc3",
+   "takes": "41b5a609e160a21c7395d207b64a76cfc50a408794b1b2b234811d16aa79567f"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October/109 q-r26-t17-04.mp4",
+  "rendered_at": "2026-10-14T04:15:53+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-r26-t17-05": {
+  "state": "done",
+  "fingerprint": "1c318a1530c69a9d8f6dcb1656dd0e038c9436c10e18de41745adfb48cd0278c",
+  "parts": {
+   "spoken": "f0dba3cb4fa8afd640eed2e339ba68023f439887b3d3733174b0d55d9093d959",
+   "visual": "c57472af892c8d01f1f6fcb0dc1441605fa67485406c3b03bb06b66991f602ce",
+   "takes": "0492147adc6a268119df1036279c23e3a0a031008f5dfc4006372eac034addc5"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October/110 q-r26-t17-05.mp4",
+  "rendered_at": "2026-10-14T04:05:52+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-r26-t18-01": {
+  "state": "send",
+  "fingerprint": null,
+  "parts": null,
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October/123 q-r26-t18-01.mp4",
+  "rendered_at": "2026-10-14T05:55:14+03:00",
+  "source": "seed",
+  "note": "visual plan changed 14 Oct after render",
+  "made_from": "2026-10-14T00:58:44+03:00"
+ },
+ "solve-q-r26-t18-03": {
+  "state": "done",
+  "fingerprint": "6e5b5c72abba477f7b9aa3390185de1a22d2ab8383545af8a1fbd2b610cfaf15",
+  "parts": {
+   "spoken": "e6337cca6f5e8bcc45a21ca2ccb64a19d50e9750d1629016d44bebe050d878b0",
+   "visual": "735389b10b71788d81e58fa82120d96a3abdbb21e8716d192d47e94f751d3396",
+   "takes": "314975801af376a2ec183454d4fd02cdbc9a291569163071a9e3a2d1dd10a06c"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October follow-up/125 q-r26-t18-03.mp4",
+  "rendered_at": "2026-10-14T13:16:48+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T10:52:10+03:00"
+ },
+ "solve-q-r26-t19-01": {
+  "state": "done",
+  "fingerprint": "a7daffa1f6fed24eb8efa22286866b3f9bd2395081bb2dbc14192f6e7e2d0429",
+  "parts": {
+   "spoken": "aec1d9572081ef1ec10fe9b4b03572c0fde8d1691a1e60fe835145c68949fd70",
+   "visual": "19e160384134165e5e4497b9b8e30d4f08cc9fabc5ef4f0f1ee2f028b7d57601",
+   "takes": "4cf2320010d41f27063642083f0ee66f7540c4eba30d82c094dd97c0338d150c"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/ready-recordings-2026-10-14/videos/132 q-r26-t19-01 - edited.mp4",
+  "rendered_at": "2026-10-14T16:26:29+03:00",
+  "source": "seed",
+  "note": "rendered 14 Oct, nothing changed since",
+  "made_from": "2026-10-14T14:38:57+03:00"
+ }
+}
