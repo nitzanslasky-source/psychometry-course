@@ -72,21 +72,24 @@
     "say": "A very useful trick is to compare a number with its own absolute value. It tells you the sign. If the absolute value is bigger than the number, the number is negative. For example, the absolute value of negative four is four, and four is bigger than negative four.",
     "at": [
      "If the absolute value is bigger than the number",
-     "For example, the"
+     "For example, the absolute value of negative four",
+     "and four is"
     ]
    },
    {
     "say": "If the absolute value equals the number, the number is positive or zero. The absolute value of nine is nine, and the absolute value of zero is zero. Don't forget the zero.",
     "at": [
      "If the absolute value equals the number",
-     "The absolute value of"
+     "The absolute value of nine is nine",
+     "value of zero"
     ]
    },
    {
     "say": "If the absolute value equals minus the number, the number is negative or zero. For example, the absolute value of negative six is six, and minus negative six is six too.",
     "at": [
      "equals minus the number",
-     "For example, the"
+     "For example, the absolute value of negative six",
+     "and minus negative"
     ]
    },
    {

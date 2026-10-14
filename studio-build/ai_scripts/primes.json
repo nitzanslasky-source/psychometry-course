@@ -86,7 +86,9 @@
     "say": "If a question asks for the primes between thirty and forty, run through the numbers. Thirty-one, yes. Thirty-two, thirty-three, thirty-four, thirty-five and thirty-six, no. Thirty-seven, yes. Thirty-eight and thirty-nine, no. In the same way, between twenty and thirty there are only two primes, twenty-three and twenty-nine.",
     "at": [
      "the primes between thirty and forty",
-     "forty, run through"
+     "forty, run through",
+     "between twenty and thirty",
+     "are only two"
     ]
    },
    {

@@ -89,17 +89,24 @@
    {
     "say": "Let's sum it up. A prime has exactly two divisors, one and itself. Zero and one are not prime, and two is the only even prime. If two primes give an odd sum or difference, one of them is two. And know the primes up to forty, and ninety-seven.",
     "at": [
-     "Let's sum it up",
-     "A prime has",
+     "A prime has exactly two divisors",
+     "divisors, one and",
+     "Zero and one are not prime",
+     "prime, and two",
      "If two primes give an odd sum",
-     "odd sum or"
+     "odd sum or",
+     "And know the primes up to forty",
+     "to forty, and"
     ]
    },
    {
     "say": "To test a bigger number, try the primes up to its root. Divisor means factor. And a number divides another only if all its primes are there, enough times. There's a memory card with the primes and these facts right after this video, and then the questions. Try each one first, and then watch the solution. [pause] Okay. I'll see you in the next video.",
     "at": [
      "To test a bigger number",
-     "try the primes"
+     "try the primes",
+     "Divisor means factor",
+     "And a number divides another",
+     "only if all"
     ]
    }
   ]

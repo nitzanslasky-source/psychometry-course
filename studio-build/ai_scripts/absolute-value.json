@@ -75,9 +75,8 @@
    {
     "say": "For example, the absolute value of three plus, in brackets, negative ten. Inside first: three plus negative ten is three minus ten, which is negative seven. Its absolute value is seven.",
     "at": [
-     "For example, the",
-     "Inside first: three plus negative ten",
-     "Its absolute value"
+     "For example, the absolute value of three plus",
+     "Inside first: three"
     ]
    },
    {
@@ -89,9 +88,8 @@
    {
     "say": "One more. The absolute value of five minus eleven. Inside first: five minus eleven is negative six, so the absolute value is six. Inside first, then the bars. [pause] Okay. I'll see you in the next part.",
     "at": [
-     "The absolute value",
-     "Inside first: five minus eleven",
-     "Inside first, then"
+     "The absolute value of five minus eleven",
+     "Inside first: five"
     ]
    }
   ]

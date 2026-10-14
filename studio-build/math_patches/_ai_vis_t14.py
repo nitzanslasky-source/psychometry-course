@@ -457,8 +457,9 @@ cp9 = I('cp9', 'Even sum: $\\ 16=3+13=5+11$ (no rule)', size=28, hand='16 = 3 + 
 cpS = STRIP('cpS', 1, 40, [('a', [('prime', v) for v in (2, 3, 5, 7, 11, 13, 17, 19)]),
                            ('b', [('prime', v) for v in (23, 29, 31, 37)])], base=(1, 10, 20, 30, 40), w=1060, col=0, top=True)
 at(cpS['line'], y=328)                                        # camera: the wide strip below her face bubble
-cp10 = at(I('cp10', '$30$ to $40$: $\\ 31,\\ 37$ $\\quad 20$ to $30$: $\\ 23,\\ 29$', size=30), x=410, y=548, w=850)
-cp11 = at(I('cp11', 'Largest two-digit prime: $\\ 97$', size=30), x=410, y=630, w=850)
+cp10 = at(I('cp10', '$30$ to $40$: $\\ 31,\\ 37$', size=30, hand='30 to 40 :   31,   37'), x=410, y=548, w=850)
+cp10b = at(I('cp10b', '$20$ to $30$: $\\ 23,\\ 29$', size=30, hand='20 to 30 :   23,   29'), x=410, y=608, w=850)
+cp11 = at(I('cp11', 'Largest two-digit prime: $\\ 97$', size=30), x=410, y=678, w=850)
 cp12 = at(I('cp12', 'Is $n$ prime? Try the primes up to $\\sqrt{n}$', size=30), w=850)
 cp13 = at(I('cp13', '$91$: $\\ 9^2=81,\\ 10^2=100$ $\\ \\to\\ $try $2,\\ 3,\\ 5,\\ 7$', size=30, hand='91 :    9^2 = 81,    10^2 = 100    →   try  2, 3, 5, 7'), w=850)
 c91a = I('c91a', '$91$ is odd: not divisible by $2$', size=28)
@@ -501,9 +502,13 @@ cp29 = I('cp29', '$x=3\\cdot6^2$', size=30)
 cp29b = I('cp29b', '$6^2=(2\\cdot3)^2=2^2\\cdot3^2$', size=30)
 cp29c = I('cp29c', '$x=3\\cdot2^2\\cdot3^2=2^2\\cdot3^3$', size=30)
 cp29d = I('cp29d', '$12=2^2\\cdot3$ ✓ : enough $2$s and $3$s', size=30)
-cpR1 = I('cpR1', 'Prime: only $1$ and itself $\\quad 0,\\ 1$ not prime $\\quad 2$ the only even one', size=26)
-cpR2 = I('cpR2', 'Odd sum or difference of two primes $\\to$ one is $2$ $\\quad$ primes to $40$, and $97$', size=26)
-cpR3 = I('cpR3', 'Prime test: up to $\\sqrt{n}$ $\\quad$ divisor $=$ factor $\\quad$ its primes, enough times', size=26)
+cpR1 = I('cpR1', 'Prime: exactly two divisors, $1$ and itself', size=28)
+cpR1b = I('cpR1b', '$0$ and $1$: not prime $\\quad 2$: the only even prime', size=28)
+cpR2 = I('cpR2', 'Two primes, odd sum or difference $\\to$ one is $2$', size=28)
+cpR2b = I('cpR2b', 'Know the primes up to $40$, and $97$', size=28)
+cpR3 = I('cpR3', 'Is $n$ prime? Try the primes up to $\\sqrt{n}$', size=28)
+cpR3b = I('cpR3b', 'Divisor $=$ factor', size=28)
+cpR3c = I('cpR3c', 'A divisor needs all its primes, enough times', size=28)
 video('primes', 'lesson', slides=[
     S('Prime Numbers',
       L("Prime numbers. This topic comes up a lot on the exam, in questions about primes, about factors and about "
@@ -542,7 +547,7 @@ video('primes', 'lesson', slides=[
       L("If a question asks for the primes between thirty and forty, run through the numbers. Thirty-one, yes. Thirty-two, "
         "thirty-three, thirty-four, thirty-five and thirty-six, no. Thirty-seven, yes. Thirty-eight and thirty-nine, no. "
         "In the same way, between twenty and thirty there are only two primes, twenty-three and twenty-nine.",
-        show(cp10, 'the primes between thirty and forty')),
+        show(cp10, 'the primes between thirty and forty'), show(cp10b, 'between twenty and thirty')),
       L("It's also worth knowing that the largest two-digit prime is ninety-seven. Knowing these by heart saves you from "
         "calculating them in the middle of a question.", show(cp11, 'the largest two-digit prime'))),
     S('Is it prime?',
@@ -620,11 +625,13 @@ video('primes', 'lesson', slides=[
     S('Recap',
       L("Let's sum it up. A prime has exactly two divisors, one and itself. Zero and one are not prime, and two is the only "
         "even prime. If two primes give an odd sum or difference, one of them is two. And know the primes up to forty, "
-        "and ninety-seven.", show(cpR1, "Let's sum it up"), show(cpR2, 'If two primes give an odd sum')),
+        "and ninety-seven.", show(cpR1, 'A prime has exactly two divisors'), show(cpR1b, 'Zero and one are not prime'),
+        show(cpR2, 'If two primes give an odd sum'), show(cpR2b, 'And know the primes up to forty')),
       L("To test a bigger number, try the primes up to its root. Divisor means factor. And a number divides another only if "
         "all its primes are there, enough times. There's a memory card with the primes and these facts right after this "
         "video, and then the questions. Try each one first, and then watch the solution. [pause] Okay. I'll see you in "
-        "the next video.", show(cpR3, 'To test a bigger number'))),
+        "the next video.", show(cpR3, 'To test a bigger number'), show(cpR3b, 'Divisor means factor'),
+        show(cpR3c, 'And a number divides another'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-387 (Q1)

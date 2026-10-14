@@ -12,8 +12,9 @@
      "The absolute value of x equals six",
      "Which numbers are six steps",
      "Six, and negative six",
-     "Six, and negative six",
-     "One on each side"
+     "and negative six",
+     "and negative six",
+     "One on each"
     ]
    },
    {
@@ -35,8 +36,9 @@
    {
     "say": "Let's check both. Five plus three is eight, and its absolute value is eight. Negative eleven plus three is negative eight, and its absolute value is eight too. Both work.",
     "at": [
-     "Let's check both",
-     "Five plus three"
+     "Five plus three is eight",
+     "Negative eleven plus three",
+     "value is eight too"
     ]
    }
   ],
@@ -82,8 +84,8 @@
      "that's two rays going outward",
      "right, and one",
      "The circles are open",
-     "So bars on the big side",
-     "x is bigger"
+     "than three. So",
+     "x is bigger than three, or"
     ]
    }
   ],
@@ -104,9 +106,9 @@
     "say": "On the number line, that's one band between negative three and three. So bars on the small side give a closed range: x is between negative three and three. It's just like the x squared inequalities you learned. On the small side the range is closed, and on the big side it's open.",
     "at": [
      "one band between",
-     "negative three and three",
      "So bars on the small side",
-     "x is between"
+     "x is between negative three and three",
+     "It's just like"
     ]
    },
    {

@@ -377,21 +377,25 @@ av13c = I('av13c', '$7=7$: the two sides are equal', size=30)
 av14 = I('av14', 'Different signs: $|-3+4|=|1|=1$', size=30)
 av14b = I('av14b', '$|-3|+|4|=3+4=7$', size=30)
 av14c = I('av14c', '$1<7$: the left side is smaller', size=30)
-av15 = I('av15', '$|x|>x\\ \\Rightarrow\\ x<0$ $\\quad |-4|=4>-4$', size=30)
-av16 = I('av16', '$|x|=x\\ \\to\\ x\\ge0$ $\\quad |9|=9,\\ |0|=0$', size=30)
-av17 = I('av17', '$|x|=-x\\ \\to\\ x\\le0$ $\\quad |-6|=6=-(-6)$', size=30)
-av18 = I('av18', '$x>|x|\\ \\to\\ $ impossible', size=30)
+av15 = I('av15', '$|x|>x\\ \\Rightarrow\\ x<0$', size=30)
+av15b = I('av15b', '$|-4|=4>-4$', size=30)
+av16 = I('av16', '$|x|=x\\ \\Rightarrow\\ x\\ge0$', size=30)
+av16b = I('av16b', '$|9|=9,\\ \\ |0|=0$', size=30)
+av17 = I('av17', '$|x|=-x\\ \\Rightarrow\\ x\\le0$', size=30)
+av17b = I('av17b', '$|-6|=6=-(-6)$', size=30)
+av18 = I('av18', '$x>|x|\\ \\Rightarrow\\ $ impossible', size=30)
 avs6 = at(I('avs6', '$|x|=6$', size=40), x=410, y=65, w=300)
 avs6b = at(I('avs6b', '$x=6$ or $x=-6$', size=34), x=740, y=65, w=530)
 ave = own(DIST('ave', -9, 9, 0, 6, base=(0,), w=760)); at(ave['line'], y=150)
 av19 = at(I('av19', 'inside $=$ right side $\\quad$ or $\\quad$ inside $=-\\,$right side', size=28), y=330)
-av20 = at(I('av20', '$|x+3|=8$: $\\ x+3=8\\ \\to\\ x=5$', size=30, hand='|x + 3| = 8 :   x + 3 = 8  →  x = 5'), y=400)
-av21 = at(I('av21', '$x+3=-8\\ \\to\\ x=-11$', size=30, hand='x + 3 = −8  →  x = −11'), y=500)
-av22 = at(I('av22', '$|5+3|=8 \\qquad |-11+3|=|-8|=8$ ✓', size=30), y=610)
+av20 = at(I('av20', '$|x+3|=8$: $\\ x+3=8\\ \\to\\ x=8-3=5$', size=30, hand='|x + 3| = 8 :   x + 3 = 8  →  x = 8 − 3 = 5'), y=400)
+av21 = at(I('av21', '$x+3=-8\\ \\to\\ x=-8-3=-11$', size=30, hand='x + 3 = −8  →  x = −8 − 3 = −11'), y=500)
+av22 = at(I('av22', '$|5+3|=8$ ✓', size=30), y=610)
+av22b = at(I('av22b', '$|-11+3|=|-8|=8$ ✓', size=30), y=665)
 avfd = at(I('avfd', '$|x-4|$ = distance between $x$ and $4$', size=32), x=410, y=65, w=850)
 avf = own(DIST('avf', -1, 9, 4, 2, base=(0,), w=760)); at(avf['line'], y=150)
 avf2 = at(I('avf2', '$|x-4|=2$', size=36), x=410, y=350, w=850)
-av23 = at(I('av23', '$|x-4|=2$: $\\ $two steps from $4$: $\\ 6$ or $2$', size=30), x=410, y=420, w=850)
+av23 = at(I('av23', 'Two steps from $4$: $\\ x=6$ or $x=2$', size=30), x=410, y=420, w=850)
 avf3 = at(I('avf3', '$6-4=2\\qquad 2-4=-2$', size=30), x=410, y=490, w=850)
 avf4 = at(I('avf4', '$|2|=|-2|=2$', size=30), x=410, y=550, w=850)
 avg = at(I('avg', '$|x|>3$', size=42), x=410, y=65, w=300)
@@ -405,8 +409,8 @@ avh = at(I('avh', '$|x|<3$', size=42), x=410, y=65, w=300)
 avb = own(DIST('avb', -8, 8, 0, 3, base=(0,), band='open', w=760)); at(avb['line'], y=150)
 avh2 = at(I('avh2', '$x=2,\\ 1,\\ 0,\\ -1,\\ -2$ ✓', size=30), x=410, y=330, w=850)
 avh5 = at(I('avh5', '$|-5|=5>3$ : does not work', size=30), x=410, y=375, w=850)
-av25 = at(I('av25', '$|x|<3\\ \\Rightarrow\\ -3<x<3$', size=30), x=410, y=420, w=1000)
-avhi = at(I('avhi', 'Inside: one interval. Endpoints $-3$ and $3$ not included.', size=28), x=410, y=480, w=850)
+avhi = at(I('avhi', 'Inside: one interval. Endpoints $-3$ and $3$ not included.', size=28), x=410, y=420, w=850)
+av25 = at(I('av25', '$|x|<3\\ \\Rightarrow\\ -3<x<3$', size=30), x=410, y=475, w=1000)
 av26 = at(I('av26', '$|x-2|<5$: $\\ -5<x-2<5$', size=30, hand='|x − 2| < 5 :   −5 < x − 2 < 5'), x=410, y=530, w=850)
 avh3 = at(I('avh3', '$-5+2<x-2+2<5+2$', size=32), x=410, y=620, w=850)
 av27 = at(I('av27', '$-3<x<7$', size=30, hand='−3 < x < 7'), x=410, y=700, w=850)
@@ -445,11 +449,11 @@ video('absolute-value', 'lesson', slides=[
       L("When there's a whole expression inside the bars, the bars belong to the whole expression, not to each number "
         "inside it. So we calculate the inside first, and only then take the bars.", show(avin, 'So we calculate the inside first')),
       L("For example, the absolute value of three plus, in brackets, negative ten. Inside first: three plus negative ten is "
-        "three minus ten, which is negative seven. Its absolute value is seven.", show(av5, 'Inside first: three plus negative ten')),
+        "three minus ten, which is negative seven. Its absolute value is seven.", show(av5, 'For example, the absolute value of three plus')),
       L("What we must not do is turn the negative ten into ten first, and then add. That gives three plus ten, which is "
         "thirteen, a different number.", show(av6, 'That gives three plus ten')),
       L("One more. The absolute value of five minus eleven. Inside first: five minus eleven is negative six, so the absolute "
-        "value is six. Inside first, then the bars.", show(av7, 'Inside first: five minus eleven'))),
+        "value is six. Inside first, then the bars.", show(av7, 'The absolute value of five minus eleven'))),
     S('The rules',
       L("Now three rules. Rule one is really the definition: an absolute value is never negative. It can be zero, and it "
         "can be positive. So whenever you see bars, think zero or positive.", show(av8, 'an absolute value is never negative')),
@@ -478,11 +482,13 @@ video('absolute-value', 'lesson', slides=[
     S('Sign clues',
       L("A very useful trick is to compare a number with its own absolute value. It tells you the sign. If the absolute "
         "value is bigger than the number, the number is negative. For example, the absolute value of negative four is four, "
-        "and four is bigger than negative four.", show(av15, 'If the absolute value is bigger than the number')),
+        "and four is bigger than negative four.", show(av15, 'If the absolute value is bigger than the number'),
+        show(av15b, 'For example, the absolute value of negative four')),
       L("If the absolute value equals the number, the number is positive or zero. The absolute value of nine is nine, and "
-        "the absolute value of zero is zero. Don't forget the zero.", show(av16, 'If the absolute value equals the number')),
+        "the absolute value of zero is zero. Don't forget the zero.", show(av16, 'If the absolute value equals the number'),
+        show(av16b, 'The absolute value of nine is nine')),
       L("If the absolute value equals minus the number, the number is negative or zero. For example, the absolute value of "
-        "negative six is six, and minus negative six is six too.", show(av17, 'equals minus the number')),
+        "negative six is six, and minus negative six is six too.", show(av17, 'equals minus the number'), show(av17b, 'For example, the absolute value of negative six')),
       L("And if the number is bigger than its absolute value? That never happens. A negative number is smaller than its "
         "absolute value, and a positive number is equal to it. So a given like that contradicts itself. These clues come up "
         "on the exam again and again, and they tell you at once whether a number is positive or negative.",
@@ -490,7 +496,7 @@ video('absolute-value', 'lesson', slides=[
     S('Equations: two cases',
       L("Now equations. The absolute value of x equals six. Which numbers are six steps from zero? Six, and negative six. "
         "One on each side of zero.", show(avs6, 'The absolute value of x equals six'), show(ave['line'], 'Which numbers are six steps'),
-        show(ave['right'], 'Six, and negative six'), show(avs6b, 'Six, and negative six'), show(ave['left'], 'One on each side')),
+        show(ave['right'], 'Six, and negative six'), show(avs6b, 'and negative six'), show(ave['left'], 'and negative six')),
       L("So an equation with bars splits into two cases. The inside equals the right side, or the inside equals minus the "
         "right side. Why minus? Because if the inside is negative six, the bars still turn it into six.",
         show(av19, 'splits into two cases')),
@@ -499,7 +505,8 @@ video('absolute-value', 'lesson', slides=[
         "negative eleven. We use the same inside twice, once with eight and once with negative eight.",
         show(av20, 'Case one: x plus three is eight'), show(av21, 'Case two: x plus three is negative eight')),
       L("Let's check both. Five plus three is eight, and its absolute value is eight. Negative eleven plus three is negative "
-        "eight, and its absolute value is eight too. Both work.", show(av22, "Let's check both")),
+        "eight, and its absolute value is eight too. Both work.", show(av22, 'Five plus three is eight'),
+        show(av22b, 'Negative eleven plus three')),
       sb='Equations: two cases'),
     S('Equations: two cases',
       L("There's also a picture for this. The absolute value of the whole x minus four is the distance between x and four. You'll see "
@@ -524,7 +531,7 @@ video('absolute-value', 'lesson', slides=[
       L("On the number line, that's two rays going outward, one from three to the right, and one from negative three to the "
         "left. The circles are open, because three itself is not bigger than three. So bars on the big side give an open "
         "range: x is bigger than three, or x is smaller than negative three.", show(avr['band'], "that's two rays going outward"),
-        show(avgo, 'The circles are open'), show(av24, 'So bars on the big side'))),
+        show(avgo, 'The circles are open'), show(av24, 'x is bigger than three, or'))),
     S('Inequalities: the small side',
       L("Now the absolute value of x is smaller than three. Without its sign, x must be less than three. Two, one and zero "
         "work, and so do negative one and negative two. Negative five? No. The bars turn it into five, which is not smaller "
@@ -534,7 +541,7 @@ video('absolute-value', 'lesson', slides=[
       L("On the number line, that's one band between negative three and three. So bars on the small side give a closed "
         "range: x is between negative three and three. It's just like the x squared inequalities you learned. On the small "
         "side the range is closed, and on the big side it's open.", show(avb['band'], 'one band between'),
-        show(av25, 'negative three and three'), show(avhi, 'So bars on the small side')),
+        show(avhi, 'So bars on the small side'), show(av25, 'x is between negative three and three')),
       L("With an expression inside, it's the same idea. The absolute value of the whole x minus two is smaller than five. The bars are "
         "on the small side, so the inside, x minus two, is between negative five and five. Now add two to all three parts. "
         "Negative five plus two is negative three, and five plus two is seven. So x is between negative three and seven.",
