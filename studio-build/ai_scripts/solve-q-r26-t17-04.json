@@ -7,7 +7,7 @@
     "say": "Given: x is smaller than negative one, which is smaller than y, which is smaller than zero. Which of the following is necessarily true?",
     "voice": "calm",
     "at": [
-     "Given"
+     "Which of the following"
     ],
     "pause": 0.5
    },

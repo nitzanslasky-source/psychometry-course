@@ -17,8 +17,8 @@
      "a can be",
      "What number does",
      "What number does",
-     "by? [short pause",
-     "by? [short pause",
+     "always divide by",
+     "always divide by",
      "ways, first writing",
      "in a number"
     ]
@@ -35,9 +35,10 @@
    {
     "say": "Now look at a squared minus one inside the bracket. Use the difference-of-squares formula: a minus one, times a plus one. So x is five, times a minus one, times a, times a plus one. We put a in the middle so it's easier to see the three numbers in a row.",
     "at": [
-     "the bracket. Use",
+     "Use the difference",
      "one, times a",
      "So x is",
+     "So x is five",
      "a minus one, times a, times"
     ]
    },
@@ -76,6 +77,7 @@
      "three numbers in",
      "Every third integer",
      "three, so one",
+     "one of these three numbers",
      "three. At least",
      "which means it",
      "means it divides",

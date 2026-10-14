@@ -7,7 +7,7 @@
     "say": "Given: p squared is smaller than p, which is smaller than r times q, which is smaller than q, which is smaller than r. Which of the following statements is possible but not necessarily true?",
     "voice": "calm",
     "at": [
-     "Given"
+     "Which of the following"
     ],
     "pause": 0.5
    },

@@ -47,6 +47,7 @@
     "at": [
      "Ninety-one is odd",
      "Here's a quick",
+     "Here's a quick",
      "it's worth knowing",
      "Add the digits",
      "the digit sum",
@@ -65,7 +66,7 @@
    {
     "say": "So ninety-one, nine plus one is ten. Ten doesn't divide by three, so three doesn't divide ninety-one. Five? It doesn't end in zero or five, so no. And seven? Seven has no quick test, so I just divide. Seven times ten is seventy, and seven times three is twenty-one, together ninety-one. So ninety-one is seven times thirteen. It breaks, it's a fake, and choice number one is out.",
     "at": [
-     "nine plus one is ten",
+     "So ninety-one, nine plus one",
      "so three doesn't",
      "Five? It",
      "It doesn't end",
@@ -73,8 +74,10 @@
      "Seven has no quick test",
      "so I just",
      "Seven times ten",
+     "Seven times ten",
      "and seven times",
      "twenty-one, together ninety-one",
+     "So ninety-one is seven",
      "seven times thirteen",
      "it's a fake",
      "choice number one is out"
@@ -87,6 +90,7 @@
     "at": [
      "A hundred",
      "A hundred nineteen",
+     "Ten squared is a hundred",
      "is a hundred",
      "squared is a hundred twenty-one",
      "so again I",
@@ -109,6 +113,7 @@
     "at": [
      "A hundred thirty-three",
      "Eleven squared is",
+     "Eleven squared is",
      "twenty-one, and twelve",
      "a hundred forty-four",
      "try up to",
@@ -129,6 +134,7 @@
      "circle the last one",
      "Here, let's see",
      "hundred thirteen really",
+     "Ten squared is",
      "Ten squared is",
      "and eleven squared",
      "hundred twenty-one, so",

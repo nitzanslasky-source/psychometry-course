@@ -22,18 +22,7 @@
      "result negative. For",
      "result negative. For",
      "result negative. For",
-     "result negative. For",
-     "For example, negative two cubed",
-     "times four, over",
-     "Four and two",
-     "so the negative",
-     "negative two cubed, which",
-     "But negative two",
-     "But negative two",
-     "is positive. So",
-     "is positive. So",
-     "two ways, checking",
-     "and then plugging"
+     "result negative. For"
     ]
    },
    {
@@ -48,6 +37,7 @@
      "a isn't zero",
      "a isn't zero",
      "a isn't zero",
+     "its absolute value must be positive",
      "So the bottom",
      "make our fraction"
     ]
@@ -55,12 +45,12 @@
    {
     "say": "Now b squared in the top of the fraction. A square is never negative. Could b be zero? No, because then b squared would be zero and the whole fraction would be zero. The given says the fraction is negative, not zero. So b squared must be positive.",
     "at": [
-     "b squared in",
      "never negative. Could",
      "Could b be",
      "because then b",
      "would be zero",
-     "So b squared"
+     "So b squared",
+     "So b squared must be positive"
     ]
    },
    {

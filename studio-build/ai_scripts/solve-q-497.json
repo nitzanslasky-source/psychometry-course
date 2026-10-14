@@ -7,7 +7,7 @@
     "say": "Given: negative one is smaller than k, which is smaller than zero, which is smaller than m, which is smaller than n, which is smaller than one. Which of the following expressions is the largest?",
     "voice": "calm",
     "at": [
-     "Given"
+     "Which of the following"
     ],
     "pause": 0.5
    },

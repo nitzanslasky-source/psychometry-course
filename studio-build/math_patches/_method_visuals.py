@@ -780,5 +780,10 @@ def post(ns, topic):
     if topic in FIXES: FIXES[topic](ns)
     carry(ns, {v: CARRY[v] for v in CARRY if v in ns.VIDEOS})
     calm(ns)
+    # 2026-10-15 the board follows her reading (recorded videos): math she added aloud, lines she skipped, early answers
+    import importlib.util as _ilu, os as _os, types as _ty
+    _hr_spec = _ilu.spec_from_file_location('_her_reading_20261015', _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '_her_reading_20261015.py'))
+    _hr = _ilu.module_from_spec(_hr_spec); _hr_spec.loader.exec_module(_hr)
+    _hr.post(ns, topic, _ty.SimpleNamespace(_insert=_insert, move_show=move_show))
     probs = [(v, p) for v in ns.ORDER for p in check_layers(ns.VIDEOS[v])]
     if probs: raise AssertionError('figure layers out of order: %s' % probs)

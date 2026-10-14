@@ -92,14 +92,18 @@
   "made_from": "2026-10-14T16:25:14+03:00"
  },
  "r26-t13-tools": {
-  "state": "check",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/08 r26-t13-tools - repaired.mp4",
-  "rendered_at": "2026-10-12T13:56:36+03:00",
+  "state": "done",
+  "fingerprint": "ea65864b7c89ef8c41c27aae977652f44dd47e242b0fb3699399c9b4b6be3b62",
+  "parts": {
+   "spoken": "d49ff6d9ea163662e973f8065254459197f2f8905c80b8a15d3615f5e468133d",
+   "visual": "7972f048cef4f04d1033fe1795377607987f329f32c26b2eede173f3a3faaa66",
+   "takes": "c86e574953210a4538f1a2598d4cb3a904e9205d5ecffc5fc819e3d272f7a633"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/11 r26-t13-tools - edited.mp4",
+  "rendered_at": "2026-10-15T01:42:54+03:00",
   "source": "seed",
-  "note": "rendered 12 Oct - only an older export that Codex has not checked",
-  "made_from": "2026-10-12T13:56:36+03:00"
+  "note": "rendered 15 Oct, nothing changed since",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "r26-t16-consecutive-sums": {
   "state": "done",
@@ -144,34 +148,34 @@
   "made_from": "2026-10-14T10:52:10+03:00"
  },
  "solve-q-358": {
-  "state": "send",
+  "state": "check",
   "fingerprint": null,
   "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/01 q-358 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:49:00+03:00",
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/04 q-358 - edited.mp4",
+  "rendered_at": "2026-10-15T01:38:18+03:00",
   "source": "seed",
-  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:49:00+03:00"
+  "note": "rendered 15 Oct - a render not yet in Codex's index (Codex should run --rendered)",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-359": {
-  "state": "send",
+  "state": "check",
   "fingerprint": null,
   "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/02 q-359 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:50:18+03:00",
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/05 q-359 - edited.mp4",
+  "rendered_at": "2026-10-15T01:37:50+03:00",
   "source": "seed",
-  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:50:18+03:00"
+  "note": "rendered 15 Oct - a render not yet in Codex's index (Codex should run --rendered)",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-360": {
-  "state": "send",
+  "state": "check",
   "fingerprint": null,
   "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/03 q-360 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:51:16+03:00",
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/06 q-360 - edited.mp4",
+  "rendered_at": "2026-10-15T01:39:14+03:00",
   "source": "seed",
-  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render; visual plan changed 14 Oct after render",
-  "made_from": "2026-10-12T13:51:16+03:00"
+  "note": "rendered 15 Oct - a render not yet in Codex's index (Codex should run --rendered)",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-361": {
   "state": "send",
@@ -184,14 +188,14 @@
   "made_from": "2026-10-12T13:52:26+03:00"
  },
  "solve-q-362": {
-  "state": "send",
+  "state": "check",
   "fingerprint": null,
   "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/05 q-362 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:53:24+03:00",
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/08 q-362 - edited.mp4",
+  "rendered_at": "2026-10-15T01:39:58+03:00",
   "source": "seed",
-  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:53:24+03:00"
+  "note": "rendered 15 Oct - a render not yet in Codex's index (Codex should run --rendered)",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-363": {
   "state": "send",
@@ -204,74 +208,98 @@
   "made_from": "2026-10-12T13:57:58+03:00"
  },
  "solve-q-364": {
-  "state": "check",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/10 q-364 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:59:22+03:00",
+  "state": "done",
+  "fingerprint": "216a85b0bf7882acd1f005c3ef42bfce3573a7d73bbc403c627f8cbcb81e61b0",
+  "parts": {
+   "spoken": "f37ecec022e9f9a23070ff5401a50bd547f49ba7ee14489d8784c6e4d95bfe14",
+   "visual": "75b06c6c7445190d56ffe670c157a3e8878131ac6aa84114697d81cc63767848",
+   "takes": "e31159ce3f073d0891358b30deef2d71cb2d5c4a109877fa458929460881d116"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/13 q-364 - edited.mp4",
+  "rendered_at": "2026-10-15T01:43:36+03:00",
   "source": "seed",
-  "note": "rendered 12 Oct - only an older export that Codex has not checked",
-  "made_from": "2026-10-12T13:59:22+03:00"
+  "note": "rendered 15 Oct, nothing changed since",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-365": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/11 q-365 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:48:34+03:00",
+  "state": "done",
+  "fingerprint": "d9f0d87e5d3b6346f2e6dbcfd23561031280dad42af460bb2980e95c82ea7b4b",
+  "parts": {
+   "spoken": "4c943bde568b5e1ad722522370a38120e9a1100ba8525e4e1dceaf00ad80d724",
+   "visual": "1d03e4ec3ba2952219babc71f86feb9dd02566497d892e908e89fe0777bdd5d1",
+   "takes": "f3472fdec8de5cdf3b044243a3357a2a3a7745f00ce8c09961c14af3b94a0f8e"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/14 q-365 - edited.mp4",
+  "rendered_at": "2026-10-15T01:45:19+03:00",
   "source": "seed",
-  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:48:34+03:00"
+  "note": "rendered 15 Oct, nothing changed since",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-366": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/12 q-366 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:50:36+03:00",
+  "state": "done",
+  "fingerprint": "e12705018da5aeb7fff5fd1a5553a957bb27f64dd8a4a76b7d111ed58c33396c",
+  "parts": {
+   "spoken": "0e05198329e5dc3a0be92f784e88908a4463601eb778ad6673e0b123688b8714",
+   "visual": "03bdbd0d9ba431cca644edd09a46afb1f4527c3a11140348c05ef4321f399442",
+   "takes": "676db201a2c33fbf13ce981f834c66045a921f51dbe6f96c5b9b432202c4b93b"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/15 q-366 - edited.mp4",
+  "rendered_at": "2026-10-15T01:46:25+03:00",
   "source": "seed",
-  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:50:36+03:00"
+  "note": "rendered 15 Oct, nothing changed since",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-367": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/15 q-367 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:55:46+03:00",
+  "state": "done",
+  "fingerprint": "fa25f466e14847ea97ae76e299bdf97207528259786d2078f86339c962f44bb7",
+  "parts": {
+   "spoken": "00b9005b3b3b9b936eb92a0ca4ae194e91af91c9372044f170a7145237c437e0",
+   "visual": "c7f4ab9ce764eb183eaeb3c9ffb7444581009aea7f60b1e165a5bb75c2248616",
+   "takes": "b71a9cfa17e171f0c59b935a80a2df0f60fa1ac65b4ee80cfde7a1506e651512"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/18 q-367 - edited.mp4",
+  "rendered_at": "2026-10-15T01:50:43+03:00",
   "source": "seed",
-  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:55:46+03:00"
+  "note": "rendered 15 Oct, nothing changed since",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-368": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/16 q-368 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:58:02+03:00",
+  "state": "done",
+  "fingerprint": "7ae7121afb56cfd7abc67843a1020d2c82ecb82298cdbf5334bbc35dabef70bb",
+  "parts": {
+   "spoken": "f8f857548ddaf4b81c42cadbe164d43de6d122f0695e428624619a7beec8135e",
+   "visual": "da63aa87b5ca0061b5df9fd7f8e69872058b1da41ddc69816d5941f046af5ce9",
+   "takes": "3eba59421060c3e72adc2f9623cd4505d29d5ee19e06927fa79be3670bf1c299"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/19 q-368 - edited.mp4",
+  "rendered_at": "2026-10-15T01:51:14+03:00",
   "source": "seed",
-  "note": "new patch take 14 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:58:02+03:00"
+  "note": "rendered 15 Oct, nothing changed since",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-369": {
   "state": "send",
   "fingerprint": null,
   "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/17 q-369 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:59:46+03:00",
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/20 q-369 - edited.mp4",
+  "rendered_at": "2026-10-15T01:53:33+03:00",
   "source": "seed",
-  "note": "new patch take 14 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:59:46+03:00"
+  "note": "visual cues in the script changed 15 Oct after render",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-370": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/18 q-370 - repaired.mp4",
-  "rendered_at": "2026-10-12T14:00:28+03:00",
+  "state": "done",
+  "fingerprint": "6434a0d9e8936c4f04f1118fe4d1a0e26358934eb518c636c2d364d923818fb8",
+  "parts": {
+   "spoken": "a8e5f5ae3195d3a41eefd743af92386578e183e1fc6d33e111841f34424622ea",
+   "visual": "a154346af9918a7f7e4c9fe13f7d546f444867346719b6ce073035ff8b49a916",
+   "takes": "a83204f5beeadbdc420dc2e28fb3ec5038b5b3f26859282d9c5144cf44123426"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/21 q-370 - edited.mp4",
+  "rendered_at": "2026-10-15T01:53:26+03:00",
   "source": "seed",
-  "note": "new patch take 14 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T14:00:28+03:00"
+  "note": "rendered 15 Oct, nothing changed since",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-387": {
   "state": "done",
@@ -594,7 +622,7 @@
   "made_from": "2026-10-13T18:14:36+03:00"
  },
  "solve-q-496": {
-  "state": "done",
+  "state": "send",
   "fingerprint": "319e0a5d9b04c50d68498d28bc92f4322ce406f9cd8905d35b8bccc90acf87b4",
   "parts": {
    "spoken": "bc32a323ee22c77c940f9bdccb92d77f5633162f8f54893df94eccf8841e4c76",
@@ -604,11 +632,11 @@
   "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports/095 q-496.mp4",
   "rendered_at": "2026-10-13T23:02:34+03:00",
   "source": "seed",
-  "note": "rendered 13 Oct, nothing changed since",
+  "note": "cue phrases re-anchored 2026-10-15 (stem highlight at her words; visual only, no spoken change): re-time (reading_to_video) and re-render",
   "made_from": "2026-10-13T18:14:36+03:00"
  },
  "solve-q-497": {
-  "state": "done",
+  "state": "send",
   "fingerprint": "0a477397a4b9723c99cf975847346ca5320d6576cb13cdf8d39ddf439538759f",
   "parts": {
    "spoken": "23569cef915e327ff7bb41842a207838a5f29f3d155f39abc31e01ee47e98102",
@@ -618,7 +646,7 @@
   "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October/101 q-497.mp4",
   "rendered_at": "2026-10-14T04:08:20+03:00",
   "source": "seed",
-  "note": "rendered 14 Oct, nothing changed since",
+  "note": "cue phrases re-anchored 2026-10-15 (stem highlight at her words; visual only, no spoken change): re-time (reading_to_video) and re-render",
   "made_from": "2026-10-14T00:58:44+03:00"
  },
  "solve-q-498": {
@@ -664,7 +692,7 @@
   "made_from": "2026-10-14T00:58:44+03:00"
  },
  "solve-q-501": {
-  "state": "done",
+  "state": "send",
   "fingerprint": "2a84bd279b42ddf708e346c41efa2df15a868bec13e41ddcb1f2916003c52423",
   "parts": {
    "spoken": "3f0d50976c53045ca3f24b6e1849aa3d0380ba607611c837c0ee0face440628a",
@@ -674,7 +702,7 @@
   "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October/105 q-501.mp4",
   "rendered_at": "2026-10-14T04:11:56+03:00",
   "source": "seed",
-  "note": "rendered 14 Oct, nothing changed since",
+  "note": "cue phrases re-anchored 2026-10-15 (stem highlight at her words; visual only, no spoken change): re-time (reading_to_video) and re-render",
   "made_from": "2026-10-14T00:58:44+03:00"
  },
  "solve-q-512": {
@@ -821,41 +849,49 @@
   "state": "send",
   "fingerprint": null,
   "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/06 q-r26-t13-01 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:54:24+03:00",
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/09 q-r26-t13-01 - edited.mp4",
+  "rendered_at": "2026-10-15T01:41:09+03:00",
   "source": "seed",
-  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:54:24+03:00"
+  "note": "visual cues in the script changed 15 Oct after render",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-r26-t13-02": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/07 q-r26-t13-02 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:55:18+03:00",
+  "state": "done",
+  "fingerprint": "cb62ab0aeeb9523fa333d89801a19ea3090470b11f602e66b3cd3353c1f3c36f",
+  "parts": {
+   "spoken": "33d7aa93de15c4de23b717325f93540792f3d3faad64f4ecc8ff2ce136e8cb88",
+   "visual": "63fce2e7188050c7a1b096e2a73df1b548a4808841b85722ded49e1f236f01c5",
+   "takes": "83b22e8b3d5158f762a95d397d9fa78e98053561d4837b5d2b45d1270142620f"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/10 q-r26-t13-02 - edited.mp4",
+  "rendered_at": "2026-10-15T01:41:40+03:00",
   "source": "seed",
-  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:55:18+03:00"
+  "note": "rendered 15 Oct, nothing changed since",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-r26-t13-03": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/14 q-r26-t13-03 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:53:38+03:00",
+  "state": "done",
+  "fingerprint": "ba21e0506451aaeaf1a25063a027105ce9ab988cc72f2e0ede9864bfe876387d",
+  "parts": {
+   "spoken": "216c728fc92e8f23abb25fe234564fd7ef7abcdab1dba628f732dfae9ed58dd5",
+   "visual": "aa2bc9ebcd02e616c1fa471597331bc5ff4ab3352b5cedb2dcc5401ff5622af3",
+   "takes": "c6aca0952ea94d8ef1db51ab33c9f4d0d85ee013127ffa92aa307c6a7533a58a"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/17 q-r26-t13-03 - edited.mp4",
+  "rendered_at": "2026-10-15T01:48:29+03:00",
   "source": "seed",
-  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:53:38+03:00"
+  "note": "rendered 15 Oct, nothing changed since",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-r26-t13-13": {
   "state": "send",
   "fingerprint": null,
   "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 13 - Absolute Value/Previous exports - original style/13 q-r26-t13-13 - repaired.mp4",
-  "rendered_at": "2026-10-12T13:52:22+03:00",
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/16 q-r26-t13-13 - edited.mp4",
+  "rendered_at": "2026-10-15T01:48:00+03:00",
   "source": "seed",
-  "note": "new patch take 13 Oct (after the render); script changed 13 Oct after render",
-  "made_from": "2026-10-12T13:52:22+03:00"
+  "note": "visual cues in the script changed 15 Oct after render",
+  "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-r26-t14-01": {
   "state": "done",
@@ -952,7 +988,7 @@
   "made_from": "2026-10-14T00:58:44+03:00"
  },
  "solve-q-r26-t17-04": {
-  "state": "done",
+  "state": "send",
   "fingerprint": "2d931ad05d5196e08768110d0a712c04dedc7dc6f763d9f5fe9b1e79071732cb",
   "parts": {
    "spoken": "f76dd36ad9cc0285f00ff2cb13303674c61b6676b0509868a03a85ca32c804ee",
@@ -962,7 +998,7 @@
   "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports - 14 October/109 q-r26-t17-04.mp4",
   "rendered_at": "2026-10-14T04:15:53+03:00",
   "source": "seed",
-  "note": "rendered 14 Oct, nothing changed since",
+  "note": "cue phrases re-anchored 2026-10-15 (stem highlight at her words; visual only, no spoken change): re-time (reading_to_video) and re-render",
   "made_from": "2026-10-14T00:58:44+03:00"
  },
  "solve-q-r26-t17-05": {

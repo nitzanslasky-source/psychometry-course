@@ -7,7 +7,7 @@
     "say": "Given: zero is smaller than a, which is smaller than b, which is smaller than one, which is smaller than c, which is smaller than d. Which of the following statements is not necessarily true?",
     "voice": "calm",
     "at": [
-     "Given"
+     "Which of the following"
     ],
     "pause": 0.5
    },
@@ -18,7 +18,7 @@
      "one, and c",
      "are greater than",
      "statement that is",
-     "short pause] We'll",
+     "We'll solve it",
      "two ways, using",
      "then using algebra"
     ]
