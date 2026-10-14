@@ -136,10 +136,11 @@ def fig_rect():
     A = (110.0, 60.0); W = 2 * math.sqrt(3) * u; H = 2 * u
     D, B, C = (A[0] + W, A[1]), (A[0], A[1] + H), (A[0] + W, A[1] + H)
     O = (A[0] + W / 2, A[1] + H / 2)
-    arcs = ['M %.1f %.1f A %.1f %.1f 0 0 0 %.1f %.1f' % (A[0] + u, A[1], u, u, A[0], A[1] + u),
-            'M %.1f %.1f A %.1f %.1f 0 0 1 %.1f %.1f' % (D[0] - u, D[1], u, u, D[0], D[1] + u),
-            'M %.1f %.1f A %.1f %.1f 0 0 1 %.1f %.1f' % (B[0] + u, B[1], u, u, B[0], B[1] - u),
-            'M %.1f %.1f A %.1f %.1f 0 0 0 %.1f %.1f' % (C[0] - u, C[1], u, u, C[0], C[1] - u)]
+    # 2026-10-14 (Claude): sweep flags fixed - each quarter circle is centred at its vertex and bulges into the rectangle
+    arcs = ['M %.1f %.1f A %.1f %.1f 0 0 1 %.1f %.1f' % (A[0] + u, A[1], u, u, A[0], A[1] + u),
+            'M %.1f %.1f A %.1f %.1f 0 0 0 %.1f %.1f' % (D[0] - u, D[1], u, u, D[0], D[1] + u),
+            'M %.1f %.1f A %.1f %.1f 0 0 0 %.1f %.1f' % (B[0] + u, B[1], u, u, B[0], B[1] - u),
+            'M %.1f %.1f A %.1f %.1f 0 0 1 %.1f %.1f' % (C[0] - u, C[1], u, u, C[0], C[1] - u)]
     out = ['<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="none" stroke="%s" stroke-width="2.5"/>' % (A[0], A[1], W, H, INK),
            '<path d="%s" fill="none" stroke="%s" stroke-width="2.2"/>' % (' '.join(arcs), ACC),
            '<circle cx="%.1f" cy="%.1f" r="%.1f" fill="none" stroke="%s" stroke-width="2.2"/>' % (O[0], O[1], u, ACC),
