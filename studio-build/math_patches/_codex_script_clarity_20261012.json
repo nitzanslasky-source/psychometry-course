@@ -17901,88 +17901,6 @@
     "solve-q-r26-t16-04": [
       {
         "slide": 0,
-        "paragraph": 4,
-        "original": "Which case? I want to test five, so I choose three odd numbers with no five inside, seven, nine and eleven. Seven times nine is sixty-three, and times eleven is six ninety-three.",
-        "revised": "Let's test whether the product must divide by five. Choose three odd numbers in a row that do not include a multiple of five: seven, nine and eleven. Seven times nine is sixty-three, and sixty-three times eleven is six hundred ninety-three: ten times sixty-three is six hundred thirty, plus one more sixty-three.",
-        "cue_anchors": [
-          {
-            "index": 0,
-            "original": "to test five",
-            "revised": "Choose three odd"
-          },
-          {
-            "index": 2,
-            "original": "no five inside",
-            "revised": "of five: seven"
-          },
-          {
-            "index": 4,
-            "original": "and times eleven",
-            "revised": "and sixty-three"
-          }
-        ]
-      },
-      {
-        "slide": 1,
-        "paragraph": 0,
-        "original": "[pause] And why is three always there? The odd multiples of three are three, nine, fifteen, twenty-one, one in every three odd numbers. So any three odd numbers in a row catch one of them.",
-        "revised": "[pause] Now by understanding. Why does the product always divide by three? Look at the odd multiples of three: three, nine, fifteen and twenty-one. They appear once in every three odd numbers. So any three odd numbers in a row include a multiple of three.",
-        "cue_anchors": [
-          {
-            "index": 0,
-            "original": "And why",
-            "revised": "Look at the"
-          },
-          {
-            "index": 2,
-            "original": "one in every",
-            "revised": "They appear once"
-          }
-        ]
-      },
-      {
-        "slide": 0,
-        "paragraph": 5,
-        "original": "It ends in three, so it doesn't divide by five, or by fifteen. Choice numbers two and four are out, and three is left. Choice number three.",
-        "revised": "Six hundred ninety-three ends in three, so it does not divide by five. That also means it does not divide by fifteen. Choice numbers two and four are out. Only three is left, and choice number three is our answer.",
-        "cue_anchors": [
-          {
-            "index": 0,
-            "original": "It ends in three",
-            "revised": "Six hundred ninety"
-          },
-          {
-            "index": 1,
-            "original": "or by fifteen",
-            "revised": "That also means"
-          }
-        ]
-      },
-      {
-        "slide": 1,
-        "paragraph": 1,
-        "original": "Seven, nine, eleven has nine. Eleven, thirteen, fifteen has fifteen. So the product always divides by three. Choice number three. [pause] Okay. I'll see you in the next question.",
-        "revised": "Seven, nine and eleven include nine. Eleven, thirteen and fifteen include fifteen. So one number in the multiplication divides by three, and the whole product divides by three too. Choice number three is our answer. Okay. I'll see you in the next question.",
-        "cue_anchors": [
-          {
-            "index": 0,
-            "original": "Seven, nine, eleven",
-            "revised": "Seven, nine and"
-          },
-          {
-            "index": 1,
-            "original": "Eleven, thirteen, fifteen",
-            "revised": "Eleven, thirteen and"
-          },
-          {
-            "index": 2,
-            "original": "So the product",
-            "revised": "So one number"
-          }
-        ]
-      },
-      {
-        "slide": 0,
         "paragraph": 1,
         "original": "So three odd numbers in a row, and what always divides their product. [short pause] We'll solve it two ways, the two cases, and then the reason.",
         "revised": "So n is positive and odd. n, n plus two and n plus four are three odd numbers in a row, and we multiply them. What number is the product always divisible by? [short pause] We'll start with one group and check the choices. If several choices remain, we'll choose another group that helps separate them. Then we'll explain why the answer always works.",
@@ -18096,39 +18014,6 @@
             "index": 4,
             "original": "a second case",
             "revised": "another group to"
-          }
-        ]
-      },
-      {
-        "slide": 0,
-        "paragraph": 6,
-        "original": "Now careful, the trap. Three, five and seven, a hundred five, or five, seven and nine, three fifteen, both divide by fifteen, because each has a five inside. So choose the second case on purpose, avoiding the factor you test.",
-        "revised": "Now careful with your choice of numbers. Three times five times seven is a hundred five. Five times seven times nine is thirty-five times nine. Ten times thirty-five is three hundred fifty, and one thirty-five less is three hundred fifteen. Both divide by fifteen because they include a five in the multiplication. They would not rule out fifteen. That's why we chose seven, nine and eleven for the second test.",
-        "cue_anchors": [
-          {
-            "index": 0,
-            "original": "the trap",
-            "revised": "with your choice"
-          },
-          {
-            "index": 1,
-            "original": "and nine, three",
-            "revised": "times nine is"
-          },
-          {
-            "index": 3,
-            "original": "has a five",
-            "revised": "include a five"
-          },
-          {
-            "index": 4,
-            "original": "So choose the",
-            "revised": "fifteen. That's why"
-          },
-          {
-            "index": 5,
-            "original": "on purpose, avoiding",
-            "revised": "test."
           }
         ]
       }

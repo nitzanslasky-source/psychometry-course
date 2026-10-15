@@ -21,36 +21,40 @@
     ]
    },
    {
-    "say": "Odd numbers go up in steps of two. From twenty-one to seventy-nine is seventy-nine minus twenty-one, which is fifty-eight. Fifty-eight divided by two is twenty-nine steps. Each step lands on a new odd number, and we also count the first one, twenty-one. So twenty-nine plus one is thirty. Choice number two is our answer.",
+    "say": "Odd numbers go up in steps of two. From twenty-one to seventy-nine is seventy-nine minus twenty-one, which is fifty-eight. Fifty-eight divided by two is twenty-nine. Careful, twenty-nine is the number of steps, the gaps between the odd numbers. It's not the number of odd numbers. That's choice number one, and it's a trap.",
     "at": [
+     "seventy-nine minus twenty-one",
      "Fifty-eight divided by two",
-     "Each step lands",
-     "Choice number two is our answer"
+     "Careful, twenty-nine is",
+     "That's choice number one, and it's a trap"
     ]
    },
    {
-    "say": "Careful, twenty-nine, choice number one, is the number of steps. It forgets to count the first number.",
+    "say": "Each step lands on a new odd number, and we also count the first one, twenty-one. So twenty-nine plus one is thirty. Choice number two is our answer.",
     "at": [
-     "Careful, twenty-nine, choice number one"
+     "So twenty-nine plus one",
+     "Choice number two is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way, by understanding. Count all the whole numbers from twenty-one to eighty, both ends included. Eighty minus twenty-one, plus one, is sixty.",
+    "say": "[pause] Another way, by understanding. Count all the whole numbers from twenty-one to eighty, both ends included. Eighty is even, so adding it doesn't add an odd number. Eighty minus twenty-one, plus one, is sixty.",
     "at": [
      "Another way",
      "Eighty minus twenty-one"
     ]
    },
    {
-    "say": "They take turns, odd, even, odd, even. The list starts with an odd number, twenty-one, and ends with an even number, eighty, so they come in pairs, and exactly half of them are odd. Sixty divided by two is thirty. Choice number two again. Sixty, choice number four, forgets to take half. [pause] Okay. I'll see you in the next question.",
+    "say": "They take turns, odd, even, odd, even. The list starts with an odd number, twenty-one, and ends with an even number, eighty, so they come in pairs, and exactly half of them are odd. Sixty divided by two is thirty. Sixty, choice number four, forgets to take half. So choice number two is our answer again, and I'll see you in the next question.",
     "at": [
      "They take turns",
+     "so they come in pairs",
+     "and exactly half",
      "Sixty divided by two",
-     "Choice number two again",
-     "choice number four",
-     "forgets to take half"
+     "thirty. Sixty, choice",
+     "forgets to take half",
+     "So choice number two is our answer again"
     ]
    }
   ]

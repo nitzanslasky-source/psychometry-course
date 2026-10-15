@@ -463,24 +463,43 @@ def TREE(name, root, steps, w=330, col=1, dx=92, dy=50):
 # even, why), even powers, odd powers, absolute value, -x = the opposite, zero, sums (the farther-from-zero number wins;
 # counting minuses does not work there), and the sign-question habit (surely positive pieces first; the given "not
 # zero"). Hebrew lesson (alg 15738-15814): every rule kept; its sample question is q-457.
-wn1 = I('wn1', '$4\\cdot5=20\\qquad(-4)\\cdot(-5)=20$', size=34, hand='4·5 = 20        (−4)·(−5) = 20')
-wn2 = I('wn2', '$(-4)\\cdot5=-20\\qquad4\\cdot(-5)=-20$', size=34, hand='(−4)·5 = −20        4·(−5) = −20')
-wn2b = I('wn2b', '$(-3)\\cdot(-6)=18$', size=34, hand='(−3)·(−6) = 18')
+# 2026-10-15 batch-A review (Codex, reviews/batch-A.md #67): every example is its own board line at its clause (V4); the
+# sign-question habit is exact (x not zero -> x squared and |x| positive; x = 0 -> both 0; a positive factor of a product
+# or quotient keeps the sign); "minus nine is farther from zero"; the equal-distance case -4 + 4 = 0.
+wn1 = I('wn1', '$4\\cdot5=20$', size=32, hand='4·5 = 20')
+wn1b = I('wn1b', '$(-4)\\cdot(-5)=20$', size=32, hand='(−4)·(−5) = 20')
+wn2 = I('wn2', '$(-4)\\cdot5=-20$', size=32, hand='(−4)·5 = −20')
+wn2a = I('wn2a', '$4\\cdot(-5)=-20$', size=32, hand='4·(−5) = −20')
+wn2b = I('wn2b', '$(-3)\\cdot(-6)=18$', size=32, hand='(−3)·(−6) = 18')
 wn3 = I('wn3', '$ab>0$: same sign', size=28)
 wn3b = I('wn3b', '$ab<0$: different signs', size=28)
 wn3c = I('wn3c', '$ab=0$: at least one is $0$', size=28)
 wn4 = I('wn4', '$(-2)\\cdot3\\cdot(-1)\\cdot(-4)$: $\\ 3$ minuses $\\to\\ -24$', size=32, hand='(−2)·3·(−1)·(−4) :    3 minuses  →  −24')
 wn5 = I('wn5', '$(-2)\\cdot(-3)\\cdot(-1)\\cdot(-4)$: $\\ 4$ minuses $\\to\\ 24$', size=32, hand='(−2)·(−3)·(−1)·(−4) :    4 minuses  →  24')
-wn6 = I('wn6', '$(-24)\\div(-8)=3\\qquad(-24)\\div8=-3\\qquad24\\div(-8)=-3$', size=30, hand='(−24) ÷ (−8) = 3      (−24) ÷ 8 = −3      24 ÷ (−8) = −3')
+wn6 = I('wn6', '$(-24)\\div(-8)=3$', size=32, hand='(−24) ÷ (−8) = 3')
+wn6b = I('wn6b', '$(-24)\\div8=-3$', size=32, hand='(−24) ÷ 8 = −3')
+wn6c = I('wn6c', '$24\\div(-8)=-3$', size=32, hand='24 ÷ (−8) = −3')
 wn7 = I('wn7', '$\\frac{(-6)\\cdot(-2)}{-3}$: $\\ 3$ minuses', size=34, hand='{(−6)·(−2)/−3} :    3 minuses')
 wn7b = I('wn7b', '$6\\cdot2=12,\\ \\ \\frac{12}{3}=4\\ \\to\\ -4$', size=34, hand='6·2 = 12,    {12/3} = 4   →   −4')
-wn8 = I('wn8', '$3^2=9\\qquad(-3)^2=9\\qquad(-2)^4=16$', size=34, hand='3^2 = 9        (−3)^2 = 9        (−2)^4 = 16')
-wn9 = I('wn9', '$2^3=8\\qquad(-2)^3=-8\\qquad(-1)^5=-1$', size=34, hand='2^3 = 8        (−2)^3 = −8        (−1)^5 = −1')
-wn10 = I('wn10', '$|-7|=7\\qquad|7|=7\\qquad|0|=0$', size=34, hand='|−7| = 7        |7| = 7        |0| = 0')
-wn11 = I('wn11', '$x=-9\\ \\to\\ -x=9\\qquad x=5\\ \\to\\ -x=-5$', size=32, hand='x = −9  →  −x = 9        x = 5  →  −x = −5')
-wn12 = I('wn12', '$(-3)+(-5)=-8$', size=34, hand='(−3) + (−5) = −8')
-wn13 = I('wn13', '$-9+4=-5\\qquad-4+9=5\\qquad-2+7=5$', size=32, hand='−9 + 4 = −5        −4 + 9 = 5        −2 + 7 = 5')
-wn14 = I('wn14', 'Surely positive first: $\\ $even powers, $|x|$ $\\to$ the rest decides', size=28)
+wn8 = I('wn8', '$3^2=9$', size=32, hand='3^2 = 9')
+wn8b = I('wn8b', '$(-3)^2=9$', size=32, hand='(−3)^2 = 9')
+wn8c = I('wn8c', '$(-2)^4=16$', size=32, hand='(−2)^4 = 16')
+wn9 = I('wn9', '$2^3=8$', size=32, hand='2^3 = 8')
+wn9b = I('wn9b', '$(-2)^3=-8$', size=32, hand='(−2)^3 = −8')
+wn9c = I('wn9c', '$(-1)^5=-1$', size=32, hand='(−1)^5 = −1')
+wn10 = I('wn10', '$|-7|=7$', size=32, col=1, hand='|−7| = 7')
+wn10b = I('wn10b', '$|7|=7$', size=32, col=1, hand='|7| = 7')
+wn10c = I('wn10c', '$|0|=0$', size=32, col=1, hand='|0| = 0')
+wn11 = I('wn11', '$x=-9\\ \\to\\ -x=9$', size=30, col=1, hand='x = −9  →  −x = 9')
+wn11b = I('wn11b', '$x=5\\ \\to\\ -x=-5$', size=30, col=1, hand='x = 5  →  −x = −5')
+wn12 = I('wn12', '$(-3)+(-5)=-8$', size=32, hand='(−3) + (−5) = −8')
+wn13 = I('wn13', '$-9+4=-5$', size=32, hand='−9 + 4 = −5')
+wn13b = I('wn13b', '$-4+9=5$', size=32, hand='−4 + 9 = 5')
+wn13c = I('wn13c', '$-4+4=0$', size=32, hand='−4 + 4 = 0')
+wn13d = I('wn13d', '$-2+7=5$', size=32, hand='−2 + 7 = 5')
+wn14 = I('wn14', '$x\\ne0$: $\\ x^2>0,\\ \\ |x|>0$', size=30, hand='x ≠ 0 :    x^2 > 0,    |x| > 0')
+wn14b = I('wn14b', '$x=0$: $\\ x^2=|x|=0$', size=30, hand='x = 0 :    x^2 = |x| = 0')
+wn14c = I('wn14c', 'Product or quotient: a positive piece keeps the sign', size=28)
 video('whole-numbers', 'lesson', slides=[
     S('Integers',
       L("Welcome to integers. Some algebra questions don't ask for a number at all. They ask whether an expression is "
@@ -488,9 +507,11 @@ video('whole-numbers', 'lesson', slides=[
         "easy, so let's go through the rules one by one.")),
     S('Multiplying',
       L("Let's start with multiplying. When two numbers have the same sign, the result is positive. Four times five is "
-        "twenty, and negative four times negative five is also twenty.", show(wn1, 'Four times five is twenty')),
+        "twenty, and negative four times negative five is also twenty.", show(wn1, 'Four times five is twenty'),
+        show(wn1b, 'negative four times negative five')),
       L("When the signs are different, the result is negative, and the order doesn't matter. Negative four times five is "
-        "negative twenty, and four times negative five is negative twenty too.", show(wn2, 'Negative four times five')),
+        "negative twenty, and four times negative five is negative twenty too.", show(wn2, 'Negative four times five'),
+        show(wn2a, 'and four times negative five')),
       L("Careful here. A positive product doesn't mean both numbers are positive. Negative three times negative six is "
         "eighteen, which is positive, but both numbers are negative. So a positive product only tells us that the two "
         "numbers have the same sign. A negative product tells us their signs are different. And a product of zero means "
@@ -510,34 +531,41 @@ video('whole-numbers', 'lesson', slides=[
       L("Division follows exactly the same rules, so there's nothing new to remember. Negative twenty-four divided by "
         "negative eight is three, positive, because the signs are the same. Negative twenty-four divided by eight is "
         "negative three, and twenty-four divided by negative eight is negative three too, because the signs are "
-        "different.", show(wn6, 'Negative twenty-four divided by negative eight')),
+        "different.", show(wn6, 'Negative twenty-four divided by negative eight'),
+        show(wn6b, 'Negative twenty-four divided by eight'), show(wn6c, 'and twenty-four divided by negative eight')),
       L("So we can count the minuses when we multiply and divide together. Negative six times negative two, over negative "
         "three. That's three minuses, so the result is negative. Six times two is twelve, and twelve over three is four, "
         "so it's negative four.", show(wn7, 'Negative six times negative two'), show(wn7b, 'Six times two is twelve'))),
     S('Powers, absolute value, the opposite',
       L("Now powers. A number to an even power is never negative. Three squared is nine, negative three, squared, is also "
         "nine, and negative two to the power of four is sixteen. The only way to get zero is a base of zero.",
-        show(wn8, 'Three squared is nine')),
-      L("An odd power keeps the sign of the number. Two cubed is eight, negative two, cubed, is negative eight, and "
-        "negative one to the power of five is negative one.", show(wn9, 'Two cubed is eight')),
+        show(wn8, 'Three squared is nine'), show(wn8b, 'negative three, squared'), show(wn8c, 'negative two to the power of four')),
+      L("An odd power keeps the sign of the number. Two to the power of three is eight, negative two to the power of three "
+        "is negative eight, and negative one to the power of five is negative one.", show(wn9, 'Two to the power of three'),
+        show(wn9b, 'negative two to the power of three'), show(wn9c, 'negative one to the power of five')),
       L("An absolute value is zero or positive. The absolute value of negative seven is seven, the absolute value of seven "
         "is seven, and the absolute value of zero is zero. So if y isn't zero, the absolute value of y is positive.",
-        show(wn10, 'The absolute value of negative seven')),
+        show(wn10, 'The absolute value of negative seven'), show(wn10b, 'the absolute value of seven is'),
+        show(wn10c, 'the absolute value of zero')),
       L("And a minus in front of a letter doesn't mean the number is negative. It means the opposite number. If x is "
         "negative nine, minus x is nine, which is positive. If x is five, minus x is negative five. And zero is neither "
-        "positive nor negative.", show(wn11, 'If x is negative nine'))),
+        "positive nor negative.", show(wn11, 'If x is negative nine'), show(wn11b, 'If x is five'))),
     S('Adding',
       L("Adding works differently. Two negative numbers add up to a negative number. Negative three plus negative five is "
         "negative eight.", show(wn12, 'Negative three plus negative five')),
       L("With different signs, the number that's farther from zero decides the sign. Negative nine plus four is negative "
-        "five, because nine is farther from zero than four. But negative four plus nine is five, positive. So counting the "
+        "five, because negative nine is farther from zero than four. But negative four plus nine is five, positive. And "
+        "when they're the same distance from zero, like negative four plus four, the result is zero. So counting the "
         "minuses works only for multiplying and dividing. Negative two plus seven has one minus, but the result, five, is "
-        "positive.", show(wn13, 'Negative nine plus four'))),
+        "positive.", show(wn13, 'Negative nine plus four'), show(wn13b, 'But negative four plus nine'),
+        show(wn13c, 'like negative four plus four'), show(wn13d, 'but the result, five'))),
     S('In a sign question',
-      L("So how do we use all this in a question? First find the pieces that are surely positive, like even powers and "
-        "absolute values. Then the piece that's left decides the sign. And when the question says that a letter is not "
-        "zero, it's usually so that the bottom of a fraction isn't zero. You'll see all of this in the next question. "
-        "[pause] Okay. I'll see you in the next video.", show(wn14, 'surely positive'))),
+      L("So how do we use all this in a question? First find the pieces that are surely positive. If x isn't zero, x "
+        "squared and the absolute value of x are positive. If x is zero, they're both zero. In a product or a quotient, a "
+        "positive piece doesn't change the sign. So the other piece decides the sign. And when the question says that a "
+        "letter is not zero, it's usually so that the bottom of a fraction isn't zero. You'll see all of this in the next "
+        "question. [pause] I'll see you in the next video.", show(wn14, "If x isn't zero"), show(wn14b, "If x is zero, they're"),
+        show(wn14c, 'In a product or a quotient'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-457 (Q1)
@@ -1092,14 +1120,27 @@ video('solve-q-464', 'solution', qid='q-464', slides=[
 # ------------------------------------------------------------------------------------------------ q-r26-t16-04 (Q12)
 # NEW (full): the smallest case gives only a candidate - cross out what doesn't divide it, then test a second case that
 # AVOIDS the factor you check (7·9·11, not 3·5·7 or 5·7·9); why 3 always: one of three odd numbers in a row divides by 3.
+# 2026-10-15 batch-A review (Codex, reviews/batch-A.md #83): the warning about groups with a five comes BEFORE the second
+# test; the second test uses only the last digit (7 x 9 ends in 3, times 11 still ends in 3), so no 693 and no products
+# after the answer; the odd numbers written in a row with 3, 9, 15 marked. Paragraphs 5-7 and 8-9 now live here (their
+# clarity-overlay entries were folded into this spec, reconciled with _codex_script_clarity_20261012.json). The second
+# test continues on a second Method-1 slide (frame check: one slide overlapped the choices), with a So-far box;
+# the warning in the right column, the last-digit test in the left column.
 k1 = I('k1', 'Smallest: $\\ 1\\cdot3\\cdot5=15$', hand='Smallest :    1·3·5 = 15')
 k2 = I('k2', '$45$ does not divide $15$ ✗', size=30, hand='45  does not divide  15   ✗')
 k3 = I('k3', 'Smallest case: only a candidate', size=28, col=1)
-k4 = I('k4', 'Avoid the $5$: $\\ 7\\cdot9\\cdot11=693$', hand='Avoid the 5 :    7·9·11 = 693')
-k5 = I('k5', '$693$ ends in $3$: $\\ $not by $5$, not by $15$ ✗', size=30, hand='693  ends in 3 :   not by 5,  not by 15   ✗')
-k6 = I('k6', '$3\\cdot5\\cdot7=105\\quad 5\\cdot7\\cdot9=315$: $\\ $both have a $5$', size=26, col=1, hand='3·5·7 = 105     5·7·9 = 315 :   both have a 5')
+k0 = I('k0', 'So far: $\\ $(1) out, (2)–(4) left', size=26, col=1); k0['keep'] = 1
+k6 = I('k6', '$3\\cdot5\\cdot7$', size=28, col=1, hand='3·5·7')
+k6b = I('k6b', 'a $5$ and a $3$ $\\to$ divides by $15$', size=26, col=1, hand='a 5 and a 3  →  divides by 15')
+k6c = I('k6c', '$5\\cdot7\\cdot9$: $\\ $the same', size=26, col=1, hand='5·7·9 :   the same')
+k4 = I('k4', 'No $5$: $\\ 7\\cdot9\\cdot11$', size=28, hand='No 5 :    7·9·11')
+k4b = I('k4b', '$7\\cdot9=63$: $\\ $last digit $3$', size=28, hand='7·9 = 63 :   last digit 3')
+k4c = I('k4c', '$\\times11$: $\\ $last digit $3\\cdot1=3$', size=28, hand='×11 :   last digit  3·1 = 3')
+k5 = I('k5', 'Ends in $3$ $\\to$ not by $5$', size=28, hand='Ends in 3  →  not by 5')
+k5b = I('k5b', 'So not by $15$ ✗', size=28, hand='So not by 15   ✗')
 k7 = I('k7', '$7,\\ \\hl{n}{9},\\ 11\\qquad 11,\\ 13,\\ \\hl{n}{15}$', hand='7,  \\hl{n}{9},  11        11,  13,  \\hl{n}{15}')
-k8 = I('k8', 'Odd multiples of $3$: $\\ 3,\\ 9,\\ 15,\\ 21$', size=30, hand='Odd multiples of 3 :    3,  9,  15,  21')
+k8 = I('k8', 'Odd: $\\ 1,\\ \\hl{m}{3},\\ 5,\\ 7,\\ \\hl{m}{9},\\ 11,\\ 13,\\ \\hl{m}{15}$', size=30,
+       hand='Odd :   1,  \\hl{m}{3},  5,  7,  \\hl{m}{9},  11,  13,  \\hl{m}{15}')
 video('solve-q-r26-t16-04', 'solution', qid='q-r26-t16-04', slides=[
     S('Method 1 · Plugging in numbers',
       L("n is a positive odd number. The product n, times n plus two, times n plus four, is necessarily divisible by:",
@@ -1110,20 +1151,30 @@ video('solve-q-r26-t16-04', 'solution', qid='q-r26-t16-04', slides=[
         "Forty-five doesn't divide fifteen, so choice number one is out.", show(k1, 'One times three times five'), show(k2, "Forty-five doesn't"),
         mk('cross', 'choice 1', 'choice number one is out')),
       L("But careful, the smallest case only gives a candidate, the biggest number that could work. Fifteen, five and three "
-        "all divide fifteen, so I need a second case.", show(k3, 'only gives a candidate')),
-      L("Which case? I want to test five, so I choose three odd numbers with no five inside, seven, nine and eleven. Seven "
-        "times nine is sixty-three, and times eleven is six ninety-three.", show(k4, 'seven, nine and eleven')),
-      L("It ends in three, so it doesn't divide by five, or by fifteen. Choice numbers two and four are out, "
-        "and three is left. Choice number three.", show(k5, 'It ends in three'), mk('cross', 'choice 2', 'Choice numbers two'),
-        mk('cross', 'choice 4', 'and four are out'), mk('tick', 'choice 3', 'Choice number three')),
-      L("Now careful, the trap. Three, five and seven, a hundred five, or five, seven and nine, three fifteen, both "
-        "divide by fifteen, because each has a five inside. So choose the second case on purpose, avoiding the factor you "
-        "test.", show(k6, 'the trap'))),
+        "all divide fifteen, so I need a second case.", show(k3, 'only gives a candidate'))),
+    S('Method 1 · Plugging in numbers',
+      L("Now we need a second group, and we have to choose it carefully. Take three, five and seven. Five is in the "
+        "multiplication, and so is three. So the product divides by fifteen, and it can't rule out fifteen. Five, seven "
+        "and nine has the same problem. So we need a group with no multiple of five.", show(k0, 'Now we need'),
+        show(k6, 'Take three, five and seven'), show(k6b, 'So the product divides by fifteen'),
+        show(k6c, 'Five, seven and nine')),
+      L("Let's choose seven, nine and eleven. We only need the last digit of the product. The last digit of a product "
+        "comes only from the last digits. Seven times nine is sixty-three, which ends in three. Times eleven, it still ends "
+        "in three, because three times one is three.", show(k4, 'seven, nine and eleven'),
+        show(k4b, 'Seven times nine is sixty-three'), show(k4c, 'because three times one')),
+      L("A number that ends in three doesn't divide by five. So it doesn't divide by fifteen either. Choice numbers two and "
+        "four are out. Only three is left, and choice number three is our answer.", show(k5, "doesn't divide by five"),
+        show(k5b, "So it doesn't divide by fifteen"), mk('cross', 'choice 2', 'Choice numbers two'),
+        mk('cross', 'choice 4', 'four are out'), mk('tick', 'choice 3', 'choice number three is our answer'))),
     S('Method 2 · Understanding',
-      L("[pause] And why is three always there? The odd multiples of three are three, nine, fifteen, twenty-one, one in "
-        "every three odd numbers. So any three odd numbers in a row catch one of them.", show(k8, 'The odd multiples of three')),
-      L("Seven, nine, eleven has nine. Eleven, thirteen, fifteen has fifteen. So the product always divides by three. Choice "
-        "number three. [pause] Okay. I'll see you in the next question.", show(k7, 'Seven, nine, eleven'), mk('tick', 'choice 3', 'Choice number three'))),
+      L("[pause] Now by understanding. Why does the product always divide by three? Let's write the odd numbers in a row: "
+        "one, three, five, seven, nine, eleven, thirteen, fifteen. Three, nine and fifteen divide by three. They come once "
+        "in every three odd numbers, with two odd numbers between them. So any three odd numbers in a row include a "
+        "multiple of three.", show(k8, 'one, three, five, seven'), pt('k8: m', 'Three, nine and fifteen divide'),
+        pt('k8: m', 'They come once')),
+      L("Seven, nine and eleven include nine. Eleven, thirteen and fifteen include fifteen. So one number in the "
+        "multiplication divides by three, and the whole product divides by three too. Choice number three is our answer, "
+        "and I'll see you in the next question.", show(k7, 'Seven, nine and'), mk('tick', 'choice 3', 'Choice number three'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-465 (Q13)

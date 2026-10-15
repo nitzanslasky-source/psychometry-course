@@ -200,7 +200,7 @@ def _layout(vid):
     for sl in per:
         right = [d for it, d in sl if d.get('x') == 1010 and d.get('y') is not None]
         if any(d.get('x') == 1010 and d.get('y') is not None and d['y'] < CAM_Y - 18 and not d.get('over')
-               and 1010 + _cam_width(d, it.get('_hand')) > 1335 for it, d in sl):
+               and 1010 + _cam_width(d, it.get('_hand')) > 1335 - 80 for it, d in sl):   # 2026-10-15 batch A: 80 px margin (the width is an estimate; 2716 = 2700 + 16 reached the bubble)
             top, yl = CAM_Y, 78                    # ... and below a left-column figure that reaches under the right column
             for it2, d2 in sl:
                 if d2.get('x') is not None or d2.get('y') is not None or d2.get('over'): continue
@@ -470,39 +470,84 @@ def TREE(name, root, steps, w=330, col=1, dx=92, dy=50):
 # q-423 (the zebras), q-424 (the towers), q-425 (the biggest x·y) and q-426 (4x + 1), so here they get one line only.
 # Divisibility-signs table (method visual, V1): one row per sign, built row by row in the left column, the examples in
 # the right column.
-dv0 = I('dv0', '$538\\div2=269$', size=32, hand='538 ÷ 2 = 269')
-dv2 = I('dv2', '$\\div2$: $\\ $the last digit is even', size=32)
-dv2e = I('dv2e', '$538$ ✓ $\\quad 741$ ✗', size=32, col=1, hand='538  ✓      741  ✗')
-dv5 = I('dv5', '$\\div5$: $\\ $the last digit is $0$ or $5$', size=32)
-dv5e = I('dv5e', '$460$ ✓ $\\quad 3{,}815$ ✓ $\\quad 253$ ✗', size=32, col=1, hand='460  ✓     3815  ✓     253  ✗')
-dv10 = I('dv10', '$\\div10$: $\\ $the last digit is $0$', size=32)
-dv10e = I('dv10e', '$940$ ✓ $\\quad 945$ ✗', size=32, col=1, hand='940  ✓      945  ✗')
+# 2026-10-15 batch-A review (Codex, reviews/batch-A.md #46-49): each example is its own board line at its clause, the
+# last digit being discussed is highlighted, results / ticks come at the spoken verdict (V4); 538 / 2 in easy halves;
+# a contrasting 7,241 for the sign of 8; "no divisor bigger than 1"; the two ways for 11 labelled and split; the general
+# 11 rule ("divisible by 11, 0 too"); remainders written as number = divisor x quotient + remainder; a two-row
+# number / remainder table; k = the number of complete groups of 4 (no "tag"); 8k + 2 by 6 is not "anything".
+def REMTAB(name, nums, rems, label, w=900, col=0):
+    """a two-row table (number / remainder), one column per layer: {'line': the empty table, 1: column 1, ...}"""
+    INK, TEAL, FONT = SNL.INK, SNL.TEAL, SNL.FONT
+    X = lambda i: 262 + i * 66
+    vb = '0 0 660 132'
+    txt = lambda x, y, t, c=INK, fs=30, anc='middle': ('<text x="%d" y="%d" text-anchor="%s" fill="%s" %s font-size="%d" font-weight="bold">%s</text>'
+                                                     % (x, y, anc, c, FONT, fs, t))
+    body = (txt(10, 50, 'number', fs=26, anc='start') + txt(10, 112, label, fs=26, anc='start') +
+            '<line x1="6" y1="72" x2="654" y2="72" stroke="%s" stroke-width="2"/>' % INK +
+            '<line x1="226" y1="12" x2="226" y2="128" stroke="%s" stroke-width="2"/>' % INK)
+    out = [('line', _svg(vb, body, 'Table: number and %s' % label))]
+    for i, (n, r) in enumerate(zip(nums, rems)):
+        out.append((i + 1, _svg(vb, txt(X(i), 50, n) + txt(X(i), 112, r, TEAL), '%s leaves %s' % (n, r))))
+    return _layers(name, out, w, col)
+
+
+dv0 = I('dv0', '$538\\div2$', size=30, hand='538 ÷ 2')
+dv0a = I('dv0a', '$500\\div2=250$', size=30, hand='500 ÷ 2 = 250')
+dv0b = I('dv0b', '$38\\div2=19$', size=30, hand='38 ÷ 2 = 19')
+dv0c = I('dv0c', '$250+19=269$', size=30, hand='250 + 19 = 269')
+dv2 = I('dv2', '$\\div2$: $\\ $the last digit is even', size=30)
+dv2a = I('dv2a', '$53\\hl{d}{8}$', size=30, col=1, hand='53\\hl{d}{8}')
+dv2b = I('dv2b', '$74\\hl{d}{1}$', size=30, col=1, hand='74\\hl{d}{1}')
+dv5 = I('dv5', '$\\div5$: $\\ $the last digit is $0$ or $5$', size=30)
+dv5a = I('dv5a', '$46\\hl{d}{0}$', size=30, col=1, hand='46\\hl{d}{0}')
+dv5b = I('dv5b', '$3{,}81\\hl{d}{5}$', size=30, col=1, hand='381\\hl{d}{5}')
+dv5c = I('dv5c', '$25\\hl{d}{3}$', size=30, col=1, hand='25\\hl{d}{3}')
+dv10 = I('dv10', '$\\div10$: $\\ $the last digit is $0$', size=30)
+dv10a = I('dv10a', '$94\\hl{d}{0}$ ✓', size=30, col=1, hand='94\\hl{d}{0}   ✓')
+dv10b = I('dv10b', '$94\\hl{d}{5}$', size=30, col=1, hand='94\\hl{d}{5}')
 dv3 = I('dv3', '$\\div3$: $\\ $the digit sum divides by $3$', size=32)
-dv3e = I('dv3e', '$942$: $\\ 9+4+2=15$ ✓', size=32, col=1, hand='942 :   9 + 4 + 2 = 15   ✓')
-dv3n = I('dv3n', '$523$: $\\ 5+2+3=10$ ✗', size=32, col=1, hand='523 :   5 + 2 + 3 = 10   ✗')
+dv3e = I('dv3e', '$942$: $\\ 9+4=13$', size=30, col=1, hand='942 :   9 + 4 = 13')
+dv3f = I('dv3f', '$13+2=15$', size=30, col=1, hand='13 + 2 = 15')
+dv3n = I('dv3n', '$523$: $\\ 5+2+3=10$', size=30, col=1, hand='523 :   5 + 2 + 3 = 10')
 dv9 = I('dv9', '$\\div9$: $\\ $the digit sum divides by $9$', size=32)
-dv9e = I('dv9e', '$846$: $\\ 8+4+6=18$ ✓', size=30, col=1, hand='846 :   8 + 4 + 6 = 18   ✓')
-dv9n = I('dv9n', '$942$: $\\ 15$ ✗', size=30, col=1, hand='942 :   15   ✗')
-dv4 = I('dv4', '$\\div4$: $\\ $the last two digits divide by $4$', size=32)
-dv4e = I('dv4e', '$2{,}716=2{,}700+16$ ✓', size=32, col=1, hand='2716 = 2700 + 16   ✓')
-dv4w = I('dv4w', '$100=25\\cdot4$', size=32, col=1, hand='100 = 25·4')
-dv4n = I('dv4n', '$534$: $\\ 34$ ✗', size=32, col=1, hand='534 :   34   ✗')
-dv8 = I('dv8', '$\\div8$: $\\ $the last three digits divide by $8$', size=32)
-dv8w = I('dv8w', '$1{,}000=125\\cdot8$', size=28, col=1, hand='1000 = 125·8')
-dv8e = I('dv8e', '$7{,}240$: $\\ 240=30\\cdot8$ ✓', size=28, col=1, hand='7240 :   240 = 30·8   ✓')
+dv9e = I('dv9e', '$846$: $\\ 8+4=12$', size=30, col=1, hand='846 :   8 + 4 = 12')
+dv9f = I('dv9f', '$12+6=18$', size=30, col=1, hand='12 + 6 = 18')
+dv9n = I('dv9n', '$942$: $\\ $digit sum $15$', size=30, col=1, hand='942 :   digit sum 15')
+dv4 = I('dv4', '$\\div4$: $\\ $the last two digits divide by $4$', size=30)
+dv4e = I('dv4e', '$2{,}716\\ \\to\\ 16$', size=30, col=1, hand='2716  →  16')
+dv4s = I('dv4s', '$2{,}716=2{,}700+16$', size=30, col=1, hand='2716 = 2700 + 16')
+dv4w = I('dv4w', '$100=25\\cdot4$', size=30, col=1, hand='100 = 25·4')
+dv4n = I('dv4n', '$534\\ \\to\\ 34$', size=30, col=1, hand='534  →  34')
+dv4n2 = I('dv4n2', '$32=8\\cdot4,\\ \\ 34=32+2$', size=30, col=1, hand='32 = 8·4,    34 = 32 + 2')
+dv8 = I('dv8', '$\\div8$: $\\ $the last three digits divide by $8$', size=30)
+dv8w = I('dv8w', '$1{,}000=125\\cdot8$', size=28, hand='1000 = 125·8')
+dv8e = I('dv8e', '$7{,}240\\ \\to\\ 240$', size=28, hand='7240  →  240')
+dv8f = I('dv8f', '$240=30\\cdot8$', size=28, hand='240 = 30·8')
+dv8g = I('dv8g', '$7{,}241\\ \\to\\ 241$', size=28, hand='7241  →  241')
+dv8h = I('dv8h', '$241=30\\cdot8+1$', size=28, hand='241 = 30·8 + 1')
 dv6 = I('dv6', '$\\div6$: $\\ $by $2$ and by $3$', size=32)
-dv6e = I('dv6e', '$234$: $\\ $even, $\\ 2+3+4=9$ ✓', size=32, col=1, hand='234 :   even,   2 + 3 + 4 = 9   ✓')
-dv6n = I('dv6n', '$135$: $\\ 1+3+5=9$, $\\ $odd ✗', size=32, col=1, hand='135 :   1 + 3 + 5 = 9,   odd   ✗')
+dv6e = I('dv6e', '$234$: $\\ $even, $\\ 2+3+4=9$ ✓', size=30, col=1, hand='234 :   even,   2 + 3 + 4 = 9   ✓')
+dv6n = I('dv6n', '$135$: $\\ 1+3+5=9$, $\\ $odd ✗', size=30, col=1, hand='135 :   1 + 3 + 5 = 9,   odd   ✗')
 dv15 = I('dv15', '$\\div15$: $\\ $by $3$ and by $5$', size=32)
-dv15e = I('dv15e', '$510$: $\\ $ends in $0$, $\\ 5+1+0=6$ ✓', size=32, col=1, hand='510 :   ends in 0,   5 + 1 + 0 = 6   ✓')
+dv15e = I('dv15e', '$510$: $\\ $ends in $0$, $\\ 5+1+0=6$ ✓', size=30, col=1, hand='510 :   ends in 0,   5 + 1 + 0 = 6   ✓')
 dvbig = I('dvbig', '$12=3\\cdot4\\quad 18=2\\cdot9\\quad 24=3\\cdot8$', size=28, hand='12 = 3·4      18 = 2·9      24 = 3·8')
-dvnc = I('dvnc', 'The parts share no common factor', size=28)
-dvtrap = I('dvtrap', '$12=2\\cdot6$ ✗: $\\ 18$ divides by $2$ and $6$, not by $12$', size=28, col=1)
-dv11 = I('dv11', '$\\div11$: $\\ 22,\\ 33,\\ 55,\\ 99$', size=32, hand='÷11 :   22,   33,   55,   99')
-dv11a = I('dv11a', '$418$: $\\ 41-8=33$ ✓ $\\quad 427$: $\\ 42-7=35$ ✗', size=30, col=1, hand='418 :   41 − 8 = 33  ✓      427 :   42 − 7 = 35  ✗')
-dv11b = I('dv11b', '$418$: $\\ 4+8-1=11$ ✓', size=30, col=1, hand='418 :   4 + 8 − 1 = 11   ✓')
-dv11c = I('dv11c', '$1{,}331$: $\\ 1-3+3-1=0$ ✓ $\\quad 482$: $\\ 4-8+2=-2$ ✗', size=28, col=1, hand='1331 :   1 − 3 + 3 − 1 = 0  ✓      482 :   4 − 8 + 2 = −2  ✗')
-dv11r = I('dv11r', 'The result is $0$, $11$ or $-11$', size=30)
+dvnc = I('dvnc', 'No shared divisor bigger than $1$', size=28)
+dvtrap = I('dvtrap', '$12=2\\cdot6$', size=28, col=1, hand='12 = 2·6')
+dvtrap2 = I('dvtrap2', '$18\\div2$ ✓ $\\quad 18\\div6$ ✓', size=28, col=1, hand='18 ÷ 2  ✓      18 ÷ 6  ✓')
+dvtrap3 = I('dvtrap3', '$18\\div12$ ✗', size=28, col=1, hand='18 ÷ 12   ✗')
+dvtrap4 = I('dvtrap4', '$6=2\\cdot3$: $\\ 2$ and $6$ share a $2$', size=28, col=1, hand='6 = 2·3 :   2 and 6 share a 2')
+dv11 = I('dv11', '$\\div11$: $\\ 22,\\ 33,\\ 55,\\ 99$', size=30, hand='÷11 :   22,   33,   55,   99')
+dv11w1 = I('dv11w1', 'Way 1: first two digits $-$ last digit', size=26)
+dv11a = I('dv11a', '$418$: $\\ 41-8=33$', size=28, col=1, hand='418 :   41 − 8 = 33')
+dv11a2 = I('dv11a2', '$427$: $\\ 42-7=35$', size=28, col=1, hand='427 :   42 − 7 = 35')
+dv11w2 = I('dv11w2', 'Way 2: outer digits $-$ middle digit', size=26)
+dv11b = I('dv11b', '$418$: $\\ 4+8=12$', size=28, col=1, hand='418 :   4 + 8 = 12')
+dv11b2 = I('dv11b2', '$12-1=11$', size=28, col=1, hand='12 − 1 = 11')
+dv11r = I('dv11r', 'Way 2, three digits: result $0$ or $11$', size=26)
+dv11w3 = I('dv11w3', 'Longer numbers: $\\ +\\,-\\,+\\,-\\ \\dots$', size=26)
+dv11g = I('dv11g', 'The result divides by $11$ ($0$ counts)', size=26)
+dv11c = I('dv11c', '$1{,}331$: $\\ 1-3+3-1=0$', size=28, col=1, hand='1331 :   1 − 3 + 3 − 1 = 0')
+dv11c2 = I('dv11c2', '$482$: $\\ 4-8+2=-2$', size=28, col=1, hand='482 :   4 − 8 + 2 = −2')
 dvwhy = I('dvwhy', 'A quarter of a group $\\to$ the group divides by $4$', size=30)
 dvr1 = I('dvr1', '$10\\div3$: $\\ 3\\cdot3=9$, $\\ $remainder $1$', size=32, hand='10 ÷ 3 :   3·3 = 9,   remainder 1')
 dvr1b = I('dvr1b', '$7\\cdot7=49,\\ \\ 53-49=4$', size=32, hand='7·7 = 49,    53 − 49 = 4')
@@ -512,16 +557,24 @@ dvr4 = I('dvr4', 'Remainder $<$ divisor', size=30)
 dvt1 = I('dvt1', '$5\\div8$: $\\ $remainder $5$, $\\ $not $3$', size=32, hand='5 ÷ 8 :   remainder 5,   not 3')
 dvt2 = I('dvt2', '$35$ shekels, $\\ 8$ each: $\\ 8,\\ 16,\\ 24,\\ 32$: $\\ 3$ left', size=30, col=1, hand='35 :   8,  16,  24,  32 :   3 left')
 dvt3 = I('dvt3', '$5$ shekels: $\\ 0$ drinks, $\\ 5$ left', size=30, col=1, hand='5 :   0 drinks,   5 left')
-dvm1 = I('dvm1', '$\\div4$: $\\ 1\\to1,\\ 2\\to2,\\ 3\\to3,\\ 4\\to0,\\ 5\\to1,\\ 6\\to2$', size=30, hand='÷4 :   1→1,  2→2,  3→3,  4→0,  5→1,  6→2')
+dvt4 = I('dvt4', '$5=8\\cdot0+5$', size=30, col=1, hand='5 = 8·0 + 5')
+dvm1 = REMTAB('dvm1', [1, 2, 3, 4, 5, 6], [1, 2, 3, 0, 1, 2], 'remainder ÷4')
 dvm2 = I('dvm2', 'Biggest remainder $=$ divisor $-\\ 1$', size=32)
 dvm3 = I('dvm3', '$\\div10$: $\\ 9\\qquad \\div12$: $\\ 11$', size=32, col=1, hand='÷10 :   9          ÷12 :   11')
 dvd1 = I('dvd1', 'By $3$ or $9$: $\\ $the same remainder as the digit sum', size=28)
-dvd2 = I('dvd2', '$5{,}432$: $\\ 5+4+3+2=14$', size=32, col=1, hand='5432 :   5 + 4 + 3 + 2 = 14')
-dvd3 = I('dvd3', '$14\\div9$: $\\ 5\\qquad 14\\div3$: $\\ 2$', size=32, col=1, hand='14 ÷ 9 :   5          14 ÷ 3 :   2')
-dvd4 = I('dvd4', '$220$: $\\ 2+2+0=4$, $\\ 4\\div3$: $\\ 1$', size=32, col=1, hand='220 :   4,   4 ÷ 3 :   1')
-dvk1 = I('dvk1', 'Leaves $3$ by $4$: $\\ 4k+3$ $\\quad$ ($k$ a whole number)', size=30)
-dvk2 = I('dvk2', '$k=0,1,2$: $\\ 3,\\ 7,\\ 11$', size=32, col=1, hand='k = 0, 1, 2 :   3,   7,   11')
-dvk3 = I('dvk3', 'Leaves $4$ by $15$: $\\ 15k+4$: $\\ 19,\\ 34,\\ 49$', size=30, hand='15k + 4 :   19,   34,   49')
+dvd2 = I('dvd2', '$5{,}432$: $\\ 5+4+3+2=14$', size=30, col=1, hand='5432 :   5 + 4 + 3 + 2 = 14')
+dvd3 = I('dvd3', '$14=9\\cdot1+5$', size=30, col=1, hand='14 = 9·1 + 5')
+dvd3b = I('dvd3b', '$5{,}432\\div9$: $\\ $remainder $5$', size=30, col=1, hand='5432 ÷ 9 :   remainder 5')
+dvd3c = I('dvd3c', '$14=3\\cdot4+2$', size=30, col=1, hand='14 = 3·4 + 2')
+dvd3d = I('dvd3d', '$5{,}432\\div3$: $\\ $remainder $2$', size=30, col=1, hand='5432 ÷ 3 :   remainder 2')
+dvd4 = I('dvd4', '$220$: $\\ 2+2+0=4$', size=30, col=1, hand='220 :   2 + 2 + 0 = 4')
+dvd4b = I('dvd4b', '$4\\div3$: $\\ $remainder $1$', size=30, col=1, hand='4 ÷ 3 :   remainder 1')
+dvk0 = I('dvk0', '$7=4\\cdot1+3$', size=30, col=1, hand='7 = 4·1 + 3')
+dvk0b = I('dvk0b', '$11=4\\cdot2+3$', size=30, col=1, hand='11 = 4·2 + 3')
+dvk1 = I('dvk1', 'Leaves $3$ by $4$: $\\ 4k+3$, $\\ k$ whole', size=30)
+dvk2 = I('dvk2', '$k=0$: $\\ 3\\div4$, $\\ $remainder $3$', size=30, col=1, hand='k = 0 :   3 ÷ 4,   remainder 3')
+dvk3 = I('dvk3', 'Leaves $4$ by $15$: $\\ 15k+4$', size=30)
+dvk3b = I('dvk3b', '$19,\\ 34,\\ 49$', size=30, col=1, hand='19,   34,   49')
 dvc1 = I('dvc1', '$15k+4$ by $5$: $\\ 15k=5\\cdot3k$ $\\to$ remainder $4$', size=30, hand='15k + 4  by 5 :   15k = 5·3k   →   remainder 4')
 dvc1k = I('dvc1k', '$19\\div5$: $\\ $remainder $4$ ✓', size=30, hand='19 ÷ 5 :   remainder 4   ✓')
 dvc2 = I('dvc2', '$15k+13$ by $5$: $\\ 13=2\\cdot5+3$ $\\to$ remainder $3$', size=30, hand='15k + 13  by 5 :   13 = 2·5 + 3   →   remainder 3')
@@ -530,7 +583,7 @@ dvc3 = I('dvc3', '$8k+2$ by $6$: $\\ 2\\to2,\\ \\ 10\\to4$ ✗', size=30, hand='
 dvc4 = I('dvc4', 'Only if the new divisor divides the old one', size=30)
 dvs1 = I('dvs1', '$2,5,10$: $\\ $last digit $\\quad 3,9$: $\\ $digit sum', size=30)
 dvs2 = I('dvs2', '$4$: $\\ $last two $\\quad 8$: $\\ $last three $\\quad 12=3\\cdot4$', size=30)
-dvs3 = I('dvs3', '$11$: $\\ 41-8$ $\\ $or $\\ 4+8-1$', size=30)
+dvs3 = I('dvs3', '$11$, three digits: $\\ 41-8$ $\\ $or $\\ 4+8-1$', size=30)
 dvs4 = I('dvs4', 'Remainder $<$ divisor $\\quad$ biggest $=$ divisor $-\\ 1$', size=30)
 video('divisibility', 'lesson', slides=[
     S('Division & Remainder',
@@ -538,46 +591,64 @@ video('divisibility', 'lesson', slides=[
         "that tell us whether a number divides by another number, without calculating. Then remainders, the part that "
         "confuses many students. We only need small, simple divisors, exactly what the exam asks about.")),
     S('By 2, 5 and 10',
-      L("When we say a number is divisible by two, we mean it divides by two with nothing left over. For example, five hundred thirty-eight divided by two is two "
-        "hundred sixty-nine, a whole number. So five hundred thirty-eight is divisible by two.", show(dv0, 'five hundred thirty-eight divided by two')),
+      L("When we say a number is divisible by two, we mean it divides by two with nothing left over. For example, five "
+        "hundred thirty-eight divided by two. Half of five hundred is two hundred fifty. Half of thirty-eight is nineteen. "
+        "Together that's two hundred sixty-nine, a whole number. So five hundred thirty-eight is divisible by two.",
+        show(dv0, 'five hundred thirty-eight divided by two'), show(dv0a, 'is two hundred fifty'),
+        show(dv0b, 'is nineteen'), show(dv0c, "Together that's")),
       L("Let's start with the signs most of us already know. A number is divisible by two when it's even, and that's "
         "decided by its last digit. Five hundred thirty-eight ends in eight, which is even, so it's divisible by two. Seven "
         "hundred forty-one ends in one, which is odd, so it's not.", show(dv2, 'A number is divisible by two'),
-        show(dv2e, 'Five hundred thirty-eight ends in eight')),
+        show(dv2a, 'Five hundred thirty-eight ends in eight'), pt('dv2a: d', 'which is even'),
+        mk('tick', 'dv2a', "so it's divisible by two"), show(dv2b, 'hundred forty-one ends in one'),
+        pt('dv2b: d', 'which is odd'), mk('cross', 'dv2b', "so it's not")),
       L("A number is divisible by five when its last digit is zero or five. Four hundred sixty ends in zero, and three "
         "thousand eight hundred fifteen ends in five, so both are divisible by five. Two hundred fifty-three ends in three, "
-        "so it's not.", show(dv5, 'A number is divisible by five'), show(dv5e, 'Four hundred sixty ends in zero')),
+        "so it's not.", show(dv5, 'A number is divisible by five'), show(dv5a, 'Four hundred sixty ends in zero'),
+        show(dv5b, 'and three thousand'), pt('dv5b: d', 'fifteen ends in five'), pt('dv5a: d', 'so both are'), mk('tick', 'dv5a', 'so both are'),
+        mk('tick', 'dv5b', 'divisible by five. Two'), show(dv5c, 'Two hundred fifty-three ends in three'), pt('dv5c: d', 'ends in three, so'),
+        mk('cross', 'dv5c', "so it's not")),
       L("And a number is divisible by ten when its last digit is zero, like nine hundred forty. Nine hundred forty-five "
         "ends in five, so it divides by five, but not by ten.", show(dv10, 'divisible by ten when'),
-        show(dv10e, 'like nine hundred forty'))),
+        show(dv10a, 'like nine hundred forty'),
+        show(dv10b, 'Nine hundred forty-five'), pt('dv10b: d', 'ends in five, so'), mk('cross', 'dv10b', 'but not by ten'))),
     S('By 3 and 9',
       L("Now the new ones. A number is divisible by three when the sum of its digits is divisible by three. Take nine "
         "hundred forty-two. Nine plus four is thirteen, and thirteen plus two is fifteen. Fifteen is divisible by three, so "
         "the whole number, nine hundred forty-two, is divisible by three.", show(dv3, 'A number is divisible by three when'),
-        show(dv3e, 'Take nine hundred forty-two')),
+        show(dv3e, 'Nine plus four is thirteen'), show(dv3f, 'thirteen plus two is fifteen'),
+        mk('tick', 'dv3f', 'Fifteen is divisible by three')),
       L("Another one, five hundred twenty-three. Five plus two plus three is ten. Ten is not divisible by three, so five "
-        "hundred twenty-three is not divisible by three either.", show(dv3n, 'Another one, five hundred twenty-three')),
+        "hundred twenty-three is not divisible by three either.", show(dv3n, 'Five plus two plus three'),
+        mk('cross', 'dv3n', 'Ten is not divisible')),
       L("Nine works exactly the same way. If the digit sum is divisible by nine, the number is divisible by nine. Eight "
         "hundred forty-six. Eight plus four is twelve, and twelve plus six is eighteen. Eighteen is divisible by nine, so "
         "eight hundred forty-six is too. But nine hundred forty-two has a digit sum of fifteen, which doesn't divide by "
         "nine. So it divides by three, but not by nine.", show(dv9, 'Nine works exactly the same way'),
-        show(dv9e, 'Eight hundred forty-six. Eight plus four'),
-        show(dv9n, 'But nine hundred forty-two'))),
+        show(dv9e, 'Eight plus four is twelve'), show(dv9f, 'twelve plus six is eighteen'),
+        mk('tick', 'dv9f', 'Eighteen is divisible by nine'),
+        show(dv9n, 'has a digit sum of fifteen'), mk('cross', 'dv9n', "which doesn't divide by"))),
     S('By 4 and 8',
       L("Four and eight are a little harder. For four, we look only at the number made by the last two digits. Two "
         "thousand seven hundred sixteen ends in sixteen, and sixteen is divisible by four, so the whole number is "
-        "divisible by four.", show(dv4, 'For four, we look only'), show(dv4e, 'ends in sixteen')),
+        "divisible by four.", show(dv4, 'For four, we look only'), show(dv4e, 'ends in sixteen'),
+        mk('tick', 'dv4e', 'so the whole number')),
       L("Why only the last two digits? Split the number into two thousand seven hundred, plus sixteen. A hundred is twenty-"
         "five fours, so every whole hundred is divisible by four, and so is two thousand seven hundred. That leaves only "
-        "the last two digits to check.", show(dv4w, 'A hundred is twenty-five fours')),
+        "the last two digits to check.", show(dv4s, 'Split the number into'), show(dv4w, 'A hundred is twenty-five fours')),
       L("A second example, five hundred thirty-four. The last two digits are thirty-four. Thirty-two is eight fours, and "
         "thirty-four is two more, so thirty-four is not divisible by four, and neither is five hundred thirty-four.",
-        show(dv4n, 'A second example, five hundred thirty-four')),
+        show(dv4n, 'The last two digits are thirty-four'), show(dv4n2, 'Thirty-two is eight fours'),
+        mk('cross', 'dv4n', 'and neither is')),
       L("For eight, we do the same thing with the last three digits, because a thousand is a hundred twenty-five eights. "
         "So every whole thousand is divisible by eight. In seven thousand two hundred forty, we check two hundred forty. "
-        "Two hundred forty is thirty eights, so seven thousand two hundred forty is divisible by eight.",
+        "Two hundred forty is thirty eights, so seven thousand two hundred forty is divisible by eight. Now change it by "
+        "one, to seven thousand two hundred forty-one. Then we check two hundred forty-one. That's thirty eights plus one, "
+        "so it's not divisible by eight.",
         show(dv8, 'For eight, we do the same thing'), show(dv8w, 'a thousand is a hundred twenty-five eights'),
-        show(dv8e, 'In seven thousand two hundred forty')),
+        show(dv8e, 'we check two hundred forty'), show(dv8f, 'Two hundred forty is thirty eights'),
+        mk('tick', 'dv8f', 'so seven thousand two hundred forty is'), show(dv8g, 'Then we check two hundred forty-one'),
+        show(dv8h, "That's thirty eights plus one"), mk('cross', 'dv8g', "so it's not divisible by eight")),
       L("By the way, division by eight is very rare on the exam. And when it comes, the numbers are friendly ones from the "
         "times table, like a hundred sixty, three hundred twenty or five hundred sixty.", pt('dv8', 'division by eight is very rare'))),
     S('Build a divisor',
@@ -591,25 +662,35 @@ video('divisibility', 'lesson', slides=[
         "divides by five, and its digit sum is five plus one plus zero, which is six, so it divides by three. So five "
         "hundred ten is divisible by fifteen.", show(dv15, 'Fifteen is three times five'), show(dv15e, 'Five hundred ten ends in zero')),
       L("Twelve is three times four, eighteen is two times nine, and twenty-four is three times eight. Check each part with "
-        "its own sign. If the number divides by both parts, it divides by the big number.", show(dvbig, 'Twelve is three times four')),
-      L("But careful, the two parts must share no factor. Why not split twelve as two times six? Look at eighteen. Eighteen "
-        "divides by two and by six, but eighteen is not divisible by twelve. Two and six share a two, so this check doesn't "
-        "work. Three and four share nothing, so for twelve we use three times four.", show(dvnc, 'the two parts must share no factor'),
-        show(dvtrap, 'Look at eighteen'))),
+        "its own sign. The two parts must not share a divisor bigger than one. Then, if the number divides by both parts, "
+        "it divides by the big number.", show(dvbig, 'Twelve is three times four'),
+        show(dvnc, 'must not share a divisor bigger than one')),
+      L("But careful. Why not split twelve as two times six? Look at eighteen. Eighteen divides by two and by six, but "
+        "eighteen is not divisible by twelve. Six is two times three, so two and six share a two. That's why this check "
+        "doesn't work. Three and four share no divisor bigger than one, so for twelve we use three times four.",
+        show(dvtrap, 'Why not split twelve'), show(dvtrap2, 'Eighteen divides by two and by six'),
+        show(dvtrap3, 'eighteen is not divisible by twelve'), show(dvtrap4, 'Six is two times three'),
+        mk('cross', 'dvtrap', "That's why this check"))),
     S('By 11',
       L("Eleven is the hardest one. For a two-digit number it's easy, the same digit twice: twenty-two, thirty-three, "
         "fifty-five, ninety-nine.", show(dv11, 'Eleven is the hardest one')),
       L("For a three-digit number there are two ways. The first way: take the number made by the first two digits, and "
         "subtract the last digit. Four hundred eighteen. Forty-one minus eight is thirty-three, and thirty-three divides by "
         "eleven, so four hundred eighteen divides by eleven. Four hundred twenty-seven. Forty-two minus seven is thirty-"
-        "five, which doesn't divide by eleven, so four hundred twenty-seven doesn't either.", show(dv11a, 'The first way')),
+        "five, which doesn't divide by eleven, so four hundred twenty-seven doesn't either.", show(dv11w1, 'The first way'),
+        show(dv11a, 'Forty-one minus eight'), mk('tick', 'dv11a', 'so four hundred eighteen divides'),
+        show(dv11a2, 'Forty-two minus seven'), mk('cross', 'dv11a2', 'so four hundred twenty-seven')),
       L("The second way: add the two outer digits, and subtract the middle digit. Four hundred eighteen again. Four plus "
-        "eight is twelve, and twelve minus one is eleven. When the result is zero or eleven, the number divides by eleven.",
-        show(dv11b, 'The second way'), show(dv11r, 'When the result is zero or eleven')),
-      L("For longer numbers, go digit by digit with plus, minus, plus, minus. One thousand three hundred thirty-one. One, "
-        "minus three, plus three, minus one, is zero, so it divides by eleven. Four hundred eighty-two. Four, minus eight, "
-        "plus two, is negative two. That's not zero, eleven or negative eleven, so four hundred eighty-two doesn't divide "
-        "by eleven.", show(dv11c, 'For longer numbers')),
+        "eight is twelve, and twelve minus one is eleven. For a three-digit number, when the result is zero or eleven, the "
+        "number divides by eleven.", show(dv11w2, 'The second way'), show(dv11b, 'Four plus eight is twelve'),
+        show(dv11b2, 'twelve minus one is eleven'), show(dv11r, 'when the result is zero or eleven'),
+        mk('tick', 'dv11b2', 'number divides by eleven')),
+      L("For longer numbers, go digit by digit with plus, minus, plus, minus. The rule is that the result divides by "
+        "eleven, and zero counts too. One thousand three hundred thirty-one. One, minus three, plus three, minus one, is "
+        "zero, so it divides by eleven. Four hundred eighty-two. Four, minus eight, plus two, is minus two. Minus two doesn't "
+        "divide by eleven, so four hundred eighty-two doesn't either.", show(dv11w3, 'For longer numbers'),
+        show(dv11g, 'The rule is that the result'), show(dv11c, 'One, minus three'), mk('tick', 'dv11c', 'so it divides by eleven'),
+        show(dv11c2, 'Four, minus eight'), mk('cross', 'dv11c2', "Minus two doesn't")),
       L("Most exam numbers are simple, like a hundred forty-three or a hundred sixty-five, but now you're ready for harder "
         "ones too.", pt('dv11r', 'Most exam numbers are simple'))),
     S('Why the signs?',
@@ -628,39 +709,49 @@ video('divisibility', 'lesson', slides=[
         show(dvr4, 'always smaller than the divisor'))),
     S('The remainder trap',
       L("Here's where students usually go wrong. What's the remainder when we divide five by eight? It's five, not three. "
-        "The remainder is not the difference between the numbers.", show(dvt1, 'What\'s the remainder when we divide five')),
+        "The remainder is not the difference between the numbers.", show(dvt1, "It's five, not three")),
       L("Think of a shop. Each drink costs eight shekels, and you have thirty-five shekels. You buy as many as you can: "
         "eight, sixteen, twenty-four, thirty-two. That's four drinks, and three shekels stay in your hand. Three is the "
         "remainder.", show(dvt2, 'Think of a shop')),
       L("Now you walk in with only five shekels. That's not enough for even one drink. You get zero drinks, and the five "
-        "shekels stay in your hand. So five divided by eight is zero, with a remainder of five. The remainder is what's "
-        "left in your hand after you buy as many as you can.", show(dvt3, 'only five shekels'))),
+        "shekels stay in your hand. So when we divide five by eight, the quotient is zero, and the remainder is five. The "
+        "remainder is what's left in your hand after you buy as many as you can.", show(dvt3, 'You get zero drinks'),
+        show(dvt4, 'the quotient is zero'))),
     S('The biggest remainder',
       L("What remainders can we get when we divide by four? Let's try. One divided by four leaves one. Two leaves two, and "
         "three leaves three. Four divides exactly, so it leaves zero. Five leaves one again, and six leaves two.",
-        show(dvm1, 'One divided by four leaves one')),
+        show(dvm1['line'], "Let's try"), show(dvm1[1], 'One divided by four leaves one'), show(dvm1[2], 'Two leaves two'),
+        show(dvm1[3], 'three leaves three'), show(dvm1[4], 'so it leaves zero'), show(dvm1[5], 'Five leaves one again'),
+        show(dvm1[6], 'six leaves two')),
       L("So the remainders go round and round: one, two, three, zero. The biggest remainder is three, one less than four. "
-        "With one more, the four would fit again.", pt('dvm1', 'go round and round')),
+        "With one more, the four would fit again.", pt('dvm1_line', 'go round and round')),
       L("That's a rule: the biggest remainder is always one less than the divisor. Dividing by ten, the biggest remainder "
         "is nine. Dividing by twelve, it's eleven.", show(dvm2, "That's a rule"), show(dvm3, 'Dividing by ten'))),
     S('Digit sum and remainder',
       L("The digit sum gives us one more gift, but only for three and nine. Five thousand four hundred thirty-two has a "
         "digit sum of five plus four plus three plus two, which is fourteen.", show(dvd2, 'has a digit sum of five plus four')),
-      L("Fourteen divided by nine leaves five, so five thousand four hundred thirty-two divided by nine also leaves five. "
-        "And fourteen divided by three leaves two, so the big number divided by three leaves two as well.",
-        show(dvd3, 'Fourteen divided by nine leaves five'), show(dvd1, 'leaves two as well')),
+      L("Fourteen divided by nine leaves five, because fourteen is nine plus five. So five thousand four hundred thirty-two "
+        "divided by nine also leaves five. And fourteen is four threes plus two, so fourteen divided by three leaves two. "
+        "So the big number divided by three leaves two as well.",
+        show(dvd3, 'because fourteen is nine plus five'), show(dvd3b, 'So five thousand four hundred thirty-two'),
+        show(dvd3c, 'fourteen is four threes plus two'), show(dvd3d, 'the big number divided by three'),
+        show(dvd1, 'leaves two as well')),
       L("Another example, two hundred twenty. Its digit sum is two plus two plus zero, which is four. Four divided by three "
         "leaves one, so two hundred twenty divided by three leaves one. This works only for three and nine. For four or "
-        "seven, the digit sum tells us nothing about the remainder.", show(dvd4, 'Another example, two hundred twenty'))),
+        "seven, the digit sum tells us nothing about the remainder.", show(dvd4, 'Its digit sum is two plus two'),
+        show(dvd4b, 'Four divided by three leaves one'))),
     S('Writing it with a letter',
-      L("When a number leaves a known remainder, we can write it with a letter. A number that leaves three when divided by "
-        "four can be written as four k plus three, where k is any whole number. We call this a tag.",
-        show(dvk1, 'four k plus three')),
-      L("Why does it work? Four k is always divisible by four, and the three on the end is what's left. Let's try. k is "
-        "zero gives three. k is one gives seven, and seven divided by four leaves three. k is two gives eleven, which also "
-        "leaves three.", show(dvk2, "Let's try. k is")),
-      L("Another tag. A number that leaves four when divided by fifteen is fifteen k plus four. For example, nineteen, "
-        "thirty-four and forty-nine all leave four when divided by fifteen.", show(dvk3, 'fifteen k plus four'))),
+      L("When a number leaves a known remainder, we can write it with a letter. Take numbers that leave three when divided "
+        "by four. Seven is one four plus three. Eleven is two fours plus three. So each one is some whole fours, plus three. "
+        "We write it as four k plus three. k tells us how many complete groups of four there are, and k is a whole number.",
+        show(dvk0, 'Seven is one four plus three'), show(dvk0b, 'Eleven is two fours plus three'),
+        show(dvk1, 'We write it as four k plus three')),
+      L("Why does it work? Four k is always divisible by four, and the three on the end is what's left. k can also be "
+        "zero. Then the number is just three, and three divided by four leaves three, like five divided by eight before.",
+        show(dvk2, 'three divided by four leaves three')),
+      L("Another example. A number that leaves four when divided by fifteen is fifteen k plus four. For example, nineteen, "
+        "thirty-four and forty-nine all leave four when divided by fifteen.", show(dvk3, 'fifteen k plus four'),
+        show(dvk3b, 'For example, nineteen'))),
     S('Changing the divisor',
       L("Sometimes a question changes the divisor. A number leaves four when divided by fifteen. What does it leave when "
         "divided by five? Write it as fifteen k plus four. Fifteen k is five times three k, a whole number of fives, so it "
@@ -674,17 +765,20 @@ video('divisibility', 'lesson', slides=[
       L("But it doesn't always work. A number leaves two when divided by eight. What does it leave when divided by six? Try "
         "two, and it leaves two. Try ten, which also leaves two when divided by eight. Ten divided by six leaves four. Two "
         "different answers, so we can't know.", show(dvc3, 'Try ten')),
-      L("What's the difference? Five divides fifteen, so fifteen k is made of whole fives, and they drop out. Six doesn't "
-        "divide eight, so eight k isn't made of whole sixes, and it can leave anything. So changing the divisor works only "
-        "when the new divisor divides the old one.", show(dvc4, 'works only'))),
+      L("What's the difference? Five divides fifteen, so fifteen k is five times three k. Fifteen k leaves no remainder when "
+        "divided by five, so only the extra four matters. Six doesn't divide eight. So knowing the remainder by eight "
+        "doesn't tell us one fixed remainder by six. Our examples gave two and four. So changing the divisor works only "
+        "when the new divisor divides the old one.", pt('dvc1', 'fifteen k is five times three k'), pt('dvc1', 'Fifteen k leaves no remainder'), pt('dvc1', 'when divided by five, so'), pt('dvc1', 'only the extra four'),
+        pt('dvc3', 'Our examples gave two and four'), show(dvc4, 'works only'))),
     S('Recap',
       L("To sum up. For two, five and ten, look at the last digit. For three and nine, the digit sum. For four, the last "
-        "two digits, and for eight, the last three. A bigger divisor, split it into parts with no common factor.",
-        show(dvs1, 'For two, five and ten'), show(dvs2, 'For four, the last')),
-      L("For eleven, the first two digits minus the last one, or the outer digits minus the middle one.", show(dvs3, 'For eleven')),
+        "two digits, and for eight, the last three. A bigger divisor, split it into parts that share no divisor bigger "
+        "than one.", show(dvs1, 'For two, five and ten'), show(dvs2, 'For four, the last')),
+      L("For eleven, in a three-digit number, the first two digits minus the last one, or the outer digits minus the "
+        "middle one.", show(dvs3, 'For eleven')),
       L("A remainder is what's left in your hand. It's always smaller than the divisor, and the biggest one is the divisor "
         "minus one. Now some questions. Come in focused, because remainders are the part that confuses people. [pause] "
-        "Okay. I'll see you in the next video.", show(dvs4, 'A remainder is what'))),
+        "I'll see you in the next video.", show(dvs4, 'A remainder is what'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-423 (Q1)
@@ -1758,6 +1852,10 @@ def _stem_parts(vid):
 _cp_spec = importlib.util.spec_from_file_location('_camera_parts', os.path.join(HERE, '_camera_parts.py'))
 CP = importlib.util.module_from_spec(_cp_spec); _cp_spec.loader.exec_module(CP)
 CP.split(globals(), 'divisibility', 'Division & Remainder', [(1, None), (4, "Let's continue with divisibility, and build signs for more divisors."), (7, 'This part is about remainders.'), (11, "Let's continue with remainders, and write them with a letter.")])
+# 2026-10-15 batch-A shared fix 4 (no "Okay." before the goodbye, W16): the part closings of this unrecorded lesson
+for _v in CAMERA_PARTS['divisibility']:
+    _l = VIDEOS[_v]['slides'][-1]['lines'][-1]
+    _l['say'] = _l['say'].replace(" [pause] Okay. I'll see you in the next part.", " [pause] I'll see you in the next part.")
 
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v); _write_gap(_v)
 

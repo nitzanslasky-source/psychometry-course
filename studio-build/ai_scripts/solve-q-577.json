@@ -44,11 +44,11 @@
     ]
    },
    {
-    "say": "So b plus c is a plus b, which is at most fifteen, minus a minus c, which is at least two. That's at most thirteen. Fourteen is more than thirteen, so b plus c can never be fourteen. Choice number four is our answer.",
+    "say": "Start with a plus b, which is at most fifteen. To get b plus c, we replace a with the smaller number c. That takes away a minus c, which is at least two. So b plus c is at most fifteen minus two, which is thirteen. Fourteen is more than thirteen, so b plus c can never be fourteen. Choice number four is our answer.",
     "at": [
-     "So b plus",
-     "That's at most thirteen",
-     "Fourteen is more",
+     "Start with a",
+     "So b plus c is at most fifteen minus two",
+     "which is thirteen",
      "Choice number four is our answer"
     ]
    }
@@ -63,31 +63,37 @@
     ]
    },
    {
-    "say": "c has to be smaller than b, so the biggest c is six. Then b plus c is seven plus six, which is thirteen. If we try a bigger a, like nine, then b can only be six, and b plus c gets smaller. So thirteen is the biggest b plus c can be, and fourteen is out of reach. Choice number four.",
+    "say": "c has to be smaller than b, so the biggest c is six. Then b plus c is seven plus six, which is thirteen. If we try a bigger a, like nine, then b can be at most six, and b plus c gets smaller. And b can't be eight or more. Then a is at least nine, and a plus b is at least seventeen. So thirteen is the biggest b plus c can be, and fourteen is out of reach. Choice number four is our answer.",
     "at": [
      "so the biggest c is six",
      "Then b plus",
+     "And b can't be eight or more",
+     "Then a is",
      "fourteen is out of reach",
-     "number four"
+     "number four is"
     ]
    }
   ],
   [
    {
-    "say": "[pause] And a third way, plugging in the answers. The question hides a biggest value, so it makes sense to start with the biggest choice, fourteen. Can b plus c be fourteen? c is smaller than b, so b has to be at least eight, with c at most six. Then a is bigger than b, so a is at least nine, and a plus b is at least seventeen. That's not smaller than sixteen.",
+    "say": "[pause] And a third way, plugging in the answers. The question hides a biggest value, so it makes sense to start with the biggest choice, fourteen. Can b plus c be fourteen? c is smaller than b. If b were seven or less, c would be six or less. Then their sum is at most thirteen. So b has to be at least eight. Then a is bigger than b, so a is at least nine, and a plus b is at least seventeen. That's not smaller than sixteen.",
     "at": [
      "And a",
      "The question hides",
      "Can b plus c be fourteen",
-     "so b has"
+     "c is smaller",
+     "If b were seven or less",
+     "Then their sum",
+     "So b has to be at least eight",
+     "Then a is"
     ]
    },
    {
-    "say": "So b plus c can't be fourteen, and choice number four is our answer. The question asks for the one value that cannot happen, so we can stop here. [pause] Okay. I'll see you in the next question.",
+    "say": "So b plus c can't be fourteen. The question asks for the one value that cannot happen, so we can stop here. Choice number four is our answer, and I'll see you in the next question.",
     "at": [
-     "and choice number four is our answer",
      "The question asks",
-     "so we can"
+     "so we can",
+     "Choice number four is our answer"
     ]
    }
   ]

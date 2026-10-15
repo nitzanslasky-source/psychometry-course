@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "Given: b and y are positive, and y squared is equal to b cubed. If b is multiplied by twenty-five, by what factor is y multiplied?",
+    "say": "Given: b and y are positive, and y squared is equal to b to the power of three. If b is multiplied by twenty-five, by what factor is y multiplied?",
     "voice": "calm",
     "at": [
      "Given"
@@ -21,7 +21,7 @@
     ]
    },
    {
-    "say": "[short pause] First we need one pair of numbers that fits the equation. The easiest pair is b is one and y is one, because one squared and one cubed are both one. If you don't see it, put b is one. Then y squared is one. y could be one or negative one, but y is positive, so y is one.",
+    "say": "[short pause] First we need one pair of numbers that fits the equation. The easiest pair is b is one and y is one, because one squared and one to the power of three are both one. If you don't see it, put b is one. Then y squared is one. y could be one or negative one, but y is positive, so y is one.",
     "at": [
      "First we",
      "put b is one",
@@ -29,24 +29,26 @@
     ]
    },
    {
-    "say": "Now multiply b by twenty-five, so the new b is twenty-five. Then y squared is twenty-five cubed. Twenty-five is five squared, so twenty-five cubed is five to the power of six.",
+    "say": "Now multiply b by twenty-five, so the new b is twenty-five. Then y squared is twenty-five to the power of three. Twenty-five is five squared, so twenty-five to the power of three is five to the power of six.",
     "at": [
-     "Then y squared is twenty-five cubed",
-     "Twenty-five is five"
+     "Then y squared is twenty-five to the power of three",
+     "to the power"
     ]
    },
    {
-    "say": "Which positive number, squared, gives five to the power of six? Five cubed, because five cubed times five cubed is five to the power of six. Five cubed is a hundred twenty-five. So y went from one to a hundred twenty-five, which means it was multiplied by a hundred twenty-five. Choice number one is our answer.",
+    "say": "Which positive number, squared, gives five to the power of six? Five to the power of three. Five to the power of three, squared, is five to the power of six. Five to the power of three is a hundred twenty-five. So y went from one to a hundred twenty-five, which means it was multiplied by a hundred twenty-five. Choice number one is our answer.",
     "at": [
-     "Five cubed is a hundred twenty-five",
-     "So y went",
+     "Five to the power of three, squared",
+     "the power of six. Five",
+     "So y went from one",
+     "means it was",
      "Choice number one is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now the math way, with algebra. When b is multiplied by twenty-five, the right side becomes the bracket twenty-five b, cubed. To keep the equation true, y has to be multiplied by some number too. Let's call that number k. So the bracket k y, squared, equals the bracket twenty-five b, cubed.",
+    "say": "[pause] Now the math way, with algebra. When b is multiplied by twenty-five, the right side becomes the bracket twenty-five b, to the power of three. To keep the equation true, y has to be multiplied by some number too. Let's call that number k. So the bracket k y, squared, equals the bracket twenty-five b, to the power of three.",
     "at": [
      "Now the",
      "Let's call that number k",
@@ -54,25 +56,29 @@
     ]
    },
    {
-    "say": "Open the brackets with the power rules. k squared times y squared equals twenty-five cubed times b cubed. We know that y squared equals b cubed, and it isn't zero, so we can divide both sides by it.",
+    "say": "Open the brackets with the power rules. k squared times y squared equals twenty-five to the power of three, times b to the power of three. We know that y squared is equal to b to the power of three, so we put that in. b is positive, so b to the power of three isn't zero, and we can divide both sides by it.",
     "at": [
      "Open the brackets",
-     "k squared times"
+     "k squared times",
+     "so we put that in",
+     "to the power of three isn't"
     ]
    },
    {
-    "say": "That leaves k squared equals twenty-five cubed, which is five to the power of six. y stays positive, so k is positive, and k is five cubed, a hundred twenty-five. Choice number one again.",
+    "say": "That leaves k squared equals twenty-five to the power of three, which is five to the power of six. That's five to the power of three, squared. y stays positive, so k is positive, and k is five to the power of three, a hundred twenty-five. Choice number one again.",
     "at": [
      "That leaves k squared",
-     "twenty-five cubed, which",
+     "twenty-five to the",
      "Choice number one again"
     ]
    },
    {
-    "say": "Some students see this in their head. Twenty-five cubed is twenty-five squared times twenty-five, and twenty-five is five squared. So twenty-five cubed is the square of twenty-five times five, which is a hundred twenty-five. [pause] Okay. I'll see you in the next question.",
+    "say": "There's another way to see that twenty-five to the power of three is a square. It's twenty-five squared, times twenty-five. And twenty-five is five squared. So it's twenty-five squared times five squared, which is twenty-five times five, squared. That's a hundred twenty-five squared. Choice number one is our answer, and I'll see you in the next question.",
     "at": [
-     "Some students see this in their head",
-     "Twenty-five cubed is"
+     "It's twenty-five squared, times",
+     "And twenty-five is five squared",
+     "So it's twenty-five",
+     "number one is"
     ]
    }
   ]

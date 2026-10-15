@@ -40,6 +40,12 @@
      "Choice number four says",
      "number four says",
      "a is smaller",
+     "We get three times",
+     "brackets, a plus one, is",
+     "and a plus one is smaller than a",
+     "smaller than a",
+     "and one is smaller than zero",
+     "zero. That's never",
      "So choice number four is out"
     ]
    },
@@ -57,10 +63,13 @@
    {
     "say": "[pause] Now by understanding. Three over x means three divided by x. Choice number one. For a bigger than one it works. Three over two is smaller than three. But for a equal to one, we get three, which isn't smaller than three. And for a fraction like one half, we get six. So not always.",
     "at": [
-     "Now by",
+     "over x means",
      "number one. For",
      "For a bigger than one",
-     "But for a"
+     "Three over two",
+     "But for a equal to one",
+     "one, we get",
+     "we get six"
     ]
    },
    {

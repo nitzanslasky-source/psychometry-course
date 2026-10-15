@@ -13,12 +13,12 @@
     ]
    },
    {
-    "say": "But the questions in this topic, and the practice after them, give you tools that open your head for questions like these. Three tools open almost all of them. Plug in numbers, plug in the answers, and use the math way and understanding. Try numbers first, because they're fast and safe, and use the math way when the numbers don't decide.",
+    "say": "But the questions in this topic, and the practice after them, give you tools for questions like these. They help you find a way to solve them. Three tools solve almost all of them. Plug in numbers, plug in the answers, and use the math way and understanding. When the givens allow it, an easy number is often a fast first test. When the numbers don't decide, use the math way.",
     "at": [
      "Plug in numbers, plug",
      "plug in the answers, and",
      "and use the math way and understanding",
-     "Try numbers first"
+     "When the givens"
     ]
    }
   ],
@@ -26,23 +26,24 @@
    {
     "say": "The first tool, plugging in numbers. Say a is a positive number, and the question asks if a squared is always bigger than a. Try a is three. Three squared is nine, and nine is bigger than three. So far, yes.",
     "at": [
-     "in numbers. Say",
+     "Say a is a positive number",
+     "number, and the",
      "Try a is three",
-     "Three squared is"
+     "nine is bigger"
     ]
    },
    {
     "say": "But positive numbers can also be between zero and one. Try a is one third. One third squared is one ninth, and one ninth is smaller than one third. So a squared is not always bigger than a. One allowed number where it fails is enough to say not always.",
     "at": [
      "Try a is one third",
-     "One third squared"
+     "ninth, and one"
     ]
    },
    {
-    "say": "And use only numbers that the givens allow. If the question said a is negative, three and one third would not be allowed at all. Then we'd try a negative number, like negative two. Negative two squared is four, and four is bigger than negative two.",
+    "say": "And use only numbers that the givens allow. If the given were different, say a is negative, then three and one third are not allowed. Then we'd try a negative number, like negative two. Negative two squared is four, and four is bigger than negative two.",
     "at": [
-     "use only numbers that the givens allow",
-     "If the question",
+     "If the given were different",
+     "say a is",
      "Negative two squared is four",
      "and four is"
     ]
@@ -55,6 +56,8 @@
      "in the answers",
      "Say x squared minus x is six",
      "is six, and",
+     "the choices are two, three, four and six",
+     "four and six",
      "Two squared minus two",
      "four minus two",
      "Three squared minus three",
@@ -82,7 +85,7 @@
      "and n is"
     ]
    },
-   "As usual, we'll learn the rest through sample questions, where you'll see these tools at work. [pause] Okay. I'll see you in the next video."
+   "As usual, we'll learn the rest through sample questions, where you'll see these tools at work. [pause] I'll see you in the next video."
   ]
  ]
 }

@@ -7,9 +7,10 @@
   ],
   [
    {
-    "say": "When two positive numbers get exactly the same operation, we can ignore the operation. Whichever number was bigger without it is bigger with it. But first, handle any exceptional power.",
+    "say": "The same positive power or root, on two positive numbers, keeps their order. Whichever number was bigger before is bigger after it. But first, handle any exceptional power.",
     "at": [
-     "get exactly the"
+     "The same positive power or root",
+     "root, on two"
     ]
    },
    {
@@ -42,9 +43,11 @@
   ],
   [
    {
-    "say": "The last tool of this lesson is our own slogan: strong on strong, weak on weak. When we compare two products, we match the big factors against each other, and the small factors against each other.",
+    "say": "The last tool of this lesson is our own slogan: strong on strong, weak on weak. When we compare two products of positive numbers, we match the big factors against each other, and the small factors against each other.",
     "at": [
-     "this lesson is"
+     "this lesson is",
+     "strong on strong, weak on weak",
+     "When we compare"
     ]
    },
    {
@@ -52,6 +55,9 @@
     "at": [
      "four times six against",
      "Four beats three",
+     "and six beats five",
+     "One side wins",
+     "Twenty-four is bigger than fifteen",
      "With letters",
      "smaller than b"
     ]
@@ -64,16 +70,16 @@
     ]
    },
    {
-    "say": "One more push. If one number is already bigger, and we multiply it by a number above one, it gets even bigger. Seven is bigger than five, so seven times three is bigger than five too. But multiplying by a fraction can turn it around. Seven times one half is three and a half, which is smaller than five.",
+    "say": "One more push. If one positive number is already bigger, and we multiply it by a number above one, it gets even bigger. Seven is bigger than five, so seven times three is bigger than five too. But multiplying by a fraction can turn it around. Seven times one half is three and a half, which is smaller than five.",
     "at": [
      "One more push",
-     "bigger, and we"
+     "already bigger, and"
     ]
    }
   ],
   [
    {
-    "say": "So, in every question, first find the ranges the givens allow. Then handle any exceptional power. Then compare with the hierarchy, the same operation, or strong on strong. This understanding of how numbers grow, shrink and jump between ranges is what makes these questions fast. Next comes a question, and then the arrows for powers. [pause] Okay. I'll see you in the next video.",
+    "say": "So, in every question, first find the ranges the givens allow. Then handle any exceptional power. Then compare with the hierarchy, the same operation, or strong on strong. This understanding of how numbers grow, shrink and jump between ranges is what makes these questions fast. Next comes a question, and then the arrows for powers. [pause] I'll see you in the next video.",
     "at": [
      "first find the ranges",
      "Then handle any"

@@ -12,20 +12,23 @@
     "pause": 0.5
    },
    {
-    "say": "The answer has to be the smallest for every x in this range. So it's also the smallest at any one number we pick from the range, and one easy number can decide. [short pause] We'll solve it two ways, by plugging in one number, and then by understanding, placing each choice on the number line.",
+    "say": "The question promises that one choice is the smallest for every x in this range. So it must also be the smallest at any one number we pick. A choice that isn't the smallest at our number can't be the answer. So one easy number can decide. [short pause] We'll solve it two ways, by plugging in one number, and then by understanding, placing each choice on the number line.",
     "at": [
-     "The answer has to be the smallest",
-     "the smallest for",
-     "it two ways"
+     "one choice is the smallest",
+     "be the smallest",
+     "choice that isn't",
+     "number can decide"
     ]
    },
    {
-    "say": "[short pause] Let's plug in x is negative one half. It's between negative one and zero, and it's easy to work with. Choice number one, x cubed. Negative one half, cubed, is negative one half times negative one half times negative one half. Three negatives multiply to a negative, so it's negative one eighth. Choice number two is x itself, negative one half.",
+    "say": "[short pause] Let's plug in x is negative one half. It's between negative one and zero, and it's easy to work with. Choice number one, x to the power of three. Negative one half, to the power of three, is negative one half times negative one half times negative one half. Three negatives multiply to a negative, so it's negative one eighth. Choice number two is x itself, negative one half.",
     "at": [
      "Let's plug",
-     "Choice number one, x cubed",
+     "x is negative one half",
+     "It's between negative",
+     "Choice number one, x to the power of three",
      "number one, x",
-     "Negative one half, cubed",
+     "power of three",
      "number two is"
     ]
    },
@@ -35,7 +38,9 @@
      "Choice number three, negative x squared",
      "number three, negative",
      "First x squared:",
-     "number four, one"
+     "Choice number four, one over x",
+     "number four, one",
+     "One over negative"
     ]
    },
    {
@@ -49,7 +54,7 @@
     ]
    },
    {
-    "say": "Careful with choice number one. Cubing a number between negative one and zero brings it closer to zero. So negative one eighth is bigger than negative one half, not smaller.",
+    "say": "Careful with choice number one. A number between negative one and zero gets closer to zero when we raise it to the power of three. So negative one eighth is bigger than negative one half, not smaller.",
     "at": [
      "Careful with choice number one"
     ]
@@ -57,23 +62,30 @@
   ],
   [
    {
-    "say": "[pause] Now by understanding, without numbers. A number between negative one and zero stays between negative one and zero when we cube it. And x squared is between zero and one, so negative x squared is between negative one and zero. So choice numbers one, two and three are all between negative one and zero.",
+    "say": "[pause] Now by understanding, without numbers. A number between negative one and zero stays between negative one and zero when we raise it to the power of three. And x squared is between zero and one, so negative x squared is between negative one and zero. So choice numbers one, two and three are all between negative one and zero.",
     "at": [
      "Now by",
      "Now by understanding",
      "A number between",
+     "stays between negative one and zero",
+     "zero when we",
+     "And x squared is between zero and one",
+     "zero and one",
      "So choice numbers one, two and three",
      "numbers one, two"
     ]
    },
    {
-    "say": "Now one over x. x is closer to zero than negative one, so one over x is farther from zero than negative one. For example, one over negative one half is negative two, and one over negative one tenth is negative ten. So one over x is always below negative one, smaller than the other three. Choice number four. [pause] Okay. I'll see you in the next question.",
+    "say": "Now one over x. x is closer to zero than negative one, so one over x is farther from zero than negative one. For example, one over negative one half is negative two, and one over negative one tenth is negative ten. So one over x is always below negative one, smaller than the other three. Choice number four is our answer, and I'll see you in the next question.",
     "at": [
      "Now one over x",
      "x is closer",
      "For example, one over negative one half",
-     "one half is",
-     "smaller than the other three"
+     "and one over",
+     "So one over x is always below",
+     "always below negative",
+     "smaller than the other three",
+     "number four is"
     ]
    }
   ]

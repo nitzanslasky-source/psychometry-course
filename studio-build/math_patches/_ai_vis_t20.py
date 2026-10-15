@@ -495,13 +495,17 @@ def IH(name, tex, size=34, col=0):
 w0 = I('w0', '1 · Plugging in numbers', size=28)
 w0b = I('w0b', '2 · Plugging in the answers', size=28)
 w0c = I('w0c', '3 · The math way and understanding', size=28)
-w1 = I('w1', '$a>0$: $\\ a=3$: $\\ 9>3$ ✓', size=30)
-w1b = I('w1b', '$a=\\frac13$: $\\ \\frac19<\\frac13$ ✗', size=30)
-w2 = I('w2', '$a<0$: $\\ 3$ is not allowed', size=30)
-w2b = I('w2b', '$a=-2$: $\\ 4>-2$', size=30)
+# batch A #151: the claim is written with its given before the tests; the negative case is labelled "if the given were
+# different"; the stated choices go on the board before the answers are tested; calculations hand-written at their clauses
+w1q = I('w1q', 'Given $a>0$. $\\ $Always $a^2>a$?', size=30)
+w1 = IH('w1', '$a=3$: $\\ 3^2=9>3$ ✓', size=30)
+w1b = IH('w1b', '$a=\\frac{1}{3}$: $\\ (\\frac{1}{3})^2=\\frac{1}{9}<\\frac{1}{3}$ ✗', size=30)
+w2 = I('w2', 'If the given were $a<0$: $\\ 3$ and $\\frac13$ are not allowed', size=30)
+w2b = IH('w2b', '$a=-2$: $\\ (-2)^2=4>-2$', size=30)
 w3 = I('w3', '$x^2-x=6$', size=30)
-w3b = I('w3b', '$x=2$: $\\ 2^2-2=4-2=2$ ✗', size=30)
-w3c = I('w3c', '$x=3$: $\\ 3^2-3=9-3=6$ ✓', size=30)
+w3ch = I('w3ch', 'Choices: $\\ 2,\\ \\ 3,\\ \\ 4,\\ \\ 6$', size=30)
+w3b = IH('w3b', '$x=2$: $\\ 2^2-2=4-2=2$ ✗', size=30)
+w3c = IH('w3c', '$x=3$: $\\ 3^2-3=9-3=6$ ✓', size=30)
 w4 = I('w4', '$a+b=10,\\ a-b=4$: $\\ a^2-b^2=\\ ?$', size=30)
 w4b = I('w4b', '$a^2-b^2=(a+b)(a-b)$', size=30)
 w4c = I('w4c', '$=10\\cdot4=40$', size=30)
@@ -515,27 +519,28 @@ video('algebraic-understanding', 'lesson', slides=[
         "of the tools from psychometric thinking, plugging in numbers or plugging in the answers. To be honest, it's a fairly "
         "small part of the exam, and the questions don't repeat themselves. There's no single rule I can give you that "
         "solves them all."),
-      L("But the questions in this topic, and the practice after them, give you tools that open your head for questions "
-        "like these. Three tools open almost all of them. Plug in numbers, plug in the answers, and use the math way and "
-        "understanding. Try numbers first, because they're fast and safe, and use the math way when the numbers don't "
-        "decide.",
+      L("But the questions in this topic, and the practice after them, give you tools for questions like these. They help "
+        "you find a way to solve them. Three tools solve almost all of them. Plug in numbers, plug in the answers, and use "
+        "the math way and understanding. When the givens allow it, an easy number is often a fast first test. When the "
+        "numbers don't decide, use the math way.",
         show(w0, 'Plug in numbers, plug'), show(w0b, 'plug in the answers, and'), show(w0c, 'and use the math way and understanding'))),
     S('Plugging in numbers',
       L("The first tool, plugging in numbers. Say a is a positive number, and the question asks if a squared is always "
         "bigger than a. Try a is three. Three squared is nine, and nine is bigger than three. So far, yes.",
-        show(w1, 'Try a is three')),
+        show(w1q, 'Say a is a positive number'), show(w1, 'Try a is three')),
       L("But positive numbers can also be between zero and one. Try a is one third. One third squared is one ninth, and one "
         "ninth is smaller than one third. So a squared is not always bigger than a. One allowed number where it fails is "
         "enough to say not always.", show(w1b, 'Try a is one third')),
-      L("And use only numbers that the givens allow. If the question said a is negative, three and one third would not be "
-        "allowed at all. Then we'd try a negative number, like negative two. Negative two squared is four, and four is "
-        "bigger than negative two.", show(w2, 'use only numbers that the givens allow'),
+      L("And use only numbers that the givens allow. If the given were different, say a is negative, "
+        "then three and one third are not allowed. Then we'd try a negative number, like negative two. Negative two squared is four, and "
+        "four is bigger than negative two.", show(w2, 'If the given were different'),
         show(w2b, 'Negative two squared is four'))),
     S('Plugging in the answers',
       L("The second tool, plugging in the answers. Say x squared minus x is six, and the choices are two, three, four and six. "
         "We don't have to solve anything. We put each choice into the question. Two squared minus two is four minus two, "
         "which is two, not six. Three squared minus three is nine minus three, which is six. So three works.",
-        show(w3, 'Say x squared minus x is six'), show(w3b, 'Two squared minus two'), show(w3c, 'Three squared minus three'))),
+        show(w3, 'Say x squared minus x is six'), show(w3ch, 'the choices are two, three, four and six'),
+        show(w3b, 'Two squared minus two'), show(w3c, 'Three squared minus three'))),
     S('The math way and understanding',
       L("The third tool, the math way and understanding. Say a plus b is ten, a minus b is four, and they ask for a squared minus "
         "b squared. We don't need to find a and b. a squared minus b squared is the bracket a plus b, times the bracket a "
@@ -544,7 +549,7 @@ video('algebraic-understanding', 'lesson', slides=[
       L("Understanding also means reading what a given really says. If n is an integer and n is smaller than five, then n "
         "is at most four, because there's no integer between four and five. Gaps like this will help us find the biggest "
         "or smallest possible value.", show(w5, 'If n is an integer')),
-      L("As usual, we'll learn the rest through sample questions, where you'll see these tools at work. [pause] Okay. I'll "
+      L("As usual, we'll learn the rest through sample questions, where you'll see these tools at work. [pause] I'll "
         "see you in the next video.")),
 ])
 
@@ -555,11 +560,19 @@ video('algebraic-understanding', 'lesson', slides=[
 z1 = ZL('z1', -0.4, 3.6, [('a', [('pt', 3, 'x'), ('pt', 2, 'y')])], ticks=(0, 1), w=760, col=1)
 z2 = ZL('z2', -0.4, 3.6, [('a', [('pt', 0.62, 'x'), ('pt', 0.3, 'y'), ('below', 0.62, '½'), ('below', 0.3, '¼')])],
         ticks=(0, 1), w=760, col=1)
-a1 = IH('a1', '$x=3,\\ y=2$: $\\ $(1) $9>3$ ✓ $\\ $(2) $6>2$ ✓ $\\ $(3) $9>4$ ✓', size=28)
-a2 = IH('a2', '(4) $\\frac32>3$ ✗', size=30)
-a3 = I('a3', '$x=\\frac12,\\ y=\\frac14$: $\\ $(1) $\\frac14>\\frac12$ ✗ $\\quad$ (2) $\\frac18>\\frac14$ ✗', size=28)
+# batch A #152: one board line per choice (each check at its clause, a true comparison + the verdict mark); the math way
+# revealed as x-y>0, then x+y>0, then the product, then x^2>y^2
+a1 = IH('a1', '$x=3,\\ y=2$: $\\ $(1) $3^2=9>3$ ✓', size=28)
+a1b = IH('a1b', '(2) $3\\cdot2=6>2$ ✓', size=28)
+a1c = IH('a1c', '(3) $9>4$ ✓', size=28)
+a2 = IH('a2', '(4) $\\frac{3}{2}<3$ ✗', size=30)
+a3 = IH('a3', '$x=\\frac{1}{2},\\ y=\\frac{1}{4}$: $\\ $(1) $(\\frac{1}{2})^2=\\frac{1}{4}<\\frac{1}{2}$ ✗', size=28)
+a3b = IH('a3b', '(2) $\\frac{1}{2}\\cdot\\frac{1}{4}=\\frac{1}{8}<\\frac{1}{4}$ ✗', size=28)
 b1 = IH('b1', '$x^2-y^2=(x-y)(x+y)$', size=32)
-b2 = I('b2', '$x-y>0,\\ \\ x+y>0$: $\\ x^2-y^2>0$ ✓', size=32)
+b2 = IH('b2', '$x-y>0$', size=32)
+b2b = IH('b2b', '$x+y>0$', size=32)
+b2c = IH('b2c', '$(x-y)(x+y)>0$', size=32)
+b2d = IH('b2d', '$x^2-y^2>0\\ \\to\\ x^2>y^2$ ✓', size=32)
 video('solve-q-r26-t20-01', 'solution', qid='q-r26-t20-01', slides=[
     S('Method 1 · Plugging in numbers',
       L("Given: x and y are positive numbers, and x is bigger than y. Which of the following must be true?",
@@ -572,7 +585,7 @@ video('solve-q-r26-t20-01', 'solution', qid='q-r26-t20-01', slides=[
       L("Choice number one, x squared is bigger than x. Three squared is nine, and nine is bigger than three, so it works "
         "here. Choice number two, x y is bigger than y. Three times two is six, and six is bigger than two. It works. "
         "Choice number three, x squared is bigger than y squared. Nine is bigger than four. It works too.",
-        show(a1, 'Three squared is nine')),
+        show(a1, 'Three squared is nine'), show(a1b, 'Three times two is six'), show(a1c, 'Nine is bigger than four')),
       L("Choice number four, x over y is bigger than x. Three over two is one and a half, and one and a half is not bigger "
         "than three. So choice number four fails for an allowed pair, and it's out.", show(a2, 'Three over two is'),
         mk('cross', 'choice 4', "and it's out"))),
@@ -583,7 +596,7 @@ video('solve-q-r26-t20-01', 'solution', qid='q-r26-t20-01', slides=[
       L("Choice number one. One half squared is one quarter, and one quarter is not bigger than one half, so it's out. "
         "Choice number two. One half times one quarter is one eighth, and one eighth is not bigger than one quarter, so it's "
         "out too.", show(a3, 'One half squared is one quarter'), mk('cross', 'choice 1', "so it's out."),
-        mk('cross', 'choice 2', "so it's out too")),
+        show(a3b, 'One half times one quarter'), mk('cross', 'choice 2', "so it's out too")),
       L("Only choice number three is left, so choice number three is our answer.",
         mk('tick', 'choice 3', 'so choice number three is our answer')),
       sb='Method 1 · Plugging in numbers'),
@@ -592,84 +605,112 @@ video('solve-q-r26-t20-01', 'solution', qid='q-r26-t20-01', slides=[
         "brackets, x minus y, times, in brackets, x plus y.", show(b1, 'x squared minus y squared is')),
       L("x is bigger than y, so x minus y is positive. Both numbers are positive, so x plus y is positive too. A positive "
         "number times a positive number is positive. So x squared minus y squared is positive, which means x squared is "
-        "bigger than y squared, always. Choice number three. [pause] Okay. I'll see you in the next question.",
-        show(b2, 'so x minus y is positive'), mk('tick', 'choice 3', 'bigger than y squared, always'))),
+        "bigger than y squared, always. Choice number three is our answer, and I'll see you in the next question.",
+        show(b2, 'so x minus y is positive'), show(b2b, 'so x plus y is positive too'),
+        show(b2c, 'A positive number times a positive'), show(b2d, 'So x squared minus y squared is positive'),
+        mk('tick', 'choice 3', 'bigger than y squared, always'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t20-02 (added)
 # REMINDER: the range between -1 and 0 and powers there (topic 17); ordering negatives.  NEW at the step: "the smallest
-# for every x in the range" - one easy number from the range decides.  Methods: one number, placing the choices.
+# for every x in the range" - the question promises one choice is the smallest everywhere, so one easy number decides.
+# Methods: one number, placing the choices.
+# batch A #153: the exam premise said once; each substitution written at its clause (-x^2 with its brackets); the
+# understanding slide writes the ranges -1 < x^3 < 0, -1 < -x^2 < 0, 1/x < -1 one at a time.
 n1 = ZL('n1', -2.4, 0.3, [('a', [('pt', -2, '−2'), ('pt', -0.78, '−½'), ('pt', -0.47, '−¼'), ('pt', -0.17, '−⅛')])],
         ticks=(-1, 0), w=760, col=1)
 n2 = ZL('n2', -2.4, 0.3, [('a', [('shade', -1, 0), ('below', -0.5, '(1), (2), (3)')]), ('b', [('pt', -1.75, '1/x')])],
         ticks=(-1, 0), w=760, col=1)
-c1 = IH('c1', '$x=-\\frac{1}{2}$: $\\ $(1) $-\\frac{1}{8}$ $\\quad$ (2) $-\\frac{1}{2}$', size=30)
-c2 = IH('c2', '(3) $-\\frac14$ $\\quad$ (4) $-2$', size=30)
-c3 = I('c3', '$\\frac{1}{-1/2}=-2,\\quad \\frac{1}{-1/10}=-10$', size=30)
+for _k, _it in n2.items():          # the layers find their base by id (renderer fig / of): u1 / u2 come between
+    if _it.get('over'): _it['of'] = 'n2'
+    else: _it['fig'] = 'n2'
+c1 = IH('c1', '$x=-\\frac{1}{2}$', size=30)
+c1b = IH('c1b', '(1) $x^3=(-\\frac{1}{2})^3=-\\frac{1}{8}$', size=30)
+c2 = IH('c2', '(3) $-x^2=-(-\\frac{1}{2})^2=-\\frac{1}{4}$', size=30)
+c2b = IH('c2b', '(4) $\\frac{1}{x}=1\\div(-\\frac{1}{2})=-2$', size=30)
+c3 = IH('c3', '$1\\div(-\\frac{1}{2})=-2,\\quad 1\\div(-\\frac{1}{10})=-10$', size=30)
+u1 = IH('u1', '$-1<x^3<0$', size=30)
+u2 = IH('u2', '$0<x^2<1\\ \\to\\ -1<-x^2<0$', size=30)
+u3 = IH('u3', '$\\frac{1}{x}<-1$', size=30)
 video('solve-q-r26-t20-02', 'solution', qid='q-r26-t20-02', slides=[
     S('Method 1 · Plugging in numbers',
       L("Given: x is between negative one and zero. Which of the following is the smallest?",
         pt('stem', 'Given', 'hl', 5.0), voice='calm', pause=0.5),
-      L("The answer has to be the smallest for every x in this range. So it's also the smallest at any one number we pick "
-        "from the range, and one easy number can decide. [short pause] We'll solve it two ways, by plugging in one "
-        "number, and then by understanding, placing each choice on the number line.", pt('stem: ask', 'The answer has to be the smallest')),
+      L("The question promises that one choice is the smallest for every x in this range. So it must also be the smallest "
+        "at any one number we pick. A choice that isn't the smallest at our number can't be the answer. So one easy number "
+        "can decide. [short pause] We'll solve it two ways, by plugging in one number, and then by understanding, placing "
+        "each choice on the number line.", pt('stem: ask', 'one choice is the smallest')),
       L("[short pause] Let's plug in x is negative one half. It's between negative one and zero, and it's easy to work with. "
-        "Choice number one, x cubed. Negative one half, cubed, is negative one half times negative one half times negative "
-        "one half. Three negatives multiply to a negative, so it's negative one eighth. Choice number two is x itself, "
-        "negative one half.", show(c1, 'Choice number one, x cubed')),
+        "Choice number one, x to the power of three. Negative one half, to the power of three, is negative one half times "
+        "negative one half times negative one half. Three negatives multiply to a negative, so it's negative one eighth. "
+        "Choice number two is x itself, negative one half.", show(c1, 'x is negative one half'),
+        show(c1b, 'Choice number one, x to the power of three')),
       L("Choice number three, negative x squared. First x squared: negative one half, squared, is one quarter. Then the "
         "minus in front makes it negative one quarter. Choice number four, one over x. One over negative one half is "
-        "negative two.", show(c2, 'Choice number three, negative x squared')),
+        "negative two.", show(c2, 'Choice number three, negative x squared'), show(c2b, 'Choice number four, one over x')),
       L("Now compare the four values. With negative numbers, the farther a number is from zero, the smaller it is. "
         "Negative two is the farthest from zero, so it's the smallest. Choice number four is our answer.",
         show(n1['line'], 'Now compare the four values'), show(n1['a'], 'the farther a number is from zero'),
         mk('tick', 'choice 4', 'Choice number four is our answer')),
-      L("Careful with choice number one. Cubing a number between negative one and zero brings it closer to zero. So "
-        "negative one eighth is bigger than negative one half, not smaller.", mk('cross', 'choice 1', 'Careful with choice number one'))),
+      L("Careful with choice number one. A number between negative one and zero gets closer to zero when we raise it to the "
+        "power of three. So negative one eighth is bigger than negative one half, not smaller.",
+        mk('cross', 'choice 1', 'Careful with choice number one'))),
     S('Method 2 · Understanding',
-      L("[pause] Now by understanding, without numbers. A number between negative one and zero stays between negative one and zero when we "
-        "cube it. And x squared is between zero and one, so negative x squared is between negative one and zero. So choice "
-        "numbers one, two and three are all between negative one and zero.", show(n2['line'], 'Now by understanding'),
-        show(n2['a'], 'So choice numbers one, two and three')),
+      L("[pause] Now by understanding, without numbers. A number between negative one and zero stays between negative one "
+        "and zero when we raise it to the power of three. And x squared is between zero and one, so negative x squared is "
+        "between negative one and zero. So choice numbers one, two and three are all between negative one and zero.",
+        show(n2['line'], 'Now by understanding'), show(u1, 'stays between negative one and zero'),
+        show(u2, 'And x squared is between zero and one'), show(n2['a'], 'So choice numbers one, two and three')),
       L("Now one over x. x is closer to zero than negative one, so one over x is farther from zero than negative one. For "
         "example, one over negative one half is negative two, and one over negative one tenth is negative ten. So one over "
-        "x is always below negative one, smaller than the other three. Choice number four. [pause] Okay. I'll see you in "
-        "the next question.", show(n2['b'], 'Now one over x'), show(c3, 'For example, one over negative one half'),
-        mk('tick', 'choice 4', 'smaller than the other three'))),
+        "x is always below negative one, smaller than the other three. Choice number four is our answer, and I'll see you "
+        "in the next question.", show(n2['b'], 'Now one over x'), show(c3, 'For example, one over negative one half'),
+        show(u3, 'So one over x is always below'), mk('tick', 'choice 4', 'smaller than the other three'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-580 (Hebrew: the formula question)
 # NEW: a formula described in words - test how each expression reacts when ONE letter grows; in a fraction with positive
 # parts a bigger top -> bigger, a bigger bottom -> smaller.  Hebrew: one method, choice by choice; the fraction choice
 # is kept as a clearly separate teaching check after the answer (the Hebrew's wrong choice was its last).
-d0 = I('d0', 'More $C$ or $S$: score up $\\quad$ more $M$: score down', size=30)
+# batch A #154: one letter changes, the other two stay the same (said and on the board); the method is named
+# (understanding); the fraction choice is shown as its expression, then C, S and M one at a time with the others fixed.
+d0 = I('d0', 'One letter at a time: $\\ $more $C$ or $S$: score up $\\quad$ more $M$: score down', size=30)
 d1 = I('d1', '(1) $C+S-M$: $\\ $fits', size=30)
 d2 = I('d2', '(2) $C\\cdot S\\cdot M$: $\\ $more $M$, bigger ✗', size=30)
-d3 = I('d3', '(3) $\\frac{C^S}{M}$: $\\ $bigger top $\\to$ bigger, bigger bottom $\\to$ smaller', size=30)
+d3 = I('d3', '(3) $\\frac{C^S}{M}$', size=34)
+d3r = I('d3r', 'Positive parts: $\\ $bigger top $\\to$ bigger, $\\ $bigger bottom $\\to$ smaller', size=28)
+d4 = I('d4', '$C$ up ($S$, $M$ the same): $\\ $the top $C^S$ grows ✓', size=30)
+d5 = I('d5', '$S$ up ($C$, $M$ the same): $\\ C>1$, so $C^S$ grows ✓', size=30)
+d6 = I('d6', '$M$ up ($C$, $S$ the same): $\\ $bigger bottom, so $\\frac{C^S}{M}$ gets smaller ✓', size=30)
 video('solve-q-580', 'solution', qid='q-580', slides=[
-    S('Check each letter',
+    S('Understanding: check each letter',
       L("A player's score in a computer game is given by a formula. The score increases when the player collects more "
         "coins, C, and more stars, S, and decreases when the player makes more mistakes, M. C, S and M are all greater than "
         "one. Which of the following expressions cannot give the player's score?", pt('stem', "A player's score", 'hl', 12.0),
         voice='calm', pause=0.5),
-      L("There's nothing to calculate here. We check how each expression reacts when one letter grows. [short pause] For "
-        "each choice, we ask three things. When C grows, does the expression grow? When S grows, does it grow? And when M "
-        "grows, does it get smaller? A choice that breaks even one of these cannot give the score.",
+      L("There's nothing to calculate here. We check how each expression reacts when one letter grows. Each time, we change "
+        "only that letter and keep the other two the same. [short pause] For each choice, we ask three things. When C grows, "
+        "does the expression grow? When S grows, does it grow? And when M grows, does it get smaller? A choice that breaks "
+        "even one of these cannot give the score.",
         show(d0, 'For each choice, we ask three things')),
-      L("[short pause] Choice number one, C plus S minus M. C and S are added, so when either one grows, the result grows. "
-        "M is subtracted, so when M grows, the result gets smaller. Every rule fits, so this expression could give the "
-        "score, and choice number one is out.", show(d1, 'C and S are added'), mk('cross', 'choice 1', 'and choice number one is out')),
+      L("[short pause] Let's solve it by understanding, one choice at a time. Choice number one, C plus S minus M. C and S "
+        "are added, so when either one grows, the result grows. M is subtracted, so when M grows, the result gets smaller. "
+        "Every rule fits, so this expression could give the score, and choice number one is out.",
+        show(d1, 'C and S are added'), mk('cross', 'choice 1', 'and choice number one is out')),
       L("Choice number two, C times S times M. All the letters are positive, so a bigger C or a bigger S makes the product "
         "bigger. That part is fine. But M is multiplied too, so more mistakes make the product bigger. That's the opposite "
         "of the rule. This expression cannot give the score, and choice number two is our answer.",
-        show(d2, 'But M is multiplied too'), mk('tick', 'choice 2', 'and choice number two is our answer'))),
+        show(d2, 'But M is multiplied too'), mk('tick', 'choice 2', 'and choice number two is our answer')),
+      sb='Understanding: check each letter'),
     S('A fraction with a power',
       L("[pause] In the exam you'd mark it and move on. But choice number three teaches something useful about fractions, "
         "so let's look at it. C to the power of S, over M. In a fraction with positive parts, a bigger top gives a bigger "
-        "result, and a bigger bottom gives a smaller result.", show(d3, 'In a fraction with positive parts')),
+        "result, and a bigger bottom gives a smaller result.", show(d3, 'C to the power of S, over M'),
+        show(d3r, 'In a fraction with positive parts')),
       L("When C grows, the top grows. When S grows, C is multiplied by itself more times, and because C is bigger than one, "
         "the top grows again. When M grows, the bottom grows, so the result gets smaller. So choice number three fits every "
-        "rule. [pause] Okay. I'll see you in the next question.", pt('d3', 'When C grows, the top grows'))),
+        "rule. Choice number two is our answer, and I'll see you in the next question.",
+        show(d4, 'When C grows, the top grows'), show(d5, 'When S grows'), show(d6, 'When M grows'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-577 (Hebrew: first sample question)
@@ -677,14 +718,19 @@ video('solve-q-580', 'solution', qid='q-580', slides=[
 # hidden biggest value.  Hebrew: three methods - the biggest value, numbers that make b + c biggest, testing the answers
 # (she starts with the possible ones; here the biggest choice is tested first and we stop, because one impossible value
 # answers a "cannot").  Letters on the axis (topic 13/16/17 picture).
+# batch A #155: method 1 said as "start with a + b, replace a by the smaller c"; method 2 "b can be at most 6" + the
+# bound b >= 8 -> a + b >= 17; method 3 explains why b >= 8 and writes b >= 8, a >= 9, a + b >= 17 clause by clause.
 lz = ZL('lz', -0.5, 2.5, [('c', [('pt', 0, 'c')]), ('b', [('pt', 1, 'b'), ('arrow', 0.08, 0.92, 'at least 1')]),
                           ('a', [('pt', 2, 'a'), ('arrow', 1.08, 1.92, 'at least 1')])], ticks=(), w=760, col=1)
 e1 = IH('e1', '$a+b<16\\ \\to\\ a+b\\le15$', size=32)
 e2 = IH('e2', '$b+c=(a+b)-(a-c)$', size=32)
 e3 = IH('e3', '$b+c\\le15-2=13$', size=32)
 f1 = IH('f1', '$a=8,\\ b=7$: $\\ 8+7=15$', size=32)
-f2 = IH('f2', '$c=6$: $\\ b+c=13$', size=32)
-f3 = IH('f3', '$b+c=14$: $\\ b\\ge8,\\ a\\ge9$: $\\ a+b\\ge17$ ✗', size=32)
+f2 = IH('f2', '$c=6$: $\\ b+c=7+6=13$', size=32)
+f2b = IH('f2b', '$b\\ge8\\ \\to\\ a\\ge9,\\ \\ a+b\\ge17$ ✗', size=32)
+f3a = IH('f3a', '$b+c=14$?', size=32)
+f3b = IH('f3b', '$b\\le7\\ \\to\\ c\\le6\\ \\to\\ b+c\\le13$', size=32)
+f3c = IH('f3c', '$b\\ge8,\\ \\ a\\ge9,\\ \\ a+b\\ge17$ ✗', size=32)
 video('solve-q-577', 'solution', qid='q-577', slides=[
     S('Method 1 · Understanding: the extremes',
       L("Given: a, b and c are integers, c is smaller than b, which is smaller than a, and a plus b is smaller than "
@@ -699,25 +745,29 @@ video('solve-q-577', 'solution', qid='q-577', slides=[
       L("How big is a minus c? These are integers, so c is at least one below b, and b is at least one below a. So c is "
         "at least two below a, and a minus c is at least two.", show(lz['line'], 'How big is a minus c'), show(lz['c'], 'c is at least one below b'),
         show(lz['b'], 'and b is at least one'), show(lz['a'], 'So c is at least two below a')),
-      L("So b plus c is a plus b, which is at most fifteen, minus a minus c, which is at least two. That's at most "
-        "thirteen. Fourteen is more than thirteen, so b plus c can never be fourteen. Choice number four is our answer.",
-        show(e3, "That's at most thirteen"), mk('tick', 'choice 4', 'Choice number four is our answer'))),
+      L("Start with a plus b, which is at most fifteen. To get b plus c, we replace a with the smaller number c. That takes "
+        "away a minus c, which is at least two. So b plus c is at most fifteen minus two, which is thirteen. Fourteen is "
+        "more than thirteen, so b plus c can never be fourteen. Choice number four is our answer.",
+        show(e3, 'So b plus c is at most fifteen minus two'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now let's plug in numbers. We build numbers that make b plus c as big as possible. a has to be bigger than b, and a "
         "plus b has to stay at most fifteen. To make b as big as it can be, take a and b as close as possible: a is eight "
         "and b is seven. Eight plus seven is fifteen, which is allowed.", show(f1, 'a is eight')),
       L("c has to be smaller than b, so the biggest c is six. Then b plus c is seven plus six, which is thirteen. If we try "
-        "a bigger a, like nine, then b can only be six, and b plus c gets smaller. So thirteen is the biggest b plus c can "
-        "be, and fourteen is out of reach. Choice number four.", show(f2, 'so the biggest c is six'),
-        mk('tick', 'choice 4', 'fourteen is out of reach'))),
+        "a bigger a, like nine, then b can be at most six, and b plus c gets smaller. And b can't be eight or more. "
+        "Then a is at least nine, and a plus b is at least seventeen. So thirteen is the biggest b plus c can be, "
+        "and fourteen is out of reach. Choice number four is our answer.", show(f2, 'so the biggest c is six'),
+        show(f2b, "And b can't be eight or more"), mk('tick', 'choice 4', 'fourteen is out of reach'))),
     S('Method 3 · Plugging in the answers',
       L("[pause] And a third way, plugging in the answers. The question hides a biggest value, so it makes sense to start with "
-        "the biggest choice, fourteen. Can b plus c be fourteen? c is smaller than b, so b has to be at least eight, with c "
-        "at most six. Then a is bigger than b, so a is at least nine, and a plus b is at least seventeen. That's not "
-        "smaller than sixteen.", show(f3, 'Can b plus c be fourteen')),
-      L("So b plus c can't be fourteen, and choice number four is our answer. The question asks for the one value that "
-        "cannot happen, so we can stop here. [pause] Okay. I'll see you in the next question.",
-        mk('tick', 'choice 4', 'and choice number four is our answer'))),
+        "the biggest choice, fourteen. Can b plus c be fourteen? c is smaller than b. If b were seven or less, c would be "
+        "six or less. Then their sum is at most thirteen. So b has to be at least eight. Then a is bigger than b, so a "
+        "is at least nine, and a plus b is at least seventeen. That's not smaller than sixteen.",
+        show(f3a, 'Can b plus c be fourteen'), show(f3b, 'If b were seven or less'),
+        show(f3c, 'So b has to be at least eight')),
+      L("So b plus c can't be fourteen. The question asks for the one value that cannot happen, so we can stop here. "
+        "Choice number four is our answer, and I'll see you in the next question.",
+        mk('tick', 'choice 4', 'Choice number four is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-578 (Hebrew: second sample question)
@@ -725,41 +775,55 @@ video('solve-q-577', 'solution', qid='q-577', slides=[
 # the new value; powers of 5 instead of 25 cubed (R36).  REMINDER: power rules (topic 8), roots (9).
 # Hebrew: plugging in first (her recommendation for most students), then the algebra with k, and the strong students'
 # shortcut in the head.
+# batch A #156: (5^3)^2 = 5^6 written before y = 125 / k = 125; new y / old y = 125 / 1; the substitution k^2 b^3 =
+# 25^3 b^3 and the division by b^3 > 0 shown; the "another way to see the square" steps on a main board line (hand-written
+# in chunks at its clauses); "to the power of three" instead of "cubed".
 g1 = IH('g1', '$b=1$: $\\ y^2=1^3=1$, $\\ y=1$', size=32)
 g2 = IH('g2', '$b=25$: $\\ y^2=25^3=(5^2)^3=5^6$', size=32)
-g3 = IH('g3', '$y=5^3=125$: $\\ 1\\to125$', size=32)
-h1 = IH('h1', '$(ky)^2=(25b)^3$', size=32)
-h2 = IH('h2', '$k^2y^2=25^3b^3$', size=32)
-h3 = IH('h3', '$k^2=25^3=5^6$, $\\ k=5^3=125$', size=32)
-h4 = I('h4', '$25^3=25^2\\cdot5^2=(25\\cdot5)^2=125^2$', size=30, col=1)
+g3 = IH('g3', '$(5^3)^2=5^6\\ \\to\\ y=5^3=125$', size=32)
+g3b = IH('g3b', 'new $y\\div$ old $y=125\\div1=125$', size=32, col=1)   # layout: right column
+h1 = IH('h1', '$(ky)^2=(25b)^3$', size=28)
+h2 = IH('h2', '$k^2y^2=25^3b^3$', size=28)
+h2b = IH('h2b', '$k^2b^3=25^3b^3$ $\\quad \\div b^3$', size=28)
+h3 = IH('h3', '$k^2=25^3=5^6=(5^3)^2\\ \\to\\ k=125$', size=28)
+h4 = IH('h4', '$25^3=25^2\\cdot25$', size=30, col=1)          # layout: the other way in the right column, two lines
+h4b = IH('h4b', '$=25^2\\cdot5^2=(25\\cdot5)^2=125^2$', size=30, col=1)
 video('solve-q-578', 'solution', qid='q-578', slides=[
     S('Method 1 · Plugging in numbers',
-      L("Given: b and y are positive, and y squared is equal to b cubed. If b is multiplied by twenty-five, by what factor "
-        "is y multiplied?", pt('stem', 'Given', 'hl', 7.0), voice='calm', pause=0.5),
+      L("Given: b and y are positive, and y squared is equal to b to the power of three. If b is multiplied by twenty-five, "
+        "by what factor is y multiplied?", pt('stem', 'Given', 'hl', 7.0), voice='calm', pause=0.5),
       L("So b changes, and we need to know how y has to change so that the equation still holds. [short pause] We'll solve "
         "it two ways. This time we start with plugging in numbers, because here it's the simpler way for most students, "
         "and then the math way.", pt('stem: ask', 'how y has to change')),
       L("[short pause] First we need one pair of numbers that fits the equation. The easiest pair is b is one and y is one, "
-        "because one squared and one cubed are both one. If you don't see it, put b is one. Then y squared is one. y could "
-        "be one or negative one, but y is positive, so y is one.", show(g1, 'put b is one')),
-      L("Now multiply b by twenty-five, so the new b is twenty-five. Then y squared is twenty-five cubed. Twenty-five is "
-        "five squared, so twenty-five cubed is five to the power of six.", show(g2, 'Then y squared is twenty-five cubed')),
-      L("Which positive number, squared, gives five to the power of six? Five cubed, because five cubed times five cubed is "
-        "five to the power of six. Five cubed is a hundred twenty-five. So y went from one to a hundred twenty-five, which "
-        "means it was multiplied by a hundred twenty-five. Choice number one is our answer.",
-        show(g3, 'Five cubed is a hundred twenty-five'), mk('tick', 'choice 1', 'Choice number one is our answer'))),
+        "because one squared and one to the power of three are both one. If you don't see it, put b is one. Then y squared "
+        "is one. y could be one or negative one, but y is positive, so y is one.", show(g1, 'put b is one')),
+      L("Now multiply b by twenty-five, so the new b is twenty-five. Then y squared is twenty-five to the power of three. "
+        "Twenty-five is five squared, so twenty-five to the power of three is five to the power of six.",
+        show(g2, 'Then y squared is twenty-five to the power of three')),
+      L("Which positive number, squared, gives five to the power of six? Five to the power of three. Five to the power "
+        "of three, squared, is five to the power of six. Five to the power of three is a hundred twenty-five. So y "
+        "went from one to a hundred twenty-five, which means it was multiplied by a hundred twenty-five. Choice number one "
+        "is our answer.", show(g3, 'Five to the power of three, squared'), show(g3b, 'So y went from one'),
+        mk('tick', 'choice 1', 'Choice number one is our answer'))),
     S('Method 2 · The math way',
-      L("[pause] Now the math way, with algebra. When b is multiplied by twenty-five, the right side becomes the bracket twenty-five b, "
-        "cubed. To keep the equation true, y has to be multiplied by some number too. Let's call that number k. So the "
-        "bracket k y, squared, equals the bracket twenty-five b, cubed.", show(h1, "Let's call that number k")),
-      L("Open the brackets with the power rules. k squared times y squared equals twenty-five cubed times b cubed. We know "
-        "that y squared equals b cubed, and it isn't zero, so we can divide both sides by it.", show(h2, 'Open the brackets')),
-      L("That leaves k squared equals twenty-five cubed, which is five to the power of six. y stays positive, so k is "
-        "positive, and k is five cubed, a hundred twenty-five. Choice number one again.",
-        show(h3, 'That leaves k squared'), mk('tick', 'choice 1', 'Choice number one again')),
-      L("Some students see this in their head. Twenty-five cubed is twenty-five squared times twenty-five, and twenty-five "
-        "is five squared. So twenty-five cubed is the square of twenty-five times five, which is a hundred twenty-five. "
-        "[pause] Okay. I'll see you in the next question.", show(h4, 'Some students see this in their head'))),
+      L("[pause] Now the math way, with algebra. When b is multiplied by twenty-five, the right side becomes the bracket "
+        "twenty-five b, to the power of three. To keep the equation true, y has to be multiplied by some number too. Let's "
+        "call that number k. So the bracket k y, squared, equals the bracket twenty-five b, to the power of three.",
+        show(h1, "Let's call that number k")),
+      L("Open the brackets with the power rules. k squared times y squared equals twenty-five to the power of three, times b "
+        "to the power of three. We know that y squared is equal to b to the power of three, so we put that in. b is "
+        "positive, so b to the power of three isn't zero, and we can divide both sides by it.", show(h2, 'Open the brackets'),
+        show(h2b, 'so we put that in')),
+      L("That leaves k squared equals twenty-five to the power of three, which is five to the power of six. That's five to "
+        "the power of three, squared. y stays positive, so k is positive, and k is five to the power of three, a hundred "
+        "twenty-five. Choice number one again.",
+        show(h3, 'That leaves k squared'),
+        mk('tick', 'choice 1', 'Choice number one again')),
+      L("There's another way to see that twenty-five to the power of three is a square. It's twenty-five squared, times "
+        "twenty-five. And twenty-five is five squared. So it's twenty-five squared times five squared, which is twenty-five "
+        "times five, squared. That's a hundred twenty-five squared. Choice number one is our answer, and I'll see you in "
+        "the next question.", show(h4, "It's twenty-five squared, times"), show(h4b, 'And twenty-five is five squared'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-579 (Hebrew: third sample question)
@@ -767,23 +831,39 @@ video('solve-q-578', 'solution', qid='q-578', slides=[
 # triples (3, 4, 5 and 6, 8, 10).  REMINDER: Pythagoras and the triangle inequality (topic 31, earlier in the plan).
 # Hebrew: simplify, then the right-triangle picture (the hypotenuse is the longest side, two sides are longer than the
 # third, the smallest triple).  Methods: whole numbers (find the failing case), the right triangle (why the others hold).
-TRI20 = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 230" role="img" aria-label="A right triangle with legs p '
-         'and q and the longest side r"><title>A right triangle with legs p and q and the longest side r</title>'
-         '<path d="M 60 190 L 300 190 L 60 40 Z" fill="none" stroke="#203344" stroke-width="3"/>'
-         '<path d="M 60 168 L 82 168 L 82 190" fill="none" stroke="#203344" stroke-width="2.5"/>'
-         '<text x="38" y="122" text-anchor="middle" fill="#087f83" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" '
-         'font-weight="bold" font-style="italic">p</text>'
-         '<text x="180" y="222" text-anchor="middle" fill="#087f83" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" '
-         'font-weight="bold" font-style="italic">q</text>'
-         '<text x="196" y="104" text-anchor="middle" fill="#087f83" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" '
-         'font-weight="bold" font-style="italic">r</text></svg>')
-tr = NL('tr', TRI20, w=300, col=1)
-k1 = IH('k1', '$\\frac pq+\\frac qp=\\frac{p^2+q^2}{pq}$', size=32)
+# batch A #157: p/q and q/p rewritten one at a time before the sum; r^2 = p^2 + q^2 written again on the plug-in and the
+# insight slides; the triangle built in layers - r marked at "the longest side", p and q at "two sides together".
+_TRI_V = 'viewBox="0 0 360 230" role="img"'
+def _tri(body, title):
+    return ('<svg xmlns="http://www.w3.org/2000/svg" %s aria-label="%s"><title>%s</title>%s</svg>' % (_TRI_V, title, title, body))
+_LBL = ('<text x="38" y="122" text-anchor="middle" fill="#087f83" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" '
+        'font-weight="bold" font-style="italic">p</text>'
+        '<text x="180" y="222" text-anchor="middle" fill="#087f83" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" '
+        'font-weight="bold" font-style="italic">q</text>'
+        '<text x="196" y="104" text-anchor="middle" fill="#087f83" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" '
+        'font-weight="bold" font-style="italic">r</text>')
+tr = _layers('tr', [
+    ('line', _tri('<path d="M 60 190 L 300 190 L 60 40 Z" fill="none" stroke="#203344" stroke-width="3"/>'
+                  '<path d="M 60 168 L 82 168 L 82 190" fill="none" stroke="#203344" stroke-width="2.5"/>' + _LBL,
+                  'A right triangle with legs p and q and the longest side r')),
+    ('r', _tri('<line x1="300" y1="190" x2="60" y2="40" stroke="#087f83" stroke-width="8" stroke-linecap="round"/>',
+               'r, the longest side')),
+    ('pq', _tri('<line x1="60" y1="40" x2="60" y2="190" stroke="#087f83" stroke-width="8" stroke-linecap="round"/>'
+                '<line x1="60" y1="190" x2="300" y2="190" stroke="#087f83" stroke-width="8" stroke-linecap="round"/>',
+                'p and q, the two legs'))], 300, 1)
+for _k, _it in tr.items():          # the layers find their base by id (renderer fig / of): m1 comes between them
+    if _it.get('over'): _it['of'] = 'tr'
+    else: _it['fig'] = 'tr'
+k1a = IH('k1a', '$\\frac{p}{q}=\\frac{p^2}{pq}$', size=32)
+k1b = IH('k1b', '$\\frac{q}{p}=\\frac{q^2}{pq}$', size=32)
+k1 = IH('k1', '$\\frac{p}{q}+\\frac{q}{p}=\\frac{p^2+q^2}{pq}$', size=32)
 k2 = IH('k2', '$r^2=p^2+q^2$', size=34)
+k2p = I('k2p', 'Given: $\\ r^2=p^2+q^2$', size=28)
+k2i = I('k2i', 'Given: $\\ r^2=p^2+q^2$', size=28)
 k3 = IH('k3', '$3,4,5$: $\\ 9+16=25$, $\\ r=5$', size=32)
 k4 = IH('k4', '$6,8,10$: $\\ 36+64=100$, $\\ r=10$ ✗', size=32)
 m1 = I('m1', 'Longest side: $\\ r>p,\\ r>q$ $\\quad$ (1), (4)', size=30)
-m2 = I('m2', 'Two sides beat the third: $\\ p+q>r$ $\\quad$ (2)', size=30)
+m2 = I('m2', 'Two sides beat the third: $\\ p+q>r$ $\\ $(2)', size=28)
 video('solve-q-579', 'solution', qid='q-579', slides=[
     S('Simplify first',
       L("Given: p, q and r are different positive integers, and r squared over p q is equal to p over q plus q over p. "
@@ -794,12 +874,14 @@ video('solve-q-579', 'solution', qid='q-579', slides=[
         pt('stem: ask', 'Not necessarily true means')),
       L("[short pause] Let's simplify the right side. To add p over q and q over p, we need a common denominator, p times "
         "q. p over q is p squared over p q, and q over p is q squared over p q. So the right side is p squared plus q "
-        "squared, over p q.", show(k1, 'we need a common denominator')),
+        "squared, over p q.", show(k1a, 'p over q is p squared over p q'), show(k1b, 'and q over p is q squared'),
+        show(k1, 'So the right side is')),
       L("Both sides now have the same denominator, p q, so their tops are equal. r squared equals p squared plus q "
         "squared.", show(k2, 'r squared equals p squared'))),
     S('Method 1 · Plugging in numbers',
       L("[pause] Now let's plug in numbers. We need positive integers that fit r squared equals p squared plus q squared. The best-known ones are "
-        "three, four and five, because nine plus sixteen is twenty-five. Here r is five.", show(k3, 'three, four and five')),
+        "three, four and five, because nine plus sixteen is twenty-five. Here r is five.",
+        show(k2p, 'r squared equals p squared plus q squared'), show(k3, 'three, four and five')),
       L("Choice number three says r is smaller than eight. With three, four and five it's true, but we need a case where "
         "it fails. Let's double all three numbers: six, eight and ten. Thirty-six plus sixty-four is a hundred, which is "
         "ten squared, so they fit too, and they're different positive integers. Now r is ten, and ten is not smaller than "
@@ -811,63 +893,96 @@ video('solve-q-579', 'solution', qid='q-579', slides=[
     S('Method 2 · Insight',
       L("[pause] Now the insight. Let's see why the other three claims always hold. r squared equals p squared plus q squared is "
         "Pythagoras. So p, q and r can be the sides of a right triangle, with legs p and q, and the longest side, r.",
-        show(tr, 'can be the sides of a right triangle')),
+        show(k2i, 'r squared equals p squared plus q squared is'), show(tr['line'], 'can be the sides of a right triangle')),
       L("In a right triangle, the longest side is longer than each leg. So r is bigger than p and bigger than q, always. "
         "Those are choice numbers one and four. With algebra it's the same idea: r squared is q squared plus a positive "
-        "number, and all the numbers are positive, so r is bigger than q.", show(m1, 'the longest side is longer')),
+        "number, and all the numbers are positive, so r is bigger than q.", show(tr['r'], 'the longest side is longer'),
+        show(m1, 'So r is bigger than p')),
       L("And in any triangle, two sides together are longer than the third side. So p plus q is bigger than r, always. "
-        "That's choice number two.", show(m2, 'two sides together are longer')),
-      L("But nothing in the triangle says how long r is. For three, four, five it's five, and for six, eight, ten it's ten. "
-        "So only choice number three can fail. Choice number three. [pause] Okay. I'll see you in the next question.",
+        "That's choice number two.", show(tr['pq'], 'two sides together are longer'), show(m2, 'So p plus q is bigger')),
+      L("But nothing in the triangle limits how long r is. So only choice number three can fail. Choice number three is "
+        "our answer, and I'll see you in the next question.",
         mk('tick', 'choice 3', 'So only choice number three can fail'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ r26-t20-counting (lesson)
 # REMINDER: from a to b, both ends included, b - a + 1 (topic 16).  NEW: strictly between (b - a - 1), one end (b - a);
 # the pigeonhole principle with two everyday examples and the remainder version (remainders: topic 15).
-p1 = I('p1', 'From $a$ to $b$, both included: $\\ b-a+1$ $\\quad 5$ to $12$: $\\ 8$', size=30)
-p2 = I('p2', 'Strictly between: $\\ b-a-1$ $\\quad 6,7,8,9,10,11$: $\\ 6$', size=30)
-p3 = I('p3', 'One end included: $\\ b-a$ $\\quad 5$ to $11$: $\\ 7$', size=30)
+# batch A #158: the conditions (integers, a <= b both ends in; a < b strictly between) said and on the captions; each
+# example calculation at its clause; the pigeonhole pictures (3 boxes + 4 dots; the 12 remainder boxes 0-11); why the
+# difference of two numbers with the same remainder divides by 12 (17 = 12 + 5, 41 = 36 + 5, the fives cancel).
+_BX = 'font-family="DejaVu Sans,Arial,sans-serif" font-weight="bold"'
+def _bsvg(vb, body, title):
+    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="%s" role="img" aria-label="%s"><title>%s</title>%s</svg>'
+            % (vb, title, title, body))
+_ph_boxes = ''.join('<rect x="%d" y="14" width="120" height="86" rx="6" fill="none" stroke="#203344" stroke-width="3"/>' % x
+                    for x in (20, 150, 280))
+_dot = lambda x: '<circle cx="%d" cy="57" r="13" fill="#087f83" stroke="#203344" stroke-width="2"/>' % x
+ph = _layers('ph', [('line', _bsvg('0 0 420 114', _ph_boxes, 'Three boxes')),
+                    ('a', _bsvg('0 0 420 114', _dot(62) + _dot(210) + _dot(340), 'One item in each box')),
+                    ('b', _bsvg('0 0 420 114', _dot(100), 'The fourth item shares a box'))], 480, 0)
+_rb = ''.join('<rect x="%d" y="8" width="66" height="62" rx="5" fill="none" stroke="#203344" stroke-width="2.5"/>'
+              '<text x="%d" y="50" text-anchor="middle" fill="#087f83" %s font-size="26">%d</text>' % (8 + 79 * i, 41 + 79 * i, _BX, i)
+              for i in range(12))
+rb = NL('rb', _bsvg('0 0 960 78', _rb, 'Remainders when dividing by 12: twelve boxes, 0 to 11'), w=900)
+p1 = I('p1', 'Integers $a\\le b$, both included: $\\ b-a+1$', size=30)
+p1e = IH('p1e', '$5$ to $12$: $\\ 12-5+1=8$', size=30)
+p2e = IH('p2e', '$6,\\ 7,\\ 8,\\ 9,\\ 10,\\ 11$: $\\ 6$ numbers', size=30)
+p2f = IH('p2f', '$12-5-1=6$', size=30)
+p2 = I('p2', 'Integers $a<b$, strictly between: $\\ b-a-1$', size=30)
+p3 = I('p3', 'One end included: $\\ b-a$', size=30)
+p3e = IH('p3e', '$5$ to $11$: $\\ 12-5=7$', size=30)
 p4 = I('p4', 'Not sure? Count a small case. Letters? Plug in and count.', size=28)
 q1 = I('q1', 'More items than boxes $\\to$ one box gets two', size=30)
 q2 = I('q2', '$13$ people, $12$ months $\\to$ two share a month', size=30)
 q3 = I('q3', '$\\div12$: remainders $0$ to $11$ $\\to$ $13$ numbers: two share one', size=30)
-q4 = I('q4', '$17$ and $41$: remainder $5$ $\\to$ $41-17=24=2\\cdot12$', size=30)
+q4a = IH('q4a', '$17=12+5,\\quad 41=36+5$', size=30)
+q4b = IH('q4b', '$41-17=36-12=24=2\\cdot12$', size=30)
 video('r26-t20-counting', 'lesson', slides=[
     S('Counting Integers & Pigeonhole',
       L("Two more tools that the exam likes. Counting the whole numbers in a range, and the pigeonhole principle.")),
     S('Counting whole numbers',
-      L("From a to b, with both ends included, there are b minus a, plus one, whole numbers. You learned this with "
-        "consecutive integers. For example, from five to twelve, it's twelve minus five, plus one, which is eight numbers.",
-        show(p1, 'From a to b')),
+      L("Say a and b are whole numbers, and a is at most b. From a to b, with both ends included, there are b minus a, plus "
+        "one, whole numbers. You learned this with consecutive integers. For example, from five to twelve, it's twelve minus "
+        "five, plus one, which is eight numbers.", show(p1, 'From a to b'), show(p1e, 'For example, from five to twelve')),
       L("Strictly between five and twelve means both ends are out. That leaves six, seven, eight, nine, ten and eleven, "
-        "which is six numbers. That's twelve minus five, minus one.", show(p2, 'Strictly between five and twelve')),
+        "which is six numbers. That's twelve minus five, minus one. So when a is smaller than b, strictly between them "
+        "there are b minus a, minus one.", show(p2e, 'That leaves six, seven'), show(p2f, "That's twelve minus five, minus one"),
+        show(p2, 'So when a is smaller than b')),
       L("With one end in and one end out, it's just b minus a. From five to twelve, with five included and twelve not, "
-        "that's five to eleven, which is seven numbers.", show(p3, 'With one end in')),
+        "that's five to eleven, which is seven numbers.", show(p3, 'With one end in'), show(p3e, "that's five to eleven")),
       L("If you're not sure which rule to use, count a small case on your fingers, like from one to three. And if the "
         "answer choices have letters, plug in small numbers, count by hand, and see which choice gives your count.",
         show(p4, "If you're not sure"))),
     S('The pigeonhole principle',
       L("Now the pigeonhole principle. If there are more items than boxes, at least one box gets two items. Think of four "
         "pigeons and three holes. Even if each of the first three pigeons gets its own hole, the fourth one has to share.",
-        show(q1, 'If there are more items than boxes')),
+        show(q1, 'If there are more items than boxes'), show(ph['line'], 'Think of four pigeons and three holes'),
+        show(ph['a'], 'each of the first three pigeons'), show(ph['b'], 'the fourth one has to share')),
       L("Another example. Thirteen people, and there are only twelve months. Even if the first twelve were born in twelve "
         "different months, the thirteenth shares a month with someone. So at least two of them were born in the same "
         "month.", show(q2, 'Thirteen people')),
       L("On the exam it often comes with remainders. When we divide a whole number by twelve, the remainder is one of "
-        "twelve options, zero to eleven. So among any thirteen whole numbers, two have the same remainder.",
-        show(q3, 'it often comes with remainders')),
+        "twelve options, zero to eleven. These twelve remainders are our boxes, and each number goes into the box of its "
+        "remainder. So among any thirteen whole numbers, two have the same remainder.",
+        show(rb, 'twelve options, zero to eleven'), show(q3, 'So among any thirteen whole numbers')),
       L("And two numbers with the same remainder have a difference that divides by twelve. For example, seventeen and "
-        "forty-one both leave a remainder of five. Their difference is twenty-four, which is two times twelve. Next, two "
-        "questions, one on counting odd numbers and one on being sure. [pause] Okay. I'll see you in the next video.",
-        show(q4, 'seventeen and forty-one'))),
+        "forty-one both leave a remainder of five. Seventeen is twelve plus five, and forty-one is thirty-six plus five. "
+        "When we subtract, the two fives cancel. That leaves thirty-six minus twelve, which is twenty-four, two times "
+        "twelve. Next, two questions, one on counting odd numbers and one on being sure. [pause] I'll see you in the next "
+        "video.", show(q4a, 'Seventeen is twelve plus five'), show(q4b, 'When we subtract'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t20-03 (added)
 # REMINDER: counting evens / odds in steps of two (topic 16), the + 1 trap.  Methods: steps of two, half of all.
+# batch A #159: the gaps-versus-numbers warning comes before the + 1; 58, 29 gaps, 30 numbers one at a time; the pairs
+# (21, 22), (23, 24), ..., (79, 80) shown; why 80 may be added (it's even).
 r1 = IH('r1', '$21,\\ 23,\\ \\ldots,\\ 79$', size=32)
-r2 = IH('r2', '$\\frac{79-21}{2}=29$, $\\ 29+1=30$', size=32)
+r2a = IH('r2a', '$79-21=58$', size=32)
+r2b = IH('r2b', '$58\\div2=29$ gaps', size=32)
+r2c = IH('r2c', '$29+1=30$ numbers', size=32)
 r3 = IH('r3', '$21$ to $80$: $\\ 80-21+1=60$', size=32)
+r3b = I('r3b', '$(21,22),\\ (23,24),\\ \\ldots,\\ (79,80)$', size=32)
 r4 = IH('r4', '$60\\div2=30$', size=32)
 video('solve-q-r26-t20-03', 'solution', qid='q-r26-t20-03', slides=[
     S('Method 1 · The math way',
@@ -878,23 +993,46 @@ video('solve-q-r26-t20-03', 'solution', qid='q-r26-t20-03', slides=[
       L("[short pause] The math way first. Twenty and eighty are even, so they wouldn't count anyway. The first odd number after twenty is "
         "twenty-one, and the last odd number before eighty is seventy-nine.", show(r1, 'The first odd number after twenty')),
       L("Odd numbers go up in steps of two. From twenty-one to seventy-nine is seventy-nine minus twenty-one, which is "
-        "fifty-eight. Fifty-eight divided by two is twenty-nine steps. Each step lands on a new odd number, and we also "
-        "count the first one, twenty-one. So twenty-nine plus one is thirty. Choice number two is our answer.",
-        show(r2, 'Fifty-eight divided by two'), mk('tick', 'choice 2', 'Choice number two is our answer')),
-      L("Careful, twenty-nine, choice number one, is the number of steps. It forgets to count the first number.",
-        mk('cross', 'choice 1', 'Careful, twenty-nine, choice number one'))),
+        "fifty-eight. Fifty-eight divided by two is twenty-nine. Careful, twenty-nine is the number of steps, the gaps "
+        "between the odd numbers. It's not the number of odd numbers. That's choice number one, and it's a trap.",
+        show(r2a, 'seventy-nine minus twenty-one'), show(r2b, 'Fifty-eight divided by two'),
+        mk('cross', 'choice 1', "That's choice number one, and it's a trap")),
+      L("Each step lands on a new odd number, and we also count the first one, twenty-one. So twenty-nine plus one is "
+        "thirty. Choice number two is our answer.", show(r2c, 'So twenty-nine plus one'),
+        mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('Method 2 · Understanding',
-      L("[pause] Another way, by understanding. Count all the whole numbers from twenty-one to eighty, both ends included. Eighty minus "
-        "twenty-one, plus one, is sixty.", show(r3, 'Eighty minus twenty-one')),
+      L("[pause] Another way, by understanding. Count all the whole numbers from twenty-one to eighty, both ends included. "
+        "Eighty is even, so adding it doesn't add an odd number. Eighty minus twenty-one, plus one, is sixty.",
+        show(r3, 'Eighty minus twenty-one')),
       L("They take turns, odd, even, odd, even. The list starts with an odd number, twenty-one, and ends with an even "
-        "number, eighty, so they come in pairs, and exactly half of them are odd. Sixty divided by two is thirty. Choice "
-        "number two again. Sixty, choice number four, forgets to take half. [pause] Okay. I'll see you in the next "
-        "question.", show(r4, 'Sixty divided by two'), mk('tick', 'choice 2', 'Choice number two again'),
-        mk('cross', 'choice 4', 'forgets to take half'))),
+        "number, eighty, so they come in pairs, and exactly half of them are odd. Sixty divided by two is thirty. Sixty, "
+        "choice number four, forgets to take half. So choice number two is our answer again, and I'll see you in the next "
+        "question.", show(r3b, 'so they come in pairs'), show(r4, 'Sixty divided by two'),
+        mk('cross', 'choice 4', 'forgets to take half'), mk('tick', 'choice 2', 'So choice number two is our answer again'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t20-04 (added)
 # REMINDER: the pigeonhole principle (r26-t20-counting).  NEW at the step: "to be sure" = the worst luck, then one more.
+# batch A #160: the socks drawn - three colour boxes (labelled, for colour-blind readers), one sock in each, then the
+# fourth sock that matches whichever box it falls in; the same picture as the three boxes in method 2; the reason the
+# amounts don't matter is that only three colours are possible.
+_SC = (('red', '#d62d48'), ('blue', '#2b6cb0'), ('green', '#2f855a'))
+_sk_boxes = ''.join('<rect x="%d" y="10" width="130" height="110" rx="6" fill="none" stroke="#203344" stroke-width="3"/>'
+                    '<text x="%d" y="148" text-anchor="middle" fill="%s" %s font-size="30">%s</text>' % (20 + 150 * i, 85 + 150 * i, c, _BX, n)
+                    for i, (n, c) in enumerate(_SC))
+def _sock(x, c, dash=False):
+    d = ' stroke-dasharray="6 5"' if dash else ''
+    return ('<path d="M %d 30 h 26 v 52 q 0 14 14 14 h 14 v 18 h -34 q -20 0 -20 -20 Z" fill="%s" stroke="%s" stroke-width="%s"%s/>'
+            % (x, 'none' if dash else c, c if dash else '#203344', '3' if dash else '2', d))
+def _socks(vb_body, title):
+    return _bsvg('0 0 470 160', vb_body, title)
+def _sk(name):
+    return _layers(name, [('line', _socks(_sk_boxes, 'Three colours, three boxes: red, blue, green')),
+                          ('a', _socks(''.join(_sock(30 + 150 * i, c) for i, (n, c) in enumerate(_SC)), 'One red, one blue and one green sock')),
+                          ('b', _socks(''.join(_sock(88 + 150 * i, c, dash=True) for i, (n, c) in enumerate(_SC)),
+                                       'The fourth sock: red, blue or green, it matches one of them'))], 520, 0)
+sk = _sk('sk')
+sk2 = _sk('sk2')
 s1 = I('s1', 'Worst luck: $\\ $red, blue, green $\\to$ $3$ socks, no pair', size=30)
 s2 = I('s2', '$4$th sock: red, blue or green $\\to$ a pair ✓', size=30)
 s3 = I('s3', '$3$ colors $=3$ boxes: $\\ 4$ socks $\\to$ one box gets two', size=30)
@@ -907,17 +1045,21 @@ video('solve-q-r26-t20-04', 'solution', qid='q-r26-t20-04', slides=[
         "luck, and then we'll see the pigeonhole principle behind it.", pt('stem: ask', 'To be sure means')),
       L("[short pause] With the worst luck, the first socks are all different colors. There are three colors, so the first "
         "three socks could be one red, one blue and one green. Three socks, and still no pair. So two or three socks are "
-        "not enough.", show(s1, 'With the worst luck'), mk('cross', 'choice 2', 'So two or three socks'),
+        "not enough.", show(s1, 'With the worst luck'), show(sk['line'], 'There are three colors'),
+        show(sk['a'], 'one red, one blue and one green'), mk('cross', 'choice 2', 'So two or three socks'),
         mk('cross', 'choice 3', 'are not enough')),
       L("Now the fourth sock. It's red, blue or green, so whatever it is, it matches one of the socks she already has. So "
         "four socks always give a pair, and three socks don't. The smallest number is four. Choice number four is our "
-        "answer.", show(s2, 'Now the fourth sock'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
+        "answer.", show(sk['b'], 'Now the fourth sock'), show(s2, "It's red, blue or green"),
+        mk('tick', 'choice 4', 'Choice number four is our answer'))),
     S('The pigeonhole principle',
       L("[pause] This is the pigeonhole principle. The three colors are three boxes, and the socks are the items. Four "
-        "socks in three boxes means at least one box gets two socks. Choice number four.", show(s3, 'The three colors are three boxes'),
-        mk('tick', 'choice 4', 'at least one box gets two socks')),
-      L("The numbers five, seven and nine don't change the answer, because every color has more than one sock. [pause] "
-        "Okay. I'll see you in the next question.", pt('stem', 'The numbers five, seven and nine'))),
+        "socks in three boxes means at least one box gets two socks.", show(sk2['line'], 'The three colors are three boxes'),
+        show(sk2['a'], 'and the socks are the items'), show(sk2['b'], 'Four socks in three boxes'),
+        show(s3, 'means at least one box gets two'), mk('tick', 'choice 4', 'at least one box gets two socks')),
+      L("The numbers five, seven and nine don't change the answer. Only the number of colors matters, and there are three. "
+        "Each color has at least one sock, so three different colors can really come first. Choice number four is our "
+        "answer, and I'll see you in the next question.", pt('stem', 'The numbers five, seven and nine'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ r26-t20-summary

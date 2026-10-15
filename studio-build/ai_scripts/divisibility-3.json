@@ -37,8 +37,9 @@
    {
     "say": "Here's where students usually go wrong. What's the remainder when we divide five by eight? It's five, not three. The remainder is not the difference between the numbers.",
     "at": [
-     "What's the remainder when we divide five",
-     "divide five by"
+     "go wrong. What's",
+     "It's five, not three",
+     "difference between the"
     ]
    },
    {
@@ -49,10 +50,12 @@
     ]
    },
    {
-    "say": "Now you walk in with only five shekels. That's not enough for even one drink. You get zero drinks, and the five shekels stay in your hand. So five divided by eight is zero, with a remainder of five. The remainder is what's left in your hand after you buy as many as you can.",
+    "say": "Now you walk in with only five shekels. That's not enough for even one drink. You get zero drinks, and the five shekels stay in your hand. So when we divide five by eight, the quotient is zero, and the remainder is five. The remainder is what's left in your hand after you buy as many as you can.",
     "at": [
-     "only five shekels",
-     "You get zero"
+     "You get zero drinks",
+     "the five shekels",
+     "the quotient is zero",
+     "the remainder is"
     ]
    }
   ],
@@ -61,11 +64,21 @@
     "say": "What remainders can we get when we divide by four? Let's try. One divided by four leaves one. Two leaves two, and three leaves three. Four divides exactly, so it leaves zero. Five leaves one again, and six leaves two.",
     "at": [
      "get when we",
+     "Let's try",
      "One divided by four leaves one",
-     "Four divides exactly"
+     "Two leaves two",
+     "three leaves three",
+     "so it leaves zero",
+     "Five leaves one again",
+     "six leaves two"
     ]
    },
-   "So the remainders go round and round: one, two, three, zero. The biggest remainder is three, one less than four. With one more, the four would fit again.",
+   {
+    "say": "So the remainders go round and round: one, two, three, zero. The biggest remainder is three, one less than four. With one more, the four would fit again.",
+    "at": [
+     "go round and round"
+    ]
+   },
    {
     "say": "That's a rule: the biggest remainder is always one less than the divisor. Dividing by ten, the biggest remainder is nine. Dividing by twelve, it's eleven.",
     "at": [
@@ -86,18 +99,25 @@
     ]
    },
    {
-    "say": "Fourteen divided by nine leaves five, so five thousand four hundred thirty-two divided by nine also leaves five. And fourteen divided by three leaves two, so the big number divided by three leaves two as well.",
+    "say": "Fourteen divided by nine leaves five, because fourteen is nine plus five. So five thousand four hundred thirty-two divided by nine also leaves five. And fourteen is four threes plus two, so fourteen divided by three leaves two. So the big number divided by three leaves two as well.",
     "at": [
-     "Fourteen divided by nine leaves five",
-     "five, so five",
+     "because fourteen is nine plus five",
+     "So five thousand four hundred thirty-two",
+     "thirty-two divided by",
+     "fourteen is four threes plus two",
+     "two, so fourteen",
+     "the big number divided by three",
      "leaves two as well"
     ]
    },
    {
-    "say": "Another example, two hundred twenty. Its digit sum is two plus two plus zero, which is four. Four divided by three leaves one, so two hundred twenty divided by three leaves one. This works only for three and nine. For four or seven, the digit sum tells us nothing about the remainder. [pause] Okay. I'll see you in the next part.",
+    "say": "Another example, two hundred twenty. Its digit sum is two plus two plus zero, which is four. Four divided by three leaves one, so two hundred twenty divided by three leaves one. This works only for three and nine. For four or seven, the digit sum tells us nothing about the remainder. [pause] I'll see you in the next part.",
     "at": [
-     "Another example, two hundred twenty",
-     "Its digit sum"
+     "Another example, two",
+     "Its digit sum is two plus two",
+     "plus two plus",
+     "Four divided by three leaves one",
+     "one, so two"
     ]
    }
   ]

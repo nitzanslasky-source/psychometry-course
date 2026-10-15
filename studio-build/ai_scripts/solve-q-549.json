@@ -12,11 +12,11 @@
     "pause": 0.5
    },
    {
-    "say": "Before we start, a small tip. Look at the choices. The diamond appears in every choice, and we have to use it two or three times in each one. That takes time. So in the exam, when a question like this has the operation in every choice, skip it. Solve the rest of the section first, and come back to it at the end. Here in the lesson, let's solve it. [short pause] We'll solve it in two different ways, with algebra, and then by plugging in a number.",
+    "say": "Before we start, a small tip. Look at the choices. The diamond appears in every choice, and we have to use it two or three times in each one. That can take time. So in the exam, if a question like this looks long, you can leave it for later. Solve the rest of the section first, and come back to it at the end. Here in the lesson, let's solve it. [short pause] We'll solve it in two different ways, with algebra, and then by plugging in a number.",
     "at": [
      "in every choice",
      "have to use",
-     "skip it",
+     "leave it for later",
      "Solve the rest"
     ]
    },
@@ -43,8 +43,8 @@
     "say": "Choice number three. On the left, five x, squared, is twenty-five x squared. On the right, five times x squared is only five x squared. These are equal only when x is zero. For any other x, they're different. So this one is not always true, and choice number three is our answer.",
     "at": [
      "number three. On",
-     "five x, squared",
-     "On the right",
+     "is twenty-five x squared",
+     "x squared is",
      "and choice number three is our answer"
     ]
    },
@@ -60,12 +60,11 @@
   ],
   [
    {
-    "say": "[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, a small nonzero value. Zero is allowed too, but with zero, choice number three gives zero on both sides, so it can't show the failure. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six times one, thirty-six. Equal. Choice number two. Diamond of one is one, and one times one is one. Diamond of one is one too. Equal.",
+    "say": "[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, because it's easy and it's not zero. Zero is allowed too, but zero turns many of these products into zero. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six times one, thirty-six. Equal. Choice number two. Diamond of one is one, and one times one is one. Diamond of one is one too. Equal.",
     "at": [
      "Now let's",
      "take x is one",
-     "small nonzero value",
-     "number three gives",
+     "it's easy and",
      "number one. Diamond",
      "one is thirty-six",
      "number two. Diamond",

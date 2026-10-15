@@ -3404,6 +3404,12 @@
             "n, times n plus two, times n plus four",
             "n × (n + 2) × (n + 4)"
           ]
+        ],
+        "3.1": [
+          [
+            "one, three, five, seven, nine, eleven, thirteen, fifteen",
+            "1, 3, 5, 7, 9, 11, 13, 15"
+          ]
         ]
       }
     },
@@ -5075,6 +5081,10 @@
           [
             "divide the whole y minus three by two",
             "divide the whole y − 3 by 2"
+          ],
+          [
+            "The inverse is y minus three, all divided by two",
+            "The inverse is (y − 3)/2"
           ]
         ],
         "2.4": [
@@ -5091,6 +5101,14 @@
           [
             "divides the whole y plus four by three",
             "divides the whole y + 4 by 3"
+          ],
+          [
+            "That's y plus four, all divided by three",
+            "That's (y + 4)/3"
+          ],
+          [
+            "Its steps are times three, then minus four",
+            "Its steps are times 3, then minus 4"
           ]
         ]
       }
@@ -5444,8 +5462,20 @@
             "(−½)³ = (−½) × (−½) × (−½)"
           ],
           [
+            "Let's plug in x is negative one half",
+            "Let's plug in x = −½"
+          ],
+          [
+            "Negative one half, to the power of three, is negative one half times negative one half times negative one half",
+            "(−½)³ = (−½) × (−½) × (−½)"
+          ],
+          [
             "so it's negative one eighth",
-            "so it's −1/8"
+            "so it's −⅛"
+          ],
+          [
+            "Choice number two is x itself, negative one half",
+            "Choice number 2 is x itself, −½"
           ]
         ],
         "1.4": [
@@ -5458,6 +5488,12 @@
           [
             "one over negative one half is negative two, and one over negative one tenth is negative ten",
             "1/(−½) = −2, and 1/(−1/10) = −10"
+          ]
+        ],
+        "2.1": [
+          [
+            "so negative x squared is between",
+            "so −x² is between"
           ]
         ]
       }
@@ -5488,6 +5524,32 @@
           [
             "So the bracket k y, squared, equals the bracket twenty-five b, cubed",
             "So (ky)² = (25b)³"
+          ],
+          [
+            "the right side becomes the bracket twenty-five b, to the power of three",
+            "the right side becomes (25b)³"
+          ],
+          [
+            "So the bracket k y, squared, equals the bracket twenty-five b, to the power of three",
+            "So (ky)² = (25b)³"
+          ]
+        ],
+        "1.5": [
+          [
+            "Five to the power of three, squared, is five to the power of six",
+            "(5³)² = 5⁶"
+          ]
+        ],
+        "2.3": [
+          [
+            "That's five to the power of three, squared",
+            "That's (5³)²"
+          ]
+        ],
+        "2.4": [
+          [
+            "which is twenty-five times five, squared",
+            "which is (25 × 5)²"
           ]
         ]
       }
@@ -5524,6 +5586,18 @@
           [
             "there are b minus a, plus one, whole numbers",
             "there are b − a + 1 whole numbers"
+          ]
+        ],
+        "2.2": [
+          [
+            "there are b minus a, minus one",
+            "there are b − a − 1"
+          ]
+        ],
+        "3.3": [
+          [
+            "the remainder is one of twelve options, zero to eleven",
+            "the remainder is one of 12 options, 0 to 11"
           ]
         ]
       }
@@ -5635,12 +5709,36 @@
       "scope_replacements": {
         "3.4": [
           [
-            "One, minus three, plus three, minus one, is zero",
-            "1 − 3 + 3 − 1 = 0"
-          ],
-          [
             "Four, minus eight, plus two, is negative two",
             "4 − 8 + 2 = −2"
+          ],
+          [
+            "Four, minus eight, plus two, is minus two",
+            "4 − 8 + 2 = −2"
+          ],
+          [
+            "One, minus three, plus three, minus one, is zero",
+            "1 − 3 + 3 − 1 = 0"
+          ]
+        ],
+        "2.4": [
+          [
+            "Twelve is three times four, eighteen is two times nine, and twenty-four is three times eight",
+            "12 = 3 × 4, 18 = 2 × 9, and 24 = 3 × 8"
+          ]
+        ],
+        "2.5": [
+          [
+            "Eighteen divides by two and by six",
+            "18 divides by 2 and by 6"
+          ],
+          [
+            "Six is two times three, so two and six share a two",
+            "6 = 2 × 3, so 2 and 6 share a 2"
+          ],
+          [
+            "Three and four share no divisor bigger than one",
+            "3 and 4 share no divisor bigger than 1"
           ]
         ]
       }
@@ -5654,6 +5752,12 @@
           [
             "the biggest one is the divisor minus one",
             "the biggest one is divisor − 1"
+          ]
+        ],
+        "2.1": [
+          [
+            "Seven is one four plus three. Eleven is two fours plus three.",
+            "7 = 4 × 1 + 3. 11 = 4 × 2 + 3."
           ]
         ]
       }
@@ -5688,6 +5792,12 @@
             "without brackets, negative five squared means we square only the five",
             "without brackets, −5² means we square only the 5"
           ]
+        ],
+        "4.4": [
+          [
+            "The square root of four sevenths is less than one",
+            "√(4/7) < 1"
+          ]
         ]
       }
     },
@@ -5713,6 +5823,12 @@
           [
             "A four, plus three B, equals seventy-one",
             "A̅4̅ + 3̅B̅ = 71"
+          ]
+        ],
+        "5.1": [
+          [
+            "So ten A plus B equals seven times A plus B",
+            "So 10A + B = 7(A + B)"
           ]
         ]
       }
@@ -9135,6 +9251,25 @@
           ]
         ]
       }
+    },
+    "solve-q-r26-t20-03": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.1": [
+          [
+            "Eighty minus twenty-one, plus one, is sixty",
+            "80 − 21 + 1 = 60"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t20-04": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {}
     }
   }
 }

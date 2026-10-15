@@ -7,24 +7,32 @@
   ],
   [
    {
-    "say": "From a to b, with both ends included, there are b minus a, plus one, whole numbers. You learned this with consecutive integers. For example, from five to twelve, it's twelve minus five, plus one, which is eight numbers.",
+    "say": "Say a and b are whole numbers, and a is at most b. From a to b, with both ends included, there are b minus a, plus one, whole numbers. You learned this with consecutive integers. For example, from five to twelve, it's twelve minus five, plus one, which is eight numbers.",
     "at": [
+     "are whole numbers",
      "From a to b",
-     "both ends included"
+     "both ends included",
+     "For example, from five to twelve",
+     "twelve, it's twelve"
     ]
    },
    {
-    "say": "Strictly between five and twelve means both ends are out. That leaves six, seven, eight, nine, ten and eleven, which is six numbers. That's twelve minus five, minus one.",
+    "say": "Strictly between five and twelve means both ends are out. That leaves six, seven, eight, nine, ten and eleven, which is six numbers. That's twelve minus five, minus one. So when a is smaller than b, strictly between them there are b minus a, minus one.",
     "at": [
-     "Strictly between five and twelve",
-     "means both ends"
+     "That leaves six, seven",
+     "nine, ten and",
+     "That's twelve minus five, minus one",
+     "So when a is smaller than b",
+     "than b, strictly"
     ]
    },
    {
     "say": "With one end in and one end out, it's just b minus a. From five to twelve, with five included and twelve not, that's five to eleven, which is seven numbers.",
     "at": [
      "With one end in",
-     "one end out"
+     "one end out",
+     "that's five to eleven",
+     "is seven numbers"
     ]
    },
    {
@@ -40,7 +48,11 @@
     "say": "Now the pigeonhole principle. If there are more items than boxes, at least one box gets two items. Think of four pigeons and three holes. Even if each of the first three pigeons gets its own hole, the fourth one has to share.",
     "at": [
      "If there are more items than boxes",
-     "than boxes, at"
+     "than boxes, at",
+     "Think of four pigeons and three holes",
+     "three holes. Even",
+     "each of the first three pigeons",
+     "the fourth one has to share"
     ]
    },
    {
@@ -51,17 +63,21 @@
     ]
    },
    {
-    "say": "On the exam it often comes with remainders. When we divide a whole number by twelve, the remainder is one of twelve options, zero to eleven. So among any thirteen whole numbers, two have the same remainder.",
+    "say": "On the exam it often comes with remainders. When we divide a whole number by twelve, the remainder is one of twelve options, zero to eleven. These twelve remainders are our boxes, and each number goes into the box of its remainder. So among any thirteen whole numbers, two have the same remainder.",
     "at": [
-     "it often comes with remainders",
-     "When we divide"
+     "twelve options, zero to eleven",
+     "These twelve remainders",
+     "So among any thirteen whole numbers",
+     "numbers, two have"
     ]
    },
    {
-    "say": "And two numbers with the same remainder have a difference that divides by twelve. For example, seventeen and forty-one both leave a remainder of five. Their difference is twenty-four, which is two times twelve. Next, two questions, one on counting odd numbers and one on being sure. [pause] Okay. I'll see you in the next video.",
+    "say": "And two numbers with the same remainder have a difference that divides by twelve. For example, seventeen and forty-one both leave a remainder of five. Seventeen is twelve plus five, and forty-one is thirty-six plus five. When we subtract, the two fives cancel. That leaves thirty-six minus twelve, which is twenty-four, two times twelve. Next, two questions, one on counting odd numbers and one on being sure. [pause] I'll see you in the next video.",
     "at": [
-     "seventeen and forty-one",
-     "a remainder of"
+     "Seventeen is twelve plus five",
+     "and forty-one is",
+     "When we subtract",
+     "That leaves thirty-six"
     ]
    }
   ]

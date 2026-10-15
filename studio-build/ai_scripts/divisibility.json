@@ -7,11 +7,15 @@
   ],
   [
    {
-    "say": "When we say a number is divisible by two, we mean it divides by two with nothing left over. For example, five hundred thirty-eight divided by two is two hundred sixty-nine, a whole number. So five hundred thirty-eight is divisible by two.",
+    "say": "When we say a number is divisible by two, we mean it divides by two with nothing left over. For example, five hundred thirty-eight divided by two. Half of five hundred is two hundred fifty. Half of thirty-eight is nineteen. Together that's two hundred sixty-nine, a whole number. So five hundred thirty-eight is divisible by two.",
     "at": [
      "number is divisible",
      "five hundred thirty-eight divided by two",
-     "two is two"
+     "two. Half of",
+     "is two hundred fifty",
+     "is nineteen",
+     "Together that's",
+     "a whole number"
     ]
    },
    {
@@ -20,7 +24,11 @@
      "A number is divisible by two",
      "two when it's",
      "Five hundred thirty-eight ends in eight",
-     "eight, which is"
+     "which is even",
+     "so it's divisible by two",
+     "hundred forty-one ends in one",
+     "which is odd",
+     "so it's not"
     ]
    },
    {
@@ -29,7 +37,14 @@
      "A number is divisible by five",
      "five when its",
      "Four hundred sixty ends in zero",
-     "zero, and three"
+     "and three thousand",
+     "fifteen ends in five",
+     "so both are",
+     "so both are",
+     "divisible by five. Two",
+     "Two hundred fifty-three ends in three",
+     "ends in three, so",
+     "so it's not"
     ]
    },
    {
@@ -38,7 +53,9 @@
      "divisible by ten when",
      "last digit is",
      "like nine hundred forty",
-     "Nine hundred forty-five"
+     "Nine hundred forty-five",
+     "ends in five, so",
+     "but not by ten"
     ]
    }
   ],
@@ -48,15 +65,18 @@
     "at": [
      "A number is divisible by three when",
      "three when the",
-     "Take nine hundred forty-two",
-     "Nine plus four"
+     "Nine plus four is thirteen",
+     "thirteen plus two is fifteen",
+     "Fifteen is divisible by three",
+     "so the whole"
     ]
    },
    {
     "say": "Another one, five hundred twenty-three. Five plus two plus three is ten. Ten is not divisible by three, so five hundred twenty-three is not divisible by three either.",
     "at": [
-     "Another one, five hundred twenty-three",
-     "Five plus two"
+     "Five plus two plus three",
+     "Ten is not divisible",
+     "three, so five"
     ]
    },
    {
@@ -64,10 +84,13 @@
     "at": [
      "Nine works exactly the same way",
      "If the digit",
-     "Eight hundred forty-six. Eight plus four",
-     "Eight plus four",
-     "But nine hundred forty-two",
-     "a digit sum"
+     "Eight plus four is twelve",
+     "twelve plus six is eighteen",
+     "Eighteen is divisible by nine",
+     "so eight hundred",
+     "has a digit sum of fifteen",
+     "which doesn't divide by",
+     "So it divides"
     ]
    }
   ],
@@ -79,12 +102,15 @@
      "For four, we look only",
      "at the number",
      "ends in sixteen",
-     "is divisible by"
+     "is divisible by",
+     "so the whole number"
     ]
    },
    {
     "say": "Why only the last two digits? Split the number into two thousand seven hundred, plus sixteen. A hundred is twenty-five fours, so every whole hundred is divisible by four, and so is two thousand seven hundred. That leaves only the last two digits to check.",
     "at": [
+     "Split the number into",
+     "thousand seven hundred",
      "A hundred is twenty-five fours",
      "so every whole"
     ]
@@ -92,26 +118,33 @@
    {
     "say": "A second example, five hundred thirty-four. The last two digits are thirty-four. Thirty-two is eight fours, and thirty-four is two more, so thirty-four is not divisible by four, and neither is five hundred thirty-four.",
     "at": [
-     "A second example, five hundred thirty-four",
-     "The last two"
+     "The last two digits are thirty-four",
+     "Thirty-two is eight fours",
+     "thirty-four is two",
+     "and neither is"
     ]
    },
    {
-    "say": "For eight, we do the same thing with the last three digits, because a thousand is a hundred twenty-five eights. So every whole thousand is divisible by eight. In seven thousand two hundred forty, we check two hundred forty. Two hundred forty is thirty eights, so seven thousand two hundred forty is divisible by eight.",
+    "say": "For eight, we do the same thing with the last three digits, because a thousand is a hundred twenty-five eights. So every whole thousand is divisible by eight. In seven thousand two hundred forty, we check two hundred forty. Two hundred forty is thirty eights, so seven thousand two hundred forty is divisible by eight. Now change it by one, to seven thousand two hundred forty-one. Then we check two hundred forty-one. That's thirty eights plus one, so it's not divisible by eight.",
     "at": [
      "For eight, we do the same thing",
      "same thing with",
      "a thousand is a hundred twenty-five eights",
      "So every whole",
-     "In seven thousand two hundred forty",
-     "forty, we check"
+     "we check two hundred forty",
+     "Two hundred forty is thirty eights",
+     "so seven thousand two hundred forty is",
+     "forty is divisible",
+     "Then we check two hundred forty-one",
+     "That's thirty eights plus one",
+     "so it's not divisible by eight"
     ]
    },
    {
-    "say": "By the way, division by eight is very rare on the exam. And when it comes, the numbers are friendly ones from the times table, like a hundred sixty, three hundred twenty or five hundred sixty. [pause] Okay. I'll see you in the next part.",
+    "say": "By the way, division by eight is very rare on the exam. And when it comes, the numbers are friendly ones from the times table, like a hundred sixty, three hundred twenty or five hundred sixty. [pause] I'll see you in the next part.",
     "at": [
      "division by eight is very rare",
-     "numbers are friendly"
+     "rare on the"
     ]
    }
   ]

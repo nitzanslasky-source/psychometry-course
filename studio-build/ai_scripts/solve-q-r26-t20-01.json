@@ -32,10 +32,12 @@
     "at": [
      "number one, x",
      "Three squared is nine",
-     "so it works",
+     "nine is bigger",
      "number two, x",
+     "Three times two is six",
      "and six is",
      "number three, x",
+     "Nine is bigger than four",
      "It works too"
     ]
    },
@@ -67,10 +69,11 @@
     "at": [
      "number one. One",
      "One half squared is one quarter",
-     "quarter, and one",
+     "not bigger than",
      "so it's out.",
      "number two. One",
-     "bigger than one quarter",
+     "One half times one quarter",
+     "is one eighth",
      "so it's out too"
     ]
    },
@@ -85,18 +88,25 @@
    {
     "say": "[pause] Now the math way. Let's see why choice number three is true for every allowed pair. x squared minus y squared is, in brackets, x minus y, times, in brackets, x plus y.",
     "at": [
-     "Now the",
+     "Let's see why",
      "number three is",
+     "every allowed pair",
      "x squared minus y squared is",
      "is, in brackets"
     ]
    },
    {
-    "say": "x is bigger than y, so x minus y is positive. Both numbers are positive, so x plus y is positive too. A positive number times a positive number is positive. So x squared minus y squared is positive, which means x squared is bigger than y squared, always. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "x is bigger than y, so x minus y is positive. Both numbers are positive, so x plus y is positive too. A positive number times a positive number is positive. So x squared minus y squared is positive, which means x squared is bigger than y squared, always. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
      "so x minus y is positive",
-     "Both numbers are",
-     "bigger than y squared, always"
+     "positive. Both numbers",
+     "so x plus y is positive too",
+     "A positive number times a positive",
+     "positive number is",
+     "So x squared minus y squared is positive",
+     "squared is positive",
+     "bigger than y squared, always",
+     "number three is"
     ]
    }
   ]

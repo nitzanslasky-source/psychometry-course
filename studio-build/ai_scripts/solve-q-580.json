@@ -12,14 +12,14 @@
     "pause": 0.5
    },
    {
-    "say": "There's nothing to calculate here. We check how each expression reacts when one letter grows. [short pause] For each choice, we ask three things. When C grows, does the expression grow? When S grows, does it grow? And when M grows, does it get smaller? A choice that breaks even one of these cannot give the score.",
+    "say": "There's nothing to calculate here. We check how each expression reacts when one letter grows. Each time, we change only that letter and keep the other two the same. [short pause] For each choice, we ask three things. When C grows, does the expression grow? When S grows, does it grow? And when M grows, does it get smaller? A choice that breaks even one of these cannot give the score.",
     "at": [
      "For each choice, we ask three things",
      "When C grows"
     ]
    },
    {
-    "say": "[short pause] Choice number one, C plus S minus M. C and S are added, so when either one grows, the result grows. M is subtracted, so when M grows, the result gets smaller. Every rule fits, so this expression could give the score, and choice number one is out.",
+    "say": "[short pause] Let's solve it by understanding, one choice at a time. Choice number one, C plus S minus M. C and S are added, so when either one grows, the result grows. M is subtracted, so when M grows, the result gets smaller. Every rule fits, so this expression could give the score, and choice number one is out.",
     "at": [
      "number one, C",
      "C and S are added",
@@ -45,14 +45,22 @@
      "mark it and",
      "number three teaches",
      "about fractions, so",
+     "C to the power of S, over M",
+     "S, over M",
      "In a fraction with positive parts",
      "parts, a bigger"
     ]
    },
    {
-    "say": "When C grows, the top grows. When S grows, C is multiplied by itself more times, and because C is bigger than one, the top grows again. When M grows, the bottom grows, so the result gets smaller. So choice number three fits every rule. [pause] Okay. I'll see you in the next question.",
+    "say": "When C grows, the top grows. When S grows, C is multiplied by itself more times, and because C is bigger than one, the top grows again. When M grows, the bottom grows, so the result gets smaller. So choice number three fits every rule. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
-     "number three fits"
+     "When C grows, the top grows",
+     "When S grows",
+     "multiplied by itself",
+     "When M grows",
+     "grows, so the",
+     "number three fits",
+     "number two is"
     ]
    }
   ]

@@ -53,6 +53,15 @@ HY_NEW_END = ("if(it.y==null)yL=y+r.h+(it.gap??44);bot=Math.max(bot,y+r.h);if(it
               " return out+best.o+'</svg>'}")
 
 
+# 2026-10-15 (Codex batch-A review #150, q-556): the double brackets ⟦ ⟧ (U+27E6 / U+27E7) are not in Helvetica Neue.
+# Chrome falls back to a system font, but a renderer without font fallback draws missing-glyph boxes. Only these two
+# characters get an explicit font list that has them (STIX Two Math / STIXGeneral / Apple Symbols on the Mac); every
+# other character keeps the slide font, so the design is unchanged.
+GLYPH_OLD = 'text-anchor="${anchor}">${esc(s)}</text>`}'
+GLYPH_NEW = ('text-anchor="${anchor}">${esc(s).replace(/[\\u27e6\\u27e7]/g,c=>\'<tspan font-family="STIX Two Math,STIXGeneral,'
+             'Apple Symbols,Cambria Math,Segoe UI Symbol,serif">\'+c+\'</tspan>\')}</text>`}')
+
+
 def rep(s, old, new, n=1):
     assert s.count(old) == n, (s.count(old), old[:60])
     return s.replace(old, new)
@@ -65,6 +74,7 @@ def apply(s, layout=True):
     s = s[:a] + f + s[b:]
     s = rep(s, 'font-family="Arial,Helvetica,sans-serif"', 'font-family="%s"' % FONT)
     s = rep(s, "measure.font=weight+' '+size+'px Arial'", "measure.font=weight+' '+size+'px \"Helvetica Neue\"'")
+    s = rep(s, GLYPH_OLD, GLYPH_NEW)
     # camera bubble: right in the corner (6px from the edges instead of 26), top right by default
     s = rep(s, "function camRect(){const d=CAM_D[camSize]||250,m=26;", "function camRect(){const d=CAM_D[camSize]||250,m=6;")
     s = rep(s, "camPos=(()=>{try{return localStorage.getItem('hy-cam-pos')||'br'}catch{return 'br'}})()",

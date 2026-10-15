@@ -32,19 +32,25 @@
     ]
    },
    {
-    "say": "Twelve is three times four, eighteen is two times nine, and twenty-four is three times eight. Check each part with its own sign. If the number divides by both parts, it divides by the big number.",
+    "say": "Twelve is three times four, eighteen is two times nine, and twenty-four is three times eight. Check each part with its own sign. The two parts must not share a divisor bigger than one. Then, if the number divides by both parts, it divides by the big number.",
     "at": [
      "Twelve is three times four",
-     "eighteen is two"
+     "eighteen is two",
+     "must not share a divisor bigger than one",
+     "bigger than one"
     ]
    },
    {
-    "say": "But careful, the two parts must share no factor. Why not split twelve as two times six? Look at eighteen. Eighteen divides by two and by six, but eighteen is not divisible by twelve. Two and six share a two, so this check doesn't work. Three and four share nothing, so for twelve we use three times four.",
+    "say": "But careful. Why not split twelve as two times six? Look at eighteen. Eighteen divides by two and by six, but eighteen is not divisible by twelve. Six is two times three, so two and six share a two. That's why this check doesn't work. Three and four share no divisor bigger than one, so for twelve we use three times four.",
     "at": [
-     "the two parts must share no factor",
-     "Why not split",
-     "Look at eighteen",
-     "Eighteen divides by"
+     "Why not split twelve",
+     "two times six",
+     "Eighteen divides by two and by six",
+     "by six, but",
+     "eighteen is not divisible by twelve",
+     "Six is two times three",
+     "That's why this check",
+     "Three and four"
     ]
    }
   ],
@@ -60,23 +66,41 @@
     "say": "For a three-digit number there are two ways. The first way: take the number made by the first two digits, and subtract the last digit. Four hundred eighteen. Forty-one minus eight is thirty-three, and thirty-three divides by eleven, so four hundred eighteen divides by eleven. Four hundred twenty-seven. Forty-two minus seven is thirty-five, which doesn't divide by eleven, so four hundred twenty-seven doesn't either.",
     "at": [
      "The first way",
-     "two digits, and"
+     "number made by",
+     "Forty-one minus eight",
+     "and thirty-three divides",
+     "so four hundred eighteen divides",
+     "Forty-two minus seven",
+     "which doesn't divide",
+     "so four hundred twenty-seven"
     ]
    },
    {
-    "say": "The second way: add the two outer digits, and subtract the middle digit. Four hundred eighteen again. Four plus eight is twelve, and twelve minus one is eleven. When the result is zero or eleven, the number divides by eleven.",
+    "say": "The second way: add the two outer digits, and subtract the middle digit. Four hundred eighteen again. Four plus eight is twelve, and twelve minus one is eleven. For a three-digit number, when the result is zero or eleven, the number divides by eleven.",
     "at": [
      "The second way",
      "two outer digits",
-     "When the result is zero or eleven",
-     "or eleven, the"
+     "Four plus eight is twelve",
+     "twelve minus one is eleven",
+     "For a three-digit",
+     "when the result is zero or eleven",
+     "or eleven, the",
+     "number divides by eleven"
     ]
    },
    {
-    "say": "For longer numbers, go digit by digit with plus, minus, plus, minus. One thousand three hundred thirty-one. One, minus three, plus three, minus one, is zero, so it divides by eleven. Four hundred eighty-two. Four, minus eight, plus two, is negative two. That's not zero, eleven or negative eleven, so four hundred eighty-two doesn't divide by eleven.",
+    "say": "For longer numbers, go digit by digit with plus, minus, plus, minus. The rule is that the result divides by eleven, and zero counts too. One thousand three hundred thirty-one. One, minus three, plus three, minus one, is zero, so it divides by eleven. Four hundred eighty-two. Four, minus eight, plus two, is minus two. Minus two doesn't divide by eleven, so four hundred eighty-two doesn't either.",
     "at": [
      "For longer numbers",
-     "One thousand three"
+     "by digit with",
+     "The rule is that the result",
+     "result divides by",
+     "One, minus three",
+     "minus one, is",
+     "so it divides by eleven",
+     "Four, minus eight",
+     "is minus two",
+     "Minus two doesn't"
     ]
    },
    {
@@ -89,7 +113,7 @@
   ],
   [
    {
-    "say": "Why do we need these signs? Many exam word problems are really about divisibility. For example, if a quarter of a group wear hats, the size of the group must divide by four, because you can't have a quarter of a person. The signs let us check the answer choices fast, and you'll see questions like this right after this lesson. [pause] Okay. I'll see you in the next part.",
+    "say": "Why do we need these signs? Many exam word problems are really about divisibility. For example, if a quarter of a group wear hats, the size of the group must divide by four, because you can't have a quarter of a person. The signs let us check the answer choices fast, and you'll see questions like this right after this lesson. [pause] I'll see you in the next part.",
     "at": [
      "these signs? Many",
      "if a quarter of a",

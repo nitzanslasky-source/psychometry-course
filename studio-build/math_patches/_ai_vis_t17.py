@@ -449,31 +449,53 @@ nlb = I('nlb', 'Borders: $\\ -1,\\ 0,\\ 1$', size=32)
 nlb2 = I('nlb2', '$1^5=1$', size=32, hand='1^5 = 1')
 nlb3 = I('nlb3', '$0$: $\\ $no reciprocal', size=32)
 nlm = ZL('nlm', -40, 40, [('a', [('ink', 15, '15'), ('arrow', 16, 29, '×2'), ('pt', 30, '30')]),
-                           ('b', [('ink', -15, '−15'), ('arrow', -16, -29, '×2'), ('pt', -30, '−30')])], ticks=(0,), w=900)
-nlm2 = I('nlm2', '$15\\cdot\\frac15=3 \\qquad -15\\cdot\\frac15=-3$', size=36, hand='15·{1/5} = 3        −15·{1/5} = −3')
+                           ('b', [('ink', -15, '−15'), ('arrow', -16, -29, '×2'), ('pt', -30, '−30')]),
+                           ('c', [('arrow', 14, 4, '×1/5'), ('pt', 3, '3')]),          # batch A #92: times 1/5 moves toward zero,
+                           ('d', [('arrow', -14, -4, '×1/5'), ('pt', -3, '−3')]),      # on the same axis, at the words
+                           ('e', [('below', -9, '−3 > −15')])], ticks=(0,), w=900)
+for _k, _it in nlm.items():          # the layers find their base by id (renderer fig / of), so the written lines can come between
+    if _it.get('over'): _it['of'] = 'nlm'
+    else: _it['fig'] = 'nlm'
+nl4a = I('nl4a', '$\\times2$: $\\ \\frac12$ and $\\frac14$ both bigger', size=30)
+nl4b = I('nl4b', '$\\times\\frac12$: $\\ \\frac12$ and $\\frac14$ both smaller', size=30)
+nlm2 = I('nlm2', '$15\\cdot\\frac15=3$', size=36, hand='15·{1/5} = 3')
+nlm2b = I('nlm2b', '$-15\\cdot\\frac15=-3$', size=36, hand='−15·{1/5} = −3')
 nlm3 = I('nlm3', '$8\\cdot\\frac34=6 \\qquad -8\\cdot\\frac34=-6$', size=36, hand='8·{3/4} = 6        −8·{3/4} = −6')
-nmd1 = I('nmd1', '$\\times$ more than $1$: $\\ 9\\cdot2=18,\\ \\ 4\\cdot3=12$', size=32, hand='× more than 1 :   9·2 = 18,    4·3 = 12')
-nmd2 = I('nmd2', '$\\div$ more than $1$: $\\ 10\\div5=2,\\ \\ 12\\div4=3$', size=32, hand='÷ more than 1 :   10 ÷ 5 = 2,    12 ÷ 4 = 3')
-nmd3 = I('nmd3', '$\\times$ a fraction: $\\ 10\\cdot\\frac15=2,\\ \\ 8\\cdot\\frac12=4$', size=32, hand='× a fraction :   10·{1/5} = 2,    8·{1/2} = 4')
-nmd4 = I('nmd4', '$\\div$ a fraction: $\\ 10\\div\\frac15=10\\cdot5=50,\\ \\ 3\\div\\frac12=3\\cdot2=6$', size=32, hand='÷ a fraction :   10 ÷ {1/5} = 10·5 = 50,    3 ÷ {1/2} = 3·2 = 6')
+nmd1 = I('nmd1', '$\\times$ more than $1$: $\\ 9\\cdot2=18$', size=32, hand='× more than 1 :   9·2 = 18')
+nmd1b = I('nmd1b', '$4\\cdot3=12$', size=32, hand='4·3 = 12')
+nmd2 = I('nmd2', '$\\div$ more than $1$: $\\ 10\\div5=2$', size=32, hand='÷ more than 1 :   10 ÷ 5 = 2')
+nmd2b = I('nmd2b', '$12\\div4=3$', size=32, hand='12 ÷ 4 = 3')
+nmd3 = I('nmd3', '$\\times$ between $0$ and $1$: $\\ 10\\cdot\\frac15=2$', size=32, hand='× between 0 and 1 :   10·{1/5} = 2')
+nmd3b = I('nmd3b', '$8\\cdot\\frac12=4$', size=32, hand='8·{1/2} = 4')
+nmd4 = I('nmd4', '$\\div$ between $0$ and $1$: $\\ 10\\div\\frac15=10\\cdot5=50$', size=32, hand='÷ between 0 and 1 :   10 ÷ {1/5} = 10·5 = 50')
+nmd4b = I('nmd4b', '$3\\div\\frac12=3\\cdot2=6$', size=32, hand='3 ÷ {1/2} = 3·2 = 6')
+nh0 = I('nh0', 'Positive power or root: $\\ $a positive number stays on its side of $1$', size=28)
 nh1 = I('nh1', '$\\sqrt[5]{\\frac{11}{10}}$ $\\ $vs$\\ $ $\\sqrt{\\frac79}$', size=36)
 nh1r = I('nh1r', '$\\frac{11}{10}>1>\\frac79\\ \\to\\ \\sqrt[5]{\\frac{11}{10}}>1>\\sqrt{\\frac79}$', size=34)
 nh2 = I('nh2', '$\\left(\\frac54\\right)^3$ $\\ $vs$\\ $ $\\sqrt{\\frac35}$', size=36)
 nh2r = I('nh2r', '$\\left(\\frac54\\right)^3>1>\\sqrt{\\frac35}$', size=36)
 nh3 = I('nh3', 'Negatives: odd powers and roots only', size=30)
-nx1 = I('nx1', '$(-5)^2=25 \\qquad (-3)^4=81$', size=36, hand='(−5)^2 = 25        (−3)^4 = 81')
-nx2 = I('nx2', '$(-5)^2=25 \\quad$ but $\\quad -5^2=-25$', size=36)
-nx3 = I('nx3', '$\\left(\\frac38\\right)^{-2}=\\left(\\frac83\\right)^2 \\qquad 5^{-3}=\\left(\\frac15\\right)^3$', size=36)
-nx4 = I('nx4', '$\\sqrt{\\frac47}$ $\\ $vs$\\ $ $\\left(\\frac35\\right)^{-3}$', size=36)
-nx4b = I('nx4b', '$\\left(\\frac35\\right)^{-3}=\\left(\\frac53\\right)^3>1$', size=36)
-nx4c = I('nx4c', '$\\sqrt{\\frac47}<1<\\left(\\frac35\\right)^{-3}$', size=36)
+nx1 = I('nx1', '$(-5)^2=25$', size=34, hand='(−5)^2 = 25')
+nx1b = I('nx1b', '$(-3)^4=81$', size=34, hand='(−3)^4 = 81')
+nx2 = I('nx2', '$(-5)^2=25$', size=34)
+nx2b = I('nx2b', 'but $\\ -5^2=-25$', size=34)
+nx3 = I('nx3', '$\\left(\\frac38\\right)^{-2}=\\left(\\frac83\\right)^2$', size=34)
+nx3b = I('nx3b', '$5^{-3}=\\left(\\frac15\\right)^3$', size=34)
+nx4 = I('nx4', '$\\sqrt{\\frac47}$ $\\ $vs$\\ $ $\\left(\\frac35\\right)^{-3}$', size=34)
+nx4b = I('nx4b', '$\\left(\\frac35\\right)^{-3}=\\left(\\frac53\\right)^3>1$', size=34)
+nx4c = I('nx4c', '$\\sqrt{\\frac47}<1<\\left(\\frac35\\right)^{-3}$', size=34)
+ns0 = I('ns0', 'Same positive power or root, two positive numbers: $\\ $the order stays', size=28)
 ns1 = I('ns1', '$5^{-4}$ $\\ $vs$\\ $ $4^{-4}$', size=32)
 ns1b = I('ns1b', '$\\left(\\frac15\\right)^4$ $\\ $vs$\\ $ $\\left(\\frac14\\right)^4$', size=32)
 ns1c = I('ns1c', '$\\frac14>\\frac15\\ \\to\\ 4^{-4}>5^{-4}$', size=32)
 ns2 = I('ns2', '$\\left(\\frac34\\right)^5$ $\\ $vs$\\ $ $\\left(\\frac23\\right)^5$: $\\ \\frac34>\\frac23$', size=30, hand='({3/4})^5  vs  ({2/3})^5 :    {3/4} > {2/3}')
 ns2b = I('ns2b', '$\\sqrt{13}$ $\\ $vs$\\ $ $\\sqrt{11}$: $\\ 13>11$', size=30, hand='√{13}  vs  √{11} :    13 > 11')
 ns3 = I('ns3', '$-3<-2\\ $ but $\\ (-3)^2=9>(-2)^2=4$', size=34, hand='−3 < −2      but      (−3)^2 = 9  >  (−2)^2 = 4')
-nk1 = I('nk1', '$4\\cdot6$ vs $3\\cdot5$: $\\ 4>3,\\ 6>5$: $\\ 24>15$', size=34, hand='4·6  vs  3·5 :   4 > 3,   6 > 5 :   24 > 15')
+nk0 = I('nk0', 'Positive factors: $\\ $strong on strong, weak on weak', size=30)
+nk1 = I('nk1', '$4\\cdot6$ vs $3\\cdot5$', size=34, hand='4·6  vs  3·5')
+nk1b = I('nk1b', '$4>3$', size=34, hand='4 > 3')
+nk1c = I('nk1c', '$6>5$', size=34, hand='6 > 5')
+nk1d = I('nk1d', '$24>15$', size=34, hand='24 > 15')
 nk2 = I('nk2', '$0<a<b,\\ 0<c<d\\ \\to\\ ac<bd$', size=34)
 nk3 = I('nk3', '$2\\cdot9$ vs $3\\cdot5$: $\\ $one win each, no decision', size=32)
 nk4 = I('nk4', '$7>5$: $\\ 7\\cdot3>5$ $\\quad$ but $\\ 7\\cdot\\frac12=3.5<5$', size=32, hand='7 > 5 :   7·3 > 5      but   7·{1/2} = 3.5 < 5')
@@ -493,14 +515,15 @@ video('number-line', 'lesson', slides=[
         "fifths are between negative one and zero. One half and two fifths are between zero and one. And three and seven "
         "halves are above one.", show(nle, 'Some examples')),
       L("Why four ranges, and not just positive and negative? Because numbers in different ranges behave differently when "
-        "we raise them to a power or multiply them. And every number inside one range reacts the same way. Multiply one "
-        "half by something, or one quarter by the same thing, and they both move the same way.", pt('nlr_line', 'every number inside one range')),
+        "we raise them to a power or multiply them. And every number inside one range reacts the same way. Take one "
+        "half and one quarter. Times two makes both of them bigger. Times one half makes both of them smaller.",
+        pt('nlr_line', 'every number inside one range'), show(nl4a, 'Times two makes both'), show(nl4b, 'Times one half makes both')),
       L("Watch the borders too: negative one, zero and one. They don't belong to any range, and they behave in their own way. "
         "One to any power is still one, so one to the power of five is one. And zero has no reciprocal, because we can't "
         "divide by zero.", show(nlb, 'Watch the borders too'), show(nlb2, 'so one to the power of five'),
         show(nlb3, 'And zero has no reciprocal')),
       L("So the first step in every question is to ask which ranges the givens allow. If a question only says x is "
-        "positive, x could be between zero and one, or above one. And those two ranges can behave differently.",
+        "positive, x could be between zero and one, exactly one, or above one. And those cases can behave differently.",
         pt('nlr_line', 'which ranges the givens allow'))),
     S('Mirror image',
       L("The second big idea is that the number line is symmetric. The negative side is a mirror image of the positive "
@@ -510,55 +533,67 @@ video('number-line', 'lesson', slides=[
         show(nlm['b'], 'And negative fifteen times two')),
       L("Now times one fifth. Fifteen times one fifth is three, so it moves toward zero. Negative fifteen times one fifth is "
         "negative three, and it also moves toward zero. And here's the important part. Negative three is bigger than "
-        "negative fifteen, because on the negative side, closer to zero means bigger.", show(nlm2, 'Fifteen times one fifth is three')),
+        "negative fifteen, because on the negative side, closer to zero means bigger.", show(nlm2, 'Fifteen times one fifth is three'),
+        show(nlm['c'], 'so it moves toward zero'), show(nlm2b, 'Negative fifteen times one fifth'),
+        show(nlm['d'], 'and it also moves toward zero'), show(nlm['e'], 'Negative three is bigger than')),
       L("One more. Eight times three quarters is six, and negative eight times three quarters is negative six. Both move "
         "toward zero, and negative six is bigger than negative eight. So instead of plugging in negative numbers and risking "
         "a mistake, look at the positive side, and then mirror the picture.", show(nlm3, 'Eight times three quarters is six'))),
     S('Multiply and divide',
       L("How do multiplying and dividing move a positive number? Multiplying by a number bigger than one makes it grow. "
-        "Nine times two is eighteen, and four times three is twelve.", show(nmd1, 'Multiplying by a number bigger than one')),
+        "Nine times two is eighteen, and four times three is twelve.", show(nmd1, 'Nine times two is eighteen'),
+        show(nmd1b, 'and four times three')),
       L("Dividing by a number bigger than one makes it shrink. Ten divided by five is two, and twelve divided by four is "
-        "three.", show(nmd2, 'Dividing by a number bigger than one')),
-      L("Multiplying by a positive fraction makes it shrink too, because we only take part of it. Ten times one fifth is "
-        "two, and eight times one half is four.", show(nmd3, 'Multiplying by a positive fraction')),
-      L("Dividing by a fraction is the opposite. Dividing by a fraction is multiplying by its reciprocal. So ten divided by "
-        "one fifth is ten times five, which is fifty. And three divided by one half is three times two, which is six. The "
-        "number grows.", show(nmd4, 'Dividing by a fraction is the opposite')),
+        "three.", show(nmd2, 'Ten divided by five is two'), show(nmd2b, 'and twelve divided by four')),
+      L("Multiplying by a fraction between zero and one makes it shrink too, because we only take part of it. Ten times "
+        "one fifth is two, and eight times one half is four.", show(nmd3, 'Ten times one fifth is two'),
+        show(nmd3b, 'and eight times one half')),
+      L("Dividing by a fraction between zero and one is the opposite. Dividing by a fraction is multiplying by its "
+        "reciprocal. So ten divided by one fifth is ten times five, which is fifty. And three divided by one half is three "
+        "times two, which is six. The number grows.", show(nmd4, 'So ten divided by one fifth'),
+        show(nmd4b, 'And three divided by one half')),
       L("So one is the dividing line. Times one or divided by one changes nothing. On the negative side, the same moves "
         "happen as a mirror image, away from zero or toward zero. Multiplying by a negative number is different, because it "
         "jumps to the other side of zero, and we'll see that in a later lesson.", pt('nmd4', 'So one is the dividing line'))),
     S('Hierarchy',
-      L("Now the hierarchy. A number in a range further to the right stays bigger after any positive power or root. Here's "
-        "an example. Which is bigger, the fifth root of eleven tenths, or the square root of seven ninths? Calculating these "
-        "roots would be a nightmare, so we don't.", show(nh1, 'Which is bigger')),
-      L("Eleven tenths is not really a fraction, because the top is bigger than the bottom, so it's more than one. A root "
-        "of a number above one stays above one. Seven ninths is a real fraction, less than one, and its root stays less "
-        "than one. So the fifth root of eleven tenths is bigger. We ignore the roots and look at the numbers themselves.",
-        pt('nh1', 'Eleven tenths is not really a fraction'), show(nh1r, 'So the fifth root of eleven tenths is bigger')),
-      L("Another one. Five quarters, cubed, against the square root of three fifths. Five quarters is above one, so its cube "
-        "is above one too. Three fifths is between zero and one, so its root is too. So five quarters, cubed, is bigger.",
-        show(nh2, 'Five quarters, cubed'), show(nh2r, 'So five quarters, cubed, is bigger')),
-      L("One condition for negative numbers. The hierarchy works for them only with odd powers and odd roots, because an "
-        "even power makes a negative number positive. That's what we look at next.", show(nh3, 'One condition for negative numbers'))),
+      L("Now the hierarchy. Take two positive numbers in different ranges, one above one and one between zero and one. "
+        "A positive power or root keeps a positive number on its side of one. So the number above one stays bigger. For "
+        "negative numbers, this works only with odd powers and odd roots. Here's an example. Which is bigger, the fifth "
+        "root of eleven tenths, or the square root of seven ninths? Calculating these roots would be a nightmare, so we "
+        "don't.", show(nh0, 'A positive power or root keeps'), show(nh3, 'For negative numbers, this works'),
+        show(nh1, 'Which is bigger')),
+      L("Eleven tenths is bigger than one, because eleven is bigger than ten. A root of a number above one stays above "
+        "one. Seven ninths is between zero and one, because seven is smaller than nine. Its root stays between zero and "
+        "one too. So the fifth root of eleven tenths is bigger. We ignore the roots and look at the numbers themselves.",
+        pt('nh1', 'Eleven tenths is bigger than one'), show(nh1r, 'So the fifth root of eleven tenths is bigger')),
+      L("Another one. Five quarters to the power of three, against the square root of three fifths. Five quarters is above "
+        "one, so its cube is above one too. Three fifths is between zero and one, so its root is too. So five quarters to "
+        "the power of three is bigger.",
+        show(nh2, 'Five quarters to the power of three, against'), show(nh2r, 'So five quarters to the power of three is bigger')),
+      L("Why only odd powers and roots for negative numbers? Because an even power makes a negative number positive. "
+        "That's what we look at next.", pt('nh3', 'Why only odd powers'))),
     S('Exceptional powers',
       L("Some powers move a number into a different range. We call them exceptional powers, and we deal with them first. "
         "The first kind is a negative number to an even power. Negative five, squared, is twenty-five, and negative three, "
-        "to the power of four, is eighty-one. Both jumped to the positive side.", show(nx1, 'Negative five, squared')),
+        "to the power of four, is eighty-one. Both jumped to the positive side.", show(nx1, 'Negative five, squared'),
+        show(nx1b, 'and negative three')),
       L("Careful with the brackets. Negative five, in brackets, squared, is twenty-five. But without brackets, negative five "
-        "squared means we square only the five, and then put the minus in front. That gives negative twenty-five.", show(nx2, 'Careful with the brackets')),
+        "squared means we square only the five, and then put the minus in front. That gives negative twenty-five.",
+        show(nx2, 'Negative five, in brackets'), show(nx2b, 'But without brackets')),
       L("The second kind is a negative exponent. We flip the base and drop the minus. Three eighths to the power of negative "
         "two is eight thirds, squared. The base was a fraction, and now it's above one. And five to the power of negative "
-        "three is one fifth, cubed. The base was above one, and now it's a fraction.", show(nx3, 'The second kind is a negative exponent')),
+        "three is one fifth to the power of three. The base was above one, and now it's a fraction.",
+        show(nx3, 'Three eighths to the power of negative'), show(nx3b, 'And five to the power of negative')),
       L("Here's how it helps. Which is bigger, the square root of four sevenths, or three fifths to the power of negative "
-        "three? First handle the exceptional power: flip it, and it's five thirds, cubed. Five thirds is above one, so its "
+        "three? First handle the exceptional power: flip it, and it's five thirds to the power of three. Five thirds is above one, so its "
         "cube is above one. The square root of four sevenths is less than one. So three fifths to the power of negative "
         "three is bigger.", show(nx4, 'Which is bigger, the square root of four sevenths'),
         show(nx4b, 'flip it'), show(nx4c, 'So three fifths to the power of negative')),
       L("In the next lesson you'll meet the arrows, and with the arrows you may keep the minus in the exponent. Both ways "
         "give the same answer.", pt('nx4b', 'In the next lesson'))),
     S('Same operation',
-      L("When two positive numbers get exactly the same operation, we can ignore the operation. Whichever number was bigger "
-        "without it is bigger with it. But first, handle any exceptional power."),
+      L("The same positive power or root, on two positive numbers, keeps their order. Whichever number was bigger before "
+        "is bigger after it. But first, handle any exceptional power.", show(ns0, 'The same positive power or root')),
       L("For example, five to the power of negative four against four to the power of negative four. There's a minus in "
         "the exponent, so first we flip. That's one fifth to the power of four against one quarter to the power of four. "
         "Now both have the same power, so we ignore it. One quarter is bigger than one fifth, so four to the power of "
@@ -572,23 +607,25 @@ video('number-line', 'lesson', slides=[
         "gives nine and negative two gives four, so the order flipped. With negative numbers, don't ignore the power.",
         show(ns3, 'this works for positive numbers only'))),
     S('Strong on strong',
-      L("The last tool of this lesson is our own slogan: strong on strong, weak on weak. When we compare two products, we "
-        "match the big factors against each other, and the small factors against each other."),
+      L("The last tool of this lesson is our own slogan: strong on strong, weak on weak. When we compare two products of "
+        "positive numbers, we match the big factors against each other, and the small factors against each other.",
+        show(nk0, 'strong on strong, weak on weak')),
       L("For example, four times six against three times five. Four beats three, and six beats five. One side wins both "
         "matches, so four times six is bigger. Twenty-four is bigger than fifteen. With letters, if a is smaller than b and c "
         "is smaller than d, all positive, then a times c is smaller than b times d.", show(nk1, 'four times six against'),
+        show(nk1b, 'Four beats three'), show(nk1c, 'and six beats five'), show(nk1d, 'Twenty-four is bigger than fifteen'),
         show(nk2, 'With letters')),
       L("But if each side wins one match, the rule doesn't decide. Two times nine against three times five. Three beats two, "
         "but nine beats five. Here two times nine, eighteen, happens to be bigger, but the rule alone can't tell us that.",
         show(nk3, 'if each side wins one match')),
-      L("One more push. If one number is already bigger, and we multiply it by a number above one, it gets even bigger. "
+      L("One more push. If one positive number is already bigger, and we multiply it by a number above one, it gets even bigger. "
         "Seven is bigger than five, so seven times three is bigger than five too. But multiplying by a fraction can turn it "
         "around. Seven times one half is three and a half, which is smaller than five.", show(nk4, 'One more push'))),
     S('Recap',
       L("So, in every question, first find the ranges the givens allow. Then handle any exceptional power. Then compare "
         "with the hierarchy, the same operation, or strong on strong. This understanding of how numbers grow, shrink and "
         "jump between ranges is what makes these questions fast. Next comes a question, and then the arrows for powers. "
-        "[pause] Okay. I'll see you in the next video.", show(nr, 'first find the ranges'))),
+        "[pause] I'll see you in the next video.", show(nr, 'first find the ranges'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-493 (Hebrew: lesson 1 example)
@@ -1580,6 +1617,8 @@ def _stem_parts(vid):
 _cp_spec = importlib.util.spec_from_file_location('_camera_parts', os.path.join(HERE, '_camera_parts.py'))
 CP = importlib.util.module_from_spec(_cp_spec); _cp_spec.loader.exec_module(CP)
 CP.split(globals(), 'number-line', 'The Number Line', [(1, None), (3, "Let's continue with the number line, and see how operations move a number."), (6, "Let's continue with the number line, and compare two numbers that go through operations.")])
+for _v in ('number-line', 'number-line-2'):       # batch A shared fix 4 (W16): no "Okay." before the goodbye (unrecorded parts)
+    _ln = VIDEOS[_v]['slides'][-1]['lines'][-1]; _ln['say'] = _ln['say'].replace(" [pause] Okay. I'll see you in the next part.", " [pause] I'll see you in the next part.")
 
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v); _write_gap(_v)
 

@@ -24,13 +24,16 @@
     "at": [
      "side. To add",
      "q and q",
-     "we need a common denominator",
-     "p times q"
+     "p over q is p squared over p q",
+     "and q over p is q squared",
+     "q squared over",
+     "So the right side is"
     ]
    },
    {
     "say": "Both sides now have the same denominator, p q, so their tops are equal. r squared equals p squared plus q squared.",
     "at": [
+     "Both sides now",
      "r squared equals p squared",
      "plus q squared"
     ]
@@ -41,6 +44,8 @@
     "say": "[pause] Now let's plug in numbers. We need positive integers that fit r squared equals p squared plus q squared. The best-known ones are three, four and five, because nine plus sixteen is twenty-five. Here r is five.",
     "at": [
      "Now let's",
+     "r squared equals p squared plus q squared",
+     "plus q squared",
      "three, four and five",
      "nine plus sixteen"
     ]
@@ -69,6 +74,8 @@
     "say": "[pause] Now the insight. Let's see why the other three claims always hold. r squared equals p squared plus q squared is Pythagoras. So p, q and r can be the sides of a right triangle, with legs p and q, and the longest side, r.",
     "at": [
      "Now the",
+     "r squared equals p squared plus q squared is",
+     "plus q squared",
      "can be the sides of a right triangle",
      "a right triangle"
     ]
@@ -78,6 +85,8 @@
     "at": [
      "the longest side is longer",
      "than each leg",
+     "So r is bigger than p",
+     "p and bigger",
      "numbers one and",
      "squared plus a"
     ]
@@ -87,14 +96,17 @@
     "at": [
      "two sides together are longer",
      "than the third",
+     "So p plus q is bigger",
+     "bigger than r",
      "number two"
     ]
    },
    {
-    "say": "But nothing in the triangle says how long r is. For three, four, five it's five, and for six, eight, ten it's ten. So only choice number three can fail. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "But nothing in the triangle limits how long r is. So only choice number three can fail. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
-     "For three, four",
-     "So only choice number three can fail"
+     "So only choice number three can fail",
+     "can fail. Choice",
+     "number three is"
     ]
    }
   ]

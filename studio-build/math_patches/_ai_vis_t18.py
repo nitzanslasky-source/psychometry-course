@@ -454,8 +454,10 @@ dp3 = I('dp3', '$\\overline{ABC}$: $\\ A=5,\\ B=3,\\ C=8$: $\\ 538$', size=34, h
 dp4 = I('dp4', '$\\overline{AA}$: $\\ 33,\\ 77$ ✓ $\\quad 37$ ✗', size=34, hand='AA :    33,   77   ✓        37   ✗')
 dp5 = I('dp5', 'Different digits only if the question says so: $\\ $then $\\overline{AB}\\ne22,\\ 55$', size=28)
 dp6 = I('dp6', '$\\overline{AB}$: $\\ A$ from $1$ to $9$, $\\ B$ from $0$ to $9$ $\\quad$ no $08$', size=30)
-dp7 = I('dp7', '$27=10\\cdot2+7 \\qquad 538=100\\cdot5+10\\cdot3+8$', size=32, hand='27 = 10·2 + 7        538 = 100·5 + 10·3 + 8')
-dp8 = I('dp8', '$\\overline{AB}=10A+B \\qquad \\overline{ABC}=100A+10B+C$', size=32, hand='AB = 10A + B        ABC = 100A + 10B + C')
+dp7 = I('dp7', '$27=10\\cdot2+7$', size=32, hand='27 = 10·2 + 7')
+dp7b = I('dp7b', '$538=100\\cdot5+10\\cdot3+8$', size=32, hand='538 = 100·5 + 10·3 + 8')
+dp8 = I('dp8', '$\\overline{AB}=10A+B$', size=32, hand='AB = 10A + B')
+dp8b = I('dp8b', '$\\overline{ABC}=100A+10B+C$', size=32, hand='ABC = 100A + 10B + C')
 dp9 = I('dp9', '$A=6,\\ B=1$: $\\ 10\\cdot6+1=61$', size=32, hand='A = 6,  B = 1 :    10·6 + 1 = 61')
 dp10 = I('dp10', '1. Write it vertically', size=28)
 dp10b = I('dp10b', '2. The ones column', size=28)
@@ -465,11 +467,21 @@ dp11 = I('dp11', 'Plugging in always works. Steps 1-3 save tries.', size=28)
 dp12 = I('dp12', '$34+37=71$ ✓', size=34, hand='34 + 37 = 71   ✓')
 dp13 = I('dp13', '$10A+B=4(A+B)$', size=34, hand='10A + B = 4(A + B)')
 dp13b = I('dp13b', '$10A+B=4A+4B$', size=34, hand='10A + B = 4A + 4B')
-dp14 = I('dp14', '$6A=3B$: $\\ B=2A$', size=34, hand='6A = 3B :    B = 2A')
-dp15 = I('dp15', '$12,\\ 24,\\ 36,\\ 48$ $\\quad A=5$: $\\ B=10$ ✗', size=32, hand='12,   24,   36,   48        A = 5 :    B = 10   ✗')
+dp14 = I('dp14', '$6A=3B$', size=34, hand='6A = 3B')
+dp14b = I('dp14b', '$\\div3$: $\\ B=2A$', size=34, hand='÷3 :    B = 2A')
+dp15 = I('dp15', '$12,\\ 24,\\ 36,\\ 48$', size=32, hand='12,   24,   36,   48')
+dp15b = I('dp15b', '$A=5$: $\\ B=10$ ✗', size=32, hand='A = 5 :    B = 10   ✗')
 dp16 = I('dp16', '$24$: $\\ 4\\cdot(2+4)=24$ ✓', size=32, hand='24 :    4·(2 + 4) = 24   ✓')
-dp17 = I('dp17', '$10A+B=7(A+B)$: $\\ 3A=6B$, $\\ A=2B$', size=32, hand='10A + B = 7(A + B) :    3A = 6B,    A = 2B')
-dp18 = I('dp18', '$21,\\ 42,\\ 63,\\ 84$ $\\quad B=0$: $\\ A=0$ ✗', size=32, hand='21,   42,   63,   84        B = 0 :    A = 0   ✗')
+dp17 = I('dp17', '$10A+B=7(A+B)$', size=32, hand='10A + B = 7(A + B)')
+dp17b = I('dp17b', '$10A+B=7A+7B$', size=32, hand='10A + B = 7A + 7B')
+dp17c = I('dp17c', '$3A=6B$', size=32, hand='3A = 6B')
+dp17d = I('dp17d', '$\\div3$: $\\ A=2B$', size=32, hand='÷3 :    A = 2B')
+dp18 = I('dp18', '$21,\\ 42,\\ 63,\\ 84$', size=32, hand='21,   42,   63,   84')
+dp18b = I('dp18b', '$B=5$: $\\ A=10$ ✗', size=32, hand='B = 5 :    A = 10   ✗')
+dp18c = I('dp18c', '$B=0$: $\\ A=0$ ✗', size=32, hand='B = 0 :    A = 0   ✗')
+dp6a = I('dp6a', '$A+3+1=7$', size=32, hand='A + 3 + 1 = 7')
+dp6b = I('dp6b', '$A+4=7$', size=32, hand='A + 4 = 7')
+dp6c = I('dp6c', '$7-4=3$: $\\ A=3$', size=32, hand='7 − 4 = 3 :    A = 3')
 video('digit-puzzles', 'lesson', slides=[
     S('Exercises with Letters',
       L("Welcome. Sometimes a calculation on the exam is written with letters instead of digits. Instead of thirty-two "
@@ -479,8 +491,8 @@ video('digit-puzzles', 'lesson', slides=[
       L("Each letter stands for a digit. A B with a bar on top is a two-digit number. A is its tens digit, and B is its "
         "ones digit. It is not A times B. For example, if A is four and B is seven, A B is forty-seven, not four times "
         "seven.", show(dp1, 'if A is four and B is seven')),
-      L("Think of it as a number written in another language. In that language, two is drawn as A, and three is drawn as "
-        "B. So A B is simply twenty-three. It's not two times three, which is six.", show(dp2, 'So A B is simply twenty-three')),
+      L("Think of it as a number written in another language. Let's choose different digits now. In that language, two "
+        "is drawn as A, and three is drawn as B. So A B is simply twenty-three. It's not two times three, which is six.", show(dp2, 'So A B is simply twenty-three')),
       L("The bar on top tells us that the letters are the digits of one number. A B C with a bar is a three-digit number. "
         "If A is five, B is three and C is eight, A B C is five hundred thirty-eight.", show(dp3, 'If A is five, B is three'))),
     S('Same letter, different letters',
@@ -489,17 +501,17 @@ video('digit-puzzles', 'lesson', slides=[
       L("Different letters are different digits only when the question says so. In most exam questions it does say "
         "different digits, and then A B can't be twenty-two or fifty-five. If the question doesn't say it, A and B may be "
         "the same digit.", show(dp5, 'only when the question says so')),
-      L("And the leftmost digit is never zero. Nobody writes oh eight. It's not a phone area code, it's just eight. So in "
+      L("And the leftmost digit is never zero. Zero eight has the value eight. It isn't a two-digit number. So in "
         "A B, A is a digit from one to nine, and B can be any digit from zero to nine.", show(dp6, 'So in A B, A is a digit'))),
     S('A number written with its digits',
       L("Every number can be written with its digits. Twenty-seven has two tens and seven ones, so it's ten times two, "
         "plus seven. Five hundred thirty-eight is a hundred times five, plus ten times three, plus eight.",
-        show(dp7, 'Twenty-seven has two tens')),
+        show(dp7, 'Twenty-seven has two tens'), show(dp7b, 'Five hundred thirty-eight is')),
       L("Letters work the same way. A B is ten A plus B, because A is in the tens place. And A B C is a hundred A, plus ten "
         "B, plus C. For example, if A is six and B is one, ten times six plus one is sixty-one.",
-        show(dp8, 'A B is ten A plus B'), show(dp9, 'if A is six and B is one')),
+        show(dp8, 'A B is ten A plus B'), show(dp8b, 'And A B C is a hundred A'), show(dp9, 'if A is six and B is one')),
       L("Some students like to solve with this form. Usually, plugging in two numbers is faster, but this form is what we "
-        "need when a puzzle comes in words.", pt('dp8', 'Some students like to solve'))),
+        "need when a puzzle comes in words.", pt('dp8b', 'Some students like to solve'))),
     S('The four steps',
       L("Now the technique. Many letter puzzles are solved with four steps. One, write the calculation vertically, with "
         "the ones digits lined up. Two, check the ones column. Three, check the leftmost digit and the size of the numbers. "
@@ -517,7 +529,9 @@ video('digit-puzzles', 'lesson', slides=[
         "digit works. So B is seven, and we carry one to the tens column.", show(dpc['o'], 'Step two, the ones column'),
         show(dpc['b7'], 'So B is seven')),
       L("Step three, the tens column, which is the leftmost one here. A plus three, plus the carried one, is seven. So A "
-        "plus four is seven, and A is three.", show(dpc['t'], 'Step three, the tens column'), show(dpc['a3'], 'and A is three')),
+        "plus four is seven. Seven minus four is three, so A is three.", show(dpc['t'], 'Step three, the tens column'),
+        show(dp6a, 'A plus three, plus the carried one'), show(dp6b, 'So A plus four is seven'),
+        show(dp6c, 'Seven minus four is three'), show(dpc['a3'], 'so A is three')),
       L("Let's check. Thirty-four plus thirty-seven is seventy-one. It fits, and here we didn't even need step four.",
         show(dp12, 'Thirty-four plus thirty-seven'))),
     S('A puzzle in words',
@@ -525,18 +539,23 @@ video('digit-puzzles', 'lesson', slides=[
         "its digits. We write the number as ten A plus B, and its digit sum as A plus B. So ten A plus B equals four times "
         "the whole bracket, A plus B.", show(dp13, 'So ten A plus B equals four times')),
       L("Open the bracket: ten A plus B equals four A plus four B. Subtract four A and B from both sides, and six A equals "
-        "three B. Divide both sides by three, and B equals two A. So B is twice A.", show(dp13b, 'Open the bracket'), show(dp14, 'and six A equals three B')),
+        "three B. Divide both sides by three, and B equals two A. So B is twice A.", show(dp13b, 'Open the bracket'), show(dp14, 'and six A equals three B'),
+        show(dp14b, 'and B equals two A')),
       L("Now the digits that fit. A can't be zero, because it's the leftmost digit. A is one gives B is two, so twelve. "
         "Then twenty-four, thirty-six and forty-eight. A is five would need B to be ten, and ten is not a digit, so we stop "
         "there. Let's check one. Twenty-four has the digit sum six, and four times six is twenty-four.",
-        show(dp15, 'A is one gives B is two'), show(dp16, "Let's check one"))),
+        show(dp15, 'so twelve'), show(dp15b, 'A is five would need'), show(dp16, "Let's check one"))),
     S('A puzzle in words',
-      L("One more. A two-digit number is seven times the sum of its digits. Ten A plus B equals seven A plus seven B. "
-        "Subtract seven A and B from both sides, and three A equals six B, so A equals two B. B is one gives twenty-one, "
-        "and then forty-two, sixty-three and eighty-four. B is zero would make A zero too, and a number can't start with "
-        "zero.", show(dp17, 'A two-digit number is seven times'), show(dp18, 'B is one gives twenty-one')),
+      L("One more. A two-digit number is seven times the sum of its digits. So ten A plus B equals seven times A plus B. "
+        "Open the bracket: ten A plus B equals seven A plus seven B. Subtract seven A and B from both sides, and three A "
+        "equals six B. Divide both sides by three, so A equals two B. B is one gives A is two, so twenty-one. B is two, "
+        "three and four give forty-two, sixty-three and eighty-four. B is five would need A to be ten, and ten is not a "
+        "digit. B is zero would make A zero too, and a number can't start with zero.",
+        show(dp17, 'So ten A plus B equals seven times'), show(dp17b, 'Open the bracket: ten A plus B equals seven A'),
+        show(dp17c, 'and three A equals six B'), show(dp17d, 'so A equals two B'), show(dp18, 'B is two, three and four give'),
+        show(dp18b, 'B is five would need'), show(dp18c, 'B is zero would make')),
       L("Each question that follows uses these steps, and teaches one more tool. Try each question first, and then watch "
-        "its solution. [pause] Okay. I'll see you in the next video.", pt('dp18', 'Each question that follows')),
+        "its solution. [pause] I'll see you in the next video.", pt('dp18', 'Each question that follows')),
       sb='A puzzle in words'),
 ])
 
@@ -1375,6 +1394,8 @@ def _stem_parts(vid):
 _cp_spec = importlib.util.spec_from_file_location('_camera_parts', os.path.join(HERE, '_camera_parts.py'))
 CP = importlib.util.module_from_spec(_cp_spec); _cp_spec.loader.exec_module(CP)
 CP.split(globals(), 'digit-puzzles', 'Exercises with Letters', [(1, None), (4, "Let's continue with exercises with letters, and learn how to solve them.")])
+_ln = VIDEOS['digit-puzzles']['slides'][-1]['lines'][-1]    # batch A shared fix 4 (W16): no "Okay." before the goodbye
+_ln['say'] = _ln['say'].replace(" [pause] Okay. I'll see you in the next part.", " [pause] I'll see you in the next part.")
 
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v); _write_gap(_v)
 

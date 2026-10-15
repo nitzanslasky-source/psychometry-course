@@ -14,7 +14,7 @@
     ]
    },
    {
-    "say": "Let's call the result y. That's the number that came out of the diamond, and the inverse should give us back the original x. To undo it, we go backwards. The last step comes off first, like taking off your shoes before your socks. So first we subtract three from y, and then we divide the whole y minus three by two. The inverse is the whole bracket, y minus three, over two.",
+    "say": "Let's call the result y. That's the number that came out of the diamond, and the inverse should give us back the original x. To undo it, we go backwards. The last step comes off first, like taking off your shoes before your socks. So first we subtract three from y. Then we divide the result by two. The inverse is y minus three, all divided by two.",
     "at": [
      "The last step comes off first",
      "first, like taking"
@@ -23,8 +23,12 @@
    {
     "say": "Let's check it with a number. Four goes into the diamond. Two times four is eight, and eight plus three is eleven. Now undo it. Eleven minus three is eight, and eight over two is four. We're back at four, so the inverse works.",
     "at": [
-     "Four goes into the diamond",
-     "Two times four"
+     "Two times four is eight",
+     "eight plus three is eleven",
+     "Now undo it",
+     "Eleven minus three is eight",
+     "eight over two is four",
+     "We're back at"
     ]
    },
    {
@@ -35,13 +39,25 @@
     ]
    },
    {
-    "say": "One more example. Diamond of x is three x minus four. Its steps are times three, then minus four. Again, y is the result we want to undo. So the inverse adds four first, and then divides the whole y plus four by three. That's the whole bracket, y plus four, over three. Let's check with five. Three times five is fifteen, and fifteen minus four is eleven. Eleven plus four is fifteen, and fifteen over three is five. Back to five.",
+    "say": "One more example. Diamond of x is three x minus four. Its steps are times three, then minus four. Again, y is the result we want to undo. So the inverse adds four first. Then it divides the result by three. That's y plus four, all divided by three. Let's check with five. Three times five is fifteen, and fifteen minus four is eleven. Eleven plus four is fifteen, and fifteen over three is five. Back to five.",
     "at": [
-     "One more example",
-     "x minus four"
+     "Diamond of x is three x minus four",
+     "x minus four",
+     "So the inverse adds four first",
+     "Then it divides",
+     "is fifteen",
+     "fifteen minus four is eleven",
+     "Eleven plus four is fifteen",
+     "fifteen over three is five",
+     "Back to five"
     ]
    },
-   "So to undo an operation, read its steps, and undo them in reverse order, the last step first. [pause] Okay. I'll see you in the next video."
+   {
+    "say": "So to undo an operation, read its steps, and undo them in reverse order, the last step first. [pause] I'll see you in the next video.",
+    "at": [
+     "undo them in reverse order"
+    ]
+   }
   ]
  ]
 }

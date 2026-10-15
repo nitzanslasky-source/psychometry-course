@@ -23,6 +23,10 @@
     "at": [
      "With the worst luck",
      "first socks are",
+     "There are three colors",
+     "the first three",
+     "one red, one blue and one green",
+     "Three socks, and",
      "So two or three socks",
      "are not enough"
     ]
@@ -31,26 +35,29 @@
     "say": "Now the fourth sock. It's red, blue or green, so whatever it is, it matches one of the socks she already has. So four socks always give a pair, and three socks don't. The smallest number is four. Choice number four is our answer.",
     "at": [
      "Now the fourth sock",
-     "It's red, blue",
+     "It's red, blue or green",
+     "so whatever it",
      "Choice number four is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] This is the pigeonhole principle. The three colors are three boxes, and the socks are the items. Four socks in three boxes means at least one box gets two socks. Choice number four.",
+    "say": "[pause] This is the pigeonhole principle. The three colors are three boxes, and the socks are the items. Four socks in three boxes means at least one box gets two socks.",
     "at": [
      "The three colors are three boxes",
-     "boxes, and the",
-     "at least one box gets two socks",
-     "number four"
+     "and the socks are the items",
+     "Four socks in three boxes",
+     "means at least one box gets two",
+     "at least one box gets two socks"
     ]
    },
    {
-    "say": "The numbers five, seven and nine don't change the answer, because every color has more than one sock. [pause] Okay. I'll see you in the next question.",
+    "say": "The numbers five, seven and nine don't change the answer. Only the number of colors matters, and there are three. Each color has at least one sock, so three different colors can really come first. Choice number four is our answer, and I'll see you in the next question.",
     "at": [
      "The numbers five, seven and nine",
-     "because every color"
+     "nine don't change",
+     "number four is"
     ]
    }
   ]

@@ -15,7 +15,7 @@
     ]
    },
    {
-    "say": "Think of it as a number written in another language. In that language, two is drawn as A, and three is drawn as B. So A B is simply twenty-three. It's not two times three, which is six.",
+    "say": "Think of it as a number written in another language. Let's choose different digits now. In that language, two is drawn as A, and three is drawn as B. So A B is simply twenty-three. It's not two times three, which is six.",
     "at": [
      "So A B is simply twenty-three",
      "It's not two"
@@ -45,7 +45,7 @@
     ]
    },
    {
-    "say": "And the leftmost digit is never zero. Nobody writes oh eight. It's not a phone area code, it's just eight. So in A B, A is a digit from one to nine, and B can be any digit from zero to nine.",
+    "say": "And the leftmost digit is never zero. Zero eight has the value eight. It isn't a two-digit number. So in A B, A is a digit from one to nine, and B can be any digit from zero to nine.",
     "at": [
      "So in A B, A is a digit",
      "is a digit"
@@ -58,7 +58,9 @@
     "at": [
      "written with its",
      "Twenty-seven has two tens",
-     "times two, plus"
+     "seven ones, so",
+     "Five hundred thirty-eight is",
+     "hundred times five"
     ]
    },
    {
@@ -66,11 +68,13 @@
     "at": [
      "A B is ten A plus B",
      "in the tens",
+     "And A B C is a hundred A",
+     "B, plus C",
      "if A is six and B is one",
      "six plus one"
     ]
    },
-   "Some students like to solve with this form. Usually, plugging in two numbers is faster, but this form is what we need when a puzzle comes in words. [pause] Okay. I'll see you in the next part."
+   "Some students like to solve with this form. Usually, plugging in two numbers is faster, but this form is what we need when a puzzle comes in words. [pause] I'll see you in the next part."
   ]
  ]
 }

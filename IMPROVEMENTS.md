@@ -20,6 +20,10 @@ Claude and Codex: add ideas here instead of starting them. Keep each item short:
   now; re-read the opening line when improving those videos. (List in the 15 Oct method-vocabulary report.)
 - "three hundred sixty" vs her "three sixty" in many geometry scripts — check how she actually says it when reading.
 
+- r26-t19-summary (summary, not recorded): its caption still says "Operation first"; match the corrected #127 rule ("inside its brackets first, then the definition, then the rest"). Cost: one caption.
+- Camera-part closing line `_camera_parts.CLOSE` still says "Okay. I'll see you in the next part." (W16 says no "Okay."); batch-A parts drop it in their specs. Decide one rule for future parts (recorded parts keep theirs).
+- Prompter formatter turns "the remainder is one of twelve options" into "1 of 12" (r26-t20-counting 3.3); harmless when read aloud.
+
 ## Visuals
 - Small right-column copies in some geometry question videos (readable but small).
 - Handwritten board lines render in red (renderer default) — consider the pen colour.

@@ -490,47 +490,64 @@ def IH(name, tex, size=34, col=0):
 # learn). Kept from the English lesson: brackets on every input (negative, an expression) and the trap; the order can
 # matter (one counterexample; letters for "always"; equal inputs prove nothing); an unknown input = an equation.
 # Every concept gets 2-3 examples and a non-example where it helps; new numbers (not the Hebrew's, not the questions').
-nos1 = SLOT('nos1', '[[a]] ♥ [[b]] = 5·([[a]] + [[b]])', [('in', '{{7}} ♥ {{3}} = 5·({{7}} + {{3}})'), ('calc', '= 5·10 = 50')])
-nos2 = SLOT('nos2', '◆([[a]]) = [[a]]^2 − 3·[[a]]', [('in', '◆({{5}}) = {{5}}^2 − 3·{{5}}'), ('calc', '= 25 − 15 = 10')])
+nos1 = SLOT('nos1', '[[a]] ♥ [[b]] = 5·([[a]] + [[b]])', [('in', '{{7}} ♥ {{3}} = 5·({{7}} + {{3}})'), ('sum', '= 5·10'), ('calc', '= 50')])   # 2026-10-15 Codex batch A: one step per clause
+nos2 = SLOT('nos2', '◆([[a]]) = [[a]]^2 − 3·[[a]]', [('in', '◆({{5}}) = {{5}}^2 − 3·{{5}}'), ('sq', '= 25 − 3·5'), ('tm', '= 25 − 15'), ('calc', '= 10')])   # 2026-10-15 Codex batch A
 nos3 = SLOT('nos3', '◆([[x]]) = [[x]]^2 + 3·[[x]]', [('in', '◆({{−2}}) = {{(−2)}}^2 + 3·{{(−2)}}'), ('calc', '= 4 − 6 = −2')])
 noc1 = CHAIN('noc1', [('line', '◆([[◆(2)]])'), ('in', '[[◆(2)]] = 2^2 = {{4}}'), ('out', '◆({{4}}) = 4^2 = {{16}}')])
 no1 = I('no1', '$3\\cdot7$ $\\ \\to\\ $ $3\\times7=21$', size=36)
 no2 = IH('no2', '$5^2=5\\cdot5=25$', size=34)
 no3 = IH('no3', '$2^3=2\\cdot2\\cdot2=8$', size=34)
 no4 = I('no4', '$7\\heartsuit3=\\ ?$', size=36)
-no5 = I('no5', '$2\\heartsuit6=5\\cdot(2+6)$', size=32)
-no5b = I('no5b', '$=5\\cdot8=40$', size=32)
+no5 = I('no5', '$2\\heartsuit6$', size=32)
+no5a = I('no5a', '$=5\\cdot(2+6)$', size=32)
+no5b = I('no5b', '$=5\\cdot8$', size=32)
+no5c = I('no5c', '$=40$', size=32)
 no6 = I('no6', '$7\\cdot5+3=38$ ✗ $\\quad$ the $5$ multiplies the whole sum', size=28)
 no7 = I('no7', 'On the exam: a dollar sign, $\\#$, brackets $\\quad$ here: $\\blacklozenge$', size=30, col=1)   # 2026-10-14: a literal \\$ broke the caption's math
-no8 = IH('no8', '$\\blacklozenge(2)=2^2-3\\cdot2=4-6=-2$', size=32)
+no8 = IH('no8', '$\\blacklozenge(2)=2^2-3\\cdot2$', size=32)
+no8b = IH('no8b', '$=4-6$', size=32)
+no8c = IH('no8c', '$=-2$', size=32)
 no9 = IH('no9', '$-2^2=-4$ ✗ $\\quad (-2)^2=4$ ✓', size=32, col=1)
 no10 = IH('no10', '$\\blacklozenge(x+2)=(x+2)^2+3(x+2)$', size=32)
-no11 = IH('no11', '$=x^2+4x+4+3x+6=x^2+7x+10$', size=32)
-no12 = I('no12', 'The operation first $\\quad$ only brackets come before it', size=30)
+no11 = IH('no11', '$=x^2+4x+4$', size=32)
+no11a = IH('no11a', '$\\quad+3x+6$', size=32)
+no11b = IH('no11b', '$4x+3x=7x$', size=30, col=1)
+no11c = IH('no11c', '$4+6=10$', size=30, col=1)
+no11d = IH('no11d', '$=x^2+7x+10$', size=32)
+no12 = I('no12', 'Inside its brackets first, then the definition, then the rest', size=30)
 no13 = IH('no13', '$\\blacklozenge(3)+\\blacklozenge(4)=9+16=25$', size=32)
 no14 = I('no14', '$\\blacklozenge(7)=49$ ✗ $\\quad 3^2+4^2\\ne7^2$', size=32)
 no15 = IH('no15', '$\\blacklozenge(3+4)=\\blacklozenge(7)=49$', size=32)
 no16 = I('no16', '$a\\star b=3a+b^2$', size=34, col=1)
 no17 = IH('no17', '$(1\\star2)\\star3$', size=32)
 no17b = IH('no17b', '$1\\star2=3+4=7$', size=32)
+no17c = IH('no17c', '$(1\\star2)\\star3=7\\star3$', size=32)
 no18 = IH('no18', '$7\\star3=21+9=30$', size=32)
 no19 = I('no19', '$\\blacklozenge(5)=30$: $\\ 6x$? $\\ 6\\cdot5=30$', size=30)
 no19b = I('no19b', '$5x+5$? $\\ 25+5=30$', size=30)
 no20 = I('no20', '$x^2+5$: $\\ 25+5=30$ ✓ could be', size=28)
 no20b = I('no20b', '$4x+8$: $\\ 20+8=28$ ✗ cannot', size=28)
+no21d = I('no21d', '$a\\star b=3a+b^2$', size=32, col=1)
 no21 = IH('no21', '$2\\star4=6+16=22$', size=32)
 no21b = IH('no21b', '$4\\star2=12+4=16$', size=32)
 no22 = I('no22', 'Not always? One example where it fails.', size=30)
 no23 = I('no23', 'Always? Use letters', size=28)
+no23a = I('no23a', '$a\\heartsuit b=5(a+b)$', size=30, col=1)
 no23b = I('no23b', '$b\\heartsuit a=5(b+a)=5(a+b)=a\\heartsuit b$', size=28)
 no24 = I('no24', 'Order questions: equal inputs show nothing ($4\\star4=4\\star4$)', size=28)
-no25 = IH('no25', '$x\\star4=25$: $\\ 3x+16=25$', size=32)
-no25b = IH('no25b', '$3x=9,\\ \\ x=3$', size=32)
+no25 = IH('no25', '$x\\star4=25$', size=32)
+no25d = I('no25d', '$a\\star b=3a+b^2$', size=30, col=1)
+no25a = IH('no25a', '$3x+16=25$', size=32)
+no25b = IH('no25b', '$3x=9$', size=32)
+no25e = IH('no25e', '$x=9\\div3=3$', size=32)
 no25c = IH('no25c', '$3\\cdot3+16=9+16=25$ ✓', size=32)
-no26 = I('no26', '$k\\heartsuit2=35$: $\\ 5(k+2)=35$', size=32)
-no26b = IH('no26b', '$k+2=7,\\ \\ k=5$', size=32)
+no26 = I('no26', '$k\\heartsuit2=35$', size=32)
+no26d = I('no26d', '$a\\heartsuit b=5(a+b)$', size=30, col=1)
+no26a = IH('no26a', '$5(k+2)=35$', size=32)
+no26b = IH('no26b', '$k+2=35\\div5=7$', size=32)
+no26c = IH('no26c', '$k=7-2=5$', size=32)
 no27 = I('no27', 'Read the definition, put each input in its slot, in brackets', size=28)
-no28 = I('no28', 'Operation first $\\quad$ nested: inside out $\\quad$ no definition: test each choice', size=26)
+no28 = I('no28', 'Input, then the operation, then the rest $\\quad$ nested: inside out $\\quad$ no definition: test each choice', size=26)
 video('new-operation', 'lesson', slides=[
     S('Defining a New Operation',
       L("Welcome to a new topic, defining a new operation. It's a type of question you probably never met at school. It's "
@@ -544,8 +561,8 @@ video('new-operation', 'lesson', slides=[
         "the plus sign. Until someone told you that plus means adding, it was just a mark. Those were new symbols for "
         "things you already knew how to do."),
       L("And this one really was a new operation: a small two up high, like five with a small two. Someone told you to "
-        "multiply the number by itself, so five times five, twenty-five. Then you learned that a small three means three "
-        "times, so two with a small three is two times two times two, which is eight. Square roots were the same story. A "
+        "multiply the number by itself, so five times five, twenty-five. Then you learned that a small three means: multiply "
+        "three copies of the number. So two with a small three is two times two times two, which is eight. Square roots were the same story. A "
         "symbol, a definition, and then you could solve.", show(no2, 'so five times five'), show(no3, 'two times two times two'))),
     S('The heart',
       L("Now I'll teach you a brand-new operation, the heart. What is seven heart three? Right now, nobody can say, "
@@ -554,9 +571,11 @@ video('new-operation', 'lesson', slides=[
         "the heart, and b is whatever sits after it.", show(nos1['line'], 'a heart b means')),
       L("Seven sits before the heart, so it goes in the place of a. Three sits after it, so it goes in the place of b. "
         "Seven plus three is ten, and ten times five is fifty. So seven heart three is fifty.",
-        show(nos1['in'], 'so it goes in the place of a'), show(nos1['calc'], 'ten times five is fifty')),
+        show(nos1['in'], 'in the place of b'), show(nos1['sum'], 'Seven plus three is ten'),
+        show(nos1['calc'], 'is fifty')),
       L("One more. Two heart six. Two goes in the place of a, and six goes in the place of b. Two plus six is eight, and "
-        "eight times five is forty.", show(no5, 'Two heart six'), show(no5b, 'Two plus six is eight')),
+        "eight times five is forty.", show(no5, 'Two heart six'), show(no5a, 'six goes in the place of b'),
+        show(no5b, 'Two plus six is eight'), show(no5c, 'is forty')),
       L("Careful to follow the whole rule. If you do seven times five, and then add three, you get thirty-eight. That's a "
         "different rule, not the heart. In the heart, the five multiplies the whole sum. That's all a new operation is: a "
         "definition, and then you follow it exactly.", show(no6, 'you get thirty-eight'))),
@@ -569,9 +588,10 @@ video('new-operation', 'lesson', slides=[
         "three a. So we write the same template again, and put five in both spots.",
         show(nos2['line'], 'diamond of a is equal to'), show(nos2['in'], 'put five in both spots')),
       L("Five squared is twenty-five, and three times five is fifteen. Twenty-five minus fifteen is ten. So diamond of "
-        "five is ten.", show(nos2['calc'], 'Twenty-five minus fifteen')),
+        "five is ten.", show(nos2['sq'], 'is twenty-five'), show(nos2['tm'], 'is fifteen'), show(nos2['calc'], 'fifteen is ten')),
       L("Another one, diamond of two. Again, two goes in both spots. Two squared is four, and three times two is six. Four "
-        "minus six is negative two.", show(no8, 'Two squared is four'))),
+        "minus six is negative two.", show(no8, 'two goes in both spots'), show(no8b, 'is six'),
+        show(no8c, 'is negative two'))),
     S('Brackets on every input',
       L("On the exam, they often put a negative number, or a whole expression, into the operation. So remember this rule. "
         "Whatever goes in, goes in brackets, every time. Let's take diamond of x equals x squared plus three x. What is "
@@ -584,11 +604,14 @@ video('new-operation', 'lesson', slides=[
       L("Now a whole expression, x plus two. The whole x plus two goes where x was, in brackets. So diamond of x plus two "
         "is the bracket x plus two, squared, plus three times the bracket x plus two.", show(no10, 'The whole x plus two goes')),
       L("Now open the brackets. The bracket x plus two, squared, is x squared plus four x plus four. Three times the "
-        "bracket x plus two is three x plus six, because the three multiplies both parts. Together, that's x squared plus "
-        "seven x plus ten.", show(no11, 'is x squared plus four x plus four'))),
-    S('The operation first',
-      L("Where does a new operation fit in a longer exercise? The new operation comes first, before multiplying, dividing "
-        "and powers. Only brackets come before it.", show(no12, 'The new operation comes first')),
+        "bracket x plus two is three x plus six, because the three multiplies both parts. Now add the x's together, "
+        "and the numbers together. Four x plus three x is seven x, and four plus six is ten. Together, that's x squared plus seven x plus ten.",
+        show(no11, 'is x squared plus four x plus four'), show(no11a, 'is three x plus six'),
+        show(no11b, 'is seven x'), show(no11c, 'four plus six is ten'), show(no11d, "Together, that's"))),
+    S('Inside first, then the definition',
+      L("Where does a new operation fit in a longer exercise? First, work out everything inside the operation's own "
+        "brackets. Then use the definition, so the operation becomes a plain number. Only then do the rest of the exercise.",
+        show(no12, 'First, work out everything')),
       L("Let's say diamond of x is x squared. What is diamond of three plus diamond of four? First turn each diamond into a "
         "plain number. Diamond of three is nine, and diamond of four is sixteen. Then add them. Nine plus sixteen is "
         "twenty-five.", show(no13, 'What is diamond of three plus')),
@@ -610,7 +633,8 @@ video('new-operation', 'lesson', slides=[
       L("What is the bracket one star two, star three? Inner brackets first. One star two is three times one, plus two "
         "squared, so three plus four, seven. Now seven takes its place. Seven star three is three times seven, plus three "
         "squared, so twenty-one plus nine, thirty. The result of the inside becomes the input of the outside.",
-        show(no17, 'What is the bracket one star two'), show(no17b, 'One star two is'), show(no18, 'Seven star three is'))),
+        show(no17, 'What is the bracket one star two'), show(no17b, 'One star two is'), show(no17c, 'Now seven takes its place'),
+        show(no18, 'Seven star three is'))),
     S('No definition',
       L("Another type: they don't give you the definition at all. They only say that diamond of five is thirty. Someone "
         "took five, used the diamond, and got thirty. That's all you know."),
@@ -628,31 +652,37 @@ video('new-operation', 'lesson', slides=[
       L("Back to the star: three times the first number, plus the square of the second. Two star four is six plus "
         "sixteen, twenty-two. Four star two is twelve plus four, sixteen. Swap the inputs, and you get a different answer. "
         "So don't assume a new operation behaves like plus, where the order doesn't matter. Before you calculate, check "
-        "which number goes into which slot.", show(no21, 'Two star four is'), show(no21b, 'Four star two is')),
+        "which number goes into which slot.", show(no21d, 'Back to the star'), show(no21, 'Two star four is'), show(no21b, 'Four star two is')),
       L("A question may ask: is a star b always equal to b star a? To show that it's not always true, one example where it "
         "fails is enough, like two and four.", show(no22, "To show that it's not always true")),
-      L("To show that it's always true, numbers are not enough, because they only check some cases. Write the rule with "
-        "letters instead. For example, b heart a is five times the bracket b plus a. And b plus a is the same as a plus b, "
-        "so b heart a is always equal to a heart b. For the heart, the order never matters.", show(no23, 'Write the rule with letters'), show(no23b, 'For example, b heart a')),
+      L("To show that it's always true, numbers are not enough, because they only check some cases. One way is to write "
+        "the rule with letters. Remember, the heart adds the two numbers, and then multiplies by five. So b heart a is five "
+        "times the bracket b plus a. And b plus a is the same as a plus b, so b heart a is always equal to a heart b. For "
+        "the heart, the order never matters. In a multiple-choice question, ruling out the other three choices also works.",
+        show(no23, 'write the rule with letters'), show(no23a, 'Remember, the heart adds'), show(no23b, 'So b heart a')),
       L("One warning for order questions: don't test with two equal numbers. Four star four equals four star four for "
         "every operation, so it can't show anything about the order.", show(no24, "don't test with two equal numbers"))),
     S('An unknown input',
       L("And if an input is unknown? Write the definition, and it becomes an ordinary equation. For example, x star four "
         "is twenty-five. By the definition, x star four is three x plus four squared, which is three x plus sixteen. So "
-        "three x plus sixteen equals twenty-five. Subtract sixteen from both sides: three x is nine, so x is three.",
-        show(no25, 'For example, x star four'), show(no25b, 'Subtract sixteen from both sides')),
+        "three x plus sixteen is equal to twenty-five. Subtract sixteen from both sides, and three x is nine. Divide nine "
+        "by three, and x is three.",
+        show(no25, 'For example, x star four'), show(no25d, 'By the definition'), show(no25a, 'So three x plus sixteen'),
+        show(no25b, 'and three x is nine'), show(no25e, 'and x is three')),
       L("Let's check it. Three times three is nine, and nine plus sixteen is twenty-five. It works. One more: k heart two "
-        "is thirty-five. By the definition, that's five times the bracket k plus two. So k plus two is seven, and k is "
-        "five.", show(no25c, "Let's check it"), show(no26, 'k heart two is thirty-five'),
-        show(no26b, 'So k plus two is seven')),
+        "is thirty-five. By the definition, that's five times the bracket k plus two. Divide thirty-five by five, and k plus "
+        "two is seven. Subtract two from seven, and k is five.", show(no25c, "Let's check it"),
+        show(no26, 'k heart two is thirty-five'), show(no26d, 'By the definition'), show(no26a, "that's five times"),
+        show(no26b, 'and k plus two is seven'), show(no26c, 'and k is five')),
       L("On the exam you can also work back from the answers: put each choice into the rule, and see which one gives the "
         "result.")),
     S('Recap',
       L("Let's sum up. Read the definition, and put each input in its slot, in brackets.", show(no27, 'Read the definition')),
-      L("Turn each operation into a number first. Nested operations go from the inside out. With no definition, test the "
-        "input in each choice. For order questions, one example can show it's not always true, and letters show it's "
-        "always true. Nothing complicated here, just follow the rule exactly. [pause] Okay. I'll see you in the next video.",
-        show(no28, 'Turn each operation into a number first'))),
+      L("Work out what's inside each operation, and then turn the operation into a number. Nested operations go from the "
+        "inside out. With no definition, test the input in each choice. For order questions, one example can show it's "
+        "not always true, and letters can show it's always true. Nothing complicated here, just follow the rule exactly. "
+        "[pause] I'll see you in the next video.",
+        show(no28, "Work out what's inside"))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-541 (Hebrew: lesson 1)
@@ -832,9 +862,17 @@ video('solve-q-r26-t19-02', 'solution', qid='q-r26-t19-02', slides=[
 # trap (the same order); two examples (2x + 3, 3x - 4).  Only the practice has this type.
 h1 = I('h1', '$\\blacklozenge(x)=2x+3$: $\\ \\times2$, then $+3$', size=36)
 h2 = I('h2', 'Undo $y$: $\\ -3$, then $\\div2$: $\\ \\frac{y-3}{2}$', size=36)
-h3 = IH('h3', '$4$ in, $11$ out: $\\ \\frac{11-3}{2}=\\frac82=4$ ✓', size=36)
+h3 = I('h3', '$4\\ \\xrightarrow{\\times2}\\ 8$', size=32)
+h3b = I('h3b', '$8\\ \\xrightarrow{+3}\\ 11$', size=32)
+h3c = I('h3c', '$11\\ \\xrightarrow{-3}\\ 8$', size=32)
+h3d = I('h3d', '$8\\ \\xrightarrow{\\div2}\\ 4$ ✓', size=32)
 h4 = I('h4', 'Wrong order: $\\ \\frac{11}{2}-3=2.5$ ✗', size=34)
-h5 = IH('h5', '$\\blacklozenge(x)=3x-4$: $\\ $undo $\\ \\frac{y+4}{3}$: $\\ \\frac{11+4}{3}=5$ ✓', size=34)
+h5 = I('h5', '$\\blacklozenge(x)=3x-4$: $\\ \\times3$, then $-4$', size=30, col=1)
+h5b = I('h5b', 'Undo $y$: $\\ +4$, then $\\div3$: $\\ \\frac{y+4}{3}$', size=30, col=1)
+h5c = I('h5c', '$5\\ \\xrightarrow{\\times3}\\ 15$', size=30, col=1)
+h5d = I('h5d', '$15\\ \\xrightarrow{-4}\\ 11$', size=30, col=1)
+h5e = I('h5e', '$11\\ \\xrightarrow{+4}\\ 15$', size=30, col=1)
+h5f = I('h5f', '$15\\ \\xrightarrow{\\div3}\\ 5$ ✓', size=30, col=1)
 video('operation-patterns', 'lesson', slides=[
     S('Operation Patterns',
       L("Welcome back. Now we move to the more advanced operation questions. Each question that follows shows one type, and "
@@ -845,21 +883,24 @@ video('operation-patterns', 'lesson', slides=[
         "three.", show(h1, 'The inverse operation undoes')),
       L("Let's call the result y. That's the number that came out of the diamond, and the inverse should give us back the "
         "original x. To undo it, we go backwards. The last step comes off first, like taking off your shoes before your "
-        "socks. So first we subtract three from y, and then we divide the whole y minus three by two. The inverse is the "
-        "whole bracket, y minus three, over two.", show(h2, 'The last step comes off first')),
+        "socks. So first we subtract three from y. Then we divide the result by two. The inverse is y minus three, all "
+        "divided by two.", show(h2, 'The last step comes off first')),
       L("Let's check it with a number. Four goes into the diamond. Two times four is eight, and eight plus three is eleven. "
         "Now undo it. Eleven minus three is eight, and eight over two is four. We're back at four, so the inverse works.",
-        show(h3, 'Four goes into the diamond')),
+        show(h3, 'Two times four is eight'), show(h3b, 'eight plus three is eleven'), show(h3c, 'Eleven minus three is eight'),
+        show(h3d, 'eight over two is four')),
       L("Here's the trap. A lot of students undo the steps in the same order, not backwards. First divide by two, then "
         "subtract three. That's y over two, minus three. With eleven, eleven over two is five point five, and five point "
         "five minus three is two point five. That's not four, so the order matters.", show(h4, "Here's the trap")),
       L("One more example. Diamond of x is three x minus four. Its steps are times three, then minus four. Again, y is "
-        "the result we want to undo. So the inverse adds four first, and then divides the whole y plus four by three. "
-        "That's the whole bracket, y plus four, over three. Let's check with five. Three times five is "
+        "the result we want to undo. So the inverse adds four first. Then it divides the result by three. "
+        "That's y plus four, all divided by three. Let's check with five. Three times five is "
         "fifteen, and fifteen minus four is eleven. Eleven plus four is fifteen, and fifteen over three is five. Back to "
-        "five.", show(h5, 'One more example')),
-      L("So to undo an operation, read its steps, and undo them in reverse order, the last step first. [pause] Okay. I'll "
-        "see you in the next video.", pt('h5', 'undo them in reverse order'))),
+        "five.", show(h5, 'Diamond of x is three x minus four'), show(h5b, 'So the inverse adds four first'),
+        show(h5c, 'is fifteen'), show(h5d, 'fifteen minus four is eleven'), show(h5e, 'Eleven plus four is fifteen'),
+        show(h5f, 'fifteen over three is five')),
+      L("So to undo an operation, read its steps, and undo them in reverse order, the last step first. [pause] I'll "
+        "see you in the next video.", pt('h5b', 'undo them in reverse order'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-544 (Hebrew: lesson 2)
@@ -1041,10 +1082,10 @@ video('solve-q-548', 'solution', qid='q-548', slides=[
 # ------------------------------------------------------------------------------------------------ q-549 (Hebrew: lesson 2)
 # NEW: the operation in every choice -> skip it, finish the section, come back (her tip); algebra can mark at once;
 # plugging in x = 1 (one failing example proves "not always"; one answer only).  Hebrew: algebra, plugging in.
-r1 = I('r1', 'Operation in every choice? $\\ $skip it, come back at the end', size=26, col=1)
+r1 = I('r1', 'Looks long? $\\ $you can leave it for the end', size=26, col=1)
 r2 = IH('r2', '(1) $(6x)^2=36x^2$ ✓', size=30)
 r3 = IH('r3', '(2) $(\\sqrt{x})^2\\cdot(\\sqrt{x})^2=x\\cdot x=x^2$ ✓', size=30)
-r4 = IH('r4', '(3) $(5x)^2=25x^2\\ne5x^2$ ✗', size=30)
+r4 = IH('r4', '(3) $(5x)^2=25x^2\\ne5x^2$ for $x>0$ ✗', size=30)
 r5 = IH('r5', '(4) $(x-7)^2=(7-x)^2$ ✓', size=30)
 s1 = I('s1', '$x=1$: $\\ $(1) $36=36$ $\\quad$ (2) $1=1$', size=30)
 s2 = I('s2', '(3) $25\\ne5$ ✗', size=30)
@@ -1053,10 +1094,10 @@ video('solve-q-549', 'solution', qid='q-549', slides=[
       L("For every number t, diamond of t is equal to t squared. In the choices, x is zero or more. Which of the following "
         "is not always true?", pt('stem', 'For every number t', 'hl', 7.0), voice='calm', pause=0.5),
       L("Before we start, a small tip. Look at the choices. The diamond appears in every choice, and we have to use it "
-        "two or three times in each one. That takes time. So in the exam, when a question like this has the operation in "
-        "every choice, skip it. Solve the rest of the section first, and come back to it at the end. Here in the lesson, "
+        "two or three times in each one. That can take time. So in the exam, if a question like this looks long, you can "
+        "leave it for later. Solve the rest of the section first, and come back to it at the end. Here in the lesson, "
         "let's solve it. [short pause] We'll solve it in two different ways, with algebra, and then by plugging in a number.",
-        pt('choice 1', 'in every choice'), show(r1, 'skip it')),
+        pt('choice 1', 'in every choice'), show(r1, 'leave it for later')),
       L("[short pause] Let's start with the math way. With algebra, we write what the diamond does on each side. The diamond squares whatever goes in. "
         "Choice number one. On the left, six x goes in, so we get six x, squared. That's six squared times x squared, "
         "thirty-six x squared. On the right, thirty-six times x squared. Both sides are equal for every x, so this one is "
@@ -1066,14 +1107,13 @@ video('solve-q-549', 'solution', qid='q-549', slides=[
         mk('cross', 'choice 2', "Always true, so it's out")),
       L("Choice number three. On the left, five x, squared, is twenty-five x squared. On the right, five times x squared is "
         "only five x squared. These are equal only when x is zero. For any other x, they're different. So this one is not "
-        "always true, and choice number three is our answer.", show(r4, 'five x, squared'), mk('tick', 'choice 3', 'and choice number three is our answer')),
+        "always true, and choice number three is our answer.", show(r4, 'is twenty-five x squared'), mk('tick', 'choice 3', 'and choice number three is our answer')),
       L("In the exam you'd circle it and move on. But choice number four teaches something useful. x minus seven and seven "
         "minus x are opposites, and opposites have the same square. So the two sides are always equal.",
         show(r5, 'are opposites'), mk('cross', 'choice 4', 'always equal'))),
     S('Method 2 · Plugging in numbers',
-      L("[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, a small "
-        "nonzero value. Zero is allowed too, but with zero, choice number three gives zero on both sides, so it can't show "
-        "the failure. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six "
+      L("[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, because "
+        "it's easy and it's not zero. Zero is allowed too, but zero turns many of these products into zero. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six "
         "times one, thirty-six. Equal. Choice number two. Diamond of one is one, and one times one is one. Diamond of one is "
         "one too. Equal.", show(s1, 'take x is one')),
       L("Choice number three. Diamond of five is twenty-five, but five times diamond of one is five times one, which is "
@@ -1360,8 +1400,11 @@ s554 = SLOT('s554', '◆([[A]][[B]][[C]]) = [[A]]^4 + [[B]]^3 + [[C]]^2', [('in'
 f6 = IH('f6', '(2) $1+64+4=69$ ✗', size=30)
 f7 = I('f7', '(3) $4^4=256$, already too big ✗', size=30)
 f8 = IH('f8', '(4) $1+8+16=25$ ✓', size=30)
-g5 = I('g5', 'Power $4$ on the hundreds: $\\ $the smallest digit, $1$', size=30)
-g6 = I('g6', 'Power $3$ on the tens: $\\ 2$, not $4$: $\\ 124$', size=30)
+g5a = IH('g5a', '$4^2=16$, $\\ 4^4=256$', size=28)
+g5 = I('g5', 'Power $4$ on the hundreds: $\\ $the smallest digit, $1$', size=28)
+g6a = IH('g6a', '$4^3=64$, $\\ 4^2=16$', size=28)
+g6b = IH('g6b', '$2^3=8$, $\\ 2^2=4$', size=28)
+g6 = I('g6', 'Power $3$ on the tens: $\\ 2$, not $4$: $\\ 124$', size=28)
 video('solve-q-554', 'solution', qid='q-554', slides=[
     S('Method 1 · The math way',
       L("A, B and C are digits from one to nine. For every three-digit number A B C, the operation diamond is defined. "
@@ -1388,12 +1431,14 @@ video('solve-q-554', 'solution', qid='q-554', slides=[
         "One stays one at any power, so giving it the biggest power costs nothing. But four grows a lot. Four squared is "
         "sixteen, and four to the power of four is two hundred fifty-six. So the fourth power, on the hundreds digit, "
         "should go to the one. Choice numbers one and three start with two and four, so they're out.",
+        show(g5a, 'Four squared is'),
         show(g5, 'should go to the one'), mk('cross', 'choice 1', 'Choice numbers one and three'),
         mk('cross', 'choice 3', "so they're out")),
       L("Between one four two and one two four, look at the next power, the cube, on the tens digit. Four cubed is "
         "sixty-four, but four squared is only sixteen. Two changes much less, from eight to four. So the four should get "
         "the square, and the two goes in the tens. One two four, choice number four. [pause] Okay. I'll see you in the next "
-        "question.", show(g6, 'look at the next power'), mk('tick', 'choice 4', 'One two four, choice number four'))),
+        "question.", show(g6a, 'Four cubed is'), show(g6b, 'from eight to four'), show(g6, 'So the four should get'),
+        mk('tick', 'choice 4', 'One two four, choice number four'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-555 (Hebrew Q6)
@@ -1402,9 +1447,14 @@ video('solve-q-554', 'solution', qid='q-554', slides=[
 # choice -> two methods here; the wrong choices first, so each method ends on the answer.
 h6 = IH('h6', '(1) $\\frac{3}{a}<3\\ \\to\\ 1<a$: $\\ a=\\frac{1}{2}$: $\\ 6$ ✗', size=30)
 h7 = IH('h7', '(3) $\\frac3a\\cdot\\frac b3=\\frac ba$ ✗', size=30)
-h8 = IH('h8', '(4) $3(a+1)<3a\\ \\to\\ 1<0$ ✗', size=30)
+h8 = IH('h8', '(4) $\\frac3a<\\frac3{a+1}$', size=30)
+h8b = IH('h8b', '$3(a+1)<3a$', size=30)
+h8c = IH('h8c', '$a+1<a$', size=30)
+h8d = IH('h8d', '$1<0$ ✗', size=30)
 h9 = IH('h9', '(2) $\\frac3a\\cdot a=3=\\frac3b\\cdot b$ ✓', size=30)
-i6 = IH('i6', '(1) $a=2$: $\\ \\frac{3}{2}<3$ ✓ $\\quad a=1$: $\\ 3$ ✗ $\\quad a=\\frac{1}{2}$: $\\ 6$ ✗', size=28)
+i6 = IH('i6', '(1) $a=2$: $\\ \\frac{3}{2}<3$ ✓', size=28)
+i6b = IH('i6b', '$a=1$: $\\ \\frac31=3$, not $<3$ ✗', size=28)
+i6c = IH('i6c', '$a=\\frac12$: $\\ 6$ ✗', size=28)
 i7 = I('i7', '(3) $\\div\\frac3b=\\times\\frac b3$: $\\ \\frac ba$ ✗', size=28)
 i8 = I('i8', '(4) bigger denominator, smaller fraction ✗', size=28)
 i9 = I('i9', '(2) a number times its reciprocal is $1$: $\\ 3\\cdot1=3$ ✓', size=28)
@@ -1430,6 +1480,7 @@ video('solve-q-555', 'solution', qid='q-555', slides=[
         "multiply both sides by a and by a plus one without flipping. We get three times, in brackets, a plus one, is "
         "smaller than three a. Divide by three, and a plus one is smaller than a. Take a off both sides, and one is smaller "
         "than zero. That's never true. So choice number four is out.", show(h8, 'Choice number four says'),
+        show(h8b, 'We get three times'), show(h8c, 'and a plus one is smaller than a'), show(h8d, 'and one is smaller than zero'),
         mk('cross', 'choice 4', 'So choice number four is out')),
       L("Choice number two. Three over a, times a. The a cancels, and we get three. And three over b, times b, is three "
         "too. Three equals three for every a and b. So choice number two must be true, and it's our answer.",
@@ -1438,7 +1489,8 @@ video('solve-q-555', 'solution', qid='q-555', slides=[
     S('Method 2 · Understanding',
       L("[pause] Now by understanding. Three over x means three divided by x. Choice number one. For a bigger than one it "
         "works. Three over two is smaller than three. But for a equal to one, we get three, which isn't smaller than three. "
-        "And for a fraction like one half, we get six. So not always.", show(i6, 'For a bigger than one')),
+        "And for a fraction like one half, we get six. So not always.", show(i6, 'For a bigger than one'),
+        show(i6b, 'But for a equal to one'), show(i6c, 'we get six')),
       L("Choice number three. Dividing by three over b is like multiplying by b over three. So the a ends up at the bottom "
         "and the b on top, b over a. That's a over b only when a equals b, so not always.", show(i7, 'Dividing by three over b')),
       L("Choice number four. Both fractions have the same positive top, three, and positive bottoms. With the same "
@@ -1456,10 +1508,12 @@ video('solve-q-555', 'solution', qid='q-555', slides=[
 # five, squaring doubles the count, adding 5 says nothing (x = 125: 4 fives, not 15).  REMINDER: prime factors (14).
 # Hebrew: plugging in numbers, understanding.
 j5 = IH('j5', '$50=2\\cdot5\\cdot5$: $\\ 2 \\qquad 75=3\\cdot5\\cdot5$: $\\ 2 \\qquad 7$: $\\ 0$', size=30)
-j6 = IH('j6', '$x=1$: $\\ $(1) $1\\ne0$ ✗ $\\quad$ (2) $0\\ne1$ ✗ $\\quad$ (3) $1\\ne0$ ✗', size=30)
-j7 = I('j7', '(4) $1=0+1$ ✓', size=30)
+j6 = I('j6', '$x=1$: $\\ $⟦$1$⟧ $=0$', size=30)
+j6a = I('j6a', '(1) ⟦$5$⟧ $=1$, $\\ $⟦$1^2$⟧ $=0$', size=30)
+j6b = I('j6b', '(2) ⟦$6$⟧ $=0$, $\\ $⟦$1$⟧ $+1=1$', size=30)
+j6c = I('j6c', '(3) ⟦$5$⟧ $=1$, $\\ 5\\cdot$⟦$1$⟧ $=0$', size=30)
+j7 = I('j7', '(4) ⟦$5$⟧ $=1$, $\\ $⟦$1$⟧ $+1=1$ ✓', size=30)
 k5 = IH('k5', '$\\times5$: $\\ $one more five $\\quad 50\\to250$: $\\ 2\\to3$', size=30)
-k6 = IH('k6', '$x=125=5^3$: $\\ 5x$ has $4$ fives, not $15$', size=30)
 video('solve-q-556', 'solution', qid='q-556', slides=[
     S('Method 1 · Plugging in numbers',
       L("For every positive integer x, the double bracket of x is the number of times five appears in the prime "
@@ -1474,20 +1528,18 @@ video('solve-q-556', 'solution', qid='q-556', slides=[
         "times one is five, which has one five. One squared is one, with no fives. One is not zero, so choice number one is "
         "out. Choice number two. One plus five is six, and six is two times three, no fives, so zero. On the right, zero "
         "plus one is one. Zero is not one, out. Choice number three. Five has one five, but five times zero is zero. One is "
-        "not zero, out.", show(j6, 'plug in the simplest value'), mk('cross', 'choice 1', 'so choice number one is'),
-        mk('cross', 'choice 2', 'Zero is not one, out'), mk('cross', 'choice 3', 'not zero, out')),
+        "not zero, out.", show(j6, 'One has no fives'), show(j6a, 'with no fives'), mk('cross', 'choice 1', 'so choice number one is'),
+        show(j6b, 'zero plus one is one'),
+        mk('cross', 'choice 2', 'Zero is not one, out'), show(j6c, 'five times zero is zero'), mk('cross', 'choice 3', 'not zero, out')),
       L("Choice number four. Five has one five, and zero plus one is one. One equals one. Three choices are out, so choice "
-        "number four is our answer.", show(j7, 'zero plus one is one. One equals'), mk('tick', 'choice 4', 'number four is our answer'))),
+        "number four is our answer.", show(j7, 'One equals one'), mk('tick', 'choice 4', 'number four is our answer'))),
     S('Method 2 · Understanding',
       L("[pause] Now by understanding. Let's see why it's always true. When we multiply x by five, we add exactly one more five to its prime "
         "factors, whatever x is. So the count of fives goes up by exactly one. That's choice number four, for every x. For "
         "example, fifty has two fives, and two hundred fifty has three.", show(k5, 'we add exactly one more five'),
         mk('tick', 'choice 4', "That's choice number four")),
-      L("The others don't always work. Adding five doesn't necessarily add one factor of five. Squaring doubles the count "
-        "of fives, and doubling is not the same as adding one. And multiplying the count by five is not the same as adding "
-        "one either. In the example of x is a hundred twenty-five, which is five cubed, with three fives, five x has four "
-        "fives, but five times three is fifteen. [pause] Okay. I'll see "
-        "you in the next question.", show(k6, 'In the example of x is a hundred twenty-five'))),
+      L("The others are not always true, and x is one already showed that. So choice number four is our answer, and I'll "
+        "see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ r26-t19-summary
@@ -1817,6 +1869,8 @@ def _stem_parts(vid):
 _cp_spec = importlib.util.spec_from_file_location('_camera_parts', os.path.join(HERE, '_camera_parts.py'))
 CP = importlib.util.module_from_spec(_cp_spec); _cp_spec.loader.exec_module(CP)
 CP.split(globals(), 'new-operation', 'Defining a New Operation', [(1, None), (4, "Let's continue with new operations, and see what to watch out for when we use them."), (7, "Let's continue with new operations, and look at a few more question types.")])
+for _v in ('new-operation', 'new-operation-2'):   # batch A shared fix 4 (W16): no "Okay." before the goodbye (unrecorded parts)
+    _ln = VIDEOS[_v]['slides'][-1]['lines'][-1]; _ln['say'] = _ln['say'].replace(" [pause] Okay. I'll see you in the next part.", " [pause] I'll see you in the next part.")
 
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v); _write_gap(_v)
 

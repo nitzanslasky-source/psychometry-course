@@ -36,7 +36,8 @@
    {
     "say": "Back to the star: three times the first number, plus the square of the second. Two star four is six plus sixteen, twenty-two. Four star two is twelve plus four, sixteen. Swap the inputs, and you get a different answer. So don't assume a new operation behaves like plus, where the order doesn't matter. Before you calculate, check which number goes into which slot.",
     "at": [
-     "three times the",
+     "Back to the star",
+     "times the first",
      "Two star four is",
      "plus sixteen, twenty-two",
      "Four star two is",
@@ -51,11 +52,13 @@
     ]
    },
    {
-    "say": "To show that it's always true, numbers are not enough, because they only check some cases. Write the rule with letters instead. For example, b heart a is five times the bracket b plus a. And b plus a is the same as a plus b, so b heart a is always equal to a heart b. For the heart, the order never matters.",
+    "say": "To show that it's always true, numbers are not enough, because they only check some cases. One way is to write the rule with letters. Remember, the heart adds the two numbers, and then multiplies by five. So b heart a is five times the bracket b plus a. And b plus a is the same as a plus b, so b heart a is always equal to a heart b. For the heart, the order never matters. In a multiple-choice question, ruling out the other three choices also works.",
     "at": [
-     "Write the rule with letters",
-     "For example, b heart a",
-     "is five times"
+     "write the rule with letters",
+     "Remember, the heart adds",
+     "two numbers, and",
+     "So b heart a",
+     "five times the"
     ]
    },
    {
@@ -68,27 +71,39 @@
   ],
   [
    {
-    "say": "And if an input is unknown? Write the definition, and it becomes an ordinary equation. For example, x star four is twenty-five. By the definition, x star four is three x plus four squared, which is three x plus sixteen. So three x plus sixteen equals twenty-five. Subtract sixteen from both sides: three x is nine, so x is three.",
+    "say": "And if an input is unknown? Write the definition, and it becomes an ordinary equation. For example, x star four is twenty-five. By the definition, x star four is three x plus four squared, which is three x plus sixteen. So three x plus sixteen is equal to twenty-five. Subtract sixteen from both sides, and three x is nine. Divide nine by three, and x is three.",
     "at": [
      "is unknown? Write",
      "For example, x star four",
      "By the definition",
-     "Subtract sixteen from both sides",
-     "three x is"
+     "four is three",
+     "So three x plus sixteen",
+     "is equal to",
+     "and three x is nine",
+     "Divide nine by",
+     "and x is three"
     ]
    },
    {
-    "say": "Let's check it. Three times three is nine, and nine plus sixteen is twenty-five. It works. One more: k heart two is thirty-five. By the definition, that's five times the bracket k plus two. So k plus two is seven, and k is five.",
+    "say": "Let's check it. Three times three is nine, and nine plus sixteen is twenty-five. It works. One more: k heart two is thirty-five. By the definition, that's five times the bracket k plus two. Divide thirty-five by five, and k plus two is seven. Subtract two from seven, and k is five.",
     "at": [
      "Let's check it",
      "and nine plus",
      "k heart two is thirty-five",
      "By the definition",
-     "So k plus two is seven",
-     "seven, and k"
+     "that's five times",
+     "k plus two",
+     "and k plus two is seven",
+     "seven. Subtract two",
+     "and k is five"
     ]
    },
-   "On the exam you can also work back from the answers: put each choice into the rule, and see which one gives the result."
+   {
+    "say": "On the exam you can also work back from the answers: put each choice into the rule, and see which one gives the result.",
+    "at": [
+     "On the exam"
+    ]
+   }
   ],
   [
    {
@@ -99,10 +114,10 @@
     ]
    },
    {
-    "say": "Turn each operation into a number first. Nested operations go from the inside out. With no definition, test the input in each choice. For order questions, one example can show it's not always true, and letters show it's always true. Nothing complicated here, just follow the rule exactly. [pause] Okay. I'll see you in the next video.",
+    "say": "Work out what's inside each operation, and then turn the operation into a number. Nested operations go from the inside out. With no definition, test the input in each choice. For order questions, one example can show it's not always true, and letters can show it's always true. Nothing complicated here, just follow the rule exactly. [pause] I'll see you in the next video.",
     "at": [
-     "Turn each operation into a number first",
-     "Nested operations go"
+     "Work out what's inside",
+     "operation, and then"
     ]
    }
   ]

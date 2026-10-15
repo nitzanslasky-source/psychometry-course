@@ -7,25 +7,29 @@
   ],
   [
    {
-    "say": "When a number leaves a known remainder, we can write it with a letter. A number that leaves three when divided by four can be written as four k plus three, where k is any whole number. We call this a tag.",
+    "say": "When a number leaves a known remainder, we can write it with a letter. Take numbers that leave three when divided by four. Seven is one four plus three. Eleven is two fours plus three. So each one is some whole fours, plus three. We write it as four k plus three. k tells us how many complete groups of four there are, and k is a whole number.",
     "at": [
      "a known remainder",
-     "four k plus three",
-     "k is any"
+     "Seven is one four plus three",
+     "Eleven is two fours plus three",
+     "So each one",
+     "We write it as four k plus three",
+     "k plus three"
     ]
    },
    {
-    "say": "Why does it work? Four k is always divisible by four, and the three on the end is what's left. Let's try. k is zero gives three. k is one gives seven, and seven divided by four leaves three. k is two gives eleven, which also leaves three.",
+    "say": "Why does it work? Four k is always divisible by four, and the three on the end is what's left. k can also be zero. Then the number is just three, and three divided by four leaves three, like five divided by eight before.",
     "at": [
-     "Let's try. k is",
-     "k is one"
+     "three divided by four leaves three",
+     "three, like five"
     ]
    },
    {
-    "say": "Another tag. A number that leaves four when divided by fifteen is fifteen k plus four. For example, nineteen, thirty-four and forty-nine all leave four when divided by fifteen.",
+    "say": "Another example. A number that leaves four when divided by fifteen is fifteen k plus four. For example, nineteen, thirty-four and forty-nine all leave four when divided by fifteen.",
     "at": [
      "fifteen k plus four",
-     "For example, nineteen"
+     "For example, nineteen",
+     "forty-nine all leave"
     ]
    }
   ],
@@ -56,8 +60,10 @@
     ]
    },
    {
-    "say": "What's the difference? Five divides fifteen, so fifteen k is made of whole fives, and they drop out. Six doesn't divide eight, so eight k isn't made of whole sixes, and it can leave anything. So changing the divisor works only when the new divisor divides the old one.",
+    "say": "What's the difference? Five divides fifteen, so fifteen k is five times three k. Fifteen k leaves no remainder when divided by five, so only the extra four matters. Six doesn't divide eight. So knowing the remainder by eight doesn't tell us one fixed remainder by six. Our examples gave two and four. So changing the divisor works only when the new divisor divides the old one.",
     "at": [
+     "fifteen k is five times three k",
+     "Six doesn't divide",
      "works only",
      "divisor divides the"
     ]
@@ -65,7 +71,7 @@
   ],
   [
    {
-    "say": "To sum up. For two, five and ten, look at the last digit. For three and nine, the digit sum. For four, the last two digits, and for eight, the last three. A bigger divisor, split it into parts with no common factor.",
+    "say": "To sum up. For two, five and ten, look at the last digit. For three and nine, the digit sum. For four, the last two digits, and for eight, the last three. A bigger divisor, split it into parts that share no divisor bigger than one.",
     "at": [
      "For two, five and ten",
      "look at the",
@@ -74,14 +80,14 @@
     ]
    },
    {
-    "say": "For eleven, the first two digits minus the last one, or the outer digits minus the middle one.",
+    "say": "For eleven, in a three-digit number, the first two digits minus the last one, or the outer digits minus the middle one.",
     "at": [
      "For eleven",
-     "digits minus the"
+     "number, the first"
     ]
    },
    {
-    "say": "A remainder is what's left in your hand. It's always smaller than the divisor, and the biggest one is the divisor minus one. Now some questions. Come in focused, because remainders are the part that confuses people. [pause] Okay. I'll see you in the next video.",
+    "say": "A remainder is what's left in your hand. It's always smaller than the divisor, and the biggest one is the divisor minus one. Now some questions. Come in focused, because remainders are the part that confuses people. [pause] I'll see you in the next video.",
     "at": [
      "A remainder is what",
      "in your hand"

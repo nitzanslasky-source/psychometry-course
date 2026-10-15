@@ -37,20 +37,26 @@
     ]
    },
    {
-    "say": "Now open the brackets. The bracket x plus two, squared, is x squared plus four x plus four. Three times the bracket x plus two is three x plus six, because the three multiplies both parts. Together, that's x squared plus seven x plus ten.",
+    "say": "Now open the brackets. The bracket x plus two, squared, is x squared plus four x plus four. Three times the bracket x plus two is three x plus six, because the three multiplies both parts. Now add the x's together, and the numbers together. Four x plus three x is seven x, and four plus six is ten. Together, that's x squared plus seven x plus ten.",
     "at": [
      "is x squared plus four x plus four",
-     "Three times the"
+     "x plus four",
+     "is three x plus six",
+     "because the three",
+     "is seven x",
+     "four plus six is ten",
+     "Together, that's",
+     "seven x plus"
     ]
    }
   ],
   [
    {
-    "say": "Where does a new operation fit in a longer exercise? The new operation comes first, before multiplying, dividing and powers. Only brackets come before it.",
+    "say": "Where does a new operation fit in a longer exercise? First, work out everything inside the operation's own brackets. Then use the definition, so the operation becomes a plain number. Only then do the rest of the exercise.",
     "at": [
      "operation fit in",
-     "The new operation comes first",
-     "before multiplying, dividing"
+     "First, work out everything",
+     "the operation's own"
     ]
    },
    {
@@ -101,12 +107,13 @@
     ]
    },
    {
-    "say": "What is the bracket one star two, star three? Inner brackets first. One star two is three times one, plus two squared, so three plus four, seven. Now seven takes its place. Seven star three is three times seven, plus three squared, so twenty-one plus nine, thirty. The result of the inside becomes the input of the outside. [pause] Okay. I'll see you in the next part.",
+    "say": "What is the bracket one star two, star three? Inner brackets first. One star two is three times one, plus two squared, so three plus four, seven. Now seven takes its place. Seven star three is three times seven, plus three squared, so twenty-one plus nine, thirty. The result of the inside becomes the input of the outside. [pause] I'll see you in the next part.",
     "at": [
      "What is the bracket one star two",
      "star two, star",
      "One star two is",
      "times one, plus",
+     "Now seven takes its place",
      "Seven star three is",
      "times seven, plus"
     ]

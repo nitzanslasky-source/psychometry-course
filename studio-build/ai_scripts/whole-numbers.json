@@ -11,14 +11,16 @@
     "at": [
      "When two numbers",
      "Four times five is twenty",
-     "and negative four"
+     "negative four times negative five",
+     "is also twenty"
     ]
    },
    {
     "say": "When the signs are different, the result is negative, and the order doesn't matter. Negative four times five is negative twenty, and four times negative five is negative twenty too.",
     "at": [
      "Negative four times five",
-     "negative twenty, and"
+     "and four times negative five",
+     "is negative twenty too"
     ]
    },
    {
@@ -68,7 +70,11 @@
     "at": [
      "same rules, so",
      "Negative twenty-four divided by negative eight",
-     "eight is three"
+     "eight is three",
+     "Negative twenty-four divided by eight",
+     "is negative three",
+     "and twenty-four divided by negative eight",
+     "eight is negative three too"
     ]
    },
    {
@@ -87,28 +93,40 @@
     "at": [
      "to an even",
      "Three squared is nine",
-     "three, squared, is"
+     "negative three, squared",
+     "negative two to the power of four",
+     "of four is"
     ]
    },
    {
-    "say": "An odd power keeps the sign of the number. Two cubed is eight, negative two, cubed, is negative eight, and negative one to the power of five is negative one.",
+    "say": "An odd power keeps the sign of the number. Two to the power of three is eight, negative two to the power of three is negative eight, and negative one to the power of five is negative one.",
     "at": [
-     "Two cubed is eight",
-     "two, cubed, is"
+     "Two to the power of three",
+     "three is eight",
+     "negative two to the power of three",
+     "of three is negative",
+     "negative one to the power of five",
+     "of five is"
     ]
    },
    {
     "say": "An absolute value is zero or positive. The absolute value of negative seven is seven, the absolute value of seven is seven, and the absolute value of zero is zero. So if y isn't zero, the absolute value of y is positive.",
     "at": [
      "The absolute value of negative seven",
-     "seven is seven"
+     "seven is seven",
+     "the absolute value of seven is",
+     "is seven, and",
+     "the absolute value of zero",
+     "So if y"
     ]
    },
    {
     "say": "And a minus in front of a letter doesn't mean the number is negative. It means the opposite number. If x is negative nine, minus x is nine, which is positive. If x is five, minus x is negative five. And zero is neither positive nor negative.",
     "at": [
      "If x is negative nine",
-     "If x is five"
+     "minus x is",
+     "If x is five",
+     "x is negative five"
     ]
    }
   ],
@@ -122,20 +140,28 @@
     ]
    },
    {
-    "say": "With different signs, the number that's farther from zero decides the sign. Negative nine plus four is negative five, because nine is farther from zero than four. But negative four plus nine is five, positive. So counting the minuses works only for multiplying and dividing. Negative two plus seven has one minus, but the result, five, is positive.",
+    "say": "With different signs, the number that's farther from zero decides the sign. Negative nine plus four is negative five, because negative nine is farther from zero than four. But negative four plus nine is five, positive. And when they're the same distance from zero, like negative four plus four, the result is zero. So counting the minuses works only for multiplying and dividing. Negative two plus seven has one minus, but the result, five, is positive.",
     "at": [
      "Negative nine plus four",
-     "negative five, because"
+     "negative five, because",
+     "But negative four plus nine",
+     "is five, positive",
+     "like negative four plus four",
+     "the result is",
+     "but the result, five"
     ]
    }
   ],
   [
    {
-    "say": "So how do we use all this in a question? First find the pieces that are surely positive, like even powers and absolute values. Then the piece that's left decides the sign. And when the question says that a letter is not zero, it's usually so that the bottom of a fraction isn't zero. You'll see all of this in the next question. [pause] Okay. I'll see you in the next video.",
+    "say": "So how do we use all this in a question? First find the pieces that are surely positive. If x isn't zero, x squared and the absolute value of x are positive. If x is zero, they're both zero. In a product or a quotient, a positive piece doesn't change the sign. So the other piece decides the sign. And when the question says that a letter is not zero, it's usually so that the bottom of a fraction isn't zero. You'll see all of this in the next question. [pause] I'll see you in the next video.",
     "at": [
      "use all this",
-     "surely positive",
-     "and absolute values"
+     "If x isn't zero",
+     "of x are",
+     "If x is zero, they're",
+     "In a product or a quotient",
+     "quotient, a positive"
     ]
    }
   ]

@@ -16,7 +16,7 @@
    },
    "Once someone explains that the dot means times, it's easy. Three times seven is twenty-one. It was the same with the plus sign. Until someone told you that plus means adding, it was just a mark. Those were new symbols for things you already knew how to do.",
    {
-    "say": "And this one really was a new operation: a small two up high, like five with a small two. Someone told you to multiply the number by itself, so five times five, twenty-five. Then you learned that a small three means three times, so two with a small three is two times two times two, which is eight. Square roots were the same story. A symbol, a definition, and then you could solve.",
+    "say": "And this one really was a new operation: a small two up high, like five with a small two. Someone told you to multiply the number by itself, so five times five, twenty-five. Then you learned that a small three means: multiply three copies of the number. So two with a small three is two times two times two, which is eight. Square roots were the same story. A symbol, a definition, and then you could solve.",
     "at": [
      "so five times five",
      "Then you learned",
@@ -44,24 +44,27 @@
    {
     "say": "Seven sits before the heart, so it goes in the place of a. Three sits after it, so it goes in the place of b. Seven plus three is ten, and ten times five is fifty. So seven heart three is fifty.",
     "at": [
-     "so it goes in the place of a",
-     "place of a",
-     "ten times five is fifty",
-     "So seven heart"
+     "in the place of b",
+     "Seven plus three is ten",
+     "and ten times",
+     "is fifty"
     ]
    },
    {
     "say": "One more. Two heart six. Two goes in the place of a, and six goes in the place of b. Two plus six is eight, and eight times five is forty.",
     "at": [
      "Two heart six",
-     "Two goes in",
+     "in the place",
+     "six goes in the place of b",
      "Two plus six is eight",
-     "and eight times"
+     "and eight times",
+     "is forty"
     ]
    },
    {
     "say": "Careful to follow the whole rule. If you do seven times five, and then add three, you get thirty-eight. That's a different rule, not the heart. In the heart, the five multiplies the whole sum. That's all a new operation is: a definition, and then you follow it exactly.",
     "at": [
+     "Careful to follow",
      "you get thirty-eight",
      "That's a different"
     ]
@@ -87,16 +90,19 @@
    {
     "say": "Five squared is twenty-five, and three times five is fifteen. Twenty-five minus fifteen is ten. So diamond of five is ten.",
     "at": [
-     "Five squared is",
-     "Twenty-five minus fifteen",
+     "is twenty-five",
+     "is fifteen",
+     "fifteen is ten",
      "So diamond of"
     ]
    },
    {
-    "say": "Another one, diamond of two. Again, two goes in both spots. Two squared is four, and three times two is six. Four minus six is negative two. [pause] Okay. I'll see you in the next part.",
+    "say": "Another one, diamond of two. Again, two goes in both spots. Two squared is four, and three times two is six. Four minus six is negative two. [pause] I'll see you in the next part.",
     "at": [
-     "Two squared is four",
-     "three times two"
+     "two goes in both spots",
+     "Two squared is",
+     "is six",
+     "is negative two"
     ]
    }
   ]

@@ -28,10 +28,12 @@
     ]
    },
    {
-    "say": "Why four ranges, and not just positive and negative? Because numbers in different ranges behave differently when we raise them to a power or multiply them. And every number inside one range reacts the same way. Multiply one half by something, or one quarter by the same thing, and they both move the same way.",
+    "say": "Why four ranges, and not just positive and negative? Because numbers in different ranges behave differently when we raise them to a power or multiply them. And every number inside one range reacts the same way. Take one half and one quarter. Times two makes both of them bigger. Times one half makes both of them smaller.",
     "at": [
      "every number inside one range",
-     "or one quarter"
+     "Times two makes both",
+     "Times one half makes both",
+     "of them smaller"
     ]
    },
    {
@@ -46,7 +48,7 @@
     ]
    },
    {
-    "say": "So the first step in every question is to ask which ranges the givens allow. If a question only says x is positive, x could be between zero and one, or above one. And those two ranges can behave differently.",
+    "say": "So the first step in every question is to ask which ranges the givens allow. If a question only says x is positive, x could be between zero and one, exactly one, or above one. And those cases can behave differently.",
     "at": [
      "which ranges the givens allow",
      "be between zero"
@@ -74,11 +76,16 @@
     "say": "Now times one fifth. Fifteen times one fifth is three, so it moves toward zero. Negative fifteen times one fifth is negative three, and it also moves toward zero. And here's the important part. Negative three is bigger than negative fifteen, because on the negative side, closer to zero means bigger.",
     "at": [
      "Fifteen times one fifth is three",
-     "three, so it"
+     "so it moves toward zero",
+     "Negative fifteen times one fifth",
+     "is negative three",
+     "and it also moves toward zero",
+     "Negative three is bigger than",
+     "negative fifteen, because"
     ]
    },
    {
-    "say": "One more. Eight times three quarters is six, and negative eight times three quarters is negative six. Both move toward zero, and negative six is bigger than negative eight. So instead of plugging in negative numbers and risking a mistake, look at the positive side, and then mirror the picture. [pause] Okay. I'll see you in the next part.",
+    "say": "One more. Eight times three quarters is six, and negative eight times three quarters is negative six. Both move toward zero, and negative six is bigger than negative eight. So instead of plugging in negative numbers and risking a mistake, look at the positive side, and then mirror the picture. [pause] I'll see you in the next part.",
     "at": [
      "Eight times three quarters is six",
      "six, and negative"

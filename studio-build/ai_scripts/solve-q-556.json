@@ -15,7 +15,6 @@
    {
     "say": "[short pause] A definition in words is easy to misread, so let's see it in numbers first. Fifty is two times five times five, so it has two fives. Seventy-five is three times five times five, two fives as well. And seven has no fives at all, so its count is zero.",
     "at": [
-     "A definition",
      "let's see it in numbers",
      "Fifty is two"
     ]
@@ -23,15 +22,18 @@
    {
     "say": "Now let's plug in the simplest value, x is one. One has no fives, so its count is zero. Choice number one. Five times one is five, which has one five. One squared is one, with no fives. One is not zero, so choice number one is out. Choice number two. One plus five is six, and six is two times three, no fives, so zero. On the right, zero plus one is one. Zero is not one, out. Choice number three. Five has one five, but five times zero is zero. One is not zero, out.",
     "at": [
-     "plug in the simplest value",
-     "One has no",
+     "One has no fives",
+     "its count is",
      "number one. Five",
-     "One squared is",
+     "squared is one",
+     "with no fives",
      "so choice number one is",
      "number two. One",
-     "On the right",
+     "One plus five",
+     "zero plus one is one",
      "Zero is not one, out",
      "number three. Five",
+     "five times zero is zero",
      "not zero, out"
     ]
    },
@@ -39,8 +41,9 @@
     "say": "Choice number four. Five has one five, and zero plus one is one. One equals one. Three choices are out, so choice number four is our answer.",
     "at": [
      "number four. Five",
-     "zero plus one is one. One equals",
+     "Five has one",
      "One equals one",
+     "are out, so",
      "number four is our answer"
     ]
    }
@@ -56,10 +59,9 @@
     ]
    },
    {
-    "say": "The others don't always work. Adding five doesn't necessarily add one factor of five. Squaring doubles the count of fives, and doubling is not the same as adding one. And multiplying the count by five is not the same as adding one either. In the example of x is a hundred twenty-five, which is five cubed, with three fives, five x has four fives, but five times three is fifteen. [pause] Okay. I'll see you in the next question.",
+    "say": "The others are not always true, and x is one already showed that. So choice number four is our answer, and I'll see you in the next question.",
     "at": [
-     "In the example of x is a hundred twenty-five",
-     "is five cubed"
+     "number four is"
     ]
    }
   ]

@@ -46,11 +46,15 @@
     ]
    },
    {
-    "say": "Step three, the tens column, which is the leftmost one here. A plus three, plus the carried one, is seven. So A plus four is seven, and A is three.",
+    "say": "Step three, the tens column, which is the leftmost one here. A plus three, plus the carried one, is seven. So A plus four is seven. Seven minus four is three, so A is three.",
     "at": [
      "Step three, the tens column",
      "which is the",
-     "and A is three"
+     "A plus three, plus the carried one",
+     "carried one, is",
+     "So A plus four is seven",
+     "Seven minus four is three",
+     "so A is three"
     ]
    },
    {
@@ -76,14 +80,17 @@
      "Open the bracket",
      "plus B equals",
      "and six A equals three B",
-     "Divide both sides"
+     "B. Divide both",
+     "and B equals two A",
+     "So B is"
     ]
    },
    {
     "say": "Now the digits that fit. A can't be zero, because it's the leftmost digit. A is one gives B is two, so twelve. Then twenty-four, thirty-six and forty-eight. A is five would need B to be ten, and ten is not a digit, so we stop there. Let's check one. Twenty-four has the digit sum six, and four times six is twenty-four.",
     "at": [
-     "A is one gives B is two",
-     "Then twenty-four, thirty-six",
+     "so twelve",
+     "A is five would need",
+     "B to be",
      "Let's check one",
      "six, and four"
     ]
@@ -91,15 +98,25 @@
   ],
   [
    {
-    "say": "One more. A two-digit number is seven times the sum of its digits. Ten A plus B equals seven A plus seven B. Subtract seven A and B from both sides, and three A equals six B, so A equals two B. B is one gives twenty-one, and then forty-two, sixty-three and eighty-four. B is zero would make A zero too, and a number can't start with zero.",
+    "say": "One more. A two-digit number is seven times the sum of its digits. So ten A plus B equals seven times A plus B. Open the bracket: ten A plus B equals seven A plus seven B. Subtract seven A and B from both sides, and three A equals six B. Divide both sides by three, so A equals two B. B is one gives A is two, so twenty-one. B is two, three and four give forty-two, sixty-three and eighty-four. B is five would need A to be ten, and ten is not a digit. B is zero would make A zero too, and a number can't start with zero.",
     "at": [
-     "A two-digit number is seven times",
-     "Ten A plus",
-     "B is one gives twenty-one",
-     "and then forty-two"
+     "number is seven",
+     "So ten A plus B equals seven times",
+     "Open the bracket: ten A plus B equals seven A",
+     "plus B equals seven A",
+     "and three A equals six B",
+     "B. Divide both",
+     "so A equals two B",
+     "B is one",
+     "B is two, three and four give",
+     "four give forty-two",
+     "B is five would need",
+     "A to be",
+     "B is zero would make",
+     "A zero too"
     ]
    },
-   "Each question that follows uses these steps, and teaches one more tool. Try each question first, and then watch its solution. [pause] Okay. I'll see you in the next video."
+   "Each question that follows uses these steps, and teaches one more tool. Try each question first, and then watch its solution. [pause] I'll see you in the next video."
   ]
  ]
 }
