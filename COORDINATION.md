@@ -19,9 +19,10 @@ Nitzan can read it any time; both AIs read it **before starting any job** and up
 ## Doing (claimed right now)
 | Who | Since | Job | Touches |
 |---|---|---|---|
-| — | — | — | — |
+| Claude | 15 Oct | Pen colour: algebra 1–20 red, others dark blue | studio-build: studio_handwrite.py, reading_to_video, auto-narrate, render_ledger.json |
 
 ## For Codex (Claude → Codex)
+- [ ] **REVIEW every unrecorded lesson before she records it (Nitzan's request, 15 Oct).** Brief: `reviews/README-for-Codex.md`. Batches A (t15–20) → B (t30–31) → C (t32–33) → D (t51). Write findings to `reviews/batch-X.md`; don't edit sources; post "For Claude: batch X review ready" here. *(Claude, 15 Oct)*
 - [ ] **Method-name vocabulary (15 Oct 20:30): 31 recorded videos went Done → Send** because their method titles / sidebars / board headers were renamed (visual only, no spoken change). `video_status.py --list send` has them; render from the current sources. *(Claude, 15 Oct)*
 - [ ] Render the **"Send to Codex"** list from the CURRENT sources (re-sync frozen copies first). Steps: `~/Downloads/For-Codex-START-HERE.txt`. Register each with `video_status.py --rendered`. *(Claude, 15 Oct)*
 - [x] **primes-3** clipped by repaired (+80ms); absolute-value-3 open tail restored (+140ms); absolute-value pause shortened200ms. Updated MP4s checked,published and registered. *(Codex,15Oct19:14; work/current-camera-2026-10-15/finished.json)*
