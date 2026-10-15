@@ -1041,7 +1041,7 @@ video('solve-q-548', 'solution', qid='q-548', slides=[
 # ------------------------------------------------------------------------------------------------ q-549 (Hebrew: lesson 2)
 # NEW: the operation in every choice -> skip it, finish the section, come back (her tip); algebra can mark at once;
 # plugging in x = 1 (one failing example proves "not always"; one answer only).  Hebrew: algebra, plugging in.
-r1 = I('r1', 'A long calculation? $\\ $skip, come back at the end', size=26, col=1)
+r1 = I('r1', 'Operation in every choice? $\\ $skip it, come back at the end', size=26, col=1)
 r2 = IH('r2', '(1) $(6x)^2=36x^2$ ✓', size=30)
 r3 = IH('r3', '(2) $(\\sqrt{x})^2\\cdot(\\sqrt{x})^2=x\\cdot x=x^2$ ✓', size=30)
 r4 = IH('r4', '(3) $(5x)^2=25x^2\\ne5x^2$ ✗', size=30)
@@ -1052,11 +1052,11 @@ video('solve-q-549', 'solution', qid='q-549', slides=[
     S('Method 1 · Algebra',
       L("For every number t, diamond of t is equal to t squared. In the choices, x is zero or more. Which of the following "
         "is not always true?", pt('stem', 'For every number t', 'hl', 7.0), voice='calm', pause=0.5),
-      L("Look at the choices. The diamond appears in every choice, two or three times. But each diamond here only squares "
-        "something, so the work is short, and we solve it now. A tip for the exam: if a question would take a lot of "
-        "calculating, you can skip it, solve the rest of the section, and come back at the end. Decide by the work it "
-        "needs, not by how many symbols you see. [short pause] We'll solve it two ways, with algebra, and then by plugging "
-        "in a number.", pt('choice 1', 'in every choice'), show(r1, 'you can skip it')),
+      L("Before we start, a small tip. Look at the choices. The diamond appears in every choice, and we have to use it "
+        "two or three times in each one. That takes time. So in the exam, when a question like this has the operation in "
+        "every choice, skip it. Solve the rest of the section first, and come back to it at the end. Here in the lesson, "
+        "let's solve it. [short pause] We'll solve it in two different ways, with algebra, and then by plugging in a number.",
+        pt('choice 1', 'in every choice'), show(r1, 'skip it')),
       L("[short pause] With algebra, we write what the diamond does on each side. The diamond squares whatever goes in. "
         "Choice number one. On the left, six x goes in, so we get six x, squared. That's six squared times x squared, "
         "thirty-six x squared. On the right, thirty-six times x squared. Both sides are equal for every x, so this one is "
@@ -1079,8 +1079,8 @@ video('solve-q-549', 'solution', qid='q-549', slides=[
       L("Choice number three. Diamond of five is twenty-five, but five times diamond of one is five times one, which is "
         "five. Twenty-five is not five, so choice number three fails.", show(s2, 'Diamond of five is twenty-five')),
       L("One allowed example where a choice fails proves it's not always true, so we can stop here without checking "
-        "choice number four. Choice number three is the one that broke. [pause] Okay. I'll see you in the next question.",
-        mk('tick', 'choice 3', 'is the one that broke'))),
+        "choice number four. Choice number three is our answer, and I'll see you in the next question.",
+        mk('tick', 'choice 3', 'is our answer, and'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t19-18 (added)

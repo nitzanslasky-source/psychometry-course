@@ -12,12 +12,12 @@
     "pause": 0.5
    },
    {
-    "say": "Look at the choices. The diamond appears in every choice, two or three times. But each diamond here only squares something, so the work is short, and we solve it now. A tip for the exam: if a question would take a lot of calculating, you can skip it, solve the rest of the section, and come back at the end. Decide by the work it needs, not by how many symbols you see. [short pause] We'll solve it two ways, with algebra, and then by plugging in a number.",
+    "say": "Before we start, a small tip. Look at the choices. The diamond appears in every choice, and we have to use it two or three times in each one. That takes time. So in the exam, when a question like this has the operation in every choice, skip it. Solve the rest of the section first, and come back to it at the end. Here in the lesson, let's solve it. [short pause] We'll solve it in two different ways, with algebra, and then by plugging in a number.",
     "at": [
      "in every choice",
-     "three times. But",
-     "you can skip it",
-     "the rest of"
+     "have to use",
+     "skip it",
+     "Solve the rest"
     ]
    },
    {
@@ -82,11 +82,11 @@
     ]
    },
    {
-    "say": "One allowed example where a choice fails proves it's not always true, so we can stop here without checking choice number four. Choice number three is the one that broke. [pause] Okay. I'll see you in the next question.",
+    "say": "One allowed example where a choice fails proves it's not always true, so we can stop here without checking choice number four. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
      "not always true",
      "number four. Choice",
-     "is the one that broke"
+     "is our answer, and"
     ]
    }
   ]
