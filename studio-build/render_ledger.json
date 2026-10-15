@@ -58,7 +58,7 @@
   "made_from": "2026-10-13T18:14:36+03:00"
  },
  "powers-on-number-line": {
-  "state": "done",
+  "state": "send",
   "fingerprint": "2ad9c78c364799b0b1f5968fac4978f5300eea79b7359bab0885d02f6c28042c",
   "parts": {
    "spoken": "07590c476dab59b25a991fe2b9d92f911d5eb153dd8223e176a33c957727f557",
@@ -68,7 +68,7 @@
   "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 17 - The Number Line/New checked exports/091 Powers on the Number Line.mp4",
   "rendered_at": "2026-10-13T22:58:55+03:00",
   "source": "seed",
-  "note": "rendered 13 Oct, nothing changed since",
+  "note": "cue phrases re-anchored 2026-10-15 (tag fragments like \"[short pause\" replaced by nearby script words; visual only, no spoken change): re-time (reading_to_video) and re-render",
   "made_from": "2026-10-13T18:14:36+03:00"
  },
  "primes": {
@@ -706,7 +706,7 @@
   "made_from": "2026-10-14T00:58:44+03:00"
  },
  "solve-q-512": {
-  "state": "done",
+  "state": "send",
   "fingerprint": "0e78b1e5fab70060f4224899c9a7eacc0109ef10b33ad92699fbb4a4e8944214",
   "parts": {
    "spoken": "eab1e76a07f77504bce9e022d85609872e09ce0a9f329c9e02664e118c4038c8",
@@ -716,11 +716,11 @@
   "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October/113 q-512.mp4",
   "rendered_at": "2026-10-14T04:58:56+03:00",
   "source": "seed",
-  "note": "rendered 14 Oct, nothing changed since",
+  "note": "cue phrases re-anchored 2026-10-15 (tag fragments like \"[short pause\" replaced by nearby script words; visual only, no spoken change): re-time (reading_to_video) and re-render",
   "made_from": "2026-10-14T00:58:44+03:00"
  },
  "solve-q-513": {
-  "state": "done",
+  "state": "send",
   "fingerprint": "c47a15ca8b9d9a681ae863044697ff12065036bd15c74840ef6609a7c7c88647",
   "parts": {
    "spoken": "32adc25c78bffa2eb8f78ca83d731815a0638dd487fb74a0b890fcd0d210d289",
@@ -730,7 +730,7 @@
   "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/Course-video-library/Topic 18 - Exercises with Letters/New checked exports - 14 October/114 q-513.mp4",
   "rendered_at": "2026-10-14T04:59:31+03:00",
   "source": "seed",
-  "note": "rendered 14 Oct, nothing changed since",
+  "note": "cue phrases re-anchored 2026-10-15 (tag fragments like \"[short pause\" replaced by nearby script words; visual only, no spoken change): re-time (reading_to_video) and re-render",
   "made_from": "2026-10-14T00:58:44+03:00"
  },
  "solve-q-514": {

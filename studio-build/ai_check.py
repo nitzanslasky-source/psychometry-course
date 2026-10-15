@@ -21,6 +21,11 @@ def _plain(s):
     return re.sub(r'\s+([,.;:?!])', r'\1', s)
 
 
+def _untag(s):
+    """the line as spoken (ai_narrate.spoken for a tag-free model / her reading): [tags] dropped, spaces folded"""
+    return re.sub(r'\s+', ' ', re.sub(r'\s*\[[a-z][a-z -]*\]\s*', ' ', s.strip())).strip()
+
+
 NOTES = []
 _V = json.load(open(os.path.join(HERE, 'ai_scripts', '_voice.json'), encoding='utf-8')); PRESETS = list((_V.get('presets') or {'base': 0}))
 MODEL = json.load(open(os.path.join(HERE, 'ai_scripts', '_voice.json'), encoding='utf-8')).get('model_id')   # tags matter only for eleven_v3 / v4
@@ -54,6 +59,13 @@ for vid in ids:
                     if ph[1:].lower() not in prev.lower(): probs.append('line %d: "at" phrase %r is not in the previous line' % (k + 1, ph))
                 elif ph is not None and ph.lower() not in (l.get('say') or '').lower():
                     probs.append('line %d: "at" phrase %r is not in the line' % (k + 1, ph))
+                # 2026-10-15: a cue phrase must be plain spoken words. reading_to_video (her reading) and segmented TTS
+                # time cues on the line with its tags stripped, so "[short pause] We'll" / "negative. [short" can't be found.
+                if ph is not None:
+                    q = ph[1:] if ph.startswith('<') else ph
+                    if re.search(r'[\[\]<]', q): probs.append('line %d: "at" phrase %r holds a tag fragment ([ ] <) - anchor on plain script words' % (k + 1, ph))
+                    elif q.lower() not in _untag(prev if ph.startswith('<') else (l.get('say') or '')).lower():
+                        probs.append('line %d: "at" phrase %r is not in the %s line once tags are stripped' % (k + 1, ph, 'previous' if ph.startswith('<') else 'spoken'))
     bangs = []      # one '!' per video is allowed, at the real aha moment (teacher 2026-10-09); more reads as over-acting
     for i, sl in enumerate(a):
         for t in sl:

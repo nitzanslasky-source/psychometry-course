@@ -14,7 +14,7 @@
    {
     "say": "C B is a two-digit number. We multiply it by the digit B and get the three-digit number A C B. We need a possible value of B. Write the multiplication [short pause] vertically and check the ones column.",
     "at": [
-     "short pause] vertically",
+     "vertically",
      "vertically and check",
      "check the ones",
      "check the ones column"
