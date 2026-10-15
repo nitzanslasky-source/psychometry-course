@@ -36,6 +36,10 @@ file also carries the same mic (compressed), used only to sync it to the WAV exa
 "camera": {file, startOffset (camera start - WAV start, s), fps, w, h, mime, t0/cameraStartMs/wavStartMs, pauses, ...}.
 With the camera off nothing changes. reading_to_video.py cuts the camera video like the audio and composites the bubble.
 
+Layouts (2026-10-15): camera on = .camlayout (script column at the top centre under the webcam). Audio only =
+.audiolayout: the same calm prompter (current paragraph large and centred, next one small and faded, no highlight
+colour) filling most of the screen, a slim collapsible video list (hidden while recording) and a compact dock below.
+
 Change detection (generator and page, same rule): a current paragraph whose
 text is not among the paragraphs of her last FULL take's sidecar, nor of a patch take made after it, is "changed"; the
 list shows "needs re-read: N paragraphs".
@@ -555,11 +559,11 @@ PAGE = r"""<!doctype html>
 <style>
 :root{--bg:#f7f6f3;--panel:#fff;--ink:#1f2328;--muted:#6b7280;--faint:#9ca3af;--line:#e7e5e0;--soft:#f1efea;
 --accent:#0f766e;--accent-soft:#e6f4f1;--rec:#c2410c;--rec-soft:#fdf0e9;--ok:#15803d;--ok-soft:#e8f5ec;--warn:#b45309;--warn-soft:#fdf6e7;
---hl:#fff8db;--hl-line:#e0b100;--mist:#b91c1c;--radius:12px;--prompt:30px}
+--mist:#b91c1c;--radius:12px;--prompt:30px}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17181a;--panel:#1f2023;--ink:#ececea;--muted:#a1a1aa;--faint:#71717a;--line:#2e2f33;--soft:#26272b;
---accent:#2dd4bf;--accent-soft:#12332f;--rec:#fb923c;--rec-soft:#3a2416;--ok:#4ade80;--ok-soft:#14321f;--warn:#fbbf24;--warn-soft:#3a2e12;--hl:#2f2a12;--hl-line:#d4a72c;--mist:#f87171}}
+--accent:#2dd4bf;--accent-soft:#12332f;--rec:#fb923c;--rec-soft:#3a2416;--ok:#4ade80;--ok-soft:#14321f;--warn:#fbbf24;--warn-soft:#3a2e12;--mist:#f87171}}
 :root[data-theme="dark"]{--bg:#17181a;--panel:#1f2023;--ink:#ececea;--muted:#a1a1aa;--faint:#71717a;--line:#2e2f33;--soft:#26272b;
---accent:#2dd4bf;--accent-soft:#12332f;--rec:#fb923c;--rec-soft:#3a2416;--ok:#4ade80;--ok-soft:#14321f;--warn:#fbbf24;--warn-soft:#3a2e12;--hl:#2f2a12;--hl-line:#d4a72c;--mist:#f87171}
+--accent:#2dd4bf;--accent-soft:#12332f;--rec:#fb923c;--rec-soft:#3a2416;--ok:#4ade80;--ok-soft:#14321f;--warn:#fbbf24;--warn-soft:#3a2e12;--mist:#f87171}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
 body{background:var(--bg);color:var(--ink);font:15px/1.45 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;flex-direction:column}
@@ -569,7 +573,7 @@ button:hover:not(:disabled){border-color:var(--faint)}
 button:disabled{opacity:.45;cursor:default}
 button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .top{display:flex;align-items:center;gap:14px;padding:10px 18px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
-.updated{font:700 14px system-ui;background:#fef3c7;color:#78350f;border:1.5px solid #f59e0b;border-radius:10px;padding:5px 10px;white-space:nowrap;margin-left:auto;order:3}
+.updated{font:700 14px system-ui;background:var(--accent-soft);color:var(--accent);border:1.5px solid color-mix(in srgb,var(--accent) 40%,transparent);border-radius:10px;padding:5px 10px;white-space:nowrap;margin-left:auto;order:3}
 .updated.old{background:#fee2e2;color:#7f1d1d;border-color:#ef4444}
 .brand{font-weight:700;letter-spacing:.01em}.brand small{font-weight:500;color:var(--muted);margin-left:8px}
 .tips{flex:1 1 420px;display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--muted);font-size:13px}
@@ -633,13 +637,13 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
 .slide:first-child{border-top:0;margin-top:0;padding-top:0}
 .p{font:400 var(--prompt)/1.55 Georgia,"Iowan Old Style",serif;margin:0 0 .55em;padding:.25em .6em .3em;border-radius:10px;border-left:4px solid transparent;color:var(--muted);transition:background .2s,color .2s;cursor:pointer;position:relative}
 .p.done{color:var(--faint)}
-.p.cur{background:var(--hl);border-left-color:var(--hl-line);color:var(--ink)}
+.p.cur{background:none;border-left-color:var(--accent);color:var(--ink)}
 .p .mk{position:absolute;right:8px;top:6px;font:700 12px ui-sans-serif,sans-serif;color:var(--mist)}
 .p.flash{animation:fl .6s}
 .mode{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
 .mode button{border:0;border-radius:0;padding:6px 11px;background:var(--panel)}
 .mode button.on{background:var(--accent);color:#fff}
-.pbar{display:none;margin:0 22px 8px;padding:8px 12px;border-radius:10px;background:var(--warn-soft);font-size:13.5px;align-items:center;gap:10px;flex-wrap:wrap}
+.pbar{display:none;margin:0 22px 8px;padding:8px 12px;border-radius:10px;background:var(--accent-soft);font-size:13.5px;align-items:center;gap:10px;flex-wrap:wrap}
 .patch .pbar{display:flex}
 .pbar button{padding:4px 10px;font-size:13px}
 .pbar #pNext{margin-left:auto;padding:8px 18px;font-size:15px;background:var(--accent);border-color:var(--accent);color:#fff}
@@ -696,11 +700,64 @@ body.camlayout{--band:44vh;padding-top:var(--band)}
 .camlayout .work{overflow:auto}
 .camlayout #camPrev{position:fixed;right:14px;bottom:14px;width:120px;height:120px;z-index:6}
 .opts .mirrorbox{display:none}.camlayout .opts .mirrorbox{display:flex}
+/* 2026-10-15 AUDIO-ONLY LAYOUT (teacher: "bigger, fill more of the screen, not in yellow, more like the video ones"):
+   like the camera layout (current paragraph large and centred, the next one small and faded, past ones hidden, no
+   highlight colour), but the prompter fills most of the screen since there is no webcam to look at. The list is a slim
+   sidebar that can be hidden (☰ Videos) and hides itself while recording; the controls, mic, folder, meter and player
+   sit in a compact dock under the prompter. A long paragraph is shrunk to fit (fitCur). Camera lessons keep .camlayout. */
+.listbtn{display:none;padding:4px 10px;font-size:13px}
+.audiolayout .listbtn{display:inline-block}
+.audiolayout .top{flex-wrap:nowrap;padding:6px 14px;gap:12px}
+.audiolayout .brand{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1 1 auto}
+.audiolayout .tips{display:none}
+.audiolayout .updated{font-size:12.5px;padding:3px 9px;order:0;margin-left:0;flex:none}
+.audiolayout aside{width:220px;padding:6px 6px 14px}
+.audiolayout .vid{padding:5px 8px}.audiolayout .vid .t{font-size:12.5px}.audiolayout .grp{padding:6px 8px 4px}
+.audiolayout.listhidden aside,.audiolayout.recording aside{display:none}
+.audiolayout .work{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto minmax(0,1fr) auto auto;
+  grid-template-areas:"head head" "note note" "pbar pbar" "pr pr" "ctrl foot" "bar bar"}
+.audiolayout .head{grid-area:head;padding:6px 16px 2px;gap:12px}
+.audiolayout .head h1{font-size:14px;font-weight:600;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.audiolayout .head h1 small{display:inline;margin:0 0 0 10px;font-size:11.5px;color:var(--faint)}
+.audiolayout .correction-note{grid-area:note;margin:4px 16px}
+.audiolayout .pbar{grid-area:pbar;margin:4px 16px}
+.audiolayout .prompter{grid-area:pr;min-height:0;padding:8px 16px;scroll-behavior:auto}
+.audiolayout .prompter .inner{max-width:min(90vw,1500px);min-height:100%;display:flex;flex-direction:column;justify-content:center}
+.audiolayout #paras.selecting{display:block;max-width:min(80vw,1200px)}
+.audiolayout .slide{border:0;margin:0;padding:0}
+.audiolayout #paras.selecting .slide{border-top:1px dashed var(--line);margin-top:14px;padding-top:14px}
+.audiolayout #paras.selecting .slide:first-child{border-top:0;margin-top:0;padding-top:0}
+.audiolayout #paras:not(.selecting) .p{display:none}
+.audiolayout #paras:not(.selecting) .p.cur{display:block;font-size:calc(var(--prompt)*1.5);line-height:1.38;color:var(--ink);background:none;border-left-color:transparent;padding:.1em .2em;margin:0 0 .45em;text-align:center}
+.audiolayout #paras:not(.selecting) .p.nextp{display:block;font-size:calc(var(--prompt)*.78);line-height:1.4;color:var(--muted);opacity:.5;padding:.1em .4em;margin:0;text-align:center;border-left-color:transparent}
+.audiolayout #paras:not(.selecting) .p.cur::before,.audiolayout #paras:not(.selecting) .p.nextp::before{display:none}
+.audiolayout .ctrl{grid-area:ctrl;padding:6px 16px;gap:8px;border-top:1px solid var(--line);background:var(--panel);flex-wrap:nowrap;min-width:0}
+.audiolayout .timer{font-size:26px;min-width:104px}.audiolayout .big{padding:7px 13px}
+.audiolayout .state{flex:1 1 auto;min-width:120px;font-size:12px;line-height:1.3;max-height:2.65em;overflow:hidden}
+.audiolayout .ctrl .keys{display:none}
+.keys2{display:none}
+.audiolayout .keys2{display:block;flex:none;margin-left:auto;font-size:11px;line-height:1.55;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.audiolayout .top button,.audiolayout .work button{white-space:nowrap;flex:none}
+.audiolayout .foot{grid-area:foot;padding:6px 16px 6px 0;gap:8px;border-top:1px solid var(--line);flex-wrap:nowrap}
+.audiolayout .foot audio{min-width:180px;width:220px;height:32px}
+.audiolayout .foot .lbl{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:120px}
+.audiolayout .bar{grid-area:bar;padding:5px 16px;gap:4px 16px;border-bottom:0;border-top:1px solid var(--line);flex-wrap:nowrap}
+.audiolayout .folder{flex:0 1 auto;font-size:12px;min-width:0}.audiolayout .folder .path{max-width:260px}.audiolayout .folder .path{font-size:11.5px}
+.audiolayout .mic{flex:1 1 auto;flex-wrap:nowrap;font-size:12px;min-width:0}
+.audiolayout .mic select{max-width:200px;padding:3px 6px}.audiolayout .meter{max-width:260px;min-width:90px}
+.audiolayout .db{flex:none;white-space:nowrap;width:48px}
+.audiolayout .micinfo{flex:1 1 0;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.audiolayout .cam{flex:none;flex-wrap:nowrap;font-size:12px}
+.audiolayout .cam .caminfo{display:none}.audiolayout .cam label{white-space:nowrap}
+.audiolayout .mic{flex:1 1 auto}
+.audiolayout .bar button,.audiolayout .mic button{padding:3px 9px;font-size:12px}
+@media (max-width:820px){.audiolayout .work{display:flex}.audiolayout .ctrl,.audiolayout .bar,.audiolayout .foot{flex-wrap:wrap}}
 @media (max-width:820px){.main{flex-direction:column}aside{width:auto;max-height:30vh;border-right:0;border-bottom:1px solid var(--line)}:root{--prompt:22px}.keys{display:none}}
 </style>
 </head>
-<body>
+<body class="audiolayout">
 <div class="top">
+  <button class="listbtn" id="bList" title="Show or hide the video list (it hides itself while recording)">☰ Videos</button>
   <div class="brand">Reading Studio<small>__LABEL__</small></div>
   <div class="updated" id="updated" title="Version saved at this time. Refresh only between takes to load a newer version.">Last updated: __UPDATED__</div>
   <div class="tips">
@@ -729,6 +786,7 @@ body.camlayout{--band:44vh;padding-top:var(--band)}
         <video id="camPrev" muted playsinline hidden></video>
         <span class="caminfo" id="caminfo">Camera is off for this video (audio only).</span>
       </div>
+      <span class="keys keys2"><kbd>Space</kbd> next · <kbd>←</kbd> back · <kbd>M</kbd> mistake · <kbd>P</kbd> pause<br>Pedal: <kbd>PgDn</kbd> next · <kbd>PgUp</kbd> back · <kbd>B</kbd>/<kbd>.</kbd> mistake</span>
     </div>
     <div class="head"><h1 id="vtitle"></h1>
       <div class="opts">
@@ -889,9 +947,14 @@ function paintParas(){
   if(patch){const nc=[...sel].filter(k=>ch.includes(k)).length;const o=order(),pos=o.indexOf(S.para)+1;$('#pNext').hidden=!patching||pos>=o.length;
   $('#pinfo').innerHTML=patching?(pos<o.length?'<b>Paragraph '+pos+' of '+o.length+'</b> — press <kbd>Space</kbd> (or Next ▸) for the next paragraph':'<b>Paragraph '+pos+' of '+o.length+'</b> — the last one. Press Stop &amp; save when you finish')+' <span style="color:var(--muted)">· greyed lines are context, do not read them</span>':
     'Re-read mode: click paragraphs to select them. <b>'+sel.size+' selected</b>'+(ch.length?' · '+ch.length+' changed since your last take'+(nc?' ('+nc+' selected)':''):' · no changed paragraphs');$('#pChanged').hidden=patching||!ch.length;$('#pClear').hidden=patching}
-  if(document.body.classList.contains('camlayout')&&!$('#paras').classList.contains('selecting')){$('#prompter').scrollTop=0}
+  if((document.body.classList.contains('camlayout')||document.body.classList.contains('audiolayout'))&&!$('#paras').classList.contains('selecting')){$('#prompter').scrollTop=0;fitCur()}
   else if($('#auto').checked){const el=document.querySelector('#paras .p.cur');if(el){const pr=$('#prompter');const top=el.offsetTop-pr.offsetTop-pr.clientHeight*.3;pr.scrollTo({top:Math.max(0,top),behavior:'smooth'})}}
 }
+/* audio layout: a long current paragraph is made smaller until it (and the next one) fit the prompter, no scrolling */
+function fitCur(){const pr=$('#prompter');document.querySelectorAll('#paras .p[style]').forEach(p=>p.style.removeProperty('font-size'));
+  const el=document.querySelector('#paras .p.cur');if(!el||!document.body.classList.contains('audiolayout')||$('#paras').classList.contains('selecting'))return;
+  let f=parseFloat(getComputedStyle(el).fontSize);const min=f*.55;for(let n=0;n<14&&pr.scrollHeight>pr.clientHeight+1&&f>min;n++){f*=.94;el.style.fontSize=f+'px'}pr.scrollTop=0}
+let fitRaf=0;window.addEventListener('resize',()=>{cancelAnimationFrame(fitRaf);fitRaf=requestAnimationFrame(()=>{if(!$('#paras').classList.contains('selecting'))fitCur()})});
 function step(d){const o=order();if(!o.length)return;let i=o.indexOf(S.para);if(i<0)i=d>0?-1:o.length;const j=i+d;if(j<0||j>=o.length){if(d>0&&S.rec)toast('Last paragraph. Press Stop & save when you finish.');return}setPara(o[j],d>0?'next':'back')}
 function setPara(k,why){const n=flat(V[S.cur]).length;k=Math.max(0,Math.min(n-1,k));if(k===S.para&&why!=='start')return;S.para=k;
   if(S.rec)S.rec.events.push({type:why==='back'?'back':why==='jump'?'jump':'para',para:k,t:recTime()});paintParas()}
@@ -903,7 +966,9 @@ $('#pChanged').onclick=()=>{S.sel=new Set(changedList());const o=order();if(o.le
 $('#pClear').onclick=()=>{S.sel.clear();paintParas()};
 $('#pNext').onclick=e=>{e.currentTarget.blur();if(S.rec&&!S.rec.paused)nextPara()};
 $('#prompter').onclick=()=>{if(S.rec&&!S.rec.paused)nextPara()};
-function fontSize(d){let f=LS.get('font',30);f=Math.max(18,Math.min(48,f+d));LS.set('font',f);document.documentElement.style.setProperty('--prompt',f+'px')}
+function fontSize(d){let f=LS.get('font',30);f=Math.max(18,Math.min(48,f+d));LS.set('font',f);document.documentElement.style.setProperty('--prompt',f+'px');if(typeof fitCur==='function'&&!$('#paras').classList.contains('selecting'))fitCur()}
+$('#bList').onclick=()=>{const h=!document.body.classList.contains('listhidden');document.body.classList.toggle('listhidden',h);LS.set('listHidden',h);if(document.body.classList.contains('recording')&&!h)toast('The list comes back when you stop recording.');requestAnimationFrame(fitCur)};
+document.body.classList.toggle('listhidden',LS.get('listHidden',false));
 $('#aMinus').onclick=()=>fontSize(-2);$('#aPlus').onclick=()=>fontSize(2);
 $('#mirror').checked=LS.get('mirror',false);document.body.classList.toggle('mirror',$('#mirror').checked);
 $('#mirror').onchange=()=>{LS.set('mirror',$('#mirror').checked);document.body.classList.toggle('mirror',$('#mirror').checked)};
@@ -942,7 +1007,7 @@ async function openMic(deviceId){
 }
 function closeMic(){if(MIC.stream)MIC.stream.getTracks().forEach(t=>t.stop());if(MIC.ctx)try{MIC.ctx.close()}catch{}MIC.stream=MIC.ctx=MIC.node=null}
 function paintMicInfo(){const s=MIC.settings||{},off=k=>s[k]===false?'off':s[k]===true?'<span class="bad">ON</span>':'n/a';
-  $('#micinfo').innerHTML=esc(MIC.label||'Microphone')+' · '+(MIC.ctx?MIC.ctx.sampleRate:'?')+' Hz mono WAV · echo cancel '+off('echoCancellation')+' · noise suppr. '+off('noiseSuppression')+' · auto gain '+off('autoGainControl')}
+  $('#micinfo').title=MIC.label||'';$('#micinfo').innerHTML=esc(MIC.label||'Microphone')+' · '+(MIC.ctx?MIC.ctx.sampleRate:'?')+' Hz mono WAV · echo cancel '+off('echoCancellation')+' · noise suppr. '+off('noiseSuppression')+' · auto gain '+off('autoGainControl')}
 async function fillMics(cur){const sel=$('#micSel');const ds=(await navigator.mediaDevices.enumerateDevices()).filter(d=>d.kind==='audioinput');
   sel.innerHTML=ds.map(d=>'<option value="'+esc(d.deviceId)+'"'+(d.deviceId===cur?' selected':'')+'>'+esc(d.label||'Microphone')+'</option>').join('')}
 $('#micSel').onchange=async()=>{if(S.rec){toast('Stop the recording first.');return}const id=$('#micSel').value;LS.set('mic',id);try{await openMic(id);toast('Microphone: '+MIC.label)}catch{}};
@@ -984,7 +1049,7 @@ async function fillCams(cur){const sel=$('#camSel');const ds=(await navigator.me
 function camFmt(){const m=camMime();return m.startsWith('video/mp4')?'MP4 (H.264)':m?'WebM ('+(m.includes('vp9')?'VP9':'VP8')+')':'no video recorder'}
 function paintCam(){
   const v=V[S.cur],want=camWanted(v),box=$('#camBox'),info=$('#caminfo');$('#camOn').checked=want;box.classList.toggle('on',want);
-  if(document.body.classList.contains('camlayout')!==want){document.body.classList.toggle('camlayout',want);if(typeof paintParas==='function')paintParas()}
+  if(document.body.classList.contains('camlayout')!==want){document.body.classList.toggle('camlayout',want);document.body.classList.toggle('audiolayout',!want);if(typeof paintParas==='function')paintParas()}
   if(!want){info.textContent=(v.camera?'Camera lesson, but camera switched off: ':'')+'audio only for this video.';$('#camSel').hidden=true;$('#camPrev').hidden=true;return}
   if(CAM.stream){const s=CAM.settings||{};info.innerHTML=esc(CAM.label||'Camera')+' · '+(s.width||'?')+'×'+(s.height||'?')+' · '+Math.round(s.frameRate||0)+' fps · '+camFmt()+(s.height&&s.height<720?' · <span class="bad">low resolution</span>':'')+' · recorded with every take of this video';return}
   info.innerHTML=CAM.err?'<span class="bad">Camera '+(CAM.err==='NotAllowedError'?'blocked: allow it in the address bar':CAM.err==='disconnected'?'disconnected':'not available ('+esc(CAM.err)+')')+'.</span> Click “Camera on” again to retry, or untick it to record audio only.':
@@ -1103,13 +1168,15 @@ function encodeWav(chunks,n,sr){const buf=new ArrayBuffer(44+n*2),dv=new DataVie
   w(0,'RIFF');dv.setUint32(4,36+n*2,true);w(8,'WAVE');w(12,'fmt ');dv.setUint32(16,16,true);dv.setUint16(20,1,true);dv.setUint16(22,1,true);dv.setUint32(24,sr,true);dv.setUint32(28,sr*2,true);dv.setUint16(32,2,true);dv.setUint16(34,16,true);w(36,'data');dv.setUint32(40,n*2,true);
   const out=new Int16Array(buf,44,n);let o=0;for(const c of chunks)for(let i=0;i<c.length;i++){const s=Math.max(-1,Math.min(1,c[i]));out[o++]=s<0?Math.round(s*32768):Math.round(s*32767)}
   return new Blob([buf],{type:'audio/wav'})}
-function setLastTake(blob,name){if(S.lastUrl)URL.revokeObjectURL(S.lastUrl);S.lastUrl=URL.createObjectURL(blob);$('#player').src=S.lastUrl;$('#playLbl').textContent='Last take · '+name.replace(/^.*?-(\d{4}-\d\d-\d\d)T(\d\d)-(\d\d).*$/,'$1 $2:$3')}
+function setLastTake(blob,name){if(S.lastUrl)URL.revokeObjectURL(S.lastUrl);S.lastUrl=URL.createObjectURL(blob);$('#player').src=S.lastUrl;$('#playLbl').textContent='Last take · '+name.replace(/^.*?-(\d{4}-\d\d-\d\d)T(\d\d)-(\d\d).*$/,'$1 $2:$3');$('#playLbl').title=$('#playLbl').textContent}
 async function loadLatestTake(){const v=V[S.cur],st=S.status[v.id];
   if(!st||RF.perm!=='granted'){if(S.lastUrl){URL.revokeObjectURL(S.lastUrl);S.lastUrl=null}$('#player').removeAttribute('src');$('#player').load();$('#playLbl').textContent=st?'Last take (connect the folder to play)':'No take yet';return}
   try{const d=await videoDir(v.id,false),f=await (await d.getFileHandle(st.latest)).getFile();if(V[S.cur].id===v.id)setLastTake(f,st.latest)}catch(e){$('#playLbl').textContent='No take yet'}}
 let tickRaf=0;
 function tick(){cancelAnimationFrame(tickRaf);const f=()=>{if(!S.rec){return}$('#timer').textContent=fmt(recTime(),true);tickRaf=requestAnimationFrame(f)};f()}
+new MutationObserver(()=>{$('#state').title=$('#state').textContent}).observe($('#state'),{childList:true,characterData:true,subtree:true});
 function setUI(){const r=S.rec,t=$('#timer');
+  if(document.body.classList.contains('recording')!==!!r){document.body.classList.toggle('recording',!!r);requestAnimationFrame(()=>{if(!$('#paras').classList.contains('selecting'))fitCur()})}
   $('#bRec').disabled=!!r;$('#bPause').disabled=!r;$('#bStop').disabled=!r;$('#bMist').disabled=!r||r.paused;$('#bNext').disabled=!!r;$('#micSel').disabled=!!r;$('#camOn').disabled=!!r;$('#camSel').disabled=!!r;
   $('#bPause').textContent=r&&r.paused?'Resume':'Pause';
   t.classList.toggle('on',!!r&&!r.paused);t.classList.toggle('paused',!!r&&r.paused);

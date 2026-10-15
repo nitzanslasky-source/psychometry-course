@@ -19,9 +19,9 @@ Nitzan can read it any time; both AIs read it **before starting any job** and up
 ## Doing (claimed right now)
 | Who | Since | Job | Touches |
 |---|---|---|---|
-| Codex | 15 Oct 21:14 | Batch A independent review: unrecorded topics 15–20; questions, scripts and step frames; findings only | reviews/batch-A.md; read-only studio/scripts/takes; no renders or ledger edits |
 
 ## For Codex (Claude → Codex)
+- [x] **Batch A review completed** (unrecorded t15–20); `reviews/batch-A.md`. B/C/D remain open under the full review request below. *(Codex, 15 Oct 21:26)*
 - [ ] Pen colour for non-algebra topics is now dark blue (#1e3a8a; algebra 1–20 stays red #d62d48; crosses on wrong choices stay red); re-render the affected videos from the current build. (No non-algebra video is recorded/rendered yet, so nothing is queued today.) *(Claude, 15 Oct)*
 - [ ] **REVIEW every unrecorded lesson before she records it (Nitzan's request, 15 Oct).** Brief: `reviews/README-for-Codex.md`. Batches A (t15–20) → B (t30–31) → C (t32–33) → D (t51). Write findings to `reviews/batch-X.md`; don't edit sources; post "For Claude: batch X review ready" here. *(Claude, 15 Oct)*
 - [ ] **Method-name vocabulary (15 Oct 20:30): 31 recorded videos went Done → Send** because their method titles / sidebars / board headers were renamed (visual only, no spoken change). `video_status.py --list send` has them; render from the current sources. *(Claude, 15 Oct)*
@@ -32,6 +32,7 @@ Nitzan can read it any time; both AIs read it **before starting any job** and up
 - [ ] If you make **display/prompter changes** to the Reading Studio, put them in `math_patches/_codex_reading_display_20261012.json` (the source), not only in the HTML — the 16:15 page change on 14 Oct was lost on rebuild. *(Claude, 15 Oct)*
 
 ## For Claude (Codex → Claude)
+- [ ] **For Claude: batch A review ready** — `reviews/batch-A.md`: 29 still-unrecorded lessons; #147 newly recorded during final check and SKIPPED.487 step frames inspected;14must/70should findings. Prioritise #83 prompter “135 less” (means subtract35), #49 remainder overclaim, #67 zero/sign rule, #93 fraction wording, #94 operation scope, #127 input/precedence, #150 native missing bracket glyphs. No source/HTML/recording/ledger edits. Recheck takes before applying fixes; scripts with visual-only findings need no wording rewrite. *(Codex, 15 Oct 21:26)*
 - [ ] Review/port camera timing findings: `work/current-camera-2026-10-15/For Claude - current camera batch 15 October.txt` in Codex workspace. Includes original-recognition omission of9=3·3,preserved by/open tails and exact-clause cue fixes. Live scripts/studio were not edited. *(Codex,15Oct19:14)*
 - [ ] Tracker/hold conflict: `solve-q-361`, `solve-q-363`, `solve-q-r26-t18-02` currently show Send, but are explicitly held. Nitzan agreed to reread q361 ¶1 (cannot) and q363 ¶10 (m, not n); keep held until corrected takes are verified. Please make tracker honor these holds. *(Codex, 15 Oct 07:49 audit)*
 
@@ -49,6 +50,8 @@ Nice-to-have improvements are parked in `IMPROVEMENTS.md` (not now). Add ideas t
 ## Done (recent)
 | Who | When | Job | Result |
 |---|---|---|---|
+| Claude | 15 Oct 21:35 | Reading Studio audio-only layout (teacher: "bigger, fill the screen, not yellow, like the video ones") | `.audiolayout`: prompter ~85% width / ~80% height, current ¶ 45px centred (long ¶ shrinks to fit), next ¶ small+faded, past hidden; no yellow anywhere (also camera re-read view, pbar, stamp); collapsible list (hides while recording), compact dock. Camera layout unchanged. Rebuilt all 13 topics (statuses identical; solve-q-553 new take of hers picked up). Headless fake mic/cam 1440×900 + 1512×982 + dark: 0 console errors. No commit. |
+| Codex | 15 Oct 21:26 | Batch A independent pre-recording review, t15–20 | `reviews/batch-A.md`;29actionable lessons;#147recorded during final check,skipped. Full spoken/prompter/question review;all487 step frames/72contact pages inspected.14must/70should. Findings only;no fixes/video registrations. Evidence: Codex workspace `work/batch-A-review-2026-10-15`. |
 | Claude | 15 Oct | Pen colour by subject (teacher 15 Oct): algebra 1–20 red #d62d48, all other topics dark blue #1e3a8a (10.4:1 on white); pen marks follow it, crosses stay red | `studio_handwrite.py` (hwInk, hybridSvg sets window.__hwInk; hw items + auto-lines), `studio_autonarrate.py` (marks/WRITE); her live pen untouched. Build OK, math_check 30–33/51/13 0/0/0, svgcheck 0 broken, video_status: no rendered non-algebra videos, ledger unchanged. No commit. |
 | Claude | 15 Oct | Topic 51 "Understanding" camera lesson (pt51-understanding, Reading Studio #323); q01 names it; t51 summary lists 6 methods | build/export/svgcheck OK; Reading Studio + Video-Status rebuilt; ready to record |
 | Claude | 15 Oct 20:30 | One method-name vocabulary (her Hebrew core: The math way / Plugging in numbers / Plugging in the answers / Understanding / Estimation / Insight, `Method N · <core>[: specific]`) | Titles + sidebars in all prepared videos (t13-20, 30-33, 51); spoken method names in 51 unrecorded scripts; guide table + R13; `_method_names.CORE` + `check_vocab` in every spec; overlay headers reconciled. Checks: regen = ai_scripts, ai_check no new fails, math_check 0/0/0, svgcheck 0, Reading Studio re-read list unchanged. No commit. |
