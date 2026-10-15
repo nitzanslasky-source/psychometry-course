@@ -55,36 +55,41 @@
      "centimeters, then from",
      "twelve centimeters",
      "And seven points in a row",
-     "row make six"
+     "make six gaps"
     ]
    }
   ],
   [
    {
-    "say": "Intersecting lines are two straight lines that cross each other at one point. Around that point we get a kind of circle of angles, four angles.",
+    "say": "Intersecting lines are two straight lines that cross each other at one point. An angle is the opening between two lines that start at the same point, and that point is called the vertex. Around this crossing point we get four angles.",
     "at": [
      "Intersecting lines are",
      "lines that cross",
-     "four angles"
+     "An angle is the opening",
+     "between two lines",
+     "we get four angles"
     ]
    },
    {
-    "say": "A whole circle of angles is three hundred sixty degrees. For example, here the angles are a hundred five, seventy-five, a hundred five and seventy-five.",
+    "say": "We measure how wide an angle opens in degrees. One whole turn around a point is three hundred sixty degrees. For example, here the angles are a hundred five, seventy-five, a hundred five and seventy-five.",
     "at": [
-     "A whole circle",
+     "We measure how",
      "seventy-five, a hundred",
      "a hundred five and",
      "and seventy-five."
     ]
    },
    {
-    "say": "Together, a hundred five plus seventy-five is a hundred eighty, and twice that is three hundred sixty. All the angles around one point always add up to three hundred sixty, even when more lines cross there. [pause] Okay. I'll see you in the next part.",
+    "say": "Together, a hundred five plus seventy-five is a hundred eighty, and twice that is three hundred sixty. All the angles around one point always add up to three hundred sixty, even when more lines cross there. With three lines we get six angles, for example sixty, fifty, seventy, sixty, fifty and seventy, and together they're three hundred sixty again. [pause] Okay. I'll see you in the next part.",
     "at": [
      "plus seventy-five is",
      "twice that is three hundred sixty",
      "All the angles around one point",
      "three hundred sixty, even",
-     "even when more lines"
+     "With three lines",
+     "we get six angles",
+     "example sixty, fifty",
+     "together they're three hundred sixty again"
     ]
    }
   ]

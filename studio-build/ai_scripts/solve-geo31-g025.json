@@ -19,7 +19,7 @@
     ]
    },
    {
-    "say": "[short pause] Start with triangle A B C. The right angle is at A, so B C, thirty-nine, is the hypotenuse, and A B, fifteen, is a leg. We could use the theorem, thirty-nine squared minus fifteen squared. But look at the numbers. Fifteen is five times three, and thirty-nine is thirteen times three. That's the triple five, twelve, thirteen, times three. So A C is twelve times three, which is thirty-six.",
+    "say": "[short pause] Start with triangle A B C. The right angle is at A, so B C, thirty-nine, is the hypotenuse, and A B, fifteen, is a leg. We could use the theorem, thirty-nine squared minus fifteen squared. But look at the numbers. Fifteen is five times three, and thirty-nine is thirteen times three. That's the triple five, twelve, thirteen, with each number multiplied by three. So A C is twelve times three, which is thirty-six.",
     "at": [
      "Start with triangle A B C",
      "The right angle is at A",
@@ -33,7 +33,7 @@
     ]
    },
    {
-    "say": "Now triangle A C E. It's also right-angled at A, with legs A C, thirty-six, and A E, forty-eight. After some practice, these numbers jump out. Thirty-six is three times twelve, and forty-eight is four times twelve. That's three, four, five, times twelve. So the hypotenuse C E is five times twelve, which is sixty.",
+    "say": "Now triangle A C E. It's also right-angled at A, with legs A C, thirty-six, and A E, forty-eight. After some practice, these numbers jump out. Thirty-six is three times twelve, and forty-eight is four times twelve. That's the triple three, four, five, with each number multiplied by twelve. So the hypotenuse C E is five times twelve, which is sixty.",
     "at": [
      "Now triangle A C E",
      "It's also right-angled",
@@ -55,9 +55,38 @@
      "D squared is"
     ]
    },
+   "Instead of adding it up, I write it as two times sixty squared, because then the square root will be simpler. To see why, we need one new tool."
+  ],
+  [
    {
-    "say": "Instead of adding it up, I write it as two times sixty squared, because I know the root will be simpler. The root of two times sixty squared is the root of two, times sixty. So C D is sixty root two, and choice number three is our answer.",
+    "say": "Look at a small example first, the square root of four times three. Four is two squared. Let's guess two root three, and check it by squaring. Two root three, squared, is two squared times root three squared. That's four times three. So the square root of four times three is two root three.",
     "at": [
+     "the square root of four times three",
+     "times three. Four",
+     "and check it by squaring",
+     "Two root three, squared",
+     "So the square root of four times three is",
+     "four times three is"
+    ]
+   },
+   {
+    "say": "The rule: when a perfect square is multiplied inside the root, it comes out as its own root. One more example. The square root of nine times five is three root five, because three root five, squared, is nine times five.",
+    "at": [
+     "The square root of nine times five",
+     "times five is"
+    ]
+   },
+   {
+    "say": "Careful, this works for times, not for plus. The square root of nine plus sixteen is the square root of twenty-five, which is five. It's not the root of nine plus the root of sixteen, three plus four, which is seven.",
+    "at": [
+     "three plus four, which is seven"
+    ]
+   },
+   {
+    "say": "Now ours. C D squared is two times sixty squared. Sixty squared is a perfect square, so sixty comes out of the root, and the two stays inside. So C D is sixty root two, and choice number three is our answer.",
+    "at": [
+     "C D squared is two times sixty squared",
+     "times sixty squared",
      "So C D is sixty root two",
      "and choice number three is our answer"
     ]

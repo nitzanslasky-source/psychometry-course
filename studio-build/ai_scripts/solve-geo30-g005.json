@@ -53,10 +53,10 @@
     ]
    },
    {
-    "say": "Seventy-seven plus fifty-six. Add the tens, seventy plus fifty is a hundred twenty, and seven plus six is thirteen, so together a hundred thirty-three. x plus a hundred thirty-three is a hundred eighty, so x is a hundred eighty minus a hundred thirty-three, which is forty-seven. Choice number four is our answer.",
+    "say": "Now seventy-seven plus fifty-six. Add the tens first: seventy plus fifty is a hundred twenty. Then the ones: seven plus six is thirteen. Together that's a hundred thirty-three. So x plus a hundred thirty-three is a hundred eighty. So x is a hundred eighty minus a hundred thirty-three, which is forty-seven. Choice number four is our answer.",
     "at": [
      "Add the tens",
-     "fifty is a",
+     "plus fifty is",
      "so x is a hundred eighty minus",
      "which is forty-seven",
      "Choice number four is our answer"
@@ -65,10 +65,17 @@
   ],
   [
    {
-    "say": "[pause] Now by understanding. We could make the end shorter, with the last digits. Some students don't even write the equation. They say, one angle ends in seven, one ends in six, and x makes the sum a hundred eighty, which ends in zero. Seven plus six is thirteen, which ends in three. So x has to end in seven, because three plus seven makes a ten.",
+    "say": "[pause] Now by understanding. We keep the two angles we already found, seventy-seven and fifty-six, so x plus seventy-seven plus fifty-six is a hundred eighty. Now we make the end shorter, with the last digits.",
     "at": [
-     "could make the",
-     "ends in seven",
+     "We keep the two angles",
+     "we already found",
+     "so x plus",
+     "fifty-six is a"
+    ]
+   },
+   {
+    "say": "Some students don't even solve the equation. They say, one angle ends in seven, one ends in six, and x makes the sum a hundred eighty, which ends in zero. Seven plus six is thirteen, which ends in three. So x has to end in seven, because three plus seven makes a ten.",
+    "at": [
      "Seven plus six is thirteen",
      "which ends in three"
     ]

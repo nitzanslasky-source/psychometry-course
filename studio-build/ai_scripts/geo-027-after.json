@@ -61,7 +61,7 @@
     ]
    },
    {
-    "say": "Now a hypotenuse of sixteen. The legs are equal, and each is sixteen over root two. Remember the method from the gold triangle, ignore the root. Sixteen divided by two is eight, and put the root two back, eight root two.",
+    "say": "Now a hypotenuse of sixteen. The legs are equal, and each is sixteen over root two. Remember the method from the gold triangle: sixteen divided by two is eight, and then eight times root two is eight root two.",
     "at": [
      "Now a hypotenuse of sixteen",
      "each is sixteen"
@@ -78,7 +78,10 @@
     "say": "And a square's diagonal? It's the same triangle. The side of the square is a leg, and the diagonal is the hypotenuse, so the diagonal is the side times root two. Let's solve an example. [pause] Okay. I'll see you in the next video.",
     "at": [
      "a square's diagonal",
-     "The side of"
+     "same triangle. The",
+     "and the diagonal is the",
+     "so the diagonal is the side times",
+     "solve an example"
     ]
    }
   ]

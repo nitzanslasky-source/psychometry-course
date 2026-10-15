@@ -29,7 +29,7 @@
     ]
    },
    {
-    "say": "So we square the longest side and compare it with the other two squares added. Equal means a right angle. Bigger means an obtuse angle. Smaller means every angle is acute.",
+    "say": "So we square the longest side and compare it with the other two squares added. Equal means a right angle. Bigger means an obtuse angle. Smaller means the largest angle is acute, and the other two angles are smaller still, so every angle is acute.",
     "at": [
      "So we square the longest side",
      "side and compare"

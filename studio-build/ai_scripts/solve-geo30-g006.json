@@ -35,21 +35,45 @@
     "at": [
      "Now look at this slanted line",
      "On one side",
-     "so they add up to one hundred eighty"
+     "so they add up to one hundred eighty",
+     "one hundred eighty"
     ]
    }
   ],
   [
    {
-    "say": "Careful with the brackets. There's a plus in front of each bracket, so we can just drop them. The one hundred eighty on the left and the one hundred eighty on the right cancel. We keep x on the left, and move minus m, minus n and minus k to the right side as plus. The two one hundred eighties that are left make three hundred sixty, and they move across as minus three hundred sixty.",
+    "say": "Here's our equation again. Careful with the brackets. There's a plus in front of each bracket, so we can just drop them.",
     "at": [
-     "Careful with the brackets",
-     "There's a plus"
+     "Here's our equation again",
+     "with the brackets",
+     "so we can just drop them"
     ]
    },
    {
-    "say": "So x equals m plus n plus k, minus three hundred sixty. Choice number four is our answer. Once you see the straight angle, the math is short. The hard part is seeing it on the last question of the section.",
+    "say": "Now we need one tool from algebra. An equation is like a balance. If we do the same thing to both sides, it stays true. For example, five plus two equals seven. Subtract two from both sides, and we get five equals seven minus two. Still true, five is five. So a number that's added on one side can move to the other side as a minus.",
     "at": [
+     "Now we need",
+     "five plus two equals seven",
+     "Subtract two from"
+    ]
+   },
+   {
+    "say": "Back to our equation. First, subtract one hundred eighty from both sides. On the right, one hundred eighty minus one hundred eighty is zero. On the left, we lose one of the three one hundred eighty terms.",
+    "at": [
+     "On the left, we lose one",
+     "hundred eighty terms"
+    ]
+   },
+   {
+    "say": "Next, add m, n and k to both sides. On the left, minus m plus m is zero, and the same for n and k. So one hundred eighty plus one hundred eighty plus x equals m plus n plus k. That's three hundred sixty plus x.",
+    "at": [
+     "That's three hundred sixty plus x"
+    ]
+   },
+   {
+    "say": "Last, subtract three hundred sixty from both sides. So x equals m plus n plus k, minus three hundred sixty. Choice number four is our answer. Once you see the straight angle, the math is short. The hard part is seeing it on the last question of the section.",
+    "at": [
+     "Last, subtract three",
      "So x equals",
      "n plus k",
      "Choice number four is our answer"
@@ -66,19 +90,20 @@
     ]
    },
    {
-    "say": "Which numbers? Numbers that fit the figure, and are easy. m looks obtuse, about one hundred forty degrees, so m is one hundred forty. And we choose one hundred forty for n and k too. Using the same number everywhere makes the choices much easier to check later.",
+    "say": "Which numbers? Easy numbers that the figure allows. We choose m equals one hundred forty, and the same one hundred forty for n and k. Using the same number everywhere makes the choices much easier to check later.",
     "at": [
-     "m looks obtuse",
-     "And we choose"
+     "We choose m equals",
+     "Using the same"
     ]
    },
    {
-    "say": "With numbers the neighbors are easy. The angle next to each one hundred forty is forty. Forty plus forty plus forty is a hundred twenty. With x they make a straight angle, so x is a hundred eighty minus a hundred twenty, which is sixty degrees, in our example.",
+    "say": "With numbers the neighbors are easy. The angle next to each one hundred forty is forty. Forty plus forty plus forty is a hundred twenty. With x they make a straight angle, so x is a hundred eighty minus a hundred twenty, which is sixty degrees, in our example. Sixty is more than zero, so our numbers really fit a possible figure.",
     "at": [
      "The angle next to each",
      "one hundred forty",
      "which is sixty degrees",
-     "in our example"
+     "in our example",
+     "Sixty is more"
     ]
    }
   ],
@@ -124,13 +149,11 @@
     ]
    },
    {
-    "say": "So m plus n plus k is three hundred sixty plus x. Move the three hundred sixty to the other side, and x equals m plus n plus k minus three hundred sixty. Choice number four. Strong students sometimes see this at once. Most students find plugging in numbers easier here, and the answer is just as sure. [pause] Okay. I'll see you in the next question.",
+    "say": "So m plus n plus k is three hundred sixty plus x. Move the three hundred sixty to the other side, and x equals m plus n plus k minus three hundred sixty. Choice number four. [pause] Okay. I'll see you in the next question.",
     "at": [
      "So m plus n plus k",
      "plus x. Move",
-     "minus three hundred sixty. Choice number four",
-     "number four. Strong",
-     "Most students find"
+     "minus three hundred sixty. Choice number four"
     ]
    }
   ]

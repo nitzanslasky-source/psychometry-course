@@ -42,15 +42,15 @@
     ]
    },
    {
-    "say": "Many students get stuck here: how do I get to a over b? We don't really need to. Three b equals ten a means the ratio is three to ten, or ten to three. Only one choice is either of these, three tenths. So choice number two is our answer.",
+    "say": "Many students get stuck here: how do I get to a over b? A quick check does it. a is the smaller side, so a over b is less than one. And if b is ten, three times ten is thirty, so ten a is thirty, and a is three. So a over b is three tenths. Choice number two is our answer.",
     "at": [
-     "means the ratio is three to ten",
-     "to ten, or",
-     "So choice number two is our answer"
+     "and a is three",
+     "So a over b is three",
+     "Choice number two is our answer"
     ]
    },
    {
-    "say": "If you really want the full step, not during the exam: divide both sides by ten b. On one side you get three tenths, and on the other side, a over b. And careful with the traps. One third comes from forgetting to take a off the bottom, and three eighths from adding it instead.",
+    "say": "The full algebra step gives the same thing: divide both sides by ten b. On one side you get three tenths, and on the other side, a over b. And careful with the traps. One third comes from forgetting to take a off the bottom, and three eighths from adding it instead.",
     "at": [
      "One third comes from",
      "and three eighths"
@@ -74,7 +74,7 @@
     ]
    },
    {
-    "say": "Choice number two, three tenths. So a is three and b is ten. The bold line is ten plus ten plus ten minus three, which is twenty-seven. The small perimeter is three times three, nine, and three times nine is twenty-seven. It works, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice number two, three tenths. So a is three and b is ten. The bold line is ten plus ten plus ten minus three, which is twenty-seven. The small perimeter is three times three, which is nine. And three times nine is twenty-seven. It works, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
      "number two, three",
      "So a is three and b is ten",

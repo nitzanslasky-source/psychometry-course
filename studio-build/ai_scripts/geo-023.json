@@ -37,7 +37,7 @@
   ],
   [
    {
-    "say": "Now let's see why. Take a big square, and put four copies of our right triangle in its corners. Their hypotenuses make a tilted square in the middle. The part the triangles don't cover is that middle square, c squared.",
+    "say": "Now let's see why. Take a big square, and put four copies of our right triangle in its corners. Their hypotenuses make one tilted shape in the middle. Is that shape really square? Its four sides are all c, the hypotenuses. And at each of its corners, the two sharp angles of the triangles add up to ninety, so together with that corner they make one straight line. So each corner is ninety too. The part the triangles don't cover is that middle square, c squared.",
     "at": [
      "Take a big square",
      "put four copies",
@@ -47,7 +47,7 @@
     ]
    },
    {
-    "say": "Now take the same big square, and move the same four triangles into new places, two at the top right and two at the bottom left. Now the part they don't cover is one square with side a and one square with side b.",
+    "say": "Now take the same big square, and move the same four triangles into new places, two at the top right and two at the bottom left. The pieces haven't changed: the same four triangles, with the same legs a and b. Now the part they don't cover is one square with side a and one square with side b.",
     "at": [
      "Now take the same big square",
      "move the same four triangles",
@@ -77,10 +77,17 @@
     ]
    },
    {
-    "say": "Both describe the same area, so they're equal. Open the bracket: a squared plus two a b plus b squared. On the other side, four times a b over two is two a b. Two a b is on both sides, so it cancels, and we're left with a squared plus b squared equals c squared. That's the theorem, and it was simpler than you thought. [pause] Okay. I'll see you in the next video.",
+    "say": "Both describe the same area, so they're equal. Now open the bracket. a plus b, times a plus b, is four products: a times a, a times b, b times a, and b times b. That's a squared, plus two a b, plus b squared. If this step feels new, that's fine. You can come back to it after the lesson on algebraic identities.",
     "at": [
-     "Open the bracket",
-     "plus two a",
+     "is four products",
+     "a, a times"
+    ]
+   },
+   {
+    "say": "On the other side, four times a b over two is two a b. Two a b is on both sides, so it cancels, and we're left with a squared plus b squared equals c squared. That's the theorem, and it was simpler than you thought. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "On the other side",
+     "times a b",
      "and we're left with",
      "squared plus b"
     ]

@@ -29,7 +29,7 @@
     ]
    },
    {
-    "say": "Now A F. It's the longest side of the right triangle A G F. One leg, A G, is ten, two sides of a square. The other leg, G F, is five. By Pythagoras, A F squared is ten squared plus five squared, a hundred plus twenty-five, a hundred twenty-five. A hundred twenty-five is twenty-five times five, so A F is five root five.",
+    "say": "Now A F. It's the longest side of the right triangle A G F. One leg, A G, is ten, two sides of a square. The other leg, G F, is five. By Pythagoras, A F squared is ten squared plus five squared. That's a hundred plus twenty-five, which is a hundred twenty-five. A hundred twenty-five is twenty-five times five, so A F is five root five.",
     "at": [
      "Now A F",
      "the right triangle",
@@ -67,6 +67,7 @@
      "Look at the two triangles",
      "side by side",
      "A F is a side of both",
+     "so it cancels in the difference",
      "We don't need"
     ]
    },
@@ -74,14 +75,17 @@
     "say": "Next, E F and F G are both sides of a small square, five each. They're equal, so they cancel too.",
     "at": [
      "E F and F G are both",
-     "small square, five"
+     "small square, five",
+     "so they cancel too",
+     "so they cancel too"
     ]
    },
    {
-    "say": "All that's left is A E, ten root two, minus A G, ten. Ten root two minus ten, choice number four, and no Pythagoras at all.",
+    "say": "All that's left is A E minus A G. We keep A E from before: two diagonals of the small squares, ten root two. And A G is two sides of a square, ten. Ten root two minus ten, choice number four, and no Pythagoras at all.",
     "at": [
      "All that's left",
-     "E, ten root",
+     "We keep A E from before",
+     "small squares, ten",
      "Ten root two minus ten",
      "choice number four, and no",
      "Pythagoras at all"
@@ -92,7 +96,9 @@
    {
     "say": "[pause] One more idea, an estimate. Say you reach this question at the very end of the exam, with ten or twenty seconds left. Sometimes you can rule out choices just by their sign. The answer here must be positive. A E F and A F G share A F, and E F equals F G, so the difference is A E minus A G. A E is the longest side of the big right triangle A G E, so it's longer than A G, and the difference is positive.",
     "at": [
-     "estimate. Say you"
+     "estimate. Say you",
+     "A E is the longest side",
+     "side of the"
     ]
    },
    {

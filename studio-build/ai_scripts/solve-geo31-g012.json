@@ -29,7 +29,7 @@
     ]
    },
    {
-    "say": "So x is less than thirteen plus six, which is nineteen, and more than thirteen minus six, which is seven. x is between seven and nineteen.",
+    "say": "So x is less than thirteen plus six, which is nineteen. And x is more than thirteen minus six, which is seven. So x is between seven and nineteen.",
     "at": [
      "So x is less than",
      "thirteen plus six",

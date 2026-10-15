@@ -147,10 +147,10 @@
     ]
    },
    {
-    "say": "To divide a whole number by a root, first ignore the root for a moment. Nine divided by three is three. Now put the root three back. So nine over root three is three root three.",
+    "say": "To divide nine by root three, first divide nine by three, and then multiply that result by root three. Nine divided by three is three, and three times root three is three root three. So nine over root three is three root three.",
     "at": [
      "Nine divided by three is three",
-     "Now put the"
+     "three, and three"
     ]
    },
    {
@@ -163,10 +163,10 @@
     ]
    },
    {
-    "say": "Let's try one more on our own. Six over root three. Ignore the root, six divided by three is two, and put the root back, two root three.",
+    "say": "Let's try one more on our own. Six over root three. Six divided by three is two, and then two times root three is two root three.",
     "at": [
      "Six over root three",
-     "Ignore the root"
+     "Six divided by"
     ]
    }
   ],
@@ -206,13 +206,13 @@
     ]
    },
    {
-    "say": "The long leg is a over two times root three, a root three over two. The base is two of those, a root three. So the sides are a, a and a root three. Leg, leg, base. Nothing new to memorize, just cut it in half.",
+    "say": "The long leg is a over two times root three, a root three over two. The base is two of those, a root three. So the sides are a, a and a root three: leg, leg and base. Nothing new to memorize, just cut it in half.",
     "at": [
      "a over two",
      "a root three over two",
      "The base is two of those",
      "those, a root",
-     "Leg, leg, base",
+     "leg, leg and base",
      "Nothing new to"
     ]
    }

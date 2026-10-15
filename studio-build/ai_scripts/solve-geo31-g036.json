@@ -54,7 +54,7 @@
     ]
    },
    {
-    "say": "From the hypotenuse to a leg, we divide by root two. How much is ten over root two? The way we learned: ignore the root, ten over two is five, and stick the root two back on. Five root two. So B C and C D are each five root two.",
+    "say": "From the hypotenuse to a leg, we divide by root two. How much is ten over root two? The way we learned: ten divided by two is five, and then five times root two. Five root two. So B C and C D are each five root two.",
     "at": [
      "Five root two. So",
      "So B C"

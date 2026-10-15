@@ -44,7 +44,7 @@
     ]
    },
    {
-    "say": "Careful, the same area doesn't mean the same shape. These two triangles look very different, and they're not congruent. Only their areas are equal.",
+    "say": "Careful, the same area doesn't mean the same shape. These two triangles look very different. They don't have the same shape, and they don't have the same side lengths. Only their areas are equal.",
     "at": [
      "Careful, the same"
     ]

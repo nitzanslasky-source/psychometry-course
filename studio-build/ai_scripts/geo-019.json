@@ -41,17 +41,24 @@
     ]
    },
    {
-    "say": "Six squared is thirty-six, and eight squared is sixty-four. Thirty-six plus sixty-four is a hundred. So the hypotenuse squared is a hundred.",
+    "say": "Six squared is thirty-six, and eight squared is sixty-four. Thirty-six plus sixty-four is a hundred. So the hypotenuse squared, c squared, is a hundred.",
     "at": [
      "Six squared is thirty-six",
      "eight squared is"
     ]
    },
    {
-    "say": "Which number times itself gives a hundred? Ten, because ten times ten is a hundred. So the hypotenuse is ten. And it's longer than both legs, as it should be.",
+    "say": "But we want c itself, not c squared. Which number times itself gives a hundred? Ten, because ten times ten is a hundred. Finding that number is called taking the square root. We write it with this sign: the square root of a hundred is ten. Lengths are positive, so we take the positive number.",
     "at": [
      "Which number times itself",
      "Ten, because ten",
+     "the square root of a hundred is ten",
+     "hundred is ten"
+    ]
+   },
+   {
+    "say": "So the hypotenuse is ten. And it's longer than both legs, as it should be.",
+    "at": [
      "So the hypotenuse is ten",
      "And it's longer"
     ]
@@ -66,18 +73,20 @@
     ]
    },
    {
-    "say": "The legs squared add up to the hypotenuse squared, so to find a leg, we subtract. Thirteen squared is thirteen times thirteen: thirteen times ten is a hundred thirty, plus thirteen times three, thirty-nine, so a hundred sixty-nine. Five squared is twenty-five. A hundred sixty-nine minus twenty-five is a hundred forty-four.",
+    "say": "The legs squared add up to the hypotenuse squared, so to find a leg, we subtract. Thirteen squared is thirteen times thirteen. Thirteen times ten is a hundred thirty. Thirteen times three is thirty-nine. A hundred thirty plus thirty-nine is a hundred sixty-nine. Five squared is twenty-five. So the leg squared is a hundred sixty-nine minus twenty-five, which is a hundred forty-four.",
     "at": [
      "Thirteen squared is",
-     "thirteen: thirteen times"
+     "Thirteen times ten"
     ]
    },
    {
-    "say": "Which number times itself gives a hundred forty-four? Twelve, because twelve times twelve is a hundred forty-four. So the other leg is twelve.",
+    "say": "Now the square root again. Which number times itself gives a hundred forty-four? Twelve, because twelve times twelve is a hundred forty-four. So the square root of a hundred forty-four is twelve, and the other leg is twelve.",
     "at": [
      "Which number times itself",
      "a hundred forty-four",
-     "So the other leg is twelve"
+     "So the square root of a hundred forty-four",
+     "a hundred forty-four is",
+     "and the other leg is twelve"
     ]
    }
   ],

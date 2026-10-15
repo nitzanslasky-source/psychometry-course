@@ -133,7 +133,7 @@
     ]
    },
    {
-    "say": "Here, take the side B C, which is twelve, and the altitude to it from A, which is six. Now take the side A B, which is nine. The altitude to A B comes from C, and it's eight. What matters is a side, and the altitude that goes to that same side.",
+    "say": "Here, take the side B C, which is twelve, and the altitude to it from A, which is six. Now take the side A B, which is nine. The altitude to A B comes from C. It meets A B at the point H, very close to A, but not at A. C H is eight. What matters is a side, and the altitude that goes to that same side.",
     "at": [
      "take the side B C",
      "which is twelve",
@@ -153,7 +153,7 @@
   ],
   [
    {
-    "say": "In an obtuse triangle, we do exactly the same thing, but the altitude falls outside the triangle. Take the side B C, which is seven.",
+    "say": "In an obtuse triangle, we do exactly the same thing. But for some sides, the altitude falls outside the triangle. Take the side B C, which is seven. The altitude to this side, from A, falls outside.",
     "at": [
      "In an obtuse triangle",
      "do exactly the",
@@ -162,7 +162,7 @@
     ]
    },
    {
-    "say": "To drop the altitude from A, we first extend the side B C, and then we drop the altitude to that line, outside the triangle. Here it's four.",
+    "say": "To drop the altitude from A, we first extend the side B C, and then we drop the altitude to that line, outside the triangle. Here it's four. The altitude from the obtuse corner, C, to the side opposite it would fall inside, as usual.",
     "at": [
      "we first extend",
      "B C, and",

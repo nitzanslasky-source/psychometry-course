@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "In the accompanying figure, the angles at A and C are equal. What is the value of m plus n over two?",
+    "say": "In the accompanying figure, the angles at A and C are equal. What is the value of m plus half of n?",
     "voice": "calm",
     "at": [
      "In the accompanying figure"
@@ -49,11 +49,12 @@
   ],
   [
    {
-    "say": "[pause] Another way, plugging in a number. The answer is one number, so it comes out the same for every k that fits the figure. That means we're allowed to choose any k we like, and work with numbers instead of letters. Let's take an easy one, k is sixty.",
+    "say": "[pause] Another way, plugging in a number. The question promises one answer for every triangle that fits the figure. So the correct choice must also be right for one triangle that we choose, and a choice that doesn't give our result is out. Let's take an easy k that fits, k is sixty.",
     "at": [
-     "a number. The",
-     "Let's take an easy one",
-     "k is sixty"
+     "The question promises",
+     "choice must also",
+     "Let's take an easy k",
+     "that fits, k"
     ]
    },
    {

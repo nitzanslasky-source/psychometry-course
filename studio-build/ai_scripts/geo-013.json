@@ -29,15 +29,19 @@
     "at": [
      "For example, if the vertex angle",
      "angle is forty-four",
-     "One hundred eighty minus forty-four",
-     "is one hundred"
+     "is one hundred thirty-six",
+     "half of that is sixty-eight",
+     "So each base angle is sixty-eight"
     ]
    },
    {
     "say": "Another example. If each base angle is seventy, together they make one hundred forty. So the vertex angle is one hundred eighty minus one hundred forty, which is forty.",
     "at": [
-     "Another example",
-     "seventy, together they"
+     "If each base angle is seventy",
+     "together they make one hundred forty",
+     "forty. So the",
+     "which is forty",
+     "which is forty"
     ]
    },
    {
@@ -72,7 +76,7 @@
     ]
    },
    {
-    "say": "Only this line does all three. A line from a corner of the base to the middle of a leg is a median too, but it isn't perpendicular, and it doesn't cut the angle in half.",
+    "say": "In this triangle, which is not equilateral, only this line does all three. A line from a corner of the base to the middle of a leg is a median too, but it does not necessarily do the other two jobs. Here it isn't perpendicular, and it doesn't cut the angle in half.",
     "at": [
      "A line from a corner of the base",
      "of the base",

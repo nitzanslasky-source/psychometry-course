@@ -30,20 +30,21 @@
     ]
    },
    {
-    "say": "Last time we got a round number. Here we don't, and that's completely fine. We take the root of both sides. The root undoes the square, so A C is the square root of seventy-four. We leave it exactly like that. Choice number one is our answer.",
-    "at": [
-     "so A C is the square root",
-     "square root of",
-     "Choice number one is our answer"
-    ]
-   },
-   {
-    "say": "A quick sense check. Eight squared is sixty-four and nine squared is eighty-one, so the root of seventy-four is between eight and nine. That's longer than each leg, as a hypotenuse should be, and shorter than five plus seven.",
+    "say": "Last time we got a round number. Here we don't, and that's completely fine. A C is the positive length whose square is seventy-four. Is it a whole number? Eight squared is sixty-four, and nine squared is eighty-one. So A C is between eight and nine, and no whole number works.",
     "at": [
      "Eight squared is sixty-four",
      "nine squared is"
     ]
    },
+   {
+    "say": "So we use the square root sign. The square root of seventy-four is the exact name of this length, just as the square root of a hundred is ten. It's not seventy-four divided by two, and nothing is missing. So A C is the square root of seventy-four, and we leave it exactly like that. Choice number one is our answer.",
+    "at": [
+     "So A C is the square root",
+     "square root of seventy-four, and",
+     "Choice number one is our answer"
+    ]
+   },
+   "And it makes sense. Between eight and nine is longer than each leg, as a hypotenuse should be, and shorter than five plus seven.",
    {
     "say": "The other choices are common mistakes. Twelve adds the lengths, not the squares. Seventy-four forgets the root. And the root of twenty-four subtracts the squares, as if we were looking for a leg. [pause] Okay. I'll see you in the next question.",
     "at": [

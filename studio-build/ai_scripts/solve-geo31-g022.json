@@ -30,7 +30,7 @@
     ]
    },
    {
-    "say": "Ten squared is a hundred, and seven squared is forty-nine. A hundred minus forty-nine is fifty-one. So B C squared is fifty-one, and B C is the square root of fifty-one. Choice number four is our answer.",
+    "say": "Ten squared is a hundred, and seven squared is forty-nine. A hundred minus forty-nine is fifty-one. So B C squared is fifty-one. Fifty-one isn't a perfect square, because seven squared is forty-nine and eight squared is sixty-four. So, like last time, we use the square root, and B C is the square root of fifty-one. Choice number four is our answer.",
     "at": [
      "Ten squared is a hundred",
      "and seven squared",
@@ -49,7 +49,7 @@
   ],
   [
    {
-    "say": "This is the base of the Pythagorean theorem. When two sides of a right triangle are known, we can always find the third. For the hypotenuse, we add the squares. For a leg, we subtract. It's a technique you really must master.",
+    "say": "This is the base of the Pythagorean theorem. When two sides of a right triangle are known, we can always find the third. For the hypotenuse, we add the squares. For a leg, we subtract. Either way, that gives the side squared, so at the end we take the square root. It's a technique you really must master.",
     "at": [
      "of the Pythagorean",
      "For the hypotenuse",

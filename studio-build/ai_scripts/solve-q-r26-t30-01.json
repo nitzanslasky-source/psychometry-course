@@ -20,10 +20,13 @@
      "the question doesn't",
      "So first we'll"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "[short pause] Look at line c. Line a is perpendicular to it, and line b is perpendicular to it too. The little squares show that.",
+    "say": "[short pause] Here's the figure again, bigger. Look at line c. Line a is perpendicular to it, and line b is perpendicular to it too. The little squares show that.",
     "at": [
+     "Here's the figure again",
      "Look at line c",
      "Line a is"
     ]
@@ -41,15 +44,14 @@
     "say": "Now we don't need line c anymore. It's the usual picture: two parallel lines, a and b, and line d that cuts them.",
     "at": [
      "we don't need line c anymore",
-     "anymore. It's the",
-     "line d that cuts them"
+     "It's the usual"
     ]
    },
    {
     "say": "The fifty degrees at line a is one of the small angles. All the small angles are equal, so the small angle at line b, above b and to the right of d, is fifty degrees too.",
     "at": [
      "The fifty degrees at line a",
-     "small angles. All",
+     "a is one",
      "so the small angle at line b",
      "line b, above"
     ]
@@ -59,14 +61,14 @@
     "at": [
      "x is right next to that fifty",
      "that fifty, on",
-     "so fifty plus x",
-     "a hundred eighty"
+     "x is a hundred eighty"
     ]
    },
    {
     "say": "x is a hundred eighty minus fifty, which is a hundred thirty. Choice number three is our answer.",
     "at": [
-     "x is a hundred eighty minus fifty",
+     "eighty minus fifty",
+     "which is a hundred thirty",
      "which is a hundred thirty",
      "Choice number three is our answer"
     ]

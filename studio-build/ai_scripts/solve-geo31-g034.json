@@ -36,7 +36,7 @@
   ],
   [
    {
-    "say": "Choice number one, a triangle with angles sixty-four and fifty-eight. Find the third angle. One hundred eighty minus sixty-four is one hundred sixteen, and minus fifty-eight is fifty-eight. Two equal angles mean two equal sides, so it's always isosceles. Out.",
+    "say": "Choice number one, a triangle with angles sixty-four and fifty-eight. Find the third angle. One hundred eighty minus sixty-four is one hundred sixteen. One hundred sixteen minus fifty-eight is fifty-eight. Two equal angles mean two equal sides, so it's always isosceles. Out.",
     "at": [
      "number one, a",
      "angles sixty-four and",
@@ -46,12 +46,24 @@
     ]
    },
    {
-    "say": "Choice number four, an altitude that also bisects the angle it starts from. An altitude that is also a bisector is a line of symmetry, so the triangle is always isosceles. Out.",
+    "say": "Choice number four, an altitude that also bisects the angle it starts from. Why must that triangle be isosceles? Fold it along this line. The two angles at the top are equal, so the two sides from the top land on each other. The two angles at the bottom are both ninety, so the two parts of the base land on one line too.",
     "at": [
      "number four, an",
-     "An altitude that is also a bisector",
-     "a bisector is",
-     "so the triangle is always isosceles. Out"
+     "Why must that",
+     "Fold it along this line",
+     "The two angles at the top are equal",
+     "top are equal",
+     "The two angles at the bottom",
+     "bottom are both"
+    ]
+   },
+   {
+    "say": "So the two bottom corners meet, and the two halves match exactly. The two outer sides are equal, so the triangle is always isosceles. Out.",
+    "at": [
+     "the two halves match exactly",
+     "The two outer sides are equal",
+     "equal, so the",
+     "is always isosceles. Out"
     ]
    },
    {
@@ -62,19 +74,29 @@
     ]
    },
    {
-    "say": "Choice number two, a median that is perpendicular to the side it meets. Sometimes the right angle is hidden: the median makes two equal angles, alpha and alpha, on a straight line. Two alphas are one hundred eighty, so each alpha is ninety. So the median is also an altitude. That's a line of symmetry, so the triangle is isosceles. Out.",
+    "say": "Choice number two, a median that is perpendicular to the side it meets. Being a median, it cuts that side into two equal halves. And it's given as perpendicular, so it's also an altitude, with ninety degrees on both sides.",
     "at": [
      "number two, a",
-     "Sometimes the right",
-     "Two alphas are one hundred eighty",
-     "eighty, so each",
-     "so the triangle is isosceles. Out"
+     "Being a median",
+     "into two equal halves",
+     "it's given as",
+     "so it's also an altitude"
+    ]
+   },
+   {
+    "say": "Fold along it again. The two halves of the side are equal, and the angles are ninety on both sides, so each bottom corner lands exactly on the other. The two outer sides land on each other, so they're equal, and the triangle is isosceles. Out.",
+    "at": [
+     "Fold along it again",
+     "The two halves",
+     "so they're equal",
+     "and the triangle is isosceles. Out"
     ]
    },
    {
     "say": "Three choices are out, so we mark choice number three, the one that wasn't clear.",
     "at": [
-     "so we mark choice number three"
+     "so we mark choice number three",
+     "three, the one"
     ]
    }
   ],

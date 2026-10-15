@@ -16,14 +16,16 @@
     "at": [
      "starting from the twenty-eight"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "[short pause] Start with the big triangle, A B C. A B equals A C, so the base angles, at B and at C, are equal. The angle at A is twenty-eight, so the base angles share one hundred eighty minus twenty-eight, which is one hundred fifty-two. Half of that is seventy-six. So the angle at B is seventy-six, and the whole angle at C is seventy-six.",
+    "say": "[short pause] Here's the figure again, bigger. Start with the big triangle, A B C. A B equals A C, so the base angles, at B and at C, are equal. The angle at A is twenty-eight, so the base angles share one hundred eighty minus twenty-eight, which is one hundred fifty-two. Half of that is seventy-six. So the angle at B is seventy-six, and the whole angle at C is seventy-six.",
     "at": [
-     "Start with the big triangle",
-     "A B C",
+     "Here's the figure again",
+     "Start with the",
      "A B equals A C, so the base",
-     "The angle at",
+     "B and at",
      "So the angle at B is seventy-six",
      "is seventy-six, and"
     ]
@@ -38,6 +40,7 @@
     "say": "Now the small triangle, B C D. Let's look only at it. B C equals C D, so its base angles, at B and at D, are equal. The angle at B is seventy-six, so the angle at D is seventy-six too.",
     "at": [
      "Now the small triangle",
+     "Let's look only at it",
      "Let's look only at it",
      "B C equals",
      "so the angle at D",

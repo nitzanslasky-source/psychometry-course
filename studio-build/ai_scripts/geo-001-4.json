@@ -49,10 +49,9 @@
     ]
    },
    {
-    "say": "They're not equal. One is small and one is large. And small plus large is a hundred eighty. So if the small one is sixty-two, the large one is a hundred eighteen.",
+    "say": "Their sum is always a hundred eighty. Usually one is small and one is large, so they're not equal. Only when the transversal is perpendicular to the lines are they both ninety. So if the small one is sixty-two, the large one is a hundred eighteen.",
     "at": [
-     "One is small",
-     "And small plus",
+     "if the small one",
      "the large one is",
      "a hundred eighteen"
     ]
@@ -91,7 +90,7 @@
     ]
    },
    {
-    "say": "And the trap: on the exam, figures are not drawn to scale. Two lines can look parallel and not be. They're parallel only if it's given, or one of these rules proves it, and an angle is ninety only if it's marked or given.",
+    "say": "And the trap: on the exam, figures are not drawn to scale. Two lines can look parallel and not be. They're parallel only if it's given, or one of these rules proves it, and an angle is ninety only if it's marked, given or calculated.",
     "at": [
      "figures are not drawn to scale",
      "Two lines can"
@@ -107,7 +106,7 @@
     ]
    },
    {
-    "say": "All the angles around a point add up to three hundred sixty. A straight angle is a hundred eighty, and a right angle is ninety, but only if it's marked or given.",
+    "say": "All the angles around a point add up to three hundred sixty. A straight angle is a hundred eighty, and a right angle is ninety, but only if it's marked, given or calculated.",
     "at": [
      "All the angles around a point",
      "point add up"

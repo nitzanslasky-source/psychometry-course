@@ -94,7 +94,7 @@
     ]
    },
    {
-    "say": "Who arrives first? The one who walked in a straight line, because his road is shorter. The one who stopped walked more. A straight line is always the shortest way between two points, so two sides together are longer than the third.",
+    "say": "Who walks the shorter distance? The one who walked in a straight line. The one who stopped walked more. A straight line is always the shortest way between two points, so two sides together are longer than the third.",
     "at": [
      "so two sides together",
      "longer than the"
@@ -117,24 +117,29 @@
     ]
    },
    {
-    "say": "For example, two sides are four and nine. The third side is more than nine minus four, five, and less than nine plus four, thirteen.",
+    "say": "For example, two sides are four and nine. The third side is more than nine minus four, which is five. And it's less than nine plus four, which is thirteen.",
     "at": [
      "two sides are four and nine",
      "nine. The third",
      "nine minus four",
-     "and less than nine"
+     "And it's less than nine plus four",
+     "plus four, which"
     ]
    },
    {
-    "say": "If the third side is a whole number, it can be six, seven, and so on up to twelve. That's seven lengths. A quick count is twice the shorter side, minus one. Twice four is eight, minus one is seven. With sides three and eight, the third side is between five and eleven, so six to ten, five lengths, and twice three minus one is five too.",
+    "say": "Five and thirteen themselves are not allowed. With exactly five or thirteen, the triangle would lie flat. If the third side is a whole number, it can be six, seven, and so on up to twelve. That's seven lengths.",
     "at": [
-     "is a whole",
      "it can be six, seven",
-     "twelve. That's seven",
-     "A quick count",
+     "and so on"
+    ]
+   },
+   {
+    "say": "When the two given sides are whole numbers too, there's a quick count: twice the shorter side, and then subtract one. Twice four is eight, minus one is seven. With sides three and eight, the third side is between five and eleven, so six to ten, five lengths, and twice three minus one is five too. If the given sides are not whole numbers, just count the whole numbers between the two ends.",
+    "at": [
+     "there's a quick count",
      "the shorter side",
      "With sides three and eight",
-     "the third side is between"
+     "the third side"
     ]
    }
   ],

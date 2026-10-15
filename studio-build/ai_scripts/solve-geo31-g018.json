@@ -73,16 +73,21 @@
   ],
   [
    {
-    "say": "[pause] Another way, by understanding the formula itself. The small triangle has half the side of the big one. In the formula, the side is squared, so half the side gives a half squared, a quarter of the area.",
+    "say": "[pause] Another way, by understanding the formula itself. We keep what we found: D B E is equilateral with side five, and the big triangle's area is a hundred root three over four. The small triangle has half the side of the big one. In the formula, the side is squared, so half the side gives a half squared, a quarter of the area.",
     "at": [
      "the formula itself",
-     "the side is squared",
-     "half the side gives"
+     "We keep what we found",
+     "D B E",
+     "a quarter of the area"
     ]
    },
    {
     "say": "So the small triangle is a quarter of the big one, and the quadrilateral is the other three quarters. Three quarters of a hundred root three over four is seventy-five root three over four. Choice number two. [pause] Okay. I'll see you in the next question.",
     "at": [
+     "So the small triangle",
+     "is a quarter of the big one",
+     "big one, and",
+     "the other three quarters",
      "Three quarters of a hundred",
      "root three over",
      "Choice number two. "

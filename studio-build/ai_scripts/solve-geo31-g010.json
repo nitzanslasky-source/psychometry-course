@@ -46,10 +46,10 @@
     ]
    },
    {
-    "say": "Let's check it. Three x is forty-five, four x is sixty, and five x is seventy-five. Forty-five plus sixty is a hundred five, and plus seventy-five is a hundred eighty. And careful, forty-five, choice number one, is three x, the angle at A, not x. [pause] Okay. I'll see you in the next question.",
+    "say": "Let's check it. Three x is forty-five, four x is sixty, and five x is seventy-five. Forty-five plus sixty is a hundred five. A hundred five plus seventy-five is a hundred eighty. And careful, forty-five, choice number one, is three x, the angle at A, not x. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Forty-five plus sixty",
-     "hundred five, and",
+     "A hundred five plus",
      "forty-five, choice number one"
     ]
    }

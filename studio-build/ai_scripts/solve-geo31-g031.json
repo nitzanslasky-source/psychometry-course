@@ -52,7 +52,9 @@
     "say": "The angles of a triangle add up to one hundred eighty, so sixty, plus y, plus one hundred eighty minus x, equals one hundred eighty. The bracket has a plus in front of it, so we can just drop it.",
     "at": [
      "The angles of a triangle",
-     "eighty, so sixty"
+     "add up to",
+     "so sixty, plus y",
+     "equals one hundred"
     ]
    },
    {
@@ -84,23 +86,24 @@
   ],
   [
    {
-    "say": "[pause] And a third way, plugging in a number. The answer is an expression that is true for every x that fits the figure. So it must also be true for one x that we choose. We choose a number for x, find y, and then check which choice gives that y.",
+    "say": "[pause] And a third way, plugging in a number. The answer is an expression that is true for every x that fits the figure. So it must also be true for one allowed value of x that we choose. We choose a number for x, find y, and then check which choice gives that y.",
     "at": [
      "plugging in a"
     ]
    },
    {
-    "say": "Which letter do we choose? The one that appears in the choices, x. In the figure x is an obtuse angle, so we choose an easy obtuse number, one hundred ten.",
+    "say": "Which letter do we choose? The one that appears in the choices, x. The figure isn't drawn to scale, so we don't decide by how x looks. We simply choose an easy value, x is one hundred ten.",
     "at": [
-     "choose an easy obtuse number",
-     "one hundred ten"
+     "We simply choose an easy value",
+     "value, x is"
     ]
    },
    {
-    "say": "Now find y. Sixty plus what gives one hundred ten? Fifty. So y is fifty.",
+    "say": "Now find y. Sixty plus what gives one hundred ten? Fifty. So y is fifty. Fifty is a real, positive angle, so our choice fits the givens.",
     "at": [
      "Sixty plus what gives",
-     "hundred ten? Fifty"
+     "hundred ten? Fifty",
+     "the givens"
     ]
    },
    {

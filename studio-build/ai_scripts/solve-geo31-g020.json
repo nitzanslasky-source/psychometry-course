@@ -28,7 +28,7 @@
     ]
    },
    {
-    "say": "So choice number three, twenty-one, and choice number four, twenty, are out. A C could be twenty-one and a little bit, but it can't be twenty-one or less.",
+    "say": "So choice number three, twenty-one, and choice number four, twenty, are out. From the longest-side rule alone, we know that A C is more than twenty-one. We haven't found its exact value yet.",
     "at": [
      "So choice number three",
      "and choice number four, twenty, are out"

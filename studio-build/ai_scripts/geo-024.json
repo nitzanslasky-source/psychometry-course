@@ -7,7 +7,7 @@
   ],
   [
    {
-    "say": "Every Pythagorean triple is three whole numbers that fit the theorem, a squared plus b squared equals c squared. The best-known one is three, four and five. Five is the hypotenuse, because the hypotenuse is always the longest side. Three squared plus four squared is nine plus sixteen, which is twenty-five, and five squared is twenty-five. It works.",
+    "say": "Every Pythagorean triple is three whole numbers that fit the theorem, a squared plus b squared equals c squared. The best-known one is three, four and five. Five is the hypotenuse, because the hypotenuse is always the longest side. Three squared plus four squared is nine plus sixteen, which is twenty-five. And five squared is twenty-five too. It works.",
     "at": [
      "three whole numbers",
      "The best-known one",
@@ -15,7 +15,7 @@
     ]
    },
    {
-    "say": "Another triple that shows up on the exam is five, twelve and thirteen. Five squared plus twelve squared is twenty-five plus a hundred forty-four, which is a hundred sixty-nine, and thirteen squared is a hundred sixty-nine. It works too.",
+    "say": "Another triple that shows up on the exam is five, twelve and thirteen. Five squared plus twelve squared is twenty-five plus a hundred forty-four, which is a hundred sixty-nine. And thirteen squared is a hundred sixty-nine too. It works too.",
     "at": [
      "Another triple",
      "on the exam"
@@ -38,7 +38,7 @@
   ],
   [
    {
-    "say": "A triple is really a ratio of the sides, three to four to five. A ratio means we can multiply all three sides by the same number, and it still works. Multiply three, four and five by seven: twenty-one, twenty-eight and thirty-five. It's the same shape, just bigger, so it's also a right triangle.",
+    "say": "A triple is really a ratio of the sides, three to four to five. That means three units, four of the same units, and five of the same units. The unit can be any length, so we can multiply all three sides by the same number, and it still works. If one unit is seven, multiply three, four and five by seven: twenty-one, twenty-eight and thirty-five. It's the same shape, just bigger, so it's also a right triangle.",
     "at": [
      "A triple is really a ratio",
      "ratio of the",

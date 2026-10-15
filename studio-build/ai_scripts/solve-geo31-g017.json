@@ -64,10 +64,11 @@
   ],
   [
    {
-    "say": "[pause] Now an insight, without any of that calculation. D E is five x, so we can cut it into five pieces, each of length x. Then we join B to each cutting point. Now B D E is made of five small triangles, and each one has a base of x.",
+    "say": "[pause] Now an insight, without any of that calculation. We keep the same letters: C D is x, and both triangles have the same height, h. D E is five x, so we can cut it into five pieces, each of length x. Then we join B to each cutting point. Now B D E is made of five small triangles, and each one has a base of x.",
     "at": [
-     "Now an insight",
-     "of that calculation",
+     "any of that",
+     "We keep the same letters",
+     "C D is",
      "we join B to each",
      "cutting point. Now",
      "B D E is made of five",

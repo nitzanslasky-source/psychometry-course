@@ -65,7 +65,7 @@
     ]
    },
    {
-    "say": "The distance between two lines is always measured on a line that's perpendicular to both of them. Here it's d, here it's d, and here it's d again. As the lines go on, the distance stays the same.",
+    "say": "The distance between these two parallel lines is measured on a line that's perpendicular to both of them. Here it's d, here it's d, and here it's d again. As the lines go on, the distance stays the same.",
     "at": [
      "The distance between",
      "Here it",
@@ -133,10 +133,9 @@
     ]
    },
    {
-    "say": "Another example: if a small angle is fifty-five, every large angle is a hundred eighty minus fifty-five, a hundred twenty-five. [pause] Okay. I'll see you in the next part.",
+    "say": "Another example, with other parallel lines, not the ones in the drawing: if a small angle is fifty-five, every large angle is a hundred eighty minus fifty-five, a hundred twenty-five. [pause] Okay. I'll see you in the next part.",
     "at": [
-     "a hundred eighty minus fifty-five",
-     "a hundred twenty-five"
+     "fifty-five, a hundred twenty-five"
     ]
    }
   ]

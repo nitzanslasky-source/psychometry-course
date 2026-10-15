@@ -86,10 +86,10 @@
   ],
   [
    {
-    "say": "[pause] There's a shorter way, with an insight. Turn your head a little. The shaded part is two triangles, A D C on the right, and A D B on the left.",
+    "say": "[pause] There's a shorter way, with an insight. Look at the shaded part again. It's two triangles, A D C on the right, and A D B on the left.",
     "at": [
      "There's a shorter way",
-     "Turn your head",
+     "Look at the",
      "A D C on the right",
      "right, and A"
     ]
@@ -98,7 +98,7 @@
     "say": "For the area of A D C we need a base and its height. The base is given, A D, three root three. The height to it, from C, is outside the triangle, because A D C has an obtuse angle at D. We extend the base A D down to E. E C is perpendicular to that line, and E C is four, the same as B E. So the height is four.",
     "at": [
      "For the area of A D C",
-     "we need a base",
+     "we need a base and its height",
      "The base is given",
      "D, three root",
      "We extend the base A D",
@@ -108,14 +108,14 @@
    {
     "say": "Three root three times four, over two, is six root three. That's one shaded triangle. The other one, A D B, is its mirror image, so it's six root three too. Twice six root three is twelve root three, choice number two again, with almost no calculating.",
     "at": [
-     "Three root three times four",
-     "over two, is",
-     "The other one, A D B",
-     "B, is its",
+     "over two, is six root three",
+     "That's one shaded triangle",
+     "other one, A",
      "so it's six root three too",
-     "Twice six root three",
-     "twelve root three",
-     "choice number two again"
+     "too. Twice six",
+     "is twelve root three",
+     "choice number two again",
+     "almost no calculating"
     ]
    },
    {

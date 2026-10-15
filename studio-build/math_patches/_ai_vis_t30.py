@@ -557,6 +557,15 @@ def GEO(name, layers, vb='0 0 640 360', w=540, col=1, title='Figure'):
 
 
 
+def ANCH(g, nm):
+    """2026-10-15 (batch B): anchor a GEO figure's layers to its own base (base fig=nm, layers of=nm), so a layer is drawn
+    on its base even when a text item comes in between, and with the base's scale if the renderer shrinks it to fit."""
+    base = g[next(iter(g))]; base['fig'] = nm
+    for it in g.values():
+        if it is not base: it['of'] = nm
+    return g
+
+
 CARRY30 = {}       # carry-over boxes (V2): {vid: {slide index: [tex, ...]}}, filled by the scripts
 
 
@@ -634,18 +643,32 @@ G1B = GEO('g1b', [
              [('txt', (a + b) / 2.0, 25, 'gap %d' % (i + 1), 'teal', 20) for i, (a, b) in enumerate(zip(_P5, _P5[1:]))]),
     ('len', [('txt', (a + b) / 2.0, 62, '3', 'orange', 24) for a, b in zip(_P5, _P5[1:])]),
 ], vb='0 0 640 150', w=900, col=0, title='Five points on a line make four gaps')
+_P7 = [80 + 80 * i for i in range(7)]
+G1B7 = GEO('g1b7', [
+    ('line', [('seg', 40, 80, 600, 80)] + [('dot', x, 80) for x in _P7] + [('txt', x, 114, str(i + 1), 'ink', 24) for i, x in enumerate(_P7)]),
+    ('gaps', [('arc', (a + b) / 2.0, 80, 38, 0, 180, 'teal') for a, b in zip(_P7, _P7[1:])] +
+             [('txt', (a + b) / 2.0, 26, 'gap %d' % (i + 1), 'teal', 17) for i, (a, b) in enumerate(zip(_P7, _P7[1:]))]),
+], vb='0 5 640 125', w=900, col=0, title='Seven points on a line make six gaps')
 # ---- slide: angles around a point
 _O = (320, 170)
 G1C = GEO('g1c', [
     ('line', [_g1line(_O[0], _O[1], 20, 250), _g1line(_O[0], _O[1], 125, 160), ('dot', _O[0], _O[1])]),
+    ('open', [('wedge', _O[0], _O[1], 110, 20, 125, 'orange'), ('seg',) + gpt(_O[0], _O[1], 10, 290) + gpt(_O[0], _O[1], 128, 290) + ('ink', 1.5), ('txt',) + gpt(_O[0], _O[1], 146, 290) + ('vertex', 'ink', 22)]),
     ('a1', [('arc', _O[0], _O[1], 40, 20, 125, 'orange', '105°', 72)]),
     ('a2', [('arc', _O[0], _O[1], 40, 125, 200, 'teal', '75°', 72)]),
     ('a3', [('arc', _O[0], _O[1], 40, 200, 305, 'orange', '105°', 72)]),
     ('a4', [('arc', _O[0], _O[1], 40, 305, 380, 'teal', '75°', 72)]),
     ('full', [('arc', _O[0], _O[1], 118, 0, 359.9, 'teal'), ('txt', 545, 40, '360°', 'teal', 30)]),
-], vb='0 10 640 320', w=760, col=0, title='Two lines cross: four angles around one point')
+], vb='0 10 640 320', w=560, col=0, title='Two lines cross: four angles around one point')
 G1C_t = IH('g1ct', '$105°+75°+105°+75°=360°$', size=30, col=0)
-G1C_t2 = I('g1ct2', 'Three lines: $\\ 60°+50°+70°+60°+50°+70°=360°$', size=26, col=0)
+_O3 = (170, 112)
+G1C3 = GEO('g1c3', [
+    ('line', [_g1line(_O3[0], _O3[1], d, 100) for d in (0, 60, 110)] + [('dot', _O3[0], _O3[1])]),
+    ('angs', [('txt',) + gpt(_O3[0], _O3[1], 62, (a + b) / 2.0) + ('%d°' % (b - a), 'teal' if k % 3 != 1 else 'orange', 19)
+              for k, (a, b) in enumerate([(0, 60), (60, 110), (110, 180), (180, 240), (240, 290), (290, 360)])]),
+    ('sum', [('txt', 450, 80, '60° + 50° + 70°', 'ink', 24), ('txt', 450, 115, '+ 60° + 50° + 70°', 'ink', 24),
+             ('txt', 450, 155, '= 360°', 'teal', 28)]),
+], vb='0 10 640 205', w=600, col=0, title='Three lines through one point: six angles, 360 degrees')
 # ---- slide: the right angle
 G1D = GEO('g1d', [
     ('line', [('seg', 120, 170, 520, 170), ('seg', 320, 20, 320, 320), ('dot', 320, 170)]),
@@ -656,7 +679,7 @@ G1D = GEO('g1d', [
 ], vb='0 10 640 320', w=580, col=0, title='Two perpendicular lines: four right angles')
 G1D2 = GEO('g1d2', [
     ('line', [('seg', 40, 200, 500, 200), _g1ray(270, 200, 93, 170), ('dot', 270, 200)]),
-    ('q', [('arc', 270, 200, 36, 0, 93, 'red'), ('txt', 360, 120, '90°?', 'red', 30), ('txt', 270, 245, 'not marked: not known', 'red', 24)]),
+    ('q', [('arc', 270, 200, 36, 0, 93, 'red'), ('txt', 360, 120, '90°?', 'red', 30), ('txt', 270, 245, 'not marked, not given: not known', 'red', 24)]),
 ], vb='0 0 540 270', w=520, col=1, title='Looks like a right angle, but it is not marked')
 # ---- slide: acute, obtuse and straight
 G1E = GEO('g1e', [
@@ -766,7 +789,7 @@ G1M = GEO('g1m', [
              [('arc', _MQ[0], _MQ[1], 84, 0, 359.9, 'teal')]),
     ('bot', _g1vals(_MQ)),
 ], vb='0 -15 640 390', w=780, col=0, title='The circle of angles at line a, moved down to line b')
-G1M_t2 = I('g1mt2', 'Small $55°\\ \\to\\ $ large $180°-55°=125°$', size=28, col=0)
+G1M_t2 = I('g1mt2', 'Other lines (not drawn): small $55°\\ \\to\\ $ large $180°-55°=125°$', size=28, col=0)
 # ---- slide: the Z (two variations)
 _ZP = (380, 100); _ZQ = gcross((0, 240), (640, 240), _ZP, gpt(_ZP[0], _ZP[1], 100, 228))
 G1N = GEO('g1n', [
@@ -808,10 +831,10 @@ G1Q = GEO('g1q', [
             ('arc',) + gcross((0, 240), (1000, 240), (820, 110), gpt(820, 110, 100, 250)) + (34, 0, 70, 'small', '70°', 60)]),
     ('p3', [('par', 680, 110, 780, 110), ('par', 680, 240, 780, 240), ('txt', 820, 335, '110° + 70° = 180°', 'teal', 26)]),
 ], vb='0 40 1000 320', w=1100, col=0, title='Three ways to know that two lines are parallel')
-G1Q_t = I('g1qt', 'Not to scale: parallel only if given or proved $\\cdot$ $90°$ only if marked', size=26, col=0)
+G1Q_t = I('g1qt', 'Not to scale: parallel only if given or proved $\\cdot$ $90°$ only if marked, given or calculated', size=26, col=0)
 G1R = [I('g1r%d' % k, t, size=28) for k, t in enumerate([
     'Line: endless $\\cdot$ segment: two ends $\\cdot$ count the gaps, not the points',
-    'Around a point $360°$ $\\cdot$ straight angle $180°$ $\\cdot$ right angle $90°$ (only if marked)',
+    'Around a point $360°$ $\\cdot$ straight angle $180°$ $\\cdot$ right angle $90°$ (marked, given or calculated)',
     'Adjacent on a straight line: $180°$ $\\cdot$ vertical angles: equal $\\cdot$ bisector: two halves',
     'Parallel + transversal: small $=$ small, large $=$ large, small $+$ large $=180°$',
     'Z $\\to$ equal $\\cdot$ U $\\to$ $180°$ $\\cdot$ parallel only if given or proved'])]
@@ -838,37 +861,45 @@ video('geo-001', 'lesson', slides=[
         "times three, twelve centimeters, not five times three, fifteen. And seven points in a row make six gaps.",
         show(G1B['len'], 'If every gap is three'), show(I('g1bt', '$4\\cdot3=12$, $\\ $not $5\\cdot3=15$', size=28, col=0),
                                                          'twelve centimeters'),
-        show(I('g1bt2', '7 points: 6 gaps', size=28, col=0), 'And seven points in a row'))),
+        show(G1B7['line'], 'And seven points in a row'), show(G1B7['gaps'], 'make six gaps'))),
     S('Angles around a point',
-      L("Intersecting lines are two straight lines that cross each other at one point. Around that point we get a kind "
-        "of circle of angles, four angles.", show(G1C['line'], 'Intersecting lines are'), show(G1C['a1'], 'four angles')),
-      L("A whole circle of angles is three hundred sixty degrees. For example, here the angles are a hundred five, "
+      L("Intersecting lines are two straight lines that cross each other at one point. An angle is the opening between "
+        "two lines that start at the same point, and that point is called the vertex. Around this crossing point we "
+        "get four angles.", show(G1C['line'], 'Intersecting lines are'), show(G1C['open'], 'An angle is the opening'),
+        show(G1C['a1'], 'we get four angles')),
+      L("We measure how wide an angle opens in degrees. One whole turn around a point is three hundred sixty degrees. "
+        "For example, here the angles are a hundred five, "
         "seventy-five, a hundred five and seventy-five.", show(G1C['a2'], 'seventy-five, a hundred'),
         show(G1C['a3'], 'a hundred five and'), show(G1C['a4'], 'and seventy-five.')),
       L("Together, a hundred five plus seventy-five is a hundred eighty, and twice that is three hundred sixty. All the "
-        "angles around one point always add up to three hundred sixty, even when more lines cross there.",
+        "angles around one point always add up to three hundred sixty, even when more lines cross there. With three "
+        "lines we get six angles, for example sixty, fifty, seventy, sixty, fifty and seventy, and together they're "
+        "three hundred sixty again.",
         show(G1C['full'], 'twice that is three hundred sixty'), show(G1C_t, 'All the angles around one point'),
-        show(G1C_t2, 'even when more lines'))),
+        show(G1C3['line'], 'With three lines'), show(G1C3['angs'], 'we get six angles'),
+        show(G1C3['sum'], "together they're three hundred sixty again"))),
     S('The right angle',
       L("A right angle is exactly ninety degrees. Two lines that make a right angle are called perpendicular. We mark the "
         "right angle with a small square, and on the exam there's almost always a dot in the middle of it.",
         show(G1D['line'], 'Two lines that make a right angle'), show(G1D['sq'], 'with a small square')),
       L("Ninety is exactly a quarter of three hundred sixty. Around the point we have a quarter, a quarter, a quarter and "
         "a quarter. Ninety, ninety, ninety, ninety.", show(G1D['all'], 'a quarter, a quarter')),
-      L("The rule for the exam: an angle is ninety degrees only if it's marked like this, or it's given. If it only looks "
-        "like ninety, that's not enough. This angle looks right, but there's no square, so we don't know it.",
+      L("The rule for the exam: don't trust how an angle looks. An angle is ninety degrees only if it's marked like this, "
+        "if it's given, or if we calculate it and get ninety. If it only looks like ninety, that's not enough. This angle "
+        "looks right, but there's no square and nothing to calculate it from, so we don't know it.",
         show(G1D2['line'], 'This angle looks right'), show(G1D2['q'], "there's no square"))),
     S('Acute, obtuse and straight',
       L("An acute angle is smaller than ninety degrees, like this forty-degree angle. Seventy-five is acute too.",
         show(G1E['line'], 'An acute angle is'), show(G1E['ac'], 'like this forty-degree')),
-      L("An obtuse angle is bigger than ninety degrees, like this one of a hundred thirty. A hundred sixty is obtuse "
-        "too.", show(G1E['ob'], 'An obtuse angle is')),
+      L("An obtuse angle is bigger than ninety degrees and smaller than a hundred eighty, like this one of a hundred "
+        "thirty. A hundred sixty is obtuse too.", show(G1E['ob'], 'An obtuse angle is')),
       L("A straight angle is a hundred eighty degrees. It's really just a straight line with a vertex on it. Why a "
         "hundred eighty? A whole circle is three hundred sixty, and a straight line cuts it in half, a hundred eighty on "
         "this side, and a hundred eighty on the other side.", show(G1E['st'], 'A straight angle is'))),
     S('Adjacent angles',
-      L("Adjacent angles are two angles side by side on one straight line. Together they make the straight angle, so "
-        "they add up to a hundred eighty.", show(G1F['line'], 'side by side on one straight line')),
+      L("Adjacent angles are two angles side by side. They share a vertex and one side. Here their other two sides make "
+        "one straight line, so together this pair makes the straight angle, and they add up to a hundred eighty.",
+        show(G1F['line'], 'two angles side by side')),
       L("Here one of them is fifty. So the other one is a hundred eighty minus fifty, a hundred thirty. One is acute, and "
         "the one next to it is obtuse. Another example: if one is a hundred eight, the other is seventy-two.",
         show(G1F['s50'], 'Here one of them is fifty'), show(G1F['l130'], 'a hundred thirty')),
@@ -910,7 +941,7 @@ video('geo-001', 'lesson', slides=[
     S('Parallel lines',
       L("Parallel lines are lines whose distance from each other never changes. Here are two lines, a and b.",
         show(G1K['line'], 'Here are two lines')),
-      L("The distance between two lines is always measured on a line that's perpendicular to both of them. Here it's d, "
+      L("The distance between these two parallel lines is measured on a line that's perpendicular to both of them. Here it's d, "
         "here it's d, and here it's d again. As the lines go on, the distance stays the same.",
         show(G1K['d'], 'Here it')),
       L("So parallel lines never meet. They never cross each other, they just go on side by side. We mark them with "
@@ -933,8 +964,9 @@ video('geo-001', 'lesson', slides=[
         "exactly. These are the same angles. So all the small ones are sixty, and all the large ones are a hundred "
         "twenty.", show(G1M['ring'], 'take this whole circle'), show(G1M['move'], 'move it down'),
         show(G1M['bot'], 'These are the same angles')),
-      L("Another example: if a small angle is fifty-five, every large angle is a hundred eighty minus fifty-five, a "
-        "hundred twenty-five.", show(G1M_t2, 'a hundred eighty minus fifty-five'))),
+      L("Another example, with other parallel lines, not the ones in the drawing: if a small angle is fifty-five, every "
+        "large angle is a hundred eighty minus fifty-five, a hundred twenty-five.",
+        show(G1M_t2, 'fifty-five, a hundred twenty-five'))),
     S('The Z',
       L("In exam questions, whenever you see two parallel lines, look for this Z. It runs along line a, down the "
         "transversal, and along line b.", show(G1N['line'], 'whenever you see two parallel lines'),
@@ -949,8 +981,9 @@ video('geo-001', 'lesson', slides=[
     S('The U',
       L("One more shape, the U. Here the two angles sit inside a U, on the same side of the transversal, between the two "
         "lines.", show(G1P['line'], 'One more shape'), show(G1P['u'], 'sit inside a U')),
-      L("They're not equal. One is small and one is large. And small plus large is a hundred eighty. So if the small one "
-        "is sixty-two, the large one is a hundred eighteen.", show(G1P['s'], 'One is small'), show(G1P['l'], 'the large one is'),
+      L("Their sum is always a hundred eighty. Usually one is small and one is large, so they're not equal. Only when the "
+        "transversal is perpendicular to the lines are they both ninety. So if the small one is sixty-two, the large one is "
+        "a hundred eighteen.", show(G1P['s'], 'if the small one'), show(G1P['l'], 'the large one is'),
         show(G1P_t, 'a hundred eighteen')),
       L("Another example: seventy-five inside a U goes with a hundred five. So the Z means equal, and the U means they add "
         "up to a hundred eighty.", show(G1P_t2, 'Another example'))),
@@ -964,13 +997,13 @@ video('geo-001', 'lesson', slides=[
         "in a U that add up to a hundred eighty, like a hundred ten and seventy.", show(G1Q['r3'], 'if the angles behave'),
         show(G1Q['p3'], 'like a hundred ten and seventy')),
       L("And the trap: on the exam, figures are not drawn to scale. Two lines can look parallel and not be. They're "
-        "parallel only if it's given, or one of these rules proves it, and an angle is ninety only if it's marked or "
-        "given.", show(G1Q_t, 'figures are not drawn to scale'))),
+        "parallel only if it's given, or one of these rules proves it, and an angle is ninety only if it's marked, given "
+        "or calculated.", show(G1Q_t, 'figures are not drawn to scale'))),
     S('Recap',
       L("Let's sum up. A line goes on forever, and a segment has two ends. On a line, count the gaps, not the points.",
         show(G1R[0], 'A line goes on forever')),
       L("All the angles around a point add up to three hundred sixty. A straight angle is a hundred eighty, and a right "
-        "angle is ninety, but only if it's marked or given.", show(G1R[1], 'All the angles around a point')),
+        "angle is ninety, but only if it's marked, given or calculated.", show(G1R[1], 'All the angles around a point')),
       L("Adjacent angles on a straight line add up to a hundred eighty. Vertical angles are equal. A bisector cuts an "
         "angle into two equal halves.", show(G1R[2], 'Adjacent angles on a straight line')),
       L("Parallel lines and a transversal: all the small angles are equal, all the large ones are equal, and small plus "
@@ -1024,18 +1057,23 @@ _Pa2 = gcross(_T2a, _T2b, (0, _A2), (640, _A2)); _Pb2 = gcross(_T2a, _T2b, (0, _
 _Q1, _Q2 = (245.813, 215.386), (406.697, 293.854)
 _up2 = gdir(_Pb2[0], _Pb2[1], _T2b[0], _T2b[1]); _pp2 = gdir(_Pb2[0], _Pb2[1], _Q2[0], _Q2[1])
 _lb2 = gpt(_Pb2[0], _Pb2[1], 60, _up2 / 2.0)
-g2 = OV('g2', [
-    ('line', [('dim', 70, 40, 500, 290), ('seg', 105.9, _A2, 534.1, _A2), ('seg', 105.9, _B2, 534.1, _B2),
-              ('seg', _T2a[0], _T2a[1], _T2b[0], _T2b[1]), ('txt', 93.7, _A2, 'a', 'ink', 20, True), ('txt', 93.7, _B2, 'b', 'ink', 20, True),
-              ('par', 150, _A2, 230, _A2), ('par', 150, _B2, 230, _B2)]),
-    ('top', [('arc', _Pa2[0], _Pa2[1], 32, 0, _up2, 'small'), ('txt', 394.066, 94.044, '64°', 'small', 19)]),
-    ('bot', [('arc', _Pb2[0], _Pb2[1], 32, 0, _up2, 'small'), ('txt', _lb2[0] + 6, _lb2[1] - 4, '64°', 'small', 19)]),
+# 2026-10-15 batch B (#165): one clean enlarged copy in its own panel (the question figure stays on the left, focused
+# first with highlights on its own x and 64), instead of marks laid over the question figure.
+_g2lab = [('txt', 93.7, _A2, 'a', 'ink', 24, True), ('txt', 93.7, _B2, 'b', 'ink', 24, True)]
+g2 = GEO('g2', [
+    ('line', [('seg', _Q1[0], _Q1[1], _Q2[0], _Q2[1]), ('arc', _Pb2[0], _Pb2[1], 46, _pp2, 360, 'ink'), ('txt', 357.3, 253.2, 'x', 'ink', 20, True),
+              ('dim', 75, 45, 470, 270), ('seg', 105.9, _A2, 534.1, _A2), ('seg', 105.9, _B2, 534.1, _B2),
+              ('seg', _T2a[0], _T2a[1], _T2b[0], _T2b[1])] + _g2lab +
+             [('par', 150, _A2, 230, _A2), ('par', 150, _B2, 230, _B2), ('arc', _Pa2[0], _Pa2[1], 32, 0, _up2, 'ink'),
+              ('txt', 396, 92, '64°', 'ink', 20)]),
+    ('top', [('arc', _Pa2[0], _Pa2[1], 32, 0, _up2, 'small'), ('txt', 396, 92, '64°', 'small', 20)]),
+    ('bot', [('arc', _Pb2[0], _Pb2[1], 32, 0, _up2, 'small'), ('txt', _lb2[0] + 6, _lb2[1] - 4, '64°', 'small', 20)]),
     ('perp', [('seg', _Q1[0], _Q1[1], _Q2[0], _Q2[1], 'ink', 3), ('right', _Pb2[0], _Pb2[1], _pp2, _up2, 14)]),
-    ('x', [('arc', _Pb2[0], _Pb2[1], 46, _pp2, 360, 'red'), ('txt', 357.3, 253.2, 'x', 'red', 20, True)]),
-    ('eq1', [('txt', 640, 150, '64° + x = 90°', 'ink', 21)]),
-    ('eq2', [('txt', 640, 190, 'x = 90° − 64°', 'ink', 21)]),
-    ('val', [('txt', 640, 230, 'x = 26°', 'red', 23), ('txt', 397, 253, '= 26°', 'red', 18)]),
-], (551.2133, 219.24, 847.5733, (0, 0, 640, 360)), title='Marks on the figure: parallel lines a and b')
+    ('x', [('arc', _Pb2[0], _Pb2[1], 46, _pp2, 360, 'red'), ('txt', 357.3, 253.2, 'x', 'red', 22, True)]),
+    ('eq1', [('txt', 310, 350, '64° + x = 90°', 'ink', 28)]),
+    ('eq2', [('txt', 310, 390, 'x = 90° − 64°', 'ink', 28)]),
+    ('eq3', [('txt', 310, 430, 'x = 26°', 'red', 30), ('txt', 404, 255, '= 26°', 'red', 20)]),
+], vb='75 45 470 405', w=500, title='Parallel lines a and b, the cutting line and the extra line')
 video('solve-geo30-g002', 'solution', qid='geo30-g002', slides=[
     S('Small angles are equal',
       L("In the accompanying figure, a is parallel to b. The marked lines are perpendicular. What is the value of x?",
@@ -1054,7 +1092,7 @@ video('solve-geo30-g002', 'solution', qid='geo30-g002', slides=[
       L("That right angle is made of two pieces. Above line b, there's the sixty-four. Below line b, there's x. So sixty-four "
         "plus x is ninety.", show(g2['x'], 'Below line b'), show(g2['eq1'], 'So sixty-four plus x is ninety')),
       L("x is ninety minus sixty-four, which is twenty-six. Choice number two is our answer.", show(g2['eq2'], 'x is ninety minus'),
-        show(g2['val'], 'which is twenty-six'), mk('tick', 'choice 2', 'Choice number two is our answer')),
+        show(g2['eq3'], 'which is twenty-six'), mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("Careful with sixty-four, choice number one. That's the angle next to x, not x itself. [pause] Okay. I'll see you in "
         "the next question.", mk('cross', 'choice 1', 'Careful with sixty-four, choice number one'))),
 ])
@@ -1072,46 +1110,57 @@ _Da, _Db = (296.436, 290.0), (481.038, 70.0)
 _Pa1 = gcross(_Da, _Db, (0, _A1), (640, _A1)); _Pb1 = gcross(_Da, _Db, (0, _B1), (640, _B1))
 _up1 = gdir(_Pb1[0], _Pb1[1], _Db[0], _Db[1])
 _lb1 = gpt(_Pb1[0], _Pb1[1], 58, _up1 / 2.0)
-g1 = OV('g1', [
-    ('line', [('seg', 170, 60, 170, 300, 'teal', 4), ('right', 170, _A1, 0, 90, 12), ('right', 170, _B1, 0, 90, 12)]),
-    ('rule', [('txt', 745, 100, 'a ⊥ c,  b ⊥ c', 'ink', 30), ('txt', 745, 142, '→  a ∥ b', 'ink', 30)]),
+# 2026-10-15 batch B (#166): one clean enlarged copy in its own panel (the question figure stays on the left and is
+# focused first: its x, its 50, then its right-angle marks); line c is traced on the copy, then faded for the focus.
+_g1ab = [('seg', 120, _A1, 540, _A1), ('seg', 120, _B1, 540, _B1), ('seg', _Da[0], _Da[1], _Db[0], _Db[1]),
+         ('txt', 105, _A1, 'a', 'ink', 24, True), ('txt', 105, _B1, 'b', 'ink', 24, True), ('txt', 491, 56, 'd', 'ink', 24, True)]
+g1 = ANCH(GEO('g1', [
+    ('line', _g1ab + [('seg', 170, 60, 170, 300), ('txt', 170, 44, 'c', 'ink', 24, True), ('right', 170, _A1, 0, 90, 12, 'ink'),
+                      ('right', 170, _B1, 0, 90, 12, 'ink'), ('arc', _Pa1[0], _Pa1[1], 28, 0, _up1, 'ink'), ('txt', 493, 88, '50°', 'ink', 20),
+                      ('arc', _Pb1[0], _Pb1[1], 22, _up1, 180, 'ink'), ('txt', 312, 212, 'x', 'ink', 22, True)]),
+    ('cm', [('seg', 170, 60, 170, 300, 'teal', 4), ('right', 170, _A1, 0, 90, 12), ('right', 170, _B1, 0, 90, 12)]),
     ('par', [('par', 230, _A1, 300, _A1, 1, 'teal'), ('par', 230, _B1, 300, _B1, 1, 'teal')]),
-    ('focus', [('dim', 95, 35, 460, 275), ('seg', 120, _A1, 540, _A1), ('seg', 120, _B1, 540, _B1), ('seg', _Da[0], _Da[1], _Db[0], _Db[1]),
-               ('txt', 105, _A1, 'a', 'ink', 20, True), ('txt', 105, _B1, 'b', 'ink', 20, True), ('txt', 491, 58, 'd', 'ink', 20, True),
-               ('par', 230, _A1, 300, _A1, 1, 'teal'), ('par', 230, _B1, 300, _B1, 1, 'teal')]),
-    ('top', [('arc', _Pa1[0], _Pa1[1], 28, 0, _up1, 'small'), ('txt', 491, 90, '50°', 'small', 18)]),
-    ('bot', [('arc', _Pb1[0], _Pb1[1], 28, 0, _up1, 'small'), ('txt', _lb1[0] + 4, _lb1[1] - 2, '50°', 'small', 18)]),
-    ('x', [('arc', _Pb1[0], _Pb1[1], 22, _up1, 180, 'large'), ('txt', 312, 212, 'x', 'large', 20, True)]),
-    ('eq1', [('txt', 745, 200, '50° + x = 180°', 'ink', 30)]),
-    ('eq2', [('txt', 745, 242, 'x = 180° − 50°', 'ink', 30)]),
-    ('val', [('txt', 745, 288, 'x = 130°', 'red', 32), ('txt', 262, 212, '130° =', 'red', 18)]),
-], (687.8889, 279.0, 574.2222, (0, 0, 640, 360)), title='Marks on the figure: lines a, b, c and d')
+    ('focus', [('dim', 95, 30, 460, 285)] + _g1ab + [('par', 230, _A1, 300, _A1, 1, 'teal'), ('par', 230, _B1, 300, _B1, 1, 'teal'),
+               ('arc', _Pa1[0], _Pa1[1], 28, 0, _up1, 'ink'), ('txt', 493, 88, '50°', 'ink', 20), ('txt', 312, 212, 'x', 'ink', 22, True)]),
+    ('top', [('arc', _Pa1[0], _Pa1[1], 28, 0, _up1, 'small'), ('txt', 493, 88, '50°', 'small', 20)]),
+    ('bot', [('arc', _Pb1[0], _Pb1[1], 28, 0, _up1, 'small'), ('txt', _lb1[0] + 4, _lb1[1] - 2, '50°', 'small', 20)]),
+    ('x', [('arc', _Pb1[0], _Pb1[1], 22, _up1, 180, 'large'), ('txt', 312, 212, 'x', 'large', 22, True)]),
+    ('val', [('txt', 262, 212, '130° =', 'red', 18)]),
+], vb='95 30 460 285', w=560, col=0, title='Lines a, b, c and d'), 'g1fig')
+k1r = I('k1r', '$a\\perp c,\\ b\\perp c\\ \\to\\ a\\parallel b$', size=32, col=1)
+k1a = IH('k1a', '$50°+x=180°$', size=34, col=1)
+k1b = IH('k1b', '$x=180°-50°=130°$', size=34, col=1)
 video('solve-q-r26-t30-01', 'solution', qid='q-r26-t30-01', slides=[
-    S('Prove the lines are parallel',
+    S('The question',
       L("In the accompanying figure, lines a and b are both perpendicular to line c. Line d crosses lines a and b. What is "
         "the value of x?", pt('stem', 'In the accompanying figure', 'hl', 8.0), voice='calm', pause=0.5),
       L("x is at line b, and the only number we have, fifty degrees, is at line a. To move an angle from one line to the "
         "other, the two lines must be parallel. But the question doesn't say that a is parallel to b. [short pause] So "
-        "first we'll check if we can prove it.", pt('fig: x', 'x is at line b'), pt('fig: 50°', 'the only number we have')),
-      L("[short pause] Look at line c. Line a is perpendicular to it, and line b is perpendicular to it too. The "
-        "little squares show that.", show(g1['line'], 'Look at line c')),
+        "first we'll check if we can prove it.", pt('fig: x', 'x is at line b'), pt('fig: 50°', 'the only number we have'),
+        pt('fig: c', 'we can prove it')), sb='Prove the lines are parallel'),
+    S('Prove the lines are parallel',
+      L("[short pause] Here's the figure again, bigger. Look at line c. Line a is perpendicular to it, and line b is "
+        "perpendicular to it too. The little squares show that.", show(g1['line'], "Here's the figure again"),
+        show(g1['cm'], 'Look at line c')),
       L("Two lines that are perpendicular to the same line are parallel. They both go straight across, in the same "
         "direction, so they never meet. So a is parallel to b, even though the question doesn't write it.",
-        show(g1['rule'], 'Two lines that are perpendicular to the same line'), show(g1['par'], 'So a is parallel to b')),
+        show(k1r, 'Two lines that are perpendicular to the same line'), show(g1['par'], 'So a is parallel to b')),
       L("Now we don't need line c anymore. It's the usual picture: two parallel lines, a and b, and line d that cuts them.",
-        show(g1['focus'], "we don't need line c anymore"), pt('fig: d', 'line d that cuts them')),
+        show(g1['focus'], "we don't need line c anymore")),
       L("The fifty degrees at line a is one of the small angles. All the small angles are equal, so the small angle at line b, above "
         "b and to the right of d, is fifty degrees too.", show(g1['top'], 'The fifty degrees at line a'),
         show(g1['bot'], 'so the small angle at line b')),
       L("x is right next to that fifty, on the other side of line d. Together they make the straight line b, so fifty plus "
-        "x is a hundred eighty.", show(g1['x'], 'x is right next to that fifty'), show(g1['eq1'], 'so fifty plus x')),
+        "x is a hundred eighty.", show(g1['x'], 'x is right next to that fifty'), show(k1a, 'x is a hundred eighty')),
       L("x is a hundred eighty minus fifty, which is a hundred thirty. Choice number three is our answer.",
-        show(g1['eq2'], 'x is a hundred eighty minus fifty'), show(g1['val'], 'which is a hundred thirty'),
+        show(k1b, 'which is a hundred thirty'), show(g1['val'], 'which is a hundred thirty'),
         mk('tick', 'choice 3', 'Choice number three is our answer')),
       L("Careful with choice number four. It's true that the question doesn't write that a is parallel to b, but the two "
         "right angles prove it, so x can be found. [pause] Okay. I'll see you in the next question.",
         mk('cross', 'choice 4', 'Careful with choice number four'))),
 ])
+NOFIG30 = {('solve-q-r26-t30-01', 1)}
+for _t in g1.values(): _t['_y'] = 250; _t['_x'] = 410     # 2026-10-15: these slides show our enlarged copy instead of the question figure
 
 # ------------------------------------------------------------------------------------------------ q-r26-t30-02 (added)
 # REMINDER (geo-001): points on a line make segments; a length is the gap between two points. NEW: AC and BD overlap on BC.
@@ -1120,26 +1169,32 @@ video('solve-q-r26-t30-01', 'solution', qid='q-r26-t30-01', slides=[
 # on the figure's own line (AD above in ink, BD below in orange, AB below in teal with its calculation, AC lower in teal),
 # the piece found tinted red on the line with its calculation; method 2 on a NEW slide from the givens: AC above (teal),
 # BD below (orange), the overlap BC tinted red ("covered twice"), then the equation under the figure.
+# 2026-10-15 batch B (#167): an enlarged copy of the line in its own panel (not marks over the question figure), so every
+# bar ends exactly at its points; method 2 tints the SAME piece BC once on each bar (AC and BD), one tint per addend.
 _X = {'A': 140, 'B': 248, 'C': 338, 'D': 500}
-def _bar(p, q, y, col, label, ly, size=15):
-    return [('seg', _X[p], y, _X[q], y, col, 4), ('seg', _X[p], y - 6, _X[p], y + 6, col, 2.5), ('seg', _X[q], y - 6, _X[q], y + 6, col, 2.5),
+def _bar(p, q, y, col, label, ly, size=20):
+    return [('seg', _X[p], y, _X[q], y, col, 4), ('seg', _X[p], y - 7, _X[p], y + 7, col, 2.5), ('seg', _X[q], y - 7, _X[q], y + 7, col, 2.5),
+            ('seg', _X[p], y, _X[p], 180, col, 1, True), ('seg', _X[q], y, _X[q], 180, col, 1, True),
             ('txt', (_X[p] + _X[q]) / 2.0, ly, label, col, size)]
-_BOX3 = (534.3, 373.77, 881.4, (90, 130, 460, 90))   # the 460 x 90 figure is centred in its 881 x 220 box (+24 px)
-s1 = OV('s1', [
-    ('line', _bar('A', 'D', 158, 'ink', 'AD = 20', 143)),
-    ('bd', _bar('B', 'D', 232, 'orange', 'BD = 14', 248)),
-    ('ab', _bar('A', 'B', 232, 'teal', 'AB = 20 − 14 = 6', 248)),
-    ('ac', _bar('A', 'C', 266, 'teal', 'AC = 11', 282)),
+_ln3 = [('seg', 105, 180, 535, 180)] + [('dot', _X[k], 180) for k in 'ABCD'] + [('txt', _X[k], 204, k, 'ink', 22) for k in 'ABCD']
+s1 = GEO('s1', [
+    ('line', _ln3),
+    ('ad', _bar('A', 'D', 140, 'ink', 'AD = 20', 122)),
+    ('bd', _bar('B', 'D', 238, 'orange', 'BD = 14', 258)),
+    ('ab', _bar('A', 'B', 238, 'teal', 'AB = 20 − 14 = 6', 258, 18)),
+    ('ac', _bar('A', 'C', 290, 'teal', 'AC = 11', 310)),
     ('bc', [('seg', _X['B'], 180, _X['C'], 180, 'red', 6), ('tint', [(_X['B'], 170), (_X['C'], 170), (_X['C'], 190), (_X['B'], 190)], 'red'),
-            ('txt', 320, 304, 'BC = AC − AB = 11 − 6 = 5', 'red', 15)]),
-], _BOX3, title='Marks on the figure: segments on a line')
-s2 = OV('s2', [
-    ('line', _bar('A', 'C', 158, 'teal', 'AC = 11', 143)),
-    ('bd', _bar('B', 'D', 232, 'orange', 'BD = 14', 248)),
-    ('bc', [('tint', [(_X['B'], 150), (_X['C'], 150), (_X['C'], 240), (_X['B'], 240)], 'red'), ('txt', 293, 262, 'BC twice', 'red', 15)]),
-    ('eq1', [('txt', 320, 284, 'AC + BD = AD + BC', 'ink', 15)]),
-    ('eq2', [('txt', 320, 305, '11 + 14 = 20 + BC  →  BC = 5', 'ink', 15)]),
-], _BOX3, title='Marks on the figure: AC and BD overlap on BC')
+            ('txt', 320, 345, 'BC = AC − AB = 11 − 6 = 5', 'red', 22)]),
+], vb='95 100 450 260', w=520, title='Points A, B, C and D on a line')
+s2 = GEO('s2', [
+    ('line', _ln3 + _bar('A', 'C', 140, 'teal', 'AC = 11', 122)),
+    ('bd', _bar('B', 'D', 238, 'orange', 'BD = 14', 258)),
+    ('bc', [('tint', [(_X['B'], 130), (_X['C'], 130), (_X['C'], 150), (_X['B'], 150)], 'red'),
+            ('tint', [(_X['B'], 228), (_X['C'], 228), (_X['C'], 248), (_X['B'], 248)], 'red'),
+            ('txt', 293, 160, 'BC', 'red', 16), ('txt', 293, 218, 'BC', 'red', 16), ('txt', 320, 290, 'BC is covered twice', 'red', 20)]),
+    ('eq1', [('txt', 320, 325, 'AC + BD = AD + BC', 'ink', 22)]),
+    ('eq2', [('txt', 320, 360, '11 + 14 = 20 + BC  →  BC = 5', 'ink', 22)]),
+], vb='95 100 450 275', w=520, title='AC and BD overlap on BC')
 video('solve-q-r26-t30-02', 'solution', qid='q-r26-t30-02', slides=[
     S('Step by step',
       L("Points A, B, C and D lie on a line in this order, as shown in the accompanying figure. Given: A C is eleven, B D is "
@@ -1147,8 +1202,9 @@ video('solve-q-r26-t30-02', 'solution', qid='q-r26-t30-02', slides=[
         voice='calm', pause=0.5),
       L("B C is the short piece in the middle, between B and C. [short pause] We'll solve it two ways, finding the pieces "
         "one by one, and then with the overlap rule.", pt('fig: B', 'the short piece in the middle')),
-      L("[short pause] The math way first. Let's put each length on the figure. A D is twenty, the whole line from A to D.",
-        pt('stem: g3', "Let's put each length"), show(s1['line'], 'A D is twenty')),
+      L("[short pause] The math way first. Let's draw the line again, bigger, and put each length on it. A D is twenty, the "
+        "whole line from A to D.", show(s1['line'], "Let's draw the line again"), pt('stem: g3', 'A D is twenty'),
+        show(s1['ad'], 'the whole line from A to D')),
       L("B D is fourteen, the part from B to the end. So what's left at the start, A B, is twenty minus fourteen, which is "
         "six.", pt('stem: g2', 'B D is fourteen'), show(s1['bd'], 'the part from B to the end'), show(s1['ab'], 'twenty minus fourteen')),
       L("Now A C is eleven, and A C is made of A B and B C. A B is six, so B C is eleven minus six, which is five. Choice "
@@ -1168,7 +1224,7 @@ video('solve-q-r26-t30-02', 'solution', qid='q-r26-t30-02', slides=[
 
 # ---- placement (this fragment's question videos): the question figure on the left (figw 0.56, as in the course's
 # geometry videos), our board on the right, x = 1040, explicit y (the right column starts below the question text).
-_F3_Q = {'solve-geo30-g005', 'solve-geo30-g006', 'solve-geo30-g007', 'solve-q-r26-t30-03'}
+_F3_Q = {'solve-geo30-g002', 'solve-q-r26-t30-02', 'solve-geo30-g005', 'solve-geo30-g006', 'solve-geo30-g007', 'solve-q-r26-t30-03'}
 
 
 def _R(it, y, x=1040):
@@ -1191,6 +1247,9 @@ def studio_slides(vid):
     if vid in _F3_Q:
         for b in out:
             for it in b['pre']: it.update(figw=0.56, figalign='left')
+    for k, b in enumerate(out):
+        if (vid, k) in NOFIG30:
+            for it in b['pre']: it.update(nofig=1)
     return out, sb
 
 
@@ -1243,7 +1302,9 @@ g5b = GEO('g5b', [
                                   ('arc', _A5[0], _A5[1], 25, 77, 180, 'small', '77°', 46), ('arc', _Q5[0], _Q5[1], 25, 47, 77, 'small', '56°', 46),
                                   ('arc', _P5[0], _P5[1], 31, 180, 227, 'red', 'x', 50), ('arc', _P5[0], _P5[1], 44, 227, 257, 'small', '56°', 66),
                                   ('arc', _P5[0], _P5[1], 31, 257, 360, 'small', '77°', 52)]),
-], vb='115 40 395 280', w=420, title='Two pairs of parallel lines')
+], vb='115 40 395 280', w=380, title='Two pairs of parallel lines')
+g5c = {'line': dict(g5b['line'], _name='g5c_line')}     # Method 2 keeps the angles found (a small labelled copy, V2)
+k5s = I('k5s', 'So far: $\\ x+77°+56°=180°$', size=28)
 k5a = IH('k5a', '$x+56°+77°=180°$', size=32)
 k5b = IH('k5b', '$77°+56°=133°$', size=32)
 k5c = IH('k5c', '$x=180°-133°=47°$', size=32)
@@ -1271,12 +1332,15 @@ video('solve-geo30-g005', 'solution', qid='geo30-g005', slides=[
       L("Now back to the whole figure. Below line b, at the point where the three lines meet, there are three angles side "
         "by side, x, fifty-six and seventy-seven. Together they make the straight line b, so they add up to one hundred "
         "eighty.", show(g5b['line'], 'Now back to the whole figure'), show(k5a, 'so they add up to')),
-      L("Seventy-seven plus fifty-six. Add the tens, seventy plus fifty is a hundred twenty, and seven plus six is "
-        "thirteen, so together a hundred thirty-three. x plus a hundred thirty-three is a hundred eighty, so x is a "
-        "hundred eighty minus a hundred thirty-three, which is forty-seven. Choice number four is our answer.",
+      L("Now seventy-seven plus fifty-six. Add the tens first: seventy plus fifty is a hundred twenty. Then the ones: seven "
+        "plus six is thirteen. Together that's a hundred thirty-three. So x plus a hundred thirty-three is a hundred eighty. "
+        "So x is a hundred eighty minus a hundred thirty-three, which is forty-seven. Choice number four is our answer.",
         show(k5b, 'Add the tens'), show(k5c, 'so x is a hundred eighty minus'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
     SM('Method 2 · Understanding: last digit', 'The last digit',
-      L("[pause] Now by understanding. We could make the end shorter, with the last digits. Some students don't even write the equation. They "
+      L("[pause] Now by understanding. We keep the two angles we already found, seventy-seven and fifty-six, so x plus "
+        "seventy-seven plus fifty-six is a hundred eighty. Now we make the end shorter, with the last digits.",
+        show(g5c['line'], 'We keep the two angles'), show(k5s, 'so x plus')),
+      L("Some students don't even solve the equation. They "
         "say, one angle ends in seven, one ends in six, and x makes the sum a hundred eighty, which ends in zero. Seven plus "
         "six is thirteen, which ends in three. So x has to end in seven, because three plus seven makes a ten.",
         show(k5d, 'Seven plus six is thirteen')),
@@ -1304,7 +1368,7 @@ g6 = GEO('g6', [
     ('nn', [('wedge', 320, 180, 62, 80, 120, 'orange'), ('txt', 296, 70, '180−n', 'orange', 20)]),
     ('nk', [('wedge', 320, 180, 62, 120, 180, 'orange'), ('txt', 222, 132, '180−k', 'orange', 20)]),
     ('st', [('path', [(191.9, 269.7), (448.1, 90.3)], 'teal', 9)]),
-], vb='150 18 345 322', w=380, title='Four lines through one point')
+], vb='150 18 345 322', w=340, title='Four lines through one point')
 g6p = GEO('g6p', [
     ('line', _g6lines + [('arc', 320, 180, 70, 35, 180, 'small', '140°', 96), ('arc', 320, 180, 55, 300, 80, 'small', '140°', 84),
                          ('arc', 320, 180, 39, 180, 300, 'small', '140°', 66), ('arc', 320, 180, 94, 35, 80, 'red', 'x', 116)]),
@@ -1319,8 +1383,12 @@ g6o = GEO('g6o', [
     ('k', [('wedge', 320, 180, 92, 180, 300, 'teal'), ('arc', 320, 180, 39, 180, 300, 'small', 'k', 60)]),
     ('x', [('arc', 320, 180, 98, 35, 80, 'red', 'x', 120)]),
 ], vb='150 18 345 322', w=380, title='m, n and k cover the full turn and x twice')
-k6a = IH('k6a', '$(180°-m)+(180°-n)+(180°-k)+x=180°$', size=24)
-k6a2 = I('k6a2', '$(180°-m)+(180°-n)$\n$+(180°-k)+x=180°$', size=28)
+k6a = I('k6a', '$(180°-m)+(180°-n)$\n$+(180°-k)+x=180°$', size=28)
+k6a2 = I('k6a2', '$(180°-m)+(180°-n)$\n$+(180°-k)+x=180°$', size=26)
+k6s1 = IH('k6s1', '$180°-m+180°-n+180°-k+x=180°$', size=21)
+k6t = I('k6t', 'Balance: $\\ 5+2=7\\ \\to\\ 5=7-2$', size=28)
+k6s2 = IH('k6s2', '$180°-m+180°-n-k+x=0$', size=28)
+k6s3 = IH('k6s3', '$360°+x=m+n+k$', size=30)
 k6b = IH('k6b', '$x=m+n+k-360°$', size=32)
 k6c = I('k6c', '$m=n=k=140°$: $\\ x=180°-3\\cdot40°=60°$', size=28)
 k6d = I('k6d', '(1) $240°$ ✗ $\\quad$ (2) $140°$ ✗\n(3) negative ✗ $\\quad$ (4) $60°$ ✓', size=30)
@@ -1343,24 +1411,33 @@ video('solve-geo30-g006', 'solution', qid='geo30-g006', slides=[
         "found. Together they make a straight angle, so they add up to one hundred eighty.", show(g6['st'], 'Now look at this slanted line'),
         show(k6a, 'so they add up to one hundred eighty'))),
     SM('Method 1 · The math way', 'An anchor: 180',
-      L("Careful with the brackets. There's a plus in front of each bracket, so we can just drop them. The one hundred "
-        "eighty on the left and the one hundred eighty on the right cancel. We keep x on the left, and move minus m, minus n "
-        "and minus k to the right side as plus. The two one hundred eighties that are left make three hundred sixty, and "
-        "they move across as minus three hundred sixty.", show(k6a2, 'Careful with the brackets')),
-      L("So x equals m plus n plus k, minus three hundred sixty. Choice number four is our answer. Once you see the "
-        "straight angle, the math is short. The hard part is seeing it on the last question of the section.",
-        show(k6b, 'So x equals'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
+      L("Here's our equation again. Careful with the brackets. There's a plus in front of each bracket, so we can just "
+        "drop them.", show(k6a2, "Here's our equation again"), show(k6s1, 'so we can just drop them')),
+      L("Now we need one tool from algebra. An equation is like a balance. If we do the same thing to both sides, it "
+        "stays true. For example, five plus two equals seven. Subtract two from both sides, and we get five equals seven "
+        "minus two. Still true, five is five. So a number that's added on one side can move to the other side as a minus.",
+        show(k6t, 'five plus two equals seven')),
+      L("Back to our equation. First, subtract one hundred eighty from both sides. On the right, one hundred eighty minus "
+        "one hundred eighty is zero. On the left, we lose one of the three one hundred eighty terms.",
+        show(k6s2, 'On the left, we lose one')),
+      L("Next, add m, n and k to both sides. On the left, minus m plus m is zero, and the same for n and k. So one hundred "
+        "eighty plus one hundred eighty plus x equals m plus n plus k. That's three hundred sixty plus x.",
+        show(k6s3, "That's three hundred sixty plus x")),
+      L("Last, subtract three hundred sixty from both sides. So x equals m plus n plus k, minus three hundred sixty. Choice "
+        "number four is our answer. Once you see the straight angle, the math is short. The hard part is seeing it on the "
+        "last question of the section.", show(k6b, 'So x equals'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
     SM('Method 2 · Plugging in numbers', 'Plugging in numbers',
       L("[pause] Now plugging in numbers. The question was made harder by putting letters instead of numbers, so we put "
         "numbers back. Why is that allowed? The right expression equals x for every possible m, n and k, so it also equals "
         "x for one example that we choose. We find x in our example, and then a choice that gives a different value is "
         "out.", show(g6p['line'], 'we put numbers back')),
-      L("Which numbers? Numbers that fit the figure, and are easy. m looks obtuse, about one hundred forty degrees, so "
-        "m is one hundred forty. And we choose one hundred forty for n and k too. Using the same number everywhere makes "
-        "the choices much easier to check later.", pt('fig: m', 'm looks obtuse')),
+      L("Which numbers? Easy numbers that the figure allows. We choose m equals one hundred forty, and the same one "
+        "hundred forty for n and k. Using the same number everywhere makes the choices much easier to check later.",
+        pt('fig: m', 'We choose m equals')),
       L("With numbers the neighbors are easy. The angle next to each one hundred forty is forty. Forty plus forty plus "
         "forty is a hundred twenty. With x they make a straight angle, so x is a hundred eighty minus a hundred twenty, "
-        "which is sixty degrees, in our example.", show(g6p['nb'], 'The angle next to each'), show(g6p['xv'], 'which is sixty degrees'),
+        "which is sixty degrees, in our example. Sixty is more than zero, so our numbers really fit a possible figure.",
+        show(g6p['nb'], 'The angle next to each'), show(g6p['xv'], 'which is sixty degrees'),
         show(k6c, 'in our example'))),
     SM('Method 2 · Plugging in numbers', 'Plugging in numbers',
       L("Now put one hundred forty into each choice and look for sixty. Choice number one says m plus n plus k, minus "
@@ -1382,9 +1459,7 @@ video('solve-geo30-g006', 'solution', qid='geo30-g006', slides=[
         show(g6o['m'], 'm and k go around'), show(g6o['k'], 'most of the turn'), show(g6o['n'], 'and n covers the rest'),
         show(g6o['x'], 'is exactly x')),
       L("So m plus n plus k is three hundred sixty plus x. Move the three hundred sixty to the other side, and x equals m "
-        "plus n plus k minus three hundred sixty. Choice number four. Strong students sometimes see this at once. Most "
-        "students find plugging in numbers easier here, and the answer is just as sure. [pause] Okay. I'll see you in the "
-        "next question.", show(k6e, 'So m plus n plus k'), mk('tick', 'choice 4', 'minus three hundred sixty. Choice number four'))),
+        "plus n plus k minus three hundred sixty. Choice number four. [pause] Okay. I'll see you in the next question.", show(k6e, 'So m plus n plus k'), mk('tick', 'choice 4', 'minus three hundred sixty. Choice number four'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo30-g007 (Hebrew: the bent line)
@@ -1406,11 +1481,16 @@ g7 = GEO('g7', [
 ], vb='205 110 275 130', w=520, title='Parallel lines and a bent line')
 g7z = GEO('g7z', [
     ('line', _g7base),
-    ('lt', [('arc', 320, 134.91, 30, 324, 360, 'small', '36°', 52), ('arc', 320, 225.09, 30, 0, 62, 'small', '62°', 52)]),
-    ('rt', [('arc', 354.59, 160.04, 21, 144, 242, 'orange', 'x', 40)]),
+    ('lt', [('arc', 320, 134.91, 30, 324, 360, 'small', '36°', 52), ('arc', 320, 225.09, 30, 0, 62, 'small', '62°', 52),
+            ('seg', 314, 143, 294, 143, 'teal', 2.5)] + [('seg',) + p + (314 - 20, 143, 'teal', 2.5) for p in (gpt(294, 143, 8, 30), gpt(294, 143, 8, -30))] +
+           [('seg', 314, 217, 294, 217, 'teal', 2.5)] + [('seg',) + p + (294, 217, 'teal', 2.5) for p in (gpt(294, 217, 8, 30), gpt(294, 217, 8, -30))] +
+           [('txt', 266, 180, 'tips left', 'teal', 13)]),
+    ('rt', [('arc', 354.59, 160.04, 21, 144, 242, 'orange', 'x', 40), ('seg', 362, 160.04, 382, 160.04, 'orange', 2.5)] +
+           [('seg',) + p + (382, 160.04, 'orange', 2.5) for p in (gpt(382, 160.04, 8, 150), gpt(382, 160.04, 8, 210))] +
+           [('txt', 412, 160.04, 'tip right', 'orange', 13)]),
 ], vb='205 110 275 130', w=520, title='The zig-zag rule')
 k7a = IH('k7a', '$x=36°+62°=98°$', size=32)
-k7b = I('k7b', 'Tips pointing left $=$ tips pointing right', size=30)
+k7b = I('k7b', 'Angles with tips pointing left\n$=$ angles with tips pointing right', size=26)
 video('solve-geo30-g007', 'solution', qid='geo30-g007', slides=[
     S('Method 1 · The math way: a helper line',
       L("In the accompanying figure, a is parallel to b. What is the value of x?", pt('stem', 'In the accompanying figure', 'hl', 4.0),
@@ -1468,15 +1548,15 @@ g8 = GEO('g8', [
     ('aux2', [('dot', 248.66, 199.28), ('seg', 210, 199.28, 410, 199.28, 'teal', 1.8, True)]),
     ('z35', [('path', [(300, 290), _P2, _B2, (330, 199.28)], 'teal', 5), ('arc', 248.66, 199.28, 28, 325, 360, 'small'), ('txt', 285.7, 214.3, '35°', 'teal', 15)]),
     ('r30', [('arc', 248.66, 199.28, 34, 0, 30, 'orange'), ('txt', 289.5, 182.8, '30°', 'orange', 15)]),
-    ('aux1', [('dot', 326.61, 154.28), ('seg', 210, 154.28, 410, 154.28, 'teal', 1.8, True)]),
-    ('z30', [('path', [(330, 199.28), _B2, _B1, (250, 154.28)], 'orange', 5), ('arc', 326.61, 154.28, 28, 180, 210, 'orange'), ('txt', 288.2, 165.3, '30°', 'orange', 15)]),
-    ('z40', [('path', [(330, 90), _P1, _B1, (250, 154.28)], 'teal', 5), ('arc', 326.61, 154.28, 34, 140, 180, 'small'), ('txt', 285.8, 137.8, '40°', 'teal', 15)]),
-], vb='200 70 225 235', w=400, title='A parallel line through each bend')
+    ('aux1', [('dim', 236, 205, 180, 98), ('dot', 326.61, 154.28), ('seg', 210, 154.28, 410, 154.28, 'teal', 1.8, True)]),
+    ('z30', [('path', [(330, 199.28), _B2, _B1, (250, 154.28)], 'orange', 5), ('arc', 326.61, 154.28, 28, 180, 210, 'orange'), ('txt', 300, 172, '30°', 'orange', 14)]),
+    ('z40', [('path', [(330, 90), _P1, _B1, (250, 154.28)], 'teal', 5), ('arc', 326.61, 154.28, 34, 140, 180, 'small'), ('txt', 296, 132, '40°', 'teal', 14)]),
+], vb='200 70 225 235', w=370, title='A parallel line through each bend')
 k8a = IH('k8a', '$40°+65°=x+35°$', size=32)
 k8b = IH('k8b', '$x=105°-35°=70°$', size=32)
 k8d = IH('k8d', '$x=40°+30°=70°$', size=32)
 video('solve-q-r26-t30-03', 'solution', qid='q-r26-t30-03', slides=[
-    S('Method 1 · Understanding: the zig-zag rule',
+    SM('Method 1 · Understanding: the zig-zag rule', 'The zig-zag rule',
       L("In the accompanying figure, a is parallel to b. What is the value of x?", pt('stem', 'In the accompanying figure', 'hl', 4.0),
         voice='calm', pause=0.5),
       L("This time the line between a and b bends twice. [short pause] We'll solve it two ways, with the zig-zag rule, and "
@@ -1489,7 +1569,7 @@ video('solve-q-r26-t30-03', 'solution', qid='q-r26-t30-03', slides=[
         show(k8a, 'So forty plus sixty-five equals'), show(k8b, 'so x is a hundred five minus'), mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("Careful, a hundred five, choice number three, adds only the left side. And a hundred forty, choice number four, "
         "adds everything.", mk('cross', 'choice 3', 'adds only the left side'), mk('cross', 'choice 4', 'adds everything'))),
-    S('Method 2 · The math way: helper lines',
+    SM('Method 2 · The math way: helper lines', 'Helper lines',
       L("[pause] Now the math way. Not sure you remember the rule? Draw a parallel line through each bend. That always works. Start at the "
         "bottom, at the lower bend, the sixty-five, and draw one more line through it, parallel to a and b.",
         show(g8['line'], 'Not sure you remember'), show(g8['aux2'], 'and draw one more line')),
@@ -1504,11 +1584,13 @@ video('solve-q-r26-t30-03', 'solution', qid='q-r26-t30-03', slides=[
 ])
 
 # placement (right column)
-for _g in (g5, g5b, g6, g6p, g6o, g7, g7z, g8z, g8): _R(_g, 235)
+for _g in (g2, s1, s2, g5, g5b, g5c, g6, g6p, g6o, g7, g7z, g8z, g8): _R(_g, 235)
 _R(g8, 230, x=1080)
-for _it, _y in ((k5a, 545), (k5b, 595), (k5c, 645), (k5d, 250), (k6a, 610), (k6a2, 250), (k6b, 345), (k6c, 610), (k6d, 250),
-                (k6e, 610), (k7a, 500), (k7b, 500), (k8a, 525), (k8b, 585), (k8d, 665)):
+for _it, _y in ((k5a, 520), (k5b, 570), (k5c, 620), (k5s, 505), (k5d, 560), (k6a, 565), (k6a2, 250), (k6s1, 345), (k6t, 405), (k6s2, 465), (k6s3, 525), (k6b, 585), (k6c, 610), (k6d, 250),
+                (k6e, 610), (k7a, 500), (k7b, 500), (k8a, 525), (k8b, 585), (k8d, 625)):
     _R(_it, _y)
+for _it, _y in ((k1r, 260), (k1a, 340), (k1b, 400)): _R(_it, _y)
+for _g, _n in ((g2, 'g2fig'), (s1, 's1fig'), (s2, 's2fig')): ANCH(_g, _n)
 
 
 # carry-over boxes on the continuation slides (V2): the next step uses these results

@@ -43,17 +43,24 @@
   ],
   [
    {
-    "say": "Let's use it. Two angles are fifty and sixty. Fifty plus sixty is a hundred ten, so the third angle is a hundred eighty minus a hundred ten, which is seventy.",
+    "say": "Let's use it. Two angles are sixty and fifty. Sixty plus fifty is a hundred ten, so the third angle is a hundred eighty minus a hundred ten, which is seventy.",
     "at": [
-     "Two angles are fifty and sixty",
-     "Fifty plus sixty"
+     "Two angles are sixty and fifty",
+     "Sixty plus fifty is a hundred ten",
+     "hundred ten, so",
+     "which is seventy",
+     "which is seventy"
     ]
    },
    {
-    "say": "Another one. A right triangle has a ninety degree angle and a thirty-five degree angle. Ninety plus thirty-five is a hundred twenty-five, so the third angle is fifty-five.",
+    "say": "Another one. A right triangle has a ninety degree angle and a thirty-five degree angle. Ninety plus thirty-five is a hundred twenty-five, so the third angle is a hundred eighty minus a hundred twenty-five, which is fifty-five.",
     "at": [
      "A right triangle",
-     "thirty-five degree angle"
+     "ninety degree angle",
+     "is a hundred twenty-five",
+     "the third angle",
+     "which is fifty-five",
+     "which is fifty-five"
     ]
    },
    {
@@ -97,10 +104,10 @@
   ],
   [
    {
-    "say": "This rule isn't used very often on the exam, and you don't really need it. We can always find the angle next to the exterior angle, and use the angle sum. But if you know it, it can save you time. For example, the two angles inside are forty-seven and sixty-eight.",
+    "say": "So there are two ways to find an exterior angle. The long way: find the angle next to it with the angle sum, and complete it to a hundred eighty. The shortcut: add the two angles inside that are not next to it. For example, the two angles inside are forty-seven and sixty-eight.",
     "at": [
-     "This rule isn't used very often",
-     "often on the",
+     "So there are two ways",
+     "to find an",
      "the two angles inside are",
      "forty-seven and sixty-eight"
     ]

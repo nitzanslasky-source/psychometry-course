@@ -1122,7 +1122,7 @@ Marks per sentence, located from the point where the failed attempt broke off (9
   - Questions: "Choice number N is our answer, and I'll see you in the next question." She said "next lesson" by mistake 5 times.
   - Lessons: "Take a moment to memorize this … and I'll see you in the next video."
 
-### WRITING RULES for scripts she will read (topic 21 onward): W1-W18
+### WRITING RULES for scripts she will read (topic 21 onward): W1-W19
 These add to R1-R36 and the Codex review standard. Where they differ from the AI-voice rules, these apply to **teacher-read** scripts.
 
 1. **W1. Keep sentences short.** Aim for 6-12 words and split anything over 14. Her M rate doubles from 0.21 per sentence (6-10 words) to 0.45-0.51 (14-22 words). Put a trailing clause in its own sentence ("Now calculate with the two ends. That gives the new range.").
@@ -1173,6 +1173,11 @@ These add to R1-R36 and the Codex review standard. Where they differ from the AI
     - In a second method, read the choice again briefly ("Choice number one says: diamond of a is smaller than three."); in a plug-in method, read it first and then say it with the test value ("Choice number two says x minus sixty. One hundred ten minus sixty is fifty.").
     - Exception: a choice that is only a number or a single short expression ("Choice number two, twelve") is already read in full.
 18. **W18. Never use the article "a/an" near the variable a; avoid ambiguous letter-words.** "a fraction" → "any fraction" / "one fraction"; "a number" → "any number"; "a bigger denominator makes a smaller fraction" → "the bigger the denominator, the smaller the fraction". Where useful, say "the letter a" or "the number a" the first time. The same goes for other letter-words next to a variable of that name (e.g. "I" when there is a variable I). The prompter shows math variables in italic serif with their own colour (`math_patches/_math_vars_display.py`), but the spoken sentence must be clear without it.
+19. **W19. Pace + explain, no headlines.** (Teacher, 2026-10-15: scripts must be understandable at a pace students can follow, and explain rather than "speak headlines".)
+    - **Pace:** one new idea per sentence. After a key idea comes a beat: a short pause, a check sentence, or an example. Never two new steps in one breath ("Seventy plus fifty is a hundred twenty. Then the ones: seven plus six is thirteen.", not both in one clause chain). The board writing keeps up with the speech: each step is written at its own clause.
+    - **No headline speech:** no telegraphic fragments ("Two cases.", "Step one: the signs.", "Same idea.", "Side eight.") and no bare results. Every step says what we do, why, and what it gives ("Let's try it with a side of eight. Eight squared is sixty-four, ...").
+    - Short spoken transitions that lead into a full sentence are fine ("Now the area.", "Why? Because ..."), and so is "Out." right after the calculation that rules a choice out.
+    - **Aid:** `python3 studio-build/w19_check.py <video ids>` (2026-10-15) flags: sentences under about 5 words with no verb, label-style openers (word + colon), and sentences with more than 2 numbers and 2 operations. The flags only find spots; judge and fix each one by hand.
 
 **Put her most frequent elaborations in the script from the start:**
 1. the reason after each claim;

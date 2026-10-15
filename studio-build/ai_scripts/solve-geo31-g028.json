@@ -28,7 +28,7 @@
     ]
    },
    {
-    "say": "To go from the hypotenuse to a leg, we divide by root two, eighteen over root two. Ignore the root, eighteen divided by two is nine, and put the root two back, nine root two. If that's hard, look at it as an equation. a root two equals eighteen, so a is eighteen over root two, the same nine root two.",
+    "say": "To go from the hypotenuse to a leg, we divide by root two, eighteen over root two. Eighteen divided by two is nine, and then nine times root two is nine root two. If that's hard, look at it as an equation. a root two equals eighteen, so a is eighteen over root two, the same nine root two.",
     "at": [
      "To go from",
      "nine root two. If",
@@ -54,11 +54,13 @@
     ]
    },
    {
-    "say": "t squared is a hundred sixty-two, which is eighty-one times two. So t is nine root two. The same result. Choice number one.",
+    "say": "t squared is a hundred sixty-two, which is eighty-one times two. So t is nine root two, the same leg as before. So the perimeter is again nine root two plus nine root two plus eighteen, which is eighteen plus eighteen root two. Choice number one.",
     "at": [
      "which is eighty-one times two",
      "So t is",
-     "The same result. Choice",
+     "So the perimeter is again",
+     "nine root two plus",
+     "eighteen plus eighteen root two. Choice",
      "number one"
     ]
    },

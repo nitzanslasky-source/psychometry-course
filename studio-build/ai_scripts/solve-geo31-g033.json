@@ -59,9 +59,9 @@
   ],
   [
    {
-    "say": "[pause] Let's check it with the full maximum too. The angle at C is more than ninety, so it's the biggest angle of the triangle. The longest side is across from the biggest angle, so A B is the longest side.",
+    "say": "[pause] Let's check it with an upper bound, one that's enough to rule out the big choices. The angle at C is more than ninety, so it's the biggest angle of the triangle. The longest side is across from the biggest angle, so A B is the longest side.",
     "at": [
-     "the full maximum",
+     "an upper bound",
      "The angle at C is more than",
      "more than ninety",
      "so A B is the longest side"

@@ -359,7 +359,13 @@ def studio_slides(vid):
     if vid in FIG_LEFT:
         for b in out:
             for it in b['pre']: it.update(figw=0.56, figalign='left')
+    for k, b in enumerate(out):
+        if (vid, k) in NOFIG31:
+            for it in b['pre']: it.update(nofig=1)
     return out, sb
+
+
+NOFIG31 = set()     # 2026-10-15 (batch B): (video, slide index) that show our enlarged copy instead of the question figure
 
 
 def rebuild(M, vid):
@@ -462,7 +468,8 @@ MV = importlib.util.module_from_spec(_mv_spec); _mv_spec.loader.exec_module(MV)
 # degrees, counter-clockwise from the right (math convention, y up). The question figures themselves are the course's (black
 # and white, another agent's pipeline); these are our own board copies.
 GINK, GTEAL, GRED, GORANGE, GBAND = '#203344', '#087f83', '#d62d48', '#c76a00', '#d5f1ed'
-GCOL = {'ink': GINK, 'teal': GTEAL, 'red': GRED, 'orange': GORANGE, 'small': GTEAL, 'large': GORANGE}
+GCOL = {'ink': GINK, 'teal': GTEAL, 'red': GRED, 'orange': GORANGE, 'small': GTEAL, 'large': GORANGE,
+        'white': '#ffffff', 'grey': '#b9c3cc'}     # white / grey: a cancelled edge is faded (batch B, 2026-10-15)
 GFONT = 'font-family="DejaVu Sans,Arial,sans-serif"'
 
 
@@ -493,6 +500,10 @@ def _gtxt(x, y, t, c=GINK, size=26, italic=False):
 
 def _gel(e):
     k = e[0]
+    if k == 'wipe':         # ('wipe', x, y, w, h)  a white box that hides an old label (the next example's value goes there)
+        return '<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="#ffffff"/>' % tuple(e[1:5])
+    if k == 'odot':         # ('odot', x, y[, colour])  an open endpoint (a value that is NOT included)
+        return '<circle cx="%.1f" cy="%.1f" r="7" fill="#ffffff" stroke="%s" stroke-width="3"/>' % (e[1], e[2], GCOL.get(e[3] if len(e) > 3 else 'teal'))
     if k == 'seg':          # ('seg', x1, y1, x2, y2[, colour[, width[, dashed]]])
         x1, y1, x2, y2 = e[1:5]; c = GCOL.get(e[5] if len(e) > 5 else 'ink'); w = e[6] if len(e) > 6 else 3
         dash = ' stroke-dasharray="9 7"' if len(e) > 7 and e[7] else ''
@@ -701,7 +712,7 @@ f1med = GEO('f1med', [
     ('ticks', [('tick', F1A[0], F1A[1], F1M[0], F1M[1], 1), ('tick', F1M[0], F1M[1], F1B[0], F1B[1], 1),
                ('txt', (F1A[0] + F1M[0]) / 2, 318, '5', 'teal', 24), ('txt', (F1M[0] + F1B[0]) / 2, 318, '5', 'teal', 24),
                ('txt', 480, 50, 'AB = 10:  AM = MB = 5', 'teal', 22)]),
-    ('not', [('txt', 470, 120, 'no right angle', 'red', 22), ('txt', 470, 150, 'no equal angles', 'red', 22)]),
+    ('not', [('txt', 475, 106, 'not necessarily:', 'red', 21), ('txt', 475, 134, 'a right angle', 'red', 21), ('txt', 475, 162, 'equal angles', 'red', 21)]),
     ('three', [('seg', F1A[0], F1A[1], _mA[0], _mA[1], 'teal', 4), ('seg', F1B[0], F1B[1], _mB[0], _mB[1], 'teal', 4),
                ('tick', F1B[0], F1B[1], _mA[0], _mA[1], 2), ('tick', _mA[0], _mA[1], F1C[0], F1C[1], 2),
                ('tick', F1A[0], F1A[1], _mB[0], _mB[1], 3), ('tick', _mB[0], _mB[1], F1C[0], F1C[1], 3)]),
@@ -773,8 +784,24 @@ f1sum = GEO('f1sum', [
     ('line180', [('arc', 300, 90, 70, 180, 360, 'teal'), ('txt', 300, 30, 'α + γ + β = 180°', 'teal', 26)]),
 ], vb='30 0 580 340', w=760, col=0, title='Why the three angles of a triangle add up to 180 degrees')
 f1sum_t = IH('f1sumt', '$\\alpha+\\beta+\\gamma=180°$', size=34, col=1)
-f1ex1 = IH('f1ex1', '$50°+60°+x=180°$: $\\ x=70°$', size=34, col=0)
-f1ex2 = IH('f1ex2', '$90°+35°+x=180°$: $\\ x=55°$', size=34, col=0)
+_X1A, _X1B = (60, 220), (360, 220)
+_X1C = gcross(_X1A, gpt(_X1A[0], _X1A[1], 100, 60), _X1B, gpt(_X1B[0], _X1B[1], 100, 130))   # angles 60 at A, 50 at B, 70 at C
+f1exA = GEO('f1exA', [
+    ('line', f1_tri(_X1A, _X1B, _X1C) + [f1_arcpts(_X1A, _X1B, _X1C, 34, 'teal', '60°', 60), f1_arcpts(_X1B, _X1A, _X1C, 40, 'teal', '50°', 68),
+                                         f1_arcpts(_X1C, _X1A, _X1B, 26, 'red', 'x', 46)]),
+    ('val', [('txt', _X1C[0] + 62, _X1C[1] + 14, '= 70°', 'red', 26)]),
+], vb='30 -20 360 260', w=400, col=0, title='A triangle with angles 60, 50 and x')
+_X2A, _X2B, _X2C = (60, 210), (360, 210), (60, 0)
+_X2C = (60, 210 - 300 * _f1m.tan(_f1m.radians(35)))                # right angle at A, 35 at B
+f1exB = GEO('f1exB', [
+    ('line', f1_tri(_X2A, _X2B, _X2C) + [('right', _X2A[0], _X2A[1], 0, 90, 16, 'ink'), f1_arcpts(_X2B, _X2A, _X2C, 50, 'teal', '35°', 78),
+                                         f1_arcpts(_X2C, _X2A, _X2B, 22, 'red', 'x', 42)]),
+    ('val', [('txt', 122, 14, '= 55°', 'red', 26)]),
+], vb='30 -10 360 245', w=400, col=1, title='A right triangle with angles 90, 35 and x')
+f1ex1 = IH('f1ex1', '$60°+50°=110°$', size=32, col=0)
+f1ex1b = IH('f1ex1b', '$x=180°-110°=70°$', size=32, col=0)
+f1ex2 = IH('f1ex2', '$90°+35°=125°$', size=32, col=1)
+f1ex2b = IH('f1ex2b', '$x=180°-125°=55°$', size=32, col=1)
 f1ex3 = I('f1ex3', '$100°+95°>180°$: $\\ $not a triangle', size=34, col=0)
 
 # ---- slide: the exterior angle
@@ -853,14 +880,15 @@ f1walk_t = I('f1walkt', '$BA+AC>BC$', size=32, col=1)
 f1rng = GEO('f1rng', [
     ('line', [('seg', 40, 120, 600, 120, 'ink', 3)] + [('seg', 40 + 40 * k, 112, 40 + 40 * k, 128, 'ink', 2) for k in range(15)] +
              [('txt', 40 + 40 * k, 150, str(k), 'ink', 18) for k in range(0, 15)]),
-    ('ends', [('dot', 40 + 40 * 5, 120), ('dot', 40 + 40 * 13, 120), ('txt', 240, 88, '9 − 4', 'red', 22), ('txt', 560, 88, '9 + 4', 'red', 22)]),
-    ('band', [('tint', [(240, 112), (560, 112), (560, 128), (240, 128)], 'teal'), ('txt', 400, 88, 'the third side', 'teal', 22)]),
+    ('ends', [('odot', 40 + 40 * 5, 120, 'red'), ('odot', 40 + 40 * 13, 120, 'red'), ('txt', 240, 88, '9 − 4', 'red', 22), ('txt', 560, 88, '9 + 4', 'red', 22)]),
+    ('band', [('tint', [(247, 112), (553, 112), (553, 128), (247, 128)], 'teal'), ('odot', 40 + 40 * 5, 120, 'red'), ('odot', 40 + 40 * 13, 120, 'red'),
+              ('txt', 400, 88, 'the third side', 'teal', 22)]),
     ('whole', [('dot', 40 + 40 * k, 120) for k in range(6, 13)] + [('txt', 400, 186, '6, 7, 8, 9, 10, 11, 12: seven lengths', 'teal', 22)]),
 ], vb='20 60 600 140', w=860, col=0, title='The third side is between the difference and the sum')
 f1rg1 = IH('f1rg1', '$c<a+b$ $\\quad$ $c+b>a$: $\\ c>a-b$', size=28, col=0)
 f1rg2 = IH('f1rg2', 'big $-$ small $<c<$ sum', size=30, col=0)
 f1rg3 = I('f1rg3', '$4$ and $9$: $\\ 5<c<13$ $\\quad$ $3$ and $8$: $\\ 5<c<11$', size=28, col=0)
-f1rg4 = I('f1rg4', 'Whole numbers: $\\ 2\\times$ the shorter side $-1$', size=28, col=0)
+f1rg4 = I('f1rg4', 'Whole given sides: $\\ 2\\times$ the shorter side $-1$', size=28, col=0)
 
 # ---- recap
 f1r = [I('f1r%d' % k, t, size=26, col=0) for k, t in enumerate([
@@ -882,8 +910,9 @@ video('geo-009', 'lesson', slides=[
       L("The median goes from C to M, so it splits the side A B into two equal pieces. We mark equal pieces with the same "
         "little line. For example, if A B is ten, then A M is five and M B is five.",
         show(f1med['med'], 'The median goes from C to M'), show(f1med['ticks'], 'We mark equal pieces')),
-      L("That's all a median promises, two equal pieces. It doesn't make a right angle with the side, and it doesn't "
-        "split the angle at C into two equal angles.", show(f1med['not'], "It doesn't make a right angle")),
+      L("That's all a median promises, two equal pieces. It does not necessarily make a right angle with the side, and "
+        "it does not necessarily split the angle at C into two equal angles. In this triangle it does neither.",
+        show(f1med['not'], 'It does not necessarily make a right angle')),
       L("Every triangle has three medians, one from each vertex. Here's one from A to the middle of B C, and one from B to "
         "the middle of A C. And look, the three medians meet at one point. There's also a rule about how they divide each "
         "other, two to one, but it isn't needed for the exam. If you know it, fine, and if you don't, that's fine too.",
@@ -914,8 +943,8 @@ video('geo-009', 'lesson', slides=[
         show(f1bis['line'], 'The third special line'), show(f1bis['bis'], 'Here it starts at C')),
       L("The two halves are equal, so we call both of them alpha. For example, if the angle at C is seventy degrees, each "
         "half is thirty-five.", show(f1bis['halves'], 'The two halves are equal')),
-      L("That's all it promises, two equal angles. It doesn't split the side into equal pieces. Look, A D is shorter than "
-        "D B here. And it doesn't make a right angle.", show(f1bis['pieces'], 'Look, A D is shorter')),
+      L("That's all it promises, two equal angles. It does not necessarily split the side into equal pieces. Look, A D is "
+        "shorter than D B here. And it does not necessarily make a right angle.", show(f1bis['pieces'], 'Look, A D is shorter')),
       L("So these are three different lines. A median gives equal pieces, an altitude gives a right angle, and a bisector "
         "gives equal angles. In special triangles, which we'll meet in a later lesson, they can become one line.",
         show(f1three, 'So these are three different lines'))),
@@ -932,10 +961,13 @@ video('geo-009', 'lesson', slides=[
         "straight angle, a hundred eighty. So the three angles of the triangle add up to a hundred eighty.",
         show(f1sum['line180'], 'sit side by side on one straight line'), show(f1sum_t, 'So the three angles of the triangle'))),
     S('Using the angle sum',
-      L("Let's use it. Two angles are fifty and sixty. Fifty plus sixty is a hundred ten, so the third angle is a hundred "
-        "eighty minus a hundred ten, which is seventy.", show(f1ex1, 'Two angles are fifty and sixty')),
+      L("Let's use it. Two angles are sixty and fifty. Sixty plus fifty is a hundred ten, so the third angle is a hundred "
+        "eighty minus a hundred ten, which is seventy.", show(f1exA['line'], 'Two angles are sixty and fifty'),
+        show(f1ex1, 'Sixty plus fifty is a hundred ten'), show(f1ex1b, 'which is seventy'), show(f1exA['val'], 'which is seventy')),
       L("Another one. A right triangle has a ninety degree angle and a thirty-five degree angle. Ninety plus thirty-five "
-        "is a hundred twenty-five, so the third angle is fifty-five.", show(f1ex2, 'A right triangle')),
+        "is a hundred twenty-five, so the third angle is a hundred eighty minus a hundred twenty-five, which is fifty-five.",
+        show(f1exB['line'], 'A right triangle'), show(f1ex2, 'is a hundred twenty-five'), show(f1ex2b, 'which is fifty-five'),
+        show(f1exB['val'], 'which is fifty-five')),
       L("And a non-example. Can a triangle have one angle of a hundred degrees and another of ninety-five degrees? No. "
         "Together they're already more than a hundred eighty. So a triangle has at most one obtuse angle, or one right angle.",
         show(f1ex3, 'And a non-example'))),
@@ -953,9 +985,9 @@ video('geo-009', 'lesson', slides=[
         show(f1ext_t1, 'Gamma and delta sit side by side'), show(f1ext_t2, 'And the angle sum says'),
         show(f1ext_t3, 'Delta equals alpha plus beta.'))),
     S('Two ways',
-      L("This rule isn't used very often on the exam, and you don't really need it. We can always find the angle next to "
-        "the exterior angle, and use the angle sum. But if you know it, it can save you time. For example, the two angles "
-        "inside are forty-seven and sixty-eight.", show(f1rt['line'], "This rule isn't used very often"),
+      L("So there are two ways to find an exterior angle. The long way: find the angle next to it with the angle sum, and "
+        "complete it to a hundred eighty. The shortcut: add the two angles inside that are not next to it. For example, "
+        "the two angles inside are forty-seven and sixty-eight.", show(f1rt['line'], 'So there are two ways'),
         show(f1rt['given'], 'the two angles inside are')),
       L("With the rule, it's one step. Forty-seven plus sixty-eight is a hundred fifteen. That's the exterior angle.",
         show(f1rt['ex'], 'With the rule')),
@@ -996,8 +1028,7 @@ video('geo-009', 'lesson', slides=[
       L("Let's send two friends from home to the club, each on a different route. The first walks in a straight line. "
         "The second stops somewhere on the way, and then goes on to the club.", show(f1walk['straight'], 'The first walks'),
         show(f1walk['stop'], 'The second stops')),
-      L("Who arrives first? The one who walked in a straight line, because his road is shorter. The one who stopped walked "
-        "more. A straight line is always the shortest way between two points, so two sides together are longer than the "
+      L("Who walks the shorter distance? The one who walked in a straight line. The one who stopped walked more. A straight line is always the shortest way between two points, so two sides together are longer than the "
         "third.", show(f1walk_t, 'so two sides together'))),
     S('Between the difference and the sum',
       L("Now let's extend this rule. Side c is less than a plus b, because two sides together are longer than the third. "
@@ -1006,13 +1037,17 @@ video('geo-009', 'lesson', slides=[
       L("Together: a side of a triangle is less than the sum of the other two sides, and more than their difference. The "
         "difference is always the big one minus the small one, and it can't be equal to either end.",
         show(f1rg2, 'Together')),
-      L("For example, two sides are four and nine. The third side is more than nine minus four, five, and less than nine "
-        "plus four, thirteen.", show(f1rng['line'], 'two sides are four and nine'), show(f1rng['ends'], 'nine minus four'),
-        show(f1rng['band'], 'and less than nine')),
-      L("If the third side is a whole number, it can be six, seven, and so on up to twelve. That's seven lengths. A quick "
-        "count is twice the shorter side, minus one. Twice four is eight, minus one is seven. With sides three and eight, "
-        "the third side is between five and eleven, so six to ten, five lengths, and twice three minus one is five too.",
-        show(f1rng['whole'], 'it can be six, seven'), show(f1rg4, 'A quick count'), show(f1rg3, 'With sides three and eight'))),
+      L("For example, two sides are four and nine. The third side is more than nine minus four, which is five. And it's less "
+        "than nine plus four, which is thirteen.", show(f1rng['line'], 'two sides are four and nine'), show(f1rng['ends'], 'nine minus four'),
+        show(f1rng['band'], "And it's less than nine plus four")),
+      L("Five and thirteen themselves are not allowed. With exactly five or thirteen, the triangle would lie flat. If the "
+        "third side is a whole number, it can be six, seven, and so on up to twelve. That's seven lengths.",
+        show(f1rng['whole'], 'it can be six, seven')),
+      L("When the two given sides are whole numbers too, there's a quick count: twice the shorter side, and then subtract one. Twice "
+        "four is eight, minus one is seven. With sides three and eight, the third side is between five and eleven, so six "
+        "to ten, five lengths, and twice three minus one is five too. If the given sides are not whole numbers, just count "
+        "the whole numbers between the two ends.",
+        show(f1rg4, 'there\'s a quick count'), show(f1rg3, 'With sides three and eight'))),
     S('Recap',
       L("So, a median goes to the middle, an altitude makes a right angle, and a bisector splits the angle. The angles add "
         "up to a hundred eighty, and an exterior angle equals the two angles inside that are not next to it.",
@@ -1083,7 +1118,7 @@ video('solve-geo31-g010', 'solution', qid='geo31-g010', slides=[
         "divided by twelve. Twelve times fifteen is one hundred eighty, so x is fifteen. Choice number two is our answer.",
         show(f2_g10['e2'], 'Twelve x equals'), mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("Let's check it. Three x is forty-five, four x is sixty, and five x is seventy-five. Forty-five plus sixty is a "
-        "hundred five, and plus seventy-five is a hundred eighty. And careful, forty-five, choice number one, is three x, "
+        "hundred five. A hundred five plus seventy-five is a hundred eighty. And careful, forty-five, choice number one, is three x, "
         "the angle at A, not x. [pause] Okay. I'll see you in the next question.", show(f2_g10['e3'], 'Forty-five plus sixty'), mk('cross', 'choice 1', 'forty-five, choice number one'))),
 ])
 
@@ -1116,7 +1151,7 @@ f2_g11p = GEO('f2g11p', [
 ], vb='120 25 405 390', w=400, title='Triangle ABC with k = 60 degrees')
 video('solve-geo31-g011', 'solution', qid='geo31-g011', slides=[
     SM('Method 1 · The math way', 'Down to one letter',
-      L("In the accompanying figure, the angles at A and C are equal. What is the value of m plus n over two?",
+      L("In the accompanying figure, the angles at A and C are equal. What is the value of m plus half of n?",
         pt('stem', 'In the accompanying figure', 'hl', 6.0), voice='calm', pause=0.5),
       L("The figure has three letters, k, m and n, but the answer has to be one number. So we'll write m and n with the "
         "same letter, k, and hope that k cancels. [short pause] We'll solve it two ways, with the angle rules, and then by "
@@ -1133,9 +1168,9 @@ video('solve-geo31-g011', 'solution', qid='geo31-g011', slides=[
         "Choice number three is our answer.", show(f2_g11['e3'], 'Half of n is half'),
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
     SM('Method 2 · Plugging in numbers', 'Plugging in a number',
-      L("[pause] Another way, plugging in a number. The answer is one number, so it comes out the same for every k that "
-        "fits the figure. That means we're allowed to choose any k we like, and work with numbers instead of letters. "
-        "Let's take an easy one, k is sixty.", show(f2_g11p['line'], "Let's take an easy one")),
+      L("[pause] Another way, plugging in a number. The question promises one answer for every triangle that fits the "
+        "figure. So the correct choice must also be right for one triangle that we choose, and a choice that doesn't give "
+        "our result is out. Let's take an easy k that fits, k is sixty.", show(f2_g11p['line'], "Let's take an easy k")),
       L("Then the angles at A and C are sixty. The angle at B is one hundred eighty minus one hundred twenty, which is "
         "sixty too. m is next to the sixty at A, so m is one hundred eighty minus sixty, which is one hundred twenty. n is "
         "the outside angle at B, so n is sixty plus sixty, which is one hundred twenty too.",
@@ -1163,8 +1198,9 @@ f2_X = lambda v: 50 + (v - 4) * 28.0          # the number line: 4 .. 23 over 50
 f2_z12 = GEO('f2z12', [
     ('line', [('seg', 30, 110, 600, 110, 'ink', 3)]),
     ('band', [('tint', [(f2_X(7), 100), (f2_X(19), 100), (f2_X(19), 120), (f2_X(7), 120)], 'teal'),
-              ('txt', f2_X(13), 70, '7 < x < 19', 'small', 26)]),
-    ('ch', [('dot', f2_X(v), 110) for v in (7, 11, 19, 21)] + [('txt', f2_X(v), 150, str(v), 'ink', 26) for v in (7, 11, 19, 21)]),
+              ('odot', f2_X(7), 110, 'red'), ('odot', f2_X(19), 110, 'red'), ('txt', f2_X(13), 70, '7 < x < 19', 'small', 26)]),
+    ('ch', [('dot', f2_X(v), 110) for v in (11, 21)] + [('odot', f2_X(v), 110, 'red') for v in (7, 19)] +
+           [('txt', f2_X(v), 150, str(v), 'ink', 26) for v in (7, 11, 19, 21)]),
     ('cr', [('txt', f2_X(v), 185, '✗', 'red', 30) for v in (7, 19, 21)] + [('txt', f2_X(11), 185, '✓', 'small', 30)]),
 ], vb='20 40 600 170', w=560, title='x between 7 and 19')
 video('solve-geo31-g012', 'solution', qid='geo31-g012', slides=[
@@ -1177,8 +1213,8 @@ video('solve-geo31-g012', 'solution', qid='geo31-g012', slides=[
       L("[short pause] Remember the rule. A side of a triangle is shorter than the sum of the other two sides, and "
         "longer than their difference. If x were as long as six plus thirteen, the two other sides would lie flat on it, "
         "and they couldn't close a triangle.", show(f2_g12['line'], 'Remember the rule'), show(f2_g12['x'], 'If x were as long')),
-      L("So x is less than thirteen plus six, which is nineteen, and more than thirteen minus six, which is seven. x is "
-        "between seven and nineteen.", show(f2_g12['e1'], 'So x is less than'), show(f2_g12['e2'], 'x is between seven'))),
+      L("So x is less than thirteen plus six, which is nineteen. And x is more than thirteen minus six, which is seven. So "
+        "x is between seven and nineteen.", show(f2_g12['e1'], 'So x is less than'), show(f2_g12['e2'], 'x is between seven'))),
     S('Between the difference and the sum',
       L("Let's put that on a number line. x can be anywhere between seven and nineteen, but not on the edges.",
         show(f2_z12['line'], "Let's put that"), show(f2_z12['band'], 'x can be anywhere')),
@@ -1213,10 +1249,16 @@ f2_iso = GEO('f2iso', [
     ('base', [('path', [f2_L, f2_R], 'orange', 7), ('txt', 320, 330, 'base', 'orange', 22)]),
     ('bang', [('arc', f2_L[0], f2_L[1], 30, 0, f2_bl, 'small'), ('arc', f2_R[0], f2_R[1], 30, 180 - f2_bl, 180, 'small')]),
     ('vang', [('arc', f2_P[0], f2_P[1], 30, 180 + f2_bl, 360 - f2_bl, 'orange')]),
-    ('ex1', [('txt', 320, 118, '44°', 'orange', 22), ('txt', 268, 284, '68°', 'small', 22), ('txt', 372, 284, '68°', 'small', 22)]),
+    ('v44', [('txt', 320, 118, '44°', 'orange', 22)]),
+    ('b68', [('txt', 268, 284, '68°', 'small', 22), ('txt', 372, 284, '68°', 'small', 22)]),
+    ('b70', [('wipe', 296, 104, 48, 28), ('wipe', 244, 270, 48, 28), ('wipe', 348, 270, 48, 28), ('txt', 320, 118, '?', 'orange', 22),
+             ('txt', 268, 284, '70°', 'small', 22), ('txt', 372, 284, '70°', 'small', 22)]),
+    ('v40', [('wipe', 304, 104, 32, 28), ('txt', 320, 118, '40°', 'orange', 22)]),
 ], vb='150 20 340 320', w=520, col=1, title='An isosceles triangle')
-f2_k13a = IH('f2k13a', '$180°-44°=136°$, $\\ 136°\\div2=68°$', size=30)
-f2_k13b = IH('f2k13b', '$70°+70°=140°$, $\\ 180°-140°=40°$', size=30)
+f2_k13a = IH('f2k13a', '$180°-44°=136°$', size=30)
+f2_k13a2 = IH('f2k13a2', '$136°\\div2=68°$', size=30)
+f2_k13b = IH('f2k13b', '$70°+70°=140°$', size=30)
+f2_k13b2 = IH('f2k13b2', '$180°-140°=40°$', size=30)
 f2_k13c = I('f2k13c', 'Two equal angles $\\Leftrightarrow$ two equal sides', size=30)
 f2_k13d = I('f2k13d', '$50°,\\ 60°,\\ 70°$: $\\ $no equal sides ✗', size=30)
 f2_sym = GEO('f2sym', [
@@ -1280,9 +1322,12 @@ video('geo-013', 'lesson', slides=[
         show(f2_iso['vang'], 'The angle left at the top')),
       L("For example, if the vertex angle is forty-four degrees, the two base angles share the rest. One hundred eighty "
         "minus forty-four is one hundred thirty-six, and half of that is sixty-eight. So each base angle is sixty-eight.",
-        show(f2_iso['ex1'], 'For example, if the vertex angle'), show(f2_k13a, 'One hundred eighty minus forty-four')),
+        show(f2_iso['v44'], 'For example, if the vertex angle'), show(f2_k13a, 'is one hundred thirty-six'),
+        show(f2_k13a2, 'half of that is sixty-eight'), show(f2_iso['b68'], 'So each base angle is sixty-eight')),
       L("Another example. If each base angle is seventy, together they make one hundred forty. So the vertex angle is "
-        "one hundred eighty minus one hundred forty, which is forty.", show(f2_k13b, 'Another example')),
+        "one hundred eighty minus one hundred forty, which is forty.", show(f2_iso['b70'], 'If each base angle is seventy'),
+        show(f2_k13b, 'together they make one hundred forty'), show(f2_k13b2, 'which is forty'),
+        show(f2_iso['v40'], 'which is forty')),
       L("And it works backwards too. If two angles of a triangle are equal, the sides opposite them are equal, so the "
         "triangle is isosceles. But a triangle with angles fifty, sixty and seventy has no two equal angles, so it has no "
         "two equal sides.", show(f2_k13c, 'And it works backwards too'), show(f2_k13d, 'But a triangle with angles'))),
@@ -1294,8 +1339,9 @@ video('geo-013', 'lesson', slides=[
         "the base, so it's the altitude. And it cuts the vertex angle into two equal halves, so it's also the angle "
         "bisector.", show(f2_sym['half'], 'It cuts the base into two equal'), show(f2_sym['perp'], "It's perpendicular"),
         show(f2_sym['bis'], 'And it cuts the vertex angle')),
-      L("Only this line does all three. A line from a corner of the base to the middle of a leg is a median too, but it "
-        "isn't perpendicular, and it doesn't cut the angle in half.", show(f2_sym['bad'], 'A line from a corner of the base'),
+      L("In this triangle, which is not equilateral, only this line does all three. A line from a corner of the base to "
+        "the middle of a leg is a median too, but it does not necessarily do the other two jobs. Here it isn't "
+        "perpendicular, and it doesn't cut the angle in half.", show(f2_sym['bad'], 'A line from a corner of the base'),
         show(f2_k13e, "doesn't cut the angle in half"))),
     S('Fold it',
       L("Here's the easy way to remember all of this. Imagine the triangle is a piece of paper, and you fold it along "
@@ -1392,47 +1438,51 @@ f2_g15all = f2_tri(f2_A5, f2_B5, f2_C5) + [('seg', 465.52, 83.601, 421.04, 262)]
     + f2_lab((112, 280, 'A'), (528, 280, 'B'), (465.5, 60, 'C'), (421, 286, 'D')) + f2_g15ticks
 f2_T = lambda p: (580 + (p[0] - 421.04) * 1.9, 55 + (p[1] - 83.601) * 1.9)   # the enlarged cut-out of BCD (x1.9)
 f2_eB, f2_eC, f2_eD = f2_T(f2_B5), f2_T(f2_C5), f2_T(f2_D5)
+# 2026-10-15 batch B (#181): the whole copy big on its own (no question figure on this slide), and BCD as a separate
+# enlarged cut-out beside it (same proportions and orientation, x1.9); the whole angle at C, x and the 28 on separate arcs
 f2_g15 = GEO('f2g15', [
     ('line', f2_g15all + [('arc', 130, 262, 70, 0, 28, 'ink', '28°', 94), ('arc', 465.52, 83.601, 46, 208, 256, 'ink', 'x', 64)]),
     ('big', [('tint', [f2_A5, f2_B5, f2_C5], 'teal')]),
-    ('b76', [('arc', 510, 262, 22, 104, 180, 'small'), ('txt', 489, 246, '76°', 'small', 18), ('arc', 465.52, 83.601, 34, 208, 284, 'small'),
-             ('txt', 505, 92, '76°', 'small', 22)]),
-    # 1. the small triangle tinted and outlined inside the copy while it is named
+    ('b76', [('arc', 510, 262, 22, 104, 180, 'small'), ('txt', 489, 246, '76°', 'small', 18), ('arc', 465.52, 83.601, 30, 208, 284, 'small'),
+             ('txt', 410, 58, 'whole C: 76°', 'small', 18)]),
     ('mark', [('tint', [f2_B5, f2_C5, f2_D5], 'orange')] + f2_tri(f2_B5, f2_C5, f2_D5, 'orange', 3.5)),
-    # 2. the rest dimmed (BCD still outlined), and BCD as its own enlarged copy with the same labels and tint
-    ('focus', [('dim', 95, 40, 470, 265)] + f2_tri(f2_B5, f2_C5, f2_D5, 'orange', 3.5)
-              + [('tint', [f2_eB, f2_eC, f2_eD], 'orange')] + f2_tri(f2_eB, f2_eC, f2_eD, 'ink', 3)
+    ('focus', [('dim', 95, 40, 470, 270)] + f2_tri(f2_B5, f2_C5, f2_D5, 'orange', 3.5)),
+    ('back', f2_g15all + [('arc', 130, 262, 70, 0, 28, 'ink', '28°', 94), ('arc', 510, 262, 22, 104, 180, 'small'), ('txt', 489, 246, '76°', 'small', 18),
+                          ('arc', 421.04, 262, 22, 0, 76, 'small'), ('txt', 443, 246, '76°', 'small', 18), ('arc', 465.52, 83.601, 62, 256, 284, 'orange'),
+                          ('txt', 488, 158, '28°', 'orange', 20), ('arc', 465.52, 83.601, 46, 208, 256, 'red', 'x', 64)]),
+    ('e3', [('txt', 215, 112, 'x = 76° − 28° = 48°', 'red', 26)]),
+], vb='95 40 460 260', w=620, col=0, title='Triangle ABC with point D on AB')
+f2_g15c = GEO('f2g15c', [
+    ('line', [('tint', [f2_eB, f2_eC, f2_eD], 'orange')] + f2_tri(f2_eB, f2_eC, f2_eD, 'ink', 3)
               + [('tick', f2_eB[0], f2_eB[1], f2_eC[0], f2_eC[1], 2), ('tick', f2_eC[0], f2_eC[1], f2_eD[0], f2_eD[1], 2)]
               + f2_lab((f2_eB[0] + 18, f2_eB[1] + 20, 'B'), (f2_eC[0], f2_eC[1] - 22, 'C'), (f2_eD[0] - 18, f2_eD[1] + 20, 'D'))
               + [('arc', f2_eB[0], f2_eB[1], 34, 104, 180, 'small', '76°', 62)]),
-    # 3. the values on the enlarged part
     ('d76', [('arc', f2_eD[0], f2_eD[1], 34, 0, 76, 'small', '76°', 62)]),
     ('c28', [('arc', f2_eC[0], f2_eC[1], 70, 256, 284, 'orange', '28°', 100)]),
-    # back to the whole copy: redrawn over the dim, with the values found written on it too
-    ('back', f2_g15all + [('arc', 130, 262, 70, 0, 28, 'ink', '28°', 94), ('arc', 510, 262, 22, 104, 180, 'small'), ('txt', 489, 246, '76°', 'small', 18),
-                          ('arc', 421.04, 262, 22, 0, 76, 'small'), ('txt', 443, 246, '76°', 'small', 18), ('arc', 465.52, 83.601, 58, 256, 284, 'orange'), ('txt', 465.5, 205, '28°', 'orange', 20),
-                          ('arc', 465.52, 83.601, 46, 208, 256, 'red', 'x', 64)]),
-    ('e3', [('txt', 330, 345, 'x = 76° − 28° = 48°', 'red', 36)]),
-], vb='95 20 690 410', w=500, title='Triangle ABC with point D on AB, and triangle BCD enlarged')
+], vb='545 20 245 410', w=200, col=1, title='Triangle BCD, enlarged')
+for _t in f2_g15.values(): _t['_x'] = 410; _t['_y'] = 330
+for _t in f2_g15c.values(): _t['_x'] = 1110; _t['_y'] = 320
+
 video('solve-geo31-g015', 'solution', qid='geo31-g015', slides=[
     S('Two isosceles triangles',
       L("In triangle A B C, point D lies on A B. Given: A B equals A C, angle B A C is twenty-eight degrees, and B C "
         "equals C D. What is angle A C D?", pt('stem', 'In triangle A B C', 'hl', 8.0), voice='calm', pause=0.5),
       L("There are two isosceles triangles here. A B equals A C, so the big triangle A B C is isosceles. And B C equals "
         "C D, so the small triangle B C D is isosceles too. [short pause] We'll find the angles step by step, starting "
-        "from the twenty-eight at A.", pt('fig: 28°', 'starting from the twenty-eight')),
-      L("[short pause] Start with the big triangle, A B C. A B equals A C, so the base angles, at B and at C, are equal. "
+        "from the twenty-eight at A.", pt('fig: 28°', 'starting from the twenty-eight')), sb='Two isosceles triangles'),
+    S('Two isosceles triangles',
+      L("[short pause] Here's the figure again, bigger. Start with the big triangle, A B C. A B equals A C, so the base angles, at B and at C, are equal. "
         "The angle at A is twenty-eight, so the base angles share one hundred eighty minus twenty-eight, which is one "
         "hundred fifty-two. Half of that is seventy-six. So the angle at B is seventy-six, and the whole angle at C is "
-        "seventy-six.", show(f2_g15['line'], 'Start with the big triangle'), show(f2_g15['big'], 'A B equals A C, so the base'),
+        "seventy-six.", show(f2_g15['line'], "Here's the figure again"), show(f2_g15['big'], 'A B equals A C, so the base'),
         show(f2_g15['b76'], 'So the angle at B is seventy-six')),
       L("That already rules out choice number four. x is only part of the angle at C, so it can't be the whole "
         "seventy-six.", mk('cross', 'choice 4', 'That already rules out choice number four')),
       L("Now the small triangle, B C D. Let's look only at it. B C equals C D, so its base angles, at B and at D, are "
         "equal. The angle at B is seventy-six, so the angle at D is seventy-six too.", show(f2_g15['mark'], 'Now the small triangle'), show(f2_g15['focus'], "Let's look only at it"),
-        show(f2_g15['d76'], 'so the angle at D')),
+        show(f2_g15c['line'], "Let's look only at it"), show(f2_g15c['d76'], 'so the angle at D')),
       L("In triangle B C D, seventy-six plus seventy-six is one hundred fifty-two. So the angle at C, between C D and C B, "
-        "is one hundred eighty minus one hundred fifty-two, which is twenty-eight.", show(f2_g15['c28'], 'So the angle at C, between')),
+        "is one hundred eighty minus one hundred fifty-two, which is twenty-eight.", show(f2_g15c['c28'], 'So the angle at C, between')),
       L("Now back to the whole figure. The whole angle at C is seventy-six, and twenty-eight of it is between C D and C B. "
         "So x, the angle A C D, is seventy-six minus twenty-eight, which is forty-eight. Choice number three is our answer. "
         "[pause] Okay. I'll see you in the next question.", show(f2_g15['back'], 'Now back to the whole figure'),
@@ -1440,7 +1490,8 @@ video('solve-geo31-g015', 'solution', qid='geo31-g015', slides=[
 ])
 
 # placement: question videos - the colour copy (with its equations) in the right column under the question text
-for _g in (f2_g10, f2_g11, f2_g11p, f2_g12, f2_g14, f2_g15): _R(_g, 235)
+for _g in (f2_g10, f2_g11, f2_g11p, f2_g12, f2_g14): _R(_g, 235)
+NOFIG31.add(('solve-geo31-g015', 1))
 _R(f2_z12, 300, x=1020)
 
 
@@ -1451,7 +1502,7 @@ def f2_pin(g):
     return g
 
 
-for _g in (f2_g10, f2_g11, f2_g11p, f2_g12, f2_z12, f2_g14, f2_g15, f2_iso, f2_sym, f2_fold, f2_eq, f2_rt, f2_med): f2_pin(_g)
+for _g in (f2_g10, f2_g11, f2_g11p, f2_g12, f2_z12, f2_g14, f2_g15, f2_g15c, f2_iso, f2_sym, f2_fold, f2_eq, f2_rt, f2_med, f1exA, f1exB): f2_pin(_g)
 
 # =================================================================================================================
 # Topic-31 fragment f3 (2026-10-14): geo-016 (Area of Triangles), solve-geo31-g017, solve-q-r26-t31-01,
@@ -1539,7 +1590,8 @@ F3S = GEO('f3s', [
     ('p1', [('seg', _f3B[0], _f3B[1], _f3C[0], _f3C[1], 'teal', 6), ('seg', _f3A[0], _f3A[1], _f3H1[0], _f3H1[1], 'teal', 3, True),
             ('right', _f3H1[0], _f3H1[1], 0, 90, 14), ('txt', 260, _f3B[1] + 30, '12', 'teal', 28), ('txt', _f3A[0] + 18, 175, '6', 'teal', 28)]),
     ('p2', [('seg', _f3B[0], _f3B[1], _f3A[0], _f3A[1], 'orange', 6), ('seg', _f3C[0], _f3C[1], _f3H2[0], _f3H2[1], 'orange', 3, True),
-            ('right', _f3H2[0], _f3H2[1], _f3d2, _f3d2b, 14, 'orange'), ('txt', 172, 165, '9', 'orange', 28),
+            ('right', _f3H2[0], _f3H2[1], _f3d2, _f3d2b, 16, 'orange'), ('dot', _f3H2[0], _f3H2[1]),
+            ('txt', _f3H2[0] + 26, _f3H2[1] - 14, 'H', 'orange', 26, True), ('txt', 172, 165, '9', 'orange', 28),
             ('txt', _f3m.floor((_f3C[0] + _f3H2[0]) / 2) + 18, (_f3C[1] + _f3H2[1]) / 2 - 14, '8', 'orange', 28)]),
 ], vb='60 50 500 270', w=600, col=0, title='Any side, with the altitude to that side')
 F3Sa = IH('f3sa', '$\\frac{12\\times6}{2}=36$', size=32, col=1)
@@ -1553,7 +1605,8 @@ F3O = GEO('f3o', [
                                           ('txt', _f3Ao[0], _f3Ao[1] - 24, 'A', 'ink', 28, True)]),
     ('side', [('seg', _f3Bo[0], _f3Bo[1], _f3Co[0], _f3Co[1], 'teal', 6), ('txt', (_f3Bo[0] + _f3Co[0]) / 2, _f3Bo[1] + 30, '7', 'teal', 28)]),
     ('ext', [('seg', _f3Co[0], _f3Co[1], _f3Fo[0] + 30, _f3Fo[1], 'teal', 2.5, True)]),
-    ('alt', [('seg', _f3Ao[0], _f3Ao[1], _f3Fo[0], _f3Fo[1], 'teal', 3, True), ('right', _f3Fo[0], _f3Fo[1], 90, 180, 14), ('txt', _f3Fo[0] + 22, 182, '4', 'teal', 28)]),
+    ('alt', [('seg', _f3Ao[0], _f3Ao[1], _f3Fo[0], _f3Fo[1], 'teal', 3, True), ('right', _f3Fo[0], _f3Fo[1], 90, 180, 14), ('txt', _f3Fo[0] + 22, 182, '4', 'teal', 28),
+             ('dot', _f3Fo[0], _f3Fo[1]), ('txt', _f3Fo[0] + 22, _f3Fo[1] + 26, 'outside', 'teal', 20)]),
     ('calc', [('txt', 280, 60, '7 × 4 ÷ 2 = 14', 'teal', 28)]),
     ('wrong', [('path', [(_f3Bo[0], _f3Bo[1] + 44), (_f3Fo[0], _f3Fo[1] + 44)], 'red', 5), ('txt', (_f3Bo[0] + _f3Fo[0]) / 2, _f3Bo[1] + 72, '10 ✗', 'red', 26),
                ('txt', 280, 100, '10 × 4 ÷ 2 = 20 ✗', 'red', 26)]),
@@ -1612,16 +1665,18 @@ video('geo-016', 'lesson', slides=[
         "triangle doesn't really have a base. The base is only the side we happen to look from.",
         show(F3S['line'], 'we can look at a triangle')),
       L("Here, take the side B C, which is twelve, and the altitude to it from A, which is six. Now take the side A B, which "
-        "is nine. The altitude to A B comes from C, and it's eight. What matters is a side, and the altitude that goes to "
-        "that same side.", show(F3S['p1'], 'take the side B C'), show(F3S['p2'], 'Now take the side A B')),
+        "is nine. The altitude to A B comes from C. It meets A B at the point H, very close to A, but not at A. C H is "
+        "eight. What matters is a side, and the altitude that goes to that same side.", show(F3S['p1'], 'take the side B C'), show(F3S['p2'], 'Now take the side A B')),
       L("Twelve times six is seventy-two, and half of that is thirty-six. Nine times eight is also seventy-two, and half of "
         "that is thirty-six too. Any side with its own altitude gives the same area.",
         show(F3Sa, 'Twelve times six is'), show(F3Sb, 'Nine times eight is'))),
     S('The altitude outside',
-      L("In an obtuse triangle, we do exactly the same thing, but the altitude falls outside the triangle. Take the side B C, "
-        "which is seven.", show(F3O['line'], 'In an obtuse triangle'), show(F3O['side'], 'Take the side B C')),
+      L("In an obtuse triangle, we do exactly the same thing. But for some sides, the altitude falls outside the "
+        "triangle. Take the side B C, which is seven. The altitude to this side, from A, falls outside.",
+        show(F3O['line'], 'In an obtuse triangle'), show(F3O['side'], 'Take the side B C')),
       L("To drop the altitude from A, we first extend the side B C, and then we drop the altitude to that line, outside the "
-        "triangle. Here it's four.", show(F3O['ext'], 'we first extend'), show(F3O['alt'], 'then we drop the altitude')),
+        "triangle. Here it's four. The altitude from the obtuse corner, C, to the side opposite it would fall inside, as "
+        "usual.", show(F3O['ext'], 'we first extend'), show(F3O['alt'], 'then we drop the altitude')),
       L("The area is still the side times the altitude to it, over two. Seven times four is twenty-eight, and half of that is "
         "fourteen. Careful, we don't use the whole extended line, from B all the way to the altitude. That's ten, and it "
         "would give twenty, which is wrong. Only the side of the triangle itself counts.",
@@ -1655,7 +1710,9 @@ F3G = GEO('f3g', [
 ], vb='40 50 560 285', w=480, title='Two triangles between the same parallel lines')
 _f3cut = [236, 306, 376, 446]
 F3G2 = GEO('f3g2', [
-    ('line', _f3gl + _f3gt + _f3glab),
+    ('line', _f3gl + _f3gt + _f3glab + [('txt', 131, 318, 'x', 'teal', 26, True), ('seg', 140, 96, 140, 264, 'teal', 2.5, True),
+                                       ('txt', 124, 180, 'h', 'teal', 28, True), ('seg', 400, 96, 400, 264, 'orange', 2.5, True),
+                                       ('txt', 416, 180, 'h', 'orange', 28, True)]),
     ('cuts', [('seg', 400, 96, c, 264, 'orange', 2.5, True) for c in _f3cut] + [('dot', c, 264) for c in _f3cut]),
     ('num', [('txt', 131, 318, 'x', 'teal', 26, True)] + [('txt', 201 + 70 * i, 318, 'x', 'orange', 26, True) for i in range(5)]
             + [('txt', 136 + 0, 232, '1', 'teal', 24)] + [('txt', 222 + 70 * i, 242, str(i + 1), 'orange', 24) for i in range(5)]),
@@ -1686,9 +1743,9 @@ video('solve-geo31-g017', 'solution', qid='geo31-g017', slides=[
       L("Careful, twenty-five, choice number three, would be right only if the heights were five times bigger too. But the "
         "heights are equal, so only the bases count.", mk('cross', 'choice 3', 'twenty-five, choice number three'))),
     SM('Method 2 · Insight', 'Equal small triangles',
-      L("[pause] Now an insight, without any of that calculation. D E is five x, so we can cut it into five pieces, each of "
-        "length x. Then we join B to each cutting point. Now B D E is made of five small triangles, and each one has a base "
-        "of x.", show(F3G2['line'], 'Now an insight'), show(F3G2['cuts'], 'we join B to each'),
+      L("[pause] Now an insight, without any of that calculation. We keep the same letters: C D is x, and both triangles "
+        "have the same height, h. D E is five x, so we can cut it into five pieces, each of length x. Then we join B to each cutting point. Now B D E is made of five small triangles, and each one has a base "
+        "of x.", show(F3G2['line'], 'We keep the same letters'), show(F3G2['cuts'], 'we join B to each'),
         show(F3G2['num'], 'B D E is made of five')),
       L("All five small triangles, and A C D too, have the same base, x, and the same height, h, because they all sit "
         "between the same two parallel lines. So all six triangles have the same area.",
@@ -1724,35 +1781,41 @@ _f3qr = ('right', 278, 146, gdir(278, 146, 170, 290), gdir(278, 146, 470, 290), 
 _f3qlab = [('txt', 152, 302, 'A', 'ink', 20, True), ('txt', 488, 302, 'B', 'ink', 20, True), ('txt', 278, 126, 'C', 'ink', 20, True),
            ('txt', 278, 312, 'D', 'ink', 20, True), ('txt', 208, 206, '15', 'ink', 20), ('txt', 390, 206, '20', 'ink', 20),
            ('txt', 392, 312, '25', 'ink', 20)]
-F3Q = _f3OV('f3q', [
-    ('line', [('seg', 170, 290, 470, 290, 'teal', 3), ('seg', 470, 290, 278, 146, 'teal', 3), ('seg', 278, 146, 170, 290, 'teal', 3)]),
-    ('big', [('dim', 110, 90, 420, 240)] + _f3tri(_f3qA, _f3qB, _f3qC, 'ink', 2.5) + [('seg', 278, 146, 278, 290, 'ink', 2.5),
-             ('right', 278, 290, 0, 90, 12), _f3qr] + _f3qlab),
+# 2026-10-15 batch B (#184): the question slide first (its D focused), then a slide without the question figure that shows
+# ONE clean enlarged copy (same labels and orientation) - no marks laid over the question figure.
+F3Q = GEO('f3q', [
+    ('line', _f3tri(_f3qA, _f3qB, _f3qC, 'ink', 2.5) + [('seg', 278, 146, 278, 290, 'ink', 2.5), ('right', 278, 290, 0, 90, 12, 'ink'),
+             ('right',) + _f3qr[1:5] + (13, 'ink')] + _f3qlab),
     ('legs', [('seg', 170, 290, 278, 146, 'teal', 5), ('seg', 278, 146, 470, 290, 'teal', 5), _f3qr]),
     ('area', [('tint', [_f3qA, _f3qB, _f3qC], 'teal'), ('txt', 350, 262, '150', 'teal', 22)]),
-    ('hyp', [('seg', 170, 290, 470, 290, 'orange', 5), ('seg', 278, 146, 278, 290, 'orange', 4)]),
-    ('eq1', [('txt', 700, 150, '15 × 20 ÷ 2 = 150', 'teal', 20)]),
-    ('eq2', [('txt', 700, 195, '25 × CD ÷ 2 = 150', 'orange', 20)]),
-    ('eq3', [('txt', 700, 240, '25 × CD = 300', 'ink', 20), ('txt', 700, 285, 'CD = 12', 'orange', 22),
-             ('txt', 300, 228, '12', 'orange', 20)]),
-], (410.0, 349.796, 602.094, (120, 100, 400, 230)), title='Triangle ABC, right at C, with the altitude CD')
+    ('hyp', [('seg', 170, 290, 470, 290, 'orange', 5)]),
+    ('cd', [('seg', 278, 146, 278, 290, 'orange', 5), ('right', 278, 290, 0, 90, 12, 'orange'), ('txt', 296, 228, 'h', 'orange', 22, True)]),
+    ('val', [('txt', 300, 200, '= 12', 'orange', 20)]),
+], vb='130 110 380 215', w=620, col=0, title='Triangle ABC, right at C, with the altitude CD')
+F3Qa = IH('f3qa', '$\\frac{15\\times20}{2}=\\frac{300}{2}=150$', size=32, col=1)
+F3Qb = IH('f3qb', '$\\frac{25\\times CD}{2}=150$', size=32, col=1)
+F3Qc = IH('f3qc', '$25\\times CD=300$', size=32, col=1)
+F3Qd = IH('f3qd', '$CD=300\\div25=12$', size=32, col=1)
 video('solve-q-r26-t31-01', 'solution', qid='q-r26-t31-01', slides=[
-    S('The area two ways',
+    S('The question',
       L("Triangle A B C is right at C, and C D is the altitude to A B. Given: A C is fifteen centimeters, B C is twenty "
         "centimeters, and A B is twenty-five centimeters. What is C D, in centimeters?",
         pt('stem', 'Triangle A B C', 'hl', 9.0), voice='calm', pause=0.5),
       L("C D is an altitude, and an altitude always comes with an area. [short pause] So we'll find the area of the triangle "
-        "in two ways, and then set them equal.", pt('fig: D', 'C D is an altitude')),
-      L("[short pause] First way, with the legs. The right angle is at C, so A C and B C are perpendicular. That means B C is "
-        "the altitude to the side A C. So the area is fifteen times twenty, over two. Fifteen times twenty is three hundred, "
-        "and half of that is a hundred fifty.", show(F3Q['line'], 'First way'), show(F3Q['big'], 'with the legs'), show(F3Q['legs'], 'The right angle is at C'),
-        show(F3Q['area'], 'So the area is fifteen')),
-      L("Second way, with the side A B, which is twenty-five, and the altitude to it, which is C D. So the area is also "
-        "twenty-five times C D, over two.", show(F3Q['hyp'], 'Second way')),
-      L("It's the same triangle, so it's the same area. Twenty-five times C D, over two, is a hundred fifty, so twenty-five "
-        "times C D is three hundred. Three hundred divided by twenty-five is twelve, so C D is twelve. Choice number two is "
-        "our answer.", show(F3Q['eq1'], "It's the same triangle"), show(F3Q['eq2'], 'Twenty-five times C D, over two, is'), show(F3Q['eq3'], 'so twenty-five times C D is three hundred'),
-        mk('tick', 'choice 2', 'Choice number two is our answer')),
+        "in two ways, and then set them equal.", pt('fig: D', 'C D is an altitude')), sb='The area two ways'),
+    S('The area two ways',
+      L("[short pause] Here's the figure again, bigger. First way, with the legs. The right angle is at C, so A C and B C "
+        "are perpendicular. That means B C is the altitude to the side A C. So the area is fifteen times twenty, over two. "
+        "Fifteen times twenty is three hundred, and half of that is a hundred fifty.",
+        show(F3Q['line'], "Here's the figure again"), show(F3Q['legs'], 'The right angle is at C'),
+        show(F3Q['area'], 'So the area is fifteen'), show(F3Qa, 'half of that is a hundred fifty')),
+      L("Second way, with the side A B, which is twenty-five. The altitude to A B is the segment from C straight down to it, "
+        "at a right angle. That's C D, our h. So the area is also twenty-five times C D, over two.",
+        show(F3Q['hyp'], 'Second way'), show(F3Q['cd'], 'The altitude to A B is'), show(F3Qb, 'So the area is also')),
+      L("It's the same triangle, so it's the same area. Twenty-five times C D, over two, is a hundred fifty. So "
+        "twenty-five times C D is twice that, three hundred. Three hundred divided by twenty-five is twelve, so C D is twelve. Choice number two is "
+        "our answer.", show(F3Qc, 'twenty-five times C D is twice that'), show(F3Qd, 'twenty-five is twelve'),
+        show(F3Q['val'], 'so C D is twelve'), mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("Careful with two traps. Six, choice number one, is a hundred fifty divided by twenty-five: someone forgot to double "
         "the area first. And twelve and a half, choice number three, is half of A B. That's the median to the hypotenuse, "
         "not the altitude.", mk('cross', 'choice 1', 'Six, choice number one'),
@@ -1761,6 +1824,11 @@ video('solve-q-r26-t31-01', 'solution', qid='q-r26-t31-01', slides=[
         "altitude to it. Fifteen times twenty is three hundred, and three hundred divided by twenty-five is twelve. [pause] "
         "Okay. I'll see you in the next question.")),
 ])
+NOFIG31.add(('solve-q-r26-t31-01', 1))
+for _t in F3Q.values(): _t['_y'] = 300; _t['_x'] = 410
+for _it, _y in ((F3Qa, 260), (F3Qb, 340), (F3Qc, 420), (F3Qd, 490)): _R(_it, _y)
+_f3pin = lambda g: [g[k].update(fig=g['line']['_name']) if k == 'line' else g[k].update(of=g['line']['_name']) for k in g]
+_f3pin(F3Q)
 
 # ------------------------------------------------------------------------------------------------ q-r26-t31-02 (added)
 # REMINDER: area = a side times the altitude to it, over 2; a leg is shorter than the hypotenuse (geo-013). NEW at the
@@ -1773,13 +1841,15 @@ _f3wl = []
 for _f3ang, _f3col in _f3w:
     _f3Ap = gpt(_f3wB[0], _f3wB[1], 240, _f3ang)
     _f3wl.append([('seg', _f3wB[0], _f3wB[1], _f3Ap[0], _f3Ap[1], _f3col, 4), ('seg', _f3Ap[0], _f3Ap[1], _f3wC[0], _f3wC[1], _f3col, 2.5),
-                  ('dot', _f3Ap[0], _f3Ap[1]), ('seg', _f3Ap[0], _f3Ap[1], _f3Ap[0], _f3wB[1], _f3col, 2.5, True)])
+                  ('dot', _f3Ap[0], _f3Ap[1]), ('seg', _f3Ap[0], _f3Ap[1], _f3Ap[0], _f3wB[1], 'red', 2.5, True),
+                  ('txt', _f3Ap[0] + 14, (_f3Ap[1] + _f3wB[1]) / 2.0, 'h', 'red', 24, True)])
+_f3wbase = [('seg', _f3wB[0], _f3wB[1], _f3wC[0], _f3wC[1], 'ink', 4), ('txt', _f3wB[0] - 6, 298, 'B', 'ink', 26, True),
+            ('txt', _f3wC[0], 298, 'C', 'ink', 26, True), ('txt', 300, 298, '8', 'ink', 26), ('seg', 0, 270, 520, 270, 'ink', 1.5, True)]
 F3W = GEO('f3w', [
-    ('line', [('seg', _f3wB[0], _f3wB[1], _f3wC[0], _f3wC[1], 'ink', 4), ('txt', _f3wB[0] - 6, 298, 'B', 'ink', 26, True),
-              ('txt', _f3wC[0], 298, 'C', 'ink', 26, True), ('txt', 300, 298, '8', 'ink', 26), ('seg', 0, 270, 520, 270, 'ink', 1.5, True)]),
-    ('a1', _f3wl[0] + [('txt', 260, 182, '6', 'teal', 24)]),
-    ('a3', _f3wl[1] + [('txt', 64, 160, '6', 'teal', 24)]),
-    ('a2', _f3wl[2] + [('right', 140, 270, 0, 90, 16, 'orange'), ('txt', 118, 150, '6', 'orange', 26)]),
+    ('line', _f3wbase),
+    ('a1', _f3wl[0] + [('txt', 248, 196, '6', 'teal', 24)]),
+    ('a3', [('dim', 0, 10, 520, 300)] + _f3wbase + _f3wl[1] + [('txt', 64, 160, '6', 'teal', 24)]),
+    ('a2', [('dim', 0, 10, 520, 300)] + _f3wbase + _f3wl[2] + [('right', 140, 270, 0, 90, 16, 'orange'), ('txt', 118, 150, '6', 'orange', 26)]),
 ], vb='0 10 520 300', w=560, col=0, title='Side AB of 6, at different angles to BC')
 F3Wa = I('f3wa', 'Area $\\le\\dfrac{8\\cdot6}{2}=24$', size=32)
 F3Wb = I('f3wb', 'Height $5$: $\\ \\dfrac{8\\cdot5}{2}=20$ ✓', size=32)
@@ -1806,8 +1876,9 @@ video('solve-q-r26-t31-02', 'solution', qid='q-r26-t31-02', slides=[
         "possible. Choice number three is our answer.", show(F3Wb, 'If A leans so that the height is five'),
         mk('tick', 'choice 3', 'Choice number three is our answer')),
       L("Careful, forty-eight is six times eight: someone forgot to divide by two. And many students find twenty-four and "
-        "stop, but nobody said that the angle at B is ninety degrees. With two sides and no angle, the area can be anything "
-        "up to half of their product. [pause] Okay. I'll see you in the next question.")),
+        "stop, but nobody said that the angle at B is ninety degrees. With two sides and no angle, the area can be any "
+        "positive number up to twenty-four, and it is exactly twenty-four only when these two sides are perpendicular. "
+        "[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo-018-after (lesson: A Median Halves the Area)
@@ -1858,8 +1929,8 @@ video('geo-018-after', 'lesson', slides=[
       L("Same base, same height, so the same area. For example, if B C is ten and the height is six, each half has a base of "
         "five, so its area is five times six over two, fifteen. And the whole triangle is ten times six over two, thirty, "
         "twice as much.", show(F3M['nums'], 'For example'), show(F3Ma, 'twice as much')),
-      L("Careful, the same area doesn't mean the same shape. These two triangles look very different, and they're not "
-        "congruent. Only their areas are equal.", pt('f3m_line', 'These two triangles look'))),
+      L("Careful, the same area doesn't mean the same shape. These two triangles look very different. They don't have the "
+        "same shape, and they don't have the same side lengths. Only their areas are equal.", pt('f3m_line', 'These two triangles look'))),
     S('Same base, same height',
       L("The same idea works when the top vertex moves along a line that's parallel to the base. Here the base is B C, and "
         "the dashed line is parallel to it.", show(F3P['line'], 'Here the base is B C')),
@@ -1893,16 +1964,18 @@ _f3e1 = _f3e(240, 180)
 F3Y1 = GEO('f3y1', [
     ('line', _f3tri(*_f3e1) + [('right', 150, 280, 0, 90, 16), ('txt', 124, 190, '6', 'teal', 30), ('txt', 270, 312, '8', 'teal', 30),
                                ('txt', 284, 172, '?', 'orange', 34)]),
-    ('c1', [('txt', 580, 120, '6² + 8²', 'ink', 30), ('txt', 580, 162, '= 36 + 64 = 100', 'ink', 30)]),
-    ('c2', [('txt', 580, 220, '10 × 10 = 100', 'orange', 30)]),
+    ('c1', [('txt', 555, 120, 'c² = 6² + 8²', 'ink', 27), ('txt', 555, 162, 'c² = 36 + 64 = 100', 'ink', 27)]),
+    ('c2', [('txt', 555, 214, '10 × 10 = 100', 'orange', 27)]),
+    ('rt', [('txt', 555, 262, 'c = √100 = 10', 'orange', 27)]),
     ('ans', [('seg', 150, 100, 390, 280, 'orange', 6), ('txt', 336, 168, '= 10', 'orange', 32)]),
 ], vb='90 50 600 290', w=600, col=0, title='Legs 6 and 8: the hypotenuse is 10')
 _f3e2 = _f3e(240, 100)
 F3Y2 = GEO('f3y2', [
     ('line', _f3tri(*_f3e2) + [('right', 150, 280, 0, 90, 16), ('txt', 124, 230, '5', 'teal', 30), ('txt', 286, 208, '13', 'orange', 30),
                                ('txt', 270, 312, '?', 'teal', 34)]),
-    ('c1', [('txt', 560, 110, '13 × 13 = 169', 'ink', 28), ('txt', 560, 150, '169 − 25 = 144', 'ink', 28)]),
-    ('c2', [('txt', 560, 200, '12 × 12 = 144', 'teal', 28)]),
+    ('c1', [('txt', 560, 100, '13 × 13 = 169', 'ink', 28), ('txt', 560, 140, 'leg² = 169 − 25 = 144', 'ink', 28)]),
+    ('c2', [('txt', 560, 190, '12 × 12 = 144', 'teal', 28)]),
+    ('rt', [('txt', 560, 236, 'leg = √144 = 12', 'teal', 28)]),
     ('ans', [('seg', 150, 280, 390, 280, 'teal', 6), ('txt', 322, 312, '= 12', 'teal', 32)]),
 ], vb='90 60 590 280', w=600, col=0, title='Hypotenuse 13 and a leg of 5: the other leg is 12')
 _f3nB, _f3nC, _f3nA = (160, 250), (400, 250), (250, 117.7)
@@ -1930,19 +2003,24 @@ video('geo-019', 'lesson', slides=[
       L("Let's try it. A right triangle has legs six and eight. How long is the hypotenuse?",
         show(F3Y1['line'], 'A right triangle has legs')),
       L("Six squared is thirty-six, and eight squared is sixty-four. Thirty-six plus sixty-four is a hundred. So the "
-        "hypotenuse squared is a hundred.", show(F3Y1['c1'], 'Six squared is thirty-six')),
-      L("Which number times itself gives a hundred? Ten, because ten times ten is a hundred. So the hypotenuse is ten. And "
-        "it's longer than both legs, as it should be.", show(F3Y1['c2'], 'Which number times itself'),
-        show(F3Y1['ans'], 'So the hypotenuse is ten'))),
+        "hypotenuse squared, c squared, is a hundred.", show(F3Y1['c1'], 'Six squared is thirty-six')),
+      L("But we want c itself, not c squared. Which number times itself gives a hundred? Ten, because ten times ten is a "
+        "hundred. Finding that number is called taking the square root. We write it with this sign: the square root of a "
+        "hundred is ten. Lengths are positive, so we take the positive number.", show(F3Y1['c2'], 'Which number times itself'),
+        show(F3Y1['rt'], 'the square root of a hundred is ten')),
+      L("So the hypotenuse is ten. And it's longer than both legs, as it should be.", show(F3Y1['ans'], 'So the hypotenuse is ten'))),
     S('Finding a leg',
       L("Now the other way around. The hypotenuse is thirteen, and one leg is five. How long is the other leg?",
         show(F3Y2['line'], 'Now the other way around')),
       L("The legs squared add up to the hypotenuse squared, so to find a leg, we subtract. Thirteen squared is thirteen times "
-        "thirteen: thirteen times ten is a hundred thirty, plus thirteen times three, thirty-nine, so a hundred sixty-nine. "
-        "Five squared is twenty-five. A hundred sixty-nine minus twenty-five is a hundred forty-four.",
+        "thirteen. Thirteen times ten is a hundred thirty. Thirteen times three is thirty-nine. A hundred thirty plus "
+        "thirty-nine is a hundred sixty-nine. Five squared is twenty-five. So the leg squared is a hundred sixty-nine minus "
+        "twenty-five, which is a hundred forty-four.",
         show(F3Y2['c1'], 'Thirteen squared is')),
-      L("Which number times itself gives a hundred forty-four? Twelve, because twelve times twelve is a hundred forty-four. "
-        "So the other leg is twelve.", show(F3Y2['c2'], 'Which number times itself'), show(F3Y2['ans'], 'So the other leg is twelve'))),
+      L("Now the square root again. Which number times itself gives a hundred forty-four? Twelve, because twelve times "
+        "twelve is a hundred forty-four. So the square root of a hundred forty-four is twelve, and the other leg is twelve.",
+        show(F3Y2['c2'], 'Which number times itself'), show(F3Y2['rt'], 'So the square root of a hundred forty-four'),
+        show(F3Y2['ans'], 'and the other leg is twelve'))),
     S('Only in a right triangle',
       L("But careful, this works only in a right triangle. Here's a triangle with sides four, five and six, and no right "
         "angle. Four squared plus five squared is sixteen plus twenty-five, which is forty-one. But six squared is "
@@ -2013,10 +2091,10 @@ _e, _A, _B, _C, _h = f4_qt(182, 191, ('20', '21', 'x'))
 f4b = GEO('f4b', [
     ('line', _e),
     ('th', [('txt', _QX, 110, 'AB² + BC² = AC²', 'ink', 28)]),
-    ('sq', [('txt', _A[0] - 30, 178, '400', 'teal', 22), ('txt', 165, 292, '441', 'teal', 22),
-            ('txt', _QX, 160, '400 + 441 = 841', 'ink', 28)]),
+    ('sq', [('txt', _QX, 150, 'AB² = 400,  BC² = 441', 'teal', 24),
+            ('txt', _QX, 190, 'AC² = 400 + 441 = 841', 'ink', 26)]),
     ('res', [('path', [_A, _C], 'orange', 9), ('txt', _h[0] + 40, _h[1], '= 29', 'red', 26),
-             ('txt', _QX, 210, '29 · 30 = 870', 'red', 26), ('txt', _QX, 250, '870 − 29 = 841', 'red', 26), ('txt', _QX, 300, 'AC = 29', 'red', 30)]),
+             ('txt', _QX, 235, '29 · 30 = 870', 'red', 26), ('txt', _QX, 272, '870 − 29 = 841', 'red', 26), ('txt', _QX, 315, 'AC = 29', 'red', 30)]),
 ], vb='0 20 560 340', w=540, title='Right triangle ABC: the theorem')
 video('solve-geo31-g020', 'solution', qid='geo31-g020', slides=[
     SM('Rule out, then the theorem', 'Rule out first',
@@ -2028,8 +2106,8 @@ video('solve-geo31-g020', 'solution', qid='geo31-g020', slides=[
       L("[short pause] Which side is A C? It's the side across from the right angle, the side that doesn't touch B. So A C "
         "is the hypotenuse, and in a right triangle the hypotenuse is always the longest side. So A C must be longer than "
         "twenty and longer than twenty-one.", show(f4a['line'], 'Which side is A C'), show(f4a['hyp'], 'So A C is the hypotenuse')),
-      L("So choice number three, twenty-one, and choice number four, twenty, are out. A C could be twenty-one and a little "
-        "bit, but it can't be twenty-one or less.", mk('cross', 'choice 3', 'So choice number three'),
+      L("So choice number three, twenty-one, and choice number four, twenty, are out. From the longest-side rule alone, we "
+        "know that A C is more than twenty-one. We haven't found its exact value yet.", mk('cross', 'choice 3', 'So choice number three'),
         mk('cross', 'choice 4', 'and choice number four, twenty, are out')),
       L("What about forty-one? That's twenty plus twenty-one. Remember, two sides of a triangle together are always longer "
         "than the third side. If A C were forty-one, the other two sides would lie flat on it, and there would be no room "
@@ -2056,10 +2134,10 @@ _e, _A, _B, _C, _h = f4_qt(150, 210, ('5', '7', 'x'))
 f4c = GEO('f4c', [
     ('line', _e),
     ('hyp', [('path', [_A, _C], 'orange', 9)]),
-    ('th', [('txt', _QX, 90, 'AB² + BC² = AC²', 'ink', 28)]),
-    ('sq', [('txt', _A[0] - 28, 162, '25', 'teal', 22), ('txt', 175, 262, '49', 'teal', 22), ('txt', _QX, 140, '25 + 49 = 74', 'ink', 28)]),
-    ('res', [('txt', _h[0] + 46, _h[1], '= √74', 'red', 26), ('txt', _QX, 190, 'AC = √74', 'red', 30)]),
-    ('chk', [('txt', _QX, 250, '64 < 74 < 81', 'teal', 26), ('txt', _QX, 290, '8 < √74 < 9', 'teal', 26)]),
+    ('th', [('txt', _QX, 85, 'AB² + BC² = AC²', 'ink', 28)]),
+    ('sq', [('txt', _QX, 128, 'AB² = 25,  BC² = 49', 'teal', 24), ('txt', _QX, 168, 'AC² = 25 + 49 = 74', 'ink', 26)]),
+    ('chk', [('txt', _QX, 212, '8² = 64,  9² = 81', 'teal', 24), ('txt', _QX, 250, '8 < AC < 9', 'teal', 26)]),
+    ('res', [('txt', _h[0] + 46, _h[1], '= √74', 'red', 26), ('txt', _QX, 295, 'AC = √74', 'red', 30)]),
 ], vb='0 20 560 300', w=540, title='Right triangle ABC, right angle at B')
 video('solve-geo31-g021', 'solution', qid='geo31-g021', slides=[
     SM('The theorem', 'A root is a fine answer',
@@ -2071,13 +2149,15 @@ video('solve-geo31-g021', 'solution', qid='geo31-g021', slides=[
       L("[short pause] A B squared plus B C squared equals A C squared. Five squared is twenty-five, and seven squared is "
         "forty-nine. Twenty-five plus forty-nine is seventy-four. So A C squared is seventy-four.",
         show(f4c['th'], 'A B squared plus B C squared'), show(f4c['sq'], 'Five squared is twenty-five')),
-      L("Last time we got a round number. Here we don't, and that's completely fine. We take the root of both sides. The "
-        "root undoes the square, so A C is the square root of seventy-four. We leave it exactly like that. Choice number "
-        "one is our answer.", show(f4c['res'], 'so A C is the square root'),
-        mk('tick', 'choice 1', 'Choice number one is our answer')),
-      L("A quick sense check. Eight squared is sixty-four and nine squared is eighty-one, so the root of seventy-four is "
-        "between eight and nine. That's longer than each leg, as a hypotenuse should be, and shorter than five plus seven.",
-        show(f4c['chk'], 'Eight squared is sixty-four')),
+      L("Last time we got a round number. Here we don't, and that's completely fine. A C is the positive length whose "
+        "square is seventy-four. Is it a whole number? Eight squared is sixty-four, and nine squared is eighty-one. So A C "
+        "is between eight and nine, and no whole number works.", show(f4c['chk'], 'Eight squared is sixty-four')),
+      L("So we use the square root sign. The square root of seventy-four is the exact name of this length, just as the "
+        "square root of a hundred is ten. It's not seventy-four divided by two, and nothing is missing. So A C is the "
+        "square root of seventy-four, and we leave it exactly like that. Choice number one is our answer.",
+        show(f4c['res'], 'So A C is the square root'), mk('tick', 'choice 1', 'Choice number one is our answer')),
+      L("And it makes sense. Between eight and nine is longer than each leg, as a hypotenuse should be, and shorter than "
+        "five plus seven."),
       L("The other choices are common mistakes. Twelve adds the lengths, not the squares. Seventy-four forgets the root. "
         "And the root of twenty-four subtracts the squares, as if we were looking for a leg. [pause] Okay. I'll see you in "
         "the next question.", mk('cross', 'choice 2', 'Twelve adds the lengths'), mk('cross', 'choice 4', 'Seventy-four forgets the root'),
@@ -2096,10 +2176,10 @@ f4d = GEO('f4d', [
     ('hyp', [('path', [_A, _C], 'orange', 9), ('path', [_B, _C], 'red', 9)]),
     ('th1', [('txt', _QX, 110, 'AB² + BC² = AC²', 'ink', 28)]),
     ('th2', [('txt', _QX, 160, 'BC² = AC² − AB²', 'ink', 28)]),
-    ('sq', [('txt', _A[0] - 28, 178, '49', 'teal', 22), ('txt', _h[0] + 40, _h[1] - 4, '100', 'orange', 22), ('txt', _QX, 210, '100 − 49 = 51', 'ink', 28)]),
-    ('res', [('txt', 163 + 52, 266, '= √51', 'red', 26), ('txt', _QX, 265, 'BC = √51', 'red', 30)]),
+    ('sq', [('txt', _QX, 205, 'AC² = 100,  AB² = 49', 'teal', 24), ('txt', _QX, 245, 'BC² = 100 − 49 = 51', 'ink', 26)]),
+    ('res', [('txt', 163 + 52, 266, '= √51', 'red', 26), ('txt', _QX, 295, 'BC = √51', 'red', 30)]),
 ], vb='0 20 560 340', w=540, title='Right triangle ABC, right angle at B')
-f4n4 = I('f4n4', 'Two sides known $\\to$ the third: $\\ $hypotenuse $a^2+b^2$, $\\ $leg $c^2-a^2$', size=26)
+f4n4 = I('f4n4', 'Hypotenuse: $\\ c^2=a^2+b^2\\ \\to\\ c=\\sqrt{a^2+b^2}$\nLeg: $\\ b^2=c^2-a^2\\ \\to\\ b=\\sqrt{c^2-a^2}$', size=28)
 video('solve-geo31-g022', 'solution', qid='geo31-g022', slides=[
     SM('The theorem', 'Hypotenuse minus leg',
       L("Triangle A B C is a right triangle. Given: angle A B C is ninety degrees, A B is seven centimeters, and A C is ten "
@@ -2112,7 +2192,9 @@ video('solve-geo31-g022', 'solution', qid='geo31-g022', slides=[
         "the hypotenuse squared minus the other leg squared.", show(f4d['th1'], 'The theorem is still the same'),
         show(f4d['th2'], 'That leaves B C squared')),
       L("Ten squared is a hundred, and seven squared is forty-nine. A hundred minus forty-nine is fifty-one. So B C squared "
-        "is fifty-one, and B C is the square root of fifty-one. Choice number four is our answer.",
+        "is fifty-one. Fifty-one isn't a perfect square, because seven squared is forty-nine and eight squared is "
+        "sixty-four. So, like last time, we use the square root, and B C is the square root of fifty-one. Choice number "
+        "four is our answer.",
         show(f4d['sq'], 'Ten squared is a hundred'), show(f4d['res'], 'and B C is the square root'),
         mk('tick', 'choice 4', 'Choice number four is our answer')),
       L("Careful, three is ten minus seven. We subtract the squares, not the lengths. And the root of a hundred forty-nine "
@@ -2120,8 +2202,8 @@ video('solve-geo31-g022', 'solution', qid='geo31-g022', slides=[
         mk('cross', 'choice 3', 'Careful, three is ten minus seven'), mk('cross', 'choice 1', 'And the root of a hundred forty-nine'))),
     SM('The theorem', 'What comes next',
       L("This is the base of the Pythagorean theorem. When two sides of a right triangle are known, we can always find "
-        "the third. For the hypotenuse, we add the squares. For a leg, we subtract. It's a technique you really must "
-        "master.", show(f4n4, 'For the hypotenuse')),
+        "the third. For the hypotenuse, we add the squares. For a leg, we subtract. Either way, that gives the side "
+        "squared, so at the end we take the square root. It's a technique you really must master.", show(f4n4, 'For the hypotenuse')),
       L("Soon we'll learn shortcuts for it, Pythagorean triples and special right triangles. And there's a short lesson "
         "that proves the theorem. You don't have to watch it, but I warmly recommend it. [pause] Okay. I'll see you in the "
         "next question.")),
@@ -2173,7 +2255,8 @@ video('solve-q-r26-t31-03', 'solution', qid='q-r26-t31-03', slides=[
         "longer. Its square is more than eighty-five.", show(f4h['ac'], 'If the angle is smaller than ninety'),
         show(f4h['ob'], 'If the angle is bigger than ninety')),
       L("So we square the longest side and compare it with the other two squares added. Equal means a right angle. Bigger "
-        "means an obtuse angle. Smaller means every angle is acute.", show(f4p1, 'So we square the longest side'))),
+        "means an obtuse angle. Smaller means the largest angle is acute, and the other two angles are smaller still, so "
+        "every angle is acute.", show(f4p1, 'So we square the longest side'))),
     S('Our triangle',
       L("The longest side here is A C, ten. Ten squared is a hundred. The other two, six squared plus seven squared, are "
         "thirty-six plus forty-nine, which is eighty-five.", show(f4t['line'], 'The longest side here'), show(f4t['long'], 'Ten squared is a hundred'),
@@ -2232,21 +2315,30 @@ def _f4big(ox, oy, kind):
     tri = []
     for t in tris:
         tri += [('tint', t, 'ink')] + [('seg', t[i][0], t[i][1], t[(i + 1) % 3][0], t[(i + 1) % 3][1], 'ink', 2.5) for i in range(3)]
+    # 2026-10-15 (batch B #192): the legs a and b labelled on the big square's edges, so it's visible that the pieces did
+    # not change; in the first picture the middle square's sides c and one right angle
+    lab = lambda x, y, t: ('txt', ox + x, oy + y, t, 'ink', 22, True)
+    if kind == 'c':
+        tri += [lab(60, -14, 'a'), lab(200, -14, 'b'), lab(220, 296, 'a'), lab(80, 296, 'b'), lab(-14, 220, 'a'), lab(-14, 80, 'b')]
+        holes = holes + [('right', ox + 120, oy, gdir(120, 0, 280, 120), gdir(120, 0, 0, 160), 16, 'red'),
+                         ('txt', ox + 216, oy + 50, 'c', 'red', 22, True), ('txt', ox + 232, oy + 216, 'c', 'red', 22, True),
+                         ('txt', ox + 64, oy + 232, 'c', 'red', 22, True), ('txt', ox + 48, oy + 66, 'c', 'red', 22, True)]
+    else:
+        tri += [lab(60, -14, 'a'), lab(200, -14, 'b'), lab(294, 60, 'a'), lab(294, 200, 'b'), lab(60, 296, 'a'), lab(200, 296, 'b')]
     return sq, tri, holes
 _b1 = _f4big(30, 20, 'c'); _b2 = _f4big(380, 20, 'ab')
 f4w = GEO('f4w', [
     ('line', _b1[0]), ('t1', _b1[1]), ('h1', _b1[2]),
     ('sq2', _b2[0] + [('txt', 345, 160, '→', 'ink', 40)]), ('t2', _b2[1]), ('h2', _b2[2]),
-], vb='10 0 680 320', w=900, col=0, title='Four copies of the triangle in a big square, two ways')
+], vb='5 -10 690 340', w=900, col=0, title='Four copies of the triangle in a big square, two ways')
 _b3 = _f4big(40, 30, 'c')
 f4x = GEO('f4x', [
-    ('line', _b3[0] + _b3[1] + _b3[2] + [('txt', 100, 18, 'a', 'ink', 26, True), ('txt', 240, 18, 'b', 'ink', 26, True),
-                                         ('txt', 26, 100, 'b', 'ink', 26, True), ('txt', 26, 250, 'a', 'ink', 26, True),
-                                         ('seg', 40, 330, 320, 330, 'teal', 5), ('txt', 180, 350, 'side a + b', 'teal', 26)]),
-], vb='0 0 360 365', w=330, col=1, title='The big square: side a + b')
+    ('line', _b3[0] + _b3[1] + _b3[2] + [('seg', 40, 346, 320, 346, 'teal', 5), ('txt', 180, 368, 'side a + b', 'teal', 26)]),
+], vb='0 0 360 382', w=330, col=1, title='The big square: side a + b')
 f4r0 = I('f4r0', '$3^2+4^2=9+16=25=5^2$', size=30)
 f4r1 = I('f4r1', 'Area $=c^2+4\\cdot\\frac{ab}{2}$', size=32, col=0)
 f4r2 = I('f4r2', 'Area $=(a+b)^2$', size=32, col=0)
+f4r2b = I('f4r2b', '$(a+b)(a+b)=a^2+ab+ab+b^2$', size=30, col=0)
 f4r3 = I('f4r3', '$a^2+2ab+b^2=c^2+2ab$', size=32, col=0)
 f4r4 = I('f4r4', '$a^2+b^2=c^2$', size=36, col=0)
 video('geo-023', 'lesson', slides=[
@@ -2266,10 +2358,13 @@ video('geo-023', 'lesson', slides=[
         show(f4r0, 'With legs three and four'))),
     S('See it',
       L("Now let's see why. Take a big square, and put four copies of our right triangle in its corners. Their hypotenuses "
-        "make a tilted square in the middle. The part the triangles don't cover is that middle square, c squared.",
+        "make one tilted shape in the middle. Is that shape really square? Its four sides are all c, the hypotenuses. And at "
+        "each of its corners, the two sharp angles of the triangles add up to ninety, so together with that corner they make "
+        "one straight line. So each corner is ninety too. The part the triangles don't cover is that middle square, c squared.",
         show(f4w['line'], 'Take a big square'), show(f4w['t1'], 'put four copies'), show(f4w['h1'], "The part the triangles don't cover")),
       L("Now take the same big square, and move the same four triangles into new places, two at the top right and two at "
-        "the bottom left. Now the part they don't cover is one square with side a and one square with side b.",
+        "the bottom left. The pieces haven't changed: the same four triangles, with the same legs a and b. Now the part they "
+        "don't cover is one square with side a and one square with side b.",
         show(f4w['sq2'], 'Now take the same big square'), show(f4w['t2'], 'move the same four triangles'),
         show(f4w['h2'], "Now the part they don't cover")),
       L("The big square didn't change, and the four triangles didn't change. So the part they leave uncovered has the same "
@@ -2281,10 +2376,13 @@ video('geo-023', 'lesson', slides=[
         show(f4x['line'], 'Look at the first picture again'), show(f4r1, 'and four triangles around it')),
       L("But the big square also has its own area formula, side times side. Its side is a plus b, so its area is the "
         "bracket a plus b, squared.", pt('f4x_line', 'Its side is a plus b'), show(f4r2, 'so its area is the')),
-      L("Both describe the same area, so they're equal. Open the bracket: a squared plus two a b plus b squared. On the "
-        "other side, four times a b over two is two a b. Two a b is on both sides, so it cancels, and we're left with a "
-        "squared plus b squared equals c squared. That's the theorem, and it was simpler than you thought. [pause] Okay. "
-        "I'll see you in the next video.", show(f4r3, 'Open the bracket'), show(f4r4, "and we're left with"))),
+      L("Both describe the same area, so they're equal. Now open the bracket. a plus b, times a plus b, is four products: "
+        "a times a, a times b, b times a, and b times b. That's a squared, plus two a b, plus b squared. If this step feels "
+        "new, that's fine. You can come back to it after the lesson on algebraic identities.",
+        show(f4r2b, 'is four products')),
+      L("On the other side, four times a b over two is two a b. Two a b is on both sides, so it cancels, and we're left with "
+        "a squared plus b squared equals c squared. That's the theorem, and it was simpler than you thought. [pause] Okay. "
+        "I'll see you in the next video.", show(f4r3, 'On the other side'), show(f4r4, "and we're left with"))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo-024 (lesson: Pythagorean Triples)
@@ -2305,7 +2403,7 @@ f4y = GEO('f4y', [
 ], vb='20 90 620 220', w=860, col=0, title='The triples 3, 4, 5 and 5, 12, 13')
 f4z = GEO('f4z', [
     ('line', _f4tri((60, 270), 3, 4, 20, ('3', '4', '5'))),
-    ('big', _f4tri((260, 270), 3, 4, 50, ('21', '28', '35'), 'teal') + [('txt', 200, 245, '× 7', 'teal', 30)]),
+    ('big', _f4tri((260, 270), 3, 4, 50, ('21', '28', '35'), 'teal') + [('txt', 200, 245, 'unit = 7', 'teal', 26)]),
 ], vb='20 100 520 205', w=700, col=0, title='The same shape, every side times 7')
 f4u = GEO('f4u', [
     ('line', _f4tri((60, 250), 3, 4, 34, ('27', '36', '45')) + [('txt', 140, 50, 'legs 27 and 36', 'teal', 24)]),
@@ -2325,10 +2423,10 @@ video('geo-024', 'lesson', slides=[
     S('What a triple is',
       L("Every Pythagorean triple is three whole numbers that fit the theorem, a squared plus b squared equals c squared. The "
         "best-known one is three, four and five. Five is the hypotenuse, because the hypotenuse is always the longest side. "
-        "Three squared plus four squared is nine plus sixteen, which is twenty-five, and five squared is twenty-five. It "
+        "Three squared plus four squared is nine plus sixteen, which is twenty-five. And five squared is twenty-five too. It "
         "works.", show(f4y['line'], 'The best-known one')),
       L("Another triple that shows up on the exam is five, twelve and thirteen. Five squared plus twelve squared is "
-        "twenty-five plus a hundred forty-four, which is a hundred sixty-nine, and thirteen squared is a hundred sixty-nine. "
+        "twenty-five plus a hundred forty-four, which is a hundred sixty-nine. And thirteen squared is a hundred sixty-nine too. "
         "It works too.", show(f4y['t2'], 'Another triple')),
       L("This is quite rare. Most pairs of legs don't give a whole hypotenuse. Legs two and five give four plus "
         "twenty-five, which is twenty-nine, so the hypotenuse is the root of twenty-nine. Almost any pair gives a root "
@@ -2339,8 +2437,9 @@ video('geo-024', 'lesson', slides=[
         "seventeen, but they're very rare, so don't bother learning them. If one shows up, the ordinary theorem still "
         "works.", show(f4s4, 'the exam uses these two'))),
     S('A ratio',
-      L("A triple is really a ratio of the sides, three to four to five. A ratio means we can multiply all three sides by "
-        "the same number, and it still works. Multiply three, four and five by seven: twenty-one, twenty-eight and "
+      L("A triple is really a ratio of the sides, three to four to five. That means three units, four of the same units, "
+        "and five of the same units. The unit can be any length, so we can multiply all three sides by the same number, "
+        "and it still works. If one unit is seven, multiply three, four and five by seven: twenty-one, twenty-eight and "
         "thirty-five. It's the same shape, just bigger, so it's also a right triangle.",
         show(f4z['line'], 'A triple is really a ratio'), show(f4z['big'], 'Multiply three, four and five by seven'), show(f4s5, 'It\'s the same shape')),
       L("In the same way, five, twelve, thirteen times three is fifteen, thirty-six and thirty-nine. We can multiply by "
@@ -2394,7 +2493,7 @@ f4g = GEO('f4g', [
               ('txt', 558.0, 327.2, 'C', 'ink', 26, True), ('txt', 484.0, 46.0, '15', 'ink', 26), ('txt', 462.0, 197.6, '39', 'ink', 26)]),
     ('t1', [('txt', 225, 360, '15 = 5·3,  39 = 13·3', 'teal', 21)]),
     ('ac', [_v36, ('txt', 564.0, 191.6, '36', 'teal', 28), ('txt', 225, 395, 'AC = 12·3 = 36', 'teal', 21)]),
-    ('ace', [('dim', 380, 40, 250, 300)] * 3 + _f4focus([_gA, _gC, _gE], [_v36, ('txt', 298, 62, '48', 'ink', 22), ('txt', 184, 58, 'A', 'ink', 24, True),
+    ('ace', [('wipe', 380, 15, 252, 327)] + _f4focus([_gA, _gC, _gE], [_v36, ('txt', 298, 62, '48', 'ink', 22), ('txt', 184, 58, 'A', 'ink', 24, True),
                                         ('txt', 176, 264, 'C', 'ink', 24, True), ('txt', 406, 58, 'E', 'ink', 24, True)])
              + [('txt', 225, 360, '15 = 5·3,  39 = 13·3', 'teal', 21), ('txt', 225, 395, 'AC = 12·3 = 36', 'teal', 21)]),
     ('t2', [('txt', 495, 360, '36 = 3·12,  48 = 4·12', 'teal', 21)]),
@@ -2408,6 +2507,14 @@ f4g2 = GEO('f4g2', [
     ('eq', [('txt', 360, 360, 'CD² = 60² + 60² = 2 · 60²', 'ink', 24)]),
     ('cd', [('txt', 400, 322, '= 60√2', 'red', 24), ('txt', 360, 398, 'CD = 60√2', 'red', 26)]),
 ], vb='90 40 540 375', w=540, title='Three right triangles: the last one')
+f4k1 = I('f4k1', '$\\sqrt{4\\cdot3}=?$', size=30)
+f4k2 = I('f4k2', 'Check: $\\ (2\\sqrt3)^2=2^2\\cdot(\\sqrt3)^2=4\\cdot3$', size=28)
+f4k3 = I('f4k3', '$\\sqrt{4\\cdot3}=2\\sqrt3$', size=30)
+f4k4 = I('f4k4', '$\\sqrt{9\\cdot5}=3\\sqrt5$', size=30)
+f4k5 = I('f4k5', '$\\sqrt{9+16}=\\sqrt{25}=5$, $\\ $not $\\sqrt9+\\sqrt{16}=7$ ✗', size=26)
+f4k6 = I('f4k6', '$CD^2=2\\cdot60^2$', size=30)
+f4k7 = I('f4k7', '$CD=\\sqrt{60^2\\cdot2}=60\\sqrt2$', size=30)
+for _it, _y in ((f4k1, 200), (f4k2, 255), (f4k3, 310), (f4k4, 370), (f4k5, 430), (f4k6, 490), (f4k7, 550)): _R(_it, _y)
 video('solve-geo31-g025', 'solution', qid='geo31-g025', slides=[
     SM('Triangle by triangle', 'Triangle by triangle',
       L("The accompanying figure shows three right triangles. The marked side lengths are in centimeters. What is C D, in "
@@ -2417,22 +2524,34 @@ video('solve-geo31-g025', 'solution', qid='geo31-g025', slides=[
       L("[short pause] Start with triangle A B C. The right angle is at A, so B C, thirty-nine, is the hypotenuse, and A B, "
         "fifteen, is a leg. We could use the theorem, thirty-nine squared minus fifteen squared. But look at the numbers. "
         "Fifteen is five times three, and thirty-nine is thirteen times three. That's the triple five, twelve, thirteen, "
-        "times three. So A C is twelve times three, which is thirty-six.", show(f4g['line'], 'Start with triangle A B C'),
+        "with each number multiplied by three. So A C is twelve times three, which is thirty-six.", show(f4g['line'], 'Start with triangle A B C'),
         show(f4g['abc'], 'The right angle is at A'), show(f4g['abcz'], 'We could use the theorem'), show(f4g['t1'], 'Fifteen is five times three'), show(f4g['ac'], 'So A C is twelve times three')),
       L("Now triangle A C E. It's also right-angled at A, with legs A C, thirty-six, and A E, forty-eight. After some "
         "practice, these numbers jump out. Thirty-six is three times twelve, and forty-eight is four times twelve. That's "
-        "three, four, five, times twelve. So the hypotenuse C E is five times twelve, which is sixty.",
+        "the triple three, four, five, with each number multiplied by twelve. So the hypotenuse C E is five times twelve, which is sixty.",
         show(f4g['ace'], 'Now triangle A C E'), show(f4g['t2'], 'Thirty-six is three times twelve'), show(f4g['ce'], 'So the hypotenuse C E'))),
     SM('Triangle by triangle', 'The last triangle',
       L("Now triangle C E D. The right angle is at E, and both legs are sixty. Sixty and sixty aren't in a triple. There "
         "is a shortcut for this kind of triangle, and we'll learn it soon. For now, the theorem: C D squared is sixty "
         "squared plus sixty squared.", show(f4g2['line'], 'Now triangle C E D'), show(f4g2['ced'], 'The right angle is at E'), show(f4g2['eq'], 'For now, the theorem')),
-      L("Instead of adding it up, I write it as two times sixty squared, because I know the root will be simpler. The root "
-        "of two times sixty squared is the root of two, times sixty. So C D is sixty root two, and choice number three is "
-        "our answer.", show(f4g2['cd'], 'So C D is sixty root two'),
+      L("Instead of adding it up, I write it as two times sixty squared, because then the square root will be simpler. "
+        "To see why, we need one new tool.")),
+    SM('Triangle by triangle', 'A square inside a root',
+      L("Look at a small example first, the square root of four times three. Four is two squared. Let's guess two root "
+        "three, and check it by squaring. Two root three, squared, is two squared times root three squared. That's four "
+        "times three. So the square root of four times three is two root three.", show(f4k1, 'the square root of four times three'),
+        show(f4k2, 'and check it by squaring'), show(f4k3, 'So the square root of four times three is')),
+      L("The rule: when a perfect square is multiplied inside the root, it comes out as its own root. One more example. The "
+        "square root of nine times five is three root five, because three root five, squared, is nine times five.",
+        show(f4k4, 'The square root of nine times five')),
+      L("Careful, this works for times, not for plus. The square root of nine plus sixteen is the square root of "
+        "twenty-five, which is five. It's not the root of nine plus the root of sixteen, three plus four, which is seven.", show(f4k5, 'three plus four, which is seven')),
+      L("Now ours. C D squared is two times sixty squared. Sixty squared is a perfect square, so sixty comes out of the "
+        "root, and the two stays inside. So C D is sixty root two, and choice number three is our answer.",
+        show(f4k6, 'C D squared is two times sixty squared'), show(f4k7, 'So C D is sixty root two'),
         mk('tick', 'choice 3', 'and choice number three is our answer')),
       L("Without the triples, we'd have to square numbers like thirty-nine and forty-eight. Noticing the triples saved all "
-        "of that. [pause] Okay. I'll see you in the next question.", pt('f4g2_line', 'Without the triples'))),
+        "of that. [pause] Okay. I'll see you in the next question.")),
 ])
 
 # placement (right column, question videos)
@@ -2623,13 +2742,14 @@ video('geo-026', 'lesson', slides=[
     S('Dividing by a root',
       L("One more. A long leg of nine. To get the short leg, we divide by root three. Nine over root three. There's a nice "
         "way to do this.", show(F5DIV_t1, 'A long leg of nine')),
-      L("To divide a whole number by a root, first ignore the root for a moment. Nine divided by three is three. Now put the "
-        "root three back. So nine over root three is three root three.", show(F5DIV_t2, 'Nine divided by three is three')),
+      L("To divide nine by root three, first divide nine by three, and then multiply that result by root three. Nine divided "
+        "by three is three, and three times root three is three root three. So nine over root three is three root three.",
+        show(F5DIV_t2, 'Nine divided by three is three')),
       L("Why does it work? Multiply the top and the bottom by root three. Root three times root three is three. So we get "
         "nine root three over three, which is three root three. So the short leg is three root three, and the hypotenuse is "
         "double, six root three.", show(F5DIV_t3, 'Multiply the top and the bottom'), show(F5DIV_t4, 'and the hypotenuse is')),
-      L("Let's try one more on our own. Six over root three. Ignore the root, six divided by three is two, and put the "
-        "root back, two root three.", show(F5DIV_t5, 'Six over root three'))),
+      L("Let's try one more on our own. Six over root three. Six divided by three is two, and then two times root three is "
+        "two root three.", show(F5DIV_t5, 'Six over root three'))),
     S('A root that cancels',
       L("Sometimes the long leg already has a root three in it. Twelve root three, divided by root three. The roots cancel, "
         "so the short leg is twelve, and the hypotenuse is twenty-four. It looks harder, but it's actually shorter.",
@@ -2645,8 +2765,8 @@ video('geo-026', 'lesson', slides=[
         "half. The short leg, opposite the thirty, is half of it, a over two. That's the height.",
         show(F5ISO['half'], 'Two gold triangles'), show(F5ISO['h'], 'a over two')),
       L("The long leg is a over two times root three, a root three over two. The base is two of those, a root three. So the "
-        "sides are a, a and a root three. Leg, leg, base. Nothing new to memorize, just cut it in half.",
-        show(F5ISO['b'], 'a root three over two'), show(F5ISO['base'], 'The base is two of those'), show(F5ISO_t1, 'Leg, leg, base'))),
+        "sides are a, a and a root three: leg, leg and base. Nothing new to memorize, just cut it in half.",
+        show(F5ISO['b'], 'a root three over two'), show(F5ISO['base'], 'The base is two of those'), show(F5ISO_t1, 'leg, leg and base'))),
     S('Using the 30°-30°-120° triangle',
       L("Here too, one side is enough. Legs of eight, the base is eight root three, and the height, half a leg, is four. A "
         "base of six root three, divide by root three, and each leg is six. The height is three.",
@@ -2724,6 +2844,10 @@ F5AR = GEO('f5ar', [
     ('h', [('txt', 352, 180, 'h', 'large', 32, True)]),
 ], vb='110 0 420 340', w=560, col=0, title='An equilateral triangle with side a, cut by its altitude')
 F5AR_t1 = IH('f5a1', '$h=\\frac a2\\cdot\\sqrt3=\\frac{a\\sqrt3}{2}$', size=34, col=1)
+F5HT = GEO('f5ht', [('line', [('tint', [(60, 30), (60, 230), (175, 230)], 'teal'), ('seg', 60, 30, 60, 230), ('seg', 60, 230, 175, 230),
+                              ('seg', 60, 30, 175, 230), ('right', 60, 230, 0, 90, 14), ('txt', 132, 118, 'a', 'ink', 28, True),
+                              ('txt', 118, 258, 'a/2', 'small', 26), ('txt', 38, 130, 'h', 'large', 30, True)])],
+           vb='20 10 190 265', w=200, col=0, title='The half triangle: hypotenuse a, short leg a/2, height h')
 F5AR_t2 = IH('f5a2', '$h^2=a^2-\\left(\\frac a2\\right)^2=a^2-\\frac{a^2}{4}=\\frac{3a^2}{4}$', size=30, col=1)
 F5AR_t3 = IH('f5a3', '$h=\\frac{a\\sqrt3}{2}$', size=34, col=1)
 F5AR_t4 = IH('f5a4', '$S=\\frac{a\\cdot\\frac{a\\sqrt3}{2}}{2}=\\frac{a^2\\sqrt3}{4}$', size=36, col=0)
@@ -2746,7 +2870,7 @@ video('geo-017-after', 'lesson', slides=[
     S('Check with Pythagoras',
       L("You can also get the height with Pythagoras, the same half triangle. The hypotenuse squared, minus the short leg "
         "squared. a over two, squared, is a squared over four, because the top and the bottom are both squared.",
-        show(F5AR_t2, 'the same half triangle')),
+        show(F5HT['line'], 'the same half triangle'), show(F5AR_t2, 'The hypotenuse squared')),
       L("a squared minus one quarter of a squared is three quarters of a squared. Take the root, and the height is a root "
         "three over two. The same height. The gold triangle just gets there faster.", show(F5AR_t3, 'Take the root'))),
     S('The area formula',
@@ -2760,12 +2884,12 @@ video('geo-017-after', 'lesson', slides=[
       L("At first the formula looks a bit complicated, but there's an easy way to remember it. Think of a folk dance "
         "teacher counting the beat, a-two-three-four, a-two-three-four.", show(F5AR_t5, 'a-two-three-four, a-two')),
       L("That's the formula. a, squared, root three, over four.", show(F5AR_t6, 'a, squared, root three')),
-      L("Let's try it. Side eight. Eight squared is sixty-four, times root three, over four. Sixty-four divided by four is "
-        "sixteen, so sixteen root three.", show(F5AR_t7, 'Side eight')),
-      L("Side six. Six squared is thirty-six, times root three, over four. Thirty-six divided by four is nine, so nine root "
+      L("Let's try it with a side of eight. Eight squared is sixty-four, times root three, over four. Sixty-four divided by four is "
+        "sixteen, so sixteen root three.", show(F5AR_t7, 'with a side of eight')),
+      L("Now a side of six. Six squared is thirty-six, times root three, over four. Thirty-six divided by four is nine, so nine root "
         "three. A little practice, and it'll stick. And the thirty, thirty, a hundred twenty triangle with legs a, from the "
         "last lesson, has the same area, a squared root three over four. [pause] Okay. I'll see you in the next video.",
-        show(F5AR_t8, 'Side six'))),
+        show(F5AR_t8, 'Now a side of six'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo31-g018 (Hebrew: the perimeter-6 question)
@@ -2801,7 +2925,15 @@ F518 = GEO('f518', [
 F518_t1 = IH('f518a', '$S_{ABC}=\\frac{10^2\\sqrt3}{4}=\\frac{100\\sqrt3}{4}$', size=30, col=1)
 F518_t2 = IH('f518b', '$S_{DBE}=\\frac{5^2\\sqrt3}{4}=\\frac{25\\sqrt3}{4}$', size=30, col=1)
 F518_t3 = I('f518c', '$S_{ADEC}=\\frac{100\\sqrt3}{4}-\\frac{25\\sqrt3}{4}=\\frac{75\\sqrt3}{4}$', size=28, col=1, hand='S_{ADEC} = {100√{3}/4} − {25√{3}/4} = {75√{3}/4}')
-F518_t4 = IH('f518d', 'Side $\\times\\frac12$ $\\ \\to\\ $ area $\\times\\frac14$', size=32, col=1)
+F518_t4 = I('f518d', 'Side $\\times\\frac12$ $\\to$ area $\\times\\left(\\frac12\\right)^2=\\frac14$', size=30, col=1)
+F518_s = I('f518s', 'So far: $\\ DBE$ side $5$, $\\ S_{ABC}=\\frac{100\\sqrt3}{4}$', size=24, col=1)
+F518Q = GEO('f518q', [
+    ('line', _f5tri(_g18A, _g18B, _g18C) + [('seg', _g18D[0], _g18D[1], _g18E[0], _g18E[1], 'ink', 3),
+              ('txt', 320, 56, 'A', 'ink', 26, True), ('txt', 180, 302, 'B', 'ink', 26, True), ('txt', 460, 302, 'C', 'ink', 26, True),
+              ('txt', 238, 176, 'D', 'ink', 26, True), ('txt', 320, 312, 'E', 'ink', 26, True)]),
+    ('q1', [('tint', [_g18D, _g18B, _g18E], 'teal'), ('txt', 262, 252, '1/4', 'small', 26)]),
+    ('q3', [('tint', [_g18A, _g18D, _g18E, _g18C], 'orange'), ('txt', 350, 200, '3/4', 'large', 30)]),
+], vb='150 30 340 300', w=200, title='The big triangle: a quarter cut off, three quarters left')
 F518_t5 = IH('f518e', '$\\frac34\\cdot\\frac{100\\sqrt3}{4}=\\frac{75\\sqrt3}{4}$', size=32, col=1)
 video('solve-geo31-g018', 'solution', qid='geo31-g018', slides=[
     SM('Method 1 · The math way: subtract areas', 'Big minus small',
@@ -2828,11 +2960,14 @@ video('solve-geo31-g018', 'solution', qid='geo31-g018', slides=[
         "find. A hundred minus twenty-five is seventy-five, so seventy-five root three over four. Choice number two is our "
         "answer.", show(F518_t3, 'Now subtract'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
     SM('Method 2 · Understanding: a ratio', 'A quicker ratio',
-      L("[pause] Another way, by understanding the formula itself. The small triangle has half the side of the big one. In the formula, "
-        "the side is squared, so half the side gives a half squared, a quarter of the area.", show(F518_t4, 'the side is squared')),
+      L("[pause] Another way, by understanding the formula itself. We keep what we found: D B E is equilateral with side "
+        "five, and the big triangle's area is a hundred root three over four. The small triangle has half the side of the "
+        "big one. In the formula, the side is squared, so half the side gives a half squared, a quarter of the area.",
+        show(F518_s, 'We keep what we found'), show(F518_t4, 'a quarter of the area')),
       L("So the small triangle is a quarter of the big one, and the quadrilateral is the other three quarters. Three "
         "quarters of a hundred root three over four is seventy-five root three over four. Choice number two. [pause] Okay. "
-        "I'll see you in the next question.", show(F518_t5, 'Three quarters of a hundred'), mk('tick', 'choice 2', 'Choice number two. '))),
+        "I'll see you in the next question.", show(F518Q['line'], 'So the small triangle'), show(F518Q['q1'], 'is a quarter of the big one'),
+        show(F518Q['q3'], 'the other three quarters'), show(F518_t5, 'Three quarters of a hundred'), mk('tick', 'choice 2', 'Choice number two. '))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo-027-after (lesson: the 45-45-90 triangle)
@@ -2866,6 +3001,11 @@ F5SV_t4 = IH('f5s4', 'Leg $7\\ \\to\\ $ hypotenuse $7\\sqrt2$', size=32, col=0)
 F5SV_t5 = I('f5s5', 'Hypotenuse $16\\ \\to\\ $ leg $\\frac{16}{\\sqrt2}=8\\sqrt2$', size=32, col=0, hand='Hypotenuse 16   →   leg  {16/√{2}} = 8√{2}')
 F5SV_t6 = IH('f5s6', 'Hypotenuse $6\\sqrt2\\ \\to\\ $ leg $6$', size=32, col=0)
 F5SV_t7 = IH('f5s7', "A square's diagonal $=$ side $\\cdot\\sqrt{2}$", size=30, col=0)
+F5SQ2 = GEO('f5sq2', [
+    ('line', [('seg', 150, 40, 150, 300), ('seg', 150, 300, 410, 300), ('seg', 410, 300, 410, 40), ('seg', 410, 40, 150, 40),
+              ('txt', 280, 330, 'a', 'small', 32, True), ('txt', 124, 170, 'a', 'small', 32, True)]),
+    ('diag', [('seg', 150, 40, 410, 300, 'large', 7), ('txt', 312, 150, 'a√2', 'large', 32)]),
+], vb='100 10 340 340', w=360, col=1, title="A square's diagonal")
 video('geo-027-after', 'lesson', slides=[
     S('The 45°-45°-90° Triangle',
       L("Let's continue to the silver triangle. The silver triangle is our own name, there isn't really such a name. We gave "
@@ -2890,12 +3030,13 @@ video('geo-027-after', 'lesson', slides=[
       L("From a leg to the hypotenuse, multiply by root two. From the hypotenuse to a leg, divide by root two. Say a leg is "
         "seven. The hypotenuse is seven root two. And of course the other leg is also seven.", show(F5SV_t4, 'Say a leg is seven')),
       L("Now a hypotenuse of sixteen. The legs are equal, and each is sixteen over root two. Remember the method from the "
-        "gold triangle, ignore the root. Sixteen divided by two is eight, and put the root two back, eight root two.",
+        "gold triangle: sixteen divided by two is eight, and then eight times root two is eight root two.",
         show(F5SV_t5, 'Now a hypotenuse of sixteen')),
       L("And a hypotenuse of six root two? Divide by root two, the roots cancel, and each leg is six.", show(F5SV_t6, 'six root two')),
       L("And a square's diagonal? It's the same triangle. The side of the square is a leg, and the diagonal is the "
         "hypotenuse, so the diagonal is the side times root two. Let's solve an example. [pause] Okay. I'll see you in the "
-        "next video.", show(F5SV_t7, "a square's diagonal"))),
+        "next video.", show(F5SQ2['line'], "a square's diagonal"), show(F5SQ2['diag'], 'and the diagonal is the'),
+        show(F5SV_t7, 'so the diagonal is the side times'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo31-g028 (Hebrew: the silver sample question)
@@ -2921,6 +3062,7 @@ F528_t2 = IH('f528b', '$a\\sqrt2=18$: $\\ a=\\frac{18}{\\sqrt2}=9\\sqrt2$', size
 F528_t3 = IH('f528c', '$9\\sqrt2+9\\sqrt2+18=18+18\\sqrt2$', size=30, col=1)
 F528_t4 = IH('f528d', '$t^2+t^2=18^2$: $\\ 2t^2=324$', size=30, col=1)
 F528_t5 = IH('f528e', '$t^2=162=81\\cdot2$: $\\ t=9\\sqrt2$', size=30, col=1)
+F528_t5b = IH('f528g', '$P=9\\sqrt2+9\\sqrt2+18=18+18\\sqrt2$', size=28, col=1)
 F528_t6 = I('f528f', '$30°$: $\\ a,\\ a\\sqrt3,\\ 2a$ $\\qquad 45°$: $\\ a,\\ a,\\ a\\sqrt2$', size=28, col=1)
 video('solve-geo31-g028', 'solution', qid='geo31-g028', slides=[
     SM('Method 1 · The math way: the side ratio', 'The side ratio',
@@ -2933,8 +3075,8 @@ video('solve-geo31-g028', 'solution', qid='geo31-g028', slides=[
         show(F528['a45'], 'its legs are equal')),
       L("[short pause] In every silver triangle the sides are a, a, and a root two. A C is opposite the right angle, so it's the "
         "hypotenuse, and it matches a root two.", pt('fig: 18', 'A C is opposite the right angle')),
-      L("To go from the hypotenuse to a leg, we divide by root two, eighteen over root two. Ignore the root, eighteen "
-        "divided by two is nine, and put the root two back, nine root two. If that's hard, look at it as an equation. a root "
+      L("To go from the hypotenuse to a leg, we divide by root two, eighteen over root two. Eighteen divided by two "
+        "is nine, and then nine times root two is nine root two. If that's hard, look at it as an equation. a root "
         "two equals eighteen, so a is eighteen over root two, the same nine root two.", show(F528['legs'], 'nine root two. If'),
         show(F528['eq'], "If that's hard")),
       L("Careful, a leg is not half of eighteen. The factor here is root two, not two. So the legs are nine root two and nine "
@@ -2944,8 +3086,10 @@ video('solve-geo31-g028', 'solution', qid='geo31-g028', slides=[
     SM('Method 2 · The math way: Pythagoras', 'An equation',
       L("[pause] Another way, with Pythagoras. Call each leg t. t squared plus t squared is eighteen squared, so two t squared "
         "is three hundred twenty-four.", show(F528_t4, 'Call each leg t')),
-      L("t squared is a hundred sixty-two, which is eighty-one times two. So t is nine root two. The same result. Choice "
-        "number one.", show(F528_t5, 'which is eighty-one times two'), mk('tick', 'choice 1', 'The same result. Choice')),
+      L("t squared is a hundred sixty-two, which is eighty-one times two. So t is nine root two, the same leg as before. So "
+        "the perimeter is again nine root two plus nine root two plus eighteen, which is eighteen plus eighteen root two. "
+        "Choice number one.", show(F528_t5, 'which is eighty-one times two'), show(F528_t5b, 'So the perimeter is again'),
+        mk('tick', 'choice 1', 'eighteen plus eighteen root two. Choice')),
       L("Before you pick a ratio, look at the angles. Thirty degrees means the gold triangle, the doubling rule and root "
         "three. Forty-five means the silver triangle, two equal legs and root two. With a little practice it becomes fast, "
         "and it saves you a lot of Pythagoras. [pause] Okay. I'll see you in the next question.", show(F528_t6, 'look at the angles'))),
@@ -2954,8 +3098,9 @@ video('solve-geo31-g028', 'solution', qid='geo31-g028', slides=[
 # ---- placement in the question videos: the question figure is on the left (FIG_LEFT); our board copy and the typed steps
 # go in the right column at explicit board y (a slide with only right-column items would otherwise move to the left)
 _R(F527, 100); _R(F527_t3, 360); _R(F527_t4, 110); _R(F527_t5, 170)
-_R(F518, 100); _R(F518_t1, 180); _R(F518_t2, 245); _R(F518_t3, 310); _R(F518_t4, 110); _R(F518_t5, 175)
-_R(F528, 100); _R(F528_t3, 400); _R(F528_t4, 110); _R(F528_t5, 170); _R(F528_t6, 230)
+_R(F518, 100); _R(F518_t1, 180); _R(F518_t2, 245); _R(F518_t3, 310); _R(F518_s, 265); _R(F518_t4, 310); _R(F518Q, 365); _R(F518_t5, 560)
+f2_pin(F518Q)
+_R(F528, 100); _R(F528_t3, 400); _R(F528_t4, 110); _R(F528_t5, 170); _R(F528_t5b, 230); _R(F528_t6, 295)
 
 # =================================================================================================================
 # Topic-31 advanced block, part 1 (fragment f6, 2026-10-14): geo31-g031 ... geo31-g036, the Hebrew "triangles advanced"
@@ -3007,13 +3152,16 @@ f6g31p = GEO('f6g31p', [
     ('vals', [('arc', f6B[0], f6B[1], 30, 0, f6aBA, 'small', '60°', 52), ('arc', f6A[0], f6A[1], 31, f6aAB, f6aAE, 'small', '50°', 54),
               ('txt', 408, 122, 'y = 50°', 'small', 24)]),
 ], vb='190 40 260 285', w=260, title='Plugging in x = 110°')
+f6g31s = GEO('f6g31s', [('line', f6g31_lines + f6TINT + [('arc', f6B[0], f6B[1], 30, 0, f6aBA, 'small', '60°', 52),
+              ('arc', f6A[0], f6A[1], 31, f6aAB, f6aAE, 'small', 'y', 48), ('wedge', f6E[0], f6E[1], 34, f6aEA, 180, 'orange'),
+              ('txt', f6E[0] - 24, f6E[1] - 52, '180°−x', 'orange', 20)])], vb='190 40 260 285', w=240, title='Triangle ABE: 60, y and 180 − x')
 f6k31a = IH('f6k31a', '$60°+y+(180°-x)=180°$', size=30)
 f6k31b = IH('f6k31b', '$y=x-60°$', size=32)
 f6k31c = IH('f6k31c', '$x=60°+y$', size=32)
 f6k31d = I('f6k31d', '$x=110°$: $\\ $(1) $70°$ ✗ $\\ $(2) $50°$ ✓', size=28, hand='x = 110° :    (1) 70° ✗     (2) 50° ✓')
 f6k31e = I('f6k31e', '(3) $80°$ ✗ $\\ $(4) $30°$ ✗', size=28, hand='(3) 80° ✗     (4) 30° ✗')
 # placement (right column, below the question text, above the choices): explicit board y
-for _it, _y in [(f6g31, 200), (f6g31x, 200), (f6g31p, 200), (f6k31a, 230), (f6k31b, 285), (f6k31c, 545), (f6k31d, 500), (f6k31e, 556)]:
+for _it, _y in [(f6g31, 200), (f6g31x, 200), (f6g31p, 200), (f6g31s, 200), (f6k31a, 480), (f6k31b, 535), (f6k31c, 545), (f6k31d, 500), (f6k31e, 556)]:
     _R(_it, _y)
 
 video('solve-geo31-g031', 'solution', qid='geo31-g031', slides=[
@@ -3035,7 +3183,8 @@ video('solve-geo31-g031', 'solution', qid='geo31-g031', slides=[
         "eighty minus x.", show(f6g31['e180'], "so it's one hundred"))),
     SM('Method 1 · The math way: the angle sum', 'The angle sum',
       L("The angles of a triangle add up to one hundred eighty, so sixty, plus y, plus one hundred eighty minus x, equals "
-        "one hundred eighty. The bracket has a plus in front of it, so we can just drop it.", show(f6k31a, 'The angles of a triangle')),
+        "one hundred eighty. The bracket has a plus in front of it, so we can just drop it.", show(f6g31s['line'], 'The angles of a triangle'),
+        show(f6k31a, 'so sixty, plus y')),
       L("One hundred eighty is on both sides, so it cancels. Now move minus x to the right side as plus x, and move the "
         "sixty to the right side as minus sixty. So y equals x minus sixty. Choice number two is our answer.",
         show(f6k31b, 'So y equals x minus sixty'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
@@ -3048,11 +3197,12 @@ video('solve-geo31-g031', 'solution', qid='geo31-g031', slides=[
         show(f6g31x['far'], 'Here those are sixty'), show(f6k31c, 'So x equals sixty plus y'), mk('tick', 'choice 2', 'Choice number two again'))),
     SM('Method 3 · Plugging in numbers', 'Plugging in a number',
       L("[pause] And a third way, plugging in a number. The answer is an expression that is true for every x that fits "
-        "the figure. So it must also be true for one x that we choose. We choose a number for x, find y, and then check "
+        "the figure. So it must also be true for one allowed value of x that we choose. We choose a number for x, find y, and then check "
         "which choice gives that y."),
-      L("Which letter do we choose? The one that appears in the choices, x. In the figure x is an obtuse angle, so we "
-        "choose an easy obtuse number, one hundred ten.", show(f6g31p['line'], 'choose an easy obtuse number')),
-      L("Now find y. Sixty plus what gives one hundred ten? Fifty. So y is fifty.", show(f6g31p['vals'], 'Sixty plus what gives')),
+      L("Which letter do we choose? The one that appears in the choices, x. The figure isn't drawn to scale, so we don't "
+        "decide by how x looks. We simply choose an easy value, x is one hundred ten.", show(f6g31p['line'], 'We simply choose an easy value')),
+      L("Now find y. Sixty plus what gives one hundred ten? Fifty. So y is fifty. Fifty is a real, positive angle, so our "
+        "choice fits the givens.", show(f6g31p['vals'], 'Sixty plus what gives')),
       L("Now put one hundred ten into each choice, and cross out everything that isn't fifty. Choice number one says "
         "one hundred eighty minus x. One hundred eighty minus one hundred ten is seventy. Out. Choice number two says x "
         "minus sixty. One hundred ten minus sixty is fifty. It stays. Choice number three says two x minus one hundred "
@@ -3165,8 +3315,8 @@ video('solve-geo31-g033', 'solution', qid='geo31-g033', slides=[
         "right answers. That can't happen. So the right answer has to be the smallest choice above twenty, twenty-four.",
         show(f6z33['up'], 'between twenty and some top limit'), show(f6z33['out'], 'So the right answer'),
         mk('tick', 'choice 3', 'the smallest choice above twenty'))),
-    SM('A minimum and a maximum', 'The maximum',
-      L("[pause] Let's check it with the full maximum too. The angle at C is more than ninety, so it's the biggest angle "
+    SM('A minimum and a maximum', 'An upper bound',
+      L("[pause] Let's check it with an upper bound, one that's enough to rule out the big choices. The angle at C is more than ninety, so it's the biggest angle "
         "of the triangle. The longest side is across from the biggest angle, so A B is the longest side.",
         show(f6g33m['line'], 'The angle at C is more than'), show(f6g33m['max'], 'so A B is the longest side')),
       L("So A C is shorter than ten, and B C is shorter than ten. The perimeter is ten, plus less than ten, plus less than "
@@ -3203,8 +3353,21 @@ f6g34c = GEO('f6g34c', [
                ('txt', 270, 160, 'long', 'red', 24), ('txt', 492, 180, 'short', 'red', 24)]),
 ], vb='160 70 360 250', w=330, title='A median that leans to one side')
 f6k34a = IH('f6k34a', '(1) $180°-64°-58°=58°$', size=28)
-f6k34b = I('f6k34b', '(4) altitude $=$ bisector: symmetry ✓', size=26)
-f6k34c = I('f6k34c', '(2) $\\alpha+\\alpha=180°$: $\\ \\alpha=90°$ ✓', size=26)
+f6k34b = I('f6k34b', '(4) altitude $=$ bisector $\\to$ fold: equal sides ✓', size=26)
+f6k34c = I('f6k34c', '(2) median $\\perp$ side $\\to$ fold: equal sides ✓', size=26)
+def _f6fold(name, key):
+    A, B, C, M = (160.0, 40.0), (70.0, 250.0), (250.0, 250.0), (160.0, 250.0)
+    base = f6_tri(A, B, C) + [('seg', A[0], A[1], M[0], M[1], 'orange', 3, True), ('txt', 160, 22, 'fold', 'orange', 20)]
+    mark = ([('arc', A[0], A[1], 46, gdir(*A, *B), 270, 'small'), ('arc', A[0], A[1], 54, 270, gdir(*A, *C), 'small')] if key == 'ang'
+            else [('tick', B[0], B[1], M[0], M[1], 2), ('tick', M[0], M[1], C[0], C[1], 2)])
+    return f2_pin(GEO(name, [('line', base), (key, mark),
+                       ('rt', [('right', M[0], M[1], 0, 90, 14, 'orange'), ('right', M[0], M[1], 90, 180, 14, 'orange')]),
+                       ('fold', [('tint', [A, B, M], 'teal'), ('tint', [A, M, C], 'orange'), ('tick', A[0], A[1], B[0], B[1], 1),
+                                 ('tick', A[0], A[1], C[0], C[1], 1)])], vb='40 10 240 260', w=250, col=0, title='Fold along the line'))
+f6fold = _f6fold('f6fold', 'ang')
+f6fold2 = _f6fold('f6fold2', 'mid')
+for _t in f6fold.values(): _t['_x'] = 430; _t['_y'] = 150
+for _t in f6fold2.values(): _t['_x'] = 720; _t['_y'] = 150
 for _it, _y in [(f6g34, 195), (f6k34a, 205), (f6k34b, 255), (f6k34c, 305), (f6g34c, 205)]:
     _R(_it, _y)
 video('solve-geo31-g034', 'solution', qid='geo31-g034', slides=[
@@ -3222,18 +3385,27 @@ video('solve-geo31-g034', 'solution', qid='geo31-g034', slides=[
         "decide quickly.", show(f6g34['sym'], 'the altitude to the base is a line of symmetry'))),
     S('Go through the choices',
       L("Choice number one, a triangle with angles sixty-four and fifty-eight. Find the third angle. One hundred eighty "
-        "minus sixty-four is one hundred sixteen, and minus fifty-eight is fifty-eight. Two equal angles mean two equal "
+        "minus sixty-four is one hundred sixteen. One hundred sixteen minus fifty-eight is fifty-eight. Two equal angles mean two equal "
         "sides, so it's always isosceles. Out.", show(f6k34a, 'Find the third angle'), mk('cross', 'choice 1', 'so it\'s always isosceles. Out')),
-      L("Choice number four, an altitude that also bisects the angle it starts from. An altitude that is also a bisector is "
-        "a line of symmetry, so the triangle is always isosceles. Out.", show(f6k34b, 'An altitude that is also a bisector'),
-        mk('cross', 'choice 4', 'so the triangle is always isosceles. Out')),
+      L("Choice number four, an altitude that also bisects the angle it starts from. Why must that triangle be isosceles? "
+        "Fold it along this line. The two angles at the top are equal, so the two sides from the top land on each other. "
+        "The two angles at the bottom are both ninety, so the two parts of the base land on one line too.",
+        show(f6fold['line'], 'Fold it along this line'), show(f6fold['ang'], 'The two angles at the top are equal'),
+        show(f6fold['rt'], 'The two angles at the bottom')),
+      L("So the two bottom corners meet, and the two halves match exactly. The two outer sides are equal, so the triangle "
+        "is always isosceles. Out.", show(f6fold['fold'], 'the two halves match exactly'), show(f6k34b, 'The two outer sides are equal'),
+        mk('cross', 'choice 4', 'is always isosceles. Out')),
       L("Choice number three, a median of seven to a side of ten. It's a median, so it cuts the side into two halves. But "
         "it's not given as an altitude or as a bisector, and it's not clear what to do with these numbers. So we skip it, "
         "go to the next choice, and hope to cross that one out.", pt('choice 3', 'a median of seven')),
-      L("Choice number two, a median that is perpendicular to the side it meets. Sometimes the right angle is hidden: the "
-        "median makes two equal angles, alpha and alpha, on a straight line. Two alphas are one hundred eighty, so each "
-        "alpha is ninety. So the median is also an altitude. That's a line of symmetry, so the triangle is isosceles. Out.",
-        show(f6k34c, 'Two alphas are one hundred eighty'), mk('cross', 'choice 2', 'so the triangle is isosceles. Out')),
+      L("Choice number two, a median that is perpendicular to the side it meets. Being a median, it cuts that side into two "
+        "equal halves. And it's given as perpendicular, so it's also an altitude, with ninety degrees on both sides.",
+        show(f6fold2['line'], 'Being a median'), show(f6fold2['mid'], 'into two equal halves'),
+        show(f6fold2['rt'], "so it's also an altitude")),
+      L("Fold along it again. The two halves of the side are equal, and the angles are ninety on both sides, so each "
+        "bottom corner lands exactly on the other. The two outer sides land on each other, so they're equal, and the "
+        "triangle is isosceles. Out.", show(f6fold2['fold'], 'Fold along it again'), show(f6k34c, 'so they\'re equal'),
+        mk('cross', 'choice 2', 'and the triangle is isosceles. Out')),
       L("Three choices are out, so we mark choice number three, the one that wasn't clear.", mk('tick', 'choice 3', 'so we mark choice number three'))),
     S('Why it can fail',
       L("Let's see why it can fail. Here's a side of ten, and its middle point, five and five. From the middle, a median "
@@ -3386,8 +3558,8 @@ video('solve-geo31-g036', 'solution', qid='geo31-g036', slides=[
       L("Now triangle B C D. It's a silver triangle, forty-five, ninety, forty-five, a right isosceles triangle. Careful: "
         "in the first triangle B D was a leg, but here it's the hypotenuse, across from the right angle at C.",
         show(f6g36b['line'], 'Now triangle B C D'), show(f6g36b['bcd'], "It's a silver triangle"), show(f6g36b['cut'], 'Careful')),
-      L("From the hypotenuse to a leg, we divide by root two. How much is ten over root two? The way we learned: ignore "
-        "the root, ten over two is five, and stick the root two back on. Five root two. So B C and C D are each five root "
+      L("From the hypotenuse to a leg, we divide by root two. How much is ten over root two? The way we learned: ten "
+        "divided by two is five, and then five times root two. Five root two. So B C and C D are each five root "
         "two.", show(f6g36b['legs'], 'Five root two. So')),
       L("Now the perimeter, only the outside sides, not B D. Twenty, plus ten root three, plus five root two, plus five "
         "root two. Five root two plus five root two is ten root two. So the perimeter is twenty plus ten root three plus "
@@ -3424,33 +3596,35 @@ f7g37 = GEO('f7g37', [
     ('ec', [('tick', f7B[0], f7B[1], f7E[0], f7E[1]), ('tick', f7E[0], f7E[1], f7C[0], f7C[1]), ('txt', 362, 318, '4', 'teal', 22)]),
     ('dec', [('tint', [f7D, f7E, f7C], 'orange'), ('arc', f7C[0], f7C[1], 26, 120, 180, 'small', '60°', 44),
              ('arc', f7D[0], f7D[1], 28, 270, 300, 'small', '30°', 46)]),
-    ('de', [('txt', 286, 232, '4√3', 'orange', 22)]),
-    ('ae', [('txt', 270, 110, '3√3', 'ink', 22), ('txt', 425, 120, 'AE = 7√3', 'red', 22)]),
-], vb='180 22 290 320', w=290, title='Triangle ABC with the equilateral triangle DBC')
+    ('de', [('seg', 322, 232, 440, 232, 'orange', 1.5, True), ('txt', 492, 232, 'DE = 4√3', 'orange', 22)]),
+    ('ae', [('seg', 322, 110, 440, 110, 'ink', 1.5, True), ('txt', 492, 110, 'AD = 3√3', 'ink', 22),
+            ('txt', 470, 170, 'AE = AD + DE', 'red', 20), ('txt', 470, 196, '= 7√3', 'red', 22)]),
+], vb='180 22 370 320', w=360, title='Triangle ABC with the equilateral triangle DBC')
 f7g37b = GEO('f7g37b', [
     ('line', f7_37base),
     ('adc', [('tint', [f7A, f7C, f7D], 'orange'), ('path', [f7A, f7C, f7D, f7A], 'orange', 6)]),
     ('dim', [('dim', 180, 22, 290, 320), ('path', [f7A, f7C, f7D, f7A], 'orange', 6)]),
-], vb='180 22 290 320', w=140, title='The shaded part as two triangles')
-# V3 enlarged cut-out: A D C (and its mirror A D B) turned so that the base A D is horizontal ("turn your head"), scale 1.35
+], vb='180 22 290 320', w=190, title='The shaded part as two triangles')
+# V3 enlarged cut-out (batch B #207): A D C (and its mirror A D B) in the SAME orientation, scaled up: the base A D stands
+# straight up, so its outside height E C is simply horizontal
 def f7rot(p):
-    return (40 + (p[1] - 58.07) * 1.35, 120 + (p[0] - 320) * 2.0)   # widened across (exaggerated, her habit)
+    return (p[0], p[1])
 f7rA, f7rB, f7rC, f7rD, f7rE = f7rot(f7A), f7rot(f7B), f7rot(f7C), f7rot(f7D), f7rot(f7E)
 f7g37c = GEO('f7g37c', [
     ('line', [('tint', [f7rA, f7rC, f7rD], 'orange'), ('seg', f7rA[0], f7rA[1], f7rD[0], f7rD[1]), ('seg', f7rD[0], f7rD[1], f7rC[0], f7rC[1]),
               ('seg', f7rA[0], f7rA[1], f7rC[0], f7rC[1]), ('path', [f7rA, f7rC, f7rD, f7rA], 'orange', 6),
               ('txt', f7rA[0] - 18, f7rA[1], 'A', 'ink', 24, True), ('txt', f7rD[0] - 8, f7rD[1] + 22, 'D', 'ink', 24, True),
               ('txt', f7rC[0] + 18, f7rC[1] + 8, 'C', 'ink', 24, True)]),
-    ('ab', [('path', [f7rA, f7rD], 'teal', 8), ('txt', (f7rA[0] + f7rD[0]) / 2, f7rA[1] - 18, '3√3', 'teal', 24)]),
-    ('h', [('dot', f7rC[0], f7rC[1]), ('seg', f7rD[0], f7rD[1], f7rE[0], f7rE[1], 'teal', 3, True), ('right', f7rE[0], f7rE[1], 180, 270, 12),
-           ('seg', f7rE[0], f7rE[1], f7rC[0], f7rC[1], 'red', 6), ('txt', f7rE[0] + 18, f7rE[1], 'E', 'ink', 24, True),
-           ('txt', f7rE[0] + 18, (f7rE[1] + f7rC[1]) / 2, '4', 'red', 26)]),
-    ('v1', [('txt', 238, 190, '6√3', 'orange', 24)]),
+    ('ab', [('path', [f7rA, f7rD], 'teal', 8), ('seg', 324, 100, 352, 88, 'teal', 1.5), ('txt', 398, 84, 'base AD = 3√3', 'teal', 17)]),
+    ('h', [('dot', f7rC[0], f7rC[1]), ('seg', f7rD[0], f7rD[1], f7rE[0], f7rE[1], 'teal', 3, True), ('right', f7rE[0], f7rE[1], 0, 90, 12),
+           ('seg', f7rE[0], f7rE[1], f7rC[0], f7rC[1], 'red', 6), ('txt', f7rE[0] - 4, f7rE[1] + 20, 'E', 'ink', 22, True),
+           ('txt', (f7rE[0] + f7rC[0]) / 2, f7rE[1] + 20, '4', 'red', 24), ('txt', 372, 240, 'height', 'red', 16)]),
+    ('v1', [('txt', 408, 170, 'ADC = 6√3', 'orange', 17)]),
     ('adb', [('tint', [f7rA, f7rB, f7rD], 'orange'), ('seg', f7rA[0], f7rA[1], f7rB[0], f7rB[1]), ('seg', f7rD[0], f7rD[1], f7rB[0], f7rB[1]),
-             ('txt', f7rB[0] + 18, f7rB[1], 'B', 'ink', 24, True), ('txt', 238, 50, '6√3', 'orange', 24)]),
-    ('t1', [('txt', 105, 262, 'S = 3√3 · 4 ÷ 2 = 6√3', 'ink', 26)]),
-    ('t2', [('txt', 105, 302, '2 · 6√3 = 12√3', 'red', 28)]),
-], vb='-40 -50 440 370', w=340, title='Triangles A D C and A D B, enlarged and turned')
+             ('txt', f7rB[0] - 14, f7rB[1] + 16, 'B', 'ink', 22, True), ('txt', 236, 150, 'ADB = 6√3', 'orange', 17)]),
+], vb='180 40 275 285', w=300, title='Triangles A D C and A D B, enlarged')
+f7k6 = I('f7k6', '$S_{ADC}=\\frac{3\\sqrt3\\cdot4}{2}=6\\sqrt3$', size=28)
+f7k7 = I('f7k7', '$2\\cdot6\\sqrt3=12\\sqrt3$', size=30)
 f7k2 = I('f7k2', '$S_{ABC}=\\frac{8\\cdot7\\sqrt3}{2}=28\\sqrt3$', size=32, hand='S_{ABC} = {8·7√{3}/2} = 28√{3}')
 f7k3 = I('f7k3', '$S_{DBC}=\\frac{8\\cdot4\\sqrt3}{2}=16\\sqrt3$', size=32, hand='S_{DBC} = {8·4√{3}/2} = 16√{3}')
 f7k4 = I('f7k4', 'or $\\ \\frac{a^2\\sqrt3}{4}=\\frac{64\\sqrt3}{4}=16\\sqrt3$', size=30, hand='or    {a^2√{3}/4} = {64√{3}/4} = 16√{3}')
@@ -3488,17 +3662,16 @@ video('solve-geo31-g037', 'solution', qid='geo31-g037', slides=[
       L("Now subtract. Twenty-eight root three minus sixteen root three is twelve root three. Choice number two is our "
         "answer.", show(f7k5, 'Now subtract'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
     SM('Method 2 · Insight', 'Two triangles',
-      L("[pause] There's a shorter way, with an insight. Turn your head a little. The shaded part is two triangles, A D C on "
-        "the right, and A D B on the left.", show(f7g37b['line'], 'There\'s a shorter way'), show(f7g37b['adc'], 'A D C on the right')),
+      L("[pause] There's a shorter way, with an insight. Look at the shaded part again. It's two triangles, A D C on the "
+        "right, and A D B on the left.", show(f7g37b['line'], 'There\'s a shorter way'), show(f7g37b['adc'], 'A D C on the right')),
       L("For the area of A D C we need a base and its height. The base is given, A D, three root three. The height to it, "
         "from C, is outside the triangle, because A D C has an obtuse angle at D. We extend the base A D down to E. E C is "
         "perpendicular to that line, and E C is four, the same as B E. So the height is four.", show(f7g37b['dim'], 'For the area of A D C'),
-        show(f7g37c['line'], 'we need a base'), show(f7g37c['ab'], 'The base is given'), show(f7g37c['h'], 'We extend the base A D')),
+        show(f7g37c['line'], 'we need a base and its height'), show(f7g37c['ab'], 'The base is given'), show(f7g37c['h'], 'We extend the base A D')),
       L("Three root three times four, over two, is six root three. That's one shaded triangle. The other one, A D B, is its "
         "mirror image, so it's six root three too. Twice six root three is twelve root three, choice number two again, "
-        "with almost no calculating.", show(f7g37c['v1'], 'Three root three times four'), show(f7g37c['adb'], 'The other one, A D B'),
-        show(f7g37c['t1'], 'so it\'s six root three too'),
-        show(f7g37c['t2'], 'Twice six root three'), mk('tick', 'choice 2', 'choice number two again')),
+        "with almost no calculating.", show(f7k6, 'over two, is six root three'), show(f7g37c['v1'], "That's one shaded triangle"),
+        show(f7g37c['adb'], 'so it\'s six root three too'), show(f7k7, 'is twelve root three'), mk('tick', 'choice 2', 'choice number two again')),
       L("Careful, six root three, choice number three, is only one of the two shaded triangles. [pause] Okay. I'll see you "
         "in the next question.", mk('cross', 'choice 3', 'six root three, choice number three'))),
 ])
@@ -3523,18 +3696,20 @@ f7g38 = GEO('f7g38', [
 f7_38h = [('seg', f7a[0], f7a[1], f7f[0], f7f[1], 'teal', 3, True), ('right', f7f[0], f7f[1], 0, 90, 12), ('txt', 296, 180, 'h', 'teal', 26, True)]
 f7g38c = GEO('f7g38c', [
     ('line', f7_38base + f7_38h + [('txt', 490, 88, 'So far: x · h = 28', 'ink', 22)]),
-    ('adc', [('tint', [f7a, f7d, f7c], 'orange'), ('txt', 400, 230, '42', 'orange', 28)]),
-    ('abd', [('tint', [f7a, f7b, f7d], 'teal'), ('txt', 172, 236, '14', 'teal', 28)]),
+    ('adc', [('tint', [f7a, f7d, f7c], 'orange')]),
+    ('abd', [('tint', [f7a, f7b, f7d], 'teal')]),
+    ('v42', [('txt', 400, 230, '42', 'orange', 28)]),
+    ('v14', [('txt', 172, 236, '14', 'teal', 28)]),
 ], vb='60 60 520 245', w=400, title='The two triangles ABD and ADC')
 f7g38b = GEO('f7g38b', [
     ('line', f7_38base),
-    ('two', [('tint', [f7a, f7b, f7d], 'teal'), ('tint', [f7a, f7d, f7c], 'orange'), ('txt', 172, 236, '1 part', 'teal', 20),
-             ('txt', 400, 236, '3 parts', 'orange', 22)]),
-    ('cut', [('dim', 60, 210, 520, 40), ('seg', f7a[0], f7a[1], 320, 264, 'orange', 3, True), ('seg', f7a[0], f7a[1], 432, 264, 'orange', 3, True),
+    ('two', [('tint', [f7a, f7b, f7d], 'teal'), ('tint', [f7a, f7d, f7c], 'orange'), ('txt', 152, 314, '1 part', 'teal', 20),
+             ('txt', 376, 314, '3 parts', 'orange', 22)]),
+    ('cut', [('seg', f7a[0], f7a[1], 320, 264, 'orange', 3, True), ('seg', f7a[0], f7a[1], 432, 264, 'orange', 3, True),
              ('tick', 96, 264, 208, 264), ('tick', 208, 264, 320, 264), ('tick', 320, 264, 432, 264), ('tick', 432, 264, 544, 264)]),
     ('val', [('txt', 168, 240, '14', 'teal', 24), ('txt', 264, 240, '14', 'orange', 24), ('txt', 350, 240, '14', 'orange', 24),
              ('txt', 445, 240, '14', 'orange', 24)]),
-], vb='60 60 520 245', w=440, title='DC cut into three pieces as long as BD')
+], vb='60 60 520 265', w=440, title='DC cut into three pieces as long as BD')
 f7m1 = I('f7m1', '$S_{ABC}=\\frac{4x\\cdot h}{2}=56$', size=32)
 f7m2 = IH('f7m2', '$x\\cdot h=28$', size=32)
 f7m3 = IH('f7m3', '$S_{ADC}=\\frac{3x\\cdot h}{2}=\\frac{3\\cdot28}{2}=42$', size=30)
@@ -3560,7 +3735,7 @@ video('solve-geo31-g038', 'solution', qid='geo31-g038', slides=[
         show(f7g38c['adc'], 'Its base is three x'), show(f7g38c['abd'], 'And A B D')),
       L("The area of A D C is three x h over two. That's three times twenty-eight over two, which is forty-two. The area of "
         "A B D is x h over two, twenty-eight over two, which is fourteen.", show(f7m3, 'The area of A D C'),
-        show(f7m4, 'The area of A B D')),
+        show(f7g38c['v42'], 'which is forty-two'), show(f7m4, 'The area of A B D'), show(f7g38c['v14'], 'which is fourteen')),
       L("The difference is forty-two minus fourteen, which is twenty-eight. Choice number three is our answer.",
         show(f7m5, 'The difference is'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
     SM('Method 2 · Insight: area ratio', 'Same height',
@@ -3604,9 +3779,19 @@ f7g39b = GEO('f7g39b', [
     ('line', f7_39base),
     ('two', [('path', [f7_A, f7_E, f7_F, f7_A], 'teal', 7), ('path', [f7_A, f7_F, f7_G, f7_A], 'orange', 5)]),
     ('af', [('seg', f7_A[0], f7_A[1], f7_F[0], f7_F[1], 'red', 6, True)]),
-    ('eq', [('tick', f7_F[0], f7_F[1], f7_E[0], f7_E[1], 2, 'red'), ('tick', f7_G[0], f7_G[1], f7_F[0], f7_F[1], 2, 'red')]),
-    ('left', [('txt', 300, 205, '10√2', 'teal', 22), ('txt', 320, 54, '10', 'orange', 22)]),
-], vb='170 30 300 300', w=260, title='Triangles AEF and AFG')
+    ('afx', [('seg', f7_A[0], f7_A[1], f7_F[0], f7_F[1], 'white', 9), ('seg', f7_A[0], f7_A[1], f7_F[0], f7_F[1], 'grey', 2.5)]),
+    ('eq', [('tick', f7_F[0], f7_F[1], f7_E[0], f7_E[1], 2, 'red'), ('tick', f7_G[0], f7_G[1], f7_F[0], f7_F[1], 2, 'red'),
+            ('txt', 452, 236, '5', 'red', 20), ('txt', 452, 124, '5', 'red', 20)]),
+    ('efx', [('seg', f7_F[0], f7_F[1], f7_E[0], f7_E[1], 'white', 9), ('seg', f7_F[0], f7_F[1], f7_E[0], f7_E[1], 'grey', 2.5),
+             ('seg', f7_G[0], f7_G[1], f7_F[0], f7_F[1], 'white', 9), ('seg', f7_G[0], f7_G[1], f7_F[0], f7_F[1], 'grey', 2.5)]),
+    ('left', [('path', [f7_A, f7_E], 'teal', 7), ('path', [f7_A, f7_G], 'orange', 7), ('txt', 300, 205, '10√2', 'teal', 22),
+              ('txt', 320, 54, '10', 'orange', 22)]),
+], vb='170 30 300 300', w=220, title='Triangles AEF and AFG')
+f7g39s = GEO('f7g39s', [('line', f7_39base + [('tint', [f7_A, f7_G, f7_E], 'orange'), ('right', f7_G[0], f7_G[1], 180, 270, 14, 'orange'),
+                                              ('path', [f7_A, f7_E], 'teal', 7)])],
+             vb='170 30 300 300', w=200, title='Right triangle AGE: AE is its hypotenuse')
+f7c1 = I('f7c1', '$(AF+EF+AE)-(AF+FG+AG)$', size=24)
+f7c2 = I('f7c2', '$AF-AF=0,\\ \\ EF-FG=5-5=0$', size=24)
 f7p2 = I('f7p2', '$AF^2=10^2+5^2=125$, $\\ AF=5\\sqrt5$', size=30)
 f7p3 = I('f7p3', '$P_{AEF}=5\\sqrt5+5+10\\sqrt2$', size=30)
 f7p4 = I('f7p4', '$P_{AFG}=5\\sqrt5+5+10$', size=30)
@@ -3631,8 +3816,8 @@ video('solve-geo31-g039', 'solution', qid='geo31-g039', slides=[
         "well, so A E is ten root two.", show(f7g39['sq'], 'the small square at the top left'),
         show(f7g39['sq2'], 'The second diagonal')),
       L("Now A F. It's the longest side of the right triangle A G F. One leg, A G, is ten, two sides of a square. The other "
-        "leg, G F, is five. By Pythagoras, A F squared is ten squared plus five squared, a hundred plus twenty-five, a "
-        "hundred twenty-five. A hundred twenty-five is twenty-five times five, so A F is five root five.",
+        "leg, G F, is five. By Pythagoras, A F squared is ten squared plus five squared. That's a hundred plus "
+        "twenty-five, which is a hundred twenty-five. A hundred twenty-five is twenty-five times five, so A F is five root five.",
         show(f7g39['agf'], 'Now A F'), show(f7p2, 'By Pythagoras'))),
     SM('Method 1 · The math way', 'Every side',
       L("Now the perimeters. A E F has A F, five root five, plus E F, five, plus A E, ten root two. A F G has A F, five root five, "
@@ -3642,18 +3827,19 @@ video('solve-geo31-g039', 'solution', qid='geo31-g039', slides=[
     SM('Method 2 · Insight', 'Shared sides cancel',
       L("[pause] Could we make it shorter? Yes, with an insight, cancelling sides. Look at the two triangles side by side. A F is a side "
         "of both, so it cancels in the difference. We don't need its length at all.",
-        show(f7g39b['line'], 'Could we make it shorter'), show(f7g39b['two'], 'Look at the two triangles'),
-        show(f7g39b['af'], 'A F is a side of both')),
+        show(f7g39b['line'], 'Could we make it shorter'), show(f7g39b['two'], 'Look at the two triangles'), show(f7c1, 'side by side'),
+        show(f7g39b['af'], 'A F is a side of both'), show(f7g39b['afx'], 'so it cancels in the difference')),
       L("Next, E F and F G are both sides of a small square, five each. They're equal, so they cancel too.",
-        show(f7g39b['eq'], 'E F and F G are both')),
-      L("All that's left is A E, ten root two, minus A G, ten. Ten root two minus ten, choice number four, and no "
-        "Pythagoras at all.", show(f7g39b['left'], 'All that\'s left'), show(f7p6, 'Ten root two minus ten'),
+        show(f7g39b['eq'], 'E F and F G are both'), show(f7g39b['efx'], 'so they cancel too'), show(f7c2, 'so they cancel too')),
+      L("All that's left is A E minus A G. We keep A E from before: two diagonals of the small squares, ten root two. And A G "
+        "is two sides of a square, ten. Ten root two minus ten, choice number four, and no Pythagoras at all.",
+        show(f7g39b['left'], 'We keep A E from before'), show(f7p6, 'Ten root two minus ten'),
         mk('tick', 'choice 4', 'choice number four, and no'))),
     SM('Method 3 · Estimation', 'A quick check',
       L("[pause] One more idea, an estimate. Say you reach this question at the very end of the exam, with ten or twenty seconds left. "
         "Sometimes you can rule out choices just by their sign. The answer here must be positive. A E F and A F G share A F, "
         "and E F equals F G, so the difference is A E minus A G. A E is the longest side of the big right triangle A G E, so it's "
-        "longer than A G, and the difference is positive."),
+        "longer than A G, and the difference is positive.", show(f7g39s['line'], 'A E is the longest side')),
       L("Root two and root three are both bigger than one, because one times one is only one. Choice number one, five root "
         "three minus five. Five root three is more than five, so this is positive. We can't rule it out.",
         show(f7p7, 'Choice number one, five root')),
@@ -3682,11 +3868,12 @@ f7g40 = GEO('f7g40', [
     ('sides', [('txt', 236, 178, 'b', 'ink', 26, True), ('txt', 404, 178, 'b', 'ink', 26, True), ('txt', 320, 322, 'b', 'ink', 26, True),
                ('txt', 284, 258, 'a', 'teal', 24, True), ('txt', 356, 258, 'a', 'teal', 24, True), ('txt', 320, 284, 'a', 'teal', 22, True)]),
     ('bold', [('path', [f7L2, f7T, f7R2], 'orange', 8)]),
-    ('bottom', [('path', [f7L2, f7s1], 'orange', 8), ('path', [f7s2, f7R2], 'orange', 8), ('txt', 234, 322, 'b − a', 'orange', 22)]),
-], vb='175 55 290 285', w=262, title='Two equilateral triangles')
-f7r1 = IH('f7r1', '$b+b+(b-a)=3\\cdot3a$', size=28)
-f7r2 = IH('f7r2', '$3b-a=9a$, $\\ 3b=10a$', size=28)
-f7r3 = I('f7r3', '$\\to\\ 3:10$', size=28)
+    ('bottom', [('path', [f7L2, f7s1], 'orange', 8), ('path', [f7s2, f7R2], 'orange', 8),
+                ('txt', 320, 348, 'bold bottom = b − a', 'orange', 21)]),
+], vb='175 55 290 305', w=236, title='Two equilateral triangles')
+f7r1 = IH('f7r1', '$b+b+(b-a)=3\\cdot3a$', size=26)
+f7r2 = IH('f7r2', '$3b-a=9a$, $\\ 3b=10a$', size=26)
+f7r3 = IH('f7r3', '$b=10$: $\\ 30=10a,\\ a=3,\\ \\frac ab=\\frac3{10}$', size=26)
 f7r4 = I('f7r4', '(1) $a=b$: $\\ $but $a<b$ ✗', size=30)
 f7r5 = IH('f7r5', '(2) $a=3,\\ b=10$: $\\ 10+10+7=27=3\\cdot9$ ✓', size=28)
 video('solve-geo31-g040', 'solution', qid='geo31-g040', slides=[
@@ -3703,11 +3890,11 @@ video('solve-geo31-g040', 'solution', qid='geo31-g040', slides=[
       L("The given says the bold line is three times the small perimeter. The small perimeter is three a, so three times "
         "it is nine a. So b plus b plus, in brackets, b minus a, equals nine a. Three b minus a equals nine a. Add a to both "
         "sides, and three b equals ten a.", show(f7r1, 'So b plus b plus'), show(f7r2, 'Three b minus a')),
-      L("Many students get stuck here: how do I get to a over b? We don't really need to. Three b equals ten a means the "
-        "ratio is three to ten, or ten to three. Only one choice is either of these, three tenths. So choice number two is "
-        "our answer.", show(f7r3, 'means the ratio is three to ten'), mk('tick', 'choice 2', 'So choice number two is our answer')),
-      L("If you really want the full step, not during the exam: divide both sides by ten b. On one side you get three "
-        "tenths, and on the other side, a over b. And careful with the traps. One third comes from forgetting to take a off "
+      L("Many students get stuck here: how do I get to a over b? A quick check does it. a is the smaller side, so a over b "
+        "is less than one. And if b is ten, three times ten is thirty, so ten a is thirty, and a is three. So a over b is "
+        "three tenths. Choice number two is our answer.", show(f7r3, 'and a is three'), mk('tick', 'choice 2', 'Choice number two is our answer')),
+      L("The full algebra step gives the same thing: divide both sides by ten b. On one side you get three tenths, and on "
+        "the other side, a over b. And careful with the traps. One third comes from forgetting to take a off "
         "the bottom, and three eighths from adding it instead.", mk('cross', 'choice 3', 'One third comes from'),
         mk('cross', 'choice 4', 'and three eighths'))),
     SM('Method 2 · Plugging in the answers', 'Testing the answers',
@@ -3716,7 +3903,7 @@ video('solve-geo31-g040', 'solution', qid='geo31-g040', slides=[
       L("Choice number one says a over b is one, so a equals b. But here one triangle is big and the other is "
         "small, so a is smaller than b. Out.", show(f7r4, 'Choice number one says'), mk('cross', 'choice 1', 'smaller than b. Out')),
       L("Choice number two, three tenths. So a is three and b is ten. The bold line is ten plus ten plus ten minus three, "
-        "which is twenty-seven. The small perimeter is three times three, nine, and three times nine is twenty-seven. It "
+        "which is twenty-seven. The small perimeter is three times three, which is nine. And three times nine is twenty-seven. It "
         "works, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
         show(f7r5, 'So a is three and b is ten'), mk('tick', 'choice 2', 'It works, so choice number two'))),
 ])
@@ -3727,11 +3914,14 @@ for _g in (f7g37, f7g38, f7g38c, f7g38b, f7g39, f7g39b): _R(_g, 235)
 _R(f7g40, 208)
 for _it, _y in ((f7s37, 245), (f7k2, 305), (f7k3, 370), (f7k4, 435), (f7k5, 500),
                 (f7m1, 485), (f7m2, 535), (f7m3, 430), (f7m4, 478), (f7m5, 526), (f7m6, 470),
-                (f7p2, 512), (f7s39, 245), (f7p3, 305), (f7p4, 365), (f7p5, 425), (f7p6, 512), (f7p7, 260), (f7p8, 320), (f7p9, 380),
-                (f7r1, 470), (f7r2, 506), (f7r4, 260), (f7r5, 320)):
+                (f7p2, 512), (f7s39, 245), (f7p3, 305), (f7p4, 365), (f7p5, 425), (f7c1, 462), (f7c2, 502), (f7p6, 545), (f7g39s, 225), (f7p7, 435), (f7p8, 485), (f7p9, 535),
+                (f7r1, 462), (f7r2, 502), (f7r4, 260), (f7r5, 320)):
     _R(_it, _y)
-_R(f7r3, 506, x=1330)
-_R(f7g37b, 235); _R(f7g37c, 230, x=1240)
+_R(f7r3, 542)
+_R(f7g37b, 345, x=410); _R(f7g37c, 340, x=650); _R(f7k6, 380); _R(f7k7, 450)
+NOFIG31.add(('solve-geo31-g037', 2))
+f2_pin(f7g37c)
+f2_pin(f7g38c); f2_pin(f7g39b)
 
 # carry-over boxes on the continuation slides (V2): the next step uses these results
 CARRY31 = globals().get('CARRY31', {})

@@ -24,11 +24,11 @@
     ]
    },
    {
-    "say": "The rule for the exam: an angle is ninety degrees only if it's marked like this, or it's given. If it only looks like ninety, that's not enough. This angle looks right, but there's no square, so we don't know it.",
+    "say": "The rule for the exam: don't trust how an angle looks. An angle is ninety degrees only if it's marked like this, if it's given, or if we calculate it and get ninety. If it only looks like ninety, that's not enough. This angle looks right, but there's no square and nothing to calculate it from, so we don't know it.",
     "at": [
      "This angle looks right",
      "there's no square",
-     "don't know it"
+     "to calculate it"
     ]
    }
   ],
@@ -43,10 +43,10 @@
     ]
    },
    {
-    "say": "An obtuse angle is bigger than ninety degrees, like this one of a hundred thirty. A hundred sixty is obtuse too.",
+    "say": "An obtuse angle is bigger than ninety degrees and smaller than a hundred eighty, like this one of a hundred thirty. A hundred sixty is obtuse too.",
     "at": [
      "An obtuse angle is",
-     "one of a"
+     "than a hundred"
     ]
    },
    {
@@ -59,10 +59,10 @@
   ],
   [
    {
-    "say": "Adjacent angles are two angles side by side on one straight line. Together they make the straight angle, so they add up to a hundred eighty.",
+    "say": "Adjacent angles are two angles side by side. They share a vertex and one side. Here their other two sides make one straight line, so together this pair makes the straight angle, and they add up to a hundred eighty.",
     "at": [
-     "side by side on one straight line",
-     "Together they make"
+     "two angles side by side",
+     "They share a"
     ]
    },
    {

@@ -19,11 +19,12 @@
     ]
    },
    {
-    "say": "[short pause] The math way first. Let's put each length on the figure. A D is twenty, the whole line from A to D.",
+    "say": "[short pause] The math way first. Let's draw the line again, bigger, and put each length on it. A D is twenty, the whole line from A to D.",
     "at": [
-     "Let's put each length",
+     "Let's draw the line again",
+     "bigger, and put",
      "A D is twenty",
-     "whole line from"
+     "the whole line from A to D"
     ]
    },
    {

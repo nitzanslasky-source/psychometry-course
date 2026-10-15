@@ -18,33 +18,39 @@
      "and an altitude",
      "find the area"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "[short pause] First way, with the legs. The right angle is at C, so A C and B C are perpendicular. That means B C is the altitude to the side A C. So the area is fifteen times twenty, over two. Fifteen times twenty is three hundred, and half of that is a hundred fifty.",
+    "say": "[short pause] Here's the figure again, bigger. First way, with the legs. The right angle is at C, so A C and B C are perpendicular. That means B C is the altitude to the side A C. So the area is fifteen times twenty, over two. Fifteen times twenty is three hundred, and half of that is a hundred fifty.",
     "at": [
-     "First way",
-     "with the legs",
+     "Here's the figure again",
+     "First way, with",
      "The right angle is at C",
-     "C, so A",
+     "B C are",
      "So the area is fifteen",
-     "times twenty, over"
+     "times twenty, over",
+     "half of that is a hundred fifty"
     ]
    },
    {
-    "say": "Second way, with the side A B, which is twenty-five, and the altitude to it, which is C D. So the area is also twenty-five times C D, over two.",
+    "say": "Second way, with the side A B, which is twenty-five. The altitude to A B is the segment from C straight down to it, at a right angle. That's C D, our h. So the area is also twenty-five times C D, over two.",
     "at": [
      "Second way",
-     "A B, which"
+     "A B, which",
+     "The altitude to A B is",
+     "straight down to",
+     "So the area is also",
+     "twenty-five times C"
     ]
    },
    {
-    "say": "It's the same triangle, so it's the same area. Twenty-five times C D, over two, is a hundred fifty, so twenty-five times C D is three hundred. Three hundred divided by twenty-five is twelve, so C D is twelve. Choice number two is our answer.",
+    "say": "It's the same triangle, so it's the same area. Twenty-five times C D, over two, is a hundred fifty. So twenty-five times C D is twice that, three hundred. Three hundred divided by twenty-five is twelve, so C D is twelve. Choice number two is our answer.",
     "at": [
-     "It's the same triangle",
-     "it's the same area",
-     "Twenty-five times C D, over two, is",
-     "so twenty-five times C D is three hundred",
-     "is three hundred",
+     "twenty-five times C D is twice that",
+     "twice that, three",
+     "twenty-five is twelve",
+     "so C D is twelve",
      "Choice number two is our answer"
     ]
    },
@@ -52,6 +58,7 @@
     "say": "Careful with two traps. Six, choice number one, is a hundred fifty divided by twenty-five: someone forgot to double the area first. And twelve and a half, choice number three, is half of A B. That's the median to the hypotenuse, not the altitude.",
     "at": [
      "Six, choice number one",
+     "a hundred fifty",
      "twelve and a half, choice number three"
     ]
    },

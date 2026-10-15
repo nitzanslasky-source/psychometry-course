@@ -25,10 +25,10 @@
     ]
    },
    {
-    "say": "That's all a median promises, two equal pieces. It doesn't make a right angle with the side, and it doesn't split the angle at C into two equal angles.",
+    "say": "That's all a median promises, two equal pieces. It does not necessarily make a right angle with the side, and it does not necessarily split the angle at C into two equal angles. In this triangle it does neither.",
     "at": [
-     "It doesn't make a right angle",
-     "angle with the"
+     "It does not necessarily make a right angle",
+     "a right angle"
     ]
    },
    {
@@ -119,7 +119,7 @@
     ]
    },
    {
-    "say": "That's all it promises, two equal angles. It doesn't split the side into equal pieces. Look, A D is shorter than D B here. And it doesn't make a right angle.",
+    "say": "That's all it promises, two equal angles. It does not necessarily split the side into equal pieces. Look, A D is shorter than D B here. And it does not necessarily make a right angle.",
     "at": [
      "Look, A D is shorter",
      "than D B"
