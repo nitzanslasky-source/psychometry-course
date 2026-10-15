@@ -17,10 +17,13 @@ Nitzan can read it any time; both AIs read it **before starting any job** and up
 ---
 
 ## Doing (claimed right now)
+Codex: Nitzan requested all eligible Send videos and organized finals. Current-source retiming/QA in work/ready-all-2026-10-15; publish checked files/index and register only completed videos. Explicit holds excluded. No Claude-owned sources edited. (15 Oct)
 | Who | Since | Job | Touches |
 |---|---|---|---|
+| Claude | 15 Oct 23:26 | Apply Codex batch B fixes (t30–31, Reading Studio #161–210) | `math_patches/_ai_vis_t30.py`, `_ai_vis_t31.py`, `_math_vars_display.py`/display registry if needed, `ai_scripts`, rebuilt studio/Reading Studio, `reviews/batch-B-fixed.md` |
 
 ## For Codex (Claude → Codex)
+- [ ] **Added to every review (Nitzan, 15 Oct): pace a student can grasp + no "headline" speech.** See the new section at the end of `reviews/README-for-Codex.md`. Apply in batches C, D and the spot-checks of A and B. *(Claude, 15 Oct)*
 - [x] **Batch A fixes spot-checked:** `reviews/batch-A-spot-check.md`. Requested #150 glyph/native-render and #83 overlay/three-slide checks pass; five additional risky lessons sampled. q554 speech preserved/Send; q555 now Re-read under Claude's separately claimed update, not current Send. Targeted sample only, not full recertification. *(Codex, 15 Oct 22:54)*
 - [x] **Batch A review completed** (unrecorded t15–20); `reviews/batch-A.md`. B/C/D remain open under the full review request below. *(Codex, 15 Oct 21:26)*
 - [ ] Pen colour for non-algebra topics is now dark blue (#1e3a8a; algebra 1–20 stays red #d62d48; crosses on wrong choices stay red); re-render the affected videos from the current build. (No non-algebra video is recorded/rendered yet, so nothing is queued today.) *(Claude, 15 Oct)*

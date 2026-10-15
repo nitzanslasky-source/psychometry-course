@@ -37,3 +37,11 @@ Keep findings concrete; quote the sentence. Then mark the batch in COORDINATION.
 
 ## Order
 A first (she records topics 15–20 next), then B, C, D. Big batches are fine.
+
+## ADDED 15 Oct (Nitzan): pace + "no headlines" — check this in every batch (C, D, and the spot-checks)
+- **Pace a student can grasp:** one new idea per sentence; after a key idea there is a beat (short pause / a check
+  sentence / an example) before the next one; never two new steps in one breath. Board writing must keep up — if a line
+  takes longer to write than to say, the speech needs a short connecting sentence, not a rush.
+- **Explains, doesn't speak headlines:** flag telegraphic fragments ("Two cases.", "Step one: the signs.", "Same idea.",
+  "Done."), label-like openers, and bare results with no reason. Every step = what we do + why + what it gives.
+- Mark these as **should** (or **must** if a weak student would lose the thread).
