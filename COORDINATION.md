@@ -35,7 +35,7 @@ Nitzan can read it any time; both AIs read it **before starting any job** and up
 
 ## Waiting for Nitzan
 - [ ] **Refresh the Reading Studio** before reading topic 19-20/30-33/51: the q-552 take (20:15) used a page from 03:02; 51 unrecorded scripts now name their methods (q-549, q-553-556, t20, geometry, t51). q-552 itself was kept as read.
-- [ ] Method vocabulary: OK with "The math way" replacing "Algebra"/"Calculation" labels, and with "Understanding" as a core name although topic 51 doesn't teach it by name?
+- [x] Method vocabulary: "The math way" approved by Nitzan (not just algebra); "Understanding" added to topic 51 as a lesson (approved).
 - [ ] "open/closed" spoken in absolute-value-3 ¶10/12/14, q-360 ¶2, q-361 ¶3 → re-read as "inside/outside" or keep?
 - [ ] pt-q18 written solution "16√3 ≈ 27.2" → replace with whole-number bounds?
 - [ ] solve-q-r26-t18-02 → add the two short lines (re-read) or keep as recorded?
@@ -44,6 +44,7 @@ Nitzan can read it any time; both AIs read it **before starting any job** and up
 ## Done (recent)
 | Who | When | Job | Result |
 |---|---|---|---|
+| Claude | 15 Oct | Topic 51 "Understanding" camera lesson (pt51-understanding, Reading Studio #323); q01 names it; t51 summary lists 6 methods | build/export/svgcheck OK; Reading Studio + Video-Status rebuilt; ready to record |
 | Claude | 15 Oct 20:30 | One method-name vocabulary (her Hebrew core: The math way / Plugging in numbers / Plugging in the answers / Understanding / Estimation / Insight, `Method N · <core>[: specific]`) | Titles + sidebars in all prepared videos (t13-20, 30-33, 51); spoken method names in 51 unrecorded scripts; guide table + R13; `_method_names.CORE` + `check_vocab` in every spec; overlay headers reconciled. Checks: regen = ai_scripts, ai_check no new fails, math_check 0/0/0, svgcheck 0, Reading Studio re-read list unchanged. No commit. |
 | Codex | 15Oct19:14 | Current-source camera batch5 | Absolute Value1–3and Primes1/3published and registered;21.5min;face top-right,sync≤1.6ms;full decode/handwriting/frame checks. Prior Ready copies archived. Outputs/current-camera-2026-10-15;receipt work/current-camera-2026-10-15/finished.json. Remaining send queue not rendered. |
 | Codex | 15Oct19:14 | Reconcile4recent Topic13entries | q358/q360/q362 verified current and registered without duplicate renders. q359 current visuals differ,so left pending. Receipt work/current-camera-2026-10-15/reconciled-recent-finals.json. |

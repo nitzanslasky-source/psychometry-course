@@ -776,7 +776,8 @@ video('solve-pt-q01', 'solution', qid='pt-q01', slides=[
         "four is out.", show(f1b3, 'And two hundred twelve'), mk('cross', 'choice 4', 'choice number four is out')),
       L("Three choices are out, and one of the four must be right. So a hundred thirty-eight is the answer, and I don't "
         "even need to check it. Choice number one is our answer.", mk('tick', 'choice 1', 'Choice number one is our answer')),
-      L("We solved it without calculating at all. The last digit, and then an order-of-magnitude estimate.")),
+      L("We solved it without calculating at all. First by understanding, with a rule about the last digit, and then with an "
+        "order-of-magnitude estimate. Both get a lesson of their own later in this topic.")),
     S('Last digit: another example',
       L("Let's see each shortcut once more, on a new example. First the last digit. Twenty-three times forty-seven. The "
         "choices are one thousand seventy-nine, one thousand eighty-one, one thousand eighty-four, and one thousand "
@@ -3116,6 +3117,98 @@ video('solve-pt-q19', 'solution', qid='pt-q19', slides=[
 ])
 CARRY51.update({'solve-pt-q19': {1: ['Bottle A: $\\ 0.64$ liters']}})
 
+# =================================================================================================== pt51-understanding (lesson)
+# 2026-10-15 (teacher-approved, coordinator): the sixth core method of the one vocabulary (math_patches/_method_names.CORE),
+# "Understanding" (her Hebrew הבנה / פתרון באמצעות הבנה, ~112x in her course; she uses it from absolute value on). Topic 51's
+# Hebrew lessons don't name it, so this short camera lesson introduces it after the insight block: what it is, how it
+# differs from an insight, three worked examples from topics taught BEFORE 51 (topic 1: the sign rules of
+# multiplication, even = 2k / odd = 2k + 1, must / could / cannot; new numbers), when to use it, and where it comes back
+# (absolute value, the number line, integers). V4: every given written when it is named, every step at its clause, the
+# results only when they are said, the text column 860 wide (the face bubble, top right, stays clear).
+u51d1 = I('u51d1', 'Understanding: $\\ $reason with rules we already know', size=34)
+u51d2 = I('u51d2', 'signs · size · even and odd · order', size=32)
+u51d3 = I('u51d3', 'no calculation', size=32)
+u51d4 = I('u51d4', 'e.g. $\\ $ends in $6$, squared $\\to$ ends in $6$', size=32)
+u51a0 = I('u51a0', '$a<0,\\ \\ b>0$. $\\ $Which is necessarily negative?', size=34)
+u51a1 = I('u51a1', '$a\\cdot b$: $\\ $different signs $\\to$ negative ✓', size=32)
+u51a2 = I('u51a2', '$b-a=b+(\\text{a positive})$ $\\to$ positive ✗', size=32)
+u51a3 = I('u51a3', '$a\\cdot a$: $\\ $same signs $\\to$ positive, $\\ $so $a^2\\cdot b$ is positive ✗', size=32)
+u51a4 = I('u51a4', '$a+b$: $\\ $depends on which is bigger in size ✗', size=32)
+u51b0 = I('u51b0', '$n$ is an integer. $\\ $Which is necessarily odd?', size=34)
+u51b1 = I('u51b1', '$4n$ $=2\\cdot(2n)$ $\\to$ always even', size=32)
+u51b2 = I('u51b2', '$4n+3$ $=$ even $+\\,3$ $\\to$ always odd ✓', size=32)
+u51b3 = I('u51b3', '$n+3$: $\\ $depends on $n$ ✗', size=32)
+u51c0 = I('u51c0', '$0<x<1$. $\\ $Which is bigger, $\\ x$ or $x^2$?', size=34)
+u51c1 = I('u51c1', '$x^2=x\\cdot x$: $\\ x$ times a number smaller than $1$', size=32)
+u51c2 = I('u51c2', '$\\to$ $x^2$ is smaller: $\\ x^2<x$', size=32)
+u51c3 = I('u51c3', 'check: $\\ \\frac13\\cdot\\frac13=\\frac19<\\frac13$', size=32)
+u51e1 = I('u51e1', 'Insight: $\\ $one idea for one question', size=32)
+u51e2 = I('u51e2', 'Understanding: $\\ $general rules, again and again', size=32)
+u51w1 = I('u51w1', 'When? $\\ $must / could / cannot be true', size=32)
+u51w2 = I('u51w2', 'signs, $\\ $which is bigger, $\\ $even and odd, $\\ $order', size=32)
+u51w3 = I('u51w3', 'Later: $\\ $absolute value, $\\ $the number line, $\\ $integers', size=32)
+u51w4 = I('u51w4', 'Not sure the rule always holds? $\\ $Plug in numbers.', size=32)
+
+video('pt51-understanding', 'lesson', slides=[
+    S('Understanding',
+      L("Psychometric thinking, solving by understanding.")),
+    S('What is understanding?',
+      L("We have one more way to solve, and we'll use it all through the course. We call it understanding.",
+        show(u51d1, 'We call it understanding')),
+      L("In understanding, we don't calculate. We reason with rules we already know, about signs, about size, about even "
+        "and odd numbers, and about order. Each rule is always true, so the answer we get is always right.",
+        show(u51d2, 'about signs, about size'), show(u51d3, "we don't calculate")),
+      L("You already used it in the very first question of this topic. When we square a number that ends in six, the result ends in six. "
+        "That's a rule about the last digit, so we ruled out two choices without calculating.", show(u51d4, 'When we square a number that ends in six'))),
+    S('Example 1 · Signs',
+      L("Here's the first example. a is negative and b is positive. Which of the following is necessarily negative?",
+        show(u51a0, 'a is negative and b is positive')),
+      L("Look at a times b. Remember the rule for multiplying: different signs give a negative. a is negative and b is "
+        "positive, so a times b is always negative, for every a and b that fit.", show(u51a1, 'so a times b is always negative')),
+      L("Why not the others? b minus a. Taking away a negative number is like adding a positive one, so b minus a is "
+        "positive plus positive. It's positive.", show(u51a2, "It's positive.")),
+      L("a squared times b. a times a has the same signs, so it's positive. And positive times positive b is positive.",
+        show(u51a3, 'And positive times positive b')),
+      L("And a plus b. Here no rule decides it. It depends on which number is bigger in size, so it isn't necessarily "
+        "negative.", show(u51a4, "so it isn't necessarily"))),
+    S('Example 2 · Even and odd',
+      L("The second example. n is an integer. Which is necessarily odd, four n plus three, or n plus three?",
+        show(u51b0, 'n is an integer')),
+      L("Four n is two times two n, and two times an integer is always even. That's the definition of even.",
+        show(u51b1, 'is always even')),
+      L("Even plus three is always odd, because even plus one is odd, and adding two more keeps it odd. So four n plus "
+        "three is odd for every integer n.", show(u51b2, 'So four n plus')),
+      L("But n plus three depends on n. If n is even, it's odd, and if n is odd, it's even. So it isn't necessarily odd.",
+        show(u51b3, "So it isn't necessarily odd"))),
+    S('Example 3 · Size',
+      L("And the third example. x is between zero and one. Which is bigger, x, or x squared?",
+        show(u51c0, 'x is between zero and one')),
+      L("x squared is x times x. So it's x, times a number smaller than one.", show(u51c1, 'x squared is x times x')),
+      L("When we multiply a positive number by a number smaller than one, we take only a part of it, so it gets smaller. "
+        "So x squared is smaller than x.", show(u51c2, 'So x squared is smaller')),
+      L("We can check with one number. A third times a third is a ninth, and a ninth is smaller than a third. The check "
+        "agrees with the rule.", show(u51c3, 'and a ninth is smaller'))),
+    S('Understanding or insight?',
+      L("How is this different from an insight? An insight is one idea that belongs to one question. It doesn't come "
+        "back.", show(u51e1, 'An insight is one idea')),
+      L("Understanding uses general rules, the same ones again and again, in many questions. That's why it's worth "
+        "learning as a method.", show(u51e2, 'Understanding uses general rules'))),
+    S('When do I use it?',
+      L("So when do we solve by understanding? When they ask what must be true, what could be true, or what cannot be "
+        "true. And when the question is about signs, about which number is bigger, about even and odd, or about order.",
+        show(u51w1, 'When they ask what must be true'), show(u51w2, 'And when the question is about signs')),
+      L("Later in the course you'll use it a lot. Most questions on absolute value, on the number line and on integers are "
+        "solved by understanding.", show(u51w3, "Later in the course you'll use it a lot")),
+      L("And the trap. Use only a rule that's always true. If you're not sure, plug in numbers as a safety net. [pause] "
+        "Okay. I'll see you in the next video.", show(u51w4, 'If you\'re not sure'))),
+])
+for _sl in VIDEOS['pt51-understanding']['slides']:
+    for _ln in _sl['lines']:
+        for _c in _ln['cues']:
+            if _c[0] == 'show' and _c[1]['k'] == 't': _c[1]['w'] = 860
+# a new course video (not in modulesV51.py): _t51_reading.py creates it in the Learn section, after the video named here
+NEW_VIDEOS = {'pt51-understanding': ('solve-pt-q23', 'Understanding')}
+
 # ------------------------------------------------------------------------------------------------ the flow order
 # the course order of topic 51 (modulesV51.py / build_verbal flow): the insight block comes after the estimation block.
 # Camera parts are inserted after their video later (tail.py, CAMERA_SPLITS), so only the base ids are listed here.
@@ -3123,7 +3216,7 @@ F9_FLOW = ['pt51-intro', 'solve-pt-q01', 'solve-pt-q02', 'solve-pt-q03', 'solve-
            'pt51-plug-answers', 'solve-pt-q06', 'solve-pt-q07', 'solve-pt-q08', 'solve-pt-q09',
            'pt51-plug-numbers', 'solve-pt-q10', 'solve-pt-q11', 'solve-pt-q12', 'solve-pt-q13', 'solve-pt-q14', 'solve-pt-q15',
            'solve-pt-q24', 'pt51-estimation', 'solve-pt-q16', 'solve-pt-q17', 'solve-pt-q18', 'solve-pt-q19',
-           'pt51-insights', 'solve-pt-q20', 'solve-pt-q21', 'solve-pt-q22', 'solve-pt-q23']
+           'pt51-insights', 'solve-pt-q20', 'solve-pt-q21', 'solve-pt-q22', 'solve-pt-q23', 'pt51-understanding']
 assert sorted(F9_FLOW) == sorted(ORDER), (set(F9_FLOW) ^ set(ORDER))
 ORDER[:] = F9_FLOW
 

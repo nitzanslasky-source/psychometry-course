@@ -55,6 +55,12 @@ def ai_redo_t51(M):
     AV = _mod('_ai_visual')
     reorder_choices(M.D)
     for sec in M.D['sections']: M.sections.setdefault(sec['id'], sec)    # topic 51's sections came after MathCourse was made
+    # 2026-10-15 a lesson that is not in modulesV51.py (pt51-understanding): created in the Learn section after its anchor
+    for vid, (after, title) in getattr(S, 'NEW_VIDEOS', {}).items():
+        if vid in M.D['videos'] or after not in M.D['videos']: continue
+        sec = next(f['section'] for f in M.D['flow'] if f['ref'] == after)
+        beats, sb = S.studio_slides(vid)
+        M.new_video(vid, 51, title, sb, beats, sec, after=after)
     CP = _mod('_camera_parts'); CP.add_to_course(M, S, 51)
     for vid in S.ORDER:
         if vid not in M.D['videos'] or _recorded(vid): continue

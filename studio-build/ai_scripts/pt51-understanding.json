@@ -1,0 +1,173 @@
+{
+ "videoId": "pt51-understanding",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Psychometric thinking, solving by understanding."
+  ],
+  [
+   {
+    "say": "We have one more way to solve, and we'll use it all through the course. We call it understanding.",
+    "at": [
+     "way to solve",
+     "We call it understanding"
+    ]
+   },
+   {
+    "say": "In understanding, we don't calculate. We reason with rules we already know, about signs, about size, about even and odd numbers, and about order. Each rule is always true, so the answer we get is always right.",
+    "at": [
+     "we don't calculate",
+     "with rules we",
+     "about signs, about size",
+     "even and odd"
+    ]
+   },
+   {
+    "say": "You already used it in the very first question of this topic. When we square a number that ends in six, the result ends in six. That's a rule about the last digit, so we ruled out two choices without calculating.",
+    "at": [
+     "You already used",
+     "When we square a number that ends in six",
+     "that ends in"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's the first example. a is negative and b is positive. Which of the following is necessarily negative?",
+    "at": [
+     "a is negative and b is positive",
+     "Which of the"
+    ]
+   },
+   {
+    "say": "Look at a times b. Remember the rule for multiplying: different signs give a negative. a is negative and b is positive, so a times b is always negative, for every a and b that fit.",
+    "at": [
+     "so a times b is always negative",
+     "always negative, for"
+    ]
+   },
+   {
+    "say": "Why not the others? b minus a. Taking away a negative number is like adding a positive one, so b minus a is positive plus positive. It's positive.",
+    "at": [
+     "It's positive."
+    ]
+   },
+   {
+    "say": "a squared times b. a times a has the same signs, so it's positive. And positive times positive b is positive.",
+    "at": [
+     "a times a",
+     "And positive times positive b"
+    ]
+   },
+   {
+    "say": "And a plus b. Here no rule decides it. It depends on which number is bigger in size, so it isn't necessarily negative.",
+    "at": [
+     "Here no rule",
+     "so it isn't necessarily"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The second example. n is an integer. Which is necessarily odd, four n plus three, or n plus three?",
+    "at": [
+     "n is an integer",
+     "Which is necessarily"
+    ]
+   },
+   {
+    "say": "Four n is two times two n, and two times an integer is always even. That's the definition of even.",
+    "at": [
+     "is always even",
+     "That's the definition"
+    ]
+   },
+   {
+    "say": "Even plus three is always odd, because even plus one is odd, and adding two more keeps it odd. So four n plus three is odd for every integer n.",
+    "at": [
+     "So four n plus",
+     "is odd for"
+    ]
+   },
+   {
+    "say": "But n plus three depends on n. If n is even, it's odd, and if n is odd, it's even. So it isn't necessarily odd.",
+    "at": [
+     "So it isn't necessarily odd"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And the third example. x is between zero and one. Which is bigger, x, or x squared?",
+    "at": [
+     "x is between zero and one",
+     "Which is bigger"
+    ]
+   },
+   {
+    "say": "x squared is x times x. So it's x, times a number smaller than one.",
+    "at": [
+     "x squared is x times x",
+     "So it's x"
+    ]
+   },
+   {
+    "say": "When we multiply a positive number by a number smaller than one, we take only a part of it, so it gets smaller. So x squared is smaller than x.",
+    "at": [
+     "So x squared is smaller"
+    ]
+   },
+   {
+    "say": "We can check with one number. A third times a third is a ninth, and a ninth is smaller than a third. The check agrees with the rule.",
+    "at": [
+     "We can check",
+     "and a ninth is smaller",
+     "than a third"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "How is this different from an insight? An insight is one idea that belongs to one question. It doesn't come back.",
+    "at": [
+     "from an insight",
+     "An insight is one idea",
+     "that belongs to"
+    ]
+   },
+   {
+    "say": "Understanding uses general rules, the same ones again and again, in many questions. That's why it's worth learning as a method.",
+    "at": [
+     "Understanding uses general rules",
+     "same ones again"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So when do we solve by understanding? When they ask what must be true, what could be true, or what cannot be true. And when the question is about signs, about which number is bigger, about even and odd, or about order.",
+    "at": [
+     "solve by understanding",
+     "When they ask what must be true",
+     "be true, what",
+     "And when the question is about signs",
+     "about signs, about"
+    ]
+   },
+   {
+    "say": "Later in the course you'll use it a lot. Most questions on absolute value, on the number line and on integers are solved by understanding.",
+    "at": [
+     "Later in the course you'll use it a lot",
+     "use it a"
+    ]
+   },
+   {
+    "say": "And the trap. Use only a rule that's always true. If you're not sure, plug in numbers as a safety net. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "If you're not sure",
+     "in numbers as"
+    ]
+   }
+  ]
+ ]
+}
