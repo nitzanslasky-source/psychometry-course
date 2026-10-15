@@ -916,14 +916,14 @@ video('geo-001', 'lesson', slides=[
       L("So parallel lines never meet. They never cross each other, they just go on side by side. We mark them with "
         "small arrows.", show(G1K['arr'], 'We mark them'))),
     S('Parallel lines and a transversal',
-      L("Now two parallel lines, a and b, and a line that cuts both of them. We call it a transversal. It makes eight "
+      L("Now two parallel lines, a and b, and one more line that cuts both of them. We call it a transversal. It makes eight "
         "angles, four at each crossing.", show(G1L['line'], 'Now two parallel lines'), show(G1L['nums'], 'It makes eight')),
       L("The angles with even numbers, two, four, six and eight, are the small angles. All the small angles are equal. "
         "Two and four are vertical angles, and six and eight are equal to them too.", show(G1L['small'], 'are the small angles')),
       L("The angles with odd numbers, one, three, five and seven, are the large angles. All the large angles are equal "
         "too.", show(G1L['large'], 'are the large angles')),
       L("And a small angle plus a large angle is always a hundred eighty. Why? Angles one and two sit side by side on "
-        "line a, so they make a straight angle.", show(G1L_t3, 'a small angle plus a large angle'),
+        "line a, so together they make one straight angle.", show(G1L_t3, 'a small angle plus a large angle'),
         pt('g1l_line', 'sit side by side'))),
     S('The same angles, moved down',
       L("Let's put numbers on it. At line a, the small angle is sixty degrees, so the large angle next to it is a "
@@ -1093,14 +1093,14 @@ video('solve-q-r26-t30-01', 'solution', qid='q-r26-t30-01', slides=[
       L("x is at line b, and the only number we have, fifty degrees, is at line a. To move an angle from one line to the "
         "other, the two lines must be parallel. But the question doesn't say that a is parallel to b. [short pause] So "
         "first we'll check if we can prove it.", pt('fig: x', 'x is at line b'), pt('fig: 50°', 'the only number we have')),
-      L("[short pause] Look at line c. Line a makes a right angle with it, and line b makes a right angle with it too. The "
+      L("[short pause] Look at line c. Line a is perpendicular to it, and line b is perpendicular to it too. The "
         "little squares show that.", show(g1['line'], 'Look at line c')),
       L("Two lines that are perpendicular to the same line are parallel. They both go straight across, in the same "
         "direction, so they never meet. So a is parallel to b, even though the question doesn't write it.",
         show(g1['rule'], 'Two lines that are perpendicular to the same line'), show(g1['par'], 'So a is parallel to b')),
       L("Now we don't need line c anymore. It's the usual picture: two parallel lines, a and b, and line d that cuts them.",
         show(g1['focus'], "we don't need line c anymore"), pt('fig: d', 'line d that cuts them')),
-      L("The fifty degrees at line a is a small angle. All the small angles are equal, so the small angle at line b, above "
+      L("The fifty degrees at line a is one of the small angles. All the small angles are equal, so the small angle at line b, above "
         "b and to the right of d, is fifty degrees too.", show(g1['top'], 'The fifty degrees at line a'),
         show(g1['bot'], 'so the small angle at line b')),
       L("x is right next to that fifty, on the other side of line d. Together they make the straight line b, so fifty plus "
@@ -1259,7 +1259,7 @@ video('solve-geo30-g005', 'solution', qid='geo30-g005', slides=[
       L("[short pause] The math way first. Start with the first given, a is parallel to b, and line c cuts both of them. To see it simply, "
         "let's look only at these three lines and ignore the rest of the figure.", show(g5['line'], 'Start with the first given'),
         show(g5['ab'], 'look only at these three lines')),
-      L("Seventy-seven degrees is a small angle where line c crosses line a. Line c crosses line b with the same angles, "
+      L("Seventy-seven degrees is one of the small angles where line c crosses line a. Line c crosses line b with the same angles, "
         "and all the small angles are equal. Look for the Z: from line a, down along line c, to line b. The two angles in "
         "its corners are equal. So the angle between line c and line b, below line b and to the right of line c, is also seventy-seven.",
         pt('fig: 77°', 'Seventy-seven degrees is a small angle'), show(g5['z1'], 'Look for the Z')),
@@ -1363,15 +1363,18 @@ video('solve-geo30-g006', 'solution', qid='geo30-g006', slides=[
         "which is sixty degrees, in our example.", show(g6p['nb'], 'The angle next to each'), show(g6p['xv'], 'which is sixty degrees'),
         show(k6c, 'in our example'))),
     SM('Method 2 · Plugging in numbers', 'Plugging in numbers',
-      L("Now put one hundred forty into each choice and look for sixty. Choice number one, three times one hundred forty "
-        "is four hundred twenty, minus one hundred eighty. That's far more than sixty, so it's out. Choice number two, one "
-        "hundred forty minus one hundred forty is zero, plus one hundred forty is one hundred forty. Out. Choice number "
-        "three, zero minus one hundred forty is negative. Out.", mk('cross', 'choice 1', 'so it\'s out.'),
-        mk('cross', 'choice 2', 'is one hundred forty. Out'), mk('cross', 'choice 3', 'is negative. Out')),
-      L("Choice number four, four hundred twenty minus three hundred sixty, is exactly sixty. Three choices are out, so "
+      L("Now put one hundred forty into each choice and look for sixty. Choice number one says m plus n plus k, minus "
+        "one hundred eighty. Three times one hundred forty is four hundred twenty, minus one hundred eighty. That's far "
+        "more than sixty, so it's out. Choice number two says m minus n plus k. One hundred forty minus one hundred forty "
+        "is zero, plus one hundred forty is one hundred forty. Out. Choice number three says m minus n minus k. Zero minus "
+        "one hundred forty is negative. Out.", pt('choice 1', 'Choice number one says', 'hl', 3.0), mk('cross', 'choice 1', 'so it\'s out.'),
+        pt('choice 2', 'Choice number two says', 'hl', 2.5), mk('cross', 'choice 2', 'is one hundred forty. Out'),
+        pt('choice 3', 'Choice number three says', 'hl', 2.5), mk('cross', 'choice 3', 'is negative. Out')),
+      L("Choice number four says m plus n plus k, minus three hundred sixty. Four hundred twenty minus three hundred "
+        "sixty is exactly sixty. Three choices are out, so "
         "choice number four is our answer. One more check: the four choices gave four different values, two hundred "
         "forty, one hundred forty, a negative and sixty. If two choices had given the same value, we'd plug in again with "
-        "other numbers.", show(k6d, 'Choice number four, four hundred twenty'), mk('tick', 'choice 4', 'so choice number four is our answer'))),
+        "other numbers.", pt('choice 4', 'Choice number four says', 'hl', 3.0), show(k6d, 'Four hundred twenty minus'), mk('tick', 'choice 4', 'so choice number four is our answer'))),
     SM('Method 3 · Insight', 'Overlapping angles',
       L("[pause] And the insight. Look at the three angles m, n and k together. m and k go around most of the turn, and n "
         "covers the rest, so together they cover the whole full turn, three hundred sixty degrees. But they overlap. The "
@@ -1420,11 +1423,11 @@ video('solve-geo30-g007', 'solution', qid='geo30-g007', slides=[
         "options here. We could extend one of the pieces until it meets the other parallel line, or draw a line "
         "perpendicular to both parallel lines. Those options make triangles, which we'll learn later. If you solved it "
         "that way, that's completely fine. Here we'll use only the rules of lines.", show(g7['line'], 'There are several')),
-      L("So here's our auxiliary line. Start at the bend, the point where x is, and draw a line through it, parallel to "
-        "line a and to line b.", show(g7['bend'], 'Start at the bend'), show(g7['aux'], 'and draw a line through it')),
-      L("The new line splits x into two parts. The upper part makes a Z with line a: from line a, along the upper piece, "
+      L("So here's our auxiliary line. Start at the bend, the point where x is, and draw one more line through it, parallel "
+        "to line a and to line b.", show(g7['bend'], 'Start at the bend'), show(g7['aux'], 'and draw one more line')),
+      L("The new line splits x into two parts. The upper part makes the Z with line a: from line a, along the upper piece, "
         "to the new line. The angles in the corners of a Z are equal, so the upper part is thirty-six.",
-        pt('fig: 36°', 'The upper part makes a Z'), show(g7['z1'], 'so the upper part is thirty-six')),
+        pt('fig: 36°', 'The upper part makes the Z'), show(g7['z1'], 'so the upper part is thirty-six')),
       L("The lower part makes a Z with line b, the same way. So the lower part is sixty-two.", pt('fig: 62°', 'The lower part makes a Z'),
         show(g7['z2'], 'So the lower part is sixty-two')),
       L("So x is thirty-six plus sixty-two, which is ninety-eight degrees. Choice number two is our answer. Once you add "
@@ -1488,13 +1491,13 @@ video('solve-q-r26-t30-03', 'solution', qid='q-r26-t30-03', slides=[
         "adds everything.", mk('cross', 'choice 3', 'adds only the left side'), mk('cross', 'choice 4', 'adds everything'))),
     S('Method 2 · The math way: helper lines',
       L("[pause] Now the math way. Not sure you remember the rule? Draw a parallel line through each bend. That always works. Start at the "
-        "bottom, at the lower bend, the sixty-five, and draw a line through it, parallel to a and b.",
-        show(g8['line'], 'Not sure you remember'), show(g8['aux2'], 'and draw a line through it')),
+        "bottom, at the lower bend, the sixty-five, and draw one more line through it, parallel to a and b.",
+        show(g8['line'], 'Not sure you remember'), show(g8['aux2'], 'and draw one more line')),
       L("The new line splits the sixty-five in two. The lower part makes a Z with the thirty-five at line b, so it's "
         "thirty-five. The upper part is sixty-five minus thirty-five, which is thirty.", show(g8['z35'], 'The lower part makes a Z'),
         show(g8['r30'], 'The upper part is sixty-five')),
       L("Now the upper bend, the x. Draw a parallel line through it too. It splits x in two. The lower part of x makes a Z "
-        "with that thirty, so it's thirty. The upper part of x makes a Z with the forty at line a, so it's forty.",
+        "with that thirty, so it's thirty. The upper part of x makes the Z with the forty at line a, so it's forty.",
         show(g8['aux1'], 'Draw a parallel line through it too'), show(g8['z30'], 'The lower part of x'), show(g8['z40'], 'The upper part of x')),
       L("So x is forty plus thirty, which is seventy. Choice number two again. [pause] Okay. I'll see you in the next "
         "question.", show(k8d, 'So x is forty plus thirty'), mk('tick', 'choice 2', 'Choice number two again'))),

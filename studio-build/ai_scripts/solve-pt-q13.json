@@ -62,14 +62,15 @@
     ]
    },
    {
-    "say": "Choice number one, x squared y squared, gives four. It fits. Choice number two gives eight, out. Choice numbers three and four are fractions, a quarter and an eighth, out. So choice number one is our answer.",
+    "say": "Choice number one, x squared y squared, gives four. It fits. Choice number two, x cubed y, gives eight, out. Choice numbers three and four, one over x squared y squared, and one over x cubed y, are fractions, a quarter and an eighth, out. So choice number one is our answer.",
     "at": [
      "Choice number one, x squared",
      "number one, x",
      "squared, gives four",
-     "Choice number two gives",
+     "Choice number two, x cubed",
      "gives eight, out",
      "Choice numbers three",
+     "one over x",
      "a quarter and an eighth",
      "and an eighth, out",
      "So choice number one is our answer"

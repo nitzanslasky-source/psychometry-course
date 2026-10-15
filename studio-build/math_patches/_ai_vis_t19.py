@@ -653,7 +653,7 @@ video('new-operation', 'lesson', slides=[
         "sixteen, twenty-two. Four star two is twelve plus four, sixteen. Swap the inputs, and you get a different answer. "
         "So don't assume a new operation behaves like plus, where the order doesn't matter. Before you calculate, check "
         "which number goes into which slot.", show(no21d, 'Back to the star'), show(no21, 'Two star four is'), show(no21b, 'Four star two is')),
-      L("A question may ask: is a star b always equal to b star a? To show that it's not always true, one example where it "
+      L("Questions may ask: is a star b always equal to b star a? To show that it's not always true, one example where it "
         "fails is enough, like two and four.", show(no22, "To show that it's not always true")),
       L("To show that it's always true, numbers are not enough, because they only check some cases. One way is to write "
         "the rule with letters. Remember, the heart adds the two numbers, and then multiplies by five. So b heart a is five "
@@ -1099,18 +1099,24 @@ video('solve-q-549', 'solution', qid='q-549', slides=[
         "let's solve it. [short pause] We'll solve it in two different ways, with algebra, and then by plugging in a number.",
         pt('choice 1', 'in every choice'), show(r1, 'leave it for later')),
       L("[short pause] Let's start with the math way. With algebra, we write what the diamond does on each side. The diamond squares whatever goes in. "
-        "Choice number one. On the left, six x goes in, so we get six x, squared. That's six squared times x squared, "
+        "Choice number one says: diamond of six x is equal to thirty-six times diamond of x. On the left, six x goes "
+        "in, so we get six x, squared. That's six squared times x squared, "
         "thirty-six x squared. On the right, thirty-six times x squared. Both sides are equal for every x, so this one is "
-        "always true, and it's out.", show(r2, 'six x goes in'), mk('cross', 'choice 1', "and it's out")),
-      L("Choice number two. Diamond of root x is root x, squared, which is x. So the left side is x times x, which is x "
-        "squared. The right side is diamond of x, x squared too. Always true, so it's out.", show(r3, 'Diamond of root x'),
+        "always true, and it's out.", pt('choice 1', 'Choice number one says', 'hl', 3.5), show(r2, 'six x goes'),
+        mk('cross', 'choice 1', "and it's out")),
+      L("Choice number two says: diamond of root x, times diamond of root x, is equal to diamond of x. Diamond of root "
+        "x is root x, squared, which is x. So the left side is x times x, which is x "
+        "squared. The right side is diamond of x, x squared too. Always true, so it's out.",
+        pt('choice 2', 'Choice number two says', 'hl', 4.0), show(r3, 'x is root x, squared'),
         mk('cross', 'choice 2', "Always true, so it's out")),
-      L("Choice number three. On the left, five x, squared, is twenty-five x squared. On the right, five times x squared is "
+      L("Choice number three says: diamond of five x is equal to five times diamond of x. On the left, five x, "
+        "squared, is twenty-five x squared. On the right, five times x squared is "
         "only five x squared. These are equal only when x is zero. For any other x, they're different. So this one is not "
-        "always true, and choice number three is our answer.", show(r4, 'is twenty-five x squared'), mk('tick', 'choice 3', 'and choice number three is our answer')),
-      L("In the exam you'd circle it and move on. But choice number four teaches something useful. x minus seven and seven "
-        "minus x are opposites, and opposites have the same square. So the two sides are always equal.",
-        show(r5, 'are opposites'), mk('cross', 'choice 4', 'always equal'))),
+        "always true, and choice number three is our answer.", pt('choice 3', 'Choice number three says', 'hl', 3.5),
+        show(r4, 'is twenty-five x squared'), mk('tick', 'choice 3', 'and choice number three is our answer')),
+      L("In the exam you'd circle it and move on. But choice number four teaches something useful. It says: diamond of "
+        "x minus seven is equal to diamond of seven minus x. x minus seven and seven minus x are opposites, and opposites have the same square. So the two sides are always equal.",
+        pt('choice 4', 'It says: diamond of', 'hl', 3.5), show(r5, 'are opposites'), mk('cross', 'choice 4', 'always equal'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, because "
         "it's easy and it's not zero. Zero is allowed too, but zero turns many of these products into zero. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six "
@@ -1445,18 +1451,25 @@ video('solve-q-554', 'solution', qid='q-554', slides=[
 # NEW: "must be true for all positive a, b" - break each choice; with algebra (multiply by a positive: no flip) and by
 # understanding (3/x = 3 times the reciprocal; a bigger denominator, a smaller fraction).  Hebrew: both, choice by
 # choice -> two methods here; the wrong choices first, so each method ends on the answer.
-h6 = IH('h6', '(1) $\\frac{3}{a}<3\\ \\to\\ 1<a$: $\\ a=\\frac{1}{2}$: $\\ 6$ ✗', size=30)
-h7 = IH('h7', '(3) $\\frac3a\\cdot\\frac b3=\\frac ba$ ✗', size=30)
+# 2026-10-15 teacher re-record (#149): every choice is read aloud IN FULL as written, diamonds included (W17), then each
+# diamond is turned into 3/(...) aloud, and only then the work; no article "a/an" near the variable a (W18). The choice is
+# highlighted when it is read, the 3/(...) translation is written next, then the work.
+h6 = IH('h6', '(1) $\\blacklozenge(a)=\\frac3a$: $\\ \\frac3a<3$', size=30)
+h6b = IH('h6b', '$3<3a\\ \\to\\ 1<a$', size=30)
+h6c = IH('h6c', '$a=\\frac12$: $\\ 3\\div\\frac12=6$ ✗', size=30)
+h7 = IH('h7', '(3) $\\frac3a\\div\\frac3b=\\frac3a\\cdot\\frac b3=\\frac ba$', size=30)
+h7b = IH('h7b', '$a=1,\\ b=2$: $\\ 2\\ne\\frac12$ ✗', size=30)
 h8 = IH('h8', '(4) $\\frac3a<\\frac3{a+1}$', size=30)
 h8b = IH('h8b', '$3(a+1)<3a$', size=30)
 h8c = IH('h8c', '$a+1<a$', size=30)
 h8d = IH('h8d', '$1<0$ ✗', size=30)
-h9 = IH('h9', '(2) $\\frac3a\\cdot a=3=\\frac3b\\cdot b$ ✓', size=30)
+h9 = IH('h9', '(2) $\\frac3a\\cdot a=\\frac3b\\cdot b$', size=30)
+h9b = IH('h9b', '$3=3$ ✓', size=30)
 i6 = IH('i6', '(1) $a=2$: $\\ \\frac{3}{2}<3$ ✓', size=28)
 i6b = IH('i6b', '$a=1$: $\\ \\frac31=3$, not $<3$ ✗', size=28)
 i7 = I('i7', '(3) $\\div\\frac3b=\\times\\frac b3$: $\\ \\frac ba$ ✗', size=28)
 i8 = I('i8', '(4) bigger denominator, smaller fraction ✗', size=28)
-i9 = I('i9', '(2) a number times its reciprocal is $1$: $\\ 3\\cdot1=3$ ✓', size=28)
+i9 = I('i9', '(2) any number times its reciprocal is $1$: $\\ 3\\cdot1=3$ ✓', size=28)
 video('solve-q-555', 'solution', qid='q-555', slides=[
     S('Method 1 · The math way',
       L("For every number x that's not zero, diamond of x is three over x. Which of the following must be true for all "
@@ -1464,43 +1477,61 @@ video('solve-q-555', 'solution', qid='q-555', slides=[
       L("Must be true means true for every positive a and b. So for each choice, we test whether it works for every "
         "positive a and b, and one allowed pair where it fails rules it out. [short pause] We'll solve it two ways, the "
         "math way, with algebra on each inequality or equation, and then by understanding what the diamond does.", pt('stem', 'Must be true means')),
-      L("[short pause] Let's start with the math way. Choice number one says three over a is smaller than three. a is positive, "
+      L("[short pause] Let's start with the math way. Choice number one says: diamond of a is smaller than three. "
+        "Diamond of a is three over a. So the choice says three over a is smaller than three. The letter a is positive, "
         "so we can multiply both sides by a without flipping the sign. We get three is smaller than three a. Divide both "
-        "sides by three, and one is smaller than a. That's true only when a is bigger than one. But a could be one half. "
-        "Then three over one half is six, and six is not smaller than three. So choice number one is out.",
-        show(h6, 'Choice number one says'), mk('cross', 'choice 1', 'So choice number one is out')),
-      L("Choice number three. Three over a, divided by three over b. To divide by a fraction, multiply by its reciprocal. "
-        "Three over a times b over three. The threes cancel, and we get b over a. The choice says a over b, and b over a "
-        "equals a over b only when a and b are equal. For example, a is one and b is two. Then b over a is two, but a over "
-        "b is one half. So it's not true for every positive a and b, and choice number three is out.", show(h7, 'Choice number three. Three over a'), mk('cross', 'choice 3', 'and choice number three is out'))),
+        "sides by three, and one is smaller than a. That's true only when a is bigger than one. But the number a could be "
+        "one half. Then three divided by one half is six, and six is not smaller than three. So choice number one is out.",
+        pt('choice 1', 'Choice number one says', 'hl', 3.0), show(h6, 'Diamond of a is three over a'),
+        show(h6b, 'We get three is smaller'), show(h6c, 'But the number a could be'),
+        mk('cross', 'choice 1', 'So choice number one is out')),
+      L("Choice number three says: diamond of a, divided by diamond of b, is equal to a over b. Diamond of a is three "
+        "over a, and diamond of b is three over b. So on the left, we have three over a, divided by three over b. To "
+        "divide by any fraction, we multiply by its reciprocal. So that's three over a, times b over three. The threes "
+        "cancel, and we get b over a. The choice says a over b, and b over a equals a over b only when a and b are equal. "
+        "For example, a is one and b is two. Then b over a is two, but a over b is one half. So it's not true for every "
+        "positive a and b, and choice number three is out.",
+        pt('choice 3', 'Choice number three says', 'hl', 4.0), show(h7, 'Diamond of a is three over a, and'),
+        show(h7b, 'For example, a is one'), mk('cross', 'choice 3', 'and choice number three is out'))),
     S('Method 1 · The math way',
-      L("Choice number four says three over a is smaller than three over, in brackets, a plus one. The whole a plus one "
-        "is the bottom of that fraction. Both bottoms are positive, so we can "
+      L("Choice number four says: diamond of a is smaller than diamond of a plus one. The whole a plus one goes into "
+        "the diamond. Diamond of a is three over a. And diamond of a plus one is three over a plus one, with the whole a "
+        "plus one at the bottom. Both bottoms are positive, so we can "
         "multiply both sides by a and by a plus one without flipping. We get three times, in brackets, a plus one, is "
         "smaller than three a. Divide by three, and a plus one is smaller than a. Take a off both sides, and one is smaller "
-        "than zero. That's never true. So choice number four is out.", show(h8, 'Choice number four says'),
+        "than zero. That's never true. So choice number four is out.",
+        pt('choice 4', 'Choice number four says', 'hl', 3.5), show(h8, 'Diamond of a is three over a. And'),
         show(h8b, 'We get three times'), show(h8c, 'and a plus one is smaller than a'), show(h8d, 'and one is smaller than zero'),
         mk('cross', 'choice 4', 'So choice number four is out')),
-      L("Choice number two. Three over a, times a. The a cancels, and we get three. And three over b, times b, is three "
-        "too. Three equals three for every a and b. So choice number two must be true, and it's our answer.",
-        show(h9, 'Choice number two. Three over a'), mk('tick', 'choice 2', "and it's our answer")),
+      L("Choice number two says: diamond of a, times a, is equal to diamond of b, times b. Diamond of a is three over "
+        "a, and diamond of b is three over b. So the left side is three over a, times a. The a cancels, and we get three. "
+        "And three over b, times b, is three too. Three equals three for every a and b. So choice number two must be "
+        "true, and it's our answer.",
+        pt('choice 2', 'Choice number two says', 'hl', 3.5), show(h9, 'Diamond of a is three over a, and'),
+        show(h9b, 'Three equals three'), mk('tick', 'choice 2', "and it's our answer")),
       sb='Method 1 · The math way'),
     S('Method 2 · Understanding',
-      L("[pause] Now by understanding. Three over x means three divided by x. Choice number one. For a bigger than one it "
-        "works. Three over two is smaller than three. But for a equal to one, we get three, which isn't smaller than three. "
-        "So not always.", show(i6, 'For a bigger than one'),
-        show(i6b, 'But for a equal to one')),
-      L("Choice number three. Dividing by three over b is like multiplying by b over three. So the a ends up at the bottom "
-        "and the b on top, b over a. That's a over b only when a equals b. For example, a is one and b is two. Then b over "
-        "a is two, but a over b is one half. So not always.", show(i7, 'Dividing by three over b')),
-      L("Choice number four. Both fractions have the same positive top, three, and positive bottoms. With the same "
-        "positive top, a bigger denominator makes a smaller fraction. a plus one is bigger than a, so three over the whole "
-        "a plus one is smaller than three over a. That's the opposite of what the choice says, so it's never true.",
-        show(i8, 'A bigger denominator')),
-      L("Choice number two. Three over a is three times one over a, and one over a is the reciprocal of a. A number times "
-        "its reciprocal is one. So three over a, times a, is three times one, three, for every a. The same for b. So it's "
-        "always three equals three, choice number two. [pause] Okay. I'll see you in the next question.",
-        show(i9, 'A number times its reciprocal'), mk('tick', 'choice 2', 'always three equals three'))),
+      L("[pause] Now by understanding. Diamond of x is three over x, so it means three divided by x. Choice number one "
+        "says: diamond of a is smaller than three. That's three over a, smaller than three. When a is bigger than one, it "
+        "works. Three over two is smaller than three. But when a is equal to one, we get three, which isn't smaller than "
+        "three. So not always.", pt('choice 1', 'Choice number one says', 'hl', 3.0), show(i6, 'When a is bigger than one'),
+        show(i6b, 'But when a is equal to one')),
+      L("Choice number three says: diamond of a, divided by diamond of b, is equal to a over b. That's three over a, "
+        "divided by three over b. Dividing by three over b is like multiplying by b over three. So the a ends up at the "
+        "bottom and the b on top, b over a. That's a over b only when a equals b. For example, a is one and b is two. "
+        "Then b over a is two, but a over b is one half. So not always.",
+        pt('choice 3', 'Choice number three says', 'hl', 4.0), show(i7, 'Dividing by three over b')),
+      L("Choice number four says: diamond of a is smaller than diamond of a plus one. That's three over a, smaller "
+        "than three over the whole a plus one. Both fractions have the same positive top, three, and positive bottoms. "
+        "With the same positive top, the bigger the denominator, the smaller the fraction. And a plus one is bigger than "
+        "a, so three over the whole a plus one is smaller than three over a. That's the opposite of what the choice says, "
+        "so it's never true.", pt('choice 4', 'Choice number four says', 'hl', 3.5), show(i8, 'the bigger the denominator')),
+      L("Choice number two says: diamond of a, times a, is equal to diamond of b, times b. Three over a is three times "
+        "one over a, and one over a is the reciprocal of a. Any number times its reciprocal is one. So three over a, "
+        "times a, is three times one, three, for every a. The same for b. So it's always three equals three. Choice "
+        "number two is our answer, and I'll see you in the next question.",
+        pt('choice 2', 'Choice number two says', 'hl', 3.5), show(i9, 'Any number times its reciprocal'),
+        mk('tick', 'choice 2', 'always three equals three'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-556 (Hebrew Q7)
@@ -1524,15 +1555,20 @@ video('solve-q-556', 'solution', qid='q-556', slides=[
       L("[short pause] A definition in words is easy to misread, so let's see it in numbers first. Fifty is two times five "
         "times five, so it has two fives. Seventy-five is three times five times five, two fives as well. And seven has no "
         "fives at all, so its count is zero.", show(j5, "let's see it in numbers")),
-      L("Now let's plug in the simplest value, x is one. One has no fives, so its count is zero. Choice number one. Five "
-        "times one is five, which has one five. One squared is one, with no fives. One is not zero, so choice number one is "
-        "out. Choice number two. One plus five is six, and six is two times three, no fives, so zero. On the right, zero "
-        "plus one is one. Zero is not one, out. Choice number three. Five has one five, but five times zero is zero. One is "
-        "not zero, out.", show(j6, 'One has no fives'), show(j6a, 'with no fives'), mk('cross', 'choice 1', 'so choice number one is'),
-        show(j6b, 'zero plus one is one'),
-        mk('cross', 'choice 2', 'Zero is not one, out'), show(j6c, 'five times zero is zero'), mk('cross', 'choice 3', 'not zero, out')),
-      L("Choice number four. Five has one five, and zero plus one is one. One equals one. Three choices are out, so choice "
-        "number four is our answer.", show(j7, 'One equals one'), mk('tick', 'choice 4', 'number four is our answer'))),
+      L("Now let's plug in the simplest value, x is one. One has no fives, so its count is zero. Choice number one says: "
+        "the double bracket of five x equals the double bracket of x squared. Five times one is five, which has one five. "
+        "One squared is one, with no fives. One is not zero, so choice number one is out. Choice number two says: the "
+        "double bracket of x plus five equals the double bracket of x, plus one. One plus five is six, and six is two "
+        "times three, no fives, so zero. On the right, zero plus one is one. Zero is not one, out. Choice number three "
+        "says: the double bracket of five x equals five times the double bracket of x. Five has one five, but five times "
+        "zero is zero. One is not zero, out.", show(j6, 'One has no fives'), pt('choice 1', 'Choice number one says', 'hl', 3.5),
+        show(j6a, 'with no fives'), mk('cross', 'choice 1', 'so choice number one is'),
+        pt('choice 2', 'Choice number two says', 'hl', 3.5), show(j6b, 'zero plus one is one'),
+        mk('cross', 'choice 2', 'Zero is not one, out'), pt('choice 3', 'Choice number three says', 'hl', 3.5),
+        show(j6c, 'five times zero is zero'), mk('cross', 'choice 3', 'not zero, out')),
+      L("Choice number four says: the double bracket of five x equals the double bracket of x, plus one. Five has one "
+        "five, and zero plus one is one. One equals one. Three choices are out, so choice number four is our answer.",
+        pt('choice 4', 'Choice number four says', 'hl', 3.5), show(j7, 'One equals one'), mk('tick', 'choice 4', 'number four is our answer'))),
     S('Method 2 · Understanding',
       L("[pause] Now by understanding. Let's see why it's always true. When we multiply x by five, we add exactly one more five to its prime "
         "factors, whatever x is. So the count of fives goes up by exactly one. That's choice number four, for every x. For "

@@ -112,35 +112,36 @@
   ],
   [
    {
-    "say": "Now we put alpha a hundred ten and beta eighty into each choice. Half alpha is fifty-five, and half beta is forty. Choice number one: sixty-five plus fifty-five minus forty is eighty. Not fifty, out. Choice number two: a hundred thirty plus fifty-five minus forty is a hundred forty-five. Out.",
+    "say": "Now we put alpha a hundred ten and beta eighty into each choice. Half alpha is fifty-five, and half beta is forty. Choice number one says sixty-five, plus half alpha, minus half beta. Sixty-five plus fifty-five minus forty is eighty. Not fifty, out. Choice number two says a hundred thirty, plus half alpha, minus half beta. A hundred thirty plus fifty-five minus forty is a hundred forty-five. Out.",
     "at": [
      "a hundred ten",
      "Half alpha is fifty-five",
      "half beta is",
-     "Choice number one",
-     "number one: sixty-five",
-     "minus forty is",
+     "Choice number one says",
+     "Sixty-five plus fifty-five",
      "Not fifty, out",
-     "Choice number two",
-     "thirty plus fifty-five",
+     "Choice number two says",
+     "hundred thirty, plus",
+     "A hundred thirty plus fifty-five",
      "is a hundred forty-five. Out"
     ]
    },
    {
-    "say": "Choice number three: sixty-five minus fifty-five plus forty is fifty. It matches. But one match isn't enough to be sure: to mark it, we cross out the other choices too. That's the drawback of plugging in. If you're out of time, though, it's a very reasonable guess.",
+    "say": "Choice number three says sixty-five, minus half alpha, plus half beta. Sixty-five minus fifty-five plus forty is fifty. It matches. But one match isn't enough to be sure: to mark it, we cross out the other choices too. That's the drawback of plugging in. If you're out of time, though, it's a very reasonable guess.",
     "at": [
-     "Choice number three",
-     "number three: sixty-five",
-     "plus forty is",
+     "Choice number three says",
+     "minus half alpha",
+     "Sixty-five minus fifty-five",
      "It matches",
-     "it, we cross"
+     "But one match"
     ]
    },
    {
-    "say": "Choice number four: a hundred thirty minus fifty-five plus forty is a hundred fifteen. Out. So choice number three is our answer.",
+    "say": "Choice number four says a hundred thirty, minus half alpha, plus half beta. A hundred thirty minus fifty-five plus forty is a hundred fifteen. Out. So choice number three is our answer.",
     "at": [
-     "Choice number four",
-     "thirty minus fifty-five",
+     "Choice number four says",
+     "plus half beta",
+     "A hundred thirty minus fifty-five",
      "is a hundred fifteen. Out",
      "So choice number three is our answer"
     ]
@@ -148,6 +149,7 @@
    {
     "say": "If you're strong in algebra and can do the full solution in about a minute, that's great. For most students, at the end of a section, plugging in numbers is much easier. [pause] Okay. I'll see you in the next question.",
     "at": [
+     "If you're strong",
      "plugging in numbers is much easier"
     ]
    }

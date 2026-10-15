@@ -84,22 +84,27 @@
   ],
   [
    {
-    "say": "Now put one hundred forty into each choice and look for sixty. Choice number one, three times one hundred forty is four hundred twenty, minus one hundred eighty. That's far more than sixty, so it's out. Choice number two, one hundred forty minus one hundred forty is zero, plus one hundred forty is one hundred forty. Out. Choice number three, zero minus one hundred forty is negative. Out.",
+    "say": "Now put one hundred forty into each choice and look for sixty. Choice number one says m plus n plus k, minus one hundred eighty. Three times one hundred forty is four hundred twenty, minus one hundred eighty. That's far more than sixty, so it's out. Choice number two says m minus n plus k. One hundred forty minus one hundred forty is zero, plus one hundred forty is one hundred forty. Out. Choice number three says m minus n minus k. Zero minus one hundred forty is negative. Out.",
     "at": [
      "forty into each",
-     "number one, three",
-     "hundred forty is",
+     "Choice number one says",
+     "plus n plus",
      "so it's out.",
+     "Choice number two says",
+     "minus n plus",
      "is one hundred forty. Out",
+     "Choice number three says",
+     "minus n minus",
      "is negative. Out"
     ]
    },
    {
-    "say": "Choice number four, four hundred twenty minus three hundred sixty, is exactly sixty. Three choices are out, so choice number four is our answer. One more check: the four choices gave four different values, two hundred forty, one hundred forty, a negative and sixty. If two choices had given the same value, we'd plug in again with other numbers.",
+    "say": "Choice number four says m plus n plus k, minus three hundred sixty. Four hundred twenty minus three hundred sixty is exactly sixty. Three choices are out, so choice number four is our answer. One more check: the four choices gave four different values, two hundred forty, one hundred forty, a negative and sixty. If two choices had given the same value, we'd plug in again with other numbers.",
     "at": [
-     "Choice number four, four hundred twenty",
-     "number four, four",
-     "minus three hundred",
+     "Choice number four says",
+     "plus n plus",
+     "Four hundred twenty minus",
+     "hundred sixty is",
      "so choice number four is our answer"
     ]
    }

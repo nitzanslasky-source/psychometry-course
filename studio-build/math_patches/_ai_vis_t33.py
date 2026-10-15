@@ -3781,9 +3781,11 @@ video('solve-geo33-g096', 'solution', qid='geo33-g096', slides=[
       L("The triangle is two, two and two, so its perimeter is six. The curved part is half of two pi times two, so it's "
         "two pi. The diameter is four. So the ratio is two pi plus four, over six. Divide the top and the bottom by two, "
         "and it's pi plus two, over three.", show(f7g96b['r2'], 'The triangle is two, two and two')),
-      L("Now r equals two in the choices. Choice number two divides by three r, which is six, so it's pi plus two over "
-        "six. That's half of our value, so it's out. Choice number four multiplies by r, so it's twice our value. It's out "
-        "too.", mk('cross', 'choice 2', 'That\'s half of our value'), mk('cross', 'choice 4', "It's out too")),
+      L("Now r equals two in the choices. Choice number two says pi plus two, over three r. Three r is six, so it's pi "
+        "plus two over six. That's half of our value, so it's out. Choice number four says r times pi plus two, over "
+        "three. It multiplies by r, so it's twice our value. It's out too.", pt('choice 2', 'Choice number two says', 'hl', 3.0),
+        mk('cross', 'choice 2', 'That\'s half of our value'), pt('choice 4', 'Choice number four says', 'hl', 3.0),
+        mk('cross', 'choice 4', "It's out too")),
       L("Only choice number three gives pi plus two, over three. Choice number three again.",
         mk('tick', 'choice 3', 'Choice number three again'))),
     SM('Method 3 · Estimation', 'Estimating sizes',
@@ -4472,15 +4474,19 @@ video('solve-geo33-g102', 'solution', qid='geo33-g102', slides=[
       L("Now we put theta fifteen and r one in every choice, and cross out any choice that doesn't give two pi over three. "
         "Even if one fits early, we check them all, because an example can fit more than one choice.",
         show(f8k102b, 'Now we put theta')),
-      L("Choice number one: fifteen over fifteen is one, and one minus one is zero. Zero, so it's out.",
-        show(f8p1, 'Choice number one'), mk('cross', 'choice 1', "so it's out")),
-      L("Choice number two: fifteen over thirty is a half, and one minus a half is a half. That gives pi over two, out.",
-        show(f8p2, 'Choice number two'), mk('cross', 'choice 2', 'That gives pi over two')),
-      L("Choice number three: fifteen over ninety is a sixth, and one minus a sixth is five sixths. Five pi over six, out.",
-        show(f8p3, 'Choice number three'), mk('cross', 'choice 3', 'Five pi over six')),
-      L("Choice number four: fifteen over forty-five is a third, and one minus a third is two thirds. Two pi over three, it "
-        "fits, and the other three are out. Choice number four is our answer. [pause] Okay. I'll see you in the next "
-        "question.", show(f8p4, 'Choice number four:'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
+      L("Choice number one says pi r, times one minus theta over fifteen. Fifteen over fifteen is one, and one minus one "
+        "is zero. Zero, so it's out.", pt('choice 1', 'Choice number one says', 'hl', 3.0),
+        show(f8p1, 'Fifteen over fifteen'), mk('cross', 'choice 1', "so it's out")),
+      L("Choice number two says pi r, times one minus theta over thirty. Fifteen over thirty is a half, and one minus a "
+        "half is a half. That gives pi over two, out.", pt('choice 2', 'Choice number two says', 'hl', 3.0),
+        show(f8p2, 'Fifteen over thirty'), mk('cross', 'choice 2', 'That gives pi over two')),
+      L("Choice number three says pi r, times one minus theta over ninety. Fifteen over ninety is a sixth, and one minus "
+        "a sixth is five sixths. Five pi over six, out.", pt('choice 3', 'Choice number three says', 'hl', 3.0),
+        show(f8p3, 'Fifteen over ninety'), mk('cross', 'choice 3', 'Five pi over six')),
+      L("Choice number four says pi r, times one minus theta over forty-five. Fifteen over forty-five is a third, and "
+        "one minus a third is two thirds. Two pi over three, it fits, and the other three are out. Choice number four is "
+        "our answer, and I'll see you in the next question.", pt('choice 4', 'Choice number four says', 'hl', 3.0),
+        show(f8p4, 'Fifteen over forty-five'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
 ])
 
 
@@ -4672,7 +4678,7 @@ video('r26-t33-more-tools', 'lesson', slides=[
         "sector A O B is a third of it, so it's twelve pi.", show(f9r6['line'], 'Say the radius is six'),
         show(f9r6['sec'], 'The sector A O B'), show(f9t4, 'so it\'s twelve pi')),
       L("Now triangle A O B. The four radii make a rhombus, O A P B. Let's take it out. O P cuts it into our two "
-        "equilateral triangles. Remember, the area of an equilateral triangle is a squared, times root three, over four. "
+        "equilateral triangles. Remember, the area of every equilateral triangle is a squared, times root three, over four. "
         "Six squared is thirty-six, and thirty-six over four is nine, so each one is nine root three.",
         show(f9r6['rh'], 'make a rhombus'), show(f9num['line'], "Let's take it out"), show(f9num['eq'], 'O P cuts it')),
       L("Now cut the same rhombus the other way, with the chord A B. A diagonal cuts a rhombus into two equal halves, and "
@@ -4802,7 +4808,7 @@ video('solve-q-r26-t33-04', 'solution', qid='q-r26-t33-04', slides=[
         "each.", show(f9q4b['line'], 'Now triangle A O B'), show(f9q4b['sides'], 'so both are six'),
         show(f9q4b['ang'], "That's sixty each")),
       L("Sixty, sixty and sixty. So it's an equilateral triangle, and A B is six too.", show(f9q4b['ab6'], 'A B is six too')),
-      L("The area of an equilateral triangle is a squared, times root three, over four. Six squared is thirty-six, and "
+      L("The area of every equilateral triangle is a squared, times root three, over four. Six squared is thirty-six, and "
         "thirty-six over four is nine. So the area is nine root three.", show(f9q4b['area'], 'Six squared is thirty-six')),
       L("If you don't remember the formula, draw the height from O. It cuts the triangle into two gold triangles. The "
         "short leg is three, so the height is three root three. Six times three root three, over two, is nine root three "

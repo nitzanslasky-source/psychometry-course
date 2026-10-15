@@ -959,18 +959,22 @@ video('solve-pt-q03', 'solution', qid='pt-q03', slides=[
     SM('Method 2 · Plugging in numbers', 'Rule out three',
       L("Now the choices, with a and b equal to one. A choice that gives two could be the right one. A choice that gives "
         "anything else is out."),
-      L("Choice number one. One over one is one, plus one over one, one. That's two. It fits, but we can't mark it yet, so "
-        "we keep checking.", show(f1h4, 'Choice number one')),
-      L("Choice number two. One over two is a half, plus another half, that's one. One is not two, so choice number two "
-        "is out.", show(f1h5, 'Choice number two. One'), mk('cross', 'choice 2', 'so choice number two is out')),
-      L("Choice number three. One minus one is zero, and zero on top makes the whole fraction zero. Choice number three "
-        "is out.", show(f1h6, 'Choice number three. One'), mk('cross', 'choice 3', 'Choice number three is out')),
-      L("Choice number four. One plus one is two, and two times two is four. Choice number four is out too.",
-        show(f1h7, 'Choice number four. One'), mk('cross', 'choice 4', 'Choice number four is out')),
+      L("Choice number one says a over b, plus b over a. One over one is one, plus one over one, one. That's two. It "
+        "fits, but we can't mark it yet, so we keep checking.", pt('choice 1', 'Choice number one says', 'hl', 3.0),
+        show(f1h4, 'One over one is one')),
+      L("Choice number two says a over two b, plus b over two a. One over two is a half, plus another half, that's one. "
+        "One is not two, so choice number two is out.", pt('choice 2', 'Choice number two says', 'hl', 3.0),
+        show(f1h5, 'One over two is a half'), mk('cross', 'choice 2', 'so choice number two is out')),
+      L("Choice number three says a plus b, times a minus b, all over a b. One minus one is zero, and zero on top makes "
+        "the whole fraction zero. Choice number three is out.", pt('choice 3', 'Choice number three says', 'hl', 3.5),
+        show(f1h6, 'One minus one is zero'), mk('cross', 'choice 3', 'Choice number three is out')),
+      L("Choice number four says two times, a squared plus b squared. One plus one is two, and two times two is four. "
+        "Choice number four is out too.", pt('choice 4', 'Choice number four says', 'hl', 3.0),
+        show(f1h7, 'One plus one is two'), mk('cross', 'choice 4', 'Choice number four is out')),
       L("Three choices are out, so we can mark choice number one.", mk('tick', 'choice 1', 'so we can mark choice number one')),
       L("This is a very important point. When we plug in numbers, we don't look for the right answer. We rule out three. "
         "Why? Because a wrong expression can give the right number by chance. For example, a plus b also gives two when a "
-        "and b are one, but it's a different expression. And if two choices are still left, we plug in a second pair of "
+        "and b are one, but it's another expression. And if two choices are still left, we plug in a second pair of "
         "numbers, and check only those two.", show(f1h8, 'We rule out three'))),
     SM('Method 2 · Plugging in numbers', 'When do I plug in numbers?',
       L("So when do I plug in numbers? When there are letters in the question and letters in the choices, like here. Any "
@@ -1079,8 +1083,8 @@ video('solve-pt-q04', 'solution', qid='pt-q04', slides=[
       L("So we need the radius of the base. The edge of the cube is three a. If we slide the front edge inward, we see "
         "that the diameter of the base is exactly as long as the edge. So the diameter is three a.",
         show(f1k['edge'], 'The edge of the cube is three a'), show(f1k['slide'], 'If we slide the front edge inward')),
-      L("A diameter is two radii, so the radius is half of three a, which is three a over two. And the height of the "
-        "cylinder is the height of the cube, three a.", show(f1k['r'], 'A diameter is two radii'), show(f1m2, 'so the radius is half'),
+      L("The diameter is two radii, so the radius is half of three a, which is three a over two. And the height of the "
+        "cylinder is the height of the cube, three a.", show(f1k['r'], 'The diameter is two radii'), show(f1m2, 'so the radius is half'),
         show(f1k['h'], 'And the height of the'), show(f1m3, 'the height of the cube'))),
     SM('Method 1 · The math way', 'The bracket trap',
       L("Now into the formula. Pi, times the radius squared, times the height.", show(f1n1, 'Now into the formula')),
@@ -1105,17 +1109,19 @@ video('solve-pt-q04', 'solution', qid='pt-q04', slides=[
         show(f1kk['cyl'], 'The cylinder is inside the cube')),
       L("Every choice has a cubed with pi in front. Pi is a little more than three, and for an estimate, three is enough.",
         show(f1kk['pi'], 'three is enough')),
-      L("Choice number one. Twenty-seven times three is eighty-one, and over two, that's forty and a half. That's more "
+      L("Choice number one says twenty-seven pi over two, times a cubed. Twenty-seven times three is eighty-one, and over two, that's forty and a half. That's more "
         "than twenty-seven, so the cylinder would be bigger than the cube. That makes no sense, so choice number one is "
-        "out.", show(f1o4, 'Twenty-seven times three is eighty-one'), mk('cross', 'choice 1', 'so choice number one is out')),
-      L("Choice number two. Twenty-seven times three is eighty-one, three times the cube. Choice number two is out.",
-        show(f1o5, 'Choice number two. Twenty'), mk('cross', 'choice 2', 'Choice number two is out')),
-      L("Choice number three. Thirty-six times three is a hundred eight, four times the cube. Choice number three is out "
-        "too.", show(f1o6, 'Thirty-six times three'), mk('cross', 'choice 3', 'Choice number three is out')),
+        "out.", pt('choice 1', 'Choice number one says', 'hl', 3.0), show(f1o4, 'Twenty-seven times three is eighty-one'),
+        mk('cross', 'choice 1', 'so choice number one is out')),
+      L("Choice number two says twenty-seven pi, times a cubed. Twenty-seven times three is eighty-one, three times the "
+        "cube. Choice number two is out.", pt('choice 2', 'Choice number two says', 'hl', 3.0),
+        show(f1o5, 'Twenty-seven times three'), mk('cross', 'choice 2', 'Choice number two is out')),
+      L("Choice number three says thirty-six pi, times a cubed. Thirty-six times three is a hundred eight, four times "
+        "the cube. Choice number three is out too.", pt('choice 3', 'Choice number three says', 'hl', 3.0), show(f1o6, 'Thirty-six times three'), mk('cross', 'choice 3', 'Choice number three is out')),
       L("Three choices make no sense, so we can mark choice number four.",
         mk('tick', 'choice 4', 'so we can mark choice number four'))),
     SM('Method 2 · Estimation', 'Why these answers?',
-      L("By the way, choice number four with pi as three is eighty-one over four, a bit more than twenty. That's about "
+      L("By the way, choice number four says twenty-seven pi over four, times a cubed. With pi as three, it's eighty-one over four, a bit more than twenty. That's about "
         "three quarters of twenty-seven, and that makes sense for a cylinder inside a cube.",
         show(f1o7, 'By the way, choice number four')),
       L("Look at the choices they gave. Not three quarters, two thirds and four fifths of the cube, which would be hard "
@@ -2104,8 +2110,8 @@ video('pt51-plug-numbers', 'lesson', slides=[
     S('Keep the conditions',
       L("The number must obey every condition in the question. If it says x is at least four, x can't be two.",
         show(f3k1, 'If it says x is at least four')),
-      L("If a is a positive whole number, it can't be zero, and it can't be a half. And if a letter is in the bottom of a "
-        "fraction, it can't be zero, because we can't divide by zero.", show(f3k2, 'If a is a positive whole number'),
+      L("If a must be positive and whole, it can't be zero, and it can't be one half. And if a letter is in the bottom of a "
+        "fraction, it can't be zero, because we can't divide by zero.", show(f3k2, 'If a must be positive and whole'),
         show(f3k3, 'in the bottom of a fraction')),
       L("In a figure, choose a value that looks right in the drawing. If an angle looks like about fifty degrees, don't "
         "plug in a hundred twenty.", show(f3k4, 'In a figure')),
@@ -2334,15 +2340,18 @@ video('solve-pt-q11', 'solution', qid='pt-q11', slides=[
     SM('Method 1 · Plugging in numbers', 'Rule out three',
       L("Now which choice gives a hundred twenty? Actually, we don't look for it. We rule out three choices, with alpha "
         "equal to fifty.", show(f3h0, 'Now which choice')),
-      L("Choice number one, sixty plus fifty, is a hundred ten. Out.", show(f3h1, 'is a hundred ten'),
+      L("Choice number one says sixty plus alpha. Sixty plus fifty is a hundred ten. Out.", pt('choice 1', 'Choice number one says', 'hl', 2.5),
+        show(f3h1, 'is a hundred ten'),
         mk('cross', 'choice 1', 'is a hundred ten')),
-      L("Choice number two, ninety plus half of fifty. Half of fifty is twenty-five, so the result ends in five, and a "
-        "hundred twenty ends in zero. Out, without finishing.", show(f3h2, 'so the result ends in five'),
+      L("Choice number two says ninety plus half alpha. That's ninety plus half of fifty. Half of fifty is twenty-five, so the result ends in five, and a "
+        "hundred twenty ends in zero. Out, without finishing.", pt('choice 2', 'Choice number two says', 'hl', 2.5),
+        pt('choice 2', "That's ninety plus"), show(f3h2, 'so the result ends in five'),
         mk('cross', 'choice 2', 'Out, without finishing')),
-      L("Choice number three. Four times fifty is two hundred, and two hundred minus a hundred eighty is twenty. That's angle D, not beta. "
-        "Out.", show(f3h3, "That's angle D"), mk('cross', 'choice 3', "That's angle D")),
-      L("Three choices are out, so choice number four is our answer, without checking it. One choice must be right, and we "
-        "showed the other three are wrong.", show(f3h4, 'so choice number four is our answer'),
+      L("Choice number three says four alpha minus a hundred eighty. Four times fifty is two hundred, and two hundred minus a hundred eighty is twenty. That's angle D, not beta. "
+        "Out.", pt('choice 3', 'Choice number three says', 'hl', 3.0), pt('choice 3', 'Four times fifty'), show(f3h3, "That's angle D"), mk('cross', 'choice 3', "That's angle D")),
+      L("Choice number four says two hundred seventy minus three alpha. Three choices are out, so choice number four is "
+        "our answer, without checking it. One choice must be right, and we showed the other three are wrong.",
+        pt('choice 4', 'Choice number four says', 'hl', 3.0), show(f3h4, 'so choice number four is our answer'),
         mk('tick', 'choice 4', 'so choice number four is our answer'))),
     SM('Method 2 · The math way', 'With letters',
       L("[pause] Now the math way, the same steps with alpha. In triangle A B C, angle B is ninety minus alpha. The angle above it is the "
@@ -2395,7 +2404,7 @@ video('solve-pt-q12', 'solution', qid='pt-q12', slides=[
         "can plug in numbers. [short pause] We'll solve it by plugging in, and then see the short algebra too.",
         pt('stem', 'an expression with a letter'))),
     S('Method 1 · Plugging in numbers',
-      L("Which number? a must be a positive whole number, so the smallest is one. It keeps the factorials tiny.",
+      L("Which number? a must be positive and whole, so the smallest is one. It keeps the factorials tiny.",
         show(f3p1, 'the smallest is one')),
       L("One factorial is one. One plus two is three, and three factorial is six. One times six is six. So the right "
         "choice must give six.", show(f3p1b, 'One times six')),
@@ -2468,9 +2477,10 @@ video('solve-pt-q13', 'solution', qid='pt-q13', slides=[
         "words.", show(f3i4, 'A pen holds two cubic')),
       L("He wrote x cubed times y words. Two cubed is eight, and eight times one is eight words. Eight words, two words a pen, so he "
         "had four pens.", show(f3i5, 'Two cubed is eight'), show(f3i5b, 'Eight words, two words a pen')),
-      L("Choice number one, x squared y squared, gives four. It fits. Choice number two gives eight, out. Choice numbers "
-        "three and four are fractions, a quarter and an eighth, out. So choice number one is our answer.",
-        show(f3i6, 'Choice number one, x squared'), show(f3i6b, 'Choice number two gives'), mk('cross', 'choice 2', 'gives eight, out'),
+      L("Choice number one, x squared y squared, gives four. It fits. Choice number two, x cubed y, gives eight, out. "
+        "Choice numbers three and four, one over x squared y squared, and one over x cubed y, are fractions, a quarter "
+        "and an eighth, out. So choice number one is our answer.",
+        show(f3i6, 'Choice number one, x squared'), show(f3i6b, 'Choice number two, x cubed'), mk('cross', 'choice 2', 'gives eight, out'),
         show(f3i6c, 'Choice numbers three'),
         mk('cross', 'choice 3', 'a quarter and an eighth'), mk('cross', 'choice 4', 'and an eighth, out'),
         mk('tick', 'choice 1', 'So choice number one is our answer'))),
@@ -2515,14 +2525,19 @@ video('solve-pt-q14', 'solution', qid='pt-q14', slides=[
         "sixty. So x is sixty.", show(f3c3, 'The discount is forty, so')),
       L("And the discount is forty out of a hundred, forty percent. So the right choice must give forty when x is sixty.",
         show(f3c4, 'And the discount is forty')),
-      L("Now we rule out whatever isn't forty. Choice number one, forty times a hundred, over sixty plus forty. Sixty plus "
-        "forty is a hundred, and the hundreds cancel. That leaves forty, so it stays.", show(f3c5, 'so it stays')),
-      L("Choice number two, forty times sixty, over a hundred. Forty times sixty is two thousand four hundred, and over a "
-        "hundred is twenty-four. Out.", show(f3c6, 'is twenty-four'), mk('cross', 'choice 2', 'is twenty-four')),
-      L("Choice number three, sixty plus forty, over a hundred. A hundred over a hundred is one. Out.",
+      L("Now we rule out whatever isn't forty. Choice number one says forty times a hundred, over x plus forty. With x "
+        "sixty, that's forty times a hundred, over sixty plus forty. Sixty plus forty is a hundred, and the hundreds cancel. That leaves forty, so it stays.", pt('choice 1', 'Choice number one says', 'hl', 3.0),
+        pt('choice 1', 'With x sixty'), pt('choice 1', 'Sixty plus forty is a hundred'), show(f3c5, 'so it stays')),
+      L("Choice number two says forty x over a hundred. That's forty times sixty, over a hundred. Forty times sixty is two thousand four hundred, and over a "
+        "hundred is twenty-four. Out.", pt('choice 2', 'Choice number two says', 'hl', 2.5), pt('choice 2', "That's forty times sixty"),
+        show(f3c6, 'is twenty-four'), mk('cross', 'choice 2', 'is twenty-four')),
+      L("Choice number three says x plus forty, over a hundred. That's sixty plus forty, over a hundred. A hundred over a hundred is one. Out.",
+        pt('choice 3', 'Choice number three says', 'hl', 2.5), pt('choice 3', "That's sixty plus forty"),
         show(f3c7, 'is one. Out'), mk('cross', 'choice 3', 'is one. Out')),
-      L("Choice number four, a hundred times a hundred, over forty. A hundred over forty is two and a half, and times a "
+      L("Choice number four says x plus forty, times a hundred, over forty. That's a hundred times a hundred, over "
+        "forty. A hundred over forty is two and a half, and times a "
         "hundred it's two hundred fifty. Out. So choice number one is our answer.",
+        pt('choice 4', 'Choice number four says', 'hl', 3.0), pt('choice 4', "That's a hundred times"),
         show(f3c8, "it's two hundred fifty"), mk('cross', 'choice 4', "it's two hundred fifty"),
         mk('tick', 'choice 1', 'So choice number one is our answer'))),
     S('Method 2 · The math way',
@@ -3165,7 +3180,7 @@ video('pt51-understanding', 'lesson', slides=[
         show(u51a0, 'a is negative and b is positive')),
       L("Look at a times b. Remember the rule for multiplying: different signs give a negative. a is negative and b is "
         "positive, so a times b is always negative, for every a and b that fit.", show(u51a1, 'so a times b is always negative')),
-      L("Why not the others? b minus a. Taking away a negative number is like adding a positive one, so b minus a is "
+      L("Why not the others? b minus a. Taking away any negative number is like adding its opposite, so b minus a is "
         "positive plus positive. It's positive.", show(u51a2, "It's positive.")),
       L("a squared times b. a times a has the same signs, so it's positive. And positive times positive b is positive.",
         show(u51a3, 'And positive times positive b')),

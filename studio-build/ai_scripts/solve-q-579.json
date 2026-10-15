@@ -81,31 +81,32 @@
     ]
    },
    {
-    "say": "In a right triangle, the longest side is longer than each leg. So r is bigger than p and bigger than q, always. Those are choice numbers one and four. With algebra it's the same idea: r squared is q squared plus a positive number, and all the numbers are positive, so r is bigger than q.",
+    "say": "Choice number one says q is smaller than r, and choice number four says p is smaller than r. In a right triangle, the longest side is longer than each leg. So r is bigger than p and bigger than q, always. So choice numbers one and four always hold. With algebra it's the same idea: r squared is q squared plus a positive number, and all the numbers are positive, so r is bigger than q.",
     "at": [
+     "Choice number one says",
+     "choice number four says",
      "the longest side is longer",
      "than each leg",
      "So r is bigger than p",
      "p and bigger",
      "numbers one and",
-     "squared plus a"
+     "idea: r squared"
     ]
    },
    {
-    "say": "And in any triangle, two sides together are longer than the third side. So p plus q is bigger than r, always. That's choice number two.",
+    "say": "Choice number two says r is smaller than p plus q. And in any triangle, two sides together are longer than the third side. So p plus q is bigger than r, always. That's choice number two.",
     "at": [
+     "Choice number two says",
      "two sides together are longer",
      "than the third",
      "So p plus q is bigger",
-     "bigger than r",
-     "number two"
+     "bigger than r"
     ]
    },
    {
     "say": "But nothing in the triangle limits how long r is. So only choice number three can fail. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
      "So only choice number three can fail",
-     "can fail. Choice",
      "number three is"
     ]
    }

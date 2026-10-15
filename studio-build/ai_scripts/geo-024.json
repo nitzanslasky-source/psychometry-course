@@ -7,7 +7,7 @@
   ],
   [
    {
-    "say": "A Pythagorean triple is three whole numbers that fit the theorem, a squared plus b squared equals c squared. The best-known one is three, four and five. Five is the hypotenuse, because the hypotenuse is always the longest side. Three squared plus four squared is nine plus sixteen, which is twenty-five, and five squared is twenty-five. It works.",
+    "say": "Every Pythagorean triple is three whole numbers that fit the theorem, a squared plus b squared equals c squared. The best-known one is three, four and five. Five is the hypotenuse, because the hypotenuse is always the longest side. Three squared plus four squared is nine plus sixteen, which is twenty-five, and five squared is twenty-five. It works.",
     "at": [
      "three whole numbers",
      "The best-known one",

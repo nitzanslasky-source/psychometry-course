@@ -15,10 +15,10 @@
     ]
    },
    {
-    "say": "If a is a positive whole number, it can't be zero, and it can't be a half. And if a letter is in the bottom of a fraction, it can't be zero, because we can't divide by zero.",
+    "say": "If a must be positive and whole, it can't be zero, and it can't be one half. And if a letter is in the bottom of a fraction, it can't be zero, because we can't divide by zero.",
     "at": [
-     "If a is a positive whole number",
-     "whole number, it",
+     "If a must be positive and whole",
+     "and whole, it",
      "in the bottom of a fraction",
      "fraction, it can't"
     ]

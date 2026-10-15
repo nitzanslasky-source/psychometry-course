@@ -1122,7 +1122,7 @@ Marks per sentence, located from the point where the failed attempt broke off (9
   - Questions: "Choice number N is our answer, and I'll see you in the next question." She said "next lesson" by mistake 5 times.
   - Lessons: "Take a moment to memorize this … and I'll see you in the next video."
 
-### WRITING RULES for scripts she will read (topic 21 onward): W1-W16
+### WRITING RULES for scripts she will read (topic 21 onward): W1-W18
 These add to R1-R36 and the Codex review standard. Where they differ from the AI-voice rules, these apply to **teacher-read** scripts.
 
 1. **W1. Keep sentences short.** Aim for 6-12 words and split anything over 14. Her M rate doubles from 0.21 per sentence (6-10 words) to 0.45-0.51 (14-22 words). Put a trailing clause in its own sentence ("Now calculate with the two ends. That gives the new range.").
@@ -1165,6 +1165,14 @@ These add to R1-R36 and the Codex review standard. Where they differ from the AI
     - "respectively" and "multipliers", and formal terms in general (0.57 marks per sentence).
 15. **W15. Keep "Why?" with its answer in the same line.** For example: "Why m and not k? Because a and b are different numbers." A lone "Why?" line gets 2.3 marks per paragraph.
 16. **W16. Don't script her fillers.** She adds "so", "right?", "now", "just" and "also" by herself (270 "right?" with 3 in the scripts). Write at most one "right?" per paragraph, and no "Okay." before the goodbye.
+17. **W17. Before working on a choice, read the whole choice aloud as written (operations/symbols included), then translate.** (Teacher, 2026-10-15, re-recording q-555: "you don't read out the whole choice, so it's confusing reading off the screen without knowing what you are talking about.")
+    - First the full choice: "Choice number three says: diamond of a, divided by diamond of b, is equal to a over b."
+    - Then the translation of each symbol: "Diamond of a is three over a, and diamond of b is three over b."
+    - Only then the work. Never jump straight to "three over a…" or to a test value.
+    - On the board: the choice is highlighted at "Choice number N says", then the translation is written, then the steps.
+    - In a second method, read the choice again briefly ("Choice number one says: diamond of a is smaller than three."); in a plug-in method, read it first and then say it with the test value ("Choice number two says x minus sixty. One hundred ten minus sixty is fifty.").
+    - Exception: a choice that is only a number or a single short expression ("Choice number two, twelve") is already read in full.
+18. **W18. Never use the article "a/an" near the variable a; avoid ambiguous letter-words.** "a fraction" → "any fraction" / "one fraction"; "a number" → "any number"; "a bigger denominator makes a smaller fraction" → "the bigger the denominator, the smaller the fraction". Where useful, say "the letter a" or "the number a" the first time. The same goes for other letter-words next to a variable of that name (e.g. "I" when there is a variable I). The prompter shows math variables in italic serif with their own colour (`math_patches/_math_vars_display.py`), but the spoken sentence must be clear without it.
 
 **Put her most frequent elaborations in the script from the start:**
 1. the reason after each claim;

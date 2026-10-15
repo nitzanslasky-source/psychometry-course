@@ -122,6 +122,8 @@ def _display_number_input(text):
         name = m.group(2).lower()
         if (numerator == 1) != (not name.endswith('s')):
             return m.group(0)
+        if numerator == _FRACTION_WORDS[name]:      # 2026-10-15: "two halves" / "three thirds" are a count of pieces, not 2/2
+            return m.group(0)
         fractions.append('%d/%d' % (numerator, _FRACTION_WORDS[name]))
         return '\ue002%d\ue003' % (len(fractions)-1)
     text = _FRACTION_RX.sub(fraction, text)
@@ -196,6 +198,17 @@ _L = r"(?<![A-Za-z0-9'’])[b-hj-z](?![A-Za-z0-9'’])"   # a one-letter variabl
 _ATOM = r"(?:−?(?:%s|\d+/\d+|(?<![A-Za-z0-9'’])[b-hj-z](?![A-Za-z0-9'’])|\|[^|\s]+\||√[^\s,.;:?!]+)[⁰¹²³⁴⁵⁶⁷⁸⁹ⁿ^]*)" % _N
 
 
+def _spoken_comma_op(m, sym, m_all):
+    """2026-10-15 (Codex batch B): a spoken comma before plus/minus/times after a result ("... is four hundred twenty,
+    minus one hundred eighty") starts a new step: keep it in words, or the display shows a false chain (3 × 140 = 420 − 180)"""
+    if m.group(2) and sym.strip() in '+−×÷' and re.search(r'(?:\bis|=)\s*$', m.string[:m.start()]):
+        return m.group(0)
+    # "x plus forty, over a hundred" is (x + 40)/100: a comma before over / divided by after a sum keeps the words
+    if m.group(2) and sym.strip() in ('/', '÷') and re.search(r'(?:[+−]|\b(?:plus|minus))\s*$', m.string[:m.start()]):
+        return m.group(0)
+    return m_all(m.group(1)) + sym + m_all(m.group(3))
+
+
 def math_display(text):
     display_input, fractions = _display_number_input(text)
     s, nums = _numbers(display_input)
@@ -230,11 +243,11 @@ def math_display(text):
     for _ in range(4):
         before = s
         for w, sym in ops:
-            s = re.sub(r'(%s),? %s (%s)' % (_ATOM, w, _ATOM), lambda m: m_all(m.group(1)) + sym + m_all(m.group(2)), s)
+            s = re.sub(r'(%s)(,?) %s (%s)' % (_ATOM, w, _ATOM), lambda m, sym=sym: _spoken_comma_op(m, sym, m_all), s)
         if s == before:
             break
     # unary minus before a number
-    s = re.sub(r'\b[Mm]inus (%s)' % _N, lambda m: '−' + m_all(m.group(1)), s)
+    s = re.sub(r'(?<!\d, )(?<!\ue001, )\b[Mm]inus (%s)' % _N, lambda m: '−' + m_all(m.group(1)), s)   # not "420, minus 180" (a new step)
     # contexts that make a small number math
     for rx in [r'\b[Nn]umber (%s)', r'\bequals? to (%s)', r'\bequals (%s)',
                _L.replace('%', '%%') + r" is (%s)", r"[²³⁴⁵⁶⁷⁸⁹ⁿ|] is (%s)",
@@ -252,6 +265,8 @@ def math_display(text):
     def fr(m):
         v = num_of(m.group(1)); d = _FRAC[m.group(2).lower()]
         if v is None or (v == 1) != (not m.group(2).endswith('s')) and m.group(2) not in ('halves',):
+            return m.group(0)
+        if v == d:                                   # 2026-10-15: "two halves" is a count of pieces, not 2/2
             return m.group(0)
         mark.discard(int(m.group(1)[1:-1])); return '%d/%d' % (v, d)
     s = re.sub(r'(%s) (%s)\b' % (_N, '|'.join(_FRAC)), fr, s)
@@ -277,8 +292,24 @@ def prompter_display(video_id, paras):
             spec = importlib.util.spec_from_file_location('codex_reading_display', path)
             _PROMPTER_FORMATTER = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(_PROMPTER_FORMATTER)
-        return _PROMPTER_FORMATTER.display_for(video_id, paras, READING_ROOT, math_display)
-    return [[math_display(p) for p in slide] for slide in paras]
+        out = _PROMPTER_FORMATTER.display_for(video_id, paras, READING_ROOT, math_display)
+    else:
+        out = [[math_display(p) for p in slide] for slide in paras]
+    # 2026-10-15 (teacher, q-555): finish half-worded math (3/a, ◆(a), a = 1) and mark the one-letter math variables
+    # (rendered as math italics), for EVERY lesson, cached registry displays included. Display only.
+    whole = ' '.join(p for slide in paras for p in slide)
+    return [[_math_vars().display(p, whole, video_id) for p in slide] for slide in out]
+
+
+_MATH_VARS = None
+
+def _math_vars():
+    global _MATH_VARS
+    if _MATH_VARS is None:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location('_math_vars_display', os.path.join(HERE, 'math_patches', '_math_vars_display.py'))
+        _MATH_VARS = importlib.util.module_from_spec(spec); spec.loader.exec_module(_MATH_VARS)
+    return _MATH_VARS
 
 
 def paragraphs(vid):
@@ -559,11 +590,11 @@ PAGE = r"""<!doctype html>
 <style>
 :root{--bg:#f7f6f3;--panel:#fff;--ink:#1f2328;--muted:#6b7280;--faint:#9ca3af;--line:#e7e5e0;--soft:#f1efea;
 --accent:#0f766e;--accent-soft:#e6f4f1;--rec:#c2410c;--rec-soft:#fdf0e9;--ok:#15803d;--ok-soft:#e8f5ec;--warn:#b45309;--warn-soft:#fdf6e7;
---mist:#b91c1c;--radius:12px;--prompt:30px}
+--mist:#b91c1c;--radius:12px;--prompt:30px;--mvar:#1d4ed8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17181a;--panel:#1f2023;--ink:#ececea;--muted:#a1a1aa;--faint:#71717a;--line:#2e2f33;--soft:#26272b;
---accent:#2dd4bf;--accent-soft:#12332f;--rec:#fb923c;--rec-soft:#3a2416;--ok:#4ade80;--ok-soft:#14321f;--warn:#fbbf24;--warn-soft:#3a2e12;--mist:#f87171}}
+--accent:#2dd4bf;--accent-soft:#12332f;--rec:#fb923c;--rec-soft:#3a2416;--ok:#4ade80;--ok-soft:#14321f;--warn:#fbbf24;--warn-soft:#3a2e12;--mist:#f87171;--mvar:#93b4fd}}
 :root[data-theme="dark"]{--bg:#17181a;--panel:#1f2023;--ink:#ececea;--muted:#a1a1aa;--faint:#71717a;--line:#2e2f33;--soft:#26272b;
---accent:#2dd4bf;--accent-soft:#12332f;--rec:#fb923c;--rec-soft:#3a2416;--ok:#4ade80;--ok-soft:#14321f;--warn:#fbbf24;--warn-soft:#3a2e12;--mist:#f87171}
+--accent:#2dd4bf;--accent-soft:#12332f;--rec:#fb923c;--rec-soft:#3a2416;--ok:#4ade80;--ok-soft:#14321f;--warn:#fbbf24;--warn-soft:#3a2e12;--mist:#f87171;--mvar:#93b4fd}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
 body{background:var(--bg);color:var(--ink);font:15px/1.45 ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;flex-direction:column}
@@ -638,6 +669,8 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
 .p{font:400 var(--prompt)/1.55 Georgia,"Iowan Old Style",serif;margin:0 0 .55em;padding:.25em .6em .3em;border-radius:10px;border-left:4px solid transparent;color:var(--muted);transition:background .2s,color .2s;cursor:pointer;position:relative}
 .p.done{color:var(--faint)}
 .p.cur{background:none;border-left-color:var(--accent);color:var(--ink)}
+.p .mv{font-family:"Cambria Math","STIX Two Math","Times New Roman",Times,serif;font-style:italic;color:var(--mvar);padding:0 .04em;letter-spacing:.01em}
+.p:not(.cur) .mv{opacity:.8}
 .p .mk{position:absolute;right:8px;top:6px;font:700 12px ui-sans-serif,sans-serif;color:var(--mist)}
 .p.flash{animation:fl .6s}
 .mode{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
@@ -832,6 +865,8 @@ const norm=t=>String(t).replace(/\s+/g,' ').trim();
 const LS={get(k,d){try{const v=localStorage.getItem('reading-studio-'+k);return v==null?d:JSON.parse(v)}catch{return d}},set(k,v){try{localStorage.setItem('reading-studio-'+k,JSON.stringify(v))}catch{}}};
 function toast(m,ms=3200){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),ms)}
 function fmt(s,tenths){s=Math.max(0,s);const m=Math.floor(s/60),r=s-m*60;return m+':'+(tenths?r.toFixed(1).padStart(4,'0'):String(Math.floor(r)).padStart(2,'0'))}
+// 2026-10-15 display only: one-letter math variables (marked \ue010x\ue011 by math_patches/_math_vars_display.py) as math italics
+function mvars(h){return String(h).replace(/\ue010([^\ue011]+)\ue011/g,'<i class="mv">$1</i>')}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 
 /* ---------------- state ---------------- */
@@ -930,7 +965,7 @@ function renderParas(){
   const ch=new Set(changedList()),corrections=new Set(videoCorrectionList()),task=(DATA.videoCorrections||{})[v.id],note=$('#videoCorrectionNote');
   note.hidden=!corrections.size;
   note.textContent=corrections.size?'VIDEO CORRECTION — '+(task.mode==='full'?'Choose Full read and record a new complete take using the current script.':'Choose Re-read paragraphs; the marked paragraphs are preselected. '+task.notes.filter(n=>corrections.has(n.index)).map(n=>'Paragraph '+(n.index+1)+': '+n.note).join(' '))+' This is an instruction, not part of the spoken script.':'';
-  $('#paras').innerHTML=(v.disp||v.paras).map(sl=>'<div class="slide">'+sl.map(p=>{const kk=k++;return '<p class="p" data-k="'+kk+'">'+esc(p).replace(/\n/g,'<br>')+(corrections.has(kk)?'<span class="vfix">Video correction · rerecord</span>':ch.has(kk)?'<span class="chg">changed</span>':'')+'</p>'}).join('')+'</div>').join('');
+  $('#paras').innerHTML=(v.disp||v.paras).map(sl=>'<div class="slide">'+sl.map(p=>{const kk=k++;return '<p class="p" data-k="'+kk+'">'+mvars(esc(p)).replace(/\n/g,'<br>')+(corrections.has(kk)?'<span class="vfix">Video correction · rerecord</span>':ch.has(kk)?'<span class="chg">changed</span>':'')+'</p>'}).join('')+'</div>').join('');
   $('#paras').querySelectorAll('.p').forEach(el=>el.onclick=e=>{e.stopPropagation();const kk=+el.dataset.k;if(S.rec&&!S.rec.paused)nextPara();else if(S.mode==='patch'&&!S.rec){S.sel.has(kk)?S.sel.delete(kk):S.sel.add(kk);if(S.sel.has(kk))S.para=kk;else if(!S.sel.has(S.para))S.para=order()[0]??0;paintParas()}else setPara(kk,'jump')});
   $('#prompter').scrollTop=0;paintParas();
 }

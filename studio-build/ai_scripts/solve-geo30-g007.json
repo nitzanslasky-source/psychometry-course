@@ -27,18 +27,18 @@
     ]
    },
    {
-    "say": "So here's our auxiliary line. Start at the bend, the point where x is, and draw a line through it, parallel to line a and to line b.",
+    "say": "So here's our auxiliary line. Start at the bend, the point where x is, and draw one more line through it, parallel to line a and to line b.",
     "at": [
      "Start at the bend",
      "point where x",
-     "and draw a line through it",
-     "and to line"
+     "and draw one more line",
+     "a and to"
     ]
    },
    {
-    "say": "The new line splits x into two parts. The upper part makes a Z with line a: from line a, along the upper piece, to the new line. The angles in the corners of a Z are equal, so the upper part is thirty-six.",
+    "say": "The new line splits x into two parts. The upper part makes the Z with line a: from line a, along the upper piece, to the new line. The angles in the corners of a Z are equal, so the upper part is thirty-six.",
     "at": [
-     "The upper part makes a Z",
+     "The upper part makes the Z",
      "piece, to the",
      "so the upper part is thirty-six"
     ]

@@ -5173,18 +5173,36 @@
           [
             "we get six x, squared",
             "we get (6x)²"
+          ],
+          [
+            "diamond of six x is equal to thirty-six times diamond of x",
+            "◆(6x) = 36 × ◆(x)"
           ]
         ],
         "1.4": [
           [
             "Diamond of root x is root x, squared",
             "Diamond of √x is (√x)²"
+          ],
+          [
+            "diamond of root x, times diamond of root x, is equal to diamond of x",
+            "◆(√x) × ◆(√x) = ◆(x)"
           ]
         ],
         "1.5": [
           [
             "five x, squared, is",
             "(5x)² is"
+          ],
+          [
+            "diamond of five x is equal to five times diamond of x",
+            "◆(5x) = 5 × ◆(x)"
+          ]
+        ],
+        "1.6": [
+          [
+            "diamond of x minus seven is equal to diamond of seven minus x",
+            "◆(x − 7) = ◆(7 − x)"
           ]
         ]
       }
@@ -5298,16 +5316,20 @@
       "disp": [],
       "recorded_when_published": false,
       "scope_replacements": {
-        "1.3": [
+        "2.1": [
           [
-            "three over one half",
-            "3/(1/2)"
+            "smaller than diamond of a plus one",
+            "smaller than diamond of, in brackets, a plus one"
+          ],
+          [
+            "And diamond of a plus one is three over a plus one",
+            "And diamond of, in brackets, a plus one, is three over, in brackets, a plus one"
           ]
         ],
         "3.3": [
           [
-            "three over the whole a plus one",
-            "3/(a + 1)"
+            "smaller than diamond of a plus one",
+            "smaller than diamond of, in brackets, a plus one"
           ]
         ]
       }
@@ -5952,6 +5974,14 @@
           ],
           [
             "one hundred forty minus one hundred forty is zero, plus one hundred forty is one hundred forty",
+            "140 − 140 = 0, and 0 + 140 = 140"
+          ],
+          [
+            "Three times one hundred forty is four hundred twenty, minus one hundred eighty",
+            "3 × 140 = 420, minus 180"
+          ],
+          [
+            "One hundred forty minus one hundred forty is zero, plus one hundred forty is one hundred forty",
             "140 − 140 = 0, and 0 + 140 = 140"
           ]
         ]
@@ -7926,6 +7956,14 @@
           [
             "pi plus two over six",
             "(π + 2)/6"
+          ],
+          [
+            "pi plus two, over three r",
+            "(π + 2)/(3r)"
+          ],
+          [
+            "r times pi plus two, over three",
+            "r(π + 2)/3"
           ]
         ],
         "2.8": [
@@ -8210,6 +8248,42 @@
         "5.1": [
           [
             "two pi over three",
+            "2π/3"
+          ]
+        ],
+        "5.2": [
+          [
+            "pi r, times one minus theta over fifteen",
+            "πr(1 − θ/15)"
+          ]
+        ],
+        "5.3": [
+          [
+            "pi r, times one minus theta over thirty",
+            "πr(1 − θ/30)"
+          ],
+          [
+            "That gives pi over two",
+            "That gives π/2"
+          ]
+        ],
+        "5.4": [
+          [
+            "pi r, times one minus theta over ninety",
+            "πr(1 − θ/90)"
+          ],
+          [
+            "Five pi over six",
+            "5π/6"
+          ]
+        ],
+        "5.5": [
+          [
+            "pi r, times one minus theta over forty-five",
+            "πr(1 − θ/45)"
+          ],
+          [
+            "Two pi over three",
             "2π/3"
           ]
         ]
@@ -8633,6 +8707,24 @@
             "Two squared is four, plus two to the power of one, two",
             "2² is 4, plus 2¹, 2"
           ]
+        ],
+        "3.3": [
+          [
+            "a over two b, plus b over two a",
+            "a/(2b) + b/(2a)"
+          ]
+        ],
+        "3.4": [
+          [
+            "a plus b, times a minus b, all over a b",
+            "(a + b)(a − b)/(ab)"
+          ]
+        ],
+        "3.5": [
+          [
+            "two times, a squared plus b squared",
+            "2(a² + b²)"
+          ]
         ]
       }
     },
@@ -8670,6 +8762,30 @@
           [
             "two hundred squared was forty thousand",
             "200² was 40,000"
+          ]
+        ],
+        "2.5": [
+          [
+            "twenty-seven pi over two, times a cubed",
+            "27πa³/2"
+          ]
+        ],
+        "2.6": [
+          [
+            "twenty-seven pi, times a cubed",
+            "27πa³"
+          ]
+        ],
+        "2.7": [
+          [
+            "thirty-six pi, times a cubed",
+            "36πa³"
+          ]
+        ],
+        "3.1": [
+          [
+            "twenty-seven pi over four, times a cubed",
+            "27πa³/4"
           ]
         ]
       }
@@ -8954,6 +9070,30 @@
             "two hundred seventy minus three alpha",
             "270 − 3α"
           ]
+        ],
+        "2.2": [
+          [
+            "sixty plus alpha",
+            "60 + α"
+          ]
+        ],
+        "2.3": [
+          [
+            "ninety plus half alpha",
+            "90 + α/2"
+          ]
+        ],
+        "2.4": [
+          [
+            "four alpha minus a hundred eighty",
+            "4α − 180"
+          ]
+        ],
+        "2.5": [
+          [
+            "two hundred seventy minus three alpha",
+            "270 − 3α"
+          ]
         ]
       }
     },
@@ -9039,6 +9179,18 @@
           [
             "x squared y squared",
             "x²y²"
+          ],
+          [
+            "Choice number one, x squared y squared",
+            "Choice number one, x²y²"
+          ],
+          [
+            "x cubed y, gives eight",
+            "x³y, gives eight"
+          ],
+          [
+            "one over x squared y squared, and one over x cubed y",
+            "1/(x²y²), and 1/(x³y)"
           ]
         ],
         "2.2": [
@@ -9062,6 +9214,10 @@
           [
             "forty times a hundred, over sixty plus forty",
             "(40 × 100)/(60 + 40)"
+          ],
+          [
+            "forty times a hundred, over x plus forty",
+            "(40 × 100)/(x + 40)"
           ]
         ],
         "1.8": [
@@ -9074,12 +9230,20 @@
           [
             "sixty plus forty, over a hundred",
             "(60 + 40)/100"
+          ],
+          [
+            "x plus forty, over a hundred",
+            "(x + 40)/100"
           ]
         ],
         "1.10": [
           [
             "a hundred times a hundred, over forty",
             "(100 × 100)/40"
+          ],
+          [
+            "x plus forty, times a hundred, over forty",
+            "(x + 40) × 100/40"
           ]
         ],
         "2.1": [
@@ -9270,6 +9434,33 @@
       "disp": [],
       "recorded_when_published": false,
       "scope_replacements": {}
+    },
+    "solve-q-556": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.4": [
+          [
+            "the double bracket of five x equals the double bracket of x squared",
+            "⟦5x⟧ = ⟦x²⟧"
+          ],
+          [
+            "the double bracket of x plus five equals the double bracket of x, plus one",
+            "⟦x + 5⟧ = ⟦x⟧ + 1"
+          ],
+          [
+            "the double bracket of five x equals five times the double bracket of x",
+            "⟦5x⟧ = 5 × ⟦x⟧"
+          ]
+        ],
+        "1.5": [
+          [
+            "the double bracket of five x equals the double bracket of x, plus one",
+            "⟦5x⟧ = ⟦x⟧ + 1"
+          ]
+        ]
+      }
     }
   }
 }

@@ -13,35 +13,43 @@
    },
    "Must be true means true for every positive a and b. So for each choice, we test whether it works for every positive a and b, and one allowed pair where it fails rules it out. [short pause] We'll solve it two ways, the math way, with algebra on each inequality or equation, and then by understanding what the diamond does.",
    {
-    "say": "[short pause] Let's start with the math way. Choice number one says three over a is smaller than three. a is positive, so we can multiply both sides by a without flipping the sign. We get three is smaller than three a. Divide both sides by three, and one is smaller than a. That's true only when a is bigger than one. But a could be one half. Then three over one half is six, and six is not smaller than three. So choice number one is out.",
+    "say": "[short pause] Let's start with the math way. Choice number one says: diamond of a is smaller than three. Diamond of a is three over a. So the choice says three over a is smaller than three. The letter a is positive, so we can multiply both sides by a without flipping the sign. We get three is smaller than three a. Divide both sides by three, and one is smaller than a. That's true only when a is bigger than one. But the number a could be one half. Then three divided by one half is six, and six is not smaller than three. So choice number one is out.",
     "at": [
-     "Let's start",
      "Choice number one says",
-     "number one says",
-     "a is smaller",
+     "of a is",
+     "Diamond of a is three over a",
+     "So the choice",
+     "We get three is smaller",
+     "than three a",
+     "But the number a could be",
+     "be one half",
      "So choice number one is out"
     ]
    },
    {
-    "say": "Choice number three. Three over a, divided by three over b. To divide by a fraction, multiply by its reciprocal. Three over a times b over three. The threes cancel, and we get b over a. The choice says a over b, and b over a equals a over b only when a and b are equal. For example, a is one and b is two. Then b over a is two, but a over b is one half. So it's not true for every positive a and b, and choice number three is out.",
+    "say": "Choice number three says: diamond of a, divided by diamond of b, is equal to a over b. Diamond of a is three over a, and diamond of b is three over b. So on the left, we have three over a, divided by three over b. To divide by any fraction, we multiply by its reciprocal. So that's three over a, times b over three. The threes cancel, and we get b over a. The choice says a over b, and b over a equals a over b only when a and b are equal. For example, a is one and b is two. Then b over a is two, but a over b is one half. So it's not true for every positive a and b, and choice number three is out.",
     "at": [
-     "Choice number three. Three over a",
-     "number three. Three",
-     "Three over a",
+     "Choice number three says",
+     "of b, is",
+     "Diamond of a is three over a, and",
+     "over a, and",
+     "For example, a is one",
+     "and b is",
      "and choice number three is out"
     ]
    }
   ],
   [
    {
-    "say": "Choice number four says three over a is smaller than three over, in brackets, a plus one. The whole a plus one is the bottom of that fraction. Both bottoms are positive, so we can multiply both sides by a and by a plus one without flipping. We get three times, in brackets, a plus one, is smaller than three a. Divide by three, and a plus one is smaller than a. Take a off both sides, and one is smaller than zero. That's never true. So choice number four is out.",
+    "say": "Choice number four says: diamond of a is smaller than diamond of a plus one. The whole a plus one goes into the diamond. Diamond of a is three over a. And diamond of a plus one is three over a plus one, with the whole a plus one at the bottom. Both bottoms are positive, so we can multiply both sides by a and by a plus one without flipping. We get three times, in brackets, a plus one, is smaller than three a. Divide by three, and a plus one is smaller than a. Take a off both sides, and one is smaller than zero. That's never true. So choice number four is out.",
     "at": [
      "Choice number",
      "Choice number four says",
-     "number four says",
-     "a is smaller",
+     "of a is",
+     "Diamond of a is three over a. And",
+     "And diamond of",
      "We get three times",
-     "brackets, a plus one, is",
+     "brackets, a plus",
      "and a plus one is smaller than a",
      "smaller than a",
      "and one is smaller than zero",
@@ -50,52 +58,57 @@
     ]
    },
    {
-    "say": "Choice number two. Three over a, times a. The a cancels, and we get three. And three over b, times b, is three too. Three equals three for every a and b. So choice number two must be true, and it's our answer.",
+    "say": "Choice number two says: diamond of a, times a, is equal to diamond of b, times b. Diamond of a is three over a, and diamond of b is three over b. So the left side is three over a, times a. The a cancels, and we get three. And three over b, times b, is three too. Three equals three for every a and b. So choice number two must be true, and it's our answer.",
     "at": [
-     "Choice number two. Three over a",
-     "number two. Three",
-     "Three over a",
+     "Choice number two says",
+     "Diamond of a is three over a, and",
+     "over a, and",
+     "Three equals three",
+     "a and b",
      "and it's our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now by understanding. Three over x means three divided by x. Choice number one. For a bigger than one it works. Three over two is smaller than three. But for a equal to one, we get three, which isn't smaller than three. So not always.",
+    "say": "[pause] Now by understanding. Diamond of x is three over x, so it means three divided by x. Choice number one says: diamond of a is smaller than three. That's three over a, smaller than three. When a is bigger than one, it works. Three over two is smaller than three. But when a is equal to one, we get three, which isn't smaller than three. So not always.",
     "at": [
-     "over x means",
-     "number one. For",
-     "For a bigger than one",
-     "Three over two",
-     "But for a equal to one",
-     "one, we get"
+     "of x is",
+     "Choice number one says",
+     "of a is",
+     "When a is bigger than one",
+     "one, it works",
+     "But when a is equal to one",
+     "to one, we"
     ]
    },
    {
-    "say": "Choice number three. Dividing by three over b is like multiplying by b over three. So the a ends up at the bottom and the b on top, b over a. That's a over b only when a equals b. For example, a is one and b is two. Then b over a is two, but a over b is one half. So not always.",
+    "say": "Choice number three says: diamond of a, divided by diamond of b, is equal to a over b. That's three over a, divided by three over b. Dividing by three over b is like multiplying by b over three. So the a ends up at the bottom and the b on top, b over a. That's a over b only when a equals b. For example, a is one and b is two. Then b over a is two, but a over b is one half. So not always.",
     "at": [
-     "number three. Dividing",
+     "Choice number three says",
+     "of b, is",
      "Dividing by three over b",
      "is like multiplying"
     ]
    },
    {
-    "say": "Choice number four. Both fractions have the same positive top, three, and positive bottoms. With the same positive top, a bigger denominator makes a smaller fraction. a plus one is bigger than a, so three over the whole a plus one is smaller than three over a. That's the opposite of what the choice says, so it's never true.",
+    "say": "Choice number four says: diamond of a is smaller than diamond of a plus one. That's three over a, smaller than three over the whole a plus one. Both fractions have the same positive top, three, and positive bottoms. With the same positive top, the bigger the denominator, the smaller the fraction. And a plus one is bigger than a, so three over the whole a plus one is smaller than three over a. That's the opposite of what the choice says, so it's never true.",
     "at": [
-     "number four. Both",
-     "bottoms. With the",
-     "A bigger denominator",
-     "a plus one"
+     "Choice number four says",
+     "That's three over",
+     "the bigger the denominator",
+     "smaller the fraction"
     ]
    },
    {
-    "say": "Choice number two. Three over a is three times one over a, and one over a is the reciprocal of a. A number times its reciprocal is one. So three over a, times a, is three times one, three, for every a. The same for b. So it's always three equals three, choice number two. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice number two says: diamond of a, times a, is equal to diamond of b, times b. Three over a is three times one over a, and one over a is the reciprocal of a. Any number times its reciprocal is one. So three over a, times a, is three times one, three, for every a. The same for b. So it's always three equals three. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
-     "number two. Three",
-     "one over a is",
-     "A number times its reciprocal",
+     "Choice number two says",
+     "Three over a",
+     "Any number times its reciprocal",
      "So three over",
-     "always three equals three"
+     "always three equals three",
+     "number two is"
     ]
    }
   ]

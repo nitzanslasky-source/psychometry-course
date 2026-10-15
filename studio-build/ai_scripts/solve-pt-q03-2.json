@@ -51,37 +51,38 @@
     ]
    },
    {
-    "say": "Choice number one. One over one is one, plus one over one, one. That's two. It fits, but we can't mark it yet, so we keep checking.",
+    "say": "Choice number one says a over b, plus b over a. One over one is one, plus one over one, one. That's two. It fits, but we can't mark it yet, so we keep checking.",
     "at": [
-     "Choice number one",
-     "number one. One",
-     "One over one"
+     "Choice number one says",
+     "over b, plus",
+     "One over one is one",
+     "plus one over"
     ]
    },
    {
-    "say": "Choice number two. One over two is a half, plus another half, that's one. One is not two, so choice number two is out.",
+    "say": "Choice number two says a over two b, plus b over two a. One over two is a half, plus another half, that's one. One is not two, so choice number two is out.",
     "at": [
-     "Choice number two. One",
-     "number two. One",
-     "One over two",
+     "Choice number two says",
+     "One over two is a half",
+     "half, plus another",
      "so choice number two is out"
     ]
    },
    {
-    "say": "Choice number three. One minus one is zero, and zero on top makes the whole fraction zero. Choice number three is out.",
+    "say": "Choice number three says a plus b, times a minus b, all over a b. One minus one is zero, and zero on top makes the whole fraction zero. Choice number three is out.",
     "at": [
-     "Choice number three. One",
-     "number three. One",
-     "One minus one",
+     "Choice number three says",
+     "One minus one is zero",
+     "and zero on",
      "Choice number three is out"
     ]
    },
    {
-    "say": "Choice number four. One plus one is two, and two times two is four. Choice number four is out too.",
+    "say": "Choice number four says two times, a squared plus b squared. One plus one is two, and two times two is four. Choice number four is out too.",
     "at": [
-     "Choice number four. One",
-     "number four. One",
-     "One plus one",
+     "Choice number four says",
+     "One plus one is two",
+     "and two times",
      "Choice number four is out"
     ]
    },
@@ -92,7 +93,7 @@
     ]
    },
    {
-    "say": "This is a very important point. When we plug in numbers, we don't look for the right answer. We rule out three. Why? Because a wrong expression can give the right number by chance. For example, a plus b also gives two when a and b are one, but it's a different expression. And if two choices are still left, we plug in a second pair of numbers, and check only those two.",
+    "say": "This is a very important point. When we plug in numbers, we don't look for the right answer. We rule out three. Why? Because a wrong expression can give the right number by chance. For example, a plus b also gives two when a and b are one, but it's another expression. And if two choices are still left, we plug in a second pair of numbers, and check only those two.",
     "at": [
      "We rule out three",
      "Because a wrong"

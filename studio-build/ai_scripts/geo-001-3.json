@@ -81,7 +81,7 @@
   ],
   [
    {
-    "say": "Now two parallel lines, a and b, and a line that cuts both of them. We call it a transversal. It makes eight angles, four at each crossing.",
+    "say": "Now two parallel lines, a and b, and one more line that cuts both of them. We call it a transversal. It makes eight angles, four at each crossing.",
     "at": [
      "Now two parallel lines",
      "and b, and",
@@ -104,7 +104,7 @@
     ]
    },
    {
-    "say": "And a small angle plus a large angle is always a hundred eighty. Why? Angles one and two sit side by side on line a, so they make a straight angle.",
+    "say": "And a small angle plus a large angle is always a hundred eighty. Why? Angles one and two sit side by side on line a, so together they make one straight angle.",
     "at": [
      "a small angle plus a large angle",
      "hundred eighty. Why"

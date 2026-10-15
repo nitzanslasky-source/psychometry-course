@@ -23,6 +23,19 @@ Claude and Codex: add ideas here instead of starting them. Keep each item short:
 - r26-t19-summary (summary, not recorded): its caption still says "Operation first"; match the corrected #127 rule ("inside its brackets first, then the definition, then the rest"). Cost: one caption.
 - Camera-part closing line `_camera_parts.CLOSE` still says "Okay. I'll see you in the next part." (W16 says no "Okay."); batch-A parts drop it in their specs. Decide one rule for future parts (recorded parts keep theirs).
 - Prompter formatter turns "the remainder is one of twelve options" into "1 of 12" (r26-t20-counting 3.3); harmless when read aloud.
+- **W17/W18 in RECORDED videos (15 Oct sweep; speech not changed — fix when re-reading).** W17 = read the whole choice
+  aloud before working on it; W18 = no article "a/an" next to the variable a. The prompter now shows variables in italics,
+  which helps, but the spoken sentence is still unclear. Worst cases:
+  - Choices worked on without being read (plug-in values said instead of the choice): solve-q-554 (all 4: "two one four"
+    before saying "diamond of 214"), solve-q-465 (2–4: "gives negative one times the bracket…"), solve-q-495 (1, 3, 4:
+    "gives four times five"), solve-q-r26-t19-01 (3–4), solve-q-462 (3–4), solve-q-468 (3), solve-q-369 (1, 2, 4: "the
+    bait", "five and a half"), solve-q-358/363/365 (bare "number two/three"), solve-q-366 (1–2), solve-q-389 (1–2),
+    solve-q-464/470 (statement choices only named "out"), solve-q-r26-t13-01/02.
+  - Article "a" next to the variable a/b: solve-q-495 1.4 "If we could use a three times" (= the letter a),
+    solve-q-496 1.3 "with a first", solve-q-r26-t15-01 3.1 "And a b that leaves five", solve-q-457 2.1 "a positive a",
+    solve-q-541 2.1 "have an a in them", solve-q-462 1.2 "a − b = 6, an even number", solve-q-r26-t16-03 1.4 "a is an
+    integer, so the bracket gives an integer too", solve-q-397/431/432/433/472 "a is an integer / a positive integer".
+  - Cost: one re-read paragraph each (choice sentences only). Script lists: scratch scans of 15 Oct (Claude).
 
 ## Visuals
 - Small right-column copies in some geometry question videos (readable but small).

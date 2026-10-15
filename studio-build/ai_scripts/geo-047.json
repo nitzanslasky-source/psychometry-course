@@ -119,9 +119,9 @@
   ],
   [
    {
-    "say": "The area of a parallelogram is simply base times height, a times h. The height is perpendicular to the base.",
+    "say": "The area of every parallelogram is simply base times height, a times h. The height is perpendicular to the base.",
     "at": [
-     "The area of a parallelogram",
+     "The area of every parallelogram",
      "is simply base",
      "a times h",
      "The height is perpendicular"

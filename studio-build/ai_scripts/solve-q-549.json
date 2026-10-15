@@ -21,37 +21,40 @@
     ]
    },
    {
-    "say": "[short pause] Let's start with the math way. With algebra, we write what the diamond does on each side. The diamond squares whatever goes in. Choice number one. On the left, six x goes in, so we get six x, squared. That's six squared times x squared, thirty-six x squared. On the right, thirty-six times x squared. Both sides are equal for every x, so this one is always true, and it's out.",
+    "say": "[short pause] Let's start with the math way. With algebra, we write what the diamond does on each side. The diamond squares whatever goes in. Choice number one says: diamond of six x is equal to thirty-six times diamond of x. On the left, six x goes in, so we get six x, squared. That's six squared times x squared, thirty-six x squared. On the right, thirty-six times x squared. Both sides are equal for every x, so this one is always true, and it's out.",
     "at": [
      "Let's start",
-     "number one. On",
-     "six x goes in",
+     "Choice number one says",
+     "six x goes",
      "That's six squared",
      "and it's out"
     ]
    },
    {
-    "say": "Choice number two. Diamond of root x is root x, squared, which is x. So the left side is x times x, which is x squared. The right side is diamond of x, x squared too. Always true, so it's out.",
+    "say": "Choice number two says: diamond of root x, times diamond of root x, is equal to diamond of x. Diamond of root x is root x, squared, which is x. So the left side is x times x, which is x squared. The right side is diamond of x, x squared too. Always true, so it's out.",
     "at": [
-     "number two. Diamond",
-     "Diamond of root x",
+     "Choice number two says",
+     "of root x, is",
+     "x is root x, squared",
      "So the left",
      "Always true, so it's out"
     ]
    },
    {
-    "say": "Choice number three. On the left, five x, squared, is twenty-five x squared. On the right, five times x squared is only five x squared. These are equal only when x is zero. For any other x, they're different. So this one is not always true, and choice number three is our answer.",
+    "say": "Choice number three says: diamond of five x is equal to five times diamond of x. On the left, five x, squared, is twenty-five x squared. On the right, five times x squared is only five x squared. These are equal only when x is zero. For any other x, they're different. So this one is not always true, and choice number three is our answer.",
     "at": [
-     "number three. On",
+     "Choice number three says",
+     "x. On the",
      "is twenty-five x squared",
      "x squared is",
      "and choice number three is our answer"
     ]
    },
    {
-    "say": "In the exam you'd circle it and move on. But choice number four teaches something useful. x minus seven and seven minus x are opposites, and opposites have the same square. So the two sides are always equal.",
+    "say": "In the exam you'd circle it and move on. But choice number four teaches something useful. It says: diamond of x minus seven is equal to diamond of seven minus x. x minus seven and seven minus x are opposites, and opposites have the same square. So the two sides are always equal.",
     "at": [
      "number four teaches",
+     "minus seven is",
      "are opposites",
      "the same square",
      "always equal"

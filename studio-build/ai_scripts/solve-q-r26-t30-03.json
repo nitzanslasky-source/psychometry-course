@@ -48,13 +48,13 @@
   ],
   [
    {
-    "say": "[pause] Now the math way. Not sure you remember the rule? Draw a parallel line through each bend. That always works. Start at the bottom, at the lower bend, the sixty-five, and draw a line through it, parallel to a and b.",
+    "say": "[pause] Now the math way. Not sure you remember the rule? Draw a parallel line through each bend. That always works. Start at the bottom, at the lower bend, the sixty-five, and draw one more line through it, parallel to a and b.",
     "at": [
      "Now the",
      "Not sure you remember",
      "Draw a parallel",
-     "and draw a line through it",
-     "it, parallel to"
+     "and draw one more line",
+     "through it, parallel"
     ]
    },
    {
@@ -67,7 +67,7 @@
     ]
    },
    {
-    "say": "Now the upper bend, the x. Draw a parallel line through it too. It splits x in two. The lower part of x makes a Z with that thirty, so it's thirty. The upper part of x makes a Z with the forty at line a, so it's forty.",
+    "say": "Now the upper bend, the x. Draw a parallel line through it too. It splits x in two. The lower part of x makes a Z with that thirty, so it's thirty. The upper part of x makes the Z with the forty at line a, so it's forty.",
     "at": [
      "Draw a parallel line through it too",
      "It splits x",

@@ -70,34 +70,38 @@
     ]
    },
    {
-    "say": "Choice number one, sixty plus fifty, is a hundred ten. Out.",
+    "say": "Choice number one says sixty plus alpha. Sixty plus fifty is a hundred ten. Out.",
     "at": [
+     "Choice number one says",
      "is a hundred ten",
      "is a hundred ten"
     ]
    },
    {
-    "say": "Choice number two, ninety plus half of fifty. Half of fifty is twenty-five, so the result ends in five, and a hundred twenty ends in zero. Out, without finishing.",
+    "say": "Choice number two says ninety plus half alpha. That's ninety plus half of fifty. Half of fifty is twenty-five, so the result ends in five, and a hundred twenty ends in zero. Out, without finishing.",
     "at": [
-     "number two, ninety",
-     "of fifty. Half",
+     "Choice number two says",
+     "plus half alpha",
+     "That's ninety plus",
      "so the result ends in five",
      "five, and a",
      "Out, without finishing"
     ]
    },
    {
-    "say": "Choice number three. Four times fifty is two hundred, and two hundred minus a hundred eighty is twenty. That's angle D, not beta. Out.",
+    "say": "Choice number three says four alpha minus a hundred eighty. Four times fifty is two hundred, and two hundred minus a hundred eighty is twenty. That's angle D, not beta. Out.",
     "at": [
-     "number three. Four",
-     "a hundred eighty",
+     "Choice number three says",
+     "hundred, and two",
      "That's angle D",
      "That's angle D"
     ]
    },
    {
-    "say": "Three choices are out, so choice number four is our answer, without checking it. One choice must be right, and we showed the other three are wrong.",
+    "say": "Choice number four says two hundred seventy minus three alpha. Three choices are out, so choice number four is our answer, without checking it. One choice must be right, and we showed the other three are wrong.",
     "at": [
+     "Choice number four says",
+     "hundred seventy minus",
      "so choice number four is our answer",
      "so choice number four is our answer",
      "our answer, without"

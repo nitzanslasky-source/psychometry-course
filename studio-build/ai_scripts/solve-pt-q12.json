@@ -38,7 +38,7 @@
   ],
   [
    {
-    "say": "Which number? a must be a positive whole number, so the smallest is one. It keeps the factorials tiny.",
+    "say": "Which number? a must be positive and whole, so the smallest is one. It keeps the factorials tiny.",
     "at": [
      "Which number",
      "the smallest is one",

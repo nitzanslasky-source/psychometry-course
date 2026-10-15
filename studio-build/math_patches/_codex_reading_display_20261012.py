@@ -18,6 +18,14 @@ ATOM=rf'(?<![\w/])(?:[²³⁴⁵⁶⁷⁸⁹]?√)?(?:−?(?:\d+{V})|{BASE}){POW
 def number(s):
     return str(UNIT[s.lower()]) if s.lower() in UNIT else s
 
+def _spoken_group_power(m,e,power):
+    """2026-10-15: a spoken comma before squared/cubed squares everything before it: "x minus y, squared" is (x − y)²,
+    so after an operator the words stay; "three a, squared" is (3a)², never 3a²."""
+    if ',' in m[0][len(m[1]):]:
+        if re.search(r'(?:[+−×÷/]|\b(?:plus|minus|times|over|divided by))\s*$',m.string[:m.start()]):return m[0]
+        if re.fullmatch(r'\d+[A-Za-z]',m[1]):return '('+m[1]+')'+e.translate(SUP)
+    return power(m[1],e)
+
 def notation(text,legacy,digits=False):
     # Only explicitly spoken bracket boundaries are collapsed. We never guess
     # the scope of a sum or the intended location of a negative sign.
@@ -36,7 +44,7 @@ def notation(text,legacy,digits=False):
         key='DESCRIPTIVEVALUE'+str(len(descriptions));descriptions[key]=m[0];return key
     text=re.sub(r'\bnegative [a-hj-z]\b',description,text)
     s=legacy(text)
-    s=re.sub(rf'\b(?:the )?absolute value of ({OPERAND_V})(?![A-Za-z0-9_’\'])',lambda m:'|'+m[1]+'|',s,flags=re.I)
+    s=re.sub(rf'\b(?:the )?absolute value of ({OPERAND_V})(?![A-Za-z0-9_’\'])(?!\s+(?:plus|minus|times|over|divided)\b|\s*[+−×÷/])',lambda m:'|'+m[1]+'|',s,flags=re.I)
     s=re.sub(r'\b(zero|one|two|three|four|five|six|seven|eight|nine|\d+) point ((?:zero|one|two|three|four|five|six|seven|eight|nine)(?: (?:zero|one|two|three|four|five|six|seven|eight|nine))*)\b',
         lambda m:number(m[1])+'.'+''.join(number(w) for w in m[2].split()),s,flags=re.I)
     # This is digit concatenation, not multiplication. Uppercase separated
@@ -52,7 +60,8 @@ def notation(text,legacy,digits=False):
     s=re.sub(r'\b(?:the )?whole bracket, ([^,.;!?]+),?',bracket,s,flags=re.I)
     s=re.sub(r'\bin brackets, ([^,.;!?]+)',bracket,s,flags=re.I)
     # Numeric coefficients are unambiguous: "four a" means 4a, not an article.
-    s=re.sub(rf'(?<![\w])({N}) ({OPERAND_V})(?![A-Za-z0-9_’\'])',lambda m:number(m[1])+m[2],s,flags=re.I)
+    # 2026-10-15: never "one b" -> "1b" ("one b cancels" = one factor b)
+    s=re.sub(rf'(?<![\w])(?!one\b)({N}) ({OPERAND_V})(?![A-Za-z0-9_’\'])',lambda m:number(m[1])+m[2],s,flags=re.I)
     # A coefficient, barred digit sequence, explicit bracket or lone variable
     # may be the base of a spoken power.
     barred=r'(?:[A-Z0-9]\u0305){2,4}'
@@ -66,7 +75,7 @@ def notation(text,legacy,digits=False):
     # The old formatter already converted many numeric bases; this fills its
     # gaps, especially variable a, ordinal powers and fractional exponents.
     for suffix,e in [('squared','2'),('cubed','3')]:
-        s=re.sub(rf'({atom}),? {suffix}\b',lambda m:power(m[1],e),s)
+        s=re.sub(rf'({atom}),? {suffix}\b',lambda m,e=e:_spoken_group_power(m,e,power),s)
     ex=rf'(?:−?\d+(?:/\d+)?|negative (?:'+ '|'.join(UNIT)+r')|'+ '|'.join(UNIT)+r'|'+ '|'.join(ORD)+r')'
     def exponent(m):
         e=m[2]
@@ -93,6 +102,8 @@ def notation(text,legacy,digits=False):
         if re.match(r'\s+[A-Za-z]',after)and not re.match(r'\s+(?:and|or|too|times|plus|minus|over|squared|cubed|to the|divided by)\b',after):return m[0]
         # Do not turn "the remainder when dividing by 6 is 5" into 6=5,
         # or an article in "x is a whole number" into a variable.
+        # 2026-10-15: "the angle at B is ninety" is about the angle, not B = 90
+        if re.fullmatch(r'[A-Za-z]',left) and re.search(r'\b(?:at|point|vertex|angle)\s+$',before,re.I):return m[0]
         numeric=re.fullmatch(rf'−?{N}',left,re.I)
         if numeric and not re.search(r'(?:^|[.!?:]\s*|[+−×÷=/]\s*|\b(?:So|Then|Now),?\s+)$',before,re.I):
             return m[0]
@@ -141,7 +152,7 @@ def display_for(video_id,paras,reading_root,legacy):
         for pi,p in enumerate(slide):
             if item and si<len(item['paras'])and pi<len(item['paras'][si])and item['paras'][si][pi]==p:
                 result.append(item['disp'][si][pi]);continue
-            if recorded:result.append(legacy(p));continue
+            # 2026-10-15 (teacher): recorded lessons get the full formatter too (display only), so the math is consistent
             prepared=p
             for old,new in (item or{}).get('scope_replacements',{}).get(f'{si+1}.{pi+1}',[]):
                 if prepared.count(old)==1:prepared=prepared.replace(old,new,1)

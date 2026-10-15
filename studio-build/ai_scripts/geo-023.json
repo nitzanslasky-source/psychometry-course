@@ -15,11 +15,11 @@
   ],
   [
    {
-    "say": "First, what is a squared in a picture? It's the area of a square whose side is a. So let's put a square on leg a. Its area is a squared. In the same way, a square on leg b has area b squared, and a square on the hypotenuse c has area c squared.",
+    "say": "First, what does a squared look like? It's the area of the square whose side is a. So let's put one square on leg a. Its area is a squared. In the same way, a square on leg b has area b squared, and a square on the hypotenuse c has area c squared.",
     "at": [
-     "First, what is a squared",
-     "in a picture",
-     "So let's put a square on leg a",
+     "First, what does a squared",
+     "It's the area",
+     "So let's put one square on leg a",
      "on leg a",
      "a square on leg b",
      "has area b",
@@ -47,13 +47,13 @@
     ]
    },
    {
-    "say": "Now take the same big square, and move the same four triangles into new places, two at the top right and two at the bottom left. Now the part they don't cover is a square with side a and a square with side b.",
+    "say": "Now take the same big square, and move the same four triangles into new places, two at the top right and two at the bottom left. Now the part they don't cover is one square with side a and one square with side b.",
     "at": [
      "Now take the same big square",
      "move the same four triangles",
      "into new places",
      "Now the part they don't cover",
-     "cover is a"
+     "cover is one"
     ]
    },
    "The big square didn't change, and the four triangles didn't change. So the part they leave uncovered has the same area both times. a squared plus b squared equals c squared. That's the picture. Now let's write it with areas."

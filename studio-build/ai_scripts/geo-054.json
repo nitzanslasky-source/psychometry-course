@@ -78,7 +78,7 @@
     ]
    },
    {
-    "say": "The base of this parallelogram is a plus b, and its height is h. A parallelogram's area is its base times its height, so a plus b, times h. Our trapezoid is only half of it, so it's a plus b, times h, over two.",
+    "say": "The base of this parallelogram is a plus b, and its height is h. The area of every parallelogram is its base times its height, so a plus b, times h. Our trapezoid is only half of it, so it's a plus b, times h, over two.",
     "at": [
      "The base of this parallelogram",
      "is a plus"

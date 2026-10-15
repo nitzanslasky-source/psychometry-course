@@ -22,10 +22,10 @@
     ]
    },
    {
-    "say": "[short pause] Look at line c. Line a makes a right angle with it, and line b makes a right angle with it too. The little squares show that.",
+    "say": "[short pause] Look at line c. Line a is perpendicular to it, and line b is perpendicular to it too. The little squares show that.",
     "at": [
      "Look at line c",
-     "Line a makes"
+     "Line a is"
     ]
    },
    {
@@ -46,12 +46,12 @@
     ]
    },
    {
-    "say": "The fifty degrees at line a is a small angle. All the small angles are equal, so the small angle at line b, above b and to the right of d, is fifty degrees too.",
+    "say": "The fifty degrees at line a is one of the small angles. All the small angles are equal, so the small angle at line b, above b and to the right of d, is fifty degrees too.",
     "at": [
      "The fifty degrees at line a",
-     "All the small",
+     "small angles. All",
      "so the small angle at line b",
-     "to the right"
+     "line b, above"
     ]
    },
    {

@@ -36,27 +36,27 @@
     ]
    },
    {
-    "say": "Choice number one. Twenty-seven times three is eighty-one, and over two, that's forty and a half. That's more than twenty-seven, so the cylinder would be bigger than the cube. That makes no sense, so choice number one is out.",
+    "say": "Choice number one says twenty-seven pi over two, times a cubed. Twenty-seven times three is eighty-one, and over two, that's forty and a half. That's more than twenty-seven, so the cylinder would be bigger than the cube. That makes no sense, so choice number one is out.",
     "at": [
-     "number one. Twenty-seven",
+     "Choice number one says",
      "Twenty-seven times three is eighty-one",
      "and over two",
      "so choice number one is out"
     ]
    },
    {
-    "say": "Choice number two. Twenty-seven times three is eighty-one, three times the cube. Choice number two is out.",
+    "say": "Choice number two says twenty-seven pi, times a cubed. Twenty-seven times three is eighty-one, three times the cube. Choice number two is out.",
     "at": [
-     "Choice number two. Twenty",
-     "number two. Twenty-seven",
+     "Choice number two says",
      "Twenty-seven times three",
+     "three times the",
      "Choice number two is out"
     ]
    },
    {
-    "say": "Choice number three. Thirty-six times three is a hundred eight, four times the cube. Choice number three is out too.",
+    "say": "Choice number three says thirty-six pi, times a cubed. Thirty-six times three is a hundred eight, four times the cube. Choice number three is out too.",
     "at": [
-     "number three. Thirty-six",
+     "Choice number three says",
      "Thirty-six times three",
      "hundred eight, four",
      "Choice number three is out"
@@ -71,11 +71,11 @@
   ],
   [
    {
-    "say": "By the way, choice number four with pi as three is eighty-one over four, a bit more than twenty. That's about three quarters of twenty-seven, and that makes sense for a cylinder inside a cube.",
+    "say": "By the way, choice number four says twenty-seven pi over four, times a cubed. With pi as three, it's eighty-one over four, a bit more than twenty. That's about three quarters of twenty-seven, and that makes sense for a cylinder inside a cube.",
     "at": [
      "By the way, choice number four",
-     "number four with",
-     "three is eighty-one"
+     "number four says",
+     "over four, times"
     ]
    },
    "Look at the choices they gave. Not three quarters, two thirds and four fifths of the cube, which would be hard to tell apart. They gave three choices that are each bigger than the whole cube. That's the exam's way of giving an advantage to whoever thinks. If you calculate the long way, it takes time, and you might slip. If you estimate, the choices help you.",

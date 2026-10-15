@@ -16,7 +16,7 @@
     ]
    },
    {
-    "say": "Now from the top vertex, A, we drop an altitude straight down to the base. In an equilateral triangle the altitude is also a median, so it cuts the base exactly in the middle, into a and a.",
+    "say": "Now from the top vertex, A, we drop an altitude straight down to the base. In an equilateral triangle the altitude is also the median, so it cuts the base exactly in the middle, into a and a.",
     "at": [
      "from the top vertex",
      "we drop an altitude",

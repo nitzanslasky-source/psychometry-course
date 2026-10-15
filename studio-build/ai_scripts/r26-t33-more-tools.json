@@ -91,7 +91,7 @@
     ]
    },
    {
-    "say": "Now triangle A O B. The four radii make a rhombus, O A P B. Let's take it out. O P cuts it into our two equilateral triangles. Remember, the area of an equilateral triangle is a squared, times root three, over four. Six squared is thirty-six, and thirty-six over four is nine, so each one is nine root three.",
+    "say": "Now triangle A O B. The four radii make a rhombus, O A P B. Let's take it out. O P cuts it into our two equilateral triangles. Remember, the area of every equilateral triangle is a squared, times root three, over four. Six squared is thirty-six, and thirty-six over four is nine, so each one is nine root three.",
     "at": [
      "Now triangle A",
      "make a rhombus",

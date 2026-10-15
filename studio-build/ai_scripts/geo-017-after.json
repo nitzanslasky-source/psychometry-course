@@ -7,17 +7,17 @@
   ],
   [
    {
-    "say": "For an area we need a side and the height to it. So here's an equilateral triangle, A B C, and every side is a. From the top vertex we drop an altitude to the base.",
+    "say": "For an area we need a side and the height to it. So here's the equilateral triangle A B C, and every side is a. From the top vertex we drop an altitude to the base.",
     "at": [
      "need a side",
-     "So here's an equilateral triangle",
+     "So here's the equilateral triangle",
      "A B C",
      "From the top vertex",
      "we drop an altitude"
     ]
    },
    {
-    "say": "The altitude is also a median, so it cuts the base into a over two and a over two. Now look at the half on the right. Its angles are ninety, sixty and thirty, so it's a gold triangle. Its hypotenuse is a, and its short leg, opposite the thirty, is a over two.",
+    "say": "The altitude is also the median, so it cuts the base into a over two and a over two. Now look at the half on the right. Its angles are ninety, sixty and thirty, so it's a gold triangle. Its hypotenuse is a, and its short leg, opposite the thirty, is a over two.",
     "at": [
      "The altitude is",
      "Now look at the half on the right",
@@ -44,7 +44,7 @@
     ]
    },
    {
-    "say": "a squared minus a quarter of a squared is three quarters of a squared. Take the root, and the height is a root three over two. The same height. The gold triangle just gets there faster.",
+    "say": "a squared minus one quarter of a squared is three quarters of a squared. Take the root, and the height is a root three over two. The same height. The gold triangle just gets there faster.",
     "at": [
      "Take the root",
      "height is a"
@@ -53,7 +53,7 @@
   ],
   [
    {
-    "say": "Now the area. A side, times the height to that side, divided by two. The side is a, the height is a root three over two, and we divide by two. a times a is a squared, and dividing by two and then by two again is dividing by four. So the area of an equilateral triangle is a squared times root three, over four.",
+    "say": "Now the area. A side, times the height to that side, divided by two. The side is a, the height is a root three over two, and we divide by two. a times a is a squared, and dividing by two and then by two again is dividing by four. So the area of every equilateral triangle is a squared times root three, over four.",
     "at": [
      "A side, times the height",
      "to that side"

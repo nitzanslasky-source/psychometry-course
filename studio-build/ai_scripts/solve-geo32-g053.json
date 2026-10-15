@@ -74,10 +74,10 @@
     ]
    },
    {
-    "say": "One of them has root three, and the other has root two. We're in a silver triangle, so the answer will have a root two. A whole-number hypotenuse gives a leg with root two, and the other way round. Root three belongs to the gold triangle, not here.",
+    "say": "One of them has root three, and the other has root two. This is the silver triangle, so the answer will have root two in it. A whole-number hypotenuse gives a leg with root two, and the other way round. Root three belongs to the gold triangle, not here.",
     "at": [
      "One of them",
-     "We're in a silver triangle",
+     "This is the silver triangle",
      "so the answer",
      "Root three belongs"
     ]

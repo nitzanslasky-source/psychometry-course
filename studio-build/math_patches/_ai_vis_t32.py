@@ -1429,8 +1429,8 @@ video('geo-047', 'lesson', slides=[
         "parallelogram promises only one thing about its diagonals: they cut each other in half.",
         show(f2_k47e, 'Two more facts'), show(f2_k47f, 'A general parallelogram'))),
     S('Area: base times height',
-      L("The area of a parallelogram is simply base times height, a times h. The height is perpendicular to the base.",
-        show(f2_pg5['line'], 'The area of a parallelogram'), show(f2_pg5['h'], 'The height is perpendicular'),
+      L("The area of every parallelogram is simply base times height, a times h. The height is perpendicular to the base.",
+        show(f2_pg5['line'], 'The area of every parallelogram'), show(f2_pg5['h'], 'The height is perpendicular'),
         show(f2_k47g, 'a times h')),
       L("It's not the sloping side. The sloping side is longer than the height.", show(f2_pg5['side'], "It's not the sloping side")),
       L("Be careful where you drop it. From A, the foot of the height lands on B C. From D, it would land outside B C, so "
@@ -2086,9 +2086,9 @@ video('solve-geo32-g053', 'solution', qid='geo32-g053', slides=[
         "with twenty, choice numbers one and three. So that already rules out the other two.",
         show(f4g53p['line'], 'Now the perimeter'), show(f4g53p['per'], 'Now the perimeter'), show(f4g53t2, 'The two tens make twenty'),
         mk('cross', 'choice 2', 'Only two of them'), mk('cross', 'choice 4', 'So that already rules out')),
-      L("One of them has root three, and the other has root two. We're in a silver triangle, so the answer will have a "
-        "root two. A whole-number hypotenuse gives a leg with root two, and the other way round. Root three belongs to the "
-        "gold triangle, not here.", show(f4g53t3, 'We\'re in a silver triangle'), mk('cross', 'choice 1', 'Root three belongs')),
+      L("One of them has root three, and the other has root two. This is the silver triangle, so the answer will have "
+        "root two in it. A whole-number hypotenuse gives a leg with root two, and the other way round. Root three belongs to the "
+        "gold triangle, not here.", show(f4g53t3, 'This is the silver triangle'), mk('cross', 'choice 1', 'Root three belongs')),
       L("And if we add it all up, twenty plus five root two plus five root two is twenty plus ten root two. Choice "
         "number three is our answer.", show(f4g53t4, 'And if we add it all'), mk('tick', 'choice 3', 'Choice number three is our answer')),
       L("So the kite is symmetric, but only from right to left. Remember that, and you don't need to memorize all its "
@@ -2196,8 +2196,8 @@ video('geo-054', 'lesson', slides=[
       L("The area of a trapezoid is the sum of the bases, times the height, over two.", show(f4t3a, 'The area of a trapezoid')),
       L("Why? Here's a simple way to see it. Make a copy of the trapezoid, turn it upside down, and attach it on the "
         "right. The two trapezoids together make one big parallelogram.", show(f4t3['copy'], 'Make a copy')),
-      L("The base of this parallelogram is a plus b, and its height is h. A parallelogram's area is its base times its "
-        "height, so a plus b, times h. Our trapezoid is only half of it, so it's a plus b, times h, over two.",
+      L("The base of this parallelogram is a plus b, and its height is h. The area of every parallelogram is its base times "
+        "its height, so a plus b, times h. Our trapezoid is only half of it, so it's a plus b, times h, over two.",
         show(f4t3['base'], 'The base of this parallelogram')),
       L("In the exam you won't prove formulas, so what matters is to remember it. For example, bases ten and six, and "
         "height four. Ten plus six is sixteen, times four is sixty-four, over two is thirty-two. Another one, bases nine "
@@ -3623,14 +3623,17 @@ video('solve-geo32-g071', 'solution', qid='geo32-g071', slides=[
         "thirty is fifty. So with these numbers, x is fifty degrees.", show(f8g71b['x'], 'So with these numbers'))),
     SM('Method 2 · Plugging in numbers', 'Check the choices',
       L("Now we put alpha a hundred ten and beta eighty into each choice. Half alpha is fifty-five, and half beta is forty. "
-        "Choice number one: sixty-five plus fifty-five minus forty is eighty. Not fifty, out. Choice number two: a hundred "
-        "thirty plus fifty-five minus forty is a hundred forty-five. Out.", show(f8p0, 'Half alpha is fifty-five'), show(f8p3, 'Choice number one'), show(f8p6, 'Choice number two'),
+        "Choice number one says sixty-five, plus half alpha, minus half beta. Sixty-five plus fifty-five minus forty is "
+        "eighty. Not fifty, out. Choice number two says a hundred thirty, plus half alpha, minus half beta. A hundred "
+        "thirty plus fifty-five minus forty is a hundred forty-five. Out.", show(f8p0, 'Half alpha is fifty-five'), pt('choice 1', 'Choice number one says', 'hl', 3.0), show(f8p3, 'Sixty-five plus fifty-five'), pt('choice 2', 'Choice number two says', 'hl', 3.0), show(f8p6, 'A hundred thirty plus fifty-five'),
         mk('cross', 'choice 1', 'Not fifty, out'), mk('cross', 'choice 2', 'is a hundred forty-five. Out')),
-      L("Choice number three: sixty-five minus fifty-five plus forty is fifty. It matches. But one match isn't enough to be "
+      L("Choice number three says sixty-five, minus half alpha, plus half beta. Sixty-five minus fifty-five plus forty "
+        "is fifty. It matches. But one match isn't enough to be "
         "sure: to mark it, we cross out the other choices too. That's the drawback of plugging in. If you're out of time, "
-        "though, it's a very reasonable guess.", show(f8p4, 'Choice number three'), pt('choice 3', 'It matches')),
-      L("Choice number four: a hundred thirty minus fifty-five plus forty is a hundred fifteen. Out. So choice number three "
-        "is our answer.", show(f8p5, 'Choice number four'), mk('cross', 'choice 4', 'is a hundred fifteen. Out'),
+        "though, it's a very reasonable guess.", pt('choice 3', 'Choice number three says', 'hl', 3.0), show(f8p4, 'Sixty-five minus fifty-five'), pt('choice 3', 'It matches')),
+      L("Choice number four says a hundred thirty, minus half alpha, plus half beta. A hundred thirty minus fifty-five "
+        "plus forty is a hundred fifteen. Out. So choice number three "
+        "is our answer.", pt('choice 4', 'Choice number four says', 'hl', 3.0), show(f8p5, 'A hundred thirty minus fifty-five'), mk('cross', 'choice 4', 'is a hundred fifteen. Out'),
         mk('tick', 'choice 3', 'So choice number three is our answer')),
       L("If you're strong in algebra and can do the full solution in about a minute, that's great. For most students, at "
         "the end of a section, plugging in numbers is much easier. [pause] Okay. I'll see you in the next question.",
@@ -3839,8 +3842,8 @@ video('solve-q-r26-t32-07', 'solution', qid='q-r26-t32-07', slides=[
       L("The diagonal makes a right triangle with two sides of the rectangle. By Pythagoras, a squared plus b squared is "
         "thirteen squared, a hundred sixty-nine.", show(f8g07['tri'], 'The diagonal makes a right triangle'))),
     SM('Method 1 · The math way: shortcut formula', 'The shortcut formula',
-      L("We want the area, a times b. Here a shortcut formula from expressions helps: the bracket a plus b, squared, is a "
-        "squared plus two a b plus b squared.", show(f8e1, 'We want the area'), show(f8e2, 'Here a shortcut formula')),
+      L("We want the area, a times b. Here the shortcut formula from expressions helps: the bracket a plus b, squared, is a "
+        "squared plus two a b plus b squared.", show(f8e1, 'We want the area'), show(f8e2, 'Here the shortcut formula')),
       L("Seventeen squared is seventeen times seventeen: a hundred seventy plus a hundred nineteen, two hundred eighty-nine. "
         "So two hundred eighty-nine is a hundred sixty-nine plus two a b. Two a b is a hundred twenty, and the area, a b, is "
         "sixty. Choice number one is our answer.", show(f8e3, 'So two hundred eighty-nine'),

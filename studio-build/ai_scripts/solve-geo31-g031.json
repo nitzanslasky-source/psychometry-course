@@ -104,15 +104,20 @@
     ]
    },
    {
-    "say": "Now put one hundred ten into each choice, and cross out everything that isn't fifty. Choice number one, one hundred eighty minus one hundred ten is seventy. Out. Choice number two, one hundred ten minus sixty is fifty. It stays. Choice number three, twice one hundred ten is two hundred twenty, minus one hundred forty is eighty. Out. Choice number four, one hundred forty minus one hundred ten is thirty. Out.",
+    "say": "Now put one hundred ten into each choice, and cross out everything that isn't fifty. Choice number one says one hundred eighty minus x. One hundred eighty minus one hundred ten is seventy. Out. Choice number two says x minus sixty. One hundred ten minus sixty is fifty. It stays. Choice number three says two x minus one hundred forty. Twice one hundred ten is two hundred twenty, minus one hundred forty is eighty. Out. Choice number four says one hundred forty minus x. One hundred forty minus one hundred ten is thirty. Out.",
     "at": [
      "Now put one hundred ten",
      "out everything that",
+     "number one says",
+     "eighty minus one",
      "is seventy. Out",
-     "number two, one",
-     "Choice number three, twice",
-     "hundred ten is two",
+     "number two says",
+     "is fifty. It",
+     "number three says",
+     "Twice one hundred ten",
+     "two hundred twenty",
      "is eighty. Out",
+     "number four says",
      "is thirty. Out"
     ]
    },

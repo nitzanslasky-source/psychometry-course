@@ -24,9 +24,9 @@
   ],
   [
    {
-    "say": "The first tool, plugging in numbers. Say a is a positive number, and the question asks if a squared is always bigger than a. Try a is three. Three squared is nine, and nine is bigger than three. So far, yes.",
+    "say": "The first tool, plugging in numbers. Say a is any positive number, and the question asks if a squared is always bigger than a. Try a is three. Three squared is nine, and nine is bigger than three. So far, yes.",
     "at": [
-     "Say a is a positive number",
+     "Say a is any positive number",
      "number, and the",
      "Try a is three",
      "nine is bigger"

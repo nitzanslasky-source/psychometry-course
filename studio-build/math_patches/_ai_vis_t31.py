@@ -2179,13 +2179,18 @@ video('solve-q-r26-t31-03', 'solution', qid='q-r26-t31-03', slides=[
         "thirty-six plus forty-nine, which is eighty-five.", show(f4t['line'], 'The longest side here'), show(f4t['long'], 'Ten squared is a hundred'),
         show(f4t['oth'], 'thirty-six plus forty-nine')),
       L("A hundred is more than eighty-five, so A C is too long for a right angle, and the angle across from A C is obtuse. "
-        "So the triangle isn't acute and isn't right. Choice numbers one and two are out.", show(f4t['cmp'], 'A hundred is more than'),
-        mk('cross', 'choice 1', 'Choice numbers one'), mk('cross', 'choice 2', 'and two are out')),
+        "So the triangle isn't acute and isn't right. Choice number one says the triangle is acute, and choice number "
+        "two says it's right, with the right angle at B. So choice numbers one and two are out.", show(f4t['cmp'], 'A hundred is more than'),
+        pt('choice 1', 'Choice number one says', 'hl', 2.5), pt('choice 2', 'choice number two says', 'hl', 3.0),
+        mk('cross', 'choice 1', 'So choice numbers one'), mk('cross', 'choice 2', 'and two are out')),
       L("Which angle is obtuse? The angle across from the longest side, at the corner that A C doesn't touch. A C goes from "
-        "A to C, so the corner it doesn't touch is B. The obtuse angle is at B, and choice number three is our answer.",
-        show(f4t['angB'], 'so the corner it doesn'), mk('tick', 'choice 3', 'and choice number three is our answer')),
-      L("Choice number four is the trap. C is one end of A C, so it's next to the longest side, not across from it. "
-        "[pause] Okay. I'll see you in the next question.", mk('cross', 'choice 4', 'Choice number four is the trap'))),
+        "A to C, so the corner it doesn't touch is B. The obtuse angle is at B. Choice number three says the triangle is "
+        "obtuse, with the obtuse angle at B, so choice number three is our answer.",
+        show(f4t['angB'], 'so the corner it doesn'), pt('choice 3', 'Choice number three says', 'hl', 3.5),
+        mk('tick', 'choice 3', 'so choice number three is our answer')),
+      L("Choice number four says the triangle is obtuse, with the obtuse angle at C. That's the trap. C is one end of "
+        "A C, so it's next to the longest side, not across from it. [pause] I'll see you in the next question.",
+        pt('choice 4', 'Choice number four says', 'hl', 3.5), mk('cross', 'choice 4', "That's the trap"))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo-023 (lesson: Why Pythagoras Works - optional)
@@ -2252,9 +2257,9 @@ video('geo-023', 'lesson', slides=[
         "lesson, if you're curious: what the theorem says about areas, and a simple proof. If you prefer, you can skip to "
         "the next video.")),
     S('What a squared means',
-      L("First, what is a squared in a picture? It's the area of a square whose side is a. So let's put a square on leg a. "
+      L("First, what does a squared look like? It's the area of the square whose side is a. So let's put one square on leg a. "
         "Its area is a squared. In the same way, a square on leg b has area b squared, and a square on the hypotenuse c has "
-        "area c squared.", show(f4v['line'], 'First, what is a squared'), show(f4v['sa'], "So let's put a square on leg a"),
+        "area c squared.", show(f4v['line'], 'First, what does a squared'), show(f4v['sa'], "So let's put one square on leg a"),
         show(f4v['sb'], 'a square on leg b'), show(f4v['sc'], 'a square on the hypotenuse c')),
       L("So the theorem says that the two squares on the legs together have exactly the same area as the square on the "
         "hypotenuse. With legs three and four and hypotenuse five, nine plus sixteen is twenty-five.",
@@ -2264,7 +2269,7 @@ video('geo-023', 'lesson', slides=[
         "make a tilted square in the middle. The part the triangles don't cover is that middle square, c squared.",
         show(f4w['line'], 'Take a big square'), show(f4w['t1'], 'put four copies'), show(f4w['h1'], "The part the triangles don't cover")),
       L("Now take the same big square, and move the same four triangles into new places, two at the top right and two at "
-        "the bottom left. Now the part they don't cover is a square with side a and a square with side b.",
+        "the bottom left. Now the part they don't cover is one square with side a and one square with side b.",
         show(f4w['sq2'], 'Now take the same big square'), show(f4w['t2'], 'move the same four triangles'),
         show(f4w['h2'], "Now the part they don't cover")),
       L("The big square didn't change, and the four triangles didn't change. So the part they leave uncovered has the same "
@@ -2318,7 +2323,7 @@ video('geo-024', 'lesson', slides=[
     S('Pythagorean Triples',
       L("Pythagorean triples, a shortcut for the Pythagorean theorem when all the sides are whole numbers.")),
     S('What a triple is',
-      L("A Pythagorean triple is three whole numbers that fit the theorem, a squared plus b squared equals c squared. The "
+      L("Every Pythagorean triple is three whole numbers that fit the theorem, a squared plus b squared equals c squared. The "
         "best-known one is three, four and five. Five is the hypotenuse, because the hypotenuse is always the longest side. "
         "Three squared plus four squared is nine plus sixteen, which is twenty-five, and five squared is twenty-five. It "
         "works.", show(f4y['line'], 'The best-known one')),
@@ -2571,7 +2576,7 @@ video('geo-026', 'lesson', slides=[
         "side two a. And all its angles are sixty degrees.", show(F5EQ['line'], 'Take an equilateral triangle'),
         show(F5EQ['side'], "let's call each side two a")),
       L("Now from the top vertex, A, we drop an altitude straight down to the base. In an equilateral triangle the altitude "
-        "is also a median, so it cuts the base exactly in the middle, into a and a.", show(F5EQ['top'], 'from the top vertex'),
+        "is also the median, so it cuts the base exactly in the middle, into a and a.", show(F5EQ['top'], 'from the top vertex'),
         show(F5EQ['alt'], 'we drop an altitude')),
       L("Look at the half on the right, the triangle A D C. Its angle at D is ninety. Its angle at C is sixty, because C is a "
         "corner of the equilateral triangle. So the angle left at A is thirty. That's the gold triangle, thirty, sixty, "
@@ -2682,8 +2687,8 @@ video('solve-geo31-g027', 'solution', qid='geo31-g027', slides=[
       L("A right triangle with a thirty degree angle, so the third angle is sixty. It's a gold triangle. For the perimeter we "
         "need all three sides, and we know only one. [short pause] We'll solve it with the side ratio, and then check it with "
         "Pythagoras.", pt('fig: 30°', 'A right triangle with a thirty degree angle')),
-      L("[short pause] In a gold triangle the sides are a, a root three, and two a. Which side is A B? It's opposite the "
-        "thirty degree angle at C, so it's the short leg. So a is five.", show(F527['line'], 'In a gold triangle'),
+      L("[short pause] In every gold triangle the sides are a, a root three, and two a. Which side is A B? It's opposite the "
+        "thirty degree angle at C, so it's the short leg. So a is five.", show(F527['line'], 'In every gold triangle'),
         pt('fig: 5', 'Which side is A B'), show(F527['s'], "It's opposite the thirty")),
       L("The hypotenuse, A C, is double the short leg, so ten. The long leg, B C, is five times root three, five root three. "
         "Once you've practiced enough, you can write these straight on the triangle. If it's still hard, write it with a. a "
@@ -2730,10 +2735,10 @@ video('geo-017-after', 'lesson', slides=[
     S('Equilateral Triangle Area',
       L("Now let's see how we find the area of an equilateral triangle. Now that we know the gold triangle, it's quick.")),
     S('The height',
-      L("For an area we need a side and the height to it. So here's an equilateral triangle, A B C, and every side is a. "
-        "From the top vertex we drop an altitude to the base.", show(F5AR['line'], "So here's an equilateral triangle"),
+      L("For an area we need a side and the height to it. So here's the equilateral triangle A B C, and every side is a. "
+        "From the top vertex we drop an altitude to the base.", show(F5AR['line'], "So here's the equilateral triangle"),
         show(F5AR['top'], 'From the top vertex'), show(F5AR['alt'], 'we drop an altitude')),
-      L("The altitude is also a median, so it cuts the base into a over two and a over two. Now look at the half on the "
+      L("The altitude is also the median, so it cuts the base into a over two and a over two. Now look at the half on the "
         "right. Its angles are ninety, sixty and thirty, so it's a gold triangle. Its hypotenuse is a, and its short leg, "
         "opposite the thirty, is a over two.", show(F5AR['half'], 'Now look at the half on the right')),
       L("The height is the long leg, so it's the short leg times root three. a over two, times root three, is a root three "
@@ -2742,12 +2747,12 @@ video('geo-017-after', 'lesson', slides=[
       L("You can also get the height with Pythagoras, the same half triangle. The hypotenuse squared, minus the short leg "
         "squared. a over two, squared, is a squared over four, because the top and the bottom are both squared.",
         show(F5AR_t2, 'the same half triangle')),
-      L("a squared minus a quarter of a squared is three quarters of a squared. Take the root, and the height is a root "
+      L("a squared minus one quarter of a squared is three quarters of a squared. Take the root, and the height is a root "
         "three over two. The same height. The gold triangle just gets there faster.", show(F5AR_t3, 'Take the root'))),
     S('The area formula',
       L("Now the area. A side, times the height to that side, divided by two. The side is a, the height is a root three over "
         "two, and we divide by two. a times a is a squared, and dividing by two and then by two again is dividing by four. "
-        "So the area of an equilateral triangle is a squared times root three, over four.",
+        "So the area of every equilateral triangle is a squared times root three, over four.",
         show(F5AR_t4, 'A side, times the height')),
       L("Why learn it by heart? Because the area of an equilateral triangle comes up a lot on the exam, and we don't want to "
         "find the height every time and only then the area.")),
@@ -2926,7 +2931,7 @@ video('solve-geo31-g028', 'solution', qid='geo31-g028', slides=[
         "forty-five too. It's a silver triangle, and its legs are equal. [short pause] We'll solve it with the side ratio, and "
         "then with an equation.", pt('fig: 45°', 'A right triangle with a forty-five'), show(F528['line'], "It's a silver triangle"),
         show(F528['a45'], 'its legs are equal')),
-      L("[short pause] In a silver triangle the sides are a, a, and a root two. A C is opposite the right angle, so it's the "
+      L("[short pause] In every silver triangle the sides are a, a, and a root two. A C is opposite the right angle, so it's the "
         "hypotenuse, and it matches a root two.", pt('fig: 18', 'A C is opposite the right angle')),
       L("To go from the hypotenuse to a leg, we divide by root two, eighteen over root two. Ignore the root, eighteen "
         "divided by two is nine, and put the root two back, nine root two. If that's hard, look at it as an equation. a root "
@@ -3048,11 +3053,12 @@ video('solve-geo31-g031', 'solution', qid='geo31-g031', slides=[
       L("Which letter do we choose? The one that appears in the choices, x. In the figure x is an obtuse angle, so we "
         "choose an easy obtuse number, one hundred ten.", show(f6g31p['line'], 'choose an easy obtuse number')),
       L("Now find y. Sixty plus what gives one hundred ten? Fifty. So y is fifty.", show(f6g31p['vals'], 'Sixty plus what gives')),
-      L("Now put one hundred ten into each choice, and cross out everything that isn't fifty. Choice number one, one "
-        "hundred eighty minus one hundred ten is seventy. Out. Choice number two, one hundred ten minus sixty is fifty. It "
-        "stays. Choice number three, twice one hundred ten is two hundred twenty, minus one hundred forty is eighty. Out. "
-        "Choice number four, one hundred forty minus one hundred ten is thirty. Out.", show(f6k31d, 'Now put one hundred ten'),
-        mk('cross', 'choice 1', 'is seventy. Out'), show(f6k31e, 'Choice number three, twice'),
+      L("Now put one hundred ten into each choice, and cross out everything that isn't fifty. Choice number one says "
+        "one hundred eighty minus x. One hundred eighty minus one hundred ten is seventy. Out. Choice number two says x "
+        "minus sixty. One hundred ten minus sixty is fifty. It stays. Choice number three says two x minus one hundred "
+        "forty. Twice one hundred ten is two hundred twenty, minus one hundred forty is eighty. Out. Choice number four "
+        "says one hundred forty minus x. One hundred forty minus one hundred ten is thirty. Out.", show(f6k31d, 'Now put one hundred ten'),
+        mk('cross', 'choice 1', 'is seventy. Out'), show(f6k31e, 'Twice one hundred ten'),
         mk('cross', 'choice 3', 'is eighty. Out'), mk('cross', 'choice 4', 'is thirty. Out')),
       L("Three choices are out, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
         mk('tick', 'choice 2', 'so choice number two is our answer'))),
@@ -3707,8 +3713,8 @@ video('solve-geo31-g040', 'solution', qid='geo31-g040', slides=[
     SM('Method 2 · Plugging in the answers', 'Testing the answers',
       L("[pause] Now another way, plugging in the answers. Each choice says what a over b could be. We turn it into real sizes "
         "and check the given. If the sizes work, that's the answer, because the given fixes the ratio."),
-      L("Choice number one says a over b is one, so a equals b. But the question has a big triangle and a small one, a is "
-        "smaller than b. Out.", show(f7r4, 'Choice number one says'), mk('cross', 'choice 1', 'smaller than b. Out')),
+      L("Choice number one says a over b is one, so a equals b. But here one triangle is big and the other is "
+        "small, so a is smaller than b. Out.", show(f7r4, 'Choice number one says'), mk('cross', 'choice 1', 'smaller than b. Out')),
       L("Choice number two, three tenths. So a is three and b is ten. The bold line is ten plus ten plus ten minus three, "
         "which is twenty-seven. The small perimeter is three times three, nine, and three times nine is twenty-seven. It "
         "works, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",

@@ -113,12 +113,13 @@
     ]
    },
    {
-    "say": "Now r equals two in the choices. Choice number two divides by three r, which is six, so it's pi plus two over six. That's half of our value, so it's out. Choice number four multiplies by r, so it's twice our value. It's out too.",
+    "say": "Now r equals two in the choices. Choice number two says pi plus two, over three r. Three r is six, so it's pi plus two over six. That's half of our value, so it's out. Choice number four says r times pi plus two, over three. It multiplies by r, so it's twice our value. It's out too.",
     "at": [
-     "number two divides",
+     "Choice number two says",
+     "it's pi plus",
      "That's half of our value",
-     "so it's out",
-     "number four multiplies",
+     "Choice number four says",
+     "It multiplies by",
      "It's out too"
     ]
    },

@@ -20,28 +20,29 @@
     ]
    },
    {
-    "say": "Now let's plug in the simplest value, x is one. One has no fives, so its count is zero. Choice number one. Five times one is five, which has one five. One squared is one, with no fives. One is not zero, so choice number one is out. Choice number two. One plus five is six, and six is two times three, no fives, so zero. On the right, zero plus one is one. Zero is not one, out. Choice number three. Five has one five, but five times zero is zero. One is not zero, out.",
+    "say": "Now let's plug in the simplest value, x is one. One has no fives, so its count is zero. Choice number one says: the double bracket of five x equals the double bracket of x squared. Five times one is five, which has one five. One squared is one, with no fives. One is not zero, so choice number one is out. Choice number two says: the double bracket of x plus five equals the double bracket of x, plus one. One plus five is six, and six is two times three, no fives, so zero. On the right, zero plus one is one. Zero is not one, out. Choice number three says: the double bracket of five x equals five times the double bracket of x. Five has one five, but five times zero is zero. One is not zero, out.",
     "at": [
      "One has no fives",
      "its count is",
-     "number one. Five",
-     "squared is one",
+     "Choice number one says",
+     "Five times one",
      "with no fives",
      "so choice number one is",
-     "number two. One",
-     "One plus five",
+     "Choice number two says",
+     "double bracket of x plus",
      "zero plus one is one",
      "Zero is not one, out",
-     "number three. Five",
+     "Choice number three says",
+     "double bracket of five x equals five",
      "five times zero is zero",
      "not zero, out"
     ]
    },
    {
-    "say": "Choice number four. Five has one five, and zero plus one is one. One equals one. Three choices are out, so choice number four is our answer.",
+    "say": "Choice number four says: the double bracket of five x equals the double bracket of x, plus one. Five has one five, and zero plus one is one. One equals one. Three choices are out, so choice number four is our answer.",
     "at": [
-     "number four. Five",
-     "Five has one",
+     "Choice number four says",
+     "double bracket of",
      "One equals one",
      "are out, so",
      "number four is our answer"

@@ -131,38 +131,38 @@
     ]
    },
    {
-    "say": "Choice number one: fifteen over fifteen is one, and one minus one is zero. Zero, so it's out.",
+    "say": "Choice number one says pi r, times one minus theta over fifteen. Fifteen over fifteen is one, and one minus one is zero. Zero, so it's out.",
     "at": [
-     "Choice number one",
-     "number one: fifteen",
-     "is one, and",
+     "Choice number one says",
+     "Fifteen over fifteen",
+     "and one minus",
      "so it's out"
     ]
    },
    {
-    "say": "Choice number two: fifteen over thirty is a half, and one minus a half is a half. That gives pi over two, out.",
+    "say": "Choice number two says pi r, times one minus theta over thirty. Fifteen over thirty is a half, and one minus a half is a half. That gives pi over two, out.",
     "at": [
-     "Choice number two",
-     "number two: fifteen",
-     "is a half",
+     "Choice number two says",
+     "Fifteen over thirty",
+     "half, and one",
      "That gives pi over two"
     ]
    },
    {
-    "say": "Choice number three: fifteen over ninety is a sixth, and one minus a sixth is five sixths. Five pi over six, out.",
+    "say": "Choice number three says pi r, times one minus theta over ninety. Fifteen over ninety is a sixth, and one minus a sixth is five sixths. Five pi over six, out.",
     "at": [
-     "Choice number three",
-     "number three: fifteen",
-     "is a sixth",
+     "Choice number three says",
+     "Fifteen over ninety",
+     "sixth, and one",
      "Five pi over six"
     ]
    },
    {
-    "say": "Choice number four: fifteen over forty-five is a third, and one minus a third is two thirds. Two pi over three, it fits, and the other three are out. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice number four says pi r, times one minus theta over forty-five. Fifteen over forty-five is a third, and one minus a third is two thirds. Two pi over three, it fits, and the other three are out. Choice number four is our answer, and I'll see you in the next question.",
     "at": [
-     "Choice number four:",
-     "number four: fifteen",
-     "is a third",
+     "Choice number four says",
+     "Fifteen over forty-five",
+     "third, and one",
      "Choice number four is our answer"
     ]
    }

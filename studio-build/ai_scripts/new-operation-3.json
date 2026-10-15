@@ -45,7 +45,7 @@
     ]
    },
    {
-    "say": "A question may ask: is a star b always equal to b star a? To show that it's not always true, one example where it fails is enough, like two and four.",
+    "say": "Questions may ask: is a star b always equal to b star a? To show that it's not always true, one example where it fails is enough, like two and four.",
     "at": [
      "To show that it's not always true",
      "always true, one"

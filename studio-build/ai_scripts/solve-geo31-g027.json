@@ -21,9 +21,9 @@
     ]
    },
    {
-    "say": "[short pause] In a gold triangle the sides are a, a root three, and two a. Which side is A B? It's opposite the thirty degree angle at C, so it's the short leg. So a is five.",
+    "say": "[short pause] In every gold triangle the sides are a, a root three, and two a. Which side is A B? It's opposite the thirty degree angle at C, so it's the short leg. So a is five.",
     "at": [
-     "In a gold triangle",
+     "In every gold triangle",
      "sides are a",
      "It's opposite the thirty",
      "angle at C"

@@ -48,26 +48,33 @@
     ]
    },
    {
-    "say": "A hundred is more than eighty-five, so A C is too long for a right angle, and the angle across from A C is obtuse. So the triangle isn't acute and isn't right. Choice numbers one and two are out.",
+    "say": "A hundred is more than eighty-five, so A C is too long for a right angle, and the angle across from A C is obtuse. So the triangle isn't acute and isn't right. Choice number one says the triangle is acute, and choice number two says it's right, with the right angle at B. So choice numbers one and two are out.",
     "at": [
      "A hundred is more than",
      "eighty-five, so A",
-     "Choice numbers one",
+     "Choice number one says",
+     "choice number two says",
+     "So choice numbers one",
      "and two are out"
     ]
    },
    {
-    "say": "Which angle is obtuse? The angle across from the longest side, at the corner that A C doesn't touch. A C goes from A to C, so the corner it doesn't touch is B. The obtuse angle is at B, and choice number three is our answer.",
+    "say": "Which angle is obtuse? The angle across from the longest side, at the corner that A C doesn't touch. A C goes from A to C, so the corner it doesn't touch is B. The obtuse angle is at B. Choice number three says the triangle is obtuse, with the obtuse angle at B, so choice number three is our answer.",
     "at": [
+     "The angle across",
      "so the corner it doesn",
      "touch is B",
-     "and choice number three is our answer"
+     "Choice number three says",
+     "obtuse angle at",
+     "so choice number three is our answer"
     ]
    },
    {
-    "say": "Choice number four is the trap. C is one end of A C, so it's next to the longest side, not across from it. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice number four says the triangle is obtuse, with the obtuse angle at C. That's the trap. C is one end of A C, so it's next to the longest side, not across from it. [pause] I'll see you in the next question.",
     "at": [
-     "Choice number four is the trap"
+     "Choice number four says",
+     "obtuse angle at",
+     "That's the trap"
     ]
    }
   ]

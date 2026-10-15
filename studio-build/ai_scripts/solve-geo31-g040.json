@@ -65,7 +65,7 @@
     ]
    },
    {
-    "say": "Choice number one says a over b is one, so a equals b. But the question has a big triangle and a small one, a is smaller than b. Out.",
+    "say": "Choice number one says a over b is one, so a equals b. But here one triangle is big and the other is small, so a is smaller than b. Out.",
     "at": [
      "Choice number one says",
      "number one says",

@@ -525,9 +525,9 @@ video('algebraic-understanding', 'lesson', slides=[
         "numbers don't decide, use the math way.",
         show(w0, 'Plug in numbers, plug'), show(w0b, 'plug in the answers, and'), show(w0c, 'and use the math way and understanding'))),
     S('Plugging in numbers',
-      L("The first tool, plugging in numbers. Say a is a positive number, and the question asks if a squared is always "
+      L("The first tool, plugging in numbers. Say a is any positive number, and the question asks if a squared is always "
         "bigger than a. Try a is three. Three squared is nine, and nine is bigger than three. So far, yes.",
-        show(w1q, 'Say a is a positive number'), show(w1, 'Try a is three')),
+        show(w1q, 'Say a is any positive number'), show(w1, 'Try a is three')),
       L("But positive numbers can also be between zero and one. Try a is one third. One third squared is one ninth, and one "
         "ninth is smaller than one third. So a squared is not always bigger than a. One allowed number where it fails is "
         "enough to say not always.", show(w1b, 'Try a is one third')),
@@ -894,12 +894,15 @@ video('solve-q-579', 'solution', qid='q-579', slides=[
       L("[pause] Now the insight. Let's see why the other three claims always hold. r squared equals p squared plus q squared is "
         "Pythagoras. So p, q and r can be the sides of a right triangle, with legs p and q, and the longest side, r.",
         show(k2i, 'r squared equals p squared plus q squared is'), show(tr['line'], 'can be the sides of a right triangle')),
-      L("In a right triangle, the longest side is longer than each leg. So r is bigger than p and bigger than q, always. "
-        "Those are choice numbers one and four. With algebra it's the same idea: r squared is q squared plus a positive "
-        "number, and all the numbers are positive, so r is bigger than q.", show(tr['r'], 'the longest side is longer'),
+      L("Choice number one says q is smaller than r, and choice number four says p is smaller than r. In a right "
+        "triangle, the longest side is longer than each leg. So r is bigger than p and bigger than q, always. So choice "
+        "numbers one and four always hold. With algebra it's the same idea: r squared is q squared plus a positive "
+        "number, and all the numbers are positive, so r is bigger than q.", pt('choice 1', 'Choice number one says', 'hl', 2.5),
+        pt('choice 4', 'choice number four says', 'hl', 2.5), show(tr['r'], 'the longest side is longer'),
         show(m1, 'So r is bigger than p')),
-      L("And in any triangle, two sides together are longer than the third side. So p plus q is bigger than r, always. "
-        "That's choice number two.", show(tr['pq'], 'two sides together are longer'), show(m2, 'So p plus q is bigger')),
+      L("Choice number two says r is smaller than p plus q. And in any triangle, two sides together are longer than "
+        "the third side. So p plus q is bigger than r, always. That's choice number two.", pt('choice 2', 'Choice number two says', 'hl', 3.0),
+        show(tr['pq'], 'two sides together are longer'), show(m2, 'So p plus q is bigger')),
       L("But nothing in the triangle limits how long r is. So only choice number three can fail. Choice number three is "
         "our answer, and I'll see you in the next question.",
         mk('tick', 'choice 3', 'So only choice number three can fail'))),

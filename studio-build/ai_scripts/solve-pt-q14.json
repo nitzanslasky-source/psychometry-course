@@ -48,36 +48,43 @@
     ]
    },
    {
-    "say": "Now we rule out whatever isn't forty. Choice number one, forty times a hundred, over sixty plus forty. Sixty plus forty is a hundred, and the hundreds cancel. That leaves forty, so it stays.",
+    "say": "Now we rule out whatever isn't forty. Choice number one says forty times a hundred, over x plus forty. With x sixty, that's forty times a hundred, over sixty plus forty. Sixty plus forty is a hundred, and the hundreds cancel. That leaves forty, so it stays.",
     "at": [
-     "number one, forty",
-     "Sixty plus forty is",
+     "Choice number one says",
+     "times a hundred, over sixty",
+     "Sixty plus forty is a hundred",
+     "That leaves forty",
      "so it stays"
     ]
    },
    {
-    "say": "Choice number two, forty times sixty, over a hundred. Forty times sixty is two thousand four hundred, and over a hundred is twenty-four. Out.",
+    "say": "Choice number two says forty x over a hundred. That's forty times sixty, over a hundred. Forty times sixty is two thousand four hundred, and over a hundred is twenty-four. Out.",
     "at": [
-     "number two, forty",
-     "over a hundred",
+     "Choice number two says",
+     "x over a",
+     "That's forty times sixty",
+     "is two thousand",
      "is twenty-four",
      "is twenty-four"
     ]
    },
    {
-    "say": "Choice number three, sixty plus forty, over a hundred. A hundred over a hundred is one. Out.",
+    "say": "Choice number three says x plus forty, over a hundred. That's sixty plus forty, over a hundred. A hundred over a hundred is one. Out.",
     "at": [
-     "number three, sixty",
-     "over a hundred",
+     "Choice number three says",
+     "plus forty, over",
+     "That's sixty plus forty",
      "is one. Out",
      "is one. Out"
     ]
    },
    {
-    "say": "Choice number four, a hundred times a hundred, over forty. A hundred over forty is two and a half, and times a hundred it's two hundred fifty. Out. So choice number one is our answer.",
+    "say": "Choice number four says x plus forty, times a hundred, over forty. That's a hundred times a hundred, over forty. A hundred over forty is two and a half, and times a hundred it's two hundred fifty. Out. So choice number one is our answer.",
     "at": [
-     "number four, a",
-     "a hundred, over",
+     "Choice number four says",
+     "plus forty, times",
+     "That's a hundred times",
+     "over forty is",
      "it's two hundred fifty",
      "it's two hundred fifty",
      "So choice number one is our answer"

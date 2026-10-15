@@ -31,10 +31,10 @@
   ],
   [
    {
-    "say": "We want the area, a times b. Here a shortcut formula from expressions helps: the bracket a plus b, squared, is a squared plus two a b plus b squared.",
+    "say": "We want the area, a times b. Here the shortcut formula from expressions helps: the bracket a plus b, squared, is a squared plus two a b plus b squared.",
     "at": [
      "We want the area",
-     "Here a shortcut formula",
+     "Here the shortcut formula",
      "expressions helps: the"
     ]
    },
