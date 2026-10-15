@@ -23,7 +23,7 @@
     ]
    },
    {
-    "say": "Choice number three. Three over a, divided by three over b. To divide by a fraction, multiply by its reciprocal. Three over a times b over three. The threes cancel, and we get b over a. The choice says a over b, and b over a equals a over b only when a and b are equal. So it's not true for every positive a and b, and choice number three is out.",
+    "say": "Choice number three. Three over a, divided by three over b. To divide by a fraction, multiply by its reciprocal. Three over a times b over three. The threes cancel, and we get b over a. The choice says a over b, and b over a equals a over b only when a and b are equal. For example, a is one and b is two. Then b over a is two, but a over b is one half. So it's not true for every positive a and b, and choice number three is out.",
     "at": [
      "Choice number three. Three over a",
      "number three. Three",
@@ -61,19 +61,18 @@
   ],
   [
    {
-    "say": "[pause] Now by understanding. Three over x means three divided by x. Choice number one. For a bigger than one it works. Three over two is smaller than three. But for a equal to one, we get three, which isn't smaller than three. And for a fraction like one half, we get six. So not always.",
+    "say": "[pause] Now by understanding. Three over x means three divided by x. Choice number one. For a bigger than one it works. Three over two is smaller than three. But for a equal to one, we get three, which isn't smaller than three. So not always.",
     "at": [
      "over x means",
      "number one. For",
      "For a bigger than one",
      "Three over two",
      "But for a equal to one",
-     "one, we get",
-     "we get six"
+     "one, we get"
     ]
    },
    {
-    "say": "Choice number three. Dividing by three over b is like multiplying by b over three. So the a ends up at the bottom and the b on top, b over a. That's a over b only when a equals b, so not always.",
+    "say": "Choice number three. Dividing by three over b is like multiplying by b over three. So the a ends up at the bottom and the b on top, b over a. That's a over b only when a equals b. For example, a is one and b is two. Then b over a is two, but a over b is one half. So not always.",
     "at": [
      "number three. Dividing",
      "Dividing by three over b",

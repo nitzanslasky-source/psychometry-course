@@ -1454,7 +1454,6 @@ h8d = IH('h8d', '$1<0$ ✗', size=30)
 h9 = IH('h9', '(2) $\\frac3a\\cdot a=3=\\frac3b\\cdot b$ ✓', size=30)
 i6 = IH('i6', '(1) $a=2$: $\\ \\frac{3}{2}<3$ ✓', size=28)
 i6b = IH('i6b', '$a=1$: $\\ \\frac31=3$, not $<3$ ✗', size=28)
-i6c = IH('i6c', '$a=\\frac12$: $\\ 6$ ✗', size=28)
 i7 = I('i7', '(3) $\\div\\frac3b=\\times\\frac b3$: $\\ \\frac ba$ ✗', size=28)
 i8 = I('i8', '(4) bigger denominator, smaller fraction ✗', size=28)
 i9 = I('i9', '(2) a number times its reciprocal is $1$: $\\ 3\\cdot1=3$ ✓', size=28)
@@ -1472,8 +1471,8 @@ video('solve-q-555', 'solution', qid='q-555', slides=[
         show(h6, 'Choice number one says'), mk('cross', 'choice 1', 'So choice number one is out')),
       L("Choice number three. Three over a, divided by three over b. To divide by a fraction, multiply by its reciprocal. "
         "Three over a times b over three. The threes cancel, and we get b over a. The choice says a over b, and b over a "
-        "equals a over b only when a and b are equal. So it's not true for every positive a and b, and choice number three "
-        "is out.", show(h7, 'Choice number three. Three over a'), mk('cross', 'choice 3', 'and choice number three is out'))),
+        "equals a over b only when a and b are equal. For example, a is one and b is two. Then b over a is two, but a over "
+        "b is one half. So it's not true for every positive a and b, and choice number three is out.", show(h7, 'Choice number three. Three over a'), mk('cross', 'choice 3', 'and choice number three is out'))),
     S('Method 1 · The math way',
       L("Choice number four says three over a is smaller than three over, in brackets, a plus one. The whole a plus one "
         "is the bottom of that fraction. Both bottoms are positive, so we can "
@@ -1489,10 +1488,11 @@ video('solve-q-555', 'solution', qid='q-555', slides=[
     S('Method 2 · Understanding',
       L("[pause] Now by understanding. Three over x means three divided by x. Choice number one. For a bigger than one it "
         "works. Three over two is smaller than three. But for a equal to one, we get three, which isn't smaller than three. "
-        "And for a fraction like one half, we get six. So not always.", show(i6, 'For a bigger than one'),
-        show(i6b, 'But for a equal to one'), show(i6c, 'we get six')),
+        "So not always.", show(i6, 'For a bigger than one'),
+        show(i6b, 'But for a equal to one')),
       L("Choice number three. Dividing by three over b is like multiplying by b over three. So the a ends up at the bottom "
-        "and the b on top, b over a. That's a over b only when a equals b, so not always.", show(i7, 'Dividing by three over b')),
+        "and the b on top, b over a. That's a over b only when a equals b. For example, a is one and b is two. Then b over "
+        "a is two, but a over b is one half. So not always.", show(i7, 'Dividing by three over b')),
       L("Choice number four. Both fractions have the same positive top, three, and positive bottoms. With the same "
         "positive top, a bigger denominator makes a smaller fraction. a plus one is bigger than a, so three over the whole "
         "a plus one is smaller than three over a. That's the opposite of what the choice says, so it's never true.",
