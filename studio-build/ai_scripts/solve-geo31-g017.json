@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "Look, there are no numbers here at all, no area and no length. So how do we start? Simply from the givens. [short pause] We'll solve it two ways, with letters, and then by cutting the big triangle into small ones.",
+    "say": "Look, there are no numbers here at all, no area and no length. So how do we start? Simply from the givens. [short pause] We'll solve it two ways, the math way, with letters, and then with an insight, cutting the big triangle into small ones.",
     "at": [
      "there are no numbers here",
      "we start? Simply"
@@ -64,10 +64,10 @@
   ],
   [
    {
-    "say": "[pause] Another way, without any of that calculation. D E is five x, so we can cut it into five pieces, each of length x. Then we join B to each cutting point. Now B D E is made of five small triangles, and each one has a base of x.",
+    "say": "[pause] Now an insight, without any of that calculation. D E is five x, so we can cut it into five pieces, each of length x. Then we join B to each cutting point. Now B D E is made of five small triangles, and each one has a base of x.",
     "at": [
-     "Another way",
-     "D E is",
+     "Now an insight",
+     "of that calculation",
      "we join B to each",
      "cutting point. Now",
      "B D E is made of five",

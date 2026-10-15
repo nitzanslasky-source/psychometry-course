@@ -19,7 +19,7 @@
     ]
    },
    {
-    "say": "[short pause] Start with m. m is outside the triangle at A, right next to the angle k inside. Together they make the straight line, so m and k add up to one hundred eighty. So m is one hundred eighty minus k.",
+    "say": "[short pause] The math way first. Start with m. m is outside the triangle at A, right next to the angle k inside. Together they make the straight line, so m and k add up to one hundred eighty. So m is one hundred eighty minus k.",
     "at": [
      "Start with m",
      "m is outside",

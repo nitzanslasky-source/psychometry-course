@@ -56,9 +56,9 @@
   ],
   [
    {
-    "say": "[pause] Now let's check with easy numbers. The question doesn't give a radius, so the answer is the same for every circle. Let's pick a radius of two, because it's small and easy.",
+    "say": "[pause] Now let's check by plugging in easy numbers. The question doesn't give a radius, so the answer is the same for every circle. Let's pick a radius of two, because it's small and easy.",
     "at": [
-     "The question doesn't",
+     "plugging in easy",
      "Let's pick a radius of two",
      "two, because it's"
     ]

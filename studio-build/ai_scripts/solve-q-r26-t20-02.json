@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "The answer has to be the smallest for every x in this range. So it's also the smallest at any one number we pick from the range, and one easy number can decide. [short pause] We'll solve it two ways, with one number, and then by placing each choice on the number line without numbers.",
+    "say": "The answer has to be the smallest for every x in this range. So it's also the smallest at any one number we pick from the range, and one easy number can decide. [short pause] We'll solve it two ways, by plugging in one number, and then by understanding, placing each choice on the number line.",
     "at": [
      "The answer has to be the smallest",
      "the smallest for",
@@ -20,9 +20,9 @@
     ]
    },
    {
-    "say": "[short pause] Let's take x is negative one half. It's between negative one and zero, and it's easy to work with. Choice number one, x cubed. Negative one half, cubed, is negative one half times negative one half times negative one half. Three negatives multiply to a negative, so it's negative one eighth. Choice number two is x itself, negative one half.",
+    "say": "[short pause] Let's plug in x is negative one half. It's between negative one and zero, and it's easy to work with. Choice number one, x cubed. Negative one half, cubed, is negative one half times negative one half times negative one half. Three negatives multiply to a negative, so it's negative one eighth. Choice number two is x itself, negative one half.",
     "at": [
-     "Let's take",
+     "Let's plug",
      "Choice number one, x cubed",
      "number one, x",
      "Negative one half, cubed",
@@ -57,10 +57,10 @@
   ],
   [
    {
-    "say": "[pause] Now without numbers. A number between negative one and zero stays between negative one and zero when we cube it. And x squared is between zero and one, so negative x squared is between negative one and zero. So choice numbers one, two and three are all between negative one and zero.",
+    "say": "[pause] Now by understanding, without numbers. A number between negative one and zero stays between negative one and zero when we cube it. And x squared is between zero and one, so negative x squared is between negative one and zero. So choice numbers one, two and three are all between negative one and zero.",
     "at": [
-     "Now without",
-     "Now without numbers",
+     "Now by",
+     "Now by understanding",
      "A number between",
      "So choice numbers one, two and three",
      "numbers one, two"

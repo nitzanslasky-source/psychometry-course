@@ -18,11 +18,11 @@
      "a circle here"
     ]
    },
-   "What do we do in them? We write the lengths of both shapes with the radius of the circle. We'll solve it three ways, with algebra, by plugging in a number, and by estimating sizes.",
+   "What do we do in them? We write the lengths of both shapes with the radius of the circle. We'll solve it three ways, the math way, by plugging in a number, and by estimation.",
    {
-    "say": "[short pause] Algebra first. K M and K N are radii, so each one is r. So the triangle is at least isosceles, and its base angles are equal.",
+    "say": "[short pause] The math way first. K M and K N are radii, so each one is r. So the triangle is at least isosceles, and its base angles are equal.",
     "at": [
-     "Algebra first",
+     "The math way first",
      "K M and K N are radii",
      "are radii, so"
     ]
@@ -132,7 +132,7 @@
   ],
   [
    {
-    "say": "[pause] And the third way, estimating sizes. Say the radius is one again. The triangle is equilateral, so each of its sides is one, and its perimeter is three.",
+    "say": "[pause] And the third way, estimation. Say the radius is one again. The triangle is equilateral, so each of its sides is one, and its perimeter is three.",
     "at": [
      "Say the radius is one again",
      "The triangle is"

@@ -19,7 +19,7 @@
     ]
    },
    {
-    "say": "[short pause] Start with the first given, a is parallel to b, and line c cuts both of them. To see it simply, let's look only at these three lines and ignore the rest of the figure.",
+    "say": "[short pause] The math way first. Start with the first given, a is parallel to b, and line c cuts both of them. To see it simply, let's look only at these three lines and ignore the rest of the figure.",
     "at": [
      "Start with the first given",
      "a is parallel",
@@ -65,10 +65,10 @@
   ],
   [
    {
-    "say": "[pause] We could make the end shorter, with the last digits. Some students don't even write the equation. They say, one angle ends in seven, one ends in six, and x makes the sum a hundred eighty, which ends in zero. Seven plus six is thirteen, which ends in three. So x has to end in seven, because three plus seven makes a ten.",
+    "say": "[pause] Now by understanding. We could make the end shorter, with the last digits. Some students don't even write the equation. They say, one angle ends in seven, one ends in six, and x makes the sum a hundred eighty, which ends in zero. Seven plus six is thirteen, which ends in three. So x has to end in seven, because three plus seven makes a ten.",
     "at": [
-     "end shorter, with",
-     "one angle ends",
+     "could make the",
+     "ends in seven",
      "Seven plus six is thirteen",
      "which ends in three"
     ]

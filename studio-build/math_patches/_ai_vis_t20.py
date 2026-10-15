@@ -492,9 +492,9 @@ def IH(name, tex, size=34, col=0):
 # give tools that "open your head". English additions kept: the three tools in order, numbers first.
 # NEW here, with examples: plugging in (two regions + a non-allowed number), testing the answers, algebra / understanding
 # (a shortcut formula instead of finding the letters; integer gaps).  Reminders later: q-r26-t20-01, q-577, q-578, q-579.
-w0 = I('w0', '1 · Plug in numbers', size=28)
-w0b = I('w0b', '2 · Test the answers', size=28)
-w0c = I('w0c', '3 · Algebra and understanding', size=28)
+w0 = I('w0', '1 · Plugging in numbers', size=28)
+w0b = I('w0b', '2 · Plugging in the answers', size=28)
+w0c = I('w0c', '3 · The math way and understanding', size=28)
 w1 = I('w1', '$a>0$: $\\ a=3$: $\\ 9>3$ ✓', size=30)
 w1b = I('w1b', '$a=\\frac13$: $\\ \\frac19<\\frac13$ ✗', size=30)
 w2 = I('w2', '$a<0$: $\\ 3$ is not allowed', size=30)
@@ -512,14 +512,15 @@ video('algebraic-understanding', 'lesson', slides=[
         "belong to any one topic we've learned, or that mix a few topics together.")),
     S('Three tools',
       L("Sometimes the solution is algebra, sometimes it's understanding what the givens really say, and sometimes it's one "
-        "of the tools from psychometric thinking, plugging in numbers or testing the answers. To be honest, it's a fairly "
+        "of the tools from psychometric thinking, plugging in numbers or plugging in the answers. To be honest, it's a fairly "
         "small part of the exam, and the questions don't repeat themselves. There's no single rule I can give you that "
         "solves them all."),
       L("But the questions in this topic, and the practice after them, give you tools that open your head for questions "
-        "like these. Three tools open almost all of them. Plug in numbers, test the answers, and use algebra and "
-        "understanding. Try numbers first, because they're fast and safe, and use algebra when the numbers don't decide.",
-        show(w0, 'Plug in numbers, test'), show(w0b, 'test the answers, and'), show(w0c, 'and use algebra and understanding'))),
-    S('Plug in numbers',
+        "like these. Three tools open almost all of them. Plug in numbers, plug in the answers, and use the math way and "
+        "understanding. Try numbers first, because they're fast and safe, and use the math way when the numbers don't "
+        "decide.",
+        show(w0, 'Plug in numbers, plug'), show(w0b, 'plug in the answers, and'), show(w0c, 'and use the math way and understanding'))),
+    S('Plugging in numbers',
       L("The first tool, plugging in numbers. Say a is a positive number, and the question asks if a squared is always "
         "bigger than a. Try a is three. Three squared is nine, and nine is bigger than three. So far, yes.",
         show(w1, 'Try a is three')),
@@ -530,13 +531,13 @@ video('algebraic-understanding', 'lesson', slides=[
         "allowed at all. Then we'd try a negative number, like negative two. Negative two squared is four, and four is "
         "bigger than negative two.", show(w2, 'use only numbers that the givens allow'),
         show(w2b, 'Negative two squared is four'))),
-    S('Test the answers',
-      L("The second tool, testing the answers. Say x squared minus x is six, and the choices are two, three, four and six. "
+    S('Plugging in the answers',
+      L("The second tool, plugging in the answers. Say x squared minus x is six, and the choices are two, three, four and six. "
         "We don't have to solve anything. We put each choice into the question. Two squared minus two is four minus two, "
         "which is two, not six. Three squared minus three is nine minus three, which is six. So three works.",
         show(w3, 'Say x squared minus x is six'), show(w3b, 'Two squared minus two'), show(w3c, 'Three squared minus three'))),
-    S('Algebra and understanding',
-      L("The third tool, algebra and understanding. Say a plus b is ten, a minus b is four, and they ask for a squared minus "
+    S('The math way and understanding',
+      L("The third tool, the math way and understanding. Say a plus b is ten, a minus b is four, and they ask for a squared minus "
         "b squared. We don't need to find a and b. a squared minus b squared is the bracket a plus b, times the bracket a "
         "minus b. That's ten times four, which is forty.", show(w4, 'Say a plus b is ten'), show(w4b, 'a squared minus b squared is the bracket'),
         show(w4c, "That's ten times four")),
@@ -564,9 +565,9 @@ video('solve-q-r26-t20-01', 'solution', qid='q-r26-t20-01', slides=[
       L("Given: x and y are positive numbers, and x is bigger than y. Which of the following must be true?",
         pt('stem', 'Given', 'hl', 6.0), voice='calm', pause=0.5),
       L("Must be true means true for every allowed pair. So one allowed pair where a choice fails is enough to rule that "
-        "choice out. [short pause] We'll solve it two ways, plugging in numbers, and then with algebra, to see why the "
+        "choice out. [short pause] We'll solve it two ways, plugging in numbers, and then the math way, to see why the "
         "answer always works.", pt('stem: ask', 'Must be true means')),
-      L("[short pause] Let's start with easy whole numbers that fit the givens. x is three and y is two. Both are "
+      L("[short pause] Let's start by plugging in easy whole numbers that fit the givens. x is three and y is two. Both are "
         "positive, and three is bigger than two.", show(z1['line'], 'easy whole numbers'), show(z1['a'], 'x is three and y is two')),
       L("Choice number one, x squared is bigger than x. Three squared is nine, and nine is bigger than three, so it works "
         "here. Choice number two, x y is bigger than y. Three times two is six, and six is bigger than two. It works. "
@@ -586,8 +587,8 @@ video('solve-q-r26-t20-01', 'solution', qid='q-r26-t20-01', slides=[
       L("Only choice number three is left, so choice number three is our answer.",
         mk('tick', 'choice 3', 'so choice number three is our answer')),
       sb='Method 1 · Plugging in numbers'),
-    S('Method 2 · Algebra',
-      L("[pause] Now let's see why choice number three is true for every allowed pair. x squared minus y squared is, in "
+    S('Method 2 · The math way',
+      L("[pause] Now the math way. Let's see why choice number three is true for every allowed pair. x squared minus y squared is, in "
         "brackets, x minus y, times, in brackets, x plus y.", show(b1, 'x squared minus y squared is')),
       L("x is bigger than y, so x minus y is positive. Both numbers are positive, so x plus y is positive too. A positive "
         "number times a positive number is positive. So x squared minus y squared is positive, which means x squared is "
@@ -606,13 +607,13 @@ c1 = IH('c1', '$x=-\\frac{1}{2}$: $\\ $(1) $-\\frac{1}{8}$ $\\quad$ (2) $-\\frac
 c2 = IH('c2', '(3) $-\\frac14$ $\\quad$ (4) $-2$', size=30)
 c3 = I('c3', '$\\frac{1}{-1/2}=-2,\\quad \\frac{1}{-1/10}=-10$', size=30)
 video('solve-q-r26-t20-02', 'solution', qid='q-r26-t20-02', slides=[
-    S('Method 1 · One number',
+    S('Method 1 · Plugging in numbers',
       L("Given: x is between negative one and zero. Which of the following is the smallest?",
         pt('stem', 'Given', 'hl', 5.0), voice='calm', pause=0.5),
       L("The answer has to be the smallest for every x in this range. So it's also the smallest at any one number we pick "
-        "from the range, and one easy number can decide. [short pause] We'll solve it two ways, with one number, and then "
-        "by placing each choice on the number line without numbers.", pt('stem: ask', 'The answer has to be the smallest')),
-      L("[short pause] Let's take x is negative one half. It's between negative one and zero, and it's easy to work with. "
+        "from the range, and one easy number can decide. [short pause] We'll solve it two ways, by plugging in one "
+        "number, and then by understanding, placing each choice on the number line.", pt('stem: ask', 'The answer has to be the smallest')),
+      L("[short pause] Let's plug in x is negative one half. It's between negative one and zero, and it's easy to work with. "
         "Choice number one, x cubed. Negative one half, cubed, is negative one half times negative one half times negative "
         "one half. Three negatives multiply to a negative, so it's negative one eighth. Choice number two is x itself, "
         "negative one half.", show(c1, 'Choice number one, x cubed')),
@@ -625,10 +626,10 @@ video('solve-q-r26-t20-02', 'solution', qid='q-r26-t20-02', slides=[
         mk('tick', 'choice 4', 'Choice number four is our answer')),
       L("Careful with choice number one. Cubing a number between negative one and zero brings it closer to zero. So "
         "negative one eighth is bigger than negative one half, not smaller.", mk('cross', 'choice 1', 'Careful with choice number one'))),
-    S('Method 2 · Place the choices',
-      L("[pause] Now without numbers. A number between negative one and zero stays between negative one and zero when we "
+    S('Method 2 · Understanding',
+      L("[pause] Now by understanding, without numbers. A number between negative one and zero stays between negative one and zero when we "
         "cube it. And x squared is between zero and one, so negative x squared is between negative one and zero. So choice "
-        "numbers one, two and three are all between negative one and zero.", show(n2['line'], 'Now without numbers'),
+        "numbers one, two and three are all between negative one and zero.", show(n2['line'], 'Now by understanding'),
         show(n2['a'], 'So choice numbers one, two and three')),
       L("Now one over x. x is closer to zero than negative one, so one over x is farther from zero than negative one. For "
         "example, one over negative one half is negative two, and one over negative one tenth is negative ten. So one over "
@@ -685,12 +686,12 @@ f1 = IH('f1', '$a=8,\\ b=7$: $\\ 8+7=15$', size=32)
 f2 = IH('f2', '$c=6$: $\\ b+c=13$', size=32)
 f3 = IH('f3', '$b+c=14$: $\\ b\\ge8,\\ a\\ge9$: $\\ a+b\\ge17$ ✗', size=32)
 video('solve-q-577', 'solution', qid='q-577', slides=[
-    S('Method 1 · The biggest value',
+    S('Method 1 · Understanding: the extremes',
       L("Given: a, b and c are integers, c is smaller than b, which is smaller than a, and a plus b is smaller than "
         "sixteen. Which of the following cannot be the value of b plus c?", pt('stem', 'Given', 'hl', 9.0), voice='calm', pause=0.5),
       L("They ask what b plus c cannot be. So we'll find the biggest value b plus c can ever have. [short pause] We'll "
-        "solve it three ways, with the biggest possible value, with numbers that make b plus c as big as possible, and by "
-        "testing the answers.", pt('stem: ask', 'They ask what b plus c cannot be')),
+        "solve it three ways, by understanding the biggest possible value, by plugging in numbers that make b plus c as "
+        "big as possible, and by plugging in the answers.", pt('stem: ask', 'They ask what b plus c cannot be')),
       L("[short pause] Let's start with the second given. a and b are integers, so a plus b is an integer too. Smaller "
         "than sixteen means at most fifteen.", show(e1, 'Smaller than sixteen means')),
       L("Now compare the two sums. a plus b is the sum of the two biggest numbers, and b plus c is the sum of the two "
@@ -701,16 +702,16 @@ video('solve-q-577', 'solution', qid='q-577', slides=[
       L("So b plus c is a plus b, which is at most fifteen, minus a minus c, which is at least two. That's at most "
         "thirteen. Fourteen is more than thirteen, so b plus c can never be fourteen. Choice number four is our answer.",
         show(e3, "That's at most thirteen"), mk('tick', 'choice 4', 'Choice number four is our answer'))),
-    S('Method 2 · Numbers for the biggest sum',
-      L("[pause] Another way is to build numbers that make b plus c as big as possible. a has to be bigger than b, and a "
+    S('Method 2 · Plugging in numbers',
+      L("[pause] Now let's plug in numbers. We build numbers that make b plus c as big as possible. a has to be bigger than b, and a "
         "plus b has to stay at most fifteen. To make b as big as it can be, take a and b as close as possible: a is eight "
         "and b is seven. Eight plus seven is fifteen, which is allowed.", show(f1, 'a is eight')),
       L("c has to be smaller than b, so the biggest c is six. Then b plus c is seven plus six, which is thirteen. If we try "
         "a bigger a, like nine, then b can only be six, and b plus c gets smaller. So thirteen is the biggest b plus c can "
         "be, and fourteen is out of reach. Choice number four.", show(f2, 'so the biggest c is six'),
         mk('tick', 'choice 4', 'fourteen is out of reach'))),
-    S('Method 3 · Testing the answers',
-      L("[pause] And a third way, testing the answers. The question hides a biggest value, so it makes sense to start with "
+    S('Method 3 · Plugging in the answers',
+      L("[pause] And a third way, plugging in the answers. The question hides a biggest value, so it makes sense to start with "
         "the biggest choice, fourteen. Can b plus c be fourteen? c is smaller than b, so b has to be at least eight, with c "
         "at most six. Then a is bigger than b, so a is at least nine, and a plus b is at least seventeen. That's not "
         "smaller than sixteen.", show(f3, 'Can b plus c be fourteen')),
@@ -737,7 +738,7 @@ video('solve-q-578', 'solution', qid='q-578', slides=[
         "is y multiplied?", pt('stem', 'Given', 'hl', 7.0), voice='calm', pause=0.5),
       L("So b changes, and we need to know how y has to change so that the equation still holds. [short pause] We'll solve "
         "it two ways. This time we start with plugging in numbers, because here it's the simpler way for most students, "
-        "and then we'll do the algebra.", pt('stem: ask', 'how y has to change')),
+        "and then the math way.", pt('stem: ask', 'how y has to change')),
       L("[short pause] First we need one pair of numbers that fits the equation. The easiest pair is b is one and y is one, "
         "because one squared and one cubed are both one. If you don't see it, put b is one. Then y squared is one. y could "
         "be one or negative one, but y is positive, so y is one.", show(g1, 'put b is one')),
@@ -747,8 +748,8 @@ video('solve-q-578', 'solution', qid='q-578', slides=[
         "five to the power of six. Five cubed is a hundred twenty-five. So y went from one to a hundred twenty-five, which "
         "means it was multiplied by a hundred twenty-five. Choice number one is our answer.",
         show(g3, 'Five cubed is a hundred twenty-five'), mk('tick', 'choice 1', 'Choice number one is our answer'))),
-    S('Method 2 · Algebra',
-      L("[pause] Now the algebra. When b is multiplied by twenty-five, the right side becomes the bracket twenty-five b, "
+    S('Method 2 · The math way',
+      L("[pause] Now the math way, with algebra. When b is multiplied by twenty-five, the right side becomes the bracket twenty-five b, "
         "cubed. To keep the equation true, y has to be multiplied by some number too. Let's call that number k. So the "
         "bracket k y, squared, equals the bracket twenty-five b, cubed.", show(h1, "Let's call that number k")),
       L("Open the brackets with the power rules. k squared times y squared equals twenty-five cubed times b cubed. We know "
@@ -788,16 +789,16 @@ video('solve-q-579', 'solution', qid='q-579', slides=[
       L("Given: p, q and r are different positive integers, and r squared over p q is equal to p over q plus q over p. "
         "Which of the following is not necessarily true?", pt('stem', 'Given', 'hl', 9.0), voice='calm', pause=0.5),
       L("The equation looks complicated, so first we simplify it. Not necessarily true means it fails in at least one "
-        "allowed case. So we're looking for the claim that can fail. [short pause] We'll solve it two ways, with whole "
-        "numbers that fit, and then with a right triangle, which shows why the other claims always hold.",
+        "allowed case. So we're looking for the claim that can fail. [short pause] We'll solve it two ways, by "
+        "plugging in whole numbers that fit, and then with an insight, a right triangle, which shows why the other claims always hold.",
         pt('stem: ask', 'Not necessarily true means')),
       L("[short pause] Let's simplify the right side. To add p over q and q over p, we need a common denominator, p times "
         "q. p over q is p squared over p q, and q over p is q squared over p q. So the right side is p squared plus q "
         "squared, over p q.", show(k1, 'we need a common denominator')),
       L("Both sides now have the same denominator, p q, so their tops are equal. r squared equals p squared plus q "
         "squared.", show(k2, 'r squared equals p squared'))),
-    S('Method 1 · Whole numbers',
-      L("[pause] Now we need positive integers that fit r squared equals p squared plus q squared. The best-known ones are "
+    S('Method 1 · Plugging in numbers',
+      L("[pause] Now let's plug in numbers. We need positive integers that fit r squared equals p squared plus q squared. The best-known ones are "
         "three, four and five, because nine plus sixteen is twenty-five. Here r is five.", show(k3, 'three, four and five')),
       L("Choice number three says r is smaller than eight. With three, four and five it's true, but we need a case where "
         "it fails. Let's double all three numbers: six, eight and ten. Thirty-six plus sixty-four is a hundred, which is "
@@ -806,9 +807,9 @@ video('solve-q-579', 'solution', qid='q-579', slides=[
       L("So choice number three fails in an allowed case. It's not necessarily true, and choice number three is our "
         "answer. One allowed case where it fails is all the question asks for, so we can stop here.",
         mk('tick', 'choice 3', 'and choice number three is our')),
-      sb='Method 1 · Whole numbers'),
-    S('Method 2 · A right triangle',
-      L("[pause] Now let's see why the other three claims always hold. r squared equals p squared plus q squared is "
+      sb='Method 1 · Plugging in numbers'),
+    S('Method 2 · Insight',
+      L("[pause] Now the insight. Let's see why the other three claims always hold. r squared equals p squared plus q squared is "
         "Pythagoras. So p, q and r can be the sides of a right triangle, with legs p and q, and the longest side, r.",
         show(tr, 'can be the sides of a right triangle')),
       L("In a right triangle, the longest side is longer than each leg. So r is bigger than p and bigger than q, always. "
@@ -869,12 +870,12 @@ r2 = IH('r2', '$\\frac{79-21}{2}=29$, $\\ 29+1=30$', size=32)
 r3 = IH('r3', '$21$ to $80$: $\\ 80-21+1=60$', size=32)
 r4 = IH('r4', '$60\\div2=30$', size=32)
 video('solve-q-r26-t20-03', 'solution', qid='q-r26-t20-03', slides=[
-    S('Method 1 · Steps of two',
+    S('Method 1 · The math way',
       L("How many odd numbers are there between twenty and eighty?", pt('stem', 'How many odd numbers', 'hl', 4.0),
         voice='calm', pause=0.5),
       L("We need to count them without listing all of them. [short pause] We'll solve it two ways, jumping by two from the "
         "first odd number to the last, and then taking half of all the numbers.", pt('stem', 'without listing')),
-      L("[short pause] Twenty and eighty are even, so they wouldn't count anyway. The first odd number after twenty is "
+      L("[short pause] The math way first. Twenty and eighty are even, so they wouldn't count anyway. The first odd number after twenty is "
         "twenty-one, and the last odd number before eighty is seventy-nine.", show(r1, 'The first odd number after twenty')),
       L("Odd numbers go up in steps of two. From twenty-one to seventy-nine is seventy-nine minus twenty-one, which is "
         "fifty-eight. Fifty-eight divided by two is twenty-nine steps. Each step lands on a new odd number, and we also "
@@ -882,8 +883,8 @@ video('solve-q-r26-t20-03', 'solution', qid='q-r26-t20-03', slides=[
         show(r2, 'Fifty-eight divided by two'), mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("Careful, twenty-nine, choice number one, is the number of steps. It forgets to count the first number.",
         mk('cross', 'choice 1', 'Careful, twenty-nine, choice number one'))),
-    S('Method 2 · Half of all',
-      L("[pause] Another way. Count all the whole numbers from twenty-one to eighty, both ends included. Eighty minus "
+    S('Method 2 · Understanding',
+      L("[pause] Another way, by understanding. Count all the whole numbers from twenty-one to eighty, both ends included. Eighty minus "
         "twenty-one, plus one, is sixty.", show(r3, 'Eighty minus twenty-one')),
       L("They take turns, odd, even, odd, even. The list starts with an odd number, twenty-one, and ends with an even "
         "number, eighty, so they come in pairs, and exactly half of them are odd. Sixty divided by two is thirty. Choice "
@@ -1258,6 +1259,12 @@ MV.calm(_types.SimpleNamespace(**globals()), ORDER)     # 2026-10-13 steady high
 _lp = [(v, p) for v in ORDER for p in MV.check_layers(VIDEOS[v])]
 assert not _lp, ('figure layers out of order', _lp)
 
+
+# 2026-10-15 one vocabulary for method names (math_patches/_method_names.py CORE; guide "Method names"): a "Method N · X"
+# title or sidebar outside it stops the run, so a new script uses the vocabulary from its first draft.
+_mn_spec = importlib.util.spec_from_file_location('_method_names_vocab', os.path.join(HERE, '_method_names.py'))
+_mn = importlib.util.module_from_spec(_mn_spec); _mn_spec.loader.exec_module(_mn)
+_mn.check_vocab(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

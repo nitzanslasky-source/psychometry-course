@@ -12,10 +12,10 @@
     "pause": 0.5
    },
    {
-    "say": "So they ask for the shaded area, the part of the triangle that is outside the circle. [short pause] We'll solve it with the full math, and then we'll see two quick exam ways.",
+    "say": "So they ask for the shaded area, the part of the triangle that is outside the circle. [short pause] We'll solve it the math way, and then we'll see two quick exam ways.",
     "at": [
      "So they ask for the shaded area",
-     "with the full"
+     "the math way"
     ]
    },
    {
@@ -159,10 +159,10 @@
   ],
   [
    {
-    "say": "[pause] One more way, a full exam shortcut. It's called estimating sizes. Maybe you put in the givens and don't know how to go on. Or maybe you run out of time, because this is one of the last questions in the section.",
+    "say": "[pause] One more way, a full exam shortcut. It's called estimation. Maybe you put in the givens and don't know how to go on. Or maybe you run out of time, because this is one of the last questions in the section.",
     "at": [
      "full exam shortcut",
-     "estimating sizes",
+     "called estimation",
      "the givens and",
      "how to go"
     ]

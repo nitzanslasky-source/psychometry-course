@@ -12,14 +12,14 @@
     "pause": 0.5
    },
    {
-    "say": "Must be true means true for every allowed pair. So one allowed pair where a choice fails is enough to rule that choice out. [short pause] We'll solve it two ways, plugging in numbers, and then with algebra, to see why the answer always works.",
+    "say": "Must be true means true for every allowed pair. So one allowed pair where a choice fails is enough to rule that choice out. [short pause] We'll solve it two ways, plugging in numbers, and then the math way, to see why the answer always works.",
     "at": [
      "Must be true means",
      "one allowed pair"
     ]
    },
    {
-    "say": "[short pause] Let's start with easy whole numbers that fit the givens. x is three and y is two. Both are positive, and three is bigger than two.",
+    "say": "[short pause] Let's start by plugging in easy whole numbers that fit the givens. x is three and y is two. Both are positive, and three is bigger than two.",
     "at": [
      "Let's start",
      "easy whole numbers",
@@ -83,9 +83,9 @@
   ],
   [
    {
-    "say": "[pause] Now let's see why choice number three is true for every allowed pair. x squared minus y squared is, in brackets, x minus y, times, in brackets, x plus y.",
+    "say": "[pause] Now the math way. Let's see why choice number three is true for every allowed pair. x squared minus y squared is, in brackets, x minus y, times, in brackets, x plus y.",
     "at": [
-     "Now let's",
+     "Now the",
      "number three is",
      "x squared minus y squared is",
      "is, in brackets"

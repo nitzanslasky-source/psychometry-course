@@ -554,7 +554,7 @@ b1 = I('b1', '$a=1,\\ b=1$: $\\ \\frac{1}{1}=1$ ✗', hand='a = 1,  b = 1 :    {
 b2 = I('b2', '$a=-1,\\ b=1$: $\\ \\frac{-1}{1}=-1$ ✓', hand='a = −1,  b = 1 :    {−1/1} = −1   ✓')
 b3 = I('b3', 'Positive $b$ works: $\\ $(2) ✗', size=30, col=1, hand='Positive b works :   (2) ✗')
 video('solve-q-457', 'solution', qid='q-457', slides=[
-    S('Method 1 · Positive pieces first',
+    S('Method 1 · Understanding',
       L("Given: a is not equal to zero, and a to the power of five, times b squared, over the absolute value of a, is "
         "smaller than zero. Which of the following is necessarily true?", pt('stem', 'Given', 'hl', 9.0), voice='calm', pause=0.5),
       L("So it's a sign question, not a calculation. The whole fraction is negative, and we have to find out what that says about a and b. The trick is to find the pieces that are surely positive, because then the piece that's left decides the sign. For example, negative two cubed, times four, over two. Four and two are positive, so the sign comes from negative two cubed, negative eight, and the whole thing is negative. And negative two squared times four, over two? Every piece is positive, so it's positive. [short pause] We'll solve it two ways, piece by piece, and then plugging in numbers.",
@@ -589,7 +589,7 @@ c3 = I('c3', '$x+y>0$: $\\ y$ wins, $\\ \\hl{a}{|y|>|x|}$', hand='x + y > 0 :   
 d1 = I('d1', '$x=-1,\\ y=3$: $\\ -1+3=2>0$ ✓', hand='x = −1,  y = 3 :    −1 + 3 = 2 > 0   ✓')
 d2 = I('d2', '(1) $1>3$ ✗ $\\quad$(3) $-3>0$ ✗ $\\quad$(4) $-4>0$ ✗', size=30, hand='(1)  1 > 3  ✗     (3)  −3 > 0  ✗     (4)  −4 > 0  ✗')
 video('solve-q-r26-t16-01', 'solution', qid='q-r26-t16-01', slides=[
-    S('Method 1 · The bigger size wins',
+    S('Method 1 · Understanding',
       L("Given: x is smaller than zero, which is smaller than y, and x plus y is bigger than zero. Which of the following is "
         "necessarily true?", pt('stem', 'Given', 'hl', 8.0), voice='calm', pause=0.5),
       L("So x is negative and y is positive, mixed signs. And their sum is positive. [short pause] We'll solve it two ways, "
@@ -649,7 +649,7 @@ f5 = I('f5', 'Evens: the gap is $2$, not $1$', size=28, col=1)
 g1 = I('g1', '$p=2,\\ q=4,\\ r=6$', hand='p = 2,   q = 4,   r = 6')
 g2 = I('g2', '$\\frac{36-4}{8}=\\frac{32}{8}=\\hl{a}{4}$', hand='{36 − 4/8} = {32/8} = \\hl{a}{4}')
 video('solve-q-458', 'solution', qid='q-458', slides=[
-    S('Method 1 · One letter',
+    S('Method 1 · The math way: one letter',
       L("p, q and r are consecutive even numbers, and zero is smaller than p, which is smaller than q, which is smaller than "
         "r. What is r squared minus p squared, over two q?", pt('stem', 'p, q and r', 'hl', 10.0), voice='calm', pause=0.5),
       L("So three consecutive even numbers, and an expression. [short pause] We'll solve it two ways, with one letter, and "
@@ -696,7 +696,7 @@ video('solve-q-459', 'solution', qid='q-459', slides=[
         "negative two is two plus two, four. Choice number four is our answer.", show(h5, 'Work out each fraction first'),
         show(h4, 'Two minus negative two'), mk('tick', 'choice 4', 'Choice number four is our answer')),
       L("Got zero? That's the trap, the minus of the second fraction got lost.", mk('cross', 'choice 3', "That's the trap"))),
-    S('Method 2 · The differences',
+    S('Method 2 · The math way',
       L("[pause] Another way is to read the differences, with their signs. r minus p, bigger minus smaller, two steps, so "
         "two. s minus r, one.", show(k1, 'r minus p')),
       L("q minus s, smaller minus bigger, two steps back, negative two. r minus q, one.", show(k2, 'q minus s')),
@@ -752,7 +752,7 @@ n6 = I('n6', '$13$ is the middle, not the largest ✗', size=28, col=1, hand='13
 o1 = I('o1', '$(b-3)+\\ldots+(b+3)=7b$', hand='b − 3  up to  b + 3 :    sum = 7b')
 o2 = I('o2', '$7b=91$, $\\ b=13$, $\\ b+3=\\hl{l}{16}$', hand='7b = 91,   b = 13,   b + 3 = \\hl{l}{16}')
 video('solve-q-r26-t16-02', 'solution', qid='q-r26-t16-02', slides=[
-    S('Method 1 · Count times middle',
+    S('Method 1 · Understanding: the middle',
       L("The sum of seven consecutive integers is ninety-one. What is the largest of them?", pt('stem', 'The sum', 'hl', 5.0), voice='calm', pause=0.5),
       L("So seven numbers in a row, and all we know is their sum. [short pause] We'll solve it two ways, with count times "
         "middle, and then with one letter.", pt('stem: ask', 'all we know is their sum')),
@@ -774,7 +774,7 @@ video('solve-q-r26-t16-02', 'solution', qid='q-r26-t16-02', slides=[
       L("The largest is sixteen, so choice number three is our answer.", mk('circle', 'n5: l', 'The largest is sixteen'),
         mk('tick', 'choice 3', 'choice number three is our answer')),
       L("Now careful, thirteen is the trap. It's the middle, not the largest.", show(n6, 'thirteen is the trap'), mk('cross', 'choice 1', "It's the middle"))),
-    S('Method 2 · One letter',
+    S('Method 2 · The math way: one letter',
       L("[pause] Another way is one letter, around the middle, b. The seven numbers are b minus three up to b plus three. "
         "The minuses and the pluses cancel, so the sum is seven b.", show(o1, 'b minus three up to')),
       L("Seven b is ninety-one, so b is ninety-one over seven, thirteen. And the largest is b plus three, sixteen. Choice "
@@ -795,7 +795,7 @@ r6 = I('r6', '$4+5+6=15=3\\cdot5$ ✓', size=30, col=1, hand='4 + 5 + 6 = 15 = 3
 s1 = I('s1', '$1+2+3+4=\\hl{t}{10}$', hand='1 + 2 + 3 + 4 = \\hl{t}{10}')
 s2 = I('s2', 'by $4$? ✗ $\\quad$ odd? ✗ $\\quad$ by $3$? ✗', hand='by 4 ?  ✗      odd ?  ✗      by 3 ?  ✗')
 video('solve-q-r26-t16-03', 'solution', qid='q-r26-t16-03', slides=[
-    S('Method 1 · One letter',
+    S('Method 1 · The math way: one letter',
       L("The sum of four consecutive integers is always:", pt('stem', 'The sum', 'hl', 3.0), voice='calm', pause=0.5),
       L("So any four numbers in a row, and what's always true about their sum. [short pause] We'll solve it two ways, with "
         "one letter, and then plugging in numbers.", pt('stem', 'what\'s always true')),
@@ -889,7 +889,7 @@ u1 = I('u1', '$m=1,\\ n=2$: $\\ 1+2+9+8=20$', hand='m = 1,  n = 2 :    1 + 2 + 9
 u2 = I('u2', '$m=2,\\ n=1$: $\\ 2+1+9+4=16$', hand='m = 2,  n = 1 :    2 + 1 + 9 + 4 = 16')
 u3 = I('u3', 'Both cases even', size=28, col=1)
 video('solve-q-460', 'solution', qid='q-460', slides=[
-    S('Method 1 · Drop the powers',
+    S('Method 1 · Understanding',
       L("m and n are positive integers, and m plus n is odd. Which of the following is true about the expression m to the "
         "power of n, plus n to the power of m, plus nine, plus four n?", pt('stem', 'm and n are', 'hl', 10.0), voice='calm', pause=0.5),
       L("So m plus n is odd, and that tells us something. Odd plus odd is even, and even plus even is even. So one of them is "
@@ -900,7 +900,7 @@ video('solve-q-460', 'solution', qid='q-460', slides=[
       L("m plus n is odd, it's given. Nine is odd. Four n is even, because of the four. And the evens don't matter, so odd "
         "plus odd, even. It's always even, choice number one is our answer.", show(t3, 'm plus n is odd, it'),
         mk('tick', 'choice 1', 'choice number one is our answer'))),
-    S('Method 2 · Plugging in both cases',
+    S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in. There are only two cases, m odd and n even, or the other way round. m is one and "
         "n is two. One squared is one, and two to the power of one is two. One plus two plus nine plus eight is twenty, even.", show(u1, 'm is one and n is two')),
       L("Now swapped, m is two and n is one. Two to the power of one is two, and one squared is one. Two plus one plus nine plus four is sixteen, even again. Both cases are even, so it's always even. Choice number one. [pause] Okay. I'll see you in "
@@ -918,7 +918,7 @@ v4 = I('v4', 'Cancel first, then judge', size=28, col=1)
 v5 = I('v5', '$a=1,b=2$: $\\frac64$ $\\quad a=3,b=2$: $\\frac{18}{4}$ $\\quad a=3,b=4$: $\\frac{18}{16}$', size=28,
        hand='a=1, b=2 :  {6/4}      a=3, b=2 :  {18/4}      a=3, b=4 :  {18/16}')
 video('solve-q-461', 'solution', qid='q-461', slides=[
-    S('Method 1 · Cancel first',
+    S('Method 1 · The math way',
       L("a and b are integers. a is odd, and b is even and not zero. Which of the following is the most precise "
         "description of six a over b squared?", pt('stem', 'a and b are', 'hl', 8.0), voice='calm', pause=0.5),
       L("Division and parity, and a trap. Six a on top is even, and b squared at the bottom is even. Even over even, and the "
@@ -931,7 +931,7 @@ video('solve-q-461', 'solution', qid='q-461', slides=[
         mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("So in a fraction, cancel first, and only then judge. The two inside the six cancelled with a two hiding in b.",
         show(v4, 'cancel first'))),
-    S('Method 2 · Plugging in three times',
+    S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in. It's division, so three plug-ins, close together. a is one and b is two, six over "
         "four. A fraction. a is three and b is two, eighteen over four, a fraction. a is three and b is four, eighteen over "
         "sixteen, a fraction.", show(v5, 'a is one and b is two')),
@@ -955,7 +955,7 @@ y1 = I('y1', '$a=7,\\ b=1$ $\\ $(odd: evens make all even)', size=30, hand='a = 
 y2 = I('y2', '(1) $49+1+5=55$ ✗ $\\quad$ (2) $1+7=8$ ✓', size=30, hand='(1)   49 + 1 + 5 = 55  ✗      (2)   1 + 7 = 8  ✓')
 y3 = I('y3', '(3) $42-1=41$ ✗ $\\quad$ (4) $5\\cdot49+4$: odd ✗', size=30, hand='(3)   42 − 1 = 41  ✗      (4)   5·49 + 4 :  odd  ✗')
 video('solve-q-462', 'solution', qid='q-462', slides=[
-    S('Method 1 · Same parity',
+    S('Method 1 · Understanding',
       L("a and b are integers. Given: a minus b is equal to six. Which of the following expressions is necessarily even?",
         pt('stem', 'a and b are', 'hl', 6.0), voice='calm', pause=0.5),
       L("So we know the difference, six, and we look for the expression that's always even. [short pause] We'll solve it "
@@ -1034,7 +1034,7 @@ h1 = I('h1', '$9n^2-1=(3n)^2-1^2=(3n-1)(3n+1)$', size=32, hand='9n^2 − 1 = (3n
 h2 = I('h2', '$n$ odd: $\\ 3n$ odd $\\to$ two consecutive evens', size=30, hand='n odd :   3n odd   →   two consecutive evens')
 h3 = I('h3', '$\\frac{8k}{4}=\\hl{e}{2k}$', hand='{8k/4} = \\hl{e}{2k}')
 video('solve-q-463', 'solution', qid='q-463', slides=[
-    S('Method 1 · Plugging in three times',
+    S('Method 1 · Plugging in numbers',
       L("n is an odd number. Which of the following is the most precise description of nine n squared minus one, over "
         "four?", pt('stem', 'n is an odd', 'hl', 7.0), voice='calm', pause=0.5),
       L("A division with parity, and the choices are descriptions. [short pause] We'll solve it two ways, plugging in three "
@@ -1046,7 +1046,7 @@ video('solve-q-463', 'solution', qid='q-463', slides=[
         "is fifty-six.", show(g3, 'n is five'), voice='calm'),
       L("Two, twenty, fifty-six, even every time. That points to choice number one, always even. But plug-ins that work "
         "don't prove always, so let's see why.", show(g4, "plug-ins that work"), pt('choice 1', 'That points to choice number one'))),
-    S('Method 2 · The shortcut formula',
+    S('Method 2 · The math way: shortcut formula',
       L("[pause] Nine n squared is three n, squared, and one is one squared. So it's the third shortcut formula, three n "
         "minus one, times three n plus one.", show(h1, 'Nine n squared is three n')),
       L("n is odd, so three n is odd too. So three n minus one and three n plus one are the even numbers just before and "
@@ -1066,7 +1066,7 @@ i5 = I('i5', '$-2$: not by $4$ ✗ $\\quad$ never a fraction ✗ $\\quad$ never 
 j1 = I('j1', '$n-n^3=-(n^3-n)=-(n-1)\\,n\\,(n+1)$', size=32, hand='n − n^3 = −(n^3 − n) = −(n − 1) n (n + 1)')
 j2 = I('j2', 'Three in a row: $\\ 6k$ $\\quad \\frac{-6k}{3}=\\hl{e}{-2k}$', size=32, hand='Three in a row :   6k      {−6k/3} = \\hl{e}{−2k}')
 video('solve-q-464', 'solution', qid='q-464', slides=[
-    S('Method 1 · Plugging in',
+    S('Method 1 · Plugging in numbers',
       L("n is an integer. The expression n minus n cubed, over three, is always:", pt('stem', 'n is an integer', 'hl', 5.0), voice='calm', pause=0.5),
       L("So an expression with any integer n, and what's always true about it. [short pause] We'll solve it two ways, "
         "plugging in, and then factoring.", pt('stem', 'any integer n')),
@@ -1081,7 +1081,7 @@ video('solve-q-464', 'solution', qid='q-464', slides=[
         "numbers two and four are out. Choice number three, even.", show(i5, "Negative two doesn't divide"),
         mk('cross', 'choice 1', 'choice number one is out'), mk('cross', 'choice 2', 'choice numbers two'), mk('cross', 'choice 4', 'and four are out'),
         mk('tick', 'choice 3', 'Choice number three, even'))),
-    S('Method 2 · Three in a row',
+    S('Method 2 · The math way: three in a row',
       L("[pause] Another way, factoring. n minus n cubed is minus, in brackets, n cubed minus n. And n cubed minus n is n "
         "minus one, times n, times n plus one, three in a row.", show(j1, 'n minus n cubed is minus')),
       L("Remember, three in a row divide by six, and the minus in front doesn't change that. So the top is six k, and over "
@@ -1101,7 +1101,7 @@ k6 = I('k6', '$3\\cdot5\\cdot7=105\\quad 5\\cdot7\\cdot9=315$: $\\ $both have a 
 k7 = I('k7', '$7,\\ \\hl{n}{9},\\ 11\\qquad 11,\\ 13,\\ \\hl{n}{15}$', hand='7,  \\hl{n}{9},  11        11,  13,  \\hl{n}{15}')
 k8 = I('k8', 'Odd multiples of $3$: $\\ 3,\\ 9,\\ 15,\\ 21$', size=30, hand='Odd multiples of 3 :    3,  9,  15,  21')
 video('solve-q-r26-t16-04', 'solution', qid='q-r26-t16-04', slides=[
-    S('Method 1 · Smallest case, then a second case',
+    S('Method 1 · Plugging in numbers',
       L("n is a positive odd number. The product n, times n plus two, times n plus four, is necessarily divisible by:",
         pt('stem', 'n is a positive', 'hl', 7.0), voice='calm', pause=0.5),
       L("So three odd numbers in a row, and what always divides their product. [short pause] We'll solve it two ways, the "
@@ -1119,7 +1119,7 @@ video('solve-q-r26-t16-04', 'solution', qid='q-r26-t16-04', slides=[
       L("Now careful, the trap. Three, five and seven, a hundred five, or five, seven and nine, three fifteen, both "
         "divide by fifteen, because each has a five inside. So choose the second case on purpose, avoiding the factor you "
         "test.", show(k6, 'the trap'))),
-    S('Method 2 · Why 3',
+    S('Method 2 · Understanding',
       L("[pause] And why is three always there? The odd multiples of three are three, nine, fifteen, twenty-one, one in "
         "every three odd numbers. So any three odd numbers in a row catch one of them.", show(k8, 'The odd multiples of three')),
       L("Seven, nine, eleven has nine. Eleven, thirteen, fifteen has fifteen. So the product always divides by three. Choice "
@@ -1137,7 +1137,7 @@ m1 = I('m1', '$w=-2,\\ x=-1,\\ y=1,\\ z=2$', hand='w = −2,   x = −1,   y = 1
 m2 = I('m2', '(1) $1\\cdot(-1)=-1$ ✓ $\\quad$ (2) $-1\\cdot(-4)=4$ ✗', size=30, hand='(1)   1·(−1) = −1  ✓      (2)   −1·(−4) = 4  ✗')
 m3 = I('m3', '(3) $1\\cdot1=1$ ✗ $\\quad$ (4) $-1\\cdot(-1)=1$ ✗', size=30, hand='(3)   1·1 = 1  ✗      (4)   −1·(−1) = 1  ✗')
 video('solve-q-465', 'solution', qid='q-465', slides=[
-    S('Method 1 · Read the signs',
+    S('Method 1 · Understanding',
       L("Given: w is smaller than x, which is smaller than zero, which is smaller than y, which is smaller than z. Which of "
         "the following expressions is necessarily negative?", pt('stem', 'Given', 'hl', 8.0), voice='calm', pause=0.5),
       L("So we know the order of four numbers, two negative and two positive, and each choice is a product of brackets. "
@@ -1179,7 +1179,7 @@ o2 = I('o2', '(1) $\\frac{2}{-1}=-2$ ✗ $\\quad$ (2) $\\frac{-2}{-1}=2$ ✓', s
 o3 = I('o3', '(3) $\\frac{0}{2}=0$ ✗ $\\quad$ (4) $\\frac{-1}{1}=-1$ ✗', size=30, hand='(3)   {0/2} = 0  ✗      (4)   {−1/1} = −1  ✗')
 o4 = I('o4', 'Zero is not positive', size=28, col=1)
 video('solve-q-466', 'solution', qid='q-466', slides=[
-    S('Method 1 · Read the signs',
+    S('Method 1 · Understanding',
       L("Given: x is bigger than y, and x times y is smaller than zero. Which of the following expressions is necessarily "
         "positive?", pt('stem', 'Given', 'hl', 7.0), voice='calm', pause=0.5),
       L("So two givens, and fractions in the choices. First let's find the signs of x and y. [short pause] We'll solve it "
@@ -1191,7 +1191,7 @@ video('solve-q-466', 'solution', qid='q-466', slides=[
         "the bottom, y, is negative. Positive over negative is negative. Out.", show(n3, 'x squared is positive'), mk('cross', 'choice 1', 'Out.')),
       L("Choice number two. y minus x is negative minus positive, negative. And over y, a negative. Negative over negative "
         "is positive. So choice number two is our answer.", show(n4, 'y minus x is'), mk('tick', 'choice 2', 'choice number two is our answer'))),
-    S('Method 2 · Simplify first',
+    S('Method 2 · The math way',
       L("[pause] Another way is to simplify each fraction first, and only then read the signs. What's different? Before, we "
         "read the sign of the whole top and the whole bottom. Here we first break each fraction into simpler pieces. From "
         "the givens, as before, y is negative and x is positive.", show(p1, 'From the givens')),
@@ -1201,12 +1201,12 @@ video('solve-q-466', 'solution', qid='q-466', slides=[
       L("Choice number three. The top is the third shortcut formula, x minus y, times x plus y. Cancel x minus y, and x plus y "
         "is left. A positive plus a negative, and it depends on which is bigger in size. So not necessarily positive. Out.",
         show(p3, 'The top is the third'), mk('cross', 'choice 3', 'not necessarily positive. Out'))),
-    S('Method 2 · Simplify first',
+    S('Method 2 · The math way',
       L("Choice number four. Cancel x times y, and x over y is left. Positive over negative, negative. Out.",
         show(p4, 'Cancel x times y'), mk('cross', 'choice 4', 'negative. Out')),
       L("Choice number two. y over y is one, minus x over y. x over y is negative, so one minus a negative is one plus "
         "something positive. Always positive. Choice number two.", show(p5, 'y over y is one'), mk('tick', 'choice 2', 'Always positive. Choice number two')),
-      sb='Method 2 · Simplify first'),
+      sb='Method 2 · The math way'),
     S('Method 3 · Plugging in numbers',
       L("[pause] Now let's try plugging in. x is positive and y is negative, so x is one and y is negative one.", show(o1, 'x is one and y is')),
       L("Choice number one. The top is one plus one, which is two, and two over negative one is negative two. Choice number two. The top is negative one minus one, which is negative two, and negative two over negative one is two.", show(o2, 'The top is one plus one')),
@@ -1227,7 +1227,7 @@ q1 = I('q1', '(1) $p=-1,\\ q=-2,\\ r=1$: $\\ -2<0$ ✗', size=30, hand='(1)   p 
 q2 = I('q2', '(2), (3) $p=1,\\ q=-10,\\ r=1$: $\\ -8<0$ ✗', size=30, hand='(2), (3)   p = 1,  q = −10,  r = 1 :    −8 < 0   ✗')
 q3 = I('q3', '$r$ positive and the givens hold: $\\ $not necessarily', size=26, col=1)
 video('solve-q-467', 'solution', qid='q-467', slides=[
-    S('Method 1 · Start smart',
+    S('Method 1 · Understanding',
       L("Given: p is bigger than q, and p plus q plus r is smaller than zero. Which of the following additional givens makes "
         "r necessarily negative?", pt('stem', 'Given', 'hl', 8.0), voice='calm', pause=0.5),
       L("So we add one choice to the givens, and look for the one that forces r to be negative. [short pause] We'll solve "
@@ -1239,7 +1239,7 @@ video('solve-q-467', 'solution', qid='q-467', slides=[
         "down, and r must be negative.", show(p1, 'p and q are both positive'), show(p2, 'r has to pull the sum down')),
       L("Let's see it in numbers. p is three and q is two, so five plus r is smaller than zero, and r is smaller than "
         "negative five. Choice number four is our answer.", show(p3, 'p is three and q is two'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
-    S('Method 2 · Knock out the others',
+    S('Method 2 · Plugging in numbers',
       L("[pause] Another way is to knock out the other choices with numbers. For each one, I look for a positive r that still "
         "fits the givens.", show(q3, 'a positive r that still fits')),
       L("Choice number one, p is negative. p is negative one, q is negative two, and r is one. Negative one plus negative two "
@@ -1265,7 +1265,7 @@ t1 = I('t1', '$a=c=2$: $\\ 16,\\ 2,\\ 4,\\ 4$ $\\ $tie ✗', size=30, hand='a = 
 t2 = I('t2', '$a=2,\\ c=8$: $\\ 40,\\ 2,\\ 10,\\ 4$ ✓', size=30, hand='a = 2,  c = 8 :    40,  2,  10,  4   ✓')
 t3 = I('t3', '$\\frac{16-4+100-64}{2+10}=\\frac{48}{12}=\\hl{f}{4}$', hand='{16 − 4 + 100 − 64/2 + 10} = {48/12} = \\hl{f}{4}')
 video('solve-q-468', 'solution', qid='q-468', slides=[
-    S('Method 1 · The shortcut formula',
+    S('Method 1 · The math way: shortcut formula',
       L("a and b are consecutive even numbers, and c and d are consecutive even numbers. Given: a is smaller than b, c is "
         "smaller than d, and a plus d is not zero. What is b squared minus a squared, plus d squared minus c squared, over a "
         "plus d?", pt('stem', 'a and b are', 'hl', 14.0), voice='calm', pause=0.5),
@@ -1305,7 +1305,7 @@ v1 = I('v1', '$x+z=2y$: $\\ $the middle is half', size=30, hand='x + z = 2y :   
 v2 = I('v2', '$10$: $\\ 4,5,6$: $\\ 16+25=41\\ne36$ ✗', size=30, hand='10 :   4, 5, 6 :    16 + 25 = 41 ≠ 36   ✗')
 v3 = I('v3', '$8$: $\\ 3,4,5$: $\\ 9+16=25$ ✓', size=30, hand='8 :   3, 4, 5 :    9 + 16 = 25   ✓')
 video('solve-q-469', 'solution', qid='q-469', slides=[
-    S('Method 1 · One letter',
+    S('Method 1 · The math way: one letter',
       L("x, y and z are consecutive integers, and x is smaller than y, which is smaller than z. Given: x squared plus y "
         "squared is equal to z squared. Which of the following could be the value of x plus z?", pt('stem', 'x, y and z', 'hl', 11.0), voice='calm', pause=0.5),
       L("So three numbers in a row, and one equation. [short pause] We'll solve it two ways, with one letter, and then "
@@ -1345,7 +1345,7 @@ x1 = I('x1', '$b=1$: $\\ (-2)^2+9^3=4+729=733$', size=32, hand='b = 1 :    (−2
 x2 = I('x2', '$b=2$: $\\ (-1)^2+10^3=1+1000=1001$', size=32, hand='b = 2 :    (−1)^2 + 10^3 = 1 + 1000 = 1001')
 x3 = I('x3', '$b$ odd or even, $\\ y$ odd both times', size=28, col=1)
 video('solve-q-470', 'solution', qid='q-470', slides=[
-    S('Method 1 · Different parities',
+    S('Method 1 · Understanding: even and odd',
       L("b and y are integers. Given: y is equal to b minus three, squared, plus b plus eight, cubed. Which of the following "
         "statements is necessarily true?", pt('stem', 'b and y are', 'hl', 8.0), voice='calm', pause=0.5),
       L("So all the choices are about even and odd. [short pause] We'll solve it three ways, with the two brackets, "
@@ -1356,7 +1356,7 @@ video('solve-q-470', 'solution', qid='q-470', slides=[
         "on sixteen. So one bracket is even, and the other is odd.", show(w5, 'From two, a jump')),
       L("A power doesn't change parity, so after the powers, still one even and one odd. Odd plus even is odd. So y is "
         "always odd. Choice number four is our answer.", show(w6, "A power doesn't change"), mk('tick', 'choice 4', 'Choice number four is our answer'))),
-    S('Method 2 · Drop the powers',
+    S('Method 2 · Understanding: drop the powers',
       L("[pause] Another way, and it's the shortest. It uses the same rule, powers don't change parity, but instead of "
         "thinking about the brackets, we just drop the powers. In a parity question that's allowed, and I'd never do that in "
         "a regular equation.", show(w3, 'never do that in a regular equation')),
@@ -1385,7 +1385,7 @@ y3 = I('y3', '$a$ odd ✓ $\\quad b+1$ odd $\\to b$ even $\\quad c-5$ odd $\\to 
 z1 = I('z1', '$a=1,\\ b=0,\\ c=6$: $\\ 1\\cdot1\\cdot1=1$', size=32, hand='a = 1,   b = 0,   c = 6 :    1·1·1 = 1')
 z2 = I('z2', '$2k+1=1$, $\\ k=0$: $\\ k,\\ b,\\ c$ even ✗', size=32, hand='2k + 1 = 1,   k = 0 :    k,  b,  c  even   ✗')
 video('solve-q-471', 'solution', qid='q-471', slides=[
-    S('Method 1 · An odd product',
+    S('Method 1 · Understanding',
       L("k, a, b and c are integers. Given: two k plus one is equal to a cubed, times b plus one, squared, times c minus "
         "five, to the power of four. Which of the numbers k, a, b, c is necessarily odd?", pt('stem', 'k, a, b and c', 'hl', 11.0), voice='calm', pause=0.5),
       L("It looks scary, but it's one rule about odd products. [short pause] We'll solve it two ways, with that rule, and "
@@ -1421,7 +1421,7 @@ b2 = I('b2', '(1) $\\frac{8\\cdot3}{8}=3\\quad$ (2) $\\frac{2\\cdot4}{8}=1$', si
 b3 = I('b3', '(3) $\\frac{9+1-2}{8}=1\\quad$ (4) $\\frac{4}{8}=\\frac12$ ✗', size=30, hand='(3)   {9 + 1 − 2/8} = 1      (4)   {4/8} = {1/2}   ✗')
 b4 = I('b4', '$b=4$ would hide it: $\\ \\frac{16}{8}=2$', size=28, col=1, hand='b = 4  would hide it :    {16/8} = 2')
 video('solve-q-472', 'solution', qid='q-472', slides=[
-    S('Method 1 · Count the twos',
+    S('Method 1 · Understanding: count the twos',
       L("a is an odd positive number, and b is an even positive number. Which of the following expressions is not "
         "necessarily an integer?", pt('stem', 'a is an odd', 'hl', 7.0), voice='calm', pause=0.5),
       L("So every choice is over eight, and eight is three twos. Three choices always have enough twos on top, and one "
@@ -1432,7 +1432,7 @@ video('solve-q-472', 'solution', qid='q-472', slides=[
         show(a2, 'b cubed is'), mk('cross', 'choice 1', 'always whole. Out')),
       L("Choice number two. a is odd, so a plus one and a plus three are two consecutive even numbers, and they always "
         "divide by eight. Out.", show(a3, 'a plus one and a plus three'), mk('cross', 'choice 2', 'divide by eight. Out'))),
-    S('Method 1 · Count the twos',
+    S('Method 1 · Understanding: count the twos',
       L("Choice number three. Open both squares. The two a b terms cancel, and two a squared plus two b squared, minus two "
         "a squared, leaves two b squared. That's two times four k squared, eight k squared. Out.", show(a4, 'Open both squares'),
         mk('cross', 'choice 3', 'eight k squared. Out')),
@@ -1441,8 +1441,8 @@ video('solve-q-472', 'solution', qid='q-472', slides=[
         "answer.", show(a5, 'a times b squared'), mk('tick', 'choice 4', 'Choice number four is our answer')),
       L("Let's see it in numbers. a is one and b is two, four over eight is a half. But a is one and b is four, sixteen over "
         "eight is two. Whole by luck.", show(a6, 'a is one and b is two')),
-      sb='Method 1 · Count the twos'),
-    S('Method 2 · Plugging in the smallest',
+      sb='Method 1 · Understanding: count the twos'),
+    S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in. Which numbers? The smallest, a is one and b is two, so no extra two sneaks in.",
         show(b1, 'The smallest')),
       L("Choice number one, two cubed is eight, times three is twenty-four, over eight is three. Choice number two, two times "
@@ -1794,6 +1794,12 @@ import types as _types
 _mv_spec = importlib.util.spec_from_file_location('_method_visuals', os.path.join(HERE, '_method_visuals.py'))
 _mv = importlib.util.module_from_spec(_mv_spec); _mv_spec.loader.exec_module(_mv)
 _mv.post(_types.SimpleNamespace(**globals()), 16)
+
+# 2026-10-15 one vocabulary for method names (math_patches/_method_names.py CORE; guide "Method names"): a "Method N · X"
+# title or sidebar outside it stops the run, so a new script uses the vocabulary from its first draft.
+_mn_spec = importlib.util.spec_from_file_location('_method_names_vocab', os.path.join(HERE, '_method_names.py'))
+_mn = importlib.util.module_from_spec(_mn_spec); _mn_spec.loader.exec_module(_mn)
+_mn.check_vocab(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

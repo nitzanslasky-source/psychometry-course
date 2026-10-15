@@ -703,7 +703,7 @@ b4 = I('b4', 'Nested fractions with numerator $1$: multiply denominators', size=
 b5 = I('b5', '$\\frac12$ of $\\frac14$: $\\ 2\\cdot4=8$', size=30, col=1, hand='{1/2} of {1/4} :   2·4 = 8')
 b6 = I('b6', 'Multiples of $15$: $\\ 15,\\ 30,\\ \\hl{f}{45}$', hand='Multiples of 15 :   15,  30,  \\hl{f}{45}')
 video('solve-q-423', 'solution', qid='q-423', slides=[
-    S('Method 1 · Step by step',
+    S('Method 1 · The math way',
       L("In Daniel's class, one fifth of the students are boys who play basketball, and among those, one third also play the "
         "guitar. What could be the number of students in the class?", pt('stem', "In Daniel's", 'hl', 9.0), voice='calm', pause=0.5),
       L("So we don't know the size of the class, and they ask what it could be. So we don't look for the number itself, we "
@@ -722,7 +722,7 @@ video('solve-q-423', 'solution', qid='q-423', slides=[
         mk('cross', 'choice 1', 'Choice number one is out')),
       L("So forty-five is the only one left, and choice number two is our answer.", show(a5, 'the only one left'),
         mk('tick', 'choice 2', 'choice number two is our answer'))),
-    S('Method 2 · Build from the inside',
+    S('Method 2 · The math way: one letter',
       L("[pause] Another way is to build the class from the inside, from the smallest group out. Call the guitar players k, "
         "a whole number of kids. They're a third of the basketball boys, so there are three k basketball boys. And the "
         "basketball boys are a fifth of the class, so the class is five times three k, which is fifteen k.",
@@ -756,7 +756,7 @@ P1 = STRIP('P1', 0, 40, [
 d1 = I('d1', 'A full row never changes the leftover', size=28, col=1)
 d2 = I('d2', 'On the list: $\\ $only $34$', hand='On the list :   only  34')
 video('solve-q-424', 'solution', qid='q-424', slides=[
-    S('Method 1 · Test the choices',
+    S('Method 1 · Plugging in the answers',
       L("Tamar is putting her stamps into an album. If she arranges them in rows of five, with an equal number in each row, "
         "four stamps are left over. If she arranges them in rows of three, with an equal number in each row, one stamp is "
         "left over. What could be the number of stamps Tamar has?", pt('stem', 'Tamar is', 'hl', 14.0), voice='calm', pause=0.5),
@@ -774,7 +774,7 @@ video('solve-q-424', 'solution', qid='q-424', slides=[
         show(c3, 'Six rows of five'), show(c4, 'Eleven rows of three')),
       L("Both conditions fit, and a question has one correct answer, so there's no need to check sixteen. Choice number three "
         "is our answer.", show(c5, 'one correct answer'), mk('tick', 'choice 3', 'Choice number three'))),
-    S('Method 2 · List the numbers',
+    S('Method 2 · The math way: listing',
       L("[pause] Another way is to list the numbers that leave four in rows of five. Start at four, and hop by five. Why hop by five? One more full row of five never changes what's left over. Fourteen is two rows and four, and nineteen is three rows and four. Four, nine, fourteen, nineteen, twenty-four, "
         "twenty-nine, thirty-four, thirty-nine.", show(d1, 'Another way is to list'), show(P1['line'], 'list the numbers'), show(P1['hops'], 'Four, nine, fourteen')),
       L("Which choices are on the list? Twenty-eight, no. Forty, no. Thirty-four, yes. Sixteen, no. Only thirty-four is on it, "
@@ -795,7 +795,7 @@ f1 = I('f1', 'By $8$: $\\ 1,2,3,4,5,6,\\hl{s}{7},0,1,2$', size=32, hand='By 8 : 
 f2 = I('f2', 'By $3$: $\\ 1,\\hl{t}{2},0,1,2,0$', size=32, hand='By 3 :   1, \\hl{t}{2}, 0, 1, 2, 0')
 f3 = I('f3', '$7\\cdot2=14$', hand='7·2 = 14')
 video('solve-q-425', 'solution', qid='q-425', slides=[
-    S('Method 1 · The biggest remainder',
+    S('Method 1 · Understanding',
       L("a and b are positive integers. x is the remainder when a is divided by eight, and y is the remainder when b is "
         "divided by three. What is the greatest possible value of x times y?", pt('stem', 'a and b are', 'hl', 9.0), voice='calm', pause=0.5),
       L("So x and y are remainders, and they want the biggest possible product. a and b can be any positive integers, so we "
@@ -815,7 +815,7 @@ video('solve-q-425', 'solution', qid='q-425', slides=[
         "reaches the divisor. And seven and two are each just one of the remainders, not the product.",
         show(e5, 'twenty-four is the trap'), mk('cross', 'choice 4', 'never reaches the divisor'), mk('cross', 'choice 1', 'And seven and'),
         mk('cross', 'choice 2', 'two are each'))),
-    S('Method 2 · List the remainders',
+    S('Method 2 · Plugging in numbers',
       L("[pause] Another way is to list the remainders by trying numbers. Divide one, two, three and so on by eight. One "
         "leaves one, two leaves two, and so on up to seven, which leaves seven. Eight leaves zero, nine leaves one again. So "
         "dividing by eight, the remainders go round from zero to seven.", show(f1, 'Divide one, two, three')),
@@ -838,7 +838,7 @@ h1 = I('h1', '$x=0$: $\\ 7,\\ \\ 4,\\ \\ 8,\\ \\ 25$', hand='x = 0 :    7,   4, 
 h2 = I('h2', 'Remainders: $\\ 2,\\ \\ \\hl{r}{4},\\ \\ 3,\\ \\ 0$', hand='Remainders :    2,   \\hl{r}{4},   3,   0')
 h3 = I('h3', 'The $5x$ part never changes the remainder', size=26, col=1)
 video('solve-q-426', 'solution', qid='q-426', slides=[
-    S('Method 1 · Split off the fives',
+    S('Method 1 · The math way: tag it',
       L("A number leaves a remainder of four when divided by five. Which of the following expressions could represent the "
         "number? x is an integer.", pt('stem', 'A number leaves', 'hl', 7.0), voice='calm', pause=0.5),
       L("So we know the remainder by five, and every choice is an expression with x. Remember, a number that leaves four "
@@ -856,13 +856,13 @@ video('solve-q-426', 'solution', qid='q-426', slides=[
         "need, so choice number two is our answer.", pt('g3', 'Twenty-five x squared and'), mk('tick', 'choice 2', 'choice number two is our answer')),
       L("And here's a shortcut for next time. Everything built from five x divides by five too, so I only need the square "
         "of the number at the end, two squared, four.", show(g4, "here's a shortcut"))),
-    S('Method 1 · Split off the fives',
+    S('Method 1 · The math way: tag it',
       L("In the exam you'd circle it and move on. Here, the other two with the shortcut. Ten x plus eight. Ten x is full "
         "fives, and eight is one five plus three. Out. Five x plus five, squared. The last number is five, and five squared "
         "is twenty-five, exactly five fives, nothing left. Out.",
         show(g5, 'Ten x plus eight'), mk('cross', 'choice 3', 'plus three. Out'), show(g6, 'Five x plus five'), mk('cross', 'choice 4', 'nothing left. Out')),
-      sb='Method 1 · Split off the fives'),
-    S('Method 2 · Plugging in a number',
+      sb='Method 1 · The math way: tag it'),
+    S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in a number. x is any integer, so I'll take zero. Why zero? Here every choice leaves "
         "the same remainder for every x, because the x part is always full fives. So the easiest number is the best.",
         show(h3, 'the x part is always full fives')),
@@ -892,7 +892,7 @@ n1 = I('n1', '$a=9,\\ \\ b=5$: $\\ 9-5=\\hl{r}{4}$', hand='a = 9,   b = 5 :    9
 n2 = I('n2', '$a=16,\\ \\ b=12$: $\\ 16-12=\\hl{r}{4}$', hand='a = 16,   b = 12 :    16 − 12 = \\hl{r}{4}')
 n3 = I('n3', 'Different pairs, the same remainder', size=28, col=1)
 video('solve-q-r26-t15-01', 'solution', qid='q-r26-t15-01', slides=[
-    S('Method 1 · Tag it',
+    S('Method 1 · The math way: tag it',
       L("a and b are positive integers, and a is bigger than b. When a is divided by seven, the remainder is two. When b is "
         "divided by seven, the remainder is five. What will be the remainder if a minus b is divided by seven?",
         pt('stem', 'a and b are', 'hl', 11.0), voice='calm', pause=0.5),
@@ -904,8 +904,8 @@ video('solve-q-r26-t15-01', 'solution', qid='q-r26-t15-01', slides=[
         "they get different letters.", show(j1, 'seven k plus two'), show(j2, 'Why m and not k')),
       L("Now subtract. a minus b is seven k minus seven m, plus two minus five. The sevens stay sevens, so seven times, in "
         "brackets, k minus m. And two minus five is negative three.", show(j3, 'Now subtract'), show(j4, 'The sevens stay sevens')),
-      sb='Method 1 · Tag it'),
-    S('Method 1 · Tag it',
+      sb='Method 1 · The math way: tag it'),
+    S('Method 1 · The math way: tag it',
       L("But a remainder can't be negative. Dividing by seven, it's zero to six. So add the divisor, seven. Negative three plus seven is four. Why is that allowed? Adding a full seven never changes the remainder. Four leaves four, and eleven, four plus seven, leaves four too. So a minus b is full sevens, plus four, and the remainder is four, for every pair.", show(j5, 'So add the divisor'), mk('circle', 'j5: r', 'plus four')),
       L("Let's check it with an actual division. Twenty-three leaves two, because three sevens are twenty-one. Twelve leaves "
         "five. Twenty-three minus twelve is eleven, and eleven divided by seven leaves four, because eleven is seven plus four.",
@@ -916,7 +916,7 @@ video('solve-q-r26-t15-01', 'solution', qid='q-r26-t15-01', slides=[
         "negative three. A negative result? Add the divisor. Negative three plus seven is four. For a sum, add them. Nine leaves two and twelve leaves five, and nine plus twelve is twenty-one, three sevens. Two plus five is seven, and that leaves zero, the same. For a product, multiply them. Nine times twelve is a hundred eight, fifteen sevens and three. And two times five is ten, which also leaves three.", show(j6, 'Only the remainders matter'), show(j7, 'For a sum, add them'), show(j10, 'For a product, multiply them')),
       L("Now careful with the order. A lot of students do five minus two, which is three, and that's choice number three, the trap. "
         "It's a minus b, so it's two minus five.", show(j8, 'careful with the order'), mk('cross', 'choice 3', 'the trap')),
-      sb='Method 1 · Tag it'),
+      sb='Method 1 · The math way: tag it'),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in numbers. I need an a that leaves two, so nine, which is seven plus two. And a b "
         "that leaves five and is smaller than a, so five itself. Nine minus five is four, and four divided by seven leaves "
@@ -1004,7 +1004,7 @@ q5 = I('q5', '$612$ ✓ $\\quad 615$ ✗ odd $\\quad 618$ ✓', hand='612  ✓  
 q6 = I('q6', 'Even: $\\ X=0,\\ 2,\\ 4,\\ 6,\\ 8$', hand='Even :    X = 0,  2,  4,  6,  8')
 q7 = I('q7', 'Digit sums: $\\ 7,\\ \\hl{a}{9},\\ 11,\\ 13,\\ \\hl{b}{15}$', hand='Digit sums :    7,  \\hl{a}{9},  11,  13,  \\hl{b}{15}')
 video('solve-q-428', 'solution', qid='q-428', slides=[
-    S('Method 1 · Divisible by 3 first',
+    S('Method 1 · The math way: divisibility rules',
       L("A game machine shows a three-digit number. Its hundreds digit is six, its tens digit is one, and its units digit is "
         "X. The machine pays four tokens if the number is divisible by two but not by three, eight tokens if it is divisible "
         "by three but not by two, and twelve tokens if it is divisible by both two and three. Noa played once and won twelve "
@@ -1016,14 +1016,14 @@ video('solve-q-428', 'solution', qid='q-428', slides=[
         "plus X.", show(q2, 'Six plus one is seven')),
       L("X is one digit, zero to nine, so seven plus X is between seven and sixteen. The multiples of three in there are "
         "nine, twelve and fifteen. So X is two, five or eight.", show(q4, 'between seven and sixteen'), show(q3, 'nine, twelve and fifteen')),
-      sb='Method 1 · Divisible by 3 first'),
-    S('Method 1 · Divisible by 3 first',
+      sb='Method 1 · The math way: divisibility rules'),
+    S('Method 1 · The math way: divisibility rules',
       L("Now two. Six one two ends in two, even. Six one five ends in five, odd, so it's out. Six one eight ends in eight, "
         "even. So X has two values, two and eight, and choice number two is our answer.",
         show(q5, 'Six one two'), mk('tick', 'choice 2', 'choice number two is our answer')),
       L("Now careful, three is the trap. Those are the three digits that work for three, but five makes an odd number.",
         mk('cross', 'choice 3', 'three is the trap'))),
-    S('Method 2 · Even first',
+    S('Method 2 · The math way: the other order',
       L("[pause] Another way is to start with two. The number must be even, so X is zero, two, four, six or eight.", show(q6, 'start with two')),
       L("Now the digit sums. Seven plus zero is seven, seven plus two is nine, seven plus four is eleven, seven plus six is thirteen, and seven plus eight is fifteen. Only nine and fifteen divide by three, so X is two or eight. Two values, choice number two. "
         "[pause] Okay. I'll see you in the next question.", show(q7, 'Now the digit sums'), mk('circle', 'q7: a', 'Only nine'),
@@ -1075,7 +1075,7 @@ z2 = I('z2', 'One in every $21$ $\\ >\\ $ one in every $26$', size=30, hand='One
 z3 = I('z3', 'Smaller divisor, more multiples', size=28, col=1)
 z4 = I('z4', 'A long range: $900$ numbers', size=28, col=1)
 video('solve-q-430', 'solution', qid='q-430', slides=[
-    S('Method 1 · Count them',
+    S('Method 1 · The math way: count',
       L("Yoav claims: there are more three-digit numbers divisible by both three and five, than three-digit numbers "
         "divisible by seventeen. Michal claims: there are more three-digit numbers divisible by both three and seven, than "
         "three-digit numbers divisible by both two and thirteen. Which of the following is correct?",
@@ -1093,7 +1093,7 @@ video('solve-q-430', 'solution', qid='q-430', slides=[
         "fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is "
         "fifty-nine, and plus one is sixty.", show(x2, 'still two digits'), show(x3, 'the first is fifteen times seven'),
         show(x5, 'sixty-six minus seven'), mk('circle', 'x5: c', 'and plus one is sixty'))),
-    S('Method 1 · Count them',
+    S('Method 1 · The math way: count',
       L("Seventeen, the same way. Seventeen times six is a hundred two, and seventeen times fifty-eight is nine hundred "
         "eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so "
         "Yoav is right.", show(y1, 'Seventeen times six')),
@@ -1103,8 +1103,8 @@ video('solve-q-430', 'solution', qid='q-430', slides=[
         "thirty-five.", show(y3, 'Twenty-one times five'), show(y4, 'Twenty-six times four')),
       L("Forty-three is more than thirty-five, so Michal is right too. Both are right, choice number three.",
         show(y5, 'Forty-three is more'), mk('tick', 'choice 3', 'choice number three')),
-      sb='Method 1 · Count them'),
-    S('Method 2 · Compare without counting',
+      sb='Method 1 · The math way: count'),
+    S('Method 2 · Understanding',
       L("[pause] Another way, without counting at all. Every fifteenth number divides by fifteen, and every seventeenth "
         "divides by seventeen. One in every fifteen is more than one in every seventeen. So fifteen has more multiples, "
         "and Yoav is right.", show(z1, 'One in every fifteen')),
@@ -1129,7 +1129,7 @@ m2 = I('m2', '$c=4$ ✓ $\\quad b=5$ ✓', hand='c = 4  ✓       b = 5  ✓')
 m4 = I('m4', '$a+b=1+5=6$ ✗ $\\quad a+b+c=10$ ✓', size=32, hand='a + b = 1 + 5 = 6  ✗      a + b + c = 10  ✓')
 m3 = I('m3', 'One example where it fails is enough', size=28, col=1)
 video('solve-q-431', 'solution', qid='q-431', slides=[
-    S('Method 1 · One letter',
+    S('Method 1 · The math way: one letter',
       L("Given: c is equal to four a, and a is equal to b over five. a, b and c are positive integers. Which claim is not "
         "necessarily true?", pt('stem', 'Given', 'hl', 8.0), voice='calm', pause=0.5),
       L("So three letters tied together, and we're looking for the claim that doesn't have to be true. One example where "
@@ -1142,8 +1142,8 @@ video('solve-q-431', 'solution', qid='q-431', slides=[
         "out too.", pt('stem: g2', 'a is b over five'), show(k2, 'Multiply both sides by five'), mk('cross', 'choice 2', 'out too')),
       L("Now a plus b. That's a plus five a, which is six a. Six a always divides by six, but by twelve? Only when a is even. If a is two, a plus b is twelve, and that works. But if a is one, a plus b is six, and six doesn't divide by twelve. So this claim can fail, and choice number three is our "
         "answer.", pt('choice 3', 'Now a plus b'), show(k3, "That's a plus five a"), show(k4, 'If a is one'), mk('tick', 'choice 3', 'choice number three is our answer')),
-      sb='Method 1 · One letter'),
-    S('Method 1 · One letter',
+      sb='Method 1 · The math way: one letter'),
+    S('Method 1 · The math way: one letter',
       L("In the exam you'd circle it and move on. Here, the last one is a nice check of the idea. a plus b plus c is a plus five a plus four a, which is ten a. Always divisible by ten.", show(k5, 'a plus b plus c is'), mk('cross', 'choice 4', 'Always divisible by ten'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in numbers. Start with the tricky condition, b over five has to be a whole number. "
@@ -1170,7 +1170,7 @@ v2 = I('v2', '$12+9=21$: $\\ $not by $15$', size=32, hand='12 + 9 = 21 :   not b
 v3 = I('v3', 'Trap: $\\ 18+18=36$ ✗', size=30, col=1, hand='Trap :   18 + 18 = 36   ✗')
 v4 = I('v4', 'Independent values: do not assume they are equal', size=26, col=1)
 video('solve-q-r26-t15-15', 'solution', qid='q-r26-t15-15', slides=[
-    S('Method 1 · Tag it',
+    S('Method 1 · The math way: tag it',
       L("x and y are positive integers. x is divisible by six, and y is divisible by nine. What is the largest number that "
         "x plus y is necessarily divisible by?", pt('stem', 'x and y are', 'hl', 8.0), voice='calm', pause=0.5),
       L("So we add two multiples, and they want the largest number that always divides the sum. [short pause] We'll solve "
@@ -1216,7 +1216,7 @@ o5 = I('o5', '$a=1$: $\\ 5-5=0$ ✗', size=30, col=1, hand='a = 1 :   5 − 5 = 
 o6 = I('o6', '$a=2$: $\\ 5\\cdot8-5\\cdot2=40-10=\\hl{t}{30}$', hand='a = 2 :   5·8 − 5·2 = 40 − 10 = \\hl{t}{30}')
 o7 = I('o7', '$60$ ✗ $\\quad 40$ ✗ $\\quad 30$ ✓ $\\quad 20$ ✗', hand='60 ✗      40 ✗      30 ✓      20 ✗')
 video('solve-q-432', 'solution', qid='q-432', slides=[
-    S('Method 1 · Three in a row',
+    S('Method 1 · The math way: three in a row',
       L("Given: x is equal to five a cubed minus five a, and a is a positive integer. x is necessarily divisible by:",
         pt('stem', 'Given', 'hl', 6.0), voice='calm', pause=0.5),
       L("So x is an expression with a cube, and they ask what always divides it. To see what always divides, we turn the "
@@ -1228,8 +1228,8 @@ video('solve-q-432', 'solution', qid='q-432', slides=[
         "times a, times a plus one.", show(o2, 'the shortcut formula')),
       L("a minus one, a, and a plus one are three numbers in a row. And numbers in a row have a rule we haven't met yet. "
         "Let's build it.", pt('o2', 'three numbers in a row')),
-      sb='Method 1 · Three in a row'),
-    S('Method 1 · Three in a row',
+      sb='Method 1 · The math way: three in a row'),
+    S('Method 1 · The math way: three in a row',
       L("Two numbers in a row, and one of them is always even, because even and odd take turns. Seven and eight, eight is "
         "even, so seven times eight, which is fifty-six, is even. Four and five, four is even, and four times five is twenty. So two "
         "in a row always divide by two.", show(o8, 'Two numbers in a row'), show(o9, 'Seven and eight')),
@@ -1240,7 +1240,7 @@ video('solve-q-432', 'solution', qid='q-432', slides=[
         show(o12, 'only numbers in a row')),
       L("So x is five times three in a row, five times a multiple of six. It always divides by five times six, which is thirty. "
         "Choice number three is our answer.", show(o4, 'five times six'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
-    S('Method 2 · Plugging in a number',
+    S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in a number. Careful, not a is one. Five minus five is zero, and zero divides by "
         "every choice, so it can't rule anything out.", show(o5, 'not a is one')),
       L("So a is two. Two cubed is eight, five times eight is forty, five times two is ten, and forty minus ten is thirty.",
@@ -1262,7 +1262,7 @@ s6 = I('s6', '$3$: $\\ 12\\to2+6=8$ ✗', size=30, hand='3 :   12 → 2 + 6 = 8 
 s7 = I('s7', '$4$: $\\ 16\\to6+6=12$ ✗', size=30, hand='4 :   16 → 6 + 6 = 12   ✗')
 s8 = I('s8', '$5$: $\\ 20\\to0+6=6$ ✗', size=30, hand='5 :   20 → 0 + 6 = 6   ✗')
 video('solve-q-433', 'solution', qid='q-433', slides=[
-    S('Method 1 · The last digit',
+    S('Method 1 · Understanding: last digit',
       L("Given: x is equal to fourteen a plus six, a is a positive integer, and x is divisible by ten. Which of the "
         "following could be the value of a?", pt('stem', 'Given', 'hl', 8.0), voice='calm', pause=0.5),
       L("Divisible by ten, so it's all about the last digit. [short pause] We'll solve it two ways, working out which last "
@@ -1275,7 +1275,7 @@ video('solve-q-433', 'solution', qid='q-433', slides=[
         show(s5, 'only from the last digits'), show(s3, 'Four times one is four')),
       L("So a ends in one or six. Only three hundred forty-six ends in six, so choice number four is our answer.",
         show(s4, 'a ends in one or six'), mk('tick', 'choice 4', 'choice number four is our answer'))),
-    S('Method 2 · Test the choices',
+    S('Method 2 · Plugging in the answers',
       L("[pause] Another way is to test the choices, with last digits only. Three forty-three. Four times three is twelve, "
         "it ends in two, and two plus six is eight. x would end in eight, so it's out.", show(s6, 'Four times three'), mk('cross', 'choice 1', "so it's out")),
       L("Three forty-four. Four times four is sixteen, it ends in six, and six plus six is twelve, so x ends in two. Out. "
@@ -1298,7 +1298,7 @@ c1 = I('c1', 'Paid $=900-$ left', hand='Paid = 900 − left')
 c2 = I('c2', '$900-15=885$: $\\ $odd ✗', hand='900 − 15 = 885 :   odd   ✗')
 c3 = I('c3', '$900-24=876$: $\\ $even, $\\ 8+7+6=21$ ✓', size=32, hand='900 − 24 = 876 :   even,   8 + 7 + 6 = 21   ✓')
 video('solve-q-434', 'solution', qid='q-434', slides=[
-    S('Method 1 · What is left',
+    S('Method 1 · The math way',
       L("Yael loaded nine hundred points onto an amusement-park card. The first ride cost x points, the second ride cost "
         "two x points, and the third ride cost three x points. Which of the following could be the number of points left on "
         "her card after the three rides?", pt('stem', 'Yael loaded', 'hl', 13.0), voice='calm', pause=0.5),
@@ -1314,7 +1314,7 @@ video('solve-q-434', 'solution', qid='q-434', slides=[
         mk('cross', 'choice 1', "so it's out"), show(b5, 'Twenty-four is six times four'), mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("Now careful, fifteen is the trap for anyone who checks only the three. Its digit sum is six, so it divides by three, "
         "but it's odd.", show(b6, 'checks only the three'))),
-    S('Method 2 · What she paid',
+    S('Method 2 · Plugging in the answers',
       L("[pause] Another way is to complete each choice to nine hundred, and ask how much she paid. She paid six x, so the "
         "paid part has to divide by six.", show(c1, 'complete each choice')),
       L("Fifteen left means she paid nine hundred minus fifteen, which is eight hundred eighty-five. It's odd, so it doesn't divide by "
@@ -1360,15 +1360,15 @@ video('solve-q-435', 'solution', qid='q-435', slides=[
         "twelve. For example, x is four. Four divided by eight leaves four, and four doesn't divide by twelve. Itay is wrong.",
         pt('stem', 'Itay'), show(u4, "Twelve doesn't divide eight"), show(u5, 'x is four')),
       L("So only Itay is wrong, choice number two is our answer.", mk('tick', 'choice 2', 'choice number two is our answer'))),
-    S('Method 2 · Algebra',
+    S('Method 2 · The math way',
       L("[pause] Another way is algebra. What's different? Instead of thinking about the remainder, we write x as an "
         "expression and take out a common factor. x is full eights plus four, so x is eight k plus four.", show(e1, 'eight k plus four')),
       L("Yuval. Two x is sixteen k plus eight. Take out the eight, and it's eight times, in brackets, two k plus one. So it "
         "divides by eight. Yuval is right.", show(e2, 'Two x is sixteen k')),
       L("Noga. Take out a four from x, and it's four times, in brackets, two k plus one. So it divides by four. Noga is right.",
         show(e3, 'Take out a four')),
-      sb='Method 2 · Algebra'),
-    S('Method 2 · Algebra',
+      sb='Method 2 · The math way'),
+    S('Method 2 · The math way',
       L("Itay. x is four times two k plus one. For twelve, we'd need a three inside two k plus one, and it isn't always "
         "there. With k zero, two k plus one is one, and x is four, not divisible by twelve. Itay is wrong. Choice number two.",
         show(e4, 'With k zero'), show(e6, "we'd need a three"), mk('tick', 'choice 2', 'Itay is wrong. Choice number two'))),
@@ -1776,6 +1776,12 @@ import types as _types
 _mv_spec = importlib.util.spec_from_file_location('_method_visuals', os.path.join(HERE, '_method_visuals.py'))
 _mv = importlib.util.module_from_spec(_mv_spec); _mv_spec.loader.exec_module(_mv)
 _mv.post(_types.SimpleNamespace(**globals()), 15)
+
+# 2026-10-15 one vocabulary for method names (math_patches/_method_names.py CORE; guide "Method names"): a "Method N · X"
+# title or sidebar outside it stops the run, so a new script uses the vocabulary from its first draft.
+_mn_spec = importlib.util.spec_from_file_location('_method_names_vocab', os.path.join(HERE, '_method_names.py'))
+_mn = importlib.util.module_from_spec(_mn_spec); _mn_spec.loader.exec_module(_mn)
+_mn.check_vocab(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "We'll solve it two ways, with a short equation, and then with a size check on the choices. [short pause] The equation first. A D touches the circle at E, and B C touches it at F. Remember, the radius to the point where a tangent touches the circle is perpendicular to the tangent.",
+    "say": "We'll solve it two ways, with a short equation, and then with an estimate, a size check on the choices. [short pause] The equation first. A D touches the circle at E, and B C touches it at F. Remember, the radius to the point where a tangent touches the circle is perpendicular to the tangent.",
     "at": [
      "The equation first",
      "A D touches",
@@ -47,10 +47,10 @@
   ],
   [
    {
-    "say": "[pause] Now the same question with a size check, and almost no calculation. Draw the square around the circle. Its side is the diameter, eight, so its area is eight times eight, sixty-four.",
+    "say": "[pause] Now the same question with an estimate, a size check, and almost no calculation. Draw the square around the circle. Its side is the diameter, eight, so its area is eight times eight, sixty-four.",
     "at": [
      "Now the same question",
-     "a size check",
+     "an estimate, a",
      "Draw the square around",
      "Its side is"
     ]

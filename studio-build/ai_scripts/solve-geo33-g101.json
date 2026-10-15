@@ -12,10 +12,10 @@
     "pause": 0.5
    },
    {
-    "say": "We'll solve it two ways, with an equation, and by plugging in the answers. [short pause] First the equation. How do we find the shaded area? It's the area of the big circle minus the area of the small circle. We don't know either radius, so let's call the big one capital R, and the small one small r.",
+    "say": "We'll solve it two ways, with an equation, and by plugging in the answers. [short pause] First the math way, with an equation. How do we find the shaded area? It's the area of the big circle minus the area of the small circle. We don't know either radius, so let's call the big one capital R, and the small one small r.",
     "at": [
      "ways, with an",
-     "First the equation",
+     "First the math way",
      "How do we",
      "the area of the big circle minus",
      "circle minus the"

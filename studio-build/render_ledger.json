@@ -1,33 +1,42 @@
 {
  "absolute-value": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/camera-visual-review-2026-10-14/videos/01 absolute-value - clearer visuals.mp4",
-  "rendered_at": "2026-10-14T16:54:21+03:00",
-  "source": "seed",
-  "note": "visual cues in the script changed 14 Oct after render; visual plan changed 14 Oct after render",
-  "made_from": "2026-10-14T16:25:14+03:00"
+  "state": "done",
+  "fingerprint": "99cf1896b2b67a021fe8e07ef3c1ee565720486c19ba4257758e476cd42eb5d0",
+  "parts": {
+   "spoken": "c6039b865fe3cfbff4c48873aa8cff15b924d9fa9464fd900b52c9b6fc8e3717",
+   "visual": "bb51fa078b8ef02daeb94ab1cffefd5f262f6d96307eebc22569a152a49b058e",
+   "takes": "3943dcef236b2561f0773cfefaf78c79806a8ab52a9bfa99f21cec4a065d8197"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/All course videos - organized/01 - Ready to use/Topic 13 - Absolute Value/001 - absolute-value - current camera - 2026-10-15.mp4",
+  "rendered_at": "2026-10-15T08:45:30+03:00",
+  "source": "codex",
+  "note": "registered by Codex 15 Oct 19:15"
  },
  "absolute-value-2": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/camera-visual-spacing-2026-10-14/videos/02 absolute-value-2 - clearer visuals.mp4",
-  "rendered_at": "2026-10-14T17:15:51+03:00",
-  "source": "seed",
-  "note": "visual cues in the script changed 14 Oct after render; visual plan changed 14 Oct after render",
-  "made_from": "2026-10-14T16:25:14+03:00"
+  "state": "done",
+  "fingerprint": "90c8cd61d090be2f7ff069dc282c6be44dcabc5d62075a8bc68585f859da3f91",
+  "parts": {
+   "spoken": "c289a13beefbda595b3cf0ce011fe8c582c4d3702715219323b2783777f0e73a",
+   "visual": "2d009ff7db817512f2d174e46e0eaa5913eb7a76ce101e2dcae9fcaf7041f0b6",
+   "takes": "67b49663ac230be28afcf96cc27c97ab201df8669f8c0dabadd5c9654c89edf4"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/All course videos - organized/01 - Ready to use/Topic 13 - Absolute Value/002 - absolute-value-2 - current camera - 2026-10-15.mp4",
+  "rendered_at": "2026-10-15T08:50:58+03:00",
+  "source": "codex",
+  "note": "registered by Codex 15 Oct 19:15"
  },
  "absolute-value-3": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/camera-visual-review-2026-10-14/videos/03 absolute-value-3 - clearer visuals.mp4",
-  "rendered_at": "2026-10-14T16:45:02+03:00",
-  "source": "seed",
-  "note": "visual cues in the script changed 14 Oct after render; visual plan changed 14 Oct after render",
-  "made_from": "2026-10-14T16:25:14+03:00"
+  "state": "done",
+  "fingerprint": "253558e1f9c1f8597bc7130ad1757ddbd368f7f0797667ce2e5230a0b8cb6c21",
+  "parts": {
+   "spoken": "0f5f27ae2ee33102892e4c1ddcf20765c96f3ae6de914f633b2914e4539498a9",
+   "visual": "05e4ae9ff1c564b292ad3254198c878cb15fa905312537b9b8695b0bb5f3bb51",
+   "takes": "6169cebf71d033a21e0325d929a269aa19f4d12d6ad1b29c10e9ca9de56f3529"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/All course videos - organized/01 - Ready to use/Topic 13 - Absolute Value/003 - absolute-value-3 - current camera - 2026-10-15.mp4",
+  "rendered_at": "2026-10-15T08:58:22+03:00",
+  "source": "codex",
+  "note": "registered by Codex 15 Oct 19:15"
  },
  "consecutive-integers": {
   "state": "done",
@@ -72,24 +81,30 @@
   "made_from": "2026-10-13T18:14:36+03:00"
  },
  "primes": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/camera-visual-review-2026-10-14/videos/22 primes - clearer visuals.mp4",
-  "rendered_at": "2026-10-14T16:46:09+03:00",
-  "source": "seed",
-  "note": "visual cues in the script changed 14 Oct after render; visual plan changed 14 Oct after render",
-  "made_from": "2026-10-14T16:25:14+03:00"
+  "state": "done",
+  "fingerprint": "dda9f2e3de9a7136aea010b3c6d27021a6317332f51bb0221a362af306f49d88",
+  "parts": {
+   "spoken": "bdc7e873b787346f9e49aa15e9af242f0bfa4aa4957b292e06b2c3755732e56e",
+   "visual": "5bf4b4fdc7f706e75c9cfb70270e58aa0a3c345636dccac9901d7b67aae8e0da",
+   "takes": "955f5ce7f4008b90edbbce32481ff5574e27971be4a6daec841a9db3454d3cb7"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/All course videos - organized/01 - Ready to use/Topic 14 - Prime Numbers/022 - primes - current camera - 2026-10-15.mp4",
+  "rendered_at": "2026-10-15T09:04:59+03:00",
+  "source": "codex",
+  "note": "registered by Codex 15 Oct 19:15"
  },
  "primes-3": {
-  "state": "send",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/camera-visual-review-2026-10-14/videos/24 primes-3 - clearer visuals.mp4",
-  "rendered_at": "2026-10-14T17:01:54+03:00",
-  "source": "seed",
-  "note": "visual cues in the script changed 14 Oct after render; visual plan changed 14 Oct after render",
-  "made_from": "2026-10-14T16:25:14+03:00"
+  "state": "done",
+  "fingerprint": "b8e496e344440d0eb8f80acf483f74a75f2714b194c31a13d47f4a15d270e97b",
+  "parts": {
+   "spoken": "599a1e89482c3cb6f54cd6e80fcbcbc430fd14c157810026b3b04f06821ab279",
+   "visual": "af225c6e6a626263e6e85a94cab1143ccad0ac185786eba91946a866b1809b7c",
+   "takes": "978cddce753b80c0cb4a5cd471f2acb56b48d463637a9ea7bf46106e3df78e3c"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/All course videos - organized/01 - Ready to use/Topic 14 - Prime Numbers/024 - primes-3 - current camera - 2026-10-15.mp4",
+  "rendered_at": "2026-10-15T09:11:58+03:00",
+  "source": "codex",
+  "note": "registered by Codex 15 Oct 19:15"
  },
  "r26-t13-tools": {
   "state": "done",
@@ -148,14 +163,17 @@
   "made_from": "2026-10-14T10:52:10+03:00"
  },
  "solve-q-358": {
-  "state": "check",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/04 q-358 - edited.mp4",
+  "state": "done",
+  "fingerprint": "3f65f1c02c7cd7e0939e525eed28c9c7efedd4825688e74adc96d06599c48c6c",
+  "parts": {
+   "spoken": "49020b25f7a87ed65a7ec02c2a30765dad961a5ed82e2163cea1f8276e12935e",
+   "visual": "634c2f517ebc24440354ae4e3a99b4900fd5caf861107f0f095f7317a7d05a59",
+   "takes": "13f1294bdcf95202a90dafe66071949592710c1d8491d6e7661c8cffca7114c6"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/All course videos - organized/01 - Ready to use/Topic 13 - Absolute Value/004 - solve-q-358 - Given x·y0 ; yy Which of the following is necessarily true.mp4",
   "rendered_at": "2026-10-15T01:38:18+03:00",
-  "source": "seed",
-  "note": "rendered 15 Oct - a render not yet in Codex's index (Codex should run --rendered)",
-  "made_from": "2026-10-15T00:32:20+03:00"
+  "source": "codex",
+  "note": "registered by Codex 15 Oct 19:13"
  },
  "solve-q-359": {
   "state": "check",
@@ -168,14 +186,17 @@
   "made_from": "2026-10-15T00:32:20+03:00"
  },
  "solve-q-360": {
-  "state": "check",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/06 q-360 - edited.mp4",
+  "state": "done",
+  "fingerprint": "deb6cc6dbd8d78526a235213a57e3ccdfe2b089a34e614d98e261bb12ec1acb4",
+  "parts": {
+   "spoken": "e5d723c0a50078a9f8b94b72ee3296864f58484e125013a331582d3e579aad0a",
+   "visual": "91b05a4613d7a2b98be2f16307f7dab32f667e9aebb37d0d6053ddee76a4c9c6",
+   "takes": "6f9515861652d53960218be188a860f7223ec6866282221805bbfe8d15ab3fdc"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/All course videos - organized/01 - Ready to use/Topic 13 - Absolute Value/006 - solve-q-360 - Given x+37. Which of the following could be the value of x.mp4",
   "rendered_at": "2026-10-15T01:39:14+03:00",
-  "source": "seed",
-  "note": "rendered 15 Oct - a render not yet in Codex's index (Codex should run --rendered)",
-  "made_from": "2026-10-15T00:32:20+03:00"
+  "source": "codex",
+  "note": "registered by Codex 15 Oct 19:13"
  },
  "solve-q-361": {
   "state": "send",
@@ -188,14 +209,17 @@
   "made_from": "2026-10-12T13:52:26+03:00"
  },
  "solve-q-362": {
-  "state": "check",
-  "fingerprint": null,
-  "parts": null,
-  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/topic13-final-review-2026-10-15/videos/08 q-362 - edited.mp4",
+  "state": "done",
+  "fingerprint": "fa120bec757042dbd2d260a8fb722a27121dcdbcbdfbc52ba1f778e588e7809c",
+  "parts": {
+   "spoken": "910327adab2b8a257d9e11b47e3a47944c9308428189181ec85ff5dea6fc5d66",
+   "visual": "163aa0eabc5e9201f470954998ecec3f5165b7306874fcf6bf0c5f2521e4c96d",
+   "takes": "503d12cff9a2f6d28a32f84061a737498c812f7ebd965511ed0113ff582cdc1c"
+  },
+  "render_path": "/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/outputs/All course videos - organized/01 - Ready to use/Topic 13 - Absolute Value/008 - solve-q-362 - Given x0. What is 10+4xx.mp4",
   "rendered_at": "2026-10-15T01:39:58+03:00",
-  "source": "seed",
-  "note": "rendered 15 Oct - a render not yet in Codex's index (Codex should run --rendered)",
-  "made_from": "2026-10-15T00:32:20+03:00"
+  "source": "codex",
+  "note": "registered by Codex 15 Oct 19:13"
  },
  "solve-q-363": {
   "state": "send",

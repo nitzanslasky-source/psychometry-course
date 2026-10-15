@@ -11,7 +11,7 @@
     ],
     "pause": 0.5
    },
-   "We'll solve it two ways. First we calculate, and then we'll see the insight.",
+   "We'll solve it two ways. First the math way, we calculate, and then we'll see the insight.",
    {
     "say": "The top has two fractions to add. Five and six have a common denominator of thirty. One fifth is six thirtieths, and one sixth is five thirtieths. Together, eleven thirtieths.",
     "at": [

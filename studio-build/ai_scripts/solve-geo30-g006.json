@@ -11,11 +11,11 @@
     ],
     "pause": 0.5
    },
-   "What makes this question hard? Every angle is given with a letter, not a number. That's the main way exam geometry questions are made harder. [short pause] We'll solve it three ways, with the full math, by plugging in numbers instead of the letters, and with an insight, for those who see it.",
+   "What makes this question hard? Every angle is given with a letter, not a number. That's the main way exam geometry questions are made harder. [short pause] We'll solve it three ways, the math way, by plugging in numbers instead of the letters, and with an insight, for those who see it.",
    {
-    "say": "[short pause] Full math first. We need x, and there are many letters, so we need an anchor, a known total. That's either a full turn, three hundred sixty degrees, or a straight angle, one hundred eighty.",
+    "say": "[short pause] The math way first. We need x, and there are many letters, so we need an anchor, a known total. That's either a full turn, three hundred sixty degrees, or a straight angle, one hundred eighty.",
     "at": [
-     "Full math first",
+     "The math way first",
      "We need x"
     ]
    },

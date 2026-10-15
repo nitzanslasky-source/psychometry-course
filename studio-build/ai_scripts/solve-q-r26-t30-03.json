@@ -19,11 +19,11 @@
     ]
    },
    {
-    "say": "[short pause] The zig-zag rule: the angles whose tips point left add up to the angles whose tips point right. Forty points left, and sixty-five points left. x points right, and thirty-five points right.",
+    "say": "[short pause] First by understanding, with the zig-zag rule. The angles whose tips point left add up to the angles whose tips point right. Forty points left, and sixty-five points left. x points right, and thirty-five points right.",
     "at": [
-     "The zig-zag",
+     "First by",
      "The zig-zag rule",
-     "whose tips point",
+     "The angles whose",
      "Forty points left",
      "x points right"
     ]
@@ -48,9 +48,9 @@
   ],
   [
    {
-    "say": "[pause] Not sure you remember the rule? Draw a parallel line through each bend. That always works. Start at the bottom, at the lower bend, the sixty-five, and draw a line through it, parallel to a and b.",
+    "say": "[pause] Now the math way. Not sure you remember the rule? Draw a parallel line through each bend. That always works. Start at the bottom, at the lower bend, the sixty-five, and draw a line through it, parallel to a and b.",
     "at": [
-     "Not sure",
+     "Now the",
      "Not sure you remember",
      "Draw a parallel",
      "and draw a line through it",

@@ -11,7 +11,7 @@
     ],
     "pause": 0.5
    },
-   "It's a fraction with a root on the bottom, and none of the choices is a fraction. So we need to get rid of the bottom. [short pause] We'll solve it two ways, with algebra, and then with an estimate.",
+   "It's a fraction with a root on the bottom, and none of the choices is a fraction. So we need to get rid of the bottom. [short pause] We'll solve it two ways, the math way, with algebra, and then with an estimate.",
    {
     "say": "In the roots topic we learned how. When the bottom is a sum with a root, we multiply the top and the bottom by its partner. The partner of two plus root two is two minus root two. The top and the bottom are multiplied by the same thing, so it's like multiplying by one, and the value doesn't change.",
     "at": [

@@ -12,9 +12,9 @@
     "pause": 0.5
    },
    {
-    "say": "There are letters everywhere, so we'll solve it two ways, with the full math, and then by plugging in numbers. [short pause] The full math first. We need an arc length, and for that we first need a central angle.",
+    "say": "There are letters everywhere, so we'll solve it two ways, the math way, and then by plugging in numbers. [short pause] The math way first. We need an arc length, and for that we first need a central angle.",
     "at": [
-     "The full math first",
+     "The math way first",
      "We need an"
     ]
    },

@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "They ask what b plus c cannot be. So we'll find the biggest value b plus c can ever have. [short pause] We'll solve it three ways, with the biggest possible value, with numbers that make b plus c as big as possible, and by testing the answers.",
+    "say": "They ask what b plus c cannot be. So we'll find the biggest value b plus c can ever have. [short pause] We'll solve it three ways, by understanding the biggest possible value, by plugging in numbers that make b plus c as big as possible, and by plugging in the answers.",
     "at": [
      "They ask what b plus c cannot be"
     ]
@@ -55,9 +55,9 @@
   ],
   [
    {
-    "say": "[pause] Another way is to build numbers that make b plus c as big as possible. a has to be bigger than b, and a plus b has to stay at most fifteen. To make b as big as it can be, take a and b as close as possible: a is eight and b is seven. Eight plus seven is fifteen, which is allowed.",
+    "say": "[pause] Now let's plug in numbers. We build numbers that make b plus c as big as possible. a has to be bigger than b, and a plus b has to stay at most fifteen. To make b as big as it can be, take a and b as close as possible: a is eight and b is seven. Eight plus seven is fifteen, which is allowed.",
     "at": [
-     "Another way",
+     "Now let's",
      "a is eight",
      "Eight plus seven"
     ]
@@ -74,7 +74,7 @@
   ],
   [
    {
-    "say": "[pause] And a third way, testing the answers. The question hides a biggest value, so it makes sense to start with the biggest choice, fourteen. Can b plus c be fourteen? c is smaller than b, so b has to be at least eight, with c at most six. Then a is bigger than b, so a is at least nine, and a plus b is at least seventeen. That's not smaller than sixteen.",
+    "say": "[pause] And a third way, plugging in the answers. The question hides a biggest value, so it makes sense to start with the biggest choice, fourteen. Can b plus c be fourteen? c is smaller than b, so b has to be at least eight, with c at most six. Then a is bigger than b, so a is at least nine, and a plus b is at least seventeen. That's not smaller than sixteen.",
     "at": [
      "And a",
      "The question hides",

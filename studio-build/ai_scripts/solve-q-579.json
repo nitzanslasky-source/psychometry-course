@@ -12,11 +12,11 @@
     "pause": 0.5
    },
    {
-    "say": "The equation looks complicated, so first we simplify it. Not necessarily true means it fails in at least one allowed case. So we're looking for the claim that can fail. [short pause] We'll solve it two ways, with whole numbers that fit, and then with a right triangle, which shows why the other claims always hold.",
+    "say": "The equation looks complicated, so first we simplify it. Not necessarily true means it fails in at least one allowed case. So we're looking for the claim that can fail. [short pause] We'll solve it two ways, by plugging in whole numbers that fit, and then with an insight, a right triangle, which shows why the other claims always hold.",
     "at": [
      "Not necessarily true means",
      "for the claim",
-     "ways, with whole"
+     "ways, by plugging"
     ]
    },
    {
@@ -38,9 +38,9 @@
   ],
   [
    {
-    "say": "[pause] Now we need positive integers that fit r squared equals p squared plus q squared. The best-known ones are three, four and five, because nine plus sixteen is twenty-five. Here r is five.",
+    "say": "[pause] Now let's plug in numbers. We need positive integers that fit r squared equals p squared plus q squared. The best-known ones are three, four and five, because nine plus sixteen is twenty-five. Here r is five.",
     "at": [
-     "Now we",
+     "Now let's",
      "three, four and five",
      "nine plus sixteen"
     ]
@@ -66,9 +66,9 @@
   ],
   [
    {
-    "say": "[pause] Now let's see why the other three claims always hold. r squared equals p squared plus q squared is Pythagoras. So p, q and r can be the sides of a right triangle, with legs p and q, and the longest side, r.",
+    "say": "[pause] Now the insight. Let's see why the other three claims always hold. r squared equals p squared plus q squared is Pythagoras. So p, q and r can be the sides of a right triangle, with legs p and q, and the longest side, r.",
     "at": [
-     "Now let's",
+     "Now the",
      "can be the sides of a right triangle",
      "a right triangle"
     ]

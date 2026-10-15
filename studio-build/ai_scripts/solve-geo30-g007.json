@@ -19,9 +19,9 @@
     ]
    },
    {
-    "say": "[short pause] A line we add to the figure to help us solve it is called an auxiliary line. There are several options here. We could extend one of the pieces until it meets the other parallel line, or draw a line perpendicular to both parallel lines. Those options make triangles, which we'll learn later. If you solved it that way, that's completely fine. Here we'll use only the rules of lines.",
+    "say": "[short pause] The math way first. A line we add to the figure to help us solve it is called an auxiliary line. There are several options here. We could extend one of the pieces until it meets the other parallel line, or draw a line perpendicular to both parallel lines. Those options make triangles, which we'll learn later. If you solved it that way, that's completely fine. Here we'll use only the rules of lines.",
     "at": [
-     "A line",
+     "The math",
      "There are several",
      "We could extend"
     ]
@@ -63,11 +63,11 @@
   ],
   [
    {
-    "say": "[pause] Now a shortcut for a line that zig-zags between two parallel lines. Look at each marked angle and ask, where does its tip, the vertex, point? The thirty-six points left, and the sixty-two points left too. x points right.",
+    "say": "[pause] Now a shortcut by understanding, for a line that zig-zags between two parallel lines. Look at each marked angle and ask, where does its tip, the vertex, point? The thirty-six points left, and the sixty-two points left too. x points right.",
     "at": [
      "Now a",
      "Now a shortcut",
-     "line that zig-zags",
+     "for a line",
      "The thirty-six points left",
      "the sixty-two points",
      "x points right"

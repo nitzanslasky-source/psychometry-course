@@ -60,7 +60,7 @@ METHODS = [
     # 18 · digit word equations (digit ratio)
     ('digit-puzzles-2', 'A puzzle in words', 'Digit ratio (10A + B equations)', 'lines'),   # 2026-10-14: the camera lesson in parts
     ('r26-t18-summary', 'The four steps', 'Digit ratio (10A + B equations)', 'lines'),   # 2026-10-12 topic-18 redo: slide renamed
-    ('solve-q-520', 'Method 1 · The algebraic form', 'Digit ratio (10A + B equations)', 'lines'),   # 2026-10-12 topic-18 redo: slide renamed
+    ('solve-q-520', 'Method 1 · The math way: place values', 'Digit ratio (10A + B equations)', 'lines'),   # 2026-10-12 topic-18 redo; 2026-10-15 method vocabulary: slide renamed
     # 23 · flip rule, arrow map
     ('wp-052', 'Same part: flip', 'Flip rule', 'new'),
     ('wp-052', 'Same whole: keep', 'Flip rule', 'new'),
@@ -325,6 +325,7 @@ def manifest(D, B, review_ids=()):
 
         if t in MATH_TOPICS:
             ob = [dict(b, title=t) for b, t in zip(beats, old_slide_titles(vid, [b.get('title') for b in beats]))]   # compare with the base under the titles it knew
+            ob = [old_header_items(vid, b) for b in ob]    # 2026-10-15: the board's "Method N: X" header under its old name too
             toks = [tokens(slide_raw(b, Q)) for b in ob]
             ref = vid if vid in btok else None
             if ref is None:                                # renamed / rebuilt copy of a base video?
@@ -399,11 +400,31 @@ def old_slide_titles(vid, titles):
     """the titles the slides had before the method names (the base and the notes know those). Two slides may share a
     new name: the old titles are used up in slide order."""
     m = _mn(); names = m.MAP.get(vid, (0, {}))[1]; used = set(); out = []
+    # 2026-10-15 method vocabulary: first back to the title the slide had before that rename (used up in slide order)
+    back, used2, spec = [], set(), getattr(m, 'SPEC_RENAMES_20261015', {}).get(vid, {})
+    for t in titles:
+        os_ = [o for o, n in spec.items() if n == t and o != t]
+        if len(os_) == 1: back.append(os_[0]); continue      # one old name: every slide with it (continuations too)
+        o = next((o for o in os_ if o not in used2), None)
+        if o is None: back.append(t)
+        else: used2.add(o); back.append(o)
+    titles = back
     for t in titles:
         o = next((o for o, n in names.items() if o not in used and m.new_title(o, n) == t), None)
         if o is None or t in names: out.append(t)
         else: used.add(o); out.append(o)
     return out
+
+
+def old_header_items(vid, b):
+    """the beat with its board method header ("Method N: X", from the slide title) under the pre-2026-10-15 name"""
+    spec = getattr(_mn(), 'SPEC_RENAMES_20261015', {}).get(vid, {})
+    back = {n.replace(' · ', ': ', 1): o.replace(' · ', ': ', 1) for o, n in spec.items()}
+    if not back: return b
+    fix = lambda s: next((s.replace(n, o) for n, o in back.items() if isinstance(s, str) and n in s), s)
+    items = [dict(it, t=fix(it['t'])) if isinstance(it, dict) and isinstance(it.get('t'), str) else it for it in b.get('items') or []]
+    lines = [dict(l, **{k: fix(l[k]) for k in ('label', 'draw') if isinstance(l.get(k), str)}) for l in b.get('lines') or []]
+    return dict(b, items=items, lines=lines)
 
 
 def same_slide_title(vid, a, b):
@@ -413,7 +434,12 @@ def same_slide_title(vid, a, b):
     if a == b: return True
     m = _mn(); names = m.MAP.get(vid, (0, {}))[1]
     f = lambda t: m.new_title(t, names[t]) if t in names else t
-    return f(a) == f(b)
+    # 2026-10-15 method vocabulary of the reading-script videos (_method_names.SPEC_RENAMES_20261015)
+    sp = (lambda t: m.spec_new_title(vid, t)) if hasattr(m, 'spec_new_title') else (lambda t: t)
+    spec = getattr(m, 'SPEC_RENAMES_20261015', {}).get(vid, {})
+    olds = lambda t: {o for o, n in spec.items() if n == t}
+    names_of = lambda t: {t, f(t), sp(t), sp(f(t)), f(sp(t))} | olds(t) | {f(o) for o in olds(t)}
+    return bool(names_of(a) & names_of(b))
 
 
 # ---------- what each added item teaches (added_notes.json, written once from the slides' board items + spoken lines) ----------
@@ -467,6 +493,9 @@ def attach_notes(M, D, N=None):
         for key, x in tab.items():                         # slides moved: same video, same title
             if key.rsplit('#', 1)[0] == vid and same_slide_title(vid, x.get('t'), title) and title: return x
         if e and (not e.get('t') or core(e['t']) == core(title)): return e    # renamed "X" -> "Method 2 · X"
+        # 2026-10-15 method vocabulary: the same test against the slide's title before the rename
+        olds = [o for o, n in getattr(_mn(), 'SPEC_RENAMES_20261015', {}).get(vid, {}).items() if n == title]
+        if e and any(core(e['t']) == core(o) for o in olds): return e
         return None
 
     for vid, r in M.items():

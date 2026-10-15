@@ -642,7 +642,7 @@ f1i1 = I('f1i1', 'What stands behind the questions?', size=44)
 f1i2 = I('f1i2', 'Understand it, and the questions get easier', size=38)
 f1i3 = I('f1i3', 'The goal: to predict success in academic studies', size=38)
 f1i4 = I('f1i4', 'A sorting exam: it ranks the candidates', size=38)
-f1i5 = I('f1i5', 'The school way: a formula, an equation, a long calculation', size=36)
+f1i5 = I('f1i5', 'The math way: a formula, an equation, a long calculation', size=36)
 f1i6 = I('f1i6', 'The shortcut: think first, then calculate only what you need', size=36)
 f1i7 = IH('f1i7', '$25\\cdot4\\cdot37\\div37=?$', size=40)
 f1i8 = I('f1i8', '$\\times37$ and $\\div37$ cancel', size=36)
@@ -831,12 +831,12 @@ f1f7 = I('f1f7', '$9\\qquad 10\\qquad 11\\qquad 12$', size=34)
 f1f8 = IH('f1f8', '$10$: $\\ 10^2+10=100+10=110$ ✓', size=34)
 
 video('solve-pt-q02', 'solution', qid='pt-q02', slides=[
-    S('Method 1 · An equation',
+    S('Method 1 · The math way',
       L("Basket A contains five hundred eggs, and basket B contains six hundred eggs. How many eggs must be moved from "
         "basket A to basket B, so that basket A will contain nine thirteenths of the number of eggs in basket B?",
         pt('stem', 'Basket A contains', 'hl', 10.0), voice='calm', pause=0.5),
       L("So eggs move from A to B, and after the move, A should have nine thirteenths of what B has. [short pause] We'll "
-        "solve it two ways, with an equation, and then by plugging in the answers."),
+        "solve it two ways, the math way, with an equation, and then by plugging in the answers."),
       L("Let's put the numbers in order, before and after. Before the move, A has five hundred and B has six hundred. We "
         "don't know how many eggs we move, so let's call that number x.", show(f1e1, 'Before the move')),
       L("After the move, A has lost x eggs, so it has five hundred minus x. And those same x eggs went into B, so B has "
@@ -920,19 +920,19 @@ f1j7 = IH('f1j7', '(3) $\\ 4$ ✗', size=30)
 f1j8 = IH('f1j8', '(4) $\\ 2^4=16$ ✗', size=30)
 
 video('solve-pt-q03', 'solution', qid='pt-q03', slides=[
-    S('Method 1 · Algebra',
+    S('Method 1 · The math way',
       L("Given, a is not zero, and b is not zero. a squared plus b squared, plus the bracket a minus b, squared, all over "
         "two a b, plus one. What is it equal to?", pt('stem', 'Given', 'hl', 9.0), voice='calm', pause=0.5),
       L("What does what is it equal to mean here? It means one of the choices is the same expression, written another "
         "way. It gives the same value for every a and b that we're allowed to use. [short pause] We'll solve it two ways, "
-        "with algebra, and then by plugging in numbers."),
-      L("Algebra first. We simplify the expression until it looks like one of the choices. We have the bracket a minus "
+        "the math way, with algebra, and then by plugging in numbers."),
+      L("The math way first. We simplify the expression until it looks like one of the choices. We have the bracket a minus "
         "b, squared, so let's use the formula from expressions. a minus b, squared, is a squared minus two a b plus b "
         "squared.", show(f1g1, 'a minus b, squared, is')),
       L("So the top is a squared plus b squared, plus a squared minus two a b plus b squared. Now collect the like terms. "
         "a squared plus a squared is two a squared. b squared plus b squared is two b squared. And the minus two a b "
         "stays.", show(f1g2, 'So the top is'), show(f1g2b, 'Now collect the like terms'))),
-    SM('Method 1 · Algebra', 'Split the fraction',
+    SM('Method 1 · The math way', 'Split the fraction',
       L("A lot of students take out two as a common factor here, and then get a bit tangled. Instead, let's split the "
         "fraction into three fractions with the same bottom. Why is that allowed? Fractions with the same bottom are "
         "added by adding the tops, so we can also go back the other way.", show(f1g3, "let's split the fraction")),
@@ -1066,11 +1066,11 @@ f1o10 = I('f1o10', 'Square $=100\\ \\Rightarrow\\ $circle $<100$', size=28)
 f1o11 = I('f1o11', '$25\\pi\\approx75$ ✓ $\\quad 50\\pi\\approx150$ ✗', size=28)
 
 video('solve-pt-q04', 'solution', qid='pt-q04', slides=[
-    SM('Method 1 · The formula', 'The radius and the height',
+    SM('Method 1 · The math way', 'The radius and the height',
       L("A cylinder is inscribed in a cube whose edge is three a, see the figure. What is the volume of the cylinder?",
         pt('stem', 'A cylinder is inscribed', 'hl', 6.0), voice='calm', pause=0.5),
       L("Inscribed means the cylinder sits inside the cube, and touches its sides. They ask for the volume of the "
-        "cylinder. [short pause] We'll solve it two ways, with the formula, and then with an estimate.",
+        "cylinder. [short pause] We'll solve it two ways, the math way, with the formula, and then with an estimate.",
         show(f1k['line'], 'Inscribed means')),
       L("The volume of a cylinder is pi r squared, times h. If you don't remember it, it's on the formula sheet. Pi r "
         "squared is the area of the round base, and h is the height. Why multiply? A cylinder is like a stack of equal "
@@ -1081,7 +1081,7 @@ video('solve-pt-q04', 'solution', qid='pt-q04', slides=[
       L("A diameter is two radii, so the radius is half of three a, which is three a over two. And the height of the "
         "cylinder is the height of the cube, three a.", show(f1k['r'], 'A diameter is two radii'), show(f1m2, 'so the radius is half'),
         show(f1k['h'], 'And the height of the'), show(f1m3, 'the height of the cube'))),
-    SM('Method 1 · The formula', 'The bracket trap',
+    SM('Method 1 · The math way', 'The bracket trap',
       L("Now into the formula. Pi, times the radius squared, times the height.", show(f1n1, 'Now into the formula')),
       L("Careful here. Many students write three a over two without brackets. Then they square the three a, but not the "
         "two. They get twenty-seven pi a cubed over two, which is choice number one. They mark it, and they're wrong.",
@@ -1170,7 +1170,7 @@ f1r4 = I('f1r4', '$30\\div2=15$ $\\ $blue higher', size=30)
 f1r5 = I('f1r5', '$\\dfrac{15+6}{36}=\\dfrac{21}{36}=\\dfrac{7}{12}$', size=36)
 
 video('solve-pt-q05', 'solution', qid='pt-q05', slides=[
-    S('Method 1 · A table of cases',
+    S('Method 1 · The math way: a table',
       L("Two fair dice, one blue and one red, are tossed. What is the probability that the number obtained on the blue "
         "die will be at least as large as the number obtained on the red die?", pt('stem', 'Two fair dice', 'hl', 9.0),
         voice='calm', pause=0.5),
@@ -1182,7 +1182,7 @@ video('solve-pt-q05', 'solution', qid='pt-q05', slides=[
         "one out of six, one sixth.", show(f1p1, 'A probability is the number')),
       L("With two dice, each of the six red numbers can come with each of the six blue numbers. That's six times six, "
         "thirty-six pairs, and they're all equally likely.", show(f1p2, "That's six times six"))),
-    SM('Method 1 · A table of cases', 'Count the good pairs',
+    SM('Method 1 · The math way: a table', 'Count the good pairs',
       L("How do we find the good pairs? The blue number we need depends on the red one. So let's make a table, with a "
         "row for each red number.", show(f1q['line'], "So let's make a table")),
       L("If the red shows one, every blue number is good. One, two, three, four, five or six, even the one, because "
@@ -1199,7 +1199,7 @@ video('solve-pt-q05', 'solution', qid='pt-q05', slides=[
         "number four is our answer.", show(f1p4, 'So the probability is'), mk('tick', 'choice 4', 'choice number four is our answer')),
       L("That was the mathematical way. It's long, because we listed every case. And it's not trivial. Many students "
         "don't get there at all.")),
-    S('Method 2 · An insight',
+    S('Method 2 · Insight',
       L("[pause] So far, we've met super-methods. In this question there's also an insight. What's an insight? An idea "
         "that belongs to one specific question. It's not a method you learn once and use again, because in another "
         "question it will be something completely different. These questions are rarer, but they're on the exam, so we'll "
@@ -1228,7 +1228,7 @@ video('solve-pt-q05', 'solution', qid='pt-q05', slides=[
 # many questions; insight questions (rarer, unique to each question); a lesson for each method, watch and practise; at
 # home solve both ways, on the exam use whatever comes to mind. Added: the "when do I use which" signs, in the same words
 # as the question videos.
-f1w1 = I('f1w1', 'The school way: calculations, math, algebra', size=38)
+f1w1 = I('f1w1', 'The math way: calculations, algebra', size=38)
 f1w2 = I('f1w2', 'The shortcut: creative thinking that solves faster', size=38)
 f1w3 = I('f1w3', 'Plugging in the answers', size=40)
 f1w4 = I('f1w4', 'Plugging in numbers', size=40)
@@ -1732,7 +1732,7 @@ video('solve-pt-q20', 'solution', qid='pt-q20', slides=[
     S('Calculate',
       L("One fifth plus one sixth, divided by two fifths plus two sixths. What is it?",
         pt('stem', 'One fifth plus one sixth', 'hl', 5.0), voice='calm', pause=0.5),
-      L("We'll solve it two ways. First we calculate, and then we'll see the insight.", pt('stem', 'First we calculate')),
+      L("We'll solve it two ways. First the math way, we calculate, and then we'll see the insight.", pt('stem', 'First we calculate')),
       L("The top has two fractions to add. Five and six have a common denominator of thirty. One fifth is six thirtieths, "
         "and one sixth is five thirtieths. Together, eleven thirtieths.", show(f2q20a, 'One fifth is six thirtieths'), show(f2q20a2, 'Together, eleven thirtieths')),
       L("The bottom has two fractions too, with the same common denominator, thirty. Two fifths is twelve thirtieths, and "
@@ -1742,7 +1742,7 @@ video('solve-pt-q20', 'solution', qid='pt-q20', slides=[
         show(f2q20c, 'So it\'s eleven over thirty'), show(f2q20c2, 'The thirties cancel')),
       L("Careful to keep the top on top. If you flip it, you get two, and two is waiting as choice number two. Choice "
         "number one is our answer.", mk('cross', 'choice 2', 'two is waiting as choice number two'),
-        mk('tick', 'choice 1', 'Choice number one is our answer'))),
+        mk('tick', 'choice 1', 'Choice number one is our answer')), sb='Method 1 · The math way'),
     S('The insight',
       L("Now the insight. Some students look at this and see right away that it's one half. How? Look at the bottom. Two "
         "fifths is exactly twice one fifth, and two sixths is exactly twice one sixth.", pt('stem', 'Look at the bottom')),
@@ -1754,7 +1754,7 @@ video('solve-pt-q20', 'solution', qid='pt-q20', slides=[
       L("By the way, notice that the exam wrote two sixths, and not one third. They're the same number, but two sixths "
         "shows us that it's double one sixth. They wanted us to see it.", pt('stem', 'the exam wrote two sixths')),
       L("Honestly, I love this question. Even in an easy calculation, the exam gives an advantage to whoever stops and "
-        "looks first. [pause] Okay. I'll see you in the next question.")),
+        "looks first. [pause] Okay. I'll see you in the next question."), sb='Method 2 · Insight'),
 ])
 
 # ------------------------------------------------------------------------------------------------ pt-q21 (Hebrew Q19)
@@ -2228,7 +2228,7 @@ f3a6 = I('f3a6', '$\\sqrt{x+2-(x-4)}$', size=34)
 f3a6b = I('f3a6b', '$=\\sqrt{x+2-x+4}$', size=34)
 f3a6c = I('f3a6c', '$=\\sqrt6$', size=34)
 video('solve-pt-q10', 'solution', qid='pt-q10', slides=[
-    S('Method 1 · Plugging in a number',
+    S('Method 1 · Plugging in numbers',
       L("Given: x is greater than or equal to four. The square root of x plus two, minus the square root of x squared "
         "minus eight x plus sixteen. What does it equal?", pt('stem', 'Given', 'hl', 8.0), voice='calm', pause=0.5),
       L("So it's an expression with x, and they ask what it equals. And all four choices are numbers. That's the first sign "
@@ -2243,8 +2243,8 @@ video('solve-pt-q10', 'solution', qid='pt-q10', slides=[
         "thirty-two plus sixteen is zero, and the root of zero is zero.", show(f3a2, 'So x equals four'), show(f3a2b, 'Sixteen minus')),
       L("We're left with the root of four plus two, minus zero. That's the root of six. Choice number four is our answer.",
         show(f3a3, "We're left with the root"), mk('tick', 'choice 4', 'Choice number four is our answer'))),
-    S('Method 2 · Algebra',
-      L("[pause] Now the algebra. Remember the shortcut formula. The bracket x minus four, squared, is x squared minus "
+    S('Method 2 · The math way',
+      L("[pause] Now the math way, with algebra. Remember the shortcut formula. The bracket x minus four, squared, is x squared minus "
         "eight x plus sixteen.", show(f3a4, 'Remember the shortcut formula')),
       L("The root of a square gives back the number, as long as it isn't negative. x is at least four, so x minus four is "
         "zero or more. So the inner root is x minus four.", show(f3a5, 'The root of a square')),
@@ -2309,7 +2309,7 @@ for _it, _y in ((f3h0, 200), (f3h1, 260), (f3h2, 320), (f3h3, 380), (f3h4, 440),
                  (f3j2b, 380), (f3j3, 430), (f3j3b, 480)):
     _R(_it, _y, x=1010)
 video('solve-pt-q11', 'solution', qid='pt-q11', slides=[
-    SM('Plugging in a number', 'Plugging in a number',
+    SM('Method 1 · Plugging in numbers', 'Plugging in a number',
       L("In the figure, A B C is a right triangle, and D B C is an isosceles triangle, with D B equal to D C. A B bisects "
         "angle D B C. What is beta?", pt('stem', 'In the figure', 'hl', 8.0), voice='calm', pause=0.5),
       L("Beta is the angle where A B crosses D C. And all the choices have alpha in them. Letters in the choices, that's "
@@ -2330,7 +2330,7 @@ video('solve-pt-q11', 'solution', qid='pt-q11', slides=[
       L("Now look at the triangle with corners D, B and the crossing point. Its angles are twenty at D and forty at B. "
         "Twenty plus forty is sixty, so beta is a hundred eighty minus sixty, a hundred twenty degrees.",
         show(f3g11['beta'], 'Now look at the triangle'))),
-    SM('Plugging in a number', 'Rule out three',
+    SM('Method 1 · Plugging in numbers', 'Rule out three',
       L("Now which choice gives a hundred twenty? Actually, we don't look for it. We rule out three choices, with alpha "
         "equal to fifty.", show(f3h0, 'Now which choice')),
       L("Choice number one, sixty plus fifty, is a hundred ten. Out.", show(f3h1, 'is a hundred ten'),
@@ -2343,8 +2343,8 @@ video('solve-pt-q11', 'solution', qid='pt-q11', slides=[
       L("Three choices are out, so choice number four is our answer, without checking it. One choice must be right, and we "
         "showed the other three are wrong.", show(f3h4, 'so choice number four is our answer'),
         mk('tick', 'choice 4', 'so choice number four is our answer'))),
-    SM('With letters', 'With letters',
-      L("[pause] Now the same steps with alpha. In triangle A B C, angle B is ninety minus alpha. The angle above it is the "
+    SM('Method 2 · The math way', 'With letters',
+      L("[pause] Now the math way, the same steps with alpha. In triangle A B C, angle B is ninety minus alpha. The angle above it is the "
         "same, so angle D B C is two times the bracket ninety minus alpha, a hundred eighty minus two alpha.",
         show(f3j1, 'angle B is ninety minus alpha'), show(f3j1b, 'so angle D B C is')),
       L("Angle C is the same, a hundred eighty minus two alpha. So angle D is a hundred eighty minus two times that. That's "
@@ -2418,10 +2418,10 @@ video('solve-pt-q12', 'solution', qid='pt-q12', slides=[
         "without finishing.", show(f3p7, 'Two squared is four'), show(f3p7b, 'Eight times seven'), mk('cross', 'choice 2', 'without finishing')),
       L("Three choices are out, so choice number four is our answer.", show(f3p8, 'Three choices are out'),
         mk('tick', 'choice 4', 'so choice number four is our answer'))),
-    S('Method 2 · Algebra',
-      L("[pause] Now the short algebra. The bracket a plus two, factorial, is a plus two, times a plus one, times a, times "
+    S('Method 2 · The math way',
+      L("[pause] Now the math way, the short algebra. The bracket a plus two, factorial, is a plus two, times a plus one, times a, times "
         "all the numbers below a. And a times all the numbers below it is just a factorial.",
-        show(f3p9, 'Now the short algebra')),
+        show(f3p9, 'Now the math way')),
       L("So the question is a factorial, times a factorial, times a plus one, times a plus two. That's a factorial squared, "
         "times a plus one, times a plus two. Choice number four again. [pause] Okay. I'll see you in the next question.",
         show(f3p10, 'So the question is'), mk('tick', 'choice 4', 'Choice number four again'))),
@@ -2473,8 +2473,8 @@ video('solve-pt-q13', 'solution', qid='pt-q13', slides=[
         show(f3i6c, 'Choice numbers three'),
         mk('cross', 'choice 3', 'a quarter and an eighth'), mk('cross', 'choice 4', 'and an eighth, out'),
         mk('tick', 'choice 1', 'So choice number one is our answer'))),
-    S('Method 2 · Algebra',
-      L("[pause] Now the algebra we started. One pen writes x over y words. The number of pens is all the words, divided "
+    S('Method 2 · The math way',
+      L("[pause] Now the math way, the algebra we started. One pen writes x over y words. The number of pens is all the words, divided "
         "by the words a pen writes.", show(f3i7, 'One pen writes x over y')),
       L("So it's x cubed y divided by x over y. Dividing by a fraction is multiplying by its flip, y over x. An x cancels, "
         "so x cubed becomes x squared, and y times y is y squared. x squared y squared, choice number one again. [pause] "
@@ -2524,8 +2524,8 @@ video('solve-pt-q14', 'solution', qid='pt-q14', slides=[
         "hundred it's two hundred fifty. Out. So choice number one is our answer.",
         show(f3c8, "it's two hundred fifty"), mk('cross', 'choice 4', "it's two hundred fifty"),
         mk('tick', 'choice 1', 'So choice number one is our answer'))),
-    S('Method 2 · Algebra',
-      L("[pause] With algebra, the price before is x plus forty. The discount in percent is forty out of x plus forty, "
+    S('Method 2 · The math way',
+      L("[pause] Now the math way. With algebra, the price before is x plus forty. The discount in percent is forty out of x plus forty, "
         "times a hundred. That's choice number one. [pause] Okay. I'll see you in the next question.",
         show(f3c9, 'the price before is x plus forty'), show(f3c9b, 'The discount in percent'), mk('tick', 'choice 1', "That's choice number one"))),
 ])
@@ -2576,14 +2576,14 @@ f3y5 = I('f3y5', '$y(x+5)=2(x+5)$', size=36)
 f3y6 = I('f3y6', '$x\\ne-5$ $\\to$ $x+5\\ne0$', size=36)
 f3y6b = I('f3y6b', '$y=2$ $\\ $for every allowed $x$', size=36)
 video('solve-pt-q24', 'solution', qid='pt-q24', slides=[
-    S('Method 1 · Picking values',
+    S('Method 1 · Plugging in numbers',
       L("Given: x is not equal to negative five. x y plus five y equals two x plus ten. What is y?",
         pt('stem', 'Given', 'hl', 6.0), voice='calm', pause=0.5),
       L("One equation with two letters, x and y, and they ask for one value. Some students say, one equation and two "
         "letters, it can't be solved. So they choose cannot be determined. That's the trap.",
         pt('choice 4', 'they choose cannot be determined')),
-      L("This is the case of more letters than equations. [short pause] We'll solve it by picking values, and then see why "
-        "it works with algebra.", show(f3y1, 'more letters than equations')),
+      L("This is the case of more letters than equations. [short pause] We'll solve it by plugging in numbers, and then "
+        "see why it works the math way.", show(f3y1, 'more letters than equations')),
       L("If y has one value, it's the same for every allowed x. So I may choose x myself. Which x? Zero, because it kills "
         "every term with x. And it's allowed, because the only condition is that x isn't negative five.",
         pt('stem: g1', 'the only condition')),
@@ -2597,8 +2597,8 @@ video('solve-pt-q24', 'solution', qid='pt-q24', slides=[
         show(f3y3, 'Six y equals twelve')),
       L("Two examples gave the same y. That's a strong hint, but a few examples never prove always. So let's see why it's "
         "always two.", show(f3y4, 'a few examples never prove always'))),
-    S('Method 2 · Algebra',
-      L("[pause] On the left, take y out. x y plus five y is y times the bracket x plus five. On the right, take two out. "
+    S('Method 2 · The math way',
+      L("[pause] Now the math way. On the left, take y out. x y plus five y is y times the bracket x plus five. On the right, take two out. "
         "Two x plus ten is two times the bracket x plus five.", show(f3y5, 'On the left, take y out')),
       L("x plus five is not zero, because x is not negative five. So we may divide both sides by it, and y is two, for "
         "every allowed x. Choice number two is our answer.", show(f3y6, 'x plus five is not zero'), show(f3y6b, 'and y is two'),
@@ -2859,7 +2859,7 @@ for _it, _y, _x in ((f4h0, 575, 1040), (f4h1, 620, 1040), (f4h3, 665, 1040),
     _R(_it, _y, x=_x)
 
 video('solve-pt-q16', 'solution', qid='pt-q16', slides=[
-    SM('Estimation', 'Where is the pi?',
+    SM('Method 1 · Estimation', 'Where is the pi?',
       L("A O B is a sector of a circle with center O and a radius of two centimeters. Based on this and the figure, what "
         "is the area of the shaded region, in square centimeters?", pt('stem', 'A O B is a sector', 'hl', 8.0),
         voice='calm', pause=0.5),
@@ -2880,7 +2880,7 @@ video('solve-pt-q16', 'solution', qid='pt-q16', slides=[
       L("Choice number two and choice number four both have pi minus a number, so they stay. Two choices are out, just "
         "from where the pi is. In some questions every choice has the pi in the right place, and this check rules out "
         "nothing. In others, it rules out three choices at once.")),
-    SM('Estimation', 'A negative area?',
+    SM('Method 1 · Estimation', 'A negative area?',
       L("[pause] Two choices are left. Now let's estimate their size. Pi is a bit more than three, and less than four.",
         show(f4n0, 'Two choices are left'), show(f4n1, 'Pi is a bit more than three')),
       L("Look at choice number two. Inside the bracket, we have pi over two, minus two. Pi is less than four, so pi over "
@@ -2892,8 +2892,8 @@ video('solve-pt-q16', 'solution', qid='pt-q16', slides=[
         mk('cross', 'choice 2', 'so choice number two is out')),
       L("Three choices are out, so choice number four is our answer.",
         mk('tick', 'choice 4', 'so choice number four is our answer'))),
-    SM('Partial calculation', 'Partial calculation',
-      L("[pause] Now a second way, for whoever wants to calculate. Even then, we don't have to calculate everything. "
+    SM('Method 2 · The math way: partial calculation', 'Partial calculation',
+      L("[pause] Now a second way, the math way, for whoever wants to calculate. Even then, we don't have to calculate everything. "
         "Let's find only the sector.", show(f4g16b['line'], 'Now a second way')),
       L("What part of the circle is the sector? Think of a pizza. If we cut it into four slices, each slice has ninety "
         "degrees. If we cut it into eight, each slice has forty-five degrees.", show(f4g16b['q'], 'into four slices'),
@@ -2933,11 +2933,11 @@ for _it, _y in ((f4c4, 290), (f4c5, 345), (f4c6, 400), (f4c7, 455), (f4c8, 510))
     _R(_it, _y)
 
 video('solve-pt-q17', 'solution', qid='pt-q17', slides=[
-    S('Method 1 · The partner',
+    S('Method 1 · The math way',
       L("Root two, over the bracket two plus root two. What does it equal?", pt('stem', 'Root two, over the bracket',
                                                                                  'hl', 4.0), voice='calm', pause=0.5),
       L("It's a fraction with a root on the bottom, and none of the choices is a fraction. So we need to get rid of the "
-        "bottom. [short pause] We'll solve it two ways, with algebra, and then with an estimate."),
+        "bottom. [short pause] We'll solve it two ways, the math way, with algebra, and then with an estimate."),
       L("In the roots topic we learned how. When the bottom is a sum with a root, we multiply the top and the bottom by "
         "its partner. The partner of two plus root two is two minus root two. The top and the bottom are multiplied by "
         "the same thing, so it's like multiplying by one, and the value doesn't change.",
@@ -3436,6 +3436,12 @@ MV.calm(_types.SimpleNamespace(**globals()), ORDER)     # 2026-10-13 steady high
 _lp = [(v, p) for v in ORDER for p in MV.check_layers(VIDEOS[v])]
 assert not _lp, ('figure layers out of order', _lp)
 
+
+# 2026-10-15 one vocabulary for method names (math_patches/_method_names.py CORE; guide "Method names"): a "Method N · X"
+# title or sidebar outside it stops the run, so a new script uses the vocabulary from its first draft.
+_mn_spec = importlib.util.spec_from_file_location('_method_names_vocab', os.path.join(HERE, '_method_names.py'))
+_mn = importlib.util.module_from_spec(_mn_spec); _mn_spec.loader.exec_module(_mn)
+_mn.check_vocab(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

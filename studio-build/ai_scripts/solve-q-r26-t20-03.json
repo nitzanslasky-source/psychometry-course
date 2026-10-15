@@ -13,9 +13,9 @@
    },
    "We need to count them without listing all of them. [short pause] We'll solve it two ways, jumping by two from the first odd number to the last, and then taking half of all the numbers.",
    {
-    "say": "[short pause] Twenty and eighty are even, so they wouldn't count anyway. The first odd number after twenty is twenty-one, and the last odd number before eighty is seventy-nine.",
+    "say": "[short pause] The math way first. Twenty and eighty are even, so they wouldn't count anyway. The first odd number after twenty is twenty-one, and the last odd number before eighty is seventy-nine.",
     "at": [
-     "Twenty and",
+     "The math",
      "The first odd number after twenty",
      "twenty is twenty-one"
     ]
@@ -37,7 +37,7 @@
   ],
   [
    {
-    "say": "[pause] Another way. Count all the whole numbers from twenty-one to eighty, both ends included. Eighty minus twenty-one, plus one, is sixty.",
+    "say": "[pause] Another way, by understanding. Count all the whole numbers from twenty-one to eighty, both ends included. Eighty minus twenty-one, plus one, is sixty.",
     "at": [
      "Another way",
      "Eighty minus twenty-one"

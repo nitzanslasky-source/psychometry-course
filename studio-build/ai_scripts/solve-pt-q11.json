@@ -106,9 +106,9 @@
   ],
   [
    {
-    "say": "[pause] Now the same steps with alpha. In triangle A B C, angle B is ninety minus alpha. The angle above it is the same, so angle D B C is two times the bracket ninety minus alpha, a hundred eighty minus two alpha.",
+    "say": "[pause] Now the math way, the same steps with alpha. In triangle A B C, angle B is ninety minus alpha. The angle above it is the same, so angle D B C is two times the bracket ninety minus alpha, a hundred eighty minus two alpha.",
     "at": [
-     "with alpha. In",
+     "the same steps",
      "angle B is ninety minus alpha",
      "alpha. The angle",
      "so angle D B C is",

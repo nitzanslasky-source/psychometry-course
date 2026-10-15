@@ -662,7 +662,7 @@ s541 = SLOT('s541', '◆([[a]]) = [[a]]^2 − 4·[[a]]', [('in', '◆({{6}}) = {
 a3 = IH('a3', '$a^2-4a=a(a-4)$')
 a4 = IH('a4', '$\\blacklozenge(6)=6\\cdot(6-4)=6\\cdot2=12$')
 video('solve-q-541', 'solution', qid='q-541', slides=[
-    S('Method 1 · Substitute',
+    S('Method 1 · The math way',
       L("The operation diamond is defined for every number a. Diamond of a is equal to a squared minus four a. Diamond of "
         "six is equal to what?", pt('stem', 'The operation diamond', 'hl', 7.0), voice='calm', pause=0.5),
       L("So we have a rule, and we need to use it on the number six. [short pause] We'll solve it two ways, first by "
@@ -675,7 +675,7 @@ video('solve-q-541', 'solution', qid='q-541', slides=[
       L("So diamond of six is twelve, and choice number two is our answer. Careful, thirty-six, choice number one, is what "
         "you get if you put six only into a squared and forget the four a.", mk('tick', 'choice 2', 'choice number two is our answer'),
         pt('s541_in', 'only into a squared'), mk('cross', 'choice 1', 'thirty-six, choice number one'))),
-    S('Method 2 · A common factor',
+    S('Method 2 · The math way: common factor',
       L("[pause] Another way is to simplify the rule first, and only then put the number in. Both parts of a squared minus "
         "four a have an a in them: a squared is a times a, and four a is a times four. So we can write the whole "
         "expression as a times something. a squared minus four a is a times, in brackets, a minus four. Let's check it. a times a is a squared, and a times negative four is negative four a.",
@@ -692,7 +692,7 @@ c542 = CHAIN('c542', [('line', '◆([[◆(5)]])'), ('in', '[[◆(5)]] = 5^2 = {{
 b3 = IH('b3', '$\\blacklozenge(\\blacklozenge(x))=(x^2)^2=x^4$')
 b4 = IH('b4', '$5^4=25^2=625$')
 video('solve-q-542', 'solution', qid='q-542', slides=[
-    S('Method 1 · Inside out',
+    S('Method 1 · The math way: inside out',
       L("The operation diamond is defined for every number x. Diamond of x is equal to x squared. Diamond of diamond of five "
         "is equal to what?", pt('stem', 'The operation diamond', 'hl', 7.0), voice='calm', pause=0.5),
       L("So a diamond inside a diamond. The question is which one we do first. [short pause] We'll solve it two ways, from "
@@ -706,7 +706,7 @@ video('solve-q-542', 'solution', qid='q-542', slides=[
       L("Careful, a lot of students stop after the inner diamond and mark twenty-five. But twenty-five is only halfway, "
         "because the outer diamond still has to work on it. So choice number one is the trap, and choice number three is "
         "our answer.", mk('cross', 'choice 1', 'choice number one is the trap'), mk('tick', 'choice 3', 'choice number three is'))),
-    S('Method 2 · The rule itself',
+    S('Method 2 · Understanding',
       L("[pause] Another way is to write the same two squarings with a power. The first diamond squares the number. The "
         "second diamond squares the result again. So we get x squared, all squared. x squared times x squared is x to the power of "
         "four.", show(b3, 'So we get x squared')),
@@ -757,7 +757,7 @@ e2 = I('e2', 'Choices: $\\ 1,\\ -1,\\ -1,\\ 3$', size=30)
 e3 = IH('e3', '$x=2$: $\\ \\blacklozenge(3)=9-6=3$', size=30)
 e4 = I('e4', '(2) $4-1=3$ ✓ $\\quad$ (3) $4-4-1=-1$ ✗', size=30)
 video('solve-q-r26-t19-01', 'solution', qid='q-r26-t19-01', slides=[
-    S('Method 1 · Algebra',
+    S('Method 1 · The math way',
       L("For every number x, diamond of x is equal to x squared minus two x. Diamond of x plus one is equal to what?",
         pt('stem', 'For every number x', 'hl', 6.0), voice='calm', pause=0.5),
       L("This time the input is not a number. It's a whole expression, x plus one. [short pause] We'll solve it two ways, "
@@ -819,7 +819,7 @@ video('solve-q-r26-t19-02', 'solution', qid='q-r26-t19-02', slides=[
       L("Choice number three, a b plus a plus b. One star two is two plus one plus two, which is five. Two star one is two "
         "plus two plus one, which is five too. It stays. Three choices are out, so choice number three is our answer.",
         show(f5, 'is two plus one plus two'), mk('tick', 'choice 3', 'so choice number three is our answer'))),
-    S('Method 2 · Algebra',
+    S('Method 2 · The math way',
       L("[pause] Ruling out the other three already answers the question. Now let's see why choice number three works "
         "for every a and b. One example can't show that, so we swap the letters in the rule itself. b star a means b times a, plus b, plus a.", show(g1, 'b star a means')),
       L("b times a is the same as a times b, and b plus a is the same as a plus b. So b star a is a b plus a plus b, which "
@@ -870,7 +870,7 @@ j1 = IH('j1', '$\\blacklozenge(n)=\\frac{n}{2}+5$')
 j2 = IH('j2', '$n=6$: $\\ \\frac62+5=8$ ✓', size=30)
 j3 = IH('j3', '$\\frac{14}{2}+5=7+5=12$')
 video('solve-q-544', 'solution', qid='q-544', slides=[
-    S('Method 1 · Match the input',
+    S('Method 1 · The math way',
       L("The operation diamond is defined for every number x. Diamond of two x is equal to x plus five. Diamond of fourteen "
         "is equal to what?", pt('stem', 'The operation diamond', 'hl', 7.0), voice='calm', pause=0.5),
       L("Look closely at the rule. The diamond works on two x, not on x. So this is an operation on an expression. [short "
@@ -884,7 +884,7 @@ video('solve-q-544', 'solution', qid='q-544', slides=[
         mk('tick', 'choice 1', 'choice number one is our answer')),
       L("Careful, if you put fourteen straight into x plus five, you get nineteen, choice number two. That treats fourteen "
         "as x, but fourteen took the place of two x.", mk('cross', 'choice 2', 'you get nineteen, choice number two'))),
-    S('Method 2 · Rewrite the rule',
+    S('Method 2 · Understanding',
       L("[pause] Another way is to rewrite the rule so it works on any input. Two x goes in, and x plus five comes out. "
         "What does the diamond do to its input? x is half of two x. So the diamond takes half of its input, and then adds "
         "five.", show(j1, 'takes half of its input')),
@@ -924,7 +924,7 @@ l2 = IH('l2', 'Even: $\\ x^2-12=24$, $\\ x^2=36$, $\\ x=6$ ✓', size=32)
 m1 = IH('m1', '(1) $8$ even: $\\ 64-12=52$ ✗', size=32)
 m2 = IH('m2', '(2) $6$ even: $\\ 36-12=24$ ✓', size=32)
 video('solve-q-r26-t19-03', 'solution', qid='q-r26-t19-03', slides=[
-    S('Method 1 · Two cases',
+    S('Method 1 · The math way: two cases',
       L("The operation diamond is defined for every positive integer x. Diamond of x is three x when x is odd, and x squared "
         "minus twelve when x is even. Given: diamond of x is equal to twenty-four. x is equal to what?",
         pt('stem', 'The operation diamond', 'hl', 9.0), voice='calm', pause=0.5),
@@ -960,7 +960,7 @@ c546 = CHAIN('c546', [('line', '◆(6) = 9 − [[◆(4)]]'), ('a', '[[◆(4)]] =
 o1 = I('o1', '$x$: $\\ \\ 0,\\ \\ 2,\\ \\ 4,\\ \\ 6,\\ \\ 8$', size=34)
 o2 = I('o2', '$\\blacklozenge$: $\\ \\ 2,\\ \\ 7,\\ \\ 2,\\ \\ 7,\\ \\ 2$', size=34)
 video('solve-q-546', 'solution', qid='q-546', slides=[
-    S('Method 1 · Down, then back up',
+    S('Method 1 · The math way',
       L("The operation diamond is defined for every even integer x that's zero or more. Diamond of x is two when x is zero. "
         "When x is two or more, diamond of x is nine minus diamond of, in brackets, x minus two. Diamond of six is equal to what?",
         pt('stem', 'The operation diamond', 'hl', 9.0), voice='calm', pause=0.5),
@@ -978,7 +978,7 @@ video('solve-q-546', 'solution', qid='q-546', slides=[
         "is two. And diamond of six is nine minus two, which is seven. Choice number four is our answer.",
         show(c546['u1'], 'Diamond of two is nine minus two'), show(c546['u2'], 'Diamond of four is nine minus seven'),
         show(c546['u3'], 'And diamond of six is'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
-    S('Method 2 · The pattern',
+    S('Method 2 · Understanding: the pattern',
       L("[pause] Another way is to look for a pattern. Let's list the values from the start. Diamond of zero is two. Each "
         "next value is nine minus the one before it. Nine minus two is seven. Nine minus seven is two. So the values go "
         "two, seven, two, seven.", show(o1, 'list the values'), show(o2, 'So the values go')),
@@ -1049,7 +1049,7 @@ r5 = IH('r5', '(4) $(x-7)^2=(7-x)^2$ ✓', size=30)
 s1 = I('s1', '$x=1$: $\\ $(1) $36=36$ $\\quad$ (2) $1=1$', size=30)
 s2 = I('s2', '(3) $25\\ne5$ ✗', size=30)
 video('solve-q-549', 'solution', qid='q-549', slides=[
-    S('Method 1 · Algebra',
+    S('Method 1 · The math way',
       L("For every number t, diamond of t is equal to t squared. In the choices, x is zero or more. Which of the following "
         "is not always true?", pt('stem', 'For every number t', 'hl', 7.0), voice='calm', pause=0.5),
       L("Before we start, a small tip. Look at the choices. The diamond appears in every choice, and we have to use it "
@@ -1057,7 +1057,7 @@ video('solve-q-549', 'solution', qid='q-549', slides=[
         "every choice, skip it. Solve the rest of the section first, and come back to it at the end. Here in the lesson, "
         "let's solve it. [short pause] We'll solve it in two different ways, with algebra, and then by plugging in a number.",
         pt('choice 1', 'in every choice'), show(r1, 'skip it')),
-      L("[short pause] With algebra, we write what the diamond does on each side. The diamond squares whatever goes in. "
+      L("[short pause] Let's start with the math way. With algebra, we write what the diamond does on each side. The diamond squares whatever goes in. "
         "Choice number one. On the left, six x goes in, so we get six x, squared. That's six squared times x squared, "
         "thirty-six x squared. On the right, thirty-six times x squared. Both sides are equal for every x, so this one is "
         "always true, and it's out.", show(r2, 'six x goes in'), mk('cross', 'choice 1', "and it's out")),
@@ -1070,7 +1070,7 @@ video('solve-q-549', 'solution', qid='q-549', slides=[
       L("In the exam you'd circle it and move on. But choice number four teaches something useful. x minus seven and seven "
         "minus x are opposites, and opposites have the same square. So the two sides are always equal.",
         show(r5, 'are opposites'), mk('cross', 'choice 4', 'always equal'))),
-    S('Method 2 · Plugging in a number',
+    S('Method 2 · Plugging in numbers',
       L("[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, a small "
         "nonzero value. Zero is allowed too, but with zero, choice number three gives zero on both sides, so it can't show "
         "the failure. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six "
@@ -1136,7 +1136,7 @@ w1 = I('w1', '$\\blacklozenge(1,1,z)=1^{z}+1^{z}+z^{1\\cdot1}=2+z$', size=32)
 w2 = IH('w2', '$2+33=35$', size=32)
 w3 = IH('w3', '$\\blacklozenge(z,0,1)=z^{0}+0^{z}+1^{0}=1+0+1=2$', size=30)
 video('solve-q-550', 'solution', qid='q-550', slides=[
-    S('Method 1 · The standard way',
+    S('Method 1 · The math way',
       L("For every three numbers x, y and z, diamond of x, y, z is equal to x to the power of the product y z, plus y to "
         "the power of the product x z, plus z to the power of the product x y. Diamond of one, one, and diamond of two, one, four, is equal to what?",
         pt('stem', 'For every three numbers', 'hl', 10.0), voice='calm', pause=0.5),
@@ -1154,7 +1154,7 @@ video('solve-q-550', 'solution', qid='q-550', slides=[
         "power of one times one, which is one, so it stays thirty-three. One plus one plus thirty-three is thirty-five. "
         "Choice number three is our answer.", mk('cross', 'choice 1', 'waiting as choice number one'),
         show(v3, 'Now the outer diamond'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
-    S('Method 2 · The outer diamond first',
+    S('Method 2 · Understanding',
       L("[pause] Another way is to simplify the outer diamond first. We still need the inner value, but the outer step "
         "becomes easy. Its first two numbers are one and "
         "one. One to any power is one, so the first two parts are one and one, whatever the inner value is. And the last "
@@ -1177,7 +1177,7 @@ y1 = I('y1', '$\\blacklozenge(x,y)=(x-y)^2\\qquad \\#(x,y)=(x+y)^2$', size=32)
 y2 = IH('y2', '$(10-6)^2=16 \\qquad (5-4)^2=1$', size=32)
 y3 = IH('y3', '$(16+1)^2=17^2=289$', size=32)
 video('solve-q-551', 'solution', qid='q-551', slides=[
-    S('Method 1 · The standard way',
+    S('Method 1 · The math way',
       L("For every two numbers x and y, two operations are defined. Diamond of x, y is x squared minus two x y plus y "
         "squared, and hash of x, y is x squared plus two x y plus y squared. Hash of diamond of ten, six, and diamond of five, "
         "four, is equal to what?", pt('stem', 'For every two numbers', 'hl', 11.0), voice='calm', pause=0.5),
@@ -1196,7 +1196,7 @@ video('solve-q-551', 'solution', qid='q-551', slides=[
         "thirty-two. One squared is one. Two hundred fifty-six plus thirty-two is two hundred eighty-eight, plus one is two "
         "hundred eighty-nine. Choice number two is our answer.", show(c551['r3'], 'Sixteen squared is'),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    S('Method 2 · The shortcut formulas',
+    S('Method 2 · Understanding: shortcut formulas',
       L("[pause] Another way is to recognize the shortcut formulas inside the definitions. x squared minus two x y plus y "
         "squared is the formula for x minus y, all squared. And x squared plus two x y plus y squared is x plus y, all "
         "squared.", show(y1, 'is the formula for')),
@@ -1218,7 +1218,7 @@ z4 = I('z4', 'Even powers, the constant: $\\ $cancel', size=30)
 z5 = IH('z5', 'Odd powers: $\\ 8-(-8)=16=2\\cdot8$', size=30)
 z6 = IH('z6', '$2\\cdot(32-16+8)=2\\cdot24=48$', size=32)
 video('solve-q-r26-t19-05', 'solution', qid='q-r26-t19-05', slides=[
-    S('Method 1 · Calculate both',
+    S('Method 1 · The math way',
       L("For every number x, diamond of x is x to the power of five, plus three x to the power of four, minus two x cubed, "
         "plus x squared, plus four x, minus seven. Diamond of two minus diamond of negative two is equal to what?",
         pt('stem', 'For every number x', 'hl', 9.0), voice='calm', pause=0.5),
@@ -1238,7 +1238,7 @@ video('solve-q-r26-t19-05', 'solution', qid='q-r26-t19-05', slides=[
         "thirty-six. Thirty-six minus eight is twenty-eight. Twenty-eight minus seven is twenty-one. So sixty-nine minus "
         "twenty-one is forty-eight. Choice number three is our answer.", show(z3, 'So sixty-nine minus'),
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
-    S('Method 2 · Even powers cancel',
+    S('Method 2 · Understanding',
       L("[pause] Another way is to compare each term at two and at negative two, instead of calculating everything. An even "
         "power gives the same value for two and for negative two. The plain number, minus seven, is also the same. So in "
         "the subtraction, all of these cancel.", show(z4, 'An even power gives')),
@@ -1265,7 +1265,7 @@ b5 = IH('b5', '$a=1$: $\\ \\blacklozenge(1,1)=\\sqrt{9}=3$', size=30)
 b6 = IH('b6', 'Top: $\\ \\blacklozenge(3,1)=\\sqrt{72+1}=\\sqrt{73}$', size=30)
 b7 = IH('b7', 'Bottom: $\\ \\blacklozenge(1,3)=\\sqrt{8+9}=\\sqrt{17}$', size=30)
 video('solve-q-552', 'solution', qid='q-552', slides=[
-    S('Method 1 · The full math',
+    S('Method 1 · The math way',
       L("For every two numbers x and y, diamond of x, y is the square root of the whole sum, eight x squared plus y squared. Given: a is "
         "bigger than zero. Diamond of diamond of a, a, and a, over diamond of a, and diamond of a, a, is equal to what?",
         pt('stem', 'For every two numbers', 'hl', 10.0), voice='calm', pause=0.5),
@@ -1281,12 +1281,12 @@ video('solve-q-552', 'solution', qid='q-552', slides=[
         "seventy-three a squared. The root is a times root seventy-three.", show(a6, 'Now the top')),
       L("Now the bottom, diamond of a and three a. Now three a is in the second slot, so it's not multiplied by eight. Eight "
         "a squared plus nine a squared is seventeen a squared. The root is a times root seventeen.", show(a7, 'Now the bottom'))),
-    S('Method 1 · The full math',
+    S('Method 1 · The math way',
       L("So the fraction is a root seventy-three over a root seventeen. The a's cancel, because a is not zero. Root "
         "seventy-three over root seventeen is the root of seventy-three over seventeen. Choice number three is our answer.",
         show(a8, 'The a\'s cancel'), mk('tick', 'choice 3', 'Choice number three is our answer')),
-      sb='Method 1 · The full math'),
-    S('Method 2 · Plugging in a number',
+      sb='Method 1 · The math way'),
+    S('Method 2 · Plugging in numbers',
       L("[pause] Now let's plug in a number. In the full math, the a's cancelled, so the answer doesn't depend on a. So we "
         "can use an easy allowed value. Let's take a is one, the easiest positive number. "
         "Diamond of one and one is the root of eight plus one, root nine, which is three.", show(b5, 'Diamond of one and one')),
@@ -1314,14 +1314,14 @@ e5 = IH('e5', '$a=1,\\ b=2$: $\\ 1,\\ \\frac{1}{2},\\ \\frac{1}{4},\\ 4$ $\\ $(a
 e6 = IH('e6', '$\\blacklozenge(1,2)=\\frac{1}{1\\cdot8}=\\frac18 \\qquad \\blacklozenge(2,1)=\\frac{1}{2\\cdot1}=\\frac12$', size=30)
 e7 = IH('e7', '$\\frac18\\div\\frac12=\\frac18\\cdot2=\\frac14$', size=32)
 video('solve-q-553', 'solution', qid='q-553', slides=[
-    S('Method 1 · The full math',
+    S('Method 1 · The math way',
       L("For every two numbers x and y that are not zero, diamond of x, y is x minus y, squared, over x times y cubed. Given: "
         "a and b are two different numbers, and neither of them is zero. Diamond of a, b over diamond of b, a is equal to "
         "what?", pt('stem', 'For every two numbers', 'hl', 11.0), voice='calm', pause=0.5),
       L("The same two letters go into the diamond on the top and at the bottom, only in a different order. [short pause] "
-        "We'll solve it three ways, the full math, reading the definition first, and plugging in numbers.",
+        "We'll solve it three ways, the math way, by understanding the definition, and by plugging in numbers.",
         pt('stem', 'only in a different')),
-      L("[short pause] The top is diamond of a, b, so x is a and y is b. That's a minus b, squared, over a times b cubed. "
+      L("[short pause] The math way first. The top is diamond of a, b, so x is a and y is b. That's a minus b, squared, over a times b cubed. "
         "The bottom is diamond of b, a, so now x is b and y is a. That's b minus a, squared, over b times a cubed.",
         show(c5a, 'The top is diamond of a, b'), show(c5b, 'The bottom is diamond of b, a')),
       L("To divide by a fraction, we multiply by its reciprocal. So we flip the bottom fraction and multiply. And a tip, "
@@ -1331,8 +1331,8 @@ video('solve-q-553', 'solution', qid='q-553', slides=[
       L("We're left with b times a cubed, over a times b cubed. One a cancels from a cubed, which leaves a squared on top. "
         "One b cancels from b cubed, which leaves b squared at the bottom. So the answer is a squared over b squared. Choice "
         "number three is our answer.", show(c6, "We're left with"), mk('tick', 'choice 3', 'Choice number three is our answer'))),
-    S('Method 2 · Read the definition first',
-      L("[pause] Another way is to read the definition before calculating. The top and the bottom use the same two numbers, "
+    S('Method 2 · Understanding',
+      L("[pause] Now by understanding. We read the definition before calculating. The top and the bottom use the same two numbers, "
         "just swapped. The squared part is x minus y. Swapping x and y gives the opposite number inside, but the square is "
         "the same. So both fractions have the same top. When we divide one fraction by another with the same nonzero top, "
         "that top cancels.", show(d5, 'but the square is the same')),
@@ -1363,13 +1363,13 @@ f8 = IH('f8', '(4) $1+8+16=25$ ✓', size=30)
 g5 = I('g5', 'Power $4$ on the hundreds: $\\ $the smallest digit, $1$', size=30)
 g6 = I('g6', 'Power $3$ on the tens: $\\ 2$, not $4$: $\\ 124$', size=30)
 video('solve-q-554', 'solution', qid='q-554', slides=[
-    S('Method 1 · The standard way',
+    S('Method 1 · The math way',
       L("A, B and C are digits from one to nine. For every three-digit number A B C, the operation diamond is defined. "
         "Diamond of A B C is A to the power of four, plus B cubed, plus C squared. Which of the following is the smallest?",
         pt('stem', 'A, B and C', 'hl', 9.0), voice='calm', pause=0.5),
       L("Two topics in one question, digits and a new operation. And the diamond is in every choice, so we have to work out "
-        "the choices. [short pause] We'll solve it two ways, calculating each choice, and then a shortcut that thinks about "
-        "where the biggest power goes.", pt('stem', 'Two topics in one question')),
+        "the choices. [short pause] We'll solve it two ways, the math way, calculating each choice, and then by "
+        "understanding where the biggest power goes.", pt('stem', 'Two topics in one question')),
       L("[short pause] The hundreds digit goes to the power of four, the tens digit is cubed, and the units digit is "
         "squared. Choice number one, two one four. Two to the power of four is sixteen. One cubed is one. Four squared is "
         "sixteen. Sixteen plus one plus sixteen is thirty-three.", show(s554['line'], 'The hundreds digit goes'),
@@ -1383,8 +1383,8 @@ video('solve-q-554', 'solution', qid='q-554', slides=[
         "sixteen. One plus eight plus sixteen is twenty-five. Twenty-five is smaller than thirty-three, so choice number one "
         "is out too, and choice number four is our answer.", show(f8, 'One plus eight plus sixteen'),
         mk('cross', 'choice 1', 'so choice number one'), mk('tick', 'choice 4', 'and choice number four is our answer'))),
-    S('Method 2 · Think about the powers',
-      L("[pause] Another way is to think about the powers. Every choice uses the same three digits, one, two and four. "
+    S('Method 2 · Understanding',
+      L("[pause] Now by understanding. Let's think about the powers. Every choice uses the same three digits, one, two and four. "
         "One stays one at any power, so giving it the biggest power costs nothing. But four grows a lot. Four squared is "
         "sixteen, and four to the power of four is two hundred fifty-six. So the fourth power, on the hundreds digit, "
         "should go to the one. Choice numbers one and three start with two and four, so they're out.",
@@ -1409,13 +1409,13 @@ i7 = I('i7', '(3) $\\div\\frac3b=\\times\\frac b3$: $\\ \\frac ba$ ✗', size=28
 i8 = I('i8', '(4) bigger denominator, smaller fraction ✗', size=28)
 i9 = I('i9', '(2) a number times its reciprocal is $1$: $\\ 3\\cdot1=3$ ✓', size=28)
 video('solve-q-555', 'solution', qid='q-555', slides=[
-    S('Method 1 · Algebra',
+    S('Method 1 · The math way',
       L("For every number x that's not zero, diamond of x is three over x. Which of the following must be true for all "
         "positive a and b?", pt('stem', 'For every number x', 'hl', 6.0), voice='calm', pause=0.5),
       L("Must be true means true for every positive a and b. So for each choice, we test whether it works for every "
-        "positive a and b, and one allowed pair where it fails rules it out. [short pause] We'll solve it two ways, with "
-        "algebra on each inequality or equation, and then by understanding what the diamond does.", pt('stem', 'Must be true means')),
-      L("[short pause] Let's start with algebra. Choice number one says three over a is smaller than three. a is positive, "
+        "positive a and b, and one allowed pair where it fails rules it out. [short pause] We'll solve it two ways, the "
+        "math way, with algebra on each inequality or equation, and then by understanding what the diamond does.", pt('stem', 'Must be true means')),
+      L("[short pause] Let's start with the math way. Choice number one says three over a is smaller than three. a is positive, "
         "so we can multiply both sides by a without flipping the sign. We get three is smaller than three a. Divide both "
         "sides by three, and one is smaller than a. That's true only when a is bigger than one. But a could be one half. "
         "Then three over one half is six, and six is not smaller than three. So choice number one is out.",
@@ -1424,7 +1424,7 @@ video('solve-q-555', 'solution', qid='q-555', slides=[
         "Three over a times b over three. The threes cancel, and we get b over a. The choice says a over b, and b over a "
         "equals a over b only when a and b are equal. So it's not true for every positive a and b, and choice number three "
         "is out.", show(h7, 'Choice number three. Three over a'), mk('cross', 'choice 3', 'and choice number three is out'))),
-    S('Method 1 · Algebra',
+    S('Method 1 · The math way',
       L("Choice number four says three over a is smaller than three over, in brackets, a plus one. The whole a plus one "
         "is the bottom of that fraction. Both bottoms are positive, so we can "
         "multiply both sides by a and by a plus one without flipping. We get three times, in brackets, a plus one, is "
@@ -1434,8 +1434,8 @@ video('solve-q-555', 'solution', qid='q-555', slides=[
       L("Choice number two. Three over a, times a. The a cancels, and we get three. And three over b, times b, is three "
         "too. Three equals three for every a and b. So choice number two must be true, and it's our answer.",
         show(h9, 'Choice number two. Three over a'), mk('tick', 'choice 2', "and it's our answer")),
-      sb='Method 1 · Algebra'),
-    S('Method 2 · By understanding',
+      sb='Method 1 · The math way'),
+    S('Method 2 · Understanding',
       L("[pause] Now by understanding. Three over x means three divided by x. Choice number one. For a bigger than one it "
         "works. Three over two is smaller than three. But for a equal to one, we get three, which isn't smaller than three. "
         "And for a fraction like one half, we get six. So not always.", show(i6, 'For a bigger than one')),
@@ -1479,7 +1479,7 @@ video('solve-q-556', 'solution', qid='q-556', slides=[
       L("Choice number four. Five has one five, and zero plus one is one. One equals one. Three choices are out, so choice "
         "number four is our answer.", show(j7, 'zero plus one is one. One equals'), mk('tick', 'choice 4', 'number four is our answer'))),
     S('Method 2 · Understanding',
-      L("[pause] Now let's see why it's always true. When we multiply x by five, we add exactly one more five to its prime "
+      L("[pause] Now by understanding. Let's see why it's always true. When we multiply x by five, we add exactly one more five to its prime "
         "factors, whatever x is. So the count of fives goes up by exactly one. That's choice number four, for every x. For "
         "example, fifty has two fives, and two hundred fifty has three.", show(k5, 'we add exactly one more five'),
         mk('tick', 'choice 4', "That's choice number four")),
@@ -1829,6 +1829,12 @@ MV.calm(_types.SimpleNamespace(**globals()))     # 2026-10-13 steady highlights 
 _lp = [(v, p) for v in ORDER for p in MV.check_layers(VIDEOS[v])]
 assert not _lp, ('figure layers out of order', _lp)
 
+
+# 2026-10-15 one vocabulary for method names (math_patches/_method_names.py CORE; guide "Method names"): a "Method N · X"
+# title or sidebar outside it stops the run, so a new script uses the vocabulary from its first draft.
+_mn_spec = importlib.util.spec_from_file_location('_method_names_vocab', os.path.join(HERE, '_method_names.py'))
+_mn = importlib.util.module_from_spec(_mn_spec); _mn_spec.loader.exec_module(_mn)
+_mn.check_vocab(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

@@ -131,10 +131,10 @@
   ],
   [
    {
-    "say": "[pause] Now the short algebra. The bracket a plus two, factorial, is a plus two, times a plus one, times a, times all the numbers below a. And a times all the numbers below it is just a factorial.",
+    "say": "[pause] Now the math way, the short algebra. The bracket a plus two, factorial, is a plus two, times a plus one, times a, times all the numbers below a. And a times all the numbers below it is just a factorial.",
     "at": [
      "Now the",
-     "Now the short algebra",
+     "Now the math way",
      "The bracket a"
     ]
    },

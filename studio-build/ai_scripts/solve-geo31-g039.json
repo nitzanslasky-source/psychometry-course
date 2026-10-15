@@ -11,7 +11,7 @@
     ],
     "pause": 0.5
    },
-   "[short pause] We'll solve it three ways. First the full math, every side of both triangles. Then a shortcut, cancelling the sides they share. And then a quick check for when you have only a few seconds.",
+   "[short pause] We'll solve it three ways. First the math way, every side of both triangles. Then an insight, cancelling the sides they share. And then an estimate, a quick check for when you have only a few seconds.",
    {
     "say": "[short pause] The four squares are identical, so every side of every square is five. Now the length A E. It goes through two small squares, corner to corner, so it's made of two diagonals of the small squares.",
     "at": [
@@ -60,20 +60,21 @@
   ],
   [
    {
-    "say": "[pause] Could we make it shorter? Yes, by cancelling sides. Look at the two triangles side by side. A F is a side of both, so it cancels in the difference. We don't need its length at all.",
+    "say": "[pause] Could we make it shorter? Yes, with an insight, cancelling sides. Look at the two triangles side by side. A F is a side of both, so it cancels in the difference. We don't need its length at all.",
     "at": [
      "Could we make it shorter",
-     "Yes, by cancelling",
+     "Yes, with an",
      "Look at the two triangles",
+     "side by side",
      "A F is a side of both",
-     "of both, so"
+     "We don't need"
     ]
    },
    {
     "say": "Next, E F and F G are both sides of a small square, five each. They're equal, so they cancel too.",
     "at": [
      "E F and F G are both",
-     "are both sides"
+     "small square, five"
     ]
    },
    {
@@ -89,9 +90,9 @@
   ],
   [
    {
-    "say": "[pause] One more idea. Say you reach this question at the very end of the exam, with ten or twenty seconds left. Sometimes you can rule out choices just by their sign. The answer here must be positive. A E F and A F G share A F, and E F equals F G, so the difference is A E minus A G. A E is the longest side of the big right triangle A G E, so it's longer than A G, and the difference is positive.",
+    "say": "[pause] One more idea, an estimate. Say you reach this question at the very end of the exam, with ten or twenty seconds left. Sometimes you can rule out choices just by their sign. The answer here must be positive. A E F and A F G share A F, and E F equals F G, so the difference is A E minus A G. A E is the longest side of the big right triangle A G E, so it's longer than A G, and the difference is positive.",
     "at": [
-     "you reach this"
+     "estimate. Say you"
     ]
    },
    {

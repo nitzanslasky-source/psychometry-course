@@ -47,9 +47,9 @@
   ],
   [
    {
-    "say": "[pause] Now let's see why it's always true. When we multiply x by five, we add exactly one more five to its prime factors, whatever x is. So the count of fives goes up by exactly one. That's choice number four, for every x. For example, fifty has two fives, and two hundred fifty has three.",
+    "say": "[pause] Now by understanding. Let's see why it's always true. When we multiply x by five, we add exactly one more five to its prime factors, whatever x is. So the count of fives goes up by exactly one. That's choice number four, for every x. For example, fifty has two fives, and two hundred fifty has three.",
     "at": [
-     "Now let's",
+     "Now by",
      "we add exactly one more five",
      "five to its",
      "That's choice number four"

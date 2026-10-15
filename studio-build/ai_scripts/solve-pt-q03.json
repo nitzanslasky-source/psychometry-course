@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "What does what is it equal to mean here? It means one of the choices is the same expression, written another way. It gives the same value for every a and b that we're allowed to use. [short pause] We'll solve it two ways, with algebra, and then by plugging in numbers.",
+    "say": "What does what is it equal to mean here? It means one of the choices is the same expression, written another way. It gives the same value for every a and b that we're allowed to use. [short pause] We'll solve it two ways, the math way, with algebra, and then by plugging in numbers.",
     "at": [
      "It means one",
      "the same value",
@@ -20,9 +20,9 @@
     ]
    },
    {
-    "say": "Algebra first. We simplify the expression until it looks like one of the choices. We have the bracket a minus b, squared, so let's use the formula from expressions. a minus b, squared, is a squared minus two a b plus b squared.",
+    "say": "The math way first. We simplify the expression until it looks like one of the choices. We have the bracket a minus b, squared, so let's use the formula from expressions. a minus b, squared, is a squared minus two a b plus b squared.",
     "at": [
-     "Algebra first",
+     "The math",
      "a minus b, squared, is",
      "a squared minus"
     ]

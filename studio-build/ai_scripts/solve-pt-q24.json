@@ -20,7 +20,7 @@
     ]
    },
    {
-    "say": "This is the case of more letters than equations. [short pause] We'll solve it by picking values, and then see why it works with algebra.",
+    "say": "This is the case of more letters than equations. [short pause] We'll solve it by plugging in numbers, and then see why it works the math way.",
     "at": [
      "This is",
      "more letters than equations",
@@ -72,9 +72,9 @@
   ],
   [
    {
-    "say": "[pause] On the left, take y out. x y plus five y is y times the bracket x plus five. On the right, take two out. Two x plus ten is two times the bracket x plus five.",
+    "say": "[pause] Now the math way. On the left, take y out. x y plus five y is y times the bracket x plus five. On the right, take two out. Two x plus ten is two times the bracket x plus five.",
     "at": [
-     "On the",
+     "Now the",
      "On the left, take y out",
      "x y plus"
     ]

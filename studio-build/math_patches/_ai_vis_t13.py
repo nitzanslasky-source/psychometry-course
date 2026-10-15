@@ -663,7 +663,7 @@ w2 = I('w2', 'Numbers in the choices: plug in', size=30)
 w3 = I('w3', 'Bars $=$ number: two cases, two answers', size=30)
 b2 = I('b2', '$|-16+7|=|-9|=\\hl{nine}{9}$', size=32, col=1, hand='|−16+7| = |−9|  =   \\hl{nine}{9}')
 video('solve-q-359', 'solution', qid='q-359', slides=[
-    S('Method 1 · Two cases',
+    S('Method 1 · The math way: two cases',
       L("Given: x plus seven, in absolute value, is equal to nine. Which of the following could be the value of x?",
         pt('stem', 'Given', 'hl', 8.0), voice='calm', pause=0.5),
       L("So we have an equation with an absolute value, and all the choices are numbers. We'll solve it three ways, two "
@@ -685,7 +685,7 @@ video('solve-q-359', 'solution', qid='q-359', slides=[
         "sixteen, but they only offer one of them. So negative sixteen, number three is our answer.",
         pt('a2: m16', 'Negative sixteen is there'), pt('choice 3', "it's number three"), pt('stem', 'could be'),
         pt('a1: two', 'Two values work'), pt('a2: m16', 'and negative sixteen'), pt('choice 3', 'only offer one'), mk('tick', 'choice 3', 'number three is our answer'))),
-    S('Method 2 · Number line',
+    S('Method 2 · The math way: number line',
       L("[pause] Our second method, the number line. Here we read the bars as a distance. Let's start with an easier one. "
         "The absolute value of x minus five is seven. Bars around a difference give the distance between two numbers, so "
         "this says x is seven steps away from five. Seven steps to the right, five plus seven is twelve. Seven steps to the "
@@ -705,7 +705,7 @@ video('solve-q-359', 'solution', qid='q-359', slides=[
         show(n1['right'], 'Nine steps to the right'), mk('circle', 'fig: 2', 'plus nine is two'),
         show(n1['left'], 'Nine steps to the left'), mk('circle', 'fig: −16', 'is negative sixteen'),
         pt('choice 3', 'negative sixteen is,'), mk('tick', 'choice 3', 'is, choice number')),
-      sb='Method 2 · Number line'),
+      sb='Method 2 · The math way: number line'),
     S('Method 3 · Plugging in the answers',
       L("[pause] And our third method, plugging in the answers. The choices are numbers, so let's just try them. Sixteen "
         "plus seven is twenty-three, and twenty-three isn't nine, so no. Negative two plus seven is five, and five "
@@ -731,7 +731,7 @@ n2 = DIST('n2', -13, 7, -3, 7, band='open')
 d1 = I('d1', '$|5+3|=8$ $\\quad |-25+3|=22$', size=32, col=1, hand='|5+3| = 8    |−25+3| = 22')
 d2 = I('d2', '$|3+3|=\\hl{six}{6}<7$', size=32, col=1, hand='|3+3|  =   \\hl{six}{6}   < 7')
 video('solve-q-360', 'solution', qid='q-360', slides=[
-    S('Method 1 · Inside the limits',
+    S('Method 1 · The math way',
       L("Given: x plus three, in absolute value, is smaller than seven. Which of the following could be the value of x?",
         pt('stem', 'Given', 'hl', 9.0), voice='calm', pause=0.5),
       L("So now the bars are in an inequality, and they're on the small side. What did we say about the small side? It's a "
@@ -749,7 +749,7 @@ video('solve-q-360', 'solution', qid='q-360', slides=[
         "negative ten. And three is inside the range. So three, number three is our answer.",
         pt('choice 1', 'Now the choices'), mk('cross', 'choice 1', 'Five and'), mk('cross', 'choice 4', 'eleven are too big'), mk('cross', 'choice 2', 'Negative twenty-five'), pt('c2: lo', 'below negative ten'),
         mk('tick', 'choice 3', 'number three is our answer'))),
-    S('Method 2 · Number line',
+    S('Method 2 · The math way: number line',
       L("[pause] Our second method, the number line. x plus three is the distance from negative three. So x is less than "
         "seven steps away from negative three.", pt('stem', 'x plus three is the'), show(n2['line'], 'the distance from negative three'),
         pt('stem', 'less than seven steps')),
@@ -777,7 +777,7 @@ n3 = DIST('n3', -13, 11, -1, 8, base=(2,), band='rays')
 f1 = I('f1', '$|9+1|=10>8$', size=32, col=1, hand='|9+1| = 10 > 8')
 f2 = I('f2', '$|2+1|=\\hl{three}{3}$, not $>8$', size=32, col=1, hand='|2+1| = \\hl{three}{3}')
 video('solve-q-361', 'solution', qid='q-361', slides=[
-    S('Method 1 · Outside the limits',
+    S('Method 1 · The math way',
       L("Given: eight is smaller than x plus one, in absolute value. Which of the following cannot be the value of x?",
         pt('stem', 'Given', 'hl', 4.0), voice='calm', pause=0.5),
       L("Let's read it the other way round. Eight is smaller than the bars, so the bars are bigger than eight. They're on the "
@@ -796,7 +796,7 @@ video('solve-q-361', 'solution', qid='q-361', slides=[
         "Number two is our answer.",
         pt('choice 1', 'Nine and'), pt('choice 4', 'eleven are bigger'), pt('e1: r', 'bigger than seven'), pt('choice 3', 'Negative ten'),
         pt('choice 2', 'And two'), mk('tick', 'choice 2', 'Number two is our answer'))),
-    S('Method 2 · Number line',
+    S('Method 2 · The math way: number line',
       L("[pause] Our second method, the number line. x plus one is the distance from negative one. More than eight steps from "
         "negative one means past seven on the right, or past negative nine on the left.",
         show(n3['line'], 'the distance from negative one'), show(n3['right'], 'past seven'), show(n3['left'], 'past negative nine')),
@@ -842,7 +842,7 @@ video('solve-q-362', 'solution', qid='q-362', slides=[
         show(g2, 'four times negative two'), mk('circle', 'g2: six', 'ten minus four is six'), voice='calm'),
       L("Which choice gives six at negative two? Only number two. So six, number two is our answer.",
         pt('g1', 'Which choice gives six'), mk('tick', 'choice 2', 'Only number two'))),
-    S('Method 2 · Algebra',
+    S('Method 2 · The math way',
       L("[pause] Our second method, the algebra. x is negative, so what's its absolute value? To turn a negative number "
         "positive, I take minus x. So the absolute value of x is minus x.",
         pt('stem', 'x is negative'), show(h1, 'So the absolute value of x is minus x')),
@@ -870,7 +870,7 @@ m0_ = I('m0_', '$x=4$: $\\ |2\\cdot4-1|=|7|=7$', size=32, col=1, hand='x = 4 :  
 m1 = I('m1', '$x=-4$: $\\ |2(-4)-1|=|-9|=9$', size=32, col=1, hand='x = −4 :   |2(−4)−1| = |−9| = 9')
 m2 = I('m2', '$x=-3$: $\\ |2(-3)-1|=|-7|=\\hl{seven}{7}$', size=32, col=1, hand='x = −3 :   |2(−3)−1| = |−7|  =   \\hl{seven}{7}')
 video('solve-q-r26-t13-01', 'solution', qid='q-r26-t13-01', slides=[
-    S('Method 1 · Two cases',
+    S('Method 1 · The math way: two cases',
       L("Given: two x minus one, in absolute value, is equal to seven. Which of the following gives all the possible values "
         "of x?", pt('stem', 'Given', 'hl', 4.5), voice='calm', pause=0.5),
       L("So this time there's a number in front of x. And they ask for all the values, so we'll need both cases. "
@@ -921,7 +921,7 @@ s6 = I('s6', 'Bars $<$ negative: never', size=30, col=1)
 s7 = I('s7', 'Bars $>$ negative: always', size=30, col=1)
 s8 = I('s8', 'Bars $=$ negative: no solution', size=30, col=1)
 video('solve-q-r26-t13-02', 'solution', qid='q-r26-t13-02', slides=[
-    S('Method 1 · Look at the right side',
+    S('Method 1 · Understanding',
       L("Which of the following has no solution?", pt('stem', 'Which', 'hl', 2.5), voice='calm', pause=0.5),
       L("So we're looking for the one that no number can satisfy. And before any algebra, look at the right sides. Two of "
         "them are negative, and one is zero. That's our hint.",
@@ -956,7 +956,7 @@ video('solve-q-r26-t13-02', 'solution', qid='q-r26-t13-02', slides=[
         pt('choice 2', 'Number two, whatever'), mk('tick', 'choice 2', 'So no solution')),
       L("So always look at the right side first. A negative number or a zero there is a gift. "
         "[pause] Okay. I'll see you in the next question.", pt('s6', 'look at the right side')),
-      sb='Method 1 · Look at the right side'),
+      sb='Method 1 · Understanding'),
 ])
 
 # ------------------------------------------------------------------------------------------------ r26-t13-tools (lesson)
@@ -1069,7 +1069,7 @@ x2 = I('x2', 'Different sides: we don\'t know', size=30, col=1)
 y1 = I('y1', '$p=-50,\\ \\ q=-40,\\ \\ r=1,\\ \\ s=3$', size=34, hand='p = −50,  q = −40,  r = 1,  s = 3')
 y2 = I('y2', '$p=-3,\\ \\ q=-1,\\ \\ r=40,\\ \\ s=50$', size=34, hand='p = −3,  q = −1,  r = 40,  s = 50')
 video('solve-q-364', 'solution', qid='q-364', slides=[
-    S('Method 1 · Number line',
+    S('Method 1 · Understanding: number line',
       L("Given: p is smaller than q, which is smaller than zero, which is smaller than r, which is smaller than s. Which of "
         "the following is necessarily true?", pt('stem', 'Given', 'hl', 6.0), voice='calm', pause=0.5),
       L("So we know the order of four numbers. And look at the answers, every one of them uses absolute value. And what's "
@@ -1188,7 +1188,7 @@ b2_ = I('b2_', '(1) $25>9$ $\\quad$ (2) $5<5$? $\\quad$ (3) $4<4$? $\\quad$ (4) 
 b3_ = I('b3_', '$x=6,\\ \\ y=-2$: $\\ |4|>3$', size=34, hand='x = 6,  y = −2')
 b4_ = I('b4_', '(1) $16>9$ $\\quad$ (2) $\\hl{two}{4<8}$ $\\quad$ (3) $12<12$? $\\quad$ (4) $4<20$', size=30)
 video('solve-q-366', 'solution', qid='q-366', slides=[
-    S('Method 1 · The rules',
+    S('Method 1 · The math way',
       L("x and y are integers. Given: three is smaller than x plus y, in absolute value. Which of the following is possible "
         "but not necessarily true?", pt('stem', 'x and y', 'hl', 6.0), voice='calm', pause=0.5),
       L("Unlike the last few questions, this is a technique question. And before we start, let's understand the wording. "
@@ -1321,7 +1321,7 @@ k10 = I('k10', '$x=-1$: $\\ |3|=3$, but $3\\cdot(-1)=\\hl{fake}{-3}$', size=32, 
 j1_ = I('j1_', '$3x\\ge0$, so $x\\ge0$', size=38)
 j2_ = I('j2_', '$x+4>0$: $\\ x+4=3x$, so $x=2$', size=34, hand='x+4 > 0 :   x+4 = 3x,  so  x = 2')
 video('solve-q-r26-t13-03', 'solution', qid='q-r26-t13-03', slides=[
-    S('Method 1 · Two cases and a check',
+    S('Method 1 · The math way: two cases',
       L("Given: x plus four, in absolute value, is equal to three x. Which of the following gives all the possible values of "
         "x?", pt('stem', 'Given', 'hl', 4.5), voice='calm', pause=0.5),
       L("Now there's a letter on the right side too. This is the first time we meet it, and it changes one thing. We'll have "
@@ -1370,7 +1370,7 @@ r2_ = I('r2_', '$4\\cdot2+12\\cdot1=20$, not $44$', size=34)
 r3_ = I('r3_', '$x=-5$: $\\ -5+3|y|=1$, so $|y|=2$', size=34)
 r4_ = I('r4_', '$4\\cdot5+12\\cdot2=\\hl{ok}{44}$', size=34, hand='4·5 + 12·2 = \\hl{ok}{44}')
 video('solve-q-367', 'solution', qid='q-367', slides=[
-    S('Method 1 · Algebra',
+    S('Method 1 · The math way',
       L("Given: four times the absolute value of x, plus twelve times the absolute value of y, is forty-four. And x plus "
         "three times the absolute value of y is one. What is x?", pt('stem', 'Given', 'hl', 7.0), voice='calm', pause=0.5),
       L("Two equations, two unknowns, and absolute values. It looks scary, but it's really not. [short pause] We'll solve it "
@@ -1394,7 +1394,7 @@ video('solve-q-367', 'solution', qid='q-367', slides=[
       L("A letter on the right side, so let's check. Ten plus minus five is five, and the absolute value of minus five is "
         "five. It works. Minus five, choice number two is our answer.", pt('p3_', "so let's check"),
         mk('tick', 'choice 2', 'number two is our answer'))),
-    S('Method 2 · Algebra, then the answers',
+    S('Method 2 · Plugging in the answers: halfway',
       L("[pause] Our second method. The same algebra, until we get to the absolute value of x is ten plus x. And then, "
         "instead of solving it, I plug in the answers. They're all numbers.", show(q1_, 'until we get to'),
         pt('choice 1', 'I plug in the answers')),
@@ -1439,7 +1439,7 @@ s4q = I('s4q', '$|y|=|x|$', hand='|y| = |x|')
 t1q = I('t1q', '$x=y=2$: $\\ |10|=|10|$', hand='x = y = 2 :  |10| = |10|')
 t2q = I('t2q', '$x=2,\\ y=-2$: $\\ |-6|=|6|$', hand='x = 2,  y = −2 :  |−6| = |6|')
 video('solve-q-368', 'solution', qid='q-368', slides=[
-    S('Method 1 · Two cases',
+    S('Method 1 · The math way: two cases',
       L("Given: x plus four y, in absolute value, is equal to four x plus y, in absolute value. Which of the following is "
         "necessarily true?", pt('stem', 'Given', 'hl', 5.0), voice='calm', pause=0.5),
       L("One equation, two unknowns, and bars on both sides. [short pause] We'll solve it three ways, two cases, squaring "
@@ -1460,7 +1460,7 @@ video('solve-q-368', 'solution', qid='q-368', slides=[
         mk('cross', 'choice 2', 'only half the story'), mk('tick', 'choice 3', 'Number three is our answer')),
       L("And choice numbers one and four? When x is y, x isn't smaller than y, and y isn't smaller than x. Out.",
         mk('cross', 'choice 1', 'numbers one'), mk('cross', 'choice 4', 'and four'))),
-    S('Method 2 · Square both sides',
+    S('Method 2 · The math way: square both sides',
       L("[pause] Our second method, squaring both sides. Bars on both sides, and both sides are zero or positive. So I'm "
         "allowed to square them, and after squaring, the bars are gone.", show(s1q, 'allowed to square them')),
       L("Open both with the shortcut formula. On the left, x squared plus eight x y plus sixteen y squared. On the right, "
@@ -1508,7 +1508,7 @@ d2q = I('d2q', '(2) $\\ 5.5$: $\\ |10|=10$, no', size=32)
 d3q = I('d3q', '(3) $\\ -3.5$: $\\ |-8|=\\hl{eight}{8}$, yes', size=32)
 d4q = I('d4q', '(4) $\\ -4.5$: $\\ |-10|=10$, no', size=32)
 video('solve-q-369', 'solution', qid='q-369', slides=[
-    S('Method 1 · Two bands',
+    S('Method 1 · The math way: number line',
       L("Given: seven is smaller than two x minus one, in absolute value, which is smaller than nine. Which of the following "
         "ranges is possible for x?", pt('stem', 'Given', 'hl', 5.0), voice='calm', pause=0.5),
       L("A double inequality with bars, and ranges in the choices. We'll solve it three ways, two bands, splitting it in two, "
@@ -1532,7 +1532,7 @@ video('solve-q-369', 'solution', qid='q-369', slides=[
         pt('b3q', "isn't in the choices"), show(b5q, 'Add one to all three'), voice=None),
       L("Aaand that's exactly choice number three. On the number line, two small bands, one on each side. Minus four to "
         "minus three, and four to five.", mk('tick', 'choice 3', "that's exactly choice number three"), show(n8, 'On the number line'))),
-    S('Method 2 · Split it',
+    S('Method 2 · The math way: two inequalities',
       L("[pause] Our second method, splitting it in two. The bars smaller than nine means the inside is trapped between "
         "minus nine and nine. Add one, minus eight and ten. Divide by two, minus four and five. So x is between minus "
         "four and five.", show(sp1, 'The bars smaller than nine')),
@@ -1569,7 +1569,7 @@ n9 = NL('n9', fig(-9, 9, [(-6, '−6'), (0, '0'), (6, '6')], [(None, 6, False, F
 m1r = I('m1r', '$x=0$: $\\ 0+0=0<12$', hand='x = 0 :  0 + 0 = 0 < 12')
 m2r = I('m2r', '$x=-8$: $\\ -8+8=0<12$', hand='x = −8 :  −8 + 8 = 0 < 12')
 video('solve-q-370', 'solution', qid='q-370', slides=[
-    S('Method 1 · Two cases',
+    S('Method 1 · The math way: two cases',
       L("Given: x plus the absolute value of x is smaller than twelve. What is the most precise domain for x?",
         pt('stem', 'Given', 'hl', 4.0), voice='calm', pause=0.5),
       L("So first, what does most precise mean? The domain has to hold exactly the numbers that work, no more and no less. "
@@ -1675,7 +1675,7 @@ video('r26-t13-summary', 'lesson', slides=[
     S('Distance',
       L("The absolute value of x minus a is the distance between x and a.", show(h1s, 'the distance between')),
       L("And careful with a plus inside. x plus six is the distance from negative six.", show(h2s, 'a plus inside'))),
-    S('Plug in',
+    S('Plugging in numbers',
       L("Asked what an expression equals? Plug in a number that fits the conditions, and check that the choices come out "
         "different. Two survive? Plug in again.", show(j1s, 'Plug in a number'), show(j2s, 'check that the choices'))),
     S('Before you practice',
@@ -1961,6 +1961,12 @@ import types as _types
 _mv_spec = importlib.util.spec_from_file_location('_method_visuals', os.path.join(HERE, '_method_visuals.py'))
 _mv = importlib.util.module_from_spec(_mv_spec); _mv_spec.loader.exec_module(_mv)
 _mv.post(_types.SimpleNamespace(**globals()), 13)
+
+# 2026-10-15 one vocabulary for method names (math_patches/_method_names.py CORE; guide "Method names"): a "Method N · X"
+# title or sidebar outside it stops the run, so a new script uses the vocabulary from its first draft.
+_mn_spec = importlib.util.spec_from_file_location('_method_names_vocab', os.path.join(HERE, '_method_names.py'))
+_mn = importlib.util.module_from_spec(_mn_spec); _mn_spec.loader.exec_module(_mn)
+_mn.check_vocab(VIDEOS)
 
 if __name__ == '__main__':
     for _v in sys.argv[1:] or ORDER:

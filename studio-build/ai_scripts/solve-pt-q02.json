@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "So eggs move from A to B, and after the move, A should have nine thirteenths of what B has. [short pause] We'll solve it two ways, with an equation, and then by plugging in the answers.",
+    "say": "So eggs move from A to B, and after the move, A should have nine thirteenths of what B has. [short pause] We'll solve it two ways, the math way, with an equation, and then by plugging in the answers.",
     "at": [
      "A to B"
     ]

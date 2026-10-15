@@ -1115,13 +1115,13 @@ f2_g11p = GEO('f2g11p', [
     ('e2', [('txt', 322, 390, 'm + n/2 = 120° + 60° = 180°', 'ink', 24)]),
 ], vb='120 25 405 390', w=400, title='Triangle ABC with k = 60 degrees')
 video('solve-geo31-g011', 'solution', qid='geo31-g011', slides=[
-    SM('Method 1 · The angle rules', 'Down to one letter',
+    SM('Method 1 · The math way', 'Down to one letter',
       L("In the accompanying figure, the angles at A and C are equal. What is the value of m plus n over two?",
         pt('stem', 'In the accompanying figure', 'hl', 6.0), voice='calm', pause=0.5),
       L("The figure has three letters, k, m and n, but the answer has to be one number. So we'll write m and n with the "
         "same letter, k, and hope that k cancels. [short pause] We'll solve it two ways, with the angle rules, and then by "
         "plugging in a number for k.", pt('fig: k', 'three letters')),
-      L("[short pause] Start with m. m is outside the triangle at A, right next to the angle k inside. Together they make "
+      L("[short pause] The math way first. Start with m. m is outside the triangle at A, right next to the angle k inside. Together they make "
         "the straight line, so m and k add up to one hundred eighty. So m is one hundred eighty minus k.",
         show(f2_g11['line'], 'Start with m'), show(f2_g11['m'], 'Together they make'), show(f2_g11['e1'], 'So m is one hundred eighty')),
       L("Now n. n is outside the triangle at B, between side B C and the line of side A B that goes on past B. That's an "
@@ -1132,7 +1132,7 @@ video('solve-geo31-g011', 'solution', qid='geo31-g011', slides=[
         "we get one hundred eighty minus k, plus k. Minus k and plus k cancel, and we're left with one hundred eighty. "
         "Choice number three is our answer.", show(f2_g11['e3'], 'Half of n is half'),
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
-    SM('Method 2 · Plugging in a number', 'Plugging in a number',
+    SM('Method 2 · Plugging in numbers', 'Plugging in a number',
       L("[pause] Another way, plugging in a number. The answer is one number, so it comes out the same for every k that "
         "fits the figure. That means we're allowed to choose any k we like, and work with numbers instead of letters. "
         "Let's take an easy one, k is sixty.", show(f2_g11p['line'], "Let's take an easy one")),
@@ -1664,11 +1664,11 @@ F3G2 = GEO('f3g2', [
 F3Ga = I('f3ga', '$\\dfrac{S_{BDE}}{S_{ACD}}=\\dfrac{\\frac{5x\\cdot h}{2}}{\\frac{x\\cdot h}{2}}$', size=30)
 F3Gb = I('f3gb', '$=\\dfrac{5x\\cdot h}{2}\\cdot\\dfrac{2}{x\\cdot h}=5$', size=28)
 video('solve-geo31-g017', 'solution', qid='geo31-g017', slides=[
-    SM('Method 1 · Letters', 'Use letters',
+    SM('Method 1 · The math way', 'Use letters',
       L("Points A and B lie on one line, and C, D and E lie on a parallel line. Given: D E is equal to five times C D. What "
         "is the area of B D E divided by the area of A C D?", pt('stem', 'Points A and B', 'hl', 8.0), voice='calm', pause=0.5),
       L("Look, there are no numbers here at all, no area and no length. So how do we start? Simply from the givens. [short "
-        "pause] We'll solve it two ways, with letters, and then by cutting the big triangle into small ones.",
+        "pause] We'll solve it two ways, the math way, with letters, and then with an insight, cutting the big triangle into small ones.",
         pt('stem', 'there are no numbers here')),
       L("[short pause] D E is five times C D. So let's call C D x, and then D E is five x.",
         show(F3G['line'], 'D E is five times'), show(F3G['x'], "let's call C D x")),
@@ -1685,10 +1685,10 @@ video('solve-geo31-g017', 'solution', qid='geo31-g017', slides=[
         show(F3Gb, 'flip the bottom fraction'), mk('tick', 'choice 1', 'Choice number one is our answer')),
       L("Careful, twenty-five, choice number three, would be right only if the heights were five times bigger too. But the "
         "heights are equal, so only the bases count.", mk('cross', 'choice 3', 'twenty-five, choice number three'))),
-    SM('Method 2 · Equal small triangles', 'Equal small triangles',
-      L("[pause] Another way, without any of that calculation. D E is five x, so we can cut it into five pieces, each of "
+    SM('Method 2 · Insight', 'Equal small triangles',
+      L("[pause] Now an insight, without any of that calculation. D E is five x, so we can cut it into five pieces, each of "
         "length x. Then we join B to each cutting point. Now B D E is made of five small triangles, and each one has a base "
-        "of x.", show(F3G2['line'], 'Another way'), show(F3G2['cuts'], 'we join B to each'),
+        "of x.", show(F3G2['line'], 'Now an insight'), show(F3G2['cuts'], 'we join B to each'),
         show(F3G2['num'], 'B D E is made of five')),
       L("All five small triangles, and A C D too, have the same base, x, and the same height, h, because they all sit "
         "between the same two parallel lines. So all six triangles have the same area.",
@@ -2019,7 +2019,7 @@ f4b = GEO('f4b', [
              ('txt', _QX, 210, '29 · 30 = 870', 'red', 26), ('txt', _QX, 250, '870 − 29 = 841', 'red', 26), ('txt', _QX, 300, 'AC = 29', 'red', 30)]),
 ], vb='0 20 560 340', w=540, title='Right triangle ABC: the theorem')
 video('solve-geo31-g020', 'solution', qid='geo31-g020', slides=[
-    SM('Method 1 · Rule out, then the theorem', 'Rule out first',
+    SM('Rule out, then the theorem', 'Rule out first',
       L("Triangle A B C is a right triangle. Given: angle A B C is ninety degrees, A B is twenty centimeters, and B C is "
         "twenty-one centimeters. What is A C, in centimeters?", pt('stem', 'Triangle A B C', 'hl', 8.0), voice='calm', pause=0.5),
       L("The right angle is at B, and we need the side A C. [short pause] Before we calculate anything, let's look at the "
@@ -2036,7 +2036,7 @@ video('solve-geo31-g020', 'solution', qid='geo31-g020', slides=[
         "for a triangle. So choice number one is out too. Only twenty-nine is left, so choice number two is our answer.",
         show(f4a['k2'], "That's twenty plus twenty-one"), mk('cross', 'choice 1', 'So choice number one is out too'),
         mk('tick', 'choice 2', 'so choice number two is our answer'))),
-    SM('Method 1 · Rule out, then the theorem', 'The theorem',
+    SM('Rule out, then the theorem', 'The theorem',
       L("[pause] Now let's also find A C with the theorem, because in most questions we can't rule out three choices. In a "
         "right triangle, leg squared plus leg squared equals the hypotenuse squared. Here the legs are A B and B C, so A B "
         "squared plus B C squared equals A C squared.", show(f4b['line'], "Now let's also find A C"), show(f4b['th'], 'so A B squared plus')),
@@ -2675,7 +2675,7 @@ F527_t3 = IH('f527c', '$5+10+5\\sqrt3=15+5\\sqrt3$', size=32, col=1)
 F527_t4 = IH('f527d', '$BC^2=10^2-5^2=100-25=75$', size=30, col=1)
 F527_t5 = IH('f527e', '$BC=\\sqrt{75}=\\sqrt{25\\cdot3}=5\\sqrt3$', size=30, col=1)
 video('solve-geo31-g027', 'solution', qid='geo31-g027', slides=[
-    SM('Method 1 · The side ratio', 'The side ratio',
+    SM('Method 1 · The math way: the side ratio', 'The side ratio',
       L("Triangle A B C is a right triangle. Given: angle A B C is ninety degrees, angle A C B is thirty degrees, and A B is "
         "five centimeters. What is the perimeter of the triangle, in centimeters?", pt('stem', 'Triangle A B C is a right triangle', 'hl', 9.0),
         voice='calm', pause=0.5),
@@ -2692,7 +2692,7 @@ video('solve-geo31-g027', 'solution', qid='geo31-g027', slides=[
       L("The perimeter is the sum of the sides. Five plus ten is fifteen, and the five root three stays separate, because "
         "only one side has a root. So fifteen plus five root three. Choice number one is our answer.",
         show(F527_t3, 'Five plus ten is fifteen'), mk('tick', 'choice 1', 'Choice number one is our answer'))),
-    SM('Method 2 · Check with Pythagoras', 'Check with Pythagoras',
+    SM('Method 2 · The math way: Pythagoras', 'Check with Pythagoras',
       L("[pause] Let's check the long leg with Pythagoras. The hypotenuse is double the short leg, ten. The long leg squared "
         "is ten squared minus five squared, a hundred minus twenty-five, which is seventy-five.", show(F527_t4, 'The long leg squared')),
       L("Seventy-five is twenty-five times three, so its root is five root three. The same length. The ratio just gets there "
@@ -2799,14 +2799,14 @@ F518_t3 = I('f518c', '$S_{ADEC}=\\frac{100\\sqrt3}{4}-\\frac{25\\sqrt3}{4}=\\fra
 F518_t4 = IH('f518d', 'Side $\\times\\frac12$ $\\ \\to\\ $ area $\\times\\frac14$', size=32, col=1)
 F518_t5 = IH('f518e', '$\\frac34\\cdot\\frac{100\\sqrt3}{4}=\\frac{75\\sqrt3}{4}$', size=32, col=1)
 video('solve-geo31-g018', 'solution', qid='geo31-g018', slides=[
-    SM('Method 1 · Big minus small', 'Big minus small',
+    SM('Method 1 · The math way: subtract areas', 'Big minus small',
       L("A B C is an equilateral triangle with perimeter thirty centimeters. Points D and E are the midpoints of A B and B "
         "C, respectively. What is the area of quadrilateral A D E C, in square centimeters?", pt('stem', 'A B C is an equilateral triangle', 'hl', 9.0),
         voice='calm', pause=0.5),
       L("What does respectively mean? The first point goes with the first side. So D is the midpoint of A B, and E is the "
         "midpoint of B C. [short pause] We'll solve it with the big triangle minus the small one, and then with a quicker "
         "ratio.", pt('fig: D', 'So D is the midpoint')),
-      L("[short pause] The perimeter is thirty, and the three sides are equal, so each side is ten. D and E are midpoints, "
+      L("[short pause] The math way first. The perimeter is thirty, and the three sides are equal, so each side is ten. D and E are midpoints, "
         "so A B is cut into five and five, and B C too.", show(F518['line'], 'The perimeter is thirty'), show(F518['ten'], 'so each side is ten'),
         show(F518['five'], 'so A B is cut into five and five')),
       L("Now look at the small triangle, D B E. B D is five and B E is five, so it's isosceles. And the angle at B is sixty, "
@@ -2815,15 +2815,15 @@ video('solve-geo31-g018', 'solution', qid='geo31-g018', slides=[
         "side five.", show(F518['small'], 'Now look at the small triangle'), show(F518['cut'], 'B D is five'),
         show(F518['eqv'], 'so sixty and sixty')),
       L("So the quadrilateral is the big triangle, A B C, minus the small triangle, D B E.", show(F518['quad'], 'So the quadrilateral'))),
-    SM('Method 1 · Big minus small', 'Big minus small',
+    SM('Method 1 · The math way: subtract areas', 'Big minus small',
       L("Area of A B C, by the formula, a-two-three-four. The side is ten, so ten squared, a hundred, times root three, over "
         "four. We could simplify the four, but let's leave it. It'll help with the subtraction.", show(F518_t1, 'Area of A B C')),
       L("Area of D B E. The side is five, so twenty-five root three over four.", show(F518_t2, 'Area of D B E')),
       L("Now subtract. You see why we kept the four? Both have the same denominator, so there's no common denominator to "
         "find. A hundred minus twenty-five is seventy-five, so seventy-five root three over four. Choice number two is our "
         "answer.", show(F518_t3, 'Now subtract'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    SM('Method 2 · A quicker ratio', 'A quicker ratio',
-      L("[pause] Another way, from the formula itself. The small triangle has half the side of the big one. In the formula, "
+    SM('Method 2 · Understanding: a ratio', 'A quicker ratio',
+      L("[pause] Another way, by understanding the formula itself. The small triangle has half the side of the big one. In the formula, "
         "the side is squared, so half the side gives a half squared, a quarter of the area.", show(F518_t4, 'the side is squared')),
       L("So the small triangle is a quarter of the big one, and the quadrilateral is the other three quarters. Three "
         "quarters of a hundred root three over four is seventy-five root three over four. Choice number two. [pause] Okay. "
@@ -2918,7 +2918,7 @@ F528_t4 = IH('f528d', '$t^2+t^2=18^2$: $\\ 2t^2=324$', size=30, col=1)
 F528_t5 = IH('f528e', '$t^2=162=81\\cdot2$: $\\ t=9\\sqrt2$', size=30, col=1)
 F528_t6 = I('f528f', '$30°$: $\\ a,\\ a\\sqrt3,\\ 2a$ $\\qquad 45°$: $\\ a,\\ a,\\ a\\sqrt2$', size=28, col=1)
 video('solve-geo31-g028', 'solution', qid='geo31-g028', slides=[
-    SM('Method 1 · The side ratio', 'The side ratio',
+    SM('Method 1 · The math way: the side ratio', 'The side ratio',
       L("Triangle A B C is a right triangle. Given: angle A B C is ninety degrees, angle A C B is forty-five degrees, and A C "
         "is eighteen centimeters. What is its perimeter, in centimeters?", pt('stem', 'Triangle A B C is a right triangle', 'hl', 9.0),
         voice='calm', pause=0.5),
@@ -2936,7 +2936,7 @@ video('solve-geo31-g028', 'solution', qid='geo31-g028', slides=[
         "root two. The perimeter is nine root two plus nine root two plus eighteen, which is eighteen plus eighteen root two. "
         "Choice number one is our answer.", show(F528_t3, 'The perimeter is nine root two'),
         mk('tick', 'choice 1', 'Choice number one is our answer'))),
-    SM('Method 2 · An equation', 'An equation',
+    SM('Method 2 · The math way: Pythagoras', 'An equation',
       L("[pause] Another way, with Pythagoras. Call each leg t. t squared plus t squared is eighteen squared, so two t squared "
         "is three hundred twenty-four.", show(F528_t4, 'Call each leg t')),
       L("t squared is a hundred sixty-two, which is eighty-one times two. So t is nine root two. The same result. Choice "
@@ -3012,7 +3012,7 @@ for _it, _y in [(f6g31, 200), (f6g31x, 200), (f6g31p, 200), (f6k31a, 230), (f6k3
     _R(_it, _y)
 
 video('solve-geo31-g031', 'solution', qid='geo31-g031', slides=[
-    SM('Method 1 · The angle sum', 'The angle sum',
+    SM('Method 1 · The math way: the angle sum', 'The angle sum',
       L("A B C is an equilateral triangle. D, A and E lie on one line, E lies on B C, and F lies on the extension of B A "
         "beyond A. Based on this information and the information in the figure, which expression equals y?",
         pt('stem', 'A B C is an equilateral triangle', 'hl', 10.0), voice='calm', pause=0.5),
@@ -3028,20 +3028,20 @@ video('solve-geo31-g031', 'solution', qid='geo31-g031', slides=[
         "angles are equal, so this angle is y too.", show(f6g31['ay'], 'It\'s vertical to y')),
       L("The last angle is at E, between E A and E B. Together with x it makes the straight line B C, so it's one hundred "
         "eighty minus x.", show(f6g31['e180'], "so it's one hundred"))),
-    SM('Method 1 · The angle sum', 'The angle sum',
+    SM('Method 1 · The math way: the angle sum', 'The angle sum',
       L("The angles of a triangle add up to one hundred eighty, so sixty, plus y, plus one hundred eighty minus x, equals "
         "one hundred eighty. The bracket has a plus in front of it, so we can just drop it.", show(f6k31a, 'The angles of a triangle')),
       L("One hundred eighty is on both sides, so it cancels. Now move minus x to the right side as plus x, and move the "
         "sixty to the right side as minus sixty. So y equals x minus sixty. Choice number two is our answer.",
         show(f6k31b, 'So y equals x minus sixty'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    SM('Method 2 · An exterior angle', 'An exterior angle',
+    SM('Method 2 · The math way: an exterior angle', 'An exterior angle',
       L("[pause] Another way makes the end shorter. Look at x again. It's outside the triangle A B E, next to its angle at "
         "E. So x is an exterior angle of that triangle.", show(f6g31x['line'], 'Look at x again')),
       L("An exterior angle equals the sum of the two angles of the triangle that are not next to it. Here those are sixty "
         "at B, and y at A. So x equals sixty plus y. Move the sixty across, and y equals x minus sixty. Choice number two "
         "again. Instead of completing x to one hundred eighty, we used the exterior angle rule.",
         show(f6g31x['far'], 'Here those are sixty'), show(f6k31c, 'So x equals sixty plus y'), mk('tick', 'choice 2', 'Choice number two again'))),
-    SM('Method 3 · Plugging in a number', 'Plugging in a number',
+    SM('Method 3 · Plugging in numbers', 'Plugging in a number',
       L("[pause] And a third way, plugging in a number. The answer is an expression that is true for every x that fits "
         "the figure. So it must also be true for one x that we choose. We choose a number for x, find y, and then check "
         "which choice gives that y."),
@@ -3451,7 +3451,7 @@ f7k4 = I('f7k4', 'or $\\ \\frac{a^2\\sqrt3}{4}=\\frac{64\\sqrt3}{4}=16\\sqrt3$',
 f7k5 = I('f7k5', '$28\\sqrt3-16\\sqrt3=12\\sqrt3$', size=32, hand='28√{3} − 16√{3} = 12√{3}')
 f7s37 = I('f7s37', 'So far: $\\ BC=8,\\ \\ DE=4\\sqrt3,\\ \\ AE=7\\sqrt3$', size=26)   # V2, in the right column (a carry box would sit on the question figure)
 video('solve-geo31-g037', 'solution', qid='geo31-g037', slides=[
-    SM('Method 1 · Subtract areas', 'Big minus small',
+    SM('Method 1 · The math way: subtract areas', 'Big minus small',
       L("In triangle A B C, A E is the altitude to B C. Point D lies on A E, and D B C is an equilateral triangle. Given: B E is "
         "four centimeters, and A D is three root three centimeters. What is the shaded area, in square centimeters?",
         pt('stem', 'In triangle A B C', 'hl', 10.0), voice='calm', pause=0.5),
@@ -3470,7 +3470,7 @@ video('solve-geo31-g037', 'solution', qid='geo31-g037', slides=[
         show(f7g37['de'], 'so D E is four root three')),
       L("And the whole altitude A E is A D plus D E, three root three plus four root three, which is seven root three.",
         show(f7g37['ae'], 'which is seven root three'))),
-    SM('Method 1 · Subtract areas', 'Big minus small',
+    SM('Method 1 · The math way: subtract areas', 'Big minus small',
       L("Now the big triangle. Its base B C is eight, and its height A E is seven root three. Eight times seven root three, "
         "over two. Eight over two is four, and four times seven root three is twenty-eight root three.", show(f7s37, 'Now the big triangle'),
         show(f7k2, 'Its base B C is eight')),
@@ -3481,7 +3481,7 @@ video('solve-geo31-g037', 'solution', qid='geo31-g037', slides=[
         "again sixteen root three.", show(f7k4, 'The area of an equilateral triangle')),
       L("Now subtract. Twenty-eight root three minus sixteen root three is twelve root three. Choice number two is our "
         "answer.", show(f7k5, 'Now subtract'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    SM('Method 2 · Two triangles', 'Two triangles',
+    SM('Method 2 · Insight', 'Two triangles',
       L("[pause] There's a shorter way, with an insight. Turn your head a little. The shaded part is two triangles, A D C on "
         "the right, and A D B on the left.", show(f7g37b['line'], 'There\'s a shorter way'), show(f7g37b['adc'], 'A D C on the right')),
       L("For the area of A D C we need a base and its height. The base is given, A D, three root three. The height to it, "
@@ -3536,19 +3536,19 @@ f7m4 = I('f7m4', '$S_{ABD}=\\frac{x\\cdot h}{2}=\\frac{28}{2}=14$', size=30)
 f7m5 = I('f7m5', '$42-14=28$', size=30)
 f7m6 = IH('f7m6', '$56\\div4=14$: $\\ 3\\cdot14=42$, $\\ 42-14=28$', size=30)
 video('solve-geo31-g038', 'solution', qid='geo31-g038', slides=[
-    SM('Method 1 · Algebra', 'Letters for the sides',
+    SM('Method 1 · The math way', 'Letters for the sides',
       L("Triangle A B C has an area of fifty-six square centimeters. Point D lies on B C, and D C is three times B D. What is "
         "the difference between the areas of A D C and A B D, in square centimeters?", pt('stem', 'Triangle A B C', 'hl', 9.0),
         voice='calm', pause=0.5),
-      L("We know only the area of the whole triangle and how B C is split. [short pause] We'll solve it two ways, with "
-        "algebra, and then with an insight about area ratios."),
+      L("We know only the area of the whole triangle and how B C is split. [short pause] We'll solve it two ways, the "
+        "math way, with algebra, and then with an insight about area ratios."),
       L("[short pause] Neither the base nor the height is given, so we give them letters. B D is x. D C is three times B D, so "
         "D C is three x. Now draw the altitude from vertex A down to the line B C, and call it h.",
         show(f7g38['line'], 'so we give them letters'), show(f7g38['h'], 'Now draw the altitude')),
       L("The whole triangle A B C has the base B C, which is x plus three x, four x. Its height is h. So its area is four x "
         "times h, over two, and that's fifty-six. Two x h is fifty-six, so x h is twenty-eight. Let's keep that.",
         show(f7m1, 'So its area is'), show(f7m2, 'so x h is twenty-eight'))),
-    SM('Method 1 · Algebra', 'Each area',
+    SM('Method 1 · The math way', 'Each area',
       L("Now A D C. Its base is three x, and its height is the same h. And A B D. Its base is x. A B D has an obtuse angle at D, "
         "so its height falls outside it, but it's the same altitude h from A.", show(f7g38c['line'], 'Now A D C'),
         show(f7g38c['adc'], 'Its base is three x'), show(f7g38c['abd'], 'And A B D')),
@@ -3557,7 +3557,7 @@ video('solve-geo31-g038', 'solution', qid='geo31-g038', slides=[
         show(f7m4, 'The area of A B D')),
       L("The difference is forty-two minus fourteen, which is twenty-eight. Choice number three is our answer.",
         show(f7m5, 'The difference is'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
-    SM('Method 2 · Area ratio', 'Same height',
+    SM('Method 2 · Insight: area ratio', 'Same height',
       L("[pause] Now the insight, about area ratios. Two triangles with the same base and the same height have the same "
         "area. And if the height is the same but one base is three times as long, that area is three times as big.",
         show(f7g38b['line'], 'Now the insight')),
@@ -3611,12 +3611,12 @@ f7p8 = I('f7p8', '(2) $10-10\\sqrt2$: $\\ \\sqrt2>1$, negative ✗', size=28)
 f7p9 = I('f7p9', '(3) $5-5\\sqrt3$: $\\ $negative ✗', size=28)
 f7s39 = I('f7s39', 'So far: $\\ AE=10\\sqrt2,\\ \\ AF=5\\sqrt5$', size=26)
 video('solve-geo31-g039', 'solution', qid='geo31-g039', slides=[
-    SM('Method 1 · Every side', 'Every side',
+    SM('Method 1 · The math way', 'Every side',
       L("Four congruent squares, each with a side of five centimeters, are arranged as in the accompanying figure. What is "
         "the perimeter of A E F minus the perimeter of A F G, in centimeters?", pt('stem', 'Four congruent squares', 'hl', 8.0),
         voice='calm', pause=0.5),
-      L("[short pause] We'll solve it three ways. First the full math, every side of both triangles. Then a shortcut, "
-        "cancelling the sides they share. And then a quick check for when you have only a few seconds."),
+      L("[short pause] We'll solve it three ways. First the math way, every side of both triangles. Then an insight, "
+        "cancelling the sides they share. And then an estimate, a quick check for when you have only a few seconds."),
       L("[short pause] The four squares are identical, so every side of every square is five. Now the length A E. It goes "
         "through two small squares, corner to corner, so it's made of two diagonals of the small squares.",
         show(f7g39['line'], 'The four squares are identical')),
@@ -3628,13 +3628,13 @@ video('solve-geo31-g039', 'solution', qid='geo31-g039', slides=[
         "leg, G F, is five. By Pythagoras, A F squared is ten squared plus five squared, a hundred plus twenty-five, a "
         "hundred twenty-five. A hundred twenty-five is twenty-five times five, so A F is five root five.",
         show(f7g39['agf'], 'Now A F'), show(f7p2, 'By Pythagoras'))),
-    SM('Method 1 · Every side', 'Every side',
+    SM('Method 1 · The math way', 'Every side',
       L("Now the perimeters. A E F has A F, five root five, plus E F, five, plus A E, ten root two. A F G has A F, five root five, "
         "plus F G, five, plus A G, ten.", show(f7s39, 'Now the perimeters'), show(f7p3, 'A E F has A F'), show(f7p4, 'A F G has A F')),
       L("Subtract. Five root five minus five root five is zero. Five minus five is zero. What's left is ten root two minus "
         "ten. Choice number four is our answer.", show(f7p5, 'What\'s left'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
-    SM('Method 2 · Shared sides cancel', 'Shared sides cancel',
-      L("[pause] Could we make it shorter? Yes, by cancelling sides. Look at the two triangles side by side. A F is a side "
+    SM('Method 2 · Insight', 'Shared sides cancel',
+      L("[pause] Could we make it shorter? Yes, with an insight, cancelling sides. Look at the two triangles side by side. A F is a side "
         "of both, so it cancels in the difference. We don't need its length at all.",
         show(f7g39b['line'], 'Could we make it shorter'), show(f7g39b['two'], 'Look at the two triangles'),
         show(f7g39b['af'], 'A F is a side of both')),
@@ -3643,8 +3643,8 @@ video('solve-geo31-g039', 'solution', qid='geo31-g039', slides=[
       L("All that's left is A E, ten root two, minus A G, ten. Ten root two minus ten, choice number four, and no "
         "Pythagoras at all.", show(f7g39b['left'], 'All that\'s left'), show(f7p6, 'Ten root two minus ten'),
         mk('tick', 'choice 4', 'choice number four, and no'))),
-    SM('Method 3 · A quick check', 'A quick check',
-      L("[pause] One more idea. Say you reach this question at the very end of the exam, with ten or twenty seconds left. "
+    SM('Method 3 · Estimation', 'A quick check',
+      L("[pause] One more idea, an estimate. Say you reach this question at the very end of the exam, with ten or twenty seconds left. "
         "Sometimes you can rule out choices just by their sign. The answer here must be positive. A E F and A F G share A F, "
         "and E F equals F G, so the difference is A E minus A G. A E is the longest side of the big right triangle A G E, so it's "
         "longer than A G, and the difference is positive."),
@@ -3684,11 +3684,11 @@ f7r3 = I('f7r3', '$\\to\\ 3:10$', size=28)
 f7r4 = I('f7r4', '(1) $a=b$: $\\ $but $a<b$ ✗', size=30)
 f7r5 = IH('f7r5', '(2) $a=3,\\ b=10$: $\\ 10+10+7=27=3\\cdot9$ ✓', size=28)
 video('solve-geo31-g040', 'solution', qid='geo31-g040', slides=[
-    SM('Method 1 · Algebra', 'The bold line',
+    SM('Method 1 · The math way', 'The bold line',
       L("The accompanying figure shows two equilateral triangles with side lengths a and b, where a is smaller than b. The "
         "total length of the bold segments is three times the perimeter of the smaller triangle. What is a over b?",
         pt('stem', 'The accompanying figure', 'hl', 10.0), voice='calm', pause=0.5),
-      L("[short pause] We'll solve it two ways, with algebra, and then by testing the answer choices."),
+      L("[short pause] We'll solve it two ways, the math way, with algebra, and then by plugging in the answers."),
       L("[short pause] Both triangles are equilateral. In the small one, all three sides are a. In the big one, all three "
         "sides are b.", show(f7g40['line'], 'Both triangles are equilateral'), show(f7g40['sides'], 'all three sides are a')),
       L("Now the bold line. It's the two slanted sides of the big triangle, b and b, and the bottom. But not the whole "
@@ -3704,8 +3704,8 @@ video('solve-geo31-g040', 'solution', qid='geo31-g040', slides=[
         "tenths, and on the other side, a over b. And careful with the traps. One third comes from forgetting to take a off "
         "the bottom, and three eighths from adding it instead.", mk('cross', 'choice 3', 'One third comes from'),
         mk('cross', 'choice 4', 'and three eighths'))),
-    SM('Method 2 · Testing the answers', 'Testing the answers',
-      L("[pause] Now another way, testing the answers. Each choice says what a over b could be. We turn it into real sizes "
+    SM('Method 2 · Plugging in the answers', 'Testing the answers',
+      L("[pause] Now another way, plugging in the answers. Each choice says what a over b could be. We turn it into real sizes "
         "and check the given. If the sizes work, that's the answer, because the given fixes the ratio."),
       L("Choice number one says a over b is one, so a equals b. But the question has a big triangle and a small one, a is "
         "smaller than b. Out.", show(f7r4, 'Choice number one says'), mk('cross', 'choice 1', 'smaller than b. Out')),
@@ -4037,6 +4037,12 @@ MV.calm(_types.SimpleNamespace(**globals()), ORDER)     # 2026-10-13 steady high
 _lp = [(v, p) for v in ORDER for p in MV.check_layers(VIDEOS[v])]
 assert not _lp, ('figure layers out of order', _lp)
 
+
+# 2026-10-15 one vocabulary for method names (math_patches/_method_names.py CORE; guide "Method names"): a "Method N · X"
+# title or sidebar outside it stops the run, so a new script uses the vocabulary from its first draft.
+_mn_spec = importlib.util.spec_from_file_location('_method_names_vocab', os.path.join(HERE, '_method_names.py'))
+_mn = importlib.util.module_from_spec(_mn_spec); _mn_spec.loader.exec_module(_mn)
+_mn.check_vocab(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

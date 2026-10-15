@@ -19,7 +19,7 @@
     ]
    },
    {
-    "say": "[short pause] The perimeter is thirty, and the three sides are equal, so each side is ten. D and E are midpoints, so A B is cut into five and five, and B C too.",
+    "say": "[short pause] The math way first. The perimeter is thirty, and the three sides are equal, so each side is ten. D and E are midpoints, so A B is cut into five and five, and B C too.",
     "at": [
      "The perimeter is thirty",
      "the three sides",
@@ -73,9 +73,9 @@
   ],
   [
    {
-    "say": "[pause] Another way, from the formula itself. The small triangle has half the side of the big one. In the formula, the side is squared, so half the side gives a half squared, a quarter of the area.",
+    "say": "[pause] Another way, by understanding the formula itself. The small triangle has half the side of the big one. In the formula, the side is squared, so half the side gives a half squared, a quarter of the area.",
     "at": [
-     "formula itself. The",
+     "the formula itself",
      "the side is squared",
      "half the side gives"
     ]

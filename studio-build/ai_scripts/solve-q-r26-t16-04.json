@@ -21,9 +21,9 @@
     ]
    },
    {
-    "say": "[short pause] Start with the smallest group, one, three and five. One times three times five is fifteen. Fifteen is not divisible by forty-five, so choice number one is out.",
+    "say": "[short pause] Let's start by plugging in numbers, with the smallest group, one, three and five. One times three times five is fifteen. Fifteen is not divisible by forty-five, so choice number one is out.",
     "at": [
-     "Start with the",
+     "Let's start by",
      "group, one, three",
      "One times three times five",
      "forty-five, so",
@@ -75,7 +75,7 @@
   ],
   [
    {
-    "say": "[pause] Why does the product always divide by three? Look at the odd multiples of three: three, nine, fifteen and twenty-one. They appear once in every three odd numbers. So any three odd numbers in a row include a multiple of three.",
+    "say": "[pause] Now by understanding. Why does the product always divide by three? Look at the odd multiples of three: three, nine, fifteen and twenty-one. They appear once in every three odd numbers. So any three odd numbers in a row include a multiple of three.",
     "at": [
      "Look at the",
      "The odd multiples of three",

@@ -19,7 +19,7 @@
     ]
    },
    {
-    "say": "[short pause] Let's put each length on the figure. A D is twenty, the whole line from A to D.",
+    "say": "[short pause] The math way first. Let's put each length on the figure. A D is twenty, the whole line from A to D.",
     "at": [
      "Let's put each length",
      "A D is twenty",
@@ -48,7 +48,7 @@
   ],
   [
    {
-    "say": "[pause] Now the second way, the overlap rule, in one line. Let's draw A C above the line and B D below it.",
+    "say": "[pause] Now by understanding, with the overlap rule, in one line. Let's draw A C above the line and B D below it.",
     "at": [
      "the overlap rule",
      "Let's draw A C above",

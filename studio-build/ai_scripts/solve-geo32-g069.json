@@ -12,17 +12,17 @@
     "pause": 0.5
    },
    {
-    "say": "We know the area of the shaded triangle, and we need the area of the whole trapezoid. [short pause] We'll solve it two ways, with the full math, and then with a ratio principle.",
+    "say": "We know the area of the shaded triangle, and we need the area of the whole trapezoid. [short pause] We'll solve it two ways, the math way, and then with a ratio principle.",
     "at": [
      "We know the area",
      "the shaded triangle",
-     "two ways, with"
+     "two ways, the"
     ]
    },
    {
-    "say": "[short pause] The full math first. The shaded part is a triangle, an obtuse one. Its area is base times height, over two, and the only base we know is A D, five.",
+    "say": "[short pause] The math way first. The shaded part is a triangle, an obtuse one. Its area is base times height, over two, and the only base we know is A D, five.",
     "at": [
-     "The full math first",
+     "The math way first",
      "The shaded part",
      "the only base we know is A D",
      "is A D"

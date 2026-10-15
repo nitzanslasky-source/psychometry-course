@@ -86,9 +86,9 @@
   ],
   [
    {
-    "say": "[pause] With algebra, the price before is x plus forty. The discount in percent is forty out of x plus forty, times a hundred. That's choice number one. [pause] Okay. I'll see you in the next question.",
+    "say": "[pause] Now the math way. With algebra, the price before is x plus forty. The discount in percent is forty out of x plus forty, times a hundred. That's choice number one. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "With algebra",
+     "Now the",
      "the price before is x plus forty",
      "The discount in percent",
      "forty out of",

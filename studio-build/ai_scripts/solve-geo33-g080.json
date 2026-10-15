@@ -86,8 +86,9 @@
   ],
   [
    {
-    "say": "[pause] There's also a short way. Divide the area by the circumference. Pi r squared over two pi r. The pi cancels, one r cancels, and we're left with r over two.",
+    "say": "[pause] There's also a short way, by understanding. Divide the area by the circumference. Pi r squared over two pi r. The pi cancels, one r cancels, and we're left with r over two.",
     "at": [
+     "way, by understanding",
      "Divide the area by the circumference",
      "Pi r squared"
     ]

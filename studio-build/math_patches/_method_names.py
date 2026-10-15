@@ -30,7 +30,59 @@ TECHNIQUES = [
     # added 2026-10-07 (a method needed a name the approved list did not have):
     'Listing', 'Complement', 'Remainders', 'Units digit', 'Symmetry', 'Inscribed angle', 'Parallel lines', 'The squares method',
 ]
-VOCAB = THINKING + TECHNIQUES
+VOCAB = THINKING + TECHNIQUES   # LEGACY (2026-10-07): the old-studio pass below (MAP / LINES / QLABELS) only
+
+
+# =====================================================================================================================
+# 2026-10-15 ONE VOCABULARY for the reading-script specs (_ai_vis_tNN.py, topics 13-20, 30-33, 51 and every new topic).
+# Teacher: "What happened to naming the methods the same way, so students get a sense of the general thinking we use?"
+# Derived from her Hebrew subtitles (algebra, word problems, geometry) and the topic-51 source (pt_src/seg*.txt): she
+# names every solution "פתרון מתמטי" (the math way) or "פתרון פסיכומטרי באמצעות ..." (a psychometric way: plugging in
+# numbers / plugging in the answers / estimation / an insight), plus "באמצעות הבנה" (by understanding). Table, Hebrew
+# names, counts and when to use each: real_exam/TEACHING_STYLE_GUIDE.md "Method names (one vocabulary)".
+#
+# A method label (slide title "Method N · X" or, in geometry, the sidebar sb of SM(...)) is
+#     Method N · <CORE>                 e.g. "Method 2 · Plugging in numbers"
+#     Method N · <CORE>: <specific>     only when the specific technique helps, e.g. "Method 1 · The math way: two cases"
+# The SPOKEN start of each method names the core in a natural transition (R13, no "Our first method."):
+#     "Let's start with the math way." / "The math way first."   "Now let's plug in numbers."
+#     "Now let's plug in the answers."   "Now by understanding."   "Now let's estimate." / "with an estimate"
+#     "Now the insight." / "with an insight"
+# The roadmap line uses the same words: "We'll solve it two ways, the math way, and then by plugging in numbers."
+# =====================================================================================================================
+CORE = {   # English label: (Hebrew, spoken forms)
+    'The math way': ('פתרון מתמטי / הדרך המתמטית (אלגברית, טריוויאלית, חישובית; בניית משוואה)',
+                     ('the math way', 'the math way first')),
+    'Plugging in numbers': ('הצבת מספרים', ('plug in numbers', 'plug in a number', 'plugging in numbers')),
+    'Plugging in the answers': ('הצבת תשובות', ('plug in the answers', 'plugging in the answers')),
+    'Understanding': ('הבנה / פתרון באמצעות הבנה / שאלת הבנה', ('by understanding',)),
+    'Estimation': ('הערכת סדר גודל', ('estimate', 'estimation', 'estimating')),
+    'Insight': ('הברקה', ('the insight', 'an insight')),
+}
+_SPEC_LABEL = _re.compile(r'^Method (\d) · (.+)$')
+
+
+def vocab_problems(videos):
+    """method labels of the spec VIDEOS ({vid: {'slides': [{'title', 'sb'}]}}) that are not in the vocabulary"""
+    probs = []
+    for vid, V in videos.items():
+        for si, sl in enumerate(V['slides']):
+            # the sidebar label is what the student sees (S: sb = the title); a continuation slide may keep a step title
+            # such as "Method 2 · A plus inside" under its method's sidebar label
+            for lab in [sl.get('sb') or sl.get('title') or '']:
+                m = _SPEC_LABEL.match(lab)
+                if not m: continue
+                core = m.group(2).split(': ', 1)[0]
+                if core not in CORE:
+                    probs.append('%s slide %d: "%s" - use Method N · <%s>[: specific]' % (vid, si + 1, lab, ' | '.join(CORE)))
+    return probs
+
+
+def check_vocab(videos):
+    """called by every _ai_vis_tNN.py after its scripts: a new method name outside the vocabulary stops the run"""
+    probs = vocab_problems(videos)
+    assert not probs, 'method names outside the vocabulary (math_patches/_method_names.py CORE):\n  ' + '\n  '.join(probs)
+
 
 _PREFIX = _re.compile(r'^(?:(Method|Way|Approach)\s+(\d+)|(Shortcut))\s*·\s*')
 
@@ -1215,3 +1267,167 @@ QLABELS = {
 
 for _t, _m in MAP.values():
     for _n in _m.values(): assert _n in VOCAB or _n.startswith('= '), _n
+
+
+# 2026-10-15: the old -> new method labels (slide titles and geometry sidebars) of the reading-script videos, so code
+# that matches slides by title (added_content.same_slide_title -> added_notes.json, METHODS) still finds the old
+# entries. Visual only: the spoken text of recorded videos was not changed.
+SPEC_RENAMES_20261015 = {
+    'algebraic-understanding': {'Plug in numbers': 'Plugging in numbers', 'Test the answers': 'Plugging in the answers', 'Algebra and understanding': 'The math way and understanding'},
+    'r26-t13-summary': {'Plug in': 'Plugging in numbers'},
+    'solve-geo30-g005': {'Method 1 · One pair at a time': 'Method 1 · The math way', 'Method 2 · The last digit': 'Method 2 · Understanding: last digit'},
+    'solve-geo30-g006': {'Method 1 · An anchor: 180': 'Method 1 · The math way', 'Method 3 · Overlapping angles': 'Method 3 · Insight'},
+    'solve-geo30-g007': {'Method 1 · A line through the bend': 'Method 1 · The math way: a helper line', 'Method 2 · The zig-zag rule': 'Method 2 · Understanding: the zig-zag rule'},
+    'solve-geo31-g011': {'Method 1 · The angle rules': 'Method 1 · The math way', 'Method 2 · Plugging in a number': 'Method 2 · Plugging in numbers'},
+    'solve-geo31-g017': {'Method 1 · Letters': 'Method 1 · The math way', 'Method 2 · Equal small triangles': 'Method 2 · Insight'},
+    'solve-geo31-g018': {'Method 1 · Big minus small': 'Method 1 · The math way: subtract areas', 'Method 2 · A quicker ratio': 'Method 2 · Understanding: a ratio'},
+    'solve-geo31-g020': {'Method 1 · Rule out, then the theorem': 'Rule out, then the theorem'},
+    'solve-geo31-g027': {'Method 1 · The side ratio': 'Method 1 · The math way: the side ratio', 'Method 2 · Check with Pythagoras': 'Method 2 · The math way: Pythagoras'},
+    'solve-geo31-g028': {'Method 1 · The side ratio': 'Method 1 · The math way: the side ratio', 'Method 2 · An equation': 'Method 2 · The math way: Pythagoras'},
+    'solve-geo31-g031': {'Method 1 · The angle sum': 'Method 1 · The math way: the angle sum', 'Method 2 · An exterior angle': 'Method 2 · The math way: an exterior angle', 'Method 3 · Plugging in a number': 'Method 3 · Plugging in numbers'},
+    'solve-geo31-g037': {'Method 1 · Subtract areas': 'Method 1 · The math way: subtract areas', 'Method 2 · Two triangles': 'Method 2 · Insight'},
+    'solve-geo31-g038': {'Method 1 · Algebra': 'Method 1 · The math way', 'Method 2 · Area ratio': 'Method 2 · Insight: area ratio'},
+    'solve-geo31-g039': {'Method 1 · Every side': 'Method 1 · The math way', 'Method 2 · Shared sides cancel': 'Method 2 · Insight', 'Method 3 · A quick check': 'Method 3 · Estimation'},
+    'solve-geo31-g040': {'Method 1 · Algebra': 'Method 1 · The math way', 'Method 2 · Testing the answers': 'Method 2 · Plugging in the answers'},
+    'solve-geo32-g044': {'Method 1 · The diagonals': 'Method 1 · The math way: the diagonals', 'Method 2 · Through the side': 'Method 2 · The math way: through the side'},
+    'solve-geo32-g048': {'Adjacent angles': 'Method 1 · The math way'},
+    'solve-geo32-g055': {'Method 1 · Symmetry': 'Method 1 · Understanding: symmetry', 'Method 2 · The area formula': 'Method 2 · The math way: the area formula'},
+    'solve-geo32-g059': {'Method 1 · The median': 'Method 1 · Understanding: the median', 'Method 2 · Four equal triangles': 'Method 2 · Understanding: four equal triangles', 'Method 3 · Base times height': 'Method 3 · The math way: base times height'},
+    'solve-geo32-g060': {'Method 1 · The diagonals': 'Method 1 · The math way: the diagonals', 'Method 2 · Two equilateral triangles': 'Method 2 · Insight'},
+    'solve-geo32-g067': {'Method 1 · Algebra': 'Method 1 · The math way', 'Method 2 · Symmetry': 'Method 2 · Understanding: symmetry'},
+    'solve-geo32-g069': {'Method 1 · The full math': 'Method 1 · The math way', 'Method 2 · A ratio': 'Method 2 · Understanding: a ratio'},
+    'solve-geo32-g070': {'Method 1 · Subtracting areas': 'Method 1 · The math way: subtract areas', 'Method 2 · Completions': 'Method 2 · Understanding: completions', 'Method 3 · Symmetry': 'Method 3 · Understanding: symmetry'},
+    'solve-geo32-g071': {'Method 1 · Algebra': 'Method 1 · The math way'},
+    'solve-geo32-g072': {'Method 1 · The hidden ratio': 'Method 1 · The math way', 'Method 2 · Parts of the perimeter': 'Method 2 · Understanding'},
+    'solve-geo33-g076': {'Method 1 · Inscribed quadrilateral': 'Method 1 · The math way', 'Method 2 · The big central angle': 'Method 2 · The math way: the big central angle', 'One more route · Radii': 'Method 3 · The math way: radii'},
+    'solve-geo33-g078': {'Method 1 · Radii and 360°': 'Method 1 · The math way', 'Method 2 · Symmetry': 'Method 2 · Understanding: symmetry'},
+    'solve-geo33-g080': {'Method 2 · Area over circumference': 'Method 2 · Understanding'},
+    'solve-geo33-g086': {'Method 2 · Symmetry': 'Method 2 · Understanding: symmetry'},
+    'solve-geo33-g094': {'Triangle minus sector': 'Method 1 · The math way: subtract areas', 'Stop and look at the choices': 'Method 2 · The math way: partial calculation', 'Estimating sizes': 'Method 3 · Estimation'},
+    'solve-geo33-g096': {'Method 1 · Algebra': 'Method 1 · The math way', 'Method 2 · Plugging in': 'Method 2 · Plugging in numbers', 'Method 3 · Estimating sizes': 'Method 3 · Estimation'},
+    'solve-geo33-g097': {'Method 1 · Plugging in': 'Method 1 · Plugging in numbers', 'Method 2 · Symmetry': 'Method 2 · Understanding: symmetry'},
+    'solve-geo33-g099': {'Method 1 · Pieces we know': 'Method 1 · The math way', 'Method 2 · Take away the overlap': 'Method 2 · The math way: subtract the overlap', 'Estimating': 'Method 3 · Estimation'},
+    'solve-geo33-g100': {'Method 1 · An equation': 'Method 1 · The math way', 'Method 2 · A size check': 'Method 2 · Estimation'},
+    'solve-geo33-g101': {'Method 1 · An equation': 'Method 1 · The math way'},
+    'solve-geo33-g102': {'Method 1 · The full math': 'Method 1 · The math way'},
+    'solve-pt-q02': {'Method 1 · An equation': 'Method 1 · The math way'},
+    'solve-pt-q03': {'Method 1 · Algebra': 'Method 1 · The math way'},
+    'solve-pt-q04': {'Method 1 · The formula': 'Method 1 · The math way'},
+    'solve-pt-q05': {'Method 1 · A table of cases': 'Method 1 · The math way: a table', 'Method 2 · An insight': 'Method 2 · Insight'},
+    'solve-pt-q10': {'Method 1 · Plugging in a number': 'Method 1 · Plugging in numbers', 'Method 2 · Algebra': 'Method 2 · The math way'},
+    'solve-pt-q11': {'Plugging in a number': 'Method 1 · Plugging in numbers', 'With letters': 'Method 2 · The math way'},
+    'solve-pt-q12': {'Method 2 · Algebra': 'Method 2 · The math way'},
+    'solve-pt-q13': {'Method 2 · Algebra': 'Method 2 · The math way'},
+    'solve-pt-q14': {'Method 2 · Algebra': 'Method 2 · The math way'},
+    'solve-pt-q16': {'Estimation': 'Method 1 · Estimation', 'Partial calculation': 'Method 2 · The math way: partial calculation'},
+    'solve-pt-q17': {'Method 1 · The partner': 'Method 1 · The math way'},
+    'solve-pt-q24': {'Method 1 · Picking values': 'Method 1 · Plugging in numbers', 'Method 2 · Algebra': 'Method 2 · The math way'},
+    'solve-q-358': {'Method 1 · Understanding': 'Method 1 · Understanding', 'Method 2 · Plugging in numbers': 'Method 2 · Plugging in numbers'},
+    'solve-q-359': {'Method 1 · Two cases': 'Method 1 · The math way: two cases', 'Method 2 · Number line': 'Method 2 · The math way: number line'},
+    'solve-q-360': {'Method 1 · Inside the limits': 'Method 1 · The math way', 'Method 2 · Number line': 'Method 2 · The math way: number line'},
+    'solve-q-361': {'Method 1 · Outside the limits': 'Method 1 · The math way', 'Method 2 · Number line': 'Method 2 · The math way: number line'},
+    'solve-q-362': {'Method 2 · Algebra': 'Method 2 · The math way'},
+    'solve-q-364': {'Method 1 · Number line': 'Method 1 · Understanding: number line'},
+    'solve-q-366': {'Method 1 · The rules': 'Method 1 · The math way'},
+    'solve-q-367': {'Method 1 · Algebra': 'Method 1 · The math way', 'Method 2 · Algebra, then the answers': 'Method 2 · Plugging in the answers: halfway', 'Method 3 · Plugging in the answers': 'Method 3 · Plugging in the answers'},
+    'solve-q-368': {'Method 1 · Two cases': 'Method 1 · The math way: two cases', 'Method 2 · Square both sides': 'Method 2 · The math way: square both sides'},
+    'solve-q-369': {'Method 1 · Two bands': 'Method 1 · The math way: number line', 'Method 2 · Split it': 'Method 2 · The math way: two inequalities'},
+    'solve-q-370': {'Method 1 · Two cases': 'Method 1 · The math way: two cases'},
+    'solve-q-387': {'Method 1 · Trial and error': 'Method 1 · Plugging in numbers'},
+    'solve-q-388': {'Method 1 · Break into primes': 'Method 1 · The math way: prime factors', 'Method 2 · Divide the number': 'Method 2 · The math way: calculate'},
+    'solve-q-389': {'Method 1 · Common factor': 'Method 1 · The math way: prime factors', 'Method 2 · Which choices divide both': 'Method 2 · Plugging in the answers'},
+    'solve-q-390': {'Method 1 · Primes': 'Method 1 · The math way: prime factors', 'Method 2 · The smallest number': 'Method 2 · Plugging in numbers', 'Method 3 · Product over GCD': 'Method 3 · The math way: a formula'},
+    'solve-q-392': {'Method 1 · Prime factorization': 'Method 1 · The math way: prime factors'},
+    'solve-q-393': {'Method 1 · Common factor, then pairs': 'Method 1 · The math way: common factor', 'Method 2 · Check the sum 17': 'Method 2 · Plugging in the answers'},
+    'solve-q-395': {'Method 1 · Test each statement': 'Method 1 · Understanding'},
+    'solve-q-396': {'Method 1 · Build the smallest': 'Method 1 · Understanding'},
+    'solve-q-397': {'Method 1 · The rule': 'Method 1 · Understanding', 'Method 2 · Trial and error': 'Method 2 · Plugging in numbers'},
+    'solve-q-398': {'Method 1 · Break into primes': 'Method 1 · The math way: prime factors', 'Method 2 · Even and odd': 'Method 2 · Understanding'},
+    'solve-q-399': {'Method 1 · Every pair': 'Method 1 · The math way: listing', 'Method 2 · The extremes': 'Method 2 · Understanding: the extremes'},
+    'solve-q-400': {'Method 1 · Build every product': 'Method 1 · The math way: listing', 'Method 2 · Look at the choices': 'Method 2 · Estimation'},
+    'solve-q-402': {'Method 1 · Divisor pairs': 'Method 1 · The math way: divisor pairs', 'Method 2 · Plugging in a number': 'Method 2 · Plugging in numbers'},
+    'solve-q-423': {'Method 1 · Step by step': 'Method 1 · The math way', 'Method 2 · Build from the inside': 'Method 2 · The math way: one letter'},
+    'solve-q-424': {'Method 1 · Test the choices': 'Method 1 · Plugging in the answers', 'Method 2 · List the numbers': 'Method 2 · The math way: listing'},
+    'solve-q-425': {'Method 1 · The biggest remainder': 'Method 1 · Understanding', 'Method 2 · List the remainders': 'Method 2 · Plugging in numbers'},
+    'solve-q-426': {'Method 1 · Split off the fives': 'Method 1 · The math way: tag it', 'Method 2 · Plugging in a number': 'Method 2 · Plugging in numbers'},
+    'solve-q-428': {'Method 1 · Divisible by 3 first': 'Method 1 · The math way: divisibility rules', 'Method 2 · Even first': 'Method 2 · The math way: the other order'},
+    'solve-q-430': {'Method 1 · Count them': 'Method 1 · The math way: count', 'Method 2 · Compare without counting': 'Method 2 · Understanding'},
+    'solve-q-431': {'Method 1 · One letter': 'Method 1 · The math way: one letter'},
+    'solve-q-432': {'Method 1 · Three in a row': 'Method 1 · The math way: three in a row', 'Method 2 · Plugging in a number': 'Method 2 · Plugging in numbers'},
+    'solve-q-433': {'Method 1 · The last digit': 'Method 1 · Understanding: last digit', 'Method 2 · Test the choices': 'Method 2 · Plugging in the answers'},
+    'solve-q-434': {'Method 1 · What is left': 'Method 1 · The math way', 'Method 2 · What she paid': 'Method 2 · Plugging in the answers'},
+    'solve-q-435': {'Method 2 · Algebra': 'Method 2 · The math way'},
+    'solve-q-457': {'Method 1 · Positive pieces first': 'Method 1 · Understanding'},
+    'solve-q-458': {'Method 1 · One letter': 'Method 1 · The math way: one letter'},
+    'solve-q-459': {'Method 2 · The differences': 'Method 2 · The math way'},
+    'solve-q-460': {'Method 1 · Drop the powers': 'Method 1 · Understanding', 'Method 2 · Plugging in both cases': 'Method 2 · Plugging in numbers'},
+    'solve-q-461': {'Method 1 · Cancel first': 'Method 1 · The math way', 'Method 2 · Plugging in three times': 'Method 2 · Plugging in numbers'},
+    'solve-q-462': {'Method 1 · Same parity': 'Method 1 · Understanding'},
+    'solve-q-463': {'Method 1 · Plugging in three times': 'Method 1 · Plugging in numbers', 'Method 2 · The shortcut formula': 'Method 2 · The math way: shortcut formula'},
+    'solve-q-464': {'Method 1 · Plugging in': 'Method 1 · Plugging in numbers', 'Method 2 · Three in a row': 'Method 2 · The math way: three in a row'},
+    'solve-q-465': {'Method 1 · Read the signs': 'Method 1 · Understanding'},
+    'solve-q-466': {'Method 1 · Read the signs': 'Method 1 · Understanding', 'Method 2 · Simplify first': 'Method 2 · The math way'},
+    'solve-q-467': {'Method 1 · Start smart': 'Method 1 · Understanding', 'Method 2 · Knock out the others': 'Method 2 · Plugging in numbers'},
+    'solve-q-468': {'Method 1 · The shortcut formula': 'Method 1 · The math way: shortcut formula'},
+    'solve-q-469': {'Method 1 · One letter': 'Method 1 · The math way: one letter'},
+    'solve-q-470': {'Method 1 · Different parities': 'Method 1 · Understanding: even and odd', 'Method 2 · Drop the powers': 'Method 2 · Understanding: drop the powers'},
+    'solve-q-471': {'Method 1 · An odd product': 'Method 1 · Understanding'},
+    'solve-q-472': {'Method 1 · Count the twos': 'Method 1 · Understanding: count the twos', 'Method 2 · Plugging in the smallest': 'Method 2 · Plugging in numbers'},
+    'solve-q-493': {'Method 1 · Strong on strong': 'Method 1 · Understanding: strong on strong'},
+    'solve-q-496': {'Method 2 · Algebra': 'Method 2 · The math way'},
+    'solve-q-498': {'Method 1 · The arrows': 'Method 1 · The math way: the arrows'},
+    'solve-q-499': {'Method 1 · The arrows': 'Method 1 · The math way: the arrows', 'Method 3 · A sharp shortcut': 'Method 3 · Understanding'},
+    'solve-q-500': {'Method 2 · Plugging in a clean-root number': 'Method 2 · Plugging in numbers'},
+    'solve-q-514': {'Method 2 · The algebraic form': 'Method 2 · The math way: place values'},
+    'solve-q-517': {'Method 1 · The size first': 'Method 1 · Estimation', 'Method 2 · Start from the choices': 'Method 2 · Plugging in the answers'},
+    'solve-q-519': {'Plugging in the choices': 'Plugging in the answers'},
+    'solve-q-520': {'Method 1 · The algebraic form': 'Method 1 · The math way: place values', 'Method 2 · Testing the answers': 'Method 2 · Plugging in the answers'},
+    'solve-q-541': {'Method 1 · Substitute': 'Method 1 · The math way', 'Method 2 · A common factor': 'Method 2 · The math way: common factor'},
+    'solve-q-542': {'Method 1 · Inside out': 'Method 1 · The math way: inside out', 'Method 2 · The rule itself': 'Method 2 · Understanding'},
+    'solve-q-544': {'Method 1 · Match the input': 'Method 1 · The math way', 'Method 2 · Rewrite the rule': 'Method 2 · Understanding'},
+    'solve-q-546': {'Method 1 · Down, then back up': 'Method 1 · The math way', 'Method 2 · The pattern': 'Method 2 · Understanding: the pattern'},
+    'solve-q-549': {'Method 1 · Algebra': 'Method 1 · The math way', 'Method 2 · Plugging in a number': 'Method 2 · Plugging in numbers'},
+    'solve-q-550': {'Method 1 · The standard way': 'Method 1 · The math way', 'Method 2 · The outer diamond first': 'Method 2 · Understanding'},
+    'solve-q-551': {'Method 1 · The standard way': 'Method 1 · The math way', 'Method 2 · The shortcut formulas': 'Method 2 · Understanding: shortcut formulas'},
+    'solve-q-552': {'Method 1 · The full math': 'Method 1 · The math way', 'Method 2 · Plugging in a number': 'Method 2 · Plugging in numbers'},
+    'solve-q-553': {'Method 1 · The full math': 'Method 1 · The math way', 'Method 2 · Read the definition first': 'Method 2 · Understanding'},
+    'solve-q-554': {'Method 1 · The standard way': 'Method 1 · The math way', 'Method 2 · Think about the powers': 'Method 2 · Understanding'},
+    'solve-q-555': {'Method 1 · Algebra': 'Method 1 · The math way', 'Method 2 · By understanding': 'Method 2 · Understanding'},
+    'solve-q-577': {'Method 1 · The biggest value': 'Method 1 · Understanding: the extremes', 'Method 2 · Numbers for the biggest sum': 'Method 2 · Plugging in numbers', 'Method 3 · Testing the answers': 'Method 3 · Plugging in the answers'},
+    'solve-q-578': {'Method 2 · Algebra': 'Method 2 · The math way'},
+    'solve-q-579': {'Method 1 · Whole numbers': 'Method 1 · Plugging in numbers', 'Method 2 · A right triangle': 'Method 2 · Insight'},
+    'solve-q-r26-t13-01': {'Method 1 · Two cases': 'Method 1 · The math way: two cases'},
+    'solve-q-r26-t13-02': {'Method 1 · Look at the right side': 'Method 1 · Understanding'},
+    'solve-q-r26-t13-03': {'Method 1 · Two cases and a check': 'Method 1 · The math way: two cases'},
+    'solve-q-r26-t14-01': {'Method 1 · Test up to the root': 'Method 1 · The math way', 'Method 2 · Count by sevens': 'Method 2 · Understanding'},
+    'solve-q-r26-t14-03': {'Method 1 · Break and match': 'Method 1 · The math way: prime factors', 'Method 2 · Divide down': 'Method 2 · The math way: calculate'},
+    'solve-q-r26-t15-01': {'Method 1 · Tag it': 'Method 1 · The math way: tag it'},
+    'solve-q-r26-t15-15': {'Method 1 · Tag it': 'Method 1 · The math way: tag it'},
+    'solve-q-r26-t16-01': {'Method 1 · The bigger size wins': 'Method 1 · Understanding'},
+    'solve-q-r26-t16-02': {'Method 1 · Count times middle': 'Method 1 · Understanding: the middle', 'Method 2 · One letter': 'Method 2 · The math way: one letter'},
+    'solve-q-r26-t16-03': {'Method 1 · One letter': 'Method 1 · The math way: one letter'},
+    'solve-q-r26-t16-04': {'Method 1 · Smallest case, then a second case': 'Method 1 · Plugging in numbers', 'Method 2 · Why 3': 'Method 2 · Understanding'},
+    'solve-q-r26-t17-01': {'Method 1 · Ranges first': 'Method 1 · Understanding'},
+    'solve-q-r26-t17-02': {'Method 1 · The arrows': 'Method 1 · The math way: the arrows', 'Method 2 · Plugging in a number': 'Method 2 · Plugging in numbers'},
+    'solve-q-r26-t17-03': {'Method 1 · Reciprocals': 'Method 1 · The math way: reciprocals', 'Method 2 · Plugging in the ends': 'Method 2 · Plugging in numbers'},
+    'solve-q-r26-t17-04': {'Method 2 · Plugging in at the edges': 'Method 2 · Plugging in numbers'},
+    'solve-q-r26-t17-05': {'Method 1 · The distance': 'Method 1 · The math way'},
+    'solve-q-r26-t18-01': {'Method 1 · The columns': 'Method 1 · The math way: columns', 'Method 2 · The algebraic form': 'Method 2 · The math way: place values'},
+    'solve-q-r26-t18-02': {'Trying numbers': 'Method 2 · Plugging in numbers'},
+    'solve-q-r26-t19-01': {'Method 1 · Algebra': 'Method 1 · The math way'},
+    'solve-q-r26-t19-02': {'Method 2 · Algebra': 'Method 2 · The math way'},
+    'solve-q-r26-t19-03': {'Method 1 · Two cases': 'Method 1 · The math way: two cases'},
+    'solve-q-r26-t19-05': {'Method 1 · Calculate both': 'Method 1 · The math way', 'Method 2 · Even powers cancel': 'Method 2 · Understanding'},
+    'solve-q-r26-t20-01': {'Method 2 · Algebra': 'Method 2 · The math way'},
+    'solve-q-r26-t20-02': {'Method 1 · One number': 'Method 1 · Plugging in numbers', 'Method 2 · Place the choices': 'Method 2 · Understanding'},
+    'solve-q-r26-t20-03': {'Method 1 · Steps of two': 'Method 1 · The math way', 'Method 2 · Half of all': 'Method 2 · Understanding'},
+    'solve-q-r26-t30-03': {'Method 1 · The zig-zag rule': 'Method 1 · Understanding: the zig-zag rule', 'Method 2 · A line through each bend': 'Method 2 · The math way: helper lines'},
+    'solve-q-r26-t32-07': {'Method 1 · A shortcut formula': 'Method 1 · The math way: shortcut formula', 'Method 2 · A triple': 'Method 2 · Understanding: a triple'},
+    'solve-q-r26-t33-02': {'Method 1 · Tangent pieces': 'Method 1 · The math way', 'Method 2 · The shortcut': 'Method 2 · The math way: a short formula'},
+    'solve-q-r26-t33-03': {'Method 2 · Easy numbers': 'Method 2 · Plugging in numbers'},
+}
+
+
+def spec_new_title(vid, title):
+    """the 2026-10-15 vocabulary name of an old method title (or the title itself)"""
+    return SPEC_RENAMES_20261015.get(vid, {}).get(title, title)

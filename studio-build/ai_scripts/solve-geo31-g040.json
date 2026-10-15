@@ -11,7 +11,7 @@
     ],
     "pause": 0.5
    },
-   "[short pause] We'll solve it two ways, with algebra, and then by testing the answer choices.",
+   "[short pause] We'll solve it two ways, the math way, with algebra, and then by plugging in the answers.",
    {
     "say": "[short pause] Both triangles are equilateral. In the small one, all three sides are a. In the big one, all three sides are b.",
     "at": [
@@ -59,9 +59,9 @@
   ],
   [
    {
-    "say": "[pause] Now another way, testing the answers. Each choice says what a over b could be. We turn it into real sizes and check the given. If the sizes work, that's the answer, because the given fixes the ratio.",
+    "say": "[pause] Now another way, plugging in the answers. Each choice says what a over b could be. We turn it into real sizes and check the given. If the sizes work, that's the answer, because the given fixes the ratio.",
     "at": [
-     "the answers. Each"
+     "in the answers"
     ]
    },
    {

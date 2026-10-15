@@ -630,7 +630,7 @@ video('solve-q-514', 'solution', qid='q-514', slides=[
       L("Two are left, so one more number. Seventy-two plus twenty-seven is ninety-nine, and ninety-nine doesn't divide by "
         "four. Out. So eleven, choice number one is our answer.", show(c2, 'Seventy-two plus twenty-seven'),
         mk('cross', 'choice 4', "doesn't divide by four. Out"), mk('tick', 'choice 1', 'choice number one is our answer'))),
-    S('Method 2 · The algebraic form',
+    S('Method 2 · The math way: place values',
       L("[pause] Another way is the algebraic form. What's different? Instead of trying numbers, we write the number by its "
         "digits, and see why it always works. A B is ten A plus B, because A is in the tens. Forty-seven is ten times four, "
         "plus seven.", show(c3, 'A B is ten A plus B')),
@@ -745,7 +745,7 @@ i1 = I('i1', '$A\\cdot A$ ends in $A$: $\\ A=0,\\ 1,\\ 5,\\ 6$', size=32, hand='
 i2 = I('i2', '(1) $6$: $\\ C=0$ ✗ $\\quad$ (3) $5$: $\\ 16^2=256$ ✗', size=30, hand='(1)  6 :   C = 0  ✗      (3)  5 :   16^2 = 256  ✗')
 i3 = I('i3', '(2) $2$: $\\ 35^2=1225>999$ ✗ $\\quad$ (4) $4$: $\\ A=6,\\ C=2$ ✓', size=30, hand='(2)  2 :   35^2 = 1225 > 999  ✗      (4)  4 :   A = 6,  C = 2  ✓')
 video('solve-q-517', 'solution', qid='q-517', slides=[
-    S('Method 1 · The size first',
+    S('Method 1 · Estimation',
       L("A, B and C represent digits. Given: C A times C A is equal to six B A. Which of the following could be A minus C?",
         pt('stem', 'A, B and C', 'hl', 7.0), voice='calm', pause=0.5),
       L("So a two-digit number squared gives six hundred and something. [short pause] We'll solve it two ways, the size "
@@ -758,7 +758,7 @@ video('solve-q-517', 'solution', qid='q-517', slides=[
       L("Twenty-five gives A minus C, five minus two, three. Not a choice, and they ask what could be, so one option is "
         "enough. Twenty-six gives six minus two, four. Choice number four is our answer.", show(h4, 'Twenty-five gives'),
         mk('tick', 'choice 4', 'Choice number four is our answer'))),
-    S('Method 2 · Start from the choices',
+    S('Method 2 · Plugging in the answers',
       L("[pause] Another way, and it's sharp. What's different? We don't estimate first. We take the ones column, and let "
         "the choices do the work. A times A ends in A, so A is a special digit, zero, one, five or six.", show(i1, 'A times A ends in A')),
       L("A minus C is six? Then A is six and C is zero, but a leading digit is never zero. Out. Five? A five would need C zero, so "
@@ -805,7 +805,7 @@ k4 = I('k4', '(1) $C=7$: $\\ B+7=9,\\ 10,\\ 12$ $\\to\\ A=1$ ✗', size=30, hand
 k5 = I('k5', '(4) $C=5$: $\\ A+B=5$: $\\ 2,\\ 3$ $\\quad B+5=D$: $\\ B=2,\\ D=7$', size=30, hand='(4)   C = 5 :    A + B = 5 :  2, 3      B + 5 = D :   B = 2,   D = 7')
 k6 = I('k6', '$32+25=57$ ✓', hand='32 + 25 = 57   ✓')
 video('solve-q-519', 'solution', qid='q-519', slides=[
-    S('Plugging in the choices',
+    S('Plugging in the answers',
       L("A, B, C and D represent different digits, and each of them is a prime number. Given: A B plus B C is equal to C D. "
         "C is equal to what?", pt('stem', 'A, B, C and D', 'hl', 8.0), voice='calm', pause=0.5),
       L("Prime digits only. [short pause] We'll solve it by plugging in the choices, organized trial and error. First, "
@@ -817,12 +817,12 @@ video('solve-q-519', 'solution', qid='q-519', slides=[
       L("C is seven? Then the ones are B plus seven. B two gives nine, and B three gives ten, and nine and zero aren't prime. "
         "B five gives twelve, so D is two and one carries. Then the tens, A plus five plus one is seven, so A is one. Not a "
         "prime. Out.", show(k4, 'C is seven'), mk('cross', 'choice 1', 'Not a prime. Out'))),
-    S('Plugging in the choices',
+    S('Plugging in the answers',
       L("C is five. The tens, A plus B is five, so they're two and three. The ones, B plus five is D. B two gives seven, the "
         "prime that's left. So A is three, B is two, and D is seven.", show(k5, 'C is five')),
       L("Thirty-two plus twenty-five is fifty-seven. It works. Choice number four is our answer. [pause] Okay. I'll see you "
         "in the next question.", show(k6, 'Thirty-two plus twenty-five'), mk('tick', 'choice 4', 'Choice number four is our answer')),
-      sb='Plugging in the choices'),
+      sb='Plugging in the answers'),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-520 (Hebrew Q6)
@@ -840,7 +840,7 @@ m2 = I('m2', '$T=5$: $\\ 30$ ✗ $\\quad T=4$: $\\ 24$ ✗', size=30, hand='T = 
 m3 = I('m3', '$T=6$: $\\ U^3+3U=36$: $\\ U=3$, $\\ 63$', size=30, hand='T = 6 :    U^3 + 3U = 36 :    U = 3,    63')
 m4 = I('m4', '$27+4\\cdot9=63$ ✓', hand='27 + 4·9 = 63   ✓')
 video('solve-q-520', 'solution', qid='q-520', slides=[
-    S('Method 1 · The algebraic form',
+    S('Method 1 · The math way: place values',
       L("x is a two-digit number. x is equal to the cube of its units digit, plus four times the sum of its digits. What is "
         "the tens digit of x?", pt('stem', 'x is a two-digit', 'hl', 7.0), voice='calm', pause=0.5),
       L("This digit puzzle is written in words, so first we turn the words into an equation. We need the tens digit of x. "
@@ -854,7 +854,7 @@ video('solve-q-520', 'solution', qid='q-520', slides=[
       L("Both expressions equal x, so we set them equal. Ten T plus U equals U cubed plus four T plus four U. Now subtract "
         "four T and U from both sides. On the left, ten T minus four T leaves six T. On the right, four U minus U leaves "
         "three U. So six T equals U cubed plus three U.", show(l3, 'so we set them equal'), show(l3b, 'So six T equals'))),
-    S('Method 1 · The algebraic form',
+    S('Method 1 · The math way: place values',
       # 2026-10-14 teacher-approved video correction (paragraph 6 re-read): say clearly that a two-digit number can't start with zero
       L("T is a digit, so it's at most nine, and six T is at most fifty-four. Can U be zero? Then U cubed plus three U is "
         "zero, so six T is zero, and T is zero. But T is the tens digit, and a two-digit number can't start with zero. So U "
@@ -864,8 +864,8 @@ video('solve-q-520', 'solution', qid='q-520', slides=[
         "more than fifty-four. A bigger U only makes U cubed plus three U bigger, so we can stop.", show(l4, 'U is one gives')),
       L("Four and fourteen are not six times a digit, but thirty-six is. Six T is thirty-six, so T is six. Choice number "
         "three is our answer.", show(l5, 'Six T is thirty-six'), mk('tick', 'choice 3', 'Choice number three is our answer')),
-      sb='Method 1 · The algebraic form'),
-    S('Method 2 · Testing the answers',
+      sb='Method 1 · The math way: place values'),
+    S('Method 2 · Plugging in the answers',
       L("[pause] Now let's test the answer choices. Each choice gives a possible tens digit T, and then we need a digit U "
         "that fits the words of the question. Start with choice number one, seven. Then x is seventy plus U, and its digit "
         "sum is seven plus U. So seventy plus U must equal U cubed plus twenty-eight plus four U. Subtract twenty-eight and "
@@ -902,7 +902,7 @@ nc5 = I('nc5', 'Check the incoming carry before choosing the digit', size=26)
 o1 = I('o1', '$206+10A+10B+8=304+10A$', hand='206 + 10A + 10B + 8 = 304 + 10A')
 o2 = I('o2', '$10B=304-214=90$: $\\ B=9$', hand='10B = 304 − 214 = 90 :    B = 9')
 video('solve-q-r26-t18-01', 'solution', qid='q-r26-t18-01', slides=[
-    S('Method 1 · The columns',
+    S('Method 1 · The math way: columns',
       L("A and B represent digits. Given: two A six, plus B eight, is equal to three A four. B is equal to what?",
         pt('stem', 'A and B', 'hl', 6.0), voice='calm', pause=0.5),
       L("Two numbers with a letter in the middle. [short pause] We'll solve it two ways, with the columns, and then with the "
@@ -926,8 +926,8 @@ video('solve-q-r26-t18-01', 'solution', qid='q-r26-t18-01', slides=[
       L("With A five, five plus nine plus one is fifteen. We write the five and carry the one. "
         "So the same ending digit does not always mean add zero. First check whether something carried into the column.",
         pt('nc4', 'five plus nine plus one is fifteen'), show(nc5, 'First check whether something carried')),
-      sb='Method 1 · The columns'),
-    S('Method 2 · The algebraic form',
+      sb='Method 1 · The math way: columns'),
+    S('Method 2 · The math way: place values',
       L("[pause] Another way, with no columns at all. What's different? Each number is written by its digits, so no carry "
         "can be forgotten. Two hundred six plus ten A, plus ten B plus eight, equals three hundred four plus ten A.",
         show(o1, 'Two hundred six plus ten A')),
@@ -1013,7 +1013,7 @@ video('solve-q-r26-t18-02', 'solution', qid='q-r26-t18-02', slides=[
         show(u1, 'A B C equals a hundred A'), show(u2, 'C B A equals a'), show(u3, 'Subtract the second from the first'),
         show(abc['t'], 'the ten B parts cancel'), show(u4, 'The A parts leave')),
       L("So the result is ninety-nine times A minus C. So it must be a multiple of ninety-nine.",
-        show(u5, 'ninety-nine times'))),
+        show(u5, 'ninety-nine times')), sb='Method 1 · The math way: place values'),
     S('Trying numbers: count up by 99',
       L("Now let's check the answer choices, and we'll see which of the answer choices is divisible by ninety-nine. So one "
         "way for me to do this is to just count up from ninety-nine, right? So ninety-nine plus ninety-nine. Another way for "
@@ -1030,7 +1030,7 @@ video('solve-q-r26-t18-02', 'solution', qid='q-r26-t18-02', slides=[
         show(k99['line'], 'Now we see that the pattern'), show(k99['h'], 'up by one in the hundreds'),
         show(k99['o'], 'down by one in the ones'), show(k99['n'], "I'll go up to four hundred ninety-five"),
         pt('choice 3', "that's exactly our answer"), mk('tick', 'choice 3', 'So choice number three is our answer')),
-      sb='Trying numbers'),
+      sb='Method 2 · Plugging in numbers'),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t18-03 (added)
@@ -1408,6 +1408,12 @@ for _ln in [l for _sl in VIDEOS['solve-q-r26-t18-02']['slides'] for l in _sl['li
         if c[0] == 'point' and (c[1] in _hand or _just): continue
         _keep.append(c)
     _ln['cues'] = _keep
+
+# 2026-10-15 one vocabulary for method names (math_patches/_method_names.py CORE; guide "Method names"): a "Method N · X"
+# title or sidebar outside it stops the run, so a new script uses the vocabulary from its first draft.
+_mn_spec = importlib.util.spec_from_file_location('_method_names_vocab', os.path.join(HERE, '_method_names.py'))
+_mn = importlib.util.module_from_spec(_mn_spec); _mn_spec.loader.exec_module(_mn)
+_mn.check_vocab(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

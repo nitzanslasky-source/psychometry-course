@@ -11,7 +11,7 @@
     ],
     "pause": 0.5
    },
-   "Two topics in one question, digits and a new operation. And the diamond is in every choice, so we have to work out the choices. [short pause] We'll solve it two ways, calculating each choice, and then a shortcut that thinks about where the biggest power goes.",
+   "Two topics in one question, digits and a new operation. And the diamond is in every choice, so we have to work out the choices. [short pause] We'll solve it two ways, the math way, calculating each choice, and then by understanding where the biggest power goes.",
    {
     "say": "[short pause] The hundreds digit goes to the power of four, the tens digit is cubed, and the units digit is squared. Choice number one, two one four. Two to the power of four is sixteen. One cubed is one. Four squared is sixteen. Sixteen plus one plus sixteen is thirty-three.",
     "at": [
@@ -56,9 +56,9 @@
   ],
   [
    {
-    "say": "[pause] Another way is to think about the powers. Every choice uses the same three digits, one, two and four. One stays one at any power, so giving it the biggest power costs nothing. But four grows a lot. Four squared is sixteen, and four to the power of four is two hundred fifty-six. So the fourth power, on the hundreds digit, should go to the one. Choice numbers one and three start with two and four, so they're out.",
+    "say": "[pause] Now by understanding. Let's think about the powers. Every choice uses the same three digits, one, two and four. One stays one at any power, so giving it the biggest power costs nothing. But four grows a lot. Four squared is sixteen, and four to the power of four is two hundred fifty-six. So the fourth power, on the hundreds digit, should go to the one. Choice numbers one and three start with two and four, so they're out.",
     "at": [
-     "Another way",
+     "Now by",
      "should go to the one",
      "Choice numbers one and three",
      "start with two",

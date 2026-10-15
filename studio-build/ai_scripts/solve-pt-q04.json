@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "Inscribed means the cylinder sits inside the cube, and touches its sides. They ask for the volume of the cylinder. [short pause] We'll solve it two ways, with the formula, and then with an estimate.",
+    "say": "Inscribed means the cylinder sits inside the cube, and touches its sides. They ask for the volume of the cylinder. [short pause] We'll solve it two ways, the math way, with the formula, and then with an estimate.",
     "at": [
      "Inscribed means",
      "inside the cube"

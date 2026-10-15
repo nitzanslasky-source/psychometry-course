@@ -602,7 +602,7 @@ a5 = I('a5', '(3) $r>q$, $\\ \\times p>1$: $\\ \\hl{n}{rp>q}$ ✗', size=32, han
 b1 = I('b1', '$p=2,\\ q=3,\\ r=4,\\ s=5$', hand='p = 2,   q = 3,   r = 4,   s = 5')
 b2 = I('b2', '(1) $6<16$ ✓ $\\quad$ (2) $3<10$ ✓ $\\quad$ (3) $8<3$ ✗', size=30, hand='(1)   6 < 16  ✓      (2)   3 < 10  ✓      (3)   8 < 3  ✗')
 video('solve-q-493', 'solution', qid='q-493', slides=[
-    S('Method 1 · Strong on strong',
+    S('Method 1 · Understanding: strong on strong',
       L("Given: one is smaller than p, which is smaller than q, which is smaller than r, which is smaller than s. Which of "
         "the following statements is not correct?", pt('stem', 'Given', 'hl', 7.0), voice='calm', pause=0.5),
       L("So four letters, all bigger than one, in order. And we look for the statement that's not correct. [short pause] "
@@ -851,7 +851,7 @@ video('solve-q-496', 'solution', qid='q-496', slides=[
         "necessarily true, choice number two is our answer.", show(n5, 'a is zero point two'),
         mk('tick', 'choice 2', 'choice number two is our answer')),
       sb='Method 1 · Understanding'),
-    S('Method 2 · Algebra',
+    S('Method 2 · The math way',
       L("[pause] Another way is algebra. What's different? Instead of reading what each operation does, we simplify each "
         "statement until it's obvious. Choice number one, c is smaller than c over a. Multiply both sides by a, which is "
         "positive, and divide by c, also positive. a is smaller than one. True. Out.", show(o1, 'Multiply both sides by a'),
@@ -914,7 +914,7 @@ s2 = I('s2', '$0<x<1$: $\\ $bigger power, smaller', size=32, hand='0 < x < 1 :  
 t1 = I('t1', '(2) $x=2$: $\\ 256<128$ ✗', hand='(2)   x = 2 :    256 < 128   ✗')
 t2 = I('t2', '(4) $x=\\frac12$: $\\ \\frac1{256}<\\frac1{128}$ ✓', hand='(4)   x = {1/2} :    {1/256} < {1/128}   ✓')
 video('solve-q-498', 'solution', qid='q-498', slides=[
-    S('Method 1 · The arrows',
+    S('Method 1 · The math way: the arrows',
       L("Given: x to the power of eight is smaller than x to the power of seven. In which of the following ranges is x?",
         pt('stem', 'Given', 'hl', 5.0), voice='calm', pause=0.5),
       L("So it's about how powers behave, and the choices are ranges. [short pause] We'll solve it two ways, with the "
@@ -954,7 +954,7 @@ w1 = I('w1', 'No even power of a negative: one direction', size=28, col=1)
 w2 = I('w2', '(1) $1,\\ \\frac13,\\ 7,\\ -7$ ✗ $\\quad$ (2) $7,\\ -7,\\ \\frac13,\\ 1$ ✗', size=32, hand='(1)   1,  {1/3},  7,  −7   ✗        (2)   7,  −7,  {1/3},  1   ✗')
 w3 = I('w3', '(4) $\\frac13,\\ -7,\\ 1,\\ 7$ ✗ $\\quad$ (3) $-7,\\ \\frac13,\\ 1,\\ 7$ ✓', size=32, hand='(4)   {1/3},  −7,  1,  7   ✗        (3)   −7,  {1/3},  1,  7   ✓')
 video('solve-q-499', 'solution', qid='q-499', slides=[
-    S('Method 1 · The arrows',
+    S('Method 1 · The math way: the arrows',
       L("Given: negative one is smaller than y, which is smaller than zero. Which of the following orders of y to the power "
         "of seven, y, the cube root of y, and y to the power of negative seven is correct?", pt('stem', 'Given', 'hl', 8.0), voice='calm', pause=0.5),
       L("So y is a negative fraction, and we have to put four powers in order. [short pause] We'll solve it three ways, "
@@ -980,7 +980,7 @@ video('solve-q-499', 'solution', qid='q-499', slides=[
         "it, negative eight, to the seventh, a huge negative number.", show(v2, 'y to the seventh is')),
       L("So y to the negative seven is by far the smallest, and it comes first. Only choice number three starts with it. "
         "Choice number three.", show(v3, 'by far the smallest'), mk('tick', 'choice 3', 'Only choice number three'))),
-    S('Method 3 · A sharp shortcut',
+    S('Method 3 · Understanding',
       L("[pause] And a sharp shortcut. What's different? We don't place anything, we only read the powers. With no even "
         "power of a negative number, the powers in a correct chain keep one direction, all up or all down. Write y as y to "
         "the one, and the root as y to the one third.", show(w1, 'keep one direction')),
@@ -1023,7 +1023,7 @@ video('solve-q-500', 'solution', qid='q-500', slides=[
       L("Choice number two, six over t. Dividing by a positive fraction makes a number bigger, so it's more than six. Below "
         "one, below one, below six, and above six. Choice number two is our answer.", show(x4, 'six over t'),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    S('Method 2 · Plugging in a clean-root number',
+    S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in. The given allows any t between zero and one. "
         "Choose one over sixty-four, because one half to the sixth is one over sixty-four. "
         "So its sixth root is easy. We keep every six in the question and change only t.",
@@ -1095,7 +1095,7 @@ fe = I('fe', '(1) $4$ ✗ $\\quad$ (3) $0$ ✗ $\\quad$ (4) $-\\frac18+\\frac12=
 fa['_y'] = 465; fb['_y'] = 535; fc['_y'] = 535; fc['_x'] = 900
 fd['_y'] = 465; fe['_y'] = 545
 video('solve-q-r26-t17-01', 'solution', qid='q-r26-t17-01', slides=[
-    S('Method 1 · Ranges first',
+    S('Method 1 · Understanding',
       L("The figure shows the numbers a, b, c and d on a number line. The figure is not drawn to scale. Which of the "
         "following is necessarily negative?", pt('stem', 'The figure', 'hl', 7.0), voice='calm', pause=0.5),
       L("Letters on a line. So first, the range of each letter. And it's not drawn to scale, so we trust only the order, not "
@@ -1126,7 +1126,7 @@ g3 = I('g3', 'L: $\\ x^2$ $\\quad$ N: $\\ \\frac1x$', size=30, col=1)
 h1 = I('h1', '$x=\\frac14$: $\\ \\sqrt x=\\frac12$', hand='x = {1/4} :    √{x} = {1/2}')
 g1['_y'] = 465; g2['_y'] = 585; g3['_y'] = 585; h1['_y'] = 465
 video('solve-q-r26-t17-02', 'solution', qid='q-r26-t17-02', slides=[
-    S('Method 1 · The arrows',
+    S('Method 1 · The math way: the arrows',
       L("The figure shows the number x and the points K, L, M and N on a number line. The figure is not drawn to scale. "
         "Which of the points could represent the square root of x?", pt('stem', 'The figure', 'hl', 7.0), voice='calm', pause=0.5),
       L("So x is between zero and one, a positive fraction, and we look for its square root. [short pause] We'll solve it two "
@@ -1137,7 +1137,7 @@ video('solve-q-r26-t17-02', 'solution', qid='q-r26-t17-02', slides=[
       L("But the root of a number below one stays below one. So it's between x and one, and only one point is there, M. "
         "Choice number three is our answer.", show(g2, 'stays below one'), mk('tick', 'choice 3', 'Choice number three is our answer')),
       L("Now careful, the traps. L is where x squared would be, and N is where one over x would be.", show(g3, 'the traps'))),
-    S('Method 2 · Plugging in a number',
+    S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try a number with a clean root. x is one quarter, and its square root is one half. That's bigger "
         "than one quarter, and still below one. So between x and one, M. Choice number three. [pause] Okay. I'll see you in "
         "the next question.", show(h1, 'x is one quarter'), mk('tick', 'choice 3', 'between x and one, M'))),
@@ -1153,7 +1153,7 @@ i4 = I('i4', '$\\times6$: $\\ -3<\\frac6x<-\\frac32$', hand='× 6 :    −3 < {6
 j1 = I('j1', '$x=-4$: $\\ \\frac6{-4}=-\\frac32 \\qquad x=-2$: $\\ \\frac6{-2}=-3$', size=32, hand='x = −4 :   {6/−4} = −{3/2}        x = −2 :   {6/−2} = −3')
 j2 = I('j2', '(1) $\\times$ instead of $\\div$ $\\quad$ (2) lost the minus $\\quad$ (4) $\\frac x6$', size=28, col=1)
 video('solve-q-r26-t17-03', 'solution', qid='q-r26-t17-03', slides=[
-    S('Method 1 · Reciprocals',
+    S('Method 1 · The math way: reciprocals',
       L("Given: negative four is smaller than x, which is smaller than negative two. Which of the following is necessarily "
         "true?", pt('stem', 'Given', 'hl', 5.0), voice='calm', pause=0.5),
       L("So x is between negative four and negative two, and the choices say where six over x is. [short pause] We'll solve "
@@ -1168,7 +1168,7 @@ video('solve-q-r26-t17-03', 'solution', qid='q-r26-t17-03', slides=[
       L("Times six, a positive number, keeps the order. Six times negative one half is negative three, and six times "
         "negative one quarter is negative three halves. So six over x is between negative three and negative three halves. "
         "Choice number three is our answer.", show(i4, 'Times six'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
-    S('Method 2 · Plugging in the ends',
+    S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in the ends. Six over negative four is negative three halves, and six over negative "
         "two is negative three.", show(j1, 'Six over negative four')),
       L("So six over x goes between negative three halves and negative three. The smaller one, negative three, goes on the "
@@ -1197,7 +1197,7 @@ video('solve-q-r26-t17-04', 'solution', qid='q-r26-t17-04', slides=[
       L("Choice number two, x plus y. x is already below negative one, and adding a negative y moves it further left. So x "
         "plus y is always below negative one. Choice number two is our answer.", show(k2, 'x is already below'),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    S('Method 2 · Plugging in at the edges',
+    S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in. To break a statement, push the numbers to the edges of their ranges. x is "
         "negative two, and y is negative one half.", show(l1, 'push the numbers')),
       L("Choice number one, x times y is one, and one isn't bigger than one. Out. Choice number three, x squared is four, y "
@@ -1217,7 +1217,7 @@ m6 = I('m6', '$\\frac13\\cdot12=4$: $\\ -7+4=-3$', hand='{1/3} · 12 = 4 :    �
 m7 = I('m7', '$4$: the distance $\\quad -1$: the midpoint', size=28, col=1)
 m8 = I('m8', 'From $-7$: $\\ $(1) $8$ ✗ $\\quad$ (2) $6$ ✗ $\\quad$ (3) $4$ ✓', size=32, hand='From −7 :    (1)  8  ✗      (2)  6  ✗      (3)  4  ✓')
 video('solve-q-r26-t17-05', 'solution', qid='q-r26-t17-05', slides=[
-    S('Method 1 · The distance',
+    S('Method 1 · The math way',
       L("On a number line, point A is at negative seven, and point B is at five. Point C is between A and B, and its "
         "distance from A is one third of the distance A B. What number is at point C?", pt('stem', 'On a number line', 'hl', 8.0), voice='calm', pause=0.5),
       L("So two points, and a point a third of the way from A. [short pause] We'll solve it two ways, with the distance, and "
@@ -1598,6 +1598,12 @@ import types as _types
 _mv_spec = importlib.util.spec_from_file_location('_method_visuals', os.path.join(HERE, '_method_visuals.py'))
 _mv = importlib.util.module_from_spec(_mv_spec); _mv_spec.loader.exec_module(_mv)
 _mv.post(_types.SimpleNamespace(**globals()), 17)
+
+# 2026-10-15 one vocabulary for method names (math_patches/_method_names.py CORE; guide "Method names"): a "Method N · X"
+# title or sidebar outside it stops the run, so a new script uses the vocabulary from its first draft.
+_mn_spec = importlib.util.spec_from_file_location('_method_names_vocab', os.path.join(HERE, '_method_names.py'))
+_mn = importlib.util.module_from_spec(_mn_spec); _mn_spec.loader.exec_module(_mn)
+_mn.check_vocab(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

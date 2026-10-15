@@ -11,9 +11,9 @@
     ],
     "pause": 0.5
    },
-   "Must be true means true for every positive a and b. So for each choice, we test whether it works for every positive a and b, and one allowed pair where it fails rules it out. [short pause] We'll solve it two ways, with algebra on each inequality or equation, and then by understanding what the diamond does.",
+   "Must be true means true for every positive a and b. So for each choice, we test whether it works for every positive a and b, and one allowed pair where it fails rules it out. [short pause] We'll solve it two ways, the math way, with algebra on each inequality or equation, and then by understanding what the diamond does.",
    {
-    "say": "[short pause] Let's start with algebra. Choice number one says three over a is smaller than three. a is positive, so we can multiply both sides by a without flipping the sign. We get three is smaller than three a. Divide both sides by three, and one is smaller than a. That's true only when a is bigger than one. But a could be one half. Then three over one half is six, and six is not smaller than three. So choice number one is out.",
+    "say": "[short pause] Let's start with the math way. Choice number one says three over a is smaller than three. a is positive, so we can multiply both sides by a without flipping the sign. We get three is smaller than three a. Divide both sides by three, and one is smaller than a. That's true only when a is bigger than one. But a could be one half. Then three over one half is six, and six is not smaller than three. So choice number one is out.",
     "at": [
      "Let's start",
      "Choice number one says",

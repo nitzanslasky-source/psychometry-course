@@ -11,11 +11,11 @@
     ],
     "pause": 0.5
    },
-   "The same two letters go into the diamond on the top and at the bottom, only in a different order. [short pause] We'll solve it three ways, the full math, reading the definition first, and plugging in numbers.",
+   "The same two letters go into the diamond on the top and at the bottom, only in a different order. [short pause] We'll solve it three ways, the math way, by understanding the definition, and by plugging in numbers.",
    {
-    "say": "[short pause] The top is diamond of a, b, so x is a and y is b. That's a minus b, squared, over a times b cubed. The bottom is diamond of b, a, so now x is b and y is a. That's b minus a, squared, over b times a cubed.",
+    "say": "[short pause] The math way first. The top is diamond of a, b, so x is a and y is b. That's a minus b, squared, over a times b cubed. The bottom is diamond of b, a, so now x is b and y is a. That's b minus a, squared, over b times a cubed.",
     "at": [
-     "The top",
+     "The math",
      "The top is diamond of a, b",
      "a, b, so",
      "The bottom is diamond of b, a",
@@ -40,9 +40,9 @@
   ],
   [
    {
-    "say": "[pause] Another way is to read the definition before calculating. The top and the bottom use the same two numbers, just swapped. The squared part is x minus y. Swapping x and y gives the opposite number inside, but the square is the same. So both fractions have the same top. When we divide one fraction by another with the same nonzero top, that top cancels.",
+    "say": "[pause] Now by understanding. We read the definition before calculating. The top and the bottom use the same two numbers, just swapped. The squared part is x minus y. Swapping x and y gives the opposite number inside, but the square is the same. So both fractions have the same top. When we divide one fraction by another with the same nonzero top, that top cancels.",
     "at": [
-     "Another way",
+     "Now by",
      "but the square is the same",
      "So both fractions"
     ]

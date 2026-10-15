@@ -5533,7 +5533,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 1: Every pair",
+              "t": "Method 1: The math way: listing",
               "size": 28,
               "gap": 16
             },
@@ -5616,7 +5616,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 1: Every pair",
+              "t": "Method 1: The math way: listing",
               "size": 28,
               "gap": 16
             },
@@ -5909,7 +5909,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: Look at the choices",
+              "t": "Method 2: Estimation",
               "size": 28,
               "gap": 16
             },
@@ -5965,7 +5965,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: Look at the choices",
+              "t": "Method 2: Estimation",
               "size": 28,
               "gap": 16
             },
@@ -6688,7 +6688,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: Divide down",
+              "t": "Method 2: The math way: calculate",
               "size": 28,
               "gap": 16
             },
@@ -6784,7 +6784,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: Divide down",
+              "t": "Method 2: The math way: calculate",
               "size": 28,
               "gap": 16
             },
@@ -7508,7 +7508,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: Check the sum 17",
+              "t": "Method 2: Plugging in the answers",
               "size": 28,
               "gap": 16
             },
@@ -7557,7 +7557,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: Check the sum 17",
+              "t": "Method 2: Plugging in the answers",
               "size": 28,
               "gap": 16
             },
@@ -8806,7 +8806,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 1: Step by step",
+              "t": "Method 1: The math way",
               "size": 28,
               "gap": 16
             },
@@ -8883,7 +8883,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 1: Step by step",
+              "t": "Method 1: The math way",
               "size": 28,
               "gap": 16
             },
@@ -9616,7 +9616,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: List the numbers",
+              "t": "Method 2: The math way: listing",
               "size": 28,
               "gap": 16
             },
@@ -9742,7 +9742,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: List the numbers",
+              "t": "Method 2: The math way: listing",
               "size": 28,
               "gap": 16
             },
@@ -9876,7 +9876,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 1: The biggest remainder",
+              "t": "Method 1: Understanding",
               "size": 28,
               "gap": 16
             },
@@ -9974,7 +9974,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 1: The biggest remainder",
+              "t": "Method 1: Understanding",
               "size": 28,
               "gap": 16
             },
@@ -10084,7 +10084,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: List the remainders",
+              "t": "Method 2: Plugging in numbers",
               "size": 28,
               "gap": 16
             },
@@ -10161,7 +10161,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: List the remainders",
+              "t": "Method 2: Plugging in numbers",
               "size": 28,
               "gap": 16
             },
@@ -10246,7 +10246,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 1: Split off the fives",
+              "t": "Method 1: The math way: tag it",
               "size": 28,
               "gap": 16
             },
@@ -10322,7 +10322,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 1: Split off the fives",
+              "t": "Method 1: The math way: tag it",
               "size": 28,
               "gap": 16
             },
@@ -10476,7 +10476,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 1: Tag it",
+              "t": "Method 1: The math way: tag it",
               "size": 28,
               "gap": 16
             },
@@ -10559,7 +10559,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 1: Tag it",
+              "t": "Method 1: The math way: tag it",
               "size": 28,
               "gap": 16
             },
@@ -16057,7 +16057,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: Plugging in both cases",
+              "t": "Method 2: Plugging in numbers",
               "size": 28,
               "gap": 16
             },
@@ -16134,7 +16134,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: Eliminate, then choose another case",
+              "t": "Method 2: Plugging in numbers",
               "size": 28,
               "gap": 16
             },
@@ -16409,7 +16409,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: Plugging in three times",
+              "t": "Method 2: Plugging in numbers",
               "size": 28,
               "gap": 16
             },
@@ -16472,7 +16472,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 2: One test, then check what it decides",
+              "t": "Method 2: Plugging in numbers",
               "size": 28,
               "gap": 16
             },
@@ -17656,7 +17656,7 @@
               "_col": 0,
               "_hand": null,
               "k": "t",
-              "t": "Method 1: Plugging in",
+              "t": "Method 1: Plugging in numbers",
               "size": 28,
               "gap": 16
             },
@@ -17926,7 +17926,7 @@
         "slide": 1,
         "paragraph": 0,
         "original": "[pause] And why is three always there? The odd multiples of three are three, nine, fifteen, twenty-one, one in every three odd numbers. So any three odd numbers in a row catch one of them.",
-        "revised": "[pause] Why does the product always divide by three? Look at the odd multiples of three: three, nine, fifteen and twenty-one. They appear once in every three odd numbers. So any three odd numbers in a row include a multiple of three.",
+        "revised": "[pause] Now by understanding. Why does the product always divide by three? Look at the odd multiples of three: three, nine, fifteen and twenty-one. They appear once in every three odd numbers. So any three odd numbers in a row include a multiple of three.",
         "cue_anchors": [
           {
             "index": 0,
@@ -18052,12 +18052,12 @@
         "slide": 0,
         "paragraph": 2,
         "original": "[short pause] Let's start with the smallest case, one, three and five. One times three times five is fifteen. Forty-five doesn't divide fifteen, so choice number one is out.",
-        "revised": "[short pause] Start with the smallest group, one, three and five. One times three times five is fifteen. Fifteen is not divisible by forty-five, so choice number one is out.",
+        "revised": "[short pause] Let's start by plugging in numbers, with the smallest group, one, three and five. One times three times five is fifteen. Fifteen is not divisible by forty-five, so choice number one is out.",
         "cue_anchors": [
           {
             "index": 0,
             "original": "Let's start",
-            "revised": "Start with the"
+            "revised": "Let's start by"
           },
           {
             "index": 1,

@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "So b changes, and we need to know how y has to change so that the equation still holds. [short pause] We'll solve it two ways. This time we start with plugging in numbers, because here it's the simpler way for most students, and then we'll do the algebra.",
+    "say": "So b changes, and we need to know how y has to change so that the equation still holds. [short pause] We'll solve it two ways. This time we start with plugging in numbers, because here it's the simpler way for most students, and then the math way.",
     "at": [
      "how y has to change",
      "so that the",
@@ -46,7 +46,7 @@
   ],
   [
    {
-    "say": "[pause] Now the algebra. When b is multiplied by twenty-five, the right side becomes the bracket twenty-five b, cubed. To keep the equation true, y has to be multiplied by some number too. Let's call that number k. So the bracket k y, squared, equals the bracket twenty-five b, cubed.",
+    "say": "[pause] Now the math way, with algebra. When b is multiplied by twenty-five, the right side becomes the bracket twenty-five b, cubed. To keep the equation true, y has to be multiplied by some number too. Let's call that number k. So the bracket k y, squared, equals the bracket twenty-five b, cubed.",
     "at": [
      "Now the",
      "Let's call that number k",

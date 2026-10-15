@@ -1147,15 +1147,15 @@ video('solve-q-r26-t30-02', 'solution', qid='q-r26-t30-02', slides=[
         voice='calm', pause=0.5),
       L("B C is the short piece in the middle, between B and C. [short pause] We'll solve it two ways, finding the pieces "
         "one by one, and then with the overlap rule.", pt('fig: B', 'the short piece in the middle')),
-      L("[short pause] Let's put each length on the figure. A D is twenty, the whole line from A to D.",
+      L("[short pause] The math way first. Let's put each length on the figure. A D is twenty, the whole line from A to D.",
         pt('stem: g3', "Let's put each length"), show(s1['line'], 'A D is twenty')),
       L("B D is fourteen, the part from B to the end. So what's left at the start, A B, is twenty minus fourteen, which is "
         "six.", pt('stem: g2', 'B D is fourteen'), show(s1['bd'], 'the part from B to the end'), show(s1['ab'], 'twenty minus fourteen')),
       L("Now A C is eleven, and A C is made of A B and B C. A B is six, so B C is eleven minus six, which is five. Choice "
         "number three is our answer.", pt('stem: g1', 'Now A C is eleven'), show(s1['ac'], 'A C is made of'),
-        show(s1['bc'], 'so B C is eleven minus six'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
+        show(s1['bc'], 'so B C is eleven minus six'), mk('tick', 'choice 3', 'Choice number three is our answer')), sb='Method 1 · The math way'),
     S('The overlap rule',
-      L("[pause] Now the second way, the overlap rule, in one line. Let's draw A C above the line and B D below it.",
+      L("[pause] Now by understanding, with the overlap rule, in one line. Let's draw A C above the line and B D below it.",
         show(s2['line'], 'Let\'s draw A C above'), show(s2['bd'], 'and B D below it')),
       L("Together, A C and B D cover the whole line from A to D, and the middle piece, B C, is covered twice. So A C plus "
         "B D is the whole line, A D, plus B C one more time.", show(s2['bc'], 'is covered twice'), show(s2['eq1'], 'So A C plus B D')),
@@ -1163,7 +1163,7 @@ video('solve-q-r26-t30-02', 'solution', qid='q-r26-t30-02', slides=[
         "five. Choice number three again.", show(s2['eq2'], 'Eleven plus fourteen'), mk('tick', 'choice 3', 'Choice number three again')),
       L("Careful with the other choices. Six, choice number two, is A B, the wrong piece. And twenty-five, choice number "
         "four, is A C plus B D, with B C counted twice. [pause] Okay. I'll see you in the next question.",
-        mk('cross', 'choice 2', 'Six, choice number two'), mk('cross', 'choice 4', 'And twenty-five, choice number four'))),
+        mk('cross', 'choice 2', 'Six, choice number two'), mk('cross', 'choice 4', 'And twenty-five, choice number four')), sb='Method 2 · Understanding: the overlap rule'),
 ])
 
 # ---- placement (this fragment's question videos): the question figure on the left (figw 0.56, as in the course's
@@ -1249,14 +1249,14 @@ k5b = IH('k5b', '$77°+56°=133°$', size=32)
 k5c = IH('k5c', '$x=180°-133°=47°$', size=32)
 k5d = I('k5d', '$7+6=13$: $\\ $ends in $3$ $\\to$ $x$ ends in $7$', size=30)
 video('solve-geo30-g005', 'solution', qid='geo30-g005', slides=[
-    SM('Method 1 · One pair at a time', 'One pair at a time',
+    SM('Method 1 · The math way', 'One pair at a time',
       L("In the accompanying figure, a is parallel to b, and c is parallel to d. What is the value of x?",
         pt('stem', 'In the accompanying figure', 'hl', 6.0), voice='calm', pause=0.5),
       L("We have two pairs of parallel lines, and x sits on line b, right next to two other angles. If we find those two "
         "angles, we can complete to one hundred eighty. [short pause] This question can also be solved with triangles or "
         "with quadrilaterals, but we haven't learned them yet, so we'll use only the rules of lines. Then we'll see a "
         "shortcut with the last digits.", pt('fig: x', 'x sits on line b')),
-      L("[short pause] Start with the first given, a is parallel to b, and line c cuts both of them. To see it simply, "
+      L("[short pause] The math way first. Start with the first given, a is parallel to b, and line c cuts both of them. To see it simply, "
         "let's look only at these three lines and ignore the rest of the figure.", show(g5['line'], 'Start with the first given'),
         show(g5['ab'], 'look only at these three lines')),
       L("Seventy-seven degrees is a small angle where line c crosses line a. Line c crosses line b with the same angles, "
@@ -1267,7 +1267,7 @@ video('solve-geo30-g005', 'solution', qid='geo30-g005', slides=[
         "three lines. Fifty-six is the small angle between the slanted line and line d. The slanted line crosses line c "
         "with the same angles. So the small angle between the slanted line and line c, just below line b, is also "
         "fifty-six.", show(g5['cd'], 'we look only at these'), pt('fig: 56°', 'Fifty-six is the small angle'))),
-    SM('Method 1 · One pair at a time', 'One pair at a time',
+    SM('Method 1 · The math way', 'One pair at a time',
       L("Now back to the whole figure. Below line b, at the point where the three lines meet, there are three angles side "
         "by side, x, fifty-six and seventy-seven. Together they make the straight line b, so they add up to one hundred "
         "eighty.", show(g5b['line'], 'Now back to the whole figure'), show(k5a, 'so they add up to')),
@@ -1275,8 +1275,8 @@ video('solve-geo30-g005', 'solution', qid='geo30-g005', slides=[
         "thirteen, so together a hundred thirty-three. x plus a hundred thirty-three is a hundred eighty, so x is a "
         "hundred eighty minus a hundred thirty-three, which is forty-seven. Choice number four is our answer.",
         show(k5b, 'Add the tens'), show(k5c, 'so x is a hundred eighty minus'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
-    SM('Method 2 · The last digit', 'The last digit',
-      L("[pause] We could make the end shorter, with the last digits. Some students don't even write the equation. They "
+    SM('Method 2 · Understanding: last digit', 'The last digit',
+      L("[pause] Now by understanding. We could make the end shorter, with the last digits. Some students don't even write the equation. They "
         "say, one angle ends in seven, one ends in six, and x makes the sum a hundred eighty, which ends in zero. Seven plus "
         "six is thirteen, which ends in three. So x has to end in seven, because three plus seven makes a ten.",
         show(k5d, 'Seven plus six is thirteen')),
@@ -1326,15 +1326,15 @@ k6c = I('k6c', '$m=n=k=140°$: $\\ x=180°-3\\cdot40°=60°$', size=28)
 k6d = I('k6d', '(1) $240°$ ✗ $\\quad$ (2) $140°$ ✗\n(3) negative ✗ $\\quad$ (4) $60°$ ✓', size=30)
 k6e = IH('k6e', '$m+n+k=360°+x$', size=32)
 video('solve-geo30-g006', 'solution', qid='geo30-g006', slides=[
-    SM('Method 1 · An anchor: 180', 'An anchor: 180',
+    SM('Method 1 · The math way', 'An anchor: 180',
       L("In the accompanying figure, four lines intersect at one point. Which expression equals x?",
         pt('stem', 'In the accompanying figure', 'hl', 5.0), voice='calm', pause=0.5),
       L("What makes this question hard? Every angle is given with a letter, not a number. That's the main way exam "
-        "geometry questions are made harder. [short pause] We'll solve it three ways, with the full math, by plugging in "
+        "geometry questions are made harder. [short pause] We'll solve it three ways, the math way, by plugging in "
         "numbers instead of the letters, and with an insight, for those who see it."),
-      L("[short pause] Full math first. We need x, and there are many letters, so we need an anchor, a known total. That's "
+      L("[short pause] The math way first. We need x, and there are many letters, so we need an anchor, a known total. That's "
         "either a full turn, three hundred sixty degrees, or a straight angle, one hundred eighty.",
-        show(g6['line'], 'Full math first')),
+        show(g6['line'], 'The math way first')),
       L("Start with m. The angle right next to m fills the rest of a straight line together with m, so it's one "
         "hundred eighty minus m. In the same way, the angle next to n is one hundred eighty minus n, and the angle next "
         "to k is one hundred eighty minus k.", pt('fig: m', 'Start with m'), show(g6['nm'], 'so it\'s one'),
@@ -1342,7 +1342,7 @@ video('solve-geo30-g006', 'solution', qid='geo30-g006', slides=[
       L("Now look at this slanted line. On one side of it there are exactly four angles, x and the three angles we just "
         "found. Together they make a straight angle, so they add up to one hundred eighty.", show(g6['st'], 'Now look at this slanted line'),
         show(k6a, 'so they add up to one hundred eighty'))),
-    SM('Method 1 · An anchor: 180', 'An anchor: 180',
+    SM('Method 1 · The math way', 'An anchor: 180',
       L("Careful with the brackets. There's a plus in front of each bracket, so we can just drop them. The one hundred "
         "eighty on the left and the one hundred eighty on the right cancel. We keep x on the left, and move minus m, minus n "
         "and minus k to the right side as plus. The two one hundred eighties that are left make three hundred sixty, and "
@@ -1372,7 +1372,7 @@ video('solve-geo30-g006', 'solution', qid='geo30-g006', slides=[
         "choice number four is our answer. One more check: the four choices gave four different values, two hundred "
         "forty, one hundred forty, a negative and sixty. If two choices had given the same value, we'd plug in again with "
         "other numbers.", show(k6d, 'Choice number four, four hundred twenty'), mk('tick', 'choice 4', 'so choice number four is our answer'))),
-    SM('Method 3 · Overlapping angles', 'Overlapping angles',
+    SM('Method 3 · Insight', 'Overlapping angles',
       L("[pause] And the insight. Look at the three angles m, n and k together. m and k go around most of the turn, and n "
         "covers the rest, so together they cover the whole full turn, three hundred sixty degrees. But they overlap. The "
         "part where m and n overlap is exactly x, so x is counted twice.", show(g6o['line'], 'Look at the three angles'),
@@ -1409,14 +1409,14 @@ g7z = GEO('g7z', [
 k7a = IH('k7a', '$x=36°+62°=98°$', size=32)
 k7b = I('k7b', 'Tips pointing left $=$ tips pointing right', size=30)
 video('solve-geo30-g007', 'solution', qid='geo30-g007', slides=[
-    S('Method 1 · A line through the bend',
+    S('Method 1 · The math way: a helper line',
       L("In the accompanying figure, a is parallel to b. What is the value of x?", pt('stem', 'In the accompanying figure', 'hl', 4.0),
         voice='calm', pause=0.5),
       L("The figure looks simple, two parallel lines, and the angles are numbers. So what makes it hard? The line between "
         "a and b is bent, and x is the angle between its two pieces. If one straight line cut both parallel lines, we'd "
         "know what to do, but here it's not clear where to start. [short pause] We'll solve it with a line we add "
         "ourselves, and then with a shortcut, the zig-zag rule.", pt('fig: x', 'x is the angle between its two pieces')),
-      L("[short pause] A line we add to the figure to help us solve it is called an auxiliary line. There are several "
+      L("[short pause] The math way first. A line we add to the figure to help us solve it is called an auxiliary line. There are several "
         "options here. We could extend one of the pieces until it meets the other parallel line, or draw a line "
         "perpendicular to both parallel lines. Those options make triangles, which we'll learn later. If you solved it "
         "that way, that's completely fine. Here we'll use only the rules of lines.", show(g7['line'], 'There are several')),
@@ -1430,8 +1430,8 @@ video('solve-geo30-g007', 'solution', qid='geo30-g007', slides=[
       L("So x is thirty-six plus sixty-two, which is ninety-eight degrees. Choice number two is our answer. Once you add "
         "the line, the question becomes an easy one. The hard part is realizing that a line is needed, and which one.",
         show(k7a, 'So x is thirty-six plus sixty-two'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    S('Method 2 · The zig-zag rule',
-      L("[pause] Now a shortcut for a line that zig-zags between two parallel lines. Look at each marked angle and ask, "
+    S('Method 2 · Understanding: the zig-zag rule',
+      L("[pause] Now a shortcut by understanding, for a line that zig-zags between two parallel lines. Look at each marked angle and ask, "
         "where does its tip, the vertex, point? The thirty-six points left, and the sixty-two points left too. x points "
         "right.", show(g7z['line'], 'Now a shortcut'), show(g7z['lt'], 'The thirty-six points left'), show(g7z['rt'], 'x points right')),
       L("The rule is, the angles that point left add up to the angles that point right. So x is thirty-six plus sixty-two, "
@@ -1473,12 +1473,12 @@ k8a = IH('k8a', '$40°+65°=x+35°$', size=32)
 k8b = IH('k8b', '$x=105°-35°=70°$', size=32)
 k8d = IH('k8d', '$x=40°+30°=70°$', size=32)
 video('solve-q-r26-t30-03', 'solution', qid='q-r26-t30-03', slides=[
-    S('Method 1 · The zig-zag rule',
+    S('Method 1 · Understanding: the zig-zag rule',
       L("In the accompanying figure, a is parallel to b. What is the value of x?", pt('stem', 'In the accompanying figure', 'hl', 4.0),
         voice='calm', pause=0.5),
       L("This time the line between a and b bends twice. [short pause] We'll solve it two ways, with the zig-zag rule, and "
         "then with a parallel line through each bend.", pt('fig: x', 'bends twice')),
-      L("[short pause] The zig-zag rule: the angles whose tips point left add up to the angles whose tips point right. Forty "
+      L("[short pause] First by understanding, with the zig-zag rule. The angles whose tips point left add up to the angles whose tips point right. Forty "
         "points left, and sixty-five points left. x points right, and thirty-five points right.", show(g8z['line'], 'The zig-zag rule'),
         show(g8z['lt'], 'Forty points left'), show(g8z['rt'], 'x points right')),
       L("So forty plus sixty-five equals x plus thirty-five. Forty plus sixty-five is a hundred five. x plus thirty-five is "
@@ -1486,8 +1486,8 @@ video('solve-q-r26-t30-03', 'solution', qid='q-r26-t30-03', slides=[
         show(k8a, 'So forty plus sixty-five equals'), show(k8b, 'so x is a hundred five minus'), mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("Careful, a hundred five, choice number three, adds only the left side. And a hundred forty, choice number four, "
         "adds everything.", mk('cross', 'choice 3', 'adds only the left side'), mk('cross', 'choice 4', 'adds everything'))),
-    S('Method 2 · A line through each bend',
-      L("[pause] Not sure you remember the rule? Draw a parallel line through each bend. That always works. Start at the "
+    S('Method 2 · The math way: helper lines',
+      L("[pause] Now the math way. Not sure you remember the rule? Draw a parallel line through each bend. That always works. Start at the "
         "bottom, at the lower bend, the sixty-five, and draw a line through it, parallel to a and b.",
         show(g8['line'], 'Not sure you remember'), show(g8['aux2'], 'and draw a line through it')),
       L("The new line splits the sixty-five in two. The lower part makes a Z with the thirty-five at line b, so it's "
@@ -1799,6 +1799,12 @@ MV.calm(_types.SimpleNamespace(**globals()), ORDER)     # 2026-10-13 steady high
 _lp = [(v, p) for v in ORDER for p in MV.check_layers(VIDEOS[v])]
 assert not _lp, ('figure layers out of order', _lp)
 
+
+# 2026-10-15 one vocabulary for method names (math_patches/_method_names.py CORE; guide "Method names"): a "Method N · X"
+# title or sidebar outside it stops the run, so a new script uses the vocabulary from its first draft.
+_mn_spec = importlib.util.spec_from_file_location('_method_names_vocab', os.path.join(HERE, '_method_names.py'))
+_mn = importlib.util.module_from_spec(_mn_spec); _mn_spec.loader.exec_module(_mn)
+_mn.check_vocab(VIDEOS)
 
 if __name__ == '__main__':
     _bad = 0

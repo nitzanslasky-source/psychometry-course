@@ -495,6 +495,46 @@ What is new compared with §9:
 - R15 is approved.
 - Topic 51 is recorded by her.
 
+## Method names (one vocabulary) — teacher, 2026-10-15
+
+Teacher: "What happened to naming the methods the same way, so students get a sense of the general thinking we use?"
+Her Hebrew (all three subtitle files + the topic-51 source) names almost every solution with **one small core set**: she
+splits every question into **פתרון מתמטי** (the math way, ~296×) and **פתרון פסיכומטרי באמצעות …** (a psychometric way,
+~200×) and names the psychometric one with a super-method: **הצבת מספרים** (~189×), **הצבת תשובות** (~60×),
+**הערכת סדר גודל** (~71×), plus **הברקה** (an insight, ~86×) and **הבנה** (understanding, ~112×). Topic techniques
+(שיטת הציר, שיטת ה-V, שיטת הריבועים, ספרת האחדות, סימטריה, מינימום-מקסימום…) come **after** the core:
+"פתרון מתמטי באמצעות שיטת הציר" (algebra 17927). She announces the plan first ("נפתור את השאלה בשתי גישות: פתרון
+מתמטי, פתרון פסיכומטרי", ~69×) and opens each method with its name ("נתחיל מהפתרון המתמטי", ~54×; "נעבור לפתרון
+פסיכומטרי באמצעות הצבת מספרים", ~49×; "בואו נפתור בדרך נוספת - בדרך של הברקה").
+
+**Labels.** A method label (the slide title "Method N · X"; in geometry the sidebar of `SM(...)`) is
+`Method N · <core>` or, only when the technique helps, `Method N · <core>: <specific>` (lower-case specific, short).
+`math_patches/_method_names.py` `CORE` holds the list; every `_ai_vis_tNN.py` calls `check_vocab(VIDEOS)`, so a script
+with any other name stops on its first run.
+
+| English (label) | Her Hebrew | When to use it | Spoken start (R13, no "Our first method.") |
+|---|---|---|---|
+| **The math way** | פתרון מתמטי (מלא / סטנדרטי / טכני), הדרך המתמטית / האלגברית / הטריוויאלית / החישובית, בניית משוואה | the school solution: algebra, an equation, a formula, the topic's rules, a full calculation. Usually first (R13). | "Let's start with the math way." / "The math way first." / "Now the math way, with algebra." |
+| **Plugging in numbers** | הצבת מספרים (also הצבה, "נציב 100") | letters (or a free amount: 100 for percents, a ratio) replaced by numbers we choose; R15 | "Now let's plug in numbers." / "Let's plug in x is …" |
+| **Plugging in the answers** | הצבת תשובות | the choices are numbers and the story gives conditions to check; start with the round / convenient one | "Now let's plug in the answers." |
+| **Understanding** | פתרון באמצעות הבנה, שאלת הבנה, פתרון (מתמטי) הבנתי | reasoning about signs, sizes, parity, order, a rule we know, without calculating; most absolute-value / number-line / sign questions | "Now by understanding." / "Let's solve it by understanding." |
+| **Estimation** | הערכת סדר גודל ("חישוב בערך") | rule out choices by the size (or sign) of the answer; π ≈ a bit more than 3; whole-number benchmarks only | "Now let's estimate." / "with an estimate" |
+| **Insight** | הברקה (פתרון פסיכומטרי הברקתי) | an idea that belongs to this one question ("not a method you learn") | "Now the insight." / "with an insight" |
+
+**Specifics** (after the colon, only when they help): two cases, number line, square both sides, prime factors, common
+factor, shortcut formula, tag it, one letter, listing, place values, columns, the arrows, a helper line, the angle sum,
+Pythagoras, the side ratio, subtract areas, partial calculation (her "מתמטית עם חישוב חלקי"), the diagonals →
+under **The math way**; last digit (ספרת האחדות), the extremes (מינימום-מקסימום), symmetry (סימטריה), a ratio (יחסים),
+the zig-zag rule, the overlap rule, even and odd, the median → under **Understanding**; trial and error (ניסוי וטעייה, a
+word-problem technique) → under **Plugging in numbers**; the V method (שיטת ה-V) and the squares method (שיטת הריבועים)
+→ under **The math way** when word problems are written. Two methods of the same core in one video get a specific each
+("Method 1 · The math way: the side ratio", "Method 2 · The math way: Pythagoras").
+
+**Where they are introduced.** Topic 51 (day 6 of the plan) teaches the math way, plugging in the answers, plugging in
+numbers, estimation and insights by these names ("super-methods"). "Understanding" is not one of her topic-51 lessons:
+she uses it from absolute value on ("רוב שאלות ערך מוחלט בבחינה הן שאלות הבנה") and in Algebraic Understanding (t20).
+Topics 30-33 come before topic 51 in the plan, so their first uses say the name with a short why.
+
 ## SCRIPT-WRITING CHECKLIST (R1-R36)
 
 Check every AI script line by line. The numbers in brackets are evidence from §1-9.
@@ -525,7 +565,8 @@ Check every AI script line by line. The numbers in brackets are evidence from §
   3. a first reaction from the stem or the choices ("All the answers are one term, so…")
   4. "We'll solve this two ways."
   - The standard / algebra way comes first, unless you say why not.
-  - No "Our first method / Our second method / And our third method" lines (teacher, 2026-10-11: she skips them, and the on-screen method title already names the method; "just make sure it's flowing"). Announce the methods once, at the start ("We'll solve this two ways, …"). At each switch, use a natural spoken transition in her style: "Let's start with the divisor pairs.", "Now let's try plugging in the answers.", "Another way is to think about the extremes.", "And there's a short formula too." Never an abrupt jump into the next method.
+  - No "Our first method / Our second method / And our third method" lines (teacher, 2026-10-11: she skips them, and the on-screen method title already names the method; "just make sure it's flowing"). Announce the methods once, at the start ("We'll solve this two ways, the math way, and then by plugging in numbers."). At each switch, use a natural spoken transition in her style: "Let's start with the math way.", "Now let's plug in the answers.", "Now by understanding.", "And there's a short formula too." Never an abrupt jump into the next method.
+  - **Name every method with the ONE vocabulary** (teacher, 2026-10-15; section "Method names (one vocabulary)" above): the title / sidebar is `Method N · <core>[: specific]` and the method's first spoken line says the core word (the math way, plugging in numbers, plugging in the answers, understanding, estimation / an estimate, the insight). Dropping "Our first method." must not drop the name.
 - **R14. The answer line is the value plus the number, said calmly:** "So x is 6, choice number two is our answer." (R34: always "choice number N".) Never "choice two", and never a build-up pause before it. (She dropped the number in 85 of 154 takes. The AI must not.) Checks go **inside** the step ("let's check with a = 3"), not in a list after the answer.
 - **R15. Plugging in, every time:**
   1. Say which number, where it goes (the whole, the start), and **why**, before using it. Use 100 for percents.

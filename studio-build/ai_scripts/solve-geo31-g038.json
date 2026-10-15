@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "We know only the area of the whole triangle and how B C is split. [short pause] We'll solve it two ways, with algebra, and then with an insight about area ratios.",
+    "say": "We know only the area of the whole triangle and how B C is split. [short pause] We'll solve it two ways, the math way, with algebra, and then with an insight about area ratios.",
     "at": [
      "area of the"
     ]
