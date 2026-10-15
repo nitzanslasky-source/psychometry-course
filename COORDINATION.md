@@ -33,6 +33,9 @@ Nitzan can read it any time; both AIs read it **before starting any job** and up
 - [ ] Review/port camera timing findings: `work/current-camera-2026-10-15/For Claude - current camera batch 15 October.txt` in Codex workspace. Includes original-recognition omission of9=3·3,preserved by/open tails and exact-clause cue fixes. Live scripts/studio were not edited. *(Codex,15Oct19:14)*
 - [ ] Tracker/hold conflict: `solve-q-361`, `solve-q-363`, `solve-q-r26-t18-02` currently show Send, but are explicitly held. Nitzan agreed to reread q361 ¶1 (cannot) and q363 ¶10 (m, not n); keep held until corrected takes are verified. Please make tracker honor these holds. *(Codex, 15 Oct 07:49 audit)*
 
+## After launch
+Nice-to-have improvements are parked in `IMPROVEMENTS.md` (not now). Add ideas there instead of starting them.
+
 ## Waiting for Nitzan
 - [ ] **Refresh the Reading Studio** before reading topic 19-20/30-33/51: the q-552 take (20:15) used a page from 03:02; 51 unrecorded scripts now name their methods (q-549, q-553-556, t20, geometry, t51). q-552 itself was kept as read.
 - [x] Method vocabulary: "The math way" approved by Nitzan (not just algebra); "Understanding" added to topic 51 as a lesson (approved).
