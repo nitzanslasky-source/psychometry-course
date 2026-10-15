@@ -124,6 +124,16 @@ HERSHEY = {
 }
 
 INK = '#d62d48'          # the studio pen's red (the teacher's pen colour in her takes)
+# 2026-10-15 teacher decision: the pen colour follows the subject - ALGEBRA (topics 1-20) keeps the red pen; every other
+# topic (word problems 21-29, geometry 30-38, 51 psychometric thinking, 52 charts) writes in dark blue. Red keeps its
+# other meanings everywhere (crosses on wrong choices, wrong paths, traps). Studio side: hwInk(v) below.
+INK_BLUE = '#1e3a8a'
+
+
+def ink_for_topic(topic):
+    try: t = int(topic)
+    except (TypeError, ValueError): return INK_BLUE
+    return INK if 1 <= t <= 20 else INK_BLUE
 UNIT = 72 / 21           # Hershey units -> em-100 px (cap height 21 units = 72)
 OPS = set('+=-−×÷<>')
 
@@ -353,16 +363,22 @@ def item(text, size=40, x=None, y=None, w=None, **k):
 
 # ------------------------------------------------------------------------------------------------ studio (renderer)
 JS = r"""
-/* ---- hand-written items (studio_handwrite.py): single-line pen strokes, the teacher's pen red ---- */
+/* ---- hand-written items (studio_handwrite.py): single-line pen strokes in the subject's pen colour ---- */
+/* 2026-10-15 teacher: algebra (topics 1-20) red pen, every other topic dark blue; crosses stay red (red = wrong).
+   hybridSvg sets window.__hwInk for the video being drawn; auto-narrate marks use hwInk(v). Her live pen is separate. */
+const HW_INK_RED='#d62d48',HW_INK_BLUE='#1e3a8a';
+function hwInk(v){const t=+(v&&v.topic);return t>=1&&t<=20?HW_INK_RED:HW_INK_BLUE}
 function hwItem(it,x,y,w){const H=it.hw,W=it.w||w;let k=(it.size||46)/100;if(H.w*k>W)k=W/H.w;
  const sw=Math.max(3,Math.min(5.2,(it.size||46)*.1)).toFixed(1),P=H.parts||{},A={},B={};for(const [n,[a,b]] of Object.entries(P)){(A[a]=A[a]||[]).push(n);(B[b]=B[b]||[]).push(n)}
- let s=`<g fill="none" stroke="${it.color||'#d62d48'}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" data-hw="${k.toFixed(4)}">`;
+ let s=`<g fill="none" stroke="${it.color||window.__hwInk||HW_INK_RED}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" data-hw="${k.toFixed(4)}">`;
  H.s.forEach((p,i)=>{for(const n of B[i]||[])s+=`<g class="hlb-${n}"/>`;for(const n of A[i]||[])s+=`<g class="hla-${n}"/>`;let d='';for(let j=0;j<p.length;j+=2)d+=(j?'L':'M')+(x+p[j]*k).toFixed(1)+' '+(y+p[j+1]*k).toFixed(1);if(p.length===2)d+='l.4 .4';s+=`<path d="${d}"/>`});
  for(const n of B[H.s.length]||[])s+=`<g class="hlb-${n}"/>`;
  return {svg:s+'</g>',h:H.h*k}}
 """
 
 REPL = [
+    # 2026-10-15: the pen colour of the video being drawn (hwInk: algebra red, other topics dark blue)
+    ("function hybridSvg(v,bi,step){const b=v.beats[bi];", "function hybridSvg(v,bi,step){const b=v.beats[bi];window.__hwInk=hwInk(v);"),
     ("function hyItem(it,x,y,w){const INK=PAL.ink;", "function hyItem(it,x,y,w){const INK=PAL.ink;"
      # 2026-10-11 layered figures (a number line BUILT step by step at the spoken words): an item with over:1 is drawn at
      # the y of the last item before it and takes no room (h 0; its gap is 0), so its layers stack exactly on the base;

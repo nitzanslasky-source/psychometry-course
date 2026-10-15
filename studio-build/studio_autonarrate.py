@@ -141,7 +141,8 @@ function anOverlay(){const bd=document.getElementById('board');if(!bd)return nul
 function anLoop(){if(AN.raf)return;const step=()=>{AN.raf=0;const c=anOverlay();if(c){const g=c.getContext('2d');g.setTransform(1,0,0,1,0,0);g.clearRect(0,0,c.width,c.height);g.translate(c._L.ox,c._L.oy);anPaint(g,c._L.k)}
   if(AN.fx.length)AN.raf=requestAnimationFrame(step)};AN.raf=requestAnimationFrame(step)}
 
-/* ---- marks drawn with the pen (same ink as the teacher's): circle / cross out / tick / underline ---- */
+/* ---- marks drawn with the pen (the subject's pen colour, hwInk: algebra red, other topics dark blue; a CROSS on a wrong
+   choice is always red - red means wrong): circle / cross out / tick / underline ---- */
 function anMarkOf(l){if(l.mark&&l.target)return {kind:String(l.mark).toLowerCase(),targets:[].concat(l.target),hand:!!l.hand};
  const t=String(l.draw||'').trim().replace(/[.\s]+$/,'');const m=t.match(/^(circle|cross out|cross off|cross|strike out|strike through|tick|check|underline)\s+(?:the\s+)?(?:choices?|answers?|options?)\s+((?:\d)(?:\s*(?:,|and|&)\s*\d)*)$/i);
  if(!m)return null;const w=m[1].toLowerCase(),kind=w.startsWith('circle')?'circle':/^(cross|strike)/.test(w)?'cross':/^(tick|check)/.test(w)?'tick':'underline';
@@ -210,7 +211,7 @@ function anWritePrep(c,v,bi){const root=anRoot(boardSvg(v,bi,c.ap.step)),g=root?
   if(prev)tot+=7+.3*Math.hypot(pts[0][0]-prev[0],pts[0][1]-prev[1]);   /* pen lifted: moves to the next stroke */
   const s={pts,cum,t0:tot};tot+=cum[cum.length-1]+10;s.t1=tot;S.push(s);prev=pts[pts.length-1]}
  for(const s of S){s.t0/=tot||1;s.t1/=tot||1}
- c.W={S,color:ink.getAttribute('stroke')||'#d62d48',width:+ink.getAttribute('stroke-width')||4};
+ c.W={S,color:ink.getAttribute('stroke')||hwInk(v),width:+ink.getAttribute('stroke-width')||4};
  if(c.chunks){const fr=i=>i<S.length?S[i].t0:1;c.W.ch=c.chunks.map(x=>({a:x.a,b:Math.max(x.b,x.a+.05),f0:fr(x.s0),f1:fr(x.s1)}))}}
 function anWriteFire(e){const f={k:'w',t0:performance.now(),dur:e.dur,W:e.W};AN.fx.push(f);anLoop();return f}
 function anWritePaint(g,f,now){const el=(now-f.t0)/1000;let T=Math.max(0,Math.min(1,el/f.dur));
@@ -222,9 +223,9 @@ function anWritePaint(g,f,now){const el=(now-f.t0)/1000;let T=Math.max(0,Math.mi
   for(let i=1;i<P.length;i++){if(s.cum[i]<=L){g.lineTo(P[i][0],P[i][1]);continue}const seg=s.cum[i]-s.cum[i-1]||1,k=(L-s.cum[i-1])/seg;g.lineTo(P[i-1][0]+(P[i][0]-P[i-1][0])*k,P[i-1][1]+(P[i][1]-P[i-1][1])*k);break}}
  g.stroke();g.restore()}
 const anSleep=ms=>new Promise(r=>setTimeout(r,ms));
-async function anInk(pts,sec,wd){const k=cutInkKey(),list=state.ink[k]||(state.ink[k]=[]),s={color:'#d62d48',width:wd||5,points:[pts[0]]};list.push(s);const t0=performance.now();
+async function anInk(pts,sec,wd,col){const k=cutInkKey(),list=state.ink[k]||(state.ink[k]=[]),s={color:col||'#d62d48',width:wd||5,points:[pts[0]]};list.push(s);const t0=performance.now();
  for(;;){const f=Math.min(1,(performance.now()-t0)/(sec*1000));s.points=pts.slice(0,Math.max(1,Math.round(f*pts.length)));pen.sync();if(f>=1)break;await anSleep(16)}}
-async function anMarkDo(mk,v,bi,boxes){for(let i=0;i<mk.targets.length;i++){const box=boxes?.[i]||(()=>{const r=anResolve(mk.targets[i],v,bi);if(r.err)throw Error(r.err);return r.box})();if(mk.hand){for(const st of anMarkHand(mk.kind,box))await anInk(st.pts,st.sec,4.2)}else await anInk(anMarkPts(mk.kind,box),mk.kind==='circle'?.6:.35);await anSleep(150)}}
+async function anMarkDo(mk,v,bi,boxes){const col=mk.kind==='cross'?'#d62d48':hwInk(v);for(let i=0;i<mk.targets.length;i++){const box=boxes?.[i]||(()=>{const r=anResolve(mk.targets[i],v,bi);if(r.err)throw Error(r.err);return r.box})();if(mk.hand){for(const st of anMarkHand(mk.kind,box))await anInk(st.pts,st.sec,4.2,col)}else await anInk(anMarkPts(mk.kind,box),mk.kind==='circle'?.6:.35,undefined,col);await anSleep(150)}}
 
 /* ---- the plan: check everything before recording anything ---- */
 function anPlan(v,man){const errs=[],W=[];let say=0;

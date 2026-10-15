@@ -19,9 +19,10 @@ Nitzan can read it any time; both AIs read it **before starting any job** and up
 ## Doing (claimed right now)
 | Who | Since | Job | Touches |
 |---|---|---|---|
-| Claude | 15 Oct | Pen colour: algebra 1–20 red, others dark blue | studio-build: studio_handwrite.py, reading_to_video, auto-narrate, render_ledger.json |
+| Codex | 15 Oct 21:14 | Batch A independent review: unrecorded topics 15–20; questions, scripts and step frames; findings only | reviews/batch-A.md; read-only studio/scripts/takes; no renders or ledger edits |
 
 ## For Codex (Claude → Codex)
+- [ ] Pen colour for non-algebra topics is now dark blue (#1e3a8a; algebra 1–20 stays red #d62d48; crosses on wrong choices stay red); re-render the affected videos from the current build. (No non-algebra video is recorded/rendered yet, so nothing is queued today.) *(Claude, 15 Oct)*
 - [ ] **REVIEW every unrecorded lesson before she records it (Nitzan's request, 15 Oct).** Brief: `reviews/README-for-Codex.md`. Batches A (t15–20) → B (t30–31) → C (t32–33) → D (t51). Write findings to `reviews/batch-X.md`; don't edit sources; post "For Claude: batch X review ready" here. *(Claude, 15 Oct)*
 - [ ] **Method-name vocabulary (15 Oct 20:30): 31 recorded videos went Done → Send** because their method titles / sidebars / board headers were renamed (visual only, no spoken change). `video_status.py --list send` has them; render from the current sources. *(Claude, 15 Oct)*
 - [ ] Render the **"Send to Codex"** list from the CURRENT sources (re-sync frozen copies first). Steps: `~/Downloads/For-Codex-START-HERE.txt`. Register each with `video_status.py --rendered`. *(Claude, 15 Oct)*
@@ -48,6 +49,7 @@ Nice-to-have improvements are parked in `IMPROVEMENTS.md` (not now). Add ideas t
 ## Done (recent)
 | Who | When | Job | Result |
 |---|---|---|---|
+| Claude | 15 Oct | Pen colour by subject (teacher 15 Oct): algebra 1–20 red #d62d48, all other topics dark blue #1e3a8a (10.4:1 on white); pen marks follow it, crosses stay red | `studio_handwrite.py` (hwInk, hybridSvg sets window.__hwInk; hw items + auto-lines), `studio_autonarrate.py` (marks/WRITE); her live pen untouched. Build OK, math_check 30–33/51/13 0/0/0, svgcheck 0 broken, video_status: no rendered non-algebra videos, ledger unchanged. No commit. |
 | Claude | 15 Oct | Topic 51 "Understanding" camera lesson (pt51-understanding, Reading Studio #323); q01 names it; t51 summary lists 6 methods | build/export/svgcheck OK; Reading Studio + Video-Status rebuilt; ready to record |
 | Claude | 15 Oct 20:30 | One method-name vocabulary (her Hebrew core: The math way / Plugging in numbers / Plugging in the answers / Understanding / Estimation / Insight, `Method N · <core>[: specific]`) | Titles + sidebars in all prepared videos (t13-20, 30-33, 51); spoken method names in 51 unrecorded scripts; guide table + R13; `_method_names.CORE` + `check_vocab` in every spec; overlay headers reconciled. Checks: regen = ai_scripts, ai_check no new fails, math_check 0/0/0, svgcheck 0, Reading Studio re-read list unchanged. No commit. |
 | Codex | 15Oct19:14 | Current-source camera batch5 | Absolute Value1–3and Primes1/3published and registered;21.5min;face top-right,sync≤1.6ms;full decode/handwriting/frame checks. Prior Ready copies archived. Outputs/current-camera-2026-10-15;receipt work/current-camera-2026-10-15/finished.json. Remaining send queue not rendered. |
