@@ -111,13 +111,27 @@
     ]
    },
    {
-    "say": "Another example, two hundred twenty. Its digit sum is two plus two plus zero, which is four. Four divided by three leaves one, so two hundred twenty divided by three leaves one. This works only for three and nine. For four or seven, the digit sum tells us nothing about the remainder. [pause] I'll see you in the next part.",
+    "say": "Another example, two hundred twenty. Its digit sum is two plus two plus zero, which is four. Four divided by three leaves one, so two hundred twenty divided by three leaves one. This works only for three and nine. For four or seven, the digit sum tells us nothing about the remainder.",
     "at": [
      "Another example, two",
      "Its digit sum is two plus two",
      "plus two plus",
      "Four divided by three leaves one",
      "one, so two"
+    ]
+   },
+   {
+    "say": "Why does the digit sum work? Take forty-seven, which is four tens and seven. Every ten is nine plus one. So forty-seven is four nines, plus four, plus seven. The nines divide by nine, and by three too, so only four plus seven decides what's left. A hundred is ninety-nine plus one, so bigger numbers work the same way. [pause] I'll see you in the next part.",
+    "at": [
+     "Take forty-seven",
+     "tens and seven",
+     "Every ten is nine plus one",
+     "one. So forty-seven",
+     "four nines, plus four",
+     "The nines divide by nine",
+     "and by three",
+     "A hundred is ninety-nine",
+     "one, so bigger"
     ]
    }
   ]

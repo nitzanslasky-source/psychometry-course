@@ -15,10 +15,12 @@
     ]
    },
    {
-    "say": "The Z holds two angles, one in each corner. The angle under line a and the angle above line b. They are equal. If this one is forty-eight, that one is forty-eight too.",
+    "say": "The Z holds two angles, one in each corner. The angle under line a and the angle above line b. They are equal. If this one is forty-eight, that one is forty-eight too. Why are they equal? Both corners of the Z are sharp, so both are small angles. And we just saw that all the small angles are equal. The Z just helps us find the matching pair fast.",
     "at": [
      "The Z holds two angles",
-     "one in each"
+     "one in each",
+     "Both corners of the Z",
+     "are sharp, so"
     ]
    },
    {
@@ -49,8 +51,10 @@
     ]
    },
    {
-    "say": "Their sum is always a hundred eighty. Usually one is small and one is large, so they're not equal. Only when the transversal is perpendicular to the lines are they both ninety. So if the small one is sixty-two, the large one is a hundred eighteen.",
+    "say": "Their sum is always a hundred eighty. Why? Inside a U, one angle is a small angle and the other is a large one, and small plus large is a hundred eighty. So usually they're not equal. Only when the transversal is perpendicular to the lines are they both ninety. So if the small one is sixty-two, the large one is a hundred eighteen.",
     "at": [
+     "Inside a U, one angle",
+     "is a small",
      "if the small one",
      "the large one is",
      "a hundred eighteen"

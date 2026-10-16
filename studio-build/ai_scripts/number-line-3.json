@@ -63,6 +63,13 @@
     ]
    },
    {
+    "say": "Why does it work? We change one factor at a time. Four times six is bigger than three times six, because four beats three. And three times six is bigger than three times five, because six beats five. So four times six beats three times five, one step at a time.",
+    "at": [
+     "because four beats three",
+     "And three times"
+    ]
+   },
+   {
     "say": "But if each side wins one match, the rule doesn't decide. Two times nine against three times five. Three beats two, but nine beats five. Here two times nine, eighteen, happens to be bigger, but the rule alone can't tell us that.",
     "at": [
      "if each side wins one match",

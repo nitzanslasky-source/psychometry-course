@@ -45,3 +45,10 @@ A first (she records topics 15–20 next), then B, C, D. Big batches are fine.
 - **Explains, doesn't speak headlines:** flag telegraphic fragments ("Two cases.", "Step one: the signs.", "Same idea.",
   "Done."), label-like openers, and bare results with no reason. Every step = what we do + why + what it gives.
 - Mark these as **should** (or **must** if a weak student would lose the thread).
+
+## ADDED 16 Oct (Nitzan): the Teaching check (TC) — Claude runs it, not part of your review
+- After Claude fixes each of your batches, Claude runs **W20 "Teaching check"** (`TEACHING_STYLE_GUIDE.md`) on that batch: at each
+  important, reusable concept, does the script TEACH it (general statement, brief why, "when you see … think …", one extra case
+  if new) or only use it for this answer? Only strong additions; results in `reviews/teaching-check-<batch>.md`.
+- Done for A and B (`teaching-check-A-B.md`). C and D get it after their fixes. You don't need to check this yourself, but if
+  you notice a key idea that is only used, never taught, a normal **should** finding is welcome.

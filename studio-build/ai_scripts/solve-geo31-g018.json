@@ -82,7 +82,7 @@
     ]
    },
    {
-    "say": "So the small triangle is a quarter of the big one, and the quadrilateral is the other three quarters. Three quarters of a hundred root three over four is seventy-five root three over four. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "say": "So the small triangle is a quarter of the big one, and the quadrilateral is the other three quarters. Three quarters of a hundred root three over four is seventy-five root three over four. Choice number two.",
     "at": [
      "So the small triangle",
      "is a quarter of the big one",
@@ -90,7 +90,22 @@
      "the other three quarters",
      "Three quarters of a hundred",
      "root three over",
-     "Choice number two. "
+     "Choice number two."
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] This idea works for every shape, not only for triangles. When every length is multiplied by some number, the area is multiplied by that number squared. Why? Area is a length times a length, so the number comes in twice. For example, a square with side three has an area of nine. Double the side to six, and the area is thirty-six, four times as much. So when you see the same shape in two sizes, think: the side ratio, squared. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "every shape, not",
+     "When every length is multiplied",
+     "by some number",
+     "a square with side three",
+     "has an area",
+     "Double the side to six",
+     "four times as much",
+     "when you see"
     ]
    }
   ]

@@ -798,6 +798,9 @@ G1N = GEO('g1n', [
     ('in', [('arc', _ZP[0], _ZP[1], 40, 180, 228, 'small', '48°', 70), ('arc', _ZQ[0], _ZQ[1], 40, 0, 48, 'small', '48°', 70)]),
 ], vb='0 40 640 270', w=580, col=0, title='The Z: the two angles in its corners are equal')
 _Z2P = (260, 100); _Z2Q = gcross((0, 240), (640, 240), _Z2P, gpt(_Z2P[0], _Z2P[1], 100, 312))
+# 2026-10-16 Teaching check (W20): WHY the Z and the U work (small = small, small + large = 180)
+G1N_t = I('g1nt', 'Z: $\\ $both corners are small angles $\\to$ equal', size=28, col=0)
+G1P_tw = I('g1ptw', 'U: $\\ $one small $+$ one large $=180°$', size=28, col=0)
 G1N2 = GEO('g1n2', [
     ('line', [('seg', 40, 100, 600, 100), ('seg', 40, 240, 600, 240), _g1line(_Z2P[0], _Z2P[1], 132, 0.1, 90),
               ('seg', _Z2P[0], _Z2P[1], _Z2Q[0], _Z2Q[1]), _g1line(_Z2Q[0], _Z2Q[1], 132, 90, 0.1),
@@ -813,6 +816,7 @@ G1P = GEO('g1p', [
     ('s', [('arc', _UQ[0], _UQ[1], 36, 0, 62, 'small', '62°', 64)]),
     ('l', [('arc', _UP[0], _UP[1], 36, 242, 360, 'large', '118°', 66)]),
 ], vb='0 40 640 270', w=760, col=0, title='The U: the two angles inside it add up to 180 degrees')
+ANCH(G1P, 'g1p')    # 2026-10-16: the U key line is written between the base and the angle layers
 G1P_t = IH('g1pt', '$62°+118°=180°$', size=30, col=0)
 G1P_t2 = IH('g1pt2', '$75°\\to105°$', size=30, col=0)
 # ---- slide: parallel or not? (three proofs and the trap)
@@ -972,7 +976,9 @@ video('geo-001', 'lesson', slides=[
         "transversal, and along line b.", show(G1N['line'], 'whenever you see two parallel lines'),
         show(G1N['z'], 'look for this Z')),
       L("The Z holds two angles, one in each corner. The angle under line a and the angle above line b. They are equal. "
-        "If this one is forty-eight, that one is forty-eight too.", show(G1N['in'], 'The Z holds two angles')),
+        "If this one is forty-eight, that one is forty-eight too. Why are they equal? Both corners of the Z are sharp, so "
+        "both are small angles. And we just saw that all the small angles are equal. The Z just helps us find the "
+        "matching pair fast.", show(G1N['in'], 'The Z holds two angles'), show(G1N_t, 'Both corners of the Z')),
       L("The Z can also be turned the other way, and it works the same. Here too, forty-eight and forty-eight.",
         show(G1N2['line'], 'turned the other way'), show(G1N2['z'], 'it works the same'), show(G1N2['in'], 'Here too')),
       L("In school these angles have names, but we don't need them. Mark the Z, find the two equal angles inside it, and "
@@ -981,9 +987,10 @@ video('geo-001', 'lesson', slides=[
     S('The U',
       L("One more shape, the U. Here the two angles sit inside a U, on the same side of the transversal, between the two "
         "lines.", show(G1P['line'], 'One more shape'), show(G1P['u'], 'sit inside a U')),
-      L("Their sum is always a hundred eighty. Usually one is small and one is large, so they're not equal. Only when the "
+      L("Their sum is always a hundred eighty. Why? Inside a U, one angle is a small angle and the other is a large "
+        "one, and small plus large is a hundred eighty. So usually they're not equal. Only when the "
         "transversal is perpendicular to the lines are they both ninety. So if the small one is sixty-two, the large one is "
-        "a hundred eighteen.", show(G1P['s'], 'if the small one'), show(G1P['l'], 'the large one is'),
+        "a hundred eighteen.", show(G1P_tw, 'Inside a U, one angle'), show(G1P['s'], 'if the small one'), show(G1P['l'], 'the large one is'),
         show(G1P_t, 'a hundred eighteen')),
       L("Another example: seventy-five inside a U goes with a hundred five. So the Z means equal, and the U means they add "
         "up to a hundred eighty.", show(G1P_t2, 'Another example'))),
@@ -1195,6 +1202,21 @@ s2 = GEO('s2', [
     ('eq1', [('txt', 320, 325, 'AC + BD = AD + BC', 'ink', 22)]),
     ('eq2', [('txt', 320, 360, '11 + 14 = 20 + BC  →  BC = 5', 'ink', 22)]),
 ], vb='95 100 450 275', w=520, title='AC and BD overlap on BC')
+# 2026-10-16 Teaching check (W20): the overlap rule as a reusable idea (angles in g006, areas, groups of people later):
+# a new slide with a clean generic picture - strips of 6 and 7 over a line of 10, the overlap 3 tinted - and the key line.
+_u = lambda v: 60 + 52 * v
+s3 = GEO('s3', [
+    ('line', [('seg', _u(0), 120, _u(10), 120, 'ink', 3), ('seg', _u(0), 110, _u(0), 130, 'ink', 3), ('seg', _u(10), 110, _u(10), 130, 'ink', 3),
+              ('txt', _u(5), 150, 'whole = 10', 'ink', 22),
+              ('seg', _u(0), 78, _u(6), 78, 'teal', 6), ('txt', _u(3), 60, '6', 'teal', 24)]),
+    ('p2', [('seg', _u(4), 186, _u(10), 186, 'orange', 6), ('txt', _u(7), 214, '7', 'orange', 24)]),
+    ('ov', [('tint', [(_u(4), 68), (_u(6), 68), (_u(6), 196), (_u(4), 196)], 'red'), ('txt', _u(5), 30, 'overlap', 'red', 22)]),
+], vb='30 10 580 220', w=560, col=0, title='Two strips overlap on a line of 10')
+for _t in s3.values(): _t['_x'] = 410; _t['_y'] = 250
+k2r = I('k2r', 'Overlap rule: $\\ $piece $+$ piece $=$ whole $+$ overlap', size=30, col=0)
+k2r['_x'] = 410; k2r['_y'] = 180
+k2e = IH('k2e', '$6+7=13,\\quad 13-10=3$', size=32, col=0)
+k2e['_x'] = 410; k2e['_y'] = 480
 video('solve-q-r26-t30-02', 'solution', qid='q-r26-t30-02', slides=[
     S('Step by step',
       L("Points A, B, C and D lie on a line in this order, as shown in the accompanying figure. Given: A C is eleven, B D is "
@@ -1218,9 +1240,19 @@ video('solve-q-r26-t30-02', 'solution', qid='q-r26-t30-02', slides=[
       L("Eleven plus fourteen is twenty-five, and the whole line is twenty. So twenty-five is twenty plus B C, and B C is "
         "five. Choice number three again.", show(s2['eq2'], 'Eleven plus fourteen'), mk('tick', 'choice 3', 'Choice number three again')),
       L("Careful with the other choices. Six, choice number two, is A B, the wrong piece. And twenty-five, choice number "
-        "four, is A C plus B D, with B C counted twice. [pause] Okay. I'll see you in the next question.",
+        "four, is A C plus B D, with B C counted twice.",
         mk('cross', 'choice 2', 'Six, choice number two'), mk('cross', 'choice 4', 'And twenty-five, choice number four')), sb='Method 2 · Understanding: the overlap rule'),
+    S('The overlap rule, in general',
+      L("[pause] This overlap rule comes back again and again, with angles, areas and groups of people. When two pieces "
+        "cover a whole and overlap, the two pieces together are the whole, plus the overlap once more. Why? The overlap "
+        "belongs to both pieces, so it's counted twice. For example, strips of six and seven cover a line of ten. Six plus "
+        "seven is thirteen. The whole is ten, so the overlap is thirteen minus ten, which is three. So when you see two pieces that overlap, "
+        "think: the whole, plus the overlap. [pause] Okay. I'll see you in the next question.",
+        show(k2r, 'When two pieces'), show(s3['line'], 'For example, strips'), show(s3['p2'], 'and seven cover'),
+        show(s3['ov'], 'Six plus seven is thirteen'), show(k2e, 'the overlap is thirteen minus ten'),
+        pt('k2r', 'think: the whole')), sb='The overlap rule, in general'),
 ])
+NOFIG30.add(('solve-q-r26-t30-02', 2))    # 2026-10-16 TC: the general slide has our own picture, not the question figure
 
 # ---- placement (this fragment's question videos): the question figure on the left (figw 0.56, as in the course's
 # geometry videos), our board on the right, x = 1040, explicit y (the right column starts below the question text).
@@ -1458,7 +1490,8 @@ video('solve-geo30-g006', 'solution', qid='geo30-g006', slides=[
         "part where m and n overlap is exactly x, so x is counted twice.", show(g6o['line'], 'Look at the three angles'),
         show(g6o['m'], 'm and k go around'), show(g6o['k'], 'most of the turn'), show(g6o['n'], 'and n covers the rest'),
         show(g6o['x'], 'is exactly x')),
-      L("So m plus n plus k is three hundred sixty plus x. Move the three hundred sixty to the other side, and x equals m "
+      L("It's the overlap rule from the segments question again. The pieces together are the whole turn, plus the "
+        "overlap once more. So m plus n plus k is three hundred sixty plus x. Move the three hundred sixty to the other side, and x equals m "
         "plus n plus k minus three hundred sixty. Choice number four. [pause] Okay. I'll see you in the next question.", show(k6e, 'So m plus n plus k'), mk('tick', 'choice 4', 'minus three hundred sixty. Choice number four'))),
 ])
 

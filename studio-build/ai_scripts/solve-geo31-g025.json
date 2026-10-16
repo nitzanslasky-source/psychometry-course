@@ -92,9 +92,23 @@
     ]
    },
    {
-    "say": "Without the triples, we'd have to square numbers like thirty-nine and forty-eight. Noticing the triples saved all of that. [pause] Okay. I'll see you in the next question.",
+    "say": "Without the triples, we'd have to square numbers like thirty-nine and forty-eight. Noticing the triples saved all of that.",
     "at": [
      "Without the triples"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] So how do these triples jump out? Look for one number that divides both sides you know. Take it out, and see what's left. If the legs leave three and four, or a leg and the hypotenuse leave five and thirteen, it's a triple. For example, legs of twenty-four and thirty-two. Both divide by eight, and what's left is three and four. So the hypotenuse is five times eight, which is forty. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "triples jump out",
+     "Look for one number",
+     "divides both sides",
+     "legs of twenty-four",
+     "Both divide by",
+     "So the hypotenuse is five times eight",
+     "times eight, which"
     ]
    }
   ]

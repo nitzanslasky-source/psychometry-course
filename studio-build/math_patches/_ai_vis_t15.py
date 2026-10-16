@@ -569,6 +569,12 @@ dvd3c = I('dvd3c', '$14=3\\cdot4+2$', size=30, col=1, hand='14 = 3·4 + 2')
 dvd3d = I('dvd3d', '$5{,}432\\div3$: $\\ $remainder $2$', size=30, col=1, hand='5432 ÷ 3 :   remainder 2')
 dvd4 = I('dvd4', '$220$: $\\ 2+2+0=4$', size=30, col=1, hand='220 :   2 + 2 + 0 = 4')
 dvd4b = I('dvd4b', '$4\\div3$: $\\ $remainder $1$', size=30, col=1, hand='4 ÷ 3 :   remainder 1')
+# 2026-10-16 Teaching check (W20): WHY the digit sum works (ten = nine + one), so the rule and the remainder are one idea
+dvw0 = I('dvw0', '$10=9+1$', size=30, hand='10 = 9 + 1')
+dvw1 = I('dvw1', '$47=4\\cdot10+7$', size=30, hand='47 = 4·10 + 7')
+dvw2 = I('dvw2', '$47=4\\cdot9+4+7$', size=30, hand='47 = 4·9 + 4 + 7')
+dvw3 = I('dvw3', 'The nines drop out $\\to$ only the digit sum decides', size=28)
+dvw4 = I('dvw4', '$100=99+1$', size=30, hand='100 = 99 + 1')
 dvk0 = I('dvk0', '$7=4\\cdot1+3$', size=30, col=1, hand='7 = 4·1 + 3')
 dvk0b = I('dvk0b', '$11=4\\cdot2+3$', size=30, col=1, hand='11 = 4·2 + 3')
 dvk1 = I('dvk1', 'Leaves $3$ by $4$: $\\ 4k+3$, $\\ k$ whole', size=30)
@@ -739,7 +745,12 @@ video('divisibility', 'lesson', slides=[
       L("Another example, two hundred twenty. Its digit sum is two plus two plus zero, which is four. Four divided by three "
         "leaves one, so two hundred twenty divided by three leaves one. This works only for three and nine. For four or "
         "seven, the digit sum tells us nothing about the remainder.", show(dvd4, 'Its digit sum is two plus two'),
-        show(dvd4b, 'Four divided by three leaves one'))),
+        show(dvd4b, 'Four divided by three leaves one')),
+      L("Why does the digit sum work? Take forty-seven, which is four tens and seven. Every ten is nine plus one. So "
+        "forty-seven is four nines, plus four, plus seven. The nines divide by nine, and by three too, so only four plus "
+        "seven decides what's left. A hundred is ninety-nine plus one, so bigger numbers work the same way.",
+        show(dvw1, 'Take forty-seven'), show(dvw0, 'Every ten is nine plus one'), show(dvw2, 'four nines, plus four'),
+        show(dvw3, 'The nines divide by nine'), show(dvw4, 'A hundred is ninety-nine'))),
     S('Writing it with a letter',
       L("When a number leaves a known remainder, we can write it with a letter. Take numbers that leave three when divided "
         "by four. Seven is one four plus three. Eleven is two fours plus three. So each one is some whole fours, plus three. "

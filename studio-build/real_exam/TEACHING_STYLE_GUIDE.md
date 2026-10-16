@@ -1122,7 +1122,7 @@ Marks per sentence, located from the point where the failed attempt broke off (9
   - Questions: "Choice number N is our answer, and I'll see you in the next question." She said "next lesson" by mistake 5 times.
   - Lessons: "Take a moment to memorize this … and I'll see you in the next video."
 
-### WRITING RULES for scripts she will read (topic 21 onward): W1-W19
+### WRITING RULES for scripts she will read (topic 21 onward): W1-W20
 These add to R1-R36 and the Codex review standard. Where they differ from the AI-voice rules, these apply to **teacher-read** scripts.
 
 1. **W1. Keep sentences short.** Aim for 6-12 words and split anything over 14. Her M rate doubles from 0.21 per sentence (6-10 words) to 0.45-0.51 (14-22 words). Put a trailing clause in its own sentence ("Now calculate with the two ends. That gives the new range.").
@@ -1178,6 +1178,14 @@ These add to R1-R36 and the Codex review standard. Where they differ from the AI
     - **No headline speech:** no telegraphic fragments ("Two cases.", "Step one: the signs.", "Same idea.", "Side eight.") and no bare results. Every step says what we do, why, and what it gives ("Let's try it with a side of eight. Eight squared is sixty-four, ...").
     - Short spoken transitions that lead into a full sentence are fine ("Now the area.", "Why? Because ..."), and so is "Out." right after the calculation that rules a choice out.
     - **Aid:** `python3 studio-build/w19_check.py <video ids>` (2026-10-15) flags: sentences under about 5 words with no verb, label-style openers (word + colon), and sentences with more than 2 numbers and 2 operations. The flags only find spots; judge and fix each one by hand.
+
+20. **W20. Teaching check (TC): teach the reusable idea, not only this answer.** (Teacher, 2026-10-16: "make sure I am actually teaching something when we get to some important concept, and not just answering the question. But only when it really adds.")
+    - **Find the moments** where a script uses an IMPORTANT, REUSABLE concept: a rule, pattern, shortcut or principle that comes back across the topic or on the real exam (e.g. the 30-30-120 triangle as two 30-60-90 halves; "same remainder → take it away"; equal angles in an isosceles triangle; "multiplying by a negative flips the inequality"; the overlap rule; lengths × k → area × k²).
+    - **At each one, check that the script TEACHES it:** (1) the idea stated generally, in one plain sentence; (2) WHY it's true, briefly; (3) how to recognise it next time ("when you see …, think …"); (4) one quick extra case if the concept is new here (R4/R5).
+    - **Only when it really adds.** Skip trivial facts and anything fully taught earlier (a short reminder is enough, R29) or already taught well in this video or the camera lesson. Aim for a few strong additions per topic, not a sweep. Use real-exam frequency (`quant_real.md`) when in doubt.
+    - **Form:** about 2-5 short sentences in her voice (W1-W19), never one line. Usually right after the answer, before the goodbye, or as the "Why?" right after the rule. If the board is full, give it its own short slide (a clean generic picture, V3).
+    - **Board (V3/V4):** the general statement as a short key line at its clause, and a picture when it helps (the second, generic case). Keep cue anchors valid and the method vocabulary.
+    - **Workflow:** Claude runs TC on each batch after fixing Codex's review of it; results per video in `reviews/teaching-check-<batch>.md` (concept → added / already taught / not needed).
 
 **Put her most frequent elaborations in the script from the start:**
 1. the reason after each claim;

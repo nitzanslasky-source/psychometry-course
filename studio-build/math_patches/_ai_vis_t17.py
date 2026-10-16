@@ -497,6 +497,8 @@ nk1b = I('nk1b', '$4>3$', size=34, hand='4 > 3')
 nk1c = I('nk1c', '$6>5$', size=34, hand='6 > 5')
 nk1d = I('nk1d', '$24>15$', size=34, hand='24 > 15')
 nk2 = I('nk2', '$0<a<b,\\ 0<c<d\\ \\to\\ ac<bd$', size=34)
+# 2026-10-16 Teaching check (W20): WHY strong on strong works - one swap at a time
+nk2w = I('nk2w', '$4\\cdot6>3\\cdot6>3\\cdot5$', size=34, hand='4·6 > 3·6 > 3·5')
 nk3 = I('nk3', '$2\\cdot9$ vs $3\\cdot5$: $\\ $one win each, no decision', size=32)
 nk4 = I('nk4', '$7>5$: $\\ 7\\cdot3>5$ $\\quad$ but $\\ 7\\cdot\\frac12=3.5<5$', size=32, hand='7 > 5 :   7·3 > 5      but   7·{1/2} = 3.5 < 5')
 nr = I('nr', 'Range first $\\to$ exceptional powers $\\to$ compare', size=32)
@@ -615,6 +617,9 @@ video('number-line', 'lesson', slides=[
         "is smaller than d, all positive, then a times c is smaller than b times d.", show(nk1, 'four times six against'),
         show(nk1b, 'Four beats three'), show(nk1c, 'and six beats five'), show(nk1d, 'Twenty-four is bigger than fifteen'),
         show(nk2, 'With letters')),
+      L("Why does it work? We change one factor at a time. Four times six is bigger than three times six, because four "
+        "beats three. And three times six is bigger than three times five, because six beats five. So four times six "
+        "beats three times five, one step at a time.", show(nk2w, 'because four beats three')),
       L("But if each side wins one match, the rule doesn't decide. Two times nine against three times five. Three beats two, "
         "but nine beats five. Here two times nine, eighteen, happens to be bigger, but the rule alone can't tell us that.",
         show(nk3, 'if each side wins one match')),

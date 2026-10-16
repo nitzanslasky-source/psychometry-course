@@ -2515,6 +2515,11 @@ f4k5 = I('f4k5', '$\\sqrt{9+16}=\\sqrt{25}=5$, $\\ $not $\\sqrt9+\\sqrt{16}=7$ �
 f4k6 = I('f4k6', '$CD^2=2\\cdot60^2$', size=30)
 f4k7 = I('f4k7', '$CD=\\sqrt{60^2\\cdot2}=60\\sqrt2$', size=30)
 for _it, _y in ((f4k1, 200), (f4k2, 255), (f4k3, 310), (f4k4, 370), (f4k5, 430), (f4k6, 490), (f4k7, 550)): _R(_it, _y)
+# 2026-10-16 Teaching check (W20): how to SPOT a triple (take out the common factor), a reusable exam move
+f4t1 = I('f4t1', 'Spot a triple: $\\ $take out the common factor $\\to$ $3,4,5\\ $ or $\\ 5,12,13$', size=26)
+f4t2 = IH('f4t2', '$24=8\\cdot3,\\quad 32=8\\cdot4$', size=30)
+f4t3 = IH('f4t3', 'Hypotenuse $=8\\cdot5=40$', size=30)
+for _it, _y in ((f4t1, 200), (f4t2, 270), (f4t3, 330)): _R(_it, _y)
 video('solve-geo31-g025', 'solution', qid='geo31-g025', slides=[
     SM('Triangle by triangle', 'Triangle by triangle',
       L("The accompanying figure shows three right triangles. The marked side lengths are in centimeters. What is C D, in "
@@ -2551,7 +2556,13 @@ video('solve-geo31-g025', 'solution', qid='geo31-g025', slides=[
         show(f4k6, 'C D squared is two times sixty squared'), show(f4k7, 'So C D is sixty root two'),
         mk('tick', 'choice 3', 'and choice number three is our answer')),
       L("Without the triples, we'd have to square numbers like thirty-nine and forty-eight. Noticing the triples saved all "
-        "of that. [pause] Okay. I'll see you in the next question.")),
+        "of that.")),
+    SM('Triangle by triangle', 'Spotting a triple',
+      L("[pause] So how do these triples jump out? Look for one number that divides both sides you know. Take it out, "
+        "and see what's left. If the legs leave three and four, or a leg and the hypotenuse leave five and thirteen, it's "
+        "a triple. For example, legs of twenty-four and thirty-two. Both divide by eight, and what's left is three and "
+        "four. So the hypotenuse is five times eight, which is forty. [pause] Okay. I'll see you in the next question.",
+        show(f4t1, 'Look for one number'), show(f4t2, 'legs of twenty-four'), show(f4t3, 'So the hypotenuse is five times eight'))),
 ])
 
 # placement (right column, question videos)
@@ -2935,6 +2946,19 @@ F518Q = GEO('f518q', [
     ('q3', [('tint', [_g18A, _g18D, _g18E, _g18C], 'orange'), ('txt', 350, 200, '3/4', 'large', 30)]),
 ], vb='150 30 340 300', w=200, title='The big triangle: a quarter cut off, three quarters left')
 F518_t5 = IH('f518e', '$\\frac34\\cdot\\frac{100\\sqrt3}{4}=\\frac{75\\sqrt3}{4}$', size=32, col=1)
+# 2026-10-16 Teaching check (W20): lengths x k -> area x k squared, as a reusable idea (circles, squares, similar shapes)
+_q = 20
+def _grid(x0, y0, n):
+    return ([('tint', [(x0, y0), (x0 + n * _q, y0), (x0 + n * _q, y0 + n * _q), (x0, y0 + n * _q)], 'teal')]
+            + [('seg', x0 + i * _q, y0, x0 + i * _q, y0 + n * _q, 'ink', 1.5) for i in range(n + 1)]
+            + [('seg', x0, y0 + i * _q, x0 + n * _q, y0 + i * _q, 'ink', 1.5) for i in range(n + 1)])
+F518S = GEO('f518s', [
+    ('line', _grid(40, 110, 3) + [('txt', 70, 95, '3', 'ink', 22), ('txt', 70, 210, 'area 9', 'teal', 22)]),
+    ('big', _grid(200, 50, 6) + [('txt', 260, 35, '6', 'ink', 22), ('txt', 260, 210, 'area 36', 'teal', 22)]),
+], vb='20 15 340 210', w=380, title='A square of side 3 and a square of side 6')
+F518_k1 = I('f518k1', 'Lengths $\\times k$ $\\to$ area $\\times k^2$', size=30)
+F518_k2 = IH('f518k2', 'Side $\\times2$, $\\ $area $9\\to36$, $\\ \\times4$', size=28)
+_R(F518_k1, 200); _R(F518S, 255); _R(F518_k2, 500)
 video('solve-geo31-g018', 'solution', qid='geo31-g018', slides=[
     SM('Method 1 · The math way: subtract areas', 'Big minus small',
       L("A B C is an equilateral triangle with perimeter thirty centimeters. Points D and E are the midpoints of A B and B "
@@ -2965,9 +2989,16 @@ video('solve-geo31-g018', 'solution', qid='geo31-g018', slides=[
         "big one. In the formula, the side is squared, so half the side gives a half squared, a quarter of the area.",
         show(F518_s, 'We keep what we found'), show(F518_t4, 'a quarter of the area')),
       L("So the small triangle is a quarter of the big one, and the quadrilateral is the other three quarters. Three "
-        "quarters of a hundred root three over four is seventy-five root three over four. Choice number two. [pause] Okay. "
-        "I'll see you in the next question.", show(F518Q['line'], 'So the small triangle'), show(F518Q['q1'], 'is a quarter of the big one'),
-        show(F518Q['q3'], 'the other three quarters'), show(F518_t5, 'Three quarters of a hundred'), mk('tick', 'choice 2', 'Choice number two. '))),
+        "quarters of a hundred root three over four is seventy-five root three over four. Choice number two.", show(F518Q['line'], 'So the small triangle'), show(F518Q['q1'], 'is a quarter of the big one'),
+        show(F518Q['q3'], 'the other three quarters'), show(F518_t5, 'Three quarters of a hundred'), mk('tick', 'choice 2', 'Choice number two.'))),
+    SM('Method 2 · Understanding: a ratio', 'Lengths and area',
+      L("[pause] This idea works for every shape, not only for triangles. When every length is multiplied by some number, "
+        "the area is multiplied by that number squared. Why? Area is a length times a length, so the number comes in twice. "
+        "For example, a square with side three has an area of nine. Double the side to six, and the area is thirty-six, "
+        "four times as much. So when you see the same shape in two sizes, think: the side ratio, squared. [pause] Okay. "
+        "I'll see you in the next question.", show(F518_k1, 'When every length is multiplied'),
+        show(F518S['line'], 'a square with side three'), show(F518S['big'], 'Double the side to six'),
+        show(F518_k2, 'four times as much'), pt('f518k1', 'the side ratio, squared'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo-027-after (lesson: the 45-45-90 triangle)

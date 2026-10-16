@@ -74,10 +74,27 @@
     ]
    },
    {
-    "say": "Careful with the other choices. Six, choice number two, is A B, the wrong piece. And twenty-five, choice number four, is A C plus B D, with B C counted twice. [pause] Okay. I'll see you in the next question.",
+    "say": "Careful with the other choices. Six, choice number two, is A B, the wrong piece. And twenty-five, choice number four, is A C plus B D, with B C counted twice.",
     "at": [
      "Six, choice number two",
      "And twenty-five, choice number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] This overlap rule comes back again and again, with angles, areas and groups of people. When two pieces cover a whole and overlap, the two pieces together are the whole, plus the overlap once more. Why? The overlap belongs to both pieces, so it's counted twice. For example, strips of six and seven cover a line of ten. Six plus seven is thirteen. The whole is ten, so the overlap is thirteen minus ten, which is three. So when you see two pieces that overlap, think: the whole, plus the overlap. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "back again and",
+     "When two pieces",
+     "whole and overlap",
+     "For example, strips",
+     "and seven cover",
+     "Six plus seven is thirteen",
+     "The whole is",
+     "the overlap is thirteen minus ten",
+     "ten, which is",
+     "think: the whole"
     ]
    }
   ]
