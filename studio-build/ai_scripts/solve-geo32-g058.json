@@ -33,14 +33,17 @@
      "so angle D is seventy-two",
      "too. Angles next",
      "so the whole angle C",
-     "is one hundred"
+     "is one hundred",
+     "which is one hundred eight"
     ]
    },
    {
     "say": "Angle B C E is fifty-four, so the rest of angle C, angle E C D, is one hundred eight minus fifty-four, which is fifty-four too. So C E cuts angle C into two equal halves. It's an angle bisector.",
     "at": [
-     "so the rest of angle C",
-     "C, angle E"
+     "is fifty-four, so",
+     "one hundred eight minus fifty-four",
+     "which is fifty-four too",
+     "So C E"
     ]
    },
    {
@@ -48,31 +51,55 @@
     "at": [
      "Now look at triangle",
      "Two of its",
+     "Seventy-two plus fifty-four",
+     "and one hundred eighty minus",
+     "one hundred twenty-six is",
      "So angle D E C is fifty-four"
     ]
    },
    {
-    "say": "There's also a shorter way to see it. E D is parallel to B C, so we get a Z, and the angles inside a Z are equal. So angle D E C equals angle B C E, fifty-four, right away.",
+    "say": "There's also a shorter way to see it. E D is parallel to B C, and C E crosses them. Follow B C, then C E, then E D, and we get a Z. The angles inside a Z are equal, so angle D E C equals angle B C E, fifty-four, right away.",
     "at": [
      "There's also a",
-     "so we get a Z",
-     "and the angles"
+     "Follow B C, then C E",
+     "E, then E"
     ]
    },
    {
-    "say": "In triangle E D C, the angles at E and at C are both fifty-four. Equal angles face equal sides, so the triangle is isosceles, and E D equals C D, which is nine. Remember this pattern. An angle bisector in a parallelogram cuts off an isosceles triangle.",
+    "say": "In triangle E D C, the angles at E and at C are both fifty-four. Equal angles face equal sides. The angle at E faces C D, and the angle at C faces E D. So E D equals C D, which is nine.",
     "at": [
-     "and E D equals C D",
+     "So E D equals C D",
      "D, which is"
     ]
    },
    {
-    "say": "Almost done. All of A D is four plus nine, which is thirteen, and B C is thirteen too, because opposite sides are equal. The perimeter is nine plus thirteen plus nine plus thirteen. Nine and nine is eighteen, thirteen and thirteen is twenty-six, and together forty-four. Choice number three is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "Remember this pattern. An angle bisector in a parallelogram cuts off an isosceles triangle. Why does it always happen? The bisector cuts the angle into two equal parts. The opposite sides are parallel, so the Z gives that same angle again at the other end. So the triangle has two equal angles, and it's isosceles.",
     "at": [
+     "An angle bisector in a parallelogram",
+     "parallelogram cuts off",
+     "So the triangle has two equal angles",
+     "equal angles, and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Almost done. All of A D is four plus nine, which is thirteen, and B C is thirteen too, because opposite sides are equal.",
+    "at": [
+     "Almost done",
      "All of A D is four plus nine",
-     "four plus nine",
+     "and B C is thirteen too",
+     "too, because opposite"
+    ]
+   },
+   {
+    "say": "The perimeter is nine plus thirteen plus nine plus thirteen. Nine and nine is eighteen. Thirteen and thirteen is twenty-six. And together, that's forty-four. Choice number three is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
      "The perimeter is nine",
      "thirteen plus nine",
+     "Nine and nine is eighteen",
+     "Thirteen and thirteen",
+     "And together, that's forty-four",
      "Choice number three is our answer"
     ]
    }

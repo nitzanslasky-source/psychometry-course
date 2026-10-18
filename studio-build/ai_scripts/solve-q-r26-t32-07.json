@@ -11,9 +11,15 @@
     ],
     "pause": 0.5
    },
-   "We know the perimeter and the diagonal, but not the sides. [short pause] We'll solve it two ways, with a shortcut formula, and then with a Pythagorean triple.",
    {
-    "say": "[short pause] Call the sides a and b. Half the perimeter is one a and one b, so a plus b is seventeen.",
+    "say": "We know the perimeter and the diagonal, but not the sides. [short pause] We'll solve it in two different ways. First the math way, with a formula for squaring a sum, and then by understanding, with a Pythagorean triple.",
+    "at": [
+     "in two different",
+     "the math way"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with the math way. Call the sides a and b. Half the perimeter is one a and one b, so a plus b is seventeen.",
     "at": [
      "Call the sides a and b",
      "Call the sides a and b",
@@ -31,48 +37,124 @@
   ],
   [
    {
-    "say": "We want the area, a times b. Here the shortcut formula from expressions helps: the bracket a plus b, squared, is a squared plus two a b plus b squared.",
+    "say": "We want the area, a times b. There's a tool for this, squaring a sum. a plus b, squared, means a plus b, times a plus b.",
     "at": [
-     "We want the area",
-     "Here the shortcut formula",
-     "expressions helps: the"
+     "a times b",
+     "tool for this",
+     "squared, means",
+     "times a plus"
     ]
    },
    {
-    "say": "We know a plus b is seventeen, so the bracket, a plus b, squared, is seventeen squared. Seventeen squared is seventeen times seventeen: a hundred seventy plus a hundred nineteen, two hundred eighty-nine. On the right, a squared plus b squared is a hundred sixty-nine. So two hundred eighty-nine is a hundred sixty-nine plus two a b. Two a b is a hundred twenty, and the area, a b, is sixty. Choice number one is our answer.",
+    "say": "We multiply each part by each part. a times a is a squared. a times b is a b. b times a is another a b. And b times b is b squared.",
     "at": [
-     "So two hundred eighty-nine",
-     "a hundred sixty-nine plus",
+     "We multiply each part by each part",
+     "a times a"
+    ]
+   },
+   {
+    "say": "The two a b terms are the same, so together they're two a b. So a plus b, squared, is a squared plus two a b plus b squared.",
+    "at": [
+     "The two a b terms are the same",
+     "are the same"
+    ]
+   },
+   {
+    "say": "Let's check it. Two plus three is five, so it's five squared. That's twenty-five. With the formula, two squared is four. Two times two times three is twelve. And three squared is nine. Four plus twelve plus nine is twenty-five too.",
+    "at": [
+     "Two plus three is five",
+     "so it's five",
+     "Four plus twelve plus nine",
+     "is twenty-five too"
+    ]
+   },
+   {
+    "say": "Let's do another one. Three plus one is four. Four squared is sixteen. With the formula, nine plus six plus one is sixteen.",
+    "at": [
+     "Three plus one is four",
+     "Four squared is",
+     "nine plus six plus one"
+    ]
+   },
+   {
+    "say": "Careful, a plus b, squared, is not a squared plus b squared. Two squared plus three squared is only thirteen, not twenty-five. The two a b is missing.",
+    "at": [
+     "Careful, a plus",
+     "Two squared plus three squared",
+     "is only thirteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now back to our rectangle. We know a plus b is seventeen. And a squared plus b squared is a hundred sixty-nine.",
+    "at": [
+     "Now back to our rectangle",
+     "We know a"
+    ]
+   },
+   {
+    "say": "So a plus b, squared, is seventeen squared. Seventeen times ten is a hundred seventy. Seventeen times seven is a hundred nineteen. Together, that's two hundred eighty-nine.",
+    "at": [
+     "Seventeen times ten",
+     "Seventeen times seven",
+     "Together, that's two hundred"
+    ]
+   },
+   {
+    "say": "By the formula, two hundred eighty-nine is a squared plus b squared, plus two a b. So it's a hundred sixty-nine plus two a b.",
+    "at": [
+     "By the formula",
+     "So it's a hundred sixty-nine"
+    ]
+   },
+   {
+    "say": "Two hundred eighty-nine minus a hundred sixty-nine is a hundred twenty, so two a b is a hundred twenty. Careful, a hundred twenty is choice number three, but it's two a b, not the area.",
+    "at": [
+     "Two hundred eighty-nine minus",
+     "hundred sixty-nine is",
+     "a hundred twenty is choice number three"
+    ]
+   },
+   {
+    "say": "We want a b alone, so we divide both sides by two. That gives a b is sixty. Choice number one is our answer.",
+    "at": [
+     "we divide both sides by two",
+     "That gives a",
      "Choice number one is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Another way. A diagonal of thirteen should remind us of the triple five, twelve, thirteen. Let's try sides five and twelve: their diagonal is thirteen.",
+    "say": "[pause] Now by understanding, with a triple. A diagonal of thirteen should remind us of the triple five, twelve, thirteen. Let's try sides five and twelve. Their diagonal is thirteen, so they fit the diagonal.",
     "at": [
-     "Another way",
+     "Now by understanding",
      "A diagonal of",
      "Let's try sides",
-     "twelve: their diagonal"
+     "Their diagonal is"
     ]
    },
    {
-    "say": "Now check the other given, the perimeter: two times, five plus twelve, is thirty-four. It fits both givens. The question has only one area, so it's five times twelve, sixty. Choice number one again.",
+    "say": "Careful, thirteen is the diagonal, not a side. Five times thirteen, sixty-five, is choice number two, and that's a trap.",
+    "at": [
+     "Five times thirteen, sixty-five"
+    ]
+   },
+   {
+    "say": "Now check the other given, the perimeter. Five plus twelve is seventeen, and two times seventeen is thirty-four. So this rectangle fits both givens, and its area is five times twelve, sixty. The math way already showed that every rectangle with these givens has area sixty. Choice number one again.",
     "at": [
      "Now check the other given",
-     "the perimeter: two",
-     "five times twelve, sixty",
+     "Five plus twelve",
+     "its area is five times twelve",
+     "The math way",
      "Choice number one again"
     ]
    },
    {
-    "say": "The traps: a hundred twenty is two a b, without dividing by two. Thirty is half the rectangle. And sixty-five uses the diagonal as if it were a side. [pause] Okay. I'll see you in the next question.",
+    "say": "And thirty, choice number four, is half of sixty. That's the area of the triangle A B C, not of the rectangle. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "a hundred twenty is two a b",
-     "a b, without",
-     "Thirty is half the rectangle",
-     "sixty-five uses the diagonal"
+     "And thirty, choice number four"
     ]
    }
   ]

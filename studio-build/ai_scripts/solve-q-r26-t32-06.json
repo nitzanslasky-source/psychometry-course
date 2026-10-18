@@ -12,41 +12,42 @@
     "pause": 0.5
    },
    {
-    "say": "We don't know the length of a single step, so many students choose cannot be determined. But this is a staircase, and a staircase only has to be pushed. [short pause] Let's see why.",
+    "say": "We don't know the length of a single step, so many students choose cannot be determined. But here the stair path only goes right and down, with no part going back in. [short pause] Let's see why that's enough.",
     "at": [
      "cannot be determined",
-     "is a staircase"
+     "the stair path",
+     "see why that's"
     ]
    },
    {
-    "say": "[short pause] Look at all the horizontal steps. Push each one straight up to the top line. Together they cover the whole top, from the left side to the right side. That's twelve.",
+    "say": "[short pause] Look at all the horizontal steps. Each one keeps its length when we slide it straight up to the top line. Together they cover the whole top once, with no overlap and no gap. So together they're twelve.",
     "at": [
      "Look at all the horizontal steps",
      "Look at all the horizontal steps",
-     "Push each one straight up",
-     "to the top"
+     "steps. Each one",
+     "when we slide it straight up",
+     "up to the"
     ]
    },
    {
-    "say": "Now the vertical steps. Push each one out to the right side. Together they cover the whole right side, from top to bottom. That's eight.",
+    "say": "Now the vertical steps. Slide each one out to the right side. They cover the whole right side once, from top to bottom. So together they're eight.",
     "at": [
      "Now the vertical steps",
-     "Push each one out",
+     "Slide each one out",
      "the right side"
     ]
    },
    {
-    "say": "No length changed. So the perimeter is the same as the full rectangle's: two times, twelve plus eight, which is forty. Choice number two is our answer.",
+    "say": "The bottom, twelve, and the left side, eight, don't change. So the perimeter is twelve plus eight plus twelve plus eight, which is forty. Choice number two is our answer.",
     "at": [
-     "No length changed",
-     "perimeter is the",
-     "two times, twelve plus eight",
-     "which is forty",
+     "don't change",
+     "twelve plus eight plus twelve",
+     "plus eight, which",
      "Choice number two is our answer"
     ]
    },
    {
-    "say": "Careful, ninety-six is twelve times eight. That's an area, not a perimeter. [pause] Okay. I'll see you in the next question.",
+    "say": "Careful, this works because the path only goes right and down. A rectangular notch going back in would add its two walls, like in the last lesson. And ninety-six is twelve times eight. That's an area, not a perimeter. [pause] Okay. I'll see you in the next question.",
     "at": [
      "ninety-six is twelve times eight"
     ]

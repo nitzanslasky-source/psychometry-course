@@ -26,36 +26,47 @@
     ]
    },
    {
-    "say": "Thirty and thirty. So the top angle, A, is one hundred eighty minus sixty, which is one hundred twenty.",
+    "say": "The two base angles of this triangle add up to sixty degrees. So the top angle, A, is one hundred eighty minus sixty, which is one hundred twenty.",
     "at": [
+     "add up to sixty degrees",
      "So the top angle",
-     "is one hundred"
+     "is one hundred",
+     "which is one hundred twenty",
+     "one hundred twenty."
     ]
    },
    {
     "say": "In every trapezoid, the two angles on the same leg add up to one hundred eighty. A is one hundred twenty, so all of angle B is sixty. Its lower part, angle D B C, is sixty minus thirty, which is thirty.",
     "at": [
+     "In every trapezoid",
+     "A is one hundred twenty, so",
      "so all of angle B is sixty",
-     "Its lower part"
+     "Its lower part",
+     "B C, is",
+     "which is thirty"
     ]
    },
    {
-    "say": "Another way to see the thirty is our familiar Z. The bases are parallel, so the two angles in the corners of the Z are equal. Thirty and thirty.",
+    "say": "Another way to see the thirty is our familiar Z. A D and B C are the parallel bases, and B D crosses them. So the angles in the two corners of the Z, angle A D B and angle D B C, are equal. Thirty and thirty.",
     "at": [
+     "the thirty is",
      "our familiar Z",
-     "The bases are"
+     "B D crosses"
     ]
    },
    {
-    "say": "The trapezoid is isosceles, so the two angles on the bottom base are equal. Angle C equals angle B, sixty. You can also see it because angle C completes angle A to one hundred eighty.",
+    "say": "The trapezoid is isosceles, so the two angles on the bottom base are equal. Angle C equals angle B, sixty. And because this trapezoid is isosceles, its opposite angles add up to one hundred eighty, so angle C also completes angle A to one hundred eighty.",
     "at": [
      "Angle C equals angle B",
-     "You can also"
+     "And because this"
     ]
-   },
+   }
+  ],
+  [
    {
     "say": "What did we get? Triangle B C D has thirty and sixty, together ninety. So the angle at D completes it to one hundred eighty, and it's ninety. It's not just a right triangle. It's a gold triangle, thirty, sixty, ninety.",
     "at": [
+     "What did we get",
      "Triangle B C D has thirty and sixty",
      "thirty and sixty"
     ]
@@ -67,25 +78,29 @@
     ]
    },
    {
-    "say": "When we know the short leg, the hypotenuse is easy. It's exactly twice the short leg. So B C is fourteen.",
+    "say": "When we know the short leg, the hypotenuse is easy. It's exactly twice the short leg. So B C is two times seven, fourteen.",
     "at": [
      "When we know",
-     "So B C is fourteen"
+     "So B C is two times seven",
+     "fourteen."
     ]
    },
    {
-    "say": "The perimeter is seven plus seven plus seven plus fourteen, which is thirty-five. Choice number two is our answer.",
+    "say": "Now the perimeter, all four outer sides. Seven plus seven plus seven plus fourteen is thirty-five. Choice number two is our answer.",
     "at": [
-     "The perimeter is seven plus",
-     "seven plus seven plus fourteen",
+     "Now the perimeter",
+     "Seven plus seven plus seven",
+     "is thirty-five",
      "Choice number two is our answer"
     ]
    },
    {
     "say": "One more link. Triangle A B D has angles thirty, thirty and one hundred twenty, the triangle we met with the special triangles. So B D is seven root three. That matches the gold triangle, where the long leg is the short leg times root three. [pause] Okay. I'll see you in the next question.",
     "at": [
+     "Triangle A B",
      "So B D is seven root three",
-     "That matches the"
+     "That matches the gold triangle",
+     "where the long"
     ]
    }
   ]

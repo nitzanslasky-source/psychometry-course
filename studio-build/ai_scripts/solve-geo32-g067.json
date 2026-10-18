@@ -12,10 +12,10 @@
     "pause": 0.5
    },
    {
-    "say": "We know the two white corner triangles and need the shaded one in the middle. [short pause] We'll solve it two ways, the math way with letters, and then a short way with symmetry.",
+    "say": "We know the two white corner triangles and need the shaded one in the middle. [short pause] We'll solve it in two different ways. First the math way with letters, and then by understanding, with symmetry.",
     "at": [
      "white corner triangles",
-     "two ways, the"
+     "the math way"
     ]
    },
    {
@@ -32,19 +32,24 @@
      "Let's call it h",
      "A E is",
      "Let's call it x",
-     "So x times"
+     "So x times h, over two",
+     "two, is six",
+     "and x h is twelve"
     ]
    },
    {
     "say": "Now triangle E C D. It's a right triangle too, with the same height h. E D is another part of the length, not x. So it's a new unknown, y. y times h, over two, is fifteen, so y h is thirty.",
     "at": [
+     "Now triangle E",
      "So it's a new unknown",
-     "y times h"
+     "y times h, over two",
+     "so y h is thirty"
     ]
    },
    {
     "say": "Now the shaded triangle E B C. Its base, B C, is the whole length, x plus y. And its height? We drop it from E to B C, and it's exactly the height of the rectangle, h.",
     "at": [
+     "Now the shaded triangle",
      "Its base, B C",
      "the whole length",
      "We drop it from E",
@@ -52,20 +57,34 @@
     ]
    },
    {
-    "say": "So its area is x plus y, times h, over two. Open the brackets. It's x h plus y h, over two. We found that x h is twelve and y h is thirty, so twelve plus thirty, over two. That's forty-two over two, which is twenty-one. Choice number two is our answer.",
+    "say": "So its area is x plus y, times h, over two. Open the brackets on top. We get x h plus y h, and both products are still over two.",
     "at": [
      "So its area is",
-     "plus y, times",
+     "Open the brackets",
+     "We get x h plus y h",
+     "y h, and"
+    ]
+   },
+   {
+    "say": "We found that x h is twelve and y h is thirty, so it's twelve plus thirty, over two. That's forty-two over two, which is twenty-one. Choice number two is our answer.",
+    "at": [
+     "so it's twelve plus thirty",
+     "That's forty-two over two",
      "Choice number two is our answer"
     ]
    },
-   "This was a long and tiring solution. But it's an important base. We won't always see the short way, and then we have something solid to work with."
+   {
+    "say": "The math way works even when we don't see a shortcut, so it's a solid base.",
+    "at": [
+     "The math way"
+    ]
+   }
   ],
   [
    {
-    "say": "[pause] Now the short way, with symmetry. Symmetry is a very important tool in geometry, especially in quadrilaterals. From the point E, let's drop a height down to B C, and call its foot F.",
+    "say": "[pause] Now by understanding, with symmetry. Symmetry is a very important tool in geometry, especially in quadrilaterals. From the point E, let's drop a height down to B C, and call its foot F.",
     "at": [
-     "Now the short way",
+     "Now by understanding",
      "Symmetry is a",
      "From the point E",
      "drop a height"
@@ -77,27 +96,34 @@
      "Now we have a rectangle on the left",
      "on the left",
      "So the shaded triangle E B F",
-     "B F is"
+     "is six, like the white",
+     "triangle A B"
     ]
    },
    {
     "say": "The same on the right. E F C D is a rectangle, its diagonal is E C, and the white triangle E C D is fifteen. So the shaded triangle E F C is fifteen too.",
     "at": [
      "The same on the right",
-     "E F C",
+     "E C, and",
      "So the shaded triangle E F C",
-     "F C is"
+     "is fifteen too"
     ]
    },
    {
-    "say": "So the shaded area is equal to the two white areas together, six plus fifteen, which is twenty-one. Choice number two. Much shorter. That's why this question counts as easy-plus. On the exam it usually comes early in the section. The math is long, but the short way is quick.",
+    "say": "So the shaded area is equal to the two white areas together, six plus fifteen, which is twenty-one. Choice number two.",
     "at": [
+     "is equal to",
      "six plus fifteen",
-     "Choice number two. Much shorter",
-     "That's why this"
+     "Choice number two"
     ]
    },
-   "This idea is very important, and in the next lesson we'll stretch it to more shapes. [pause] Okay. I'll see you in the next question."
+   {
+    "say": "The reason is that each small rectangle is split into two equal areas by its diagonal. This idea is very important, and in the next lesson we'll stretch it to more shapes. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "each small rectangle is split",
+     "into two equal"
+    ]
+   }
   ]
  ]
 }

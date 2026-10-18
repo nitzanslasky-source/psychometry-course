@@ -7,17 +7,17 @@
   ],
   [
    {
-    "say": "A trapezoid has four sides. The bottom side and the top side are called the bases. The two sides on the sides are called the legs.",
+    "say": "A trapezoid has four sides. Two of them are parallel, and those two are called the bases. Here they're A D and B C. The other two sides, A B and C D, are called the legs.",
     "at": [
      "A trapezoid has four sides",
-     "The bottom side",
+     "Two of them",
      "are called the bases",
-     "two sides on",
+     "Here they're A",
      "are called the legs"
     ]
    },
    {
-    "say": "The bases are parallel to each other. They're not equal, but they're parallel. The legs are not parallel. If they were parallel too, it wouldn't be a trapezoid anymore. It would be a parallelogram.",
+    "say": "The bases are parallel to each other, but they're not equal. The legs are not parallel. If they were parallel too, it wouldn't be a trapezoid anymore. It would be a parallelogram.",
     "at": [
      "The bases are parallel",
      "The legs are",
@@ -85,12 +85,23 @@
     ]
    },
    {
-    "say": "In the exam you won't prove formulas, so what matters is to remember it. For example, bases ten and six, and height four. Ten plus six is sixteen, times four is sixty-four, over two is thirty-two. Another one, bases nine and three, height five. Nine plus three is twelve, twelve times five is sixty, over two is thirty.",
+    "say": "In the exam you won't prove formulas, so what matters is to remember it. For example, bases ten and six, and height four. Ten plus six is sixteen. Sixteen times four is sixty-four. And sixty-four over two is thirty-two.",
     "at": [
      "For example, bases ten and six",
      "six, and height",
+     "Ten plus six is",
+     "Sixteen times four",
+     "sixty-four over two"
+    ]
+   },
+   {
+    "say": "Another one, bases nine and three, height five. Nine plus three is twelve. Twelve times five is sixty. And sixty over two is thirty.",
+    "at": [
      "Another one, bases nine",
-     "three, height five"
+     "three, height five",
+     "Nine plus three is",
+     "Twelve times five",
+     "sixty over two"
     ]
    }
   ],
@@ -129,14 +140,14 @@
     ]
    },
    {
-    "say": "Its diagonals are equal too. And they cut each other into matching pieces. The top pieces are equal to each other, and the bottom pieces are equal to each other.",
+    "say": "Its diagonals are equal too. And they cut each other into matching pieces. The two top pieces are equal to each other, and the two bottom pieces are equal to each other. But the top pieces need not equal the bottom pieces, so the diagonals are not generally cut in half.",
     "at": [
      "Its diagonals are equal too",
      "And they cut"
     ]
    },
    {
-    "say": "And since alpha plus beta is one hundred eighty, opposite angles, like A and C, also add up to one hundred eighty. That's useful in angle questions.",
+    "say": "And in an isosceles trapezoid, alpha plus beta is one hundred eighty, so opposite angles, like A and C, also add up to one hundred eighty. That's useful in angle questions.",
     "at": [
      "opposite angles, like A and C",
      "C, also add"

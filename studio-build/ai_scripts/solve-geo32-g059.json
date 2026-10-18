@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "We have a rectangle, the perimeter of one triangle, and a question about another triangle. [short pause] First we'll find the missing lengths, and then we'll see three ways to get the area. It's worth knowing all three.",
+    "say": "We have a rectangle, the perimeter of one triangle, and a question about another triangle. [short pause] First we'll find the missing lengths. Then we'll find the area in three different ways, twice by understanding and once the math way.",
     "at": [
      "We have a rectangle",
      "perimeter of one"
@@ -26,12 +26,23 @@
     ]
    },
    {
-    "say": "The perimeter of triangle E B C is E B plus twenty-four plus E C, and that's fifty. So E B and E C together are twenty-six. They're equal, so each one is thirteen. Then A E and E D are thirteen too, and the whole diagonal A C is twenty-six.",
+    "say": "The perimeter of triangle E B C is E B plus twenty-four plus E C, and that's fifty. So E B and E C together are twenty-six.",
     "at": [
      "The perimeter of triangle E B C",
      "B C is",
+     "E B plus twenty-four plus E C",
+     "E C, and",
+     "So E B and E C together"
+    ]
+   },
+   {
+    "say": "They're equal, so each one is thirteen. Then A E and E D are thirteen too, and the whole diagonal A C is twice thirteen, twenty-six.",
+    "at": [
      "so each one is thirteen",
-     "Then A E"
+     "Then A E and E D",
+     "D are thirteen",
+     "and the whole diagonal A C",
+     "C is twice"
     ]
    },
    {
@@ -39,16 +50,19 @@
     "at": [
      "Now the right triangle",
      "We know its",
+     "That's the triple five",
+     "thirteen, doubled, ten",
+     "So A B is ten",
      "So A B is ten"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now the area of A B E. The first way uses the median. Look at triangle A B C. E is the middle of A C, so B E is a median.",
+    "say": "[pause] Now the area of A B E. Let's start by understanding, with the median. Look at triangle A B C. E is the middle of A C, so B E is a median.",
     "at": [
      "A B E",
-     "way uses the",
+     "by understanding, with",
      "Look at triangle A B C",
      "C. E is",
      "so B E is a median"
@@ -58,32 +72,51 @@
     "say": "A median cuts a triangle into two triangles of equal area. Why? A E equals E C, so the two triangles have equal bases, and they share the same height from B to the line A C.",
     "at": [
      "into two triangles",
+     "A E equals E C",
+     "so the two",
      "they share the same height",
      "from B to"
     ]
    },
    {
-    "say": "Triangle A B C is easy. It's a right triangle with legs ten and twenty-four, so its area is leg times leg, over two. Ten times twenty-four, over two, is one hundred twenty. The median cuts it into two triangles of equal area, so A B E is half of it, sixty. Choice number two is our answer.",
+    "say": "Triangle A B C is easy. It's a right triangle with legs ten and twenty-four, so its area is leg times leg, over two. Ten times twenty-four is two hundred forty, and over two that's one hundred twenty.",
     "at": [
-     "Ten times twenty-four",
-     "is one hundred",
+     "Ten times twenty-four is",
+     "and over two"
+    ]
+   },
+   {
+    "say": "The median cuts it into two triangles of equal area, so A B E is half of it. Half of a hundred twenty is sixty. Choice number two is our answer.",
+    "at": [
+     "The median cuts",
+     "Half of a hundred twenty",
      "Choice number two is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] The second way. The diagonals of a rectangle always cut it into four triangles of equal area. By the way, that's true in every parallelogram, so also in a rhombus and in a square.",
+    "say": "[pause] Now by understanding again, with a rule about the diagonals. The diagonals of a rectangle cut it into four triangles of equal area.",
     "at": [
-     "The second way",
-     "The diagonals of"
+     "Now by understanding again",
+     "a rule about"
     ]
    },
    {
-    "say": "Why? The top triangle and the bottom triangle are the same triangle, and so are the left one and the right one. And we just saw that the left one and the bottom one have equal areas. So all four are equal.",
+    "say": "Why? Opposite triangles match in size and shape. A E D matches B E C, and A E B matches C E D. Triangles next to each other, like A E B and B E C, don't have to have the same shape. But they have the same area, because B E is a median of triangle A B C, as we just saw. So all four areas are equal.",
     "at": [
-     "The top triangle and the bottom",
-     "bottom triangle are"
+     "Opposite triangles match",
+     "A E D",
+     "because B E is a median",
+     "median of triangle",
+     "So all four areas are equal"
+    ]
+   },
+   {
+    "say": "This works because the diagonals cut each other in half, and that's true in every parallelogram. So the rule holds in every parallelogram, also in a rhombus and in a square.",
+    "at": [
+     "This works because",
+     "cut each other"
     ]
    },
    {
@@ -91,26 +124,36 @@
     "at": [
      "The rectangle is ten times",
      "twenty-four, which is",
+     "forty divided by four",
      "Choice number two again"
     ]
    }
   ],
   [
    {
-    "say": "[pause] And the third way, the most basic one, base times height over two. The base is A B, ten. We need the height from E to A B.",
+    "say": "[pause] And the third way, the math way, base times height over two. The base is A B, ten. We need the height from E to A B.",
     "at": [
-     "the most basic one",
-     "times height over"
+     "the math way, base times height",
+     "height over two"
     ]
    },
    {
-    "say": "The height from E to A B is the same as half of B C, because E is exactly in the middle. Half of twenty-four is twelve. So the area is ten times twelve, over two, which is sixty. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "say": "Draw the line from E straight to A B, and continue it across to C D. That whole line is as long as B C, twenty-four. E is the middle of the diagonals, so it's halfway between A B and C D. So the height from E to A B is half of twenty-four, twelve.",
     "at": [
-     "The height from E to A B",
-     "A B is",
-     "So the area is ten times twelve",
-     "times twelve, over",
-     "which is sixty. Choice number two"
+     "Draw the line from E",
+     "straight to A",
+     "and continue it across",
+     "long as B",
+     "half of twenty-four, twelve"
+    ]
+   },
+   {
+    "say": "So the area is ten times twelve, over two. Ten times twelve is a hundred twenty, and over two that's sixty. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So the area",
+     "Ten times twelve is",
+     "and over two that's sixty",
+     "Choice number two"
     ]
    }
   ]

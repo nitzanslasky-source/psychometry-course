@@ -12,11 +12,11 @@
     "pause": 0.5
    },
    {
-    "say": "There are only angles here, and letters instead of numbers. We need x, the angle at E between B E and C E. [short pause] We'll solve it two ways, with the angle rules of a parallelogram, and then by plugging in numbers.",
+    "say": "There are only angles here, and letters instead of numbers. We need x, the angle at E between B E and C E. [short pause] We'll solve it in two different ways, the math way with the angle rules of a parallelogram, and then by plugging in numbers.",
     "at": [
      "We need x",
      "at E between",
-     "it two ways"
+     "it in two"
     ]
    },
    {
@@ -55,11 +55,25 @@
     ]
    },
    {
-    "say": "So x is one hundred eighty minus three alpha minus three beta. Three alpha plus three beta is three times alpha plus beta, three times thirty-six, which is a hundred eight. So x is one hundred eighty minus a hundred eight, seventy-two.",
+    "say": "So x is one hundred eighty minus three alpha minus three beta.",
     "at": [
-     "So x is one hundred eighty minus three alpha",
-     "eighty minus three",
-     "seventy-two"
+     "So x is one hundred eighty minus",
+     "eighty minus three"
+    ]
+   },
+   {
+    "say": "We know that alpha plus beta is thirty-six. Both terms, three alpha and three beta, have a factor three, so we can write them as three times that whole sum. Three times thirty-six is a hundred eight.",
+    "at": [
+     "so we can write them",
+     "as three times",
+     "Three times thirty-six"
+    ]
+   },
+   {
+    "say": "So x is one hundred eighty minus a hundred eight, which is seventy-two.",
+    "at": [
+     "So x is one hundred eighty",
+     "which is seventy-two"
     ]
    },
    {
@@ -68,30 +82,51 @@
      "We never found",
      "Choice number two is our answer"
     ]
+   },
+   {
+    "say": "This idea comes back a lot. When we can't find each letter on its own, we look for the combination the question needs. Here x needed three alpha plus three beta, and that's three times the sum we knew. So we never needed alpha or beta alone.",
+    "at": [
+     "we look for the combination",
+     "the question needs"
+    ]
    }
   ],
   [
    {
-    "say": "[pause] Now a faster way, plugging in numbers. Only the sum of alpha and beta is fixed, thirty-six. The question expects one value of x, so any alpha and beta that add up to thirty-six must give that same x. So we can choose easy numbers that fit.",
+    "say": "[pause] Now let's plug in numbers. The question expects one value of x for every parallelogram that fits the figure. So we may choose one allowed parallelogram that's easy to work with. A rectangle is a parallelogram, so let's try ninety degrees at B and at C.",
     "at": [
-     "plugging in numbers",
      "The question expects",
-     "choose easy numbers"
+     "we may choose",
+     "A rectangle is a parallelogram",
+     "let's try ninety degrees",
+     "B and at"
     ]
    },
    {
-    "say": "They have to add up to thirty-six, and equal numbers are the easiest. Let's take them equal, eighteen and eighteen. Then angle B is five times eighteen, ninety, because angle B is five alpha. Angle C is five beta, so it's ninety too. The parallelogram becomes a rectangle, and that's allowed, because a rectangle is a parallelogram.",
+    "say": "Angle B is five alpha, so five alpha is ninety, and alpha is eighteen. Angle C is five beta, so in the same way, beta is eighteen.",
     "at": [
-     "Let's take them equal",
-     "Then angle B is five times eighteen",
-     "times eighteen, ninety"
+     "so five alpha is ninety",
+     "and alpha is eighteen",
+     "Angle C is"
     ]
    },
    {
-    "say": "In triangle B C E, three alpha is three times eighteen, fifty-four, and three beta is fifty-four too. The angles of a triangle add up to one hundred eighty. So x is one hundred eighty minus fifty-four minus fifty-four, which is seventy-two. That's the same seventy-two as in the math way. Choice number two again. [pause] Okay. I'll see you in the next question.",
+    "say": "In triangle B C E, three alpha is three times eighteen, fifty-four, and three beta is fifty-four too.",
     "at": [
      "three alpha is three times eighteen",
-     "eighteen, fifty-four, and",
+     "and three beta is fifty-four"
+    ]
+   },
+   {
+    "say": "The angles of a triangle add up to one hundred eighty. Fifty-four plus fifty-four is a hundred eight. So x is one hundred eighty minus a hundred eight, which is seventy-two. That's the same seventy-two as in the math way. Choice number two again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "The angles of",
+     "Fifty-four plus fifty-four",
+     "So x is one hundred eighty",
+     "eighty minus a",
+     "which is seventy-two",
+     "is seventy-two. That",
+     "in the math",
      "Choice number two again"
     ]
    }

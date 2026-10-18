@@ -3,7 +3,7 @@
  "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Quadrilaterals. So far we've finished lines, angles and triangles. Now we're entering the kingdom of quadrilaterals. Let's start with a general quadrilateral."
+   "So far we've finished lines, angles and triangles. Now let's look at quadrilaterals, shapes with four sides. We'll start with a general one."
   ],
   [
    {
@@ -22,13 +22,13 @@
   ],
   [
    {
-    "say": "Here are two more quadrilaterals. They look different, but each one is closed and has four sides. And here are two shapes that are not quadrilaterals. This one has four sides, but it isn't closed. And this one is closed, but it has five sides.",
+    "say": "Here are two more quadrilaterals. They look different, but each one is closed and has four sides. And here are two shapes that are not quadrilaterals. This one has four sides, but its ends don't meet, so it isn't closed. And this one is closed, but it has five sides.",
     "at": [
      "Here are two more quadrilaterals",
      "They look different",
      "one is closed",
-     "but it isn't closed",
-     "this one is",
+     "but its ends don't meet",
+     "so it isn't",
      "it has five sides"
     ]
    }
@@ -87,35 +87,55 @@
   ],
   [
    {
-    "say": "Let's use it. Here the angles are eighty, ninety-five and a hundred ten degrees, and we want x. All four angles add up to three hundred sixty, so first we add the three we know. Eighty plus ninety-five is a hundred seventy-five, and plus a hundred ten is two hundred eighty-five. What's left of the three hundred sixty is x. Three hundred sixty minus two hundred eighty-five is seventy-five, so x is seventy-five degrees.",
+    "say": "Let's use it. Here the angles are eighty, ninety-five and a hundred ten degrees, and we want x. All four angles add up to three hundred sixty, so first we add the three we know. Eighty plus ninety-five is a hundred seventy-five. And plus a hundred ten is two hundred eighty-five.",
     "at": [
      "Here the angles are eighty",
      "ninety-five and a",
      "Eighty plus ninety-five",
-     "hundred ten is",
-     "so x is seventy-five"
+     "And plus a hundred ten",
+     "is two hundred"
     ]
    },
    {
-    "say": "Another one. Two right angles and a hundred twenty degrees. Ninety plus ninety plus a hundred twenty is three hundred, so y is three hundred sixty minus three hundred, which is sixty degrees.",
+    "say": "What's left of the three hundred sixty is x. So x is three hundred sixty minus two hundred eighty-five. Let's take away two hundred eighty first. Three hundred sixty minus two hundred eighty is eighty. Then we take away five more, so x is seventy-five degrees.",
     "at": [
-     "Two right angles",
-     "hundred twenty degrees",
-     "Ninety plus ninety",
-     "so y is",
-     "which is sixty degrees"
+     "What's left of the three hundred sixty",
+     "hundred sixty is",
+     "Three hundred sixty minus two hundred eighty is",
+     "hundred eighty is",
+     "Then we take away",
+     "so x is seventy-five"
     ]
    }
   ],
   [
    {
-    "say": "And one with an angle bigger than a hundred eighty. Thirty, forty and fifty degrees add up to a hundred twenty, so the angle at the inward corner is three hundred sixty minus a hundred twenty, which is two hundred forty degrees. The rule still works for every quadrilateral. [pause] Okay. I'll see you in the next part.",
+    "say": "Here's another one, with two right angles and a hundred twenty degrees. Ninety plus ninety is a hundred eighty. And plus a hundred twenty is three hundred. So y is three hundred sixty minus three hundred, which is sixty degrees.",
+    "at": [
+     "two right angles",
+     "hundred twenty degrees",
+     "Ninety plus ninety",
+     "And plus a hundred twenty",
+     "is three hundred",
+     "So y is three hundred sixty",
+     "sixty minus three",
+     "which is sixty degrees",
+     "sixty degrees."
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And one with an angle bigger than a hundred eighty. The other angles are thirty, forty and fifty degrees. Thirty plus forty is seventy. And plus fifty, that's a hundred twenty. So the angle at the inward corner is three hundred sixty minus a hundred twenty, which is two hundred forty degrees. The rule still works for every quadrilateral. [pause] Okay. I'll see you in the next part.",
     "at": [
      "And one with an angle bigger",
      "bigger than a",
-     "Thirty, forty and fifty",
-     "twenty, so the",
+     "Thirty plus forty",
+     "And plus fifty",
+     "hundred twenty. So",
+     "sixty minus a hundred twenty",
      "which is two hundred forty",
+     "two hundred forty degrees",
      "The rule still"
     ]
    }

@@ -23,33 +23,37 @@
     ]
    },
    {
-    "say": "So a kite has two pairs of equal sides. The equal sides sit next to each other, not facing each other. Here's another kite, wide and short, and it works the same way.",
+    "say": "So a kite has two pairs of equal sides. In each pair, the equal sides sit next to each other, not facing each other. In this kite, the two pairs have different lengths. They can also be equal, and then it's a rhombus.",
     "at": [
      "two pairs of equal sides",
-     "The equal sides sit next to each other",
-     "to each other",
+     "In each pair",
+     "sides sit next"
+    ]
+   },
+   {
+    "say": "Here's another kite, turned on its side, and it works the same way.",
+    "at": [
      "Here's another kite",
-     "short, and it"
+     "its side, and"
     ]
    }
   ],
   [
    {
-    "say": "A kite is still symmetric, but only from right to left. If we draw the line from the top corner A down to the bottom corner C, and fold along it, the left half lands exactly on the right half.",
+    "say": "A kite is symmetric along the line that joins the two corners between equal sides, here A and C. If we fold along A C, the left half lands exactly on the right half. That works even when the kite is turned on the page.",
     "at": [
-     "A kite is still symmetric",
-     "but only from",
-     "If we draw the line",
-     "down to the",
-     "and fold along it",
-     "the right half"
+     "A kite is symmetric",
+     "the line that",
+     "If we fold along",
+     "the left half lands",
+     "on the right"
     ]
    },
    {
-    "say": "But it's not symmetric from top to bottom. If we cut it along the other line, from B to D, the top triangle and the bottom triangle are not the same. The top one is small, and the bottom one is big.",
+    "say": "Now the other line, from B to D. In this kite, the two pairs have different lengths, so the top triangle and the bottom triangle are not the same. The top one is small, and the bottom one is big. So a kite is not necessarily symmetric along B D.",
     "at": [
-     "If we cut it along",
-     "the other line"
+     "Now the other line",
+     "B to D"
     ]
    }
   ],
@@ -73,12 +77,12 @@
     ]
    },
    {
-    "say": "The secondary diagonal, from B to D, doesn't cut the kite into two equal parts. The triangle on top and the triangle at the bottom are different.",
+    "say": "The secondary diagonal, from B to D, does not necessarily cut the kite into two equal parts. In this kite, the triangle on top and the triangle at the bottom are different.",
     "at": [
      "The secondary diagonal",
-     "to D, doesn't",
-     "The triangle on top",
-     "the triangle at"
+     "to D, does",
+     "In this kite, the",
+     "on top and"
     ]
    }
   ],
@@ -101,9 +105,9 @@
     ]
    },
    {
-    "say": "The secondary diagonal doesn't do that. At B, the angle above it and the angle below it are not equal.",
+    "say": "The secondary diagonal does not necessarily do that. In this kite, at B, the angle above it and the angle below it are not equal.",
     "at": [
-     "At B, the angle above it",
+     "at B, the angle above it",
      "it and the"
     ]
    },
@@ -137,15 +141,27 @@
    {
     "say": "So its area is A C, times half of B D, over two. The left half is exactly the same triangle, so we multiply by two, and we're left with A C times B D, over two.",
     "at": [
+     "So its area is A C",
+     "D, over two",
      "The left half is exactly",
-     "the same triangle"
+     "multiply by two",
+     "we're left with"
     ]
    },
    {
-    "say": "For example, if the diagonals are ten and six, the area is ten times six, over two, which is thirty. If they're twelve and eight, it's twelve times eight, over two, which is forty-eight. Next, let's see a question about a kite. [pause] Okay. I'll see you in the next video.",
+    "say": "For example, if the diagonals are ten and six, ten times six is sixty, and sixty over two is thirty.",
     "at": [
-     "For example, if the diagonals",
-     "are ten and"
+     "diagonals are ten",
+     "ten times six is sixty",
+     "sixty over two"
+    ]
+   },
+   {
+    "say": "If they're twelve and eight, twelve times eight is ninety-six, and ninety-six over two is forty-eight. Next, let's see a question about a kite. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "twelve times eight",
+     "ninety-six over two",
+     "Next, let's see"
     ]
    }
   ]

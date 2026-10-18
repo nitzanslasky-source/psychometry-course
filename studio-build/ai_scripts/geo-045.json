@@ -38,11 +38,13 @@
   ],
   [
    {
-    "say": "Now the diagonals. First, they're equal to each other, because the rectangle is symmetric.",
+    "say": "Now the diagonals. First, they're equal to each other. Why are they equal? Imagine folding the rectangle down the middle, from top to bottom. The left half lands on the right half, and one diagonal lands exactly on the other. So their lengths are equal.",
     "at": [
      "Now the diagonals",
      "they're equal to each other",
-     "because the rectangle"
+     "Why are they",
+     "Imagine folding",
+     "The left half"
     ]
    },
    {
@@ -76,23 +78,24 @@
   ],
   [
    {
-    "say": "The area of a rectangle works like the square's. In the square we squared the side. Here the length and the width aren't equal, so we multiply them: length times width, or base times height.",
+    "say": "The area of a rectangle works like the square's. We count how many little squares are in each row, and how many rows there are. So the area is length times width, or base times height. The two lengths can be different, or equal, as in a square.",
     "at": [
      "rectangle works like",
-     "so we multiply them",
+     "We count how many",
+     "little squares are in each row",
+     "row, and how",
+     "So the area is length times width",
      "times width, or"
     ]
    },
    {
-    "say": "For example, a length of eight and a width of three. Eight times three is twenty-four. And really, there are three rows of eight little squares. We don't divide by two here, because it's the whole rectangle.",
+    "say": "For example, a length of eight and a width of three. Each row has eight little squares, and there are three rows. Eight times three is twenty-four. We don't divide by two here, because it's the whole rectangle.",
     "at": [
-     "For example",
-     "a length of eight",
-     "a width of",
+     "Each row has eight",
+     "squares, and there",
      "Eight times three",
      "is twenty-four",
-     "And really",
-     "rows of eight"
+     "We don't divide"
     ]
    },
    {

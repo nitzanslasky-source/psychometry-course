@@ -36,6 +36,9 @@
    {
     "say": "In a gold triangle the sides have a fixed ratio. Five is across from the thirty-degree angle, so it's the short leg. To get the long leg, we multiply by root three. So A O is five root three.",
     "at": [
+     "so it's the short",
+     "To get the long leg",
+     "we multiply by",
      "So A O is five root three"
     ]
    },
@@ -44,14 +47,24 @@
     "at": [
      "other in half",
      "so the bottom part",
-     "The whole diagonal"
+     "too. The whole",
+     "which is ten root three"
     ]
    },
    {
-    "say": "Now the formula. The diagonals multiplied, over two, is ten times ten root three, over two. Ten over two is five, and five times ten root three is fifty root three. Choice number two is our answer.",
+    "say": "Now the formula, for the whole rhombus. The diagonals multiplied, over two, is ten times ten root three, over two.",
     "at": [
-     "Now the formula",
+     "for the whole rhombus",
      "The diagonals multiplied",
+     "is ten times"
+    ]
+   },
+   {
+    "say": "Ten over two is five, and five times ten root three is fifty root three. Choice number two is our answer.",
+    "at": [
+     "Ten over two is five",
+     "and five times ten root three",
+     "three is fifty",
      "Choice number two is our answer"
     ]
    }
@@ -63,24 +76,41 @@
      "Once you've found all the inner pieces",
      "inner pieces, you",
      "Some students take the gold triangle",
-     "triangle, base five"
+     "triangle, base five",
+     "multiply its area by four",
+     "because the rhombus"
     ]
    },
    {
-    "say": "Some take the top triangle, B D A, with base ten and height five root three, twice. And some take the triangle on the right, A D C, with base ten root three and height five, twice too. There are many ways, and at this stage it's good to know them all.",
+    "say": "Some take the top triangle, B D A. Its base is B D, ten, and its height is A O, five root three. The bottom triangle, B D C, is the same, so we take it twice.",
     "at": [
      "Some take the top triangle",
      "B D A",
+     "Its base is B D",
+     "ten, and its",
+     "The bottom triangle, B D C",
+     "C, is the",
+     "so we take it twice"
+    ]
+   },
+   {
+    "say": "And some take the triangle on the right, A D C. Its base is A C, ten root three, and its height is O D, five. The left triangle is the same, so again we take it twice. These all use rules we know, so pick whichever you see first.",
+    "at": [
      "And some take the triangle on",
-     "on the right"
+     "on the right",
+     "Its base is A C",
+     "ten root three",
+     "The left triangle is the same",
+     "so again we take it twice",
+     "These all use"
     ]
    }
   ],
   [
    {
-    "say": "[pause] And one more way, an insight. Well done if you saw this one. Some students notice the sixty degrees and say, wait, that's a hint.",
+    "say": "[pause] And one more way, an insight. Some students notice the sixty degrees and say, wait, that's a hint.",
     "at": [
-     "an insight. Well",
+     "an insight. Some",
      "notice the sixty degrees",
      "say, wait, that's"
     ]
@@ -103,21 +133,32 @@
     "say": "All the sides of a rhombus are equal, so D C and B C are ten too. So the rhombus is two equilateral triangles.",
     "at": [
      "so D C and B C are ten too",
-     "C are ten"
+     "C are ten",
+     "So the rhombus is two equilateral"
     ]
    },
    {
-    "say": "The area of one equilateral triangle is the side squared, times root three, over four. The side is ten, and ten squared is a hundred. The rhombus is two of these triangles, so we take it twice. Twice that is two times one hundred root three, over four, which is fifty root three. That's the shorter way. Choice number two.",
+    "say": "The area of one equilateral triangle is the side squared, times root three, over four. The side is ten, and ten squared is a hundred. So one triangle is a hundred root three, over four.",
     "at": [
-     "Twice that is two times",
-     "one hundred root",
-     "That's the shorter way. Choice number two",
+     "The area of",
+     "ten squared is a hundred",
+     "So one triangle is",
+     "hundred root three"
+    ]
+   },
+   {
+    "say": "The rhombus is two of these triangles, so we take it twice. That's two hundred root three, over four, which is fifty root three. Choice number two.",
+    "at": [
+     "That's two hundred root three",
+     "which is fifty root three",
+     "fifty root three. Choice number two",
      "number two"
     ]
    },
    {
     "say": "And one more link to the triangles topic. Angle A B C is sixty plus sixty, one hundred twenty. So triangle A B C is the thirty, thirty, one hundred twenty triangle with sides ten and ten, and its long side, A C, is ten root three straight away. [pause] Okay. I'll see you in the next question.",
     "at": [
+     "And one more",
      "Angle A B C is sixty plus sixty",
      "sixty plus sixty"
     ]

@@ -12,59 +12,76 @@
     "pause": 0.5
    },
    {
-    "say": "We know only the diagonal, and we need the area. [short pause] We'll solve it two ways, with the diagonal, and then the long way, through the side.",
+    "say": "We know only the diagonal, and we need the area. [short pause] We'll solve it in two different ways. First the math way, with the diagonal formula. Then we'll use Pythagoras.",
     "at": [
      "We know only the diagonal",
      "and we need",
-     "We'll solve it"
+     "way, with the"
     ]
    },
    {
-    "say": "[short pause] In principle, we could use Pythagoras to find the side, and then square it. But there's no need. The area of a square is the product of the diagonals, over two.",
+    "say": "[short pause] Let's start with the formula. The area of a square is the product of the diagonals, over two.",
     "at": [
-     "In principle",
-     "Pythagoras to find",
+     "Let's start with the formula",
      "The area of a square",
-     "is the product"
+     "the product of the diagonals"
     ]
    },
    {
-    "say": "The two diagonals of a square are equal, so both are fourteen. Fourteen times fourteen is a hundred ninety-six, and a hundred ninety-six over two is ninety-eight. Choice number two is our answer.",
+    "say": "The two diagonals of a square are equal, so both are fourteen. So the area is fourteen times fourteen, over two.",
     "at": [
+     "a square are",
      "so both are fourteen",
+     "So the area is",
+     "times fourteen, over"
+    ]
+   },
+   {
+    "say": "Fourteen times fourteen is a hundred ninety-six. Careful, that's not the area yet, because we still divide by two. Choice number three, a hundred ninety-six, is the trap for anyone who forgets. A hundred ninety-six over two is ninety-eight. Choice number two is our answer.",
+    "at": [
      "Fourteen times fourteen",
-     "hundred ninety-six, and",
+     "Careful, that's not",
+     "Choice number three, a hundred",
+     "A hundred ninety-six over two",
      "Choice number two is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now the long way, once. Call the side s. The diagonal cuts the square into two right triangles. In triangle A B C, the legs are s and s, and the hypotenuse is the diagonal, fourteen.",
+    "say": "[pause] Now let's use Pythagoras to find the area through the side. Call the side s. The diagonal cuts the square into two right triangles. In triangle A B C, the legs are s and s, and the hypotenuse is the whole diagonal, fourteen.",
     "at": [
-     "Now the long way",
-     "Call the side",
+     "Now let's use Pythagoras",
+     "find the area",
      "In triangle A B C",
      "the legs are"
     ]
    },
    {
-    "say": "By Pythagoras, s squared plus s squared is fourteen squared, a hundred ninety-six. So two s squared is a hundred ninety-six. Divide both sides by two, and s squared is ninety-eight. But s squared is already the area of the square, so we stop here. Ninety-eight, choice number two.",
+    "say": "Careful, the side is not half the diagonal. Seven squared is forty-nine, choice number one, and that's a trap.",
     "at": [
-     "By Pythagoras",
-     "s squared is",
-     "So two s squared",
-     "a hundred ninety-six. Divide",
-     "Ninety-eight, choice number two"
+     "Seven squared is forty-nine"
     ]
    },
    {
-    "say": "Careful with the traps. A hundred ninety-six is the diagonal squared, without dividing by two. And forty-nine is half the diagonal, squared. [pause] Okay. I'll see you in the next question.",
+    "say": "By Pythagoras, s squared plus s squared is fourteen squared. That's a hundred ninety-six, so two s squared is a hundred ninety-six. We want s squared alone, so we divide both sides by two. That gives s squared is ninety-eight.",
     "at": [
-     "A hundred ninety-six is",
-     "And forty-nine"
+     "By Pythagoras",
+     "s squared is",
+     "so two s squared",
+     "a hundred ninety-six. We",
+     "we divide both sides by two",
+     "That gives s squared"
     ]
-   }
+   },
+   {
+    "say": "But s squared is already the area of the square, because the area is the side squared. So we can stop here. Ninety-eight, choice number two.",
+    "at": [
+     "But s squared is already",
+     "Ninety-eight, choice number two"
+    ]
+   },
+   "This comes back a lot. When they ask for the area of a square, and you reach s squared, stop there. You don't need the side itself, so there's no root to take. Here s would be root ninety-eight, and we never needed it. [pause] Okay. I'll see you in the next question."
   ]
  ]
 }

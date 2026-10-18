@@ -11,26 +11,42 @@
     ],
     "pause": 0.5
    },
-   "Why does it say absolute difference? So we don't get tangled up with big minus small or small minus big. A length can't be negative, so the difference is simply the big one minus the small one. [short pause] We'll find the two diagonals first, and then use them to find the side.",
+   "What does absolute difference mean? It means the gap between the two lengths, whichever one we name first. Here that gap is fourteen. [short pause] We'll find the two diagonals first, and then use them to find the side.",
    {
-    "say": "[short pause] Let's call the diagonals a and b, with a the bigger one. Then a plus b is forty-six, and a minus b is fourteen. Two equations, two unknowns.",
+    "say": "[short pause] Let's call the longer diagonal a and the shorter one b. Then a plus b is forty-six. And the gap is fourteen, so a minus b is fourteen.",
     "at": [
      "Then a plus b is forty-six",
-     "and a minus b",
-     "fourteen. Two equations"
+     "forty-six. And the",
+     "so a minus b"
     ]
    },
    {
-    "say": "Add the two equations. Plus b and minus b cancel, so two a is sixty, and a is thirty. That's the bigger diagonal. To find b, we use a minus b is fourteen. Thirty minus what gives fourteen? Sixteen. So b is sixteen.",
+    "say": "Both equations are true. So we can add their left sides, and add their right sides. On the left, plus b and minus b cancel, and a plus a leaves two a. On the right, forty-six plus fourteen is sixty. So two a is sixty.",
     "at": [
-     "so two a is sixty",
-     "the bigger diagonal"
+     "Both equations are true",
+     "So we can",
+     "So two a is sixty"
+    ]
+   },
+   {
+    "say": "We want a alone, so we divide both sides by two. A is thirty, and that's the longer diagonal.",
+    "at": [
+     "we divide both sides by two",
+     "A is thirty"
+    ]
+   },
+   {
+    "say": "Now we put thirty for a in the first equation. Thirty plus b is forty-six. So b is forty-six minus thirty, which is sixteen.",
+    "at": [
+     "Thirty plus b is forty-six",
+     "So b is forty-six minus thirty",
+     "thirty, which is"
     ]
    }
   ],
   [
    {
-    "say": "Now the figure. The long diagonal is thirty, and the short one is sixteen. The diagonals of a rhombus cut each other in half, so we split thirty into fifteen and fifteen, and sixteen into eight and eight.",
+    "say": "Now the figure. The long diagonal is thirty, and the short one is sixteen. The diagonals of a rhombus cut each other in half, so we split thirty into fifteen and fifteen, and sixteen into eight and eight. So A O, the top half of A C, is fifteen, and O D, half of B D, is eight.",
     "at": [
      "Now the figure",
      "The long diagonal is thirty",

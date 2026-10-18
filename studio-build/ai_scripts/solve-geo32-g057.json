@@ -28,7 +28,16 @@
     ]
    },
    {
-    "say": "One hundred eighteen plus ninety-six is two hundred fourteen. Three hundred sixty minus two hundred fourteen is one hundred forty-six. So alpha and beta together are one hundred forty-six.",
+    "say": "First, one hundred eighteen plus ninety-six. One hundred eighteen plus a hundred is two hundred eighteen. We added four too many, so we take away four, and it's two hundred fourteen.",
+    "at": [
+     "One hundred eighteen plus a hundred",
+     "hundred is two",
+     "so we take away four",
+     "and it's two"
+    ]
+   },
+   {
+    "say": "Three hundred sixty minus two hundred fourteen is one hundred forty-six. So alpha and beta together are one hundred forty-six.",
     "at": [
      "Three hundred sixty minus",
      "hundred fourteen is",
@@ -36,20 +45,30 @@
      "are one hundred"
     ]
    },
+   "What does that tell us? The two angles share one hundred forty-six between them. They could be seventy-three each. Or alpha could be one hundred, and beta forty-six. But neither of them can be one hundred forty-six or more.",
    {
-    "say": "What does that tell us? The two angles share one hundred forty-six between them. They could be seventy-three each. Or alpha could be one hundred, and beta forty-six. But neither of them can be one hundred forty-six or more. If alpha were one hundred forty-six, beta would be zero, and an angle of zero degrees isn't a real angle. So alpha can't be one hundred forty-six, and choice number four is our answer.",
+    "say": "If alpha were one hundred forty-six, beta would be zero. That would leave zero degrees at D, so D would no longer be a proper corner of this quadrilateral. So alpha can't be one hundred forty-six, and choice number four is our answer.",
     "at": [
      "If alpha were",
      "forty-six, beta would",
+     "That would leave zero degrees",
+     "at D, so",
      "and choice number four is our answer"
     ]
    },
    {
-    "say": "In the exam you'd mark it and move on. But here, let's check the other choices too, because one of them hides a trap. Alpha twenty-six gives beta one hundred twenty, together one hundred forty-six, so it's possible. Alpha seventy gives beta seventy-six, also possible.",
+    "say": "In the exam you'd mark it and move on. But here, let's check the other choices too, because one of them hides a trap. Alpha twenty-six gives beta one hundred twenty, together one hundred forty-six, so it's possible.",
     "at": [
      "Alpha twenty-six gives",
      "hundred twenty, together",
-     "so it's possible",
+     "so it's possible"
+    ]
+   },
+   {
+    "say": "Alpha seventy gives beta seventy-six, together one hundred forty-six, also possible.",
+    "at": [
+     "Alpha seventy gives",
+     "together one hundred",
      "also possible"
     ]
    },
@@ -58,7 +77,9 @@
     "at": [
      "figures on the exam are not drawn to scale",
      "not drawn to",
+     "Alpha one hundred twenty-four gives",
      "and that's possible too",
+     "only one hundred",
      "forty-six is impossible"
     ]
    }

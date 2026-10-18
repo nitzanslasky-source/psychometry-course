@@ -12,11 +12,11 @@
     "pause": 0.5
    },
    {
-    "say": "We know the area of the shaded triangle, and we need the area of the whole trapezoid. [short pause] We'll solve it two ways, the math way, and then with a ratio principle.",
+    "say": "We know the area of the shaded triangle, and we need the area of the whole trapezoid. [short pause] We'll solve it in two different ways. First the math way, and then by understanding, with equal heights.",
     "at": [
      "We know the area",
      "the shaded triangle",
-     "two ways, the"
+     "the math way"
     ]
    },
    {
@@ -29,43 +29,62 @@
     ]
    },
    {
-    "say": "Where is the height to A D? In an obtuse triangle the height is outside. So we extend A D, and from B we drop the shortest line to it, at a right angle. That's the height, h.",
+    "say": "Where is the height to A D? For this base, A D, the perpendicular from B lands beyond A. So we extend D A past A, and from B we draw the perpendicular to that line. Its length, the perpendicular distance, is the height h.",
     "at": [
-     "we extend A D",
-     "from B we drop",
-     "shortest line to"
+     "So we extend D A past A",
+     "past A, and",
+     "from B we draw the perpendicular",
+     "Its length, the"
     ]
    },
    {
     "say": "So five times h, over two, is fifteen. Multiply both sides by two, and five h is thirty. Divide by five, so h is six.",
     "at": [
      "So five times h",
-     "two, is fifteen"
+     "two, is fifteen",
+     "and five h is thirty",
+     "Divide by five",
+     "so h is six",
+     "six."
     ]
    },
    {
-    "say": "And look, this height is also the height of the trapezoid, the distance between the two parallel sides. The area of a trapezoid is the sum of the bases, times the height, over two. Five plus twenty is twenty-five, times six is a hundred fifty, over two is seventy-five. Choice number three is our answer.",
+    "say": "And look, this height is also the height of the trapezoid, the distance between the two parallel sides. The area of a trapezoid is the sum of the bases, times the height, over two.",
     "at": [
-     "The area of a trapezoid",
-     "is the sum",
+     "this height is also the height of the trapezoid",
+     "height of the"
+    ]
+   },
+   {
+    "say": "Five plus twenty is twenty-five. Twenty-five times six is a hundred fifty. And a hundred fifty over two is seventy-five. Choice number three is our answer.",
+    "at": [
+     "Five plus twenty",
+     "Twenty-five times six",
+     "hundred fifty. And",
+     "a hundred fifty over two",
      "Choice number three is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Not too bad, but there's a much shorter way, with a ratio principle. Look at the shaded triangle A B D and the white triangle B C D. They have the same height, the height of the trapezoid. In the white one it's easy to see. In the shaded one, it's the outside height we drew.",
+    "say": "[pause] Now by understanding, using equal heights. Look at the shaded triangle A B D and the white triangle B C D. They have the same height, the distance between the parallel sides. For B C D, it's the perpendicular from D down to B C. For A B D, it's the perpendicular from B to the line of A D.",
     "at": [
-     "there's a much",
      "Look at the shaded triangle",
-     "A B D"
+     "A B D",
+     "For B C D",
+     "the perpendicular from"
     ]
    },
    {
     "say": "When two triangles have the same height, the ratio of their areas is the ratio of their bases. The shaded base is five, and the white base is twenty, four times bigger. So the white area is four times bigger too.",
     "at": [
+     "When two triangles have the same height",
      "the ratio of their areas",
-     "is the ratio"
+     "the ratio of their areas",
+     "is the ratio",
+     "four times bigger. So",
+     "So the white"
     ]
    },
    {
@@ -78,15 +97,23 @@
     ]
    },
    {
-    "say": "So all the triangles have the same area, fifteen each. The whole trapezoid is the shaded triangle plus the four small white ones. That's fifteen plus four times fifteen, which is seventy-five. Choice number three again. Careful, sixty is only the white triangle, so choice number two is a trap.",
+    "say": "So all the triangles have the same area, fifteen each. The four small white ones make four times fifteen, sixty. The whole trapezoid is the shaded fifteen plus sixty, which is seventy-five. Choice number three again. Careful, sixty is only the white triangle, so choice number two is a trap.",
     "at": [
      "fifteen each",
-     "The whole trapezoid",
+     "make four times fifteen",
+     "The whole trapezoid is the shaded",
+     "shaded fifteen plus",
      "Choice number three again",
      "choice number two is a trap"
     ]
    },
-   "Same height, so the area ratio follows the base ratio. If the base were three times bigger, the area would be three times bigger. You barely write anything, you just see it. [pause] Okay. I'll see you in the next question."
+   {
+    "say": "So when two triangles have the same perpendicular height, the area ratio is the base ratio. If the base were three times bigger, the area would be three times bigger. We didn't use that the trapezoid is isosceles, so this works for any trapezoid with these bases and this area. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So when two triangles",
+     "area ratio is"
+    ]
+   }
   ]
  ]
 }

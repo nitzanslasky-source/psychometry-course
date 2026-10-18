@@ -21,20 +21,20 @@
     ]
    },
    {
-    "say": "[short pause] Here's the base, B C, fourteen. We drop the height from A, straight down to the line of B C. Because angle B is obtuse, A is to the left of B, so the height falls outside the parallelogram.",
+    "say": "[short pause] Here's the base, B C, fourteen. Angle B is obtuse, so A is to the left of B. The perpendicular from A would land left of B, outside the segment B C.",
     "at": [
      "Here's the base",
      "B C, fourteen",
-     "We drop the"
+     "Angle B is"
     ]
    },
    {
-    "say": "So we start at B and extend C B beyond B. Then we drop the height from A to that line, and call its foot H.",
+    "say": "So first we start at B and extend C B beyond B. Now we draw the perpendicular from A to that line, and call its foot H.",
     "at": [
-     "So we start at B",
-     "and extend C",
-     "Then we drop the height",
-     "and call its"
+     "So first we start at B",
+     "B and extend",
+     "Now we draw the perpendicular",
+     "from A to"
     ]
    },
    {
@@ -54,19 +54,30 @@
     ]
    },
    {
-    "say": "The area is base times height, fourteen times five, seventy. Choice number three is our answer.",
+    "say": "Careful, the long leg is B H, five root three, and it isn't the height. That's where seventy root three, choice number two, comes from. And the height is five, not the slanted side ten. Fourteen times ten, a hundred forty, is choice number one, another trap.",
     "at": [
-     "fourteen times five",
+     "Careful, the long",
+     "That's where seventy root three",
+     "Fourteen times ten, a hundred forty"
+    ]
+   },
+   {
+    "say": "Now the area of the whole parallelogram, base times height. The base is B C, fourteen, and the height to it is A H, five. Fourteen times five is seventy. We don't divide by two, because it's a parallelogram, not a triangle. Thirty-five, choice number four, is that trap. Choice number three is our answer.",
+    "at": [
+     "Now the area of the whole parallelogram",
+     "whole parallelogram, base",
+     "Fourteen times five",
+     "is seventy",
+     "We don't divide",
+     "Thirty-five, choice number four",
      "Choice number three is our answer"
     ]
    },
    {
-    "say": "So when you see a thirty degree angle, or a hundred fifty next to it, the height is half the slanted side. And the other choices are traps. A hundred forty is fourteen times ten, the slanted side instead of the height. Seventy root three uses the long leg instead of the short one. And thirty-five divides by two, which is the triangle formula. [pause] Okay. I'll see you in the next question.",
+    "say": "So here's the rule. When the slanted side meets the base at thirty or at a hundred fifty degrees, the height to that base is half the slanted side. Here A B meets the line of B C at a hundred fifty, so A H is half of A B. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "So when you",
-     "A hundred forty is",
-     "Seventy root three uses",
-     "And thirty-five divides"
+     "When the slanted side meets",
+     "the height to"
     ]
    }
   ]

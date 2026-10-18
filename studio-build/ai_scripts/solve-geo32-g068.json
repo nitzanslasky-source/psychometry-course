@@ -12,26 +12,33 @@
     "pause": 0.5
    },
    {
-    "say": "The wording isn't very clear. What do they want? They ask which one piece of data, if they gave it to us, would be enough to calculate the shaded area. [short pause] We'll use the symmetry principle from the last lesson.",
+    "say": "They ask which one piece of data, if they gave it to us, would be enough to calculate the shaded area. [short pause] We'll use the symmetry principle from the last lesson.",
     "at": [
      "They ask which one piece",
      "principle from the"
     ]
    },
    {
-    "say": "[short pause] First, the figure. E cuts A D into two pieces, three to one, and G cuts B C the same way, three to one. So E is exactly above G, and E G is a straight line from top to bottom. It cuts the rectangle into a left rectangle and a right rectangle. And F? Nobody told us where F is on A B. Remember that.",
+    "say": "[short pause] First, the figure. A E is three times E D, so A D is cut into four equal parts, three and one. B C is cut the same way. So E and G are both three parts from the left side. That puts E exactly above G.",
     "at": [
      "First, the figure",
-     "A D into",
-     "three to one",
-     "way, three to",
+     "is three times",
+     "cut into four equal parts",
+     "three and one"
+    ]
+   },
+   {
+    "say": "A D and B C are parallel, and A B is perpendicular to them. E G joins two points at the same distance from A B, so it's parallel to A B, and perpendicular to the bases. It cuts the rectangle into a left rectangle and a right rectangle. And F? Nobody told us where F is on A B. Remember that.",
+    "at": [
+     "so it's parallel to A B",
+     "B, and perpendicular",
      "And F"
     ]
    },
    {
-    "say": "Let's start with the data that works, the area of E C D. They don't say how big it is, so let's call it s. It could be ten, or a hundred, any number.",
+    "say": "Let's try choice number one, the area of E C D. They don't say how big it is, so let's call it s. It could be ten, or a hundred, any number.",
     "at": [
-     "Let's start with",
+     "number one, the",
      "let's call it s",
      "It could be"
     ]
@@ -40,47 +47,73 @@
     "say": "E C is a diagonal of the right rectangle, so it cuts it into two equal halves. That means the shaded triangle E G C is also s, and the right rectangle is s plus s, two s.",
     "at": [
      "the shaded triangle E G C",
-     "C is also"
+     "is also s",
+     "and the right rectangle is s plus s",
+     "s plus s"
     ]
    },
    {
     "say": "The left rectangle has the same height, and its base is three times longer, three to one. So it's three times as big, three times two s, which is six s.",
     "at": [
-     "three times as big",
-     "times two s"
+     "The left rectangle has the same height",
+     "is three times",
+     "three times two s",
+     "is six s"
     ]
    },
    {
-    "say": "And the shaded triangle F E G? Its base is E G, the whole side of the left rectangle, and its tip F is on the opposite side, A B. That's the symmetry principle again, so it's half of the left rectangle, three s. Together, the shaded area is s plus three s, four s. So if they give us the area of E C D, we can find the shaded area.",
+    "say": "And the shaded triangle F E G? Its base is E G, the whole side of the left rectangle, and its tip F is on the opposite side, A B. That's the symmetry principle again, so it's half of the left rectangle. Half of six s is three s.",
     "at": [
      "And the shaded triangle F E G",
-     "Its base is"
+     "the whole side",
+     "Half of six s"
     ]
    },
    {
-    "say": "Some students see it even faster. The whole rectangle is eight s, the shaded part is half of it, and E C D is an eighth. In the exam, once we've understood this, we mark choice number one and move on.",
+    "say": "Together, the shaded area is s plus three s, four s. So if they give us the area of E C D, we can find the shaded area. In the exam, once we've understood this, we mark choice number one and move on.",
     "at": [
+     "the shaded area is s plus three s",
+     "plus three s",
      "we mark choice number one"
+    ]
+   },
+   {
+    "say": "Some students see it even faster. The whole rectangle is six s plus two s, eight s. The shaded four s is half of it, and E C D is an eighth.",
+    "at": [
+     "The whole rectangle is six s",
+     "s plus two"
     ]
    }
   ],
   [
    {
-    "say": "[pause] We're in a lesson, so let's see why the other choices fail. Choice number two, the area of A F E. Say it's s. A F E is half of a small rectangle at the top, so that rectangle is two s.",
+    "say": "[pause] We're in a lesson, so let's see why the other choices fail. Choice number two, the area of A F E. Now s means a new area, the area of A F E. A F E is half of a small rectangle at the top, so that rectangle is two s.",
     "at": [
      "so let's see",
      "Choice number two, the area of A F E",
      "number two, the",
      "A F E",
+     "Now s means a new area",
+     "area, the area",
      "A F E is half of a small",
      "the top, so"
     ]
    },
    {
-    "say": "But how big is the rectangle under it? We can't know, because we don't know where F is. If they told us that F is the middle of A B, the two parts would match. They didn't. So even with a number, five, ten or twenty, we can't find the shaded area. Choice number two is out.",
+    "say": "But how big is the rectangle under it? We can't know, because we don't know where F is.",
     "at": [
      "how big is the rectangle under it",
-     "We can't know",
+     "under it? We",
+     "we don't know where F is"
+    ]
+   },
+   {
+    "say": "Here are two allowed shapes. In both, A F and A E are the same, so A F E has the same area. But the second rectangle is taller, so its shaded area is bigger. So the area of A F E doesn't fix the shaded area. Choice number two is out.",
+    "at": [
+     "Here are two allowed shapes",
+     "In both, A",
+     "But the second rectangle is taller",
+     "taller, so its",
      "Choice number two is out"
     ]
    },

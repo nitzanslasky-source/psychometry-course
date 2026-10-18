@@ -3,7 +3,7 @@
  "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Quadrilaterals, the advanced level. In the last lesson we learned the rules of the quadrilaterals and practiced basic questions."
+   "Now let's try harder quadrilateral questions. In the last lesson we learned the rules of the quadrilaterals and practiced basic questions."
   ],
   [
    {
@@ -20,14 +20,14 @@
     ]
    },
    {
-    "say": "There are area questions that a long calculation solves, and that a short idea, like symmetry or an equal height, solves in a few seconds.",
+    "say": "There are area questions where an idea, like symmetry or an equal height, helps us see the answer.",
     "at": [
      "There are area questions",
-     "a long calculation"
+     "an idea, like"
     ]
    },
    {
-    "say": "And there are angle questions full of letters, where plugging in numbers helps. For most questions we'll see two ways, the full math way and the short way. Let's start with a sample question. [pause] Okay. I'll see you in the next video.",
+    "say": "And there are angle questions full of letters, where plugging in numbers helps. We'll use the math way, understanding, and plugging in numbers, each where it helps. Let's start with a sample question. [pause] Okay. I'll see you in the next video.",
     "at": [
      "And there are angle questions",
      "full of letters"

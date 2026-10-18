@@ -20,28 +20,43 @@
     ]
    },
    {
-    "say": "[short pause] One approach takes an area we know, the rectangle, and subtracts the white parts. The other breaks the shaded area into shapes we know, with completions or with symmetry. We'll see all of them. Subtracting is the main one, and the most common, so we start with it.",
+    "say": "[short pause] One approach takes an area we know, the rectangle, and subtracts the white parts. The other breaks the shaded area into shapes we know, with completions or with symmetry. We'll see all of them. Subtracting is the main one, and the most common, so we start with it, the math way.",
     "at": [
      "One approach takes an area we know",
      "we know, the"
     ]
    },
    {
-    "say": "The rectangle has forty squares, so its area is forty. The white parts are four right triangles in the corners, and the area of a right triangle is leg times leg, over two.",
+    "say": "The rectangle is eight by five, so its area is eight times five, forty. The white parts are four right triangles in the corners, and the area of a right triangle is leg times leg, over two.",
     "at": [
-     "The rectangle has forty squares",
-     "so its area"
+     "so its area is eight times five",
+     "times five, forty"
     ]
    },
    {
-    "say": "Top left: the legs are three and two. Three times two is six, over two is three. Top right: the legs are five and two, so it's five. The two bottom ones have legs of two and three, so three each.",
+    "say": "Top left, the legs are three and two. Three times two is six, and over two that's three.",
     "at": [
      "Top left",
      "three and two",
+     "Three times two is six",
+     "and over two"
+    ]
+   },
+   {
+    "say": "Top right, the legs are five and two. Five times two is ten, and over two that's five.",
+    "at": [
      "Top right",
-     "five and two",
+     "Five times two is ten",
+     "and over two"
+    ]
+   },
+   {
+    "say": "The two bottom ones have legs of two and three. Two times three is six, and half of six is three. So each one is three.",
+    "at": [
      "The two bottom ones",
-     "so three each"
+     "legs of two and three",
+     "Two times three is six",
+     "and half of"
     ]
    },
    {
@@ -49,48 +64,72 @@
     "at": [
      "All the white parts together",
      "are three plus",
+     "Forty minus fourteen",
      "Choice number three is our answer",
-     "Careful, fourteen, choice number one"
+     "Careful, fourteen, choice number one",
+     "is the white"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now completions. Many students count whole squares, and when two pieces of squares complete each other into one whole square, they count them as one.",
+    "say": "[pause] Now let's use understanding: pair the pieces that make a whole. Many students count whole squares, and when two pieces of squares complete each other into one whole square, they count them as one.",
     "at": [
-     "Now completions",
-     "Many students count"
+     "Now let's use understanding",
+     "the pieces that"
     ]
    },
    {
-    "say": "Here the sloping sides cut squares into odd pieces, so we look at them in groups. Cut the grid into five rectangles: four in the corners, and one in the middle.",
+    "say": "Here the sloping sides cut squares into odd pieces, so we look at them in groups. Cut the grid into five rectangles, four in the corners and one in the middle. On top, three by two and five by two. At the bottom, two by three, four by three, and two by three.",
     "at": [
      "Cut the grid into five rectangles",
-     "rectangles: four in"
+     "rectangles, four in",
+     "On top, three by two",
+     "and five by"
     ]
    },
    {
     "say": "Look at the top left rectangle, three by two. The sloping side goes from corner to corner, so every shaded piece has a white piece just like it, turned around. They complete each other, so the shaded part is half of six, three.",
     "at": [
      "Look at the top left rectangle",
-     "rectangle, three by"
+     "rectangle, three by",
+     "so the shaded part is half of six",
+     "half of six"
     ]
    },
    {
-    "say": "The same in the other corners: half of ten is five, and half of six is three, twice. The middle rectangle is all shaded, four by three, twelve whole squares. Three plus five plus three plus three plus twelve is twenty-six. Choice number three again.",
+    "say": "The same in the other corners. Top right, half of ten is five. At the bottom, half of six is three, twice.",
     "at": [
-     "The same in the other corners",
-     "corners: half of",
+     "Top right, half of ten",
+     "Top right, half of ten",
+     "At the bottom, half of six",
+     "At the bottom, half of six",
+     "six is three"
+    ]
+   },
+   {
+    "say": "The middle rectangle is all shaded. Four times three is twelve whole squares.",
+    "at": [
+     "The middle rectangle",
+     "Four times three"
+    ]
+   },
+   {
+    "say": "Three plus five plus three plus three plus twelve is twenty-six. Choice number three again.",
+    "at": [
+     "Three plus five plus three",
+     "plus three plus twelve",
+     "is twenty-six",
      "Choice number three again"
     ]
    }
   ],
   [
    {
-    "say": "[pause] And the third way, with the symmetry principle we already know. We break the shape into pieces we know. Draw a line between the two side corners of the pentagon.",
+    "say": "[pause] And the third way, by understanding again, with the symmetry principle we already know. We break the shape into pieces we know. Draw a line between the two side corners of the pentagon.",
     "at": [
      "And the third way",
-     "the symmetry principle",
+     "understanding again, with",
      "Draw a line between",
      "two side corners"
     ]
@@ -99,16 +138,18 @@
     "say": "Above the line there's a triangle. Its base is the whole width, eight, and its tip is on the top side of an eight by two rectangle. So it's half of sixteen, eight.",
     "at": [
      "Above the line",
-     "Its base is"
+     "Its base is",
+     "So it's half of sixteen"
     ]
    },
    {
     "say": "Below the line, the middle rectangle is four by three, twelve. And each side triangle is half of a two by three rectangle, half of six, three.",
     "at": [
      "the middle rectangle",
-     "by three, twelve",
+     "four by three, twelve",
      "each side triangle",
-     "rectangle, half of"
+     "of a two",
+     "half of six, three"
     ]
    },
    {

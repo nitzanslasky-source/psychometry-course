@@ -7,15 +7,14 @@
   ],
   [
    {
-    "say": "A rectangle, and a diagonal in it. The diagonal cuts the rectangle into two triangles, and they are exactly the same size. So the shaded half equals the white half, and each one is half of the rectangle. That's clear to all of us.",
+    "say": "A rectangle, and a diagonal in it. The diagonal cuts the rectangle into two triangles, and they are exactly the same size. So the shaded half equals the white half, and each one is half of the rectangle.",
     "at": [
      "A rectangle, and a diagonal",
      "The diagonal cuts",
      "into two triangles",
      "So the shaded half equals",
      "the white half",
-     "each one is half",
-     "That's clear to"
+     "each one is half"
     ]
    }
   ],
@@ -35,17 +34,19 @@
     ]
    },
    {
-    "say": "In the left rectangle, the shaded piece and the white piece are the two halves, so they're equal. In the right rectangle too. So each shaded piece equals its white twin.",
+    "say": "In the left rectangle, the shaded piece and the white piece are the two halves, so they're equal. In the right rectangle too. So each shaded piece equals its white twin. The same colour means the same area.",
     "at": [
      "In the left rectangle",
      "shaded piece and",
      "In the right rectangle too",
-     "So each shaded"
+     "So each shaded",
+     "The same colour means"
     ]
    },
    {
     "say": "And it doesn't matter where E is along the top side. Move it, and the shaded triangle is still half of the rectangle.",
     "at": [
+     "And it doesn't",
      "Move it",
      "still half"
     ]
@@ -53,21 +54,24 @@
   ],
   [
    {
-    "say": "It's true here as well. It doesn't matter how many triangles there are inside the rectangle, as long as their bases fill the bottom side, one after the other, and their tips are on the top side.",
+    "say": "Now three shaded triangles in a rectangle. Their tips are on the top side, and their bases sit one after the other on the bottom side. The triangles do not overlap, and their bases cover the whole bottom side without gaps.",
     "at": [
-     "It's true here as well",
-     "It doesn't matter",
-     "how many triangles",
-     "their bases fill",
-     "side, one after",
-     "their tips are on the top side"
+     "Now three shaded triangles",
+     "Their tips are on the top side",
+     "top side, and",
+     "The triangles do not overlap",
+     "and their bases cover",
+     "without gaps"
     ]
    },
    {
-    "say": "Then the shaded parts always add up to the white parts, and each is half of the rectangle.",
+    "say": "Why is the shaded part still half? All three triangles have the same height, the height of the rectangle. So each area is its base times h, over two. And the three bases together make the whole bottom side. So the sum is the whole base times h, over two, which is half of the rectangle.",
     "at": [
-     "the shaded parts always",
-     "up to the"
+     "Why is the",
+     "All three triangles have the same height",
+     "same height, the",
+     "And the three bases together",
+     "So the sum"
     ]
    }
   ],
@@ -93,12 +97,19 @@
     ]
    },
    {
-    "say": "Now we have two parallelograms, a left one and a right one. In each of them, the shaded piece and the white piece are the two halves. So the shaded triangle is half of the whole parallelogram. Same base and same height, and it doesn't matter how many triangles.",
+    "say": "Now we have two parallelograms, a left one and a right one. In each of them, the shaded piece and the white piece are the two halves. So the shaded triangle is half of the whole parallelogram.",
     "at": [
      "Now we have two parallelograms",
-     "In each of",
+     "In each of"
+    ]
+   },
+   {
+    "say": "Its height is the perpendicular distance between the two parallel sides, not the slanted line we drew. Same base and same height, the same area. And several triangles work too, as long as they don't overlap and their bases cover the bottom side without gaps.",
+    "at": [
+     "Its height is the perpendicular distance",
+     "distance between the",
      "Same base and same height",
-     "and it doesn't"
+     "the same area"
     ]
    }
   ],

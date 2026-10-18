@@ -12,12 +12,12 @@
     "pause": 0.5
    },
    {
-    "say": "The area of a parallelogram is base times height. The base can be B C, and its height is A E, the perpendicular. But we don't know A E. [short pause] Look, the moment we drop a perpendicular, we get a right triangle, A B E, and that takes us straight back to Pythagoras. When we need a missing side, we use Pythagoras a lot. Later we'll also find missing sides with similar triangles, but Pythagoras is the main tool.",
+    "say": "The area of a parallelogram is base times height. The base can be B C, and its height is A E, the perpendicular. But we don't know A E. [short pause] A E is perpendicular to B C, so A B E is a right triangle. We can use it, with Pythagoras, to find the height.",
     "at": [
      "parallelogram is base",
      "The base can",
-     "we get a right triangle",
-     "A B E"
+     "so A B E is a right triangle",
+     "a right triangle"
     ]
    },
    {
@@ -54,15 +54,26 @@
     ]
    },
    {
-    "say": "The area is base times height. Twenty-four times fifteen is twenty-four times ten, two hundred forty, plus twenty-four times five, a hundred twenty. That's three hundred sixty. Choice number three is our answer.",
+    "say": "Now back to the whole parallelogram. The area is base times height, so it's B C, twenty-four, times A E, fifteen.",
     "at": [
-     "Twenty-four times fifteen",
-     "times ten, two",
+     "Now back to the whole parallelogram",
+     "parallelogram. The area",
+     "so it's B C, twenty-four",
+     "times A E"
+    ]
+   },
+   {
+    "say": "Twenty-four times fifteen is twenty-four times ten plus twenty-four times five. Twenty-four times ten is two hundred forty. Twenty-four times five is a hundred twenty. Two hundred forty plus a hundred twenty is three hundred sixty. Choice number three is our answer.",
+    "at": [
+     "Twenty-four times ten is",
+     "Twenty-four times five is",
+     "Two hundred forty plus",
+     "hundred twenty is",
      "Choice number three is our answer"
     ]
    },
    {
-    "say": "Careful, seventeen times twenty-four is four hundred eight, choice number four. That uses the slanted side seventeen instead of the height. [pause] Okay. I'll see you in the next question.",
+    "say": "Careful, choice number four, four hundred eight, uses the slanted side seventeen instead of the height. That isn't the area formula. [pause] Okay. I'll see you in the next question.",
     "at": [
      "choice number four"
     ]

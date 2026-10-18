@@ -12,37 +12,30 @@
     "pause": 0.5
    },
    {
-    "say": "A D is the short base at the top. [short pause] We'll solve it two ways, by using the symmetry, and then with the trapezoid area formula.",
+    "say": "A D is the short base at the top. [short pause] We'll solve it in two different ways. First by understanding, using the symmetry, and then the math way, with the trapezoid area formula.",
     "at": [
      "A D is the short base",
-     "base at the"
+     "base at the",
+     "solve it in",
+     "the symmetry, and"
     ]
    },
    {
-    "say": "[short pause] Start with the small triangle D E C on the right. Its area is ten, and it's a right triangle, so its area is one leg times the other, over two. Its legs are D E, which is five, and E C. Five times E C, over two, equals ten. So E C is four.",
+    "say": "[short pause] Let's start with understanding. One height, D E, is given. Here a second height lets us compare the two end triangles, so we drop it from A down to the base. Call its foot F. In general, heights often split a trapezoid into a rectangle and right triangles.",
     "at": [
-     "Start with the small triangle",
-     "D E C",
-     "Its area is ten",
-     "its area is one",
-     "Five times E C",
-     "two, equals ten",
-     "So E C is four"
+     "Let's start with understanding",
+     "One height, D",
+     "so we drop it from A",
+     "A down to"
     ]
    },
    {
-    "say": "Here's a tip for every trapezoid question: drop the heights, both of them. One height is already given, so we drop the second one, from A down to the base. Call its foot F.",
+    "say": "The trapezoid is isosceles, so it's symmetric, right equals left. The triangle D E C on the right has area ten. So the triangle A B F on the left matches it, and also has area ten.",
     "at": [
-     "trapezoid question: drop",
-     "from A down to the base",
-     "base. Call its"
-    ]
-   },
-   {
-    "say": "The trapezoid is isosceles, so it's symmetric. Right equals left. So B F is four too, and the triangle A B F on the left also has area ten.",
-    "at": [
-     "So B F is four too",
-     "too, and the"
+     "The triangle D E C on the right",
+     "on the right",
+     "So the triangle A B F",
+     "it, and also"
     ]
    }
   ],
@@ -63,19 +56,21 @@
     ]
    },
    {
-    "say": "The whole trapezoid is sixty-five, and the two triangles are ten each. So what's left in the middle is sixty-five minus ten minus ten, which is forty-five.",
+    "say": "The whole trapezoid is sixty-five, and the two triangles are ten each. Ten plus ten is twenty. So what's left in the middle is sixty-five minus twenty, which is forty-five.",
     "at": [
+     "Ten plus ten is twenty",
      "So what's left in the middle",
      "middle is sixty-five",
      "which is forty-five"
     ]
    },
    {
-    "say": "The area of a rectangle is length times width. Its height is D E, five, and its area is forty-five. So five times x is forty-five, and x is nine. A D is nine, and choice number two is our answer.",
+    "say": "The area of a rectangle is length times width. Its height is D E, five, and its area is forty-five. So five times x is forty-five. We divide both sides by five, so x is nine. A D is nine, and choice number two is our answer.",
     "at": [
      "The area of",
-     "Five times x is forty-five",
-     "and x is",
+     "So five times x is forty-five",
+     "We divide both sides by five",
+     "five, so x",
      "A D is nine",
      "choice number two is our answer"
     ]
@@ -83,33 +78,76 @@
   ],
   [
    {
-    "say": "[pause] Now, if you hadn't noticed the symmetry, you'd probably use the trapezoid formula, because the question is about a trapezoid's area. It works, but look how much longer it is.",
+    "say": "[pause] Now the math way, with the trapezoid area formula. Again we call A D x, and we use the two heights, D E and A F. For the formula, we need the bottom base too.",
     "at": [
-     "noticed the symmetry",
-     "look how much"
+     "Now the math way",
+     "the trapezoid area"
     ]
    },
    {
-    "say": "The top base is x. The bottom base is four, plus x, plus four, so x plus eight. The sum of the bases is x plus x plus eight. Times the height, five, over two, equals sixty-five.",
+    "say": "Start with the small triangle D E C. It's a right triangle, so its area is one leg times the other, over two. Its legs are D E, which is five, and E C. Five times E C, over two, equals ten. So five times E C is twenty, and E C is four.",
     "at": [
-     "The top base is x",
+     "Start with the small triangle",
+     "D E C",
+     "Five times E C, over two",
+     "two, equals ten",
+     "So five times E C is twenty",
+     "and E C is four",
+     "is four."
+    ]
+   },
+   {
+    "say": "The two end triangles match because the trapezoid is isosceles, so B F is four too. And F E is the bottom of the rectangle, so it's x.",
+    "at": [
+     "match because the",
+     "so B F is four too",
+     "too. And F",
+     "so it's x"
+    ]
+   },
+   {
+    "say": "So the top base is x. The bottom base is four plus x plus four, which is x plus eight.",
+    "at": [
+     "So the top",
      "The bottom base is four",
-     "plus x, plus",
-     "The sum of the bases",
      "is x plus"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "Multiply both sides by two, to get rid of the over two. Then two x plus eight, times five, is one hundred thirty. Open the bracket: ten x plus forty is one hundred thirty. Take forty away from both sides, so ten x is ninety, and x is nine. Choice number two again.",
+    "say": "The area formula says the sum of the bases, times the height, over two. The sum of the bases is x plus x plus eight, which is two x plus eight. We multiply that sum by five, divide by two, and we get sixty-five.",
     "at": [
-     "Multiply both sides by two",
-     "to get rid",
-     "Open the bracket",
-     "plus forty is",
-     "Choice number two again"
+     "The area formula says",
+     "sum of the",
+     "We multiply that sum by five",
+     "five, divide by"
     ]
    },
-   "Same answer, but much longer. The first way saved all that, just by seeing that the trapezoid is symmetric, so the middle must be forty-five. [pause] Okay. I'll see you in the next question."
+   {
+    "say": "Multiply both sides by two, to get rid of the over two. So two x plus eight, multiplied by five, gives one hundred thirty.",
+    "at": [
+     "Multiply both sides by two",
+     "to get rid"
+    ]
+   },
+   {
+    "say": "Five times two x is ten x. And five times eight is forty. So ten x plus forty is one hundred thirty.",
+    "at": [
+     "So ten x plus forty",
+     "is one hundred"
+    ]
+   },
+   {
+    "say": "Take forty away from both sides, so ten x is ninety. Now divide both sides by ten, and x is nine. Choice number two again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Take forty away",
+     "sides, so ten",
+     "Now divide both sides by ten",
+     "ten, and x",
+     "Choice number two again"
+    ]
+   }
   ]
  ]
 }

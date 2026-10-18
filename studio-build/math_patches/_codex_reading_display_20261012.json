@@ -6754,6 +6754,24 @@
      [
       "x h plus y h, over two, so twelve plus thirty, over two",
       "(xh + yh) ÷ 2, so (12 + 30) ÷ 2"
+     ],
+     [
+      "So its area is x plus y, times h, over two.",
+      "So its area is (x + y)h/2."
+     ],
+     [
+      "We get x h plus y h, and both",
+      "We get (xh + yh)/2, and both"
+     ]
+    ],
+    "1.8": [
+     [
+      "We found that x h is twelve and y h is thirty",
+      "We found that xh = 12 and yh = 30"
+     ],
+     [
+      "so it's twelve plus thirty, over two. That's forty-two over two, which is twenty-one.",
+      "so it's (12 + 30)/2. That's 42/2 = 21."
      ]
     ]
    }
@@ -6949,6 +6967,10 @@
      [
       "the bracket a plus b, squared, is a squared plus two a b plus b squared",
       "(a + b)² = a² + 2ab + b²"
+     ],
+     [
+      "a plus b, squared, means a plus b, times a plus b.",
+      "(a + b)² means (a + b) × (a + b)."
      ]
     ],
     "2.2": [
@@ -6967,18 +6989,86 @@
      [
       "the area, a b, is sixty",
       "the area, ab, is 60"
+     ],
+     [
+      "a times b is a b.",
+      "a × b = ab."
+     ],
+     [
+      "another a b",
+      "another ab"
      ]
     ],
     "3.2": [
      [
       "two times, five plus twelve, is thirty-four",
       "2(5 + 12) = 34"
+     ],
+     [
+      "So a plus b, squared, is",
+      "So (a + b)² is"
      ]
     ],
     "3.3": [
      [
       "two a b, without",
       "2ab, without"
+     ],
+     [
+      "a squared plus b squared, plus two a b",
+      "a² + b² + 2ab"
+     ],
+     [
+      "a hundred sixty-nine plus two a b",
+      "169 + 2ab"
+     ]
+    ],
+    "2.3": [
+     [
+      "The two a b terms",
+      "The two ab terms"
+     ],
+     [
+      "together they're two a b",
+      "together they're 2ab"
+     ],
+     [
+      "a squared plus two a b plus b squared",
+      "a² + 2ab + b²"
+     ],
+     [
+      "So a plus b, squared, is",
+      "So (a + b)² is"
+     ]
+    ],
+    "2.6": [
+     [
+      "The two a b is missing",
+      "The 2ab is missing"
+     ],
+     [
+      "Careful, a plus b, squared, is not",
+      "Careful, (a + b)² is not"
+     ]
+    ],
+    "3.4": [
+     [
+      "so two a b is a hundred twenty",
+      "so 2ab = 120"
+     ],
+     [
+      "but it's two a b, not the area",
+      "but it's 2ab, not the area"
+     ]
+    ],
+    "3.5": [
+     [
+      "We want a b alone",
+      "We want ab alone"
+     ],
+     [
+      "That gives a b is sixty",
+      "That gives ab = 60"
      ]
     ]
    }

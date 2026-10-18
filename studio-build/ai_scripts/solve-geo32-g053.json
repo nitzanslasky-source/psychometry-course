@@ -48,13 +48,21 @@
     ]
    },
    {
-    "say": "Forty-five, forty-five, ninety. That's our silver triangle. Its hypotenuse is B D, ten. To get from the hypotenuse to a leg, we divide by root two. Ignore the root for a moment: ten divided by two is five. Then put the root back: five root two. So A B and A D are both five root two.",
+    "say": "Forty-five, forty-five, ninety. That's our silver triangle. Its hypotenuse is B D, ten. To get from the hypotenuse to a leg, we divide by root two.",
     "at": [
      "our silver triangle",
      "Its hypotenuse is B D",
      "hypotenuse to a",
-     "we divide by root two",
-     "Ignore the root",
+     "we divide by root two"
+    ]
+   },
+   {
+    "say": "Remember the shortcut. To divide ten by root two, we divide ten by two, and then multiply by root two. Ten over two is five, so each leg is five root two. So A B and A D are both five root two.",
+    "at": [
+     "divide ten by",
+     "we divide ten by two",
+     "and then multiply",
+     "so each leg is five root two",
      "So A B and A D",
      "D are both"
     ]
@@ -62,24 +70,24 @@
   ],
   [
    {
-    "say": "Now the perimeter. The two tens make twenty. Before adding the rest, look at the choices. Only two of them start with twenty, choice numbers one and three. So that already rules out the other two.",
+    "say": "Now the perimeter. The two tens give twenty. The other two sides are both five root two, so together they add a root two part, and no root three. So the perimeter is twenty plus some root two.",
     "at": [
      "Now the perimeter",
      "Now the perimeter",
-     "The two tens make twenty",
-     "Before adding the",
-     "Only two of them",
-     "numbers one and",
-     "So that already rules out"
+     "The two tens give twenty",
+     "The other two sides are both",
+     "both five root",
+     "so together they add",
+     "root two part"
     ]
    },
    {
-    "say": "One of them has root three, and the other has root two. This is the silver triangle, so the answer will have root two in it. A whole-number hypotenuse gives a leg with root two, and the other way round. Root three belongs to the gold triangle, not here.",
+    "say": "Now look at the choices. Choice numbers two and four start with ten, not twenty, so they're out. Choice number one has root three, so it's out too. Only choice number three has twenty plus a root two part.",
     "at": [
-     "One of them",
-     "This is the silver triangle",
-     "so the answer",
-     "Root three belongs"
+     "Choice numbers two and four",
+     "start with ten, not twenty",
+     "one has root three",
+     "number three has"
     ]
    },
    {
@@ -91,10 +99,10 @@
     ]
    },
    {
-    "say": "So the kite is symmetric, but only from right to left. Remember that, and you don't need to memorize all its rules. [pause] Okay. I'll see you in the next question.",
+    "say": "So in a kite, the main diagonal, here A C, is always a line of symmetry. The other diagonal, B D, doesn't have to be one, and here it isn't. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "So the kite is symmetric",
-     "need to memorize"
+     "So in a kite",
+     "The other diagonal"
     ]
    }
   ]

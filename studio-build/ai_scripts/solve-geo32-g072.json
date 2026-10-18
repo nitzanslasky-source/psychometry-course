@@ -47,17 +47,28 @@
   ],
   [
    {
-    "say": "The perimeter is two times, four x plus six x, which is twenty x. It's forty, so x is two.",
+    "say": "Here are the sides again, four x and six x. The perimeter is two times, four x plus six x, which is twenty x.",
     "at": [
+     "Here are the sides again",
+     "four x and",
      "The perimeter is two times",
-     "four x plus"
+     "four x plus",
+     "which is twenty x"
     ]
    },
    {
-    "say": "Careful, nobody asked for x, and two isn't even a choice. They asked for the area. Base times height: four x is eight, and six x is twelve. Eight times twelve is ninety-six. Choice number three is our answer.",
+    "say": "The perimeter is forty, so twenty x is forty. Divide forty by twenty, so x is two.",
     "at": [
-     "four x is eight",
-     "six x is",
+     "The perimeter is",
+     "Divide forty by twenty",
+     "x is two"
+    ]
+   },
+   {
+    "say": "Careful, nobody asked for x, and two isn't even a choice. They asked for the area, base times height. Four x is eight, and six x is twelve. Eight times twelve is ninety-six. Choice number three is our answer.",
+    "at": [
+     "Four x is eight",
+     "and six x is twelve",
      "Eight times twelve",
      "Choice number three is our answer"
     ]
@@ -65,18 +76,37 @@
   ],
   [
    {
-    "say": "[pause] Now by understanding. Once we have the sides as four x and six x, there's a shorter way to finish. The sides are in the ratio two to three, because four x to six x is like four to six, two to three. Half the perimeter, one height plus one width, is half of forty, twenty.",
+    "say": "[pause] Now by understanding, with a different finish. We start from the same tiles, which gave us the sides four x and six x. So the sides are in the ratio two to three, because four x to six x is like four to six, two to three.",
     "at": [
-     "we have the",
-     "The sides are in the ratio two",
-     "four x to"
+     "a different finish",
+     "We start from the same tiles",
+     "tiles, which gave",
+     "So the sides are in the ratio",
+     "two to three, because",
+     "x to six"
     ]
    },
    {
-    "say": "Two parts plus three parts is five parts, and five parts are twenty, so one part is four. The sides are two times four, eight, and three times four, twelve. Eight times twelve is ninety-six again. [pause] Okay. I'll see you in the next question.",
+    "say": "Half the perimeter, one height plus one width, is half of forty, twenty.",
     "at": [
-     "one part is four",
-     "four, eight, and",
+     "is half of forty"
+    ]
+   },
+   {
+    "say": "Two parts plus three parts is five parts. Five parts are twenty, so one part is twenty over five, four.",
+    "at": [
+     "Two parts plus three parts",
+     "is five parts",
+     "so one part is twenty over five",
+     "over five, four"
+    ]
+   },
+   {
+    "say": "The sides are two times four, eight, and three times four, twelve. Eight times twelve is ninety-six again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "The sides are two times four",
+     "and three times four, twelve",
+     "Eight times twelve",
      "is ninety-six again"
     ]
    }

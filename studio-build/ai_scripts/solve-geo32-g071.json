@@ -12,11 +12,11 @@
     "pause": 0.5
    },
    {
-    "say": "What makes this hard? We have to go through the whole quadrilateral to find angle D, cut it in half, and then work in triangle A E D. And all of it with letters, in about a minute, when it's one of the last questions in the section. [short pause] We'll solve it two ways, the math way, with algebra, and then by plugging in numbers.",
+    "say": "What makes this hard? We have to go through the whole quadrilateral to find angle D, cut it in half, and then work in triangle A E D, all with letters. [short pause] We'll solve it in two different ways, the math way, with algebra, and then by plugging in numbers.",
     "at": [
      "We have to",
      "triangle A E D",
-     "all of it"
+     "in two different"
     ]
    },
    {
@@ -44,10 +44,17 @@
   ],
   [
    {
-    "say": "Now the algebra. Angle D plus alpha plus a hundred thirty plus beta is three hundred sixty. Three hundred sixty minus a hundred thirty is two hundred thirty. So angle D is two hundred thirty, minus alpha, minus beta.",
+    "say": "Now the algebra. Angle D plus alpha plus a hundred thirty plus beta is three hundred sixty.",
     "at": [
-     "D plus alpha",
-     "sixty minus a",
+     "Angle D plus alpha plus",
+     "a hundred thirty"
+    ]
+   },
+   {
+    "say": "Three hundred sixty minus a hundred thirty is two hundred thirty. So angle D is two hundred thirty, minus alpha, minus beta.",
+    "at": [
+     "Three hundred sixty minus a hundred thirty",
+     "hundred thirty is",
      "So angle D is two hundred thirty",
      "hundred thirty, minus"
     ]
@@ -60,14 +67,21 @@
     ]
    },
    {
-    "say": "In triangle A E D, x is a hundred eighty, minus alpha, minus the whole bracket, a hundred fifteen minus half alpha minus half beta.",
+    "say": "In triangle A E D, x is a hundred eighty, minus alpha, minus angle A D E. And angle A D E is a hundred fifteen minus half alpha minus half beta.",
     "at": [
      "In triangle A E D",
      "x is a"
     ]
    },
    {
-    "say": "A hundred eighty minus a hundred fifteen is sixty-five. So the number in the answer is sixty-five, and choice numbers two and four are out, because they have a hundred thirty. The minus in front of the bracket turns minus half beta into plus half beta, so choice number one is out too. And minus alpha plus half alpha leaves minus half alpha. So x is sixty-five, minus half alpha, plus half beta. Choice number three is our answer.",
+    "say": "Now we open the bracket. The minus in front of it changes every sign inside. So it's minus a hundred fifteen, plus half alpha, plus half beta.",
+    "at": [
+     "So it's minus a hundred fifteen",
+     "fifteen, plus half"
+    ]
+   },
+   {
+    "say": "A hundred eighty minus a hundred fifteen is sixty-five. So the number in the answer is sixty-five, and choice numbers two and four are out, because they have a hundred thirty. We got plus half beta, so choice number one is out too. And minus alpha plus half alpha leaves minus half alpha. So x is sixty-five, minus half alpha, plus half beta. Choice number three is our answer.",
     "at": [
      "choice numbers two and four are out",
      "because they have a hundred thirty",
@@ -80,33 +94,47 @@
   ],
   [
    {
-    "say": "[pause] That was long and tiring. Now a shorter way: plugging in numbers. The right answer has to be true for every alpha and beta that the drawing allows. So it must also be true for one example that we choose. We choose easy numbers that look like the drawing, put them in the drawing and in the choices, and keep the choice that matches.",
+    "say": "[pause] Now let's plug in numbers. The right answer has to be true for every alpha and beta that the givens allow. So it must also be true for one example that we choose. We put our numbers into the figure and into the choices.",
     "at": [
-     "Now a shorter way",
-     "The right answer"
+     "Now let's plug in numbers",
+     "The right answer",
+     "the givens allow",
+     "We put our"
     ]
    },
    {
-    "say": "Alpha looks obtuse, so let's take a hundred ten. Beta looks a little less than ninety, so let's take eighty. You could choose other numbers too, as long as they fit the drawing.",
+    "say": "The figure is not drawn to scale, so we don't read values from it. Let's take alpha a hundred ten and beta eighty, because they're easy to add and to halve. Any other allowed values would work too. We just have to check that they're allowed.",
     "at": [
-     "so let's take a hundred ten",
-     "Beta looks a"
+     "Let's take alpha a hundred ten",
+     "ten and beta"
     ]
    },
    {
-    "say": "Let's start with angle D. The four angles of the quadrilateral add up to three hundred sixty, so we add the three we know. A hundred ten plus a hundred thirty plus eighty is three hundred twenty. Angle D is what's left. Three hundred sixty minus three hundred twenty is forty. D E cuts it in half, so each half is twenty.",
+    "say": "Let's find angle D. The four angles of the quadrilateral add up to three hundred sixty, so we add the three we know. A hundred ten plus a hundred thirty plus eighty is three hundred twenty. Three hundred sixty minus three hundred twenty is forty. Forty is positive, so our numbers are allowed.",
     "at": [
+     "A hundred ten plus a hundred thirty",
+     "hundred thirty plus",
      "Three hundred sixty minus three",
-     "hundred twenty is",
-     "so each half is twenty"
+     "is forty",
+     "Forty is positive"
     ]
    },
    {
-    "say": "Now x is easy. In triangle A E D, a hundred ten plus twenty is a hundred thirty, and a hundred eighty minus a hundred thirty is fifty. So with these numbers, x is fifty degrees.",
+    "say": "D E cuts angle D in half, so each half is twenty.",
+    "at": [
+     "so each half is twenty",
+     "is twenty."
+    ]
+   },
+   {
+    "say": "Now let's find x. In triangle A E D, a hundred ten plus twenty is a hundred thirty, and a hundred eighty minus a hundred thirty is fifty. All three angles of the triangle are positive, so x is fifty degrees.",
     "at": [
      "In triangle A",
-     "So with these numbers",
-     "is fifty degrees"
+     "a hundred ten plus twenty",
+     "is a hundred",
+     "and a hundred eighty minus a hundred",
+     "a hundred thirty is",
+     "so x is fifty degrees"
     ]
    }
   ],
@@ -127,30 +155,25 @@
     ]
    },
    {
-    "say": "Choice number three says sixty-five, minus half alpha, plus half beta. Sixty-five minus fifty-five plus forty is fifty. It matches. But one match isn't enough to be sure: to mark it, we cross out the other choices too. That's the drawback of plugging in. If you're out of time, though, it's a very reasonable guess.",
+    "say": "Choice number three says sixty-five, minus half alpha, plus half beta. Sixty-five minus fifty-five plus forty is fifty. It matches. But a match alone isn't enough if another choice also matches, so we check the last one too.",
     "at": [
      "Choice number three says",
      "minus half alpha",
      "Sixty-five minus fifty-five",
      "It matches",
-     "But one match"
+     "But a match"
     ]
    },
    {
-    "say": "Choice number four says a hundred thirty, minus half alpha, plus half beta. A hundred thirty minus fifty-five plus forty is a hundred fifteen. Out. So choice number three is our answer.",
+    "say": "Choice number four says a hundred thirty, minus half alpha, plus half beta. A hundred thirty minus fifty-five plus forty is a hundred fifteen. Out. A mismatch rules a choice out right away, and only choice number three matched. So choice number three is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Choice number four says",
      "plus half beta",
      "A hundred thirty minus fifty-five",
      "is a hundred fifteen. Out",
+     "A mismatch rules",
+     "number three matched",
      "So choice number three is our answer"
-    ]
-   },
-   {
-    "say": "If you're strong in algebra and can do the full solution in about a minute, that's great. For most students, at the end of a section, plugging in numbers is much easier. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "If you're strong",
-     "plugging in numbers is much easier"
     ]
    }
   ]

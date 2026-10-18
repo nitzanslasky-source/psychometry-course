@@ -33,6 +33,7 @@
     "at": [
      "A hundred eighty minus",
      "hundred twenty is",
+     "and half of that",
      "So angle E B C is thirty",
      "is thirty, and"
     ]
@@ -40,11 +41,19 @@
   ],
   [
    {
-    "say": "Now look at triangle D B C. Its angle at C is ninety, because it's a corner of the rectangle. Its angle at B is the same thirty we just found. The angles of a triangle add up to a hundred eighty, so the last angle, at D, is sixty.",
+    "say": "Now look at triangle D B C. Its angle at C is ninety, because it's a corner of the rectangle. E lies on the diagonal B D, so B E and B D lie along the same line. So angle D B C is the same thirty as angle E B C.",
     "at": [
      "Now look at triangle",
      "Its angle at C",
-     "ninety, because it's"
+     "ninety, because it's",
+     "E lies on the",
+     "B D, so"
+    ]
+   },
+   {
+    "say": "The angles of a triangle add up to a hundred eighty, so the last angle, at D, is sixty.",
+    "at": [
+     "the last angle, at D"
     ]
    },
    {
@@ -63,19 +72,22 @@
     ]
    },
    {
-    "say": "Now the area of the rectangle, length times width: five root three times five, which is twenty-five root three. Choice number three is our answer.",
+    "say": "Now the area of the whole rectangle. B C and C D are its length and its width, and they're perpendicular. So the area is five root three times five, which is twenty-five root three. Choice number three is our answer.",
     "at": [
-     "Now the area",
-     "rectangle, length times",
+     "Now the area of the whole rectangle",
+     "B C and",
+     "So the area is",
+     "root three times",
+     "which is twenty-five root three",
      "Choice number three is our answer"
     ]
    }
   ],
   [
    {
-    "say": "If you're not sure about a rule of the diagonals in the exam, draw an exaggerated rectangle, very low and very wide, and look at it. You'll see right away that the diagonals aren't perpendicular and don't cut the angles in half.",
+    "say": "If you're not sure whether a diagonal rule is guaranteed, draw an exaggerated rectangle, very low and very wide. It's still a rectangle, and you'll see right away that its diagonals aren't perpendicular and don't cut the angles in half. So we can't assume either one in a rectangle.",
     "at": [
-     "about a rule",
+     "whether a diagonal",
      "draw an exaggerated rectangle",
      "low and very"
     ]

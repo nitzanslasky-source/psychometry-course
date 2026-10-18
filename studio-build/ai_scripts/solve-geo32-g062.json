@@ -14,16 +14,17 @@
    {
     "say": "We learned how to find the area of a deltoid. The product of the diagonals, over two. [short pause] But only parts of the diagonals are given, so first we'll find the missing parts.",
     "at": [
-     "find the area",
+     "We learned how",
+     "the area of",
      "The product of the diagonals",
      "But only parts"
     ]
    },
    {
-    "say": "[short pause] On the long diagonal A C we know O C, twelve, and we need A O. On the short diagonal B D we know B O, fifteen, and we need O D.",
+    "say": "[short pause] On the main diagonal, A C, we know O C, twelve, and we need A O. On the other diagonal, B D, we know B O, fifteen, and we need O D.",
     "at": [
      "we need A O",
-     "On the short"
+     "On the other"
     ]
    },
    {
@@ -40,66 +41,160 @@
     "at": [
      "is perpendicular to the other diagonal",
      "diagonal, B D",
+     "It cuts the angles in half",
+     "half, and it",
      "So B O equals",
-     "B O is"
+     "so O D is fifteen too"
     ]
    },
    {
-    "say": "But careful, not the other way around. In a deltoid, A O is not equal to O C. We still have to find A O.",
+    "say": "But careful, not the other way around. We cannot assume that A O equals O C. The main diagonal cuts B D in half, but B D doesn't have to cut A C in half. So we still need to find A O.",
     "at": [
-     "A O is not equal to O C",
-     "to O C"
+     "But careful, not",
+     "We cannot assume",
+     "O equals O",
+     "So we still need to find A O",
+     "find A O"
     ]
    }
   ],
   [
    {
-    "say": "The diagonals are perpendicular, so triangle A O D is a right triangle. Its hypotenuse A D is seventeen, and its leg O D is fifteen. Let's look at it on its own.",
+    "say": "The diagonals are perpendicular, so triangle A O D is a right triangle. Its hypotenuse A D is seventeen, and its leg O D is fifteen. Here it is on its own.",
     "at": [
-     "triangle A O D is a right triangle",
-     "a right triangle",
-     "Let's look at it on its own"
+     "so triangle A",
+     "Here it is on its own"
     ]
    },
    {
-    "say": "If you know the triple eight, fifteen, seventeen, you see it at once. The other leg is eight. If not, use Pythagoras. A O squared is seventeen squared minus fifteen squared. That's a difference of squares, so it's seventeen minus fifteen, times seventeen plus fifteen. Two times thirty-two is sixty-four, and the root of sixty-four is eight. So A O is eight.",
+    "say": "If you know the triple eight, fifteen, seventeen, you see it at once. The other leg is eight.",
     "at": [
-     "If you know",
-     "So A O is eight"
+     "If you know the triple",
+     "eight, fifteen, seventeen",
+     "The other leg is eight"
     ]
    },
    {
-    "say": "Now we have everything. A C is eight plus twelve, which is twenty. B D is fifteen plus fifteen, which is thirty.",
+    "say": "If not, use Pythagoras. A O squared is seventeen squared minus fifteen squared.",
     "at": [
-     "A C is eight plus twelve",
-     "twelve, which is",
-     "B D is fifteen plus fifteen"
+     "A O squared is",
+     "squared minus fifteen"
     ]
    },
    {
-    "say": "The area is twenty times thirty, over two. We could multiply first, but it's easier to cancel first. Thirty over two is fifteen, and twenty times fifteen is three hundred. Choice number three is our answer.",
+    "say": "There's a shortcut for a square minus a square. Seventeen squared minus fifteen squared is the product of seventeen minus fifteen and seventeen plus fifteen.",
+    "at": [
+     "Seventeen squared minus fifteen squared is",
+     "is the product"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why does that work? Multiply out the product of a minus b and a plus b. We get a squared, plus a b, minus a b, minus b squared. The two middle terms cancel, and we're left with a squared minus b squared.",
+    "at": [
+     "Multiply out the product",
+     "a minus b",
+     "We get a squared",
+     "a b, minus",
+     "we're left with"
+    ]
+   },
+   {
+    "say": "Let's check it with small numbers. Five squared minus three squared is twenty-five minus nine. That's sixteen. And the product of five minus three and five plus three is two times eight. That's sixteen too.",
+    "at": [
+     "Let's check it",
+     "Five squared minus three squared",
+     "is twenty-five minus",
+     "the product of five minus three",
+     "three and five"
+    ]
+   },
+   {
+    "say": "Let's do one more. Four squared minus one squared is sixteen minus one. That's fifteen. And the product of four minus one and four plus one is three times five. That's fifteen.",
+    "at": [
+     "Four squared minus one squared",
+     "is sixteen minus",
+     "of four minus one",
+     "four plus one"
+    ]
+   },
+   {
+    "say": "Careful, it works only for a square minus a square. It's not seventeen minus fifteen, squared. That would be only four.",
+    "at": [
+     "It's not seventeen minus fifteen",
+     "That would be"
+    ]
+   },
+   {
+    "say": "So here, seventeen minus fifteen is two. And seventeen plus fifteen is thirty-two. Two times thirty-two is sixty-four, and the root of sixty-four is eight. So A O is eight, just like the triple.",
+    "at": [
+     "Two times thirty-two",
+     "the root of sixty-four",
+     "So A O"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now back to the whole deltoid. In this kite, A O is eight and O C is twelve, so they really are different. The main diagonal A C is eight plus twelve, which is twenty. B D is fifteen plus fifteen, which is thirty.",
+    "at": [
+     "Now back to the whole deltoid",
+     "Now back to the whole deltoid",
+     "In this kite",
+     "The main diagonal A C",
+     "is eight plus twelve",
+     "B D is fifteen plus fifteen",
+     "B D is fifteen plus fifteen",
+     "fifteen, which is"
+    ]
+   },
+   {
+    "say": "The area is twenty times thirty, over two. We could multiply first, but it's easier to cancel first.",
     "at": [
      "The area is twenty times thirty",
-     "thirty, over two",
+     "thirty, over two"
+    ]
+   },
+   {
+    "say": "Thirty over two is fifteen, and twenty times fifteen is three hundred. Choice number three is our answer.",
+    "at": [
+     "Thirty over two is fifteen",
+     "and twenty times fifteen",
      "Choice number three is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Once we've found all the pieces, there are other ways to get the area. Some students take the two isosceles triangles. Triangle A B D has base thirty and height eight, so it's one hundred twenty. Triangle C B D has base thirty and height twelve, so it's one hundred eighty. Together, three hundred.",
+    "say": "[pause] Once we've found all the pieces, there are other ways to get the area. Some students take the two isosceles triangles. Triangle A B D has base B D, thirty, and height A O, eight. Thirty times eight, over two, is one hundred twenty.",
     "at": [
      "there are other ways",
      "get the area",
-     "Some students take the two",
-     "Triangle A B"
+     "Triangle A B D has base",
+     "base B D",
+     "Thirty times eight, over two",
+     "is one hundred"
     ]
    },
    {
-    "say": "Others take four right triangles. Two small ones, fifteen by eight over two, and two big ones, fifteen by twelve over two. Again three hundred. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "Triangle C B D has base thirty and height O C, twelve. Thirty times twelve, over two, is one hundred eighty. Together, one hundred twenty plus one hundred eighty is three hundred.",
+    "at": [
+     "Triangle C B D has base",
+     "Thirty times twelve, over two",
+     "is one hundred",
+     "Together, one hundred twenty",
+     "one hundred eighty is"
+    ]
+   },
+   {
+    "say": "Others take four right triangles. Each small one has legs fifteen and eight, so it's sixty, and the two small ones make one hundred twenty. Each big one has legs fifteen and twelve, so it's ninety, and the two big ones make one hundred eighty. Again three hundred. Choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Others take four right triangles",
-     "Two small ones",
+     "Each small one has legs",
+     "fifteen and eight",
+     "Each big one has legs",
+     "fifteen and twelve",
      "Again three hundred"
     ]
    }

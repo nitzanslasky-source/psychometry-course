@@ -13,12 +13,17 @@
     ]
    },
    {
-    "say": "Here's a square, a perfect quadrilateral, with all its sides equal. Take a square and stretch it a little, and you get a rectangle. Take a rectangle and step on it, squash it a bit to the side, and you get a parallelogram.",
+    "say": "Here's a square, a perfect quadrilateral, with all its sides equal. Take a square and stretch it a little, and you get a rectangle. The angles are still right angles, but now only the opposite sides are equal.",
     "at": [
      "Here's a square",
      "quadrilateral, with all",
      "stretch it a little",
-     "you get a",
+     "you get a"
+    ]
+   },
+   {
+    "say": "Now take a rectangle and step on it, squash it a bit to the side, and you get a parallelogram. The opposite sides stay parallel and equal, but the angles aren't right angles any more.",
+    "at": [
      "step on it",
      "a bit to"
     ]
@@ -26,10 +31,10 @@
   ],
   [
    {
-    "say": "Now take a parallelogram and shorten it, until all its sides are equal. It becomes a rhombus. I know it doesn't really look like one, because it's lying down. We're used to seeing a rhombus like on playing cards, standing on a corner. So let's turn it a little. Now it really looks like a rhombus.",
+    "say": "Now take a parallelogram and shorten its two longer sides, until all four sides are equal. The opposite sides stay parallel. It becomes a rhombus. I know it doesn't really look like one, because it's lying down. We're used to seeing a rhombus like on playing cards, standing on a corner. So let's turn it a little. Now it really looks like a rhombus.",
     "at": [
      "take a parallelogram",
-     "it, until all",
+     "its two longer",
      "It becomes a rhombus",
      "I know it",
      "let's turn it",
@@ -47,19 +52,19 @@
   ],
   [
    {
-    "say": "Take a rhombus and squash it a bit from above, and you get a kite, also called a deltoid. Two short sides that are equal, and two long sides that are equal.",
+    "say": "Take a rhombus and pull its bottom corner down, and you get a kite, also called a deltoid. A kite has two equal sides next to each other. The other two sides are equal too. In this picture, the top pair is shorter. All four sides can also be equal, as in a rhombus.",
     "at": [
      "Take a rhombus",
-     "it a bit",
+     "its bottom corner",
      "and you get a kite",
-     "Two short sides"
+     "A kite has"
     ]
    },
    {
-    "say": "And take a rectangle, and move its sides a little, and you get a trapezoid, a bit of a strange shape. Its top and bottom stay parallel.",
+    "say": "And take a rectangle, and move its two top corners toward each other, and you get a trapezoid. Its top and bottom stay parallel, but the other two sides are no longer parallel.",
     "at": [
      "take a rectangle",
-     "its sides a",
+     "its two top",
      "and you get a trapezoid",
      "Its top and"
     ]
@@ -94,13 +99,13 @@
     ]
    },
    {
-    "say": "Going down the tree, a shape only gains properties. So a square has every property of every shape above it. Going up, careful.",
+    "say": "Going down a line of the tree, a shape only gains properties. So a square has all the rectangle rules. It also has all the rhombus rules. But knowing that a shape is a rectangle doesn't guarantee that it's a square.",
     "at": [
-     "Going down the tree",
-     "shape only gains",
-     "a square has every property",
-     "of every shape",
-     "Going up, careful"
+     "Going down a line",
+     "the tree, a",
+     "all the rectangle rules",
+     "It also has",
+     "doesn't guarantee"
     ]
    }
   ],

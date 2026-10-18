@@ -64,10 +64,12 @@
     ]
    },
    {
-    "say": "It's also made of two silver triangles, depending on how we look. Take half the square, cut along one diagonal. It has a ninety-degree angle and two equal legs, the sides of the square. And if we keep drawing more crossing lines, we can cut the square into more and more silver triangles.",
+    "say": "It's also made of two silver triangles, depending on how we look. Take half the square, cut along one diagonal. It has a ninety-degree angle and two equal legs, the sides of the square. And we can keep cutting. Draw a line from the right angle at B to the middle of the diagonal. That cuts the half square into two smaller silver triangles, and we can cut each of them again in the same way.",
     "at": [
      "Take half the square",
-     "along one diagonal"
+     "along one diagonal",
+     "Draw a line from",
+     "right angle at"
     ]
    },
    {
@@ -118,33 +120,49 @@
     ]
    },
    {
-    "say": "Why does it work? Say the diagonal is twelve. Then half the diagonal is six.",
+    "say": "Why does it work? Say the whole diagonal, from A to C, is twelve. Then half of it is six. The other diagonal is also twelve, so its halves are six too.",
     "at": [
      "Why does it work",
-     "Say the diagonal is twelve",
-     "Then half the diagonal"
+     "Say the whole diagonal",
+     "A to C",
+     "is twelve",
+     "Then half of it",
+     "twelve, so its"
     ]
    },
    {
-    "say": "Look at one small triangle. Its legs are two halves, six and six, and they're perpendicular. So its area is six times six over two, which is eighteen.",
+    "say": "Look at one small triangle. Its legs are two halves, six and six, and they're perpendicular. So its area is six times six over two. Six times six is thirty-six, and half of thirty-six is eighteen.",
     "at": [
      "Look at one small triangle",
-     "Its legs are"
+     "Its legs are",
+     "Six times six is",
+     "and half of thirty-six",
+     "is eighteen"
     ]
    },
    {
-    "say": "The square is four of these triangles. Four times eighteen is seventy-two. Now let's check the formula, the diagonal squared over two. Twelve squared over two is a hundred forty-four over two, also seventy-two. So the formula works.",
+    "say": "The square is four of these triangles. Four times eighteen is seventy-two.",
     "at": [
      "The square is four",
-     "Four times eighteen",
-     "Now let's check"
+     "Four times eighteen"
     ]
    },
    {
-    "say": "One more: a diagonal of ten gives ten squared, a hundred, over two, which is fifty.",
+    "say": "Now let's check the formula, the diagonal squared over two. Twelve squared over two is a hundred forty-four over two, and that's also seventy-two. Every square has these four equal triangles, and a longer or shorter diagonal doesn't change that split. So the formula works for every square.",
     "at": [
-     "a diagonal of ten",
-     "ten squared, a"
+     "Now let's check",
+     "Twelve squared over two",
+     "a hundred forty-four",
+     "that's also seventy-two",
+     "Every square has these",
+     "equal triangles, and"
+    ]
+   },
+   {
+    "say": "Let's check one more: a diagonal of ten. Ten squared is a hundred, and a hundred over two is fifty.",
+    "at": [
+     "Ten squared is",
+     "a hundred over two"
     ]
    }
   ],
@@ -176,27 +194,31 @@
     ]
    },
    {
-    "say": "Careful, this works only when all the lengths grow. If only one side grows, the area grows only by that side's number.",
+    "say": "Careful, this works only when all the lengths grow. For a rectangle, if we double its length but keep its width the same, the area only doubles. Three by three is nine, and six by three is eighteen. Both sides must double for the area to become four times as big.",
     "at": [
      "Careful, this works",
-     "the area grows"
+     "double its length",
+     "Three by three",
+     "six by three",
+     "Both sides must double",
+     "the area to"
     ]
    }
   ],
   [
    {
-    "say": "That's the square, the simplest and the most perfect quadrilateral. For every property we ask about, the square's answer is yes.",
+    "say": "That's the square, the simplest and the most perfect quadrilateral. All the properties we just checked hold for a square.",
     "at": [
      "simplest and the",
-     "For every property",
-     "about, the square's"
+     "All the properties we just checked",
+     "checked hold for"
     ]
    },
    {
-    "say": "Are the sides equal? Yes. Are the diagonals equal? Yes. Are they perpendicular? Yes. Do they cut the angles in half? Yes. Everything is yes. [pause] Okay. I'll see you in the next video.",
+    "say": "Its sides are equal. Its diagonals are equal, they're perpendicular, and they cut the angles in half. [pause] Take a moment to memorize this. I'll see you in the next video.",
     "at": [
-     "Are the sides equal",
-     "Are the diagonals"
+     "Its sides are equal",
+     "Its diagonals are"
     ]
    }
   ]

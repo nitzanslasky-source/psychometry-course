@@ -15,7 +15,7 @@
     ]
    },
    {
-    "say": "A rhombus is like a perfected parallelogram. Like a parallelogram, its opposite sides are equal and parallel, and on top of that, all four sides are equal. In the quadrilaterals lesson, we shortened a parallelogram until all its sides were equal, and that gave us a rhombus.",
+    "say": "A rhombus is a parallelogram with all four sides equal. So, like every parallelogram, its opposite sides are equal and parallel, and on top of that, all four sides are equal. In the quadrilaterals lesson, we shortened a parallelogram until all its sides were equal, and that gave us a rhombus.",
     "at": [
      "A rhombus is",
      "its opposite sides are equal and parallel",
@@ -42,20 +42,20 @@
     ]
    },
    {
-    "say": "Are they equal? Not necessarily. Usually there's a long diagonal and a short one. If the two diagonals are equal, the rhombus is a square.",
+    "say": "Are they equal? Not necessarily. Usually there's a long diagonal and a short one, like here. Only if the two diagonals are equal, the rhombus is a square, like this one.",
     "at": [
      "Usually there's a long diagonal",
      "and a short",
-     "If the two diagonals are equal",
-     "equal, the rhombus"
+     "Only if the two",
+     "are equal, the"
     ]
    },
    {
-    "say": "They cut each other in half, and they also cut the angles of the rhombus in half.",
+    "say": "Let's go back to our rhombus. Its diagonals cut each other in half, and they also cut the angles of the rhombus in half.",
     "at": [
-     "They cut each other in half",
-     "they also cut the angles",
-     "of the rhombus"
+     "Its diagonals cut each other",
+     "in half, and",
+     "they also cut the angles"
     ]
    }
   ],
@@ -69,17 +69,17 @@
     ]
    },
    {
-    "say": "This diagonal is a line of symmetry. The triangle on the right is exactly like the triangle on the left. So the sides up here are equal, the sides down here are equal, and the angle on the right equals the angle on the left.",
+    "say": "The diagonal A C is a line of symmetry. Fold along it, and the triangle on the right lands exactly on the triangle on the left. So the sides up here are equal, the sides down here are equal, and the angle on the right equals the angle on the left.",
     "at": [
-     "This diagonal is a line of symmetry",
-     "The triangle on"
+     "The diagonal A C is a line of symmetry",
+     "a line of"
     ]
    },
    {
-    "say": "And it's not only symmetric right to left, it's also symmetric top to bottom. The top triangle is exactly like the bottom one, and the top angle equals the bottom angle.",
+    "say": "And the other diagonal, B D, is a line of symmetry too. Fold along it, and the top triangle lands exactly on the bottom one. So the top angle equals the bottom angle.",
     "at": [
-     "it's also symmetric top to bottom",
-     "The top triangle"
+     "the other diagonal, B D",
+     "is a line"
     ]
    },
    {
@@ -92,33 +92,66 @@
   ],
   [
    {
-    "say": "The area of a rhombus is the product of the diagonals, over two. Why? Take half of one diagonal and half of the other. They're the legs of a small right triangle.",
+    "say": "The area of a rhombus is the product of the diagonals, over two. Why? The diagonals meet at ninety degrees, and they cut each other in half. So they split the rhombus into four equal right triangles. Look at one of them. Its legs are half of one diagonal and half of the other.",
     "at": [
      "The area of a rhombus",
      "is the product",
-     "Take half of one diagonal",
-     "and half of"
+     "Look at one of them",
+     "Its legs are"
     ]
    },
    {
-    "say": "Its area is leg times leg, over two. The rhombus is four of these triangles, so we multiply by four. What we end up with is diagonal times diagonal, over two.",
+    "say": "Its area is leg times leg, over two. Half of one diagonal times half of the other is the product of the diagonals, over four. Then we divide by two, so one triangle is the product of the diagonals, over eight.",
     "at": [
-     "diagonal times diagonal"
+     "Half of one diagonal times",
+     "half of the",
+     "Then we divide by two",
+     "product of the diagonals, over eight"
     ]
    },
    {
-    "say": "For example, diagonals ten and six. Ten times six is sixty, over two, thirty. Another one, diagonals eight and twelve. Eight times twelve is ninety-six, over two, forty-eight.",
+    "say": "The rhombus is four of these triangles, so we multiply by four. Four times that is the product of the diagonals, over two. That's diagonal times diagonal, over two.",
     "at": [
-     "diagonals ten and six",
+     "The rhombus is four",
+     "these triangles, so",
+     "Four times that is",
+     "That's diagonal times diagonal",
+     "diagonal times diagonal, over two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's see it in numbers, with diagonals twelve and eight. The legs of one small triangle are six and four. Its area is four times six over two, which is twelve.",
+    "at": [
+     "with diagonals twelve and eight",
+     "The legs of one small triangle",
+     "triangle are six",
+     "Its area is four times six",
+     "six over two"
+    ]
+   },
+   {
+    "say": "Four triangles make four times twelve, forty-eight. And with the formula, eight times twelve is ninety-six, and ninety-six over two is forty-eight too.",
+    "at": [
+     "Four triangles make",
+     "twelve, forty-eight. And",
+     "eight times twelve is",
+     "ninety-six over two"
+    ]
+   },
+   {
+    "say": "Another one, diagonals ten and six. Ten times six is sixty, and sixty over two is thirty.",
+    "at": [
+     "Another one, diagonals",
      "Ten times six",
-     "diagonals eight and twelve",
-     "Eight times twelve"
+     "sixty over two"
     ]
    },
    {
     "say": "And a rhombus is also a parallelogram, so base times height works too, if that's what you're given. [pause] Okay. I'll see you in the next video.",
     "at": [
-     "base times height works too"
+     "also a parallelogram"
     ]
    }
   ]

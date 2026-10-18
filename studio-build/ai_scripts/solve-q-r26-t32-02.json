@@ -21,19 +21,18 @@
     ]
    },
    {
-    "say": "[short pause] So let's drop a height from D down to B C, and call its foot E. Now the trapezoid is a rectangle, A B E D, and a right triangle, D E C.",
+    "say": "[short pause] So let's drop a height from D down to B C, and call its foot E. Now we've split the trapezoid into a rectangle, A B E D, and a right triangle, D E C.",
     "at": [
      "let's drop a height from D",
      "D down to",
-     "Now the trapezoid is a rectangle",
-     "rectangle, A B"
+     "Now we've split the trapezoid",
+     "into a rectangle"
     ]
    },
    {
     "say": "In the rectangle, B E equals A D, nine. So E C is fifteen minus nine, which is six.",
     "at": [
-     "In the rectangle",
-     "equals A D",
+     "So E C is fifteen minus nine",
      "which is six"
     ]
    }
@@ -50,17 +49,28 @@
     ]
    },
    {
-    "say": "Now the area. The area of a trapezoid is the sum of the bases, times the height, over two. Nine plus fifteen is twenty-four. Times the height, eight, over two. Twenty-four over two is twelve, and twelve times eight is ninety-six. Choice number two is our answer.",
+    "say": "Now the area of the whole trapezoid. The area of a trapezoid is the sum of the bases, times the height, over two. Nine plus fifteen is twenty-four. So the area is twenty-four times eight, over two.",
     "at": [
-     "Now the area",
-     "is the sum",
+     "Now the area of the whole trapezoid",
+     "The area of a",
+     "Nine plus fifteen",
+     "So the area is twenty-four",
+     "times eight, over"
+    ]
+   },
+   {
+    "say": "Let's halve the twenty-four first. Twenty-four over two is twelve, and twelve times eight is ninety-six. Choice number two is our answer.",
+    "at": [
+     "Twenty-four over two",
+     "twelve times eight",
      "Choice number two is our answer"
     ]
    },
    {
     "say": "If you got one hundred twenty, you used C D, ten, as the height. But the slanted leg is not the height. The height is perpendicular to the bases. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "If you got one hundred twenty"
+     "If you got one hundred twenty",
+     "twenty, you used"
     ]
    }
   ]

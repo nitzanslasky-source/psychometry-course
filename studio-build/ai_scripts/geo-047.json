@@ -62,12 +62,18 @@
      "too, so we"
     ]
    },
-   "Remember, two parallel lines and a line that cuts them make small angles and large angles. And it's the same crossing at every corner of the parallelogram.",
    {
-    "say": "So all the large angles are equal, we'll call them beta, and all the small ones are equal, we'll call them alpha. That's the first rule: opposite angles are equal.",
+    "say": "Remember, when a line crosses two parallel lines, it makes small angles and large angles. Here the side A B crosses the two parallel lines through A D and B C. The angles at B and at A sit inside this U, so they add up to a hundred eighty.",
     "at": [
-     "So all the large angles",
-     "are equal, we'll"
+     "inside this U",
+     "add up to"
+    ]
+   },
+   {
+    "say": "The side C D crosses the same two lines, and it's parallel to A B, so it makes the same angles. So in this tilted example, all the large angles are equal, we'll call them beta, and all the small ones are equal, we'll call them alpha. That's the first rule: opposite angles are equal. In a rectangle, they're all ninety.",
+    "at": [
+     "all the large angles",
+     "equal, we'll call"
     ]
    },
    {
@@ -108,12 +114,40 @@
     ]
    },
    {
-    "say": "Two more facts: if the diagonals are equal, it's a rectangle, and if they're perpendicular, it's a rhombus. A general parallelogram promises only one thing about its diagonals: they cut each other in half.",
+    "say": "So a general parallelogram promises only one thing about its diagonals: they cut each other in half.",
     "at": [
-     "Two more facts",
-     "diagonals are equal",
-     "A general parallelogram",
+     "a general parallelogram",
      "one thing about"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Two more facts help us recognise special parallelograms. Both start from a shape we already know is a parallelogram. We don't need to prove them, just to know them.",
+    "at": [
+     "us recognise special"
+    ]
+   },
+   {
+    "say": "If a parallelogram also has equal diagonals, it's a rectangle. Like this one: its diagonals are equal, and its angles are ninety degrees.",
+    "at": [
+     "also has equal diagonals",
+     "Like this one:"
+    ]
+   },
+   {
+    "say": "If a parallelogram also has perpendicular diagonals, it's a rhombus. Like this one: its diagonals meet at ninety degrees, and all four sides are equal.",
+    "at": [
+     "also has perpendicular diagonals",
+     "Like this one:"
+    ]
+   },
+   {
+    "say": "Careful, both facts start from a parallelogram. This kite also has perpendicular diagonals, but it isn't a parallelogram, so it isn't a rhombus.",
+    "at": [
+     "both facts start from",
+     "This kite also has",
+     "diagonals, but it"
     ]
    }
   ],
@@ -205,11 +239,42 @@
      "eight times six"
     ]
    },
+   "The other special angles work the same way, each with its own right triangle."
+  ],
+  [
    {
-    "say": "With forty-five degrees, it's a silver triangle, and the height is the side over root two. With sixty, it's again a gold triangle, and the height is half the side times root three. And with an obtuse angle, like a hundred fifty, look at the angle next to it, which is thirty. [pause] Okay. I'll see you in the next video.",
+    "say": "Let's start with forty-five degrees. Say the slanted side is eight, and the angle at B is forty-five. The height cuts off a right triangle with forty-five and forty-five, a silver triangle. The slanted side is its hypotenuse, so the height is a leg, eight over root two. Eight divided by two is four, so the height is four root two.",
     "at": [
-     "With forty-five degrees",
-     "silver triangle, and"
+     "start with forty-five degrees",
+     "Say the slanted",
+     "The height cuts off",
+     "right triangle with",
+     "eight over root two",
+     "divided by two",
+     "so the height is four root two"
+    ]
+   },
+   {
+    "say": "With sixty degrees at B, the right triangle is a gold triangle again. Its angle at the top is thirty. Across from the thirty is the short leg, at the bottom, so it's half of eight, four. The height is the long leg, so it's four root three.",
+    "at": [
+     "With sixty degrees",
+     "the right triangle is a gold",
+     "gold triangle again",
+     "so it's half of eight",
+     "The height is the long leg",
+     "leg, so it's"
+    ]
+   },
+   {
+    "say": "And with a hundred fifty degrees at B, the height from A lands outside, past B. So we extend C B beyond B. The angle next to the hundred fifty, on the straight line, is a hundred eighty minus a hundred fifty, which is thirty. So again the height is half the slanted side, four. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "And with a hundred fifty",
+     "degrees at B",
+     "So we extend C B",
+     "beyond B. The",
+     "a hundred eighty minus a hundred fifty",
+     "hundred fifty, which",
+     "half the slanted side"
     ]
    }
   ]

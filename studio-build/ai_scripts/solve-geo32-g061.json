@@ -19,15 +19,14 @@
     ]
    },
    {
-    "say": "[short pause] Where do we start? With the square. A square has lots of properties. All its sides are equal, and all its angles are ninety. Its diagonals are equal, they cut each other in half, they're perpendicular, and they cut the angles in half. We need to decide which of these matter here.",
+    "say": "[short pause] Where do we start? With the square. We need its equal sides and its ninety-degree corners. P is not the point where the diagonals meet, so we can't treat it as the centre, and we won't use the diagonals.",
     "at": [
      "Where do we start",
-     "A square has"
+     "We need its"
     ]
    },
-   "There are no diagonals in this figure. P is inside the square, but it's not the point where the diagonals meet. So we probably won't need the diagonal properties.",
    {
-    "say": "What we will need is this. All the sides are equal, so let's mark all four with the same little line. And all the angles are ninety. I'll mark the two that sit next to the angle we want, at B and at A. We may need them.",
+    "say": "All the sides are equal, so let's mark all four with the same little line. And all the angles are ninety. I'll mark the two that sit next to the angle we want, at B and at A. We may need them.",
     "at": [
      "mark all four with the same little line",
      "same little line",
@@ -50,10 +49,14 @@
      "Now look at the triangle that holds",
      "A, triangle A"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "In an isosceles triangle, the angles across from the equal sides are equal. So angle B A P and angle B P A are equal. Let's call both of them alpha.",
+    "say": "Here's triangle A B P on its own, bigger. In an isosceles triangle, the angles across from the equal sides are equal. So angle B A P and angle B P A are equal. Let's call both of them alpha.",
     "at": [
+     "Here's triangle A B P on its own",
+     "on its own",
      "call both of them alpha"
     ]
    },
@@ -61,16 +64,25 @@
     "say": "The corner of the square at B is ninety, and the equilateral triangle takes sixty of it, angle P B C. So the angle at B, the top of this triangle, is ninety minus sixty, which is thirty.",
     "at": [
      "The corner of",
-     "is ninety minus sixty"
+     "is ninety minus sixty",
+     "which is thirty"
     ]
    },
    {
-    "say": "The angles of a triangle add up to one hundred eighty. So thirty plus alpha plus alpha is one hundred eighty. Move the thirty across. One hundred eighty minus thirty is one hundred fifty, and that's two alpha. So one alpha is seventy-five.",
+    "say": "The angles of a triangle add up to one hundred eighty. So thirty plus alpha plus alpha is one hundred eighty.",
     "at": [
      "The angles of",
      "So thirty plus alpha",
-     "alpha is one",
-     "So one alpha"
+     "alpha is one"
+    ]
+   },
+   {
+    "say": "Subtract thirty from both sides, and two alpha is one hundred fifty. Divide by two, so alpha is seventy-five.",
+    "at": [
+     "Subtract thirty from both sides",
+     "and two alpha",
+     "Divide by two",
+     "so alpha is seventy-five"
     ]
    },
    {
@@ -82,6 +94,7 @@
      "fill the square's",
      "So angle P A D is ninety",
      "is ninety minus",
+     "which is fifteen",
      "Choice number one is our answer"
     ]
    }

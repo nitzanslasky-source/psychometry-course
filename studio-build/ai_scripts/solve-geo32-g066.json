@@ -21,17 +21,17 @@
     ]
    },
    {
-    "say": "[short pause] Statement one, every rhombus is a deltoid. What does that mean? Every rhombus has all the properties of a deltoid. A deltoid is two isosceles triangles on a shared base, the short diagonal.",
+    "say": "[short pause] Statement one, every rhombus is a deltoid. What does that mean? Every rhombus has everything a deltoid is guaranteed to have. A deltoid has two pairs of equal sides, and in each pair the equal sides are next to each other.",
     "at": [
-     "A deltoid is two isosceles triangles",
-     "triangles on a"
+     "A deltoid has two pairs",
+     "of equal sides"
     ]
    },
    {
-    "say": "A rhombus has all its sides equal. But look, its short diagonal also makes two isosceles triangles on a shared base. So a rhombus has every property of a deltoid. It's true, so choice number one is out. Not every deltoid is a rhombus, by the way. But a deltoid with all four sides equal is a rhombus.",
+    "say": "A rhombus has all four sides equal. So the two top sides are equal and next to each other, and so are the two bottom sides. That's two pairs, so every rhombus is a deltoid. It's true, so choice number one is out. Not every deltoid is a rhombus, by the way. But a deltoid with all four sides equal is a rhombus.",
     "at": [
-     "its short diagonal also makes",
-     "two isosceles triangles",
+     "A rhombus has all four sides equal",
+     "So the two",
      "so choice number one is out"
     ]
    },
@@ -61,10 +61,10 @@
     ]
    },
    {
-    "say": "Perpendicular diagonals are a property of the rhombus, and not every parallelogram has them. Take a rectangle, nine by four. It's a parallelogram, but its diagonals are not perpendicular. One shape where it fails is enough, so this statement is not necessarily true. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "Perpendicular diagonals are a property of the rhombus, and not every parallelogram has them. Take a rectangle, nine by four. It's a parallelogram. If its diagonals were perpendicular, it would be a rhombus, and a rectangle that's a rhombus is a square. This one is not a square, so its diagonals are not perpendicular. One shape where it fails is enough, so this statement is not necessarily true. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Take a rectangle",
-     "It's a parallelogram",
+     "four. It's a",
      "Choice number four is our answer"
     ]
    }
