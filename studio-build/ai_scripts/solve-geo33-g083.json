@@ -12,50 +12,68 @@
     "pause": 0.5
    },
    {
-    "say": "Here too, we could put the numbers into the formula, but let's save ourselves that. We have a forty and a hundred twenty, and we know what part of the circle each one is.",
+    "say": "Let's find which fraction of the circle is shaded. That's what the sector formula means anyway. We have a forty and a hundred twenty, and we know what part of the circle each one is.",
     "at": [
-     "Here too, we could",
-     "the numbers into"
+     "Let's find which fraction",
+     "the circle is"
     ]
    },
    {
-    "say": "[short pause] A hundred twenty degrees is a third of the circle. Forty degrees is a ninth, because three hundred sixty divided by nine is forty.",
+    "say": "[short pause] A hundred twenty degrees is a third of the circle, because three hundred sixty divided by three is a hundred twenty. Forty degrees is a ninth, because three hundred sixty divided by nine is forty.",
     "at": [
      "A hundred twenty degrees is a third",
      "a third of",
      "Forty degrees is a ninth",
-     "by nine is"
+     "because three hundred sixty divided by nine"
     ]
    },
    {
-    "say": "Together, that's a third plus a ninth. In ninths, a third is three ninths, and three ninths plus one ninth is four ninths. So the shaded part is four ninths of the circle's area.",
+    "say": "Together, that's a third plus a ninth. In ninths, a third is three ninths. Three ninths plus one ninth is four ninths. So the shaded part is four ninths of the circle's area.",
     "at": [
-     "Together, that",
-     "In ninths, a"
+     "In ninths, a third is three ninths",
+     "Three ninths plus one ninth",
+     "is four ninths"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "Now the area of the circle. Pi r squared is pi times three squared, which is nine pi. Careful, we need the area here, not the circumference. Four ninths of the circumference, six pi, would give eight pi over three, and that's choice number two, a trap.",
+    "say": "Now the area of the circle. Pi r squared is pi times three squared, which is nine pi.",
     "at": [
+     "Now the area of the circle",
      "Pi r squared is",
-     "times three squared",
+     "times three squared"
+    ]
+   },
+   {
+    "say": "Careful, we need the area here, not the circumference. The circumference is two pi times three, six pi. Four ninths of it would be eight pi over three. That's a length, not an area. It's choice number two, a trap.",
+    "at": [
+     "The circumference is two pi times three",
+     "times three, six",
+     "Four ninths of it would be",
+     "be eight pi",
      "a trap"
     ]
    },
    {
-    "say": "I don't need the whole circle, only four ninths of it. Nine pi divided by nine is pi, and four times that is four pi. Choice number three is our answer.",
+    "say": "I don't need the whole circle, only four ninths of it. Nine pi divided by nine is pi. And four times pi is four pi. Choice number three is our answer.",
     "at": [
      "Nine pi divided by nine",
-     "is pi, and",
+     "And four times pi is four pi",
      "Choice number three is our answer"
     ]
    },
    {
-    "say": "We can also take each sector separately. A ninth of nine pi is pi, and a third of nine pi is three pi. Together it's four pi again. Just don't stop at three pi, that's only the big sector. [pause] Okay. I'll see you in the next question.",
+    "say": "We can also take each sector separately. A ninth of nine pi is pi. A third of nine pi is three pi. Together it's four pi again. The question asks for both sectors, so don't stop at three pi. That's only the big sector. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "We can also take each sector",
-     "A ninth of",
-     "that's only the big sector"
+     "We can also",
+     "A ninth of nine pi is pi",
+     "A third of nine pi is three pi",
+     "is three pi",
+     "Together it's four pi again",
+     "The question asks",
+     "sectors, so don't",
+     "That's only the big sector"
     ]
    }
   ]

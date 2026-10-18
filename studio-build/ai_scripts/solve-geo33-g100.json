@@ -12,19 +12,20 @@
     "pause": 0.5
    },
    {
-    "say": "We'll solve it two ways, with a short equation, and then with an estimate, a size check on the choices. [short pause] The equation first. A D touches the circle at E, and B C touches it at F. Remember, the radius to the point where a tangent touches the circle is perpendicular to the tangent.",
+    "say": "We'll solve it in two different ways, the math way with a short equation, and then with an estimate. [short pause] Let's start with the math way. A D touches the circle at E, and B C touches it at F. Remember, the radius to the point where a tangent touches the circle is perpendicular to the tangent.",
     "at": [
-     "The equation first",
+     "two different ways",
+     "Let's start with the math way",
      "A D touches",
      "Remember, the radius",
      "point where a"
     ]
    },
    {
-    "say": "So O E and O F are both perpendicular to the two parallel sides, and together they make one straight line from E to F. That's a diameter, two times four, eight. And it's as long as the side A B, so the height of the rectangle is eight.",
+    "say": "So O E and O F are both perpendicular to the two parallel sides, and together they make one straight line from E to F. That's a diameter, two times four, eight. E F and A B both measure the perpendicular distance between the same two parallel sides, A D and B C. So A B is also eight, and the height of the rectangle is eight.",
     "at": [
-     "That's a diameter",
-     "And it's as"
+     "So A B is also eight",
+     "eight, and the"
     ]
    },
    {
@@ -37,7 +38,7 @@
     ]
    },
    {
-    "say": "To get B C alone, we divide both sides by eight. Sixteen pi over eight is two pi. Choice number two is our answer. The math solution wasn't bad at all.",
+    "say": "To get B C alone, we divide both sides by eight. Sixteen pi over eight is two pi. Choice number two is our answer.",
     "at": [
      "we divide both sides by eight",
      "Sixteen pi over",
@@ -47,26 +48,30 @@
   ],
   [
    {
-    "say": "[pause] Now the same question with an estimate, a size check, and almost no calculation. Draw the square around the circle. Its side is the diameter, eight, so its area is eight times eight, sixty-four.",
+    "say": "[pause] Now let's estimate, with a size check and almost no calculation. Let's draw a square around the circle, the dashed one. It's our helper, not part of the rectangle. Its side is the diameter, eight, so its area is eight times eight, sixty-four.",
     "at": [
-     "Now the same question",
-     "an estimate, a",
-     "Draw the square around",
-     "Its side is"
+     "Now let's estimate",
+     "size check and",
+     "Let's draw a square around",
+     "the circle, the",
+     "so its area is eight",
+     "times eight, sixty-four"
     ]
    },
    {
-    "say": "The circle is inside this square, so the circle's area is less than sixty-four. The rectangle has the same area as the circle, so eight times B C is also less than sixty-four. That means B C is less than eight.",
+    "say": "The circle is inside this square, so the circle's area is less than sixty-four. The rectangle has the same area as the circle, so eight times B C is also less than sixty-four. We divide both sides by eight, so B C is less than eight.",
     "at": [
+     "so the circle's area is less",
+     "less than sixty-four",
      "eight times B C is also less",
      "also less than",
-     "That means B C is less"
+     "We divide both sides by eight",
+     "less than eight"
     ]
    },
    {
     "say": "Now the choices. Pi is a bit more than three. So three pi is more than nine, four pi is more than twelve, and eight pi is more than twenty-four. All of them are more than eight, so choice numbers one, three and four are out.",
     "at": [
-     "Pi is a",
      "So three pi is more than nine",
      "four pi is more than twelve",
      "eight pi is more than twenty-four",

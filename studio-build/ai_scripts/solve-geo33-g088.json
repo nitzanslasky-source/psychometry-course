@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "We need an angle, but the only number we have is a length, the radius seven. [short pause] It's not clear yet how we'll get there, so let's start from the givens and see what each one gives us.",
+    "say": "We need an angle, but the only number we have is a length, the radius seven. [short pause] Let's use the math way. We start from the givens and see what each one gives us.",
     "at": [
      "We need an angle",
      "the only number",
@@ -20,25 +20,19 @@
     ]
    },
    {
-    "say": "M A and M B are two tangents that come out of the same point, M. Remember, two tangents from the same point are equal. And together with the radii to the points of tangency, they make a kite.",
+    "say": "M A and M B are two tangent segments to the circle O, from the same point, M. Remember, two tangent segments from the same point to the same circle are equal. And together with the radii to the points of tangency, they make a kite.",
     "at": [
-     "are two tangents",
-     "two tangents from the same point are",
-     "point are equal"
+     "are two tangent",
+     "two tangent segments from the same point",
+     "same point to"
     ]
    },
-   {
-    "say": "But right now there's no kite in the drawing, because the radii aren't there. We need a helper line. A helper line is something we add to the drawing ourselves, so that we can solve the question. One of the most common helper lines is a radius to the point of tangency.",
-    "at": [
-     "the question. One",
-     "to the point"
-    ]
-   },
+   "But right now there's no kite in the drawing, because the radii aren't there. So let's add a helper line, a radius to each point of tangency. We draw it because it gives us right angles.",
    {
     "say": "So let's draw the radius from O to A, and from O to B. Both are seven. A radius to the point of tangency is perpendicular to the tangent, so we get ninety degrees at A, and ninety at B.",
     "at": [
      "So let's draw the radius",
-     "from O to B"
+     "from O to"
     ]
    },
    {
@@ -51,22 +45,34 @@
   ],
   [
    {
-    "say": "[pause] There's a given we haven't used. The two circles are congruent, and they touch each other. To use it, we need a second helper line. It's less common, but this question asks for it. We join the two centers, O and M.",
+    "say": "[pause] There's a given we haven't used. The two circles are congruent, and they touch each other. To use the touching, we join the two centers, O and M.",
     "at": [
      "There's a given we haven't used",
      "The two circles",
-     "We join the two centers",
+     "we join the two centers",
      "O and M"
     ]
    },
    {
-    "say": "When two circles touch, the touching point lies on the line between the centers. So the first part of O M is a radius of circle O, seven. The second part is a radius of circle M, and the circles are congruent, so it's seven too. So O M is seven plus seven, which is fourteen.",
+    "say": "When two circles touch from the outside, the touching point lies between the centers, on the line O M. So the first part of O M is a radius of circle O, seven. The second part is a radius of circle M, and the circles are congruent, so it's seven too. So O M is seven plus seven, which is fourteen.",
     "at": [
      "So the first part of O M",
-     "O M is"
+     "O M is",
+     "So O M is seven plus seven",
+     "plus seven, which"
     ]
    },
-   "By the way, if one circle sat inside the other and they touched, the distance between the centers would be the big radius minus the small one."
+   {
+    "say": "Compare that with circles that touch from the inside. Here a small circle sits inside a big one and touches it once. The touching point is on the line through the two centers, but now both radii go the same way. So the distance between the centers is the big radius minus the small one. With radii five and two, it's five minus two, which is three. In our question the circles touch from the outside, so it's seven plus seven.",
+    "at": [
+     "Compare that with circles",
+     "touch from the",
+     "but now both radii go the same way",
+     "the same way",
+     "it's five minus",
+     "In our question"
+    ]
+   }
   ],
   [
    {
@@ -78,9 +84,9 @@
      "M, is fourteen"
     ]
    },
-   "To get an angle from the sides, it has to be a triangle we know, the silver one or the gold one. In the silver triangle, the hypotenuse is the leg times root two. In the gold triangle, thirty, sixty, ninety, the sides are x, x root three and two x. So the hypotenuse is exactly twice the short leg.",
+   "Here the hypotenuse is twice a leg, fourteen and seven. That's the gold triangle ratio we know. In the gold triangle, thirty, sixty, ninety, the sides are x, x root three and two x. So its hypotenuse is twice the short leg. The silver triangle doesn't fit here, because its hypotenuse is the leg times root two.",
    {
-    "say": "Here the hypotenuse is exactly twice the leg, fourteen and seven. That only happens in the gold triangle. So O A is the short leg, and the angle across from it, at M, is thirty degrees.",
+    "say": "So O A is the short leg, and the angle across from it, at M, is thirty degrees.",
     "at": [
      "the angle across from it",
      "at M, is"
@@ -109,18 +115,25 @@
     "at": [
      "So angle A O B is sixty plus sixty",
      "is sixty plus",
+     "which is one hundred twenty",
      "Choice number three is our answer",
-     "Sixty, choice"
+     "Sixty, choice",
+     "only half of"
     ]
    },
    {
-    "say": "You can also finish with the kite. The angle at M is thirty plus thirty, which is sixty. The kite's angles add up to three hundred sixty. Three hundred sixty minus ninety and ninety is one hundred eighty, and minus sixty is one hundred twenty. The same answer.",
+    "say": "You can also finish with the kite. The angle at M is thirty plus thirty, which is sixty. The kite's angles add up to three hundred sixty. Three hundred sixty minus ninety and minus ninety is one hundred eighty. And one hundred eighty minus sixty is one hundred twenty. The same answer.",
     "at": [
      "You can also finish with the kite",
-     "The angle at"
+     "The angle at M is thirty plus thirty",
+     "thirty plus thirty",
+     "Three hundred sixty minus ninety",
+     "and minus ninety",
+     "eighty minus sixty is one hundred twenty",
+     "hundred twenty. The"
     ]
    },
-   "So again, what did we do? We needed two helper lines. A very common one, the radius to the point of tangency, and a less common one that this question asked for, the line between the centers. And we spotted a gold triangle from its sides. [pause] Okay. I'll see you in the next question."
+   "So again, what did we do? We used two types of helper line. First the radii to the points of tangency, which gave us right angles. Then the line between the centers, which used the touching circles. And we spotted a gold triangle from its sides. [pause] Okay. I'll see you in the next question."
   ]
  ]
 }

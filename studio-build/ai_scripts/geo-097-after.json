@@ -3,21 +3,22 @@
  "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "I want to use the last question to show you three objects that show up on the exam every now and then. If you know them by heart, you save precious time."
+   "I want to use the last question to show you three useful arrangements of shapes inside shapes. Each one comes with a fixed ratio. Once we see why, it's worth remembering them."
   ],
   [
    {
-    "say": "The first one is square, circle, square. A square, a circle inside it, and a square inside the circle. It's exactly the case we just solved.",
+    "say": "The first one is square, circle, square. A circle inside a square, touching all four sides. And a square inside the circle, with its four corners on the circle. It's exactly the case we just solved.",
     "at": [
      "The first one is square",
      "circle, square. A",
-     "a circle inside it",
-     "a square inside the circle",
+     "touching all four sides",
+     "a square inside",
+     "with its four corners on the circle",
      "It's exactly the"
     ]
    },
    {
-    "say": "We saw that the big square is made of eight identical triangles, and the small square of four. So the outer square's area is always twice the inner square's area.",
+    "say": "Here the inner square's corners are at the touching points. If it's drawn turned another way, we can rotate it inside the circle until it looks like this. Turning it doesn't change its size. Then the big square is made of eight identical triangles, and the small square of four. So the outer square's area is always twice the inner square's area.",
     "at": [
      "eight identical triangles",
      "small square of",
@@ -25,25 +26,29 @@
      "always twice the"
     ]
    },
-   "A question like the last one comes near the end of the section, and it has appeared a few times. If you know this, you mark the answer at once.",
+   "So when you see this arrangement in a question, you already know the ratio of the areas. The outer area is two times the inner area.",
    {
-    "say": "It's also worth knowing the sides. With a radius of one, the outer side is two, and the inner side is root two. Two is root two times root two, so the outer side is root two times the inner side.",
+    "say": "It's also worth knowing the sides. Take a radius of one. The outer side is a diameter, two. The inner side is the hypotenuse of a silver triangle with legs one and one, so it's root two. Two is root two times root two. So the outer side is root two times the inner side.",
     "at": [
-     "With a radius of one",
-     "the outer side",
-     "the outer side is root two times",
-     "two times the"
+     "Take a radius of one",
+     "The outer side is a diameter",
+     "diameter, two. The",
+     "so it's root two",
+     "Two is root",
+     "outer side is root two times",
+     "times the inner"
     ]
    }
   ],
   [
    {
-    "say": "The second one is circle, square, circle. A circle, a square inside it, and a circle inside the square. It's almost the same case.",
+    "say": "The second one is circle, square, circle. A square inside a circle, with its four corners on the circle. And a circle inside the square, touching all four sides. It's almost the same case.",
     "at": [
      "The second one is circle",
      "square, circle. A",
-     "a square inside it",
-     "a circle inside the square",
+     "with its four corners on the circle",
+     "the circle. And",
+     "touching all four sides",
      "It's almost the"
     ]
    },
@@ -57,25 +62,34 @@
     ]
    },
    {
-    "say": "The square's diagonal makes a silver triangle with two sides, and in a silver triangle the hypotenuse is the leg times root two. So the diagonal is two root two. And that diagonal is a diameter of the big circle, so the big radius is half of it, root two.",
+    "say": "Now look at the square's diagonal. It cuts the square into two silver triangles with legs of two. In a silver triangle the hypotenuse is the leg times root two. So the diagonal is two root two.",
     "at": [
-     "The square's diagonal",
-     "and in a",
-     "so the big radius is half",
+     "Now look at the square's diagonal",
+     "two silver triangles",
+     "So the diagonal is two root two"
+    ]
+   },
+   {
+    "say": "The square's corners are on the big circle, so that diagonal is a diameter of the big circle. So the big radius is half of it, root two.",
+    "at": [
+     "The square's corners",
+     "So the big radius is half",
      "half of it"
     ]
    },
    {
-    "say": "So the outer radius is root two times the inner radius. Now the areas. The small circle is pi times one squared, pi. The big circle is pi times root two, squared, which is two pi.",
+    "say": "So the outer radius is root two times the inner radius. Now the areas. The small circle is pi times one squared, which is pi. The big circle is pi times root two squared. Root two squared is two, so that's two pi.",
     "at": [
      "So the outer radius",
      "root two times",
-     "Now the areas",
-     "The small circle"
+     "The small circle is pi",
+     "times one squared",
+     "The big circle is pi",
+     "times root two"
     ]
    },
    {
-    "say": "So again, the outer circle's area is exactly twice the inner circle's area.",
+    "say": "So again, the outer circle's area is exactly twice the inner circle's area. That fits the scaling rule we know. Every length is root two times bigger. So the area is root two squared times bigger, which is two.",
     "at": [
      "the outer circle's area",
      "exactly twice the"
@@ -84,49 +98,65 @@
   ],
   [
    {
-    "say": "The third and last one is triangle, circle, triangle. But only with equilateral triangles.",
+    "say": "The third one is triangle, circle, triangle. Here both triangles must be equilateral. A circle inside the big triangle, touching all three sides. And a small triangle inside the circle, with its three corners on the circle.",
     "at": [
-     "The third and last one",
-     "triangle, circle, triangle",
-     "But only with equilateral",
-     "only with equilateral"
+     "The third one is triangle",
+     "circle, triangle. Here",
+     "both triangles must be equilateral",
+     "A circle inside",
+     "touching all three sides",
+     "a small triangle",
+     "with its three corners on the circle"
     ]
    },
    {
-    "say": "Here it's different. The outer triangle isn't twice the inner one, it's four times as big. And the outer side is twice the inner side.",
+    "say": "Here it's different. The outer triangle's area isn't twice the inner one. It's four times the inner area. And the outer side is twice the inner side.",
     "at": [
-     "outer triangle isn't",
-     "it's four times as big",
-     "the outer side is",
+     "The outer triangle's",
+     "four times the inner area",
+     "the outer side is twice",
      "the inner side"
     ]
    },
    {
-    "say": "Why? The circle touches each side of the big triangle right in its middle, because the equilateral triangle is symmetric. Turn the small triangle upside down, like here. Turning it doesn't change its size. Now its corners touch those middles.",
+    "say": "Why? The circle touches each side of the big triangle right in its middle, because the equilateral triangle is symmetric. The small triangle in this picture is already turned upside down. If it's drawn another way, we can rotate it around the center until it looks like this. Turning it doesn't change its size. Now its corners touch those middles.",
     "at": [
      "right in its middle",
      "the equilateral triangle"
     ]
    },
    {
-    "say": "So the big triangle is cut into four equal triangles, and the small one is one of them. Its area is a quarter, and its side is half of the big side.",
+    "say": "So the big triangle is cut into four equal triangles, and the small one is one of them. Its side is half of the big side, and its area is a quarter.",
     "at": [
      "cut into four equal triangles",
      "and the small"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "Now, this is important. A length factor isn't an area factor. Sides times root two give areas times two, and sides times two give areas times four.",
+    "say": "Now, this is important. A length factor isn't an area factor. The area factor is the length factor, squared.",
     "at": [
-     "Sides times root two",
-     "areas times two",
-     "sides times two give"
+     "A length factor",
+     "The area factor is the length factor",
+     "length factor, squared"
     ]
    },
    {
-    "say": "Learn these three objects by heart. [pause] Okay. I'll see you in the next video.",
+    "say": "In the first two arrangements, every length grows root two times. So the areas grow two times. In the triangle arrangement, every length grows two times. So the areas grow four times.",
     "at": [
-     "Learn these three"
+     "In the first two arrangements",
+     "every length grows",
+     "So the areas grow two times",
+     "In the triangle arrangement",
+     "length grows two"
+    ]
+   },
+   {
+    "say": "So remember the three area ratios, the outer area over the inner area. They are two, two, and four. Take a moment to memorize this. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "the outer area over the inner area",
+     "They are two"
     ]
    }
   ]

@@ -12,26 +12,26 @@
     "pause": 0.5
    },
    {
-    "say": "A circle circumscribed about a triangle passes through all three of its vertices. But wait, there's no circle in the figure at all. [short pause] To solve this, we need two rules.",
+    "say": "A circle circumscribed about a triangle passes through all three of its vertices. But wait, there's no circle in the figure at all. [short pause] To solve this, we need two facts about such circles.",
     "at": [
-     "a triangle passes",
-     "solve this, we"
+     "a triangle passes"
     ]
    },
    {
-    "say": "[short pause] Rule one. Every triangle can be circumscribed. Every triangle has a circle that passes through all three of its vertices. Here's an acute triangle with its circle, and here's an obtuse one with its circle.",
+    "say": "[short pause] Here's the first fact. Every triangle has a circle that passes through all three of its corners. Here's an acute triangle with its circle, and here's an obtuse one with its circle.",
     "at": [
-     "Rule one",
-     "Every triangle can",
+     "Here's the first fact",
+     "Every triangle has",
      "Here's an acute triangle",
      "and here's an obtuse one"
     ]
    },
    {
-    "say": "Rule two. There's only one such circle, with one radius. That's true for every triangle. So this triangle has exactly one circumscribed circle, and we need to find its size.",
+    "say": "And here's the second fact. Every triangle has exactly one circle through its three corners. What does that mean? With these same three corners on the circle, we can't choose a different radius. So this triangle has exactly one circumscribed circle, and we need to find its size.",
     "at": [
-     "There's only one such circle",
-     "with one radius"
+     "And here's the",
+     "exactly one circle through its three corners",
+     "three corners. What"
     ]
    },
    {
@@ -48,12 +48,17 @@
      "Let's check Pythagoras",
      "Does twelve squared",
      "Twelve squared is",
-     "Thirty-five squared is"
+     "Thirty-five squared is",
+     "thirty-five, one thousand",
+     "Together, one thousand three hundred sixty-nine"
     ]
    },
    {
-    "say": "And thirty-seven squared? Thirty-seven times thirty is one thousand one hundred ten, and thirty-seven times seven is two hundred fifty-nine. Together, one thousand three hundred sixty-nine. The same.",
+    "say": "And thirty-seven squared? Thirty-seven times thirty is one thousand one hundred ten. Thirty-seven times seven is two hundred fifty-nine. Together, one thousand three hundred sixty-nine. The same.",
     "at": [
+     "Thirty-seven times thirty",
+     "thousand one hundred",
+     "Thirty-seven times seven",
      "Together, one thousand three hundred sixty-nine. The same",
      "sixty-nine. The same"
     ]
@@ -67,6 +72,13 @@
    },
    "This is new. Until now, they gave us a right triangle with two of its sides, and we found the third. Here they gave us all three sides, and we had to see from them that the triangle is a right triangle.",
    {
+    "say": "So when a question gives all three sides, check Pythagoras first. If the squares of the two shorter sides add up to the square of the longest side, the triangle is a right triangle. The right angle is across from the longest side. For example, five, twelve and thirteen. Twenty-five plus a hundred forty-four is a hundred sixty-nine. And thirteen squared is a hundred sixty-nine too. So that's a right triangle.",
+    "at": [
+     "check Pythagoras first",
+     "to the square"
+    ]
+   },
+   {
     "say": "Now let's draw the circle around the triangle, and remember one more rule. The angle at A sits on the circle, so it's an inscribed angle. We learned that an inscribed angle that rests on a diameter is ninety degrees. And the other way around. If an inscribed angle is ninety degrees, it must rest on a diameter.",
     "at": [
      "let's draw the circle around",
@@ -77,25 +89,28 @@
     "say": "So B C, the hypotenuse, is a diameter of the circle. The diameter is thirty-seven.",
     "at": [
      "is a diameter of the circle",
-     "circle. The diameter"
+     "The diameter is thirty-seven"
     ]
    },
    {
-    "say": "Now the question is simple. What's the circumference of a circle with a diameter of thirty-seven? It's two pi r. We could halve thirty-seven to get the radius, and then double it again. But there's a simpler way. Two pi r is two r times pi, and two r is the diameter. So the circumference is the diameter times pi, thirty-seven pi. Choice number two is our answer.",
+    "say": "Now we need the circumference of a circle with a diameter of thirty-seven. The formula is two pi r. Two r is the diameter, so two pi r is pi times the diameter. We already know the diameter, so let's use it directly. Pi times thirty-seven is thirty-seven pi. Choice number two is our answer.",
     "at": [
-     "the question is",
-     "thirty-seven? It's two",
-     "So the circumference is the diameter times pi",
-     "diameter times pi",
+     "Now we need",
+     "so two pi r is pi times the diameter",
+     "pi times the",
+     "Pi times thirty-seven is",
      "Choice number two is our answer"
     ]
    },
    {
-    "say": "Careful with the traps. Thirty-seven is the diameter, not the radius. Two pi times thirty-seven gives seventy-four pi, choice number one. And eighteen and a half pi, choice number three, is pi times the radius. It forgets the two. [pause] Okay. I'll see you in the next question.",
+    "say": "Careful with the traps. Thirty-seven is the diameter, not the radius. If we put it in as r, two pi times thirty-seven gives seventy-four pi, choice number one. And the radius is eighteen and a half. Pi times eighteen and a half is eighteen and a half pi, choice number three. It forgets the two. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "Two pi times thirty-seven",
+     "Thirty-seven is the",
+     "two pi times thirty-seven gives",
      "choice number one",
-     "and a half",
+     "And the radius",
+     "Pi times eighteen and a half",
+     "half is eighteen",
      "choice number three"
     ]
    }

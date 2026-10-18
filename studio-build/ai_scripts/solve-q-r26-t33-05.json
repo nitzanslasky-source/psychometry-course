@@ -12,21 +12,20 @@
     "pause": 0.5
    },
    {
-    "say": "We need a length, D C, but the figure has only two circles and a line. So let's go to the givens and see what each one gives us. We'll build a right triangle, and at the end there's a short formula too.",
+    "say": "We need a length, D C, but the figure has only two circles and a line. Let's use the math way. We'll go to the givens and see what each one gives us. We'll build a right triangle, and at the end there's a short formula too.",
     "at": [
      "We need a length",
-     "the givens and"
+     "way. We'll go"
     ]
    },
    {
-    "say": "[short pause] Let's look at the bottom part of the figure, bigger. D and C are points of tangency. So the automatic helper line, a radius to each point of tangency. Draw A D and B C. A radius is perpendicular to the tangent, so there's a right angle at D and at C.",
+    "say": "[short pause] Let's look at the bottom part of the figure, bigger. D and C are points of tangency. Let's draw each radius to its touching point, A D and B C. That gives two right angles, because a radius is perpendicular to the tangent at its touching point.",
     "at": [
      "Let's look at the bottom part",
      "part of the",
      "D and C are points",
-     "So the automatic",
-     "Draw A D and B C",
-     "A radius is"
+     "Let's draw each radius",
+     "its touching point"
     ]
    },
    {
@@ -37,16 +36,16 @@
     ]
    },
    {
-    "say": "The circles touch, so a second helper line. Join the centers. A B passes through the point where the circles touch. The first part is a radius of the big circle, eight, and the second part is a radius of the small one, two. So A B is eight plus two, ten.",
+    "say": "The circles touch, so let's also join the centers. A B passes through the point where the circles touch. The first part is a radius of the big circle, eight, and the second part is a radius of the small one, two. So A B is eight plus two, ten.",
     "at": [
-     "Join the centers",
+     "join the centers",
      "A B passes",
      "So A B is eight plus two",
      "plus two, ten"
     ]
    },
    {
-    "say": "Now look at A B C D. It has two right angles, at D and at C, and two parallel sides. It's a right trapezoid, and D C, the side we want, is its bottom.",
+    "say": "Now look at A B C D. It has two right angles, at D and at C, and two parallel sides, A D and B C. It's a right trapezoid. D C is perpendicular to both parallel sides, so it's the distance between them. That's the length we want.",
     "at": [
      "Now look at A B C D",
      "at D and"
@@ -64,30 +63,48 @@
     ]
    },
    {
-    "say": "E B C D is a rectangle, because all its angles are right angles. So E D equals B C, which is two. And E B equals D C, the length we want.",
+    "say": "E B C D is a rectangle, because all its angles are right angles. So E D is equal to B C, which is two. And E B is equal to D C, the length we want.",
     "at": [
      "E B C D is a rectangle",
-     "a rectangle, because"
+     "a rectangle, because",
+     "So E D is equal to B C",
+     "to B C",
+     "And E B is",
+     "to D C"
     ]
    },
    {
     "say": "Now A E is the whole radius A D, minus E D. Eight minus two is six.",
     "at": [
+     "Eight minus two",
      "Eight minus two"
     ]
    },
    {
-    "say": "Look at the right triangle A B E. The hypotenuse A B is ten, and one leg, A E, is six. Six and ten, that's the six, eight, ten triangle, so the other leg, B E, is eight. With Pythagoras, the missing leg squared is the hypotenuse squared minus the other leg squared. Ten squared minus six squared is a hundred minus thirty-six, sixty-four. And the root of sixty-four is eight.",
+    "say": "Look at the right triangle A B E. The hypotenuse A B is ten, and one leg, A E, is six. Six and ten, that's the six, eight, ten triangle, so the other leg, B E, is eight.",
     "at": [
      "Look at the right triangle",
      "A B E",
+     "so the other leg",
      "so the other leg",
      "E, is eight"
     ]
    },
    {
-    "say": "B E equals D C, so D C is eight. Choice number two is our answer.",
+    "say": "Let's check it with Pythagoras. The missing leg squared is the hypotenuse squared minus the other leg squared. Ten squared is a hundred. Six squared is thirty-six. A hundred minus thirty-six is sixty-four. A length is positive, so we take the positive root, eight.",
     "at": [
+     "Ten squared is a hundred",
+     "Six squared is thirty-six",
+     "A hundred minus thirty-six",
+     "sixty-four. A length",
+     "we take the positive root"
+    ]
+   },
+   {
+    "say": "B E is equal to D C, so D C is eight. Choice number two is our answer.",
+    "at": [
+     "to D C",
+     "so D C is eight",
      "so D C is eight",
      "Choice number two is our answer"
     ]
@@ -106,29 +123,99 @@
     ]
    },
    {
-    "say": "Two root thirty-four, choice number four, comes from adding the squares. Thirty-six plus a hundred is a hundred thirty-six, and the root of a hundred thirty-six is two root thirty-four. But A B is the hypotenuse, the longest side. Two root thirty-four is more than ten, and a leg can't be longer than the hypotenuse.",
+    "say": "Two root thirty-four, choice number four, comes from adding the squares. Thirty-six plus a hundred is a hundred thirty-six, and the root of a hundred thirty-six is two root thirty-four.",
     "at": [
      "number four, comes",
      "comes from adding the squares",
-     "a hundred thirty-six",
+     "a hundred thirty-six"
+    ]
+   },
+   {
+    "say": "But A B is the hypotenuse, the longest side. Two root thirty-four is more than ten, because root thirty-four is more than five. And a leg can't be longer than the hypotenuse.",
+    "at": [
+     "Two root thirty-four is more than ten",
+     "than ten, because",
      "a leg can't be longer"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "And now the short formula, for two circles that touch from the outside. D C is two times the root of R times r. Here that's two times the root of eight times two, two times the root of sixteen. Two times four is eight.",
+    "say": "[short pause] There's also a short formula. Let's see why it works, with letters. Call the big radius capital R, and the small radius small r. The circles touch from the outside, so A B, the hypotenuse, is R plus r. And A E is R minus r.",
     "at": [
-     "D C is two times the root",
-     "the root of"
+     "Let's see why it works",
+     "Call the big",
+     "the hypotenuse, is R plus r",
+     "the hypotenuse, is R plus r",
+     "And A E is R minus r",
+     "And A E is R minus r"
     ]
    },
    {
-    "say": "Let's check it on other circles, with radii nine and four. The circles touch, so the centers are nine plus four, thirteen apart, and the difference of the radii is five. Five, twelve, thirteen, so the tangent is twelve. And the formula gives two times the root of thirty-six, two times six, twelve. The same.",
+    "say": "By Pythagoras, D C squared is the hypotenuse squared minus the leg squared. That's R plus r, squared, minus, R minus r, squared.",
+    "at": [
+     "By Pythagoras, D C squared",
+     "is the hypotenuse",
+     "That's R plus r, squared",
+     "minus, R minus"
+    ]
+   },
+   {
+    "say": "We know both of these from expressions. R plus r, squared, is R squared plus two R r plus r squared. R minus r, squared, is R squared minus two R r plus r squared.",
+    "at": [
+     "R plus r, squared, is",
+     "r plus r squared",
+     "R minus r, squared, is",
+     "R squared minus"
+    ]
+   },
+   {
+    "say": "Now subtract. The R squared and the r squared cancel. Taking away minus two R r adds it, so we're left with two R r plus two R r, four R r.",
+    "at": [
+     "so we're left with",
+     "R r plus"
+    ]
+   },
+   {
+    "say": "So D C squared is four R r. A length is positive, so D C is the root of four R r. That's two times the root of R times r. Here it's two times the root of eight times two, two times the root of sixteen. Two times four is eight, the same answer.",
+    "at": [
+     "so D C is the root of four",
+     "That's two times",
+     "Here it's two times the root",
+     "root of eight"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's check it on other circles, with radii nine and four, touching from the outside. The centers are nine plus four, thirteen apart. And the difference of the radii is nine minus four, five.",
     "at": [
      "with radii nine and four",
-     "The circles touch"
+     "touching from the",
+     "The centers are nine plus",
+     "The centers are nine plus",
+     "four, thirteen apart",
+     "nine minus four, five",
+     "nine minus four, five"
     ]
    },
-   "The formula only works when the circles touch. If they don't, cut off the same right triangle, with the distance between the centers as its hypotenuse. [pause] Okay. I'll see you in the next question."
+   {
+    "say": "Five, twelve, thirteen, so the tangent segment is twelve. And the formula gives two times the root of nine times four. That's two times the root of thirty-six, two times six, twelve. The same.",
+    "at": [
+     "so the tangent segment is twelve",
+     "so the tangent segment is twelve",
+     "And the formula gives",
+     "times the root"
+    ]
+   },
+   {
+    "say": "So remember when it works. Two circles touch each other from the outside, and D C is the piece of a common tangent line between its two touching points. Then D C is two times the root of R times r.",
+    "at": [
+     "So remember when it works",
+     "Two circles touch"
+    ]
+   },
+   "If the circles don't touch, but there's still a common tangent like this, cut off the same right triangle. Its hypotenuse is the distance between the centers. And if one circle is inside the other, there's no such tangent at all. [pause] Okay. I'll see you in the next question."
   ]
  ]
 }

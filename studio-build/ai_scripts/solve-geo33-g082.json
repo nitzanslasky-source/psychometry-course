@@ -12,33 +12,38 @@
     "pause": 0.5
    },
    {
-    "say": "We could put the numbers into the arc-length formula. Alpha over three hundred sixty, times two pi r, equals four pi, and so on. If that confused you a little, great, because we don't need it. [short pause] We'll see which part of the circle the arc is.",
+    "say": "Let's use Understanding. We'll find which part of the circle the arc is. To do that, we compare the arc with the whole circumference.",
     "at": [
-     "We could put the numbers",
-     "into the arc-length"
+     "Let's use Understanding",
+     "We'll find which"
     ]
    },
    {
     "say": "We know the arc is four pi, and the radius is ten. So let's find the whole circumference. Two pi r is two pi times ten, which is twenty pi.",
     "at": [
      "let's find the whole circumference",
-     "Two pi r"
+     "Two pi r is two pi times",
+     "pi times ten"
     ]
    },
    {
-    "say": "So the whole circle is twenty pi, and the arc is four pi. Four pi out of twenty pi is like four out of twenty, which is a fifth. So the arc is a fifth of the circle. Five arcs like it go all the way around.",
+    "say": "So the whole circle is twenty pi, and the arc is four pi. Four pi out of twenty pi is like four out of twenty, because the pi cancels. Four out of twenty is a fifth. So the arc is a fifth of the circle. Five arcs like it go all the way around.",
     "at": [
      "Four pi out of twenty pi",
      "pi is like",
+     "Four out of twenty is a fifth",
+     "So the arc",
      "Five arcs like it",
      "all the way"
     ]
    },
    {
-    "say": "And if the arc is a fifth of the circle, its central angle is also a fifth of the full turn. A fifth of three hundred sixty is seventy-two. So alpha is seventy-two degrees, choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "And if the arc is a fifth of the circle, its central angle is also a fifth of the full turn. Three hundred sixty divided by five is seventy-two. So alpha is seventy-two degrees, choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
      "its central angle is also a fifth",
      "a fifth of the full",
+     "divided by five is seventy-two",
+     "So alpha is",
      "choice number three"
     ]
    }

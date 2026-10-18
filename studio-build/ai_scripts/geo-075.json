@@ -3,13 +3,13 @@
  "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Angles in a circle. Last lesson we learned the words of the circle. Now we start the rules. They come up in almost every circle question, and really, there's one main rule, and the others come from it."
+   "Last lesson we learned the words of the circle. Now let's learn the rules of the angles in a circle. They come up in almost every circle question. Really, there's one main rule, and the others come from it."
   ],
   [
    {
-    "say": "The main rule. A central angle is twice the inscribed angle that intercepts the same arc. Here's a circle with its center O, and two points, A and B.",
+    "say": "Let's start with the main rule. A central angle is twice the inscribed angle that intercepts the same arc. Here's a circle with its center O, and two points, A and B.",
     "at": [
-     "central angle is",
+     "main rule. A",
      "Here's a circle",
      "center O, and"
     ]
@@ -60,29 +60,37 @@
     ]
    },
    {
-    "say": "Triangle O C A has two radii, so it's isosceles, and its base angles are equal. Call them x. The angles of a triangle add up to a hundred eighty, so the angle at O inside it is a hundred eighty minus two x. Together with the angle next to it, it makes a straight line, a hundred eighty, so that angle is two x.",
+    "say": "Triangle O C A has two radii, so it's isosceles, and its base angles are equal. Call them x. The angles of a triangle add up to a hundred eighty, so angle C O A is a hundred eighty minus two x.",
     "at": [
      "Triangle O C A",
      "and its base",
-     "The angle at O",
-     "it is a"
+     "so angle C O A is",
+     "is a hundred"
     ]
    },
    {
-    "say": "The same on the other side, with y. So the inscribed angle is x plus y, because it's made of x and y. The central angle is made of the two outside angles, so it's two x plus two y, exactly twice as much.",
+    "say": "Now look at angle A O D, right next to it. C O D is a straight line, the diameter, so the two angles add up to a hundred eighty. So angle A O D is two x.",
+    "at": [
+     "So angle A O D is two x",
+     "is two x"
+    ]
+   },
+   {
+    "say": "The same on the other side, with y. Angle B O D is two y. So the inscribed angle is x plus y, because it's made of x and y. The central angle A O B is made of A O D and B O D. So it's two x plus two y, exactly twice as much.",
     "at": [
      "The same on the other side",
-     "side, with y",
      "So the inscribed angle",
-     "made of x"
+     "x plus y",
+     "So it's two x plus two y",
+     "two y, exactly"
     ]
    }
   ],
   [
    {
-    "say": "The second rule. Inscribed angles that intercept the same arc are equal. Here the central angle on arc A B is a hundred.",
+    "say": "Now let's use the main rule to compare inscribed angles. Inscribed angles that intercept the same arc are equal. Here the central angle on arc A B is a hundred.",
     "at": [
-     "angles that intercept",
+     "main rule to",
      "Here the central angle",
      "arc A B",
      "is a hundred"
@@ -115,9 +123,9 @@
   ],
   [
    {
-    "say": "The third rule. An inscribed angle on a diameter is ninety degrees. Here's a diameter, A B, and an inscribed angle on it, at C. Its chords go to the two ends of the diameter.",
+    "say": "Now let's use the main rule on a diameter. An inscribed angle on a diameter is ninety degrees. Here's a diameter, A B, and an inscribed angle on it, at C. Its chords go to the two ends of the diameter.",
     "at": [
-     "inscribed angle on",
+     "main rule on",
      "Here's a diameter",
      "and an inscribed angle",
      "it, at C"
@@ -149,20 +157,31 @@
     ]
    },
    {
-    "say": "Say the legs are ten and twenty-four. That's five, twelve, thirteen, doubled, so the hypotenuse is twenty-six. Careful, many students call that the radius. But twenty-six is the diameter, so the radius is thirteen. And in a rectangle inside a circle, each diagonal is a diameter.",
+    "say": "Say the legs are ten and twenty-four. That's five, twelve, thirteen, doubled, so the hypotenuse is twenty-six. Careful, many students call that the radius. But twenty-six is the diameter. So the radius is twenty-six divided by two, thirteen.",
     "at": [
      "Say the legs",
-     "That's five, twelve",
-     "And in a rectangle",
-     "a circle, each"
+     "and twenty-four. That's",
+     "so the hypotenuse is twenty-six",
+     "Careful, many students",
+     "So the radius is twenty-six",
+     "divided by two"
+    ]
+   },
+   {
+    "say": "Now take a rectangle whose four corners are all on the circle. Each corner is a right angle on the circle. So by the backwards rule, the line joining its two neighbors is a diameter. That line is a diagonal. So each diagonal of this rectangle is a diameter.",
+    "at": [
+     "Now take a rectangle",
+     "four corners are",
+     "That line is a diagonal",
+     "So each diagonal"
     ]
    }
   ],
   [
    {
-    "say": "The fourth rule. An inscribed quadrilateral has all four corners on the circle, like this one.",
+    "say": "Now let's look at a quadrilateral inside a circle. An inscribed quadrilateral has all four corners on the circle, like this one.",
     "at": [
-     "inscribed quadrilateral has",
+     "a quadrilateral inside",
      "like this one"
     ]
    },
@@ -178,12 +197,14 @@
   ],
   [
    {
-    "say": "In an inscribed quadrilateral, opposite angles add up to a hundred eighty. So if angle A is seventy-five, the angle opposite it, C, is a hundred eighty minus seventy-five, a hundred five. The same for B and D.",
+    "say": "In an inscribed quadrilateral, opposite angles add up to a hundred eighty. So if angle A is seventy-five, the angle opposite it, C, is a hundred eighty minus seventy-five. That's a hundred five. The same for B and D.",
     "at": [
      "In an inscribed quadrilateral",
      "angles add up",
      "So if angle A is seventy-five",
-     "C, is a"
+     "is a hundred eighty minus seventy-five",
+     "seventy-five. That's a",
+     "The same for B and D"
     ]
    }
   ],
@@ -206,10 +227,12 @@
     ]
    },
    {
-    "say": "Together they make a full circle, so two alpha plus two beta is three hundred sixty. We want alpha plus beta, not twice it. So we divide by two, and alpha plus beta is a hundred eighty.",
+    "say": "Together they make a full circle, so two alpha plus two beta is three hundred sixty. We want alpha plus beta, not twice it. So we divide both sides by two, and alpha plus beta is a hundred eighty.",
     "at": [
      "Together they make",
-     "circle, so two"
+     "circle, so two",
+     "So we divide both sides by two",
+     "by two, and"
     ]
    }
   ],
@@ -225,12 +248,19 @@
     ]
    },
    {
-    "say": "So if angle A O B is seventy, angle C O D is seventy too, and the arcs are equal. An inscribed angle on either arc is half of seventy, thirty-five. It works backwards too, but only in the same circle.",
+    "say": "So if angle A O B is seventy, angle C O D is seventy too. The short arcs A B and C D are equal, and so are the long arcs.",
     "at": [
-     "O B is",
-     "and the arcs are equal",
-     "An inscribed angle",
-     "but only"
+     "So if angle",
+     "The short arcs A B and C D are equal",
+     "and C D"
+    ]
+   },
+   {
+    "say": "Now an inscribed angle on the short arc A B. Its vertex E is on the other side of the circle, on the long arc. It's half of seventy, thirty-five. The same goes for the short arc C D, with the vertex on its far side. It works backwards too, equal arcs give equal chords. Here we're comparing within this same circle.",
+    "at": [
+     "Its vertex E",
+     "the other side",
+     "within this same circle"
     ]
    }
   ],
@@ -255,7 +285,7 @@
   ],
   [
    {
-    "say": "So, one main rule. An inscribed angle is half of the central angle on the same arc. From it, inscribed angles on the same arc are equal, an angle on a diameter is ninety, and opposite angles in an inscribed quadrilateral add up to a hundred eighty.",
+    "say": "So we have one main rule. An inscribed angle is half of the central angle on the same arc. From it, inscribed angles on the same arc are equal, an angle on a diameter is ninety, and opposite angles in an inscribed quadrilateral add up to a hundred eighty.",
     "at": [
      "An inscribed angle is half",
      "of the central",

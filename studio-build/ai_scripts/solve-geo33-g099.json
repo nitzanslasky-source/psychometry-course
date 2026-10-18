@@ -12,14 +12,14 @@
     "pause": 0.5
    },
    {
-    "say": "The union is everything that is inside at least one of the circles, the whole grey shape. It's a shaded-area question, but until now we usually subtracted, and here there's nothing to subtract from. Some students think, it's a circle plus an extra bit. But how do we find that bit? It's not clear. [short pause] We'll solve it two ways, by cutting it into pieces we know, and by taking away the overlap. Then we'll see what estimating can do.",
+    "say": "The union is everything that is inside at least one of the circles, the whole grey shape. It's a shaded-area question. But no single familiar shape around it is given, so we can't take one big area and subtract a piece. [short pause] We'll solve it in two different ways, by cutting it into pieces we know, and by taking away the overlap. Then we'll see what estimating can do.",
     "at": [
      "The union is everything",
      "is inside at"
     ]
    },
    {
-    "say": "In a case like this, we go to the givens and see what we can get out of them. The minor arc A B is a quarter of the circumference of circle O. A quarter of the circle means a central angle of a quarter of three hundred sixty, ninety degrees.",
+    "say": "Let's start with the math way. In a case like this, we go to the givens and see what we can get out of them. The minor arc A B is a quarter of the circumference of circle O. A quarter of the circle means a central angle of a quarter of three hundred sixty, ninety degrees.",
     "at": [
      "the givens and",
      "The minor arc A B is a quarter",
@@ -46,24 +46,34 @@
      "Now look at O A P B",
      "All four sides"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "Now I see how to find the grey area. It's the left Pac-Man, plus the square, plus the right Pac-Man. Each Pac-Man is a circle without its quarter, so it's three quarters of the circle.",
+    "say": "[short pause] Here's the figure again, with the square. Now I see how to find the grey area. It cuts into three pieces we know, with no overlap. The left three-quarter circle, the square, and the right three-quarter circle. Some people call each three-quarter circle a Pac-Man. It's a circle without its quarter.",
     "at": [
-     "the left Pac-Man",
-     "square, plus the"
+     "Here's the figure again",
+     "Now I see",
+     "The left three-quarter circle",
+     "square, and the"
     ]
    },
    {
-    "say": "One whole circle is pi r squared, pi times six squared, thirty-six pi. A quarter of thirty-six is nine, so three quarters of thirty-six pi is twenty-seven pi.",
+    "say": "One whole circle is pi r squared, pi times six squared, thirty-six pi. A quarter of thirty-six pi is nine pi. So three quarters is three times nine pi, twenty-seven pi.",
     "at": [
      "One whole circle",
-     "r squared, pi"
+     "r squared, pi",
+     "A quarter of thirty-six pi",
+     "is nine pi",
+     "three quarters is three times",
+     "twenty-seven pi"
     ]
    },
    {
     "say": "The square is six squared, thirty-six. So the union is twenty-seven pi, plus thirty-six, plus twenty-seven pi, which is fifty-four pi plus thirty-six. Choice number three is our answer.",
     "at": [
+     "The square is six squared",
+     "thirty-six. So",
      "So the union is",
      "pi, plus thirty-six",
      "Choice number three is our answer"
@@ -72,11 +82,13 @@
   ],
   [
    {
-    "say": "[pause] Now a second way. Take the two whole circles. Each one is thirty-six pi, so together they're seventy-two pi.",
+    "say": "[pause] Now a second way, the math way again, this time by taking away the overlap. Take the two whole circles. Each one is thirty-six pi, so together they're seventy-two pi.",
     "at": [
      "Now a second way",
+     "math way again",
      "Take the two whole circles",
-     "Each one is"
+     "Each one is",
+     "so together they"
     ]
    },
    {
@@ -95,55 +107,80 @@
     ]
    },
    {
-    "say": "The quarter circle is a quarter of thirty-six pi, nine pi. The triangle has two legs of six and a right angle, so its area is six times six over two, eighteen. So one piece is nine pi minus eighteen, and the whole overlap is two times that, eighteen pi minus thirty-six.",
+    "say": "The quarter circle is a quarter of thirty-six pi, nine pi. The triangle has two legs of six and a right angle, so its area is six times six over two, eighteen.",
     "at": [
-     "The quarter circle",
-     "the whole overlap",
-     "times that, eighteen"
+     "The quarter circle is a quarter",
+     "quarter of thirty-six",
+     "six times six over two"
     ]
    },
    {
-    "say": "Now take it away. Seventy-two pi minus, the bracket, eighteen pi minus thirty-six. The minus before the bracket turns minus thirty-six into plus thirty-six. So we get fifty-four pi plus thirty-six, choice number three again.",
+    "say": "So one piece is nine pi minus eighteen. The overlap is two of these pieces, so we double the whole difference. That's eighteen pi minus thirty-six.",
     "at": [
-     "Seventy-two pi minus",
+     "So one piece is",
+     "pi minus eighteen",
+     "we double the whole difference",
+     "That's eighteen pi"
+    ]
+   },
+   {
+    "say": "Now take the whole overlap away from seventy-two pi. Seventy-two pi minus the overlap, eighteen pi minus thirty-six. The minus before the overlap turns minus thirty-six into plus thirty-six. So it's seventy-two pi minus eighteen pi, plus thirty-six. That's fifty-four pi plus thirty-six, choice number three again.",
+    "at": [
+     "Seventy-two pi minus the overlap",
      "eighteen pi minus",
+     "So it's seventy-two pi",
+     "eighteen pi, plus",
+     "That's fifty-four pi plus",
      "choice number three again"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Students often ask, can we just estimate the size here? It's hard to finish that way, but it's easy to rule out two choices. The left circle alone is thirty-six pi.",
+    "say": "[pause] Now let's estimate. It's hard to finish this way, but it's easy to rule out two choices. The left circle alone is thirty-six pi.",
     "at": [
-     "Students often ask",
-     "just estimate the",
-     "The left circle alone"
+     "Now let's estimate",
+     "It's hard to",
+     "The left circle alone",
+     "alone is thirty-six pi"
     ]
    },
    {
-    "say": "And the grey shape has more than that. It also has the right half of circle P, eighteen pi, and a bit more in the middle. So the union is more than thirty-six pi plus eighteen pi, fifty-four pi.",
+    "say": "And the grey shape has more than that. O P is the diagonal of the square, so it's longer than the side, six. Every point of the right half of circle P is at least that far from O. So that half is outside circle O.",
     "at": [
      "And the grey",
+     "O P is the diagonal",
+     "of the square",
      "the right half of circle P",
-     "P, eighteen pi",
+     "P is at"
+    ]
+   },
+   {
+    "say": "It adds eighteen pi, and the middle piece between them adds a bit more. So the union is more than thirty-six pi plus eighteen pi, fifty-four pi.",
+    "at": [
+     "It adds eighteen pi",
+     "the middle piece",
      "So the union is more than",
      "than thirty-six pi"
     ]
    },
    {
-    "say": "We need more than fifty-four pi. Twenty-seven pi plus eighteen, and twenty-seven pi plus thirty-six, are much too small, so choice numbers one and four are out. But choice numbers two and three both have fifty-four pi, plus eighteen or plus thirty-six. That's too close to decide by estimating.",
+    "say": "We need more than fifty-four pi. Now compare twenty-seven pi with thirty-six. Pi is more than three, so twenty-seven pi is more than eighty-one, much more than thirty-six. So twenty-seven pi plus thirty-six is less than twenty-seven pi plus twenty-seven pi, which is fifty-four pi. Twenty-seven pi plus eighteen is even smaller. So choice numbers one and four are out.",
     "at": [
-     "are much too small",
-     "four are out",
-     "numbers two and",
-     "or plus thirty-six"
+     "Pi is more than three",
+     "so twenty-seven pi",
+     "So twenty-seven pi plus thirty-six is less",
+     "is less than",
+     "So choice numbers one and",
+     "four are out"
     ]
    },
    {
-    "say": "So estimating raised our chances to fifty-fifty, but it can't settle it. If you're out of time, it's a reasonable guess between the two. With time, use one of the full solutions. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice numbers two and three both have fifty-four pi, plus eighteen or plus thirty-six. This bound doesn't separate them, so this estimate leaves two choices. If you're out of time, it's a reasonable guess between the two. With time, use one of the full solutions. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "estimating raised our chances",
-     "If you're out"
+     "Choice numbers two and three",
+     "numbers two and",
+     "or plus thirty-six"
     ]
    }
   ]

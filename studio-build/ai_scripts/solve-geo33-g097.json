@@ -18,17 +18,29 @@
     ]
    },
    {
-    "say": "[short pause] It's an inscribed and circumscribed question again. We'll solve it by plugging in a number, and then with a symmetry shortcut.",
+    "say": "[short pause] It's an inscribed and circumscribed question again. We'll solve it by plugging in numbers, and then by understanding, with symmetry.",
     "at": [
      "circumscribed question again"
     ]
    },
    {
-    "say": "No length is given, and the size of the figure doesn't change a ratio of areas. So we don't need letters. Like in the last question, we pick an easy radius, one.",
+    "say": "Let's check one thing first. The corners of P Q R S are on the circle, but the question doesn't say where. We can turn the small square inside the circle. Its corners stay on the circle, so its size doesn't change. So let's turn it until its corners are at the points where the circle touches the big square, as in the figure.",
     "at": [
-     "and the size",
-     "need letters. Like",
-     "we pick an easy radius",
+     "Q R S",
+     "the question doesn't say where",
+     "We can turn",
+     "So let's turn it",
+     "its corners are"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[short pause] No length is given. If we make this whole figure bigger, every length grows by the same factor. So both areas grow by the same factor, and their ratio stays the same. So we don't need letters. Like in the last question, we pick an easy radius, one.",
+    "at": [
+     "No length is given",
+     "If we make",
+     "an easy radius, one",
      "an easy radius, one"
     ]
    },
@@ -37,27 +49,33 @@
     "at": [
      "Look at the big square's side",
      "side, L M",
+     "So the side is two",
      "the area is two times two"
     ]
    },
    {
-    "say": "Now the small square. A lot of students go through silver triangles. In the corner at K there's a silver triangle with legs of one and one, so its hypotenuse, the small square's side, is root two. Squaring it, the area is two.",
+    "say": "Now the small square. A lot of students go through silver triangles. In the corner at K there's a silver triangle with legs of one and one. So its hypotenuse, the small square's side, is root two. Squaring it, the area is two.",
     "at": [
      "A lot of",
      "In the corner at K",
-     "there's a silver"
+     "there's a silver",
+     "is root two",
+     "Squaring it"
     ]
    },
    {
-    "say": "That's possible, but it's a bit long. A square's area is also diagonal times diagonal, over two. And the diagonals of P Q R S are diameters of the circle, two each. Two times two, over two, is two.",
+    "say": "There's another way too, with the whole small square. A square's area is also diagonal times diagonal, over two. The diagonals of P Q R S are diameters of the circle, two each. Two times two, over two, is two.",
     "at": [
-     "the diagonals of P Q R S",
-     "R S are"
+     "with the whole small square",
+     "A square's area",
+     "two each",
+     "Two times two, over two"
     ]
    },
    {
     "say": "So the small square over the big one is two over four, a half. None of the choices has r in it, so we just look for a half. Choice number two is our answer.",
     "at": [
+     "over the big",
      "two over four",
      "None of the",
      "Choice number two is our answer"
@@ -66,9 +84,10 @@
   ],
   [
    {
-    "say": "[pause] Here there's also a shortcut, with symmetry. Draw the diagonals of the small square, P R and Q S. They cut the big square into four small squares.",
+    "say": "[pause] Now let's solve it by understanding, with symmetry. We use the turned position again, with the corners of P Q R S at the touching points. Draw the diagonals of the small square, P R and Q S. They cut the big square into four small squares.",
     "at": [
-     "Here there's also a shortcut",
+     "Now let's solve it by understanding",
+     "understanding, with symmetry",
      "Draw the diagonals",
      "small square, P"
     ]
@@ -84,7 +103,10 @@
     "say": "It's the same in every corner. So the big square is made of eight identical triangles, and P Q R S is made of four of them.",
     "at": [
      "the same in every corner",
-     "So the big"
+     "So the big",
+     "eight identical triangles",
+     "Q R S",
+     "four of them"
     ]
    },
    {

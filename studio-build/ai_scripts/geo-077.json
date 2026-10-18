@@ -3,16 +3,16 @@
  "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Tangents to a circle. It's a short lesson, but its two rules come up in the exam all the time."
+   "Now let's learn about tangents to a circle. It's a short lesson, with two rules that come up a lot."
   ],
   [
    {
-    "say": "A tangent is a straight line that just brushes past the circle. It touches the circle at one point only.",
+    "say": "A tangent is a straight line that touches the circle at one point only. It doesn't go inside the circle.",
     "at": [
      "A tangent is a straight line",
-     "line that just",
-     "It touches the circle at one point",
-     "at one point only"
+     "that touches the circle at one point",
+     "at one point only",
+     "It doesn't go"
     ]
    },
    {
@@ -31,7 +31,7 @@
     ]
    },
    {
-    "say": "So our tangent only brushes the circle, at one point. This point is called the point of tangency.",
+    "say": "So our tangent touches the circle at one point only. This point is called the point of tangency.",
     "at": [
      "This point is called",
      "point of tangency"
@@ -55,6 +55,15 @@
     ]
    },
    {
+    "say": "Why? The tangent touches the circle only at D. Every other point of the tangent is outside the circle, so it's farther from O than the radius. So D is the point of the tangent that is closest to O. And we know the shortest way from a point to a line is the perpendicular. So O D is perpendicular to the tangent.",
+    "at": [
+     "Every other point of the tangent",
+     "tangent is outside",
+     "So D is the point of the tangent",
+     "of the tangent that"
+    ]
+   },
+   {
     "say": "It doesn't matter where the tangent touches. Here, and here, the radius to the point of tangency is always perpendicular to the tangent.",
     "at": [
      "It doesn't matter where",
@@ -62,9 +71,9 @@
     ]
    },
    {
-    "say": "This rule is used very often in the exam. So every time you see a circle question with tangents, don't think too much. Draw the radius to the point of tangency, and you get a right angle.",
+    "say": "This rule is used very often. A tangent gives us a right angle when we join O to its touching point. So every time you see a circle question with tangents, draw the radius to the point of tangency.",
     "at": [
-     "Draw the radius to the point",
+     "draw the radius to the point",
      "point of tangency"
     ]
    }
@@ -95,17 +104,20 @@
     ]
    },
    {
-    "say": "Twenty-five plus P D squared is a hundred sixty-nine. To get P D squared alone, we take twenty-five off both sides. So P D squared is a hundred sixty-nine minus twenty-five, which is a hundred forty-four, and P D is twelve.",
+    "say": "Twenty-five plus P D squared is a hundred sixty-nine. To get P D squared alone, we take twenty-five off both sides. So P D squared is a hundred sixty-nine minus twenty-five, which is a hundred forty-four. A length is positive, so P D is twelve.",
     "at": [
      "Twenty-five plus",
-     "To get P",
-     "and P D is twelve"
+     "is a hundred",
+     "which is a hundred forty-four",
+     "A length is",
+     "so P D is twelve",
+     "so P D is twelve"
     ]
    },
    {
-    "say": "Or, faster, five and thirteen should remind you of the triple five, twelve, thirteen.",
+    "say": "We can also spot it with a triple. Five and thirteen should remind you of the triple five, twelve, thirteen.",
     "at": [
-     "thirteen should remind",
+     "with a triple",
      "the triple five"
     ]
    }
@@ -119,7 +131,7 @@
     ]
    },
    {
-    "say": "The second rule. Two tangents that come out of the same point are equal to each other. Why? Look at the two right triangles. The first one is O D P.",
+    "say": "Now let's look at the second rule. From the same point outside the circle, the two tangent segments are equal. Here they're P D and P E. Each one starts at P and stops at its touching point. Why are they equal? Look at the two right triangles. The first one is O D P.",
     "at": [
      "Look at the two right triangles",
      "The first one"
@@ -135,15 +147,19 @@
     ]
    },
    {
-    "say": "So if one tangent from P is nine, the other tangent from P is nine too, with no calculation at all.",
+    "say": "Now take another circle, with another point P outside it. Say one tangent segment from P is nine. Then the other tangent segment from P is nine too, with no calculation at all.",
     "at": [
-     "So if one tangent from P is nine",
-     "P is nine"
+     "Now take another",
+     "Say one tangent segment from P is nine",
+     "P is nine",
+     "is nine too",
+     "with no calculation"
     ]
    },
    {
-    "say": "Now look at the whole shape, O D P E. The two radii are equal, and the two tangents are equal. Two pairs of equal sides next to each other, so it's a kite, five, five, twelve, twelve.",
+    "say": "Now back to our first figure. Look at the whole shape, O D P E. The two radii are equal, and the two tangents are equal. Two pairs of equal sides next to each other, so it's a kite, five, five, twelve, twelve.",
     "at": [
+     "Now back to",
      "Two pairs of equal sides",
      "next to each"
     ]
@@ -166,10 +182,10 @@
     ]
    },
    {
-    "say": "Two, two tangents from the same point are always equal. Now let's solve a sample question. [pause] Okay. I'll see you in the next video.",
+    "say": "Two, from the same point outside the circle, the two tangent segments are always equal. Now let's solve a sample question. [pause] Okay. I'll see you in the next video.",
     "at": [
-     "Two, two tangents",
-     "same point are"
+     "Two, from the same point",
+     "outside the circle"
     ]
    }
   ]

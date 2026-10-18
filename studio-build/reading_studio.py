@@ -111,6 +111,12 @@ _SHORT_NUMBER_RX = re.compile(r'\b(' + '|'.join(_UNITS[1:]) + r') (' +
     '|'.join(_TEENS + [t + r'(?:-(?:' + '|'.join(_UNITS[1:]) + r'))?' for t in _TENS]) +
     r')\b(?!-[A-Za-z])', re.I)
 
+_COUNT_BEFORE = re.compile(r'\b(?:all|the|these|those|its|their|both|equal)\s+$', re.I)
+def _count_of_pieces(m, v, name):
+    """2026-10-18 (batch C #213/#215): "all four halves" / "the four halves" is a count of pieces, not 4/2;
+    neither is an even number of halves ("four halves" = 4/2 would never be said for 2)"""
+    return bool(_COUNT_BEFORE.search(m.string[max(0, m.start() - 12):m.start()])) or (name.lower() == 'halves' and v % 2 == 0)
+
 def _display_number_input(text):
     """Protect fraction denominators before parsing cardinal-number runs."""
     fractions = []
@@ -123,6 +129,8 @@ def _display_number_input(text):
         if (numerator == 1) != (not name.endswith('s')):
             return m.group(0)
         if numerator == _FRACTION_WORDS[name]:      # 2026-10-15: "two halves" / "three thirds" are a count of pieces, not 2/2
+            return m.group(0)
+        if _count_of_pieces(m, numerator, name):
             return m.group(0)
         fractions.append('%d/%d' % (numerator, _FRACTION_WORDS[name]))
         return '\ue002%d\ue003' % (len(fractions)-1)
@@ -267,6 +275,8 @@ def math_display(text):
         if v is None or (v == 1) != (not m.group(2).endswith('s')) and m.group(2) not in ('halves',):
             return m.group(0)
         if v == d:                                   # 2026-10-15: "two halves" is a count of pieces, not 2/2
+            return m.group(0)
+        if _count_of_pieces(m, v, m.group(2)):
             return m.group(0)
         mark.discard(int(m.group(1)[1:-1])); return '%d/%d' % (v, d)
     s = re.sub(r'(%s) (%s)\b' % (_N, '|'.join(_FRAC)), fr, s)

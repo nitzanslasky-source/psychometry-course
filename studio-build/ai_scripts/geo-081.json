@@ -3,7 +3,7 @@
  "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Sectors and arcs. First, let's understand what a sector is and what an arc is."
+   "Now let's learn about sectors and arcs. First, let's understand what a sector is and what an arc is."
   ],
   [
    {
@@ -27,18 +27,21 @@
   ],
   [
    {
-    "say": "The area of a sector is its share of the whole circle. There's a formula for it. The angle of the sector at the center is its central angle, alpha. We take alpha over three hundred sixty, times the area of the circle, pi r squared.",
+    "say": "The area of a sector is its share of the whole circle. The angle of the sector at the center is its central angle. Let's call it alpha. Alpha over three hundred sixty is the fraction of the circle the sector takes. So the sector's area is alpha over three hundred sixty, times the area of the whole circle, pi r squared.",
     "at": [
      "The area of a sector",
      "is its share",
      "its central angle",
-     "We take alpha over",
-     "hundred sixty, times"
+     "Alpha over three",
+     "So the sector's area is",
+     "alpha over three hundred sixty, times"
     ]
    },
    {
-    "say": "I strongly recommend not using this formula, unless it's really the only way you understand it. It's much better to see which part of the circle it is. Let's see what I mean.",
+    "say": "The formula and the share are the same idea. For example, for ninety degrees, ninety over three hundred sixty is a quarter. So often it's quicker to just see which part of the circle it is. Let's see what I mean.",
     "at": [
+     "ninety over three hundred sixty",
+     "is a quarter",
      "which part of the circle it is",
      "Let's see what"
     ]
@@ -54,12 +57,12 @@
      "of the circle"
     ]
    },
-   "Instead of the formula, all I need to see is that it's a quarter. So I take the area of the circle, and divide it by four.",
+   "With the formula or without it, this sector is a quarter. So I take the area of the whole circle, and divide it by four.",
    {
-    "say": "Now let's cut a circle into eight. This sector, a real slice of family-size pizza, is an eighth of the circle. Its angle is forty-five, half of ninety. Good to know, but what matters is that it's an eighth.",
+    "say": "Now let's cut a circle into eight equal parts. This sector, a real slice of family-size pizza, is an eighth of the circle. Its angle is forty-five, half of ninety. Good to know, but what matters is that it's an eighth.",
     "at": [
      "cut a circle into eight",
-     "This sector, a",
+     "equal parts. This",
      "is an eighth of the circle",
      "Its angle is"
     ]
@@ -100,7 +103,7 @@
     ]
    },
    {
-    "say": "There's a formula here too. Alpha over three hundred sixty, but this time times the circumference, two pi r. Before, it was times the area, because we wanted an area. Now we want a length. But here too, my advice is to leave the formula, and solve it by understanding.",
+    "say": "There's a formula here too. Alpha over three hundred sixty, the same fraction of the circle, but this time times the whole circumference, two pi r. Before, it was times the area, because we wanted an area. Now we want a length.",
     "at": [
      "There's a formula here too",
      "Alpha over three"
@@ -125,7 +128,7 @@
     ]
    },
    {
-    "say": "Now a circle cut into three. The arc is a third, so eighteen pi divided by three, six pi. And the angle is a hundred twenty, three hundred sixty divided by three.",
+    "say": "Now a circle cut into three equal parts. The arc is a third, so eighteen pi divided by three, six pi. And the angle is a hundred twenty, three hundred sixty divided by three.",
     "at": [
      "a circle cut into three",
      "The arc is a third",
@@ -136,10 +139,10 @@
   ],
   [
    {
-    "say": "A slightly harder one. Again the circle is cut into five, so every angle is seventy-two. But this arc covers two of those parts. It's one fifth here, and another fifth here, so together it's two fifths of the circle. And its angle is seventy-two plus seventy-two, a hundred forty-four.",
+    "say": "A slightly harder one. Again the circle is cut into five equal parts, so every angle is seventy-two. But this arc covers two of those parts. It's one fifth here, and another fifth here, so together it's two fifths of the circle. And its angle is seventy-two plus seventy-two, a hundred forty-four.",
     "at": [
      "Again the circle is cut into five",
-     "into five, so",
+     "into five equal",
      "one fifth here",
      "and another fifth here",
      "together it's two fifths",
@@ -148,9 +151,9 @@
     ]
    },
    {
-    "say": "So yes, the formulas work. But it's much simpler to see which part of the circle it is, a third, a quarter, a fifth, a sixth. Then find the circumference or the area, and divide.",
+    "say": "So the formulas work, and they say the same thing as the fractions. Often it's quickest to see which part of the circle it is, a third, a quarter, a fifth, a sixth. Then find the circumference or the area, and divide.",
     "at": [
-     "So yes, the",
+     "So the formulas",
      "which part of the circle it is",
      "Then find the"
     ]
@@ -158,17 +161,25 @@
   ],
   [
    {
-    "say": "Here are the angles worth remembering. Ninety degrees is a quarter. Forty-five is an eighth, because it's half of ninety, and half of a quarter is an eighth. Sixty is a sixth.",
+    "say": "Here are the angles worth remembering. Ninety degrees is a quarter of the circle. Forty-five is an eighth, because it's half of ninety, and half of a quarter is an eighth. Sixty is a sixth, because three hundred sixty divided by six is sixty.",
     "at": [
      "Ninety degrees is a quarter",
-     "Forty-five is an"
+     "of the circle",
+     "Forty-five is an eighth",
+     "it's half of",
+     "Sixty is a sixth",
+     "three hundred sixty"
     ]
    },
    {
-    "say": "Forty is a ninth, because three hundred sixty divided by nine is forty. Thirty-six is a tenth, three hundred sixty divided by ten. And seventy-two is a fifth.",
+    "say": "Forty is a ninth, because three hundred sixty divided by nine is forty. Thirty-six is a tenth, because three hundred sixty divided by ten is thirty-six. And seventy-two is a fifth, three hundred sixty divided by five.",
     "at": [
      "Forty is a ninth",
-     "three hundred sixty"
+     "three hundred sixty",
+     "Thirty-six is a tenth",
+     "three hundred sixty divided by ten",
+     "And seventy-two is a fifth",
+     "three hundred sixty divided by five"
     ]
    },
    {
@@ -179,14 +190,16 @@
      "hundred forty-four is twice",
      "so it's two",
      "A hundred twenty is a third",
-     "You can just"
+     "third. You can",
+     "but it's also a sixth times two",
+     "times two, or"
     ]
    },
    {
-    "say": "Remember these, and you'll find arcs and sectors in seconds. On the exam, these are the angles you'll get, not twenty-three and a half degrees. They check whether you understand that sixty degrees is a sixth of the circle.",
+    "say": "Remember these, and you'll find many arcs and sectors quickly. They're common fractions of the circle. But if a question gives a different angle, we use that angle, with alpha over three hundred sixty.",
     "at": [
-     "They check whether you understand",
-     "that sixty degrees"
+     "But if a question gives a different angle",
+     "a different angle"
     ]
    }
   ],

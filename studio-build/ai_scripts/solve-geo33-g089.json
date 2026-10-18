@@ -21,21 +21,26 @@
    {
     "say": "[short pause] Let's start with the first given. The circumference of the small circle is ten pi. If we know a circle's circumference, can we find its radius? Yes. The circumference is two pi r, so two pi r equals ten pi.",
     "at": [
+     "so two pi r equals ten pi",
      "so two pi r equals ten pi"
     ]
    },
    {
-    "say": "We can cancel pi on both sides, so two r is ten. Two radii make a diameter, so the diameter is ten, and the radius is five. That's the radius of the small circle.",
+    "say": "We can cancel pi on both sides, so two r is ten. Two radii make a diameter, so the diameter is ten. So the radius is ten divided by two, five. That's the radius of the small circle.",
     "at": [
-     "We can cancel",
-     "and the radius is five",
-     "That's the radius"
+     "on both sides",
+     "so two r is ten",
+     "Two radii make",
+     "So the radius is ten divided by two",
+     "So the radius is ten divided by two",
+     "divided by two"
     ]
    },
    {
     "say": "Now its area. The area of a circle is pi r squared. Pi times five squared is twenty-five pi. That's the area of the small white circle.",
     "at": [
      "Pi times five squared",
+     "is twenty-five pi",
      "That's the area"
     ]
    },
@@ -43,36 +48,69 @@
     "say": "On to the second given. The shaded ring is thirty-nine pi. The ring and the white circle together make the whole large circle. So the area of the large circle is twenty-five pi plus thirty-nine pi, which is sixty-four pi.",
     "at": [
      "On to the second given",
+     "The shaded ring is thirty-nine pi",
      "together make the whole",
      "So the area of the large circle",
      "large circle is"
     ]
    },
    {
-    "say": "If we know the area, we can find the radius. Pi R squared is sixty-four pi. Cancel pi, and R squared is sixty-four. So R is eight. Let's remember that.",
+    "say": "If we know the area, we can find the radius. Pi R squared is sixty-four pi. Cancel pi, and R squared is sixty-four. So R is eight, because eight squared is sixty-four. Let's remember that.",
     "at": [
-     "So R is eight"
+     "Pi R squared is sixty-four pi",
+     "pi. Cancel pi",
+     "and R squared is",
+     "So R is eight",
+     "So R is eight",
+     "eight squared is"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "Now let's see what they asked. The circumference of the large circle. Two pi R is two pi times eight, which is sixteen pi.",
+    "say": "[pause] Now let's see what they asked. The circumference of the large circle. Two pi R is two pi times eight, which is sixteen pi.",
     "at": [
-     "Now let's see",
+     "Now let's see what they asked",
+     "The circumference of the large circle",
      "Two pi R is two pi times eight",
      "pi times eight"
     ]
    },
-   "But sixteen pi isn't in the choices. The choices are ranges, so they want us to estimate. How much is pi? Pi is three point one four, and its digits go on forever.",
    {
-    "say": "So sixteen pi is sixteen times three point one four. Sixteen times three is forty-eight. Now sixteen times point one four. Point one four is fourteen hundredths, so we work out sixteen times fourteen, and then make it hundredths. Sixteen times fourteen is two hundred twenty-four, so it's two point two four. Together, fifty point two four, and a little more. That's between fifty and fifty-one. Choice number four is our answer.",
+    "say": "But sixteen pi isn't in the choices. The choices are ranges, so they want us to estimate. How much is pi? Its digits go on forever, three point one four one five nine, and so on. So pi is more than three point one four, and less than three point one five.",
+    "at": [
+     "So pi is more than three point one four",
+     "three point one four, and"
+    ]
+   },
+   {
+    "say": "First the lower end, sixteen times three point one four. Sixteen times three is forty-eight. Now sixteen times point one four. Point one four is fourteen hundredths, so we work out sixteen times fourteen, and then make it hundredths. Sixteen times fourteen is two hundred twenty-four, so it's two point two four.",
     "at": [
      "Sixteen times three is forty-eight",
      "Now sixteen times",
+     "Sixteen times fourteen is two hundred",
+     "hundred twenty-four, so"
+    ]
+   },
+   {
+    "say": "Together, fifty point two four. So sixteen pi is more than fifty point two four. Now let's find the upper end. Sixteen times point one five is two point four. So sixteen times three point one five is fifty point four.",
+    "at": [
+     "Together, fifty point two four",
+     "So sixteen pi",
+     "So sixteen times three point one five",
+     "one five is fifty"
+    ]
+   },
+   {
+    "say": "So sixteen pi is between fifty point two four and fifty point four. That's between fifty and fifty-one. Choice number four is our answer.",
+    "at": [
+     "So sixteen pi is between",
+     "fifty point two",
      "Choice number four is our answer"
     ]
    },
    {
-    "say": "Careful with the trap. If you round pi down to three, you get exactly forty-eight, and choice number one looks right. But here the point one four matters. It adds more than two. [pause] Okay. I'll see you in the next question.",
+    "say": "Careful with the trap. If you round pi down to three, you get exactly forty-eight, and choice number one looks right. Here that's too rough. The point one four adds more than two. [pause] Okay. I'll see you in the next question.",
     "at": [
      "If you round pi down to three",
      "to three, you",

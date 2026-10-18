@@ -15,40 +15,45 @@
     "say": "We know one angle, outside the circle, and we want an angle at A, on the circle. [short pause] We'll go from P to the center, and from the center to A. There's also a second way, with symmetry.",
     "at": [
      "We know one angle",
-     "the circle, and"
+     "the circle, and",
+     "P to the"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "[short pause] First of all, I see a circle question with tangents, so I draw radii to the points of tangency, O D and O E. The radius is perpendicular to the tangent, so I get ninety degrees, twice.",
+    "say": "[short pause] Let's start with the math way. Here's the figure again, bigger. We have tangents to a circle, so the first thing we do is draw the radii to the points of tangency, O D and O E. The radius is perpendicular to the tangent, so we get ninety degrees, twice. Make that a habit. Tangents, then radii, then right angles.",
     "at": [
-     "so I draw radii",
-     "the points of"
-    ]
-   },
-   {
-    "say": "Always, automatically. It should be a reflex. You see tangents to a circle, you draw the radii, and you have ninety degrees.",
-    "at": [
-     "Always, automatically",
-     "circle, you draw"
+     "Here's the figure again",
+     "We have tangents",
+     "draw the radii to the points",
+     "points of tangency"
     ]
    },
    {
     "say": "Now I have a quadrilateral, O D P E, with the center as one of its corners. The angles of a quadrilateral add up to three hundred sixty.",
     "at": [
      "Now I have a quadrilateral",
-     "O D P"
+     "O D P",
+     "add up to three hundred sixty"
     ]
    },
    {
-    "say": "The two right angles already give a hundred eighty. So the other two angles need another hundred eighty. Sixty-eight plus the angle at O is a hundred eighty, so the central angle is a hundred eighty minus sixty-eight, which is a hundred twelve.",
+    "say": "The two right angles already give a hundred eighty. So the other two angles need another hundred eighty. Sixty-eight plus the angle at O is a hundred eighty. So the central angle is a hundred eighty minus sixty-eight, which is a hundred twelve.",
     "at": [
-     "so the central angle is",
-     "a hundred eighty minus"
+     "The two right angles already give",
+     "give a hundred",
+     "Sixty-eight plus the angle at O",
+     "O is a",
+     "So the central angle is",
+     "a hundred eighty minus",
+     "which is a hundred twelve"
     ]
    },
    {
     "say": "Careful, a hundred twelve is in the choices, but it's the central angle, not the angle we want. We're not done yet.",
     "at": [
+     "is in the",
      "it's the central angle"
     ]
    },
@@ -63,15 +68,24 @@
     "say": "So the angle at A is an inscribed angle on the same arc as the hundred twelve. An inscribed angle is half of the central angle. Half of a hundred twelve is fifty-six. Choice number four is our answer.",
     "at": [
      "Half of a hundred twelve",
+     "is fifty-six",
      "Choice number four is our answer"
+    ]
+   },
+   {
+    "say": "This is worth remembering. With two tangents from one point P, the shape O D P E always has two right angles. So the angle at P and the central angle D O E always add up to a hundred eighty. Here, sixty-eight plus a hundred twelve. With an angle of forty at P, the central angle would be a hundred forty.",
+    "at": [
+     "With two tangents",
+     "always add up to a hundred eighty",
+     "Here, sixty-eight plus"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now the second way, by understanding the symmetry. We start again from the radii and the right angles. O D P E is a kite, because the radii are equal and the two tangents from P are equal. So let's draw its line of symmetry, O P.",
+    "say": "[pause] Now the second way, by understanding, with symmetry. We start again from the radii and the right angles. O D P E is a kite, because the radii are equal and the two tangents from P are equal. So let's draw its line of symmetry, O P.",
     "at": [
-     "by understanding the",
+     "by understanding, with",
      "We start again from the radii",
      "radii and the",
      "let's draw its line of symmetry",
@@ -79,9 +93,10 @@
     ]
    },
    {
-    "say": "The line of symmetry cuts the angle at P into two equal halves. Half of sixty-eight is thirty-four, and thirty-four.",
+    "say": "The line of symmetry cuts the angle at P into two equal halves. Half of sixty-eight is thirty-four. So each half is thirty-four.",
     "at": [
-     "Half of sixty-eight"
+     "Half of sixty-eight",
+     "So each half"
     ]
    },
    {
@@ -92,19 +107,24 @@
     ]
    },
    {
-    "say": "Now look at the right triangle O D P. Its angles add up to a hundred eighty. A hundred eighty minus ninety minus thirty-four is fifty-six. So angle D O P is fifty-six.",
+    "say": "Now look at the right triangle O D P. Its angles add up to a hundred eighty. A hundred eighty minus ninety is ninety. Ninety minus thirty-four is fifty-six. So angle D O P is fifty-six.",
     "at": [
      "Now look at the right triangle",
      "triangle O D",
+     "A hundred eighty minus ninety",
+     "Ninety minus thirty-four",
      "So angle D O P is fifty-six"
     ]
    },
    {
     "say": "By the same symmetry, O P also cuts the central angle D O E in half. So fifty-six is half of the central angle. And the inscribed angle at A is also half of the central angle. So angle D A E is fifty-six again, choice number four. Either way, it all started with the radii to the points of tangency. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "O P also cuts the central angle",
-     "central angle D",
-     "fifty-six again, choice number four"
+     "By the same",
+     "So fifty-six is half of the central angle",
+     "the central angle. And",
+     "So angle D A E is fifty-six",
+     "fifty-six again, choice number four",
+     "Either way, it"
     ]
    }
   ]

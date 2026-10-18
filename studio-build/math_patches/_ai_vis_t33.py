@@ -171,6 +171,7 @@ def _layout(vid):
                 d['w'] = 560
             if it.get('_y'): d['y'] = it['_y']          # topic 17: a question with its own figure - place below it
             if it.get('_x'): d['x'] = it['_x']
+            if it.get('_w'): d['w'] = it['_w']          # batch C: a narrower row box (two columns of rows)
             out.append((it, d))
         per.append(out)
     return names, per
@@ -359,6 +360,9 @@ def studio_slides(vid):
     if vid in FIG_LEFT:
         for b in out:
             for it in b['pre']: it.update(figw=0.56, figalign='left')
+    for k, b in enumerate(out):
+        if (vid, k) in NOFIG33:
+            for it in b['pre']: it.update(nofig=1)
     return out, sb
 
 
@@ -606,6 +610,27 @@ def SM(sb, title, *lines):
 
 
 FIG_LEFT = set()      # question videos whose question figure goes on the left (figw 0.56); filled by the scripts
+NOFIG33 = set()       # 2026-10-18 (batch C, as NOFIG31 in topic 31): (video, slide index) that show our enlarged copy
+                      # instead of the question figure; the working is written in readable rows on the right (ROWS)
+
+
+def LEFT(g, y=300, x=410, w=None):
+    """(batch C) place a GEO figure (every layer) in the left work area of a NOFIG33 slide, optionally at a new width"""
+    for t in (g.values() if '_name' not in g else [g]):
+        t['_col'] = 0; t['_x'] = x; t['_y'] = y
+        if w and t['k'] == 'vis':
+            vb = [float(v) for v in re.search(r'viewBox="([^"]+)"', t['v']['svg']).group(1).split()]
+            t['w'] = w; t['h'] = int(round(w * vb[3] / vb[2]))
+    return g
+
+
+def ROWS(y0, dy, *items, x=1040, w=None):
+    """(batch C) readable working rows in the right column, one under the other, each shown at its own clause;
+    w = the rows' box width (for two columns of rows side by side: the studio pushes a box down when it overlaps)"""
+    for i, it in enumerate(items):
+        _R(it, y0 + i * dy, x)
+        if w: it['_w'] = w
+    return items
 
 
 def SLOT(name, rule, rows, col=0, size=34):
@@ -724,7 +749,8 @@ def _f1_rad(deg, lab='r', col='teal', d=16):
     return [f1_S(*_c, _r, None, deg, col), ('dot', *p), ('txt', *f1_mid(_c, p, d), lab, col, 26, True)]
 f1rad = PIN(GEO('f1rad', [
     ('line', f1_C(*_c, _r)),
-    ('r1', _f1_rad(35)),
+    ('r1', _f1_rad(35, lab='')),
+    ('rl', [('txt', *f1_mid(_c, gpt(*_c, _r, 35), 16), 'r', 'teal', 26, True)]),
     ('spin', _f1_rad(120) + _f1_rad(200) + _f1_rad(290)),
     ('eq', [('txt', 560, 150, 'all the radii', 'teal', 28), ('txt', 560, 190, 'of this circle are equal', 'teal', 28)]),
 ], vb='60 30 720 315', w=960, col=0, title='The radius of a circle'))
@@ -788,8 +814,10 @@ f1diam = PIN(GEO('f1diam', [
             ('tick', *_dA, *_c), ('tick', *_c, *_dB)]),
     ('two', [('txt', 560, 160, 'diameter = r + r = 2r', 'teal', 30)]),
 ], vb='50 30 720 310', w=960, col=0, title='The diameter: the longest chord'))
-f1d1 = IH('f1d1', '$\\text{diameter }14\\ \\to\\ \\text{radius }7$', size=30)
-f1d2 = IH('f1d2', '$\\text{radius }6\\ \\to\\ \\text{diameter }12$', size=30)
+f1d1 = IH('f1d1', '$\\text{diameter} = 14$', size=30)
+f1d1b = IH('f1d1b', '$\\text{radius} = 14 \\div 2 = 7$', size=30)
+f1d2 = IH('f1d2', '$\\text{radius} = 6$', size=30)
+f1d2b = IH('f1d2b', '$\\text{diameter} = 2 \\times 6 = 12$', size=30)
 
 # ---- a diameter in any direction cuts the circle into two halves
 def _f1_half(cx, cy, r, deg):
@@ -950,7 +978,8 @@ def _f1_cut(cx, cy, r, a, b, kind, lab):
              ('dot', cx, cy)]
     else:
         e = [('cseg', cx, cy, r, a, b, 'orange'), ('seg', A[0], A[1], B[0], B[1], 'ink', 3)]
-    return f1_C(cx, cy, r, o=False) + e + [('txt', cx, cy + r + 32, lab, 'teal' if kind == 'sector' else 'orange', 22)]
+    return f1_C(cx, cy, r, o=False) + e + [('dot', cx, cy), ('txt', cx + 14, cy + 18, 'O', 'ink', 20, True),
+                                           ('txt', cx, cy + r + 32, lab, 'teal' if kind == 'sector' else 'orange', 22)]
 f1segv = PIN(GEO('f1segv', [
     ('line', _f1_cut(110, 150, 85, 40, 140, 'sector', 'sector')),
     ('s1', _f1_cut(330, 150, 85, 40, 140, 'segment', 'segment')),
@@ -963,37 +992,40 @@ _c = (230, 185); _r = 140
 _T = gpt(*_c, _r, 105); _t1, _t2 = gpt(_T[0], _T[1], 95, 195), gpt(_T[0], _T[1], 95, 15)
 f1all = PIN(GEO('f1all', [
     ('line', f1_C(*_c, _r, ol=(0, 26))),
-    ('rad', f1_P(*_c, _r, 50, 'A') + [f1_S(*_c, _r, None, 50, 'teal', 4), ('txt', 600, 80, 'O A: a radius', 'teal', 26)]),
-    ('dia', f1_P(*_c, _r, 165, 'B') + f1_P(*_c, _r, 345, 'C') + [f1_S(*_c, _r, 165, 345, 'teal', 4),
-            ('txt', 600, 130, 'B C: a diameter', 'teal', 26), ('txt', 600, 164, '(and a chord)', 'teal', 22)]),
-    ('ch', f1_P(*_c, _r, 220, 'D') + f1_P(*_c, _r, 290, 'E') + [f1_S(*_c, _r, 220, 290, 'teal', 4), ('txt', 600, 214, 'D E: a chord', 'teal', 26)]),
-    ('tan', f1_P(*_c, _r, 105, 'T') + [('seg', *_t1, *_t2, 'teal', 4), ('txt', 600, 264, 'at T: a tangent', 'teal', 26)]),
+    ('rad', f1_P(*_c, _r, 50, 'A') + [f1_S(*_c, _r, None, 50, 'teal', 4)]),
+    ('radl', [('txt', 600, 80, 'O A: a radius', 'teal', 26)]),
+    ('dia', f1_P(*_c, _r, 165, 'B') + f1_P(*_c, _r, 345, 'C') + [f1_S(*_c, _r, 165, 345, 'teal', 4)]),
+    ('dial', [('txt', 600, 130, 'B C: a diameter', 'teal', 26), ('txt', 600, 164, '(and a chord)', 'teal', 22)]),
+    ('ch', f1_P(*_c, _r, 220, 'D') + f1_P(*_c, _r, 290, 'E') + [f1_S(*_c, _r, 220, 290, 'teal', 4)]),
+    ('chl', [('txt', 600, 214, 'D E: a chord', 'teal', 26)]),
+    ('tan', f1_P(*_c, _r, 105, 'T') + [('seg', *_t1, *_t2, 'teal', 4)]),
+    ('tanl', [('txt', 600, 264, 'at T: a tangent', 'teal', 26)]),
 ], vb='50 -12 760 367', w=980, col=0, title='All the words on one circle'))
 
 
 video('geo-074', 'lesson', slides=[
     S('Circle Vocabulary',
-      L("Circles. Before we go through the rules we have in circles, the theorems, let's first get to know the lines and "
-        "the angles we have in a circle.")),
+      L("Let's start with circle vocabulary. Before we learn the rules of circles, let's first get to know the lines "
+        "and the angles we have in a circle.")),
     # ------------------------------------------------------------------ part 1
     S('The circle and its inside',
       L("So this is a circle. The round line we see here, going all the way around.", show(f1disk['line'], 'So this is a circle')),
-      L("By the way, just for general knowledge. Most people don't know this, but strictly speaking, the circle is only "
-        "the round line itself, the line around the outside. Everything inside it, the whole flat shape, is the inside of "
-        "the circle, and in math it even has its own name. Think of a round wooden board. Its edge is the circle, and all "
+      L("Strictly speaking, the circle is only the round line itself, the line around the outside. Everything inside it, "
+        "the whole flat shape, is the inside of the circle. Think of a round wooden board. Its edge is the circle, and all "
         "the wood is the inside.",
         show(f1disk['trace'], 'the circle is only'), show(f1disk['in'], 'Everything inside it')),
-      L("On the exam they don't keep this difference, and they don't use that name. They say circle for both. The area of the circle means the area "
-        "inside, and the circumference is the length of the round line. That's fine, as long as we know which is which.",
+      L("On the exam they don't keep this difference. They say circle for both. The area of the circle means the area "
+        "inside, all the wood. The circumference is the length of the round line, the edge. That's fine, as long as we "
+        "know which is which.",
         show(f1disk['exam'], 'They say circle for both'))),
     S('Radius',
-      L("Radius. A radius is a straight line from the center of the circle to any point on the circle. We call the "
-        "center O. Here's a radius, from O to the circle.", show(f1rad['line'], 'We call the center O'),
-        show(f1rad['r1'], "Here's a radius")),
+      L("First, let's look at a radius. A radius is a straight line from the center of the circle to any point on the circle. We call "
+        "the center O. Here's a radius, from O to the circle. We usually mark the radius with the letter r.",
+        show(f1rad['line'], 'We call the center O'), show(f1rad['r1'], "Here's a radius"),
+        show(f1rad['rl'], 'with the letter r')),
       L("All the radii of one circle are equal. Even if I draw more lines from the center to the circle, they're all "
         "the same length. Look. It's the same radius, just spinning around, and it's the same length in every direction.",
-        show(f1rad['spin'], "It's the same radius, just spinning around"), show(f1rad['eq'], 'and it\'s the same length')),
-      L("We usually mark the radius with the letter r.", pt('f1rad_r1', 'with the letter r'))),
+        show(f1rad['spin'], "It's the same radius, just spinning around"), show(f1rad['eq'], 'and it\'s the same length'))),
     S('Every circle has its radius',
       L("So every circle has its own radius. Here's a circle with radius two. Every radius in it is two. A circle with "
         "radius three. Every radius in it is three. And a circle with radius five. Every radius is five. A different "
@@ -1002,20 +1034,24 @@ video('geo-074', 'lesson', slides=[
         show(f1radv['c5'], 'And a circle with radius five'))),
     S('Two radii, a triangle',
       L("Why does this matter so much? Take two points on the circle, and join each one to the center. That's two radii. "
-        "Now join the two points too. We get a triangle with two equal sides, an isosceles triangle. And we know from "
-        "triangles that the two base angles of an isosceles triangle are equal.",
+        "Now join the two points too. When the two points and the center are not on one straight line, we get a "
+        "triangle. It has two equal sides, so it's an isosceles triangle. And we know from triangles that its two base "
+        "angles are equal.",
         show(f1iso['line'], 'Take two points on the circle'), pt('f1iso_line', 'two base angles')),
-      L("Narrow, wide, or very wide, it's always the same. Two radii give an isosceles triangle. In questions, when you "
-        "see two radii, mark them equal right away.",
-        show(f1iso['t2'], 'Narrow, wide'), show(f1iso['t3'], 'or very wide'), show(f1iso['lab'], 'Two radii give an isosceles'))),
+      L("Narrow, wide, or very wide, it's always the same. Two radii and the chord between them give an isosceles "
+        "triangle. If the two points and the center are on one straight line, there's no triangle. That line is a "
+        "diameter, and we'll meet it in a moment. In questions, when you see two radii, mark them equal right away.",
+        show(f1iso['t2'], 'Narrow, wide'), show(f1iso['t3'], 'or very wide'),
+        show(f1iso['lab'], 'Two radii and the chord between them'))),
     S('Chord',
-      L("Chord. A chord is a straight line that joins two points on the circle. Let's mark two points on the circle, A "
-        "and B, and join them. That's a chord. Two more points, C and D. Join them. That's also a chord.",
+      L("Now let's join two points on the circle with a straight line. A line like that is called a chord. Let's mark "
+        "two points on the circle, A and B, and join them. That's a chord. Two more points, C and D. Join them. That's "
+        "also a chord.",
         show(f1chord['line'], "Let's mark two points"), show(f1chord['ab'], 'A and B, and join them'),
         show(f1chord['cd'], 'Two more points')),
-      L("We can draw as many chords as we like in a circle. And notice, they're not equal in length. A chord can be "
-        "long, it can be short, and if I draw one here, it's a very short chord.",
-        show(f1chord['ef'], 'if I draw one here'), show(f1chord['lens'], "it's a very short chord"))),
+      L("We can draw as many chords as we like in a circle. Chords don't have to have the same length. A chord can be "
+        "long, it can be short, and if I draw one here, it's a very short chord. These three chords are all different.",
+        show(f1chord['ef'], 'if I draw one here'), show(f1chord['lens'], 'These three chords'))),
     S('Diameter',
       L("So which chord is the longest? Look at what happens when a chord moves toward the middle. Here's a short one. "
         "Closer to the middle, it's longer. Closer still, it's longer again.",
@@ -1026,9 +1062,11 @@ video('geo-074', 'lesson', slides=[
       L("Its length is two r, because it's made of two radii. From A to the center is one radius, and from the center "
         "to B is another radius. So the diameter is r plus r, which is two r.",
         show(f1diam['rr'], 'From A to the center'), show(f1diam['two'], 'which is two r')),
-      L("So if the diameter is fourteen, the radius is half of it, seven. And if the radius is six, the diameter is "
-        "twelve. Many questions give you one and use the other, so switch between them right away.",
-        show(f1d1, 'if the diameter is fourteen'), show(f1d2, 'if the radius is six'))),
+      L("So if the diameter is fourteen, the radius is half of it. Fourteen divided by two is seven. And if the radius "
+        "is six, the diameter is twice that. Two times six is twelve. Many questions give you one and use the other, so "
+        "switch between them right away.",
+        show(f1d1, 'if the diameter is fourteen'), show(f1d1b, 'Fourteen divided by two'),
+        show(f1d2, 'if the radius is six'), show(f1d2b, 'Two times six'))),
     S('Two halves',
       L("A diameter also cuts the circle in half, into two equal halves. Each half is called a semicircle. And it "
         "doesn't matter which way we draw it. Across, at a slant, or another slant, it always goes through the center "
@@ -1037,8 +1075,9 @@ video('geo-074', 'lesson', slides=[
         show(f1half['h3'], 'or another slant'))),
     # ------------------------------------------------------------------ part 2
     S('Inscribed angle',
-      L("Now the angles in a circle. The first one is the inscribed angle. An inscribed angle is an angle between two "
-        "chords. Let's take a point C on the circle, and draw two chords from it, to A and to B.",
+      L("Now the angles in a circle. The first one is the inscribed angle. An inscribed angle is made by two chords "
+        "that start at the same point on the circle. Let's take a point C on the circle, and draw two chords from it, to "
+        "A and to B.",
         show(f1insc['line'], 'Now the angles in a circle'), show(f1insc['c'], "Let's take a point C"),
         show(f1insc['ch'], 'draw two chords from it')),
       L("Its vertex, the point of the angle, is on the circle. That's why it's called inscribed. And the angle is "
@@ -1051,16 +1090,17 @@ video('geo-074', 'lesson', slides=[
         "An inscribed angle has its vertex on the circle.",
         show(f1insv['in'], 'stopped somewhere in the middle'), show(f1insv['out'], 'if they met out here'))),
     S('Central angle',
-      L("Central angle. You can guess this one from the name. Its vertex is at the center of the circle, at O. And it's "
-        "between two radii. Here's a radius, and here's a radius, and the angle between them is a central angle.",
-        show(f1cent['line'], 'Central angle'), show(f1cent['rr'], "Here's a radius"),
+      L("Now let's look at a central angle. You can guess this one from the name. Its vertex is at the center of the "
+        "circle, at O. And it's between two radii. Here's a radius, and here's a radius, and the angle between them is a "
+        "central angle.",
+        show(f1cent['line'], 'a central angle'), show(f1cent['rr'], "Here's a radius"),
         show(f1cent['ang'], 'the angle between them')),
       L("It can be small, like forty-five degrees. It can be big, like a hundred twenty. And when the two radii make a "
         "straight line, a diameter, it's a central angle of a hundred eighty degrees.",
         show(f1cenv['line'], 'like forty-five degrees'), show(f1cenv['c2'], 'like a hundred twenty'),
         show(f1cenv['c3'], 'when the two radii make a straight line'))),
     S('Arc',
-      L("Arc. An arc is a part of the circle, a piece of the round line. Let's mark a piece of the circle. That's an "
+      L("An arc is a part of the circle, a piece of the round line. Let's mark a piece of the circle. That's an "
         "arc. An arc can be short. It can be longer. And it can be very long, almost the whole circle.",
         show(f1arcv['line'], "Let's mark a piece of the circle"), show(f1arcv['a2'], 'It can be longer'),
         show(f1arcv['a3'], 'almost the whole circle')),
@@ -1077,8 +1117,8 @@ video('geo-074', 'lesson', slides=[
       L("When an angle closes off an arc like this, we say that the angle intercepts the arc. What does that mean? "
         "Imagine I'm standing inside the angle, at O. The two radii are walls, tall walls. From where I stand, the part "
         "of the circle I can see is only this arc.", show(f1lean['walls'], 'The two radii are walls')),
-      L("We can also close off the same arc with an inscribed angle. Take a point C on the circle, and draw two chords "
-        "to A and to B. If I stand at C, the chords are tall walls, and again, the part of the circle I can see is only "
+      L("We can also close off the same arc with an inscribed angle. Take a point C on the other side of the circle, on "
+        "the long arc, away from the teal arc. Draw two chords from C to A and to B. If I stand at C, the chords are tall walls, and again, the part of the circle I can see is only "
         "this arc.", show(f1lean['insc'], 'Take a point C'), show(f1lean['walls2'], 'the chords are tall walls')),
       L("So this central angle and this inscribed angle both intercept the same arc, the teal arc A B.",
         show(f1lean['both'], 'both intercept the same arc'))),
@@ -1110,19 +1150,24 @@ video('geo-074', 'lesson', slides=[
       L("And the last one, a segment. Take a chord, A B. The part of the circle between the chord and its arc is called "
         "a segment.", show(f1seg['line'], 'And the last one'), show(f1seg['ch'], 'Take a chord'),
         show(f1seg['tint'], 'between the chord and its arc')),
-      L("Don't mix it up with a sector. A sector goes all the way to the center, with two radii. A segment is cut off "
-        "by a chord, and it doesn't reach the center. A segment can be small, or big, more than half the circle. On the "
-        "exam it usually appears as a shaded region between a chord and an arc.",
-        show(f1segv['line'], 'A sector goes all the way'), show(f1segv['s1'], 'A segment is cut off'),
-        show(f1segv['s2'], 'or big'))),
+      L("Don't mix it up with a sector. A sector is closed off by two radii and an arc. A segment is closed off by one "
+        "chord and an arc. This small segment leaves the center O outside it. But a big segment, more than half the "
+        "circle, can have O inside it. On the exam a segment usually appears as a shaded region between a chord and an "
+        "arc.",
+        show(f1segv['line'], 'A sector is closed off'), show(f1segv['s1'], 'A segment is closed off'),
+        show(f1segv['s2'], 'But a big segment'))),
     S('All together',
-      L("Let's put it all together on one circle. Try to name each line before I do. O A goes from the center to the "
-        "circle, so it's a radius. B C goes through the center, so it's a diameter. And it's also a chord, the longest "
-        "one.", show(f1all['line'], "Let's put it all together"), show(f1all['rad'], 'O A goes from the center'),
-        show(f1all['dia'], 'B C goes through the center')),
-      L("D E joins two points on the circle, but it doesn't go through the center, so it's just a chord. And the line "
-        "at T touches the circle at one point only, so it's a tangent.",
-        show(f1all['ch'], "D E joins two points"), show(f1all['tan'], 'the line at T touches')),
+      L("Let's put it all together on one circle. Try to name each line before I do. Look at O A first. [short pause] "
+        "O A goes from the center to the circle, so it's a radius. Now look at B C. [short pause] B C goes through the "
+        "center, so it's a diameter. And it's also a chord, the longest one.",
+        show(f1all['line'], "Let's put it all together"), show(f1all['rad'], 'Look at O A first'),
+        show(f1all['radl'], 'O A goes from the center'), show(f1all['dia'], 'Now look at B C'),
+        show(f1all['dial'], 'B C goes through the center')),
+      L("Now look at D E. [short pause] D E joins two points on the circle, but it doesn't go through the center, so "
+        "it's just a chord. And now the line at T. [short pause] It touches the circle at one point only, so it's a "
+        "tangent.",
+        show(f1all['ch'], 'Now look at D E'), show(f1all['chl'], 'D E joins two points'),
+        show(f1all['tan'], 'And now the line at T'), show(f1all['tanl'], 'It touches the circle')),
       L("That's it for the words we use in a circle. In the next lesson we start on the rules, the angles in a circle, "
         "and what we know about them. [pause] Okay. I'll see you in the next video.")),
 ])
@@ -1255,12 +1300,13 @@ f2why = PIN(GEO('f2why', [
     ('diam', [f2_seg(_C3, _D3, 'teal', 3, True), f2_dot(_D3), f2_lab(_O3, _r3, 90, 'D')]),
     ('left', [('tint', [_O3, _C3, _A3], 'teal'), ('tick', _O3[0], _O3[1], _C3[0], _C3[1], 1), ('tick', _O3[0], _O3[1], _A3[0], _A3[1], 1),
               f2_ang(_C3, _D3, _A3, 60, 'teal', 'x', 82), f2_ang(_A3, _C3, _O3, 46, 'teal', 'x', 68)]),
-    ('ext', [f2_ang(_O3, _A3, _D3, 30, 'teal', '2x', 52), ('txt', 490, 95, 'COA = 180° − 2x', 'teal', 26),
-             ('txt', 490, 132, 'AOD = 2x', 'teal', 26)]),
+    ('coa', [('txt', 490, 95, 'COA = 180° − 2x', 'teal', 26)]),
+    ('ext', [f2_ang(_O3, _A3, _D3, 30, 'teal', '2x', 52), ('txt', 490, 132, 'AOD = 2x', 'teal', 26)]),
     ('rt', [('tint', [_O3, _C3, _B3], 'orange'), ('tick', _O3[0], _O3[1], _B3[0], _B3[1], 1),
             f2_ang(_C3, _B3, _D3, 70, 'orange', 'y', 92), f2_ang(_B3, _O3, _C3, 46, 'orange', 'y', 68),
             f2_ang(_O3, _D3, _B3, 30, 'orange', '2y', 52), ('txt', 490, 180, 'BOD = 2y', 'orange', 26)]),
-    ('sum', [('txt', 490, 245, 'inscribed: x + y', 'ink', 28), ('txt', 490, 288, 'central: 2x + 2y', 'ink', 28)]),
+    ('sum', [('txt', 490, 245, 'inscribed: x + y', 'ink', 28)]),
+    ('sum2', [('txt', 490, 288, 'central: 2x + 2y', 'ink', 28)]),
 ], vb='0 12 660 340', w=1100, col=0, title='Why the central angle is twice the inscribed angle'))
 
 
@@ -1306,11 +1352,13 @@ _K = [f2_on(_Or, _rr, d) for d in (35, 145, 215, 325)]
 f2back = PIN(GEO('f2back', [
     ('line', [('circ', _Ol[0], _Ol[1], _rl), f2_seg(_Al, _Bl), f2_seg(_Al, _Cl), f2_seg(_Cl, _Bl), f2_right(_Cl, _Al, _Bl, 14)]),
     ('hyp', [f2_seg(_Al, _Bl, 'teal', 6), f2_dot(_Ol), ('txt', _Ol[0], _Ol[1] + 26, 'diameter', 'teal', 22)]),
-    ('num', [('txt', 120, 112, '24', 'ink', 24), ('txt', 278, 128, '10', 'ink', 24), ('txt', _Ol[0], _Ol[1] + 56, '26', 'teal', 26),
-             ('txt', _Ol[0], 340, 'r = 26 ÷ 2 = 13', 'teal', 26)]),
-    ('rect', [('circ', _Or[0], _Or[1], _rr)] + [f2_seg(_K[i], _K[(i + 1) % 4]) for i in range(4)]
-     + [f2_seg(_K[0], _K[2], 'teal', 4), f2_seg(_K[1], _K[3], 'teal', 4), f2_dot(_Or),
-        ('txt', _Or[0], 340, 'diagonal = diameter', 'teal', 26)]),
+    ('num', [('txt', 120, 112, '24', 'ink', 24), ('txt', 278, 128, '10', 'ink', 24)]),
+    ('n26', [('txt', _Ol[0], _Ol[1] + 56, '26', 'teal', 26)]),
+    ('n13', [('txt', _Ol[0], 340, 'r = 26 ÷ 2 = 13', 'teal', 26)]),
+    ('rect', [('circ', _Or[0], _Or[1], _rr)] + [f2_seg(_K[i], _K[(i + 1) % 4]) for i in range(4)] + [f2_dot(p) for p in _K]
+     + [f2_right(_K[0], _K[1], _K[3], 14)]),
+    ('rdiag', [f2_seg(_K[1], _K[3], 'teal', 4), f2_seg(_K[0], _K[2], 'teal', 4), f2_dot(_Or),
+               ('txt', _Or[0], 340, 'diagonal = diameter', 'teal', 26)]),
 ], vb='20 50 620 310', w=1060, col=0, title='A right angle on the circle sits on a diameter'))
 
 # ---- the inscribed quadrilateral: definition (one yes, two no)
@@ -1340,8 +1388,9 @@ f2q8_line = (f2_base(_O8, center=False) + [f2_seg(_Q8[i], _Q8[(i + 1) % 4]) for 
              + [f2_lab(_O8, _r, 130, 'A'), f2_lab(_O8, _r, 220, 'B'), f2_lab(_O8, _r, 290, 'C'), f2_lab(_O8, _r, 10, 'D')])
 f2quad = PIN(GEO('f2quad', [
     ('line', f2q8_line),
-    ('ac', [f2_ang(_qA, _qB, _qD, 30, 'teal', '75°', 56), f2_ang(_qC, _qB, _qD, 30, 'orange', '105°', 58),
-            ('txt', 480, 130, '75° + 105° = 180°', 'ink', 26), ('txt', 480, 175, 'same for B and D', 'ink', 24)]),
+    ('ac', [f2_ang(_qA, _qB, _qD, 30, 'teal', '75°', 56)]),
+    ('c', [('txt', 480, 130, '180° − 75° = 105°', 'ink', 26), f2_ang(_qC, _qB, _qD, 30, 'orange', '105°', 58)]),
+    ('bd', [('txt', 480, 175, 'same for B and D', 'ink', 24)]),
 ], vb='0 12 660 340', w=1100, col=0, title='Opposite angles of an inscribed quadrilateral'))
 
 # ---- why: two radii, 2 alpha + 2 beta = 360
@@ -1351,7 +1400,8 @@ f2qwhy = PIN(GEO('f2qwhy', [
              f2_seg(_O8, _qD, 'teal', 3, True)]),
     ('a', [('arcw', _O8[0], _O8[1], _r, 220, 10, 'teal'), ('arc', _O8[0], _O8[1], 40, 220, 10, 'teal'), ('txt', *gpt(_O8[0], _O8[1], 68, 330), '2α', 'teal', 26)]),
     ('b', [('arcw', _O8[0], _O8[1], _r, 10, 220, 'orange'), ('arc', _O8[0], _O8[1], 50, 10, 220, 'orange'), ('txt', *gpt(_O8[0], _O8[1], 72, 165), '2β', 'orange', 26)]),
-    ('sum', [('txt', 480, 130, '2α + 2β = 360°', 'ink', 28), ('txt', 480, 180, 'α + β = 180°', 'red', 28)]),
+    ('sum', [('txt', 480, 130, '2α + 2β = 360°', 'ink', 28)]),
+    ('half', [('txt', 480, 180, 'α + β = 180°', 'red', 28)]),
 ], vb='0 12 660 340', w=1100, col=0, title='Why opposite angles add up to 180'))
 
 # ---- equal chords <-> equal central angles <-> equal arcs (70 / 70)
@@ -1364,8 +1414,11 @@ f2chord = PIN(GEO('f2chord', [
              ('txt', 480, 110, 'r, r and the chord:', 'teal', 24), ('txt', 480, 142, 'the same triangle', 'teal', 24)]),
     ('ang', [('arc', _o[0], _o[1], 30, 20, 90, 'teal', '70°', 52), ('arc', _o[0], _o[1], 30, 190, 260, 'teal', '70°', 52)]),
     ('arcs', [('arcw', _o[0], _o[1], _r, 20, 90, 'teal'), ('arcw', _o[0], _o[1], _r, 190, 260, 'teal'),
-              ('txt', 480, 200, 'equal arcs', 'teal', 26), ('txt', 480, 240, 'inscribed: 35° each', 'teal', 24)]),
-    ('trap', [('txt', 480, 295, 'only in the same circle', 'red', 24)]),
+              ('txt', 480, 200, 'equal arcs', 'teal', 26)]),
+    ('ins', [f2_dot(f2_on(_o, _r, 310)), f2_lab(_o, _r, 310, 'E'), f2_seg(f2_on(_o, _r, 310), _A9, 'orange', 2.5),
+             f2_seg(f2_on(_o, _r, 310), _B9, 'orange', 2.5), f2_ang(f2_on(_o, _r, 310), _A9, _B9, 46, 'orange', '35°', 72),
+             ('txt', 480, 240, 'inscribed on arc AB: 35°', 'orange', 24)]),
+    ('trap', [('txt', 480, 295, 'here: within the same circle', 'red', 24)]),
 ], vb='0 12 660 340', w=1100, col=0, title='Equal chords cut off equal arcs'))
 
 # ---- a perpendicular from the center halves the chord
@@ -1387,18 +1440,18 @@ f2perp = PIN(GEO('f2perp', [
 
 
 f2s1 = I('f2s1', 'Inscribed angle = half the central angle (same arc)', size=40)
-f2s2 = I('f2s2', 'Same arc → equal inscribed angles', size=40)
-f2s3 = I('f2s3', 'On a diameter → 90°', size=40)
-f2s4 = I('f2s4', 'Inscribed quadrilateral → opposite angles add up to 180°', size=40)
-f2s5 = I('f2s5', 'Equal chords ↔ equal arcs ↔ equal central angles', size=40)
-f2s6 = I('f2s6', 'Perpendicular from the center → cuts the chord in half', size=40)
+f2s2 = I('f2s2', 'Same arc:  equal inscribed angles', size=40)
+f2s3 = I('f2s3', 'On a diameter:  90°', size=40)
+f2s4 = I('f2s4', 'Inscribed quadrilateral:  opposite angles add up to 180°', size=40)
+f2s5 = I('f2s5', 'Same circle:  equal chords, equal arcs, equal central angles', size=40)
+f2s6 = I('f2s6', 'Perpendicular from the center:  cuts the chord in half', size=40)
 
 video('geo-075', 'lesson', slides=[
     S('Angles in a Circle',
-      L("Angles in a circle. Last lesson we learned the words of the circle. Now we start the rules. They come up in "
-        "almost every circle question, and really, there's one main rule, and the others come from it.")),
+      L("Last lesson we learned the words of the circle. Now let's learn the rules of the angles in a circle. They come "
+        "up in almost every circle question. Really, there's one main rule, and the others come from it.")),
     S('Central = 2 × inscribed',
-      L("The main rule. A central angle is twice the inscribed angle that intercepts the same arc. Here's a circle with "
+      L("Let's start with the main rule. A central angle is twice the inscribed angle that intercepts the same arc. Here's a circle with "
         "its center O, and two points, A and B.", show(f2r1['line'], "Here's a circle")),
       L("Here's the arc from A to B, and a central angle on it, a hundred twenty degrees. Its vertex is at the center, and its two radii close off the "
         "arc.",
@@ -1417,14 +1470,17 @@ video('geo-075', 'lesson', slides=[
     S('Why it works',
       L("Why is it true? Let's draw the diameter from C, through the center, to D.",
         show(f2why['line'], 'Why is it true'), show(f2why['diam'], "Let's draw the diameter")),
-      L("Triangle O C A has two radii, so it's isosceles, and its base angles are equal. Call them x. The angles of a triangle add up to a hundred eighty, so the angle at O "
-        "inside it is a hundred eighty minus two x. Together with the angle next to it, it makes a straight line, a hundred eighty, so that angle is two x.",
-        show(f2why['left'], 'Triangle O C A'), show(f2why['ext'], 'The angle at O')),
-      L("The same on the other side, with y. So the inscribed angle is x plus y, because it's made of x and y. The central angle is made of the two outside angles, so it's two x plus two "
-        "y, exactly twice as much.", show(f2why['rt'], 'The same on the other side'),
-        show(f2why['sum'], 'So the inscribed angle'))),
+      L("Triangle O C A has two radii, so it's isosceles, and its base angles are equal. Call them x. The angles of a "
+        "triangle add up to a hundred eighty, so angle C O A is a hundred eighty minus two x.",
+        show(f2why['left'], 'Triangle O C A'), show(f2why['coa'], 'so angle C O A is')),
+      L("Now look at angle A O D, right next to it. C O D is a straight line, the diameter, so the two angles add up to a "
+        "hundred eighty. So angle A O D is two x.", show(f2why['ext'], 'So angle A O D is two x')),
+      L("The same on the other side, with y. Angle B O D is two y. So the inscribed angle is x plus y, because it's made "
+        "of x and y. The central angle A O B is made of A O D and B O D. So it's two x plus two y, exactly twice as "
+        "much.", show(f2why['rt'], 'The same on the other side'),
+        show(f2why['sum'], 'So the inscribed angle'), show(f2why['sum2'], 'So it\'s two x plus two y'))),
     S('Same arc, same angle',
-      L("The second rule. Inscribed angles that intercept the same arc are equal. Here the central angle on arc A B is a "
+      L("Now let's use the main rule to compare inscribed angles. Inscribed angles that intercept the same arc are equal. Here the central angle on arc A B is a "
         "hundred.", show(f2same['line'], 'Here the central angle'), show(f2same['cen'], 'is a hundred')),
       L("An inscribed angle at C is half of it, fifty. Now let's move the vertex. Here at D, and here at E. It doesn't "
         "matter where we put it, each one is fifty.", show(f2same['c'], 'An inscribed angle at C'),
@@ -1434,7 +1490,7 @@ video('geo-075', 'lesson', slides=[
       L("But careful. Here at F, the vertex is on the arc A B itself. From F you see the long arc, so this angle is not "
         "fifty. Always check which arc the angle sees.", show(f2same['f'], 'Here at F'))),
     S('Angle on a diameter',
-      L("The third rule. An inscribed angle on a diameter is ninety degrees. Here's a diameter, A B, and an inscribed angle "
+      L("Now let's use the main rule on a diameter. An inscribed angle on a diameter is ninety degrees. Here's a diameter, A B, and an inscribed angle "
         "on it, at C. Its chords go to the two ends of the diameter.", show(f2diam['line'], "Here's a diameter"), show(f2diam['c'], 'and an inscribed angle')),
       L("Why? It's the main rule again. The central angle on a diameter is the straight line at O, a hundred eighty. Half "
         "of a hundred eighty is ninety.", show(f2diam['cen'], 'The central angle on a diameter'),
@@ -1445,35 +1501,45 @@ video('geo-075', 'lesson', slides=[
       L("It also works backwards. When a right triangle has all three corners on a circle, its hypotenuse is a diameter.",
         show(f2back['line'], 'When a right triangle'), show(f2back['hyp'], 'its hypotenuse is a diameter')),
       L("Say the legs are ten and twenty-four. That's five, twelve, thirteen, doubled, so the hypotenuse is twenty-six. "
-        "Careful, many students call that the radius. But twenty-six is the diameter, so the radius is thirteen. And in a "
-        "rectangle inside a circle, each diagonal is a diameter.", show(f2back['num'], 'Say the legs'),
-        show(f2back['rect'], 'And in a rectangle'))),
+        "Careful, many students call that the radius. But twenty-six is the diameter. So the radius is twenty-six "
+        "divided by two, thirteen.", show(f2back['num'], 'Say the legs'),
+        show(f2back['n26'], 'so the hypotenuse is twenty-six'), show(f2back['n13'], 'So the radius is twenty-six')),
+      L("Now take a rectangle whose four corners are all on the circle. Each corner is a right angle on the circle. So by "
+        "the backwards rule, the line joining its two neighbors is a diameter. That line is a diagonal. So each diagonal "
+        "of this rectangle is a diameter.", show(f2back['rect'], 'Now take a rectangle'),
+        show(f2back['rdiag'], 'That line is a diagonal'))),
     S('Inscribed quadrilateral',
-      L("The fourth rule. An inscribed quadrilateral has all four corners on the circle, like this one.",
+      L("Now let's look at a quadrilateral inside a circle. An inscribed quadrilateral has all four corners on the "
+        "circle, like this one.",
         show(f2qdef['line'], 'like this one')),
       L("If even one corner is inside the circle, or outside it, it's not inscribed. A corner at the center doesn't count "
         "either, because the center is not on the circle.", show(f2qdef['in'], 'If even one corner'),
         show(f2qdef['ctr'], 'A corner at the center'))),
     S('Opposite angles: 180°',
       L("In an inscribed quadrilateral, opposite angles add up to a hundred eighty. So if angle A is seventy-five, the "
-        "angle opposite it, C, is a hundred eighty minus seventy-five, a hundred five. The same for B and D.",
-        show(f2quad['line'], 'In an inscribed quadrilateral'), show(f2quad['ac'], 'So if angle A is seventy-five'))),
+        "angle opposite it, C, is a hundred eighty minus seventy-five. That's a hundred five. The same for B and D.",
+        show(f2quad['line'], 'In an inscribed quadrilateral'), show(f2quad['ac'], 'So if angle A is seventy-five'),
+        show(f2quad['c'], 'is a hundred eighty minus seventy-five'), show(f2quad['bd'], 'The same for B and D'))),
     S('Why: 2α + 2β = 360°',
       L("Let's prove it. Call angle A alpha, and angle C beta. We draw two radii, to B and to D.",
         show(f2qwhy['line'], 'Call angle A alpha'), show(f2qwhy['rad'], 'We draw two radii')),
       L("The central angle on the arc through C is two alpha, because angle A intercepts that arc and is half of it. In "
         "the same way, the central angle on the other side is two beta.", show(f2qwhy['a'], 'The central angle on the arc'),
         show(f2qwhy['b'], 'In the same way')),
-      L("Together they make a full circle, so two alpha plus two beta is three hundred sixty. We want alpha plus beta, not twice it. So we divide by two, and alpha plus "
-        "beta is a hundred eighty.", show(f2qwhy['sum'], 'Together they make'))),
+      L("Together they make a full circle, so two alpha plus two beta is three hundred sixty. We want alpha plus beta, "
+        "not twice it. So we divide both sides by two, and alpha plus beta is a hundred eighty.",
+        show(f2qwhy['sum'], 'Together they make'), show(f2qwhy['half'], 'So we divide both sides by two'))),
     S('Equal chords, equal arcs',
       L("Two more facts, about chords. In the same circle, equal chords cut off equal arcs and have equal central angles. "
         "Why? Join each chord's ends to the center. Both triangles have two radii and the same chord, so they're the same "
         "triangle, and the angles at O are equal.", show(f2chord['line'], 'In the same circle'),
         show(f2chord['rad'], 'Join each chord'), show(f2chord['ang'], 'and the angles at O')),
-      L("So if angle A O B is seventy, angle C O D is seventy too, and the arcs are equal. An inscribed "
-        "angle on either arc is half of seventy, thirty-five. It works backwards too, but only "
-        "in the same circle.", show(f2chord['arcs'], 'and the arcs are equal'), show(f2chord['trap'], 'but only'))),
+      L("So if angle A O B is seventy, angle C O D is seventy too. The short arcs A B and C D are equal, and so are the "
+        "long arcs.", show(f2chord['arcs'], 'The short arcs A B and C D are equal')),
+      L("Now an inscribed angle on the short arc A B. Its vertex E is on the other side of the circle, on the long arc. "
+        "It's half of seventy, thirty-five. The same goes for the short arc C D, with the vertex on its far side. It "
+        "works backwards too, equal arcs give equal chords. Here we're comparing within this same circle.",
+        show(f2chord['ins'], 'Its vertex E'), show(f2chord['trap'], 'within this same circle'))),
     S('Perpendicular to a chord',
       L("And a line from the center that is perpendicular to a chord cuts the chord in half. A chord of fourteen gives "
         "seven and seven. And this line, O M, is also the distance of the chord from the center.", show(f2perp['line'], 'And a line from the center'), show(f2perp['perp'], 'is perpendicular'),
@@ -1481,7 +1547,7 @@ video('geo-075', 'lesson', slides=[
       L("Why? O A and O B are radii, so triangle O A B is isosceles, and its height cuts the base in half.",
         show(f2perp['why'], 'O A and O B are radii'))),
     S('One rule behind it all',
-      L("So, one main rule. An inscribed angle is half of the central angle on the same arc. From it, inscribed angles on "
+      L("So we have one main rule. An inscribed angle is half of the central angle on the same arc. From it, inscribed angles on "
         "the same arc are equal, an angle on a diameter is ninety, and opposite angles in an inscribed quadrilateral add "
         "up to a hundred eighty.", show(f2s1, 'An inscribed angle is half'), show(f2s2, 'inscribed angles on'),
         show(f2s3, 'an angle on a diameter'), show(f2s4, 'and opposite angles')),
@@ -1515,7 +1581,7 @@ _gvb = '190 30 290 400'
 f2g76t = PIN(GEO('f2g76t', [
     ('line', f2g76_q),
     ('o', [('circ', _gO[0], _gO[1], 13, 'red', 3), ('txt', 330, 335, 'O is not on the circle', 'red', 22)]),
-    ('t76', [('txt', 330, 366, '180° − 104° = 76° ✗', 'red', 22)]),
+    ('t76', [('txt', 330, 366, '180° − 104° = 76°: wrong rule', 'red', 20)]),
 ], vb=_gvb, w=360, title='The circle with center O'))
 _R(f2g76t, 230)
 f2g76 = PIN(GEO('f2g76', [
@@ -1524,19 +1590,26 @@ f2g76 = PIN(GEO('f2g76', [
            f2_seg(_gD, _gC, 'teal', 2.5, True)]),
     ('d52', [f2_ang(_gD, _gA, _gC, 30, 'teal', '52°', 50)]),
     ('quad', [('tint', [_gA, _gB, _gC, _gD], 'teal')]),
-    ('x', [('txt', 330, 393, 'x = 180° − 52° = 128°', 'teal', 22)]),
 ], vb=_gvb, w=360, title='The circle with center O'))
-_R(f2g76, 230)
+LEFT(f2g76, y=270, x=560, w=300)
+f2g76r1 = IH('f2g76r1', '$\\angle ADC = 104° \\div 2 = 52°$', size=32)
+f2g76r2 = IH('f2g76r2', '$\\angle B + \\angle D = 180°$', size=32)
+f2g76r3 = IH('f2g76r3', '$x = 180° - 52° = 128°$', size=32)
+ROWS(280, 66, f2g76r1, f2g76r2, f2g76r3)
 
 f2g76b = PIN(GEO('f2g76b', [
     ('line', f2g76_q),
-    ('ref', [('wedge', _gO[0], _gO[1], 40, 132, 20, 'orange'), ('arc', _gO[0], _gO[1], 40, 132, 20, 'orange', '256°', 62),
-             ('txt', 330, 340, '360° − 104° = 256°', 'orange', 22)]),
+    ('ref', [('wedge', _gO[0], _gO[1], 40, 132, 20, 'orange'), ('arc', _gO[0], _gO[1], 40, 132, 20, 'orange', '256°', 62)]),
     ('long', [('arcw', _gO[0], _gO[1], _gr, 132, 20, 'orange', 8)]),
     ('walls', [f2_seg(_gB, _gA, 'teal', 6), f2_seg(_gB, _gC, 'teal', 6)]),
-    ('x', [('txt', 330, 372, 'x = 256° ÷ 2 = 128°', 'teal', 22)]),
 ], vb=_gvb, w=360, title='The big central angle'))
-_R(f2g76b, 230)
+LEFT(f2g76b, y=270, x=560, w=300)
+f2g76s1 = IH('f2g76s1', '$360° - 104° = 256°$', size=32)
+f2g76s2 = IH('f2g76s2', '$x = 256° \\div 2$', size=32)
+f2g76s3 = IH('f2g76s3', '$200° \\div 2 = 100°$', size=32)
+f2g76s4 = IH('f2g76s4', '$56° \\div 2 = 28°$', size=32)
+f2g76s5 = IH('f2g76s5', '$x = 100° + 28° = 128°$', size=32)
+ROWS(280, 66, f2g76s1, f2g76s2, f2g76s3, f2g76s4, f2g76s5)
 
 # the enlarged cut-out of the two triangles sits to the right of the circle in the same figure (same labels, same tints)
 _zk = 1.5
@@ -1553,15 +1626,21 @@ f2g76c = PIN(GEO('f2g76c', [
               ('txt', _zA[0] + 14, _zA[1] - 4, 'A', 'ink', 22, True), ('txt', _zB[0] + 4, _zB[1] - 20, 'B', 'ink', 22, True),
               ('txt', _zC[0] - 4, _zC[1] - 20, 'C', 'ink', 22, True), ('txt', _zO[0] - 18, _zO[1] + 8, 'O', 'ink', 22, True),
               ('txt', _zO[0] + 10, _zO[1] - 34, '104°', 'orange', 18)]),
-    ('ab', [f2_wedge(_zA, _zO, _zB, 30, 'teal'), f2_albl(_zA, _zO, _zB, 46, 'α', 'teal', 22),
-            f2_wedge(_zB, _zA, _zO, 30, 'teal'), f2_albl(_zB, _zA, _zO, 44, 'α', 'teal', 22),
-            f2_wedge(_zB, _zO, _zC, 30, 'orange'), f2_albl(_zB, _zO, _zC, 44, 'β', 'orange', 22),
-            f2_wedge(_zC, _zB, _zO, 30, 'orange'), f2_albl(_zC, _zB, _zO, 46, 'β', 'orange', 22),
-            ('txt', 496, 322, 'x = α + β', 'ink', 24)]),
-    ('o', [('txt', 496, 354, '(180° − 2α) + (180° − 2β) = 104°', 'ink', 23)]),
-    ('x', [('txt', 496, 388, '2(α + β) = 256°,  α + β = 128°', 'teal', 23)]),
-], vb='200 36 592 368', w=540, title='Two isosceles triangles'))
-_R(f2g76c, 185)
+    ('xw', [f2_ang(_zB, _zA, _zC, 62, 'red', 'x', 80)]),
+    ('a', [f2_wedge(_zA, _zO, _zB, 30, 'teal'), f2_albl(_zA, _zO, _zB, 46, 'α', 'teal', 22),
+           f2_wedge(_zB, _zA, _zO, 30, 'teal'), f2_albl(_zB, _zA, _zO, 44, 'α', 'teal', 22)]),
+    ('b', [f2_wedge(_zB, _zO, _zC, 30, 'orange'), f2_albl(_zB, _zO, _zC, 44, 'β', 'orange', 22),
+           f2_wedge(_zC, _zB, _zO, 30, 'orange'), f2_albl(_zC, _zB, _zO, 46, 'β', 'orange', 22)]),
+], vb='200 36 592 340', w=540, title='Two isosceles triangles'))
+LEFT(f2g76c, y=270, x=410, w=600)
+f2g76t1 = IH('f2g76t1', '$x = \\alpha + \\beta$', size=30)
+f2g76t2 = IH('f2g76t2', '$(180° - 2\\alpha) + (180° - 2\\beta) = 104°$', size=30)
+f2g76t3 = IH('f2g76t3', '$360° - 2\\alpha - 2\\beta = 104°$', size=30)
+f2g76t4 = IH('f2g76t4', '$360° = 104° + 2\\alpha + 2\\beta$', size=30)
+f2g76t5 = IH('f2g76t5', '$256° = 2\\alpha + 2\\beta$', size=30)
+f2g76t6 = IH('f2g76t6', '$\\alpha + \\beta = 256° \\div 2 = 128°$', size=30)
+ROWS(270, 60, f2g76t1, f2g76t2, f2g76t3, f2g76t4, f2g76t5, f2g76t6)
+NOFIG33.update({('solve-geo33-g076', 1), ('solve-geo33-g076', 2), ('solve-geo33-g076', 3)})
 
 video('solve-geo33-g076', 'solution', qid='geo33-g076', slides=[
     S('Not an inscribed quadrilateral',
@@ -1573,51 +1652,62 @@ video('solve-geo33-g076', 'solution', qid='geo33-g076', slides=[
       L("O is the center, so it's not on the circle. So A O C B is not an inscribed quadrilateral, and we can't say that "
         "its opposite angles add up to one hundred eighty.", show(f2g76t['o'], 'O is the center')),
       L("And that's exactly the trap. One hundred eighty minus one hundred four is seventy-six, and seventy-six is in the "
-        "choices. Cross it out. You can see it in the figure too. The angle at B is much bigger than ninety, so it can't be "
-        "seventy-six.", show(f2g76t['t76'], 'One hundred eighty minus one hundred four'),
-        mk('cross', 'choice 3', 'Cross it out')),
+        "choices. But that subtraction uses a rule whose conditions aren't met here. So let's find the angle correctly.",
+        show(f2g76t['t76'], 'One hundred eighty minus one hundred four')),
       L("We'll solve it in two ways, and then I'll show you one more route.")),
     SM('Method 1 · The math way', 'An inscribed angle on the same arc',
-      L("[pause] Let's start with the main rule. An inscribed angle is half of the central angle on the same arc. The one "
+      L("[pause] Let's start with the math way, with the main rule. An inscribed angle is half of the central angle on the same arc. The one "
         "hundred four at O intercepts the short arc A C, the arc that B sits on. So let's draw an inscribed angle on that "
         "same arc. We take a point D on the other side, on the long arc, and join it to A and to C.",
         show(f2g76['line'], 'the central angle on the same arc'), show(f2g76['d'], 'We take a point D')),
       L("Angle A D C intercepts the same arc as the one hundred four. So it's half of it. Half of one hundred four is "
-        "fifty-two.", show(f2g76['d52'], 'So it\'s half of it')),
+        "fifty-two.", show(f2g76['d52'], 'So it\'s half of it'), show(f2g76r1, 'Half of one hundred four')),
       L("Now look at A B C D. All four corners are on the circle, so this time it really is an inscribed quadrilateral. "
-        "Angles B and D are opposite, so they add up to one hundred eighty.", show(f2g76['quad'], 'Now look at A B C D')),
+        "Angles B and D are opposite, so they add up to one hundred eighty.", show(f2g76['quad'], 'Now look at A B C D'),
+        show(f2g76r2, 'so they add up to')),
       L("So x is one hundred eighty minus fifty-two, which is one hundred twenty-eight. Choice number two is our answer.",
-        show(f2g76['x'], 'So x is one hundred eighty'), mk('tick', 'choice 2', 'Choice number two is our answer')),
-      L("In the exam you'd mark it and move on. Here, let's see where the other choices come from. Fifty-two is angle D, "
-        "not angle B. And one hundred four is the central angle itself.", mk('cross', 'choice 1', 'Fifty-two is angle D'),
+        show(f2g76r3, 'So x is one hundred eighty'), mk('tick', 'choice 2', 'Choice number two is our answer')),
+      L("In the exam you'd mark it and move on. Here, let's see where the other choices come from. Seventy-six came from "
+        "treating A O C B as inscribed, and it isn't. Fifty-two is angle D, not angle B. And one hundred four is the "
+        "central angle itself.", mk('cross', 'choice 3', 'Seventy-six came from'), mk('cross', 'choice 1', 'Fifty-two is angle D'),
         mk('cross', 'choice 4', 'one hundred four is the central angle itself'))),
     SM('Method 2 · The math way: the big central angle', 'The big central angle',
-      L("[pause] Now another way, with the big central angle. It's not hard to understand, but some students find it hard to see.",
-        show(f2g76b['line'], 'Now another way')),
+      L("[pause] Now let's solve it a second way. It's the math way again, this time with the big central angle.",
+        show(f2g76b['line'], "Now let's solve it a second way")),
       L("The angle at O is one hundred four. The angle that completes it to a full circle, three hundred sixty, is three "
-        "hundred sixty minus one hundred four. That's two hundred fifty-six.", show(f2g76b['ref'], 'The angle that completes it')),
+        "hundred sixty minus one hundred four. That's two hundred fifty-six.", show(f2g76b['ref'], 'The angle that completes it'),
+        show(f2g76s1, 'hundred sixty minus one hundred four')),
       L("This two hundred fifty-six is also a central angle. It's very big and wide open, but its vertex is at the center, "
         "and it's between two radii. It intercepts the long arc, all the way around from A to C.",
         show(f2g76b['long'], 'It intercepts the long arc')),
       L("Now stand at B. The chords B A and B C are your walls. What part of the circle do you see? The long arc, the same "
         "one. So angle A B C is the inscribed angle on the long arc.", show(f2g76b['walls'], 'Now stand at B')),
-      L("So it's half of two hundred fifty-six, because an inscribed angle is half of the central angle on the same arc. Half of two hundred is one hundred, and half of fifty-six is twenty-eight. "
-        "Together, one hundred twenty-eight. Choice number two again.", show(f2g76b['x'], "So it's half of two hundred"),
-        mk('tick', 'choice 2', 'Choice number two again'))),
+      L("So it's half of two hundred fifty-six, because an inscribed angle is half of the central angle on the same arc. "
+        "Let's split it into easy parts. Half of two hundred is one hundred. Half of fifty-six is twenty-eight. Together, "
+        "one hundred twenty-eight. Choice number two again.", show(f2g76s2, "So it's half of two hundred"),
+        show(f2g76s3, 'Half of two hundred is one hundred'), show(f2g76s4, 'Half of fifty-six'),
+        show(f2g76s5, 'Together, one hundred twenty-eight'), mk('tick', 'choice 2', 'Choice number two again'))),
     SM('Method 3 · The math way: radii', 'Two isosceles triangles',
-      L("[pause] And one more route, step by step, just so you've seen it. Draw the radius O B. Now O A, O B and O C are all "
+      L("[pause] And one more route, the math way with radii, step by step. Draw the radius O B. Now O A, O B and O C are all "
         "radii, so they're equal.", show(f2g76c['line'], 'And one more route'), show(f2g76c['ob'], 'Draw the radius O B')),
-      L("So we get two isosceles triangles, A O B and B O C. Here they are, bigger. In triangle A O B, the base angles are "
-        "equal. Call them alpha. In triangle B O C, call them beta. Angle A B C is made of both, so x is alpha plus beta.",
+      L("So we get two isosceles triangles, A O B and B O C. Here they are, bigger. Our x is the whole angle at B, angle A "
+        "B C. In triangle A O B, the base angles are equal. Call them alpha. In triangle B O C, call them beta. Angle A B C "
+        "is made of both, so x is alpha plus beta.",
         show(f2g76c['tri'], 'So we get two isosceles'), show(f2g76c['zoom'], 'Here they are, bigger'),
-        show(f2g76c['ab'], 'In triangle A O B, the base')),
+        show(f2g76c['xw'], 'Our x is the whole angle at B'), show(f2g76c['a'], 'Call them alpha'),
+        show(f2g76c['b'], 'call them beta'), show(f2g76t1, 'so x is alpha plus beta')),
       L("The angles of a triangle add up to one hundred eighty. So the angle at O in the first triangle is one hundred "
         "eighty minus two alpha, and in the second, one hundred eighty minus two beta. Together, they make the one hundred "
-        "four.", show(f2g76c['o'], 'Together, they make')),
-      L("So three hundred sixty, minus two alpha, minus two beta, is one hundred four. To get the alphas and betas alone, we take them to one side. Then two alpha plus two beta is "
-        "three hundred sixty minus one hundred four, which is two hundred fifty-six. And x is alpha plus beta, so it's half of that, "
-        "one hundred twenty-eight. Choice number two once more. [pause] Okay. I'll see you in the next question.",
-        show(f2g76c['x'], 'Then two alpha plus two beta'), mk('tick', 'choice 2', 'Choice number two once more'))),
+        "four.", show(f2g76t2, 'Together, they make')),
+      L("So three hundred sixty, minus two alpha, minus two beta, is one hundred four. We want the alphas and betas "
+        "alone, without the minus signs. So let's add two alpha and two beta to both sides. Three hundred sixty is equal to "
+        "one hundred four, plus two alpha, plus two beta.",
+        show(f2g76t3, 'So three hundred sixty, minus two alpha'), show(f2g76t4, 'Three hundred sixty is equal to')),
+      L("Now subtract one hundred four from both sides. Two hundred fifty-six is equal to two alpha plus two beta. And x "
+        "is alpha plus beta, so we divide both sides by two. That's one hundred twenty-eight. Choice number two once more. "
+        "[pause] Okay. I'll see you in the next question.",
+        show(f2g76t5, 'Two hundred fifty-six is equal to'), show(f2g76t6, 'so we divide both sides by two'),
+        mk('tick', 'choice 2', 'Choice number two once more'))),
 ])
 
 
@@ -1638,7 +1728,6 @@ _k = 1.5
 _cM = (490.0, 256.0); _cO = (_cM[0], _cM[1] - 65.899 * _k); _cB = (_cM[0] + 87.451 * _k, _cM[1])
 f2q1 = PIN(GEO('f2q1', [
     ('line', f2q1_q),
-    ('around', [('arcw', _qO[0], _qO[1], _qr, 0, 359.9, 'teal', 6), ('txt', 440, 70, 'C = 2πr', 'teal', 26)]),
     ('om', [f2_seg(_qO, _qM, 'teal', 2.5, True), f2_right(_qM, _qO, _qB, 10), ('txt', 307, 234, 'M', 'ink', 20, True),
             ('txt', 332, 208, '6', 'teal', 22)]),
     ('half', [('tick', _qA[0], _qA[1], _qM[0], _qM[1], 1), ('tick', _qM[0], _qM[1], _qB[0], _qB[1], 1),
@@ -1650,21 +1739,45 @@ f2q1 = PIN(GEO('f2q1', [
              ('txt', _cM[0] - 14, _cM[1] + 14, 'M', 'ink', 20, True), ('txt', _cB[0] + 14, _cB[1] + 6, 'B', 'ink', 20, True),
              ('txt', _cM[0] - 14, _cM[1] - 43, '6', 'teal', 22), ('txt', _cM[0] + 57, _cM[1] + 18, '8', 'teal', 22),
              ('txt', _cM[0] + 68, _cM[1] - 54, 'r', 'orange', 24, True)]),
-    ('pyth', [('txt', 440, 330, 'r² = 6² + 8² = 100,  r = 10', 'orange', 24)]),
-    ('c', [('txt', 440, 366, 'C = 2π · 10 = 20π', 'red', 26)]),
-], vb='200 40 470 345', w=540, title='Chord AB of the circle with center O'))
-_R(f2q1, 230)
+    ('around', [('arcw', _qO[0], _qO[1], _qr, 0, 359.9, 'teal', 6)]),
+    ('notd', [('txt', 320, 300, '16: not a diameter', 'red', 20)]),
+], vb='200 40 470 280', w=540, title='Chord AB of the circle with center O'))
+LEFT(f2q1, y=270, x=410, w=600)
+NOFIG33.add(('solve-q-r26-t33-01', 1))
+# slide 1: the circumference formula, taught at its first use (rows in the right column, next to the question figure)
+f2q1c1 = IH('f2q1c1', '$C = \\pi \\times d$', size=32)
+f2q1c2 = IH('f2q1c2', '$\\pi:\\ \\text{a bit more than } 3$', size=30)
+f2q1c3 = IH('f2q1c3', '$d = 2r,\\ \\ C = 2\\pi r$', size=32)
+f2q1c4 = IH('f2q1c4', '$d = 10,\\ \\ C = 10\\pi$', size=30)
+f2q1c5 = IH('f2q1c5', '$r = 3,\\ \\ d = 6,\\ \\ C = 6\\pi$', size=30)
+ROWS(290, 62, f2q1c2, f2q1c1, f2q1c3, f2q1c4, f2q1c5)
+# slide 2: the working, one row per spoken step
+f2q1p1 = IH('f2q1p1', '$r^2 = 6^2 + 8^2$', size=32)
+f2q1p2 = IH('f2q1p2', '$6^2 = 36,\\ \\ 8^2 = 64$', size=32)
+f2q1p3 = IH('f2q1p3', '$r^2 = 36 + 64 = 100$', size=32)
+f2q1p4 = IH('f2q1p4', '$r = 10$', size=32)
+f2q1p5 = IH('f2q1p5', '$C = 2\\pi \\times 10 = 20\\pi$', size=32)
+ROWS(290, 66, f2q1p1, f2q1p2, f2q1p3, f2q1p4, f2q1p5)
+f2q1tc = I('f2q1tc', 'half the chord, the distance, the radius: a right triangle', size=26)
+_R(f2q1tc, 640)
 
 video('solve-q-r26-t33-01', 'solution', qid='q-r26-t33-01', slides=[
-    S('Draw the distance',
+    S('The circumference',
       L("Chord A B of a circle with center O is sixteen centimeters long. The distance from O to A B is six centimeters. "
         "What is the circumference of the circle, in centimeters?", pt('stem', 'Chord A B of a circle', 'hl', 8.0),
         voice='calm', pause=0.5),
-      L("They ask for the circumference. That's the length all the way around the circle. Its formula is two times pi "
-        "times r, where r is the radius. Pi is a fixed number, a bit more than three, and there's a lesson on it soon. So "
-        "really, they're asking for the radius.", show(f2q1['line'], 'They ask for the circumference'),
-        show(f2q1['around'], 'the length all the way around')),
-      L("[short pause] We have a chord and its distance from the center, so one helper line will connect them."),
+      L("They ask for the circumference. That's the length all the way around the circle, the edge. It's a length, not "
+        "the area inside.", pt('stem', 'They ask for the circumference')),
+      L("Here's how we find it. If we go once around any circle, the length is a bit more than three times its diameter. "
+        "That fixed number is called pi. It's the same for every circle, a little more than three. So the circumference is "
+        "pi times the diameter.", show(f2q1c1, 'So the circumference is'), show(f2q1c2, 'That fixed number is called pi')),
+      L("The diameter is two radii, two r. So the circumference is also two pi r. For example, a circle with diameter ten "
+        "has a circumference of ten pi. A circle with radius three has diameter six, so its circumference is six pi. So "
+        "really, they're asking for the radius.", show(f2q1c3, 'So the circumference is also two pi r'),
+        show(f2q1c4, 'a circle with diameter ten'), show(f2q1c5, 'A circle with radius three'))),
+    S('Draw the distance',
+      L("[short pause] Here's the figure again, bigger. We have a chord and its distance from the center, so one helper "
+        "line will connect them.", show(f2q1['line'], "Here's the figure again")),
       L("[short pause] First, what is the distance from a point to a line? It's the shortest way, and that's the "
         "perpendicular. So from O we draw a line down to the chord, at ninety degrees. Call its foot M. O M is six.",
         show(f2q1['om'], 'So from O we draw a line')),
@@ -1674,16 +1787,26 @@ video('solve-q-r26-t33-01', 'solution', qid='q-r26-t33-01', slides=[
         show(f2q1['ob'], 'We draw it from the center O')),
       L("[short pause] Look at triangle O M B. It has a right angle at M, its legs are six and eight, and the radius is its "
         "hypotenuse. Here it is, bigger.", show(f2q1['tri'], 'Look at triangle O M B')),
-      L("By Pythagoras, r squared is six squared plus eight squared. Thirty-six plus sixty-four is one hundred, so r squared "
-        "is one hundred, and r is ten. You can also spot the triple. Six, eight, ten is three, four, five, doubled.",
-        show(f2q1['pyth'], 'By Pythagoras')),
-      L("So the circumference is two pi r, and r is ten, so it's two pi times ten, which is twenty pi. Choice number three is our answer.",
-        show(f2q1['c'], 'So the circumference is'), mk('tick', 'choice 3', 'Choice number three is our answer')),
+      L("By Pythagoras, r squared is six squared plus eight squared. Six squared is thirty-six. Eight squared is "
+        "sixty-four. Thirty-six plus sixty-four is one hundred, so r squared is one hundred.",
+        show(f2q1p1, 'By Pythagoras'), show(f2q1p2, 'Six squared is thirty-six'),
+        show(f2q1p3, 'Thirty-six plus sixty-four')),
+      L("A length is positive, so r is ten. You can also spot the triple. Six, eight, ten is three, four, five, doubled.",
+        show(f2q1p4, 'so r is ten')),
+      L("The circumference is two pi r, and r is ten. So it's two pi times ten, which is twenty pi. Choice number three is "
+        "our answer.", show(f2q1['around'], 'The circumference is two pi r'), show(f2q1p5, 'So it\'s two pi times ten'),
+        mk('tick', 'choice 3', 'Choice number three is our answer')),
       L("In the exam you'd mark it and move on. Here, let's see where the other choices come from. One hundred pi is pi r "
-        "squared. That's the area, the inside of the circle, and we'll meet it in that lesson too. Ten pi is what you get if you take ten as the diameter. And sixteen pi "
-        "comes from taking the chord as a diameter. But this chord doesn't pass through the center, so it's not a diameter. "
-        "[pause] Okay. I'll see you in the next question.", mk('cross', 'choice 4', 'One hundred pi is pi r'),
-        mk('cross', 'choice 2', 'Ten pi is what you get'), mk('cross', 'choice 1', 'And sixteen pi comes'))),
+        "squared. That's the formula for the area, the inside of the circle, and we'll learn it in the area lesson. This "
+        "question asks for the length around, not the area inside.", mk('cross', 'choice 4', 'One hundred pi is pi r')),
+      L("Ten pi is what you get if you take ten as the diameter. And sixteen pi comes from taking the chord A B as a "
+        "diameter. But this chord doesn't pass through the center, so it's not a diameter.",
+        mk('cross', 'choice 2', 'Ten pi is what you get'), show(f2q1['notd'], 'And sixteen pi comes'),
+        mk('cross', 'choice 1', 'And sixteen pi comes')),
+      L("Here's what to take from this question. When you're given a chord and its distance from the center, draw that "
+        "distance and the radius to the end of the chord. Half the chord, the distance and the radius make a right "
+        "triangle, and the radius is its hypotenuse. So any two of them give you the third. [pause] Okay. I'll see you in "
+        "the next question.", show(f2q1tc, 'Half the chord, the distance and the radius'))),
 ])
 
 # =================================================================================================================
@@ -1757,12 +1880,15 @@ f3t2 = PIN(GEO('f3t2', [
     ('line', [('circ', f3_O2[0], f3_O2[1], f3_r2), ('dot', f3_O2[0], f3_O2[1], 'O', -18, 4)] + f3_tl2
              + [('dot', *f3_D2), ('txt', f3_D2[0] + 16, f3_D2[1] - 22, 'D', 'ink', 26, True)]),
     ('rad', [('seg', f3_O2[0], f3_O2[1], f3_D2[0], f3_D2[1], 'teal', 3, True), ('right', f3_D2[0], f3_D2[1], 150, 240, 16, 'teal')]),
+    ('why', [('seg', f3_O2[0], f3_O2[1], *f3_along(f3_D2, 150, 95), 'red', 2.5, True), ('dot', *f3_along(f3_D2, 150, 95)),
+             ('txt', f3_along(f3_D2, 150, 95)[0] - 14, f3_along(f3_D2, 150, 95)[1] - 22, 'longer', 'red', 20)]),
     ('more', f3_tl2b + f3_tl2c + [('seg', f3_O2[0], f3_O2[1], f3_D2b[0], f3_D2b[1], 'teal', 3, True), ('right', f3_D2b[0], f3_D2b[1], 20, 290, 16, 'teal'),
               ('seg', f3_O2[0], f3_O2[1], f3_D2c[0], f3_D2c[1], 'teal', 3, True), ('right', f3_D2c[0], f3_D2c[1], 30, 120, 16, 'teal'),
               ('dot', *f3_D2b), ('dot', *f3_D2c)]),
 ], vb='60 0 440 380', w=520, col=0, title='The radius to the point of tangency is perpendicular to the tangent'))
 f3k2 = I('f3k2', 'Radius to the point of tangency $\\perp$ tangent', size=28, col=1)
 f3k3 = I('f3k3', 'See a tangent $\\to$ draw that radius', size=28, col=1)
+f3kw = I('f3kw', 'D: the point of the tangent closest to O', size=26, col=1)
 
 # ---- in numbers: r = 5, OP = 13 -> PD = 12 (16 px per unit)
 f3_O3 = (170, 190); f3_u = 16
@@ -1783,7 +1909,9 @@ f3t3 = PIN(GEO('f3t3', [
     ('pd', [('txt', f3_mPD[0] + 14, f3_mPD[1] - 22, '12', 'orange', 28)]),
 ], vb='60 70 400 215', w=600, col=0, title='A tangent from P, with the radius to D'))
 f3k4 = IH('f3k4', '$5^2+PD^2=13^2$', size=30, col=1)
-f3k5 = IH('f3k5', '$25+PD^2=169$, $\\ PD^2=144$, $\\ PD=12$', size=30, col=1)
+f3k5 = IH('f3k5', '$25+PD^2=169$', size=30, col=1)
+f3k5b = IH('f3k5b', '$PD^2=169-25=144$', size=30, col=1)
+f3k5c = IH('f3k5c', '$PD=12$', size=30, col=1)
 f3k6 = I('f3k6', 'The triple $5,\\ 12,\\ 13$', size=28, col=1)
 
 # ---- two tangents from P: equal, and a kite
@@ -1806,31 +1934,49 @@ f3t4 = PIN(GEO('f3t4', [
 ], vb='60 30 400 310', w=560, col=0, title='Two tangents from P'))
 f3k7 = I('f3k7', '$PD=PE$', size=32, col=1)
 f3k8 = I('f3k8', '$PD=9\\ \\to\\ PE=9$', size=30, col=1)
+# 2026-10-18 batch C: the 9 / 9 case on its own clean figure (the 5 / 12 figure keeps its own labels)
+f3_O5 = (150, 150); f3_P5 = (390, 150); f3_r5 = 70
+f3_th5 = _f3m.degrees(_f3m.acos(f3_r5 / float(f3_P5[0] - f3_O5[0])))
+f3_D5, f3_E5 = gpt(f3_O5[0], f3_O5[1], f3_r5, f3_th5), gpt(f3_O5[0], f3_O5[1], f3_r5, -f3_th5)
+f3t5 = PIN(GEO('f3t5', [
+    ('line', [('circ', f3_O5[0], f3_O5[1], f3_r5), ('dot', f3_O5[0], f3_O5[1], 'O', -18, 4), ('dot', *f3_P5),
+              ('txt', f3_P5[0] + 20, f3_P5[1], 'P', 'ink', 24, True), ('seg', *f3_P5, *f3_D5, 'ink', 3), ('seg', *f3_P5, *f3_E5, 'ink', 3),
+              ('dot', *f3_D5), ('dot', *f3_E5), ('txt', f3_D5[0] - 2, f3_D5[1] - 22, 'D', 'ink', 24, True),
+              ('txt', f3_E5[0] - 2, f3_E5[1] + 24, 'E', 'ink', 24, True),
+              ('txt', (f3_P5[0] + f3_D5[0]) / 2 + 10, (f3_P5[1] + f3_D5[1]) / 2 - 20, '9', 'teal', 26)]),
+    ('pe', [('txt', (f3_P5[0] + f3_E5[0]) / 2 + 10, (f3_P5[1] + f3_E5[1]) / 2 + 22, '9', 'orange', 26),
+            ('tick', *f3_P5, *f3_D5, 2), ('tick', *f3_P5, *f3_E5, 2)]),
+], vb='60 60 380 180', w=420, col=1, title='Another circle: tangent segments of 9 from P'))
 f3k9 = I('f3k9', '1. Radius to the point of tangency $\\perp$ tangent: draw it', size=30, col=0)
-f3k10 = I('f3k10', '2. Two tangents from one point are equal: a kite', size=30, col=0)
+f3k10 = I('f3k10', '2. From one outside point, the two tangent segments are equal: a kite', size=30, col=0)
 
 video('geo-077', 'lesson', slides=[
     S('Tangents',
-      L("Tangents to a circle. It's a short lesson, but its two rules come up in the exam all the time.")),
+      L("Now let's learn about tangents to a circle. It's a short lesson, with two rules that come up a lot.")),
     S('Touches at one point',
-      L("A tangent is a straight line that just brushes past the circle. It touches the circle at one point only.",
-        show(f3t1['line'], 'A tangent is a straight line'), show(f3t1['tan'], 'It touches the circle at one point'),
+      L("A tangent is a straight line that touches the circle at one point only. It doesn't go inside the circle.",
+        show(f3t1['line'], 'A tangent is a straight line'), show(f3t1['tan'], 'that touches the circle at one point'),
         show(f3k1, 'at one point only')),
       L("If the line were a little further in, it would go through the circle and cut it at two points. Then the part "
         "inside the circle would be a chord.", show(f3t1['sec'], 'a little further in'), pt('f3t1_sec', 'Then the part inside')),
       L("And if the line passed outside, it wouldn't touch the circle at all. It's just a line.",
         show(f3t1['out'], 'And if the line passed outside')),
-      L("So our tangent only brushes the circle, at one point. This point is called the point of tangency.",
+      L("So our tangent touches the circle at one point only. This point is called the point of tangency.",
         show(f3t1['pt'], 'This point is called'))),
     S('Radius ⊥ tangent',
       L("Now a very, very important rule. The radius is perpendicular to the tangent at the point of tangency.",
         show(f3t2['line'], 'Now a very, very important rule')),
       L("Here the tangent touches the circle at D. When I draw a radius to the point of tangency, from O to D, I get a "
         "ninety-degree angle between the radius and the tangent.", show(f3t2['rad'], 'from O to D'), show(f3k2, 'a ninety-degree angle')),
+      L("Why? The tangent touches the circle only at D. Every other point of the tangent is outside the circle, so it's "
+        "farther from O than the radius. So D is the point of the tangent that is closest to O. And we know the shortest way "
+        "from a point to a line is the perpendicular. So O D is perpendicular to the tangent.",
+        show(f3t2['why'], 'Every other point of the tangent'), show(f3kw, 'So D is the point of the tangent')),
       L("It doesn't matter where the tangent touches. Here, and here, the radius to the point of tangency is always "
         "perpendicular to the tangent.", show(f3t2['more'], "It doesn't matter where")),
-      L("This rule is used very often in the exam. So every time you see a circle question with tangents, don't think too "
-        "much. Draw the radius to the point of tangency, and you get a right angle.", show(f3k3, 'Draw the radius to the point'))),
+      L("This rule is used very often. A tangent gives us a right angle when we join O to its touching point. So every "
+        "time you see a circle question with tangents, draw the radius to the point of tangency.",
+        show(f3k3, 'draw the radius to the point'))),
     S('A tangent in numbers',
       L("Let's see it in numbers. The radius of this circle is five, and P is thirteen away from the center. P D is a tangent. "
         "How long is it?", show(f3t3['line'], "Let's see it in numbers")),
@@ -1839,28 +1985,34 @@ video('geo-077', 'lesson', slides=[
       L("So O D P is a right triangle, and thirteen is its hypotenuse, because it's across from the right angle. By "
         "Pythagoras, five squared plus P D squared is thirteen squared.", show(f3t3['tri'], 'So O D P is a right triangle'),
         show(f3k4, 'By Pythagoras')),
-      L("Twenty-five plus P D squared is a hundred sixty-nine. To get P D squared alone, we take twenty-five off both sides. So P D squared is a hundred sixty-nine minus twenty-five, "
-        "which is a hundred forty-four, and P D is twelve.", show(f3k5, 'Twenty-five plus'), show(f3t3['pd'], 'and P D is twelve')),
-      L("Or, faster, five and thirteen should remind you of the triple five, twelve, thirteen.", show(f3k6, 'the triple five'))),
+      L("Twenty-five plus P D squared is a hundred sixty-nine. To get P D squared alone, we take twenty-five off both "
+        "sides. So P D squared is a hundred sixty-nine minus twenty-five, which is a hundred forty-four. A length is "
+        "positive, so P D is twelve.", show(f3k5, 'Twenty-five plus'), show(f3k5b, 'which is a hundred forty-four'),
+        show(f3k5c, 'so P D is twelve'), show(f3t3['pd'], 'so P D is twelve')),
+      L("We can also spot it with a triple. Five and thirteen should remind you of the triple five, twelve, thirteen.",
+        show(f3k6, 'the triple five'))),
     S('Two tangents from one point',
       L("From the same point P, we can draw a second tangent to the circle, on the other side. It touches the circle at E.",
         show(f3t4['line'], 'From the same point P')),
-      L("The second rule. Two tangents that come out of the same point are equal to each other. Why? Look at the two right "
+      L("Now let's look at the second rule. From the same point outside the circle, the two tangent segments are equal. Here they're P "
+        "D and P E. Each one starts at P and stops at its touching point. Why are they equal? Look at the two right "
         "triangles. The first one is O D P.", show(f3t4['tri1'], 'Look at the two right triangles')),
       L("The second one is O E P. Its radius O E is also five, and it has the same hypotenuse, O P, thirteen. So Pythagoras "
         "gives the same thing, and P E is twelve too.", show(f3t4['tri2'], 'The second one is O E P'),
         show(f3t4['pe'], 'and P E is twelve too'), show(f3k7, 'and P E is twelve too')),
-      L("So if one tangent from P is nine, the other tangent from P is nine too, with no calculation at all.",
-        show(f3k8, 'So if one tangent from P is nine')),
-      L("Now look at the whole shape, O D P E. The two radii are equal, and the two tangents are equal. Two pairs of equal "
+      L("Now take another circle, with another point P outside it. Say one tangent segment from P is nine. Then the other "
+        "tangent segment from P is nine too, with no calculation at all.",
+        show(f3t5['line'], 'Say one tangent segment from P is nine'), show(f3t5['pe'], 'is nine too'),
+        show(f3k8, 'with no calculation')),
+      L("Now back to our first figure. Look at the whole shape, O D P E. The two radii are equal, and the two tangents are equal. Two pairs of equal "
         "sides next to each other, so it's a kite, five, five, twelve, twelve.", show(f3t4['kite'], 'Two pairs of equal sides')),
       L("Remember from the kite lesson, a kite has a line of symmetry. Here it's O P. So O P cuts the angle at P into two "
         "equal halves.", show(f3t4['sym'], 'Here it\'s O P'))),
     S('Two rules',
       L("So we have two important rules for tangents. One, the radius is perpendicular to the tangent at the point of "
         "tangency. So when you see a tangent, draw the radius, and you have ninety degrees.", show(f3k9, 'One, the radius')),
-      L("Two, two tangents from the same point are always equal. Now let's solve a sample question. [pause] Okay. I'll see "
-        "you in the next video.", show(f3k10, 'Two, two tangents'))),
+      L("Two, from the same point outside the circle, the two tangent segments are always equal. Now let's solve a "
+        "sample question. [pause] Okay. I'll see you in the next video.", show(f3k10, 'Two, from the same point'))),
 ])
 
 # ================================================================================================ geo33-g078
@@ -1885,59 +2037,86 @@ f3_rad78 = [('seg', *f3_gO, *f3_gD, 'teal', 3, True), ('seg', *f3_gO, *f3_gE, 't
 f3g78 = PIN(GEO('f3g78', [
     ('line', f3_q78a),
     ('rad', f3_rad78),
-    ('quad', [('tint', [f3_gO, f3_gD, f3_gP, f3_gE], 'teal'), ('txt', 320, 345, '90° + 90° + 68° + ∠O = 360°', 'ink', 22)]),
-    ('o112', [f3_ang(f3_gO, f3_gD, f3_gE, 30, 'orange', '112°', 58), ('txt', 320, 377, '∠O = 180° − 68° = 112°', 'orange', 22)]),
+    ('quad', [('tint', [f3_gO, f3_gD, f3_gP, f3_gE], 'teal')]),
+    ('o112', [f3_ang(f3_gO, f3_gD, f3_gE, 30, 'orange', '112°', 58)]),
     ('arc', [('arcw', f3_gO[0], f3_gO[1], 109.5, 296, 64, 'teal', 8)]),
-    ('x56', [f3_ang(f3_gA, f3_gD, f3_gE, 30, 'teal', '56°', 80), ('txt', 320, 409, 'x = 112° ÷ 2 = 56°', 'teal', 24)]),
-], vb='95 40 450 385', w=480, title='Two tangents from P, and the point A on the circle'))
+    ('x56', [f3_ang(f3_gA, f3_gD, f3_gE, 30, 'teal', '56°', 80)]),
+], vb='95 40 450 290', w=480, title='Two tangents from P, and the point A on the circle'))
 f3g78b = PIN(GEO('f3g78b', [
     ('line', f3_q78 + [f3_ang(f3_gP, f3_gD, f3_gE, 44, 'ink'), ('txt', 498, 146, '68°', 'ink', 22), ('seg', *f3_gO, *f3_gD, 'ink', 2.5), ('seg', *f3_gO, *f3_gE, 'ink', 2.5),
                        f3_rt(f3_gD, f3_gO, f3_gP, 13, 'ink'), f3_rt(f3_gE, f3_gO, f3_gP, 13, 'ink')]),
     ('op', [('seg', *f3_gO, *f3_gP, 'teal', 3, True)]),
     ('half', [f3_ang(f3_gP, f3_gD, f3_gO, 64, 'teal', '34°', 118), f3_ang(f3_gP, f3_gO, f3_gE, 70, 'teal', '34°', 118)]),
-    ('tri', [('tint', [f3_gO, f3_gD, f3_gP], 'orange'), ('txt', 320, 345, '∠DOP = 180° − 90° − 34° = 56°', 'orange', 22)]),
+    ('tri', [('tint', [f3_gO, f3_gD, f3_gP], 'orange')]),
     ('o56', [f3_ang(f3_gO, f3_gD, f3_gP, 30, 'orange', '56°', 56)]),
-    ('same', [('txt', 320, 377, '∠DOP = half of ∠DOE = x', 'ink', 22), ('txt', 320, 409, 'x = 56°', 'teal', 24)]),
-], vb='95 40 450 385', w=480, title='The line OP cuts the kite in half'))
-_R(f3g78, 200); _R(f3g78b, 200)
+], vb='95 40 450 290', w=480, title='The line OP cuts the kite in half'))
+# 2026-10-18 batch C: the question slide first; then each method on a slide with our enlarged copy (no question figure)
+# and the working in readable rows, each at its clause
+LEFT(f3g78, y=280, x=420, w=560); LEFT(f3g78b, y=280, x=420, w=560)
+NOFIG33.update({('solve-geo33-g078', 1), ('solve-geo33-g078', 2)})
+f3g78r1 = IH('f3g78r1', '$90° + 90° + 68° + \\angle O = 360°$', size=30)
+f3g78r2 = IH('f3g78r2', '$90° + 90° = 180°$', size=30)
+f3g78r3 = IH('f3g78r3', '$68° + \\angle O = 180°$', size=30)
+f3g78r4 = IH('f3g78r4', '$\\angle O = 180° - 68° = 112°$', size=30)
+f3g78r5 = IH('f3g78r5', '$x = 112° \\div 2 = 56°$', size=30)
+ROWS(280, 64, f3g78r1, f3g78r2, f3g78r3, f3g78r4, f3g78r5)
+f3g78tc = IH('f3g78tc', '$\\angle P + \\angle DOE = 180°$', size=30)
+_R(f3g78tc, 620)
+f3g78s1 = IH('f3g78s1', '$68° \\div 2 = 34°$', size=30)
+f3g78s2 = IH('f3g78s2', '$180° - 90° = 90°$', size=30)
+f3g78s3 = IH('f3g78s3', '$\\angle DOP = 90° - 34° = 56°$', size=30)
+f3g78s4 = IH('f3g78s4', '$\\angle DOP = \\frac{1}{2}\\angle DOE = x$', size=30)
+f3g78s5 = IH('f3g78s5', '$x = 56°$', size=30)
+ROWS(280, 64, f3g78s1, f3g78s2, f3g78s3, f3g78s4, f3g78s5)
 video('solve-geo33-g078', 'solution', qid='geo33-g078', slides=[
-    SM('Method 1 · The math way', 'Radii, then half',
+    S('The question',
       L("P D and P E are tangent to the circle at D and E. A lies on the major arc D E. Given: angle D P E is sixty-eight "
         "degrees. What is angle D A E?", pt('stem', 'P D and P E are tangent', 'hl', 8.0), voice='calm', pause=0.5),
       L("We know one angle, outside the circle, and we want an angle at A, on the circle. [short pause] We'll go from P to "
-        "the center, and from the center to A. There's also a second way, with symmetry.", show(f3g78['line'], 'We know one angle')),
-      L("[short pause] First of all, I see a circle question with tangents, so I draw radii to the points of tangency, O D "
-        "and O E. The radius is perpendicular to the tangent, so I get ninety degrees, twice.",
-        show(f3g78['rad'], 'so I draw radii')),
-      L("Always, automatically. It should be a reflex. You see tangents to a circle, you draw the radii, and you have "
-        "ninety degrees.", pt('f3g78_rad', 'Always, automatically')),
+        "the center, and from the center to A. There's also a second way, with symmetry.", pt('fig: A', 'We know one angle')),
+      sb='The question'),
+    SM('Method 1 · The math way', 'Radii, then half',
+      L("[short pause] Let's start with the math way. Here's the figure again, bigger. We have tangents to a circle, so "
+        "the first thing we do is draw the radii to the points of tangency, O D and O E. The radius is perpendicular to the "
+        "tangent, so we get ninety degrees, twice. Make that a habit. Tangents, then radii, then right angles.",
+        show(f3g78['line'], "Here's the figure again"), show(f3g78['rad'], 'draw the radii to the points')),
       L("Now I have a quadrilateral, O D P E, with the center as one of its corners. The angles of a quadrilateral add up to "
-        "three hundred sixty.", show(f3g78['quad'], 'Now I have a quadrilateral')),
+        "three hundred sixty.", show(f3g78['quad'], 'Now I have a quadrilateral'),
+        show(f3g78r1, 'add up to three hundred sixty')),
       L("The two right angles already give a hundred eighty. So the other two angles need another hundred eighty. "
-        "Sixty-eight plus the angle at O is a hundred eighty, so the central angle is a hundred eighty minus sixty-eight, "
-        "which is a hundred twelve.", show(f3g78['o112'], 'so the central angle is')),
+        "Sixty-eight plus the angle at O is a hundred eighty. So the central angle is a hundred eighty minus sixty-eight, "
+        "which is a hundred twelve.", show(f3g78r2, 'The two right angles already give'),
+        show(f3g78r3, 'Sixty-eight plus the angle at O'), show(f3g78r4, 'So the central angle is'),
+        show(f3g78['o112'], 'which is a hundred twelve')),
       L("Careful, a hundred twelve is in the choices, but it's the central angle, not the angle we want. We're not done yet.",
         mk('cross', 'choice 1', "it's the central angle")),
       L("Now it's very easy. Stand at A and look between the two lines, A D and A E. You see the short arc D E, the same "
         "arc the central angle sees.", show(f3g78['arc'], 'You see the short arc')),
       L("So the angle at A is an inscribed angle on the same arc as the hundred twelve. An inscribed angle is half of the "
         "central angle. Half of a hundred twelve is fifty-six. Choice number four is our answer.",
-        show(f3g78['x56'], 'Half of a hundred twelve'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
+        show(f3g78r5, 'Half of a hundred twelve'), show(f3g78['x56'], 'is fifty-six'),
+        mk('tick', 'choice 4', 'Choice number four is our answer')),
+      L("This is worth remembering. With two tangents from one point P, the shape O D P E always has two right angles. So "
+        "the angle at P and the central angle D O E always add up to a hundred eighty. Here, sixty-eight plus a hundred "
+        "twelve. With an angle of forty at P, the central angle would be a hundred forty.",
+        show(f3g78tc, 'always add up to a hundred eighty'))),
     SM('Method 2 · Understanding: symmetry', 'Symmetry',
-      L("[pause] Now the second way, by understanding the symmetry. We start again from the radii and the right angles. O D P E is a kite, because the "
+      L("[pause] Now the second way, by understanding, with symmetry. We start again from the radii and the right angles. O D P E is a kite, because the "
         "radii are equal and the two tangents from P are equal. So let's draw its line of symmetry, O P.",
         show(f3g78b['line'], 'We start again from the radii'), show(f3g78b['op'], "let's draw its line of symmetry")),
-      L("The line of symmetry cuts the angle at P into two equal halves. Half of sixty-eight is thirty-four, and thirty-four.",
-        show(f3g78b['half'], 'Half of sixty-eight')),
+      L("The line of symmetry cuts the angle at P into two equal halves. Half of sixty-eight is thirty-four. So each half "
+        "is thirty-four.", show(f3g78s1, 'Half of sixty-eight'), show(f3g78b['half'], 'So each half')),
       L("Careful, thirty-four is in the choices too. It's half of the angle at P, and that's not angle D A E.",
         mk('cross', 'choice 2', "and that's not angle D A E")),
-      L("Now look at the right triangle O D P. Its angles add up to a hundred eighty. A hundred eighty minus ninety minus "
-        "thirty-four is fifty-six. So angle D O P is fifty-six.", show(f3g78b['tri'], 'Now look at the right triangle'),
-        show(f3g78b['o56'], 'So angle D O P is fifty-six')),
+      L("Now look at the right triangle O D P. Its angles add up to a hundred eighty. A hundred eighty minus ninety is "
+        "ninety. Ninety minus thirty-four is fifty-six. So angle D O P is fifty-six.",
+        show(f3g78b['tri'], 'Now look at the right triangle'), show(f3g78s2, 'A hundred eighty minus ninety'),
+        show(f3g78s3, 'Ninety minus thirty-four'), show(f3g78b['o56'], 'So angle D O P is fifty-six')),
       L("By the same symmetry, O P also cuts the central angle D O E in half. So fifty-six is half of the central angle. And "
         "the inscribed angle at A is also half of the central angle. So angle D A E is fifty-six again, choice number four. "
         "Either way, it all started with the radii to the points of tangency. [pause] Okay. I'll see you in the next "
-        "question.", show(f3g78b['same'], 'O P also cuts the central angle'), mk('tick', 'choice 4', 'fifty-six again, choice number four'))),
+        "question.", show(f3g78s4, 'So fifty-six is half of the central angle'), show(f3g78s5, 'So angle D A E is fifty-six'),
+        mk('tick', 'choice 4', 'fifty-six again, choice number four'))),
 ])
 
 # ================================================================================================ q-r26-t33-02 (added)
@@ -1960,54 +2139,90 @@ f3_hpcs = [('txt', 262, 166, '8 − r', 'orange', 20), ('txt', 374, 226, '15 −
            ('seg', *f3_qT, *f3_qL, 'orange', 5), ('seg', *f3_qB, *f3_qC, 'teal', 5)]
 f3g02 = PIN(GEO('f3g02', [
     ('line', f3_q02),
-    ('hyp', [('txt', 400, 160, '64 + 225 = 289', 'ink', 20), ('txt', 400, 188, 'hypotenuse 17', 'ink', 20)]),
+    ('hyp', [('txt', 330, 214, '17', 'ink', 22)]),
     ('rad', [('dot', *f3_qI), ('seg', *f3_qI, *f3_qL, 'teal', 3, True), ('seg', *f3_qI, *f3_qB, 'teal', 3, True),
-             ('tint', [f3_qR, f3_qL, f3_qI, f3_qB], 'teal'), ('right', 210, 245, 270, 0, 10, 'teal'), ('right', 255, 290, 90, 180, 10, 'teal')]),
+             ('right', 210, 245, 270, 0, 10, 'teal'), ('right', 255, 290, 90, 180, 10, 'teal')]),
+    ('sq', [('tint', [f3_qR, f3_qL, f3_qI, f3_qB], 'teal'), ('tick', *f3_qI, *f3_qL, 1), ('tick', *f3_qI, *f3_qB, 1)]),
     ('pcs', f3_pcs),
     ('hpc', [('seg', *f3_qI, *f3_qH, 'teal', 3, True), ('dot', *f3_qH)] + f3_hpcs),
-    ('eq1', [('txt', 300, 370, '(8 − r) + (15 − r) = 17', 'ink', 22)]),
-    ('eq2', [('txt', 300, 400, '23 − 2r = 17', 'ink', 22), ('txt', 300, 430, '2r = 6,  r = 3', 'red', 24)]),
-], vb='130 135 350 310', w=460, title='A circle inside a right triangle with legs 8 and 15'))
+], vb='130 135 350 215', w=460, title='A circle inside a right triangle with legs 8 and 15'))
 f3g02b = PIN(GEO('f3g02b', [
     ('line', f3_q02 + [('dot', *f3_qI), ('seg', *f3_qI, *f3_qL, 'ink', 2, True), ('seg', *f3_qI, *f3_qB, 'ink', 2, True),
-                       ('txt', 400, 188, 'hypotenuse 17', 'ink', 20)]),
-    ('short', [('txt', 300, 370, '8 + 15 − 17 = 6', 'ink', 22), ('txt', 300, 400, 'r = 6 ÷ 2 = 3', 'red', 24)]),
-    ('trap', [('txt', 300, 430, '17 ÷ 2 = 8.5: the circle around', 'orange', 20)]),
-], vb='130 135 350 310', w=460, title='The shortcut for a right triangle'))
-_R(f3g02, 200); _R(f3g02b, 200)
+                       ('txt', 330, 214, '17', 'ink', 22)]),
+], vb='130 135 350 215', w=460, title='The shortcut for a right triangle'))
+# 2026-10-18 batch C: the question slide first, then each method with our enlarged copy (no question figure) and the
+# working in readable rows, each at its clause
+LEFT(f3g02, y=290, x=430, w=540); LEFT(f3g02b, y=290, x=430, w=540)
+NOFIG33.update({('solve-q-r26-t33-02', 1), ('solve-q-r26-t33-02', 2)})
+f3g02r1 = IH('f3g02r1', '$8^2 = 64$', size=28)
+f3g02r1b = IH('f3g02r1b', '$15^2 = 225$', size=28)
+f3g02r2 = IH('f3g02r2', '$64 + 225 = 289$', size=28)
+f3g02r3 = IH('f3g02r3', '$17^2 = 289,\\ \\ \\text{hypotenuse } 17$', size=28)
+f3g02r4 = IH('f3g02r4', '$(8 - r) + (15 - r) = 17$', size=28)
+f3g02r5 = IH('f3g02r5', '$23 - 2r = 17$', size=28)
+f3g02r6 = IH('f3g02r6', '$23 = 17 + 2r$', size=28)
+f3g02r7 = IH('f3g02r7', '$6 = 2r$', size=28)
+f3g02r8 = IH('f3g02r8', '$r = 3$', size=30)
+ROWS(266, 50, f3g02r1, f3g02r1b, f3g02r2, f3g02r3, f3g02r4, f3g02r5, f3g02r6, f3g02r7, f3g02r8)
+f3g02s1 = IH('f3g02s1', '$r = \\frac{a + b - c}{2}$', size=32)
+f3g02s2 = I('f3g02s2', '$a, b$: the legs, $c$: the hypotenuse (right triangle)', size=24)
+f3g02s3 = IH('f3g02s3', '$8 + 15 - 17 = 6$', size=30)
+f3g02s3b = IH('f3g02s3b', '$r = 6 \\div 2 = 3$', size=30)
+f3g02s4 = IH('f3g02s4', '$3, 4, 5:\\ \\ 3 + 4 - 5 = 2$', size=30)
+f3g02s4b = IH('f3g02s4b', '$r = 2 \\div 2 = 1$', size=30)
+f3g02s5 = I('f3g02s5', '$17 \\div 2 = 8.5$: the outside circle', size=26)
+ROWS(270, 60, f3g02s2, f3g02s1, f3g02s3, f3g02s3b, f3g02s4, f3g02s4b, f3g02s5)
 video('solve-q-r26-t33-02', 'solution', qid='q-r26-t33-02', slides=[
-    SM('Method 1 · The math way', 'Tangent pieces',
+    S('The question',
       L("A circle is inscribed in a right triangle whose legs are eight centimeters and fifteen centimeters. What is the "
         "radius of the circle, in centimeters?", pt('stem', 'A circle is inscribed', 'hl', 7.0), voice='calm', pause=0.5),
       L("Inscribed in the triangle means the circle sits inside it and touches all three sides. So every side of the "
         "triangle is a tangent to the circle. [short pause] We'll use the tangent rules, and at the end there's a short "
-        "formula too.", show(f3g02['line'], 'touches all three sides')),
-      L("[short pause] First the third side, the hypotenuse. By Pythagoras, its square is the two legs squared, added together. Eight squared is sixty-four, fifteen squared is two hundred "
-        "twenty-five, and together that's two hundred eighty-nine. Eight, fifteen, seventeen is a Pythagorean triple, and "
-        "seventeen squared really is two hundred eighty-nine. So the hypotenuse is seventeen.", show(f3g02['hyp'], 'First the third side')),
+        "formula too.", pt('stem', 'touches all three sides')), sb='The question'),
+    SM('Method 1 · The math way', 'Tangent pieces',
+      L("[short pause] Let's start with the math way. Here's the triangle again, bigger. First the third side, the "
+        "hypotenuse. By Pythagoras, its square is the two legs squared, added together. Eight squared is sixty-four. "
+        "Fifteen squared is two hundred twenty-five. Together that's two hundred eighty-nine.",
+        show(f3g02['line'], "Here's the triangle again"), show(f3g02r1, 'Eight squared is sixty-four'),
+        show(f3g02r1b, 'Fifteen squared is'),
+        show(f3g02r2, 'Together that')),
+      L("Eight, fifteen, seventeen is a Pythagorean triple, and seventeen squared really is two hundred eighty-nine. So the "
+        "hypotenuse is seventeen.", show(f3g02r3, 'So the hypotenuse is seventeen'), show(f3g02['hyp'], 'is seventeen')),
       L("Now the tangent rule. The sides are tangents, so I draw the radii to the two legs. Each radius is perpendicular to "
-        "its leg. With the right angle of the triangle, we get a little square, r by r, in the corner.",
-        show(f3g02['rad'], 'so I draw the radii')),
+        "its leg.", show(f3g02['rad'], 'so I draw the radii')),
+      L("So the little corner shape has three right angles, and its fourth angle is a right angle too. Its two sides from "
+        "the center are radii, so both are r. A rectangle with two equal sides next to each other is a square. So it's a "
+        "square, r by r, in the corner.", show(f3g02['sq'], 'Its two sides from')),
       L("So the corner pieces of the legs are r and r. The rest of the short leg is eight minus r, and the rest of the long "
         "leg is fifteen minus r.", show(f3g02['pcs'], 'So the corner pieces')),
-      L("Now the second rule. Two tangents from the same point are equal. From the top corner come two tangents, so the "
+      L("Now let's use the second rule. Two tangents from the same point are equal. From the top corner come two tangents, so the "
         "top piece of the hypotenuse is also eight minus r. From the bottom corner on the right, the other piece is fifteen "
         "minus r.", show(f3g02['hpc'], 'From the top corner')),
       L("These two pieces make the whole hypotenuse, seventeen. So eight minus r plus fifteen minus r is seventeen.",
-        show(f3g02['eq1'], 'So eight minus r')),
-      L("Eight plus fifteen is twenty-three, so twenty-three minus two r is seventeen. We want r alone, so we move two r to one side and the numbers to the other. Then two r is twenty-three minus "
-        "seventeen, which is six, and r is three. Choice number three is our answer.", show(f3g02['eq2'], 'Eight plus fifteen is twenty-three'),
+        show(f3g02r4, 'So eight minus r')),
+      L("Eight plus fifteen is twenty-three, so twenty-three minus two r is seventeen. We want r alone, without the minus. "
+        "So let's add two r to both sides. Twenty-three is equal to seventeen plus two r.",
+        show(f3g02r5, 'so twenty-three minus two r'), show(f3g02r6, 'Twenty-three is equal to')),
+      L("Now subtract seventeen from both sides. Six is equal to two r. Then divide both sides by two, and r is three. "
+        "Choice number three is our answer.", show(f3g02r7, 'Six is equal to two r'), show(f3g02r8, 'and r is three'),
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
     SM('Method 2 · The math way: a short formula', 'The shortcut',
-      L("[pause] The same equation in one line gives a shortcut for a right triangle. The radius of the circle inside is "
-        "leg plus leg minus the hypotenuse, over two.", show(f3g02b['line'], 'The same equation in one line')),
-      L("Eight plus fifteen minus seventeen is six, and half of six is three. Careful, six is in the choices too. That's "
-        "someone who forgot to divide by two.", show(f3g02b['short'], 'Eight plus fifteen minus seventeen'),
+      L("[pause] Now the math way again, with a short formula. It works for right triangles. Call the legs a and b, and "
+        "the hypotenuse c. The radius of the circle inside is a plus b minus c, all over two.",
+        show(f3g02b['line'], 'Now the math way again'), show(f3g02s1, 'all over two'), show(f3g02s2, 'Call the legs a and b')),
+      L("Why does it work? It's our equation again. The leg pieces, a minus r and b minus r, add up to c. So two r is a plus b minus c.",
+        pt('f3g02s1', 'It\'s our equation again')),
+      L("Here, eight plus fifteen minus seventeen is six, and half of six is three. Careful, six is in the choices too. "
+        "That's someone who forgot to divide by two.", show(f3g02s3, 'eight plus fifteen minus seventeen'),
+        show(f3g02s3b, 'half of six is three'),
         mk('cross', 'choice 1', 'someone who forgot to divide by two')),
+      L("Let's try it on another right triangle, three, four, five. Three plus four minus five is two, and half of two is "
+        "one. So the circle inside that triangle has radius one.", show(f3g02s4, 'Three plus four minus five'),
+        show(f3g02s4b, 'half of two is one')),
       L("And eight and a half is half of the hypotenuse. Remember, in a right triangle the hypotenuse is a diameter of the "
-        "circle around the triangle. So eight and a half is the radius of the circle around it, not inside it. The answer is "
-        "three, choice number three. [pause] Okay. I'll see you in the next question.",
-        show(f3g02b['trap'], 'And eight and a half'), mk('cross', 'choice 2', 'not inside it'),
+        "circle around the triangle, the one through its three corners. So eight and a half is the radius of that outside "
+        "circle, not of the circle inside. The answer is three, choice number three. [pause] Okay. I'll see you in the next "
+        "question.", show(f3g02s5, 'And eight and a half'), mk('cross', 'choice 2', 'not of the circle inside'),
         mk('tick', 'choice 3', 'three, choice number three'))),
 ])
 
@@ -2046,7 +2261,42 @@ f3b4 = IH('f3b4', '$C=3d+$ a bit $=6r+$ a bit', size=30, col=1)
 f3b5 = I('f3b5', '$2π$: a bit more than $6$', size=30, col=1)
 f3b6 = I('f3b6', '$π$: a bit more than $3$', size=34, col=1)
 f3b7 = I('f3b7', '$π$ is a fixed number, not an unknown like $x$', size=28, col=0)
-f3b8 = I('f3b8', '$S=πr^2$: a bit more than $3r^2$', size=30, col=0)
+
+# ---- 2026-10-18 batch C: why S = pi r squared - eight equal slices laid in a row make almost a rectangle (r by pi r)
+def _f3x_slices():
+    cx, cy, r = 130.0, 180.0, 90.0
+    cut = []
+    for i in range(8):
+        a, b = 22.5 + 45 * i, 22.5 + 45 * (i + 1)
+        cut.append(('wedge', cx, cy, r, a, b, 'teal' if i % 2 == 0 else 'orange'))
+    lines = [('circ', cx, cy, r), ('dot', cx, cy)] + [('seg', cx, cy, *gpt(cx, cy, r, 22.5 + 45 * i), 'ink', 2) for i in range(8)]
+    w = 2 * _f3m.pi * r / 8; x0, yb, yt = 270.0, 300.0, 210.0
+    strip = []
+    def bulge(p, q, out):      # a slice's arc, drawn as a little curve away from the slice's tip
+        m = ((p[0] + q[0]) / 2.0, (p[1] + q[1]) / 2.0 + out)
+        return [p] + [((1 - t) ** 2 * p[0] + 2 * t * (1 - t) * m[0] + t * t * q[0], (1 - t) ** 2 * p[1] + 2 * t * (1 - t) * m[1] + t * t * q[1]) for t in (0.25, 0.5, 0.75)] + [q]
+    for i in range(4):
+        L_, R_ = (x0 + i * w, yb), (x0 + (i + 1) * w, yb)
+        strip.append(('tint', bulge(L_, R_, 9) + [(x0 + i * w + w / 2, yt)], 'teal'))
+        strip.append(('seg', L_[0], L_[1], x0 + i * w + w / 2, yt, 'ink', 1.5))
+        strip.append(('seg', R_[0], R_[1], x0 + i * w + w / 2, yt, 'ink', 1.5))
+        T1, T2 = (x0 + i * w + w / 2, yt), (x0 + i * w + w / 2 + w, yt)
+        strip.append(('tint', bulge(T1, T2, -9) + [(x0 + (i + 1) * w, yb)], 'orange'))
+    xe = x0 + 4 * w + w / 2
+    return lines, cut, strip, (x0, yb, yt, xe)
+f3x_l, f3x_c, f3x_s, (f3x_x0, f3x_yb, f3x_yt, f3x_xe) = _f3x_slices()
+f3ax = PIN(GEO('f3ax', [
+    ('line', f3x_l),
+    ('cut', f3x_c),
+    ('strip', f3x_s),
+    ('h', [('seg', f3x_x0 - 14, f3x_yb, f3x_x0 - 14, f3x_yt, 'teal', 3), ('txt', f3x_x0 - 32, (f3x_yb + f3x_yt) / 2, 'r', 'teal', 28, True)]),
+    ('b', [('txt', (f3x_x0 + f3x_xe) / 2, f3x_yb + 34, 'half the circumference: πr', 'orange', 22)]),
+    ('rect', [('seg', f3x_x0, f3x_yb, f3x_xe, f3x_yb, 'red', 2, True), ('seg', f3x_x0, f3x_yt, f3x_xe, f3x_yt, 'red', 2, True),
+              ('seg', f3x_x0, f3x_yb, f3x_x0, f3x_yt, 'red', 2, True), ('seg', f3x_xe, f3x_yb, f3x_xe, f3x_yt, 'red', 2, True)]),
+], vb='30 80 600 270', w=860, col=0, title='A circle cut into eight equal slices, laid in a row'))
+f3bx1 = I('f3bx1', 'area $\\approx πr\\cdot r=πr^2$', size=32, col=0)
+f3bx2 = I('f3bx2', 'thinner slices: closer to a real rectangle', size=28, col=0)
+f3b8 = I('f3b8', 'For a rough check: $S=πr^2$ is a bit more than $3r^2$', size=30, col=0)
 f3b9 = I('f3b9', 'Is $4π$ more than $12$? $\\ 4\\cdot3=12$, so yes', size=30, col=0)
 f3b10 = I('f3b10', 'Answers in $π$: keep the $π$', size=30, col=0)
 
@@ -2073,7 +2323,7 @@ f3a5 = PIN(GEO('f3a5', [
     ('r', [('seg', 200, 180, 310, 180, 'teal', 4), ('txt', 255, 205, 'r = 11', 'teal', 28)]),
 ], vb='60 50 340 260', w=420, col=0, title='A circle with circumference 22 pi'))
 f3b16 = IH('f3b16', '$2πr=22π$', size=34, col=1)
-f3b17 = IH('f3b17', '$r=22π\\div2π=11$', size=34, col=1)
+f3b17 = IH('f3b17', '$r=\\frac{22π}{2π}=\\frac{22}{2}=11$', size=34, col=1)
 
 f3a6 = PIN(GEO('f3a6', [
     ('line', [('circ', 200, 180, 110), ('dot', 200, 180), ('seg', 200, 180, 310, 180, 'ink', 3, True)]),
@@ -2082,7 +2332,8 @@ f3a6 = PIN(GEO('f3a6', [
 ], vb='60 50 340 260', w=420, col=0, title='A circle with area 121 pi'))
 f3b18 = IH('f3b18', '$πr^2=121π$', size=34, col=1)
 f3b19 = IH('f3b19', '$r^2=121$', size=34, col=1)
-f3b20 = I('f3b20', '$r=11$ $\\quad$ (not $-11$: a length)', size=32, col=1)
+f3b20 = I('f3b20', '$r=11$', size=32, col=1)
+f3b20b = I('f3b20b', '(not $-11$: a radius is a length, positive)', size=26, col=1)
 
 f3_wr = 60
 f3a7 = PIN(GEO('f3a7', [
@@ -2093,13 +2344,15 @@ f3a7 = PIN(GEO('f3a7', [
 ], vb='20 150 560 190', w=600, col=0, title='A wheel rolling one full turn'))
 f3b21 = IH('f3b21', 'One turn: $2π\\cdot10=20π$ cm', size=30, col=1)
 f3b22 = I('f3b22', 'Same units first: $10π$ m $=1{,}000π$ cm', size=28, col=1)
-f3b23 = IH('f3b23', '$1000π\\div20π=50$ turns', size=30, col=1)
+f3b23 = IH('f3b23', '$\\frac{1000π}{20π}=\\frac{1000}{20}=50$ turns', size=30, col=1)
 
 video('geo-079', 'lesson', slides=[
     S('Area and Circumference',
-      L("Area and circumference of a circle. These are two very basic formulas, and we use them a lot in exam questions.")),
+      L("Now let's calculate a circle's area and circumference. These are two very basic formulas, and we use them a lot "
+        "in exam questions.")),
     S('The two formulas',
-      L("Here's a circle with radius r. The area of a circle is the space inside it, and its formula is pi r squared.",
+      L("Here's a circle with radius r. The area of a circle is the space inside it, and its formula is pi r squared. "
+        "We'll see why in a moment.",
         show(f3a1['line'], "Here's a circle with radius r"), show(f3a1['S'], 'the space inside it'), show(f3b1, 'pi r squared')),
       L("The circumference is the length all the way around the circle, and its formula is two pi r.",
         show(f3a1['C'], 'the length all the way around'), show(f3b2, 'two pi r')),
@@ -2115,13 +2368,25 @@ video('geo-079', 'lesson', slides=[
         "circumference is a bit more than six r.", show(f3b4, 'So the circumference is three diameters')),
       L("And the formula says the circumference is two pi r. So two pi is a bit more than six, and pi is a bit more than "
         "three.", show(f3b5, 'So two pi is a bit more than six'), show(f3b6, 'and pi is a bit more than three'))),
+    S('Why πr²',
+      L("Now, why is the area pi r squared? Let's cut the circle into equal slices, like a pizza. Here are eight equal "
+        "slices.", show(f3ax['line'], "Let's cut the circle"), show(f3ax['cut'], 'Here are eight equal')),
+      L("Now let's lay the slices in a row, one pointing up, the next pointing down. Together they make a shape that is "
+        "almost a rectangle.", show(f3ax['strip'], "Now let's lay the slices")),
+      L("Its height is the side of a slice, the radius r. Its bottom is made of half the slices' arcs, so it's half the "
+        "circumference. Half of two pi r is pi r.", show(f3ax['h'], 'Its height is'), show(f3ax['b'], 'Half of two pi r')),
+      L("The area of a rectangle is its length times its height. So the area is about pi r times r, which is pi r "
+        "squared.", show(f3ax['rect'], 'The area of a rectangle'), show(f3bx1, 'So the area is about')),
+      L("With eight slices, the edges are still bumpy, so it's not exactly a rectangle. But the thinner the slices, the "
+        "closer it gets to a real rectangle. That's why the area of the circle is pi r squared.",
+        show(f3bx2, 'But the thinner the slices'))),
     S('π is a number',
       L("So pi is a number. It's a fixed number, always the same. It's not an unknown like x or y in an equation.",
         show(f3b7, "It's a fixed number")),
       L("It just isn't a round number. Its digits after the point never end, so instead of writing them, we give it a "
         "special sign, the letter pi. That's easier to write and easier to see in the formula.", pt('f3b7', 'It just isn')),
-      L("So the area, pi r squared, is a bit more than three times r squared. And for the exam, that's all we need to know "
-        "about pi. It's a bit more than three.", show(f3b8, 'is a bit more than three times')),
+      L("So the area, pi r squared, is a bit more than three times r squared. For a rough comparison, like the next one, "
+        "that's all we need to know about pi. It's a bit more than three.", show(f3b8, 'is a bit more than three times')),
       L("For example, is four pi more than twelve? Four times three is twelve, and pi is a bit more than three, so four pi is "
         "a bit more than twelve. Yes.", show(f3b9, 'is four pi more than twelve')),
       L("And when the answers have pi in them, keep the pi. Don't change it into a number.", show(f3b10, 'keep the pi'))),
@@ -2143,8 +2408,9 @@ video('geo-079', 'lesson', slides=[
       L("Another example. I don't know the radius, but I'm given that the circumference is twenty-two pi. Let's find the "
         "radius.", show(f3a5['line'], "I don't know the radius"), show(f3a5['C'], 'the circumference is twenty-two pi')),
       L("I put it into the circumference formula. Two pi r equals twenty-two pi.", show(f3b16, 'Two pi r equals')),
-      L("Divide both sides by two pi. On the left I get r, and on the right, twenty-two pi divided by two pi is eleven. So "
-        "the radius is eleven.", show(f3b17, 'Divide both sides by two pi'), show(f3a5['r'], 'So the radius is eleven')),
+      L("We want r alone, so we divide both sides by two pi. On the left I get r. On the right, the pi on top and the pi "
+        "on the bottom cancel, and twenty-two divided by two is eleven. So the radius is eleven.",
+        show(f3b17, 'and twenty-two divided by two'), show(f3a5['r'], 'So the radius is eleven')),
       L("I used the formula backwards. Instead of going from the radius to the circumference, I went from the circumference "
         "to the radius.", pt('f3b16', 'I used the formula backwards'))),
     S('Back from the area',
@@ -2152,21 +2418,22 @@ video('geo-079', 'lesson', slides=[
         "formula, so pi r squared equals a hundred twenty-one pi.", show(f3a6['line'], 'Now a circle whose area'),
         show(f3a6['S'], 'Again, I don'), show(f3b18, 'so pi r squared equals')),
       L("Divide both sides by pi, and r squared is a hundred twenty-one. Take the root of both sides, and r is eleven.",
-        show(f3b19, 'Divide both sides by pi'), show(f3b20, 'Take the root'), show(f3a6['r'], 'and r is eleven')),
-      L("Minus eleven isn't relevant here, because a radius is a length. It's positive, never negative.",
-        pt('f3b20', 'Minus eleven')),
+        show(f3b19, 'Divide both sides by pi'), show(f3b20, 'and r is eleven'), show(f3a6['r'], 'and r is eleven')),
+      L("Negative eleven, times itself, also gives a hundred twenty-one. But it isn't relevant here. A radius is a length, so it must be "
+        "positive.", show(f3b20b, 'A radius is a length')),
       L("So from the radius we find the area and the circumference, and from the area or the circumference we find the "
         "radius.", pt('f3a6_line', 'So from the radius'))),
     S('Wheels',
-      L("One more idea that the exam likes, wheels. In one full turn, a wheel rolls exactly one circumference. Look at the "
-        "red point. After one turn, it's at the bottom again, one circumference further.",
-        show(f3a7['line'], 'One more idea'), show(f3a7['turn'], 'In one full turn')),
+      L("One more idea that the exam likes, wheels. A wheel that rolls without slipping covers exactly one circumference in "
+        "one full turn. Look at the red point. After one turn, it's at the bottom again, one circumference further.",
+        show(f3a7['line'], 'One more idea'), show(f3a7['turn'], 'in one full turn')),
       L("Say a wheel has a radius of ten centimeters. One turn is two pi times ten, which is twenty pi centimeters.",
         show(f3b21, 'One turn is two pi times ten')),
       L("How many turns does it make along a road of ten pi meters? First the same units. One meter is a hundred "
         "centimeters, so ten pi meters are a thousand pi centimeters.", show(f3b22, 'First the same units')),
-      L("Each turn covers twenty pi, so to count the turns, we divide the road by one turn. A thousand pi divided by twenty pi is fifty, so the wheel makes fifty turns. Now let's see an exam question. "
-        "[pause] Okay. I'll see you in the next video.", show(f3b23, 'A thousand pi divided by twenty pi'))),
+      L("Each turn covers twenty pi, so to count the turns, we divide the road by one turn. The pi's cancel, and a thousand "
+        "divided by twenty is fifty. So the wheel makes fifty turns. Now let's see an exam question. "
+        "[pause] Okay. I'll see you in the next video.", show(f3b23, 'and a thousand divided by twenty'))),
 ])
 
 # ================================================================================================ geo33-g080
@@ -2183,15 +2450,19 @@ f3c0 = PIN(GEO('f3c0', [
     ('r8', [('seg', 200, 180, 310, 180, 'red', 4), ('txt', 255, 205, 'r = 8', 'red', 28)]),
 ], vb='60 50 340 260', w=420, col=1, title='A circle: its area and its circumference'))
 _R(f3c0, 330)
-f3c1 = I('f3c1', 'Area $=4\\cdot$ circumference', size=34)
-f3c2 = IH('f3c2', '$πr^2=4\\cdot2πr$', size=34)
-f3c3 = IH('f3c3', '$πr^2=8πr$', size=34)
-f3c4 = IH('f3c4', '$r^2=8r$', size=34)
-f3c5 = IH('f3c5', '$r=8$ $\\quad$ ($r\\ne0$)', size=34)
-f3c6 = IH('f3c6', '$S=π\\cdot8^2=64π$, $\\ C=2π\\cdot8=16π$', size=30)
+f3c1 = I('f3c1', 'Area (in cm²) $=4\\cdot$ circumference (in cm), as numbers', size=30)
+f3c2 = IH('f3c2', '$πr^2=4\\cdot2πr$', size=30)
+f3c3 = IH('f3c3', '$πr^2=8πr$', size=30)
+f3c4 = IH('f3c4', '$r^2=8r$', size=30)
+f3c5 = IH('f3c5', '$r=8$ $\\quad$ ($r\\ne0$)', size=30)
+f3c6 = IH('f3c6', '$S=π\\cdot8^2=64π$', size=30)
+f3c6b = IH('f3c6b', '$C=2π\\cdot8=16π$', size=30)
 f3c7 = IH('f3c7', '$4\\cdot16π=64π$ ✓', size=30)
-f3c8 = I('f3c8', '$\\dfrac{S}{C}=\\dfrac{πr^2}{2πr}=\\dfrac{r}{2}$', size=34)
-f3c9 = IH('f3c9', '$\\frac{r}{2}=4$, $\\ r=8$', size=34)
+f3c8 = I('f3c8', '$\\dfrac{S}{C}=\\dfrac{πr^2}{2πr}$', size=34)
+f3c8b = I('f3c8b', '$=\\dfrac{r^2}{2r}$', size=34)
+f3c8c = I('f3c8c', '$=\\dfrac{r}{2}$', size=34)
+f3c9 = IH('f3c9', '$\\frac{r}{2}=4$', size=34)
+f3c9b = IH('f3c9b', '$r=2\\cdot4=8$', size=34)
 video('solve-geo33-g080', 'solution', qid='geo33-g080', slides=[
     S('Write it as an equation',
       L("The numerical value of a circle's area in square centimeters is four times as much as the numerical value of its "
@@ -2200,8 +2471,9 @@ video('solve-geo33-g080', 'solution', qid='geo33-g080', slides=[
       L("All the question tells us is how the area and the circumference compare, and we want the radius. Both formulas "
         "have r in them. [short pause] So we'll simply write the given as an equation, and solve it.",
         show(f3c0['line'], 'how the area and the circumference compare')),
-      L("[short pause] What I need to do is simply work from the data. You can ignore the square centimeters and the "
-        "centimeters. Just read it as, the area is four times the circumference.", show(f3c1, 'the area is four times')),
+      L("[short pause] Let's start with the math way. The question compares the numbers, in the units it gives. The area "
+        "is in square centimeters, and the circumference is in centimeters. So we compare those two numbers. The area's "
+        "number is four times the circumference's number.", show(f3c1, 'four times the circumference')),
       L("The area is pi r squared. The circumference is two pi r, and four times it is four times two pi r.",
         show(f3c0['S'], 'The area is pi r squared'), show(f3c0['C'], 'The circumference is two pi r'),
         show(f3c2, 'four times it is')),
@@ -2214,16 +2486,22 @@ video('solve-geo33-g080', 'solution', qid='geo33-g080', slides=[
       L("Sixteen is in the choices too. That's the diameter, two times eight, but the question asks for the radius.",
         mk('cross', 'choice 2', "That's the diameter")), sb='Method 1 · The math way'),
     S('Let\'s really check',
-      L("In the exam you'd mark it and move on. Here, let's really check that the area comes out four times the circumference, like the given says. With a radius of eight, the area is pi times eight "
-        "squared, sixty-four pi. The circumference is two pi times eight, sixteen pi.", show(f3c6, "Here, let's really check")),
+      L("In the exam you'd mark it and move on. Here, let's really check that the area comes out four times the "
+        "circumference, like the given says. With a radius of eight, the area is pi times eight squared. That's sixty-four "
+        "pi. The circumference is two pi times eight. That's sixteen pi.",
+        show(f3c6, "That's sixty-four pi"), show(f3c6b, "That's sixteen pi")),
       L("And four times sixteen pi is sixty-four pi, and the area is sixty-four pi. So the area really is four times the circumference.",
         show(f3c7, 'And four times sixteen pi')), sb='Method 1 · The math way'),
     SM('Method 2 · Understanding', 'Area over circumference',
-      L("[pause] There's also a short way, by understanding. The given tells us how many times bigger the area is, so let's divide the area by the circumference. Pi r squared over two pi r. The pi cancels, "
-        "one r cancels, and we're left with r over two.", show(f3c8, 'Divide the area by the circumference')),
-      L("Here the area is four times the circumference, so r over two is four, and r is eight. Choice number one again. "
-        "[pause] Okay. I'll see you in the next question.", show(f3c9, 'so r over two is four'),
-        mk('tick', 'choice 1', 'Choice number one again'))),
+      L("[pause] Now let's solve it a second way, by understanding. The given tells us how many times bigger the area's "
+        "number is. So let's divide the area by the circumference. That's pi r squared over two pi r.",
+        show(f3c8, "That's pi r squared over two pi r")),
+      L("The pi on top and the pi on the bottom cancel. That leaves r squared over two r. One r cancels too, because r "
+        "isn't zero. So we're left with r over two.", show(f3c8b, 'That leaves r squared over two r'),
+        show(f3c8c, "So we're left with r over two")),
+      L("Here the area is four times the circumference, so r over two is four. So r is two times four, which is eight. "
+        "Choice number one again. [pause] Okay. I'll see you in the next question.", show(f3c9, 'so r over two is four'),
+        show(f3c9b, 'So r is two times four'), mk('tick', 'choice 1', 'Choice number one again'))),
 ])
 
 # ================================================================================================ q-r26-t33-03 (added)
@@ -2234,22 +2512,40 @@ video('solve-geo33-g080', 'solution', qid='geo33-g080', slides=[
 # 225 percent (the new area, not the increase) and 50 percent (forgot the square).
 # V3: no question figure. Two circles side by side, radius 2 and radius 3, the circumference traced and the areas tinted,
 # the values written on each circle as they are found.
+# 2026-10-18 batch C: the new radius 3 only when it is found; every step its own row; percent first taught at its use
 f3d0 = PIN(GEO('f3d0', [
-    ('line', [('circ', 110, 180, 64), ('dot', 110, 180), ('seg', 110, 180, 174, 180, 'ink', 3), ('txt', 142, 164, '2', 'ink', 26),
-              ('circ', 360, 180, 96), ('dot', 360, 180), ('seg', 360, 180, 456, 180, 'ink', 3), ('txt', 408, 164, '3', 'ink', 26)]),
-    ('C', [('arcw', 110, 180, 64, 0, 359.9, 'orange', 6), ('arcw', 360, 180, 96, 0, 359.9, 'orange', 6),
-           ('txt', 110, 92, '4π', 'orange', 28), ('txt', 360, 60, '6π', 'orange', 28)]),
-    ('S', [('circ', 110, 180, 64, 'teal', 1, False, 'teal'), ('circ', 360, 180, 96, 'teal', 1, False, 'teal'),
-           ('txt', 110, 215, '4π', 'teal', 28), ('txt', 360, 225, '9π', 'teal', 28)]),
+    ('line', [('circ', 110, 180, 64), ('dot', 110, 180), ('seg', 110, 180, 174, 180, 'ink', 3), ('txt', 142, 164, '2', 'ink', 26)]),
+    ('C', [('arcw', 110, 180, 64, 0, 359.9, 'orange', 6), ('txt', 110, 92, '4π', 'orange', 28)]),
+    ('big', [('circ', 360, 180, 96), ('dot', 360, 180), ('seg', 360, 180, 456, 180, 'ink', 3), ('txt', 408, 164, '3', 'ink', 26),
+             ('arcw', 360, 180, 96, 0, 359.9, 'orange', 6), ('txt', 360, 60, '6π', 'orange', 28)]),
 ], vb='30 30 450 260', w=500, col=1, title='Radius 2 and radius 3'))
 _R(f3d0, 330)
+f3d0b = PIN(GEO('f3d0b', [
+    ('line', [('circ', 110, 180, 64), ('dot', 110, 180), ('seg', 110, 180, 174, 180, 'ink', 3), ('txt', 142, 164, '2', 'ink', 26),
+              ('circ', 360, 180, 96), ('dot', 360, 180), ('seg', 360, 180, 456, 180, 'ink', 3), ('txt', 408, 164, '3', 'ink', 26)]),
+    ('S2', [('circ', 110, 180, 64, 'teal', 1, False, 'teal'), ('txt', 110, 215, '4π', 'teal', 28)]),
+    ('S3', [('circ', 360, 180, 96, 'teal', 1, False, 'teal'), ('txt', 360, 225, '9π', 'teal', 28)]),
+], vb='30 30 450 260', w=500, col=1, title='The areas: radius 2 and radius 3'))
+_R(f3d0b, 330)
+f3d1a = I('f3d1a', 'the old amount $=100\\%$, $\\ $half $=50\\%$, $\\ $a quarter $=25\\%$', size=30)
 f3d1 = I('f3d1', '$50\\%$ more $=$ half more $=\\times\\dfrac{3}{2}$', size=32)
 f3d2 = I('f3d2', '$C=2πr$: $\\ r\\times\\dfrac{3}{2}$', size=32)
-f3d3 = IH('f3d3', 'Area $\\times\\left(\\dfrac{3}{2}\\right)^2=\\times\\dfrac{9}{4}=\\times2\\dfrac{1}{4}$', size=32)
-f3d4 = I('f3d4', 'Up by $1\\dfrac{1}{4}$ of the old area $=125\\%$', size=32)
-f3d5 = IH('f3d5', '$r=2$: $\\ C=4π$, $\\ 4π+2π=6π$, $\\ r=3$', size=30)
-f3d6 = IH('f3d6', '$S$: $\\ 4π\\to9π$, up $5π$', size=30)
-f3d7 = I('f3d7', '$\\dfrac{5π}{4π}=\\dfrac{5}{4}=1\\dfrac{1}{4}=125\\%$', size=32)
+f3d3 = IH('f3d3', '$\\left(\\dfrac{3}{2}\\right)^2=\\dfrac{9}{4}=2\\dfrac{1}{4}$', size=32)
+f3d3b = I('f3d3b', 'new area $=2\\dfrac{1}{4}$ old areas', size=30)
+f3d3r = I('f3d3r', 'new area $=2\\dfrac{1}{4}$ old areas', size=32)
+f3d3c = I('f3d3c', '$225\\%$: the whole new area, not the increase', size=28)
+f3d4a = IH('f3d4a', '$2\\dfrac{1}{4}-1=1\\dfrac{1}{4}$', size=32)
+f3d4 = I('f3d4', 'increase $=100\\%+25\\%=125\\%$ of the old area', size=30)
+f3d5 = IH('f3d5', '$C=2π\\cdot2=4π$', size=30)
+f3d5b = IH('f3d5b', '$4π\\div2=2π$', size=30)
+f3d5c = IH('f3d5c', '$4π+2π=6π$', size=30)
+f3d5d = IH('f3d5d', '$6π=2π\\cdot3$, $\\ r=3$', size=30)
+f3d6 = IH('f3d6', 'old: $\\ π\\cdot2^2=4π$', size=30)
+f3d6b = IH('f3d6b', 'new: $\\ π\\cdot3^2=9π$', size=30)
+f3d6c = IH('f3d6c', 'up: $\\ 9π-4π=5π$', size=30)
+f3d7 = IH('f3d7', '$5π=4π+π$', size=30)
+f3d7b = I('f3d7b', '$π$ is a quarter of $4π$: $\\ 25\\%$', size=30)
+f3d7c = I('f3d7c', '$100\\%+25\\%=125\\%$', size=30)
 video('solve-q-r26-t33-03', 'solution', qid='q-r26-t33-03', slides=[
     S('Length × 3/2, area × 9/4',
       L("The circumference of a circle increases by fifty percent. By what percent does its area increase?",
@@ -2257,33 +2553,50 @@ video('solve-q-r26-t33-03', 'solution', qid='q-r26-t33-03', slides=[
       L("We're not given any lengths, only how much the circumference grows. And we're asked how much the area grows. [short "
         "pause] We'll solve it with the rule for growing lengths, and then check it with easy numbers.",
         pt('stem', 'only how much the circumference grows')),
-      L("[short pause] We'll meet percent properly later. For now, all we need is this. A hundred percent is the whole "
-        "thing, fifty percent is half of it, and twenty-five percent is a quarter of it. So fifty percent more means half "
-        "more, and the circumference is multiplied by one and a half, three over two.", show(f3d1, 'So fifty percent more')),
+      L("[short pause] Let's start by understanding. We'll meet percent properly later. For now, all we need is this. A "
+        "percent change is always compared with the old amount. The old amount is a hundred percent, the whole thing. "
+        "Fifty percent is half of it, and twenty-five percent is a quarter of it.",
+        show(f3d1a, 'The old amount is a hundred percent')),
+      L("So fifty percent more means the old circumference plus half of it. The circumference is multiplied by one and a "
+        "half, three over two.", show(f3d1, 'So fifty percent more')),
       L("The circumference is two pi r. Two pi never changes, so if the circumference is multiplied by three over two, the "
         "radius is multiplied by three over two too.", show(f3d2, 'The circumference is two pi r')),
       L("Remember from the square lesson. When every length is multiplied by some number, the area is multiplied by that "
         "number squared. Three over two, squared, is nine over four, which is two and a quarter. So the new area is two and "
-        "a quarter times the old area.", show(f3d3, 'Three over two, squared')),
-      L("Careful, two and a quarter times is two hundred twenty-five percent, and that's choice number three. But that's the "
-        "whole new area, not the increase.", mk('cross', 'choice 3', "and that's choice number three")),
-      L("The increase is the new area minus the old one. Two and a quarter minus one is one and a quarter. One whole is a "
-        "hundred percent, and a quarter is twenty-five percent, so the area increases by a hundred twenty-five percent. "
-        "Choice number four is our answer.", show(f3d4, 'The increase is the new area'),
-        mk('tick', 'choice 4', 'Choice number four is our answer')),
+        "a quarter times the old area.", show(f3d3, 'Three over two, squared'), show(f3d3b, 'So the new area is')),
+      sb='Method 1 · Understanding'),
+    SM('Method 1 · Understanding', 'Total or increase?',
+      L("Be careful here. Compared with the old area, the new area is two and a quarter old areas. That's two hundred twenty-five "
+        "percent, choice number three. But that's the whole new area, not the increase.",
+        show(f3d3r, 'Careful'), show(f3d3c, "That's two hundred twenty-five"), mk('cross', 'choice 3', "percent, choice number three")),
+      L("The increase is the new area minus the old one. Two and a quarter minus one is one and a quarter. So the area grew "
+        "by one whole old area, plus a quarter of the old area.", show(f3d4a, 'Two and a quarter minus one')),
+      L("One old area is a hundred percent, and a quarter of it is twenty-five percent. A hundred plus twenty-five is a "
+        "hundred twenty-five. So the area increases by a hundred twenty-five percent. Choice number four is our answer.",
+        show(f3d4, 'A hundred plus twenty-five'), mk('tick', 'choice 4', 'Choice number four is our answer')),
       L("And fifty percent, choice number one, is someone who forgot to square. The area grows faster than the "
-        "circumference.", mk('cross', 'choice 1', 'someone who forgot to square')), sb='Method 1 · Understanding'),
+        "circumference.", mk('cross', 'choice 1', 'someone who forgot to square'))),
     SM('Method 2 · Plugging in numbers', 'Easy numbers',
-      L("[pause] Now let's check by plugging in easy numbers. The question doesn't give a radius, so the answer is the same for "
-        "every circle. Let's pick a radius of two, because it's small and easy.", show(f3d0['line'], "Let's pick a radius of two")),
-      L("With a radius of two, the circumference is two pi times two, four pi. Fifty percent more is half more. Half of four "
-        "pi is two pi, so the new circumference is six pi. Six pi is two pi times three, so the new radius is three.", show(f3d0['C'], 'With a radius of two'),
-        show(f3d5, 'Half of four')),
-      L("Now the areas. Pi times two squared is four pi, and pi times three squared is nine pi. So the area went up by "
-        "five pi.", show(f3d0['S'], 'Now the areas'), show(f3d6, 'So the area went up')),
-      L("Out of the old four pi, that's five pi over four pi, five quarters, which is one and a quarter, a hundred "
-        "twenty-five percent. The same answer, choice number four. [pause] Okay. I'll see you in the next question.",
-        show(f3d7, 'five pi over four pi'), mk('tick', 'choice 4', 'The same answer, choice number four'))),
+      L("[pause] Now let's check it by plugging in numbers. The question doesn't give a radius, so it promises the same "
+        "answer for every circle. So a circle that we choose must give it too. Let's pick a radius of two, because it's "
+        "small and easy.", show(f3d0['line'], "Let's pick a radius of two")),
+      L("With a radius of two, the circumference is two pi times two. That's four pi.", show(f3d0['C'], 'With a radius of two'),
+        show(f3d5, "That's four pi")),
+      L("Fifty percent more is half more. Half of four pi is two pi. So the new circumference is four pi plus two pi, six "
+        "pi.", show(f3d5b, 'Half of four pi is two pi'), show(f3d5c, 'So the new circumference is')),
+      L("Six pi is two pi times three, so the new radius is three.", show(f3d5d, 'so the new radius is three'),
+        show(f3d0['big'], 'the new radius is three'))),
+    SM('Method 2 · Plugging in numbers', 'The areas',
+      L("Now the areas. The old area is pi times two squared. That's four pi. The new area is pi times three squared. "
+        "That's nine pi.", show(f3d0b['line'], 'Now the areas'), show(f3d6, "That's four pi"), show(f3d0b['S2'], "That's four pi"),
+        show(f3d6b, "That's nine pi"), show(f3d0b['S3'], "That's nine pi")),
+      L("So the area went up by nine pi minus four pi, which is five pi.", show(f3d6c, 'So the area went up')),
+      L("We compare the increase with the old area, four pi. Four pi is a hundred percent. Five pi is four pi, plus one more "
+        "pi.", show(f3d7, 'Five pi is four pi')),
+      L("And one pi is a quarter of four pi, so it's twenty-five percent. So the increase is a hundred percent plus "
+        "twenty-five percent, a hundred twenty-five percent. The same answer, choice number four. [pause] Okay. I'll see "
+        "you in the next question.", show(f3d7b, 'And one pi is a quarter'), show(f3d7c, 'So the increase is'),
+        mk('tick', 'choice 4', 'The same answer, choice number four'))),
 ])
 
 # =================================================================================================================
@@ -2349,6 +2662,7 @@ f4ar = PIN(GEO('f4ar', [
 ], vb='40 30 280 285', w=520, col=0, title='A sector with its central angle'))
 f4k1 = I('f4k1', 'Sector area $=\\frac{\\alpha}{360°}\\cdot\\pi r^2$', size=34, col=1)
 f4k2 = I('f4k2', 'Which part of the circle is it?', size=32, col=1)
+f4k2b = I('f4k2b', '$\\frac{90°}{360°}=\\frac14$: the same idea', size=32, col=1)
 
 # quarters and eighths: two circles side by side
 _a, _b = (150, 170), (450, 170)
@@ -2403,12 +2717,18 @@ f4t = PIN(GEO('f4t', [
 f4k12 = IH('f4k12', '$72°+72°=144°$', size=34, col=1)
 f4k13 = I('f4k13', '$\\frac15+\\frac15=\\frac25$ of the circle', size=34, col=1)
 
-f4k14 = I('f4k14', '$90°=\\frac14\\qquad45°=\\frac18\\qquad60°=\\frac16$', size=40, col=0)
-f4k15 = I('f4k15', '$40°=\\frac19\\qquad36°=\\frac1{10}\\qquad72°=\\frac15$', size=40, col=0)
-f4k16 = I('f4k16', '$270°=3\\cdot90°=\\frac34$', size=36, col=0)
-f4k17 = I('f4k17', '$144°=2\\cdot72°=\\frac25$', size=36, col=0)
-f4k18 = I('f4k18', '$120°=2\\cdot60°=3\\cdot40°=\\frac13$', size=36, col=0)
-f4k19 = I('f4k19', 'The exam checks understanding, not calculators', size=32, col=0)
+# 2026-10-18 batch C: an angle is not equal to a fraction - each row says "this angle is that part of the circle"
+f4k14 = I('f4k14', '$90°$: $\\ \\frac{90°}{360°}=\\frac14$ of the circle', size=30, col=0)
+f4k14b = I('f4k14b', '$45°$: $\\ $half of $90°$, $\\ \\frac18$ of the circle', size=30, col=0)
+f4k14c = I('f4k14c', '$60°$: $\\ 360°\\div6=60°$, $\\ \\frac16$ of the circle', size=30, col=0)
+f4k15 = I('f4k15', '$40°$: $\\ 360°\\div9=40°$, $\\ \\frac19$ of the circle', size=30, col=0)
+f4k15b = I('f4k15b', '$36°$: $\\ 360°\\div10=36°$, $\\ \\frac1{10}$ of the circle', size=30, col=0)
+f4k15c = I('f4k15c', '$72°$: $\\ 360°\\div5=72°$, $\\ \\frac15$ of the circle', size=30, col=0)
+f4k16 = I('f4k16', '$270°=3\\cdot90°$: $\\ \\frac34$ of the circle', size=30, col=0)
+f4k17 = I('f4k17', '$144°=2\\cdot72°$: $\\ \\frac25$ of the circle', size=30, col=0)
+f4k18 = I('f4k18', '$120°$: $\\ \\frac13$ of the circle', size=30, col=0)
+f4k18b = I('f4k18b', '$120°=2\\cdot60°=3\\cdot40°$', size=30, col=0)
+f4k19 = I('f4k19', 'Another angle? Use $\\frac{\\alpha}{360°}$', size=30, col=0)
 
 f4p = PIN(GEO('f4p', [
     ('line', [('circ', _c[0], _c[1], _r), ('dot', *_c), f4_rad(_c[0], _c[1], _r, 30), f4_rad(_c[0], _c[1], _r, 90),
@@ -2421,7 +2741,7 @@ f4k20 = IH('f4k20', 'arc: $18\\pi\\div6=3\\pi$', size=32, col=1)
 f4k21 = I('f4k21', 'perimeter: $3\\pi+9+9=3\\pi+18$', size=32, col=1, hand='perimeter :   3π + 9 + 9 = 3π + 18')
 video('geo-081', 'lesson', slides=[
     S('Sectors and Arcs',
-      L("Sectors and arcs. First, let's understand what a sector is and what an arc is.")),
+      L("Now let's learn about sectors and arcs. First, let's understand what a sector is and what an arc is.")),
     S('A sector',
       L("Here's a circle with its center. Let's draw two radii. Between them, there's an arc, a piece of the circle. The "
         "part enclosed by the two radii and the arc between them is called a sector. It's a bit like a slice of pizza.",
@@ -2430,19 +2750,20 @@ video('geo-081', 'lesson', slides=[
       L("A sector can be thin or wide. This one is wider, but it's still two radii and the arc between them.",
         show(f4sec['more'], 'This one is wider'))),
     S('Sector area',
-      L("The area of a sector is its share of the whole circle. There's a formula for it. The angle of the sector at the "
-        "center is its central angle, alpha. We take alpha over three hundred sixty, times the area of the circle, pi r "
-        "squared.", show(f4ar['line'], 'The area of a sector'), show(f4ar['alpha'], 'its central angle'),
-        show(f4k1, 'We take alpha over')),
-      L("I strongly recommend not using this formula, unless it's really the only way you understand it. It's much better "
-        "to see which part of the circle it is. Let's see what I mean.", show(f4k2, 'which part of the circle it is'))),
+      L("The area of a sector is its share of the whole circle. The angle of the sector at the center is its central "
+        "angle. Let's call it alpha. Alpha over three hundred sixty is the fraction of the circle the sector takes. So the "
+        "sector's area is alpha over three hundred sixty, times the area of the whole circle, pi r squared.", show(f4ar['line'], 'The area of a sector'), show(f4ar['alpha'], 'its central angle'),
+        show(f4k1, "So the sector's area is")),
+      L("The formula and the share are the same idea. For example, for ninety degrees, ninety over three hundred sixty is a "
+        "quarter. So often it's quicker to just see which part of the circle it is. Let's see what I mean.",
+        show(f4k2b, 'ninety over three hundred sixty'), show(f4k2, 'which part of the circle it is'))),
     S('Quarters and eighths',
       L("Here's a circle. Let's cut it into four equal parts. This sector is a quarter of the circle. Three hundred sixty "
         "divided by four is ninety, so its angle is ninety degrees.", show(f4q['line'], "Here's a circle"),
         show(f4q['cut4'], 'cut it into four'), show(f4q['quarter'], 'This sector is a quarter')),
-      L("Instead of the formula, all I need to see is that it's a quarter. So I take the area of the circle, and divide it "
-        "by four.", pt('f4q_line', 'all I need to see')),
-      L("Now let's cut a circle into eight. This sector, a real slice of family-size pizza, is an eighth of the circle. Its "
+      L("With the formula or without it, this sector is a quarter. So I take the area of the whole circle, and divide it "
+        "by four.", pt('f4q_line', 'this sector is a quarter')),
+      L("Now let's cut a circle into eight equal parts. This sector, a real slice of family-size pizza, is an eighth of the circle. Its "
         "angle is forty-five, half of ninety. Good to know, but what matters is that it's an eighth.",
         show(f4q['cut8'], 'cut a circle into eight'), show(f4q['eighth'], 'is an eighth of the circle')),
       L("For example, with a radius of six, the area of the circle is pi times six squared, thirty-six pi. A quarter of it "
@@ -2457,39 +2778,44 @@ video('geo-081', 'lesson', slides=[
     S('Arc length',
       L("Now the arc. An arc is simply a piece of the circle itself. Its length is also its share of the whole circle.",
         show(f4arc['line'], 'An arc is simply'), show(f4arc['alpha'], 'its share of the whole circle')),
-      L("There's a formula here too. Alpha over three hundred sixty, but this time times the circumference, two pi r. "
-        "Before, it was times the area, because we wanted an area. Now we want a length. But here too, my advice is to "
-        "leave the formula, and solve it by understanding.", show(f4k8, "There's a formula here too"))),
+      L("There's a formula here too. Alpha over three hundred sixty, the same fraction of the circle, but this time times "
+        "the whole circumference, two pi r. Before, it was times the area, because we wanted an area. Now we want a "
+        "length.", show(f4k8, "There's a formula here too"))),
     S('Sixths and thirds',
       L("This circle is cut into six equal parts, so this arc is a sixth of the circle. We find the circumference and "
         "divide it by six. The angle, by the way, is sixty degrees, three hundred sixty divided by six.",
         show(f4s['line'], 'This circle is cut into six'), show(f4s['sixth'], 'so this arc is a sixth')),
       L("With a radius of nine, the circumference is two pi times nine, eighteen pi. A sixth of it is three pi.",
         show(f4k9, 'two pi times nine'), show(f4k10, 'A sixth of it')),
-      L("Now a circle cut into three. The arc is a third, so eighteen pi divided by three, six pi. And the angle is a "
+      L("Now a circle cut into three equal parts. The arc is a third, so eighteen pi divided by three, six pi. And the angle is a "
         "hundred twenty, three hundred sixty divided by three.", show(f4s['cut3'], 'a circle cut into three'),
         show(f4s['third'], 'The arc is a third'), show(f4k11, 'so eighteen pi divided by'))),
     S('Two fifths',
-      L("A slightly harder one. Again the circle is cut into five, so every angle is seventy-two. But this arc covers two "
+      L("A slightly harder one. Again the circle is cut into five equal parts, so every angle is seventy-two. But this arc covers two "
         "of those parts. It's one fifth here, and another fifth here, so together it's two fifths of the circle. And its "
         "angle is seventy-two plus seventy-two, a hundred forty-four.",
         show(f4t['line'], 'Again the circle is cut into five'), show(f4t['one'], 'one fifth here'),
         show(f4t['two'], 'and another fifth here'), show(f4k13, "together it's two fifths"),
         show(f4k12, 'seventy-two plus seventy-two')),
-      L("So yes, the formulas work. But it's much simpler to see which part of the circle it is, a third, a quarter, a "
-        "fifth, a sixth. Then find the circumference or the area, and divide.", pt('f4k13', 'which part of the circle it is'))),
+      L("So the formulas work, and they say the same thing as the fractions. Often it's quickest to see which part of the "
+        "circle it is, a third, a quarter, a fifth, a sixth. Then find the circumference or the area, and divide.",
+        pt('f4k13', 'which part of the circle it is'))),
     S('Angles to know',
-      L("Here are the angles worth remembering. Ninety degrees is a quarter. Forty-five is an eighth, because it's half of "
-        "ninety, and half of a quarter is an eighth. Sixty is a sixth.", show(f4k14, 'Ninety degrees is a quarter')),
-      L("Forty is a ninth, because three hundred sixty divided by nine is forty. Thirty-six is a tenth, three hundred sixty "
-        "divided by ten. And seventy-two is a fifth.", show(f4k15, 'Forty is a ninth')),
+      L("Here are the angles worth remembering. Ninety degrees is a quarter of the circle. Forty-five is an eighth, because "
+        "it's half of ninety, and half of a quarter is an eighth. Sixty is a sixth, because three hundred sixty divided by "
+        "six is sixty.", show(f4k14, 'Ninety degrees is a quarter'), show(f4k14b, 'Forty-five is an eighth'),
+        show(f4k14c, 'Sixty is a sixth')),
+      L("Forty is a ninth, because three hundred sixty divided by nine is forty. Thirty-six is a tenth, because three "
+        "hundred sixty divided by ten is thirty-six. And seventy-two is a fifth, three hundred sixty divided by five.",
+        show(f4k15, 'Forty is a ninth'), show(f4k15b, 'Thirty-six is a tenth'), show(f4k15c, 'And seventy-two is a fifth')),
       L("We can also build bigger angles from them. Two hundred seventy is three times ninety, so it's three quarters. A "
         "hundred forty-four is twice seventy-two, so it's two fifths. A hundred twenty is a third. You can just know it, "
         "but it's also a sixth times two, or a ninth times three.",
-        show(f4k16, 'Two hundred seventy is'), show(f4k17, 'hundred forty-four is twice'), show(f4k18, 'A hundred twenty is a third')),
-      L("Remember these, and you'll find arcs and sectors in seconds. On the exam, these are the angles you'll get, not "
-        "twenty-three and a half degrees. They check whether you understand that sixty degrees is a sixth of the circle.",
-        show(f4k19, 'They check whether you understand'))),
+        show(f4k16, 'Two hundred seventy is'), show(f4k17, 'hundred forty-four is twice'),
+        show(f4k18, 'A hundred twenty is a third'), show(f4k18b, "but it's also a sixth times two")),
+      L("Remember these, and you'll find many arcs and sectors quickly. They're common fractions of the circle. But if a "
+        "question gives a different angle, we use that angle, with alpha over three hundred sixty.",
+        show(f4k19, 'But if a question gives a different angle'))),
     S('Arc or perimeter?',
       L("One last thing. The arc is only the curved part. Say the radius is nine and the angle is sixty degrees. The arc is "
         "a sixth of eighteen pi, which is three pi.", show(f4p['line'], 'One last thing'), show(f4p['arc'], 'The arc is only'),
@@ -2515,28 +2841,35 @@ f4q82 = [('circ', _O[0], _O[1], _R0, 'ink', 2.5), ('seg', 320, 180, 427.836, 160
          ('txt', 305, 195, 'O', 'ink', 22, True), ('txt', 415.516, 81.091, '4π', 'ink', 22)]
 f4g82 = PIN(GEO('f4g82', [
     ('line', f4q82 + [('txt', 382, 192, '10', 'ink', 22)]),
-    ('circ', [('circ', _O[0], _O[1], _R0, 'orange', 4, True), ('txt', 320, 322, 'whole circle: 2π · 10 = 20π', 'orange', 23)]),
-    ('arc', [('arcw', _O[0], _O[1], _R0, 10, 82, 'teal', 10), ('txt', 320, 356, '4π out of 20π = 1/5', 'teal', 23)]),
+    ('circ', [('circ', _O[0], _O[1], _R0, 'orange', 4, True)]),
+    ('arc', [('arcw', _O[0], _O[1], _R0, 10, 82, 'teal', 10)]),
     ('five', f4_cuts(_O[0], _O[1], _R0, 5, 10, 'teal', 2, True)),
-    ('alpha', [('wedge', _O[0], _O[1], _R0, 10, 82, 'teal'), ('txt', 320, 390, 'α = 360° ÷ 5 = 72°', 'red', 25)]),
-], vb='150 35 340 372', w=400, title='Circle with center O and the arc AB'))
-_R(f4g82, 200)
+    ('alpha', [('wedge', _O[0], _O[1], _R0, 10, 82, 'teal')]),
+], vb='150 35 340 270', w=330, title='Circle with center O and the arc AB'))
+_R(f4g82, 190)
+# batch C (#261): the working in readable rows under our copy, each at its own clause
+f4g82x1 = IH('f4g82x1', 'whole circle: $2\\pi\\times10=20\\pi$', size=30)
+f4g82x2 = I('f4g82x2', '$\\dfrac{4\\pi}{20\\pi}=\\dfrac{4}{20}=\\dfrac{1}{5}$', size=30)
+f4g82x3 = IH('f4g82x3', '$\\alpha=360°\\div5=72°$', size=30)
+_R(f4g82x1, 470); _R(f4g82x2, 525); _R(f4g82x3, 625)
 video('solve-geo33-g082', 'solution', qid='geo33-g082', slides=[
     S('A fifth of the circle',
       L("A circle with center O has a radius of ten centimeters. The highlighted arc A B is four pi centimeters long. What "
         "is alpha?", pt('stem', 'A circle with center O', 'hl', 8.0), voice='calm', pause=0.5),
-      L("We could put the numbers into the arc-length formula. Alpha over three hundred sixty, times two pi r, equals four "
-        "pi, and so on. If that confused you a little, great, because we don't need it. [short pause] We'll see which part "
-        "of the circle the arc is.", show(f4g82['line'], 'We could put the numbers')),
+      L("Let's use Understanding. We'll find which part of the circle the arc is. To do that, we compare the arc with the "
+        "whole circumference.", show(f4g82['line'], "Let's use Understanding")),
       L("We know the arc is four pi, and the radius is ten. So let's find the whole circumference. Two pi r is two pi times "
-        "ten, which is twenty pi.", show(f4g82['circ'], "let's find the whole circumference")),
+        "ten, which is twenty pi.", show(f4g82['circ'], "let's find the whole circumference"),
+        show(f4g82x1, 'Two pi r is two pi times')),
       L("So the whole circle is twenty pi, and the arc is four pi. Four pi out of twenty pi is like four out of twenty, "
-        "which is a fifth. So the arc is a fifth of the circle. Five arcs like it go all the way around.",
-        show(f4g82['arc'], 'Four pi out of twenty pi'), show(f4g82['five'], 'Five arcs like it')),
-      L("And if the arc is a fifth of the circle, its central angle is also a fifth of the full turn. A fifth of three "
-        "hundred sixty is seventy-two. So alpha is seventy-two degrees, choice number three. [pause] Okay. I'll see you in "
-        "the next question.", show(f4g82['alpha'], 'its central angle is also a fifth'),
-        mk('tick', 'choice 3', 'choice number three'))),
+        "because the pi cancels. Four out of twenty is a fifth. So the arc is a fifth of the circle. Five arcs like it go "
+        "all the way around.",
+        show(f4g82['arc'], 'Four pi out of twenty pi'), show(f4g82x2, 'Four out of twenty is a fifth'),
+        show(f4g82['five'], 'Five arcs like it')),
+      L("And if the arc is a fifth of the circle, its central angle is also a fifth of the full turn. Three hundred sixty "
+        "divided by five is seventy-two. So alpha is seventy-two degrees, choice number three. [pause] Okay. I'll see you "
+        "in the next question.", show(f4g82['alpha'], 'its central angle is also a fifth'),
+        show(f4g82x3, 'divided by five is seventy-two'), mk('tick', 'choice 3', 'choice number three'))),
 ])
 
 
@@ -2559,33 +2892,57 @@ f4g83 = PIN(GEO('f4g83', [
                f4_at(_O[0], _O[1], _R0 + 28, 60, '1/3', 'orange', 28)]),
     ('ninth', [('wedge', _O[0], _O[1], _R0, 200, 240, 'teal'), ('arcw', _O[0], _O[1], _R0, 200, 240, 'teal', 6),
                f4_at(_O[0], _O[1], _R0 + 28, 220, '1/9', 'teal', 28)]),
-    ('sum', [('txt', 320, 318, '1/3 + 1/9 = 3/9 + 1/9 = 4/9', 'ink', 24)]),
-    ('area', [('txt', 320, 347, 'circle: π · 3² = 9π', 'ink', 24)]),
-    ('ans', [('txt', 320, 376, '4/9 of 9π = 4π', 'red', 26)]),
-    ('sep', [('txt', 320, 405, 'or: π + 3π = 4π', 'teal', 24)]),
-], vb='150 48 340 372', w=400, title='Circle with center O and two shaded sectors'))
-_R(f4g83, 200)
+], vb='150 40 340 275', w=330, title='Circle with center O and two shaded sectors'))
+_R(f4g83, 190)
+# batch C (#262): the fractions in readable rows under the copy; then a second slide (no question figure) with a fresh
+# copy, the area working in rows at their clauses, the circumference trap written as a LENGTH, and pi / 3 pi on the sectors
+f4g83x1 = I('f4g83x1', '$\\frac13=\\frac39$', size=32)
+f4g83x2 = I('f4g83x2', '$\\frac39+\\frac19=\\frac49$ of the area', size=32)
+_R(f4g83x1, 470); _R(f4g83x2, 555)
+f4g83b = PIN(GEO('f4g83b', [
+    ('line', f4q83 + [('wedge', _O[0], _O[1], _R0, 0, 120, 'orange'), f4_at(_O[0], _O[1], _R0 + 28, 60, '1/3', 'orange', 28),
+                      ('wedge', _O[0], _O[1], _R0, 200, 240, 'teal'), f4_at(_O[0], _O[1], _R0 + 28, 220, '1/9', 'teal', 28)]),
+    ('p1', [f4_at(_O[0], _O[1], 90, 220, 'π', 'teal', 28)]),
+    ('p3', [f4_at(_O[0], _O[1], 86, 78, '3π', 'orange', 28)]),
+], vb='150 40 340 275', w=420, title='Circle with center O and two shaded sectors'))
+LEFT(f4g83b, y=280, x=450, w=420)
+f4g83y1 = IH('f4g83y1', 'area of the circle: $\\pi\\cdot3^2=9\\pi$', size=30)
+f4g83y2 = IH('f4g83y2', 'circumference: $2\\pi\\cdot3=6\\pi$', size=30)
+f4g83y3 = I('f4g83y3', '$\\frac49\\times6\\pi=\\frac{8\\pi}{3}$: a length, not an area', size=30)
+f4g83y4 = IH('f4g83y4', '$9\\pi\\div9=\\pi$', size=30)
+f4g83y5 = IH('f4g83y5', '$4\\times\\pi=4\\pi$', size=30)
+f4g83y6 = IH('f4g83y6', 'two sectors: $\\pi+3\\pi=4\\pi$', size=30)
+for _it, _y in ((f4g83y1, 270), (f4g83y2, 330), (f4g83y3, 390), (f4g83y4, 475), (f4g83y5, 535), (f4g83y6, 600)): _R(_it, _y)
+NOFIG33.add(('solve-geo33-g083', 1))
 video('solve-geo33-g083', 'solution', qid='geo33-g083', slides=[
     S('Parts of the circle',
       L("A circle with center O has a radius of three centimeters. Two shaded sectors that don't overlap have central "
         "angles of forty degrees and a hundred twenty degrees. What is their total area, in square centimeters?",
         pt('stem', 'A circle with center O', 'hl', 10.0), voice='calm', pause=0.5),
-      L("Here too, we could put the numbers into the formula, but let's save ourselves that. We have a forty and a hundred "
-        "twenty, and we know what part of the circle each one is.", show(f4g83['line'], 'Here too, we could')),
-      L("[short pause] A hundred twenty degrees is a third of the circle. Forty degrees is a ninth, because three hundred "
-        "sixty divided by nine is forty.", show(f4g83['third'], 'A hundred twenty degrees is a third'),
-        show(f4g83['ninth'], 'Forty degrees is a ninth')),
-      L("Together, that's a third plus a ninth. In ninths, a third is three ninths, and three ninths plus one ninth is four "
-        "ninths. So the shaded part is four ninths of the circle's area.", show(f4g83['sum'], 'Together, that')),
-      L("Now the area of the circle. Pi r squared is pi times three squared, which is nine pi. Careful, we need the area "
-        "here, not the circumference. Four ninths of the circumference, six pi, would give eight pi over three, and that's "
-        "choice number two, a trap.", show(f4g83['area'], 'Pi r squared is'), mk('cross', 'choice 2', 'a trap')),
-      L("I don't need the whole circle, only four ninths of it. Nine pi divided by nine is pi, and four times that is four "
-        "pi. Choice number three is our answer.", show(f4g83['ans'], 'Nine pi divided by nine'),
-        mk('tick', 'choice 3', 'Choice number three is our answer')),
-      L("We can also take each sector separately. A ninth of nine pi is pi, and a third of nine pi is three pi. Together "
-        "it's four pi again. Just don't stop at three pi, that's only the big sector. [pause] Okay. I'll see you in the next "
-        "question.", show(f4g83['sep'], 'We can also take each sector'), mk('cross', 'choice 4', "that's only the big sector"))),
+      L("Let's find which fraction of the circle is shaded. That's what the sector formula means anyway. We have a forty "
+        "and a hundred twenty, and we know what part of the circle each one is.",
+        show(f4g83['line'], "Let's find which fraction")),
+      L("[short pause] A hundred twenty degrees is a third of the circle, because three hundred sixty divided by three is "
+        "a hundred twenty. Forty degrees is a ninth, because three hundred sixty divided by nine is forty.",
+        show(f4g83['third'], 'A hundred twenty degrees is a third'), show(f4g83['ninth'], 'Forty degrees is a ninth')),
+      L("Together, that's a third plus a ninth. In ninths, a third is three ninths. Three ninths plus one ninth is four "
+        "ninths. So the shaded part is four ninths of the circle's area.",
+        show(f4g83x1, 'In ninths, a third is three ninths'), show(f4g83x2, 'Three ninths plus one ninth'))),
+    S('Four ninths of the area',
+      L("Now the area of the circle. Pi r squared is pi times three squared, which is nine pi.",
+        show(f4g83b['line'], 'Now the area of the circle'), show(f4g83y1, 'Pi r squared is')),
+      L("Careful, we need the area here, not the circumference. The circumference is two pi times three, six pi. Four "
+        "ninths of it would be eight pi over three. That's a length, not an area. It's choice number two, a trap.",
+        show(f4g83y2, 'The circumference is two pi times three'), show(f4g83y3, 'Four ninths of it would be'),
+        mk('cross', 'choice 2', 'a trap')),
+      L("I don't need the whole circle, only four ninths of it. Nine pi divided by nine is pi. And four times pi is four "
+        "pi. Choice number three is our answer.", show(f4g83y4, 'Nine pi divided by nine'),
+        show(f4g83y5, 'And four times pi is four pi'), mk('tick', 'choice 3', 'Choice number three is our answer')),
+      L("We can also take each sector separately. A ninth of nine pi is pi. A third of nine pi is three pi. Together it's "
+        "four pi again. The question asks for both sectors, so don't stop at three pi. That's only the big sector. [pause] "
+        "Okay. I'll see you in the next question.", show(f4g83b['p1'], 'A ninth of nine pi is pi'),
+        show(f4g83b['p3'], 'A third of nine pi is three pi'), show(f4g83y6, "Together it's four pi again"),
+        mk('cross', 'choice 4', "That's only the big sector")), sb='Parts of the circle'),
 ])
 
 # =================================================================================================================
@@ -2653,12 +3010,13 @@ f5L = PIN(GEO('f5L', [
 ], vb='20 25 940 340', w=1200, col=0, title='Three circle rules'))
 video('geo-084', 'lesson', slides=[
     S('Circles in Questions',
-      L("Circles in questions. In the last lessons we learned the rules of the circle.")),
+      L("In the last lessons we learned the rules of the circle. Now let's use the circle rules in questions.")),
     S('What we use',
       L("Now we'll practice exam questions, basic ones and a bit more advanced ones, that use only these rules. Try each "
         "question yourself first, and then watch the solution."),
-      L("Most circle questions come back to a few rules. First, all the radii of a circle are equal. So two radii and the "
-        "chord between them make an isosceles triangle. Isosceles triangles hide inside almost every circle.",
+      L("Most circle questions come back to a few rules. First, all the radii of a circle are equal. So here, two radii and "
+        "the chord between them make an isosceles triangle. That needs a real triangle. If the two radii make one straight "
+        "line, a diameter, there's no triangle. Isosceles triangles hide inside many circle questions.",
         show(f5L['line'], 'Most circle questions'), show(f5L['p1'], 'all the radii of a circle'),
         show(f5L['p1t'], 'make an isosceles triangle')),
       L("Second, a central angle is twice the inscribed angle on the same arc. A central angle of one hundred degrees "
@@ -2687,13 +3045,19 @@ f5g85 = PIN(GEO('f5g85', [
     ('line', [('circ', *f5O5, f5R5), f5_s(f5A5, f5B5), f5_s(f5O5, f5C5), f5_s(f5B5, f5C5), ('tint', [f5O5, f5B5, f5C5], 'ink'),
               ('dot', *f5O5), f5_n(f5A5, 'A', -18, 0), f5_n(f5B5, 'B', 18, 0), f5_n(f5C5, 'C', 12, -18), f5_n(f5O5, 'O', -14, 20),
               ('arc', *f5O5, 34, 60, 180, 'large', '120°', 62)]),
-    ('adj', [('arc', *f5O5, 30, 0, 60, 'small', '60°', 58), ('txt', 470, 50, '180° − 120° = 60°', 'teal', 24)]),
-    ('iso', [f5_t(f5O5, f5B5), f5_t(f5O5, f5C5), ('tint', [f5O5, f5B5, f5C5], 'teal'), ('txt', 470, 95, 'OB = OC  (radii)', 'ink', 24)]),
-    ('base', [f5_ang(f5B5, f5O5, f5C5, 26, 'small', '60°', 52), f5_ang(f5C5, f5O5, f5B5, 26, 'small', '60°', 50),
-              ('txt', 470, 140, '180° − 60° = 120°', 'ink', 24), ('txt', 470, 180, '120° ÷ 2 = 60°', 'teal', 24)]),
-    ('eq', [f5_t(f5B5, f5C5), ('txt', 470, 230, 'all 60°: equilateral', 'teal', 24)]),
-], vb='0 10 600 325', w=540, title='Circle with center O and triangle OBC'))
-_R(f5g85, 200)
+    ('adj', [('arc', *f5O5, 30, 0, 60, 'small', '60°', 58)]),
+    ('iso', [f5_t(f5O5, f5B5), f5_t(f5O5, f5C5), ('tint', [f5O5, f5B5, f5C5], 'teal')]),
+    ('base', [f5_ang(f5B5, f5O5, f5C5, 26, 'small', '60°', 52), f5_ang(f5C5, f5O5, f5B5, 26, 'small', '60°', 50)]),
+    ('eq', [f5_t(f5B5, f5C5)]),
+], vb='0 10 345 325', w=240, title='Circle with center O and triangle OBC'))
+_R(f5g85, 192)
+# batch C (#264): the working in readable rows (no tiny captions), each at its own clause
+f5g85x1 = IH('f5g85x1', '$\\angle BOC=180°-120°=60°$', size=28)
+f5g85x2 = IH('f5g85x2', '$OB=OC$  (radii)', size=28)
+f5g85x3 = IH('f5g85x3', '$180°-60°=120°$', size=28)
+f5g85x4 = IH('f5g85x4', '$120°\\div2=60°$', size=28)
+f5g85x5 = IH('f5g85x5', 'all three $60°$: equilateral', size=28)
+ROWS(428, 52, f5g85x1, f5g85x2, f5g85x3, f5g85x4, f5g85x5)
 # the cut-out: a small copy (top left) and the triangle enlarged (right)
 f5o5, f5r5 = (95.0, 100.0), 72.0
 f5a5s, f5b5s, f5c5s = gpt(*f5o5, f5r5, 180), gpt(*f5o5, f5r5, 0), gpt(*f5o5, f5r5, 60)
@@ -2710,12 +3074,17 @@ f5big = ([('tint', [f5O5b, f5B5b, f5C5b], 'teal')] + f5_poly([f5O5b, f5B5b, f5C5
             f5_t(f5O5b, f5B5b), f5_t(f5B5b, f5C5b), f5_t(f5C5b, f5O5b)])
 f5g85b = PIN(GEO('f5g85b', [
     ('line', f5small + f5big),
-    ('r10', [('txt', 110, 210, 'AB = 20, r = 10', 'ink', 24), ('txt', 390, 316, '10', 'teal', 26)]),
+    ('r10', [('txt', 390, 316, '10', 'teal', 26)]),
     ('sides', [('txt', 296, 160, '10', 'teal', 26), ('txt', 484, 160, '10', 'teal', 26)]),
-    ('f', [('txt', 110, 260, '10² · √3 / 4', 'ink', 26), ('txt', 110, 300, '= 100√3 / 4', 'ink', 26),
-           ('txt', 110, 340, '= 25√3', 'red', 28)]),
 ], vb='0 15 600 345', w=540, title='Triangle OBC taken out and enlarged'))
-_R(f5g85b, 200)
+LEFT(f5g85b, y=270, x=410, w=600)
+f5g85y1 = IH('f5g85y1', '$r=20\\div2=10$', size=30)
+f5g85y2 = I('f5g85y2', 'equilateral: $S=\\dfrac{a^2\\sqrt3}{4}$', size=30)
+f5g85y3 = IH('f5g85y3', '$10^2=100$', size=30)
+f5g85y4 = I('f5g85y4', '$S=\\dfrac{100\\sqrt3}{4}$', size=30)
+f5g85y5 = IH('f5g85y5', '$100\\div4=25$', size=30)
+f5g85y6 = IH('f5g85y6', '$S=25\\sqrt3$', size=30)
+for _it, _y in ((f5g85y1, 270), (f5g85y2, 330), (f5g85y3, 425), (f5g85y4, 482), (f5g85y5, 577), (f5g85y6, 635)): _R(_it, _y)
 f5big3 = ([('tint', [f5O5b, f5B5b, f5C5b], 'teal')] + f5_poly([f5O5b, f5B5b, f5C5b], 'teal', 4)
           + [f5_n(f5O5b, 'O', -16, 16), f5_n(f5B5b, 'B', 16, 16), f5_n(f5C5b, 'C', 0, -20),
              f5_t(f5O5b, f5B5b), f5_t(f5B5b, f5C5b), f5_t(f5C5b, f5O5b),
@@ -2725,51 +3094,66 @@ f5g85c = PIN(GEO('f5g85c', [
     ('h', [f5_s(f5C5b, f5H5b, 'teal', 3, True), ('right', f5H5b[0], f5H5b[1], 90, 180, 14)]),
     ('half', [('tint', [f5O5b, f5H5b, f5C5b], 'orange'), ('txt', 320, 316, '5', 'orange', 26), ('txt', 460, 316, '5', 'teal', 26),
               f5_ang(f5O5b, f5B5b, f5C5b, 30, 'small', '60°', 58), f5_ang(f5C5b, f5O5b, f5H5b, 36, 'small', '30°', 62)]),
-    ('hh', [('txt', 430, 205, '5√3', 'orange', 26), ('txt', 110, 210, 'short leg 5', 'orange', 24),
-            ('txt', 110, 245, 'long leg 5√3', 'orange', 24)]),
-    ('f', [('txt', 110, 295, '10 · 5√3 / 2', 'ink', 26), ('txt', 110, 335, '= 25√3', 'red', 28)]),
+    ('hh', [('txt', 430, 205, '5√3', 'orange', 26)]),
 ], vb='0 15 600 345', w=540, title='The height of the equilateral triangle'))
-_R(f5g85c, 200)
+LEFT(f5g85c, y=270, x=410, w=600)
+f5g85z1 = IH('f5g85z1', 'long leg: $h=5\\sqrt3$', size=30)
+f5g85z2 = I('f5g85z2', '$S=\\dfrac{10\\times5\\sqrt3}{2}$', size=30)
+f5g85z3 = IH('f5g85z3', '$10\\times5\\sqrt3=50\\sqrt3$', size=30)
+f5g85z4 = IH('f5g85z4', '$50\\sqrt3\\div2=25\\sqrt3$', size=30)
+for _it, _y in ((f5g85z1, 280), (f5g85z2, 345), (f5g85z3, 445), (f5g85z4, 505)): _R(_it, _y)
+NOFIG33.update({('solve-geo33-g085', 1), ('solve-geo33-g085', 2)})
 video('solve-geo33-g085', 'solution', qid='geo33-g085', slides=[
     S('Equal radii',
       L("A B is a diameter of a circle with center O, and A B is twenty centimeters. Given: angle A O C is one hundred "
         "twenty degrees. What is the area of the shaded triangle O B C, in square centimeters?",
         pt('stem', 'A B is a diameter', 'hl', 10.0), voice='calm', pause=0.5),
-      L("We want the area of a triangle, and we know one angle and one length. [short pause] Let's start with the first "
-        "given, the angle, and see what it tells us about the triangle.", show(f5g85['line'], 'We want the area')),
+      L("We want the area of a triangle, and we know one angle and one length. [short pause] Let's use the math way. "
+        "We'll start with the hundred twenty degree angle, and see what it tells us about the triangle.",
+        show(f5g85['line'], 'We want the area')),
       L("Angle A O C is one hundred twenty. A B is a straight line, so the angle next to it completes it to one hundred "
         "eighty. One hundred eighty minus one hundred twenty is sixty. So angle B O C is sixty degrees.",
-        pt('fig: 120°', 'Angle A O C is one hundred twenty'), show(f5g85['adj'], 'So angle B O C is sixty')),
+        pt('fig: 120°', 'Angle A O C is one hundred twenty'), show(f5g85x1, 'One hundred eighty minus one hundred twenty'),
+        show(f5g85['adj'], 'So angle B O C is sixty')),
       L("Now notice something. Inside a circle, isosceles triangles usually hide, because all the radii are equal. O B and "
         "O C are both radii, so they're equal, and the shaded triangle is at least isosceles.",
-        show(f5g85['iso'], 'O B and O C are both radii')),
-      L("Its top angle, at O, is sixty. The three angles add up to one hundred eighty, so the two base angles share one "
-        "hundred eighty minus sixty, which is one hundred twenty. They're equal, so each one is half of it, sixty.",
-        show(f5g85['base'], 'so the two base angles share')),
+        show(f5g85['iso'], 'O B and O C are both radii'), show(f5g85x2, "so they're equal")),
+      L("Its top angle, at O, is sixty. The three angles add up to one hundred eighty. So the two base angles share one "
+        "hundred eighty minus sixty, which is one hundred twenty. They're equal, so each one is half of it. One hundred "
+        "twenty divided by two is sixty.",
+        show(f5g85x3, 'So the two base angles share'), show(f5g85x4, 'twenty divided by two'),
+        show(f5g85['base'], 'two is sixty')),
       L("So all three angles are sixty. As we said in the triangles topic, an isosceles triangle with a sixty-degree "
-        "angle is always equilateral.", show(f5g85['eq'], 'So all three angles are sixty'))),
+        "angle is always equilateral.", show(f5g85['eq'], 'So all three angles are sixty'),
+        show(f5g85x5, 'is always equilateral'))),
     S('The area',
       L("[pause] Let's take the shaded triangle out and make it bigger, so it's easier to see.",
         show(f5g85b['line'], "Let's take the shaded triangle out")),
-      L("Now the second given. A B is twenty, and A B is a diameter. A diameter is two radii, so one radius is twenty "
+      L("Now let's use the diameter, twenty. A B is a diameter, and a diameter is two radii. So one radius is twenty "
         "divided by two, which is ten. So O B is ten. And the triangle is equilateral, so all its sides are ten.",
-        show(f5g85b['r10'], 'A diameter is two radii'), show(f5g85b['sides'], 'so all its sides are ten')),
-      L("They ask for the area of an equilateral triangle with side ten. We have a formula for that. Remember the count, "
-        "a-two-three-four. It's a squared, times root three, over four, where a is the side."),
-      L("We put ten in place of a. Ten squared is one hundred, so we get one hundred root three, over four. One hundred "
-        "over four is twenty-five, so the area is twenty-five root three. Choice number four is our answer.",
-        show(f5g85b['f'], 'We put ten in place of a'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
+        show(f5g85y1, 'twenty divided by two'), show(f5g85b['r10'], 'So O B is ten'),
+        show(f5g85b['sides'], 'so all its sides are ten')),
+      L("They ask for the area of an equilateral triangle with side ten. So let's use the math way with the equilateral "
+        "formula. Remember the count, a-two-three-four. It's a squared, times root three, over four, where a is the side.",
+        show(f5g85y2, "It's a squared, times root three")),
+      L("We put ten in place of a. Ten squared is one hundred. So we get one hundred root three, over four. One hundred "
+        "divided by four is twenty-five, so the area is twenty-five root three. Choice number four is our answer.",
+        show(f5g85y3, 'Ten squared is one hundred'), show(f5g85y4, 'So we get one hundred root three'),
+        show(f5g85y5, 'divided by four is twenty-five'), show(f5g85y6, 'so the area is twenty-five root three'),
+        mk('tick', 'choice 4', 'Choice number four is our answer'))),
     S('Without the formula',
-      L("[pause] And if you don't remember the formula, there's another way. We already know the triangle is "
-        "equilateral, with side ten. Let's draw its height, from C straight down to O B.",
+      L("[pause] And if you don't remember the formula, there's another way. It's the same math way, this time with the "
+        "height. We already know the triangle is equilateral, with side ten. Let's draw its height, from C straight down to O B.",
         show(f5g85c['line'], "there's another way"), show(f5g85c['h'], "Let's draw its height")),
       L("In an equilateral triangle, the height cuts the base in half, so we get five and five. Each half is a gold "
         "triangle, thirty, sixty, ninety.", show(f5g85c['half'], 'so we get five and five')),
       L("Five is the short leg. The long leg is the short leg times root three, so the height is five root three.",
-        show(f5g85c['hh'], 'so the height is five root three')),
-      L("Now base times height, over two, because that's the area of a triangle. Ten times five root three is fifty root three, and over two it's twenty-five "
-        "root three. Again choice number four. [pause] Okay. I'll see you in the next question.",
-        show(f5g85c['f'], 'Now base times height'), mk('tick', 'choice 4', 'Again choice number four'))),
+        show(f5g85c['hh'], 'so the height is five root three'), show(f5g85z1, 'so the height is five root three')),
+      L("Now base times height, over two, because that's the area of a triangle. Ten times five root three is fifty root "
+        "three. Divided by two, it's twenty-five root three. Again choice number four. [pause] Okay. I'll see you in the "
+        "next question.",
+        show(f5g85z2, 'Now base times height'), show(f5g85z3, 'Ten times five root three'),
+        show(f5g85z4, "Divided by two, it's twenty-five"), mk('tick', 'choice 4', 'Again choice number four'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g086 (Hebrew: the second sample question)
@@ -2793,50 +3177,71 @@ f5x86 = f5_ang(f5B6, f5A6, f5O6, 40, 'red', 'x', 62)
 f5g86 = PIN(GEO('f5g86', [
     ('line', f5q86 + [f5x86]),
     ('arc', [('arcw', *f5O6, f5R6, 50, 130, 'teal')]),
-    ('cent', [('arc', *f5O6, 30, 50, 130, 'large', '112°', 54), ('txt', 470, 60, '2 · 56° = 112°', 'orange', 24)]),
-    ('iso', [('tint', [f5O6, f5B6, f5C6], 'teal'), f5_t(f5O6, f5B6), f5_t(f5O6, f5C6), ('txt', 470, 105, 'OB = OC  (radii)', 'ink', 24)]),
-    ('b34', [f5_ang(f5B6, f5C6, f5O6, 26, 'small', '34°', 50), f5_ang(f5C6, f5B6, f5O6, 26, 'small', '34°', 50),
-             ('txt', 470, 150, '180° − 112° = 68°', 'ink', 24),
-             ('txt', 470, 190, '68° ÷ 2 = 34°', 'teal', 24)]),
-], vb='0 15 600 345', w=540, title='Isosceles triangle ABC in a circle with center O'))
-_R(f5g86, 200)
+    ('cent', [('arc', *f5O6, 30, 50, 130, 'large', '112°', 54)]),
+    ('iso', [('tint', [f5O6, f5B6, f5C6], 'teal'), f5_t(f5O6, f5B6), f5_t(f5O6, f5C6)]),
+    ('b34', [f5_ang(f5B6, f5C6, f5O6, 26, 'small', '34°', 50), f5_ang(f5C6, f5B6, f5O6, 26, 'small', '34°', 50)]),
+], vb='0 15 345 345', w=300, title='Isosceles triangle ABC in a circle with center O'))
+_R(f5g86, 190)
+# batch C (#265): readable rows, one step each; slide 2 gets an enlarged detail of the angle at B (34, x, the whole 62)
+f5g86x1 = IH('f5g86x1', '$\\angle BOC=2\\times56°=112°$', size=28)
+f5g86x2 = IH('f5g86x2', '$OB=OC$  (radii)', size=28)
+f5g86x3 = IH('f5g86x3', '$180°-112°=68°$', size=28)
+f5g86x4 = IH('f5g86x4', '$\\angle OBC=68°\\div2=34°$', size=28)
+ROWS(500, 50, f5g86x1, f5g86x2, f5g86x3, f5g86x4)
 f5g86b = PIN(GEO('f5g86b', [
     ('line', f5q86 + [f5x86, f5_t(f5O6, f5B6), f5_t(f5O6, f5C6), f5_ang(f5B6, f5C6, f5O6, 26, 'small', '34°', 50),
                       f5_ang(f5C6, f5B6, f5O6, 26, 'small', '34°', 50)]),
     ('abac', [f5_t(f5A6, f5B6, 2, 'orange'), f5_t(f5A6, f5C6, 2, 'orange')]),
-    ('b62', [f5_ang(f5B6, f5A6, f5C6, 92, 'large'), ('txt', 185, 136, '62°', 'orange', 24),
-             ('txt', 470, 60, '180° − 56° = 124°', 'ink', 24), ('txt', 470, 100, '124° ÷ 2 = 62°', 'orange', 24)]),
-    ('x', [('txt', 470, 150, 'x = 62° − 34°', 'red', 26), ('txt', 470, 190, 'x = 28°', 'red', 28)]),
+    ('b62', [f5_ang(f5B6, f5A6, f5C6, 92, 'large'), ('txt', 185, 136, '62°', 'orange', 24)]),
+    ('det', [('seg', 560, 70, 400, 70, 'ink', 3), ('seg', 560, 70, 427.354, 159.471, 'ink', 3), ('seg', 560, 70, 484.885, 211.272, 'ink', 3),
+             ('dot', 560, 70), ('txt', 576, 58, 'B', 'ink', 24, True), ('txt', 386, 70, 'C', 'ink', 22, True),
+             ('txt', 414, 172, 'O', 'ink', 22, True), ('txt', 480, 230, 'A', 'ink', 22, True),
+             ('arc', 560, 70, 55, 180, 214, 'small', '34°', 80), ('arc', 560, 70, 128, 180, 242, 'large', '62°', 150),
+             ('txt', 480, 300, 'the angle at B, enlarged', 'ink', 20)]),
+    ('dx', [('arc', 560, 70, 92, 214, 242, 'red', 'x', 112)]),
 ], vb='0 15 600 345', w=540, title='Isosceles triangle ABC: the whole angle at B'))
-_R(f5g86b, 200)
+LEFT(f5g86b, y=270, x=410, w=600)
+f5g86y1 = IH('f5g86y1', '$180°-56°=124°$', size=30)
+f5g86y2 = IH('f5g86y2', '$\\angle ABC=124°\\div2=62°$', size=30)
+f5g86y3 = IH('f5g86y3', '$x=62°-34°=28°$', size=30)
+ROWS(290, 70, f5g86y1, f5g86y2, f5g86y3)
 f5q86c = [x for x in f5q86 if not (x[0] == 'txt' and x[3] == 'O') and x[0] != 'arc'] + [
     f5_n(f5O6, 'O', -20, 8), f5_ang(f5A6, f5B6, f5C6, 44, 'small')]
 f5g86c = PIN(GEO('f5g86c', [
     ('line', f5q86c + [f5x86]),
     ('oa', [f5_s(f5O6, f5A6, 'teal', 3, True)]),
+    ('axis', [('seg', f5O6[0], f5O6[1] - f5R6 - 12, f5O6[0], f5O6[1] + f5R6 + 14, 'orange', 3, True),
+              ('dot', f5O6[0], (f5B6[1] + f5C6[1]) / 2.0), ('txt', f5O6[0] + 18, (f5B6[1] + f5C6[1]) / 2.0 - 14, 'M', 'orange', 20, True),
+              ('txt', 232, 24, 'fold line', 'orange', 20)]),
     ('split', [f5_ang(f5A6, f5B6, f5O6, 64, 'small'), f5_ang(f5A6, f5O6, f5C6, 72, 'small'),
-               ('txt', 222, 262, '28°', 'teal', 22), ('txt', 128, 262, '28°', 'teal', 22),
-               ('txt', 470, 60, '56° ÷ 2 = 28°', 'teal', 24)]),
-    ('aob', [('tint', [f5A6, f5O6, f5B6], 'teal'), f5_t(f5O6, f5A6), f5_t(f5O6, f5B6), ('txt', 470, 105, 'OA = OB  (radii)', 'ink', 24)]),
-    ('x', [('txt', 470, 150, 'x = 28°', 'red', 28)]),
-], vb='0 15 600 345', w=540, title='The radius OA cuts the angle at A in half'))
-_R(f5g86c, 200)
+               ('txt', 222, 262, '28°', 'teal', 22), ('txt', 128, 262, '28°', 'teal', 22)]),
+    ('aob', [('tint', [f5A6, f5O6, f5B6], 'teal'), f5_t(f5O6, f5A6), f5_t(f5O6, f5B6)]),
+], vb='0 10 345 350', w=540, title='The radius OA cuts the angle at A in half'))
+LEFT(f5g86c, y=270, x=470, w=380)
+f5g86z1 = IH('f5g86z1', '$56°\\div2=28°$', size=30)
+f5g86z2 = IH('f5g86z2', '$OA=OB$  (radii)', size=30)
+f5g86z3 = IH('f5g86z3', '$x=\\angle OAB=28°$', size=30)
+ROWS(300, 70, f5g86z1, f5g86z2, f5g86z3)
+NOFIG33.update({('solve-geo33-g086', 1), ('solve-geo33-g086', 2)})
 video('solve-geo33-g086', 'solution', qid='geo33-g086', slides=[
     SM('Method 1 · The math way', 'The central angle',
       L("An isosceles triangle A B C is inscribed in a circle with center O, and A B equals A C. Given: angle B A C is "
         "fifty-six degrees. What is angle A B O?", pt('stem', 'An isosceles triangle', 'hl', 8.0), voice='calm', pause=0.5),
-      L("Angle A B O is the angle marked x, at B, between B A and the radius B O. [short pause] There are two ways to "
-        "solve this, a math way and a shorter psychometric way. Let's start with the math way.",
+      L("Angle A B O is the angle marked x, at B, between B A and the radius B O. [short pause] We'll solve it in two "
+        "different ways. Let's start with the math way.",
         show(f5g86['line'], 'Angle A B O is the angle marked x')),
       L("Angle B A C is an inscribed angle, and it intercepts the arc B C. Angle B O C is a central angle, and it "
         "intercepts the same arc.", show(f5g86['arc'], 'it intercepts the arc B C')),
       L("Remember, a central angle is twice the inscribed angle on the same arc. So angle B O C is two times fifty-six, "
-        "which is one hundred twelve.", show(f5g86['cent'], 'So angle B O C is two times')),
+        "which is one hundred twelve.", show(f5g86['cent'], 'So angle B O C is two times'),
+        show(f5g86x1, 'two times fifty-six')),
       L("Now look at triangle B O C. O B and O C are both radii, so they're equal, and the triangle is isosceles. This "
         "time the top angle is one hundred twelve, not sixty, so it isn't equilateral.",
-        show(f5g86['iso'], 'Now look at triangle B O C')),
+        show(f5g86['iso'], 'Now look at triangle B O C'), show(f5g86x2, 'O B and O C are both radii')),
       L("The two base angles share one hundred eighty minus one hundred twelve, which is sixty-eight. Half of sixty-eight "
-        "is thirty-four. So angle O B C is thirty-four, and so is angle O C B.", show(f5g86['b34'], 'Half of sixty-eight')),
+        "is thirty-four. So angle O B C is thirty-four, and so is angle O C B.",
+        show(f5g86x3, 'The two base angles share'), show(f5g86x4, 'Half of sixty-eight'),
+        show(f5g86['b34'], 'So angle O B C is thirty-four')),
       L("Careful, thirty-four is angle O B C, not our x. It's choice number two, and it's a trap if you stop here.",
         mk('cross', 'choice 2', "It's choice number two"))),
     SM('Method 1 · The math way', 'Subtract at B',
@@ -2845,24 +3250,29 @@ video('solve-geo33-g086', 'solution', qid='geo33-g086', slides=[
         show(f5g86b['abac'], 'A B equals A C, so triangle')),
       L("The top angle is fifty-six. So the angles at B and C share one hundred eighty minus fifty-six, which is one "
         "hundred twenty-four. Half of one hundred twenty-four is sixty-two. So the whole angle A B C is sixty-two.",
-        show(f5g86b['b62'], 'Half of one hundred twenty-four')),
-      L("The whole angle at B is sixty-two, and its lower part, O B C, is thirty-four. So x is what's left, sixty-two minus "
-        "thirty-four, which is twenty-eight. Choice number one is our answer. Notice that sixty-two, choice number three, "
-        "is the whole angle, not x.", show(f5g86b['x'], 'So x is what\'s left'),
+        show(f5g86y1, 'So the angles at B and C share'), show(f5g86y2, 'Half of one hundred twenty-four'),
+        show(f5g86b['b62'], 'So the whole angle A B C')),
+      L("Let's look closely at the angle at B. The whole angle is sixty-two. The part next to B C, angle O B C, is "
+        "thirty-four. So x is what's left. Sixty-two minus thirty-four is twenty-eight. Choice number one is our answer. "
+        "Notice that sixty-two, choice number three, is the whole angle, not x.",
+        show(f5g86b['det'], "Let's look closely at the angle at B"), show(f5g86b['dx'], "So x is what's left"),
+        show(f5g86y3, 'Sixty-two minus thirty-four'),
         mk('tick', 'choice 1', 'Choice number one is our answer'), mk('cross', 'choice 3', 'choice number three'))),
     SM('Method 2 · Understanding: symmetry', 'Symmetry',
-      L("[pause] The math solution was quite short. Now the psychometric solution. It uses symmetry and a helper line.",
-        show(f5g86c['line'], 'Now the psychometric solution')),
+      L("[pause] Now let's solve it by Understanding, with symmetry. We add one helper line, the radius O A. Then we can "
+        "use equal radii and symmetry, instead of finding the whole angle at B.",
+        show(f5g86c['line'], "Now let's solve it by Understanding")),
       L("From the center O, let's draw a radius to the vertex A.", show(f5g86c['oa'], "let's draw a radius")),
-      L("Triangle A B C is isosceles, and an isosceles triangle is symmetric. So the radius O A cuts the angle at A into "
-        "two equal parts. Fifty-six divided by two is twenty-eight, so we get twenty-eight and twenty-eight.",
-        show(f5g86c['split'], 'Fifty-six divided by two')),
-      L("We don't need to prove it. This isn't a school math exam. It's an easy question early in the section, and none "
-        "of the choices says the answer can't be found. So we can trust the symmetry."),
+      L("Now fold the figure along the line through A and the midpoint of B C. The fold swaps B and C. A B is equal to A "
+        "C, so A stays where it is. And O B is equal to O C, so the center O is on that fold line too. So the radius O A "
+        "lies right on the fold.", show(f5g86c['axis'], 'fold the figure along the line')),
+      L("The fold also swaps the two halves of the angle at A. So O A cuts the angle at A into two equal parts. Fifty-six "
+        "divided by two is twenty-eight, so we get twenty-eight and twenty-eight.",
+        show(f5g86c['split'], 'Fifty-six divided by two'), show(f5g86z1, 'divided by two is twenty-eight')),
       L("Now look at triangle A O B. O A and O B are both radii, so it's isosceles too, and its base angles are equal. So "
-        "x equals angle O A B, which is twenty-eight. Choice number one again. This way is shorter, with fewer "
-        "calculations. [pause] Okay. I'll see you in the next question.", show(f5g86c['aob'], 'Now look at triangle A O B'),
-        show(f5g86c['x'], 'So x equals angle O A B'), mk('tick', 'choice 1', 'Choice number one again'))),
+        "x is equal to angle O A B, which is twenty-eight. Choice number one again. [pause] Okay. I'll see you in the "
+        "next question.", show(f5g86c['aob'], 'Now look at triangle A O B'), show(f5g86z2, 'O A and O B are both radii'),
+        show(f5g86z3, 'which is twenty-eight'), mk('tick', 'choice 1', 'Choice number one again'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g087 (Hebrew: the third sample question)
@@ -2897,10 +3307,14 @@ f5g87b = PIN(GEO('f5g87b', [
     ('rad', [f5_s(f5O7, f5B7, 'teal', 3, True), f5_s(f5O7, f5C7, 'teal', 3, True), f5_s(f5O7, f5D7, 'teal', 3, True)]),
     ('xs', [('arc', *f5O7, 30, 0, 45, 'small', 'x', 50), ('arc', *f5O7, 30, 45, 90, 'small', 'x', 50),
             ('arc', *f5O7, 30, 90, 135, 'small', 'x', 50), ('arc', *f5O7, 30, 135, 180, 'small', 'x', 50)]),
-    ('sum', [('txt', 470, 60, '4x = 180°', 'ink', 26), ('txt', 470, 100, '180 ÷ 2 = 90', 'ink', 24),
-             ('txt', 470, 140, '90 ÷ 2 = 45', 'ink', 24), ('txt', 470, 185, 'x = 45°  ✓ true', 'teal', 26)]),
-], vb=f5V7, w=540, title='The four central angles'))
-_R(f5g87b, 200)
+], vb='-5 -10 355 340', w=300, title='The four central angles'))
+_R(f5g87b, 192)
+# batch C (#266): 4x = 180, the two halvings and x = 45 each at its own clause, in readable rows
+f5g87x1 = IH('f5g87x1', '$4x=180°$', size=28)
+f5g87x2 = IH('f5g87x2', '$180°\\div2=90°$', size=28)
+f5g87x3 = IH('f5g87x3', '$90°\\div2=45°$', size=28)
+f5g87x4 = IH('f5g87x4', '$x=45°$: true', size=28)
+ROWS(330, 56, f5g87x1, f5g87x2, f5g87x3, f5g87x4, x=1360)
 f5g87c = PIN(GEO('f5g87c', [
     ('line', f5q87),
     ('ade', [f5_s(f5D7, f5E7, 'teal', 4), f5_s(f5D7, f5A7, 'teal', 4)]),
@@ -2908,25 +3322,35 @@ f5g87c = PIN(GEO('f5g87c', [
     ('r90', [f5_rt(f5D7, f5A7, f5E7, 16), ('txt', 470, 100, '180° ÷ 2 = 90°', 'ink', 24), ('txt', 470, 145, 'ADE = 90°  ✓ true', 'teal', 26)]),
 ], vb=f5V7, w=540, title='The angle ADE on the diameter'))
 _R(f5g87c, 200)
+# batch C (#266): triangle AOC tinted in the circle, then taken out and enlarged (same labels, same orientation); its
+# 5, 5, the right angle and 5 root 2 written on the big copy; the working in rows on the right (no question figure)
+f5Ae, f5Oe, f5Ce = (371.5, 300.0), (560.0, 300.0), (560.0, 111.5)
 f5g87d = PIN(GEO('f5g87d', [
     ('line', f5q87),
     ('oc', [f5_s(f5O7, f5C7, 'teal', 3, True)]),
-    ('aoc', [('tint', [f5A7, f5O7, f5C7], 'teal'), ('txt', 158, 100, '5', 'teal', 24), ('txt', 102, 192, '5', 'teal', 24),
-             ('right', *f5O7, 90, 180, 14),
-             ('txt', 470, 60, '45° + 45° = 90°', 'ink', 24)]),
-    ('silver', [('txt', 470, 105, 'silver: 5, 5, 5√2', 'teal', 24)]),
-    ('ac', [f5_s(f5A7, f5C7, 'red', 5), ('txt', 92, 84, '5√2', 'red', 22), ('txt', 470, 150, 'AC = 5√2', 'red', 26),
-            ('txt', 470, 190, 'not 5√3  ✗', 'red', 26)]),
+    ('aoc', [('tint', [f5A7, f5O7, f5C7], 'teal'), ('tint', [f5Ae, f5Oe, f5Ce], 'teal')] + f5_poly([f5Ae, f5Oe, f5Ce], 'teal', 4)
+     + [f5_n(f5Ae, 'A', -16, 16), f5_n(f5Oe, 'O', 16, 16), f5_n(f5Ce, 'C', 16, -10)]),
+    ('ao', [('txt', 466, 322, '5', 'teal', 26)]),
+    ('oc5', [('txt', 582, 206, '5', 'teal', 26)]),
+    ('rt', [('right', *f5Oe, 90, 180, 16)]),
+    ('b45', [f5_ang(f5Ae, f5Oe, f5Ce, 40, 'small', '45°', 66), f5_ang(f5Ce, f5Ae, f5Oe, 40, 'small', '45°', 64)]),
+    ('ac', [f5_s(f5Ae, f5Ce, 'red', 5), ('txt', 440, 190, '5√2', 'red', 26)]),
 ], vb=f5V7, w=540, title='Triangle AOC'))
-_R(f5g87d, 200)
+LEFT(f5g87d, y=270, x=410, w=600)
+f5g87y1 = IH('f5g87y1', '$AO=5$', size=30)
+f5g87y2 = IH('f5g87y2', '$OC=5$  (a radius)', size=30)
+f5g87y3 = IH('f5g87y3', '$\\angle AOC=45°+45°=90°$', size=30)
+f5g87y4 = IH('f5g87y4', 'silver: hypotenuse $=$ leg $\\times\\sqrt2$', size=30)
+f5g87y5 = IH('f5g87y5', '$AC=5\\sqrt2$, not $5\\sqrt3$', size=30)
+ROWS(280, 62, f5g87y1, f5g87y2, f5g87y3, f5g87y4, f5g87y5)
+NOFIG33.add(('solve-geo33-g087', 3))
 video('solve-geo33-g087', 'solution', qid='geo33-g087', slides=[
     S('Statement 1',
       L("A E is a diameter of a circle with center O. B, C and D lie on the same semicircle, in that order. Given: A B, B "
         "C, C D and D E are all equal, and A O is five centimeters. Which of the following statements is not true?",
         pt('stem', 'A E is a diameter', 'hl', 11.0), voice='calm', pause=0.5),
-      L("We're looking for the one statement that is surely not true. [short pause] So we go statement by statement. A "
-        "statement that's always true, or even possible, is out, and we hope to be left with one.",
-        show(f5g87a['line'], 'So we go statement by statement')),
+      L("We need the false statement. [short pause] So let's check each statement against the givens. Each true one is "
+        "crossed out.", show(f5g87a['line'], "So let's check each statement")),
       L("Statement one. Angle D A E equals angle C A D. Lots of letters, so let's go slowly. D A E is the angle at A "
         "between A E and A D. Let's call it alpha.", pt('choice 1', 'Statement one'), show(f5g87a['al'], "Let's call it alpha")),
       L("C A D is the angle at A between A D and A C. Let's call it beta.", show(f5g87a['be'], "Let's call it beta")),
@@ -2941,9 +3365,10 @@ video('solve-geo33-g087', 'solution', qid='geo33-g087', slides=[
       L("Equal chords give equal central angles. All four chords are equal, so all four central angles are x.",
         show(f5g87b['xs'], 'so all four central angles are x')),
       L("Together, the four angles make the straight angle A O E, one hundred eighty degrees. So four x is one hundred "
-        "eighty. To divide by four, you can halve twice. Half of one hundred eighty is ninety, and half of ninety is "
-        "forty-five. So x really is forty-five, and choice number two is out.", show(f5g87b['sum'], 'So four x is'),
-        mk('cross', 'choice 2', 'and choice number two is out'))),
+        "eighty. To divide by four, we can halve twice. Half of one hundred eighty is ninety. And half of ninety is "
+        "forty-five. So x really is forty-five, and choice number two is out.", show(f5g87x1, 'So four x is'),
+        show(f5g87x2, 'Half of one hundred eighty'), show(f5g87x3, 'And half of ninety'),
+        show(f5g87x4, 'So x really is'), mk('cross', 'choice 2', 'and choice number two is out'))),
     S('Statement 3',
       L("[pause] Statement three. Angle A D E is ninety degrees. That's the angle at D, between D A and D E.",
         pt('choice 3', 'Statement three'), show(f5g87c['line'], 'Angle A D E is ninety'), show(f5g87c['ade'], "That's the angle at D")),
@@ -2951,19 +3376,26 @@ video('solve-geo33-g087', 'solution', qid='geo33-g087', slides=[
         "it's half of the central angle, and the central angle on a diameter is a straight angle, one hundred eighty. So "
         "it's true, and choice number three is out.", show(f5g87c['diam'], 'lies on the diameter'),
         show(f5g87c['r90'], 'An inscribed angle on a diameter'), mk('cross', 'choice 3', 'and choice number three is out')),
-      L("On the exam, we're done. Three statements are out, so you mark choice number four and move on. There's no time to "
-        "check it.", mk('tick', 'choice 4', 'so you mark choice number four'))),
+      L("On the exam, we're done. Three statements are true, so they're out. Only choice number four is left, so you mark "
+        "it and move on. No need to check the last choice once only one remains.",
+        mk('tick', 'choice 4', 'Only choice number four is left'))),
     S('Check A C',
-      L("[pause] But we're in a lesson, so let's check it. Is A C five root three? Look at triangle A O C. We need O C, so "
-        "let's draw it, from O to C.", show(f5g87d['line'], "so let's check it"), show(f5g87d['oc'], "let's draw it")),
-      L("A O is a radius, five. O C is a radius too, so it's also five. And angle A O C is made of two of our equal central angles, so it's forty-five plus forty-five, "
-        "which is ninety.", show(f5g87d['aoc'], 'A O is a radius')),
+      L("[pause] But we're in a lesson, so let's check it. Statement four says A C is five root three. Look at triangle A "
+        "O C. We need O C, so let's draw it, from O to C. Here's the triangle, taken out and bigger.",
+        show(f5g87d['line'], "so let's check it"), show(f5g87d['oc'], "let's draw it"),
+        show(f5g87d['aoc'], "Here's the triangle, taken out")),
+      L("A O is a radius, and it's five. O C is a radius too, so it's also five. And angle A O C is made of two of our "
+        "equal central angles. Forty-five plus forty-five is ninety.",
+        show(f5g87d['ao'], 'A O is a radius'), show(f5g87y1, "and it's five"), show(f5g87d['oc5'], 'O C is a radius too'),
+        show(f5g87y2, "so it's also five"), show(f5g87y3, 'Forty-five plus forty-five'),
+        show(f5g87d['rt'], 'is ninety')),
       L("So triangle A O C is a right triangle with two equal legs. That's the silver triangle, forty-five, forty-five, "
         "ninety. In the silver triangle, the hypotenuse is the leg times root two.",
-        show(f5g87d['silver'], "That's the silver triangle")),
+        show(f5g87d['b45'], "That's the silver triangle"), show(f5g87y4, 'the hypotenuse is the leg times root two')),
       L("So A C is five root two, not five root three. Root three belongs to the gold triangle. So statement four is the "
         "one that's not true. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
-        show(f5g87d['ac'], 'So A C is five root two'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
+        show(f5g87d['ac'], 'So A C is five root two'), show(f5g87y5, 'not five root three'),
+        mk('tick', 'choice 4', 'Choice number four is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g088 (Hebrew: the fourth sample question)
@@ -2997,9 +3429,22 @@ _R(f5g88, 200)
 f5g88b = PIN(GEO('f5g88b', [
     ('line', f5q88 + f5rad8 + f5sev8),
     ('om', f5om8),
-    ('om7', [('txt', 265, 197, '7', 'teal', 24), ('txt', 375, 166, '7', 'teal', 24), ('txt', 320, 335, 'OM = 7 + 7 = 14', 'teal', 26)]),
-], vb=f5V8, w=520, title='The line between the centers'))
-_R(f5g88b, 200)
+    ('om7', [('txt', 265, 197, '7', 'teal', 24), ('txt', 375, 166, '7', 'teal', 24)]),
+], vb='85 60 470 250', w=520, title='The line between the centers'))
+LEFT(f5g88b, y=290, x=430, w=560)
+# batch C (#267): OM = 7 + 7 in a row; then a real example of circles touching from the INSIDE (R 5, r 2, centers 3 apart)
+f5g88x1 = IH('f5g88x1', '$OM=7+7=14$', size=30)
+_f5P, _f5Q, _f5T = (150.0, 130.0), (216.0, 130.0), (260.0, 130.0)
+f5g88e = PIN(GEO('f5g88e', [
+    ('line', [('circ', *_f5P, 110.0), ('circ', *_f5Q, 44.0, 'teal'), ('dot', *_f5P), ('dot', *_f5Q), ('dot', *_f5T),
+              ('seg', _f5P[0], _f5P[1], _f5T[0], _f5T[1], 'ink', 2.5), ('txt', 335, 50, 'touching', 'teal', 20), ('txt', 335, 74, 'from the inside', 'teal', 20)]),
+    ('rr', [('txt', 183, 112, 'R = 5', 'ink', 20), ('txt', 238, 152, 'r = 2', 'teal', 20),
+            ('seg', _f5P[0], 160, _f5Q[0], 160, 'orange', 4), ('txt', 183, 182, '3', 'orange', 22)]),
+], vb='30 10 380 240', w=400, title='Two circles touching from the inside'))
+_R(f5g88e, 350)
+f5g88x2 = IH('f5g88x2', 'inside: $R-r=5-2=3$', size=30)
+_R(f5g88x1, 280); _R(f5g88x2, 620)
+NOFIG33.add(('solve-geo33-g088', 1))
 f5g88c = PIN(GEO('f5g88c', [
     ('line', f5q88 + f5rad8 + f5sev8 + f5om8 + [('txt', 286, 197, '14', 'teal', 24)]),
     ('tri', [('tint', [f5O8, f5A8, f5M8], 'teal'), ('txt', 320, 335, 'leg 7, hypotenuse 14 = 2 · 7', 'ink', 24)]),
@@ -3011,24 +3456,29 @@ f5g88d = PIN(GEO('f5g88d', [
     ('line', f5q88 + f5rad8 + f5sev8 + f5om8 + [('arc', *f5M8, 56, 150, 180, 'small', '30°', 84),
                                                 ('arc', *f5M8, 56, 180, 210, 'small', '30°', 84)]),
     ('o60', [('arc', *f5O8, 36, 0, 60, 'small', '60°', 60), ('arc', *f5O8, 36, 300, 360, 'small', '60°', 60)]),
-    ('aob', [('arc', *f5O8, 24, 300, 60, 'large'), ('txt', 320, 335, 'AOB = 60° + 60° = 120°', 'red', 26)]),
-    ('kite', [('tint', [f5O8, f5A8, f5M8, f5B8], 'teal'), ('txt', 320, 372, '360° − 90° − 90° − 60° = 120°', 'ink', 24)]),
-], vb=f5V8, w=520, title='The angle AOB'))
-_R(f5g88d, 200)
+    ('aob', [('arc', *f5O8, 24, 300, 60, 'large')]),
+    ('kite', [('tint', [f5O8, f5A8, f5M8, f5B8], 'teal')]),
+], vb='85 60 470 250', w=520, title='The angle AOB'))
+LEFT(f5g88d, y=290, x=430, w=560)
+f5g88y1 = IH('f5g88y1', '$\\angle AOB=60°+60°=120°$', size=30)
+f5g88y2 = IH('f5g88y2', 'kite: $\\angle M=30°+30°=60°$', size=30)
+f5g88y3 = IH('f5g88y3', '$360°-90°-90°=180°$', size=30)
+f5g88y4 = IH('f5g88y4', '$180°-60°=120°$', size=30)
+ROWS(280, 70, f5g88y1, f5g88y2, f5g88y3, f5g88y4)
+NOFIG33.add(('solve-geo33-g088', 3))
 video('solve-geo33-g088', 'solution', qid='geo33-g088', slides=[
     S('Radius to the tangent',
       L("Two congruent circles, with centers O and M, touch each other from the outside. Each one has a radius of seven "
         "centimeters. M A and M B are tangent to the circle with center O, at A and B. What is the smaller angle A O B?",
         pt('stem', 'Two congruent circles', 'hl', 11.0), voice='calm', pause=0.5),
-      L("We need an angle, but the only number we have is a length, the radius seven. [short pause] It's not clear yet how "
-        "we'll get there, so let's start from the givens and see what each one gives us.",
+      L("We need an angle, but the only number we have is a length, the radius seven. [short pause] Let's use the math "
+        "way. We start from the givens and see what each one gives us.",
         show(f5g88['line'], 'We need an angle')),
-      L("M A and M B are two tangents that come out of the same point, M. Remember, two tangents from the same point are "
-        "equal. And together with the radii to the points of tangency, they make a kite.",
-        show(f5g88['eq'], 'two tangents from the same point are')),
-      L("But right now there's no kite in the drawing, because the radii aren't there. We need a helper line. A helper "
-        "line is something we add to the drawing ourselves, so that we can solve the question. One of the most common "
-        "helper lines is a radius to the point of tangency."),
+      L("M A and M B are two tangent segments to the circle O, from the same point, M. Remember, two tangent segments "
+        "from the same point to the same circle are equal. And together with the radii to the points of tangency, they "
+        "make a kite.", show(f5g88['eq'], 'two tangent segments from the same point')),
+      L("But right now there's no kite in the drawing, because the radii aren't there. So let's add a helper line, a "
+        "radius to each point of tangency. We draw it because it gives us right angles."),
       L("So let's draw the radius from O to A, and from O to B. Both are seven. A radius to the point of tangency is "
         "perpendicular to the tangent, so we get ninety degrees at A, and ninety at B.",
         show(f5g88['rad'], "So let's draw the radius")),
@@ -3036,22 +3486,26 @@ video('solve-geo33-g088', 'solution', qid='geo33-g088', slides=[
         "angles at O and at M share the other one hundred eighty. But we can't split it yet, so it's still not enough.",
         show(f5g88['kite'], 'Now we have a kite'))),
     S('Join the centers',
-      L("[pause] There's a given we haven't used. The two circles are congruent, and they touch each other. To use it, we "
-        "need a second helper line. It's less common, but this question asks for it. We join the two centers, O and M.",
-        show(f5g88b['line'], "There's a given we haven't used"), show(f5g88b['om'], 'We join the two centers')),
-      L("When two circles touch, the touching point lies on the line between the centers. So the first part of O M is a "
-        "radius of circle O, seven. The second part is a radius of circle M, and the circles are congruent, so it's seven "
-        "too. So O M is seven plus seven, which is fourteen.", show(f5g88b['om7'], 'So the first part of O M')),
-      L("By the way, if one circle sat inside the other and they touched, the distance between the centers would be the "
-        "big radius minus the small one.")),
+      L("[pause] There's a given we haven't used. The two circles are congruent, and they touch each other. To use the "
+        "touching, we join the two centers, O and M.",
+        show(f5g88b['line'], "There's a given we haven't used"), show(f5g88b['om'], 'we join the two centers')),
+      L("When two circles touch from the outside, the touching point lies between the centers, on the line O M. So the "
+        "first part of O M is a radius of circle O, seven. The second part is a radius of circle M, and the circles are "
+        "congruent, so it's seven too. So O M is seven plus seven, which is fourteen.",
+        show(f5g88b['om7'], 'So the first part of O M'), show(f5g88x1, 'So O M is seven plus seven')),
+      L("Compare that with circles that touch from the inside. Here a small circle sits inside a big one and touches it "
+        "once. The touching point is on the line through the two centers, but now both radii go the same way. So the "
+        "distance between the centers is the big radius minus the small one. With radii five and two, it's five minus "
+        "two, which is three. In our question the circles touch from the outside, so it's seven plus seven.",
+        show(f5g88e['line'], 'Compare that with circles'), show(f5g88e['rr'], 'but now both radii go the same way'),
+        show(f5g88x2, "it's five minus"))),
     S('A gold triangle',
       L("[pause] Now look at the right triangle O A M. One leg, O A, is seven, and the hypotenuse, O M, is fourteen.",
         show(f5g88c['line'], 'Now look at the right triangle'), show(f5g88c['tri'], 'One leg, O A, is seven')),
-      L("To get an angle from the sides, it has to be a triangle we know, the silver one or the gold one. In the silver "
-        "triangle, the hypotenuse is the leg times root two. In the gold triangle, thirty, sixty, ninety, the sides are x, "
-        "x root three and two x. So the hypotenuse is exactly twice the short leg."),
-      L("Here the hypotenuse is exactly twice the leg, fourteen and seven. That only happens in the gold triangle. So O A "
-        "is the short leg, and the angle across from it, at M, is thirty degrees.",
+      L("Here the hypotenuse is twice a leg, fourteen and seven. That's the gold triangle ratio we know. In the gold "
+        "triangle, thirty, sixty, ninety, the sides are x, x root three and two x. So its hypotenuse is twice the short "
+        "leg. The silver triangle doesn't fit here, because its hypotenuse is the leg times root two."),
+      L("So O A is the short leg, and the angle across from it, at M, is thirty degrees.",
         show(f5g88c['m30'], 'the angle across from it')),
       L("The lower triangle, O B M, is the same triangle, so the angle at M there is thirty too. This time we went "
         "backwards, from the sides to the angle.", show(f5g88c['low'], 'The lower triangle'))),
@@ -3061,13 +3515,16 @@ video('solve-geo33-g088', 'solution', qid='geo33-g088', slides=[
         show(f5g88d['o60'], 'so the sixty is at O')),
       L("Angle A O B is made of the two angles at O, one from each triangle. So angle A O B is sixty plus sixty, which is one hundred twenty. Choice number three is our answer. Sixty, choice "
         "number one, is only half of the angle.", show(f5g88d['aob'], 'So angle A O B is sixty plus sixty'),
+        show(f5g88y1, 'which is one hundred twenty'),
         mk('tick', 'choice 3', 'Choice number three is our answer'), mk('cross', 'choice 1', 'Sixty, choice')),
       L("You can also finish with the kite. The angle at M is thirty plus thirty, which is sixty. The kite's angles add up "
-        "to three hundred sixty. Three hundred sixty minus ninety and ninety is one hundred eighty, and minus sixty is one "
-        "hundred twenty. The same answer.", show(f5g88d['kite'], 'You can also finish with the kite')),
-      L("So again, what did we do? We needed two helper lines. A very common one, the radius to the point of tangency, and "
-        "a less common one that this question asked for, the line between the centers. And we spotted a gold triangle from "
-        "its sides. [pause] Okay. I'll see you in the next question.")),
+        "to three hundred sixty. Three hundred sixty minus ninety and minus ninety is one hundred eighty. And one hundred "
+        "eighty minus sixty is one hundred twenty. The same answer.", show(f5g88d['kite'], 'You can also finish with the kite'),
+        show(f5g88y2, 'The angle at M is thirty plus thirty'), show(f5g88y3, 'Three hundred sixty minus ninety'),
+        show(f5g88y4, 'eighty minus sixty is one hundred twenty')),
+      L("So again, what did we do? We used two types of helper line. First the radii to the points of tangency, which gave "
+        "us right angles. Then the line between the centers, which used the touching circles. And we spotted a gold "
+        "triangle from its sides. [pause] Okay. I'll see you in the next question.")),
 ])
 
 # =================================================================================================================
@@ -3112,20 +3569,31 @@ f6BO, f6BR, f6SO, f6SR = (320.0, 180.0), 109.5, (338.25, 170.875), 48.667
 f6g89 = PIN(GEO('f6g89', [
     ('line', [('region', f6_ring(f6BO[0], f6BO[1], f6BR, f6SO[0], f6SO[1], f6SR), 'ink', 0.16),
               ('circ', f6BO[0], f6BO[1], f6BR), ('circ', f6SO[0], f6SO[1], f6SR), ('txt', 252, 168, '39π', 'ink', 22)]),
-    ('small', [('circ', f6SO[0], f6SO[1], f6SR, 'teal', 6), f6_row(66, '2πr = 10π', 'teal')]),
-    ('r5', [('dot', f6SO[0], f6SO[1]), f6_seg(f6SO, (f6SO[0] + f6SR, f6SO[1]), 'teal', 4, True), ('txt', 363, 154, '5', 'teal', 26),
-            f6_row(97, '2r = 10,  r = 5', 'teal')]),
-    ('s25', [('circ', f6SO[0], f6SO[1], f6SR, 'teal', 0, False, 'teal'), ('txt', 336, 198, '25π', 'teal', 22),
-             f6_row(128, 'π · 5² = 25π', 'teal')]),
-    ('big', [('region', f6_ring(f6BO[0], f6BO[1], f6BR, f6SO[0], f6SO[1], f6SR), 'orange', 0.3)]),
-    ('b64', [f6_row(159, '25π + 39π = 64π', 'orange')]),
-    ('r8', [('dot', f6BO[0], f6BO[1]), f6_seg(f6BO, gpt(f6BO[0], f6BO[1], f6BR, 235), 'red', 4, True), ('txt', 272, 213, '8', 'red', 26),
-            f6_row(190, 'πR² = 64π → R = 8', 'red')]),
-    ('c16', [f6_row(221, 'C = 2π · 8 = 16π')]),
-    ('est', [f6_row(252, '16 · 3.14 = 50.24', 'teal'), f6_row(283, 'between 50 and 51', 'teal')]),
-    ('trap', [f6_row(314, 'π = 3?  48  ✗', 'red')]),
-], vb='200 46 500 286', w=540, title='The small circle inside the large circle'))
-_R(f6g89, 360)
+    ('small', [('circ', f6SO[0], f6SO[1], f6SR, 'teal', 6)]),
+    ('r5', [('dot', f6SO[0], f6SO[1]), f6_seg(f6SO, (f6SO[0] + f6SR, f6SO[1]), 'teal', 4, True), ('txt', 363, 154, '5', 'teal', 26)]),
+    ('s25', [('circ', f6SO[0], f6SO[1], f6SR, 'teal', 0, False, 'teal'), ('txt', 336, 198, '25π', 'teal', 22)]),
+    ('ring', [('region', f6_ring(f6BO[0], f6BO[1], f6BR, f6SO[0], f6SO[1], f6SR), 'orange', 0.3)]),
+    ('whole', [('circ', f6BO[0], f6BO[1], f6BR, 'orange', 6)]),
+    ('r8', [('dot', f6BO[0], f6BO[1]), f6_seg(f6BO, gpt(f6BO[0], f6BO[1], f6BR, 235), 'red', 4, True), ('txt', 272, 213, '8', 'red', 26)]),
+], vb='204 64 232 232', w=230, title='The small circle inside the large circle'))
+_R(f6g89, 290)
+# batch C (#268): every step its own readable row beside the copy; slide 2 (no question figure) for the estimate, with
+# pi between 3.14 and 3.15 written as a bound and 16 x 3.14 worked in its parts
+f6g89x = [IH('f6g89x%d' % i, t, size=26) for i, t in enumerate([
+    '$2\\pi r=10\\pi$', '$2r=10$', '$r=10\\div2=5$', '$\\pi\\cdot5^2=25\\pi$', '$25\\pi+39\\pi=64\\pi$',
+    '$\\pi R^2=64\\pi$', '$R^2=64$', '$R=8$'])]
+ROWS(286, 46, *f6g89x, x=1290)
+f6g89b = PIN(GEO('f6g89b', [
+    ('line', [('circ', f6BO[0], f6BO[1], f6BR, 'ink', 3, False, 'orange'), ('dot', f6BO[0], f6BO[1]),
+              f6_seg(f6BO, gpt(f6BO[0], f6BO[1], f6BR, 235), 'red', 4, True), ('txt', 272, 213, '8', 'red', 26)]),
+    ('c', [('arcw', f6BO[0], f6BO[1], f6BR, 0, 359.9, 'teal', 7)]),
+], vb='204 64 232 232', w=330, title='The large circle'))
+LEFT(f6g89b, y=300, x=520, w=330)
+f6g89y = [IH('f6g89y%d' % i, t, size=29) for i, t in enumerate([
+    '$C=2\\pi\\times8=16\\pi$', '$3.14<\\pi<3.15$', '$16\\times3=48$', '$16\\times14=224$, so $16\\times0.14=2.24$',
+    '$16\\times3.14=50.24$', '$16\\times3.15=48+2.4=50.4$', '$50.24<16\\pi<50.4$', '$\\pi$ as $3$: $16\\times3=48$, too rough'])]
+ROWS(268, 54, *f6g89y)
+NOFIG33.add(('solve-geo33-g089', 1))
 video('solve-geo33-g089', 'solution', qid='geo33-g089', slides=[
     SM('From the small circle to the large one', 'From the small circle to the large one',
       L("The circumference of the smaller circle is ten pi centimeters, and the shaded area, inside the larger circle but "
@@ -3135,28 +3603,41 @@ video('solve-geo33-g089', 'solution', qid='geo33-g089', slides=[
         "circle to the large one, one given at a time.", show(f6g89['line'], 'We need the circumference')),
       L("[short pause] Let's start with the first given. The circumference of the small circle is ten pi. If we know a "
         "circle's circumference, can we find its radius? Yes. The circumference is two pi r, so two pi r equals ten pi.",
-        show(f6g89['small'], 'so two pi r equals ten pi')),
-      L("We can cancel pi on both sides, so two r is ten. Two radii make a diameter, so the diameter is ten, and the "
-        "radius is five. That's the radius of the small circle.", show(f6g89['r5'], 'and the radius is five')),
+        show(f6g89['small'], 'so two pi r equals ten pi'), show(f6g89x[0], 'so two pi r equals ten pi')),
+      L("We can cancel pi on both sides, so two r is ten. Two radii make a diameter, so the diameter is ten. So the "
+        "radius is ten divided by two, five. That's the radius of the small circle.",
+        show(f6g89x[1], 'so two r is ten'), show(f6g89['r5'], 'So the radius is ten divided by two'),
+        show(f6g89x[2], 'So the radius is ten divided by two')),
       L("Now its area. The area of a circle is pi r squared. Pi times five squared is twenty-five pi. That's the area of "
-        "the small white circle.", show(f6g89['s25'], 'Pi times five squared')),
+        "the small white circle.", show(f6g89['s25'], 'Pi times five squared'), show(f6g89x[3], 'is twenty-five pi')),
       L("On to the second given. The shaded ring is thirty-nine pi. The ring and the white circle together make the whole "
         "large circle. So the area of the large circle is twenty-five pi plus thirty-nine pi, which is sixty-four pi.",
-        pt('stem', 'On to the second given'), show(f6g89['big'], 'together make the whole'),
-        show(f6g89['b64'], 'So the area of the large circle')),
+        pt('stem', 'On to the second given'), show(f6g89['ring'], 'The shaded ring is thirty-nine pi'),
+        show(f6g89['whole'], 'together make the whole'), show(f6g89x[4], 'So the area of the large circle')),
       L("If we know the area, we can find the radius. Pi R squared is sixty-four pi. Cancel pi, and R squared is "
-        "sixty-four. So R is eight. Let's remember that.", show(f6g89['r8'], 'So R is eight')),
-      L("Now let's see what they asked. The circumference of the large circle. Two pi R is two pi times eight, which is "
-        "sixteen pi.", show(f6g89['c16'], 'Two pi R is two pi times eight')),
-      L("But sixteen pi isn't in the choices. The choices are ranges, so they want us to estimate. How much is pi? Pi is "
-        "three point one four, and its digits go on forever."),
-      L("So sixteen pi is sixteen times three point one four. Sixteen times three is forty-eight. Now sixteen times point one "
-        "four. Point one four is fourteen hundredths, so we work out sixteen times fourteen, and then make it hundredths. Sixteen times fourteen is two hundred twenty-four, so it's two point two four. Together, fifty point two "
-        "four, and a little more. That's between fifty and fifty-one. Choice number four is our answer.",
-        show(f6g89['est'], 'Sixteen times three is forty-eight'), mk('tick', 'choice 4', 'Choice number four is our answer')),
+        "sixty-four. So R is eight, because eight squared is sixty-four. Let's remember that.",
+        show(f6g89x[5], 'Pi R squared is sixty-four pi'), show(f6g89x[6], 'and R squared is'),
+        show(f6g89['r8'], 'So R is eight'), show(f6g89x[7], 'So R is eight'))),
+    SM('From the small circle to the large one', 'The circumference and pi',
+      L("[pause] Now let's see what they asked. The circumference of the large circle. Two pi R is two pi times eight, "
+        "which is sixteen pi.", show(f6g89b['line'], "Now let's see what they asked"),
+        show(f6g89b['c'], 'The circumference of the large circle'), show(f6g89y[0], 'Two pi R is two pi times eight')),
+      L("But sixteen pi isn't in the choices. The choices are ranges, so they want us to estimate. How much is pi? Its "
+        "digits go on forever, three point one four one five nine, and so on. So pi is more than three point one four, "
+        "and less than three point one five.", show(f6g89y[1], 'So pi is more than three point one four')),
+      L("First the lower end, sixteen times three point one four. Sixteen times three is forty-eight. Now sixteen times "
+        "point one four. Point one four is fourteen hundredths, so we work out sixteen times fourteen, and then make it "
+        "hundredths. Sixteen times fourteen is two hundred twenty-four, so it's two point two four.",
+        show(f6g89y[2], 'Sixteen times three is forty-eight'), show(f6g89y[3], 'Sixteen times fourteen is two hundred')),
+      L("Together, fifty point two four. So sixteen pi is more than fifty point two four. Now let's find the upper end. Sixteen times "
+        "point one five is two point four. So sixteen times three point one five is fifty point four.",
+        show(f6g89y[4], 'Together, fifty point two four'), show(f6g89y[5], 'So sixteen times three point one five')),
+      L("So sixteen pi is between fifty point two four and fifty point four. That's between fifty and fifty-one. Choice "
+        "number four is our answer.", show(f6g89y[6], 'So sixteen pi is between'),
+        mk('tick', 'choice 4', 'Choice number four is our answer')),
       L("Careful with the trap. If you round pi down to three, you get exactly forty-eight, and choice number one looks "
-        "right. But here the point one four matters. It adds more than two. [pause] Okay. I'll see you in the next "
-        "question.", show(f6g89['trap'], 'If you round pi down to three'), mk('cross', 'choice 1', 'choice number one looks right'))),
+        "right. Here that's too rough. The point one four adds more than two. [pause] Okay. I'll see you in the next "
+        "question.", show(f6g89y[7], 'If you round pi down to three'), mk('cross', 'choice 1', 'choice number one looks right'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g090 (Hebrew: the circumscribed circle)
@@ -3185,56 +3666,75 @@ f6g90 = PIN(GEO('f6g90', [
     ('line', [f6_seg(f6A0, f6B0), f6_seg(f6B0, f6C0), f6_seg(f6C0, f6A0), f6_name(f6A0, 'A', -16, 14), f6_name(f6B0, 'B', 16, 14),
               f6_name(f6C0, 'C', -12, -16), ('txt', 322, 322, '12', 'ink', 24), ('txt', 258, 178, '35', 'ink', 24),
               ('txt', 348, 150, '37', 'ink', 24)]),
-    ('sq', [f6_row(60, '12² = 144', x=592), f6_row(94, '35² = 1225', x=592), f6_row(128, '144 + 1225 = 1369', x=592)]),
-    ('s37', [f6_row(162, '37² = 1369  ✓', 'teal', x=592)]),
     ('right', [('tint', [f6A0, f6B0, f6C0], 'teal'), ('right', f6A0[0], f6A0[1], 0, 90, 22)]),
     ('circ', [('circ', f6O0[0], f6O0[1], 129.5, 'teal', 3, True)]),
-    ('diam', [f6_seg(f6B0, f6C0, 'teal', 6), ('dot', *f6O0), f6_row(198, 'BC = d = 37', 'teal', x=592)]),
-    ('c37', [f6_row(234, 'C = π · d = 37π', 'red', 25, x=592)]),
-    ('trap', [f6_row(270, '2π · 37 = 74π  ✗', 'red', x=592), f6_row(304, 'π · 18.5  ✗', 'red', x=592)]),
-], vb='182 34 545 300', w=540, title='Triangle ABC and its circumscribed circle'))
-_R(f6g90, 360)
+    ('diam', [f6_seg(f6B0, f6C0, 'teal', 6), ('dot', *f6O0)]),
+], vb='182 22 280 314', w=300, title='Triangle ABC and its circumscribed circle'))
+LEFT(f6g90, y=280, x=430, w=300)
+f6g90x1 = IH('f6g90x1', '$12^2 = 144$', size=28)
+f6g90x2 = IH('f6g90x2', '$35^2 = 35 \\times 35 = 1225$', size=28)
+f6g90x3 = IH('f6g90x3', '$144 + 1225 = 1369$', size=28)
+f6g90x4 = IH('f6g90x4', '$37 \\times 30 = 1110$', size=28)
+f6g90x5 = IH('f6g90x5', '$37 \\times 7 = 259$', size=28)
+f6g90x6 = IH('f6g90x6', '$37^2 = 1110 + 259 = 1369$', size=28)
+f6g90x7 = IH('f6g90x7', '$BC = d = 37$', size=28)
+f6g90x8a = IH('f6g90x8a', '$C = 2πr = π \\times d$', size=28)
+f6g90x8 = IH('f6g90x8', '$C = π \\times 37 = 37π$', size=28)
+f6g90x9 = IH('f6g90x9', '$2π \\times 37 = 74π$: d used as r', size=28)
+f6g90x10 = IH('f6g90x10', '$π \\times 18.5 = 18.5π$: no 2', size=26)
+ROWS(290, 56, f6g90x1, f6g90x2, f6g90x3, f6g90x4, f6g90x5, x=820, w=350)
+ROWS(290, 56, f6g90x6, f6g90x7, f6g90x8a, f6g90x8, x=1200, w=380)
+for _it, _y in ((f6g90x9, 626), (f6g90x10, 668)): _it['_col'] = 0; _it['_x'] = 410; _it['_y'] = _y
+NOFIG33.add(('solve-geo33-g090', 1))
 video('solve-geo33-g090', 'solution', qid='geo33-g090', slides=[
     SM('Two rules', 'Two rules',
       L("The sides of triangle A B C are twelve centimeters, thirty-five centimeters, and thirty-seven centimeters. What is "
         "the circumference of the circle circumscribed about the triangle, in centimeters?",
         pt('stem', 'The sides of triangle', 'hl', 8.0), voice='calm', pause=0.5),
       L("A circle circumscribed about a triangle passes through all three of its vertices. But wait, there's no circle in "
-        "the figure at all. [short pause] To solve this, we need two rules."),
-      L("[short pause] Rule one. Every triangle can be circumscribed. Every triangle has a circle that passes through all "
-        "three of its vertices. Here's an acute triangle with its circle, and here's an obtuse one with its circle.",
-        show(f6g90r['line'], 'Rule one'), show(f6g90r['c1'], "Here's an acute triangle"), show(f6g90r['c2'], "and here's an obtuse one")),
-      L("Rule two. There's only one such circle, with one radius. That's true for every triangle. So this triangle has "
-        "exactly one circumscribed circle, and we need to find its size.", show(f6g90r['one'], "There's only one such circle")),
+        "the figure at all. [short pause] To solve this, we need two facts about such circles."),
+      L("[short pause] Here's the first fact. Every triangle has a circle that passes through all three of its corners. "
+        "Here's an acute triangle with its circle, and here's an obtuse one with its circle.",
+        show(f6g90r['line'], "Here's the first fact"), show(f6g90r['c1'], "Here's an acute triangle"), show(f6g90r['c2'], "and here's an obtuse one")),
+      L("And here's the second fact. Every triangle has exactly one circle through its three corners. What does that mean? "
+        "With these same three corners on the circle, we can't choose a different radius. So this triangle has exactly "
+        "one circumscribed circle, and we need to find its size.", show(f6g90r['one'], 'exactly one circle through its three corners')),
       L("[short pause] So let's look for something special in this triangle. Its sides are twelve, thirty-five and "
         "thirty-seven.", pt('fig: 35', 'Its sides are twelve'))),
     SM('The hypotenuse is a diameter', 'A right triangle',
       L("Let's check Pythagoras. Does twelve squared plus thirty-five squared equal thirty-seven squared? Twelve squared "
         "is one hundred forty-four. Thirty-five squared is thirty-five times thirty-five, one thousand two hundred "
         "twenty-five. Together, one thousand three hundred sixty-nine.", show(f6g90['line'], "Let's check Pythagoras"),
-        show(f6g90['sq'], 'Twelve squared is')),
-      L("And thirty-seven squared? Thirty-seven times thirty is one thousand one hundred ten, and thirty-seven times seven "
+        show(f6g90x1, 'Twelve squared is'), show(f6g90x2, 'Thirty-five squared is'),
+        show(f6g90x3, 'Together, one thousand three hundred sixty-nine')),
+      L("And thirty-seven squared? Thirty-seven times thirty is one thousand one hundred ten. Thirty-seven times seven "
         "is two hundred fifty-nine. Together, one thousand three hundred sixty-nine. The same.",
-        show(f6g90['s37'], 'Together, one thousand three hundred sixty-nine. The same')),
+        show(f6g90x4, 'Thirty-seven times thirty'), show(f6g90x5, 'Thirty-seven times seven'),
+        show(f6g90x6, 'Together, one thousand three hundred sixty-nine. The same')),
       L("The sides satisfy Pythagoras, so the triangle must be a right triangle. The right angle is across from the longest "
         "side, thirty-seven. That's the angle at A.", show(f6g90['right'], 'The right angle is across')),
       L("This is new. Until now, they gave us a right triangle with two of its sides, and we found the third. Here they "
         "gave us all three sides, and we had to see from them that the triangle is a right triangle."),
+      L("So when a question gives all three sides, check Pythagoras first. If the squares of the two shorter sides add up "
+        "to the square of the longest side, the triangle is a right triangle. The right angle is across from the longest "
+        "side. For example, five, twelve and thirteen. Twenty-five plus a hundred forty-four is a hundred sixty-nine. "
+        "And thirteen squared is a hundred sixty-nine too. So that's a right triangle.",
+        pt('f6g90x6', 'check Pythagoras first')),
       L("Now let's draw the circle around the triangle, and remember one more rule. The angle at A sits on the circle, so "
         "it's an inscribed angle. We learned that an inscribed angle that rests on a diameter is ninety degrees. And the "
         "other way around. If an inscribed angle is ninety degrees, it must rest on a diameter.",
         show(f6g90['circ'], "let's draw the circle around")),
       L("So B C, the hypotenuse, is a diameter of the circle. The diameter is thirty-seven.",
-        show(f6g90['diam'], 'is a diameter of the circle')),
-      L("Now the question is simple. What's the circumference of a circle with a diameter of thirty-seven? It's two pi r. "
-        "We could halve thirty-seven to get the radius, and then double it again. But there's a simpler way. Two pi r is "
-        "two r times pi, and two r is the diameter. So the circumference is the diameter times pi, thirty-seven pi. "
-        "Choice number two is our answer.", show(f6g90['c37'], 'So the circumference is the diameter times pi'),
-        mk('tick', 'choice 2', 'Choice number two is our answer')),
-      L("Careful with the traps. Thirty-seven is the diameter, not the radius. Two pi times thirty-seven gives seventy-four "
-        "pi, choice number one. And eighteen and a half pi, choice number three, is pi times the radius. It forgets the "
-        "two. [pause] Okay. I'll see you in the next question.", show(f6g90['trap'], 'Two pi times thirty-seven'),
-        mk('cross', 'choice 1', 'choice number one'), mk('cross', 'choice 3', 'choice number three'))),
+        show(f6g90['diam'], 'is a diameter of the circle'), show(f6g90x7, 'The diameter is thirty-seven')),
+      L("Now we need the circumference of a circle with a diameter of thirty-seven. The formula is two pi r. Two r is the "
+        "diameter, so two pi r is pi times the diameter. We already know the diameter, so let's use it directly. Pi times "
+        "thirty-seven is thirty-seven pi. Choice number two is our answer.",
+        show(f6g90x8a, 'so two pi r is pi times the diameter'), show(f6g90x8, 'Pi times thirty-seven is'), mk('tick', 'choice 2', 'Choice number two is our answer')),
+      L("Careful with the traps. Thirty-seven is the diameter, not the radius. If we put it in as r, two pi times "
+        "thirty-seven gives seventy-four pi, choice number one. And the radius is eighteen and a half. Pi times eighteen "
+        "and a half is eighteen and a half pi, choice number three. It forgets the two. [pause] Okay. I'll see you in "
+        "the next question.", show(f6g90x9, 'two pi times thirty-seven gives'), mk('cross', 'choice 1', 'choice number one'),
+        show(f6g90x10, 'Pi times eighteen and a half'), mk('cross', 'choice 3', 'choice number three'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g091 (Hebrew: alpha and beta in turn)
@@ -3253,46 +3753,62 @@ f6g91 = PIN(GEO('f6g91', [
              + [f6_seg(f6CO, gpt(f6CO[0], f6CO[1], f6CR, a), 'ink', 2.5) for a in f6RAD] + [('dot', *f6CO)]
              + [('txt',) + gpt(f6CO[0], f6CO[1], 80, f6RAD[k] + (15 if k % 2 == 0 else 21)) + ('α' if k % 2 == 0 else 'β', 'ink', 22, True)
                 for k in range(10)]),
-    ('area', [('circ', f6CO[0], f6CO[1], f6CR, 'teal', 4, False, 'teal'), f6_row(76, 'π · (√35)² = 35π', 'teal')]),
+    ('area', [('circ', f6CO[0], f6CO[1], f6CR, 'teal', 4, False, 'teal')]),
     ('al', [('arc', f6CO[0], f6CO[1], 40, f6RAD[k], f6RAD[k + 1], 'small') for k in range(0, 10, 2)]),
     ('be', [('arc', f6CO[0], f6CO[1], 48, f6RAD[k], f6RAD[(k + 1) % 10], 'large') for k in range(1, 10, 2)]),
-    ('eq', [f6_row(112, '5α + 5β = 360°')]),
-    ('sum', [f6_row(148, '5(α + β) = 360°'), f6_row(184, 'α + β = 72°', 'red', 25)]),
-    ('ex', [f6_row(220, '30 + 42?  12 + 60?', 'ink', 22)]),
-    ('pairs', [('arcw', f6CO[0], f6CO[1], f6CR, 90 + 72 * k, 162 + 72 * k, 'teal' if k % 2 else 'orange', 9) for k in range(1, 5)]
-              + [('arcw', f6CO[0], f6CO[1], f6CR, 90, 162, 'red', 9), ('txt', 232, 80, '72°', 'red', 24)]),
-    ('fifth', [f6_row(256, '72° / 360° = 1/5', 'teal')]),
-    ('ans', [f6_row(294, '1/5 · 35π = 7π', 'red', 26)]),
-], vb='200 50 500 270', w=540, title='Central angles alpha and beta in turn'))
-_R(f6g91, 360)
+    ('pairs', [('arcw', f6CO[0], f6CO[1], f6CR, 90 + 72 * k, 162 + 72 * k, 'teal' if k % 2 else 'orange', 9) for k in range(5)]
+              + [f6_seg(f6CO, gpt(f6CO[0], f6CO[1], f6CR, 90 + 72 * k), 'ink', 4.5) for k in range(5)]),
+    ('target', [('dim', 200, 50, 260, 270), ('circ', f6CO[0], f6CO[1], f6CR, 'ink', 3)]
+               + [f6_seg(f6CO, gpt(f6CO[0], f6CO[1], f6CR, 90 + 72 * k), 'ink', 4.5) for k in range(5)]
+               + [('wedge', f6CO[0], f6CO[1], f6CR, 90, 162, 'red'), ('arcw', f6CO[0], f6CO[1], f6CR, 90, 162, 'red', 9),
+                  ('txt', 232, 80, '72°', 'red', 24)]),
+], vb='200 50 260 270', w=330, title='Central angles alpha and beta in turn'))
+LEFT(f6g91, y=280, x=560, w=330)
+f6g91x0 = IH('f6g91x0', '$S = πr^2$', size=30)
+f6g91x1 = IH('f6g91x1', '$S = π \\cdot (\\sqrt{35})^2 = 35π$', size=30)
+f6g91x2 = IH('f6g91x2', '$5α + 5β = 360°$', size=30)
+f6g91x3 = IH('f6g91x3', '$5(α + β) = 360°$', size=30)
+f6g91x4 = IH('f6g91x4', '$α + β = 360° \\div 5 = 72°$', size=30)
+f6g91x5 = IH('f6g91x5', '$\\frac{72°}{360°} = \\frac{1}{5}$', size=30)
+f6g91x6 = IH('f6g91x6', '$\\frac{1}{5} \\times 35π = 35π \\div 5 = 7π$', size=30)
+f6g91x7 = IH('f6g91x7', '$30 + 42 = 72$,  $12 + 60 = 72$', size=26)
+ROWS(270, 52, f6g91x0, f6g91x1, f6g91x2, f6g91x3, f6g91x4)
+ROWS(545, 78, f6g91x5, f6g91x6)
+f6g91x7['_col'] = 0; f6g91x7['_x'] = 450; f6g91x7['_y'] = 630
+NOFIG33.add(('solve-geo33-g091', 1))
 video('solve-geo33-g091', 'solution', qid='geo33-g091', slides=[
     SM('Find the sum, not each angle', 'Find the sum, not each angle',
       L("A circle has a radius of root thirty-five centimeters. Its central angles are alpha and beta in turn, five of "
         "each, as in the figure. One sector with angle alpha and one sector with angle beta are shaded. What is their total "
         "area, in square centimeters?", pt('stem', 'A circle has a radius', 'hl', 11.0), voice='calm', pause=0.5),
       L("The shaded part is part of the circle's area. So we need two things. The area of the whole circle, and which part "
-        "of it is shaded.", show(f6g91['line'], 'The shaded part is part')),
-      L("[short pause] Let's start with the area of the circle. The radius is given, so it's easy. Pi r squared."),
+        "of it is shaded.", pt('fig: α', 'The shaded part is part'))),
+    SM('Find the sum, not each angle', 'Find the sum, not each angle',
+      L("[short pause] Let's start with the area of the circle. The radius is given, so it's easy. Pi r squared.",
+        show(f6g91['line'], "Let's start with the area"), show(f6g91x0, 'Pi r squared')),
       L("Root thirty-five, squared, is thirty-five, because the square cancels the root. So the area is thirty-five pi. That's "
-        "the whole circle.", show(f6g91['area'], 'So the area is thirty-five pi')),
-      L("Now, which part. For that we need alpha and beta, but we don't get a number for either of them. So what can we "
-        "say?", pt('fig: α', 'For that we need alpha')),
+        "the whole circle.", show(f6g91x1, 'So the area is thirty-five pi'), show(f6g91['area'], "That's the whole circle")),
+      L("Now, which part is shaded? We need the combined share of one alpha sector and one beta sector. We don't need "
+        "either angle on its own. And that's lucky, because we don't get a number for either of them."),
       L("Let's count them. One, two, three, four, five alphas. And five betas.",
         show(f6g91['al'], 'five alphas'), show(f6g91['be'], 'And five betas')),
       L("All ten angles go around the center, so together they make three hundred sixty degrees. So five alpha plus five "
-        "beta is three hundred sixty.", show(f6g91['eq'], 'So five alpha plus five beta')),
-      L("That's one equation with two unknowns. We can't find alpha or beta on its own, but we can find their sum."),
-      L("If you see it, just divide by five. If not, take out the common factor five. Five times the sum, alpha plus beta, is "
-        "three hundred sixty. Divide by five, and alpha plus beta is seventy-two.",
-        show(f6g91['sum'], 'take out the common factor five')),
-      L("What does that tell us about alpha and beta? We don't know. Alpha could be thirty and beta forty-two. Or twelve and "
-        "sixty. There are endless options. But it doesn't matter.", show(f6g91['ex'], 'Alpha could be thirty')),
-      L("One alpha and one beta together are seventy-two degrees, and the circle is made of five such pairs.", show(f6g91['pairs'], 'the circle is made of five such pairs')),
-      L("The two shaded sectors are one pair. So they're seventy-two out of three hundred sixty, which is one fifth of the circle.",
-        show(f6g91['fifth'], 'which is one fifth')),
-      L("So the shaded area is one fifth of thirty-five pi, which is seven pi. Choice number two is our answer. [pause] "
-        "Okay. I'll see you in the next question.", show(f6g91['ans'], 'one fifth of thirty-five pi'),
-        mk('tick', 'choice 2', 'Choice number two is our answer'))),
+        "beta is three hundred sixty.", show(f6g91x2, 'So five alpha plus five beta')),
+      L("That's one equation with two unknowns. We can't find alpha or beta on its own, but we can find their sum. And "
+        "the sum is all we need."),
+      L("Let's read the equation another way. The circle is made of five alpha plus beta pairs, all the same. So five "
+        "times alpha plus beta is three hundred sixty. Now divide both sides by five. Alpha plus beta is seventy-two.",
+        show(f6g91['pairs'], 'The circle is made of five alpha plus beta pairs'),
+        show(f6g91x3, 'So five times alpha plus beta'), show(f6g91x4, 'Now divide both sides by five')),
+      L("What does that tell us about alpha and beta on their own? We don't know. Alpha could be thirty and beta forty-two. "
+        "Or twelve and sixty. Both pairs add up to seventy-two. There are endless options. But it doesn't matter.",
+        show(f6g91x7, 'Alpha could be thirty')),
+      L("The two shaded sectors are exactly one of these five equal pairs. So they're seventy-two degrees out of three "
+        "hundred sixty, which is one fifth of the circle.",
+        show(f6g91['target'], 'The two shaded sectors are exactly one'), show(f6g91x5, 'which is one fifth')),
+      L("So the shaded area is one fifth of thirty-five pi. Thirty-five pi divided by five is seven pi. Choice number two "
+        "is our answer. [pause] Okay. I'll see you in the next question.",
+        show(f6g91x6, 'Thirty-five pi divided by five'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g092 (Hebrew: three tangent circles)
@@ -3308,24 +3824,60 @@ video('solve-geo33-g091', 'solution', qid='geo33-g091', slides=[
 # A; the unwanted quarter arc traced teal; the answer.
 f6A, f6B, f6C = (259.2, 250.4), (387.2, 250.4), (259.2, 116.0)
 f6rA, f6rB, f6rC = 38.4, 89.6, 96.0
+f6g92_q = [('circ', f6A[0], f6A[1], f6rA), ('circ', f6B[0], f6B[1], f6rB), ('circ', f6C[0], f6C[1], f6rC),
+           ('dot', *f6A), ('dot', *f6B), ('dot', *f6C), f6_name(f6A, 'A', -12, 16), f6_name(f6B, 'B', 15, 16),
+           f6_name(f6C, 'C', 15, -16), ('arcw', f6A[0], f6A[1], f6rA, 90, 360, 'orange', 7)]
+f6g92_tri = [f6_seg(f6A, f6B, 'teal', 3, True), f6_seg(f6A, f6C, 'teal', 3, True), f6_seg(f6B, f6C, 'teal', 3, True)]
 f6g92 = PIN(GEO('f6g92', [
-    ('line', [('circ', f6A[0], f6A[1], f6rA), ('circ', f6B[0], f6B[1], f6rB), ('circ', f6C[0], f6C[1], f6rC),
-              ('dot', *f6A), ('dot', *f6B), ('dot', *f6C), f6_name(f6A, 'A', -12, 16), f6_name(f6B, 'B', 15, 16),
-              f6_name(f6C, 'C', 15, -16), ('arcw', f6A[0], f6A[1], f6rA, 90, 360, 'orange', 7)]),
-    ('c12', [f6_row(34, '2π · 6 = 12π', x=600)]),
-    ('tri', [f6_seg(f6A, f6B, 'teal', 3, True), f6_seg(f6A, f6C, 'teal', 3, True), f6_seg(f6B, f6C, 'teal', 3, True),
-             ('arc', f6A[0], f6A[1], 20, 0, 90, 'small'), f6_row(66, 'half? ∠A = 180° ✗', 'red', 21, x=600)]),
+    ('line', f6g92_q),
+    ('tri', f6g92_tri + [('arc', f6A[0], f6A[1], 20, 0, 90, 'small')]),
+], vb='158 12 330 335', w=260, title='Three circles that touch'))
+_R(f6g92, 410)
+f6g92y1 = IH('f6g92y1', '$C = 2π \\cdot 6 = 12π$', size=30, col=1)
+f6g92y2 = IH('f6g92y2', 'half the circle: $\\angle A = 180°$ ✗', size=26, col=1)
+ROWS(290, 54, f6g92y1, f6g92y2)
+# batch C: slide 2 - the same three circles, enlarged on their own (the triangle of centres), the working in rows
+f6g92x = PIN(GEO('f6g92x', [
+    ('line', f6g92_q),
+    ('tri', f6g92_tri),
     ('rA', [('txt', 280, 268, '6', 'teal', 22), ('txt', 245, 228, '6', 'teal', 22)]),
     ('rB', [('txt', 342, 270, '14', 'teal', 22), ('txt', 371, 204, '14', 'teal', 22)]),
     ('rC', [('txt', 241, 160, '15', 'teal', 22), ('txt', 306, 138, '15', 'teal', 22)]),
-    ('sums', [f6_row(98, 'AB = 6 + 14 = 20', x=600), f6_row(129, 'AC = 6 + 15 = 21', x=600), f6_row(160, 'BC = 14 + 15 = 29', x=600)]),
-    ('pyth', [f6_row(192, '400 + 441 = 841', x=600), f6_row(223, '29² = 841  ✓', 'teal', x=600)]),
-    ('right', [('right', f6A[0], f6A[1], 0, 90, 14)]),
-    ('quarter', [('arcw', f6A[0], f6A[1], f6rA, 0, 90, 'teal', 7), f6_row(255, '∠A = 90° → 1/4', 'teal', x=600)]),
-    ('rest', [f6_row(287, 'the arc: 3/4', 'orange', x=600)]),
-    ('ans', [f6_row(320, '3/4 · 12π = 9π', 'red', 26, x=600)]),
-], vb='158 12 565 330', w=540, title='Three circles that touch'))
-_R(f6g92, 360)
+    ('right', [('tint', [f6A, f6B, f6C], 'teal'), ('right', f6A[0], f6A[1], 0, 90, 14)]),
+], vb='158 12 330 335', w=410, title='Three circles that touch: the triangle of centers'))
+LEFT(f6g92x, y=290, x=420, w=340)
+f6g92x1 = IH('f6g92x1', '$AB = 6 + 14 = 20$', size=28)
+f6g92x2 = IH('f6g92x2', '$AC = 6 + 15 = 21$', size=28)
+f6g92x3 = IH('f6g92x3', '$BC = 14 + 15 = 29$', size=28)
+f6g92x4 = IH('f6g92x4', '$20^2 + 21^2 = 29^2$ ?', size=28)
+f6g92x5 = IH('f6g92x5', '$20^2 = 400$', size=28)
+f6g92x6 = IH('f6g92x6', '$21^2 = 441$', size=28)
+f6g92x7 = IH('f6g92x7', '$400 + 441 = 841$', size=28)
+f6g92x8 = IH('f6g92x8', '$29 \\times 30 = 870$', size=28)
+f6g92x9 = IH('f6g92x9', '$29^2 = 870 - 29 = 841$', size=28)
+f6g92x10 = IH('f6g92x10', '$\\angle A = 90°$', size=28)
+ROWS(300, 58, f6g92x1, f6g92x2, f6g92x3, f6g92x4, f6g92x5, x=790, w=380)
+ROWS(300, 58, f6g92x6, f6g92x7, f6g92x8, f6g92x9, f6g92x10, x=1200, w=380)
+# batch C: slide 3 - circle A alone, clean and big: the quarter we don't need (teal) and the highlighted 3/4 (orange)
+f6g92aO, f6g92ar = (200.0, 175.0), 110.0
+f6g92a = PIN(GEO('f6g92a', [
+    ('line', [('circ', f6g92aO[0], f6g92aO[1], f6g92ar), ('arcw', f6g92aO[0], f6g92aO[1], f6g92ar, 90, 360, 'orange', 8),
+              ('dot', *f6g92aO), ('txt', f6g92aO[0] - 18, f6g92aO[1] + 20, 'A', 'ink', 24, True),
+              f6_seg(f6g92aO, gpt(f6g92aO[0], f6g92aO[1], f6g92ar + 34, 0), 'teal', 3, True),
+              f6_seg(f6g92aO, gpt(f6g92aO[0], f6g92aO[1], f6g92ar + 34, 90), 'teal', 3, True),
+              ('txt', f6g92aO[0] + f6g92ar + 50, f6g92aO[1], 'to B', 'teal', 20), ('txt', f6g92aO[0], f6g92aO[1] - f6g92ar - 46, 'to C', 'teal', 20),
+              ('right', f6g92aO[0], f6g92aO[1], 0, 90, 16)]),
+    ('q', [('arcw', f6g92aO[0], f6g92aO[1], f6g92ar, 0, 90, 'teal', 8),
+           ('txt', *gpt(f6g92aO[0], f6g92aO[1], f6g92ar + 26, 45), '¼', 'teal', 28)]),
+    ('tq', [('txt', *gpt(f6g92aO[0], f6g92aO[1], f6g92ar + 28, 225), '¾', 'orange', 30)]),
+], vb='60 0 330 315', w=380, title='Circle A: a quarter and three quarters'))
+LEFT(f6g92a, y=280, x=520, w=380)
+f6g92z1 = IH('f6g92z1', '$\\frac{90°}{360°} = \\frac{1}{4}$', size=30)
+f6g92z2 = IH('f6g92z2', 'highlighted arc: $\\frac{3}{4}$ of $12π$', size=30)
+f6g92z3 = IH('f6g92z3', '$12π \\div 4 = 3π$', size=30)
+f6g92z4 = IH('f6g92z4', '$3 \\times 3π = 9π$', size=30)
+ROWS(275, 80, f6g92z1, f6g92z2, f6g92z3, f6g92z4)
+NOFIG33.update({('solve-geo33-g092', 1), ('solve-geo33-g092', 2)})
 video('solve-geo33-g092', 'solution', qid='geo33-g092', slides=[
     SM('Eliminate, then find the angle', 'Eliminate, then find the angle',
       L("Three circles with centers A, B and C touch one another from the outside. Their radii are six centimeters, "
@@ -3334,33 +3886,47 @@ video('solve-geo33-g092', 'solution', qid='geo33-g092', slides=[
       L("We need the length of an arc. An arc is part of the circumference. Its length is the angle out of three hundred "
         "sixty, times two pi r, the whole circumference.", show(f6g92['line'], 'We need the length of an arc')),
       L("[short pause] The radius of circle A is given, so the whole circumference is easy. Two pi r is two pi times six, "
-        "which is twelve pi.", show(f6g92['c12'], 'Two pi r is two pi times six')),
+        "which is twelve pi.", show(f6g92y1, 'Two pi r is two pi times six')),
       L("Let's peek at the choices. Choice number one is twelve pi. That's the whole circle, and the highlighted arc is "
         "only part of it, so it has to be less. Choice number one is out.", mk('cross', 'choice 1', 'Choice number one is out')),
-      L("Sharp-eyed students cross out choice number four too. Six pi is exactly half the circle. For that, the angle at "
-        "A, between the lines to B and to C, would have to be one hundred eighty. But connect the three centers, and that "
-        "angle is an angle of triangle A B C. An angle of a triangle is less than one hundred eighty. So choice number four "
-        "is out too.", show(f6g92['tri'], 'connect the three centers'), mk('cross', 'choice 4', 'So choice number four')),
-      L("Choice number two and choice number three can't be split with a quick idea, so we have to solve. But if you're "
-        "out of time, guess one of the two. That's a one in two chance instead of one in four."),
-      L("[short pause] Let's put in the givens. The radius of circle A is six, so we write six and six on its two radii. "
-        "Circle B, fourteen and fourteen. Circle C, fifteen and fifteen.", show(f6g92['rA'], 'we write six and six'),
-        show(f6g92['rB'], 'Circle B, fourteen'), show(f6g92['rC'], 'Circle C, fifteen')),
+      L("We can also cross out choice number four, six pi. Six pi is exactly half the circle. Let's connect the three centers. "
+        "The highlighted arc's angle at A is three hundred sixty minus the triangle's angle at A. For the arc to be "
+        "exactly half, that triangle angle would have to be one hundred eighty. But an angle of a triangle is always less "
+        "than one hundred eighty. So the highlighted arc is more than half, and choice number four is out too.",
+        show(f6g92['tri'], 'Connect the three centers'), show(f6g92y2, 'would have to be one hundred eighty'),
+        mk('cross', 'choice 4', 'and choice number four is out too')),
+      L("To choose between choice number two and choice number three, let's find the angle. If you're ever out of time "
+        "at this point, guess one of the two. That's a one in two chance instead of one in four.")),
+    SM('Eliminate, then find the angle', 'The triangle of centers',
+      L("[short pause] Here are the three circles again, bigger. Let's put in the givens. The radius of circle A is six, "
+        "so we write six and six on its two radii. Circle B, fourteen and fourteen. Circle C, fifteen and fifteen.",
+        show(f6g92x['line'], 'Here are the three circles again'), show(f6g92x['tri'], 'Let\'s put in the givens'),
+        show(f6g92x['rA'], 'we write six and six'), show(f6g92x['rB'], 'Circle B, fourteen'),
+        show(f6g92x['rC'], 'Circle C, fifteen')),
       L("The circles touch, so the line between two centers passes through the point where they touch. It's made of the "
         "two radii. So A B is six plus fourteen, twenty. A C is six plus fifteen, twenty-one. And B C is fourteen plus "
-        "fifteen, twenty-nine.", show(f6g92['sums'], 'So A B is six plus fourteen')),
-      L("Twenty, twenty-one, twenty-nine. We need the angle at A, so let's check Pythagoras, to see if it's a right angle. Twenty squared is four hundred, and twenty-one squared "
-        "is four hundred forty-one. Together, eight hundred forty-one. And twenty-nine squared? It's twenty-nine times thirty, "
-        "minus twenty-nine. Twenty-nine times thirty is eight hundred seventy, and eight hundred seventy minus "
-        "twenty-nine is eight hundred forty-one. The same, so it's a Pythagorean "
-        "triple.", show(f6g92['pyth'], 'Together, eight hundred forty-one')),
+        "fifteen, twenty-nine.", show(f6g92x1, 'So A B is six plus fourteen'), show(f6g92x2, 'A C is six plus fifteen'),
+        show(f6g92x3, 'And B C is fourteen plus')),
+      L("Twenty, twenty-one, twenty-nine. We need the angle at A, so let's check Pythagoras, to see if it's a right angle. "
+        "Twenty squared is four hundred. Twenty-one squared is four hundred forty-one. Together, eight hundred forty-one.",
+        show(f6g92x4, "let's check Pythagoras"), show(f6g92x5, 'Twenty squared is four hundred'),
+        show(f6g92x6, 'Twenty-one squared is'), show(f6g92x7, 'Together, eight hundred forty-one')),
+      L("And twenty-nine squared? It's twenty-nine times thirty, minus twenty-nine. Twenty-nine times thirty is eight "
+        "hundred seventy. Eight hundred seventy minus twenty-nine is eight hundred forty-one. The same, so it's a "
+        "Pythagorean triple.", show(f6g92x8, 'Twenty-nine times thirty is eight'),
+        show(f6g92x9, 'Eight hundred seventy minus twenty-nine')),
       L("B C, twenty-nine, is the hypotenuse, so the angle across from it, the angle at A, is ninety degrees.",
-        show(f6g92['right'], 'the angle at A, is ninety')),
-      L("So the arc we don't need, inside that angle, is ninety out of three hundred sixty. That's a quarter of the circle. "
-        "And the highlighted arc is the rest, three quarters of the circumference.",
-        show(f6g92['quarter'], 'is ninety out of three hundred sixty'), show(f6g92['rest'], 'three quarters of the circumference')),
-      L("Three quarters of twelve pi. A quarter of twelve pi is three pi, so three quarters is nine pi. Choice number three "
-        "is our answer. [pause] Okay. I'll see you in the next question.", show(f6g92['ans'], 'so three quarters is nine pi'),
+        show(f6g92x['right'], 'the angle at A, is ninety'), show(f6g92x10, 'is ninety degrees'))),
+    SM('Eliminate, then find the angle', 'Three quarters of the circle',
+      L("[short pause] Now let's look only at circle A. The angle at A is ninety degrees. So the arc we don't need, inside "
+        "that angle, is ninety out of three hundred sixty. That's a quarter of the circle.",
+        show(f6g92a['line'], "Now let's look only at circle A"), show(f6g92a['q'], 'So the arc we don\'t need'),
+        show(f6g92z1, "That's a quarter of the circle")),
+      L("And the highlighted arc is the rest, three quarters of the circumference.",
+        show(f6g92a['tq'], 'the highlighted arc is the rest'), show(f6g92z2, 'three quarters of the circumference')),
+      L("Three quarters of twelve pi. Let's find a quarter first. Twelve pi divided by four is three pi. So three quarters is three "
+        "times three pi, which is nine pi. Choice number three is our answer. [pause] Okay. I'll see you in the next "
+        "question.", show(f6g92z3, 'Twelve pi divided by four'), show(f6g92z4, 'So three quarters is three'),
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
@@ -3410,24 +3976,28 @@ def f7_mid(p, q, t=0.5):
 # question that uses it (shaded areas and the stop-and-look partial calculation and estimating in g094, inscribed /
 # circumscribed and plugging in in g096).
 f7h1 = I('f7h1', 'Shaded areas: $\\ $what minus what?', size=32)
-f7h2 = I('f7h2', 'Shapes in circles: $\\ $write every length with $r$', size=32)
-f7h3 = I('f7h3', 'Exam shortcuts: $\\ $stop and look at the choices, plug in a number, estimate', size=30)
+f7h2 = I('f7h2', 'Shapes in circles: $\\ $a length that depends on the radius is written with $r$', size=30)
+f7h3 = I('f7h3', 'The math way: $\\ $stop halfway and look at the choices', size=30)
+f7h4 = I('f7h4', 'Plugging in numbers: $\\ $a number instead of a letter', size=30)
+f7h5 = I('f7h5', 'Estimation: $\\ $rule out choices by their size', size=30)
 video('geo-093', 'lesson', slides=[
     S('Advanced Circles',
-      L("Circles, the advanced level. In the last lessons we learned the basic rules of the circle, and we practiced basic "
-        "questions and harder ones.")),
+      L("In the last lessons we learned the basic rules of the circle, and we practiced basic questions and harder ones. "
+        "Now let's use these circle rules in some more involved questions.")),
     S("What's ahead",
-      L("In fact, you already have the tools for most circle questions on the exam. Now we'll practice harder questions, "
-        "the kind that come near the end of the section."),
+      L("In fact, you already have the tools for most circle questions on the exam. The new questions just combine them "
+        "in more steps."),
       L("We'll meet a few ideas that come back again and again in these questions. The first one is shaded areas. We'll "
         "ask which shape minus which shape gives the shaded part.", show(f7h1, 'The first one is shaded areas')),
-      L("The second one is a shape inside a circle, or a circle inside a shape. There we'll write every length with the "
-        "radius of the circle.", show(f7h2, 'The second one is a shape')),
-      L("We'll also see quick exam ways. We'll stop halfway and look at the choices, we'll plug in a number instead of a "
-        "letter, and we'll estimate sizes. With them we can solve these questions much faster, and sometimes even when "
-        "we're not sure of the full solution.", show(f7h3, 'quick exam ways')),
+      L("The second one is a shape inside a circle, or a circle inside a shape. When a length depends on the radius, "
+        "we'll write it using r.", show(f7h2, 'The second one is a shape')),
+      L("We'll also use quick exam ways, beside the math way. In the math way, we'll sometimes stop halfway and look at "
+        "the choices. With plugging in numbers, we put a number instead of a letter. And with estimation, we rule out "
+        "choices by their size. These ways are often faster, and they help even when we're not sure of the full "
+        "solution.", show(f7h3, 'stop halfway and look at the choices'), show(f7h4, 'With plugging in numbers'),
+        show(f7h5, 'And with estimation')),
       L("We'll explain each one in the question that uses it. Let's start. [pause] Okay. I'll see you in the next video.",
-        pt('f7h3', "We'll explain each one"))),
+        pt('f7h5', "We'll explain each one"))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g094 (Hebrew: the tangent and the silver triangle)
@@ -3468,26 +4038,50 @@ f7g94 = PIN(GEO('f7g94', [
     ('oc', [f7_seg(f7O4, f7C4, 'teal', 3, True), ('right', 320, 63.2, 270, 0, 13)]),
     ('o45', [('arc', 320, 180, 26, 45, 90, 'small'), ('arc', 320, 180, 30, 90, 135, 'small'),
              ('txt', 345, 134, '45°', 'small', 20), ('txt', 295, 134, '45°', 'small', 20)]),
-    ('six', [('txt', 334, 100, '6', 'small', 24), ('txt', 378, 46, '6', 'small', 24), ('txt', 262, 46, '6', 'small', 24),
-             ('txt', 565, 160, 'AB = 6 + 6 = 12', 'ink', 22)]),
-    ('t36', [('txt', 565, 195, 'triangle:', 'ink', 22), ('txt', 565, 225, '12 · 6 ÷ 2 = 36', 'ink', 22)]),
+    ('six1', [('txt', 334, 100, '6', 'small', 24)]),
+    ('six2', [('txt', 378, 46, '6', 'small', 24)]),
+    ('six3', [('txt', 262, 46, '6', 'small', 24)]),
 ], vb='175 22 505 282', w=540, title='Triangle AOB with the tangent AB'))
 f7g94b = PIN(GEO('f7g94b', [
-    ('line', f7g94_base + [('region', f7_pd([f7O4, f7A4, f7B4]) + ' ' + f7g94_sec, 'teal')] + f7g94_marks
-     + [('txt', 565, 50, 'triangle = 36', 'small', 22)]),
-    ('look', [('txt', 565, 85, 'shaded = 36 −', 'ink', 22), ('txt', 565, 113, '(something with π)', 'ink', 20)]),
-    ('circ', [('txt', 565, 160, 'circle: π · 6² = 36π', 'ink', 21)]),
-    ('sec', [('wedge', 320, 180, f7r4, 45, 135, 'orange'), ('txt', 565, 195, 'sector:', 'orange', 22),
-             ('txt', 565, 225, '¼ · 36π = 9π', 'orange', 22)]),
-], vb='175 22 505 282', w=540, title='Triangle AOB: 36 minus a sector'))
+    ('line', f7g94_base + [('region', f7_pd([f7O4, f7A4, f7B4]) + ' ' + f7g94_sec, 'teal')] + f7g94_marks),
+    ('sec', [('wedge', 320, 180, f7r4, 45, 135, 'orange')]),
+], vb='170 22 300 282', w=380, title='Triangle AOB: 36 minus a sector'))
 f7g94c = PIN(GEO('f7g94c', [
-    ('line', f7g94_base + [('region', f7_pd([f7O4, f7A4, f7B4]) + ' ' + f7g94_sec, 'teal')] + f7g94_marks
-     + [('txt', 565, 50, 'triangle = 36', 'small', 22)]),
-    ('lt', [('txt', 565, 90, 'shaded < 36', 'ink', 22), ('txt', 565, 120, 'by eye: < 18', 'ink', 22)]),
-    ('pi', [('txt', 565, 165, '3 < π < 4', 'ink', 22), ('txt', 565, 195, '27 < 9π < 36', 'ink', 22)]),
-], vb='175 22 505 282', w=540, title='Estimating the shaded area'))
-for _g in (f7g94, f7g94b, f7g94c):
-    _R(_g, 200)
+    ('line', f7g94_base + [('region', f7_pd([f7O4, f7A4, f7B4]) + ' ' + f7g94_sec, 'teal')] + f7g94_marks),
+], vb='170 22 300 282', w=380, title='Estimating the shaded area'))
+_R(f7g94, 200)
+f7g94x1 = IH('f7g94x1', '$AB = 6 + 6 = 12$', size=28, col=1)
+f7g94x2 = IH('f7g94x2', '$S = (\\text{base} \\times \\text{height}) \\div 2$', size=28, col=1)
+f7g94x3 = IH('f7g94x3', '$12 \\times 6 = 72$', size=28, col=1)
+f7g94x4 = IH('f7g94x4', '$72 \\div 2 = 36$', size=28, col=1)
+ROWS(512, 46, f7g94x1, f7g94x2, f7g94x3, f7g94x4)
+# batch C: slides 2-3 show our copy (no question figure), every step in its own readable row
+LEFT(f7g94b, y=270, x=420, w=340); LEFT(f7g94c, y=270, x=450, w=380)
+f7g94y1 = IH('f7g94y1', 'triangle $= 36$', size=28)
+f7g94y2 = IH('f7g94y2', 'shaded $= 36 - (\\text{a number}) \\cdot π$', size=28)
+f7g94y3 = IH('f7g94y3', '$18π - 18$: the π part is added ✗', size=24)
+f7g94y4 = IH('f7g94y4', '$18 - 9π$: 18 is not the triangle ✗', size=24)
+f7g94y5 = IH('f7g94y5', '$72 - 9π$: 72 is not the triangle ✗', size=24)
+f7g94y6 = IH('f7g94y6', 'circle: $π \\cdot 6^2 = 36π$', size=28)
+f7g94y7 = IH('f7g94y7', '$\\frac{90°}{360°} = \\frac{1}{4}$', size=28)
+f7g94y8 = IH('f7g94y8', 'sector: $\\frac{1}{4} \\times 36π = 9π$', size=28)
+f7g94y9 = IH('f7g94y9', 'shaded $= 36 - 9π$', size=28)
+ROWS(290, 62, f7g94y1, f7g94y2, f7g94y3, f7g94y4, f7g94y5, x=780, w=420)
+ROWS(290, 70, f7g94y6, f7g94y7, f7g94y8, f7g94y9, x=1220, w=370)
+f7g94z1 = IH('f7g94z1', 'triangle $= 36$ (from the math way)', size=28)
+f7g94z2 = IH('f7g94z2', '$0 <$ shaded $< 36$', size=28)
+f7g94z3 = IH('f7g94z3', '$3 < π < 4$', size=28)
+f7g94z4 = IH('f7g94z4', '$27 < 9π < 36$', size=28)
+f7g94z5 = IH('f7g94z5', '$18 - 9π < 18 - 27 < 0$ ✗', size=28)
+f7g94z6 = IH('f7g94z6', '$18π - 18 > 54 - 18 = 36$ ✗', size=28)
+f7g94z7 = IH('f7g94z7', '$72 - 9π > 72 - 36 = 36$ ✗', size=28)
+f7g94z8 = IH('f7g94z8', '$0 < 36 - 9π < 9$ ✓', size=28)
+ROWS(262, 50, f7g94z1, f7g94z2, f7g94z3, f7g94z4, f7g94z5, f7g94z6, f7g94z7, f7g94z8)
+NOFIG33.update({('solve-geo33-g094', 2), ('solve-geo33-g094', 3)})
+f7g94x1b = IH('f7g94x1b', '$AB = 12$, $\\ OC = 6$', size=30)
+f7g94d = PIN(GEO('f7g94d', [('line', f7g94_base + f7g94_marks)],
+                   vb='170 22 300 282', w=380, title='Triangle AOB: base 12, height 6'))
+LEFT(f7g94d, y=280, x=450, w=380)
 video('solve-geo33-g094', 'solution', qid='geo33-g094', slides=[
     SM('Method 1 · The math way: subtract areas', 'Triangle minus sector',
       L("A B is tangent to a circle with center O and radius six centimeters. Given, O A equals O B, and angle A O B is "
@@ -3495,78 +4089,84 @@ video('solve-geo33-g094', 'solution', qid='geo33-g094', slides=[
         pt('stem', 'A B is tangent to a circle', 'hl', 11.0), voice='calm', pause=0.5),
       L("So they ask for the shaded area, the part of the triangle that is outside the circle. [short pause] We'll solve "
         "it the math way, and then we'll see two quick exam ways.", pt('stem: ask', 'So they ask for the shaded area')),
-      L("[short pause] Shaded areas. We met them in quadrilaterals, and the most common way to solve them is to subtract "
-        "areas. In the hard circle questions at the end of the section, shaded areas come back again and again.",
-        show(f7g94['line'], 'Shaded areas. We met them')),
-      L("So first we build a scheme. What minus what gives the shaded part? Look at the whole triangle A O B.",
+      L("[short pause] Let's start with the math way. We met shaded areas in quadrilaterals. We usually find them by "
+        "subtracting areas, and they come back often in circle questions.",
+        show(f7g94['line'], "Let's start with the math way")),
+      L("So first we decide which area to subtract from which. Look at the whole triangle A O B.",
         show(f7g94['tri'], 'Look at the whole triangle')),
       L("Inside it there's a sector of the circle. If we take the triangle and remove the sector, what's left is exactly "
-        "the shaded part. So the shaded area is the triangle minus the sector. That's our scheme.",
+        "the shaded part. So the shaded area is the triangle minus the sector.",
         show(f7g94['sec'], "there's a sector of the circle"), show(f7g94['cut'], 'remove the sector')),
       L("Now let's put in the givens. O A equals O B, so we mark them equal. And the angle at O is ninety degrees.",
         show(f7g94['eq'], 'O A equals O B')),
       L("So triangle A O B isn't just a right triangle. It's right and isosceles, a silver triangle. In a silver triangle, "
         "the two base angles are forty-five degrees each.", show(f7g94['b45'], 'the two base angles')),
-      L("The next given, A B is tangent to the circle. We learned an automatic construction. When there's a point of "
+      L("Next, A B is tangent to the circle. We learned a useful construction for this. When there's a point of "
         "tangency, we draw the radius to it. Let's call that point C.", show(f7g94['c'], "Let's call that point C")),
       L("We draw the radius from O to C. The radius is perpendicular to the tangent, so the angle at C is ninety degrees.",
         show(f7g94['oc'], 'We draw the radius from O to C')),
       L("Triangle A O B is isosceles, and O C is the height to its base. In an isosceles triangle, this height is also an "
         "angle bisector and a median. So it cuts the angle at O into two angles of forty-five degrees.",
         show(f7g94['o45'], 'two angles of forty-five')),
-      L("The radius is six, so O C is six. Triangle O C B has a right angle at C and forty-five degrees at B, so it's a silver triangle too, and C B equals O C, six. On the "
-        "other side, A C is six too. So A B is six plus six, twelve.", show(f7g94['six'], 'so O C is six')),
-      L("Now the triangle's area. The best way is base times height, over two. The base is A B, twelve, and the height "
-        "is O C, six.", pt('f7g94_line', 'The best way is base times height')),
-      L("A lot of students say, I have the hypotenuse of a silver triangle, so I'll find the two legs, multiply them, and "
-        "divide by two. I ask, why? You already have a base and a height. Don't work for nothing, there's no time on the "
-        "exam."),
-      L("Twelve times six is seventy-two, and over two it's thirty-six. So the triangle is thirty-six.",
-        show(f7g94['t36'], 'Twelve times six'))),
+      L("The radius is six, so O C is six. Triangle O C B has a right angle at C and forty-five degrees at B. So it's a "
+        "silver triangle too, and C B equals O C, six. On the other side, A C is six too. So A B is six plus six, twelve.",
+        show(f7g94['six1'], 'so O C is six'), show(f7g94['six2'], 'and C B equals O C, six'),
+        show(f7g94['six3'], 'A C is six too'), show(f7g94x1, 'So A B is six plus six'))),
+    SM('Method 1 · The math way: subtract areas', "The triangle's area",
+      L("Now the triangle's area. The base A B, twelve, and its height O C, six, are already known. So let's use them "
+        "directly. The area is base times height, over two.", show(f7g94d['line'], "Now the triangle's area"), show(f7g94x1b, 'are already known'), show(f7g94x2, 'base times height, over two')),
+      L("Some students find the two legs of the silver triangle first. We don't need them here, because we already have "
+        "a base and its height."),
+      L("Twelve times six is seventy-two. Over two, it's thirty-six. So the triangle is thirty-six.",
+        show(f7g94x3, 'Twelve times six'), show(f7g94x4, "Over two, it's thirty-six"))),
     SM('Method 2 · The math way: partial calculation', 'Stop and look at the choices',
-      L("[pause] Now we could go on and find the sector. But wait. On the exam we also have the choices, and they often "
-        "help us.", show(f7g94b['line'], 'Now we could go on')),
-      L("We stop halfway, and we use what we already know to rule out choices. This is called a partial calculation. The "
-        "shaded area is thirty-six, minus the sector. A sector is a part of a circle, so its area has pi in it. So we're "
-        "looking for thirty-six minus something with pi.", show(f7g94b['look'], 'So we\'re looking for thirty-six')),
-      L("Choice number three is eighteen pi minus eighteen. The pi is in the wrong place. That's like a circle minus a "
-        "triangle, not a triangle minus a sector. So it's out.", mk('cross', 'choice 3', "So it's out")),
-      L("Choice number one is eighteen minus nine pi. The pi is in the right place, but the triangle is thirty-six, not "
-        "eighteen. It's out too.", mk('cross', 'choice 1', "It's out too")),
-      L("Choice number four is seventy-two minus nine pi. It's the same problem, because we need thirty-six minus "
-        "something. It's out.", mk('cross', 'choice 4', 'something. It\'s out')),
-      L("Only choice number two is left, thirty-six minus nine pi. We started with the math, and halfway we switched to "
-        "an exam shortcut. On the exam, we mark it and move on.", mk('tick', 'choice 2', 'Only choice number two is left')),
+      L("[pause] Now we could go on and find the sector. But on the exam we also have the choices, and here they help us.",
+        show(f7g94b['line'], 'Now we could go on'), show(f7g94y1, 'we also have the choices')),
+      L("We stop halfway, and we use what we already know to rule out choices. This is called a partial calculation. In "
+        "this question the triangle is exactly thirty-six. We take away a sector, a quarter of a circle with radius six. "
+        "Its area is some number times pi. So here the answer must be thirty-six, minus some number of pi.",
+        show(f7g94y2, 'So here the answer must be')),
+      L("Choice number three is eighteen pi minus eighteen. Here the pi part is added, and only eighteen is taken away. "
+        "That's not thirty-six minus a sector, so it's out.", show(f7g94y3, 'Choice number three is eighteen pi'),
+        mk('cross', 'choice 3', "so it's out")),
+      L("Choice number one is eighteen minus nine pi. The pi part could fit, but our triangle is thirty-six, not "
+        "eighteen. It's out too.", show(f7g94y4, 'Choice number one is eighteen'), mk('cross', 'choice 1', "It's out too")),
+      L("Choice number four is seventy-two minus nine pi. Seventy-two is twelve times six, with no dividing by two. "
+        "That's not the triangle either, so it's out.", show(f7g94y5, 'Choice number four is seventy-two'),
+        mk('cross', 'choice 4', "That's not the triangle either")),
+      L("Only choice number two is left, thirty-six minus nine pi. We started the math way, and stopped halfway to look at "
+        "the choices. On the exam, we mark it and move on.", mk('tick', 'choice 2', 'Only choice number two is left')),
       L("[pause] But we're in a lesson, so let's also find the sector. A sector is a part of the circle. The whole circle "
-        "is pi r squared, pi times six squared, thirty-six pi.", show(f7g94b['circ'], 'The whole circle')),
-      L("Which part? The central angle decides it, and here it's ninety degrees. Some of you know by heart that ninety "
-        "degrees is a quarter of the circle. Wonderful. If not, ninety out of three hundred sixty is a quarter. A quarter "
-        "of thirty-six pi is nine pi.", show(f7g94b['sec'], 'Which part')),
-      L("The shaded area is the triangle minus the sector. So it's thirty-six minus nine pi. The answer we found is really right, choice number two.",
-        mk('tick', 'choice 2', 'choice number two'))),
+        "is pi r squared. Pi times six squared is thirty-six pi.", show(f7g94y6, 'Pi times six squared')),
+      L("Which part? The central angle decides it, and here it's ninety degrees. Ninety out of three hundred sixty is a "
+        "quarter. A quarter of thirty-six pi is nine pi.", show(f7g94b['sec'], 'Which part'),
+        show(f7g94y7, 'Ninety out of three hundred sixty'), show(f7g94y8, 'A quarter of thirty-six pi')),
+      L("The shaded area is the triangle minus the sector. So it's thirty-six minus nine pi. That's choice number two, the "
+        "same as before.", show(f7g94y9, "So it's thirty-six minus nine pi"), mk('tick', 'choice 2', 'choice number two'))),
     SM('Method 3 · Estimation', 'Estimating sizes',
-      L("[pause] One more way, a full exam shortcut. It's called estimation. Maybe you put in the givens and don't "
-        "know how to go on. Or maybe you run out of time, because this is one of the last questions in the section.",
-        show(f7g94c['line'], 'called estimation')),
-      L("What do we know? The triangle is thirty-six, and the shaded part is only a piece of it. So the shaded area is "
-        "less than thirty-six. And by eye, it's even less than half of the triangle, less than eighteen.",
-        show(f7g94c['lt'], 'So the shaded area is')),
+      L("[pause] Now let's solve it by estimation. It helps when you're stuck after the givens, or short on time. From "
+        "the math way, we already know the triangle is thirty-six.",
+        show(f7g94c['line'], "Now let's solve it by estimation"), show(f7g94z1, 'we already know the triangle')),
+      L("The shaded part is only a piece of the triangle. So the shaded area is more than zero, and less than "
+        "thirty-six.", show(f7g94z2, 'So the shaded area is more than zero')),
       L("Now the choices. We need the size of pi. Pi is a bit more than three, and less than four. So nine pi is more "
-        "than twenty-seven, and less than thirty-six.", show(f7g94c['pi'], 'Pi is a bit more than three')),
-      L("Choice number one, eighteen minus nine pi. Nine pi is more than twenty-seven, so eighteen minus it is a negative "
-        "number. They do this a lot on the exam, they hide a negative answer behind letters. An area can't be negative, "
-        "so it's out.", mk('cross', 'choice 1', "An area can't be negative")),
+        "than twenty-seven, and less than thirty-six.", show(f7g94z3, 'Pi is a bit more than three'),
+        show(f7g94z4, 'So nine pi is more')),
+      L("Choice number one, eighteen minus nine pi. Nine pi is more than twenty-seven, so eighteen minus it is less than "
+        "zero. A negative answer can hide behind letters like this. An area can't be negative, so it's out.",
+        show(f7g94z5, 'so eighteen minus it'), mk('cross', 'choice 1', "An area can't be negative")),
       L("Choice number three, eighteen pi minus eighteen. Eighteen pi is more than eighteen times three, fifty-four. "
         "Minus eighteen, it's still more than thirty-six. That's bigger than the whole triangle, so it's out.",
-        mk('cross', 'choice 3', "That's bigger than the whole triangle")),
+        show(f7g94z6, 'Eighteen pi is more than'), mk('cross', 'choice 3', "That's bigger than the whole triangle")),
       L("Choice number four, seventy-two minus nine pi. Nine pi is less than thirty-six, so seventy-two minus it is more "
-        "than thirty-six. Too big again, it's out.", mk('cross', 'choice 4', 'Too big again')),
+        "than thirty-six. Too big again, it's out.", show(f7g94z7, 'so seventy-two minus it'),
+        mk('cross', 'choice 4', 'Too big again')),
       L("Choice number two, thirty-six minus nine pi. Nine pi is between twenty-seven and thirty-six, so this is between "
-        "zero and nine. That's a small piece of the triangle, just like the shaded part we see. Choice number two again.",
-        mk('tick', 'choice 2', 'Choice number two again')),
-      L("Estimating doesn't always rule out three choices. Sometimes it rules out only one or two. But when you're stuck "
-        "or out of time, it's a great card up your sleeve. [pause] Okay. I'll see you in the next question.",
-        pt('f7g94c_line', "Estimating doesn't always"))),
+        "zero and nine. That's inside our range, more than zero and less than thirty-six. Choice number two again.",
+        show(f7g94z8, 'so this is between'), mk('tick', 'choice 2', 'Choice number two again')),
+      L("Estimating doesn't always rule out three choices. Sometimes it rules out only one or two. Here the two bounds, "
+        "zero and thirty-six, were enough. [pause] Okay. I'll see you in the next question.",
+        pt('f7g94z2', "Estimating doesn't always"))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g095 (Hebrew: the right triangle tangent at B and D)
@@ -3608,72 +4208,102 @@ f7g95b = PIN(GEO('f7g95b', [
               ('right', f7zD[0], f7zD[1], 240, 330, 16), ('dot', *f7zO), ('dot', *f7zE),
               f7_name(f7zO, 'O', -16, 18), f7_name(f7zD, 'D', -6, -22), f7_name(f7zC, 'C', 18, 16), f7_name(f7zE, 'E', 0, 22),
               ('txt', 118, 255, '4', 'small', 26), ('txt', 175, 352, '4', 'ink', 24), ('txt', 345, 352, '4', 'ink', 24)]),
-    ('oc8', [('txt', 200, 392, 'OC = 4 + 4 = 8', 'ink', 24)]),
     ('ang', [('arc', f7zC[0], f7zC[1], 56, 150, 180, 'small', '30°', 84), ('arc', 90, 330, 34, 0, 60, 'small', '60°', 56)]),
     ('dc', [('txt', 318, 232, '4√3', 'small', 26)]),
-    ('area', [('txt', 200, 424, 'triangle: 4 · 4√3 ÷ 2', 'ink', 24), ('txt', 200, 456, '= 8√3', 'ink', 24)]),
-    ('look', [('txt', 520, 200, '8√3 − (… with π)', 'ink', 24)]),
-    ('circ', [('txt', 490, 392, 'circle: π · 4² = 16π', 'ink', 24)]),
-    ('sec', [('wedge', 90, 330, f7zR, 0, 60, 'orange'), ('txt', 490, 424, 'sector: ⅙ of 16π = 8π/3', 'orange', 22),
-             ('txt', 200, 296, '8π/3', 'orange', 24)]),
-    ('ans', [('txt', 490, 456, 'shaded: 8√3 − 8π/3', 'ink', 24)]),
-], vb='40 148 600 325', w=540, title='Triangle ODC, enlarged'))
-for _g in (f7g95, f7g95b):
-    _R(_g, 200)
+], vb='40 138 430 232', w=520, title='Triangle ODC, enlarged'))
+# batch C: slide 3 - the same enlarged triangle with its values carried over; the sector, then only the shaded part
+f7g95c = PIN(GEO('f7g95c', [
+    ('line', [('region', f7_pd([f7zO, f7zD, f7zC]) + ' ' + f7_sd(90, 330, f7zR, 0, 60), 'teal'),
+              f7_seg(f7zO, f7zD, 'teal', 3, True), f7_seg(f7zD, f7zC), f7_seg(f7zO, f7zC), ('arc', 90, 330, f7zR, 0, 60, 'ink'),
+              ('right', f7zD[0], f7zD[1], 240, 330, 16), ('dot', *f7zO), ('dot', *f7zE),
+              f7_name(f7zO, 'O', -16, 18), f7_name(f7zD, 'D', -6, -22), f7_name(f7zC, 'C', 18, 16), f7_name(f7zE, 'E', 0, 22),
+              ('txt', 118, 255, '4', 'small', 26), ('txt', 175, 352, '4', 'ink', 24), ('txt', 345, 352, '4', 'ink', 24),
+              ('arc', f7zC[0], f7zC[1], 56, 150, 180, 'small', '30°', 84), ('arc', 90, 330, 34, 0, 60, 'small', '60°', 56),
+              ('txt', 318, 232, '4√3', 'small', 26)]),
+    ('sec', [('wedge', 90, 330, f7zR, 0, 60, 'orange')]),
+    ('fin', [('region', f7_sd(90, 330, f7zR, 0, 60), 'f7white', 1), ('arc', 90, 330, f7zR, 0, 60, 'ink'),
+             f7_seg(f7zO, f7zD, 'teal', 3, True), f7_seg(f7zO, f7zE), ('dot', *f7zO), ('dot', *f7zE),
+             ('region', f7_pd([f7zO, f7zD, f7zC]) + ' ' + f7_sd(90, 330, f7zR, 0, 60), 'teal', 0.35)]),
+], vb='40 138 430 232', w=520, title='Triangle ODC: the sector, then the shaded part'))
+_R(f7g95, 200)
+LEFT(f7g95b, y=280, x=420, w=520); LEFT(f7g95c, y=280, x=420, w=520)
+f7g95x1 = IH('f7g95x1', '$OC = 4 + 4 = 8$', size=30)
+f7g95x2 = IH('f7g95x2', '$S = (\\text{leg} \\times \\text{leg}) \\div 2$', size=30)
+f7g95x3 = IH('f7g95x3', '$OC = 2 \\times OD$: a gold triangle', size=30)
+f7g95x4 = IH('f7g95x4', '$DC = 4\\sqrt{3}$', size=30)
+f7g95x5 = IH('f7g95x5', '$4 \\times 4\\sqrt{3} = 16\\sqrt{3}$', size=30)
+f7g95x6 = IH('f7g95x6', '$16\\sqrt{3} \\div 2 = 8\\sqrt{3}$', size=30)
+ROWS(270, 56, f7g95x1, f7g95x2, f7g95x3, f7g95x4, f7g95x5, f7g95x6)
+f7g95y1 = IH('f7g95y1', 'triangle $= 8\\sqrt{3}$', size=28)
+f7g95y2 = IH('f7g95y2', 'shaded $= 8\\sqrt{3} - (\\text{a number}) \\cdot π$', size=28)
+f7g95y3 = IH('f7g95y3', 'circle: $π \\cdot 4^2 = 16π$', size=28)
+f7g95y4 = IH('f7g95y4', '$\\frac{60°}{360°} = \\frac{1}{6}$', size=28)
+f7g95y5 = IH('f7g95y5', 'sector: $\\frac{1}{6} \\times 16π = \\frac{16π}{6}$', size=28)
+f7g95y6 = IH('f7g95y6', '$\\frac{16π}{6} = \\frac{8π}{3}$', size=28)
+f7g95y7 = IH('f7g95y7', 'shaded $= 8\\sqrt{3} - \\frac{8π}{3}$', size=28)
+ROWS(262, 46, f7g95y1, f7g95y2, f7g95y3)
+ROWS(410, 70, f7g95y4, f7g95y5, f7g95y6, f7g95y7)
+NOFIG33.update({('solve-geo33-g095', 1), ('solve-geo33-g095', 2)})
 video('solve-geo33-g095', 'solution', qid='geo33-g095', slides=[
     SM('Find the scheme', 'Find the scheme',
       L("A B C is a right triangle whose sides A B and A C are tangent to a circle with center O, at B and at D. B, O, E "
         "and C lie on one straight line, and E is on the circle. Given, O E and E C are both four centimeters. What is the "
         "area of the shaded region between C D, C E and the minor arc D E, in square centimeters?",
         pt('stem', 'A B C is a right triangle', 'hl', 14.0), voice='calm', pause=0.5),
-      L("The minor arc is the small arc between D and E. So it's a shaded-area question again, and we need a scheme, what "
-        "minus what.", pt('stem: ask', 'The minor arc is the small arc')),
-      L("[short pause] The problem is that here the scheme isn't clear. Is it the big triangle minus a few pieces? It's "
-        "not clear yet.", show(f7g95['line'], "here the scheme isn't clear")),
-      L("What do we do in cases like this? We work with the givens, we put them on the figure, and we hope the solution "
-        "shows itself."),
+      L("The minor arc is the small arc between D and E. So it's a shaded-area question again. We need to decide which "
+        "area to subtract from which.", pt('stem: ask', 'The minor arc is the small arc')),
+      L("[short pause] Let's solve it the math way. Here it isn't clear yet which areas to use. Is it the big triangle "
+        "minus a few pieces? We don't know yet.", show(f7g95['line'], "Let's solve it the math way")),
+      L("So let's add the known lengths, and the radius to each touching point. That will give us a right triangle to "
+        "work with."),
       L("A B is tangent to the circle at B. B is a point of tangency, and the right angle is already marked there, "
         "because the radius O B is perpendicular to the tangent.", show(f7g95['b'], 'the right angle is already marked')),
-      L("D is also a point of tangency, but there's no radius to it. So we add the automatic construction, from O to D.",
+      L("D is also a point of tangency, but there's no radius to it. So let's draw the radius from O to D.",
         show(f7g95['dpts'], 'from O to D')),
-      L("That's the radius O D, and we mark the right angle at D. It's the most basic construction there is.",
-        show(f7g95['od'], "That's the radius O D")),
+      L("That's the radius O D. A radius to a touching point is perpendicular to the tangent, so we mark the right angle "
+        "at D.", show(f7g95['od'], "That's the radius O D")),
       L("How long is the radius? O E is a radius, and it's four. So O D is a radius too, and it's four.",
         show(f7g95['r4'], 'So O D is a radius too')),
-      L("And now the scheme is clear. Take triangle O D C, and remove the sector D O E. What's left is exactly the shaded "
+      L("Now we can see which areas to use. Take triangle O D C, and remove the sector D O E. What's left is exactly the shaded "
         "part. It's just like the last question.", show(f7g95['tri'], 'Take triangle O D C'),
         show(f7g95['cut'], 'remove the sector'))),
     SM('Triangle O D C', 'The gold triangle',
       L("[pause] Let's look at triangle O D C on its own, bigger. It has a right angle at D. One leg, O D, is four. The "
         "hypotenuse O C is O E plus E C, four plus four, eight.", show(f7g95b['line'], "Let's look at triangle O D C"),
-        show(f7g95b['oc8'], 'four plus four, eight')),
+        show(f7g95x1, 'four plus four, eight')),
       L("The area of a right triangle is leg times leg, over two. So we need the other leg, D C. Pythagoras would work, but "
-        "there's no need.", pt('f7g95b_line', 'So we need the other leg')),
+        "here there's a quicker way.", show(f7g95x2, 'is leg times leg, over two')),
       L("Look, the hypotenuse is exactly twice the leg, eight and four. That happens only in a gold triangle, the thirty, "
         "sixty, ninety triangle. So the angle opposite the short leg, at C, is thirty degrees. And the angle opposite D C, "
-        "at O, is sixty degrees.", show(f7g95b['ang'], 'So the angle opposite the short leg')),
+        "at O, is sixty degrees.", show(f7g95x3, 'the hypotenuse is exactly twice the leg'),
+        show(f7g95b['ang'], 'So the angle opposite the short leg')),
       L("In a gold triangle, the long leg is root three times the short leg. So D C is four root three.",
-        show(f7g95b['dc'], 'So D C is four root three')),
-      L("Leg times leg, over two. Four times four root three is sixteen root three, and over two it's eight root three.",
-        show(f7g95b['area'], 'Four times four root three')),
-      L("Should we find the sector now? We saw in the last question that we can stop halfway and look at the choices. "
-        "We're looking for eight root three, minus something with pi.", show(f7g95b['look'], "We're looking for eight root three")),
+        show(f7g95b['dc'], 'So D C is four root three'), show(f7g95x4, 'is four root three')),
+      L("Leg times leg, over two. Four times four root three is sixteen root three. Over two, it's eight root three.",
+        show(f7g95x5, 'Four times four root three'), show(f7g95x6, "Over two, it's eight root three"))),
+    SM('Triangle O D C', 'The sector',
+      L("[pause] Should we find the sector now? In the last question we stopped halfway and looked at the choices. Here "
+        "the triangle is eight root three. We take away a sector of this circle, so its area is some number of pi. So "
+        "we're looking for eight root three, minus a number of pi.", show(f7g95c['line'], 'Should we find the sector now'),
+        show(f7g95y1, 'Here the triangle is eight root three'), show(f7g95y2, "So we're looking for eight root three")),
       L("Choice number two has sixteen root three, and choice number four has four root three. Neither has eight root "
         "three, so they're both out.", mk('cross', 'choice 2', 'Choice number two has'), mk('cross', 'choice 4', "so they're both out")),
-      L("But this time the trick doesn't finish the job. Two choices start with eight root three, choice number one and "
-        "choice number three. So we need the sector too."),
-      L("The sector is a part of the circle. The whole circle is pi r squared, pi times four squared, sixteen pi.",
-        show(f7g95b['circ'], 'The whole circle')),
-      L("Which part? The central angle D O E is sixty degrees, and sixty out of three hundred sixty is a sixth. A sixth of "
+      L("But this time the partial calculation doesn't finish the job. Two choices are left with eight root three, choice "
+        "number one and choice number three. So we continue, and find the sector."),
+      L("The sector is a part of the circle. The whole circle is pi r squared. Pi times four squared is sixteen pi.",
+        show(f7g95y3, 'Pi times four squared')),
+      L("Which part? The central angle D O E is sixty degrees. Sixty out of three hundred sixty is a sixth. A sixth of "
         "sixteen pi is sixteen pi over six. Divide the top and the bottom by two, and it's eight pi over three.",
-        show(f7g95b['sec'], 'Which part')),
+        show(f7g95c['sec'], 'Which part'), show(f7g95y4, 'Sixty out of three hundred sixty'),
+        show(f7g95y5, 'A sixth of sixteen pi'), show(f7g95y6, 'Divide the top and the bottom by two')),
       L("Choice number one has four pi over three. That's only half of our sector, so it's out. Only choice number three "
         "has both parts right, eight root three minus eight pi over three. Choice number three is our answer.",
-        mk('cross', 'choice 1', "so it's out"), show(f7g95b['ans'], 'has both parts right'),
+        mk('cross', 'choice 1', "so it's out"), show(f7g95c['fin'], 'has both parts right'),
+        show(f7g95y7, 'eight root three minus eight pi over three'),
         mk('tick', 'choice 3', 'Choice number three is our answer')),
       L("By the way, some students find the sector first. Then they look for something minus eight pi over three, and "
         "that rules out choice number one and choice number four. Here we need both parts, and together they leave only "
-        "choice number three. [pause] Okay. I'll see you in the next question.", pt('f7g95b_line', 'some students find the sector first'))),
+        "choice number three. [pause] Okay. I'll see you in the next question.", pt('f7g95y7', 'some students find the sector first'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g096 (Hebrew: the triangle in the semicircle)
@@ -3702,31 +4332,36 @@ f7g96 = PIN(GEO('f7g96', [
     ('rr', [('tick', *f7K6, *f7M6, 1), ('tick', *f7K6, *f7N6, 1), ('txt', 258, 206, 'r', 'small', 28, True), ('txt', 382, 206, 'r', 'small', 28, True)]),
     ('n60', [('arc', f7N6[0], f7N6[1], 34, 180, 240, 'small', '60°', 60), ('arc', 320, 277.333, 30, 60, 120, 'small', '60°', 52)]),
     ('mn', [('tick', *f7M6, *f7N6, 1), ('txt', 320, 104, 'r', 'small', 28, True)]),
-    ('p3', [('txt', 320, 322, 'triangle: r + r + r = 3r', 'ink', 24)]),
     ('arc', [('arcw', 320, 277.333, f7r6, 0, 180, 'orange', 7), ('txt', 150, 150, 'πr', 'orange', 30)]),
     ('dia', [f7_seg(f7P6, f7Q6, 'teal', 7), ('txt', 440, 298, '2r', 'small', 28)]),
-    ('ps', [('txt', 320, 352, 'semicircle: πr + 2r', 'ink', 24)]),
-    ('ratio', [('txt', 320, 382, '(πr + 2r) / 3r = r(π + 2) / 3r', 'ink', 24), ('txt', 320, 412, '= (π + 2) / 3', 'ink', 26)]),
-], vb='100 70 440 360', w=480, title='Triangle KMN in a semicircle'))
+], vb='100 60 440 255', w=480, title='Triangle KMN in a semicircle'))
 f7g96b = PIN(GEO('f7g96b', [
     ('line', f7g96_base),
     ('one', [('txt', 258, 206, '1', 'small', 28), ('txt', 382, 206, '1', 'small', 28), ('txt', 320, 104, '1', 'small', 28),
              ('txt', 150, 150, 'π', 'orange', 30), ('txt', 440, 298, '2', 'small', 28)]),
-    ('r1', [('txt', 320, 322, 'r = 1:  (π + 2) / 3', 'ink', 24)]),
-    ('tie', [('txt', 320, 352, 'choices 2, 3, 4:  all (π + 2) / 3', 'red', 22)]),
-    ('r2', [('txt', 320, 382, 'r = 2:  (2π + 4) / 6 = (π + 2) / 3', 'ink', 24)]),
-], vb='100 70 440 330', w=480, title='Plug in a number for r'))
-f7g96c = PIN(GEO('f7g96c', [
+], vb='100 60 440 255', w=480, title='Plug in a number for r: r = 1'))
+f7g96b2 = PIN(GEO('f7g96b2', [
     ('line', f7g96_base),
-    ('chords', [f7_seg(f7P6, f7M6, 'teal', 3, True), f7_seg(f7N6, f7Q6, 'teal', 3, True), ('txt', 258, 206, '1', 'small', 26),
-                ('txt', 382, 206, '1', 'small', 26), ('txt', 320, 132, '1', 'small', 26), ('txt', 196, 250, '1', 'small', 26),
-                ('txt', 444, 250, '1', 'small', 26)]),
+    ('two', [('txt', 258, 206, '2', 'small', 28), ('txt', 382, 206, '2', 'small', 28), ('txt', 320, 104, '2', 'small', 28),
+             ('txt', 150, 150, '2π', 'orange', 30), ('txt', 440, 298, '4', 'small', 28)]),
+], vb='100 60 440 255', w=480, title='Plug in a number for r: r = 2'))
+# batch C: the estimate uses NEW helper radii KU and KV that cut the semicircle into three equal 60-degree sectors
+# (independent of where M and N are); a clean semicircle without the triangle
+f7U6, f7V6 = gpt(320, 277.333, f7r6, 60), gpt(320, 277.333, f7r6, 120)
+f7g96c = PIN(GEO('f7g96c', [
+    ('line', [('arc', 320, 277.333, f7r6, 0, 180, 'ink'), ('arcw', 320, 277.333, f7r6, 0, 180, 'ink', 5), f7_seg(f7P6, f7Q6, 'ink', 5),
+              ('dot', *f7K6), f7_name(f7K6, 'K', 0, 22)]),
+    ('help', [f7_seg(f7K6, f7U6, 'orange', 3, True), f7_seg(f7K6, f7V6, 'orange', 3, True), ('dot', *f7U6), ('dot', *f7V6),
+              f7_name(f7U6, 'U', 14, -16), f7_name(f7V6, 'V', -14, -16),
+              ('arc', 320, 277.333, 30, 0, 60, 'small'), ('arc', 320, 277.333, 36, 60, 120, 'small'), ('arc', 320, 277.333, 30, 120, 180, 'small'),
+              ('txt', *gpt(320, 277.333, 62, 30), '60°', 'small', 18), ('txt', *gpt(320, 277.333, 66, 90), '60°', 'small', 18),
+              ('txt', *gpt(320, 277.333, 62, 150), '60°', 'small', 18)]),
+    ('chords', [f7_seg(f7P6, f7V6, 'teal', 3, True), f7_seg(f7V6, f7U6, 'teal', 3, True), f7_seg(f7U6, f7Q6, 'teal', 3, True),
+                ('txt', 196, 210, '1', 'small', 26), ('txt', 320, 136, '1', 'small', 26), ('txt', 444, 210, '1', 'small', 26)]),
     ('plus', [('arcw', 320, 277.333, f7r6, 0, 60, 'orange', 6), ('arcw', 320, 277.333, f7r6, 60, 120, 'orange', 6),
-              ('arcw', 320, 277.333, f7r6, 120, 180, 'orange', 6), ('txt', 140, 150, '1+', 'orange', 26),
-              ('txt', 320, 82, '1+', 'orange', 26), ('txt', 500, 150, '1+', 'orange', 26)]),
-    ('tot', [('txt', 320, 322, 'semicircle: 2 + (more than 3) = 5+', 'ink', 22), ('txt', 320, 352, 'triangle: 3', 'ink', 22),
-             ('txt', 320, 382, 'ratio: about 5+ / 3', 'ink', 24)]),
-], vb='100 70 440 330', w=480, title='Estimating sizes with r = 1'))
+              ('arcw', 320, 277.333, f7r6, 120, 180, 'orange', 6), ('txt', *gpt(320, 277.333, f7r6 + 30, 150), '> 1', 'orange', 24),
+              ('txt', *gpt(320, 277.333, f7r6 + 22, 90), '> 1', 'orange', 24), ('txt', *gpt(320, 277.333, f7r6 + 30, 30), '> 1', 'orange', 24)]),
+], vb='100 50 440 265', w=480, title='Estimating the curved part with r = 1'))
 f7sK1, f7sK2 = (110.0, 250.0), (390.0, 250.0)
 def f7_semi(K, r, lab, tri_lab):
     M, N = gpt(K[0], K[1], r, 120), gpt(K[0], K[1], r, 60)
@@ -3737,85 +4372,139 @@ f7g96d = PIN(GEO('f7g96d', [
     ('big', f7_semi(f7sK2, 160, 'semicircle 2π + 4', 'triangle 6') + [('txt', 205, 120, '× 2', 'red', 32)]),
     ('same', [('txt', 280, 345, 'both × 2: the ratio stays the same', 'ink', 24)]),
 ], vb='10 70 560 290', w=540, title='The same figure, twice as big'))
-for _g in (f7g96, f7g96b, f7g96c, f7g96d):
-    _R(_g, 200)
+_R(f7g96d, 200)
+for _g in (f7g96, f7g96b, f7g96b2, f7g96c): LEFT(_g, y=280, x=410, w=480)
+f7g96a4 = IH('f7g96a4', 'triangle: $r + r + r = 3r$', size=30)
+f7g96a5 = IH('f7g96a5', 'arc: $2πr \\div 2 = πr$', size=30)
+f7g96a6 = IH('f7g96a6', 'diameter: $2r$', size=30)
+f7g96a7 = IH('f7g96a7', 'semicircle: $πr + 2r$', size=30)
+f7g96a8 = IH('f7g96a8', '$\\frac{πr + 2r}{3r}$', size=30)
+f7g96a9 = IH('f7g96a9', '$= \\frac{r(π + 2)}{3r}$', size=30)
+f7g96a10 = IH('f7g96a10', '$= \\frac{π + 2}{3}$', size=30)
+ROWS(262, 46, f7g96a4, f7g96a5, f7g96a6, f7g96a7)
+ROWS(455, 76, f7g96a8, f7g96a9, f7g96a10)
+f7g96b1 = IH('f7g96b1', '$r = 1$', size=30)
+f7g96b2t = IH('f7g96b2t', 'triangle: $1 + 1 + 1 = 3$', size=30)
+f7g96b3 = IH('f7g96b3', 'semicircle: $π + 2$', size=30)
+f7g96b4 = IH('f7g96b4', 'ratio: $\\frac{π + 2}{3}$', size=30)
+f7g96b5 = IH('f7g96b5', 'choice 1: $\\frac{π}{3}$ ✗', size=30)
+f7g96b6 = IH('f7g96b6', 'choices 2, 3, 4: all $\\frac{π + 2}{3}$', size=30)
+ROWS(262, 46, f7g96b1, f7g96b2t, f7g96b3)
+ROWS(410, 76, f7g96b4, f7g96b5, f7g96b6)
+f7g96c1 = IH('f7g96c1', '$r = 2$', size=30)
+f7g96c2 = IH('f7g96c2', 'triangle: $2 + 2 + 2 = 6$', size=30)
+f7g96c3 = IH('f7g96c3', 'semicircle: $2π + 4$', size=30)
+f7g96c4 = IH('f7g96c4', 'ratio: $\\frac{2π + 4}{6}$', size=30)
+f7g96c4b = IH('f7g96c4b', '$= \\frac{π + 2}{3}$', size=30)
+f7g96c5 = IH('f7g96c5', 'choice 2: $\\frac{π + 2}{3 \\cdot 2} = \\frac{π + 2}{6}$ ✗', size=30)
+f7g96c6 = IH('f7g96c6', 'choice 4: $\\frac{2(π + 2)}{3}$ ✗', size=30)
+ROWS(262, 46, f7g96c1, f7g96c2, f7g96c3)
+ROWS(410, 76, f7g96c4, f7g96c5, f7g96c6)
+_R(f7g96c4b, 410, x=1290)
+f7g96d1 = IH('f7g96d1', '$r = 1$: triangle $= 3$', size=30)
+f7g96d2 = IH('f7g96d2', 'each chord $= 1$', size=30)
+f7g96d3 = IH('f7g96d3', 'each arc $> 1$', size=30)
+f7g96d4 = IH('f7g96d4', 'curved part $> 3$', size=30)
+f7g96d5 = IH('f7g96d5', 'semicircle $> 3 + 2 = 5$', size=30)
+f7g96d6 = IH('f7g96d6', 'ratio $> \\frac{5}{3}$', size=30)
+f7g96d7 = IH('f7g96d7', 'choice 1: $\\frac{π}{3} < \\frac{4}{3}$ ✗', size=30)
+ROWS(262, 46, f7g96d1, f7g96d2, f7g96d3, f7g96d4, f7g96d5)
+ROWS(505, 76, f7g96d6, f7g96d7)
+NOFIG33.update({('solve-geo33-g096', k) for k in (1, 2, 3, 4)})
 video('solve-geo33-g096', 'solution', qid='geo33-g096', slides=[
-    SM('Method 1 · The math way', 'Algebra',
+    SM('Method 1 · The math way', 'The question',
       L("A semicircle has center K and radius r. M and N lie on its curved boundary, and angle K M N is sixty degrees. "
         "What is the ratio of the perimeter of the semicircle to the perimeter of triangle K M N?",
         pt('stem', 'A semicircle has center K', 'hl', 10.0), voice='calm', pause=0.5),
       L("So they ask for the perimeter of the semicircle, divided by the perimeter of the triangle. [short pause] There's "
-        "a shape inside a circle here. We call these inscribed and circumscribed questions, and they're common at the end "
-        "of the section.", pt('stem: ask', 'So they ask for the perimeter')),
-      L("What do we do in them? We write the lengths of both shapes with the radius of the circle. We'll solve it three "
-        "ways, the math way, by plugging in a number, and by estimation."),
+        "a triangle inside a semicircle here. In questions like this, we write the lengths of both shapes with the radius "
+        "of the circle.", pt('stem: ask', 'So they ask for the perimeter')),
+      L("We'll solve it the math way, then by plugging in numbers, and then by estimation. At the end, we'll look at two "
+        "of the choices by understanding.")),
+    SM('Method 1 · The math way', 'Algebra',
       L("[short pause] The math way first. K M and K N are radii, so each one is r. So the triangle is at least isosceles, and "
         "its base angles are equal.", show(f7g96['line'], 'The math way first'), show(f7g96['rr'], 'K M and K N are radii')),
       L("The angle at M is sixty, so the angle at N is sixty too. That leaves sixty for the angle at K. An isosceles "
         "triangle with a sixty-degree angle is equilateral, so M N is r too.", show(f7g96['n60'], 'the angle at N is sixty'),
         show(f7g96['mn'], 'so M N is r too')),
-      L("So the perimeter of the triangle is r plus r plus r, three r.", show(f7g96['p3'], 'three r')),
-      L("Now the semicircle. A lot of students take half of the circumference. That's only partly right. The perimeter "
+      L("So the perimeter of the triangle is r plus r plus r, three r.", show(f7g96a4, 'three r')),
+      L("Now the semicircle. A lot of students take half of the circumference. That's only part of it. The perimeter "
         "has two parts, the curved part on top and the straight line at the bottom."),
       L("The curved part is half of the circumference. The circumference is two pi r, and half of it is pi r.",
-        show(f7g96['arc'], 'The curved part is half')),
+        show(f7g96['arc'], 'The curved part is half'), show(f7g96a5, 'and half of it is pi r')),
       L("The straight line is the diameter, two radii, so it's two r. So the perimeter of the semicircle is pi r plus two "
-        "r.", show(f7g96['dia'], 'The straight line is the diameter'), show(f7g96['ps'], 'So the perimeter of the semicircle')),
-      L("Now we divide, pi r plus two r, over three r. In the top, take r out as a common factor, so it's r times, in "
-        "brackets, pi plus two. Now r is multiplied on the top and on the bottom, so we cancel it. We get pi plus two, "
-        "over three. Choice number three is our answer.", show(f7g96['ratio'], 'Now we divide'),
+        "r.", show(f7g96['dia'], 'The straight line is the diameter'), show(f7g96a6, "so it's two r"),
+        show(f7g96a7, 'So the perimeter of the semicircle')),
+      L("Now we divide. Pi r plus two r, over three r. In the top, take r out as a common factor. That gives r times pi "
+        "plus two, all over three r. Now r is multiplied on the top and on the bottom, so we cancel it. We get pi plus "
+        "two, over three. Choice number three is our answer.", show(f7g96a8, 'Now we divide'),
+        show(f7g96a9, 'That gives r times'), show(f7g96a10, 'We get pi plus two'),
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
     SM('Method 2 · Plugging in numbers', 'Plugging in a number',
-      L("[pause] Now the way I recommend for almost everyone, plugging in a number. Instead of the letter r, we pick an "
-        "easy number for the radius, and we solve with numbers. Then we put the same number into the choices, and the "
-        "right choice gives the same value. It saves us the algebra mistakes.", show(f7g96b['line'], 'plugging in a number')),
+      L("[pause] Now let's plug in numbers. Instead of the letter r, we pick an easy number for the radius, and we solve "
+        "with numbers. Then we put the same number into the choices. The right choice gives the same value. It also saves "
+        "us algebra mistakes.", show(f7g96b['line'], "Now let's plug in numbers")),
       L("The easiest number is one, so the radius is one. K M and K N are one, and the triangle is equilateral, so M N "
-        "is one too. The triangle's perimeter is three.", show(f7g96b['one'], 'so the radius is one')),
+        "is one too. The triangle's perimeter is three.", show(f7g96b['one'], 'so the radius is one'),
+        show(f7g96b1, 'so the radius is one'), show(f7g96b2t, "The triangle's perimeter is three")),
       L("The semicircle has a curved part, half of two pi, which is pi. And the diameter is two. So the ratio is pi plus "
-        "two, over three.", show(f7g96b['r1'], 'So the ratio is pi plus')),
-      L("Now we put r equals one into the choices. Choice number one is pi over three, not pi plus two over three, so it's out. "
+        "two, over three.", show(f7g96b3, 'And the diameter is two'), show(f7g96b4, 'So the ratio is pi plus')),
+      L("Now we put r equals one into the choices. Choice number one is pi over three. That's not our value, so it's out. "
         "But in choices two, three and four, multiplying or dividing by one changes nothing. All three give pi plus two, "
-        "over three.", mk('cross', 'choice 1', "so it's out"), show(f7g96b['tie'], 'All three give')),
-      L("That's a tie, so one isn't a good number here. We need another number to break the tie, so let's take r equals "
-        "two."),
-      L("The triangle is two, two and two, so its perimeter is six. The curved part is half of two pi times two, so it's "
-        "two pi. The diameter is four. So the ratio is two pi plus four, over six. Divide the top and the bottom by two, "
-        "and it's pi plus two, over three.", show(f7g96b['r2'], 'The triangle is two, two and two')),
+        "over three.", show(f7g96b5, 'Choice number one is pi over three'), mk('cross', 'choice 1', "so it's out"),
+        show(f7g96b6, 'All three give')),
+      L("So r equals one ruled out one choice, but three remain. To break the tie, let's try another easy number, r "
+        "equals two.")),
+    SM('Method 2 · Plugging in numbers', 'Now r equals two',
+      L("[short pause] Here's the figure again, with radius two. The triangle is two, two and two, so its perimeter is "
+        "six. The curved part is half of two pi times two, so it's two pi. The diameter is four.",
+        show(f7g96b2['line'], "Here's the figure again"), show(f7g96b2['two'], 'with radius two'),
+        show(f7g96c1, 'with radius two'), show(f7g96c2, 'so its perimeter is six'), show(f7g96c3, 'The diameter is four')),
+      L("So the ratio is two pi plus four, over six. Divide the top and the bottom by two, and it's pi plus two, over "
+        "three.", show(f7g96c4, 'So the ratio is two pi'), show(f7g96c4b, 'Divide the top and the bottom by two')),
       L("Now r equals two in the choices. Choice number two says pi plus two, over three r. Three r is six, so it's pi "
-        "plus two over six. That's half of our value, so it's out. Choice number four says r times pi plus two, over "
-        "three. It multiplies by r, so it's twice our value. It's out too.", pt('choice 2', 'Choice number two says', 'hl', 3.0),
-        mk('cross', 'choice 2', 'That\'s half of our value'), pt('choice 4', 'Choice number four says', 'hl', 3.0),
+        "plus two, over six. That's half of our value, so it's out. Choice number four says r times pi plus two, all over "
+        "three. With r equals two, it's twice our value. It's out too.", pt('choice 2', 'Choice number two says', 'hl', 3.0),
+        show(f7g96c5, 'Three r is six'), mk('cross', 'choice 2', 'That\'s half of our value'),
+        pt('choice 4', 'Choice number four says', 'hl', 3.0), show(f7g96c6, "With r equals two, it's twice"),
         mk('cross', 'choice 4', "It's out too")),
       L("Only choice number three gives pi plus two, over three. Choice number three again.",
         mk('tick', 'choice 3', 'Choice number three again'))),
     SM('Method 3 · Estimation', 'Estimating sizes',
       L("[pause] And the third way, estimation. Say the radius is one again. The triangle is equilateral, so each "
-        "of its sides is one, and its perimeter is three.", show(f7g96c['line'], 'Say the radius is one again')),
-      L("Now the curved part. The radii to M and N cut it into three arcs. Under each arc there's a straight line of "
-        "length one, because the three small triangles at K are all equilateral, with sixty degrees each.",
-        show(f7g96c['chords'], 'Under each arc')),
-      L("And a straight line is the shortest way between two points. So each arc is a bit longer than one. Let's write one "
-        "plus.", show(f7g96c['plus'], 'Let\'s write one plus')),
-      L("So the curved part is a bit more than three. Add the diameter, two, and the semicircle is a bit more than five. "
-        "The triangle is three. So the ratio is about five plus, over three.", show(f7g96c['tot'], 'So the curved part')),
-      L("Choice number one, pi over three. Pi is less than four, so this is less than four over three. We need more than "
-        "five over three, so it's out.", mk('cross', 'choice 1', "so it's out"))),
-    SM('Method 3 · Estimation', 'Estimating sizes',
-      L("[pause] Choices two and four have r in them. They're interesting distractors. If r were two, choice number two "
-        "would be pi plus two over six. If r were three, it would be pi plus two over nine. The ratio would keep changing."),
+        "of its sides is one, and its perimeter is three.", show(f7g96c['line'], 'Say the radius is one again'),
+        show(f7g96d1, 'and its perimeter is three')),
+      L("Now the curved part. Let's draw two new helper radii, K U and K V. They cut the semicircle into three equal "
+        "sectors. Three times sixty is a hundred eighty, so each sector has sixty degrees at K. These are new lines, not "
+        "K M and K N.", show(f7g96c['help'], "Let's draw two new helper radii")),
+      L("Each small triangle has two radii and a sixty-degree angle between them, so it's equilateral. So the straight "
+        "line under each arc is one.", show(f7g96c['chords'], 'So the straight line under each arc'),
+        show(f7g96d2, 'under each arc is one')),
+      L("And a straight line is the shortest way between two points. So each arc is longer than its chord. Each arc is "
+        "more than one.", show(f7g96c['plus'], 'So each arc is longer'), show(f7g96d3, 'Each arc is more than one')),
+      L("So the curved part is more than three. Add the diameter, two, and the semicircle's perimeter is more than five. "
+        "The triangle is three. So the ratio is more than five thirds.", show(f7g96d4, 'So the curved part is more'),
+        show(f7g96d5, "the semicircle's perimeter is more than five"), show(f7g96d6, 'So the ratio is more than five thirds')),
+      L("Choice number one, pi over three. Pi is less than four, so this is less than four thirds. We need more than "
+        "five thirds, so it's out.", show(f7g96d7, 'so this is less than four thirds'), mk('cross', 'choice 1', "so it's out"))),
+    SM('Method 4 · Understanding: the scale', 'Changing the size',
+      L("[pause] Now let's look at choices two and four by understanding. They have r in them. If r were two, choice "
+        "number two would be pi plus two, over six. If r were three, it would be pi plus two, over nine. So these choices "
+        "keep changing when r changes."),
       L("But look. Here's the same figure, and next to it the same figure twice as big. Every length is twice as long, "
         "so both perimeters are twice as big.", show(f7g96d['line'], "Here's the same figure"),
         show(f7g96d['big'], 'twice as big')),
       L("The semicircle goes from pi plus two to two pi plus four, and the triangle goes from three to six. When we divide, "
         "the two cancels. So when we make the figure bigger or smaller, the ratio doesn't change.",
         show(f7g96d['same'], 'the ratio doesn\'t change')),
-      L("So when they ask for a perimeter over a perimeter, or an area over an area, the radius must cancel. Any choice "
-        "with r in it is a distractor, and it's out at first glance. Choice number two and choice number four are out.",
-        mk('cross', 'choice 2', 'Choice number two and'), mk('cross', 'choice 4', 'choice number four are out')),
-      L("Careful, that's only for the same kind of thing. In an area over a perimeter, an r can stay, because an area has "
-        "r squared and a perimeter has only r."),
-      L("Choice number three is pi plus two, over three. Pi plus two is a bit more than five, so it's about five plus over "
-        "three, just what we estimated. Choice number three again. [pause] Okay. I'll see you in the next question.",
+      L("Here, changing r scales all the lengths together, while the angles stay the same. So the two perimeters get the "
+        "same multiplier, and their ratio stays fixed. It doesn't depend on r. But choice number two and choice number "
+        "four still change when r changes. So they're out.",
+        mk('cross', 'choice 2', 'But choice number two and'), mk('cross', 'choice 4', "So they're out")),
+      L("Careful, that's only for this kind of comparison, the same kind of thing in one shape. In an area over a "
+        "perimeter, an r can stay, because an area has r squared and a perimeter has only r."),
+      L("Choice number three is pi plus two, over three. Pi plus two is more than five, so it's more than five thirds, "
+        "just what we estimated. Choice number three again. [pause] Okay. I'll see you in the next question.",
         mk('tick', 'choice 3', 'Choice number three again'))),
 ])
 
@@ -3837,65 +4526,102 @@ f7g97_base = (f7_poly([f7K7, f7L7, f7M7, f7N7]) + [('circ', f7O7[0], f7O7[1], f7
                  f7_name(f7O7, 'O', 12, 17, 'ink', 22), f7_name(f7K7, 'K', -16, -16), f7_name(f7L7, 'L', -16, 16), f7_name(f7M7, 'M', 16, 16),
                  f7_name(f7N7, 'N', 16, -16), f7_name(f7P7, 'P', 0, -21), f7_name(f7Q7, 'Q', -21, 0), f7_name(f7R7, 'R', 0, 21),
                  f7_name(f7S7, 'S', 21, 0)])
+def f7g97_dim(p, q, dx, dy, lab, lx, ly, col='teal'):
+    """(batch C) a dimension line beside the WHOLE segment p-q (shifted by dx, dy), with end ticks, and its label"""
+    a, b = (p[0] + dx, p[1] + dy), (q[0] + dx, q[1] + dy)
+    tx, ty = (6, 0) if dx else (0, 6)
+    return [f7_seg(a, b, col, 2), f7_seg((a[0] - tx, a[1] - ty), (a[0] + tx, a[1] + ty), col, 2),
+            f7_seg((b[0] - tx, b[1] - ty), (b[0] + tx, b[1] + ty), col, 2), ('txt', lx, ly, lab, col, 24)]
 f7g97 = PIN(GEO('f7g97', [
     ('line', f7g97_base),
-    ('r1', [f7_seg(f7O7, (f7O7[0] + f7r7 * 0.707, f7O7[1] + f7r7 * 0.707), 'teal', 3, True), ('txt', 372, 218, '1', 'small', 24),
-            ('txt', 570, 60, 'r = 1', 'small', 26)]),
-    ('side', [f7_seg(f7L7, f7M7, 'orange', 6), ('txt', 375, 311, '2', 'orange', 26), f7_seg(f7Q7, f7S7, 'teal', 3, True),
-              ('txt', 270, 166, '2', 'small', 24)]),
-    ('big', [('txt', 570, 100, 'KLMN: 2 · 2 = 4', 'ink', 24)]),
+    ('r1', [f7_seg(f7O7, (f7O7[0] + f7r7 * 0.707, f7O7[1] + f7r7 * 0.707), 'teal', 3, True), ('txt', 372, 218, '1', 'small', 24)]),
+    ('side', [f7_seg(f7L7, f7M7, 'orange', 6), ('txt', 375, 311, '2', 'orange', 26), f7_seg(f7Q7, f7S7, 'teal', 3, True)]
+     + f7g97_dim((f7Q7[0] + 4, f7Q7[1]), (f7S7[0] - 4, f7S7[1]), 0, 16, '2', 262, 212)),
     ('silver', [('tint', [f7K7, f7P7, f7Q7], 'orange'), ('txt', 265, 58, '1', 'orange', 22), ('txt', 198, 125, '1', 'orange', 22),
-                ('txt', 250, 112, '√2', 'orange', 22), ('txt', 570, 140, 'side √2: (√2)² = 2', 'orange', 22)]),
-    ('diag', [f7_seg(f7P7, f7R7, 'teal', 3, True), ('txt', 332, 248, '2', 'small', 24),
-              ('txt', 570, 180, 'or 2 · 2 ÷ 2 = 2', 'small', 24)]),
-    ('ratio', [('txt', 570, 225, '2 / 4 = 1/2', 'ink', 28)]),
-], vb='150 25 520 310', w=500, title='Square KLMN around the circle, square PQRS inside it'))
+                ('txt', 250, 112, '√2', 'orange', 22)]),
+    ('diag', [('region', f7_pd([f7K7, f7P7, f7Q7]), 'f7white', 0.85), f7_seg(f7K7, f7P7), f7_seg(f7K7, f7Q7), f7_seg(f7P7, f7Q7),
+              f7_seg(f7P7, f7R7, 'teal', 3, True)]
+     + f7g97_dim((f7P7[0], f7P7[1] + 4), (f7R7[0], f7R7[1] - 4), -16, 0, '2', 290, 128)),
+], vb='180 30 290 300', w=380, title='Square KLMN around the circle, square PQRS inside it'))
+# batch C: the inner square may be turned inside the circle (its corners stay on the circle, its area doesn't change)
+# until its corners are at the touching points - the position both methods use
+f7g97t_rot = [gpt(320, 180, f7r7, a) for a in (115, 205, 295, 25)]
+f7g97t = PIN(GEO('f7g97t', [
+    ('line', f7_poly([f7K7, f7L7, f7M7, f7N7]) + [('circ', f7O7[0], f7O7[1], f7r7), ('dot', *f7O7)]
+     + f7_poly(f7g97t_rot, 'orange', 3) + [('txt', 320, 330, 'PQRS: corners on the circle', 'orange', 20)]),
+    ('turn', [('arc', 320, 180, 124, 90, 115, 'red'), ('arc', 320, 180, 124, 180, 205, 'red')]
+     + f7_poly([f7P7, f7Q7, f7R7, f7S7], 'teal', 4) + [('txt', 320, 356, 'turned: the same area', 'teal', 20)]),
+], vb='180 40 280 330', w=330, title='Turning the inner square'))
+_R(f7g97t, 290)
 f7g97b = PIN(GEO('f7g97b', [
     ('line', f7g97_base),
     ('mid', [f7_seg(f7P7, f7R7, 'teal', 3, True), f7_seg(f7Q7, f7S7, 'teal', 3, True)]),
     ('pair', [('path', [f7K7, f7P7, f7O7, f7Q7, f7K7], 'ink', 5), ('tint', [f7K7, f7P7, f7Q7], 'orange'), ('tint', [f7P7, f7O7, f7Q7], 'teal')]),
     ('all', [('tint', [f7P7, f7N7, f7S7], 'orange'), ('tint', [f7S7, f7M7, f7R7], 'orange'), ('tint', [f7R7, f7L7, f7Q7], 'orange'),
-             ('tint', [f7P7, f7O7, f7S7], 'teal'), ('tint', [f7S7, f7O7, f7R7], 'teal'), ('tint', [f7R7, f7O7, f7Q7], 'teal'),
-             ('txt', 570, 80, '8 equal triangles', 'ink', 22), ('txt', 570, 115, 'PQRS: 4 of them', 'small', 22)]),
-    ('ratio', [('txt', 570, 160, '4 / 8 = 1/2', 'ink', 28)]),
-], vb='150 25 520 310', w=500, title='Eight equal triangles'))
-for _g in (f7g97, f7g97b):
-    _R(_g, 200)
+             ('tint', [f7P7, f7O7, f7S7], 'teal'), ('tint', [f7S7, f7O7, f7R7], 'teal'), ('tint', [f7R7, f7O7, f7Q7], 'teal')]),
+], vb='180 30 290 300', w=380, title='Eight equal triangles'))
+for _g in (f7g97, f7g97b): LEFT(_g, y=290, x=410, w=320)
+f7g97p1 = IH('f7g97p1', '$r = 1$', size=30)
+f7g97p2 = IH('f7g97p2', 'side $LM = 2$', size=30)
+f7g97p3 = IH('f7g97p3', 'KLMN: $2 \\times 2 = 4$', size=30)
+f7g97p4 = IH('f7g97p4', 'side $PQ = \\sqrt{2}$', size=30)
+f7g97p5 = IH('f7g97p5', 'PQRS: $(\\sqrt{2})^2 = 2$', size=30)
+f7g97p6 = IH('f7g97p6', 'diagonals: $PR = QS = 2$', size=30)
+f7g97p7 = IH('f7g97p7', 'PQRS: $\\frac{2 \\times 2}{2} = 2$', size=30)
+f7g97p8 = IH('f7g97p8', '$\\frac{2}{4} = \\frac{1}{2}$', size=30)
+ROWS(300, 62, f7g97p1, f7g97p2, f7g97p3, f7g97p4, x=780, w=380)
+ROWS(300, 62, f7g97p5, f7g97p6, x=1180, w=400)
+ROWS(430, 80, f7g97p7, f7g97p8, x=1180, w=400)
+f7g97q1 = IH('f7g97q1', '8 equal triangles', size=30)
+f7g97q2 = IH('f7g97q2', 'PQRS: 4 of them', size=30)
+f7g97q3 = IH('f7g97q3', '$\\frac{4}{8} = \\frac{1}{2}$', size=30)
+ROWS(300, 60, f7g97q1, f7g97q2, f7g97q3, x=780)
+NOFIG33.update({('solve-geo33-g097', 1), ('solve-geo33-g097', 2)})
 video('solve-geo33-g097', 'solution', qid='geo33-g097', slides=[
-    SM('Method 1 · Plugging in numbers', 'Plugging in a number',
+    SM('Method 1 · Plugging in numbers', 'The question',
       L("Square K L M N is circumscribed about a circle, and square P Q R S is inscribed in the circle. What is the ratio "
         "of the area of P Q R S to the area of K L M N?", pt('stem', 'Square K L M N is circumscribed', 'hl', 9.0),
         voice='calm', pause=0.5),
       L("Circumscribed means the big square is around the circle, and the circle touches its sides. Inscribed means the "
         "small square is inside the circle, with its corners on the circle. So they ask for the small square's area over "
         "the big square's area.", pt('stem: ask', 'So they ask for the small')),
-      L("[short pause] It's an inscribed and circumscribed question again. We'll solve it by plugging in a number, and "
-        "then with a symmetry shortcut."),
-      L("No length is given, and the size of the figure doesn't change a ratio of areas. So we don't need letters. Like in "
-        "the last question, we pick an easy radius, one.", show(f7g97['line'], 'we pick an easy radius'),
-        show(f7g97['r1'], 'an easy radius, one')),
+      L("[short pause] It's an inscribed and circumscribed question again. We'll solve it by plugging in numbers, and "
+        "then by understanding, with symmetry."),
+      L("Let's check one thing first. The corners of P Q R S are on the circle, but the question doesn't say where. We can turn the "
+        "small square inside the circle. Its corners stay on the circle, so its size doesn't change. So let's turn it "
+        "until its corners are at the points where the circle touches the big square, as in the figure.",
+        show(f7g97t['line'], "the question doesn't say where"), show(f7g97t['turn'], "So let's turn it"))),
+    SM('Method 1 · Plugging in numbers', 'Plugging in a number',
+      L("[short pause] No length is given. If we make this whole figure bigger, every length grows by the same factor. So "
+        "both areas grow by the same factor, and their ratio stays the same. So we don't need letters. Like in the last "
+        "question, we pick an easy radius, one.", show(f7g97['line'], 'No length is given'),
+        show(f7g97['r1'], 'an easy radius, one'), show(f7g97p1, 'an easy radius, one')),
       L("Look at the big square's side, L M. It's as long as the diameter of the circle, because the circle touches both "
         "sides. So the side is two, and the area is two times two, four.", show(f7g97['side'], "Look at the big square's side"),
-        show(f7g97['big'], 'the area is two times two')),
+        show(f7g97p2, 'So the side is two'), show(f7g97p3, 'the area is two times two')),
       L("Now the small square. A lot of students go through silver triangles. In the corner at K there's a silver "
-        "triangle with legs of one and one, so its hypotenuse, the small square's side, is root two. Squaring it, the area "
-        "is two.", show(f7g97['silver'], 'In the corner at K')),
-      L("That's possible, but it's a bit long. A square's area is also diagonal times diagonal, over two. And the "
-        "diagonals of P Q R S are diameters of the circle, two each. Two times two, over two, is two.",
-        show(f7g97['diag'], 'the diagonals of P Q R S')),
+        "triangle with legs of one and one. So its hypotenuse, the small square's side, is root two. Squaring it, the "
+        "area is two.", show(f7g97['silver'], 'In the corner at K'), show(f7g97p4, 'is root two'),
+        show(f7g97p5, 'Squaring it')),
+      L("There's another way too, with the whole small square. A square's area is also diagonal times diagonal, over two. "
+        "The diagonals of P Q R S are diameters of the circle, two each. Two times two, over two, is two.",
+        show(f7g97['diag'], 'with the whole small square'), show(f7g97p6, 'two each'),
+        show(f7g97p7, 'Two times two, over two')),
       L("So the small square over the big one is two over four, a half. None of the choices has r in it, so we just look "
-        "for a half. Choice number two is our answer.", show(f7g97['ratio'], 'two over four'),
+        "for a half. Choice number two is our answer.", show(f7g97p8, 'two over four'),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
     SM('Method 2 · Understanding: symmetry', 'Symmetry',
-      L("[pause] Here there's also a shortcut, with symmetry. Draw the diagonals of the small square, P R and Q S. They "
-        "cut the big square into four small squares.", show(f7g97b['line'], 'Here there\'s also a shortcut'),
+      L("[pause] Now let's solve it by understanding, with symmetry. We use the turned position again, with the corners "
+        "of P Q R S at the touching points. Draw the diagonals of the small square, P R and Q S. They cut the big square "
+        "into four small squares.", show(f7g97b['line'], "Now let's solve it by understanding"),
         show(f7g97b['mid'], 'Draw the diagonals')),
       L("Look at the small square in the corner at K. The side P Q is its diagonal, so it cuts it into two identical "
         "triangles. One is inside P Q R S, and one is outside.", show(f7g97b['pair'], 'Look at the small square')),
       L("It's the same in every corner. So the big square is made of eight identical triangles, and P Q R S is made of "
-        "four of them.", show(f7g97b['all'], 'the same in every corner')),
+        "four of them.", show(f7g97b['all'], 'the same in every corner'), show(f7g97q1, 'eight identical triangles'),
+        show(f7g97q2, 'four of them')),
       L("Four out of eight is a half. So the big square is twice the small one, and the answer is a half. Choice number "
-        "two again. [pause] Okay. I'll see you in the next question.", show(f7g97b['ratio'], 'Four out of eight'),
+        "two again. [pause] Okay. I'll see you in the next question.", show(f7g97q3, 'Four out of eight'),
         mk('tick', 'choice 2', 'Choice number two again'))),
 ])
 
@@ -3920,8 +4646,9 @@ f7nA = PIN(GEO('f7nA', [
     ('eight', [('seg', 200, 50, 200, 350, 'teal', 2.5, True), ('seg', 50, 200, 350, 200, 'teal', 2.5, True), ('tint', f7aI, 'teal'),
                ('tint', [(50, 50), (200, 50), (50, 200)], 'orange'), ('tint', [(200, 50), (350, 50), (350, 200)], 'orange'),
                ('tint', [(350, 200), (350, 350), (200, 350)], 'orange'), ('tint', [(50, 200), (50, 350), (200, 350)], 'orange')]),
-    ('sides', [('txt', 200, 374, '2', 'orange', 28), ('txt', 112, 112, '√2', 'small', 28), ('txt', 215, 245, '1', 'small', 24),
-               f7_seg((200, 200), (200, 350), 'small', 4)]),
+    ('rad1', [('txt', 215, 245, '1', 'small', 24), f7_seg((200, 200), (200, 350), 'small', 4)]),
+    ('out2', [('txt', 200, 374, '2', 'orange', 28)]),
+    ('in2', [('txt', 112, 112, '√2', 'small', 28)]),
 ], vb='20 20 360 375', w=560, col=0, title='Square, circle, square'))
 f7bS = [(100, 100), (100, 300), (300, 300), (300, 100)]
 f7nB = PIN(GEO('f7nB', [
@@ -3930,7 +4657,8 @@ f7nB = PIN(GEO('f7nB', [
     ('in', [('circ', 200, 200, 100)]),
     ('r', [('dot', 200, 200), f7_seg((200, 200), (200, 300), 'teal', 3, True), ('txt', 213, 255, '1', 'small', 26)]),
     ('side', [f7_seg((100, 300), (300, 300), 'orange', 5), ('txt', 150, 320, '2', 'orange', 26)]),
-    ('diag', [f7_seg((100, 300), (300, 100), 'teal', 3, True), ('txt', 135, 238, '2√2', 'small', 24)]),
+    ('diag', [f7_seg((100, 300), (300, 100), 'teal', 3, True)]),
+    ('dlab', [('txt', 135, 238, '2√2', 'small', 24)]),
     ('R', [f7_seg((200, 200), (300, 100), 'orange', 5), ('txt', 270, 165, '√2', 'orange', 26)]),
 ], vb='40 40 320 335', w=560, col=0, title='Circle, square, circle'))
 f7cA, f7cB, f7cC = (200.0, 35.56), (30.0, 330.0), (370.0, 330.0)
@@ -3947,56 +4675,81 @@ f7nC = PIN(GEO('f7nC', [
 ], vb='0 15 400 355', w=560, col=0, title='Triangle, circle, triangle'))
 f7t1 = I('f7t1', 'Outer area $=2\\times$ inner area', size=30, col=1)
 f7t2 = I('f7t2', 'Outer side $=\\sqrt2\\times$ inner side', size=30, col=1)
-f7t3 = IH('f7t3', 'Areas: $\\pi\\cdot1^2=\\pi$, $\\ \\pi\\cdot(\\sqrt2)^2=2\\pi$', size=30, col=1)
+f7t3 = IH('f7t3', 'Small: $\\pi\\cdot1^2=\\pi$', size=30, col=1)
+f7t3b = IH('f7t3b', 'Big: $\\pi\\cdot(\\sqrt2)^2=2\\pi$', size=30, col=1)
 f7t4 = I('f7t4', 'Outer area $=2\\times$ inner area', size=30, col=1)
 f7t5 = I('f7t5', 'Outer radius $=\\sqrt2\\times$ inner radius', size=30, col=1)
-f7t6 = I('f7t6', 'Equilateral triangles only', size=30, col=1)
+f7t6 = I('f7t6', 'Both triangles equilateral', size=30, col=1)
 f7t7 = I('f7t7', 'Outer area $=4\\times$ inner area', size=30, col=1)
 f7t8 = I('f7t8', 'Outer side $=2\\times$ inner side', size=30, col=1)
-f7t9 = I('f7t9', 'Sides $\\times\\sqrt2$ $\\to$ areas $\\times2$', size=30, col=1)
-f7t10 = I('f7t10', 'Sides $\\times2$ $\\to$ areas $\\times4$', size=30, col=1)
+f7t9 = I('f7t9', 'Area factor $=$ (length factor)$^2$', size=34, col=0)
+f7t10 = I('f7t10', 'Square, circle, square: lengths $\\times\\sqrt2$, areas $\\times2$', size=32, col=0)
+f7t10b = I('f7t10b', 'Circle, square, circle: lengths $\\times\\sqrt2$, areas $\\times2$', size=32, col=0)
+f7t10c = I('f7t10c', 'Triangle, circle, triangle: lengths $\\times2$, areas $\\times4$', size=32, col=0)
+f7t11 = I('f7t11', 'Outer area over inner area: $\\ 2,\\ 2,\\ 4$', size=34, col=0)
 video('geo-097-after', 'lesson', slides=[
     S('Three Nested Shapes',
-      L("I want to use the last question to show you three objects that show up on the exam every now and then. If you "
-        "know them by heart, you save precious time.")),
+      L("I want to use the last question to show you three useful arrangements of shapes inside shapes. Each one comes "
+        "with a fixed ratio. Once we see why, it's worth remembering them.")),
     S('Square, circle, square',
-      L("The first one is square, circle, square. A square, a circle inside it, and a square inside the circle. It's "
-        "exactly the case we just solved.", show(f7nA['line'], 'The first one is square'), show(f7nA['circ'], 'a circle inside it'),
-        show(f7nA['in'], 'a square inside the circle')),
-      L("We saw that the big square is made of eight identical triangles, and the small square of four. So the outer "
-        "square's area is always twice the inner square's area.", show(f7nA['eight'], 'eight identical triangles'),
+      L("The first one is square, circle, square. A circle inside a square, touching all four sides. And a square inside "
+        "the circle, with its four corners on the circle. It's exactly the case we just solved.",
+        show(f7nA['line'], 'The first one is square'), show(f7nA['circ'], 'touching all four sides'),
+        show(f7nA['in'], 'with its four corners on the circle')),
+      L("Here the inner square's corners are at the touching points. If it's drawn turned another way, we can rotate it "
+        "inside the circle until it looks like this. Turning it doesn't change its size. Then the big square is made of "
+        "eight identical triangles, and the small square of four. So the outer square's area is always twice the inner "
+        "square's area.", show(f7nA['eight'], 'eight identical triangles'),
         show(f7t1, "the outer square's area is always twice")),
-      L("A question like the last one comes near the end of the section, and it has appeared a few times. If you know "
-        "this, you mark the answer at once.", pt('f7t1', 'If you know this')),
-      L("It's also worth knowing the sides. With a radius of one, the outer side is two, and the inner side is root two. "
-        "Two is root two times root two, so the outer side is root two times the inner side.",
-        show(f7nA['sides'], 'With a radius of one'), show(f7t2, 'the outer side is root two times'))),
+      L("So when you see this arrangement in a question, you already know the ratio of the areas. The outer area is two "
+        "times the inner area.", pt('f7t1', 'you already know the ratio')),
+      L("It's also worth knowing the sides. Take a radius of one. The outer side is a diameter, two. The inner side is the "
+        "hypotenuse of a silver triangle with legs one and one, so it's root two. Two is root two times root two. So the "
+        "outer side is root two times the inner side.",
+        show(f7nA['rad1'], 'Take a radius of one'), show(f7nA['out2'], 'The outer side is a diameter'),
+        show(f7nA['in2'], "so it's root two"), show(f7t2, 'outer side is root two times'))),
     S('Circle, square, circle',
-      L("The second one is circle, square, circle. A circle, a square inside it, and a circle inside the square. It's "
-        "almost the same case.", show(f7nB['line'], 'The second one is circle'), show(f7nB['sq'], 'a square inside it'),
-        show(f7nB['in'], 'a circle inside the square')),
+      L("The second one is circle, square, circle. A square inside a circle, with its four corners on the circle. And a "
+        "circle inside the square, touching all four sides. It's almost the same case.",
+        show(f7nB['line'], 'The second one is circle'), show(f7nB['sq'], 'with its four corners on the circle'),
+        show(f7nB['in'], 'touching all four sides')),
       L("Why? Say the small radius is one. The small circle touches the square's sides, so the square's side is a "
         "diameter, two.", show(f7nB['r'], 'Say the small radius is one'), show(f7nB['side'], "so the square's side")),
-      L("The square's diagonal makes a silver triangle with two sides, and in a silver triangle the hypotenuse is the leg times root two. So the diagonal is two root two. And that diagonal is a "
-        "diameter of the big circle, so the big radius is half of it, root two.", show(f7nB['diag'], "The square's diagonal"),
-        show(f7nB['R'], 'so the big radius is half')),
+      L("Now look at the square's diagonal. It cuts the square into two silver triangles with legs of two. In a silver triangle "
+        "the hypotenuse is the leg times root two. So the diagonal is two root two.",
+        show(f7nB['diag'], "Now look at the square's diagonal"), show(f7nB['dlab'], 'So the diagonal is two root two')),
+      L("The square's corners are on the big circle, so that diagonal is a diameter of the big circle. So the big radius "
+        "is half of it, root two.", show(f7nB['R'], 'So the big radius is half')),
       L("So the outer radius is root two times the inner radius. Now the areas. The small circle is pi times one squared, "
-        "pi. The big circle is pi times root two, squared, which is two pi.", show(f7t5, 'So the outer radius'), show(f7t3, 'Now the areas')),
-      L("So again, the outer circle's area is exactly twice the inner circle's area.", show(f7t4, "the outer circle's area"))),
+        "which is pi. The big circle is pi times root two squared. Root two squared is two, so that's two pi.",
+        show(f7t5, 'So the outer radius'), show(f7t3, 'The small circle is pi'), show(f7t3b, 'The big circle is pi')),
+      L("So again, the outer circle's area is exactly twice the inner circle's area. That fits the scaling rule we know. "
+        "Every length is root two times bigger. So the area is root two squared times bigger, which is two.",
+        show(f7t4, "the outer circle's area"))),
     S('Triangle, circle, triangle',
-      L("The third and last one is triangle, circle, triangle. But only with equilateral triangles.",
-        show(f7nC['line'], 'The third and last one'), show(f7nC['circ'], 'triangle, circle, triangle'),
-        show(f7nC['in'], 'But only with equilateral'), show(f7t6, 'only with equilateral')),
-      L("Here it's different. The outer triangle isn't twice the inner one, it's four times as big. And the outer side is "
-        "twice the inner side.", show(f7t7, "it's four times as big"), show(f7t8, 'the outer side is')),
+      L("The third one is triangle, circle, triangle. Here both triangles must be equilateral. A circle inside the big "
+        "triangle, touching all three sides. And a small triangle inside the circle, with its three corners on the "
+        "circle.",
+        show(f7nC['line'], 'The third one is triangle'), show(f7t6, 'both triangles must be equilateral'),
+        show(f7nC['circ'], 'touching all three sides'), show(f7nC['in'], 'with its three corners on the circle')),
+      L("Here it's different. The outer triangle's area isn't twice the inner one. It's four times the inner area. And "
+        "the outer side is twice the inner side.", show(f7t7, 'four times the inner area'),
+        show(f7t8, 'the outer side is twice')),
       L("Why? The circle touches each side of the big triangle right in its middle, because the equilateral triangle is "
-        "symmetric. Turn the small triangle upside down, like here. Turning it doesn't change its size. Now its corners "
-        "touch those middles.", show(f7nC['four'], 'right in its middle')),
-      L("So the big triangle is cut into four equal triangles, and the small one is one of them. Its area is a quarter, "
-        "and its side is half of the big side.", show(f7nC['sides'], 'cut into four equal triangles')),
-      L("Now, this is important. A length factor isn't an area factor. Sides times root two give areas times two, and "
-        "sides times two give areas times four.", show(f7t9, 'Sides times root two'), show(f7t10, 'sides times two give')),
-      L("Learn these three objects by heart. [pause] Okay. I'll see you in the next video.", pt('f7t10', 'Learn these three'))),
+        "symmetric. The small triangle in this picture is already turned upside down. If it's drawn another way, we can "
+        "rotate it around the center until it looks like this. Turning it doesn't change its size. Now its corners touch "
+        "those middles.", show(f7nC['four'], 'right in its middle')),
+      L("So the big triangle is cut into four equal triangles, and the small one is one of them. Its side is half of the "
+        "big side, and its area is a quarter.", show(f7nC['sides'], 'cut into four equal triangles'))),
+    S('Length factor, area factor',
+      L("Now, this is important. A length factor isn't an area factor. The area factor is the length factor, squared.",
+        show(f7t9, 'The area factor is the length factor')),
+      L("In the first two arrangements, every length grows root two times. So the areas grow two times. In the triangle "
+        "arrangement, every length grows two times. So the areas grow four times.",
+        show(f7t10, 'In the first two arrangements'), show(f7t10b, 'So the areas grow two times'),
+        show(f7t10c, 'In the triangle arrangement')),
+      L("So remember the three area ratios, the outer area over the inner area. They are two, two, and four. Take a moment to "
+        "memorize this. [pause] Okay. I'll see you in the next video.", show(f7t11, 'the outer area over the inner area'))),
 ])
 
 # =================================================================================================================
@@ -4037,14 +4790,38 @@ f8g98 = PIN(GEO('f8g98', [
                ('seg', 320, 180, *f8P['D'], 'teal', 3, True)]),
     ('af', [('path', [f8P['A'], f8P['B'], f8P['F']], 'teal', 6), ('arc', *f8P['B'], 34, 17.5, 45.5, 'small'),
             ('arcw', 320, 180, f8R + 11, 0, 56, 'teal', 4)]),
-    ('of', [('dot', *f8P['F']), ('seg', 320, 180, *f8P['F'], 'teal', 3, True), ('arc', 320, 180, 30, 0, 56, 'small'),
-            ('txt', 364, 150, '56°', 'teal', 22)]),
+    ('of', [('dot', *f8P['F']), ('seg', 320, 180, *f8P['F'], 'teal', 3, True), ('arc', 320, 180, 30, 0, 56, 'small')]),
+    ('of56', [('txt', 364, 150, '56°', 'teal', 22)]),
     ('fd', [('path', [f8P['F'], f8P['C'], f8P['D']], 'orange', 6), ('arc', *f8P['C'], 34, 83.0, 140.0, 'large'),
-            ('arcw', 320, 180, f8R + 11, 56, 170, 'orange', 4), ('arc', 320, 180, 40, 56, 170, 'large'),
-            ('txt', 262, 150, '114°', 'orange', 22)]),
+            ('arcw', 320, 180, f8R + 11, 56, 170, 'orange', 4), ('arc', 320, 180, 40, 56, 170, 'large')]),
+    ('fd114', [('txt', 262, 150, '114°', 'orange', 22)]),
+    # batch C: after the two angles are taken from B and C, a clean view - their chords fade, the radii and arcs stay
+    ('focus', [('dim', 165, 35, 300, 300), ('circ', 320, 180, f8R), ('dot', 320, 180)]
+              + [('seg', 320, 180, *f8P[k], 'ink', 3) for k in ('A', 'G', 'E', 'D')]
+              + [('seg', 320, 180, *f8P['F'], 'teal', 2.5, True), ('arcw', 320, 180, f8R, 0, 20, 'teal', 8),
+                 ('arcw', 320, 180, f8R, 100, 170, 'teal', 8), ('arc', 320, 180, 16, 20, 100, 'ink'), ('txt', 331, 124, '80°', 'ink', 20),
+                 ('txt', 364, 150, '56°', 'teal', 22), ('txt', 262, 150, '114°', 'orange', 22)]
+              + f8_lab([(451, 180, 'A'), (443, 134, 'G'), (393, 70, 'F'), (297, 51, 'E'), (190, 157, 'D'), (303, 197, 'O')])),
     ('ends', [('wedge', 320, 180, f8R, 0, 20, 'teal'), ('wedge', 320, 180, f8R, 100, 170, 'teal')]),
-    ('sum', [('txt', 250, 322, '170° − 80° = 90°', 'teal', 24)]),
 ], vb='165 35 300 300', w=400, title='Circle O with the arcs AG and ED'))
+f8x98r1 = IH('f8x98r1', '$\\angle AOF = 2 \\times 28° = 56°$', size=28, col=1)
+f8x98r2 = IH('f8x98r2', '$\\angle FOD = 2 \\times 57° = 114°$', size=28, col=1)
+f8x98r3 = IH('f8x98r3', '$\\angle AOD = 56° + 114° = 170°$', size=28, col=1)
+f8x98r4 = IH('f8x98r4', '$\\angle AOG + \\angle EOD = 170° - 80° = 90°$', size=28, col=1)
+ROWS(340, 60, f8x98r1, f8x98r2, f8x98r3, f8x98r4)
+LEFT(f8g98, y=330, x=470, w=380)
+# a small clean reference of the two arcs beside the final calculation
+f8x98ref = PIN(GEO('f8x98ref', [
+    ('line', [('circ', 150, 150, 100), ('dot', 150, 150)]
+             + [('seg', 150, 150, *gpt(150, 150, 100, a), 'ink', 3) for a in (0, 20, 100, 170)]
+             + [('wedge', 150, 150, 100, 0, 20, 'teal'), ('wedge', 150, 150, 100, 100, 170, 'teal'),
+                ('arcw', 150, 150, 100, 0, 20, 'teal', 8), ('arcw', 150, 150, 100, 100, 170, 'teal', 8),
+                ('arc', 150, 150, 18, 20, 100, 'ink'), ('txt', 160, 100, '80°', 'ink', 18),
+                ('txt', 150, 284, 'the two end arcs: 90° together', 'teal', 20)]
+             + f8_lab([(272, 150, 'A'), (266, 108, 'G'), (132, 34, 'E'), (32, 132, 'D')], 22)),
+], vb='0 20 300 280', w=300, col=1, title='The two arcs, 90 degrees together'))
+LEFT(f8x98ref, y=340, x=500, w=360)
+NOFIG33.update({('solve-geo33-g098', 1), ('solve-geo33-g098', 3)})
 
 f8mv_l, f8mv_r = (160.0, 150.0), (480.0, 150.0); f8r2 = 100
 
@@ -4055,7 +4832,8 @@ def f8_split(cx, cy, g, e, a1, a2):
             ('seg', cx, cy, *gpt(cx, cy, f8r2, e), 'ink', 3), ('txt', *gpt(cx, cy, 62, (g + e) / 2.0), '80°', 'ink', 20),
             ('wedge', cx, cy, f8r2, 0, g, 'teal'), ('wedge', cx, cy, f8r2, e, 170, 'teal'),
             ('txt', *gpt(cx, cy, 120, g / 2.0), '%d°' % g, 'teal', 22), ('txt', *gpt(cx, cy, 122, (e + 170) / 2.0), '%d°' % (170 - e), 'teal', 22),
-            ('txt', cx, cy + 128, '%d° + %d° = 90°' % (g, 170 - e), 'teal', 22)]
+            ('txt', cx, cy + 128, '%d° + %d° = 90°' % (g, 170 - e), 'teal', 22),
+            ('txt', cx, cy + 158, 'one possible position' if g == 20 else 'another possible position', 'ink', 18)]
 
 
 f8mv = PIN(GEO('f8mv', [
@@ -4067,9 +4845,10 @@ f8mv = PIN(GEO('f8mv', [
                ('txt', c[0] + 2, c[1] + 20, 'O', 'ink', 20, True)]]),
     ('p1', f8_split(*f8mv_l, 20, 100, 0, 170)),
     ('p2', f8_split(*f8mv_r, 50, 130, 0, 170)),
-], vb='30 25 590 300', w=560, title='The middle part in two places'))
+], vb='30 25 590 330', w=560, title='The middle part in two places'))
 f8a1 = I('f8a1', '$2\\pi\\cdot8=16\\pi$', size=32, col=1)
-f8a2 = I('f8a2', '$\\frac{90}{360}=\\frac14,\\quad \\frac14\\cdot16\\pi=4\\pi$', size=32, col=1, hand='{90/360} = {1/4},     {1/4}·16π = 4π')
+f8a2 = I('f8a2', '$\\frac{90}{360}=\\frac14$', size=32, col=1, hand='{90/360} = {1/4}')
+f8a2b = I('f8a2b', '$\\frac14\\cdot16\\pi=\\frac{16\\pi}{4}=4\\pi$', size=32, col=1, hand='{1/4}·16π = {16π/4} = 4π')
 f8k98 = I('f8k98', 'So far: $\\ \\angle AOG+\\angle EOD=90°$', size=26, col=1)
 video('solve-geo33-g098', 'solution', qid='geo33-g098', slides=[
     SM('Central angles', 'Central angles',
@@ -4077,39 +4856,48 @@ video('solve-geo33-g098', 'solution', qid='geo33-g098', slides=[
         "B and C lie on the other arc between A and D. Angle A B F is twenty-eight degrees, angle F C D is fifty-seven "
         "degrees, and angle G O E is eighty degrees. What is the sum of the lengths of the highlighted arcs, A G and E D?",
         pt('stem', 'A circle with center O', 'hl', 12.0), voice='calm', pause=0.5),
-      L("So they want the two bold arcs together. To find the length of an arc, we first need its central angle. But no "
-        "central angle stands on arc A G, or on arc E D. So we need a construction, and it's a natural one, because we "
-        "must have central angles. Let's draw the radius O A and the radius O D.",
-        show(f8g98['line'], 'So they want'), show(f8g98['arcs'], 'the two bold arcs together'),
+      L("So they want the two bold arcs together, A G and E D. We'll find them with the math way, using central angles.",
+        pt('stem', 'So they want the two bold arcs'))),
+    SM('Central angles', 'The central angles',
+      L("[short pause] Here's the figure again, bigger. To find the length of an arc here, we need its central angle. But "
+        "no central angle stands on arc A G, or on arc E D. So let's draw radii that give us central angles. Let's draw "
+        "the radius O A and the radius O D.",
+        show(f8g98['line'], "Here's the figure again"), show(f8g98['arcs'], 'on arc A G, or on arc E D'),
         show(f8g98['radii'], "Let's draw the radius O A")),
       L("Now let's use the givens. Angle B is twenty-eight degrees. Which arc does it stand on? On A G plus G F, so on the "
         "whole arc A F. An inscribed angle doesn't give us a central angle directly. But remember, the central angle on "
         "the same arc is twice as big.", show(f8g98['af'], 'Angle B is twenty-eight degrees')),
       L("No central angle is drawn on arc A F, so let's draw one more radius, O F. Now angle A O F is two times "
-        "twenty-eight, fifty-six degrees.", show(f8g98['of'], 'one more radius, O F')),
-      L("Next, angle C is fifty-seven degrees, and it stands on arc F D. The central angle on that arc is twice as big, two "
-        "times fifty-seven, a hundred fourteen degrees.", show(f8g98['fd'], 'angle C is fifty-seven')),
-      L("That's a lot of givens and a lot of lines, so let's find our way. We need the two angles at the ends, angle A O G "
-        "and angle E O D. We can't find each one alone. But we can find their sum.",
-        show(f8g98['ends'], 'We need the two angles at the ends')),
-      L("Together with the middle angle, G O E, they make the whole angle A O D. That's fifty-six plus a hundred fourteen, "
-        "a hundred seventy degrees. Take away the middle angle, eighty, and the two end angles together are a hundred "
-        "seventy minus eighty, ninety degrees.", show(f8g98['sum'], 'Take away the middle angle'))),
+        "twenty-eight. That's fifty-six degrees.", show(f8g98['of'], 'one more radius, O F'),
+        show(f8x98r1, 'Now angle A O F is two times'), show(f8g98['of56'], "That's fifty-six degrees")),
+      L("Next, angle C is fifty-seven degrees, and it stands on arc F D. The central angle on that arc is twice as big. "
+        "Two times fifty-seven is a hundred fourteen degrees.", show(f8g98['fd'], 'angle C is fifty-seven'),
+        show(f8x98r2, 'Two times fifty-seven'), show(f8g98['fd114'], 'is a hundred fourteen degrees')),
+      L("That's a lot of givens and a lot of lines. We've used B and C, so let's keep only what we need now. We need the "
+        "two angles at the ends, angle A O G and angle E O D. We can't find each one alone. But we can find their sum.",
+        show(f8g98['focus'], "let's keep only what we need"), show(f8g98['ends'], 'We need the two angles at the ends')),
+      L("Together with the middle angle, G O E, they make the whole angle A O D. Angle A O D is fifty-six plus a hundred "
+        "fourteen. That's a hundred seventy degrees.", show(f8x98r3, 'Angle A O D is fifty-six plus')),
+      L("Now take away the middle angle, eighty. So the two end angles together are a hundred seventy minus eighty, "
+        "ninety degrees.", show(f8x98r4, 'a hundred seventy minus eighty'))),
     SM('The sum, not each one', 'The sum, not each one',
-      L("How is the ninety split between the two? Maybe forty-five and forty-five, maybe twenty and seventy. We don't know, "
-        "and it doesn't matter. Let's see why. Here's only what we need, the angle A O D, a hundred seventy degrees.",
+      L("Now let's understand why the sum is enough. How is the ninety split between the two? It could be forty-five and "
+        "forty-five, or twenty and seventy. The givens don't decide it, and we don't need it. Here's only what we need, "
+        "the angle A O D, a hundred seventy degrees.",
         show(f8mv['line'], "Here's only what we need")),
-      L("Say the middle part, the eighty, sits here, in grey. Then the end angles are twenty and seventy, and together "
-        "they're ninety.", show(f8mv['p1'], 'Say the middle part')),
-      L("Now slide the whole middle part along the circle. The end angles change, to fifty and forty, but together they're "
-        "still ninety. Wherever the middle part sits, the two ends always add up to a hundred seventy minus eighty.",
+      L("Say the middle part, the eighty, sits here, in grey. This is just one possible position. Then the end angles are "
+        "twenty and seventy, and together they're ninety.", show(f8mv['p1'], 'Say the middle part')),
+      L("Now slide the whole middle part along the circle, to another possible position. The end angles change, to fifty "
+        "and forty, but together they're still ninety. Wherever the middle part sits, the two ends always add up to a hundred seventy minus eighty.",
         show(f8mv['p2'], 'slide the whole middle part'))),
     SM('The arc length', 'The arc length',
       L("Now the length. An arc is a part of the circumference. The radius is eight, so the whole circumference is two pi "
-        "times eight, sixteen pi.", show(f8k98, 'Now the length'), show(f8a1, 'the whole circumference')),
-      L("Which part of it do we need? Ninety degrees out of three hundred sixty is one quarter. And one quarter of sixteen "
-        "pi is four pi. Choice number three is our answer.", show(f8a2, 'Ninety degrees out of'),
-        mk('tick', 'choice 3', 'Choice number three is our answer')),
+        "times eight, sixteen pi.", show(f8x98ref['line'], 'Now the length'), show(f8k98, 'An arc is a part'),
+        show(f8a1, 'the whole circumference')),
+      L("Which part of it do we need? The two arcs together have ninety degrees. Ninety out of three hundred sixty is one "
+        "quarter. And one quarter of sixteen pi is sixteen pi divided by four, four pi. Choice number three is our answer.",
+        pt('f8x98ref_line', 'The two arcs together'), show(f8a2, 'Ninety out of three hundred sixty'),
+        show(f8a2b, 'one quarter of sixteen pi'), mk('tick', 'choice 3', 'Choice number three is our answer')),
       L("When you can't find each part alone, look for the sum. Here it was the whole angle minus the middle part. [pause] "
         "Okay. I'll see you in the next question.", pt('f8a2', "When you can't find each part"))),
 ])
@@ -4137,12 +4925,26 @@ f8g99 = PIN(GEO('f8g99', [
     ('radP', [('arcw', *f8Pc, f8R, 135, 225, 'teal', 7), ('seg', *f8Pc, *f8A9, 'teal', 3, True), ('seg', *f8Pc, *f8B9, 'teal', 3, True),
               ('right', *f8Pc, 135, 225, 16), ('txt', 374, 130, '6', 'teal', 24), ('txt', 374, 232, '6', 'teal', 24)]),
     ('sq', [('path', [f8O, f8A9, f8Pc, f8B9, f8O], 'teal', 6), ('right', *f8A9, 225, 315, 14), ('right', *f8B9, 45, 135, 14)]),
-    ('pac', [('wedge', *f8O, f8R, 45, 315, 'orange'), ('wedge', *f8Pc, f8R, 225, 135, 'orange'),
-             ('tint', [f8O, f8A9, f8Pc, f8B9], 'teal'), ('txt', 180, 180, '27π', 'orange', 30), ('txt', 460, 180, '27π', 'orange', 30),
-             ('txt', 320, 180, '36', 'teal', 28)]),
-    ('b1', [('txt', 320, 325, '¾ · π · 6² = ¾ · 36π = 27π', 'orange', 24)]),
-    ('b2', [('txt', 320, 362, '27π + 36 + 27π = 54π + 36', 'ink', 24)]),
 ], vb='120 60 400 320', w=420, title='Two congruent circles O and P'))
+# batch C: the three pieces on their own slide (no question figure), the shapes named first, each value at its clause
+f8x99m = PIN(GEO('f8x99m', [
+    ('line', [('circ', *f8O, f8R), ('circ', *f8Pc, f8R), ('dot', *f8O), ('dot', *f8Pc),
+              ('path', [f8O, f8A9, f8Pc, f8B9, f8O], 'teal', 6), ('right', *f8O, -45, 45, 16), ('right', *f8Pc, 135, 225, 16),
+              ('txt', 266, 130, '6', 'teal', 24), ('txt', 266, 232, '6', 'teal', 24), ('txt', 374, 130, '6', 'teal', 24),
+              ('txt', 374, 232, '6', 'teal', 24)]
+             + f8_lab([(228, 198, 'O'), (412, 198, 'P'), (320, 82, 'A'), (320, 279, 'B')])),
+    ('pac', [('wedge', *f8O, f8R, 45, 315, 'orange'), ('wedge', *f8Pc, f8R, 225, 135, 'orange'),
+             ('tint', [f8O, f8A9, f8Pc, f8B9], 'teal')]),
+    ('l27', [('txt', 180, 180, '27π', 'orange', 30), ('txt', 460, 180, '27π', 'orange', 30)]),
+    ('s36', [('txt', 320, 180, '36', 'teal', 28)]),
+], vb='120 60 400 320', w=420, title='The union in three pieces'))
+LEFT(f8x99m, y=330, x=430, w=400)
+f8x99a1 = IH('f8x99a1', 'circle: $\\pi \\cdot 6^2 = 36\\pi$', size=28)
+f8x99a2 = IH('f8x99a2', 'a quarter: $36\\pi \\div 4 = 9\\pi$', size=28)
+f8x99a3 = IH('f8x99a3', 'three quarters: $3 \\times 9\\pi = 27\\pi$', size=28)
+f8x99a4 = IH('f8x99a4', 'square: $6^2 = 36$', size=28)
+f8x99a5 = IH('f8x99a5', '$27\\pi + 36 + 27\\pi = 54\\pi + 36$', size=28)
+ROWS(330, 56, f8x99a1, f8x99a2, f8x99a3, f8x99a4, f8x99a5)
 f8g99b = PIN(GEO('f8g99b', [
     ('line', f8_99base),
     ('two', [('circ', *f8O, f8R, 'teal', 5), ('circ', *f8Pc, f8R, 'orange', 5), ('txt', 190, 180, '36π', 'teal', 28),
@@ -4151,27 +4953,44 @@ f8g99b = PIN(GEO('f8g99b', [
     ('quarter', [('seg', *f8O, *f8A9, 'teal', 3, True), ('seg', *f8O, *f8B9, 'teal', 3, True), ('wedge', *f8O, f8R, -45, 45, 'teal'),
                  ('right', *f8O, -45, 45, 16)]),
     ('tri', [('seg', *f8A9, *f8B9, 'orange', 3, True), ('tint', [f8O, f8A9, f8B9], 'orange')]),
-    ('b4', [('txt', 320, 325, 'overlap = 2(9π − 18) = 18π − 36', 'red', 24)]),
-    ('b5', [('txt', 320, 362, '72π − (18π − 36) = 54π + 36', 'ink', 24)]),
 ], vb='120 60 400 320', w=420, title='Two whole circles and their overlap'))
+LEFT(f8g99b, y=330, x=410, w=360)
+f8x99b1 = IH('f8x99b1', '$36\\pi + 36\\pi = 72\\pi$', size=28)
+f8x99b2 = IH('f8x99b2', 'quarter: $36\\pi \\div 4 = 9\\pi$', size=28)
+f8x99b3 = IH('f8x99b3', 'triangle: $\\frac{6 \\times 6}{2} = 18$', size=28)
+f8x99b4 = IH('f8x99b4', 'one piece: $9\\pi - 18$', size=28)
+f8x99b5 = IH('f8x99b5', 'overlap: $2(9\\pi - 18) = 18\\pi - 36$', size=28)
+f8x99b6 = IH('f8x99b6', '$72\\pi - (18\\pi - 36)$', size=28)
+f8x99b7 = IH('f8x99b7', '$= 72\\pi - 18\\pi + 36$', size=28)
+f8x99b8 = IH('f8x99b8', '$= 54\\pi + 36$', size=28)
+ROWS(340, 60, f8x99b1, f8x99b2, f8x99b3, f8x99b4, f8x99b5, x=790, w=450)
+ROWS(340, 60, f8x99b6, f8x99b7, f8x99b8, x=1260, w=330)
 f8g99c = PIN(GEO('f8g99c', [
     ('line', f8_99base),
     ('one', [('circ', *f8O, f8R, 'teal', 5, False, 'teal'), ('txt', 205, 180, '36π', 'teal', 30)]),
+    ('op', [('seg', *f8O, *f8Pc, 'ink', 3, True), ('txt', 330, 166, 'OP > 6', 'ink', 18)]),
     ('half', [('wedge', *f8Pc, f8R, -90, 90, 'orange'), ('seg', f8Pc[0], 70.5, f8Pc[0], 289.5, 'orange', 3, True),
               ('txt', 450, 180, '18π', 'orange', 30)]),
-    ('b6', [('txt', 320, 330, 'union > 36π + 18π = 54π', 'ink', 26)]),
 ], vb='120 60 400 320', w=420, title='More than a circle and a half'))
+LEFT(f8g99c, y=330, x=410, w=400)
+f8x99c1 = IH('f8x99c1', 'circle O: $36\\pi$', size=28)
+f8x99c2 = IH('f8x99c2', 'right half of P: $18\\pi$', size=28)
+f8x99c3 = IH('f8x99c3', 'union $> 36\\pi + 18\\pi = 54\\pi$', size=28)
+f8x99c4 = IH('f8x99c4', '$27\\pi > 27 \\times 3 = 81 > 36$', size=28)
+f8x99c5 = IH('f8x99c5', '$27\\pi + 36 < 27\\pi + 27\\pi = 54\\pi$', size=28)
+ROWS(330, 56, f8x99c1, f8x99c2, f8x99c3, f8x99c4, f8x99c5)
+NOFIG33.update({('solve-geo33-g099', 1), ('solve-geo33-g099', 2), ('solve-geo33-g099', 3)})
 video('solve-geo33-g099', 'solution', qid='geo33-g099', slides=[
     SM('Method 1 · The math way', 'Pieces we know',
       L("Two congruent circles, with centers O and P, have a radius of six centimeters, and they intersect at A and B. The "
         "minor arc A B is one quarter of the circumference of each circle. What is the area of the union of the two "
         "circles?", pt('stem', 'Two congruent circles', 'hl', 9.0), voice='calm', pause=0.5),
       L("The union is everything that is inside at least one of the circles, the whole grey shape. It's a shaded-area "
-        "question, but until now we usually subtracted, and here there's nothing to subtract from. Some students think, "
-        "it's a circle plus an extra bit. But how do we find that bit? It's not clear. [short pause] We'll solve it two "
-        "ways, by cutting it into pieces we know, and by taking away the overlap. Then we'll see what estimating can do.",
+        "question. But no single familiar shape around it is given, so we can't take one big area and subtract a piece. "
+        "[short pause] We'll solve it in two different ways, by cutting it into pieces we know, and by taking away the "
+        "overlap. Then we'll see what estimating can do.",
         show(f8g99['line'], 'The union is everything')),
-      L("In a case like this, we go to the givens and see what we can get out of them. The minor arc A B is a quarter of "
+      L("Let's start with the math way. In a case like this, we go to the givens and see what we can get out of them. The minor arc A B is a quarter of "
         "the circumference of circle O. A quarter of the circle means a central angle of a quarter of three hundred sixty, "
         "ninety degrees.", show(f8g99['arcO'], 'The minor arc A B is a quarter')),
       L("But no central angle is drawn, so we draw one. A radius from O to A, and a radius from O to B. The angle between "
@@ -4179,42 +4998,58 @@ video('solve-geo33-g099', 'solution', qid='geo33-g099', slides=[
       L("The same in circle P. The circles are congruent, so P A and P B are also six, and the angle at P is also ninety.",
         show(f8g99['radP'], 'The same in circle P')),
       L("Now look at O A P B. All four sides are six, so it's at least a rhombus. And its angle at O is ninety degrees. A "
-        "rhombus with a right angle is a square, so O A P B is a square.", show(f8g99['sq'], 'Now look at O A P B')),
-      L("Now I see how to find the grey area. It's the left Pac-Man, plus the square, plus the right Pac-Man. Each Pac-Man "
-        "is a circle without its quarter, so it's three quarters of the circle.", show(f8g99['pac'], 'the left Pac-Man')),
-      L("One whole circle is pi r squared, pi times six squared, thirty-six pi. A quarter of thirty-six is nine, so three "
-        "quarters of thirty-six pi is twenty-seven pi.", show(f8g99['b1'], 'One whole circle')),
+        "rhombus with a right angle is a square, so O A P B is a square.", show(f8g99['sq'], 'Now look at O A P B'))),
+    SM('Method 1 · The math way', 'Three pieces',
+      L("[short pause] Here's the figure again, with the square. Now I see how to find the grey area. It cuts into three "
+        "pieces we know, with no overlap. The left three-quarter circle, the square, and the right three-quarter circle. "
+        "Some people call each three-quarter circle a Pac-Man. It's a circle without its quarter.",
+        show(f8x99m['line'], "Here's the figure again"), show(f8x99m['pac'], 'The left three-quarter circle')),
+      L("One whole circle is pi r squared, pi times six squared, thirty-six pi. A quarter of thirty-six pi is nine pi. So "
+        "three quarters is three times nine pi, twenty-seven pi.", show(f8x99a1, 'One whole circle'),
+        show(f8x99a2, 'A quarter of thirty-six pi'), show(f8x99a3, 'three quarters is three times'),
+        show(f8x99m['l27'], 'twenty-seven pi')),
       L("The square is six squared, thirty-six. So the union is twenty-seven pi, plus thirty-six, plus twenty-seven pi, "
-        "which is fifty-four pi plus thirty-six. Choice number three is our answer.", show(f8g99['b2'], 'So the union is'),
-        mk('tick', 'choice 3', 'Choice number three is our answer'))),
+        "which is fifty-four pi plus thirty-six. Choice number three is our answer.",
+        show(f8x99a4, 'The square is six squared'), show(f8x99m['s36'], 'thirty-six. So'),
+        show(f8x99a5, 'So the union is'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
     SM('Method 2 · The math way: subtract the overlap', 'Take away the overlap',
-      L("[pause] Now a second way. Take the two whole circles. Each one is thirty-six pi, so together they're seventy-two "
-        "pi.", show(f8g99b['line'], 'Now a second way'), show(f8g99b['two'], 'Take the two whole circles')),
+      L("[pause] Now a second way, the math way again, this time by taking away the overlap. Take the two whole circles. "
+        "Each one is thirty-six pi, so together they're seventy-two pi.", show(f8g99b['line'], 'Now a second way'),
+        show(f8g99b['two'], 'Take the two whole circles'), show(f8x99b1, 'so together they')),
       L("But the middle part, where the circles overlap, is inside both circles. So we counted it twice, and we must take "
         "it away once.", show(f8g99b['lens'], 'where the circles overlap')),
       L("How big is the overlap? The chord A B cuts it into two equal pieces. Look at the right piece, in circle O. It's "
         "the quarter circle A O B, minus the triangle A O B.", show(f8g99b['quarter'], 'Look at the right piece'),
         show(f8g99b['tri'], 'minus the triangle A O B')),
       L("The quarter circle is a quarter of thirty-six pi, nine pi. The triangle has two legs of six and a right angle, so "
-        "its area is six times six over two, eighteen. So one piece is nine pi minus eighteen, and the whole overlap is "
-        "two times that, eighteen pi minus thirty-six.", show(f8g99b['b4'], 'the whole overlap')),
-      L("Now take it away. Seventy-two pi minus, the bracket, eighteen pi minus thirty-six. The minus before the bracket "
-        "turns minus thirty-six into plus thirty-six. So we get fifty-four pi plus thirty-six, choice number three again.",
-        show(f8g99b['b5'], 'Seventy-two pi minus'), mk('tick', 'choice 3', 'choice number three again'))),
+        "its area is six times six over two, eighteen.", show(f8x99b2, 'The quarter circle is a quarter'),
+        show(f8x99b3, 'six times six over two')),
+      L("So one piece is nine pi minus eighteen. The overlap is two of these pieces, so we double the whole difference. "
+        "That's eighteen pi minus thirty-six.", show(f8x99b4, 'So one piece is'), show(f8x99b5, 'we double the whole difference')),
+      L("Now take the whole overlap away from seventy-two pi. Seventy-two pi minus the overlap, eighteen pi minus "
+        "thirty-six. The minus before the overlap turns minus thirty-six into plus thirty-six. So it's seventy-two pi "
+        "minus eighteen pi, plus thirty-six. That's fifty-four pi plus thirty-six, choice number three again.",
+        show(f8x99b6, 'Seventy-two pi minus the overlap'), show(f8x99b7, "So it's seventy-two pi"),
+        show(f8x99b8, "That's fifty-four pi plus"), mk('tick', 'choice 3', 'choice number three again'))),
     SM('Method 3 · Estimation', 'Estimating',
-      L("[pause] Students often ask, can we just estimate the size here? It's hard to finish that way, but it's easy to "
-        "rule out two choices. The left circle alone is thirty-six pi.", show(f8g99c['line'], 'Students often ask'),
-        show(f8g99c['one'], 'The left circle alone')),
-      L("And the grey shape has more than that. It also has the right half of circle P, eighteen pi, and a bit more in the "
-        "middle. So the union is more than thirty-six pi plus eighteen pi, fifty-four pi.",
-        show(f8g99c['half'], 'the right half of circle P'), show(f8g99c['b6'], 'So the union is more than')),
-      L("We need more than fifty-four pi. Twenty-seven pi plus eighteen, and twenty-seven pi plus thirty-six, are much too small, so choice numbers one and "
-        "four are out. But choice numbers two and three both have fifty-four pi, plus eighteen or plus thirty-six. That's "
-        "too close to decide by estimating.", mk('cross', 'choice 1', 'are much too small'),
-        mk('cross', 'choice 4', 'four are out')),
-      L("So estimating raised our chances to fifty-fifty, but it can't settle it. If you're out of time, it's a reasonable "
-        "guess between the two. With time, use one of the full solutions. [pause] Okay. I'll see you in the next question.",
-        pt('stem', 'estimating raised our chances'))),
+      L("[pause] Now let's estimate. It's hard to finish this way, but it's easy to rule out two choices. The left circle "
+        "alone is thirty-six pi.", show(f8g99c['line'], "Now let's estimate"),
+        show(f8g99c['one'], 'The left circle alone'), show(f8x99c1, 'alone is thirty-six pi')),
+      L("And the grey shape has more than that. O P is the diagonal of the square, so it's longer than the side, six. "
+        "Every point of the right half of circle P is at least that far from O. So that half is outside circle O.",
+        show(f8g99c['op'], 'O P is the diagonal'), show(f8g99c['half'], 'the right half of circle P')),
+      L("It adds eighteen pi, and the middle piece between them adds a bit more. So the union is more than thirty-six pi "
+        "plus eighteen pi, fifty-four pi.", show(f8x99c2, 'It adds eighteen pi'), show(f8x99c3, 'So the union is more than')),
+      L("We need more than fifty-four pi. Now compare twenty-seven pi with thirty-six. Pi is more than three, so "
+        "twenty-seven pi is more than eighty-one, much more than thirty-six. So twenty-seven pi plus thirty-six is less "
+        "than twenty-seven pi plus twenty-seven pi, which is fifty-four pi. Twenty-seven pi plus eighteen is even smaller. "
+        "So choice numbers one and four are out.",
+        show(f8x99c4, 'Pi is more than three'), show(f8x99c5, 'So twenty-seven pi plus thirty-six is less'),
+        mk('cross', 'choice 1', 'So choice numbers one and'), mk('cross', 'choice 4', 'four are out')),
+      L("Choice numbers two and three both have fifty-four pi, plus eighteen or plus thirty-six. This bound doesn't "
+        "separate them, so this estimate leaves two choices. If you're out of time, it's a reasonable guess between the "
+        "two. With time, use one of the full solutions. [pause] Okay. I'll see you in the next question.",
+        pt('stem', 'Choice numbers two and three'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g100 (Hebrew 4858-4891)
@@ -4242,38 +5077,45 @@ f8g100b = PIN(GEO('f8g100b', [
     ('line', f8_100base),
     ('sq', [('seg', 210.5, 70.5, 429.5, 70.5, 'teal', 3, True), ('seg', 429.5, 70.5, 429.5, 289.5, 'teal', 3, True),
             ('seg', 429.5, 289.5, 210.5, 289.5, 'teal', 3, True), ('seg', 210.5, 289.5, 210.5, 70.5, 'teal', 3, True),
-            ('circ', 320, 180, f8R, 'teal', 3, False, 'teal'), ('txt', 444, 180, '8', 'teal', 26), ('txt', 270, 312, '8', 'teal', 26)]),
-    ('c3', [('txt', 600, 90, '8 · BC < 64', 'ink', 28)]),
-    ('c3b', [('txt', 600, 132, 'BC < 8', 'teal', 28)]),
-    ('c4', [('txt', 600, 180, '3π > 9', 'red', 28)]),
-    ('c4b', [('txt', 600, 222, '4π > 12', 'red', 28)]),
-    ('c4c', [('txt', 600, 264, '8π > 24', 'red', 28)]),
+            ('circ', 320, 180, f8R, 'teal', 3, False, 'teal'), ('txt', 444, 180, '8', 'teal', 26), ('txt', 270, 312, '8', 'teal', 26),
+            ('txt', 320, 46, 'helper square (dashed)', 'teal', 16)]),
+    ('c2a', [('txt', 600, 66, 'square: 8 · 8 = 64', 'teal', 26)]),
+    ('c2b', [('txt', 600, 104, 'circle < 64', 'ink', 26)]),
+    ('c3', [('txt', 600, 142, '8 · BC < 64', 'ink', 26)]),
+    ('c3b', [('txt', 600, 180, 'BC < 64 ÷ 8 = 8', 'teal', 26)]),
+    ('c4', [('txt', 600, 228, '3π > 9', 'red', 26)]),
+    ('c4b', [('txt', 600, 266, '4π > 12', 'red', 26)]),
+    ('c4c', [('txt', 600, 304, '8π > 24', 'red', 26)]),
 ], vb='190 30 560 300', w=560, title='The square around the circle'))
 video('solve-geo33-g100', 'solution', qid='geo33-g100', slides=[
     SM('Method 1 · The math way', 'An equation',
       L("A circle with center O has a radius of four centimeters. The opposite sides A D and B C of rectangle A B C D are "
         "tangent to the circle at E and F. The area of the rectangle equals the area of the circle. What is the length of "
         "B C?", pt('stem', 'A circle with center O', 'hl', 9.0), voice='calm', pause=0.5),
-      L("We'll solve it two ways, with a short equation, and then with an estimate, a size check on the choices. [short pause] The "
-        "equation first. A D touches the circle at E, and B C touches it at F. Remember, the radius to the point where a "
-        "tangent touches the circle is perpendicular to the tangent.", show(f8g100['line'], 'The equation first'),
-        show(f8g100['r'], 'Remember, the radius')),
+      L("We'll solve it in two different ways, the math way with a short equation, and then with an estimate. [short "
+        "pause] Let's start with the math way. A D touches the circle at E, and B C touches it at F. Remember, the radius "
+        "to the point where a tangent touches the circle is perpendicular to the tangent.",
+        show(f8g100['line'], "Let's start with the math way"), show(f8g100['r'], 'Remember, the radius')),
       L("So O E and O F are both perpendicular to the two parallel sides, and together they make one straight line from E "
-        "to F. That's a diameter, two times four, eight. And it's as long as the side A B, so the height of the rectangle "
-        "is eight.", show(f8g100['ab'], "That's a diameter")),
+        "to F. That's a diameter, two times four, eight. E F and A B both measure the perpendicular distance between the "
+        "same two parallel sides, A D and B C. So A B is also eight, and the height of the rectangle is eight.",
+        show(f8g100['ab'], 'So A B is also eight')),
       L("The area of the rectangle is A B times B C, so it's eight times B C. The area of the circle is pi r squared, pi "
         "times four squared, sixteen pi. The two areas are equal, so eight times B C is sixteen pi.",
         show(f8g100['c0'], 'The area of the circle is'), show(f8g100['c1'], 'so eight times B C is sixteen pi')),
-      L("To get B C alone, we divide both sides by eight. Sixteen pi over eight is two pi. Choice number two is our answer. "
-        "The math solution wasn't bad at all.", show(f8g100['c2'], 'we divide both sides by eight'),
+      L("To get B C alone, we divide both sides by eight. Sixteen pi over eight is two pi. Choice number two is our "
+        "answer.", show(f8g100['c2'], 'we divide both sides by eight'),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
     SM('Method 2 · Estimation', 'A size check',
-      L("[pause] Now the same question with an estimate, a size check, and almost no calculation. Draw the square around the circle. "
-        "Its side is the diameter, eight, so its area is eight times eight, sixty-four.",
-        show(f8g100b['line'], 'Now the same question'), show(f8g100b['sq'], 'Draw the square around')),
+      L("[pause] Now let's estimate, with a size check and almost no calculation. Let's draw a square around the circle, "
+        "the dashed one. It's our helper, not part of the rectangle. Its side is the diameter, eight, so its area is eight "
+        "times eight, sixty-four.",
+        show(f8g100b['line'], "Now let's estimate"), show(f8g100b['sq'], "Let's draw a square around"),
+        show(f8g100b['c2a'], 'so its area is eight')),
       L("The circle is inside this square, so the circle's area is less than sixty-four. The rectangle has the same area as "
-        "the circle, so eight times B C is also less than sixty-four. That means B C is less than eight.",
-        show(f8g100b['c3'], 'eight times B C is also less'), show(f8g100b['c3b'], 'That means B C is less')),
+        "the circle, so eight times B C is also less than sixty-four. We divide both sides by eight, so B C is less than "
+        "eight.", show(f8g100b['c2b'], "so the circle's area is less"),
+        show(f8g100b['c3'], 'eight times B C is also less'), show(f8g100b['c3b'], 'We divide both sides by eight')),
       L("Now the choices. Pi is a bit more than three. So three pi is more than nine, four pi is more than twelve, and "
         "eight pi is more than twenty-four. All of them are more than eight, so choice numbers one, three and four are out.",
         show(f8g100b['c4'], 'So three pi is more than nine'), show(f8g100b['c4b'], 'four pi is more than twelve'),
@@ -4300,69 +5142,111 @@ f8g101 = PIN(GEO('f8g101', [
     ('line', f8_101base),
     ('ring', [('region', 'M 441.667 180 A 121.667 121.667 0 1 0 198.333 180 A 121.667 121.667 0 1 0 441.667 180 Z '
                'M 295.667 180 A 48.667 48.667 0 1 0 198.333 180 A 48.667 48.667 0 1 0 295.667 180 Z', 'orange', 0.3)]),
+    ('radii', [('dot', 247, 180), ('seg', 247, 180, 247, 131.333, 'teal', 4), ('txt', 260, 152, 'r', 'teal', 26, True),
+               ('dot', 320, 180), ('seg', 320, 180, 320, 58.333, 'orange', 4), ('txt', 334, 104, 'R', 'orange', 26, True)]),
     ('d0', [('txt', 600, 100, 'πR² − πr² = 65π', 'ink', 28)]),
     ('ac', [('seg', 198.333, 180, 295.667, 180, 'teal', 6), ('dot', 247, 180), ('txt', 247, 160, '2r', 'teal', 26, True)]),
     ('ab', [('seg', 198.333, 196, 441.667, 196, 'orange', 3), ('seg', 198.333, 188, 198.333, 204, 'orange', 3),
             ('seg', 441.667, 188, 441.667, 204, 'orange', 3), ('txt', 380, 214, '2r + 10', 'orange', 24, True)]),
     ('d1', [('txt', 600, 160, 'R = (2r + 10) ÷ 2', 'orange', 28)]),
-    ('rr', [('txt', 600, 200, '= 2(r + 5) ÷ 2', 'orange', 28), ('txt', 600, 240, '= r + 5', 'orange', 28),
-            ('txt', 320, 40, 'R = r + 5', 'orange', 28, True)]),
+    ('rr', [('txt', 600, 200, '= 2r ÷ 2 + 10 ÷ 2', 'orange', 28)]),
+    ('rr2', [('txt', 600, 240, '= r + 5', 'orange', 28), ('txt', 320, 40, 'R = r + 5', 'orange', 28, True)]),
 ], vb='165 20 580 300', w=560, title='Two circles tangent at A'))
+# batch C: the algebra and the trials in readable rows, one step per clause (no question figure on these slides)
+f8x1fa = IH('f8x1fa', '$(a+b)^2 = a^2 + 2ab + b^2$', size=28)
+f8x1fb = I('f8x1fb', '$(r+5)^2 = r^2 + 2\\cdot5\\cdot r + 25$', size=28, hand='(r + 5)^2 = r^2 + 2·5·r + 25')
+f8x1fc = I('f8x1fc', '$= r^2 + 10r + 25$', size=28, hand='= r^2 + 10r + 25')
+f8x1g1 = IH('f8x1g1', '$10r + 25 = 65$', size=28)
+f8x1g2 = IH('f8x1g2', '$10r = 65 - 25 = 40$', size=28)
+f8x1g3 = IH('f8x1g3', '$r = 40 \\div 10 = 4$', size=28)
+f8x1m = I('f8x1m', 'shaded $= (10r + 25)\\pi$: grows with $r$', size=26)
+f8x1t1 = IH('f8x1t1', '$r = 3$: $\\ AC = 2 \\times 3 = 6$', size=26)
+f8x1t2 = IH('f8x1t2', '$AB = 6 + 10 = 16$', size=26)
+f8x1t3 = IH('f8x1t3', '$R = 16 \\div 2 = 8$', size=26)
+f8x1t4 = IH('f8x1t4', 'big: $\\pi \\cdot 8^2 = 64\\pi$', size=26)
+f8x1t5 = IH('f8x1t5', 'small: $\\pi \\cdot 3^2 = 9\\pi$', size=26)
+f8x1u1 = IH('f8x1u1', '$r = 4$: $\\ AC = 2 \\times 4 = 8$', size=26)
+f8x1u2 = IH('f8x1u2', '$AB = 8 + 10 = 18$', size=26)
+f8x1u3 = IH('f8x1u3', '$R = 18 \\div 2 = 9$', size=26)
+f8x1u4 = IH('f8x1u4', 'big: $\\pi \\cdot 9^2 = 81\\pi$', size=26)
+f8x1u5 = IH('f8x1u5', 'small: $\\pi \\cdot 4^2 = 16\\pi$', size=26)
 f8d2 = I('f8d2', '$\\pi(r+5)^2-\\pi r^2=65\\pi$', size=32, hand='π(r + 5)^2 − πr^2 = 65π')
 f8d3 = IH('f8d3', '$(r+5)^2-r^2=65$', size=32)
-f8d4 = I('f8d4', '$r^2+10r+25-r^2=65$', size=32)
-f8d5 = I('f8d5', '$10r+25=65\\ \\Rightarrow\\ 10r=40\\ \\Rightarrow\\ r=4$', size=32, hand='10r + 25 = 65   →   10r = 40   →   r = 4')
-f8d6 = I('f8d6', 'In order: $\\ 2,\\ 3,\\ 4,\\ 5$', size=32)
-f8d7 = IH('f8d7', '$r=3$: $\\ AB=6+10=16,\\ \\ R=8$', size=30)
-f8d8 = I('f8d8', '$64\\pi-9\\pi=55\\pi$ ✗ $\\ $too small', size=30)
-f8d9 = IH('f8d9', '$r=4$: $\\ AB=8+10=18,\\ \\ R=9$', size=30)
-f8d10 = I('f8d10', '$81\\pi-16\\pi=65\\pi$ ✓', size=30)
+f8d4 = I('f8d4', '$r^2+10r+25-r^2=65$', size=28)
+f8d6 = I('f8d6', 'In order: $\\ 2,\\ 3,\\ 4,\\ 5$', size=28)
+f8d8 = I('f8d8', '$64\\pi-9\\pi=55\\pi$ ✗ $\\ $too small', size=26)
+f8d10 = I('f8d10', '$81\\pi-16\\pi=65\\pi$ ✓', size=26)
 f8k101 = I('f8k101', 'So far: $\\ \\pi R^2-\\pi r^2=65\\pi,\\quad R=r+5$', size=26, col=1)
+f8d2['size'] = 28; f8d3['size'] = 28
+ROWS(340, 58, f8k101, f8d2, f8d3, f8x1fa, f8x1fb, f8x1fc, x=410)
+ROWS(340, 58, f8d4, f8x1g1, f8x1g2, f8x1g3)
+ROWS(340, 46, f8d6, f8x1m, f8x1t1, f8x1t2, f8x1t3, f8x1t4, f8x1t5, f8d8, x=410)
+ROWS(432, 46, f8x1u1, f8x1u2, f8x1u3, f8x1u4, f8x1u5, f8d10)
+NOFIG33.update({('solve-geo33-g101', 1), ('solve-geo33-g101', 2)})
+f8x1v0 = IH('f8x1v0', '$r = 3$: $\\ 55\\pi$, too small', size=28)
 video('solve-geo33-g101', 'solution', qid='geo33-g101', slides=[
     SM('Method 1 · The math way', 'R with r',
       L("A smaller circle lies inside a larger circle and touches it from the inside at A. A B is a diameter of the larger "
         "circle, A C is a diameter of the smaller circle, and C B is ten centimeters. The area inside the larger circle "
         "but outside the smaller one is sixty-five pi. What is the radius of the smaller circle?",
         pt('stem', 'A smaller circle lies inside', 'hl', 10.0), voice='calm', pause=0.5),
-      L("We'll solve it two ways, with an equation, and by plugging in the answers. [short pause] First the math way, with an equation. How "
-        "do we find the shaded area? It's the area of the big circle minus the area of the small circle. We don't know "
-        "either radius, so let's call the big one capital R, and the small one small r.",
-        show(f8g101['line'], 'First the math way'), show(f8g101['ring'], 'the area of the big circle minus')),
-      L("So pi R squared minus pi r squared is sixty-five pi. Two unknowns are too many, so we write the big radius with "
-        "the small one. That's easier than the other way round, because adding is easier than subtracting.",
-        show(f8g101['d0'], 'So pi R squared')),
+      L("We'll solve it in two different ways, with an equation, and by plugging in the answers. [short pause] First the "
+        "math way, with an equation. How do we find the shaded area? It's the area of the big circle minus the area of "
+        "the small circle. We don't know either radius, so let's call the big one capital R, and the small one small r.",
+        show(f8g101['line'], 'First the math way'), show(f8g101['ring'], 'the area of the big circle minus'),
+        show(f8g101['radii'], "let's call the big one capital R")),
+      L("So pi R squared minus pi r squared is sixty-five pi. Let's write capital R in terms of small r, so our equation "
+        "has just one unknown.", show(f8g101['d0'], 'So pi R squared')),
       L("The small diameter, A C, is two r. The big diameter, A B, is A C plus C B, so it's two r plus ten.",
         show(f8g101['ac'], 'The small diameter'), show(f8g101['ab'], 'The big diameter')),
-      L("The big radius is half of that, two r plus ten, over two. Both terms are multiples of two, so we take out two as a "
-        "common factor and cancel it. So capital R is r plus five.", show(f8g101['d1'], 'The big radius is half'),
-        show(f8g101['rr'], 'we take out two'))),
+      L("The big radius is half of that, two r plus ten, over two. We divide each term by two. Two r over two is r, and "
+        "ten over two is five. So capital R is r plus five.", show(f8g101['d1'], 'The big radius is half'),
+        show(f8g101['rr'], 'We divide each term by two'), show(f8g101['rr2'], 'So capital R is r plus five'))),
     SM('Method 1 · The math way', 'Solve the equation',
       L("Now we put r plus five in place of capital R. Pi times, the bracket r plus five, squared, minus pi r squared, is "
         "sixty-five pi.", show(f8k101, 'Now we put'), show(f8d2, 'Now we put r plus five')),
       L("Pi is in every term, so we divide the whole equation by pi. That leaves the bracket r plus five, squared, minus r "
         "squared, equals sixty-five.", show(f8d3, 'we divide the whole equation by pi')),
       L("Now we open the bracket with the first formula from expressions. A plus b, squared, is a squared plus two a b plus "
-        "b squared. So r plus five, squared, is r squared, plus two times five times r, which is ten r, plus twenty-five.",
-        show(f8d4, 'So r plus five, squared')),
-      L("Then r squared minus r squared is zero, so they cancel. We're left with ten r plus twenty-five equals sixty-five. "
-        "Take twenty-five off both sides, so ten r is forty, and r is four. Choice number four is our answer.",
-        show(f8d5, "We're left with"), mk('tick', 'choice 4', 'Choice number four is our answer'))),
+        "b squared. So r plus five, squared, is r squared, plus two times five times r, plus twenty-five. That middle term "
+        "is ten r.", show(f8x1fa, 'A plus b, squared'), show(f8x1fb, 'So r plus five, squared'),
+        show(f8x1fc, 'That middle term is ten r')),
+      L("So the equation is r squared plus ten r plus twenty-five, minus r squared, is equal to sixty-five.",
+        show(f8d4, 'So the equation is')),
+      L("Then r squared minus r squared is zero, so they cancel. We're left with ten r plus twenty-five is equal to "
+        "sixty-five. Take twenty-five off both sides, so ten r is forty. Divide both sides by ten, and r is four. Choice "
+        "number four is our answer.", show(f8x1g1, "We're left with"), show(f8x1g2, 'Take twenty-five off both sides'),
+        show(f8x1g3, 'Divide both sides by ten'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
     SM('Method 2 · Plugging in the answers', 'Plugging in the answers',
       L("[pause] Now a second way, plugging in the answers. The answer is one of the four choices. So we can put each "
         "choice into the story as the small radius, and see which one gives a shaded area of sixty-five pi. All the "
         "choices are small whole numbers, so it's easy here."),
-      L("Where do we start? In order, the choices are two, three, four and five, and we start in the middle. Why? If a "
-        "middle value gives a shaded area that's too small, we need a bigger radius, so the smaller values are out too. If "
-        "it's too big, the bigger values are out. So two tries are always enough.", show(f8d6, 'In order, the choices are')),
-      L("Let's try three. The small diameter is six. C B adds ten, so the big diameter is six plus ten, sixteen, and the big radius is "
-        "eight. The shaded area is big minus small. Big minus small is sixty-four pi minus nine pi, fifty-five pi.", show(f8d7, "Let's try three"),
-        show(f8d8, 'Big minus small')),
-      L("That's not sixty-five pi, it's too small. We need a bigger shaded area, so bigger circles, and a bigger radius. So "
-        "three is out, and two is out too.", mk('cross', 'choice 3', 'So three is out'), mk('cross', 'choice 2', 'and two is out too')),
-      L("We need sixty-five pi. Let's try four. The small diameter is eight, so the big diameter is eight plus ten, eighteen, and the big radius "
-        "is nine. Eighty-one pi minus sixteen pi is sixty-five pi, so it fits. Choice number four is our answer again. "
-        "[pause] Okay. I'll see you in the next question.", show(f8d9, "Let's try four"), show(f8d10, 'Eighty-one pi minus'),
-        mk('tick', 'choice 4', 'Choice number four is our answer again'))),
+      L("Where do we start? In order, the choices are two, three, four and five. Here the shaded area grows when r grows. "
+        "C B stays ten, so capital R is always r plus five. And in the first way we saw that the shaded area is ten r plus "
+        "twenty-five, times pi. So a bigger r always gives a bigger area.",
+        show(f8d6, 'In order, the choices are'), show(f8x1m, 'the shaded area is ten r plus')),
+      L("So let's start with a middle choice. If it gives an area that's too small, we need a bigger r, so the smaller "
+        "choices are out too. If it's too big, the bigger ones are out. With these four choices in order, and an area that "
+        "grows with r, two tries are enough.", pt('f8d6', 'So let\'s start with a middle choice')),
+      L("Let's try three. The small diameter is two times three, six. C B adds ten, so the big diameter is six plus ten, "
+        "sixteen. The big radius is half of that, eight.", show(f8x1t1, "Let's try three"),
+        show(f8x1t2, 'so the big diameter is six plus ten'), show(f8x1t3, 'The big radius is half of that')),
+      L("The big circle is pi times eight squared, sixty-four pi. The small circle is pi times three squared, nine pi. The "
+        "shaded area is big minus small. Sixty-four pi minus nine pi is fifty-five pi.",
+        show(f8x1t4, 'The big circle is pi times eight'), show(f8x1t5, 'The small circle is pi times three'),
+        show(f8d8, 'Sixty-four pi minus nine pi')),
+      L("That's not sixty-five pi, it's too small. We need a bigger shaded area, so a bigger radius. So three is out, and "
+        "two is out too.", mk('cross', 'choice 3', 'So three is out'), mk('cross', 'choice 2', 'and two is out too'))),
+    SM('Method 2 · Plugging in the answers', 'Now try four',
+      L("Three gave fifty-five pi, too small, so two and three are out. We need sixty-five pi. Let's try four. The small "
+        "diameter is eight, so the big diameter is eight plus ten, so the big diameter is eight plus ten, "
+        "eighteen. The big radius is nine.", show(f8x1v0, 'Three gave fifty-five pi'), mk('cross', 'choice 3', 'so two and three are out'),
+        mk('cross', 'choice 2', 'so two and three are out'), show(f8x1u1, "Let's try four"), show(f8x1u2, 'so the big diameter is eight plus ten'),
+        show(f8x1u3, 'The big radius is nine')),
+      L("The big circle is eighty-one pi, and the small circle is sixteen pi. Eighty-one pi minus sixteen pi is sixty-five "
+        "pi, so it fits. Choice number four is our answer again. [pause] Okay. I'll see you in the next question.",
+        show(f8x1u4, 'The big circle is eighty-one pi'), show(f8x1u5, 'the small circle is sixteen pi'),
+        show(f8d10, 'Eighty-one pi minus'), mk('tick', 'choice 4', 'Choice number four is our answer again'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g102 (Hebrew 4996-5091)
@@ -4385,8 +5269,10 @@ f8_102base = [('seg', *f8A2, *f8B2), ('seg', *f8B2, *f8C2), ('seg', *f8C2, *f8A2
 f8g102 = PIN(GEO('f8g102', [
     ('line', f8_102base),
     ('base', [('arc', *f8B2, 26, 0, 65.0, 'small'), ('arc', *f8C2, 26, 115.0, 180, 'small')]),
-    ('e1', [('txt', 600, 90, 'angle B = angle C', 'teal', 26), ('txt', 600, 135, '(180° − 4θ) ÷ 2', 'teal', 28),
-            ('txt', 600, 180, '= 90° − 2θ', 'teal', 28)]),
+    ('e1', [('txt', 600, 70, 'angle B = angle C', 'teal', 26)]),
+    ('e1a', [('txt', 600, 112, 'B + C = 180° − 4θ', 'teal', 26)]),
+    ('e1b', [('txt', 600, 154, 'each: (180° − 4θ) ÷ 2', 'teal', 26)]),
+    ('e1c', [('txt', 600, 196, '= 90° − 2θ', 'teal', 28)]),
     ('zone', [('circ', *f8O2, f8r102, 'orange', 5), ('circ', *f8O2, f8r102 + 14, 'orange', 2, True)]),
 ], vb='180 30 560 295', w=560, title='Isosceles triangle ABC and the circle O'))
 # the enlarged cut-out of the circle around B (V3): the same labels, 1.6 times bigger
@@ -4399,13 +5285,44 @@ f8g102z = PIN(GEO('f8g102z', [
               ('arcw', *f8O2, f8r102, f8aE, f8aD, 'orange', 8)]),
     ('cent', [('dot', *f8D2), ('dot', *f8E2), ('seg', *f8O2, *f8D2, 'teal', 3, True), ('seg', *f8O2, *f8E2, 'teal', 3, True),
               ('arc', *f8O2, 20, f8aE, f8aD, 'small')]),
-    ('e2', [('txt', 470, 222, 'central angle:', 'orange', 22), ('txt', 470, 252, '2(90° − 2θ)', 'orange', 22),
-            ('txt', 470, 282, '= 180° − 4θ', 'orange', 22)]),
-], vb='185 135 365 195', w=560, title='The circle around B, enlarged'))
+    ('e2', [('txt', 470, 222, 'central angle:', 'orange', 22), ('txt', 470, 252, '2(90° − 2θ)', 'orange', 22)]),
+    ('e2b', [('txt', 470, 282, '= 180° − 4θ', 'orange', 22)]),
+], vb='185 135 365 195', w=560, title='The circle near B, enlarged'))
 f8e3 = I('f8e3', '$\\frac{180-4\\theta}{360}\\cdot2\\pi r$', size=34)
 f8e4 = I('f8e4', '$=\\frac{180-4\\theta}{180}\\cdot\\pi r$', size=34)
 f8e5 = I('f8e5', '$=\\left(\\frac{180}{180}-\\frac{4\\theta}{180}\\right)\\pi r$', size=34)
 f8e6 = I('f8e6', '$=\\pi r\\left(1-\\frac{\\theta}{45}\\right)$', size=34)
+# batch C: the plugging-in example in its own clean figure (equilateral, so no 4θ / isosceles labels), same orientation
+f8xB, f8xC, f8xA = (200.0, 300.0), (440.0, 300.0), (320.0, 92.154)
+f8xO, f8xD, f8xE = (269.282, 260.0), (269.282, 180.0), (338.564, 300.0)
+f8x102base = ([('seg', *f8xA, *f8xB), ('seg', *f8xB, *f8xC), ('seg', *f8xC, *f8xA), ('circ', *f8xO, 80), ('dot', *f8xO),
+               ('dot', *f8xD), ('dot', *f8xE), ('arcw', *f8xO, 80, 330, 90, 'ink', 6)]
+              + f8_lab([(320, 72, 'A'), (186, 316, 'B'), (454, 316, 'C'), (252, 170, 'D'), (346, 320, 'E'), (256, 274, 'O')]))
+f8x102c = [('seg', *f8xO, *f8xD, 'teal', 3, True), ('seg', *f8xO, *f8xE, 'teal', 3, True), ('arc', *f8xO, 18, 330, 90, 'small'),
+           ('txt', *gpt(*f8xO, 36, 30), '120°', 'teal', 18)]
+f8x102q = PIN(GEO('f8x102q', [
+    ('line', f8x102base),
+    ('eq', [('arc', *f8xB, 30, 0, 60, 'small'), ('arc', *f8xC, 30, 120, 180, 'small'), ('arc', *f8xA, 30, 240, 300, 'small'),
+            ('txt', *gpt(*f8xB, 46, 30), '60°', 'teal', 20), ('txt', *gpt(*f8xC, 46, 150), '60°', 'teal', 20),
+            ('txt', *gpt(*f8xA, 48, 270), '60°', 'teal', 20)]),
+    ('c120', f8x102c + [('arcw', *f8xO, 80, 330, 90, 'orange', 8)]),
+    ('r1', [('txt', 282, 222, '1', 'teal', 22)]),
+], vb='160 55 310 300', w=360, title='The example: an equilateral triangle, r = 1'))
+LEFT(f8x102q, y=340, x=470, w=360)
+f8x102r = PIN(GEO('f8x102r', [
+    ('line', f8x102base + f8x102c + [('arcw', *f8xO, 80, 330, 90, 'orange', 8), ('txt', 282, 222, '1', 'teal', 22),
+                                     ('txt', 400, 200, 'arc = 2π/3', 'orange', 20)]),
+], vb='160 55 310 300', w=360, title='Our example: theta = 15, r = 1'))
+LEFT(f8x102r, y=340, x=470, w=360)
+f8xq1 = IH('f8xq1', '$4\\theta = 60°$', size=28)
+f8xq2 = IH('f8xq2', '$\\theta = 60° \\div 4 = 15°$', size=28)
+f8xq3 = IH('f8xq3', 'central: $2 \\times 60° = 120°$', size=28)
+f8xq4 = IH('f8xq4', '$r = 1$', size=28)
+f8xq5 = IH('f8xq5', '$C = 2\\pi \\cdot 1 = 2\\pi$', size=28)
+f8xq6 = IH('f8xq6', '$120 \\div 360 = \\frac{1}{3}$', size=28)
+f8xq7 = IH('f8xq7', 'arc $= \\frac{1}{3} \\cdot 2\\pi = \\frac{2\\pi}{3}$', size=28)
+ROWS(340, 50, f8xq1, f8xq2, f8xq3, f8xq4, f8xq5, f8xq6, f8xq7)
+NOFIG33.update({('solve-geo33-g102', 3), ('solve-geo33-g102', 4)})
 f8g102b = PIN(GEO('f8g102b', [
     ('line', f8_102base),
     ('eq', [('txt', 355, 110, '= 60°', 'teal', 20), ('arc', *f8B2, 26, 0, 65.0, 'small'), ('arc', *f8C2, 26, 115.0, 180, 'small'),
@@ -4428,21 +5345,26 @@ video('solve-geo33-g102', 'solution', qid='geo33-g102', slides=[
         "between zero and forty-five. B lies on a circle with center O and radius r. A B and B C meet the circle again at D "
         "and E. What is the length of the arc D E that does not contain B?",
         pt('stem', 'A B C is an isosceles triangle', 'hl', 11.0), voice='calm', pause=0.5),
-      L("There are letters everywhere, so we'll solve it two ways, the math way, and then by plugging in numbers. "
-        "[short pause] The math way first. We need an arc length, and for that we first need a central angle.",
-        show(f8g102['line'], 'The math way first')),
-      L("Let's start with the isosceles triangle. A B equals A C, so angle B equals angle C. The angles of a triangle add up to a hundred eighty, so together they're a hundred "
-        "eighty minus four theta. They're equal, so each one is half of that. Half of a hundred eighty is ninety, and half "
-        "of four theta is two theta. So each base angle is ninety minus two theta.",
-        show(f8g102['base'], 'so angle B equals angle C'), show(f8g102['e1'], 'So each base angle')),
-      L("The arc we need is on the circle, around B. So let's take this part of the figure and look at it bigger.",
-        show(f8g102['zone'], 'The arc we need is on the circle'))),
+      L("There are letters everywhere, so we'll solve it in two different ways, the math way, and then by plugging in "
+        "numbers. [short pause] Let's start with the math way. We need an arc length, and for that we first need a "
+        "central angle.", show(f8g102['line'], "Let's start with the math way")),
+      L("Look at the isosceles triangle first. A B is equal to A C, so angle B is equal to angle C. The angles of a "
+        "triangle add up to a hundred eighty, so together they're a hundred eighty minus four theta. They're equal, so "
+        "each one is half of that. Half of a hundred eighty is ninety, and half of four theta is two theta. So each base "
+        "angle is ninety minus two theta.",
+        show(f8g102['base'], 'so angle B is equal to angle C'), show(f8g102['e1'], 'so angle B is equal to angle C'),
+        show(f8g102['e1a'], "so together they're"), show(f8g102['e1b'], 'so each one is half'),
+        show(f8g102['e1c'], 'So each base angle')),
+      L("The arc we need is on the circle near B, whose center is O. So let's take this part of the figure and look at it "
+        "bigger.", show(f8g102['zone'], 'The arc we need is on the circle'))),
     SM('Method 1 · The math way', 'The central angle',
-      L("Here's the circle around B, bigger. Angle B is still ninety minus two theta. Its sides go through D and E, so it's "
+      L("Here's the circle near B, bigger. Angle B is still ninety minus two theta. Its sides go through D and E, so it's "
         "an inscribed angle in the circle, and it stands on the bold arc D E. The central angle on the same arc is twice "
-        "as big.", show(f8g102z['line'], "Here's the circle around B"), show(f8g102z['insc'], 'Its sides go through D and E')),
-      L("So let's draw the radii O D and O E. The central angle is two times, ninety minus two theta, which is a hundred "
-        "eighty minus four theta.", show(f8g102z['cent'], 'draw the radii O D and O E'), show(f8g102z['e2'], 'The central angle is two times')),
+        "as big.", show(f8g102z['line'], "Here's the circle near B"), show(f8g102z['insc'], 'Its sides go through D and E')),
+      L("So let's draw the radii O D and O E. The central angle is two times, ninety minus two theta. Two times ninety is "
+        "a hundred eighty, and two times two theta is four theta. So the central angle is a hundred eighty minus four "
+        "theta.", show(f8g102z['cent'], 'draw the radii O D and O E'), show(f8g102z['e2'], 'The central angle is two times'),
+        show(f8g102z['e2b'], 'So the central angle is a hundred eighty')),
       L("Did you notice? We divided by two, and then we multiplied by two. If you see that early, you can write a hundred "
         "eighty minus four theta right away.")),
     SM('Method 1 · The math way', 'The arc length',
@@ -4460,20 +5382,24 @@ video('solve-geo33-g102', 'solution', qid='geo33-g102', slides=[
         "forty-five. Choice number four is our answer.", show(f8e6, 'So the arc is pi r'),
         mk('tick', 'choice 4', 'Choice number four is our answer'))),
     SM('Method 2 · Plugging in numbers', 'An easy example',
-      L("[pause] The algebra got a bit tangled at the end. Now a shorter way, plugging in numbers. The right choice must be "
-        "true for every theta and every r that the question allows. So it must also be true for one example that we "
-        "choose. We pick easy numbers, find the arc, and then put the same numbers in the choices.",
-        show(f8g102b['line'], 'Now a shorter way')),
-      L("Which example is the easiest? An equilateral triangle, with all its angles sixty degrees. Then four theta is sixty, "
-        "so theta is fifteen. That's between zero and forty-five, so it's allowed.", show(f8g102b['eq'], 'An equilateral triangle')),
+      L("[pause] Now let's use plugging in numbers. The right choice must be true for every theta and every r that the "
+        "question allows. So it must also be true for one example that we choose. We pick easy numbers, find the arc, "
+        "and then put the same numbers in the choices.",
+        show(f8x102q['line'], "Now let's use plugging in numbers")),
+      L("Which example is the easiest? An equilateral triangle, with all its angles sixty degrees. Here it is, in its own "
+        "picture. Then four theta is sixty, so theta is sixty divided by four, fifteen. That's between zero and "
+        "forty-five, so it's allowed.", show(f8x102q['eq'], 'Here it is, in its own picture'),
+        show(f8xq1, 'Then four theta is sixty'), show(f8xq2, 'so theta is sixty divided by four')),
       L("So angle B is sixty, and the central angle on the bold arc is twice as big, a hundred twenty. The radius isn't "
-        "given either, so let's take r as one, an easy number.", show(f8g102b['c120'], 'the central angle on the bold arc')),
+        "given either, so let's take r as one, an easy number.", show(f8x102q['c120'], 'the central angle on the bold arc'),
+        show(f8xq3, 'twice as big, a hundred twenty'), show(f8x102q['r1'], "let's take r as one"), show(f8xq4, 'an easy number')),
       L("The whole circumference is two pi times one, two pi. A hundred twenty out of three hundred sixty is one third. So "
-        "the arc is a third of two pi, two pi over three.", show(f8g102b['e7'], 'The whole circumference'))),
+        "the arc is a third of two pi, two pi over three.", show(f8xq5, 'The whole circumference'),
+        show(f8xq6, 'A hundred twenty out of'), show(f8xq7, 'So the arc is a third'))),
     SM('Method 2 · Plugging in numbers', 'Check the choices',
       L("Now we put theta fifteen and r one in every choice, and cross out any choice that doesn't give two pi over three. "
-        "Even if one fits early, we check them all, because an example can fit more than one choice.",
-        show(f8k102b, 'Now we put theta')),
+        "If one fits early, we still check the others, because an example can fit more than one choice.",
+        show(f8x102r['line'], 'Now we put theta'), show(f8k102b, 'in every choice')),
       L("Choice number one says pi r, times one minus theta over fifteen. Fifteen over fifteen is one, and one minus one "
         "is zero. Zero, not two pi over three, so it's out.", pt('choice 1', 'Choice number one says', 'hl', 3.0),
         show(f8p1, 'Fifteen over fifteen'), mk('cross', 'choice 1', "so it's out")),
@@ -4483,9 +5409,9 @@ video('solve-geo33-g102', 'solution', qid='geo33-g102', slides=[
       L("Choice number three says pi r, times one minus theta over ninety. Fifteen over ninety is a sixth, and one minus "
         "a sixth is five sixths. Five pi over six, not two pi over three, so it's out.", pt('choice 3', 'Choice number three says', 'hl', 3.0),
         show(f8p3, 'Fifteen over ninety'), mk('cross', 'choice 3', 'Five pi over six')),
-      L("Choice number four says pi r, times one minus theta over forty-five. Fifteen over forty-five is a third, and "
-        "one minus a third is two thirds. Two pi over three, it fits, and the other three are out. Choice number four is "
-        "our answer, and I'll see you in the next question.", pt('choice 4', 'Choice number four says', 'hl', 3.0),
+      L("Now the other three are out, so choice number four is the only one left. Let's still check it. Choice number four "
+        "says pi r, times one minus theta over forty-five. Fifteen over forty-five is a third, and one minus a third is "
+        "two thirds. Two pi over three, it fits. Choice number four is our answer, and I'll see you in the next question.", pt('choice 4', 'Choice number four says', 'hl', 3.0),
         show(f8p4, 'Fifteen over forty-five'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
 ])
 
@@ -4493,16 +5419,15 @@ video('solve-geo33-g102', 'solution', qid='geo33-g102', slides=[
 # ------------------------------------------------------------------------------------------------ placement (right column)
 # The question figure sits on the left; everything of ours goes in the right column (x 1040), between the stem and the
 # choices (board y about 330-750). Typed lines beside a tall copy start at x 1370-1390.
-for _it, _y, _x in [(f8g98, 330, 1040), (f8mv, 340, 1040), (f8k98, 340, 1040), (f8a1, 400, 1040), (f8a2, 460, 1040),
-                    (f8g99, 320, 1040), (f8g99b, 320, 1040), (f8g99c, 320, 1040), (f8g100, 330, 1040), (f8g100b, 330, 1040),
+ROWS(340, 64, f8k98, f8a1, f8a2, f8a2b)      # batch C: g098 slide 4 (NOFIG33); g099 / g101 rows are placed with their items
+for _it, _y, _x in [(f8mv, 340, 1040),
+                    (f8g99, 320, 1040), (f8g100, 330, 1040), (f8g100b, 330, 1040),
                     (f8g101, 330, 1040),
-                    (f8k101, 340, 1040), (f8d2, 400, 1040), (f8d3, 460, 1040), (f8d4, 520, 1040), (f8d5, 580, 1040),
-                    (f8d6, 340, 1040), (f8d7, 400, 1040), (f8d8, 460, 1040), (f8d9, 520, 1040), (f8d10, 580, 1040),
                     (f8g102, 330, 1040), (f8g102z, 330, 1040),
                     (f8k102a, 335, 1040), (f8e3, 390, 1040), (f8e4, 455, 1040), (f8e5, 520, 1040), (f8e6, 585, 1040),
-                    (f8g102b, 330, 1040),
-                    (f8k102b, 335, 1040), (f8p1, 395, 1040), (f8p2, 450, 1040), (f8p3, 505, 1040), (f8p4, 560, 1040)]:
+                    ]:
     _R(_it, _y, _x)
+ROWS(340, 64, f8k102b, f8p1, f8p2, f8p3, f8p4)      # batch C: g102 slide 5 (NOFIG33, with the example figure on the left)
 
 # =================================================================================================================
 # Topic-33 fragment f9 (TAG I, 2026-10-14): r26-t33-more-tools (lesson "More Circle Tools"), solve-q-r26-t33-04 (a
@@ -4581,9 +5506,17 @@ f9lens = PIN(GEO('f9lens', [
 
 f9r6 = PIN(GEO('f9r6', [
     ('line', _f9circ + _f9OPl + _f9ABl + [('seg', *F9O, *F9A, 'ink', 2.5), ('txt', 252, 142, '6', 'ink', 24)]),
-    ('sec', [('wedge', *F9O, F9r, 300, 60, 'teal'), ('seg', *F9O, *F9B, 'teal', 2.5), ('txt', 300, 160, '12π', 'teal', 24)]),
+    ('sec', [('wedge', *F9O, F9r, 300, 60, 'teal'), ('seg', *F9O, *F9B, 'teal', 2.5)]),
+    ('sec12', [('txt', 300, 160, '12π', 'teal', 24)]),
     ('rh', f9_poly([F9O, F9A, F9P, F9B], 'teal', 4) + [('tint', [F9O, F9A, F9P, F9B], 'teal')]),
 ], vb='120 50 380 290', w=640, col=0, title='Two equal circles with radius 6'))
+# batch C: the shared region in numbers on its own slide: one piece, then BOTH pieces shaded for the result
+f9x6b = PIN(GEO('f9x6b', [
+    ('line', _f9circ + _f9OPl + _f9ABl + [('seg', *F9A, *F9B, 'teal', 3, True), ('seg', *F9O, *F9A, 'ink', 2.5),
+                                          ('txt', 252, 142, '6', 'ink', 24)]),
+    ('right', [('cseg', *F9O, F9r, 300, 60, 'teal')]),
+    ('both', [('cseg', *F9P, F9r, 120, 240, 'teal'), ('region', _f9lens, 'teal', 0.3)]),
+], vb='120 50 380 290', w=640, col=0, title='The shared region, both pieces'))
 
 # the rhombus O A P B pulled out twice (enlarged, the same labels): cut by OP and cut by AB
 _f9s = 1.2
@@ -4599,17 +5532,26 @@ def _f9rhl(R):
 f9num = PIN(GEO('f9num', [
     ('line', _f9rhl(_f9R1) + _f9rhl(_f9R2)),
     ('eq', [('seg', *_f9R1[0], *_f9R1[2], 'teal', 3), ('tint', [_f9R1[0], _f9R1[1], _f9R1[2]], 'teal'),
-            ('tint', [_f9R1[0], _f9R1[3], _f9R1[2]], 'teal'), ('txt', _f9R1[1][0], 158, '9√3', 'teal', 24),
-            ('txt', _f9R1[1][0], 224, '9√3', 'teal', 24)]),
+            ('tint', [_f9R1[0], _f9R1[3], _f9R1[2]], 'teal')]),
+    ('eq9', [('txt', _f9R1[1][0], 158, '9√3', 'teal', 24), ('txt', _f9R1[1][0], 224, '9√3', 'teal', 24)]),
     ('aob', [('seg', *_f9R2[1], *_f9R2[3], 'orange', 3), ('tint', [_f9R2[0], _f9R2[1], _f9R2[3]], 'orange'),
              ('txt', _f9R2[0][0] + 38, 190, '9√3', 'orange', 22), ('txt', 265, 356, 'each half = one equilateral triangle', 'ink', 22)]),
-], vb='0 40 520 330', w=540, col=1, title='The rhombus OAPB cut two ways'))
-f9t1 = I('f9t1', 'All five lines $=r\\ \\Rightarrow$ two equilateral triangles', size=28, col=1)
+], vb='0 40 520 330', w=460, col=1, title='The rhombus OAPB cut two ways'))
+f9t1 = I('f9t1', 'All five segments $=r\\ \\Rightarrow$ two equilateral triangles', size=28, col=1)
+f9t2b = I('f9t2b', 'Needs: equal circles, each center on the other', size=26, col=1)
 f9t2 = I('f9t2', '$\\angle AOB=60°+60°=120°$, a third of the circle', size=28, col=1)
 f9t3 = I('f9t3', 'Shared region $=2\\times($sector $-$ triangle$)$', size=28, col=1)
-f9t4 = IH('f9t4', 'Sector: $\\frac13\\cdot36\\pi=12\\pi$', size=30, col=1)
+f9t4a = IH('f9t4a', 'Circle: $\\pi\\cdot6^2=36\\pi$', size=30, col=1)
+f9t4 = IH('f9t4', 'Sector: $36\\pi\\div3=12\\pi$', size=30, col=1)
+f9t4b = I('f9t4b', 'Equilateral: $\\frac{a^2\\sqrt3}{4}$', size=30, col=1)
+f9t4c = I('f9t4c', '$\\frac{6^2\\sqrt3}{4}=\\frac{36\\sqrt3}{4}$', size=30, col=1)
+f9t4d = IH('f9t4d', '$=9\\sqrt3$', size=30, col=1)
 f9t5 = IH('f9t5', 'One piece: $12\\pi-9\\sqrt3$', size=30, col=1)
-f9t6 = IH('f9t6', 'Shared region: $24\\pi-18\\sqrt3$', size=30, col=1)
+f9t5b = IH('f9t5b', 'Two pieces: $2(12\\pi-9\\sqrt3)$', size=30, col=1)
+f9t6 = IH('f9t6', '$=24\\pi-18\\sqrt3$', size=30, col=1)
+f9t6a = I('f9t6a', '$r=2$: $\\ $sector $\\frac{1}{3}\\cdot4\\pi=\\frac{4\\pi}{3}$', size=28, col=1)
+f9t6a2 = I('f9t6a2', 'triangle: $\\frac{2^2\\sqrt3}{4}=\\sqrt3$', size=28, col=1)
+f9t6b = I('f9t6b', '$2\\left(\\frac{4\\pi}{3}-\\sqrt3\\right)=\\frac{8\\pi}{3}-2\\sqrt3$', size=28, col=1)
 
 # ---- the ring
 F9C, F9RR, F9rr = (320.0, 180.0), 130.0, 80.0
@@ -4624,45 +5566,61 @@ f9ring = PIN(GEO('f9ring', [
     ('ob', [('seg', *F9C, *F9RA, 'teal', 3, True), ('seg', *F9C, *F9RB, 'teal', 3, True), ('txt', 392, 200, 'R', 'teal', 26, True)]),
     ('half', [('tick', *F9RA, *F9M, 1), ('tick', *F9M, *F9RB, 1), ('txt', 287, 286, 'h', 'teal', 26, True), ('txt', 353, 286, 'h', 'teal', 26, True)]),
     ('tri', [('tint', [F9C, F9M, F9RB], 'orange')]),
-], vb='175 35 290 290', w=620, col=0, title='A ring, and a chord of the big circle that touches the small circle'))
+    ('back', [('dim', 175, 35, 290, 290), ('region', f9_ring_d(F9C[0], F9C[1], F9RR, F9rr), 'teal', 0.3), ('circ', *F9C, F9RR),
+              ('circ', *F9C, F9rr), ('seg', *F9RA, *F9RB, 'ink', 3), ('dot', *F9C, 'O', -20, -14),
+              ('txt', 287, 286, 'h', 'teal', 26, True), ('txt', 353, 286, 'h', 'teal', 26, True)]),
+], vb='175 35 290 290', w=580, col=0, title='A ring, and a chord of the big circle that touches the small circle'))
 f9t7 = IH('f9t7', 'Ring $=\\pi R^2-\\pi r^2$', size=32, col=1)
-f9t8 = IH('f9t8', '$r^2+h^2=R^2\\ \\Rightarrow\\ R^2-r^2=h^2$', size=32, col=1)
+f9t8 = IH('f9t8', '$r^2+h^2=R^2$', size=32, col=1)
+f9t8b = IH('f9t8b', '$R^2-r^2=h^2$', size=32, col=1)
 f9t9 = IH('f9t9', 'Ring $=\\pi(R^2-r^2)=\\pi h^2$', size=32, col=1)
-f9t10 = I('f9t10', 'Chord $10\\ \\Rightarrow\\ h=5\\ \\Rightarrow$ ring $=25\\pi$', size=32, col=1)
+f9t10 = I('f9t10', 'Chord $10\\ \\Rightarrow\\ h=10\\div2=5$', size=32, col=1)
+f9t10b = IH('f9t10b', 'Ring $=\\pi\\cdot5^2=25\\pi$', size=32, col=1)
+f9t11a = I('f9t11a', 'Same center, a chord of the big circle touching the small one:', size=24, col=1)
 f9t11 = I('f9t11', 'Ring $=\\pi\\left(\\frac{\\text{chord}}{2}\\right)^2$', size=34, col=1)
 
 # ---- same chord, same ring: three rings to scale (1 unit = 7), each with a chord of 10
-def _f9rp(cx, R, r, t1, t2):
+def _f9rp(cx, R, r, t1):
     cy = 175.0; y = cy + r * 7
     out = [('region', f9_ring_d(cx, cy, R * 7, r * 7), 'teal', 0.28), ('circ', cx, cy, R * 7, 'ink', 2.5)]
     if r > 0: out.append(('circ', cx, cy, r * 7, 'ink', 2))
-    out += [('seg', cx - 35, y, cx + 35, y, 'orange', 4), ('dot', cx, cy), ('txt', cx, 300, t1, 'ink', 19), ('txt', cx, 328, t2, 'teal', 19)]
+    out += [('seg', cx - 35, y, cx + 35, y, 'orange', 4), ('txt', cx, y - 10, '10', 'orange', 16), ('dot', cx, cy),
+            ('txt', cx, 290, t1, 'ink', 19)]
     return out
+f9rv = lambda cx, k, t, col='ink': [('txt', cx, 290 + 24 * k, t, col, 18)]
 f9rings = PIN(GEO('f9rings', [
-    ('line', _f9rp(100, 13, 12, 'r = 12, R = 13', '169π − 144π = 25π')),
-    ('p2', _f9rp(275, 50 ** 0.5, 5, 'r = 5, R = 5√2', '50π − 25π = 25π')),
-    ('p3', _f9rp(420, 5, 0, 'r = 0, R = 5', '25π')),
-], vb='0 70 480 275', w=620, col=0, title='Three rings with the same chord, 10'))
+    ('line', _f9rp(92, 13, 12, 'r = 12, R = 13')),
+    ('r1a', f9rv(92, 1, 'π · 13² = 169π') + f9rv(92, 2, 'π · 12² = 144π')),
+    ('r1b', f9rv(92, 3, '169π − 144π = 25π', 'teal')),
+    ('p2', _f9rp(268, 50 ** 0.5, 5, 'r = 5, R = 5√2')),
+    ('p2a', f9rv(268, 1, '(5√2)² = 50')),
+    ('p2b', f9rv(268, 2, '50π − 25π = 25π', 'teal')),
+    ('p3', _f9rp(438, 5, 0, 'r = 0: a point')),
+    ('p3a', f9rv(438, 1, 'π · 5² = 25π', 'teal')),
+], vb='0 70 525 300', w=580, col=0, title='Three rings with the same chord, 10'))
 
 video('r26-t33-more-tools', 'lesson', slides=[
     S('More Circle Tools',
-      L("More circle tools. These two tools show up in the hardest circle questions, near the end of the section. And "
-        "right after this lesson, two questions teach two more tools.")),
+      L("Here are two more circle tools. They come up in some of the harder circle questions. And right after this "
+        "lesson, two questions teach two more tools.")),
     S('Two equal circles',
-      L("The first tool. Two equal circles, and each one passes through the center of the other. Here's a circle with "
-        "center O, and an equal circle with center P. P is on the first circle, and O is on the second one.",
+      L("First, let's look at two equal circles, where each one passes through the center of the other. Here's a circle "
+        "with center O, and an equal circle with center P. P is on the first circle, and O is on the second one.",
         show(f9eq['line'], "Here's a circle with center O")),
       L("The circles cross at two points, A and B. What can we say about this shape? No angle is given, so we add helper "
         "lines. We join the centers to the crossing points.", show(f9eq['ab'], 'The circles cross at two points'),
         show(f9eq['radii'], 'We join the centers')),
       L("O A and O B are radii of the first circle. P A and P B are radii of the second circle. And O P? P is on the first "
-        "circle, so O P is also a radius. The circles are equal, so all five lines have the same length, r.",
-        show(f9eq['op'], 'so O P is also a radius'), show(f9t1, 'all five lines')),
+        "circle, so O P is also a radius. The circles are equal, so all five segments have the same length, r.",
+        show(f9eq['op'], 'so O P is also a radius'), show(f9t1, 'all five segments')),
       L("So triangle O A P has three equal sides. It's equilateral, and triangle O B P is equilateral too. Every angle in "
         "them is sixty degrees.", show(f9eq['tri'], 'So triangle O A P')),
       L("Now the angle A O B. It's made of the two angles at O, one from each equilateral triangle. It's sixty plus sixty, a hundred twenty degrees. And a hundred twenty degrees is a third of "
         "the circle, because three times a hundred twenty is three hundred sixty.",
-        show(f9eq['a120'], "It's sixty plus sixty"), show(f9t2, 'is a third of'))),
+        show(f9eq['a120'], "It's sixty plus sixty"), show(f9t2, 'is a third of')),
+      L("This needs both conditions, equal circles, and each center on the other circle. Equal circles that are farther "
+        "apart give a different angle, like the ninety degrees in the union question.",
+        show(f9t2b, 'This needs both conditions'))),
     S('The shared region',
       L("Questions love the region the two circles share, the shape in the middle. Draw the chord A B. It cuts this shape "
         "into two equal pieces.", show(f9lens['line'], 'Questions love the region'), show(f9lens['lens'], 'the shape in the middle'),
@@ -4675,20 +5633,36 @@ video('r26-t33-more-tools', 'lesson', slides=[
         "the triangle.", show(f9t3, 'So the shared region'))),
     S('In numbers',
       L("Let's see it in numbers. Say the radius is six. The whole circle is pi times six squared, thirty-six pi. The "
-        "sector A O B is a third of it, so it's twelve pi.", show(f9r6['line'], 'Say the radius is six'),
-        show(f9r6['sec'], 'The sector A O B'), show(f9t4, 'so it\'s twelve pi')),
+        "sector A O B is a third of it. Thirty-six pi divided by three is twelve pi.",
+        show(f9r6['line'], 'Say the radius is six'), show(f9t4a, 'The whole circle is pi'),
+        show(f9r6['sec'], 'The sector A O B'), show(f9t4, 'Thirty-six pi divided by three'),
+        show(f9r6['sec12'], 'is twelve pi')),
       L("Now triangle A O B. The four radii make a rhombus, O A P B. Let's take it out. O P cuts it into our two "
-        "equilateral triangles. Remember, the area of every equilateral triangle is a squared, times root three, over four. "
-        "Six squared is thirty-six, and thirty-six over four is nine, so each one is nine root three.",
-        show(f9r6['rh'], 'make a rhombus'), show(f9num['line'], "Let's take it out"), show(f9num['eq'], 'O P cuts it')),
+        "equilateral triangles. Remember, the area of every equilateral triangle is a squared, times root three, over "
+        "four. Here a is six. Six squared is thirty-six, and thirty-six over four is nine. So each one is nine root three.",
+        show(f9r6['rh'], 'make a rhombus'), show(f9num['line'], "Let's take it out"), show(f9num['eq'], 'O P cuts it'),
+        show(f9t4b, 'Remember, the area of every'), show(f9t4c, 'Six squared is thirty-six'),
+        show(f9t4d, 'So each one is nine root three'), show(f9num['eq9'], 'So each one is nine root three')),
       L("Now cut the same rhombus the other way, with the chord A B. A diagonal cuts a rhombus into two equal halves, and "
         "triangle A O B is one of them. So it's half of the rhombus, the same as one equilateral triangle, nine root "
         "three.", show(f9num['aob'], 'with the chord A B')),
-      L("So one piece is twelve pi minus nine root three. The shared region is two pieces, twenty-four pi minus eighteen "
-        "root three.", show(f9t5, 'So one piece'), show(f9t6, 'The shared region is two pieces'))),
+    ),
+    S('The shared region in numbers',
+      L("So one piece is twelve pi minus nine root three. The shared region is two pieces, so we double the whole "
+        "difference.", show(f9x6b['line'], 'So one piece'), show(f9x6b['right'], 'twelve pi minus nine root three'),
+        show(f9t5, 'twelve pi minus nine root three'), show(f9x6b['both'], 'The shared region is two pieces'),
+        show(f9t5b, 'so we double the whole')),
+      L("Two times twelve pi is twenty-four pi. And two times nine root three is eighteen root three. So the shared region "
+        "is twenty-four pi minus eighteen root three.", show(f9t6, 'So the shared region is')),
+      L("Let's try one more, with a radius of two. The circle is four pi, so the sector is a third of it, four pi over "
+        "three. Each equilateral triangle is two squared, times root three, over four. Four over four is one, so it's "
+        "root three.", show(f9t6a, 'so the sector is a third of it'), show(f9t6a2, 'Four over four is one')),
+      L("So the shared region is two times, four pi over three minus root three. That's eight pi over three, minus two "
+        "root three.", show(f9t6b, 'So the shared region is two times'))),
     S('Chord of a ring',
-      L("The second tool is a ring. Two circles with the same center, O, and the ring between them. The ring is the big "
-        "circle minus the small circle, pi R squared minus pi r squared.", show(f9ring['line'], 'Two circles with the same center'),
+      L("The second tool is a ring. Two circles with the same center, O, and the ring between them. Circles with the same "
+        "center are called concentric. The ring is the big circle minus the small circle, pi R squared minus pi r "
+        "squared.", show(f9ring['line'], 'Two circles with the same center'),
         show(f9t7, 'The ring is the big circle')),
       L("Now a chord A B of the big circle that just touches the small circle, at the point M. M is a point of tangency, "
         "so the automatic helper line is the radius O M. It's perpendicular to the chord.",
@@ -4697,22 +5671,30 @@ video('r26-t33-more-tools', 'lesson', slides=[
         "base, and in an isosceles triangle that height is also a median. So M cuts the chord in half. Call each half h.",
         show(f9ring['ob'], 'Draw O A and O B'), show(f9ring['half'], 'So M cuts the chord in half')),
       L("Look at the right triangle O M B. Its legs are r and h, and its hypotenuse is R. By Pythagoras, r squared plus h "
-        "squared is R squared. So R squared minus r squared is h squared.", show(f9ring['tri'], 'Look at the right triangle'),
-        show(f9t8, 'By Pythagoras')),
-      L("And the ring? Pi R squared minus pi r squared is pi times, R squared minus r squared. That's pi times h squared. "
-        "So the ring depends only on the chord.", show(f9t9, 'And the ring'))),
+        "squared is R squared. Now subtract r squared from both sides. So R squared minus r squared is h squared.",
+        show(f9ring['tri'], 'Look at the right triangle'), show(f9t8, 'By Pythagoras'),
+        show(f9t8b, 'Now subtract r squared from both sides')),
+      L("And the ring? Let's go back to the whole ring. Pi R squared minus pi r squared is pi times, R squared minus r "
+        "squared. That's pi times h squared. So the ring depends only on the chord.",
+        show(f9ring['back'], "Let's go back to the whole ring"), show(f9t9, 'Pi R squared minus pi r squared is'))),
     S('Same chord, same ring',
-      L("So if the chord is ten, then h is five, and the ring is twenty-five pi. We don't need either radius.",
-        show(f9t10, 'So if the chord is ten')),
-      L("Let's check it on rings with a chord of ten. Radii twelve and thirteen, the five, twelve, thirteen triangle. The ring is the big circle minus the small one. A "
-        "hundred sixty-nine pi minus a hundred forty-four pi is twenty-five pi, just like the rule says.", show(f9rings['line'], 'Radii twelve and thirteen')),
+      L("So if the chord is ten, then h is half of it, five. And the ring is pi times five squared, twenty-five pi. We "
+        "don't need either radius.", show(f9t10, 'So if the chord is ten'), show(f9t10b, 'And the ring is pi times')),
+      L("Let's check it on rings with a chord of ten. Radii twelve and thirteen, the five, twelve, thirteen triangle. The "
+        "big circle is pi times thirteen squared, a hundred sixty-nine pi. The small one is pi times twelve squared, a "
+        "hundred forty-four pi.", show(f9rings['line'], 'Radii twelve and thirteen'), show(f9rings['r1a'], 'The big circle is pi')),
+      L("The ring is the big circle minus the small one. A hundred sixty-nine pi minus a hundred forty-four pi is "
+        "twenty-five pi, just like the rule says.", show(f9rings['r1b'], 'A hundred sixty-nine pi minus')),
       L("Radii five and five root two, a silver triangle with legs five and five. Five root two, squared, is fifty. Fifty "
-        "pi minus twenty-five pi is twenty-five pi again.", show(f9rings['p2'], 'Radii five and five root two')),
-      L("And if the small circle shrinks to a single point? Then the chord is a diameter of ten, and the ring is a whole "
-        "circle with radius five, twenty-five pi. The same answer.", show(f9rings['p3'], 'shrinks to a single point')),
-      L("So when a chord of the big circle touches the small circle, the ring is pi times half the chord, squared. Now "
-        "let's see the other two tools in questions. [pause] Okay. I'll see you in the next video.",
-        show(f9t11, 'So when a chord'))),
+        "pi minus twenty-five pi is twenty-five pi again.", show(f9rings['p2'], 'Radii five and five root two'),
+        show(f9rings['p2a'], 'Five root two, squared'), show(f9rings['p2b'], 'Fifty pi minus twenty-five pi')),
+      L("And here's the limiting picture, where the small circle has shrunk to a single point, the center. Then the chord "
+        "goes through the center, so it's a diameter of ten. The ring becomes a whole circle with radius five, "
+        "twenty-five pi. The same answer.", show(f9rings['p3'], 'the limiting picture'),
+        show(f9rings['p3a'], 'twenty-five pi. The same')),
+      L("So when two circles have the same center, and a chord of the big circle touches the small circle, the ring is pi "
+        "times half the chord, squared. Now let's see the other two tools in questions. [pause] Okay. I'll see you in the "
+        "next video.", show(f9t11a, 'So when two circles have the same center'), show(f9t11, 'the ring is pi'))),
 ])
 
 
@@ -4746,7 +5728,7 @@ _f9box = [('seg', _bx0, _by0, _bx1, _by0, 'teal', 2, True), ('seg', _bx1, _by0, 
           ('seg', _bx1, _by1, _bx0, _by1, 'teal', 2, True), ('seg', _bx0, _by1, _bx0, _by0, 'teal', 2, True),
           ('seg', _bx1 + 8, 80, 245, 80, 'teal', 2.5), ('seg', 233, 72, 246, 80, 'teal', 2.5), ('seg', 233, 88, 246, 80, 'teal', 2.5)]
 _f9sch = [('txt', 115, 262, 'segment =', 'teal', 29), ('txt', 115, 294, 'sector − triangle', 'ink', 29)]
-_f9secv = [('txt', 290, 364, 'sector: ⅙ · 36π = 6π', 'teal', 30)]
+_f9secv = [('txt', 290, 364, 'sector = 6π', 'teal', 30)]
 F9VB = '0 40 580 400'
 f9q4a = PIN(GEO('f9q4a', [
     ('line', _f9small),
@@ -4755,7 +5737,9 @@ f9q4a = PIN(GEO('f9q4a', [
     ('sector', [('wedge', *_bO, _bR, 60, 120, 'teal'), ('seg', *_bO, *_bA, 'teal', 4), ('seg', *_bO, *_bB, 'teal', 4)]),
     ('tri', [('tint', [_bO, _bA, _bB], 'orange'), ('seg', *_bA, *_bB, 'orange', 4)]),
     ('scheme', _f9sch),
-    ('secv', _f9secv),
+    ('sv1', [('txt', 290, 352, '60° ÷ 360° = ⅙', 'teal', 26)]),
+    ('sv2', [('txt', 290, 386, 'circle: π · 6² = 36π', 'teal', 26)]),
+    ('sv3', [('txt', 290, 420, 'sector: 36π ÷ 6 = 6π', 'teal', 26)]),
 ], vb=F9VB, w=580, title='The circle with the shaded segment, and the sector enlarged'))
 
 _f9b2 = _f9small + _f9segS + _f9box + _f9big + _f9segB + [('tint', [_bO, _bA, _bB], 'orange')] + _f9sch + _f9secv
@@ -4765,12 +5749,20 @@ f9q4b = PIN(GEO('f9q4b', [
     ('ang', [('arc', *_bA, 36, 300, 360, 'orange'), ('arc', *_bB, 36, 180, 240, 'orange'),
              ('txt', _bA[0] + 58, _bA[1] + 22, '60°', 'orange', 26), ('txt', _bB[0] - 58, _bB[1] + 22, '60°', 'orange', 26)]),
     ('ab6', [('txt', _bM[0], _bM[1] - 16, '6', 'orange', 26)]),
-    ('area', [('txt', 290, 398, '6² · √3 ÷ 4 = 36√3 ÷ 4 = 9√3', 'orange', 30), ('txt', 448, 150, '9√3', 'orange', 30)]),
-    ('h', [('seg', *_bO, *_bM, 'teal', 3, True), ('right', _bM[0], _bM[1], 270, 360, 14), ('txt', 384, 160, '3√3', 'teal', 22),
-           ('txt', 352, 90, '3', 'teal', 22)]),
-    ('hv', [('txt', 290, 430, 'or: 6 · 3√3 ÷ 2 = 9√3', 'teal', 28)]),
-    ('ans', [('txt', 115, 328, '= 6π − 9√3', 'ink', 31)]),
+    ('a9', [('txt', 448, 150, '9√3', 'orange', 30)]),
+    ('h', [('seg', *_bO, *_bM, 'teal', 3, True), ('right', _bM[0], _bM[1], 270, 360, 14)]),
+    ('h3', [('txt', 352, 90, '3', 'teal', 22), ('txt', 468, 90, '3', 'teal', 22)]),
+    ('h33', [('txt', 384, 160, '3√3', 'teal', 22)]),
 ], vb=F9VB, w=580, title='Triangle AOB: equilateral with side 6'))
+f9x4b1 = IH('f9x4b1', 'base angles: $180° - 60° = 120°$', size=26)
+f9x4b2 = IH('f9x4b2', '$120° \\div 2 = 60°$', size=26)
+f9x4b3 = I('f9x4b3', 'equilateral: $\\frac{a^2\\sqrt3}{4}$', size=26)
+f9x4b4 = I('f9x4b4', '$\\frac{6^2\\sqrt3}{4} = \\frac{36\\sqrt3}{4}$', size=26)
+f9x4b5 = IH('f9x4b5', '$= 9\\sqrt3$', size=26)
+f9x4b6 = IH('f9x4b6', 'or: $\\ 6 \\div 2 = 3$', size=26)
+f9x4b7 = IH('f9x4b7', 'height $= 3\\sqrt3$', size=26)
+f9x4b8 = I('f9x4b8', '$\\frac{6 \\times 3\\sqrt3}{2} = 9\\sqrt3$', size=26)
+f9x4b9 = IH('f9x4b9', 'segment $= 6\\pi - 9\\sqrt3$', size=28)
 
 _f9b3 = _f9big + _f9segB + [('txt', 448, 150, '9√3', 'orange', 30), ('txt', 410, 372, 'segment = 6π − 9√3', 'teal', 31)]
 f9q4c = PIN(GEO('f9q4c', [
@@ -4778,43 +5770,59 @@ f9q4c = PIN(GEO('f9q4c', [
     ('t1', [('txt', 118, 70, '6 · 6 ÷ 2 = 18', 'red', 29), ('txt', 118, 102, 'needs a right angle ✗', 'red', 23)]),
     ('t2', [('txt', 128, 160, '12π = ⅓ of the circle ✗', 'red', 22)]),
     ('t3a', [('txt', 118, 225, '3π < 3 · 4 = 12', 'ink', 29)]),
-    ('t3b', [('txt', 118, 265, '9√3 = √243', 'ink', 29), ('txt', 118, 300, '> √144 = 12', 'ink', 29)]),
-    ('t3c', [('txt', 118, 350, '3π − 9√3 < 0 ✗', 'red', 30)]),
+    ('t3b1', [('txt', 118, 260, '9 = √81', 'ink', 28)]),
+    ('t3b2', [('txt', 118, 295, '9√3 = √243', 'ink', 28)]),
+    ('t3b3', [('txt', 118, 330, '√243 > √144 = 12', 'ink', 28)]),
+    ('t3c', [('txt', 118, 370, '3π − 9√3 < 0 ✗', 'red', 30)]),
 ], vb=F9VB, w=580, title='Where the other choices come from'))
-for _f9g in (f9q4a, f9q4b, f9q4c): _R(_f9g, 210, x=1000)
+for _f9g in (f9q4a, f9q4c): _R(_f9g, 210, x=1000)
+LEFT(f9q4b, y=240, x=410, w=430)
+ROWS(290, 70, f9x4b1, f9x4b2, f9x4b3, f9x4b4, f9x4b5, x=860, w=380)
+ROWS(290, 70, f9x4b6, f9x4b7, f9x4b8, f9x4b9, x=1250, w=340)
+NOFIG33.add(('solve-q-r26-t33-04', 1))
 
 video('solve-q-r26-t33-04', 'solution', qid='q-r26-t33-04', slides=[
     SM('Sector minus triangle', 'Sector minus triangle',
       L("In a circle with center O and radius six centimeters, angle A O B is sixty degrees. What is the area of the "
         "shaded region between the chord A B and the arc A B, in square centimeters?",
         pt('stem', 'In a circle with center O', 'hl', 10.0), voice='calm', pause=0.5),
-      L("A shaded area again. In shaded areas, the most common way is subtracting areas. So first a scheme. What minus "
-        "what gives the shaded part?", pt('stem: ask', 'A shaded area again')),
+      L("Let's use the math way. In shaded areas we usually subtract areas. So first, let's decide which area to subtract. "
+        "What minus what gives the shaded part?", pt('stem: ask', "Let's use the math way")),
       L("[short pause] The shaded part sits between a chord and its arc. A region like this is called a segment. It's "
         "thin, so let's look at it bigger, with the same labels.", show(f9q4a['line'], 'The shaded part sits'),
         show(f9q4a['seg'], 'is called a segment'), show(f9q4a['cut'], "so let's look at it bigger")),
       L("Take the sector A O B, the slice from O out to the arc. Then take away triangle A O B. What's left is exactly the "
         "segment. So the segment is the sector minus the triangle.", show(f9q4a['sector'], 'Take the sector'),
         show(f9q4a['tri'], 'Then take away triangle'), show(f9q4a['scheme'], 'So the segment is')),
-      L("The sector first. Sixty degrees is a sixth of the circle, because six times sixty is three hundred sixty. The "
-        "whole circle is pi times six squared, thirty-six pi. A sixth of thirty-six pi is six pi.",
-        show(f9q4a['secv'], 'A sixth of thirty-six pi')),
-      L("Before we work on the triangle, let's look at the choices. The answer must be six pi minus the triangle. Choice "
-        "number two starts with twelve pi, and choice number four starts with three pi. So both are out.",
+      L("The sector first. Sixty degrees out of three hundred sixty is a sixth of the circle, because six times sixty is "
+        "three hundred sixty. The whole circle is pi times six squared, thirty-six pi. A sixth of thirty-six pi is six pi.",
+        show(f9q4a['sv1'], 'Sixty degrees out of'), show(f9q4a['sv2'], 'The whole circle is pi'),
+        show(f9q4a['sv3'], 'A sixth of thirty-six pi')),
+      L("Before we work on the triangle, let's look at the choices. Here the shaded area is this sector, six pi, minus the "
+        "triangle. Choice number two starts with twelve pi, and choice number four starts with three pi. They don't use "
+        "this sector, so both are out.",
         mk('cross', 'choice 2', 'Choice number two starts'), mk('cross', 'choice 4', 'choice number four starts'))),
     SM('The triangle', 'The triangle',
       L("Now triangle A O B. O A and O B are both radii, so both are six, and the triangle is isosceles. The angle between "
-        "them is sixty. So the two base angles share a hundred eighty minus sixty, which is a hundred twenty. That's sixty "
-        "each.", show(f9q4b['line'], 'Now triangle A O B'), show(f9q4b['sides'], 'so both are six'),
-        show(f9q4b['ang'], "That's sixty each")),
+        "them is sixty. So the two base angles share a hundred eighty minus sixty, which is a hundred twenty. Half of a "
+        "hundred twenty is sixty, so that's sixty each.", show(f9q4b['line'], 'Now triangle A O B'),
+        show(f9q4b['sides'], 'so both are six'), show(f9x4b1, 'a hundred eighty minus sixty'),
+        show(f9x4b2, 'Half of a'), show(f9q4b['ang'], "so that's sixty each")),
       L("Sixty, sixty and sixty. So it's an equilateral triangle, and A B is six too.", show(f9q4b['ab6'], 'A B is six too')),
-      L("The area of every equilateral triangle is a squared, times root three, over four. Six squared is thirty-six, and "
-        "thirty-six over four is nine. So the area is nine root three.", show(f9q4b['area'], 'Six squared is thirty-six')),
-      L("If you don't remember the formula, draw the height from O. It cuts the triangle into two gold triangles. The "
-        "short leg is three, so the height is three root three. The area is base times height, over two. Six times three root three, over two, is nine root three "
-        "again.", show(f9q4b['h'], 'draw the height from O'), show(f9q4b['hv'], 'Six times three root three')),
-      L("So the segment is the sector minus the triangle. That's six pi minus nine root three. Choice number three is our answer. In the exam, we mark it and "
-        "move on.", show(f9q4b['ans'], 'So the segment is'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
+      L("Remember, the area of every equilateral triangle is a squared, times root three, over four. Here a is six. Six "
+        "squared is thirty-six, so it's thirty-six root three over four. Thirty-six over four is nine. So the area is nine "
+        "root three.", show(f9x4b3, 'Remember, the area of every'), show(f9x4b4, "so it's thirty-six root three"),
+        show(f9x4b5, 'So the area is nine'), show(f9q4b['a9'], 'So the area is nine')),
+      L("If you don't remember the formula, draw the height from O. In an isosceles triangle, it cuts the base into two "
+        "equal halves, three and three. It also cuts the triangle into two gold triangles. The short leg is three, so the "
+        "height is three root three.", show(f9q4b['h'], 'draw the height from O'),
+        show(f9x4b6, 'three and three'), show(f9q4b['h3'], 'three and three'),
+        show(f9x4b7, 'so the height is three root three'), show(f9q4b['h33'], 'so the height is three root three')),
+      L("The area is base times height, over two. Six times three root three, over two, is nine root three again.",
+        show(f9x4b8, 'Six times three root three')),
+      L("So the segment is the sector minus the triangle. That's six pi minus nine root three. Choice number three is our "
+        "answer. In the exam, we mark it and move on.", show(f9x4b9, 'So the segment is'),
+        mk('tick', 'choice 3', 'Choice number three is our answer'))),
     SM('The traps', 'The traps',
       L("[pause] We're in a lesson, so let's see where the other choices come from. Choice number one is six pi minus "
         "eighteen. Eighteen is six times six, over two. That's the area of a right triangle with two legs of six, but our "
@@ -4823,14 +5831,16 @@ video('solve-q-r26-t33-04', 'solution', qid='q-r26-t33-04', slides=[
       L("Choice number two is twelve pi minus nine root three. Twelve pi is a third of the circle. That's the sector of a "
         "hundred twenty degrees, not sixty.", show(f9q4c['t2'], 'Twelve pi is a third'), mk('cross', 'choice 2', 'not sixty')),
       L("And choice number four, three pi minus nine root three. Is it even positive? Pi is less than four, so three pi is "
-        "less than twelve. And nine is the root of eighty-one, so nine root three is the root of two hundred forty-three. "
-        "That's more than the root of a hundred forty-four, which is twelve.", show(f9q4c['t3a'], 'Pi is less than four'),
-        show(f9q4c['t3b'], 'And nine is the root')),
+        "less than twelve. Now let's look at nine root three. Nine is the root of eighty-one. So nine root three is the root of "
+        "eighty-one times three, two hundred forty-three. That's more than the root of a hundred forty-four, which is "
+        "twelve.", show(f9q4c['t3a'], 'Pi is less than four'), show(f9q4c['t3b1'], 'Nine is the root of eighty-one'),
+        show(f9q4c['t3b2'], 'So nine root three is the root'), show(f9q4c['t3b3'], "That's more than the root")),
       L("So three pi minus nine root three is a number below twelve, minus a number above twelve. It's negative, and an "
         "area can't be negative. They do that a lot, a negative answer hidden behind pi and roots.",
         show(f9q4c['t3c'], "It's negative"), mk('cross', 'choice 4', 'area can\'t be negative')),
-      L("So when a shaded region sits between a chord and its arc, think sector minus triangle. [pause] Okay. I'll see "
-        "you in the next question.", pt('f9q4c_line', 'think sector minus triangle'))),
+      L("So when a shaded region is a small segment, between a chord and its short arc, with a central angle below a "
+        "hundred eighty, think small sector minus triangle. [pause] Okay. I'll see you in the next question.",
+        pt('f9q4c_line', 'think small sector minus triangle'))),
 ])
 
 
@@ -4883,13 +5893,67 @@ f9q5b = PIN(GEO('f9q5b', [
     ('line', _f9q5b0),
     ('be', [('dot', *_zE), ('seg', *_zB, *_zE, 'teal', 3, True), ('txt', _zE[0] - 18, _zE[1] - 4, 'E', 'ink', 28, True)]),
     ('rect', [('tint', [_zE, _zB, _zC, _zD], 'orange'), ('tick', *_zE, *_zD, 1, 'orange'), ('tick', *_zB, *_zC, 1, 'orange'),
-              ('tick', *_zE, *_zB, 2, 'orange'), ('tick', *_zD, *_zC, 2, 'orange'),
-              ('txt', 126, 272, 'ED = BC = 2', 'orange', 28), ('txt', 126, 304, 'EB = DC', 'orange', 28)]),
-    ('ae', [('seg', *_zA, *_zE, 'teal', 7), ('txt', _zA[0] + 18, 215, '6', 'teal', 28), ('txt', 126, 336, 'AE = 8 − 2 = 6', 'teal', 28)]),
+              ('tick', *_zE, *_zB, 2, 'orange'), ('tick', *_zD, *_zC, 2, 'orange')]),
+    ('ae', [('seg', *_zA, *_zE, 'teal', 7), ('txt', _zA[0] + 18, 215, '6', 'teal', 28)]),
     ('tri', [('tint', [_zA, _zB, _zE], 'teal')]),
-    ('tv', [('txt', 470, 290, '8', 'teal', 28), ('txt', 126, 370, '10² − 6² = 64', 'teal', 28), ('txt', 126, 402, 'BE = √64 = 8', 'teal', 28)]),
-    ('dc', [('txt', 421, _zD[1] + 26, '8', 'orange', 30), ('txt', 126, 438, 'DC = 8', 'ink', 28)]),
+    ('tv', [('txt', 470, 290, '8', 'teal', 28)]),
+    ('dc', [('txt', 421, _zD[1] + 26, '8', 'orange', 30)]),
 ], vb=F9VB5, w=580, title='Cut off a right triangle'))
+f9x5r1 = IH('f9x5r1', '$ED = BC = 2$', size=26)
+f9x5r2 = IH('f9x5r2', '$EB = DC$', size=26)
+f9x5r3 = IH('f9x5r3', '$AE = 8 - 2 = 6$', size=26)
+f9x5r4 = IH('f9x5r4', '$6, 8, 10$: $\\ BE = 8$', size=26)
+f9x5r5 = IH('f9x5r5', '$10^2 = 100$', size=26)
+f9x5r6 = IH('f9x5r6', '$6^2 = 36$', size=26)
+f9x5r7 = IH('f9x5r7', '$BE^2 = 100 - 36 = 64$', size=26)
+f9x5r8 = IH('f9x5r8', '$BE = \\sqrt{64} = 8$', size=26)
+f9x5r9 = IH('f9x5r9', '$DC = BE = 8$', size=26)
+LEFT(f9q5b, y=250, x=410, w=560)
+ROWS(250, 48, f9x5r1, f9x5r2, f9x5r3, f9x5r4, f9x5r5, f9x5r6, f9x5r7, f9x5r8, f9x5r9, x=1000)
+# batch C: why the short formula works (letters), and the 9 / 4 check, each in its own matching picture
+f9x5g = PIN(GEO('f9x5g', [
+    ('line', [('arc', *_zA, 128 * 1.9, 256, 300, 'ink'), ('circ', *_zB, 32 * 1.9, 'ink', 2.5), ('seg', 272, _zD[1], 608, _zD[1], 'ink', 3),
+              ('seg', *_zA, *_zD, 'teal', 3, True), ('seg', *_zB, *_zC, 'teal', 3, True), ('right', *_zD, 0, 90, 15),
+              ('right', *_zC, 90, 180, 15), ('seg', *_zB, *_zE, 'teal', 3, True), ('dot', *_zA), ('dot', *_zB), ('dot', *_zE),
+              ('txt', _zA[0] - 18, _zA[1] - 10, 'A', 'ink', 26, True), ('txt', _zB[0] + 2, _zB[1] - 24, 'B', 'ink', 26, True),
+              ('txt', _zD[0], _zD[1] + 24, 'D', 'ink', 26, True), ('txt', _zC[0], _zC[1] + 24, 'C', 'ink', 26, True),
+              ('txt', _zE[0] - 18, _zE[1] - 4, 'E', 'ink', 26, True), ('txt', _zE[0] - 16, 336, 'r', 'teal', 24, True),
+              ('txt', _zC[0] + 16, 336, 'r', 'teal', 24, True)]),
+    ('hyp', [('seg', *_zA, *_zB, 'orange', 4), ('txt', 452, 196, 'R + r', 'orange', 24, True)]),
+    ('leg', [('seg', *_zA, *_zE, 'teal', 6), ('txt', 262, 211, 'R − r', 'teal', 24, True)]),
+    ('dc', [('seg', *_zD, *_zC, 'orange', 6), ('txt', 421, _zD[1] + 26, 'DC', 'orange', 24)]),
+], vb='230 90 400 310', w=440, title='Two circles touching from the outside, in letters'))
+LEFT(f9x5g, y=250, x=430, w=440)
+f9x5s1 = IH('f9x5s1', '$AB = R + r$', size=26)
+f9x5s2 = IH('f9x5s2', '$AE = R - r$', size=26)
+f9x5s3 = IH('f9x5s3', '$DC^2 = (R+r)^2 - (R-r)^2$', size=26)
+f9x5s4 = IH('f9x5s4', '$(R+r)^2 = R^2 + 2Rr + r^2$', size=26)
+f9x5s5 = IH('f9x5s5', '$(R-r)^2 = R^2 - 2Rr + r^2$', size=26)
+f9x5s6 = IH('f9x5s6', '$DC^2 = 2Rr + 2Rr = 4Rr$', size=26)
+f9x5s7 = IH('f9x5s7', '$DC = \\sqrt{4Rr} = 2\\sqrt{Rr}$', size=26)
+f9x5s8 = IH('f9x5s8', '$2\\sqrt{8 \\cdot 2} = 2\\sqrt{16} = 2 \\cdot 4 = 8$', size=26)
+ROWS(250, 52, f9x5s1, f9x5s2, f9x5s3, f9x5s4, f9x5s5, f9x5s6, f9x5s7, f9x5s8)
+_f9kA, _f9kD, _f9kB, _f9kC, _f9kE = (300, 110), (300, 308), (564, 220), (564, 308), (300, 220)
+f9x5k = PIN(GEO('f9x5k', [
+    ('line', [('arc', *_f9kA, 198, 248, 300, 'ink'), ('circ', *_f9kB, 88, 'ink', 2.5), ('seg', 270, 308, 670, 308, 'ink', 3),
+              ('seg', *_f9kA, *_f9kD, 'teal', 3, True), ('seg', *_f9kB, *_f9kC, 'teal', 3, True), ('right', *_f9kD, 0, 90, 14),
+              ('right', *_f9kC, 90, 180, 14), ('seg', *_f9kB, *_f9kE, 'teal', 3, True), ('dot', *_f9kA), ('dot', *_f9kB),
+              ('dot', *_f9kE), ('txt', 284, 100, 'A', 'ink', 24, True), ('txt', 580, 206, 'B', 'ink', 24, True),
+              ('txt', 300, 330, 'D', 'ink', 24, True), ('txt', 564, 330, 'C', 'ink', 24, True), ('txt', 284, 222, 'E', 'ink', 24, True),
+              ('txt', 280, 270, '4', 'teal', 22), ('txt', 584, 268, '4', 'teal', 22), ('txt', 470, 380, 'radii 9 and 4', 'ink', 22)]),
+    ('ab', [('seg', *_f9kA, *_f9kB, 'orange', 4), ('txt', 440, 146, '13', 'orange', 24)]),
+    ('ae', [('seg', *_f9kA, *_f9kE, 'teal', 6), ('txt', 280, 168, '5', 'teal', 24)]),
+    ('dc', [('seg', *_f9kD, *_f9kC, 'orange', 6), ('txt', 432, 332, '12', 'orange', 24)]),
+], vb='240 80 450 320', w=460, title='Check: radii 9 and 4'))
+LEFT(f9x5k, y=250, x=420, w=460)
+f9x5k1 = IH('f9x5k1', '$AB = 9 + 4 = 13$', size=28)
+f9x5k2 = IH('f9x5k2', '$AE = 9 - 4 = 5$', size=28)
+f9x5k3 = IH('f9x5k3', '$5, 12, 13$: $\\ DC = 12$', size=28)
+f9x5k4 = IH('f9x5k4', '$2\\sqrt{9 \\cdot 4} = 2\\sqrt{36} = 12$ ✓', size=28)
+f9x5k5 = I('f9x5k5', 'Touching from the outside, $DC$ on a common tangent: $\\ DC = 2\\sqrt{Rr}$', size=24)
+ROWS(250, 62, f9x5k1, f9x5k2, f9x5k3, f9x5k4)
+_R(f9x5k5, 520, x=1000)
+NOFIG33.update({('solve-q-r26-t33-05', 1), ('solve-q-r26-t33-05', 3), ('solve-q-r26-t33-05', 4)})
 
 _f9q5c0 = (_f9q5s + _f9q5cut + _f9q5r + _f9q5v + _f9q5ab + [('txt', 432, 178, '10', 'teal', 28)]
            + [('dot', *_zE), ('seg', *_zB, *_zE, 'teal', 3, True), ('txt', _zE[0] - 18, _zE[1] - 4, 'E', 'ink', 28, True),
@@ -4898,61 +5962,90 @@ f9q5c = PIN(GEO('f9q5c', [
     ('line', _f9q5c0),
     ('t1', [('seg', *_zA, *_zB, 'red', 5), ('txt', 126, 232, '10 = AB ✗', 'red', 28)]),
     ('t3', [('seg', *_zA, *_zE, 'red', 7), ('txt', 126, 264, '6 = AE ✗', 'red', 28)]),
-    ('t4', [('txt', 126, 296, '6² + 10² = 136', 'red', 28), ('txt', 126, 328, '√136 = 2√34 > 10 ✗', 'red', 28)]),
-    ('sc1', [('txt', 126, 366, 'DC = 2√(Rr)', 'teal', 28), ('txt', 126, 398, '= 2√16 = 8', 'teal', 28)]),
-    ('sc2', [('txt', 126, 436, '9 and 4: √(13² − 5²) = 12', 'ink', 22), ('txt', 126, 466, '2√(9 · 4) = 2√36 = 12 ✓', 'ink', 22)]),
-], vb=F9VB5, w=580, title='The traps and a short formula'))
-for _f9g in (f9q5a, f9q5b, f9q5c): _R(_f9g, 210, x=1000)
+    ('t4', [('txt', 126, 296, '6² + 10² = 136', 'red', 28), ('txt', 126, 328, '√136 = 2√34', 'red', 28)]),
+    ('t4b', [('txt', 126, 362, '2√34 > 10 ✗', 'red', 28)]),
+], vb=F9VB5, w=580, title='The traps'))
+for _f9g in (f9q5a, f9q5c): _R(_f9g, 210, x=1000)
 
 video('solve-q-r26-t33-05', 'solution', qid='q-r26-t33-05', slides=[
     SM('Radii and the centers', 'Radii and the centers',
       L("Two circles with centers A and B touch each other from the outside. Their radii are eight centimeters and two "
         "centimeters. A line touches the two circles at D and C, as in the figure. What is the length of D C, in "
         "centimeters?", pt('stem', 'Two circles with centers A and B', 'hl', 11.0), voice='calm', pause=0.5),
-      L("We need a length, D C, but the figure has only two circles and a line. So let's go to the givens and see what "
-        "each one gives us. We'll build a right triangle, and at the end there's a short formula too.",
+      L("We need a length, D C, but the figure has only two circles and a line. Let's use the math way. We'll go to the "
+        "givens and see what each one gives us. We'll build a right triangle, and at the end there's a short formula too.",
         pt('stem: ask', 'We need a length')),
-      L("[short pause] Let's look at the bottom part of the figure, bigger. D and C are points of tangency. So the "
-        "automatic helper line, a radius to each point of tangency. Draw A D and B C. A radius is perpendicular to the "
-        "tangent, so there's a right angle at D and at C.", show(f9q5a['line'], "Let's look at the bottom part"),
-        show(f9q5a['cut'], 'D and C are points'), show(f9q5a['radii'], 'Draw A D and B C')),
+      L("[short pause] Let's look at the bottom part of the figure, bigger. D and C are points of tangency. Let's draw "
+        "each radius to its touching point, A D and B C. That gives two right angles, because a radius is perpendicular "
+        "to the tangent at its touching point.", show(f9q5a['line'], "Let's look at the bottom part"),
+        show(f9q5a['cut'], 'D and C are points'), show(f9q5a['radii'], "Let's draw each radius")),
       L("A D is a radius of the big circle, eight. B C is a radius of the small circle, two. Both are perpendicular to the "
         "same line, so they're parallel to each other.", show(f9q5a['vals'], 'A D is a radius')),
-      L("The circles touch, so a second helper line. Join the centers. A B passes through the point where the circles "
+      L("The circles touch, so let's also join the centers. A B passes through the point where the circles "
         "touch. The first part is a radius of the big circle, eight, and the second part is a radius of the small one, "
-        "two. So A B is eight plus two, ten.", show(f9q5a['ab'], 'Join the centers'), show(f9q5a['abv'], 'So A B is eight plus two')),
-      L("Now look at A B C D. It has two right angles, at D and at C, and two parallel sides. It's a right trapezoid, and "
-        "D C, the side we want, is its bottom.", show(f9q5a['trap'], 'Now look at A B C D'))),
+        "two. So A B is eight plus two, ten.", show(f9q5a['ab'], 'join the centers'), show(f9q5a['abv'], 'So A B is eight plus two')),
+      L("Now look at A B C D. It has two right angles, at D and at C, and two parallel sides, A D and B C. It's a right "
+        "trapezoid. D C is perpendicular to both parallel sides, so it's the distance between them. That's the length we "
+        "want.", show(f9q5a['trap'], 'Now look at A B C D'))),
     SM('Cut off a right triangle', 'Cut off a right triangle',
       L("To use Pythagoras, we need a right triangle with D C in it, or a copy of D C. So from B, draw a line parallel to "
         "D C, until it meets A D. Call that point E.", show(f9q5b['line'], 'To use Pythagoras'), show(f9q5b['be'], 'from B, draw a line')),
-      L("E B C D is a rectangle, because all its angles are right angles. So E D equals B C, which is two. And E B equals "
-        "D C, the length we want.", show(f9q5b['rect'], 'E B C D is a rectangle')),
-      L("Now A E is the whole radius A D, minus E D. Eight minus two is six.", show(f9q5b['ae'], 'Eight minus two')),
+      L("E B C D is a rectangle, because all its angles are right angles. So E D is equal to B C, which is two. And E B is "
+        "equal to D C, the length we want.", show(f9q5b['rect'], 'E B C D is a rectangle'),
+        show(f9x5r1, 'So E D is equal to B C'), show(f9x5r2, 'And E B is')),
+      L("Now A E is the whole radius A D, minus E D. Eight minus two is six.", show(f9x5r3, 'Eight minus two'),
+        show(f9q5b['ae'], 'Eight minus two')),
       L("Look at the right triangle A B E. The hypotenuse A B is ten, and one leg, A E, is six. Six and ten, that's the "
-        "six, eight, ten triangle, so the other leg, B E, is eight. With Pythagoras, the missing leg squared is the hypotenuse squared minus the other leg squared. Ten squared minus six squared is a "
-        "hundred minus thirty-six, sixty-four. And the root of sixty-four is eight.",
-        show(f9q5b['tri'], 'Look at the right triangle'), show(f9q5b['tv'], 'so the other leg')),
-      L("B E equals D C, so D C is eight. Choice number two is our answer.", show(f9q5b['dc'], 'so D C is eight'),
-        mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    SM('Traps and a shortcut', 'Traps and a shortcut',
+        "six, eight, ten triangle, so the other leg, B E, is eight.",
+        show(f9q5b['tri'], 'Look at the right triangle'), show(f9x5r4, 'so the other leg'), show(f9q5b['tv'], 'so the other leg')),
+      L("Let's check it with Pythagoras. The missing leg squared is the hypotenuse squared minus the other leg squared. "
+        "Ten squared is a hundred. Six squared is thirty-six. A hundred minus thirty-six is sixty-four. A length is "
+        "positive, so we take the positive root, eight.", show(f9x5r5, 'Ten squared is a hundred'),
+        show(f9x5r6, 'Six squared is thirty-six'), show(f9x5r7, 'A hundred minus thirty-six'),
+        show(f9x5r8, 'we take the positive root')),
+      L("B E is equal to D C, so D C is eight. Choice number two is our answer.", show(f9x5r9, 'so D C is eight'),
+        show(f9q5b['dc'], 'so D C is eight'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
+    SM('Traps and a shortcut', 'The traps',
       L("[pause] Now the traps. Ten, choice number one, is A B, the distance between the centers. It's not the tangent. "
         "And six, choice number three, is only A E, the difference between the radii.", show(f9q5c['line'], 'Now the traps'),
         show(f9q5c['t1'], 'Ten, choice number one'), mk('cross', 'choice 1', 'the distance between the centers'),
         show(f9q5c['t3'], 'And six, choice number three'), mk('cross', 'choice 3', 'the difference between the radii')),
       L("Two root thirty-four, choice number four, comes from adding the squares. Thirty-six plus a hundred is a hundred "
-        "thirty-six, and the root of a hundred thirty-six is two root thirty-four. But A B is the hypotenuse, the longest "
-        "side. Two root thirty-four is more than ten, and a leg can't be longer than the hypotenuse.",
-        show(f9q5c['t4'], 'comes from adding the squares'), mk('cross', 'choice 4', "a leg can't be longer")),
-      L("And now the short formula, for two circles that touch from the outside. D C is two times the root of R times r. "
-        "Here that's two times the root of eight times two, two times the root of sixteen. Two times four is eight.",
-        show(f9q5c['sc1'], 'D C is two times the root')),
-      L("Let's check it on other circles, with radii nine and four. The circles touch, so the centers are nine plus four, thirteen apart, and the difference "
-        "of the radii is five. Five, twelve, thirteen, so the tangent is twelve. And the formula gives two times the root "
-        "of thirty-six, two times six, twelve. The same.", show(f9q5c['sc2'], 'with radii nine and four')),
-      L("The formula only works when the circles touch. If they don't, cut off the same right triangle, with the distance "
-        "between the centers as its hypotenuse. [pause] Okay. I'll see you in the next question.",
-        pt('f9q5c_line', 'The formula only works'))),
+        "thirty-six, and the root of a hundred thirty-six is two root thirty-four.",
+        show(f9q5c['t4'], 'comes from adding the squares')),
+      L("But A B is the hypotenuse, the longest side. Two root thirty-four is more than ten, because root thirty-four is "
+        "more than five. And a leg can't be longer than the hypotenuse.",
+        show(f9q5c['t4b'], 'Two root thirty-four is more than ten'), mk('cross', 'choice 4', "a leg can't be longer"))),
+    SM('Traps and a shortcut', 'Why the short formula works',
+      L("[short pause] There's also a short formula. Let's see why it works, with letters. Call the big radius capital R, "
+        "and the small radius small r. The circles touch from the outside, so A B, the hypotenuse, is R plus r. And A E "
+        "is R minus r.", show(f9x5g['line'], "Let's see why it works"), show(f9x5g['hyp'], 'the hypotenuse, is R plus r'),
+        show(f9x5s1, 'the hypotenuse, is R plus r'), show(f9x5g['leg'], 'And A E is R minus r'), show(f9x5s2, 'And A E is R minus r')),
+      L("By Pythagoras, D C squared is the hypotenuse squared minus the leg squared. That's R plus r, squared, minus, R "
+        "minus r, squared.", show(f9x5g['dc'], 'By Pythagoras, D C squared'), show(f9x5s3, "That's R plus r, squared")),
+      L("We know both of these from expressions. R plus r, squared, is R squared plus two R r plus r squared. R minus r, "
+        "squared, is R squared minus two R r plus r squared.", show(f9x5s4, 'R plus r, squared, is'),
+        show(f9x5s5, 'R minus r, squared, is')),
+      L("Now subtract. The R squared and the r squared cancel. Taking away minus two R r adds it, so we're left with two R "
+        "r plus two R r, four R r.", show(f9x5s6, 'so we\'re left with')),
+      L("So D C squared is four R r. A length is positive, so D C is the root of four R r. That's two times the root of R "
+        "times r. Here it's two times the root of eight times two, two times the root of sixteen. Two times four is eight, "
+        "the same answer.", show(f9x5s7, 'so D C is the root of four'), show(f9x5s8, "Here it's two times the root"))),
+    SM('Traps and a shortcut', 'Check: nine and four',
+      L("Let's check it on other circles, with radii nine and four, touching from the outside. The centers are nine plus "
+        "four, thirteen apart. And the difference of the radii is nine minus four, five.",
+        show(f9x5k['line'], 'with radii nine and four'), show(f9x5k['ab'], 'The centers are nine plus'),
+        show(f9x5k1, 'The centers are nine plus'), show(f9x5k['ae'], 'nine minus four, five'), show(f9x5k2, 'nine minus four, five')),
+      L("Five, twelve, thirteen, so the tangent segment is twelve. And the formula gives two times the root of nine times "
+        "four. That's two times the root of thirty-six, two times six, twelve. The same.",
+        show(f9x5k['dc'], 'so the tangent segment is twelve'), show(f9x5k3, 'so the tangent segment is twelve'),
+        show(f9x5k4, 'And the formula gives')),
+      L("So remember when it works. Two circles touch each other from the outside, and D C is the piece of a common "
+        "tangent line between its two touching points. Then D C is two times the root of R times r.",
+        show(f9x5k5, 'So remember when it works')),
+      L("If the circles don't touch, but there's still a common tangent like this, cut off the same right triangle. Its "
+        "hypotenuse is the distance between the centers. And if one circle is inside the other, there's no such tangent "
+        "at all. [pause] Okay. I'll see you in the next question.", pt('f9x5k5', "If the circles don't touch"))),
 ])
 
 # carry-over boxes on the continuation slides (V2): the next step uses these results
@@ -5248,6 +6341,73 @@ def _stem_parts(vid):
                 new.append(c)
             ln['cues'] = new
 
+
+
+# 2026-10-18 batch C layout pass: rows that would run into the choices in the course renderer (math_check layout) are
+# flowed into columns by their real height (the renderer pushes an overlapping box down, so each row needs its full box).
+def _rowh(it):
+    sz = it.get('size', 36); t = it.get('t', '')
+    h = sz * 1.55 + 18
+    if '\\dfrac' in t: h += sz * 1.2
+    elif '\\frac' in t: h += sz * 0.85
+    return h
+
+
+def FLOW(items, cols):
+    """place rows in order down the columns cols = [(x, w, y_top, y_bottom), ...], each row at its full height"""
+    k = 0; x, w, y, y1 = cols[0]
+    for it in items:
+        h = _rowh(it)
+        while y + h > y1 and k + 1 < len(cols):
+            k += 1; x, w, y, y1 = cols[k]
+        _R(it, int(y), x); it['_w'] = w; y += h
+    return items
+
+
+FLOW([f3d1a], [(410, 1150, 220, 700)])
+FLOW([f3d1, f3d2, f3d3, f3d3b], [(410, 580, 300, 620), (1000, 580, 300, 640)])
+FLOW([f3c8, f3c8b, f3c8c, f3c9, f3c9b], [(410, 560, 290, 700), (1000, 560, 290, 700)])
+NOFIG33.add(('solve-geo33-g080', 2))
+f5g85['line']['w'] = 240
+FLOW([f5g85x1, f5g85x2, f5g85x3, f5g85x4, f5g85x5], [(1290, 310, 300, 430), (1040, 560, 430, 700)])
+LEFT(f5g85b, y=270, x=410, w=470)
+FLOW([f5g85y1, f5g85y2, f5g85y3, f5g85y4, f5g85y5, f5g85y6], [(910, 340, 280, 700), (1260, 330, 280, 700)])
+FLOW([f5g86x1, f5g86x2, f5g86x3, f5g86x4], [(1350, 240, 300, 490), (1040, 560, 500, 700)])
+FLOW(list(f6g89x), [(1290, 310, 290, 700), (1040, 250, 530, 700)])
+LEFT(f6g89b, y=300, x=410, w=300)
+FLOW(list(f6g89y), [(740, 430, 280, 700), (1180, 420, 280, 700)])
+LEFT(f6g91, y=280, x=410, w=330); _f6g91x7 = f6g91x7; _f6g91x7['_x'] = 410
+FLOW([f6g91x0, f6g91x1, f6g91x2, f6g91x3, f6g91x4, f6g91x5, f6g91x6], [(770, 400, 280, 640), (1180, 420, 280, 700)])
+_f6g91x7['_col'] = 0; _f6g91x7['_x'] = 410; _f6g91x7['_y'] = 636; _f6g91x7['_w'] = 350
+f7g94['line']['w'] = 400
+FLOW([f7g94x1], [(1040, 560, 520, 705)])
+FLOW([f7g94x1b, f7g94x2, f7g94x3, f7g94x4], [(1040, 560, 290, 700)])
+NOFIG33.add(('solve-geo33-g094', 1))
+LEFT(f7g94c, y=270, x=410, w=330)
+FLOW([f6g90x9], [(820, 360, 600, 700)])
+FLOW([f6g90x10], [(1190, 410, 545, 700)])
+FLOW([f7g94z1, f7g94z2, f7g94z3, f7g94z4, f7g94z5, f7g94z6, f7g94z7, f7g94z8], [(760, 420, 280, 700), (1190, 400, 280, 700)])
+LEFT(f7g95c, y=280, x=410, w=400)
+FLOW([f7g95y1, f7g95y2, f7g95y3, f7g95y4, f7g95y5, f7g95y6, f7g95y7], [(830, 400, 280, 700), (1240, 350, 280, 700)])
+LEFT(f7g96, y=280, x=410, w=400)
+FLOW([f7g96a4, f7g96a5, f7g96a6, f7g96a7, f7g96a8, f7g96a9, f7g96a10], [(830, 400, 280, 700), (1250, 340, 280, 700)])
+LEFT(f7g96b2, y=280, x=410, w=400)
+FLOW([f7g96c1, f7g96c2, f7g96c3, f7g96c4, f7g96c4b, f7g96c5, f7g96c6], [(830, 380, 280, 600), (1220, 370, 280, 700)])
+LEFT(f7g96c, y=280, x=410, w=400)
+FLOW([f7g96d1, f7g96d2, f7g96d3, f7g96d4, f7g96d5, f7g96d6, f7g96d7], [(830, 380, 280, 700), (1220, 370, 280, 700)])
+FLOW([f8d6, f8x1m, f8x1t1, f8x1t2], [(410, 600, 340, 704)])
+FLOW([f8x1t3, f8x1t4, f8x1t5, f8d8], [(1040, 560, 452, 704)])
+FLOW([f8x1v0], [(1040, 560, 340, 704)])
+FLOW([f8x1u1, f8x1u2, f8x1u3, f8x1u4, f8x1u5, f8d10], [(410, 560, 340, 710)])
+NOFIG33.add(('solve-geo33-g101', 3))
+LEFT(f8x102q, y=330, x=410, w=320)
+FLOW([f8xq1, f8xq2, f8xq3, f8xq4, f8xq5, f8xq6, f8xq7], [(780, 380, 330, 700), (1180, 400, 330, 700)])
+LEFT(f3g02, y=290, x=410, w=420)
+FLOW([f3g02r1, f3g02r1b, f3g02r2, f3g02r3, f3g02r4, f3g02r5, f3g02r6, f3g02r7, f3g02r8], [(860, 380, 280, 700), (1250, 330, 280, 700)])
+LEFT(f9q5b, y=250, x=410, w=420)
+FLOW([f9x5r1, f9x5r2, f9x5r3, f9x5r4, f9x5r5, f9x5r6, f9x5r7, f9x5r8, f9x5r9], [(860, 330, 260, 700), (1200, 380, 260, 700)])
+LEFT(f9x5g, y=250, x=410, w=380)
+FLOW([f9x5s1, f9x5s2, f9x5s3, f9x5s4, f9x5s5, f9x5s6, f9x5s7, f9x5s8], [(820, 380, 260, 700), (1210, 390, 260, 700)])
 
 
 # the camera lesson in parts of about 3-4 minutes (math_patches/_camera_parts.py), before the visual passes

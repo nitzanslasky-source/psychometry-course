@@ -3,7 +3,7 @@
  "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Circles. Before we go through the rules we have in circles, the theorems, let's first get to know the lines and the angles we have in a circle."
+   "Let's start with circle vocabulary. Before we learn the rules of circles, let's first get to know the lines and the angles we have in a circle."
   ],
   [
    {
@@ -14,7 +14,7 @@
     ]
    },
    {
-    "say": "By the way, just for general knowledge. Most people don't know this, but strictly speaking, the circle is only the round line itself, the line around the outside. Everything inside it, the whole flat shape, is the inside of the circle, and in math it even has its own name. Think of a round wooden board. Its edge is the circle, and all the wood is the inside.",
+    "say": "Strictly speaking, the circle is only the round line itself, the line around the outside. Everything inside it, the whole flat shape, is the inside of the circle. Think of a round wooden board. Its edge is the circle, and all the wood is the inside.",
     "at": [
      "the circle is only",
      "round line itself",
@@ -23,7 +23,7 @@
     ]
    },
    {
-    "say": "On the exam they don't keep this difference, and they don't use that name. They say circle for both. The area of the circle means the area inside, and the circumference is the length of the round line. That's fine, as long as we know which is which.",
+    "say": "On the exam they don't keep this difference. They say circle for both. The area of the circle means the area inside, all the wood. The circumference is the length of the round line, the edge. That's fine, as long as we know which is which.",
     "at": [
      "They say circle for both",
      "The area of"
@@ -32,26 +32,22 @@
   ],
   [
    {
-    "say": "Radius. A radius is a straight line from the center of the circle to any point on the circle. We call the center O. Here's a radius, from O to the circle.",
+    "say": "First, let's look at a radius. A radius is a straight line from the center of the circle to any point on the circle. We call the center O. Here's a radius, from O to the circle. We usually mark the radius with the letter r.",
     "at": [
-     "a straight line",
+     "a radius. A",
      "We call the center O",
      "Here's a radius",
-     "to the circle"
+     "to the circle",
+     "with the letter r"
     ]
    },
    {
     "say": "All the radii of one circle are equal. Even if I draw more lines from the center to the circle, they're all the same length. Look. It's the same radius, just spinning around, and it's the same length in every direction.",
     "at": [
+     "All the radii",
      "It's the same radius, just spinning around",
      "and it's the same length",
      "in every direction"
-    ]
-   },
-   {
-    "say": "We usually mark the radius with the letter r.",
-    "at": [
-     "with the letter r"
     ]
    }
   ],
@@ -70,27 +66,27 @@
   ],
   [
    {
-    "say": "Why does this matter so much? Take two points on the circle, and join each one to the center. That's two radii. Now join the two points too. We get a triangle with two equal sides, an isosceles triangle. And we know from triangles that the two base angles of an isosceles triangle are equal.",
+    "say": "Why does this matter so much? Take two points on the circle, and join each one to the center. That's two radii. Now join the two points too. When the two points and the center are not on one straight line, we get a triangle. It has two equal sides, so it's an isosceles triangle. And we know from triangles that its two base angles are equal.",
     "at": [
      "Take two points on the circle",
      "circle, and join"
     ]
    },
    {
-    "say": "Narrow, wide, or very wide, it's always the same. Two radii give an isosceles triangle. In questions, when you see two radii, mark them equal right away.",
+    "say": "Narrow, wide, or very wide, it's always the same. Two radii and the chord between them give an isosceles triangle. If the two points and the center are on one straight line, there's no triangle. That line is a diameter, and we'll meet it in a moment. In questions, when you see two radii, mark them equal right away.",
     "at": [
      "Narrow, wide",
      "or very wide",
-     "Two radii give an isosceles",
-     "In questions, when"
+     "Two radii and the chord between them",
+     "between them give"
     ]
    }
   ],
   [
    {
-    "say": "Chord. A chord is a straight line that joins two points on the circle. Let's mark two points on the circle, A and B, and join them. That's a chord. Two more points, C and D. Join them. That's also a chord.",
+    "say": "Now let's join two points on the circle with a straight line. A line like that is called a chord. Let's mark two points on the circle, A and B, and join them. That's a chord. Two more points, C and D. Join them. That's also a chord.",
     "at": [
-     "a straight line",
+     "points on the",
      "Let's mark two points",
      "A and B, and join them",
      "them. That's a",
@@ -98,11 +94,12 @@
     ]
    },
    {
-    "say": "We can draw as many chords as we like in a circle. And notice, they're not equal in length. A chord can be long, it can be short, and if I draw one here, it's a very short chord.",
+    "say": "We can draw as many chords as we like in a circle. Chords don't have to have the same length. A chord can be long, it can be short, and if I draw one here, it's a very short chord. These three chords are all different.",
     "at": [
      "We can draw",
      "if I draw one here",
-     "it's a very short chord"
+     "it's a very",
+     "These three chords"
     ]
    }
   ],
@@ -134,11 +131,14 @@
     ]
    },
    {
-    "say": "So if the diameter is fourteen, the radius is half of it, seven. And if the radius is six, the diameter is twelve. Many questions give you one and use the other, so switch between them right away.",
+    "say": "So if the diameter is fourteen, the radius is half of it. Fourteen divided by two is seven. And if the radius is six, the diameter is twice that. Two times six is twelve. Many questions give you one and use the other, so switch between them right away.",
     "at": [
      "if the diameter is fourteen",
      "the radius is",
+     "Fourteen divided by two",
      "if the radius is six",
+     "the diameter is twice",
+     "Two times six",
      "Many questions give"
     ]
    }

@@ -21,42 +21,46 @@
    {
     "say": "[short pause] The radius of circle A is given, so the whole circumference is easy. Two pi r is two pi times six, which is twelve pi.",
     "at": [
-     "Two pi r is two pi times six",
-     "pi times six"
+     "Two pi r is two pi times six"
     ]
    },
    {
     "say": "Let's peek at the choices. Choice number one is twelve pi. That's the whole circle, and the highlighted arc is only part of it, so it has to be less. Choice number one is out.",
     "at": [
+     "Let's peek at",
      "number one is",
      "part of it",
      "Choice number one is out"
     ]
    },
    {
-    "say": "Sharp-eyed students cross out choice number four too. Six pi is exactly half the circle. For that, the angle at A, between the lines to B and to C, would have to be one hundred eighty. But connect the three centers, and that angle is an angle of triangle A B C. An angle of a triangle is less than one hundred eighty. So choice number four is out too.",
+    "say": "We can also cross out choice number four, six pi. Six pi is exactly half the circle. Let's connect the three centers. The highlighted arc's angle at A is three hundred sixty minus the triangle's angle at A. For the arc to be exactly half, that triangle angle would have to be one hundred eighty. But an angle of a triangle is always less than one hundred eighty. So the highlighted arc is more than half, and choice number four is out too.",
     "at": [
-     "number four too",
-     "A, between the",
-     "connect the three centers",
-     "that angle is",
-     "So choice number four"
+     "number four, six",
+     "Connect the three centers",
+     "The highlighted arc's",
+     "would have to be one hundred eighty",
+     "But an angle",
+     "and choice number four is out too"
     ]
    },
    {
-    "say": "Choice number two and choice number three can't be split with a quick idea, so we have to solve. But if you're out of time, guess one of the two. That's a one in two chance instead of one in four.",
+    "say": "To choose between choice number two and choice number three, let's find the angle. If you're ever out of time at this point, guess one of the two. That's a one in two chance instead of one in four.",
     "at": [
      "number two and",
-     "number three can't",
-     "But if you're"
+     "number three, let's",
+     "time at this"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "[short pause] Let's put in the givens. The radius of circle A is six, so we write six and six on its two radii. Circle B, fourteen and fourteen. Circle C, fifteen and fifteen.",
+    "say": "[short pause] Here are the three circles again, bigger. Let's put in the givens. The radius of circle A is six, so we write six and six on its two radii. Circle B, fourteen and fourteen. Circle C, fifteen and fifteen.",
     "at": [
-     "the givens. The",
+     "Here are the three circles again",
+     "Let's put in the givens",
+     "The radius of",
      "we write six and six",
-     "on its two",
      "Circle B, fourteen",
      "Circle C, fifteen"
     ]
@@ -66,36 +70,64 @@
     "at": [
      "The circles touch",
      "So A B is six plus fourteen",
-     "plus fourteen, twenty"
+     "A C is six plus fifteen",
+     "And B C is fourteen plus",
+     "plus fifteen, twenty-nine"
     ]
    },
    {
-    "say": "Twenty, twenty-one, twenty-nine. We need the angle at A, so let's check Pythagoras, to see if it's a right angle. Twenty squared is four hundred, and twenty-one squared is four hundred forty-one. Together, eight hundred forty-one. And twenty-nine squared? It's twenty-nine times thirty, minus twenty-nine. Twenty-nine times thirty is eight hundred seventy, and eight hundred seventy minus twenty-nine is eight hundred forty-one. The same, so it's a Pythagorean triple.",
+    "say": "Twenty, twenty-one, twenty-nine. We need the angle at A, so let's check Pythagoras, to see if it's a right angle. Twenty squared is four hundred. Twenty-one squared is four hundred forty-one. Together, eight hundred forty-one.",
     "at": [
-     "Together, eight hundred forty-one",
-     "It's twenty-nine times"
+     "let's check Pythagoras",
+     "if it's a",
+     "Twenty squared is four hundred",
+     "Twenty-one squared is",
+     "Together, eight hundred forty-one"
+    ]
+   },
+   {
+    "say": "And twenty-nine squared? It's twenty-nine times thirty, minus twenty-nine. Twenty-nine times thirty is eight hundred seventy. Eight hundred seventy minus twenty-nine is eight hundred forty-one. The same, so it's a Pythagorean triple.",
+    "at": [
+     "It's twenty-nine times",
+     "Twenty-nine times thirty is eight",
+     "Eight hundred seventy minus twenty-nine",
+     "is eight hundred forty-one"
     ]
    },
    {
     "say": "B C, twenty-nine, is the hypotenuse, so the angle across from it, the angle at A, is ninety degrees.",
     "at": [
-     "the angle at A, is ninety"
+     "the angle at A, is ninety",
+     "is ninety degrees"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[short pause] Now let's look only at circle A. The angle at A is ninety degrees. So the arc we don't need, inside that angle, is ninety out of three hundred sixty. That's a quarter of the circle.",
+    "at": [
+     "Now let's look only at circle A",
+     "The angle at",
+     "So the arc we don't need",
+     "ninety out of",
+     "That's a quarter of the circle"
     ]
    },
    {
-    "say": "So the arc we don't need, inside that angle, is ninety out of three hundred sixty. That's a quarter of the circle. And the highlighted arc is the rest, three quarters of the circumference.",
+    "say": "And the highlighted arc is the rest, three quarters of the circumference.",
     "at": [
-     "don't need, inside",
-     "is ninety out of three hundred sixty",
-     "That's a quarter",
+     "the highlighted arc is the rest",
      "three quarters of the circumference"
     ]
    },
    {
-    "say": "Three quarters of twelve pi. A quarter of twelve pi is three pi, so three quarters is nine pi. Choice number three is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "Three quarters of twelve pi. Let's find a quarter first. Twelve pi divided by four is three pi. So three quarters is three times three pi, which is nine pi. Choice number three is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Three quarters of",
-     "so three quarters is nine pi",
+     "Twelve pi divided by four",
+     "is three pi",
+     "So three quarters is three",
+     "times three pi",
      "Choice number three is our answer"
     ]
    }

@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "Angle A B O is the angle marked x, at B, between B A and the radius B O. [short pause] There are two ways to solve this, a math way and a shorter psychometric way. Let's start with the math way.",
+    "say": "Angle A B O is the angle marked x, at B, between B A and the radius B O. [short pause] We'll solve it in two different ways. Let's start with the math way.",
     "at": [
      "Angle A B O is the angle marked x",
      "the angle marked"
@@ -29,21 +29,26 @@
     "say": "Remember, a central angle is twice the inscribed angle on the same arc. So angle B O C is two times fifty-six, which is one hundred twelve.",
     "at": [
      "So angle B O C is two times",
-     "is two times"
+     "two times fifty-six",
+     "one hundred twelve"
     ]
    },
    {
     "say": "Now look at triangle B O C. O B and O C are both radii, so they're equal, and the triangle is isosceles. This time the top angle is one hundred twelve, not sixty, so it isn't equilateral.",
     "at": [
      "Now look at triangle B O C",
-     "O B and"
+     "O B and O C are both radii",
+     "equal, and the"
     ]
    },
    {
     "say": "The two base angles share one hundred eighty minus one hundred twelve, which is sixty-eight. Half of sixty-eight is thirty-four. So angle O B C is thirty-four, and so is angle O C B.",
     "at": [
+     "The two base angles share",
+     "one hundred eighty",
      "Half of sixty-eight",
-     "So angle O"
+     "So angle O B C is thirty-four",
+     "is thirty-four, and"
     ]
    },
    {
@@ -66,26 +71,32 @@
    {
     "say": "The top angle is fifty-six. So the angles at B and C share one hundred eighty minus fifty-six, which is one hundred twenty-four. Half of one hundred twenty-four is sixty-two. So the whole angle A B C is sixty-two.",
     "at": [
+     "So the angles at B and C share",
+     "eighty minus fifty-six",
      "Half of one hundred twenty-four",
-     "So the whole"
+     "So the whole angle A B C",
+     "B C is"
     ]
    },
    {
-    "say": "The whole angle at B is sixty-two, and its lower part, O B C, is thirty-four. So x is what's left, sixty-two minus thirty-four, which is twenty-eight. Choice number one is our answer. Notice that sixty-two, choice number three, is the whole angle, not x.",
+    "say": "Let's look closely at the angle at B. The whole angle is sixty-two. The part next to B C, angle O B C, is thirty-four. So x is what's left. Sixty-two minus thirty-four is twenty-eight. Choice number one is our answer. Notice that sixty-two, choice number three, is the whole angle, not x.",
     "at": [
+     "Let's look closely at the angle at B",
+     "The whole angle",
      "So x is what's left",
-     "sixty-two minus thirty-four",
+     "Sixty-two minus thirty-four",
      "Choice number one is our answer",
+     "answer. Notice that",
      "choice number three"
     ]
    }
   ],
   [
    {
-    "say": "[pause] The math solution was quite short. Now the psychometric solution. It uses symmetry and a helper line.",
+    "say": "[pause] Now let's solve it by Understanding, with symmetry. We add one helper line, the radius O A. Then we can use equal radii and symmetry, instead of finding the whole angle at B.",
     "at": [
-     "Now the psychometric solution",
-     "It uses symmetry"
+     "Now let's solve it by Understanding",
+     "Understanding, with symmetry"
     ]
    },
    {
@@ -96,20 +107,27 @@
     ]
    },
    {
-    "say": "Triangle A B C is isosceles, and an isosceles triangle is symmetric. So the radius O A cuts the angle at A into two equal parts. Fifty-six divided by two is twenty-eight, so we get twenty-eight and twenty-eight.",
+    "say": "Now fold the figure along the line through A and the midpoint of B C. The fold swaps B and C. A B is equal to A C, so A stays where it is. And O B is equal to O C, so the center O is on that fold line too. So the radius O A lies right on the fold.",
     "at": [
-     "Fifty-six divided by two",
-     "twenty-eight, so we"
+     "fold the figure along the line",
+     "midpoint of B"
     ]
    },
-   "We don't need to prove it. This isn't a school math exam. It's an easy question early in the section, and none of the choices says the answer can't be found. So we can trust the symmetry.",
    {
-    "say": "Now look at triangle A O B. O A and O B are both radii, so it's isosceles too, and its base angles are equal. So x equals angle O A B, which is twenty-eight. Choice number one again. This way is shorter, with fewer calculations. [pause] Okay. I'll see you in the next question.",
+    "say": "The fold also swaps the two halves of the angle at A. So O A cuts the angle at A into two equal parts. Fifty-six divided by two is twenty-eight, so we get twenty-eight and twenty-eight.",
+    "at": [
+     "Fifty-six divided by two",
+     "divided by two is twenty-eight",
+     "so we get"
+    ]
+   },
+   {
+    "say": "Now look at triangle A O B. O A and O B are both radii, so it's isosceles too, and its base angles are equal. So x is equal to angle O A B, which is twenty-eight. Choice number one again. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Now look at triangle A O B",
-     "O A and",
-     "So x equals angle O A B",
-     "A B, which",
+     "O A and O B are both radii",
+     "isosceles too, and",
+     "which is twenty-eight",
      "Choice number one again"
     ]
    }

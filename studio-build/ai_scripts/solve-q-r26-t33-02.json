@@ -15,22 +15,42 @@
     "say": "Inscribed in the triangle means the circle sits inside it and touches all three sides. So every side of the triangle is a tangent to the circle. [short pause] We'll use the tangent rules, and at the end there's a short formula too.",
     "at": [
      "means the circle",
-     "touches all three sides",
-     "So every side"
+     "rules, and at"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[short pause] Let's start with the math way. Here's the triangle again, bigger. First the third side, the hypotenuse. By Pythagoras, its square is the two legs squared, added together. Eight squared is sixty-four. Fifteen squared is two hundred twenty-five. Together that's two hundred eighty-nine.",
+    "at": [
+     "Here's the triangle again",
+     "First the third",
+     "Eight squared is sixty-four",
+     "Fifteen squared is",
+     "Together that"
     ]
    },
    {
-    "say": "[short pause] First the third side, the hypotenuse. By Pythagoras, its square is the two legs squared, added together. Eight squared is sixty-four, fifteen squared is two hundred twenty-five, and together that's two hundred eighty-nine. Eight, fifteen, seventeen is a Pythagorean triple, and seventeen squared really is two hundred eighty-nine. So the hypotenuse is seventeen.",
+    "say": "Eight, fifteen, seventeen is a Pythagorean triple, and seventeen squared really is two hundred eighty-nine. So the hypotenuse is seventeen.",
     "at": [
-     "First the third side",
-     "By Pythagoras, its"
+     "Eight, fifteen, seventeen",
+     "So the hypotenuse is seventeen",
+     "is seventeen"
     ]
    },
    {
-    "say": "Now the tangent rule. The sides are tangents, so I draw the radii to the two legs. Each radius is perpendicular to its leg. With the right angle of the triangle, we get a little square, r by r, in the corner.",
+    "say": "Now the tangent rule. The sides are tangents, so I draw the radii to the two legs. Each radius is perpendicular to its leg.",
     "at": [
+     "The sides are",
      "so I draw the radii",
-     "to the two"
+     "Each radius is"
+    ]
+   },
+   {
+    "say": "So the little corner shape has three right angles, and its fourth angle is a right angle too. Its two sides from the center are radii, so both are r. A rectangle with two equal sides next to each other is a square. So it's a square, r by r, in the corner.",
+    "at": [
+     "Its two sides from",
+     "center are radii"
     ]
    },
    {
@@ -41,7 +61,7 @@
     ]
    },
    {
-    "say": "Now the second rule. Two tangents from the same point are equal. From the top corner come two tangents, so the top piece of the hypotenuse is also eight minus r. From the bottom corner on the right, the other piece is fifteen minus r.",
+    "say": "Now let's use the second rule. Two tangents from the same point are equal. From the top corner come two tangents, so the top piece of the hypotenuse is also eight minus r. From the bottom corner on the right, the other piece is fifteen minus r.",
     "at": [
      "From the top corner",
      "two tangents, so"
@@ -55,36 +75,67 @@
     ]
    },
    {
-    "say": "Eight plus fifteen is twenty-three, so twenty-three minus two r is seventeen. We want r alone, so we move two r to one side and the numbers to the other. Then two r is twenty-three minus seventeen, which is six, and r is three. Choice number three is our answer.",
+    "say": "Eight plus fifteen is twenty-three, so twenty-three minus two r is seventeen. We want r alone, without the minus. So let's add two r to both sides. Twenty-three is equal to seventeen plus two r.",
     "at": [
-     "Eight plus fifteen is twenty-three",
-     "so twenty-three minus",
+     "so twenty-three minus two r",
+     "We want r",
+     "Twenty-three is equal to",
+     "plus two r"
+    ]
+   },
+   {
+    "say": "Now subtract seventeen from both sides. Six is equal to two r. Then divide both sides by two, and r is three. Choice number three is our answer.",
+    "at": [
+     "Six is equal to two r",
+     "r. Then divide",
+     "and r is three",
      "Choice number three is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] The same equation in one line gives a shortcut for a right triangle. The radius of the circle inside is leg plus leg minus the hypotenuse, over two.",
+    "say": "[pause] Now the math way again, with a short formula. It works for right triangles. Call the legs a and b, and the hypotenuse c. The radius of the circle inside is a plus b minus c, all over two.",
     "at": [
-     "The same equation in one line",
-     "line gives a"
+     "Now the math way again",
+     "with a short",
+     "Call the legs a and b",
+     "b, and the",
+     "all over two"
     ]
    },
    {
-    "say": "Eight plus fifteen minus seventeen is six, and half of six is three. Careful, six is in the choices too. That's someone who forgot to divide by two.",
+    "say": "Why does it work? It's our equation again. The leg pieces, a minus r and b minus r, add up to c. So two r is a plus b minus c.",
     "at": [
-     "Eight plus fifteen minus seventeen",
+     "It's our equation again",
+     "So two r"
+    ]
+   },
+   {
+    "say": "Here, eight plus fifteen minus seventeen is six, and half of six is three. Careful, six is in the choices too. That's someone who forgot to divide by two.",
+    "at": [
+     "eight plus fifteen minus seventeen",
      "is six, and",
+     "half of six is three",
+     "Careful, six is",
      "someone who forgot to divide by two"
     ]
    },
    {
-    "say": "And eight and a half is half of the hypotenuse. Remember, in a right triangle the hypotenuse is a diameter of the circle around the triangle. So eight and a half is the radius of the circle around it, not inside it. The answer is three, choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "Let's try it on another right triangle, three, four, five. Three plus four minus five is two, and half of two is one. So the circle inside that triangle has radius one.",
+    "at": [
+     "Three plus four minus five",
+     "is two, and",
+     "half of two is one",
+     "So the circle"
+    ]
+   },
+   {
+    "say": "And eight and a half is half of the hypotenuse. Remember, in a right triangle the hypotenuse is a diameter of the circle around the triangle, the one through its three corners. So eight and a half is the radius of that outside circle, not of the circle inside. The answer is three, choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
      "And eight and a half",
      "is half of",
-     "not inside it",
+     "not of the circle inside",
      "three, choice number three"
     ]
    }

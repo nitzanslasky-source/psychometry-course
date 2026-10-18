@@ -12,11 +12,10 @@
     "pause": 0.5
    },
    {
-    "say": "We're looking for the one statement that is surely not true. [short pause] So we go statement by statement. A statement that's always true, or even possible, is out, and we hope to be left with one.",
+    "say": "We need the false statement. [short pause] So let's check each statement against the givens. Each true one is crossed out.",
     "at": [
-     "one statement that",
-     "So we go statement by statement",
-     "A statement that's"
+     "So let's check each statement",
+     "against the givens"
     ]
    },
    {
@@ -67,11 +66,14 @@
     ]
    },
    {
-    "say": "Together, the four angles make the straight angle A O E, one hundred eighty degrees. So four x is one hundred eighty. To divide by four, you can halve twice. Half of one hundred eighty is ninety, and half of ninety is forty-five. So x really is forty-five, and choice number two is out.",
+    "say": "Together, the four angles make the straight angle A O E, one hundred eighty degrees. So four x is one hundred eighty. To divide by four, we can halve twice. Half of one hundred eighty is ninety. And half of ninety is forty-five. So x really is forty-five, and choice number two is out.",
     "at": [
      "Together, the four",
      "So four x is",
      "To divide by",
+     "Half of one hundred eighty",
+     "And half of ninety",
+     "So x really is",
      "and choice number two is out"
     ]
    }
@@ -96,40 +98,50 @@
     ]
    },
    {
-    "say": "On the exam, we're done. Three statements are out, so you mark choice number four and move on. There's no time to check it.",
+    "say": "On the exam, we're done. Three statements are true, so they're out. Only choice number four is left, so you mark it and move on. No need to check the last choice once only one remains.",
     "at": [
-     "so you mark choice number four"
+     "Only choice number four is left"
     ]
    }
   ],
   [
    {
-    "say": "[pause] But we're in a lesson, so let's check it. Is A C five root three? Look at triangle A O C. We need O C, so let's draw it, from O to C.",
+    "say": "[pause] But we're in a lesson, so let's check it. Statement four says A C is five root three. Look at triangle A O C. We need O C, so let's draw it, from O to C. Here's the triangle, taken out and bigger.",
     "at": [
      "so let's check it",
-     "Is A C",
-     "let's draw it"
+     "Statement four says",
+     "let's draw it",
+     "Here's the triangle, taken out"
     ]
    },
    {
-    "say": "A O is a radius, five. O C is a radius too, so it's also five. And angle A O C is made of two of our equal central angles, so it's forty-five plus forty-five, which is ninety.",
+    "say": "A O is a radius, and it's five. O C is a radius too, so it's also five. And angle A O C is made of two of our equal central angles. Forty-five plus forty-five is ninety.",
     "at": [
      "A O is a radius",
-     "O C is"
+     "and it's five",
+     "O C is a radius too",
+     "so it's also five",
+     "is made of",
+     "Forty-five plus forty-five",
+     "is ninety"
     ]
    },
    {
     "say": "So triangle A O C is a right triangle with two equal legs. That's the silver triangle, forty-five, forty-five, ninety. In the silver triangle, the hypotenuse is the leg times root two.",
     "at": [
+     "So triangle A",
      "That's the silver triangle",
-     "In the silver"
+     "forty-five, ninety. In",
+     "the hypotenuse is the leg times root two",
+     "times root two"
     ]
    },
    {
     "say": "So A C is five root two, not five root three. Root three belongs to the gold triangle. So statement four is the one that's not true. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
      "So A C is five root two",
-     "root two, not",
+     "not five root three",
+     "Root three belongs",
      "Choice number four is our answer"
     ]
    }

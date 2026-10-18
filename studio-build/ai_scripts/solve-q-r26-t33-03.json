@@ -13,10 +13,17 @@
    },
    "We're not given any lengths, only how much the circumference grows. And we're asked how much the area grows. [short pause] We'll solve it with the rule for growing lengths, and then check it with easy numbers.",
    {
-    "say": "[short pause] We'll meet percent properly later. For now, all we need is this. A hundred percent is the whole thing, fifty percent is half of it, and twenty-five percent is a quarter of it. So fifty percent more means half more, and the circumference is multiplied by one and a half, three over two.",
+    "say": "[short pause] Let's start by understanding. We'll meet percent properly later. For now, all we need is this. A percent change is always compared with the old amount. The old amount is a hundred percent, the whole thing. Fifty percent is half of it, and twenty-five percent is a quarter of it.",
+    "at": [
+     "The old amount is a hundred percent",
+     "hundred percent, the"
+    ]
+   },
+   {
+    "say": "So fifty percent more means the old circumference plus half of it. The circumference is multiplied by one and a half, three over two.",
     "at": [
      "So fifty percent more",
-     "half more, and"
+     "the old circumference"
     ]
    },
    {
@@ -30,20 +37,35 @@
     "say": "Remember from the square lesson. When every length is multiplied by some number, the area is multiplied by that number squared. Three over two, squared, is nine over four, which is two and a quarter. So the new area is two and a quarter times the old area.",
     "at": [
      "Three over two, squared",
-     "nine over four"
+     "nine over four",
+     "So the new area is",
+     "two and a quarter times"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Be careful here. Compared with the old area, the new area is two and a quarter old areas. That's two hundred twenty-five percent, choice number three. But that's the whole new area, not the increase.",
+    "at": [
+     "Careful",
+     "Compared with the",
+     "That's two hundred twenty-five",
+     "percent, choice number three",
+     "But that's the"
     ]
    },
    {
-    "say": "Careful, two and a quarter times is two hundred twenty-five percent, and that's choice number three. But that's the whole new area, not the increase.",
+    "say": "The increase is the new area minus the old one. Two and a quarter minus one is one and a quarter. So the area grew by one whole old area, plus a quarter of the old area.",
     "at": [
-     "and that's choice number three"
+     "Two and a quarter minus one",
+     "one is one"
     ]
    },
    {
-    "say": "The increase is the new area minus the old one. Two and a quarter minus one is one and a quarter. One whole is a hundred percent, and a quarter is twenty-five percent, so the area increases by a hundred twenty-five percent. Choice number four is our answer.",
+    "say": "One old area is a hundred percent, and a quarter of it is twenty-five percent. A hundred plus twenty-five is a hundred twenty-five. So the area increases by a hundred twenty-five percent. Choice number four is our answer.",
     "at": [
-     "The increase is the new area",
-     "area minus the",
+     "A hundred plus twenty-five",
+     "a hundred twenty-five",
      "Choice number four is our answer"
     ]
    },
@@ -56,36 +78,72 @@
   ],
   [
    {
-    "say": "[pause] Now let's check by plugging in easy numbers. The question doesn't give a radius, so the answer is the same for every circle. Let's pick a radius of two, because it's small and easy.",
+    "say": "[pause] Now let's check it by plugging in numbers. The question doesn't give a radius, so it promises the same answer for every circle. So a circle that we choose must give it too. Let's pick a radius of two, because it's small and easy.",
     "at": [
-     "plugging in easy",
+     "by plugging in",
      "Let's pick a radius of two",
      "two, because it's"
     ]
    },
    {
-    "say": "With a radius of two, the circumference is two pi times two, four pi. Fifty percent more is half more. Half of four pi is two pi, so the new circumference is six pi. Six pi is two pi times three, so the new radius is three.",
+    "say": "With a radius of two, the circumference is two pi times two. That's four pi.",
     "at": [
      "With a radius of two",
      "the circumference is",
-     "Half of four",
-     "circumference is six"
+     "That's four pi"
     ]
    },
    {
-    "say": "Now the areas. Pi times two squared is four pi, and pi times three squared is nine pi. So the area went up by five pi.",
+    "say": "Fifty percent more is half more. Half of four pi is two pi. So the new circumference is four pi plus two pi, six pi.",
+    "at": [
+     "Fifty percent more",
+     "Half of four pi is two pi",
+     "So the new circumference is",
+     "four pi plus"
+    ]
+   },
+   {
+    "say": "Six pi is two pi times three, so the new radius is three.",
+    "at": [
+     "so the new radius is three",
+     "the new radius is three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the areas. The old area is pi times two squared. That's four pi. The new area is pi times three squared. That's nine pi.",
     "at": [
      "Now the areas",
-     "Pi times two",
-     "So the area went up",
-     "by five pi"
+     "The old area",
+     "That's four pi",
+     "That's four pi",
+     "times three squared",
+     "That's nine pi",
+     "That's nine pi"
     ]
    },
    {
-    "say": "Out of the old four pi, that's five pi over four pi, five quarters, which is one and a quarter, a hundred twenty-five percent. The same answer, choice number four. [pause] Okay. I'll see you in the next question.",
+    "say": "So the area went up by nine pi minus four pi, which is five pi.",
     "at": [
-     "five pi over four pi",
-     "five quarters, which",
+     "So the area went up",
+     "by nine pi"
+    ]
+   },
+   {
+    "say": "We compare the increase with the old area, four pi. Four pi is a hundred percent. Five pi is four pi, plus one more pi.",
+    "at": [
+     "Five pi is four pi",
+     "plus one more"
+    ]
+   },
+   {
+    "say": "And one pi is a quarter of four pi, so it's twenty-five percent. So the increase is a hundred percent plus twenty-five percent, a hundred twenty-five percent. The same answer, choice number four. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "And one pi is a quarter",
+     "quarter of four",
+     "So the increase is",
+     "hundred percent plus",
      "The same answer, choice number four"
     ]
    }

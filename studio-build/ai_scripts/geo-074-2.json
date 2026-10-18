@@ -7,12 +7,12 @@
   ],
   [
    {
-    "say": "Now the angles in a circle. The first one is the inscribed angle. An inscribed angle is an angle between two chords. Let's take a point C on the circle, and draw two chords from it, to A and to B.",
+    "say": "Now the angles in a circle. The first one is the inscribed angle. An inscribed angle is made by two chords that start at the same point on the circle. Let's take a point C on the circle, and draw two chords from it, to A and to B.",
     "at": [
      "Now the angles in a circle",
      "The first one",
      "Let's take a point C",
-     "on the circle",
+     "on the circle, and",
      "draw two chords from it"
     ]
    },
@@ -46,9 +46,9 @@
   ],
   [
    {
-    "say": "Central angle. You can guess this one from the name. Its vertex is at the center of the circle, at O. And it's between two radii. Here's a radius, and here's a radius, and the angle between them is a central angle.",
+    "say": "Now let's look at a central angle. You can guess this one from the name. Its vertex is at the center of the circle, at O. And it's between two radii. Here's a radius, and here's a radius, and the angle between them is a central angle.",
     "at": [
-     "Central angle",
+     "a central angle",
      "You can guess",
      "Here's a radius",
      "a radius, and the",
@@ -67,9 +67,9 @@
   ],
   [
    {
-    "say": "Arc. An arc is a part of the circle, a piece of the round line. Let's mark a piece of the circle. That's an arc. An arc can be short. It can be longer. And it can be very long, almost the whole circle.",
+    "say": "An arc is a part of the circle, a piece of the round line. Let's mark a piece of the circle. That's an arc. An arc can be short. It can be longer. And it can be very long, almost the whole circle.",
     "at": [
-     "a part of",
+     "part of the",
      "Let's mark a piece of the circle",
      "the circle. That's",
      "It can be longer",
@@ -114,10 +114,10 @@
     ]
    },
    {
-    "say": "We can also close off the same arc with an inscribed angle. Take a point C on the circle, and draw two chords to A and to B. If I stand at C, the chords are tall walls, and again, the part of the circle I can see is only this arc.",
+    "say": "We can also close off the same arc with an inscribed angle. Take a point C on the other side of the circle, on the long arc, away from the teal arc. Draw two chords from C to A and to B. If I stand at C, the chords are tall walls, and again, the part of the circle I can see is only this arc.",
     "at": [
      "Take a point C",
-     "the circle, and",
+     "the other side",
      "the chords are tall walls",
      "and again, the"
     ]

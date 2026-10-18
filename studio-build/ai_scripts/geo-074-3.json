@@ -82,37 +82,41 @@
     ]
    },
    {
-    "say": "Don't mix it up with a sector. A sector goes all the way to the center, with two radii. A segment is cut off by a chord, and it doesn't reach the center. A segment can be small, or big, more than half the circle. On the exam it usually appears as a shaded region between a chord and an arc.",
+    "say": "Don't mix it up with a sector. A sector is closed off by two radii and an arc. A segment is closed off by one chord and an arc. This small segment leaves the center O outside it. But a big segment, more than half the circle, can have O inside it. On the exam a segment usually appears as a shaded region between a chord and an arc.",
     "at": [
      "Don't mix it",
-     "A sector goes all the way",
-     "way to the",
-     "A segment is cut off",
-     "by a chord",
-     "or big",
-     "On the exam"
+     "A sector is closed off",
+     "by two radii",
+     "A segment is closed off",
+     "This small segment",
+     "But a big segment",
+     "than half the"
     ]
    }
   ],
   [
    {
-    "say": "Let's put it all together on one circle. Try to name each line before I do. O A goes from the center to the circle, so it's a radius. B C goes through the center, so it's a diameter. And it's also a chord, the longest one.",
+    "say": "Let's put it all together on one circle. Try to name each line before I do. Look at O A first. [short pause] O A goes from the center to the circle, so it's a radius. Now look at B C. [short pause] B C goes through the center, so it's a diameter. And it's also a chord, the longest one.",
     "at": [
      "Let's put it all together",
      "on one circle",
+     "Look at O A first",
      "O A goes from the center",
      "center to the",
+     "Now look at B C",
      "B C goes through the center",
      "center, so it's"
     ]
    },
    {
-    "say": "D E joins two points on the circle, but it doesn't go through the center, so it's just a chord. And the line at T touches the circle at one point only, so it's a tangent.",
+    "say": "Now look at D E. [short pause] D E joins two points on the circle, but it doesn't go through the center, so it's just a chord. And now the line at T. [short pause] It touches the circle at one point only, so it's a tangent.",
     "at": [
+     "Now look at D E",
      "D E joins two points",
      "on the circle",
-     "the line at T touches",
-     "the circle at"
+     "And now the line at T",
+     "It touches the circle",
+     "one point only"
     ]
    },
    "That's it for the words we use in a circle. In the next lesson we start on the rules, the angles in a circle, and what we know about them. [pause] Okay. I'll see you in the next video."

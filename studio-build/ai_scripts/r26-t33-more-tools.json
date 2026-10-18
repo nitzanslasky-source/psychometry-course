@@ -3,13 +3,13 @@
  "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "More circle tools. These two tools show up in the hardest circle questions, near the end of the section. And right after this lesson, two questions teach two more tools."
+   "Here are two more circle tools. They come up in some of the harder circle questions. And right after this lesson, two questions teach two more tools."
   ],
   [
    {
-    "say": "The first tool. Two equal circles, and each one passes through the center of the other. Here's a circle with center O, and an equal circle with center P. P is on the first circle, and O is on the second one.",
+    "say": "First, let's look at two equal circles, where each one passes through the center of the other. Here's a circle with center O, and an equal circle with center P. P is on the first circle, and O is on the second one.",
     "at": [
-     "equal circles, and",
+     "two equal circles",
      "Here's a circle with center O",
      "O, and an"
     ]
@@ -24,11 +24,11 @@
     ]
    },
    {
-    "say": "O A and O B are radii of the first circle. P A and P B are radii of the second circle. And O P? P is on the first circle, so O P is also a radius. The circles are equal, so all five lines have the same length, r.",
+    "say": "O A and O B are radii of the first circle. P A and P B are radii of the second circle. And O P? P is on the first circle, so O P is also a radius. The circles are equal, so all five segments have the same length, r.",
     "at": [
      "so O P is also a radius",
      "a radius. The",
-     "all five lines",
+     "all five segments",
      "same length, r"
     ]
    },
@@ -46,6 +46,13 @@
      "hundred twenty degrees",
      "is a third of",
      "circle, because three"
+    ]
+   },
+   {
+    "say": "This needs both conditions, equal circles, and each center on the other circle. Equal circles that are farther apart give a different angle, like the ninety degrees in the union question.",
+    "at": [
+     "This needs both conditions",
+     "circles, and each"
     ]
    }
   ],
@@ -81,45 +88,81 @@
   ],
   [
    {
-    "say": "Let's see it in numbers. Say the radius is six. The whole circle is pi times six squared, thirty-six pi. The sector A O B is a third of it, so it's twelve pi.",
+    "say": "Let's see it in numbers. Say the radius is six. The whole circle is pi times six squared, thirty-six pi. The sector A O B is a third of it. Thirty-six pi divided by three is twelve pi.",
     "at": [
      "Say the radius is six",
-     "The whole circle",
+     "The whole circle is pi",
+     "times six squared",
      "The sector A O B",
      "is a third",
-     "so it's twelve pi"
+     "Thirty-six pi divided by three",
+     "is twelve pi"
     ]
    },
    {
-    "say": "Now triangle A O B. The four radii make a rhombus, O A P B. Let's take it out. O P cuts it into our two equilateral triangles. Remember, the area of every equilateral triangle is a squared, times root three, over four. Six squared is thirty-six, and thirty-six over four is nine, so each one is nine root three.",
+    "say": "Now triangle A O B. The four radii make a rhombus, O A P B. Let's take it out. O P cuts it into our two equilateral triangles. Remember, the area of every equilateral triangle is a squared, times root three, over four. Here a is six. Six squared is thirty-six, and thirty-six over four is nine. So each one is nine root three.",
     "at": [
      "Now triangle A",
      "make a rhombus",
      "Let's take it out",
      "O P cuts it",
-     "our two equilateral"
+     "our two equilateral",
+     "Remember, the area of every",
+     "equilateral triangle is",
+     "Six squared is thirty-six",
+     "thirty-six over four",
+     "So each one is nine root three",
+     "So each one is nine root three"
     ]
    },
    {
     "say": "Now cut the same rhombus the other way, with the chord A B. A diagonal cuts a rhombus into two equal halves, and triangle A O B is one of them. So it's half of the rhombus, the same as one equilateral triangle, nine root three.",
     "at": [
+     "rhombus the other",
      "with the chord A B",
-     "A diagonal cuts"
-    ]
-   },
-   {
-    "say": "So one piece is twelve pi minus nine root three. The shared region is two pieces, twenty-four pi minus eighteen root three.",
-    "at": [
-     "So one piece",
-     "pi minus nine",
-     "The shared region is two pieces",
-     "pieces, twenty-four pi"
+     "into two equal"
     ]
    }
   ],
   [
    {
-    "say": "The second tool is a ring. Two circles with the same center, O, and the ring between them. The ring is the big circle minus the small circle, pi R squared minus pi r squared.",
+    "say": "So one piece is twelve pi minus nine root three. The shared region is two pieces, so we double the whole difference.",
+    "at": [
+     "So one piece",
+     "twelve pi minus nine root three",
+     "twelve pi minus nine root three",
+     "The shared region is two pieces",
+     "so we double the whole"
+    ]
+   },
+   {
+    "say": "Two times twelve pi is twenty-four pi. And two times nine root three is eighteen root three. So the shared region is twenty-four pi minus eighteen root three.",
+    "at": [
+     "Two times twelve",
+     "So the shared region is",
+     "twenty-four pi minus"
+    ]
+   },
+   {
+    "say": "Let's try one more, with a radius of two. The circle is four pi, so the sector is a third of it, four pi over three. Each equilateral triangle is two squared, times root three, over four. Four over four is one, so it's root three.",
+    "at": [
+     "so the sector is a third of it",
+     "third of it",
+     "Four over four is one",
+     "so it's root"
+    ]
+   },
+   {
+    "say": "So the shared region is two times, four pi over three minus root three. That's eight pi over three, minus two root three.",
+    "at": [
+     "So the shared region is two times",
+     "two times, four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The second tool is a ring. Two circles with the same center, O, and the ring between them. Circles with the same center are called concentric. The ring is the big circle minus the small circle, pi R squared minus pi r squared.",
     "at": [
      "Two circles with the same center",
      "center, O, and",
@@ -146,56 +189,76 @@
     ]
    },
    {
-    "say": "Look at the right triangle O M B. Its legs are r and h, and its hypotenuse is R. By Pythagoras, r squared plus h squared is R squared. So R squared minus r squared is h squared.",
+    "say": "Look at the right triangle O M B. Its legs are r and h, and its hypotenuse is R. By Pythagoras, r squared plus h squared is R squared. Now subtract r squared from both sides. So R squared minus r squared is h squared.",
     "at": [
      "Look at the right triangle",
      "O M B",
      "By Pythagoras",
-     "h squared is"
+     "h squared is",
+     "Now subtract r squared from both sides",
+     "So R squared"
     ]
    },
    {
-    "say": "And the ring? Pi R squared minus pi r squared is pi times, R squared minus r squared. That's pi times h squared. So the ring depends only on the chord.",
+    "say": "And the ring? Let's go back to the whole ring. Pi R squared minus pi r squared is pi times, R squared minus r squared. That's pi times h squared. So the ring depends only on the chord.",
     "at": [
-     "And the ring",
-     "Pi R squared"
+     "Let's go back to the whole ring",
+     "Pi R squared minus pi r squared is",
+     "r squared is"
     ]
    }
   ],
   [
    {
-    "say": "So if the chord is ten, then h is five, and the ring is twenty-five pi. We don't need either radius.",
+    "say": "So if the chord is ten, then h is half of it, five. And the ring is pi times five squared, twenty-five pi. We don't need either radius.",
     "at": [
      "So if the chord is ten",
-     "ten, then h"
+     "ten, then h",
+     "And the ring is pi times",
+     "times five squared"
     ]
    },
    {
-    "say": "Let's check it on rings with a chord of ten. Radii twelve and thirteen, the five, twelve, thirteen triangle. The ring is the big circle minus the small one. A hundred sixty-nine pi minus a hundred forty-four pi is twenty-five pi, just like the rule says.",
+    "say": "Let's check it on rings with a chord of ten. Radii twelve and thirteen, the five, twelve, thirteen triangle. The big circle is pi times thirteen squared, a hundred sixty-nine pi. The small one is pi times twelve squared, a hundred forty-four pi.",
     "at": [
      "Radii twelve and thirteen",
-     "five, twelve, thirteen"
+     "five, twelve, thirteen",
+     "The big circle is pi",
+     "The small one"
+    ]
+   },
+   {
+    "say": "The ring is the big circle minus the small one. A hundred sixty-nine pi minus a hundred forty-four pi is twenty-five pi, just like the rule says.",
+    "at": [
+     "A hundred sixty-nine pi minus",
+     "a hundred forty-four"
     ]
    },
    {
     "say": "Radii five and five root two, a silver triangle with legs five and five. Five root two, squared, is fifty. Fifty pi minus twenty-five pi is twenty-five pi again.",
     "at": [
      "Radii five and five root two",
-     "two, a silver"
+     "two, a silver",
+     "Five root two, squared",
+     "Fifty pi minus twenty-five pi",
+     "is twenty-five pi"
     ]
    },
    {
-    "say": "And if the small circle shrinks to a single point? Then the chord is a diameter of ten, and the ring is a whole circle with radius five, twenty-five pi. The same answer.",
+    "say": "And here's the limiting picture, where the small circle has shrunk to a single point, the center. Then the chord goes through the center, so it's a diameter of ten. The ring becomes a whole circle with radius five, twenty-five pi. The same answer.",
     "at": [
-     "shrinks to a single point",
-     "Then the chord"
+     "the limiting picture",
+     "small circle has",
+     "twenty-five pi. The same"
     ]
    },
    {
-    "say": "So when a chord of the big circle touches the small circle, the ring is pi times half the chord, squared. Now let's see the other two tools in questions. [pause] Okay. I'll see you in the next video.",
+    "say": "So when two circles have the same center, and a chord of the big circle touches the small circle, the ring is pi times half the chord, squared. Now let's see the other two tools in questions. [pause] Okay. I'll see you in the next video.",
     "at": [
-     "So when a chord",
-     "the big circle"
+     "So when two circles have the same center",
+     "the same center",
+     "the ring is pi",
+     "half the chord"
     ]
    }
   ]

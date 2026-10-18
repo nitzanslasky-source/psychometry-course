@@ -12,17 +12,19 @@
     "pause": 0.5
    },
    {
-    "say": "We'll solve it two ways, with an equation, and by plugging in the answers. [short pause] First the math way, with an equation. How do we find the shaded area? It's the area of the big circle minus the area of the small circle. We don't know either radius, so let's call the big one capital R, and the small one small r.",
+    "say": "We'll solve it in two different ways, with an equation, and by plugging in the answers. [short pause] First the math way, with an equation. How do we find the shaded area? It's the area of the big circle minus the area of the small circle. We don't know either radius, so let's call the big one capital R, and the small one small r.",
     "at": [
-     "ways, with an",
+     "two different ways",
      "First the math way",
      "How do we",
      "the area of the big circle minus",
-     "circle minus the"
+     "circle minus the",
+     "let's call the big one capital R",
+     "capital R, and"
     ]
    },
    {
-    "say": "So pi R squared minus pi r squared is sixty-five pi. Two unknowns are too many, so we write the big radius with the small one. That's easier than the other way round, because adding is easier than subtracting.",
+    "say": "So pi R squared minus pi r squared is sixty-five pi. Let's write capital R in terms of small r, so our equation has just one unknown.",
     "at": [
      "So pi R squared",
      "pi r squared is"
@@ -37,12 +39,13 @@
     ]
    },
    {
-    "say": "The big radius is half of that, two r plus ten, over two. Both terms are multiples of two, so we take out two as a common factor and cancel it. So capital R is r plus five.",
+    "say": "The big radius is half of that, two r plus ten, over two. We divide each term by two. Two r over two is r, and ten over two is five. So capital R is r plus five.",
     "at": [
      "The big radius is half",
      "of that, two",
-     "we take out two",
-     "a common factor"
+     "We divide each term by two",
+     "Two r over",
+     "So capital R is r plus five"
     ]
    }
   ],
@@ -63,17 +66,31 @@
     ]
    },
    {
-    "say": "Now we open the bracket with the first formula from expressions. A plus b, squared, is a squared plus two a b plus b squared. So r plus five, squared, is r squared, plus two times five times r, which is ten r, plus twenty-five.",
+    "say": "Now we open the bracket with the first formula from expressions. A plus b, squared, is a squared plus two a b plus b squared. So r plus five, squared, is r squared, plus two times five times r, plus twenty-five. That middle term is ten r.",
     "at": [
+     "A plus b, squared",
+     "b plus b",
      "So r plus five, squared",
-     "is r squared"
+     "is r squared",
+     "That middle term is ten r"
     ]
    },
    {
-    "say": "Then r squared minus r squared is zero, so they cancel. We're left with ten r plus twenty-five equals sixty-five. Take twenty-five off both sides, so ten r is forty, and r is four. Choice number four is our answer.",
+    "say": "So the equation is r squared plus ten r plus twenty-five, minus r squared, is equal to sixty-five.",
+    "at": [
+     "So the equation is",
+     "squared plus ten"
+    ]
+   },
+   {
+    "say": "Then r squared minus r squared is zero, so they cancel. We're left with ten r plus twenty-five is equal to sixty-five. Take twenty-five off both sides, so ten r is forty. Divide both sides by ten, and r is four. Choice number four is our answer.",
     "at": [
      "We're left with",
-     "Take twenty-five off",
+     "plus twenty-five is",
+     "Take twenty-five off both sides",
+     "so ten r",
+     "Divide both sides by ten",
+     "and r is",
      "Choice number four is our answer"
     ]
    }
@@ -89,33 +106,71 @@
     ]
    },
    {
-    "say": "Where do we start? In order, the choices are two, three, four and five, and we start in the middle. Why? If a middle value gives a shaded area that's too small, we need a bigger radius, so the smaller values are out too. If it's too big, the bigger values are out. So two tries are always enough.",
+    "say": "Where do we start? In order, the choices are two, three, four and five. Here the shaded area grows when r grows. C B stays ten, so capital R is always r plus five. And in the first way we saw that the shaded area is ten r plus twenty-five, times pi. So a bigger r always gives a bigger area.",
     "at": [
      "In order, the choices are",
-     "two, three, four"
+     "two, three, four",
+     "the shaded area is ten r plus",
+     "r plus twenty-five"
     ]
    },
    {
-    "say": "Let's try three. The small diameter is six. C B adds ten, so the big diameter is six plus ten, sixteen, and the big radius is eight. The shaded area is big minus small. Big minus small is sixty-four pi minus nine pi, fifty-five pi.",
+    "say": "So let's start with a middle choice. If it gives an area that's too small, we need a bigger r, so the smaller choices are out too. If it's too big, the bigger ones are out. With these four choices in order, and an area that grows with r, two tries are enough.",
+    "at": [
+     "So let's start with a middle choice",
+     "that's too small"
+    ]
+   },
+   {
+    "say": "Let's try three. The small diameter is two times three, six. C B adds ten, so the big diameter is six plus ten, sixteen. The big radius is half of that, eight.",
     "at": [
      "Let's try three",
-     "C B adds",
-     "Big minus small",
-     "Big minus small is"
+     "The small diameter",
+     "so the big diameter is six plus ten",
+     "six plus ten",
+     "The big radius is half of that",
+     "of that, eight"
     ]
    },
    {
-    "say": "That's not sixty-five pi, it's too small. We need a bigger shaded area, so bigger circles, and a bigger radius. So three is out, and two is out too.",
+    "say": "The big circle is pi times eight squared, sixty-four pi. The small circle is pi times three squared, nine pi. The shaded area is big minus small. Sixty-four pi minus nine pi is fifty-five pi.",
+    "at": [
+     "The big circle is pi times eight",
+     "times eight squared",
+     "The small circle is pi times three",
+     "times three squared",
+     "Sixty-four pi minus nine pi",
+     "is fifty-five pi"
+    ]
+   },
+   {
+    "say": "That's not sixty-five pi, it's too small. We need a bigger shaded area, so a bigger radius. So three is out, and two is out too.",
     "at": [
      "So three is out",
      "and two is out too"
     ]
+   }
+  ],
+  [
+   {
+    "say": "Three gave fifty-five pi, too small, so two and three are out. We need sixty-five pi. Let's try four. The small diameter is eight, so the big diameter is eight plus ten, so the big diameter is eight plus ten, eighteen. The big radius is nine.",
+    "at": [
+     "Three gave fifty-five pi",
+     "so two and three are out",
+     "so two and three are out",
+     "out. We need",
+     "Let's try four",
+     "diameter is eight",
+     "so the big diameter is eight plus ten",
+     "eight plus ten",
+     "The big radius is nine"
+    ]
    },
    {
-    "say": "We need sixty-five pi. Let's try four. The small diameter is eight, so the big diameter is eight plus ten, eighteen, and the big radius is nine. Eighty-one pi minus sixteen pi is sixty-five pi, so it fits. Choice number four is our answer again. [pause] Okay. I'll see you in the next question.",
+    "say": "The big circle is eighty-one pi, and the small circle is sixteen pi. Eighty-one pi minus sixteen pi is sixty-five pi, so it fits. Choice number four is our answer again. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "Let's try four",
-     "so the big",
+     "The big circle is eighty-one pi",
+     "the small circle is sixteen pi",
      "Eighty-one pi minus",
      "is sixty-five pi",
      "Choice number four is our answer again"

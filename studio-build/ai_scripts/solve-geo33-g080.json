@@ -20,10 +20,11 @@
     ]
    },
    {
-    "say": "[short pause] What I need to do is simply work from the data. You can ignore the square centimeters and the centimeters. Just read it as, the area is four times the circumference.",
+    "say": "[short pause] Let's start with the math way. The question compares the numbers, in the units it gives. The area is in square centimeters, and the circumference is in centimeters. So we compare those two numbers. The area's number is four times the circumference's number.",
     "at": [
-     "is simply work",
-     "the area is four times"
+     "The question compares",
+     "The area is",
+     "four times the circumference"
     ]
    },
    {
@@ -69,11 +70,14 @@
   ],
   [
    {
-    "say": "In the exam you'd mark it and move on. Here, let's really check that the area comes out four times the circumference, like the given says. With a radius of eight, the area is pi times eight squared, sixty-four pi. The circumference is two pi times eight, sixteen pi.",
+    "say": "In the exam you'd mark it and move on. Here, let's really check that the area comes out four times the circumference, like the given says. With a radius of eight, the area is pi times eight squared. That's sixty-four pi. The circumference is two pi times eight. That's sixteen pi.",
     "at": [
      "mark it and",
-     "Here, let's really check",
-     "the area comes"
+     "Here, let's really",
+     "radius of eight",
+     "That's sixty-four pi",
+     "The circumference is",
+     "That's sixteen pi"
     ]
    },
    {
@@ -86,18 +90,28 @@
   ],
   [
    {
-    "say": "[pause] There's also a short way, by understanding. The given tells us how many times bigger the area is, so let's divide the area by the circumference. Pi r squared over two pi r. The pi cancels, one r cancels, and we're left with r over two.",
+    "say": "[pause] Now let's solve it a second way, by understanding. The given tells us how many times bigger the area's number is. So let's divide the area by the circumference. That's pi r squared over two pi r.",
     "at": [
-     "way, by understanding",
-     "Divide the area by the circumference",
-     "Pi r squared"
+     "a second way",
+     "That's pi r squared over two pi r",
+     "two pi r"
     ]
    },
    {
-    "say": "Here the area is four times the circumference, so r over two is four, and r is eight. Choice number one again. [pause] Okay. I'll see you in the next question.",
+    "say": "The pi on top and the pi on the bottom cancel. That leaves r squared over two r. One r cancels too, because r isn't zero. So we're left with r over two.",
     "at": [
+     "That leaves r squared over two r",
+     "One r cancels",
+     "So we're left with r over two"
+    ]
+   },
+   {
+    "say": "Here the area is four times the circumference, so r over two is four. So r is two times four, which is eight. Choice number one again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "four times the",
      "so r over two is four",
-     "four, and r",
+     "So r is two times four",
+     "four, which is",
      "Choice number one again"
     ]
    }

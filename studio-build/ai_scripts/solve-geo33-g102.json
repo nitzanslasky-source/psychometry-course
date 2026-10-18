@@ -12,46 +12,53 @@
     "pause": 0.5
    },
    {
-    "say": "There are letters everywhere, so we'll solve it two ways, the math way, and then by plugging in numbers. [short pause] The math way first. We need an arc length, and for that we first need a central angle.",
+    "say": "There are letters everywhere, so we'll solve it in two different ways, the math way, and then by plugging in numbers. [short pause] Let's start with the math way. We need an arc length, and for that we first need a central angle.",
     "at": [
-     "The math way first",
+     "Let's start with the math way",
      "We need an"
     ]
    },
    {
-    "say": "Let's start with the isosceles triangle. A B equals A C, so angle B equals angle C. The angles of a triangle add up to a hundred eighty, so together they're a hundred eighty minus four theta. They're equal, so each one is half of that. Half of a hundred eighty is ninety, and half of four theta is two theta. So each base angle is ninety minus two theta.",
+    "say": "Look at the isosceles triangle first. A B is equal to A C, so angle B is equal to angle C. The angles of a triangle add up to a hundred eighty, so together they're a hundred eighty minus four theta. They're equal, so each one is half of that. Half of a hundred eighty is ninety, and half of four theta is two theta. So each base angle is ninety minus two theta.",
     "at": [
-     "so angle B equals angle C",
-     "The angles of",
+     "so angle B is equal to angle C",
+     "so angle B is equal to angle C",
+     "to angle C",
+     "so together they're",
+     "eighty minus four",
+     "so each one is half",
+     "Half of a",
      "So each base angle",
      "ninety minus two"
     ]
    },
    {
-    "say": "The arc we need is on the circle, around B. So let's take this part of the figure and look at it bigger.",
+    "say": "The arc we need is on the circle near B, whose center is O. So let's take this part of the figure and look at it bigger.",
     "at": [
      "The arc we need is on the circle",
-     "So let's take"
+     "whose center is"
     ]
    }
   ],
   [
    {
-    "say": "Here's the circle around B, bigger. Angle B is still ninety minus two theta. Its sides go through D and E, so it's an inscribed angle in the circle, and it stands on the bold arc D E. The central angle on the same arc is twice as big.",
+    "say": "Here's the circle near B, bigger. Angle B is still ninety minus two theta. Its sides go through D and E, so it's an inscribed angle in the circle, and it stands on the bold arc D E. The central angle on the same arc is twice as big.",
     "at": [
-     "Here's the circle around B",
+     "Here's the circle near B",
      "Angle B is",
      "Its sides go through D and E",
      "and E, so"
     ]
    },
    {
-    "say": "So let's draw the radii O D and O E. The central angle is two times, ninety minus two theta, which is a hundred eighty minus four theta.",
+    "say": "So let's draw the radii O D and O E. The central angle is two times, ninety minus two theta. Two times ninety is a hundred eighty, and two times two theta is four theta. So the central angle is a hundred eighty minus four theta.",
     "at": [
      "draw the radii O D and O E",
      "and O E",
      "The central angle is two times",
-     "which is a"
+     "Two times ninety",
+     "So the central angle is a hundred eighty",
+     "a hundred eighty minus"
     ]
    },
    "Did you notice? We divided by two, and then we multiplied by two. If you see that early, you can write a hundred eighty minus four theta right away."
@@ -91,43 +98,54 @@
   ],
   [
    {
-    "say": "[pause] The algebra got a bit tangled at the end. Now a shorter way, plugging in numbers. The right choice must be true for every theta and every r that the question allows. So it must also be true for one example that we choose. We pick easy numbers, find the arc, and then put the same numbers in the choices.",
+    "say": "[pause] Now let's use plugging in numbers. The right choice must be true for every theta and every r that the question allows. So it must also be true for one example that we choose. We pick easy numbers, find the arc, and then put the same numbers in the choices.",
     "at": [
-     "bit tangled at",
-     "Now a shorter way",
-     "in numbers. The",
+     "Now let's use plugging in numbers",
+     "numbers. The right",
      "the question allows",
      "We pick easy"
     ]
    },
    {
-    "say": "Which example is the easiest? An equilateral triangle, with all its angles sixty degrees. Then four theta is sixty, so theta is fifteen. That's between zero and forty-five, so it's allowed.",
+    "say": "Which example is the easiest? An equilateral triangle, with all its angles sixty degrees. Here it is, in its own picture. Then four theta is sixty, so theta is sixty divided by four, fifteen. That's between zero and forty-five, so it's allowed.",
     "at": [
-     "An equilateral triangle",
-     "its angles sixty"
+     "Here it is, in its own picture",
+     "Then four theta is sixty",
+     "so theta is sixty divided by four",
+     "by four, fifteen"
     ]
    },
    {
     "say": "So angle B is sixty, and the central angle on the bold arc is twice as big, a hundred twenty. The radius isn't given either, so let's take r as one, an easy number.",
     "at": [
      "the central angle on the bold arc",
-     "bold arc is"
+     "bold arc is",
+     "twice as big, a hundred twenty",
+     "twenty. The radius",
+     "let's take r as one",
+     "an easy number"
     ]
    },
    {
     "say": "The whole circumference is two pi times one, two pi. A hundred twenty out of three hundred sixty is one third. So the arc is a third of two pi, two pi over three.",
     "at": [
      "The whole circumference",
-     "pi times one"
+     "pi times one",
+     "A hundred twenty out of",
+     "three hundred sixty",
+     "So the arc is a third",
+     "third of two"
     ]
    }
   ],
   [
    {
-    "say": "Now we put theta fifteen and r one in every choice, and cross out any choice that doesn't give two pi over three. Even if one fits early, we check them all, because an example can fit more than one choice.",
+    "say": "Now we put theta fifteen and r one in every choice, and cross out any choice that doesn't give two pi over three. If one fits early, we still check the others, because an example can fit more than one choice.",
     "at": [
      "Now we put theta",
-     "and r one"
+     "and r one",
+     "in every choice",
+     "out any choice"
     ]
    },
    {
@@ -158,9 +176,10 @@
     ]
    },
    {
-    "say": "Choice number four says pi r, times one minus theta over forty-five. Fifteen over forty-five is a third, and one minus a third is two thirds. Two pi over three, it fits, and the other three are out. Choice number four is our answer, and I'll see you in the next question.",
+    "say": "Now the other three are out, so choice number four is the only one left. Let's still check it. Choice number four says pi r, times one minus theta over forty-five. Fifteen over forty-five is a third, and one minus a third is two thirds. Two pi over three, it fits. Choice number four is our answer, and I'll see you in the next question.",
     "at": [
-     "Choice number four says",
+     "number four is",
+     "r, times one",
      "Fifteen over forty-five",
      "third, and one",
      "Choice number four is our answer"

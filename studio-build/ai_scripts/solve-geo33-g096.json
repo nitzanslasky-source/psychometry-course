@@ -12,13 +12,15 @@
     "pause": 0.5
    },
    {
-    "say": "So they ask for the perimeter of the semicircle, divided by the perimeter of the triangle. [short pause] There's a shape inside a circle here. We call these inscribed and circumscribed questions, and they're common at the end of the section.",
+    "say": "So they ask for the perimeter of the semicircle, divided by the perimeter of the triangle. [short pause] There's a triangle inside a semicircle here. In questions like this, we write the lengths of both shapes with the radius of the circle.",
     "at": [
      "So they ask for the perimeter",
-     "a circle here"
+     "like this, we"
     ]
    },
-   "What do we do in them? We write the lengths of both shapes with the radius of the circle. We'll solve it three ways, the math way, by plugging in a number, and by estimation.",
+   "We'll solve it the math way, then by plugging in numbers, and then by estimation. At the end, we'll look at two of the choices by understanding."
+  ],
+  [
    {
     "say": "[short pause] The math way first. K M and K N are radii, so each one is r. So the triangle is at least isosceles, and its base angles are equal.",
     "at": [
@@ -43,7 +45,7 @@
     ]
    },
    {
-    "say": "Now the semicircle. A lot of students take half of the circumference. That's only partly right. The perimeter has two parts, the curved part on top and the straight line at the bottom.",
+    "say": "Now the semicircle. A lot of students take half of the circumference. That's only part of it. The perimeter has two parts, the curved part on top and the straight line at the bottom.",
     "at": [
      "A lot of"
     ]
@@ -52,7 +54,8 @@
     "say": "The curved part is half of the circumference. The circumference is two pi r, and half of it is pi r.",
     "at": [
      "The curved part is half",
-     "of the circumference"
+     "of the circumference",
+     "and half of it is pi r"
     ]
    },
    {
@@ -60,25 +63,28 @@
     "at": [
      "The straight line is the diameter",
      "diameter, two radii",
+     "so it's two r",
      "So the perimeter of the semicircle",
      "semicircle is pi"
     ]
    },
    {
-    "say": "Now we divide, pi r plus two r, over three r. In the top, take r out as a common factor, so it's r times, in brackets, pi plus two. Now r is multiplied on the top and on the bottom, so we cancel it. We get pi plus two, over three. Choice number three is our answer.",
+    "say": "Now we divide. Pi r plus two r, over three r. In the top, take r out as a common factor. That gives r times pi plus two, all over three r. Now r is multiplied on the top and on the bottom, so we cancel it. We get pi plus two, over three. Choice number three is our answer.",
     "at": [
      "Now we divide",
-     "In the top",
+     "Pi r plus",
+     "That gives r times",
+     "plus two, all",
+     "We get pi plus two",
      "Choice number three is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now the way I recommend for almost everyone, plugging in a number. Instead of the letter r, we pick an easy number for the radius, and we solve with numbers. Then we put the same number into the choices, and the right choice gives the same value. It saves us the algebra mistakes.",
+    "say": "[pause] Now let's plug in numbers. Instead of the letter r, we pick an easy number for the radius, and we solve with numbers. Then we put the same number into the choices. The right choice gives the same value. It also saves us algebra mistakes.",
     "at": [
-     "recommend for almost",
-     "plugging in a number",
+     "Now let's plug in numbers",
      "Instead of the"
     ]
    },
@@ -86,40 +92,69 @@
     "say": "The easiest number is one, so the radius is one. K M and K N are one, and the triangle is equilateral, so M N is one too. The triangle's perimeter is three.",
     "at": [
      "so the radius is one",
-     "K M and"
+     "so the radius is one",
+     "K M and",
+     "The triangle's perimeter is three"
     ]
    },
    {
     "say": "The semicircle has a curved part, half of two pi, which is pi. And the diameter is two. So the ratio is pi plus two, over three.",
     "at": [
+     "The semicircle has",
+     "And the diameter is two",
      "So the ratio is pi plus",
      "plus two, over"
     ]
    },
    {
-    "say": "Now we put r equals one into the choices. Choice number one is pi over three, not pi plus two over three, so it's out. But in choices two, three and four, multiplying or dividing by one changes nothing. All three give pi plus two, over three.",
+    "say": "Now we put r equals one into the choices. Choice number one is pi over three. That's not our value, so it's out. But in choices two, three and four, multiplying or dividing by one changes nothing. All three give pi plus two, over three.",
     "at": [
+     "Choice number one is pi over three",
+     "number one is",
+     "three. That's not",
      "so it's out",
-     "All three give",
-     "two, over three"
+     "All three give"
     ]
    },
-   "That's a tie, so one isn't a good number here. We need another number to break the tie, so let's take r equals two.",
    {
-    "say": "The triangle is two, two and two, so its perimeter is six. The curved part is half of two pi times two, so it's two pi. The diameter is four. So the ratio is two pi plus four, over six. Divide the top and the bottom by two, and it's pi plus two, over three.",
+    "say": "So r equals one ruled out one choice, but three remain. To break the tie, let's try another easy number, r equals two.",
     "at": [
-     "The triangle is two, two and two",
-     "and two, so"
+     "So r equals"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[short pause] Here's the figure again, with radius two. The triangle is two, two and two, so its perimeter is six. The curved part is half of two pi times two, so it's two pi. The diameter is four.",
+    "at": [
+     "Here's the figure again",
+     "with radius two",
+     "with radius two",
+     "is two, two",
+     "so its perimeter is six",
+     "The curved part",
+     "The diameter is four"
     ]
    },
    {
-    "say": "Now r equals two in the choices. Choice number two says pi plus two, over three r. Three r is six, so it's pi plus two over six. That's half of our value, so it's out. Choice number four says r times pi plus two, over three. It multiplies by r, so it's twice our value. It's out too.",
+    "say": "So the ratio is two pi plus four, over six. Divide the top and the bottom by two, and it's pi plus two, over three.",
+    "at": [
+     "So the ratio is two pi",
+     "pi plus four",
+     "Divide the top and the bottom by two",
+     "bottom by two"
+    ]
+   },
+   {
+    "say": "Now r equals two in the choices. Choice number two says pi plus two, over three r. Three r is six, so it's pi plus two, over six. That's half of our value, so it's out. Choice number four says r times pi plus two, all over three. With r equals two, it's twice our value. It's out too.",
     "at": [
      "Choice number two says",
-     "it's pi plus",
+     "Three r is six",
      "That's half of our value",
+     "so it's out",
      "Choice number four says",
-     "It multiplies by",
+     "With r equals two, it's twice",
+     "twice our value",
      "It's out too"
     ]
    },
@@ -136,45 +171,61 @@
     "say": "[pause] And the third way, estimation. Say the radius is one again. The triangle is equilateral, so each of its sides is one, and its perimeter is three.",
     "at": [
      "Say the radius is one again",
-     "The triangle is"
+     "again. The triangle",
+     "and its perimeter is three"
     ]
    },
    {
-    "say": "Now the curved part. The radii to M and N cut it into three arcs. Under each arc there's a straight line of length one, because the three small triangles at K are all equilateral, with sixty degrees each.",
+    "say": "Now the curved part. Let's draw two new helper radii, K U and K V. They cut the semicircle into three equal sectors. Three times sixty is a hundred eighty, so each sector has sixty degrees at K. These are new lines, not K M and K N.",
     "at": [
-     "Under each arc",
-     "straight line of"
+     "Let's draw two new helper radii",
+     "radii, K U"
     ]
    },
    {
-    "say": "And a straight line is the shortest way between two points. So each arc is a bit longer than one. Let's write one plus.",
+    "say": "Each small triangle has two radii and a sixty-degree angle between them, so it's equilateral. So the straight line under each arc is one.",
     "at": [
-     "Let's write one plus"
+     "So the straight line under each arc",
+     "under each arc is one"
     ]
    },
    {
-    "say": "So the curved part is a bit more than three. Add the diameter, two, and the semicircle is a bit more than five. The triangle is three. So the ratio is about five plus, over three.",
+    "say": "And a straight line is the shortest way between two points. So each arc is longer than its chord. Each arc is more than one.",
     "at": [
-     "So the curved part",
-     "a bit more"
+     "And a straight",
+     "So each arc is longer",
+     "than its chord",
+     "Each arc is more than one"
     ]
    },
    {
-    "say": "Choice number one, pi over three. Pi is less than four, so this is less than four over three. We need more than five over three, so it's out.",
+    "say": "So the curved part is more than three. Add the diameter, two, and the semicircle's perimeter is more than five. The triangle is three. So the ratio is more than five thirds.",
+    "at": [
+     "So the curved part is more",
+     "more than three",
+     "the semicircle's perimeter is more than five",
+     "than five. The",
+     "So the ratio is more than five thirds",
+     "than five thirds"
+    ]
+   },
+   {
+    "say": "Choice number one, pi over three. Pi is less than four, so this is less than four thirds. We need more than five thirds, so it's out.",
     "at": [
      "number one, pi",
-     "four over three",
+     "so this is less than four thirds",
+     "than five thirds",
      "so it's out"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Choices two and four have r in them. They're interesting distractors. If r were two, choice number two would be pi plus two over six. If r were three, it would be pi plus two over nine. The ratio would keep changing.",
+    "say": "[pause] Now let's look at choices two and four by understanding. They have r in them. If r were two, choice number two would be pi plus two, over six. If r were three, it would be pi plus two, over nine. So these choices keep changing when r changes.",
     "at": [
-     "have r in",
+     "choices two and",
      "number two would",
-     "plus two over"
+     "plus two, over"
     ]
    },
    {
@@ -193,19 +244,25 @@
     ]
    },
    {
-    "say": "So when they ask for a perimeter over a perimeter, or an area over an area, the radius must cancel. Any choice with r in it is a distractor, and it's out at first glance. Choice number two and choice number four are out.",
+    "say": "Here, changing r scales all the lengths together, while the angles stay the same. So the two perimeters get the same multiplier, and their ratio stays fixed. It doesn't depend on r. But choice number two and choice number four still change when r changes. So they're out.",
     "at": [
-     "So when they",
-     "Choice number two and",
-     "choice number four are out"
+     "Here, changing r",
+     "But choice number two and",
+     "number four still",
+     "So they're out"
     ]
    },
-   "Careful, that's only for the same kind of thing. In an area over a perimeter, an r can stay, because an area has r squared and a perimeter has only r.",
    {
-    "say": "Choice number three is pi plus two, over three. Pi plus two is a bit more than five, so it's about five plus over three, just what we estimated. Choice number three again. [pause] Okay. I'll see you in the next question.",
+    "say": "Careful, that's only for this kind of comparison, the same kind of thing in one shape. In an area over a perimeter, an r can stay, because an area has r squared and a perimeter has only r.",
+    "at": [
+     "Careful, that's only"
+    ]
+   },
+   {
+    "say": "Choice number three is pi plus two, over three. Pi plus two is more than five, so it's more than five thirds, just what we estimated. Choice number three again. [pause] Okay. I'll see you in the next question.",
     "at": [
      "number three is",
-     "bit more than",
+     "than five, so",
      "Choice number three again"
     ]
    }

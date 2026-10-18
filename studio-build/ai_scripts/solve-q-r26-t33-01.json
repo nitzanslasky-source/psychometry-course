@@ -12,14 +12,42 @@
     "pause": 0.5
    },
    {
-    "say": "They ask for the circumference. That's the length all the way around the circle. Its formula is two times pi times r, where r is the radius. Pi is a fixed number, a bit more than three, and there's a lesson on it soon. So really, they're asking for the radius.",
+    "say": "They ask for the circumference. That's the length all the way around the circle, the edge. It's a length, not the area inside.",
     "at": [
      "They ask for the circumference",
-     "the length all the way around",
-     "around the circle"
+     "the area inside"
     ]
    },
-   "[short pause] We have a chord and its distance from the center, so one helper line will connect them.",
+   {
+    "say": "Here's how we find it. If we go once around any circle, the length is a bit more than three times its diameter. That fixed number is called pi. It's the same for every circle, a little more than three. So the circumference is pi times the diameter.",
+    "at": [
+     "around any circle",
+     "That fixed number is called pi",
+     "It's the same",
+     "So the circumference is",
+     "times the diameter"
+    ]
+   },
+   {
+    "say": "The diameter is two radii, two r. So the circumference is also two pi r. For example, a circle with diameter ten has a circumference of ten pi. A circle with radius three has diameter six, so its circumference is six pi. So really, they're asking for the radius.",
+    "at": [
+     "So the circumference is also two pi r",
+     "two pi r",
+     "a circle with diameter ten",
+     "has a circumference",
+     "A circle with radius three",
+     "has diameter six"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[short pause] Here's the figure again, bigger. We have a chord and its distance from the center, so one helper line will connect them.",
+    "at": [
+     "Here's the figure again",
+     "We have a"
+    ]
+   },
    {
     "say": "[short pause] First, what is the distance from a point to a line? It's the shortest way, and that's the perpendicular. So from O we draw a line down to the chord, at ninety degrees. Call its foot M. O M is six.",
     "at": [
@@ -49,26 +77,53 @@
     ]
    },
    {
-    "say": "By Pythagoras, r squared is six squared plus eight squared. Thirty-six plus sixty-four is one hundred, so r squared is one hundred, and r is ten. You can also spot the triple. Six, eight, ten is three, four, five, doubled.",
+    "say": "By Pythagoras, r squared is six squared plus eight squared. Six squared is thirty-six. Eight squared is sixty-four. Thirty-six plus sixty-four is one hundred, so r squared is one hundred.",
     "at": [
      "By Pythagoras",
-     "six squared plus"
+     "six squared plus",
+     "Six squared is thirty-six",
+     "squared is sixty-four",
+     "Thirty-six plus sixty-four",
+     "hundred, so r"
     ]
    },
    {
-    "say": "So the circumference is two pi r, and r is ten, so it's two pi times ten, which is twenty pi. Choice number three is our answer.",
+    "say": "A length is positive, so r is ten. You can also spot the triple. Six, eight, ten is three, four, five, doubled.",
     "at": [
-     "So the circumference is",
-     "pi r, and",
+     "so r is ten",
+     "You can also"
+    ]
+   },
+   {
+    "say": "The circumference is two pi r, and r is ten. So it's two pi times ten, which is twenty pi. Choice number three is our answer.",
+    "at": [
+     "The circumference is two pi r",
+     "r, and r",
+     "So it's two pi times ten",
+     "ten, which is",
      "Choice number three is our answer"
     ]
    },
    {
-    "say": "In the exam you'd mark it and move on. Here, let's see where the other choices come from. One hundred pi is pi r squared. That's the area, the inside of the circle, and we'll meet it in that lesson too. Ten pi is what you get if you take ten as the diameter. And sixteen pi comes from taking the chord as a diameter. But this chord doesn't pass through the center, so it's not a diameter. [pause] Okay. I'll see you in the next question.",
+    "say": "In the exam you'd mark it and move on. Here, let's see where the other choices come from. One hundred pi is pi r squared. That's the formula for the area, the inside of the circle, and we'll learn it in the area lesson. This question asks for the length around, not the area inside.",
     "at": [
-     "One hundred pi is pi r",
+     "One hundred pi is pi r"
+    ]
+   },
+   {
+    "say": "Ten pi is what you get if you take ten as the diameter. And sixteen pi comes from taking the chord A B as a diameter. But this chord doesn't pass through the center, so it's not a diameter.",
+    "at": [
      "Ten pi is what you get",
-     "And sixteen pi comes"
+     "And sixteen pi comes",
+     "And sixteen pi comes",
+     "taking the chord"
+    ]
+   },
+   {
+    "say": "Here's what to take from this question. When you're given a chord and its distance from the center, draw that distance and the radius to the end of the chord. Half the chord, the distance and the radius make a right triangle, and the radius is its hypotenuse. So any two of them give you the third. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Half the chord, the distance and the radius",
+     "and the radius make"
     ]
    }
   ]

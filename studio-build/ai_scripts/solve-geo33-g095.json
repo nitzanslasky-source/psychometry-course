@@ -12,43 +12,37 @@
     "pause": 0.5
    },
    {
-    "say": "The minor arc is the small arc between D and E. So it's a shaded-area question again, and we need a scheme, what minus what.",
+    "say": "The minor arc is the small arc between D and E. So it's a shaded-area question again. We need to decide which area to subtract from which.",
     "at": [
      "The minor arc is the small arc"
     ]
    },
    {
-    "say": "[short pause] The problem is that here the scheme isn't clear. Is it the big triangle minus a few pieces? It's not clear yet.",
+    "say": "[short pause] Let's solve it the math way. Here it isn't clear yet which areas to use. Is it the big triangle minus a few pieces? We don't know yet.",
     "at": [
-     "here the scheme isn't clear",
-     "Is it the"
+     "Let's solve it the math way",
+     "Here it isn't"
     ]
    },
-   {
-    "say": "What do we do in cases like this? We work with the givens, we put them on the figure, and we hope the solution shows itself.",
-    "at": [
-     "the givens, we"
-    ]
-   },
+   "So let's add the known lengths, and the radius to each touching point. That will give us a right triangle to work with.",
    {
     "say": "A B is tangent to the circle at B. B is a point of tangency, and the right angle is already marked there, because the radius O B is perpendicular to the tangent.",
     "at": [
-     "A B is",
      "the right angle is already marked",
      "marked there, because"
     ]
    },
    {
-    "say": "D is also a point of tangency, but there's no radius to it. So we add the automatic construction, from O to D.",
+    "say": "D is also a point of tangency, but there's no radius to it. So let's draw the radius from O to D.",
     "at": [
      "from O to D"
     ]
    },
    {
-    "say": "That's the radius O D, and we mark the right angle at D. It's the most basic construction there is.",
+    "say": "That's the radius O D. A radius to a touching point is perpendicular to the tangent, so we mark the right angle at D.",
     "at": [
      "That's the radius O D",
-     "and we mark"
+     "A radius to"
     ]
    },
    {
@@ -59,7 +53,7 @@
     ]
    },
    {
-    "say": "And now the scheme is clear. Take triangle O D C, and remove the sector D O E. What's left is exactly the shaded part. It's just like the last question.",
+    "say": "Now we can see which areas to use. Take triangle O D C, and remove the sector D O E. What's left is exactly the shaded part. It's just like the last question.",
     "at": [
      "Take triangle O D C",
      "remove the sector",
@@ -77,14 +71,17 @@
     ]
    },
    {
-    "say": "The area of a right triangle is leg times leg, over two. So we need the other leg, D C. Pythagoras would work, but there's no need.",
+    "say": "The area of a right triangle is leg times leg, over two. So we need the other leg, D C. Pythagoras would work, but here there's a quicker way.",
     "at": [
-     "The area of"
+     "is leg times leg, over two",
+     "So we need"
     ]
    },
    {
     "say": "Look, the hypotenuse is exactly twice the leg, eight and four. That happens only in a gold triangle, the thirty, sixty, ninety triangle. So the angle opposite the short leg, at C, is thirty degrees. And the angle opposite D C, at O, is sixty degrees.",
     "at": [
+     "the hypotenuse is exactly twice the leg",
+     "the leg, eight",
      "So the angle opposite the short leg",
      "short leg, at"
     ]
@@ -92,34 +89,42 @@
    {
     "say": "In a gold triangle, the long leg is root three times the short leg. So D C is four root three.",
     "at": [
-     "So D C is four root three"
+     "So D C is four root three",
+     "is four root three"
     ]
    },
    {
-    "say": "Leg times leg, over two. Four times four root three is sixteen root three, and over two it's eight root three.",
+    "say": "Leg times leg, over two. Four times four root three is sixteen root three. Over two, it's eight root three.",
     "at": [
      "Leg times leg",
      "Four times four root three",
-     "over two it's"
+     "is sixteen root",
+     "Over two, it's eight root three"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "Should we find the sector now? We saw in the last question that we can stop halfway and look at the choices. We're looking for eight root three, minus something with pi.",
+    "say": "[pause] Should we find the sector now? In the last question we stopped halfway and looked at the choices. Here the triangle is eight root three. We take away a sector of this circle, so its area is some number of pi. So we're looking for eight root three, minus a number of pi.",
     "at": [
-     "We're looking for eight root three",
-     "three, minus something"
+     "Should we find the sector now",
+     "In the last",
+     "Here the triangle is eight root three",
+     "We take away",
+     "So we're looking for eight root three"
     ]
    },
    {
     "say": "Choice number two has sixteen root three, and choice number four has four root three. Neither has eight root three, so they're both out.",
     "at": [
      "Choice number two has",
+     "root three, and",
      "number four has",
      "so they're both out"
     ]
    },
    {
-    "say": "But this time the trick doesn't finish the job. Two choices start with eight root three, choice number one and choice number three. So we need the sector too.",
+    "say": "But this time the partial calculation doesn't finish the job. Two choices are left with eight root three, choice number one and choice number three. So we continue, and find the sector.",
     "at": [
      "But this time",
      "number one and",
@@ -127,18 +132,23 @@
     ]
    },
    {
-    "say": "The sector is a part of the circle. The whole circle is pi r squared, pi times four squared, sixteen pi.",
+    "say": "The sector is a part of the circle. The whole circle is pi r squared. Pi times four squared is sixteen pi.",
     "at": [
      "of the circle",
-     "The whole circle",
-     "squared, sixteen pi"
+     "Pi times four squared"
     ]
    },
    {
-    "say": "Which part? The central angle D O E is sixty degrees, and sixty out of three hundred sixty is a sixth. A sixth of sixteen pi is sixteen pi over six. Divide the top and the bottom by two, and it's eight pi over three.",
+    "say": "Which part? The central angle D O E is sixty degrees. Sixty out of three hundred sixty is a sixth. A sixth of sixteen pi is sixteen pi over six. Divide the top and the bottom by two, and it's eight pi over three.",
     "at": [
      "Which part",
-     "E is sixty"
+     "The central angle",
+     "Sixty out of three hundred sixty",
+     "sixty is a",
+     "A sixth of sixteen pi",
+     "is sixteen pi",
+     "Divide the top and the bottom by two",
+     "bottom by two"
     ]
    },
    {
@@ -148,13 +158,14 @@
      "so it's out",
      "number three has",
      "has both parts right",
+     "eight root three minus eight pi over three",
+     "pi over three. Choice",
      "Choice number three is our answer"
     ]
    },
    {
     "say": "By the way, some students find the sector first. Then they look for something minus eight pi over three, and that rules out choice number one and choice number four. Here we need both parts, and together they leave only choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "some students find the sector first",
      "number one and",
      "number four. Here",
      "choice number three"

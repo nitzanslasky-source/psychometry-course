@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "We want the area of a triangle, and we know one angle and one length. [short pause] Let's start with the first given, the angle, and see what it tells us about the triangle.",
+    "say": "We want the area of a triangle, and we know one angle and one length. [short pause] Let's use the math way. We'll start with the hundred twenty degree angle, and see what it tells us about the triangle.",
     "at": [
      "We want the area",
      "a triangle, and"
@@ -23,29 +23,36 @@
     "at": [
      "Angle A O C is one hundred twenty",
      "to it completes",
-     "So angle B O C is sixty",
-     "is sixty degrees"
+     "One hundred eighty minus one hundred twenty",
+     "hundred twenty is",
+     "So angle B O C is sixty"
     ]
    },
    {
     "say": "Now notice something. Inside a circle, isosceles triangles usually hide, because all the radii are equal. O B and O C are both radii, so they're equal, and the shaded triangle is at least isosceles.",
     "at": [
+     "Inside a circle",
      "O B and O C are both radii",
-     "are both radii"
+     "are both radii",
+     "so they're equal",
+     "shaded triangle is"
     ]
    },
    {
-    "say": "Its top angle, at O, is sixty. The three angles add up to one hundred eighty, so the two base angles share one hundred eighty minus sixty, which is one hundred twenty. They're equal, so each one is half of it, sixty.",
+    "say": "Its top angle, at O, is sixty. The three angles add up to one hundred eighty. So the two base angles share one hundred eighty minus sixty, which is one hundred twenty. They're equal, so each one is half of it. One hundred twenty divided by two is sixty.",
     "at": [
-     "so the two base angles share",
-     "share one hundred"
+     "So the two base angles share",
+     "share one hundred",
+     "twenty divided by two",
+     "two is sixty"
     ]
    },
    {
     "say": "So all three angles are sixty. As we said in the triangles topic, an isosceles triangle with a sixty-degree angle is always equilateral.",
     "at": [
      "So all three angles are sixty",
-     "As we said"
+     "sixty. As we",
+     "is always equilateral"
     ]
    }
   ],
@@ -58,35 +65,41 @@
     ]
    },
    {
-    "say": "Now the second given. A B is twenty, and A B is a diameter. A diameter is two radii, so one radius is twenty divided by two, which is ten. So O B is ten. And the triangle is equilateral, so all its sides are ten.",
+    "say": "Now let's use the diameter, twenty. A B is a diameter, and a diameter is two radii. So one radius is twenty divided by two, which is ten. So O B is ten. And the triangle is equilateral, so all its sides are ten.",
     "at": [
-     "A diameter is two radii",
-     "so one radius",
+     "twenty divided by two",
+     "So O B is ten",
+     "And the triangle",
      "so all its sides are ten"
     ]
    },
    {
-    "say": "They ask for the area of an equilateral triangle with side ten. We have a formula for that. Remember the count, a-two-three-four. It's a squared, times root three, over four, where a is the side.",
+    "say": "They ask for the area of an equilateral triangle with side ten. So let's use the math way with the equilateral formula. Remember the count, a-two-three-four. It's a squared, times root three, over four, where a is the side.",
     "at": [
-     "They ask for"
+     "They ask for",
+     "It's a squared, times root three",
+     "three, over four"
     ]
    },
    {
-    "say": "We put ten in place of a. Ten squared is one hundred, so we get one hundred root three, over four. One hundred over four is twenty-five, so the area is twenty-five root three. Choice number four is our answer.",
+    "say": "We put ten in place of a. Ten squared is one hundred. So we get one hundred root three, over four. One hundred divided by four is twenty-five, so the area is twenty-five root three. Choice number four is our answer.",
     "at": [
-     "We put ten in place of a",
-     "Ten squared is",
+     "Ten squared is one hundred",
+     "So we get one hundred root three",
+     "root three, over",
+     "divided by four is twenty-five",
+     "so the area is twenty-five root three",
      "Choice number four is our answer"
     ]
    }
   ],
   [
    {
-    "say": "[pause] And if you don't remember the formula, there's another way. We already know the triangle is equilateral, with side ten. Let's draw its height, from C straight down to O B.",
+    "say": "[pause] And if you don't remember the formula, there's another way. It's the same math way, this time with the height. We already know the triangle is equilateral, with side ten. Let's draw its height, from C straight down to O B.",
     "at": [
      "remember the formula",
      "there's another way",
-     "We already know",
+     "It's the same",
      "Let's draw its height",
      "C straight down"
     ]
@@ -101,14 +114,18 @@
    {
     "say": "Five is the short leg. The long leg is the short leg times root three, so the height is five root three.",
     "at": [
+     "so the height is five root three",
      "so the height is five root three"
     ]
    },
    {
-    "say": "Now base times height, over two, because that's the area of a triangle. Ten times five root three is fifty root three, and over two it's twenty-five root three. Again choice number four. [pause] Okay. I'll see you in the next question.",
+    "say": "Now base times height, over two, because that's the area of a triangle. Ten times five root three is fifty root three. Divided by two, it's twenty-five root three. Again choice number four. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Now base times height",
      "two, because that's",
+     "Ten times five root three",
+     "is fifty root",
+     "Divided by two, it's twenty-five",
      "Again choice number four"
     ]
    }

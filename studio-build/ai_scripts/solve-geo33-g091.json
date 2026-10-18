@@ -15,18 +15,35 @@
     "say": "The shaded part is part of the circle's area. So we need two things. The area of the whole circle, and which part of it is shaded.",
     "at": [
      "The shaded part is part",
-     "of the circle's"
+     "of the circle's",
+     "we need two",
+     "area of the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[short pause] Let's start with the area of the circle. The radius is given, so it's easy. Pi r squared.",
+    "at": [
+     "Let's start with the area",
+     "of the circle",
+     "Pi r squared"
     ]
    },
-   "[short pause] Let's start with the area of the circle. The radius is given, so it's easy. Pi r squared.",
    {
     "say": "Root thirty-five, squared, is thirty-five, because the square cancels the root. So the area is thirty-five pi. That's the whole circle.",
     "at": [
+     "Root thirty-five, squared",
      "So the area is thirty-five pi",
-     "pi. That's the"
+     "That's the whole circle"
     ]
    },
-   "Now, which part. For that we need alpha and beta, but we don't get a number for either of them. So what can we say?",
+   {
+    "say": "Now, which part is shaded? We need the combined share of one alpha sector and one beta sector. We don't need either angle on its own. And that's lucky, because we don't get a number for either of them.",
+    "at": [
+     "Now, which part"
+    ]
+   },
    {
     "say": "Let's count them. One, two, three, four, five alphas. And five betas.",
     "at": [
@@ -42,39 +59,39 @@
      "beta is three"
     ]
    },
-   "That's one equation with two unknowns. We can't find alpha or beta on its own, but we can find their sum.",
+   "That's one equation with two unknowns. We can't find alpha or beta on its own, but we can find their sum. And the sum is all we need.",
    {
-    "say": "If you see it, just divide by five. If not, take out the common factor five. Five times the sum, alpha plus beta, is three hundred sixty. Divide by five, and alpha plus beta is seventy-two.",
+    "say": "Let's read the equation another way. The circle is made of five alpha plus beta pairs, all the same. So five times alpha plus beta is three hundred sixty. Now divide both sides by five. Alpha plus beta is seventy-two.",
     "at": [
-     "take out the common factor five",
-     "Five times the"
+     "The circle is made of five alpha plus beta pairs",
+     "five alpha plus",
+     "So five times alpha plus beta",
+     "beta is three",
+     "Now divide both sides by five",
+     "Alpha plus beta is seventy-two"
     ]
    },
    {
-    "say": "What does that tell us about alpha and beta? We don't know. Alpha could be thirty and beta forty-two. Or twelve and sixty. There are endless options. But it doesn't matter.",
+    "say": "What does that tell us about alpha and beta on their own? We don't know. Alpha could be thirty and beta forty-two. Or twelve and sixty. Both pairs add up to seventy-two. There are endless options. But it doesn't matter.",
     "at": [
      "Alpha could be thirty",
      "beta forty-two. Or"
     ]
    },
    {
-    "say": "One alpha and one beta together are seventy-two degrees, and the circle is made of five such pairs.",
+    "say": "The two shaded sectors are exactly one of these five equal pairs. So they're seventy-two degrees out of three hundred sixty, which is one fifth of the circle.",
     "at": [
-     "the circle is made of five such pairs",
-     "five such pairs"
-    ]
-   },
-   {
-    "say": "The two shaded sectors are one pair. So they're seventy-two out of three hundred sixty, which is one fifth of the circle.",
-    "at": [
+     "The two shaded sectors are exactly one",
+     "exactly one of",
      "which is one fifth"
     ]
    },
    {
-    "say": "So the shaded area is one fifth of thirty-five pi, which is seven pi. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "So the shaded area is one fifth of thirty-five pi. Thirty-five pi divided by five is seven pi. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "one fifth of thirty-five pi",
-     "which is seven",
+     "So the shaded",
+     "Thirty-five pi divided by five",
+     "is seven pi",
      "Choice number two is our answer"
     ]
    }

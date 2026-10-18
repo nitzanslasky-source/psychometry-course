@@ -12,11 +12,21 @@
     "pause": 0.5
    },
    {
-    "say": "So they want the two bold arcs together. To find the length of an arc, we first need its central angle. But no central angle stands on arc A G, or on arc E D. So we need a construction, and it's a natural one, because we must have central angles. Let's draw the radius O A and the radius O D.",
+    "say": "So they want the two bold arcs together, A G and E D. We'll find them with the math way, using central angles.",
     "at": [
-     "So they want",
-     "the two bold arcs together",
+     "So they want the two bold arcs",
+     "them with the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[short pause] Here's the figure again, bigger. To find the length of an arc here, we need its central angle. But no central angle stands on arc A G, or on arc E D. So let's draw radii that give us central angles. Let's draw the radius O A and the radius O D.",
+    "at": [
+     "Here's the figure again",
      "To find the",
+     "on arc A G, or on arc E D",
+     "on arc E",
      "Let's draw the radius O A",
      "A and the"
     ]
@@ -30,53 +40,67 @@
     ]
    },
    {
-    "say": "No central angle is drawn on arc A F, so let's draw one more radius, O F. Now angle A O F is two times twenty-eight, fifty-six degrees.",
+    "say": "No central angle is drawn on arc A F, so let's draw one more radius, O F. Now angle A O F is two times twenty-eight. That's fifty-six degrees.",
     "at": [
      "one more radius, O F",
-     "Now angle A"
+     "Now angle A O F is two times",
+     "is two times",
+     "That's fifty-six degrees"
     ]
    },
    {
-    "say": "Next, angle C is fifty-seven degrees, and it stands on arc F D. The central angle on that arc is twice as big, two times fifty-seven, a hundred fourteen degrees.",
+    "say": "Next, angle C is fifty-seven degrees, and it stands on arc F D. The central angle on that arc is twice as big. Two times fifty-seven is a hundred fourteen degrees.",
     "at": [
      "angle C is fifty-seven",
-     "and it stands"
+     "and it stands",
+     "Two times fifty-seven",
+     "is a hundred fourteen degrees"
     ]
    },
    {
-    "say": "That's a lot of givens and a lot of lines, so let's find our way. We need the two angles at the ends, angle A O G and angle E O D. We can't find each one alone. But we can find their sum.",
+    "say": "That's a lot of givens and a lot of lines. We've used B and C, so let's keep only what we need now. We need the two angles at the ends, angle A O G and angle E O D. We can't find each one alone. But we can find their sum.",
     "at": [
+     "That's a lot",
+     "let's keep only what we need",
      "We need the two angles at the ends",
      "at the ends"
     ]
    },
    {
-    "say": "Together with the middle angle, G O E, they make the whole angle A O D. That's fifty-six plus a hundred fourteen, a hundred seventy degrees. Take away the middle angle, eighty, and the two end angles together are a hundred seventy minus eighty, ninety degrees.",
+    "say": "Together with the middle angle, G O E, they make the whole angle A O D. Angle A O D is fifty-six plus a hundred fourteen. That's a hundred seventy degrees.",
     "at": [
-     "Take away the middle angle",
-     "eighty, and the"
+     "Angle A O D is fifty-six plus",
+     "fifty-six plus a"
+    ]
+   },
+   {
+    "say": "Now take away the middle angle, eighty. So the two end angles together are a hundred seventy minus eighty, ninety degrees.",
+    "at": [
+     "a hundred seventy minus eighty"
     ]
    }
   ],
   [
    {
-    "say": "How is the ninety split between the two? Maybe forty-five and forty-five, maybe twenty and seventy. We don't know, and it doesn't matter. Let's see why. Here's only what we need, the angle A O D, a hundred seventy degrees.",
+    "say": "Now let's understand why the sum is enough. How is the ninety split between the two? It could be forty-five and forty-five, or twenty and seventy. The givens don't decide it, and we don't need it. Here's only what we need, the angle A O D, a hundred seventy degrees.",
     "at": [
-     "split between the",
+     "the sum is",
+     "is the ninety",
      "forty-five and forty-five",
+     "The givens don't",
      "Here's only what we need",
      "the angle A"
     ]
    },
    {
-    "say": "Say the middle part, the eighty, sits here, in grey. Then the end angles are twenty and seventy, and together they're ninety.",
+    "say": "Say the middle part, the eighty, sits here, in grey. This is just one possible position. Then the end angles are twenty and seventy, and together they're ninety.",
     "at": [
      "Say the middle part",
      "eighty, sits here"
     ]
    },
    {
-    "say": "Now slide the whole middle part along the circle. The end angles change, to fifty and forty, but together they're still ninety. Wherever the middle part sits, the two ends always add up to a hundred seventy minus eighty.",
+    "say": "Now slide the whole middle part along the circle, to another possible position. The end angles change, to fifty and forty, but together they're still ninety. Wherever the middle part sits, the two ends always add up to a hundred seventy minus eighty.",
     "at": [
      "slide the whole middle part",
      "along the circle"
@@ -88,20 +112,30 @@
     "say": "Now the length. An arc is a part of the circumference. The radius is eight, so the whole circumference is two pi times eight, sixteen pi.",
     "at": [
      "Now the length",
-     "An arc is",
+     "An arc is a part",
+     "of the circumference",
      "the whole circumference",
      "pi times eight"
     ]
    },
    {
-    "say": "Which part of it do we need? Ninety degrees out of three hundred sixty is one quarter. And one quarter of sixteen pi is four pi. Choice number three is our answer.",
+    "say": "Which part of it do we need? The two arcs together have ninety degrees. Ninety out of three hundred sixty is one quarter. And one quarter of sixteen pi is sixteen pi divided by four, four pi. Choice number three is our answer.",
     "at": [
-     "Ninety degrees out of",
-     "hundred sixty is",
+     "The two arcs together",
+     "Ninety out of three hundred sixty",
+     "sixty is one",
+     "one quarter of sixteen pi",
+     "is sixteen pi",
      "Choice number three is our answer"
     ]
    },
-   "When you can't find each part alone, look for the sum. Here it was the whole angle minus the middle part. [pause] Okay. I'll see you in the next question."
+   {
+    "say": "When you can't find each part alone, look for the sum. Here it was the whole angle minus the middle part. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "When you can't find each part",
+     "angle minus the"
+    ]
+   }
   ]
  ]
 }
