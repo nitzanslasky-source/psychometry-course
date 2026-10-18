@@ -1,0 +1,105 @@
+{
+ "videoId": "solve-wp21-g013",
+ "style": "the teacher reads it herself (Reading Studio), topic-21 scripts (2026-10-18): math_patches/_ai_vis_t21.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A plastic game chip has two written on one side and six on the other. It is tossed exactly seven times, and the numbers that land face up are added. Which total is impossible?",
+    "voice": "calm",
+    "at": [
+     "A plastic game chip"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "They ask what's impossible. So we find the totals that can happen, and cross out three choices. The one that's left is the answer. [short pause] We'll solve it in two different ways, by trying totals in order, and then by understanding the pattern behind them.",
+    "at": [
+     "They ask what's impossible",
+     "we find the"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start by trying, and let's work in order, so nothing gets lost. Only how many twos and how many sixes come up matters, not which toss came first. So we start from the smallest total. All seven tosses show two. Seven times two is fourteen.",
+    "at": [
+     "So we start",
+     "Seven times two"
+    ]
+   },
+   {
+    "say": "Fourteen can happen, so choice number three is out.",
+    "at": [
+     "so choice number three is out"
+    ]
+   },
+   {
+    "say": "Now let's swap one two for a six. What does that change? We take away two and add six, so the total goes up by four. Fourteen plus four is eighteen.",
+    "at": [
+     "Now let's swap",
+     "We take away two and add six",
+     "goes up by"
+    ]
+   },
+   {
+    "say": "Each more six adds another four. Eighteen, twenty-two, twenty-six, thirty. So thirty can happen, and choice number four is out.",
+    "at": [
+     "Eighteen, twenty-two",
+     "thirty can happen",
+     "and choice number four is out"
+    ]
+   },
+   {
+    "say": "The next swap gives thirty plus four, thirty-four. Look what happened. We jumped from thirty straight to thirty-four, and skipped thirty-two.",
+    "at": [
+     "We jumped from thirty",
+     "to thirty-four, and"
+    ]
+   },
+   {
+    "say": "Thirty-two is between the smallest total and the biggest, and it still can't happen. Being inside the range is not enough. This is called the skip. It happens when two values swap with each other, like the two and the six here. So thirty-two is impossible, and choice number two is our answer.",
+    "at": [
+     "Being inside the range",
+     "This is called",
+     "choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's solve it by understanding. Every swap adds four, so all the totals go up in steps of four from fourteen. A list like that has a pattern. Every number in it leaves the same remainder when we divide by four.",
+    "at": [
+     "Now let's"
+    ]
+   },
+   {
+    "say": "Why does it stay the same? Because fourteen is twelve plus two, so it leaves two. Adding four just adds one more four, so the remainder stays two. Eighteen is sixteen plus two. Twenty-two is twenty plus two.",
+    "at": [
+     "Fourteen is twelve plus two",
+     "so it leaves"
+    ]
+   },
+   {
+    "say": "So every possible total leaves remainder two when we divide it by four.",
+    "at": [
+     "every possible total",
+     "two when we"
+    ]
+   },
+   {
+    "say": "Now we check that condition on the choices. Choice number two is thirty-two. Thirty-two is eight fours exactly, so it leaves zero, not two. It can't be a total.",
+    "at": [
+     "number two is",
+     "Thirty-two is eight fours",
+     "so it leaves"
+    ]
+   },
+   {
+    "say": "The others leave two. Thirty-eight is thirty-six plus two. Thirty is twenty-eight plus two. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Thirty-eight is thirty-six",
+     "Thirty is twenty-eight",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

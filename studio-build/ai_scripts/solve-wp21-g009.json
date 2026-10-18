@@ -1,0 +1,101 @@
+{
+ "videoId": "solve-wp21-g009",
+ "style": "the teacher reads it herself (Reading Studio), topic-21 scripts (2026-10-18): math_patches/_ai_vis_t21.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A bakery bakes seventy-eight loaves of bread on Monday. On each later day, it bakes half the number of loaves of the day before, minus one. How many loaves does it bake on Thursday?",
+    "voice": "calm",
+    "at": [
+     "A bakery bakes"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the same rule repeats every day, and they ask about Thursday. That's a step-by-step pattern, so we write the days one by one. [short pause] We'll solve it in two different ways, by writing the days, and then by plugging in the answers and running the rule backwards.",
+    "at": [
+     "repeats every day",
+     "a step-by-step pattern",
+     "two different ways"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start by writing the days. Monday is seventy-eight. That's given, so we don't apply the rule to Monday. On the exam we don't need a table, just the days and the numbers.",
+    "at": [
+     "Monday is seventy-eight",
+     "That's given, so"
+    ]
+   },
+   {
+    "say": "Careful with the order. The rule says half of the day before, minus one. So we halve first, and only then take one away. Not the other way around.",
+    "at": [
+     "So we halve first",
+     "only then take"
+    ]
+   },
+   {
+    "say": "For Tuesday, half of seventy-eight is thirty-nine. Thirty-nine minus one is thirty-eight.",
+    "at": [
+     "Half of seventy-eight",
+     "Thirty-nine minus one"
+    ]
+   },
+   {
+    "say": "For Wednesday, half of thirty-eight is nineteen, and nineteen minus one is eighteen. Eighteen is in the choices, but that's only Wednesday, so we keep going.",
+    "at": [
+     "Half of thirty-eight",
+     "and nineteen minus"
+    ]
+   },
+   {
+    "say": "For Thursday, half of eighteen is nine. Careful, nine is a choice too, but we still take one away. Nine minus one is eight. So the bakery bakes eight loaves on Thursday, and choice number one is our answer.",
+    "at": [
+     "Half of eighteen",
+     "Careful, nine is",
+     "Nine minus one is eight",
+     "So the bakery",
+     "choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers. We take a choice as Thursday, and undo the rule, day by day, back to Monday. If we land on seventy-eight, the choice is right.",
+    "at": [
+     "Now let's"
+    ]
+   },
+   {
+    "say": "How do we undo half, minus one? We do the opposite steps, in the opposite order. First we add one, and then we double.",
+    "at": [
+     "We do the opposite steps",
+     "in the opposite"
+    ]
+   },
+   {
+    "say": "Choice number one says eight. Eight plus one is nine, and nine doubled is eighteen. That's Wednesday.",
+    "at": [
+     "number one says",
+     "Eight plus one is nine"
+    ]
+   },
+   {
+    "say": "Eighteen plus one is nineteen, and nineteen doubled is thirty-eight. That's Tuesday.",
+    "at": [
+     "Eighteen plus one",
+     "and nineteen doubled"
+    ]
+   },
+   {
+    "say": "Thirty-eight plus one is thirty-nine, and thirty-nine doubled is seventy-eight. That's Monday, exactly as the question says. Three days back, from Thursday to Monday, and it fits. So eight works. Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Thirty-eight plus one",
+     "and thirty-nine doubled",
+     "the question says",
+     "So eight works",
+     "number one is"
+    ]
+   }
+  ]
+ ]
+}

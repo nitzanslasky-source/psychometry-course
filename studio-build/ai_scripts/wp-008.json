@@ -1,0 +1,33 @@
+{
+ "videoId": "wp-008",
+ "style": "the teacher reads it herself (Reading Studio), topic-21 scripts (2026-10-18): math_patches/_ai_vis_t21.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now the last type of trial and error, patterns. Here we barely think and barely make mistakes. It's mostly trial, careful trial."
+  ],
+  [
+   {
+    "say": "Patterns come in two kinds. The first kind is step by step. A rule repeats, and the simplest and best way is to write the items one at a time, exactly as the rule says, until we reach what they ask.",
+    "at": [
+     "The first kind is step by step",
+     "A rule repeats"
+    ]
+   },
+   {
+    "say": "The second kind is a sequence with a formula in n, in the choices. It's rarer, but it's good to know. Here we plug in a small number for n and check the answers.",
+    "at": [
+     "The second kind is a sequence",
+     "sequence with a"
+    ]
+   },
+   {
+    "say": "If you remember the formulas for sequences from school, leave them. These aren't the sequences you know, and those formulas won't work here.",
+    "at": [
+     "leave them",
+     "These aren't the"
+    ]
+   },
+   "Solving these by pure understanding is possible, but every question is different, and very few students manage it. Plugging in is simple and safe. Let's see one question of each kind. [pause] I'll see you in the next video."
+  ]
+ ]
+}

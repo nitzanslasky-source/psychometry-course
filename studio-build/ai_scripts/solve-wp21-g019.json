@@ -1,0 +1,87 @@
+{
+ "videoId": "solve-wp21-g019",
+ "style": "the teacher reads it herself (Reading Studio), topic-21 scripts (2026-10-18): math_patches/_ai_vis_t21.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "At a fair, each of twenty-three children gets three to five tickets at the first booth, and two to four tickets at the second booth. Each child then uses one to three tickets on a ride. What are the smallest and the largest possible numbers of tickets left with all the children together?",
+    "voice": "calm",
+    "at": [
+     "At a fair"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "This is minimum and maximum again. They ask for the fewest and the most tickets left, for all the children together. [short pause] We'll solve it in two different ways, by understanding which way to push, and then with the last digit.",
+    "at": [
+     "They ask for the fewest"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with one child. How many tickets does a child get in total? Three to five at the first booth, plus two to four at the second. The least is three plus two, five. The most is five plus four, nine.",
+    "at": [
+     "Three to five",
+     "The least is three plus two",
+     "The most is"
+    ]
+   },
+   {
+    "say": "The fewest left means the child gets the least and uses the most. Five minus three is two tickets.",
+    "at": [
+     "Five minus three"
+    ]
+   },
+   {
+    "say": "The most left means the child gets the most and uses the least. Careful, every child uses at least one ticket, so we don't stop at nine. Nine minus one is eight tickets.",
+    "at": [
+     "The most left",
+     "Nine minus one"
+    ]
+   },
+   {
+    "say": "Now all twenty-three children. The fewest is twenty-three times two, forty-six. So choice numbers one and four are out.",
+    "at": [
+     "The fewest is",
+     "twenty-three times two",
+     "So choice numbers one and four",
+     "are out"
+    ]
+   },
+   {
+    "say": "The most is twenty-three times eight. Twenty times eight is a hundred sixty. Three times eight is twenty-four. A hundred sixty plus twenty-four is a hundred eighty-four. Choice number two is our answer.",
+    "at": [
+     "The most is",
+     "Twenty times eight",
+     "Three times eight is",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now with the last digit, which saves work and silly mistakes. Remember, the last digit of a product comes only from the last digits. The fewest is two tickets left for each of twenty-three children. Three times two is six, so the total ends in six.",
+    "at": [
+     "Now with",
+     "Three times two is six"
+    ]
+   },
+   {
+    "say": "Forty-six ends in six, and sixty-nine ends in nine. So choice numbers one and four are out.",
+    "at": [
+     "Forty-six ends in",
+     "So choice numbers one and four",
+     "are out"
+    ]
+   },
+   {
+    "say": "The most is eight tickets left for each child. Three times eight is twenty-four, so the total ends in four. A hundred eighty-four ends in four, and two hundred seven ends in seven. So choice number three is out too. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Three times eight is twenty-four",
+     "so the total",
+     "So choice number three is out too",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

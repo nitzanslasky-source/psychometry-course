@@ -8215,8 +8215,66 @@
    }
   },
   "geo-097-after": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "I want to use the last question to show you three useful arrangements of shapes inside shapes. Each one comes with a fixed ratio. Once we see why, it's worth remembering them."
+    ],
+    [
+     "The first one is square, circle, square. A circle inside a square, touching all four sides. And a square inside the circle, with its four corners on the circle. It's exactly the case we just solved.",
+     "Here the inner square's corners are at the touching points. If it's drawn turned another way, we can rotate it inside the circle until it looks like this. Turning it doesn't change its size. Then the big square is made of eight identical triangles, and the small square of four. So the outer square's area is always twice the inner square's area.",
+     "So when you see this arrangement in a question, you already know the ratio of the areas. The outer area is two times the inner area.",
+     "It's also worth knowing the sides. Take a radius of one. The outer side is a diameter, two. The inner side is the hypotenuse of a silver triangle with legs one and one, so it's root two. Two is root two times root two. So the outer side is root two times the inner side."
+    ],
+    [
+     "The second one is circle, square, circle. A square inside a circle, with its four corners on the circle. And a circle inside the square, touching all four sides. It's almost the same case.",
+     "Why? Say the small radius is one. The small circle touches the square's sides, so the square's side is a diameter, two.",
+     "Now look at the square's diagonal. It cuts the square into two silver triangles with legs of two. In a silver triangle the hypotenuse is the leg times root two. So the diagonal is two root two.",
+     "The square's corners are on the big circle, so that diagonal is a diameter of the big circle. So the big radius is half of it, root two.",
+     "So the outer radius is root two times the inner radius. Now the areas. The small circle is pi times one squared, which is pi. The big circle is pi times root two squared. Root two squared is two, so that's two pi.",
+     "So again, the outer circle's area is exactly twice the inner circle's area. That fits the scaling rule we know. Every length is multiplied by root two. So the area is multiplied by root two squared, which is two."
+    ],
+    [
+     "The third one is triangle, circle, triangle. Here both triangles must be equilateral. A circle inside the big triangle, touching all three sides. And a small triangle inside the circle, with its three corners on the circle.",
+     "Here it's different. The outer triangle's area isn't twice the inner one. It's four times the inner area. And the outer side is twice the inner side.",
+     "Why? The circle touches each side of the big triangle right in its middle, because the equilateral triangle is symmetric. The small triangle in this picture is already turned upside down. If it's drawn another way, we can rotate it around the center until it looks like this. Turning it doesn't change its size. Now its corners touch those middles.",
+     "So the big triangle is cut into four equal triangles, and the small one is one of them. Its side is half of the big side, and its area is a quarter."
+    ],
+    [
+     "Now, this is important. A length factor isn't an area factor. The area factor is the length factor, squared.",
+     "In the first two arrangements, every length is multiplied by root two. So the areas are multiplied by two. In the triangle arrangement, every length is multiplied by two. So the areas are multiplied by four.",
+     "So remember the three area ratios, the outer area over the inner area. They are two, two, and four. Take a moment to memorize this. Okay. I'll see you in the next video."
+    ]
+   ],
+   "disp": [
+    [
+     "I want to use the last question to show you three useful arrangements of shapes inside shapes. Each one comes with a fixed ratio.\nOnce we see why, it's worth remembering them."
+    ],
+    [
+     "The first one is square, circle, square. A circle inside a square, touching all four sides.\nAnd a square inside the circle, with its four corners on the circle. It's exactly the case we just solved.",
+     "Here the inner square's corners are at the touching points.\nIf it's drawn turned another way, we can rotate it inside the circle until it looks like this. Turning it doesn't change its size.\nThen the big square is made of eight identical triangles, and the small square of four.\nSo the outer square's area is always twice the inner square's area.",
+     "So when you see this arrangement in a question, you already know the ratio of the areas.\nThe outer area is two times the inner area.",
+     "It's also worth knowing the sides. Take a radius of one. The outer side is a diameter, two.\nThe inner side is the hypotenuse of a silver triangle with legs one and one, so it's √2.\nTwo is √2 times √2. So outer side = √2 × inner side."
+    ],
+    [
+     "The second one is circle, square, circle. A square inside a circle, with its four corners on the circle.\nAnd a circle inside the square, touching all four sides. It's almost the same case.",
+     "Why? Say the small radius is one. The small circle touches the square's sides, so the square's side is a diameter, two.",
+     "Now look at the square's diagonal. It cuts the square into two silver triangles with legs of two.\nIn a silver triangle the hypotenuse is the leg times √2. So the diagonal is 2√2.",
+     "The square's corners are on the big circle, so that diagonal is a diameter of the big circle.\nSo the big radius is half of it, √2.",
+     "So outer radius = √2 × inner radius. Now the areas. The small circle is π times 1², which is π.\nThe big circle is π × (√2)². (√2)² = 2, so that's two π.",
+     "So again, the outer circle's area is exactly twice the inner circle's area. That fits the scaling rule we know.\nEvery length is multiplied by √2. So the area is multiplied by (√2)², which is two."
+    ],
+    [
+     "The third one is triangle, circle, triangle. Here both triangles must be equilateral. A circle inside the big triangle, touching all three sides.\nAnd a small triangle inside the circle, with its three corners on the circle.",
+     "Here it's different. The outer triangle's area isn't twice the inner one. It's four times the inner area.\nAnd the outer side is twice the inner side.",
+     "Why? The circle touches each side of the big triangle right in its middle, because the equilateral triangle is symmetric.\nThe small triangle in this picture is already turned upside down.\nIf it's drawn another way, we can rotate it around the center until it looks like this. Turning it doesn't change its size.\nNow its corners touch those middles.",
+     "So the big triangle is cut into four equal triangles, and the small one is one of them.\nIts side is half of the big side, and its area is a quarter."
+    ],
+    [
+     "Now, this is important. A length factor isn't an area factor. The area factor is the length factor, squared.",
+     "In the first two arrangements, every length is multiplied by √2. So the areas are multiplied by two.\nIn the triangle arrangement, every length is multiplied by two. So the areas are multiplied by four.",
+     "So remember the three area ratios, the outer area over the inner area. They are 2, 2, and 4.\nTake a moment to memorize this. Okay. I'll see you in the next video."
+    ]
+   ],
    "recorded_when_published": false,
    "scope_replacements": {
     "3.4": [
@@ -8757,8 +8815,78 @@
    }
   },
   "solve-q-r26-t33-05": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "Two circles with centers A and B touch each other from the outside. Their radii are eight centimeters and two centimeters. A line touches the two circles at D and C, as in the figure. What is the length of D C, in centimeters?",
+     "We need a length, D C, but the figure has only two circles and a line. Let's use the math way. We'll go to the givens and see what each one gives us. We'll build a right triangle, and at the end there's a short formula too.",
+     "Let's look at the bottom part of the figure, bigger. D and C are points of tangency. Let's draw each radius to its touching point, A D and B C. That gives two right angles, because a radius is perpendicular to the tangent at its touching point.",
+     "A D is a radius of the big circle, eight. B C is a radius of the small circle, two. Both are perpendicular to the same line, so they're parallel to each other.",
+     "The circles touch, so let's also join the centers. A B passes through the point where the circles touch. The first part is a radius of the big circle, eight, and the second part is a radius of the small one, two. So A B is eight plus two, ten.",
+     "Now look at A B C D. It has two right angles, at D and at C, and two parallel sides, A D and B C. It's a right trapezoid. D C is perpendicular to both parallel sides, so it's the distance between them. That's the length we want."
+    ],
+    [
+     "To use Pythagoras, we need a right triangle with D C in it, or a copy of D C. So from B, draw a line parallel to D C, until it meets A D. Call that point E.",
+     "E B C D is a rectangle, because all its angles are right angles. So E D is equal to B C, which is two. And E B is equal to D C, the length we want.",
+     "Now A E is the whole radius A D, minus E D. Eight minus two is six.",
+     "Look at the right triangle A B E. The hypotenuse A B is ten, and one leg, A E, is six. Six and ten, that's the six, eight, ten triangle, so the other leg, B E, is eight.",
+     "Let's check it with Pythagoras. The missing leg squared is the hypotenuse squared minus the other leg squared. Ten squared is a hundred. Six squared is thirty-six. A hundred minus thirty-six is sixty-four. A length is positive, so we take the positive root, eight.",
+     "B E is equal to D C, so D C is eight. Choice number two is our answer."
+    ],
+    [
+     "Now the traps. Ten, choice number one, is A B, the distance between the centers. It's not the tangent. And six, choice number three, is only A E, the difference between the radii.",
+     "Two root thirty-four, choice number four, comes from adding the squares. Thirty-six plus a hundred is a hundred thirty-six, and the root of a hundred thirty-six is two root thirty-four.",
+     "But A B is the hypotenuse, the longest side. Two root thirty-four is more than ten, because root thirty-four is more than five. And a leg can't be longer than the hypotenuse."
+    ],
+    [
+     "There's also a short formula. Let's see why it works, with letters. Call the big radius capital R, and the small radius small r. The circles touch from the outside, so A B, the hypotenuse, is big R plus small r. And A E is big R minus small r.",
+     "By Pythagoras, D C squared is the hypotenuse squared minus the leg squared. That's big R plus small r, all squared, minus, big R minus small r, all squared.",
+     "We can expand both brackets using the identities we know. First, big R plus small r, all squared, is big R squared, plus two big R small r, plus small r squared. Then, big R minus small r, all squared, is big R squared, minus two big R small r, plus small r squared.",
+     "Now subtract the second one from the first. The big R squared cancels, and so does the small r squared. Taking away minus two big R small r adds it, so we're left with two big R small r, plus two big R small r. That's four big R small r.",
+     "So D C squared is four big R small r. A length is positive, so D C is the root of four big R small r. That's two times the root of big R times small r. Here it's two times the root of eight times two, two times the root of sixteen. Two times four is eight, the same answer."
+    ],
+    [
+     "Let's check it on other circles, with radii nine and four, touching from the outside. The centers are nine plus four, thirteen apart. And the difference of the radii is nine minus four, five.",
+     "Five, twelve, thirteen, so the tangent segment is twelve. And the formula gives two times the root of nine times four. That's two times the root of thirty-six, two times six, twelve. The same.",
+     "So remember when it works. Two circles touch each other from the outside, and D C is the piece of a common tangent line between its two touching points. Then D C is two times the root of big R times small r.",
+     "If the circles don't touch, but there's still a common tangent like this, cut off the same right triangle. Its hypotenuse is the distance between the centers. And if one circle is inside the other, there's no such tangent at all. Okay. I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "Two circles with centers A and B touch each other from the outside. Their radii are eight centimeters and two centimeters.\nA line touches the two circles at D and C, as in the figure. What is the length of D C, in centimeters?",
+     "We need a length, D C, but the figure has only two circles and a line. Let's use the math way.\nWe'll go to the givens and see what each one gives us.\nWe'll build a right triangle, and at the end there's a short formula too.",
+     "Let's look at the bottom part of the figure, bigger. D and C are points of tangency.\nLet's draw each radius to its touching point, A D and B C.\nThat gives two right angles, because a radius is perpendicular to the tangent at its touching point.",
+     "A D is a radius of the big circle, eight. B C is a radius of the small circle, two.\nBoth are perpendicular to the same line, so they're parallel to each other.",
+     "The circles touch, so let's also join the centers. A B passes through the point where the circles touch.\nThe first part is a radius of the big circle, eight, and the second part is a radius of the small one, two.\nSo A B = 8 + 2, 10.",
+     "Now look at A B C D.\nIt has two right angles, at D and at C, and two parallel sides, A D and B C. It's a right trapezoid.\nD C is perpendicular to both parallel sides, so it's the distance between them. That's the length we want."
+    ],
+    [
+     "To use Pythagoras, we need a right triangle with D C in it, or a copy of D C.\nSo from B, draw a line parallel to D C, until it meets A D. Call that point E.",
+     "E B C D is a rectangle, because all its angles are right angles. So E D = B C, which is two.\nAnd E B = D C, the length we want.",
+     "Now A E is the whole radius AD − ED. 8 − 2 = 6.",
+     "Look at the right triangle A B E. The hypotenuse A B = 10, and one leg, A E, is six.\nSix and 10, that's the six, eight, 10 triangle, so the other leg, B E, is eight.",
+     "Let's check it with Pythagoras. The missing leg squared is the hypotenuse squared minus the other leg squared. 10² = 100. 6² = 36.\n100 − 36 = 64. A length is positive, so we take the positive root, eight.",
+     "B E = D C, so D C = 8. Choice number 2 is our answer."
+    ],
+    [
+     "Now the traps. 10, choice number 1, is A B, the distance between the centers. It's not the tangent.\nAnd six, choice number 3, is only A E, the difference between the radii.",
+     "2√34, choice number 4, comes from adding the squares. 36 + 100 = 136, and √136 = 2√34.",
+     "But A B is the hypotenuse, the longest side. 2√34 is more than 10, because √34 is more than five.\nAnd a leg can't be longer than the hypotenuse."
+    ],
+    [
+     "There's also a short formula. Let's see why it works, with letters. Call the big radius capital R, and the small radius small r.\nThe circles touch from the outside, so A B, the hypotenuse, is big R plus small r.\nAnd A E is big R minus small r.",
+     "By Pythagoras, DC² is the hypotenuse squared minus the leg squared.\nThat's (R + r)² − (R − r)².",
+     "We can expand both brackets using the identities we know.\nFirst, (R + r)² = R² + 2Rr + r².\nThen, (R − r)² = R² − 2Rr + r².",
+     "Now subtract the second one from the first. R² cancels, and so does r².\nTaking away −2Rr means adding 2Rr, so we're left with 2Rr + 2Rr = 4Rr.",
+     "So DC² = 4Rr. A length is positive, so DC = √(4Rr) = 2√(Rr).\nHere it's 2√(8 × 2) = 2√16. 2 × 4 = 8, the same answer."
+    ],
+    [
+     "Let's check it on other circles, with radii nine and four, touching from the outside. The centers are 9 + 4, 13 apart.\nAnd the difference of the radii is 9 − 4, five.",
+     "Five, 12, 13, so the tangent segment is 12. And the formula gives two times the root of 9 × 4.\nThat's two times the root of 36, 2 × 6, 12. The same.",
+     "So remember when it works.\nTwo circles touch each other from the outside, and D C is the piece of a common tangent line between its two touching points.\nThen D C = 2 times the root of big R times small r.",
+     "If the circles don't touch, but there's still a common tangent like this, cut off the same right triangle.\nIts hypotenuse is the distance between the centers. And if one circle is inside the other, there's no such tangent at all. Okay.\nI'll see you in the next question."
+    ]
+   ],
    "recorded_when_published": false,
    "scope_replacements": {
     "2.3": [
@@ -8884,8 +9012,34 @@
    }
   },
   "solve-pt-q03": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "Given, a is not zero, and b is not zero. a squared plus b squared, plus the bracket a minus b, squared, all over two a b, plus one. What is it equal to?",
+     "What does what is it equal to mean here? It means one of the choices is the same expression, written another way. It gives the same value for every a and b that we're allowed to use. We'll solve it two ways, the math way, with algebra, and then by plugging in numbers.",
+     "The math way first. We simplify the expression until it looks like one of the choices. We have the bracket a minus b, squared, so let's use the formula from expressions. a minus b, squared, is a squared minus two a b plus b squared.",
+     "So the top is a squared plus b squared, plus a squared minus two a b plus b squared. Now collect the like terms. a squared plus a squared is two a squared. b squared plus b squared is two b squared. And the minus two a b stays."
+    ],
+    [
+     "A lot of students take out two as a common factor here, and then get a bit tangled. Instead, let's split the fraction into three fractions with the same bottom. Why is that allowed? Fractions with the same bottom are added by adding the tops, so we can also go back the other way.",
+     "Why split it? Because the third fraction, two a b over two a b, is one. So we have minus one and plus one, and they cancel each other.",
+     "Now reduce the other two. In two a squared over two a b, the twos cancel, and one a cancels, so we're left with a over b. In two b squared over two a b, the twos cancel, and one factor of b cancels too, so we get b over a.",
+     "So the expression is a over b plus b over a, and choice number one is our answer. Okay. I'll see you in the next part."
+    ]
+   ],
+   "disp": [
+    [
+     "Given, a is not zero, and b is not zero. (a² + b² + (a − b)²)/(2ab) + 1. What is it equal to?",
+     "What does what is it equal to mean here? It means one of the choices is the same expression, written another way.\nIt gives the same value for every a and b that we're allowed to use.\nWe'll solve it two ways, the math way, with algebra, and then by plugging in numbers.",
+     "The math way first. We simplify the expression until it looks like one of the choices.\nWe have (a − b)², so let's use the formula from expressions. (a − b)² = a² − 2ab + b².",
+     "So the top is a² + b², plus a² − 2ab + b². Now collect the like terms. a² + a² = 2a².\nb² + b² = 2b². And the −2ab stays."
+    ],
+    [
+     "A lot of students take out two as a common factor here, and then get a bit tangled.\nInstead, let's split the fraction into three fractions with the same bottom. Why is that allowed?\nFractions with the same bottom are added by adding the tops, so we can also go back the other way.",
+     "Why split it? Because the third fraction, 2ab/2ab, is one. So we have −1 and +1, and they cancel each other.",
+     "Now reduce the other two. In (2a²)/(2ab), the twos cancel, and one a cancels, so we're left with a/b.\nIn (2b²)/(2ab), the twos cancel, and one factor of b cancels too, so we get b/a.",
+     "So the expression is a/b + b/a, and choice number 1 is our answer. Okay. I'll see you in the next part."
+    ]
+   ],
    "recorded_when_published": false,
    "scope_replacements": {
     "1.1": [
@@ -9601,8 +9755,50 @@
    }
   },
   "solve-pt-q17": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "Root two, over the bracket two plus root two. What does it equal?",
+     "It's a fraction with a root on the bottom, and none of the choices is a fraction. So we need to get rid of the bottom. We'll solve it two ways, the math way, with algebra, and then with an estimate.",
+     "In the roots topic we learned how. When the bottom is a sum with a root, we multiply the top and the bottom by its partner, called the conjugate. The partner of two plus root two is two minus root two. The top and the bottom are multiplied by the same thing, so it's like multiplying by one, and the value doesn't change.",
+     "Why the partner? On the bottom we get two plus root two, times two minus root two. That's the difference of squares, a squared minus b squared. Two squared is four, and root two squared is two. Four minus two is two, so the root is gone.",
+     "On the top, root two times two is two root two. And root two times root two is two. So the top is two root two minus two.",
+     "So we have two root two minus two, over two. We divide each part by two, and we get root two minus one. Choice number four is our answer.",
+     "Many students don't think of the partner here, and they get stuck. That's exactly when an estimate helps."
+    ],
+    [
+     "Now the estimate. We don't need root two exactly. We only need to know between which numbers it is.",
+     "One squared is one, and two squared is four. Two is between them, so root two is between one and two.",
+     "We need a bit more. One and a half squared is two and a quarter. That's more than two, so root two is less than one and a half. So root two is between one and one and a half.",
+     "Now the size of our fraction. The bottom is the top plus two, so the bottom is bigger than the top. That means the fraction is less than one.",
+     "Choice number two, two root two, is more than two, because root two is more than one. Choice number three, root two plus one, is also more than two. Both are more than one, so both are out.",
+     "Two choices are left. Choice number four, root two minus one, is less than a half, because root two is less than one and a half.",
+     "Choice number one is the same number, squared. A half squared is a quarter, and a smaller number squared is even smaller. So choice number one is less than a quarter.",
+     "So is our fraction more than a quarter? The top, root two, is more than one. The bottom, two plus root two, is less than two plus two, which is four. A bigger top and a smaller bottom both make a fraction bigger. So the fraction is more than one over four, a quarter.",
+     "So choice number one is out, because it's less than a quarter. Choice number four is our answer again. Okay. I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "√2, over the bracket two plus √2. What does it equal?",
+     "It's a fraction with a root on the bottom, and none of the choices is a fraction.\nSo we need to get rid of the bottom. We'll solve it two ways, the math way, with algebra, and then with an estimate.",
+     "In the roots topic we learned how.\nWhen the bottom is a sum with a root, we multiply the top and the bottom by its partner, called the conjugate.\nThe partner of (2 + √2) is (2 − √2).\nThe top and the bottom are multiplied by the same thing, so it's like multiplying by one, and the value doesn't change.",
+     "Why the partner? On the bottom we get (2 + √2)(2 − √2). That's the difference of squares, a² − b².\n2² = 4, and (√2)² = 2. 4 − 2 = 2, so the root is gone.",
+     "On the top, √2 × 2 is 2√2. And √2 times √2 is two.\nSo the top is 2√2 − 2.",
+     "So we have (2√2 − 2)/2. We divide each part by two, and we get √2 − 1. Choice number 4 is our answer.",
+     "Many students don't think of the partner here, and they get stuck. That's exactly when an estimate helps."
+    ],
+    [
+     "Now the estimate. We don't need √2 exactly. We only need to know between which numbers it is.",
+     "1² = 1, and 2² = 4. Two is between them, so √2 is between one and two.",
+     "We need a bit more. One and a half squared is two and a quarter. That's more than two, so √2 < 1½.\nSo √2 is between 1 and 1½.",
+     "Now the size of our fraction. The bottom is the top plus two, so the bottom is bigger than the top.\nThat means the fraction is less than 1.",
+     "Choice number 2, 2√2, is more than two, because √2 is more than one.\nChoice number 3, √2 + 1, is also more than two. Both are more than one, so both are out.",
+     "Two choices are left. Choice number 4, √2 − 1, is less than ½, because √2 < 1½.",
+     "Choice number 1 is the same number, squared. A half squared is a quarter, and a smaller number squared is even smaller.\nSo choice number 1 is less than a quarter.",
+     "So is our fraction more than a quarter? The top, √2, is more than one.\nThe bottom, two plus √2 < 2 + 2, which is four.\nA bigger top and a smaller bottom both make a fraction bigger. So the fraction is more than 1/4, a quarter.",
+     "So choice number 1 is out, because it's less than a quarter. Choice number 4 is our answer again. Okay.\nI'll see you in the next question."
+    ]
+   ],
    "recorded_when_published": false,
    "scope_replacements": {
     "1.4": [
@@ -9730,6 +9926,134 @@
      ]
     ]
    }
+  },
+  "solve-wp21-g025": {
+   "scope_replacements": {
+    "2.1": [
+     [
+      "six forty",
+      "6:40"
+     ]
+    ],
+    "3.4": [
+     [
+      "six forty",
+      "6:40"
+     ],
+     [
+      "nine twenty",
+      "9:20"
+     ],
+     [
+      "ten forty",
+      "10:40"
+     ],
+     [
+      "Six forty",
+      "6:40"
+     ]
+    ],
+    "1.3": [
+     [
+      "six fifty-six",
+      "6:56"
+     ],
+     [
+      "seven twelve",
+      "7:12"
+     ],
+     [
+      "seven twenty-eight",
+      "7:28"
+     ],
+     [
+      "seven forty-four",
+      "7:44"
+     ],
+     [
+      "seven twenty",
+      "7:20"
+     ],
+     [
+      "seven forty",
+      "7:40"
+     ],
+     [
+      "Six forty",
+      "6:40"
+     ]
+    ],
+    "1.4": [
+     [
+      "seven twenty",
+      "7:20"
+     ],
+     [
+      "seven forty",
+      "7:40"
+     ],
+     [
+      "Six forty",
+      "6:40"
+     ]
+    ],
+    "2.2": [
+     [
+      "nine twenty",
+      "9:20"
+     ],
+     [
+      "ten forty",
+      "10:40"
+     ],
+     [
+      "Six forty",
+      "6:40"
+     ]
+    ],
+    "2.3": [
+     [
+      "Nine twenty",
+      "9:20"
+     ]
+    ],
+    "1.1": [
+     [
+      "together at six forty",
+      "together at 6:40"
+     ],
+     [
+      "Counting six forty as",
+      "Counting 6:40 as"
+     ]
+    ]
+   },
+   "paras": [],
+   "disp": []
+  },
+  "solve-wp21-g010": {
+   "scope_replacements": {
+    "1.6": [
+     [
+      "five times the difference, two to the power of n, minus one",
+      "5(2ⁿ − 1)"
+     ]
+    ]
+   },
+   "paras": [],
+   "disp": []
+  },
+  "solve-wp21-g007": {
+   "scope_replacements": {
+    "2.3": [
+     [
+      "k times the next number, k plus one, and then half of that",
+      "k(k + 1)/2"
+     ]
+    ]
+   },
+   "paras": [],
+   "disp": []
   }
  }
 }

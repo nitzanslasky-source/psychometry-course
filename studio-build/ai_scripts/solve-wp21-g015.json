@@ -1,0 +1,100 @@
+{
+ "videoId": "solve-wp21-g015",
+ "style": "the teacher reads it herself (Reading Studio), topic-21 scripts (2026-10-18): math_patches/_ai_vis_t21.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Twenty-two baskets hold eighty apples altogether. Every basket holds at least three apples. Which number cannot be the number of baskets holding exactly three apples?",
+    "voice": "calm",
+    "at": [
+     "Twenty-two baskets"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "This is a hard question. Where do we even start? Some people try and wonder, and some just stare at it. The worst thing we can do here is stare. [short pause] So we start plugging in the answers. Or we skip it, move on, and come back at the end. Just don't sit and stare.",
+    "at": [
+     "Where do we even start",
+     "Some people try"
+    ]
+   },
+   {
+    "say": "[short pause] Let's plug in the answers. They ask what cannot be. So we find what can be, and cross out three choices. Let's start with choice number one, eight. Eight baskets with exactly three apples hold eight times three, twenty-four apples. Eighty minus twenty-four leaves fifty-six apples. Twenty-two minus eight leaves fourteen baskets.",
+    "at": [
+     "Let's plug",
+     "number one, eight",
+     "Eighty minus twenty-four",
+     "Twenty-two minus eight"
+    ]
+   },
+   {
+    "say": "Those fourteen baskets must not hold exactly three, so each needs at least four. Fifty-six divided by fourteen is four, exactly four each. It works, so choice number one is out.",
+    "at": [
+     "Fifty-six divided by fourteen",
+     "four, exactly four",
+     "so choice number one is out"
+    ]
+   },
+   {
+    "say": "Now choice number two, eleven. Eleven times three is thirty-three apples. Eighty minus thirty-three leaves forty-seven, for the other eleven baskets.",
+    "at": [
+     "number two, eleven",
+     "Eleven times three",
+     "Eighty minus thirty-three"
+    ]
+   },
+   {
+    "say": "Eleven baskets with four each would hold forty-four. We have forty-seven, three more. That's fine, because more than four is allowed. Ten baskets get four, that's forty, and the last one gets seven. It works, so choice number two is out.",
+    "at": [
+     "Eleven baskets with four each",
+     "would hold forty-four",
+     "Ten baskets get four",
+     "forty, and the",
+     "so choice number two is out"
+    ]
+   },
+   {
+    "say": "Now choice number three, fifteen. Fifteen times three is forty-five. Eighty minus forty-five leaves thirty-five, for seven baskets.",
+    "at": [
+     "number three, fifteen",
+     "Fifteen times three",
+     "Eighty minus forty-five"
+    ]
+   },
+   {
+    "say": "Six of them get four, that's twenty-four, and the last one gets the other eleven. It works, so choice number three is out. Three choices are out, so choice number four, seven, is our answer.",
+    "at": [
+     "Six of them get four",
+     "one gets the",
+     "so choice number three",
+     "seven, is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "In the exam you'd circle it and move on. Here, let's see why seven fails, because it helps us understand the question. Seven baskets with three apples hold twenty-one. Eighty minus twenty-one leaves fifty-nine apples, for fifteen baskets.",
+    "at": [
+     "In the",
+     "circle it and",
+     "Here, let's see",
+     "Seven baskets with three",
+     "Eighty minus twenty-one"
+    ]
+   },
+   {
+    "say": "Fifteen baskets with four each need sixty. We have only fifty-nine, one too few. So at least one more basket is stuck with three apples, and then there are eight, not seven.",
+    "at": [
+     "Fifteen baskets with four",
+     "We have only"
+    ]
+   },
+   {
+    "say": "Was it long? A minute or two, not twenty. That's fine, because the quick questions buy us the time for this one. And we'll come back to this type of question later, with a shortcut. Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

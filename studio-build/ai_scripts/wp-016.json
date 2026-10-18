@@ -1,0 +1,70 @@
+{
+ "videoId": "wp-016",
+ "style": "the teacher reads it herself (Reading Studio), topic-21 scripts (2026-10-18): math_patches/_ai_vis_t21.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now more minimum and maximum. When we understand which way to push, we need far fewer tries."
+  ],
+  [
+   {
+    "say": "Here are three rules that come up again and again. Each one tells us which way to push.",
+    "at": [
+     "that come up"
+    ]
+   },
+   {
+    "say": "The first rule makes one number as big as possible. To do that, we give all the others the least they're allowed. Three different positive whole numbers add up to twenty-six. How big can the biggest be? The other two get the least, one and two. Twenty-six minus three leaves twenty-three.",
+    "at": [
+     "The first rule",
+     "number as big",
+     "Twenty-six minus three"
+    ]
+   },
+   {
+    "say": "Why does it work? The total is fixed. Every bit we take from the others goes to the one we want to grow. Here's another example. Four different positive numbers add up to twenty. The others get one, two and three, that's six. So the biggest can be twenty minus six, fourteen.",
+    "at": [
+     "The total is",
+     "Four different positive numbers",
+     "up to twenty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The second rule makes the biggest number as small as possible. To do that, we share as equally as we can. Three whole numbers add up to twenty-six. Twenty-six divided by three is eight, with two left over. So the closest we can get is nine, nine and eight, and the biggest is at least nine.",
+    "at": [
+     "The second rule",
+     "biggest number as",
+     "nine, nine and eight"
+    ]
+   },
+   {
+    "say": "Why does it work? If we make one number smaller, another one has to grow. The biggest can never be smaller than an equal share. Here's another example. Four numbers add up to thirty. Thirty divided by four is seven, with two left over. So eight, eight, seven and seven, and the biggest is at least eight.",
+    "at": [
+     "If we make",
+     "Four numbers add up to thirty",
+     "Thirty divided by"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The third rule makes one number as small as possible. To do that, we give all the others the most they're allowed. Three test scores, each at most ten, add up to twenty-six. The other two get ten each, that's twenty. So the smallest can be twenty-six minus twenty, six.",
+    "at": [
+     "The third rule",
+     "number as small",
+     "twenty-six minus twenty"
+    ]
+   },
+   {
+    "say": "Here's another example. Four scores, each at most ten, add up to thirty-one. Three of them get ten, that's thirty. So the smallest can be just one.",
+    "at": [
+     "Four scores, each at most ten",
+     "Three of them"
+    ]
+   },
+   "The second and third rules sound like opposites, but they aren't. In the second rule we push the biggest down, so the others can't pass it, and that's why we share equally. In the third rule we push one number down, so the others take as much as they can.",
+   "The nuances come in the questions. [pause] I'll see you in the next video."
+  ]
+ ]
+}

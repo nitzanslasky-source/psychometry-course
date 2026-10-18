@@ -1,0 +1,121 @@
+{
+ "videoId": "solve-wp21-g007",
+ "style": "the teacher reads it herself (Reading Studio), topic-21 scripts (2026-10-18): math_patches/_ai_vis_t21.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Noa shares forty-two postcards among her friends. Each friend receives a different number of postcards, a positive whole number, and all the postcards are given out. What is the largest possible number of friends?",
+    "voice": "calm",
+    "at": [
+     "Noa shares"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "They ask for the largest possible number of friends. On the exam, a word like largest is printed in bold. Circle it, so you don't mix up the largest and the smallest. [short pause] We'll solve it in two different ways, by understanding which way to push, and then the math way, with a short formula.",
+    "at": [
+     "They ask for the largest",
+     "in two different"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start by understanding. In theory, Noa could give all forty-two postcards to one friend. That's allowed, but they want as many friends as possible. So we give each friend as little as possible. Then more is left for the next friend.",
+    "at": [
+     "want as many",
+     "Then more is"
+    ]
+   },
+   {
+    "say": "Each friend gets at least one, and every amount is different. So the first friend gets one. The second friend would love to get just one too, but the amounts must be different. So the second gets two. Then three, four, five, six, seven and eight.",
+    "at": [
+     "Each friend gets at least one",
+     "one, and every",
+     "So the first friend gets one",
+     "The second friend",
+     "So the second gets two",
+     "Then three, four",
+     "seven and eight"
+    ]
+   },
+   {
+    "say": "Now let's keep a running total. One plus two is three. Three plus three is six. Six plus four is ten. Ten plus five is fifteen.",
+    "at": [
+     "keep a running total",
+     "Three plus three"
+    ]
+   },
+   {
+    "say": "Fifteen plus six is twenty-one. Twenty-one plus seven is twenty-eight. And twenty-eight plus eight is thirty-six.",
+    "at": [
+     "Fifteen plus six",
+     "Twenty-one plus seven"
+    ]
+   },
+   {
+    "say": "So eight friends use thirty-six postcards, and forty-two minus thirty-six leaves six. A ninth friend would need at least nine, because one to eight are taken. We only have six. So there's no ninth friend.",
+    "at": [
+     "A ninth friend would need",
+     "at least nine",
+     "We only have six"
+    ]
+   },
+   {
+    "say": "But the six leftovers still have to be given out. We give them to someone who already has postcards, like the friend with eight. Eight plus six is fourteen. All the amounts are still different, and all forty-two are used. So eight friends really works, and choice number two is our answer.",
+    "at": [
+     "But the six",
+     "Eight plus six is fourteen",
+     "All the amounts are still different",
+     "different, and all",
+     "choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way, with a short formula. The cheapest way to give different amounts to some friends is one, two, three, and so on. And there's a quick way to add that up.",
+    "at": [
+     "Now the"
+    ]
+   },
+   {
+    "say": "Let's add one to eight by pairing the ends. One plus eight is nine. Two plus seven is nine. Three plus six is nine. Four plus five is nine. That's four pairs of nine, and four times nine is thirty-six.",
+    "at": [
+     "One plus eight is nine",
+     "Two plus seven",
+     "four times nine"
+    ]
+   },
+   {
+    "say": "Why does every pair give the same sum? Going in from both ends, one number goes up by one, and the other goes down by one. So the sum stays the same. In general, adding one, two, and so on up to k gives k times the next number, k plus one, and then half of that.",
+    "at": [
+     "Why does every",
+     "In general, adding one",
+     "and so on"
+    ]
+   },
+   {
+    "say": "Let's check it once more, with ten. One to ten is ten times eleven, all divided by two. Ten times eleven is a hundred ten, and half of that is fifty-five. With pairs, it's five pairs of eleven, fifty-five again.",
+    "at": [
+     "One to ten is ten times eleven",
+     "times eleven, all"
+    ]
+   },
+   {
+    "say": "Now back to our question. The friends need different amounts. Eight friends need at least eight times nine, all divided by two, which is thirty-six. That's not more than forty-two, so eight friends is possible.",
+    "at": [
+     "Eight friends need at least",
+     "eight times nine"
+    ]
+   },
+   {
+    "say": "Nine friends need at least nine times ten, all divided by two, which is forty-five. That's more than forty-two, so nine friends is impossible. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Nine friends need at least",
+     "by two, which",
+     "so nine friends is impossible",
+     "number two is"
+    ]
+   }
+  ]
+ ]
+}

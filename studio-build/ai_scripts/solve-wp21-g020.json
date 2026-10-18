@@ -1,0 +1,94 @@
+{
+ "videoId": "solve-wp21-g020",
+ "style": "the teacher reads it herself (Reading Studio), topic-21 scripts (2026-10-18): math_patches/_ai_vis_t21.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Lior, Maya and Noam share thirty-six cards. Their numbers of cards are different positive whole numbers, with Lior having the most and Noam the fewest. What are the smallest and the largest possible numbers of cards Lior has?",
+    "voice": "calm",
+    "at": [
+     "Lior, Maya and Noam"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for the fewest and the most cards Lior can have. Lior has the most, Noam the fewest, and Maya is in the middle. [short pause] We'll solve it in two different ways, by plugging in the answers, and then by understanding minimum and maximum.",
+    "at": [
+     "So they ask for the fewest"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start by plugging in the answers. For the smallest, the choices say twelve or thirteen. They ask for the smallest, so we try the smaller one first, twelve. If twelve works, it beats thirteen. If it doesn't, the answer is thirteen.",
+    "at": [
+     "Let's start"
+    ]
+   },
+   {
+    "say": "Say Lior has twelve. Maya and Noam must have fewer, and different numbers. So at most eleven and ten. Eleven plus ten is twenty-one. Twenty-one plus twelve is thirty-three. That's the most they can have together, and it's less than thirty-six. So twelve is impossible, and choice numbers one and two are out.",
+    "at": [
+     "Say Lior has twelve",
+     "fewer, and different",
+     "Eleven plus ten",
+     "Twenty-one plus twelve",
+     "and choice numbers one and two",
+     "are out"
+    ]
+   },
+   {
+    "say": "For the biggest, the choices say thirty-three or thirty-four. They ask for the biggest, so we try the bigger one first, thirty-four. Then two cards are left for Maya and Noam. Each has at least one, so one and one. But their numbers must be different. So thirty-four is impossible, and choice number three is out.",
+    "at": [
+     "Then two cards are left",
+     "Each has at",
+     "and choice number three is out"
+    ]
+   },
+   {
+    "say": "Only choice number four is left, thirteen and thirty-three. Choice number four is our answer.",
+    "at": [
+     "number four is",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's solve it by understanding. The biggest is the easier part, so let's start there. To make Lior as big as possible, we give the others the least they can have. Noam gets one, because everyone has at least one. Maya must have more than Noam, so she gets two.",
+    "at": [
+     "by understanding. The",
+     "as big as",
+     "Noam gets one",
+     "has at least"
+    ]
+   },
+   {
+    "say": "Lior gets the rest. Thirty-six minus three is thirty-three, so the most is thirty-three.",
+    "at": [
+     "Thirty-six minus three",
+     "so the most"
+    ]
+   },
+   {
+    "say": "The smallest needs a bit more thought. When two people share and one has more, he has more than half. In the same way, when three people share, the one with the most has more than a third. Why is that true? Because if he had a third or less, the other two have even less, and together they can't reach the total.",
+    "at": [
+     "more than a third",
+     "is that true"
+    ]
+   },
+   {
+    "say": "A third of thirty-six is twelve. If all three had twelve, the numbers would be equal, and that's not allowed. So Lior needs more than twelve. Let's move one card from Noam to Lior. Now it's thirteen, twelve and eleven. They're different. And thirteen plus twelve plus eleven is thirty-six.",
+    "at": [
+     "If all three had twelve",
+     "the numbers would",
+     "Now it's thirteen",
+     "eleven. They're different"
+    ]
+   },
+   {
+    "say": "So Lior has thirteen to thirty-three cards. Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

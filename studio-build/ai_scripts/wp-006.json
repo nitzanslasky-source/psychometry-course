@@ -1,0 +1,35 @@
+{
+ "videoId": "wp-006",
+ "style": "the teacher reads it herself (Reading Studio), topic-21 scripts (2026-10-18): math_patches/_ai_vis_t21.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now type two of trial and error, minimum and maximum."
+  ],
+  [
+   {
+    "say": "Minimum and maximum questions are about ranges. What's the smallest possible value, and what's the biggest?",
+    "at": [
+     "are about ranges",
+     "What's the smallest possible",
+     "and what's the"
+    ]
+   },
+   {
+    "say": "Unlike general problems, we don't try blindly. A little understanding tells us which way to push, toward the smallest or toward the biggest. So we need far fewer tries.",
+    "at": [
+     "tells us which way to push",
+     "push, toward the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "By the way, minimum and maximum isn't only this lesson. It comes back all over the quantitative section. In geometry, in overlap problems later on, and in many other questions. So the thinking we build here pays off again and again.",
+    "at": [
+     "and maximum isn't"
+    ]
+   },
+   "Let's see a question of this type. [pause] I'll see you in the next video."
+  ]
+ ]
+}

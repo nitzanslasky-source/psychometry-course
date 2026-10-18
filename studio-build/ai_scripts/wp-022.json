@@ -1,0 +1,73 @@
+{
+ "videoId": "wp-022",
+ "style": "the teacher reads it herself (Reading Studio), topic-21 scripts (2026-10-18): math_patches/_ai_vis_t21.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now more patterns. Remember, in pattern questions we don't use school formulas. We write it out, term by term, and a little psychometric thinking can make it shorter."
+  ],
+  [
+   {
+    "say": "Some patterns repeat in a cycle. Then one remainder trick saves us the whole list.",
+    "at": [
+     "a cycle. Then"
+    ]
+   },
+   {
+    "say": "The days of the week repeat every seven days. Today is Tuesday. What day is it in thirty days? Thirty is four full weeks, twenty-eight days, plus two. Four full weeks bring us back to Tuesday. Two more days, and it's Thursday.",
+    "at": [
+     "Today is Tuesday",
+     "What day is",
+     "Thirty is four full",
+     "Four full weeks bring"
+    ]
+   },
+   {
+    "say": "Why does it work? A full cycle always brings us back to where we started. So only the part after the full cycles matters, and that's the remainder. Let's see one more example. Today is Sunday. What day is it in fifteen days? Fifteen is fourteen plus one. Two full weeks, and one more day, so it's Monday.",
+    "at": [
+     "Today is Sunday",
+     "Fifteen is fourteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Last digits of powers repeat too. What's the last digit of three to the power of twenty-two? Let's write the first few powers. Three, nine, twenty-seven, eighty-one, and then two hundred forty-three.",
+    "at": [
+     "What",
+     "three to the",
+     "Three, nine, twenty-seven",
+     "then two hundred"
+    ]
+   },
+   {
+    "say": "The last digits are three, nine, seven, one, and then three again. Why does it repeat? The next last digit comes only from the last digit times three. After one, we get three again, so the cycle starts over. It's a cycle of four.",
+    "at": [
+     "The last digits are",
+     "nine, seven, one"
+    ]
+   },
+   {
+    "say": "Twenty-two is five full cycles, twenty, plus two. So we land on the second digit of the cycle, nine.",
+    "at": [
+     "Twenty-two is five full cycles",
+     "twenty, plus two"
+    ]
+   },
+   {
+    "say": "Careful when the remainder is zero. Then it's not the first one, it's the last one in the cycle. Three to the power of twenty is exactly five cycles, so it ends in one, the last digit of the cycle.",
+    "at": [
+     "Three to the power of twenty",
+     "twenty is exactly"
+    ]
+   },
+   {
+    "say": "Let's see one more example, two to the power of ten. Two, four, eight, sixteen, thirty-two. The last digits are two, four, eight, six, and then two again. Ten is eight plus two, so it's the second digit, four. And really, two to the power of ten is one thousand twenty-four.",
+    "at": [
+     "Two to the power of ten",
+     "The last digits"
+    ]
+   },
+   "Days, last digits, and the flags in a coming question all use the same tool. We divide by the length of the cycle, and look at the remainder. Let's see patterns in real questions. [pause] I'll see you in the next video."
+  ]
+ ]
+}

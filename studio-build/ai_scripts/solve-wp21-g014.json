@@ -1,0 +1,115 @@
+{
+ "videoId": "solve-wp21-g014",
+ "style": "the teacher reads it herself (Reading Studio), topic-21 scripts (2026-10-18): math_patches/_ai_vis_t21.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A choir has only sopranos, altos and tenors. There are three times as many sopranos as altos, and there are more tenors than sopranos. The choir has sixty-three singers in total. Which of the following can be the number of sopranos?",
+    "voice": "calm",
+    "at": [
+     "A choir has only"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Why do they ask what can be, and not for an exact number? Because the givens don't fix one number. There's a range of possible values. [short pause] We'll solve it in two different ways, by plugging in the answers, and then by understanding where the range ends.",
+    "at": [
+     "Why do they ask what can be",
+     "the givens don't"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start by plugging in the answers. There are four choices, so we just test them. But we start from the middle, not from the smallest or the biggest. In order, the choices are twenty-four, twenty-six, twenty-seven and thirty. Twenty-seven is in the middle, and it divides by three, so it's convenient.",
+    "at": [
+     "Let's start"
+    ]
+   },
+   {
+    "say": "Choice number one, twenty-seven sopranos. There are three times as many sopranos as altos, so the altos are twenty-seven divided by three, which is nine.",
+    "at": [
+     "number one, twenty-seven",
+     "twenty-seven divided by three"
+    ]
+   },
+   {
+    "say": "Together that's twenty-seven plus nine, thirty-six singers. The choir has sixty-three, so the tenors are sixty-three minus thirty-six, which is twenty-seven.",
+    "at": [
+     "twenty-seven plus nine",
+     "The choir has"
+    ]
+   },
+   {
+    "say": "Now let's check the other given. There must be more tenors than sopranos. Twenty-seven tenors and twenty-seven sopranos are equal, not more. So twenty-seven fails, and choice number one is out.",
+    "at": [
+     "Twenty-seven tenors and",
+     "are equal, not",
+     "and choice number one is out"
+    ]
+   },
+   {
+    "say": "And this one try tells us which way to go. More sopranos means more altos too, so fewer tenors are left. So a bigger choice fails too. Thirty is out, so choice number two is out as well. One plug, and two choices are gone. That's why we start from the middle.",
+    "at": [
+     "More sopranos means",
+     "too, so fewer",
+     "so choice number two is out"
+    ]
+   },
+   {
+    "say": "Now a smaller one, twenty-four. Twenty-four divided by three is eight altos. Twenty-four plus eight is thirty-two. Sixty-three minus thirty-two is thirty-one tenors.",
+    "at": [
+     "Twenty-four divided by three",
+     "Twenty-four plus eight",
+     "Sixty-three minus thirty-two"
+    ]
+   },
+   {
+    "say": "Thirty-one is more than twenty-four, so the tenors are more. So twenty-four fits every given. When the choices are numbers, the moment one fully works, we can mark it, because a question can't have two right answers. Choice number three is our answer.",
+    "at": [
+     "Thirty-one is more than",
+     "so the tenors",
+     "Choice number three is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, from the givens again. There are three times as many sopranos as altos. So the number of sopranos must divide by three. Twenty-six doesn't divide by three, so choice number four is out, without any story.",
+    "at": [
+     "Now by",
+     "must divide by three",
+     "doesn't divide by",
+     "so choice number four is out"
+    ]
+   },
+   "This works in general. If something is twice another whole number, it must be even. If it's three times another whole number, it must divide by three. That's a quick way to rule out choices.",
+   {
+    "say": "Now where does the range end? Let's look at the border case, where the tenors are exactly equal to the sopranos. Then for every alto there are three sopranos and three tenors. One plus three plus three is seven singers for every alto.",
+    "at": [
+     "One plus three plus three",
+     "is seven singers"
+    ]
+   },
+   {
+    "say": "Sixty-three divided by seven is nine altos. Three times nine is twenty-seven sopranos. That's the border.",
+    "at": [
+     "Sixty-three divided by seven",
+     "Three times nine"
+    ]
+   },
+   {
+    "say": "But there must be more tenors than that. The total stays sixty-three, so more tenors leave fewer singers for the altos and the sopranos. So the sopranos must be fewer than twenty-seven. This is a useful habit. When a given says more than, first look at the case where it's exactly equal. That's the border, and the answer is on one side of it.",
+    "at": [
+     "So the sopranos must be fewer",
+     "fewer than twenty-seven"
+    ]
+   },
+   {
+    "say": "So twenty-seven and thirty are out, and twenty-six doesn't divide by three. Only twenty-four is left. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Only twenty-four is left",
+     "number three is"
+    ]
+   }
+  ]
+ ]
+}
