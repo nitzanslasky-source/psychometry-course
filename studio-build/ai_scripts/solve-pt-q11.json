@@ -47,7 +47,7 @@
     ]
    },
    {
-    "say": "Eighty plus eighty is a hundred sixty. So angle D is a hundred eighty minus a hundred sixty, twenty degrees.",
+    "say": "Eighty plus eighty is a hundred sixty. The angles of a triangle add up to a hundred eighty, so angle D is a hundred eighty minus a hundred sixty, twenty degrees.",
     "at": [
      "So angle D is",
      "hundred eighty minus"
@@ -70,19 +70,19 @@
     ]
    },
    {
-    "say": "Choice number one says sixty plus alpha. Sixty plus fifty is a hundred ten. Out.",
+    "say": "Choice number one says sixty plus alpha. Sixty plus fifty is a hundred ten, not a hundred twenty. Out.",
     "at": [
      "Choice number one says",
      "is a hundred ten",
-     "is a hundred ten"
+     "is a hundred ten",
+     "a hundred twenty"
     ]
    },
    {
     "say": "Choice number two says ninety plus half alpha. That's ninety plus half of fifty. Half of fifty is twenty-five, so the result ends in five, and a hundred twenty ends in zero. Out, without finishing.",
     "at": [
      "Choice number two says",
-     "plus half alpha",
-     "That's ninety plus",
+     "fifty. Half of",
      "so the result ends in five",
      "five, and a",
      "Out, without finishing"
@@ -120,7 +120,7 @@
     ]
    },
    {
-    "say": "Angle C is the same, a hundred eighty minus two alpha. So angle D is a hundred eighty minus two times that. That's a hundred eighty minus three hundred sixty plus four alpha, so four alpha minus a hundred eighty.",
+    "say": "Angle C is the other base angle, so it's the same, a hundred eighty minus two alpha. So angle D is a hundred eighty minus two times that. That's a hundred eighty minus three hundred sixty plus four alpha, so four alpha minus a hundred eighty.",
     "at": [
      "So angle D is",
      "hundred eighty minus two times",
@@ -128,7 +128,7 @@
     ]
    },
    {
-    "say": "And beta is a hundred eighty, minus angle D, minus angle B. A hundred eighty, minus four alpha plus a hundred eighty, minus ninety plus alpha. That's two hundred seventy minus three alpha, choice number four again.",
+    "say": "And beta is a hundred eighty, minus angle D, minus angle B, because D and B are the other angles of the small triangle. A hundred eighty, minus four alpha plus a hundred eighty, minus ninety plus alpha. That's two hundred seventy minus three alpha, choice number four again.",
     "at": [
      "And beta is a hundred eighty",
      "eighty, minus angle",

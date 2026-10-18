@@ -45,7 +45,7 @@
     ]
    },
    {
-    "say": "Choice number two says twenty-seven pi, times a cubed. Twenty-seven times three is eighty-one, three times the cube. Choice number two is out.",
+    "say": "Choice number two says twenty-seven pi, times a cubed. Twenty-seven times three is eighty-one, three times the cube. A cylinder inside the cube can't be bigger than it, so choice number two is out.",
     "at": [
      "Choice number two says",
      "Twenty-seven times three",
@@ -54,7 +54,7 @@
     ]
    },
    {
-    "say": "Choice number three says thirty-six pi, times a cubed. Thirty-six times three is a hundred eight, four times the cube. Choice number three is out too.",
+    "say": "Choice number three says thirty-six pi, times a cubed. Thirty-six times three is a hundred eight, four times the cube, so it's too big as well. Choice number three is out too.",
     "at": [
      "Choice number three says",
      "Thirty-six times three",
@@ -94,7 +94,7 @@
     ]
    },
    {
-    "say": "The square's area is ten times ten, a hundred, so the circle is less than a hundred. With pi as three, twenty-five pi is seventy-five, and fifty pi is a hundred fifty. The other two are even bigger. Only twenty-five pi fits. [pause] Okay. I'll see you in the next question.",
+    "say": "The square's area is ten times ten, a hundred, so the circle is less than a hundred. With pi as three, twenty-five pi is seventy-five, and fifty pi is a hundred fifty, more than the whole square. The other two are even bigger. Only twenty-five pi fits. [pause] Okay. I'll see you in the next question.",
     "at": [
      "The square's area",
      "times ten, a",

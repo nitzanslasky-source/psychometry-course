@@ -28,10 +28,10 @@
     ]
    },
    {
-    "say": "Let's add the small ends, nine plus five is fourteen. And the big ends, ten plus six is sixteen. So the sum is between fourteen and sixteen.",
+    "say": "Let's add the small ends, nine plus five is fourteen. That's the least the sum can be. And the big ends, ten plus six is sixteen, the most it can be. So the sum is between fourteen and sixteen.",
     "at": [
      "Let's add the small ends",
-     "And the big"
+     "That's the least"
     ]
    },
    {

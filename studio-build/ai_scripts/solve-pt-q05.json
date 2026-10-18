@@ -101,12 +101,12 @@
     ]
    },
    {
-    "say": "Two dice have six doubles. One and one, two and two, and so on up to six and six. Take them away, and thirty pairs are left.",
+    "say": "Two dice have six doubles. One and one, two and two, and so on up to six and six. In a double, neither die is higher. Take them away for now, and thirty pairs are left.",
     "at": [
      "Two dice have six doubles",
      "One and one",
      "Take them away",
-     "pairs are left"
+     "and thirty pairs"
     ]
    },
    {

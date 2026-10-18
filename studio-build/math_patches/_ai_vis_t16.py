@@ -1158,12 +1158,12 @@ video('solve-q-r26-t16-04', 'solution', qid='q-r26-t16-04', slides=[
         "and nine has the same problem. So we need a group with no multiple of five.", show(k0, 'Now we need'),
         show(k6, 'Take three, five and seven'), show(k6b, 'So the product divides by fifteen'),
         show(k6c, 'Five, seven and nine')),
-      L("Let's choose seven, nine and eleven. We only need the last digit of the product. The last digit of a product "
-        "comes only from the last digits. Seven times nine is sixty-three, which ends in three. Times eleven, it still ends "
+      L("Let's choose seven, nine and eleven. To check five, we only need the last digit of the product, because a "
+        "number divides by five only when it ends in zero or five. The last digit of a product comes only from the last digits. Seven times nine is sixty-three, which ends in three. Times eleven, it still ends "
         "in three, because three times one is three.", show(k4, 'seven, nine and eleven'),
         show(k4b, 'Seven times nine is sixty-three'), show(k4c, 'because three times one')),
-      L("A number that ends in three doesn't divide by five. So it doesn't divide by fifteen either. Choice numbers two and "
-        "four are out. Only three is left, and choice number three is our answer.", show(k5, "doesn't divide by five"),
+      L("A number that ends in three doesn't divide by five. So it doesn't divide by fifteen either, because fifteen is "
+        "five times three. Choice numbers two and four are out. Only three is left, and choice number three is our answer.", show(k5, "doesn't divide by five"),
         show(k5b, "So it doesn't divide by fifteen"), mk('cross', 'choice 2', 'Choice numbers two'),
         mk('cross', 'choice 4', 'four are out'), mk('tick', 'choice 3', 'choice number three is our answer'))),
     S('Method 2 · Understanding',

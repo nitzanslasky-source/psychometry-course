@@ -96,12 +96,12 @@
     ]
    },
    {
-    "say": "Let's try three. The small diameter is six, so the big diameter is six plus ten, sixteen, and the big radius is eight. Big minus small is sixty-four pi minus nine pi, fifty-five pi.",
+    "say": "Let's try three. The small diameter is six. C B adds ten, so the big diameter is six plus ten, sixteen, and the big radius is eight. The shaded area is big minus small. Big minus small is sixty-four pi minus nine pi, fifty-five pi.",
     "at": [
      "Let's try three",
-     "so the big",
+     "C B adds",
      "Big minus small",
-     "pi minus nine"
+     "Big minus small is"
     ]
    },
    {
@@ -112,7 +112,7 @@
     ]
    },
    {
-    "say": "Let's try four. The small diameter is eight, so the big diameter is eight plus ten, eighteen, and the big radius is nine. Eighty-one pi minus sixteen pi is sixty-five pi. It fits. Choice number four is our answer again. [pause] Okay. I'll see you in the next question.",
+    "say": "We need sixty-five pi. Let's try four. The small diameter is eight, so the big diameter is eight plus ten, eighteen, and the big radius is nine. Eighty-one pi minus sixteen pi is sixty-five pi, so it fits. Choice number four is our answer again. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Let's try four",
      "so the big",

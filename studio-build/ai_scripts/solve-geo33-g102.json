@@ -19,10 +19,10 @@
     ]
    },
    {
-    "say": "Let's start with the isosceles triangle. A B equals A C, so angle B equals angle C. Together they're a hundred eighty minus four theta. They're equal, so each one is half of that. Half of a hundred eighty is ninety, and half of four theta is two theta. So each base angle is ninety minus two theta.",
+    "say": "Let's start with the isosceles triangle. A B equals A C, so angle B equals angle C. The angles of a triangle add up to a hundred eighty, so together they're a hundred eighty minus four theta. They're equal, so each one is half of that. Half of a hundred eighty is ninety, and half of four theta is two theta. So each base angle is ninety minus two theta.",
     "at": [
      "so angle B equals angle C",
-     "Together they're a",
+     "The angles of",
      "So each base angle",
      "ninety minus two"
     ]
@@ -131,7 +131,7 @@
     ]
    },
    {
-    "say": "Choice number one says pi r, times one minus theta over fifteen. Fifteen over fifteen is one, and one minus one is zero. Zero, so it's out.",
+    "say": "Choice number one says pi r, times one minus theta over fifteen. Fifteen over fifteen is one, and one minus one is zero. Zero, not two pi over three, so it's out.",
     "at": [
      "Choice number one says",
      "Fifteen over fifteen",
@@ -140,7 +140,7 @@
     ]
    },
    {
-    "say": "Choice number two says pi r, times one minus theta over thirty. Fifteen over thirty is a half, and one minus a half is a half. That gives pi over two, out.",
+    "say": "Choice number two says pi r, times one minus theta over thirty. Fifteen over thirty is a half, and one minus a half is a half. That gives pi over two, not two pi over three, so it's out.",
     "at": [
      "Choice number two says",
      "Fifteen over thirty",
@@ -149,7 +149,7 @@
     ]
    },
    {
-    "say": "Choice number three says pi r, times one minus theta over ninety. Fifteen over ninety is a sixth, and one minus a sixth is five sixths. Five pi over six, out.",
+    "say": "Choice number three says pi r, times one minus theta over ninety. Fifteen over ninety is a sixth, and one minus a sixth is five sixths. Five pi over six, not two pi over three, so it's out.",
     "at": [
      "Choice number three says",
      "Fifteen over ninety",

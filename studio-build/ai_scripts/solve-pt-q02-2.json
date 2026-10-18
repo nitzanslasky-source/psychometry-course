@@ -37,10 +37,10 @@
     ]
    },
    {
-    "say": "Now we compare. Four hundred fifty over six hundred fifty. Drop a zero from the top and the bottom, and we get forty-five over sixty-five. Both divide by five. Forty-five divided by five is nine, and sixty-five divided by five is thirteen. Nine thirteenths, exactly what the question asked. Choice number two is our answer.",
+    "say": "Now we compare with the given. A has to be nine thirteenths of B, so we look at A over B. Four hundred fifty over six hundred fifty. Drop a zero from the top and the bottom, and we get forty-five over sixty-five. Both divide by five. Forty-five divided by five is nine, and sixty-five divided by five is thirteen. Nine thirteenths, exactly what the question asked. Choice number two is our answer.",
     "at": [
      "Now we compare",
-     "Drop a zero",
+     "A has to",
      "the question asked",
      "Choice number two is our answer"
     ]
@@ -74,7 +74,7 @@
     ]
    },
    {
-    "say": "Start with the round answer, ten. Ten squared is a hundred, and a hundred plus ten is a hundred ten. It fits. So x is ten, and we're done without solving anything. [pause] Okay. I'll see you in the next question.",
+    "say": "Start with the round answer, ten. Ten squared is a hundred, and a hundred plus ten is a hundred ten. That's exactly what the equation needs, so it fits. So x is ten, and we're done without solving anything. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Ten squared is a hundred",
      "is a hundred ten"

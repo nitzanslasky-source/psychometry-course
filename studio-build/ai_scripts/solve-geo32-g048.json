@@ -37,10 +37,10 @@
     ]
    },
    {
-    "say": "Divide both sides by five, and alpha plus beta is thirty-six. We don't know alpha or beta on their own, but we know their sum.",
+    "say": "Divide both sides by five, so that only alpha plus beta is left. Alpha plus beta is thirty-six. We don't know alpha or beta on their own, but we know their sum.",
     "at": [
      "Divide both sides by five",
-     "and alpha plus"
+     "so that only"
     ]
    }
   ],
@@ -80,7 +80,7 @@
     ]
    },
    {
-    "say": "Let's take them equal, eighteen and eighteen. Then angle B is five times eighteen, ninety, and angle C is ninety too. The parallelogram becomes a rectangle, and that's allowed, because a rectangle is a parallelogram.",
+    "say": "They have to add up to thirty-six, and equal numbers are the easiest. Let's take them equal, eighteen and eighteen. Then angle B is five times eighteen, ninety, because angle B is five alpha. Angle C is five beta, so it's ninety too. The parallelogram becomes a rectangle, and that's allowed, because a rectangle is a parallelogram.",
     "at": [
      "Let's take them equal",
      "Then angle B is five times eighteen",
@@ -88,7 +88,7 @@
     ]
    },
    {
-    "say": "In triangle B C E, three alpha is three times eighteen, fifty-four, and three beta is fifty-four too. So x is one hundred eighty minus fifty-four minus fifty-four, which is seventy-two. Choice number two again. [pause] Okay. I'll see you in the next question.",
+    "say": "In triangle B C E, three alpha is three times eighteen, fifty-four, and three beta is fifty-four too. The angles of a triangle add up to one hundred eighty. So x is one hundred eighty minus fifty-four minus fifty-four, which is seventy-two. That's the same seventy-two as in the math way. Choice number two again. [pause] Okay. I'll see you in the next question.",
     "at": [
      "three alpha is three times eighteen",
      "eighteen, fifty-four, and",

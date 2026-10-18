@@ -87,7 +87,7 @@
   ],
   [
    {
-    "say": "Let's use it. Here the angles are eighty, ninety-five and a hundred ten degrees, and we want x. Eighty plus ninety-five is a hundred seventy-five, and plus a hundred ten is two hundred eighty-five. Three hundred sixty minus two hundred eighty-five is seventy-five, so x is seventy-five degrees.",
+    "say": "Let's use it. Here the angles are eighty, ninety-five and a hundred ten degrees, and we want x. All four angles add up to three hundred sixty, so first we add the three we know. Eighty plus ninety-five is a hundred seventy-five, and plus a hundred ten is two hundred eighty-five. What's left of the three hundred sixty is x. Three hundred sixty minus two hundred eighty-five is seventy-five, so x is seventy-five degrees.",
     "at": [
      "Here the angles are eighty",
      "ninety-five and a",

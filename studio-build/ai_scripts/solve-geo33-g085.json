@@ -105,10 +105,10 @@
     ]
    },
    {
-    "say": "Now base times height, over two. Ten times five root three is fifty root three, and over two it's twenty-five root three. Again choice number four. [pause] Okay. I'll see you in the next question.",
+    "say": "Now base times height, over two, because that's the area of a triangle. Ten times five root three is fifty root three, and over two it's twenty-five root three. Again choice number four. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Now base times height",
-     "Ten times five",
+     "two, because that's",
      "Again choice number four"
     ]
    }

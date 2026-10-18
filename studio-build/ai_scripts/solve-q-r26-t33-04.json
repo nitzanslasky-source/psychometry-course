@@ -81,7 +81,7 @@
     ]
    },
    {
-    "say": "If you don't remember the formula, draw the height from O. It cuts the triangle into two gold triangles. The short leg is three, so the height is three root three. Six times three root three, over two, is nine root three again.",
+    "say": "If you don't remember the formula, draw the height from O. It cuts the triangle into two gold triangles. The short leg is three, so the height is three root three. The area is base times height, over two. Six times three root three, over two, is nine root three again.",
     "at": [
      "draw the height from O",
      "It cuts the",
@@ -90,10 +90,10 @@
     ]
    },
    {
-    "say": "So the segment is six pi minus nine root three. Choice number three is our answer. In the exam, we mark it and move on.",
+    "say": "So the segment is the sector minus the triangle. That's six pi minus nine root three. Choice number three is our answer. In the exam, we mark it and move on.",
     "at": [
      "So the segment is",
-     "pi minus nine",
+     "sector minus the",
      "Choice number three is our answer"
     ]
    }

@@ -42,7 +42,7 @@
     ]
    },
    {
-    "say": "For example, if angle B is seventy, then angle D is seventy too, and angles A and C are each a hundred ten. And if an angle is a hundred twenty-five, the angle next to it is fifty-five.",
+    "say": "For example, if angle B is seventy, then angle D, across from it, is seventy too. Angles A and C sit next to B, so each one is a hundred eighty minus seventy, a hundred ten. And if an angle is a hundred twenty-five, the angle next to it is fifty-five.",
     "at": [
      "For example",
      "is seventy, then",

@@ -13,7 +13,7 @@
    },
    "We'll solve it two ways. First the math way, we calculate, and then we'll see the insight.",
    {
-    "say": "The top has two fractions to add. Five and six have a common denominator of thirty. One fifth is six thirtieths, and one sixth is five thirtieths. Together, eleven thirtieths.",
+    "say": "The top has two fractions to add, and to add fractions we need the same bottom. Five and six have a common denominator of thirty. One fifth is six thirtieths, and one sixth is five thirtieths. Together, eleven thirtieths.",
     "at": [
      "One fifth is six thirtieths",
      "and one sixth",

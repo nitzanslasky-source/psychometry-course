@@ -63,7 +63,7 @@
     ]
    },
    {
-    "say": "Triangle A B C is easy. Ten times twenty-four, over two, is one hundred twenty. A B E is half of it, sixty. Choice number two is our answer.",
+    "say": "Triangle A B C is easy. It's a right triangle with legs ten and twenty-four, so its area is leg times leg, over two. Ten times twenty-four, over two, is one hundred twenty. The median cuts it into two triangles of equal area, so A B E is half of it, sixty. Choice number two is our answer.",
     "at": [
      "Ten times twenty-four",
      "is one hundred",

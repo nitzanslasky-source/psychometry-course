@@ -74,11 +74,14 @@
     ]
    },
    {
-    "say": "Choice number two, three tenths. So a is three and b is ten. The bold line is ten plus ten plus ten minus three, which is twenty-seven. The small perimeter is three times three, which is nine. And three times nine is twenty-seven. It works, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice number two, three tenths. A ratio of three to ten, so let's take sizes that fit it. So a is three and b is ten. The bold line is ten plus ten plus ten minus three, which is twenty-seven. The small perimeter is three times three, which is nine. Now the given: the bold line has to be three times the small perimeter. Three times nine is twenty-seven, and the bold line is twenty-seven. It works, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
      "number two, three",
+     "that fit it",
      "So a is three and b is ten",
      "plus ten plus",
+     "the given: the",
+     "Three times nine",
      "It works, so choice number two"
     ]
    }

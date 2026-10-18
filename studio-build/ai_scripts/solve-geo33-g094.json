@@ -75,10 +75,10 @@
     ]
    },
    {
-    "say": "The radius is six, so O C is six. And triangle O C B is a silver triangle too, so C B equals O C, six. On the other side, A C is six too. So A B is six plus six, twelve.",
+    "say": "The radius is six, so O C is six. Triangle O C B has a right angle at C and forty-five degrees at B, so it's a silver triangle too, and C B equals O C, six. On the other side, A C is six too. So A B is six plus six, twelve.",
     "at": [
      "so O C is six",
-     "And triangle O"
+     "Triangle O C"
     ]
    },
    "Now the triangle's area. The best way is base times height, over two. The base is A B, twelve, and the height is O C, six.",
@@ -151,7 +151,7 @@
     ]
    },
    {
-    "say": "So the shaded area is thirty-six minus nine pi. The answer we found is really right, choice number two.",
+    "say": "The shaded area is the triangle minus the sector. So it's thirty-six minus nine pi. The answer we found is really right, choice number two.",
     "at": [
      "choice number two"
     ]

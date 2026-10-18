@@ -248,7 +248,7 @@
     ]
    },
    {
-    "say": "A thousand pi divided by twenty pi is fifty, so the wheel makes fifty turns. Now let's see an exam question. [pause] Okay. I'll see you in the next video.",
+    "say": "Each turn covers twenty pi, so to count the turns, we divide the road by one turn. A thousand pi divided by twenty pi is fifty, so the wheel makes fifty turns. Now let's see an exam question. [pause] Okay. I'll see you in the next video.",
     "at": [
      "A thousand pi divided by twenty pi",
      "twenty pi is"

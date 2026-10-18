@@ -71,7 +71,7 @@
   ],
   [
    {
-    "say": "And if an input is unknown? Write the definition, and it becomes an ordinary equation. For example, x star four is twenty-five. By the definition, x star four is three x plus four squared, which is three x plus sixteen. So three x plus sixteen is equal to twenty-five. Subtract sixteen from both sides, and three x is nine. Divide nine by three, and x is three.",
+    "say": "And if an input is unknown? Write the definition, and it becomes an ordinary equation. For example, x star four is twenty-five. By the definition, x star four is three x plus four squared, which is three x plus sixteen. So three x plus sixteen is equal to twenty-five. We want x alone, so subtract sixteen from both sides, and three x is nine. Then divide nine by three, and x is three.",
     "at": [
      "is unknown? Write",
      "For example, x star four",
@@ -80,15 +80,15 @@
      "So three x plus sixteen",
      "is equal to",
      "and three x is nine",
-     "Divide nine by",
+     "Then divide nine",
      "and x is three"
     ]
    },
    {
-    "say": "Let's check it. Three times three is nine, and nine plus sixteen is twenty-five. It works. One more: k heart two is thirty-five. By the definition, that's five times the bracket k plus two. Divide thirty-five by five, and k plus two is seven. Subtract two from seven, and k is five.",
+    "say": "Let's check it. Three star four has to give twenty-five. Three times three is nine, and nine plus sixteen is twenty-five. That's exactly the given, so it works. One more: k heart two is thirty-five. By the definition, that's five times the bracket k plus two. Five times the bracket is thirty-five. So divide thirty-five by five, and k plus two is seven. Subtract two from seven, and k is five.",
     "at": [
      "Let's check it",
-     "and nine plus",
+     "Three times three",
      "k heart two is thirty-five",
      "By the definition",
      "that's five times",

@@ -58,7 +58,7 @@
   ],
   [
    {
-    "say": "[pause] Once you've found all the inner pieces, you can add up the area in other ways too. Some students take the gold triangle, base five and height five root three, and multiply its area by four.",
+    "say": "[pause] Once you've found all the inner pieces, you can add up the area in other ways too. Some students take the gold triangle, base five and height five root three, and multiply its area by four, because the rhombus is made of four of these triangles.",
     "at": [
      "Once you've found all the inner pieces",
      "inner pieces, you",
@@ -107,7 +107,7 @@
     ]
    },
    {
-    "say": "The area of one equilateral triangle is the side squared, times root three, over four. Twice that is two times one hundred root three, over four, which is fifty root three. That's the shorter way. Choice number two.",
+    "say": "The area of one equilateral triangle is the side squared, times root three, over four. The side is ten, and ten squared is a hundred. The rhombus is two of these triangles, so we take it twice. Twice that is two times one hundred root three, over four, which is fifty root three. That's the shorter way. Choice number two.",
     "at": [
      "Twice that is two times",
      "one hundred root",

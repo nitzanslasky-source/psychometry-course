@@ -35,19 +35,19 @@
   ],
   [
    {
-    "say": "Let's start with choice number one, x is one. The first given: one squared is one, and one is less than twenty-five. Yes.",
+    "say": "Let's start with choice number one, x is one. The first given says x squared is less than twenty-five. One squared is one, and one is less than twenty-five. Yes.",
     "at": [
      "number one, x",
-     "The first given:",
+     "The first given",
      "one squared is one",
      "one is less"
     ]
    },
    {
-    "say": "The second given: three times one is three, plus six is nine. Is nine less than zero? No. So choice number one is out.",
+    "say": "The second given says three x plus six is less than zero. Three times one is three, plus six is nine. Is nine less than zero? No. So choice number one is out.",
     "at": [
      "three times one is three",
-     "plus six is",
+     "plus six is nine",
      "Is nine less than zero?",
      "So choice number one is out"
     ]

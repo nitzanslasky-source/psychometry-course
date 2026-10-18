@@ -64,10 +64,10 @@
    },
    "But sixteen pi isn't in the choices. The choices are ranges, so they want us to estimate. How much is pi? Pi is three point one four, and its digits go on forever.",
    {
-    "say": "So sixteen pi is sixteen times three point one four. Sixteen times three is forty-eight. Sixteen times point one four: sixteen times fourteen is two hundred twenty-four, so it's two point two four. Together, fifty point two four, and a little more. That's between fifty and fifty-one. Choice number four is our answer.",
+    "say": "So sixteen pi is sixteen times three point one four. Sixteen times three is forty-eight. Now sixteen times point one four. Point one four is fourteen hundredths, so we work out sixteen times fourteen, and then make it hundredths. Sixteen times fourteen is two hundred twenty-four, so it's two point two four. Together, fifty point two four, and a little more. That's between fifty and fifty-one. Choice number four is our answer.",
     "at": [
      "Sixteen times three is forty-eight",
-     "Sixteen times point",
+     "Now sixteen times",
      "Choice number four is our answer"
     ]
    },

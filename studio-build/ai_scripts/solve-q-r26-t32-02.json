@@ -50,10 +50,10 @@
     ]
    },
    {
-    "say": "Now the area. Nine plus fifteen is twenty-four. Times eight, over two. Twenty-four over two is twelve, and twelve times eight is ninety-six. Choice number two is our answer.",
+    "say": "Now the area. The area of a trapezoid is the sum of the bases, times the height, over two. Nine plus fifteen is twenty-four. Times the height, eight, over two. Twenty-four over two is twelve, and twelve times eight is ninety-six. Choice number two is our answer.",
     "at": [
      "Now the area",
-     "Times eight, over",
+     "is the sum",
      "Choice number two is our answer"
     ]
    },

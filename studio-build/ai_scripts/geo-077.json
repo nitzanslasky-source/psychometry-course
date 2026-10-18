@@ -95,10 +95,10 @@
     ]
    },
    {
-    "say": "Twenty-five plus P D squared is a hundred sixty-nine. So P D squared is a hundred sixty-nine minus twenty-five, which is a hundred forty-four, and P D is twelve.",
+    "say": "Twenty-five plus P D squared is a hundred sixty-nine. To get P D squared alone, we take twenty-five off both sides. So P D squared is a hundred sixty-nine minus twenty-five, which is a hundred forty-four, and P D is twelve.",
     "at": [
      "Twenty-five plus",
-     "P D squared is a hundred sixty-nine minus",
+     "To get P",
      "and P D is twelve"
     ]
    },

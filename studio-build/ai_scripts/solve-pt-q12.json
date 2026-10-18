@@ -70,7 +70,7 @@
     ]
    },
    {
-    "say": "Choice number three, a factorial squared, times a plus two. One squared is one, and one times three is three. Out.",
+    "say": "Choice number three, a factorial squared, times a plus two. One squared is one, and one times three is three, not six. Out.",
     "at": [
      "number three, a",
      "One squared is one",

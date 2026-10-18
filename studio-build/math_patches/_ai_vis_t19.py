@@ -665,12 +665,13 @@ video('new-operation', 'lesson', slides=[
     S('An unknown input',
       L("And if an input is unknown? Write the definition, and it becomes an ordinary equation. For example, x star four "
         "is twenty-five. By the definition, x star four is three x plus four squared, which is three x plus sixteen. So "
-        "three x plus sixteen is equal to twenty-five. Subtract sixteen from both sides, and three x is nine. Divide nine "
-        "by three, and x is three.",
+        "three x plus sixteen is equal to twenty-five. We want x alone, so subtract sixteen from both sides, and three x "
+        "is nine. Then divide nine by three, and x is three.",
         show(no25, 'For example, x star four'), show(no25d, 'By the definition'), show(no25a, 'So three x plus sixteen'),
         show(no25b, 'and three x is nine'), show(no25e, 'and x is three')),
-      L("Let's check it. Three times three is nine, and nine plus sixteen is twenty-five. It works. One more: k heart two "
-        "is thirty-five. By the definition, that's five times the bracket k plus two. Divide thirty-five by five, and k plus "
+      L("Let's check it. Three star four has to give twenty-five. Three times three is nine, and nine plus sixteen is "
+        "twenty-five. That's exactly the given, so it works. One more: k heart two is thirty-five. By the definition, that's five "
+        "times the bracket k plus two. Five times the bracket is thirty-five. So divide thirty-five by five, and k plus "
         "two is seven. Subtract two from seven, and k is five.", show(no25c, "Let's check it"),
         show(no26, 'k heart two is thirty-five'), show(no26d, 'By the definition'), show(no26a, "that's five times"),
         show(no26b, 'and k plus two is seven'), show(no26c, 'and k is five')),
@@ -1119,11 +1120,12 @@ video('solve-q-549', 'solution', qid='q-549', slides=[
         pt('choice 4', 'It says: diamond of', 'hl', 3.5), show(r5, 'are opposites'), mk('cross', 'choice 4', 'always equal'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, because "
-        "it's easy and it's not zero. Zero is allowed too, but zero turns many of these products into zero. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six "
-        "times one, thirty-six. Equal. Choice number two. Diamond of one is one, and one times one is one. Diamond of one is "
-        "one too. Equal.", show(s1, 'take x is one')),
-      L("Choice number three. Diamond of five is twenty-five, but five times diamond of one is five times one, which is "
-        "five. Twenty-five is not five, so choice number three fails.", show(s2, 'Diamond of five is twenty-five')),
+        "it's easy and it's not zero. Zero is allowed too, but zero turns many of these products into zero. Choice number one. With x as one, six x is six, so the left side is diamond of six, which is thirty-six. "
+        "The right side is thirty-six times diamond of one. That's thirty-six times one, thirty-six. Both sides are thirty-six, "
+        "so they're equal. Choice number two. Root one is one, so the left side is diamond of one, times diamond of one. "
+        "That's one times one, which is one. The right side is diamond of one, which is one too. Equal.", show(s1, 'take x is one')),
+      L("Choice number three. With x as one, five x is five, so the left side is diamond of five. Diamond of five is "
+        "twenty-five. But the right side is five times diamond of one. That's five times one, which is five. Twenty-five is not five, so choice number three fails.", show(s2, 'Diamond of five is twenty-five')),
       L("One allowed example where a choice fails proves it's not always true, so we can stop here without checking "
         "choice number four. Choice number three is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 3', 'is our answer, and'))),

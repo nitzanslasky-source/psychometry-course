@@ -46,7 +46,7 @@
     ]
    },
    {
-    "say": "Let's draw a line from E straight up, parallel to A B. It cuts A D into two pieces. The right piece is as long as E C, so it's y, and it cancels with E C. The left piece is as long as B E, x minus y.",
+    "say": "Let's draw a line from E straight up, parallel to A B. It cuts A D into two pieces. The right piece is as long as E C, because they're opposite sides of a rectangle, so it's y, and it cancels with E C. The left piece is as long as B E, for the same reason, x minus y.",
     "at": [
      "Let's draw a line from E",
      "E straight up",

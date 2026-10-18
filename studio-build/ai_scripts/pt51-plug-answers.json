@@ -93,10 +93,11 @@
     ]
    },
    {
-    "say": "Five and eight are left. Let's try the next one up, five. Five plus three is eight, and five times eight is forty. It fits, so x is five.",
+    "say": "Five and eight are left. Let's try the next one up, five. Five plus three is eight, and five times eight is forty, exactly the forty we need. It fits, so x is five.",
     "at": [
      "Five plus three is eight",
      "five times eight is",
+     "exactly the forty",
      "It fits, so x is five"
     ]
    },

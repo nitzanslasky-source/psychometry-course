@@ -63,23 +63,23 @@
   ],
   [
    {
-    "say": "[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, because it's easy and it's not zero. Zero is allowed too, but zero turns many of these products into zero. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six times one, thirty-six. Equal. Choice number two. Diamond of one is one, and one times one is one. Diamond of one is one too. Equal.",
+    "say": "[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, because it's easy and it's not zero. Zero is allowed too, but zero turns many of these products into zero. Choice number one. With x as one, six x is six, so the left side is diamond of six, which is thirty-six. The right side is thirty-six times diamond of one. That's thirty-six times one, thirty-six. Both sides are thirty-six, so they're equal. Choice number two. Root one is one, so the left side is diamond of one, times diamond of one. That's one times one, which is one. The right side is diamond of one, which is one too. Equal.",
     "at": [
      "Now let's",
      "take x is one",
      "it's easy and",
-     "number one. Diamond",
-     "one is thirty-six",
-     "number two. Diamond",
-     "Diamond of one is one too"
+     "number one. With",
+     "six, which is",
+     "number two. Root",
+     "of one, times"
     ]
    },
    {
-    "say": "Choice number three. Diamond of five is twenty-five, but five times diamond of one is five times one, which is five. Twenty-five is not five, so choice number three fails.",
+    "say": "Choice number three. With x as one, five x is five, so the left side is diamond of five. Diamond of five is twenty-five. But the right side is five times diamond of one. That's five times one, which is five. Twenty-five is not five, so choice number three fails.",
     "at": [
-     "number three. Diamond",
+     "number three. With",
      "Diamond of five is twenty-five",
-     "but five times",
+     "But the right",
      "number three fails"
     ]
    },

@@ -29,7 +29,7 @@
     ]
    },
    {
-    "say": "Its top angle is a hundred twenty, so the two base angles share the rest. A hundred eighty minus a hundred twenty is sixty, and half of that is thirty. So angle E B C is thirty, and angle E C B is thirty.",
+    "say": "Its top angle is a hundred twenty. In an isosceles triangle the base angles are equal, so they share the rest equally. A hundred eighty minus a hundred twenty is sixty, and half of that is thirty. So angle E B C is thirty, and angle E C B is thirty.",
     "at": [
      "A hundred eighty minus",
      "hundred twenty is",
@@ -40,7 +40,7 @@
   ],
   [
    {
-    "say": "Now look at triangle D B C. Its angle at C is ninety, because it's a corner of the rectangle. Its angle at B is the same thirty we just found. So the last angle, at D, is sixty.",
+    "say": "Now look at triangle D B C. Its angle at C is ninety, because it's a corner of the rectangle. Its angle at B is the same thirty we just found. The angles of a triangle add up to a hundred eighty, so the last angle, at D, is sixty.",
     "at": [
      "Now look at triangle",
      "Its angle at C",

@@ -69,7 +69,7 @@
     ]
    },
    {
-    "say": "Choice number three says a plus b, times a minus b, all over a b. One minus one is zero, and zero on top makes the whole fraction zero. Choice number three is out.",
+    "say": "Choice number three says a plus b, times a minus b, all over a b. One minus one is zero, and zero on top makes the whole fraction zero. Zero is not two, so choice number three is out.",
     "at": [
      "Choice number three says",
      "One minus one is zero",
@@ -78,7 +78,7 @@
     ]
    },
    {
-    "say": "Choice number four says two times, a squared plus b squared. One plus one is two, and two times two is four. Choice number four is out too.",
+    "say": "Choice number four says two times, a squared plus b squared. One plus one is two, and two times two is four, not two. Choice number four is out too.",
     "at": [
      "Choice number four says",
      "One plus one is two",
@@ -127,7 +127,7 @@
     ]
    },
    {
-    "say": "Now the choices with x equal to one. The first gives two cubed, eight, so it's out. The second gives three times two, six. It fits. The third gives four, and the fourth gives two to the power of four, sixteen. Both are out. Three are out, so the answer is three times two to the power of x. [pause] Okay. I'll see you in the next question.",
+    "say": "Now the choices with x equal to one. The right one must give six too. The first gives two cubed, eight, so it's out. The second gives three times two, six. It fits. The third gives four, and the fourth gives two to the power of four, sixteen. Both are out. Three are out, so the answer is three times two to the power of x. [pause] Okay. I'll see you in the next question.",
     "at": [
      "The first gives",
      "eight, so it's",

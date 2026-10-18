@@ -103,7 +103,7 @@
   ],
   [
    {
-    "say": "Now let's extend this rule. Side c is less than a plus b, because two sides together are longer than the third. But c and b are also two sides, so together they're longer than a. Move b to the other side, and c is more than a minus b.",
+    "say": "Now let's extend this rule. Side c is less than a plus b, because two sides together are longer than the third. But c and b are also two sides, so together they're longer than a. So c plus b is more than a. To leave c alone, move b to the other side, and c is more than a minus b.",
     "at": [
      "Side c is less than",
      "sides together are"
@@ -134,7 +134,7 @@
     ]
    },
    {
-    "say": "When the two given sides are whole numbers too, there's a quick count: twice the shorter side, and then subtract one. Twice four is eight, minus one is seven. With sides three and eight, the third side is between five and eleven, so six to ten, five lengths, and twice three minus one is five too. If the given sides are not whole numbers, just count the whole numbers between the two ends.",
+    "say": "When the two given sides are whole numbers too, there's a quick count: twice the shorter side, and then subtract one. Why? Because the two ends are twice the shorter side apart, and the ends themselves don't count. Twice four is eight, minus one is seven. With sides three and eight, the third side is between five and eleven, so six to ten, five lengths, and twice three minus one is five too. If the given sides are not whole numbers, just count the whole numbers between the two ends.",
     "at": [
      "there's a quick count",
      "the shorter side",

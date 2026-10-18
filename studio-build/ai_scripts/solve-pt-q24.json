@@ -56,7 +56,7 @@
     ]
    },
    {
-    "say": "y plus five y is six y, and two plus ten is twelve. Six y equals twelve, so y is two again.",
+    "say": "With x equal to one, x y is just y, and two x is two. So y plus five y is six y, and two plus ten is twelve. Six y equals twelve, so y is two again.",
     "at": [
      "Six y equals twelve",
      "y is two"
@@ -72,7 +72,7 @@
   ],
   [
    {
-    "say": "[pause] Now the math way. On the left, take y out. x y plus five y is y times the bracket x plus five. On the right, take two out. Two x plus ten is two times the bracket x plus five.",
+    "say": "[pause] Now the math way. On the left, take y out. x y plus five y is y times the bracket x plus five. On the right, take two out. Two x plus ten is two times the bracket x plus five. Now both sides have the same bracket.",
     "at": [
      "Now the",
      "On the left, take y out",

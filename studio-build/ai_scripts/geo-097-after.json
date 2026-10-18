@@ -57,10 +57,10 @@
     ]
    },
    {
-    "say": "The square's diagonal makes a silver triangle with two sides, so it's two root two. And that diagonal is a diameter of the big circle, so the big radius is half of it, root two.",
+    "say": "The square's diagonal makes a silver triangle with two sides, and in a silver triangle the hypotenuse is the leg times root two. So the diagonal is two root two. And that diagonal is a diameter of the big circle, so the big radius is half of it, root two.",
     "at": [
      "The square's diagonal",
-     "so it's two",
+     "and in a",
      "so the big radius is half",
      "half of it"
     ]

@@ -107,10 +107,10 @@
     ]
    },
    {
-    "say": "So it's half of two hundred fifty-six. Half of two hundred is one hundred, and half of fifty-six is twenty-eight. Together, one hundred twenty-eight. Choice number two again.",
+    "say": "So it's half of two hundred fifty-six, because an inscribed angle is half of the central angle on the same arc. Half of two hundred is one hundred, and half of fifty-six is twenty-eight. Together, one hundred twenty-eight. Choice number two again.",
     "at": [
      "So it's half of two hundred",
-     "Half of two hundred is",
+     "hundred fifty-six, because",
      "Choice number two again"
     ]
    }
@@ -142,7 +142,7 @@
     ]
    },
    {
-    "say": "So three hundred sixty, minus two alpha, minus two beta, is one hundred four. Then two alpha plus two beta is three hundred sixty minus one hundred four, which is two hundred fifty-six. And alpha plus beta is half of that, one hundred twenty-eight. Choice number two once more. [pause] Okay. I'll see you in the next question.",
+    "say": "So three hundred sixty, minus two alpha, minus two beta, is one hundred four. To get the alphas and betas alone, we take them to one side. Then two alpha plus two beta is three hundred sixty minus one hundred four, which is two hundred fifty-six. And x is alpha plus beta, so it's half of that, one hundred twenty-eight. Choice number two once more. [pause] Okay. I'll see you in the next question.",
     "at": [
      "So three hundred",
      "Then two alpha plus two beta",

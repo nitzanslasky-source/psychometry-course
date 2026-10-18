@@ -1122,7 +1122,7 @@ Marks per sentence, located from the point where the failed attempt broke off (9
   - Questions: "Choice number N is our answer, and I'll see you in the next question." She said "next lesson" by mistake 5 times.
   - Lessons: "Take a moment to memorize this … and I'll see you in the next video."
 
-### WRITING RULES for scripts she will read (topic 21 onward): W1-W20
+### WRITING RULES for scripts she will read (topic 21 onward): W1-W21
 These add to R1-R36 and the Codex review standard. Where they differ from the AI-voice rules, these apply to **teacher-read** scripts.
 
 1. **W1. Keep sentences short.** Aim for 6-12 words and split anything over 14. Her M rate doubles from 0.21 per sentence (6-10 words) to 0.45-0.51 (14-22 words). Put a trailing clause in its own sentence ("Now calculate with the two ends. That gives the new range.").
@@ -1186,6 +1186,13 @@ These add to R1-R36 and the Codex review standard. Where they differ from the AI
     - **Form:** about 2-5 short sentences in her voice (W1-W19), never one line. Usually right after the answer, before the goodbye, or as the "Why?" right after the rule. If the board is full, give it its own short slide (a clean generic picture, V3).
     - **Board (V3/V4):** the general statement as a short key line at its clause, and a picture when it helps (the second, generic case). Keep cue anchors valid and the method vocabulary.
     - **Workflow:** Claude runs TC on each batch after fixing Codex's review of it; results per video in `reviews/teaching-check-<batch>.md` (concept → added / already taught / not needed).
+
+21. **W21. Say WHY before each step (the given behind it).** (Teacher, 2026-10-18, on solve-geo31-g040's check "And three times nine is twenty-seven": "you should have explained that you are multiplying by three because the given says it needs to be 3 times bigger; just doing the math won't be clear enough for the student. Especially in the second method, but you do it pretty often.")
+    - Before (or in the same sentence as) every operation, say the reason: which given, rule or goal makes us do it. "The given says the bold line is three times the small perimeter, so we multiply the perimeter by three: three times nine is twenty-seven. That's exactly the bold line." Not a bare "And three times nine is twenty-seven."
+    - **Checks in plugging in the answers / numbers:** name the condition being tested before the calculation ("Now the given: … has to be …"), then compare the two sides out loud ("…, and the bold line is twenty-seven, so it works").
+    - **Picked numbers:** say why these numbers ("three tenths, so let's take a three and b ten"; "it has to be even, so let's take four").
+    - **Any non-obvious move** (divide both sides by…, add a to both sides, square both sides, compare with…): one short "because / so that" clause with the goal ("…so that only a over b is left").
+    - Second methods need it most: never assume the student remembers the given from the first method; restate it.
 
 **Put her most frequent elaborations in the script from the start:**
 1. the reason after each claim;

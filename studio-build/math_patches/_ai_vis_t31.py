@@ -942,7 +942,7 @@ video('geo-009', 'lesson', slides=[
         "angles. Here it starts at C, splits the angle at C, and goes down to the side opposite it, at D.",
         show(f1bis['line'], 'The third special line'), show(f1bis['bis'], 'Here it starts at C')),
       L("The two halves are equal, so we call both of them alpha. For example, if the angle at C is seventy degrees, each "
-        "half is thirty-five.", show(f1bis['halves'], 'The two halves are equal')),
+        "half is seventy divided by two, thirty-five.", show(f1bis['halves'], 'The two halves are equal')),
       L("That's all it promises, two equal angles. It does not necessarily split the side into equal pieces. Look, A D is "
         "shorter than D B here. And it does not necessarily make a right angle.", show(f1bis['pieces'], 'Look, A D is shorter')),
       L("So these are three different lines. A median gives equal pieces, an altitude gives a right angle, and a bisector "
@@ -961,8 +961,8 @@ video('geo-009', 'lesson', slides=[
         "straight angle, a hundred eighty. So the three angles of the triangle add up to a hundred eighty.",
         show(f1sum['line180'], 'sit side by side on one straight line'), show(f1sum_t, 'So the three angles of the triangle'))),
     S('Using the angle sum',
-      L("Let's use it. Two angles are sixty and fifty. Sixty plus fifty is a hundred ten, so the third angle is a hundred "
-        "eighty minus a hundred ten, which is seventy.", show(f1exA['line'], 'Two angles are sixty and fifty'),
+      L("Let's use it. Two angles are sixty and fifty. Sixty plus fifty is a hundred ten. All three angles make a "
+        "hundred eighty, so the third angle is a hundred eighty minus a hundred ten, which is seventy.", show(f1exA['line'], 'Two angles are sixty and fifty'),
         show(f1ex1, 'Sixty plus fifty is a hundred ten'), show(f1ex1b, 'which is seventy'), show(f1exA['val'], 'which is seventy')),
       L("Another one. A right triangle has a ninety degree angle and a thirty-five degree angle. Ninety plus thirty-five "
         "is a hundred twenty-five, so the third angle is a hundred eighty minus a hundred twenty-five, which is fifty-five.",
@@ -991,8 +991,9 @@ video('geo-009', 'lesson', slides=[
         show(f1rt['given'], 'the two angles inside are')),
       L("With the rule, it's one step. Forty-seven plus sixty-eight is a hundred fifteen. That's the exterior angle.",
         show(f1rt['ex'], 'With the rule')),
-      L("The long way gives the same thing. The third angle is a hundred eighty minus forty-seven minus sixty-eight, which "
-        "is sixty-five. And the exterior angle completes sixty-five to a hundred eighty, so it's a hundred fifteen again.",
+      L("The long way gives the same thing. The angles of the triangle add up to a hundred eighty. The third angle is a "
+        "hundred eighty minus forty-seven minus sixty-eight, which is sixty-five. The exterior angle sits next to it on a "
+        "straight line, so it completes sixty-five to a hundred eighty. It's a hundred fifteen again.",
         show(f1rt['in'], 'The third angle is')),
       L("One more. If the two angles inside are thirty and eighty, the exterior angle next to the third angle is thirty "
         "plus eighty, a hundred ten.", show(f1rt['more'], 'thirty plus eighty'))),
@@ -1032,8 +1033,8 @@ video('geo-009', 'lesson', slides=[
         "third.", show(f1walk_t, 'so two sides together'))),
     S('Between the difference and the sum',
       L("Now let's extend this rule. Side c is less than a plus b, because two sides together are longer than the third. "
-        "But c and b are also two sides, so together they're longer than a. Move b to the other side, and c is more than "
-        "a minus b.", show(f1rg1, 'Side c is less than')),
+        "But c and b are also two sides, so together they're longer than a. So c plus b is more than a. "
+        "To leave c alone, move b to the other side, and c is more than a minus b.", show(f1rg1, 'Side c is less than')),
       L("Together: a side of a triangle is less than the sum of the other two sides, and more than their difference. The "
         "difference is always the big one minus the small one, and it can't be equal to either end.",
         show(f1rg2, 'Together')),
@@ -1043,8 +1044,8 @@ video('geo-009', 'lesson', slides=[
       L("Five and thirteen themselves are not allowed. With exactly five or thirteen, the triangle would lie flat. If the "
         "third side is a whole number, it can be six, seven, and so on up to twelve. That's seven lengths.",
         show(f1rng['whole'], 'it can be six, seven')),
-      L("When the two given sides are whole numbers too, there's a quick count: twice the shorter side, and then subtract one. Twice "
-        "four is eight, minus one is seven. With sides three and eight, the third side is between five and eleven, so six "
+      L("When the two given sides are whole numbers too, there's a quick count: twice the shorter side, and then subtract one. Why? Because "
+        "the two ends are twice the shorter side apart, and the ends themselves don't count. Twice four is eight, minus one is seven. With sides three and eight, the third side is between five and eleven, so six "
         "to ten, five lengths, and twice three minus one is five too. If the given sides are not whole numbers, just count "
         "the whole numbers between the two ends.",
         show(f1rg4, 'there\'s a quick count'), show(f1rg3, 'With sides three and eight'))),
@@ -3933,9 +3934,11 @@ video('solve-geo31-g040', 'solution', qid='geo31-g040', slides=[
         "and check the given. If the sizes work, that's the answer, because the given fixes the ratio."),
       L("Choice number one says a over b is one, so a equals b. But here one triangle is big and the other is "
         "small, so a is smaller than b. Out.", show(f7r4, 'Choice number one says'), mk('cross', 'choice 1', 'smaller than b. Out')),
-      L("Choice number two, three tenths. So a is three and b is ten. The bold line is ten plus ten plus ten minus three, "
-        "which is twenty-seven. The small perimeter is three times three, which is nine. And three times nine is twenty-seven. It "
-        "works, so choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+      L("Choice number two, three tenths. A ratio of three to ten, so let's take sizes that fit it. So a is three and b is "
+        "ten. The bold line is ten plus ten plus ten minus three, which is twenty-seven. The small perimeter is three times "
+        "three, which is nine. Now the given: the bold line has to be three times the small perimeter. Three times nine is "
+        "twenty-seven, and the bold line is twenty-seven. It works, so choice number two is our answer. [pause] Okay. "
+        "I'll see you in the next question.",
         show(f7r5, 'So a is three and b is ten'), mk('tick', 'choice 2', 'It works, so choice number two'))),
 ])
 

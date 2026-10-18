@@ -39,10 +39,10 @@
     ]
    },
    {
-    "say": "Seventeen squared is seventeen times seventeen: a hundred seventy plus a hundred nineteen, two hundred eighty-nine. So two hundred eighty-nine is a hundred sixty-nine plus two a b. Two a b is a hundred twenty, and the area, a b, is sixty. Choice number one is our answer.",
+    "say": "We know a plus b is seventeen, so the bracket, a plus b, squared, is seventeen squared. Seventeen squared is seventeen times seventeen: a hundred seventy plus a hundred nineteen, two hundred eighty-nine. On the right, a squared plus b squared is a hundred sixty-nine. So two hundred eighty-nine is a hundred sixty-nine plus two a b. Two a b is a hundred twenty, and the area, a b, is sixty. Choice number one is our answer.",
     "at": [
      "So two hundred eighty-nine",
-     "a hundred sixty-nine",
+     "a hundred sixty-nine plus",
      "Choice number one is our answer"
     ]
    }

@@ -20,10 +20,10 @@
     ]
    },
    {
-    "say": "[short pause] First the third side, the hypotenuse. Eight squared is sixty-four, fifteen squared is two hundred twenty-five, and together that's two hundred eighty-nine. Eight, fifteen, seventeen is a Pythagorean triple, and seventeen squared really is two hundred eighty-nine. So the hypotenuse is seventeen.",
+    "say": "[short pause] First the third side, the hypotenuse. By Pythagoras, its square is the two legs squared, added together. Eight squared is sixty-four, fifteen squared is two hundred twenty-five, and together that's two hundred eighty-nine. Eight, fifteen, seventeen is a Pythagorean triple, and seventeen squared really is two hundred eighty-nine. So the hypotenuse is seventeen.",
     "at": [
      "First the third side",
-     "Eight squared is"
+     "By Pythagoras, its"
     ]
    },
    {
@@ -55,7 +55,7 @@
     ]
    },
    {
-    "say": "Eight plus fifteen is twenty-three, so twenty-three minus two r is seventeen. Then two r is twenty-three minus seventeen, which is six, and r is three. Choice number three is our answer.",
+    "say": "Eight plus fifteen is twenty-three, so twenty-three minus two r is seventeen. We want r alone, so we move two r to one side and the numbers to the other. Then two r is twenty-three minus seventeen, which is six, and r is three. Choice number three is our answer.",
     "at": [
      "Eight plus fifteen is twenty-three",
      "so twenty-three minus",

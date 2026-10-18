@@ -64,7 +64,7 @@
     ]
    },
    {
-    "say": "With a radius of two, the circumference is two pi times two, four pi. Fifty percent more is half more. Half of four pi is two pi, so the new circumference is six pi, and the new radius is three.",
+    "say": "With a radius of two, the circumference is two pi times two, four pi. Fifty percent more is half more. Half of four pi is two pi, so the new circumference is six pi. Six pi is two pi times three, so the new radius is three.",
     "at": [
      "With a radius of two",
      "the circumference is",

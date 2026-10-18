@@ -49,12 +49,12 @@
     ]
    },
    {
-    "say": "By Pythagoras, s squared plus s squared is fourteen squared, a hundred ninety-six. So two s squared is a hundred ninety-six, and s squared is ninety-eight. But s squared is already the area of the square, so we stop here. Ninety-eight, choice number two.",
+    "say": "By Pythagoras, s squared plus s squared is fourteen squared, a hundred ninety-six. So two s squared is a hundred ninety-six. Divide both sides by two, and s squared is ninety-eight. But s squared is already the area of the square, so we stop here. Ninety-eight, choice number two.",
     "at": [
      "By Pythagoras",
      "s squared is",
      "So two s squared",
-     "a hundred ninety-six, and",
+     "a hundred ninety-six. Divide",
      "Ninety-eight, choice number two"
     ]
    },

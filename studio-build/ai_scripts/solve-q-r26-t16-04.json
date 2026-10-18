@@ -60,11 +60,14 @@
     ]
    },
    {
-    "say": "Let's choose seven, nine and eleven. We only need the last digit of the product. The last digit of a product comes only from the last digits. Seven times nine is sixty-three, which ends in three. Times eleven, it still ends in three, because three times one is three.",
+    "say": "Let's choose seven, nine and eleven. To check five, we only need the last digit of the product, because a number divides by five only when it ends in zero or five. The last digit of a product comes only from the last digits. Seven times nine is sixty-three, which ends in three. Times eleven, it still ends in three, because three times one is three.",
     "at": [
      "seven, nine and eleven",
-     "We only need",
-     "digit of the",
+     "To check five",
+     "need the last",
+     "the product, because",
+     "divides by five",
+     "it ends in",
      "The last digit of a",
      "product comes only",
      "Seven times nine is sixty-three",
@@ -74,10 +77,12 @@
     ]
    },
    {
-    "say": "A number that ends in three doesn't divide by five. So it doesn't divide by fifteen either. Choice numbers two and four are out. Only three is left, and choice number three is our answer.",
+    "say": "A number that ends in three doesn't divide by five. So it doesn't divide by fifteen either, because fifteen is five times three. Choice numbers two and four are out. Only three is left, and choice number three is our answer.",
     "at": [
      "doesn't divide by five",
      "So it doesn't divide by fifteen",
+     "fifteen either, because",
+     "five times three",
      "Choice numbers two",
      "four are out",
      "is left, and",

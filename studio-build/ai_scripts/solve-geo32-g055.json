@@ -19,7 +19,7 @@
     ]
    },
    {
-    "say": "[short pause] Start with the small triangle D E C on the right. Its area is ten, and it's a right triangle, so its area is one leg times the other, over two. Five times E C, over two, equals ten. So E C is four.",
+    "say": "[short pause] Start with the small triangle D E C on the right. Its area is ten, and it's a right triangle, so its area is one leg times the other, over two. Its legs are D E, which is five, and E C. Five times E C, over two, equals ten. So E C is four.",
     "at": [
      "Start with the small triangle",
      "D E C",
@@ -71,11 +71,11 @@
     ]
    },
    {
-    "say": "The area of a rectangle is length times width. Five times x is forty-five, so x is nine. A D is nine, and choice number two is our answer.",
+    "say": "The area of a rectangle is length times width. Its height is D E, five, and its area is forty-five. So five times x is forty-five, and x is nine. A D is nine, and choice number two is our answer.",
     "at": [
      "The area of",
      "Five times x is forty-five",
-     "so x is",
+     "and x is",
      "A D is nine",
      "choice number two is our answer"
     ]
@@ -100,10 +100,10 @@
     ]
    },
    {
-    "say": "Multiply both sides by two: two x plus eight, times five, is one hundred thirty. Open the bracket: ten x plus forty is one hundred thirty. So ten x is ninety, and x is nine. Choice number two again.",
+    "say": "Multiply both sides by two, to get rid of the over two. Then two x plus eight, times five, is one hundred thirty. Open the bracket: ten x plus forty is one hundred thirty. Take forty away from both sides, so ten x is ninety, and x is nine. Choice number two again.",
     "at": [
      "Multiply both sides by two",
-     "two x plus",
+     "to get rid",
      "Open the bracket",
      "plus forty is",
      "Choice number two again"

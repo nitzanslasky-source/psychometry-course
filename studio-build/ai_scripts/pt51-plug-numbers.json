@@ -69,10 +69,10 @@
     ]
    },
    {
-    "say": "Let's check with another number, x equals three. Three plus two is five, and five squared is twenty-five. Three times seven is twenty-one. Twenty-five minus twenty-one is four again.",
+    "say": "Let's check with another number, x equals three, to see that it really gives the same result. Three plus two is five, and five squared is twenty-five. Three times seven is twenty-one. Twenty-five minus twenty-one is four again.",
     "at": [
      "x equals three",
-     "and five squared",
+     "Three plus two",
      "Twenty-five minus twenty-one"
     ]
    },

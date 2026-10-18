@@ -56,7 +56,7 @@
     ]
    },
    {
-    "say": "At the least, four plus two, six percent. At the most, four plus eight, twelve percent. So between six and twelve percent. Choice number three is our answer. We solved it just by understanding, without calculating anything.",
+    "say": "The plan always gives four percent, so only the fund changes. At the least, four plus two, six percent. At the most, four plus eight, twelve percent. So between six and twelve percent. Choice number three is our answer. We solved it just by understanding, without calculating anything.",
     "at": [
      "At the least, four plus two",
      "two, six percent",
@@ -68,7 +68,7 @@
   ],
   [
    {
-    "say": "By the way, if you still choose to calculate, there are shortcuts here too. Say you worked out eight percent of thirty thousand. One percent of thirty thousand is three hundred, so eight percent is two thousand four hundred.",
+    "say": "By the way, if you still choose to calculate, there are shortcuts here too. Say you worked out eight percent of thirty thousand, the half in the plan. One percent of thirty thousand is three hundred, so eight percent is two thousand four hundred.",
     "at": [
      "you still choose",
      "One percent of thirty thousand",

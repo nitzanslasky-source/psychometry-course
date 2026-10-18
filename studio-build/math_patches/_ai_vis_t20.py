@@ -526,7 +526,7 @@ video('algebraic-understanding', 'lesson', slides=[
         show(w0, 'Plug in numbers, plug'), show(w0b, 'plug in the answers, and'), show(w0c, 'and use the math way and understanding'))),
     S('Plugging in numbers',
       L("The first tool, plugging in numbers. Say a is any positive number, and the question asks if a squared is always "
-        "bigger than a. Try a is three. Three squared is nine, and nine is bigger than three. So far, yes.",
+        "bigger than a. a has to be positive, so let's start with something easy and positive. Try a is three. Three squared is nine, and nine is bigger than three. So far, yes.",
         show(w1q, 'Say a is any positive number'), show(w1, 'Try a is three')),
       L("But positive numbers can also be between zero and one. Try a is one third. One third squared is one ninth, and one "
         "ninth is smaller than one third. So a squared is not always bigger than a. One allowed number where it fails is "
@@ -544,7 +544,7 @@ video('algebraic-understanding', 'lesson', slides=[
     S('The math way and understanding',
       L("The third tool, the math way and understanding. Say a plus b is ten, a minus b is four, and they ask for a squared minus "
         "b squared. We don't need to find a and b. a squared minus b squared is the bracket a plus b, times the bracket a "
-        "minus b. That's ten times four, which is forty.", show(w4, 'Say a plus b is ten'), show(w4b, 'a squared minus b squared is the bracket'),
+        "minus b. Both brackets are given, a plus b is ten and a minus b is four. That's ten times four, which is forty.", show(w4, 'Say a plus b is ten'), show(w4b, 'a squared minus b squared is the bracket'),
         show(w4c, "That's ten times four")),
       L("Understanding also means reading what a given really says. If n is an integer and n is smaller than five, then n "
         "is at most four, because there's no integer between four and five. Gaps like this will help us find the biggest "

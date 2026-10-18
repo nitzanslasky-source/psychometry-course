@@ -861,8 +861,8 @@ video('geo-001', 'lesson', slides=[
         "are there between them?", show(G1B['line'], 'Five points, equally spaced'), show(G1B['pts'], 'How many gaps')),
       L("Count the spaces, not the points. One, two, three, four gaps. Five points make four gaps, one less than the "
         "number of points.", show(G1B['gaps'], 'Count the spaces')),
-      L("Lengths live in the gaps. If every gap is three centimeters, then from the first point to the last one is four "
-        "times three, twelve centimeters, not five times three, fifteen. And seven points in a row make six gaps.",
+      L("Lengths live in the gaps. If every gap is three centimeters, then from the first point to the last one there are "
+        "four gaps. So it's four times three, twelve centimeters, not five times three, fifteen. And seven points in a row make six gaps.",
         show(G1B['len'], 'If every gap is three'), show(I('g1bt', '$4\\cdot3=12$, $\\ $not $5\\cdot3=15$', size=28, col=0),
                                                          'twelve centimeters'),
         show(G1B7['line'], 'And seven points in a row'), show(G1B7['gaps'], 'make six gaps'))),
@@ -875,7 +875,7 @@ video('geo-001', 'lesson', slides=[
         "For example, here the angles are a hundred five, "
         "seventy-five, a hundred five and seventy-five.", show(G1C['a2'], 'seventy-five, a hundred'),
         show(G1C['a3'], 'a hundred five and'), show(G1C['a4'], 'and seventy-five.')),
-      L("Together, a hundred five plus seventy-five is a hundred eighty, and twice that is three hundred sixty. All the "
+      L("Together, a hundred five plus seventy-five is a hundred eighty. That pair comes twice around the point, and twice that is three hundred sixty. All the "
         "angles around one point always add up to three hundred sixty, even when more lines cross there. With three "
         "lines we get six angles, for example sixty, fifty, seventy, sixty, fifty and seventy, and together they're "
         "three hundred sixty again.",

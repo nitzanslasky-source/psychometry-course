@@ -35,7 +35,7 @@
     ]
    },
    {
-    "say": "Now the radius. We draw it from the center O to the end of the chord, B. O B is a radius, so it's r.",
+    "say": "Now the radius. We draw it from the center O to the end of the chord, B, so that it closes a triangle with the lines we already have. O B is a radius, so it's r.",
     "at": [
      "We draw it from the center O",
      "center O to"
@@ -56,10 +56,10 @@
     ]
    },
    {
-    "say": "So the circumference is two pi times ten, which is twenty pi. Choice number three is our answer.",
+    "say": "So the circumference is two pi r, and r is ten, so it's two pi times ten, which is twenty pi. Choice number three is our answer.",
     "at": [
      "So the circumference is",
-     "pi times ten",
+     "pi r, and",
      "Choice number three is our answer"
     ]
    },

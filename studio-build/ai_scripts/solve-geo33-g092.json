@@ -70,7 +70,7 @@
     ]
    },
    {
-    "say": "Twenty, twenty-one, twenty-nine. Let's check Pythagoras. Twenty squared is four hundred, and twenty-one squared is four hundred forty-one. Together, eight hundred forty-one. And twenty-nine squared? It's twenty-nine times thirty, minus twenty-nine. Twenty-nine times thirty is eight hundred seventy, and eight hundred seventy minus twenty-nine is eight hundred forty-one. The same, so it's a Pythagorean triple.",
+    "say": "Twenty, twenty-one, twenty-nine. We need the angle at A, so let's check Pythagoras, to see if it's a right angle. Twenty squared is four hundred, and twenty-one squared is four hundred forty-one. Together, eight hundred forty-one. And twenty-nine squared? It's twenty-nine times thirty, minus twenty-nine. Twenty-nine times thirty is eight hundred seventy, and eight hundred seventy minus twenty-nine is eight hundred forty-one. The same, so it's a Pythagorean triple.",
     "at": [
      "Together, eight hundred forty-one",
      "It's twenty-nine times"

@@ -60,7 +60,7 @@
     ]
    },
    {
-    "say": "Triangle O C A has two radii, so it's isosceles, and its base angles are equal. Call them x. The angle at O inside it is a hundred eighty minus two x, so the angle next to it on the straight line is two x.",
+    "say": "Triangle O C A has two radii, so it's isosceles, and its base angles are equal. Call them x. The angles of a triangle add up to a hundred eighty, so the angle at O inside it is a hundred eighty minus two x. Together with the angle next to it, it makes a straight line, a hundred eighty, so that angle is two x.",
     "at": [
      "Triangle O C A",
      "and its base",
@@ -69,12 +69,12 @@
     ]
    },
    {
-    "say": "The same on the other side, with y. So the inscribed angle is x plus y, and the central angle is two x plus two y, exactly twice as much.",
+    "say": "The same on the other side, with y. So the inscribed angle is x plus y, because it's made of x and y. The central angle is made of the two outside angles, so it's two x plus two y, exactly twice as much.",
     "at": [
      "The same on the other side",
      "side, with y",
      "So the inscribed angle",
-     "central angle is"
+     "made of x"
     ]
    }
   ],
@@ -206,7 +206,7 @@
     ]
    },
    {
-    "say": "Together they make a full circle, so two alpha plus two beta is three hundred sixty. Divide by two, and alpha plus beta is a hundred eighty.",
+    "say": "Together they make a full circle, so two alpha plus two beta is three hundred sixty. We want alpha plus beta, not twice it. So we divide by two, and alpha plus beta is a hundred eighty.",
     "at": [
      "Together they make",
      "circle, so two"

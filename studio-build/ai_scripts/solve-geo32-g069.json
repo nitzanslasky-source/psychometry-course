@@ -37,7 +37,7 @@
     ]
    },
    {
-    "say": "So five times h, over two, is fifteen. Five h is thirty, so h is six.",
+    "say": "So five times h, over two, is fifteen. Multiply both sides by two, and five h is thirty. Divide by five, so h is six.",
     "at": [
      "So five times h",
      "two, is fifteen"
@@ -78,7 +78,7 @@
     ]
    },
    {
-    "say": "So all the triangles have the same area, fifteen each. The whole trapezoid is fifteen plus four times fifteen, which is seventy-five. Choice number three again. Careful, sixty is only the white triangle, so choice number two is a trap.",
+    "say": "So all the triangles have the same area, fifteen each. The whole trapezoid is the shaded triangle plus the four small white ones. That's fifteen plus four times fifteen, which is seventy-five. Choice number three again. Careful, sixty is only the white triangle, so choice number two is a trap.",
     "at": [
      "fifteen each",
      "The whole trapezoid",

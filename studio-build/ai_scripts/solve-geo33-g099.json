@@ -131,7 +131,7 @@
     ]
    },
    {
-    "say": "Twenty-seven pi plus eighteen, and twenty-seven pi plus thirty-six, are much too small, so choice numbers one and four are out. But choice numbers two and three both have fifty-four pi, plus eighteen or plus thirty-six. That's too close to decide by estimating.",
+    "say": "We need more than fifty-four pi. Twenty-seven pi plus eighteen, and twenty-seven pi plus thirty-six, are much too small, so choice numbers one and four are out. But choice numbers two and three both have fifty-four pi, plus eighteen or plus thirty-six. That's too close to decide by estimating.",
     "at": [
      "are much too small",
      "four are out",

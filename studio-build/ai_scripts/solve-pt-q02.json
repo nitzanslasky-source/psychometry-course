@@ -53,17 +53,17 @@
     ]
    },
    {
-    "say": "Now we add thirteen x to both sides, and take five thousand four hundred off both sides. Six thousand five hundred minus five thousand four hundred is one thousand one hundred. And nine x plus thirteen x is twenty-two x.",
+    "say": "Now we add thirteen x to both sides, and take five thousand four hundred off both sides, so that the x's are on one side and the plain numbers on the other. Six thousand five hundred minus five thousand four hundred is one thousand one hundred. And nine x plus thirteen x is twenty-two x.",
     "at": [
      "Six thousand five hundred minus",
      "five thousand four hundred is"
     ]
    },
    {
-    "say": "Instead of dividing by twenty-two in one go, let's divide both sides by eleven first. That gives a hundred equals two x, so x is fifty. We move fifty eggs, and choice number two is our answer. [pause] Okay. I'll see you in the next part.",
+    "say": "Instead of dividing by twenty-two in one go, let's divide both sides by eleven first, because smaller numbers are easier. That gives a hundred equals two x, so x is fifty. We move fifty eggs, and choice number two is our answer. [pause] Okay. I'll see you in the next part.",
     "at": [
      "divide both sides by eleven first",
-     "That gives a",
+     "first, because smaller",
      "choice number two is our answer"
     ]
    }

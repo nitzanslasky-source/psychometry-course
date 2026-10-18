@@ -27,7 +27,7 @@
     ]
    },
    {
-    "say": "A B is the height of the rectangle. Let's call it h. A E is a part of the rectangle's length. Let's call it x. So x times h, over two, is six. Multiply both sides by two, and x h is twelve.",
+    "say": "A B is the height of the rectangle. Let's call it h. A E is a part of the rectangle's length. Let's call it x. So x times h, over two, is six. Multiply both sides by two, to get rid of the over two, and x h is twelve.",
     "at": [
      "Let's call it h",
      "A E is",
@@ -52,7 +52,7 @@
     ]
    },
    {
-    "say": "So its area is x plus y, times h, over two. Open the brackets. It's x h plus y h, over two, so twelve plus thirty, over two. That's forty-two over two, which is twenty-one. Choice number two is our answer.",
+    "say": "So its area is x plus y, times h, over two. Open the brackets. It's x h plus y h, over two. We found that x h is twelve and y h is thirty, so twelve plus thirty, over two. That's forty-two over two, which is twenty-one. Choice number two is our answer.",
     "at": [
      "So its area is",
      "plus y, times",

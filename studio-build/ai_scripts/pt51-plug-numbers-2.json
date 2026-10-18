@@ -123,7 +123,7 @@
     ]
    },
    {
-    "say": "Let's take x equals two. Two times three is six. x squared plus x is four plus two, six. Three x is six too. x squared plus one is five, out. And four x is eight, out.",
+    "say": "Let's take x equals two. Two times three is six, so the right choice must give six. x squared plus x is four plus two, six. Three x is six too. x squared plus one is five, out. And four x is eight, out.",
     "at": [
      "Let's take x equals two",
      "Two times three",
@@ -133,7 +133,7 @@
    },
    "Two choices give six, so we can't decide yet. This is why we don't stop at the first choice that fits. We take a tie-breaker number, and we check only the two choices that are left. The ones that are out stay out.",
    {
-    "say": "x equals three. Three times four is twelve. x squared plus x is nine plus three, twelve. Three x is nine, so it's out. The answer is x squared plus x. [pause] Okay. I'll see you in the next part.",
+    "say": "Now x equals three. Three times four is twelve. x squared plus x is nine plus three, also twelve. Three x is nine, not twelve, out. The answer is x squared plus x. [pause] Okay. I'll see you in the next part.",
     "at": [
      "Three times four is twelve",
      "x squared plus x is nine plus three",

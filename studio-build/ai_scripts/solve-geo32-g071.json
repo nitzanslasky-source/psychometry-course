@@ -94,7 +94,7 @@
     ]
    },
    {
-    "say": "Angle D: a hundred ten plus a hundred thirty plus eighty is three hundred twenty. Three hundred sixty minus three hundred twenty is forty. D E cuts it in half, so each half is twenty.",
+    "say": "Let's start with angle D. The four angles of the quadrilateral add up to three hundred sixty, so we add the three we know. A hundred ten plus a hundred thirty plus eighty is three hundred twenty. Angle D is what's left. Three hundred sixty minus three hundred twenty is forty. D E cuts it in half, so each half is twenty.",
     "at": [
      "Three hundred sixty minus three",
      "hundred twenty is",
@@ -112,7 +112,7 @@
   ],
   [
    {
-    "say": "Now we put alpha a hundred ten and beta eighty into each choice. Half alpha is fifty-five, and half beta is forty. Choice number one says sixty-five, plus half alpha, minus half beta. Sixty-five plus fifty-five minus forty is eighty. Not fifty, out. Choice number two says a hundred thirty, plus half alpha, minus half beta. A hundred thirty plus fifty-five minus forty is a hundred forty-five. Out.",
+    "say": "Now we put alpha a hundred ten and beta eighty into each choice. With these numbers x is fifty, so the right choice has to give fifty. Half alpha is fifty-five, and half beta is forty. Choice number one says sixty-five, plus half alpha, minus half beta. Sixty-five plus fifty-five minus forty is eighty. Not fifty, out. Choice number two says a hundred thirty, plus half alpha, minus half beta. A hundred thirty plus fifty-five minus forty is a hundred forty-five. Out.",
     "at": [
      "a hundred ten",
      "Half alpha is fifty-five",

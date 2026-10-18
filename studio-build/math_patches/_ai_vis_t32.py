@@ -896,8 +896,9 @@ video('geo-042', 'lesson', slides=[
       L("So the angles in a quadrilateral add up to three hundred sixty degrees. That's almost the only rule we have for a "
         "general quadrilateral, at least the only one that matters for the exam.", pt('f1sum_all', 'So the angles in a quadrilateral'))),
     S('Using the angle sum',
-      L("Let's use it. Here the angles are eighty, ninety-five and a hundred ten degrees, and we want x. Eighty plus "
-        "ninety-five is a hundred seventy-five, and plus a hundred ten is two hundred eighty-five. Three hundred sixty minus "
+      L("Let's use it. Here the angles are eighty, ninety-five and a hundred ten degrees, and we want x. All four angles "
+        "add up to three hundred sixty, so first we add the three we know. Eighty plus "
+        "ninety-five is a hundred seventy-five, and plus a hundred ten is two hundred eighty-five. What's left of the three hundred sixty is x. Three hundred sixty minus "
         "two hundred eighty-five is seventy-five, so x is seventy-five degrees.",
         show(f1use['line'], 'Here the angles are eighty'), show(f1u1, 'Eighty plus ninety-five'), show(f1use['x1'], 'so x is seventy-five')),
       L("Another one. Two right angles and a hundred twenty degrees. Ninety plus ninety plus a hundred twenty is three "
@@ -1100,8 +1101,8 @@ video('geo-043', 'lesson', slides=[
         show(f2_sq5['d12'], 'Say the diagonal is twelve'), show(f2_sq5['half'], 'Then half the diagonal')),
       L("Look at one small triangle. Its legs are two halves, six and six, and they're perpendicular. So its area is six "
         "times six over two, which is eighteen.", show(f2_sq5['tri'], 'Look at one small triangle')),
-      L("The square is four of these triangles. Four times eighteen is seventy-two. And twelve squared over two is a "
-        "hundred forty-four over two, also seventy-two.", show(f2_sq5['four'], 'The square is four'),
+      L("The square is four of these triangles. Four times eighteen is seventy-two. Now let's check the formula, the diagonal squared over two. Twelve squared over two is a "
+        "hundred forty-four over two, also seventy-two. So the formula works.", show(f2_sq5['four'], 'The square is four'),
         show(f2_k43h, 'Four times eighteen')),
       L("One more: a diagonal of ten gives ten squared, a hundred, over two, which is fifty.", show(f2_k43i, 'a diagonal of ten'))),
     S('Scale it up',
@@ -1161,7 +1162,7 @@ video('solve-geo32-g044', 'solution', qid='geo32-g044', slides=[
         "A B C, the legs are s and s, and the hypotenuse is the diagonal, fourteen.", show(f2_g44b['line'], 'Now the long way'),
         show(f2_g44b['tri'], 'In triangle A B C')),
       L("By Pythagoras, s squared plus s squared is fourteen squared, a hundred ninety-six. So two s squared is a hundred "
-        "ninety-six, and s squared is ninety-eight. But s squared is already the area of the square, so we stop here. "
+        "ninety-six. Divide both sides by two, and s squared is ninety-eight. But s squared is already the area of the square, so we stop here. "
         "Ninety-eight, choice number two.", show(f2_g44b['pyth'], 'By Pythagoras'), show(f2_g44b['half'], 'So two s squared'),
         mk('tick', 'choice 2', 'Ninety-eight, choice number two')),
       L("Careful with the traps. A hundred ninety-six is the diagonal squared, without dividing by two. And forty-nine is half "
@@ -1284,12 +1285,12 @@ video('solve-geo32-g046', 'solution', qid='geo32-g046', slides=[
       L("[short pause] In a rectangle, the diagonals are equal, and they cut each other in half. So E B and E C are halves of "
         "equal diagonals, and they're equal. Triangle B E C is isosceles.", show(f2_g46['line'], 'In a rectangle'),
         show(f2_g46['iso'], 'So E B and E C')),
-      L("Its top angle is a hundred twenty, so the two base angles share the rest. A hundred eighty minus a hundred twenty is "
+      L("Its top angle is a hundred twenty. In an isosceles triangle the base angles are equal, so they share the rest equally. A hundred eighty minus a hundred twenty is "
         "sixty, and half of that is thirty. So angle E B C is thirty, and angle E C B is thirty.",
         show(f2_g46['calc'], 'A hundred eighty minus'), show(f2_g46['b30'], 'So angle E B C is thirty'))),
     S('The gold triangle',
       L("Now look at triangle D B C. Its angle at C is ninety, because it's a corner of the rectangle. Its angle at B is the "
-        "same thirty we just found. So the last angle, at D, is sixty.", show(f2_g46b['line'], 'Now look at triangle'),
+        "same thirty we just found. The angles of a triangle add up to a hundred eighty, so the last angle, at D, is sixty.", show(f2_g46b['line'], 'Now look at triangle'),
         show(f2_g46b['tri'], 'Its angle at C')),
       L("Thirty, sixty, ninety: that's the gold triangle. Its sides are in the ratio a, a root three, two a. The short leg, a, "
         "is across from the thirty. Across from the thirty at B is C D, so a is five.", show(f2_g46b['ratio'], "that's the gold triangle"),
@@ -1403,7 +1404,7 @@ video('geo-047', 'lesson', slides=[
         show(f2_pg2['line'], 'What do we know'), show(f2_pg2['opp'], 'Angle A equals'), show(f2_k47b, 'Opposite angles are equal')),
       L("And any two angles next to each other add up to a hundred eighty. D and C, a hundred eighty. A and D, a hundred "
         "eighty. B and C, and A and B, also a hundred eighty.", show(f2_k47c, 'And any two angles')),
-      L("For example, if angle B is seventy, then angle D is seventy too, and angles A and C are each a hundred ten. And if "
+      L("For example, if angle B is seventy, then angle D, across from it, is seventy too. Angles A and C sit next to B, so each one is a hundred eighty minus seventy, a hundred ten. And if "
         "an angle is a hundred twenty-five, the angle next to it is fifty-five.", show(f2_pg2['ex1'], 'For example'),
         show(f2_k47d, 'And if an angle'))),
     S('Why: parallel lines',
@@ -1555,7 +1556,7 @@ video('solve-geo32-g048', 'solution', qid='geo32-g048', slides=[
       L("All of angle B is three alpha plus two alpha, which is five alpha. All of angle C is three beta plus two beta, five "
         "beta. Together they make one hundred eighty.", show(f3g48['wb'], 'All of angle B'), show(f3g48['wc'], 'All of angle C'),
         show(f3k48a, 'Together they make')),
-      L("Divide both sides by five, and alpha plus beta is thirty-six. We don't know alpha or beta on their own, but we know "
+      L("Divide both sides by five, so that only alpha plus beta is left. Alpha plus beta is thirty-six. We don't know alpha or beta on their own, but we know "
         "their sum.", show(f3k48b, 'Divide both sides by five')), sb='Method 1 · The math way'),
     S('The triangle',
       L("Now look at triangle B C E, the small triangle at the bottom. Its angles are three alpha at B, three beta at C, and "
@@ -1571,11 +1572,11 @@ video('solve-geo32-g048', 'solution', qid='geo32-g048', slides=[
       L("[pause] Now a faster way, plugging in numbers. Only the sum of alpha and beta is fixed, thirty-six. The question "
         "expects one value of x, so any alpha and beta that add up to thirty-six must give that same x. So we can choose "
         "easy numbers that fit."),
-      L("Let's take them equal, eighteen and eighteen. Then angle B is five times eighteen, ninety, and angle C is ninety "
+      L("They have to add up to thirty-six, and equal numbers are the easiest. Let's take them equal, eighteen and eighteen. Then angle B is five times eighteen, ninety, because angle B is five alpha. Angle C is five beta, so it's ninety "
         "too. The parallelogram becomes a rectangle, and that's allowed, because a rectangle is a parallelogram.",
         show(f3g48p['line'], "Let's take them equal"), show(f3g48p['b90'], 'Then angle B is five times eighteen')),
-      L("In triangle B C E, three alpha is three times eighteen, fifty-four, and three beta is fifty-four too. So x is one "
-        "hundred eighty minus fifty-four minus fifty-four, which is seventy-two. Choice number two again. [pause] Okay. "
+      L("In triangle B C E, three alpha is three times eighteen, fifty-four, and three beta is fifty-four too. The angles of a triangle add up to one hundred eighty. So x is one "
+        "hundred eighty minus fifty-four minus fifty-four, which is seventy-two. That's the same seventy-two as in the math way. Choice number two again. [pause] Okay. "
         "I'll see you in the next question.", show(f3g48p['v54'], 'three alpha is three times eighteen'),
         mk('tick', 'choice 2', 'Choice number two again')), sb='Method 2 · Plugging in numbers'),
 ])
@@ -1832,7 +1833,7 @@ video('solve-geo32-g051', 'solution', qid='geo32-g051', slides=[
       L("[short pause] Let's call the diagonals a and b, with a the bigger one. Then a plus b is forty-six, and a minus b is "
         "fourteen. Two equations, two unknowns.", show(f3k51a, 'Then a plus b is forty-six'), show(f3k51b, 'and a minus b')),
       L("Add the two equations. Plus b and minus b cancel, so two a is sixty, and a is thirty. That's the bigger diagonal. "
-        "And b, thirty minus what gives fourteen? Sixteen. So b is sixteen.", show(f3k51c, 'so two a is sixty'))),
+        "To find b, we use a minus b is fourteen. Thirty minus what gives fourteen? Sixteen. So b is sixteen.", show(f3k51c, 'so two a is sixty'))),
     S('Half-diagonals and a triple',
       L("Now the figure. The long diagonal is thirty, and the short one is sixteen. The diagonals of a rhombus cut each "
         "other in half, so we split thirty into fifteen and fifteen, and sixteen into eight and eight.",
@@ -2069,7 +2070,7 @@ video('solve-geo32-g053', 'solution', qid='geo32-g053', slides=[
       L("[short pause] Triangle B D C. In a kite, the two bottom sides are equal, so C B is ten and C D is ten. That makes "
         "the triangle isosceles, and it also has a sixty-degree angle at B.", show(f4g53['line'], 'Triangle B D C'),
         show(f4g53['bdc'], 'the two bottom sides are equal')),
-      L("An isosceles triangle with a sixty-degree angle must be equilateral. The angle at D equals the angle at B, so it's "
+      L("An isosceles triangle with a sixty-degree angle must be equilateral. The angle at D equals the angle at B, because they sit across from the equal sides. So it's "
         "sixty too, and then the angle at C is one hundred eighty minus one hundred twenty, which is sixty. Sixty, sixty, "
         "sixty. So all its sides are equal, and B D is ten as well.", show(f4g53['eq'], 'The angle at D equals'),
         show(f4g53['bd'], 'and B D is ten as well'))),
@@ -2281,7 +2282,7 @@ video('solve-geo32-g055', 'solution', qid='geo32-g055', slides=[
       L("A D is the short base at the top. [short pause] We'll solve it two ways, by using the symmetry, and then with the "
         "trapezoid area formula.", pt('fig: A', 'A D is the short base')),
       L("[short pause] Start with the small triangle D E C on the right. Its area is ten, and it's a right triangle, so its "
-        "area is one leg times the other, over two. Five times E C, over two, equals ten. So E C is four.",
+        "area is one leg times the other, over two. Its legs are D E, which is five, and E C. Five times E C, over two, equals ten. So E C is four.",
         show(f4g55['line'], 'Start with the small triangle'), show(f4g55['dec'], 'Its area is ten'),
         show(f4g55a, 'Five times E C'), show(f4g55['ec'], 'So E C is four')),
       L("Here's a tip for every trapezoid question: drop the heights, both of them. One height is already given, so we drop "
@@ -2295,7 +2296,7 @@ video('solve-geo32-g055', 'solution', qid='geo32-g055', slides=[
         "be accurate. We don't know that x equals five. It's a rectangle.", show(f4g55m['nsq'], "In the drawing it looks like a square")),
       L("The whole trapezoid is sixty-five, and the two triangles are ten each. So what's left in the middle is sixty-five "
         "minus ten minus ten, which is forty-five.", show(f4g55c, 'So what\'s left in the middle'), show(f4g55m['v45'], 'which is forty-five')),
-      L("The area of a rectangle is length times width. Five times x is forty-five, so x is nine. A D is nine, and choice "
+      L("The area of a rectangle is length times width. Its height is D E, five, and its area is forty-five. So five times x is forty-five, and x is nine. A D is nine, and choice "
         "number two is our answer.", show(f4g55d, 'Five times x is forty-five'), show(f4g55m['v9'], 'A D is nine'),
         mk('tick', 'choice 2', 'choice number two is our answer'))),
     SM('Method 2 · The math way: the area formula', 'The long way',
@@ -2304,8 +2305,8 @@ video('solve-geo32-g055', 'solution', qid='geo32-g055', slides=[
       L("The top base is x. The bottom base is four, plus x, plus four, so x plus eight. The sum of the bases is x plus x "
         "plus eight. Times the height, five, over two, equals sixty-five.", show(f4g55b['line'], 'The top base is x'),
         show(f4g55b['bc'], 'The bottom base is four'), show(f4g55e, 'The sum of the bases')),
-      L("Multiply both sides by two: two x plus eight, times five, is one hundred thirty. Open the bracket: ten x plus "
-        "forty is one hundred thirty. So ten x is ninety, and x is nine. Choice number two again.",
+      L("Multiply both sides by two, to get rid of the over two. Then two x plus eight, times five, is one hundred thirty. Open the bracket: ten x plus "
+        "forty is one hundred thirty. Take forty away from both sides, so ten x is ninety, and x is nine. Choice number two again.",
         show(f4g55f, 'Multiply both sides by two'), show(f4g55g, 'Open the bracket'), mk('tick', 'choice 2', 'Choice number two again')),
       L("Same answer, but much longer. The first way saved all that, just by seeing that the trapezoid is symmetric, so the "
         "middle must be forty-five. [pause] Okay. I'll see you in the next question.")),
@@ -2356,7 +2357,7 @@ video('solve-q-r26-t32-02', 'solution', qid='q-r26-t32-02', slides=[
     S('A triple, then the area',
       L("Now the right triangle D E C. Its hypotenuse is C D, ten, and one leg is six. That's the triple six, eight, ten, so "
         "the other leg, D E, is eight. That's the height.", show(f4r2['line'], 'Now the right triangle'), show(f4r2['tri'], 'Its hypotenuse is C D'), show(f4r_b, "That's the triple")),
-      L("Now the area. Nine plus fifteen is twenty-four. Times eight, over two. Twenty-four over two is twelve, and twelve "
+      L("Now the area. The area of a trapezoid is the sum of the bases, times the height, over two. Nine plus fifteen is twenty-four. Times the height, eight, over two. Twenty-four over two is twelve, and twelve "
         "times eight is ninety-six. Choice number two is our answer.", show(f4r_c, 'Now the area'),
         mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("If you got one hundred twenty, you used C D, ten, as the height. But the slanted leg is not the height. The height "
@@ -2620,7 +2621,7 @@ video('solve-geo32-g059', 'solution', qid='geo32-g059', slides=[
         "E is a median.", show(f5g59a['line'], 'Look at triangle A B C'), show(f5g59a['abc'], 'so B E is a median')),
       L("A median cuts a triangle into two triangles of equal area. Why? A E equals E C, so the two triangles have equal "
         "bases, and they share the same height from B to the line A C.", show(f5g59a['h'], 'they share the same height')),
-      L("Triangle A B C is easy. Ten times twenty-four, over two, is one hundred twenty. A B E is half of it, sixty. Choice "
+      L("Triangle A B C is easy. It's a right triangle with legs ten and twenty-four, so its area is leg times leg, over two. Ten times twenty-four, over two, is one hundred twenty. The median cuts it into two triangles of equal area, so A B E is half of it, sixty. Choice "
         "number two is our answer.", show(f5g59a['s'], 'Ten times twenty-four'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
     SM('Method 2 · Understanding: four equal triangles', 'Four equal triangles',
       L("[pause] The second way. The diagonals of a rectangle always cut it into four triangles of equal area. By the way, "
@@ -2708,7 +2709,7 @@ video('solve-geo32-g060', 'solution', qid='geo32-g060', slides=[
         show(f5g60['area'], 'Now the formula'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
     SM('Method 1 · The math way: the diagonals', 'The diagonals',
       L("[pause] Once you've found all the inner pieces, you can add up the area in other ways too. Some students take the "
-        "gold triangle, base five and height five root three, and multiply its area by four.",
+        "gold triangle, base five and height five root three, and multiply its area by four, because the rhombus is made of four of these triangles.",
         show(f5g60o['line'], 'Once you\'ve found all the inner pieces'), show(f5g60o['t4'], 'Some students take the gold triangle')),
       L("Some take the top triangle, B D A, with base ten and height five root three, twice. And some take the triangle on "
         "the right, A D C, with base ten root three and height five, twice too. There are many ways, and at this stage it's "
@@ -2723,7 +2724,7 @@ video('solve-geo32-g060', 'solution', qid='geo32-g060', slides=[
         "are ten.", show(f5g60e['top'], 'so the top angle is sixty as well')),
       L("All the sides of a rhombus are equal, so D C and B C are ten too. So the rhombus is two equilateral triangles.",
         show(f5g60e['bcd'], 'so D C and B C are ten too')),
-      L("The area of one equilateral triangle is the side squared, times root three, over four. Twice that is two times one "
+      L("The area of one equilateral triangle is the side squared, times root three, over four. The side is ten, and ten squared is a hundred. The rhombus is two of these triangles, so we take it twice. Twice that is two times one "
         "hundred root three, over four, which is fifty root three. That's the shorter way. Choice number two.",
         show(f5g60e['area'], 'Twice that is two times'), mk('tick', 'choice 2', "That's the shorter way. Choice number two")),
       L("And one more link to the triangles topic. Angle A B C is sixty plus sixty, one hundred twenty. So triangle A B C is "
@@ -2802,7 +2803,7 @@ video('solve-geo32-g061', 'solution', qid='geo32-g061', slides=[
         show(f6g61['abp'], 'Now look at the triangle that holds')),
       L("In an isosceles triangle, the angles across from the equal sides are equal. So angle B A P and angle B P A are "
         "equal. Let's call both of them alpha.", show(f6g61['alpha'], 'call both of them alpha')),
-      L("The angle at B, the top of this triangle, is ninety minus sixty, which is thirty.",
+      L("The corner of the square at B is ninety, and the equilateral triangle takes sixty of it, angle P B C. So the angle at B, the top of this triangle, is ninety minus sixty, which is thirty.",
         show(f6g61['b30'], 'is ninety minus sixty')),
       L("The angles of a triangle add up to one hundred eighty. So thirty plus alpha plus alpha is one hundred eighty. "
         "Move the thirty across. One hundred eighty minus thirty is one hundred fifty, and that's two alpha. So one alpha "
@@ -3101,14 +3102,14 @@ video('solve-geo32-g067', 'solution', qid='geo32-g067', slides=[
         "its area is leg times leg, over two. But neither leg is given, so we give them letters.",
         show(f6g67['line'], 'Start with triangle A B E'), show(f6g67['abe'], "It's a right triangle")),
       L("A B is the height of the rectangle. Let's call it h. A E is a part of the rectangle's length. Let's call it x. So x "
-        "times h, over two, is six. Multiply both sides by two, and x h is twelve.", show(f6g67['h'], "Let's call it h"),
+        "times h, over two, is six. Multiply both sides by two, to get rid of the over two, and x h is twelve.", show(f6g67['h'], "Let's call it h"),
         show(f6g67['x'], "Let's call it x")),
       L("Now triangle E C D. It's a right triangle too, with the same height h. E D is another part of the length, not x. So "
         "it's a new unknown, y. y times h, over two, is fifteen, so y h is thirty.", show(f6g67['y'], "So it's a new unknown")),
       L("Now the shaded triangle E B C. Its base, B C, is the whole length, x plus y. And its height? We drop it from E to B "
         "C, and it's exactly the height of the rectangle, h.", show(f6g67['base'], 'Its base, B C'),
         show(f6g67['ht'], 'We drop it from E')),
-      L("So its area is x plus y, times h, over two. Open the brackets. It's x h plus y h, over two, so twelve plus thirty, "
+      L("So its area is x plus y, times h, over two. Open the brackets. It's x h plus y h, over two. We found that x h is twelve and y h is thirty, so twelve plus thirty, "
         "over two. That's forty-two over two, which is twenty-one. Choice number two is our answer.",
         show(f6g67['s'], 'So its area is'), mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("This was a long and tiring solution. But it's an important base. We won't always see the short way, and then we "
@@ -3393,7 +3394,7 @@ video('solve-geo32-g069', 'solution', qid='geo32-g069', slides=[
       L("Where is the height to A D? In an obtuse triangle the height is outside. So we extend A D, and from B we drop "
         "the shortest line to it, at a right angle. That's the height, h.", show(f7g69['ext'], 'we extend A D'),
         show(f7g69['h'], 'from B we drop')),
-      L("So five times h, over two, is fifteen. Five h is thirty, so h is six.", show(f7g69['h6'], 'So five times h')),
+      L("So five times h, over two, is fifteen. Multiply both sides by two, and five h is thirty. Divide by five, so h is six.", show(f7g69['h6'], 'So five times h')),
       L("And look, this height is also the height of the trapezoid, the distance between the two parallel sides. The "
         "area of a trapezoid is the sum of the bases, times the height, over two. Five plus twenty is twenty-five, times "
         "six is a hundred fifty, over two is seventy-five. Choice number three is our answer.",
@@ -3408,7 +3409,7 @@ video('solve-geo32-g069', 'solution', qid='geo32-g069', slides=[
       L("Let's see it. Cut B C into four pieces of five, and draw lines from D. Now every triangle here has the same base, "
         "five, and the same height. A B and the first piece even make a parallelogram, with B D as its diagonal.",
         show(f7g69b['cuts'], 'Cut B C into four pieces'), show(f7g69b['par'], 'make a parallelogram')),
-      L("So all the triangles have the same area, fifteen each. The whole trapezoid is fifteen plus four times fifteen, "
+      L("So all the triangles have the same area, fifteen each. The whole trapezoid is the shaded triangle plus the four small white ones. That's fifteen plus four times fifteen, "
         "which is seventy-five. Choice number three again. Careful, sixty is only the white triangle, so choice number "
         "two is a trap.", show(f7g69b['vals'], 'fifteen each'), mk('tick', 'choice 3', 'Choice number three again'),
         mk('cross', 'choice 2', 'choice number two is a trap')),
@@ -3616,13 +3617,13 @@ video('solve-geo32-g071', 'solution', qid='geo32-g071', slides=[
         "matches.", show(f8g71b['line'], 'Now a shorter way')),
       L("Alpha looks obtuse, so let's take a hundred ten. Beta looks a little less than ninety, so let's take eighty. You "
         "could choose other numbers too, as long as they fit the drawing.", show(f8g71b['nums'], 'so let\'s take a hundred ten')),
-      L("Angle D: a hundred ten plus a hundred thirty plus eighty is three hundred twenty. Three hundred sixty minus three "
+      L("Let's start with angle D. The four angles of the quadrilateral add up to three hundred sixty, so we add the three we know. A hundred ten plus a hundred thirty plus eighty is three hundred twenty. Angle D is what's left. Three hundred sixty minus three "
         "hundred twenty is forty. D E cuts it in half, so each half is twenty.", show(f8g71b['d'], 'Three hundred sixty minus three'),
         show(f8g71b['halves'], 'so each half is twenty')),
       L("Now x is easy. In triangle A E D, a hundred ten plus twenty is a hundred thirty, and a hundred eighty minus a hundred "
         "thirty is fifty. So with these numbers, x is fifty degrees.", show(f8g71b['x'], 'So with these numbers'))),
     SM('Method 2 · Plugging in numbers', 'Check the choices',
-      L("Now we put alpha a hundred ten and beta eighty into each choice. Half alpha is fifty-five, and half beta is forty. "
+      L("Now we put alpha a hundred ten and beta eighty into each choice. With these numbers x is fifty, so the right choice has to give fifty. Half alpha is fifty-five, and half beta is forty. "
         "Choice number one says sixty-five, plus half alpha, minus half beta. Sixty-five plus fifty-five minus forty is "
         "eighty. Not fifty, out. Choice number two says a hundred thirty, plus half alpha, minus half beta. A hundred "
         "thirty plus fifty-five minus forty is a hundred forty-five. Out.", show(f8p0, 'Half alpha is fifty-five'), pt('choice 1', 'Choice number one says', 'hl', 3.0), show(f8p3, 'Sixty-five plus fifty-five'), pt('choice 2', 'Choice number two says', 'hl', 3.0), show(f8p6, 'A hundred thirty plus fifty-five'),
@@ -3691,7 +3692,7 @@ video('solve-geo32-g072', 'solution', qid='geo32-g072', slides=[
         show(f8r2b, 'four x is eight'), show(f8r3, 'Eight times twelve'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
     SM('Method 2 · Understanding', 'Parts of the perimeter',
       L("[pause] Now by understanding. Once we have the sides as four x and six x, there's a shorter way to finish. The sides are in the ratio two "
-        "to three. Half the perimeter, one height plus one width, is twenty.", show(f8r4, 'The sides are in the ratio two')),
+        "to three, because four x to six x is like four to six, two to three. Half the perimeter, one height plus one width, is half of forty, twenty.", show(f8r4, 'The sides are in the ratio two')),
       L("Two parts plus three parts is five parts, and five parts are twenty, so one part is four. The sides are two times "
         "four, eight, and three times four, twelve. Eight times twelve is ninety-six again. [pause] Okay. I'll see you in "
         "the next question.", show(f8r5, 'one part is four'), mk('tick', 'choice 3', 'is ninety-six again'))),
@@ -3844,8 +3845,8 @@ video('solve-q-r26-t32-07', 'solution', qid='q-r26-t32-07', slides=[
     SM('Method 1 · The math way: shortcut formula', 'The shortcut formula',
       L("We want the area, a times b. Here the shortcut formula from expressions helps: the bracket a plus b, squared, is a "
         "squared plus two a b plus b squared.", show(f8e1, 'We want the area'), show(f8e2, 'Here the shortcut formula')),
-      L("Seventeen squared is seventeen times seventeen: a hundred seventy plus a hundred nineteen, two hundred eighty-nine. "
-        "So two hundred eighty-nine is a hundred sixty-nine plus two a b. Two a b is a hundred twenty, and the area, a b, is "
+      L("We know a plus b is seventeen, so the bracket, a plus b, squared, is seventeen squared. Seventeen squared is seventeen times seventeen: a hundred seventy plus a hundred nineteen, two hundred eighty-nine. "
+        "On the right, a squared plus b squared is a hundred sixty-nine. So two hundred eighty-nine is a hundred sixty-nine plus two a b. Two a b is a hundred twenty, and the area, a b, is "
         "sixty. Choice number one is our answer.", show(f8e3, 'So two hundred eighty-nine'),
         mk('tick', 'choice 1', 'Choice number one is our answer'))),
     SM('Method 2 · Understanding: a triple', 'A triple',

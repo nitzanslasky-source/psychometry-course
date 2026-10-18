@@ -40,7 +40,7 @@
     ]
    },
    {
-    "say": "Now the angle A O B. It's sixty plus sixty, a hundred twenty degrees. And a hundred twenty degrees is a third of the circle, because three times a hundred twenty is three hundred sixty.",
+    "say": "Now the angle A O B. It's made of the two angles at O, one from each equilateral triangle. It's sixty plus sixty, a hundred twenty degrees. And a hundred twenty degrees is a third of the circle, because three times a hundred twenty is three hundred sixty.",
     "at": [
      "It's sixty plus sixty",
      "hundred twenty degrees",
@@ -171,7 +171,7 @@
     ]
    },
    {
-    "say": "Let's check it on rings with a chord of ten. Radii twelve and thirteen, the five, twelve, thirteen triangle. A hundred sixty-nine pi minus a hundred forty-four pi is twenty-five pi.",
+    "say": "Let's check it on rings with a chord of ten. Radii twelve and thirteen, the five, twelve, thirteen triangle. The ring is the big circle minus the small one. A hundred sixty-nine pi minus a hundred forty-four pi is twenty-five pi, just like the rule says.",
     "at": [
      "Radii twelve and thirteen",
      "five, twelve, thirteen"

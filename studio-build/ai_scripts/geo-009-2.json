@@ -43,11 +43,11 @@
   ],
   [
    {
-    "say": "Let's use it. Two angles are sixty and fifty. Sixty plus fifty is a hundred ten, so the third angle is a hundred eighty minus a hundred ten, which is seventy.",
+    "say": "Let's use it. Two angles are sixty and fifty. Sixty plus fifty is a hundred ten. All three angles make a hundred eighty, so the third angle is a hundred eighty minus a hundred ten, which is seventy.",
     "at": [
      "Two angles are sixty and fifty",
      "Sixty plus fifty is a hundred ten",
-     "hundred ten, so",
+     "hundred ten. All",
      "which is seventy",
      "which is seventy"
     ]
@@ -120,7 +120,7 @@
     ]
    },
    {
-    "say": "The long way gives the same thing. The third angle is a hundred eighty minus forty-seven minus sixty-eight, which is sixty-five. And the exterior angle completes sixty-five to a hundred eighty, so it's a hundred fifteen again.",
+    "say": "The long way gives the same thing. The angles of the triangle add up to a hundred eighty. The third angle is a hundred eighty minus forty-seven minus sixty-eight, which is sixty-five. The exterior angle sits next to it on a straight line, so it completes sixty-five to a hundred eighty. It's a hundred fifteen again.",
     "at": [
      "The third angle is",
      "hundred eighty minus"

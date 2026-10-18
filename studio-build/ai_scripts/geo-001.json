@@ -49,7 +49,7 @@
     ]
    },
    {
-    "say": "Lengths live in the gaps. If every gap is three centimeters, then from the first point to the last one is four times three, twelve centimeters, not five times three, fifteen. And seven points in a row make six gaps.",
+    "say": "Lengths live in the gaps. If every gap is three centimeters, then from the first point to the last one there are four gaps. So it's four times three, twelve centimeters, not five times three, fifteen. And seven points in a row make six gaps.",
     "at": [
      "If every gap is three",
      "centimeters, then from",
@@ -80,9 +80,9 @@
     ]
    },
    {
-    "say": "Together, a hundred five plus seventy-five is a hundred eighty, and twice that is three hundred sixty. All the angles around one point always add up to three hundred sixty, even when more lines cross there. With three lines we get six angles, for example sixty, fifty, seventy, sixty, fifty and seventy, and together they're three hundred sixty again. [pause] Okay. I'll see you in the next part.",
+    "say": "Together, a hundred five plus seventy-five is a hundred eighty. That pair comes twice around the point, and twice that is three hundred sixty. All the angles around one point always add up to three hundred sixty, even when more lines cross there. With three lines we get six angles, for example sixty, fifty, seventy, sixty, fifty and seventy, and together they're three hundred sixty again. [pause] Okay. I'll see you in the next part.",
     "at": [
-     "plus seventy-five is",
+     "Together, a hundred",
      "twice that is three hundred sixty",
      "All the angles around one point",
      "three hundred sixty, even",

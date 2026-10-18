@@ -27,7 +27,7 @@
     ]
    },
    {
-    "say": "An isosceles triangle with a sixty-degree angle must be equilateral. The angle at D equals the angle at B, so it's sixty too, and then the angle at C is one hundred eighty minus one hundred twenty, which is sixty. Sixty, sixty, sixty. So all its sides are equal, and B D is ten as well.",
+    "say": "An isosceles triangle with a sixty-degree angle must be equilateral. The angle at D equals the angle at B, because they sit across from the equal sides. So it's sixty too, and then the angle at C is one hundred eighty minus one hundred twenty, which is sixty. Sixty, sixty, sixty. So all its sides are equal, and B D is ten as well.",
     "at": [
      "The angle at D equals",
      "the angle at B",

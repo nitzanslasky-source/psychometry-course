@@ -97,7 +97,7 @@
     ]
    },
    {
-    "say": "Now we put r equals one into the choices. Choice number one is pi over three, and that's different, so it's out. But in choices two, three and four, multiplying or dividing by one changes nothing. All three give pi plus two, over three.",
+    "say": "Now we put r equals one into the choices. Choice number one is pi over three, not pi plus two over three, so it's out. But in choices two, three and four, multiplying or dividing by one changes nothing. All three give pi plus two, over three.",
     "at": [
      "so it's out",
      "All three give",

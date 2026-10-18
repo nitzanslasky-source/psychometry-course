@@ -58,9 +58,9 @@
     ]
    },
    {
-    "say": "The angle at B, the top of this triangle, is ninety minus sixty, which is thirty.",
+    "say": "The corner of the square at B is ninety, and the equilateral triangle takes sixty of it, angle P B C. So the angle at B, the top of this triangle, is ninety minus sixty, which is thirty.",
     "at": [
-     "the top of",
+     "The corner of",
      "is ninety minus sixty"
     ]
    },

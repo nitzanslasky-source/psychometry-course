@@ -133,11 +133,11 @@
     ]
    },
    {
-    "say": "The square is four of these triangles. Four times eighteen is seventy-two. And twelve squared over two is a hundred forty-four over two, also seventy-two.",
+    "say": "The square is four of these triangles. Four times eighteen is seventy-two. Now let's check the formula, the diagonal squared over two. Twelve squared over two is a hundred forty-four over two, also seventy-two. So the formula works.",
     "at": [
      "The square is four",
      "Four times eighteen",
-     "And twelve squared"
+     "Now let's check"
     ]
    },
    {

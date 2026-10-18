@@ -105,10 +105,10 @@
     ]
    },
    {
-    "say": "So angle A O B is sixty plus sixty, which is one hundred twenty. Choice number three is our answer. Sixty, choice number one, is only half of the angle.",
+    "say": "Angle A O B is made of the two angles at O, one from each triangle. So angle A O B is sixty plus sixty, which is one hundred twenty. Choice number three is our answer. Sixty, choice number one, is only half of the angle.",
     "at": [
      "So angle A O B is sixty plus sixty",
-     "is one hundred",
+     "is sixty plus",
      "Choice number three is our answer",
      "Sixty, choice"
     ]

@@ -77,7 +77,7 @@
     ]
    },
    {
-    "say": "Look at the right triangle A B E. The hypotenuse A B is ten, and one leg, A E, is six. Six and ten, that's the six, eight, ten triangle, so the other leg, B E, is eight. With Pythagoras, ten squared minus six squared is a hundred minus thirty-six, sixty-four. And the root of sixty-four is eight.",
+    "say": "Look at the right triangle A B E. The hypotenuse A B is ten, and one leg, A E, is six. Six and ten, that's the six, eight, ten triangle, so the other leg, B E, is eight. With Pythagoras, the missing leg squared is the hypotenuse squared minus the other leg squared. Ten squared minus six squared is a hundred minus thirty-six, sixty-four. And the root of sixty-four is eight.",
     "at": [
      "Look at the right triangle",
      "A B E",
@@ -122,10 +122,10 @@
     ]
    },
    {
-    "say": "Let's check it on other circles, with radii nine and four. The centers are thirteen apart, and the difference of the radii is five. Five, twelve, thirteen, so the tangent is twelve. And the formula gives two times the root of thirty-six, two times six, twelve. The same.",
+    "say": "Let's check it on other circles, with radii nine and four. The circles touch, so the centers are nine plus four, thirteen apart, and the difference of the radii is five. Five, twelve, thirteen, so the tangent is twelve. And the formula gives two times the root of thirty-six, two times six, twelve. The same.",
     "at": [
      "with radii nine and four",
-     "The centers are"
+     "The circles touch"
     ]
    },
    "The formula only works when the circles touch. If they don't, cut off the same right triangle, with the distance between the centers as its hypotenuse. [pause] Okay. I'll see you in the next question."

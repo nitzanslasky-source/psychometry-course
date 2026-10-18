@@ -59,7 +59,7 @@
    },
    "Here zero is perfect, because the answer is a number, so there's nothing to tie. And I chose only x. If I chose both letters, the equation probably wouldn't hold.",
    {
-    "say": "And it's really true. Six x plus nine y is one and a half times four x plus six y. And one and a half times eighteen is twenty-seven.",
+    "say": "And it's really true. Six x plus nine y is one and a half times four x plus six y, because each part is one and a half times as big. And one and a half times eighteen is twenty-seven.",
     "at": [
      "And it's really true",
      "Six x plus"
@@ -105,7 +105,7 @@
     ]
    },
    {
-    "say": "For example, is a squared plus b squared always equal to the bracket a plus b, squared? Let a equal one and b equal two. One plus four is five, and three squared is nine. Five is not nine, so it's not always true. One counterexample, and we're done.",
+    "say": "For example, is a squared plus b squared always equal to the bracket a plus b, squared? Let a equal one and b equal two, two small, different numbers. One plus four is five, and three squared is nine. Five is not nine, so it's not always true. One counterexample, and we're done.",
     "at": [
      "For example, is a squared",
      "plus b squared",
