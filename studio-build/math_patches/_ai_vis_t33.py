@@ -4439,8 +4439,8 @@ video('solve-geo33-g096', 'solution', qid='geo33-g096', slides=[
       L("The straight line is the diameter, two radii, so it's two r. So the perimeter of the semicircle is pi r plus two "
         "r.", show(f7g96['dia'], 'The straight line is the diameter'), show(f7g96a6, "so it's two r"),
         show(f7g96a7, 'So the perimeter of the semicircle')),
-      L("Now we divide. Pi r plus two r, over three r. In the top, take r out as a common factor. That gives r times pi "
-        "plus two, all over three r. Now r is multiplied on the top and on the bottom, so we cancel it. We get pi plus "
+      L("Now we divide. Pi r plus two r, over three r. In the top, take r out as a common factor. That gives r times "
+        "the whole bracket, pi plus two, all over three r. Now r is multiplied on the top and on the bottom, so we cancel it. We get pi plus "
         "two, over three. Choice number three is our answer.", show(f7g96a8, 'Now we divide'),
         show(f7g96a9, 'That gives r times'), show(f7g96a10, 'We get pi plus two'),
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
@@ -4467,8 +4467,8 @@ video('solve-geo33-g096', 'solution', qid='geo33-g096', slides=[
       L("So the ratio is two pi plus four, over six. Divide the top and the bottom by two, and it's pi plus two, over "
         "three.", show(f7g96c4, 'So the ratio is two pi'), show(f7g96c4b, 'Divide the top and the bottom by two')),
       L("Now r equals two in the choices. Choice number two says pi plus two, over three r. Three r is six, so it's pi "
-        "plus two, over six. That's half of our value, so it's out. Choice number four says r times pi plus two, all over "
-        "three. With r equals two, it's twice our value. It's out too.", pt('choice 2', 'Choice number two says', 'hl', 3.0),
+        "plus two, over six. That's half of our value, so it's out. Choice number four says r times the whole "
+        "bracket, pi plus two, all over three. With r equals two, it's twice our value. It's out too.", pt('choice 2', 'Choice number two says', 'hl', 3.0),
         show(f7g96c5, 'Three r is six'), mk('cross', 'choice 2', 'That\'s half of our value'),
         pt('choice 4', 'Choice number four says', 'hl', 3.0), show(f7g96c6, "With r equals two, it's twice"),
         mk('cross', 'choice 4', "It's out too")),
@@ -5199,8 +5199,8 @@ video('solve-geo33-g101', 'solution', qid='geo33-g101', slides=[
         "the small circle. We don't know either radius, so let's call the big one capital R, and the small one small r.",
         show(f8g101['line'], 'First the math way'), show(f8g101['ring'], 'the area of the big circle minus'),
         show(f8g101['radii'], "let's call the big one capital R")),
-      L("So pi R squared minus pi r squared is sixty-five pi. Let's write capital R in terms of small r, so our equation "
-        "has just one unknown.", show(f8g101['d0'], 'So pi R squared')),
+      L("So pi capital R squared minus pi r squared is sixty-five pi. Let's write capital R in terms of small r, so our equation "
+        "has just one unknown.", show(f8g101['d0'], 'So pi capital R squared')),
       L("The small diameter, A C, is two r. The big diameter, A B, is A C plus C B, so it's two r plus ten.",
         show(f8g101['ac'], 'The small diameter'), show(f8g101['ab'], 'The big diameter')),
       L("The big radius is half of that, two r plus ten, over two. We divide each term by two. Two r over two is r, and "
@@ -5665,7 +5665,7 @@ video('r26-t33-more-tools', 'lesson', slides=[
         "root three.", show(f9t6b, 'So the shared region is two times'))),
     S('Chord of a ring',
       L("The second tool is a ring. Two circles with the same center, O, and the ring between them. Circles with the same "
-        "center are called concentric. The ring is the big circle minus the small circle, pi R squared minus pi r "
+        "center are called concentric. Call the big radius big R, and the small radius r. The ring is the big circle minus the small circle, pi big R squared minus pi r "
         "squared.", show(f9ring['line'], 'Two circles with the same center'),
         show(f9t7, 'The ring is the big circle')),
       L("Now a chord A B of the big circle that just touches the small circle, at the point M. M is a point of tangency, "
@@ -5674,13 +5674,13 @@ video('r26-t33-more-tools', 'lesson', slides=[
       L("Draw O A and O B too. They're radii of the big circle, so triangle A O B is isosceles. O M is the height to its "
         "base, and in an isosceles triangle that height is also a median. So M cuts the chord in half. Call each half h.",
         show(f9ring['ob'], 'Draw O A and O B'), show(f9ring['half'], 'So M cuts the chord in half')),
-      L("Look at the right triangle O M B. Its legs are r and h, and its hypotenuse is R. By Pythagoras, r squared plus h "
-        "squared is R squared. Now subtract r squared from both sides. So R squared minus r squared is h squared.",
+      L("Look at the right triangle O M B. Its legs are r and h, and its hypotenuse is big R. By Pythagoras, r squared plus h "
+        "squared is big R squared. Now subtract r squared from both sides. So big R squared minus r squared is h squared.",
         show(f9ring['tri'], 'Look at the right triangle'), show(f9t8, 'By Pythagoras'),
         show(f9t8b, 'Now subtract r squared from both sides')),
-      L("And the ring? Let's go back to the whole ring. Pi R squared minus pi r squared is pi times, R squared minus r "
+      L("And the ring? Let's go back to the whole ring. Pi big R squared minus pi r squared is pi times, big R squared minus r "
         "squared. That's pi times h squared. So the ring depends only on the chord.",
-        show(f9ring['back'], "Let's go back to the whole ring"), show(f9t9, 'Pi R squared minus pi r squared is'))),
+        show(f9ring['back'], "Let's go back to the whole ring"), show(f9t9, 'Pi big R squared minus pi r squared is'))),
     S('Same chord, same ring',
       L("So if the chord is ten, then h is half of it, five. And the ring is pi times five squared, twenty-five pi. We "
         "don't need either radius.", show(f9t10, 'So if the chord is ten'), show(f9t10b, 'And the ring is pi times')),
@@ -6022,18 +6022,20 @@ video('solve-q-r26-t33-05', 'solution', qid='q-r26-t33-05', slides=[
         show(f9q5c['t4b'], 'Two root thirty-four is more than ten'), mk('cross', 'choice 4', "a leg can't be longer"))),
     SM('Traps and a shortcut', 'Why the short formula works',
       L("[short pause] There's also a short formula. Let's see why it works, with letters. Call the big radius capital R, "
-        "and the small radius small r. The circles touch from the outside, so A B, the hypotenuse, is R plus r. And A E "
-        "is R minus r.", show(f9x5g['line'], "Let's see why it works"), show(f9x5g['hyp'], 'the hypotenuse, is R plus r'),
-        show(f9x5s1, 'the hypotenuse, is R plus r'), show(f9x5g['leg'], 'And A E is R minus r'), show(f9x5s2, 'And A E is R minus r')),
-      L("By Pythagoras, D C squared is the hypotenuse squared minus the leg squared. That's R plus r, squared, minus, R "
-        "minus r, squared.", show(f9x5g['dc'], 'By Pythagoras, D C squared'), show(f9x5s3, "That's R plus r, squared")),
-      L("We know both of these from expressions. R plus r, squared, is R squared plus two R r plus r squared. R minus r, "
-        "squared, is R squared minus two R r plus r squared.", show(f9x5s4, 'R plus r, squared, is'),
-        show(f9x5s5, 'R minus r, squared, is')),
-      L("Now subtract. The R squared and the r squared cancel. Taking away minus two R r adds it, so we're left with two R "
-        "r plus two R r, four R r.", show(f9x5s6, 'so we\'re left with')),
-      L("So D C squared is four R r. A length is positive, so D C is the root of four R r. That's two times the root of R "
-        "times r. Here it's two times the root of eight times two, two times the root of sixteen. Two times four is eight, "
+        "and the small radius small r. The circles touch from the outside, so A B, the hypotenuse, is big R plus small r. "
+        "And A E is big R minus small r.", show(f9x5g['line'], "Let's see why it works"), show(f9x5g['hyp'], 'the hypotenuse, is big R'),
+        show(f9x5s1, 'the hypotenuse, is big R'), show(f9x5g['leg'], 'And A E is big R minus'), show(f9x5s2, 'And A E is big R minus')),
+      L("By Pythagoras, D C squared is the hypotenuse squared minus the leg squared. That's big R plus small r, "
+        "all squared, minus, big R minus small r, all squared.", show(f9x5g['dc'], 'By Pythagoras, D C squared'), show(f9x5s3, "That's big R plus small r")),
+      L("We know both of these from expressions. First, big R plus small r, all squared, is big R squared, plus two big R "
+        "small r, plus small r squared. [short pause] Then, big R minus small r, all squared, is big R squared, minus two big R "
+        "small r, plus small r squared.", show(f9x5s4, 'First, big R plus small r'),
+        show(f9x5s5, 'Then, big R minus small r')),
+      L("[short pause] Now subtract the second one from the first. The big R squared cancels, and so does the small r "
+        "squared. Taking away minus two big R small r adds it, so we're left with two big R small r, plus two big R small "
+        "r. That's four big R small r.", show(f9x5s6, 'so we\'re left with')),
+      L("So D C squared is four big R small r. A length is positive, so D C is the root of four big R small r. That's two "
+        "times the root of big R times small r. [short pause] Here it's two times the root of eight times two, two times the root of sixteen. Two times four is eight, "
         "the same answer.", show(f9x5s7, 'so D C is the root of four'), show(f9x5s8, "Here it's two times the root"))),
     SM('Traps and a shortcut', 'Check: nine and four',
       L("Let's check it on other circles, with radii nine and four, touching from the outside. The centers are nine plus "
@@ -6045,7 +6047,7 @@ video('solve-q-r26-t33-05', 'solution', qid='q-r26-t33-05', slides=[
         show(f9x5k['dc'], 'so the tangent segment is twelve'), show(f9x5k3, 'so the tangent segment is twelve'),
         show(f9x5k4, 'And the formula gives')),
       L("So remember when it works. Two circles touch each other from the outside, and D C is the piece of a common "
-        "tangent line between its two touching points. Then D C is two times the root of R times r.",
+        "tangent line between its two touching points. Then D C is two times the root of big R times small r.",
         show(f9x5k5, 'So remember when it works')),
       L("If the circles don't touch, but there's still a common tangent like this, cut off the same right triangle. Its "
         "hypotenuse is the distance between the centers. And if one circle is inside the other, there's no such tangent "

@@ -162,7 +162,7 @@
   ],
   [
    {
-    "say": "The second tool is a ring. Two circles with the same center, O, and the ring between them. Circles with the same center are called concentric. The ring is the big circle minus the small circle, pi R squared minus pi r squared.",
+    "say": "The second tool is a ring. Two circles with the same center, O, and the ring between them. Circles with the same center are called concentric. Call the big radius big R, and the small radius r. The ring is the big circle minus the small circle, pi big R squared minus pi r squared.",
     "at": [
      "Two circles with the same center",
      "center, O, and",
@@ -189,22 +189,22 @@
     ]
    },
    {
-    "say": "Look at the right triangle O M B. Its legs are r and h, and its hypotenuse is R. By Pythagoras, r squared plus h squared is R squared. Now subtract r squared from both sides. So R squared minus r squared is h squared.",
+    "say": "Look at the right triangle O M B. Its legs are r and h, and its hypotenuse is big R. By Pythagoras, r squared plus h squared is big R squared. Now subtract r squared from both sides. So big R squared minus r squared is h squared.",
     "at": [
      "Look at the right triangle",
      "O M B",
      "By Pythagoras",
      "h squared is",
      "Now subtract r squared from both sides",
-     "So R squared"
+     "So big R"
     ]
    },
    {
-    "say": "And the ring? Let's go back to the whole ring. Pi R squared minus pi r squared is pi times, R squared minus r squared. That's pi times h squared. So the ring depends only on the chord.",
+    "say": "And the ring? Let's go back to the whole ring. Pi big R squared minus pi r squared is pi times, big R squared minus r squared. That's pi times h squared. So the ring depends only on the chord.",
     "at": [
      "Let's go back to the whole ring",
-     "Pi R squared minus pi r squared is",
-     "r squared is"
+     "Pi big R squared minus pi r squared is",
+     "pi r squared"
     ]
    }
   ],

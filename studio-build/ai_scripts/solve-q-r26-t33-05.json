@@ -141,43 +141,45 @@
   ],
   [
    {
-    "say": "[short pause] There's also a short formula. Let's see why it works, with letters. Call the big radius capital R, and the small radius small r. The circles touch from the outside, so A B, the hypotenuse, is R plus r. And A E is R minus r.",
+    "say": "[short pause] There's also a short formula. Let's see why it works, with letters. Call the big radius capital R, and the small radius small r. The circles touch from the outside, so A B, the hypotenuse, is big R plus small r. And A E is big R minus small r.",
     "at": [
      "Let's see why it works",
      "Call the big",
-     "the hypotenuse, is R plus r",
-     "the hypotenuse, is R plus r",
-     "And A E is R minus r",
-     "And A E is R minus r"
+     "the hypotenuse, is big R",
+     "the hypotenuse, is big R",
+     "plus small r",
+     "And A E is big R minus",
+     "And A E is big R minus",
+     "R minus small"
     ]
    },
    {
-    "say": "By Pythagoras, D C squared is the hypotenuse squared minus the leg squared. That's R plus r, squared, minus, R minus r, squared.",
+    "say": "By Pythagoras, D C squared is the hypotenuse squared minus the leg squared. That's big R plus small r, all squared, minus, big R minus small r, all squared.",
     "at": [
      "By Pythagoras, D C squared",
-     "is the hypotenuse",
-     "That's R plus r, squared",
-     "minus, R minus"
+     "the leg squared",
+     "That's big R plus small r",
+     "r, all squared"
     ]
    },
    {
-    "say": "We know both of these from expressions. R plus r, squared, is R squared plus two R r plus r squared. R minus r, squared, is R squared minus two R r plus r squared.",
+    "say": "We know both of these from expressions. First, big R plus small r, all squared, is big R squared, plus two big R small r, plus small r squared. [short pause] Then, big R minus small r, all squared, is big R squared, minus two big R small r, plus small r squared.",
     "at": [
-     "R plus r, squared, is",
-     "r plus r squared",
-     "R minus r, squared, is",
-     "R squared minus"
+     "First, big R plus small r",
+     "r, all squared",
+     "Then, big R minus small r",
+     "r, all squared, is big R squared, minus"
     ]
    },
    {
-    "say": "Now subtract. The R squared and the r squared cancel. Taking away minus two R r adds it, so we're left with two R r plus two R r, four R r.",
+    "say": "[short pause] Now subtract the second one from the first. The big R squared cancels, and so does the small r squared. Taking away minus two big R small r adds it, so we're left with two big R small r, plus two big R small r. That's four big R small r.",
     "at": [
      "so we're left with",
-     "R r plus"
+     "big R small r, plus"
     ]
    },
    {
-    "say": "So D C squared is four R r. A length is positive, so D C is the root of four R r. That's two times the root of R times r. Here it's two times the root of eight times two, two times the root of sixteen. Two times four is eight, the same answer.",
+    "say": "So D C squared is four big R small r. A length is positive, so D C is the root of four big R small r. That's two times the root of big R times small r. [short pause] Here it's two times the root of eight times two, two times the root of sixteen. Two times four is eight, the same answer.",
     "at": [
      "so D C is the root of four",
      "That's two times",
@@ -209,7 +211,7 @@
     ]
    },
    {
-    "say": "So remember when it works. Two circles touch each other from the outside, and D C is the piece of a common tangent line between its two touching points. Then D C is two times the root of R times r.",
+    "say": "So remember when it works. Two circles touch each other from the outside, and D C is the piece of a common tangent line between its two touching points. Then D C is two times the root of big R times small r.",
     "at": [
      "So remember when it works",
      "Two circles touch"
