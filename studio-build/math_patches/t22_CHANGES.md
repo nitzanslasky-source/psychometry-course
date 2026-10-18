@@ -255,3 +255,10 @@ Teacher approved ~/Downloads/Memory-Tricks-Proposal.md ("they aren't super impor
 
 - solve-wp22-g047 and solve-q-r26-t22-20: "Give the plain x to the little guy" -> "Let the smaller one be x" (it pointed the other way from "give it to the little guy" = the x2 goes on the smaller side).
 - Card mem-general-advanced: "the x2 goes on the smaller side: B=x, A=2x" (contradicting example) -> "Give it to the little guy: the x2 goes on the smaller side. A is twice B: A=2B."
+
+## 2026-10-18 topic 22 for the teacher's own-voice reading
+New spec `math_patches/_ai_vis_t22.py` (built like `_ai_vis_t20.py`): one spec per video writes `ai_scripts/<vid>.json`, the
+visual plan and the studio slides; hook `ai_redo_t22` (runs LAST) in t22.py. 34 scripts: the camera lesson `wp-027` in 3 parts
+(`wp-027`, `wp-027-2`, `wp-027-3`, math_patches/_camera_parts.py), 7 short lessons, 24 question videos. `r26-t22-summary` is
+not read: `summary_pages/t22.json` (python3 summary_pages.py 22) replaces it. The 2026-10-09 AI pilot of solve-q-r26-t22-02 is
+switched off when the spec exists. Review file: ~/Downloads/Topic-22-AI-scripts-review.md.

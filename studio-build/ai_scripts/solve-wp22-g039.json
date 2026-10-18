@@ -1,0 +1,169 @@
+{
+ "videoId": "solve-wp22-g039",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Maya is nine years older than her cousin Tom. Five years ago, Maya was twice Tom's age. How old is Tom now?",
+    "voice": "calm",
+    "at": [
+     "Maya is nine years older"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "They ask for Tom's age now. So let's make Tom now our x. We'll solve it three ways, the math way with a table, plugging in the answers, and an insight.",
+    "at": [
+     "They ask for Tom's age now",
+     "now our x"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. Why Tom and not Maya? Because they ask about Tom, and Tom is the younger one. So Tom is x, Maya is x plus nine, and there are no minus signs.",
+    "at": [
+     "Let's start",
+     "Why Tom and not Maya",
+     "Because they ask",
+     "So Tom is x",
+     "is x plus"
+    ]
+   },
+   "Here's where a lot of students go wrong. They read five years ago, Maya was twice Tom's age, and they jump straight to the equation. Stop. Before the equation, add a row to the table for five years ago.",
+   {
+    "say": "Five years ago, everyone was five years younger. Tom was x minus five. Maya was x plus nine, minus five, which is x plus four.",
+    "at": [
+     "Tom was x minus five",
+     "Maya was x plus nine",
+     "which is x plus four"
+    ]
+   },
+   {
+    "say": "And look. The gap between them is still nine. Everyone gets older at the same speed, so the gap stays the same. Only the ratio between their ages changes.",
+    "at": [
+     "The gap between them is still nine",
+     "Everyone gets older"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the equation. Five years ago, Maya was twice Tom's age. So who gets the times two? Many students give it to Maya, because the sentence says Maya was twice. But that's backwards.",
+    "at": [
+     "Now the equation",
+     "Five years ago, Maya",
+     "twice Tom's age",
+     "So who gets the times two",
+     "Maya, because the"
+    ]
+   },
+   {
+    "say": "Think of four and eight. Eight is twice four. To make them equal, which one do we multiply by two? The four, the smaller one. Two times four is eight. So the times two goes to the little guy.",
+    "at": [
+     "Think of four and eight",
+     "Eight is twice",
+     "So the times two goes",
+     "to the little"
+    ]
+   },
+   {
+    "say": "Five years ago, the little guy was Tom, x minus five. So two times x minus five is equal to x plus four.",
+    "at": [
+     "So two times x minus five",
+     "five is equal"
+    ]
+   },
+   {
+    "say": "Now we open the brackets. Two times x is two x. Two times five is ten. So two x minus ten is x plus four. We take x from both sides, and add ten to both sides. x is fourteen.",
+    "at": [
+     "So two x minus ten",
+     "is x plus",
+     "x is fourteen"
+    ]
+   },
+   {
+    "say": "x is Tom's age now, exactly what they asked. Choice number three is our answer.",
+    "at": [
+     "x is Tom's",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers. We start again from the givens. For each choice, we go back five years, double Tom, and check that the gap is nine, as the question says.",
+    "at": [
+     "Now let's",
+     "We start again from the givens",
+     "the question says"
+    ]
+   },
+   {
+    "say": "Choice number one, Tom is nine now. Five years ago he was four, and Maya was twice that, eight. But the gap between eight and four is four, not nine. Out.",
+    "at": [
+     "number one, Tom",
+     "Five years ago he was four",
+     "four, and Maya",
+     "But the gap",
+     "and four is",
+     "not nine. Out"
+    ]
+   },
+   {
+    "say": "Choice number two, twelve. Five years ago Tom was seven, and Maya was fourteen. The gap is seven. Out.",
+    "at": [
+     "number two, twelve",
+     "Five years ago Tom was seven",
+     "seven, and Maya",
+     "The gap is seven",
+     "The gap is seven. Out"
+    ]
+   },
+   {
+    "say": "Choice number three, fourteen. Five years ago Tom was nine, and Maya was eighteen. The gap is nine. It fits. In the exam, you'd mark it and move on.",
+    "at": [
+     "number three, fourteen",
+     "Five years ago Tom was nine",
+     "nine, and Maya",
+     "The gap is nine",
+     "The gap is nine. It fits",
+     "In the exam"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And an insight. We start again from the givens. The gap is always nine. And five years ago, Maya was twice Tom. A gap of nine, and one of them twice the other. That can only be nine and eighteen.",
+    "at": [
+     "And an",
+     "the givens. The",
+     "And five years ago, Maya was",
+     "was twice Tom",
+     "That can only be nine and eighteen"
+    ]
+   },
+   {
+    "say": "Why only those? If Tom is some number, and Maya is twice it, the gap is twice the number minus the number, which is the number itself. So Tom was nine, the size of the gap.",
+    "at": [
+     "If Tom is some number",
+     "and Maya is",
+     "the gap is twice the number",
+     "number minus the"
+    ]
+   },
+   {
+    "say": "Careful, nine is choice number one, but that's Tom five years ago. Now he's nine plus five, fourteen.",
+    "at": [
+     "number one, but",
+     "Now he's nine plus five"
+    ]
+   },
+   {
+    "say": "And this works for anything that grows by the same amount, like two plants that each grow the same number of centimeters. The gap stays, and only the ratio changes. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "And this works",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,137 @@
+{
+ "videoId": "solve-wp22-g029",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Eight vases hold fifty-six roses. With the same number of roses in each vase, how many roses are in twelve vases?",
+    "voice": "calm",
+    "at": [
+     "Eight vases"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The key words are the same number of roses in each vase. The rate stays the same, so this is a question of equal ratios. We'll solve it two ways, both with the ratio table, once across and once down.",
+    "at": [
+     "The key words are"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, and learn a tool called the ratio table. It's a small table, with a column for each quantity. Let's see it first on easy numbers. Three boxes hold twelve pens, the same number in each box. How many pens are in ten boxes?",
+    "at": [
+     "Let's start",
+     "Three boxes hold twelve pens",
+     "the same number"
+    ]
+   },
+   {
+    "say": "In the first row we write what we know, three boxes and twelve pens. In the second row we write the new case, ten boxes, and a question mark for the pens.",
+    "at": [
+     "In the first row",
+     "write what we",
+     "In the second row",
+     "write the new"
+    ]
+   },
+   {
+    "say": "Now look across the first row, from three to twelve. Three times four is twelve, so across we multiply by four. That's four pens in every box.",
+    "at": [
+     "Now look across the first row",
+     "row, from three",
+     "Three times four is twelve",
+     "so across we"
+    ]
+   },
+   {
+    "say": "The rate is the same in both rows, four pens a box. So across the second row, we also multiply by four. Ten times four is forty pens.",
+    "at": [
+     "So across the second row",
+     "we also multiply",
+     "Ten times four is forty",
+     "forty pens"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now our question. Vases in one column, roses in the other. In the first row, what we know, eight vases and fifty-six roses. In the second row, the new case, twelve vases, and a question mark.",
+    "at": [
+     "Vases in one column",
+     "in the other",
+     "In the first row",
+     "In the second row",
+     "new case, twelve"
+    ]
+   },
+   {
+    "say": "Across the first row, from eight to fifty-six. Eight times seven is fifty-six, so across we multiply by seven. That means seven roses in each vase.",
+    "at": [
+     "Across the first row",
+     "eight to fifty-six",
+     "Eight times seven",
+     "so across we"
+    ]
+   },
+   {
+    "say": "The question says the same number of roses is in each vase. So the second row gets the same times seven. So we need twelve times seven. Ten times seven is seventy. Two times seven is fourteen. Together that's eighty-four.",
+    "at": [
+     "The question says",
+     "So the second row gets",
+     "the same times",
+     "Ten times seven is seventy",
+     "Two times seven is fourteen",
+     "Together that's eighty-four",
+     "that's eighty-four"
+    ]
+   },
+   {
+    "say": "So twelve vases hold eighty-four roses. Choice number three is our answer.",
+    "at": [
+     "So twelve vases",
+     "Choice number three is our answer"
+    ]
+   },
+   "Why does this work? Because the rate is the same in both rows. Every vase gets seven roses, whether there are eight vases or twelve. So whatever turns the vases into roses in one row, turns them into roses in the other row too."
+  ],
+  [
+   {
+    "say": "[pause] Now the same table, but down, from the first row to the second. We start again from the givens, eight vases, fifty-six roses, and twelve vases.",
+    "at": [
+     "Now the",
+     "Now the same table",
+     "down, from the",
+     "eight vases, fifty-six roses",
+     "and twelve vases"
+    ]
+   },
+   {
+    "say": "Down the vases column, from eight to twelve. Twelve is eight plus four, and four is half of eight. So twelve is one and a half times eight.",
+    "at": [
+     "Down the vases",
+     "Twelve is eight plus four",
+     "four is half of eight",
+     "So twelve is one and a half",
+     "a half times"
+    ]
+   },
+   {
+    "say": "The rate is the same, so the roses are also multiplied by one and a half. One and a half times fifty-six means fifty-six plus half of fifty-six. Half of fifty-six is twenty-eight, and fifty-six plus twenty-eight is eighty-four.",
+    "at": [
+     "so the roses are also multiplied",
+     "multiplied by one",
+     "Half of fifty-six is twenty-eight",
+     "and fifty-six plus twenty-eight",
+     "is eighty-four"
+    ]
+   },
+   {
+    "say": "We get the same eighty-four. Across, the multiplier was a whole number, seven, so across was easier to calculate. So first look across and down, and use the one that gives a whole number. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "We get the",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

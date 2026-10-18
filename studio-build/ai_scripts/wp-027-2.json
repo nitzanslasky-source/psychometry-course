@@ -1,0 +1,125 @@
+{
+ "videoId": "wp-027-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with word problems, and translate the phrases that come up again and again."
+  ],
+  [
+   {
+    "say": "The first phrase. A is three more than B. What does that mean? If we start with B and add three, we get A. So A is equal to B plus three.",
+    "at": [
+     "A is three more than B",
+     "B. What does",
+     "So A is equal to B plus three",
+     "B plus three"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. If B is ten, then A is ten plus three, thirteen. And in a question it sounds like this. Dana is three years older than Ella. So Dana is Ella plus three.",
+    "at": [
+     "If B is ten",
+     "And in a",
+     "So Dana is Ella plus three"
+    ]
+   },
+   {
+    "say": "Now the opposite. B is five less than A. So we start with A and take away five. B is equal to A minus five. In a question, Ben has five fewer marbles than Sam. So Ben is Sam minus five.",
+    "at": [
+     "B is five less than A",
+     "So we start",
+     "B is equal to A minus five",
+     "In a question",
+     "So Ben is Sam minus five"
+    ]
+   },
+   {
+    "say": "These two ways are really the same idea, written the other way round. If B is five less than A, then A is five more than B, so A is equal to B plus five. Both are right, as long as we write it the right way.",
+    "at": [
+     "These two ways",
+     "so A is equal to B plus five",
+     "Both are right"
+    ]
+   },
+   {
+    "say": "How do we know we wrote it the right way? We check with a number. Say Sam has twelve marbles. Then Ben has five fewer, seven. And in our equation, twelve minus five is seven. It fits.",
+    "at": [
+     "Say Sam has twelve marbles",
+     "Then Ben has",
+     "twelve minus five is seven"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Next, times. A is four times B. That means A is equal to four B, four times B. In numbers, if B is three, then A is four times three, twelve.",
+    "at": [
+     "four times B",
+     "That means A is equal to four B",
+     "to four B",
+     "if B is three",
+     "A is four times three"
+    ]
+   },
+   {
+    "say": "Careful not to mix up four times with four more. Four more than three is three plus four, seven. Four times three is twelve. These are two different things.",
+    "at": [
+     "Four more than three",
+     "three plus four",
+     "Four times three is twelve",
+     "These are two"
+    ]
+   },
+   {
+    "say": "And here's a word that is always the same. Twice, or double, is always times two. If I want times three, I don't say double, I say three times. Just like half is always divided by two. I can cut a cake into three parts, but not into three halves. Halves are always two.",
+    "at": [
+     "Twice, or double, is always",
+     "If I want",
+     "Just like half is always",
+     "divided by two"
+    ]
+   },
+   {
+    "say": "So A is twice B means A is equal to two B. In a question it can sound like this. Ella's salary is double Noa's salary. So Ella's salary is two times Noa's salary.",
+    "at": [
+     "So A is twice B",
+     "means A is",
+     "So Ella's salary is two times",
+     "times Noa's salary"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a phrase with a fraction. B is a quarter less than A. What does that mean? We take A, and take away a quarter of A. A whole A minus a quarter of A leaves three quarters of A. So B is three quarters of A.",
+    "at": [
+     "B is a quarter less than A",
+     "than A. What",
+     "A whole A minus a quarter",
+     "quarters of A"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. A tablet costs a quarter less than a laptop, and the laptop costs four hundred credits. A quarter of four hundred is a hundred. So the tablet costs four hundred minus a hundred, three hundred credits. And three hundred is exactly three quarters of four hundred.",
+    "at": [
+     "A quarter of four hundred",
+     "So the tablet costs",
+     "hundred minus a",
+     "And three hundred is exactly",
+     "three quarters of"
+    ]
+   },
+   "Careful here. A quarter of what? A quarter of the laptop, the thing we compare with. The whole is the laptop, so the quarter is taken from the laptop's price, not from the tablet's price.",
+   {
+    "say": "One more, with a third. C is a third less than D. So we take away a third of D, and two thirds of D are left. If D is thirty, a third of thirty is ten, and C is thirty minus ten, twenty. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "C is a third less than D",
+     "than D. So",
+     "and two thirds of D are left",
+     "If D is thirty",
+     "and C is thirty minus ten"
+    ]
+   }
+  ]
+ ]
+}

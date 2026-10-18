@@ -1,0 +1,73 @@
+{
+ "videoId": "solve-wp22-g032",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A café sells a sandwich for forty-seven credits. Making it uses two hundred grams of bread at four credits per hundred grams, three hundred grams of cheese at eight credits per hundred grams, and six olives at half a credit each. Ignoring other costs, what is the selling price minus the ingredient cost?",
+    "voice": "calm",
+    "at": [
+     "A café sells a sandwich"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A lot of text, and a lot of numbers. Don't skip it, we'll go step by step. What do they ask? The selling price minus the cost of the ingredients. So first we need the cost of making one sandwich.",
+    "at": [
+     "and a lot",
+     "What do they ask",
+     "selling price minus"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, one ingredient at a time. And let's label every number. The bread costs four credits per hundred grams, not per gram. And we need two hundred grams.",
+    "at": [
+     "Let's start",
+     "The bread costs"
+    ]
+   },
+   {
+    "say": "From a hundred grams to two hundred grams, we multiply by two. The price of every gram stays the same, so it's equal ratios again, and the price is also multiplied by two. Four times two is eight credits.",
+    "at": [
+     "Four times two is eight"
+    ]
+   },
+   {
+    "say": "The cheese costs eight credits per hundred grams, and we need three hundred grams. From a hundred to three hundred is times three. So the cheese costs eight times three, twenty-four credits.",
+    "at": [
+     "The cheese costs",
+     "eight times three, twenty-four"
+    ]
+   },
+   {
+    "say": "Six olives at half a credit each. Half of six is three credits.",
+    "at": [
+     "Six olives at",
+     "Half of six is three"
+    ]
+   },
+   {
+    "say": "Now the total cost. Eight plus twenty-four is thirty-two. Then thirty-two plus three is thirty-five credits.",
+    "at": [
+     "Eight plus twenty-four",
+     "thirty-two plus three"
+    ]
+   },
+   {
+    "say": "Careful, thirty-five is choice number two. But that's the cost, not what they asked. They asked for the selling price minus the cost.",
+    "at": [
+     "number two. But",
+     "But that's the cost",
+     "what they asked"
+    ]
+   },
+   {
+    "say": "The sandwich sells for forty-seven. Forty-seven minus thirty-five is twelve credits. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Forty-seven minus thirty-five",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

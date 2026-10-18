@@ -1,0 +1,145 @@
+{
+ "videoId": "solve-q-r26-t22-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In a choir, the ratio of sopranos to altos is two to three, and the ratio of altos to tenors is four to five. There are thirty tenors. How many singers are in the choir?",
+    "voice": "calm",
+    "at": [
+     "In a choir"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We have two ratios, and one group, the altos, appears in both. That's the key. We'll solve it two ways, the math way with one shared number, and then the math way starting from the tenors.",
+    "at": [
+     "We have two ratios"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. Here are the two ratios. Sopranos to altos is two to three, and altos to tenors is four to five.",
+    "at": [
+     "Let's start",
+     "Sopranos to altos is two to three",
+     "to three, and",
+     "altos to tenors is four to five"
+    ]
+   },
+   {
+    "say": "Many students glue them together and write two to three to five. That gives sixty, choice number two, and it's wrong. Why? The three altos in the first ratio and the four altos in the second ratio are different kinds of units. Three and four aren't the same, so we can't join the ratios yet.",
+    "at": [
+     "together and write",
+     "two to three to five",
+     "number two, and",
+     "The three altos in the first ratio",
+     "altos in the second"
+    ]
+   },
+   {
+    "say": "Let's see the idea on easy numbers first. If A to B is one to two, and B to C is two to three, then B is two in both ratios. So we can write A to B to C as one to two to three.",
+    "at": [
+     "If A to B is one to two",
+     "to C is",
+     "So we can write A to B to C",
+     "to B to"
+    ]
+   },
+   {
+    "say": "In our question, the altos are three in one ratio and four in the other. So we need one number that both three and four go into. Three times four is twelve.",
+    "at": [
+     "Three times four is twelve"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sopranos to altos is two to three. To turn the three into twelve, we multiply by four. We multiply both numbers, so the ratio stays the same. Two times four is eight. Three times four is twelve. So the ratio is eight to twelve.",
+    "at": [
+     "Sopranos to",
+     "two to three",
+     "we multiply by four",
+     "We multiply both",
+     "Three times four is twelve",
+     "So the ratio is"
+    ]
+   },
+   {
+    "say": "Altos to tenors is four to five. To turn the four into twelve, we multiply by three. Four times three is twelve. Five times three is fifteen. So the ratio is twelve to fifteen.",
+    "at": [
+     "we multiply by three",
+     "Four times three",
+     "Five times three is fifteen",
+     "So the ratio"
+    ]
+   },
+   {
+    "say": "Now the altos are twelve in both ratios, so we can join them. Sopranos to altos to tenors is eight to twelve to fifteen.",
+    "at": [
+     "Sopranos to altos to tenors",
+     "is eight to"
+    ]
+   },
+   {
+    "say": "Now the real number. There are thirty tenors, and the tenors are fifteen x. Fifteen x is thirty, so x is two.",
+    "at": [
+     "There are thirty tenors",
+     "Fifteen x is thirty",
+     "x is two"
+    ]
+   },
+   {
+    "say": "The whole choir is eight x plus twelve x plus fifteen x. Eight plus twelve is twenty. Twenty plus fifteen is thirty-five. So that's thirty-five x. Thirty-five times two is seventy singers. Choice number three is our answer.",
+    "at": [
+     "The whole choir is",
+     "x plus twelve",
+     "So that's thirty-five x",
+     "Thirty-five times two",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a second way. We start again from the givens, and this time from the real number. There are thirty tenors.",
+    "at": [
+     "We start again"
+    ]
+   },
+   {
+    "say": "Altos to tenors is four to five, four altos for every five tenors. So the altos are four fifths of the tenors. A fifth of thirty is six, and four fifths is four times six, twenty-four altos.",
+    "at": [
+     "So the altos are four fifths",
+     "fifths of the",
+     "fifth of thirty is six",
+     "and four fifths",
+     "four times six"
+    ]
+   },
+   {
+    "say": "Sopranos to altos is two to three. So the sopranos are two thirds of the altos. A third of twenty-four is eight, and two thirds is sixteen sopranos.",
+    "at": [
+     "Sopranos to altos",
+     "So the sopranos are two thirds",
+     "thirds of the",
+     "A third of twenty-four is eight",
+     "and two thirds is sixteen"
+    ]
+   },
+   {
+    "say": "Altogether, sixteen plus twenty-four is forty. Then forty plus thirty is seventy. We get the same seventy.",
+    "at": [
+     "Altogether, sixteen plus twenty-four",
+     "Then forty plus thirty",
+     "We get the"
+    ]
+   },
+   {
+    "say": "So when two ratios share a group, first make that group the same number in both ratios. Then you can join them into one ratio. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

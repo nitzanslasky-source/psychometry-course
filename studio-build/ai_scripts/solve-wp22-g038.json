@@ -1,0 +1,118 @@
+{
+ "videoId": "solve-wp22-g038",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A hall manager plans to set out the same number of chairs in each of eight rows. One row must be removed to make room for a stage. Each of the seven remaining rows must then hold three more chairs. How many chairs per row were originally planned?",
+    "voice": "calm",
+    "at": [
+     "A hall manager plans"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "They ask how many chairs per row were planned. So, as in the tip, let x be exactly that. We'll solve it three ways, the math way with an equation, with an insight, and by plugging in the answers.",
+    "at": [
+     "They ask how many chairs",
+     "as in the"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, slowly. The plan was eight rows, with x chairs in each row. So the plan has eight x chairs.",
+    "at": [
+     "Let's start",
+     "So the plan has eight x"
+    ]
+   },
+   {
+    "say": "In reality, one row was removed, so seven rows are left. And each row gets three more chairs, x plus three. So in reality there are seven times x plus three chairs.",
+    "at": [
+     "In reality, one row",
+     "removed, so seven",
+     "So in reality there are"
+    ]
+   },
+   {
+    "say": "Why can we write an equation? Because the number of chairs didn't change. They're the same chairs, just set out in fewer rows. So eight x is equal to seven times x plus three.",
+    "at": [
+     "Why can we",
+     "So eight x is equal",
+     "to seven times"
+    ]
+   },
+   "This is worth remembering. When things only move around, the total stays the same. When some are removed, the total drops, and when some are added, it grows.",
+   {
+    "say": "Now we open the brackets. Seven times x is seven x. Seven times three is twenty-one. So eight x is seven x plus twenty-one. Take seven x from both sides, and x is twenty-one.",
+    "at": [
+     "So eight x is seven x",
+     "x plus twenty-one",
+     "Take seven x from both sides",
+     "sides, and x"
+    ]
+   },
+   {
+    "say": "What is x? The number of chairs per row in the plan, exactly what they asked. Twenty-four, choice number one, is a trap. It's the new number per row, twenty-one plus three. Choice number two is our answer.",
+    "at": [
+     "Twenty-four, choice number one",
+     "twenty-one plus three",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the insight. We start again from the givens, and think about the chairs of the row that was removed. Those chairs didn't disappear. They were moved to the other rows.",
+    "at": [
+     "Now the",
+     "the row that was removed"
+    ]
+   },
+   {
+    "say": "Seven rows are left, and each one got three more chairs. Seven times three is twenty-one. So the removed row had twenty-one chairs.",
+    "at": [
+     "Seven times three is twenty-one",
+     "So the removed row had"
+    ]
+   },
+   {
+    "say": "And every row was planned with the same number of chairs. So every row had twenty-one chairs in the plan.",
+    "at": [
+     "And every row",
+     "So every row had",
+     "chairs in the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And we can also plug in the answers. We start again from the givens. A choice works if eight rows of it hold the same number of chairs as seven rows of three more.",
+    "at": [
+     "And we",
+     "the givens. A"
+    ]
+   },
+   {
+    "say": "Choice number one, twenty-four. Eight times twenty-four is a hundred ninety-two. Seven rows of twenty-seven are seven times twenty-seven. That's a hundred forty plus forty-nine, a hundred eighty-nine. Not the same, so it's out.",
+    "at": [
+     "number one, twenty-four",
+     "Eight times twenty-four",
+     "Seven rows of",
+     "a hundred eighty-nine",
+     "Not the same, so it's out"
+    ]
+   },
+   {
+    "say": "Choice number two, twenty-one. Eight times twenty-one is a hundred sixty-eight. Seven rows of twenty-four are seven times twenty, a hundred forty, plus seven times four, twenty-eight. Together that's a hundred sixty-eight too. The same chairs, so it fits. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "number two, twenty-one",
+     "Eight times twenty-one",
+     "Seven rows of",
+     "Together that's a hundred sixty-eight",
+     "The same chairs",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,129 @@
+{
+ "videoId": "wp-027-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with the phrases, starting with the difference between two numbers."
+  ],
+  [
+   {
+    "say": "The difference between A and B is twelve. A difference is always positive. It's the bigger number minus the smaller one.",
+    "at": [
+     "The difference between A and B",
+     "B is twelve"
+    ]
+   },
+   {
+    "say": "But often we don't know which one is bigger. So there are two options. If A is bigger, A minus B is twelve. And if B is bigger, B minus A is twelve.",
+    "at": [
+     "So there are two options",
+     "If A is"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. Twenty and eight have a difference of twelve, because twenty minus eight is twelve. And eight and twenty have the same difference, twelve. We never say the difference is minus twelve.",
+    "at": [
+     "Twenty and eight have a difference",
+     "difference of twelve"
+    ]
+   },
+   {
+    "say": "In a question it can sound like this. The difference between Ron's age and Gal's age is twelve. We don't care who is older. And when the story does tell us who is bigger, say Ron is older, we simply write Ron minus Gal is twelve. By the way, in math books you'll sometimes see a difference written with two straight bars. That's absolute value, a topic we'll learn later. For now, bigger minus smaller.",
+    "at": [
+     "say Ron is older",
+     "simply write Ron"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now three small words that turn into math signs. The first one is the word is. A is two thirds of B. The word is becomes the equals sign.",
+    "at": [
+     "that turn into",
+     "A is two thirds of B",
+     "The word is becomes"
+    ]
+   },
+   {
+    "say": "Sometimes the question uses a more formal word, like A makes up two thirds of B. Just swap it for is. A is two thirds of B.",
+    "at": [
+     "Sometimes the question"
+    ]
+   },
+   {
+    "say": "The second word is of. Of means times. Two thirds of B is two thirds times B. So A is equal to two thirds B.",
+    "at": [
+     "Of means times",
+     "Two thirds of",
+     "So A is equal to two thirds B",
+     "two thirds B"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. If B is thirty, a third of thirty is ten, and two thirds of thirty is twenty. So A is twenty. In a question it can sound like this. Amit's salary is two thirds of Ben's salary.",
+    "at": [
+     "If B is thirty",
+     "two thirds of thirty is twenty",
+     "twenty. So A"
+    ]
+   },
+   {
+    "say": "The third one is costs the same as, or weighs the same as. Two mugs cost the same as five pens. We write it the way we hear it. Two mugs is two M. Cost the same as is the equals sign. Five pens is five P. So two M is equal to five P.",
+    "at": [
+     "Two mugs cost the same as five pens",
+     "as five pens",
+     "So two M is equal to five P",
+     "to five P"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And the last phrase, a ratio. The ratio of A to B is two to three. That means for every two A, there are three B.",
+    "at": [
+     "The ratio of A to B",
+     "B is two"
+    ]
+   },
+   {
+    "say": "So we write A as two x and B as three x. For example, if there are two apples for every three pears, the apples are two x and the pears are three x.",
+    "at": [
+     "So we write A as two x",
+     "two x and"
+    ]
+   },
+   {
+    "say": "If x is five, that's ten apples and fifteen pears, and it's still two apples for every three pears. We'll have a whole lesson on ratios soon, so for now, this is just the translation.",
+    "at": [
+     "If x is five",
+     "and it's still"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's sum up this lesson. The biggest tip is to work step by step. Many students see a question with a lot of words and panic. Don't. Take one phrase at a time, and write it in math.",
+    "at": [
+     "lesson. The biggest",
+     "work step by step",
+     "Many students see"
+    ]
+   },
+   {
+    "say": "Then come the three stages. Translate, solve, and answer what they asked.",
+    "at": [
+     "Then come the three stages",
+     "Translate, solve, and"
+    ]
+   },
+   {
+    "say": "And go over the table of phrases on the memory card after this video, so that every phrase becomes automatic. [pause] This is just the start of word problems, and there are many more kinds ahead. I'll see you in the next video.",
+    "at": [
+     "the table of phrases",
+     "on the memory card",
+     "this video, so"
+    ]
+   }
+  ]
+ ]
+}

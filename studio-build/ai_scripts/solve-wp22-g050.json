@@ -1,0 +1,100 @@
+{
+ "videoId": "solve-wp22-g050",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Noa and Eli have seventy stickers altogether. Noa gives Eli fifteen stickers, and then they have the same number. What was Noa's original number of stickers divided by Eli's original number?",
+    "voice": "calm",
+    "at": [
+     "Noa and Eli have"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "They ask for Noa's original number divided by Eli's original number, so we need both original numbers. We'll solve it two ways, the math way with two equations, and then with an insight, starting from the end.",
+    "at": [
+     "They ask for Noa's original",
+     "two ways, the"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. We call Noa's original number n, and Eli's e. Together they have seventy, so n plus e is seventy.",
+    "at": [
+     "Let's start",
+     "so n plus e is seventy"
+    ]
+   },
+   {
+    "say": "Noa gives Eli fifteen. Now Noa has n minus fifteen, and Eli has e plus fifteen. And then they're equal. So n minus fifteen is equal to e plus fifteen.",
+    "at": [
+     "Now Noa has",
+     "So n minus fifteen is equal",
+     "equal to e"
+    ]
+   },
+   {
+    "say": "Let's move the terms. We take e from both sides, and add fifteen to both sides. n minus e is fifteen plus fifteen, thirty.",
+    "at": [
+     "n minus e is fifteen plus fifteen",
+     "plus fifteen, thirty"
+    ]
+   },
+   {
+    "say": "Now we have two equations. If we add them, the plus e and the minus e cancel. n plus n is two n. And seventy plus thirty is a hundred. So two n is a hundred, and n is fifty.",
+    "at": [
+     "So two n is a hundred",
+     "and n is fifty"
+    ]
+   },
+   {
+    "say": "Noa had fifty, and together they had seventy. So Eli had seventy minus fifty, twenty.",
+    "at": [
+     "Noa had fifty",
+     "So Eli had seventy minus"
+    ]
+   },
+   {
+    "say": "Noa's number divided by Eli's is fifty over twenty. We divide the top and the bottom by ten, five over two. Choice number four is our answer.",
+    "at": [
+     "is fifty over twenty",
+     "divide the top",
+     "five over two",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the insight. Here it's easier to start from the end. What do we know about the end? They're equal, and the total is still seventy, because the stickers only moved between them.",
+    "at": [
+     "Now the",
+     "They're equal, and the total"
+    ]
+   },
+   {
+    "say": "So at the end, they have seventy divided by two, thirty-five each. That's the only way to split seventy equally.",
+    "at": [
+     "seventy divided by two",
+     "That's the only"
+    ]
+   },
+   {
+    "say": "Now we go back in time. Noa gave fifteen, so before that she had fifteen more. Thirty-five plus fifteen is fifty. And Eli had fifteen fewer. Thirty-five minus fifteen is twenty.",
+    "at": [
+     "Thirty-five plus fifteen",
+     "And Eli had",
+     "Thirty-five minus fifteen"
+    ]
+   },
+   {
+    "say": "Fifty over twenty is five over two again. So when the end of the story is simple, start there and go backwards. Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Fifty over twenty is five",
+     "over two again",
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

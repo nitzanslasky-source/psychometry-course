@@ -1,0 +1,122 @@
+{
+ "videoId": "solve-q-r26-t22-04",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A pen costs x credits. A notebook costs three credits more than a pen. How much do y pens and y notebooks cost altogether?",
+    "voice": "calm",
+    "at": [
+     "A pen costs x credits"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "There are letters in the question and in the choices. That's a hint that we can plug in numbers. We'll solve it two ways, by plugging in numbers, and then the math way, building the expression.",
+    "at": [
+     "There are letters",
+     "That's a hint",
+     "solve it two"
+    ]
+   },
+   {
+    "say": "Let's plug in numbers. We choose easy numbers, but not zero or one, because those often make different choices look the same. And a different number for each letter. So x is two, and y is three.",
+    "at": [
+     "Let's plug",
+     "So x is two",
+     "y is three"
+    ]
+   },
+   {
+    "say": "A pen costs x, two credits. A notebook costs three credits more, two plus three, five credits.",
+    "at": [
+     "A notebook costs three credits more",
+     "more, two plus"
+    ]
+   },
+   {
+    "say": "We buy y pens and y notebooks, so three of each. Three pens cost three times two, six. Three notebooks cost three times five, fifteen. And six plus fifteen is twenty-one.",
+    "at": [
+     "Three pens cost three times two",
+     "Three notebooks cost",
+     "And six plus fifteen"
+    ]
+   },
+   {
+    "say": "So the right choice must give twenty-one when x is two and y is three. Choice number one says two x y plus three. Two times two times three is twelve. Plus three, that's fifteen. Not twenty-one, so it's out.",
+    "at": [
+     "So the right",
+     "number one says",
+     "Two times two times three",
+     "Plus three, that's fifteen",
+     "Not twenty-one, so it's out"
+    ]
+   },
+   {
+    "say": "Choice number two says y, times two x plus three. First we work out two x plus three. That's four plus three, seven. Then three times seven is twenty-one. It works, so we keep it.",
+    "at": [
+     "number two says",
+     "two x plus",
+     "That's four plus three",
+     "Then three times seven",
+     "It works, so"
+    ]
+   },
+   {
+    "say": "Choice number three says y, times x plus three. x plus three is five, and three times five is fifteen. Out. Choice number four says two y, times x plus three. Two y is six, and six times five is thirty. Out.",
+    "at": [
+     "number three says",
+     "and three times five is fifteen",
+     "is fifteen. Out",
+     "number four says",
+     "times x plus three. Two",
+     "and six times five is thirty",
+     "is thirty. Out"
+    ]
+   },
+   {
+    "say": "Only choice number two gives twenty-one. If two choices had given twenty-one, we'd choose new numbers and test only those two. Choice number two is our answer.",
+    "at": [
+     "number two gives",
+     "If two choices",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way. We start again from the givens, and build the expression step by step. A pen costs x. A notebook costs three more, x plus three.",
+    "at": [
+     "Now the",
+     "the givens, and",
+     "A pen costs x",
+     "x plus three"
+    ]
+   },
+   {
+    "say": "One pen and one notebook together cost x plus x plus three, which is two x plus three.",
+    "at": [
+     "One pen and one notebook together",
+     "together cost x"
+    ]
+   },
+   {
+    "say": "We buy y pens and y notebooks. That's y pairs, with a pen and a notebook in each pair. So the cost is y, times two x plus three. That's choice number two.",
+    "at": [
+     "That's y pairs",
+     "pen and a",
+     "That's choice number two"
+    ]
+   },
+   {
+    "say": "Choice number one says two x y plus three. It's the trap, because it multiplies the two x by y, but adds the three only once. Every notebook costs three more, so the three is paid y times. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one says two x y",
+     "number one says",
+     "y plus three",
+     "number two is"
+    ]
+   }
+  ]
+ ]
+}

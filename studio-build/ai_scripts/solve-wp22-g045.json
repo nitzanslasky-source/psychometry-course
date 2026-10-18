@@ -1,0 +1,108 @@
+{
+ "videoId": "solve-wp22-g045",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A bakery sends twice as many loaves to supermarkets as to cafés. One half of the supermarket loaves and one fifth of the café loaves are whole-wheat. What fraction of all the loaves is whole-wheat?",
+    "voice": "calm",
+    "at": [
+     "A bakery sends twice"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "There are two groups of loaves, and each group has a different fraction of whole-wheat. We'll solve it two ways, by plugging in numbers, and then with an estimate.",
+    "at": [
+     "two groups of loaves"
+    ]
+   },
+   {
+    "say": "We could write the cafés as x and the supermarkets as two x, and build an equation. But no amounts are given, only fractions, so plugging in numbers is more comfortable. Let's try one loaf for the cafés and two for the supermarkets. That's twice as many, good.",
+    "at": [
+     "We could",
+     "Let's try one loaf",
+     "That's twice as"
+    ]
+   },
+   {
+    "say": "Half of the supermarket loaves are whole-wheat. Half of two is one, fine. A fifth of the café loaves. A fifth of one loaf? That's no good, we can't have part of a loaf.",
+    "at": [
+     "Half of two is one",
+     "A fifth of one loaf",
+     "That's no good"
+    ]
+   },
+   {
+    "say": "No problem. We chose the numbers, so we may change them. The cafés need a number that a fifth can come out of, and the smallest is five. So five café loaves, and twice that, ten supermarket loaves.",
+    "at": [
+     "So five café loaves"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A fifth of five is one whole-wheat loaf. Half of ten is five whole-wheat loaves. Together, one plus five is six whole-wheat loaves. All the loaves are five plus ten, fifteen loaves.",
+    "at": [
+     "A fifth",
+     "A fifth of five is one",
+     "one whole-wheat loaf",
+     "Half of ten is five",
+     "Together, one plus five",
+     "six whole-wheat loaves",
+     "All the loaves are",
+     "plus ten, fifteen"
+    ]
+   },
+   {
+    "say": "So that's six out of fifteen. Six fifteenths reduces by three to two fifths. Choice number one is our answer.",
+    "at": [
+     "Six fifteenths reduces",
+     "to two fifths",
+     "Choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's estimate. We start again from the givens. If both groups were half whole-wheat, then all the loaves together would be half whole-wheat. But the café group is only a fifth, less than a half. So all together it's less than a half.",
+    "at": [
+     "Now let's",
+     "the givens. If",
+     "If both groups were half",
+     "whole-wheat, then all",
+     "But the café group",
+     "So all together"
+    ]
+   },
+   {
+    "say": "A half itself, choice number two, is out. And seven tenths is more than a half, so choice number three is out too.",
+    "at": [
+     "A half itself",
+     "so choice number three is out"
+    ]
+   },
+   {
+    "say": "Now the other end. If both groups were a fifth whole-wheat, all together would be a fifth. But the supermarket group is a half, more than a fifth. So all together it's more than a fifth. One sixth is less than a fifth, so choice number four is out.",
+    "at": [
+     "If both groups were a fifth",
+     "fifth whole-wheat, all",
+     "But the supermarket",
+     "a half, more",
+     "so choice number four is out"
+    ]
+   },
+   {
+    "say": "Only two fifths is between a fifth and a half. This is worth remembering. When two groups are mixed, the fraction of the whole mix always lands between the fractions of the two groups. Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Only two fifths is between",
+     "between a fifth and a half",
+     "half. This is",
+     "When two groups are mixed",
+     "the fraction of",
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

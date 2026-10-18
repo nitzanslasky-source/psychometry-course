@@ -1,95 +1,122 @@
 {
  "videoId": "solve-q-r26-t22-02",
- "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number three is our answer', closes with the rule + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (word problem, 2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, emphasis through wording and punctuation only (2026-10-09, voice eleven_v4: the teacher found the [excited] tags 'just a bit too exaggerated', so no emotion tags), numbers and symbols written as words. PILOT v4 (2026-10-09, teacher feedback on the eleven_v4 pilots): self-contained examples only (no example from another question; no words the clone may say oddly, e.g. 'vases', 'neither'), routine calculation steps said plainly and short, warmer questioning tone only for the key ideas, varied sentence starts, at most one [matter-of-fact] tag per video and [calmly] right before the closing line (calmer ending); never [excited]. VOICE 6 (2026-10-09): eleven_multilingual_v2 again (v4 too high/lively) - no delivery tags; the calm ending is the wording ('Okay. I'll see you in the next question.') after a [pause] (sent to v2 as a <break>). No label words read out ('Notice:', 'Tip:', 'Key idea:') - said as speech. v4 SCRIPT (2026-10-09, teacher on voice 6: 'a bit dry'): warmth through wording - key ideas in their own short sentence after a beat ([short pause]/[pause] = <break> for v2), '...' for stress, at most one CAPITALISED word per video (tested: v2 stresses it - longer, higher, louder), small reactions ('see?', 'that's it', 'pretty simple, right?'), one '!' at the real aha moment; plain calculation lines unchanged; 360 said 'three sixty'. v5 (2026-10-09, teacher picked 'mix 3' + 'add stutters every so often and things that humanize it'): made with ai_narrate.py --segmented; \"voice\": \"calm\" on the question reading and the plain calculation lines (base voice elsewhere); humanizers about 2-4 a minute (a small restart 'the— the', 'um'/'uh' before a choice, 'okay so', 'wait, let me write that down... no, actually', a word self-correction), never in the question reading or in numbers the student copies, every slip corrected at once (tested: v2 says 'the— the', 'um', 'uh' as speech). v6 (2026-10-09, teacher on audio v5): NO single-word stutters ('the— the', 'a— a' sound like a computer glitch) - a restart repeats a short phrase ('of the— of the circle', 'the other— the other choices'); 'um'/'uh' are fine; no fake hesitation about writing ('wait, let me write that down... no, actually'). Statement endings must fall: ai_narrate.py --segmented measures every '.'/'!' ending and re-takes a part that rises. v7 (2026-10-10, teacher on FINAL: 'slower— sorry, faster' was 'bad, weird and confusing'): NO humanizer self-correction about the math content ('X— sorry, Y') - humanizers are only short phrase repeats and 'um'/'uh'. Her wording: 'fewer workers now doing the SAME job, so the job has to take more time'.",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
    {
-    "say": "Six workers paint a hall in ten days, and all the workers work at the same rate. How many days would four workers need to paint the same hall?",
+    "say": "Six workers paint a hall in ten days. All the workers work at the same rate. How many days would four workers need to paint the same hall?",
     "voice": "calm",
+    "at": [
+     "Six workers paint a hall"
+    ],
     "pause": 0.5
    },
    {
-    "say": "Now, this one is a bit different. In a ratio table, both numbers grow together. Two notebooks cost twice as much as one notebook. [short pause] But here... it's the opposite. More workers finish the job faster, so the number of days goes down. More workers, fewer days. So here, a normal ratio table just won't work.",
+    "say": "Before any calculation, let's ask, more days or fewer? Fewer workers paint the same hall. So less gets done each day, and the job takes longer. So it takes more than ten days.",
     "at": [
-     "<Six workers paint a hall",
-     "<How many days would four workers",
-     "both numbers grow together",
-     "Two notebooks cost",
-     "it's the opposite",
-     "the number of days goes down",
-     "More workers, fewer days",
-     "just won't work"
+     "So it takes more than ten days"
     ]
    },
    {
-    "say": "Okay so, before calculating anything, let's think. More days, or fewer? There are fewer workers now doing the SAME job, so the job has to take more time. So it has to be more than ten days. See?",
+    "say": "So choice number one, six and two thirds, and choice number four, eight, are out. Both are less than ten days.",
     "at": [
-     "More days, or fewer",
-     "fewer workers now",
-     "it has to be more than ten days",
-     "See?"
+     "So choice number one",
+     "and two thirds",
+     "are out"
     ]
    },
    {
-    "say": "What can I cross out? Six and two thirds, and eight. Both are less than ten, so number one and number four are out.",
+    "say": "Careful, this is the trap of this question. With the ratio table, we'd multiply four times ten, divide by six, and get six and two thirds. That's fewer days with fewer workers, which makes no sense. The ratio table works when the two quantities grow together. Here, when the workers go down, the days go up.",
     "at": [
-     "Six and two thirds",
-     "and eight.",
-     "number one and",
-     "number four are out"
+     "With the ratio table",
+     "multiply four times",
+     "and get six and two thirds",
+     "thirds. That's fewer",
+     "which makes no sense",
+     "The ratio table works"
+    ]
+   },
+   "We'll solve it two ways, the math way with the whole job, and then by understanding, with one worker."
+  ],
+  [
+   {
+    "say": "Let's start with the math way. It's the same hall, so the whole job stays the same. We measure it in worker-days. One worker-day is one worker working for one day.",
+    "at": [
+     "Let's start",
+     "the whole job stays the same",
+     "We measure it"
+    ]
+   },
+   {
+    "say": "Six workers for ten days. Six times ten is sixty worker-days. That's the whole hall.",
+    "at": [
+     "Six times ten is sixty",
+     "worker-days. That's the"
+    ]
+   },
+   {
+    "say": "Now four workers do the same sixty worker-days. So four times the number of days is sixty. The days are sixty divided by four, fifteen.",
+    "at": [
+     "So four times the number of days",
+     "of days is",
+     "The days are sixty divided",
+     "by four, fifteen"
+    ]
+   },
+   {
+    "say": "Fifteen is more than ten, just as we expected. Choice number three is our answer.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   },
+   {
+    "say": "Why not twelve, choice number two? Twelve comes from two fewer workers, so two more days. But workers and days don't change by the same amount. Four workers for twelve days is only forty-eight worker-days, not sixty. Out.",
+    "at": [
+     "number two? Twelve",
+     "But workers and",
+     "Four workers for twelve days",
+     "is only forty-eight",
+     "not sixty. Out"
     ]
    }
   ],
   [
    {
-    "say": "So here's the idea. Let's measure the whole job in worker-days. So one worker-day? That's just one worker, working for one day.",
+    "say": "[pause] Now by understanding. We start again from the givens. Six workers paint the hall in ten days. How long would one worker need alone? Six times as long, because he does the work of six people by himself. Ten times six is sixty days.",
     "at": [
-     "measure the whole job",
-     "So one worker-day"
+     "Now by",
+     "the givens. Six",
+     "Ten times six is sixty days"
     ]
    },
    {
-    "say": "Six workers work for ten days. Six times ten is sixty, so the job is sixty worker-days. It's like one worker working alone for sixty days. And it's the same hall, right? So the job is still sixty worker-days, no matter how many workers do it.",
-    "voice": "calm",
+    "say": "Now four workers. Four people share the job, so it takes a quarter of the time of one worker. Sixty divided by four is fifteen days.",
     "at": [
-     "Six workers work for ten days",
-     "Six times ten",
-     "the job is sixty",
-     "it's the same hall",
-     "no matter how many workers"
+     "Four people share",
+     "Sixty divided by four is fifteen"
     ]
    },
    {
-    "say": "Now we split those sixty worker-days between four workers. How many days does each one work? Four times d has to give sixty. d is equal to sixty over four. That's fifteen days.",
-    "voice": "calm",
+    "say": "So here's the rule. When one quantity goes up and the other goes down, their product stays the same. Workers and days on the same job. Speed and time on the same road. People and the days a food supply lasts.",
     "at": [
-     "split those sixty",
-     "Four times d",
-     "d is equal to sixty over four",
-     "That's fifteen days"
+     "So here's the rule",
+     "one quantity goes",
+     "their product stays the same",
+     "Workers and days"
     ]
    },
    {
-    "say": "So, um, number three is our answer.",
+    "say": "Let's see it once more. Eight hikers have food for six days. How long does the same food last for twelve hikers? Eight times six is forty-eight hiker-days. Forty-eight divided by twelve is four days. More hikers, fewer days.",
     "at": [
-     "number three"
+     "Eight times six is forty-eight",
+     "Forty-eight divided by twelve",
+     "four days. More"
     ]
    },
    {
-    "say": "Where do the other— the other choices come from? Six and two thirds is what a normal ratio table gives you, as if fewer workers meant fewer days. And twelve just adds two days for the two missing workers. They're both wrong.",
+    "say": "So before you build a ratio table, ask yourself, when one grows, does the other grow too, or does it shrink? Choice number three is our answer, and I'll see you in the next question.",
     "at": [
-     "Six and two thirds is what",
-     "twelve just adds",
-     "They",
-     "both wrong"
-    ]
-   },
-   {
-    "say": "[short pause] And here's the rule to remember. When one number goes up and the other goes down... their product stays the SAME. Workers and days, or speed and time. Later in the course you'll see an even faster way to solve questions like this. It's called the V method. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "When one number goes up",
-     "stays the SAME",
-     "Workers and days, or speed"
+     "Choice number three is our answer"
     ]
    }
   ]

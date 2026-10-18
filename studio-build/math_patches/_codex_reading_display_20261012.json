@@ -10054,6 +10054,165 @@
    },
    "paras": [],
    "disp": []
+  },
+  "solve-wp22-g039": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "2.3": [
+     [
+      "two times x minus five is equal to x plus four",
+      "2(x − 5) = x + 4"
+     ]
+    ],
+    "1.5": [
+     [
+      "x plus nine, minus five",
+      "(x + 9) − 5"
+     ]
+    ]
+   }
+  },
+  "solve-wp22-g038": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "1.4": [
+     [
+      "seven times x plus three",
+      "7(x + 3)"
+     ]
+    ],
+    "1.5": [
+     [
+      "seven times x plus three",
+      "7(x + 3)"
+     ]
+    ]
+   }
+  },
+  "solve-wp22-g047": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "1.5": [
+     [
+      "Two times x plus six is equal to four x minus six",
+      "2(x + 6) = 4x − 6"
+     ]
+    ]
+   }
+  },
+  "solve-q-r26-t22-05": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "1.4": [
+     [
+      "four times thirty minus m",
+      "4(30 − m)"
+     ]
+    ]
+   }
+  },
+  "solve-q-r26-t22-04": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "1.7": [
+     [
+      "y, times two x plus three",
+      "y(2x + 3)"
+     ]
+    ],
+    "2.3": [
+     [
+      "y, times two x plus three",
+      "y(2x + 3)"
+     ]
+    ],
+    "1.8": [
+     [
+      "two y, times x plus three",
+      "2y(x + 3)"
+     ],
+     [
+      "Choice number three says y, times x plus three.",
+      "Choice number 3 says y(x + 3)."
+     ]
+    ],
+    "1.6": [
+     [
+      "two x y plus three",
+      "2xy + 3"
+     ]
+    ],
+    "2.4": [
+     [
+      "two x y plus three",
+      "2xy + 3"
+     ]
+    ]
+   }
+  },
+  "solve-q-r26-t22-03": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "2.2": [
+     [
+      "five x minus ten, over four x",
+      "(5x − 10)/(4x)"
+     ]
+    ],
+    "2.3": [
+     [
+      "Six times five x minus ten",
+      "6(5x − 10)"
+     ]
+    ]
+   }
+  },
+  "solve-wp22-g042": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {}
+  },
+  "solve-wp22-g040": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "1.5": [
+     [
+      "seventeen and a half",
+      "17½"
+     ]
+    ],
+    "1.6": [
+     [
+      "seventeen and a half",
+      "17½"
+     ]
+    ],
+    "2.4": [
+     [
+      "seventeen and a half",
+      "17½"
+     ]
+    ]
+   }
+  },
+  "solve-wp22-g030": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "1.4": [
+     [
+      "five thirds",
+      "5/3"
+     ]
+    ]
+   }
   }
  }
 }

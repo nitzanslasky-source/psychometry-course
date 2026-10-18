@@ -1,0 +1,145 @@
+{
+ "videoId": "solve-q-r26-t22-20",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Shelf A has twenty-six more books than shelf B. Some books are moved from shelf A to shelf B. After the move, shelf B has six more books than shelf A. How many books were moved?",
+    "voice": "calm",
+    "at": [
+     "Shelf A has twenty-six"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Books move from one shelf to the other, and the whole question is about the gap between the shelves. We'll solve it two ways, by understanding the gap, and then the math way with a before-and-after table.",
+    "at": [
+     "Books move from one shelf"
+    ]
+   },
+   {
+    "say": "Let's start by understanding what happens to a gap when one side gives to the other. Let's use easy numbers first. Dan has ten cards and Ella has four. The gap is six.",
+    "at": [
+     "Easy numbers first",
+     "Dan has ten cards",
+     "Ella has four"
+    ]
+   },
+   {
+    "say": "Dan gives Ella one card. Now Dan has nine and Ella has five. The gap went from six to four. One card, and the gap changed by two. Why? Because Dan lost one, and Ella gained one.",
+    "at": [
+     "Dan gives Ella one card",
+     "Now Dan has"
+    ]
+   },
+   {
+    "say": "Dan gives three cards. He has seven, and she has seven. They're equal. So to make two people equal, you give half the gap. Half of six is three.",
+    "at": [
+     "Dan gives three cards",
+     "He has seven",
+     "Half of six is three"
+    ]
+   },
+   {
+    "say": "And if he gives four? Dan has six, and Ella has eight. Now Ella is ahead by two. The gap went down to zero, turned around, and grew on the other side.",
+    "at": [
+     "And if he gives four",
+     "Dan has six"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now our shelves. At the start, A is twenty-six ahead. If we only wanted them equal, we'd move half the gap, thirteen books. That's choice number two. But B must end up ahead, so we need more.",
+    "at": [
+     "Now our",
+     "Now our shelves",
+     "A is twenty-six ahead",
+     "If we only",
+     "That's choice number two"
+    ]
+   },
+   {
+    "say": "So the gap goes from twenty-six down to zero, and then on to six on the other side, where B is six ahead.",
+    "at": [
+     "So the gap goes from twenty-six",
+     "twenty-six down to",
+     "and then on to six",
+     "B is six"
+    ]
+   },
+   {
+    "say": "In all, the gap changes by twenty-six plus six, thirty-two. Careful, thirty-two is choice number four, but it's the change in the gap, not the number of books.",
+    "at": [
+     "twenty-six plus six, thirty-two",
+     "thirty-two is choice",
+     "not the number of books"
+    ]
+   },
+   {
+    "say": "Every book that moves changes the gap by two. So the number of books is thirty-two divided by two, sixteen.",
+    "at": [
+     "thirty-two divided by two"
+    ]
+   },
+   {
+    "say": "Let's check it. Say B had ten books, so A had thirty-six. After sixteen books move, A has twenty and B has twenty-six. B has six more, just like the question says. Choice number three is our answer.",
+    "at": [
+     "Say B had ten books",
+     "so A had",
+     "After sixteen books move",
+     "has twenty and",
+     "B has six more",
+     "like the question",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way. We start again from the givens. Let B be x, the smaller shelf. Then A is x plus twenty-six.",
+    "at": [
+     "Now the",
+     "the givens. Let",
+     "Let B be x",
+     "Then A is"
+    ]
+   },
+   {
+    "say": "Let's call the number of books that move k. A loses k, so A has x plus twenty-six minus k. B gains k, so B has x plus k.",
+    "at": [
+     "A loses k",
+     "B gains k"
+    ]
+   },
+   {
+    "say": "After the move, B has six more than A. So B minus A is six.",
+    "at": [
+     "So B minus A is six"
+    ]
+   },
+   {
+    "say": "Now we open the brackets. x minus x is zero, so the x's cancel. k minus minus k is two k. And the minus twenty-six stays. So two k minus twenty-six is six.",
+    "at": [
+     "Now we open",
+     "So two k minus twenty-six"
+    ]
+   },
+   {
+    "say": "We add twenty-six to both sides. Two k is thirty-two, so k is sixteen. We get the same sixteen.",
+    "at": [
+     "We add twenty-six",
+     "Two k is thirty-two",
+     "so k is sixteen",
+     "We get the"
+    ]
+   },
+   {
+    "say": "So when one side gives to the other, each item changes the gap by two. To make them equal, give half the gap. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

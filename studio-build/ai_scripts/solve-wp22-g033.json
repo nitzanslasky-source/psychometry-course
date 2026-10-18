@@ -1,0 +1,86 @@
+{
+ "videoId": "solve-wp22-g033",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Bike shop A charges four credits for every hour or part of an hour. Bike shop B charges seventeen credits for every four-hour block or part of a block. What is the difference between the two charges for a nine and a half hour rental?",
+    "voice": "calm",
+    "at": [
+     "Bike shop A charges"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "This one is easy to understand. The question is whether we notice every detail. And the detail here is two little words, or part. Let's see what they mean.",
+    "at": [
+     "The question is",
+     "detail here is",
+     "Let's see what"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, shop A. Four credits for every hour or part of an hour. Nine and a half hours is nine whole hours, and then half an hour. The nine whole hours cost nine times four, thirty-six credits.",
+    "at": [
+     "Let's start",
+     "Four credits for every hour",
+     "nine times four, thirty-six"
+    ]
+   },
+   {
+    "say": "Now the half hour. Or part of an hour means that any part of an hour costs like a whole hour. Half an hour, a quarter of an hour, even one minute, it's still four credits. So thirty-six plus four is forty credits.",
+    "at": [
+     "Or part of",
+     "it's still four credits",
+     "So thirty-six plus four"
+    ]
+   },
+   {
+    "say": "Now shop B. Seventeen credits for every block of four hours, or part of a block. Two blocks cover eight hours, and two times seventeen is thirty-four credits.",
+    "at": [
+     "Seventeen credits for every block",
+     "of four hours",
+     "two times seventeen is thirty-four"
+    ]
+   },
+   {
+    "say": "But we rent for nine and a half hours. After eight hours, an hour and a half are left. That's part of a block, so it costs a whole block, another seventeen. Thirty-four plus seventeen is fifty-one credits.",
+    "at": [
+     "But we rent",
+     "That's part of a block",
+     "block, another seventeen",
+     "Thirty-four plus seventeen"
+    ]
+   },
+   {
+    "say": "They ask for the difference between the two charges. Fifty-one minus forty is eleven. Choice number four is our answer.",
+    "at": [
+     "They ask for",
+     "Fifty-one minus forty",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So or part of means we round up to the next whole unit. The same idea comes up with people. Fifty people need vans, and every van seats twelve. Four vans take four times twelve, forty-eight people, and two people are left.",
+    "at": [
+     "means we round",
+     "same idea comes",
+     "Fifty people need vans",
+     "every van seats",
+     "Four vans take",
+     "twelve, forty-eight people"
+    ]
+   },
+   {
+    "say": "Those two people still need a van. So the answer is five vans, not four. Whenever a leftover still needs a whole unit, a whole hour, a whole van, or a whole box, we round up. Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "So the answer is five vans",
+     "Whenever a leftover",
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

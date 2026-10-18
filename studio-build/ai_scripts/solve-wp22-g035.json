@@ -1,0 +1,95 @@
+{
+ "videoId": "solve-wp22-g035",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "At a sports camp, swimmers make up five twelfths of all the campers, and the rest are runners. Which could be the difference between the numbers of runners and swimmers?",
+    "voice": "calm",
+    "at": [
+     "At a sports camp"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "They don't tell us how many campers there are, only a fraction. So we can't find the difference exactly. They ask what it could be. So we'll find a rule that the difference must follow, and rule out the choices that break it.",
+    "at": [
+     "how many campers",
+     "can't find the"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, with ratio units. Remember, a fraction of the whole is a ratio. Swimmers are five out of twelve, so the swimmers are five x, and all the campers are twelve x.",
+    "at": [
+     "math way, with",
+     "a fraction of the whole is a ratio",
+     "is a ratio",
+     "Swimmers are five",
+     "so the swimmers are five x",
+     "are twelve x"
+    ]
+   },
+   {
+    "say": "The rest are runners. Twelve x minus five x is seven x.",
+    "at": [
+     "The rest are runners",
+     "Twelve x minus five x"
+    ]
+   },
+   {
+    "say": "The difference between the runners and the swimmers is seven x minus five x, two x.",
+    "at": [
+     "The difference between the runners",
+     "and the swimmers",
+     "seven x minus five x, two x"
+    ]
+   },
+   {
+    "say": "What does two x tell us? x is the size of one unit, a number of campers, so x is a whole number. Two times a whole number is always even. So the difference must be even.",
+    "at": [
+     "What does two",
+     "Two times a whole",
+     "is always even"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the choices. Twenty-one is odd, so choice number one is out. Fifteen is odd, so choice number three is out. Nineteen is odd, so choice number four is out.",
+    "at": [
+     "Now the",
+     "so choice number one is out",
+     "out. Fifteen is",
+     "so choice number three is out",
+     "so choice number four is out"
+    ]
+   },
+   {
+    "say": "Only twenty-two is even. And they ask what could be, so one case that really works is enough. Two x is twenty-two, so x is eleven. Five times eleven is fifty-five swimmers. And seven times eleven is seventy-seven runners.",
+    "at": [
+     "And they ask",
+     "x is twenty-two",
+     "so x is eleven",
+     "Five times eleven",
+     "And seven times eleven"
+    ]
+   },
+   {
+    "say": "Seventy-seven minus fifty-five is twenty-two. It works. Choice number two is our answer.",
+    "at": [
+     "Seventy-seven minus fifty-five",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "This works for every part of a ratio. The swimmers are five x, so their number divides by five. The runners divide by seven. And all the campers, twelve x, divide by twelve. So when a ratio counts people, the total always divides by the sum of the ratio numbers. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "This works for",
+     "the total",
+     "the sum of",
+     "Choice number two is our answer, and"
+    ]
+   }
+  ]
+ ]
+}

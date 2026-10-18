@@ -1,0 +1,577 @@
+{
+ "_about": "Topic 22 summary page (replaces the r26-t22-summary video). Content = the topic-22 scripts (math_patches/_ai_vis_t22.py), the Hebrew lessons (wp 1068-2683) and the memory cards mem-word-phrases, mem-ratios, mem-general-advanced. Build: python3 summary_pages.py 22. Course numbers only (none from the Hebrew course).",
+ "topic": 22,
+ "replaces": "r26-t22-summary",
+ "intro": "Every word problem: **translate** the words, **solve**, and **answer what they asked**. Work **step by step**, one phrase at a time.",
+ "figures": {
+  "ratio": {
+   "builder": "t22.TBL",
+   "args": [
+    [
+     "Vases",
+     "Roses"
+    ],
+    [
+     "",
+     ""
+    ],
+    [
+     [
+      "r1",
+      [
+       [
+        "c",
+        0,
+        0,
+        "8"
+       ],
+       [
+        "c",
+        0,
+        1,
+        "56"
+       ]
+      ]
+     ],
+     [
+      "r2",
+      [
+       [
+        "c",
+        1,
+        0,
+        "12"
+       ],
+       [
+        "q",
+        1,
+        1
+       ]
+      ]
+     ],
+     [
+      "h1",
+      [
+       [
+        "across",
+        0,
+        "×7"
+       ]
+      ]
+     ],
+     [
+      "h2",
+      [
+       [
+        "across",
+        1,
+        "×7"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "colw": 170
+   },
+   "layers": [
+    "line",
+    "r1",
+    "r2",
+    "h1",
+    "h2"
+   ]
+  },
+  "triangle": {
+   "builder": "t22.TBL",
+   "args": [
+    [
+     "Minutes",
+     "Potatoes"
+    ],
+    [
+     "",
+     ""
+    ],
+    [
+     [
+      "r1",
+      [
+       [
+        "c",
+        0,
+        0,
+        "12"
+       ],
+       [
+        "c",
+        0,
+        1,
+        "18"
+       ]
+      ]
+     ],
+     [
+      "r2",
+      [
+       [
+        "c",
+        1,
+        0,
+        "20"
+       ],
+       [
+        "q",
+        1,
+        1
+       ]
+      ]
+     ],
+     [
+      "dg",
+      [
+       [
+        "diag",
+        [
+         1,
+         0
+        ],
+        [
+         0,
+         1
+        ]
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "colw": 170
+   },
+   "layers": [
+    "line",
+    "r1",
+    "r2",
+    "dg"
+   ]
+  },
+  "ages": {
+   "builder": "t22.TBL",
+   "args": [
+    [
+     "Tom",
+     "Maya"
+    ],
+    [
+     "now",
+     "5 years ago"
+    ],
+    [
+     [
+      "r0",
+      [
+       [
+        "c",
+        0,
+        0,
+        "x"
+       ],
+       [
+        "c",
+        0,
+        1,
+        "x + 9"
+       ]
+      ]
+     ],
+     [
+      "r1",
+      [
+       [
+        "c",
+        1,
+        0,
+        "x − 5"
+       ],
+       [
+        "c",
+        1,
+        1,
+        "x + 4"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "colw": 150,
+    "labw": 180,
+    "size": 28
+   },
+   "layers": [
+    "line",
+    "r0",
+    "r1"
+   ]
+  },
+  "units": {
+   "builder": "t22.UNITS",
+   "args": [
+    [
+     [
+      "sofa",
+      3
+     ],
+     [
+      "piano",
+      10
+     ]
+    ],
+    [
+     [
+      "s",
+      [
+       [
+        "fill",
+        0,
+        0,
+        3,
+        "orange"
+       ]
+      ]
+     ],
+     [
+      "p",
+      [
+       [
+        "fill",
+        1,
+        0,
+        10
+       ]
+      ]
+     ],
+     [
+      "d",
+      [
+       [
+        "br",
+        1,
+        3,
+        10,
+        "7 units = 14,000"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "unit": 40,
+    "labw": 110,
+    "gap": 56
+   },
+   "layers": [
+    "line",
+    "s",
+    "p",
+    "d"
+   ]
+  }
+ },
+ "sections": [
+  {
+   "title": "Words to math",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "The words",
+      "In math"
+     ],
+     "rows": [
+      [
+       "$A$ is $3$ more than $B$",
+       "$A=B+3$"
+      ],
+      [
+       "$B$ is $5$ less than $A$",
+       "$B=A-5$ (the same as $A=B+5$)"
+      ],
+      [
+       "$A$ is $4$ times $B$",
+       "$A=4B$ $\\;$ (not $B+4$)"
+      ],
+      [
+       "twice / double",
+       "always $\\times2$; $\\;$ half: always $\\div2$"
+      ],
+      [
+       "$B$ is a quarter less than $A$",
+       "$B=\\frac34A$ $\\;$ (the quarter is of $A$)"
+      ],
+      [
+       "the difference between $A$ and $B$ is $12$",
+       "bigger minus smaller: $A-B=12$ or $B-A=12$"
+      ],
+      [
+       "is, makes up $\\;\\cdot\\;$ of",
+       "$=\\;\\cdot\\;\\times$: $\\;\\frac23$ of $B=\\frac23B$"
+      ],
+      [
+       "$2$ mugs cost the same as $5$ pens",
+       "$2M=5P$"
+      ],
+      [
+       "the ratio of $A$ to $B$ is $2:3$",
+       "$A=2x,\\ B=3x$"
+      ]
+     ]
+    },
+    {
+     "type": "ex",
+     "label": "Three stages",
+     "lines": [
+      "$3x+24=7x\\;\\Rightarrow\\;24=4x\\;\\Rightarrow\\;x=6$",
+      "They ask for twice the number: $2x=12$, not $6$."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Tip:** let $x$ be what they ask. $\\;$ Things only **move around**? The total stays."
+    }
+   ]
+  },
+  {
+   "title": "Equal ratios",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "The same rate in two cases: a ratio table, row 1 what we know, row 2 the new case."
+    },
+    {
+     "type": "fig",
+     "ref": "ratio",
+     "caption": "Across or down a whole number? Use it: $12\\cdot7=84$."
+    },
+    {
+     "type": "fig",
+     "ref": "triangle",
+     "caption": "Not whole: the **triangle value**, multiply along the diagonal, divide by what's left: $\\frac{20\\cdot18}{12}=30$. Or cross-multiply: $12x=360$."
+    },
+    {
+     "type": "p",
+     "text": "**Inverse:** one goes up, the other goes down, the **product** stays: $6$ workers $\\times10$ days $=60=4\\times15$. First ask: more or fewer?"
+    }
+   ]
+  },
+  {
+   "title": "Building the equation",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "ages",
+     "caption": "A row for every time. The gap stays; only the ratio changes."
+    },
+    {
+     "type": "p",
+     "text": "**Give it to the little guy:** “Maya was twice Tom” $\\Rightarrow 2\\cdot\\text{Tom}=\\text{Maya}$ (think $4$ and $8$)."
+    },
+    {
+     "type": "p",
+     "text": "**Giving:** each item changes the gap by $2$; to make them equal, give **half the gap**. The gap can turn around: $26$ ahead to $6$ behind is $32$, so $16$ items."
+    },
+    {
+     "type": "p",
+     "text": "**Enough for 6, not for 7:** $6p\\le105$ and $7p>105$, so $15<p\\le17\\frac12$. $\\;$ **Or part of:** round up ($50$ people, vans of $12$: $5$ vans)."
+    }
+   ]
+  },
+  {
+   "title": "Ratios",
+   "blocks": [
+    {
+     "type": "cols",
+     "cols": [
+      [
+       {
+        "type": "rules",
+        "head": [
+         "Rule",
+         "Example"
+        ],
+        "rows": [
+         [
+          "A ratio is a fraction; read it in order",
+          "red : blue $=3:7=\\frac37$"
+         ],
+         [
+          "A ratio gives no amounts: use $x$",
+          "$3x$ and $7x$; $\\;$ $50$ in all: $10x=50,\\ x=5$"
+         ],
+         [
+          "Part of a whole",
+          "$\\frac25$ of the bottle: drank $2x$, bottle $5x$, left $3x$"
+         ],
+         [
+          "The plain $x$ for the smaller one",
+          "Ann $=2\\frac12\\times$ Ben: Ben $2x$, Ann $5x$"
+         ],
+         [
+          "“Costs the same as” is reversed",
+          "$3M=8P\\;\\Rightarrow\\;M:P=8:3$"
+         ],
+         [
+          "People in a ratio: the total divides by the sum",
+          "$5:7\\Rightarrow$ the total divides by $12$; the difference $2x$ is even"
+         ],
+         [
+          "Two ratios share a group: make it equal",
+          "$2:3$ and $4:5\\Rightarrow8:12:15$ (not $2:3:5$)"
+         ],
+         [
+          "One part changes: make the part that stays equal",
+          "$5:4=15:12$, $\\;5:6=10:12$: $5$ units $=10$ boys"
+         ]
+        ]
+       }
+      ],
+      [
+       {
+        "type": "fig",
+        "ref": "units",
+        "caption": "One real number gives every amount: $7x=14{,}000$, $x=2{,}000$, sum $13x$."
+       }
+      ]
+     ]
+    }
+   ],
+   "span": "full"
+  },
+  {
+   "title": "Advanced tools",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "table",
+     "class": "methods",
+     "head": [
+      "When you see",
+      "Do this",
+      "Example"
+     ],
+     "rows": [
+      [
+       "several stages",
+       "write the whole exercise first",
+       "$160\\cdot\\frac34\\cdot\\frac34=160\\cdot\\frac9{16}=90$"
+      ],
+      [
+       "a fixed fee + a price per item",
+       "what changed? the fixed part cancels",
+       "$3$ more hours, $135$ more: $45$ an hour"
+      ],
+      [
+       "a simple ending",
+       "start from the end",
+       "equal at the end: $35,35\\Rightarrow50,20$"
+      ],
+      [
+       "one equation, two unknowns",
+       "only a multiple of it can be found",
+       "$2a+3p=13\\Rightarrow4a+6p=26$; $\\;3a+2p$: cannot be determined"
+      ],
+      [
+       "every count $\\times$ the same number",
+       "the total $\\times$ that number",
+       "$9\\to12,\\ 6\\to8$: $240\\cdot\\frac43=320$"
+      ],
+      [
+       "two kinds, a known total",
+       "assume they're all the same, then swap",
+       "$30$ motorcycles: $60$ wheels, $36$ missing, $18$ cars"
+      ],
+      [
+       "letters in the choices",
+       "plug in numbers (not $0$ or $1$), test every choice",
+       "$x=2,\\ y=3$: $21$"
+      ],
+      [
+       "two groups, two fractions",
+       "the mix lands between them",
+       "between $\\frac15$ and $\\frac12$: $\\frac25$"
+      ],
+      [
+       "a ratio splits a total",
+       "the total divides by the sum, before and after",
+       "$1:4$ and $1:2$: divides by $5$ and $3$: $45$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Before each question, ask",
+   "class": "check",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "What exactly did they ask: $x$, $2x$, $x-1$, the total?",
+      "Same rate? Bigger or smaller? Direct or inverse?",
+      "Which part stays the same?",
+      "Where does the $\\times2$ go? On the smaller side.",
+      "Can it really be found, or only a multiple?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "class": "traps",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "A ratio read in the wrong order.",
+      "A ratio table for workers and days ($6\\frac23$ days instead of $15$).",
+      "Units instead of people ($27$ units, $54$ members).",
+      "A part out of the other part instead of out of everyone ($\\frac58$ vs $\\frac5{13}$).",
+      "The cost instead of the profit; $x$ instead of what they asked."
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "3*6+24 == 7*6",
+  "12*7 == 84",
+  "20*18/12 == 30",
+  "6*10 == 4*15",
+  "47-(8+24+3) == 12",
+  "51-40 == 11",
+  "x=11; 7*x-5*x == 22",
+  "x=2000; 7*x == 14000 and 13*x == 26000",
+  "x=2; 8*x+12*x+15*x == 70",
+  "x=6; (5*x-10)*6 == 5*4*x and 9*x == 54",
+  "8*21 == 7*24",
+  "(26+6)/2 == 16",
+  "x=14; 2*(x-5) == x+4",
+  "105/6 == 17.5 and 105/7 == 15",
+  "160*3/4*3/4 == 90",
+  "x=9; 2*(x+6) == 4*x-6 and 5*x == 45",
+  "(385-250)/3 == 45",
+  "240*4/3 == 320",
+  "50-15 == 35 and 20+15 == 35",
+  "2*2+3*3 == 13 and 2*5+3*1 == 13",
+  "3*2+2*3 != 3*5+2*1",
+  "2*12+4*18 == 96",
+  "6/15 == 2/5",
+  "abs(5/(5+8) - 5/13) < 1e-12",
+  "12+21 == 33 and 10*6/5 == 12 and 14*3/2 == 21"
+ ]
+}

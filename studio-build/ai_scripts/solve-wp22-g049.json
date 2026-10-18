@@ -1,0 +1,100 @@
+{
+ "videoId": "solve-wp22-g049",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Nine large crates and six small crates weigh two hundred forty kilos altogether. All large crates weigh the same, and all small crates weigh the same. How much do twelve large and eight small crates weigh?",
+    "voice": "calm",
+    "at": [
+     "Nine large crates"
+    ],
+    "pause": 0.5
+   },
+   "One equation, and two unknowns, the large crate and the small crate. Before we solve, let's understand one idea about questions like this. We'll solve it two ways, by understanding, and then the math way.",
+   {
+    "say": "Let's solve it by understanding, with easy numbers first. Say one large crate and one small crate weigh ten kilos together. Can we know what each one weighs? No. It could be one and nine, or four and six, or five and five.",
+    "at": [
+     "Let's solve",
+     "Say one large crate",
+     "one small crate",
+     "It could be one and nine",
+     "or five and"
+    ]
+   },
+   {
+    "say": "But what do two large crates and two small crates weigh? That we can know. We doubled every part, so the weight doubles too, twenty kilos.",
+    "at": [
+     "We doubled every part"
+    ]
+   },
+   {
+    "say": "And two large crates and one small crate? That we can't know, because only one part was doubled. The other part stayed the same.",
+    "at": [
+     "And two large crates and one",
+     "one small crate"
+    ]
+   },
+   "So the rule is, when every part is multiplied by the same number, the total is multiplied by that number too. So in our question, we ask, did both counts grow by the same factor?"
+  ],
+  [
+   {
+    "say": "From nine large crates to twelve. Twelve is nine plus three, and three is a third of nine. So the large crates grew by a third of themselves.",
+    "at": [
+     "From nine",
+     "Twelve is nine plus three",
+     "and three is"
+    ]
+   },
+   {
+    "say": "From six small crates to eight. Eight is six plus two, and two is a third of six. They also grew by a third.",
+    "at": [
+     "Eight is six plus two",
+     "and two is"
+    ]
+   },
+   {
+    "say": "Both counts grew by a third, so the weight grows by a third too. A third of two hundred forty is eighty, and two hundred forty plus eighty is three hundred twenty. Choice number two is our answer.",
+    "at": [
+     "A third of two hundred forty",
+     "forty is eighty",
+     "and two hundred forty plus eighty",
+     "eighty is three",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way. We start again from the given equation. Nine L plus six S is two hundred forty.",
+    "at": [
+     "Now the",
+     "the given equation",
+     "Nine L plus six S",
+     "is two hundred"
+    ]
+   },
+   {
+    "say": "Nine, six and two hundred forty all divide by three. So we divide every term of the equation by three. Three L plus two S is eighty.",
+    "at": [
+     "Three L plus two S is eighty"
+    ]
+   },
+   {
+    "say": "Now we multiply every term by four. Three L times four is twelve L. Two S times four is eight S. And eighty times four is three hundred twenty. That's exactly the crates they asked about.",
+    "at": [
+     "Now we multiply",
+     "Two S times four",
+     "And eighty times four",
+     "three hundred twenty"
+    ]
+   },
+   {
+    "say": "We may do this, because we divided and multiplied every term, on both sides. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

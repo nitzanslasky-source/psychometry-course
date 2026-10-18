@@ -1,0 +1,129 @@
+{
+ "videoId": "solve-wp22-g048",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A plumber charges a fixed call-out fee plus the same amount for each hour of work. A seven-hour job costs three hundred eighty-five credits, and a four-hour job costs two hundred fifty credits. What is the charge per hour?",
+    "voice": "calm",
+    "at": [
+     "A plumber charges"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Each bill has two parts, a fixed fee that's the same every time, and a charge for every hour. We'll solve it three ways, the math way with two equations, by plugging in the answers, and with an insight.",
+    "at": [
+     "Each bill has two parts"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. We call the fixed fee f, and the charge per hour h. The seven-hour job is the fee plus seven hours, so f plus seven h is three hundred eighty-five.",
+    "at": [
+     "Let's start",
+     "so f plus seven h",
+     "is three hundred"
+    ]
+   },
+   {
+    "say": "The four-hour job is the fee plus four hours. So f plus four h is two hundred fifty.",
+    "at": [
+     "So f plus four h",
+     "is two hundred"
+    ]
+   },
+   {
+    "say": "Two equations, and the fee f is the same in both. Remember, if we subtract one equation from the other, the f cancels. Seven h minus four h is three h. And three hundred eighty-five minus two hundred fifty is a hundred thirty-five.",
+    "at": [
+     "And three hundred eighty-five minus",
+     "two hundred fifty"
+    ]
+   },
+   {
+    "say": "We divide both sides by three. A hundred thirty-five divided by three is forty-five. That's because three times forty-five is a hundred thirty-five. So the charge is forty-five credits an hour. Choice number two is our answer.",
+    "at": [
+     "We divide both sides by three",
+     "A hundred thirty-five",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers. We start again from the givens. For each hourly charge, we find the fee from one job, and check that the other job gives the same fee. Let's start with the four-hour job, because four is easier to multiply by.",
+    "at": [
+     "Now let's",
+     "the givens. For"
+    ]
+   },
+   {
+    "say": "Choice number three, sixty-five. Four hours cost sixty-five times four, two hundred sixty. But the whole bill was two hundred fifty, less than the hours alone. Impossible, so it's out.",
+    "at": [
+     "number three, sixty-five",
+     "Four hours cost sixty-five",
+     "four, two hundred",
+     "But the whole bill",
+     "two hundred fifty",
+     "Impossible, so it's out"
+    ]
+   },
+   {
+    "say": "Choice number four, fifty. Four hours cost two hundred, so the fee is two hundred fifty minus two hundred, fifty. Now the seven-hour job. Seven times fifty is three hundred fifty. So the fee there is three hundred eighty-five minus three hundred fifty, thirty-five. The fee must be the same in both jobs, and fifty isn't thirty-five. Out.",
+    "at": [
+     "number four, fifty",
+     "so the fee is two hundred fifty minus",
+     "fifty. Now the",
+     "So the fee there",
+     "hundred fifty, thirty-five",
+     "and fifty isn't thirty-five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number two, forty-five. Four hours cost a hundred eighty, so the fee is seventy. Seven hours cost three hundred fifteen, so the fee is three hundred eighty-five minus three hundred fifteen, seventy again. The same fee in both jobs. It fits.",
+    "at": [
+     "Choice number",
+     "number two, forty-five",
+     "cost a hundred",
+     "so the fee is seventy",
+     "Seven hours cost three hundred fifteen",
+     "fifteen, so the",
+     "seventy again",
+     "It fits"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And the insight. We start again from the givens, and ask what changed between the two jobs. The fixed fee didn't change. Only the hours changed.",
+    "at": [
+     "And the",
+     "what changed between the two jobs"
+    ]
+   },
+   {
+    "say": "Seven hours minus four hours is three more hours. And three hundred eighty-five minus two hundred fifty is a hundred thirty-five more credits.",
+    "at": [
+     "Seven hours minus four hours",
+     "is three more",
+     "a hundred thirty-five more credits"
+    ]
+   },
+   {
+    "say": "So three extra hours cost a hundred thirty-five extra credits. One hour costs a hundred thirty-five divided by three, forty-five.",
+    "at": [
+     "So three extra",
+     "One hour costs",
+     "thirty-five divided by"
+    ]
+   },
+   {
+    "say": "So when there's a fixed amount plus a price for each item, compare the two cases. The fixed part disappears in the difference. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -2443,6 +2443,10 @@ def ai_pilot(M):
     from dsl import A, T, PT, D
     vid = 'solve-q-r26-t22-02'
     if _ai_recorded(vid): return
+    # 2026-10-18 (Claude): superseded by the topic-22 reading script (ai_redo_t22 rebuilds this video from _ai_vis_t22.py,
+    # and _ai_visual's VIS for it is now that spec's, which does not fit the old slides)
+    import os
+    if os.path.exists(os.environ.get('AIVIS_T22') or os.path.join(os.path.dirname(os.path.abspath(__file__)), '_ai_vis_t22.py')): return
     t2 = 'Workers × days'     # slide 1 ('More or less?') needs nothing: its only mark is a cross-out
     s2 = CF.lines_of(M, vid, t2)
     assert [x if isinstance(x, str) else x[0] for x in s2] == ['Same job. The workers times the days stays the same.', 'D',
@@ -2536,3 +2540,56 @@ _apply_before_mnemonics = apply
 def apply(M):
     _apply_before_mnemonics(M)
     _mnem_load().mnemonics(M, 22)   # 2026-10-11 memory tricks: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-18 topic 22 for the teacher's own-voice reading, built like topics 13-20 and 30-33 (t20.py ai_redo_t20). Every
+# topic-22 video, the camera lesson 'wp-027' included (she reads it with the camera on, in three parts of about 3-4
+# minutes, math_patches/_camera_parts.py), has ONE spec in _ai_vis_t22.py that drives the script (ai_scripts/<vid>.json),
+# the visual plan (_ai_visual.py format) and the slides: each video is rebuilt from the spec and _ai_visual.apply() adds
+# the click items, POINT highlights and pen marks around it. A non-camera video with a camera take recorded before
+# AI22_CUTOFF (UTC) keeps that version (none are recorded). The summary video r26-t22-summary is not rebuilt: the summary
+# page summary_pages/t22.json replaces it. Runs LAST. (env AIVIS_T22 = another spec file, for tests)
+# =====================================================================================================================
+AI22_CUTOFF = '2026-10-18T00-00-00'
+AI22_CAMERA = 'wp-027'
+
+
+def _ai22_recorded(vid):
+    import glob, os, re
+    pat = re.compile(re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in glob.glob(os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(os.path.basename(f))
+        if m and m.group(1) < AI22_CUTOFF: return True
+    return False
+
+
+def _ai22_mod(name, path=None):
+    import importlib.util, os, sys
+    if name not in sys.modules:
+        p = path or os.path.join(os.path.dirname(os.path.abspath(__file__)), name + '.py')
+        if not os.path.exists(p): return None
+        spec = importlib.util.spec_from_file_location(name, p); m = importlib.util.module_from_spec(spec)
+        sys.modules[name] = m; spec.loader.exec_module(m)
+    return sys.modules[name]
+
+
+def ai_redo_t22(M):
+    import os
+    S = _ai22_mod('_ai_vis_t22', os.environ.get('AIVIS_T22'))
+    if S is None: return
+    AV = _ai22_mod('_ai_visual')
+    CP = _ai22_mod('_camera_parts'); CP.add_to_course(M, S, 22)
+    for vid in S.ORDER:
+        if vid not in M.D['videos'] or (not CP.is_part(AI22_CAMERA, vid) and _ai22_recorded(vid)): continue
+        S.rebuild(M, vid)
+        AV.VIS[vid] = S.vis(vid)
+        AV.apply(M, vid)
+
+
+_apply_before_ai_redo_t22 = apply
+
+
+def apply(M):
+    _apply_before_ai_redo_t22(M)
+    ai_redo_t22(M)   # 2026-10-18 topic 22 for the teacher's reading: runs LAST

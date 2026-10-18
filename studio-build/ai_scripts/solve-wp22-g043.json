@@ -1,0 +1,103 @@
+{
+ "videoId": "solve-wp22-g043",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A video game starts with a hundred sixty players. At the end of each level, three quarters of the players who began that level are still in the game. How many players are still in the game after two levels?",
+    "voice": "calm",
+    "at": [
+     "A video game starts"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Here we just have to understand what they want, and calculate. We'll solve it two ways, the math way level by level, and then with an insight, writing the whole exercise first.",
+    "at": [
+     "understand what they want",
+     "calculate. We'll solve",
+     "ways, the math"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. A hundred sixty players start level one. At the end of the level, three quarters of them are still in. Let's picture them as a bar, cut into four equal parts. Three of the parts stay.",
+    "at": [
+     "Let's start",
+     "Let's picture them as a bar",
+     "bar, cut into",
+     "Three of the parts stay"
+    ]
+   },
+   {
+    "say": "One part is a quarter of a hundred sixty. Half of a hundred sixty is eighty, and half again is forty. So one part is forty, and three parts are three times forty, a hundred twenty.",
+    "at": [
+     "One part is",
+     "Half of a hundred sixty",
+     "and half again is forty",
+     "So one part",
+     "and three parts",
+     "three times forty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Careful, this is where the trap is. If we took forty away twice, we'd get eighty, choice number two. But level two works on the players who began level two, a hundred twenty, not a hundred sixty. So now a hundred twenty players are the whole bar.",
+    "at": [
+     "Careful, this",
+     "the trap is",
+     "If we took forty away twice",
+     "twice, we'd get",
+     "choice number two",
+     "So now a hundred twenty",
+     "are the whole bar"
+    ]
+   },
+   {
+    "say": "A quarter of a hundred twenty is thirty, and three quarters is three times thirty, ninety. So ninety players are still in the game after two levels. Choice number three is our answer.",
+    "at": [
+     "A quarter of a hundred twenty",
+     "is thirty",
+     "three times thirty",
+     "So ninety players",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the insight. We start again from the givens. Instead of calculating as we go, let's first write the whole exercise. A hundred sixty, times three quarters for level one, times three quarters for level two.",
+    "at": [
+     "Now the",
+     "the givens. Instead",
+     "A hundred sixty, times three quarters",
+     "quarters for level"
+    ]
+   },
+   {
+    "say": "We multiply the fractions. Three times three is nine on top. Four times four is sixteen on the bottom. So it's a hundred sixty times nine sixteenths.",
+    "at": [
+     "Three times three is nine",
+     "Four times four",
+     "So it's a hundred sixty times",
+     "times nine sixteenths"
+    ]
+   },
+   {
+    "say": "And now it's easy to see. A hundred sixty divided by sixteen is ten. And ten times nine is ninety.",
+    "at": [
+     "A hundred sixty divided by sixteen",
+     "sixteen is ten",
+     "ten times nine is ninety"
+    ]
+   },
+   {
+    "say": "So when a question has several stages, don't rush to calculate each one. Write the whole exercise first. The numbers usually cancel nicely. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "So when a",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

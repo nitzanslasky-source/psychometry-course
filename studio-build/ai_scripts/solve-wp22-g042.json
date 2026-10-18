@@ -1,0 +1,119 @@
+{
+ "videoId": "solve-wp22-g042",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "One credit buys four kiwis, one and a half pineapples, or five limes, with costs proportional to quantity. What is the cost of eight kiwis, two pineapples, and five limes? Fractional credits may be paid.",
+    "voice": "calm",
+    "at": [
+     "One credit buys four kiwis"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Three fruits, three different prices, and they ask for the cost of a mix. Proportional means the same rate, so equal ratios. We'll solve it two ways, the math way with equal ratios, and then with an estimate.",
+    "at": [
+     "they ask for the cost of a mix",
+     "the same rate",
+     "ways, the math"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, with the easy fruits first. One credit buys four kiwis. We need eight kiwis, twice as many, so two credits.",
+    "at": [
+     "Let's start",
+     "We need eight kiwis",
+     "as many, so"
+    ]
+   },
+   {
+    "say": "One credit buys five limes, and we need exactly five limes. So that's one credit.",
+    "at": [
+     "So that's one credit"
+    ]
+   },
+   {
+    "say": "Now the awkward one, the pineapples. One credit buys one and a half pineapples, and we need two. Let's put it in a ratio table, one column for credits and one for pineapples. One credit, one and a half pineapples. And a question mark for two pineapples.",
+    "at": [
+     "Now the awkward",
+     "Let's put it in a",
+     "ratio table, one",
+     "One credit, one and a half",
+     "And a question mark"
+    ]
+   },
+   {
+    "say": "From one and a half to two isn't a whole multiplier, so we use the triangle value. Multiply along the diagonal, two times one, and divide by what's left, one and a half.",
+    "at": [
+     "From one and",
+     "Multiply along the diagonal",
+     "and divide by what"
+    ]
+   },
+   {
+    "say": "One and a half on the bottom isn't nice, so let's get rid of the half. We could multiply the top and the bottom by ten, but that only makes bigger numbers. Times two is enough. Two times two is four. One and a half times two is three. So four thirds of a credit.",
+    "at": [
+     "One and a",
+     "Times two is enough",
+     "Two times two",
+     "So four thirds of a credit",
+     "four thirds of a credit"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now we add it all up. Two credits for the kiwis and one for the limes, that's three. Three is nine thirds, and nine thirds plus four thirds is thirteen thirds. Choice number one is our answer.",
+    "at": [
+     "Now we",
+     "all up. Two",
+     "the kiwis and",
+     "that's three",
+     "nine thirds plus four thirds",
+     "is thirteen thirds",
+     "Choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's estimate, and save the fraction work. We start again from the givens. The kiwis and the limes are easy, two credits and one credit, three credits together.",
+    "at": [
+     "save the fraction",
+     "start again from",
+     "the limes are",
+     "three credits together"
+    ]
+   },
+   {
+    "say": "Now the pineapples. One credit buys one and a half, and we need two. That's more than one and a half, so the pineapples cost more than one credit. So the total is more than three plus one, more than four. Choice number three, three credits, is out.",
+    "at": [
+     "One credit buys",
+     "So the total is more than",
+     "than four. Choice",
+     "is out"
+    ]
+   },
+   {
+    "say": "Now the upper limit. Two credits buy two times one and a half, three pineapples. We need only two. So the pineapples cost less than two credits, and the total is less than three plus two, less than five.",
+    "at": [
+     "Two credits buy",
+     "pineapples. We need",
+     "less than three plus two",
+     "less than five"
+    ]
+   },
+   {
+    "say": "So the total is between four and five. Five and six, choice numbers two and four, are out. Thirteen thirds is four and a third, between four and five. Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Five and six",
+     "are out",
+     "Thirteen thirds is four",
+     "a third, between",
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

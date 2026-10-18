@@ -1,0 +1,112 @@
+{
+ "videoId": "solve-q-r26-t22-05",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A parking lot has thirty vehicles, cars and motorcycles. Each car has four wheels, and each motorcycle has two wheels. There are ninety-six wheels in total. How many motorcycles are in the parking lot?",
+    "voice": "calm",
+    "at": [
+     "A parking lot has thirty"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Two kinds of vehicles, a known number of vehicles, and a known number of wheels. They ask for the motorcycles. We'll solve it two ways, the math way with an equation, and then with an insight, pretending they're all the same kind.",
+    "at": [
+     "a known number",
+     "They ask for the motorcycles",
+     "We'll solve it"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. They ask for the motorcycles, so let m be the motorcycles. There are thirty vehicles, so the cars are thirty minus m.",
+    "at": [
+     "Let's start",
+     "so let m be the motorcycles",
+     "There are thirty"
+    ]
+   },
+   {
+    "say": "Now the wheels. Each motorcycle has two wheels, so two m. Each car has four wheels, so four times thirty minus m. Together they have ninety-six wheels.",
+    "at": [
+     "Now the wheels",
+     "so two m"
+    ]
+   },
+   {
+    "say": "We open the brackets. Four times thirty is a hundred twenty. Four times m is four m. So two m plus a hundred twenty minus four m is ninety-six. And two m minus four m is minus two m.",
+    "at": [
+     "We open the brackets",
+     "Four times thirty",
+     "And two m minus four m",
+     "m is minus"
+    ]
+   },
+   {
+    "say": "So a hundred twenty minus two m is ninety-six. We add two m to both sides, and take ninety-six from both sides. A hundred twenty minus ninety-six is twenty-four. So twenty-four is two m, and m is twelve.",
+    "at": [
+     "A hundred twenty minus ninety-six",
+     "So twenty-four is two m",
+     "and m is"
+    ]
+   },
+   {
+    "say": "So there are twelve motorcycles. Choice number two is our answer.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the insight. We start again from the givens, and imagine that all thirty vehicles are motorcycles. Thirty times two is sixty wheels.",
+    "at": [
+     "start again from",
+     "Thirty times two is sixty"
+    ]
+   },
+   {
+    "say": "But there are ninety-six wheels. Ninety-six minus sixty is thirty-six wheels missing.",
+    "at": [
+     "But there are",
+     "Ninety-six minus sixty"
+    ]
+   },
+   {
+    "say": "Every time we swap a motorcycle for a car, we add two wheels, because a car has four and a motorcycle has two. Thirty-six divided by two is eighteen swaps. So eighteen of the vehicles are cars.",
+    "at": [
+     "Every time we swap",
+     "add two wheels",
+     "Thirty-six divided by two",
+     "So eighteen of"
+    ]
+   },
+   {
+    "say": "Careful, eighteen is choice number one, but those are the cars, and they ask for the motorcycles. Thirty minus eighteen is twelve.",
+    "at": [
+     "but those are the cars",
+     "Thirty minus eighteen"
+    ]
+   },
+   {
+    "say": "And a faster way. Assume they're all the kind they don't ask about, the cars. Thirty times four is a hundred twenty wheels. That's twenty-four too many. Each motorcycle has two wheels fewer than a car, so twenty-four divided by two is twelve motorcycles, straight away.",
+    "at": [
+     "Assume they're all",
+     "Thirty times four is a hundred",
+     "hundred twenty wheels",
+     "That's twenty-four too many",
+     "motorcycle has two",
+     "so twenty-four divided by two",
+     "is twelve motorcycles"
+    ]
+   },
+   {
+    "say": "So when there are two kinds, a known total count, and a known total of something else, pretend they're all one kind, and then fix the difference one swap at a time. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

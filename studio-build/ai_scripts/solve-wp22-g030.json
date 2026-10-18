@@ -1,0 +1,155 @@
+{
+ "videoId": "solve-wp22-g030",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Working at a steady pace, a cook peels eighteen potatoes in twelve minutes. How many potatoes does he peel in twenty minutes?",
+    "voice": "calm",
+    "at": [
+     "Working at a steady pace"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A steady pace means the same rate all the time, so again it's equal ratios. Before we calculate, should the answer be bigger or smaller? Twenty minutes is more than twelve, so he peels more than eighteen. And twenty is less than twice twelve, so he peels fewer than twice eighteen, fewer than thirty-six. So choice number two, thirty-six, is out. We'll solve it two ways, with the triangle value, and then by cross-multiplying.",
+    "at": [
+     "A steady pace means",
+     "Before we calculate",
+     "Twenty minutes is",
+     "so he peels more than eighteen",
+     "eighteen. And twenty",
+     "fewer than twice eighteen",
+     "than thirty-six. So",
+     "is out"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, the ratio table. Minutes in one column, potatoes in the other. In the first row, twelve minutes and eighteen potatoes. In the second row, twenty minutes and a question mark.",
+    "at": [
+     "Let's start",
+     "Minutes in one column",
+     "in the other",
+     "In the first row",
+     "In the second row",
+     "minutes and a"
+    ]
+   },
+   {
+    "say": "Across the first row, from twelve to eighteen, is times one and a half. That's not a whole number. Down the minutes, from twelve to twenty, is twenty over twelve, five thirds. That's not whole either. So an easy multiplier doesn't help us here.",
+    "at": [
+     "Across the first row",
+     "one and a",
+     "Down the minutes",
+     "to twenty, is"
+    ]
+   },
+   {
+    "say": "When neither one is whole, we use the triangle value. We draw a line along the diagonal, from the twenty to the eighteen. We multiply the two numbers on the diagonal, and divide by the number that's left, the twelve.",
+    "at": [
+     "We draw a line along the diagonal",
+     "the diagonal, from",
+     "We multiply the two numbers",
+     "on the diagonal"
+    ]
+   },
+   "Why is it called the triangle value? Because the three numbers we use, twenty, eighteen and twelve, make a triangle in the table. Multiply along the diagonal, and divide by what's left."
+  ],
+  [
+   {
+    "say": "Now the calculation. Before we multiply, let's make the numbers smaller. Eighteen and twelve both divide by six. Eighteen divided by six is three. Twelve divided by six is two. So now we have twenty times three, over two.",
+    "at": [
+     "Now the",
+     "we multiply, let's",
+     "both divide by",
+     "Eighteen divided by six",
+     "Twelve divided by six",
+     "So now we have twenty times three",
+     "times three, over"
+    ]
+   },
+   {
+    "say": "Twenty times three is sixty. And sixty divided by two is thirty. So he peels thirty potatoes. And thirty is between eighteen and thirty-six, just as our check said. Choice number one is our answer.",
+    "at": [
+     "Twenty times three is sixty",
+     "sixty divided by two is thirty",
+     "So he peels",
+     "Choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's try the triangle value once more, on other numbers. Four kilos of apples cost fourteen credits. How much do six kilos cost? Kilos and credits, four and fourteen, six and a question mark.",
+    "at": [
+     "value once more",
+     "Four kilos of apples",
+     "How much do",
+     "four and fourteen",
+     "six and a question mark"
+    ]
+   },
+   {
+    "say": "Four to fourteen isn't whole, and four to six isn't whole either. So along the diagonal, six times fourteen, and we divide by what's left, four. Fourteen and four both divide by two, so it's six times seven, over two. Six times seven is forty-two. And forty-two divided by two is twenty-one credits.",
+    "at": [
+     "Four to fourteen",
+     "So along the diagonal",
+     "six times fourteen",
+     "divide by what's",
+     "so it's six times seven",
+     "Six times seven is forty-two",
+     "divided by two is twenty-one",
+     "twenty-one credits"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the second way, cross-multiplying. We start again from the table of the question. Twelve minutes and eighteen potatoes, and twenty minutes. This time we call the missing number x.",
+    "at": [
+     "Now the",
+     "Now the second way",
+     "We start again",
+     "the question. Twelve",
+     "Twelve minutes and eighteen",
+     "This time we call",
+     "missing number x"
+    ]
+   },
+   {
+    "say": "In equal ratios, the two diagonal products are equal. Twelve times x is equal to twenty times eighteen.",
+    "at": [
+     "the two diagonal products",
+     "are equal",
+     "Twelve times x is equal",
+     "to twenty times"
+    ]
+   },
+   {
+    "say": "Now we work out twenty times eighteen. Two times eighteen is thirty-six. Then times ten, it's three hundred sixty. So twelve x is three hundred sixty.",
+    "at": [
+     "Two times eighteen is thirty-six",
+     "Then times ten",
+     "So twelve x"
+    ]
+   },
+   {
+    "say": "To find x, we divide both sides by twelve. Three hundred sixty divided by twelve is thirty. We know it because twelve times thirty is three hundred sixty. We get the same thirty.",
+    "at": [
+     "we divide both sides by twelve",
+     "twelve. Three hundred",
+     "divided by twelve is thirty",
+     "We know it",
+     "twelve times thirty",
+     "We get the"
+    ]
+   },
+   {
+    "say": "Both ways are the same idea. The triangle value writes the answer straight away, and cross-multiplying builds an equation first. So when three numbers are known, the rate is the same, and one number is missing, multiply along the diagonal and divide by what's left. Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,173 @@
+{
+ "videoId": "wp-034",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now an important lesson, ratios. Ratios show up all over the quantitative section. Side ratios in geometry, and rates in work and motion questions. So let's really understand what a ratio is."
+  ],
+  [
+   {
+    "say": "In everyday talk, when I say he's tall compared to me, I only know that he's taller. I don't know by how much. In math, a ratio tells us exactly how many times.",
+    "at": [
+     "I say he's"
+    ]
+   },
+   {
+    "say": "The ratio of red beads to blue beads is three to seven. That means for every three red beads, there are seven blue beads.",
+    "at": [
+     "The ratio of red beads",
+     "to blue beads",
+     "for every three red beads",
+     "there are seven blue beads"
+    ]
+   },
+   {
+    "say": "So there are more blue beads. And not just more. Seven is two and a third times three, so there are two and a third times as many blue beads as red beads.",
+    "at": [
+     "So there are",
+     "Seven is two and a third times three",
+     "third times three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The first thing to know is that a ratio is really a fraction. Three to seven is three over seven, three divided by seven. The two dots just mean divided by.",
+    "at": [
+     "know is that",
+     "a ratio is really a fraction",
+     "Three to seven"
+    ]
+   },
+   "We read a ratio in order. The first name goes with the first number. Red comes first, so red gets the three. Blue comes second, so blue gets the seven. The exam writes ratios this way, the ratio between the red beads and the blue beads, so always match the names to the numbers in order.",
+   {
+    "say": "Here's a little trick to match them. Draw an arc from the first name to the first number, and another arc from the second name to the second number. If the arcs don't cross, you matched them right.",
+    "at": [
+     "Draw an arc",
+     "from the first name to the first number",
+     "the first number",
+     "from the second name to the second number",
+     "the second number"
+    ]
+   },
+   {
+    "say": "If we matched red with the seven, and blue with the three, the lines would cross. So crossing lines mean we matched them wrong.",
+    "at": [
+     "the lines would cross",
+     "So crossing lines"
+    ]
+   },
+   {
+    "say": "And because a ratio is a fraction, we can expand it or reduce it, just like a fraction. Six to fourteen is three to seven, because we divide both numbers by two. Usually we write a ratio fully reduced, like a fraction.",
+    "at": [
+     "Six to fourteen is three to seven",
+     "both numbers by"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the most important thing. From a ratio alone, we can't know the amounts. Three red beads and seven blue? Six and fourteen? Thirty and seventy? All of them have the ratio three to seven.",
+    "at": [
+     "thing. From a",
+     "Three red beads and seven blue",
+     "blue? Six and"
+    ]
+   },
+   "We know the amounts only when they give us one real number. A total, a difference, or the size of one of the groups.",
+   {
+    "say": "That's why we write the amounts with x. Red is three x, and blue is seven x. If we cancel the x, three x over seven x is still three over seven. So the ratio is kept, and now we have amounts we can build an equation with.",
+    "at": [
+     "Red is three x",
+     "we cancel the",
+     "three x over",
+     "is still three"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. Say there are fifty beads in all. Three x plus seven x is ten x, and ten x is fifty. So x is five. Red is three times five, fifteen. And blue is seven times five, thirty-five.",
+    "at": [
+     "Three x plus seven x is ten x",
+     "is ten x",
+     "So x is five",
+     "Red is three times five",
+     "And blue is seven times five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The same idea hides in other wording. Dan drank two fifths of the water in a bottle. That's two out of five.",
+    "at": [
+     "in other wording",
+     "Dan drank two fifths",
+     "the water in"
+    ]
+   },
+   {
+    "say": "The numerator goes with the first thing, what Dan drank. The denominator goes with the whole, the bottle. So Dan drank two x, and the whole bottle is five x.",
+    "at": [
+     "So Dan drank two x"
+    ]
+   },
+   {
+    "say": "And what's left in the bottle? The whole minus what he drank. Five x minus two x is three x.",
+    "at": [
+     "And what's left",
+     "Five x minus two x"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes there's a fraction in it. Ann's salary is two and a half times Ben's salary. Who should be x?",
+    "at": [
+     "Ann's salary is two and a half",
+     "a half times"
+    ]
+   },
+   {
+    "say": "Ben is the smaller one, so let's make Ben x. Then Ann is two and a half x. If we made Ann x, Ben would be x divided by two and a half, and that's a messy fraction.",
+    "at": [
+     "so let's make Ben x",
+     "a half x"
+    ]
+   },
+   {
+    "say": "And we can get rid of the half too. We expand by two. Ben is two x, and Ann is five x. Now the ratio of Ben to Ann is two to five, whole numbers, much easier to work with.",
+    "at": [
+     "We expand by two",
+     "Ann is five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more kind of wording. It doesn't look like a ratio, but it is one, and it's reversed. Three mugs cost the same as eight plates. Which is more expensive, a mug or a plate?",
+    "at": [
+     "wording. It doesn't",
+     "Three mugs cost the same",
+     "as eight plates"
+    ]
+   },
+   {
+    "say": "Let's pick a total that both sides can reach, twenty-four. Three mugs cost twenty-four if each mug costs eight. Eight plates cost twenty-four if each plate costs three.",
+    "at": [
+     "Three mugs cost twenty-four",
+     "each mug costs",
+     "Eight plates cost twenty-four",
+     "each plate costs"
+    ]
+   },
+   {
+    "say": "So a mug costs eight and a plate costs three. The ratio of the mug's price to the plate's price is eight to three. That's the opposite of the numbers in the sentence.",
+    "at": [
+     "The ratio of the mug",
+     "is eight to"
+    ]
+   },
+   "Does it make sense? Yes. Fewer mugs cost as much as more plates, so each mug must cost more. The three is next to the mugs in the sentence, but the mugs get the eight.",
+   "So again, what did we learn? A ratio is a fraction, and we read it in order. A ratio alone gives no amounts, so we write three x and seven x. And with costs the same as, the ratio is reversed. Now let's see ratios in the questions. I'll see you in the next video."
+  ]
+ ]
+}

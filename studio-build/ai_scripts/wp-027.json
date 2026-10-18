@@ -1,0 +1,126 @@
+{
+ "videoId": "wp-027",
+ "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now we're starting a new topic, word problems. In the quantitative section, about five of the twenty questions are word problems. That's a quarter of the section.",
+   {
+    "say": "And honestly, it's even more than a quarter. Many algebra and geometry questions are written in words too. For example, a question can say that a number is divided by five and leaves a remainder of two. That's an algebra question, but it's written in words. So first we have to read it and understand what it means in math.",
+    "at": [
+     "more than a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So how do we solve a word problem? In three stages. Stage one, we translate the words into an equation. This is the stage of understanding, and it's the hardest part.",
+    "at": [
+     "solve a word",
+     "Stage one, we translate",
+     "words into an"
+    ]
+   },
+   {
+    "say": "Stage two, we solve the equation. That part is technical. It's the algebra we already know, moving terms to the other side, opening brackets, a common denominator. It's a shame to lose points here.",
+    "at": [
+     "Stage two, we solve",
+     "equation. That part"
+    ]
+   },
+   {
+    "say": "Stage three, we answer the question. Careful here, because solving the equation doesn't always finish the job. Say we find that x is eight, but they ask for x minus one. Then the answer is seven, not eight. It's not a trick. It's a concentration check. So at the end, always look again at what they asked.",
+    "at": [
+     "Stage three, we answer",
+     "Careful here, because",
+     "Say we find that x is eight",
+     "for x minus",
+     "Then the answer is seven",
+     "not eight. It's"
+    ]
+   },
+   "And not every word problem needs an equation. Some we solve by trial and error, like in the last topic, and some by plugging in the answers. But right now our topic is the translation, how the words become an equation."
+  ],
+  [
+   {
+    "say": "Let's see it on an example. A number is multiplied by three, and then twenty-four is added. The result is seven times the original number. What is twice the number?",
+    "at": [
+     "A number is multiplied",
+     "three, and then"
+    ]
+   },
+   {
+    "say": "Wow, a lot of words. Don't panic, we'll go piece by piece. We don't know the number, so let's call it x.",
+    "at": [
+     "so let's call it x"
+    ]
+   },
+   {
+    "say": "Multiplied by three, that's three x. And then twenty-four is added, so three x plus twenty-four.",
+    "at": [
+     "Multiplied by three",
+     "And then twenty-four is added",
+     "so three x"
+    ]
+   },
+   {
+    "say": "The result is. That's our equals sign. Seven times the original number, that's seven x.",
+    "at": [
+     "Seven times the original number",
+     "that's seven x"
+    ]
+   },
+   "Now let's read the equation back in words. A number times three, plus twenty-four, is equal to seven times the number. It's almost word for word the question. Every equation is really a sentence in words.",
+   {
+    "say": "Stage two is technical. We want the x's on one side, so we take three x away from both sides. Seven x minus three x is four x, so twenty-four is equal to four x. Then we divide both sides by four, and x is six.",
+    "at": [
+     "Seven x minus three",
+     "is four x",
+     "so twenty-four is equal to four x",
+     "Then we divide both sides by four",
+     "by four, and"
+    ]
+   },
+   {
+    "say": "Stage three. Did they ask for the number? No, they asked for twice the number. Two times six is twelve. So the answer is twelve, not six.",
+    "at": [
+     "Two times six is twelve",
+     "So the answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's do one more, a shorter one. A number plus fifteen is equal to four times the number. What is the number minus one?",
+    "at": [
+     "a shorter one",
+     "A number plus fifteen",
+     "equal to four"
+    ]
+   },
+   {
+    "say": "Again, the number is x. A number plus fifteen is x plus fifteen. Is equal to, that's the equals sign. Four times the number is four x.",
+    "at": [
+     "Four times the number is four x"
+    ]
+   },
+   {
+    "say": "Now we solve. We take x away from both sides. Four x minus x is three x, so fifteen is equal to three x. Then we divide by three, and x is five.",
+    "at": [
+     "We take x",
+     "Four x minus x",
+     "so fifteen is equal to three x",
+     "Then we divide by three",
+     "and x is"
+    ]
+   },
+   {
+    "say": "And stage three. They asked for the number minus one, so five minus one is four. Five would be the trap, because that's the number itself.",
+    "at": [
+     "so five minus one is four",
+     "Five would be"
+    ]
+   },
+   "So again, what did we do? We translated one phrase at a time, we solved, and then we checked what they asked. Now let's learn the phrases one by one, and how each one is written in math. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}
