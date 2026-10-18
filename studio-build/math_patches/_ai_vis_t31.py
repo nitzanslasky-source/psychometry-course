@@ -302,6 +302,7 @@ def vis(vid):
                     it = c[1]; d = placed[id(it)]
                     _h = None if (vid, si + 1) in _GH.NOHAND else (it['_hand'] or _GH.auto(vid, it, si))      # 2026-10-18: geometry worked lines hand-written (_geo_hand.py)
                     if _h and not it['_hand']: d = dict(d, _hwsize=d.get('size', 36))
+                    if _h and vid not in _GH.FROZEN: _h = _GH.no_cross(_h)
                     cs.append(('write', d, c[2], _h) if _h else ('show', d, c[2]))
                 elif c[0] == 'point':
                     x = ('point', _target(vid, names, si, c[1]), c[2])
@@ -2348,7 +2349,7 @@ f4r3 = I('f4r3', '$a^2+2ab+b^2=c^2+2ab$', size=32, col=0)
 f4r4 = I('f4r4', '$a^2+b^2=c^2$', size=36, col=0)
 video('geo-023', 'lesson', slides=[
     S('Why Pythagoras Works',
-      L("A proof of the Pythagorean theorem, just for interest.")),
+      L("In this optional lesson, let's see why the Pythagorean theorem works.")),
     S('Only if you are curious',
       L("As I said, you don't need this for the exam. You won't be asked to prove the theorem. This is a short extra "
         "lesson, if you're curious: what the theorem says about areas, and a simple proof. If you prefer, you can skip to "

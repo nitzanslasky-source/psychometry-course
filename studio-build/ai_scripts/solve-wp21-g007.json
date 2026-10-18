@@ -97,21 +97,31 @@
     "say": "Let's check it once more, with ten. One to ten is ten times eleven, all divided by two. Ten times eleven is a hundred ten, and half of that is fifty-five. With pairs, it's five pairs of eleven, fifty-five again.",
     "at": [
      "One to ten is ten times eleven",
-     "times eleven, all"
+     "Ten times eleven is a hundred ten",
+     "hundred ten, and",
+     "With pairs",
+     "of eleven, fifty-five"
     ]
-   },
+   }
+  ],
+  [
    {
     "say": "Now back to our question. The friends need different amounts. Eight friends need at least eight times nine, all divided by two, which is thirty-six. That's not more than forty-two, so eight friends is possible.",
     "at": [
+     "Now back",
+     "question. The friends",
      "Eight friends need at least",
-     "eight times nine"
+     "eight times nine",
+     "That's not more than forty-two",
+     "so eight friends"
     ]
    },
    {
     "say": "Nine friends need at least nine times ten, all divided by two, which is forty-five. That's more than forty-two, so nine friends is impossible. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
      "Nine friends need at least",
-     "by two, which",
+     "nine times ten",
+     "That's more than forty-two",
      "so nine friends is impossible",
      "number two is"
     ]

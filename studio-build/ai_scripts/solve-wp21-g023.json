@@ -20,6 +20,7 @@
    {
     "say": "[short pause] Day one starts with forty. During the day it doubles, so forty times two is eighty. At the end of the day, thirty are removed. Eighty minus thirty is fifty.",
     "at": [
+     "Day one",
      "During the day it doubles",
      "so forty times",
      "Eighty minus thirty"
@@ -43,7 +44,8 @@
     "say": "Now wait a moment. In pattern questions, the edges are where the trap is. They ask for day three just before that day's removal. So we don't take away the thirty. A hundred ten would be the number after the removal, and that's the trap.",
     "at": [
      "So we don",
-     "A hundred ten"
+     "A hundred ten would be",
+     "and that's the"
     ]
    },
    "So always ask yourself two things. Does the start include this step? Does the end include that one? Inside the list everything repeats, so the trouble is always at the edges.",

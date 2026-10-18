@@ -10,14 +10,18 @@
     "say": "Patterns come in two kinds. The first kind is step by step. A rule repeats, and the simplest and best way is to write the items one at a time, exactly as the rule says, until we reach what they ask.",
     "at": [
      "The first kind is step by step",
-     "A rule repeats"
+     "by step. A",
+     "write the items one at a time",
+     "a time, exactly"
     ]
    },
    {
     "say": "The second kind is a sequence with a formula in n, in the choices. It's rarer, but it's good to know. Here we plug in a small number for n and check the answers.",
     "at": [
      "The second kind is a sequence",
-     "sequence with a"
+     "sequence with a",
+     "Here we plug in",
+     "small number for"
     ]
    },
    {

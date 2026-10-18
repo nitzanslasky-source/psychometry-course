@@ -17,15 +17,17 @@
     "at": [
      "The first rule",
      "number as big",
+     "we give all the others the least",
+     "the least they're",
+     "The other two get the least",
      "Twenty-six minus three"
     ]
    },
    {
     "say": "Why does it work? The total is fixed. Every bit we take from the others goes to the one we want to grow. Here's another example. Four different positive numbers add up to twenty. The others get one, two and three, that's six. So the biggest can be twenty minus six, fourteen.",
     "at": [
-     "The total is",
-     "Four different positive numbers",
-     "up to twenty"
+     "The others get one, two and three",
+     "So the biggest"
     ]
    }
   ],
@@ -35,6 +37,8 @@
     "at": [
      "The second rule",
      "biggest number as",
+     "we share as equally",
+     "Three whole numbers",
      "nine, nine and eight"
     ]
    },
@@ -53,14 +57,17 @@
     "at": [
      "The third rule",
      "number as small",
-     "twenty-six minus twenty"
+     "we give all the others the most",
+     "the most they're",
+     "The other two get ten each",
+     "So the smallest"
     ]
    },
    {
     "say": "Here's another example. Four scores, each at most ten, add up to thirty-one. Three of them get ten, that's thirty. So the smallest can be just one.",
     "at": [
-     "Four scores, each at most ten",
-     "Three of them"
+     "Three of them get ten",
+     "So the smallest"
     ]
    },
    "The second and third rules sound like opposites, but they aren't. In the second rule we push the biggest down, so the others can't pass it, and that's why we share equally. In the third rule we push one number down, so the others take as much as they can.",

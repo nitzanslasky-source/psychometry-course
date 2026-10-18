@@ -130,6 +130,12 @@ def fig(*a, **k): return SNL.fig(*a, **k)
 def _plain(say): return re.sub(r'\s+', ' ', TAG.sub(' ', say)).strip()
 
 
+# 2026-10-18 visual check (as topic 22): the last baseline of each question's stem on the board (measured on the rendered
+# step frames). The right column starts just below it, and each hand-written row gets its real height (about 1.45x a
+# typed row, 1.9x with a fraction); otherwise the renderer pushes every row under the one above with a 14 px gap.
+QBOT = {'solve-q-r26-t21-01': 232, 'solve-q-r26-t21-02': 181, 'solve-wp21-g004': 286, 'solve-wp21-g005': 286, 'solve-wp21-g007': 286, 'solve-wp21-g009': 242, 'solve-wp21-g010': 242, 'solve-wp21-g013': 242, 'solve-wp21-g014': 286, 'solve-wp21-g015': 242, 'solve-wp21-g017': 236, 'solve-wp21-g018': 232, 'solve-wp21-g019': 286, 'solve-wp21-g020': 286, 'solve-wp21-g021': 242, 'solve-wp21-g023': 286, 'solve-wp21-g024': 242}
+
+
 def _layout(vid):
     """item dicts per slide (placed), name -> (slide index, item index); raises on a bad spec."""
     V = VIDEOS[vid]; names = {}; per = []
@@ -146,14 +152,14 @@ def _layout(vid):
                     names[it['_name']] = (si, pre + len(items)); items.append(it)
         right = any(it['_col'] == 1 for it in items)
         solo = right and not any(it['_col'] == 0 for it in items)   # only right-column items: use the left column
-        out = []; ycol = 100 if V['kind'] == 'solution' else 78
+        out = []; ycol = max(100, QBOT.get(vid, 0) + 50) if V['kind'] == 'solution' else 78
         for it in items:
             d = {k: v for k, v in it.items() if not k.startswith('_')}
             if it['_col'] == 1 and not solo:
                 if d['k'] == 'vis':
                     d['w'] = min(d.get('w', 540), 540); d['h'] = int(round(d['h'] * d['w'] / it['w']))
                 y_here = ycol
-                if not d.get('over'): ycol += (d['h'] if d['k'] == 'vis' else int(d.get('size', 36) * 1.55)) + 16
+                if not d.get('over'): ycol += (d['h'] if d['k'] == 'vis' else int(d.get('size', 36) * 1.55 * ((1.9 if '/' in it['_hand'] else 1.45) if it['_hand'] else 1))) + 16
                 d.update(x=1010, w=d['w'] if d['k'] == 'vis' else 540, y=y_here)
             elif right and d['k'] == 't':
                 d['w'] = 560
@@ -444,7 +450,7 @@ def CHAIN(name, rows, up=None, col=0, size=34, links=None):
 def _hand(tex):
     """the hand-written twin of a typed line (studio_handwrite syntax), or None if it has a glyph the pen lacks"""
     t = tex
-    for a, b in [('\\blacklozenge', '◆'), ('\\cdot', '·'), ('\\ne', '≠'), ('\\le', '≤'), ('\\ge', '≥'), ('\\to', '→'),
+    for a, b in [('\\blacklozenge', '◆'), ('\\times', '×'), ('\\cdot', '·'), ('\\ne', '≠'), ('\\le', '≤'), ('\\ge', '≥'), ('\\to', '→'),
                  ('\\quad', '    '), ('\\qquad', '      '), ('\\ ', ' '), ('\\,', ''), ('\\star', '⋆'), ('\\div', '÷'),
                  ('\\left', ''), ('\\right', '')]:
         t = t.replace(a, b)
@@ -452,6 +458,10 @@ def _hand(tex):
     t = re.sub(r'\\sqrt\{([^{}]*)\}', r'√{\1}', t)
     t = re.sub(r'\\text\{([^{}]*)\}', r'\1', t)
     t = t.replace('$', '').replace('-', '−')
+    # 2026-10-18 visual check: '{:}' (clock times) was drawn by the pen as a group (stacked, underlined glyphs) -> ':';
+    # the pen's cross looks like a times sign / an x -> ', no' after a number, dropped after words (they say it)
+    t = t.replace('{:}', ':')
+    t = re.sub(r'(?<=[\d)])\s*✗', ', no', t); t = re.sub(r'\s*✗', '', t)
     if '\\' in t.replace('\\hl', ''): return None
     try:
         HWR.write(t); return t
@@ -526,11 +536,13 @@ def FLAGS(name, n, layers, col=0, w=None, title='The pattern'):
 # chapter; here it gets real examples (2-3 per idea): a trial-and-error story twice (the second try changes one number),
 # a taste of each type, and the must / could / cannot reminder (topic 1) with four number cases.
 # Split into 2 parts at the idea boundary (CAMERA_SPLIT at the end of the scripts).
-a0 = I('a0', 'A total in parts $\\ \\cdot\\ $ a ratio $\\ \\cdot\\ $ a short list of cases', size=30)
+a0 = I('a0', 'A total in parts', size=30)
+a0b = I('a0b', 'A ratio', size=30)
+a0c = I('a0c', 'A short list of cases', size=30)
 a1 = I('a1', 'Pens $3$ dollars, notebooks $5$ dollars, total $19$ dollars', size=30)
-a2 = IH('a2', '1 notebook: $\\ 19-5=14$, $\\ 14\\div3$ ✗', size=30)
+a2 = IH('a2', '1 notebook: $\\ 19-5=14$, $\\ 14\\div3$ not whole ✗', size=30)
 a3 = IH('a3', '2 notebooks: $\\ 19-10=9$, $\\ 9\\div3=3$ pens ✓', size=30)
-a4 = IH('a4', '3 notebooks: $\\ 19-15=4$ ✗', size=30)
+a4 = IH('a4', '3 notebooks: $\\ 19-15=4$, $\\ 4\\div3$ not whole ✗', size=30)
 a5 = I('a5', 'Total $20$ dollars:', size=30)
 a6 = IH('a6', '1 notebook: $\\ 20-5=15$, $\\ 15\\div3=5$ pens ✓', size=30)
 b0 = I('b0', '1 $\\cdot$ General problems: nothing says what to try first', size=30)
@@ -545,8 +557,11 @@ c1 = IH('c1', 'Could one be 3? $\\ 3+11=14$ ✓', size=30)
 c2 = IH('c2', 'Must one be odd? $\\ 2+12=14$ ✗', size=30)
 c3 = IH('c3', 'Must one be at least 7? $\\ $both $\\le6$: $\\ 6+6=12<14$, so yes ✓', size=30)
 c4 = IH('c4', 'Can both be bigger than 7? $\\ 8+8=16>14$ ✗', size=30)
-c5 = I('c5', 'could $\\to$ one example $\\quad$ must $\\to$ every case $\\quad$ cannot $\\to$ no case', size=26)
-d0 = I('d0', 'Try the question first $\\ \\to\\ $ then watch and compare', size=30)
+c5 = I('c5', 'could: $\\ $one example', size=30)
+c5b = I('c5b', 'must: $\\ $every case', size=30)
+c5c = I('c5c', 'cannot: $\\ $no case', size=30)
+d0 = I('d0', 'Try the question first', size=30)
+d0b = I('d0b', 'Then watch and compare', size=30)
 video('wp-001', 'lesson', slides=[
     S('How to Approach Word Problems',
       L("Welcome back, and now word problems. A word problem is a short story, with a question about it.")),
@@ -554,7 +569,7 @@ video('wp-001', 'lesson', slides=[
       L("The story can be about anything. A queue at a shop, a water tank, a trip, or friends sharing sweets. But under every story there's some math."),
       L("Word problems are a big part of the quantitative section. Some questions are pure word problems. And many algebra and geometry questions are also written as a story. So this chapter pays off everywhere."),
       L("We won't learn a trick for every story. We'll learn to see what's under it. Sometimes it's a total that's cut into parts. Sometimes it's a ratio. And sometimes it's just a short list of cases.",
-        show(a0, "Sometimes it's a total"))),
+        show(a0, "Sometimes it's a total"), show(a0b, "Sometimes it's a ratio"), show(a0c, "it's just a short list"))),
     S('Trial and error',
       L("We start with the most down-to-earth tool there is, trial and error. Trial and error means we try, we get it wrong, and we try again. There's no equation and no formula."),
       L("Let's see it in numbers. A shop sells pens at three dollars and notebooks at five dollars. Dan spends exactly nineteen dollars, and he buys at least one of each. How many notebooks does he buy?", show(a1, 'A shop sells pens')),
@@ -583,9 +598,9 @@ video('wp-001', 'lesson', slides=[
       L("Must one of them be odd? Three and eleven are both odd. But two and twelve also add up to fourteen, and both are even. So one allowed example fails, and must is out.", show(c2, 'two and twelve also add up')),
       L("Must one of them be at least seven? Here no example can prove it, we need a reason. If both were six or less, the sum would be at most six plus six, twelve. That's less than fourteen. So yes, one of them is always at least seven.", show(c3, 'If both were six or less')),
       L("And cannot means it never works, for any allowed numbers. Can both be bigger than seven? No. The smallest whole numbers bigger than seven are eight and eight, and that's already sixteen. So could needs one example, must needs every case, and cannot means no case at all.",
-        show(c4, 'Can both be bigger than seven'), show(c5, 'So could needs one example'))),
+        show(c4, 'Can both be bigger than seven'), show(c5, 'So could needs one example'), show(c5b, 'must needs every case'), show(c5c, 'cannot means no case'))),
     S('How to use this chapter',
-      L("Every question in this chapter comes before its video. So try it on paper first. Stuck? Write what you do know, the first try or two. Then watch the video, and compare.", show(d0, 'try it on paper first')),
+      L("Every question in this chapter comes before its video. So try it on paper first. Stuck? Write what you do know, the first try or two. Then watch the video, and compare.", show(d0, 'try it on paper first'), show(d0b, 'Then watch the video')),
       L("Let's start with type one. [pause] I'll see you in the next video.")),
 ])
 CAMERA_SPLIT = ('wp-001', 'How to Approach Word Problems', [(1, None), (3, "Now let's look at the three types of trial and error.")])
@@ -593,13 +608,14 @@ CAMERA_SPLIT = ('wp-001', 'How to Approach Word Problems', [(1, None), (3, "Now 
 # ------------------------------------------------------------------------------------------------ wp-003 General Problems
 # Hebrew wp 20-33: general problems depend on luck; nothing says what to try first; sometimes the first try works,
 # sometimes a few - "that's exactly how you're expected to solve them". REMINDER of the camera lesson's type one.
-e0 = I('e0', 'Nothing says what to try first $\\ \\to\\ $ just try', size=30)
+e0 = I('e0', 'Nothing says what to try first', size=30)
+e0b = I('e0b', 'The only way forward: try', size=30)
 e1 = I('e1', 'The first try works $\\quad$ or it takes a few', size=30)
 video('wp-003', 'lesson', slides=[
     S('General Problems',
       L("Welcome back. Now type one of trial and error, general problems.")),
     S('Try and err',
-      L("What makes a problem a general problem? It depends on luck. Nothing in the question says try this first. We read it, and the only way forward is to try.", show(e0, 'Nothing in the question says')),
+      L("What makes a problem a general problem? It depends on luck. Nothing in the question says try this first. We read it, and the only way forward is to try.", show(e0, 'Nothing in the question says'), show(e0b, 'the only way forward')),
       L("Sometimes we hit it on the first try. Sometimes it takes a few tries. Both are fine, and that's exactly how these questions are meant to be solved.", show(e1, 'Sometimes we hit it')),
       L("Let's see two questions of this type. [pause] I'll see you in the next video.")),
 ])
@@ -660,7 +676,7 @@ h5c = IH('h5c', 'one more car: $\\ 16+6=22$', size=30)
 h5d = IH('h5d', 'another car: $\\ 22+6=28$', size=30)
 h5e = IH('h5e', '$16\\to22$: $\\ 20$ is skipped ✗', size=30)
 h5f = IH('h5f', 'truck $12$, car $6$, the last gap missing: $\\ -2$', size=30)
-h5g = IH('h5g', 'length $+\\ 2$ divides by $6$', size=30)
+h5g = IH('h5g', 'length $+\\ 2$ is divisible by $6$', size=30)
 h5h = IH('h5h', '$16+2=18$ ✓ $\\quad 20+2=22$ ✗', size=30)
 video('solve-wp21-g005', 'solution', qid='wp21-g005', slides=[
     S('Method 1 · Plugging in the answers',
@@ -687,14 +703,15 @@ video('solve-wp21-g005', 'solution', qid='wp21-g005', slides=[
 # Hebrew wp 119-128: min-max questions are about possible ranges; unlike general problems, understanding shortens the
 # tries (which way to push); the motif comes back all over (geometry, overlap problems).
 f0 = I('f0', 'Smallest possible? $\\quad$ Biggest possible?', size=30)
-f1 = I('f1', 'Know which way to push $\\ \\to\\ $ fewer tries', size=30)
+f1 = I('f1', 'Know which way to push', size=30)
+f1b = I('f1b', 'Far fewer tries', size=30)
 video('wp-006', 'lesson', slides=[
     S('Minimum & Maximum',
       L("Welcome back. Now type two of trial and error, minimum and maximum.")),
     S('Ranges',
       L("Minimum and maximum questions are about ranges. What's the smallest possible value, and what's the biggest?",
         show(f0, "What's the smallest possible")),
-      L("Unlike general problems, we don't try blindly. A little understanding tells us which way to push, toward the smallest or toward the biggest. So we need far fewer tries.", show(f1, 'tells us which way to push'))),
+      L("Unlike general problems, we don't try blindly. A little understanding tells us which way to push, toward the smallest or toward the biggest. So we need far fewer tries.", show(f1, 'tells us which way to push'), show(f1b, 'So we need far fewer tries'))),
     S('A recurring motif',
       L("By the way, minimum and maximum isn't only this lesson. It comes back all over the quantitative section. In geometry, in overlap problems later on, and in many other questions. So the thinking we build here pays off again and again."),
       L("Let's see a question of this type. [pause] I'll see you in the next video.")),
@@ -714,14 +731,18 @@ p7 = TBL('p7', ('Friend', '1', '2', '3', '4', '5', '6', '7', '8', '9'), 2, [118]
 for _k, _it in p7.items():          # the layers find their base by id: board lines come between them
     if _it.get('over'): _it['of'] = 'p7'
     else: _it['fig'] = 'p7'
-p7a = IH('p7a', '$42-36=6$ left $\\quad$ 9th friend needs $9$ ✗', size=30)
+p7a = IH('p7a', '$42-36=6$ left $\\quad$ 9th friend needs $9$', size=30)
 p7b = IH('p7b', 'friend 8: $\\ 8+6=14$ ✓', size=30)
 q7a = IH('q7a', '$1+8=2+7=3+6=4+5=9$', size=30)
 q7b = IH('q7b', '$4\\cdot9=36$', size=30)
-q7c = I('q7c', '$1+2+\\ldots+k=\\frac{k(k+1)}{2}$', size=34)
-q7d = IH('q7d', '$1+\\ldots+10$: $\\ \\frac{10\\cdot11}{2}=\\frac{110}{2}=55$', size=30, col=1)
-q7e = IH('q7e', '8 friends: $\\ \\frac{8\\cdot9}{2}=36\\le42$ ✓', size=30, col=1)
-q7f = IH('q7f', '9 friends: $\\ \\frac{9\\cdot10}{2}=45>42$ ✗', size=30, col=1)
+q7c = IH('q7c', '$1+2+...+k=\\frac{k(k+1)}{2}$', size=32)
+q7d = IH('q7d', '$1+...+10=\\frac{10\\cdot11}{2}$', size=30, col=1)
+q7d2 = IH('q7d2', '$=\\frac{110}{2}=55$', size=30, col=1)
+q7d3 = IH('q7d3', '5 pairs of $11$: $\\ 55$ ✓', size=30, col=1)
+q7e = IH('q7e', '8 friends: $\\ \\frac{8\\cdot9}{2}=36$', size=32)
+q7e2 = IH('q7e2', '$36\\le42$ ✓', size=32)
+q7f = IH('q7f', '9 friends: $\\ \\frac{9\\cdot10}{2}=45$', size=32)
+q7f2 = IH('q7f2', '$45>42$ ✗', size=32)
 video('solve-wp21-g007', 'solution', qid='wp21-g007', slides=[
     S('Method 1 · Understanding: give each the least',
       L("Noa shares forty-two postcards among her friends. Each friend receives a different number of postcards, a positive whole number, and all the postcards are given out. What is the largest possible number of friends?",
@@ -744,26 +765,29 @@ video('solve-wp21-g007', 'solution', qid='wp21-g007', slides=[
         show(q7a, 'One plus eight is nine'), show(q7b, 'four times nine')),
       L("Why does every pair give the same sum? Going in from both ends, one number goes up by one, and the other goes down by one. So the sum stays the same. In general, adding one, two, and so on up to k gives k times the next number, k plus one, and then half of that.", show(q7c, 'In general, adding one')),
       L("Let's check it once more, with ten. One to ten is ten times eleven, all divided by two. Ten times eleven is a hundred ten, and half of that is fifty-five. With pairs, it's five pairs of eleven, fifty-five again.",
-        show(q7d, 'One to ten is ten times eleven')),
+        show(q7d, 'One to ten is ten times eleven'), show(q7d2, 'Ten times eleven is a hundred ten'), show(q7d3, 'With pairs'))),
+    S('Method 2 · The math way: shortcut formula',
       L("Now back to our question. The friends need different amounts. Eight friends need at least eight times nine, all divided by two, which is thirty-six. That's not more than forty-two, so eight friends is possible.",
-        show(q7e, 'Eight friends need at least')),
+        show(q7e, 'Eight friends need at least'), show(q7e2, "That's not more than forty-two")),
       L("Nine friends need at least nine times ten, all divided by two, which is forty-five. That's more than forty-two, so nine friends is impossible. Choice number two is our answer, and I'll see you in the next question.",
-        show(q7f, 'Nine friends need at least'), mk('tick', 'choice 2', 'so nine friends is impossible'))),
+        show(q7f, 'Nine friends need at least'), show(q7f2, "That's more than forty-two"), mk('tick', 'choice 2', 'so nine friends is impossible'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ wp-008 Patterns
 # Hebrew wp 164-200: the last type, mostly trial and little error; step by step (write the items one by one); sequences
 # with a formula in n are rarer; don't use school sequence formulas; understanding is possible but rare.
-k0 = I('k0', '1 $\\cdot$ Step by step $\\ \\to\\ $ write the items one by one', size=30)
-k1 = I('k1', '2 $\\cdot$ A formula with $n$ in the choices $\\ \\to\\ $ plug in a number', size=30)
+k0 = I('k0', '1 $\\cdot$ Step by step', size=30)
+k0b = I('k0b', 'write the items one by one', size=30)
+k1 = I('k1', '2 $\\cdot$ A formula with $n$ in the choices', size=30)
+k1b = I('k1b', 'plug in a small number for $n$', size=30)
 k2 = I('k2', 'No school sequence formulas', size=30)
 video('wp-008', 'lesson', slides=[
     S('Patterns',
       L("Welcome back. Now the last type of trial and error, patterns. Here we barely think and barely make mistakes. It's mostly trial, careful trial.")),
     S('Two kinds',
       L("Patterns come in two kinds. The first kind is step by step. A rule repeats, and the simplest and best way is to write the items one at a time, exactly as the rule says, until we reach what they ask.",
-        show(k0, 'The first kind is step by step')),
-      L("The second kind is a sequence with a formula in n, in the choices. It's rarer, but it's good to know. Here we plug in a small number for n and check the answers.", show(k1, 'The second kind is a sequence')),
+        show(k0, 'The first kind is step by step'), show(k0b, 'write the items one at a time')),
+      L("The second kind is a sequence with a formula in n, in the choices. It's rarer, but it's good to know. Here we plug in a small number for n and check the answers.", show(k1, 'The second kind is a sequence'), show(k1b, 'Here we plug in')),
       L("If you remember the formulas for sequences from school, leave them. These aren't the sequences you know, and those formulas won't work here.", show(k2, 'leave them')),
       L("Solving these by pure understanding is possible, but every question is different, and very few students manage it. Plugging in is simple and safe. Let's see one question of each kind. [pause] I'll see you in the next video.")),
 ])
@@ -809,7 +833,7 @@ video('solve-wp21-g009', 'solution', qid='wp21-g009', slides=[
 # Hebrew wp 203-235 (the casino, x2 a day, total through day n): skip understanding; plug in n = 3 (small, easy to compute),
 # check every choice; why not n = 1 - the exam builds the choices so that n = 1 leaves two standing; 3 is small enough to
 # compute and big enough to separate. REMINDER: plugging in numbers (topic 51).
-m0a = IH('m0a', 'Day 1: $\\ 5$ $\\quad$ Day 2: $\\ 10$ $\\quad$ Day 3: $\\ 20$', size=30)
+m0a = IH('m0a', 'Days 1, 2, 3: $\\ 5,\\ 10,\\ 20$', size=30)
 m0b = IH('m0b', '$n=3$: $\\ 5+10+20=35$', size=30)
 m0c = IH('m0c', '(1) $\\ 2^3=8$, $\\ 8-1=7$, $\\ 5\\cdot7=35$ ✓', size=30, col=1)
 m0d = IH('m0d', '(2) $\\ 5\\cdot3^2=5\\cdot9=45$ ✗', size=30, col=1)
@@ -899,15 +923,15 @@ video('solve-wp21-g013', 'solution', qid='wp21-g013', slides=[
 # sopranos gives 7 per alto, 63 / 7 = 9) + the division elimination, so the method stands on its own.
 s4a = IH('s4a', '$27$ sopranos: $\\ 27\\div3=9$ altos', size=30)
 s4b = IH('s4b', '$27+9=36$, $\\ 63-36=27$ tenors', size=30)
-s4c = IH('s4c', '$27$ tenors, not more than $27$ ✗', size=30)
-s4d = I('s4d', 'more sopranos $\\to$ fewer tenors: $\\ 30$ ✗', size=30, col=1)
+s4c = IH('s4c', '$27$ tenors, not more than $27$', size=30)
+s4d = IH('s4d', 'bigger: $\\ $fewer tenors, $\\ 30$ out', size=30, col=1)
 s4e = IH('s4e', '$24$: $\\ 24\\div3=8$ altos', size=30, col=1)
 s4e2 = IH('s4e2', '$24+8=32$, $\\ 63-32=31$', size=30, col=1)
 s4f = IH('s4f', '$31>24$ ✓', size=30, col=1)
-t4a = I('t4a', 'sopranos $=3\\cdot$ altos $\\to$ divides by $3$: $\\ 26$ ✗', size=30)
-t4b = I('t4b', 'border: tenors $=$ sopranos $\\to$ $1+3+3=7$ per alto', size=30)
+t4a = IH('t4a', 'sopranos $=3\\cdot$ altos $\\to$ divisible by $3$: $\\ 26$ ✗', size=30)
+t4b = IH('t4b', 'border: tenors $=$ sopranos $\\to$ $1+3+3=7$ per alto', size=30)
 t4c = IH('t4c', '$63\\div7=9$ altos $\\to$ $27$ sopranos', size=30)
-t4d = I('t4d', 'more tenors $\\to$ sopranos $<27$', size=30)
+t4d = IH('t4d', 'more tenors $\\to$ sopranos $<27$', size=30)
 video('solve-wp21-g014', 'solution', qid='wp21-g014', slides=[
     S('Method 1 · Plugging in the answers: from the middle',
       L("A choir has only sopranos, altos and tenors. There are three times as many sopranos as altos, and there are more tenors than sopranos. The choir has sixty-three singers in total. Which of the following can be the number of sopranos?", pt('stem', 'A choir has only', 'hl', 13.0), voice='calm', pause=0.5),
@@ -970,28 +994,31 @@ video('solve-wp21-g015', 'solution', qid='wp21-g015', slides=[
 # Hebrew wp 488-493: understanding min-max shortens the tries, e.g. to maximize one, give the others the minimum; the
 # nuances come in the questions. English: the three rules on one board (exam evidence in real_exam/audit_t21.md), each
 # with its why and two examples (new numbers), and why rules 2 and 3 only sound opposite.
-x0 = I('x0', 'Max of one $\\to$ give the others the least', size=30)
-x0a = IH('x0a', '3 different: $\\ 1+2+23=26$', size=30)
-x0b = IH('x0b', '4 different: $\\ 1+2+3+14=20$', size=30)
-x1 = I('x1', 'Min of the biggest $\\to$ share as equally as you can', size=30)
+x0 = I('x0', 'Max of one:', size=30)
+x0c = I('x0c', 'give the others the least', size=30)
+x0a = IH('x0a', '3 different: $\\ 1+2=3$, $\\ 26-3=23$', size=30)
+x0b = IH('x0b', '4 different: $\\ 1+2+3=6$, $\\ 20-6=14$', size=30)
+x1 = I('x1', 'Min of the biggest:', size=30)
+x1c = I('x1c', 'share as equally as you can', size=30)
 x1a = IH('x1a', '$26\\div3=8$, $\\ 2$ left: $\\ 9+9+8=26$', size=30)
 x1b = IH('x1b', '$30\\div4=7$, $\\ 2$ left: $\\ 8+8+7+7=30$', size=30)
-x2 = I('x2', 'Min of one $\\to$ give the others the most', size=30)
-x2a = IH('x2a', 'at most 10: $\\ 10+10+6=26$', size=30)
-x2b = IH('x2b', 'at most 10: $\\ 10+10+10+1=31$', size=30)
+x2 = I('x2', 'Min of one:', size=30)
+x2c = I('x2c', 'give the others the most', size=30)
+x2a = IH('x2a', 'at most 10: $\\ 10+10=20$, $\\ 26-20=6$', size=30)
+x2b = IH('x2b', 'at most 10: $\\ 10+10+10=30$, $\\ 31-30=1$', size=30)
 video('wp-016', 'lesson', slides=[
     S('More Minimum & Maximum',
       L("Welcome back. Now more minimum and maximum. When we understand which way to push, we need far fewer tries.")),
     S('Push one up',
       L("Here are three rules that come up again and again. Each one tells us which way to push."),
-      L("The first rule makes one number as big as possible. To do that, we give all the others the least they're allowed. Three different positive whole numbers add up to twenty-six. How big can the biggest be? The other two get the least, one and two. Twenty-six minus three leaves twenty-three.", show(x0, 'The first rule'), show(x0a, 'Twenty-six minus three')),
-      L("Why does it work? The total is fixed. Every bit we take from the others goes to the one we want to grow. Here's another example. Four different positive numbers add up to twenty. The others get one, two and three, that's six. So the biggest can be twenty minus six, fourteen.", show(x0b, 'Four different positive numbers'))),
+      L("The first rule makes one number as big as possible. To do that, we give all the others the least they're allowed. Three different positive whole numbers add up to twenty-six. How big can the biggest be? The other two get the least, one and two. Twenty-six minus three leaves twenty-three.", show(x0, 'The first rule'), show(x0c, 'we give all the others the least'), show(x0a, 'The other two get the least')),
+      L("Why does it work? The total is fixed. Every bit we take from the others goes to the one we want to grow. Here's another example. Four different positive numbers add up to twenty. The others get one, two and three, that's six. So the biggest can be twenty minus six, fourteen.", show(x0b, 'The others get one, two and three'))),
     S('Push the biggest down',
-      L("The second rule makes the biggest number as small as possible. To do that, we share as equally as we can. Three whole numbers add up to twenty-six. Twenty-six divided by three is eight, with two left over. So the closest we can get is nine, nine and eight, and the biggest is at least nine.", show(x1, 'The second rule'), show(x1a, 'nine, nine and eight')),
+      L("The second rule makes the biggest number as small as possible. To do that, we share as equally as we can. Three whole numbers add up to twenty-six. Twenty-six divided by three is eight, with two left over. So the closest we can get is nine, nine and eight, and the biggest is at least nine.", show(x1, 'The second rule'), show(x1c, 'we share as equally'), show(x1a, 'nine, nine and eight')),
       L("Why does it work? If we make one number smaller, another one has to grow. The biggest can never be smaller than an equal share. Here's another example. Four numbers add up to thirty. Thirty divided by four is seven, with two left over. So eight, eight, seven and seven, and the biggest is at least eight.", show(x1b, 'Four numbers add up to thirty'))),
     S('Push one down',
-      L("The third rule makes one number as small as possible. To do that, we give all the others the most they're allowed. Three test scores, each at most ten, add up to twenty-six. The other two get ten each, that's twenty. So the smallest can be twenty-six minus twenty, six.", show(x2, 'The third rule'), show(x2a, 'twenty-six minus twenty')),
-      L("Here's another example. Four scores, each at most ten, add up to thirty-one. Three of them get ten, that's thirty. So the smallest can be just one.", show(x2b, 'Four scores, each at most ten')),
+      L("The third rule makes one number as small as possible. To do that, we give all the others the most they're allowed. Three test scores, each at most ten, add up to twenty-six. The other two get ten each, that's twenty. So the smallest can be twenty-six minus twenty, six.", show(x2, 'The third rule'), show(x2c, 'we give all the others the most'), show(x2a, 'The other two get ten each')),
+      L("Here's another example. Four scores, each at most ten, add up to thirty-one. Three of them get ten, that's thirty. So the smallest can be just one.", show(x2b, 'Three of them get ten')),
       L("The second and third rules sound like opposites, but they aren't. In the second rule we push the biggest down, so the others can't pass it, and that's why we share equally. In the third rule we push one number down, so the others take as much as they can."),
       L("The nuances come in the questions. [pause] I'll see you in the next video.")),
 ])
@@ -1000,13 +1027,14 @@ video('wp-016', 'lesson', slides=[
 # Hebrew wp 495-544 (the math test 9-15, a third or more, 18 students): one student first - the shortest test and the
 # smallest share for the minimum, the longest test and ALL correct for the maximum ("a third or more"); then the last
 # digit (it saves a bit of time and a silly mistake). Here the last digit can't split the maximum: said honestly.
-y7a = IH('y7a', 'fewest: $\\ 10$ words, $\\ \\frac{1}{5}$ of $10=2$', size=30)
+y7a = IH('y7a', 'fewest: $\\ 10$ words, $\\ \\frac{1}{5}$ of $10=10\\div5=2$', size=30)
 y7b = IH('y7b', '$14\\cdot2=28$', size=30)
 y7c = IH('y7c', 'most: $\\ 25$ words, all correct', size=30)
-y7d = IH('y7d', '$14\\cdot25=10\\cdot25+4\\cdot25$', size=30)
-y7d2 = IH('y7d2', '$=250+100=350$', size=30)
+y7d = IH('y7d', '$14\\cdot25=10\\cdot25+4\\cdot25$', size=30, col=1)
+y7d2 = IH('y7d2', '$=250+100=350$', size=30, col=1)
 z7a = IH('z7a', '$14\\cdot2$: $\\ 4\\cdot2=8$ $\\to$ ends in $8$', size=30)
 z7b = IH('z7b', '$350$ and $140$ both end in $0$', size=30)
+z7c = IH('z7c', '$14\\cdot25=350$', size=30)
 video('solve-wp21-g017', 'solution', qid='wp21-g017', slides=[
     S('Method 1 · Understanding: push to the extremes',
       L("A spelling test has between ten and twenty-five words, inclusive. Each of fourteen students spells at least one fifth of the words correctly. What are the smallest and the largest possible totals of correctly spelled words in the class?", pt('stem', 'A spelling test', 'hl', 12.0), voice='calm', pause=0.5),
@@ -1029,7 +1057,7 @@ video('solve-wp21-g017', 'solution', qid='wp21-g017', slides=[
         mk('cross', 'choice 4', 'are out')),
       L("The most is the longest test, all twenty-five words, for each of fourteen students. Here the last digit can't help. Three hundred fifty and a hundred forty both end in zero.", show(z7b, 'both end in zero')),
       L("So here we simply multiply. Fourteen times twenty-five is three hundred fifty. The last digit helps only when the choices end in different digits. Choice number three is our answer, and I'll see you in the next question.",
-        mk('tick', 'choice 3', 'Choice number three is our answer'))),
+        show(z7c, 'Fourteen times twenty-five'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ wp21-g018 (piggy banks)
@@ -1066,14 +1094,15 @@ video('solve-wp21-g018', 'solution', qid='wp21-g018', slides=[
 # Added question (Hebrew: none; the worst-luck idea is the Hebrew pigeonhole of topic 20, which comes LATER in the plan).
 # NEW, full treatment: "to be sure" -> the worst luck, then one more; the warm-up (a pair: 3 can fail, 4 always works);
 # why plus one; a second example (four of one color -> 10); the trap "three red" at the step.
-k1a = IH('k1a', 'a pair: $\\ $red, blue, green $\\to$ no pair yet', size=30)
-k1b = IH('k1b', '$3$ can fail $\\quad 3+1=4$ always works', size=30)
+k1a = IH('k1a', 'red, blue, green: $\\ $no pair yet', size=30)
+k1b = IH('k1b', '$3$ can fail, $\\ 4$ always work', size=30)
 k1c = I('k1c', 'To be sure: $\\ $the worst luck $+\\ 1$', size=32)
 k1d = IH('k1d', '4 of a color: $\\ 3+3+3=9$', size=30, col=1)
 k1d2 = IH('k1d2', '$9+1=10$', size=30, col=1)
-k1e = IH('k1e', '$2+2+2=6$ $\\to$ no 3 of a color', size=30, col=1)
+k1e0 = IH('k1e0', '3 red ones: $\\ 8+6+3=17$', size=30)
+k1e = IH('k1e', '2 of each: $\\ 2+2+2=6$', size=30, col=1)
 k1f = IH('k1f', '$6+1=7$ ✓', size=30, col=1)
-k1g = IH('k1g', '$4$: $\\ 2$ red, $1$ blue, $1$ green ✗', size=30)
+k1g = IH('k1g', '$4$: $\\ 2$ red, $1$ blue, $1$ green: $\\ $no three', size=30)
 k1h = IH('k1h', '$7$: $\\ $at most $2+2+2=6<7$ ✓', size=30)
 video('solve-q-r26-t21-01', 'solution', qid='q-r26-t21-01', slides=[
     S('Method 1 · Understanding: the worst luck',
@@ -1085,7 +1114,7 @@ video('solve-q-r26-t21-01', 'solution', qid='q-r26-t21-01', slides=[
       L("But the fourth sock has to be red, blue or green. Whatever it is, it matches a sock she already has. So three socks can fail, and four always work.", show(k1b, 'So three socks can fail')),
       L("That's the rule for to be sure questions. Imagine the worst luck, the longest she can go without what she wants. Then add one more. Why plus one? The worst luck is the most socks she can take and still fail. One more sock, and failing is impossible.", show(k1c, "That's the rule")),
       L("Here's another example. To be sure of four socks of one color, the worst luck is three of each color. Three plus three plus three is nine socks. And still there are no four of one color. So she needs nine plus one, ten.", show(k1d, 'To be sure of four socks'), show(k1d2, 'So she needs nine plus one')),
-      L("Now our question, three of the same color. Careful, it's any color, not three red socks. For three red socks, all eight blue and all six green could come out first. Eight plus six plus three is seventeen. How long can she avoid it? With the worst luck she gets two of every color. Two plus two plus two is six socks. And still no color has three.", show(k1e, 'Two plus two plus two')),
+      L("Now our question, three of the same color. Careful, it's any color, not three red socks. For three red socks, all eight blue and all six green could come out first. Eight plus six plus three is seventeen. How long can she avoid it? With the worst luck she gets two of every color. Two plus two plus two is six socks. And still no color has three.", show(k1e0, 'Eight plus six plus three'), show(k1e, 'Two plus two plus two')),
       L("The seventh sock is red, blue or green, and that color reaches three. So six socks can fail, and seven always work. Choice number two is our answer.", show(k1f, 'The seventh sock'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('Method 2 · Plugging in the answers',
       L("[pause] Now let's plug in the answers. They ask for the smallest number that makes her sure. So we start from the smallest choice and go up. The first one that always works is the answer."),
@@ -1101,8 +1130,9 @@ video('solve-q-r26-t21-01', 'solution', qid='q-r26-t21-01', slides=[
 u9a = IH('u9a', 'gets: $\\ 3+2=5$ to $\\ 5+4=9$', size=30)
 u9b = IH('u9b', 'fewest left: $\\ 5-3=2$', size=30)
 u9c = IH('u9c', 'most left: $\\ 9-1=8$', size=30)
-u9d = IH('u9d', '$23\\cdot2=46$', size=30)
-u9e = IH('u9e', '$23\\cdot8=160+24=184$', size=30)
+u9d = IH('u9d', '$23\\cdot2=46$', size=30, col=1)
+u9e0 = IH('u9e0', '$20\\cdot8=160$, $\\ 3\\cdot8=24$', size=30, col=1)
+u9e = IH('u9e', '$23\\cdot8=160+24=184$', size=30, col=1)
 u9f = IH('u9f', '$23\\cdot2$: $\\ 3\\cdot2=6$ $\\to$ ends in $6$', size=30)
 u9g = IH('u9g', '$23\\cdot8$: $\\ 3\\cdot8=24$ $\\to$ ends in $4$', size=30)
 video('solve-wp21-g019', 'solution', qid='wp21-g019', slides=[
@@ -1118,7 +1148,7 @@ video('solve-wp21-g019', 'solution', qid='wp21-g019', slides=[
       L("Now all twenty-three children. The fewest is twenty-three times two, forty-six. So choice numbers one and four are out.", show(u9d, 'twenty-three times two'), mk('cross', 'choice 1', 'So choice numbers one and four'),
         mk('cross', 'choice 4', 'are out')),
       L("The most is twenty-three times eight. Twenty times eight is a hundred sixty. Three times eight is twenty-four. A hundred sixty plus twenty-four is a hundred eighty-four. Choice number two is our answer.",
-        show(u9e, 'Twenty times eight'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
+        show(u9e0, 'Twenty times eight'), show(u9e, 'A hundred sixty plus'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('Method 2 · Understanding: the last digit',
       L("[pause] Now with the last digit, which saves work and silly mistakes. Remember, the last digit of a product comes only from the last digits. The fewest is two tickets left for each of twenty-three children. Three times two is six, so the total ends in six.", show(u9f, 'Three times two is six')),
       L("Forty-six ends in six, and sixty-nine ends in nine. So choice numbers one and four are out.",
@@ -1137,8 +1167,9 @@ l0b = IH('l0b', 'Lior $34$: $\\ 2$ left $\\to$ $1$ and $1$, not different ✗', 
 l1a = IH('l1a', 'Noam $1$, $\\ $Maya $2$', size=30)
 l1b = IH('l1b', 'Lior: $\\ 36-3=33$', size=30)
 l1c = I('l1c', 'The biggest of three $>$ a third', size=30)
-l1d = IH('l1d', '$12, 12, 12$ ✗', size=30)
-l1d2 = IH('l1d2', '$13, 12, 11$ ✓', size=30)
+l1d0 = IH('l1d0', '$36\\div3=12$', size=30, col=1)
+l1d = IH('l1d', '$12, 12, 12$: $\\ $equal', size=30, col=1)
+l1d2 = IH('l1d2', '$13, 12, 11$: $\\ 13+12+11=36$ ✓', size=30, col=1)
 video('solve-wp21-g020', 'solution', qid='wp21-g020', slides=[
     S('Method 1 · Plugging in the answers: which one first',
       L("Lior, Maya and Noam share thirty-six cards. Their numbers of cards are different positive whole numbers, with Lior having the most and Noam the fewest. What are the smallest and the largest possible numbers of cards Lior has?", pt('stem', 'Lior, Maya and Noam', 'hl', 11.0), voice='calm', pause=0.5),
@@ -1155,7 +1186,7 @@ video('solve-wp21-g020', 'solution', qid='wp21-g020', slides=[
       L("Lior gets the rest. Thirty-six minus three is thirty-three, so the most is thirty-three.",
         show(l1b, 'Thirty-six minus three')),
       L("The smallest needs a bit more thought. When two people share and one has more, he has more than half. In the same way, when three people share, the one with the most has more than a third. Why is that true? Because if he had a third or less, the other two have even less, and together they can't reach the total.", show(l1c, 'more than a third')),
-      L("A third of thirty-six is twelve. If all three had twelve, the numbers would be equal, and that's not allowed. So Lior needs more than twelve. Let's move one card from Noam to Lior. Now it's thirteen, twelve and eleven. They're different. And thirteen plus twelve plus eleven is thirty-six.", show(l1d, 'If all three had twelve'), show(l1d2, "Now it's thirteen")),
+      L("A third of thirty-six is twelve. If all three had twelve, the numbers would be equal, and that's not allowed. So Lior needs more than twelve. Let's move one card from Noam to Lior. Now it's thirteen, twelve and eleven. They're different. And thirteen plus twelve plus eleven is thirty-six.", show(l1d0, 'A third of thirty-six'), show(l1d, 'If all three had twelve'), show(l1d2, "Now it's thirteen")),
       L("So Lior has thirteen to thirty-three cards. Choice number four is our answer, and I'll see you in the next question.", mk('tick', 'choice 4', 'Choice number four is our answer'))),
 ])
 
@@ -1168,14 +1199,16 @@ video('solve-wp21-g020', 'solution', qid='wp21-g020', slides=[
 o1a = IH('o1a', '$26\\cdot3=20\\cdot3+6\\cdot3$', size=30)
 o1a2 = IH('o1a2', '$=60+18=78$', size=30)
 o1b = IH('o1b', '$90-78=12$ spare', size=30)
-o1c = IH('o1c', 'at most $12$ go up $\\to$ at least $26-12=14$ stay at $3$', size=30)
+o1c = IH('o1c', '$12$ spares: $\\ $at most $12$ go up', size=30)
+o1c2 = IH('o1c2', 'at least $26-12=14$ stay at $3$', size=30)
+o1d = IH('o1d', '$13<14$: $\\ 13$ is impossible', size=30, col=1)
 o2a = IH('o2a', '$25\\cdot3=75$, $\\ 90-75=15$ for the last child', size=30)
 o2b = I('o2b', '$14, 15, 16, \\ldots, 25$: $\\ $steps of $1$, no holes', size=30)
 o2c = IH('o2c', '$13, 14, 17, 20$ $\\to$ $13$ or $20$', size=30)
 o2d = IH('o2d', '$20\\cdot3=60$, $\\ 30$ for $6$: $\\ 5$ each ✓', size=30)
 o2e = I('o2e', 'Fixed jumps leave holes: $\\ $the chip $14, 18, 22$', size=30)
-o3a = IH('o3a', 'all $26$ at $3$: $\\ 78\\ne90$ ✗', size=30)
-o3b = IH('o3b', '$25$ at $3$: $\\ 75+15=90$ ✓', size=30)
+o3a = IH('o3a', 'all $26$ at $3$: $\\ 26\\cdot3=78\\ne90$ ✗', size=30)
+o3b = IH('o3b', '$25$ at $3$: $\\ 25\\cdot3=75$, $\\ 75+15=90$ ✓', size=30)
 video('solve-wp21-g021', 'solution', qid='wp21-g021', slides=[
     S('Method 1 · Understanding: the spare stickers',
       L("Ninety stickers are shared among twenty-six children, and every child gets at least three stickers. Which number cannot be the number of children who get exactly three stickers?", pt('stem', 'Ninety stickers', 'hl', 9.0),
@@ -1184,8 +1217,8 @@ video('solve-wp21-g021', 'solution', qid='wp21-g021', slides=[
       L("[short pause] Let's start with the spare stickers. First we fill every child up to the minimum, three each. To get twenty-six times three, we take twenty times three, which is sixty. Then we add six times three, which is eighteen. Sixty plus eighteen is seventy-eight stickers.", show(o1a, 'To get twenty-six times three'), show(o1a2, 'Sixty plus eighteen')),
       L("Ninety minus seventy-eight leaves twelve spare stickers.", show(o1b, 'Ninety minus seventy-eight')),
       L("A child gets more than three only if at least one spare sticker goes to that child. Twelve spares can lift at most twelve children. So at least twenty-six minus twelve, fourteen children get exactly three.",
-        show(o1c, 'Twelve spares can lift')),
-      L("Thirteen is less than fourteen, so thirteen is impossible. Choice number two is our answer.",
+        show(o1c, 'Twelve spares can lift'), show(o1c2, 'So at least twenty-six minus twelve')),
+      L("Thirteen is less than fourteen, so thirteen is impossible. Choice number two is our answer.", show(o1d, 'Thirteen is less than fourteen'),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('Method 2 · Understanding: only the ends',
       L("[pause] Now by looking at the ends of the range. The smallest count is fourteen, as the spares showed. The biggest is twenty-five. Twenty-five children get three each, that's seventy-five, and the last child gets ninety minus seventy-five, fifteen. All twenty-six can't get three, because that's only seventy-eight.",
@@ -1206,10 +1239,10 @@ video('solve-wp21-g021', 'solution', qid='wp21-g021', slides=[
 # Added question. REMINDER: must = every allowed case, one failing case rules a choice out (topic 1). NEW at the step: the
 # cheapest list 1..5 = 15 and the five spare (from g007 / g021); proving the survivor with the min-max bound.
 mt1 = IH('mt1', '$1+2+3+4+5=15$ $\\to$ $5$ left', size=30)
-mt2 = IH('mt2', '$1, 2, 3, 4, 10$: $\\ $largest $10$ ✗', size=30)
-mt3 = IH('mt3', '$2, 3, 4, 5, 6$: $\\ $no $1$ ✗', size=30)
-mt4 = IH('mt4', '$1, 3, 4, 5, 7=20$: $\\ $one even ✗', size=30)
-mt5 = I('mt5', 'largest $\\le5$ $\\to$ only $1, 2, 3, 4, 5$', size=30)
+mt2 = IH('mt2', '$1, 2, 3, 4, 10$: $\\ $largest $10$, not $\\le9$', size=30)
+mt3 = IH('mt3', '$2, 3, 4, 5, 6$: $\\ $no $1$', size=30, col=1)
+mt4 = IH('mt4', '$1, 3, 4, 5, 7=20$: $\\ $one even ✗', size=30, col=1)
+mt5 = IH('mt5', 'largest $\\le5$ $\\to$ only $1, 2, 3, 4, 5$', size=30)
 mt5b = IH('mt5b', '$1+2+3+4+5=15\\ne20$ ✗', size=30)
 mt6 = IH('mt6', '$2, 3, 4, 5, 6$: $\\ $largest $6$ ✓', size=30)
 video('solve-q-r26-t21-02', 'solution', qid='q-r26-t21-02', slides=[
@@ -1244,7 +1277,7 @@ cy4 = I('cy4', 'Last digit of $3^{22}$?', size=30)
 cy5 = IH('cy5', '$3, 9, 27, 81, 243$', size=30)
 cy5b = IH('cy5b', 'last digits: $\\ 3, 9, 7, 1, 3$', size=30)
 cy6 = IH('cy6', '$22=20+2$ $\\to$ 2nd in the cycle $\\to$ $9$', size=30)
-cy7 = I('cy7', '$3^{20}$: $\\ 20=5\\cdot4+0$ $\\to$ the last one in the cycle $\\to$ $1$', size=30)
+cy7 = IH('cy7', '$3^{20}$: $\\ 20=5\\cdot4+0$ $\\to$ the last one in the cycle $\\to$ $1$', size=30)
 cy8 = IH('cy8', '$2^{10}$: $\\ 2, 4, 8, 6$; $\\ 10=8+2$ $\\to$ $4$ ($1024$)', size=30)
 video('wp-022', 'lesson', slides=[
     S('Patterns & Cycles',
@@ -1273,7 +1306,8 @@ b3a = IH('b3a', 'Day 1: $\\ 40\\cdot2=80$,', size=30)
 b3a2 = IH('b3a2', '$80-30=50$', size=30)
 b3b = IH('b3b', 'Day 2: $\\ 50\\cdot2=100$, $\\ 100-30=70$', size=30)
 b3c = IH('b3c', 'Day 3: $\\ 70\\cdot2=140$', size=30)
-b3d = I('b3d', 'before the removal: $\\ 140$ $\\quad$ ($140-30=110$ is after)', size=30)
+b3d = IH('b3d', 'before the removal: $\\ 140$', size=30, col=1)
+b3e = IH('b3e', '$140-30=110$: $\\ $after, the trap', size=30, col=1)
 video('solve-wp21-g023', 'solution', qid='wp21-g023', slides=[
     S('Method 1 · The math way: listing',
       L("A lab dish has forty bacteria at the start of day one. During each day the number of bacteria doubles, and at the end of each day thirty bacteria are removed for testing. How many bacteria are in the dish on day three, just before that day's removal?", pt('stem', 'A lab dish', 'hl', 12.0), voice='calm', pause=0.5),
@@ -1283,7 +1317,7 @@ video('solve-wp21-g023', 'solution', qid='wp21-g023', slides=[
         show(b3b, 'So day two starts')),
       L("Day three starts with seventy. It doubles, and seventy times two is a hundred forty.",
         show(b3c, 'Day three starts with seventy')),
-      L("Now wait a moment. In pattern questions, the edges are where the trap is. They ask for day three just before that day's removal. So we don't take away the thirty. A hundred ten would be the number after the removal, and that's the trap.", show(b3d, 'So we don')),
+      L("Now wait a moment. In pattern questions, the edges are where the trap is. They ask for day three just before that day's removal. So we don't take away the thirty. A hundred ten would be the number after the removal, and that's the trap.", show(b3d, 'So we don'), show(b3e, 'A hundred ten would be')),
       L("So always ask yourself two things. Does the start include this step? Does the end include that one? Inside the list everything repeats, so the trouble is always at the edges."),
       L("There are a hundred forty bacteria. Choice number two is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
@@ -1302,7 +1336,8 @@ for _k, _it in fl.items():
 f4a = IH('f4a', '$3, 8, 13, 18, 23, 28, 33, 38, 43$ ✓', size=30)
 f4b = IH('f4b', '$3=0+3$ $\\quad 8=5+3$ $\\quad 13=10+3$', size=30)
 f4c = I('f4c', 'Every red flag leaves remainder $3$ when divided by $5$', size=30)
-f4d = IH('f4d', '$43=40+3$ ✓ $\\quad 41, 42, 44$: $\\ 1, 2, 4$ ✗', size=30)
+f4d = IH('f4d', '$43=40+3$ ✓', size=30)
+f4e = IH('f4e', '$41, 42, 44$: $\\ $remainders $1, 2, 4$', size=30)
 video('solve-wp21-g024', 'solution', qid='wp21-g024', slides=[
     S('Method 1 · The math way: listing',
       L("Sixty flags hang in a row along a street. In every group of five neighboring flags, exactly one is red. Flag three is red. Which flag can also be red?", pt('stem', 'Sixty flags', 'hl', 9.0), voice='calm', pause=0.5),
@@ -1319,19 +1354,22 @@ video('solve-wp21-g024', 'solution', qid='wp21-g024', slides=[
         show(f4b, 'Three is zero plus three')),
       L("So every red flag leaves remainder three when we divide by five. We look for the choice that leaves three.",
         show(f4c, 'So every red flag')),
-      L("Choice number three, forty-three, is forty plus three. It leaves three, so it's red. Forty-one leaves one, forty-two leaves two, and forty-four leaves four. Choice number three is our answer, and I'll see you in the next question.", show(f4d, 'is forty plus three'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
+      L("Choice number three, forty-three, is forty plus three. It leaves three, so it's red. Forty-one leaves one, forty-two leaves two, and forty-four leaves four. Choice number three is our answer, and I'll see you in the next question.", show(f4d, 'is forty plus three'), show(f4e, 'Forty-one leaves one'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ wp21-g025 (buses)
 # Hebrew wp 986-1065 (coffee every 12 and 15 minutes): work neatly, list both; it takes long to find every match; the
 # shortcut: the common multiple, found by jumping along the BIGGER number (fewer jumps); 8:00 counts as the first time.
 # REMINDER: the least common multiple (topic 2). NEW: items and gaps (four times = three gaps).
-bs1 = IH('bs1', 'Line 5: $\\ 6{:}40,\\ 6{:}56,\\ 7{:}12,\\ 7{:}28,\\ 7{:}44,\\ 8{:}00$', size=28)
-bs2 = IH('bs2', 'Line 9: $\\ 6{:}40,\\ 7{:}00,\\ 7{:}20,\\ 7{:}40,\\ 8{:}00$', size=28)
-bs3 = IH('bs3', 'together: $\\ 6{:}40$ and $8{:}00$ $\\to$ every $80$ minutes', size=28)
-bs5 = IH('bs5', '4 times, 3 gaps: $\\ 6{:}40\\to8{:}00\\to9{:}20\\to10{:}40$', size=28)
+bs1 = IH('bs1', 'Line 5: $\\ 6{:}40,\\ 6{:}56,\\ 7{:}12,\\ 7{:}28,\\ 7{:}44,\\ 8{:}00$', size=30)
+bs2 = IH('bs2', 'Line 9: $\\ 6{:}40,\\ 7{:}00,\\ 7{:}20,\\ 7{:}40,\\ 8{:}00$', size=30)
+bs3 = IH('bs3', 'together: $\\ 6{:}40$ and $8{:}00$, every $80$ minutes', size=30)
+bs5 = IH('bs5', '4 times, 3 gaps', size=30)
+bs6 = IH('bs6', '$8{:}00$ 2nd, $\\ 9{:}20$ 3rd, $\\ 10{:}40$ 4th', size=30)
 bt1 = IH('bt1', '$20, 40, 60, 80$: $\\ 80=5\\cdot16$ ✓', size=30)
-bt2 = IH('bt2', '$6{:}40+80$ min $=8{:}00$, $\\ 9{:}20$, $\\ 10{:}40$', size=30)
+bt2 = IH('bt2', '$80$ min $=1$ h $20$ min', size=30)
+bt3 = IH('bt3', '$6{:}40+1{:}20=8{:}00$', size=30)
+bt4 = IH('bt4', 'then $9{:}20$, then $10{:}40$', size=30)
 video('solve-wp21-g025', 'solution', qid='wp21-g025', slides=[
     S('Method 1 · The math way: listing',
       L("Two buses leave a station together at six forty. Line five leaves every sixteen minutes, and line nine leaves every twenty minutes. Counting six forty as the first time they leave together, when do they leave together for the fourth time?", pt('stem', 'Two buses leave', 'hl', 12.0), voice='calm', pause=0.5),
@@ -1343,19 +1381,20 @@ video('solve-wp21-g025', 'solution', qid='wp21-g025', slides=[
     S('Method 1 · Four times, three gaps',
       L("So they meet again at eight o'clock. From six forty to eight o'clock is an hour and twenty minutes, eighty minutes. And at eight o'clock both start together again, so the same thing repeats. They meet every eighty minutes.", show(bs3, 'They meet every eighty')),
       L("Now careful with the count. Six forty is already the first time. Four times have only three gaps between them. So eight o'clock is the second time, nine twenty is the third, and ten forty is the fourth. This idea comes back a lot. Ten posts in a row have only nine gaps between them. So when you count times or items, count the gaps separately.",
-        show(bs5, 'Four times have only three gaps')),
+        show(bs5, 'Four times have only three gaps'), show(bs6, 'So eight o')),
       L("Nine twenty is the trap, because that's only the third time. Choice number three is our answer. But listing every match takes a long time, so let's see a faster way.", mk('tick', 'choice 3', 'Choice number three is our answer')),
       sb='Method 1 · The math way: listing'),
     S('Method 2 · The math way: a common multiple',
       L("[pause] Now with a common multiple. When do two repeating things meet again? After a number of minutes that divides both by sixteen and by twenty."),
       L("The easy way is to take the bigger gap, twenty, and jump by it. We get twenty, forty, sixty and eighty. Twenty, forty and sixty don't divide by sixteen. Eighty is five times sixteen, so eighty divides by both sixteen and twenty.", show(bt1, 'We get twenty, forty')),
       L("Why the bigger one? Because it takes fewer jumps. Jumping by sixteen, we'd need five jumps to reach eighty. Jumping by twenty, only four."),
-      L("So they leave together every eighty minutes, and the fourth time is three gaps after six forty. Eighty minutes is an hour and twenty minutes. Six forty plus an hour and twenty is eight o'clock, then nine twenty, then ten forty. Choice number three is our answer, and I'll see you in the next question.", show(bt2, 'Six forty plus an hour'),
+      L("So they leave together every eighty minutes, and the fourth time is three gaps after six forty. Eighty minutes is an hour and twenty minutes. Six forty plus an hour and twenty is eight o'clock, then nine twenty, then ten forty. Choice number three is our answer, and I'll see you in the next question.", show(bt2, 'Eighty minutes is an hour'), show(bt3, 'Six forty plus an hour'), show(bt4, 'then nine twenty'),
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
 # carry-over boxes on the continuation slides (V2): the next step uses these results
-CARRY21 = {'solve-wp21-g015': {1: ['(1), (2), (3) work $\\to$ (4)']},
+CARRY21 = {'solve-wp21-g015': {1: ['(1), (2), (3) work, so (4)']},
+           'solve-wp21-g007': {2: ['$1+2+\\ldots+k=k(k+1)\\div2$']},
            'solve-wp21-g010': {1: ['$n=3$: only (1) gives $35$']}}
 # =================================================================================================================
 # Extra-visual pass (about one event every 2-4 s): in a solution video every spoken "number N" that has no cue on that
@@ -1652,6 +1691,11 @@ for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _ste
 # 2026-10-13 carry-over boxes (V2) and the layer-order check (V1): after the visual passes, like topics 13-18
 import types as _types
 MV.carry(_types.SimpleNamespace(**globals()), CARRY21)
+for _v in CARRY21:                                      # 2026-10-18 visual check: the So-far box at a readable size
+    for _sl in VIDEOS[_v]['slides']:
+        for _ln in _sl['lines']:
+            for _c in _ln['cues']:
+                if _c[0] == 'show' and _c[1].get('keep'): _c[1]['size'] = 30
 MV.calm(_types.SimpleNamespace(**globals()), ORDER)     # 2026-10-13 steady highlights (visual only)
 _lp = [(v, p) for v in ORDER for p in MV.check_layers(VIDEOS[v])]
 assert not _lp, ('figure layers out of order', _lp)

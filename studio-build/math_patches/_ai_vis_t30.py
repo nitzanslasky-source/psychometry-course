@@ -302,6 +302,7 @@ def vis(vid):
                     it = c[1]; d = placed[id(it)]
                     _h = None if (vid, si + 1) in _GH.NOHAND else (it['_hand'] or _GH.auto(vid, it, si))      # 2026-10-18: geometry worked lines hand-written (_geo_hand.py)
                     if _h and not it['_hand']: d = dict(d, _hwsize=d.get('size', 36))
+                    if _h and vid not in _GH.FROZEN: _h = _GH.no_cross(_h)
                     cs.append(('write', d, c[2], _h) if _h else ('show', d, c[2]))
                 elif c[0] == 'point':
                     x = ('point', _target(vid, names, si, c[1]), c[2])

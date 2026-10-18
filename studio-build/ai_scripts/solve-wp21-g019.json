@@ -20,7 +20,7 @@
    {
     "say": "[short pause] Let's start with one child. How many tickets does a child get in total? Three to five at the first booth, plus two to four at the second. The least is three plus two, five. The most is five plus four, nine.",
     "at": [
-     "Three to five",
+     "Let's start",
      "The least is three plus two",
      "The most is"
     ]
@@ -53,6 +53,8 @@
      "The most is",
      "Twenty times eight",
      "Three times eight is",
+     "A hundred sixty plus",
+     "is a hundred eighty-four",
      "Choice number two is our answer"
     ]
    }

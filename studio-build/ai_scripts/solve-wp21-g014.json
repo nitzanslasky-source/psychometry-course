@@ -77,16 +77,15 @@
     "at": [
      "Now by",
      "must divide by three",
-     "doesn't divide by",
-     "so choice number four is out"
+     "so choice number four is out",
+     "out, without any"
     ]
    },
    "This works in general. If something is twice another whole number, it must be even. If it's three times another whole number, it must divide by three. That's a quick way to rule out choices.",
    {
     "say": "Now where does the range end? Let's look at the border case, where the tenors are exactly equal to the sopranos. Then for every alto there are three sopranos and three tenors. One plus three plus three is seven singers for every alto.",
     "at": [
-     "One plus three plus three",
-     "is seven singers"
+     "One plus three plus three"
     ]
    },
    {
@@ -100,7 +99,7 @@
     "say": "But there must be more tenors than that. The total stays sixty-three, so more tenors leave fewer singers for the altos and the sopranos. So the sopranos must be fewer than twenty-seven. This is a useful habit. When a given says more than, first look at the case where it's exactly equal. That's the border, and the answer is on one side of it.",
     "at": [
      "So the sopranos must be fewer",
-     "fewer than twenty-seven"
+     "This is a"
     ]
    },
    {

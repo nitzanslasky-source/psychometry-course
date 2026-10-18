@@ -30,7 +30,7 @@
     "say": "Line nine leaves every twenty minutes. Six forty, seven o'clock, seven twenty, seven forty, and eight o'clock.",
     "at": [
      "Line nine leaves every",
-     "twenty, seven forty"
+     "Six forty, seven"
     ]
    }
   ],
@@ -47,7 +47,9 @@
     "at": [
      "Now careful with",
      "Four times have only three gaps",
-     "second time, nine"
+     "gaps between them",
+     "So eight o",
+     "the third, and"
     ]
    },
    {
@@ -75,7 +77,10 @@
    {
     "say": "So they leave together every eighty minutes, and the fourth time is three gaps after six forty. Eighty minutes is an hour and twenty minutes. Six forty plus an hour and twenty is eight o'clock, then nine twenty, then ten forty. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
+     "Eighty minutes is an hour",
+     "and twenty minutes",
      "Six forty plus an hour",
+     "and twenty is",
      "then nine twenty",
      "Choice number three is our answer"
     ]

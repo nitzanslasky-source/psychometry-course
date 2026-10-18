@@ -303,6 +303,7 @@ def vis(vid):
                     it = c[1]; d = placed[id(it)]
                     _h = None if (vid, si + 1) in _GH.NOHAND else (it['_hand'] or _GH.auto(vid, it, si))      # 2026-10-18: geometry worked lines hand-written (_geo_hand.py)
                     if _h and not it['_hand']: d = dict(d, _hwsize=d.get('size', 36))
+                    if _h and vid not in _GH.FROZEN: _h = _GH.no_cross(_h)
                     cs.append(('write', d, c[2], _h) if _h else ('show', d, c[2]))
                 elif c[0] == 'point':
                     x = ('point', _target(vid, names, si, c[1]), c[2])
@@ -1023,8 +1024,7 @@ video('geo-074', 'lesson', slides=[
         "know which is which.",
         show(f1disk['exam'], 'They say circle for both'))),
     S('Radius',
-      L("First, let's look at a radius. A radius is a straight line from the center of the circle to any point on the circle. We call "
-        "the center O. Here's a radius, from O to the circle. We usually mark the radius with the letter r.",
+      L("First, let's look at a radius. A radius is a straight line segment from the center of the circle to any point on the circle. We call the center O. Here's a radius, from O to the circle. We usually mark the radius with the letter r.",
         show(f1rad['line'], 'We call the center O'), show(f1rad['r1'], "Here's a radius"),
         show(f1rad['rl'], 'with the letter r')),
       L("All the radii of one circle are equal. Even if I draw more lines from the center to the circle, they're all "
@@ -1048,9 +1048,7 @@ video('geo-074', 'lesson', slides=[
         show(f1iso['t2'], 'Narrow, wide'), show(f1iso['t3'], 'or very wide'),
         show(f1iso['lab'], 'Two radii and the chord between them'))),
     S('Chord',
-      L("Now let's join two points on the circle with a straight line. A line like that is called a chord. Let's mark "
-        "two points on the circle, A and B, and join them. That's a chord. Two more points, C and D. Join them. That's "
-        "also a chord.",
+      L("Now let's join two points on the circle with a straight line segment. That segment is called a chord. Let's mark two points on the circle, A and B, and join them. That's a chord. Two more points, C and D. Join them. That's also a chord.",
         show(f1chord['line'], "Let's mark two points"), show(f1chord['ab'], 'A and B, and join them'),
         show(f1chord['cd'], 'Two more points')),
       L("We can draw as many chords as we like in a circle. Chords don't have to have the same length. A chord can be "
@@ -2387,13 +2385,12 @@ video('geo-079', 'lesson', slides=[
     S('π is a number',
       L("So pi is a number. It's a fixed number, always the same. It's not an unknown like x or y in an equation.",
         show(f3b7, "It's a fixed number")),
-      L("It just isn't a round number. Its digits after the point never end, so instead of writing them, we give it a "
-        "special sign, the letter pi. That's easier to write and easier to see in the formula.", pt('f3b7', 'It just isn')),
+      L("It just isn't a round number. Its digits after the decimal point never end, so instead of writing them, we give it a special sign, the letter pi. That's easier to write and easier to see in the formula.", pt('f3b7', 'It just isn')),
       L("So the area, pi r squared, is a bit more than three times r squared. For a rough comparison, like the next one, "
         "that's all we need to know about pi. It's a bit more than three.", show(f3b8, 'is a bit more than three times')),
       L("For example, is four pi more than twelve? Four times three is twelve, and pi is a bit more than three, so four pi is "
         "a bit more than twelve. Yes.", show(f3b9, 'is four pi more than twelve')),
-      L("And when the answers have pi in them, keep the pi. Don't change it into a number.", show(f3b10, 'keep the pi'))),
+      L("And when the answers have pi in them, keep the pi. Don't replace it with a rounded decimal.", show(f3b10, 'keep the pi'))),
     S('From the radius',
       L("Let's see simple examples. Say the radius is six.", show(f3a3['line'], "Let's see simple examples"), show(f3a3['r6'], 'Say the radius is six')),
       L("The area is pi r squared, so pi times six squared. Six squared is thirty-six, so the area is thirty-six pi.",
@@ -4727,8 +4724,7 @@ video('geo-097-after', 'lesson', slides=[
       L("So the outer radius is root two times the inner radius. Now the areas. The small circle is pi times one squared, "
         "which is pi. The big circle is pi times root two squared. Root two squared is two, so that's two pi.",
         show(f7t5, 'So the outer radius'), show(f7t3, 'The small circle is pi'), show(f7t3b, 'The big circle is pi')),
-      L("So again, the outer circle's area is exactly twice the inner circle's area. That fits the scaling rule we know. "
-        "Every length is root two times bigger. So the area is root two squared times bigger, which is two.",
+      L("So again, the outer circle's area is exactly twice the inner circle's area. That fits the scaling rule we know. Every length is multiplied by root two. So the area is multiplied by root two squared, which is two.",
         show(f7t4, "the outer circle's area"))),
     S('Triangle, circle, triangle',
       L("The third one is triangle, circle, triangle. Here both triangles must be equilateral. A circle inside the big "
@@ -4748,9 +4744,8 @@ video('geo-097-after', 'lesson', slides=[
     S('Length factor, area factor',
       L("Now, this is important. A length factor isn't an area factor. The area factor is the length factor, squared.",
         show(f7t9, 'The area factor is the length factor')),
-      L("In the first two arrangements, every length grows root two times. So the areas grow two times. In the triangle "
-        "arrangement, every length grows two times. So the areas grow four times.",
-        show(f7t10, 'In the first two arrangements'), show(f7t10b, 'So the areas grow two times'),
+      L('In the first two arrangements, every length is multiplied by root two. So the areas are multiplied by two. In the triangle arrangement, every length is multiplied by two. So the areas are multiplied by four.',
+        show(f7t10, 'In the first two arrangements'), show(f7t10b, 'So the areas are multiplied by two'),
         show(f7t10c, 'In the triangle arrangement')),
       L("So remember the three area ratios, the outer area over the inner area. They are two, two, and four. Take a moment to "
         "memorize this. [pause] Okay. I'll see you in the next video.", show(f7t11, 'the outer area over the inner area'))),
@@ -4863,19 +4858,14 @@ video('solve-geo33-g098', 'solution', qid='geo33-g098', slides=[
       L("So they want the two bold arcs together, A G and E D. We'll find them with the math way, using central angles.",
         pt('stem', 'So they want the two bold arcs'))),
     SM('Central angles', 'The central angles',
-      L("[short pause] Here's the figure again, bigger. To find the length of an arc here, we need its central angle. But "
-        "no central angle stands on arc A G, or on arc E D. So let's draw radii that give us central angles. Let's draw "
-        "the radius O A and the radius O D.",
+      L("[short pause] Here's the figure again, bigger. To find the length of an arc here, we need its central angle. But no central angle is drawn on arc A G, or on arc E D. So let's draw radii that give us central angles. Let's draw the radius O A and the radius O D.",
         show(f8g98['line'], "Here's the figure again"), show(f8g98['arcs'], 'on arc A G, or on arc E D'),
         show(f8g98['radii'], "Let's draw the radius O A")),
-      L("Now let's use the givens. Angle B is twenty-eight degrees. Which arc does it stand on? On A G plus G F, so on the "
-        "whole arc A F. An inscribed angle doesn't give us a central angle directly. But remember, the central angle on "
-        "the same arc is twice as big.", show(f8g98['af'], 'Angle B is twenty-eight degrees')),
+      L("Now let's use the givens. Angle B is twenty-eight degrees. Which arc does it intercept? On A G plus G F, so on the whole arc A F. An inscribed angle doesn't give us a central angle directly. But remember, the central angle on the same arc is twice as big.", show(f8g98['af'], 'Angle B is twenty-eight degrees')),
       L("No central angle is drawn on arc A F, so let's draw one more radius, O F. Now angle A O F is two times "
         "twenty-eight. That's fifty-six degrees.", show(f8g98['of'], 'one more radius, O F'),
         show(f8x98r1, 'Now angle A O F is two times'), show(f8g98['of56'], "That's fifty-six degrees")),
-      L("Next, angle C is fifty-seven degrees, and it stands on arc F D. The central angle on that arc is twice as big. "
-        "Two times fifty-seven is a hundred fourteen degrees.", show(f8g98['fd'], 'angle C is fifty-seven'),
+      L('Next, angle C is fifty-seven degrees, and it intercepts arc F D. The central angle on that arc is twice as big. Two times fifty-seven is a hundred fourteen degrees.', show(f8g98['fd'], 'angle C is fifty-seven'),
         show(f8x98r2, 'Two times fifty-seven'), show(f8g98['fd114'], 'is a hundred fourteen degrees')),
       L("That's a lot of givens and a lot of lines. We've used B and C, so let's keep only what we need now. We need the "
         "two angles at the ends, angle A O G and angle E O D. We can't find each one alone. But we can find their sum.",
@@ -5242,9 +5232,7 @@ video('solve-geo33-g101', 'solution', qid='geo33-g101', slides=[
       L("That's not sixty-five pi, it's too small. We need a bigger shaded area, so a bigger radius. So three is out, and "
         "two is out too.", mk('cross', 'choice 3', 'So three is out'), mk('cross', 'choice 2', 'and two is out too'))),
     SM('Method 2 · Plugging in the answers', 'Now try four',
-      L("Three gave fifty-five pi, too small, so two and three are out. We need sixty-five pi. Let's try four. The small "
-        "diameter is eight, so the big diameter is eight plus ten, so the big diameter is eight plus ten, "
-        "eighteen. The big radius is nine.", show(f8x1v0, 'Three gave fifty-five pi'), mk('cross', 'choice 3', 'so two and three are out'),
+      L("Three gave fifty-five pi, too small, so two and three are out. We need sixty-five pi. Let's try four. The small diameter is eight, so the big diameter is eight plus ten, eighteen. The big radius is nine.", show(f8x1v0, 'Three gave fifty-five pi'), mk('cross', 'choice 3', 'so two and three are out'),
         mk('cross', 'choice 2', 'so two and three are out'), show(f8x1u1, "Let's try four"), show(f8x1u2, 'so the big diameter is eight plus ten'),
         show(f8x1u3, 'The big radius is nine')),
       L("The big circle is eighty-one pi, and the small circle is sixteen pi. Eighty-one pi minus sixteen pi is sixty-five "
@@ -5696,9 +5684,7 @@ video('r26-t33-more-tools', 'lesson', slides=[
         "goes through the center, so it's a diameter of ten. The ring becomes a whole circle with radius five, "
         "twenty-five pi. The same answer.", show(f9rings['p3'], 'the limiting picture'),
         show(f9rings['p3a'], 'twenty-five pi. The same')),
-      L("So when two circles have the same center, and a chord of the big circle touches the small circle, the ring is pi "
-        "times half the chord, squared. Now let's see the other two tools in questions. [pause] Okay. I'll see you in the "
-        "next video.", show(f9t11a, 'So when two circles have the same center'), show(f9t11, 'the ring is pi'))),
+      L("So when two circles have the same center, and a chord of the big circle touches the small circle, we find the ring's area like this. Take half the chord, square that length, then multiply by pi. Now let's see the other two tools in questions. [pause] Okay. I'll see you in the next video.", show(f9t11a, 'So when two circles have the same center'), show(f9t11, 'Take half the chord'))),
 ])
 
 
@@ -6027,9 +6013,7 @@ video('solve-q-r26-t33-05', 'solution', qid='q-r26-t33-05', slides=[
         show(f9x5s1, 'the hypotenuse, is big R'), show(f9x5g['leg'], 'And A E is big R minus'), show(f9x5s2, 'And A E is big R minus')),
       L("By Pythagoras, D C squared is the hypotenuse squared minus the leg squared. That's big R plus small r, "
         "all squared, minus, big R minus small r, all squared.", show(f9x5g['dc'], 'By Pythagoras, D C squared'), show(f9x5s3, "That's big R plus small r")),
-      L("We know both of these from expressions. First, big R plus small r, all squared, is big R squared, plus two big R "
-        "small r, plus small r squared. [short pause] Then, big R minus small r, all squared, is big R squared, minus two big R "
-        "small r, plus small r squared.", show(f9x5s4, 'First, big R plus small r'),
+      L('We can expand both brackets using the identities we know. First, big R plus small r, all squared, is big R squared, plus two big R small r, plus small r squared. [short pause] Then, big R minus small r, all squared, is big R squared, minus two big R small r, plus small r squared.', show(f9x5s4, 'First, big R plus small r'),
         show(f9x5s5, 'Then, big R minus small r')),
       L("[short pause] Now subtract the second one from the first. The big R squared cancels, and so does the small r "
         "squared. Taking away minus two big R small r adds it, so we're left with two big R small r, plus two big R small "

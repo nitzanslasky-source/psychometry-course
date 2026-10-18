@@ -302,6 +302,7 @@ def vis(vid):
                     it = c[1]; d = placed[id(it)]
                     _h = None if (vid, si + 1) in _GH.NOHAND else (it['_hand'] or _GH.auto(vid, it, si))      # 2026-10-18: geometry worked lines hand-written (_geo_hand.py)
                     if _h and not it['_hand']: d = dict(d, _hwsize=d.get('size', 36))
+                    if _h and vid not in _GH.FROZEN: _h = _GH.no_cross(_h)
                     cs.append(('write', d, c[2], _h) if _h else ('show', d, c[2]))
                 elif c[0] == 'point':
                     x = ('point', _target(vid, names, si, c[1]), c[2])
@@ -1981,12 +1982,12 @@ f3r_t7 = I('f3r_t7', 'Symmetric: right $=$ left, top $=$ bottom', size=28, col=1
 
 video('geo-050', 'lesson', slides=[
     S('The Rhombus',
-      L("The rhombus.")),
+      L("Now let's look at the rhombus.")),
     S('Four equal sides',
       L("A rhombus is a quadrilateral with all four sides equal. Its opposite angles are equal too.",
         show(f3r1['line'], 'A rhombus is a quadrilateral'), show(f3r1['ang'], 'Its opposite angles')),
-      L("A rhombus is a parallelogram with all four sides equal. So, like every parallelogram, its opposite sides are "
-        "equal and parallel, and on top of that, all four sides are equal. In the quadrilaterals lesson, we shortened a parallelogram until all its "
+      L("A rhombus is a special parallelogram: all four sides are equal. Like every parallelogram, "
+        "its opposite sides are equal and parallel. Remember the quadrilaterals lesson? We shortened a parallelogram until all its "
         "sides were equal, and that gave us a rhombus.", show(f3r1['par'], 'its opposite sides are equal and parallel')),
       L("For example, a rhombus with side seven has a perimeter of four times seven, twenty-eight. And if one angle is sixty "
         "degrees, the opposite angle is sixty too, and the other two are one hundred twenty each, because two angles next "
@@ -1995,9 +1996,9 @@ video('geo-050', 'lesson', slides=[
     S('The diagonals',
       L("Now the diagonals. They're perpendicular to each other, so they meet at a right angle.",
         show(f3r2['line'], 'Now the diagonals'), show(f3r2['diag'], "They're perpendicular")),
-      L("Are they equal? Not necessarily. Usually there's a long diagonal and a short one, like here. Only if the two "
-        "diagonals are equal, the rhombus is a square, like this one.", show(f3r2['len'], "Usually there's a long diagonal"),
-        show(f3r2sq['line'], 'Only if the two')),
+      L("Are the diagonals equal? Not necessarily. Usually there's a long diagonal and a short one, like here. If the two "
+        "diagonals are equal, then the rhombus is a square, like this one.", show(f3r2['len'], "Usually there's a long diagonal"),
+        show(f3r2sq['line'], 'If the two')),
       L("Let's go back to our rhombus. Its diagonals cut each other in half, and they also cut the angles of the rhombus in half.",
         show(f3r2['half'], 'Its diagonals cut each other'), show(f3r2['hang'], 'they also cut the angles'))),
     S('Remember: symmetry',
@@ -2009,19 +2010,22 @@ video('geo-050', 'lesson', slides=[
         show(f3r3['lr'], 'The diagonal A C is a line of symmetry')),
       L("And the other diagonal, B D, is a line of symmetry too. Fold along it, and the top triangle lands exactly on the "
         "bottom one. So the top angle equals the bottom angle.", show(f3r3['tb'], 'the other diagonal, B D')),
-      L("So all the sides are equal, opposite angles are equal, and the diagonals are perpendicular, cut each other in half, "
-        "and cut the angles in half.", pt('f3r_t7', 'So all the sides are equal'))),
+      L("So all the sides are equal. Opposite angles are equal too. The diagonals are perpendicular. They cut each other in half, "
+        "and they cut the angles in half.", pt('f3r_t7', 'So all the sides are equal'))),
     S('Area: d₁ × d₂ / 2',
-      L("The area of a rhombus is the product of the diagonals, over two. Why? The diagonals meet at ninety degrees, and they "
+      L("The area of a rhombus is the product of the diagonals, divided by two. Product means we multiply. "
+        "So we multiply the two diagonal lengths, then divide the result by two. Why does this work? The diagonals meet at ninety degrees, and they "
         "cut each other in half. So they split the rhombus into four equal right triangles. Look at one of them. Its legs "
         "are half of one diagonal and half of the other.", show(f3r4['line'], 'The area of a rhombus'),
         show(f3r4['q'], 'Look at one of them')),
-      L("Its area is leg times leg, over two. Half of one diagonal times half of the other is the product of the "
-        "diagonals, over four. Then we divide by two, so one triangle is the product of the diagonals, over eight.",
+      L("Its area is leg times leg, divided by two. Half of one diagonal times half of the other is the product of the "
+        "diagonals, divided by four. Then we divide by two, because we're finding the area of a triangle. "
+        "So one triangle has an area equal to the product of the diagonals, divided by eight.",
         show(f3r_q1, 'Half of one diagonal times'), show(f3r_q2, 'Then we divide by two')),
-      L("The rhombus is four of these triangles, so we multiply by four. Four times that is the product of the "
-        "diagonals, over two. That's diagonal times diagonal, over two.", show(f3r4['four'], 'The rhombus is four'),
-        show(f3r_q3, 'Four times that is'), show(f3r4['whole'], "That's diagonal times diagonal"), show(f3r_t4, 'diagonal times diagonal, over two'))),
+      L("The whole rhombus is made of four of these triangles, so we multiply one triangle's area by four. "
+        "Four times that is the product of the diagonals, divided by two. That's diagonal times diagonal, divided by two.",
+        show(f3r4['four'], 'The whole rhombus is made of four'),
+        show(f3r_q3, 'Four times that is'), show(f3r4['whole'], "That's diagonal times diagonal"), show(f3r_t4, 'diagonal times diagonal, divided by two'))),
     S('Area: two examples',
       L("Let's see it in numbers, with diagonals twelve and eight. The legs of one small triangle are six and four. Its area "
         "is four times six over two, which is twelve.", show(f3r5['line'], 'with diagonals twelve and eight'),
@@ -2436,7 +2440,7 @@ f4t5 = GEO('f4t5', [
 for _g in (f4t1, f4t2, f4t3, f4t4, f4t5): f4_pin(_g)
 video('geo-054', 'lesson', slides=[
     S('The Trapezoid',
-      L("And the last quadrilateral, the trapezoid.")),
+      L("Now let's look at our last quadrilateral, the trapezoid.")),
     S('Bases and legs',
       L("A trapezoid has four sides. Two of them are parallel, and those two are called the bases. Here they're A D and B "
         "C. The other two sides, A B and C D, are called the legs.", show(f4t1['line'], 'A trapezoid has four sides'),
@@ -2557,9 +2561,7 @@ video('solve-geo32-g055', 'solution', qid='geo32-g055', slides=[
         pt('stem', 'The area of isosceles trapezoid', 'hl', 10.0), voice='calm', pause=0.5),
       L("A D is the short base at the top. [short pause] We'll solve it in two different ways. First by understanding, "
         "using the symmetry, and then the math way, with the trapezoid area formula.", pt('fig: A', 'A D is the short base')),
-      L("[short pause] Let's start with understanding. One height, D E, is given. Here a second height lets us compare the "
-        "two end triangles, so we drop it from A down to the base. Call its foot F. In general, heights often split a "
-        "trapezoid into a rectangle and right triangles.", show(f4g55['line'], "Let's start with understanding"),
+      L("[short pause] Let's start with understanding. One height, D E, is given. Here a second height lets us compare the two end triangles, so we drop it from A down to the base. Call its foot F. That's the point where the height meets the base. In general, heights often split a trapezoid into a rectangle and right triangles.", show(f4g55['line'], "Let's start with understanding"),
         show(f4g55['af'], 'so we drop it from A')),
       L("The trapezoid is isosceles, so it's symmetric, right equals left. The triangle D E C on the right has area ten. "
         "So the triangle A B F on the left matches it, and also has area ten.", show(f4g55['dec'], 'The triangle D E C on the right'),
@@ -2642,8 +2644,7 @@ video('solve-q-r26-t32-02', 'solution', qid='q-r26-t32-02', slides=[
         "centimeters?", pt('stem', 'A B C D is a right trapezoid', 'hl', 11.0), voice='calm', pause=0.5),
       L("For the area we need the two bases, which we have, nine and fifteen, and the height. A B is a height, because it's "
         "perpendicular to both bases, but we don't know its length.", show(f4r['line'], 'For the area we need'), show(f4r['ab'], 'A B is a height')),
-      L("[short pause] So let's drop a height from D down to B C, and call its foot E. Now we've split the trapezoid into a "
-        "rectangle, A B E D, and a right triangle, D E C.", show(f4r['h'], "let's drop a height from D"),
+      L("[short pause] So let's drop a height from D down to B C, and call its foot E, the point where the height meets the base. Now we've split the trapezoid into a rectangle, A B E D, and a right triangle, D E C.", show(f4r['h'], "let's drop a height from D"),
         show(f4r['rect'], "Now we've split the trapezoid")),
       L("In the rectangle, B E equals A D, nine. So E C is fifteen minus nine, which is six.", show(f4r_a, 'So E C is fifteen minus nine'),
         show(f4r['ec'], 'which is six'))),
@@ -3439,8 +3440,8 @@ video('geo-065', 'lesson', slides=[
     S("What's ahead",
       L("In this lesson we'll practice harder exam questions, and meet a few small points that come back on the exam "
         "every now and then."),
-      L("There are questions about which shape is also which, and they're solved by reading the definitions carefully.",
-        show(f6h1, 'which shape is also which')),
+      L('Some questions ask whether every shape of one type also belongs to another type. We solve them by reading the definitions carefully.',
+        show(f6h1, 'whether every shape of one type')),
       L("There are area questions where an idea, like symmetry or an equal height, helps us see the answer.",
         show(f6h2, 'There are area questions')),
       L("And there are angle questions full of letters, where plugging in numbers helps. We'll use the math way, "

@@ -20,8 +20,7 @@
    {
     "say": "[short pause] Let's start by understanding. To push the total to an extreme, we push everything around it. Let's start with one student. For the fewest correct words, the test is the shortest, ten words, and he spells the smallest share, one fifth. One fifth of ten is ten divided by five, which is two words.",
     "at": [
-     "To push the",
-     "correct words, the",
+     "Let's start",
      "One fifth of ten",
      "is two words"
     ]
@@ -87,6 +86,8 @@
     "say": "So here we simply multiply. Fourteen times twenty-five is three hundred fifty. The last digit helps only when the choices end in different digits. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
      "So here we",
+     "Fourteen times twenty-five",
+     "The last digit",
      "Choice number three is our answer"
     ]
    }

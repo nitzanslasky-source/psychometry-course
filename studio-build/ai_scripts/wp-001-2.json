@@ -88,7 +88,8 @@
      "Can both be bigger than seven",
      "than seven are",
      "So could needs one example",
-     "must needs every"
+     "must needs every case",
+     "cannot means no case"
     ]
    }
   ],
@@ -98,10 +99,16 @@
     "at": [
      "chapter comes before",
      "try it on paper first",
-     "Write what you"
+     "Write what you",
+     "Then watch the video"
     ]
    },
-   "Let's start with type one. [pause] I'll see you in the next video."
+   {
+    "say": "Let's start with type one. [pause] I'll see you in the next video.",
+    "at": [
+     "Let's start with"
+    ]
+   }
   ]
  ]
 }

@@ -22,7 +22,6 @@
    {
     "say": "[short pause] Let's start with the spare stickers. First we fill every child up to the minimum, three each. To get twenty-six times three, we take twenty times three, which is sixty. Then we add six times three, which is eighteen. Sixty plus eighteen is seventy-eight stickers.",
     "at": [
-     "Let's start",
      "To get twenty-six times three",
      "we take twenty",
      "Sixty plus eighteen"
@@ -39,12 +38,15 @@
     "at": [
      "A child gets",
      "Twelve spares can lift",
-     "So at least"
+     "So at least twenty-six minus twelve",
+     "twelve, fourteen children"
     ]
    },
    {
     "say": "Thirteen is less than fourteen, so thirteen is impossible. Choice number two is our answer.",
     "at": [
+     "Thirteen is less than fourteen",
+     "so thirteen is",
      "Choice number two is our answer"
     ]
    }

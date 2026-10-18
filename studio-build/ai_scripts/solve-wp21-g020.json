@@ -54,8 +54,7 @@
    {
     "say": "[pause] Now let's solve it by understanding. The biggest is the easier part, so let's start there. To make Lior as big as possible, we give the others the least they can have. Noam gets one, because everyone has at least one. Maya must have more than Noam, so she gets two.",
     "at": [
-     "by understanding. The",
-     "as big as",
+     "Now let's",
      "Noam gets one",
      "has at least"
     ]
@@ -77,6 +76,7 @@
    {
     "say": "A third of thirty-six is twelve. If all three had twelve, the numbers would be equal, and that's not allowed. So Lior needs more than twelve. Let's move one card from Noam to Lior. Now it's thirteen, twelve and eleven. They're different. And thirteen plus twelve plus eleven is thirty-six.",
     "at": [
+     "A third of thirty-six",
      "If all three had twelve",
      "the numbers would",
      "Now it's thirteen",

@@ -17,7 +17,9 @@
     "say": "We won't learn a trick for every story. We'll learn to see what's under it. Sometimes it's a total that's cut into parts. Sometimes it's a ratio. And sometimes it's just a short list of cases.",
     "at": [
      "Sometimes it's a total",
-     "cut into parts"
+     "cut into parts",
+     "Sometimes it's a ratio",
+     "it's just a short list"
     ]
    }
   ],
@@ -40,7 +42,7 @@
     "say": "One notebook costs five dollars, so nineteen minus five leaves fourteen for the pens. Fourteen doesn't divide by three, because three times four is twelve and three times five is fifteen. So one notebook doesn't work.",
     "at": [
      "leaves fourteen for the pens",
-     "Fourteen doesn't divide"
+     "because three times"
     ]
    },
    {
@@ -54,7 +56,7 @@
     "say": "And three notebooks cost fifteen, which leaves four dollars. Four doesn't divide by three, so that's out too. We tried in order, so we know the list is complete. The only answer is two notebooks.",
     "at": [
      "three notebooks cost fifteen",
-     "leaves four dollars"
+     "Four doesn't divide"
     ]
    },
    {

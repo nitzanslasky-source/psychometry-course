@@ -72,6 +72,11 @@ def _conv(t):
     return ''.join(out)
 
 
+def no_cross(t):
+    """2026-10-18: the pen's ✗ reads like a times sign / an x (topic 21-22 board check): write ", no" instead"""
+    return re.sub(r'\s*✗', ', no', t).replace(':, no', ': no').lstrip(', ') if t else t
+
+
 def hand(tex):
     """the hand-written twin of a typed line, or None if the pen can't write it"""
     if '$' not in tex: return None                               # plain words: stay typed
@@ -84,6 +89,7 @@ def hand(tex):
         return None
     t = t.replace('$', '').replace('-', '−').replace('{', '{').strip()
     t = re.sub(r'\s{7,}', '      ', t)
+    t = no_cross(t)
     if '\\' in t.replace('\\hl{', '') or '_' in t or '&' in t or '\n' in t: return None
     try:
         HWR.write(t); return t
