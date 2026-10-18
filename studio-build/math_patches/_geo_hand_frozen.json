@@ -1,0 +1,28 @@
+{
+ "note": "geometry videos already rendered on 2026-10-18 (Done/Check): keep their typed boards (teacher: only videos not made yet). Fixed snapshot - do not regenerate.",
+ "ids": [
+  "geo-004",
+  "geo-016",
+  "geo-018-after",
+  "geo-019",
+  "solve-geo30-g002",
+  "solve-geo30-g005",
+  "solve-geo30-g006",
+  "solve-geo30-g007",
+  "solve-geo31-g010",
+  "solve-geo31-g011",
+  "solve-geo31-g012",
+  "solve-geo31-g014",
+  "solve-geo31-g015",
+  "solve-geo31-g017",
+  "solve-geo31-g020",
+  "solve-geo31-g021",
+  "solve-geo31-g022",
+  "solve-q-r26-t30-01",
+  "solve-q-r26-t30-02",
+  "solve-q-r26-t30-03",
+  "solve-q-r26-t31-01",
+  "solve-q-r26-t31-02",
+  "solve-q-r26-t31-03"
+ ]
+}

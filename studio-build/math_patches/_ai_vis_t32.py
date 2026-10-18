@@ -38,6 +38,8 @@ Spec DSL (as in topic 13)
         phrase = a phrase of this line ("<phrase" = of the previous line)
 """
 import importlib.util, json, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _geo_hand as _GH
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SB = os.path.dirname(HERE)
@@ -298,7 +300,9 @@ def vis(vid):
             for c in ln['cues']:
                 if c[0] == 'show':
                     it = c[1]; d = placed[id(it)]
-                    cs.append(('write', d, c[2], it['_hand']) if it['_hand'] else ('show', d, c[2]))
+                    _h = None if (vid, si + 1) in _GH.NOHAND else (it['_hand'] or _GH.auto(vid, it, si))      # 2026-10-18: geometry worked lines hand-written (_geo_hand.py)
+                    if _h and not it['_hand']: d = dict(d, _hwsize=d.get('size', 36))
+                    cs.append(('write', d, c[2], _h) if _h else ('show', d, c[2]))
                 elif c[0] == 'point':
                     x = ('point', _target(vid, names, si, c[1]), c[2])
                     if c[3] or c[4]: x += (c[3] or 'hl',)

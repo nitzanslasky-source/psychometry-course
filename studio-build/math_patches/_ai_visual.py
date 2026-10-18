@@ -50,7 +50,9 @@ def _hw(vid):
 def HW(item, text):
     """the hand-written twin of a typed item: same place and width; a bit larger (pen writing has no heavy strokes,
     so at the typed size it reads smaller)"""
-    return HWR.item(text, size=round(item.get('size', 46) * 1.2), **{k: item[k] for k in ('x', 'y', 'w') if k in item})
+    # 2026-10-18: '_hwsize' = an explicit pen size (geometry lines hand-written automatically keep their typed size, so
+    # rows laid out for the typed board still fit)
+    return HWR.item(text, size=item.get('_hwsize') or round(item.get('size', 46) * 1.2), **{k: item[k] for k in ('x', 'y', 'w') if k in item})
 
 
 def R(t, y, x=1060, w=470, size=38):        # geometry: right of the figure
