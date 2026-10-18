@@ -52,3 +52,38 @@ A first (she records topics 15–20 next), then B, C, D. Big batches are fine.
   if new) or only use it for this answer? Only strong additions; results in `reviews/teaching-check-<batch>.md`.
 - Done for A and B (`teaching-check-A-B.md`). C and D get it after their fixes. You don't need to check this yourself, but if
   you notice a key idea that is only used, never taught, a normal **should** finding is welcome.
+
+## ADDED 19 Oct (Nitzan): batches E and F — Codex REVIEWS AND EDITS DIRECTLY
+Nitzan asked that Codex fix what it finds itself for **batch E (topic 21)** and **batch F (topic 22)**, instead of a
+findings file for Claude. The rest of this brief still applies.
+
+**Her two priorities — this is what the edit is for:**
+1. **A student can genuinely follow along.** Read every script as a weak student who sees this topic for the first time:
+   no step that jumps, every step says what we do + why (the given behind it, W21) + what it gives; nothing used before
+   it's taught (study-plan order); each result written on the board at the moment it's said, never before; one new idea
+   per sentence, with a beat after key ideas. If a student would ask "wait, why?" or "where did that come from?", fix it.
+2. **Simple English (B1).** Short sentences (6–12 words), everyday words, no idioms or metaphors a learner won't know,
+   no long noun chains, no vague "it/this/that" when two things could be meant. Say the same thing the same way every
+   time. Keep her voice (phrase bank, "choice number N", numbers as words, no symbols, no labels like "Tip:").
+
+**Scope:** fix **must** and **should** items only — no new methods, no long additions, no rewriting what already works
+(videos must not grow much; she reads every word). Keep every method and the method titles. "Nice" ideas → a list at the
+end of your report (Claude parks them in IMPROVEMENTS.md).
+
+**Rules:**
+- **Claim first** in COORDINATION.md "Doing": files `math_patches/_ai_vis_t21.py` (E) / `_ai_vis_t22.py` (F) and the
+  ai_scripts they write. Claude will not touch them until you mark the job Done.
+- **Unrecorded lessons only.** Before editing a lesson, check `python3 studio-build/video_status.py --list record` and
+  `~/Documents/Course.recordings/_reading/<id>/` (no take). If it's already recorded, don't change its speech — list the
+  problem for Nitzan instead.
+- Edit the spec only (spoken text in `L(...)`, board items, cues). Every cue phrase must stay a substring of its line.
+  Regenerate: `python3 studio-build/math_patches/_ai_vis_t21.py` (or t22) → no PROBLEMS.
+- Don't edit shared files (`_ai_visual.py`, `_method_visuals.py`, `_camera_parts.py`, `reading_studio.py`, the display
+  registry json, other topics, the guide). Prompter display problems → "Needs Claude" in your report as
+  "spoken text → wanted display".
+- **Checks before Done:** private build only (`OUT=<your work dir>/test.html python3 build_verbal.py`; never write the
+  shared Downloads studio), `SRC=<it> python3 ai_check.py <ids>` all OK, `python3 math_check.py 21` (22) 0/0 and layout 0,
+  also with `AI_HANDWRITE=all`; look at the step frames of every slide you changed (handwriting build).
+- **Report:** `reviews/batch-E-edited.md` / `batch-F-edited.md`: per lesson READY or each change as before → after (just
+  the changed sentences / board items), then "Needs Claude" and "Nice". Mark the job Done in COORDINATION.md and post
+  "For Claude: batch E/F edited". Claude then rebuilds the Reading Studio, spot-checks, and handles "Needs Claude".
