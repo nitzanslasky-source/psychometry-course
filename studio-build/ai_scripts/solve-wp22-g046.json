@@ -42,9 +42,10 @@
   ],
   [
    {
-    "say": "First the vanilla. Ten is five sixths, so one sixth is ten divided by five, two cupcakes. She sold one sixth, so we give it back. Six sixths are six times two, twelve vanilla cupcakes.",
+    "say": "First the vanilla. Ten cupcakes are five sixths of the original vanilla total. So one sixth is ten divided by five, two cupcakes. She sold one sixth, so we give it back. Six sixths are six times two, twelve vanilla cupcakes.",
     "at": [
-     "Ten is five sixths",
+     "Ten cupcakes are five sixths",
+     "of the original",
      "so one sixth is",
      "ten divided by five",
      "two cupcakes",
@@ -54,10 +55,11 @@
     ]
    },
    {
-    "say": "Now the chocolate. She sold a third, so two thirds are left. Fourteen is two thirds, so one third is seven. Three thirds are three times seven, twenty-one chocolate cupcakes.",
+    "say": "Now the chocolate. She sold a third, so two thirds are left. Fourteen cupcakes are two thirds of the original chocolate total. So one third is fourteen divided by two, seven cupcakes. Three thirds are three times seven, twenty-one chocolate cupcakes.",
     "at": [
-     "Fourteen is two thirds",
-     "so one third is seven",
+     "Fourteen cupcakes are two thirds",
+     "of the original",
+     "So one third is fourteen divided by two",
      "Three thirds",
      "three times seven"
     ]

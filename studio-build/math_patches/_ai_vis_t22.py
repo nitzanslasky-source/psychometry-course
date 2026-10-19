@@ -660,7 +660,7 @@ c_t1b = IH('c_t1b', '$B=3\\ \\to\\ A=4\\cdot3=12$', size=30)
 c_t1c = IH('c_t1c', '$4$ more: $\\ 3+4=7$', size=30)
 c_t1d = IH('c_t1d', '$4$ times: $\\ 4\\cdot3=12$', size=30)
 c_t2 = I('c_t2', 'twice $=$ double $=$ always $\\times2$', size=32)
-c_t2h = I('c_t2h', 'half $=$ always $\\div2$', size=32)
+c_t2h = I('c_t2h', 'half: $\\ 8\\div2=4$', size=32)
 c_t2b = I('c_t2b', '$A$ is twice $B$: $\\quad A=2B$', size=32)
 c_t2c = I('c_t2c', "Ella's salary is double Noa's: $\\quad E=2N$", size=32)
 c_f1 = I('c_f1', '$B$ is a quarter less than $A$', size=32)
@@ -701,8 +701,7 @@ video('wp-027', 'lesson', slides=[
     S('Three stages',
       L("So how do we solve a word problem? In three stages. Stage one, we translate the words into an equation. This is "
         "the stage of understanding, and it's the hardest part.", show(c_st1, 'Stage one, we translate')),
-      L("Stage two, we solve the equation. That part is technical. It's the algebra we already know, moving terms to the "
-        "other side, opening brackets, a common denominator. It's a shame to lose points here.",
+      L("Stage two, we solve the equation. Now we use algebra to find the unknown number. It's the algebra we already know, moving terms to the other side, opening brackets, a common denominator. It's a shame to lose points here.",
         show(c_st2, 'Stage two, we solve')),
       L("Stage three, we answer the question. Careful here, because solving the equation doesn't always finish the job. "
         "Say we find that x is eight, but they ask for x minus one. Then the answer is seven, not eight. It's not a "
@@ -722,8 +721,7 @@ video('wp-027', 'lesson', slides=[
         show(c_e1c, 'Seven times the original number')),
       L("Now let's read the equation back in words. A number times three, plus twenty-four, is equal to seven times the "
         "number. It's almost word for word the question. Every equation is really a sentence in words."),
-      L("Stage two is technical. We want the x's on one side, so we take three x away from both sides. Seven x minus three "
-        "x is four x, so twenty-four is equal to four x. Then we divide both sides by four, and x is six.",
+      L("Now let's solve the equation. We want the x's on one side, so we take three x away from both sides. Seven x minus three x is four x, so twenty-four is equal to four x. Then we divide both sides by four, and x is six.",
         show(c_e1d0, 'Seven x minus three'), show(c_e1d, 'so twenty-four is equal to four x'), show(c_e1e, 'Then we divide both sides by four')),
       L("Stage three. Did they ask for the number? No, they asked for twice the number. Two times six is twelve. So the "
         "answer is twelve, not six.", show(c_e1f, 'Two times six is twelve'))),
@@ -732,8 +730,7 @@ video('wp-027', 'lesson', slides=[
         "minus one?", show(c_e2q, 'A number plus fifteen')),
       L("Again, the number is x. A number plus fifteen is x plus fifteen. Is equal to, that's the equals sign. Four times "
         "the number is four x.", show(c_e2a, 'Four times the number is four x')),
-      L("Now we solve. We take x away from both sides. Four x minus x is three x, so fifteen is equal to three x. Then we "
-        "divide by three, and x is five.", show(c_e2b0, 'Four x minus x'), show(c_e2b, 'so fifteen is equal to three x'), show(c_e2c, 'Then we divide by three')),
+      L('Now we solve. We take x away from both sides. Four x minus x is three x, so fifteen is equal to three x. To leave x alone, we divide both sides by three. Fifteen divided by three is five, so x is five.', show(c_e2b0, 'Four x minus x'), show(c_e2b, 'so fifteen is equal to three x'), show(c_e2c, 'we divide both sides by three')),
       L("And stage three. They asked for the number minus one, so five minus one is four. Five would be the trap, because "
         "that's the number itself.", show(c_e2d, 'so five minus one is four')),
       L("So again, what did we do? We translated one phrase at a time, we solved, and then we checked what they asked. Now "
@@ -741,12 +738,10 @@ video('wp-027', 'lesson', slides=[
     S('More and less',
       L("The first phrase. A is three more than B. What does that mean? If we start with B and add three, we get A. So A "
         "is equal to B plus three.", show(c_m1, 'A is three more than B'), show(c_m1e, 'So A is equal to B plus three')),
-      L("Let's see it in numbers. If B is ten, then A is ten plus three, thirteen. And in a question it sounds like this. "
-        "Dana is three years older than Ella. So Dana is Ella plus three.", show(c_m1b, 'If B is ten'),
-        show(c_m1c, 'So Dana is Ella plus three')),
-      L("Now the opposite. B is five less than A. So we start with A and take away five. B is equal to A minus five. In "
-        "a question, Ben has five fewer marbles than Sam. So Ben is Sam minus five.", show(c_m2, 'B is five less than A'),
-        show(c_m2e, 'B is equal to A minus five'), show(c_m2c, 'So Ben is Sam minus five')),
+      L("Let's see it in numbers. If B is ten, then A is ten plus three, thirteen. And in a question it sounds like this. Dana is three years older than Ella. So Dana's age is Ella's age plus three.", show(c_m1b, 'If B is ten'),
+        show(c_m1c, "So Dana's age")),
+      L("Now the opposite. B is five less than A. So we start with A and take away five. B is equal to A minus five. In a question, Ben has five fewer marbles than Sam. So Ben's number of marbles is Sam's number minus five.", show(c_m2, 'B is five less than A'),
+        show(c_m2e, 'B is equal to A minus five'), show(c_m2c, "So Ben's number of marbles")),
       L("These two ways are really the same idea, written the other way round. If B is five less than A, then A is five "
         "more than B, so A is equal to B plus five. Both are right, as long as we write it the right way.",
         show(c_m2b, 'so A is equal to B plus five')),
@@ -758,9 +753,7 @@ video('wp-027', 'lesson', slides=[
         "is four times three, twelve.", show(c_t1, 'That means A is equal to four B'), show(c_t1b, 'if B is three')),
       L("Careful not to mix up four times with four more. Four more than three is three plus four, seven. Four times three "
         "is twelve. These are two different things.", show(c_t1c, 'Four more than three'), show(c_t1d, 'Four times three is twelve')),
-      L("And here's a word that is always the same. Twice, or double, is always times two. If I want times three, I don't "
-        "say double, I say three times. Just like half is always divided by two. I can cut a cake into three parts, but "
-        "not into three halves. Halves are always two.", show(c_t2, 'Twice, or double, is always'), show(c_t2h, 'Just like half is always')),
+      L("And here's a word that is always the same. Twice, or double, is always times two. If I want times three, I don't say double, I say three times. And half means one of two equal parts. Half of eight is four, because eight divided by two is four. Three equal parts are thirds, not halves.", show(c_t2, 'Twice, or double, is always'), show(c_t2h, 'Half of eight is four')),
       L("So A is twice B means A is equal to two B. In a question it can sound like this. Ella's salary is double Noa's "
         "salary. So Ella's salary is two times Noa's salary.", show(c_t2b, 'So A is twice B'),
         show(c_t2c, "So Ella's salary is two times"))),
@@ -778,8 +771,7 @@ video('wp-027', 'lesson', slides=[
         "D is thirty, a third of thirty is ten, and C is thirty minus ten, twenty.", show(c_f2, 'C is a third less than D'), show(c_f2e, 'and two thirds of D are left'),
         show(c_f2b, 'If D is thirty'), show(c_f2c, 'and C is thirty minus ten'))),
     S('The difference',
-      L("The difference between A and B is twelve. A difference is always positive. It's the bigger number minus the "
-        "smaller one.", show(c_d1, 'The difference between A and B')),
+      L("The difference between A and B is twelve. Here we mean how far apart the two numbers are. We take the bigger number minus the smaller one. That gives a positive number, or zero if they're equal.", show(c_d1, 'The difference between A and B')),
       L("But often we don't know which one is bigger. So there are two options. If A is bigger, A minus B is twelve. And "
         "if B is bigger, B minus A is twelve.", show(c_d2, 'So there are two options')),
       L("Let's see it in numbers. Twenty and eight have a difference of twelve, because twenty minus eight is twelve. And eight and "
@@ -799,9 +791,7 @@ video('wp-027', 'lesson', slides=[
       L("Let's see it in numbers. If B is thirty, a third of thirty is ten, and two thirds of thirty is twenty. So A is "
         "twenty. In a question it can sound like this. Amit's salary is two thirds of Ben's salary.",
         show(c_i4, 'If B is thirty'), show(c_i4b, 'two thirds of thirty is twenty')),
-      L("The third one is costs the same as, or weighs the same as. Two mugs cost the same as five pens. We write it the "
-        "way we hear it. Two mugs is two M. Cost the same as is the equals sign. Five pens is five P. So two M is equal "
-        "to five P.", show(c_i5, 'Two mugs cost the same as five pens'),
+      L("The third one is costs the same as, or weighs the same as. Two mugs cost the same as five pens. We write it the way we hear it. Let M be one mug's price and P one pen's price. Two mugs cost two M, and five pens cost five P. Cost the same as means the two costs are equal. So two M is equal to five P.", show(c_i5, 'Two mugs cost the same as five pens'),
         show(c_i5b, 'So two M is equal to five P'))),
     S('A ratio',
       L("And the last phrase, a ratio. The ratio of A to B is two to three. That means for every two A, there are three "
@@ -831,7 +821,7 @@ r_l1 = I('r_l1', 'Same rate in two cases', size=32)
 r_l2 = I('r_l2', 'the two cases have equal ratios', size=32)
 video('wp-028', 'lesson', slides=[
     S('Equal Ratios',
-      L("Equal ratios. A short lesson, but one of the most important in the whole course.")),
+      L("Now let's look at equal ratios. This is a short but very important lesson.")),
     S('Same rate, two cases',
       L("We're going to learn a technique that follows us through the whole quantitative section. In word problems, in "
         "geometry, and in algebra too. Many questions rest on one idea, the same rate in two different cases.",
@@ -895,9 +885,7 @@ video('solve-wp22-g029', 'solution', qid='wp22-g029', slides=[
         show(g29d2, 'Two times seven is fourteen'), show(g29d3, "Together that's eighty-four"), show(g29t['ans'], "that's eighty-four")),
       L("So twelve vases hold eighty-four roses. Choice number three is our answer.",
         mk('tick', 'choice 3', 'Choice number three is our answer')),
-      L("Why does this work? Because the rate is the same in both rows. Every vase gets seven roses, whether there are "
-        "eight vases or twelve. So whatever turns the vases into roses in one row, turns them into roses in the other "
-        "row too.")),
+      L('Why does this work? Because the rate is the same in both rows. Every vase gets seven roses, whether there are eight vases or twelve. So we multiply the number of vases by seven in both rows.')),
     S('Method 2 · The math way: down',
       L("[pause] Now the same table, but down, from the first row to the second. We start again from the givens, eight "
         "vases, fifty-six roses, and twelve vases.", show(g29u['line'], 'Now the same table'),
@@ -909,9 +897,7 @@ video('solve-wp22-g029', 'solution', qid='wp22-g029', slides=[
         "fifty-six plus half of fifty-six. Half of fifty-six is twenty-eight, and fifty-six plus twenty-eight is "
         "eighty-four.", show(g29u['v2'], 'so the roses are also multiplied'), show(g29f, 'Half of fifty-six is twenty-eight'),
         show(g29g, 'and fifty-six plus twenty-eight'), show(g29u['ans'], 'is eighty-four')),
-      L("We get the same eighty-four. Across, the multiplier was a whole number, seven, so across was easier to calculate. So "
-        "first look across and down, and use the one that gives a whole number. Choice number three is our answer, and "
-        "I'll see you in the next question.", mk('tick', 'choice 3', 'Choice number three is our answer'))),
+      L("We get the same eighty-four. Across, the multiplier was a whole number, seven, so across was easier to calculate. So first look across and down, and check which direction makes the calculation easier. Choice number three is our answer, and I'll see you in the next question.", mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ wp22-g030 (Hebrew: 6 minutes, 15 exercises)
@@ -943,6 +929,7 @@ g30x = TBL('g30x', ['Minutes', 'Potatoes'], ['', ''], [
     ('r1', [('c', 0, 0, '12'), ('c', 0, 1, '18')]), ('r2', [('c', 1, 0, '20'), ('c', 1, 1, 'x', _TEAL)]),
     ('d1', [('diag', (1, 0), (0, 1))]), ('d2', [('diag', (0, 0), (1, 1))])], col=1, colw=170)
 g30h = IH('g30h', '$12x=20\\cdot18$', size=32)
+g30ratio = IH('g30ratio', '$\\frac{18}{12}=\\frac{x}{20}$', size=30)
 g30i = IH('g30i', '$2\\cdot18=36$', size=30)
 g30i2 = IH('g30i2', '$20\\cdot18=36\\cdot10=360$', size=30)
 g30j = IH('g30j', '$x=360\\div12$', size=32)
@@ -961,9 +948,7 @@ video('solve-wp22-g030', 'solution', qid='wp22-g030', slides=[
       L("Let's start with the math way, the ratio table. Minutes in one column, potatoes in the other. In the first row, "
         "twelve minutes and eighteen potatoes. In the second row, twenty minutes and a question mark.", show(g30t['line'], 'Minutes in one column'),
         show(g30t['r1'], 'In the first row'), show(g30t['r2'], 'In the second row')),
-      L("Across the first row, from twelve to eighteen, is times one and a half. That's not a whole number. Down the "
-        "minutes, from twelve to twenty, is twenty over twelve, five thirds. That's not whole either. So an easy multiplier "
-        "doesn't help us here.", show(g30a, 'Across the first row'), show(g30b, 'Down the minutes')),
+      L("Across the first row, from twelve to eighteen, is times one and a half. That's not a whole number. Down the minutes, from twelve to twenty, is twenty over twelve, five thirds. That's not whole either. We could use these fractions. But let's learn another way that works without a whole-number multiplier.", show(g30a, 'Across the first row'), show(g30b, 'Down the minutes')),
       L("When neither one is whole, we use the triangle value. We draw a line along the diagonal, from the twenty to the "
         "eighteen. We multiply the two numbers on the diagonal, and divide by the number that's left, the twelve.",
         show(g30t['dg'], 'We draw a line along the diagonal'), show(g30c, 'We multiply the two numbers')),
@@ -993,8 +978,8 @@ video('solve-wp22-g030', 'solution', qid='wp22-g030', slides=[
         "eighteen potatoes, and twenty minutes. This time we call the missing number x.",
         show(g30x['line'], 'Now the second way'), show(g30x['r1'], 'Twelve minutes and eighteen'),
         show(g30x['r2'], 'This time we call')),
-      L("In equal ratios, the two diagonal products are equal. Twelve times x is equal to twenty times eighteen.",
-        show(g30x['d1'], 'the two diagonal products'), show(g30x['d2'], 'are equal'), show(g30h, 'Twelve times x is equal')),
+      L('The cook has the same rate in both rows. So eighteen over twelve is equal to x over twenty. Multiplying both sides by twelve times twenty removes the denominators. That makes the two diagonal products equal. Twelve times x is equal to twenty times eighteen.',
+        show(g30ratio, 'eighteen over twelve is equal to x over twenty'), show(g30x['d1'], 'That makes the two diagonal products equal'), show(g30x['d2'], 'That makes the two diagonal products equal'), show(g30h, 'Twelve times x is equal')),
       L("Now we work out twenty times eighteen. Two times eighteen is thirty-six. Then times ten, it's three hundred sixty. So twelve x is "
         "three hundred sixty.", show(g30i, 'Two times eighteen is thirty-six'), show(g30i2, 'Then times ten')),
       L("To find x, we divide both sides by twelve. Three hundred sixty divided by twelve is thirty. We know it because twelve times "
@@ -1021,7 +1006,7 @@ i_4 = IH('i_4', '$d=60\\div4=15$', size=32)
 i_5 = IH('i_5', '$4\\cdot12=48\\ne60$', size=30, col=1)
 i_6 = IH('i_6', '$1$ worker: $\\ 10\\cdot6=60$ days', size=30)
 i_7 = IH('i_7', '$4$ workers: $\\ 60\\div4=15$ days', size=30)
-i_8 = I('i_8', 'One up, one down:', size=30, col=1)
+i_8 = I('i_8', 'Same job, same work rate:', size=30, col=1)
 i_8b = I('i_8b', 'the product stays the same', size=30, col=1)
 i_9 = IH('i_9', '$8\\cdot6=48$ hiker days', size=30, col=1)
 i_10 = IH('i_10', '$48\\div12=4$ days', size=30, col=1)
@@ -1034,9 +1019,7 @@ video('solve-q-r26-t22-02', 'solution', qid='q-r26-t22-02', slides=[
         show(i_0, 'So it takes more than ten days')),
       L("So choice number one, six and two thirds, and choice number four, eight, are out. Both are less than ten days.",
         mk('cross', 'choice 1', 'So choice number one'), mk('cross', 'choice 4', 'are out')),
-      L("Careful, this is the trap of this question. With the ratio table, we'd multiply four times ten, divide by six, "
-        "and get six and two thirds. That's fewer days with fewer workers, which makes no sense. The ratio table works "
-        "when the two quantities grow together. Here, when the workers go down, the days go up.",
+      L("Careful, this is the trap of this question. With the ratio table, we'd multiply four times ten, divide by six, and get six and two thirds. That's fewer days with fewer workers, which makes no sense. That calculation assumes the same days per worker in both rows. But fewer workers need more days for the same job. We need the total work to stay the same instead.",
         show(i_tr, 'With the ratio table'), show(i_tr2, 'and get six and two thirds'),
         show(i_tr3, 'which makes no sense')),
       L("We'll solve it two ways, the math way with the whole job, and then by understanding, with one worker.")),
@@ -1058,9 +1041,8 @@ video('solve-q-r26-t22-02', 'solution', qid='q-r26-t22-02', slides=[
         "six is sixty days.", pt('stem', 'Six workers paint the hall'), show(i_6, 'Ten times six is sixty days')),
       L("Now four workers. Four people share the job, so it takes a quarter of the time of one worker. Sixty divided by "
         "four is fifteen days.", show(i_7, 'Sixty divided by four is fifteen')),
-      L("So here's the rule. When one quantity goes up and the other goes down, their product stays the same. Workers and "
-        "days on the same job. Speed and time on the same road. People and the days a food supply lasts.",
-        show(i_8, 'So here\'s the rule'), show(i_8b, 'their product stays the same')),
+      L("So here's the rule for the same job at the same rate. The number of workers times the days stays the same. This is called inverse proportion. One quantity doubles, and the other halves. Workers and days on the same job. Speed and time on the same road. People and the days a food supply lasts.",
+        show(i_8, 'So here\'s the rule'), show(i_8b, 'times the days stays the same')),
       L("Let's see it once more. Eight hikers have food for six days. How long does the same food last for twelve hikers? "
         "Eight times six is forty-eight hiker-days. Forty-eight divided by twelve is four days. More hikers, fewer days.",
         show(i_9, 'Eight times six is forty-eight'), show(i_10, 'Forty-eight divided by twelve')),
@@ -1195,7 +1177,7 @@ w_8 = IH('w_8', 'drank $=2x,\\ $ bottle $=5x$', size=30)
 w_9 = IH('w_9', 'left $=5x-2x=3x$', size=30)
 w_10 = I('w_10', "Ann's salary is $2\\frac{1}{2}$ times Ben's", size=30)
 w_11 = IH('w_11', 'Ben $=x,\\ $ Ann $=2\\frac{1}{2}x$', size=30)
-w_12 = IH('w_12', 'expand by $2$: $\\ $Ben $=2x,\\ $ Ann $=5x$', size=30)
+w_12 = IH('w_12', 'new unit $x$: $\\ $Ben $=2x,\\ $ Ann $=5x$', size=30)
 w_13 = I('w_13', '$3$ mugs cost the same as $8$ plates: $\\quad 3M=8P$', size=30)
 w_14 = IH('w_14', '$3$ mugs: $\\ 3\\cdot8=24$', size=30)
 w_14b = IH('w_14b', '$8$ plates: $\\ 8\\cdot3=24$', size=30)
@@ -1256,9 +1238,8 @@ video('wp-034', 'lesson', slides=[
         "and fourteen? Thirty and seventy? All of them have the ratio three to seven.", show(w_3, 'Three red beads and seven blue')),
       L("We know the amounts only when they give us one real number. A total, a difference, or the size of one of the "
         "groups."),
-      L("That's why we write the amounts with x. Red is three x, and blue is seven x. If we cancel the x, three x over "
-        "seven x is still three over seven. So the ratio is kept, and now we have amounts we can build an equation with.",
-        show(w_4, 'Red is three x'), show(w_4b, 'three x over')),
+      L("That's why we write the amounts with x. One unit is x beads. Red has three units, three x, and blue has seven, seven x. If we cancel the x, three x over seven x is still three over seven. So the ratio is kept, and now we have amounts we can build an equation with.",
+        show(w_4, 'Red has three units'), show(w_4b, 'three x over')),
       L("Let's see it in numbers. Say there are fifty beads in all. Three x plus seven x is ten x, and ten x is fifty. So "
         "x is five. Red is three times five, fifteen. And blue is seven times five, thirty-five.",
         show(w_5, 'Three x plus seven x is ten x'), show(w_6, 'So x is five'),
@@ -1275,8 +1256,7 @@ video('wp-034', 'lesson', slides=[
         show(w_10, "Ann's salary is two and a half")),
       L("Ben is the smaller one, so let's make Ben x. Then Ann is two and a half x. If we made Ann x, Ben would be x "
         "divided by two and a half, and that's a messy fraction.", show(w_11, "so let's make Ben x")),
-      L("And we can get rid of the half too. We expand by two. Ben is two x, and Ann is five x. Now the ratio of Ben to Ann "
-        "is two to five, whole numbers, much easier to work with.", show(w_12, 'We expand by two'))),
+      L('And we can get rid of the half too. We use two equal units for Ben instead of one. Then Ann has five of those same units. Call the new unit x. Ben is two x, and Ann is five x. Now the ratio of Ben to Ann is two to five, whole numbers, much easier to work with.', show(w_12, 'Ben is two x'))),
     S('Reversed: the same as',
       L("One more kind of wording. It doesn't look like a ratio, but it is one, and it's reversed. Three mugs cost the "
         "same as eight plates. Which is more expensive, a mug or a plate?", show(w_13, 'Three mugs cost the same')),
@@ -1323,8 +1303,7 @@ video('solve-wp22-g035', 'solution', qid='wp22-g035', slides=[
         show(p_2, 'Twelve x minus five x')),
       L("The difference between the runners and the swimmers is seven x minus five x, two x.",
         show(p_bar['df'], 'The difference between the runners'), show(p_3, 'seven x minus five x, two x')),
-      L("What does two x tell us? x is the size of one unit, a number of campers, so x is a whole number. Two times a whole "
-        "number is always even. So the difference must be even.", show(p_3b, 'Two times a whole'))),
+      L('What does two x tell us? The ratio five to seven is fully reduced. So the counts form whole groups of five swimmers and seven runners. x counts those groups, so x is a whole number. Two times a whole number is always even. So the difference must be even.', show(p_3b, 'Two times a whole'))),
     S('Method 1 · The math way: ratio units',
       L("Now the choices. Twenty-one is odd, so choice number one is out. Fifteen is odd, so choice number three is out. "
         "Nineteen is odd, so choice number four is out.", mk('cross', 'choice 1', 'so choice number one is out'),
@@ -1334,10 +1313,7 @@ video('solve-wp22-g035', 'solution', qid='wp22-g035', slides=[
         "runners.", show(p_4, 'so x is eleven'), show(p_4b, 'Five times eleven'), show(p_4c, 'And seven times eleven')),
       L("Seventy-seven minus fifty-five is twenty-two. It works. Choice number two is our answer.",
         show(p_5, 'Seventy-seven minus fifty-five'), mk('tick', 'choice 2', 'Choice number two is our answer')),
-      L("This works for every part of a ratio. The swimmers are five x, so their number divides by five. The runners "
-        "divide by seven. And all the campers, twelve x, divide by twelve. So when a ratio counts people, the total "
-        "always divides by the sum of the ratio numbers. Choice number two is our answer, and I'll see you in the next "
-        "question.", show(p_6, 'the total'), mk('tick', 'choice 2', 'Choice number two is our answer, and'))),
+      L("This works for every part of a ratio. The swimmers are five x, so their number divides by five. The runners divide by seven. And all the campers, twelve x, divide by twelve. So first reduce a ratio of people to whole numbers with no shared factor. Then the total is divisible by the sum of those ratio numbers. Choice number two is our answer, and I'll see you in the next question.", show(p_6, 'the total'), mk('tick', 'choice 2', 'Choice number two is our answer, and'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ wp22-g036 (Hebrew: motorcycle : car 4 : 7)
@@ -1412,10 +1388,8 @@ video('solve-q-r26-t22-01', 'solution', qid='q-r26-t22-01', slides=[
         "way with one shared number, and then the math way starting from the tenors.", pt('stem', 'We have two ratios')),
       L("Let's start with the math way. Here are the two ratios. Sopranos to altos is two to three, and altos to tenors "
         "is four to five.", show(h_1, 'Sopranos to altos is two to three'), show(h_2, 'altos to tenors is four to five')),
-      L("Many students glue them together and write two to three to five. That gives sixty, choice number two, and it's "
-        "wrong. Why? The three altos in the first ratio and the four altos in the second ratio are different kinds of "
-        "units. Three and four aren't the same, so we can't join the ratios yet.", show(h_3, 'two to three to five'),
-        show(h_3b, 'The three altos in the first ratio')),
+      L("Many students glue them together and write two to three to five. That gives sixty, choice number two, and it's wrong. Why? Both ratios describe the same altos, but use different unit sizes. Three and four aren't the same, so we can't join the ratios yet.", show(h_3, 'two to three to five'),
+        show(h_3b, 'Both ratios describe the same altos')),
       L("Let's see the idea on easy numbers first. If A to B is one to two, and B to C is two to three, then B is two in "
         "both ratios. So we can write A to B to C as one to two to three.", show(h_4, 'If A to B is one to two'),
         show(h_4b, 'So we can write A to B to C')),
@@ -1504,8 +1478,7 @@ video('solve-q-r26-t22-03', 'solution', qid='q-r26-t22-03', slides=[
       L("Now we cross-multiply. Six times five x minus ten is equal to five times four x. We multiply the six by both "
         "parts. Six times five x is thirty x. Six times ten is sixty. And five times four x is twenty x.",
         show(k_10, 'Now we cross-multiply'), show(k_11, 'And five times four x')),
-      L("Now we take twenty x from both sides, and add sixty to both sides. Thirty x minus twenty x is ten x, so ten x is "
-        "sixty, and x is six.", show(k_12, 'so ten x is sixty'), show(k_12b, 'and x is six')),
+      L('Now we take twenty x from both sides, and add sixty to both sides. Thirty x minus twenty x is ten x, so ten x is sixty. Divide both sides by ten, and x is six.', show(k_12, 'so ten x is sixty'), show(k_12b, 'and x is six')),
       L("The club at first is five x plus four x, nine x. Nine times six is fifty-four. We get the same answer.",
         show(k_13, 'The club at first is five x'), show(k_13b, 'Nine times six')),
       L("So when one part of a ratio changes, find the part nobody touched. Make it the same number in both ratios, and "
@@ -1548,6 +1521,8 @@ r_5 = IH('r_5', '$x=21$', size=30, col=1)
 r_6 = IH('r_6', '$7$ rows $\\cdot\\ 3$ more $=21$ chairs', size=30)
 r_7 = IH('r_7', '$=$ the removed row', size=30)
 r_8 = IH('r_8', '(1) $24$: $\\ 8\\cdot24=192$', size=30)
+r_8a = IH('r_8a', '$8\\cdot20=160$', size=30, col=1)
+r_8c = IH('r_8c', '$8\\cdot4=32$', size=30, col=1)
 r_8b = IH('r_8b', '$7\\cdot27=140+49=189$, no', size=30)
 r_5b = IH('r_5b', '$21+3=24$: $\\ $the new rows', size=30, col=1)
 r_7b = IH('r_7b', 'every row: $\\ 21$ chairs', size=30)
@@ -1586,13 +1561,10 @@ video('solve-wp22-g038', 'solution', qid='wp22-g038', slides=[
     S('Method 3 · Plugging in the answers',
       L("[pause] And we can also plug in the answers. We start again from the givens. A choice works if eight rows of it "
         "hold the same number of chairs as seven rows of three more.", pt('stem', 'A choice works if')),
-      L("Choice number one, twenty-four. Eight times twenty-four is a hundred ninety-two. Seven rows of twenty-seven are "
-        "seven times twenty-seven. That's a hundred forty plus forty-nine, a hundred eighty-nine. Not the same, so it's out.",
-        show(r_8, 'Eight times twenty-four'), show(r_8b, 'a hundred eighty-nine'), mk('cross', 'choice 1', "Not the same, so it's out")),
-      L("Choice number two, twenty-one. Eight times twenty-one is a hundred sixty-eight. Seven rows of twenty-four are "
-        "seven times twenty, a hundred forty, plus seven times four, twenty-eight. Together that's a hundred sixty-eight too. The "
-        "same chairs, so it fits. Choice number two is our answer, and I'll see you in the next question.",
-        show(r_9, 'Eight times twenty-one'), show(r_9b, "Together that's a hundred sixty-eight"),
+      L("Choice number one, twenty-four. Eight rows of twenty-four give eight times twenty, a hundred sixty. Eight times four is thirty-two. Together that's a hundred ninety-two. Seven rows of twenty-seven are seven times twenty-seven. That's a hundred forty plus forty-nine, a hundred eighty-nine. Not the same, so it's out.",
+        show(r_8a, 'eight times twenty'), show(r_8c, 'Eight times four'), show(r_8, "Together that's a hundred ninety-two"), show(r_8b, 'a hundred eighty-nine'), mk('cross', 'choice 1', "Not the same, so it's out")),
+      L("Choice number two, twenty-one. Eight times twenty is a hundred sixty. Add eight for the extra chair per row, a hundred sixty-eight. Seven rows of twenty-four are seven times twenty, a hundred forty, plus seven times four, twenty-eight. Together that's a hundred sixty-eight too. The same chairs, so it fits. Choice number two is our answer, and I'll see you in the next question.",
+        show(r_9, 'a hundred sixty-eight'), show(r_9b, "Together that's a hundred sixty-eight"),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
 
@@ -1631,10 +1603,10 @@ video('solve-q-r26-t22-20', 'solution', qid='q-r26-t22-20', slides=[
         "ten cards and Ella has four. The gap is six.", show(g_t['line'], 'Easy numbers first'), show(g_t['r0'], 'Dan has ten cards')),
       L("Dan gives Ella one card. Now Dan has nine and Ella has five. The gap went from six to four. One card, and the gap "
         "changed by two. Why? Because Dan lost one, and Ella gained one.", show(g_t['r1'], 'Dan gives Ella one card')),
-      L("Dan gives three cards. He has seven, and she has seven. They're equal. So to make two people equal, you give half "
+      L("Now start again with ten and four. Dan gives three cards instead. He has seven, and she has seven. They're equal. So to make two people equal, you give half "
         "the gap. Half of six is three.", show(g_t['r2'], 'Dan gives three cards'), show(g_h, 'Half of six is three')),
-      L("And if he gives four? Dan has six, and Ella has eight. Now Ella is ahead by two. The gap went down to zero, turned "
-        "around, and grew on the other side.", show(g_t['r3'], 'And if he gives four'))),
+      L("Start again with ten and four. What if he gives four cards instead? Dan has six, and Ella has eight. Now Ella is ahead by two. The gap went down to zero, turned "
+        "around, and grew on the other side.", show(g_t['r3'], 'What if he gives four'))),
     S('Method 1 · Understanding: the gap',
       L("Now our shelves. At the start, A is twenty-six ahead. If we only wanted them equal, we'd move half the gap, "
         "thirteen books. That's choice number two. But B must end up ahead, so we need more.",
@@ -1656,10 +1628,9 @@ video('solve-q-r26-t22-20', 'solution', qid='q-r26-t22-20', slides=[
       L("Let's call the number of books that move k. A loses k, so A has x plus twenty-six minus k. B gains k, so B has x "
         "plus k.", show(g_5, 'A loses k')),
       L("After the move, B has six more than A. So B minus A is six.", show(g_6, 'So B minus A is six')),
-      L("Now we open the brackets. x minus x is zero, so the x's cancel. k minus minus k is two k. And the minus twenty-six "
-        "stays. So two k minus twenty-six is six.", show(g_7, 'So two k minus twenty-six')),
-      L("We add twenty-six to both sides. Two k is thirty-two, so k is sixteen. We get the same sixteen.",
-        show(g_8, 'Two k is thirty-two'), show(g_8b, 'so k is sixteen')),
+      L("B has x plus k, and A has x plus twenty-six minus k. So subtract the whole of x plus twenty-six minus k from x plus k. That difference is six. Now we open the brackets. x minus x is zero, so the x's cancel. k minus minus k is two k. And the minus twenty-six stays. So two k minus twenty-six is six.", show(g_7, 'So two k minus twenty-six')),
+      L('We add twenty-six to both sides. Six plus twenty-six is thirty-two, so two k is thirty-two. Divide both sides by two, and k is sixteen. We get the same sixteen.',
+        show(g_8, 'Two k is thirty-two'), show(g_8b, 'and k is sixteen')),
       L("So when one side gives to the other, each item changes the gap by two. To make them equal, give half the gap. "
         "Choice number three is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
@@ -1671,8 +1642,7 @@ video('solve-q-r26-t22-20', 'solution', qid='q-r26-t22-20', slides=[
 l_1 = I('l_1', 'Building an equation: $\\ $twice $\\cdot$ three times $\\cdot$ ages', size=30)
 video('wp-039', 'lesson', slides=[
     S('Give It to the Little Guy',
-      L("Now a technique that sounds a bit funny, but it really saves points, even for strong students. We call it give it "
-        "to the little guy.")),
+      L('Now a technique that sounds a bit funny, but it really saves points, even for strong students. We call it give it to the little guy. That means multiply the smaller amount to make the amounts equal.')),
     S('Where it helps',
       L("We use it when we build an equation with words like twice, or three times. It comes up a lot in age questions, "
         "and in questions about money.", show(l_1, 'with words like twice')),
@@ -1736,8 +1706,7 @@ video('solve-wp22-g039', 'solution', qid='wp22-g039', slides=[
         show(y_2, 'Think of four and eight'), show(y_1, 'So the times two goes')),
       L("Five years ago, the little guy was Tom, x minus five. So two times x minus five is equal to x plus four.",
         show(y_3, 'So two times x minus five')),
-      L("Now we open the brackets. Two times x is two x. Two times five is ten. So two x minus ten is x plus four. We "
-        "take x from both sides, and add ten to both sides. x is fourteen.", show(y_4, 'So two x minus ten'),
+      L('Now we open the brackets. Two times x is two x. Two times five is ten. So two x minus ten is x plus four. We take x from both sides, and add ten to both sides. Four plus ten is fourteen, so x is fourteen.', show(y_4, 'So two x minus ten'),
         show(y_5, 'x is fourteen')),
       L("x is Tom's age now, exactly what they asked. Choice number three is our answer.",
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
@@ -1819,13 +1788,9 @@ video('solve-wp22-g040', 'solution', qid='wp22-g040', slides=[
       L("Choice number one, fifteen. Six tickets cost ninety, which is enough. But seven tickets cost a hundred five, "
         "exactly what she has. So she can buy seven, and the question says she can't. Out.",
         show(d_5, 'Six tickets cost ninety'), show(d_5b, 'But seven tickets cost'), mk('cross', 'choice 1', "and the question says she can't")),
-      L("Choice number two, seventeen. Six tickets cost a hundred two, which is enough. Seven tickets cost seven times "
-        "seventeen. That's seventy plus forty-nine, a hundred nineteen. That's more than a hundred five, so it's not enough. "
-        "Both tests pass.", show(d_6, 'Six tickets cost a hundred two'),
+      L("Choice number two, seventeen. Six tickets cost a hundred two, which is enough. Seven tickets cost seven times seventeen. Seven times ten is seventy, and seven times seven is forty-nine. Seventy plus forty-nine is a hundred nineteen. That's more than a hundred five, so it's not enough. Both tests pass.", show(d_6, 'Six tickets cost a hundred two'),
         show(d_6b, 'a hundred nineteen')),
-      L("Let's keep the idea from this question. Enough for six, but not enough for seven, gives two inequalities. Six "
-        "tickets cost the money or less, and seven tickets cost more than the money. So the price is squeezed between "
-        "two numbers. Whenever you see enough for some number, but not for one more, write both of them.",
+      L("Let's keep the idea from this question. Enough for six, but not enough for seven, gives two inequalities. Six tickets cost the money or less, and seven tickets cost more than the money. So the price must fit both limits. Whenever you see enough for some number, but not for one more, write both of them.",
         show(d_tc, 'gives two inequalities'), show(d_tc2, 'seven tickets cost more than the money')),
       L("A question that builds an equation or an inequality can almost always be solved by plugging in the answers too. "
         "Choice number two is our answer, and I'll see you in the next question.",
@@ -1884,9 +1849,7 @@ video('solve-wp22-g042', 'solution', qid='wp22-g042', slides=[
         show(n_t['r2'], 'And a question mark')),
       L("From one and a half to two isn't a whole multiplier, so we use the triangle value. Multiply along the diagonal, "
         "two times one, and divide by what's left, one and a half.", show(n_t['dg'], 'Multiply along the diagonal'), show(n_3a, 'and divide by what')),
-      L("One and a half on the bottom isn't nice, so let's get rid of the half. We could multiply the top and the bottom by "
-        "ten, but that only makes bigger numbers. Times two is enough. Two times two is four. One and a half times two "
-        "is three. So four thirds of a credit.", show(n_3, 'Times two is enough'), show(n_3c, 'So four thirds of a credit'),
+      L("Let's remove the half from the denominator to make division easier. We could multiply the top and the bottom by ten, but that only makes bigger numbers. Times two is enough. Two times two is four. One and a half times two is three. So four thirds of a credit.", show(n_3, 'Times two is enough'), show(n_3c, 'So four thirds of a credit'),
         show(n_t['ans'], 'four thirds of a credit'))),
     S('Method 1 · The math way: equal ratios',
       L("Now we add it all up. Two credits for the kiwis and one for the limes, that's three. Three is nine thirds, and nine "
@@ -1955,8 +1918,7 @@ video('solve-wp22-g043', 'solution', qid='wp22-g043', slides=[
         "a hundred sixty times nine sixteenths.", show(v_6a, 'Three times three is nine'), show(v_6, 'So it\'s a hundred sixty times')),
       L("And now it's easy to see. A hundred sixty divided by sixteen is ten. And ten times nine is ninety.",
         show(v_7, 'A hundred sixty divided by sixteen'), show(v_8, 'ten times nine is ninety')),
-      L("So when a question has several stages, don't rush to calculate each one. Write the whole exercise first. The "
-        "numbers usually cancel nicely. Choice number three is our answer, and I'll see you in the next question.",
+      L("So when a question has several stages, don't rush to calculate each one. Write the whole exercise first. Then check whether you can simplify before multiplying. Choice number three is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
@@ -2039,8 +2001,7 @@ video('solve-wp22-g045', 'solution', qid='wp22-g045', slides=[
       L("Half of the supermarket loaves are whole-wheat. Half of two is one, fine. A fifth of the café loaves. A fifth of "
         "one loaf? That's no good, we can't have part of a loaf.", show(m_1b, 'Half of two is one'),
         show(m_1c, 'A fifth of one loaf')),
-      L("No problem. We chose the numbers, so we may change them. The cafés need a number that a fifth can come out of, "
-        "and the smallest is five. So five café loaves, and twice that, ten supermarket loaves.",
+      L('No problem. We chose the numbers, so we may change them. The café total must be divisible by five, so a fifth is whole. The smallest possible total is five. So five café loaves, and twice that, ten supermarket loaves.',
         show(m_2, 'So five café loaves'))),
     S('Method 1 · Plugging in numbers',
       L("A fifth of five is one whole-wheat loaf. Half of ten is five whole-wheat loaves. Together, one plus five is six "
@@ -2076,9 +2037,9 @@ u_b2 = UNITS('u_b2', [('vanilla', 6), ('chocolate', 3)], [
     unit=56, labw=150, gap=60, col=1)
 u_1 = IH('u_1', 'vanilla $14$? $\\ \\frac{1}{6}=14\\div5$', size=30)
 u_1b = IH('u_1b', 'not whole, so no', size=30)
-u_2 = IH('u_2', 'vanilla: $\\ \\frac{1}{6}=10\\div5=2$', size=30)
+u_2 = IH('u_2', 'one vanilla part: $\\ 10\\div5=2$', size=30)
 u_2b = IH('u_2b', '$6\\cdot2=12$', size=30)
-u_3 = IH('u_3', 'chocolate: $\\ \\frac{1}{3}=14\\div2=7$', size=30)
+u_3 = IH('u_3', 'one chocolate part: $\\ 14\\div2=7$', size=30)
 u_3b = IH('u_3b', '$3\\cdot7=21$', size=30)
 u_4 = IH('u_4', '$12+21=33$', size=30, col=1)
 u_5 = IH('u_5', '$10+14=24$ left', size=30)
@@ -2104,13 +2065,13 @@ video('solve-wp22-g046', 'solution', qid='wp22-g046', slides=[
         "vanilla.", show(u_1, 'fourteen divided by five'), show(u_1b, "That's not a whole number"), pt('stem', 'she sells only whole cupcakes')),
       L("So it's the other way round. Ten vanilla cupcakes are left, and fourteen chocolate.")),
     S('Method 1 · The math way: two options',
-      L("First the vanilla. Ten is five sixths, so one sixth is ten divided by five, two cupcakes. She sold one sixth, so we give it "
-        "back. Six sixths are six times two, twelve vanilla cupcakes.", show(u_b2['line'], 'Ten is five sixths'),
+      L("First the vanilla. Ten cupcakes are five sixths of the original vanilla total. So one sixth is ten divided by five, two cupcakes. She sold one sixth, so we give it "
+        "back. Six sixths are six times two, twelve vanilla cupcakes.", show(u_b2['line'], 'Ten cupcakes are five sixths'),
         show(u_b2['k1'], 'so one sixth is'), show(u_2, 'ten divided by five'), show(u_b2['v1'], 'two cupcakes'),
         show(u_2b, 'Six sixths are six times two')),
-      L("Now the chocolate. She sold a third, so two thirds are left. Fourteen is two thirds, so one third is seven. Three thirds "
-        "are three times seven, twenty-one chocolate cupcakes.", show(u_b2['k2'], 'Fourteen is two thirds'),
-        show(u_3, 'so one third is seven'), show(u_b2['v2'], 'Three thirds'), show(u_3b, 'three times seven')),
+      L("Now the chocolate. She sold a third, so two thirds are left. Fourteen cupcakes are two thirds of the original chocolate total. So one third is fourteen divided by two, seven cupcakes. Three thirds "
+        "are three times seven, twenty-one chocolate cupcakes.", show(u_b2['k2'], 'Fourteen cupcakes are two thirds'),
+        show(u_3, 'So one third is fourteen divided by two'), show(u_b2['v2'], 'Three thirds'), show(u_3b, 'three times seven')),
       L("At first she had twelve plus twenty-one, thirty-three cupcakes. Choice number four is our answer.",
         show(u_4, 'twelve plus twenty-one'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
     S('Method 2 · Estimation',
@@ -2167,8 +2128,7 @@ video('solve-wp22-g047', 'solution', qid='wp22-g047', slides=[
       L("Afterwards, B carries half as many as A. So B is the little guy, and it gets the times two. Two times B is equal "
         "to A. Two times x plus six is equal to four x minus six.", pt('stem', 'Afterwards, B carries half'),
         show(z_3, 'Two times x plus six')),
-      L("Now we open the brackets. So two x plus twelve is equal to four x minus six. We take two x from both sides, and add six to "
-        "both sides. Twelve plus six is eighteen, so eighteen is two x, and x is nine.", show(z_4, 'Two x plus twelve'),
+      L('Now we open the brackets. So two x plus twelve is equal to four x minus six. We take two x from both sides, and add six to both sides. Twelve plus six is eighteen, so eighteen is two x. Divide both sides by two, and x is nine.', show(z_4, 'Two x plus twelve'),
         show(z_5, 'Twelve plus six is eighteen'), show(z_5b, 'so eighteen is two x'))),
     S('Method 1 · The math way: an equation',
       L("Careful, don't mark nine. That's bus B at the start, and they ask about both buses together. Moving students "
@@ -2186,9 +2146,7 @@ video('solve-wp22-g047', 'solution', qid='wp22-g047', slides=[
         "is forty-eight plus two. And forty-eight is three times sixteen. So fifty doesn't either. Choice numbers one and "
         "four are out.", show(z_9, 'Forty is thirty-nine plus one'), show(z_9b, 'Fifty is forty-eight'), mk('cross', 'choice 1', 'Choice numbers one and'),
         mk('cross', 'choice 4', 'four are out')),
-      L("Only forty-five is left, and it divides by both. Forty-five is five times nine. It's also three times fifteen. So when "
-        "a total is split in a ratio, it divides by the sum of the ratio numbers, before and after. Choice number two is "
-        "our answer, and I'll see you in the next question.", show(z_10, 'Forty-five is five times nine'), show(z_10b, "It's also three times"),
+      L("Only forty-five is left, and it divides by both. Forty-five is five times nine. It's also three times fifteen. For whole numbers of students, use a fully reduced whole-number ratio. The total is divisible by the sum of its parts. Check that condition before and after the move. Choice number two is our answer, and I'll see you in the next question.", show(z_10, 'Forty-five is five times nine'), show(z_10b, "It's also three times"),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
 
@@ -2207,6 +2165,8 @@ f_6b = IH('f_6b', '$7\\cdot50=350$, $\\ $fee $385-350=35$, no', size=30)
 f_7 = IH('f_7', '(2) $45$: $\\ $fee $250-180=70$', size=30)
 f_7b = IH('f_7b', '$7\\cdot45=315$', size=30)
 f_7c = IH('f_7c', 'fee $385-315=70$ ✓', size=30)
+f_7d = IH('f_7d', '$7\\cdot40=280$', size=30, col=1)
+f_7e = IH('f_7e', '$7\\cdot5=35$', size=30, col=1)
 f_8 = IH('f_8', '$7-4=3$ hours', size=30)
 f_9 = IH('f_9', '$385-250=135$ credits', size=30)
 f_10 = IH('f_10', '$135\\div3=45$', size=30)
@@ -2231,17 +2191,14 @@ video('solve-wp22-g048', 'solution', qid='wp22-g048', slides=[
       L("[pause] Now let's plug in the answers. We start again from the givens. For each hourly charge, we find the fee "
         "from one job, and check that the other job gives the same fee. Let's start with the four-hour job, because four "
         "is easier to multiply by.", pt('stem', "Let's start with the four-hour job")),
-      L("Choice number three, sixty-five. Four hours cost sixty-five times four, two hundred sixty. But the whole bill was "
-        "two hundred fifty, less than the hours alone. Impossible, so it's out.", show(f_5, 'Four hours cost sixty-five'), show(f_5b, 'But the whole bill'),
+      L("Choice number three, sixty-five. Four hours cost sixty-five times four. Four times sixty is two hundred forty. Four times five is twenty, so that's two hundred sixty. But the whole bill was two hundred fifty, less than the hours alone. Impossible, so it's out.", show(f_5, 'Four hours cost sixty-five'), show(f_5b, 'But the whole bill'),
         mk('cross', 'choice 3', "Impossible, so it's out")),
       L("Choice number four, fifty. Four hours cost two hundred, so the fee is two hundred fifty minus two hundred, fifty. "
         "Now the seven-hour job. Seven times fifty is three hundred fifty. So the fee there is three hundred eighty-five "
         "minus three hundred fifty, thirty-five. The fee must be the same in both jobs, and fifty isn't thirty-five. Out.",
         show(f_6, 'so the fee is two hundred fifty minus'), show(f_6b, 'So the fee there'), mk('cross', 'choice 4', "and fifty isn't thirty-five"))),
     S('Method 2 · Plugging in the answers',
-      L("Choice number two, forty-five. Four hours cost a hundred eighty, so the fee is seventy. Seven hours cost three "
-        "hundred fifteen, so the fee is three hundred eighty-five minus three hundred fifteen, seventy again. The same fee "
-        "in both jobs. It fits.", show(f_7, 'so the fee is seventy'), show(f_7b, 'Seven hours cost three hundred fifteen'), show(f_7c, 'seventy again'), mk('tick', 'choice 2', 'It fits'))),
+      L('Choice number two, forty-five. Four times forty-five is a hundred eighty. The fee is two hundred fifty minus a hundred eighty, seventy. Seven times forty is two hundred eighty. Seven times five is thirty-five, giving three hundred fifteen for the hours. The fee is three hundred eighty-five minus three hundred fifteen, seventy again. The same fee in both jobs. It fits.', show(f_7, 'The fee is two hundred fifty minus a hundred eighty'), show(f_7d, 'Seven times forty'), show(f_7e, 'Seven times five'), show(f_7b, 'giving three hundred fifteen for the hours'), show(f_7c, 'seventy again'), mk('tick', 'choice 2', 'It fits'))),
     S('Method 3 · Insight: what changed?',
       L("[pause] And the insight. We start again from the givens, and ask what changed between the two jobs. The fixed fee "
         "didn't change. Only the hours changed.", pt('stem', 'what changed between the two jobs')),
@@ -2279,8 +2236,7 @@ video('solve-wp22-g049', 'solution', qid='wp22-g049', slides=[
       L("One equation, and two unknowns, the large crate and the small crate. Before we solve, let's understand one idea "
         "about questions like this. We'll solve it two ways, by understanding, and then the math way.",
         pt('stem', 'Nine large crates and six')),
-      L("Let's solve it by understanding, with easy numbers first. Say one large crate and one small crate weigh ten kilos "
-        "together. Can we know what each one weighs? No. It could be one and nine, or four and six, or five and five.",
+      L("Let's solve it by understanding, with easy numbers first. Say one large crate and one small crate weigh ten kilos together. Can we know what each one weighs? No. It could be one and nine, or four and six, or five and five. Large and small describe the crate sizes, not their weights.",
         show(x_1, 'Say one large crate'), show(x_1b, 'It could be one and nine')),
       L("But what do two large crates and two small crates weigh? That we can know. We doubled every part, so the weight "
         "doubles too, twenty kilos.", show(x_2, 'We doubled every part')),
@@ -2337,8 +2293,7 @@ video('solve-wp22-g050', 'solution', qid='wp22-g050', slides=[
         "minus fifteen is equal to e plus fifteen.", show(t_2, 'So n minus fifteen is equal')),
       L("Let's move the terms. We take e from both sides, and add fifteen to both sides. n minus e is fifteen plus fifteen, "
         "thirty.", show(t_3, 'n minus e is fifteen plus fifteen')),
-      L("Now we have two equations. If we add them, the plus e and the minus e cancel. n plus n is two n. And seventy plus "
-        "thirty is a hundred. So two n is a hundred, and n is fifty.", show(t_4, 'So two n is a hundred'), show(t_4b, 'and n is fifty')),
+      L('Now we have two equations. If we add them, the plus e and the minus e cancel. n plus n is two n. And seventy plus thirty is a hundred. So two n is a hundred. Divide both sides by two, and n is fifty.', show(t_4, 'So two n is a hundred'), show(t_4b, 'and n is fifty')),
       L("Noa had fifty, and together they had seventy. So Eli had seventy minus fifty, twenty.", show(t_5, 'So Eli had seventy minus')),
       L("Noa's number divided by Eli's is fifty over twenty. We divide the top and the bottom by ten, five over two. Choice "
         "number four is our answer.", show(t_6, 'is fifty over twenty'), show(t_6b, 'five over two'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
@@ -2367,14 +2322,13 @@ j_4 = IH('j_4', '$4a+6p=2(2a+3p)$', size=30)
 j_4b = IH('j_4b', '$=2\\cdot13=26$ ✓', size=30)
 j_5 = IH('j_5', '$3a+2p$: $\\ 6+6=12$', size=30)
 j_5b = IH('j_5b', 'or $\\ 15+2=17$: $\\ $cannot be determined', size=30)
-j_6 = I('j_6', 'One equation, two unknowns: $\\ $only a multiple of it', size=30)
+j_6 = I('j_6', 'Different allowed results: $\\ $cannot be determined', size=30)
 video('r26-t22-exam-tools', 'lesson', slides=[
     S('Three Exam Tools',
       L("Welcome back. Here are three more tools the exam loves. The first one we'll learn here, knowing when we can't find "
         "the answer. The other two we'll learn in the questions.")),
     S('One equation, two unknowns',
-      L("Say a question gives us one equation with two unknowns. Two a plus three p is thirteen. Can we find a and p? No, "
-        "because many pairs work.", show(j_1, 'Two a plus three p is thirteen')),
+      L('Say a question gives us one equation with two unknowns. Two a plus three p is thirteen. Without any other conditions, can we find one value for each? No, because many pairs work.', show(j_1, 'Two a plus three p is thirteen')),
       L("For example, a is two and p is three. Two times two is four. Three times three is nine. And four plus nine is "
         "thirteen. Or a is five and p is one. Ten plus three is thirteen too. Both pairs fit.",
         show(j_2, 'a is two and p is three'), show(j_2b, 'And four plus nine'), show(j_3, 'Or a is five and p is one')),
@@ -2383,9 +2337,7 @@ video('r26-t22-exam-tools', 'lesson', slides=[
       L("And three a plus two p? That's not a multiple of the equation. With the first pair, it's six plus six, twelve. "
         "With the second pair, it's fifteen plus two, seventeen. Two different results, so it cannot be determined.",
         show(j_5, 'With the first pair'), show(j_5b, 'With the second pair')),
-      L("So remember, with one equation and two unknowns, we can find only a multiple of that equation. Anything else "
-        "cannot be determined, and the exam does offer that as a choice. Let's see the other two tools in the questions. "
-        "I'll see you in the next video.", show(j_6, 'with one equation and two unknowns'))),
+      L("So one equation may leave several possible pairs of values. A multiple of its left side still has a fixed value. For another expression, check whether allowed pairs give different results. If they do, the answer cannot be determined. The exam does offer that as a choice. Let's see the other two tools in the questions. I'll see you in the next video.", show(j_6, 'So one equation may leave'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t22-04 (added: letters in the choices)

@@ -36,7 +36,7 @@
     ]
    },
    {
-    "say": "Across the first row, from twelve to eighteen, is times one and a half. That's not a whole number. Down the minutes, from twelve to twenty, is twenty over twelve, five thirds. That's not whole either. So an easy multiplier doesn't help us here.",
+    "say": "Across the first row, from twelve to eighteen, is times one and a half. That's not a whole number. Down the minutes, from twelve to twenty, is twenty over twelve, five thirds. That's not whole either. We could use these fractions. But let's learn another way that works without a whole-number multiplier.",
     "at": [
      "Across the first row",
      "one and a",
@@ -107,7 +107,6 @@
    {
     "say": "[pause] Now the second way, cross-multiplying. We start again from the table of the question. Twelve minutes and eighteen potatoes, and twenty minutes. This time we call the missing number x.",
     "at": [
-     "Now the",
      "Now the second way",
      "We start again",
      "the question. Twelve",
@@ -117,10 +116,12 @@
     ]
    },
    {
-    "say": "In equal ratios, the two diagonal products are equal. Twelve times x is equal to twenty times eighteen.",
+    "say": "The cook has the same rate in both rows. So eighteen over twelve is equal to x over twenty. Multiplying both sides by twelve times twenty removes the denominators. That makes the two diagonal products equal. Twelve times x is equal to twenty times eighteen.",
     "at": [
-     "the two diagonal products",
-     "are equal",
+     "eighteen over twelve is equal to x over twenty",
+     "to x over",
+     "That makes the two diagonal products equal",
+     "That makes the two diagonal products equal",
      "Twelve times x is equal",
      "to twenty times"
     ]

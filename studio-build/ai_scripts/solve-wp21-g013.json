@@ -40,7 +40,7 @@
     ]
    },
    {
-    "say": "Each more six adds another four. Eighteen, twenty-two, twenty-six, thirty. So thirty can happen, and choice number four is out.",
+    "say": "Each time we replace another two with six, we add four. Eighteen, twenty-two, twenty-six, thirty. So thirty can happen, and choice number four is out.",
     "at": [
      "Eighteen, twenty-two",
      "thirty can happen",
@@ -55,7 +55,7 @@
     ]
    },
    {
-    "say": "Thirty-two is between the smallest total and the biggest, and it still can't happen. Being inside the range is not enough. This is called the skip. It happens when two values swap with each other, like the two and the six here. So thirty-two is impossible, and choice number two is our answer.",
+    "say": "Thirty-two is between the smallest total and the biggest, and it still can't happen. Being inside the range is not enough. This is called the skip. Here replacing two with six changes the total by four. So some numbers between the possible totals are skipped. So thirty-two is impossible, and choice number two is our answer.",
     "at": [
      "Being inside the range",
      "This is called",

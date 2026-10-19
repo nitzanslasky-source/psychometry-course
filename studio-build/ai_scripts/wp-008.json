@@ -25,10 +25,10 @@
     ]
    },
    {
-    "say": "If you remember the formulas for sequences from school, leave them. These aren't the sequences you know, and those formulas won't work here.",
+    "say": "Don't assume a sequence follows a formula you know from school. First check the rule in the question. Here we can follow that rule without a sequence formula.",
     "at": [
-     "leave them",
-     "These aren't the"
+     "Don't assume",
+     "a formula you"
     ]
    },
    "Solving these by pure understanding is possible, but every question is different, and very few students manage it. Plugging in is simple and safe. Let's see one question of each kind. [pause] I'll see you in the next video."

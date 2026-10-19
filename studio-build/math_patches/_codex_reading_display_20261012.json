@@ -10170,6 +10170,12 @@
       "Six times five x minus ten",
       "6(5x − 10)"
      ]
+    ],
+    "1.4": [
+     [
+      "Before, five to four, times three, is fifteen to twelve. After, five to six, times two, is ten to twelve.",
+      "Before, (5 : 4) × 3 = 15 : 12. After, (5 : 6) × 2 = 10 : 12."
+     ]
     ]
    }
   },
@@ -10210,6 +10216,46 @@
      [
       "five thirds",
       "5/3"
+     ]
+    ],
+    "1.5": [
+     [
+      "from the twenty to the eighteen",
+      "from 20 to 18"
+     ]
+    ]
+   }
+  },
+  "wp-034": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "4.3": [
+     [
+      "three x over seven x is still three over seven",
+      "(3x)/(7x) is still 3/7"
+     ]
+    ],
+    "6.2": [
+     [
+      "Then Ann is two and a half x.",
+      "Then Ann is 2½x."
+     ],
+     [
+      "x divided by two and a half",
+      "x ÷ 2½"
+     ]
+    ]
+   }
+  },
+  "solve-q-r26-t22-20": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "3.4": [
+     [
+      "So subtract the whole of x plus twenty-six minus k from x plus k. That difference is six.",
+      "So subtract the whole of x + 26 − k from x + k: (x + k) − (x + 26 − k) = 6."
      ]
     ]
    }

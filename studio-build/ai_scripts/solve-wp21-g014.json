@@ -63,7 +63,7 @@
     ]
    },
    {
-    "say": "Thirty-one is more than twenty-four, so the tenors are more. So twenty-four fits every given. When the choices are numbers, the moment one fully works, we can mark it, because a question can't have two right answers. Choice number three is our answer.",
+    "say": "Thirty-one is more than twenty-four, so the tenors are more. So twenty-four fits every given. They ask which number can fit every given. Twenty-four does, so we can choose it. Choice number three is our answer.",
     "at": [
      "Thirty-one is more than",
      "so the tenors",
@@ -96,7 +96,7 @@
     ]
    },
    {
-    "say": "But there must be more tenors than that. The total stays sixty-three, so more tenors leave fewer singers for the altos and the sopranos. So the sopranos must be fewer than twenty-seven. This is a useful habit. When a given says more than, first look at the case where it's exactly equal. That's the border, and the answer is on one side of it.",
+    "say": "But there must be more tenors than sopranos, not an equal number. The total stays sixty-three, so more tenors leave fewer singers for the altos and the sopranos. So the sopranos must be fewer than twenty-seven. This is a useful habit. When a given says more than, first look at the case where it's exactly equal. That's the border, and the answer is on one side of it.",
     "at": [
      "So the sopranos must be fewer",
      "This is a"

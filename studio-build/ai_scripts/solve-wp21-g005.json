@@ -34,9 +34,9 @@
     ]
    },
    {
-    "say": "Now a tip for quick adding. Every extra vehicle comes with its own gap, so let's glue each vehicle to its gap. A car plus a gap is four plus two, six. A truck plus a gap is ten plus two, twelve.",
+    "say": "Now let's make the adding quicker. Every extra vehicle also needs one more gap. So we count the vehicle and its gap together. A car plus a gap is four plus two, six. A truck plus a gap is ten plus two, twelve.",
     "at": [
-     "Now a tip",
+     "Now let's make",
      "A car plus a gap",
      "A truck plus"
     ]

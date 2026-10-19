@@ -16,27 +16,28 @@
     ]
    },
    {
-    "say": "Let's see it in numbers. If B is ten, then A is ten plus three, thirteen. And in a question it sounds like this. Dana is three years older than Ella. So Dana is Ella plus three.",
+    "say": "Let's see it in numbers. If B is ten, then A is ten plus three, thirteen. And in a question it sounds like this. Dana is three years older than Ella. So Dana's age is Ella's age plus three.",
     "at": [
      "If B is ten",
      "And in a",
-     "So Dana is Ella plus three"
+     "So Dana's age",
+     "age plus three"
     ]
    },
    {
-    "say": "Now the opposite. B is five less than A. So we start with A and take away five. B is equal to A minus five. In a question, Ben has five fewer marbles than Sam. So Ben is Sam minus five.",
+    "say": "Now the opposite. B is five less than A. So we start with A and take away five. B is equal to A minus five. In a question, Ben has five fewer marbles than Sam. So Ben's number of marbles is Sam's number minus five.",
     "at": [
      "B is five less than A",
      "So we start",
      "B is equal to A minus five",
      "In a question",
-     "So Ben is Sam minus five"
+     "So Ben's number of marbles",
+     "is Sam's number"
     ]
    },
    {
     "say": "These two ways are really the same idea, written the other way round. If B is five less than A, then A is five more than B, so A is equal to B plus five. Both are right, as long as we write it the right way.",
     "at": [
-     "These two ways",
      "so A is equal to B plus five",
      "Both are right"
     ]
@@ -71,12 +72,12 @@
     ]
    },
    {
-    "say": "And here's a word that is always the same. Twice, or double, is always times two. If I want times three, I don't say double, I say three times. Just like half is always divided by two. I can cut a cake into three parts, but not into three halves. Halves are always two.",
+    "say": "And here's a word that is always the same. Twice, or double, is always times two. If I want times three, I don't say double, I say three times. And half means one of two equal parts. Half of eight is four, because eight divided by two is four. Three equal parts are thirds, not halves.",
     "at": [
      "Twice, or double, is always",
      "If I want",
-     "Just like half is always",
-     "divided by two"
+     "Half of eight is four",
+     "because eight divided"
     ]
    },
    {

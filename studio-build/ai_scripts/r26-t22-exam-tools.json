@@ -7,11 +7,11 @@
   ],
   [
    {
-    "say": "Say a question gives us one equation with two unknowns. Two a plus three p is thirteen. Can we find a and p? No, because many pairs work.",
+    "say": "Say a question gives us one equation with two unknowns. Two a plus three p is thirteen. Without any other conditions, can we find one value for each? No, because many pairs work.",
     "at": [
      "us one equation",
      "Two a plus three p is thirteen",
-     "Can we find"
+     "Without any other"
     ]
    },
    {
@@ -43,10 +43,10 @@
     ]
    },
    {
-    "say": "So remember, with one equation and two unknowns, we can find only a multiple of that equation. Anything else cannot be determined, and the exam does offer that as a choice. Let's see the other two tools in the questions. I'll see you in the next video.",
+    "say": "So one equation may leave several possible pairs of values. A multiple of its left side still has a fixed value. For another expression, check whether allowed pairs give different results. If they do, the answer cannot be determined. The exam does offer that as a choice. Let's see the other two tools in the questions. I'll see you in the next video.",
     "at": [
-     "with one equation and two unknowns",
-     "unknowns, we can"
+     "So one equation may leave",
+     "several possible pairs"
     ]
    }
   ]

@@ -44,13 +44,13 @@
     ]
    },
    {
-    "say": "Now we open the brackets. So two x plus twelve is equal to four x minus six. We take two x from both sides, and add six to both sides. Twelve plus six is eighteen, so eighteen is two x, and x is nine.",
+    "say": "Now we open the brackets. So two x plus twelve is equal to four x minus six. We take two x from both sides, and add six to both sides. Twelve plus six is eighteen, so eighteen is two x. Divide both sides by two, and x is nine.",
     "at": [
      "Two x plus twelve",
      "equal to four",
      "Twelve plus six is eighteen",
      "so eighteen is two x",
-     "and x is"
+     "Divide both sides"
     ]
    }
   ],
@@ -104,11 +104,11 @@
     ]
    },
    {
-    "say": "Only forty-five is left, and it divides by both. Forty-five is five times nine. It's also three times fifteen. So when a total is split in a ratio, it divides by the sum of the ratio numbers, before and after. Choice number two is our answer, and I'll see you in the next question.",
+    "say": "Only forty-five is left, and it divides by both. Forty-five is five times nine. It's also three times fifteen. For whole numbers of students, use a fully reduced whole-number ratio. The total is divisible by the sum of its parts. Check that condition before and after the move. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
      "Forty-five is five times nine",
      "It's also three times",
-     "So when a",
+     "For whole numbers",
      "Choice number two is our answer"
     ]
    }

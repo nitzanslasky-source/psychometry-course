@@ -13,7 +13,7 @@
    },
    "One equation, and two unknowns, the large crate and the small crate. Before we solve, let's understand one idea about questions like this. We'll solve it two ways, by understanding, and then the math way.",
    {
-    "say": "Let's solve it by understanding, with easy numbers first. Say one large crate and one small crate weigh ten kilos together. Can we know what each one weighs? No. It could be one and nine, or four and six, or five and five.",
+    "say": "Let's solve it by understanding, with easy numbers first. Say one large crate and one small crate weigh ten kilos together. Can we know what each one weighs? No. It could be one and nine, or four and six, or five and five. Large and small describe the crate sizes, not their weights.",
     "at": [
      "Let's solve",
      "Say one large crate",

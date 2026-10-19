@@ -92,7 +92,7 @@
     ]
    },
    {
-    "say": "So when a question has several stages, don't rush to calculate each one. Write the whole exercise first. The numbers usually cancel nicely. Choice number three is our answer, and I'll see you in the next question.",
+    "say": "So when a question has several stages, don't rush to calculate each one. Write the whole exercise first. Then check whether you can simplify before multiplying. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
      "So when a",
      "Choice number three is our answer"

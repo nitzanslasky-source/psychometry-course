@@ -21,10 +21,10 @@
     ]
    },
    {
-    "say": "Stage two, we solve the equation. That part is technical. It's the algebra we already know, moving terms to the other side, opening brackets, a common denominator. It's a shame to lose points here.",
+    "say": "Stage two, we solve the equation. Now we use algebra to find the unknown number. It's the algebra we already know, moving terms to the other side, opening brackets, a common denominator. It's a shame to lose points here.",
     "at": [
      "Stage two, we solve",
-     "equation. That part"
+     "Now we use"
     ]
    },
    {
@@ -71,7 +71,7 @@
    },
    "Now let's read the equation back in words. A number times three, plus twenty-four, is equal to seven times the number. It's almost word for word the question. Every equation is really a sentence in words.",
    {
-    "say": "Stage two is technical. We want the x's on one side, so we take three x away from both sides. Seven x minus three x is four x, so twenty-four is equal to four x. Then we divide both sides by four, and x is six.",
+    "say": "Now let's solve the equation. We want the x's on one side, so we take three x away from both sides. Seven x minus three x is four x, so twenty-four is equal to four x. Then we divide both sides by four, and x is six.",
     "at": [
      "Seven x minus three",
      "is four x",
@@ -104,13 +104,14 @@
     ]
    },
    {
-    "say": "Now we solve. We take x away from both sides. Four x minus x is three x, so fifteen is equal to three x. Then we divide by three, and x is five.",
+    "say": "Now we solve. We take x away from both sides. Four x minus x is three x, so fifteen is equal to three x. To leave x alone, we divide both sides by three. Fifteen divided by three is five, so x is five.",
     "at": [
      "We take x",
      "Four x minus x",
      "so fifteen is equal to three x",
-     "Then we divide by three",
-     "and x is"
+     "three x. To",
+     "we divide both sides by three",
+     "Fifteen divided by"
     ]
    },
    {

@@ -93,9 +93,10 @@
     ]
    },
    {
-    "say": "Now we take twenty x from both sides, and add sixty to both sides. Thirty x minus twenty x is ten x, so ten x is sixty, and x is six.",
+    "say": "Now we take twenty x from both sides, and add sixty to both sides. Thirty x minus twenty x is ten x, so ten x is sixty. Divide both sides by ten, and x is six.",
     "at": [
      "so ten x is sixty",
+     "Divide both sides",
      "and x is six"
     ]
    },

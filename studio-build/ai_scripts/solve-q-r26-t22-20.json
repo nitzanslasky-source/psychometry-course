@@ -33,7 +33,7 @@
     ]
    },
    {
-    "say": "Dan gives three cards. He has seven, and she has seven. They're equal. So to make two people equal, you give half the gap. Half of six is three.",
+    "say": "Now start again with ten and four. Dan gives three cards instead. He has seven, and she has seven. They're equal. So to make two people equal, you give half the gap. Half of six is three.",
     "at": [
      "Dan gives three cards",
      "He has seven",
@@ -41,9 +41,10 @@
     ]
    },
    {
-    "say": "And if he gives four? Dan has six, and Ella has eight. Now Ella is ahead by two. The gap went down to zero, turned around, and grew on the other side.",
+    "say": "Start again with ten and four. What if he gives four cards instead? Dan has six, and Ella has eight. Now Ella is ahead by two. The gap went down to zero, turned around, and grew on the other side.",
     "at": [
-     "And if he gives four",
+     "Start again with",
+     "What if he gives four",
      "Dan has six"
     ]
    }
@@ -119,18 +120,19 @@
     ]
    },
    {
-    "say": "Now we open the brackets. x minus x is zero, so the x's cancel. k minus minus k is two k. And the minus twenty-six stays. So two k minus twenty-six is six.",
+    "say": "B has x plus k, and A has x plus twenty-six minus k. So subtract the whole of x plus twenty-six minus k from x plus k. That difference is six. Now we open the brackets. x minus x is zero, so the x's cancel. k minus minus k is two k. And the minus twenty-six stays. So two k minus twenty-six is six.",
     "at": [
-     "Now we open",
+     "B has x",
      "So two k minus twenty-six"
     ]
    },
    {
-    "say": "We add twenty-six to both sides. Two k is thirty-two, so k is sixteen. We get the same sixteen.",
+    "say": "We add twenty-six to both sides. Six plus twenty-six is thirty-two, so two k is thirty-two. Divide both sides by two, and k is sixteen. We get the same sixteen.",
     "at": [
      "We add twenty-six",
      "Two k is thirty-two",
-     "so k is sixteen",
+     "both sides by",
+     "and k is sixteen",
      "We get the"
     ]
    },

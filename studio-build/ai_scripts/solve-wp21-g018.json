@@ -41,7 +41,7 @@
     ]
    },
    {
-    "say": "So the fourth holds at most thirty-one. Choice number three goes up to thirty-five, so it's out. And both ends really happen, because the steps we didn't fix can simply be bigger. Seventeen to thirty-one, choice number one is our answer.",
+    "say": "So the fourth holds at most thirty-one. Choice number three goes up to thirty-five, so it's out. The last bank can still hold forty-seven in both cases. Any extra coins fit in a bigger step, since four is only the minimum increase. Seventeen to thirty-one, choice number one is our answer.",
     "at": [
      "so it's out",
      "choice number one"

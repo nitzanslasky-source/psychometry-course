@@ -97,7 +97,7 @@
     ]
    },
    {
-    "say": "Choice number two, seventeen. Six tickets cost a hundred two, which is enough. Seven tickets cost seven times seventeen. That's seventy plus forty-nine, a hundred nineteen. That's more than a hundred five, so it's not enough. Both tests pass.",
+    "say": "Choice number two, seventeen. Six tickets cost a hundred two, which is enough. Seven tickets cost seven times seventeen. Seven times ten is seventy, and seven times seven is forty-nine. Seventy plus forty-nine is a hundred nineteen. That's more than a hundred five, so it's not enough. Both tests pass.",
     "at": [
      "number two, seventeen",
      "Six tickets cost a hundred two",
@@ -107,7 +107,7 @@
     ]
    },
    {
-    "say": "Let's keep the idea from this question. Enough for six, but not enough for seven, gives two inequalities. Six tickets cost the money or less, and seven tickets cost more than the money. So the price is squeezed between two numbers. Whenever you see enough for some number, but not for one more, write both of them.",
+    "say": "Let's keep the idea from this question. Enough for six, but not enough for seven, gives two inequalities. Six tickets cost the money or less, and seven tickets cost more than the money. So the price must fit both limits. Whenever you see enough for some number, but not for one more, write both of them.",
     "at": [
      "gives two inequalities",
      "cost the money",

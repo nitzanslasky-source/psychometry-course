@@ -24,7 +24,7 @@
     ]
    },
    {
-    "say": "Why does it work? The total is fixed. Every bit we take from the others goes to the one we want to grow. Here's another example. Four different positive numbers add up to twenty. The others get one, two and three, that's six. So the biggest can be twenty minus six, fourteen.",
+    "say": "Why does it work? The total is fixed. Every bit we take from the others goes to the one we want to grow. Here's another example. Four different positive whole numbers add up to twenty. The others get one, two and three, that's six. So the biggest can be twenty minus six, fourteen.",
     "at": [
      "The others get one, two and three",
      "So the biggest"
@@ -43,10 +43,10 @@
     ]
    },
    {
-    "say": "Why does it work? If we make one number smaller, another one has to grow. The biggest can never be smaller than an equal share. Here's another example. Four numbers add up to thirty. Thirty divided by four is seven, with two left over. So eight, eight, seven and seven, and the biggest is at least eight.",
+    "say": "Why does it work? If we make one number smaller, another one has to grow. The biggest can never be smaller than an equal share. Here's another example. Four whole numbers add up to thirty. Thirty divided by four is seven, with two left over. So eight, eight, seven and seven, and the biggest is at least eight.",
     "at": [
      "If we make",
-     "Four numbers add up to thirty",
+     "Four whole numbers add up to thirty",
      "Thirty divided by"
     ]
    }
@@ -71,7 +71,7 @@
     ]
    },
    "The second and third rules sound like opposites, but they aren't. In the second rule we push the biggest down, so the others can't pass it, and that's why we share equally. In the third rule we push one number down, so the others take as much as they can.",
-   "The nuances come in the questions. [pause] I'll see you in the next video."
+   "Let's see how these rules work in the questions. [pause] I'll see you in the next video."
   ]
  ]
 }

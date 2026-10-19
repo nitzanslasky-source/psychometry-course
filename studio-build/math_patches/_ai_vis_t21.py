@@ -567,11 +567,11 @@ video('wp-001', 'lesson', slides=[
       L("Welcome back, and now word problems. A word problem is a short story, with a question about it.")),
     S('What a word problem is',
       L("The story can be about anything. A queue at a shop, a water tank, a trip, or friends sharing sweets. But under every story there's some math."),
-      L("Word problems are a big part of the quantitative section. Some questions are pure word problems. And many algebra and geometry questions are also written as a story. So this chapter pays off everywhere."),
-      L("We won't learn a trick for every story. We'll learn to see what's under it. Sometimes it's a total that's cut into parts. Sometimes it's a ratio. And sometimes it's just a short list of cases.",
+      L('Word problems are a big part of the quantitative section. Some questions are pure word problems. And many algebra and geometry questions are also written as a story. So this chapter helps with many kinds of questions.'),
+      L("We won't learn a trick for every story. We'll learn to find the math in the story. Sometimes it's a total that's cut into parts. Sometimes it's a ratio. And sometimes it's just a short list of cases.",
         show(a0, "Sometimes it's a total"), show(a0b, "Sometimes it's a ratio"), show(a0c, "it's just a short list"))),
     S('Trial and error',
-      L("We start with the most down-to-earth tool there is, trial and error. Trial and error means we try, we get it wrong, and we try again. There's no equation and no formula."),
+      L("We start with a simple tool, trial and error. Trial and error means we try, we get it wrong, and we try again. There's no equation and no formula."),
       L("Let's see it in numbers. A shop sells pens at three dollars and notebooks at five dollars. Dan spends exactly nineteen dollars, and he buys at least one of each. How many notebooks does he buy?", show(a1, 'A shop sells pens')),
       L("What do we try? The notebooks, because there are fewer options. Four notebooks would already cost twenty dollars, more than nineteen. So Dan buys one, two or three notebooks. Let's try them in order."),
       L("One notebook costs five dollars, so nineteen minus five leaves fourteen for the pens. Fourteen doesn't divide by three, because three times four is twelve and three times five is fifteen. So one notebook doesn't work.",
@@ -585,18 +585,18 @@ video('wp-001', 'lesson', slides=[
     S('Three types',
       L("Trial and error comes in three types, and each type gets its own lesson, with questions."),
       L("Type one is general problems. Nothing in the question tells us what to try first. So we just try, like we did with the pens and the notebooks.", show(b0, 'Type one is general problems')),
-      L("Type two is minimum and maximum. Here a little understanding tells us which way to push, so we need fewer tries. For example, three friends share ten sweets, and each gets at least one. What's the most one friend can get? To make one share as big as possible, we give the others as little as possible, one each. So the most is ten minus two, which is eight.", show(b1, 'Type two is minimum and maximum'), show(b1e, 'So the most is ten minus two')),
-      L("The same push with other numbers. Five friends share twenty sweets. The other four get one each, that's four. So the most one friend can get is twenty minus four, sixteen.", show(b1f, 'The other four get one each')),
+      L("Type two is minimum and maximum. Here we look for the smallest or biggest possible value. That helps us choose what to try. For example, three friends share ten sweets, and each gets at least one. What's the most one friend can get? To make one share as big as possible, we give the others as little as possible, one each. So the most is ten minus two, which is eight.", show(b1, 'Type two is minimum and maximum'), show(b1e, 'So the most is ten minus two')),
+      L("Let's try the same idea with other numbers. Five friends share twenty sweets. The other four get one each, that's four. So the most one friend can get is twenty minus four, sixteen.", show(b1f, 'The other four get one each')),
       L("Type three is patterns. A rule repeats again and again, and we write the items one by one. For example, a number starts at three and doubles each time. Three, six, twelve, twenty-four. So the fourth number is twenty-four.",
         show(b2, 'Type three is patterns'), show(b2e, 'starts at three and doubles')),
-      L("Another rule. Start at twenty and take away three each time. Twenty, seventeen, fourteen, eleven. Here we hardly think and hardly make mistakes. It's mostly trial, and very little error.",
+      L("Now let's try another rule. Start at twenty and take away three each time. Twenty, seventeen, fourteen, eleven. Here we hardly think and hardly make mistakes. It's mostly trial, and very little error.",
         show(b2f, 'Start at twenty and take away three'))),
     S('Must, could, cannot',
       L("One reminder from the first topic, because many of these questions ask it. Three words decide the question. Must, could and cannot."),
       L("Two positive whole numbers add up to fourteen. Could one of them be three? Yes. Three plus eleven is fourteen. For could, one example that works is enough.", show(c0, 'Two positive whole numbers'),
         show(c1, 'Three plus eleven is fourteen')),
       L("Must one of them be odd? Three and eleven are both odd. But two and twelve also add up to fourteen, and both are even. So one allowed example fails, and must is out.", show(c2, 'two and twelve also add up')),
-      L("Must one of them be at least seven? Here no example can prove it, we need a reason. If both were six or less, the sum would be at most six plus six, twelve. That's less than fourteen. So yes, one of them is always at least seven.", show(c3, 'If both were six or less')),
+      L("Must one of them be at least seven? One example can't show that this is always true. We need a reason that covers every allowed case. If both were six or less, the sum would be at most six plus six, twelve. That's less than fourteen. So yes, one of them is always at least seven.", show(c3, 'If both were six or less')),
       L("And cannot means it never works, for any allowed numbers. Can both be bigger than seven? No. The smallest whole numbers bigger than seven are eight and eight, and that's already sixteen. So could needs one example, must needs every case, and cannot means no case at all.",
         show(c4, 'Can both be bigger than seven'), show(c5, 'So could needs one example'), show(c5b, 'must needs every case'), show(c5c, 'cannot means no case'))),
     S('How to use this chapter',
@@ -615,7 +615,7 @@ video('wp-003', 'lesson', slides=[
     S('General Problems',
       L("Welcome back. Now type one of trial and error, general problems.")),
     S('Try and err',
-      L("What makes a problem a general problem? It depends on luck. Nothing in the question says try this first. We read it, and the only way forward is to try.", show(e0, 'Nothing in the question says'), show(e0b, 'the only way forward')),
+      L('What makes a problem a general problem? Our first try may work, or it may not. Nothing in the question says try this first. We read it, and the only way forward is to try.', show(e0, 'Nothing in the question says'), show(e0b, 'the only way forward')),
       L("Sometimes we hit it on the first try. Sometimes it takes a few tries. Both are fine, and that's exactly how these questions are meant to be solved.", show(e1, 'Sometimes we hit it')),
       L("Let's see two questions of this type. [pause] I'll see you in the next video.")),
 ])
@@ -639,22 +639,22 @@ g4l = IH('g4l', 'One large, two small: $\\ 2+4-1-1=4$', size=30)
 video('solve-wp21-g004', 'solution', qid='wp21-g004', slides=[
     S('Method 1 · Plugging in numbers: trial and error',
       L("A phone game starts with two large bubbles on the screen. Popping a large bubble splits it into five small bubbles. Popping a small bubble makes it disappear. After exactly three pops, how many bubbles can be on the screen?", pt('stem', 'A phone game', 'hl', 12.0), voice='calm', pause=0.5),
-      L("So they don't ask how many there must be. They ask what can be. One road that really happens and ends on a choice is enough. Nothing tells us which bubble to pop first, so this is a general problem. [short pause] We'll solve it in two different ways, by trial and error, and then with an insight.", pt('stem: ask', 'They ask what can be')),
-      L("[short pause] Let's start with trial and error. We try one road of pops and follow the game. At the start there are two large bubbles, and no small ones.", show(g4a, 'At the start there')),
+      L("So they don't ask how many there must be. They ask what can be. One allowed sequence of pops that gives a choice is enough. Nothing tells us which bubble to pop first, so this is a general problem. [short pause] We'll solve it in two different ways, by trial and error, and then with an insight.", pt('stem: ask', 'They ask what can be')),
+      L("[short pause] Let's start with trial and error. We choose which bubbles to pop and follow the game. At the start there are two large bubbles, and no small ones.", show(g4a, 'At the start there')),
       L("Pop one. There are no small bubbles yet, so the first pop has to hit a large one. That large bubble is gone, and five small ones appear. So we have one large and five small. One plus five is six bubbles. Six is in the choices, but that's after one pop only, so we keep going.",
         show(g4b, 'One plus five is six')),
-      L("Now the road splits, because we can pop the large one or a small one. Let's take one road, and pop the other large bubble. It turns into five more small ones. So there are no large ones left, and five plus five is ten small ones. Ten is a choice too, but that's after two pops. The question says exactly three pops.", show(g4c, 'five plus five is ten')),
+      L("Now we have two options for the second pop. We can pop the large bubble or a small one. Let's pop the other large bubble. It turns into five more small ones. So there are no large ones left, and five plus five is ten small ones. Ten is a choice too, but that's after two pops. The question says exactly three pops.", show(g4c, 'five plus five is ten')),
       L("Pop three. Only small bubbles are left, so we pop a small one, and it disappears. Ten minus one is nine bubbles.",
         show(g4d, 'Ten minus one is nine')),
-      L("Nine is in the choices. They ask what can be, and this road really happens. So there can be nine bubbles, and choice number three is our answer. This time we were lucky on the first road.",
+      L('Nine is in the choices. They ask what can be, and these three pops are allowed. So there can be nine bubbles, and choice number three is our answer. This time we were lucky with the first sequence we tried.',
         mk('tick', 'choice 3', 'choice number three is our answer'))),
     S('Method 1 · Plugging in numbers: trial and error',
-      L("What if we had taken the other road? Let's see it, because in another question the first road can miss. The first pop is the same, one large and five small.", show(g4e, 'The first pop is the same')),
+      L("What if the second pop had hit a small bubble? Let's check, because our first try won't always match a choice. The first pop is the same, one large and five small.", show(g4e, 'The first pop is the same')),
       L("This time, pop two hits a small bubble, and it disappears. One of the five small ones is gone, so four small are left. So we have one large and four small, five bubbles.", show(g4f, 'One of the five small ones')),
       L("Pop three can go two ways. If we pop the large one, it turns into five small ones. Four plus five is nine small bubbles, nine again.", show(g4g, 'If we pop the large one')),
-      L("If we pop a small one, one large and three small are left, four bubbles. Four is not in the choices. If this had been our first road, we'd just try again. That's trial and error. We try, we miss, and we try again.",
+      L("If we pop a small one, one large and three small are left, four bubbles. Four is not in the choices. If we'd tried this sequence first, we'd try another one. That's trial and error. We try, we miss, and we try again.",
         show(g4h, 'If we pop a small one')),
-      L("So every road ends at nine or at four, and only nine is in the choices. Choice number three is our answer.",
+      L('So every allowed sequence ends at nine or at four, and only nine is in the choices. Choice number three is our answer.',
         mk('tick', 'choice 3', 'Choice number three is our answer')),
       sb='Method 1 · Plugging in numbers: trial and error'),
     S('Method 2 · Insight: the change per pop',
@@ -686,7 +686,7 @@ video('solve-wp21-g005', 'solution', qid='wp21-g005', slides=[
       L("[short pause] Let's start by plugging in the answers, and build lines in order. The question says at least one of each, so we have no choice. The shortest line has one truck and one car, with one gap between them."),
       L("Ten for the truck, plus two for the gap, is twelve. Twelve plus four for the car is sixteen meters. Sixteen is choice number one. We just built it, so it's possible, and choice number one is out.",
         show(h5a, 'Ten for the truck'), mk('cross', 'choice 1', 'and choice number one is out')),
-      L("Now a tip for quick adding. Every extra vehicle comes with its own gap, so let's glue each vehicle to its gap. A car plus a gap is four plus two, six. A truck plus a gap is ten plus two, twelve.",
+      L("Now let's make the adding quicker. Every extra vehicle also needs one more gap. So we count the vehicle and its gap together. A car plus a gap is four plus two, six. A truck plus a gap is ten plus two, twelve.",
         show(h5b, 'A car plus a gap')),
       L("Let's add one more car to our sixteen. Sixteen plus six is twenty-two. That's choice number three, so it's possible, and it's out.", show(h5c, 'Sixteen plus six'), mk('cross', 'choice 3', "and it's out")),
       L("Choice number four is twenty-eight. Let's add another car. Twenty-two plus six is twenty-eight. Possible, so it's out too.", show(h5d, 'Twenty-two plus six'), mk('cross', 'choice 4', "so it's out too")),
@@ -703,7 +703,7 @@ video('solve-wp21-g005', 'solution', qid='wp21-g005', slides=[
 # Hebrew wp 119-128: min-max questions are about possible ranges; unlike general problems, understanding shortens the
 # tries (which way to push); the motif comes back all over (geometry, overlap problems).
 f0 = I('f0', 'Smallest possible? $\\quad$ Biggest possible?', size=30)
-f1 = I('f1', 'Know which way to push', size=30)
+f1 = I('f1', 'What makes the answer smaller or bigger?', size=30)
 f1b = I('f1b', 'Far fewer tries', size=30)
 video('wp-006', 'lesson', slides=[
     S('Minimum & Maximum',
@@ -711,9 +711,9 @@ video('wp-006', 'lesson', slides=[
     S('Ranges',
       L("Minimum and maximum questions are about ranges. What's the smallest possible value, and what's the biggest?",
         show(f0, "What's the smallest possible")),
-      L("Unlike general problems, we don't try blindly. A little understanding tells us which way to push, toward the smallest or toward the biggest. So we need far fewer tries.", show(f1, 'tells us which way to push'), show(f1b, 'So we need far fewer tries'))),
+      L('We look at what makes the answer smaller or bigger. That helps us choose what to try. So we need far fewer tries.', show(f1, 'We look at what makes'), show(f1b, 'So we need far fewer tries'))),
     S('A recurring motif',
-      L("By the way, minimum and maximum isn't only this lesson. It comes back all over the quantitative section. In geometry, in overlap problems later on, and in many other questions. So the thinking we build here pays off again and again."),
+      L("By the way, minimum and maximum isn't only this lesson. It comes back all over the quantitative section. In geometry, in overlap problems later on, and in many other questions. So we'll use this way of thinking again and again."),
       L("Let's see a question of this type. [pause] I'll see you in the next video.")),
 ])
 
@@ -741,6 +741,8 @@ q7d2 = IH('q7d2', '$=\\frac{110}{2}=55$', size=30, col=1)
 q7d3 = IH('q7d3', '5 pairs of $11$: $\\ 55$ ✓', size=30, col=1)
 q7e = IH('q7e', '8 friends: $\\ \\frac{8\\cdot9}{2}=36$', size=32)
 q7e2 = IH('q7e2', '$36\\le42$ ✓', size=32)
+q7spare = IH('q7spare', '$42-36=6$ left', size=30, col=1)
+q7give = IH('q7give', '$8+6=14$: different amounts', size=30, col=1)
 q7f = IH('q7f', '9 friends: $\\ \\frac{9\\cdot10}{2}=45$', size=32)
 q7f2 = IH('q7f2', '$45>42$ ✗', size=32)
 video('solve-wp21-g007', 'solution', qid='wp21-g007', slides=[
@@ -760,15 +762,15 @@ video('solve-wp21-g007', 'solution', qid='wp21-g007', slides=[
         show(p7['fix'], 'Eight plus six is fourteen'), show(p7b, 'All the amounts are still different'),
         mk('tick', 'choice 2', 'choice number two is our answer'))),
     S('Method 2 · The math way: shortcut formula',
-      L("[pause] Now the math way, with a short formula. The cheapest way to give different amounts to some friends is one, two, three, and so on. And there's a quick way to add that up."),
+      L("[pause] Now the math way, with a short formula. The smallest different amounts we can give are one, two, three, and so on. And there's a quick way to add that up."),
       L("Let's add one to eight by pairing the ends. One plus eight is nine. Two plus seven is nine. Three plus six is nine. Four plus five is nine. That's four pairs of nine, and four times nine is thirty-six.",
         show(q7a, 'One plus eight is nine'), show(q7b, 'four times nine')),
       L("Why does every pair give the same sum? Going in from both ends, one number goes up by one, and the other goes down by one. So the sum stays the same. In general, adding one, two, and so on up to k gives k times the next number, k plus one, and then half of that.", show(q7c, 'In general, adding one')),
       L("Let's check it once more, with ten. One to ten is ten times eleven, all divided by two. Ten times eleven is a hundred ten, and half of that is fifty-five. With pairs, it's five pairs of eleven, fifty-five again.",
         show(q7d, 'One to ten is ten times eleven'), show(q7d2, 'Ten times eleven is a hundred ten'), show(q7d3, 'With pairs'))),
     S('Method 2 · The math way: shortcut formula',
-      L("Now back to our question. The friends need different amounts. Eight friends need at least eight times nine, all divided by two, which is thirty-six. That's not more than forty-two, so eight friends is possible.",
-        show(q7e, 'Eight friends need at least'), show(q7e2, "That's not more than forty-two")),
+      L('Now back to our question. The friends need different amounts. Eight friends need at least eight times nine, all divided by two, which is thirty-six. That leaves forty-two minus thirty-six, six postcards. Give those six to the friend with eight. Eight plus six is fourteen, still different from the others. So eight friends is possible.',
+        show(q7e, 'Eight friends need at least'), show(q7spare, 'forty-two minus thirty-six'), show(q7give, 'Eight plus six is fourteen'), show(q7e2, 'So eight friends is possible')),
       L("Nine friends need at least nine times ten, all divided by two, which is forty-five. That's more than forty-two, so nine friends is impossible. Choice number two is our answer, and I'll see you in the next question.",
         show(q7f, 'Nine friends need at least'), show(q7f2, "That's more than forty-two"), mk('tick', 'choice 2', 'so nine friends is impossible'))),
 ])
@@ -780,7 +782,7 @@ k0 = I('k0', '1 $\\cdot$ Step by step', size=30)
 k0b = I('k0b', 'write the items one by one', size=30)
 k1 = I('k1', '2 $\\cdot$ A formula with $n$ in the choices', size=30)
 k1b = I('k1b', 'plug in a small number for $n$', size=30)
-k2 = I('k2', 'No school sequence formulas', size=30)
+k2 = I('k2', 'Follow the given rule first', size=30)
 video('wp-008', 'lesson', slides=[
     S('Patterns',
       L("Welcome back. Now the last type of trial and error, patterns. Here we barely think and barely make mistakes. It's mostly trial, careful trial.")),
@@ -788,7 +790,7 @@ video('wp-008', 'lesson', slides=[
       L("Patterns come in two kinds. The first kind is step by step. A rule repeats, and the simplest and best way is to write the items one at a time, exactly as the rule says, until we reach what they ask.",
         show(k0, 'The first kind is step by step'), show(k0b, 'write the items one at a time')),
       L("The second kind is a sequence with a formula in n, in the choices. It's rarer, but it's good to know. Here we plug in a small number for n and check the answers.", show(k1, 'The second kind is a sequence'), show(k1b, 'Here we plug in')),
-      L("If you remember the formulas for sequences from school, leave them. These aren't the sequences you know, and those formulas won't work here.", show(k2, 'leave them')),
+      L("Don't assume a sequence follows a formula you know from school. First check the rule in the question. Here we can follow that rule without a sequence formula.", show(k2, "Don't assume")),
       L("Solving these by pure understanding is possible, but every question is different, and very few students manage it. Plugging in is simple and safe. Let's see one question of each kind. [pause] I'll see you in the next video.")),
 ])
 
@@ -842,14 +844,14 @@ m0f = IH('m0f', '(4) $\\ 5\\cdot2^3=5\\cdot8=40$ ✗', size=30, col=1)
 m0g = IH('m0g', '$n=1$: $\\ $total $5$', size=30)
 m0h = IH('m0h', '(1) $5$ ✓ $\\quad$ (2) $5$ ✓', size=30)
 m0h2 = IH('m0h2', '(3) $7$ ✗ $\\quad$ (4) $10$ ✗', size=30)
-m0i = I('m0i', 'Two choices left? $\\ $Try $n=4$ too.', size=30)
+m0i = I('m0i', 'Two choices left? Try another easy allowed value.', size=30)
 video('solve-wp21-g010', 'solution', qid='wp21-g010', slides=[
     S('Method 1 · Plugging in numbers',
       L("A new app is downloaded five times on day one. On every later day, it is downloaded twice as many times as on the day before. How many times is it downloaded in total through day n?", pt('stem', 'A new app', 'hl', 9.0),
         voice='calm', pause=0.5),
       L("So they ask for a formula, and there's an n in every choice. That's the second kind of pattern, a sequence. We don't use school formulas here. [short pause] We'll plug in a number for n, and check the choices.",
         pt('stem: ask', 'So they ask for a formula')),
-      L("[short pause] Let's plug in n is three. Why did we pick three? Because it's small, so the days are easy to write out. And it's big enough to keep the choices apart. In a minute we'll see why not one."),
+      L("[short pause] Let's plug in n is three. Why did we pick three? Because it's small, so the days are easy to write out. Let's check what each choice gives. Later we'll also see what happens with one."),
       L("Day one is five downloads. Every later day is twice the day before. So day two is ten, and day three is twenty.",
         show(m0a, 'Day one is five downloads')),
       L("The total through day three is five plus ten plus twenty. Five plus ten is fifteen. Fifteen plus twenty is thirty-five. So the right choice must give thirty-five when n is three.", show(m0b, 'Five plus ten is fifteen')),
@@ -863,8 +865,8 @@ video('solve-wp21-g010', 'solution', qid='wp21-g010', slides=[
       L("Why not plug in n is one? It's quicker, so let's see what happens. Through day one, the total is just five.",
         show(m0g, 'the total is just five')),
       L("Choice number one gives five times one, because two minus one is one. That's five. Choice number two gives five times one squared, also five. Choice number three gives two plus five, seven. Choice number four gives five times two, ten. So two choices survive, and we'd need another number anyway.", show(m0h, 'Choice number one gives five'), show(m0h2, 'Choice number three gives two')),
-      L("That's how these questions are often built. Plugging in one leaves two choices standing. Three is small enough to calculate, and big enough to separate the choices. And if two choices still survive with three, plug in four as well. Choice number one is our answer, and I'll see you in the next question.",
-        show(m0i, 'if two choices still survive'))
+      L("Here, plugging in one leaves two choices standing. That's fine, but then we need another easy number. Three worked here, and the calculations were still short. If two choices survive, try another easy allowed number. Choice number one is our answer, and I'll see you in the next question.",
+        show(m0i, 'If two choices survive'))
       , sb='Method 1 · Plugging in numbers'),
 ])
 
@@ -903,9 +905,9 @@ video('solve-wp21-g013', 'solution', qid='wp21-g013', slides=[
       L("[short pause] Let's start by trying, and let's work in order, so nothing gets lost. Only how many twos and how many sixes come up matters, not which toss came first. So we start from the smallest total. All seven tosses show two. Seven times two is fourteen.", show(n3a, 'Seven times two')),
       L("Fourteen can happen, so choice number three is out.", mk('cross', 'choice 3', 'so choice number three is out')),
       L("Now let's swap one two for a six. What does that change? We take away two and add six, so the total goes up by four. Fourteen plus four is eighteen.", show(n3b, 'We take away two and add six')),
-      L("Each more six adds another four. Eighteen, twenty-two, twenty-six, thirty. So thirty can happen, and choice number four is out.", show(n3c, 'Eighteen, twenty-two'), mk('cross', 'choice 4', 'and choice number four is out')),
+      L('Each time we replace another two with six, we add four. Eighteen, twenty-two, twenty-six, thirty. So thirty can happen, and choice number four is out.', show(n3c, 'Eighteen, twenty-two'), mk('cross', 'choice 4', 'and choice number four is out')),
       L("The next swap gives thirty plus four, thirty-four. Look what happened. We jumped from thirty straight to thirty-four, and skipped thirty-two.", show(n3d, 'We jumped from thirty')),
-      L("Thirty-two is between the smallest total and the biggest, and it still can't happen. Being inside the range is not enough. This is called the skip. It happens when two values swap with each other, like the two and the six here. So thirty-two is impossible, and choice number two is our answer.",
+      L("Thirty-two is between the smallest total and the biggest, and it still can't happen. Being inside the range is not enough. This is called the skip. Here replacing two with six changes the total by four. So some numbers between the possible totals are skipped. So thirty-two is impossible, and choice number two is our answer.",
         show(n3e, 'Being inside the range'), mk('tick', 'choice 2', 'choice number two is our answer'))),
     S('Method 2 · Understanding: the remainder',
       L("[pause] Now let's solve it by understanding. Every swap adds four, so all the totals go up in steps of four from fourteen. A list like that has a pattern. Every number in it leaves the same remainder when we divide by four."),
@@ -944,14 +946,14 @@ video('solve-wp21-g014', 'solution', qid='wp21-g014', slides=[
       L("And this one try tells us which way to go. More sopranos means more altos too, so fewer tenors are left. So a bigger choice fails too. Thirty is out, so choice number two is out as well. One plug, and two choices are gone. That's why we start from the middle.", show(s4d, 'More sopranos means'),
         mk('cross', 'choice 2', 'so choice number two is out')),
       L("Now a smaller one, twenty-four. Twenty-four divided by three is eight altos. Twenty-four plus eight is thirty-two. Sixty-three minus thirty-two is thirty-one tenors.", show(s4e, 'Twenty-four divided by three'), show(s4e2, 'Twenty-four plus eight')),
-      L("Thirty-one is more than twenty-four, so the tenors are more. So twenty-four fits every given. When the choices are numbers, the moment one fully works, we can mark it, because a question can't have two right answers. Choice number three is our answer.", show(s4f, 'Thirty-one is more than'), mk('tick', 'choice 3', 'Choice number three is'))),
+      L('Thirty-one is more than twenty-four, so the tenors are more. So twenty-four fits every given. They ask which number can fit every given. Twenty-four does, so we can choose it. Choice number three is our answer.', show(s4f, 'Thirty-one is more than'), mk('tick', 'choice 3', 'Choice number three is'))),
     S('Method 2 · Understanding: the border case',
       L("[pause] Now by understanding, from the givens again. There are three times as many sopranos as altos. So the number of sopranos must divide by three. Twenty-six doesn't divide by three, so choice number four is out, without any story.", show(t4a, 'must divide by three'), mk('cross', 'choice 4', 'so choice number four is out')),
       L("This works in general. If something is twice another whole number, it must be even. If it's three times another whole number, it must divide by three. That's a quick way to rule out choices."),
       L("Now where does the range end? Let's look at the border case, where the tenors are exactly equal to the sopranos. Then for every alto there are three sopranos and three tenors. One plus three plus three is seven singers for every alto.", show(t4b, 'One plus three plus three')),
       L("Sixty-three divided by seven is nine altos. Three times nine is twenty-seven sopranos. That's the border.",
         show(t4c, 'Sixty-three divided by seven')),
-      L("But there must be more tenors than that. The total stays sixty-three, so more tenors leave fewer singers for the altos and the sopranos. So the sopranos must be fewer than twenty-seven. This is a useful habit. When a given says more than, first look at the case where it's exactly equal. That's the border, and the answer is on one side of it.", show(t4d, 'So the sopranos must be fewer')),
+      L("But there must be more tenors than sopranos, not an equal number. The total stays sixty-three, so more tenors leave fewer singers for the altos and the sopranos. So the sopranos must be fewer than twenty-seven. This is a useful habit. When a given says more than, first look at the case where it's exactly equal. That's the border, and the answer is on one side of it.", show(t4d, 'So the sopranos must be fewer')),
       L("So twenty-seven and thirty are out, and twenty-six doesn't divide by three. Only twenty-four is left. Choice number three is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 3', 'Only twenty-four is left'))),
 ])
@@ -974,7 +976,7 @@ video('solve-wp21-g015', 'solution', qid='wp21-g015', slides=[
     S('Method 1 · Plugging in the answers',
       L("Twenty-two baskets hold eighty apples altogether. Every basket holds at least three apples. Which number cannot be the number of baskets holding exactly three apples?", pt('stem', 'Twenty-two baskets', 'hl', 9.0),
         voice='calm', pause=0.5),
-      L("This is a hard question. Where do we even start? Some people try and wonder, and some just stare at it. The worst thing we can do here is stare. [short pause] So we start plugging in the answers. Or we skip it, move on, and come back at the end. Just don't sit and stare.", pt('stem: ask', 'Where do we even start')),
+      L("This is a hard question. Where do we even start? We don't need to see the whole solution straight away. Let's test one choice and see what happens. [short pause] So we start plugging in the answers. Or we skip it, move on, and come back at the end. Just don't sit and stare.", pt('stem: ask', 'Where do we even start')),
       L("[short pause] Let's plug in the answers. They ask what cannot be. So we find what can be, and cross out three choices. Let's start with choice number one, eight. Eight baskets with exactly three apples hold eight times three, twenty-four apples. Eighty minus twenty-four leaves fifty-six apples. Twenty-two minus eight leaves fourteen baskets.", show(v5a, 'Eighty minus twenty-four')),
       L("Those fourteen baskets must not hold exactly three, so each needs at least four. Fifty-six divided by fourteen is four, exactly four each. It works, so choice number one is out.", show(v5b, 'Fifty-six divided by fourteen'),
         mk('cross', 'choice 1', 'so choice number one is out')),
@@ -1012,15 +1014,15 @@ video('wp-016', 'lesson', slides=[
     S('Push one up',
       L("Here are three rules that come up again and again. Each one tells us which way to push."),
       L("The first rule makes one number as big as possible. To do that, we give all the others the least they're allowed. Three different positive whole numbers add up to twenty-six. How big can the biggest be? The other two get the least, one and two. Twenty-six minus three leaves twenty-three.", show(x0, 'The first rule'), show(x0c, 'we give all the others the least'), show(x0a, 'The other two get the least')),
-      L("Why does it work? The total is fixed. Every bit we take from the others goes to the one we want to grow. Here's another example. Four different positive numbers add up to twenty. The others get one, two and three, that's six. So the biggest can be twenty minus six, fourteen.", show(x0b, 'The others get one, two and three'))),
+      L("Why does it work? The total is fixed. Every bit we take from the others goes to the one we want to grow. Here's another example. Four different positive whole numbers add up to twenty. The others get one, two and three, that's six. So the biggest can be twenty minus six, fourteen.", show(x0b, 'The others get one, two and three'))),
     S('Push the biggest down',
       L("The second rule makes the biggest number as small as possible. To do that, we share as equally as we can. Three whole numbers add up to twenty-six. Twenty-six divided by three is eight, with two left over. So the closest we can get is nine, nine and eight, and the biggest is at least nine.", show(x1, 'The second rule'), show(x1c, 'we share as equally'), show(x1a, 'nine, nine and eight')),
-      L("Why does it work? If we make one number smaller, another one has to grow. The biggest can never be smaller than an equal share. Here's another example. Four numbers add up to thirty. Thirty divided by four is seven, with two left over. So eight, eight, seven and seven, and the biggest is at least eight.", show(x1b, 'Four numbers add up to thirty'))),
+      L("Why does it work? If we make one number smaller, another one has to grow. The biggest can never be smaller than an equal share. Here's another example. Four whole numbers add up to thirty. Thirty divided by four is seven, with two left over. So eight, eight, seven and seven, and the biggest is at least eight.", show(x1b, 'Four whole numbers add up to thirty'))),
     S('Push one down',
       L("The third rule makes one number as small as possible. To do that, we give all the others the most they're allowed. Three test scores, each at most ten, add up to twenty-six. The other two get ten each, that's twenty. So the smallest can be twenty-six minus twenty, six.", show(x2, 'The third rule'), show(x2c, 'we give all the others the most'), show(x2a, 'The other two get ten each')),
       L("Here's another example. Four scores, each at most ten, add up to thirty-one. Three of them get ten, that's thirty. So the smallest can be just one.", show(x2b, 'Three of them get ten')),
       L("The second and third rules sound like opposites, but they aren't. In the second rule we push the biggest down, so the others can't pass it, and that's why we share equally. In the third rule we push one number down, so the others take as much as they can."),
-      L("The nuances come in the questions. [pause] I'll see you in the next video.")),
+      L("Let's see how these rules work in the questions. [pause] I'll see you in the next video.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ wp21-g017 (spelling test)
@@ -1040,7 +1042,7 @@ video('solve-wp21-g017', 'solution', qid='wp21-g017', slides=[
       L("A spelling test has between ten and twenty-five words, inclusive. Each of fourteen students spells at least one fifth of the words correctly. What are the smallest and the largest possible totals of correctly spelled words in the class?", pt('stem', 'A spelling test', 'hl', 12.0), voice='calm', pause=0.5),
       L("So they ask for a minimum and a maximum, the smallest and the biggest total for the whole class. [short pause] We'll solve it in two different ways, by understanding which way to push, and then with the last digit.",
         pt('stem: ask', 'the smallest and the biggest total')),
-      L("[short pause] Let's start by understanding. To push the total to an extreme, we push everything around it. Let's start with one student. For the fewest correct words, the test is the shortest, ten words, and he spells the smallest share, one fifth. One fifth of ten is ten divided by five, which is two words.",
+      L("[short pause] Let's start by understanding. To find the smallest total, we choose the smallest allowed test and share. Let's start with one student. For the fewest correct words, the test is the shortest, ten words, and he spells the smallest share, one fifth. One fifth of ten is ten divided by five, which is two words.",
         show(y7a, 'One fifth of ten')),
       L("Fourteen students with two each is fourteen times two, twenty-eight. Choice numbers one and four start with seventy, not twenty-eight, so they're out. Seventy is one fifth of the longest test, five words each. But for the fewest, the test is the shortest too.", show(y7b, 'Fourteen students with two each'),
         mk('cross', 'choice 1', "so they're out"), mk('cross', 'choice 4', 'Seventy is one fifth')),
@@ -1080,7 +1082,7 @@ video('solve-wp21-g018', 'solution', qid='wp21-g018', slides=[
         mk('cross', 'choice 4', "so they're out")),
       L("Now let's find the biggest. We work backwards from the last piggy bank, which holds forty-seven. To keep the fourth as big as possible, the steps after it are as small as they can be, four each. From the eighth back to the fourth is four steps. Forty-seven, then forty-seven minus four is forty-three, then thirty-nine, thirty-five, and thirty-one.",
         show(w8b, 'then forty-seven minus four')),
-      L("So the fourth holds at most thirty-one. Choice number three goes up to thirty-five, so it's out. And both ends really happen, because the steps we didn't fix can simply be bigger. Seventeen to thirty-one, choice number one is our answer.", mk('cross', 'choice 3', "so it's out"), mk('tick', 'choice 1', 'choice number one'))),
+      L("So the fourth holds at most thirty-one. Choice number three goes up to thirty-five, so it's out. The last bank can still hold forty-seven in both cases. Any extra coins fit in a bigger step, since four is only the minimum increase. Seventeen to thirty-one, choice number one is our answer.", mk('cross', 'choice 3', "so it's out"), mk('tick', 'choice 1', 'choice number one'))),
     S('Method 2 · Plugging in the answers: test one value',
       L("[pause] Now let's test values from the choices. The choices are ranges. The right range holds every value that can happen, and no value that can't. So we test a number that some choices hold and others don't."),
       L("Choice number four starts at thirteen. Can the fourth piggy bank hold thirteen? From five, three steps of at least four each bring it to at least five plus twelve, seventeen. So thirteen is impossible, and choice number four is out.", show(w8c, 'From five, three steps'), mk('cross', 'choice 4', 'and choice number four is out')),
@@ -1114,7 +1116,7 @@ video('solve-q-r26-t21-01', 'solution', qid='q-r26-t21-01', slides=[
       L("But the fourth sock has to be red, blue or green. Whatever it is, it matches a sock she already has. So three socks can fail, and four always work.", show(k1b, 'So three socks can fail')),
       L("That's the rule for to be sure questions. Imagine the worst luck, the longest she can go without what she wants. Then add one more. Why plus one? The worst luck is the most socks she can take and still fail. One more sock, and failing is impossible.", show(k1c, "That's the rule")),
       L("Here's another example. To be sure of four socks of one color, the worst luck is three of each color. Three plus three plus three is nine socks. And still there are no four of one color. So she needs nine plus one, ten.", show(k1d, 'To be sure of four socks'), show(k1d2, 'So she needs nine plus one')),
-      L("Now our question, three of the same color. Careful, it's any color, not three red socks. For three red socks, all eight blue and all six green could come out first. Eight plus six plus three is seventeen. How long can she avoid it? With the worst luck she gets two of every color. Two plus two plus two is six socks. And still no color has three.", show(k1e0, 'Eight plus six plus three'), show(k1e, 'Two plus two plus two')),
+      L("Now our question, three of the same color. Careful, it's any color, not three red socks. For three red socks, all eight blue and all six green could come out first. Eight plus six plus three is seventeen. Now back to three socks of any one color. How many can she take without getting three of one color? With the worst luck she gets two of every color. Two plus two plus two is six socks. And still no color has three.", show(k1e0, 'Eight plus six plus three'), show(k1e, 'Two plus two plus two')),
       L("The seventh sock is red, blue or green, and that color reaches three. So six socks can fail, and seven always work. Choice number two is our answer.", show(k1f, 'The seventh sock'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('Method 2 · Plugging in the answers',
       L("[pause] Now let's plug in the answers. They ask for the smallest number that makes her sure. So we start from the smallest choice and go up. The first one that always works is the answer."),
@@ -1135,6 +1137,10 @@ u9e0 = IH('u9e0', '$20\\cdot8=160$, $\\ 3\\cdot8=24$', size=30, col=1)
 u9e = IH('u9e', '$23\\cdot8=160+24=184$', size=30, col=1)
 u9f = IH('u9f', '$23\\cdot2$: $\\ 3\\cdot2=6$ $\\to$ ends in $6$', size=30)
 u9g = IH('u9g', '$23\\cdot8$: $\\ 3\\cdot8=24$ $\\to$ ends in $4$', size=30)
+u9min = IH('u9min', 'fewest: $\\ 3+2=5$', size=30)
+u9minleft = IH('u9minleft', '$5-3=2$ left per child', size=30)
+u9max = IH('u9max', 'most: $\\ 5+4=9$', size=30, col=1)
+u9maxleft = IH('u9maxleft', '$9-1=8$ left per child', size=30, col=1)
 video('solve-wp21-g019', 'solution', qid='wp21-g019', slides=[
     S('Method 1 · Understanding: push to the extremes',
       L("At a fair, each of twenty-three children gets three to five tickets at the first booth, and two to four tickets at the second booth. Each child then uses one to three tickets on a ride. What are the smallest and the largest possible numbers of tickets left with all the children together?", pt('stem', 'At a fair', 'hl', 14.0),
@@ -1150,10 +1156,10 @@ video('solve-wp21-g019', 'solution', qid='wp21-g019', slides=[
       L("The most is twenty-three times eight. Twenty times eight is a hundred sixty. Three times eight is twenty-four. A hundred sixty plus twenty-four is a hundred eighty-four. Choice number two is our answer.",
         show(u9e0, 'Twenty times eight'), show(u9e, 'A hundred sixty plus'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('Method 2 · Understanding: the last digit',
-      L("[pause] Now with the last digit, which saves work and silly mistakes. Remember, the last digit of a product comes only from the last digits. The fewest is two tickets left for each of twenty-three children. Three times two is six, so the total ends in six.", show(u9f, 'Three times two is six')),
+      L('[pause] Now with the last digit, which saves work and silly mistakes. Remember, the last digit of a product comes only from the last digits. For the fewest, each child gets three plus two tickets. Each uses three, leaving five minus three, two tickets. There are twenty-three children. Three times two is six, so the total ends in six.', show(u9min, 'three plus two tickets'), show(u9minleft, 'five minus three'), show(u9f, 'Three times two is six')),
       L("Forty-six ends in six, and sixty-nine ends in nine. So choice numbers one and four are out.",
         mk('cross', 'choice 1', 'So choice numbers one and four'), mk('cross', 'choice 4', 'are out')),
-      L("The most is eight tickets left for each child. Three times eight is twenty-four, so the total ends in four. A hundred eighty-four ends in four, and two hundred seven ends in seven. So choice number three is out too. Choice number two is our answer, and I'll see you in the next question.", show(u9g, 'Three times eight is twenty-four'),
+      L("For the most, each child gets five plus four tickets. Each uses one, leaving nine minus one, eight tickets. Three times eight is twenty-four, so the total ends in four. A hundred eighty-four ends in four, and two hundred seven ends in seven. So choice number three is out too. Choice number two is our answer, and I'll see you in the next question.", show(u9max, 'five plus four tickets'), show(u9maxleft, 'nine minus one'), show(u9g, 'Three times eight is twenty-four'),
         mk('cross', 'choice 3', 'So choice number three is out too'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
 
@@ -1185,7 +1191,7 @@ video('solve-wp21-g020', 'solution', qid='wp21-g020', slides=[
       L("[pause] Now let's solve it by understanding. The biggest is the easier part, so let's start there. To make Lior as big as possible, we give the others the least they can have. Noam gets one, because everyone has at least one. Maya must have more than Noam, so she gets two.", show(l1a, 'Noam gets one')),
       L("Lior gets the rest. Thirty-six minus three is thirty-three, so the most is thirty-three.",
         show(l1b, 'Thirty-six minus three')),
-      L("The smallest needs a bit more thought. When two people share and one has more, he has more than half. In the same way, when three people share, the one with the most has more than a third. Why is that true? Because if he had a third or less, the other two have even less, and together they can't reach the total.", show(l1c, 'more than a third')),
+      L("The smallest needs a bit more thought. When two people share different amounts, the bigger share is more than half. Here three people share different amounts. So the biggest share is more than a third. Why is that true? Because if he had a third or less, the other two have even less, and together they can't reach the total.", show(l1c, 'more than a third')),
       L("A third of thirty-six is twelve. If all three had twelve, the numbers would be equal, and that's not allowed. So Lior needs more than twelve. Let's move one card from Noam to Lior. Now it's thirteen, twelve and eleven. They're different. And thirteen plus twelve plus eleven is thirty-six.", show(l1d0, 'A third of thirty-six'), show(l1d, 'If all three had twelve'), show(l1d2, "Now it's thirteen")),
       L("So Lior has thirteen to thirty-three cards. Choice number four is our answer, and I'll see you in the next question.", mk('tick', 'choice 4', 'Choice number four is our answer'))),
 ])
@@ -1206,7 +1212,11 @@ o2a = IH('o2a', '$25\\cdot3=75$, $\\ 90-75=15$ for the last child', size=30)
 o2b = I('o2b', '$14, 15, 16, \\ldots, 25$: $\\ $steps of $1$, no holes', size=30)
 o2c = IH('o2c', '$13, 14, 17, 20$ $\\to$ $13$ or $20$', size=30)
 o2d = IH('o2d', '$20\\cdot3=60$, $\\ 30$ for $6$: $\\ 5$ each ✓', size=30)
-o2e = I('o2e', 'Fixed jumps leave holes: $\\ $the chip $14, 18, 22$', size=30)
+o2e = I('o2e', 'Jumps of four skip totals: $\\ $the chip $14, 18, 22$', size=30)
+o2min1 = IH('o2min1', '$26\\cdot3=78$', size=30, col=1)
+o2min2 = IH('o2min2', '$90-78=12$ spare', size=30, col=1)
+o2min3 = IH('o2min3', '$26-12=14$ stay at $3$', size=30, col=1)
+o3range = I('o3range', '$1$ to $12$ get extras; $14$ to $25$ stay at $3$', size=30, col=1)
 o3a = IH('o3a', 'all $26$ at $3$: $\\ 26\\cdot3=78\\ne90$ ✗', size=30)
 o3b = IH('o3b', '$25$ at $3$: $\\ 25\\cdot3=75$, $\\ 75+15=90$ ✓', size=30)
 video('solve-wp21-g021', 'solution', qid='wp21-g021', slides=[
@@ -1216,21 +1226,21 @@ video('solve-wp21-g021', 'solution', qid='wp21-g021', slides=[
       L("This is the same type as the apple baskets, with new numbers. I promised a shortcut, and here it is. [short pause] We'll solve it in three different ways, by counting the spare stickers, by looking at the ends of the range, and by checking the edge cases.", pt('stem: ask', 'This is the same type')),
       L("[short pause] Let's start with the spare stickers. First we fill every child up to the minimum, three each. To get twenty-six times three, we take twenty times three, which is sixty. Then we add six times three, which is eighteen. Sixty plus eighteen is seventy-eight stickers.", show(o1a, 'To get twenty-six times three'), show(o1a2, 'Sixty plus eighteen')),
       L("Ninety minus seventy-eight leaves twelve spare stickers.", show(o1b, 'Ninety minus seventy-eight')),
-      L("A child gets more than three only if at least one spare sticker goes to that child. Twelve spares can lift at most twelve children. So at least twenty-six minus twelve, fourteen children get exactly three.",
-        show(o1c, 'Twelve spares can lift'), show(o1c2, 'So at least twenty-six minus twelve')),
+      L('A child gets more than three only if at least one spare sticker goes to that child. Twelve spare stickers can give at most twelve children more than three. So at least twenty-six minus twelve, fourteen children get exactly three.',
+        show(o1c, 'Twelve spare stickers can give'), show(o1c2, 'So at least twenty-six minus twelve')),
       L("Thirteen is less than fourteen, so thirteen is impossible. Choice number two is our answer.", show(o1d, 'Thirteen is less than fourteen'),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('Method 2 · Understanding: only the ends',
-      L("[pause] Now by looking at the ends of the range. The smallest count is fourteen, as the spares showed. The biggest is twenty-five. Twenty-five children get three each, that's seventy-five, and the last child gets ninety minus seventy-five, fifteen. All twenty-six can't get three, because that's only seventy-eight.",
-        show(o2a, 'Twenty-five children get three')),
-      L("And every count in between works too. Why is that? Because each spare sticker lifts one child, and moving one sticker changes the count by exactly one. So the count steps from fourteen up to twenty-five, one at a time, with no holes.",
+      L("[pause] Now by looking at the ends of the range. To find the smallest count, first give everyone three. That uses twenty-six times three, seventy-eight stickers. The twelve left can give twelve children one more each. So twenty-six minus twelve, fourteen children still have exactly three. The biggest is twenty-five. Twenty-five children get three each, that's seventy-five, and the last child gets ninety minus seventy-five, fifteen. All twenty-six can't get three, because that's only seventy-eight.",
+        show(o2min1, 'twenty-six times three'), show(o2min2, 'The twelve left'), show(o2min3, 'twenty-six minus twelve'), show(o2a, 'Twenty-five children get three')),
+      L('And every count in between works too. Why is that? Start with twelve children getting one spare sticker each. Move one of those stickers to a child who already got one. Now one more child has exactly three. Repeat until just one child has all twelve spare stickers. So the count steps from fourteen up to twenty-five, one at a time, with no holes.',
         show(o2b, 'with no holes')),
       L("When the count changes by one at a time, the range has no holes. Then three choices are inside the range, and the impossible one must be at an end. In order, the choices are thirteen, fourteen, seventeen and twenty. So only thirteen or twenty can be outside.", show(o2c, 'In order, the choices are')),
       L("One check decides. Twenty children with three is sixty stickers. Thirty are left for the other six children, five each, more than three. So twenty works, and thirteen is the impossible one. Choice number two is our answer.",
         show(o2d, 'Twenty children with three'), mk('tick', 'choice 2', 'Choice number two is our answer')),
-      L("But careful, this is not a general rule. Remember the chip with two and six. Its totals jumped by four, fourteen, eighteen, twenty-two, and there were holes. Fixed jumps leave holes. There are no holes only when the value can move by one.", show(o2e, 'Fixed jumps leave holes'))),
+      L("But careful, this is not a general rule. Remember the chip with two and six. Its totals jumped by four, fourteen, eighteen, twenty-two, and there were holes. Here jumps of four leave holes. There are no holes only when the value can move by one.", show(o2e, 'Here jumps of four leave holes'))),
     S('Method 3 · Understanding: the edge cases',
-      L("[pause] Now the edge cases, a very easy calculation at the edge. Here too the count moves by one, so the impossible choice is at one end. What if every child gets exactly three? Twenty-six times three is seventy-eight, and we need ninety. So twenty-six doesn't work.", show(o3a, 'What if every child')),
+      L("[pause] Now the edge cases, a very easy calculation at the edge. The possible counts have no gaps. For any number from one to twelve children, we can give each one a spare sticker. Give the remaining spares to one of those children. So exactly three stickers can go to fourteen through twenty-five children. The impossible choice is at one end. What if every child gets exactly three? Twenty-six times three is seventy-eight, and we need ninety. So twenty-six doesn't work.", show(o3range, 'So exactly three stickers'), show(o3a, 'What if every child')),
       L("Now one child fewer at three. Twenty-five children with three is seventy-five, and the last child takes fifteen. That works, so twenty-five is the top of the range.", show(o3b, 'Twenty-five children with three')),
       L("Our choices twenty, seventeen and fourteen are all below twenty-five, so the top end is no problem. The impossible one must be at the bottom, the smallest choice, thirteen. Choice number two is our answer, and I'll see you in the next question.", mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
@@ -1262,7 +1272,7 @@ video('solve-q-r26-t21-02', 'solution', qid='q-r26-t21-02', slides=[
     S('Method 2 · Understanding: why it must be true',
       L("[pause] In the exam you'd stop there. But let's see why choice number four must be true. It says the largest number is at least six. That's a minimum and maximum question. How small can the largest number be?"),
       L("Say the largest were five or less. Then all five numbers are different, positive, and at most five. There's only one way to do that, one, two, three, four and five. Their sum is fifteen, not twenty. So the largest can't be five or less, and it must be at least six.", show(mt5, 'Say the largest were five or less'), show(mt5b, 'Their sum is fifteen')),
-      L("And six really happens, with two, three, four, five and six. So it's true in every allowed case. Choice number four is our answer, and I'll see you in the next question.", show(mt6, 'And six really happens'),
+      L("So every allowed set has a largest number of at least six. And six really happens, with two, three, four, five and six. Choice number four is our answer, and I'll see you in the next question.", show(mt6, 'And six really happens'),
         mk('tick', 'choice 4', 'Choice number four'))),
 ])
 
@@ -1318,7 +1328,7 @@ video('solve-wp21-g023', 'solution', qid='wp21-g023', slides=[
       L("Day three starts with seventy. It doubles, and seventy times two is a hundred forty.",
         show(b3c, 'Day three starts with seventy')),
       L("Now wait a moment. In pattern questions, the edges are where the trap is. They ask for day three just before that day's removal. So we don't take away the thirty. A hundred ten would be the number after the removal, and that's the trap.", show(b3d, 'So we don'), show(b3e, 'A hundred ten would be')),
-      L("So always ask yourself two things. Does the start include this step? Does the end include that one? Inside the list everything repeats, so the trouble is always at the edges."),
+      L("So always ask yourself two things. What has already happened at the starting point? What happens before the point they ask about? Here we start before day one's doubling. And we stop before day three's removal."),
       L("There are a hundred forty bacteria. Choice number two is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
@@ -1385,7 +1395,7 @@ video('solve-wp21-g025', 'solution', qid='wp21-g025', slides=[
       L("Nine twenty is the trap, because that's only the third time. Choice number three is our answer. But listing every match takes a long time, so let's see a faster way.", mk('tick', 'choice 3', 'Choice number three is our answer')),
       sb='Method 1 · The math way: listing'),
     S('Method 2 · The math way: a common multiple',
-      L("[pause] Now with a common multiple. When do two repeating things meet again? After a number of minutes that divides both by sixteen and by twenty."),
+      L('[pause] Now with a common multiple. When do two repeating things meet again? After a number of minutes divisible by both sixteen and twenty.'),
       L("The easy way is to take the bigger gap, twenty, and jump by it. We get twenty, forty, sixty and eighty. Twenty, forty and sixty don't divide by sixteen. Eighty is five times sixteen, so eighty divides by both sixteen and twenty.", show(bt1, 'We get twenty, forty')),
       L("Why the bigger one? Because it takes fewer jumps. Jumping by sixteen, we'd need five jumps to reach eighty. Jumping by twenty, only four."),
       L("So they leave together every eighty minutes, and the fourth time is three gaps after six forty. Eighty minutes is an hour and twenty minutes. Six forty plus an hour and twenty is eight o'clock, then nine twenty, then ten forty. Choice number three is our answer, and I'll see you in the next question.", show(bt2, 'Eighty minutes is an hour'), show(bt3, 'Six forty plus an hour'), show(bt4, 'then nine twenty'),

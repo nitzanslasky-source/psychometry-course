@@ -12,10 +12,10 @@
     "pause": 0.5
    },
    {
-    "say": "This is a hard question. Where do we even start? Some people try and wonder, and some just stare at it. The worst thing we can do here is stare. [short pause] So we start plugging in the answers. Or we skip it, move on, and come back at the end. Just don't sit and stare.",
+    "say": "This is a hard question. Where do we even start? We don't need to see the whole solution straight away. Let's test one choice and see what happens. [short pause] So we start plugging in the answers. Or we skip it, move on, and come back at the end. Just don't sit and stare.",
     "at": [
      "Where do we even start",
-     "Some people try"
+     "We don't need"
     ]
    },
    {

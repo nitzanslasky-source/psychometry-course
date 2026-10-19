@@ -76,10 +76,10 @@
    },
    "We know the amounts only when they give us one real number. A total, a difference, or the size of one of the groups.",
    {
-    "say": "That's why we write the amounts with x. Red is three x, and blue is seven x. If we cancel the x, three x over seven x is still three over seven. So the ratio is kept, and now we have amounts we can build an equation with.",
+    "say": "That's why we write the amounts with x. One unit is x beads. Red has three units, three x, and blue has seven, seven x. If we cancel the x, three x over seven x is still three over seven. So the ratio is kept, and now we have amounts we can build an equation with.",
     "at": [
-     "Red is three x",
-     "we cancel the",
+     "Red has three units",
+     "x, and blue",
      "three x over",
      "is still three"
     ]
@@ -134,10 +134,10 @@
     ]
    },
    {
-    "say": "And we can get rid of the half too. We expand by two. Ben is two x, and Ann is five x. Now the ratio of Ben to Ann is two to five, whole numbers, much easier to work with.",
+    "say": "And we can get rid of the half too. We use two equal units for Ben instead of one. Then Ann has five of those same units. Call the new unit x. Ben is two x, and Ann is five x. Now the ratio of Ben to Ann is two to five, whole numbers, much easier to work with.",
     "at": [
-     "We expand by two",
-     "Ann is five"
+     "Ben is two x",
+     "Now the ratio"
     ]
    }
   ],

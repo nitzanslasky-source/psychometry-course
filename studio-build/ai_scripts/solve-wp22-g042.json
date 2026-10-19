@@ -52,9 +52,9 @@
     ]
    },
    {
-    "say": "One and a half on the bottom isn't nice, so let's get rid of the half. We could multiply the top and the bottom by ten, but that only makes bigger numbers. Times two is enough. Two times two is four. One and a half times two is three. So four thirds of a credit.",
+    "say": "Let's remove the half from the denominator to make division easier. We could multiply the top and the bottom by ten, but that only makes bigger numbers. Times two is enough. Two times two is four. One and a half times two is three. So four thirds of a credit.",
     "at": [
-     "One and a",
+     "Let's remove the",
      "Times two is enough",
      "Two times two",
      "So four thirds of a credit",

@@ -57,11 +57,11 @@
     ]
    },
    {
-    "say": "Choice number three, sixty-five. Four hours cost sixty-five times four, two hundred sixty. But the whole bill was two hundred fifty, less than the hours alone. Impossible, so it's out.",
+    "say": "Choice number three, sixty-five. Four hours cost sixty-five times four. Four times sixty is two hundred forty. Four times five is twenty, so that's two hundred sixty. But the whole bill was two hundred fifty, less than the hours alone. Impossible, so it's out.",
     "at": [
      "number three, sixty-five",
      "Four hours cost sixty-five",
-     "four, two hundred",
+     "Four times sixty",
      "But the whole bill",
      "two hundred fifty",
      "Impossible, so it's out"
@@ -81,14 +81,16 @@
   ],
   [
    {
-    "say": "Choice number two, forty-five. Four hours cost a hundred eighty, so the fee is seventy. Seven hours cost three hundred fifteen, so the fee is three hundred eighty-five minus three hundred fifteen, seventy again. The same fee in both jobs. It fits.",
+    "say": "Choice number two, forty-five. Four times forty-five is a hundred eighty. The fee is two hundred fifty minus a hundred eighty, seventy. Seven times forty is two hundred eighty. Seven times five is thirty-five, giving three hundred fifteen for the hours. The fee is three hundred eighty-five minus three hundred fifteen, seventy again. The same fee in both jobs. It fits.",
     "at": [
      "Choice number",
      "number two, forty-five",
-     "cost a hundred",
-     "so the fee is seventy",
-     "Seven hours cost three hundred fifteen",
-     "fifteen, so the",
+     "forty-five is a",
+     "The fee is two hundred fifty minus a hundred eighty",
+     "Seven times forty",
+     "Seven times five",
+     "giving three hundred fifteen for the hours",
+     "the hours. The",
      "seventy again",
      "It fits"
     ]

@@ -45,7 +45,7 @@
     ]
    },
    {
-    "say": "What does two x tell us? x is the size of one unit, a number of campers, so x is a whole number. Two times a whole number is always even. So the difference must be even.",
+    "say": "What does two x tell us? The ratio five to seven is fully reduced. So the counts form whole groups of five swimmers and seven runners. x counts those groups, so x is a whole number. Two times a whole number is always even. So the difference must be even.",
     "at": [
      "What does two",
      "Two times a whole",
@@ -82,7 +82,7 @@
     ]
    },
    {
-    "say": "This works for every part of a ratio. The swimmers are five x, so their number divides by five. The runners divide by seven. And all the campers, twelve x, divide by twelve. So when a ratio counts people, the total always divides by the sum of the ratio numbers. Choice number two is our answer, and I'll see you in the next question.",
+    "say": "This works for every part of a ratio. The swimmers are five x, so their number divides by five. The runners divide by seven. And all the campers, twelve x, divide by twelve. So first reduce a ratio of people to whole numbers with no shared factor. Then the total is divisible by the sum of those ratio numbers. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
      "This works for",
      "the total",

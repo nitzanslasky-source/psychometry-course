@@ -72,7 +72,7 @@
   ],
   [
    {
-    "say": "[pause] Now the math way, with a short formula. The cheapest way to give different amounts to some friends is one, two, three, and so on. And there's a quick way to add that up.",
+    "say": "[pause] Now the math way, with a short formula. The smallest different amounts we can give are one, two, three, and so on. And there's a quick way to add that up.",
     "at": [
      "Now the"
     ]
@@ -106,14 +106,16 @@
   ],
   [
    {
-    "say": "Now back to our question. The friends need different amounts. Eight friends need at least eight times nine, all divided by two, which is thirty-six. That's not more than forty-two, so eight friends is possible.",
+    "say": "Now back to our question. The friends need different amounts. Eight friends need at least eight times nine, all divided by two, which is thirty-six. That leaves forty-two minus thirty-six, six postcards. Give those six to the friend with eight. Eight plus six is fourteen, still different from the others. So eight friends is possible.",
     "at": [
      "Now back",
      "question. The friends",
      "Eight friends need at least",
      "eight times nine",
-     "That's not more than forty-two",
-     "so eight friends"
+     "forty-two minus thirty-six",
+     "Give those six",
+     "Eight plus six is fourteen",
+     "So eight friends is possible"
     ]
    },
    {

@@ -20,7 +20,7 @@
     ]
    },
    {
-    "say": "[short pause] Let's plug in n is three. Why did we pick three? Because it's small, so the days are easy to write out. And it's big enough to keep the choices apart. In a minute we'll see why not one.",
+    "say": "[short pause] Let's plug in n is three. Why did we pick three? Because it's small, so the days are easy to write out. Let's check what each choice gives. Later we'll also see what happens with one.",
     "at": [
      "Let's plug"
     ]
@@ -101,10 +101,10 @@
     ]
    },
    {
-    "say": "That's how these questions are often built. Plugging in one leaves two choices standing. Three is small enough to calculate, and big enough to separate the choices. And if two choices still survive with three, plug in four as well. Choice number one is our answer, and I'll see you in the next question.",
+    "say": "Here, plugging in one leaves two choices standing. That's fine, but then we need another easy number. Three worked here, and the calculations were still short. If two choices survive, try another easy allowed number. Choice number one is our answer, and I'll see you in the next question.",
     "at": [
-     "if two choices still survive",
-     "with three, plug",
+     "If two choices survive",
+     "another easy allowed",
      "number one is"
     ]
    }

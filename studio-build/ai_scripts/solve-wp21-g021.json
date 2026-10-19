@@ -34,10 +34,11 @@
     ]
    },
    {
-    "say": "A child gets more than three only if at least one spare sticker goes to that child. Twelve spares can lift at most twelve children. So at least twenty-six minus twelve, fourteen children get exactly three.",
+    "say": "A child gets more than three only if at least one spare sticker goes to that child. Twelve spare stickers can give at most twelve children more than three. So at least twenty-six minus twelve, fourteen children get exactly three.",
     "at": [
      "A child gets",
-     "Twelve spares can lift",
+     "Twelve spare stickers can give",
+     "at most twelve",
      "So at least twenty-six minus twelve",
      "twelve, fourteen children"
     ]
@@ -53,15 +54,21 @@
   ],
   [
    {
-    "say": "[pause] Now by looking at the ends of the range. The smallest count is fourteen, as the spares showed. The biggest is twenty-five. Twenty-five children get three each, that's seventy-five, and the last child gets ninety minus seventy-five, fifteen. All twenty-six can't get three, because that's only seventy-eight.",
+    "say": "[pause] Now by looking at the ends of the range. To find the smallest count, first give everyone three. That uses twenty-six times three, seventy-eight stickers. The twelve left can give twelve children one more each. So twenty-six minus twelve, fourteen children still have exactly three. The biggest is twenty-five. Twenty-five children get three each, that's seventy-five, and the last child gets ninety minus seventy-five, fifteen. All twenty-six can't get three, because that's only seventy-eight.",
     "at": [
      "the ends of",
+     "To find the",
+     "twenty-six times three",
+     "The twelve left",
+     "twelve children one",
+     "twenty-six minus twelve",
+     "still have exactly",
      "Twenty-five children get three",
      "child gets ninety"
     ]
    },
    {
-    "say": "And every count in between works too. Why is that? Because each spare sticker lifts one child, and moving one sticker changes the count by exactly one. So the count steps from fourteen up to twenty-five, one at a time, with no holes.",
+    "say": "And every count in between works too. Why is that? Start with twelve children getting one spare sticker each. Move one of those stickers to a child who already got one. Now one more child has exactly three. Repeat until just one child has all twelve spare stickers. So the count steps from fourteen up to twenty-five, one at a time, with no holes.",
     "at": [
      "with no holes"
     ]
@@ -83,18 +90,20 @@
     ]
    },
    {
-    "say": "But careful, this is not a general rule. Remember the chip with two and six. Its totals jumped by four, fourteen, eighteen, twenty-two, and there were holes. Fixed jumps leave holes. There are no holes only when the value can move by one.",
+    "say": "But careful, this is not a general rule. Remember the chip with two and six. Its totals jumped by four, fourteen, eighteen, twenty-two, and there were holes. Here jumps of four leave holes. There are no holes only when the value can move by one.",
     "at": [
-     "Fixed jumps leave holes",
+     "Here jumps of four leave holes",
      "There are no"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now the edge cases, a very easy calculation at the edge. Here too the count moves by one, so the impossible choice is at one end. What if every child gets exactly three? Twenty-six times three is seventy-eight, and we need ninety. So twenty-six doesn't work.",
+    "say": "[pause] Now the edge cases, a very easy calculation at the edge. The possible counts have no gaps. For any number from one to twelve children, we can give each one a spare sticker. Give the remaining spares to one of those children. So exactly three stickers can go to fourteen through twenty-five children. The impossible choice is at one end. What if every child gets exactly three? Twenty-six times three is seventy-eight, and we need ninety. So twenty-six doesn't work.",
     "at": [
      "Now the",
+     "So exactly three stickers",
+     "go to fourteen",
      "What if every child",
      "Twenty-six times three"
     ]

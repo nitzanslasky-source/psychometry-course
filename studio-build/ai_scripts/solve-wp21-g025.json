@@ -61,7 +61,7 @@
   ],
   [
    {
-    "say": "[pause] Now with a common multiple. When do two repeating things meet again? After a number of minutes that divides both by sixteen and by twenty.",
+    "say": "[pause] Now with a common multiple. When do two repeating things meet again? After a number of minutes divisible by both sixteen and twenty.",
     "at": [
      "Now with"
     ]

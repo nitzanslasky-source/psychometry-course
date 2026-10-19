@@ -26,14 +26,14 @@
     ]
    },
    {
-    "say": "Careful, this is the trap of this question. With the ratio table, we'd multiply four times ten, divide by six, and get six and two thirds. That's fewer days with fewer workers, which makes no sense. The ratio table works when the two quantities grow together. Here, when the workers go down, the days go up.",
+    "say": "Careful, this is the trap of this question. With the ratio table, we'd multiply four times ten, divide by six, and get six and two thirds. That's fewer days with fewer workers, which makes no sense. That calculation assumes the same days per worker in both rows. But fewer workers need more days for the same job. We need the total work to stay the same instead.",
     "at": [
      "With the ratio table",
      "multiply four times",
      "and get six and two thirds",
      "thirds. That's fewer",
      "which makes no sense",
-     "The ratio table works"
+     "That calculation assumes"
     ]
    },
    "We'll solve it two ways, the math way with the whole job, and then by understanding, with one worker."
@@ -97,12 +97,12 @@
     ]
    },
    {
-    "say": "So here's the rule. When one quantity goes up and the other goes down, their product stays the same. Workers and days on the same job. Speed and time on the same road. People and the days a food supply lasts.",
+    "say": "So here's the rule for the same job at the same rate. The number of workers times the days stays the same. This is called inverse proportion. One quantity doubles, and the other halves. Workers and days on the same job. Speed and time on the same road. People and the days a food supply lasts.",
     "at": [
      "So here's the rule",
-     "one quantity goes",
-     "their product stays the same",
-     "Workers and days"
+     "the same job",
+     "times the days stays the same",
+     "This is called"
     ]
    },
    {

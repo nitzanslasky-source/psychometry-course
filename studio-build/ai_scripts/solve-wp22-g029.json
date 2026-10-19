@@ -92,7 +92,7 @@
      "Choice number three is our answer"
     ]
    },
-   "Why does this work? Because the rate is the same in both rows. Every vase gets seven roses, whether there are eight vases or twelve. So whatever turns the vases into roses in one row, turns them into roses in the other row too."
+   "Why does this work? Because the rate is the same in both rows. Every vase gets seven roses, whether there are eight vases or twelve. So we multiply the number of vases by seven in both rows."
   ],
   [
    {
@@ -126,7 +126,7 @@
     ]
    },
    {
-    "say": "We get the same eighty-four. Across, the multiplier was a whole number, seven, so across was easier to calculate. So first look across and down, and use the one that gives a whole number. Choice number three is our answer, and I'll see you in the next question.",
+    "say": "We get the same eighty-four. Across, the multiplier was a whole number, seven, so across was easier to calculate. So first look across and down, and check which direction makes the calculation easier. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
      "We get the",
      "Choice number three is our answer"

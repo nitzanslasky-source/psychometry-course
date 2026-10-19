@@ -15,17 +15,17 @@
     ]
    },
    {
-    "say": "Unlike general problems, we don't try blindly. A little understanding tells us which way to push, toward the smallest or toward the biggest. So we need far fewer tries.",
+    "say": "We look at what makes the answer smaller or bigger. That helps us choose what to try. So we need far fewer tries.",
     "at": [
-     "tells us which way to push",
-     "push, toward the",
+     "We look at what makes",
+     "the answer smaller",
      "So we need far fewer tries"
     ]
    }
   ],
   [
    {
-    "say": "By the way, minimum and maximum isn't only this lesson. It comes back all over the quantitative section. In geometry, in overlap problems later on, and in many other questions. So the thinking we build here pays off again and again.",
+    "say": "By the way, minimum and maximum isn't only this lesson. It comes back all over the quantitative section. In geometry, in overlap problems later on, and in many other questions. So we'll use this way of thinking again and again.",
     "at": [
      "and maximum isn't"
     ]

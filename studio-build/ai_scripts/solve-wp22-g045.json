@@ -34,7 +34,7 @@
     ]
    },
    {
-    "say": "No problem. We chose the numbers, so we may change them. The cafés need a number that a fifth can come out of, and the smallest is five. So five café loaves, and twice that, ten supermarket loaves.",
+    "say": "No problem. We chose the numbers, so we may change them. The café total must be divisible by five, so a fifth is whole. The smallest possible total is five. So five café loaves, and twice that, ten supermarket loaves.",
     "at": [
      "So five café loaves"
     ]

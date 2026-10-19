@@ -61,9 +61,13 @@
   ],
   [
    {
-    "say": "[pause] Now with the last digit, which saves work and silly mistakes. Remember, the last digit of a product comes only from the last digits. The fewest is two tickets left for each of twenty-three children. Three times two is six, so the total ends in six.",
+    "say": "[pause] Now with the last digit, which saves work and silly mistakes. Remember, the last digit of a product comes only from the last digits. For the fewest, each child gets three plus two tickets. Each uses three, leaving five minus three, two tickets. There are twenty-three children. Three times two is six, so the total ends in six.",
     "at": [
      "Now with",
+     "three plus two tickets",
+     "uses three, leaving",
+     "five minus three",
+     "There are twenty-three",
      "Three times two is six"
     ]
    },
@@ -76,8 +80,11 @@
     ]
    },
    {
-    "say": "The most is eight tickets left for each child. Three times eight is twenty-four, so the total ends in four. A hundred eighty-four ends in four, and two hundred seven ends in seven. So choice number three is out too. Choice number two is our answer, and I'll see you in the next question.",
+    "say": "For the most, each child gets five plus four tickets. Each uses one, leaving nine minus one, eight tickets. Three times eight is twenty-four, so the total ends in four. A hundred eighty-four ends in four, and two hundred seven ends in seven. So choice number three is out too. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
+     "five plus four tickets",
+     "uses one, leaving",
+     "nine minus one",
      "Three times eight is twenty-four",
      "so the total",
      "So choice number three is out too",

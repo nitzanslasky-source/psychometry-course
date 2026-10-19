@@ -93,20 +93,23 @@
     ]
    },
    {
-    "say": "Choice number one, twenty-four. Eight times twenty-four is a hundred ninety-two. Seven rows of twenty-seven are seven times twenty-seven. That's a hundred forty plus forty-nine, a hundred eighty-nine. Not the same, so it's out.",
+    "say": "Choice number one, twenty-four. Eight rows of twenty-four give eight times twenty, a hundred sixty. Eight times four is thirty-two. Together that's a hundred ninety-two. Seven rows of twenty-seven are seven times twenty-seven. That's a hundred forty plus forty-nine, a hundred eighty-nine. Not the same, so it's out.",
     "at": [
      "number one, twenty-four",
-     "Eight times twenty-four",
+     "eight times twenty",
+     "Eight times four",
+     "Together that's a hundred ninety-two",
      "Seven rows of",
      "a hundred eighty-nine",
      "Not the same, so it's out"
     ]
    },
    {
-    "say": "Choice number two, twenty-one. Eight times twenty-one is a hundred sixty-eight. Seven rows of twenty-four are seven times twenty, a hundred forty, plus seven times four, twenty-eight. Together that's a hundred sixty-eight too. The same chairs, so it fits. Choice number two is our answer, and I'll see you in the next question.",
+    "say": "Choice number two, twenty-one. Eight times twenty is a hundred sixty. Add eight for the extra chair per row, a hundred sixty-eight. Seven rows of twenty-four are seven times twenty, a hundred forty, plus seven times four, twenty-eight. Together that's a hundred sixty-eight too. The same chairs, so it fits. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
      "number two, twenty-one",
-     "Eight times twenty-one",
+     "Eight times twenty",
+     "a hundred sixty-eight",
      "Seven rows of",
      "Together that's a hundred sixty-eight",
      "The same chairs",

@@ -7,7 +7,7 @@
   ],
   [
    {
-    "say": "The difference between A and B is twelve. A difference is always positive. It's the bigger number minus the smaller one.",
+    "say": "The difference between A and B is twelve. Here we mean how far apart the two numbers are. We take the bigger number minus the smaller one. That gives a positive number, or zero if they're equal.",
     "at": [
      "The difference between A and B",
      "B is twelve"
@@ -68,7 +68,7 @@
     ]
    },
    {
-    "say": "The third one is costs the same as, or weighs the same as. Two mugs cost the same as five pens. We write it the way we hear it. Two mugs is two M. Cost the same as is the equals sign. Five pens is five P. So two M is equal to five P.",
+    "say": "The third one is costs the same as, or weighs the same as. Two mugs cost the same as five pens. We write it the way we hear it. Let M be one mug's price and P one pen's price. Two mugs cost two M, and five pens cost five P. Cost the same as means the two costs are equal. So two M is equal to five P.",
     "at": [
      "Two mugs cost the same as five pens",
      "as five pens",

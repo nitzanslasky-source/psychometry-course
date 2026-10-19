@@ -20,17 +20,17 @@
     ]
    },
    {
-    "say": "Type two is minimum and maximum. Here a little understanding tells us which way to push, so we need fewer tries. For example, three friends share ten sweets, and each gets at least one. What's the most one friend can get? To make one share as big as possible, we give the others as little as possible, one each. So the most is ten minus two, which is eight.",
+    "say": "Type two is minimum and maximum. Here we look for the smallest or biggest possible value. That helps us choose what to try. For example, three friends share ten sweets, and each gets at least one. What's the most one friend can get? To make one share as big as possible, we give the others as little as possible, one each. So the most is ten minus two, which is eight.",
     "at": [
      "Type two is minimum and maximum",
-     "Here a little",
+     "Here we look",
      "So the most is ten minus two"
     ]
    },
    {
-    "say": "The same push with other numbers. Five friends share twenty sweets. The other four get one each, that's four. So the most one friend can get is twenty minus four, sixteen.",
+    "say": "Let's try the same idea with other numbers. Five friends share twenty sweets. The other four get one each, that's four. So the most one friend can get is twenty minus four, sixteen.",
     "at": [
-     "The same push",
+     "Let's try the",
      "The other four get one each",
      "So the most"
     ]
@@ -45,7 +45,7 @@
     ]
    },
    {
-    "say": "Another rule. Start at twenty and take away three each time. Twenty, seventeen, fourteen, eleven. Here we hardly think and hardly make mistakes. It's mostly trial, and very little error.",
+    "say": "Now let's try another rule. Start at twenty and take away three each time. Twenty, seventeen, fourteen, eleven. Here we hardly think and hardly make mistakes. It's mostly trial, and very little error.",
     "at": [
      "Start at twenty and take away three",
      "away three each"
@@ -76,7 +76,7 @@
     ]
    },
    {
-    "say": "Must one of them be at least seven? Here no example can prove it, we need a reason. If both were six or less, the sum would be at most six plus six, twelve. That's less than fourteen. So yes, one of them is always at least seven.",
+    "say": "Must one of them be at least seven? One example can't show that this is always true. We need a reason that covers every allowed case. If both were six or less, the sum would be at most six plus six, twelve. That's less than fourteen. So yes, one of them is always at least seven.",
     "at": [
      "If both were six or less",
      "twelve. That's less"

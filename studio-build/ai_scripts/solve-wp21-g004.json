@@ -12,14 +12,14 @@
     "pause": 0.5
    },
    {
-    "say": "So they don't ask how many there must be. They ask what can be. One road that really happens and ends on a choice is enough. Nothing tells us which bubble to pop first, so this is a general problem. [short pause] We'll solve it in two different ways, by trial and error, and then with an insight.",
+    "say": "So they don't ask how many there must be. They ask what can be. One allowed sequence of pops that gives a choice is enough. Nothing tells us which bubble to pop first, so this is a general problem. [short pause] We'll solve it in two different ways, by trial and error, and then with an insight.",
     "at": [
      "They ask what can be",
-     "One road that"
+     "One allowed sequence"
     ]
    },
    {
-    "say": "[short pause] Let's start with trial and error. We try one road of pops and follow the game. At the start there are two large bubbles, and no small ones.",
+    "say": "[short pause] Let's start with trial and error. We choose which bubbles to pop and follow the game. At the start there are two large bubbles, and no small ones.",
     "at": [
      "Let's start",
      "At the start there",
@@ -34,7 +34,7 @@
     ]
    },
    {
-    "say": "Now the road splits, because we can pop the large one or a small one. Let's take one road, and pop the other large bubble. It turns into five more small ones. So there are no large ones left, and five plus five is ten small ones. Ten is a choice too, but that's after two pops. The question says exactly three pops.",
+    "say": "Now we have two options for the second pop. We can pop the large bubble or a small one. Let's pop the other large bubble. It turns into five more small ones. So there are no large ones left, and five plus five is ten small ones. Ten is a choice too, but that's after two pops. The question says exactly three pops.",
     "at": [
      "five plus five is ten",
      "but that's after",
@@ -49,7 +49,7 @@
     ]
    },
    {
-    "say": "Nine is in the choices. They ask what can be, and this road really happens. So there can be nine bubbles, and choice number three is our answer. This time we were lucky on the first road.",
+    "say": "Nine is in the choices. They ask what can be, and these three pops are allowed. So there can be nine bubbles, and choice number three is our answer. This time we were lucky with the first sequence we tried.",
     "at": [
      "Nine is in",
      "choice number three is our answer"
@@ -58,9 +58,9 @@
   ],
   [
    {
-    "say": "What if we had taken the other road? Let's see it, because in another question the first road can miss. The first pop is the same, one large and five small.",
+    "say": "What if the second pop had hit a small bubble? Let's check, because our first try won't always match a choice. The first pop is the same, one large and five small.",
     "at": [
-     "taken the other",
+     "pop had hit",
      "The first pop is the same"
     ]
    },
@@ -80,14 +80,14 @@
     ]
    },
    {
-    "say": "If we pop a small one, one large and three small are left, four bubbles. Four is not in the choices. If this had been our first road, we'd just try again. That's trial and error. We try, we miss, and we try again.",
+    "say": "If we pop a small one, one large and three small are left, four bubbles. Four is not in the choices. If we'd tried this sequence first, we'd try another one. That's trial and error. We try, we miss, and we try again.",
     "at": [
      "If we pop a small one",
      "small are left"
     ]
    },
    {
-    "say": "So every road ends at nine or at four, and only nine is in the choices. Choice number three is our answer.",
+    "say": "So every allowed sequence ends at nine or at four, and only nine is in the choices. Choice number three is our answer.",
     "at": [
      "Choice number three is our answer"
     ]
