@@ -1,0 +1,113 @@
+{
+ "videoId": "solve-wp23-g064",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A farmer sells seventy percent of his apples at a market and all the rest to a juice factory. The market gets forty-eight kilograms more apples than the factory. How many kilograms of apples does the factory get?",
+    "voice": "calm",
+    "at": [
+     "A farmer sells seventy"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The key here is the difference. They don't give us the factory's amount. They give the difference between the two. We'll solve it in two different ways, with the ratio table, and then with ten percent.",
+    "at": [
+     "in two different"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. All the apples are a hundred percent. The market gets seventy percent, so the factory gets the rest, a hundred minus seventy, thirty percent.",
+    "at": [
+     "Let's start",
+     "so the factory gets the rest"
+    ]
+   },
+   {
+    "say": "So the difference is seventy minus thirty, forty percent.",
+    "at": [
+     "So the difference is",
+     "minus thirty, forty"
+    ]
+   },
+   {
+    "say": "And the question says this difference is forty-eight kilograms. So forty percent is forty-eight kilograms. Careful, forty-eight is the difference, not the factory's apples. That's choice number three, a trap.",
+    "at": [
+     "the question says",
+     "So forty percent is",
+     "Careful, forty-eight is",
+     "That's choice number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the ratio table. Percents in one column, kilograms in the other. In the first row, forty percent and forty-eight. In the second row, the factory's thirty percent, and a question mark.",
+    "at": [
+     "Now the",
+     "Percents in one column",
+     "in the other",
+     "In the first row",
+     "In the second row",
+     "factory's thirty percent"
+    ]
+   },
+   {
+    "say": "Across or down, there's no easy whole number. So we use the triangle value. We multiply along the diagonal, thirty times forty-eight, and divide by what's left, forty.",
+    "at": [
+     "We multiply along the diagonal",
+     "thirty times forty-eight",
+     "and divide by what"
+    ]
+   },
+   {
+    "say": "Let's make it smaller first. Thirty and forty both divide by ten, so it's three times forty-eight, over four. Forty-eight divided by four is twelve. Three times twelve is thirty-six.",
+    "at": [
+     "Let's make it",
+     "so it's three times",
+     "Forty-eight divided by four",
+     "three times twelve is thirty-six"
+    ]
+   },
+   {
+    "say": "So the factory gets thirty-six kilograms. Choice number two is our answer.",
+    "at": [
+     "So the factory",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a shorter way. We start again from the givens. The factory gets the rest, thirty percent. The difference is seventy minus thirty, forty percent, and that's forty-eight kilograms.",
+    "at": [
+     "Now a",
+     "the givens. The",
+     "forty-eight kilograms"
+    ]
+   },
+   {
+    "say": "From forty percent to thirty percent isn't one easy step. So let's take a middle step, ten percent. Forty percent divided by four is ten percent. So we divide the kilograms by four too. Forty-eight divided by four is twelve.",
+    "at": [
+     "From forty percent",
+     "Forty-eight divided by four is"
+    ]
+   },
+   {
+    "say": "Thirty percent is three times ten percent. Three times twelve is thirty-six kilograms.",
+    "at": [
+     "Thirty percent is",
+     "Three times twelve"
+    ]
+   },
+   {
+    "say": "So when the step isn't easy to see, go through ten percent first. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "So when the",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

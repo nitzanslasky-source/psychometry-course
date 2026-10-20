@@ -1,0 +1,130 @@
+{
+ "videoId": "solve-wp24-g070",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Of fifty-two hotel guests, thirty-one use the pool, twenty-six use the gym, and seventeen use both. How many use neither?",
+    "voice": "calm",
+    "at": [
+     "Of fifty-two hotel guests"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for neither, the guests who use no pool and no gym. We know the total, both groups, and both. Every fact is here, so it's an exact question. We'll solve it in two different ways, with the squares method, and then by counting each guest once.",
+    "at": [
+     "So they ask for neither",
+     "know the total",
+     "here, so it's",
+     "two different ways"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, the squares method. We draw four boxes. Neither, gym only, both, and pool only. All four boxes together are the fifty-two guests.",
+    "at": [
+     "math way, the",
+     "We draw four boxes",
+     "Neither, gym only",
+     "All four boxes together",
+     "the fifty-two guests"
+    ]
+   },
+   {
+    "say": "The pool bracket covers both and pool only, thirty-one. The gym bracket covers gym only and both, twenty-six. The two brackets share the middle box, both.",
+    "at": [
+     "The pool bracket",
+     "The gym bracket",
+     "only and both"
+    ]
+   },
+   {
+    "say": "The question says seventeen use both. So we write seventeen in the middle box.",
+    "at": [
+     "The question says seventeen",
+     "So we write seventeen",
+     "the middle box"
+    ]
+   },
+   {
+    "say": "The gym bracket is twenty-six, and seventeen of them are in both. So gym only is twenty-six minus seventeen, nine.",
+    "at": [
+     "twenty-six minus seventeen",
+     "nine."
+    ]
+   },
+   {
+    "say": "We want neither, so we move to the left. The pool bracket plus gym only is thirty-one plus nine, forty. These forty guests use at least one.",
+    "at": [
+     "We want neither",
+     "thirty-one plus nine",
+     "These forty guests"
+    ]
+   },
+   {
+    "say": "The four boxes make fifty-two. So neither is fifty-two minus forty, twelve.",
+    "at": [
+     "The four boxes",
+     "fifty-two minus forty",
+     "twelve"
+    ]
+   },
+   {
+    "say": "We could also find pool only, thirty-one minus seventeen, fourteen. But we don't need it. And careful, fourteen is choice number two. That's pool only, not neither.",
+    "at": [
+     "thirty-one minus seventeen",
+     "But we don't",
+     "number two. That's",
+     "That's pool only, not neither"
+    ]
+   },
+   {
+    "say": "So twelve guests use neither. Choice number three is our answer.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the second way, with the rule from the first lesson. We start again from the givens. A plus B, minus both, plus neither, is equal to the total.",
+    "at": [
+     "Now the",
+     "the givens. A",
+     "A plus B, minus both",
+     "plus neither, is"
+    ]
+   },
+   {
+    "say": "Thirty-one plus twenty-six is fifty-seven. That's more than the fifty-two guests, so some guests were counted twice. They're the seventeen in both.",
+    "at": [
+     "Thirty-one plus twenty-six",
+     "That's more than"
+    ]
+   },
+   {
+    "say": "So we subtract them once. Fifty-seven minus seventeen is forty. That's every guest who uses at least one.",
+    "at": [
+     "Fifty-seven minus seventeen",
+     "That's every guest"
+    ]
+   },
+   {
+    "say": "Then forty plus neither is fifty-two. So neither is fifty-two minus forty, twelve again.",
+    "at": [
+     "Then forty plus neither",
+     "So neither is fifty-two minus forty",
+     "forty, twelve again"
+    ]
+   },
+   {
+    "say": "If we forget to subtract both, we might take fifty-seven minus fifty-two, five. That's choice number one, the trap. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "fifty-seven minus fifty-two",
+     "That's choice number one",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

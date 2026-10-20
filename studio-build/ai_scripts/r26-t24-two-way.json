@@ -1,0 +1,60 @@
+{
+ "videoId": "r26-t24-two-way",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Sometimes every person in a question has two traits. For example, a student is in the upper grades or the lower grades. And the student walks to school, or doesn't."
+  ],
+  [
+   {
+    "say": "These are really our four regions again. A student can be upper and walk, or upper and not walk. Or the student can be lower and walk, or lower and not walk. Here a table is clearer than circles.",
+    "at": [
+     "These are really",
+     "A student can be upper",
+     "and walk, or"
+    ]
+   },
+   "Each row is one group, and each column is the other trait. And we add a total for every row and every column."
+  ],
+  [
+   {
+    "say": "Here's the trap in these questions. Say twenty percent of the women wear glasses, and thirty percent of the men wear glasses. What percent of everyone wears glasses?",
+    "at": [
+     "Say twenty percent of the women",
+     "percent of the men"
+    ]
+   },
+   {
+    "say": "A lot of students add, and say fifty percent. Others take the average, twenty-five percent. Both are wrong.",
+    "at": [
+     "A lot of students add",
+     "and say fifty",
+     "Others take the average",
+     "percent. Both are"
+    ]
+   },
+   "Why? Because the twenty percent is of the women, and the thirty percent is of the men. These are percents of different wholes.",
+   {
+    "say": "Let's see it in numbers. Say there are forty women and sixty men, a hundred people. Twenty percent of forty is eight. Thirty percent of sixty is eighteen.",
+    "at": [
+     "Twenty percent of forty",
+     "Thirty percent of sixty"
+    ]
+   },
+   {
+    "say": "Eight plus eighteen is twenty-six. So twenty-six people out of a hundred wear glasses, twenty-six percent. Not fifty, and not twenty-five.",
+    "at": [
+     "Eight plus eighteen",
+     "So twenty-six people"
+    ]
+   },
+   {
+    "say": "So we don't add percents of different groups, and we don't average them. We plug in a hundred, and fill a table. Let's see it in a guided question. Try it first, and I'll see you in the next video.",
+    "at": [
+     "So we don't add percents",
+     "of different groups"
+    ]
+   }
+  ]
+ ]
+}

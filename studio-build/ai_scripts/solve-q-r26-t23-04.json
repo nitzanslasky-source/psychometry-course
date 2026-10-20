@@ -1,0 +1,132 @@
+{
+ "videoId": "solve-q-r26-t23-04",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A three hundred gram mixture of sugar and water is twenty percent sugar. How many grams of sugar must be added to make the mixture forty percent sugar?",
+    "voice": "calm",
+    "at": [
+     "mixture of sugar and water"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "This is a mixture question. When we add something to a mixture, the total changes, and so do the percents. The trick is to find what stays the same. We'll solve it in two different ways, the math way, and then by plugging in the answers.",
+    "at": [
+     "The trick is",
+     "solve it in"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, and the rule first. Think of a cup of salty water. If we add water, the salt is still the same salt. If we add salt, the water is still the same water.",
+    "at": [
+     "Let's start",
+     "If we add water",
+     "If we add salt"
+    ]
+   },
+   {
+    "say": "Here we add sugar. So the sugar changes, and the total changes. What stays the same? The water.",
+    "at": [
+     "So the sugar"
+    ]
+   },
+   {
+    "say": "So let's find the water before. The mixture is twenty percent sugar, so it's a hundred minus twenty, eighty percent water.",
+    "at": [
+     "eighty percent water"
+    ]
+   },
+   {
+    "say": "Eighty percent of three hundred is eight times thirty, two hundred forty grams of water.",
+    "at": [
+     "Eighty percent of three hundred",
+     "is eight times"
+    ]
+   },
+   {
+    "say": "After we add sugar, the mixture is forty percent sugar. So it's a hundred minus forty, sixty percent water. And the water is still two hundred forty grams.",
+    "at": [
+     "sixty percent water",
+     "And the water is still",
+     "two hundred forty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sixty percent is two hundred forty grams. Let's go down to twenty percent. Sixty divided by three is twenty, so we divide the grams by three too. Two hundred forty divided by three is eighty grams.",
+    "at": [
+     "Sixty percent",
+     "hundred forty grams",
+     "down to twenty",
+     "Two hundred forty divided by three",
+     "three is eighty"
+    ]
+   },
+   {
+    "say": "The whole new mixture is a hundred percent, five times twenty percent. Five times eighty is four hundred grams.",
+    "at": [
+     "Five times eighty"
+    ]
+   },
+   {
+    "say": "The mixture was three hundred grams, and now it's four hundred. The only thing we added is sugar. So we added four hundred minus three hundred, a hundred grams of sugar. Choice number one is our answer.",
+    "at": [
+     "The mixture was",
+     "So we added four hundred minus",
+     "grams of sugar",
+     "Choice number one is our answer"
+    ]
+   },
+   {
+    "say": "The trap is choice number two, sixty grams. That's twenty percent of three hundred, as if the total doesn't grow. But when we add sugar, the total grows too.",
+    "at": [
+     "The trap is choice number two",
+     "That's twenty percent of three hundred",
+     "hundred, as if"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers. We start again from the givens. The mixture has three hundred grams, and twenty percent of it is sugar. Twenty percent of three hundred is sixty grams of sugar.",
+    "at": [
+     "Now let's",
+     "the givens. The",
+     "Twenty percent of three hundred is sixty",
+     "is sixty grams"
+    ]
+   },
+   {
+    "say": "Which choice first? The round one, a hundred grams, choice number one. With a hundred grams added, the sugar is sixty plus a hundred, a hundred sixty grams.",
+    "at": [
+     "number one. With",
+     "the sugar is sixty plus"
+    ]
+   },
+   {
+    "say": "And the whole mixture is three hundred plus a hundred, four hundred grams.",
+    "at": [
+     "And the whole mixture is",
+     "three hundred plus"
+    ]
+   },
+   {
+    "say": "A hundred sixty out of four hundred. We divide both by four, and get forty out of a hundred, forty percent. That's what we want.",
+    "at": [
+     "We divide both by four",
+     "a hundred, forty",
+     "That's what we want"
+    ]
+   },
+   {
+    "say": "So when you see a mixture, ask what stays the same. Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "number one is"
+    ]
+   }
+  ]
+ ]
+}

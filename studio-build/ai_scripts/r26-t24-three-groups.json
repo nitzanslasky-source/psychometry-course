@@ -1,0 +1,148 @@
+{
+ "videoId": "r26-t24-three-groups",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now three groups. Sometimes the exam adds a third group, and asks how many must be in all three."
+  ],
+  [
+   {
+    "say": "At least how many are in all three groups? Let's turn the question around. Who is not in all three? Anyone who misses at least one group.",
+    "at": [
+     "are in all"
+    ]
+   },
+   {
+    "say": "So we count the people who miss each group, as if they're all different people. That's the most people who can miss something. Everyone else must be in all three.",
+    "at": [
+     "Everyone else must be in all three"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. There are ten friends. Eight like tea, nine like coffee, and seven like juice.",
+    "at": [
+     "There are ten friends",
+     "Eight like tea"
+    ]
+   },
+   {
+    "say": "Two don't like tea, one doesn't like coffee, and three don't like juice. Two plus one plus three is six.",
+    "at": [
+     "Two don't like tea",
+     "doesn't like coffee",
+     "Two plus one plus three"
+    ]
+   },
+   {
+    "say": "So at most six friends miss something. The other ten minus six, four friends, must like all three.",
+    "at": [
+     "So at most",
+     "The other ten minus six",
+     "four friends, must"
+    ]
+   },
+   {
+    "say": "It's the same idea as with two groups. Fifteen students, ten in art and nine in drama. Five miss art, and six miss drama. Five plus six is eleven, so at least fifteen minus eleven, four are in both. The same four as the sum minus the total.",
+    "at": [
+     "Five plus six is eleven",
+     "eleven, four are"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now careful. What if the people who miss a group add up to more than the total? There are fifty readers. Thirty read fiction, thirty-five read history, and twenty-five read science.",
+    "at": [
+     "the people who",
+     "There are fifty readers",
+     "Thirty read fiction"
+    ]
+   },
+   {
+    "say": "Twenty miss fiction, fifteen miss history, and twenty-five miss science. Twenty plus fifteen plus twenty-five is sixty. That's more than fifty readers.",
+    "at": [
+     "Twenty plus fifteen plus",
+     "That's more than"
+    ]
+   },
+   {
+    "say": "Fifty minus sixty would be negative. But a number of people can't be negative. So, just like with two groups, the smallest is zero.",
+    "at": [
+     "the smallest is zero"
+    ]
+   },
+   {
+    "say": "Is zero really possible? Here's one way. Fifteen read fiction and history. Fifteen read fiction and science. Ten read history and science. And ten read only history.",
+    "at": [
+     "Here's one way",
+     "Fifteen read fiction"
+    ]
+   },
+   {
+    "say": "Fiction is fifteen plus fifteen, thirty. History is fifteen plus ten plus ten, thirty-five. Science is fifteen plus ten, twenty-five. That's fifty readers, and nobody reads all three.",
+    "at": [
+     "Fiction is fifteen plus fifteen",
+     "History is fifteen plus ten",
+     "plus ten, thirty-five",
+     "Science is fifteen plus ten",
+     "That's fifty readers"
+    ]
+   },
+   {
+    "say": "And the most in all three? The people in all three are inside every group. So it can't be more than the smallest group. Here that's twenty-five.",
+    "at": [
+     "the smallest group"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more case. Sometimes they also tell us how many each pair of groups shares. Here are three clubs. Forty students are in chess, thirty-five in drama, and thirty in music.",
+    "at": [
+     "they also tell",
+     "Here are three clubs",
+     "Forty students are"
+    ]
+   },
+   {
+    "say": "Twelve are in both chess and drama. Nine are in both chess and music. And fifteen are in both drama and music. At most how many are in all three?",
+    "at": [
+     "Twelve are in both chess and drama",
+     "Nine are in"
+    ]
+   },
+   {
+    "say": "Someone in all three clubs is also in every pair. So the all-three group fits inside each pair. It can't be bigger than the smallest pair, nine.",
+    "at": [
+     "the smallest pair, nine"
+    ]
+   },
+   {
+    "say": "So the most is nine, not thirty. When we know only the groups, the smallest group is the limit. When the pairs are given, the smallest pair is the limit.",
+    "at": [
+     "So the most",
+     "When the pairs are given",
+     "the smallest pair"
+    ]
+   },
+   {
+    "say": "And the least? Here it can be zero. In chess, twelve plus nine is twenty-one, and that fits in forty. In drama, twelve plus fifteen is twenty-seven, and that fits in thirty-five. In music, nine plus fifteen is twenty-four, and that fits in thirty. So the pairs can all be different people.",
+    "at": [
+     "twelve plus nine is twenty-one",
+     "and that fits",
+     "twelve plus fifteen is twenty-seven",
+     "and that fits in thirty-five",
+     "nine plus fifteen is twenty-four",
+     "and that fits in thirty. So"
+    ]
+   },
+   {
+    "say": "So here it's from zero to nine. Now let's see a guided question. Try it first, and I'll see you in the next video.",
+    "at": [
+     "from zero to nine",
+     "question. Try it"
+    ]
+   }
+  ]
+ ]
+}

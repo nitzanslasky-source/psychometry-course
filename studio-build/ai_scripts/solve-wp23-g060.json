@@ -1,0 +1,164 @@
+{
+ "videoId": "solve-wp23-g060",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In a computer game, Noa loses thirty percent of her coins. She then wins a prize equal to forty percent of the coins she has left. Compared with the number of coins she had at the start, how many coins does she have now?",
+    "voice": "calm",
+    "at": [
+     "In a computer game"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "She loses some coins, and then wins some back. So does she end up with more or fewer? We'll solve it in two different ways, the math way with algebra, and then by plugging in numbers.",
+    "at": [
+     "She loses some coins"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. We don't know how many coins she had, so let's call it x.",
+    "at": [
+     "Let's start",
+     "so let's call it x"
+    ]
+   },
+   {
+    "say": "She loses thirty percent of her coins. Careful here. A lot of students write x minus thirty over a hundred. But a percent can't stand alone. It's always a percent of something, and here it's thirty percent of x.",
+    "at": [
+     "She loses thirty",
+     "here it's thirty percent of x"
+    ]
+   },
+   {
+    "say": "So she has x minus thirty percent of x. The whole x is a hundred percent of x. A hundred percent minus thirty percent leaves seventy percent.",
+    "at": [
+     "So she has",
+     "A hundred percent minus thirty",
+     "percent leaves seventy"
+    ]
+   },
+   {
+    "say": "Seventy percent is zero point seven. So she has zero point seven x.",
+    "at": [
+     "So she has zero point seven"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now she wins forty percent of the coins she has left. Forty percent of what? Of zero point seven x, not of x.",
+    "at": [
+     "Now she",
+     "of the coins she has left",
+     "Of zero point"
+    ]
+   },
+   {
+    "say": "She keeps all the coins she has, a hundred percent, and gets forty percent more. A hundred plus forty is a hundred forty percent of what she had. So we multiply by one point four.",
+    "at": [
+     "coins she has",
+     "A hundred plus forty is",
+     "what she had"
+    ]
+   },
+   {
+    "say": "One point four times zero point seven x. Fourteen times seven is ninety-eight, so it's zero point nine eight x.",
+    "at": [
+     "One point four times zero point seven",
+     "point seven x",
+     "Fourteen times seven",
+     "so it's zero"
+    ]
+   },
+   {
+    "say": "Zero point nine eight x is ninety-eight percent of x. She started with a hundred percent of x, so now she has two percent fewer. Choice number two is our answer.",
+    "at": [
+     "ninety-eight percent of x",
+     "She started with",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "These numbers are called multipliers. To go down thirty percent, we multiply by zero point seven, what stays. To go up forty percent, we multiply by one point four. We'll use them again in the next questions.",
+    "at": [
+     "To go down thirty percent",
+     "we multiply by",
+     "To go up forty percent",
+     "we multiply by one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in numbers. We start again from the givens. No number of coins is given, so we plug in a hundred. Where? Into the whole, the coins she had at the start.",
+    "at": [
+     "Now let's",
+     "the givens. No",
+     "Into the whole",
+     "she had at"
+    ]
+   },
+   {
+    "say": "She loses thirty percent of a hundred, thirty coins. So seventy coins are left.",
+    "at": [
+     "So seventy coins"
+    ]
+   },
+   {
+    "say": "The prize is forty percent of the coins she has left, of seventy. It's not forty coins. Ten percent of seventy is seven, so forty percent is four times seven, twenty-eight.",
+    "at": [
+     "The prize is",
+     "so forty percent is four times",
+     "times seven, twenty-eight"
+    ]
+   },
+   {
+    "say": "Seventy plus twenty-eight is ninety-eight coins. That's two fewer than a hundred, so two percent fewer.",
+    "at": [
+     "Seventy plus twenty-eight",
+     "That's two fewer"
+    ]
+   },
+   {
+    "say": "The trap is choice number three, ten percent more. That's forty minus thirty. But the forty percent is taken from a smaller amount, seventy.",
+    "at": [
+     "The trap is choice number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Would another number work? Let's try two hundred coins. Thirty percent of two hundred is sixty, so a hundred forty are left.",
+    "at": [
+     "Would another",
+     "Let's try two",
+     "so a hundred forty are left"
+    ]
+   },
+   {
+    "say": "Forty percent of a hundred forty is fifty-six. Ten percent is fourteen, and four times fourteen is fifty-six. A hundred forty plus fifty-six is a hundred ninety-six.",
+    "at": [
+     "Forty percent of a hundred forty",
+     "forty is fifty-six",
+     "A hundred forty plus fifty-six",
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "That's four fewer, out of two hundred. Four over two hundred is two over a hundred, two percent again.",
+    "at": [
+     "Four over two hundred",
+     "two over a"
+    ]
+   },
+   {
+    "say": "So any number works. We pick a hundred for two reasons. The number we get is already the percent. And percents of a hundred are the easiest to find. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

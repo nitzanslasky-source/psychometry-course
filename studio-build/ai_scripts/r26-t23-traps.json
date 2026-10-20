@@ -1,0 +1,48 @@
+{
+ "videoId": "r26-t23-traps",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. The next three questions show some traps the exam loves. But first, one shortcut that saves a lot of time, estimating."
+  ],
+  [
+   {
+    "say": "Here's a question. What percent of three hundred twenty is ninety?",
+    "at": [
+     "What percent of three hundred",
+     "is ninety"
+    ]
+   },
+   {
+    "say": "We could calculate exactly, ninety over three hundred twenty, times a hundred. That's a long division. But look at the choices. They're far apart, so an estimate is enough.",
+    "at": [
+     "We could calculate"
+    ]
+   },
+   "Remember estimation from psychometric thinking. We look for easy percents close to our number.",
+   {
+    "say": "Twenty-five percent is a quarter. To find a quarter of three hundred twenty, we halve twice. Half of it is a hundred sixty, and half again is eighty.",
+    "at": [
+     "and half again is eighty"
+    ]
+   },
+   {
+    "say": "Thirty percent of three hundred twenty. Ten percent is thirty-two, so thirty percent is three times thirty-two, ninety-six.",
+    "at": [
+     "Thirty percent of",
+     "so thirty percent is three times",
+     "times thirty-two, ninety-six"
+    ]
+   },
+   {
+    "say": "Ninety is between eighty and ninety-six. So the percent is between twenty-five and thirty.",
+    "at": [
+     "Ninety is between",
+     "So the percent is between",
+     "twenty-five and thirty"
+    ]
+   },
+   "Only choice number two, twenty-eight point one two five percent, is in that range. So that's the answer, with no long division. [pause] Now three questions. Try each one first, and then watch the solution. I'll see you in the next video."
+  ]
+ ]
+}

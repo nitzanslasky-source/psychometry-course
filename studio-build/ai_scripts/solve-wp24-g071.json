@@ -1,0 +1,111 @@
+{
+ "videoId": "solve-wp24-g071",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A print shop has twenty-seven printers. Of them, sixteen print in color, thirteen print large posters, and three do neither. How many printers both print in color and print large posters?",
+    "voice": "calm",
+    "at": [
+     "A print shop has twenty-seven"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So this time neither is given, three, and they ask for both. We have the total, both groups, and neither, so it's an exact question. We'll solve it in two different ways, with the squares method, and then by counting each printer once.",
+    "at": [
+     "So this time neither is given",
+     "total, both groups"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, the squares method. We draw four boxes. Neither, posters only, both, and color only. All four together are the twenty-seven printers.",
+    "at": [
+     "Four boxes",
+     "Neither, posters only",
+     "All four together"
+    ]
+   },
+   {
+    "say": "The poster bracket covers posters only and both, thirteen. The color bracket covers both and color only, sixteen.",
+    "at": [
+     "The poster bracket",
+     "only and both",
+     "The color bracket"
+    ]
+   },
+   {
+    "say": "Three printers do neither, so we write three in the first box.",
+    "at": [
+     "so we write three",
+     "the first box"
+    ]
+   },
+   {
+    "say": "Neither plus the whole poster bracket is three plus thirteen, sixteen. That covers every box except color only.",
+    "at": [
+     "three plus thirteen",
+     "That covers every box"
+    ]
+   },
+   {
+    "say": "The four boxes make twenty-seven. So color only is twenty-seven minus sixteen, eleven.",
+    "at": [
+     "The four boxes",
+     "twenty-seven minus sixteen",
+     "eleven"
+    ]
+   },
+   {
+    "say": "The color bracket is sixteen, and eleven of them are color only. So both is sixteen minus eleven, five.",
+    "at": [
+     "The color bracket",
+     "sixteen minus eleven",
+     "five."
+    ]
+   },
+   {
+    "say": "So five printers do both jobs. Choice number four is our answer.",
+    "at": [
+     "So five printers",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by counting each printer once. We start again from the givens. Three printers do neither. So twenty-seven minus three, twenty-four printers do at least one job.",
+    "at": [
+     "Now by",
+     "the givens. Three",
+     "twenty-seven minus three",
+     "do at least"
+    ]
+   },
+   {
+    "say": "Now we add the two groups. Sixteen plus thirteen is twenty-nine. But only twenty-four printers do a job. Twenty-nine minus twenty-four is five.",
+    "at": [
+     "Sixteen plus thirteen",
+     "But only twenty-four",
+     "Twenty-nine minus twenty-four"
+    ]
+   },
+   {
+    "say": "Those five extra were counted twice, once in color and once in posters. So five printers do both, the same five.",
+    "at": [
+     "Those five extra"
+    ]
+   },
+   {
+    "say": "Careful with choice number two, two. Two is twenty-nine minus twenty-seven. That's what we get if we forget the three that do neither. Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "number two, two",
+     "Two is twenty-nine minus",
+     "That's what we",
+     "if we forget the",
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,126 @@
+{
+ "videoId": "solve-wp24-g078",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Two friends list the movies they watched this year. One lists thirty-four movies and the other lists twenty-seven. Together, their lists show forty-five different movies. How many movies appear on both lists?",
+    "voice": "calm",
+    "at": [
+     "Two friends list the movies"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for both, the movies on both lists. The hard part here isn't the math. It's one fact that isn't written in the question. We'll solve it in two different ways, by understanding, and then with the squares method.",
+    "at": [
+     "So they ask for both",
+     "The hard part",
+     "that isn't written",
+     "in two different"
+    ]
+   },
+   {
+    "say": "Let's start by understanding the forty-five. They didn't say forty-five movies came out this year. They said the two lists show forty-five different movies.",
+    "at": [
+     "Let's start",
+     "They said the two lists show"
+    ]
+   },
+   {
+    "say": "So every one of the forty-five movies is on at least one list. No movie is on neither list. So neither is zero.",
+    "at": [
+     "So neither is zero"
+    ]
+   },
+   {
+    "say": "It's not written, but it comes from the words. Here the total is only the movies on the lists.",
+    "at": [
+     "It's not written"
+    ]
+   },
+   {
+    "say": "The first friend lists thirty-four of the forty-five movies. So forty-five minus thirty-four, eleven movies are not on the first list.",
+    "at": [
+     "forty-five minus thirty-four",
+     "are not on"
+    ]
+   },
+   "Those eleven movies are still on a list, so they're on the second list only.",
+   {
+    "say": "The second list has twenty-seven movies, and eleven are only on the second list. So twenty-seven minus eleven, sixteen are on both lists.",
+    "at": [
+     "twenty-seven minus eleven",
+     "on both lists"
+    ]
+   },
+   {
+    "say": "And careful, eleven is choice number two. That's the second list only, not both. Choice number one is our answer.",
+    "at": [
+     "number two. That's",
+     "That's the second list only",
+     "Choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way, the squares method. We start again from the givens. We draw four boxes. Neither, second only, both, and first only. All four together are the forty-five different movies.",
+    "at": [
+     "the squares method",
+     "the givens. We",
+     "Four boxes",
+     "Neither, second only",
+     "All four together",
+     "forty-five different movies"
+    ]
+   },
+   {
+    "say": "The first list covers both and first only, thirty-four. The second list covers second only and both, twenty-seven.",
+    "at": [
+     "The first list covers",
+     "and first only",
+     "The second list covers",
+     "only and both"
+    ]
+   },
+   {
+    "say": "The forty-five counts only the movies on the lists, so no movie is on neither. The first box is zero.",
+    "at": [
+     "The first box is zero"
+    ]
+   },
+   {
+    "say": "Neither plus second only is everything outside the first list. That's forty-five minus thirty-four, eleven. And neither is zero, so second only is eleven.",
+    "at": [
+     "everything outside the first list",
+     "forty-five minus thirty-four",
+     "neither is zero",
+     "so second only is eleven"
+    ]
+   },
+   {
+    "say": "The second list is twenty-seven. So both is twenty-seven minus eleven, sixteen.",
+    "at": [
+     "So both is",
+     "twenty-seven minus eleven",
+     "sixteen"
+    ]
+   },
+   {
+    "say": "And with counting each movie once, thirty-four plus twenty-seven is sixty-one. Sixty-one minus forty-five is sixteen. Those sixteen movies were counted twice.",
+    "at": [
+     "thirty-four plus twenty-seven",
+     "Sixty-one minus forty-five",
+     "Those sixteen movies"
+    ]
+   },
+   {
+    "say": "So when the total counts only what's on the lists, neither is zero, and that's the box to start from. Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

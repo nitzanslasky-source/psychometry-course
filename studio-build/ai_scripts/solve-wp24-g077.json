@@ -1,0 +1,164 @@
+{
+ "videoId": "solve-wp24-g077",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "At a conference, one quarter of the participants attend the morning workshop, one sixth attend the evening workshop, and one twelfth attend both. Exactly four participants attend both. How many participants attend neither workshop?",
+    "voice": "calm",
+    "at": [
+     "At a conference"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for neither. We get fractions, and one real number of people, four. Every fact is here, so it's an exact question. We'll solve it in two different ways. The squares method in fractions, and then by finding the number of participants first.",
+    "at": [
+     "So they ask for neither",
+     "We get fractions",
+     "Every fact is",
+     "fractions, and then"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, the squares method, with fractions. When the givens are fractions of the participants, all the participants together are one whole.",
+    "at": [
+     "math way, the",
+     "are fractions of",
+     "all the participants together"
+    ]
+   },
+   {
+    "say": "We draw four boxes. Neither, evening only, both, and morning only. All four together are one. The morning bracket is a quarter, and the evening bracket is a sixth.",
+    "at": [
+     "Four boxes",
+     "Neither, evening only",
+     "All four together are one",
+     "The morning bracket",
+     "the evening bracket"
+    ]
+   },
+   {
+    "say": "Both is a twelfth, so we write a twelfth in the middle box.",
+    "at": [
+     "so we write a twelfth",
+     "in the middle"
+    ]
+   },
+   {
+    "say": "Evening only is a sixth minus a twelfth. A sixth is two twelfths. Two twelfths minus one twelfth is one twelfth.",
+    "at": [
+     "A sixth is two twelfths",
+     "Two twelfths minus one twelfth",
+     "is one twelfth"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's find neither. Not in the morning is one minus a quarter, three quarters. That's neither plus evening only, the boxes outside the morning bracket.",
+    "at": [
+     "Now let's find neither",
+     "Now let's find neither",
+     "Not in the morning is one minus",
+     "one minus a",
+     "three quarters",
+     "the boxes outside"
+    ]
+   },
+   {
+    "say": "Three quarters is nine twelfths. Take away evening only, one twelfth, and we get eight twelfths. So neither is eight twelfths.",
+    "at": [
+     "Take away evening only",
+     "twelfth, and we",
+     "So neither is eight twelfths"
+    ]
+   },
+   {
+    "say": "But the choices are numbers of people. The question says the twelfth in both is four people. So each twelfth is four people, and we have eight twelfths. Eight times four is thirty-two people.",
+    "at": [
+     "But the choices",
+     "The question says the twelfth",
+     "is four people",
+     "people, and we",
+     "Eight times four"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now an insight, so we don't work with fractions at all. We start again from the givens. A twelfth of the participants is four people. So all the participants are twelve times four, forty-eight.",
+    "at": [
+     "we don't work",
+     "twelve times four"
+    ]
+   },
+   {
+    "say": "Now let's write everything in people. The morning is a quarter of forty-eight, twelve. The evening is a sixth of forty-eight, eight. And four are in both.",
+    "at": [
+     "Now let's write everything",
+     "Now let's write everything",
+     "people. The morning",
+     "a quarter of forty-eight",
+     "twelve.",
+     "sixth of forty-eight",
+     "eight.",
+     "And four are in both"
+    ]
+   },
+   {
+    "say": "Evening only is eight minus four, four.",
+    "at": [
+     "eight minus four",
+     "four."
+    ]
+   },
+   {
+    "say": "Not in the morning is forty-eight minus twelve, thirty-six. That's neither plus evening only.",
+    "at": [
+     "forty-eight minus twelve",
+     "That's neither plus evening only"
+    ]
+   },
+   {
+    "say": "So neither is thirty-six minus four, thirty-two. The same thirty-two.",
+    "at": [
+     "thirty-six minus four",
+     "thirty-two."
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Careful with choice number four, twenty-eight. That's forty-eight minus twelve minus eight. It takes the four in both away twice.",
+    "at": [
+     "number four, twenty-eight",
+     "forty-eight minus twelve minus eight",
+     "It takes the four",
+     "both away twice"
+    ]
+   },
+   {
+    "say": "And choice number one, sixteen, is everyone in at least one workshop. Twelve plus eight minus four is sixteen. But they asked for neither.",
+    "at": [
+     "number one, sixteen",
+     "Twelve plus eight minus four",
+     "But they asked for neither"
+    ]
+   },
+   {
+    "say": "So when fractions come with one real number of people, find the total first, and work in people. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "So when fractions",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

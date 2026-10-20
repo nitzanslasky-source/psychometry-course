@@ -217,8 +217,27 @@ def _spoken_comma_op(m, sym, m_all):
     return m_all(m.group(1)) + sym + m_all(m.group(3))
 
 
+_INT_WORD = {w: i for i, w in enumerate(_UNITS)}
+_INT_WORD.update({w: 10 + i for i, w in enumerate(_TEENS)})
+_INT_WORD.update({w: 20 + 10 * i for i, w in enumerate(_TENS)})
+_DEC_RX = re.compile(r'\b((?:%s)(?:-(?:%s))?|%s|%s) point ((?:%s)(?: (?:%s))*)\b' % (
+    '|'.join(_TENS), '|'.join(_UNITS[1:]), '|'.join(_TEENS), '|'.join(_UNITS), '|'.join(_UNITS), '|'.join(_UNITS)), re.I)
+
+
+def _spoken_decimals(text):
+    """2026-10-20 (topic 23): "one point two five" -> 1.25, "zero point eight eight" -> 0.88 (display only)"""
+    def dec(m):
+        a = m.group(1).lower().split('-'); n = _INT_WORD[a[0]] + (_INT_WORD[a[1]] if len(a) > 1 else 0)
+        return '%d.%s' % (n, ''.join(str(_INT_WORD[d.lower()]) for d in m.group(2).split()))
+    t = _DEC_RX.sub(dec, text)
+    ops = {'times': '×', 'plus': '+', 'minus': '−', 'over': '/', 'divided by': '÷'}
+    rx = re.compile(r'(\d+\.\d+) (times|plus|minus|over|divided by) (\d+\.\d+)')
+    while rx.search(t): t = rx.sub(lambda m: '%s %s %s' % (m.group(1), ops[m.group(2)], m.group(3)), t)
+    return t.replace(' / ', '/')
+
+
 def math_display(text):
-    display_input, fractions = _display_number_input(text)
+    display_input, fractions = _display_number_input(_spoken_decimals(text))
     s, nums = _numbers(display_input)
     s = re.sub(r'\ue002(\d+)\ue003', lambda m: fractions[int(m.group(1))], s)
     mark = set(i for i, (raw, v, nw) in enumerate(nums) if nw > 1 or v >= 10)
@@ -287,7 +306,12 @@ def math_display(text):
     def back(m):
         k = int(m.group(1)); raw, v, nw = nums[k]
         return str(v) if k in mark else raw
-    return re.sub(r'(\d+)', back, s)
+    s = re.sub(r'(\d+)', back, s)
+    # 2026-10-20 (topic 23): mixed numbers "33 and a third (percent)" -> 33⅓(%), "2 and a half" -> 2½ (display only)
+    for w, g in (('a half', '½'), ('one half', '½'), ('a third', '⅓'), ('one third', '⅓'), ('two thirds', '⅔'), ('2/3', '⅔'),
+                 ('a quarter', '¼'), ('one quarter', '¼'), ('three quarters', '¾')):
+        s = re.sub(r'\b(\d+) and %s( percent)?' % re.escape(w), lambda m, g=g: m.group(1) + g + ('%' if m.group(2) else ''), s)
+    return s
 
 
 _PROMPTER_FORMATTER = None
@@ -796,6 +820,20 @@ body.camlayout{--band:44vh;padding-top:var(--band)}
 .audiolayout .bar button,.audiolayout .mic button{padding:3px 9px;font-size:12px}
 @media (max-width:820px){.audiolayout .work{display:flex}.audiolayout .ctrl,.audiolayout .bar,.audiolayout .foot{flex-wrap:wrap}}
 @media (max-width:820px){.main{flex-direction:column}aside{width:auto;max-height:30vh;border-right:0;border-bottom:1px solid var(--line)}:root{--prompt:22px}.keys{display:none}}
+/* Reading aids are presentation only: paragraph IDs, words and take metadata never change. */
+.readlines #paras:not(.selecting) .p.cur{text-align:left;max-width:54ch;margin-left:auto;margin-right:auto}
+.readlines #paras:not(.selecting) .p.cur .read-sentence{display:block;margin-bottom:.22em}
+.readlines #paras:not(.selecting) .p.cur .read-sentence:last-child{margin-bottom:0}
+#paras:not(.selecting) .p.nextp{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+#paras:not(.selecting) .p.nextp::after{content:none}
+.camlayout #paras:not(.selecting) .p.nextp,.audiolayout #paras:not(.selecting) .p.nextp{display:-webkit-box}
+.camlayout .prompter.tight #paras .p.nextp,.audiolayout .prompter.tight #paras .p.nextp{display:none}
+.audiolayout .prompter .inner{min-height:0}
+.audiolayout .prompter{display:flex;flex-direction:column;justify-content:safe center}
+.audiolayout .prompter .inner{width:100%;flex:none}
+.read-setting{white-space:nowrap}
+.readlines #paras:not(.selecting) .p.cur.compact-reading .read-sentence{display:inline;margin:0}
+.camlayout:has(.prompter.extra-room){--band:60vh}
 </style>
 </head>
 <body class="audiolayout">
@@ -835,6 +873,7 @@ body.camlayout{--band:44vh;padding-top:var(--band)}
       <div class="opts">
         <span class="mode" title="Full read = the whole script. Re-read = only the paragraphs you select (a patch take)."><button id="mFull" class="on">Full read</button><button id="mPatch">Re-read paragraphs</button></span>
         <label><input type="checkbox" id="auto" checked> Auto-scroll</label>
+        <label class="read-setting" title="Put each sentence on a new reading line. Same words and recording paragraphs; untick for the original layout."><input type="checkbox" id="readLines" checked> Reading lines</label>
         <label class="mirrorbox" title="Flip the script left-right, for a teleprompter glass in front of the camera"><input type="checkbox" id="mirror"> Mirror</label>
         <button id="aMinus" title="Smaller text">A−</button><button id="aPlus" title="Bigger text">A+</button>
       </div>
@@ -877,6 +916,8 @@ function toast(m,ms=3200){const t=$('#toast');t.textContent=m;t.classList.add('s
 function fmt(s,tenths){s=Math.max(0,s);const m=Math.floor(s/60),r=s-m*60;return m+':'+(tenths?r.toFixed(1).padStart(4,'0'):String(Math.floor(r)).padStart(2,'0'))}
 // 2026-10-15 display only: one-letter math variables (marked \ue010x\ue011 by math_patches/_math_vars_display.py) as math italics
 function mvars(h){return String(h).replace(/\ue010([^\ue011]+)\ue011/g,'<i class="mv">$1</i>')}
+// Only wrap existing display text. No paraphrasing, number parsing or new paragraph events.
+function readingText(text){return String(text).split(/(?<=[.!?])([ \t]+)(?=\S)/).map(s=>/^\s*$/.test(s)?s:'<span class="read-sentence">'+mvars(esc(s)).replace(/\n/g,'<br>')+'</span>').join('')}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 
 /* ---------------- state ---------------- */
@@ -971,11 +1012,11 @@ function selectVideo(i){
 /* ---------------- teleprompter ---------------- */
 function renderParas(){
   const v=V[S.cur];let k=0;
-  $('#vtitle').innerHTML=esc(v.title)+'<small>'+esc(v.id)+' · about '+v.minutes.toFixed(1)+' min · '+v.words+' words</small>';
+  $('#vtitle').innerHTML=esc(v.title)+'<small>'+esc(v.id)+' · about '+v.minutes.toFixed(1)+' min · '+v.words+' words · <span id="paraPosition"></span></small>';
   const ch=new Set(changedList()),corrections=new Set(videoCorrectionList()),task=(DATA.videoCorrections||{})[v.id],note=$('#videoCorrectionNote');
   note.hidden=!corrections.size;
   note.textContent=corrections.size?'VIDEO CORRECTION — '+(task.mode==='full'?'Choose Full read and record a new complete take using the current script.':'Choose Re-read paragraphs; the marked paragraphs are preselected. '+task.notes.filter(n=>corrections.has(n.index)).map(n=>'Paragraph '+(n.index+1)+': '+n.note).join(' '))+' This is an instruction, not part of the spoken script.':'';
-  $('#paras').innerHTML=(v.disp||v.paras).map(sl=>'<div class="slide">'+sl.map(p=>{const kk=k++;return '<p class="p" data-k="'+kk+'">'+mvars(esc(p)).replace(/\n/g,'<br>')+(corrections.has(kk)?'<span class="vfix">Video correction · rerecord</span>':ch.has(kk)?'<span class="chg">changed</span>':'')+'</p>'}).join('')+'</div>').join('');
+  $('#paras').innerHTML=(v.disp||v.paras).map(sl=>'<div class="slide">'+sl.map(p=>{const kk=k++;return '<p class="p" data-k="'+kk+'">'+readingText(p)+(corrections.has(kk)?'<span class="vfix">Video correction · rerecord</span>':ch.has(kk)?'<span class="chg">changed</span>':'')+'</p>'}).join('')+'</div>').join('');
   $('#paras').querySelectorAll('.p').forEach(el=>el.onclick=e=>{e.stopPropagation();const kk=+el.dataset.k;if(S.rec&&!S.rec.paused)nextPara();else if(S.mode==='patch'&&!S.rec){S.sel.has(kk)?S.sel.delete(kk):S.sel.add(kk);if(S.sel.has(kk))S.para=kk;else if(!S.sel.has(S.para))S.para=order()[0]??0;paintParas()}else setPara(kk,'jump')});
   $('#prompter').scrollTop=0;paintParas();
 }
@@ -983,6 +1024,7 @@ function changedList(){const st=S.status[V[S.cur].id];return st&&st.changed?st.c
 function order(){const n=flat(V[S.cur]).length;return S.mode==='patch'?[...S.sel].sort((a,b)=>a-b):[...Array(n).keys()]}
 function paintParas(){
   const patch=S.mode==='patch',patching=patch&&!!S.rec,sel=S.sel,ch=changedList();
+  const position=$('#paraPosition');if(position)position.textContent='Paragraph '+(S.para+1)+' of '+flat(V[S.cur]).length;
   document.body.classList.toggle('patch',patch);$('#paras').classList.toggle('patching',patching);
   {const o=order(),nk=o[o.indexOf(S.para)+1];$('#paras').classList.toggle('selecting',patch&&!patching);
    document.querySelectorAll('#paras .p').forEach(el=>el.classList.toggle('nextp',nk!=null&&+el.dataset.k===nk))}
@@ -995,10 +1037,17 @@ function paintParas(){
   if((document.body.classList.contains('camlayout')||document.body.classList.contains('audiolayout'))&&!$('#paras').classList.contains('selecting')){$('#prompter').scrollTop=0;fitCur()}
   else if($('#auto').checked){const el=document.querySelector('#paras .p.cur');if(el){const pr=$('#prompter');const top=el.offsetTop-pr.offsetTop-pr.clientHeight*.3;pr.scrollTo({top:Math.max(0,top),behavior:'smooth'})}}
 }
-/* audio layout: a long current paragraph is made smaller until it (and the next one) fit the prompter, no scrolling */
-function fitCur(){const pr=$('#prompter');document.querySelectorAll('#paras .p[style]').forEach(p=>p.style.removeProperty('font-size'));
-  const el=document.querySelector('#paras .p.cur');if(!el||!document.body.classList.contains('audiolayout')||$('#paras').classList.contains('selecting'))return;
-  let f=parseFloat(getComputedStyle(el).fontSize);const min=f*.55;for(let n=0;n<14&&pr.scrollHeight>pr.clientHeight+1&&f>min;n++){f*=.94;el.style.fontSize=f+'px'}pr.scrollTop=0}
+/* Fit audio AND camera paragraphs. Drop the optional preview before shrinking the words being read.
+   If an exceptional paragraph still exceeds the space at 18px, keep scrolling available; never clip it. */
+function fitCur(){const pr=$('#prompter');pr.classList.remove('tight','extra-room');document.querySelectorAll('#paras .p').forEach(p=>{p.style.removeProperty('font-size');p.classList.remove('compact-reading')});
+  const el=document.querySelector('#paras .p.cur');if(!el||!document.body.matches('.audiolayout,.camlayout')||$('#paras').classList.contains('selecting'))return;
+  if(pr.scrollHeight>pr.clientHeight+1)pr.classList.add('tight');
+  const base=parseFloat(getComputedStyle(el).fontSize);let f=base;
+  const shrink=()=>{for(let n=0;n<30&&pr.scrollHeight>pr.clientHeight+1&&f>18;n++){f=Math.max(18,f*.94);el.style.fontSize=f+'px'}};
+  shrink();
+  if(pr.scrollHeight>pr.clientHeight+1){el.classList.add('compact-reading');f=base;el.style.fontSize=f+'px';shrink()}
+  if(pr.scrollHeight>pr.clientHeight+1&&document.body.classList.contains('camlayout')){pr.classList.add('extra-room');f=base;el.style.fontSize=f+'px';shrink()}
+  pr.scrollTop=0}
 let fitRaf=0;window.addEventListener('resize',()=>{cancelAnimationFrame(fitRaf);fitRaf=requestAnimationFrame(()=>{if(!$('#paras').classList.contains('selecting'))fitCur()})});
 function step(d){const o=order();if(!o.length)return;let i=o.indexOf(S.para);if(i<0)i=d>0?-1:o.length;const j=i+d;if(j<0||j>=o.length){if(d>0&&S.rec)toast('Last paragraph. Press Stop & save when you finish.');return}setPara(o[j],d>0?'next':'back')}
 function setPara(k,why){const n=flat(V[S.cur]).length;k=Math.max(0,Math.min(n-1,k));if(k===S.para&&why!=='start')return;S.para=k;
@@ -1015,6 +1064,8 @@ function fontSize(d){let f=LS.get('font',30);f=Math.max(18,Math.min(48,f+d));LS.
 $('#bList').onclick=()=>{const h=!document.body.classList.contains('listhidden');document.body.classList.toggle('listhidden',h);LS.set('listHidden',h);if(document.body.classList.contains('recording')&&!h)toast('The list comes back when you stop recording.');requestAnimationFrame(fitCur)};
 document.body.classList.toggle('listhidden',LS.get('listHidden',false));
 $('#aMinus').onclick=()=>fontSize(-2);$('#aPlus').onclick=()=>fontSize(2);
+$('#readLines').checked=LS.get('readLines',true);document.body.classList.toggle('readlines',$('#readLines').checked);
+$('#readLines').onchange=()=>{LS.set('readLines',$('#readLines').checked);document.body.classList.toggle('readlines',$('#readLines').checked);requestAnimationFrame(fitCur)};
 $('#mirror').checked=LS.get('mirror',false);document.body.classList.toggle('mirror',$('#mirror').checked);
 $('#mirror').onchange=()=>{LS.set('mirror',$('#mirror').checked);document.body.classList.toggle('mirror',$('#mirror').checked)};
 $('#auto').checked=LS.get('auto',true);$('#auto').onchange=()=>{LS.set('auto',$('#auto').checked);paintParas()};

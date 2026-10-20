@@ -1,0 +1,102 @@
+{
+ "videoId": "solve-wp23-g058",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A winter coat originally costs six hundred eighty credits. In a clearance sale, its price is reduced by seventy-five percent. What is the new price?",
+    "voice": "calm",
+    "at": [
+     "A winter coat"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for the new price, the price after the sale. We'll solve it in two different ways. First we'll find the drop, and then we'll use what's left.",
+    "at": [
+     "the new price",
+     "it in two",
+     "First we'll find"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. The price drops by seventy-five percent of six hundred eighty. Let's use ten percent chunks. Ten percent of six hundred eighty is sixty-eight.",
+    "at": [
+     "Let's start",
+     "Ten percent of six hundred eighty",
+     "eighty is sixty-eight"
+    ]
+   },
+   {
+    "say": "Seventy-five percent is seventy percent plus five percent. Seventy percent is seven times sixty-eight. Seven times sixty is four hundred twenty. Seven times eight is fifty-six. So that's four hundred seventy-six.",
+    "at": [
+     "Seventy-five percent is seventy",
+     "plus five percent",
+     "Seven times sixty",
+     "Seven times sixty is",
+     "So that's four hundred"
+    ]
+   },
+   {
+    "say": "Five percent is half of ten percent. Half of sixty-eight is thirty-four.",
+    "at": [
+     "Five percent is",
+     "Half of sixty-eight"
+    ]
+   },
+   {
+    "say": "So the drop is four hundred seventy-six plus thirty-four, five hundred ten credits.",
+    "at": [
+     "So the drop is",
+     "hundred ten credits"
+    ]
+   },
+   {
+    "say": "Careful here. Five hundred ten is choice number one, but it's the drop, not the new price. They ask for the price after the drop.",
+    "at": [
+     "but it's the drop"
+    ]
+   },
+   {
+    "say": "So the new price is six hundred eighty minus five hundred ten, a hundred seventy. Choice number two is our answer.",
+    "at": [
+     "So the new price is",
+     "six hundred eighty",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a shorter way. We start again from the givens. The whole price is a hundred percent. It drops by seventy-five percent, so twenty-five percent is left.",
+    "at": [
+     "Now a",
+     "the givens. The",
+     "so twenty-five percent is left"
+    ]
+   },
+   {
+    "say": "Twenty-five percent is a quarter. So the new price is a quarter of six hundred eighty.",
+    "at": [
+     "Twenty-five percent is a quarter",
+     "So the new"
+    ]
+   },
+   {
+    "say": "To find a quarter, we halve twice. Half of six hundred eighty is three hundred forty. Half of three hundred forty is a hundred seventy.",
+    "at": [
+     "Half of six hundred eighty",
+     "is three hundred",
+     "Half of three hundred forty",
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "The same hundred seventy, with much less work. So when a price drops, think about what stays. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

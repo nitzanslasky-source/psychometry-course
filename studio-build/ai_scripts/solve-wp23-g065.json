@@ -1,0 +1,127 @@
+{
+ "videoId": "solve-wp23-g065",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "At the end of each day, ten percent of the water then in a rain barrel is used to water the garden. After two days, two hundred forty-three liters remain. How many liters were in the barrel at the start?",
+    "voice": "calm",
+    "at": [
+     "At the end of each day"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we know the end, and they ask about the start. We'll solve it in two different ways, by plugging in numbers, and then by plugging in the answers.",
+    "at": [
+     "they ask about the start",
+     "We'll solve it"
+    ]
+   },
+   {
+    "say": "Let's start by plugging in numbers. Careful here. We already have a real amount, two hundred forty-three liters. So we can't just say there were a hundred liters at the start. Instead we plug in a hundred percent. The start is a hundred percent of the water.",
+    "at": [
+     "Let's start",
+     "Instead we plug in a hundred percent",
+     "The start is"
+    ]
+   },
+   {
+    "say": "On day one, ten percent is used. So ninety percent of the water is left.",
+    "at": [
+     "So ninety percent",
+     "water is left"
+    ]
+   },
+   {
+    "say": "On day two, ten percent of the water then in the barrel is used. That's ten percent of what's left, not of the start. So ninety percent of the ninety percent stays.",
+    "at": [
+     "of the water then in",
+     "left, not of"
+    ]
+   },
+   {
+    "say": "Ninety percent of ninety percent. Nine times nine is eighty-one, so it's eighty-one percent.",
+    "at": [
+     "Nine times nine",
+     "so it's eighty-one"
+    ]
+   },
+   {
+    "say": "Careful, it's not eighty percent. We don't take away ten percent of the start twice, because the second ten percent is of a smaller amount.",
+    "at": [
+     "Careful, it's not eighty",
+     "We don't take"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So eighty-one percent of the start is two hundred forty-three liters.",
+    "at": [
+     "So eighty-one",
+     "So eighty-one percent",
+     "start is two"
+    ]
+   },
+   {
+    "say": "How many times does eighty-one go into two hundred forty-three? Eighty times three is two hundred forty. So eighty-one times three is two hundred forty-three. So one percent is three liters.",
+    "at": [
+     "Eighty times three",
+     "So eighty-one times",
+     "So one percent is three"
+    ]
+   },
+   {
+    "say": "The start is a hundred percent, a hundred times three, three hundred liters. Choice number three is our answer.",
+    "at": [
+     "a hundred times three",
+     "Choice number three is our answer"
+    ]
+   },
+   {
+    "say": "Choice number one, two hundred seventy, is the water after one day. It goes back only one day.",
+    "at": [
+     "number one, two",
+     "is the water",
+     "It goes back only one day"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers. We start again from the givens. Which choice first? The roundest one, three hundred, because ten percent of it is easy.",
+    "at": [
+     "Now let's",
+     "the givens. Which"
+    ]
+   },
+   {
+    "say": "On day one, ten percent of three hundred is thirty. Three hundred minus thirty is two hundred seventy.",
+    "at": [
+     "Three hundred minus thirty",
+     "two hundred seventy"
+    ]
+   },
+   {
+    "say": "On day two, ten percent of the water now, of two hundred seventy, is twenty-seven. Two hundred seventy minus twenty-seven is two hundred forty-three.",
+    "at": [
+     "Two hundred seventy minus twenty-seven",
+     "is two hundred"
+    ]
+   },
+   {
+    "say": "That's exactly what's left, so three hundred works.",
+    "at": [
+     "so three hundred works"
+    ]
+   },
+   {
+    "say": "The round answer isn't always right. But it's usually the smartest one to try first, because it's quick to check. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "number three is"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,142 @@
+{
+ "videoId": "solve-q-r26-t23-05",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A school has N students, and g of them are girls. Twenty-five percent of the girls play chess. What percent of all the students are girls who play chess?",
+    "voice": "calm",
+    "at": [
+     "A school has N students"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "There are letters in the question and in the choices. That's a hint that we can plug in numbers. We'll solve it in two different ways, by plugging in numbers, and then the math way.",
+    "at": [
+     "There are letters",
+     "That's a hint",
+     "solve it in"
+    ]
+   },
+   {
+    "say": "Let's start by plugging in numbers. Remember the rules from psychometric thinking. Easy numbers, a different number for each letter, and usually not zero or one.",
+    "at": [
+     "Let's start"
+    ]
+   },
+   {
+    "say": "Let's say there are two hundred students, so N is two hundred. And eighty of them are girls, so g is eighty. Why eighty? Because a quarter of eighty is a whole number, and eighty is less than two hundred.",
+    "at": [
+     "so g is eighty",
+     "Because a quarter"
+    ]
+   },
+   {
+    "say": "Twenty-five percent of the girls play chess. A quarter of eighty is twenty girls.",
+    "at": [
+     "A quarter of eighty is"
+    ]
+   },
+   {
+    "say": "Now, what percent of all the students is that? Twenty out of two hundred is ten out of a hundred, ten percent. So our target is ten.",
+    "at": [
+     "Now, what percent",
+     "Twenty out of two hundred",
+     "is ten out",
+     "So our target is ten"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now we put N is two hundred and g is eighty into every choice. Choice number one says g over four N. Four times two hundred is eight hundred, so it's eighty over eight hundred. That's a tenth, not ten. Out.",
+    "at": [
+     "Now we",
+     "is two hundred",
+     "number one says",
+     "four N. Four",
+     "hundred is eight",
+     "Eighty over eight hundred",
+     "not ten. Out"
+    ]
+   },
+   {
+    "say": "Choice number two says a hundred g over N. A hundred times eighty is eight thousand, and eight thousand over two hundred is forty. That's the percent of girls, not of chess players. Out.",
+    "at": [
+     "number two says",
+     "g over N",
+     "Eight thousand over two hundred",
+     "is forty. That's",
+     "not of chess players"
+    ]
+   },
+   {
+    "say": "Choice number three says twenty-five g over N. Twenty-five times eighty is two thousand, and two thousand over two hundred is ten. That's our target.",
+    "at": [
+     "number three says",
+     "Twenty-five times eighty",
+     "thousand, and two"
+    ]
+   },
+   {
+    "say": "In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four says twenty-five N over g. Twenty-five times two hundred is five thousand. Five thousand over eighty is more than sixty, because eighty times sixty is only four thousand eight hundred. Out.",
+    "at": [
+     "number four says",
+     "Five thousand over eighty",
+     "more than sixty",
+     "times sixty is"
+    ]
+   },
+   {
+    "say": "Only choice number three gives ten. If two choices had given ten, we'd pick new numbers and test only those two. Choice number three is our answer.",
+    "at": [
+     "number three gives",
+     "and test only",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way, with the letters. We start again from the givens. Twenty-five percent of the girls is a quarter of g, so g over four girls play chess.",
+    "at": [
+     "Now the",
+     "the givens. Twenty-five",
+     "so g over four girls"
+    ]
+   },
+   {
+    "say": "To get a percent, we take the part over the whole, times a hundred. The part is g over four, and the whole is all the students, N.",
+    "at": [
+     "we take the part over the whole",
+     "The part is"
+    ]
+   },
+   {
+    "say": "g over four, divided by N, is g over four N.",
+    "at": [
+     "divided by N",
+     "over four N"
+    ]
+   },
+   {
+    "say": "Times a hundred, it's a hundred g over four N. A hundred over four is twenty-five, so it's twenty-five g over N.",
+    "at": [
+     "Times a hundred",
+     "hundred g over",
+     "A hundred over four is twenty-five",
+     "twenty-five, so it's"
+    ]
+   },
+   {
+    "say": "Choice number one, g over four N, is only the fraction of the students. We still need to multiply by a hundred to get a percent. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "number one, g",
+     "We still need",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

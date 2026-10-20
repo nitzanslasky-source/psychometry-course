@@ -1,0 +1,137 @@
+{
+ "videoId": "solve-wp23-g054",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In a survey, thirty-five percent of the students do not play a musical instrument. Of the students who play an instrument, eighty percent play the piano and the rest play only the guitar. What percentage of all the surveyed students play only the guitar?",
+    "voice": "calm",
+    "at": [
+     "In a survey"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask about all the surveyed students, not only the players. It's a percent of a percent, and no number of students is given. We'll solve it in two different ways, by plugging in numbers, and then with a percent tree.",
+    "at": [
+     "all the surveyed students",
+     "percent of a"
+    ]
+   },
+   {
+    "say": "Let's start by plugging in numbers. The whole here is all the students in the survey. So let's say a hundred students took part.",
+    "at": [
+     "Let's start",
+     "So let's say a hundred",
+     "students took part"
+    ]
+   },
+   {
+    "say": "Thirty-five percent don't play an instrument. Thirty-five percent of a hundred is thirty-five students. So a hundred minus thirty-five, sixty-five students play.",
+    "at": [
+     "Thirty-five percent of a hundred",
+     "is thirty-five students",
+     "So a hundred minus thirty-five",
+     "sixty-five students play"
+    ]
+   },
+   {
+    "say": "Now, eighty percent of whom? The question says, of the students who play an instrument. So it's eighty percent of the sixty-five players, not of the hundred.",
+    "at": [
+     "The question says",
+     "So it's eighty"
+    ]
+   },
+   {
+    "say": "Ten percent of sixty-five is six and a half. Eighty percent is eight times that. Eight times six is forty-eight, and eight halves are four. So forty-eight plus four, fifty-two players play the piano.",
+    "at": [
+     "Ten percent of sixty-five",
+     "six and a",
+     "Eight times six",
+     "and eight halves",
+     "So forty-eight plus four",
+     "players play the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The rest play only the guitar. Sixty-five minus fifty-two is thirteen students.",
+    "at": [
+     "The rest",
+     "Sixty-five minus fifty-two"
+    ]
+   },
+   {
+    "say": "We started with a hundred students. So thirteen students are thirteen percent. Choice number three is our answer.",
+    "at": [
+     "We started with",
+     "So thirteen students are",
+     "Choice number three is our answer"
+    ]
+   },
+   {
+    "say": "Here's a quicker way to the same thirteen. Eighty percent play the piano, so twenty percent play only the guitar. Twenty percent is a fifth, and a fifth of sixty-five is thirteen.",
+    "at": [
+     "Here's a quicker",
+     "and a fifth of sixty-five"
+    ]
+   },
+   {
+    "say": "And here's a habit for the exam. Write these numbers right next to the words of the question. A hundred, thirty-five, sixty-five. Then you see the whole story at once.",
+    "at": [
+     "And here's a",
+     "Write these numbers",
+     "Then you see"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the same question with a percent tree. We start again from the givens. At the root of the tree, all the students, a hundred percent.",
+    "at": [
+     "with a percent",
+     "start again from",
+     "At the root of the tree",
+     "tree, all the"
+    ]
+   },
+   {
+    "say": "The survey splits in two. Thirty-five percent don't play, and the rest, sixty-five percent, play. The two branches add up to a hundred percent.",
+    "at": [
+     "The survey splits in two",
+     "Thirty-five percent don't"
+    ]
+   },
+   "Now the players split again, into piano and guitar only. And here's the classic mistake. When we go down a branch, that group becomes the new hundred percent.",
+   {
+    "say": "So now the players are a hundred percent. Eighty percent play the piano, and twenty percent play only the guitar. Again the branches add up to a hundred.",
+    "at": [
+     "So now the players are",
+     "a hundred percent"
+    ]
+   },
+   {
+    "say": "Many students see twenty percent and stop there. That's choice number one. But it's twenty percent of the players, not of everyone. Eighty percent on the piano wouldn't even fit inside the sixty-five percent who play.",
+    "at": [
+     "That's choice number one",
+     "But it's twenty percent of the players",
+     "Eighty percent on"
+    ]
+   },
+   {
+    "say": "To get a branch at the bottom, we multiply the percents along its path. Twenty percent of sixty-five percent. A fifth of sixty-five is thirteen, so it's thirteen percent.",
+    "at": [
+     "A fifth of sixty-five",
+     "thirteen, so it's"
+    ]
+   },
+   {
+    "say": "We get the same thirteen percent. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

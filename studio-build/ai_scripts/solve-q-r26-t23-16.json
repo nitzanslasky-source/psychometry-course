@@ -1,0 +1,188 @@
+{
+ "videoId": "solve-q-r26-t23-16",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A library has only novels and textbooks, six hundred books in all. Forty-five percent of the novels is the same number of books as thirty percent of the textbooks. How many novels does the library have?",
+    "voice": "calm",
+    "at": [
+     "A library has only novels"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So one amount of books is forty-five percent of one pile, and thirty percent of the other pile. One part, two different wholes. We'll solve it in two different ways, with the flip rule, and then by plugging in the answers.",
+    "at": [
+     "books is forty-five",
+     "One part, two",
+     "We'll solve it"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, and first let's think. Which pile is bigger? To give the same number of books, a big percent needs only a small pile. A small percent needs a big pile.",
+    "at": [
+     "Let's start"
+    ]
+   },
+   {
+    "say": "Let's see it on easy numbers. Fifty percent of ten is five. Ten percent of fifty is also five. The bigger percent, fifty, goes with the smaller pile, ten.",
+    "at": [
+     "Fifty percent of ten is five",
+     "Ten percent of fifty is also",
+     "The bigger percent"
+    ]
+   },
+   "So in our question, thirty percent is the smaller percent. That means the textbooks are the bigger pile.",
+   {
+    "say": "Now here's the rule. When the same part is a percent of two different wholes, the ratio of the wholes is the percents flipped. So novels to textbooks is thirty to forty-five.",
+    "at": [
+     "When the same part is",
+     "wholes, the ratio",
+     "So novels to textbooks"
+    ]
+   },
+   {
+    "say": "Why does it flip? Let's write it as an equation. Let's call the novels N and the textbooks T. Forty-five percent of N is equal to thirty percent of T. So zero point four five N is equal to zero point three T.",
+    "at": [
+     "Let's write it",
+     "Forty-five percent of N is equal",
+     "equal to thirty",
+     "So zero point four five N",
+     "N is equal to zero"
+    ]
+   },
+   {
+    "say": "We divide both sides by T, and by zero point four five. Then N over T is zero point three over zero point four five. That's thirty over forty-five, the percents flipped.",
+    "at": [
+     "Then N over T is",
+     "point four five. That's"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Thirty and forty-five both divide by fifteen. So the ratio is two to three.",
+    "at": [
+     "Thirty and",
+     "divide by fifteen",
+     "So the ratio is two to three"
+    ]
+   },
+   {
+    "say": "Two plus three is five parts, and the five parts are six hundred books. So one part is six hundred divided by five, a hundred twenty.",
+    "at": [
+     "Two plus three is five parts",
+     "are six hundred"
+    ]
+   },
+   {
+    "say": "The novels are two parts. Two times a hundred twenty is two hundred forty. Choice number two is our answer.",
+    "at": [
+     "Two times a hundred twenty",
+     "is two hundred",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "Choice number one, three hundred sixty, is the trap. It's the ratio forty-five to thirty, with no flip. That gives the novels the bigger pile. But the bigger percent belongs to the smaller pile.",
+    "at": [
+     "is the trap",
+     "with no flip",
+     "But the bigger"
+    ]
+   },
+   "One warning. The flip works only when the two amounts are equal. If forty-five percent of the novels were ten more than thirty percent of the textbooks, there's no flip. Then we write the equation."
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers. We start again from the givens. Six hundred books in all, and the two amounts must be equal.",
+    "at": [
+     "Now let's",
+     "the givens. Six"
+    ]
+   },
+   {
+    "say": "Which choice first? Let's take three hundred, choice number three, because percents of three hundred are easy. Three hundred novels means six hundred minus three hundred, three hundred textbooks.",
+    "at": [
+     "number three, because",
+     "Three hundred novels means",
+     "hundred minus three"
+    ]
+   },
+   {
+    "say": "Forty-five percent of three hundred is a hundred thirty-five. Thirty percent of three hundred is ninety. Not equal, so choice number three is out.",
+    "at": [
+     "Forty-five percent of three hundred",
+     "is a hundred",
+     "Thirty percent of three hundred",
+     "is ninety. Not",
+     "so choice number three is out"
+    ]
+   },
+   {
+    "say": "Forty-five percent of the novels gave more books. To make them equal, we need fewer novels and more textbooks. So the answer is less than three hundred, two hundred forty or a hundred eighty. Choice number one is out too.",
+    "at": [
+     "So the answer is less",
+     "forty or a",
+     "Choice number one is out too"
+    ]
+   },
+   {
+    "say": "Let's try two hundred forty. Then the textbooks are six hundred minus two hundred forty, three hundred sixty.",
+    "at": [
+     "Let's try two hundred forty",
+     "Then the textbooks"
+    ]
+   },
+   {
+    "say": "Forty-five percent of two hundred forty. Ten percent is twenty-four, so forty percent is ninety-six. Five percent is twelve. Ninety-six plus twelve is a hundred eight.",
+    "at": [
+     "Ninety-six plus twelve"
+    ]
+   },
+   {
+    "say": "Thirty percent of three hundred sixty is three times thirty-six, a hundred eight. Equal, so it works. Choice number two is our answer.",
+    "at": [
+     "hundred sixty is",
+     "three times thirty-six",
+     "eight. Equal, so",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's compare with the opposite case, because the exam loves both. x is sixty percent of y, and z is a hundred fifty percent of y. What percent of x is z?",
+    "at": [
+     "the opposite case",
+     "x is sixty percent of y",
+     "What percent of"
+    ]
+   },
+   "Here the shared thing is the whole, y. Then there's no flip. The bigger percent gives the bigger amount.",
+   {
+    "say": "Let's plug in a hundred for y. Then x is sixty, and z is a hundred fifty.",
+    "at": [
+     "Let's plug in a hundred for y",
+     "Then x is"
+    ]
+   },
+   {
+    "say": "z over x is a hundred fifty over sixty. That's two and a half, so z is two hundred fifty percent of x.",
+    "at": [
+     "z over x is",
+     "That's two and"
+    ]
+   },
+   {
+    "say": "So when you see two percents, ask what is shared. The same part, flip the percents. The same whole, keep them. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "ask what is shared",
+     "The same whole",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

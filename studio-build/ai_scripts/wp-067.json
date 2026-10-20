@@ -1,0 +1,148 @@
+{
+ "videoId": "wp-067",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now a new topic, overlapping groups. These questions are about two groups of people, or of things. And some members belong to both groups.",
+   {
+    "say": "Overlap questions show up in about half of the real exams. The good news is that they follow a few clear rules. With the right picture, they become quick questions.",
+    "at": [
+     "in about half"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's start with an example. In a class, some students play music, and some students play a sport. And some students do both.",
+    "at": [
+     "In a class, some students",
+     "play music, and"
+    ]
+   },
+   {
+    "say": "Let's draw it as two circles. One circle is the students who play music. The other circle is the students who play a sport.",
+    "at": [
+     "Let's draw it as two circles",
+     "One circle is"
+    ]
+   },
+   {
+    "say": "The circles cross each other. The part in the middle is inside both circles. So these students play music, and they also play a sport. We call this part both, or the overlap.",
+    "at": [
+     "The part in the middle",
+     "is inside both"
+    ]
+   },
+   {
+    "say": "Now the part of the music circle that is outside the sport circle. These students play music, but no sport. We call it music only.",
+    "at": [
+     "We call it music only"
+    ]
+   },
+   {
+    "say": "In the same way, inside the sport circle but outside the music circle is sport only. These students play a sport, but no music.",
+    "at": [
+     "inside the sport circle",
+     "outside the music"
+    ]
+   },
+   {
+    "say": "And there's one more group, the students outside both circles. They don't play music, and they don't play a sport. We call them neither.",
+    "at": [
+     "the students outside both circles",
+     "They don't play"
+    ]
+   },
+   {
+    "say": "So two groups give us four regions. Music only, both, sport only, and neither. Every student is in exactly one of these four regions.",
+    "at": [
+     "So two groups give us four regions",
+     "Music only, both",
+     "Every student is in exactly one",
+     "one of these"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's see the four regions once more, with something else. In a parking lot, some cars are red, and some cars are electric.",
+    "at": [
+     "regions once more",
+     "In a parking lot",
+     "cars are red",
+     "some cars are electric"
+    ]
+   },
+   {
+    "say": "A red electric car is in the middle, both. A red car that runs on gas is red only. A white electric car is electric only.",
+    "at": [
+     "A red electric car",
+     "in the middle",
+     "A red car that runs on gas",
+     "A white electric car"
+    ]
+   },
+   {
+    "say": "And a white car that runs on gas? It's not red, and it's not electric. So it's neither, outside both circles.",
+    "at": [
+     "And a white",
+     "So it's neither"
+    ]
+   },
+   {
+    "say": "Is there a car with no region? No. Every car is red or not, and electric or not. So every car is in exactly one region.",
+    "at": [
+     "Is there a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now careful, because here's a mistake many students make. Let's put numbers in our class. Ten students play music. Four of them also play a sport.",
+    "at": [
+     "a mistake many",
+     "Ten students play music",
+     "Four of them also play"
+    ]
+   },
+   {
+    "say": "So where do the ten go? Not all ten go into music only. The four who also play a sport are in the middle, both.",
+    "at": [
+     "So where do",
+     "are in the middle"
+    ]
+   },
+   {
+    "say": "So music only is ten minus four, six.",
+    "at": [
+     "ten minus four",
+     "six"
+    ]
+   },
+   {
+    "say": "So the music students means the whole music circle. That's music only plus both. Six plus four is ten.",
+    "at": [
+     "the whole music circle",
+     "That's music only plus both",
+     "Six plus four is ten"
+    ]
+   },
+   {
+    "say": "Let's look at the sport circle too. Say seven students play a sport. Four of them are in both. So sport only is seven minus four, three.",
+    "at": [
+     "Let's look at",
+     "seven minus four",
+     "three"
+    ]
+   },
+   {
+    "say": "So when a question says seven play a sport, it means the whole sport circle, sport only plus both. It doesn't mean sport only. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "says seven play",
+     "sport only plus both",
+     "It doesn't mean"
+    ]
+   }
+  ]
+ ]
+}

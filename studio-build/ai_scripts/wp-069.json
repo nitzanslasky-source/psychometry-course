@@ -1,0 +1,258 @@
+{
+ "videoId": "wp-069",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now the second kind of overlap question. Here the question gives us every fact we need. So we can find the exact number in each region."
+  ],
+  [
+   {
+    "say": "Let's go back to our fifteen students. Ten take art, and nine take drama. In the last lesson, both could be anything from four to nine.",
+    "at": [
+     "our fifteen students",
+     "Ten take art, and nine take drama",
+     "In the last"
+    ]
+   },
+   {
+    "say": "Now we add one more fact. Exactly two students take neither art nor drama.",
+    "at": [
+     "Exactly two students take neither",
+     "art nor drama"
+    ]
+   },
+   {
+    "say": "Let's hand out the places again. The ten shaded boxes are the art students, so five students don't take art.",
+    "at": [
+     "Let's hand out the places again",
+     "The ten shaded boxes",
+     "the art students"
+    ]
+   },
+   {
+    "say": "Exactly two of those five take neither. Let's mark them in grey.",
+    "at": [
+     "Let's mark them in grey"
+    ]
+   },
+   {
+    "say": "So the other three students without art must take drama. Five minus two is three, and nobody else is outside art.",
+    "at": [
+     "So the other three",
+     "without art must",
+     "Five minus two is three",
+     "and nobody else"
+    ]
+   },
+   {
+    "say": "Drama has nine students, and three of them are drama only. So nine minus three, six drama places are left. They go to art students.",
+    "at": [
+     "So nine minus three",
+     "drama places are",
+     "They go to art students"
+    ]
+   },
+   {
+    "say": "So exactly six students take both. Not a range this time, one number. The fact about neither fixed it.",
+    "at": [
+     "So exactly six students take both",
+     "Not a range"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "With small numbers we can hand things out. With bigger numbers, there's a faster tool, the squares method.",
+    "at": [
+     "can hand things"
+    ]
+   },
+   {
+    "say": "We draw one long rectangle, and cut it into four boxes. Each box is one of the four regions. Neither, drama only, both, and art only.",
+    "at": [
+     "We draw one long rectangle",
+     "and cut it"
+    ]
+   },
+   {
+    "say": "It's the same as the two circles, just drawn in a line. Every student is in exactly one box. So all four boxes together are the total, fifteen.",
+    "at": [
+     "all four boxes",
+     "the total, fifteen"
+    ]
+   },
+   {
+    "say": "The art bracket covers two boxes, both and art only. Together they're ten.",
+    "at": [
+     "The art bracket",
+     "Together they're ten"
+    ]
+   },
+   {
+    "say": "The drama bracket covers drama only and both. Together they're nine.",
+    "at": [
+     "The drama bracket",
+     "only and both"
+    ]
+   },
+   {
+    "say": "Careful here, this is a common mistake. The two brackets must share the middle box, both. If they don't share a box, there's no overlap at all.",
+    "at": [
+     "The two brackets must share",
+     "the middle box"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now we fill the boxes like a sudoku, starting from what we know. Neither is two.",
+    "at": [
+     "Now we fill the boxes",
+     "like a sudoku",
+     "what we know",
+     "Neither is two"
+    ]
+   },
+   {
+    "say": "Neither plus the whole drama bracket is two plus nine, eleven. That's every box except art only.",
+    "at": [
+     "drama bracket is",
+     "two plus nine",
+     "That's every box except"
+    ]
+   },
+   {
+    "say": "The four boxes make fifteen. So art only is fifteen minus eleven, four.",
+    "at": [
+     "four",
+     "art only is",
+     "fifteen minus eleven"
+    ]
+   },
+   {
+    "say": "The art bracket is ten. Art only is four, so both is ten minus four, six.",
+    "at": [
+     "Art only is",
+     "ten minus four",
+     "six"
+    ]
+   },
+   {
+    "say": "And drama only is nine minus six, three.",
+    "at": [
+     "nine minus six",
+     "three"
+    ]
+   },
+   {
+    "say": "Let's check. Two plus four plus six plus three is fifteen. It fits, and it's the same six as before.",
+    "at": [
+     "Two plus four plus six",
+     "plus three is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "We can start from any box the question gives us. Say the question gives art only instead. The same fifteen students, ten in art, nine in drama, and four take art only.",
+    "at": [
+     "any box the",
+     "Say the question gives art only",
+     "The same fifteen",
+     "in art, nine",
+     "four take art only"
+    ]
+   },
+   {
+    "say": "The art bracket is ten, and art only is four. So both is ten minus four, six.",
+    "at": [
+     "and art only",
+     "ten minus four",
+     "six"
+    ]
+   },
+   {
+    "say": "The drama bracket is nine, so drama only is nine minus six, three.",
+    "at": [
+     "nine, so drama",
+     "nine minus six",
+     "three"
+    ]
+   },
+   {
+    "say": "Then four plus six plus three is thirteen students in at least one group. So neither is fifteen minus thirteen, two.",
+    "at": [
+     "four plus six plus three",
+     "is thirteen students",
+     "fifteen minus thirteen",
+     "two."
+    ]
+   },
+   {
+    "say": "And we fill only the boxes we need. If they ask for both, we stop at both.",
+    "at": [
+     "And we fill"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "There's one more region a question can ask about, exactly one. Exactly one means one group, but not both. So art only, or drama only.",
+    "at": [
+     "There's one more region",
+     "question can ask",
+     "exactly one",
+     "but not both",
+     "So art only",
+     "or drama only"
+    ]
+   },
+   {
+    "say": "In our boxes, that's four plus three, seven.",
+    "at": [
+     "four plus three"
+    ]
+   },
+   {
+    "say": "Without the boxes, we take both away twice. Why twice? Because the six in both are inside the art group, and also inside the drama group.",
+    "at": [
+     "we take both away twice",
+     "Because the six"
+    ]
+   },
+   {
+    "say": "Ten plus nine is nineteen. Two times six is twelve. Nineteen minus twelve is seven. The same seven.",
+    "at": [
+     "Ten plus nine",
+     "Two times six",
+     "Nineteen minus twelve",
+     "The same seven"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's sum up. In an exact question, we draw the four boxes. Neither, B only, both, and A only.",
+    "at": [
+     "an exact question",
+     "we draw the four boxes",
+     "Neither, B only"
+    ]
+   },
+   {
+    "say": "The two brackets share the middle box, and all four boxes make the total.",
+    "at": [
+     "The two brackets share",
+     "middle box, and"
+    ]
+   },
+   {
+    "say": "We put in what we know, and fill the rest like a sudoku. Now let's practice it on three questions. I'll see you in the next video.",
+    "at": [
+     "We put in what we know",
+     "know, and fill"
+    ]
+   }
+  ]
+ ]
+}

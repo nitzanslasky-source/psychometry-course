@@ -1,0 +1,160 @@
+{
+ "videoId": "solve-wp24-g072",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The students who are in both the chess club and the robotics club make up one ninth of the chess club and one quarter of the robotics club. What is the ratio of chess club students who are not in the robotics club to robotics club students who are not in the chess club?",
+    "voice": "calm",
+    "at": [
+     "The students who are in both"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The wording is long, so let's say it simply. They ask for chess only, compared with robotics only. And the same students, the ones in both, are a ninth of one club and a quarter of the other.",
+    "at": [
+     "They ask for chess only",
+     "the same students"
+    ]
+   },
+   {
+    "say": "Questions like this scare a lot of students, but in the boxes it's simple. We'll solve it in three different ways. The squares method, plugging in numbers, and the flip rule.",
+    "at": [
+     "a lot of",
+     "plugging in numbers"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, the squares method. We draw four boxes. Neither, robotics only, both, and chess only. We don't know how many are in both, so let's call it x.",
+    "at": [
+     "math way, the",
+     "Four boxes",
+     "Neither, robotics only",
+     "let's call it x"
+    ]
+   },
+   {
+    "say": "The question says x is a ninth of the chess club. So the whole chess club is nine times x, nine x.",
+    "at": [
+     "The question says x is a ninth",
+     "So the whole chess club",
+     "is nine times",
+     "nine x."
+    ]
+   },
+   {
+    "say": "Chess only is the chess club without both. Nine x minus x is eight x.",
+    "at": [
+     "Nine x minus x",
+     "eight x"
+    ]
+   },
+   {
+    "say": "x is also a quarter of the robotics club. So the robotics club is four x. Robotics only is four x minus x, three x.",
+    "at": [
+     "x is also",
+     "So the robotics club is four x",
+     "four x.",
+     "four x minus x",
+     "three x"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So chess only to robotics only is eight x to three x. Both have x, so we divide both by x, and we get eight to three.",
+    "at": [
+     "So chess only",
+     "So chess only",
+     "eight x to three x",
+     "Both have x"
+    ]
+   },
+   "We never needed neither, because they didn't ask about it.",
+   {
+    "say": "And careful with choice number three, nine to four. That's the whole chess club to the whole robotics club. They asked about the students in only one club. Choice number two is our answer.",
+    "at": [
+     "number three, nine",
+     "the whole chess club",
+     "the whole robotics",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in numbers. We start again from the givens. Both is a ninth of chess and a quarter of robotics. Any number works for both, because the ratio stays the same. Let's say two students are in both.",
+    "at": [
+     "numbers. We start",
+     "the givens. Both",
+     "works for both",
+     "two students are in both"
+    ]
+   },
+   {
+    "say": "Two is a ninth of the chess club, so the chess club is nine times two, eighteen. Two is a quarter of the robotics club, so the robotics club is four times two, eight.",
+    "at": [
+     "of the chess",
+     "nine times two",
+     "is a quarter",
+     "four times two"
+    ]
+   },
+   {
+    "say": "Chess only is eighteen minus two, sixteen. Robotics only is eight minus two, six.",
+    "at": [
+     "eighteen minus two",
+     "Robotics only is"
+    ]
+   },
+   {
+    "say": "So it's sixteen to six. Both divide by two, so it's eight to three. Choice number two again.",
+    "at": [
+     "Both divide by two",
+     "it's eight to",
+     "number two again"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And now by understanding, with the flip rule from percents. We start again from the givens. The same students are a ninth of chess and a quarter of robotics.",
+    "at": [
+     "And now",
+     "the givens. The"
+    ]
+   },
+   "Remember the rule. When the same amount is a part of two different wholes, the ratio of the wholes is the parts, flipped. A small part needs a big whole.",
+   {
+    "say": "A ninth is the smaller part, so chess is the bigger club. Chess to robotics is nine to four.",
+    "at": [
+     "Chess to robotics is nine to four"
+    ]
+   },
+   {
+    "say": "Let's check with nine and four. A ninth of nine is one, and a quarter of four is one. The same one student is in both.",
+    "at": [
+     "Let's check with",
+     "A ninth of nine is one",
+     "four is one"
+    ]
+   },
+   {
+    "say": "So chess has nine parts, robotics has four parts, and one part is in both. We take the shared part out of each club. Nine minus one is eight, and four minus one is three.",
+    "at": [
+     "Nine minus one is eight",
+     "and four minus"
+    ]
+   },
+   {
+    "say": "So it's eight to three. When the overlap is given as a fraction of each group, call the overlap x, or one part. Then write each group in those parts. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "So it's eight to three",
+     "When the overlap",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

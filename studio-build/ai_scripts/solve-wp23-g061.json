@@ -1,0 +1,195 @@
+{
+ "videoId": "solve-wp23-g061",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Dana earns fifty percent more than Omer. Lior earns thirty-three and a third percent less than Dana. What is Lior's wage divided by Omer's wage?",
+    "voice": "calm",
+    "at": [
+     "Dana earns fifty percent"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for Lior's wage divided by Omer's wage, and no wages are given. We'll solve it in three different ways, by plugging in numbers, with an insight, and with an arrow map.",
+    "at": [
+     "So they ask for Lior's wage",
+     "We'll solve it"
+    ]
+   },
+   {
+    "say": "Let's start by plugging in numbers, with a hundred. But into whom? Remember, the whole comes after than. Dana earns more than Omer, so Omer is the whole. Omer gets the hundred.",
+    "at": [
+     "Let's start",
+     "Omer gets the hundred"
+    ]
+   },
+   {
+    "say": "Dana earns fifty percent more than Omer. Fifty percent of a hundred is fifty, so Dana earns a hundred fifty.",
+    "at": [
+     "Dana earns fifty",
+     "so Dana earns a hundred fifty"
+    ]
+   },
+   {
+    "say": "Lior earns thirty-three and a third percent less than Dana. From our fraction table, thirty-three and a third percent is a third. A third of a hundred fifty is fifty.",
+    "at": [
+     "Lior earns thirty-three",
+     "From our fraction table",
+     "and a third percent is",
+     "A third of a hundred fifty",
+     "fifty is fifty"
+    ]
+   },
+   {
+    "say": "So Lior earns a hundred fifty minus fifty, a hundred. Lior divided by Omer is a hundred divided by a hundred, one. Choice number one is our answer.",
+    "at": [
+     "So Lior earns",
+     "fifty minus fifty",
+     "Lior divided by Omer",
+     "a hundred divided",
+     "Choice number one is our answer"
+    ]
+   },
+   {
+    "say": "The trap is choice number three, seven sixths. It comes from fifty percent minus thirty-three and a third percent, sixteen and two thirds percent more. But the third is taken from Dana's wage, which is bigger.",
+    "at": [
+     "The trap is choice number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the insight. We added fifty percent, took away thirty-three and a third percent, and came back to the start. Is that luck? No. Fifty percent is a half, and thirty-three and a third percent is a third.",
+    "at": [
+     "Now the",
+     "Fifty percent is a half",
+     "and thirty-three and"
+    ]
+   },
+   {
+    "say": "Let's see it on other fractions first. A whole is six sixths. Add a sixth, and we have seven sixths.",
+    "at": [
+     "Add a sixth, and we have"
+    ]
+   },
+   {
+    "say": "Now take away a seventh. A seventh of seven sixths is one sixth. Seven sixths minus one sixth is six sixths, the whole again.",
+    "at": [
+     "Now take away",
+     "A seventh of seven sixths",
+     "is one sixth",
+     "Seven sixths minus one sixth",
+     "is six sixths"
+    ]
+   },
+   {
+    "say": "Here's another one. A whole is five fifths. Add a fifth, and we have six fifths. Take away a sixth, one of the six fifths, and we're back to five fifths.",
+    "at": [
+     "A whole is five fifths",
+     "have six fifths"
+    ]
+   },
+   {
+    "say": "Now our question. A whole is two halves. Add a half, and we have three halves. Take away a third, one of the three halves, and we're back to two halves.",
+    "at": [
+     "A whole is two halves",
+     "have three halves"
+    ]
+   },
+   {
+    "say": "So adding one over n, and then taking away one over n plus one, always brings us back. Lior earns exactly what Omer earns. Choice number one is our answer.",
+    "at": [
+     "So adding one over n",
+     "over n plus",
+     "Choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a third way, the arrow map. It helps with chains of comparisons like this one. Each sentence becomes one arrow.",
+    "at": [
+     "the arrow map",
+     "with chains of"
+    ]
+   },
+   {
+    "say": "Let's learn it on an easy sentence first. x is twenty percent more than y. The arrow starts at the whole, the word after than. So it goes from y to x.",
+    "at": [
+     "an easy sentence",
+     "x is twenty percent more than y",
+     "The arrow starts at the whole",
+     "whole, the word",
+     "So it goes from y to x"
+    ]
+   },
+   {
+    "say": "On the arrow we write the multiplier. Twenty percent more is a hundred twenty percent, times one point two.",
+    "at": [
+     "Twenty percent more"
+    ]
+   },
+   {
+    "say": "Along the arrow, we multiply. Against the arrow, we divide.",
+    "at": [
+     "Along the arrow, we multiply",
+     "Against the arrow, we divide"
+    ]
+   },
+   {
+    "say": "So what percent of x is y? We go from x back to y, against the arrow. So we divide by one point two.",
+    "at": [
+     "So what percent",
+     "So we divide by one point two"
+    ]
+   },
+   {
+    "say": "One point two is six fifths. Dividing by six fifths is multiplying by five sixths. And five sixths is eighty-three and a third percent.",
+    "at": [
+     "One point two is six fifths",
+     "Dividing by six fifths",
+     "multiplying by five",
+     "And five sixths is",
+     "and a third"
+    ]
+   },
+   "Many students say eighty percent. But twenty percent more one way is not twenty percent less the other way, because the whole has changed."
+  ],
+  [
+   {
+    "say": "Now our question. We start again from the givens. Dana earns fifty percent more than Omer. The whole is Omer, so the arrow goes from Omer to Dana. Fifty percent more is times one point five.",
+    "at": [
+     "Now our",
+     "start again from",
+     "Dana earns fifty percent more",
+     "than Omer. The",
+     "so the arrow goes from Omer",
+     "Fifty percent more is"
+    ]
+   },
+   {
+    "say": "Lior earns thirty-three and a third percent less than Dana. So the arrow goes from Dana to Lior. A third less leaves two thirds, so it's times two thirds.",
+    "at": [
+     "So the arrow goes from Dana",
+     "Dana to Lior"
+    ]
+   },
+   {
+    "say": "We want Lior divided by Omer, so we walk from Omer to Lior. Both arrows point our way, so we multiply. One point five is three halves, and three halves times two thirds is one.",
+    "at": [
+     "One point five is three halves",
+     "and three halves times two thirds",
+     "thirds is one"
+    ]
+   },
+   {
+    "say": "So Lior's wage is one times Omer's wage. Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

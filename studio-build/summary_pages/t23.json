@@ -1,0 +1,493 @@
+{
+ "_about": "Topic 23 summary page (replaces the r26-t23-summary video). Content = the topic-23 scripts (math_patches/_ai_vis_t23.py), the Hebrew lessons (wp 2684-4327) and the memory cards mem-percent, mem-r26-t23-traps. Build: python3 summary_pages.py 23. Course numbers only (none from the Hebrew course).",
+ "topic": 23,
+ "replaces": "r26-t23-summary",
+ "intro": "A percent is a part of a whole: **percent = over 100**, **“of” = times**. A percent never stands alone: always ask, **a percent of what?**",
+ "figures": {
+  "ratio": {
+   "builder": "t23.TBL",
+   "args": [
+    [
+     "Percent",
+     "Amount"
+    ],
+    [
+     "",
+     "",
+     ""
+    ],
+    [
+     [
+      "r1",
+      [
+       [
+        "c",
+        0,
+        0,
+        "15%"
+       ],
+       [
+        "c",
+        0,
+        1,
+        "54"
+       ]
+      ]
+     ],
+     [
+      "r2",
+      [
+       [
+        "c",
+        1,
+        0,
+        "5%"
+       ],
+       [
+        "c",
+        1,
+        1,
+        "18"
+       ]
+      ]
+     ],
+     [
+      "q",
+      [
+       [
+        "c",
+        2,
+        0,
+        "25%"
+       ],
+       [
+        "c",
+        2,
+        1,
+        "90",
+        "#087f83"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "colw": 170
+   },
+   "layers": [
+    "line",
+    "r1",
+    "r2",
+    "q"
+   ]
+  },
+  "triangle": {
+   "builder": "t23.TBL",
+   "args": [
+    [
+     "Percent",
+     "Kilograms"
+    ],
+    [
+     "",
+     ""
+    ],
+    [
+     [
+      "r1",
+      [
+       [
+        "c",
+        0,
+        0,
+        "40%"
+       ],
+       [
+        "c",
+        0,
+        1,
+        "48"
+       ]
+      ]
+     ],
+     [
+      "r2",
+      [
+       [
+        "c",
+        1,
+        0,
+        "30%"
+       ],
+       [
+        "q",
+        1,
+        1
+       ]
+      ]
+     ],
+     [
+      "dg",
+      [
+       [
+        "diag",
+        [
+         1,
+         0
+        ],
+        [
+         0,
+         1
+        ]
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "colw": 170
+   },
+   "layers": [
+    "line",
+    "r1",
+    "r2",
+    "dg"
+   ]
+  },
+  "tree": {
+   "builder": "t23.PTREE",
+   "args": [
+    [
+     "all",
+     "100%"
+    ],
+    [
+     [
+      "do not play",
+      "35%"
+     ],
+     [
+      "play",
+      "65%"
+     ]
+    ],
+    [
+     1,
+     [
+      [
+       "piano",
+       "80%"
+      ],
+      [
+       "guitar only",
+       "20%"
+      ]
+     ]
+    ]
+   ],
+   "layers": [
+    "line",
+    "b1",
+    "b2"
+   ]
+  },
+  "arrows": {
+   "builder": "t23.AMAP",
+   "args": [
+    [
+     "Omer",
+     "Dana",
+     "Lior"
+    ],
+    [
+     [
+      "a",
+      0,
+      1,
+      "×1.5"
+     ],
+     [
+      "b",
+      1,
+      2,
+      "×2/3"
+     ]
+    ]
+   ],
+   "layers": [
+    "line",
+    "a",
+    "b"
+   ]
+  }
+ },
+ "sections": [
+  {
+   "title": "Percents and fractions",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Fraction",
+      "Percent"
+     ],
+     "rows": [
+      [
+       "$\\frac12,\\ \\frac14,\\ \\frac18$",
+       "$50\\%,\\ 25\\%,\\ 12.5\\%$ $\\;$ (halve each time)"
+      ],
+      [
+       "$\\frac1{10},\\ \\frac15,\\ \\frac1{20}$",
+       "$10\\%,\\ 20\\%,\\ 5\\%$"
+      ],
+      [
+       "$\\frac13,\\ \\frac16$",
+       "$33\\frac13\\%,\\ 16\\frac23\\%$ $\\;$ (a sixth: “sixteen and a bit”)"
+      ],
+      [
+       "$\\frac38,\\ \\frac58$",
+       "$37.5\\%,\\ 62.5\\%$ $\\;$ (three, five times $12.5$)"
+      ],
+      [
+       "$\\frac35,\\ \\frac7{20}$",
+       "$60\\%,\\ 35\\%$"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Percent → fraction:** over $100$, then reduce: $64\\%=\\frac{64}{100}=\\frac{16}{25}$. $\\;$ **Fraction → percent:** expand the bottom to $100$: $\\frac{11}{25}=\\frac{44}{100}=44\\%$."
+    }
+   ]
+  },
+  {
+   "title": "Three ways to calculate",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "ex",
+     "label": "The percent equation (works every time)",
+     "lines": [
+      "$45\\%$ of $80=\\frac{45}{100}\\cdot80=36$",
+      "$x\\%$ of $75$ is $21$: $\\ \\frac{x}{100}\\cdot75=21,\\ \\frac34x=21,\\ x=28$"
+     ]
+    },
+    {
+     "type": "cols",
+     "cols": [
+      [
+       {
+        "type": "fig",
+        "ref": "ratio",
+        "caption": "**The ratio table:** no whole needed. $15\\%$ is $54$ → $5\\%$ is $18$ → $25\\%$ is $90$."
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "text": "**Ten-percent chunks:** $10\\%$ of $240=24$; $\\;30\\%=72$; $\\;5\\%=12$ (half of $10\\%$); $\\;35\\%=84$. $\\;$ Whole missing: $30\\%=63\\Rightarrow10\\%=21\\Rightarrow100\\%=210$."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "A percent of a percent",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "**Whole not given?** Plug in $100$. The number you get at the end is the answer in percent. $\\;+80\\%$, then $-25\\%$: $100\\to180\\to135$, up $35\\%$ (not $55\\%$)."
+    },
+    {
+     "type": "p",
+     "text": "**Each new percent is of the new amount.** $\\;-30\\%$, then $-20\\%$: $100\\to70\\to56$, lost $44\\%$."
+    },
+    {
+     "type": "p",
+     "text": "**Who gets the hundred?** The whole comes right after “of” or “than”, and the one that decides is in the question."
+    },
+    {
+     "type": "fig",
+     "ref": "tree",
+     "caption": "**The percent tree:** each branch down is a new $100\\%$; multiply along the path: $20\\%$ of $65\\%=13\\%$."
+    },
+    {
+     "type": "p",
+     "text": "**Up and down by the same percent** never comes back: a loss of $\\frac{p^2}{100}\\%$ ($\\pm20\\%$: $4\\%$ lower). $\\;$ **A fixed amount** in the story? Then $100$ doesn't work: use the real number or a letter."
+    }
+   ]
+  },
+  {
+   "title": "Changes",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Tool",
+      "Example"
+     ],
+     "rows": [
+      [
+       "change in $\\%=\\frac{\\text{change}}{\\text{original}}\\times100$",
+       "$40\\to50$: $\\frac{10}{40}=25\\%$; $\\;50\\to60$: $\\frac{10}{50}=20\\%$"
+      ],
+      [
+       "what's left",
+       "$-75\\%$ leaves $25\\%$: $680\\div4=170$"
+      ],
+      [
+       "multipliers",
+       "up $40\\%$: $\\times1.4$; $\\;$ down $30\\%$: $\\times0.7$"
+      ],
+      [
+       "two changes $p\\%,\\ q\\%$",
+       "$p+q+\\frac{pq}{100}$: $\\;25-12-3=10\\%$"
+      ],
+      [
+       "backwards",
+       "$81\\%=243$, $\\ 1\\%=3$, $\\ 100\\%=300$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Comparisons",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "cols",
+     "cols": [
+      [
+       {
+        "type": "rules",
+        "head": [
+         "Rule",
+         "Example"
+        ],
+        "rows": [
+         [
+          "$p\\%$ more than $=(100+p)\\%$ of",
+          "$150\\%$ more $=250\\%$ of"
+         ],
+         [
+          "$x\\%$ of $y=y\\%$ of $x$",
+          "$4\\%$ of $75=75\\%$ of $4=3$"
+         ],
+         [
+          "the same part: flip the percents",
+          "$45\\%$ of $N=30\\%$ of $T$: $\\ N:T=30:45=2:3$"
+         ],
+         [
+          "the same whole: keep them",
+          "$x=60\\%$ of $y$, $z=150\\%$ of $y$: $\\ z=250\\%$ of $x$"
+         ],
+         [
+          "whole $\\times k$, percent $\\div k$",
+          "$30\\%$ of $100=15\\%$ of $200$"
+         ]
+        ]
+       }
+      ],
+      [
+       {
+        "type": "fig",
+        "ref": "arrows",
+        "caption": "**The arrow map:** an arrow from the whole; along it multiply, against it divide. $x$ is $20\\%$ more than $y$ → $y=\\frac56x=83\\frac13\\%$ of $x$ (not $80\\%$)."
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "More tools",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "cols",
+     "cols": [
+      [
+       {
+        "type": "fig",
+        "ref": "triangle",
+        "caption": "The triangle value: $\\frac{30\\cdot48}{40}=36$."
+       }
+      ],
+      [
+       {
+        "type": "p",
+        "text": "**A difference is a percent too:** $70\\%-30\\%=40\\%=48$ kg, so $30\\%=36$ kg (or go through $10\\%$)."
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Mixtures:** find what stays the same. Add sugar → the water stays: $80\\%$ of $300=240=60\\%$ → $400$ g, add $100$ g."
+    },
+    {
+     "type": "p",
+     "text": "**Letters in the choices:** plug in easy numbers ($N=200,\\ g=80$), test every choice. $\\;$ **Estimate:** $90$ of $320$ is between $25\\%$ ($80$) and $30\\%$ ($96$)."
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "class": "traps",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "Adding percents that sit on different amounts ($25-12=13$; real answer $10$).",
+      "Dividing a change by the new number instead of the original.",
+      "Up and down by the same percent is **not** back to the start.",
+      "“$150\\%$ of” is not “$150\\%$ more than”.",
+      "The drop instead of the new price; the used part instead of what's left.",
+      "A branch's percent read as a percent of everyone ($20\\%$ of the players)."
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "64/100 == 16/25",
+  "11*4 == 44",
+  "7*2 == 14",
+  "3*5 == 15",
+  "45*80/100 == 36",
+  "abs(28*75/100 - 21) < 1e-9",
+  "abs(54/15*25 - 90) < 1e-9",
+  "abs(0.3*240 - 72) < 1e-9",
+  "abs(0.35*240 - 84) < 1e-9",
+  "abs(63/0.3 - 210) < 1e-9",
+  "abs(100*1.8*0.75 - 135) < 1e-9",
+  "abs(100*0.7*0.8 - 56) < 1e-9",
+  "abs(1.2*0.8 - 0.96) < 1e-9",
+  "abs(0.2*0.65 - 0.13) < 1e-9",
+  "10/40 == 0.25",
+  "10/50 == 0.2",
+  "680/4 == 170",
+  "abs(1.25*0.88 - 1.1) < 1e-9",
+  "25 - 12 + 25*(-12)/100 == 10",
+  "abs(243/0.81 - 300) < 1e-9",
+  "abs(1.5*2/3 - 1) < 1e-9",
+  "abs(0.45*240 - 0.3*360) < 1e-9",
+  "abs(150/60 - 2.5) < 1e-9",
+  "abs(0.04*75 - 3) < 1e-9",
+  "abs(48*30/40 - 36) < 1e-9",
+  "abs(0.8*300 - 240) < 1e-9",
+  "abs(240/0.6 - 400) < 1e-9",
+  "abs((60+100)/400 - 0.4) < 1e-9",
+  "80 <= 90 <= 96",
+  "abs(1/1.2 - 5/6) < 1e-9",
+  "abs(0.3*100 - 0.15*200) < 1e-9",
+  "abs(20*20/100 - 4) < 1e-9",
+  "abs(0.75*680 - 510) < 1e-9"
+ ]
+}

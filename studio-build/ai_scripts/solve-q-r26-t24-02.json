@@ -1,0 +1,127 @@
+{
+ "videoId": "solve-q-r26-t24-02",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In a school, forty percent of the students are in the upper grades, and the rest are in the lower grades. Thirty percent of the upper-grade students and sixty percent of the lower-grade students walk to school. What percent of the students who walk to school are in the upper grades?",
+    "voice": "calm",
+    "at": [
+     "In a school"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the whole here is not all the students. They ask about the students who walk. Each student has two traits, the grade and walking, so we'll use a table.",
+    "at": [
+     "They ask about the students who walk",
+     "two traits, the"
+    ]
+   },
+   {
+    "say": "Let's plug in numbers. There are only percents in the question, so let's say there are a hundred students. A hundred makes every percent of the school a number of students.",
+    "at": [
+     "Let's plug",
+     "let's say there are a hundred",
+     "A hundred makes every percent",
+     "of the school"
+    ]
+   },
+   {
+    "say": "Forty percent are in the upper grades, so forty students. The rest, a hundred minus forty, sixty, are in the lower grades.",
+    "at": [
+     "a hundred minus forty",
+     "are in the lower grades"
+    ]
+   },
+   {
+    "say": "Now let's fill in walking. The question says thirty percent of the upper-grade students walk. So it's thirty percent of the forty, not of the hundred. Ten percent of forty is four, so thirty percent is twelve.",
+    "at": [
+     "Now let's fill",
+     "The question says thirty percent",
+     "So it's thirty",
+     "Ten percent of forty",
+     "so thirty percent is twelve"
+    ]
+   },
+   {
+    "say": "Sixty percent of the sixty lower-grade students walk. Ten percent of sixty is six, so sixty percent is thirty-six.",
+    "at": [
+     "Sixty percent of",
+     "Ten percent of sixty",
+     "six, so sixty",
+     "thirty-six"
+    ]
+   },
+   {
+    "say": "Rows add across, and columns add down. So down the walk column, twelve plus thirty-six is forty-eight students who walk.",
+    "at": [
+     "add down. So",
+     "twelve plus thirty-six",
+     "forty-eight students"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's read the question again. Of the students who walk. So the whole is the walk column, forty-eight students, not a hundred.",
+    "at": [
+     "Now let's read the question again",
+     "Of the students who walk",
+     "Of the students who walk",
+     "So the whole is the walk column",
+     "walk column, forty-eight"
+    ]
+   },
+   {
+    "say": "Twelve of the forty-eight walkers are in the upper grades. Twelve out of forty-eight is a quarter, because four times twelve is forty-eight. A quarter is twenty-five percent.",
+    "at": [
+     "Twelve out of forty-eight",
+     "a quarter, because"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Each wrong choice comes from the wrong whole. Choice number one, twelve percent, is twelve out of all the hundred students.",
+    "at": [
+     "from the wrong",
+     "Choice number one, twelve percent",
+     "twelve out of all the hundred"
+    ]
+   },
+   {
+    "say": "Choice number three, thirty-three and a third percent, compares twelve with the thirty-six lower-grade walkers. Twelve out of thirty-six is a third. But the whole is all the walkers.",
+    "at": [
+     "number three, thirty-three",
+     "third percent, compares",
+     "Twelve out of thirty-six",
+     "But the whole is all the walkers"
+    ]
+   },
+   {
+    "say": "Choice number four, forty percent, is the upper grades out of all the students. It ignores walking.",
+    "at": [
+     "number four, forty",
+     "the upper grades out of all",
+     "all the students",
+     "It ignores walking"
+    ]
+   },
+   {
+    "say": "So always ask, percent of what? The words after of tell us the whole, the row or the column we divide by. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "percent of what",
+     "The words after",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

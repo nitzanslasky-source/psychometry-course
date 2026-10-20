@@ -1,0 +1,154 @@
+{
+ "videoId": "solve-wp24-g075",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A class has fifty-two students. Of them, twenty-four help in the library and thirteen help in the kitchen. Which of the following could be the number of students who help in neither place?",
+    "voice": "calm",
+    "at": [
+     "A class has fifty-two"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Could be, so this is a range question. But this time they ask about neither, not about both. That's what makes it harder. We'll solve it in three different ways. With the range rules, with an insight, and through the students in at least one place.",
+    "at": [
+     "Could be, so this is a range",
+     "makes it harder"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. Neither means not in the library, and also not in the kitchen. So first let's find these two groups.",
+    "at": [
+     "in the library",
+     "first let's find"
+    ]
+   },
+   {
+    "say": "Not in the library is fifty-two minus twenty-four, twenty-eight students. Not in the kitchen is fifty-two minus thirteen, thirty-nine students.",
+    "at": [
+     "fifty-two minus twenty-four",
+     "Not in the kitchen",
+     "fifty-two minus thirteen"
+    ]
+   },
+   {
+    "say": "Neither is the students who are in both of these groups. Not in the library, and also not in the kitchen. So neither is the overlap of these two new groups.",
+    "at": [
+     "in both of these groups",
+     "Not in the",
+     "So neither is the overlap",
+     "of these two"
+    ]
+   },
+   {
+    "say": "Now we use the range rules on them. The biggest overlap is the smaller group, twenty-eight. So neither is at most twenty-eight.",
+    "at": [
+     "The biggest overlap is the smaller group",
+     "smaller group, twenty-eight"
+    ]
+   },
+   {
+    "say": "So choice number one, thirty-six, and choice number four, thirty-one, are out. Both are more than twenty-eight.",
+    "at": [
+     "So choice number one",
+     "choice number four, thirty-one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The smallest overlap is the sum minus the total. Twenty-eight plus thirty-nine is sixty-seven. Sixty-seven minus fifty-two is fifteen. So neither is at least fifteen.",
+    "at": [
+     "the sum minus",
+     "Twenty-eight plus thirty-nine",
+     "Sixty-seven minus fifty-two",
+     "So neither is"
+    ]
+   },
+   {
+    "say": "So choice number two, thirteen, is out. It's less than fifteen.",
+    "at": [
+     "number two, thirteen",
+     "It's less than fifteen"
+    ]
+   },
+   {
+    "say": "So neither is from fifteen to twenty-eight, and nineteen fits. Choice number three is our answer.",
+    "at": [
+     "from fifteen to twenty-eight",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now an insight that saves a calculation. We start again from the givens. Not in the library is twenty-eight, so neither is at most twenty-eight. That rules out thirty-six and thirty-one.",
+    "at": [
+     "Now an",
+     "the givens. Not",
+     "so neither is at most twenty-eight",
+     "That rules out",
+     "thirty-six and thirty-one"
+    ]
+   },
+   {
+    "say": "Two choices are left, thirteen and nineteen. A question has only one right answer. So one of them is inside the range, and the other one is outside it.",
+    "at": [
+     "Two choices are left",
+     "A question has"
+    ]
+   },
+   {
+    "say": "Both are less than twenty-eight, so the wrong one must be too small. Which one is too small? The smaller one, thirteen.",
+    "at": [
+     "The smaller one, thirteen"
+    ]
+   },
+   {
+    "say": "So the answer is nineteen, without calculating the minimum at all. It takes practice. And if you're not sure, the minimum is just one more small calculation. Choice number three again.",
+    "at": [
+     "Choice number three again"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And one more way, by understanding. We start again from the givens. Neither is the total minus the students who help in at least one place.",
+    "at": [
+     "And one",
+     "the givens. Neither"
+    ]
+   },
+   {
+    "say": "The fewest in at least one place is when all thirteen kitchen helpers also help in the library. Then it's just the twenty-four library helpers.",
+    "at": [
+     "The fewest in at least one place",
+     "thirteen kitchen helpers"
+    ]
+   },
+   {
+    "say": "The most in at least one place is when nobody helps in both. Twenty-four plus thirteen is thirty-seven. That's less than fifty-two, so it can happen.",
+    "at": [
+     "Twenty-four plus thirteen",
+     "That's less than"
+    ]
+   },
+   {
+    "say": "Neither is fifty-two minus that number. Fifty-two minus thirty-seven is fifteen. And fifty-two minus twenty-four is twenty-eight. The same range, fifteen to twenty-eight.",
+    "at": [
+     "Fifty-two minus thirty-seven",
+     "fifty-two minus twenty-four",
+     "The same range"
+    ]
+   },
+   {
+    "say": "So a big overlap means few students in at least one place, and many in neither. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "videoId": "solve-wp23-g059",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The price of a cinema ticket rises from forty credits to fifty credits, and later to sixty credits. How do the two percentage increases compare?",
+    "voice": "calm",
+    "at": [
+     "The price of a cinema ticket"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Both rises are ten credits. So many students think the percents are equal too. We'll solve it in two different ways, the math way with the change rule, and then by understanding.",
+    "at": [
+     "Both rises are ten",
+     "So many students"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, and learn a rule. A change in percent is the change, divided by the original amount, times a hundred. The original is where we started, before the change.",
+    "at": [
+     "Let's start",
+     "A change in percent is",
+     "original amount, times"
+    ]
+   },
+   {
+    "say": "Let's see it on easy numbers first. A price goes from twenty to twenty-five. The change is five, and the original is twenty. Five over twenty is a quarter, so the price rose by twenty-five percent.",
+    "at": [
+     "Five over twenty is a quarter",
+     "by twenty-five percent"
+    ]
+   },
+   {
+    "say": "And here's the trap. Many students divide by the new price, twenty-five. Five over twenty-five is a fifth, twenty percent. That's wrong, because a change is always measured from where it started.",
+    "at": [
+     "Five over twenty-five",
+     "fifth, twenty percent"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now our question. The first rise is from forty to fifty. The change is ten, and the original is forty. Ten over forty is a quarter, twenty-five percent.",
+    "at": [
+     "Now our",
+     "first rise is",
+     "Ten over forty is a quarter"
+    ]
+   },
+   {
+    "say": "The second rise is from fifty to sixty. The change is ten again. But now the original is fifty, the price before this rise. Ten over fifty is a fifth, twenty percent.",
+    "at": [
+     "The second rise",
+     "Ten over fifty is a fifth"
+    ]
+   },
+   {
+    "say": "Which is bigger, a quarter or a fifth? Think of one cake. Shared by four children, or by five children? With five children, each one gets less. The same top with a bigger bottom gives a smaller fraction.",
+    "at": [
+     "Which is bigger",
+     "The same top with a bigger bottom",
+     "bigger bottom gives"
+    ]
+   },
+   {
+    "say": "So the first percentage increase is larger. Choice number three is our answer.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding. We start again from the givens. The first rise, from forty to fifty, is twenty-five percent, because ten is a quarter of forty.",
+    "at": [
+     "Now by",
+     "the givens. The"
+    ]
+   },
+   {
+    "say": "What if the second rise were also twenty-five percent? Twenty-five percent of fifty is twelve and a half. So the price would reach fifty plus twelve and a half, sixty-two and a half.",
+    "at": [
+     "Twenty-five percent of fifty",
+     "twelve and a",
+     "fifty plus twelve and a half",
+     "half, sixty-two and"
+    ]
+   },
+   {
+    "say": "But the price only reached sixty. That's less than sixty-two and a half. So the second rise is less than twenty-five percent.",
+    "at": [
+     "But the price only reached sixty",
+     "That's less than"
+    ]
+   },
+   {
+    "say": "So the same amount of money is a smaller percent when the whole is bigger. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

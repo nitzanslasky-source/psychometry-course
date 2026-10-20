@@ -1,0 +1,162 @@
+{
+ "videoId": "solve-wp24-g076",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Of a hospital's nurses, three tenths work night shifts, three quarters drive to work, one quarter are new, and one half work part time. Which statement is not necessarily true?",
+    "voice": "calm",
+    "at": [
+     "Of a hospital's nurses"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Every choice says that at least one nurse is in two groups at once. So every choice claims that an overlap must exist. We need the one claim that is not forced. We'll solve it in two different ways, by adding fractions, and then in percent.",
+    "at": [
+     "Every choice says",
+     "least one nurse",
+     "in two different"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. When must an overlap exist? Remember the smallest overlap. Only when the two groups add up to more than the total. Here the givens are fractions, so the total is one.",
+    "at": [
+     "Let's start",
+     "Only when the two groups add up",
+     "add up to",
+     "the givens are"
+    ]
+   },
+   {
+    "say": "Choice number one says, at least one nurse who is not new does not work night shifts. Not new is one minus a quarter, three quarters. Not nights is one minus three tenths, seven tenths.",
+    "at": [
+     "Choice number one says",
+     "Not new is one minus a quarter",
+     "Not nights is"
+    ]
+   },
+   {
+    "say": "Three quarters is fifteen twentieths, and seven tenths is fourteen twentieths. Together, that's twenty-nine twentieths. That's more than one, so an overlap must exist.",
+    "at": [
+     "Three quarters is fifteen twentieths",
+     "and seven tenths"
+    ]
+   },
+   {
+    "say": "So the statement is true. They ask for the one that's not necessarily true, so choice number one is out.",
+    "at": [
+     "so choice number one is out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number two says, at least one night-shift nurse drives to work. Three tenths plus three quarters. Six twentieths plus fifteen twentieths is twenty-one twentieths. More than one, so it's true, and choice number two is out.",
+    "at": [
+     "Choice number two says",
+     "least one night-shift",
+     "Six twentieths plus fifteen",
+     "is twenty-one twentieths",
+     "so it's true, and choice number two"
+    ]
+   },
+   {
+    "say": "Choice number three says, at least one new nurse drives to work. A quarter plus three quarters is exactly one. It's not more than one.",
+    "at": [
+     "Choice number three says",
+     "A quarter plus three quarters",
+     "is exactly one"
+    ]
+   },
+   {
+    "say": "Exactly one doesn't force an overlap. The two groups can sit side by side. Let's see it in numbers. Say there are twenty nurses. A quarter, five, are new. Three quarters, fifteen, drive.",
+    "at": [
+     "Say there are twenty nurses",
+     "A quarter, five"
+    ]
+   },
+   {
+    "say": "The five new nurses come by bus, and the other fifteen drive. Every fraction still works, and no new nurse drives. So choice number three is not necessarily true.",
+    "at": [
+     "number three is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four says, at least one part-time nurse does not work night shifts. A half plus seven tenths is five tenths plus seven tenths, twelve tenths. More than one, so it's true.",
+    "at": [
+     "circle it and",
+     "Choice number four says",
+     "least one part-time",
+     "five tenths plus seven tenths",
+     "More than one, so it's true"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer. And if two groups add up to less than one, then no overlap is forced either. The smallest overlap is zero, never negative.",
+    "at": [
+     "Choice number three is our answer",
+     "And if two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now an insight. Adding fractions takes time, and percents are much faster. We start again from the givens, and turn every fraction into percent.",
+    "at": [
+     "Now an",
+     "the givens, and"
+    ]
+   },
+   {
+    "say": "Three tenths is thirty percent. Three quarters is seventy-five percent. A quarter is twenty-five percent, and a half is fifty percent.",
+    "at": [
+     "Three tenths is thirty percent",
+     "A quarter is"
+    ]
+   },
+   {
+    "say": "Not new is a hundred minus twenty-five, seventy-five. Not nights is a hundred minus thirty, seventy.",
+    "at": [
+     "Not new is a hundred minus",
+     "Not nights is"
+    ]
+   },
+   "If a fraction were a third, we'd just write thirty-three. The small part we drop only matters when a sum lands right next to a hundred."
+  ],
+  [
+   {
+    "say": "Choice number one, not new and not nights. Seventy-five plus seventy is a hundred forty-five. That's more than a hundred. Choice number two, nights and drive. Thirty plus seventy-five is a hundred five, also more than a hundred.",
+    "at": [
+     "number one, not",
+     "Seventy-five plus seventy",
+     "That's more than",
+     "number two, nights",
+     "Thirty plus seventy-five",
+     "hundred five, also"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number three, new and drive. Twenty-five plus seventy-five is exactly a hundred, so it's not forced. Choice number four, part time and not nights. Fifty plus seventy is a hundred twenty, more than a hundred.",
+    "at": [
+     "number three, new",
+     "Twenty-five plus seventy-five",
+     "a hundred, so",
+     "number four, part",
+     "Fifty plus seventy",
+     "hundred twenty, more"
+    ]
+   },
+   {
+    "say": "So in the exam, turn the fractions into percent. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

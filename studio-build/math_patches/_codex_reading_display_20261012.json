@@ -3371,30 +3371,34 @@
     [
      "n is a positive odd number. The product n, times n plus two, times n plus four, is necessarily divisible by:",
      "So n is positive and odd. n, n plus two and n plus four are three odd numbers in a row, and we multiply them. What number is the product always divisible by? We'll start with one group and check the choices. If several choices remain, we'll choose another group that helps separate them. Then we'll explain why the answer always works.",
-     "Start with the smallest group, one, three and five. One times three times five is fifteen. Fifteen is not divisible by forty-five, so choice number one is out.",
-     "But fifteen does divide by fifteen, five and three. So all three of those choices still work for this example. We need another group to tell them apart.",
-     "Let's test whether the product must divide by five. Choose three odd numbers in a row that do not include a multiple of five: seven, nine and eleven. Seven times nine is sixty-three, and sixty-three times eleven is six hundred ninety-three.",
-     "Six hundred ninety-three ends in three, so it does not divide by five. That also means it does not divide by fifteen. Choice numbers two and four are out. Only three is left, and choice number three is our answer.",
-     "Now careful with your choice of numbers. Three times five times seven is a hundred five. Five times seven times nine is three hundred fifteen. Both divide by fifteen because they include a five in the multiplication. They would not rule out fifteen. That's why we chose seven, nine and eleven for the second test."
+     "Let's start by plugging in numbers, with the smallest group, one, three and five. One times three times five is fifteen. Fifteen is not divisible by forty-five, so choice number one is out.",
+     "But fifteen is divisible by fifteen, five and three. So all three of those choices still work for this example. We need another group to tell them apart."
     ],
     [
-     "Why does the product always divide by three? Look at the odd multiples of three: three, nine, fifteen and twenty-one. They appear once in every three odd numbers. So any three odd numbers in a row include a multiple of three.",
-     "Seven, nine and eleven include nine. Eleven, thirteen and fifteen include fifteen. So one number in the multiplication divides by three, and the whole product divides by three too. Choice number three is our answer. Okay. I'll see you in the next question."
+     "Now we need a second group, and we have to choose it carefully. Take three, five and seven. Five is in the multiplication, and so is three. So the product is divisible by fifteen, and it can't rule out fifteen. Five, seven and nine has the same problem. So we need a group with no multiple of five.",
+     "Let's choose seven, nine and eleven. To check five, we only need the last digit of the product, because a number is divisible by five only when it ends in zero or five. The last digit of a product comes only from the last digits. Seven times nine is sixty-three, which ends in three. Times eleven, it still ends in three, because three times one is three.",
+     "A number that ends in three isn't divisible by five. So it isn't divisible by fifteen either, because fifteen is five times three. Choice numbers two and four are out. Only three is left, and choice number three is our answer."
+    ],
+    [
+     "Now by understanding. Why is the product always divisible by three? Let's write the odd numbers in a row: one, three, five, seven, nine, eleven, thirteen, fifteen. Three, nine and fifteen are divisible by three. Why every third odd number? Multiples of three go three, six, nine, twelve, fifteen. They alternate odd and even. So the odd multiples are six apart. The odd numbers go up by two, so six is three steps along that list. Every three odd numbers in a row therefore include a multiple of three.",
+     "Seven, nine and eleven include nine. Eleven, thirteen and fifteen include fifteen. So one number in the multiplication is divisible by three, and the whole product is divisible by three too. Choice number three is our answer, and I'll see you in the next question."
     ]
    ],
    "disp": [
     [
      "n is a positive odd number. The product n × (n + 2) × (n + 4), is necessarily divisible by:",
      "So n is positive and odd.\nn, n + 2 and n + 4 are three odd numbers in a row, and we multiply them.\nWhat number is the product always divisible by? We'll start with one group and check the choices.\nIf several choices remain, we'll choose another group that helps separate them. Then we'll explain why the answer always works.",
-     "Start with the smallest group, 1, 3 and 5. 1 × 3 × 5 = 15.\n15 is not divisible by 45, so choice number 1 is out.",
-     "But 15 does divide by 15, 5 and 3. So all three of those choices still work for this example.\nWe need another group to tell them apart.",
-     "Let's test whether the product must divide by 5.\nChoose three odd numbers in a row that do not include a multiple of five: 7, 9 and 11.\n7 × 9 = 63, and 63 × 11 = 693.",
-     "693 ends in 3, so it does not divide by 5. That also means it does not divide by 15.\nChoice numbers two and four are out. Only three is left, and choice number 3 is our answer.",
-     "Now careful with your choice of numbers. 3 × 5 × 7 = 105. 5 × 7 × 9 = 315.\nBoth divide by 15 because they include a five in the multiplication. They would not rule out 15.\nThat's why we chose 7, 9 and 11 for the second test."
+     "Let's start by plugging in numbers, with the smallest group, 1, 3 and 5. 1 × 3 × 5 = 15.\n15 is not divisible by 45, so choice number 1 is out.",
+     "But 15 is divisible by 15, 5 and 3. So all three of those choices still work for this example.\nWe need another group to tell them apart."
     ],
     [
-     "Why does the product always divide by 3? Look at the odd multiples of three: 3, 9, 15 and 21.\nThey appear once in every three odd numbers. So any three odd numbers in a row include a multiple of three.",
-     "7, 9 and 11 include nine. 11, 13 and 15 include 15.\nSo one number in the multiplication divides by 3, and the whole product divides by 3 too. Choice number 3 is our answer. Okay.\nI'll see you in the next question."
+     "Now we need a second group, and we have to choose it carefully. Take 3, 5 and 7.\nFive is in the multiplication, and so is three. So the product is divisible by 15, and it can't rule out 15.\n5, 7 and 9 has the same problem. So we need a group with no multiple of five.",
+     "Let's choose 7, 9 and 11.\nTo check five, we only need the last digit of the product, because a number is divisible by 5 only when it ends in 0 or five.\nThe last digit of a product comes only from the last digits. 7 × 9 = 63, which ends in 3.\nTimes 11, it still ends in 3, because 3 × 1 = 3.",
+     "A number that ends in 3 isn't divisible by 5. So it isn't divisible by 15 either, because 15 is 5 × 3.\nChoice numbers two and four are out. Only three is left, and choice number 3 is our answer."
+    ],
+    [
+     "Now by understanding. Why is the product always divisible by 3?\nLet's write the odd numbers in a row: 1, 3, 5, 7, 9, 11, 13, 15. 3, 9 and 15 are divisible by 3.\nWhy every third odd number? Multiples of three go three, six, nine, 12, 15. They alternate odd and even.\nSo the odd multiples are six apart. The odd numbers go up by two, so six is three steps along that list.\nEvery three odd numbers in a row therefore include a multiple of three.",
+     "7, 9 and 11 include nine. 11, 13 and 15 include 15.\nSo one number in the multiplication is divisible by 3, and the whole product is divisible by 3 too.\nChoice number 3 is our answer, and I'll see you in the next question."
     ]
    ],
    "recorded_when_published": false,
@@ -5203,6 +5207,16 @@
      [
       "diamond of x minus seven is equal to diamond of seven minus x",
       "◆(x − 7) = ◆(7 − x)"
+     ]
+    ],
+    "2.1": [
+     [
+      "Choice number one compares diamond of six x with thirty-six times diamond of x",
+      "Choice number 1 compares ◆(6x) with 36 × ◆(x)"
+     ],
+     [
+      "Choice number two compares diamond of root x times itself with diamond of x",
+      "Choice number 2 compares ◆(√x) × ◆(√x) with ◆(x)"
      ]
     ]
    }
@@ -7767,8 +7781,44 @@
    }
   },
   "solve-geo33-g089": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "The circumference of the smaller circle is ten pi centimeters, and the shaded area, inside the larger circle but outside the smaller one, is thirty-nine pi square centimeters. Between which two values is the circumference of the larger circle, in centimeters?",
+     "We need the circumference of the large circle, so we need its radius. We'll go from the small circle to the large one, one given at a time.",
+     "Let's start with the first given. The circumference of the small circle is ten pi. If we know a circle's circumference, can we find its radius? Yes. The circumference is two pi r, so two pi r equals ten pi.",
+     "We can cancel pi on both sides, so two r is ten. Two radii make a diameter, so the diameter is ten. So the radius is ten divided by two, five. That's the radius of the small circle.",
+     "Now its area. The area of a circle is pi r squared. Pi times five squared is twenty-five pi. That's the area of the small white circle.",
+     "On to the second given. The shaded ring is thirty-nine pi. The ring and the white circle together make the whole large circle. So the area of the large circle is twenty-five pi plus thirty-nine pi, which is sixty-four pi.",
+     "If we know the area, we can find the radius. Pi R squared is sixty-four pi. Cancel pi, and R squared is sixty-four. So R is eight, because eight squared is sixty-four. Let's remember that."
+    ],
+    [
+     "Now let's see what they asked. The circumference of the large circle. Two pi R is two pi times eight, which is sixteen pi.",
+     "Sixteen pi is not in the choices. The choices give ranges, so we need to estimate its value. For these close ranges, using three for pi is too rough. We use more accurate bounds: pi is more than three point one four, and less than three point one five.",
+     "First the lower end, sixteen times three point one four. Sixteen times three is forty-eight. Now sixteen times point one four. That's fourteen hundredths, so first calculate sixteen times fourteen. Sixteen times ten is a hundred sixty. Sixteen times four is sixty-four. Together, two hundred twenty-four. Make that hundredths, and we get two point two four.",
+     "Together, forty-eight plus two point two four is fifty point two four. So sixteen pi is more than fifty point two four. Now the upper end, sixteen times three point one five. The three gives forty-eight again. Point one five is a tenth plus half a tenth. A tenth of sixteen is one point six, and half of that is zero point eight. Together that's two point four. Forty-eight plus two point four is fifty point four.",
+     "So sixteen pi is between fifty point two four and fifty point four. That's between fifty and fifty-one. Choice number four is our answer.",
+     "Careful with the trap. If you round pi down to three, you get exactly forty-eight, and choice number one looks right. Here that's too rough. The point one four adds more than two. Okay. I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "The circumference of the smaller circle is 10 pi centimeters, and the shaded area, inside the larger circle but outside the smaller one, is 39 pi square centimeters.\nBetween which two values is the circumference of the larger circle, in centimeters?",
+     "We need the circumference of the large circle, so we need its radius.\nWe'll go from the small circle to the large one, one given at a time.",
+     "Let's start with the first given. The circumference of the small circle is 10 pi.\nIf we know a circle's circumference, can we find its radius? Yes. The circumference is two pi r, so 2πr = 10π.",
+     "We can cancel pi on both sides, so 2r = 10. Two radii make a diameter, so the diameter is 10.\nSo the radius is 10 ÷ 2, five. That's the radius of the small circle.",
+     "Now its area. The area of a circle is pi r². π · 5² is 25π. That's the area of the small white circle.",
+     "On to the second given. The shaded ring is 39 pi. The ring and the white circle together make the whole large circle.\nSo the area of the large circle is 25π + 39π, which is 64π.",
+     "If we know the area, we can find the radius. πR² is 64π. Cancel pi, and R² = 64.\nSo R = 8, because 8² = 64. Let's remember that."
+    ],
+    [
+     "Now let's see what they asked. The circumference of the large circle. Two pi R is two pi times eight, which is 16 pi.",
+     "16 pi is not in the choices. The choices give ranges, so we need to estimate its value.\nFor these close ranges, using three for pi is too rough.\nWe use more accurate bounds: pi is more than 3.14, and less than 3.15.",
+     "First the lower end, 16 × 3.14. 16 × 3 = 48. Now 16 times point one four.\nThat's 14 hundredths, so first calculate 16 × 14. 16 × 10 = 160. 16 × 4 = 64. Together, 224.\nMake that hundredths, and we get 2.24.",
+     "Together, 48 + 2.24 = 50.24. So 16 pi is more than 50.24. Now the upper end, 16 × 3.15.\nThe three gives 48 again. Point one five is a tenth plus half a tenth.\nA tenth of 16 is 1.6, and half of that is 0.8. Together that's 2.4. 48 + 2.4 = 50.4.",
+     "So 16 pi is between 50.24 and 50.4. That's between 50 and 51. Choice number 4 is our answer.",
+     "Careful with the trap. If you round pi down to three, you get exactly 48, and choice number 1 looks right.\nHere that's too rough. The point one four adds more than two. Okay. I'll see you in the next question."
+    ]
+   ],
    "recorded_when_published": false,
    "scope_replacements": {
     "1.3": [
@@ -7812,12 +7862,68 @@
       "the point one four matters",
       "the 0.14 matters"
      ]
+    ],
+    "2.3": [
+     [
+      "sixteen times fourteen",
+      "16 × 14"
+     ],
+     [
+      "Sixteen times ten is a hundred sixty",
+      "16 × 10 = 160"
+     ],
+     [
+      "Sixteen times four is sixty-four",
+      "16 × 4 = 64"
+     ]
     ]
    }
   },
   "solve-geo33-g090": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "The sides of triangle A B C are twelve centimeters, thirty-five centimeters, and thirty-seven centimeters. What is the circumference of the circle circumscribed about the triangle, in centimeters?",
+     "A circle circumscribed about a triangle passes through all three of its vertices. But wait, there's no circle in the figure at all. To solve this, we need two facts about such circles.",
+     "Here's the first fact. Every triangle has a circle that passes through all three of its corners. Here's an acute triangle with its circle, and here's an obtuse one with its circle.",
+     "And here's the second fact. Every triangle has exactly one circle through its three corners. What does that mean? With these same three corners on the circle, we can't choose a different radius. So this triangle has exactly one circumscribed circle, and we need to find its size.",
+     "So let's look for something special in this triangle. Its sides are twelve, thirty-five and thirty-seven."
+    ],
+    [
+     "Let's check Pythagoras. Does twelve squared plus thirty-five squared equal thirty-seven squared? Twelve squared is a hundred forty-four. For thirty-five squared, split the second thirty-five into thirty and five. Thirty-five times thirty is three times thirty-five, a hundred five, times ten: a thousand fifty. Thirty-five times five is half of three hundred fifty, a hundred seventy-five. Add them: a thousand two hundred twenty-five. Add the hundred forty-four, and we get a thousand three hundred sixty-nine.",
+     "And thirty-seven squared? Split the second thirty-seven into thirty and seven. Thirty-seven times thirty is a thousand one hundred ten. For thirty-seven times seven, thirty times seven is two hundred ten. Seven times seven is forty-nine. Together that's two hundred fifty-nine. Add it to a thousand one hundred ten, and we get a thousand three hundred sixty-nine. The same.",
+     "The sides satisfy Pythagoras, so the triangle must be a right triangle. The right angle is across from the longest side, thirty-seven. That's the angle at A.",
+     "This is the Pythagorean test we learned in the triangles topic.",
+     "Use this test when all three sides are given, but no right angle is marked.",
+     "Now let's draw the circle around the triangle, and remember one more rule. The angle at A sits on the circle, so it's an inscribed angle. We learned that an inscribed angle that lies on a diameter is ninety degrees. And the other way around. If an inscribed angle is ninety degrees, it must lie on a diameter.",
+     "So B C, the hypotenuse, is a diameter of the circle. The diameter is thirty-seven.",
+     "Now we need the circumference of a circle with a diameter of thirty-seven. The formula is two pi r. Two r is the diameter, so two pi r is pi times the diameter. We already know the diameter, so let's use it directly. Pi times thirty-seven is thirty-seven pi. Choice number two is our answer."
+    ],
+    [
+     "Now let's go back to the Pythagorean check. We can save the big squares with the difference-of-squares formula we know. Thirty-seven squared minus thirty-five squared is thirty-seven minus thirty-five, times thirty-seven plus thirty-five. That's two times seventy-two. Double seventy is a hundred forty, and double two is four: a hundred forty-four. That's twelve squared. So the two shorter sides really do satisfy Pythagoras, without finding twelve twenty-five or thirteen sixty-nine. Careful with the traps. Thirty-seven is the diameter, not the radius. If we put it in as r, two pi times thirty-seven gives seventy-four pi, choice number one. And the radius is eighteen and a half. Pi times eighteen and a half is eighteen and a half pi, choice number three. It forgets the two. Okay. I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "The sides of triangle A B C are 12 centimeters, 35 centimeters, and 37 centimeters.\nWhat is the circumference of the circle circumscribed about the triangle, in centimeters?",
+     "A circle circumscribed about a triangle passes through all three of its vertices. But wait, there's no circle in the figure at all.\nTo solve this, we need two facts about such circles.",
+     "Here's the first fact. Every triangle has a circle that passes through all three of its corners.\nHere's an acute triangle with its circle, and here's an obtuse one with its circle.",
+     "And here's the second fact. Every triangle has exactly one circle through its three corners. What does that mean?\nWith these same three corners on the circle, we can't choose a different radius.\nSo this triangle has exactly one circumscribed circle, and we need to find its size.",
+     "So let's look for something special in this triangle. Its sides are 12, 35 and 37."
+    ],
+    [
+     "Let's check Pythagoras. Does 12² + 35² equal 37²? 12² = 144. For 35², split the second 35 into 30 and five.\n35 × 30 = 3 × 35, 105 × 10: 1050. 35 × 5 is half of 350, 175. Add them: 1225.\nAdd the hundred 44, and we get 1369.",
+     "And 37²? Split the second 37 into 30 and seven. 37 × 30 = 1110. For 37 × 7, 30 × 7 = 210.\n7 × 7 = 49. Together that's 259. Add it to 1110, and we get 1369. The same.",
+     "The sides satisfy Pythagoras, so the triangle must be a right triangle. The right angle is across from the longest side, 37.\nThat's the angle at A.",
+     "This is the Pythagorean test we learned in the triangles topic.",
+     "Use this test when all three sides are given, but no right angle is marked.",
+     "Now let's draw the circle around the triangle, and remember one more rule.\nThe angle at A sits on the circle, so it's an inscribed angle.\nWe learned that an inscribed angle that lies on a diameter is 90 degrees. And the other way around.\nIf an inscribed angle is 90 degrees, it must lie on a diameter.",
+     "So B C, the hypotenuse, is a diameter of the circle. The diameter is 37.",
+     "Now we need the circumference of a circle with a diameter of 37. The formula is two pi r.\n2r is the diameter, so two pi r is pi times the diameter. We already know the diameter, so let's use it directly.\nPi times 37 is 37 pi. Choice number 2 is our answer."
+    ],
+    [
+     "Now let's go back to the Pythagorean check. We can save the big squares with the difference-of-squares formula we know.\n37² − 35² = (37 − 35) × (37 + 35). That's 2 × 72.\nDouble 70 is 140, and double two is four: 144. That's 12².\nSo the two shorter sides really do satisfy Pythagoras, without finding 12 25 or 13 69. Careful with the traps.\n37 is the diameter, not the radius. If we put it in as r, two pi times 37 gives 74 pi, choice number 1.\nAnd the radius is 18 and a half. Pi times 18 and a half is 18 and a half pi, choice number 3.\nIt forgets the two. Okay. I'll see you in the next question."
+    ]
+   ],
    "recorded_when_published": false,
    "scope_replacements": {
     "2.7": [
@@ -7838,6 +7944,36 @@
      [
       "eighteen and a half pi",
       "18.5π"
+     ]
+    ],
+    "2.1": [
+     [
+      "Thirty-five times thirty",
+      "35 × 30"
+     ],
+     [
+      "Thirty-five times five",
+      "35 × 5"
+     ]
+    ],
+    "2.2": [
+     [
+      "thirty-seven squared",
+      "37²"
+     ],
+     [
+      "Thirty-seven times thirty",
+      "37 × 30"
+     ],
+     [
+      "thirty-seven times seven",
+      "37 × 7"
+     ]
+    ],
+    "3.1": [
+     [
+      "Thirty-seven squared minus thirty-five squared is thirty-seven minus thirty-five, times thirty-seven plus thirty-five",
+      "37² − 35² = (37 − 35) × (37 + 35)"
      ]
     ]
    }
@@ -7886,12 +8022,70 @@
       "one fifth of thirty-five pi, which is seven pi",
       "1/5 of 35π, which is 7π"
      ]
+    ],
+    "2.7": [
+     [
+      "So five times the whole bracket, alpha plus beta, is three hundred sixty",
+      "So 5 × (α + β) = 360"
+     ],
+     [
+      "Alpha plus beta is seventy-two",
+      "α + β = 72"
+     ]
+    ],
+    "2.5": [
+     [
+      "five alpha plus five beta is three hundred sixty",
+      "5α + 5β = 360"
+     ]
     ]
    }
   },
   "solve-geo33-g092": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "Three circles with centers A, B and C touch one another from the outside. Their radii are six centimeters, fourteen centimeters and fifteen centimeters. What is the length of the highlighted arc of the circle with center A, in centimeters?",
+     "We need the length of an arc. An arc is part of the circumference. Its length is the angle out of three hundred sixty, times two pi r, the whole circumference.",
+     "The radius of circle A is given, so the whole circumference is easy. Two pi r is two pi times six, which is twelve pi.",
+     "Let's peek at the choices. Choice number one is twelve pi. That's the whole circle, and the highlighted arc is only part of it, so it has to be less. Choice number one is out.",
+     "We can also cross out choice number four, six pi. Six pi is exactly half the circle. Let's connect the three centers. The highlighted arc's angle at A is three hundred sixty minus the triangle's angle at A. For the arc to be exactly half, that triangle angle would have to be one hundred eighty. But an angle of a triangle is always less than one hundred eighty. So the highlighted arc is more than half, and choice number four is out too.",
+     "To choose between choice number two and choice number three, let's find the angle. If you're ever out of time at this point, guess one of the two. That's a one in two chance instead of one in four."
+    ],
+    [
+     "Here are the three circles again, bigger. Let's put in the givens. The radius of circle A is six, so we write six and six on its two radii. Circle B, fourteen and fourteen. Circle C, fifteen and fifteen.",
+     "The circles touch, so the line between two centers passes through the point where they touch. It's made of the two radii. So A B is six plus fourteen, twenty. A C is six plus fifteen, twenty-one. And B C is fourteen plus fifteen, twenty-nine.",
+     "Twenty, twenty-one, twenty-nine. We need the angle at A, so let's check Pythagoras, to see if it's a right angle. Twenty squared is four hundred. For twenty-one squared, twenty-one times twenty is four hundred twenty. Add one more twenty-one, and we get four hundred forty-one. Four hundred plus four hundred forty-one is eight hundred forty-one.",
+     "And twenty-nine squared? It's twenty-nine times thirty, minus twenty-nine. Twenty-nine times thirty is eight hundred seventy. Eight hundred seventy minus twenty-nine is eight hundred forty-one. The same, so it's a Pythagorean triple.",
+     "B C, twenty-nine, is the hypotenuse, so the angle across from it, the angle at A, is ninety degrees."
+    ],
+    [
+     "Now let's look only at circle A. The angle at A is ninety degrees. So the arc we don't need, inside that angle, is ninety out of three hundred sixty. That's a quarter of the circle.",
+     "And the highlighted arc is the rest, three quarters of the circumference.",
+     "Three quarters of twelve pi. Let's find a quarter first. Twelve pi divided by four is three pi. So three quarters is three times three pi, which is nine pi. Choice number three is our answer. Now go back to the Pythagorean check. We can use the difference of squares again. Twenty-nine squared minus twenty-one squared is twenty-nine minus twenty-one, times twenty-nine plus twenty-one. That's eight times fifty, four hundred. Four hundred is twenty squared. So the triangle is right, without calculating either big square. If you notice that, you can reach the ninety-degree angle sooner. I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "Three circles with centers A, B and C touch one another from the outside. Their radii are six centimeters, 14 centimeters and 15 centimeters.\nWhat is the length of the highlighted arc of the circle with center A, in centimeters?",
+     "We need the length of an arc. An arc is part of the circumference. Its length is (angle/360) · 2πr, the whole circumference.",
+     "The radius of circle A is given, so the whole circumference is easy. 2πr is 2π · 6, which is 12π.",
+     "Let's peek at the choices. Choice number 1 is 12 pi.\nThat's the whole circle, and the highlighted arc is only part of it, so it has to be less. Choice number 1 is out.",
+     "We can also cross out choice number 4, six pi. Six pi is exactly half the circle. Let's connect the three centers.\nThe highlighted arc's angle at A is 360 minus the triangle's angle at A.\nFor the arc to be exactly half, that triangle angle would have to be 180.\nBut an angle of a triangle is always less than 180.\nSo the highlighted arc is more than half, and choice number 4 is out too.",
+     "To choose between choice number 2 and choice number 3, let's find the angle.\nIf you're ever out of time at this point, guess one of the two.\nThat's a one in two chance instead of one in four."
+    ],
+    [
+     "Here are the three circles again, bigger. Let's put in the givens.\nThe radius of circle A = 6, so we write six and six on its two radii. Circle B, 14 and 14.\nCircle C, 15 and 15.",
+     "The circles touch, so the line between two centers passes through the point where they touch. It's made of the two radii.\nSo A B = 6 + 14, 20. A C = 6 + 15, 21. And B C = 14 + 15, 29.",
+     "20, 21, 29. We need the angle at A, so let's check Pythagoras, to see if it's a right angle. 20² = 400.\nFor 21², 21 × 20 = 420. Add one more 21, and we get 441. 400 + 441 = 841.",
+     "And 29²? It's 29 × 30 − 29. 29 × 30 = 870. 870 − 29 = 841.\nThe same, so it's a Pythagorean triple.",
+     "B C, 29, is the hypotenuse, so the angle across from it, the angle at A, is 90 degrees."
+    ],
+    [
+     "Now let's look only at circle A. The angle at A is 90 degrees.\nSo the arc we don't need, inside that angle, is 90 out of 360. That's a quarter of the circle.",
+     "And the highlighted arc is the rest, 3/4 of the circumference.",
+     "3/4 of 12 pi. Let's find a quarter first. 12 pi divided by 4 is three pi.\nSo 3/4 = 3 × 3 pi, which is nine pi. Choice number 3 is our answer. Now go back to the Pythagorean check.\nWe can use the difference of squares again. 29² − 21² = (29 − 21) × (29 + 21). That's 8 × 50, 400.\n400 = 20². So the triangle is right, without calculating either big square. If you notice that, you can reach the 90-degree angle sooner.\nI'll see you in the next question."
+    ]
+   ],
    "recorded_when_published": false,
    "scope_replacements": {
     "1.2": [
@@ -7918,6 +8112,22 @@
      [
       "so three quarters is nine pi",
       "so 3/4 is 9π"
+     ]
+    ],
+    "2.3": [
+     [
+      "twenty-one squared",
+      "21²"
+     ],
+     [
+      "twenty-one times twenty is four hundred twenty",
+      "21 × 20 = 420"
+     ]
+    ],
+    "3.3": [
+     [
+      "Twenty-nine squared minus twenty-one squared is twenty-nine minus twenty-one, times twenty-nine plus twenty-one",
+      "29² − 21² = (29 − 21) × (29 + 21)"
      ]
     ]
    }
@@ -8327,8 +8537,66 @@
    }
   },
   "solve-geo33-g099": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "Two congruent circles, with centers O and P, have a radius of six centimeters, and they intersect at A and B. The minor arc A B is one quarter of the circumference of each circle. What is the area of the union of the two circles?",
+     "The union is everything that is inside at least one of the circles, the whole grey shape. It's a shaded-area question. But no single familiar shape around it is given, so we can't take one big area and subtract a piece. We'll solve it in two different ways, by cutting it into pieces we know, and by taking away the overlap. Then we'll see what estimating can do.",
+     "Let's start with the math way. In a case like this, we go to the givens and see what we can get out of them. The minor arc A B is a quarter of the circumference of circle O. A quarter of the circle means a central angle of a quarter of three hundred sixty, ninety degrees.",
+     "But no central angle is drawn, so we draw one. A radius from O to A, and a radius from O to B. The angle between them is ninety degrees, and each radius is six.",
+     "The same in circle P. The circles are congruent, so P A and P B are also six, and the angle at P is also ninety.",
+     "Now look at O A P B. All four sides are six, so it's at least a rhombus. And its angle at O is ninety degrees. A rhombus with a right angle is a square, so O A P B is a square."
+    ],
+    [
+     "Here's the figure again, with the square. We can divide the grey area into three familiar pieces, with no overlap: the left three-quarter circle, the square, and the right three-quarter circle. Each three-quarter circle is a whole circle with one quarter removed.",
+     "One whole circle is pi r squared, pi times six squared, thirty-six pi. A quarter of thirty-six pi is nine pi. So three quarters is three times nine pi, twenty-seven pi.",
+     "The square is six squared, thirty-six. So the union is twenty-seven pi, plus thirty-six, plus twenty-seven pi, which is fifty-four pi plus thirty-six. Choice number three is our answer."
+    ],
+    [
+     "Now a second way, the math way again, this time by taking away the overlap. Take the two whole circles. Each one is thirty-six pi, so together they're seventy-two pi.",
+     "But the middle part, where the circles overlap, is inside both circles. So we counted it twice, and we must take it away once.",
+     "How big is the overlap? The chord A B cuts it into two equal pieces. Look at the right piece, in circle O. It's the quarter circle A O B, minus the triangle A O B.",
+     "The quarter circle is a quarter of thirty-six pi, nine pi. The triangle has two legs of six and a right angle, so its area is six times six over two, eighteen.",
+     "So one piece is nine pi minus eighteen. The overlap is two of these pieces, so we double the whole difference. That's eighteen pi minus thirty-six.",
+     "Now take the whole overlap away from seventy-two pi. Seventy-two pi minus the overlap, eighteen pi minus thirty-six. The minus before the overlap turns minus thirty-six into plus thirty-six. So it's seventy-two pi minus eighteen pi, plus thirty-six. That's fifty-four pi plus thirty-six, choice number three again."
+    ],
+    [
+     "Now let's estimate. It's hard to finish this way, but it's easy to rule out two choices. The left circle alone is thirty-six pi.",
+     "The grey shape contains more than that one circle. From the givens again, the four radii of six form a square, O A P B. O P is its diagonal, so it's longer than the side, six. Now divide circle P in half with a line through P, perpendicular to O P. Take the right half of circle P, away from O. The closest point on that dividing line to O is P. Even P is more than six from O. Every point on the far side is at least that far away, so that whole half is outside circle O.",
+     "It adds eighteen pi, and the middle piece between them adds a bit more. So the union is more than thirty-six pi plus eighteen pi, fifty-four pi.",
+     "We need more than fifty-four pi. Now compare twenty-seven pi with thirty-six. Pi is more than three, so twenty-seven pi is more than eighty-one, much more than thirty-six. So twenty-seven pi plus thirty-six is less than twenty-seven pi plus twenty-seven pi, which is fifty-four pi. Twenty-seven pi plus eighteen is even smaller. So choice numbers one and four are out.",
+     "Choice numbers two and three both have fifty-four pi, plus eighteen or plus thirty-six. This bound doesn't separate them, so this estimate leaves two choices. If you're out of time, it's a reasonable guess between the two. With time, use one of the full solutions. Okay. I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "Two congruent circles, with centers O and P, have a radius of six centimeters, and they intersect at A and B.\nThe minor arc A B is 1/4 of the circumference of each circle. What is the area of the union of the two circles?",
+     "The union is everything that is inside at least 1 of the circles, the whole grey shape. It's a shaded-area question.\nBut no single familiar shape around it is given, so we can't take one big area and subtract a piece.\nWe'll solve it in two different ways, by cutting it into pieces we know, and by taking away the overlap.\nThen we'll see what estimating can do.",
+     "Let's start with the math way.\nIn a case like this, we go to the givens and see what we can get out of them.\nThe minor arc A B is a quarter of the circumference of circle O.\nA quarter of the circle means a central angle of a quarter of 360, 90 degrees.",
+     "But no central angle is drawn, so we draw one. A radius from O to A, and a radius from O to B.\nThe angle between them is 90 degrees, and each radius is six.",
+     "The same in circle P.\nThe circles are congruent, so P A and P B are also six, and the angle at P is also 90.",
+     "Now look at O A P B. All four sides are six, so it's at least a rhombus.\nAnd its angle at O is 90 degrees.\nA rhombus with a right angle is a square, so O A P B is a square."
+    ],
+    [
+     "Here's the figure again, with the square.\nWe can divide the grey area into three familiar pieces, with no overlap: the left three-quarter circle, the square, and the right three-quarter circle.\nEach three-quarter circle is a whole circle with 1/4 removed.",
+     "One whole circle is pi r², pi times 6², 36 pi. A quarter of 36 pi is nine pi.\nSo 3/4 = 3 × 9 pi, 27 pi.",
+     "The square is 6², 36. So the union is 27 pi, plus 36 + 27 pi, which is 54 pi plus 36.\nChoice number 3 is our answer."
+    ],
+    [
+     "Now a second way, the math way again, this time by taking away the overlap. Take the two whole circles.\nEach one is 36 pi, so together they're 72 pi.",
+     "But the middle part, where the circles overlap, is inside both circles. So we counted it twice, and we must take it away once.",
+     "How big is the overlap? The chord A B cuts it into two equal pieces. Look at the right piece, in circle O.\nIt's the quarter circle A O B, minus the triangle A O B.",
+     "The quarter circle is a quarter of 36 pi, nine pi.\nThe triangle has two legs of six and a right angle, so its area is 6 × 6/2, 18.",
+     "So one piece is nine pi −18. The overlap is two of these pieces, so we double the whole difference. That's 18 pi −36.",
+     "Now take the whole overlap away from 72 pi. 72 pi minus the overlap, 18 pi −36.\nThe minus before the overlap turns −36 into plus 36. So it's 72 pi −18 pi, plus 36.\nThat's 54 pi plus 36, choice number 3 again."
+    ],
+    [
+     "Now let's estimate. It's hard to finish this way, but it's easy to rule out two choices. The left circle alone is 36 pi.",
+     "The grey shape contains more than that one circle.\nFrom the givens again, the four radii of six form a square, O A P B.\nO P is its diagonal, so it's longer than the side, six.\nNow divide circle P in half with a line through P, perpendicular to O P.\nTake the right half of circle P, away from O. The closest point on that dividing line to O = P.\nEven P is more than six from O.\nEvery point on the far side is at least that far away, so that whole half is outside circle O.",
+     "It adds 18 pi, and the middle piece between them adds a bit more.\nSo the union is more than 36 pi plus 18 pi, 54 pi.",
+     "We need more than 54 pi. Now compare 27 pi with 36.\nPi is more than three, so 27 pi is more than 81, much more than 36.\nSo 27 pi plus 36 < 27 pi plus 27 pi, which is 54 pi. 27 pi plus 18 is even smaller.\nSo choice numbers one and four are out.",
+     "Choice numbers two and three both have 54 pi, plus 18 or plus 36.\nThis bound doesn't separate them, so this estimate leaves two choices. If you're out of time, it's a reasonable guess between the two.\nWith time, use one of the full solutions. Okay. I'll see you in the next question."
+    ]
+   ],
    "recorded_when_published": false,
    "scope_replacements": {
     "1.8": [
@@ -8472,6 +8740,12 @@
       "Eighty-one pi minus sixteen pi is sixty-five pi",
       "81π − 16π = 65π"
      ]
+    ],
+    "3.2": [
+     [
+      "gives pi times the whole bracket, ten r plus twenty-five",
+      "gives π(10r + 25)"
+     ]
     ]
    }
   },
@@ -8516,12 +8790,32 @@
      [
       "The central angle is two times, ninety minus two theta. Two times ninety is a hundred eighty, and two times two theta is four theta. So the central angle is a hundred eighty minus four theta.",
       "The central angle is 2 × (90 − 2θ). 2 × 90 = 180, and 2 × 2θ = 4θ. So the central angle is 180 − 4θ."
+     ],
+     [
+      "The central angle is two times the whole bracket, ninety minus two theta",
+      "The central angle is 2 × (90 − 2θ)"
+     ],
+     [
+      "Two times ninety is a hundred eighty",
+      "2 × 90 = 180"
+     ],
+     [
+      "Two times two theta is four theta",
+      "2 × 2θ = 4θ"
      ]
     ],
     "3.1": [
      [
       "a hundred eighty minus four theta, over three hundred sixty, times two pi r",
       "(180 − 4θ)/360 × 2πr"
+     ],
+     [
+      "the whole expression, a hundred eighty minus four theta, by three hundred sixty",
+      "the whole expression (180 − 4θ) by 360"
+     ],
+     [
+      "two pi r",
+      "2πr"
      ]
     ],
     "3.3": [
@@ -8613,6 +8907,12 @@
       "Then four theta is sixty",
       "Then 4θ = 60"
      ]
+    ],
+    "3.2": [
+     [
+      "the whole expression, a hundred eighty minus four theta, over a hundred eighty, times pi r",
+      "(180 − 4θ)/180 × πr"
+     ]
     ]
    }
   },
@@ -8639,6 +8939,10 @@
      [
       "so each one is nine root three",
       "so each one is 9√3"
+     ],
+     [
+      "a squared times root three, over four",
+      "a²√3/4"
      ]
     ],
     "4.3": [
@@ -8709,6 +9013,14 @@
      [
       "pi times half the chord, squared",
       "π(chord/2)²"
+     ],
+     [
+      "pi times the whole bracket, big R squared minus r squared",
+      "π(R² − r²)"
+     ],
+     [
+      "the ring's area is pi h squared",
+      "the ring's area is πh²"
      ]
     ]
    }
@@ -8933,6 +9245,34 @@
      [
       "two times the root of thirty-six, two times six, twelve",
       "2√36 = 2 × 6 = 12"
+     ]
+    ],
+    "4.5": [
+     [
+      "So D C squared is four big R small r",
+      "So DC² = 4Rr"
+     ],
+     [
+      "so D C is the square root of that whole product",
+      "so DC = √(4Rr)"
+     ],
+     [
+      "The square root of four is two",
+      "√4 = 2"
+     ],
+     [
+      "So D C is two times the square root of the whole product, big R times small r",
+      "So DC = 2√(Rr)"
+     ],
+     [
+      "the product is eight times two, sixteen",
+      "the product is 8 × 2 = 16"
+     ]
+    ],
+    "5.3": [
+     [
+      "Then D C is two times the square root of the whole product, big R times small r",
+      "Then DC = 2√(Rr)"
      ]
     ]
    }
@@ -9365,6 +9705,16 @@
       "The bracket x plus three, squared, minus the bracket x plus one, squared",
       "(x + 3)² − (x + 1)²"
      ]
+    ],
+    "4.5": [
+     [
+      "x plus two, squared, is x squared plus four x plus four",
+      "(x + 2)² = x² + 4x + 4"
+     ],
+     [
+      "x times x plus four is x squared plus four x",
+      "x(x + 4) = x² + 4x"
+     ]
     ]
    }
   },
@@ -9404,8 +9754,76 @@
    }
   },
   "pt51-plug-numbers-3": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "Let's continue with two more cases, and one more rule."
+    ],
+    [
+     "A third case. Sometimes there are no letters at all, but an amount is unknown, and they ask for a ratio or a part. In a ratio, the actual numbers don't matter. One to two, two to four and ten to twenty are the same ratio.",
+     "So I may choose the amount myself. For example, half of a number plus a third of the same number. What part of the number is it?",
+     "Which number? Six, because both two and three go into it. Half of six is three, and a third of six is two. Together five, out of six. So it's five sixths of the number, whatever the number is."
+    ],
+    [
+     "The fourth case. An equation, but with more letters than equations, and they ask for one value. For example, four x plus six y equals eighteen. What is six x plus nine y?",
+     "An equation with two letters can have many allowed solutions. Sometimes the result they ask for changes between them. Then it cannot be determined. But here, both terms they ask for are one and a half times the terms in the given equation. So their sum is fixed too. Let's use one easy solution to calculate it.",
+     "I give one letter a value, and I solve the equation for the other. x equals zero, because multiplying by zero makes the whole x term zero. Then six y equals eighteen, so y is three.",
+     "Now what they ask. Six times zero is zero, and nine times three is twenty-seven. So six x plus nine y is twenty-seven.",
+     "Here zero makes the calculation easy, and it's allowed. But I chose only x. The equation then made y equal to three. I can't choose both letters freely: they still have to satisfy the equation.",
+     "And it's really true. Six x plus nine y is one and a half times four x plus six y, because each part is one and a half times as big. And one and a half times eighteen is twenty-seven."
+    ],
+    [
+     "One more trick for choosing the number. In a story with letters, look for an allowed value where nothing changes. If nobody joins or nothing is added, sometimes we know the result without a formula. But that value must still be allowed by the question.",
+     "For example, n friends rent a boat for P shekels and share the cost. Then k more friends may join. In this example k may be zero: nobody has to join. They share the cost again. By how much less does each one pay?",
+     "Plug in k equals zero. Nobody joined, so nobody pays less, and the answer must be zero. So every choice that doesn't give zero when k is zero is out, with no calculation at all.",
+     "This value often leaves two choices. Then use a tie-breaker, an ordinary number like k equals one, and check only the two that are left."
+    ],
+    [
+     "Last, questions about what is always true, or not always true. To show that something is not always true, one example where it fails is enough.",
+     "For example, is a squared plus b squared always equal to the bracket a plus b, squared? Let a equal one and b equal two, two small, different numbers. One plus four is five, and three squared is nine. Five is not nine, so it's not always true. One counterexample, and we're done.",
+     "But always is different. A few examples that work don't prove always, because the next number might fail. In a question with choices, we don't prove it. We rule out the other three choices, and the one that's left is the answer."
+    ],
+    [
+     "So, when do I plug in numbers? When there's an expression with a letter and the choices are numbers. When there are letters in the choices. When the amount doesn't matter, like in a ratio. And when there are more letters than equations.",
+     "And how? Say which number and why, before you use it. Check that the choices come out different, so when the choices have letters, skip zero and one, because they often make choices tie.",
+     "Give different letters different numbers. Rule out three choices, and if two are left, use a tie-breaker number. And remember, it's your safety net.",
+     "It's the most important technique on the exam, so practice it a lot. Now let's see it in sample questions. Okay. I'll see you in the next video."
+    ]
+   ],
+   "disp": [
+    [
+     "Let's continue with two more cases, and one more rule."
+    ],
+    [
+     "A third case. Sometimes there are no letters at all, but an amount is unknown, and they ask for a ratio or a part.\nIn a ratio, the actual numbers don't matter. One to two, two to four and 10 to 20 are the same ratio.",
+     "So I may choose the amount myself. For example, half of a number plus a third of the same number.\nWhat part of the number is it?",
+     "Which number? Six, because both two and three go into it. Half of six is three, and a third of six is two.\nTogether five, out of six. So it's 5/6 of the number, whatever the number is."
+    ],
+    [
+     "The fourth case. An equation, but with more letters than equations, and they ask for one value. For example, 4x + 6y = 18.\nWhat is 6x + 9y?",
+     "An equation with two letters can have many allowed solutions. Sometimes the result they ask for changes between them. Then it cannot be determined.\nBut here, both terms they ask for are one and a half times the terms in the given equation.\nSo their sum is fixed too. Let's use one easy solution to calculate it.",
+     "I give one letter a value, and I solve the equation for the other.\nx = 0, because multiplying by zero makes the whole x term zero. Then 6y = 18, so y = 3.",
+     "Now what they ask. 6 × 0 = 0, and 9 × 3 = 27. So 6x + 9y = 27.",
+     "Here zero makes the calculation easy, and it's allowed. But I chose only x. The equation then made y equal to 3.\nI can't choose both letters freely: they still have to satisfy the equation.",
+     "And it's really true. 6x + 9y is 1½ × (4x + 6y), because each part is one and a half times as big.\nAnd one and a half times 18 is 27."
+    ],
+    [
+     "One more trick for choosing the number. In a story with letters, look for an allowed value where nothing changes.\nIf nobody joins or nothing is added, sometimes we know the result without a formula.\nBut that value must still be allowed by the question.",
+     "For example, n friends rent a boat for P shekels and share the cost. Then k more friends may join.\nIn this example k may be zero: nobody has to join. They share the cost again. By how much less does each one pay?",
+     "Plug in k = 0. Nobody joined, so nobody pays less, and the answer must be zero.\nSo every choice that doesn't give zero when k is 0 is out, with no calculation at all.",
+     "This value often leaves two choices.\nThen use a tie-breaker, an ordinary number like k = 1, and check only the two that are left."
+    ],
+    [
+     "Last, questions about what is always true, or not always true.\nTo show that something is not always true, one example where it fails is enough.",
+     "For example, is a² + b² always equal to (a + b)²? Let a equal one and b equal two, two small, different numbers.\n1 + 4 = 5, and 3² = 9. Five is not nine, so it's not always true. One counterexample, and we're done.",
+     "But always is different. A few examples that work don't prove always, because the next number might fail.\nIn a question with choices, we don't prove it. We rule out the other three choices, and the one that's left is the answer."
+    ],
+    [
+     "So, when do I plug in numbers? When there's an expression with a letter and the choices are numbers.\nWhen there are letters in the choices. When the amount doesn't matter, like in a ratio. And when there are more letters than equations.",
+     "And how? Say which number and why, before you use it.\nCheck that the choices come out different, so when the choices have letters, skip zero and one, because they often make choices tie.",
+     "Give different letters different numbers. Rule out three choices, and if two are left, use a tie-breaker number. And remember, it's your safety net.",
+     "It's the most important technique on the exam, so practice it a lot. Now let's see it in sample questions. Okay.\nI'll see you in the next video."
+    ]
+   ],
    "recorded_when_published": false,
    "scope_replacements": {
     "3.6": [
@@ -9431,12 +9849,24 @@
      [
       "The square root of x plus two, minus the square root of x squared minus eight x plus sixteen",
       "√(x + 2 − √(x² − 8x + 16))"
+     ],
+     [
+      "Inside the outer root is x plus two, minus the square root of x squared minus eight x plus sixteen",
+      "The expression is √(x + 2 − √(x² − 8x + 16))"
      ]
     ],
     "1.6": [
      [
       "the root of four plus two, minus zero",
       "√(4 + 2 − 0)"
+     ],
+     [
+      "four plus two minus zero, which is six",
+      "4 + 2 − 0 = 6"
+     ],
+     [
+      "the root of six",
+      "√6"
      ]
     ],
     "2.1": [
@@ -9455,6 +9885,18 @@
      [
       "the bracket x minus four",
       "(x − 4)"
+     ],
+     [
+      "Inside the outer root, we subtract x minus four from x plus two",
+      "Inside the outer root, we have x + 2 − (x − 4)"
+     ],
+     [
+      "We subtract both terms of x minus four",
+      "We subtract both terms of (x − 4)"
+     ],
+     [
+      "the root of six",
+      "√6"
      ]
     ]
    }
@@ -9492,6 +9934,30 @@
      [
       "two hundred seventy minus three alpha",
       "270 − 3α"
+     ],
+     [
+      "beta is a hundred eighty, minus angle D, minus angle B",
+      "β = 180° − ∠D − ∠B"
+     ],
+     [
+      "Angle D is four alpha minus a hundred eighty",
+      "Angle D is 4α − 180°"
+     ],
+     [
+      "minus four alpha plus a hundred eighty",
+      "−4α + 180°"
+     ],
+     [
+      "Angle B is ninety minus alpha",
+      "Angle B is 90° − α"
+     ],
+     [
+      "minus ninety plus alpha",
+      "−90° + α"
+     ],
+     [
+      "minus four alpha plus alpha gives minus three alpha",
+      "−4α + α = −3α"
      ]
     ],
     "2.2": [
@@ -9673,6 +10139,10 @@
      [
       "forty out of x plus forty, times a hundred",
       "40/(x + 40) × 100"
+     ],
+     [
+      "forty over x plus forty, times a hundred",
+      "40/(x + 40) × 100"
      ]
     ]
    }
@@ -9702,6 +10172,14 @@
      [
       "two times the bracket x plus five",
       "2(x + 5)"
+     ],
+     [
+      "x y plus five y as y times the sum x plus five",
+      "xy + 5y as y(x + 5)"
+     ],
+     [
+      "Two x plus ten is two times the sum x plus five",
+      "2x + 10 = 2(x + 5)"
      ]
     ]
    }
@@ -9738,8 +10216,62 @@
    }
   },
   "solve-pt-q16": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "A O B is a sector of a circle with center O and a radius of two centimeters. Based on this and the figure, what is the area of the shaded region, in square centimeters?",
+     "The shaded region is the sector, minus the right triangle inside it. So shaded equals sector minus triangle. We'll solve it two ways, by estimating the choices, and then with a partial calculation.",
+     "Let's start with an estimate, after one small calculation. We'll find the triangle's area first. Then we'll estimate the sector, and compare the choices.",
+     "The triangle has a right angle and an angle of forty-five degrees. So its third angle is forty-five too, and its legs are equal. The hypotenuse is the radius, two. By Pythagoras, the two equal legs squared add up to four. So each leg squared is two.",
+     "The legs are equal, so their product is also two. The triangle's area is that product divided by two. Two divided by two is one. Now the sector. Forty-five degrees is one eighth of a full circle. The whole circle has area four pi, so this sector is pi over two.",
+     "For this estimate, use these bounds for pi: more than three, and less than three point two. We need closer bounds here because the choices are close in size. Half of pi is therefore between one point five and one point six. Take away the triangle's area, one. The shaded area is between zero point five and zero point six.",
+     "Choice number one is four minus pi. Pi is less than three point two, so four minus pi is more than zero point eight. Our area is less than zero point six. So choice number one is too big, and it's out.",
+     "Choice number three is pi over root two. Root two is less than two, so dividing pi by root two gives more than dividing pi by two. That's more than one point five, much bigger than our area. So choice number three is out. Choice numbers two and four are left."
+    ],
+    [
+     "Two choices are left. Now let's estimate their size. Pi is a bit more than three, and less than four.",
+     "Look at choice number two. Inside the bracket, we have pi over two, minus two. Pi is less than four, so pi over two is less than four over two, which is two.",
+     "If we take two away from something less than two, we get a negative number. And half of a negative number is still negative. So choice number two is a negative number.",
+     "But an area can't be negative, so choice number two is out. The exam won't write minus five. It hides the minus behind the pi, and an estimate shows it at once.",
+     "Three choices are out, so choice number four is our answer."
+    ],
+    [
+     "Now a second way, the math way, for whoever wants to calculate. Even then, we don't have to calculate everything. Let's find only the sector.",
+     "What part of the circle is the sector? Think of a pizza. If we cut it into four slices, each slice has ninety degrees. If we cut it into eight, each slice has forty-five degrees.",
+     "Our angle is forty-five degrees, so the sector is one of eight equal slices. It's one eighth of the circle.",
+     "The area of the circle is pi r squared. The radius is two, and two squared is four, so the circle is four pi. One eighth of four pi is four pi over eight, which is pi over two.",
+     "The shaded area is pi over two, minus the triangle's area. We found that the triangle's area is one. So the result is pi over two minus one. Choice number four matches both pieces, not just the way the expression looks.",
+     "Choice number two has a half outside its whole bracket. It gives pi over four minus one, not pi over two minus one. So it's out. We compare the actual values of the pieces, not just whether a minus sign is written. Choice number four again.",
+     "This is a partial calculation: find a useful piece, then look at the choices. A piece can rule choices out, but the answer still has to fit the whole shaded area. I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "A O B is a sector of a circle with center O and a radius of two centimeters.\nBased on this and the figure, what is the area of the shaded region, in square centimeters?",
+     "The shaded region is the sector, minus the right triangle inside it. So shaded equals sector minus triangle.\nWe'll solve it two ways, by estimating the choices, and then with a partial calculation.",
+     "Let's start with an estimate, after one small calculation. We'll find the triangle's area first. Then we'll estimate the sector, and compare the choices.",
+     "The triangle has a right angle and an angle of 45 degrees. So its third angle is 45 too, and its legs are equal.\nThe hypotenuse is the radius, two. By Pythagoras, the two equal legs squared add up to four. So each leg squared is two.",
+     "The legs are equal, so their product is also two. The triangle's area is that product divided by 2. 2 ÷ 2 = 1.\nNow the sector. 45 degrees is 1/8 of a full circle. The whole circle has area four pi, so this sector is π/2.",
+     "For this estimate, use these bounds for pi: more than three, and less than 3.2.\nWe need closer bounds here because the choices are close in size. Half of pi is therefore between 1.5 and 1.6.\nTake away the triangle's area, one. The shaded area is between 0.5 and 0.6.",
+     "Choice number 1 is 4 − π. Pi is less than 3.2, so 4 − π is more than 0.8.\nOur area is less than 0.6. So choice number 1 is too big, and it's out.",
+     "Choice number 3 is π/√2. Root 2 < 2, so dividing pi by root two gives more than dividing pi by two.\nThat's more than 1.5, much bigger than our area. So choice number 3 is out. Choice numbers two and four are left."
+    ],
+    [
+     "Two choices are left. Now let's estimate their size. Pi is a bit more than three, and less than 4.",
+     "Look at choice number 2. Inside the bracket, we have π/2 − 2.\nPi is less than 4, so π/2 < 4/2, which is 2.",
+     "If we take two away from something less than 2, we get a negative number. And half of a negative number is still negative.\nSo choice number 2 is a negative number.",
+     "But an area can't be negative, so choice number 2 is out. The exam won't write −5.\nIt hides the minus behind the pi, and an estimate shows it at once.",
+     "Three choices are out, so choice number 4 is our answer."
+    ],
+    [
+     "Now a second way, the math way, for whoever wants to calculate. Even then, we don't have to calculate everything.\nLet's find only the sector.",
+     "What part of the circle is the sector? Think of a pizza. If we cut it into four slices, each slice has 90 degrees.\nIf we cut it into eight, each slice has 45 degrees.",
+     "Our angle is 45 degrees, so the sector is one of eight equal slices. It's 1/8 of the circle.",
+     "The area of the circle is pi r². The radius is two, and 2² = 4, so the circle is four pi.\n1/8 of four pi is four pi over eight, which is pi over two.",
+     "The shaded area is pi over two, minus the triangle's area. We found that the triangle's area is one.\nSo the result is π/2 − 1. Choice number 4 matches both pieces, not just the way the expression looks.",
+     "Choice number 2 has a half outside its whole bracket. It gives π/4 − 1, not π/2 − 1. So it's out.\nWe compare the actual values of the pieces, not just whether a minus sign is written. Choice number 4 again.",
+     "This is a partial calculation: find a useful piece, then look at the choices.\nA piece can rule choices out, but the answer still has to fit the whole shaded area. I'll see you in the next question."
+    ]
+   ],
    "recorded_when_published": false,
    "scope_replacements": {
     "2.2": [
@@ -9750,6 +10282,40 @@
      [
       "so pi over two is less than four over two, which is two",
       "so π/2 < 4/2, which is 2"
+     ]
+    ],
+    "1.5": [
+     [
+      "pi over two",
+      "π/2"
+     ]
+    ],
+    "1.7": [
+     [
+      "four minus pi",
+      "4 − π"
+     ]
+    ],
+    "1.8": [
+     [
+      "pi over root two",
+      "π/√2"
+     ]
+    ],
+    "3.5": [
+     [
+      "pi over two minus one",
+      "π/2 − 1"
+     ]
+    ],
+    "3.6": [
+     [
+      "pi over four minus one",
+      "π/4 − 1"
+     ],
+     [
+      "pi over two minus one",
+      "π/2 − 1"
      ]
     ]
    }
@@ -9850,14 +10416,80 @@
    }
   },
   "solve-pt-q18": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "In the figure, each vertex of rectangle A B C D is the center of a circle with a radius of two centimeters. Point O is the center of a circle that is tangent to the four quarter circles, and to sides A D and B C. What is the area of rectangle A B C D, in square centimeters?",
+     "The area of a rectangle is length times width. The short side, A B, is four, and it's written in the figure. So we need the long side, A D.",
+     "Along A D, the first part is a radius of the quarter circle at A, so it's two. The last part is a radius of the quarter circle at D, so it's also two.",
+     "We want to estimate that middle part. Let's draw helper lines to get bounds from the given lengths. We won't need to calculate the missing length exactly.",
+     "But wait. On the exam, a figure is not necessarily drawn to scale. So can I estimate from the figure?",
+     "No, we shouldn't measure the sketch. Let's use the lengths. The middle circle touches the top and bottom sides, four apart. Its diameter is four, so its radius is two. Draw a line from A to O, joining two touching circles' centers.",
+     "The corner circle has radius two, and the middle circle has radius two. The circles touch from the outside, so A O is two plus two, four. From O, draw a perpendicular to side A B. Call its foot H. O is two below the top side, so A H is two. Now A H O is a right triangle, with hypotenuse four and one leg two."
+    ],
+    [
+     "Call O H x. By Pythagoras, x squared plus two squared is four squared. Four squared is sixteen, and two squared is four. Subtract four, and x squared is twelve. We only need bounds for x, not its exact root.",
+     "Three squared is nine, below twelve. Four squared is sixteen, above twelve. So the positive length x is more than three and less than four.",
+     "The same construction on the right has the same hypotenuse, four, and the same vertical leg, two. So its horizontal length is also x. The whole rectangle is x plus x across. That's why A D is two x, not just x.",
+     "Each x is between three and four. Double both bounds, and A D is between six and eight. We got that from the right triangles, not from measuring the picture.",
+     "This also explains the middle part we started with. A D is between six and eight. Take away the two radius pieces, two at each end, four altogether. The middle part is therefore between two and four. Either way, the full side A D is between six and eight.",
+     "The area is four times A D. Four times six is twenty-four, and four times eight is thirty-two. So the area is between twenty-four and thirty-two, and it isn't equal to either one."
+    ],
+    [
+     "Now the choices. Choice number four, forty, is more than thirty-two. It's out.",
+     "Choice number three, thirty-two. The middle part is less than four, so the area is less than thirty-two. It's out too.",
+     "Choice number two, sixteen root two. The area has to be more than twenty-four. Sixteen times one and a half is sixteen plus eight, twenty-four. So to pass twenty-four, the root has to be more than one and a half.",
+     "But one and a half squared is two and a quarter, which is more than two. So root two is less than one and a half, and sixteen root two is less than twenty-four. It's out.",
+     "Three choices are out, so choice number one, sixteen root three, is our answer."
+    ],
+    [
+     "Now let's go back to x squared is twelve. If you spot a square factor inside twelve, you can finish even sooner. Twelve is four times three. So the root of twelve is the root of four times the root of three: two root three. That's x. The whole long side is two x, so it's four root three. The other side is four. Four times four root three gives sixteen root three, choice number one, without checking all the other choices. If you don't spot the root shortcut, our bounds still give a safe way to eliminate them. I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "In the figure, each vertex of rectangle A B C D is the center of a circle with a radius of two centimeters.\nPoint O is the center of a circle that is tangent to the four quarter circles, and to sides A D and B C.\nWhat is the area of rectangle A B C D, in square centimeters?",
+     "The area of a rectangle is length times width. The short side, A B, is four, and it's written in the figure.\nSo we need the long side, A D.",
+     "Along A D, the first part is a radius of the quarter circle at A, so it's two.\nThe last part is a radius of the quarter circle at D, so it's also two.",
+     "We want to estimate that middle part. Let's draw helper lines to get bounds from the given lengths.\nWe won't need to calculate the missing length exactly.",
+     "But wait. On the exam, a figure is not necessarily drawn to scale. So can I estimate from the figure?",
+     "No, we shouldn't measure the sketch. Let's use the lengths. The middle circle touches the top and bottom sides, four apart.\nIts diameter is four, so its radius is two. Draw a line from A to O, joining two touching circles' centers.",
+     "The corner circle has radius two, and the middle circle has radius two.\nThe circles touch from the outside, so AO = 2 + 2 = 4. From O, draw a perpendicular to side A B.\nCall its foot H. O is two below the top side, so AH = 2.\nNow A H O is a right triangle, with hypotenuse four and one leg two."
+    ],
+    [
+     "Call O H x. By Pythagoras, x² + 2² = 4². 4² = 16, and 2² = 4. Subtract four, and x² = 12.\nWe only need bounds for x, not its exact root.",
+     "3² = 9, below 12. 4² = 16, above 12. So the positive length x is more than three and less than 4.",
+     "The same construction on the right has the same hypotenuse, four, and the same vertical leg, two. So its horizontal length is also x.\nThe whole rectangle is x + x across. That's why A D = 2x, not just x.",
+     "Each x is between three and four. Double both bounds, and A D is between six and eight.\nWe got that from the right triangles, not from measuring the picture.",
+     "This also explains the middle part we started with. A D is between six and eight.\nTake away the two radius pieces, two at each end, four altogether. The middle part is therefore between two and four.\nEither way, the full side A D is between six and eight.",
+     "The area is 4 × A D. 4 × 6 = 24, and 4 × 8 = 32.\nSo the area is between 24 and 32, and it isn't equal to either one."
+    ],
+    [
+     "Now the choices. Choice number 4, 40, is more than 32. It's out.",
+     "Choice number 3, 32. The middle part is less than 4, so the area is less than 32. It's out too.",
+     "Choice number 2, 16 root two. The area has to be more than 24.\n16 × 1 and a half is 16 + 8, 24.\nSo to pass 24, the root has to be more than one and a half.",
+     "But one and a half squared is two and a quarter, which is more than two. So √2 < 1½, and 16√2 < 24.\nIt's out.",
+     "Three choices are out, so choice number 1, 16 root three, is our answer."
+    ],
+    [
+     "Now let's go back to x² = 12. If you spot a square factor inside 12, you can finish even sooner.\n12 = 4 × 3. So the root of 12 is the root of four times the root of three: two root three.\nThat's x. The whole long side is 2x, so it's four root three. The other side is four.\n4 × 4 root three gives 16 root three, choice number 1, without checking all the other choices.\nIf you don't spot the root shortcut, our bounds still give a safe way to eliminate them. I'll see you in the next question."
+    ]
+   ],
    "recorded_when_published": false,
    "scope_replacements": {
     "3.4": [
      [
       "So root two is less than one and a half, and sixteen root two is less than twenty-four",
       "So √2 < 1½, and 16√2 < 24"
+     ]
+    ],
+    "1.7": [
+     [
+      "A O is two plus two, four",
+      "AO = 2 + 2 = 4"
+     ],
+     [
+      "A H is two",
+      "AH = 2"
      ]
     ]
    }
@@ -10056,8 +10688,64 @@
    "disp": []
   },
   "solve-wp22-g039": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "Maya is nine years older than her cousin Tom. Five years ago, Maya was twice Tom's age. How old is Tom now?",
+     "They ask for Tom's age now. So let's make Tom now our x. We'll solve it three ways, the math way with a table, plugging in the answers, and an insight.",
+     "Let's start with the math way. Why Tom and not Maya? Because they ask about Tom, and Tom is the younger one. So Tom is x, Maya is x plus nine, and there are no minus signs.",
+     "Here's where a lot of students go wrong. They read five years ago, Maya was twice Tom's age, and they jump straight to the equation. Stop. Before the equation, add a row to the table for five years ago.",
+     "Five years ago, everyone was five years younger. Tom was x minus five. Maya was x plus nine, minus five, which is x plus four.",
+     "And look. The gap between them is still nine. Everyone gets older at the same speed, so the gap stays the same. Only the ratio between their ages changes."
+    ],
+    [
+     "Now the equation. Five years ago, Maya was twice Tom's age. So who gets the times two? Many students give it to Maya, because the sentence says Maya was twice. But that's backwards.",
+     "Think of four and eight. Eight is twice four. To make them equal, which one do we multiply by two? The four, the smaller one. Two times four is eight. So the times two goes to the little guy.",
+     "Five years ago, the little guy was Tom, x minus five. So two times x minus five is equal to x plus four.",
+     "Now we open the brackets. Two times x is two x. Two times five is ten. So two x minus ten is x plus four. We take x from both sides, and add ten to both sides. Four plus ten is fourteen, so x is fourteen.",
+     "x is Tom's age now, exactly what they asked. Choice number three is our answer."
+    ],
+    [
+     "Now let's plug in the answers. We start again from the givens. For each choice, we go back five years, double Tom, and check that the gap is nine, as the question says.",
+     "Choice number one, Tom is nine now. Five years ago he was four, and Maya was twice that, eight. But the gap between eight and four is four, not nine. Out.",
+     "Choice number two, twelve. Five years ago Tom was seven, and Maya was fourteen. The gap is seven. Out.",
+     "Choice number three, fourteen. Five years ago Tom was nine, and Maya was eighteen. The gap is nine. It fits. In the exam, you'd mark it and move on."
+    ],
+    [
+     "Now the insight. Let's look at their ages five years ago. The gap is always nine years. Maya was twice Tom's age. Think of Tom's age as one part. Maya's age is two equal parts, each the same size as Tom's whole age.",
+     "One of Maya's parts matches Tom's whole age. The extra part is how much older Maya is: nine years. So one part is nine years. Tom was nine, and Maya was two times nine, eighteen. We found those ages because the difference is one whole part.",
+     "Careful, nine is choice number one, but that's Tom five years ago. Now he's nine plus five, fourteen.",
+     "And this works for anything that grows by the same amount, like two plants that each grow the same number of centimeters. The gap stays, and only the ratio changes. Choice number three is our answer, and I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "Maya is nine years older than her cousin Tom. Five years ago, Maya was twice Tom's age. How old is Tom now?",
+     "They ask for Tom's age now. So let's make Tom now our x.\nWe'll solve it three ways, the math way with a table, plugging in the answers, and an insight.",
+     "Let's start with the math way. Why Tom and not Maya? Because they ask about Tom, and Tom is the younger one.\nSo Tom is x, Maya is x + 9, and there are no minus signs.",
+     "Here's where a lot of students go wrong.\nThey read five years ago, Maya was twice Tom's age, and they jump straight to the equation. Stop.\nBefore the equation, add a row to the table for five years ago.",
+     "Five years ago, everyone was five years younger. Tom was x − 5.\nMaya was (x + 9) − 5, which is x + 4.",
+     "And look. The gap between them is still nine. Everyone gets older at the same speed, so the gap stays the same.\nOnly the ratio between their ages changes."
+    ],
+    [
+     "Now the equation. Five years ago, Maya was twice Tom's age. So who gets the times two?\nMany students give it to Maya, because the sentence says Maya was twice. But that's backwards.",
+     "Think of four and eight. Eight is twice four. To make them equal, which one do we multiply by two?\nThe four, the smaller one. 2 × 4 = 8. So the times two goes to the little guy.",
+     "Five years ago, the little guy was Tom, x − 5. So 2(x − 5) = x + 4.",
+     "Now we open the brackets. 2 × x = 2x. 2 × 5 = 10. So 2x − 10 = x + 4.\nWe take x from both sides, and add 10 to both sides. 4 + 10 = 14, so x = 14.",
+     "x is Tom's age now, exactly what they asked. Choice number 3 is our answer."
+    ],
+    [
+     "Now let's plug in the answers. We start again from the givens.\nFor each choice, we go back five years, double Tom, and check that the gap is nine, as the question says.",
+     "Choice number 1, Tom is nine now. Five years ago he was four, and Maya was twice that, eight.\nBut the gap between eight and four is four, not nine. Out.",
+     "Choice number 2, 12. Five years ago Tom was seven, and Maya was 14. The gap is seven. Out.",
+     "Choice number 3, 14. Five years ago Tom was nine, and Maya was 18. The gap is nine. It fits.\nIn the exam, you'd mark it and move on."
+    ],
+    [
+     "Now the insight. Let's look at their ages five years ago. The gap is always nine years. Maya was twice Tom's age.\nThink of Tom's age as one part. Maya's age is two equal parts, each the same size as Tom's whole age.",
+     "One of Maya's parts matches Tom's whole age. The extra part is how much older Maya is: nine years.\nSo one part is nine years. Tom was nine, and Maya was 2 × 9, 18.\nWe found those ages because the difference is one whole part.",
+     "Careful, nine is choice number 1, but that's Tom five years ago. Now he's 9 + 5, 14.",
+     "And this works for anything that grows by the same amount, like two plants that each grow the same number of centimeters.\nThe gap stays, and only the ratio changes. Choice number 3 is our answer, and I'll see you in the next question."
+    ]
+   ],
    "scope_replacements": {
     "2.3": [
      [
@@ -10092,12 +10780,54 @@
    }
   },
   "solve-wp22-g047": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "A school has two buses. Bus A carries four times as many students as bus B. Six students move from bus A to bus B. Afterwards, bus B carries half as many students as bus A. How many students are on the two buses altogether?",
+     "Students move from one bus to the other, and the ratio changes. We'll solve it two ways, the math way with an equation, and then by understanding, with divisibility, which needs almost no calculation.",
+     "Let's start with the math way. Bus A carries four times as many as bus B. Remember, the plain x goes to the smaller one. B is the smaller bus, so B is x and A is four x. No fractions, and no dividing later.",
+     "Six students move from A to B. A loses six, so A has four x minus six. B gains six, so B has x plus six.",
+     "Afterwards, B carries half as many as A. So two times B's new number is equal to A's new number. B has x plus six, and A has four x minus six. So two times x plus six is equal to four x minus six.",
+     "Now we open the brackets. So two x plus twelve is equal to four x minus six. We take two x from both sides, and add six to both sides. Twelve plus six is eighteen, so eighteen is two x. Divide both sides by two, and x is nine."
+    ],
+    [
+     "Careful, don't mark nine. That's bus B at the start, and they ask about both buses together. Moving students doesn't change the total, so the total is x plus four x, five x. Five times nine is forty-five. Choice number two is our answer."
+    ],
+    [
+     "Now by understanding. We start again from the givens. At the start, A has four times B. So for every one student on B, there are four on A. One part and four parts, five parts in all. One part is B's number of students, a whole number. So the total is five times that whole number, and is divisible by five.",
+     "Forty-eight isn't divisible by five, so choice number three is out.",
+     "After the move, B has half of A. So B is one part and A is two parts: three parts in all. One part is again B's whole number of students. So the total is divisible by three. And it's the same total as before, because the students only moved between the buses.",
+     "Forty is thirty-nine plus one. And thirty-nine is three times thirteen. So forty isn't divisible by three. Fifty is forty-eight plus two. And forty-eight is three times sixteen. So fifty doesn't either. Choice numbers one and four are out.",
+     "Only forty-five is left, and it is divisible by both. Forty-five is five times nine. It's also three times fifteen. For whole numbers of students, use a fully reduced whole-number ratio. The total is divisible by the sum of its parts. Check that condition before and after the move. Choice number two is our answer, and I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "A school has two buses. Bus A carries four times as many students as bus B.\nSix students move from bus A to bus B. Afterwards, bus B carries half as many students as bus A.\nHow many students are on the two buses altogether?",
+     "Students move from one bus to the other, and the ratio changes.\nWe'll solve it two ways, the math way with an equation, and then by understanding, with divisibility, which needs almost no calculation.",
+     "Let's start with the math way. Bus A carries four times as many as bus B.\nRemember, the plain x goes to the smaller one. B is the smaller bus, so B = x and A = 4x.\nNo fractions, and no dividing later.",
+     "Six students move from A to B. A loses six, so A has 4x − 6.\nB gains six, so B has x + 6.",
+     "Afterwards, B carries half as many as A. So 2 × B's new number is equal to A's new number.\nB has x + 6, and A has 4x − 6. So 2(x + 6) = 4x − 6.",
+     "Now we open the brackets. So 2x + 12 = 4x − 6.\nWe take 2x from both sides, and add six to both sides. 12 + 6 = 18, so 18 = 2x.\nDivide both sides by two, and x = 9."
+    ],
+    [
+     "Careful, don't mark nine. That's bus B at the start, and they ask about both buses together.\nMoving students doesn't change the total, so the total is x + 4x, 5x. 5 × 9 = 45.\nChoice number 2 is our answer."
+    ],
+    [
+     "Now by understanding. We start again from the givens. At the start, A has 4 × B.\nSo for every one student on B, there are four on A. One part and four parts, five parts in all.\nOne part is B's number of students, a whole number. So the total is five times that whole number, and is divisible by 5.",
+     "48 isn't divisible by 5, so choice number 3 is out.",
+     "After the move, B has half of A. So B is one part and A is two parts: three parts in all.\nOne part is again B's whole number of students. So the total is divisible by 3.\nAnd it's the same total as before, because the students only moved between the buses.",
+     "40 = 39 + 1. And 39 is 3 × 13. So 40 isn't divisible by 3. 50 = 48 + 2.\nAnd 48 is 3 × 16. So 50 doesn't either. Choice numbers one and four are out.",
+     "Only 45 is left, and it is divisible by both. 45 = 5 × 9. It's also 3 × 15.\nFor whole numbers of students, use a fully reduced whole-number ratio. The total is divisible by the sum of its parts.\nCheck that condition before and after the move. Choice number 2 is our answer, and I'll see you in the next question."
+    ]
+   ],
    "scope_replacements": {
     "1.5": [
      [
       "Two times x plus six is equal to four x minus six",
+      "2(x + 6) = 4x − 6"
+     ],
+     [
+      "two times x plus six is equal to four x minus six",
       "2(x + 6) = 4x − 6"
      ]
     ]
@@ -10180,13 +10910,99 @@
    }
   },
   "solve-wp22-g042": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "One credit buys four kiwis, one and a half pineapples, or five limes, with costs proportional to quantity. What is the cost of eight kiwis, two pineapples, and five limes? Fractional credits may be paid.",
+     "Three fruits, three different prices, and they ask for the cost of a mix. Proportional means the same rate, so equal ratios. We'll solve it two ways, the math way with equal ratios, and then with an estimate.",
+     "Let's start with the math way, with the easy fruits first. One credit buys four kiwis. We need eight kiwis, twice as many, so two credits.",
+     "One credit buys five limes, and we need exactly five limes. So that's one credit.",
+     "Now the awkward one, the pineapples. One credit buys one and a half pineapples, and we need two. Let's put it in a ratio table, one column for credits and one for pineapples. One credit, one and a half pineapples. And a question mark for two pineapples.",
+     "We need two pineapples, and every one and a half pineapples costs one credit. So we divide two by one and a half to find the cost. In our ratio table, the triangle value gives two times one, divided by one and a half.",
+     "Let's remove the half from the denominator to make division easier. We could multiply the top and the bottom by ten, but that only makes bigger numbers. Times two is enough. Two times two is four. One and a half times two is three. So four thirds of a credit."
+    ],
+    [
+     "Now we add it all up. Two credits for the kiwis and one for the limes, that's three. Three is nine thirds, and nine thirds plus four thirds is thirteen thirds. Choice number one is our answer."
+    ],
+    [
+     "Now let's estimate, and save the fraction work. We start again from the givens. The kiwis and the limes are easy, two credits and one credit, three credits together.",
+     "Now the pineapples. One credit buys one and a half, and we need two. That's more than one and a half, so the pineapples cost more than one credit. So the total is more than three plus one, more than four. Choice number three, three credits, is out.",
+     "Now the upper limit. Two credits buy two times one and a half, three pineapples. We need only two. So the pineapples cost less than two credits, and the total is less than three plus two, less than five.",
+     "So the total is between four and five. Five and six, choice numbers two and four, are out. Thirteen thirds is four and a third, between four and five. Choice number one is our answer, and I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "One credit buys four kiwis, one and a half pineapples, or five limes, with costs proportional to quantity.\nWhat is the cost of eight kiwis, two pineapples, and five limes? Fractional credits may be paid.",
+     "Three fruits, three different prices, and they ask for the cost of a mix. Proportional means the same rate, so equal ratios.\nWe'll solve it two ways, the math way with equal ratios, and then with an estimate.",
+     "Let's start with the math way, with the easy fruits first. One credit buys four kiwis.\nWe need eight kiwis, twice as many, so two credits.",
+     "One credit buys five limes, and we need exactly five limes. So that's one credit.",
+     "Now the awkward one, the pineapples. One credit buys one and a half pineapples, and we need two.\nLet's put it in a ratio table, one column for credits and one for pineapples. One credit, one and a half pineapples.\nAnd a question mark for two pineapples.",
+     "We need two pineapples, and every one and a half pineapples costs one credit.\nSo we divide two by one and a half to find the cost.\nIn our ratio table, the triangle value gives 2 × 1 ÷ 1 and a half.",
+     "Let's remove the half from the denominator to make division easier.\nWe could multiply the top and the bottom by 10, but that only makes bigger numbers. Times two is enough.\n2 × 2 = 4. One and a half times two is three. So 4/3 of a credit."
+    ],
+    [
+     "Now we add it all up. Two credits for the kiwis and one for the limes, that's three.\nThree is 9/3, and 9/3 + 4/3 = 13/3. Choice number 1 is our answer."
+    ],
+    [
+     "Now let's estimate, and save the fraction work. We start again from the givens.\nThe kiwis and the limes are easy, two credits and one credit, three credits together.",
+     "Now the pineapples. One credit buys one and a half, and we need two.\nThat's more than one and a half, so the pineapples cost more than one credit.\nSo the total is more than 3 + 1, more than four. Choice number 3, three credits, is out.",
+     "Now the upper limit. Two credits buy 2 × 1 and a half, three pineapples. We need only two.\nSo the pineapples cost less than 2 credits, and the total is less than 3 + 2, less than 5.",
+     "So the total is between four and five. Five and six, choice numbers two and four, are out.\n13/3 = 4 and a third, between four and five. Choice number 1 is our answer, and I'll see you in the next question."
+    ]
+   ],
    "scope_replacements": {}
   },
   "solve-wp22-g040": {
-   "paras": [],
-   "disp": [],
+   "paras": [
+    [
+     "Dana has a hundred five credits. That is enough for six identical movie tickets, but not enough for seven. Which could be the price of one ticket?",
+     "They ask what the price could be. So we're not looking for one exact price, but for a range of prices that fit. We'll solve it two ways, the math way with two inequalities, and then by plugging in the answers.",
+     "Let's start with the math way. We call the price of one ticket p. Enough for six tickets means six tickets cost a hundred five or less. Exactly a hundred five still counts as enough. So six p is at most a hundred five.",
+     "This symbol means smaller than or equal to. It's like an equation, but instead of equals, we have at most. And like in an equation, we may divide both sides by six. Dividing by a positive number keeps the symbol the same way.",
+     "A hundred five divided by six. Six times seventeen is a hundred two, and three are left. Three sixths is a half. So p is at most seventeen and a half.",
+     "So a ticket costs seventeen and a half or less. Eighteen and twenty cost more, so choice numbers three and four are out."
+    ],
+    [
+     "Now the second part. Not enough for seven tickets means seven tickets cost more than a hundred five. So seven p is bigger than a hundred five.",
+     "We divide both sides by seven. A hundred five divided by seven is fifteen. That's because seven times fifteen is a hundred five. So p is bigger than fifteen.",
+     "Bigger than fifteen, not equal to it. So fifteen itself is out, choice number one.",
+     "So the price is more than fifteen, and at most seventeen and a half. Only seventeen is in that range. Choice number two is our answer."
+    ],
+    [
+     "Now let's plug in the answers. We start again from the givens. Each price must pass two tests. Six tickets cost a hundred five or less, and seven tickets cost more than a hundred five.",
+     "Choice number one, fifteen. Six tickets cost ninety, which is enough. But seven tickets cost a hundred five, exactly what she has. So she can buy seven, and the question says she can't. Out.",
+     "Choice number two, seventeen. Six tickets cost a hundred two, which is enough. Seven tickets cost seven times seventeen. Seven times ten is seventy, and seven times seven is forty-nine. Seventy plus forty-nine is a hundred nineteen. That's more than a hundred five, so it's not enough. Both tests pass."
+    ],
+    [
+     "Now let's go back to our first inequality. The price is at most seventeen and a half. That already rules out eighteen and twenty. Only fifteen and seventeen remain. Can we avoid solving the second inequality? Yes, but we still have to check its given: she cannot buy seven tickets. If the price were fifteen, seven tickets would cost seven times fifteen, a hundred five. That's exactly her money, so she could buy seven. Fifteen is out. Only seventeen remains, so choice number two is our answer. We saved the second inequality, not the second condition. Don't just choose the answer nearest the upper limit; cross out the other remaining answer for a reason.",
+     "A question that builds an equation or an inequality can almost always be solved by plugging in the answers too. Choice number two is our answer, and I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "Dana has 105 credits. That is enough for six identical movie tickets, but not enough for seven.\nWhich could be the price of one ticket?",
+     "They ask what the price could be. So we're not looking for one exact price, but for a range of prices that fit.\nWe'll solve it two ways, the math way with two inequalities, and then by plugging in the answers.",
+     "Let's start with the math way. We call the price of one ticket p.\nEnough for six tickets means six tickets cost 105 or less. Exactly 105 still counts as enough. So 6p is at most 105.",
+     "This symbol means smaller than or equal to. It's like an equation, but instead of equals, we have at most.\nAnd like in an equation, we may divide both sides by six. Dividing by a positive number keeps the symbol the same way.",
+     "105 ÷ 6. 6 × 17 = 102, and three are left. 3/6 is a half. So p is at most 17½.",
+     "So a ticket costs 17½ or less. 18 and 20 cost more, so choice numbers three and four are out."
+    ],
+    [
+     "Now the second part. Not enough for seven tickets means seven tickets cost more than 105. So 7p > 105.",
+     "We divide both sides by seven. 105 ÷ 7 = 15. That's because 7 × 15 = 105. So p > 15.",
+     "Bigger than 15, not equal to it. So 15 itself is out, choice number 1.",
+     "So the price is more than 15, and at most 17½. Only 17 is in that range. Choice number 2 is our answer."
+    ],
+    [
+     "Now let's plug in the answers. We start again from the givens. Each price must pass two tests.\nSix tickets cost 105 or less, and seven tickets cost more than 105.",
+     "Choice number 1, 15. Six tickets cost 90, which is enough. But seven tickets cost 105, exactly what she has.\nSo she can buy seven, and the question says she can't. Out.",
+     "Choice number 2, 17. Six tickets cost 102, which is enough. Seven tickets cost 7 × 17.\n7 × 10 = 70, and 7 × 7 = 49. 70 + 49 = 119. That's more than 105, so it's not enough.\nBoth tests pass."
+    ],
+    [
+     "Now let's go back to our first inequality. The price is at most 17 and a half. That already rules out 18 and 20.\nOnly 15 and 17 remain. Can we avoid solving the second inequality?\nYes, but we still have to check its given: she cannot buy seven tickets.\nIf the price were 15, seven tickets would cost 7 × 15 = 105. That's exactly her money, so she could buy seven.\n15 is out. Only 17 remains, so choice number 2 is our answer. We saved the second inequality, not the second condition.\nDon't just choose the answer nearest the upper limit; cross out the other remaining answer for a reason.",
+     "A question that builds an equation or an inequality can almost always be solved by plugging in the answers too.\nChoice number 2 is our answer, and I'll see you in the next question."
+    ]
+   ],
    "scope_replacements": {
     "1.5": [
      [
@@ -10204,6 +11020,12 @@
      [
       "seventeen and a half",
       "17½"
+     ]
+    ],
+    "4.1": [
+     [
+      "seven times fifteen, a hundred five",
+      "7 × 15 = 105"
      ]
     ]
    }
@@ -10256,6 +11078,288 @@
      [
       "So subtract the whole of x plus twenty-six minus k from x plus k. That difference is six.",
       "So subtract the whole of x + 26 − k from x + k: (x + k) − (x + 26 − k) = 6."
+     ]
+    ]
+   }
+  },
+  "wp-039": {
+   "paras": [
+    [
+     "Now a technique that helps us build equations. We call it give it to the little guy. When one amount is twice another, it's easy to put the times two on the wrong side. Let's understand which amount we multiply, and why."
+    ],
+    [
+     "Suppose Maya is twice Tom's age. Their ages aren't equal. But two times Tom's age is equal to Maya's age. That's the equality we write: two times Tom equals Maya. We multiply Tom's age because doubling the smaller age gives the bigger age. If we doubled Maya's age instead, we'd make the bigger age even bigger. That's why the times two goes with Tom. We use this with words like twice, or three times, often with ages and money.",
+     "Let's see it in an age question. And after it, one more question about building, this time with an inequality. I'll see you in the next video."
+    ]
+   ],
+   "disp": [
+    [
+     "Now a technique that helps us build equations. We call it give it to the little guy.\nWhen one amount is twice another, it's easy to put the times two on the wrong side.\nLet's understand which amount we multiply, and why."
+    ],
+    [
+     "Suppose Maya is twice Tom's age. Their ages aren't equal. But two times Tom's age is equal to Maya's age.\nThat's the equality we write: 2 × Tom = Maya. We multiply Tom's age because doubling the smaller age gives the bigger age.\nIf we doubled Maya's age instead, we'd make the bigger age even bigger. That's why the times two goes with Tom.\nWe use this with words like twice, or three times, often with ages and money.",
+     "Let's see it in an age question. And after it, one more question about building, this time with an inequality.\nI'll see you in the next video."
+    ]
+   ],
+   "scope_replacements": {
+    "2.1": [
+     [
+      "two times Tom equals Maya",
+      "2 × Tom = Maya"
+     ]
+    ]
+   }
+  },
+  "solve-wp22-g049": {
+   "paras": [
+    [
+     "Nine large crates and six small crates weigh two hundred forty kilos altogether. All large crates weigh the same, and all small crates weigh the same. How much do twelve large and eight small crates weigh?",
+     "One equation, and two unknowns, the large crate and the small crate. Before we solve, let's understand one idea about questions like this. We'll solve it two ways, by understanding, and then the math way.",
+     "Let's solve it by understanding, with easy numbers first. Say one large crate and one small crate weigh ten kilos together. Can we know what each one weighs? No. It could be one and nine, or four and six, or five and five. Large and small describe the crate sizes, not their weights.",
+     "But what do two large crates and two small crates weigh? That we can know. We doubled every part, so the weight doubles too, twenty kilos.",
+     "And two large crates and one small crate? That we can't know, because only one part was doubled. The other part stayed the same.",
+     "So the rule is, when every part is multiplied by the same number, the total is multiplied by that number too. So in our question, we ask, did both counts grow by the same factor?"
+    ],
+    [
+     "From nine large crates to twelve. Twelve is nine plus three, and three is a third of nine. So the large crates grew by a third of themselves.",
+     "From six small crates to eight. Eight is six plus two, and two is a third of six. They also grew by a third.",
+     "Both counts grew by a third, so the weight grows by a third too. A third of two hundred forty is eighty, and two hundred forty plus eighty is three hundred twenty. Choice number two is our answer."
+    ],
+    [
+     "Now the math way. We start again from the given equation. Nine L plus six S is two hundred forty.",
+     "Nine, six and two hundred forty all are divisible by three. So we divide every term of the equation by three. Three L plus two S is eighty.",
+     "They ask for twelve large crates and eight small ones. Our equation has three L and two S. Four times each count gives the counts they ask for. So we multiply every term by four. Three L times four is twelve L. Two S times four is eight S. And eighty times four is three hundred twenty. That's exactly the crates they asked about.",
+     "We may do this, because we divided and multiplied every term, on both sides. Choice number two is our answer, and I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "Nine large crates and six small crates weigh 240 kilos altogether. All large crates weigh the same, and all small crates weigh the same.\nHow much do 12 large and eight small crates weigh?",
+     "One equation, and two unknowns, the large crate and the small crate. Before we solve, let's understand one idea about questions like this.\nWe'll solve it two ways, by understanding, and then the math way.",
+     "Let's solve it by understanding, with easy numbers first. Say one large crate and one small crate weigh 10 kilos together.\nCan we know what each one weighs? No. It could be one and nine, or four and six, or five and five.\nLarge and small describe the crate sizes, not their weights.",
+     "But what do two large crates and two small crates weigh? That we can know.\nWe doubled every part, so the weight doubles too, 20 kilos.",
+     "And two large crates and one small crate? That we can't know, because only one part was doubled. The other part stayed the same.",
+     "So the rule is, when every part is multiplied by the same number, the total is multiplied by that number too.\nSo in our question, we ask, did both counts grow by the same factor?"
+    ],
+    [
+     "From nine large crates to 12. 12 = 9 + 3, and three is a third of nine.\nSo the large crates grew by a third of themselves.",
+     "From six small crates to eight. Eight is 6 + 2, and two is a third of six. They also grew by a third.",
+     "Both counts grew by a third, so the weight grows by a third too.\nA third of 240 is 80, and 240 + 80 = 320. Choice number 2 is our answer."
+    ],
+    [
+     "Now the math way. We start again from the given equation. 9L + 6S = 240.",
+     "9, 6 and 240 all are divisible by 3. So we divide every term of the equation by three. 3L + 2S = 80.",
+     "They ask for 12 large crates and eight small ones. Our equation has 3L and 2S.\nFour times each count gives the counts they ask for. So we multiply every term by four. 3L × 4 = 12L.\n2S × 4 = 8S. And 80 × 4 = 320. That's exactly the crates they asked about.",
+     "We may do this, because we divided and multiplied every term, on both sides.\nChoice number 2 is our answer, and I'll see you in the next question."
+    ]
+   ],
+   "scope_replacements": {}
+  },
+  "solve-pt-q08": {
+   "paras": [
+    [
+     "Kobi bought a pair of pants at a fifty percent discount, and a shirt at a ten percent discount. He paid two hundred eighty shekels in total, instead of five hundred shekels. What was the price of the shirt before the discount?",
+     "If we solve it the math way, we need two unknowns and two equations, and few students really manage that. But we have answers. The choices are numbers, and the story gives conditions we can check. So we look for the choice that fits everything in the story when we plug it in.",
+     "We haven't learned percents yet, so here's all we need. Fifty percent off means half the price is taken off, so he pays half. Ten percent off means a tenth of the price is taken off.",
+     "And one more thing from the story. Before the discounts, the pants and the shirt cost five hundred together. So once we know the shirt, the pants are five hundred minus the shirt."
+    ],
+    [
+     "Which choice first? The round, convenient ones, fifty and a hundred fifty. Let's try fifty. If the shirt cost fifty, the pants cost five hundred minus fifty, four hundred fifty.",
+     "The pants are half price, so he paid half of four hundred fifty, two hundred twenty-five. On the shirt, a tenth of fifty is five, so he paid fifty minus five, forty-five.",
+     "Together, two hundred twenty-five plus forty-five is two hundred seventy. But he paid two hundred eighty, so choice number one is out."
+    ],
+    [
+     "Fifty didn't fit, so we cross it out and try another easy choice. Let's try a hundred fifty. Then the pants cost five hundred minus a hundred fifty, three hundred fifty, before the discount.",
+     "Half of three hundred fifty is a hundred seventy-five. A tenth of a hundred fifty is fifteen, so the shirt cost him a hundred fifty minus fifteen, a hundred thirty-five.",
+     "Together, a hundred seventy-five plus a hundred thirty-five is three hundred ten. That's not two hundred eighty either, so choice number four is out too."
+    ],
+    [
+     "Both convenient choices failed. That's fine: round numbers make checking easier, but they don't have to be right. We've ruled out two choices. Now we check one of the two that remain.",
+     "Two choices are left, seventy-five and a hundred forty. We try the rounder one, a hundred forty. Then the pants are five hundred minus a hundred forty, three hundred sixty.",
+     "Half of three hundred sixty is a hundred eighty. A tenth of a hundred forty is fourteen, so the shirt cost him a hundred forty minus fourteen, a hundred twenty-six. Together, a hundred eighty plus a hundred twenty-six is three hundred six. Not two hundred eighty, so choice number three is out.",
+     "Now only choice number two is left. Can I mark it without checking? Yes. Three choices are out, so the one that's left must be right. Choice number two is our answer, seventy-five."
+    ],
+    [
+     "Let's go back to the moment we had tried the two round answers. We could have saved a step there with an estimate.",
+     "A shirt of fifty gave two hundred seventy, and a shirt of a hundred fifty gave three hundred ten. We need two hundred eighty, which is between them. So the shirt is between fifty and a hundred fifty.",
+     "Why does closeness help here? The original total stays five hundred. If the shirt's original price goes up by ten, the pants' original price goes down by ten. The shirt's discount takes away a tenth of the extra ten, which is one. So we pay nine more for the shirt. The pants are half price, so we save only five there. Nine more minus five saved is four more paid. Each extra ten changes the paid total by the same four. Two hundred eighty is ten above two hundred seventy. It's thirty below three hundred ten. So the needed shirt price is closer to fifty than to a hundred fifty.",
+     "Of the two choices left, seventy-five is close to fifty, and a hundred forty is right next to a hundred fifty. So the answer is seventy-five.",
+     "If you saw that, great. If not, no problem. We plugged in one more answer and crossed it out. Okay. I'll see you in the next question."
+    ]
+   ],
+   "disp": [
+    [
+     "Kobi bought a pair of pants at a 50 percent discount, and a shirt at a 10 percent discount.\nHe paid 280 shekels in total, instead of 500 shekels. What was the price of the shirt before the discount?",
+     "If we solve it the math way, we need two unknowns and two equations, and few students really manage that. But we have answers.\nThe choices are numbers, and the story gives conditions we can check.\nSo we look for the choice that fits everything in the story when we plug it in.",
+     "We haven't learned percents yet, so here's all we need. 50 percent off means half the price is taken off, so he pays half.\n10 percent off means a tenth of the price is taken off.",
+     "And one more thing from the story. Before the discounts, the pants and the shirt cost 500 together.\nSo once we know the shirt, the pants are 500 minus the shirt."
+    ],
+    [
+     "Which choice first? The round, convenient ones, 50 and 150. Let's try 50.\nIf the shirt cost 50, the pants cost 500 − 50, 450.",
+     "The pants are half price, so he paid half of 450, 225.\nOn the shirt, a tenth of 50 is 5, so he paid 50 − 5, 45.",
+     "Together, 225 + 45 = 270. But he paid 280, so choice number 1 is out."
+    ],
+    [
+     "50 didn't fit, so we cross it out and try another easy choice. Let's try 150.\nThen the pants cost 500 − 150, 350, before the discount.",
+     "Half of 350 is 175. A tenth of 150 is 15, so the shirt cost him 150 − 15, 135.",
+     "Together, 175 + 135 = 310. That's not 280 either, so choice number 4 is out too."
+    ],
+    [
+     "Both convenient choices failed. That's fine: round numbers make checking easier, but they don't have to be right. We've ruled out two choices.\nNow we check one of the two that remain.",
+     "Two choices are left, 75 and 140. We try the rounder one, 140. Then the pants are 500 − 140, 360.",
+     "Half of 360 is 180. A tenth of 140 is 14, so the shirt cost him 140 − 14, 126.\nTogether, 180 + 126 = 306. Not 280, so choice number 3 is out.",
+     "Now only choice number 2 is left. Can I mark it without checking? Yes.\nThree choices are out, so the one that's left must be right. Choice number 2 is our answer, 75."
+    ],
+    [
+     "Let's go back to the moment we had tried the two round answers. We could have saved a step there with an estimate.",
+     "A shirt of 50 gave 270, and a shirt of 150 gave 310. We need 280, which is between them.\nSo the shirt is between 50 and 150.",
+     "Why does closeness help here? The original total stays 500.\nIf the shirt's original price goes up by 10, the pants' original price goes down by 10.\nThe shirt's discount takes away a tenth of the extra 10, which is one. So we pay nine more for the shirt.\nThe pants are half price, so we save only five there. Nine more −5 saved is four more paid.\nEach extra 10 changes the paid total by the same four. 280 is 10 above 270. It's 30 below 310.\nSo the needed shirt price is closer to 50 than to 150.",
+     "Of the two choices left, 75 is close to 50, and 140 is right next to 150. So the answer is 75.",
+     "If you saw that, great. If not, no problem. We plugged in one more answer and crossed it out. Okay.\nI'll see you in the next question."
+    ]
+   ],
+   "scope_replacements": {}
+  },
+  "wp-052-3": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "4.1": [
+     [
+      "Five plus x percent of sixty is equal to seventy minus x percent of forty.",
+      "(5 + x)% of 60 = (70 − x)% of 40."
+     ]
+    ],
+    "4.2": [
+     [
+      "Five plus x percent is five plus x, over a hundred, times sixty.",
+      "(5 + x)% is (5 + x)/100 × 60."
+     ],
+     [
+      "seventy minus x, over a hundred, times forty.",
+      "(70 − x)/100 × 40."
+     ]
+    ],
+    "4.3": [
+     [
+      "the sixty multiplies all of five plus x",
+      "the 60 multiplies all of (5 + x)"
+     ]
+    ],
+    "4.4": [
+     [
+      "three times five plus x, on the left, and two times seventy minus x, on the right",
+      "3(5 + x) on the left, and 2(70 − x) on the right"
+     ]
+    ]
+   }
+  },
+  "solve-q-r26-t23-01": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "4.2": [
+     [
+      "p plus q, plus p times q over a hundred",
+      "p + q + pq/100"
+     ]
+    ],
+    "4.3": [
+     [
+      "Twenty plus minus twenty is zero",
+      "20 + (−20) = 0"
+     ],
+     [
+      "Over a hundred, that's minus four.",
+      "Over 100, that's −4."
+     ]
+    ],
+    "4.5": [
+     [
+      "Over a hundred, that's minus three.",
+      "Over 100, that's −3."
+     ],
+     [
+      "so p times q is minus three hundred",
+      "so pq = −300"
+     ]
+    ],
+    "4.6": [
+     [
+      "The extra part, p times q over a hundred,",
+      "The extra part, pq/100,"
+     ]
+    ]
+   }
+  },
+  "solve-wp23-g061": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "1.1": [
+     [
+      "thirty-three and a third percent",
+      "33⅓%"
+     ]
+    ],
+    "1.7": [
+     [
+      "thirty-three and a third percent",
+      "33⅓%"
+     ],
+     [
+      "sixteen and two thirds percent",
+      "16⅔%"
+     ]
+    ],
+    "4.2": [
+     [
+      "thirty-three and a third percent",
+      "33⅓%"
+     ]
+    ],
+    "2.6": [
+     [
+      "one over n plus one",
+      "1/(n + 1)"
+     ]
+    ]
+   }
+  },
+  "solve-q-r26-t23-05": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "2.1": [
+     [
+      "g over four N",
+      "g/(4N)"
+     ]
+    ],
+    "3.3": [
+     [
+      "g over four N",
+      "g/(4N)"
+     ],
+     [
+      "g over four, divided by N",
+      "g/4, divided by N"
+     ]
+    ],
+    "3.4": [
+     [
+      "g over four N",
+      "g/(4N)"
+     ],
+     [
+      "a hundred g over four N",
+      "100g/(4N)"
+     ]
+    ],
+    "3.5": [
+     [
+      "g over four N",
+      "g/(4N)"
      ]
     ]
    }

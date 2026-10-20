@@ -1,0 +1,177 @@
+{
+ "videoId": "solve-wp24-g074",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "At a gallery opening with three hundred sixty guests, forty-five percent know the artist and seventy percent know the gallery owner. What is the minimum number of guests who know both?",
+    "voice": "calm",
+    "at": [
+     "At a gallery opening"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "They ask for the minimum, so this is a range question. We know the total and the two groups, but not neither. We'll solve it in three different ways. With the numbers, then in percent, and then with the two circles.",
+    "at": [
+     "They ask for the minimum",
+     "and the two",
+     "in three different",
+     "the numbers, then"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. First we turn the percents into numbers of guests. Ten percent of three hundred sixty is thirty-six. So forty percent is four times thirty-six, a hundred forty-four.",
+    "at": [
+     "Let's start",
+     "Ten percent of three hundred",
+     "sixty is thirty-six",
+     "So forty percent",
+     "times thirty-six, a"
+    ]
+   },
+   {
+    "say": "Five percent is half of thirty-six, eighteen. Together, a hundred forty-four plus eighteen, a hundred sixty-two guests know the artist.",
+    "at": [
+     "Five percent is half",
+     "thirty-six, eighteen. Together",
+     "a hundred forty-four plus eighteen",
+     "a hundred sixty-two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "For seventy percent, it's easier to use the rest, thirty percent. Thirty percent is three times thirty-six, a hundred eight. So seventy percent is three hundred sixty minus a hundred eight, two hundred fifty-two.",
+    "at": [
+     "easier to use",
+     "Thirty percent is three times",
+     "thirty-six, a hundred",
+     "three hundred sixty minus",
+     "hundred eight, two"
+    ]
+   },
+   {
+    "say": "Let's write the data in order. There are three hundred sixty guests. A hundred sixty-two know the artist, and two hundred fifty-two know the owner.",
+    "at": [
+     "Let's write the data in order",
+     "There are three"
+    ]
+   },
+   {
+    "say": "Remember, the biggest overlap is the smaller group, a hundred sixty-two. They don't ask for it, but we get it for free. And careful, a hundred sixty-two is choice number two. It's the most, not the least.",
+    "at": [
+     "the biggest overlap is the smaller group",
+     "smaller group, a",
+     "number two. It's",
+     "It's the most, not the least"
+    ]
+   },
+   {
+    "say": "The smallest overlap is the sum minus the total. A hundred sixty-two plus two hundred fifty-two is four hundred fourteen. Four hundred fourteen minus three hundred sixty is fifty-four.",
+    "at": [
+     "sum minus the",
+     "A hundred sixty-two plus",
+     "hundred fifty-two is",
+     "Four hundred fourteen minus",
+     "hundred sixty is"
+    ]
+   },
+   {
+    "say": "So at least fifty-four guests know both. Choice number one is our answer.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now an insight. Many students see the percents and start calculating numbers right away. But let's step back. We start again from the givens, in percent. In percent, the whole is a hundred percent.",
+    "at": [
+     "Now an",
+     "the givens, in"
+    ]
+   },
+   {
+    "say": "Forty-five percent plus seventy percent is a hundred fifteen percent. That's fifteen percent over the hundred percent.",
+    "at": [
+     "Forty-five percent plus seventy",
+     "is a hundred",
+     "That's fifteen percent over"
+    ]
+   },
+   {
+    "say": "So at least fifteen percent know both. Now just one calculation. Ten percent of three hundred sixty is thirty-six, and five percent is eighteen. Thirty-six plus eighteen is fifty-four.",
+    "at": [
+     "So at least",
+     "Thirty-six plus eighteen"
+    ]
+   },
+   {
+    "say": "One small calculation instead of four. So when the groups are given in percent, stay in percent until the end. Choice number one again.",
+    "at": [
+     "One small calculation",
+     "number one again"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's see it by understanding, with the two circles. We start again from the givens. Forty-five percent know the artist, and seventy percent know the owner.",
+    "at": [
+     "with the two circles",
+     "start again from",
+     "the givens. Forty-five"
+    ]
+   },
+   {
+    "say": "Forty-five plus seventy is a hundred fifteen. The guests are only a hundred percent. So the circles must overlap by at least fifteen percent.",
+    "at": [
+     "Forty-five plus seventy",
+     "So the circles must overlap",
+     "by at least"
+    ]
+   },
+   {
+    "say": "Then artist only is forty-five minus fifteen, thirty percent. Owner only is seventy minus fifteen, fifty-five percent.",
+    "at": [
+     "forty-five minus fifteen",
+     "thirty percent",
+     "seventy minus fifteen",
+     "fifty-five percent"
+    ]
+   },
+   {
+    "say": "Thirty plus fifteen plus fifty-five is a hundred percent. So neither is zero.",
+    "at": [
+     "Thirty plus fifteen plus",
+     "is a hundred",
+     "So neither is zero"
+    ]
+   },
+   {
+    "say": "Must the overlap be fifteen? No, fifteen is only the smallest. Say twenty percent know both. Then artist only is twenty-five, owner only is fifty, and five percent know neither.",
+    "at": [
+     "No, fifteen is",
+     "Say twenty percent know both",
+     "owner only is"
+    ]
+   },
+   {
+    "say": "And the biggest overlap is the whole artist group inside the owner group, forty-five percent. Then artist only is zero, owner only is twenty-five, and thirty percent know neither.",
+    "at": [
+     "the whole artist group",
+     "Then artist only"
+    ]
+   },
+   {
+    "say": "So the overlap can be anything from fifteen to forty-five percent. They ask for the least, fifteen percent, fifty-four guests. Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "anything from fifteen to forty-five",
+     "They ask for",
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

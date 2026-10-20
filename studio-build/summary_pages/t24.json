@@ -1,0 +1,515 @@
+{
+ "_about": "Topic 24 summary page (replaces the r26-t24-summary video). Content = the topic-24 scripts (math_patches/_ai_vis_t24.py), the Hebrew lessons (wp 4330-5171) and the memory cards mem-overlap and mem-r26-t24-more. Build: python3 summary_pages.py 24. Course numbers only (none from the Hebrew course).",
+ "topic": 24,
+ "replaces": "r26-t24-summary",
+ "intro": "Two groups make **four regions**: A only, both, B only, neither. Every member is in **exactly one** region. First decide: a **range** question (a fact is missing) or an **exact** one (every fact is given).",
+ "figures": {
+  "venn": {
+   "builder": "t24.VENN2",
+   "args": [
+    "music",
+    "sport",
+    [
+     [
+      "tot",
+      [
+       [
+        "tot",
+        "30 students"
+       ]
+      ]
+     ],
+     [
+      "both",
+      [
+       [
+        "tint",
+        "both"
+       ],
+       [
+        "val",
+        "both",
+        "5"
+       ],
+       [
+        "lab",
+        "both",
+        "both"
+       ]
+      ]
+     ],
+     [
+      "a",
+      [
+       [
+        "val",
+        "a",
+        "7"
+       ],
+       [
+        "lab",
+        "a",
+        "music\nonly"
+       ]
+      ]
+     ],
+     [
+      "b",
+      [
+       [
+        "val",
+        "b",
+        "10"
+       ],
+       [
+        "lab",
+        "b",
+        "sport\nonly"
+       ]
+      ]
+     ],
+     [
+      "out",
+      [
+       [
+        "tint",
+        "out"
+       ],
+       [
+        "val",
+        "out",
+        "8"
+       ],
+       [
+        "lab",
+        "out",
+        "neither"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "w": 560
+   },
+   "layers": [
+    "line",
+    "tot",
+    "out",
+    "both",
+    "a",
+    "b"
+   ]
+  },
+  "strip": {
+   "builder": "t24.STRIP",
+   "args": [
+    "drama",
+    "art",
+    [
+     [
+      "T",
+      [
+       [
+        "T",
+        "all four: 15"
+       ]
+      ]
+     ],
+     [
+      "A",
+      [
+       [
+        "A",
+        "art: 10"
+       ]
+      ]
+     ],
+     [
+      "B",
+      [
+       [
+        "B",
+        "drama: 9"
+       ]
+      ]
+     ],
+     [
+      "v",
+      [
+       [
+        "v",
+        0,
+        "2"
+       ],
+       [
+        "v",
+        1,
+        "3"
+       ],
+       [
+        "v",
+        2,
+        "6"
+       ],
+       [
+        "v",
+        3,
+        "4"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "w": 560
+   },
+   "layers": [
+    "line",
+    "T",
+    "A",
+    "B",
+    "v"
+   ]
+  },
+  "table": {
+   "builder": "t24.TBL",
+   "args": [
+    [
+     "Walk",
+     "Don't walk",
+     "Total"
+    ],
+    [
+     "Upper",
+     "Lower",
+     "Total"
+    ],
+    [
+     [
+      "v",
+      [
+       [
+        "c",
+        0,
+        0,
+        "12"
+       ],
+       [
+        "c",
+        1,
+        0,
+        "36"
+       ],
+       [
+        "c",
+        2,
+        0,
+        "48"
+       ],
+       [
+        "c",
+        0,
+        2,
+        "40"
+       ],
+       [
+        "c",
+        1,
+        2,
+        "60"
+       ],
+       [
+        "c",
+        2,
+        2,
+        "100"
+       ],
+       [
+        "c",
+        0,
+        1,
+        "28"
+       ],
+       [
+        "c",
+        1,
+        1,
+        "24"
+       ],
+       [
+        "c",
+        2,
+        1,
+        "52"
+       ]
+      ]
+     ],
+     [
+      "col",
+      [
+       [
+        "box",
+        0,
+        0
+       ],
+       [
+        "box",
+        1,
+        0
+       ],
+       [
+        "box",
+        2,
+        0
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "colw": 150,
+    "labw": 110,
+    "rowh": 62,
+    "headh": 48,
+    "size": 30
+   },
+   "layers": [
+    "line",
+    "v",
+    "col"
+   ]
+  }
+ },
+ "sections": [
+  {
+   "title": "Four regions",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "venn",
+     "caption": "A whole group = its only part + both: $\\;$ music $=7+5=12$."
+    },
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "$A+B-$ both $+$ neither $=$ total",
+       "$12+15-5+8=30$"
+      ],
+      [
+       "At least one $=A+B-$ both",
+       "$12+15-5=22$"
+      ],
+      [
+       "Exactly one $=A+B-2\\cdot$ both",
+       "$10+9-12=7$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Exact: the squares method",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "strip",
+     "caption": "Neither $\\cdot$ B only $\\cdot$ both $\\cdot$ A only. The two brackets **share** the middle box; all four $=$ the total."
+    },
+    {
+     "type": "ex",
+     "label": "Fill it like a sudoku",
+     "lines": [
+      "neither $2$ $+$ drama $9=11$, $\\;$ so art only $=15-11=4$",
+      "both $=10-4=6$, $\\;$ drama only $=9-6=3$"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Neither is zero** when the total counts only what is on the lists (\"$45$ different movies\"): start from that box."
+    }
+   ]
+  },
+  {
+   "title": "Range: the biggest and the smallest overlap",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Biggest overlap $=$ the **smaller** group",
+       "$10$ and $9$: $\\;9$"
+      ],
+      [
+       "Smallest overlap $=A+B-$ total",
+       "$10+9-15=4$"
+      ],
+      [
+       "Not over the total? $\\;$ Smallest $=0$, never negative",
+       "$5+12=17<20$: $\\;0$, not $-3$"
+      ],
+      [
+       "No total written? Find a natural one",
+       "$14$ h and $16$ h a day: $\\;14+16-24=6$"
+      ],
+      [
+       "Percents: the whole is $100\\%$",
+       "$45\\%+70\\%-100\\%=15\\%$"
+      ],
+      [
+       "Fractions: the whole is $1$",
+       "$\\frac14+\\frac34=1$: no overlap is forced"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Another region: which overlap?",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "They ask about",
+      "Use"
+     ],
+     "rows": [
+      [
+       "neither (range)",
+       "the two \"not\" groups: $28$ and $39$ of $52$: $\\;15$ to $28$"
+      ],
+      [
+       "\"at least ... A only\"",
+       "the **biggest** overlap: $\\;32-27=5$"
+      ],
+      [
+       "\"at most ... neither\"",
+       "the **biggest** overlap: $\\;50-32=18$"
+      ],
+      [
+       "\"must at least one be in both?\"",
+       "only if the two groups add up to **more** than the whole"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Ask: to make **this** region small or big, what must the overlap be?"
+    }
+   ]
+  },
+  {
+   "title": "Two-way tables",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "table",
+     "caption": "Plug in $100$. Rows add across, columns add down. \"Of the students who walk\": the walk column ($48$) is the whole: $\\frac{12}{48}=25\\%$."
+    },
+    {
+     "type": "p",
+     "text": "Percents of **different** groups: don't add them, don't average them. $\\;20\\%$ of $40$ women $+\\;30\\%$ of $60$ men $=26\\%$."
+    }
+   ]
+  },
+  {
+   "title": "Three groups",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "At least in all three: total $-$ the ones who miss a group, or $0$",
+       "$100-(20+25+30)=25$"
+      ],
+      [
+       "The same: $\\;A+B+C-2\\cdot$ total",
+       "$80+75+70-200=25$"
+      ],
+      [
+       "Most in all three $=$ the smallest group",
+       "$30, 35, 25$: $\\;25$"
+      ],
+      [
+       "Pairs given? $\\;$ Most $=$ the smallest pair",
+       "pairs $12, 9, 15$: $\\;9$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Before each question, ask",
+   "class": "check",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "Range or exact? Is a fact missing?",
+      "Which region do they ask about: both, neither, A only, exactly one?",
+      "To make that region small or big, what must the overlap be?",
+      "What is the whole: everyone, $1$, $100\\%$, a row or a column?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "class": "traps",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "\"$10$ music students\" is the **whole** circle, not music only.",
+      "Adding the groups without subtracting both ($57-52=5$).",
+      "The biggest overlap when they ask for the least ($162$ instead of $54$).",
+      "A negative minimum: it is really $0$.",
+      "Percents of different groups added or averaged."
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "12+15-5+8 == 30",
+  "12-5 == 7 and 15-5 == 10",
+  "10+9-2*6 == 7",
+  "15-(2+9) == 4 and 10-4 == 6 and 9-6 == 3",
+  "10+9-15 == 4",
+  "5+12 < 20",
+  "14+16-24 == 6",
+  "45+70-100 == 15",
+  "abs(1/4+3/4-1) < 1e-12",
+  "52-24 == 28 and 52-13 == 39 and 28+39-52 == 15",
+  "32-27 == 5",
+  "50-32 == 18",
+  "12+36 == 48 and abs(12/48-0.25) < 1e-12 and 40-12 == 28 and 60-36 == 24 and 28+24 == 52",
+  "0.2*40+0.3*60 == 26",
+  "100-(20+25+30) == 25 and 80+75+70-200 == 25",
+  "sorted([30,35,25])[0] == 25",
+  "sorted([12,9,15])[0] == 9",
+  "31+26-17 == 40 and 52-40 == 12",
+  "0.15*360 == 54"
+ ]
+}

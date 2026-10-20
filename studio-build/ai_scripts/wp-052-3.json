@@ -1,0 +1,191 @@
+{
+ "videoId": "wp-052-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with percentages. Now let's calculate a percent of a number."
+  ],
+  [
+   {
+    "say": "There are three ways to calculate percents. The first is the percent equation. We translate the words into math, just like in word problems.",
+    "at": [
+     "to calculate percents"
+    ]
+   },
+   {
+    "say": "Remember from word problems, of means times. And percent means over a hundred.",
+    "at": [
+     "of means times"
+    ]
+   },
+   {
+    "say": "Let's see it on an example. What is forty-five percent of eighty?",
+    "at": [
+     "Let's see it",
+     "What is forty-five percent"
+    ]
+   },
+   {
+    "say": "Forty-five percent is forty-five over a hundred. Of means times, so it's times eighty.",
+    "at": [
+     "Forty-five percent is",
+     "so it's times eighty"
+    ]
+   },
+   {
+    "say": "Before we multiply, let's make the numbers smaller. Eighty and a hundred both divide by twenty. Eighty divided by twenty is four. A hundred divided by twenty is five. So we have forty-five times four, over five.",
+    "at": [
+     "make the numbers",
+     "Eighty divided by twenty",
+     "A hundred divided",
+     "So we have forty-five times four",
+     "four, over five"
+    ]
+   },
+   {
+    "say": "Forty-five divided by five is nine. And nine times four is thirty-six. So forty-five percent of eighty is thirty-six.",
+    "at": [
+     "Forty-five divided by five",
+     "and nine times four",
+     "So forty-five percent"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The same translation works when the percent is the unknown. x percent of seventy-five is twenty-one. What is x?",
+    "at": [
+     "when the percent",
+     "x percent of seventy-five",
+     "twenty-one. What is"
+    ]
+   },
+   {
+    "say": "x percent is x over a hundred. Of means times, so it's times seventy-five. And is means equals, so it's equal to twenty-one.",
+    "at": [
+     "so it's equal to twenty-one"
+    ]
+   },
+   {
+    "say": "Now seventy-five over a hundred is three quarters, from our table. So three quarters of x is twenty-one.",
+    "at": [
+     "Now seventy-five over a hundred",
+     "is three quarters",
+     "So three quarters of x"
+    ]
+   },
+   {
+    "say": "Three quarters are twenty-one, so one quarter is twenty-one divided by three, seven. The whole x is four quarters, four times seven, twenty-eight.",
+    "at": [
+     "so one quarter is",
+     "divided by three",
+     "four times seven"
+    ]
+   },
+   {
+    "say": "Let's check. Twenty-eight percent of seventy-five is three quarters of twenty-eight. A quarter of twenty-eight is seven, and three quarters is twenty-one. It works.",
+    "at": [
+     "Twenty-eight percent of",
+     "three quarters is twenty-one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And here's the exam version. The letter sits inside the percent. Five plus x percent of sixty is equal to seventy minus x percent of forty.",
+    "at": [
+     "version. The letter",
+     "Five plus x percent of sixty",
+     "minus x percent"
+    ]
+   },
+   {
+    "say": "It looks scary, but it's the same translation. Five plus x percent is five plus x, over a hundred, times sixty. And on the other side, seventy minus x, over a hundred, times forty.",
+    "at": [
+     "And on the other side",
+     "hundred, times forty"
+    ]
+   },
+   {
+    "say": "Both sides are over a hundred. So we multiply both sides by a hundred, and the hundreds are gone. We keep the brackets, because the sixty multiplies all of five plus x.",
+    "at": [
+     "and the hundreds are gone",
+     "We keep the"
+    ]
+   },
+   {
+    "say": "Sixty and forty both divide by twenty, so we divide both sides by twenty. That gives three times five plus x, on the left, and two times seventy minus x, on the right.",
+    "at": [
+     "That gives three times",
+     "plus x, on"
+    ]
+   },
+   {
+    "say": "Now we open the brackets. Fifteen plus three x is equal to a hundred forty minus two x.",
+    "at": [
+     "Fifteen plus three x",
+     "equal to a"
+    ]
+   },
+   {
+    "say": "We add two x to both sides, and take fifteen away from both sides. Five x is equal to a hundred twenty-five. We divide both sides by five, and x is twenty-five.",
+    "at": [
+     "Five x is equal",
+     "a hundred twenty-five",
+     "and x is twenty-five"
+    ]
+   },
+   {
+    "say": "So the hard part is building the equation. After that, it's algebra we already know.",
+    "at": [
+     "So the hard"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The second way is equal ratios, the ratio table from the ratios lesson. It's often quicker for simple calculations.",
+    "at": [
+     "equal ratios, the"
+    ]
+   },
+   {
+    "say": "Let's find forty-five percent of eighty again. One column for the percents, one column for the amounts.",
+    "at": [
+     "One column for the percents",
+     "one column for the amounts"
+    ]
+   },
+   {
+    "say": "In the first row, what we know. The whole is a hundred percent, and the whole here is eighty.",
+    "at": [
+     "In the first row",
+     "The whole is"
+    ]
+   },
+   {
+    "say": "In the second row, forty-five percent, and a question mark for the amount.",
+    "at": [
+     "In the second row",
+     "percent, and a"
+    ]
+   },
+   {
+    "say": "Across and down, there's no easy whole number. So we use the triangle value. We multiply along the diagonal, forty-five times eighty. And we divide by what's left, a hundred.",
+    "at": [
+     "We multiply along the diagonal",
+     "forty-five times eighty",
+     "And we divide by what",
+     "left, a hundred"
+    ]
+   },
+   {
+    "say": "That's the same calculation as before, so it's thirty-six again. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "so it's thirty-six again",
+     "thirty-six again"
+    ]
+   }
+  ]
+ ]
+}

@@ -62,11 +62,8 @@ METHODS = [
     ('r26-t18-summary', 'The four steps', 'Digit ratio (10A + B equations)', 'lines'),   # 2026-10-12 topic-18 redo: slide renamed
     ('solve-q-520', 'Method 1 · The math way: place values', 'Digit ratio (10A + B equations)', 'lines'),   # 2026-10-12 topic-18 redo; 2026-10-15 method vocabulary: slide renamed
     # 23 · flip rule, arrow map
-    ('wp-052', 'Same part: flip', 'Flip rule', 'new'),
-    ('wp-052', 'Same whole: keep', 'Flip rule', 'new'),
-    ('solve-q-r26-t23-16', '*', 'Flip rule', 'new'),
-    ('wp-053', 'The arrow map', 'Arrow map', 'new'),
-    ('wp-053', 'Walk the path', 'Arrow map', 'new'),
+    ('solve-q-r26-t23-16', '*', 'Flip rule', 'new'),   # 2026-10-20 topic-23 reading scripts: flip / keep taught here, not in wp-052
+    ('solve-wp23-g061', 'Method 3 · The math way: the arrow map', 'Arrow map', 'new'),   # 2026-10-20: the arrow map moved here from wp-053
     # 25 · percent shares as weights
     ('solve-wp25-g089', 'Shares as weights', 'Percent shares as weights', 'new'),
     # 26 · compare by factors, catching up

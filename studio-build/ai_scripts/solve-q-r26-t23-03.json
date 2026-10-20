@@ -1,0 +1,145 @@
+{
+ "videoId": "solve-q-r26-t23-03",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The price of a desk is a hundred fifty percent of the price of a chair. The price of a table is a hundred fifty percent more than the price of the chair. By what percent is the price of the table higher than the price of the desk?",
+    "voice": "calm",
+    "at": [
+     "The price of a desk"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Read it carefully. The desk is a hundred fifty percent of the chair. The table is a hundred fifty percent more than the chair. Of, or more than? That's the whole question.",
+    "at": [
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways, by plugging in numbers, and then with the arrow map.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "Let's start by plugging in numbers. No prices are given, so we plug in a hundred. Into whom? Both sentences compare with the chair. The chair comes after of, and after than. So the chair is the whole, a hundred.",
+    "at": [
+     "So the chair is the whole",
+     "whole, a hundred"
+    ]
+   },
+   {
+    "say": "The desk is a hundred fifty percent of the chair. A hundred fifty percent of a hundred is a hundred fifty.",
+    "at": [
+     "A hundred fifty percent of a hundred",
+     "a hundred is"
+    ]
+   },
+   {
+    "say": "The table is a hundred fifty percent more than the chair. More than means we keep the chair's price, and add a hundred fifty percent. A hundred plus a hundred fifty is two hundred fifty.",
+    "at": [
+     "A hundred plus a hundred fifty",
+     "fifty is two"
+    ]
+   },
+   {
+    "say": "So here's the rule. p percent more than a number is a hundred plus p percent of it. Twenty percent more is a hundred twenty percent of it. A hundred fifty percent more is two hundred fifty percent of it.",
+    "at": [
+     "So here's the rule",
+     "number is a",
+     "Twenty percent more is",
+     "hundred twenty percent",
+     "A hundred fifty percent more is",
+     "is two hundred"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the question. By what percent is the table higher than the desk? Than the desk, so now the desk is the original, the whole.",
+    "at": [
+     "Now the",
+     "the question. By",
+     "By what percent is the table"
+    ]
+   },
+   {
+    "say": "The change from the desk to the table is two hundred fifty minus a hundred fifty, a hundred.",
+    "at": [
+     "The change from the desk",
+     "to the table"
+    ]
+   },
+   {
+    "say": "We divide the change by the original. A hundred over a hundred fifty is two thirds. And two thirds is sixty-six and two thirds percent. Choice number two is our answer.",
+    "at": [
+     "A hundred over a hundred fifty",
+     "fifty is two",
+     "Choice number two is our answer"
+    ]
+   },
+   {
+    "say": "Choice number three, a hundred percent, is a trap. The difference is a hundred credits, but that's not a hundred percent. We divide it by the desk's price.",
+    "at": [
+     "is a trap",
+     "is a trap",
+     "credits, but that's"
+    ]
+   },
+   {
+    "say": "Choice number one divides by the table's price. A hundred over two hundred fifty is forty percent, the wrong whole. And choice number four, fifty percent, reads both sentences as of. It forgets the word more.",
+    "at": [
+     "number one divides",
+     "A hundred over two hundred fifty",
+     "the wrong",
+     "number four, fifty",
+     "both sentences as",
+     "It forgets the word more",
+     "It forgets the word more"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the arrow map, like in Lior's question. We start again from the givens. Both sentences start at the chair, the whole.",
+    "at": [
+     "like in Lior's",
+     "start again from",
+     "Both sentences start at the",
+     "chair, the whole"
+    ]
+   },
+   {
+    "say": "The desk is a hundred fifty percent of the chair. So the arrow from the chair to the desk is times one point five.",
+    "at": [
+     "So the arrow from the chair to the desk",
+     "chair to the"
+    ]
+   },
+   {
+    "say": "The table is a hundred fifty percent more, two hundred fifty percent. So the arrow from the chair to the table is times two point five.",
+    "at": [
+     "So the arrow from the chair to the table",
+     "chair to the"
+    ]
+   },
+   "We go from the desk to the table. First back to the chair, against the arrow, so we divide by one point five. Then on to the table, along the arrow, so we multiply by two point five.",
+   {
+    "say": "Two point five divided by one point five is twenty-five over fifteen, five thirds.",
+    "at": [
+     "twenty-five over fifteen"
+    ]
+   },
+   {
+    "say": "Five thirds is a hundred sixty-six and two thirds percent of the desk. So it's sixty-six and two thirds percent higher. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Five thirds is a hundred",
+     "of the desk",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

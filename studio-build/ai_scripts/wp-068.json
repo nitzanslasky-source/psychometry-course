@@ -1,0 +1,332 @@
+{
+ "videoId": "wp-068",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now the first kind of overlap question, the range. Here a fact is missing, so we can't find the exact overlap."
+  ],
+  [
+   {
+    "say": "Remember the pizza? We couldn't say exactly how many slices have both. We could only say the least, one, and the most, three.",
+    "at": [
+     "couldn't say exactly"
+    ]
+   },
+   {
+    "say": "So in a range question we look for two numbers. The biggest overlap that is possible. And the smallest overlap that must be, because there's no other choice.",
+    "at": [
+     "The biggest overlap that is possible",
+     "And the smallest overlap",
+     "must be, because"
+    ]
+   },
+   {
+    "say": "Let's see an example. There are fifteen students. Ten take art, and nine take drama. How many could take both?",
+    "at": [
+     "There are fifteen students",
+     "Ten take art"
+    ]
+   },
+   "We don't know how many take neither, and we don't know how many take both. That's the missing fact. So the answer is a range."
+  ],
+  [
+   {
+    "say": "Let's draw the fifteen students as fifteen boxes. The ten shaded boxes are the art students.",
+    "at": [
+     "Let's draw the fifteen students",
+     "as fifteen boxes",
+     "The ten shaded boxes"
+    ]
+   },
+   {
+    "say": "First the smallest overlap. We want as few students in both as we can. So we give drama to the students without art first.",
+    "at": [
+     "We want as"
+    ]
+   },
+   {
+    "say": "Five students don't take art, so five drama places go to them.",
+    "at": [
+     "so five drama places"
+    ]
+   },
+   {
+    "say": "Nine minus five is four. So four drama places are left, and every student without art already takes drama.",
+    "at": [
+     "Nine minus five is four",
+     "So four drama"
+    ]
+   },
+   {
+    "say": "So the last four have to go to art students. There's no other choice. So at least four students take both.",
+    "at": [
+     "So the last four",
+     "to go to",
+     "at least four students take both"
+    ]
+   },
+   {
+    "say": "Now the biggest overlap. This time we want as many students in both as we can. So we give all nine drama places to art students.",
+    "at": [
+     "Now the biggest overlap",
+     "This time we",
+     "So we give all nine",
+     "drama places to"
+    ]
+   },
+   {
+    "say": "Can it be more than nine? No, because only nine students take drama. So the overlap is somewhere from four to nine.",
+    "at": [
+     "Can it be more than nine",
+     "No, because only",
+     "somewhere from four to nine"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's find these two numbers without drawing. The biggest overlap is the size of the smaller group.",
+    "at": [
+     "two numbers without",
+     "The biggest overlap is the size",
+     "size of the"
+    ]
+   },
+   "Why? We put the whole small group inside the big group. So every drama student also takes art. And it can't be more, because the small group has no more members.",
+   {
+    "say": "Ten and nine, so the biggest overlap is nine. There's nothing to calculate.",
+    "at": [
+     "Ten and nine",
+     "nothing to calculate"
+    ]
+   },
+   {
+    "say": "Let's see it with other numbers. There are twenty students. Eight have a dog, and twelve have a cat. The biggest overlap is eight, the smaller group. All eight dog owners can also have a cat.",
+    "at": [
+     "Eight have a dog",
+     "The biggest overlap"
+    ]
+   },
+   {
+    "say": "And if the groups are equal? Say six and six. Then the biggest overlap is six. The two groups can be the very same six people.",
+    "at": [
+     "Say six and six",
+     "The two groups"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The smallest overlap is the sum of the two groups, minus the total. In other words, how far do the two groups go over the total?",
+    "at": [
+     "The smallest overlap is the sum",
+     "sum of the"
+    ]
+   },
+   {
+    "say": "Ten plus nine is nineteen. But there are only fifteen students. Nineteen minus fifteen is four.",
+    "at": [
+     "Ten plus nine is nineteen",
+     "But there are",
+     "Nineteen minus fifteen"
+    ]
+   },
+   {
+    "say": "Why does this work? Think of nineteen places in art and drama, for only fifteen students. Even if every student gets one place, four places are left over.",
+    "at": [
+     "Think of nineteen places",
+     "art and drama"
+    ]
+   },
+   "Those four places have to go to students who already have one. So four students must take both. It's the same four we found with the boxes.",
+   {
+    "say": "One more example. There are thirty players. Eighteen wear a cap, and twenty-one wear gloves. Eighteen plus twenty-one is thirty-nine. Thirty-nine minus thirty is nine. So at least nine wear both.",
+    "at": [
+     "There are thirty players",
+     "Eighteen wear a",
+     "Eighteen plus twenty-one",
+     "Thirty-nine minus thirty",
+     "So at least"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now what if the two groups don't go over the total? Let's go back to the twenty students. Eight have a dog, and twelve have a cat.",
+    "at": [
+     "two groups don't"
+    ]
+   },
+   {
+    "say": "Eight plus twelve is twenty, exactly the total. So we can give the dogs and the cats to different students. Nobody has to have both.",
+    "at": [
+     "Eight plus twelve is twenty",
+     "exactly the total"
+    ]
+   },
+   {
+    "say": "So the smallest overlap is zero.",
+    "at": [
+     "So the smallest overlap is zero"
+    ]
+   },
+   {
+    "say": "And if the sum is even smaller? Say only five have a dog. Five plus twelve is seventeen, less than twenty.",
+    "at": [
+     "And if the",
+     "Five plus twelve is seventeen",
+     "less than twenty"
+    ]
+   },
+   {
+    "say": "A lot of students take seventeen minus twenty, and get minus three. But an overlap can't be negative. Nothing goes over the total, so the smallest overlap is zero.",
+    "at": [
+     "A lot of students take",
+     "But an overlap"
+    ]
+   },
+   {
+    "say": "So we always ask, how far do the groups go over the total? If they don't go over it, the smallest overlap is zero.",
+    "at": [
+     "If they don't go over it",
+     "it, the smallest"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "How do we know it's a range question? By the words.",
+    "at": [
+     "it's a range"
+    ]
+   },
+   {
+    "say": "At most, the most, the greatest. These ask for the biggest possible value. At most has the word most, so think maximum.",
+    "at": [
+     "At most, the most, the greatest",
+     "These ask for"
+    ]
+   },
+   {
+    "say": "At least, the least, the smallest. These ask for the smallest value that must be. At least has the word least, so think minimum.",
+    "at": [
+     "At least, the least, the smallest",
+     "These ask for"
+    ]
+   },
+   {
+    "say": "What could be, or which of these is possible. There's no single answer, so it's a range.",
+    "at": [
+     "What could be",
+     "of these is"
+    ]
+   },
+   {
+    "say": "And sometimes the choices give it away. A choice like between three and nine, or at least three and at most eight, is a range.",
+    "at": [
+     "A choice like between three and nine",
+     "and nine, or"
+    ]
+   },
+   "Here we asked about both. Later we'll see questions about another region, like neither. There we'll ask which overlap makes that region small or big."
+  ],
+  [
+   {
+    "say": "Let's do one more, from start to end. A team has twenty-four players. Eighteen wear a cap, and fourteen wear gloves. How many could wear both?",
+    "at": [
+     "from start to",
+     "A team has twenty-four players",
+     "Eighteen wear a"
+    ]
+   },
+   {
+    "say": "Could means a range. The biggest overlap is the smaller group, fourteen. All fourteen players with gloves can also wear a cap.",
+    "at": [
+     "The biggest overlap is the smaller group",
+     "smaller group, fourteen"
+    ]
+   },
+   {
+    "say": "The smallest overlap is the sum minus the total. Eighteen plus fourteen is thirty-two. Thirty-two minus twenty-four is eight.",
+    "at": [
+     "Eighteen plus fourteen",
+     "Thirty-two minus"
+    ]
+   },
+   {
+    "say": "We can also think it through. Twenty-four minus eighteen is six, so six players don't wear a cap. We give gloves to those six first.",
+    "at": [
+     "We can also",
+     "Twenty-four minus eighteen",
+     "so six players"
+    ]
+   },
+   {
+    "say": "That leaves fourteen minus six, eight gloves. Those eight have to go to players with a cap.",
+    "at": [
+     "fourteen minus six",
+     "Those eight have"
+    ]
+   },
+   {
+    "say": "Both ways give eight. So the number with both is from eight to fourteen.",
+    "at": [
+     "from eight to fourteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes the total isn't written in the question. Then we look for a total we all know.",
+    "at": [
+     "written in the"
+    ]
+   },
+   {
+    "say": "For example, one machine works fourteen hours a day, and another machine works sixteen hours a day. How many hours a day do both work at the same time?",
+    "at": [
+     "one machine works fourteen hours",
+     "a day, and"
+    ]
+   },
+   {
+    "say": "A day has twenty-four hours, so that's our total.",
+    "at": [
+     "A day has twenty-four hours",
+     "so that's our"
+    ]
+   },
+   {
+    "say": "Fourteen plus sixteen is thirty. Thirty minus twenty-four is six. So both work together at least six hours a day.",
+    "at": [
+     "Fourteen plus sixteen",
+     "Thirty minus twenty-four",
+     "So both work"
+    ]
+   },
+   {
+    "say": "And at most fourteen hours, the smaller one. So it's from six to fourteen hours a day.",
+    "at": [
+     "from six to fourteen hours"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's sum up. The biggest overlap is the smaller group. We put the small group inside the big one.",
+    "at": [
+     "The biggest overlap is the smaller group",
+     "We put the"
+    ]
+   },
+   {
+    "say": "The smallest overlap is the sum of the groups minus the total. If they don't go over the total, it's zero, never negative.",
+    "at": [
+     "The smallest overlap is the sum",
+     "sum of the"
+    ]
+   },
+   "Take a moment to memorize these two rules. Next come the exact questions, and the squares method. I'll see you in the next video."
+  ]
+ ]
+}
