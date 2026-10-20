@@ -20,7 +20,7 @@
     ]
    },
    {
-    "say": "Let's start with the math way. When must an overlap exist? Remember the smallest overlap. Only when the two groups add up to more than the total. Here the givens are fractions, so the total is one.",
+    "say": "Let's start with the math way. When must an overlap exist? Remember the smallest overlap. Only when the two groups add up to more than the total. Here the givens are fractions, so like in the lesson, the total is one.",
     "at": [
      "Let's start",
      "Only when the two groups add up",
@@ -104,7 +104,7 @@
   ],
   [
    {
-    "say": "[pause] Now an insight. Adding fractions takes time, and percents are much faster. We start again from the givens, and turn every fraction into percent.",
+    "say": "[pause] Now an insight, the one from the lesson. Adding fractions takes time, and percents are much faster. We start again from the givens, and turn every fraction into percent.",
     "at": [
      "Now an",
      "the givens, and"

@@ -1013,8 +1013,41 @@ r_h2 = IH('r_h2', 'total: $\\ 24$ hours', size=30)
 r_h3 = IH('r_h3', '$14+16=30$', size=30)
 r_h4 = IH('r_h4', '$30-24=6$', size=30)
 r_h5 = IH('r_h5', 'both work: $\\ $from $6$ to $14$ hours', size=30)
+# 2026-10-21 R37 (core methods back in the lesson): percents and fractions (the whole is 100% / 1; stay in percent),
+# other regions ("at least / at most" is about the region they ask; which overlap makes it small or big) and neither
+# ranges (the overlap of the two "not" groups). The lesson is split into 3 parts (WP068_SPLIT, at the end).
+r_p0 = I('r_p0', 'In percent: $\\ $the whole $=100\\%$', size=30)
+r_p1 = I('r_p1', '$200$ people: $\\ 60\\%$ bike, $\\ 55\\%$ car. $\\ $At least how many have both?', size=28)
+r_p2 = IH('r_p2', '$60\\%+55\\%=115\\%$', size=30)
+r_p3 = IH('r_p3', '$115\\%-100\\%=15\\%$', size=30)
+r_p4 = IH('r_p4', '$15\\%$ of $200$: $\\ 20+10=30$', size=30, col=1)
+r_p5 = IH('r_p5', 'both: $\\ $from $15\\%$ to $55\\%$', size=30, col=1)
+r_f0 = I('r_f0', 'In fractions: $\\ $the whole $=1$', size=30)
+r_f1 = I('r_f1', '$\\frac{7}{10}$ drink coffee, $\\ \\frac{1}{2}$ drink tea. $\\ $At least what part drink both?', size=30)
+r_f2 = IH('r_f2', '$\\frac{7}{10}+\\frac{5}{10}=\\frac{12}{10}$', size=34)
+r_f3 = IH('r_f3', '$\\frac{12}{10}-1=\\frac{2}{10}=\\frac{1}{5}$', size=34)
+r_f4 = IH('r_f4', '$70\\%+50\\%=120\\%$: $\\ 20\\%$', size=30, col=1)
+r_o1 = I('r_o1', '$15$ students: $\\ 10$ art, $\\ 9$ drama. $\\ $At least how many take art only?', size=28)
+r_o2 = IH('r_o2', 'art only $=10-$ both', size=30)
+r_o3 = IH('r_o3', 'small art only: $\\ $big both', size=30)
+r_o4 = IH('r_o4', '$10-9=1$', size=30)
+r_o5 = IH('r_o5', '$10-4=6$: $\\ $the most', size=30)
+r_o6 = IH('r_o6', 'art only: $\\ $from $1$ to $6$', size=30)
+r_o7 = I('r_o7', '$30$ players: $\\ 18$ cap, $\\ 21$ gloves', size=28, col=1)
+r_o8 = IH('r_o8', 'gloves only $=21-$ both', size=30, col=1)
+r_o9 = IH('r_o9', '$21-9=12$', size=30, col=1)
+r_e1 = I('r_e1', '$15$ students: $\\ 10$ art, $\\ 9$ drama. $\\ $At most how many take neither?', size=28)
+r_e2 = IH('r_e2', 'not art: $\\ 15-10=5$', size=30, col=1)
+r_e3 = IH('r_e3', 'not drama: $\\ 15-9=6$', size=30, col=1)
+r_ev = VENN2('r_ev', 'not art 5', 'not drama 6', [('both', [('tint', 'both'), ('lab', 'both', 'neither', 'mid')])], w=560)
+r_e4 = IH('r_e4', 'biggest: $\\ 5$', size=30, col=1)
+r_e5 = IH('r_e5', '$5+6=11$, $\\ $not over $15$: $\\ 0$', size=30, col=1)
+r_e6 = IH('r_e6', 'neither: $\\ $from $0$ to $5$', size=30, col=1)
 r_s1 = I('r_s1', 'Biggest overlap $=$ the smaller group', size=30)
 r_s2 = I('r_s2', 'Smallest overlap $=A+B-$ total $\\ $(not over? $\\ 0$)', size=30)
+r_s3 = I('r_s3', 'Percents: $\\ $the whole $=100\\%$. $\\ $Fractions: $\\ $the whole $=1$', size=30)
+r_s4 = I('r_s4', 'Another region? $\\ $Which overlap makes it small or big?', size=30)
+r_s5 = I('r_s5', 'Neither $=$ the overlap of the two "not" groups', size=30)
 video('wp-068', 'lesson', slides=[
     S('Overlap Ranges',
       L("Welcome back, and now the first kind of overlap question, the range. Here a fact is missing, so we can't find "
@@ -1087,8 +1120,7 @@ video('wp-068', 'lesson', slides=[
         show(r_w3, 'What could be')),
       L("And sometimes the choices give it away. A choice like between three and nine, or at least three and at most "
         "eight, is a range.", show(r_w4, 'A choice like between three and nine')),
-      L("Here we asked about both. Later we'll see questions about another region, like neither. There we'll ask which "
-        "overlap makes that region small or big.")),
+      L("So far we asked about both. In the next part, we'll also ask about other regions, like neither.")),
     S('One more example',
       L("Let's do one more, from start to end. A team has twenty-four players. Eighteen wear a cap, and fourteen wear "
         "gloves. How many could wear both?", show(r_x1, 'A team has twenty-four players')),
@@ -1110,14 +1142,82 @@ video('wp-068', 'lesson', slides=[
         "day.", show(r_h3, 'Fourteen plus sixteen'), show(r_h4, 'Thirty minus twenty-four')),
       L("And at most fourteen hours, the smaller one. So it's from six to fourteen hours a day.",
         show(r_h5, 'from six to fourteen hours'))),
+    S('Groups in percent',
+      L("Many range questions give the groups in percent, not in people. Then the whole is a hundred percent. And the two "
+        "rules work the same way.", show(r_p0, 'the whole is a hundred percent')),
+      L("Let's see an example. A town has two hundred people. Sixty percent have a bike, and fifty-five percent have a "
+        "car. At least how many people have both?", show(r_p1, 'A town has two hundred people')),
+      L("A lot of students first turn every percent into people. We don't have to. The rules work on any whole, so we "
+        "stay in percent."),
+      L("The smallest overlap is the sum minus the whole. Sixty plus fifty-five is a hundred fifteen percent.",
+        show(r_p2, 'Sixty plus fifty-five')),
+      L("The whole is a hundred percent. So a hundred fifteen minus a hundred is fifteen percent. Careful, we take away a "
+        "hundred percent, not the two hundred people.", show(r_p3, 'So a hundred fifteen minus a hundred')),
+      L("Only now we turn it into people, because they ask how many people. Ten percent of two hundred is twenty, and five "
+        "percent is ten. So fifteen percent is twenty plus ten, thirty people.", show(r_p4, 'Ten percent of two hundred')),
+      L("And the biggest overlap is the smaller group, fifty-five percent. So both is from fifteen to fifty-five percent.",
+        show(r_p5, 'So both is from fifteen'))),
+    S('Groups in fractions',
+      L("Fractions work the same way. When we get fractions of everyone, the whole is one.",
+        show(r_f0, 'the whole is one')),
+      L("For example, seven tenths of the workers drink coffee, and one half drink tea. At least what part drink both?",
+        show(r_f1, 'seven tenths of the workers')),
+      L("To add them, we need the same bottom. A half is five tenths. Seven tenths plus five tenths is twelve tenths.",
+        show(r_f2, 'Seven tenths plus five tenths')),
+      L("The whole is one, and one is ten tenths. So twelve tenths minus one is two tenths, and that's one fifth. At least "
+        "a fifth of the workers drink both.", show(r_f3, 'So twelve tenths minus one')),
+      L("Often it's faster in percent. Seven tenths is seventy percent, and a half is fifty percent. Seventy plus fifty is "
+        "a hundred twenty, so twenty percent. That's the same fifth.", show(r_f4, 'Seventy plus fifty')),
+      L("So when you see percents or fractions of everyone, the whole is a hundred percent, or one. And in an exact "
+        "question too, all four boxes together make the whole.")),
+    S('Other regions: only',
+      L("So far, they asked about both. But a range question can ask about another region. Let's go back to our fifteen "
+        "students, ten in art and nine in drama. At least how many take art only?", show(r_o1, 'Let\'s go back to our fifteen')),
+      L("First we write that region with both in it. Art only is the art students who are not in both. So art only is "
+        "ten minus both.", show(r_o2, 'So art only is ten minus both')),
+      L("Now we ask, what makes art only small? The bigger both is, the less is left for art only. So we need the "
+        "biggest overlap.", show(r_o3, 'So we need the biggest overlap')),
+      L("The biggest overlap is the smaller group, nine. So art only is ten minus nine, one. At least one student takes "
+        "only art.", show(r_o4, 'ten minus nine')),
+      L("Here's the trap. At least makes us think of the smallest overlap, four. But ten minus four is six. That's the "
+        "most art only can be, not the least.", show(r_o5, 'But ten minus four is six')),
+      L("So art only is from one to six. At least or at most is always about the region they ask.",
+        show(r_o6, 'So art only is from one to six')),
+      L("Let's try it with the thirty players. Eighteen wear a cap, and twenty-one wear gloves. The smallest overlap was "
+        "nine, and the biggest is eighteen. At most how many wear only gloves?", show(r_o7, 'Eighteen wear a cap')),
+      L("Gloves only is twenty-one minus both. For the most gloves only, we need the smallest both, nine. Twenty-one minus "
+        "nine is twelve. So at most twelve wear only gloves.", show(r_o8, 'Gloves only is twenty-one minus both'),
+        show(r_o9, 'Twenty-one minus nine'))),
+    S('Other regions: neither',
+      L("Now the region that confuses students most, neither. Again the fifteen students, ten in art and nine in drama. "
+        "At most how many take neither?", show(r_e1, 'Again the fifteen students')),
+      L("Neither means not in art, and also not in drama. Not in art is fifteen minus ten, five. Not in drama is fifteen "
+        "minus nine, six.", show(r_e2, 'Not in art is fifteen minus ten'), show(r_e3, 'Not in drama is fifteen')),
+      L("So neither is the students who are in both of these new groups. It's the overlap of not art and not drama.",
+        show(r_ev['line'], 'in both of these new groups'), show(r_ev['both'], "It's the overlap of not art")),
+      L("Now we use the same two rules on them. The biggest overlap is the smaller group, five. So at most five take "
+        "neither.", show(r_e4, 'The biggest overlap is the smaller group, five')),
+      L("And the smallest? Five plus six is eleven. That's not over fifteen, so the smallest overlap is zero.",
+        show(r_e5, 'Five plus six is eleven')),
+      L("So neither is from zero to five. And look, the most neither comes when all nine drama students also take art. "
+        "Then only ten students are in a group, and fifteen minus ten is five.", show(r_e6, 'So neither is from zero to five')),
+      L("So a big overlap gives a big neither. Before you pick a rule, ask which overlap makes the region they ask about "
+        "small or big.")),
     S('Summary',
       L("Let's sum up. The biggest overlap is the smaller group. We put the small group inside the big one.",
         show(r_s1, 'The biggest overlap is the smaller group')),
       L("The smallest overlap is the sum of the groups minus the total. If they don't go over the total, it's zero, never "
         "negative.", show(r_s2, 'The smallest overlap is the sum')),
-      L("Take a moment to memorize these two rules. Next come the exact questions, and the squares method. I'll see you "
-        "in the next video.")),
+      L("In percent the whole is a hundred percent, and in fractions it's one.", show(r_s3, 'In percent the whole')),
+      L("For another region, we write it with both in it, and ask which overlap makes it small or big. And neither is the "
+        "overlap of the two not groups.", show(r_s4, 'For another region'), show(r_s5, 'And neither is the overlap')),
+      L("Take a moment to memorize these rules. Next come the exact questions, and the squares method. I'll see you in the "
+        "next video.")),
 ])
+WP068_SPLIT = ('wp-068', 'Overlap Ranges', [
+    (1, None),
+    (6, "Let's continue with ranges, and see how to spot a range question."),
+    (11, "Let's continue with ranges, and ask about the other regions.")])
 
 # ------------------------------------------------------------------------------------------------ wp-069 (lesson: exact)
 # Hebrew (wp 4530-4604): the questions that give every fact: both, neither ("לא ולא"), only one group; the SAME example
@@ -1162,6 +1262,22 @@ e_o2 = I('e_o2', 'exactly one $=A+B-2\\cdot$ both', size=30)
 e_o3 = IH('e_o3', '$10+9=19$', size=30, col=1)
 e_o4 = IH('e_o4', '$2\\cdot6=12$', size=30, col=1)
 e_o5 = IH('e_o5', '$19-12=7$', size=30, col=1)
+# 2026-10-21 R37: neither = 0 when everyone is in a group (moved back from g078: core, also in practice p01 / p08 and
+# "quite a few questions" in her Hebrew, wp 5160-5170): tea or coffee (every guest drank one), different stamps, and a
+# non-example (a class: neither unknown -> a range).
+e_n0 = I('e_n0', '$30$ guests, $\\ $each drank tea, coffee or both. $\\ 18$ tea, $\\ 17$ coffee', size=28)
+e_n = STRIP('e_n', 'coffee', 'tea', [
+    ('T', [('T', 'all four: 30')]), ('A', [('A', 'tea: 18')]), ('B', [('B', 'coffee: 17')]), ('v0', [('v', 0, '0')]),
+    ('h', [('top', 0, 2, 'not tea')]), ('v1', [('v', 1, '12')]), ('v2', [('v', 2, '5')])], w=580)
+e_n1 = IH('e_n1', 'neither $=0$', size=30, col=1)
+e_n2 = IH('e_n2', '$30-18=12$', size=30, col=1)
+e_n3 = IH('e_n3', '$17-12=5$', size=30, col=1)
+e_w1 = I('e_w1', 'Together: $\\ 20$ different stamps. $\\ $One has $12$, $\\ $one has $11$.', size=28)
+e_w2 = IH('e_w2', '$12+11=23$', size=30)
+e_w3 = IH('e_w3', '$23-20=3$', size=30)
+e_w4 = I('e_w4', 'A class of $20$: $\\ 12$ chess, $\\ 11$ music', size=28)
+e_w5 = IH('e_w5', 'neither? $\\ $not given: $\\ $a range, $\\ 3$ to $11$', size=30)
+e_w6 = I('e_w6', 'different $\\cdot$ together $\\cdot$ each one did one: $\\ $neither $=0$', size=28)
 e_z1 = I('e_z1', 'Four boxes: $\\ $neither $\\cdot$ B only $\\cdot$ both $\\cdot$ A only', size=30)
 e_z2 = I('e_z2', 'The brackets share "both"; $\\ $all four $=$ the total', size=30)
 e_z3 = I('e_z3', 'Put in what you know, $\\ $then fill it like a sudoku', size=30)
@@ -1215,6 +1331,33 @@ video('wp-069', 'lesson', slides=[
       L("Then four plus six plus three is thirteen students in at least one group. So neither is fifteen minus thirteen, "
         "two.", show(e_t3, 'four plus six plus three'), show(e_t4, 'fifteen minus thirteen'), show(e_t['v0'], 'two.')),
       L("And we fill only the boxes we need. If they ask for both, we stop at both.")),
+    S('When neither is zero',
+      L("Sometimes neither isn't written as a number, but the words still tell us what it is. For example, each of thirty "
+        "guests drank tea, coffee, or both. Eighteen drank tea, and seventeen drank coffee. How many drank both?",
+        show(e_n0, 'each of thirty guests')),
+      L("Every guest drank something. So nobody is outside both groups, and neither is zero.", show(e_n1, 'and neither is zero')),
+      L("Now it's an exact question, so let's draw the boxes. All four together are thirty. Tea is eighteen, and coffee "
+        "is seventeen. And the first box, neither, is zero.", show(e_n['line'], "so let's draw the boxes"),
+        show(e_n['T'], 'All four together are thirty'), show(e_n['A'], 'Tea is eighteen'), show(e_n['B'], 'and coffee'),
+        show(e_n['v0'], 'neither, is zero')),
+      L("Neither plus coffee only is everyone outside tea. That's thirty minus eighteen, twelve. Neither is zero, so "
+        "coffee only is twelve.", show(e_n['h'], 'everyone outside tea'), show(e_n2, 'thirty minus eighteen'),
+        show(e_n['v1'], 'so coffee only is twelve')),
+      L("The coffee bracket is seventeen. So both is seventeen minus twelve, five.", show(e_n3, 'seventeen minus twelve'),
+        show(e_n['v2'], 'five.'))),
+    S('Words that mean neither is zero',
+      L("The same happens with different things. Two friends have twenty different stamps together. One has twelve, and "
+        "the other has eleven.", show(e_w1, 'Two friends have twenty')),
+      L("Twenty counts only the stamps they have, so no stamp is outside both groups. Neither is zero."),
+      L("So we count each stamp once. Twelve plus eleven is twenty-three. But there are only twenty stamps, so twenty-three "
+        "minus twenty, three stamps were counted twice. Both friends have those three.", show(e_w2, 'Twelve plus eleven'),
+        show(e_w3, 'twenty-three minus twenty')),
+      L("Now compare it with a class of twenty students. Twelve play chess, and eleven play music.",
+        show(e_w4, 'a class of twenty students')),
+      L("Here some students may play nothing, so neither isn't given. Then it's a range again. Both is from three, the "
+        "sum minus the total, to eleven, the smaller group.", show(e_w5, 'so neither isn')),
+      L("So when you see words like different, together, or each one did at least one, neither is zero. And that's the "
+        "box to start from.", show(e_w6, 'when you see words like different'))),
     S('Exactly one',
       L("There's one more region a question can ask about, exactly one. Exactly one means one group, but not both. So art "
         "only, or drama only.", show(e_o['line'], 'There\'s one more region'), show(e_o['base'], 'exactly one'),
@@ -1228,6 +1371,7 @@ video('wp-069', 'lesson', slides=[
       L("Let's sum up. In an exact question, we draw the four boxes. Neither, B only, both, and A only.",
         show(e_z1, 'we draw the four boxes')),
       L("The two brackets share the middle box, and all four boxes make the total.", show(e_z2, 'The two brackets share')),
+      L("And when everyone is in a group, neither is zero."),
       L("We put in what we know, and fill the rest like a sudoku. Now let's practice it on three questions. I'll see you "
         "in the next video.", show(e_z3, 'We put in what we know'))),
 ])
@@ -1418,7 +1562,7 @@ video('solve-wp24-g072', 'solution', qid='wp24-g072', slides=[
 # Hebrew (wp 5118-5170): understanding first: "they didn't say there are 30 owls, they said both photographed 30" ->
 # neither is 0 ("not given, it's implied, you have to understand it from the wording"); 6 not Amir -> Zehava's, 18 - 6
 # = 12; then the squares method from neither = 0; "there are quite a few questions where neither is 0, notice it with
-# practice". NEW: neither = 0 when the total counts only what is on the lists. Trap at the step: 11 = second only.
+# practice". R37 2026-10-21: APPLICATION of neither = 0 (taught in wp-069). Trap at the step: 11 = second only.
 g78a = IH('g78a', 'neither $=0$', size=32, col=1)
 g78b = IH('g78b', '$45-34=11$', size=30, col=1)
 g78c = IH('g78c', '$27-11=16$', size=30, col=1)
@@ -1437,8 +1581,8 @@ video('solve-wp24-g078', 'solution', qid='wp24-g078', slides=[
       L("So they ask for both, the movies on both lists. The hard part here isn't the math. It's one fact that isn't "
         "written in the question. We'll solve it in two different ways, by understanding, and then with the squares "
         "method.", pt('stem', 'So they ask for both')),
-      L("Let's start by understanding the forty-five. They didn't say forty-five movies came out this year. They said "
-        "the two lists show forty-five different movies.", pt('stem', 'They said the two lists show')),
+      L("Let's start by understanding the forty-five, like the stamps in the lesson. They didn't say forty-five movies "
+        "came out this year. They said the two lists show forty-five different movies.", pt('stem', 'They said the two lists show')),
       L("So every one of the forty-five movies is on at least one list. No movie is on neither list. So neither is zero.",
         show(g78a, 'So neither is zero')),
       L("It's not written, but it comes from the words. Here the total is only the movies on the lists."),
@@ -1465,15 +1609,14 @@ video('solve-wp24-g078', 'solution', qid='wp24-g078', slides=[
       L("And with counting each movie once, thirty-four plus twenty-seven is sixty-one. Sixty-one minus forty-five is "
         "sixteen. Those sixteen movies were counted twice.", show(g78f, 'thirty-four plus twenty-seven'),
         show(g78g, 'Sixty-one minus forty-five')),
-      L("So when the total counts only what's on the lists, neither is zero, and that's the box to start from. Choice "
-        "number one is our answer, and I'll see you in the next question.", mk('tick', 'choice 1', 'Choice number one is our answer'))),
+      L("Choice number one is our answer, and I'll see you in the next question.", mk('tick', 'choice 1', 'Choice number one is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ wp24-g077 (Hebrew: lunch, rice 1/3, mash 1/5, both 1/10 = 6)
 # Hebrew (wp 5026-5115): the squares method in fractions (the whole is 1; not rice 2/3; mash only 1/5 - 1/10 = 1/10;
 # neither 2/3 - 1/10 = 17/30; then 1/10 = 6 -> 17/30 by the triangle value = 34); then the insight: 1/10 = 6 so the total
 # is 60, everything in numbers in the squares (rice 20, mash 12, not rice 40, mash only 6, neither 34): "this is the way
-# I want you to work on the exam, not with the fractions". NEW: fractions in an overlap question (the whole is 1); the
+# I want you to work on the exam, not with the fractions". APPLICATION (R37): the whole is 1 (wp-068 part 2); NEW: the
 # insight (find the total first). Traps at the step: 28 takes both away twice, 16 = at least one.
 g77s = STRIP('g77s', 'evening', 'morning', [
     ('T', [('T', 'all four: 1')]), ('A', [('A', 'morning: 1/4')]), ('B', [('B', 'evening: 1/6')]),
@@ -1506,8 +1649,8 @@ video('solve-wp24-g077', 'solution', qid='wp24-g077', slides=[
       L("So they ask for neither. We get fractions, and one real number of people, four. Every fact is here, so it's an "
         "exact question. We'll solve it in two different ways. The squares method in fractions, and then by finding the "
         "number of participants first.", pt('stem', 'So they ask for neither')),
-      L("Let's start with the math way, the squares method, with fractions. When the givens are fractions of the "
-        "participants, all the participants together are one whole.", show(g77t, 'all the participants together')),
+      L("Let's start with the math way, the squares method, with fractions. Like in the lesson, the givens are fractions "
+        "of the participants, so all the participants together are one whole.", show(g77t, 'all the participants together')),
       L("We draw four boxes. Neither, evening only, both, and morning only. All four together are one. The morning bracket is a "
         "quarter, and the evening bracket is a sixth.", show(g77s['line'], 'Four boxes'), show(g77s['T'], 'All four together are one'),
         show(g77s['A'], 'The morning bracket'), show(g77s['B'], 'the evening bracket')),
@@ -1553,7 +1696,7 @@ video('solve-wp24-g077', 'solution', qid='wp24-g077', slides=[
 # 136; "write the data in order"; the biggest overlap 40 as a free reminder; the smallest = how far the sum goes over
 # the whole, 176 - 160 = 16); way 2 in percent ("in the exam I wouldn't calculate the numbers... step back": 25 + 85 =
 # 110, 10% of 160 = 16); way 3 by understanding with the two circles (10% both, 15% bride only, 75% groom only; review:
-# 15% both -> 5% neither; the biggest, 25%: bride only 0, neither 15%). NEW: percents in an overlap question (the whole
+# 15% both -> 5% neither; the biggest, 25%: bride only 0, neither 15%). APPLICATION (R37): percents, the whole is 100% (wp-068 part 2; the whole
 # is 100%). REMINDERS: 10% and 5% of a number, the complement (topic 23), the two range rules (wp-068).
 g74a = IH('g74a', '$10\\%=36$', size=30, col=1)
 g74b = IH('g74b', '$40\\%=4\\cdot36=144$', size=30, col=1)
@@ -1604,15 +1747,14 @@ video('solve-wp24-g074', 'solution', qid='wp24-g074', slides=[
       L("So at least fifty-four guests know both. Choice number one is our answer.",
         mk('tick', 'choice 1', 'Choice number one is our answer'))),
     S('Method 2 · Insight: stay in percent',
-      L("[pause] Now an insight. Many students see the percents and start calculating numbers right away. But let's step "
-        "back. We start again from the givens, in percent. In percent, the whole is a hundred percent."),
+      L("[pause] Now an insight, the one from the lesson. Many students see the percents and start calculating numbers "
+        "right away. But we can stay in percent. We start again from the givens. In percent, the whole is a hundred percent."),
       L("Forty-five percent plus seventy percent is a hundred fifteen percent. That's fifteen percent over the hundred "
         "percent.", show(g74k, 'Forty-five percent plus seventy'), show(g74l, "That's fifteen percent over")),
       L("So at least fifteen percent know both. Now just one calculation. Ten percent of three hundred sixty is "
         "thirty-six, and five percent is eighteen. Thirty-six plus eighteen is fifty-four.",
         show(g74m, 'Thirty-six plus eighteen')),
-      L("One small calculation instead of four. So when the groups are given in percent, stay in percent until the end. "
-        "Choice number one again.")),
+      L("One small calculation instead of four, and that's why we stay in percent. Choice number one again.")),
     S('Method 3 · Understanding: the two circles',
       L("[pause] Now let's see it by understanding, with the two circles. We start again from the givens. Forty-five "
         "percent know the artist, and seventy percent know the owner.", show(g74v['line'], 'with the two circles')),
@@ -1637,7 +1779,7 @@ video('solve-wp24-g074', 'solution', qid='wp24-g074', slides=[
 # the smallest 55 - 40 = 15 rules out 11; the range 15 to 22); way 2 the insight (two choices left, only one can be
 # right, so one is inside the range and the other too small: the bigger one; "not trivial, with practice; and if not,
 # one more small calculation"). English method 3 (kept from the September course): through "at least one place".
-# NEW: a range question about neither; neither = the overlap of the two "not" groups.
+# APPLICATION (R37, first use; taught in wp-068 part 3): a range question about neither; neither = the overlap of the two "not" groups.
 g75a = IH('g75a', 'not library: $\\ 52-24=28$', size=30, col=1)
 g75b = IH('g75b', 'not kitchen: $\\ 52-13=39$', size=30, col=1)
 g75v = VENN2('g75v', 'not library 28', 'not kitchen 39', [('both', [('tint', 'both'), ('lab', 'both', 'neither', 'mid')])], w=560)
@@ -1659,8 +1801,8 @@ video('solve-wp24-g075', 'solution', qid='wp24-g075', slides=[
       L("Could be, so this is a range question. But this time they ask about neither, not about both. That's what makes "
         "it harder. We'll solve it in three different ways. With the range rules, with an insight, and through the "
         "students in at least one place.", pt('stem', 'Could be, so this is a range')),
-      L("Let's start with the math way. Neither means not in the library, and also not in the kitchen. So first let's "
-        "find these two groups."),
+      L("Let's start with the math way, like the art students in the lesson. Neither means not in the library, and also "
+        "not in the kitchen. So first let's find these two groups."),
       L("Not in the library is fifty-two minus twenty-four, twenty-eight students. Not in the kitchen is fifty-two minus "
         "thirteen, thirty-nine students.", show(g75a, 'fifty-two minus twenty-four'), show(g75b, 'fifty-two minus thirteen')),
       L("Neither is the students who are in both of these groups. Not in the library, and also not in the kitchen. So "
@@ -1703,10 +1845,10 @@ video('solve-wp24-g075', 'solution', qid='wp24-g075', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t24-01 (added: the least of another region)
-# English addition (real exam 2020_autumn_q1_11: "at most ... not soccer and not swimming" = the same logic). NEW (full,
+# English addition (real exam 2020_autumn_q1_11: "at most ... not soccer and not swimming" = the same logic). R37 2026-10-21: APPLICATION (taught in wp-068 part 3,
 # two examples): "at least / at most" is about the region they ask; which overlap makes THAT region small or big; the
-# trap (the smallest overlap gives the MOST swim only). Second example (W20): at most how many do neither -> the
-# biggest overlap again.
+# trap (the smallest overlap gives the MOST swim only). The second example (at most neither) was cut: the lesson now
+# teaches neither ranges and g075 applies them.
 q1a = IH('q1a', 'swim only $=32-$ both', size=30, col=1)
 q1b = IH('q1b', 'small swim only: $\\ $big both', size=30, col=1)
 q1c = IH('q1c', 'biggest both $=27$', size=30, col=1)
@@ -1718,10 +1860,6 @@ q1s = STRIP('q1s', 'run', 'swim', [
     ('v1', [('v', 1, '0')]), ('v3', [('v', 3, '5')]), ('v0', [('v', 0, '18')])], w=560)
 q1g = IH('q1g', '$32-27=5$', size=30, col=1)
 q1h = IH('q1h', '$50-32=18$', size=30, col=1)
-q1i = IH('q1i', 'neither $=50-$ at least one', size=30, col=1)
-q1j = IH('q1j', 'big neither: $\\ $biggest both', size=30, col=1)
-q1k = IH('q1k', 'at least one: $\\ 32$', size=30, col=1)
-q1l = IH('q1l', 'neither: $\\ 50-32=18$', size=30, col=1)
 video('solve-q-r26-t24-01', 'solution', qid='q-r26-t24-01', slides=[
     S('Method 1 · Understanding: which overlap?',
       L("A club has fifty members. Of them, thirty-two swim and twenty-seven run. At least how many members swim but do "
@@ -1729,8 +1867,8 @@ video('solve-q-r26-t24-01', 'solution', qid='q-r26-t24-01', slides=[
       L("At least, so it's a range question. But careful, they don't ask about both. They ask about the members who swim "
         "but don't run, swim only. We'll solve it in two different ways, by understanding, and then with the squares "
         "method.", pt('stem', 'They ask about the members who swim')),
-      L("Let's start by understanding. Swim only is the swimmers who are not in both. So swim only is thirty-two minus "
-        "both.", show(q1a, 'So swim only is thirty-two minus both')),
+      L("Let's start by understanding, like art only in the lesson. First we write the region with both in it. Swim only "
+        "is the swimmers who are not in both. So swim only is thirty-two minus both.", show(q1a, 'So swim only is thirty-two minus both')),
       L("Now the key question. To make swim only as small as possible, what should both be? The bigger both is, the "
         "smaller swim only is. So we need the biggest overlap.", show(q1b, 'So we need the biggest overlap')),
       L("The biggest overlap is the smaller group. All twenty-seven runners also swim.", show(q1c, 'All twenty-seven runners')),
@@ -1743,8 +1881,8 @@ video('solve-q-r26-t24-01', 'solution', qid='q-r26-t24-01', slides=[
       L("And with that smallest overlap, swim only is thirty-two minus nine, twenty-three. That's choice number four. But "
         "twenty-three is the most swim only can be, the opposite of what they ask.", show(q1f, 'thirty-two minus nine'),
         mk('cross', 'choice 4', "That's choice number four")),
-      L("So at least or at most is always about the region they ask. We ask, to make this region small, what must the "
-        "overlap be? Choice number two is our answer.", mk('tick', 'choice 2', 'Choice number two is our answer'))),
+      L("So here at least is about swim only, not about both. Choice number two is our answer.",
+        mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('Method 2 · The math way: the squares method',
       L("[pause] Now let's see it with the squares method. We start again from the givens. We draw four boxes. Neither, run only, "
         "both, and swim only. All four together are fifty.", show(q1s['line'], 'Four boxes'), show(q1s['T'], 'All four together'),
@@ -1755,16 +1893,8 @@ video('solve-q-r26-t24-01', 'solution', qid='q-r26-t24-01', slides=[
       L("And neither is fifty minus the thirty-two swimmers, eighteen. Every box works, so five can really happen.",
         show(q1h, 'fifty minus the thirty-two'), show(q1s['v0'], 'eighteen')),
       L("Could swim only be less than five? Only if more than twenty-seven were in both. But there are only twenty-seven "
-        "runners. So five is the least. Choice number two again.", mk('tick', 'choice 2', 'Choice number two again'))),
-    S('Another region: neither',
-      L("Let's use the same idea once more, with the same club. At most how many members do neither?"),
-      L("Neither is fifty minus everyone in at least one group. For a big neither, we need few members in at least one "
-        "group.", show(q1i, 'Neither is fifty minus everyone'), show(q1j, 'For a big neither')),
-      L("That happens with the biggest overlap again. If all twenty-seven runners also swim, at least one group is just "
-        "the thirty-two swimmers.", show(q1k, 'is just the thirty-two swimmers')),
-      L("So at most fifty minus thirty-two, eighteen do neither. So before you pick a rule, ask which overlap makes the "
-        "region they ask about big or small. Choice number two is our answer, and I'll see you in the next question.",
-        show(q1l, 'fifty minus thirty-two'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
+        "runners. So five is the least. Choice number two is our answer, and I'll see you in the next question.",
+        mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ wp24-g076 (Hebrew: the company, 1/3 English, 3/4 car, 1/4 teens, 2/5 line)
@@ -1772,7 +1902,7 @@ video('solve-q-r26-t24-01', 'solution', qid='q-r26-t24-01', slides=[
 # whole is 1): more than 1 -> forced (the statement is true, the choice is out); exactly 1 -> not forced (60 workers: 15
 # teens without a licence, 45 car owners); less than 1 -> also not forced, "the minimum is 0, not minus"; way 2 in
 # percent (1/3 = 33%, "I wrote 33 and not 33 and a third, the third is negligible unless near 100"); "this is what you
-# do! in the exam, convert to percent". NEW: must an overlap exist? (over the whole), fractions -> percent. W17: every
+# do! in the exam, convert to percent". APPLICATION (R37): must an overlap exist? (the smallest-overlap rule, wp-068), fractions -> percent (wp-068 part 2). W17: every
 # choice read in full first.
 g76r = I('g76r', 'Over the whole? $\\ $An overlap must exist', size=28, col=1)
 g76a = IH('g76a', 'not new $\\frac{3}{4}$, $\\ $not nights $\\frac{7}{10}$', size=34, col=1)
@@ -1796,7 +1926,7 @@ video('solve-wp24-g076', 'solution', qid='wp24-g076', slides=[
         "exist. We need the one claim that is not forced. We'll solve it in two different ways, by adding fractions, and "
         "then in percent.", pt('choice 1', 'Every choice says')),
       L("Let's start with the math way. When must an overlap exist? Remember the smallest overlap. Only when the two "
-        "groups add up to more than the total. Here the givens are fractions, so the total is one.",
+        "groups add up to more than the total. Here the givens are fractions, so like in the lesson, the total is one.",
         show(g76r, 'Only when the two groups add up')),
       L("Choice number one says, at least one nurse who is not new does not work night shifts. Not new is one minus a "
         "quarter, three quarters. Not nights is one minus three tenths, seven tenths.", pt('choice 1', 'Choice number one says'),
@@ -1824,8 +1954,8 @@ video('solve-wp24-g076', 'solution', qid='wp24-g076', slides=[
       L("Choice number three is our answer. And if two groups add up to less than one, then no overlap is forced either. "
         "The smallest overlap is zero, never negative.", mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · Insight: work in percent',
-      L("[pause] Now an insight. Adding fractions takes time, and percents are much faster. We start again from the "
-        "givens, and turn every fraction into percent."),
+      L("[pause] Now an insight, the one from the lesson. Adding fractions takes time, and percents are much faster. We "
+        "start again from the givens, and turn every fraction into percent."),
       L("Three tenths is thirty percent. Three quarters is seventy-five percent. A quarter is twenty-five percent, and a "
         "half is fifty percent.",
         show(g76g, 'Three tenths is thirty percent')),
@@ -2361,6 +2491,7 @@ def _stem_parts(vid):
 _cp_spec = importlib.util.spec_from_file_location('_camera_parts', os.path.join(HERE, '_camera_parts.py'))
 CP = importlib.util.module_from_spec(_cp_spec); _cp_spec.loader.exec_module(CP)
 CP.split(globals(), *CAMERA_SPLIT)
+CP.split(globals(), *WP068_SPLIT)    # 2026-10-21 R37: the range lesson grew (core methods back in it), 3 parts, not on camera
 
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v); _write_gap(_v)
 

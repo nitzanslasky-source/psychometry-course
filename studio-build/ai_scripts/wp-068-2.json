@@ -1,0 +1,211 @@
+{
+ "videoId": "wp-068-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with ranges, and see how to spot a range question."
+  ],
+  [
+   {
+    "say": "How do we know it's a range question? By the words.",
+    "at": [
+     "it's a range"
+    ]
+   },
+   {
+    "say": "At most, the most, the greatest. These ask for the biggest possible value. At most has the word most, so think maximum.",
+    "at": [
+     "At most, the most, the greatest",
+     "These ask for"
+    ]
+   },
+   {
+    "say": "At least, the least, the smallest. These ask for the smallest value that must be. At least has the word least, so think minimum.",
+    "at": [
+     "At least, the least, the smallest",
+     "These ask for"
+    ]
+   },
+   {
+    "say": "What could be, or which of these is possible. There's no single answer, so it's a range.",
+    "at": [
+     "What could be",
+     "of these is"
+    ]
+   },
+   {
+    "say": "And sometimes the choices give it away. A choice like between three and nine, or at least three and at most eight, is a range.",
+    "at": [
+     "A choice like between three and nine",
+     "and nine, or"
+    ]
+   },
+   "So far we asked about both. In the next part, we'll also ask about other regions, like neither."
+  ],
+  [
+   {
+    "say": "Let's do one more, from start to end. A team has twenty-four players. Eighteen wear a cap, and fourteen wear gloves. How many could wear both?",
+    "at": [
+     "from start to",
+     "A team has twenty-four players",
+     "Eighteen wear a"
+    ]
+   },
+   {
+    "say": "Could means a range. The biggest overlap is the smaller group, fourteen. All fourteen players with gloves can also wear a cap.",
+    "at": [
+     "The biggest overlap is the smaller group",
+     "smaller group, fourteen"
+    ]
+   },
+   {
+    "say": "The smallest overlap is the sum minus the total. Eighteen plus fourteen is thirty-two. Thirty-two minus twenty-four is eight.",
+    "at": [
+     "Eighteen plus fourteen",
+     "Thirty-two minus"
+    ]
+   },
+   {
+    "say": "We can also think it through. Twenty-four minus eighteen is six, so six players don't wear a cap. We give gloves to those six first.",
+    "at": [
+     "We can also",
+     "Twenty-four minus eighteen",
+     "so six players"
+    ]
+   },
+   {
+    "say": "That leaves fourteen minus six, eight gloves. Those eight have to go to players with a cap.",
+    "at": [
+     "fourteen minus six",
+     "Those eight have"
+    ]
+   },
+   {
+    "say": "Both ways give eight. So the number with both is from eight to fourteen.",
+    "at": [
+     "from eight to fourteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes the total isn't written in the question. Then we look for a total we all know.",
+    "at": [
+     "written in the"
+    ]
+   },
+   {
+    "say": "For example, one machine works fourteen hours a day, and another machine works sixteen hours a day. How many hours a day do both work at the same time?",
+    "at": [
+     "one machine works fourteen hours",
+     "a day, and"
+    ]
+   },
+   {
+    "say": "A day has twenty-four hours, so that's our total.",
+    "at": [
+     "A day has twenty-four hours",
+     "so that's our"
+    ]
+   },
+   {
+    "say": "Fourteen plus sixteen is thirty. Thirty minus twenty-four is six. So both work together at least six hours a day.",
+    "at": [
+     "Fourteen plus sixteen",
+     "Thirty minus twenty-four",
+     "So both work"
+    ]
+   },
+   {
+    "say": "And at most fourteen hours, the smaller one. So it's from six to fourteen hours a day.",
+    "at": [
+     "from six to fourteen hours"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Many range questions give the groups in percent, not in people. Then the whole is a hundred percent. And the two rules work the same way.",
+    "at": [
+     "the groups in",
+     "the whole is a hundred percent",
+     "And the two"
+    ]
+   },
+   {
+    "say": "Let's see an example. A town has two hundred people. Sixty percent have a bike, and fifty-five percent have a car. At least how many people have both?",
+    "at": [
+     "A town has two hundred people",
+     "Sixty percent have"
+    ]
+   },
+   "A lot of students first turn every percent into people. We don't have to. The rules work on any whole, so we stay in percent.",
+   {
+    "say": "The smallest overlap is the sum minus the whole. Sixty plus fifty-five is a hundred fifteen percent.",
+    "at": [
+     "Sixty plus fifty-five",
+     "hundred fifteen percent"
+    ]
+   },
+   {
+    "say": "The whole is a hundred percent. So a hundred fifteen minus a hundred is fifteen percent. Careful, we take away a hundred percent, not the two hundred people.",
+    "at": [
+     "So a hundred fifteen minus a hundred",
+     "a hundred is"
+    ]
+   },
+   {
+    "say": "Only now we turn it into people, because they ask how many people. Ten percent of two hundred is twenty, and five percent is ten. So fifteen percent is twenty plus ten, thirty people.",
+    "at": [
+     "Ten percent of two hundred",
+     "is twenty, and"
+    ]
+   },
+   {
+    "say": "And the biggest overlap is the smaller group, fifty-five percent. So both is from fifteen to fifty-five percent.",
+    "at": [
+     "So both is from fifteen",
+     "to fifty-five percent"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Fractions work the same way. When we get fractions of everyone, the whole is one.",
+    "at": [
+     "way. When we",
+     "the whole is one"
+    ]
+   },
+   {
+    "say": "For example, seven tenths of the workers drink coffee, and one half drink tea. At least what part drink both?",
+    "at": [
+     "seven tenths of the workers",
+     "drink coffee, and"
+    ]
+   },
+   {
+    "say": "To add them, we need the same bottom. A half is five tenths. Seven tenths plus five tenths is twelve tenths.",
+    "at": [
+     "Seven tenths plus five tenths",
+     "is twelve tenths"
+    ]
+   },
+   {
+    "say": "The whole is one, and one is ten tenths. So twelve tenths minus one is two tenths, and that's one fifth. At least a fifth of the workers drink both.",
+    "at": [
+     "So twelve tenths minus one",
+     "is two tenths"
+    ]
+   },
+   {
+    "say": "Often it's faster in percent. Seven tenths is seventy percent, and a half is fifty percent. Seventy plus fifty is a hundred twenty, so twenty percent. That's the same fifth.",
+    "at": [
+     "Seventy plus fifty",
+     "hundred twenty, so"
+    ]
+   },
+   "So when you see percents or fractions of everyone, the whole is a hundred percent, or one. And in an exact question too, all four boxes together make the whole. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}

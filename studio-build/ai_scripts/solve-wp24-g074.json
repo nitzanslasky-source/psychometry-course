@@ -86,10 +86,10 @@
   ],
   [
    {
-    "say": "[pause] Now an insight. Many students see the percents and start calculating numbers right away. But let's step back. We start again from the givens, in percent. In percent, the whole is a hundred percent.",
+    "say": "[pause] Now an insight, the one from the lesson. Many students see the percents and start calculating numbers right away. But we can stay in percent. We start again from the givens. In percent, the whole is a hundred percent.",
     "at": [
      "Now an",
-     "the givens, in"
+     "the givens. In"
     ]
    },
    {
@@ -108,7 +108,7 @@
     ]
    },
    {
-    "say": "One small calculation instead of four. So when the groups are given in percent, stay in percent until the end. Choice number one again.",
+    "say": "One small calculation instead of four, and that's why we stay in percent. Choice number one again.",
     "at": [
      "One small calculation",
      "number one again"

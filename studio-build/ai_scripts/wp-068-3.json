@@ -1,0 +1,152 @@
+{
+ "videoId": "wp-068-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-24 scripts (2026-10-20): math_patches/_ai_vis_t24.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with ranges, and ask about the other regions."
+  ],
+  [
+   {
+    "say": "So far, they asked about both. But a range question can ask about another region. Let's go back to our fifteen students, ten in art and nine in drama. At least how many take art only?",
+    "at": [
+     "about both. But",
+     "Let's go back to our fifteen",
+     "fifteen students, ten"
+    ]
+   },
+   {
+    "say": "First we write that region with both in it. Art only is the art students who are not in both. So art only is ten minus both.",
+    "at": [
+     "So art only is ten minus both"
+    ]
+   },
+   {
+    "say": "Now we ask, what makes art only small? The bigger both is, the less is left for art only. So we need the biggest overlap.",
+    "at": [
+     "Now we ask",
+     "So we need the biggest overlap"
+    ]
+   },
+   {
+    "say": "The biggest overlap is the smaller group, nine. So art only is ten minus nine, one. At least one student takes only art.",
+    "at": [
+     "The biggest overlap",
+     "ten minus nine",
+     "At least one"
+    ]
+   },
+   {
+    "say": "Here's the trap. At least makes us think of the smallest overlap, four. But ten minus four is six. That's the most art only can be, not the least.",
+    "at": [
+     "But ten minus four is six",
+     "That's the most"
+    ]
+   },
+   {
+    "say": "So art only is from one to six. At least or at most is always about the region they ask.",
+    "at": [
+     "So art only is from one to six",
+     "At least or"
+    ]
+   },
+   {
+    "say": "Let's try it with the thirty players. Eighteen wear a cap, and twenty-one wear gloves. The smallest overlap was nine, and the biggest is eighteen. At most how many wear only gloves?",
+    "at": [
+     "Eighteen wear a cap",
+     "twenty-one wear gloves"
+    ]
+   },
+   {
+    "say": "Gloves only is twenty-one minus both. For the most gloves only, we need the smallest both, nine. Twenty-one minus nine is twelve. So at most twelve wear only gloves.",
+    "at": [
+     "Gloves only is twenty-one minus both",
+     "For the most",
+     "Twenty-one minus nine",
+     "So at most"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the region that confuses students most, neither. Again the fifteen students, ten in art and nine in drama. At most how many take neither?",
+    "at": [
+     "confuses students most",
+     "Again the fifteen students",
+     "in art and"
+    ]
+   },
+   {
+    "say": "Neither means not in art, and also not in drama. Not in art is fifteen minus ten, five. Not in drama is fifteen minus nine, six.",
+    "at": [
+     "Not in art is fifteen minus ten",
+     "minus ten, five",
+     "Not in drama is fifteen",
+     "minus nine, six"
+    ]
+   },
+   {
+    "say": "So neither is the students who are in both of these new groups. It's the overlap of not art and not drama.",
+    "at": [
+     "in both of these new groups",
+     "It's the overlap of not art",
+     "art and not"
+    ]
+   },
+   {
+    "say": "Now we use the same two rules on them. The biggest overlap is the smaller group, five. So at most five take neither.",
+    "at": [
+     "The biggest overlap is the smaller group, five",
+     "smaller group, five"
+    ]
+   },
+   {
+    "say": "And the smallest? Five plus six is eleven. That's not over fifteen, so the smallest overlap is zero.",
+    "at": [
+     "Five plus six is eleven",
+     "That's not over"
+    ]
+   },
+   {
+    "say": "So neither is from zero to five. And look, the most neither comes when all nine drama students also take art. Then only ten students are in a group, and fifteen minus ten is five.",
+    "at": [
+     "So neither is from zero to five",
+     "And look, the"
+    ]
+   },
+   "So a big overlap gives a big neither. Before you pick a rule, ask which overlap makes the region they ask about small or big."
+  ],
+  [
+   {
+    "say": "Let's sum up. The biggest overlap is the smaller group. We put the small group inside the big one.",
+    "at": [
+     "The biggest overlap is the smaller group",
+     "We put the"
+    ]
+   },
+   {
+    "say": "The smallest overlap is the sum of the groups minus the total. If they don't go over the total, it's zero, never negative.",
+    "at": [
+     "The smallest overlap is the sum",
+     "sum of the"
+    ]
+   },
+   {
+    "say": "In percent the whole is a hundred percent, and in fractions it's one.",
+    "at": [
+     "In percent the whole",
+     "a hundred percent"
+    ]
+   },
+   {
+    "say": "For another region, we write it with both in it, and ask which overlap makes it small or big. And neither is the overlap of the two not groups.",
+    "at": [
+     "For another region",
+     "it with both",
+     "And neither is the overlap",
+     "of the two"
+    ]
+   },
+   "Take a moment to memorize these rules. Next come the exact questions, and the squares method. I'll see you in the next video."
+  ]
+ ]
+}

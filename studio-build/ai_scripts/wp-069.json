@@ -197,6 +197,89 @@
   ],
   [
    {
+    "say": "Sometimes neither isn't written as a number, but the words still tell us what it is. For example, each of thirty guests drank tea, coffee, or both. Eighteen drank tea, and seventeen drank coffee. How many drank both?",
+    "at": [
+     "as a number",
+     "each of thirty guests",
+     "tea, coffee, or"
+    ]
+   },
+   {
+    "say": "Every guest drank something. So nobody is outside both groups, and neither is zero.",
+    "at": [
+     "and neither is zero"
+    ]
+   },
+   {
+    "say": "Now it's an exact question, so let's draw the boxes. All four together are thirty. Tea is eighteen, and coffee is seventeen. And the first box, neither, is zero.",
+    "at": [
+     "so let's draw the boxes",
+     "All four together are thirty",
+     "Tea is eighteen",
+     "and coffee",
+     "the first box",
+     "neither, is zero"
+    ]
+   },
+   {
+    "say": "Neither plus coffee only is everyone outside tea. That's thirty minus eighteen, twelve. Neither is zero, so coffee only is twelve.",
+    "at": [
+     "everyone outside tea",
+     "thirty minus eighteen",
+     "so coffee only is twelve"
+    ]
+   },
+   {
+    "say": "The coffee bracket is seventeen. So both is seventeen minus twelve, five.",
+    "at": [
+     "The coffee bracket",
+     "seventeen minus twelve",
+     "five."
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The same happens with different things. Two friends have twenty different stamps together. One has twelve, and the other has eleven.",
+    "at": [
+     "Two friends have twenty",
+     "One has twelve"
+    ]
+   },
+   "Twenty counts only the stamps they have, so no stamp is outside both groups. Neither is zero.",
+   {
+    "say": "So we count each stamp once. Twelve plus eleven is twenty-three. But there are only twenty stamps, so twenty-three minus twenty, three stamps were counted twice. Both friends have those three.",
+    "at": [
+     "Twelve plus eleven",
+     "But there are",
+     "twenty-three minus twenty",
+     "were counted twice"
+    ]
+   },
+   {
+    "say": "Now compare it with a class of twenty students. Twelve play chess, and eleven play music.",
+    "at": [
+     "a class of twenty students",
+     "Twelve play chess"
+    ]
+   },
+   {
+    "say": "Here some students may play nothing, so neither isn't given. Then it's a range again. Both is from three, the sum minus the total, to eleven, the smaller group.",
+    "at": [
+     "so neither isn",
+     "Both is from"
+    ]
+   },
+   {
+    "say": "So when you see words like different, together, or each one did at least one, neither is zero. And that's the box to start from.",
+    "at": [
+     "when you see words like different",
+     "different, together, or"
+    ]
+   }
+  ],
+  [
+   {
     "say": "There's one more region a question can ask about, exactly one. Exactly one means one group, but not both. So art only, or drama only.",
     "at": [
      "There's one more region",
@@ -246,6 +329,7 @@
      "middle box, and"
     ]
    },
+   "And when everyone is in a group, neither is zero.",
    {
     "say": "We put in what we know, and fill the rest like a sudoku. Now let's practice it on three questions. I'll see you in the next video.",
     "at": [

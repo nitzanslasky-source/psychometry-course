@@ -109,60 +109,15 @@
   ],
   [
    {
-    "say": "[pause] Now a third way, the arrow map. It helps with chains of comparisons like this one. Each sentence becomes one arrow.",
+    "say": "[pause] Now a third way, the arrow map, like in the lesson. Each sentence becomes one arrow. The arrow starts at the whole, the word after than, and its multiplier is written on it.",
     "at": [
      "the arrow map",
-     "with chains of"
+     "one arrow. The"
     ]
    },
    {
-    "say": "Let's learn it on an easy sentence first. x is twenty percent more than y. The arrow starts at the whole, the word after than. So it goes from y to x.",
+    "say": "We start again from the givens. Dana earns fifty percent more than Omer. The whole is Omer, so the arrow goes from Omer to Dana. Fifty percent more is a hundred fifty percent, so it's times one point five.",
     "at": [
-     "an easy sentence",
-     "x is twenty percent more than y",
-     "The arrow starts at the whole",
-     "whole, the word",
-     "So it goes from y to x"
-    ]
-   },
-   {
-    "say": "On the arrow we write the multiplier. Twenty percent more is a hundred twenty percent, times one point two.",
-    "at": [
-     "Twenty percent more"
-    ]
-   },
-   {
-    "say": "Along the arrow, we multiply. Against the arrow, we divide.",
-    "at": [
-     "Along the arrow, we multiply",
-     "Against the arrow, we divide"
-    ]
-   },
-   {
-    "say": "So what percent of x is y? We go from x back to y, against the arrow. So we divide by one point two.",
-    "at": [
-     "So what percent",
-     "So we divide by one point two"
-    ]
-   },
-   {
-    "say": "One point two is six fifths. Dividing by six fifths is multiplying by five sixths. And five sixths is eighty-three and a third percent.",
-    "at": [
-     "One point two is six fifths",
-     "Dividing by six fifths",
-     "multiplying by five",
-     "And five sixths is",
-     "and a third"
-    ]
-   },
-   "Many students say eighty percent. But twenty percent more one way is not twenty percent less the other way, because the whole has changed."
-  ],
-  [
-   {
-    "say": "Now our question. We start again from the givens. Dana earns fifty percent more than Omer. The whole is Omer, so the arrow goes from Omer to Dana. Fifty percent more is times one point five.",
-    "at": [
-     "Now our",
-     "start again from",
      "Dana earns fifty percent more",
      "than Omer. The",
      "so the arrow goes from Omer",
@@ -177,7 +132,14 @@
     ]
    },
    {
-    "say": "We want Lior divided by Omer, so we walk from Omer to Lior. Both arrows point our way, so we multiply. One point five is three halves, and three halves times two thirds is one.",
+    "say": "We want Lior divided by Omer, so we walk from Omer to Lior. Along an arrow we multiply, and both arrows point our way. So we multiply both multipliers.",
+    "at": [
+     "Along an arrow we multiply",
+     "and both arrows"
+    ]
+   },
+   {
+    "say": "One point five is three halves, and three halves times two thirds is one.",
     "at": [
      "One point five is three halves",
      "and three halves times two thirds",

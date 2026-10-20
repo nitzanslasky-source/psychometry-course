@@ -5,7 +5,7 @@
   [
    "Welcome back. Percent questions on the exam come in two main types.",
    {
-    "say": "Type one is a straight calculation, like in the last lesson. Type two is a percent of a percent. And in type two, the whole isn't even given.",
+    "say": "Type one is a straight calculation, like in the last lesson. Type two is a percent of a percent, changes one after the other, and comparisons. And in type two, the whole often isn't even given.",
     "at": [
      "straight calculation, like"
     ]
@@ -13,7 +13,76 @@
   ],
   [
    {
-    "say": "Here's an example. A price rises by eighty percent. Then it falls by twenty-five percent of the new price. What is the change in the price overall?",
+    "say": "But first, one rule we'll use all the time. By what percent did something go up, or down?",
+    "at": [
+     "we'll use all"
+    ]
+   },
+   {
+    "say": "Here's the rule. A change in percent is the change, divided by the original amount, times a hundred. The original is where we started, before the change.",
+    "at": [
+     "A change in percent is",
+     "original amount, times"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. A ticket costs twenty credits, and then it costs twenty-five credits. The change is twenty-five minus twenty, five credits.",
+    "at": [
+     "The change is",
+     "twenty, five credits"
+    ]
+   },
+   {
+    "say": "The original is twenty, so we divide by twenty. Five over twenty is a quarter, and a quarter is twenty-five percent. So the price went up by twenty-five percent.",
+    "at": [
+     "Five over twenty is a quarter",
+     "So the price"
+    ]
+   },
+   "Why the original? Because a percent is always a percent of something. Here we ask, five credits is what percent of the price we started with?",
+   {
+    "say": "And here's the trap. A lot of students divide by the new price, twenty-five, because it's the last number they see. Five over twenty-five is only twenty percent. That's the wrong whole.",
+    "at": [
+     "Five over twenty-five is only",
+     "twenty percent. That's"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's go the other way. The price falls from twenty-five credits back to twenty. The change is five credits again.",
+    "at": [
+     "other way. The",
+     "The change is five credits again"
+    ]
+   },
+   {
+    "say": "But now the original is twenty-five, the price before this change. Five over twenty-five is a fifth, so the price fell by twenty percent.",
+    "at": [
+     "But now the",
+     "Five over twenty-five is a fifth",
+     "fifth, so the"
+    ]
+   },
+   {
+    "say": "So the same five credits are twenty-five percent up, but only twenty percent down. Up, the whole is twenty. Down, the whole is twenty-five, a bigger whole.",
+    "at": [
+     "are twenty-five percent up",
+     "only twenty percent"
+    ]
+   },
+   {
+    "say": "One more, a class shrinks from eighty students to sixty. The change is twenty, and the original is eighty. Twenty over eighty is a quarter, so the class is twenty-five percent smaller.",
+    "at": [
+     "Twenty over eighty",
+     "twenty-five percent smaller"
+    ]
+   },
+   "So when you see, by what percent did it rise, or fall, take the change, and divide by the amount before the change."
+  ],
+  [
+   {
+    "say": "Now a percent of a percent. A price rises by eighty percent. Then it falls by twenty-five percent of the new price. What is the change in the price overall?",
     "at": [
      "A price rises by eighty",
      "Then it falls"
@@ -44,9 +113,10 @@
     ]
    },
    {
-    "say": "We started at a hundred and ended at a hundred thirty-five. That's thirty-five more, so the price rose by thirty-five percent.",
+    "say": "We started at a hundred and ended at a hundred thirty-five. The change is thirty-five, and the original is a hundred. Thirty-five over a hundred is thirty-five percent, so the price rose by thirty-five percent.",
     "at": [
-     "so the price rose by"
+     "Thirty-five over a hundred",
+     "thirty-five percent, so"
     ]
    },
    {
@@ -56,7 +126,7 @@
      "Because the second"
     ]
    },
-   "And here's why a hundred is so nice. The number we get at the end is already the answer in percent. Thirty-five out of a hundred is thirty-five percent."
+   "And here's why a hundred is so nice. The original is a hundred, so the change at the end is already the answer in percent."
   ],
   [
    {
@@ -103,136 +173,6 @@
   ],
   [
    {
-    "say": "Now, where do we put the hundred? Here's a question with three people.",
-    "at": [
-     "put the hundred",
-     "three people"
-    ]
-   },
-   {
-    "say": "Here's the rule. The words of and than point at the whole. The whole is whatever comes right after them.",
-    "at": [
-     "The words of",
-     "The whole is whatever",
-     "right after them"
-    ]
-   },
-   "For example, thirty percent of the students. The students come after of, so the students are the whole. Or, Tal earns sixty percent more than Ben. Ben comes after than, so Ben is the whole in that sentence.",
-   "But this question has three thans. Tal than Ben, Eli than Tal, and Eli than Ben. So who gets the hundred?",
-   {
-    "say": "The one that decides is the than in the question itself, lower than Ben's. So Ben gets the hundred.",
-    "at": [
-     "lower than Ben",
-     "So Ben gets the hundred"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Ben earns a hundred. Tal earns sixty percent more than Ben, so Tal earns a hundred sixty.",
-    "at": [
-     "Ben earns a hundred",
-     "Ben earns a hundred",
-     "earns sixty percent",
-     "so Tal earns"
-    ]
-   },
-   {
-    "say": "Eli earns forty-five percent less than Tal. A hundred minus forty-five is fifty-five. So fifty-five percent of Tal's pay stays.",
-    "at": [
-     "Eli earns forty-five",
-     "So fifty-five percent"
-    ]
-   },
-   {
-    "say": "Ten percent of a hundred sixty is sixteen. So fifty percent is eighty, and five percent is eight. Eighty plus eight is eighty-eight.",
-    "at": [
-     "Ten percent of a hundred sixty",
-     "sixty is sixteen",
-     "So fifty percent is eighty",
-     "and five percent",
-     "Eighty plus eight"
-    ]
-   },
-   {
-    "say": "Eli earns eighty-eight, and Ben earns a hundred. So Eli's pay is twelve percent lower than Ben's. Not fifteen percent, which is sixty minus forty-five.",
-    "at": [
-     "Eli earns eighty-eight",
-     "So Eli's pay is twelve",
-     "Not fifteen percent"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Here's a trap the exam loves. A price goes up twenty percent, and then down twenty percent. Is it back where it started?",
-    "at": [
-     "exam loves. A"
-    ]
-   },
-   {
-    "say": "Let's plug in a hundred. Up twenty percent is a hundred twenty.",
-    "at": [
-     "Up twenty percent is"
-    ]
-   },
-   {
-    "say": "Now down twenty percent of a hundred twenty. Ten percent of a hundred twenty is twelve, so twenty percent is twenty-four.",
-    "at": [
-     "Now down twenty",
-     "so twenty percent is twenty-four"
-    ]
-   },
-   {
-    "say": "A hundred twenty minus twenty-four is ninety-six. So we end four percent lower than the start. We're not back where we started.",
-    "at": [
-     "A hundred twenty minus twenty-four",
-     "So we end"
-    ]
-   },
-   "Why? Because the twenty percent down is taken from a bigger amount, a hundred twenty. So it takes away more than it added.",
-   {
-    "say": "And if it goes down first, and then up? A hundred down twenty percent is eighty. Twenty percent of eighty is sixteen, and eighty plus sixteen is ninety-six again. The same result, in any order.",
-    "at": [
-     "A hundred down twenty percent",
-     "Twenty percent of eighty",
-     "and eighty plus sixteen",
-     "The same result"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "There's even a rule for it. Up p percent, and then down p percent, always loses p squared over a hundred percent.",
-    "at": [
-     "for it. Up",
-     "always loses p squared"
-    ]
-   },
-   {
-    "say": "Twenty squared is four hundred. Four hundred over a hundred is four. That's our four percent.",
-    "at": [
-     "Twenty squared is four hundred",
-     "Four hundred over"
-    ]
-   },
-   {
-    "say": "Let's check the rule once more, with thirty percent. Thirty squared is nine hundred. Over a hundred, that's nine. So up thirty and down thirty should lose nine percent.",
-    "at": [
-     "Thirty squared is nine hundred",
-     "Over a hundred"
-    ]
-   },
-   {
-    "say": "With a hundred, up thirty percent is a hundred thirty. Thirty percent of a hundred thirty is thirty-nine. A hundred thirty minus thirty-nine is ninety-one, nine percent lower. It works.",
-    "at": [
-     "A hundred thirty minus thirty-nine",
-     "is ninety-one, nine"
-    ]
-   }
-  ],
-  [
-   {
     "say": "One warning. Plugging in a hundred works when everything in the story is a percent.",
     "at": [
      "a hundred works"
@@ -253,47 +193,17 @@
     ]
    },
    {
-    "say": "Now start from two hundred. Ten percent more is two hundred twenty, and plus twenty is two hundred forty. That's forty out of two hundred, twenty percent.",
+    "say": "Now start from two hundred. Ten percent more is two hundred twenty, and plus twenty is two hundred forty. The change is forty, and forty out of two hundred is twenty percent.",
     "at": [
      "Now start from two hundred",
      "Ten percent more"
     ]
    },
    {
-    "say": "Different starting prices give different answers. So when the story adds a fixed amount, don't plug in a hundred. Use the number they gave you, or a letter.",
+    "say": "Different starting prices give different answers. So when the story adds a fixed amount, don't plug in a hundred. Use the number they gave you, or a letter. [pause] Okay. I'll see you in the next part.",
     "at": [
      "when the story adds a fixed amount",
      "fixed amount, don't"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Let's sum up. When the whole isn't given, plug in a hundred. The number we get at the end is the answer in percent.",
-    "at": [
-     "When the whole",
-     "plug in a"
-    ]
-   },
-   {
-    "say": "Each new percent is taken from the new amount, not from the hundred.",
-    "at": [
-     "Each new percent",
-     "from the new"
-    ]
-   },
-   {
-    "say": "The whole comes after of or than, and the one that decides is in the question itself.",
-    "at": [
-     "The whole comes after",
-     "or than, and"
-    ]
-   },
-   {
-    "say": "And up and down by the same percent never brings us back to the start. [pause] Next we'll see a survey question and the percent tree, and I'll see you in the next video.",
-    "at": [
-     "And up and down",
-     "the same percent"
     ]
    }
   ]

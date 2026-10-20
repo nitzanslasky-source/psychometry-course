@@ -19,41 +19,36 @@
     ]
    },
    {
-    "say": "Let's start with the math way, and learn a rule. A change in percent is the change, divided by the original amount, times a hundred. The original is where we started, before the change.",
+    "say": "Let's start with the math way. Like in the lesson, a change in percent is the change, divided by the original amount, times a hundred. The original is the price before the change.",
     "at": [
      "Let's start",
-     "A change in percent is",
+     "a change in percent is",
      "original amount, times"
     ]
    },
    {
-    "say": "Let's see it on easy numbers first. A price goes from twenty to twenty-five. The change is five, and the original is twenty. Five over twenty is a quarter, so the price rose by twenty-five percent.",
+    "say": "The first rise is from forty to fifty. The change is fifty minus forty, ten credits. The original is forty, the price before this rise. So we divide by forty, not by the new price, fifty.",
     "at": [
-     "Five over twenty is a quarter",
-     "by twenty-five percent"
+     "The first rise is from forty",
+     "forty, ten credits"
     ]
    },
    {
-    "say": "And here's the trap. Many students divide by the new price, twenty-five. Five over twenty-five is a fifth, twenty percent. That's wrong, because a change is always measured from where it started.",
+    "say": "Ten over forty is a quarter, twenty-five percent. So the first rise is twenty-five percent.",
     "at": [
-     "Five over twenty-five",
-     "fifth, twenty percent"
+     "Ten over forty is a quarter",
+     "So the first"
     ]
    }
   ],
   [
    {
-    "say": "Now our question. The first rise is from forty to fifty. The change is ten, and the original is forty. Ten over forty is a quarter, twenty-five percent.",
-    "at": [
-     "Now our",
-     "first rise is",
-     "Ten over forty is a quarter"
-    ]
-   },
-   {
     "say": "The second rise is from fifty to sixty. The change is ten again. But now the original is fifty, the price before this rise. Ten over fifty is a fifth, twenty percent.",
     "at": [
-     "The second rise",
+     "The second",
+     "from fifty to",
+     "change is ten",
+     "now the original",
      "Ten over fifty is a fifth"
     ]
    },

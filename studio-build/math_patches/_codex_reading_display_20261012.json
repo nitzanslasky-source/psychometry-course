@@ -11363,6 +11363,22 @@
      ]
     ]
    }
+  },
+  "wp-053-2": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "2.6": [
+     [
+      "times the bracket, a hundred plus p, percent",
+      "times (100 + p)%"
+     ],
+     [
+      "times the bracket, a hundred minus p, percent",
+      "times (100 − p)%"
+     ]
+    ]
+   }
   }
  }
 }

@@ -651,10 +651,12 @@ def AMAP(name, nodes, arrows, gap=250, col=0, w=None, title='Arrow map'):
 # Study plan before topic 23: 1, 30, 2, 4, 31, 6, 8, 32, 9, 10, 33, 51, 21, 3, 22, 5, 7. So fractions (2, 3), decimals,
 # equations (6, 7), expressions (5), plugging in numbers / the answers and estimation (51), the ratio table and the
 # triangle value, "of" = times, "is" = equals (22) are REMINDERS. Percent itself is NEW here (t33-03 used a little).
-# Inequalities (12), averages (25) come LATER. Moved from the lessons into the question that first uses them (teacher
-# rule "teach in question videos"): the change rule (g059), multipliers (g060), the two-changes formula (q-r26-t23-01),
-# the arrow map (g061), the swap (g062), the flip rule and "same whole, keep" (q-r26-t23-16), working back from what
-# is left (g065). Numbers differ from the Hebrew course.
+# Inequalities (12), averages (25) come LATER. 2026-10-21 rule R37: the CORE methods (used in several questions or
+# common on the real exam) are taught in the LESSON wp-053 (now in 4 parts): the change rule, multipliers, working back
+# from what is left, the arrow map (83 1/3%, not 80%), the flip rule and "same whole, keep". The first question that uses
+# each one applies it step by step ("like in the lesson"): g059, g060, g065, g061, q-r26-t23-16. One-off tricks stay in
+# their question: the two-changes formula (q-r26-t23-01), the swap x% of y = y% of x (g062). Numbers differ from the
+# Hebrew course.
 # =================================================================================================================
 
 # ------------------------------------------------------------------------------------------------ wp-052 (camera lesson)
@@ -949,14 +951,20 @@ CAMERA_SPLIT = ('wp-052', 'Calculating Percentages', [
     (12, "Let's continue with percentages, and see one more strength of the ratio table.")])
 
 
-# ------------------------------------------------------------------------------------------------ wp-053 (lesson)
+# ------------------------------------------------------------------------------------------------ wp-053 (lesson, in parts)
 # Hebrew (wp 3082-3402): two types of percent questions; no whole given -> we'd call it x, but percent of a percent gets
 # messy, so plug in 100 (any number works, 100 is the fastest; the number we get IS the percent); each new percent is of
 # the NEW amount (the 100 is history); "after 'of' comes the whole", and with several, the "of" of the QUESTION decides.
-# Kept from the English course (no question video teaches them): up and down by the same percent never comes back
-# (p squared over 100), and when 100 fails (a fixed amount). REMINDER: plugging in numbers (topic 51). The survey and
-# the percent tree are the next video (g054). Moved out of this lesson, each to the question that first uses it:
-# multipliers (g060), the two-changes formula (q-r26-t23-01), working backwards (g065), the arrow map (g061).
+# Kept from the English course: up and down by the same percent never comes back (p squared over 100), and when 100
+# fails (a fixed amount). REMINDER: plugging in numbers (topic 51), the fraction table and 10% chunks (wp-052).
+# 2026-10-21 rule R37 (teacher: "every method is taught properly, explained perfectly with extra examples"): the CORE
+# methods of the topic are taught HERE, each with what / why / 2-3 worked examples from an easy one / the trap / "when
+# you see ...": the change rule (first used in g059; also q-r26-t23-03), multipliers (g060, q-r26-t23-01, g061, g065),
+# working back from what is left (g065, practice p13, 2026_spring_q2_07), the arrow map with the 83 1/3%-not-80% trap
+# (g061, q-r26-t23-03, 2023_spring_q2_12), the flip rule and "the same whole: keep" (q-r26-t23-16, practice p14,
+# 2020_autumn_q1_06, 2024_autumn_q2_08, 2019_spring_q2_12). Those questions now APPLY them ("like in the lesson").
+# One-off tricks stay in their question: p + q + pq/100 (q-r26-t23-01), x% of y = y% of x (g062). New numbers here
+# (none of a question's). The lesson is split into parts at idea boundaries (SPLIT053 below, _camera_parts.split).
 p_1 = I('p_1', 'A price rises by $80\\%$, then falls by $25\\%$ of the new price. What is the change overall?', size=30)
 p_2 = IH('p_2', 'price: $\\ 100$', size=30)
 p_3 = IH('p_3', '$100+80=180$', size=30)
@@ -978,6 +986,7 @@ p_17 = IH('p_17', 'Tal: $\\ 100+60=160$', size=30)
 p_18 = IH('p_18', 'Eli: $\\ 55\\%$ of $160$', size=30, col=1)
 p_19a = IH('p_19a', '$10\\%$ of $160=16$', size=30, col=1)
 p_19 = IH('p_19', '$50\\%$: $\\ 80,\\ \\ 5\\%$: $\\ 8$', size=30, col=1)
+p_14c = I('p_14c', "Tal: $\\ 60\\%$ more than Ben. $\\ $Eli: $\\ 45\\%$ less than Tal. $\\ $Eli vs Ben?", size=28)
 p_14b = I('p_14b', "Tal: $\\ 60\\%$ more than Ben. $\\ $Eli: $\\ 45\\%$ less than Tal. $\\ $Eli vs Ben?", size=28)
 p_20 = IH('p_20', '$80+8=88$', size=30, col=1)
 p_21 = IH('p_21', 'Ben $100$, Eli $88$: $\\ 12\\%$ lower', size=30, col=1)
@@ -987,6 +996,7 @@ p_24 = IH('p_24', '$120-24=96$: $\\ 4\\%$ lower', size=30)
 p_25 = IH('p_25', '$100-20=80$', size=30, col=1)
 p_26 = IH('p_26', '$20\\%$ of $80=16$', size=30, col=1)
 p_27 = IH('p_27', '$80+16=96$ again', size=30, col=1)
+p_27b = IH('p_27b', '$1.2\\cdot0.8=0.96$', size=30)
 p_28 = I('p_28', 'Up $p\\%$, then down $p\\%$: $\\ $a loss of $\\dfrac{p^2}{100}\\%$', size=34, hand='Up p%, then down p%:  a loss of {p^2/100}%')
 p_29 = IH('p_29', '$20^2=400$, $\\ 400\\div100=4$', size=30)
 p_30 = IH('p_30', '$30^2=900$, $\\ 900\\div100=9$', size=30)
@@ -995,18 +1005,107 @@ p_32 = I('p_32', 'Rise $10\\%$, then add a fixed $20$ credits', size=30)
 p_33 = IH('p_33', '$100\\to110\\to130$: $\\ +30\\%$', size=30)
 p_34 = IH('p_34', '$200\\to220\\to240$: $\\ +20\\%$', size=30)
 p_35 = I('p_35', 'A fixed amount? $\\ $Use the real number, or a letter.', size=30)
+# the change rule (R37: moved back from g059)
+pc_1 = I('pc_1', 'change in $\\%=\\dfrac{\\text{change}}{\\text{original}}\\times100$', size=34, hand='change in % = {change/original}×100')
+pc_2 = IH('pc_2', '$20\\to25$: $\\ $change $5$', size=30)
+pc_3 = IH('pc_3', '$\\frac{5}{20}=\\frac{1}{4}=25\\%$ higher', size=30)
+pc_4 = IH('pc_4', 'not $\\frac{5}{25}$: $\\ $the new price', size=30)
+pc_5 = IH('pc_5', '$25\\to20$: $\\ $change $5$', size=30, col=1)
+pc_6 = IH('pc_6', '$\\frac{5}{25}=\\frac{1}{5}=20\\%$ lower', size=30, col=1)
+pc_7 = IH('pc_7', 'up $25\\%$, $\\ $down $20\\%$', size=30, col=1)
+pc_8 = IH('pc_8', '$80\\to60$: $\\ \\frac{20}{80}=\\frac{1}{4}=25\\%$ lower', size=30, col=1)
+# multipliers (R37: moved back from g060)
+pm_1 = IH('pm_1', 'down $30\\%$: $\\ 70\\%$ stays, $\\ \\times0.7$', size=30)
+pm_2 = IH('pm_2', '$200\\cdot0.7=140$', size=30)
+pm_3 = IH('pm_3', 'up $40\\%$: $\\ 140\\%$, $\\ \\times1.4$', size=30, col=1)
+pm_4 = IH('pm_4', '$50\\cdot1.4=70$', size=30, col=1)
+pm_5 = IH('pm_5', 'up $15\\%$: $\\ \\times1.15$', size=30)
+pm_6 = IH('pm_6', 'down $5\\%$: $\\ \\times0.95$', size=30, col=1)
+pm_7 = IH('pm_7', 'wood: $\\ 0.7\\cdot0.8=0.56$', size=30)
+pm_8 = IH('pm_8', '$56\\%$ stays, $\\ 44\\%$ lost', size=30)
+pm_9 = IH('pm_9', 'up $50\\%$, then down $20\\%$', size=30, col=1)
+pm_10 = IH('pm_10', '$1.5\\cdot0.8=1.2$', size=30, col=1)
+pm_11 = IH('pm_11', '$120\\%$: $\\ 20\\%$ higher', size=30, col=1)
+pm_12 = IH('pm_12', 'not $50-20=30$', size=30, col=1)
+# working back from what is left (R37: moved back from g065)
+pw_1 = I('pw_1', 'After a $20\\%$ discount, a shirt costs $96$ credits. What was the price before?', size=30)
+pw_3 = IH('pw_3', '$80\\%$ of the start $=96$', size=30)
+pw_4 = IH('pw_4', '$10\\%=96\\div8=12$', size=30, col=1)
+pw_5 = IH('pw_5', '$100\\%=10\\cdot12=120$', size=30, col=1)
+pw_6 = IH('pw_6', 'check: $\\ 120-24=96$', size=30, col=1)
+pw_7 = IH('pw_7', 'not $96+20\\%$ of $96$', size=30)
+pw_8 = I('pw_8', 'A pond loses $20\\%$ of its fish, then half of the rest. $40$ fish are left. How many were there at the start?', size=30)
+pw_9 = IH('pw_9', '$0.8\\cdot0.5=0.4$', size=30)
+pw_10 = IH('pw_10', '$40\\%$ of the start $=40$', size=30)
+pw_11 = IH('pw_11', '$1\\%=1$, $\\ 100\\%=100$', size=30, col=1)
+pw_12 = IH('pw_12', 'check: $\\ 100\\to80\\to40$', size=30, col=1)
+# the arrow map (R37: moved back from g061)
+pa_1 = AMAP('pa_1', ['Ben', 'Tal', 'Eli'], [('a', 0, 1, '×1.6'), ('b', 1, 2, '×0.55')], gap=250)
+pa_2 = IH('pa_2', '$1.6\\cdot0.55$', size=30, col=1)
+pa_3 = IH('pa_3', '$16\\cdot55=800+80=880$', size=30, col=1)
+pa_4 = IH('pa_4', '$0.88$: $\\ 12\\%$ lower', size=30, col=1)
+pa_5 = IH('pa_5', '$x$ is $25\\%$ more than $y$', size=30)
+pa_6 = AMAP('pa_6', ['y', 'x'], [('a', 0, 1, '×1.25')], gap=260)
+pa_7 = IH('pa_7', 'along the arrow: $\\ \\times$', size=30)
+pa_7b = IH('pa_7b', 'against it: $\\ \\div$', size=30)
+pa_8 = IH('pa_8', '$1.25=\\frac{5}{4}$', size=30, col=1)
+pa_8b = IH('pa_8b', '$\\div\\frac{5}{4}=\\times\\frac{4}{5}=80\\%$', size=30, col=1)
+pa_9 = IH('pa_9', '$20\\%$ less, $\\ $not $25\\%$', size=30, col=1)
+pa_10 = IH('pa_10', '$20\\%$ more: $\\ \\times\\frac{5}{6}=83\\frac{1}{3}\\%$', size=30, col=1)
+# the flip rule and "the same whole: keep" (R37: moved back from q-r26-t23-16)
+pf_1 = IH('pf_1', '$50\\%$ of $10=5$', size=30)
+pf_2 = IH('pf_2', '$10\\%$ of $50=5$', size=30)
+pf_3 = IH('pf_3', '$20\\%$ of Dan $=30\\%$ of Gil', size=30)
+pf_4 = IH('pf_4', 'Dan : Gil $=30:20=3:2$', size=30, col=1)
+pf_5 = IH('pf_5', '$0.2D=0.3G$', size=30, col=1)
+pf_6 = IH('pf_6', '$\\frac{D}{G}=\\frac{0.3}{0.2}=\\frac{3}{2}$', size=30, col=1)
+pf_7 = IH('pf_7', '$D=150,\\ G=100$: $\\ 30=30$', size=30, col=1)
+pf_8 = IH('pf_8', 'shirt $=40\\%$ of the coat', size=30)
+pf_9 = IH('pf_9', 'shoes $=120\\%$ of the coat', size=30)
+pf_10 = IH('pf_10', 'coat $100$: $\\ 40$ and $120$', size=30)
+pf_11 = IH('pf_11', 'shoes : shirt $=120:40=3:1$', size=30, col=1)
+pf_12 = IH('pf_12', 'the same part: $\\ $flip', size=30, col=1)
+pf_13 = IH('pf_13', 'the same whole: $\\ $keep', size=30, col=1)
 p_s1 = I('p_s1', 'Whole not given? $\\ $Plug in $100$.', size=30)
-p_s2 = I('p_s2', 'Each new percent is of the new amount', size=30)
-p_s3 = I('p_s3', 'The whole comes after "of" / "than", in the question', size=30)
-p_s4 = I('p_s4', 'Up $p\\%$ and down $p\\%$: $\\ $never back to the start', size=30)
+p_sc = I('p_sc', 'A change: $\\ $divide by the original', size=30)
+p_s2 = I('p_s2', 'Changes in a row: $\\ $multiply the multipliers', size=30)
+p_sw = I('p_sw', 'Know the end? $\\ $Go back to $100\\%$.', size=30)
+p_s3 = I('p_s3', 'The whole comes after "of" / "than"', size=30)
+p_sa = I('p_sa', 'Arrow map: $\\ $along $\\times$, $\\ $against $\\div$', size=30)
+p_sf = I('p_sf', 'The same part: $\\ $flip. $\\ $The same whole: $\\ $keep.', size=30)
 video('wp-053', 'lesson', slides=[
     S('Percent of a Percent',
       L("Welcome back. Percent questions on the exam come in two main types."),
-      L("Type one is a straight calculation, like in the last lesson. Type two is a percent of a percent. And in type "
-        "two, the whole isn't even given.")),
+      L("Type one is a straight calculation, like in the last lesson. Type two is a percent of a percent, changes one "
+        "after the other, and comparisons. And in type two, the whole often isn't even given.")),
+    # ---- part 1: the change rule, plug in a hundred
+    S('The change in percent',
+      L("But first, one rule we'll use all the time. By what percent did something go up, or down?"),
+      L("Here's the rule. A change in percent is the change, divided by the original amount, times a hundred. The "
+        "original is where we started, before the change.", show(pc_1, 'A change in percent is')),
+      L("Let's see it in numbers. A ticket costs twenty credits, and then it costs twenty-five credits. The change is "
+        "twenty-five minus twenty, five credits.", show(pc_2, 'The change is')),
+      L("The original is twenty, so we divide by twenty. Five over twenty is a quarter, and a quarter is twenty-five "
+        "percent. So the price went up by twenty-five percent.", show(pc_3, 'Five over twenty is a quarter')),
+      L("Why the original? Because a percent is always a percent of something. Here we ask, five credits is what "
+        "percent of the price we started with?"),
+      L("And here's the trap. A lot of students divide by the new price, twenty-five, because it's the last number they "
+        "see. Five over twenty-five is only twenty percent. That's the wrong whole.",
+        show(pc_4, 'Five over twenty-five is only'))),
+    S('Down is not the same',
+      L("Now let's go the other way. The price falls from twenty-five credits back to twenty. The change is five "
+        "credits again.", show(pc_5, 'The change is five credits again')),
+      L("But now the original is twenty-five, the price before this change. Five over twenty-five is a fifth, so the "
+        "price fell by twenty percent.", show(pc_6, 'Five over twenty-five is a fifth')),
+      L("So the same five credits are twenty-five percent up, but only twenty percent down. Up, the whole is twenty. "
+        "Down, the whole is twenty-five, a bigger whole.", show(pc_7, 'are twenty-five percent up')),
+      L("One more, a class shrinks from eighty students to sixty. The change is twenty, and the original is eighty. "
+        "Twenty over eighty is a quarter, so the class is twenty-five percent smaller.", show(pc_8, 'Twenty over eighty')),
+      L("So when you see, by what percent did it rise, or fall, take the change, and divide by the amount before the "
+        "change.")),
     S('Plug in a hundred',
-      L("Here's an example. A price rises by eighty percent. Then it falls by twenty-five percent of the new price. What "
-        "is the change in the price overall?", show(p_1, 'A price rises by eighty')),
+      L("Now a percent of a percent. A price rises by eighty percent. Then it falls by twenty-five percent of the new "
+        "price. What is the change in the price overall?", show(p_1, 'A price rises by eighty')),
       L("We don't know the price. From school, we'd call it x. But with a percent of a percent, x gets messy very fast."),
       L("Remember plugging in numbers from psychometric thinking? Here we plug in a hundred. Any number would work, but a "
         "hundred is the easiest to calculate with."),
@@ -1016,12 +1115,13 @@ video('wp-053', 'lesson', slides=[
       L("Twenty-five percent is a quarter. A quarter of a hundred eighty is forty-five. So the price falls to a hundred "
         "eighty minus forty-five, a hundred thirty-five.", show(p_4, 'A quarter of a hundred eighty'),
         show(p_5, 'So the price falls')),
-      L("We started at a hundred and ended at a hundred thirty-five. That's thirty-five more, so the price rose by "
-        "thirty-five percent.", show(p_6, 'so the price rose by')),
+      L("We started at a hundred and ended at a hundred thirty-five. The change is thirty-five, and the original is a "
+        "hundred. Thirty-five over a hundred is thirty-five percent, so the price rose by thirty-five percent.",
+        show(p_6, 'Thirty-five over a hundred')),
       L("Not eighty minus twenty-five, fifty-five. Why? Because the second percent is taken from a bigger amount.",
         show(p_7, 'Not eighty minus')),
-      L("And here's why a hundred is so nice. The number we get at the end is already the answer in percent. Thirty-five "
-        "out of a hundred is thirty-five percent.")),
+      L("And here's why a hundred is so nice. The original is a hundred, so the change at the end is already the answer "
+        "in percent.")),
     S('Two losses',
       L("Here's another example. A pile of wood loses thirty percent. Then it loses twenty percent of what is left. What percent "
         "was lost in total?", show(p_8, 'A pile of wood loses')),
@@ -1035,6 +1135,101 @@ video('wp-053', 'lesson', slides=[
       L("There's a quicker way. Think about what stays. Lose thirty percent, and seventy percent stays. Lose twenty "
         "percent of that, and eighty percent of it stays. Eighty percent of seventy is eight times seven, fifty-six.",
         show(p_13, 'Eighty percent of seventy is'))),
+    S('When a hundred fails',
+      L("One warning. Plugging in a hundred works when everything in the story is a percent."),
+      L("Here's an example where it doesn't. A price rises by ten percent, and then a fixed twenty credits are added. By "
+        "what percent did it rise?", show(p_32, 'a fixed twenty credits')),
+      L("Start from a hundred. Ten percent more is a hundred ten, and plus twenty is a hundred thirty. That's thirty "
+        "percent.", show(p_33, 'Start from a hundred')),
+      L("Now start from two hundred. Ten percent more is two hundred twenty, and plus twenty is two hundred forty. The "
+        "change is forty, and forty out of two hundred is twenty percent.", show(p_34, 'Now start from two hundred')),
+      L("Different starting prices give different answers. So when the story adds a fixed amount, don't plug in a "
+        "hundred. Use the number they gave you, or a letter.", show(p_35, 'when the story adds a fixed amount'))),
+    # ---- part 2: multipliers, working back
+    S('Multipliers',
+      L("In the wood question, we looked at what stays. That idea has a name, multipliers. A multiplier is the number we multiply by to make a change in "
+        "one step."),
+      L("Let's start with a drop. A price goes down thirty percent. What stays? A hundred minus thirty, seventy percent. "
+        "Seventy percent is zero point seven. So going down thirty percent is multiplying by zero point seven.",
+        show(pm_1, 'So going down thirty percent')),
+      L("Let's check it on a price of two hundred. Two hundred times zero point seven is a hundred forty. The long way, "
+        "thirty percent of two hundred is sixty, and two hundred minus sixty is a hundred forty. It's the same.",
+        show(pm_2, 'Two hundred times zero point seven')),
+      L("Now let's take a rise. A price goes up forty percent. We keep the whole price, a hundred percent, and add forty percent. "
+        "That's a hundred forty percent, so we multiply by one point four.", show(pm_3, "That's a hundred forty percent")),
+      L("On fifty credits, fifty times one point four is seventy. Let's check. Forty percent of fifty is twenty, and "
+        "fifty plus twenty is seventy.", show(pm_4, 'fifty times one point four')),
+      L("So going up p percent means times the bracket, a hundred plus p, percent. Going down p percent means times the "
+        "bracket, a hundred minus p, percent. Up "
+        "fifteen percent is times one point one five. Down five percent is times zero point nine five.",
+        show(pm_5, 'Up fifteen percent is'), show(pm_6, 'Down five percent is'))),
+    S('Two changes: multiply',
+      L("And here's the strength of multipliers. When there are two changes in a row, we multiply the two multipliers."),
+      L("Think back to the wood. It lost thirty percent, so times zero point seven. Then it lost twenty percent of what "
+        "was left, so times zero point eight. Seven times eight is fifty-six, so it's zero point five six.",
+        show(pm_7, 'Seven times eight is fifty-six')),
+      L("Zero point five six is fifty-six percent. So fifty-six percent stays, and forty-four percent is lost. The same "
+        "answer as before, in one line.", show(pm_8, 'So fifty-six percent stays')),
+      L("One more. A price goes up fifty percent, and then down twenty percent. Up fifty percent is times one point "
+        "five. Down twenty percent is times zero point eight.", show(pm_9, 'A price goes up fifty')),
+      L("One point five times zero point eight. Fifteen times eight is a hundred twenty, so it's one point two.",
+        show(pm_10, 'Fifteen times eight')),
+      L("Times one point two is a hundred twenty percent of the start. So the price is twenty percent higher. Not fifty "
+        "minus twenty, thirty percent.", show(pm_11, 'So the price is twenty percent higher'), show(pm_12, 'Not fifty')),
+      L("So when you see changes one after the other, write a multiplier for each change, and multiply them.")),
+    S('Up and down',
+      L("Here's a trap the exam loves. A price goes up twenty percent, and then down twenty percent. Is it back where it "
+        "started?"),
+      L("Let's plug in a hundred. Up twenty percent is a hundred twenty.", show(p_22, 'Up twenty percent is')),
+      L("Now down twenty percent of a hundred twenty. Ten percent of a hundred twenty is twelve, so twenty percent is "
+        "twenty-four.", show(p_23, 'so twenty percent is twenty-four')),
+      L("A hundred twenty minus twenty-four is ninety-six. So we end four percent lower than the start. We're not back "
+        "where we started.", show(p_24, 'A hundred twenty minus twenty-four')),
+      L("With multipliers, it's one point two times zero point eight. Twelve times eight is ninety-six, so it's zero "
+        "point nine six, four percent lower again.", show(p_27b, 'Twelve times eight')),
+      L("Why? Because the twenty percent down is taken from a bigger amount, a hundred twenty. So it takes away more than "
+        "it added."),
+      L("And if it goes down first, and then up? A hundred down twenty percent is eighty. Twenty percent of eighty is "
+        "sixteen, and eighty plus sixteen is ninety-six again. The same result, in any order.",
+        show(p_25, 'A hundred down twenty percent'), show(p_26, 'Twenty percent of eighty'), show(p_27, 'and eighty plus sixteen'))),
+    S('Up and down: the rule',
+      L("There's even a rule for it. Up p percent, and then down p percent, always loses p squared over a hundred percent.",
+        show(p_28, 'always loses p squared')),
+      L("Twenty squared is four hundred. Four hundred over a hundred is four. That's our four percent.",
+        show(p_29, 'Twenty squared is four hundred')),
+      L("Let's check the rule once more, with thirty percent. Thirty squared is nine hundred. Over a hundred, that's "
+        "nine. So up thirty and down thirty should lose nine percent.", show(p_30, 'Thirty squared is nine hundred')),
+      L("With a hundred, up thirty percent is a hundred thirty. Thirty percent of a hundred thirty is thirty-nine. A "
+        "hundred thirty minus thirty-nine is ninety-one, nine percent lower. It works.",
+        show(p_31, 'A hundred thirty minus thirty-nine'))),
+    S('Working back',
+      L("Sometimes we know the end, and they ask about the start. After a twenty percent discount, a shirt costs "
+        "ninety-six credits. What was the price before?", show(pw_1, 'After a twenty percent discount')),
+      L("The start is our whole, a hundred percent. A twenty percent discount leaves eighty percent. So eighty percent of "
+        "the start is ninety-six credits.", show(pw_3, 'So eighty percent of')),
+      L("Now we go back to a hundred percent, through ten percent. Eighty percent is eight times ten percent. So ten "
+        "percent is ninety-six divided by eight, twelve.", show(pw_4, 'So ten percent is')),
+      L("A hundred percent is ten times ten percent. Ten times twelve is a hundred twenty credits.",
+        show(pw_5, 'Ten times twelve')),
+      L("Let's check. Twenty percent of a hundred twenty is twenty-four. A hundred twenty minus twenty-four is "
+        "ninety-six. It works.", show(pw_6, 'A hundred twenty minus twenty-four')),
+      L("Here's the trap. A lot of students take ninety-six and add twenty percent of ninety-six. But the twenty percent "
+        "was taken from the old price, a hundred twenty, not from ninety-six. So that adds back too little.",
+        show(pw_7, 'add twenty percent of ninety-six'))),
+    S('Working back: two changes',
+      L("It works the same with two changes. A pond loses twenty percent of its fish. Then it loses half of the fish "
+        "that are left. Forty fish are left. How many fish were there at the start?", show(pw_8, 'A pond loses')),
+      L("Losing twenty percent is times zero point eight. Losing half is times zero point five. Eight times five is "
+        "forty, so it's zero point four.", show(pw_9, 'Eight times five is forty')),
+      L("Zero point four is forty percent. So forty percent of the start is left, and that's forty fish.",
+        show(pw_10, 'So forty percent of the start')),
+      L("Forty percent is forty fish, so one percent is one fish. A hundred percent is a hundred fish.",
+        show(pw_11, 'so one percent is one fish')),
+      L("Let's check. A hundred fish lose twenty percent, so eighty are left. Half of eighty is forty. It works.",
+        show(pw_12, 'Half of eighty is forty')),
+      L("So when you know what is left, and they ask about the start, write what percent of the start is left. Then go "
+        "back to a hundred percent.")),
+    # ---- part 3: who is the hundred, the arrow map
     S('Who is the hundred?',
       L("Now, where do we put the hundred? Here's a question with three people.", show(p_14, 'three people')),
       L("Here's the rule. The words of and than point at the whole. The whole is whatever comes right after them.",
@@ -1052,48 +1247,83 @@ video('wp-053', 'lesson', slides=[
         "eight is eighty-eight.", show(p_19a, 'Ten percent of a hundred sixty'), show(p_19, 'So fifty percent is eighty'), show(p_20, 'Eighty plus eight')),
       L("Eli earns eighty-eight, and Ben earns a hundred. So Eli's pay is twelve percent lower than Ben's. Not fifteen "
         "percent, which is sixty minus forty-five.", show(p_21, "So Eli's pay is twelve"))),
-    S('Up and down',
-      L("Here's a trap the exam loves. A price goes up twenty percent, and then down twenty percent. Is it back where it "
-        "started?"),
-      L("Let's plug in a hundred. Up twenty percent is a hundred twenty.", show(p_22, 'Up twenty percent is')),
-      L("Now down twenty percent of a hundred twenty. Ten percent of a hundred twenty is twelve, so twenty percent is "
-        "twenty-four.", show(p_23, 'so twenty percent is twenty-four')),
-      L("A hundred twenty minus twenty-four is ninety-six. So we end four percent lower than the start. We're not back "
-        "where we started.", show(p_24, 'A hundred twenty minus twenty-four')),
-      L("Why? Because the twenty percent down is taken from a bigger amount, a hundred twenty. So it takes away more than "
-        "it added."),
-      L("And if it goes down first, and then up? A hundred down twenty percent is eighty. Twenty percent of eighty is "
-        "sixteen, and eighty plus sixteen is ninety-six again. The same result, in any order.",
-        show(p_25, 'A hundred down twenty percent'), show(p_26, 'Twenty percent of eighty'), show(p_27, 'and eighty plus sixteen'))),
-    S('Up and down: the rule',
-      L("There's even a rule for it. Up p percent, and then down p percent, always loses p squared over a hundred percent.",
-        show(p_28, 'always loses p squared')),
-      L("Twenty squared is four hundred. Four hundred over a hundred is four. That's our four percent.",
-        show(p_29, 'Twenty squared is four hundred')),
-      L("Let's check the rule once more, with thirty percent. Thirty squared is nine hundred. Over a hundred, that's "
-        "nine. So up thirty and down thirty should lose nine percent.", show(p_30, 'Thirty squared is nine hundred')),
-      L("With a hundred, up thirty percent is a hundred thirty. Thirty percent of a hundred thirty is thirty-nine. A "
-        "hundred thirty minus thirty-nine is ninety-one, nine percent lower. It works.",
-        show(p_31, 'A hundred thirty minus thirty-nine'))),
-    S('When a hundred fails',
-      L("One warning. Plugging in a hundred works when everything in the story is a percent."),
-      L("Here's an example where it doesn't. A price rises by ten percent, and then a fixed twenty credits are added. By "
-        "what percent did it rise?", show(p_32, 'a fixed twenty credits')),
-      L("Start from a hundred. Ten percent more is a hundred ten, and plus twenty is a hundred thirty. That's thirty "
-        "percent.", show(p_33, 'Start from a hundred')),
-      L("Now start from two hundred. Ten percent more is two hundred twenty, and plus twenty is two hundred forty. That's "
-        "forty out of two hundred, twenty percent.", show(p_34, 'Now start from two hundred')),
-      L("Different starting prices give different answers. So when the story adds a fixed amount, don't plug in a "
-        "hundred. Use the number they gave you, or a letter.", show(p_35, 'when the story adds a fixed amount'))),
+    S('The arrow map',
+      L("For chains like this there's also a picture, the arrow map. Each sentence becomes one arrow. The arrow starts "
+        "at the whole, and the multiplier is written on it.", show(p_14c, 'For chains like this'),
+        show(pa_1['line'], 'the arrow map')),
+      L("Tal earns sixty percent more than Ben. Ben comes after than, so the arrow starts at Ben and goes to Tal. Sixty "
+        "percent more is a hundred sixty percent, so we write times one point six.", show(pa_1['a'], 'so the arrow starts at Ben')),
+      L("Eli earns forty-five percent less than Tal. So the next arrow goes from Tal to Eli. Forty-five percent less "
+        "leaves fifty-five percent, so it's times zero point five five.", show(pa_1['b'], 'So the next arrow goes')),
+      L("The question compares Eli with Ben, so we walk from Ben to Eli. Both arrows point our way, so we multiply, one "
+        "point six times zero point five five.", show(pa_2, 'so we multiply')),
+      L("Sixteen times fifty is eight hundred, and sixteen times five is eighty. So sixteen times fifty-five is eight "
+        "hundred eighty, and the product is zero point eight eight.", show(pa_3, 'Sixteen times fifty is'),
+        show(pa_4, 'and the product is')),
+      L("Zero point eight eight is eighty-eight percent of Ben's pay. So it's twelve percent lower, the same answer as "
+        "before.")),
+    S('Against the arrow',
+      L("Now the most common trap with these chains. x is twenty-five percent more than y. What percent of x is y?",
+        show(pa_5, 'x is twenty-five percent more')),
+      L("The whole is y, the word after than. So the arrow goes from y to x, times one point two five.",
+        show(pa_6['line'], 'The whole is y'), show(pa_6['a'], 'So the arrow goes from y')),
+      L("Along the arrow, we multiply. Against the arrow, we divide. We want y, so we go from x back to y, against the "
+        "arrow. So we divide by one point two five.", show(pa_7, 'Along the arrow, we multiply'),
+        show(pa_7b, 'Against the arrow, we divide')),
+      L("One point two five is five quarters. Dividing by five quarters is multiplying by four fifths. And four fifths "
+        "is eighty percent.", show(pa_8, 'One point two five is five quarters'), show(pa_8b, 'Dividing by five quarters')),
+      L("So y is eighty percent of x. That's twenty percent less, not twenty-five percent. Why? Because the twenty-five "
+        "percent was of y. Now the whole is x, a bigger whole.", show(pa_9, "That's twenty percent less")),
+      L("Let's check with numbers. y is a hundred, so x is a hundred twenty-five. A hundred over a hundred twenty-five is "
+        "four fifths, eighty percent. It works."),
+      L("With twenty percent more, it's the same idea. One point two is six fifths, so against the arrow we multiply by "
+        "five sixths. Five sixths is eighty-three and a third percent. Many students say eighty percent, but that's the "
+        "trap.", show(pa_10, 'With twenty percent more'))),
+    # ---- part 4: the same part or the same whole
+    S('The same part: flip',
+      L("Now two different wholes with the same part. Fifty percent of ten is five. And ten percent of fifty is also "
+        "five.", show(pf_1, 'Fifty percent of ten is five'), show(pf_2, 'ten percent of fifty is also')),
+      L("To give the same amount, the bigger percent needs a smaller whole, and the smaller percent needs a bigger "
+        "whole. Fifty percent goes with ten, and ten percent goes with fifty."),
+      L("Here's an exam case. Twenty percent of Dan's savings is equal to thirty percent of Gil's savings. Who has more, "
+        "and what is the ratio?", show(pf_3, "Twenty percent of Dan's savings")),
+      L("Here's the rule. When the same part is a percent of two different wholes, the ratio of the wholes is the "
+        "percents, flipped. So Dan to Gil is thirty to twenty, three to two. Dan has more.", show(pf_4, 'So Dan to Gil is')),
+      L("Why does it flip? Let's write it as an equation. Call Dan's savings D, and Gil's savings G. So zero point two D "
+        "is equal to zero point three G.", show(pf_5, 'So zero point two D')),
+      L("We divide both sides by G, and by zero point two, so that D over G is alone. D over G is zero point three over "
+        "zero point two, three halves. That's the percents, flipped.", show(pf_6, 'D over G is zero point three')),
+      L("Let's check with numbers. Dan has a hundred fifty, and Gil has a hundred. Twenty percent of a hundred fifty is "
+        "thirty, and thirty percent of a hundred is thirty. They're equal.", show(pf_7, 'Dan has a hundred fifty')),
+      L("The trap is to keep the order, twenty to thirty. That gives Gil more, but the bigger percent goes with the "
+        "smaller whole. And one warning. The flip works only when the two amounts are equal. If one amount is ten more "
+        "than the other, we write the equation.")),
+    S('The same whole: keep',
+      L("Now let's see the opposite case. A shirt costs forty percent of the price of a coat. Shoes cost a hundred twenty percent "
+        "of the price of the coat. How do the shoes compare with the shirt?", show(pf_8, 'A shirt costs forty'),
+        show(pf_9, 'Shoes cost a hundred twenty')),
+      L("Here the shared thing is the whole, the coat. So there's no flip. The bigger percent gives the bigger amount."),
+      L("Let's plug in a hundred for the coat. Then the shirt costs forty, and the shoes cost a hundred twenty.",
+        show(pf_10, "Let's plug in a hundred for the coat")),
+      L("So shoes to shirt is a hundred twenty to forty, three to one. The shoes cost three times as much as the shirt.",
+        show(pf_11, 'So shoes to shirt is')),
+      L("So when you see two percents, ask what is shared. The same part, flip the percents. The same whole, keep them.",
+        show(pf_12, 'The same part, flip'), show(pf_13, 'The same whole, keep'))),
     S('Summary',
-      L("Let's sum up. When the whole isn't given, plug in a hundred. The number we get at the end is the answer in "
-        "percent.", show(p_s1, 'When the whole')),
-      L("Each new percent is taken from the new amount, not from the hundred.", show(p_s2, 'Each new percent')),
-      L("The whole comes after of or than, and the one that decides is in the question itself.",
-        show(p_s3, 'The whole comes after')),
-      L("And up and down by the same percent never brings us back to the start. [pause] Next we'll see a survey "
-        "question and the percent tree, and I'll see you in the next video.", show(p_s4, 'And up and down'))),
+      L("Let's sum up. When the whole isn't given, plug in a hundred. A change in percent is divided by the original.",
+        show(p_s1, 'When the whole'), show(p_sc, 'A change in percent')),
+      L("Each new percent is taken from the new amount, so for changes in a row, we multiply the multipliers. And when "
+        "we know the end, we go back to a hundred percent.", show(p_s2, 'Each new percent'), show(p_sw, 'And when')),
+      L("The whole comes after of or than. On the arrow map, along the arrow we multiply, against it we divide.",
+        show(p_s3, 'The whole comes after'), show(p_sa, 'On the arrow map')),
+      L("And ask what is shared. The same part, flip. The same whole, keep. [pause] Next we'll see a survey question and "
+        "the percent tree, and I'll see you in the next video.", show(p_sf, 'And ask what is shared'))),
 ])
+SPLIT053 = ('wp-053', 'Percent of a Percent', [
+    (1, None),
+    (6, "Let's continue with percent of a percent, and learn a fast tool, multipliers."),
+    (10, "Let's continue with percent of a percent. Now we go back from the end to the start, and compare people."),
+    (16, "Let's continue with percent of a percent. Now two percents that share something.")])
 
 # ------------------------------------------------------------------------------------------------ wp23-g054 (Hebrew: the smokers' survey)
 # Hebrew (wp 3266-3402): who is the 100? the survey; 60 don't smoke, the rest 40, 30% of THEM (of 40), 12, the rest 28
@@ -1246,11 +1476,9 @@ video('solve-wp23-g057', 'solution', qid='wp23-g057', slides=[
 
 # ------------------------------------------------------------------------------------------------ wp23-g059 (Hebrew: 40 -> 44 -> 48)
 # Hebrew (wp 3577-3630): 4 of 40 is a tenth; 4 of 44 is 1/11; the cake for 10 or 11 children; or: 10% more than 44 is
-# 48.4, so less than 10%; the same jump in money, but the whole grew. NEW: the change rule (change / original x 100)
-# with a warm-up and the "divide by the new price" trap.
+# 48.4, so less than 10%; the same jump in money, but the whole grew. REMINDER: the change rule (R37: taught in wp-053
+# part 1 with its examples and the "divide by the new price" trap); this is its first question, applied step by step.
 g_1 = I('g_1', 'change in $\\%=\\dfrac{\\text{change}}{\\text{original}}\\times100$', size=34, hand='change in % = {change/original}×100')
-g_2 = IH('g_2', '$20\\to25$: $\\ \\frac{5}{20}=\\frac{1}{4}=25\\%$', size=30, col=1)
-g_3 = IH('g_3', '$\\frac{5}{25}=20\\%$: $\\ $wrong whole', size=30, col=1)
 g_4 = IH('g_4', '$40\\to50$: $\\ \\frac{10}{40}=\\frac{1}{4}=25\\%$', size=30)
 g_5 = IH('g_5', '$50\\to60$: $\\ \\frac{10}{50}=\\frac{1}{5}=20\\%$', size=30)
 g_6 = IH('g_6', '$\\frac{1}{5}<\\frac{1}{4}$', size=32, col=1)
@@ -1263,16 +1491,13 @@ video('solve-wp23-g059', 'solution', qid='wp23-g059', slides=[
         "two percentage increases compare?", pt('stem', 'The price of a cinema ticket', 'hl', 7.0), voice='calm', pause=0.5),
       L("Both rises are ten credits. So many students think the percents are equal too. We'll solve it in two different "
         "ways, the math way with the change rule, and then by understanding.", pt('stem', 'Both rises are ten')),
-      L("Let's start with the math way, and learn a rule. A change in percent is the change, divided by the original "
-        "amount, times a hundred. The original is where we started, before the change.", show(g_1, 'A change in percent is')),
-      L("Let's see it on easy numbers first. A price goes from twenty to twenty-five. The change is five, and the "
-        "original is twenty. Five over twenty is a quarter, so the price rose by twenty-five percent.",
-        show(g_2, 'Five over twenty is a quarter')),
-      L("And here's the trap. Many students divide by the new price, twenty-five. Five over twenty-five is a fifth, twenty "
-        "percent. That's wrong, because a change is always measured from where it started.", show(g_3, 'Five over twenty-five'))),
+      L("Let's start with the math way. Like in the lesson, a change in percent is the change, divided by the original "
+        "amount, times a hundred. The original is the price before the change.", show(g_1, 'a change in percent is')),
+      L("The first rise is from forty to fifty. The change is fifty minus forty, ten credits. The original is forty, the "
+        "price before this rise. So we divide by forty, not by the new price, fifty.", pt('stem', 'The first rise is from forty')),
+      L("Ten over forty is a quarter, twenty-five percent. So the first rise is twenty-five percent.",
+        show(g_4, 'Ten over forty is a quarter'))),
     S('Method 1 · The math way: the change rule',
-      L("Now our question. The first rise is from forty to fifty. The change is ten, and the original is forty. Ten over "
-        "forty is a quarter, twenty-five percent.", show(g_4, 'Ten over forty is a quarter')),
       L("The second rise is from fifty to sixty. The change is ten again. But now the original is fifty, the price before "
         "this rise. Ten over fifty is a fifth, twenty percent.", show(g_5, 'Ten over fifty is a fifth')),
       L("Which is bigger, a quarter or a fifth? Think of one cake. Shared by four children, or by five children? With five "
@@ -1296,7 +1521,8 @@ video('solve-wp23-g059', 'solution', qid='wp23-g059', slides=[
 # Hebrew (wp 3632-3797): the calculation with x ("a percent can't stand alone, it always needs a whole"; x minus 30% of
 # x is the complement 70% of x; plus 40% OF THAT = 140% of what was left; 98% of x, 2% less); then plug in 100 into the
 # whole (after "of"), 70, 40% of 70 = 28, 98; with 200 too (196, 4 of 200 = 2%); why 100: two reasons. NEW: a percent
-# never stands alone, multipliers (x 0.7, x 1.4). REMINDER: plug in 100 (wp-053).
+# never stands alone. REMINDER: plug in 100, multipliers (R37: taught in wp-053 part 2; this is their first question,
+# applied step by step with "like in the lesson").
 n_1 = IH('n_1', 'start: $\\ x$', size=30)
 n_2 = IH('n_2', '$x-30\\%$ of $x$', size=30)
 n_3 = IH('n_3', '$100\\%-30\\%=70\\%$', size=30, col=1)
@@ -1329,7 +1555,8 @@ video('solve-wp23-g060', 'solution', qid='wp23-g060', slides=[
         show(n_2, "here it's thirty percent of x")),
       L("So she has x minus thirty percent of x. The whole x is a hundred percent of x. A hundred percent minus thirty "
         "percent leaves seventy percent.", show(n_3, 'A hundred percent minus thirty')),
-      L("Seventy percent is zero point seven. So she has zero point seven x.", show(n_4, 'So she has zero point seven'))),
+      L("Seventy percent is zero point seven. Like in the lesson, that's the multiplier for going down thirty percent. So "
+        "she has zero point seven x.", show(n_4, 'So she has zero point seven'))),
     S('Method 1 · The math way: multipliers',
       L("Now she wins forty percent of the coins she has left. Forty percent of what? Of zero point seven x, not of x.",
         pt('stem', 'of the coins she has left')),
@@ -1340,9 +1567,9 @@ video('solve-wp23-g060', 'solution', qid='wp23-g060', slides=[
       L("Zero point nine eight x is ninety-eight percent of x. She started with a hundred percent of x, so now she has two "
         "percent fewer. Choice number two is our answer.", show(n_8, 'ninety-eight percent of x'),
         mk('tick', 'choice 2', 'Choice number two is our answer')),
-      L("These numbers are called multipliers. To go down thirty percent, we multiply by zero point seven, what stays. To "
-        "go up forty percent, we multiply by one point four. We'll use them again in the next questions.",
-        show(n_9, 'To go down thirty percent'), show(n_9b, 'To go up forty percent'))),
+      L("So, just like in the lesson, each change is one multiplier. To go down thirty percent, we multiply by zero point "
+        "seven, what stays. To go up forty percent, we multiply by one point four. And for two changes in a row, we "
+        "multiply the multipliers.", show(n_9, 'To go down thirty percent'), show(n_9b, 'To go up forty percent'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now let's plug in numbers. We start again from the givens. No number of coins is given, so we plug in a "
         "hundred. Where? Into the whole, the coins she had at the start.", show(n_10, 'Into the whole')),
@@ -1367,8 +1594,9 @@ video('solve-wp23-g060', 'solution', qid='wp23-g060', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t23-01 (added: +25% then -12%)
-# English addition (real exam: 2021_spring_q1_13, 2024_autumn_q1_03, 2026_spring_q2_07). REMINDER: multipliers (g060),
-# plug in 100 (wp-053). NEW here: the two-changes formula p + q + pq/100 (checked on +20 / -20 from the lesson).
+# English addition (real exam: 2021_spring_q1_13, 2024_autumn_q1_03, 2026_spring_q2_07). REMINDER: multipliers (wp-053
+# part 2, g060), plug in 100 (wp-053). NEW here (a one-off trick, R37: stays in this question): the two-changes formula
+# p + q + pq/100 (checked on +20 / -20 from the lesson).
 a_1 = IH('a_1', '$+25\\%$: $\\ 125\\%=\\times1.25$', size=30)
 a_2 = IH('a_2', '$-12\\%$: $\\ 88\\%=\\times0.88$', size=30)
 a_3 = IH('a_3', '$1.25\\cdot0.88$', size=30)
@@ -1441,9 +1669,9 @@ video('solve-q-r26-t23-01', 'solution', qid='q-r26-t23-01', slides=[
 # ------------------------------------------------------------------------------------------------ wp23-g061 (Hebrew: Maya, Asaf, Yehonatan)
 # Hebrew (wp 3799-3890): plug in 100 into the whole (after "than": Asaf), +25% -> 125, -20% of Maya -> 100, ratio 1;
 # then the insight: +1/4 then -1/5 are "consecutive" unit fractions (+1/2 -1/3: three halves, take one away; +1/3 -1/4:
-# four thirds, take one away), always back to the whole. REMINDER: plug in 100, who is the hundred (wp-053). NEW here:
-# the consecutive-fractions insight (two warm-ups, then ours), the arrow map (warm-up: x is 20% more than y -> y is
-# 83 1/3% of x, the trap 80%).
+# four thirds, take one away), always back to the whole. REMINDER: plug in 100, who is the hundred, the arrow map (R37:
+# all taught in wp-053, the arrow map with "against the arrow" and the 83 1/3%-not-80% trap; this is its first question,
+# applied step by step). NEW here: the consecutive-fractions insight (two warm-ups, then ours).
 d_1 = IH('d_1', 'Omer: $\\ 100$', size=30)
 d_2 = IH('d_2', 'Dana: $\\ 100+50=150$', size=30)
 d_3 = IH('d_3', '$33\\frac{1}{3}\\%=\\frac{1}{3}$', size=30)
@@ -1457,14 +1685,7 @@ d_10 = IH('d_10', '$7-1=6$ sixths: $\\ $back', size=30)
 d_11 = IH('d_11', '$5$ fifths $+1=6$ fifths, $\\ -1=5$ fifths', size=30, col=1)
 d_12 = IH('d_12', '$2$ halves $+1=3$ halves, $\\ -1=2$ halves', size=30, col=1)
 d_13 = IH('d_13', 'add $\\frac{1}{n}$, then take away $\\frac{1}{n+1}$: $\\ $back', size=30, col=1)
-d_m0 = IH('d_m0', '$x$ is $20\\%$ more than $y$', size=30)
-d_m1 = AMAP('d_m1', ['y', 'x'], [('a', 0, 1, '×1.2')], gap=260)
-d_14 = IH('d_14', 'along the arrow: $\\ \\times$', size=30)
-d_14b = IH('d_14b', 'against it: $\\ \\div$', size=30)
-d_15 = IH('d_15', '$y=x\\div1.2$', size=30)
-d_16 = IH('d_16', '$1.2=\\frac{6}{5}$', size=30, col=1)
-d_16b = IH('d_16b', '$\\div\\frac{6}{5}=\\times\\frac{5}{6}$', size=30, col=1)
-d_17 = IH('d_17', '$\\frac{5}{6}=83\\frac{1}{3}\\%$, $\\ $not $80\\%$', size=30, col=1)
+d_14 = IH('d_14', 'along the arrows: $\\ \\times$', size=30, col=1)
 d_m2 = AMAP('d_m2', ['Omer', 'Dana', 'Lior'], [('a', 0, 1, '×1.5'), ('b', 1, 2, '×2/3')], gap=250)
 d_18a = IH('d_18a', '$1.5=\\frac{3}{2}$', size=30)
 d_18 = IH('d_18', '$\\frac{3}{2}\\cdot\\frac{2}{3}=1$', size=30)
@@ -1503,36 +1724,27 @@ video('solve-wp23-g061', 'solution', qid='wp23-g061', slides=[
         "Omer earns. Choice number one is our answer.", show(d_13, 'So adding one over n'),
         mk('tick', 'choice 1', 'Choice number one is our answer'))),
     S('Method 3 · The math way: the arrow map',
-      L("[pause] Now a third way, the arrow map. It helps with chains of comparisons like this one. Each sentence becomes "
-        "one arrow."),
-      L("Let's learn it on an easy sentence first. x is twenty percent more than y. The arrow starts at the whole, the "
-        "word after than. So it goes from y to x.", show(d_m0, 'x is twenty percent more than y'), show(d_m1['line'], 'The arrow starts at the whole'),
-        show(d_m1['a'], 'So it goes from y to x')),
-      L("On the arrow we write the multiplier. Twenty percent more is a hundred twenty percent, times one point two."),
-      L("Along the arrow, we multiply. Against the arrow, we divide.", show(d_14, 'Along the arrow, we multiply'), show(d_14b, 'Against the arrow, we divide')),
-      L("So what percent of x is y? We go from x back to y, against the arrow. So we divide by one point two.",
-        show(d_15, 'So we divide by one point two')),
-      L("One point two is six fifths. Dividing by six fifths is multiplying by five sixths. And five sixths is "
-        "eighty-three and a third percent.", show(d_16, 'One point two is six fifths'), show(d_16b, 'Dividing by six fifths'), show(d_17, 'And five sixths is')),
-      L("Many students say eighty percent. But twenty percent more one way is not twenty percent less the other way, "
-        "because the whole has changed.")),
-    S('Method 3 · The math way: the arrow map',
-      L("Now our question. We start again from the givens. Dana earns fifty percent more than Omer. The whole is Omer, so "
-        "the arrow goes from Omer to Dana. Fifty percent more is times one point five.",
+      L("[pause] Now a third way, the arrow map, like in the lesson. Each sentence becomes one arrow. The arrow starts at "
+        "the whole, the word after than, and its multiplier is written on it."),
+      L("We start again from the givens. Dana earns fifty percent more than Omer. The whole is Omer, so the arrow goes "
+        "from Omer to Dana. Fifty percent more is a hundred fifty percent, so it's times one point five.",
         show(d_m2['line'], 'Dana earns fifty percent more'), show(d_m2['a'], 'so the arrow goes from Omer')),
       L("Lior earns thirty-three and a third percent less than Dana. So the arrow goes from Dana to Lior. A third less "
         "leaves two thirds, so it's times two thirds.", show(d_m2['b'], 'So the arrow goes from Dana')),
-      L("We want Lior divided by Omer, so we walk from Omer to Lior. Both arrows point our way, so we multiply. One point "
-        "five is three halves, and three halves times two thirds is one.", show(d_18a, 'One point five is three halves'), show(d_18, 'and three halves times two thirds')),
+      L("We want Lior divided by Omer, so we walk from Omer to Lior. Along an arrow we multiply, and both arrows point "
+        "our way. So we multiply both multipliers.", show(d_14, 'Along an arrow we multiply')),
+      L("One point five is three halves, and three halves times two thirds is one.", show(d_18a, 'One point five is three halves'),
+        show(d_18, 'and three halves times two thirds')),
       L("So Lior's wage is one times Omer's wage. Choice number one is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 1', 'Choice number one is our answer'))),
 ])
 
+
 # ------------------------------------------------------------------------------------------------ wp23-g062 (Hebrew: 25% of 50% of x is 6)
 # Hebrew (wp 3892-4007): "of" is times, so it's all one multiplication: 1/4 * 1/2 * x = 6, x = 48, 3/8 of 48 = 18;
 # then the insight: 73% of 84 = 84% of 73 (one multiplication, the order doesn't matter), so 25% of 50% = half of 25%
-# = 12.5%; 37.5 is 3 times 12.5, so 3 * 6. REMINDER: of = times, the fraction table. NEW here: a% of b = b% of a (two
-# examples, new numbers), a percent of a percent is one multiplication.
+# = 12.5%; 37.5 is 3 times 12.5, so 3 * 6. REMINDER: of = times, the fraction table. NEW here (a one-off trick, R37:
+# stays in this question): a% of b = b% of a (two examples, new numbers), a percent of a percent is one multiplication.
 e_1 = IH('e_1', '$25\\%=\\frac{1}{4}$', size=30)
 e_2 = IH('e_2', '$18\\%=\\frac{18}{100}=\\frac{9}{50}$', size=30)
 e_3 = IH('e_3', '$\\frac{1}{4}\\cdot\\frac{9}{50}\\cdot y=9$', size=30)
@@ -1648,16 +1860,11 @@ video('solve-wp23-g063', 'solution', qid='wp23-g063', slides=[
 
 # ------------------------------------------------------------------------------------------------ q-r26-t23-16 (added: the flip rule)
 # English addition (real exam: 2020_autumn_q1_06, 2024_autumn_q2_08, 2019_winter_q2_18; same whole: 2019_spring_q2_12).
-# NEW here (moved from the camera lesson, the first use): which pile is bigger, the flip rule with a warm-up and the why
-# (the equation), the limit (the amounts must be equal), and, after the answer, the opposite case "same whole, keep"
-# (W20). Methods: the math way (the flip rule), plugging in the answers (300 first, then 240). REMINDER: ratio parts (22).
-l_1 = IH('l_1', '$50\\%$ of $10=5$', size=30)
-l_2 = IH('l_2', '$10\\%$ of $50=5$', size=30)
+# REMINDER (R37: taught in wp-053 part 4 with the warm-up, the why, the limit and "the same whole: keep"): the flip rule,
+# here its first question, applied step by step. Methods: the math way (the flip rule), plugging in the answers (300
+# first, then 240). REMINDER: ratio parts (22).
 l_3 = IH('l_3', 'the same part: $\\ $flip the percents', size=30, col=1)
 l_4 = IH('l_4', 'novels : textbooks $=30:45$', size=30, col=1)
-l_4b = IH('l_4b', '$45\\%$ of $N=30\\%$ of $T$', size=30, col=1)
-l_5 = IH('l_5', '$0.45N=0.3T$', size=30, col=1)
-l_6 = IH('l_6', '$\\frac{N}{T}=\\frac{0.3}{0.45}=\\frac{30}{45}$', size=30, col=1)
 l_7 = IH('l_7', '$30:45=2:3$', size=30)
 l_8 = IH('l_8', '$2+3=5$ parts, $\\ 600\\div5=120$', size=30)
 l_9 = IH('l_9', 'novels: $\\ 2\\cdot120=240$', size=30)
@@ -1669,10 +1876,6 @@ l_14 = IH('l_14', 'fewer novels: $\\ 240$ or $180$', size=30, col=1)
 l_15 = IH('l_15', '(2) $\\ N=240,\\ T=600-240=360$', size=30, col=1)
 l_16 = IH('l_16', '$45\\%$ of $240=96+12=108$', size=30, col=1)
 l_17 = IH('l_17', '$30\\%$ of $360=3\\cdot36=108$', size=30, col=1)
-l_18 = IH('l_18', '$x=60\\%$ of $y$, $\\ z=150\\%$ of $y$. $\\ $What percent of $x$ is $z$?', size=30)
-l_19 = IH('l_19', '$y=100$: $\\ x=60,\\ z=150$', size=30)
-l_20 = IH('l_20', '$\\frac{150}{60}=2.5=250\\%$', size=30)
-l_21 = IH('l_21', 'the same part: $\\ $flip $\\qquad$ the same whole: $\\ $keep', size=30)
 video('solve-q-r26-t23-16', 'solution', qid='q-r26-t23-16', slides=[
     S('Method 1 · The math way: the flip rule',
       L("A library has only novels and textbooks, six hundred books in all. Forty-five percent of the novels is the same "
@@ -1681,20 +1884,10 @@ video('solve-q-r26-t23-16', 'solution', qid='q-r26-t23-16', slides=[
       L("So one amount of books is forty-five percent of one pile, and thirty percent of the other pile. One part, two "
         "different wholes. We'll solve it in two different ways, with the flip rule, and then by plugging in the answers.",
         pt('stem', 'One part, two')),
-      L("Let's start with the math way, and first let's think. Which pile is bigger? To give the same number of books, a "
-        "big percent needs only a small pile. A small percent needs a big pile."),
-      L("Let's see it on easy numbers. Fifty percent of ten is five. Ten percent of fifty is also five. The bigger "
-        "percent, fifty, goes with the smaller pile, ten.", show(l_1, 'Fifty percent of ten is five'),
-        show(l_2, 'Ten percent of fifty is also')),
-      L("So in our question, thirty percent is the smaller percent. That means the textbooks are the bigger pile."),
-      L("Now here's the rule. When the same part is a percent of two different wholes, the ratio of the wholes is the percents "
-        "flipped. So novels to textbooks is thirty to forty-five.", show(l_3, 'When the same part is'),
-        show(l_4, 'So novels to textbooks')),
-      L("Why does it flip? Let's write it as an equation. Let's call the novels N and the textbooks T. Forty-five percent of N is equal to thirty percent of T. So zero "
-        "point four five N is equal to zero point three T.", show(l_4b, 'Forty-five percent of N is equal'), show(l_5, 'So zero point four five N')),
-      L("We divide both sides by T, and by zero point four five. Then N over T is zero point three over zero point four "
-        "five. That's thirty over forty-five, the percents flipped.", show(l_6, 'Then N over T is'))),
-    S('Method 1 · The math way: the flip rule',
+      L("Let's start with the math way. Like in the lesson, the same part is a percent of two different wholes. So the "
+        "ratio of the wholes is the percents, flipped.", show(l_3, 'So the ratio of the wholes')),
+      L("The bigger percent goes with the smaller pile. Thirty percent is the smaller percent, so the textbooks are the "
+        "bigger pile. Novels to textbooks is thirty to forty-five.", show(l_4, 'Novels to textbooks is')),
       L("Thirty and forty-five both divide by fifteen. So the ratio is two to three.", show(l_7, 'So the ratio is two to three')),
       L("Two plus three is five parts, and the five parts are six hundred books. So one part is six hundred divided by "
         "five, a hundred twenty.", show(l_8, 'Two plus three is five parts')),
@@ -1702,14 +1895,13 @@ video('solve-q-r26-t23-16', 'solution', qid='q-r26-t23-16', slides=[
         show(l_9, 'Two times a hundred twenty'), mk('tick', 'choice 2', 'Choice number two is our answer')),
       L("Choice number one, three hundred sixty, is the trap. It's the ratio forty-five to thirty, with no flip. That "
         "gives the novels the bigger pile. But the bigger percent belongs to the smaller pile.",
-        show(l_10, 'with no flip'), mk('cross', 'choice 1', 'is the trap')),
-      L("One warning. The flip works only when the two amounts are equal. If forty-five percent of the novels were ten "
-        "more than thirty percent of the textbooks, there's no flip. Then we write the equation.")),
+        show(l_10, 'with no flip'), mk('cross', 'choice 1', 'is the trap'))),
     S('Method 2 · Plugging in the answers',
       L("[pause] Now let's plug in the answers. We start again from the givens. Six hundred books in all, and the two "
         "amounts must be equal."),
       L("Which choice first? Let's take three hundred, choice number three, because percents of three hundred are easy. "
-        "Three hundred novels means six hundred minus three hundred, three hundred textbooks.", show(l_11, 'Three hundred novels means')),
+        "N, the novels, is three hundred. So T, the textbooks, is six hundred minus three hundred, three hundred.",
+        show(l_11, 'So T, the textbooks')),
       L("Forty-five percent of three hundred is a hundred thirty-five. Thirty percent of three hundred is ninety. Not "
         "equal, so choice number three is out.", show(l_12, 'Forty-five percent of three hundred'),
         show(l_13, 'Thirty percent of three hundred'), mk('cross', 'choice 3', 'so choice number three is out')),
@@ -1720,18 +1912,10 @@ video('solve-q-r26-t23-16', 'solution', qid='q-r26-t23-16', slides=[
         show(l_15, "Let's try two hundred forty")),
       L("Forty-five percent of two hundred forty. Ten percent is twenty-four, so forty percent is ninety-six. Five percent "
         "is twelve. Ninety-six plus twelve is a hundred eight.", show(l_16, 'Ninety-six plus twelve')),
-      L("Thirty percent of three hundred sixty is three times thirty-six, a hundred eight. Equal, so it works. Choice "
-        "number two is our answer.", show(l_17, 'three times thirty-six'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    S('Same part or same whole?',
-      L("Now let's compare with the opposite case, because the exam loves both. x is sixty percent of y, and z is a "
-        "hundred fifty percent of y. What percent of x is z?", show(l_18, 'x is sixty percent of y')),
-      L("Here the shared thing is the whole, y. Then there's no flip. The bigger percent gives the bigger amount."),
-      L("Let's plug in a hundred for y. Then x is sixty, and z is a hundred fifty.", show(l_19, "Let's plug in a hundred for y")),
-      L("z over x is a hundred fifty over sixty. That's two and a half, so z is two hundred fifty percent of x.",
-        show(l_20, 'z over x is')),
-      L("So when you see two percents, ask what is shared. The same part, flip the percents. The same whole, keep them. "
-        "Choice number two is our answer, and I'll see you in the next question.", show(l_21, 'ask what is shared'),
-        mk('tick', 'choice 2', 'Choice number two is our answer'))),
+      L("Thirty percent of three hundred sixty is three times thirty-six, a hundred eight. Equal, so it works.",
+        show(l_17, 'three times thirty-six')),
+      L("So, like in the lesson, ask what is shared. Here it's the same part, so we flip the percents. Choice number two "
+        "is our answer, and I'll see you in the next question.", mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ wp23-g064 (Hebrew: Dudi's oranges, 85% / 15%)
@@ -1791,8 +1975,9 @@ video('solve-wp23-g064', 'solution', qid='wp23-g064', slides=[
 # Hebrew (wp 4230-4326): plug in 100 - but a real amount is given, so we plug in 100 PERCENT, not 100 cubic meters;
 # 100 -> 70 -> 49 (30% of what is in it now: the complement, 70% of 70); 49% = 98 -> x 2 -> 200; then plugging in the
 # answers: the round ones first (200), 140, 98 - the round answer is often right, part of the exam's design.
-# REMINDER: plug in 100, what stays, a percent of a percent. NEW here: plug in 100 percent when a real amount is given;
-# working back from what is left (moved here from the lesson).
+# REMINDER: plug in 100, what stays, a percent of a percent, working back from what is left (R37: taught in wp-053 part
+# 3, the discount and the two-changes pond; this is its first question). NEW here: plug in 100 percent when a real
+# amount is given.
 w_1 = IH('w_1', 'start: $\\ 100\\%$', size=30)
 w_2 = IH('w_2', 'day 1: $\\ 100\\%-10\\%=90\\%$', size=30)
 w_3 = IH('w_3', 'day 2: $\\ 90\\%$ of $90\\%=81\\%$', size=30)
@@ -1821,7 +2006,8 @@ video('solve-wp23-g065', 'solution', qid='wp23-g065', slides=[
       L("Careful, it's not eighty percent. We don't take away ten percent of the start twice, because the second ten "
         "percent is of a smaller amount.", show(w_4, "Careful, it's not eighty"))),
     S('Method 1 · Plugging in numbers',
-      L("So eighty-one percent of the start is two hundred forty-three liters.", show(w_5, 'So eighty-one percent')),
+      L("So eighty-one percent of the start is two hundred forty-three liters. Like in the lesson, we know what is left, "
+        "so now we go back to a hundred percent.", show(w_5, 'So eighty-one percent')),
       L("How many times does eighty-one go into two hundred forty-three? Eighty times three is two hundred forty. So "
         "eighty-one times three is two hundred forty-three. So one percent is three liters.", show(w_6, 'Eighty times three'),
         show(w_7, 'So one percent is three')),
@@ -1873,7 +2059,8 @@ video('r26-t23-traps', 'lesson', slides=[
 
 # ------------------------------------------------------------------------------------------------ q-r26-t23-03 (added: "of" or "more than")
 # English addition (real exam: 2023_spring_q2_12, 2019_spring_q2_12, 2020_winter_q1_17). REMINDER: plug in 100, who is
-# the hundred (wp-053), the change rule (g059), the arrow map (g061). NEW here: p% more than = (100 + p)% of.
+# the hundred, the change rule, the arrow map (all wp-053; first applied in g059 / g061). NEW here: p% more than =
+# (100 + p)% of.
 r_1 = IH('r_1', 'chair: $\\ 100$', size=30)
 r_2 = IH('r_2', 'desk: $\\ 150\\%$ of $100=150$', size=30)
 r_3 = IH('r_3', 'table: $\\ 100+150=250$', size=30)
@@ -2058,12 +2245,10 @@ QBOT23 = {'solve-q-r26-t23-01': 181, 'solve-q-r26-t23-03': 239, 'solve-q-r26-t23
 QBOT.update(QBOT23)
 CARRY23 = {
     'solve-wp23-g054': {1: ['$100$ students: $\\ 65$ play']},
-    'solve-wp23-g059': {1: ['change $\\div$ original $\\times100$']},
+    'solve-wp23-g059': {1: ['$40\\to50$: $\\ +25\\%$']},
     'solve-wp23-g060': {1: ['$0.7x$ left'], 3: ['start $100$: $\\ 98$, $\\ 2\\%$ fewer']},
     'solve-q-r26-t23-01': {1: ['$1.25\\cdot0.88$']},
-    'solve-wp23-g061': {3: ['along: $\\ \\times$, $\\ $against: $\\ \\div$']},
     'solve-wp23-g062': {2: ['$x\\%$ of $y=y\\%$ of $x$']},
-    'solve-q-r26-t23-16': {1: ['novels : textbooks $=30:45$']},
     'solve-wp23-g065': {1: ['$81\\%$ of the start is left']},
     'solve-q-r26-t23-03': {1: ['chair $100$, desk $150$, table $250$']},
     'solve-q-r26-t23-04': {1: ['water $240$ g $=60\\%$']},
@@ -2358,6 +2543,7 @@ def _stem_parts(vid):
 _cp_spec = importlib.util.spec_from_file_location('_camera_parts', os.path.join(HERE, '_camera_parts.py'))
 CP = importlib.util.module_from_spec(_cp_spec); _cp_spec.loader.exec_module(CP)
 CP.split(globals(), *CAMERA_SPLIT)
+CP.split(globals(), *SPLIT053)       # 2026-10-21 R37: wp-053 grew (the core methods are taught there), in parts
 
 for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v); _write_gap(_v)
 

@@ -1,0 +1,178 @@
+{
+ "videoId": "wp-053-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-23 scripts (2026-10-20): math_patches/_ai_vis_t23.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with percent of a percent, and learn a fast tool, multipliers."
+  ],
+  [
+   {
+    "say": "In the wood question, we looked at what stays. That idea has a name, multipliers. A multiplier is the number we multiply by to make a change in one step.",
+    "at": [
+     "we looked at"
+    ]
+   },
+   {
+    "say": "Let's start with a drop. A price goes down thirty percent. What stays? A hundred minus thirty, seventy percent. Seventy percent is zero point seven. So going down thirty percent is multiplying by zero point seven.",
+    "at": [
+     "So going down thirty percent",
+     "is multiplying by"
+    ]
+   },
+   {
+    "say": "Let's check it on a price of two hundred. Two hundred times zero point seven is a hundred forty. The long way, thirty percent of two hundred is sixty, and two hundred minus sixty is a hundred forty. It's the same.",
+    "at": [
+     "Two hundred times zero point seven",
+     "seven is a"
+    ]
+   },
+   {
+    "say": "Now let's take a rise. A price goes up forty percent. We keep the whole price, a hundred percent, and add forty percent. That's a hundred forty percent, so we multiply by one point four.",
+    "at": [
+     "That's a hundred forty percent",
+     "so we multiply"
+    ]
+   },
+   {
+    "say": "On fifty credits, fifty times one point four is seventy. Let's check. Forty percent of fifty is twenty, and fifty plus twenty is seventy.",
+    "at": [
+     "fifty times one point four",
+     "is seventy. Let's"
+    ]
+   },
+   {
+    "say": "So going up p percent means times the bracket, a hundred plus p, percent. Going down p percent means times the bracket, a hundred minus p, percent. Up fifteen percent is times one point one five. Down five percent is times zero point nine five.",
+    "at": [
+     "Up fifteen percent is",
+     "one point one",
+     "Down five percent is",
+     "zero point nine"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And here's the strength of multipliers. When there are two changes in a row, we multiply the two multipliers.",
+    "at": [
+     "of multipliers. When"
+    ]
+   },
+   {
+    "say": "Think back to the wood. It lost thirty percent, so times zero point seven. Then it lost twenty percent of what was left, so times zero point eight. Seven times eight is fifty-six, so it's zero point five six.",
+    "at": [
+     "Seven times eight is fifty-six",
+     "so it's zero"
+    ]
+   },
+   {
+    "say": "Zero point five six is fifty-six percent. So fifty-six percent stays, and forty-four percent is lost. The same answer as before, in one line.",
+    "at": [
+     "So fifty-six percent stays",
+     "forty-four percent is"
+    ]
+   },
+   {
+    "say": "One more. A price goes up fifty percent, and then down twenty percent. Up fifty percent is times one point five. Down twenty percent is times zero point eight.",
+    "at": [
+     "A price goes up fifty",
+     "Up fifty percent is"
+    ]
+   },
+   {
+    "say": "One point five times zero point eight. Fifteen times eight is a hundred twenty, so it's one point two.",
+    "at": [
+     "Fifteen times eight",
+     "hundred twenty, so"
+    ]
+   },
+   {
+    "say": "Times one point two is a hundred twenty percent of the start. So the price is twenty percent higher. Not fifty minus twenty, thirty percent.",
+    "at": [
+     "So the price is twenty percent higher",
+     "Not fifty"
+    ]
+   },
+   {
+    "say": "So when you see changes one after the other, write a multiplier for each change, and multiply them.",
+    "at": [
+     "So when you"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's a trap the exam loves. A price goes up twenty percent, and then down twenty percent. Is it back where it started?",
+    "at": [
+     "exam loves. A"
+    ]
+   },
+   {
+    "say": "Let's plug in a hundred. Up twenty percent is a hundred twenty.",
+    "at": [
+     "Up twenty percent is"
+    ]
+   },
+   {
+    "say": "Now down twenty percent of a hundred twenty. Ten percent of a hundred twenty is twelve, so twenty percent is twenty-four.",
+    "at": [
+     "Now down twenty",
+     "so twenty percent is twenty-four"
+    ]
+   },
+   {
+    "say": "A hundred twenty minus twenty-four is ninety-six. So we end four percent lower than the start. We're not back where we started.",
+    "at": [
+     "A hundred twenty minus twenty-four",
+     "So we end"
+    ]
+   },
+   {
+    "say": "With multipliers, it's one point two times zero point eight. Twelve times eight is ninety-six, so it's zero point nine six, four percent lower again.",
+    "at": [
+     "Twelve times eight",
+     "so it's zero"
+    ]
+   },
+   "Why? Because the twenty percent down is taken from a bigger amount, a hundred twenty. So it takes away more than it added.",
+   {
+    "say": "And if it goes down first, and then up? A hundred down twenty percent is eighty. Twenty percent of eighty is sixteen, and eighty plus sixteen is ninety-six again. The same result, in any order.",
+    "at": [
+     "A hundred down twenty percent",
+     "Twenty percent of eighty",
+     "and eighty plus sixteen",
+     "The same result"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "There's even a rule for it. Up p percent, and then down p percent, always loses p squared over a hundred percent.",
+    "at": [
+     "for it. Up",
+     "always loses p squared"
+    ]
+   },
+   {
+    "say": "Twenty squared is four hundred. Four hundred over a hundred is four. That's our four percent.",
+    "at": [
+     "Twenty squared is four hundred",
+     "Four hundred over"
+    ]
+   },
+   {
+    "say": "Let's check the rule once more, with thirty percent. Thirty squared is nine hundred. Over a hundred, that's nine. So up thirty and down thirty should lose nine percent.",
+    "at": [
+     "Thirty squared is nine hundred",
+     "Over a hundred"
+    ]
+   },
+   {
+    "say": "With a hundred, up thirty percent is a hundred thirty. Thirty percent of a hundred thirty is thirty-nine. A hundred thirty minus thirty-nine is ninety-one, nine percent lower. It works. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "A hundred thirty minus thirty-nine",
+     "is ninety-one, nine"
+    ]
+   }
+  ]
+ ]
+}

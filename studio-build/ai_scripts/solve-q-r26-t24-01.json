@@ -18,7 +18,7 @@
     ]
    },
    {
-    "say": "Let's start by understanding. Swim only is the swimmers who are not in both. So swim only is thirty-two minus both.",
+    "say": "Let's start by understanding, like art only in the lesson. First we write the region with both in it. Swim only is the swimmers who are not in both. So swim only is thirty-two minus both.",
     "at": [
      "Let's start",
      "So swim only is thirty-two minus both"
@@ -65,7 +65,7 @@
     ]
    },
    {
-    "say": "So at least or at most is always about the region they ask. We ask, to make this region small, what must the overlap be? Choice number two is our answer.",
+    "say": "So here at least is about swim only, not about both. Choice number two is our answer.",
     "at": [
      "Choice number two is our answer"
     ]
@@ -106,39 +106,8 @@
     ]
    },
    {
-    "say": "Could swim only be less than five? Only if more than twenty-seven were in both. But there are only twenty-seven runners. So five is the least. Choice number two again.",
+    "say": "Could swim only be less than five? Only if more than twenty-seven were in both. But there are only twenty-seven runners. So five is the least. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
-     "Choice number two again"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Let's use the same idea once more, with the same club. At most how many members do neither?",
-    "at": [
-     "idea once more"
-    ]
-   },
-   {
-    "say": "Neither is fifty minus everyone in at least one group. For a big neither, we need few members in at least one group.",
-    "at": [
-     "Neither is fifty minus everyone",
-     "in at least",
-     "For a big neither"
-    ]
-   },
-   {
-    "say": "That happens with the biggest overlap again. If all twenty-seven runners also swim, at least one group is just the thirty-two swimmers.",
-    "at": [
-     "That happens with",
-     "is just the thirty-two swimmers"
-    ]
-   },
-   {
-    "say": "So at most fifty minus thirty-two, eighteen do neither. So before you pick a rule, ask which overlap makes the region they ask about big or small. Choice number two is our answer, and I'll see you in the next question.",
-    "at": [
-     "fifty minus thirty-two",
-     "So before you",
      "Choice number two is our answer"
     ]
    }

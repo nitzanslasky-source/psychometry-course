@@ -20,52 +20,23 @@
     ]
    },
    {
-    "say": "Let's start with the math way, and first let's think. Which pile is bigger? To give the same number of books, a big percent needs only a small pile. A small percent needs a big pile.",
+    "say": "Let's start with the math way. Like in the lesson, the same part is a percent of two different wholes. So the ratio of the wholes is the percents, flipped.",
     "at": [
-     "Let's start"
+     "Let's start",
+     "So the ratio of the wholes"
     ]
    },
    {
-    "say": "Let's see it on easy numbers. Fifty percent of ten is five. Ten percent of fifty is also five. The bigger percent, fifty, goes with the smaller pile, ten.",
+    "say": "The bigger percent goes with the smaller pile. Thirty percent is the smaller percent, so the textbooks are the bigger pile. Novels to textbooks is thirty to forty-five.",
     "at": [
-     "Fifty percent of ten is five",
-     "Ten percent of fifty is also",
-     "The bigger percent"
+     "The bigger percent",
+     "Novels to textbooks is"
     ]
    },
-   "So in our question, thirty percent is the smaller percent. That means the textbooks are the bigger pile.",
-   {
-    "say": "Now here's the rule. When the same part is a percent of two different wholes, the ratio of the wholes is the percents flipped. So novels to textbooks is thirty to forty-five.",
-    "at": [
-     "When the same part is",
-     "wholes, the ratio",
-     "So novels to textbooks"
-    ]
-   },
-   {
-    "say": "Why does it flip? Let's write it as an equation. Let's call the novels N and the textbooks T. Forty-five percent of N is equal to thirty percent of T. So zero point four five N is equal to zero point three T.",
-    "at": [
-     "Let's write it",
-     "Forty-five percent of N is equal",
-     "equal to thirty",
-     "So zero point four five N",
-     "N is equal to zero"
-    ]
-   },
-   {
-    "say": "We divide both sides by T, and by zero point four five. Then N over T is zero point three over zero point four five. That's thirty over forty-five, the percents flipped.",
-    "at": [
-     "Then N over T is",
-     "point four five. That's"
-    ]
-   }
-  ],
-  [
    {
     "say": "Thirty and forty-five both divide by fifteen. So the ratio is two to three.",
     "at": [
-     "Thirty and",
-     "divide by fifteen",
+     "Thirty and forty-five",
      "So the ratio is two to three"
     ]
    },
@@ -91,8 +62,7 @@
      "with no flip",
      "But the bigger"
     ]
-   },
-   "One warning. The flip works only when the two amounts are equal. If forty-five percent of the novels were ten more than thirty percent of the textbooks, there's no flip. Then we write the equation."
+   }
   ],
   [
    {
@@ -103,11 +73,11 @@
     ]
    },
    {
-    "say": "Which choice first? Let's take three hundred, choice number three, because percents of three hundred are easy. Three hundred novels means six hundred minus three hundred, three hundred textbooks.",
+    "say": "Which choice first? Let's take three hundred, choice number three, because percents of three hundred are easy. N, the novels, is three hundred. So T, the textbooks, is six hundred minus three hundred, three hundred.",
     "at": [
      "number three, because",
-     "Three hundred novels means",
-     "hundred minus three"
+     "So T, the textbooks",
+     "six hundred minus"
     ]
    },
    {
@@ -142,44 +112,16 @@
     ]
    },
    {
-    "say": "Thirty percent of three hundred sixty is three times thirty-six, a hundred eight. Equal, so it works. Choice number two is our answer.",
+    "say": "Thirty percent of three hundred sixty is three times thirty-six, a hundred eight. Equal, so it works.",
     "at": [
      "hundred sixty is",
      "three times thirty-six",
-     "eight. Equal, so",
-     "Choice number two is our answer"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Now let's compare with the opposite case, because the exam loves both. x is sixty percent of y, and z is a hundred fifty percent of y. What percent of x is z?",
-    "at": [
-     "the opposite case",
-     "x is sixty percent of y",
-     "What percent of"
-    ]
-   },
-   "Here the shared thing is the whole, y. Then there's no flip. The bigger percent gives the bigger amount.",
-   {
-    "say": "Let's plug in a hundred for y. Then x is sixty, and z is a hundred fifty.",
-    "at": [
-     "Let's plug in a hundred for y",
-     "Then x is"
+     "eight. Equal, so"
     ]
    },
    {
-    "say": "z over x is a hundred fifty over sixty. That's two and a half, so z is two hundred fifty percent of x.",
+    "say": "So, like in the lesson, ask what is shared. Here it's the same part, so we flip the percents. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
-     "z over x is",
-     "That's two and"
-    ]
-   },
-   {
-    "say": "So when you see two percents, ask what is shared. The same part, flip the percents. The same whole, keep them. Choice number two is our answer, and I'll see you in the next question.",
-    "at": [
-     "ask what is shared",
-     "The same whole",
      "Choice number two is our answer"
     ]
    }

@@ -29,3 +29,7 @@
 | Estimate between two benchmarks (r26-t23-traps) | yes | yes | choices far apart | — | already taught |
 
 **Result.** Every reusable concept is taught where it is first used, with the why and a second case. No additions are needed on top of the scripts. Five concepts moved from the lessons into their first question (the change rule, multipliers, the arrow map, the swap, the flip rule). Each one now gets the full treatment there, with a warm-up example and the trap.
+
+
+## UPDATE 21 Oct (R37)
+The five core methods listed above as "taught at first use" (change rule, multipliers, working back, arrow map, flip/keep) are now taught in the lesson wp-053 (parts 1–4); their first questions apply them. See `reviews/r37-t23.md`. p + q + pq/100 (q-r26-t23-01) and x% of y = y% of x (g062) stay one-off tricks in their questions.
