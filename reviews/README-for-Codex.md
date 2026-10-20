@@ -53,7 +53,7 @@ A first (she records topics 15–20 next), then B, C, D. Big batches are fine.
 - Done for A and B (`teaching-check-A-B.md`). C and D get it after their fixes. You don't need to check this yourself, but if
   you notice a key idea that is only used, never taught, a normal **should** finding is welcome.
 
-## ADDED 19 Oct (Nitzan): batches E and F — Codex REVIEWS AND EDITS DIRECTLY
+## ADDED 19 Oct (Nitzan): batches E and F (and from 20 Oct G = topic 23, H = topic 24, and every new topic) — Codex REVIEWS AND EDITS DIRECTLY
 Nitzan asked that Codex fix what it finds itself for **batch E (topic 21)** and **batch F (topic 22)**, instead of a
 findings file for Claude. The rest of this brief still applies.
 
