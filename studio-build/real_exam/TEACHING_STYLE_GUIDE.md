@@ -535,7 +535,7 @@ numbers, estimation and insights by these names ("super-methods"). "Understandin
 she uses it from absolute value on ("רוב שאלות ערך מוחלט בבחינה הן שאלות הבנה") and in Algebraic Understanding (t20).
 Topics 30-33 come before topic 51 in the plan, so their first uses say the name with a short why.
 
-## SCRIPT-WRITING CHECKLIST (R1-R36)
+## SCRIPT-WRITING CHECKLIST (R1-R37)
 
 Check every AI script line by line. The numbers in brackets are evidence from §1-9.
 
@@ -630,6 +630,12 @@ Check every AI script line by line. The numbers in brackets are evidence from §
     - (b) **show a fast way, said aloud with its steps**: split into tens and units (26 · 26 = 26 · 20 + 26 · 6; 55 · 17 = 55 · 10 + 55 · 7); a number ending in 5, squared (25²: 2 · 3 = 6, then 25, so 625); the next square from a known one (26² = 25² + 25 + 26 = 676); times 11 = times 10 plus the number (63 · 11 = 630 + 63); near a round number (29 · 44 = 30 · 44 − 44; 621 − 126 = 621 − 121 − 5);
     - (c) **change the numbers**: same question type and trap with smaller numbers, still different from the Hebrew numbers (memory: questions differ from the Hebrew), the answer-choice order kept (`_choice_order.py`), and the stem, choices, written solution and visuals changed together.
   - A calculation that is already shown with a fast way (e.g. 23 · 37 = 23 · 30 + 23 · 7) is fine. In a video she has already read, a missing fast way is listed for the teacher to decide on a re-read, not changed silently (see Recorded readings).
+- **R37. Where a method is taught: core methods in the LESSON, one-off tricks in the question** (teacher, 2026-10-21: "most important is to explain everything well and that every method is taught properly, explained perfectly with extra examples").
+  - **Core method** = used in several questions of the topic, or common on the real exam (flip rule, arrow map, multipliers, ratio table, Venn circles, "count each one once", worst luck + 1 …). It is taught in the topic's LESSON: what it is, why it works, 2–3 concrete worked examples starting from an easy one, the trap, and "when you see …, use …". A student who rewatches only the lesson can use it.
+  - **Never abstract theory** (2026-10-05 still holds: "all theoretical and in the air" doesn't sink in): every rule is shown on numbers at once, and the lesson's examples are short exam-style cases.
+  - **The first question that uses it** applies it slowly and fully: every step, said and written, with a one-sentence link back ("like in the lesson, …"). It does not re-teach the whole why. Later questions: a one-sentence reminder.
+  - **One-off trick** (one question only): taught in that question, about 2 minutes (why, examples, the trap; never one line).
+  - A lesson that grows past ~5–6 minutes is split at an idea boundary (camera lessons: parts of ~3–4 minutes).
 - **Recorded readings** (teacher, 2026-10-11): once she has read a script in the Reading Studio, change its paragraphs only where it matters for learning (a first-time idea not explained, a wrong or missing reason). Small wording rules (R33, R34) are not worth a re-read. Every changed paragraph is flagged "needs re-read" in the Reading Studio.
 
 ### Topic 13: where each idea is first taught (R29 / R32)
@@ -964,7 +970,7 @@ Anchors are always script phrases of the line where she says the words (never ti
 
 ## Codex review standard (2026-10-13)
 
-Source: Codex's script review of studio lessons 111-138 (…/Codex/2026-10-11/…/outputs/Claude-script-review-2026-10-13.txt), applied to lessons 112-138 on 2026-10-13. Follow it from the FIRST draft of every new topic, together with R1-R36, the Clarity style and the Method visuals library above.
+Source: Codex's script review of studio lessons 111-138 (…/Codex/2026-10-11/…/outputs/Claude-script-review-2026-10-13.txt), applied to lessons 112-138 on 2026-10-13. Follow it from the FIRST draft of every new topic, together with R1-R37, the Clarity style and the Method visuals library above.
 
 1. Connect the relevant given to the next action. Explain what the number or letter represents, what we are checking, and why that check answers the question. A student should not have to infer which group, expression, fraction, or input you mean. The students already see and attempt the question before the video, so the explanation does not need a second full retelling of the story.
 
@@ -1123,7 +1129,7 @@ Marks per sentence, located from the point where the failed attempt broke off (9
   - Lessons: "Take a moment to memorize this … and I'll see you in the next video."
 
 ### WRITING RULES for scripts she will read (topic 21 onward): W1-W21
-These add to R1-R36 and the Codex review standard. Where they differ from the AI-voice rules, these apply to **teacher-read** scripts.
+These add to R1-R37 and the Codex review standard. Where they differ from the AI-voice rules, these apply to **teacher-read** scripts.
 
 1. **W1. Keep sentences short.** Aim for 6-12 words and split anything over 14. Her M rate doubles from 0.21 per sentence (6-10 words) to 0.45-0.51 (14-22 words). Put a trailing clause in its own sentence ("Now calculate with the two ends. That gives the new range.").
 2. **W2. No abstract method announcements.** Don't write "Third, find the range, draw its arrow, and compare the powers." Start the method with its first concrete action: "Let's start with the place values. ABC is a hundred A, plus ten B, plus C." One short roadmap line goes at the start of the first method paragraph: "We'll solve it in two different ways." Never put it at the end of the paragraph before.
