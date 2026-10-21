@@ -1,0 +1,240 @@
+{
+ "videoId": "wp-094-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with working together, and see more ways to find the time together."
+  ],
+  [
+   {
+    "say": "There's another way, without fractions. We stretch the workers to the same time, and then we add the work.",
+    "at": [
+     "fractions. We stretch"
+    ]
+   },
+   {
+    "say": "Ella fills one bag of leaves in four hours. Tom fills one bag in six hours.",
+    "at": [
+     "Ella fills one bag",
+     "Ella fills one bag",
+     "leaves in four",
+     "Tom fills one bag"
+    ]
+   },
+   {
+    "say": "We can't add them yet, because the times are different. So we pick a time that works for both, twelve hours. Twelve divides by four and by six.",
+    "at": [
+     "We can't add",
+     "twelve hours",
+     "Twelve divides by"
+    ]
+   },
+   {
+    "say": "Four hours to twelve is times three. So in twelve hours, Ella fills three bags.",
+    "at": [
+     "Four hours to twelve",
+     "So in twelve"
+    ]
+   },
+   {
+    "say": "Six hours to twelve is times two. So in twelve hours, Tom fills two bags.",
+    "at": [
+     "Six hours to twelve",
+     "So in twelve"
+    ]
+   },
+   {
+    "say": "Now the times match. In the same twelve hours, together they fill three plus two, five bags.",
+    "at": [
+     "together they fill three plus two",
+     "five bags"
+    ]
+   },
+   {
+    "say": "We add the bags, not the hours, because they both work during the same twelve hours.",
+    "at": [
+     "We add the"
+    ]
+   },
+   {
+    "say": "They want one bag. Five bags to one bag is divided by five. So the time is divided by five too. Twelve divided by five is two and two fifths hours.",
+    "at": [
+     "Twelve divided by five",
+     "two and two"
+    ]
+   },
+   {
+    "say": "A fifth of an hour is sixty divided by five, twelve minutes. So two fifths is twenty-four minutes.",
+    "at": [
+     "sixty divided by five",
+     "So two fifths"
+    ]
+   },
+   {
+    "say": "So together they need two hours and twenty-four minutes.",
+    "at": [
+     "two hours and twenty-four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "We can also choose how big the job is. We pick a number that both times divide, so the rates are whole numbers.",
+    "at": [
+     "how big the"
+    ]
+   },
+   {
+    "say": "Pipe A fills a tank in five hours. Pipe B fills it in twenty hours.",
+    "at": [
+     "Pipe A fills a tank in five",
+     "in five hours"
+    ]
+   },
+   {
+    "say": "Let's say the tank holds twenty units, because five and twenty both divide twenty.",
+    "at": [
+     "twenty units",
+     "twenty both divide"
+    ]
+   },
+   {
+    "say": "Pipe A fills twenty units in five hours. Twenty divided by five is four units an hour.",
+    "at": [
+     "Twenty divided by five is four",
+     "four units an"
+    ]
+   },
+   {
+    "say": "Pipe B fills twenty units in twenty hours. That's one unit an hour.",
+    "at": [
+     "That's one unit an hour"
+    ]
+   },
+   {
+    "say": "Together, four plus one is five units an hour.",
+    "at": [
+     "four plus one is five"
+    ]
+   },
+   {
+    "say": "Twenty units at five units an hour. Twenty divided by five is four hours.",
+    "at": [
+     "Twenty units at five",
+     "Twenty divided by"
+    ]
+   },
+   "It's just like plugging in numbers. The tank's real size doesn't matter, so we choose an easy one."
+  ],
+  [
+   {
+    "say": "Before we calculate, we can often rule out choices. Here's how.",
+    "at": [
+     "can often rule"
+    ]
+   },
+   {
+    "say": "Together is always faster than the fastest worker alone. So it takes less time than the fastest worker needs.",
+    "at": [
+     "Together is always faster",
+     "the fastest worker"
+    ]
+   },
+   {
+    "say": "And two workers as fast as the fastest one would need half his time. The other worker is slower, so together it takes more than that half.",
+    "at": [
+     "two workers as fast as the fastest one",
+     "the fastest one"
+    ]
+   },
+   {
+    "say": "Ella needs four hours, and Tom needs six. So together, less than four hours.",
+    "at": [
+     "Ella needs four hours",
+     "So together, less than four hours"
+    ]
+   },
+   {
+    "say": "And more than half of four, two hours. Our answer, two hours and twenty-four minutes, is between them.",
+    "at": [
+     "And more than half of four",
+     "Our answer, two hours and twenty-four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And there's a short formula, only for two workers. We multiply the two times, and divide by their sum.",
+    "at": [
+     "formula, only for",
+     "We multiply the two times",
+     "and divide by"
+    ]
+   },
+   {
+    "say": "Ella and Tom, four and six hours. Four times six is twenty-four. Four plus six is ten. Twenty-four over ten is two and two fifths hours, the same answer.",
+    "at": [
+     "Twenty-four over ten is"
+    ]
+   },
+   {
+    "say": "Why does it work? It comes from adding the two rates. We don't need to prove it here.",
+    "at": [
+     "It comes from"
+    ]
+   },
+   {
+    "say": "Two equal workers, four hours each? Four times four is sixteen. Then four plus four is eight. Sixteen over eight is two hours. Half the time, as we expect.",
+    "at": [
+     "Sixteen over",
+     "Half the time"
+    ]
+   },
+   {
+    "say": "Careful, the formula is only for two workers. With three workers, we add the rates.",
+    "at": [
+     "the formula is only for two workers",
+     "With three workers"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. Working together, we add the rates, never the times.",
+    "at": [
+     "up. Working together",
+     "we add the rates, never"
+    ]
+   },
+   {
+    "say": "A worker who works against the others gets a minus.",
+    "at": [
+     "against the others",
+     "gets a minus"
+    ]
+   },
+   {
+    "say": "One job in four hours is a quarter of the job an hour.",
+    "at": [
+     "One job in four hours",
+     "is a quarter"
+    ]
+   },
+   {
+    "say": "Or we stretch the workers to equal times, or we choose a job size.",
+    "at": [
+     "Or we stretch the workers",
+     "to equal times"
+    ]
+   },
+   {
+    "say": "And together is less than the fastest one alone, and more than half of it.",
+    "at": [
+     "And together is less",
+     "the fastest one"
+    ]
+   },
+   "Take a moment to memorize this, and I'll see you in the next video."
+  ]
+ ]
+}

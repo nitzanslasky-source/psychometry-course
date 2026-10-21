@@ -1,0 +1,179 @@
+{
+ "videoId": "solve-wp26-g096",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Printer A prints one batch of catalogs in six hours, while printer B prints the same batch in ten hours. If they work together at their usual constant rates, how many minutes do they need for one batch?",
+    "voice": "calm",
+    "at": [
+     "Printer A prints one batch"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So two printers work together on one batch. And they ask for minutes, but the times are given in hours.",
+    "at": [
+     "together on one",
+     "And they ask for minutes",
+     "but the times"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. Let's start with the math way, with equal times, like in the lesson.",
+    "at": [
+     "We'll solve",
+     "with equal times"
+    ]
+   },
+   {
+    "say": "Printer A prints one batch in six hours. Printer B prints one batch in ten hours.",
+    "at": [
+     "Printer A prints one batch in six",
+     "in six hours",
+     "Printer B prints one batch in ten"
+    ]
+   },
+   {
+    "say": "The times are different, so we can't add yet. We need a time that six and ten both divide. That's thirty hours.",
+    "at": [
+     "The times are",
+     "That's thirty hours"
+    ]
+   },
+   {
+    "say": "Six hours to thirty is times five. So in thirty hours, printer A prints five batches.",
+    "at": [
+     "Six hours to thirty",
+     "So in thirty"
+    ]
+   },
+   {
+    "say": "Ten hours to thirty is times three. So in thirty hours, printer B prints three batches.",
+    "at": [
+     "Ten hours to thirty",
+     "So in thirty"
+    ]
+   },
+   {
+    "say": "They print side by side, during the same thirty hours. So we add the batches. Five plus three is eight batches in thirty hours.",
+    "at": [
+     "Five plus three is eight",
+     "eight batches in thirty hours"
+    ]
+   },
+   {
+    "say": "Careful, eight isn't our answer. Eight hours is four hundred eighty minutes, choice number three. But eight is the number of batches.",
+    "at": [
+     "Careful, eight isn't",
+     "number three. But",
+     "But eight is the number of batches"
+    ]
+   },
+   {
+    "say": "They ask for one batch. Eight batches to one batch is divided by eight. So the time is divided by eight too. Thirty over eight is three and six eighths, that's three and three quarters hours.",
+    "at": [
+     "Eight batches to",
+     "that's three and three quarters"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now minutes. Three hours is three times sixty, a hundred eighty minutes.",
+    "at": [
+     "Now minutes",
+     "Three hours is three times sixty",
+     "sixty, a hundred"
+    ]
+   },
+   {
+    "say": "Three quarters of an hour is forty-five minutes. A hundred eighty plus forty-five is two hundred twenty-five minutes.",
+    "at": [
+     "Three quarters of an hour",
+     "is forty-five minutes",
+     "A hundred eighty plus forty-five",
+     "is two hundred"
+    ]
+   },
+   {
+    "say": "So that's choice number two.",
+    "at": [
+     "number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way with the rates, like in the lesson. We start again from the givens. Printer A prints a sixth of the batch an hour, and printer B a tenth. Together, a sixth plus a tenth.",
+    "at": [
+     "Now the",
+     "the givens. Printer",
+     "Together, a sixth plus a tenth"
+    ]
+   },
+   {
+    "say": "The common denominator is thirty. A sixth is five thirtieths, and a tenth is three thirtieths. Together that's eight thirtieths.",
+    "at": [
+     "The common denominator",
+     "Together that's"
+    ]
+   },
+   {
+    "say": "Eight thirtieths is four fifteenths, because we divide the top and the bottom by two.",
+    "at": [
+     "Eight thirtieths is four fifteenths",
+     "because we divide"
+    ]
+   },
+   {
+    "say": "What does four fifteenths mean? Four batches in fifteen hours.",
+    "at": [
+     "Four batches in fifteen hours"
+    ]
+   },
+   {
+    "say": "So one batch takes fifteen divided by four. That's three and three quarters hours, the same as before. So two hundred twenty-five minutes.",
+    "at": [
+     "fifteen divided by four",
+     "hours, the same",
+     "So two hundred twenty-five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And there's the two-worker shortcut from the lesson. We multiply the two times, and divide by their sum.",
+    "at": [
+     "And there's"
+    ]
+   },
+   {
+    "say": "Six times ten is sixty. Six plus ten is sixteen. So sixty over sixteen.",
+    "at": [
+     "Six times ten is sixty",
+     "Six plus ten"
+    ]
+   },
+   {
+    "say": "We divide the top and the bottom by four. Sixty over sixteen is fifteen over four. That's three and three quarters hours again.",
+    "at": [
+     "Sixty over sixteen is fifteen over four",
+     "That's three and"
+    ]
+   },
+   {
+    "say": "So two hundred twenty-five minutes.",
+    "at": [
+     "So two hundred twenty-five minutes"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

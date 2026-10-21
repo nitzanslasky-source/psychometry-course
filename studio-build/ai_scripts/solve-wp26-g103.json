@@ -1,0 +1,162 @@
+{
+ "videoId": "solve-wp26-g103",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Polisher A polishes two hundred square meters of floor in four hours. Polisher B polishes thirty square meters in six hours. Working together at these constant rates, how many minutes do they need for a hundred ten square meters?",
+    "voice": "calm",
+    "at": [
+     "Polisher A polishes two hundred"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So two polishers work together. They ask for minutes, for a hundred ten square meters.",
+    "at": [
+     "They ask for minutes",
+     "a hundred ten"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, with equal times, like in the lesson.",
+    "at": [
+     "We'll solve",
+     "with equal times"
+    ]
+   },
+   {
+    "say": "Polisher A does two hundred square meters in four hours. Polisher B does thirty in six hours.",
+    "at": [
+     "Polisher A does two hundred",
+     "square meters in",
+     "Polisher B does thirty"
+    ]
+   },
+   {
+    "say": "The times are different, so we need a time that four and six both divide. That's twelve hours.",
+    "at": [
+     "The times are",
+     "That's twelve hours"
+    ]
+   },
+   {
+    "say": "Four hours to twelve is times three. Two hundred times three is six hundred square meters.",
+    "at": [
+     "Four hours to twelve",
+     "Two hundred times"
+    ]
+   },
+   {
+    "say": "Six hours to twelve is times two. Thirty times two is sixty square meters.",
+    "at": [
+     "Six hours to twelve",
+     "Thirty times two"
+    ]
+   },
+   {
+    "say": "In the same twelve hours, together they polish six hundred plus sixty, six hundred sixty square meters.",
+    "at": [
+     "six hundred plus sixty",
+     "hundred sixty square"
+    ]
+   },
+   {
+    "say": "They want a hundred ten. Six hundred sixty divided by six is a hundred ten. So the work is divided by six.",
+    "at": [
+     "Six hundred sixty divided by six",
+     "six is a"
+    ]
+   },
+   {
+    "say": "The rate is fixed, so the time is divided by six too. Twelve divided by six is two hours.",
+    "at": [
+     "Twelve divided by six"
+    ]
+   },
+   {
+    "say": "They ask for minutes. Two hours is a hundred twenty minutes. That's choice number one.",
+    "at": [
+     "Two hours is a hundred twenty",
+     "number one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's estimate, and rule out choices. We start again from the givens. First, polisher A alone.",
+    "at": [
+     "Now let's",
+     "the givens. First"
+    ]
+   },
+   {
+    "say": "Polisher A does two hundred square meters in four hours. Four hours is two hundred forty minutes.",
+    "at": [
+     "Four hours is two hundred forty"
+    ]
+   },
+   {
+    "say": "We divide both by twenty. So ten square meters in twelve minutes.",
+    "at": [
+     "We divide both by twenty",
+     "So ten square"
+    ]
+   },
+   {
+    "say": "A hundred ten is eleven times ten. So eleven times twelve, a hundred thirty-two minutes, for polisher A alone.",
+    "at": [
+     "eleven times twelve",
+     "thirty-two minutes, for"
+    ]
+   },
+   {
+    "say": "Like in the lesson, together is faster than A alone. So less than a hundred thirty-two minutes.",
+    "at": [
+     "So less than a hundred thirty-two"
+    ]
+   },
+   {
+    "say": "So choice number three, a hundred thirty-two, is out. And choice number four, a hundred fifty, is out.",
+    "at": [
+     "a hundred thirty-two, is out",
+     "And choice number",
+     "a hundred fifty, is out"
+    ]
+   },
+   {
+    "say": "Two polishers as fast as A would need half the time. A hundred thirty-two divided by two is sixty-six minutes.",
+    "at": [
+     "A hundred thirty-two divided by two",
+     "two is sixty-six"
+    ]
+   },
+   {
+    "say": "But polisher B is much slower. It does only thirty square meters in six hours. It helps, but only a little.",
+    "at": [
+     "polisher B is much slower",
+     "It does only"
+    ]
+   },
+   "It's like the joke about the elephant and the mouse. They walk together, and the mouse says, look how much dust we're making.",
+   {
+    "say": "So together it's more than sixty-six minutes. Choice number two is out.",
+    "at": [
+     "Choice number two is out"
+    ]
+   },
+   {
+    "say": "Between sixty-six and a hundred thirty-two, only a hundred twenty is left.",
+    "at": [
+     "only a hundred twenty is left"
+    ]
+   },
+   {
+    "say": "Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

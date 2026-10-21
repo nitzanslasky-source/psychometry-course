@@ -1,0 +1,178 @@
+{
+ "videoId": "ch52-change",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now the change graph. It's very rare on the exam. But it's hard and confusing, so it's good to know its trick before we meet it.",
+   "In a change graph, the values are not amounts. Each value is a change."
+  ],
+  [
+   {
+    "say": "This graph shows the volunteers in an organization called Green Light, over ten weeks. Each point is the change at the end of a week, compared with the end of the week before.",
+    "at": [
+     "volunteers in an",
+     "compared with the end of the week before",
+     "the week before"
+    ]
+   },
+   {
+    "say": "Above zero, volunteers joined. Below zero, volunteers left.",
+    "at": [
+     "Above zero",
+     "zero, volunteers left"
+    ]
+   },
+   {
+    "say": "The example says, at the end of the second week there were ten more volunteers than at the end of the first week.",
+    "at": [
+     "The example says",
+     "end of the"
+    ]
+   },
+   {
+    "say": "And the point of week two is at plus ten. Ten more than the week before. It matches.",
+    "at": [
+     "the point of week two",
+     "is at plus"
+    ]
+   },
+   {
+    "say": "Let's say there were a hundred volunteers at the end of week one. Then at the end of week two there were a hundred ten.",
+    "at": [
+     "a hundred volunteers",
+     "end of week"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's the confusing part. Look at week three. The line goes down into it. So it feels like volunteers left.",
+    "at": [
+     "Look at week three",
+     "The line goes"
+    ]
+   },
+   {
+    "say": "But the point of week three says plus five. Plus five means five more volunteers than the week before.",
+    "at": [
+     "plus five",
+     "Plus five means"
+    ]
+   },
+   {
+    "say": "So it's a rise. A hundred ten plus five is a hundred fifteen.",
+    "at": [
+     "A hundred ten plus five",
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "That's why we ignore the line. We look only at the points.",
+    "at": [
+     "we ignore the line",
+     "We look only"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's a sample question. In how many of the weeks was there no change in the number of volunteers?",
+    "at": [
+     "In how many of the weeks",
+     "weeks was there"
+    ]
+   },
+   {
+    "say": "What does no change mean? The change was zero. So we look for points at zero.",
+    "at": [
+     "The change was zero",
+     "So we look"
+    ]
+   },
+   {
+    "say": "Let's take the line away, so it doesn't confuse us.",
+    "at": [
+     "take the line away",
+     "it doesn't confuse"
+    ]
+   },
+   {
+    "say": "The points at zero are weeks five, nine and ten. That's three weeks.",
+    "at": [
+     "weeks five, nine and ten",
+     "That's three weeks"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's bring the line back, to see how it fools us.",
+    "at": [
+     "line back, to"
+    ]
+   },
+   {
+    "say": "Into week five, the line falls. It looks like a drop. But the point of week five is zero, so nothing changed. Week five ended with the same number as week four.",
+    "at": [
+     "Into week five",
+     "the line falls",
+     "It looks like"
+    ]
+   },
+   {
+    "say": "Into week nine, the line rises. But the point is zero again. No change.",
+    "at": [
+     "Into week nine",
+     "But the point"
+    ]
+   },
+   "So the answer is three weeks."
+  ],
+  [
+   {
+    "say": "One more question. At the end of week two there were seventy-five volunteers. How many were there at the end of week six?",
+    "at": [
+     "At the end of week two",
+     "two there were"
+    ]
+   },
+   "We start from seventy-five, and we add the changes one week at a time. Only the points, no line.",
+   {
+    "say": "Week three is plus five. Seventy-five plus five is eighty.",
+    "at": [
+     "Week three is plus five",
+     "Seventy-five plus five"
+    ]
+   },
+   {
+    "say": "Week four is plus five again. Eighty plus five is eighty-five.",
+    "at": [
+     "Week four is plus five",
+     "Eighty plus five"
+    ]
+   },
+   {
+    "say": "Week five is zero. So it stays eighty-five.",
+    "at": [
+     "Week five is zero",
+     "it stays eighty-five"
+    ]
+   },
+   {
+    "say": "Week six is minus ten. Eighty-five minus ten is seventy-five.",
+    "at": [
+     "Week six is minus ten",
+     "Eighty-five minus ten"
+    ]
+   },
+   {
+    "say": "So at the end of week six there were seventy-five volunteers.",
+    "at": [
+     "So at the"
+    ]
+   },
+   "This graph is confusing, so watch this video again if you need to. And remember the one rule. Ignore the line, and look only at the points.",
+   "That's the last type of chart. Next, we'll solve full chart sets. I'll see you in the next video."
+  ]
+ ]
+}

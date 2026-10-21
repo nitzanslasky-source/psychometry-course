@@ -1,0 +1,351 @@
+{
+ "_about": "Topic 26 summary page (replaces the r26-t26-summary video). Content = the topic-26 scripts (math_patches/_ai_vis_t26.py), the Hebrew lessons (wp 5923-6981) and the memory card mem-work-rate. Build: python3 summary_pages.py 26. Course numbers only (none from the Hebrew course).",
+ "topic": 26,
+ "replaces": "r26-t26-summary",
+ "intro": "One formula is behind every work question: rate $\\times$ time $=$ work. The rate is what we do in **one** unit of time. Workers together **add their rates**, a team of identical workers goes into **the V table**, and worker-hours count the size of a job.",
+ "figures": {
+  "tri": {
+   "builder": "t26.TRI26",
+   "args": [],
+   "kwargs": {
+    "w": 300
+   },
+   "layers": [
+    "line",
+    "vals"
+   ]
+  },
+  "vt": {
+   "builder": "mv.VTABLE",
+   "args": [
+    [
+     "6",
+     "30",
+     "2"
+    ],
+    [
+     "4",
+     "40",
+     "?"
+    ]
+   ],
+   "kwargs": {},
+   "layers": [
+    "line",
+    "r1",
+    "r2",
+    "v",
+    "calc"
+   ]
+  },
+  "vtw": {
+   "builder": "mv.VTABLE",
+   "args": [
+    [
+     "6",
+     "30",
+     "2"
+    ],
+    [
+     "4",
+     "?",
+     "6"
+    ],
+    "work"
+   ],
+   "kwargs": {},
+   "layers": [
+    "line",
+    "r1",
+    "r2",
+    "v"
+   ]
+  }
+ },
+ "sections": [
+  {
+   "title": "The formula",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "tri",
+     "caption": "Cover the one you want: what is left tells you to multiply or divide."
+    },
+    {
+     "type": "rules",
+     "head": [
+      "They ask",
+      "Do",
+      "Example"
+     ],
+     "rows": [
+      [
+       "the work",
+       "rate $\\times$ time",
+       "$6$ cakes an hour, $4$ hours: $\\;6\\times4=24$ cakes"
+      ],
+      [
+       "the time",
+       "work $\\div$ rate",
+       "$150$ liters at $30$ a minute: $\\;150\\div30=5$ minutes"
+      ],
+      [
+       "the rate",
+       "work $\\div$ time",
+       "$48$ pages in $6$ minutes: $\\;48\\div6=8$ pages **per minute**"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "A rate always says **per what**: $45$ bottles in $5$ minutes $=$ $9$ bottles **per minute** (not just $9$). **Match the units first**: hours $\\to$ minutes $\\times60$, minutes $\\to$ hours $\\div60$ ($20$ minutes $=\\frac{1}{3}$ hour). $4$ parts a minute for $2$ hours $=4\\times120=480$, not $8$."
+    }
+   ]
+  },
+  {
+   "title": "What moves with what",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Fixed",
+      "Then",
+      "Example"
+     ],
+     "rows": [
+      [
+       "the time",
+       "rate and work: **the same way**",
+       "rate $\\times2$ $\\to$ work $\\times2$: $\\;15$ walls $\\to 30$"
+      ],
+      [
+       "the rate",
+       "time and work: **the same way**",
+       "half the time $\\to$ half the work: $\\;12 \\to 6$"
+      ],
+      [
+       "the work",
+       "rate and time: **opposite ways**",
+       "rate $\\times2$ $\\to$ time $\\times\\frac{1}{2}$: $\\;3\\cdot4=6\\cdot2=12$"
+      ]
+     ]
+    },
+    {
+     "type": "rules",
+     "head": [
+      "Two changes",
+      "Example"
+     ],
+     "rows": [
+      [
+       "**multiply** the factors (never add them)",
+       "rate $\\times2$, time $\\times4$ $\\to$ work $\\times8$ (not $\\times6$)"
+      ],
+      [
+       "a change the opposite way: **flip it**",
+       "$10$ hours, job $\\times3$, rate $\\times2$: $\\;10\\times3\\div2=15$"
+      ],
+      [
+       "a rate in percent: one multiplier, then flip",
+       "$25\\%$ faster $=\\times\\frac{5}{4}$ $\\to$ time $\\times\\frac{4}{5}$: $\\;40\\to32$ (not $30$)"
+      ]
+     ]
+    }
+   ],
+   "span": "full"
+  },
+  {
+   "title": "Working together",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Together: **add the rates**, never the times",
+       "$3+2=5$ a minute; $\\;3$ h and $6$ h is **not** $9$ h"
+      ],
+      [
+       "Working against: **a minus**",
+       "$5$ clean, $2$ dirty: $\\;5-2=3$ a minute"
+      ],
+      [
+       "One job $=1$: a job in $4$ hours is $\\frac{1}{4}$ an hour",
+       "$\\frac{1}{4}+\\frac{1}{12}=\\frac{4}{12}=\\frac{1}{3}$: $\\;1$ pool in $3$ hours"
+      ],
+      [
+       "Equal times: stretch both to one time, then add",
+       "$4$ h and $6$ h $\\to$ $12$ h: $\\;3+2=5$ bags; one bag $\\frac{12}{5}$ h $=2$ h $24$ min"
+      ],
+      [
+       "Or choose a job size both times divide",
+       "$5$ h and $20$ h, $20$ units: $\\;4+1=5$ an hour, $\\;4$ hours"
+      ],
+      [
+       "Two workers only: $\\frac{a\\cdot b}{a+b}$",
+       "$\\frac{4\\cdot6}{10}=2\\frac{2}{5}$ hours; two equal workers: half the time"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**The range check:** together is **less** than the fastest worker alone, and **more** than half of the fastest worker's time."
+    }
+   ],
+   "span": "full"
+  },
+  {
+   "title": "Team questions: the V",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "vt",
+     "caption": "Identical workers, a constant rate, a group: a team question. **Teamwork takes time**: team, work, time. Multiply the V, divide by the other two: $\\frac{6\\cdot40\\cdot2}{30\\cdot4}=4$ hours."
+    },
+    {
+     "type": "fig",
+     "ref": "vtw",
+     "caption": "The work is asked: the V upside down. $\\;\\frac{4\\cdot30\\cdot6}{6\\cdot2}=60$ pies."
+    },
+    {
+     "type": "p",
+     "text": "**Ratios** (the same way as it is, the opposite way flipped): $\\;2\\times\\frac{4}{3}\\times\\frac{3}{2}=4$. One thing changes: ratios. Two things change: the V."
+    }
+   ]
+  },
+  {
+   "title": "Worker-hours",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "workers $\\times$ hours $=$ one worker alone",
+       "$3$ workers, $4$ hours: $\\;12$ worker-hours"
+      ],
+      [
+       "Share them among any team",
+       "$12\\div6=2$ hours; $\\;12\\div3=4$ workers"
+      ],
+      [
+       "Stages: count each one, then add",
+       "$5\\times3+2\\times4=23$ worker-days (not $7\\times7$)"
+      ],
+      [
+       "Joins or leaves: the whole job $-$ done $=$ left",
+       "$40-4\\times5=20$, $\\;20\\div10=2$ **more** minutes ($7$ in total)"
+      ]
+     ]
+    }
+   ],
+   "span": "full"
+  },
+  {
+   "title": "Tools from the questions",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Tool",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Two workers who share one time: **one worker** (Omarpriya)",
+       "all three $1$ job in $9$ h $=2$ in $18$ h; $\\;$Sam $\\frac{1}{18}$ an hour"
+      ],
+      [
+       "Give it to the little guy: the $\\times2$ goes on the smaller side",
+       "$5L=2\\cdot10S$, $\\;L=4S$"
+      ],
+      [
+       "Average rate $=\\frac{\\text{total work}}{\\text{total time}}$ (weighted by the hours)",
+       "$60$ at $30$, $60$ at $20$: $\\;\\frac{120}{2+3}=24$, not $25$"
+      ],
+      [
+       "Catching up: the gap $\\div$ the extra rate",
+       "$5\\times6=30$ hours behind, $16-6=10$ extra a day: $\\;3$ days"
+      ],
+      [
+       "Who is the team? The ones who do the job (the sheep eat the hay)",
+       "$\\frac{200\\cdot1\\cdot9}{1\\cdot150}=12$ days"
+      ],
+      [
+       "Compare by factors: old $\\times$ every factor that changed",
+       "$8\\times\\frac{4}{3}\\times\\frac{3}{2}=16$ days; $\\;$a fixed amount more ($x+2$): an equation"
+      ]
+     ]
+    }
+   ],
+   "span": "full"
+  },
+  {
+   "title": "Before each question, ask",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "What is the work, the rate and the time? Are the units the same?",
+      "What is fixed? The same way or opposite ways?",
+      "Working together? Add the rates. Identical workers in a group? The V table.",
+      "Where must the answer be? Rule out choices first.",
+      "Do they ask for what is left, the whole time, or a clock time?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "Adding the times of workers instead of their rates.",
+      "Adding two factors ($\\times3$ and $\\times5$ is $\\times15$, not $\\times8$).",
+      "A percent faster taken as the same percent less time ($20\\%$ faster: $60\\to50$, not $48$).",
+      "Mixing minutes and hours ($40$ minutes is $\\frac{2}{3}$ hour, not $0.4$).",
+      "The average of two rates instead of total work over total time.",
+      "Answering the total time when they ask how many **more** hours."
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "6*4 == 24",
+  "150/30 == 5",
+  "48/6 == 8",
+  "45/5 == 9",
+  "4*120 == 480",
+  "3*5 == 15 and 6*5 == 30",
+  "3*4 == 12 and 3*2 == 6",
+  "12/3 == 4 and 12/6 == 2",
+  "10*3 == 30 and 30*8 == 240 and 20*12 == 240",
+  "10*3/2 == 15",
+  "40*4/5 == 32 and 40-10 == 30",
+  "1/4+1/12 == 1/3",
+  "12/5 == 2.4 and 0.4*60 == 24",
+  "20/5 + 20/20 == 5 and 20/5 == 4",
+  "abs(4*6/(4+6) - 2.4) < 1e-9",
+  "6*40*2/(30*4) == 4",
+  "4*30*6/(6*2) == 60",
+  "abs(2*(4/3)*(3/2) - 4) < 1e-9",
+  "3*4 == 12 and 12/6 == 2 and 12/3 == 4",
+  "5*3+2*4 == 23",
+  "40-4*5 == 20 and 20/10 == 2",
+  "abs(1/9-1/18 - 1/18) < 1e-12",
+  "120/(60/30+60/20) == 24",
+  "5*6/(16-6) == 3",
+  "200*1*9/(1*150) == 12",
+  "abs(8*(4/3)*(3/2) - 16) < 1e-9",
+  "60*5/6 == 50",
+  "abs(40/60 - 2/3) < 1e-12"
+ ]
+}

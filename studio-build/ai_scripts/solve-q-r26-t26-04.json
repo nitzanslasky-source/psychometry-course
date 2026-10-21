@@ -1,0 +1,147 @@
+{
+ "videoId": "solve-q-r26-t26-04",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A machine makes sixty parts at a rate of thirty parts per hour, and then sixty more parts at a rate of twenty parts per hour. What is its average rate for all a hundred twenty parts, in parts per hour?",
+    "voice": "calm",
+    "at": [
+     "A machine makes sixty parts"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the machine works at two different rates. They ask for one average rate for the whole job.",
+    "at": [
+     "at two different",
+     "They ask for one average rate"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. Let's start with the math way. A rate is the work over the time. So the average rate is the total work, over the total time.",
+    "at": [
+     "We'll solve",
+     "So the average rate is the total work",
+     "the total work"
+    ]
+   },
+   {
+    "say": "The total work is a hundred twenty parts. Now the time. Sixty parts at thirty an hour. The time is the work divided by the rate. Sixty divided by thirty is two hours.",
+    "at": [
+     "Sixty divided by thirty"
+    ]
+   },
+   {
+    "say": "Sixty more parts at twenty an hour. Sixty divided by twenty is three hours.",
+    "at": [
+     "Sixty more parts",
+     "Sixty divided by twenty"
+    ]
+   },
+   {
+    "say": "So the total time is two plus three, five hours.",
+    "at": [
+     "two plus three, five"
+    ]
+   },
+   {
+    "say": "A hundred twenty parts in five hours. A hundred twenty divided by five is twenty-four parts an hour.",
+    "at": [
+     "A hundred twenty",
+     "A hundred twenty divided by five",
+     "five is twenty-four"
+    ]
+   },
+   {
+    "say": "Careful with twenty-five, choice number one. That's the average of thirty and twenty. But the machine doesn't spend the same time at each rate.",
+    "at": [
+     "number one. That's",
+     "That's the average of thirty",
+     "and twenty. But",
+     "doesn't spend the same time"
+    ]
+   },
+   {
+    "say": "So the average rate is twenty-four parts an hour. That's choice number two.",
+    "at": [
+     "number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's estimate. We start again from the givens. The machine works three hours at twenty, and only two hours at thirty.",
+    "at": [
+     "Now let's",
+     "the givens. The",
+     "The machine works three hours at twenty",
+     "at twenty, and"
+    ]
+   },
+   {
+    "say": "It spends more time at the slow rate. So the average is closer to twenty than to thirty. That means it's below twenty-five.",
+    "at": [
+     "So the average is closer to twenty",
+     "to twenty than"
+    ]
+   },
+   {
+    "say": "So twenty-five, choice number one, is out. And fifty, choice number three, is more than both rates, so it's out too.",
+    "at": [
+     "choice number one, is out",
+     "is more than both rates"
+    ]
+   },
+   "Twenty-two or twenty-four are left. The estimate can't decide between them, so let's use the seesaw."
+  ],
+  [
+   {
+    "say": "[pause] Remember the seesaw from averages. The hours are the weights here. So we put the two rates at the ends, twenty and thirty.",
+    "at": [
+     "Remember the",
+     "So we put the two rates",
+     "rates at the",
+     "twenty and thirty"
+    ]
+   },
+   {
+    "say": "Twenty has a weight of three hours, and thirty has a weight of two hours. So twenty is the heavy side.",
+    "at": [
+     "Twenty has a weight of three",
+     "three hours, and"
+    ]
+   },
+   {
+    "say": "Three plus two is five, so we cut the gap into five equal units. The gap is thirty minus twenty, ten. Ten divided by five is two. So each unit is two.",
+    "at": [
+     "we cut the gap into five",
+     "five equal units",
+     "Ten divided by five",
+     "So each unit"
+    ]
+   },
+   {
+    "say": "The pivot is closer to the heavy side. It's two units from twenty, and three units from thirty.",
+    "at": [
+     "The pivot is closer to the heavy side",
+     "It's two units"
+    ]
+   },
+   {
+    "say": "Two units is two times two, four. Twenty plus four is twenty-four. The same answer.",
+    "at": [
+     "Twenty plus four",
+     "The same answer"
+    ]
+   },
+   "So whenever they ask for an average rate, we divide the total work by the total time. The plain average of the rates works only when the times are equal. Otherwise, the answer is closer to the rate with more time.",
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

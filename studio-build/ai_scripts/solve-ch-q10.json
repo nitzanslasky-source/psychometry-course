@@ -1,0 +1,105 @@
+{
+ "videoId": "solve-ch-q10",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In two thousand sixteen, all seven teams raced. Night Owls and Red Arrows came first together. The prizes for first and second place were added, and split equally between them. The prizes for places three to seven didn't change.",
+    "voice": "calm",
+    "at": [
+     "In two thousand sixteen"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The average prize per team in two thousand sixteen was blank the average prize per team in two thousand seventeen.",
+    "voice": "calm"
+   },
+   "So we compare two averages. This is the last question of the set, so let's look for the idea. But first, let's solve it the math way. Then we'll see the insight.",
+   {
+    "say": "Let's start with the math way, in thousands. In two thousand seventeen, the prizes are the prize table. A hundred twenty plus eighty is two hundred.",
+    "at": [
+     "the prizes are the prize table",
+     "A hundred twenty plus eighty",
+     "is two hundred"
+    ]
+   },
+   {
+    "say": "Plus fifty, twenty and ten is two hundred eighty. Places six and seven add zero.",
+    "at": [
+     "Plus fifty, twenty and ten",
+     "is two hundred"
+    ]
+   },
+   {
+    "say": "Seven teams, so the average is two hundred eighty divided by seven. That's forty thousand.",
+    "at": [
+     "divided by seven"
+    ]
+   },
+   {
+    "say": "Now two thousand sixteen. The two winners share a hundred twenty plus eighty, two hundred. Two hundred divided by two is a hundred each.",
+    "at": [
+     "The two winners",
+     "Two hundred divided by two",
+     "is a hundred"
+    ]
+   },
+   "The other five teams get places three to seven, the same prizes as before. Fifty, twenty, ten, zero and zero, that's eighty.",
+   {
+    "say": "So the total is a hundred plus a hundred, two hundred. Plus eighty is two hundred eighty again. Divided by the same seven teams, forty thousand.",
+    "at": [
+     "So the total is",
+     "Plus eighty is",
+     "Divided by the same",
+     "teams, forty thousand"
+    ]
+   },
+   {
+    "say": "The two averages are equal. That's choice number one.",
+    "at": [
+     "number one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the insight, from the givens again. What did two thousand sixteen change? Only how the money was split.",
+    "at": [
+     "the givens again"
+    ]
+   },
+   {
+    "say": "The two winners got the first and second prizes together, the same money as always. Places three to seven didn't change. So the total money is the same.",
+    "at": [
+     "the total money is the same"
+    ]
+   },
+   {
+    "say": "And the same seven teams share it.",
+    "at": [
+     "the same seven teams"
+    ]
+   },
+   {
+    "say": "The average is the total divided by the number of teams. The same total, divided by the same seven, gives the same average. No calculation needed.",
+    "at": [
+     "The average is",
+     "gives the same average"
+    ]
+   },
+   {
+    "say": "So in the last questions of a set, look for the idea first. Here the whole question was one fact. Sharing money differently doesn't change the average.",
+    "at": [
+     "So in the"
+    ]
+   },
+   {
+    "say": "Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,199 @@
+{
+ "videoId": "ch52-intro-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with tables and charts."
+  ],
+  [
+   {
+    "say": "What's the difference between a table and a chart? A table puts related data together, in rows and columns.",
+    "at": [
+     "a table and",
+     "in rows and columns"
+    ]
+   },
+   {
+    "say": "We find a value where a row and a column cross. Let's take the row thirty-one to forty, and the siblings column.",
+    "at": [
+     "We find a",
+     "the row thirty-one to forty"
+    ]
+   },
+   {
+    "say": "They cross at two point eight. So people aged thirty-one to forty have two point eight siblings, on average.",
+    "at": [
+     "They cross at two point eight",
+     "eight. So people",
+     "two point eight siblings"
+    ]
+   },
+   {
+    "say": "A chart shows the same kind of data as a picture.",
+    "at": [
+     "same kind of",
+     "as a picture"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Think of Excel. We type the data into a table, and we click insert chart.",
+    "at": [
+     "type the data"
+    ]
+   },
+   "Excel asks which kind of chart we want. Columns, a line, a pie, and more.",
+   {
+    "say": "We choose the chart that shows our data best. Different charts help us see different things. We'll see that in the next lessons.",
+    "at": [
+     "We choose the chart",
+     "shows our data"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's an important difference from geometry. In geometry, a figure is not necessarily drawn to scale.",
+    "at": [
+     "from geometry. In"
+    ]
+   },
+   {
+    "say": "In charts, the drawing is always accurate. So we can trust it, and we should use it.",
+    "at": [
+     "the drawing is always accurate",
+     "So we can"
+    ]
+   },
+   {
+    "say": "Often the fastest way is just to look. For example, a steeper line means a bigger change.",
+    "at": [
+     "a steeper line means"
+    ]
+   },
+   {
+    "say": "Let's see it on this chart. It shows a score, by the number of full practice tests a student did.",
+    "at": [
+     "Let's see it"
+    ]
+   },
+   {
+    "say": "At the start the line is very steep. From the first test to the fifth, the score jumps a lot.",
+    "at": [
+     "From the first test to the fifth",
+     "the score jumps a lot"
+    ]
+   },
+   {
+    "say": "From about the eighth test, the line is almost flat. So the score hardly goes up any more.",
+    "at": [
+     "From about the eighth test",
+     "the line is almost flat",
+     "So the score"
+    ]
+   },
+   "We saw all of this in one look, with no calculation."
+  ],
+  [
+   {
+    "say": "So when is a table better? A table can hold a lot of data about the same groups.",
+    "at": [
+     "table better? A"
+    ]
+   },
+   "Here are the same three age groups. Now we also have children, friends, salary, and rooms at home.",
+   {
+    "say": "If a question needs one value, we just find it. At ages twenty-one to thirty, the salary is six thousand two hundred shekels.",
+    "at": [
+     "the salary is six thousand",
+     "two hundred shekels"
+    ]
+   },
+   {
+    "say": "The other columns don't bother us. We just ignore them.",
+    "at": [
+     "The other columns don't bother us",
+     "us. We just"
+    ]
+   },
+   {
+    "say": "In a chart, so much data would be a mess. Too many lines or bars, and we can't see anything.",
+    "at": [
+     "would be a mess",
+     "Too many lines"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "But a table has a weak point. To see a trend, we must read every number.",
+    "at": [
+     "a weak point"
+    ]
+   },
+   {
+    "say": "Look at the salary. Six thousand two hundred, then eight thousand three hundred, then ten thousand one hundred. It goes up with age.",
+    "at": [
+     "Look at the salary",
+     "Six thousand two",
+     "It goes up with age"
+    ]
+   },
+   {
+    "say": "And the friends go down. Twelve, nine, seven.",
+    "at": [
+     "And the friends go down",
+     "Twelve, nine, seven"
+    ]
+   },
+   {
+    "say": "We had to read six numbers to see that. In a chart, we'd see one line going up and one going down, right away.",
+    "at": [
+     "We had to",
+     "right away"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now back to the practice tests. Here's another student. At the start the line is almost flat, so there's almost no improvement.",
+    "at": [
+     "practice tests. Here's"
+    ]
+   },
+   {
+    "say": "From the fifth test the line gets steep. From five to six, six to seven, seven to eight, the score goes up a lot.",
+    "at": [
+     "From the fifth test",
+     "line gets steep",
+     "the score goes up a lot"
+    ]
+   },
+   {
+    "say": "Steeper means a bigger improvement. And from about the tenth test, it's flat again.",
+    "at": [
+     "Steeper means a",
+     "from about the tenth test",
+     "it's flat again"
+    ]
+   },
+   {
+    "say": "The dashed line is a third student. Almost nothing until the ninth test, and only then a sharp rise.",
+    "at": [
+     "The dashed line",
+     "Almost nothing until"
+    ]
+   },
+   "By the way, the second student is the real picture for most of us. If your first practice tests don't improve, don't worry.",
+   {
+    "say": "The big jump usually comes from about the fourth or fifth test. Then the score levels off.",
+    "at": [
+     "The big jump usually comes",
+     "from about the"
+    ]
+   },
+   "That's it for the introduction. In the next lessons we'll go through each type of chart. I'll see you in the next video."
+  ]
+ ]
+}

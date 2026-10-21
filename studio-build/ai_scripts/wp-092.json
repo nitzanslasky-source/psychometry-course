@@ -1,0 +1,187 @@
+{
+ "videoId": "wp-092",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now a new topic, work and rate.",
+   {
+    "say": "Work questions come up in almost every exam. Workers, machines, pipes and printers all get a job done over time. And one simple formula is behind all of them.",
+    "at": [
+     "in almost every"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here it is. Rate times time is equal to work.",
+    "at": [
+     "Rate times time is equal to work"
+    ]
+   },
+   {
+    "say": "The rate is what we do in one unit of time. For example, what we do in one hour.",
+    "at": [
+     "The rate is"
+    ]
+   },
+   "The time is how long we work. And the work is everything we get done.",
+   {
+    "say": "Let's see it in numbers. A baker makes six cakes an hour, and she works for four hours.",
+    "at": [
+     "A baker makes six cakes an hour",
+     "for four hours"
+    ]
+   },
+   {
+    "say": "So her rate is six cakes an hour, and the time is four hours. Six times four is twenty-four. So her work is twenty-four cakes.",
+    "at": [
+     "Six times four is twenty-four",
+     "So her work"
+    ]
+   },
+   {
+    "say": "So there are three quantities, the rate, the time and the work. The question gives us two of them, and we find the third.",
+    "at": [
+     "The question gives us two of them",
+     "of them, and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "If you're not sure when to multiply and when to divide, use the formula triangle.",
+    "at": [
+     "when to multiply",
+     "use the formula triangle"
+    ]
+   },
+   {
+    "say": "The work goes on top. The rate and the time go at the bottom, side by side.",
+    "at": [
+     "The work goes on top",
+     "The rate and"
+    ]
+   },
+   "Now we cover the one we want. What's left tells us what to do.",
+   {
+    "say": "Cover the work. The rate and the time are left, side by side. So the work is the rate times the time.",
+    "at": [
+     "Cover the work",
+     "The rate and",
+     "So the work is the rate times"
+    ]
+   },
+   {
+    "say": "Cover the time. The work is left, over the rate. So the time is the work divided by the rate.",
+    "at": [
+     "Cover the time",
+     "The work is",
+     "So the time is the work divided"
+    ]
+   },
+   {
+    "say": "And cover the rate. The work is left, over the time. So the rate is the work divided by the time.",
+    "at": [
+     "And cover the rate",
+     "The work is",
+     "So the rate is the work divided"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's use it. A pump moves thirty liters a minute. How long does it take to move a hundred fifty liters?",
+    "at": [
+     "A pump moves thirty liters",
+     "How long does"
+    ]
+   },
+   {
+    "say": "They ask for the time. So we cover the time, and the time is the work divided by the rate.",
+    "at": [
+     "the time is the work divided by the rate",
+     "divided by the"
+    ]
+   },
+   {
+    "say": "A hundred fifty divided by thirty is five, because thirty times five is a hundred fifty. So it takes five minutes.",
+    "at": [
+     "A hundred fifty divided by thirty",
+     "thirty is five"
+    ]
+   },
+   {
+    "say": "Now the other way. A printer prints forty-eight pages in six minutes. What is its rate?",
+    "at": [
+     "A printer prints forty-eight pages",
+     "in six minutes"
+    ]
+   },
+   {
+    "say": "We cover the rate. The rate is the work divided by the time.",
+    "at": [
+     "The rate is the work divided",
+     "divided by the"
+    ]
+   },
+   {
+    "say": "Forty-eight divided by six is eight. So the printer prints eight pages a minute.",
+    "at": [
+     "Forty-eight divided by six",
+     "So the printer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now careful here, because a lot of students mix up the work and the rate.",
+    "at": [
+     "a lot of"
+    ]
+   },
+   {
+    "say": "A machine fills forty-five bottles in five minutes. What is the work? Forty-five bottles. That's everything it did.",
+    "at": [
+     "A machine fills forty-five bottles",
+     "in five minutes",
+     "Forty-five bottles. That"
+    ]
+   },
+   {
+    "say": "What is the time? Five minutes.",
+    "at": [
+     "Five minutes."
+    ]
+   },
+   {
+    "say": "And the rate is the work divided by the time. Forty-five divided by five is nine.",
+    "at": [
+     "And the rate",
+     "Forty-five divided by five"
+    ]
+   },
+   {
+    "say": "But the rate isn't just nine. It's nine bottles per minute.",
+    "at": [
+     "But the rate",
+     "It's nine bottles per minute"
+    ]
+   },
+   {
+    "say": "Nine bottles is just an amount. Nine bottles per minute is a rate. So a rate always says per what.",
+    "at": [
+     "Nine bottles is",
+     "So a rate always says per what"
+    ]
+   },
+   {
+    "say": "A rate is really a fraction, the work over the time. Forty-five bottles in five minutes is the same rate as nine bottles in one minute.",
+    "at": [
+     "A rate is really a fraction",
+     "fraction, the work"
+    ]
+   },
+   "Both fractions say the same thing. So we can write a rate either way, whichever is easier. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}

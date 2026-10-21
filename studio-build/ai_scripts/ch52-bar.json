@@ -1,0 +1,276 @@
+{
+ "videoId": "ch52-bar",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now the bar chart. It's one of the most common charts on the exam.",
+   "A bar chart shows the same data as before, the table, the points and the lines. This time we use bars."
+  ],
+  [
+   {
+    "say": "On the left are the lines from the last lesson. On the right we'll build bars from the same data.",
+    "at": [
+     "the lines from",
+     "the same data"
+    ]
+   },
+   {
+    "say": "Let's start with the vehicles sold. Instead of the line, each year gets a bar from the bottom up to the point.",
+    "at": [
+     "Let's start with",
+     "each year gets a bar",
+     "from the bottom"
+    ]
+   },
+   {
+    "say": "Two thousand ten up to sixty, two thousand eleven up to eighty, two thousand twelve also eighty, and two thousand thirteen up to a hundred.",
+    "at": [
+     "Two thousand ten up to sixty",
+     "sixty, two thousand"
+    ]
+   },
+   {
+    "say": "The key changes too. A white bar now means the vehicles sold.",
+    "at": [
+     "A white bar now means",
+     "the vehicles sold"
+    ]
+   },
+   {
+    "say": "Next, the private cars. Their bars would fall inside the same place, so we move them a bit to the right.",
+    "at": [
+     "we move them a bit",
+     "we move them",
+     "to the right"
+    ]
+   },
+   {
+    "say": "We do the same with the other two columns. Now the bars of each year stand next to each other.",
+    "at": [
+     "the bars of each year",
+     "stand next to"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So a bar's height is its value. Let's check one. Two thousand ten, privately owned, the grey bar.",
+    "at": [
+     "is its value"
+    ]
+   },
+   {
+    "say": "It reaches forty. So forty thousand vehicles were privately owned.",
+    "at": [
+     "It reaches forty",
+     "It reaches forty",
+     "So forty thousand"
+    ]
+   },
+   {
+    "say": "That's the same forty as the point in the line graph, and the same as in the table. The same data, three pictures.",
+    "at": [
+     "the same as in the table",
+     "The same data"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes a bar stands inside another bar.",
+    "at": [
+     "inside another bar"
+    ]
+   },
+   {
+    "say": "Here, the white bar is all the vehicles sold. In two thousand ten, it reaches sixty.",
+    "at": [
+     "the white bar is all",
+     "the vehicles sold",
+     "it reaches sixty"
+    ]
+   },
+   {
+    "say": "Inside it stands a black bar, the private cars. It reaches forty-five.",
+    "at": [
+     "Inside it stands a black bar",
+     "bar, the private"
+    ]
+   },
+   {
+    "say": "Why inside? Because the private cars are a part of the vehicles sold. Forty-five of the sixty.",
+    "at": [
+     "Why inside",
+     "Because the private"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A bar inside a bar can also hide an overlap question. Look at two thousand eleven.",
+    "at": [
+     "Look at two thousand eleven"
+    ]
+   },
+   {
+    "say": "Eighty thousand vehicles were sold. Of them, sixty thousand were private cars, and fifty thousand were privately owned.",
+    "at": [
+     "Eighty thousand vehicles"
+    ]
+   },
+   {
+    "say": "How many were both, private cars and privately owned? It could be that all fifty are inside the sixty.",
+    "at": [
+     "all fifty are inside the sixty"
+    ]
+   },
+   {
+    "say": "Then all fifty are both.",
+    "at": [
+     "Then all fifty are both"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Or we can push the fifty up, as high as it goes, to the top of the eighty.",
+    "at": [
+     "push the fifty up",
+     "high as it"
+    ]
+   },
+   {
+    "say": "Now only part of it is inside the sixty. How much? Sixty plus fifty is a hundred ten.",
+    "at": [
+     "Sixty plus fifty"
+    ]
+   },
+   {
+    "say": "But there are only eighty vehicles. A hundred ten minus eighty is thirty. So at least thirty are both.",
+    "at": [
+     "But there are",
+     "A hundred ten minus eighty",
+     "So at least"
+    ]
+   },
+   {
+    "say": "So both can be anywhere from thirty to fifty thousand. It's the same as in overlap questions.",
+    "at": [
+     "anywhere from thirty to fifty",
+     "It's the same"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now another kind of bar chart. Here there are three kinds of vehicles. Private cars, commercial vehicles, and motorcycles.",
+    "at": [
+     "bar chart. Here"
+    ]
+   },
+   {
+    "say": "A vehicle can be only one of them. It's a van or a car, not both.",
+    "at": [
+     "A vehicle can be only one",
+     "one of them"
+    ]
+   },
+   {
+    "say": "So we can put the bars one on top of the other. That's called stacked bars.",
+    "at": [
+     "one on top of the other",
+     "other. That's called"
+    ]
+   },
+   "Why would we want that? Say I own the dealer group. Most of all, I want the total.",
+   {
+    "say": "The top of the stack is the total. In two thousand twelve it's almost a hundred twenty. About a hundred eighteen thousand.",
+    "at": [
+     "The top of the stack is the total",
+     "is the total"
+    ]
+   },
+   {
+    "say": "And how many commercial vehicles were sold in two thousand twelve? The grey part goes from sixty up to a hundred ten.",
+    "at": [
+     "The grey part goes from sixty",
+     "sixty up to"
+    ]
+   },
+   {
+    "say": "So it's a hundred ten minus sixty, fifty thousand.",
+    "at": [
+     "a hundred ten minus sixty"
+    ]
+   },
+   {
+    "say": "Careful, a lot of students say a hundred ten, because that's where the grey part ends. But a part is the gap, from its bottom to its top.",
+    "at": [
+     "Careful, a lot",
+     "a part is the gap",
+     "from its bottom"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Only the bottom part starts at zero. So we can read it straight from the axis.",
+    "at": [
+     "starts at zero"
+    ]
+   },
+   {
+    "say": "Private cars in two thousand thirteen, the black part, go from zero to seventy. So seventy thousand.",
+    "at": [
+     "go from zero to seventy",
+     "seventy thousand"
+    ]
+   },
+   {
+    "say": "The same data can be shown in many ways. One worker likes a table, another likes bars. The manager wants the total, so he gets a stack.",
+    "at": [
+     "The same data can be shown",
+     "shown in many"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more kind, and it comes up quite often. Horizontal bars. They're ordinary bars, lying on their side.",
+    "at": [
+     "it comes up",
+     "lying on their side"
+    ]
+   },
+   {
+    "say": "This chart shows the average grades at the end of tenth grade, in two schools, Carob and Zucchini.",
+    "at": [
+     "This chart shows"
+    ]
+   },
+   {
+    "say": "The example says, the average grade in English at Carob was seventy-five, and at Zucchini, eighty.",
+    "at": [
+     "The example says",
+     "grade in English"
+    ]
+   },
+   {
+    "say": "Now the values go across, on the bottom axis. The English bar at Carob reaches seventy-five. At Zucchini, it reaches eighty. It matches.",
+    "at": [
+     "The English bar at Carob",
+     "At Zucchini, it"
+    ]
+   },
+   {
+    "say": "If it confuses you, turn the page in your mind. Then it's an ordinary bar chart.",
+    "at": [
+     "turn the page",
+     "Then it's an"
+    ]
+   },
+   "So in a bar chart, always ask two things. Is it stacked? Is one bar inside another? Then you won't read a hundred ten where the answer is fifty.",
+   "I'll see you in the next video."
+  ]
+ ]
+}

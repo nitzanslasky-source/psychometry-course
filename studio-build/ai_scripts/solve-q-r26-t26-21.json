@@ -1,0 +1,133 @@
+{
+ "videoId": "solve-q-r26-t26-21",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Last month Dana spent her whole budget on notebooks and bought thirty of them. This month her budget is twenty percent larger, and each notebook costs one and a half times as much as last month. How many notebooks can she buy this month with her whole budget?",
+    "voice": "calm",
+    "at": [
+     "Last month Dana spent"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So two things change, the budget and the price. And we know only relations, not the real budget or the real price.",
+    "at": [
+     "So two things change"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start by understanding, and compare by factors, like in the lesson. The number of notebooks is the budget divided by the price.",
+    "at": [
+     "We'll solve",
+     "The number of notebooks is",
+     "the budget divided"
+    ]
+   },
+   {
+    "say": "The budget is twenty percent larger. That's times one point two, or six fifths. A bigger budget buys more notebooks. That's the same way, so times six fifths as it is.",
+    "at": [
+     "times one point two, or six fifths",
+     "A bigger budget"
+    ]
+   },
+   {
+    "say": "The price is times one and a half, that's three halves. A higher price buys fewer notebooks. That's the opposite way, so we flip it. Three halves becomes two thirds.",
+    "at": [
+     "Three halves becomes two thirds"
+    ]
+   },
+   {
+    "say": "So we start from the old value, thirty, and multiply by both factors. Thirty times six fifths times two thirds.",
+    "at": [
+     "So we start",
+     "Thirty times six fifths times two thirds"
+    ]
+   },
+   {
+    "say": "Thirty divided by five is six. Then six times six is thirty-six.",
+    "at": [
+     "Thirty divided by five is six",
+     "Then six times six"
+    ]
+   },
+   {
+    "say": "Thirty-six divided by three is twelve. Then twelve times two is twenty-four notebooks.",
+    "at": [
+     "Thirty-six divided by three",
+     "Then twelve times two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Careful with fifty-four, choice number one. That's thirty-six times three halves. It forgets to flip the price.",
+    "at": [
+     "Careful with",
+     "number one. That's",
+     "That's thirty-six times three halves",
+     "It forgets to flip the price"
+    ]
+   },
+   {
+    "say": "And careful with twenty-one, choice number four. It adds the percents. It takes twenty percent more for the budget, and fifty percent fewer notebooks for the price. Twenty minus fifty is minus thirty percent, and thirty minus thirty percent is twenty-one.",
+    "at": [
+     "number four. It",
+     "It takes twenty",
+     "Twenty minus fifty is minus thirty",
+     "thirty percent is"
+    ]
+   },
+   {
+    "say": "But each change multiplies. And a price that is fifty percent higher doesn't mean fifty percent fewer notebooks.",
+    "at": [
+     "doesn't mean fifty percent fewer"
+    ]
+   },
+   {
+    "say": "So she can buy twenty-four notebooks. That's choice number three.",
+    "at": [
+     "number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in numbers. We start again from the givens. The real price isn't given, so we choose it. Let's say a notebook cost ten last month. Then the budget was thirty times ten, three hundred.",
+    "at": [
+     "Now let's",
+     "the givens. The",
+     "Let's say a notebook cost ten",
+     "Then the budget"
+    ]
+   },
+   {
+    "say": "This month the budget is twenty percent larger. Twenty percent of three hundred is sixty. So three hundred plus sixty, three hundred sixty.",
+    "at": [
+     "So three hundred plus",
+     "three hundred sixty"
+    ]
+   },
+   {
+    "say": "And the price is one and a half times ten, fifteen.",
+    "at": [
+     "one and a half times ten"
+    ]
+   },
+   {
+    "say": "Three hundred sixty divided by fifteen. Fifteen times twenty is three hundred. Then fifteen times four is sixty. So twenty-four notebooks.",
+    "at": [
+     "Three hundred sixty divided by fifteen",
+     "Fifteen times twenty"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

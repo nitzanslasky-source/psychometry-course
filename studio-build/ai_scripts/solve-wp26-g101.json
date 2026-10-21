@@ -1,0 +1,122 @@
+{
+ "videoId": "solve-wp26-g101",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The combined rate of five large dishwashers is twice the combined rate of ten small dishwashers. Dishwashers of the same type are identical. How many times as fast is one large dishwasher as one small dishwasher?",
+    "voice": "calm",
+    "at": [
+     "The combined rate of five large"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they compare the rate of one large dishwasher with the rate of one small one.",
+    "at": [
+     "So they compare the rate"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, with an equation. Let L be the rate of one large dishwasher, and S the rate of one small one.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "The dishwashers of each type are identical. So five large ones have a rate of five L, and ten small ones have a rate of ten S.",
+    "at": [
+     "five large ones have a rate",
+     "rate of five"
+    ]
+   },
+   "Five L is twice ten S. So which side gets the times two? A lot of students double the bigger side, because it's the one that's twice as big.",
+   {
+    "say": "Remember from topic twenty-two, give it to the little guy. Five L is the bigger one, so the times two goes on the smaller side, ten S. Then both sides are equal.",
+    "at": [
+     "so the times two goes on",
+     "on the smaller"
+    ]
+   },
+   {
+    "say": "Two times ten S is twenty S. So five L is equal to twenty S.",
+    "at": [
+     "Two times ten S is twenty S",
+     "So five L"
+    ]
+   },
+   {
+    "say": "We divide both sides by five, so that one L is left alone. Twenty divided by five is four. So L is equal to four S.",
+    "at": [
+     "We divide both sides by five",
+     "five, so that"
+    ]
+   },
+   {
+    "say": "Careful with choice number one. If we double five L, we get ten L is equal to ten S. Then L is equal to S, and that's one.",
+    "at": [
+     "number one. If",
+     "If we double five L",
+     "equal to ten",
+     "and that's one"
+    ]
+   },
+   {
+    "say": "So one large dishwasher is four times as fast as a small one. That's choice number four.",
+    "at": [
+     "number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in numbers. We start again from the givens. We don't need to know where to start. We just pick a number, and follow the story.",
+    "at": [
+     "Now let's",
+     "the givens. We"
+    ]
+   },
+   {
+    "say": "Let's say one small dishwasher washes two plates a minute.",
+    "at": [
+     "one small dishwasher washes two",
+     "plates a minute"
+    ]
+   },
+   {
+    "say": "So ten small ones wash ten times two, twenty plates a minute.",
+    "at": [
+     "ten times two, twenty"
+    ]
+   },
+   {
+    "say": "The five large ones have twice that rate. Two times twenty is forty plates a minute.",
+    "at": [
+     "The five large",
+     "Two times twenty is forty"
+    ]
+   },
+   {
+    "say": "That's five large dishwashers together. So one large dishwasher washes forty divided by five, eight plates a minute.",
+    "at": [
+     "That's five large",
+     "forty divided by five",
+     "plates a minute"
+    ]
+   },
+   {
+    "say": "One small one washes two, and one large one washes eight. Eight divided by two is four. So four times as fast.",
+    "at": [
+     "Eight divided by two is four",
+     "So four times"
+    ]
+   },
+   {
+    "say": "Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

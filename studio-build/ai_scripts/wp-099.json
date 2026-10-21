@@ -1,0 +1,201 @@
+{
+ "videoId": "wp-099",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now the last type, worker-hours.",
+   {
+    "say": "It's a small twist on team questions. And it helps a lot when the team changes during the job.",
+    "at": [
+     "on team questions"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Worker-hours tell us how big a job is. We count it in hours of one worker.",
+    "at": [
+     "big a job"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. Three workers clean a hall in four hours. Each of them works four hours.",
+    "at": [
+     "Three workers clean a hall",
+     "in four hours"
+    ]
+   },
+   {
+    "say": "So three workers, four hours each. Three times four is twelve worker-hours.",
+    "at": [
+     "Three times four is twelve"
+    ]
+   },
+   {
+    "say": "Only four hours pass on the clock. But there are twelve hours of work in that hall.",
+    "at": [
+     "Only four hours"
+    ]
+   },
+   {
+    "say": "So one worker alone would need twelve hours.",
+    "at": [
+     "So one worker alone",
+     "need twelve hours"
+    ]
+   },
+   "Think of the boss who pays the workers by the hour. She pays three workers for four hours each. That's twelve hours of pay.",
+   "With days instead of hours, it's worker-days. It's the same idea."
+  ],
+  [
+   {
+    "say": "Once we know the worker-hours, we can share them in any way.",
+    "at": [
+     "worker-hours, we can"
+    ]
+   },
+   {
+    "say": "The hall needs twelve worker-hours. With six workers, twelve divided by six is two hours.",
+    "at": [
+     "With six workers",
+     "by six is"
+    ]
+   },
+   {
+    "say": "With two workers, twelve divided by two is six hours.",
+    "at": [
+     "With two workers",
+     "by two is"
+    ]
+   },
+   {
+    "say": "And to finish in three hours, twelve divided by three is four workers.",
+    "at": [
+     "to finish in three hours"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes the team changes during the job. Then we count each stage, and add them up.",
+    "at": [
+     "during the job"
+    ]
+   },
+   {
+    "say": "Five workers work for three days. Five times three is fifteen worker-days.",
+    "at": [
+     "Five workers work for three",
+     "Five times three"
+    ]
+   },
+   {
+    "say": "Then two workers work for four more days. Two times four is eight worker-days.",
+    "at": [
+     "Then two workers",
+     "Two times four"
+    ]
+   },
+   {
+    "say": "Fifteen plus eight is twenty-three worker-days. So one worker alone would need twenty-three days.",
+    "at": [
+     "Fifteen plus eight",
+     "So one worker"
+    ]
+   },
+   {
+    "say": "Careful, don't add the workers and the days first. Seven workers never worked seven days together. That gives forty-nine, which is the trap.",
+    "at": [
+     "Seven workers never worked",
+     "That gives forty-nine"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes a worker joins in the middle, or leaves. Then we split the job into what's done and what's left.",
+    "at": [
+     "in the middle"
+    ]
+   },
+   {
+    "say": "A tank holds forty liters. Pipe A fills four liters a minute.",
+    "at": [
+     "A tank holds forty liters",
+     "Pipe A fills"
+    ]
+   },
+   {
+    "say": "After five minutes, pipe B joins, with six liters a minute. How long until the tank is full?",
+    "at": [
+     "After five minutes",
+     "joins, with six"
+    ]
+   },
+   {
+    "say": "First, what's done. Pipe A worked alone for five minutes. Four times five is twenty liters.",
+    "at": [
+     "Four times five is twenty"
+    ]
+   },
+   {
+    "say": "So what's left is forty minus twenty, twenty liters.",
+    "at": [
+     "So what's left"
+    ]
+   },
+   {
+    "say": "Now they work together, so we add the rates. Four plus six is ten liters a minute.",
+    "at": [
+     "Now they work",
+     "Four plus six is ten"
+    ]
+   },
+   {
+    "say": "Twenty liters at ten liters a minute. Twenty divided by ten is two more minutes.",
+    "at": [
+     "Twenty liters at",
+     "Twenty divided by ten",
+     "two more minutes"
+    ]
+   },
+   {
+    "say": "Careful, read what they ask. Two more minutes, or five plus two, seven minutes in total.",
+    "at": [
+     "five plus two, seven minutes"
+    ]
+   },
+   {
+    "say": "So the whole job, minus what's done, is what's left. Then we divide what's left by the new rate.",
+    "at": [
+     "So the whole job, minus",
+     "what's done, is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. Worker-hours are the workers times the hours. That's how long one worker alone would need.",
+    "at": [
+     "Worker-hours are the workers times",
+     "That's how long"
+    ]
+   },
+   {
+    "say": "We can share the worker-hours among any team. And in stages, we count each stage and add.",
+    "at": [
+     "We can share the worker-hours",
+     "among any team"
+    ]
+   },
+   {
+    "say": "When someone joins or leaves, the whole job minus what's done is what's left.",
+    "at": [
+     "When someone joins",
+     "the whole job"
+    ]
+   },
+   "Take a moment to memorize this, and I'll see you in the next video."
+  ]
+ ]
+}

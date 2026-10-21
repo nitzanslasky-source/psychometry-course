@@ -1,0 +1,174 @@
+{
+ "videoId": "wp-092-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue, and see what happens when two things change."
+  ],
+  [
+   {
+    "say": "Now what if two things change at once? Then we multiply the factors, one after the other.",
+    "at": [
+     "things change at"
+    ]
+   },
+   {
+    "say": "A printer prints ten pages a minute, for three minutes. Ten times three is thirty pages.",
+    "at": [
+     "A printer prints ten pages a minute",
+     "a minute, for",
+     "Ten times three is thirty"
+    ]
+   },
+   {
+    "say": "Now it prints twice as fast, and for four times as long. What happens to the work?",
+    "at": [
+     "twice as fast, and for four times",
+     "four times as"
+    ]
+   },
+   {
+    "say": "Twice the rate doubles the work. And four times the time multiplies it by four again. Two times four is eight. So the work is eight times as big.",
+    "at": [
+     "Two times four is eight",
+     "So the work"
+    ]
+   },
+   {
+    "say": "Let's check it. Twice as fast is twenty pages a minute. Four times as long is twelve minutes.",
+    "at": [
+     "Twice as fast is twenty pages",
+     "Four times as"
+    ]
+   },
+   {
+    "say": "Twenty times twelve is two hundred forty. And thirty times eight is also two hundred forty.",
+    "at": [
+     "Twenty times twelve",
+     "hundred forty. And",
+     "thirty times eight"
+    ]
+   },
+   {
+    "say": "A lot of students add the factors, two plus four, six. But each change multiplies what is already there. So we multiply.",
+    "at": [
+     "add the factors",
+     "two plus four, six",
+     "But each change"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now one change that goes the opposite way. A team needs ten hours for a job. Now the job is three times as big, and the team works twice as fast.",
+    "at": [
+     "goes the opposite",
+     "A team needs ten hours for a job",
+     "for a job"
+    ]
+   },
+   {
+    "say": "A bigger job takes more time. That's the same way, so the time is times three. Ten times three is thirty.",
+    "at": [
+     "Ten times three is thirty"
+    ]
+   },
+   {
+    "say": "A faster team takes less time. That's the opposite way, so we flip the factor. Twice as fast means half the time. Thirty divided by two is fifteen hours.",
+    "at": [
+     "A faster team",
+     "Thirty divided by two is fifteen"
+    ]
+   },
+   {
+    "say": "So for each change, ask one question. Does my answer grow, or shrink? The same way, we multiply as it is. The opposite way, we flip it.",
+    "at": [
+     "So for each",
+     "The same way, we multiply as it is",
+     "as it is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "On the exam, a change in the rate often comes as a percent. Remember, a percent change is one multiplier.",
+    "at": [
+     "change in the"
+    ]
+   },
+   {
+    "say": "A machine needs forty minutes for a job. Now it works twenty-five percent faster. How long does the job take now?",
+    "at": [
+     "A machine needs forty minutes",
+     "for a job"
+    ]
+   },
+   {
+    "say": "Twenty-five percent faster is times one point two five. And one point two five is five quarters.",
+    "at": [
+     "times one point two five",
+     "And one point"
+    ]
+   },
+   {
+    "say": "The job is the same, so the time goes the opposite way. We flip the factor. Five quarters becomes four fifths.",
+    "at": [
+     "Five quarters becomes four fifths"
+    ]
+   },
+   {
+    "say": "Forty times four fifths. Forty divided by five is eight. Then eight times four is thirty-two minutes.",
+    "at": [
+     "Forty divided by five",
+     "eight times four"
+    ]
+   },
+   {
+    "say": "Careful, the time doesn't drop by twenty-five percent. Forty minus a quarter of forty is thirty. That's the trap.",
+    "at": [
+     "Careful, the time",
+     "Forty minus a quarter of forty",
+     "forty is thirty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. Rate times time is equal to work. In the triangle, cover the one you want.",
+    "at": [
+     "Rate times time is equal to work",
+     "In the triangle"
+    ]
+   },
+   {
+    "say": "A rate is per one unit of time, and the units must match.",
+    "at": [
+     "A rate is per one unit",
+     "unit of time"
+    ]
+   },
+   {
+    "say": "When the time or the rate is fixed, the other two move the same way.",
+    "at": [
+     "When the time or the rate",
+     "rate is fixed"
+    ]
+   },
+   {
+    "say": "When the work is fixed, the rate and the time move opposite ways.",
+    "at": [
+     "When the work is fixed",
+     "the rate and"
+    ]
+   },
+   {
+    "say": "And with two changes, we multiply the factors. A factor that goes the opposite way gets flipped.",
+    "at": [
+     "And with two changes",
+     "multiply the factors"
+    ]
+   },
+   "Take a moment to memorize this. Now try the first question, and I'll see you in the next video."
+  ]
+ ]
+}

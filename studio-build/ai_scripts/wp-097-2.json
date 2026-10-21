@@ -1,0 +1,184 @@
+{
+ "videoId": "wp-097-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with team questions, and learn the V method."
+  ],
+  [
+   {
+    "say": "Now a method that does all this thinking for us. It's called the V method.",
+    "at": [
+     "does all this",
+     "It's called the V method",
+     "It's called the V method",
+     "It's called the V method"
+    ]
+   },
+   {
+    "say": "We use the same table. The question mark is in row two, in the time column.",
+    "at": [
+     "We use the"
+    ]
+   },
+   {
+    "say": "Now we draw a V. It starts at the team in row one, goes down to the work in row two, and up to the time in row one.",
+    "at": [
+     "Now we draw a V",
+     "It starts at"
+    ]
+   },
+   "So the V joins six, forty and two.",
+   {
+    "say": "The rule is, multiply the three numbers on the V, and divide by the other two.",
+    "at": [
+     "The rule is",
+     "three numbers on"
+    ]
+   },
+   {
+    "say": "On top, six times forty times two. At the bottom, thirty times four.",
+    "at": [
+     "On top, six times forty times two",
+     "At the bottom"
+    ]
+   },
+   {
+    "say": "Let's cancel first. Forty divided by four is ten.",
+    "at": [
+     "Forty divided by four is ten"
+    ]
+   },
+   {
+    "say": "So on top, six times ten times two. At the bottom, thirty. Six times ten times two is a hundred twenty.",
+    "at": [
+     "So on top, six times ten",
+     "Six times ten times two is"
+    ]
+   },
+   {
+    "say": "And a hundred twenty divided by thirty is four. So four hours, the same as with ratios.",
+    "at": [
+     "And a hundred twenty divided by thirty",
+     "by thirty is"
+    ]
+   },
+   "And we didn't have to think about the directions at all. The V does the same flipping for us. We don't need to prove it."
+  ],
+  [
+   {
+    "say": "The V must join three numbers. So it depends on where the question mark is.",
+    "at": [
+     "three numbers. So"
+    ]
+   },
+   "When the question mark is in the team or the time, we use the V like before.",
+   {
+    "say": "But when the question mark is in the work, the V turns upside down. Let's see an example.",
+    "at": [
+     "the V turns upside down",
+     "Let's see an"
+    ]
+   },
+   {
+    "say": "The same six cooks make thirty pies in two hours. How many pies do four cooks make in six hours?",
+    "at": [
+     "The same six cooks",
+     "The same six cooks",
+     "thirty pies in",
+     "How many pies do four"
+    ]
+   },
+   {
+    "say": "Now the V starts at the team in row two, goes up to the work in row one, and down to the time in row two. So it joins four, thirty and six.",
+    "at": [
+     "Now the V starts at the team in row two",
+     "the team in"
+    ]
+   },
+   {
+    "say": "On top, four times thirty times six. At the bottom, the other two, six times two.",
+    "at": [
+     "On top, four times thirty",
+     "At the bottom, the other two",
+     "two, six times"
+    ]
+   },
+   {
+    "say": "The sixes cancel. Four times thirty is a hundred twenty. And a hundred twenty divided by two is sixty pies.",
+    "at": [
+     "The sixes cancel",
+     "And a hundred"
+    ]
+   },
+   {
+    "say": "Does it make sense? There are fewer cooks, but they work three times as many hours. So more than thirty pies makes sense.",
+    "at": [
+     "There are fewer cooks",
+     "So more than"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So when do we use which? When only one thing changes, ratios are quick.",
+    "at": [
+     "When only one thing changes",
+     "ratios are quick"
+    ]
+   },
+   {
+    "say": "For example, the same job with twice the time needs only half the workers.",
+    "at": [
+     "the same job with twice"
+    ]
+   },
+   {
+    "say": "When two things change, the V does the thinking for us.",
+    "at": [
+     "When two things change",
+     "V does the"
+    ]
+   },
+   "Either way, the table always comes first. Team, work, time."
+  ],
+  [
+   {
+    "say": "So let's sum it up. Identical workers with a constant rate, in a group, means a team question.",
+    "at": [
+     "Identical workers with a constant rate",
+     "rate, in a"
+    ]
+   },
+   {
+    "say": "We put it in a table. Team, work, time, with the work in the middle.",
+    "at": [
+     "We put it in a table",
+     "Team, work, time"
+    ]
+   },
+   {
+    "say": "With ratios, a change that goes the same way stays as it is. A change that goes the opposite way gets flipped.",
+    "at": [
+     "With ratios",
+     "goes the same"
+    ]
+   },
+   {
+    "say": "With the V, we multiply the three numbers on the V, and divide by the other two.",
+    "at": [
+     "With the V",
+     "the three numbers"
+    ]
+   },
+   {
+    "say": "And when the work is asked, the V is upside down.",
+    "at": [
+     "when the work is asked",
+     "the V is"
+    ]
+   },
+   "Take a moment to memorize this, and I'll see you in the next video."
+  ]
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "videoId": "solve-ch-q14",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "On which day was the number of guests from the groom's side, only or shared, the greatest?",
+    "voice": "calm",
+    "at": [
+     "On which day was"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the groom's side here is two slices. The groom's side only, plus the shared guests.",
+    "at": [
+     "the groom's side here is two slices",
+     "The groom's side only"
+    ]
+   },
+   "And they ask for a number of guests. So we need both the percent and the bar. Percent times the number of guests.",
+   {
+    "say": "Sunday. Sixty percent plus twenty percent is eighty percent.",
+    "at": [
+     "Sixty percent plus twenty",
+     "Sixty percent plus twenty",
+     "is eighty percent"
+    ]
+   },
+   {
+    "say": "Eighty percent of three hundred. Ten percent of three hundred is thirty. So eighty percent is eight times thirty, two hundred forty.",
+    "at": [
+     "Ten percent of three hundred",
+     "is thirty. So",
+     "eight times thirty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Monday. Fifty plus twenty-five is seventy-five percent, of four hundred guests.",
+    "at": [
+     "Fifty plus twenty-five",
+     "percent, of four"
+    ]
+   },
+   {
+    "say": "Seventy-five percent is three quarters. A quarter of four hundred is a hundred, so three quarters is three hundred.",
+    "at": [
+     "A quarter of four hundred",
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "Tuesday. Twenty-five plus twenty-five is fifty percent, of five hundred. That's half, two hundred fifty.",
+    "at": [
+     "Twenty-five plus twenty-five",
+     "percent, of five"
+    ]
+   },
+   {
+    "say": "Thursday. Thirty plus twenty is fifty percent, of three hundred fifty. Half of three hundred fifty is a hundred seventy-five.",
+    "at": [
+     "Thirty plus twenty",
+     "percent, of three"
+    ]
+   },
+   "The greatest is Monday, three hundred.",
+   {
+    "say": "Look at the two traps. The tallest bar is Tuesday. The biggest percent is Sunday. But neither one wins, because we need both numbers together.",
+    "at": [
+     "Look at the two traps",
+     "The tallest bar"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

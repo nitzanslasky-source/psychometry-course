@@ -1,0 +1,195 @@
+{
+ "videoId": "wp-094",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now let's see what happens when workers work together.",
+   {
+    "say": "Usually it's two workers, sometimes more. And usually each one has a different rate.",
+    "at": [
+     "sometimes more. And"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "When workers work together, they have one combined rate. Let's see it in numbers.",
+    "at": [
+     "they have one"
+    ]
+   },
+   {
+    "say": "Dan solves three exercises a minute. Noa solves two exercises a minute.",
+    "at": [
+     "Dan solves three exercises",
+     "Noa solves two"
+    ]
+   },
+   {
+    "say": "Together they solve three plus two, five exercises a minute.",
+    "at": [
+     "Together they solve three plus two",
+     "two, five exercises"
+    ]
+   },
+   {
+    "say": "So to find a combined rate, we add the rates.",
+    "at": [
+     "we add the rates"
+    ]
+   },
+   {
+    "say": "Another example. One pump fills eight liters a minute, and another pump fills twelve. Together, eight plus twelve is twenty liters a minute.",
+    "at": [
+     "One pump fills",
+     "Together, eight plus twelve",
+     "twenty liters a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now careful. We add the rates, never the times.",
+    "at": [
+     "the rates, never"
+    ]
+   },
+   {
+    "say": "Dan finishes a job in three hours. Noa finishes the same job in six hours. Together, is it nine hours?",
+    "at": [
+     "Dan finishes a job in three hours",
+     "Noa finishes the"
+    ]
+   },
+   {
+    "say": "No. Nine hours is more than Dan needs alone. With help, Dan finishes sooner, not later.",
+    "at": [
+     "No. Nine hours",
+     "With help, Dan"
+    ]
+   },
+   {
+    "say": "So the times don't add. Only the rates add. In a moment, we'll see how to get the rates from the times.",
+    "at": [
+     "Only the rates add",
+     "In a moment"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes one worker works against the others. Then his rate gets a minus.",
+    "at": [
+     "against the others"
+    ]
+   },
+   {
+    "say": "I wash five plates a minute. My little brother makes two plates dirty every minute.",
+    "at": [
+     "I wash five plates a minute",
+     "My little brother makes two plates"
+    ]
+   },
+   {
+    "say": "So each minute, only five minus two, three plates get clean.",
+    "at": [
+     "only five minus two"
+    ]
+   },
+   {
+    "say": "A pipe that fills a tank and a drain that empties it work the same way. The drain gets a minus.",
+    "at": [
+     "A pipe that",
+     "The drain gets a minus"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Often the question doesn't say how big the job is. It only says how long the job takes.",
+    "at": [
+     "say how big"
+    ]
+   },
+   {
+    "say": "Then we call the whole job one. For example, a pump fills one pool in four hours.",
+    "at": [
+     "a pump fills one pool",
+     "in four hours"
+    ]
+   },
+   {
+    "say": "The rate is the work divided by the time. So its rate is one over four, a quarter of the pool an hour.",
+    "at": [
+     "So its rate is one over four",
+     "the pool an"
+    ]
+   },
+   {
+    "say": "Let's check it. A quarter of the pool each hour, for four hours, is one whole pool.",
+    "at": [
+     "A quarter of the pool each hour",
+     "each hour, for"
+    ]
+   },
+   {
+    "say": "In the same way, a job in five hours means a fifth of the job each hour.",
+    "at": [
+     "a job in five hours",
+     "job each hour"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's add rates that are fractions. Pump A fills a pool in four hours. Pump B fills it in twelve hours. They work together.",
+    "at": [
+     "that are fractions",
+     "Pump A fills a pool in four hours",
+     "in four hours"
+    ]
+   },
+   {
+    "say": "Pump A's rate is a quarter of the pool an hour. Pump B's rate is a twelfth. So together it's a quarter plus a twelfth.",
+    "at": [
+     "So together",
+     "plus a twelfth"
+    ]
+   },
+   {
+    "say": "We need a common denominator, twelve. A quarter is three twelfths. Three twelfths plus one twelfth is four twelfths.",
+    "at": [
+     "A quarter is three twelfths",
+     "Three twelfths plus"
+    ]
+   },
+   {
+    "say": "And four twelfths is a third.",
+    "at": [
+     "And four twelfths is a third"
+    ]
+   },
+   {
+    "say": "What does a third mean? A rate is the work over the time. So a third means one pool in three hours.",
+    "at": [
+     "What does a",
+     "one pool in three hours"
+    ]
+   },
+   {
+    "say": "Another one. A combined rate of two fifteenths means two pools in fifteen hours.",
+    "at": [
+     "rate of two",
+     "two pools in fifteen hours"
+    ]
+   },
+   {
+    "say": "So one pool takes half of that. Fifteen divided by two is seven and a half hours. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "So one pool",
+     "Fifteen divided by two"
+    ]
+   }
+  ]
+ ]
+}

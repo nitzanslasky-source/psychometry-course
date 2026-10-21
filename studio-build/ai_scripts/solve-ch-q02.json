@@ -1,0 +1,63 @@
+{
+ "videoId": "solve-ch-q02",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "It is known that a region suits people better the higher the percent of carbon in its soil, and the lower the percent of hydrogen. On which planet is the region that suits people best?",
+    "voice": "calm",
+    "at": [
+     "It is known that"
+    ],
+    "pause": 0.5
+   },
+   "So the question gives us a rule. More carbon is better, and less hydrogen is better. We want the sample with both.",
+   "Do we check the exact numbers of every sample? No. We solve it by understanding, with our eyes.",
+   {
+    "say": "More carbon means further to the right, because carbon goes across.",
+    "at": [
+     "further to the right",
+     "further to the right",
+     "carbon goes across"
+    ]
+   },
+   {
+    "say": "Less hydrogen means lower down, because hydrogen goes up.",
+    "at": [
+     "lower down",
+     "lower down"
+    ]
+   },
+   {
+    "say": "So we want a sample that is both on the right and at the bottom. That's the bottom right corner.",
+    "at": [
+     "So we want"
+    ]
+   },
+   {
+    "say": "Who's in the corner? The ring at about seventy-four percent carbon and three percent hydrogen. It has more carbon than every other sample, and less hydrogen than all of them.",
+    "at": [
+     "Who's in the corner",
+     "The ring at",
+     "It has more carbon",
+     "every other sample"
+    ]
+   },
+   "The key says a ring is Neptune.",
+   {
+    "say": "What about Mercury? It has samples far to the right too. But look how high they are. They have a lot of hydrogen, so they don't suit people.",
+    "at": [
+     "look how high they are",
+     "look how high",
+     "They have a"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

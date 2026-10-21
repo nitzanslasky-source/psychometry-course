@@ -1,0 +1,69 @@
+{
+ "videoId": "solve-ch-q03",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The largest range of carbon percents is found in the samples from which planet?",
+    "voice": "calm",
+    "at": [
+     "The largest range"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "What's a range? It's everything from the smallest value to the biggest one. Here it's carbon, so we look across.",
+    "at": [
+     "What's a range",
+     "It's everything from"
+    ]
+   },
+   "So for each planet, we take its leftmost sample and its rightmost sample. The range is the distance between them.",
+   "Do we read each number and subtract? No. We draw a line from the leftmost to the rightmost sample, and we compare the lengths by eye.",
+   {
+    "say": "Venus, the squares. From about ten to about thirty. A short line.",
+    "at": [
+     "Venus, the squares",
+     "From about ten",
+     "A short line"
+    ]
+   },
+   {
+    "say": "Saturn, the triangles. From about eight all the way to fifty-five. Much longer than Venus. So Venus is out.",
+    "at": [
+     "Saturn, the triangles",
+     "From about eight",
+     "Much longer",
+     "So Venus is out"
+    ]
+   },
+   {
+    "say": "Mars, the diamonds. From twenty to fifty. Shorter than Saturn's line. Out.",
+    "at": [
+     "Mars, the diamonds",
+     "Shorter than Saturn's line"
+    ]
+   },
+   {
+    "say": "Neptune, the rings. From forty to seventy-four. Also shorter than Saturn's line. Out.",
+    "at": [
+     "Neptune, the rings",
+     "Also shorter",
+     "Also shorter than Saturn's line"
+    ]
+   },
+   {
+    "say": "So Saturn has the largest range. We didn't calculate anything. We just compared lengths. That's one of the main ways we solve chart questions.",
+    "at": [
+     "So Saturn has"
+    ]
+   },
+   {
+    "say": "Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

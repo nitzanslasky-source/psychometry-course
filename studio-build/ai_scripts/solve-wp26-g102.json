@@ -1,0 +1,220 @@
+{
+ "videoId": "solve-wp26-g102",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Customers add eighteen orders to a bakery's queue each hour. The baker completes fifteen orders every forty minutes. There are sixty orders in the queue at the start. At these constant rates, how many orders are in the queue after four hours?",
+    "voice": "calm",
+    "at": [
+     "Customers add eighteen orders"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the customers add orders, and the baker takes orders away. They ask how many orders are left after four hours.",
+    "at": [
+     "orders, and the",
+     "They ask how many orders are left",
+     "are left after"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. Let's start with the math way, and some order. First the customers. They add eighteen orders an hour, for four hours. Eighteen times four is seventy-two orders.",
+    "at": [
+     "We'll solve",
+     "Eighteen times four is seventy-two"
+    ]
+   },
+   {
+    "say": "Now the baker. Fifteen orders every forty minutes. That rate is in minutes. Like in the lesson, the units must match. So we turn the four hours into minutes. Four times sixty is two hundred forty minutes.",
+    "at": [
+     "Fifteen orders every",
+     "Four times sixty is two hundred forty"
+    ]
+   },
+   {
+    "say": "Forty minutes to two hundred forty minutes is times six, because forty times six is two hundred forty.",
+    "at": [
+     "hundred forty minutes",
+     "because forty times six"
+    ]
+   },
+   {
+    "say": "The rate is fixed, so the work goes the same way, times six. Fifteen times six is ninety orders.",
+    "at": [
+     "The rate is",
+     "Fifteen times six is ninety"
+    ]
+   },
+   {
+    "say": "Now the queue. Sixty orders at the start, plus seventy-two new ones, is a hundred thirty-two.",
+    "at": [
+     "orders at the",
+     "plus seventy-two new ones",
+     "a hundred thirty-two"
+    ]
+   },
+   {
+    "say": "The baker completed ninety. A hundred thirty-two minus ninety is forty-two.",
+    "at": [
+     "A hundred thirty-two minus ninety"
+    ]
+   },
+   {
+    "say": "Careful with seventy-two, choice number one. That's what we get if we read fifteen orders as fifteen an hour. Then the baker does only sixty.",
+    "at": [
+     "number one. That's",
+     "That's what we",
+     "Then the baker does only sixty",
+     "Then the baker does only sixty"
+    ]
+   },
+   {
+    "say": "So forty-two orders are in the queue. That's choice number three.",
+    "at": [
+     "So forty-two orders",
+     "number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way again, but in hours. We start again from the givens. The customers add seventy-two orders, like before. Now we turn the baker's forty minutes into hours.",
+    "at": [
+     "Now the",
+     "the givens. The"
+    ]
+   },
+   {
+    "say": "From minutes to hours, we divide by sixty. Forty over sixty is two thirds of an hour.",
+    "at": [
+     "Forty over sixty is two thirds"
+    ]
+   },
+   {
+    "say": "Careful, forty minutes isn't zero point four hours. An hour has sixty minutes, not a hundred.",
+    "at": [
+     "forty minutes isn't zero point four",
+     "An hour has"
+    ]
+   },
+   {
+    "say": "Two thirds of an hour to four hours is times six, because two thirds times six is four.",
+    "at": [
+     "two thirds times six is four"
+    ]
+   },
+   {
+    "say": "So the baker does fifteen times six, ninety orders again. And sixty plus seventy-two minus ninety is forty-two.",
+    "at": [
+     "fifteen times six, ninety",
+     "And sixty plus seventy-two",
+     "ninety is forty-two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now an insight. We start again from the givens. The customers and the baker work against each other. So let's see what happens to the queue in a short time where both numbers are whole.",
+    "at": [
+     "Now an",
+     "the givens. The"
+    ]
+   },
+   {
+    "say": "Two hours is a hundred twenty minutes. That's three times forty minutes.",
+    "at": [
+     "That's three times forty"
+    ]
+   },
+   {
+    "say": "So in two hours, the baker completes three times fifteen, forty-five orders.",
+    "at": [
+     "the baker completes",
+     "three times fifteen"
+    ]
+   },
+   {
+    "say": "In the same two hours, the customers add two times eighteen, thirty-six orders.",
+    "at": [
+     "hours, the customers",
+     "two times eighteen"
+    ]
+   },
+   {
+    "say": "Forty-five minus thirty-six is nine. So the queue gets nine orders shorter every two hours.",
+    "at": [
+     "Forty-five minus thirty-six",
+     "So the queue"
+    ]
+   },
+   {
+    "say": "Four hours is two times two hours. So two times nine, eighteen orders fewer.",
+    "at": [
+     "So two times nine"
+    ]
+   },
+   {
+    "say": "Sixty minus eighteen is forty-two. The same answer.",
+    "at": [
+     "Sixty minus eighteen",
+     "The same answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "I want to use this question to show you one more tool from the same idea. When one rate works against another, only the difference counts.",
+    "at": [
+     "this question to",
+     "works against another"
+    ]
+   },
+   {
+    "say": "A printer normally prints six hours a day. It was broken for five days. Now it prints sixteen hours a day. After how many days does it catch up?",
+    "at": [
+     "A printer normally prints",
+     "hours a day",
+     "Now it prints sixteen",
+     "After how many"
+    ]
+   },
+   {
+    "say": "First, how far behind is it? Five days, six hours a day. Five times six is thirty hours of printing.",
+    "at": [
+     "Five times six is thirty",
+     "hours of printing"
+    ]
+   },
+   {
+    "say": "Now it prints sixteen hours a day. But each day it still owes its normal six. So it gains only sixteen minus six, ten extra hours a day.",
+    "at": [
+     "sixteen minus six"
+    ]
+   },
+   {
+    "say": "Thirty hours behind, and ten extra hours a day. Thirty divided by ten is three days.",
+    "at": [
+     "Thirty hours behind",
+     "Thirty divided by ten"
+    ]
+   },
+   {
+    "say": "A lot of students divide thirty by sixteen. But the normal work keeps coming every day. Only the extra part closes the gap.",
+    "at": [
+     "divide thirty by sixteen",
+     "But the normal"
+    ]
+   },
+   {
+    "say": "So catching up is the gap divided by the extra rate. Choice number three was our answer, and I'll see you in the next question.",
+    "at": [
+     "So catching up is the gap",
+     "gap divided by",
+     "Choice number three was our answer"
+    ]
+   }
+  ]
+ ]
+}

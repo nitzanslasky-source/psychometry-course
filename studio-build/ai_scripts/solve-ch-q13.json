@@ -1,0 +1,58 @@
+{
+ "videoId": "solve-ch-q13",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Daniel the photographer worked in the hall on one day last week. He photographed exactly one percent of the wedding guests. Which of these cannot be the day he worked?",
+    "voice": "calm",
+    "at": [
+     "Daniel the photographer"
+    ],
+    "pause": 0.5
+   },
+   "So they ask which day is impossible. Let's look for what could break.",
+   {
+    "say": "Daniel photographed people. People come whole, so one percent of the guests must be a whole number.",
+    "at": [
+     "one percent of the guests must be",
+     "must be a"
+    ]
+   },
+   {
+    "say": "One percent is the number divided by a hundred. Sunday has three hundred guests, so one percent is three people. Monday, four hundred, four people. Tuesday, five hundred, five people.",
+    "at": [
+     "Sunday has three hundred",
+     "so one percent"
+    ]
+   },
+   {
+    "say": "Thursday's bar stops halfway between three hundred and four hundred. So three hundred fifty guests.",
+    "at": [
+     "Thursday's bar stops halfway",
+     "three hundred and"
+    ]
+   },
+   {
+    "say": "Three hundred fifty divided by a hundred is three and a half. Half a person? That's impossible.",
+    "at": [
+     "Three hundred fifty divided by",
+     "a hundred is",
+     "Half a person"
+    ]
+   },
+   {
+    "say": "So Thursday cannot be the day.",
+    "at": [
+     "So Thursday cannot"
+    ]
+   },
+   {
+    "say": "Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

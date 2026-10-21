@@ -1,0 +1,101 @@
+{
+ "videoId": "solve-ch-q05",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Which of the following graphs describes the number of samples collected on all five planets together, in each range of hydrogen percents?",
+    "voice": "calm",
+    "at": [
+     "Which of the following graphs"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the choices are small graphs. Each one counts the samples in ranges of ten percent of hydrogen. Only one of them is right.",
+    "at": [
+     "So the choices are small graphs",
+     "graphs. Each one"
+    ]
+   },
+   {
+    "say": "First, let's circle the word hydrogen. Then we remember to count up the side axis, and not across.",
+    "at": [
+     "circle the word hydrogen",
+     "Then we remember"
+    ]
+   },
+   {
+    "say": "Do we check graph one bar by bar, and then graph two? No, that takes too long. We only check where the graphs are different. And the easiest places are the edges.",
+    "at": [
+     "where the graphs are different",
+     "And the easiest"
+    ]
+   },
+   {
+    "say": "The left edge is below ten percent. There, the four graphs show one, four, five and four.",
+    "at": [
+     "The left edge",
+     "There, the four"
+    ]
+   },
+   "So whatever the real count is, it rules out at least two graphs."
+  ],
+  [
+   {
+    "say": "Let's count. We draw a line at ten percent hydrogen, and count the shapes under it.",
+    "at": [
+     "We draw a line at ten",
+     "ten percent hydrogen"
+    ]
+   },
+   {
+    "say": "One, the Mercury dot at six percent. Two, three, four, the Neptune rings. Remember, each one counts at its centre. So four samples.",
+    "at": [
+     "the Mercury dot at six",
+     "Two, three, four"
+    ]
+   },
+   {
+    "say": "Graph one shows one, and graph three shows five. Both are out. We're left with graphs two and four.",
+    "at": [
+     "Graph one shows one",
+     "graph three shows five",
+     "Both are out",
+     "We're left with"
+    ]
+   },
+   "To tell two and four apart, we could check the middle. But between thirty and forty we'd need two lines and a careful count. The other edge is easier.",
+   {
+    "say": "The right edge is sixty to seventy percent. Graph two says one sample, and graph four says three.",
+    "at": [
+     "The right edge",
+     "to seventy percent"
+    ]
+   },
+   {
+    "say": "We draw a line at sixty percent. Above it there's just one square, the Venus sample at sixty-four. So graph four is out.",
+    "at": [
+     "Above it there",
+     "just one square",
+     "sample at sixty-four",
+     "graph four is out"
+    ]
+   },
+   {
+    "say": "And graph one? It's what we get if we count carbon instead of hydrogen. That's why we circled the word.",
+    "at": [
+     "count carbon instead",
+     "That's why we"
+    ]
+   },
+   "So when the choices are small graphs, we don't check each one to the end. We find where they differ, and we start at the edges.",
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,165 @@
+{
+ "videoId": "wp-097",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now team questions. They're also called worker questions.",
+   {
+    "say": "They're considered hard. Not because of the arithmetic, but because they need real understanding. With one table and one method, they become quick.",
+    "at": [
+     "because of the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "In the last lesson, each worker had a different rate. Here, every worker has the same rate.",
+    "at": [
+     "each worker had"
+    ]
+   },
+   {
+    "say": "How do we spot a team question? First, the words identical, and constant rate.",
+    "at": [
+     "the words identical"
+    ]
+   },
+   {
+    "say": "So the workers are like robots. They all work at the same speed, and they never get tired.",
+    "at": [
+     "So the workers"
+    ]
+   },
+   {
+    "say": "Second, a group of workers. Usually more than two, like five painters or eight machines.",
+    "at": [
+     "Second, a group of workers",
+     "Usually more than"
+    ]
+   },
+   {
+    "say": "When we see both, it's a team question.",
+    "at": [
+     "When we see both",
+     "a team question"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "In a team, every worker adds the same rate. Let's see it in numbers.",
+    "at": [
+     "worker adds the"
+    ]
+   },
+   {
+    "say": "One worker packs four boxes an hour.",
+    "at": [
+     "One worker packs four boxes"
+    ]
+   },
+   {
+    "say": "So five identical workers pack five times four, twenty boxes an hour.",
+    "at": [
+     "So five identical workers"
+    ]
+   },
+   {
+    "say": "So the team's rate is the number of workers, times one worker's rate.",
+    "at": [
+     "So the team's rate",
+     "the number of"
+    ]
+   },
+   {
+    "say": "That's why the team size matters. Twice the workers do twice the work in the same time.",
+    "at": [
+     "Twice the workers do twice the work"
+    ]
+   },
+   {
+    "say": "Or they do the same work in half the time. Like in the first lesson, the work is fixed, so the team and the time go opposite ways.",
+    "at": [
+     "the same work in half the time",
+     "the work is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Every team question goes into a table with three columns, team, work and time.",
+    "at": [
+     "goes into a table",
+     "three columns, team"
+    ]
+   },
+   "The work always sits in the middle. How do we remember the order? Teamwork takes time. Team, work, time.",
+   "Row one is what they give us. Row two is what they ask about.",
+   {
+    "say": "Here's an example. Six cooks make thirty pies in two hours. How many hours do four cooks need for forty pies?",
+    "at": [
+     "Six cooks make thirty pies",
+     "in two hours"
+    ]
+   },
+   {
+    "say": "Row one is six cooks, thirty pies and two hours.",
+    "at": [
+     "Row one is six cooks",
+     "thirty pies and"
+    ]
+   },
+   {
+    "say": "Row two is four cooks and forty pies. The question mark goes in the time.",
+    "at": [
+     "Row two is four cooks",
+     "The question mark"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The first way is ratios. We look at each change, and ask what it does to the time. We want the time, so we start from the two hours.",
+    "at": [
+     "The first way is ratios",
+     "The first way is ratios",
+     "The first way is ratios",
+     "We look at"
+    ]
+   },
+   {
+    "say": "The pies go from thirty to forty. That's times four thirds. More work takes more time, the same way. So the time is times four thirds too.",
+    "at": [
+     "The pies go from thirty to forty",
+     "to forty. That's"
+    ]
+   },
+   {
+    "say": "The cooks go from six to four. That's times two thirds. Fewer cooks take more time. That's the opposite way, so we flip it. The time is times three halves.",
+    "at": [
+     "The cooks go from six to four",
+     "Fewer cooks take"
+    ]
+   },
+   {
+    "say": "So the time is two, times four thirds, times three halves.",
+    "at": [
+     "So the time is two, times",
+     "times four thirds"
+    ]
+   },
+   {
+    "say": "Four thirds times three halves. The threes cancel, and four over two is two. So two times two is four hours.",
+    "at": [
+     "So two times two is four"
+    ]
+   },
+   {
+    "say": "Like in the first lesson. The same way, we multiply as it is. The opposite way, we flip it. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "Like in the"
+    ]
+   }
+  ]
+ ]
+}

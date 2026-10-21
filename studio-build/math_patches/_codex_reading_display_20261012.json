@@ -11527,6 +11527,23 @@
      ]
     ]
    }
+  },
+  "wp-097": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "5.4": [
+     [
+      "two, times four thirds, times three halves",
+      "2 × 4/3 × 3/2"
+     ]
+    ]
+   }
+  },
+  "wp-097-2": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {}
   }
  }
 }

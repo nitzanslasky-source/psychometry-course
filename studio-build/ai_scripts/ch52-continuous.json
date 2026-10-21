@@ -1,0 +1,194 @@
+{
+ "videoId": "ch52-continuous",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now the continuous line graph.",
+   "To see why we need it, let's start with a bar chart."
+  ],
+  [
+   {
+    "say": "This chart shows the visitors on the Psycho website, over twenty-four hours in a row.",
+    "at": [
+     "visitors on the"
+    ]
+   },
+   {
+    "say": "Across the bottom we have the hours. Going up, the number of visitors.",
+    "at": [
+     "Across the bottom",
+     "Going up, the"
+    ]
+   },
+   {
+    "say": "And the strips under the chart show where most of the visitors are in each hour. In the explanations, the practice, the forum, or somewhere else.",
+    "at": [
+     "And the strips under the chart",
+     "chart show where"
+    ]
+   },
+   {
+    "say": "The example says, at four in the afternoon there were three hundred ninety visitors. And between four and five, most of them were in the forum.",
+    "at": [
+     "The example says",
+     "in the afternoon"
+    ]
+   },
+   {
+    "say": "Let's check. Four in the afternoon is sixteen on the axis. Its bar reaches a bit under four hundred. That's three hundred ninety.",
+    "at": [
+     "Its bar reaches a bit under",
+     "under four hundred"
+    ]
+   },
+   "And the strip between sixteen and seventeen is dark grey. In the key, dark grey is the forum. It matches."
+  ],
+  [
+   {
+    "say": "Here we have a bar every four hours. That's not much.",
+    "at": [
+     "a bar every four hours",
+     "That's not much"
+    ]
+   },
+   {
+    "say": "We can measure more often, say every hour. Then we get a bar for every hour.",
+    "at": [
+     "a bar for every hour",
+     "a bar for every hour"
+    ]
+   },
+   {
+    "say": "And more often still, every quarter of an hour. Now the bars are so close that we just see one big area.",
+    "at": [
+     "every quarter of an hour",
+     "Now the bars",
+     "one big area"
+    ]
+   },
+   {
+    "say": "If we measure every minute, there's no point in bars. We draw one continuous line instead.",
+    "at": [
+     "If we measure",
+     "We draw one continuous line",
+     "one continuous line"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's the big difference from the line graph of the cars. There, the line had values only at the years.",
+    "at": [
+     "from the line",
+     "only at the years"
+    ]
+   },
+   {
+    "say": "Here every point of the line is a measurement. We measured all the time.",
+    "at": [
+     "every point of the line",
+     "is a measurement"
+    ]
+   },
+   {
+    "say": "So we can read any time we like. For example, at half past twelve, the line is a bit above three hundred.",
+    "at": [
+     "at half past twelve",
+     "line is a"
+    ]
+   },
+   {
+    "say": "When is this chart used? For things that are measured all the time, like visitors on a site, or the temperature.",
+    "at": [
+     "measured all the time",
+     "visitors on a"
+    ]
+   },
+   {
+    "say": "The cars were different. We had one total for each year, not a value for every day. So points or a line graph were right there.",
+    "at": [
+     "one total for each year",
+     "not a value"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's a sample question. At which hour was the relative increase in visitors, compared with the hour before, the greatest?",
+    "at": [
+     "At which hour",
+     "relative increase in",
+     "the greatest"
+    ]
+   },
+   {
+    "say": "What does relative increase mean? It's the increase compared with where we started. How many times bigger did it get?",
+    "at": [
+     "What does relative",
+     "compared with where we started",
+     "How many times"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. From a hundred to a hundred fifty is fifty more. That's half of a hundred, so half more.",
+    "at": [
+     "From a hundred to a hundred fifty",
+     "That's half of"
+    ]
+   },
+   {
+    "say": "From four hundred to four hundred fifty is also fifty more. But fifty is only an eighth of four hundred.",
+    "at": [
+     "From four hundred to four hundred fifty",
+     "But fifty is"
+    ]
+   },
+   "The same fifty, but the first one is a much bigger relative increase. Because it started lower."
+  ],
+  [
+   {
+    "say": "Now the question. Let's look at the line just before each of the four hours.",
+    "at": [
+     "look at the"
+    ]
+   },
+   {
+    "say": "Nine o'clock. At eight there were about eighty visitors, and at nine about three hundred.",
+    "at": [
+     "At eight there were about eighty",
+     "eighty visitors, and",
+     "about three hundred"
+    ]
+   },
+   {
+    "say": "Eighty times four is three hundred twenty. So it grew almost four times.",
+    "at": [
+     "Eighty times four",
+     "So it grew"
+    ]
+   },
+   {
+    "say": "Now the other three hours. Before sixteen, twenty-one and twenty-three, the line rises only a little, and it starts high, at three hundred fifty or more.",
+    "at": [
+     "the line rises only a little",
+     "it starts high",
+     "hundred fifty or"
+    ]
+   },
+   {
+    "say": "Do we need to calculate them? No. A small rise from a high start is a small relative increase. Nine o'clock has the steepest rise, from the lowest start.",
+    "at": [
+     "the steepest rise"
+    ]
+   },
+   {
+    "say": "So the answer is nine o'clock, choice number one. We saw it with our eyes, by the slope, almost with no calculation.",
+    "at": [
+     "So the answer"
+    ]
+   },
+   "One warning. A steeper slope means a bigger relative rise only when the starting values are close. Here nine o'clock wins both ways, steeper and lower.",
+   "I'll see you in the next video."
+  ]
+ ]
+}

@@ -1,0 +1,152 @@
+{
+ "videoId": "solve-wp26-g098",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Three identical gardeners plant forty trees in five hours. How many hours do four such gardeners need to plant ninety-six trees?",
+    "voice": "calm",
+    "at": [
+     "Three identical gardeners plant"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Identical gardeners, and a group of them. So it's a team question, and they ask for the time.",
+    "at": [
+     "group of them",
+     "a team question"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start by understanding, with ratios. Like in the lesson, first the table. Team, work, time.",
+    "at": [
+     "We'll solve",
+     "first the table"
+    ]
+   },
+   {
+    "say": "Row one is three gardeners, forty trees and five hours. Row two is four gardeners, ninety-six trees, and the question mark in the time.",
+    "at": [
+     "Row one is three gardeners",
+     "forty trees and",
+     "Row two is four",
+     "mark in the"
+    ]
+   },
+   "We want the time, so we ask what each change does to the time. We start from the five hours.",
+   {
+    "say": "The trees go from forty to ninety-six. Ninety-six over forty. Both divide by eight, so it's twelve fifths.",
+    "at": [
+     "Both divide by eight",
+     "it's twelve fifths"
+    ]
+   },
+   {
+    "say": "More trees take more time. That's the same way, so the time is times twelve fifths too.",
+    "at": [
+     "More trees take more time",
+     "That's the same"
+    ]
+   },
+   {
+    "say": "The gardeners go from three to four. That's times four thirds. But more gardeners take less time. That's the opposite way, so we flip it. The time is times three quarters.",
+    "at": [
+     "The gardeners go from three to four",
+     "But more gardeners"
+    ]
+   },
+   {
+    "say": "Now the time. Five times twelve fifths. The fives cancel, and we get twelve.",
+    "at": [
+     "Five times twelve fifths",
+     "The fives cancel"
+    ]
+   },
+   {
+    "say": "Careful, twelve isn't our answer yet, and it's choice number three. We still need the change in the gardeners.",
+    "at": [
+     "number three. We"
+    ]
+   },
+   {
+    "say": "Twelve times three quarters. Twelve divided by four is three. Then three times three is nine hours.",
+    "at": [
+     "Twelve times three quarters",
+     "Twelve divided by"
+    ]
+   },
+   {
+    "say": "And careful with sixteen, choice number one. That's twelve times four thirds. It forgets to flip the gardeners.",
+    "at": [
+     "number one. That's",
+     "That's twelve times four thirds",
+     "It forgets to flip the gardeners"
+    ]
+   },
+   {
+    "say": "So they need nine hours. That's choice number two.",
+    "at": [
+     "So they need",
+     "number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way, with the V method from the lesson. We start again from the givens, in the same table.",
+    "at": [
+     "with the V",
+     "from the givens",
+     "in the same table",
+     "in the same table",
+     "in the same table"
+    ]
+   },
+   {
+    "say": "The question mark is in the time. So the V starts at the team in row one, goes down to the work in row two, and up to the time in row one. It joins three, ninety-six and five.",
+    "at": [
+     "The question mark",
+     "So the V starts at the team",
+     "the team in"
+    ]
+   },
+   {
+    "say": "We multiply the three numbers on the V, and divide by the other two, forty and four.",
+    "at": [
+     "We multiply the three numbers",
+     "on the V",
+     "divide by the other two",
+     "forty and four"
+    ]
+   },
+   {
+    "say": "Let's cancel first. Ninety-six divided by four is twenty-four.",
+    "at": [
+     "Ninety-six divided by four"
+    ]
+   },
+   {
+    "say": "Three times twenty-four is seventy-two. Then seventy-two times five is three hundred sixty.",
+    "at": [
+     "Three times twenty-four",
+     "Then seventy-two times five",
+     "three hundred sixty"
+    ]
+   },
+   {
+    "say": "Three hundred sixty divided by forty is nine. Nine hours again.",
+    "at": [
+     "Three hundred sixty divided by forty",
+     "forty is nine"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

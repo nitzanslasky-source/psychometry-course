@@ -1,0 +1,124 @@
+{
+ "videoId": "solve-ch-q08",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "What is the average amount, in shekels, that Night Owls won per year, in the years two thousand seventeen to two thousand twenty-two?",
+    "voice": "calm",
+    "at": [
+     "What is the average amount"
+    ],
+    "pause": 0.5
+   },
+   "So we need the average prize of one team. First we turn its places into prizes. We'll solve it in two different ways, the math way, and then by plugging in the answers.",
+   {
+    "say": "Let's start with the math way. The Night Owls row says two, three, two, three, two, four.",
+    "at": [
+     "The Night Owls row",
+     "two, three, two"
+    ]
+   },
+   {
+    "say": "Second place three times. Each one is eighty thousand. Three times eighty thousand is two hundred forty thousand.",
+    "at": [
+     "Second place three times",
+     "Each one is",
+     "Three times eighty thousand",
+     "two hundred forty"
+    ]
+   },
+   {
+    "say": "Third place twice. Two times fifty thousand is a hundred thousand.",
+    "at": [
+     "Two times fifty thousand",
+     "a hundred thousand"
+    ]
+   },
+   {
+    "say": "Fourth place once, twenty thousand.",
+    "at": [
+     "Fourth place once"
+    ]
+   },
+   {
+    "say": "Now the sum. Two hundred forty thousand plus a hundred thousand is three hundred forty thousand. Plus twenty thousand is three hundred sixty thousand.",
+    "at": [
+     "Two hundred forty",
+     "Plus twenty thousand is three",
+     "hundred sixty thousand"
+    ]
+   },
+   {
+    "say": "And how many years? From two thousand seventeen to two thousand twenty-two. Twenty-two minus seventeen is five, plus one, because we count both ends. Six years.",
+    "at": [
+     "Six years"
+    ]
+   },
+   {
+    "say": "The average is the sum divided by six. Three hundred sixty thousand divided by six is sixty thousand.",
+    "at": [
+     "The average is",
+     "divided by six is sixty"
+    ]
+   },
+   {
+    "say": "Careful, if we divide by five instead of six, we get seventy-two thousand. That's choice number four, the trap.",
+    "at": [
+     "Careful, if we",
+     "That's choice number four"
+    ]
+   },
+   {
+    "say": "So the average is sixty thousand, choice number three.",
+    "at": [
+     "number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers, with the balance from averages. We start again from the Night Owls row.",
+    "at": [
+     "the answers, with",
+     "from the Night Owls row"
+    ]
+   },
+   {
+    "say": "Remember, the differences from the average add up to zero. Let's try choice number three, sixty thousand. It's a round number in the middle of the choices.",
+    "at": [
+     "Remember, the differences",
+     "Let's try choice number three",
+     "the middle of"
+    ]
+   },
+   {
+    "say": "Each prize, compared with sixty thousand. Eighty gives plus twenty. Fifty gives minus ten. Eighty gives plus twenty again.",
+    "at": [
+     "Eighty gives plus twenty",
+     "gives minus ten"
+    ]
+   },
+   {
+    "say": "Then fifty gives minus ten, eighty gives plus twenty, and twenty gives minus forty.",
+    "at": [
+     "twenty gives minus forty"
+    ]
+   },
+   {
+    "say": "The plus side is twenty, twenty and twenty, sixty. The minus side is ten, ten and forty, also sixty. Sixty minus sixty is zero. So sixty thousand is the average.",
+    "at": [
+     "The plus side",
+     "Sixty minus sixty is zero",
+     "So sixty thousand"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

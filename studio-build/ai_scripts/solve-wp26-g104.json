@@ -1,0 +1,139 @@
+{
+ "videoId": "solve-wp26-g104",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Omar, Priya and Sam each work at a constant rate. Together they complete a job in nine hours. Omar and Priya together complete it in eighteen hours. What fraction of the job does Sam complete in one hour?",
+    "voice": "calm",
+    "at": [
+     "Omar, Priya and Sam each work"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for Sam's rate, the part of the job he does in one hour.",
+    "at": [
+     "So they ask for Sam's rate"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. This time there are three workers, and that's what makes it hard. So I want to use this question to show you a trick that turns three workers into two.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "Omar and Priya together do one job in eighteen hours. Do we care how they split the work? Not really.",
+    "at": [
+     "Omar and Priya together do one job"
+    ]
+   },
+   "Maybe they share it equally. Maybe Priya sits with a coffee, and Omar does everything. Together they still do one job in eighteen hours.",
+   {
+    "say": "So they're like one worker. Let's give them one name, Omarpriya. Now it's a normal question with two workers, Omarpriya and Sam.",
+    "at": [
+     "Let's give them one name",
+     "Now it's a"
+    ]
+   },
+   "This works whenever a question gives the time of two workers together. We treat the two as one worker, with one rate.",
+   {
+    "say": "Now the math way, with equal times, like in the lesson. All three do one job in nine hours.",
+    "at": [
+     "All three do one job in nine hours"
+    ]
+   },
+   {
+    "say": "Omarpriya does one job in eighteen hours.",
+    "at": [
+     "Omarpriya does one job in eighteen"
+    ]
+   },
+   {
+    "say": "The times are different. Nine to eighteen is times two. So in eighteen hours, all three do two jobs.",
+    "at": [
+     "Nine to eighteen",
+     "all three do two jobs"
+    ]
+   },
+   {
+    "say": "Omarpriya does one of the two jobs. So Sam does the other one. Two minus one is one job in eighteen hours.",
+    "at": [
+     "Omarpriya does one",
+     "Two minus one is one job"
+    ]
+   },
+   {
+    "say": "So in one hour, Sam does one eighteenth of the job.",
+    "at": [
+     "Sam does one eighteenth"
+    ]
+   },
+   {
+    "say": "So that's choice number three.",
+    "at": [
+     "number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the insight. We start again from the givens. All three work for nine hours, and finish the job.",
+    "at": [
+     "Now the",
+     "the givens. All"
+    ]
+   },
+   {
+    "say": "Omarpriya needs eighteen hours for a whole job. Nine hours is half of that. So in nine hours, Omarpriya does half the job.",
+    "at": [
+     "So in nine hours, Omarpriya does half"
+    ]
+   },
+   {
+    "say": "So Sam does the other half, in the same nine hours.",
+    "at": [
+     "So Sam does the other half"
+    ]
+   },
+   {
+    "say": "Half a job in nine hours means a whole job in eighteen hours. So Sam alone is as fast as Omar and Priya together. And his rate is one eighteenth.",
+    "at": [
+     "nine hours means",
+     "a whole job in eighteen hours",
+     "So Sam alone"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And the math way with rates. We start again from the givens. All three together do a ninth of the job an hour. Omarpriya does an eighteenth.",
+    "at": [
+     "And the",
+     "the givens. All"
+    ]
+   },
+   {
+    "say": "Sam's rate is what's left. A ninth minus an eighteenth. A ninth is two eighteenths. So two eighteenths minus one eighteenth.",
+    "at": [
+     "A ninth minus an eighteenth",
+     "A ninth is"
+    ]
+   },
+   {
+    "say": "That's one eighteenth of the job an hour.",
+    "at": [
+     "That's one eighteenth of the job",
+     "job an hour"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

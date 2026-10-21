@@ -1,0 +1,181 @@
+{
+ "videoId": "solve-wp26-g105",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Twelve identical workers can set up one stage in two hours. Fourteen such workers can set up the seating in four hours. How many workers are needed to set up one stage and the seating in eight hours?",
+    "voice": "calm",
+    "at": [
+     "Twelve identical workers can set up"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Identical workers, in a group, so it's a team question. They ask for the number of workers.",
+    "at": [
+     "group, so it's",
+     "They ask for the number of workers"
+    ]
+   },
+   {
+    "say": "But careful, there are two jobs. One team sets up the stage, and another team sets up the seating. Both teams work at the same time, during the same eight hours.",
+    "at": [
+     "But careful"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. Let's start with the math way, with the V method. First the stage. Row one is twelve workers, one stage, two hours. Row two is the question mark, one stage, eight hours.",
+    "at": [
+     "First the stage",
+     "Row one is twelve workers",
+     "one stage, two",
+     "Row two is the question mark"
+    ]
+   },
+   {
+    "say": "The question mark is in the team. So the V joins twelve, one and two. We multiply them, and divide by the other two, one and eight.",
+    "at": [
+     "The question mark",
+     "So the V joins twelve",
+     "one and two",
+     "and divide by the other two"
+    ]
+   },
+   {
+    "say": "Twelve times one times two is twenty-four. Twenty-four divided by eight is three workers.",
+    "at": [
+     "Twelve times one",
+     "Twenty-four divided by eight"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the seating. Fourteen workers, one seating, four hours. And the question mark, one seating, eight hours.",
+    "at": [
+     "Now the",
+     "Now the seating",
+     "Fourteen workers, one seating",
+     "And the question mark",
+     "seating, eight hours"
+    ]
+   },
+   {
+    "say": "The V joins fourteen, one and four. Fourteen times one times four is fifty-six. Fifty-six divided by eight is seven workers.",
+    "at": [
+     "The V joins fourteen",
+     "Fourteen times one",
+     "Fifty-six divided by eight"
+    ]
+   },
+   {
+    "say": "Three workers on the stage, and seven on the seating, at the same time. Three plus seven is ten workers.",
+    "at": [
+     "Three workers on",
+     "Three plus seven is ten"
+    ]
+   },
+   {
+    "say": "Careful with twenty-six, choice number one. That's twelve plus fourteen, the workers from the givens. But with eight hours, we need fewer workers.",
+    "at": [
+     "number one. That's",
+     "fourteen, the workers",
+     "the givens. But",
+     "we need fewer workers"
+    ]
+   },
+   {
+    "say": "So ten workers. That's choice number two.",
+    "at": [
+     "number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with ratios. We start again from the givens. Like in the lesson, here only one thing changes, the time. The job stays the same. So ratios are quick.",
+    "at": [
+     "ratios. We start",
+     "the givens. Like",
+     "lesson, here only"
+    ]
+   },
+   {
+    "say": "The stage took two hours, and now we have eight. Two to eight is times four.",
+    "at": [
+     "hours, and now",
+     "Two to eight is times four"
+    ]
+   },
+   {
+    "say": "More time means fewer workers. That's the opposite way, so we divide the workers by four. Twelve divided by four is three.",
+    "at": [
+     "More time means",
+     "Twelve divided by four"
+    ]
+   },
+   {
+    "say": "The seating took four hours, and now we have eight. That's times two.",
+    "at": [
+     "The seating took",
+     "That's times two"
+    ]
+   },
+   {
+    "say": "So half the workers. Fourteen divided by two is seven. And we send the rest home.",
+    "at": [
+     "Fourteen divided by two",
+     "And we send"
+    ]
+   },
+   {
+    "say": "Three plus seven is ten workers again.",
+    "at": [
+     "Three plus seven is ten workers again"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And the math way with worker-hours, like in the lesson. We start again from the givens. Think of the boss who pays by the hour.",
+    "at": [
+     "And the",
+     "the givens. Think"
+    ]
+   },
+   {
+    "say": "The stage takes twelve workers for two hours. Twelve times two is twenty-four worker-hours.",
+    "at": [
+     "Twelve times two is twenty-four"
+    ]
+   },
+   {
+    "say": "The seating takes fourteen workers for four hours. Fourteen times four is fifty-six worker-hours.",
+    "at": [
+     "The seating takes",
+     "Fourteen times four is fifty-six"
+    ]
+   },
+   {
+    "say": "Both jobs together need twenty-four plus fifty-six, eighty worker-hours.",
+    "at": [
+     "twenty-four plus fifty-six"
+    ]
+   },
+   {
+    "say": "We have eight hours. So we need eighty divided by eight, ten workers.",
+    "at": [
+     "So we need",
+     "eighty divided by eight"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

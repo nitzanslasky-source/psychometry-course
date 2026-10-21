@@ -1,0 +1,85 @@
+{
+ "videoId": "solve-ch-q06",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Here's our second chart set. Two tables of car races. Let's read the page first.",
+   {
+    "say": "The races were held from two thousand seventeen to two thousand twenty-two, with seven teams. The left table shows the place each team reached in each year's race.",
+    "at": [
+     "from two thousand",
+     "The left table shows",
+     "place each team"
+    ]
+   },
+   {
+    "say": "The right table shows the prize, in shekels, for each place.",
+    "at": [
+     "The right table shows",
+     "prize, in shekels"
+    ]
+   },
+   "Now the example. In two thousand nineteen, Night Owls came second, and won eighty thousand shekels. Let's check it.",
+   {
+    "say": "The Night Owls row, the two thousand nineteen column. It says two. And in the prize table, second place gets eighty thousand. It matches.",
+    "at": [
+     "It says two",
+     "And in the",
+     "It matches"
+    ]
+   },
+   {
+    "say": "Notice one more thing. Places six and seven win nothing. Their prize is zero.",
+    "at": [
+     "Places six and seven",
+     "nothing. Their prize"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Which team won a hundred twenty thousand shekels twice, in the years two thousand seventeen to two thousand twenty-two?",
+    "voice": "calm",
+    "at": [
+     "Which team won"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "First, we turn the money into a place. In the prize table, a hundred twenty thousand is first place. So we look for the ones.",
+    "at": [
+     "a hundred twenty thousand is first place",
+     "is first place",
+     "So we look"
+    ]
+   },
+   {
+    "say": "Each year has exactly one team in first place. So each column has exactly one one. Let's go year by year.",
+    "at": [
+     "exactly one one",
+     "Let's go year"
+    ]
+   },
+   {
+    "say": "Two thousand seventeen, Desert Foxes. Two thousand eighteen, Red Arrows. Two thousand nineteen, Silver Wolves.",
+    "at": [
+     "Two thousand seventeen, Desert Foxes",
+     "Two thousand eighteen"
+    ]
+   },
+   "Two thousand twenty, Road Runners. Two thousand twenty-one, Desert Foxes again. And two thousand twenty-two, Blue Comets.",
+   {
+    "say": "Only Desert Foxes came first twice.",
+    "at": [
+     "Only Desert Foxes"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

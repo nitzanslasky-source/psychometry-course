@@ -1,0 +1,223 @@
+{
+ "videoId": "ch52-line",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now the line graph.",
+   "A line graph is the same chart as points on axes. We just join the points with a line."
+  ],
+  [
+   {
+    "say": "Here are the vehicles sold again. Sixty, eighty, eighty, and a hundred thousand.",
+    "at": [
+     "Sixty, eighty, eighty"
+    ]
+   },
+   {
+    "say": "Now we join them with a line, from one point to the next.",
+    "at": [
+     "we join them with a line",
+     "from one point to the next"
+    ]
+   },
+   {
+    "say": "Why do we do that? We'll see in a moment. The line helps us see the changes more clearly.",
+    "at": [
+     "Why do we"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "We do the same for the other three columns. Each one gets its own line.",
+    "at": [
+     "for the other"
+    ]
+   },
+   {
+    "say": "Once the points are joined, we can even take the points away. The line is enough.",
+    "at": [
+     "take the points away",
+     "The line is enough"
+    ]
+   },
+   {
+    "say": "But now there's a problem. All four lines look the same. Which line is which?",
+    "at": [
+     "But now there's",
+     "Which line is which"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So we draw each line in its own style. A bold line, a plain line, a dashed line, and a dash-dot line.",
+    "at": [
+     "in its own style",
+     "A bold line, a plain line",
+     "line, a dashed"
+    ]
+   },
+   {
+    "say": "And the key shows which style belongs to which column.",
+    "at": [
+     "the key shows",
+     "belongs to which"
+    ]
+   },
+   "So it's really the points from before, joined by lines."
+  ],
+  [
+   {
+    "say": "Now something very important. The line has values only at the marked years.",
+    "at": [
+     "The line has"
+    ]
+   },
+   {
+    "say": "Look halfway between two thousand ten and two thousand eleven. The bold line passes seventy there.",
+    "at": [
+     "The bold line passes seventy"
+    ]
+   },
+   {
+    "say": "Does that mean seventy thousand vehicles were sold there? No. There's no year two thousand ten and a half. Nobody measured anything there.",
+    "at": [
+     "Does that mean",
+     "There's no year two thousand ten",
+     "ten and a"
+    ]
+   },
+   {
+    "say": "The values are only at the points. Two thousand ten, two thousand eleven, two thousand twelve and two thousand thirteen.",
+    "at": [
+     "The values are only at the points",
+     "only at the points",
+     "Two thousand ten"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So what is the line for? It shows the trend.",
+    "at": [
+     "It shows the trend"
+    ]
+   },
+   {
+    "say": "What does trend mean? Where the line is flat, there's no change. Like the bold line from two thousand eleven to two thousand twelve.",
+    "at": [
+     "Where the line is flat",
+     "there's no change",
+     "Like the bold"
+    ]
+   },
+   {
+    "say": "Where the line goes up, there's a rise. Like the bold line from two thousand twelve to two thousand thirteen.",
+    "at": [
+     "Where the line goes up",
+     "there's a rise"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The angle of the line tells us more. A steeper line means a bigger rise. Let's see it in numbers.",
+    "at": [
+     "line tells us"
+    ]
+   },
+   {
+    "say": "Look at privately owned, the dashed line. From two thousand ten to two thousand eleven it goes from forty to fifty.",
+    "at": [
+     "From two thousand ten to two thousand eleven",
+     "two thousand eleven"
+    ]
+   },
+   {
+    "say": "Fifty minus forty is ten. So that's a rise of ten thousand.",
+    "at": [
+     "Fifty minus forty",
+     "So that's a"
+    ]
+   },
+   {
+    "say": "From two thousand twelve to two thousand thirteen it goes from fifty to sixty-five.",
+    "at": [
+     "From two thousand twelve to two thousand thirteen",
+     "two thousand thirteen"
+    ]
+   },
+   {
+    "say": "Sixty-five minus fifty is fifteen. A rise of fifteen thousand.",
+    "at": [
+     "Sixty-five minus fifty",
+     "A rise of"
+    ]
+   },
+   {
+    "say": "Fifteen is more than ten. And on the chart, the second part is steeper. So the steeper part is the bigger rise.",
+    "at": [
+     "the steeper part is the bigger rise"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And when two parts are just as steep, the rise is the same. Look at the bold line, the vehicles sold.",
+    "at": [
+     "are just as"
+    ]
+   },
+   {
+    "say": "From two thousand ten to two thousand eleven, it goes from sixty to eighty. Eighty minus sixty is twenty.",
+    "at": [
+     "it goes from sixty to eighty",
+     "Eighty minus sixty"
+    ]
+   },
+   {
+    "say": "From two thousand twelve to two thousand thirteen, from eighty to a hundred. A hundred minus eighty is twenty again.",
+    "at": [
+     "to two thousand",
+     "from eighty to a hundred",
+     "A hundred minus eighty"
+    ]
+   },
+   {
+    "say": "The same rise, and on the chart the two parts are just as steep.",
+    "at": [
+     "on the chart",
+     "just as steep"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's compare the two charts. On the left, the points alone. On the right, the same data with lines.",
+    "at": [
+     "charts. On the"
+    ]
+   },
+   {
+    "say": "With the points alone, it's hard to see which rise is bigger.",
+    "at": [
+     "it's hard to see",
+     "rise is bigger"
+    ]
+   },
+   {
+    "say": "With the lines, the steeper line shows it right away. That's the advantage of a line graph.",
+    "at": [
+     "the steeper line shows it",
+     "That's the advantage"
+    ]
+   }
+  ],
+  [
+   "So a line graph helps us see the trend, and how steep each part is.",
+   "But remember, the line itself has no values. Only the marked points do.",
+   "Next, the same data as bars. I'll see you in the next video."
+  ]
+ ]
+}

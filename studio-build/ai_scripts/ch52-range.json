@@ -1,0 +1,269 @@
+{
+ "videoId": "ch52-range",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now the range chart. A range is everything from the smallest value to the biggest one.",
+   "The exam loves the smallest and the biggest possible values, in every topic. In charts too."
+  ],
+  [
+   {
+    "say": "This chart shows a survey of the monthly rent of flats in Tel Aviv in two thousand twelve, by the number of rooms.",
+    "at": [
+     "survey of the"
+    ]
+   },
+   {
+    "say": "Across the bottom, the number of rooms. Going up, the rent, in thousands of shekels.",
+    "at": [
+     "Across the bottom",
+     "Going up, the"
+    ]
+   },
+   {
+    "say": "Look at the bottom of the axis. There's a Z. Remember, it tells us that from zero to two is not to scale.",
+    "at": [
+     "There's a Z",
+     "Remember, it tells"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Each bar here is a range. The bottom of a bar is the lowest rent for that number of rooms.",
+    "at": [
+     "The bottom of a bar",
+     "the lowest rent",
+     "number of rooms"
+    ]
+   },
+   {
+    "say": "The top of the bar is the highest rent.",
+    "at": [
+     "The top of the bar",
+     "the highest rent"
+    ]
+   },
+   {
+    "say": "And the bold line inside the bar is the mean rent, the average.",
+    "at": [
+     "the bold line inside",
+     "the mean rent"
+    ]
+   },
+   {
+    "say": "The example says, in six-room flats the lowest rent was four thousand five hundred. The highest was eight thousand, and the mean was six thousand five hundred.",
+    "at": [
+     "in six-room flats",
+     "rent was four"
+    ]
+   },
+   "And on the chart, the six-room bar goes from four and a half to eight, with the bold line at six and a half. It matches."
+  ],
+  [
+   {
+    "say": "Is the mean always in the middle of the bar? No. Look at two rooms.",
+    "at": [
+     "in the middle",
+     "Look at two rooms"
+    ]
+   },
+   {
+    "say": "It goes from two thousand five hundred to four thousand five hundred. The middle of that is three thousand five hundred.",
+    "at": [
+     "five hundred to",
+     "The middle of that",
+     "three thousand five"
+    ]
+   },
+   {
+    "say": "But the mean is four thousand, higher than the middle. Why?",
+    "at": [
+     "But the mean is four thousand",
+     "thousand, higher than"
+    ]
+   },
+   {
+    "say": "Say there's just one cheap flat, at two thousand five hundred. All the other flats cost four thousand or more. The many dear flats pull the mean up.",
+    "at": [
+     "pull the mean up"
+    ]
+   },
+   {
+    "say": "So the bar shows where the rents start and end. The bold line shows the average. They're different things.",
+    "at": [
+     "So the bar"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's a sample question. Ella rents a two-room flat, and she rents out a five-room flat.",
+    "at": [
+     "Ella rents",
+     "and she rents"
+    ]
+   },
+   {
+    "say": "Daniel rents a one-room flat, and he rents out a four-room flat.",
+    "at": [
+     "Daniel rents",
+     "and he rents"
+    ]
+   },
+   {
+    "say": "Each one saves the difference between the two rents every month. Which of these cannot be the difference between their savings?",
+    "at": [
+     "Each one saves",
+     "between the two",
+     "cannot be the difference"
+    ]
+   },
+   {
+    "say": "First, what's the difference between rent and rent out? Ella owns the five-room flat. She rents it out, so she gets the money.",
+    "at": [
+     "First, what's the"
+    ]
+   },
+   {
+    "say": "And she lives in the two-room flat. She rents it, so she pays. So her saving is what she gets, minus what she pays.",
+    "at": [
+     "So her saving is",
+     "she gets, minus"
+    ]
+   },
+   {
+    "say": "What's the most Ella can save? She gets the most, and she pays the least. The most for five rooms is seven thousand five hundred.",
+    "at": [
+     "The most for five rooms",
+     "is seven thousand"
+    ]
+   },
+   {
+    "say": "The least for two rooms is two thousand five hundred. Seven thousand five hundred minus two thousand five hundred is five thousand.",
+    "at": [
+     "Seven thousand five hundred minus",
+     "two thousand five hundred is"
+    ]
+   },
+   {
+    "say": "And the least she can save? She gets the least, four thousand five hundred. And she pays the most, also four thousand five hundred.",
+    "at": [
+     "She gets the least",
+     "thousand five hundred"
+    ]
+   },
+   {
+    "say": "Four thousand five hundred minus four thousand five hundred is zero. So Ella saves anywhere from zero to five thousand.",
+    "at": [
+     "minus four thousand five hundred is zero",
+     "So Ella saves"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now Daniel, the same way. The most he can save: he gets the most for four rooms, seven thousand. He pays the least for one room, two thousand.",
+    "at": [
+     "way. The most",
+     "he gets the most for four rooms",
+     "He pays the"
+    ]
+   },
+   {
+    "say": "Seven thousand minus two thousand is five thousand.",
+    "at": [
+     "Seven thousand minus two thousand"
+    ]
+   },
+   {
+    "say": "The least: he gets four thousand, and he pays the most for one room, also four thousand. That's zero.",
+    "at": [
+     "he gets four thousand",
+     "he pays the",
+     "That's zero"
+    ]
+   },
+   {
+    "say": "So each one saves something from zero to five thousand.",
+    "at": [
+     "from zero to five thousand"
+    ]
+   },
+   {
+    "say": "Now the question. Can the difference between them be zero? Yes, if they both save the same amount.",
+    "at": [
+     "Can the difference"
+    ]
+   },
+   "Two thousand five hundred? Yes, for example five thousand and two thousand five hundred. Five thousand? Yes, if one saves five thousand and the other saves zero.",
+   {
+    "say": "And five thousand five hundred? The biggest difference is when one saves the most and the other saves the least. Five thousand minus zero is only five thousand.",
+    "at": [
+     "The biggest difference",
+     "one saves the"
+    ]
+   },
+   {
+    "say": "So five thousand five hundred is impossible. That's choice number four.",
+    "at": [
+     "is impossible"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The same data can also come as a table. Then each cell has three numbers, and the place of each number tells its meaning.",
+    "at": [
+     "also come as",
+     "each cell has three numbers",
+     "and the place"
+    ]
+   },
+   "The note says, top left is the lowest rent, the centre is the mean, and bottom right is the highest.",
+   {
+    "say": "So one room: the lowest is two, the mean is three, and the highest is four, in thousands. Just like the bar.",
+    "at": [
+     "So one room",
+     "the lowest is two",
+     "mean is three"
+    ]
+   },
+   {
+    "say": "Four rooms: the lowest is four, the mean is five and a half, and the highest is seven.",
+    "at": [
+     "Four rooms",
+     "four, the mean"
+    ]
+   },
+   "Tables like this, with two or three numbers in a cell, are common on the exam. So always read the note."
+  ],
+  [
+   {
+    "say": "Which is better? In a table, it's easy to add more cities. Each city is one more row.",
+    "at": [
+     "a table, it's",
+     "easy to add more cities",
+     "Each city is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "In a chart, three cities make three bars for each number of rooms. It gets busy.",
+    "at": [
+     "cities make three",
+     "It gets busy"
+    ]
+   },
+   {
+    "say": "But it's easy to compare. We see right away which city has higher bars.",
+    "at": [
+     "it's easy to compare",
+     "We see right"
+    ]
+   },
+   "I'll see you in the next video."
+  ]
+ ]
+}

@@ -61,7 +61,7 @@ def notation(text,legacy,digits=False):
     s=re.sub(r'\bin brackets, ([^,.;!?]+)',bracket,s,flags=re.I)
     # Numeric coefficients are unambiguous: "four a" means 4a, not an article.
     # 2026-10-15: never "one b" -> "1b" ("one b cancels" = one factor b)
-    s=re.sub(rf'(?<![\w])(?!one\b)({N}) ({OPERAND_V})(?![A-Za-z0-9_’\'])',lambda m:number(m[1])+m[2],s,flags=re.I)
+    s=re.sub(rf'(?<![\w])(?!one\b)({N}) ({OPERAND_V})(?![A-Za-z0-9_’\']|\.[A-Za-z])',lambda m:number(m[1])+m[2],s,flags=re.I)   # 2026-10-21 Claude: not '7 a.m.'
     # A coefficient, barred digit sequence, explicit bracket or lone variable
     # may be the base of a spoken power.
     barred=r'(?:[A-Z0-9]\u0305){2,4}'

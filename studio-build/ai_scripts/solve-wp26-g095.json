@@ -1,0 +1,150 @@
+{
+ "videoId": "solve-wp26-g095",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Two identical hoses each fill a pond in fifteen hours. An outlet pipe empties a full pond in twenty hours. At seven a.m. the pond is empty, and both hoses and the outlet pipe are opened. At what time is the pond full?",
+    "voice": "calm",
+    "at": [
+     "Two identical hoses each fill"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So two hoses fill the pond, and one pipe empties it. And they ask for a clock time, not for a number of hours.",
+    "at": [
+     "the pond, and",
+     "And they ask for a clock time",
+     "clock time, not"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way. Like in the lesson, the pond's size isn't given, so we call the whole pond one.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "Each hose fills one pond in fifteen hours. The rate is the work over the time, so one fifteenth of the pond an hour.",
+    "at": [
+     "so one fifteenth of the pond"
+    ]
+   },
+   {
+    "say": "Working together, we add the rates. There are two hoses, so one fifteenth plus one fifteenth.",
+    "at": [
+     "Working together, we",
+     "so one fifteenth plus one fifteenth"
+    ]
+   },
+   {
+    "say": "The outlet works against them, so its rate gets a minus. It empties one pond in twenty hours, so minus one twentieth.",
+    "at": [
+     "The outlet works",
+     "so minus one"
+    ]
+   },
+   {
+    "say": "Now a common denominator. Fifteen and twenty both divide sixty. One fifteenth is four sixtieths, because sixty divided by fifteen is four. One twentieth is three sixtieths, because sixty divided by twenty is three.",
+    "at": [
+     "Fifteen and twenty",
+     "One fifteenth is four sixtieths",
+     "because sixty divided",
+     "One twentieth is three sixtieths",
+     "because sixty divided by twenty"
+    ]
+   },
+   {
+    "say": "Four plus four is eight. Then eight minus three is five. So together, five sixtieths of the pond an hour.",
+    "at": [
+     "So together, five sixtieths",
+     "the pond an"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Five sixtieths is one twelfth, because sixty divided by five is twelve.",
+    "at": [
+     "Five sixtieths",
+     "Five sixtieths is one twelfth",
+     "because sixty divided"
+    ]
+   },
+   {
+    "say": "What does one twelfth mean? Like in the lesson, it's one pond in twelve hours.",
+    "at": [
+     "it's one pond in twelve hours"
+    ]
+   },
+   {
+    "say": "This isn't our final answer yet. They ask for a clock time. They started at seven a.m. Seven a.m. plus twelve hours is seven p.m.",
+    "at": [
+     "This isn't our",
+     "Seven a.m. plus twelve hours"
+    ]
+   },
+   {
+    "say": "Careful with two thirty p.m., choice number one. That's what we get if we forget the outlet. Two hoses alone fill two fifteenths an hour, so one pond in seven and a half hours.",
+    "at": [
+     "Careful with two",
+     "number one. That's",
+     "Two hoses alone",
+     "one pond in seven and a half hours",
+     "a half hours"
+    ]
+   },
+   {
+    "say": "So the pond is full at seven p.m. That's choice number two.",
+    "at": [
+     "number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in a number for the pond's size. We start again from the givens. Like in the lesson, we pick a size that fifteen and twenty both divide, sixty units.",
+    "at": [
+     "a number for",
+     "sixty units"
+    ]
+   },
+   {
+    "say": "Each hose fills sixty units in fifteen hours. Sixty divided by fifteen is four units an hour.",
+    "at": [
+     "Each hose fills",
+     "Sixty divided by fifteen",
+     "four units an"
+    ]
+   },
+   {
+    "say": "The outlet empties sixty units in twenty hours. Sixty divided by twenty is three units an hour.",
+    "at": [
+     "Sixty divided by twenty"
+    ]
+   },
+   {
+    "say": "Each hour, the two hoses add four plus four, eight units. The outlet takes away three. So the pond gains eight minus three, five units an hour.",
+    "at": [
+     "Each hour, the",
+     "The outlet takes away three",
+     "So the pond"
+    ]
+   },
+   {
+    "say": "Sixty units at five units an hour. Sixty divided by five is twelve hours. The same twelve hours, so again, seven p.m.",
+    "at": [
+     "Sixty divided by five",
+     "The same twelve"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

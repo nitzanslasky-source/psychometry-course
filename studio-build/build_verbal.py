@@ -273,6 +273,13 @@ if 51 in MODS and os.path.exists(os.path.join(HERE, 'math_patches', '_t51_readin
     _sp51 = _iu51.spec_from_file_location('_t51_reading', os.path.join(HERE, 'math_patches', '_t51_reading.py'))
     _m51 = _iu51.module_from_spec(_sp51); _sp51.loader.exec_module(_m51); _m51.ai_redo_t51(MATH)
     D['meta']['videos'] = len(D['videos'])
+# 2026-10-21 (Claude, minimal): topic 52 the same way - math_patches/_t52_reading.py rebuilds the topic-52 videos from
+# their spec math_patches/_ai_vis_t52.py
+if 52 in MODS and os.path.exists(os.path.join(HERE, 'math_patches', '_t52_reading.py')):
+    import importlib.util as _iu52
+    _sp52 = _iu52.spec_from_file_location('_t52_reading', os.path.join(HERE, 'math_patches', '_t52_reading.py'))
+    _m52 = _iu52.module_from_spec(_sp52); _sp52.loader.exec_module(_m52); _m52.ai_redo_t52(MATH)
+    D['meta']['videos'] = len(D['videos'])
 
 # ---------- memory cards ----------
 PLACED = set()

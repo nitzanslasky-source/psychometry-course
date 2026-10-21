@@ -1,0 +1,129 @@
+{
+ "videoId": "solve-ch-q15",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "At the wedding on Monday, the guests from the groom's side only gave a gift of a hundred fifty shekels on average. The bride's side only gave two hundred fifty on average. And the shared guests gave three hundred fifty on average.",
+    "voice": "calm",
+    "at": [
+     "At the wedding on Monday"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "What can be said about the average gift of a guest at Monday's wedding?",
+    "voice": "calm"
+   },
+   "A lot of students say two hundred fifty. It's the middle of a hundred fifty, two hundred fifty and three hundred fifty. But that's only true if the three groups are the same size.",
+   "We'll solve it in two different ways. The math way, and then by understanding, with the seesaw from averages.",
+   {
+    "say": "Let's start with the math way. Monday's bar is four hundred guests. And the pie says fifty, twenty-five and twenty-five percent.",
+    "at": [
+     "Monday's bar is four hundred",
+     "And the pie"
+    ]
+   },
+   {
+    "say": "Fifty percent of four hundred is two hundred guests. They gave a hundred fifty each.",
+    "at": [
+     "Fifty percent of four hundred",
+     "is two hundred"
+    ]
+   },
+   {
+    "say": "Twenty-five percent of four hundred is a hundred guests. They gave two hundred fifty each.",
+    "at": [
+     "Twenty-five percent of four hundred",
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "And the other hundred guests, the shared ones, gave three hundred fifty each.",
+    "at": [
+     "the other hundred guests",
+     "shared ones, gave"
+    ]
+   },
+   {
+    "say": "Now the money. Two hundred times a hundred fifty is thirty thousand.",
+    "at": [
+     "Two hundred times a hundred fifty",
+     "fifty is thirty"
+    ]
+   },
+   {
+    "say": "A hundred times two hundred fifty is twenty-five thousand.",
+    "at": [
+     "A hundred times two hundred fifty",
+     "fifty is twenty-five"
+    ]
+   },
+   {
+    "say": "And a hundred times three hundred fifty is thirty-five thousand.",
+    "at": [
+     "a hundred times three hundred fifty",
+     "fifty is thirty-five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Thirty thousand plus twenty-five thousand is fifty-five thousand. Plus thirty-five thousand is ninety thousand shekels.",
+    "at": [
+     "thousand is fifty-five",
+     "Plus thirty-five thousand"
+    ]
+   },
+   {
+    "say": "The average is the total divided by the four hundred guests. Ninety thousand divided by four hundred is nine hundred divided by four. That's two hundred twenty-five.",
+    "at": [
+     "The average is",
+     "nine hundred divided by four",
+     "That's two hundred"
+    ]
+   },
+   {
+    "say": "Two hundred twenty-five is less than two hundred fifty. That's choice number one.",
+    "at": [
+     "number one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, from the givens again. Remember the seesaw. The average sits nearer the heavier group.",
+    "at": [
+     "the givens again"
+    ]
+   },
+   {
+    "say": "Two hundred fifty is exactly in the middle between a hundred fifty and three hundred fifty.",
+    "at": [
+     "exactly in the middle",
+     "a hundred fifty"
+    ]
+   },
+   {
+    "say": "The pie says half of the guests are on the groom's side only. They gave a hundred fifty, the smallest gift. The three hundred fifty group is only a quarter.",
+    "at": [
+     "The pie says half",
+     "the guests are"
+    ]
+   },
+   {
+    "say": "So the low side is heavier, and it pulls the average down, below two hundred fifty.",
+    "at": [
+     "pulls the average down",
+     "two hundred fifty"
+    ]
+   },
+   {
+    "say": "Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

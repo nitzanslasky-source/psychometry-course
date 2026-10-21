@@ -1,0 +1,359 @@
+{
+ "videoId": "ch52-tables",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Let's start with the first type, the table.",
+   "A table is the simplest type. We find a value where a row and a column cross."
+  ],
+  [
+   {
+    "say": "Here's an example. The table describes the new vehicles sold in Israel, in the years two thousand ten to two thousand thirteen.",
+    "at": [
+     "table describes the"
+    ]
+   },
+   "Here's the year, and here's the number of vehicles sold. And the title says thousands.",
+   "The example says, in two thousand ten, sixty thousand new vehicles were sold. Let's check it.",
+   {
+    "say": "We take the two thousand ten row, and the vehicles sold column. They cross at sixty.",
+    "at": [
+     "They cross at sixty",
+     "They cross at sixty"
+    ]
+   },
+   {
+    "say": "The title says thousands, so it's sixty thousand. It matches the example.",
+    "at": [
+     "The title says",
+     "It matches the example"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now we add a column, private cars. How many of the vehicles sold were private cars?",
+    "at": [
+     "column, private cars"
+    ]
+   },
+   {
+    "say": "What does of them mean? It means of all the vehicles sold.",
+    "at": [
+     "of all the vehicles sold"
+    ]
+   },
+   {
+    "say": "In two thousand ten, sixty thousand vehicles were sold. Of them, forty-five thousand were private cars.",
+    "at": [
+     "In two thousand",
+     "Of them, forty-five thousand"
+    ]
+   },
+   {
+    "say": "So the forty-five is a part of the sixty. They are not more vehicles on top of the sixty.",
+    "at": [
+     "a part of the sixty",
+     "They are not"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now two more columns. They are about the owner. A vehicle can be owned by a private person, or by a company.",
+    "at": [
+     "They are about"
+    ]
+   },
+   {
+    "say": "Privately owned means a private person owns it. In two thousand ten, forty thousand vehicles were privately owned.",
+    "at": [
+     "Privately owned means",
+     "person owns it",
+     "forty thousand vehicles"
+    ]
+   },
+   {
+    "say": "The last column is commercial vehicles that a private person owns. A van, for example. In two thousand ten, there were four thousand.",
+    "at": [
+     "The last column",
+     "A van, for example",
+     "two thousand ten",
+     "there were four thousand"
+    ]
+   },
+   {
+    "say": "So now the table has five columns. A question usually asks about one or two of them.",
+    "at": [
+     "A question usually"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Table and chart questions can bring in other topics. Percents, averages, overlap, and more.",
+    "at": [
+     "can bring in",
+     "Percents, averages, overlap"
+    ]
+   },
+   {
+    "say": "The good news is that we already know these topics. So inside a table, we use the same tools.",
+    "at": [
+     "The good news",
+     "we use the same tools"
+    ]
+   },
+   {
+    "say": "Let's see three examples on this table.",
+    "at": [
+     "Let's see three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The first one. What is the average number of vehicles sold per year?",
+    "at": [
+     "What is the average number",
+     "of vehicles sold"
+    ]
+   },
+   {
+    "say": "The vehicles sold column has four years. Sixty, eighty, eighty and a hundred.",
+    "at": [
+     "The vehicles sold column",
+     "Sixty, eighty, eighty"
+    ]
+   },
+   "Remember, the average is the sum divided by how many numbers there are. So first the sum.",
+   {
+    "say": "Sixty plus eighty is a hundred forty.",
+    "at": [
+     "Sixty plus eighty"
+    ]
+   },
+   {
+    "say": "A hundred forty plus eighty is two hundred twenty.",
+    "at": [
+     "A hundred forty plus eighty",
+     "is two hundred"
+    ]
+   },
+   {
+    "say": "And two hundred twenty plus a hundred is three hundred twenty.",
+    "at": [
+     "two hundred twenty plus a hundred",
+     "hundred is three"
+    ]
+   },
+   {
+    "say": "There are four years, so we divide by four. Three hundred twenty divided by four is eighty.",
+    "at": [
+     "Three hundred twenty divided by four",
+     "four is eighty"
+    ]
+   },
+   "So the average is eighty thousand vehicles a year."
+  ],
+  [
+   {
+    "say": "Did we need that calculation? Not really. Remember from averages, when numbers are symmetric, the average is the middle.",
+    "at": [
+     "calculation? Not really",
+     "when numbers are symmetric",
+     "average is the"
+    ]
+   },
+   {
+    "say": "Let's check the steps. From sixty to eighty is twenty.",
+    "at": [
+     "From sixty to eighty"
+    ]
+   },
+   {
+    "say": "From eighty to eighty is zero.",
+    "at": [
+     "From eighty to eighty"
+    ]
+   },
+   {
+    "say": "And from eighty to a hundred is twenty again.",
+    "at": [
+     "from eighty to a hundred",
+     "is twenty again"
+    ]
+   },
+   {
+    "say": "The steps from both ends are the same, so the numbers are symmetric around eighty. The average is the middle, eighty, with no calculation.",
+    "at": [
+     "The average is the middle",
+     "eighty, with no"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a percent question. What percent of the vehicles sold were privately owned?",
+    "at": [
+     "What percent of the",
+     "sold were privately"
+    ]
+   },
+   {
+    "say": "First, who is the whole? Remember, what comes after of is the whole. Here it's of the vehicles sold.",
+    "at": [
+     "Here it's of the vehicles sold"
+    ]
+   },
+   {
+    "say": "So the vehicles sold are a hundred percent. The privately owned vehicles are the part.",
+    "at": [
+     "the vehicles sold are a hundred percent",
+     "The privately owned"
+    ]
+   },
+   {
+    "say": "Two thousand ten. Forty thousand were privately owned, out of sixty thousand. Forty over sixty is two thirds.",
+    "at": [
+     "Forty over sixty"
+    ]
+   },
+   {
+    "say": "And two thirds is sixty-six and two thirds percent.",
+    "at": [
+     "sixty-six and two thirds percent"
+    ]
+   },
+   {
+    "say": "Two thousand eleven. Fifty out of eighty. We divide the top and the bottom by ten, and we get five eighths.",
+    "at": [
+     "out of eighty",
+     "we get five eighths"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "How much is five eighths in percent? Remember, a quarter is twenty-five percent.",
+    "at": [
+     "eighths in percent",
+     "Remember, a quarter",
+     "a quarter is twenty-five"
+    ]
+   },
+   {
+    "say": "An eighth is half of a quarter. Half of twenty-five is twelve and a half. So an eighth is twelve and a half percent.",
+    "at": [
+     "An eighth is",
+     "So an eighth is twelve",
+     "and a half percent"
+    ]
+   },
+   {
+    "say": "Five eighths is five times twelve and a half. Five times twelve is sixty, and five halves are two and a half. So it's sixty-two and a half percent.",
+    "at": [
+     "Five eighths is five times",
+     "twelve and a"
+    ]
+   },
+   {
+    "say": "Two thousand twelve is the same, fifty out of eighty. Sixty-two and a half percent again.",
+    "at": [
+     "Two thousand twelve is the same",
+     "same, fifty out"
+    ]
+   },
+   {
+    "say": "And two thousand thirteen is sixty-five out of a hundred. That's simply sixty-five percent.",
+    "at": [
+     "sixty-five out of a hundred",
+     "That's simply sixty-five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now overlap. In two thousand ten, how many private cars were owned by a company?",
+    "at": [
+     "how many private cars",
+     "owned by a"
+    ]
+   },
+   {
+    "say": "We can split the vehicles in two ways. By the type, a private car or a commercial vehicle. And by the owner, a private person or a company.",
+    "at": [
+     "We can split the vehicles",
+     "By the type"
+    ]
+   },
+   {
+    "say": "So every vehicle sits in one of four squares, like in the squares method.",
+    "at": [
+     "one of four squares",
+     "in the squares"
+    ]
+   },
+   {
+    "say": "Let's fill in the squares from the table. Private cars, forty-five thousand. That's the whole private car row.",
+    "at": [
+     "Private cars, forty-five",
+     "That's the whole"
+    ]
+   },
+   {
+    "say": "Privately owned, forty thousand. That's the whole privately owned column.",
+    "at": [
+     "Privately owned, forty",
+     "That's the whole"
+    ]
+   },
+   {
+    "say": "And all the vehicles together, sixty thousand.",
+    "at": [
+     "all the vehicles together"
+    ]
+   },
+   {
+    "say": "Commercial vehicles that are privately owned, four thousand. That's one square, commercial and privately owned.",
+    "at": [
+     "Commercial vehicles that",
+     "That's one square"
+    ]
+   },
+   {
+    "say": "Now it's like a sudoku. The privately owned column is forty, and four of them are commercial. Forty minus four is thirty-six.",
+    "at": [
+     "Now it's like",
+     "Forty minus four",
+     "is thirty-six"
+    ]
+   },
+   {
+    "say": "So thirty-six thousand private cars are privately owned.",
+    "at": [
+     "So thirty-six thousand"
+    ]
+   },
+   {
+    "say": "The private car row is forty-five. Forty-five minus thirty-six is nine.",
+    "at": [
+     "Forty-five minus thirty-six",
+     "is nine"
+    ]
+   },
+   {
+    "say": "So nine thousand private cars were owned by a company. That's what the question asked.",
+    "at": [
+     "So nine thousand private cars",
+     "were owned by"
+    ]
+   }
+  ],
+  [
+   "So a table question can be a percent question, an average question, or an overlap question. We use the tools we already know.",
+   "Not every question is like that. Sometimes we only read the table. But it's good to be ready for both.",
+   "Next, the first type of chart, points on axes. I'll see you in the next video."
+  ]
+ ]
+}

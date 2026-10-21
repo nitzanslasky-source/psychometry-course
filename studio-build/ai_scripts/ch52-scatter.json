@@ -1,0 +1,329 @@
+{
+ "videoId": "ch52-scatter",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now the first type of chart, points on axes.",
+   "It's the most important type, because all the other charts grow out of it."
+  ],
+  [
+   {
+    "say": "Let's take the car table from the last lesson, and turn it into points on axes.",
+    "at": [
+     "table from the"
+    ]
+   },
+   {
+    "say": "Across the bottom we have the years, two thousand ten to two thousand thirteen.",
+    "at": [
+     "Across the bottom",
+     "the years, two"
+    ]
+   },
+   {
+    "say": "Going up we have the amount, in thousands.",
+    "at": [
+     "Going up we have the amount",
+     "amount, in thousands"
+    ]
+   },
+   {
+    "say": "So when the axis says ninety, it's not really ninety. It's ninety thousand.",
+    "at": [
+     "it's not really ninety",
+     "It's ninety thousand"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "First we need a key. It tells us which mark stands for which column. A black star is the vehicles sold.",
+    "at": [
+     "key. It tells",
+     "A black star is the vehicles sold"
+    ]
+   },
+   {
+    "say": "In two thousand ten, sixty thousand vehicles were sold. So we go to two thousand ten, we go up to sixty, and we put a star there.",
+    "at": [
+     "In two thousand",
+     "we go up to sixty",
+     "we put a star there"
+    ]
+   },
+   {
+    "say": "In two thousand eleven, eighty thousand. A star at eighty.",
+    "at": [
+     "In two thousand",
+     "A star at eighty"
+    ]
+   },
+   {
+    "say": "Two thousand twelve, also eighty.",
+    "at": [
+     "Two thousand twelve, also eighty"
+    ]
+   },
+   {
+    "say": "And two thousand thirteen, a hundred thousand. A star at a hundred.",
+    "at": [
+     "And two thousand",
+     "A star at a hundred"
+    ]
+   },
+   {
+    "say": "Each point sits exactly at its value. So if we read two thousand twelve, we get eighty, just like in the table.",
+    "at": [
+     "Each point sits exactly",
+     "So if we"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "We mark the other columns the same way. Each one gets its own mark in the key.",
+    "at": [
+     "columns the same"
+    ]
+   },
+   {
+    "say": "Private cars get a dot. Privately owned gets a white star. And the commercial vehicles get an x.",
+    "at": [
+     "Private cars get a dot",
+     "Privately owned gets",
+     "the commercial vehicles get an x"
+    ]
+   },
+   {
+    "say": "Now every number of the table is a point on the chart. It's the same data, as a picture.",
+    "at": [
+     "every number of the table",
+     "is a point"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why is this better than the table? Because we can see the changes.",
+    "at": [
+     "than the table"
+    ]
+   },
+   {
+    "say": "Look at the black stars. From two thousand ten to two thousand eleven they go up. Then they stay the same. Then they go up again.",
+    "at": [
+     "Then they stay the same",
+     "Then they go up again"
+    ]
+   },
+   {
+    "say": "In the table we had to read every number to see that. Here we see it in one look.",
+    "at": [
+     "In the table we had",
+     "to read every"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a tool we'll use a lot. Here's a question. In how many years were more than fifty thousand vehicles privately owned?",
+    "at": [
+     "use a lot",
+     "In how many years",
+     "more than fifty"
+    ]
+   },
+   {
+    "say": "Privately owned are the white stars. We need the ones above fifty. So we draw a line at fifty.",
+    "at": [
+     "So we draw a line at fifty",
+     "we draw a line at fifty"
+    ]
+   },
+   {
+    "say": "Now we only count the white stars above the line.",
+    "at": [
+     "count the white stars"
+    ]
+   },
+   {
+    "say": "Careful with two thousand eleven and two thousand twelve. Their white stars sit right on the line. That's fifty, and fifty is not more than fifty. So they don't count.",
+    "at": [
+     "Careful with two",
+     "fifty is not more than fifty",
+     "fifty. So they"
+    ]
+   },
+   {
+    "say": "Above the line there's only two thousand thirteen, at sixty-five. So the answer is one year.",
+    "at": [
+     "at sixty-five",
+     "So the answer is one year"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's try another one. In how many years were more than seventy thousand vehicles sold?",
+    "at": [
+     "In how many years",
+     "more than seventy"
+    ]
+   },
+   {
+    "say": "Vehicles sold are the black stars. So we draw a line at seventy.",
+    "at": [
+     "we draw a line at seventy"
+    ]
+   },
+   {
+    "say": "Which black stars are above it? Two thousand eleven, two thousand twelve and two thousand thirteen.",
+    "at": [
+     "Which black stars are above it",
+     "Two thousand eleven, two thousand twelve",
+     "twelve and two"
+    ]
+   },
+   {
+    "say": "So it's three years. Two thousand ten is at sixty, below the line.",
+    "at": [
+     "So it's three years",
+     "Two thousand ten"
+    ]
+   },
+   {
+    "say": "So when a question asks how many are more than some value, we draw a line at that value. Then we count what's past the line. The line can also stand up, when the value is on the bottom axis.",
+    "at": [
+     "we draw a line at that value",
+     "Then we count"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes the points aren't stars or dots. They can be numbers. Then each number adds one more piece of data.",
+    "at": [
+     "stars or dots"
+    ]
+   },
+   {
+    "say": "Here the number at each point is the number of car dealers that sold the vehicles that year.",
+    "at": [
+     "the number of car dealers",
+     "that sold the"
+    ]
+   },
+   {
+    "say": "So in two thousand eleven, eighty thousand vehicles were sold, by eight dealers.",
+    "at": [
+     "by eight dealers",
+     "by eight dealers"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's a question on it. In which year was the average number of vehicles sold per dealer the greatest?",
+    "at": [
+     "In which year was",
+     "average number of",
+     "the greatest"
+    ]
+   },
+   {
+    "say": "The average per dealer is the vehicles divided by the dealers. Two thousand ten. Sixty thousand vehicles, five dealers. Sixty divided by five is twelve.",
+    "at": [
+     "The average per",
+     "Sixty divided by five"
+    ]
+   },
+   {
+    "say": "Two thousand eleven. Eighty divided by eight is ten.",
+    "at": [
+     "Eighty divided by eight"
+    ]
+   },
+   {
+    "say": "Two thousand twelve. Eighty divided by ten is eight.",
+    "at": [
+     "Eighty divided by ten"
+    ]
+   },
+   {
+    "say": "Two thousand thirteen. A hundred divided by fifteen. Do we need the exact number? No. A hundred divided by ten is ten, and fifteen dealers is more than ten. So each one gets less than ten.",
+    "at": [
+     "A hundred divided by fifteen",
+     "Do we need"
+    ]
+   },
+   "Twelve is the greatest. So the answer is two thousand ten, choice number one."
+  ],
+  [
+   {
+    "say": "A few more things about axes. An axis can go below zero.",
+    "at": [
+     "about axes. An"
+    ]
+   },
+   {
+    "say": "Imagine that in two thousand ten, no cars were sold. And on top of that, ten thousand cars were returned. Then the point is at minus ten.",
+    "at": [
+     "ten thousand cars were returned",
+     "Then the point is at minus ten"
+    ]
+   },
+   {
+    "say": "In other charts, below zero can mean other things, like a loss. The chart's explanation tells us.",
+    "at": [
+     "In other charts"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Look at the lines on the axis. Ten, twenty, thirty, forty. Every line is the same step, ten thousand.",
+    "at": [
+     "on the axis",
+     "Every line is the same step",
+     "the same step, ten thousand"
+    ]
+   },
+   {
+    "say": "The chart is drawn exactly to scale. So we can trust what we see.",
+    "at": [
+     "The chart is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now look at this axis. It doesn't start at zero. It starts at fifty.",
+    "at": [
+     "axis. It doesn't",
+     "It starts at fifty"
+    ]
+   },
+   {
+    "say": "But we said the chart is exact. And the distance from zero to fifty here is much shorter than five steps.",
+    "at": [
+     "But we said"
+    ]
+   },
+   {
+    "say": "So the axis has a zigzag at the bottom, like a Z. The Z tells us that this part is not to scale.",
+    "at": [
+     "like a Z",
+     "this part is not to scale"
+    ]
+   },
+   {
+    "say": "And nothing under fifty is shown. So the x's are gone, and so are the two points of two thousand ten that were under fifty.",
+    "at": [
+     "nothing under fifty is shown",
+     "So the x's"
+    ]
+   },
+   "That's it for points on axes. Next, we'll join the points with a line. I'll see you in the next video."
+  ]
+ ]
+}

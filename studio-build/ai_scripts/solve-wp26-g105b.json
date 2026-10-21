@@ -1,0 +1,157 @@
+{
+ "videoId": "solve-wp26-g105b",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A supply of hay is enough for two hundred identical sheep for nine days. Each sheep eats the same constant amount per day. For how many days would that supply feed a hundred fifty sheep?",
+    "voice": "calm",
+    "at": [
+     "A supply of hay is enough"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the hay stays the same, and the number of sheep changes. They ask for the number of days.",
+    "at": [
+     "the same, and",
+     "They ask for the number of days"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. This time I'll start, on purpose, with an estimate. It helps us understand the question, because this one isn't simple.",
+    "at": [
+     "We'll solve",
+     "the question, because"
+    ]
+   },
+   {
+    "say": "Fewer sheep eat the same hay more slowly. So the hay lasts longer, more than nine days.",
+    "at": [
+     "So the hay lasts longer"
+    ]
+   },
+   {
+    "say": "So six point seven five, choice number three, is out. That's fewer days.",
+    "at": [
+     "number three, is",
+     "That's fewer days"
+    ]
+   },
+   {
+    "say": "Now an easy number. Half of two hundred is a hundred. Half the sheep make the hay last twice as long. Nine times two is eighteen days.",
+    "at": [
+     "Half of two hundred is a hundred",
+     "Half the sheep"
+    ]
+   },
+   {
+    "say": "But we have a hundred fifty sheep, more than a hundred. More sheep finish the hay sooner. So fewer than eighteen days.",
+    "at": [
+     "more than a hundred",
+     "So fewer than"
+    ]
+   },
+   {
+    "say": "So eighteen, choice number two, is out.",
+    "at": [
+     "So eighteen, choice number two, is out"
+    ]
+   },
+   "Twelve and fifteen are left. Both are between nine and eighteen, so the estimate can't decide. Let's find it exactly."
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in numbers. We start again from the givens. The amount each sheep eats isn't given. So let's say each sheep eats one unit of hay a day.",
+    "at": [
+     "numbers. We start",
+     "the givens. The",
+     "each sheep eats one unit"
+    ]
+   },
+   {
+    "say": "Two hundred sheep for nine days. Two hundred times nine is one thousand eight hundred units. That's all the hay.",
+    "at": [
+     "Two hundred sheep",
+     "Two hundred times nine",
+     "one thousand eight"
+    ]
+   },
+   {
+    "say": "A hundred fifty sheep eat a hundred fifty units a day.",
+    "at": [
+     "A hundred fifty sheep eat"
+    ]
+   },
+   {
+    "say": "One thousand eight hundred divided by a hundred fifty. Fifteen hundred is ten times a hundred fifty, and three hundred is two more hundred fifties. So twelve days.",
+    "at": [
+     "One thousand eight hundred divided by",
+     "by a hundred"
+    ]
+   },
+   {
+    "say": "Let's check it. A hundred fifty times twelve is one thousand eight hundred. That's all the hay.",
+    "at": [
+     "A hundred fifty times twelve",
+     "is one thousand"
+    ]
+   },
+   {
+    "say": "So twelve days. That's choice number one.",
+    "at": [
+     "number one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And this is even a team question, once we see who the team is. We start again from the givens.",
+    "at": [
+     "And this",
+     "the givens"
+    ]
+   },
+   {
+    "say": "The sheep are the workers. Their job is eating. The hay is the work, and the hay doesn't change. So the work is one supply in both rows.",
+    "at": [
+     "The sheep are the workers",
+     "Their job is",
+     "The hay is the work",
+     "So the work",
+     "one supply in both rows"
+    ]
+   },
+   {
+    "say": "The question mark is in the time. So the V joins two hundred, one and nine. We divide by the other two, one and a hundred fifty.",
+    "at": [
+     "The question mark",
+     "So the V joins two hundred",
+     "We divide by the other two",
+     "one and a hundred fifty"
+    ]
+   },
+   {
+    "say": "Two hundred over a hundred fifty is four thirds, because we divide both by fifty.",
+    "at": [
+     "Two hundred over a hundred fifty",
+     "fifty is four"
+    ]
+   },
+   {
+    "say": "Four thirds times nine. Nine divided by three is three. Then three times four is twelve days.",
+    "at": [
+     "Four thirds times nine",
+     "Nine divided by"
+    ]
+   },
+   "The hard part was to see who the team is. Sometimes a supply gets used up at a constant rate, like hay, water or fuel. Then the ones who use it are the team. And the supply is the work. If you don't see it, the estimate and plugging in numbers work too.",
+   {
+    "say": "Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

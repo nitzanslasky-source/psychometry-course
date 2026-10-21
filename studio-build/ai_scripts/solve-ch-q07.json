@@ -1,0 +1,90 @@
+{
+ "videoId": "solve-ch-q07",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A dramatic change is a change of three places or more in a team's place, between two races in a row. How many dramatic changes were there, in the years two thousand seventeen to two thousand twenty-two?",
+    "voice": "calm",
+    "at": [
+     "A dramatic change is"
+    ],
+    "pause": 0.5
+   },
+   "So the question gives us a new word, and asks us to count. This question doesn't need a trick. It needs a careful count, in order.",
+   {
+    "say": "Let's circle three or more. A change of exactly three counts too.",
+    "at": [
+     "A change of exactly three"
+    ]
+   },
+   {
+    "say": "We go row by row. For each team, we compare each year with the next year.",
+    "at": [
+     "We go row"
+    ]
+   },
+   {
+    "say": "Some rows are quick. Night Owls are two, three, two, three, two, four. The biggest change is two. Iron Eagles are seven, five, six, seven, five, seven. Again at most two. So no dramatic changes there.",
+    "at": [
+     "Some rows are quick",
+     "Night Owls are",
+     "So no dramatic changes"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now Road Runners. Four to two is a change of two, no. Two to five is three, yes. Five to one is four, yes. Then one to three, and three to three, no. So two.",
+    "at": [
+     "Now Road Runners",
+     "Four to two",
+     "So two"
+    ]
+   },
+   {
+    "say": "Desert Foxes. One to six is five, yes. Six to three is three, yes. Three to four, no. Four to one is three, yes. One to two, no. So three.",
+    "at": [
+     "Desert Foxes",
+     "One to six",
+     "So three"
+    ]
+   },
+   {
+    "say": "Blue Comets are six, seven, seven, five, four, one. Only four to one is three. So one. Red Arrows have only one to four. So one.",
+    "at": [
+     "Blue Comets",
+     "seven, five, four",
+     "Red Arrows have only one"
+    ]
+   },
+   {
+    "say": "Silver Wolves. Four to one is three, yes. Two to six is four, yes. So two.",
+    "at": [
+     "Silver Wolves",
+     "Four to one",
+     "So two"
+    ]
+   },
+   {
+    "say": "Now we add them up. Two plus three is five. Five plus one is six, and six plus one is seven. Seven plus two is nine.",
+    "at": [
+     "Now we add them up",
+     "Two plus three"
+    ]
+   },
+   {
+    "say": "Careful, if we count only changes of more than three, we get three, choice number three. But three or more includes exactly three.",
+    "at": [
+     "choice number three"
+    ]
+   },
+   {
+    "say": "Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

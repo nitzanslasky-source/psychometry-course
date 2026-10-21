@@ -233,7 +233,18 @@ def _spoken_decimals(text):
     ops = {'times': '×', 'plus': '+', 'minus': '−', 'over': '/', 'divided by': '÷'}
     rx = re.compile(r'(\d+\.\d+) (times|plus|minus|over|divided by) (\d+\.\d+)')
     while rx.search(t): t = rx.sub(lambda m: '%s %s %s' % (m.group(1), ops[m.group(2)], m.group(3)), t)
-    return t.replace(' / ', '/')
+    t = t.replace(' / ', '/')
+    # 2026-10-21 (topic 26): clock times "two thirty p.m." -> 2:30 p.m., "seven a.m." -> 7 a.m.
+    H = '|'.join(_UNITS[1:] + _TEENS[:3])
+    M = r'(?:%s)(?:-(?:%s))?|%s' % ('|'.join(_TENS[:4]), '|'.join(_UNITS[1:]), '|'.join(_TEENS))
+    def clock(m):
+        h = _INT_WORD[m.group(1).lower()]
+        if m.group(2):
+            a = m.group(2).lower().split('-'); mm = _INT_WORD[a[0]] + (_INT_WORD[a[1]] if len(a) > 1 else 0)
+            return '%d:%02d %s' % (h, mm, m.group(3))
+        return '%d %s' % (h, m.group(3))
+    t = re.sub(r'\b(%s)(?: (%s))? ([ap]\.m\.)' % (H, M), clock, t, flags=re.I)
+    return t
 
 
 def math_display(text):
@@ -308,9 +319,15 @@ def math_display(text):
         return str(v) if k in mark else raw
     s = re.sub(r'(\d+)', back, s)
     # 2026-10-20 (topic 23): mixed numbers "33 and a third (percent)" -> 33⅓(%), "2 and a half" -> 2½ (display only)
+    # 2026-10-21 (topic 26): a small number word before a mixed fraction: "three and 3/4" -> 3¾
+    _V = {'1/2': '½', '1/3': '⅓', '2/3': '⅔', '1/4': '¼', '3/4': '¾'}
+    s = re.sub(r'\b(%s) and (1/2|1/3|2/3|1/4|3/4)\b' % '|'.join(_UNITS[1:] + _TEENS),
+               lambda m: str(_INT_WORD[m.group(1).lower()]) + _V[m.group(2)], s, flags=re.I)
     for w, g in (('a half', '½'), ('one half', '½'), ('a third', '⅓'), ('one third', '⅓'), ('two thirds', '⅔'), ('2/3', '⅔'),
                  ('a quarter', '¼'), ('one quarter', '¼'), ('three quarters', '¾')):
         s = re.sub(r'\b(\d+) and %s( percent)?' % re.escape(w), lambda m, g=g: m.group(1) + g + ('%' if m.group(2) else ''), s)
+    # 2026-10-21 (topic 52): thousands separators for numbers of 5+ digits (60000 -> 60,000; years stay 2010)
+    s = re.sub(r'(?<![\d.,])(\d{5,})(?![\d.])', lambda m: '{:,}'.format(int(m.group(1))), s)
     # 2026-10-21 (topic 34): spoken "times the bracket, n minus two" -> × (n − 2)
     s = re.sub(r'\btimes the bracket, (\S+(?: [+−] [^\s,.]+)+)', r'× (\1)', s)
     return s
@@ -581,7 +598,7 @@ def build(topics=(), ids=None, out=OUT):
         title, vids = r
         # 2026-10-14 (Claude, minimal): the topic summary videos are not recorded anymore (teacher: one printable summary
         # page per topic, summary_pages.py), so they are left out of her reading list. Their files are kept.
-        vids = [v for v in vids if not re.fullmatch(r'r26-t\d+-summary(-\d+)?', v['id'])]
+        vids = [v for v in vids if not re.fullmatch(r'(r26-t\d+|ch52)-summary(-\d+)?', v['id'])]
         if not vids:
             sys.exit('topic %d: no videos found (no review file, no ai_scripts in course18.json) - use --ids' % t)
         groups.append(dict(topic=t, title=title, videos=vids))

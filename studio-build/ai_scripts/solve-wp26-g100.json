@@ -1,0 +1,101 @@
+{
+ "videoId": "solve-wp26-g100",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A fence around a park is completed by fourteen workers working for nine days, followed by six workers working for eleven days. All work at the same constant rate. How many days would one worker need to complete the whole fence alone?",
+    "voice": "calm",
+    "at": [
+     "A fence around a park"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the team changes in the middle of the job. And they ask how long one worker would need alone.",
+    "at": [
+     "they ask how long one worker"
+    ]
+   },
+   {
+    "say": "Like in the lesson, that's the worker-days. Think of the boss who pays every worker for every day. How many days of pay does the whole fence take?",
+    "at": [
+     "the boss who",
+     "many days of"
+    ]
+   },
+   {
+    "say": "The first stage is fourteen workers for nine days. Fourteen times nine. Ten times nine is ninety. Then four times nine is thirty-six.",
+    "at": [
+     "fourteen workers for",
+     "Ten times nine is ninety",
+     "Then four times"
+    ]
+   },
+   {
+    "say": "Ninety plus thirty-six is a hundred twenty-six worker-days.",
+    "at": [
+     "Ninety plus thirty-six",
+     "hundred twenty-six worker-days"
+    ]
+   },
+   {
+    "say": "Careful, a hundred twenty-six is choice number one, but that's only the first stage.",
+    "at": [
+     "but that's only the first stage",
+     "only the first stage"
+    ]
+   },
+   {
+    "say": "The second stage is six workers for eleven days. Six times eleven is sixty-six worker-days.",
+    "at": [
+     "The second stage",
+     "Six times eleven is sixty-six"
+    ]
+   },
+   {
+    "say": "Now we add the two stages. A hundred twenty-six plus sixty-six. Plus seventy is a hundred ninety-six, and then we take away four. That's a hundred ninety-two.",
+    "at": [
+     "Now we add",
+     "Plus seventy is a hundred ninety-six",
+     "ninety-six, and then",
+     "we take away four",
+     "a hundred ninety-two"
+    ]
+   },
+   {
+    "say": "So the whole fence takes a hundred ninety-two worker-days.",
+    "at": [
+     "So the whole fence takes"
+    ]
+   },
+   {
+    "say": "And one worker does one worker-day each day. So alone, one worker needs a hundred ninety-two days.",
+    "at": [
+     "And one worker"
+    ]
+   },
+   {
+    "say": "Careful with four hundred, choice number two. It adds the workers, fourteen plus six is twenty. It adds the days, nine plus eleven is twenty. And twenty times twenty is four hundred.",
+    "at": [
+     "number two. It",
+     "It adds the days",
+     "twenty times twenty"
+    ]
+   },
+   {
+    "say": "But twenty workers never worked together, and no worker worked twenty days. So we count each stage on its own.",
+    "at": [
+     "But twenty workers",
+     "So we count each stage on its own"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

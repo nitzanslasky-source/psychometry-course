@@ -1,0 +1,175 @@
+{
+ "videoId": "ch52-circle",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now the circle chart. It comes up quite a lot on the exam.",
+   "It looks different from everything we've seen. But we'll see that it's an old friend."
+  ],
+  [
+   {
+    "say": "We know the story already. It's the visitors on the Psycho website, over twenty-four hours.",
+    "at": [
+     "already. It's the"
+    ]
+   },
+   {
+    "say": "The hours go round the circle, like a clock. Zero at the top.",
+    "at": [
+     "The hours go round the circle",
+     "circle, like a"
+    ]
+   },
+   {
+    "say": "The number of visitors is shown by the circles. A hundred, two hundred, up to five hundred on the big circle.",
+    "at": [
+     "shown by the circles",
+     "A hundred, two"
+    ]
+   },
+   {
+    "say": "The dark rings outside show where most of the visitors are in each hour. They're the strips from the last chart, bent round the circle.",
+    "at": [
+     "The dark rings outside",
+     "where most of"
+    ]
+   },
+   "From the outside in, the rings are explanations, practice, forum, and other."
+  ],
+  [
+   {
+    "say": "The example says, at nine o'clock there were three hundred visitors. And between nine and ten, most of them were in the forum.",
+    "at": [
+     "The example says",
+     "o'clock there were"
+    ]
+   },
+   {
+    "say": "Let's find nine o'clock on the clock. We go in along that line, to the teal curve. It's on the circle of three hundred.",
+    "at": [
+     "We go in along that line",
+     "line, to the",
+     "on the circle of three"
+    ]
+   },
+   {
+    "say": "And between nine and ten, the dark part is in the third ring. The third ring is the forum. It matches.",
+    "at": [
+     "And between nine"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Notice, every chart we've seen so far, except the table, was on axes. Here the axes are just bent into a circle.",
+    "at": [
+     "seen so far",
+     "bent into a circle"
+    ]
+   },
+   {
+    "say": "So the circle chart can have points, like points on axes. Or bars, each bar going out to its value.",
+    "at": [
+     "can have points",
+     "Or bars, each"
+    ]
+   },
+   {
+    "say": "Or one continuous line, like here.",
+    "at": [
+     "one continuous line"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's the continuous chart from the last lesson, next to the circle chart. They show exactly the same data.",
+    "at": [
+     "from the last"
+    ]
+   },
+   {
+    "say": "At twelve o'clock, the continuous line is a bit above three hundred. About three hundred twenty.",
+    "at": [
+     "a bit above three hundred",
+     "About three hundred"
+    ]
+   },
+   {
+    "say": "In the circle, at twelve, the curve is also just past the three hundred circle.",
+    "at": [
+     "the curve is also",
+     "just past the three hundred"
+    ]
+   },
+   {
+    "say": "And from twelve to sixteen, most visitors were in the explanations. Below the chart it's the explanations strip. In the circle it's the outer ring.",
+    "at": [
+     "from twelve to sixteen",
+     "visitors were in",
+     "In the circle it",
+     "it's the outer ring"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a sample question. What is the latest hour at which there are visitors in the practice area?",
+    "at": [
+     "What is the latest hour",
+     "at which there"
+    ]
+   },
+   {
+    "say": "The practice ring is the second one. Going round, its last dark part ends at twenty o'clock.",
+    "at": [
+     "its last dark part ends",
+     "ends at twenty"
+    ]
+   },
+   {
+    "say": "So is the answer twenty o'clock? A lot of students mark it. But let's read what the dark areas mean.",
+    "at": [
+     "So is the"
+    ]
+   },
+   {
+    "say": "They show where most of the visitors are in that hour. Most, not all.",
+    "at": [
+     "Most, not all"
+    ]
+   },
+   {
+    "say": "What does most mean? More than half. Say there are three hundred visitors, and a hundred sixty are in the forum. That's most of them.",
+    "at": [
+     "More than half",
+     "three hundred visitors",
+     "forum. That's most"
+    ]
+   },
+   "The other hundred forty can be anywhere, also in the practice area. So after twenty o'clock, some people may still practise. Or maybe nobody does.",
+   {
+    "say": "The chart can't tell us. So the latest hour cannot be known.",
+    "at": [
+     "cannot be known"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So the circle chart is just a chart on axes. The circles are the lines of the value axis, bent round.",
+    "at": [
+     "is just a"
+    ]
+   },
+   {
+    "say": "We could cut the circle open at the top and unfold it. Then we'd get the same chart on straight axes.",
+    "at": [
+     "We could cut the circle open",
+     "open at the"
+    ]
+   },
+   "I'll see you in the next video."
+  ]
+ ]
+}

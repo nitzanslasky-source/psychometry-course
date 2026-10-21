@@ -69,7 +69,7 @@ METHODS = [
     # 26 · compare by factors, catching up
     ('r26-t26-factors', '*', 'Compare by factors', 'new'),
     ('solve-q-r26-t26-21', '*', 'Compare by factors', 'new'),
-    ('solve-wp26-g102', 'Same idea: catching up', 'Catching up', 'new'),
+    ('solve-wp26-g102', 'The same idea: catching up', 'Catching up', 'new'),   # 2026-10-21: slide renamed
     # 27 · the V in motion
     ('wp-110', 'Two things change? The V', 'The V in motion', 'new'),
     ('solve-q-r26-t27-31', '*', 'The V in motion', 'new'),

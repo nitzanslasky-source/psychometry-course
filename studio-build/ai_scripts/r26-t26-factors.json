@@ -1,0 +1,229 @@
+{
+ "videoId": "r26-t26-factors",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now a general tool, compare by factors.",
+   {
+    "say": "In the first lesson, we multiplied the factors when two things changed. Many exam questions give only relations, like three quarters as many, or twice as fast. This tool solves them in one line, with no equations.",
+    "at": [
+     "we multiplied the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Lia works three quarters as many hours a day as Ben. In each hour, she does two thirds of what he does.",
+    "at": [
+     "Lia works three quarters",
+     "many hours a"
+    ]
+   },
+   {
+    "say": "Ben finishes a job in eight days. How many days does Lia need?",
+    "at": [
+     "Ben finishes a job in eight days",
+     "How many days"
+    ]
+   },
+   "We don't know Ben's real hours, or his real rate. And we don't need them.",
+   {
+    "say": "First, how much does Lia do in one day? A day of work is the hours a day, times the work in each hour.",
+    "at": [
+     "A day of work is the hours a day",
+     "the work in"
+    ]
+   },
+   {
+    "say": "Her hours are times three quarters. Her work in each hour is times two thirds. Three quarters times two thirds. Three times two is six. Then four times three is twelve. Six twelfths is a half.",
+    "at": [
+     "Six twelfths is a half"
+    ]
+   },
+   {
+    "say": "Why multiply, and not add? Because each change scales what is already there. She works fewer hours, and in each hour she does less.",
+    "at": [
+     "Why multiply, and"
+    ]
+   },
+   {
+    "say": "So each day, Lia does half of what Ben does. The job is the same, so the days go the opposite way. Half as much each day means twice as many days. Eight times two is sixteen days.",
+    "at": [
+     "Eight times two is sixteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So here's the rule. We start from the old value, and multiply by every factor that changed.",
+    "at": [
+     "We start from",
+     "multiply by every factor that changed"
+    ]
+   },
+   {
+    "say": "For each factor, we ask one question. When it grows, does my answer grow too? If yes, we multiply as it is. If no, we flip it.",
+    "at": [
+     "For each factor",
+     "When it grows"
+    ]
+   },
+   "Let's do Lia in one line. We want the days. More hours a day means fewer days. That's opposite, so three quarters flips to four thirds.",
+   {
+    "say": "More work each hour also means fewer days. So two thirds flips to three halves.",
+    "at": [
+     "two thirds flips to three halves"
+    ]
+   },
+   {
+    "say": "Four thirds times three halves is two, because the threes cancel and four over two is two.",
+    "at": [
+     "Four thirds times three halves",
+     "is two, because"
+    ]
+   },
+   {
+    "say": "So eight times two, sixteen days. The same answer, in one line.",
+    "at": [
+     "So eight times two",
+     "The same answer"
+    ]
+   },
+   {
+    "say": "And the size of the job is the same for both, so it cancels. We never need it.",
+    "at": [
+     "it cancels"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A car drives six hundred kilometers on a full tank. A new car's tank is one and a half times as big. And it uses three quarters as much fuel for each kilometer. How far does the new car drive on a full tank?",
+    "at": [
+     "A car drives six hundred kilometers",
+     "kilometers on a"
+    ]
+   },
+   {
+    "say": "We want the distance. A bigger tank means a longer drive. That's the same way, so times three halves.",
+    "at": [
+     "A bigger tank means a longer drive",
+     "That's the same"
+    ]
+   },
+   {
+    "say": "Less fuel for each kilometer also means a longer drive. So when the fuel goes down, the distance goes up. That's the opposite way, so three quarters flips to four thirds.",
+    "at": [
+     "Less fuel for each kilometer",
+     "So when the"
+    ]
+   },
+   {
+    "say": "Six hundred times three halves. Half of six hundred is three hundred, times three is nine hundred.",
+    "at": [
+     "Six hundred times three halves",
+     "Half of six"
+    ]
+   },
+   {
+    "say": "Nine hundred times four thirds. Nine hundred divided by three is three hundred. Then three hundred times four is twelve hundred kilometers.",
+    "at": [
+     "Nine hundred divided by three",
+     "is three hundred"
+    ]
+   },
+   "Does it make sense? Both changes make the drive longer, so the answer must be more than six hundred. And twelve hundred is more."
+  ],
+  [
+   {
+    "say": "We've seen this rule before. In the team lesson, the cooks went from six to four, and the pies from thirty to forty. With ratios, we multiplied two hours by four thirds, and by three halves. That's four hours.",
+    "at": [
+     "before. In the",
+     "With ratios, we multiplied two hours",
+     "hours by four"
+    ]
+   },
+   {
+    "say": "That was exactly this rule. The V just does the flipping for us, in a table of team, work and time.",
+    "at": [
+     "That was exactly this rule",
+     "The V just"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One limit. Every change must be a times change.",
+    "at": [
+     "must be a"
+    ]
+   },
+   {
+    "say": "Say Lia packs two more boxes an hour than Ben.",
+    "at": [
+     "Lia packs two more boxes",
+     "an hour than"
+    ]
+   },
+   {
+    "say": "If Ben packs ten, Lia packs twelve. Two more than ten is twenty percent more.",
+    "at": [
+     "If Ben packs ten",
+     "Two more than"
+    ]
+   },
+   {
+    "say": "But if Ben packs four, Lia packs six. Two more than four is fifty percent more.",
+    "at": [
+     "But if Ben packs four",
+     "Lia packs six"
+    ]
+   },
+   {
+    "say": "So the factor depends on Ben's real number, and we don't know it. Here we give Ben's rate a letter, x. Lia's rate is x plus two, and we write an equation.",
+    "at": [
+     "Here we give Ben's rate a letter",
+     "Lia's rate is"
+    ]
+   },
+   {
+    "say": "So look at the words. Times, as many as, a fraction of, or a percent of, are factors.",
+    "at": [
+     "So look at the words",
+     "Times, as many"
+    ]
+   },
+   {
+    "say": "More than by a number needs an equation.",
+    "at": [
+     "More than by a number",
+     "needs an equation"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. When only relations are given, we multiply the old value by every factor that changed.",
+    "at": [
+     "When only relations are given",
+     "we multiply the"
+    ]
+   },
+   {
+    "say": "The same way, as it is. The opposite way, flipped. And what is the same for both cancels.",
+    "at": [
+     "The same way, as it is",
+     "is. The opposite"
+    ]
+   },
+   {
+    "say": "And a fixed amount more is not a factor. Then we write an equation.",
+    "at": [
+     "a fixed amount more",
+     "not a factor"
+    ]
+   },
+   "Take a moment to memorize this, and I'll see you in the next video."
+  ]
+ ]
+}

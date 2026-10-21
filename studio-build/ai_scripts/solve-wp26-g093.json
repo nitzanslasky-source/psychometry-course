@@ -1,0 +1,220 @@
+{
+ "videoId": "solve-wp26-g093",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A volunteer folds x flyers in y minutes at a constant rate, where x and y are positive. How many flyers will she fold in five y minutes, if her rate becomes three times as great?",
+    "voice": "calm",
+    "at": [
+     "A volunteer folds x flyers"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for the work, the number of flyers. And two things change, her rate and her time.",
+    "at": [
+     "So they ask for the work",
+     "And two things"
+    ]
+   },
+   {
+    "say": "We'll solve it in four different ways. Let's start by understanding, with a ratio table, like in topic twenty-two. We take the two changes one at a time.",
+    "at": [
+     "We'll solve",
+     "with a ratio table",
+     "in topic twenty-two"
+    ]
+   },
+   {
+    "say": "Row one is what they give us. She folds x flyers in y minutes.",
+    "at": [
+     "She folds x flyers"
+    ]
+   },
+   {
+    "say": "First, her rate becomes three times as great. In the same y minutes, she folds three times as many flyers. So x times three, three x.",
+    "at": [
+     "First, her rate",
+     "In the same y minutes",
+     "she folds three",
+     "So x times three"
+    ]
+   },
+   {
+    "say": "Like in the lesson, the time is fixed, so the rate and the work go the same way.",
+    "at": [
+     "Like in the"
+    ]
+   },
+   {
+    "say": "Now the time changes from y to five y. That's times five.",
+    "at": [
+     "from y to five y",
+     "That's times five"
+    ]
+   },
+   {
+    "say": "Her new rate stays the same now. So the work goes the same way as the time, times five. Three x times five is fifteen x.",
+    "at": [
+     "Her new rate",
+     "Three x times five",
+     "fifteen x."
+    ]
+   },
+   {
+    "say": "Like in the lesson, two changes multiply. Three times five is fifteen.",
+    "at": [
+     "Like in the"
+    ]
+   },
+   {
+    "say": "Careful with eight x, choice number one. It adds three and five, instead of multiplying them.",
+    "at": [
+     "number one. It",
+     "It adds three and five",
+     "instead of multiplying them"
+    ]
+   },
+   {
+    "say": "So she folds fifteen x flyers. That's choice number three.",
+    "at": [
+     "So she folds",
+     "number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way, with the triangle value from topic twenty-two. We start again from the givens. With the new rate, she folds three x flyers in y minutes. And we ask about five y minutes.",
+    "at": [
+     "Now the",
+     "the givens. With",
+     "she folds three x flyers",
+     "she folds three x flyers",
+     "in y minutes",
+     "And we ask about five y"
+    ]
+   },
+   {
+    "say": "Remember, we multiply along the diagonal, and divide by what's left. On top, five y times three x. At the bottom, y.",
+    "at": [
+     "we multiply along the diagonal",
+     "and divide by",
+     "On top, five y times three x",
+     "three x. At"
+    ]
+   },
+   {
+    "say": "The y on top and the y at the bottom cancel. Three x times five is fifteen x.",
+    "at": [
+     "Three x times five is fifteen x"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way, with the formula from the lesson. The rate is the work divided by the time. She folds x flyers in y minutes, so her rate is x over y flyers a minute.",
+    "at": [
+     "Now the",
+     "so her rate is x over y"
+    ]
+   },
+   {
+    "say": "Three times as great is three x over y.",
+    "at": [
+     "Three times as great is three x over y",
+     "three x over"
+    ]
+   },
+   {
+    "say": "The work is the rate times the time. The new time is five y. So the work is three x over y, times five y.",
+    "at": [
+     "So the work is three x over y",
+     "x over y"
+    ]
+   },
+   {
+    "say": "The y's cancel again. Three x times five is fifteen x.",
+    "at": [
+     "Three x times five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in numbers. It's a safety net when the answers have letters. We start again from the givens.",
+    "at": [
+     "Now let's",
+     "the givens"
+    ]
+   },
+   {
+    "say": "Let's say x is six flyers and y is two minutes. We pick two different numbers, not one, and six divides by two. Six divided by two is three flyers a minute.",
+    "at": [
+     "Let's say x is six flyers",
+     "We pick two"
+    ]
+   },
+   {
+    "say": "Her rate becomes three times as great. Three times three is nine flyers a minute.",
+    "at": [
+     "Three times three is nine",
+     "flyers a minute"
+    ]
+   },
+   {
+    "say": "The time is five y. Five times two is ten minutes.",
+    "at": [
+     "Five times two is ten"
+    ]
+   },
+   {
+    "say": "Nine flyers a minute for ten minutes. Nine times ten is ninety flyers. So the answer must be ninety when x is six.",
+    "at": [
+     "Nine flyers a",
+     "Nine times ten is ninety",
+     "So the answer"
+    ]
+   },
+   {
+    "say": "Choice number one says eight x. Eight times six is forty-eight, not ninety. Out.",
+    "at": [
+     "number one says",
+     "Eight times six",
+     "not ninety. Out"
+    ]
+   },
+   {
+    "say": "Choice number two says five x over three. Five times six is thirty. Then thirty divided by three is ten. Out.",
+    "at": [
+     "number two says",
+     "Five times six is thirty",
+     "divided by three is ten. Out"
+    ]
+   },
+   {
+    "say": "Choice number three says fifteen x. Fifteen times six is ninety. That's our number.",
+    "at": [
+     "number three says",
+     "Fifteen times six is ninety",
+     "That's our number"
+    ]
+   },
+   {
+    "say": "Choice number four says three x. Three times six is eighteen. Out.",
+    "at": [
+     "number four says",
+     "Three times six is eighteen",
+     "is eighteen. Out"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

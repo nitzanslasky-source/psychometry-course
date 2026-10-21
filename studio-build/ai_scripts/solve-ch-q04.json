@@ -1,0 +1,126 @@
+{
+ "videoId": "solve-ch-q04",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Which of the following statements is necessarily true?",
+    "voice": "calm",
+    "at": [
+     "Which of the following"
+    ],
+    "pause": 0.5
+   },
+   "Necessarily true means true with no exception. Every sample has to follow it.",
+   "Usually we'd read the first choice and go to the chart. But first, let's read all four choices together. We'll solve it in two different ways. First with an insight, and then by checking each planet.",
+   {
+    "say": "Choice number one says, on Venus, the higher the carbon, the higher the hydrogen. Choice number two says, on Neptune, the higher the carbon, the lower the hydrogen.",
+    "at": [
+     "Choice number one says",
+     "Venus, the higher",
+     "Choice number two says",
+     "Neptune, the higher"
+    ]
+   },
+   {
+    "say": "Choice number three says the same as choice number one, on Mercury. And choice number four says, on Saturn, the lower the carbon, the higher the hydrogen.",
+    "at": [
+     "Choice number three says",
+     "same as choice",
+     "number one, on",
+     "And choice number four",
+     "on Saturn, the"
+    ]
+   },
+   {
+    "say": "So it's the same idea every time. One planet, and a steady link between carbon and hydrogen.",
+    "at": [
+     "the same idea every time",
+     "One planet, and"
+    ]
+   },
+   "A steady link means the samples of that planet form a line, going up or going down. Is there such a planet? Let's look at the whole chart.",
+   {
+    "say": "One planet jumps out. The Mercury dots form a straight line going up. More carbon, and more hydrogen too.",
+    "at": [
+     "One planet jumps out",
+     "form a straight line",
+     "More carbon, and"
+    ]
+   },
+   {
+    "say": "The other planets are more like clouds, with no clear line. So choice number three looks right. Now let's check it properly.",
+    "at": [
+     "number three looks"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now we check each planet, from the givens. Choice number one, Venus, the squares. Is it true that more carbon means more hydrogen?",
+    "at": [
+     "the givens. Choice",
+     "Choice number one, Venus",
+     "squares. Is it"
+    ]
+   },
+   {
+    "say": "From ten to thirteen percent carbon, the hydrogen goes up. But from thirteen to sixteen, it goes down. So it's not steady. Out.",
+    "at": [
+     "From ten to thirteen",
+     "carbon, the hydrogen",
+     "it goes down",
+     "So it's not steady"
+    ]
+   },
+   {
+    "say": "Choice number two, Neptune, the rings. More carbon, less hydrogen? Almost all the way, yes. But careful.",
+    "at": [
+     "Choice number two, Neptune",
+     "rings. More carbon"
+    ]
+   },
+   {
+    "say": "From forty-six to fifty-two percent carbon, the hydrogen goes up, from twelve to sixteen percent.",
+    "at": [
+     "From forty-six to fifty-two",
+     "the hydrogen goes up",
+     "twelve to sixteen"
+    ]
+   },
+   {
+    "say": "Necessarily means no exception. One exception is enough, so it's out.",
+    "at": [
+     "One exception is enough",
+     "so it's out"
+    ]
+   },
+   {
+    "say": "Choice number four, Saturn, the triangles. Less carbon, more hydrogen? From seventeen down to eight percent carbon, the hydrogen goes down too, from thirty-three to twenty-six. Out.",
+    "at": [
+     "Choice number four, Saturn",
+     "triangles. Less carbon",
+     "From seventeen down to eight",
+     "the hydrogen goes down too",
+     "from thirty-three to",
+     "twenty-six. Out"
+    ]
+   },
+   {
+    "say": "And Mercury, choice number three. Every step to the right is also a step up. No exception.",
+    "at": [
+     "number three. Every",
+     "Every step to the right",
+     "Every step to the right",
+     "is also a"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

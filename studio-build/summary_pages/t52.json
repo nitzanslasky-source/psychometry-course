@@ -1,0 +1,221 @@
+{
+ "_about": "Topic 52 summary page (replaces the ch52-summary video). Content = the topic-52 scripts (math_patches/_ai_vis_t52.py), the Hebrew lessons (charts subtitles seg01-seg11) and the memory card mem-ch52-chart-types. Build: python3 summary_pages.py 52. The chart data are the course's own.",
+ "topic": 52,
+ "replaces": "ch52-summary",
+ "intro": "Every quantitative section has **one chart or one table** with $4$ or $5$ questions (about $5$ to $6$ minutes). Spend the **first $1$ to $1\\frac12$ minutes on the page**: the explanation, **the example checked in the chart**, the units, the key and every note. Charts are **drawn exactly to scale**, so most questions are solved **by eye**.",
+ "figures": {
+  "set1": {
+   "builder": "q.ch-q02",
+   "args": []
+  }
+ },
+ "sections": [
+  {
+   "title": "Reading the page",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Step",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Check the example in the chart. It doesn't match? Read again slowly; still not? Leave the set for the end.",
+       "\"In 2010, 60 thousand vehicles were sold\": the 2010 bar reaches $60$"
+      ],
+      [
+       "Units: thousands, hundreds, percent",
+       "$90$ on a thousands axis $=90{,}000$; $\\;40$ on a percent axis $=40\\%$"
+      ],
+      [
+       "Every note is there for a reason",
+       "\"The exact location of each shape is its centre\""
+      ],
+      [
+       "The questions go from easy to hard; the first one pulls out one value",
+       "2011: $80$ thousand"
+      ],
+      [
+       "A set at the start or the middle of the section: solve it when you reach it",
+       "it is usually easier than the questions around it"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "The chart types",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Type",
+      "How to read it",
+      "Its trap"
+     ],
+     "rows": [
+      [
+       "Table",
+       "the row and the column cross at the value",
+       "who is the whole? (after \"of\" comes the whole)"
+      ],
+      [
+       "Points on axes",
+       "up from the category, across to the axis; the key says which mark",
+       "a Z on the axis: that part is not to scale"
+      ],
+      [
+       "Line graph",
+       "values **only at the marked points**; the line shows the trend",
+       "there is no \"2010 and a half\""
+      ],
+      [
+       "Bar chart",
+       "the height is the value; bars can be side by side, inside each other, stacked, or horizontal",
+       "stacked: a part is **the gap** ($110-60=50$), not the top"
+      ],
+      [
+       "Continuous line",
+       "**every** point of the line is a measurement",
+       "a steep slope from a high start is a small relative rise"
+      ],
+      [
+       "Range chart",
+       "bottom $=$ lowest, top $=$ highest, the bold line $=$ the mean",
+       "the mean is not the middle of the bar"
+      ],
+      [
+       "Regions chart",
+       "find the point of the two values; its area gives the answer",
+       "read the units of the numbers inside"
+      ],
+      [
+       "Circle chart",
+       "a chart on axes bent round: the circles are the values",
+       "a dark area $=$ where **most** are, not all"
+      ],
+      [
+       "Cumulative graph",
+       "each point $=$ everything up to it; one period $=$ this point $-$ the one before",
+       "the last point is the total, \"up to June\""
+      ],
+      [
+       "Change graph",
+       "each point $=$ the change from the period before",
+       "ignore the line, look only at the points"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Tools that come back",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Tool",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Count past a value: draw a line at it, count what is beyond; a point **on** the line is not more",
+       "more than $50$ thousand privately owned: only $2013$"
+      ],
+      [
+       "Compare by eye: lengths, corners, slopes",
+       "the longest range line; the bottom right corner"
+      ],
+      [
+       "A steeper line $=$ a bigger change",
+       "$+10$ vs $+15$: the steeper part"
+      ],
+      [
+       "Mini-graphs as choices: check only where they differ, edges first",
+       "below $10\\%$: $4$ samples"
+      ],
+      [
+       "Most, least: the biggest income and the smallest cost",
+       "$7{,}500-2{,}500=5{,}000$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Other topics inside a chart",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Topic",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Average: the sum $\\div$ how many (symmetric numbers: the middle)",
+       "$60, 80, 80, 100$: $\\;80$"
+      ],
+      [
+       "Percent of the whole",
+       "$\\frac{40}{60}=66\\frac23\\%$; $\\;\\frac58=62.5\\%$"
+      ],
+      [
+       "Overlap: the four squares",
+       "$40-4=36$, $\\;45-36=9$"
+      ],
+      [
+       "A percent of a bar",
+       "$75\\%$ of $400=300$"
+      ],
+      [
+       "Weighted average: nearer the heavier group",
+       "$50\\%$ at $150$: below $250$ ($225$)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "class": "traps",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "Reading the wrong axis (carbon or hydrogen?): circle the key word.",
+      "Your answer is not a choice: stop and check the axis, the key, the question.",
+      "A shape that touches the line: it counts at its centre.",
+      "\"Three or more\" includes exactly three.",
+      "Dividing by $5$ instead of $6$ years ($2017$ to $2022$ is $6$ years).",
+      "Shared guests belong to both sides; \"and not from the groom's side\" leaves them out."
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "(60+80+80+100)/4 == 80",
+  "40/60 == 2/3",
+  "50/80 == 5/8",
+  "5*12.5 == 62.5",
+  "45-(40-4) == 9",
+  "110-60 == 50",
+  "7.5-2.5 == 5",
+  "4.5-4.5 == 0",
+  "70-50 == 20",
+  "75+5+5+0-10 == 75",
+  "3*80000+2*50000+20000 == 360000",
+  "360000/6 == 60000",
+  "(200*150+100*250+100*350)/400 == 225",
+  "0.75*400 == 300",
+  "60/5 == 12",
+  "100/15 < 10"
+ ]
+}

@@ -1,0 +1,183 @@
+{
+ "videoId": "ch52-cumulative",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now the cumulative graph. Cumulative means adding up.",
+   "In this graph, each point is not its own value. It's the sum of everything up to it."
+  ],
+  [
+   {
+    "say": "This graph shows the cumulative income of a company, Pixeltech, in the first half of two thousand thirteen.",
+    "at": [
+     "cumulative income of"
+    ]
+   },
+   "Across the bottom, the months. Going up, the cumulative income, in thousands of shekels. So eighty means eighty thousand shekels.",
+   {
+    "say": "The example says, Pixeltech's income in May was twenty thousand shekels.",
+    "at": [
+     "The example says",
+     "in May was"
+    ]
+   },
+   {
+    "say": "Let's check. We go to May, and up to the line. We get to seventy. Seventy, not twenty. Why?",
+    "at": [
+     "We go to May",
+     "up to the",
+     "Seventy, not twenty"
+    ]
+   },
+   {
+    "say": "Because it's cumulative. Each point is the sum of everything up to it.",
+    "at": [
+     "Each point is the sum",
+     "of everything up"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So the seventy at May is all the income from January to May together.",
+    "at": [
+     "all the income from January",
+     "from January to May together"
+    ]
+   },
+   {
+    "say": "And the fifty at April is all the income up to April.",
+    "at": [
+     "April is all",
+     "up to April"
+    ]
+   },
+   {
+    "say": "How much came in May alone? What was added from April to May. Seventy minus fifty is twenty. That's the twenty of the example.",
+    "at": [
+     "How much came",
+     "Seventy minus fifty",
+     "Seventy minus fifty",
+     "That's the twenty"
+    ]
+   },
+   {
+    "say": "Let's try March. At March it's fifty, and at February it's twenty. Fifty minus twenty is thirty. So thirty thousand came in March.",
+    "at": [
+     "Fifty minus twenty",
+     "So thirty thousand"
+    ]
+   },
+   {
+    "say": "So one month is this point, minus the point before it.",
+    "at": [
+     "this point, minus"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Think of a bank account that we only put money into. It started at zero.",
+    "at": [
+     "account that we"
+    ]
+   },
+   {
+    "say": "In January we put in ten thousand. The balance is ten.",
+    "at": [
+     "In January",
+     "The balance is ten"
+    ]
+   },
+   {
+    "say": "In February we put in ten more. The balance is twenty.",
+    "at": [
+     "In February we",
+     "The balance is twenty"
+    ]
+   },
+   {
+    "say": "In March, thirty more. The balance is fifty.",
+    "at": [
+     "The balance is fifty"
+    ]
+   },
+   {
+    "say": "In April we put in nothing. The balance stays fifty.",
+    "at": [
+     "In April we",
+     "The balance stays fifty"
+    ]
+   },
+   {
+    "say": "And in May, twenty more. The balance is seventy. The graph shows the balance, not what we put in each month.",
+    "at": [
+     "And in May",
+     "The balance is seventy",
+     "not what we"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's a sample question. In which month did Pixeltech have no income at all?",
+    "at": [
+     "In which month",
+     "have no income"
+    ]
+   },
+   {
+    "say": "We can see it straight away. From March to April the line is flat.",
+    "at": [
+     "the line is flat"
+    ]
+   },
+   {
+    "say": "Flat means nothing was added. Up to March, fifty. Up to April, also fifty. Fifty minus fifty is zero.",
+    "at": [
+     "nothing was added",
+     "Up to April",
+     "Fifty minus fifty"
+    ]
+   },
+   {
+    "say": "So in April there was no income. The answer is April.",
+    "at": [
+     "So in April"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more question. What was the total income in all the months?",
+    "at": [
+     "What was the total income",
+     "in all the"
+    ]
+   },
+   "Do we add January, February, March, and so on? No. The graph already adds them up.",
+   {
+    "say": "The last point is the total. At June it's eighty, so eighty thousand shekels.",
+    "at": [
+     "The last point is the total",
+     "At June",
+     "eighty thousand shekels"
+    ]
+   },
+   {
+    "say": "Careful, eighty is not the income in June. It's everything up to June.",
+    "at": [
+     "Careful, eighty is",
+     "up to June"
+    ]
+   },
+   {
+    "say": "The cumulative graph is not very common. But it's better to meet it here than for the first time on the exam.",
+    "at": [
+     "The cumulative graph"
+    ]
+   },
+   "I'll see you in the next video."
+  ]
+ ]
+}

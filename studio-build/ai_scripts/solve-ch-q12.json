@@ -1,0 +1,58 @@
+{
+ "videoId": "solve-ch-q12",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "How many of the guests at Tuesday's wedding were from the bride's side, and not from the groom's side?",
+    "voice": "calm",
+    "at": [
+     "How many of the guests"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "What does and not from the groom's side mean? It means not the shared guests. So only the bride's side only.",
+    "at": [
+     "It means not the shared guests",
+     "So only the"
+    ]
+   },
+   {
+    "say": "Tuesday's bar reaches five hundred. So five hundred guests.",
+    "at": [
+     "Tuesday's bar reaches",
+     "So five hundred"
+    ]
+   },
+   {
+    "say": "In Tuesday's pie, the bride's side only is fifty percent.",
+    "at": [
+     "the bride's side only is fifty"
+    ]
+   },
+   {
+    "say": "So it's fifty percent of five hundred. Fifty percent is a half, and half of five hundred is two hundred fifty.",
+    "at": [
+     "it's fifty percent of five hundred",
+     "hundred. Fifty percent",
+     "half of five hundred",
+     "two hundred fifty"
+    ]
+   },
+   {
+    "say": "Careful, three hundred seventy-five adds the shared guests. That's seventy-five percent, and the question left them out.",
+    "at": [
+     "three hundred seventy-five",
+     "the question left"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

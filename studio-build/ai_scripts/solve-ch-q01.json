@@ -1,0 +1,124 @@
+{
+ "videoId": "solve-ch-q01",
+ "style": "the teacher reads it herself (Reading Studio), topic-52 scripts (2026-10-21): math_patches/_ai_vis_t52.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37, W1-W21 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Here's our first chart set. Before the questions, let's read the page.",
+   {
+    "say": "The graph shows the percent of carbon and the percent of hydrogen in soil samples from five planets. Each shape is one sample, and the key tells us its planet.",
+    "at": [
+     "percent of carbon"
+    ]
+   },
+   {
+    "say": "Carbon is on the bottom axis, going across. Hydrogen is on the side axis, going up.",
+    "at": [
+     "Carbon is on the bottom",
+     "axis, going across",
+     "Hydrogen is on the side",
+     "axis, going up"
+    ]
+   },
+   {
+    "say": "And there's a note. The exact place of each shape is its centre. Let's remember it, because we'll need it soon.",
+    "at": [
+     "its centre",
+     "Let's remember it"
+    ]
+   },
+   {
+    "say": "There's no example on this page. So let's check ourselves with one shape. The ring at the bottom right is a Neptune sample.",
+    "at": [
+     "The ring at the bottom right",
+     "right is a"
+    ]
+   },
+   "We go down from it to the carbon axis, a bit under seventy-five. And across to the hydrogen axis, about three. So about seventy-four percent carbon, and three percent hydrogen."
+  ],
+  [
+   {
+    "say": "Now the first question. In how many of the samples is the percent of carbon greater than sixty percent?",
+    "voice": "calm",
+    "at": [
+     "In how many of the samples"
+    ],
+    "pause": 0.5
+   },
+   "So they ask for a count. And it's about carbon, the bottom axis.",
+   {
+    "say": "Like in the lesson, to count what's more than a value, we draw a line at that value. Carbon goes across, so this time the line stands up, at sixty percent.",
+    "at": [
+     "the line stands up"
+    ]
+   },
+   {
+    "say": "Now we count only the shapes to the right of the line. First the Mercury dots. One, two, three.",
+    "at": [
+     "Now we count",
+     "First the Mercury dots",
+     "One, two, three"
+    ]
+   },
+   {
+    "say": "Then the Neptune rings. Four, five, six.",
+    "at": [
+     "Then the Neptune rings",
+     "Four, five, six"
+    ]
+   },
+   {
+    "say": "What about the ring that touches the line? Its edge reaches the line. But the note says a shape is at its centre. And its centre is at fifty-nine percent, left of the line. So it doesn't count.",
+    "at": [
+     "What about the",
+     "its centre is at fifty-nine",
+     "percent, left of",
+     "it doesn't count"
+    ]
+   },
+   {
+    "say": "If we counted it, we'd get seven. That's choice number one, the trap.",
+    "at": [
+     "If we counted",
+     "That's choice number one"
+    ]
+   },
+   {
+    "say": "So three Mercury samples and three Neptune samples. Three plus three is six. That's choice number two.",
+    "at": [
+     "Three plus three",
+     "number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more thing that happens under pressure. Instead of sixty percent carbon, we check sixty percent hydrogen.",
+    "at": [
+     "happens under pressure",
+     "we check sixty percent hydrogen"
+    ]
+   },
+   {
+    "say": "Above sixty percent hydrogen there's only one sample. And one is not among the choices.",
+    "at": [
+     "there's only one sample",
+     "only one",
+     "And one is"
+    ]
+   },
+   {
+    "say": "So if our answer isn't one of the choices, we don't panic. We stop, and we check the key, the axis, and exactly what they asked.",
+    "at": [
+     "we don't panic",
+     "We stop, and"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}
