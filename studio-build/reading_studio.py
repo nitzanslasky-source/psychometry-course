@@ -311,6 +311,8 @@ def math_display(text):
     for w, g in (('a half', '½'), ('one half', '½'), ('a third', '⅓'), ('one third', '⅓'), ('two thirds', '⅔'), ('2/3', '⅔'),
                  ('a quarter', '¼'), ('one quarter', '¼'), ('three quarters', '¾')):
         s = re.sub(r'\b(\d+) and %s( percent)?' % re.escape(w), lambda m, g=g: m.group(1) + g + ('%' if m.group(2) else ''), s)
+    # 2026-10-21 (topic 34): spoken "times the bracket, n minus two" -> × (n − 2)
+    s = re.sub(r'\btimes the bracket, (\S+(?: [+−] [^\s,.]+)+)', r'× (\1)', s)
     return s
 
 

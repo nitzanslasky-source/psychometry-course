@@ -1,0 +1,131 @@
+{
+ "videoId": "solve-wp25-p18",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The average of x, y and eleven is four greater than the average of y, z and seventeen. What is x minus z?",
+    "voice": "calm",
+    "at": [
+     "The average of x, y and eleven"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we have two averages of three numbers each, and y is in both. They ask for x minus z.",
+    "at": [
+     "So we have two averages",
+     "ask for x"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways, the math way, and then by plugging in numbers.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. Each average is a sum of three numbers, divided by three. And the first one is four more than the second.",
+    "at": [
+     "And the first one is four"
+    ]
+   },
+   {
+    "say": "Like in the lesson, we turn the averages into sums. We multiply both sides by three. Four times three is twelve. So the first sum is twelve more than the second sum.",
+    "at": [
+     "Like in the",
+     "So the first sum is twelve more"
+    ]
+   },
+   {
+    "say": "y is on both sides, so we take it away. And seventeen plus twelve is twenty-nine.",
+    "at": [
+     "y is on",
+     "seventeen plus twelve"
+    ]
+   },
+   {
+    "say": "Now we take z and eleven away from both sides. Twenty-nine minus eleven is eighteen. So x minus z is eighteen.",
+    "at": [
+     "Now we take",
+     "Twenty-nine minus eleven",
+     "So x minus z is eighteen"
+    ]
+   },
+   {
+    "say": "That's choice number two. Careful with four, choice number four. Four is the gap between the averages. The gap between the sums is three times bigger.",
+    "at": [
+     "number two. Careful",
+     "number four. Four",
+     "Four is the gap",
+     "the sums is",
+     "three times bigger"
+    ]
+   },
+   {
+    "say": "And six, choice number three, is only seventeen minus eleven. It forgets the four.",
+    "at": [
+     "number three, is",
+     "is only seventeen minus eleven",
+     "It forgets the four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in numbers. We start again from the givens. There's one condition and three letters. So we can pick y and z, and then x must fit the condition.",
+    "at": [
+     "Now let's",
+     "the givens. There's"
+    ]
+   },
+   {
+    "say": "Let's pick y as zero, so it adds nothing. And z as ten, a round number.",
+    "at": [
+     "Let's pick y as zero",
+     "so it adds"
+    ]
+   },
+   {
+    "say": "The second average is of zero, ten and seventeen. Zero plus ten plus seventeen is twenty-seven. Twenty-seven divided by three is nine.",
+    "at": [
+     "Zero plus ten plus seventeen",
+     "Twenty-seven divided by three"
+    ]
+   },
+   {
+    "say": "The first average is four more. Nine plus four is thirteen.",
+    "at": [
+     "The first average",
+     "Nine plus four"
+    ]
+   },
+   {
+    "say": "Like in the lesson, the sum is how many times the average. Three times thirteen is thirty-nine.",
+    "at": [
+     "Like in the",
+     "Three times thirteen"
+    ]
+   },
+   {
+    "say": "The first sum is x plus zero plus eleven. So x is thirty-nine minus eleven, twenty-eight.",
+    "at": [
+     "The first sum",
+     "So x is thirty-nine minus eleven"
+    ]
+   },
+   {
+    "say": "So x minus z is twenty-eight minus ten, eighteen.",
+    "at": [
+     "twenty-eight minus ten"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

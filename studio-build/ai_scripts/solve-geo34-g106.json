@@ -1,0 +1,115 @@
+{
+ "videoId": "solve-geo34-g106",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In pentagon A B C D E, angles B, C and E are right angles, and A B is parallel to C D. A B, B C and A E are each fifteen, and D E is eight. What is the area of the pentagon?",
+    "voice": "calm",
+    "at": [
+     "In pentagon A B C D E",
+     "A B, B C and A E",
+     "What is the"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "This pentagon is not regular. It has a few right angles, but its sides are not all equal. And there's no area formula for a polygon. So like in the lesson, we cut it into shapes we know.",
+    "at": [
+     "angles, but its",
+     "for a polygon"
+    ]
+   },
+   {
+    "say": "Let's draw a line from A to D. Now look at triangle A E D. The angle at E is a right angle, so it's a right triangle. Its legs are A E, fifteen, and E D, eight.",
+    "at": [
+     "draw a line from A to D",
+     "Now look at triangle A E D",
+     "The angle at"
+    ]
+   },
+   {
+    "say": "The area of a right triangle is one leg times the other, divided by two. Fifteen times eight is one hundred twenty. Half of that is sixty.",
+    "at": [
+     "Fifteen times eight",
+     "Half of that is sixty"
+    ]
+   },
+   {
+    "say": "What's left is A B C D. A B is parallel to C D, so it's a trapezoid. For its area we need both bases and the height. We have the top base, fifteen, and the height, B C, fifteen. But we don't have the bottom base, C D.",
+    "at": [
+     "What's left is A B C D",
+     "A B is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's work with what we have. Triangle A E D has legs eight and fifteen. Remember the triple eight, fifteen, seventeen. So the hypotenuse, A D, is seventeen.",
+    "at": [
+     "So let's work with what we have",
+     "Triangle A E",
+     "Remember the triple",
+     "seventeen. So the",
+     "is seventeen"
+    ]
+   },
+   {
+    "say": "Now let's drop a height from A down to C D. Call its foot H. A B C H has right angles at B, at C and at H. So the fourth angle, at A, is a right angle too. And A B is equal to B C. So A B C H is a square with side fifteen. A H is fifteen, and H C is fifteen.",
+    "at": [
+     "drop a height from A",
+     "down to C",
+     "So A B C H is a square",
+     "is a square",
+     "A H is fifteen",
+     "H C is"
+    ]
+   },
+   {
+    "say": "Now look at triangle A H D. It's a right triangle, because A H is a height. Its hypotenuse is A D, seventeen, and one leg is A H, fifteen. That's eight, fifteen, seventeen again. So the other leg, H D, is eight.",
+    "at": [
+     "Now look at triangle A H D",
+     "A H is",
+     "So the other leg",
+     "D, is eight"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the pentagon is made of three shapes we know. The square A B C H is fifteen times fifteen, two hundred twenty-five.",
+    "at": [
+     "three shapes we know",
+     "The square A B C H",
+     "fifteen times fifteen"
+    ]
+   },
+   {
+    "say": "Triangle A H D has legs fifteen and eight. So its area is fifteen times eight, divided by two, sixty.",
+    "at": [
+     "Triangle A H D",
+     "legs fifteen and",
+     "divided by two, sixty"
+    ]
+   },
+   {
+    "say": "Careful here. Two hundred twenty-five plus sixty is two hundred eighty-five, and that's choice number four. But that's only the trapezoid A B C D. Triangle A E D is outside it, and we still need to add it.",
+    "at": [
+     "Two hundred twenty-five plus sixty",
+     "is two hundred",
+     "number four. But",
+     "Triangle A E D is outside it",
+     "outside it, and"
+    ]
+   },
+   {
+    "say": "Triangle A E D is sixty too, as we found. So the area is two hundred twenty-five, plus sixty, plus sixty. Two hundred twenty-five plus one hundred twenty is three hundred forty-five. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "So the area is two hundred twenty-five",
+     "Two hundred twenty-five plus",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

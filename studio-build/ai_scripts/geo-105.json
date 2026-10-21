@@ -1,0 +1,202 @@
+{
+ "videoId": "geo-105",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now let's find the area of a polygon. Here's the truth. There's no area formula for a polygon. Only the triangle has one. It's a side, times the height to that side, divided by two."
+  ],
+  [
+   {
+    "say": "Even a general quadrilateral has no formula. We know the special ones, like the square, the rectangle and the trapezoid. But for just any quadrilateral, there's no formula. So there are two ways. We cut the polygon into shapes we know. Or we see it as a bigger shape, minus the pieces that are missing.",
+    "at": [
+     "has no formula"
+    ]
+   },
+   {
+    "say": "Let's start with an easy one. This pentagon looks like a house. Its bottom part is a square with side six. On top there's a triangle, and its height is four.",
+    "at": [
+     "This pentagon looks like a house",
+     "Its bottom part",
+     "its height is four"
+    ]
+   },
+   {
+    "say": "We draw one line, and we get two shapes we know. The square is six times six, thirty-six. The triangle is its base, six, times its height, four, divided by two. Six times four is twenty-four, and half of that is twelve.",
+    "at": [
+     "We draw one line",
+     "we get two",
+     "The square is six times six",
+     "thirty-six. The",
+     "The triangle is its base",
+     "six, times its",
+     "Six times four is twenty-four",
+     "and half of"
+    ]
+   },
+   {
+    "say": "So the area of the pentagon is thirty-six plus twelve, forty-eight.",
+    "at": [
+     "thirty-six plus twelve"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's a hexagon shaped like the letter L. All its angles are right angles. The bottom is ten long, and the left side is six high. The top is four long, and the short side on the right is three.",
+    "at": [
+     "Here's a hexagon shaped like the letter L",
+     "the letter L"
+    ]
+   },
+   {
+    "say": "The first way is to cut it. One line across gives two rectangles. The bottom one is ten long and three high. Ten times three is thirty.",
+    "at": [
+     "One line across",
+     "The bottom one",
+     "long and three",
+     "Ten times three is thirty"
+    ]
+   },
+   {
+    "say": "The top one is four long. Its height is the left side, six, minus the three we used. Six minus three is three. So it's four times three, twelve. Together, thirty plus twelve is forty-two.",
+    "at": [
+     "The top one",
+     "Six minus three is three",
+     "So it's four times three",
+     "four times three, twelve",
+     "thirty plus twelve"
+    ]
+   },
+   {
+    "say": "The second way is a big shape minus the missing piece. Let's complete the hexagon to a rectangle, ten by six. Ten times six is sixty.",
+    "at": [
+     "The second way",
+     "big shape minus",
+     "complete the hexagon to a rectangle",
+     "rectangle, ten by",
+     "Ten times six is sixty"
+    ]
+   },
+   {
+    "say": "The missing corner is ten minus four, six long, and it's three high. Six times three is eighteen. So the area is sixty minus eighteen, forty-two. The same answer.",
+    "at": [
+     "ten minus four",
+     "and it's three high",
+     "Six times three is eighteen",
+     "So the area",
+     "sixty minus eighteen"
+    ]
+   },
+   {
+    "say": "So when a polygon has no formula, look for lines that cut it into shapes you know. Or close it into a big shape, and take away what's missing.",
+    "at": [
+     "So when a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "For two regular polygons, there's one cut we always use. The first one is the regular hexagon. Like in the first lesson, we cut it into six equilateral triangles.",
+    "at": [
+     "there's one cut",
+     "The first one is the regular hexagon",
+     "regular hexagon. Like",
+     "six equilateral triangles"
+    ]
+   },
+   {
+    "say": "Remember the area of an equilateral triangle with side a. It's a squared, times root three, divided by four.",
+    "at": [
+     "Remember the area",
+     "equilateral triangle with"
+    ]
+   },
+   {
+    "say": "Let's take a hexagon with side four. One triangle is four squared, sixteen, times root three, divided by four. Sixteen divided by four is four. So one triangle is four root three.",
+    "at": [
+     "One triangle is four squared",
+     "sixteen, times root",
+     "Sixteen divided by four",
+     "So one triangle"
+    ]
+   },
+   {
+    "say": "The hexagon has six triangles. Six times four root three is twenty-four root three. Careful here. Many students stop at one triangle. But four root three is only one sixth of the hexagon.",
+    "at": [
+     "The hexagon has six triangles",
+     "Six times four root three",
+     "is twenty-four root"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The second one is the regular octagon. We cut a rectangle off the top and the bottom, and off the two sides. So we get a square in the middle, four rectangles, and four small triangles in the corners.",
+    "at": [
+     "The second one is the regular octagon",
+     "We cut a rectangle",
+     "the top and",
+     "So we get a square",
+     "in the middle"
+    ]
+   },
+   {
+    "say": "Why is each corner triangle a right triangle? The octagon's angle is one hundred thirty-five. The rectangle takes ninety of it. One hundred thirty-five minus ninety is forty-five. So the triangle has two angles of forty-five, and the third one is ninety. It's a silver triangle, forty-five, forty-five, ninety.",
+    "at": [
+     "The octagon's angle is one hundred thirty-five",
+     "The rectangle takes",
+     "One hundred thirty-five minus ninety",
+     "So the triangle"
+    ]
+   },
+   {
+    "say": "Let's take an octagon with side two. The square in the middle has side two, so its area is two times two, four.",
+    "at": [
+     "The square in the middle",
+     "has side two",
+     "two times two, four"
+    ]
+   },
+   {
+    "say": "The hypotenuse of each corner triangle is a side of the octagon, two. In a silver triangle, we go from the hypotenuse to a leg by dividing by root two. Two divided by root two is root two.",
+    "at": [
+     "The hypotenuse of",
+     "Two divided by root two",
+     "is root two"
+    ]
+   },
+   {
+    "say": "So the area of one triangle is root two times root two, divided by two. Root two times root two is two, and half of that is one. Four triangles make four.",
+    "at": [
+     "Root two times root two is two",
+     "is two, and",
+     "Four triangles make four"
+    ]
+   },
+   {
+    "say": "That's exactly the square. Put the four triangles together and they fill the square, like a square cut by its two diagonals. This is true in every regular octagon.",
+    "at": [
+     "Put the four",
+     "they fill the square",
+     "a square cut"
+    ]
+   },
+   {
+    "say": "Each rectangle is two long, and its width is the leg of a triangle, root two. So it's two root two. Four rectangles make eight root two.",
+    "at": [
+     "Each rectangle is two long",
+     "and its width",
+     "So it's two root two",
+     "Four rectangles make"
+    ]
+   },
+   {
+    "say": "So the octagon is four, plus four, plus eight root two. That's eight plus eight root two. Always cut the octagon like this, even when they ask for only a part of it. And I'll see you in the next video.",
+    "at": [
+     "So the octagon is four",
+     "plus four, plus"
+    ]
+   }
+  ]
+ ]
+}

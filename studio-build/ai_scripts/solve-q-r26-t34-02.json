@@ -1,0 +1,87 @@
+{
+ "videoId": "solve-q-r26-t34-02",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "From one corner of a polygon, exactly seven diagonals can be drawn. How many diagonals does the polygon have in all?",
+    "voice": "calm",
+    "at": [
+     "From one corner of a polygon"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "This is a new kind of question, so let's learn how to count diagonals. We'll do it in two steps. First we find the number of sides. Then we count all the diagonals.",
+    "at": [
+     "kind of question",
+     "number of sides",
+     "count all the"
+    ]
+   },
+   {
+    "say": "Let's start with an easy polygon, a pentagon. A diagonal joins our corner to another corner. But not to itself, and not to its two neighbors, because those lines are sides. So from one corner of a pentagon there are five minus three, two diagonals.",
+    "at": [
+     "a pentagon",
+     "A diagonal joins",
+     "not to its two neighbors",
+     "because those lines",
+     "five minus three, two"
+    ]
+   },
+   {
+    "say": "In a hexagon, six minus three is three diagonals from one corner. So from one corner of a polygon with n sides, there are n minus three diagonals.",
+    "at": [
+     "In a hexagon",
+     "three is three",
+     "So from one corner",
+     "a polygon with"
+    ]
+   },
+   {
+    "say": "In our question there are seven. So n minus three is seven, and n is seven plus three, ten. It's a polygon with ten sides.",
+    "at": [
+     "So n minus three is seven",
+     "seven, and n"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now all the diagonals. Each of the ten corners sends seven diagonals. Ten times seven is seventy.",
+    "at": [
+     "Each of the",
+     "Ten times seven is seventy"
+    ]
+   },
+   {
+    "say": "But careful, seventy is a trap, and it's choice number four. Every diagonal has two ends. So we counted each diagonal twice, once from each end. So we divide by two. Seventy divided by two is thirty-five.",
+    "at": [
+     "a trap, and",
+     "it's choice number four",
+     "Seventy divided by two"
+    ]
+   },
+   {
+    "say": "Let's check this way of counting on the pentagon. Five corners, two diagonals from each. Five times two is ten, and half of that is five. And a pentagon really has five diagonals. They make the star inside it.",
+    "at": [
+     "Let's check this",
+     "Five times two is ten",
+     "and half of",
+     "a pentagon really has",
+     "They make the star"
+    ]
+   },
+   {
+    "say": "And choice number three, forty-five? That's ten times nine, divided by two. It joins every corner to every other corner, so it counts the ten sides too. But sides are not diagonals. Forty-five minus ten is thirty-five again. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "And choice number three",
+     "That's ten times nine",
+     "It joins every",
+     "Forty-five minus ten",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

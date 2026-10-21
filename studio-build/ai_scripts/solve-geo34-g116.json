@@ -1,0 +1,92 @@
+{
+ "videoId": "solve-geo34-g116",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The sum of the interior angles of a polygon is one thousand four hundred forty. How many sides does it have?",
+    "voice": "calm",
+    "at": [
+     "The sum of the interior angles"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we go from the sum back to the number of sides, like in the lesson. We'll solve it in two different ways, the math way, and then by understanding, with an anchor.",
+    "at": [
+     "the sum back"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. The sum of the angles is one hundred eighty times the bracket, n minus two. Here the sum is one thousand four hundred forty. So one hundred eighty times the bracket, n minus two is equal to one thousand four hundred forty.",
+    "at": [
+     "math way. The",
+     "So one hundred eighty times the bracket, n minus two",
+     "the bracket, n minus two is"
+    ]
+   },
+   {
+    "say": "We could open the brackets, but we want the smallest numbers possible. So let's divide first. Both sides end in zero, so let's divide both by ten. Eighteen times the bracket, n minus two is equal to one hundred forty-four.",
+    "at": [
+     "Eighteen times the bracket, n minus two",
+     "minus two is"
+    ]
+   },
+   {
+    "say": "Does one hundred forty-four divide by eighteen? It's hard to see. But both numbers are even, so let's divide both by two. Nine times the bracket, n minus two is equal to seventy-two.",
+    "at": [
+     "Nine times the bracket, n minus two",
+     "minus two is"
+    ]
+   },
+   {
+    "say": "Seventy-two divides by nine, from the times table. Nine times eight is seventy-two. So n minus two is eight.",
+    "at": [
+     "So n minus two is eight"
+    ]
+   },
+   {
+    "say": "Careful here. Eight is n minus two, the number of triangles. It's not the number of sides, and it's choice number four, a trap. n is eight plus two, ten. Choice number three is our answer.",
+    "at": [
+     "Eight is n",
+     "it's choice number four",
+     "n is eight plus two",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now by understanding, with an anchor. Which sums do we know by heart? A triangle is one hundred eighty, and a quadrilateral is three hundred sixty. Like in the lesson, a pentagon is five hundred forty, a hexagon is seven hundred twenty, and an octagon is one thousand eighty.",
+    "at": [
+     "an anchor. Which",
+     "a pentagon is five hundred forty",
+     "forty, a hexagon"
+    ]
+   },
+   {
+    "say": "One thousand four hundred forty isn't one we know. But the octagon is close. And one thousand four hundred forty is bigger, so the polygon has more than eight sides. So choice number four, eight, is out.",
+    "at": [
+     "so the polygon has more than eight sides",
+     "So choice number four, eight, is out"
+    ]
+   },
+   {
+    "say": "Remember, every extra side adds one hundred eighty. Let's start from the octagon and add one hundred eighty. An easy way is to add two hundred and take away twenty. One thousand eighty plus two hundred is one thousand two hundred eighty. Minus twenty is one thousand two hundred sixty. That's nine sides.",
+    "at": [
+     "Remember, every extra",
+     "One thousand eighty plus two hundred",
+     "Minus twenty is"
+    ]
+   },
+   {
+    "say": "Let's add one hundred eighty again. One thousand two hundred sixty plus two hundred is one thousand four hundred sixty. Minus twenty is one thousand four hundred forty. That's our sum, with ten sides. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Let's add one hundred eighty again",
+     "One thousand two",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

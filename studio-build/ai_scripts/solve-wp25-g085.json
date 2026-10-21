@@ -1,0 +1,149 @@
+{
+ "videoId": "solve-wp25-g085",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Omar and Lena take two tests, geography and music. Lena's geography score is six points higher than Omar's. Omar's two-test average is five points higher than Lena's. How much higher is Omar's music score than Lena's?",
+    "voice": "calm",
+    "at": [
+     "Omar and Lena take two tests"
+    ],
+    "pause": 0.5
+   },
+   "So they compare Omar's music score with Lena's music score. That's a lot of words, so let's put them in order with a table.",
+   {
+    "say": "We'll solve it in two different ways, the math way with a table, and then by plugging in numbers.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. Two people and two tests. So we make a row for each person, a column for each test, and a column for the average.",
+    "at": [
+     "So we make a row for each person",
+     "for each person"
+    ]
+   },
+   {
+    "say": "Omar's geography score isn't given, so let's call it g. Lena's geography score is six points higher, so it's g plus six.",
+    "at": [
+     "so let's call it g",
+     "Lena's geography score"
+    ]
+   },
+   {
+    "say": "The music scores aren't given either. Let's call Omar's m, and Lena's L.",
+    "at": [
+     "Let's call Omar's m"
+    ]
+   },
+   {
+    "say": "Each average is the sum of the two tests, divided by two.",
+    "at": [
+     "Each average is the sum",
+     "of the two"
+    ]
+   },
+   {
+    "say": "Omar's average is five more than Lena's. So g plus m over two is equal to g plus six plus L over two, plus five.",
+    "at": [
+     "So g plus m over two",
+     "plus six plus"
+    ]
+   },
+   {
+    "say": "We multiply both sides by two, to get rid of the twos. Five times two is ten.",
+    "at": [
+     "Five times two is ten"
+    ]
+   },
+   {
+    "say": "Now g is on both sides, so we take it away. And six plus ten is sixteen. So m is equal to L plus sixteen.",
+    "at": [
+     "Now g is",
+     "So m is equal to L plus sixteen",
+     "L plus sixteen"
+    ]
+   },
+   {
+    "say": "So Omar's music score is sixteen points higher than Lena's. That's choice number two.",
+    "at": [
+     "number two"
+    ]
+   },
+   {
+    "say": "Careful with eleven, choice number one. That's six plus five. But a lead of five points in the average is a lead of ten points in the sum, because there are two tests.",
+    "at": [
+     "number one. That's",
+     "That's six plus five",
+     "a lead of",
+     "because there are two tests"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in numbers. We start again from the givens, with the same table.",
+    "at": [
+     "Now let's",
+     "with the same table"
+    ]
+   },
+   {
+    "say": "Omar's geography score isn't given, so let's pick a round number, seventy. Lena's is six points higher, seventy-six.",
+    "at": [
+     "so let's pick a round number",
+     "Lena's is six"
+    ]
+   },
+   {
+    "say": "Omar's music score isn't given either. Let's pick seventy again. Why? Because then his average is simply seventy, with no calculation.",
+    "at": [
+     "Let's pick seventy again",
+     "Because then his"
+    ]
+   },
+   {
+    "say": "Omar's average is five points higher than Lena's. So Lena's average is seventy minus five, sixty-five.",
+    "at": [
+     "seventy minus five",
+     "sixty-five"
+    ]
+   },
+   {
+    "say": "Now Lena's music score. Like in the lesson, the average of two numbers is exactly in the middle between them.",
+    "at": [
+     "Like in the"
+    ]
+   },
+   {
+    "say": "Her geography score is seventy-six. Seventy-six minus sixty-five is eleven. So it's eleven above her average.",
+    "at": [
+     "Seventy-six minus sixty-five",
+     "So it's eleven"
+    ]
+   },
+   {
+    "say": "So her music score is eleven below her average. Sixty-five minus eleven is fifty-four.",
+    "at": [
+     "Sixty-five minus eleven",
+     "is fifty-four"
+    ]
+   },
+   {
+    "say": "Now the question. Omar's music score is seventy, and Lena's is fifty-four. Seventy minus fifty-four is sixteen.",
+    "at": [
+     "the question. Omar's",
+     "Seventy minus fifty-four"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

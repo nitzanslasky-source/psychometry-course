@@ -1,0 +1,115 @@
+{
+ "videoId": "wp-086-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with weighted averages, and see a faster way, the seesaw."
+  ],
+  [
+   {
+    "say": "Now a faster way, the seesaw. Remember, the average is the balance point.",
+    "at": [
+     "the seesaw. Remember"
+    ]
+   },
+   "With equal weights, the seesaw balances exactly in the middle. But when one side is heavier, the seesaw tips toward it. To balance it again, we move the pivot, the average, toward the heavy side.",
+   {
+    "say": "How far? Let's go back to Dan. Forty with weight one, and eighty with weight three.",
+    "at": [
+     "Let's go back to Dan",
+     "Forty with weight one",
+     "eighty with weight three"
+    ]
+   },
+   {
+    "say": "The average was seventy. Seventy is thirty from forty, and ten from eighty.",
+    "at": [
+     "The average was seventy",
+     "The average was seventy",
+     "Seventy is thirty from forty",
+     "and ten from"
+    ]
+   },
+   {
+    "say": "So the side of eighty is three times heavier, and it's three times closer. The weights are three to one, and the distances are one to three.",
+    "at": [
+     "The weights are three to one",
+     "one, and the"
+    ]
+   },
+   {
+    "say": "Why? Weight times distance is the same on both sides. Three times ten is thirty. And one times thirty is thirty. That's why the seesaw balances.",
+    "at": [
+     "Three times ten",
+     "one times thirty",
+     "That's why the"
+    ]
+   },
+   {
+    "say": "So the distances are the weights, flipped.",
+    "at": [
+     "So the distances are the weights"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "On the exam, we don't draw a real seesaw. We draw a line. The values go above its ends, and the weights go below.",
+    "at": [
+     "don't draw a"
+    ]
+   },
+   {
+    "say": "For example, a test counts four times as much as homework. Noa got eighty on the test, and thirty on the homework.",
+    "at": [
+     "a test counts four times",
+     "as much as",
+     "Noa got eighty",
+     "Noa got eighty",
+     "test, and thirty",
+     "on the homework"
+    ]
+   },
+   {
+    "say": "The weights are four to one. So the distances are one to four. We cut the gap into four plus one, five equal units.",
+    "at": [
+     "So the distances",
+     "five equal units"
+    ]
+   },
+   {
+    "say": "The gap is eighty minus thirty, fifty. Fifty divided by five is ten. So each unit is ten.",
+    "at": [
+     "eighty minus thirty",
+     "Fifty divided by five",
+     "So each unit"
+    ]
+   },
+   {
+    "say": "The heavy side gets the small part. So the average is one unit from eighty. Eighty minus ten is seventy.",
+    "at": [
+     "So the average is one unit",
+     "unit from eighty",
+     "Eighty minus ten"
+    ]
+   },
+   {
+    "say": "Let's check with the formula. Eighty times four is three hundred twenty, plus thirty is three hundred fifty. Three hundred fifty divided by five is seventy. The same.",
+    "at": [
+     "Let's check with",
+     "Eighty times four",
+     "plus thirty is three hundred fifty",
+     "Three hundred fifty divided",
+     "five is seventy"
+    ]
+   },
+   {
+    "say": "So remember. The heavy side gets the small part of the gap. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "The heavy side gets the small part of the gap",
+     "small part of"
+    ]
+   }
+  ]
+ ]
+}

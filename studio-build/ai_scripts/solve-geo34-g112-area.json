@@ -1,0 +1,91 @@
+{
+ "videoId": "solve-geo34-g112-area",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C D E F is a regular hexagon with side ten. What is the sum of the areas of triangles A B C, C D E and E F A?",
+    "voice": "calm",
+    "at": [
+     "A B C D E F is a regular hexagon",
+     "A B C D E F",
+     "What is the"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we need the three shaded corner triangles together. We'll solve it in two different ways, the long math way, and then by understanding.",
+    "at": [
+     "shaded corner triangles"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. Look at triangle A B C. Its sides B A and B C are ten, and its top angle is one hundred twenty. Let's drop the height from B. It cuts the triangle into two golden triangles, thirty, sixty, ninety, with hypotenuse ten.",
+    "at": [
+     "Let's start with",
+     "B C are",
+     "Let's drop the height from B",
+     "B. It cuts",
+     "two golden triangles",
+     "ninety, with hypotenuse"
+    ]
+   },
+   {
+    "say": "The short leg, across from thirty, is half the hypotenuse. Ten divided by two is five. That's the height. The long leg is five root three. That's half of the base, so the base A C is ten root three.",
+    "at": [
+     "Ten divided by two is five",
+     "five. That's the",
+     "The long leg is five root three",
+     "root three. That's",
+     "so the base A C"
+    ]
+   },
+   {
+    "say": "So the area of A B C is the base, ten root three, times the height, five, divided by two. Ten times five is fifty, and half of that is twenty-five. So it's twenty-five root three. Careful, that's choice number one, but it's only one triangle.",
+    "at": [
+     "So the area",
+     "Ten times five is fifty",
+     "and half of",
+     "that's choice number one"
+    ]
+   },
+   {
+    "say": "There are three triangles. Three times twenty-five root three is seventy-five root three. Choice number three is our answer. It works, but it's long.",
+    "at": [
+     "Three times twenty-five",
+     "is seventy-five root",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now by understanding. Like in the lesson, this is the star partition. Each shaded corner triangle is one sixth of the hexagon. So its area is the same as an equilateral triangle with side ten.",
+    "at": [
+     "Now by understanding",
+     "Like in the",
+     "Each shaded corner triangle",
+     "one sixth of"
+    ]
+   },
+   {
+    "say": "So the shaded area is three times ten squared root three over four. Ten squared is one hundred, and one hundred divided by four is twenty-five. Three times twenty-five root three is seventy-five root three.",
+    "at": [
+     "three times ten squared",
+     "three over four",
+     "Three times twenty-five root three",
+     "is seventy-five root"
+    ]
+   },
+   {
+    "say": "And it makes sense. Three sixths is half of the hexagon, and A C E is the other half. The whole hexagon would be one hundred fifty root three, choice number two, so that's a trap. No heights, no golden triangles. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Three sixths is half of the hexagon",
+     "the hexagon, and",
+     "choice number two, so",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

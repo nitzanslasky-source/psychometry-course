@@ -1,0 +1,153 @@
+{
+ "videoId": "wp-081-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue, and find the biggest and the smallest possible values."
+  ],
+  [
+   {
+    "say": "Now a different kind of question. Five positive whole numbers have an average of ten. What's the biggest possible value of one of them?",
+    "at": [
+     "Five positive whole numbers",
+     "an average of"
+    ]
+   },
+   {
+    "say": "First the sum. Five numbers, average ten. Five times ten is fifty.",
+    "at": [
+     "Five times ten"
+    ]
+   },
+   {
+    "say": "To make one number as big as it can be, we make the other four as small as they can be.",
+    "at": [
+     "To make one"
+    ]
+   },
+   {
+    "say": "The smallest positive whole number is one. So the other four are one each. One plus one plus one plus one is four.",
+    "at": [
+     "One plus one plus one",
+     "plus one is"
+    ]
+   },
+   {
+    "say": "So the big one gets the rest. Fifty minus four is forty-six.",
+    "at": [
+     "Fifty minus four"
+    ]
+   },
+   {
+    "say": "Now careful. If the question says the numbers are different, we can't use four ones. The four smallest different positive whole numbers are one, two, three and four.",
+    "at": [
+     "If the question",
+     "The four smallest different",
+     "whole numbers are"
+    ]
+   },
+   {
+    "say": "One plus two plus three plus four is ten. So the big one is fifty minus ten, forty.",
+    "at": [
+     "One plus two plus three",
+     "plus four is",
+     "fifty minus ten"
+    ]
+   },
+   {
+    "say": "So watch the words positive, whole and different. Each one changes the answer.",
+    "at": [
+     "So watch the words",
+     "whole and different"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And the opposite question. In five days, Dan made twenty-two phone calls. On one day he made more calls than on any other day. At least how many calls did he make on that day?",
+    "at": [
+     "In five days",
+     "twenty-two phone calls"
+    ]
+   },
+   {
+    "say": "The average is twenty-two divided by five. That's more than four and less than five. The busiest day is at least the average, so it's at least five.",
+    "at": [
+     "twenty-two divided by five",
+     "That's more than"
+    ]
+   },
+   {
+    "say": "Let's try five. Then every other day had fewer calls, so at most four.",
+    "at": [
+     "Let's try five",
+     "fewer calls, so"
+    ]
+   },
+   {
+    "say": "So five calls on the busiest day, and four other days with four calls each. Four times four is sixteen, plus five is twenty-one. That's less than twenty-two, so five is not enough.",
+    "at": [
+     "Four times four is sixteen",
+     "plus five is"
+    ]
+   },
+   {
+    "say": "Let's try six. The other days can have up to five each. Four times five is twenty, plus six is twenty-six. That's enough, and the other days can simply have fewer calls. So the answer is six.",
+    "at": [
+     "Four times five is twenty",
+     "plus six is"
+    ]
+   },
+   {
+    "say": "So for the biggest possible value, make the others as small as they can be. For the smallest possible biggest value, make the others as big as they can be.",
+    "at": [
+     "So for the biggest possible",
+     "value, make the",
+     "For the smallest possible biggest",
+     "value, make the others as big"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now letters. The average of a, b and c is eight. What's the average of a plus five, b plus five, and c plus five?",
+    "at": [
+     "The average of a, b and c",
+     "and c is",
+     "What's the average of a plus five",
+     "plus five, b"
+    ]
+   },
+   {
+    "say": "There's a quick way to plug in numbers. Nothing says the letters are different. So let's make every letter equal to the average, eight. Then their average is eight, as given.",
+    "at": [
+     "make every letter equal",
+     "the average, eight"
+    ]
+   },
+   {
+    "say": "Each new value is eight plus five, thirteen. All three are thirteen, so their average is thirteen.",
+    "at": [
+     "eight plus five",
+     "three are thirteen",
+     "so their average is thirteen"
+    ]
+   },
+   {
+    "say": "It agrees with the last lesson. Every value grew by five, so the average grew by five.",
+    "at": [
+     "It agrees with"
+    ]
+   },
+   {
+    "say": "Two warnings. If the question says the numbers are different, we can't make them equal. And if two choices give the same result, we try other numbers. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "If the question says the numbers are different",
+     "numbers are different",
+     "if two choices give the same result",
+     "same result, we"
+    ]
+   }
+  ]
+ ]
+}

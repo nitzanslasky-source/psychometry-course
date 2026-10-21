@@ -1,0 +1,160 @@
+{
+ "videoId": "solve-geo34-g111",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A regular polygon with nine sides, A B C D E F G H I, is inscribed in a circle with center O and radius r. Which of the following statements is not true?",
+    "voice": "calm",
+    "at": [
+     "A regular polygon with nine sides",
+     "A regular polygon with nine sides",
+     "Which of the"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So three of the statements are true, and one is not. We'll go statement by statement. Every statement that is surely true, we cross out. When three are out, the one that's left is our answer.",
+    "at": [
+     "are true, and",
+     "Every statement that",
+     "true, we cross"
+    ]
+   },
+   {
+    "say": "Choice number two says: angle A O B is equal to angle G O H. Both are central angles of the regular polygon. Like in the lesson, each central angle is three hundred sixty divided by n. Three hundred sixty divided by nine is forty. So both angles are forty. It's true, so choice number two is out.",
+    "at": [
+     "Choice number two says",
+     "A O B",
+     "Both are central angles",
+     "the regular polygon",
+     "Three hundred sixty divided by nine",
+     "nine is forty",
+     "so choice number two is out"
+    ]
+   },
+   {
+    "say": "Choice number one says: the circumference of the circle is bigger than the perimeter of the polygon. Here we don't need to calculate anything. We only need to decide which one is bigger.",
+    "at": [
+     "Choice number one says",
+     "bigger than the"
+    ]
+   },
+   {
+    "say": "Look at the side A B and the arc A B. The side is a straight line, the shortest way from A to B. The arc goes around, so it's longer. The same is true for every side and its arc. So the whole circle is longer than all nine sides together. It's true, so choice number one is out.",
+    "at": [
+     "Look at the side A B",
+     "B and the",
+     "The same is true for every side",
+     "every side and",
+     "so choice number one is out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number four says: angle B C O is equal to angle O C D. Look at triangles O B C and O C D. O B, O C and O D are all radii, so they're equal. And B C and C D are sides of the regular polygon, so they're equal too.",
+    "at": [
+     "Choice number four says",
+     "B C O",
+     "Look at triangles O B C and O C D",
+     "C and O",
+     "are all radii",
+     "And B C"
+    ]
+   },
+   {
+    "say": "So the two triangles have the same three sides. They're the same triangle, so their angles are equal. Angle B C O is equal to angle O C D. It's true, so choice number four is out.",
+    "at": [
+     "the same three sides",
+     "They're the same",
+     "Angle B C O",
+     "equal to angle",
+     "so choice number four is out"
+    ]
+   },
+   "So a radius to a corner cuts the corner's angle into two equal halves. It's like the pentagon in the lesson, where the radius cut one hundred eight into fifty-four and fifty-four.",
+   {
+    "say": "Three statements are out. On the exam, you'd mark choice number three and move on. Here, let's see why it's not true.",
+    "at": [
+     "mark choice number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number three says: the perimeter of the polygon is nine r. So we compare nine sides with nine radii. Let's compare one side with one radius, in triangle O C D.",
+    "at": [
+     "Choice number three says",
+     "perimeter of the",
+     "So we compare nine sides",
+     "with nine radii",
+     "in triangle O C D"
+    ]
+   },
+   {
+    "say": "The angle at O is a central angle, forty. The two base angles share one hundred eighty minus forty, one hundred forty. So each one is half of one hundred forty, seventy.",
+    "at": [
+     "The angle at",
+     "one hundred eighty minus forty",
+     "one hundred forty",
+     "So each one is half",
+     "of one hundred",
+     "seventy."
+    ]
+   },
+   {
+    "say": "Remember from triangles: the longer side is across from the bigger angle. The side C D is across from forty. A radius, like O C, is across from seventy. So the side is shorter than the radius.",
+    "at": [
+     "side is across",
+     "The side C D is across from forty",
+     "across from forty"
+    ]
+   },
+   {
+    "say": "One side is shorter than one radius. So nine sides are shorter than nine radii. The perimeter is less than nine r, not equal to it. So this statement is not true. Choice number three is our answer.",
+    "at": [
+     "The perimeter is less than nine r",
+     "nine r, not",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's use this question to learn a principle that comes back on the exam. When is the perimeter of a regular polygon exactly n radii? In the regular hexagon. It's made of six equilateral triangles, so the side is equal to the radius. Six sides are six radii.",
+    "at": [
+     "to learn a",
+     "In the regular hexagon",
+     "made of six",
+     "so the side is equal to",
+     "to the radius",
+     "Six sides are six radii"
+    ]
+   },
+   {
+    "say": "With more sides, each side gets shorter than the radius. Take seven sides. The whole circle is two pi r. Pi is less than three and a half, so the circle is less than seven r. And the polygon is shorter than the circle. So its perimeter is less than seven r.",
+    "at": [
+     "With more sides",
+     "The whole circle is two pi r",
+     "Pi is less"
+    ]
+   },
+   {
+    "say": "With fewer sides, it's the other way around. In a pentagon, the side is across from seventy-two, and the radius is across from fifty-four. So the side is longer than the radius, and the perimeter is more than five r.",
+    "at": [
+     "In a pentagon",
+     "is across from"
+    ]
+   },
+   {
+    "say": "So the hexagon is the balance point. With more than six sides, the perimeter is less than n radii. That's our question, with nine sides. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "With more than six sides",
+     "the perimeter is",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

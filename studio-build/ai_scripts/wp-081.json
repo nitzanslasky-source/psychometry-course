@@ -1,0 +1,184 @@
+{
+ "videoId": "wp-081",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now one small step with the formula, and it solves a lot of exam questions."
+  ],
+  [
+   {
+    "say": "Remember the formula. The average is equal to the sum, divided by how many numbers there are.",
+    "at": [
+     "Remember the formula",
+     "The average is"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. Twelve divided by three is four. So twelve is three times four.",
+    "at": [
+     "Twelve divided by three",
+     "So twelve is three times four"
+    ]
+   },
+   {
+    "say": "The formula works the same way. The sum is equal to how many numbers there are, times the average.",
+    "at": [
+     "The formula works",
+     "The sum is equal to how many",
+     "how many numbers"
+    ]
+   },
+   "Why do we need it? Because often we don't know the numbers. But we know how many there are, and their average."
+  ],
+  [
+   {
+    "say": "For example, four numbers have an average of six. What's their sum?",
+    "at": [
+     "four numbers have an average of six",
+     "of six. What's"
+    ]
+   },
+   "We don't know the numbers. Maybe they're two, five, seven and ten. Maybe they're all six. It doesn't matter.",
+   {
+    "say": "We can treat every number as if it were the average. So we have four numbers of six each.",
+    "at": [
+     "four numbers of six each"
+    ]
+   },
+   {
+    "say": "Four times six is twenty-four. That's the sum.",
+    "at": [
+     "Four times six",
+     "That's the sum"
+    ]
+   },
+   {
+    "say": "Let's check with two, five, seven and ten. Two plus five is seven, plus seven is fourteen, plus ten is twenty-four. The same sum.",
+    "at": [
+     "Let's check with two",
+     "seven and ten"
+    ]
+   },
+   {
+    "say": "One more. A team of nine players scored an average of eight points each. How many points did they score together?",
+    "at": [
+     "A team of nine players",
+     "scored an average"
+    ]
+   },
+   {
+    "say": "Nine players, eight points each on average. Nine times eight is seventy-two.",
+    "at": [
+     "Nine times eight"
+    ]
+   },
+   {
+    "say": "So when you see the average and how many, write the sum right away.",
+    "at": [
+     "the average and",
+     "write the sum right away"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new number joins a group. The average of a group of numbers is twenty. A new number, thirty, joins the group. Now the average is twenty-two. How many numbers were there before?",
+    "at": [
+     "joins a group",
+     "A new number, thirty",
+     "Now the average"
+    ]
+   },
+   {
+    "say": "Let's use the balance. Now thirty is in the group, so we compare it to the new average. Thirty minus twenty-two is eight. So thirty is eight above the new average.",
+    "at": [
+     "Thirty minus twenty-two",
+     "So thirty is"
+    ]
+   },
+   {
+    "say": "The old numbers had an average of twenty. So each one counts as twenty, like we just saw. That's two below the new average.",
+    "at": [
+     "That's two below"
+    ]
+   },
+   {
+    "say": "The eight above must balance the old numbers below. Each old number is two below. Eight divided by two is four. So there were four numbers before.",
+    "at": [
+     "The eight above",
+     "Eight divided by two",
+     "So there were"
+    ]
+   },
+   {
+    "say": "Let's check with sums. Before, four numbers with an average of twenty. Four times twenty is eighty.",
+    "at": [
+     "Four times twenty"
+    ]
+   },
+   {
+    "say": "Thirty joins. Eighty plus thirty is a hundred ten. Now there are five numbers. A hundred ten divided by five is twenty-two. Correct.",
+    "at": [
+     "Eighty plus thirty",
+     "Now there are",
+     "A hundred ten divided by five",
+     "five is twenty-two"
+    ]
+   },
+   {
+    "say": "And careful. They asked how many there were before. After the new number joined, there are five. So always read which one they ask.",
+    "at": [
+     "They asked how many there were before",
+     "After the new"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "It works the same when a number leaves. The average of a group is fifty. One number, eighty, leaves. Now the average is forty-five. How many numbers are left?",
+    "at": [
+     "when a number",
+     "One number, eighty, leaves",
+     "Now the average"
+    ]
+   },
+   {
+    "say": "This time eighty was in the old group, so we compare it to the old average. Eighty minus fifty is thirty. So eighty is thirty above.",
+    "at": [
+     "Eighty minus fifty",
+     "So eighty is"
+    ]
+   },
+   {
+    "say": "The numbers that are left have an average of forty-five. Fifty minus forty-five is five. So each one is five below fifty.",
+    "at": [
+     "Fifty minus forty-five",
+     "So each one"
+    ]
+   },
+   {
+    "say": "Thirty divided by five is six. So six numbers are left.",
+    "at": [
+     "Thirty divided by five",
+     "So six numbers"
+    ]
+   },
+   {
+    "say": "Let's check. Six times forty-five is two hundred seventy. Plus eighty is three hundred fifty. And seven numbers with an average of fifty also give seven times fifty, three hundred fifty.",
+    "at": [
+     "Six times forty-five",
+     "Plus eighty",
+     "fifty. And seven",
+     "seven times fifty"
+    ]
+   },
+   {
+    "say": "So compare the number to the average of the group it is in. Joins, the new average. Leaves, the old average. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "So compare the number",
+     "the average of"
+    ]
+   }
+  ]
+ ]
+}

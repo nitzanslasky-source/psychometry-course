@@ -1,0 +1,155 @@
+{
+ "videoId": "geo-109",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now polygons at a higher level. Most exam questions use the regular pentagon, hexagon and octagon. Inside them hide a few triangles that come back again and again. Let's get to know them."
+  ],
+  [
+   {
+    "say": "Take a regular polygon, and two sides that meet at one corner. Now join their two far ends. This line is a diagonal, and it cuts off a triangle at the corner. Let's call it the corner triangle.",
+    "at": [
+     "Take a regular polygon",
+     "two sides that",
+     "join their two far ends",
+     "This line is"
+    ]
+   },
+   {
+    "say": "The two sides are sides of a regular polygon, so they're equal. So the corner triangle is isosceles. Its top angle is the polygon's angle. And its two base angles are equal, so they share what's left of one hundred eighty.",
+    "at": [
+     "So the corner triangle is isosceles",
+     "Its top angle"
+    ]
+   },
+   {
+    "say": "Let's start with a square. The top angle is ninety. One hundred eighty minus ninety is ninety, so each base angle is forty-five. We know this one. The diagonal of a square makes angles of forty-five.",
+    "at": [
+     "The top angle is ninety",
+     "One hundred eighty minus ninety",
+     "is ninety, so"
+    ]
+   },
+   {
+    "say": "Now a regular pentagon. The top angle is one hundred eight. One hundred eighty minus one hundred eight is seventy-two. Half of seventy-two is thirty-six. So each base angle is thirty-six.",
+    "at": [
+     "Now a regular pentagon",
+     "The top angle is one hundred eight",
+     "One hundred eighty minus one hundred eight",
+     "hundred eight is",
+     "Half of seventy-two",
+     "So each base"
+    ]
+   },
+   {
+    "say": "And a regular hexagon. The top angle is one hundred twenty. One hundred eighty minus one hundred twenty is sixty. So each base angle is thirty.",
+    "at": [
+     "And a regular hexagon",
+     "The top angle is one hundred twenty",
+     "One hundred eighty minus one hundred twenty",
+     "hundred twenty is",
+     "So each base angle is thirty"
+    ]
+   },
+   {
+    "say": "Careful, this works because the two sides are equal. In a polygon that's not regular, the two sides can be different. So when a diagonal cuts off a corner of a regular polygon, think of an isosceles triangle, and find its base angles.",
+    "at": [
+     "Careful, this works"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's look closely at a regular hexagon with side a. It has two kinds of diagonals. A long diagonal goes through the center. A short diagonal skips just one corner.",
+    "at": [
+     "a regular hexagon with side a",
+     "It has two",
+     "A long diagonal",
+     "A short diagonal"
+    ]
+   },
+   {
+    "say": "The long diagonal is easy. The hexagon is made of six equilateral triangles, so the radius is equal to the side, a. The long diagonal is two radii. So it's two a.",
+    "at": [
+     "The long diagonal",
+     "so the radius is equal to the side",
+     "to the side",
+     "So it's two a"
+    ]
+   },
+   {
+    "say": "The short diagonal, A C, closes the corner triangle A B C. Like we just saw, its angles are thirty, thirty and one hundred twenty.",
+    "at": [
+     "closes the corner triangle",
+     "Like we just"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's take this triangle out and make it bigger. Now let's drop a height from B to A C. The triangle is isosceles, so the height cuts it into two equal halves. It cuts the angle of one hundred twenty into sixty and sixty. And it cuts A C into two equal parts.",
+    "at": [
+     "Let's take this triangle out",
+     "make it bigger",
+     "drop a height from B",
+     "to A C"
+    ]
+   },
+   {
+    "say": "Look at one of the two halves. Its angles are thirty, sixty and ninety. So it's a golden triangle. Remember its sides. The side across from thirty is x, the side across from sixty is x root three, and the hypotenuse is two x.",
+    "at": [
+     "Look at one of the two halves",
+     "Its angles are",
+     "Remember its sides",
+     "The side across"
+    ]
+   },
+   {
+    "say": "Here the hypotenuse is A B, the side of the hexagon, a. So the short leg, the height, is a over two. And the long leg is a over two, times root three. That's half of A C.",
+    "at": [
+     "Here the hypotenuse is A B",
+     "B, the side"
+    ]
+   },
+   {
+    "say": "A C is two of these halves. Two times a over two is a, so A C is a root three. The short diagonal is the side times root three.",
+    "at": [
+     "A C is two of these halves",
+     "these halves. Two",
+     "so A C is a root three",
+     "The short diagonal"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's see it in numbers. If the side is two, the long diagonal is two times two, four. And the short diagonal is two root three.",
+    "at": [
+     "If the side is two",
+     "the long diagonal"
+    ]
+   },
+   {
+    "say": "If the side is five, the long diagonal is ten, and the short diagonal is five root three.",
+    "at": [
+     "If the side is five",
+     "the long diagonal"
+    ]
+   },
+   {
+    "say": "And backwards. If the short diagonal is nine, the side is nine divided by root three. Let's multiply the top and the bottom by root three. That's nine root three over three, which is three root three.",
+    "at": [
+     "If the short diagonal is nine",
+     "nine, the side"
+    ]
+   },
+   {
+    "say": "So when you see a regular hexagon with a diagonal, think of these two. The short diagonal is a root three, and the long one is two a. Take a moment to memorize this, and I'll see you in the next video.",
+    "at": [
+     "think of these two",
+     "The short diagonal"
+    ]
+   }
+  ]
+ ]
+}

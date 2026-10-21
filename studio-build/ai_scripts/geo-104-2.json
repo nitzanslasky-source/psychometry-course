@@ -1,0 +1,126 @@
+{
+ "videoId": "geo-104-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with polygons."
+  ],
+  [
+   {
+    "say": "Now a very important word, regular. A regular polygon has all its sides equal, and all its angles equal. Both things together.",
+    "at": [
+     "A regular polygon",
+     "its sides equal"
+    ]
+   },
+   {
+    "say": "Here's a regular hexagon. It has six sides, all equal. And it has six angles, all equal. So it looks the same from every direction.",
+    "at": [
+     "six sides, all equal",
+     "six angles, all equal",
+     "So it looks"
+    ]
+   },
+   {
+    "say": "Why do we need both? Look at this. I take two sides of the hexagon and fold them inward. All six sides are still equal. But the angles are not equal any more. So this is not a regular hexagon.",
+    "at": [
+     "fold them inward",
+     "All six sides",
+     "the angles are not equal any more",
+     "So this is"
+    ]
+   },
+   {
+    "say": "It still has six sides, so it's still a hexagon. Its angles still add up to seven hundred twenty. One angle now points inward, and it's bigger than one hundred eighty.",
+    "at": [
+     "it's bigger than one hundred eighty"
+    ]
+   },
+   {
+    "say": "And the other way around. A rectangle has four equal angles, but its sides are not all equal. So a rectangle is not regular. The regular quadrilateral is the square. And the regular triangle is the equilateral triangle.",
+    "at": [
+     "And the other",
+     "A rectangle has four equal angles",
+     "not all equal",
+     "The regular quadrilateral is the square",
+     "And the regular"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Every regular polygon fits in a circle. We can draw a circle around it, so all its corners are on the circle. The center of that circle, O, is also the center of the polygon.",
+    "at": [
+     "Every regular polygon",
+     "We can draw a circle around it",
+     "around it, so",
+     "all its corners are on the circle",
+     "The center of"
+    ]
+   },
+   {
+    "say": "We can also draw a circle inside it, touching every side. It has the same center, O. But in questions we mostly use the circle around it.",
+    "at": [
+     "a circle inside it",
+     "It has the"
+    ]
+   },
+   {
+    "say": "But careful, this works only one way. If a polygon fits in a circle, it's not necessarily regular. Here all the corners are on the circle, but the sides are clearly not equal. So it's not regular.",
+    "at": [
+     "it's not necessarily regular",
+     "Here all the corners are on the circle",
+     "on the circle"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's find one angle of a regular polygon. We already know how to find the sum of the angles. In a regular polygon all the angles are equal. So we just divide the sum by the number of angles. And n sides means n angles.",
+    "at": [
+     "angle of a",
+     "we just divide the sum",
+     "by the number"
+    ]
+   },
+   {
+    "say": "A regular pentagon. The sum is five hundred forty. Five hundred divided by five is one hundred, and forty divided by five is eight. So one angle is one hundred eight.",
+    "at": [
+     "A regular pentagon",
+     "The sum is",
+     "Five hundred divided by five",
+     "is one hundred",
+     "So one angle is one hundred eight"
+    ]
+   },
+   {
+    "say": "A regular hexagon. The sum is seven hundred twenty, divided by six. Six times one hundred twenty is seven hundred twenty. So one angle is one hundred twenty.",
+    "at": [
+     "A regular hexagon",
+     "is seven hundred",
+     "divided by six",
+     "is seven hundred twenty. So",
+     "So one angle is one hundred twenty"
+    ]
+   },
+   {
+    "say": "A regular octagon. The sum is one thousand eighty, divided by eight. Let's halve it three times, because eight is two times two times two. Half is five hundred forty. Half again is two hundred seventy. And half again is one hundred thirty-five.",
+    "at": [
+     "A regular octagon",
+     "The sum is",
+     "Half is five hundred forty",
+     "Half again is",
+     "And half again is one hundred thirty-five"
+    ]
+   },
+   {
+    "say": "Remember these three angles, one hundred eight, one hundred twenty and one hundred thirty-five. The exam uses them all the time. And we divide only when the polygon is regular. If it's not regular, the angles are not equal. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "Remember these three",
+     "we divide only when the polygon is regular",
+     "polygon is regular"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,139 @@
+{
+ "videoId": "solve-geo34-g110",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "P Q R S T is a regular pentagon. What is the size of angle P S Q, marked x in the figure?",
+    "voice": "calm",
+    "at": [
+     "P Q R S T is a regular pentagon",
+     "P Q R S T",
+     "What is the"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we want the middle angle at S, between the two diagonals. All we know is that the pentagon is regular. But inside a regular polygon there are shapes we know, like triangles and trapezoids. So there are several ways in. We'll solve it in three different ways, all of them the math way.",
+    "at": [
+     "So we want the middle angle",
+     "angle at S"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's start with the math way, with corner triangles, like in the lesson. Look at triangle Q R S. R Q and R S are sides of the regular pentagon, so they're equal. So it's an isosceles triangle.",
+    "at": [
+     "Let's start with the math way",
+     "way, with corner",
+     "Look at triangle Q R S",
+     "R Q and"
+    ]
+   },
+   {
+    "say": "Its top angle is R, an angle of the regular pentagon. The angles of a pentagon add up to five hundred forty. So each angle is five hundred forty divided by five, one hundred eight.",
+    "at": [
+     "five hundred forty divided by five",
+     "one hundred eight."
+    ]
+   },
+   {
+    "say": "So the two base angles share one hundred eighty minus one hundred eight, seventy-two. Each one is half of seventy-two, thirty-six. So angle Q S R is thirty-six.",
+    "at": [
+     "one hundred eighty minus one hundred eight",
+     "hundred eight, seventy-two",
+     "Each one is half",
+     "So angle Q S R is thirty-six"
+    ]
+   },
+   {
+    "say": "The same happens on the other side, in triangle S T P. T S and T P are equal sides, and the angle at T is one hundred eight. So angle T S P is thirty-six too.",
+    "at": [
+     "the other side",
+     "in triangle S T P",
+     "angle at T"
+    ]
+   },
+   {
+    "say": "The whole angle at S is also one hundred eight. It's made of three parts, thirty-six, x, and thirty-six. So x is one hundred eight, minus thirty-six, minus thirty-six. That's one hundred eight minus seventy-two, thirty-six. Choice number three is our answer.",
+    "at": [
+     "So x is",
+     "That's one hundred",
+     "minus seventy-two, thirty-six",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a second way, the math way with trapezoids. The diagonal S P cuts the pentagon into a triangle and a quadrilateral, P Q R S. In a regular pentagon, a diagonal is parallel to the side across from it. Here S P is parallel to Q R. So P Q R S is a trapezoid.",
+    "at": [
+     "Now a second way",
+     "math way with",
+     "So P Q R S is a trapezoid",
+     "is a trapezoid"
+    ]
+   },
+   {
+    "say": "In a trapezoid, two angles on the same leg add up to one hundred eighty. Look at the leg R S. Angle R is one hundred eight, because the pentagon is regular. So angle R S P is one hundred eighty minus one hundred eight, seventy-two.",
+    "at": [
+     "Look at the leg R S",
+     "Angle R is",
+     "So angle R S P is",
+     "is one hundred eighty"
+    ]
+   },
+   {
+    "say": "The other diagonal, S Q, does the same on the other side. It's parallel to T P, so Q S T P is a trapezoid too. Angle T is one hundred eight, so angle T S Q is seventy-two.",
+    "at": [
+     "The other diagonal, S Q",
+     "does the same",
+     "Angle T is one hundred eight",
+     "so angle T S Q"
+    ]
+   },
+   {
+    "say": "Now look at the angle at S. Both of these angles of seventy-two include x. Seventy-two plus seventy-two is one hundred forty-four. That's the whole angle at S, plus x one more time. So x is one hundred forty-four minus one hundred eight, thirty-six. Choice number three again.",
+    "at": [
+     "Now look at",
+     "Seventy-two plus seventy-two",
+     "That's the whole",
+     "So x is one hundred forty-four minus",
+     "Choice number three again"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And a third way, the math way with the diagonals. Remember from the first lesson, the diagonals from one corner of a regular polygon cut its angle into equal parts. Why? The pentagon fits in a circle. So the small angles at S are inscribed angles, and they stand on equal arcs, one under each side.",
+    "at": [
+     "And a third way",
+     "math way with",
+     "The pentagon fits in a circle",
+     "circle. So the",
+     "they stand on equal arcs",
+     "one under each"
+    ]
+   },
+   {
+    "say": "From S there are only two diagonals, to Q and to P. S R and S T are sides. So the angle at S is cut into three equal angles, and each one is x. So three x is one hundred eight.",
+    "at": [
+     "cut into three equal angles",
+     "and each one",
+     "So three x is one hundred eight"
+    ]
+   },
+   {
+    "say": "To divide one hundred eight by three, let's split it. Ninety divided by three is thirty, and eighteen divided by three is six. So x is thirty-six. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "To divide one",
+     "Ninety divided by three",
+     "thirty, and eighteen",
+     "So x is thirty-six",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -65,7 +65,7 @@ METHODS = [
     ('solve-q-r26-t23-16', '*', 'Flip rule', 'new'),   # 2026-10-20 topic-23 reading scripts: flip / keep taught here, not in wp-052
     ('solve-wp23-g061', 'Method 3 · The math way: the arrow map', 'Arrow map', 'new'),   # 2026-10-20: the arrow map moved here from wp-053
     # 25 · percent shares as weights
-    ('solve-wp25-g089', 'Shares as weights', 'Percent shares as weights', 'new'),
+    ('wp-086-3', 'Shares in percent', 'Percent shares as weights', 'new'),   # 2026-10-21 R37: taught in the weighted-averages lesson
     # 26 · compare by factors, catching up
     ('r26-t26-factors', '*', 'Compare by factors', 'new'),
     ('solve-q-r26-t26-21', '*', 'Compare by factors', 'new'),

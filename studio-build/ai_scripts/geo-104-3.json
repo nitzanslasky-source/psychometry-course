@@ -1,0 +1,140 @@
+{
+ "videoId": "geo-104-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with the angles of regular polygons."
+  ],
+  [
+   {
+    "say": "On the exam's formula sheet, this rule looks a bit different. Let's see that it's the same rule. We start from one hundred eighty times the bracket, n minus two, over n.",
+    "at": [
+     "sheet, this rule",
+     "We start",
+     "eighty times the"
+    ]
+   },
+   {
+    "say": "Let's open the brackets. One hundred eighty times n, minus one hundred eighty times two. That's one hundred eighty n minus three hundred sixty, all over n.",
+    "at": [
+     "That's one hundred eighty n minus",
+     "minus three hundred"
+    ]
+   },
+   {
+    "say": "Now let's split it into two fractions. One hundred eighty n over n is just one hundred eighty, because the n cancels. So we get one hundred eighty, minus three hundred sixty over n.",
+    "at": [
+     "split it into two fractions",
+     "One hundred eighty",
+     "So we get one hundred eighty",
+     "eighty, minus three"
+    ]
+   },
+   {
+    "say": "Let's check it on the hexagon. Three hundred sixty divided by six is sixty. One hundred eighty minus sixty is one hundred twenty. That's the same as before. Use the form you remember better.",
+    "at": [
+     "Three hundred sixty divided by six",
+     "six is sixty",
+     "One hundred eighty minus sixty",
+     "is one hundred"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's draw a line from O to every corner of a regular hexagon. These are radii. They make six angles at the center. They're called central angles, and they're all equal.",
+    "at": [
+     "line from O",
+     "every corner of a regular hexagon",
+     "These are radii",
+     "They make six"
+    ]
+   },
+   {
+    "say": "Together they make a full turn, three hundred sixty. So each one is three hundred sixty divided by six, which is sixty.",
+    "at": [
+     "Together they make a full turn",
+     "turn, three hundred",
+     "divided by six"
+    ]
+   },
+   {
+    "say": "In an octagon, three hundred sixty divided by eight is forty-five. In a pentagon, three hundred sixty divided by five is seventy-two.",
+    "at": [
+     "divided by eight",
+     "In a pentagon",
+     "divided by five"
+    ]
+   },
+   {
+    "say": "Now here's a useful trick. The central angle and the polygon's angle always add up to one hundred eighty. In the hexagon, sixty plus one hundred twenty is one hundred eighty. In the octagon, forty-five plus one hundred thirty-five. In the pentagon, seventy-two plus one hundred eight.",
+    "at": [
+     "Now here's a",
+     "always add up to one hundred eighty",
+     "In the hexagon",
+     "sixty plus one hundred twenty",
+     "is one hundred",
+     "forty-five plus",
+     "In the pentagon",
+     "seventy-two plus"
+    ]
+   },
+   {
+    "say": "So if you forget the angle of the octagon, find its central angle first. Three hundred sixty divided by eight is forty-five. Then complete it to one hundred eighty. One hundred eighty minus forty-five is one hundred thirty-five.",
+    "at": [
+     "So if you",
+     "complete it to one hundred eighty",
+     "is one hundred"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why does this trick work? Let's meet the exterior angle. Take a polygon, and extend one side past its corner. The angle between this extension and the next side is called the exterior angle.",
+    "at": [
+     "work? Let's meet",
+     "Take a polygon",
+     "extend one side past its corner",
+     "The angle between this extension",
+     "and the next"
+    ]
+   },
+   {
+    "say": "The polygon's angle and the exterior angle sit together on one straight line. So together they make one hundred eighty. The exterior angle is one hundred eighty minus the polygon's angle.",
+    "at": [
+     "The polygon's angle and the exterior angle",
+     "exterior angle sit",
+     "The exterior angle is",
+     "hundred eighty minus"
+    ]
+   },
+   {
+    "say": "Now the big fact. Take one exterior angle at every corner, and add them up. You always get three hundred sixty. Why? Walk around the polygon along its sides. At every corner, you turn by the exterior angle. After one full walk you face the same way again. So you turned one full turn, three hundred sixty.",
+    "at": [
+     "Take one exterior angle at every corner",
+     "every corner, and",
+     "You always get three hundred sixty",
+     "Walk around the"
+    ]
+   },
+   {
+    "say": "Let's check it in numbers. An equilateral triangle has angles of sixty. So each exterior angle is one hundred eighty minus sixty, one hundred twenty. And three times one hundred twenty is three hundred sixty. A square has angles of ninety, so each exterior angle is ninety too. Four times ninety is three hundred sixty again.",
+    "at": [
+     "one hundred eighty minus sixty",
+     "one hundred twenty",
+     "three times one hundred twenty",
+     "is three hundred",
+     "Four times ninety",
+     "hundred sixty again"
+    ]
+   },
+   {
+    "say": "In a regular polygon, all the exterior angles are equal. So each one is three hundred sixty divided by n. That's exactly the central angle. And that's why the central angle and the polygon's angle add up to one hundred eighty. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "So each one is three hundred sixty divided by n",
+     "hundred sixty divided"
+    ]
+   }
+  ]
+ ]
+}

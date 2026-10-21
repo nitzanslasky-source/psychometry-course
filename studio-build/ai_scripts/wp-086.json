@@ -1,0 +1,126 @@
+{
+ "videoId": "wp-086",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now weighted averages. So far, every number counted the same, and the average was the balance point. Now some numbers count more than others."
+  ],
+  [
+   {
+    "say": "In a weighted average, some values are more important than others. We say they have a bigger weight.",
+    "at": [
+     "In a weighted average",
+     "values are more"
+    ]
+   },
+   "You know it from school. A big final exam counts more than a small quiz.",
+   {
+    "say": "The heavier value pulls the average toward itself. So the average isn't in the middle anymore. It's closer to the heavier value.",
+    "at": [
+     "The heavier value pulls",
+     "average toward itself"
+    ]
+   },
+   "And on the exam it usually just says average, not weighted average. So it's up to us to notice that the values have different weights."
+  ],
+  [
+   {
+    "say": "Here's an example. In a course, a project counts three times as much as a quiz. Dan got eighty on the project, and forty on the quiz. What's his average?",
+    "at": [
+     "In a course",
+     "counts three times"
+    ]
+   },
+   {
+    "say": "The project counts three times. So let's treat it as if Dan had three projects, each with eighty.",
+    "at": [
+     "as if Dan had three projects",
+     "projects, each with"
+    ]
+   },
+   {
+    "say": "Now it's a normal average of four values. Eighty times three is two hundred forty. Plus forty is two hundred eighty.",
+    "at": [
+     "Eighty times three",
+     "Plus forty is two hundred"
+    ]
+   },
+   {
+    "say": "We divide by four, not by two. Why four? Because there are three copies of the project and one quiz.",
+    "at": [
+     "We divide by",
+     "Why four",
+     "of the project"
+    ]
+   },
+   {
+    "say": "Two hundred eighty divided by four is seventy. So Dan's average is seventy.",
+    "at": [
+     "Two hundred eighty divided",
+     "four is seventy"
+    ]
+   },
+   {
+    "say": "And seventy is closer to eighty, the heavier value. The plain middle of forty and eighty, sixty, would be wrong.",
+    "at": [
+     "The plain middle",
+     "and eighty, sixty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "What we did is the formula of the weighted average. Each value is multiplied by its weight, and we add them up. Then we divide by the sum of the weights.",
+    "at": [
+     "What we did is the formula",
+     "formula of the"
+    ]
+   },
+   {
+    "say": "For Dan, eighty times three plus forty times one, divided by three plus one. That's two hundred eighty divided by four, seventy.",
+    "at": [
+     "For Dan",
+     "by three plus"
+    ]
+   },
+   {
+    "say": "It works with more values too. Homework has weight one, a midterm has weight two, and a final has weight three. Maya got ninety, sixty and eighty.",
+    "at": [
+     "Homework has weight one",
+     "midterm has weight"
+    ]
+   },
+   {
+    "say": "Ninety times one is ninety. Sixty times two is a hundred twenty. Eighty times three is two hundred forty.",
+    "at": [
+     "Ninety times one",
+     "Sixty times two",
+     "Eighty times three"
+    ]
+   },
+   {
+    "say": "Ninety plus a hundred twenty is two hundred ten. Plus two hundred forty is four hundred fifty.",
+    "at": [
+     "Ninety plus a",
+     "Plus two hundred forty is four hundred fifty",
+     "four hundred fifty"
+    ]
+   },
+   {
+    "say": "The weights add up to one plus two plus three, six. Four hundred fifty divided by six is seventy-five.",
+    "at": [
+     "one plus two plus three",
+     "Four hundred fifty divided by six",
+     "six is seventy-five"
+    ]
+   },
+   {
+    "say": "Careful, we divide by six, the sum of the weights. A lot of students divide by three here, because there are three values. That's the trap. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "we divide by six",
+     "sum of the"
+    ]
+   }
+  ]
+ ]
+}

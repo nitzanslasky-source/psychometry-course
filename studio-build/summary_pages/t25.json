@@ -1,0 +1,373 @@
+{
+ "_about": "Topic 25 summary page (replaces the r26-t25-summary video). Content = the topic-25 scripts (math_patches/_ai_vis_t25.py), the Hebrew lessons (wp 5175-5918) and the memory card mem-averages. Build: python3 summary_pages.py 25. Course numbers only (none from the Hebrew course).",
+ "topic": 25,
+ "replaces": "r26-t25-summary",
+ "intro": "An average is **one number that describes the middle** of a group. It is always **between the smallest and the biggest** number. Three tools do most of the work: **the sum** (how many $\\times$ the average), **the balance** (the differences add up to $0$) and, for weights, **the seesaw**.",
+ "figures": {
+  "towers": {
+   "builder": "t25.TOWERS",
+   "args": [
+    [
+     4,
+     9,
+     3,
+     11,
+     8
+    ],
+    [
+     [
+      "extra",
+      [
+       [
+        "extra",
+        7
+       ]
+      ]
+     ],
+     [
+      "gap",
+      [
+       [
+        "gap",
+        7
+       ]
+      ]
+     ],
+     [
+      "lvl",
+      [
+       [
+        "lvl",
+        7,
+        "7 each"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "w": 520
+   },
+   "layers": [
+    "line",
+    "extra",
+    "gap",
+    "lvl"
+   ]
+  },
+  "saw": {
+   "builder": "t25.SAW",
+   "args": [
+    "30",
+    "80",
+    [
+     [
+      "vals",
+      [
+       [
+        "vals"
+       ]
+      ]
+     ],
+     [
+      "wts",
+      [
+       [
+        "wts",
+        "×1",
+        "×4"
+       ],
+       [
+        "heavy",
+        1
+       ]
+      ]
+     ],
+     [
+      "units",
+      [
+       [
+        "units",
+        5
+       ]
+      ]
+     ],
+     [
+      "pivot",
+      [
+       [
+        "pivot",
+        4,
+        5,
+        "70"
+       ],
+       [
+        "dr",
+        4,
+        5,
+        "10"
+       ],
+       [
+        "dl",
+        4,
+        5,
+        "40"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "w": 520
+   },
+   "layers": [
+    "line",
+    "vals",
+    "wts",
+    "units",
+    "pivot"
+   ]
+  }
+ },
+ "sections": [
+  {
+   "title": "The middle",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Symmetric numbers: the average is the middle",
+       "$6, 10, 14, 18$: $\\;12$"
+      ],
+      [
+       "Evenly spaced: the middle number, or (first $+$ last) $\\div 2$",
+       "$3, 7, 11, 15, 19$: $\\;\\frac{3+19}{2}=11$"
+      ],
+      [
+       "An even count: halfway between the two middle numbers",
+       "$4, 6, 8, 10$: $\\;7$"
+      ],
+      [
+       "Add or remove a number **equal** to the average: no change",
+       "$3, 5, 7$ and another $5$: $\\;5$"
+      ]
+     ]
+    }
+   ],
+   "span": "full"
+  },
+  {
+   "title": "The formula: share the blocks",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "towers",
+     "caption": "The tall towers give exactly what the short towers get: $\\;2+4+1=3+4=7$."
+    },
+    {
+     "type": "p",
+     "text": "average $=\\dfrac{\\text{the sum}}{\\text{how many}}$ $\\qquad$ $\\frac{35}{5}=7$"
+    }
+   ]
+  },
+  {
+   "title": "Biggest and smallest possible",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "They ask",
+      "Do"
+     ],
+     "rows": [
+      [
+       "the biggest one",
+       "the others as **small** as they can be: $\\;6$ different positive integers, average $9$: $\\;54-15=39$"
+      ],
+      [
+       "the smallest biggest one",
+       "the others as **big** as they can be: $\\;22$ calls in $5$ days: $\\;6$"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**positive**, **whole**, **different**: each word changes the answer ($1,1,1,1$ or $1,2,3,4$)."
+    }
+   ]
+  },
+  {
+   "title": "The sum and the balance",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Tool",
+      "Example"
+     ],
+     "rows": [
+      [
+       "the sum $=$ how many $\\times$ the average (treat each value as the average)",
+       "$12$ volunteers, $7$ bags: $\\;12\\times7=84$"
+      ],
+      [
+       "**The balance**: the differences from the average add up to $0$",
+       "$86, 93, 95, ?$, average $90$: $\\;-4+3+5=+4$, so $?=86$"
+      ],
+      [
+       "Two numbers: the average is exactly in the middle",
+       "$40$ and $?$, average $47$: $\\;54$"
+      ],
+      [
+       "A base number: work with the differences",
+       "$97, 102, 104, 99$: $\\;100+\\frac24=100\\frac12$"
+      ],
+      [
+       "A number joins or leaves: compare it to the average of the group it is in",
+       "$20\\to22$ with $30$: $\\;\\frac{30-22}{22-20}=4$ before"
+      ],
+      [
+       "One value changes: share the change among all",
+       "one of $5$ goes up $10$: $\\;+2$"
+      ],
+      [
+       "Every value changes the same way: so does the average (same order)",
+       "average $20$: $\\;3a+2\\to 3\\times20+2=62$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Letters",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Idea",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Plug in equal values: every letter $=$ the average",
+       "$a=b=c=20$"
+      ],
+      [
+       "An average equal to a letter: write the sum",
+       "$x+y+z=3x \\Rightarrow y+z=2x$"
+      ],
+      [
+       "Two times the **whole** difference",
+       "$m+n=2(m-n) \\Rightarrow m=3n$"
+      ],
+      [
+       "More / less than: the balance",
+       "$a,b,c$ above $6$, all four below $\\Rightarrow d<6$"
+      ]
+     ]
+    }
+   ],
+   "span": "full"
+  },
+  {
+   "title": "Weighted averages: the seesaw",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "saw",
+     "caption": "Values above, weights below. Weights $4:1$ $\\to$ distances $1:4$: the gap $50$ in $5$ units of $10$. **The heavy side gets the small part**: $80-10=70$."
+    },
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Each value $\\times$ its weight, $\\div$ the **sum of the weights**",
+       "$\\frac{90\\cdot1+60\\cdot2+80\\cdot3}{6}=75$"
+      ],
+      [
+       "Groups: the weight is the size (reduce it)",
+       "$6$ at $40$, $9$ at $50$: $\\;2:3$, so $46$"
+      ],
+      [
+       "The bigger group pulls: the answer is on its side of the middle",
+       "middle $45$, answer above it"
+      ],
+      [
+       "Percent shares: start at the low value, add its share of the gap",
+       "$70\\%$ at $30$, $30\\%$ at $50$: $\\;30+6=36$"
+      ],
+      [
+       "Backwards: the distances give the group sizes",
+       "$3$ or $5$ kg, average $3.4$: $\\;0.4:1.6=1:4$, so $4:1$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Before each question, ask",
+   "class": "check",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "Do I know how many and the average? Write the sum.",
+      "One missing value? Use the balance.",
+      "Do the values count the same? If not, it's weighted.",
+      "Before or after the new value joined?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "class": "traps",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "The plain middle of two group averages, when the groups are not the same size.",
+      "Dividing by how many values instead of the sum of the weights.",
+      "Counting after the new value joined, when they ask about before.",
+      "Adding before multiplying: $(20+2)\\times3=66$, not $62$.",
+      "Four ones when the numbers must be **different**."
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "(4+9+3+11+8)/5 == 7",
+  "(6+10+14+18)/4 == 12",
+  "(3+19)/2 == 11",
+  "(4+6+8+10)/4 == 7",
+  "86+93+95+86 == 4*90",
+  "(40+54)/2 == 47",
+  "(97+102+104+99)/4 == 100.5",
+  "(80*4+30)/5 == 70 and (30+80)/2 != 70",
+  "(4*20+30)/5 == 22",
+  "(54-15) == 39 and 1+2+3+4+5+39 == 54",
+  "6+4*5 >= 22 and 5+4*4 < 22",
+  "3*20+2 == 62",
+  "(90*1+60*2+80*3)/6 == 75",
+  "(6*40+9*50)/15 == 46",
+  "0.7*30+0.3*50 == 36",
+  "abs((1600*3+400*5)/2000 - 3.4) < 1e-9",
+  "(30*1+80*4)/5 == 70"
+ ]
+}

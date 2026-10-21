@@ -1,0 +1,88 @@
+{
+ "videoId": "solve-q-r26-t25-03",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Six different positive integers have an average of nine. What is the largest possible value of one of them?",
+    "voice": "calm",
+    "at": [
+     "Six different positive integers"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for the biggest value that one of the six numbers can have. And look at the words. Different, positive, and integers, which means whole numbers. Each one matters here.",
+    "at": [
+     "So they ask for the biggest",
+     "And look at",
+     "Different, positive, and"
+    ]
+   },
+   {
+    "say": "Let's do it the math way, like in the lesson. First the sum. Six numbers with an average of nine. Six times nine is fifty-four.",
+    "at": [
+     "Let's do",
+     "Six times nine"
+    ]
+   },
+   {
+    "say": "To make one number as big as it can be, we make the other five as small as they can be.",
+    "at": [
+     "To make one"
+    ]
+   },
+   {
+    "say": "They must be positive whole numbers, and different. So the five smallest are one, two, three, four and five.",
+    "at": [
+     "So the five smallest are"
+    ]
+   },
+   {
+    "say": "One plus two plus three plus four plus five is fifteen.",
+    "at": [
+     "One plus two plus three",
+     "plus four plus"
+    ]
+   },
+   {
+    "say": "So the big one gets the rest. Fifty-four minus fifteen is thirty-nine.",
+    "at": [
+     "Fifty-four minus fifteen"
+    ]
+   },
+   {
+    "say": "Let's check. One, two, three, four, five and thirty-nine are six different positive whole numbers. Their sum is fifty-four, and fifty-four divided by six is nine.",
+    "at": [
+     "Let's check",
+     "and thirty-nine are",
+     "fifty-four divided by six"
+    ]
+   },
+   {
+    "say": "Careful with forty-nine, choice number three. That's fifty-four minus five, as if the others were five ones. But the numbers must be different, so we can't use five ones.",
+    "at": [
+     "number three. That's",
+     "That's fifty-four minus five",
+     "if the others",
+     "so we can't use five ones"
+    ]
+   },
+   {
+    "say": "And fifty-four, choice number four, needs the other five to be zero. But zero isn't positive.",
+    "at": [
+     "And fifty-four, choice number four",
+     "number four, needs",
+     "five to be",
+     "But zero isn't positive"
+    ]
+   },
+   {
+    "say": "Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

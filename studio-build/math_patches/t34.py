@@ -2037,3 +2037,61 @@ _apply_before_choice_order = apply
 def apply(M):
     _apply_before_choice_order(M)
     _co_load().choice_order(M, 34)   # 2026-10-09 choice order: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-21 topic 34 for the teacher's own-voice reading, built like topics 30-33 (t33.py ai_redo_t33). Every topic-34
+# video, the camera lesson 'geo-104' included (she reads it with the camera on, in parts of about 3-4 minutes,
+# math_patches/_camera_parts.py), has ONE spec in _ai_vis_t34.py that drives the script (ai_scripts/<vid>.json), the visual
+# plan (_ai_visual.py format) and the slides: each video is rebuilt from the spec and _ai_visual.apply() adds the click
+# items, POINT highlights and pen marks around it. A non-camera video with a camera take recorded before AI34_CUTOFF (UTC)
+# keeps that version (none are recorded). The summary video r26-t34-summary is not rebuilt: the summary page
+# summary_pages/t34.json replaces it. R37: the lesson "Polygons Meeting at a Point" (r26-t34-meet, out of the flow since
+# the 2026-10-05 cut) goes back into the flow right before its card and q-r26-t34-03, because its method is a core
+# method (two real exam questions) and belongs in a lesson (decision for the teacher; delete the _insert_flow line in ai_redo_t34 to undo).
+# Runs LAST. (env AIVIS_T34 = another spec file, for tests)
+# =====================================================================================================================
+AI34_CUTOFF = '2026-10-21T00-00-00'
+AI34_CAMERA = 'geo-104'
+
+
+def _ai34_recorded(vid):
+    import glob, os, re
+    pat = re.compile(re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in glob.glob(os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(os.path.basename(f))
+        if m and m.group(1) < AI34_CUTOFF: return True
+    return False
+
+
+def _ai34_mod(name, path=None):
+    import importlib.util, os, sys
+    if name not in sys.modules:
+        p = path or os.path.join(os.path.dirname(os.path.abspath(__file__)), name + '.py')
+        if not os.path.exists(p): return None
+        spec = importlib.util.spec_from_file_location(name, p); m = importlib.util.module_from_spec(spec)
+        sys.modules[name] = m; spec.loader.exec_module(m)
+    return sys.modules[name]
+
+
+def ai_redo_t34(M):
+    import os
+    if MEET in M.D['videos'] and not any(f['ref'] == MEET for f in M.D['flow']):
+        M._insert_flow('video', MEET, M.section_of('mem-r26-t34-meet'), before='mem-r26-t34-meet')
+    S = _ai34_mod('_ai_vis_t34', os.environ.get('AIVIS_T34'))
+    if S is None: return
+    AV = _ai34_mod('_ai_visual')
+    CP = _ai34_mod('_camera_parts'); CP.add_to_course(M, S, 34)
+    for vid in S.ORDER:
+        if vid not in M.D['videos'] or (not CP.is_part(AI34_CAMERA, vid) and _ai34_recorded(vid)): continue
+        S.rebuild(M, vid)
+        AV.VIS[vid] = S.vis(vid)
+        AV.apply(M, vid)
+
+
+_apply_before_ai_redo_t34 = apply
+
+
+def apply(M):
+    _apply_before_ai_redo_t34(M)
+    ai_redo_t34(M)   # 2026-10-21 topic 34 for the teacher's reading: runs LAST

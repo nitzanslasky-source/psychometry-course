@@ -1,0 +1,140 @@
+{
+ "videoId": "solve-wp25-g087",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A final grade counts the written exam twice as much as the oral exam. Sara scores sixty-one on the written exam and ninety-seven on the oral exam. What is her final grade?",
+    "voice": "calm",
+    "at": [
+     "A final grade counts"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the two exams have different weights. It doesn't say weighted, but the written exam counts twice as much. So it's a weighted average.",
+    "at": [
+     "weighted, but the",
+     "it's a weighted"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways, the math way with the formula, and then by understanding, with the seesaw.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. Like in the lesson, the written exam counts twice, so we treat it as two copies. Sixty-one, sixty-one and ninety-seven.",
+    "at": [
+     "Sixty-one, sixty-one and ninety-seven"
+    ]
+   },
+   {
+    "say": "Sixty-one times two is a hundred twenty-two. Plus ninety-seven is two hundred nineteen.",
+    "at": [
+     "Sixty-one times two",
+     "Plus ninety-seven"
+    ]
+   },
+   {
+    "say": "We divide by the sum of the weights, two plus one, three. Not by two.",
+    "at": [
+     "sum of the",
+     "two plus one, three"
+    ]
+   },
+   {
+    "say": "Two hundred nineteen divided by three. Two hundred ten divided by three is seventy. And nine divided by three is three. So it's seventy-three.",
+    "at": [
+     "Two hundred nineteen",
+     "Two hundred ten divided by three",
+     "three is seventy",
+     "nine divided by three",
+     "So it's seventy-three"
+    ]
+   },
+   {
+    "say": "Careful with seventy-nine, choice number one. That's the plain middle of sixty-one and ninety-seven. It forgets the weights.",
+    "at": [
+     "number one. That's",
+     "That's the plain middle",
+     "It forgets the weights"
+    ]
+   },
+   {
+    "say": "So her final grade is seventy-three. That's choice number four.",
+    "at": [
+     "So her final",
+     "number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with the seesaw. We start again from the givens. We draw a line, with sixty-one and ninety-seven above its ends.",
+    "at": [
+     "Now by",
+     "the givens. We",
+     "We draw a line",
+     "with sixty-one and ninety-seven"
+    ]
+   },
+   {
+    "say": "The weights go below. The written exam, sixty-one, has weight two. The oral exam, ninety-seven, has weight one.",
+    "at": [
+     "The weights go below",
+     "The written exam"
+    ]
+   },
+   {
+    "say": "The weights are two to one, so the distances are one to two. We cut the gap into two plus one, three units.",
+    "at": [
+     "three units"
+    ]
+   },
+   {
+    "say": "The gap is ninety-seven minus sixty-one, thirty-six. Thirty-six divided by three is twelve. So each unit is twelve.",
+    "at": [
+     "ninety-seven minus sixty-one",
+     "Thirty-six divided by three",
+     "So each unit"
+    ]
+   },
+   {
+    "say": "The heavy side gets the small part. So the average is one unit from sixty-one. Sixty-one plus twelve is seventy-three.",
+    "at": [
+     "So the average is one unit",
+     "unit from sixty-one",
+     "Sixty-one plus twelve"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's check from the other side. That's two units from ninety-seven. Two times twelve is twenty-four. And ninety-seven minus twenty-four is seventy-three.",
+    "at": [
+     "Let's check",
+     "other side. That's",
+     "Two times twelve",
+     "ninety-seven minus twenty-four"
+    ]
+   },
+   {
+    "say": "Careful with eighty-five, choice number three. That's one unit from ninety-seven, the light side. The small part goes to the heavy side.",
+    "at": [
+     "number three. That's",
+     "one unit from ninety-seven",
+     "The small part goes",
+     "the heavy side"
+    ]
+   },
+   {
+    "say": "Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

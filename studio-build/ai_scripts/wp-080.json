@@ -1,0 +1,225 @@
+{
+ "videoId": "wp-080",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now a new topic, averages.",
+   {
+    "say": "Average questions come up in almost every exam. They use a few simple ideas. Once you know them, these questions are quick.",
+    "at": [
+     "in almost every"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "On the exam, it usually just says the average. It's the average you know from school.",
+    "at": [
+     "usually just says",
+     "It's the average you know"
+    ]
+   },
+   {
+    "say": "An average is one number that describes the middle of a group of numbers. So let's see what the middle means.",
+    "at": [
+     "An average is"
+    ]
+   },
+   {
+    "say": "Let's start with the easy case, numbers that are symmetric. Take sixteen and thirty. Where's the middle?",
+    "at": [
+     "Take sixteen and thirty",
+     "Where's the middle",
+     "Where's the middle"
+    ]
+   },
+   {
+    "say": "Sixteen plus seven is twenty-three. And twenty-three plus seven is thirty.",
+    "at": [
+     "Sixteen plus seven",
+     "twenty-three plus seven"
+    ]
+   },
+   {
+    "say": "So twenty-three is seven above sixteen, and seven below thirty. It's exactly in the middle.",
+    "at": [
+     "So twenty-three is",
+     "It's exactly in the middle"
+    ]
+   },
+   {
+    "say": "So the average of sixteen and thirty is twenty-three.",
+    "at": [
+     "So the average"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now four numbers. Six, ten, fourteen and eighteen.",
+    "at": [
+     "Six, ten, fourteen",
+     "Six, ten, fourteen"
+    ]
+   },
+   {
+    "say": "Six and eighteen are a pair. Their middle is twelve, because six plus six is twelve, and twelve plus six is eighteen.",
+    "at": [
+     "Six and eighteen are a pair",
+     "Their middle is"
+    ]
+   },
+   {
+    "say": "Ten and fourteen are also a pair. Ten plus two is twelve, and twelve plus two is fourteen. So their middle is twelve too.",
+    "at": [
+     "Ten and fourteen are also a pair",
+     "Ten plus two"
+    ]
+   },
+   {
+    "say": "Every pair has the same middle, twelve. So the average of all four numbers is twelve.",
+    "at": [
+     "Every pair has the same middle",
+     "So the average"
+    ]
+   },
+   {
+    "say": "So when the numbers are symmetric, the average is the middle. We don't need to calculate.",
+    "at": [
+     "So when the numbers are symmetric",
+     "symmetric, the average"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "On the exam, symmetric numbers often come as evenly spaced numbers. That means each number is the same step above the one before.",
+    "at": [
+     "numbers often come"
+    ]
+   },
+   {
+    "say": "For example, three, seven, eleven, fifteen and nineteen.",
+    "at": [
+     "three, seven, eleven"
+    ]
+   },
+   {
+    "say": "Each one is four more than the one before.",
+    "at": [
+     "Each one is four more",
+     "than the one"
+    ]
+   },
+   {
+    "say": "Evenly spaced numbers are symmetric around the middle one. Three and nineteen are a pair. Seven and fifteen are a pair. And eleven is in the middle.",
+    "at": [
+     "Three and nineteen are a pair",
+     "Seven and fifteen"
+    ]
+   },
+   {
+    "say": "So the average is the middle number, eleven.",
+    "at": [
+     "So the average is the middle number",
+     "middle number, eleven"
+    ]
+   },
+   {
+    "say": "There's another way. Take the first number and the last number, and find their middle.",
+    "at": [
+     "There's another way",
+     "Take the first"
+    ]
+   },
+   {
+    "say": "Three plus nineteen is twenty-two. And twenty-two divided by two is eleven. The same eleven.",
+    "at": [
+     "Three plus nineteen",
+     "twenty-two divided by two",
+     "eleven. The same"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Numbers in a row are evenly spaced too. For example, twenty, twenty-one, twenty-two, and so on up to thirty. Each step is one.",
+    "at": [
+     "are evenly spaced",
+     "For example, twenty, twenty-one",
+     "and so on"
+    ]
+   },
+   {
+    "say": "So the average is the first plus the last, divided by two. Twenty plus thirty is fifty. Fifty divided by two is twenty-five.",
+    "at": [
+     "Twenty plus thirty",
+     "Fifty divided by two"
+    ]
+   },
+   {
+    "say": "And what if there's no single middle number? Take four, six, eight and ten. That's four numbers, so there are two middle numbers, six and eight.",
+    "at": [
+     "And what if",
+     "Take four, six, eight",
+     "ten. That's four",
+     "two middle numbers"
+    ]
+   },
+   {
+    "say": "Then the average is halfway between them, seven.",
+    "at": [
+     "halfway between them"
+    ]
+   },
+   {
+    "say": "And the first plus the last works here too. Four plus ten is fourteen, and fourteen divided by two is seven.",
+    "at": [
+     "And the first",
+     "Four plus ten",
+     "fourteen divided by two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's add a number to a group. Take three, five and seven. The average is five, the middle.",
+    "at": [
+     "number to a",
+     "Take three, five and seven",
+     "The average is"
+    ]
+   },
+   "And five is also one of the numbers. It sits right on the middle.",
+   {
+    "say": "Now let's add another five. What's the average of three, five, five and seven? Three and seven are still a pair around five. So the average is still five.",
+    "at": [
+     "What's the average of three, five, five",
+     "five, five and"
+    ]
+   },
+   "Why? A number that is equal to the average sits on the middle. It doesn't pull the middle up, and it doesn't pull it down.",
+   {
+    "say": "So here's our first rule. If we add or remove a number equal to the average, the average doesn't change.",
+    "at": [
+     "So here's our first rule",
+     "If we add"
+    ]
+   },
+   {
+    "say": "For example, four numbers have an average of ten. We add a fifth number, ten. The average stays ten.",
+    "at": [
+     "four numbers have an average of ten",
+     "We add a"
+    ]
+   },
+   {
+    "say": "But if we add twelve, that's more than the average. So the average goes up. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "But if we add twelve",
+     "So the average"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,183 @@
+{
+ "videoId": "solve-wp25-g090",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A delivery company ships two thousand boxes. Every box weighs either three kilograms or five kilograms, and the average weight is three point four kilograms per box. How many boxes weigh five kilograms?",
+    "voice": "calm",
+    "at": [
+     "A delivery company ships"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Until now we found the average. This time the average is given, and they ask for the size of one group.",
+    "at": [
+     "This time the average is given"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. The math way, then the seesaw backwards, and then an insight.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   "Let's start with the math way. The values are three and five kilograms. The weights are the numbers of boxes.",
+   {
+    "say": "The number of five-kilogram boxes isn't given, so let's call it x. The rest, two thousand minus x boxes, weigh three kilograms.",
+    "at": [
+     "so let's call it x",
+     "The rest, two thousand minus x",
+     "x boxes, weigh"
+    ]
+   },
+   {
+    "say": "Each weight times its number of boxes, divided by all two thousand boxes, is three point four.",
+    "at": [
+     "Each weight times its number",
+     "of boxes, divided"
+    ]
+   },
+   {
+    "say": "We multiply both sides by two thousand. Two thousand times three is six thousand. And two thousand times zero point four is eight hundred. So the right side is six thousand eight hundred.",
+    "at": [
+     "So the right side is"
+    ]
+   },
+   {
+    "say": "We open the brackets. Three times two thousand is six thousand. And three times x is three x.",
+    "at": [
+     "We open the brackets",
+     "Three times two"
+    ]
+   },
+   {
+    "say": "Five x minus three x is two x. And six thousand eight hundred minus six thousand is eight hundred. So two x is eight hundred.",
+    "at": [
+     "So two x is eight hundred"
+    ]
+   },
+   {
+    "say": "We divide both sides by two, and x is four hundred. So four hundred boxes weigh five kilograms, choice number three.",
+    "at": [
+     "and x is four hundred",
+     "So four hundred",
+     "number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with the seesaw, but backwards. We start again from the givens. This time we know where the pivot is, three point four. And we look for the weights.",
+    "at": [
+     "Now by",
+     "with the seesaw, but backwards",
+     "with the seesaw, but backwards",
+     "We start again",
+     "the givens. This",
+     "where the pivot is",
+     "And we look"
+    ]
+   },
+   {
+    "say": "Three point four is zero point four from three, and one point six from five.",
+    "at": [
+     "is zero point four from three",
+     "three, and one"
+    ]
+   },
+   {
+    "say": "One point six divided by zero point four is four. So the average is four times closer to three.",
+    "at": [
+     "One point six divided by",
+     "zero point four"
+    ]
+   },
+   {
+    "say": "Like in the lesson, the heavy side is the closer side. So the three-kilogram group is four times bigger. The weights are four parts to one part.",
+    "at": [
+     "The weights are four parts",
+     "to one part"
+    ]
+   },
+   {
+    "say": "So we cut the two thousand boxes into four plus one, five parts. Two thousand divided by five is four hundred.",
+    "at": [
+     "four plus one, five parts",
+     "Two thousand divided by five",
+     "is four hundred"
+    ]
+   },
+   {
+    "say": "The five-kilogram boxes are one part, four hundred. The other four parts, sixteen hundred boxes, weigh three kilograms.",
+    "at": [
+     "sixteen hundred boxes"
+    ]
+   },
+   {
+    "say": "Careful with sixteen hundred, choice number two. That's the three-kilogram boxes. And five hundred, choice number one, is two thousand divided by four. But there are five parts, not four.",
+    "at": [
+     "number two. That's",
+     "That's the three-kilogram boxes",
+     "five hundred, choice",
+     "number one, is",
+     "is two thousand divided by four",
+     "But there are five parts"
+    ]
+   },
+   {
+    "say": "So four hundred again, choice number three.",
+    "at": [
+     "number three"
+    ]
+   },
+   {
+    "say": "This works every time the average is given and they ask about the groups. The distances from the average, flipped, give the sizes of the groups. The closer value has the bigger group.",
+    "at": [
+     "This works every"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now an insight. We start again from the givens. Let's pretend every box weighs three kilograms. Two thousand times three is six thousand kilograms.",
+    "at": [
+     "Now an",
+     "the givens. Let's",
+     "Two thousand times three",
+     "six thousand kilograms"
+    ]
+   },
+   {
+    "say": "But the real total is two thousand times three point four. Two thousand times zero point four is eight hundred. So the real total is six thousand eight hundred kilograms.",
+    "at": [
+     "Two thousand times zero point four",
+     "four is eight",
+     "So the real total is six thousand",
+     "six thousand eight"
+    ]
+   },
+   {
+    "say": "So eight hundred kilograms are extra. Where do they come from? From the five-kilogram boxes. Each one is five minus three, two kilograms more than three.",
+    "at": [
+     "five minus three",
+     "more than three"
+    ]
+   },
+   {
+    "say": "Eight hundred divided by two is four hundred. So four hundred boxes weigh five kilograms.",
+    "at": [
+     "Eight hundred divided by two",
+     "is four hundred"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

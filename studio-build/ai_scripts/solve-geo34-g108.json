@@ -1,0 +1,128 @@
+{
+ "videoId": "solve-geo34-g108",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A regular octagon has side length ten. What is its area?",
+    "voice": "calm",
+    "at": [
+     "A regular octagon",
+     "A regular octagon"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "There's no formula for the area of an octagon. So like in the lesson, we cut it the way we always cut an octagon. We get a square in the middle, four rectangles, and four silver triangles in the corners.",
+    "at": [
+     "There's no formula",
+     "area of an",
+     "we cut it the way",
+     "we always cut",
+     "We get a square in the middle",
+     "the middle, four"
+    ]
+   },
+   {
+    "say": "Let's start with the square. Its side is a side of the octagon, ten. So its area is ten times ten, one hundred.",
+    "at": [
+     "Let's start with the square",
+     "Its side is",
+     "ten times ten"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the four corner triangles. Remember from the lesson, together they fill exactly one square like the middle one. So together they're one hundred too.",
+    "at": [
+     "Now the four corner triangles",
+     "Remember from the",
+     "together they fill",
+     "square like the",
+     "they're one hundred too"
+    ]
+   },
+   {
+    "say": "Let's check it. The hypotenuse of a corner triangle is a side of the octagon, ten. In a silver triangle, we go from the hypotenuse to a leg by dividing by root two. Ten over root two, times root two over root two, is ten root two over two. That's five root two.",
+    "at": [
+     "The hypotenuse of",
+     "Ten over root two",
+     "root two over",
+     "That's five root two"
+    ]
+   },
+   {
+    "say": "So one triangle is five root two times five root two, divided by two. Five root two times five root two is twenty-five times two, fifty. Half of that is twenty-five. And four triangles are one hundred, just like the square.",
+    "at": [
+     "So one triangle",
+     "Five root two times five root two is",
+     "root two is",
+     "Half of that is twenty-five",
+     "And four triangles"
+    ]
+   },
+   {
+    "say": "Now a rectangle. One side is a side of the octagon, ten. The other side is a leg of a corner triangle, five root two. So one rectangle is ten times five root two, fifty root two.",
+    "at": [
+     "Now a rectangle",
+     "One side is",
+     "So one rectangle is",
+     "times five root",
+     "fifty root two."
+    ]
+   },
+   {
+    "say": "There are four rectangles, so they make two hundred root two. Careful, four, not two. With only two rectangles we'd get one hundred root two, and that's the trap in choice number two.",
+    "at": [
+     "so they make two hundred root two",
+     "root two. Careful",
+     "the trap in choice number two"
+    ]
+   },
+   {
+    "say": "So the octagon is one hundred, plus one hundred, plus two hundred root two. That's two hundred plus two hundred root two. Choice number one is our answer.",
+    "at": [
+     "So the octagon is one hundred",
+     "hundred, plus one",
+     "That's two hundred plus",
+     "hundred root two. Choice",
+     "Choice number one is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "This question hides a pattern that's true in every regular octagon. The square in the middle is the side squared, here one hundred. Double it, and you get the plain number, two hundred. Then write the same number again, with root two. So it's two hundred plus two hundred root two.",
+    "at": [
+     "This question hides a pattern",
+     "that's true in",
+     "Then write the same number",
+     "again, with root"
+    ]
+   },
+   "Why? The four triangles make a second square, so the plain part is two squares. And the four rectangles always come out as the same number, times root two.",
+   {
+    "say": "Let's try it with side three. Three squared is nine. Double it, eighteen. So the area is eighteen plus eighteen root two. With side seven, seven squared is forty-nine. Double it, ninety-eight. So the area is ninety-eight plus ninety-eight root two.",
+    "at": [
+     "Let's try it with side three",
+     "three. Three squared",
+     "With side seven",
+     "is forty-nine. Double"
+    ]
+   },
+   {
+    "say": "The same cut helps when a question asks for only a part of the octagon. Take the cross in the middle, the square and the four rectangles. That's the whole octagon without the four triangles. Two hundred plus two hundred root two, minus the one hundred of the triangles. That leaves one hundred plus two hundred root two. And I'll see you in the next question.",
+    "at": [
+     "Take the cross in the middle",
+     "middle, the square",
+     "without the four triangles",
+     "hundred plus two",
+     "minus the one hundred",
+     "That leaves one hundred plus",
+     "two hundred root two. And"
+    ]
+   }
+  ]
+ ]
+}

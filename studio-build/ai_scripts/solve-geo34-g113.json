@@ -1,0 +1,116 @@
+{
+ "videoId": "solve-geo34-g113",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Five squares are built outside a regular hexagon, on five of its sides. Ella says that the five squares together have a perimeter three times the hexagon's perimeter. Adam says that the five squares together have a bigger area than the hexagon. Which of the following is true?",
+    "voice": "calm",
+    "at": [
+     "Five squares are built",
+     "Five squares are built",
+     "Ella says that"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we check each person on their own. We'll solve it in two different ways, by plugging in numbers, and then by understanding.",
+    "at": [
+     "on their own"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's plug in numbers. Each square is built on a side of the hexagon, so the square's side is the hexagon's side. The claims only compare the shapes with each other, so any side works. Let's take the easiest one, a side of one.",
+    "at": [
+     "Let's plug in numbers",
+     "Each square is",
+     "a side of one"
+    ]
+   },
+   {
+    "say": "Ella first. One square has four sides of one, so its perimeter is four. Five squares are five times four, twenty. The hexagon has six sides of one, so its perimeter is six.",
+    "at": [
+     "One square has",
+     "Five squares are five times four",
+     "The hexagon has six sides",
+     "of one, so its perimeter is six"
+    ]
+   },
+   {
+    "say": "Ella says the squares are three times the hexagon. Three times six is eighteen, not twenty. So Ella is wrong. Choice number one, only Ella, is out. And choice number two, both, is out too. If we run out of time now, we already have only two choices left.",
+    "at": [
+     "Three times six is eighteen",
+     "not twenty. So",
+     "Choice number one, only Ella",
+     "choice number two, both"
+    ]
+   },
+   {
+    "say": "Now Adam. One square has area one times one, one. So five squares make five.",
+    "at": [
+     "five squares make five"
+    ]
+   },
+   {
+    "say": "The hexagon is six equilateral triangles with side one. One triangle is one squared, times root three, over four. That's root three over four. Six of them are six root three over four, which is three root three over two.",
+    "at": [
+     "six equilateral triangles",
+     "One triangle is",
+     "Six of them",
+     "root three over four, which"
+    ]
+   },
+   {
+    "say": "Is that more or less than five? We don't need the exact number. Root three is less than two. So three root three over two is less than three times two over two, which is three. And three is less than five. So the squares have the bigger area, and Adam is right. Only Adam is right. Choice number four is our answer.",
+    "at": [
+     "Root three is less than two",
+     "So three root",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now by understanding. Ella first. We don't need numbers. We just count sides, because all the sides here have the same length. Five squares have five times four, twenty sides. The hexagon has six. Three times six is eighteen, not twenty. So Ella is wrong.",
+    "at": [
+     "Now by understanding",
+     "We don't need",
+     "Five squares have",
+     "four, twenty sides"
+    ]
+   },
+   {
+    "say": "Adam is the harder part. Let's cut the hexagon into three rhombi, like in the lesson about the two partitions. Now let's compare one rhombus with one square.",
+    "at": [
+     "into three rhombi",
+     "the lesson about"
+    ]
+   },
+   {
+    "say": "They have the same side. In the square, every angle is ninety. In the rhombus, the angles are not ninety, so the rhombus leans.",
+    "at": [
+     "They have the same side",
+     "In the square"
+    ]
+   },
+   {
+    "say": "The area of each one is a base times a height. In the square, the height is the whole side. In the rhombus, the side leans, so the height is shorter than the side. So with the same side, the square always has more area.",
+    "at": [
+     "In the square, the height",
+     "is the whole",
+     "the square always has more area"
+    ]
+   },
+   {
+    "say": "So three squares are already bigger than the three rhombi, the whole hexagon. And we have five squares. So Adam is right, and Ella is wrong. Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "So three squares are already bigger",
+     "bigger than the",
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

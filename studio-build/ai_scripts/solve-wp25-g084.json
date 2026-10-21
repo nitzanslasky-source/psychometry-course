@@ -1,0 +1,170 @@
+{
+ "videoId": "solve-wp25-g084",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Four numbers are given. Take the average of each of the six different pairs, then add those six averages. The result equals which of the following?",
+    "voice": "calm",
+    "at": [
+     "Four numbers are given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we take every pair of the four numbers, find its average, and add the six averages. They ask how the result compares to the average of all four numbers.",
+    "at": [
+     "So we take every pair"
+    ]
+   },
+   {
+    "say": "This is a hard question near the end of the section. We'll solve it in two different ways, the math way, and then by plugging in numbers, which makes it a quick question.",
+    "at": [
+     "This is"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. Let's call the four numbers p, q, r and s.",
+    "at": [
+     "Let's call the four numbers",
+     "p, q, r"
+    ]
+   },
+   {
+    "say": "The six pairs are p and q, p and r, p and s, q and r, q and s, and r and s.",
+    "at": [
+     "The six pairs are",
+     "and q, p"
+    ]
+   },
+   {
+    "say": "The average of each pair is the two numbers, divided by two. For example, p plus q, divided by two.",
+    "at": [
+     "For example, p plus q"
+    ]
+   },
+   {
+    "say": "All six averages have the same denominator, two. So to add them, we just add the tops.",
+    "at": [
+     "All six averages"
+    ]
+   },
+   {
+    "say": "How many times does p appear? In three pairs, with q, with r and with s. The same is true for every number.",
+    "at": [
+     "In three pairs",
+     "with r and"
+    ]
+   },
+   {
+    "say": "So the tops add up to three times the bracket, p plus q plus r plus s. And it's all divided by two.",
+    "at": [
+     "So the tops add up",
+     "p plus q"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the average of the four numbers. Let's call it A. Like in the lesson, the sum is how many times the average. So p plus q plus r plus s is four A.",
+    "at": [
+     "Now the",
+     "the four numbers",
+     "it A. Like",
+     "lesson, the sum",
+     "So p plus q plus r plus s is four A",
+     "r plus s"
+    ]
+   },
+   {
+    "say": "So the six averages add up to three times four A, divided by two. Three times four is twelve. Twelve A divided by two is six A.",
+    "at": [
+     "Three times four is twelve",
+     "Twelve A divided by two",
+     "is six A"
+    ]
+   },
+   {
+    "say": "So the result is six times the average of the four numbers. That's choice number three.",
+    "at": [
+     "number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in numbers. We start again from the question. Nothing says the four numbers are different. So, like in the lesson, let's make all four equal to one.",
+    "at": [
+     "Now let's",
+     "the question. Nothing",
+     "make all four equal to one"
+    ]
+   },
+   {
+    "say": "Every pair is one and one, so the average of every pair is one.",
+    "at": [
+     "so the average of every pair"
+    ]
+   },
+   {
+    "say": "There are six pairs, so the six averages add up to one times six, six.",
+    "at": [
+     "so the six",
+     "one times six"
+    ]
+   },
+   {
+    "say": "And the average of the four numbers is one too.",
+    "at": [
+     "And the average of the four numbers",
+     "four numbers is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's check the choices. We need to rule out three. Choice number one says four times the average. Four times one is four, not six. So it's out.",
+    "at": [
+     "Now let's",
+     "choices. We need",
+     "Choice number one says",
+     "number one says",
+     "Four times one",
+     "So it's out"
+    ]
+   },
+   {
+    "say": "Choice number two says two times the average. Two times one is two, not six. Out.",
+    "at": [
+     "Choice number two says",
+     "number two says",
+     "the average. Two",
+     "not six. Out"
+    ]
+   },
+   {
+    "say": "Choice number three says six times the average. Six times one is six. It fits, but when we plug in numbers, we don't stop at the first match.",
+    "at": [
+     "Choice number three says",
+     "number three says",
+     "Six times one"
+    ]
+   },
+   {
+    "say": "Choice number four says three times the average. Three times one is three, not six. Out.",
+    "at": [
+     "Choice number four says",
+     "number four says",
+     "Three times one is three",
+     "not six. Out"
+    ]
+   },
+   {
+    "say": "Three choices are out, so choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "so choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

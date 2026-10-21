@@ -232,3 +232,13 @@ Function `coverage_fixes` (runs LAST in apply(); helpers from `_hebrew_back.py`,
 - **solve-geo34-g111** "Statement by statement" (+≈7 s): "And anything that's just possible — out too. We want the one that can never be true."
 - **solve-geo34-g112** "Psychometric · Estimate" (+≈15 s; teacher: decimals as a SECOND option, only √3 ≈ 1.7 and √2 ≈ 1.4): "One way: make the numbers small first." … "Another way, with decimals: root 3 is about 1.7, root 2 about 1.4. 28 root 3 is about 48 — above 42. 28 root 2, about 39 — below. But when it comes out close — like 24 root 3, about 41 — trust the roots, not the decimals." (no ×1.5 benchmark)
 - Skipped (teacher): #70 "regular polygons can be trusted by eye" — on the English exam figures are not necessarily drawn to scale.
+
+
+## 2026-10-21 topic 34 for the teacher's own-voice reading (R37)
+Spec `math_patches/_ai_vis_t34.py` (one spec per video: the script `ai_scripts/<vid>.json`, the visual plan, the studio
+slides), hook `ai_redo_t34` at the end of `t34.py` (runs LAST; skips videos recorded before AI34_CUTOFF except the camera
+lesson; none are recorded). 23 scripts: the camera lesson `geo-104` in 4 parts (`geo-104`, `-2`, `-3`, `-4`), `geo-105`,
+`geo-109`, `geo-112-after`, `r26-t34-meet`, and 15 question videos. `r26-t34-meet` goes back into the flow before its card
+(R37: a core method belongs in a lesson; one `_insert_flow` line in `ai_redo_t34`). The summary video is replaced by
+`summary_pages/t34.json`. Review file: `~/Downloads/Topic-34-AI-scripts-review.md`; teaching check:
+`reviews/teaching-check-t34.md`.

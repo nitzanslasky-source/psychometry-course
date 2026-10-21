@@ -1,0 +1,121 @@
+{
+ "videoId": "solve-wp25-g088",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A lab report has weight five and a quiz has weight one. A student scores ninety-one on the lab report and fifty-five on the quiz. What is the weighted course score?",
+    "voice": "calm",
+    "at": [
+     "A lab report has weight five"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So it's a weighted average of two scores, and the lab report is five times heavier.",
+    "at": [
+     "So it's a weighted average"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. First by understanding with the seesaw, the way we'd do it on the exam. Then the math way, with the formula.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "Let's start with the seesaw. We draw a line. Fifty-five and ninety-one go above its ends, and the weights go below, one and five.",
+    "at": [
+     "We draw a line",
+     "Fifty-five and ninety-one go above",
+     "and the weights go below",
+     "one and five"
+    ]
+   },
+   "The lab report is five times heavier, so the average is five times closer to it. The weights are five to one, so the distances are one to five.",
+   {
+    "say": "We cut the gap into five plus one, six units.",
+    "at": [
+     "six units"
+    ]
+   },
+   {
+    "say": "The gap is ninety-one minus fifty-five, thirty-six. Thirty-six divided by six is six. So each unit is six.",
+    "at": [
+     "ninety-one minus fifty-five",
+     "Thirty-six divided by six",
+     "So each unit"
+    ]
+   },
+   {
+    "say": "The heavy side gets the small part, one unit. Ninety-one minus six is eighty-five.",
+    "at": [
+     "The heavy side gets the small part",
+     "Ninety-one minus six"
+    ]
+   },
+   {
+    "say": "Careful with sixty-one, choice number three. That's one unit from fifty-five, the light side.",
+    "at": [
+     "number three. That's",
+     "That's one unit from fifty-five",
+     "the light side"
+    ]
+   },
+   {
+    "say": "So the score is eighty-five. That's choice number two.",
+    "at": [
+     "So the score",
+     "number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way, with the formula. We start again from the givens. Each score times its weight, divided by the sum of the weights.",
+    "at": [
+     "Now the",
+     "the givens. Each",
+     "Each score times its weight",
+     "divided by the"
+    ]
+   },
+   {
+    "say": "Ninety-one times five. Ninety times five is four hundred fifty, and five more is four hundred fifty-five.",
+    "at": [
+     "Ninety times five",
+     "and five more"
+    ]
+   },
+   {
+    "say": "Plus fifty-five times one. Four hundred fifty-five plus fifty-five is five hundred ten.",
+    "at": [
+     "Four hundred fifty-five plus fifty-five",
+     "is five hundred"
+    ]
+   },
+   {
+    "say": "The weights add up to five plus one, six.",
+    "at": [
+     "five plus one, six"
+    ]
+   },
+   {
+    "say": "Five hundred ten divided by six. Four hundred eighty divided by six is eighty. And thirty divided by six is five. So it's eighty-five.",
+    "at": [
+     "Five hundred ten",
+     "Four hundred eighty divided by six",
+     "six is eighty",
+     "thirty divided by six",
+     "So it's eighty-five"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

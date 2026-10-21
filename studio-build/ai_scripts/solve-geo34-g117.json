@@ -1,0 +1,73 @@
+{
+ "videoId": "solve-geo34-g117",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A is the sum of the interior angles of a polygon with fourteen sides. B is the sum of the interior angles of a polygon with twenty sides. The difference, B minus A, is equal to the sum of the interior angles of which polygon?",
+    "voice": "calm",
+    "at": [
+     "A is the sum of the interior angles"
+    ],
+    "pause": 0.5
+   },
+   "So we don't need A or B themselves, only the difference between them. We'll solve it in two different ways, the math way, and then by understanding.",
+   {
+    "say": "Let's start with the math way. B has twenty sides. So B is one hundred eighty times the bracket, twenty minus two, which is one hundred eighty times eighteen.",
+    "at": [
+     "So B is one hundred eighty",
+     "minus two, which"
+    ]
+   },
+   {
+    "say": "A has fourteen sides. So A is one hundred eighty times the bracket, fourteen minus two, which is one hundred eighty times twelve.",
+    "at": [
+     "So A is one hundred eighty",
+     "minus two, which"
+    ]
+   },
+   {
+    "say": "We won't calculate each one and subtract. Both have one hundred eighty in them, so let's take it out as a common factor. B minus A is one hundred eighty times the bracket, eighteen minus twelve. Eighteen minus twelve is six. So it's six times one hundred eighty. Six times one hundred is six hundred, and six times eighty is four hundred eighty. Together, one thousand eighty.",
+    "at": [
+     "B minus A is one hundred eighty times",
+     "eighteen minus twelve",
+     "Eighteen minus twelve is six",
+     "So it's six"
+    ]
+   },
+   {
+    "say": "Which polygon has a sum of one thousand eighty? Six times one hundred eighty means six triangles. And there are always two more sides than triangles. Six plus two is eight sides, an octagon. Choice number two is our answer.",
+    "at": [
+     "Six plus two is eight sides",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now by understanding. Like in the lesson, every extra side adds one hundred eighty. How many more sides does B have? Twenty minus fourteen is six. So B is six times one hundred eighty more than A.",
+    "at": [
+     "in the lesson",
+     "Twenty minus fourteen is six",
+     "So B is"
+    ]
+   },
+   {
+    "say": "Six times one hundred eighty is one thousand eighty, and like before, that's the sum of an octagon.",
+    "at": [
+     "Six times one hundred eighty is one thousand eighty",
+     "is one thousand"
+    ]
+   },
+   {
+    "say": "Careful with choice number one, a hexagon. Six is the number of extra sides, not the answer. A hexagon has a sum of only seven hundred twenty. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Careful with choice number one",
+     "A hexagon has a sum",
+     "of only seven",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

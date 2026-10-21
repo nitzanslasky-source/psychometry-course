@@ -1,0 +1,258 @@
+{
+ "videoId": "wp-080-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with averages, and look at numbers that aren't symmetric."
+  ],
+  [
+   {
+    "say": "Now the harder case, numbers that aren't symmetric. For example, four, nine, three, eleven and eight.",
+    "at": [
+     "numbers that aren't",
+     "For example, four, nine, three",
+     "eleven and eight"
+    ]
+   },
+   {
+    "say": "Let's draw each number as a tower of blocks. Four blocks, nine blocks, three, eleven and eight.",
+    "at": [
+     "Let's draw each number",
+     "a tower of"
+    ]
+   },
+   "To find the average, we share the blocks equally, so that all the towers have the same height.",
+   "Before we share, let's find the limits. We'll only move blocks from the tall towers to the short ones.",
+   {
+    "say": "So no tower can end up taller than eleven, the tallest tower now. And no tower can end up shorter than three, the shortest one.",
+    "at": [
+     "So no tower can end up taller",
+     "up taller than",
+     "And no tower can end up shorter",
+     "up shorter than"
+    ]
+   },
+   {
+    "say": "So the average is always between the smallest number and the biggest number.",
+    "at": [
+     "So the average is always between",
+     "between the smallest"
+    ]
+   },
+   "And when the numbers aren't all equal, the average can't be the smallest or the biggest number. It's somewhere in between.",
+   {
+    "say": "Now let's share the blocks. Let's try to make every tower seven blocks high. Above seven, nine has two extra blocks, eleven has four, and eight has one.",
+    "at": [
+     "Above seven, nine has two",
+     "extra blocks, eleven"
+    ]
+   },
+   {
+    "say": "Two plus four plus one is seven blocks to give.",
+    "at": [
+     "Two plus four plus one",
+     "is seven blocks"
+    ]
+   },
+   {
+    "say": "The two short towers get them. Four needs three blocks, and three needs four blocks. Three plus four is seven.",
+    "at": [
+     "The two short towers get them",
+     "Four needs three",
+     "Three plus four is seven"
+    ]
+   },
+   {
+    "say": "It works. The tall towers give exactly what the short towers need. Now every tower is seven blocks high.",
+    "at": [
+     "The tall towers",
+     "Now every tower is seven"
+    ]
+   },
+   {
+    "say": "So the average of these five numbers is seven. We didn't add or remove a single block. We just shared them equally.",
+    "at": [
+     "So the average"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So what did we really do? We took all the blocks, that's the sum. And we shared them among the towers, that's how many numbers there are.",
+    "at": [
+     "really do? We"
+    ]
+   },
+   {
+    "say": "Let's count the blocks. Four plus nine plus three is sixteen. Sixteen plus eleven plus eight is thirty-five.",
+    "at": [
+     "Four plus nine plus three",
+     "Sixteen plus eleven plus eight"
+    ]
+   },
+   {
+    "say": "There are five towers. Thirty-five divided by five is seven. The same seven.",
+    "at": [
+     "Thirty-five divided by five",
+     "seven. The same"
+    ]
+   },
+   {
+    "say": "That's the formula from school. The average is equal to the sum, divided by how many numbers there are.",
+    "at": [
+     "That's the formula from school",
+     "The average is"
+    ]
+   },
+   {
+    "say": "Let's try it once more, on two, five and eleven.",
+    "at": [
+     "on two, five and eleven"
+    ]
+   },
+   {
+    "say": "Two plus five plus eleven is eighteen. There are three numbers. Eighteen divided by three is six.",
+    "at": [
+     "Two plus five plus eleven",
+     "is eighteen. There",
+     "Eighteen divided by three"
+    ]
+   },
+   {
+    "say": "And six is between two and eleven, as it must be.",
+    "at": [
+     "And six is between",
+     "and eleven, as"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now look at the towers again. The tall towers gave seven blocks, and the short towers got seven blocks.",
+    "at": [
+     "towers again. The"
+    ]
+   },
+   {
+    "say": "Let's write how far each number is from the average, seven. Plus above the average, and minus below it.",
+    "at": [
+     "Let's write how far",
+     "number is from"
+    ]
+   },
+   {
+    "say": "Four is three below, minus three. Nine is plus two. Three is minus four. Eleven is plus four. Eight is plus one.",
+    "at": [
+     "Four is three below",
+     "three. Nine is"
+    ]
+   },
+   {
+    "say": "Above the average, two plus four plus one is seven. Below it, three plus four is seven.",
+    "at": [
+     "Above the average",
+     "four plus one",
+     "Below it"
+    ]
+   },
+   {
+    "say": "So the amount above the average is equal to the amount below it. And that's always true, for any group.",
+    "at": [
+     "So the amount"
+    ]
+   },
+   {
+    "say": "In other words, the differences from the average add up to zero. We call this the balance. It's the fastest tool in average questions.",
+    "at": [
+     "add up to zero",
+     "We call this"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's use it. Four test scores, eighty-six, ninety-three, ninety-five and one more. The average is ninety. What's the missing score?",
+    "at": [
+     "Four test scores",
+     "ninety-five and one"
+    ]
+   },
+   {
+    "say": "Let's compare each score to ninety, the average.",
+    "at": [
+     "compare each score"
+    ]
+   },
+   {
+    "say": "Eighty-six is four below ninety, so minus four. Ninety-three is three above, plus three. Ninety-five is five above, plus five.",
+    "at": [
+     "so minus four",
+     "plus three",
+     "plus five"
+    ]
+   },
+   {
+    "say": "Together, minus four plus three plus five is plus four.",
+    "at": [
+     "Together, minus four",
+     "plus five is"
+    ]
+   },
+   "So the three scores we know are four points above the average, together. The missing score must balance them. So it's four points below ninety.",
+   {
+    "say": "Ninety minus four is eighty-six.",
+    "at": [
+     "Ninety minus four",
+     "eighty-six"
+    ]
+   },
+   {
+    "say": "Now the differences add up to zero. And we did no big sum and no division, only small differences.",
+    "at": [
+     "Now the differences add up to zero",
+     "And we did"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "With only two numbers, the balance is even simpler. The average of two numbers is exactly in the middle between them.",
+    "at": [
+     "the balance is",
+     "The average of two numbers is exactly",
+     "is exactly in"
+    ]
+   },
+   {
+    "say": "For example, the average of forty and another number is forty-seven. What's the other number?",
+    "at": [
+     "the average of forty and another",
+     "another number is",
+     "What's the other number"
+    ]
+   },
+   {
+    "say": "Forty is seven below forty-seven, because forty-seven minus forty is seven.",
+    "at": [
+     "Forty is seven below",
+     "Forty is seven below",
+     "forty-seven minus forty"
+    ]
+   },
+   {
+    "say": "So the other number is seven above the average. Forty-seven plus seven is fifty-four.",
+    "at": [
+     "So the other number is seven above",
+     "seven above the",
+     "Forty-seven plus seven"
+    ]
+   },
+   {
+    "say": "So when you see an average and one missing number, think of the balance. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "So when you"
+    ]
+   }
+  ]
+ ]
+}

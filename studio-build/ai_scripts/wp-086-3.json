@@ -1,0 +1,144 @@
+{
+ "videoId": "wp-086-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue, and use the seesaw for groups."
+  ],
+  [
+   {
+    "say": "Now two groups of numbers. Six numbers have an average of forty. Nine other numbers have an average of fifty. What's the average of all fifteen?",
+    "at": [
+     "Six numbers have an average",
+     "Nine other numbers"
+    ]
+   },
+   {
+    "say": "Each group is like one value with a weight. The value is the group's average, and the weight is how many numbers are in it.",
+    "at": [
+     "Each group is like one value",
+     "value with a",
+     "The value is the group's average",
+     "how many numbers"
+    ]
+   },
+   {
+    "say": "A lot of students just take the middle, forty-five. But that's only right when the groups are the same size.",
+    "at": [
+     "just take the middle",
+     "But that's only"
+    ]
+   },
+   {
+    "say": "Here the group at fifty is bigger. So the average is closer to fifty. It's above forty-five.",
+    "at": [
+     "Here the group at fifty is bigger",
+     "So the average"
+    ]
+   },
+   {
+    "say": "How far? The weights are six to nine. We can make them smaller. We divide both by three, and get two to three.",
+    "at": [
+     "two to three"
+    ]
+   },
+   {
+    "say": "So the distances are three to two. That's five units.",
+    "at": [
+     "So the distances are three to two",
+     "That's five units"
+    ]
+   },
+   {
+    "say": "The gap is fifty minus forty, ten. Ten divided by five is two. So each unit is two.",
+    "at": [
+     "fifty minus forty",
+     "Ten divided by five",
+     "So each unit"
+    ]
+   },
+   {
+    "say": "The average is three units from forty. Three times two is six. And forty plus six is forty-six.",
+    "at": [
+     "Three times two",
+     "forty plus six",
+     "is forty-six"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes the group sizes are given in percent. Then the percents are the weights.",
+    "at": [
+     "are given in"
+    ]
+   },
+   {
+    "say": "In a shop, seventy percent of the shirts cost thirty dollars, and thirty percent cost fifty dollars. What's the average price?",
+    "at": [
+     "In a shop",
+     "of the shirts"
+    ]
+   },
+   {
+    "say": "Here's a fast way. We start at the low price, thirty. The average moves toward fifty, by the share of the expensive shirts, thirty percent of the gap.",
+    "at": [
+     "We start at the low price",
+     "The average moves"
+    ]
+   },
+   {
+    "say": "The gap is fifty minus thirty, twenty.",
+    "at": [
+     "fifty minus thirty"
+    ]
+   },
+   {
+    "say": "Thirty percent of twenty. Ten percent of twenty is two, so thirty percent is six.",
+    "at": [
+     "Ten percent of twenty",
+     "so thirty percent is six"
+    ]
+   },
+   {
+    "say": "Thirty plus six is thirty-six. So the average price is thirty-six dollars.",
+    "at": [
+     "Thirty plus six",
+     "So the average"
+    ]
+   },
+   "Why does it work? It's the seesaw again. Seventy percent is the heavy side, so it gets the small part of the gap, six. The light side gets the big part, fourteen.",
+   {
+    "say": "The trap is forty, the plain middle. It's only right when the shares are fifty percent and fifty percent.",
+    "at": [
+     "The trap is forty",
+     "It's only right"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's sum up. In a weighted average, each value is multiplied by its weight. Then we divide by the sum of the weights.",
+    "at": [
+     "In a weighted average",
+     "value is multiplied"
+    ]
+   },
+   {
+    "say": "The average is closer to the heavy side. The distances are the weights, flipped.",
+    "at": [
+     "The average is closer",
+     "the heavy side"
+    ]
+   },
+   {
+    "say": "For groups, the weight is the size of the group. And percent shares are weights too.",
+    "at": [
+     "For groups",
+     "the size of"
+    ]
+   },
+   "Take a moment to memorize this. Now let's use it in the questions. I'll see you in the next video."
+  ]
+ ]
+}

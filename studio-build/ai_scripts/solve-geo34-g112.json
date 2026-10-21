@@ -1,0 +1,176 @@
+{
+ "videoId": "solve-geo34-g112",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A B C D E F is a regular hexagon. The perimeter of triangle A C E is forty-two. What is the perimeter of the hexagon?",
+    "voice": "calm",
+    "at": [
+     "A B C D E F is a regular hexagon",
+     "A B C D E F",
+     "The perimeter of"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we know the triangle made of three short diagonals, and we need the hexagon. We'll solve it in two different ways, the math way, and then with an estimate.",
+    "at": [
+     "the triangle made of three short diagonals",
+     "short diagonals, and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's start with the math way. First, let's see that triangle A C E is equilateral. Look at triangle A B C. Like in the lesson, it's a corner triangle. B A and B C are sides of the hexagon, so they're equal. And the angle at B is one hundred twenty. So the base angles are thirty each.",
+    "at": [
+     "Let's start with the math way",
+     "First, let's see",
+     "Look at triangle A B C",
+     "Like in the",
+     "So the base angles are thirty",
+     "thirty each."
+    ]
+   },
+   {
+    "say": "The same is true at the other two corners, in triangles C D E and E F A. So at A, the angle of one hundred twenty loses thirty and thirty. One hundred twenty minus thirty minus thirty is sixty. The same at C and at E. A triangle with three angles of sixty is equilateral.",
+    "at": [
+     "The same is true at the other two corners",
+     "the other two",
+     "One hundred twenty minus thirty",
+     "minus thirty is",
+     "The same at C and at E",
+     "of sixty is"
+    ]
+   },
+   {
+    "say": "So its three sides are equal. The perimeter is forty-two, so each side is forty-two divided by three, fourteen. So A C is fourteen.",
+    "at": [
+     "forty-two divided by three",
+     "So A C is fourteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now from the diagonal to the side. Like in the lesson, the short diagonal is the side times root three. So the side a, times root three, is fourteen.",
+    "at": [
+     "Now from the diagonal to the side",
+     "Like in the",
+     "So the side a, times root three",
+     "root three, is"
+    ]
+   },
+   {
+    "say": "Let's see it again in triangle A B C, bigger. The height from B cuts A C into seven and seven. It also cuts the angle of one hundred twenty into sixty and sixty. So each half is a golden triangle, thirty, sixty, ninety.",
+    "at": [
+     "Let's see it again in triangle A B C",
+     "The height from B",
+     "A C into",
+     "So each half is a golden triangle",
+     "golden triangle, thirty"
+    ]
+   },
+   {
+    "say": "Seven is across from sixty, so it's the long leg. To get the short leg, we divide by root three. So the short leg is seven over root three. The hypotenuse is twice the short leg, fourteen over root three. That's A B, the side of the hexagon.",
+    "at": [
+     "we divide by root three",
+     "So the short",
+     "The hypotenuse is twice",
+     "short leg, fourteen",
+     "That's A B, the side",
+     "of the hexagon"
+    ]
+   },
+   {
+    "say": "The hexagon has six sides. Six times fourteen over root three is eighty-four over root three. Let's multiply the top and the bottom by root three. That's eighty-four root three over three. Eighty-four divided by three is twenty-eight. So the perimeter is twenty-eight root three. Choice number two is our answer.",
+    "at": [
+     "Six times fourteen over root three",
+     "three is eighty-four",
+     "That's eighty-four root three over three",
+     "Eighty-four divided by",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's estimate. The perimeter of the hexagon must be bigger than forty-two. Why? Look at triangle A F E. Two sides of a triangle together are longer than the third side. So A F plus F E is longer than A E.",
+    "at": [
+     "Now let's estimate",
+     "The perimeter of",
+     "Look at triangle A F E",
+     "Two sides of",
+     "So A F plus F E"
+    ]
+   },
+   {
+    "say": "The same is true in the other two corner triangles. So the six sides of the hexagon are longer than the three sides of A C E. The perimeter is more than forty-two.",
+    "at": [
+     "The same is true in the other two",
+     "the other two",
+     "The perimeter is more than forty-two"
+    ]
+   },
+   {
+    "say": "Now let's compare each choice with forty-two, with whole numbers. Choice number three says twenty-four root three. Let's divide both by six. Twenty-four root three becomes four root three, and forty-two becomes seven.",
+    "at": [
+     "Now let's compare",
+     "Choice number three says",
+     "Let's divide both by six",
+     "Twenty-four root three becomes",
+     "and forty-two becomes seven"
+    ]
+   },
+   {
+    "say": "Four root three is the root of sixteen times three, the root of forty-eight. Seven is the root of forty-nine. Forty-eight is less than forty-nine, so twenty-four root three is less than forty-two. Choice number three is out.",
+    "at": [
+     "Four root three is the root",
+     "root of sixteen",
+     "Choice number three is out"
+    ]
+   },
+   {
+    "say": "Choice number one says twenty-four root two. That's even smaller, because root two is less than root three. So it's out too.",
+    "at": [
+     "number one says",
+     "That's even smaller",
+     "two is less",
+     "So it's out too"
+    ]
+   },
+   {
+    "say": "Choice number four says twenty-eight root two. Let's divide both by fourteen. That's two root two against three. Two root two is the root of eight, and three is the root of nine. So it's less than forty-two, and it's out. Only choice number two is left. Choice number two is our answer.",
+    "at": [
+     "number four says",
+     "Let's divide both by fourteen",
+     "That's two root two against three",
+     "Two root two is the root of eight",
+     "root of eight",
+     "and it's out",
+     "number two is",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more idea, for when you have no time and must guess. Two choices have root three, and two have root two. Root three usually comes from golden triangles and equilateral triangles. Root two usually comes from silver triangles and squares.",
+    "at": [
+     "when you have",
+     "Root three usually comes from",
+     "golden triangles and",
+     "Root two usually comes from",
+     "silver triangles and"
+    ]
+   },
+   {
+    "say": "A regular hexagon is built from equilateral triangles. So if you must guess, guess a choice with root three. Here the full solution gave choice number two, and I'll see you in the next question.",
+    "at": [
+     "gave choice number two"
+    ]
+   }
+  ]
+ ]
+}

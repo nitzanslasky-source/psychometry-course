@@ -1,0 +1,151 @@
+{
+ "videoId": "wp-081-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue, and work with letters."
+  ],
+  [
+   {
+    "say": "Sometimes the average is equal to one of the letters. We do the same thing, we write the sum.",
+    "at": [
+     "equal to one"
+    ]
+   },
+   {
+    "say": "The average of x, y and z is x. So the sum is three times x. x plus y plus z is equal to three x.",
+    "at": [
+     "The average of x, y and z is x",
+     "and z is",
+     "x plus y plus z is equal",
+     "is equal to"
+    ]
+   },
+   {
+    "say": "We take x away from both sides. So y plus z is equal to two x.",
+    "at": [
+     "So y plus z is equal",
+     "equal to two"
+    ]
+   },
+   {
+    "say": "Two numbers with a sum of two x have an average of x. So y and z also have an average of x.",
+    "at": [
+     "So y and z also"
+    ]
+   },
+   {
+    "say": "One more. The average of m and n is equal to their difference, m minus n. Then the sum is two times the difference.",
+    "at": [
+     "The average of m and n",
+     "n is equal",
+     "Then the sum is two times",
+     "times the difference"
+    ]
+   },
+   {
+    "say": "Careful, two times the whole difference. That's two m minus two n.",
+    "at": [
+     "That's two m minus two n"
+    ]
+   },
+   {
+    "say": "We add two n to both sides, and take m away from both sides. So three n is equal to m.",
+    "at": [
+     "We add two",
+     "So three n is equal"
+    ]
+   },
+   {
+    "say": "Let's check with numbers. n is two, so m is six. Their sum is eight, and the average is four. The difference is six minus two, also four.",
+    "at": [
+     "n is two",
+     "so m is six",
+     "sum is eight",
+     "and the average is four",
+     "The difference is six minus two",
+     "two, also four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The balance also works with more than and less than. The average of a, b and c is more than six. The average of a, b, c and d is less than six. What must be true?",
+    "at": [
+     "with more than",
+     "The average of a, b and c is more",
+     "and c is",
+     "The average of a, b, c and d",
+     "c and d"
+    ]
+   },
+   "Think of six as a line. a, b and c are above the line on average. So together they have something extra above six.",
+   "But all four together are below the line. So someone pulls them down, by more than that extra. Only d is left. So d must be less than six.",
+   {
+    "say": "Let's check with sums. a plus b plus c is more than three times six, eighteen.",
+    "at": [
+     "more than three times six"
+    ]
+   },
+   {
+    "say": "And all four add up to less than four times six, twenty-four.",
+    "at": [
+     "less than four times six"
+    ]
+   },
+   {
+    "say": "So d is less than twenty-four minus eighteen, six.",
+    "at": [
+     "So d is less than",
+     "twenty-four minus eighteen"
+    ]
+   },
+   {
+    "say": "What about a alone? It can be below six. For example, a is two, b is nine, and c is ten. Their sum is twenty-one, and twenty-one divided by three is seven. That's more than six, so it fits.",
+    "at": [
+     "It can be below six",
+     "a is two, b is nine",
+     "Their sum is"
+    ]
+   },
+   {
+    "say": "So a doesn't have to be above six. Only d is sure. When they ask what must be true, test the other letters with numbers.",
+    "at": [
+     "When they ask what must be true",
+     "be true, test"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's sum up. The sum is equal to how many numbers there are, times the average.",
+    "at": [
+     "The sum is equal to how many",
+     "how many numbers"
+    ]
+   },
+   {
+    "say": "When a number joins or leaves, compare it to the average of the group it is in.",
+    "at": [
+     "When a number joins",
+     "leaves, compare it"
+    ]
+   },
+   {
+    "say": "For the biggest possible value, make the others as small as they can be.",
+    "at": [
+     "For the biggest possible",
+     "make the others"
+    ]
+   },
+   {
+    "say": "And with letters, plug in equal values, or write the sum.",
+    "at": [
+     "And with letters",
+     "equal values, or"
+    ]
+   },
+   "Take a moment to memorize this. Now let's use it in the questions. I'll see you in the next video."
+  ]
+ ]
+}

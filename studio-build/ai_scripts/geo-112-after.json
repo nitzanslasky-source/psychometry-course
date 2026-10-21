@@ -1,0 +1,110 @@
+{
+ "videoId": "geo-112-after",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's use the last question to look at another way to cut a regular hexagon. We know one way already. The question showed us a different one. Let's explore it."
+  ],
+  [
+   {
+    "say": "Here's the way we know. A regular hexagon is cut into six equilateral triangles. All six are equal, so each one is exactly one sixth of the hexagon.",
+    "at": [
+     "Here's the way we know",
+     "A regular hexagon",
+     "All six are equal",
+     "each one is"
+    ]
+   },
+   {
+    "say": "Now another way to cut it, into three rhombi. A rhombus has four equal sides. The three rhombi are the same.",
+    "at": [
+     "into three rhombi",
+     "A rhombus has"
+    ]
+   },
+   {
+    "say": "If we draw the short diagonal in each rhombus, we get two equilateral triangles in each one. That's the way we know again.",
+    "at": [
+     "the short diagonal",
+     "rhombus, we get"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "But now let's draw the long diagonals of the rhombi. We get the cut from the question. An equilateral triangle in the middle, A C E, and three triangles around it.",
+    "at": [
+     "the long diagonals",
+     "We get the",
+     "An equilateral triangle in the middle",
+     "middle, A C"
+    ]
+   },
+   {
+    "say": "We call it the star partition. Fold the three corners in, and you get a cookie with three corners, called a hamantasch, or Haman's ear. The three outside triangles are all the same.",
+    "at": [
+     "We call it the star partition",
+     "Fold the three"
+    ]
+   },
+   {
+    "say": "But each outside triangle is not equilateral. Its angles are thirty, thirty and one hundred twenty. So how big is it, compared with one triangle of the first cut?",
+    "at": [
+     "Its angles are thirty",
+     "and one hundred"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's look at one rhombus. The short diagonal cuts it into two equilateral triangles. Each one is half of the rhombus.",
+    "at": [
+     "Let's look at one rhombus",
+     "The short diagonal",
+     "into two equilateral"
+    ]
+   },
+   {
+    "say": "The long diagonal cuts the same rhombus into two corner triangles. Each one is also half of the rhombus. So a corner triangle has the same area as an equilateral triangle. It's one sixth of the hexagon too.",
+    "at": [
+     "The long diagonal",
+     "same rhombus into",
+     "It's one sixth of the hexagon too"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So we can find the area of a corner triangle with the formula of an equilateral triangle, a squared root three over four. a is the side of the hexagon. And this works even though the corner triangle is not equilateral.",
+    "at": [
+     "the area of",
+     "with the formula of an equilateral triangle",
+     "equilateral triangle, a"
+    ]
+   },
+   {
+    "say": "Let's check it in numbers. Take a hexagon with side four. The formula gives sixteen root three over four, which is four root three.",
+    "at": [
+     "Take a hexagon with side four",
+     "The formula gives"
+    ]
+   },
+   {
+    "say": "Now let's find it the long way. The corner triangle's base is the short diagonal, four root three. Its height is half the side, two, from the golden triangle. So the area is four root three times two, divided by two. That's four root three again.",
+    "at": [
+     "Now let's find it the long way",
+     "The corner triangle's"
+    ]
+   },
+   {
+    "say": "And three corner triangles are three sixths, which is half of the hexagon. So triangle A C E in the middle is the other half. When a question shows this star, think in sixths and halves. Take a moment to memorize this, and I'll see you in the next video.",
+    "at": [
+     "three sixths",
+     "of the hexagon",
+     "triangle A C E in the middle",
+     "the middle is"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "videoId": "solve-q-r26-t34-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Each interior angle of a regular polygon is one hundred sixty. How many sides does the polygon have?",
+    "voice": "calm",
+    "at": [
+     "Each interior angle"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we know one angle, and we need the number of sides. We'll solve it in two different ways, both the math way. First with the formula from the formula sheet, and then with the exterior angle.",
+    "at": [
+     "angle, and we",
+     "it in two"
+    ]
+   },
+   {
+    "say": "Like in the lesson, one angle of a regular polygon is one hundred eighty, minus three hundred sixty over n. Here the angle is one hundred sixty. So one hundred eighty minus three hundred sixty over n is equal to one hundred sixty.",
+    "at": [
+     "one angle of",
+     "one hundred sixty",
+     "So one hundred eighty minus",
+     "three hundred sixty over n is"
+    ]
+   },
+   {
+    "say": "One hundred eighty minus what is one hundred sixty? Minus twenty. So three hundred sixty over n is twenty.",
+    "at": [
+     "So three hundred sixty over n is twenty",
+     "n is twenty"
+    ]
+   },
+   {
+    "say": "So n is three hundred sixty divided by twenty. Let's take a zero off both. Thirty-six divided by two is eighteen. So n is eighteen. Choice number three is our answer.",
+    "at": [
+     "Thirty-six divided by two",
+     "eighteen. So n",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now with the exterior angle. The polygon's angle and its exterior angle add up to one hundred eighty. So the exterior angle is one hundred eighty minus one hundred sixty, twenty.",
+    "at": [
+     "Now with the exterior angle",
+     "The polygon's angle",
+     "exterior angle add",
+     "So the exterior angle",
+     "one hundred eighty minus one hundred sixty",
+     "hundred sixty, twenty"
+    ]
+   },
+   {
+    "say": "Like in the lesson, all the exterior angles together make three hundred sixty. The polygon is regular, so they're all equal, twenty each. How many twenties make three hundred sixty? Three hundred sixty divided by twenty is eighteen.",
+    "at": [
+     "Three hundred sixty divided by twenty",
+     "twenty is eighteen"
+    ]
+   },
+   {
+    "say": "Careful with choice number one, nine. That's one hundred eighty divided by twenty. It uses one hundred eighty instead of the full turn, three hundred sixty.",
+    "at": [
+     "Careful with choice number one",
+     "That's one hundred eighty divided by twenty",
+     "It uses one"
+    ]
+   },
+   {
+    "say": "So when a question gives one angle of a regular polygon, find the exterior angle first. Then divide three hundred sixty by it. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

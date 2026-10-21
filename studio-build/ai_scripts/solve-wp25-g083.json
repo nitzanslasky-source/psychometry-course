@@ -1,0 +1,123 @@
+{
+ "videoId": "solve-wp25-g083",
+ "style": "the teacher reads it herself (Reading Studio), topic-25 scripts (2026-10-21): math_patches/_ai_vis_t25.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Ethan is a hundred sixty-nine centimeters tall. The average height of Ethan and Chloe is a hundred sixty-four centimeters. Ryan is eighteen centimeters taller than Chloe. How tall is Ryan?",
+    "voice": "calm",
+    "at": [
+     "Ethan is a hundred sixty-nine"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for Ryan's height. Ryan is compared to Chloe, so first we need Chloe. We'll solve it in two different ways, the math way with the formula, and then by understanding, with the balance.",
+    "at": [
+     "So they ask for Ryan's height",
+     "Chloe, so first"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. Let's call Chloe's height C. The average of Ethan and Chloe is their sum, divided by two. And it's equal to a hundred sixty-four.",
+    "at": [
+     "Let's start",
+     "divided by two"
+    ]
+   },
+   {
+    "say": "To get rid of the two, we multiply both sides by two. A hundred sixty-four times two is three hundred twenty-eight.",
+    "at": [
+     "To get rid",
+     "A hundred sixty-four times two",
+     "three hundred twenty-eight"
+    ]
+   },
+   {
+    "say": "Now we take a hundred sixty-nine away from both sides. Three hundred twenty-eight minus a hundred seventy is a hundred fifty-eight.",
+    "at": [
+     "Now we take",
+     "Three hundred twenty-eight minus",
+     "hundred seventy is"
+    ]
+   },
+   {
+    "say": "But we took away one too many, so we add it back. A hundred fifty-eight plus one is a hundred fifty-nine.",
+    "at": [
+     "A hundred fifty-eight plus one",
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "So Chloe is a hundred fifty-nine centimeters tall. And Ryan is eighteen centimeters taller than Chloe.",
+    "at": [
+     "And Ryan is eighteen"
+    ]
+   },
+   {
+    "say": "A hundred fifty-nine plus twenty is a hundred seventy-nine. Then we take away two, and get a hundred seventy-seven.",
+    "at": [
+     "A hundred fifty-nine plus twenty",
+     "is a hundred",
+     "Then we take away two",
+     "and get a"
+    ]
+   },
+   {
+    "say": "Careful, the eighteen goes on Chloe, not on the average. A hundred sixty-four plus eighteen is a hundred eighty-two, choice number one. That's the trap.",
+    "at": [
+     "A hundred sixty-four plus eighteen",
+     "is a hundred",
+     "number one. That's",
+     "That's the trap"
+    ]
+   },
+   {
+    "say": "So Ryan is a hundred seventy-seven centimeters tall. That's choice number four.",
+    "at": [
+     "number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with the balance. We start again from the givens. Like in the lesson, the average of two numbers is exactly in the middle between them.",
+    "at": [
+     "Now by",
+     "the givens. Like",
+     "exactly in the middle"
+    ]
+   },
+   {
+    "say": "Ethan is a hundred sixty-nine. A hundred sixty-nine minus a hundred sixty-four is five. So Ethan is five above the average.",
+    "at": [
+     "Ethan is a hundred sixty-nine",
+     "A hundred sixty-nine minus",
+     "hundred sixty-four is"
+    ]
+   },
+   {
+    "say": "So Chloe must be five below the average, on the other side. A hundred sixty-four minus five is a hundred fifty-nine.",
+    "at": [
+     "So Chloe must be five below",
+     "below the average",
+     "A hundred sixty-four minus five",
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "That's the same Chloe, with almost no calculation. Ryan is eighteen centimeters more. A hundred fifty-nine plus eighteen is a hundred seventy-seven.",
+    "at": [
+     "A hundred fifty-nine plus eighteen",
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}
