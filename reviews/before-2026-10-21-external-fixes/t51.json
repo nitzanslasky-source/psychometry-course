@@ -1,0 +1,160 @@
+{
+ "_about": "Topic 51 summary page (replaces pt51-summary). Content = the topic-51 scripts (math_patches/_ai_vis_t51.py) and the Hebrew lessons (pt_src/seg1-seg5). Build: python3 summary_pages.py 51.",
+ "topic": 51,
+ "replaces": "pt51-summary",
+ "intro": "The exam rewards **thinking before calculating**. Six methods: **the math way**, **plugging in numbers**, **plugging in the answers**, **understanding**, **estimation** and **insight**. At home, solve every question both ways.",
+ "figures": {},
+ "sections": [
+  {
+   "title": "The six methods: which one, when",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "table",
+     "class": "methods",
+     "head": [
+      "Method",
+      "When do I use it?",
+      "How",
+      "The trap"
+     ],
+     "rows": [
+      [
+       "**The math way**",
+       "Always possible: the school way, with algebra, an equation or a formula",
+       "Solve it fully; at home, solve every question this way too",
+       "A long calculation when a shortcut was waiting"
+      ],
+      [
+       "**Plugging in numbers**",
+       "Letters in the question and letters in the choices; an expression \"$=?$\" with number choices; ratios; more letters than equations",
+       "Pick an easy number that fits every condition, say why first; work out the question, then every choice; rule out three",
+       "0 and 1 often make choices tie: then pick another number"
+      ],
+      [
+       "**Plugging in the answers**",
+       "The question asks for one number, the choices are plain numbers, and each one is easy to check",
+       "Cross out choices that make no sense; start with a round choice, or the middle one when they are in order; check it against EVERY given",
+       "A choice that fits only one given"
+      ],
+      [
+       "**Understanding**",
+       "Must / could / cannot be true; signs; which is bigger; even and odd; order; the last digit",
+       "Reason with a rule you already know (different signs give a negative, $2k$ is even), without calculating",
+       "Use only a rule that is always true; not sure? plug in numbers"
+      ],
+      [
+       "**Estimation**",
+       "The choices are far apart; areas, volumes, roots and $\\pi$; a long calculation",
+       "Round numbers you know ($\\pi$ is a bit more than $3$, $\\sqrt{50}$ is a bit more than $7$); a range the answer must be in",
+       "Choices that are close: an estimate can't split them"
+      ],
+      [
+       "**Insight**",
+       "The numbers look chosen on purpose: repeats, double or half, shared parts, symmetry",
+       "Find the idea before calculating",
+       "Only practice builds it: solve many"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Plugging in numbers: the rules",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Say which number and why, before using it",
+       "$x$ is a length: $x=2$, not $0$"
+      ],
+      [
+       "The choices must come out different",
+       "$x=1$: $x^2, x^3$ both give $1$, so try $x=2$"
+      ],
+      [
+       "Different letters get different numbers",
+       "$a=2,\\ b=3$: $a^2b=12$, $ab^2=18$"
+      ],
+      [
+       "Rule out three; two left? a tie-breaker number",
+       "don't recheck what is already out"
+      ],
+      [
+       "Keep every condition of the question",
+       "a root, a figure, a positive integer"
+      ],
+      [
+       "Percent: $100$ at the whole",
+       "you chose it, so you can change it"
+      ],
+      [
+       "\"Not always\": one counterexample is enough; \"always\" is never proved by examples",
+       "$1^2+2^2\\ne(1+2)^2$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Why plugging in works",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "**Plugging in the answers:** one choice is right, so it fits every given; a wrong choice breaks at least one. **Plugging in numbers:** the right expression is equal to the question for EVERY number, so it is equal for ours too; a choice that gives a different result is out. Two choices can match by chance, so we rule out three. It is a **safety net**."
+    }
+   ]
+  },
+  {
+   "title": "Before each question, ask",
+   "class": "check",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "Does it look too hard for its place in the section? Then there is a shortcut.",
+      "Can I plug in the answers, starting from a round one?",
+      "Is there a letter I can replace with a number?",
+      "How big must the answer be? Which choices are impossible?",
+      "Is part of it shared, symmetric, or not needed?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "class": "traps",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "Stopping at the first choice that fits when you plugged in your OWN numbers: rule out three.",
+      "A plug-in number that breaks a condition of the question.",
+      "Estimating when the choices are close together.",
+      "Calculating the fourth choice after three are out.",
+      "Trusting an \"always\" from two examples."
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "200**2 == 40000",
+  "(-3)*2 < 0",
+  "(4*5+3) % 2 == 1",
+  "(1/3)**2 < 1/3",
+  "1**2 == 1 and 1**3 == 1",
+  "2**2*3 == 12 and 2*3**2 == 18",
+  "1**2+2**2 != (1+2)**2",
+  "7*7 < 50 < 8*8"
+ ]
+}

@@ -1128,7 +1128,7 @@ Marks per sentence, located from the point where the failed attempt broke off (9
   - Questions: "Choice number N is our answer, and I'll see you in the next question." She said "next lesson" by mistake 5 times.
   - Lessons: "Take a moment to memorize this … and I'll see you in the next video."
 
-### WRITING RULES for scripts she will read (topic 21 onward): W1-W21
+### WRITING RULES for scripts she will read (topic 21 onward): W1-W22
 These add to R1-R37 and the Codex review standard. Where they differ from the AI-voice rules, these apply to **teacher-read** scripts.
 
 1. **W1. Keep sentences short.** Aim for 6-12 words and split anything over 14. Her M rate doubles from 0.21 per sentence (6-10 words) to 0.45-0.51 (14-22 words). Put a trailing clause in its own sentence ("Now calculate with the two ends. That gives the new range.").
@@ -1199,6 +1199,17 @@ These add to R1-R37 and the Codex review standard. Where they differ from the AI
     - **Picked numbers:** say why these numbers ("three tenths, so let's take a three and b ten"; "it has to be even, so let's take four").
     - **Any non-obvious move** (divide both sides by…, add a to both sides, square both sides, compare with…): one short "because / so that" clause with the goal ("…so that only a over b is left").
     - Second methods need it most: never assume the student remembers the given from the first method; restate it.
+
+22. **W22. The student always knows what we're finding, what each thing is, and why this step** (teacher, 2026-10-21: "review the teaching style and clarity — not just whether the content is present").
+    - At every step the student can answer: What are we trying to find? What does this number / expression stand for? Why this step? How does it help answer the question? Don't just announce a rule or a calculation.
+    - Name the quantity first, then show the calculation, then say what the result tells us ("Tom's age is x. Maya is twice as old, so Maya's age is two times x.").
+    - Translate relationships fully, never as a slogan. Not "multiply the smaller one", but: "Maya is twice Tom's age. Their ages aren't equal, but twice Tom's age equals Maya's age. So we multiply Tom's age by two and set that equal to Maya's."
+    - Banned vague phrases unless explained right there: "it comes out", "use the trick", "make them equal", "plug it in" (say WHAT goes WHERE), "it works" (say what matched what).
+    - Exam terminology stays (choice, given, integer, inscribed …); an unfamiliar term is explained in plain words the first time.
+    - A new idea is never squeezed into a slogan or half a sentence: give it its sentences, a worked example, and the board picture needed to follow it.
+    - Don't make scripts longer for its own sake: cut repetition, remind briefly of what was learned, spend the words on the NEW reasoning. One efficient method shown clearly; another method only when it adds something.
+    - **Read-aloud check before "ready":** read every changed paragraph aloud while following the planned screen. If a student would have to guess what "this", "that" or "it" refers to, name it.
+    - **Shortcuts:** state the conditions every time a shortcut is taught (e.g. "only in a regular polygon", "only when both amounts are multiplied by the same number"), and place it after its prerequisites.
 
 **Put her most frequent elaborations in the script from the start:**
 1. the reason after each claim;

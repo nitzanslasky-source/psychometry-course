@@ -1,0 +1,441 @@
+{
+ "_about": "Topic 13 summary page (replaces the r26-t13-summary video). Content = the summary script (math_patches/_ai_vis_t13.py + the Codex clarity overlay), the memory card mem-absolute-value, and the topic-13 concept map in real_exam/TEACHING_STYLE_GUIDE.md. Build: python3 summary_pages.py 13. Text: $...$ = math (MathJax, like the studio), **bold**. Course numbers only.",
+ "topic": 13,
+ "replaces": "r26-t13-summary",
+ "intro": "Absolute value is the **distance from zero**. Everything in this topic comes from that one idea.",
+ "figures": {
+  "zero": {
+   "builder": "t13.DIST",
+   "args": [
+    -5,
+    5,
+    0,
+    3
+   ],
+   "kwargs": {
+    "base": [
+     0
+    ]
+   },
+   "layers": [
+    "line",
+    "right",
+    "left"
+   ]
+  },
+  "band": {
+   "builder": "t13.DIST",
+   "args": [
+    0,
+    10,
+    5,
+    3
+   ],
+   "kwargs": {
+    "base": [
+     0
+    ],
+    "band": "open"
+   },
+   "layers": [
+    "line",
+    "right",
+    "left",
+    "band"
+   ]
+  },
+  "rays": {
+   "builder": "t13.DIST",
+   "args": [
+    0,
+    10,
+    5,
+    3
+   ],
+   "kwargs": {
+    "base": [
+     0
+    ],
+    "band": "rays"
+   },
+   "layers": [
+    "line",
+    "right",
+    "left",
+    "band"
+   ]
+  },
+  "from6": {
+   "builder": "t13.DIST",
+   "args": [
+    -10,
+    1,
+    -6,
+    3
+   ],
+   "kwargs": {
+    "base": [
+     0
+    ]
+   },
+   "layers": [
+    "line",
+    "right",
+    "left"
+   ]
+  }
+ },
+ "sections": [
+  {
+   "title": "What it means",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "$|x|$ is the distance of $x$ from $0$. A distance is never negative, so $|x|\\ge 0$."
+    },
+    {
+     "type": "fig",
+     "ref": "zero",
+     "caption": "$3$ and $-3$ are both $3$ steps from $0$: $\\;|3|=|-3|=3$"
+    },
+    {
+     "type": "ex",
+     "lines": [
+      "$|3|=3 \\qquad |-10|=10 \\qquad |0|=0$"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**A letter hides its sign.** If $x=-7$, then $|x|=7=-x$. So for a negative $x$, $|x|=-x$, and $-x$ is positive."
+    },
+    {
+     "type": "p",
+     "text": "**An expression inside?** Work out the whole inside first, then the bars: $|4-9|=|-5|=5$."
+    }
+   ]
+  },
+  {
+   "title": "The rules",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "$|a\\cdot b|=|a|\\cdot|b|$ <br>$\\left|\\frac{a}{b}\\right|=\\frac{|a|}{|b|}$",
+       "$|-4\\cdot 3|=12=|-4|\\cdot|3|$ <br>Bars can go on each part."
+      ],
+      [
+       "$|a+b|\\le|a|+|b|$",
+       "Same signs, the sizes add: $|3+5|=8$ <br>Opposite signs, they cancel: $|3+(-5)|=2<8$"
+      ],
+      [
+       "",
+       "Backwards: if the sum came out **smaller**, the signs were **opposite**."
+      ],
+      [
+       "$|x|^2=x^2$ <br>$\\sqrt{x^2}=|x|$",
+       "$x=-7$: $\\;\\sqrt{(-7)^2}=\\sqrt{49}=7$ <br>That is $|x|$, not $x$."
+      ],
+      [
+       "$|a-b|=|b-a|$",
+       "$|2-9|=|9-2|=7$"
+      ]
+     ]
+    },
+    {
+     "type": "h",
+     "text": "Sign clues"
+    },
+    {
+     "type": "table",
+     "class": "clues",
+     "head": [
+      "If",
+      "then",
+      "e.g."
+     ],
+     "rows": [
+      [
+       "$|x|>x$",
+       "$x<0$",
+       "$x=-2\\mathpunct{:}\\;2>-2$"
+      ],
+      [
+       "$|x|=x$",
+       "$x\\ge 0$ (zero too)",
+       "$x=0$ works"
+      ],
+      [
+       "$|x|=-x$",
+       "$x\\le 0$ (zero too)",
+       "$x=-7\\mathpunct{:}\\;7=7$"
+      ],
+      [
+       "$x>|x|$",
+       "impossible",
+       ""
+      ],
+      [
+       "$a\\cdot b>0$",
+       "same signs",
+       ""
+      ],
+      [
+       "$a\\cdot b<0$",
+       "opposite signs",
+       ""
+      ],
+      [
+       "$\\frac{x}{|x|}$",
+       "$1$ or $-1$",
+       "$\\frac{-5}{|-5|}=-1$"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Equations",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "ex",
+     "label": "Bars = a number: two cases",
+     "lines": [
+      "$|x+2|=10$",
+      "$x+2=10 \\;\\Rightarrow\\; x=8$",
+      "$x+2=-10 \\;\\Rightarrow\\; x=-12$",
+      "Keep both: $x=8$ or $x=-12$"
+     ]
+    },
+    {
+     "type": "ex",
+     "label": "A letter on the right: check every answer",
+     "lines": [
+      "$|x-6|=2x$ (the right side must be $\\ge 0$)",
+      "$x-6=2x \\;\\Rightarrow\\; x=-6$ ✗ $\\;(2x=-12<0)$",
+      "$x-6=-2x \\;\\Rightarrow\\; x=2$ ✓ $\\;(|-4|=4)$"
+     ]
+    },
+    {
+     "type": "ex",
+     "label": "Bars on both sides: square both sides",
+     "lines": [
+      "$|x-1|=|x+3|$",
+      "$x^2-2x+1=x^2+6x+9$",
+      "$-8x=8 \\;\\Rightarrow\\; x=-1$"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Distance between two numbers",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "$|x-a|$ is the distance between $x$ and $a$. **A plus inside** means a negative point: $|x+6|=|x-(-6)|$, the distance from $-6$."
+    },
+    {
+     "type": "fig",
+     "ref": "from6",
+     "caption": "$|x+6|=3$: $\\;3$ steps from $-6$, so $x=-3$ or $x=-9$"
+    }
+   ]
+  },
+  {
+   "title": "Inequalities",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "cols",
+     "cols": [
+      [
+       {
+        "type": "ex",
+        "label": "Bars on the small side: between, one band",
+        "lines": [
+         "$|x-5|<3$",
+         "$-3<x-5<3$",
+         "$2<x<8$"
+        ]
+       },
+       {
+        "type": "fig",
+        "ref": "band"
+       }
+      ],
+      [
+       {
+        "type": "ex",
+        "label": "Bars on the big side: outside, two rays",
+        "lines": [
+         "$|x-5|>3$",
+         "$x-5>3$ or $x-5<-3$",
+         "$x>8$ or $x<2$"
+        ]
+       },
+       {
+        "type": "fig",
+        "ref": "rays"
+       }
+      ],
+      [
+       {
+        "type": "ex",
+        "label": "Right side negative or zero? Look first",
+        "lines": [
+         "$|x-4|<-2$: never, **no solution**",
+         "$|x-4|>-2$: always, **every** $x$",
+         "$|x-4|\\le 0$: inside $=0$, **only** $x=4$"
+        ]
+       }
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Plug in a number",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Asked what an expression **equals**? Plug in a number that fits the conditions."
+    },
+    {
+     "type": "ex",
+     "lines": [
+      "$x<0.\\;$ Then $\\;|x|-x=\\,?$",
+      "Plug in $x=-3$: $\\;|-3|-(-3)=3+3=6$",
+      "The choice $-2x$: $\\;-2\\cdot(-3)=6$ ✓"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Avoid $0$, $1$, $-1$ and numbers from the choices. Check the choices come out different. Two survive? Plug in again."
+    }
+   ]
+  },
+  {
+   "title": "Before each question, ask",
+   "class": "check",
+   "col": "L",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "Is the letter positive, negative, or zero?",
+      "Did I keep both cases?",
+      "Is the right side negative or zero?",
+      "A letter on the right: did I check every answer?",
+      "Must, could, cannot, or not necessarily?"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "class": "traps",
+   "col": "R",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "**Forgetting zero.** $|x|=x$ means $x\\ge 0$, so $x=0$ works too.",
+      "**Losing the second case.** $|x+2|=10$ has two answers, $8$ and $-12$.",
+      "**Keeping a fake answer.** A letter on the right: $x=-6$ looked fine, but fails the check.",
+      "$\\sqrt{x^2}$ is $|x|$, not $x$.",
+      "$|a+b|=|a|+|b|$ only when the signs are the same.",
+      "$|x+6|$ is measured from $-6$, not from $6$.",
+      "$-x$ is not always negative. For $x<0$ it is positive."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Which method when",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "table",
+     "class": "methods",
+     "head": [
+      "The question looks like",
+      "Do this"
+     ],
+     "rows": [
+      [
+       "$|\\ldots|=$ a positive number",
+       "Two cases, $+$ and $-$. Keep both."
+      ],
+      [
+       "$|\\ldots|=$ an expression with a letter",
+       "Two cases, then check every answer in the original equation."
+      ],
+      [
+       "$|A|=|B|$ (bars on both sides)",
+       "Square both sides."
+      ],
+      [
+       "$|\\ldots|<a$, with $a>0$",
+       "Between: $-a<\\ldots<a$. One band."
+      ],
+      [
+       "$|\\ldots|>a$, with $a>0$",
+       "Outside: $\\ldots>a$ or $\\ldots<-a$. Two rays."
+      ],
+      [
+       "Right side negative or zero",
+       "Look before any algebra: no solution, every $x$, or one solution."
+      ],
+      [
+       "$|x-a|$, or the words distance, within, from",
+       "Draw the distance picture: $a$ in the middle, the same steps each way."
+      ],
+      [
+       "Signs given, \"what does it equal?\"",
+       "Plug in a number that fits."
+      ],
+      [
+       "Must, could, cannot, not necessarily?",
+       "Test examples. With bars, always try $0$ and a negative number."
+      ]
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "abs(3) == 3 and abs(-10) == 10 and abs(0) == 0",
+  "x = -7; abs(x) == 7 == -x",
+  "abs(4 - 9) == abs(-5) == 5",
+  "abs(-4 * 3) == 12 == abs(-4) * abs(3)",
+  "abs(3 + 5) == 8 == abs(3) + abs(5)",
+  "abs(3 + (-5)) == 2 < abs(3) + abs(-5) == 8",
+  "sqrt((-7) ** 2) == sqrt(49) == 7 == abs(-7)",
+  "abs(2 - 9) == abs(9 - 2) == 7",
+  "abs(-2) > -2",
+  "abs(0) == 0 and abs(-7) == -(-7)",
+  "not any(x > abs(x) for x in GRID)",
+  "-5 / abs(-5) == -1",
+  "abs(-3) == abs(3) == 3",
+  "solve(lambda x: abs(x + 2) == 10) == [-12, 8]",
+  "solve(lambda x: abs(x - 6) == 2 * x) == [2] and abs(-6 - 6) != 2 * (-6) and abs(2 - 6) == 4 == 2 * 2",
+  "solve(lambda x: abs(x - 1) == abs(x + 3)) == [-1]",
+  "all((x - 1) ** 2 == (x + 3) ** 2 for x in [-1]) and -8 * (-1) == 8",
+  "solve(lambda x: abs(x + 6) == 3) == [-9, -3]",
+  "all((abs(x - 5) < 3) == (2 < x < 8) for x in GRID)",
+  "all((abs(x - 5) > 3) == (x > 8 or x < 2) for x in GRID)",
+  "solve(lambda x: abs(x - 4) < -2) == []",
+  "all(abs(x - 4) > -2 for x in GRID)",
+  "solve(lambda x: abs(x - 4) <= 0) == [4]",
+  "x = -3; abs(x) - x == 3 + 3 == 6 == -2 * x"
+ ]
+}
