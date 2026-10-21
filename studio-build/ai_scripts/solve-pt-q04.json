@@ -26,12 +26,12 @@
     ]
    },
    {
-    "say": "So we need the radius of the base. The edge of the cube is three a. If we slide the front edge inward, we see that the diameter of the base is exactly as long as the edge. So the diameter is three a.",
+    "say": "So we need the radius of the base. The edge of the cube is three a. The circular base touches two opposite sides of the square base of the cube. So its diameter goes across the full width of that square. The diameter is three a.",
     "at": [
      "The edge of the cube is three a",
      "is three a",
-     "If we slide the front edge inward",
-     "the diameter of"
+     "The circular base touches",
+     "base of the"
     ]
    },
    {

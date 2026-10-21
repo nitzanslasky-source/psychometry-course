@@ -59,19 +59,19 @@
     ]
    },
    {
-    "say": "The circle is inside this square, so the circle's area is less than sixty-four. The rectangle has the same area as the circle, so eight times B C is also less than sixty-four. We divide both sides by eight, so B C is less than eight.",
+    "say": "The circle is inside this square, so the circle's area is less than sixty-four. The rectangle has the same area as the circle. Its opposite tangent sides are one diameter apart, so its height is eight. Therefore eight times B C is less than sixty-four. Divide both sides by eight, and B C is less than eight.",
     "at": [
      "so the circle's area is less",
      "less than sixty-four",
-     "eight times B C is also less",
-     "also less than",
-     "We divide both sides by eight",
-     "less than eight"
+     "eight times B C is less",
+     "less than sixty-four. Divide",
+     "Divide both sides by eight"
     ]
    },
    {
     "say": "Now the choices. Pi is a bit more than three. So three pi is more than nine, four pi is more than twelve, and eight pi is more than twenty-four. All of them are more than eight, so choice numbers one, three and four are out.",
     "at": [
+     "Pi is a",
      "So three pi is more than nine",
      "four pi is more than twelve",
      "eight pi is more than twenty-four",

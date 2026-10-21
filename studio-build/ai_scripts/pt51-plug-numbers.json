@@ -61,7 +61,7 @@
    },
    "x can be any number here. But the answer is one number, so the expression must give the same number for every x. And if it's right for every number, then it's right for the number I choose.",
    {
-    "say": "So which number? x equals one, because it's small and easy. One plus two is three, and three squared is nine. One times five is five. Nine minus five is four.",
+    "say": "So which number? x equals one, because it's small and easy. One plus two is three, and three squared is nine. In the part we subtract, x is one and x plus four is five. One times five is five. Nine minus five is four.",
     "at": [
      "x equals one, because",
      "small and easy",
@@ -77,10 +77,11 @@
     ]
    },
    {
-    "say": "Four both times. And the algebra agrees. When we open the brackets, everything with x cancels, and four is left for every x. So when the choices are numbers, one number is enough.",
+    "say": "Both examples gave four. They show what happens with our chosen numbers. The algebra explains why it always works: x plus two, squared, is x squared plus four x plus four. And x times x plus four is x squared plus four x. Subtracting leaves four. So in this question, where the choices are numbers, one allowed trial gives the answer.",
     "at": [
-     "And the algebra agrees",
-     "When we open"
+     "They show what",
+     "The algebra explains why",
+     "always works: x"
     ]
    }
   ],
@@ -109,7 +110,7 @@
     ]
    },
    {
-    "say": "Now we don't hunt for the right choice. We rule out the wrong ones. Four times two plus eight is sixteen, so it stays. Two times two plus eight is twelve, not sixteen, so it's out.",
+    "say": "Now we check the choices against sixteen. Choice number one says four x plus eight. With x as two, four times two plus eight is sixteen, so it stays. Choice number two says two x plus eight. Two times two plus eight is twelve, not sixteen, so it's out.",
     "at": [
      "Four times two plus eight",
      "is sixteen, so",
@@ -118,11 +119,12 @@
     ]
    },
    {
-    "say": "Four times two plus ten is eighteen, out. And eight is not sixteen, out.",
+    "say": "Choice number three says four x plus ten. Four times two plus ten is eighteen, not sixteen, so it's out. Choice number four is eight. Eight is not sixteen, so that choice is out too.",
     "at": [
      "Four times two plus ten",
-     "is eighteen, out",
-     "And eight is not sixteen"
+     "is eighteen, not",
+     "Eight is not sixteen",
+     "that choice is"
     ]
    },
    {

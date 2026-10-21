@@ -662,9 +662,9 @@ f1i19 = I('f1i19', 'The math way, and the psychometric way', size=38)
 
 video('pt51-intro', 'lesson', slides=[
     S('Psychometric Thinking',
-      L("Psychometric thinking. We're starting a run of the most important lessons in quantitative reasoning.")),
+      L("Welcome back. In this topic, we're learning psychometric thinking. We'll look for easier ways to solve quantitative reasoning questions.")),
     S('What stands behind the questions',
-      L("In these lessons, we'll understand what stands behind the questions on the exam.", show(f1i1, 'what stands behind')),
+      L("In these lessons, we'll look at how the exam questions are built.", show(f1i1, 'how the exam questions are built')),
       L("That understanding will help you approach the questions in the right way, and in an easier way.",
         show(f1i2, 'That understanding will help'))),
     S('What the exam is for',
@@ -674,13 +674,12 @@ video('pt51-intro', 'lesson', slides=[
     S('Special questions',
       L("What does that mean? Usually, when we solve a question, we use a way we know from school. We plug into a formula, "
         "we build an equation, and so on.", show(f1i5, 'we use a way we know from school')),
-      L("On the exam, in a large part of the questions, there's also a shortcut. Some creative thinking that gets us to the "
-        "answer faster and more easily.", show(f1i6, "there's also a shortcut")),
+      L('On the exam, many questions also have a shortcut. We can notice something in the numbers or choices. That can get us to the answer faster.', show(f1i6, 'also have a shortcut')),
       L("That's psychometric thinking, and that's what the exam tests. It looks for the students who think this way, and it "
         "gives them an advantage.")),
     S('Think before you calculate',
       L("Let's see what that looks like on a small example. Twenty-five times four, times thirty-seven, divided by "
-        "thirty-seven. The calculating way multiplies everything first, and then divides by thirty-seven. That's long, and "
+        "thirty-seven. The calculating way multiplies everything first, and then divides the product by thirty-seven. That's long, and "
         "it's easy to slip.", show(f1i7, 'Twenty-five times four')),
       L("The thinking way looks at the numbers first. Times thirty-seven, and then divided by thirty-seven, cancel each "
         "other, because dividing undoes the multiplying. So we're left with twenty-five times four, which is a hundred.",
@@ -696,8 +695,7 @@ video('pt51-intro', 'lesson', slides=[
     S('Like a test for gifted children',
       L("It's like the tests for gifted children. They look for the creative kids, the ones who think in a less obvious "
         "way. The exam questions work on a similar idea.", show(f1i12, 'tests for gifted children')),
-      L("Of course, most of us aren't gifted. But luckily, there's a small number of methods that will help us solve the "
-        "exam questions as if we were. We'll call them our super-methods.", show(f1i13, 'a small number of methods'))),
+      L("You don't need to be gifted to learn these shortcuts. A small number of methods can help us find them. We'll call these our super-methods.", show(f1i13, 'a small number of methods'))),
     S('The super-methods',
       L("There are three super-methods. Plugging in the answers. Plugging in numbers. And order-of-magnitude estimation, "
         "which means finding roughly how big the answer must be.",
@@ -747,23 +745,19 @@ video('solve-pt-q01', 'solution', qid='pt-q01', slides=[
     S('The last digit',
       L("The square root of nineteen thousand forty-four. What is it equal to?", pt('stem', 'The square root', 'hl', 5.0),
         voice='calm', pause=0.5),
-      L("We need the number that, times itself, gives nineteen thousand forty-four. To find it exactly, I'd need a "
-        "calculator, and on the exam there's no calculator. [short pause] No calculator, but I do have four answers.",
+      L("We need the number that, times itself, gives nineteen thousand forty-four. Working out that square root directly would take a long calculation, and on the exam there's no calculator. [short pause] No calculator, but I do have four answers.",
         pt('choice 1', 'I do have four answers')),
       L("The calculating way is to multiply each answer by itself, and see which one gives our number. But that's a long "
         "multiplication, maybe four times. That's where the shortcut comes in. We'll use the choices, with two quick "
         "checks, the last digit and the size."),
       L("First, the last digit. Our number ends in four. So the answer, times itself, must end in four.", show(f1a1, 'Our number ends in four')),
-      L("And to see how a square ends, we only need the last digit. Why? Take a hundred fifty-six. It's a hundred fifty "
-        "plus six. Everything that comes from the hundred fifty is a whole number of tens, so it ends in zero. Only six "
-        "times six reaches the units.", show(f1a2, "It's a hundred fifty plus six")),
+      L("And to see how a square ends, we only need the last digit. Why? Take a hundred fifty-six. It's a hundred fifty plus six. When we multiply this by itself, any part containing a hundred fifty ends in zero. Only six times six can change the last digit.", show(f1a2, "It's a hundred fifty plus six")),
       L("Six times six is thirty-six, so a hundred fifty-six squared ends in six. Six is not four, so I don't need to "
         "keep calculating. Choice number two is out.", show(f1a3, 'Six times six is thirty-six'),
         mk('cross', 'choice 2', 'Choice number two is out')),
       L("The same way, a hundred ninety-four. Four times four is sixteen, so it ends in six again. Choice number three is "
         "out too.", show(f1a4, 'Four times four is sixteen'), mk('cross', 'choice 3', 'Choice number three is out')),
-      L("A hundred thirty-eight: eight times eight is sixty-four, which ends in four, so it fits. Two hundred twelve: two "
-        "times two is four, so it fits too.", show(f1a5, 'A hundred thirty-eight: eight'), show(f1a6, 'Two hundred twelve: two')),
+      L('Now a hundred thirty-eight. Its last digit is eight. Eight times eight is sixty-four, which ends in four, so this choice stays. For two hundred twelve, two times two is four. That choice stays too.', show(f1a5, 'Now a hundred thirty-eight'), show(f1a6, 'For two hundred twelve')),
       L("So the last digit ruled out two answers, and two are still left. That's its limit. It can only rule choices "
         "out. When two choices both end the right way, it can't choose between them.")),
     S('The size',
@@ -776,8 +770,7 @@ video('solve-pt-q01', 'solution', qid='pt-q01', slides=[
         "four is out.", show(f1b3, 'And two hundred twelve'), mk('cross', 'choice 4', 'choice number four is out')),
       L("Three choices are out, and one of the four must be right. So a hundred thirty-eight is the answer, and I don't "
         "even need to check it. Choice number one is our answer.", mk('tick', 'choice 1', 'Choice number one is our answer')),
-      L("We solved it without calculating at all. First by understanding, with a rule about the last digit, and then with an "
-        "order-of-magnitude estimate. Both get a lesson of their own later in this topic.")),
+      L('We solved it without doing the full calculation. First by understanding, with a rule about the last digit, and then with an order-of-magnitude estimate. Both get a lesson of their own later in this topic.')),
     S('Last digit: another example',
       L("Let's see each shortcut once more, on a new example. First the last digit. Twenty-three times forty-seven. The "
         "choices are one thousand seventy-nine, one thousand eighty-one, one thousand eighty-four, and one thousand "
@@ -803,8 +796,7 @@ video('solve-pt-q01', 'solution', qid='pt-q01', slides=[
         "you can square or multiply in your head, like forty, fifty, or two hundred.",
         show(f1d5, 'So when do I use the size'))),
     S('What we learned',
-      L("So what did we learn from this question? First, on the exam, the answers are part of the question. Without them, "
-        "this is a calculator question. With them, the answers help us solve it."),
+      L('So what did we learn from this question? First, on the exam, the answers are part of the question. Without them, this looks like a calculator question. With them, the answers help us solve it.'),
       L("Second, thinking versus calculating. You can always calculate the way we know from school. But often there's a "
         "shortcut, and it gets you to the answer faster. [pause] Okay. I'll see you in the next question.")),
 ])
@@ -846,8 +838,7 @@ video('solve-pt-q02', 'solution', qid='pt-q02', slides=[
         "thirteenths, times the bracket six hundred plus x.", show(f1e3, 'So five hundred minus x equals')),
       L("To get rid of the fraction, we multiply both sides by thirteen. Thirteen times the bracket five hundred minus x, "
         "equals nine times the bracket six hundred plus x.", show(f1e4, 'we multiply both sides by thirteen')),
-      L("Open the brackets. Thirteen times five hundred is six thousand five hundred, and thirteen times x is thirteen x. "
-        "Nine times six hundred is five thousand four hundred, and nine times x is nine x.", show(f1e5, 'Open the brackets')),
+      L("Let's multiply each term inside the brackets. On the left, thirteen times five hundred is six thousand five hundred. Thirteen times minus x is minus thirteen x. On the right, nine times six hundred is five thousand four hundred. Nine times x is nine x. So we have six thousand five hundred minus thirteen x, equal to five thousand four hundred plus nine x.", show(f1e5, "Let's multiply each term")),
       L("Now we add thirteen x to both sides, and take five thousand four hundred off both sides, so that the x's are on one side and the plain numbers on the other. Six thousand five "
         "hundred minus five thousand four hundred is one thousand one hundred. And nine x plus thirteen x is twenty-two x.",
         show(f1e6, 'Six thousand five hundred minus')),
@@ -869,13 +860,9 @@ video('solve-pt-q02', 'solution', qid='pt-q02', slides=[
       L("If we move fifty eggs, A has five hundred minus fifty, four hundred fifty. And careful here, the same fifty eggs "
         "go into B. So B has six hundred plus fifty, six hundred fifty. A lot of students take the eggs out of A, and "
         "forget to add them to B.", show(f1f3, 'If we move fifty eggs')),
-      L("Now we compare with the given. A has to be nine thirteenths of B, so we look at A over B. Four hundred fifty over six hundred fifty. Drop a zero from the top and the bottom, and we get "
-        "forty-five over sixty-five. Both divide by five. Forty-five divided by five is nine, and sixty-five divided by "
-        "five is thirteen. Nine thirteenths, exactly what the question asked. Choice number two is our answer.",
+      L('Now we compare with the given. A has to be nine thirteenths of B, so we look at A over B. Four hundred fifty over six hundred fifty. Divide the top and the bottom by ten, and we get forty-five over sixty-five. Both are divisible by five. Forty-five divided by five is nine, and sixty-five divided by five is thirteen. Nine thirteenths, exactly what the question asked. Choice number two is our answer.',
         show(f1f4, 'Now we compare'), mk('tick', 'choice 2', 'Choice number two is our answer')),
-      L("Once a choice fits, we can mark it, because a question has only one correct answer. By the way, in many "
-        "questions where we plug in the answers, the round answer we try first really is the right one. Why? Because the "
-        "exam gives an advantage to whoever thinks this way. Not in every question, but in quite a few.")),
+      L("Once a choice fits every given, we can mark it. The question has only one correct answer. Starting with a round number makes the check easier. But it doesn't guarantee that the round number is right. We still have to check it.")),
     SM('Method 2 · Plugging in the answers', 'When do I plug in the answers?',
       L("So when do I plug in the answers? When the question asks for one number, the choices are plain numbers, and "
         "it's easy to put a choice back into the question. It helps most when the equation is long, or when you don't "
@@ -937,10 +924,8 @@ video('solve-pt-q03', 'solution', qid='pt-q03', slides=[
       L("A lot of students take out two as a common factor here, and then get a bit tangled. Instead, let's split the "
         "fraction into three fractions with the same bottom. Why is that allowed? Fractions with the same bottom are "
         "added by adding the tops, so we can also go back the other way.", show(f1g3, "let's split the fraction")),
-      L("Why split it? Because the third fraction, two a b over two a b, is one. So we have minus one and plus one, and "
-        "they cancel each other.", pt('f1g3: o', 'two a b over two a b')),
-      L("Now reduce the other two. In two a squared over two a b, the twos cancel, and one a cancels, so we're left with "
-        "a over b. In two b squared over two a b, the twos cancel, and a b cancels too, so we get b over a.",
+      L('Why split it? The third fraction is minus two a b over two a b. The top and bottom have the same size, so that fraction is minus one. The expression also has plus one outside the fraction. Minus one plus one is zero, so those two parts cancel.', pt('f1g3: o', 'two a b over two a b')),
+      L("Now reduce the other two. In two a squared over two a b, the twos cancel, and one a cancels, so we're left with a over b. In two b squared over two a b, the twos cancel, and one factor of b cancels too, so we get b over a.",
         show(f1g4, 'Now reduce the other two')),
       L("So the expression is a over b plus b over a, and choice number one is our answer.",
         mk('tick', 'choice 1', 'choice number one is our answer'))),
@@ -953,9 +938,7 @@ video('solve-pt-q03', 'solution', qid='pt-q03', slides=[
       L("Which numbers? Easy ones, as long as we keep the condition, a and b are not zero. Let's take a equal to one. For "
         "b, I could take two, three, any number. But I can also take one again. Nobody said a and b must be different, "
         "and one is the easiest number to calculate with.", show(f1h2, "Let's take a equal to one")),
-      L("One squared is one, plus one squared, one. The bracket one minus one is zero, and zero squared is zero. So the "
-        "top is two. The bottom, two times one times one, is two. Two over two is one, and one plus one is two. So the "
-        "question gives two.", show(f1h3, 'One squared is one'), show(f1h3b, 'The bottom'), show(f1h3c, 'Two over two is one'))),
+      L("Let's put one in for both letters. One squared is one, and the other one squared is one too. One minus one is zero, and zero squared is zero. So the top is one plus one plus zero, which is two. The bottom is two times one times one, also two. Two over two is one. Then we add the one outside the fraction, and get two.", show(f1h3, 'One squared is one'), show(f1h3b, 'The bottom'), show(f1h3c, 'Two over two is one'))),
     SM('Method 2 · Plugging in numbers', 'Rule out three',
       L("Now the choices, with a and b equal to one. A choice that gives two could be the right one. A choice that gives "
         "anything else is out."),
@@ -972,10 +955,7 @@ video('solve-pt-q03', 'solution', qid='pt-q03', slides=[
         "not two. Choice number four is out too.", pt('choice 4', 'Choice number four says', 'hl', 3.0),
         show(f1h7, 'One plus one is two'), mk('cross', 'choice 4', 'Choice number four is out')),
       L("Three choices are out, so we can mark choice number one.", mk('tick', 'choice 1', 'so we can mark choice number one')),
-      L("This is a very important point. When we plug in numbers, we don't look for the right answer. We rule out three. "
-        "Why? Because a wrong expression can give the right number by chance. For example, a plus b also gives two when a "
-        "and b are one, but it's another expression. And if two choices are still left, we plug in a second pair of "
-        "numbers, and check only those two.", show(f1h8, 'We rule out three'))),
+      L("This is a very important point. One matching result doesn't prove a choice is right. We need to rule out the other three. A wrong expression can match by chance. For example, a plus b also gives two when both letters are one. But it isn't always equal to our expression. If two choices remain, we try another easy pair. We check the question again, and only those two choices.", show(f1h8, 'We need to rule out'))),
     SM('Method 2 · Plugging in numbers', 'When do I plug in numbers?',
       L("So when do I plug in numbers? When there are letters in the question and letters in the choices, like here. Any "
         "allowed numbers will do, so we choose easy ones. It's a safety net for when the algebra gets tangled.",
@@ -1080,9 +1060,8 @@ video('solve-pt-q04', 'solution', qid='pt-q04', slides=[
       L("The volume of a cylinder is pi r squared, times h. If you don't remember it, it's on the formula sheet. Pi r "
         "squared is the area of the round base, and h is the height. Why multiply? A cylinder is like a stack of equal "
         "circles, so it's the area of one circle, times how tall the stack is.", show(f1m1, 'The volume of a cylinder')),
-      L("So we need the radius of the base. The edge of the cube is three a. If we slide the front edge inward, we see "
-        "that the diameter of the base is exactly as long as the edge. So the diameter is three a.",
-        show(f1k['edge'], 'The edge of the cube is three a'), show(f1k['slide'], 'If we slide the front edge inward')),
+      L('So we need the radius of the base. The edge of the cube is three a. The circular base touches two opposite sides of the square base of the cube. So its diameter goes across the full width of that square. The diameter is three a.',
+        show(f1k['edge'], 'The edge of the cube is three a'), show(f1k['slide'], 'The circular base touches')),
       L("The diameter is two radii, so the radius is half of three a, which is three a over two. And the height of the "
         "cylinder is the height of the cube, three a.", show(f1k['r'], 'The diameter is two radii'), show(f1m2, 'so the radius is half'),
         show(f1k['h'], 'And the height of the'), show(f1m3, 'the height of the cube'))),
@@ -1101,14 +1080,13 @@ video('solve-pt-q04', 'solution', qid='pt-q04', slides=[
       L("[pause] Now the psychometric way, our third super-method, order-of-magnitude estimation. We used it already in "
         "the question with the root, when two hundred squared was forty thousand. Here we don't calculate the exact "
         "volume. We only ask how big it can be.", show(f1kk['line'], 'Now the psychometric way')),
-      L("The volume of a cube is its edge, times itself three times. Three a times three a times three a. Three times "
-        "three times three is twenty-seven, so the cube is twenty-seven a cubed.",
+      L('The volume of a cube is its edge length cubed. Three a times three a times three a. Three times three times three is twenty-seven, so the cube is twenty-seven a cubed.',
         show(f1kk['cube'], 'Three times three times three')),
       L("The cylinder is inside the cube, so its volume must be less than the cube's. How much less? We don't know, and "
         "we don't need to. A part can't be bigger than the whole.",
         show(f1kk['cyl'], 'The cylinder is inside the cube')),
-      L("Every choice has a cubed with pi in front. Pi is a little more than three, and for an estimate, three is enough.",
-        show(f1kk['pi'], 'three is enough')),
+      L("Every choice is a number times a to the power of three. The cube's volume is twenty-seven times that same positive quantity. So we can compare the numbers in front of it. Pi is a little more than three. We'll use three to estimate those numbers.",
+        show(f1kk['pi'], "We'll use three to estimate")),
       L("Choice number one says twenty-seven pi over two, times a cubed. Twenty-seven times three is eighty-one, and over two, that's forty and a half. That's more "
         "than twenty-seven, so the cylinder would be bigger than the cube. That makes no sense, so choice number one is "
         "out.", pt('choice 1', 'Choice number one says', 'hl', 3.0), show(f1o4, 'Twenty-seven times three is eighty-one'),
@@ -1128,8 +1106,7 @@ video('solve-pt-q04', 'solution', qid='pt-q04', slides=[
         "to tell apart. They gave three choices that are each bigger than the whole cube. That's the exam's way of giving "
         "an advantage to whoever thinks. If you calculate the long way, it takes time, and you might slip. If you "
         "estimate, the choices help you."),
-      L("So when do I estimate? When the choices are far apart in size, and you can compare the answer with something "
-        "you know, like the whole shape around it. Replace pi with three, and rule out what's too big or too small.",
+      L("So when do I estimate? When the choices are far apart in size, and you can compare the answer with something you know, like the whole shape around it. Use a rough estimate, like three for pi here, to rule out what's too big or too small.",
         show(f1o8, 'So when do I estimate')),
       L("One more example. A circle is inside a square with side ten, and it touches all four sides. What's the area of "
         "the circle, if the choices are twenty-five pi, fifty pi, a hundred pi, and two hundred pi?",
@@ -1194,23 +1171,16 @@ video('solve-pt-q05', 'solution', qid='pt-q05', slides=[
         "row for each red number.", show(f1q['line'], "So let's make a table")),
       L("If the red shows one, every blue number is good. One, two, three, four, five or six, even the one, because "
         "equal is allowed. That's six good pairs.", show(f1q['r1'], 'If the red shows one')),
-      L("In the language of probability, the chance of a red one is one sixth, and the chance of a good blue is six "
-        "sixths. When both must happen, we multiply. One sixth times six sixths is six thirty-sixths. It's the same as "
-        "counting, six good pairs out of thirty-six.", show(f1p3, 'When both must happen')),
+      L("We can write that same count as a probability. The chance of a red one is one sixth. The blue die can show any of its six numbers, so its chance of being good here is six sixths. The dice are independent: the red result doesn't change the blue result. So for these two results together, we multiply. One sixth times six sixths is six thirty-sixths. That's the same six good pairs out of thirty-six.", show(f1p3, 'So for these two results together')),
       L("If the red shows two, the blue must be two, three, four, five or six. That's five good pairs. And so on. Red "
         "three gives four, red four gives three, red five gives two, and red six gives only one, a blue six.",
         show(f1q['r2'], 'If the red shows two'), show(f1q['r3'], 'And so on')),
-      L("These cases are linked with or. This one happens, or this one, or this one. With or, we add. Six plus five plus "
-        "four plus three plus two plus one is twenty-one.", show(f1q['tot'], 'With or, we add')),
-      L("So the probability is twenty-one out of thirty-six. Both divide by three, so it's seven twelfths, and choice "
-        "number four is our answer.", show(f1p4, 'So the probability is'), mk('tick', 'choice 4', 'choice number four is our answer')),
+      L("The red die can show one, or two, and so on. These cases can't happen together in one toss. So we add their good pairs. Six plus five is eleven. Four plus three is seven, and two plus one is three. Eleven plus seven plus three is twenty-one good pairs.", show(f1q['tot'], 'So we add their good pairs')),
+      L("So the probability is twenty-one out of thirty-six. Both are divisible by three, so it's seven twelfths, and choice number four is our answer.", show(f1p4, 'So the probability is'), mk('tick', 'choice 4', 'choice number four is our answer')),
       L("That was the mathematical way. It's long, because we listed every case. And it's not trivial. Many students "
         "don't get there at all.")),
     S('Method 2 · Insight',
-      L("[pause] So far, we've met super-methods. In this question there's also an insight. What's an insight? An idea "
-        "that belongs to one specific question. It's not a method you learn once and use again, because in another "
-        "question it will be something completely different. These questions are rarer, but they're on the exam, so we'll "
-        "practice them."),
+      L("[pause] So far, we've met super-methods. In this question there's also an insight. What's an insight? We notice something special in this question that makes the work easier. There's no fixed procedure for finding it. A different question may need a different idea. These questions are rarer, but they're on the exam, so we'll practice them."),
       L("Here's the insight. Every one of the thirty-six pairs is one of three kinds. The red is higher, the blue is "
         "higher, or it's a tie, a double.", show(f1r1, 'one of three kinds')),
       L("Two dice have six doubles. One and one, two and two, and so on up to six and six. In a double, neither die "
@@ -1345,7 +1315,7 @@ f2r2 = I('f2r2', 'Three choices are out $\\ \\to\\ $ the fourth is right', size=
 f2r3 = I('f2r3', 'Careful: $\\ $every given, not only one', size=34)
 f2s1 = I('f2s1', '1. Cross out choices that make no sense', size=34)
 f2s2 = I('f2s2', '2. Start with a round, easy choice', size=34)
-f2s3 = I('f2s3', '3. Choices in order $\\ \\to\\ $ start in the middle', size=34)
+f2s3 = I('f2s3', '3. Increasing result $\\ \\to\\ $ try a middle choice', size=34)
 video('pt51-plug-answers', 'lesson', slides=[
     S('Plugging In the Answers',
       L("Psychometric thinking, plugging in the answers. In the intro lesson we met our super-methods for the first time. "
@@ -1373,9 +1343,7 @@ video('pt51-plug-answers', 'lesson', slides=[
       L("Opening the bracket gives x squared plus three x equals forty, and we haven't learned to solve that yet. But the "
         "choices are numbers, and we have an equation to check. Both signs are here, so let's plug in the answers.",
         pt('f2e2', 'choices are numbers'), pt('f2e1', 'we have an equation to check')),
-      L("Which choice do we try first? Here the choices are in order, from the smallest to the biggest. So we start in "
-        "the middle. Why? Because then one try tells us more than yes or no. It also tells us if we need a bigger number "
-        "or a smaller one.", pt('f2e2', 'Here the choices are in order')),
+      L("Which choice do we try first? Here the choices go from smallest to biggest. For positive x, a bigger x gives a bigger product. So we can start with a middle choice. If its result is too small, smaller choices are out too. If it's too big, bigger choices are out too.", pt('f2e2', 'Here the choices go from smallest')),
       L("Let's try four. Four plus three is seven, and four times seven is twenty-eight. We need forty, so twenty-eight "
         "is too small.", show(f2e3, 'Four plus three is seven'), show(f2e3b, 'four times seven is twenty-eight')),
       L("Too small means we need a bigger x. Why? When x gets bigger, both x and x plus three get bigger, so their "
@@ -1400,11 +1368,9 @@ video('pt51-plug-answers', 'lesson', slides=[
     S('Where do I start?',
       L("So which choice do we try first? First, cross out choices that make no sense, without calculating at all. "
         "Sometimes a quick look at the size of a choice is enough.", show(f2s1, 'cross out choices that make no sense')),
-      L("Then start with a convenient choice, a round number that's easy to work with. The right answer is often there. "
-        "Not always, but often.",
+      L('Then start with a convenient choice, such as a round number. It makes the arithmetic easier. We choose it for an easy check, not because it must be right.',
         show(f2s2, 'Then start with a convenient choice')),
-      L("And when the choices are in order, start in the middle, so one try tells you if you need bigger or smaller, like "
-        "we just did with four.", show(f2s3, 'when the choices are in order')),
+      L('In a question like our example, a bigger trial number gives a bigger result. Then it helps to start in the middle of the ordered choices. One try can show whether we need a bigger or smaller number.', show(f2s3, 'Then it helps to start in the middle')),
       L("We'll use each of these in the next questions. [pause] Okay. I'll see you in the next video.",
         pt('f2s1', "We'll use each of these"))),
 ])
@@ -1426,8 +1392,7 @@ f2q6d = I('f2q6d', '$x=-7:\\quad (-7)\\cdot(-7)=49,\\ $ not less than 25', size=
 CARRY51['solve-pt-q06'] = {2: ['choices 1 and 3 are out']}
 video('solve-pt-q06', 'solution', qid='pt-q06', slides=[
     S('Why is it here?',
-      L("x is an integer, a whole number. We're given two conditions. x squared is less than twenty-five, and three x plus "
-        "six is less than zero. What is x?", pt('stem', 'x is an integer', 'hl', 8.0), voice='calm', pause=0.5),
+      L("x is an integer. We're given two conditions. x squared is less than twenty-five, and three x plus six is less than zero. What is x?", pt('stem', 'x is an integer', 'hl', 8.0), voice='calm', pause=0.5),
       L("This question comes at the beginning of the section, where the easy questions usually are. But two conditions "
         "with less than, and one of them with x squared? We haven't learned to solve conditions like that yet. So why is "
         "it here?", pt('stem', 'two conditions')),
@@ -1488,16 +1453,13 @@ video('solve-pt-q07', 'solution', qid='pt-q07', slides=[
         show(f2q7b, 'So forty and forty-three are out'), mk('cross', 'choice 1', 'So choice numbers one'),
         mk('cross', 'choice 2', 'and two are out'))),
     S('Plug in the round one',
-      L("Two choices are left, forty-eight and fifty. Which one do we plug in? The more convenient one, the round one, "
-        "fifty. It's easier to work with, and the right answer is often the round one.", pt('choice 4', 'fifty. It')),
+      L("Two choices are left, forty-eight and fifty. Which one do we plug in? Let's start with fifty, because it's a round number. Finding one fifth of fifty will be easy.", pt('choice 4', "Let's start with fifty")),
       L("Nadav has fifty cards. Together they have ninety, so Amit has ninety minus fifty, forty. And Nadav has more than "
         "Amit, fifty against forty, so that given is fine.", show(f2q7c, 'Nadav has fifty cards')),
       L("Now the last given, the difference has to be one fifth of Nadav's cards. The difference between them is fifty "
         "minus forty, ten. And one fifth of fifty is ten, because fifty divided by five is ten. Ten and ten, so fifty fits every given. Choice number four is our "
         "answer.", show(f2q7d, 'The difference between them'), show(f2q7e, 'And one fifth of fifty'), mk('tick', 'choice 4', 'Choice number four is our answer')),
-      L("This idea of starting with the convenient choices is very important. It saves work, and the exam often puts the "
-        "right answer exactly there, among the round answers we'd want to try first. The exam is built to reward "
-        "thinking, not long calculations. [pause] Okay. I'll see you in the next question.")),
+      L("Starting with a convenient choice can save work. Here fifty made the check easy, and it fitted every given. In another question, the convenient choice may fail. Then we cross it out and try another. We always choose easy arithmetic first, and still check the given conditions. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ pt-q08 (Hebrew Q18)
@@ -1544,6 +1506,12 @@ f2q8g = PIN(GEO('f2q8g', [
              ('txt', f2x280, 276, '75', 'teal', 34)]),
 ], vb='10 25 590 270', w=860, col=0, title='What he paid and the shirt price'))
 CARRY51['solve-pt-q08'] = {2: ['shirt 50 $\\to$ 270'], 3: ['shirt 50 $\\to$ 270', 'shirt 150 $\\to$ 310']}
+for _part in f2q8g.values():
+    _part['h'] = int(round(_part['h'] * 620 / _part['w'])); _part['w'] = 620
+    _part['_x'] = 400; _part['_y'] = 350
+f2delta1 = IH('f2delta1', 'Original: shirt $+10$, pants $-10$', size=28, col=1)
+f2delta2 = IH('f2delta2', 'Paid: $+9-5=+4$', size=30, col=1)
+_R(f2delta1, 400); _R(f2delta2, 455)
 video('solve-pt-q08', 'solution', qid='pt-q08', slides=[
     S('Round answers first',
       L("Kobi bought a pair of pants at a fifty percent discount, and a shirt at a ten percent discount. He paid two "
@@ -1566,18 +1534,15 @@ video('solve-pt-q08', 'solution', qid='pt-q08', slides=[
         "choice number one is out.", show(f2q8r2, 'Together, two hundred twenty-five'),
         mk('cross', 'choice 1', 'so choice number one is out'))),
     S('The next round one',
-      L("I'm a little disappointed. I tried a round answer and it didn't work. But that's fine, we go on. The next round "
-        "one is a hundred fifty. Then the pants are five hundred minus a hundred fifty, three hundred fifty.",
-        pt('choice 4', 'The next round one'), show(f2q8r3, 'Then the pants are five hundred minus')),
+      L("Fifty didn't fit, so we cross it out and try another easy choice. Let's try a hundred fifty. Then the pants cost five hundred minus a hundred fifty, three hundred fifty, before the discount.",
+        pt('choice 4', "Let's try a hundred fifty"), show(f2q8r3, 'Then the pants cost five hundred minus')),
       L("Half of three hundred fifty is a hundred seventy-five. A tenth of a hundred fifty is fifteen, so the shirt cost "
         "him a hundred fifty minus fifteen, a hundred thirty-five.", show(f2q8r3b, 'Half of three hundred fifty'), show(f2q8r3c, 'A tenth of a hundred fifty')),
       L("Together, a hundred seventy-five plus a hundred thirty-five is three hundred ten. That's not two hundred eighty "
         "either, so choice number four is out too.", show(f2q8r4, 'Together, a hundred seventy-five'),
         mk('cross', 'choice 4', 'so choice number four is out too'))),
     S('When round fails',
-      L("What's going on here? We said the right answer is usually one of the round ones, and here it isn't. Usually "
-        "doesn't mean always. This question is here exactly so we learn what to do when it doesn't work out. And what do "
-        "we do? We just go on as usual."),
+      L("Both convenient choices failed. That's fine: round numbers make checking easier, but they don't have to be right. We've ruled out two choices. Now we check one of the two that remain."),
       L("Two choices are left, seventy-five and a hundred forty. We try the rounder one, a hundred forty. Then the pants "
         "are five hundred minus a hundred forty, three hundred sixty.", pt('choice 3', 'We try the rounder one'), show(f2q8r5, 'Then the pants')),
       L("Half of three hundred sixty is a hundred eighty. A tenth of a hundred forty is fourteen, so the shirt cost him a "
@@ -1593,9 +1558,9 @@ video('solve-pt-q08', 'solution', qid='pt-q08', slides=[
       L("A shirt of fifty gave two hundred seventy, and a shirt of a hundred fifty gave three hundred ten. We need two "
         "hundred eighty, which is between them. So the shirt is between fifty and a hundred fifty.",
         show(f2q8g['mid'], 'We need two hundred eighty')),
-      L("And two hundred eighty is much closer to two hundred seventy than to three hundred ten. It's ten away from one, "
-        "and thirty away from the other. So the shirt is much closer to fifty than to a hundred fifty.",
-        show(f2q8g['t280'], 'much closer to two hundred seventy'), show(f2q8g['down'], 'So the shirt is much closer')),
+      L("Why does closeness help here? The original total stays five hundred. If the shirt's original price goes up by ten, the pants' original price goes down by ten. The shirt's discount takes away a tenth of the extra ten, which is one. So we pay nine more for the shirt. The pants are half price, so we save only five there. Nine more minus five saved is four more paid. Each extra ten changes the paid total by the same four. Two hundred eighty is ten above two hundred seventy. It's thirty below three hundred ten. So the needed shirt price is closer to fifty than to a hundred fifty.",
+        show(f2delta1, "the pants' original price goes down by ten"), show(f2delta2, 'four more paid'),
+        show(f2q8g['t280'], "It's thirty below three hundred ten"), show(f2q8g['down'], 'So the needed shirt price is closer')),
       L("Of the two choices left, seventy-five is close to fifty, and a hundred forty is right next to a hundred fifty. So "
         "the answer is seventy-five.", show(f2q8g['ans'], 'seventy-five is close to fifty')),
       L("If you saw that, great. If not, no problem. We plugged in one more answer and crossed it out. [pause] Okay. "
@@ -1639,8 +1604,7 @@ video('solve-pt-q09', 'solution', qid='pt-q09', slides=[
     S('What we learned',
       L("Let's sum up plugging in the answers. When the choices are numbers, and the question gives conditions we can "
         "check, we can put each choice into the question and check it.", show(f2q9s1, "Let's sum up")),
-      L("First we cross out choices that make no sense. Then we start with a round, convenient choice. And when the "
-        "choices are in order, we start with a middle one.", show(f2q9s2, 'First we cross out')),
+      L('First we cross out choices that make no sense. Then we start with a round, convenient choice. And when a bigger trial number gives a bigger result, a middle choice can help us rule out more of the ordered choices.', show(f2q9s2, 'First we cross out')),
       L("The moment a choice fits every given, we mark it, and we don't need to check the rest. And if three choices are "
         "out, the fourth is right, even without checking. [pause] Okay. I'll see you in the next video.",
         show(f2q9s3, 'The moment a choice fits'), show(f2q9s4, 'if three choices are out'))),
@@ -1676,7 +1640,7 @@ f2i9 = I('f2i9', 'When? $\\ $a long, messy calculation', size=30)
 f2i9b = I('f2i9b', 'and numbers that look chosen on purpose', size=30)
 video('pt51-insights', 'lesson', slides=[
     S('Insight Questions',
-      L("Psychometric thinking, insight questions.")),
+      L("Now let's look at insight questions in psychometric thinking.")),
     S('Special questions',
       L("By now we already know that the questions on this exam are special. They give an advantage to students who "
         "think in a more creative way."),
@@ -1684,9 +1648,8 @@ video('pt51-insights', 'lesson', slides=[
         "estimating. They help us solve a large part of the exam questions faster and more easily.",
         show(f2i1, 'plugging in the answers, plugging'), show(f2i1b, 'plugging in numbers, and'), show(f2i1c, 'and estimating'))),
     S('What is an insight?',
-      L("Here and there, there are also questions we call insight questions. To solve them, you need one creative idea, "
-        "and that idea doesn't repeat. It belongs to that one question. What works in one question won't work in another.",
-        show(f2i2, 'questions we call insight questions')),
+      L("Here and there, we also meet insight questions. We need to notice something useful in that particular question. There isn't one fixed set of steps for finding it. A different question may need a different idea.",
+        show(f2i2, 'we also meet insight questions')),
       L("These questions are rarer. Most questions fit our super-methods. But they're on the exam, so we'll practice "
         "them too.")),
     S('Look before you calculate',
@@ -1744,8 +1707,7 @@ video('solve-pt-q20', 'solution', qid='pt-q20', slides=[
         "and one sixth is five thirtieths. Together, eleven thirtieths.", show(f2q20a, 'One fifth is six thirtieths'), show(f2q20a2, 'Together, eleven thirtieths')),
       L("The bottom has two fractions too, with the same common denominator, thirty. Two fifths is twelve thirtieths, and "
         "two sixths is ten thirtieths. Together, twenty-two thirtieths.", show(f2q20b, 'Two fifths is twelve thirtieths'), show(f2q20b2, 'Together, twenty-two thirtieths')),
-      L("Now we divide. Dividing by a fraction means multiplying by it upside down. So it's eleven over thirty, times "
-        "thirty over twenty-two. The thirties cancel, and we're left with eleven over twenty-two, which is one half.",
+      L("Now we divide. Dividing by a fraction means multiplying by its reciprocal, with the top and bottom swapped. So it's eleven over thirty, times thirty over twenty-two. The thirties cancel, and we're left with eleven over twenty-two, which is one half.",
         show(f2q20c, 'So it\'s eleven over thirty'), show(f2q20c2, 'The thirties cancel')),
       L("Careful to keep the top on top. If you flip it, you get two, and two is waiting as choice number two. Choice "
         "number one is our answer.", mk('cross', 'choice 2', 'two is waiting as choice number two'),
@@ -1756,8 +1718,7 @@ video('solve-pt-q20', 'solution', qid='pt-q20', slides=[
       L("So every part of the bottom is twice its partner on the top, and the whole bottom is twice the whole top. Why? "
         "Two fifths plus two sixths is two times, the bracket one fifth plus one sixth. And a number over twice itself is "
         "always one half.", show(f2q20d, 'Two fifths plus two sixths is two times')),
-      L("Maybe it's easier to see it like this. On top we have a banana and an apple, and on the bottom, two bananas and "
-        "two apples. The bottom is exactly double the top, so it's one half.", show(f2q20e, 'On top we have a banana')),
+      L("Maybe it's easier to see it like this. Call one fifth a banana, and one sixth an apple. The top has one banana and one apple. The bottom has two bananas and two apples: twice that same total. So the top is half of the bottom, and the fraction is one half.", show(f2q20e, 'The top has one banana')),
       L("By the way, notice that the exam wrote two sixths, and not one third. They're the same number, but two sixths "
         "shows us that it's double one sixth. They wanted us to see it.", pt('stem', 'the exam wrote two sixths')),
       L("Honestly, I love this question. Even in an easy calculation, the exam gives an advantage to whoever stops and "
@@ -1801,16 +1762,15 @@ video('solve-pt-q21', 'solution', qid='pt-q21', slides=[
         "percent a year. He invests the rest of the money in a fund that gives a profit of between four percent and "
         "sixteen percent a year. Roni's profit in the coming year will be at least what part of the total amount he "
         "invested, and at most what part?", pt('stem', 'Roni has sixty thousand shekels', 'hl', 14.0), voice='calm', pause=0.5),
-      L("We can solve this in seconds, without calculating at all. But we haven't learned percents yet, so first, what "
-        "does a percent mean? A profit of eight percent means that for every hundred shekels you invest, you earn eight "
-        "shekels.", pt('stem', 'A profit of eight percent')),
+      L("We can solve this without calculating the profit in shekels. Remember, eight percent means eight for every "
+        "hundred invested. Here, only half the total money earns that rate.", pt('stem', 'Here, only half the total money')),
       L("Before the idea behind the question, let's take a simpler example. Say I have a hundred shekels, and a plan that "
         "gives ten percent. If I invest all hundred shekels, I earn ten shekels, which is ten percent of my money.",
         show(f2q21g1['line'], 'Say I have a hundred shekels'), show(f2q21g1['all'], 'If I invest all hundred')),
       L("But if I invest only half, fifty shekels, I earn ten percent of fifty, which is five shekels. And out of my "
         "hundred shekels, five shekels is five percent.", show(f2q21g1['half'], 'But if I invest only half'),
         show(f2q21g1['earn'], 'I earn ten percent of fifty')),
-      L("So I invested half the money, and I earned only half the percent. That's the whole idea.",
+      L("The plan still pays ten percent on the money I put in. But I invested only half of all my money, so the profit is five percent of the whole amount. That's the whole idea.",
         pt('f2q21g1_line', 'I invested half the money'))),
     S('Half the money, half the percent',
       L("Back to Roni. Half of his money is in the plan with eight percent. If all of his money were there, he'd earn "
@@ -1819,11 +1779,9 @@ video('solve-pt-q21', 'solution', qid='pt-q21', slides=[
       L("The other half is in the fund, with four to sixteen percent. Again, it's only half the money, so out of the "
         "total, he earns half of that. Half of four is two, and half of sixteen is eight. So between two and eight percent.",
         show(f2q21g2['right'], 'Half of four is two')),
-      L("Now we add up both halves. Careful here. If you just add eight to four and to sixteen, you get twelve and "
-        "twenty-four, and that's choice number one. But each plan has only half the money, so we add the halves.",
-        mk('cross', 'choice 1', "and that's choice number one")),
-      L("The plan always gives four percent, so only the fund changes. At the least, four plus two, six percent. At the most, four plus eight, twelve percent. So between six and twelve "
-        "percent. Choice number three is our answer. We solved it just by understanding, without calculating anything.",
+      L("Now we add the two profits, both measured as percentages of all his money. Careful: don't add the plans' full rates, eight plus four or eight plus sixteen. That would give twelve and twenty-four, choice number one. Each rate applies to only half his money. So we add their contributions to the whole, after halving each rate.",
+        mk('cross', 'choice 1', 'choice number one')),
+      L('The plan always contributes four percent of the total money, so only the fund changes. At the least, four plus two, six percent. At the most, four plus eight, twelve percent. So between six and twelve percent. Choice number three is our answer. We solved it just by understanding, without calculating the profit in shekels.',
         show(f2q21g2['least'], 'At the least, four plus two'), show(f2q21g2['most'], 'At the most, four plus eight'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('If you calculate',
       L("By the way, if you still choose to calculate, there are shortcuts here too. Say you worked out eight percent of "
@@ -1881,13 +1839,11 @@ video('solve-pt-q22', 'solution', qid='pt-q22', slides=[
         "triangle, so they cancel too.", show(f2q22h['abdc'], 'Now A B and D C')),
       L("What's left? From the quadrilateral, B E and A D. From the triangle, E C. So we need B E plus A D, minus E C.",
         show(f2q22h['rest'], "What's left?")),
-      L("Let's draw a line from E straight up, parallel to A B. It cuts A D into two pieces. The right piece is as long "
-        "as E C, because they're opposite sides of a rectangle, so it's y, and it cancels with E C. The left piece is as long as B E, for the same reason, x minus y.",
-        show(f2q22h['par'], "Let's draw a line from E"), show(f2q22h['rpiece'], 'The right piece is as long'), show(f2q22h['lpiece'], 'The left piece is as long')),
+      L("Let's draw a line from E straight up, parallel to A B. It divides the square into two rectangles. The right piece of A D is opposite E C, so those lengths are equal. Both are y. In our subtraction, that plus y and minus E C cancel. The left piece of A D is opposite B E. Those lengths are equal too, and each is x minus y.",
+        show(f2q22h['par'], "Let's draw a line from E"), show(f2q22h['rpiece'], 'The right piece of A D'), show(f2q22h['lpiece'], 'The left piece of A D')),
       L("So we're left with B E and the left piece, x minus y twice. That's two times, the bracket x minus y. Choice "
         "number two is our answer.", show(f2q22a, "So we're left with"), mk('tick', 'choice 2', 'Choice number two is our answer')),
-      L("When a question asks for the difference between two shapes, look for the parts they share, and cancel them "
-        "before you calculate anything. [pause] Okay. I'll see you in the next question.")),
+      L("When a question asks for the difference between two perimeters, look for the parts they share, and cancel them before you calculate anything. [pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ pt-q23 (Hebrew Q20)
@@ -1940,8 +1896,7 @@ video('solve-pt-q23', 'solution', qid='pt-q23', slides=[
       L("Careful with choice number three, twenty. That's half of forty, but the season didn't stop at forty games. It "
         "went on until the wins caught up with the losses. Choice number four is our answer.",
         mk('cross', 'choice 3', 'Careful with choice number three'), mk('tick', 'choice 4', 'Choice number four is our answer')),
-      L("This question comes at the end of the section, and it's solved in seconds, with almost no calculation. Just one "
-        "understanding. It won twelve and lost twenty-eight, so it needs to reach twenty-eight wins.")),
+      L("This question comes at the end of the section, and it's solved in seconds, with almost no calculation. The key to understanding it is that the number of losses stays the same. It won twelve and lost twenty-eight, so it needs to reach twenty-eight wins.")),
     S('Keep practicing',
       L("So in these questions we saw insights, and in every question the idea was different. A bottom that's twice the "
         "top, half the money, sides that two shapes share, and losses that stay the same."),
@@ -2009,27 +1964,43 @@ f3net = I('f3net', 'Plugging in = a safety net', size=34, col=1)
 f3k1 = I('f3k1', '$x\\ge4$ $\\ \\to\\ $ $x=4,\\ 5,\\ 6,\\ \\dots$ $\\quad$ not $2$', size=32)
 f3k2 = I('f3k2', '$a$ a positive integer $\\to$ $1,\\ 2,\\ 3,\\ \\dots$ $\\quad$ not $0$, not $\\frac12$', size=32)
 f3k3 = I('f3k3', '$\\frac{5}{x}$ $\\ \\to\\ $ $x\\ne0$', size=32)
-f3k4 = I('f3k4', 'A figure: $\\ $a value that looks right in the drawing', size=32)
+f3k4 = I('f3k4', 'A figure: $\\ $fit the given conditions, not its appearance', size=32)
 f3k5 = I('f3k5', 'Often easiest: $\\ $the edge, $\\ x=4$', size=32)
-f3z0 = I('f3z0', '$\\frac{x^2\\cdot x^3}{x}=\\ ?$ $\\quad$ choices: $\\ x^4,\\ \\ x^5,\\ \\ x^6,\\ \\ x^3$', size=32)
-f3z1 = IH('f3z1', '$x=1$: $\\ 1$ $\\ |\\ $ $1,\\ 1,\\ 1,\\ 1$ ✗ tie', size=32)
-f3z2 = IH('f3z2', '$x=0$: $\\ 0$ $\\ |\\ $ $0,\\ 0,\\ 0,\\ 0$ ✗ tie', size=32)
-f3z3 = IH('f3z3', '$x=2$: $\\ \\frac{2^2\\cdot2^3}{2}=\\frac{4\\cdot8}{2}$', size=32)
-f3z3b = IH('f3z3b', '$=\\frac{32}{2}=16$', size=32)
-f3z3c = I('f3z3c', 'Choices: $\\ 16,\\ 32,\\ 64,\\ 8$ ✓ all different', size=32)
-f3z4 = I('f3z4', '$0$ and $1$ often make choices tie (letters in the choices)', size=30)
-f3d0 = I('f3d0', 'Two choices: $\\ a^2b$ $\\ $ and $\\ ab^2$', size=34)
-f3d1 = I('f3d1', '$a=b=2$: $\\ 4\\cdot2=8$, $\\ 2\\cdot4=8$ ✗ tie', size=34)
-f3d2 = I('f3d2', '$a=2,\\ b=3$: $\\ 4\\cdot3=12$, $\\ 2\\cdot9=18$ ✓', size=34)
-f3d3 = I('f3d3', 'Different letters $\\to$ different numbers', size=32)
+# part 2 (2026-10-21 external fixes, the teacher's decision rule): restrictions -> an easy allowed number -> what it rules
+# out -> another easy number only if more than one choice is left (only those). Zero is out only where a restriction
+# forbids it; different letters may share a number. Hand-written rows are pen-safe (", no" instead of a cross).
+f3t9 = I('f3t9', 'Zero is often the fastest, if it is allowed', size=30)
 f3t0 = I('f3t0', '$x(x+1)=\\ ?$', size=36)
 f3t1 = I('f3t1', 'Choices: $\\ x^2+x,\\quad 3x,\\quad x^2+1,\\quad 4x$', size=32)
-f3t2 = IH('f3t2', '$x=2$: $\\ 2\\cdot3=6$', size=34)
-f3t3 = I('f3t3', '$\\to\\ \\ 6$ ✓ $\\ \\ 6$ ✓ $\\ \\ 5$ ✗ $\\ \\ 8$ ✗', size=32)
-f3t4 = IH('f3t4', '$x=3$: $\\ 3\\cdot4=12$', size=34, col=1)
-f3t5 = I('f3t5', '$x^2+x$: $\\ 9+3=12$ ✓', size=32, col=1)
-f3t6 = I('f3t6', '$3x$: $\\ 9$ ✗', size=32, col=1)
-f3t7 = I('f3t7', 'Two left $\\to$ a tie-breaker number, $\\ $check only those two', size=28, col=1)
+f3t2 = IH('f3t2', 'No restriction. $\\ x=0$: $\\ 0\\cdot1=0$', size=34)
+f3t3a = IH('f3t3a', '$x^2+x=0$', size=32)
+f3t3a2 = IH('f3t3a2', '$3x=0$', size=32)
+f3t3b = IH('f3t3b', '$x^2+1=1$, no', size=32)
+f3t3b2 = IH('f3t3b2', '$4x=0$', size=32)
+f3t3c = I('f3t3c', 'Three left $\\to$ again, only those three', size=30)
+f3t4 = IH('f3t4', '$x=1$: $\\ 1\\cdot2=2$', size=34, col=1)
+f3t5 = IH('f3t5', '$x^2+x=1+1=2$', size=32, col=1)
+f3t6 = IH('f3t6', '$3x=3$, no $\\ \\ 4x=4$, no', size=32, col=1)
+f3t7 = I('f3t7', 'One left $\\to$ no third try', size=30, col=1)
+f3t8 = I('f3t8', 'Restrictions $\\to$ easy number $\\to$ what is out?', size=28)
+f3t8b = I('f3t8b', 'Another number only if needed', size=28)
+f3z0 = I('f3z0', '$\\frac{x^2\\cdot x^3}{x}=\\ ?$ $\\quad$ choices: $\\ x^4,\\ \\ x^5,\\ \\ x^6,\\ \\ x^3$', size=32)
+f3z2 = I('f3z2', 'Restriction: $\\ x$ is at the bottom $\\to$ $x\\ne0$', size=32)
+f3z1 = IH('f3z1', '$x=1$: $\\ 1$, $\\ $and the choices $1,\\ 1,\\ 1,\\ 1$', size=32)
+f3z3 = IH('f3z3', '$x=2$: $\\ \\frac{2^2\\cdot2^3}{2}=\\frac{4\\cdot8}{2}$', size=32)
+f3z3b = IH('f3z3b', '$=\\frac{32}{2}=16$', size=32)
+f3z3c = I('f3z3c', 'Choices: $\\ 16,\\ 32,\\ 64,\\ 8$ $\\ \\to\\ $ only $x^4$ is $16$', size=32)
+f3z4 = I('f3z4', 'Zero or one make the choices tie? $\\ \\to$ the next easy allowed number', size=30)
+f3d0 = I('f3d0', '$(a+3)(b+3)-3a-3b-ab=\\ ?$', size=34)
+f3d0c = I('f3d0c', 'Choices: $\\ 0,\\quad 3,\\quad 6,\\quad 9$', size=32)
+f3d1 = IH('f3d1', '$a=b=0$: $\\ 3\\cdot3=9$', size=34)
+f3d1c = IH('f3d1c', '$3a,\\ 3b,\\ ab$ are $0$ $\\to$ $9$', size=34)
+f3d1b = I('f3d1b', 'Number choices $\\to$ only one is $9$: $\\ $one try', size=30)
+f3d2 = I('f3d2', 'Letter choices: $\\ a^2b$ $\\ $ and $\\ ab^2$', size=32)
+f3d3 = IH('f3d3', '$a=b=1$: $\\ 1$ and $1$, a tie', size=32)
+f3d4 = IH('f3d4', '$a=1,\\ b=2$: $\\ a^2b=1\\cdot2=2$', size=32)
+f3d4c = IH('f3d4c', '$ab^2=1\\cdot4=4$', size=32)
+f3d5 = I('f3d5', 'The same number is allowed; $\\ $change one only for a tie', size=30)
 # part 3: two more cases, and "always"
 f3r0 = I('f3r0', '$1:2\\ =\\ 2:4\\ =\\ 10:20$', size=36)
 f3r1 = I('f3r1', 'Half of a number $+$ a third of it $=$ what part of it?', size=32)
@@ -2048,13 +2019,35 @@ f3n0 = I('f3n0', 'Is $\\ a^2+b^2=(a+b)^2\\ $ always?', size=34)
 f3n1 = IH('f3n1', '$a=1,\\ b=2$: $\\ 1+4=5$, $\\ 3^2=9$ ✗', size=34)
 f3n2 = I('f3n2', 'Not always: $\\ $one counterexample is enough', size=32)
 f3n3 = I('f3n3', 'Always: $\\ $examples don\'t prove it $\\to$ rule out the other three', size=30)
+# "cannot be determined" / "none of the above" (2026-10-21 external fixes): no number rules it out; the last other
+# choice is broken by a different KIND of number (0, big, negative, fraction, within the restrictions); the same
+# result every time -> a reason. Example (ours): x != 0; x^2 >= x / x^2 < x / x^2 = x / none -> 1, 2, -2, 1/2.
+f3c9 = I('f3c9', '"Cannot be determined", $\\ $"None of the above": $\\ $no number rules it out', size=28)
+f3c0 = I('f3c0', 'Given: $\\ x\\ne0$. $\\ $Necessarily true?', size=32)
+f3c1 = I('f3c1', '(1) $\\ x^2\\ge x$ $\\qquad$ (2) $\\ x^2<x$', size=32)
+f3c1c = I('f3c1c', '(3) $\\ x^2=x$', size=32)
+f3c1b = I('f3c1b', '(4) $\\ $None of the above is necessarily true', size=28)
+f3c2 = IH('f3c2', '$x=0$ not allowed. $\\ x=1$: $\\ 1^2=1$', size=32)
+f3c3a = IH('f3c3a', '(1) $\\ 1\\ge1$', size=32, col=1)
+f3c3b = IH('f3c3b', '(2) $\\ 1<1$, no', size=32, col=1)
+f3c3c = IH('f3c3c', '(3) $\\ 1=1$', size=32, col=1)
+f3c4 = IH('f3c4', '$x=2$: $\\ $(1) $\\ 4\\ge2$', size=32, col=1)
+f3c4b = IH('f3c4b', '(3) $\\ 4=2$, no', size=32, col=1)
+f3c10 = I('f3c10', 'Left: $\\ $(1) $\\ x^2\\ge x$ $\\quad$ and $\\quad$ (4) None', size=32)
+f3c5 = I('f3c5', 'Break (1)? $\\ $Change the kind: zero, big, negative, fraction', size=28)
+f3c6 = IH('f3c6', '$x=-2$: $\\ 4\\ge-2$, (1) stays', size=32)
+f3c7 = IH('f3c7', '$x=\\frac12$: $\\ \\frac12\\cdot\\frac12=\\frac14$', size=32)
+f3c7b = IH('f3c7b', '$\\frac14\\ge\\frac12$, no $\\ \\to$ (1) is out', size=32)
+f3c8 = I('f3c8', 'Answer: $\\ $(4) None of the above', size=32)
+f3c11 = I('f3c11', 'The same result every time? $\\ \\to$ find the reason', size=30)
 f3m1 = I('f3m1', 'When: $\\ =?$ with number choices $\\ $·$\\ $ letters in choices', size=30)
 f3m1b = I('f3m1b', '$\\qquad\\quad$ a ratio $\\ $·$\\ $ more letters than equations', size=30)
-f3m2 = I('f3m2', '1. Say which number and why, before you use it', size=30)
-f3m3 = I('f3m3', '2. Check that the choices come out different ($0$, $1$ often tie)', size=30)
-f3m4 = I('f3m4', '3. Different letters, different numbers', size=30)
-f3m5 = I('f3m5', '4. Rule out three; $\\ $two left $\\to$ a tie-breaker number', size=30)
-f3m6 = I('f3m6', '5. It\'s your safety net', size=30)
+f3m2 = I('f3m2', '1. Check every restriction', size=30)
+f3m3 = I('f3m3', '2. An easy allowed number (often zero); $\\ $say why', size=30)
+f3m4 = I('f3m4', '3. Which choices does it rule out?', size=30)
+f3m5 = I('f3m5', '4. More than one left $\\to$ another number, only those', size=30)
+f3m7 = I('f3m7', '"Cannot be determined": never ruled out $\\to$ change the kind', size=28)
+f3m6 = I('f3m6', 'It\'s your safety net', size=30)
 
 video('pt51-plug-numbers', 'lesson', slides=[
     S('Plugging In Numbers',
@@ -2080,13 +2073,11 @@ video('pt51-plug-numbers', 'lesson', slides=[
         "four? And the choices are numbers.", show(f3e1, "Let's see an example")),
       L("x can be any number here. But the answer is one number, so the expression must give the same number for every x. "
         "And if it's right for every number, then it's right for the number I choose."),
-      L("So which number? x equals one, because it's small and easy. One plus two is three, and three squared is nine. One "
-        "times five is five. Nine minus five is four.", show(f3e1a, 'x equals one, because'), show(f3e1a2, 'Nine minus five')),
+      L("So which number? x equals one, because it's small and easy. One plus two is three, and three squared is nine. In the part we subtract, x is one and x plus four is five. One times five is five. Nine minus five is four.", show(f3e1a, 'x equals one, because'), show(f3e1a2, 'Nine minus five')),
       L("Let's check with another number, x equals three, to see that it really gives the same result. Three plus two is five, and five squared is twenty-five. Three "
         "times seven is twenty-one. Twenty-five minus twenty-one is four again.", show(f3e1b, 'x equals three'),
         show(f3e1b2, 'Twenty-five minus twenty-one')),
-      L("Four both times. And the algebra agrees. When we open the brackets, everything with x cancels, and four is left "
-        "for every x. So when the choices are numbers, one number is enough.", show(f3e1c, 'And the algebra agrees'))),
+      L('Both examples gave four. They show what happens with our chosen numbers. The algebra explains why it always works: x plus two, squared, is x squared plus four x plus four. And x times x plus four is x squared plus four x. Subtracting leaves four. So in this question, where the choices are numbers, one allowed trial gives the answer.', show(f3e1c, 'The algebra explains why'))),
     S('Letters in the choices',
       L("Now the second sign, letters in the choices. The bracket x plus three, squared, minus the bracket x plus one, "
         "squared. The choices are four x plus eight, two x plus eight, four x plus ten, and eight.",
@@ -2096,11 +2087,10 @@ video('pt51-plug-numbers', 'lesson', slides=[
       L("Two plus three is five, and five squared is twenty-five. Two plus one is three, and three squared is nine. "
         "Twenty-five minus nine is sixteen. So the right choice must give sixteen when x is two.",
         show(f3e2x, 'Twenty-five minus nine')),
-      L("Now we don't hunt for the right choice. We rule out the wrong ones. Four times two plus eight is sixteen, so it "
-        "stays. Two times two plus eight is twelve, not sixteen, so it's out.",
+      L("Now we check the choices against sixteen. Choice number one says four x plus eight. With x as two, four times two plus eight is sixteen, so it stays. Choice number two says two x plus eight. Two times two plus eight is twelve, not sixteen, so it's out.",
         show(f3e2r1, 'Four times two plus eight'), show(f3e2r2, 'Two times two plus eight')),
-      L("Four times two plus ten is eighteen, out. And eight is not sixteen, out.", show(f3e2r3, 'Four times two plus ten'),
-        show(f3e2r4, 'And eight is not sixteen')),
+      L("Choice number three says four x plus ten. Four times two plus ten is eighteen, not sixteen, so it's out. Choice number four is eight. Eight is not sixteen, so that choice is out too.", show(f3e2r3, 'Four times two plus ten'),
+        show(f3e2r4, 'Eight is not sixteen')),
       L("Three choices are out, so the one that's left is the answer, four x plus eight. We don't need to check it, because "
         "one of the four must be right. And why not stop at the first one that gave sixteen? Because another choice can "
         "give sixteen too, by chance. We'll see that in a minute.", show(f3e2n, 'Three choices are out')),
@@ -2108,52 +2098,72 @@ video('pt51-plug-numbers', 'lesson', slides=[
         "stuck, a number still gets you to the answer.", show(f3net, 'a safety net'))),
     # ------------------------------------------------------------------ part 2: choosing the number
     S('Keep the conditions',
-      L("The number must obey every condition in the question. If it says x is at least four, x can't be two.",
+      L("How do we choose the number? First, we check every restriction in the question. The number must obey "
+        "all of them. If it says x is at least four, x can't be two.",
         show(f3k1, 'If it says x is at least four')),
       L("If a must be positive and whole, it can't be zero, and it can't be one half. And if a letter is in the bottom of a "
         "fraction, it can't be zero, because we can't divide by zero.", show(f3k2, 'If a must be positive and whole'),
         show(f3k3, 'in the bottom of a fraction')),
-      L("In a figure, choose a value that looks right in the drawing. If an angle looks like about fifty degrees, don't "
-        "plug in a hundred twenty.", show(f3k4, 'In a figure')),
+      L("In a figure, choose values that fit the given conditions. Don't choose an angle just because it looks that size in the drawing. The figure may not be drawn to scale.", show(f3k4, 'In a figure')),
       L("And a good first try is often the edge of what's allowed. If x is at least four, try four itself.",
         show(f3k5, 'the edge of what'))),
+    S('Choose, check, try again',
+      L("Second, we choose an easy number that's allowed. Zero is often the fastest, because every term with zero in it "
+        "becomes zero. Zero is out only when it breaks a restriction, like the bottom of a fraction.",
+        show(f3t9, 'Zero is often the fastest')),
+      L("Here's an example. x times the bracket x plus one. The choices are x squared plus x, three x, x squared plus one, "
+        "and four x.", show(f3t0, "Here's an example"), show(f3t1, 'The choices are')),
+      L("Is there a restriction? No, x can be any number. So zero is allowed, and we take x equals zero. Zero times one is "
+        "zero. So the right choice must give zero when x is zero.", show(f3t2, 'Zero times one is zero')),
+      L("Third, we check what zero rules out. Choice number one says x squared plus x. Zero plus zero is zero, so it stays. "
+        "Choice number two says three x. Three times zero is zero, so it stays too.", show(f3t3a, 'Zero plus zero is zero'),
+        show(f3t3a2, 'Three times zero is zero')),
+      L("Choice number three says x squared plus one. Zero plus one is one, not zero, so it's out. Choice number four says "
+        "four x. Four times zero is zero, so it stays.", show(f3t3b, 'Zero plus one is one'), show(f3t3b2, 'Four times zero is zero')),
+      L("Three choices give zero, so zero can't tell them apart. That's why we don't stop at the first choice that fits. "
+        "Fourth, we try another easy allowed number, and we check only the three choices that are left.",
+        show(f3t3c, 'Three choices give zero')),
+      L("Now x equals one. One times two is two, so the right choice must give two. x squared plus x is one plus one, two, "
+        "so it stays. Three x is three, and four x is four. They aren't two, so they're out.",
+        show(f3t4, 'Now x equals one'), show(f3t5, 'x squared plus x is one plus one'), show(f3t6, 'Three x is three')),
+      L("Only x squared plus x is left, so it's the answer. No third try is needed. So that's how we choose. Check the "
+        "restrictions, choose an easy allowed number, and see what it rules out. Try another number only if more than one "
+        "choice is left.", show(f3t7, 'Only x squared plus x is left'), show(f3t8, 'Check the'),
+        show(f3t8b, 'Try another number only if'))),
     S('Choices that tie',
-      L("Second, check that the choices come out different. Here's an example. x squared times x cubed, over x. The choices "
-        "are x to the fourth, x to the fifth, x to the sixth, and x cubed.", show(f3z0, "Here's an example")),
-      L("Say I plug in x equals one. One to any power is one. So the question gives one, and all four choices give one "
-        "too. Nothing is ruled out.", show(f3z1, 'So the question gives one')),
-      L("Zero does the same. Zero to any power is zero, so all four choices give zero. So zero and one often make "
-        "the choices come out the same, and then they can't tell them apart.", show(f3z2, 'Zero does the same'),
-        show(f3z4, 'So zero and one often')),
-      L("Now x equals two. Two squared is four, and two cubed is eight. Four times eight is thirty-two, and thirty-two over "
-        "two is sixteen. The choices give sixteen, thirty-two, sixty-four and eight. They're all different, and only x to "
-        "the fourth gives sixteen.", show(f3z3, 'Now x equals two'), show(f3z3b, 'Four times eight'),
-        show(f3z3c, 'The choices give sixteen')),
-      L("So before you calculate, look at the choices. If they have powers, products or fractions, skip zero and one, and "
-        "start with two or three. When the choices are numbers, zero and one are fine, because there's nothing to tie.",
-        pt('f3z4', 'So before you calculate'))),
-    S('Different letters',
-      L("Third, give different letters different numbers. Look at two choices, a squared b, and a b squared.",
-        show(f3d0, 'Look at two choices')),
-      L("If a and b are both two, both choices give eight. Two squared times two is eight, and two times two squared is "
-        "eight. They tie.", show(f3d1, 'They tie')),
-      L("With a equals two and b equals three, a squared b is four times three, twelve. And a b squared is two times nine, "
-        "eighteen. Now they're different.", show(f3d2, "Now they're different")),
-      L("Different letters may be equal, unless the question says they're not. But equal numbers often hide the "
-        "difference, so we choose different ones.", show(f3d3, 'Different letters may be equal'))),
-    S('A tie-breaker number',
-      L("Fourth, rule out three choices. Sometimes even a good number leaves two. For example, x times the bracket x plus "
-        "one. The choices are x squared plus x, three x, x squared plus one, and four x.",
-        show(f3t0, 'For example, x times'), show(f3t1, 'The choices are')),
-      L("Let's take x equals two. Two times three is six, so the right choice must give six. x squared plus x is four plus two, six. Three x is six too. x "
-        "squared plus one is five, out. And four x is eight, out.", show(f3t2, "Let's take x equals two"),
-        show(f3t3, 'x squared plus x is four plus two')),
-      L("Two choices give six, so we can't decide yet. This is why we don't stop at the first choice that fits. We take a "
-        "tie-breaker number, and we check only the two choices that are left. The ones that are out stay out.",
-        pt('f3t3', 'Two choices give six')),
-      L("Now x equals three. Three times four is twelve. x squared plus x is nine plus three, also twelve. Three x is "
-        "nine, not twelve, out. The answer is x squared plus x.", show(f3t4, 'Three times four is twelve'),
-        show(f3t5, 'x squared plus x is nine plus three'), show(f3t6, 'Three x is nine'), show(f3t7, 'The answer is'))),
+      L("Here's an example where zero isn't allowed. x squared times x to the power of three, all divided by x. The choices "
+        "are x to the power of four, x to the power of five, x to the power of six, and x to the power of three.",
+        show(f3z0, "Here's an example")),
+      L("First the restrictions. x is at the bottom of the fraction, and we can't divide by zero. So zero isn't allowed "
+        "here.", show(f3z2, 'First the restrictions')),
+      L("The next easy number is one. One to any power is one. So the question gives one, and all four choices give one "
+        "too. Nothing is ruled out, so we need another try.", show(f3z1, 'So the question gives one')),
+      L("Now x equals two. Two squared is four, and two to the power of three is eight. Four times eight is thirty-two, and "
+        "thirty-two over two is sixteen. So the right choice must give sixteen.", show(f3z3, 'Now x equals two'),
+        show(f3z3b, 'Four times eight')),
+      L("The choices give sixteen, thirty-two, sixty-four and eight. Only x to the power of four gives sixteen. So this one "
+        "try rules out the other three.", show(f3z3c, 'The choices give sixteen')),
+      L("So zero and one are fine to start with. But with powers in the choices, they often make every choice give the "
+        "same result. Then we just take the next easy allowed number.",
+        show(f3z4, 'they often make every choice'))),
+    S('Two letters',
+      L("Two letters may get the same number, unless the question says they're different. Giving them the same number "
+        "is often the fastest. "
+        "For example, the bracket a plus three, times the bracket b plus three. From that product we "
+        "subtract three a, three b, and a b. The choices are zero, three, six and nine.", show(f3d0, 'For example'),
+        show(f3d0c, 'The choices are zero')),
+      L("There's no restriction, so let's take zero for both letters. Zero plus three is three, and three times three is "
+        "nine. Three a, three b and a b are all zero. So the expression is nine.",
+        show(f3d1, 'three times three is nine'), show(f3d1c, 'are all zero')),
+      L("The choices are numbers, so only one of them can be nine, choice number four. One try is enough.",
+        show(f3d1b, 'The choices are numbers')),
+      L("With letters in the choices, the same number can make two choices tie. Look at two choices, a squared b, and a b "
+        "squared. With a and b both one, both choices give one.", show(f3d2, 'Look at two choices'),
+        show(f3d3, 'With a and b both one')),
+      L("So we keep a as one, and we change b to two. Then we check only those two choices. a squared b is one times two, "
+        "two. And a b squared is one times four, four. Now they're different. So different letters don't need different "
+        "numbers. We change one only when the same number makes choices tie.", show(f3d4, 'a squared b is one times two'), show(f3d4c, 'And a b squared is one times four'),
+        show(f3d5, "So different letters don't need"))),
     # ------------------------------------------------------------------ part 3: two more cases, and "always"
     S('No letters: a ratio',
       L("A third case. Sometimes there are no letters at all, but an amount is unknown, and they ask for a ratio or a part. In a ratio, "
@@ -2167,45 +2177,77 @@ video('pt51-plug-numbers', 'lesson', slides=[
     S('Case 4: pick values',
       L("The fourth case. An equation, but with more letters than equations, and they ask for one value. For example, four x "
         "plus six y equals eighteen. What is six x plus nine y?", show(f3q0, 'For example, four x')),
-      L("One equation with two letters has many solutions. But they ask for one number, so it must come out the same for "
-        "every solution. So I may take the easiest solution."),
-      L("I give one letter a value, and I solve the equation for the other. x equals zero, because zero kills a whole term. "
-        "Then six y equals eighteen, so y is three.", show(f3q3, 'I give one letter a value'), show(f3q1, 'x equals zero')),
+      L("An equation with two letters can have many allowed solutions. Sometimes the result they ask for changes between them. Then it cannot be determined. But here, both terms they ask for are one and a half times the terms in the given equation. So their sum is fixed too. Let's use one easy solution to calculate it."),
+      L('I give one letter a value, and I solve the equation for the other. x equals zero, because multiplying by zero makes the whole x term zero. Then six y equals eighteen, so y is three.', show(f3q3, 'I give one letter a value'), show(f3q1, 'x equals zero')),
       L("Now what they ask. Six times zero is zero, and nine times three is twenty-seven. So six x plus nine y is "
         "twenty-seven.", show(f3q2, 'Six times zero is zero')),
-      L("Here zero is perfect, because the answer is a number, so there's nothing to tie. And I chose only x. If I chose "
-        "both letters, the equation probably wouldn't hold."),
+      L("Here zero makes the calculation easy, and it's allowed. But I chose only x. The equation then made y equal to three. I can't choose both letters freely: they still have to satisfy the equation."),
       L("And it's really true. Six x plus nine y is one and a half times four x plus six y, because each part is one and a half times as big. And one and a half times "
         "eighteen is twenty-seven.", show(f3q4, "And it's really true"))),
     S('Nothing-changes value',
-      L("One more trick for choosing the number. In a story with letters, look for the value where nothing happens. Then "
-        "you know the answer without any formula."),
-      L("For example, n friends rent a boat for P shekels and share the cost. Then k more friends join, and they share it "
-        "again. By how much less does each one pay?", show(f3v0, 'For example, n friends')),
+      L('One more trick for choosing the number. In a story with letters, look for an allowed value where nothing changes. If nobody joins or nothing is added, sometimes we know the result without a formula. But that value must still be allowed by the question.'),
+      L('For example, n friends rent a boat for P shekels and share the cost. Then k more friends may join. In this example k may be zero: nobody has to join. They share the cost again. By how much less does each one pay?', show(f3v0, 'For example, n friends')),
       L("Plug in k equals zero. Nobody joined, so nobody pays less, and the answer must be zero. So every choice that "
         "doesn't give zero when k is zero is out, with no calculation at all.", show(f3v1, 'Plug in k equals zero'),
         show(f3v2, 'So every choice')),
       L("This value often leaves two choices. Then use a tie-breaker, an ordinary number like k equals one, and check only "
         "the two that are left.", show(f3v3, 'This value often leaves'))),
     S('Always or not always',
-      L("Last, questions about what is always true, or not always true. To show that something is not always true, one "
+      L("Now, questions about what is always true, or not always true. To show that something is not always true, one "
         "example where it fails is enough."),
       L("For example, is a squared plus b squared always equal to the bracket a plus b, squared? Let a equal one and b "
-        "equal two, two small, different numbers. One plus four is five, and three squared is nine. Five is not nine, so it's not always true. One "
+        "equal two, two small, easy numbers. One plus four is five, and three squared is nine. Five is not nine, so it's not always true. One "
         "counterexample, and we're done.", show(f3n0, 'For example, is a squared'), show(f3n1, 'Let a equal one'),
         show(f3n2, 'One counterexample')),
       L("But always is different. A few examples that work don't prove always, because the next number might fail. In a "
         "question with choices, we don't prove it. We rule out the other three choices, and the one that's left is the "
         "answer.", show(f3n3, 'But always is different'))),
+    S('Cannot be determined',
+      L("Some questions have a last choice like, it cannot be determined, or, none of the above is necessarily true. You'll "
+        "see it often on the exam. No number can rule that choice out.", show(f3c9, 'No number can rule')),
+      L("Why? That choice says the answer isn't always the same. And we just saw that examples can't prove always. So when "
+        "we plug in numbers, that choice always stays."),
+      L("For example, given: x is not equal to zero. Which of the following is necessarily true? Choice number one, x "
+        "squared is greater than or equal to x. Choice number two, x squared is smaller than x. Choice number three, x "
+        "squared is equal to x. And choice number four, none of the above is necessarily true.",
+        show(f3c0, 'For example, given'), show(f3c1, 'Choice number one'), show(f3c1c, 'Choice number three'),
+        show(f3c1b, 'And choice number four')),
+      L("Necessarily true means true for every allowed x. So one x where a choice is false rules it out. Zero isn't "
+        "allowed, so the easiest number is one. One squared is one.", show(f3c2, 'One squared is one')),
+      L("Choice number one says x squared is greater than or equal to x. One is equal to one, so it stays. Choice number "
+        "two says x squared is smaller than x. One isn't smaller than one, so it's out.",
+        show(f3c3a, 'One is equal to one'), show(f3c3b, "One isn't smaller")),
+      L("Choice number three says x squared is equal to x. One equals one, so it stays too. And choice number four stays, "
+        "because no number can rule it out.", show(f3c3c, 'One equals one')),
+      L("Now we try another easy number, two, and we check only choice numbers one and three. Two squared is four. Four is "
+        "greater than two, so choice number one stays. Four isn't equal to two, so choice number three is out.",
+        show(f3c4, 'Two squared is four'), show(f3c4b, "Four isn't equal to two"))),
+    S('Change the kind of number',
+      L("Choice number one and choice number four are left. No number can rule out choice number four. So we ask: is "
+        "choice number one always true? Three or ten would keep choice number one true, just like two.", show(f3c10, 'Choice number one and')),
+      L("To show that the answer can change, we try a different kind of number. Zero, a big number, a negative number, or "
+        "a fraction, as long as the restriction allows it. Zero isn't allowed here.",
+        show(f3c5, 'we try a different kind of number')),
+      L("A negative number, minus two. Its square is four, and four is greater than minus two. So choice number one still "
+        "stays.", show(f3c6, 'A negative number, minus two')),
+      L("A fraction, one half. One half times one half is one quarter. Is one quarter greater than or equal to one half? "
+        "No, it's smaller. So choice number one isn't always true, and it's out.",
+        show(f3c7, 'One half times one half'), show(f3c7b, "No, it's smaller")),
+      L("Only choice number four is left. None of the above is necessarily true, so that's the answer.",
+        show(f3c8, 'Only choice number four is left')),
+      L("And what if every kind of number gives the same result? Then examples alone aren't enough. Back them with a "
+        "reason, like with six x plus nine y. It's one and a half times four x plus six y, so it's always twenty-seven.",
+        show(f3c11, 'Back them with a reason'))),
     S('So when do I use it?',
       L("So, when do I plug in numbers? When there's an expression with a letter and the choices are numbers. When there "
         "are letters in the choices. When the amount doesn't matter, like in a ratio. And when there are more letters than "
         "equations.", show(f3m1, 'when do I plug in numbers'), show(f3m1b, 'When the amount')),
-      L("And how? Say which number and why, before you use it. Check that the choices come out different, so when the choices "
-        "have letters, skip zero and one, because they often make choices tie.", show(f3m2, 'Say which number and why'),
-        show(f3m3, 'Check that the choices')),
-      L("Give different letters different numbers. Rule out three choices, and if two are left, use a tie-breaker number. "
-        "And remember, it's your safety net.", show(f3m4, 'Give different letters'), show(f3m5, 'Rule out three choices'),
+      L("And how? First, check every restriction. Then choose an easy allowed number, often zero, and say why before you "
+        "use it. See which choices it rules out. If more than one is left, try another easy number, and check only those.",
+        show(f3m2, 'check every restriction'), show(f3m3, 'Then choose an easy allowed number'),
+        show(f3m4, 'See which choices'), show(f3m5, 'If more than one is left')),
+      L("A choice like cannot be determined is never ruled out by a number. If one other choice is left with it, try to "
+        "break that choice with a different kind of number. And remember, it's your safety net.", show(f3m7, 'A choice like cannot be determined'),
         show(f3m6, "it's your safety net")),
       L("It's the most important technique on the exam, so practice it a lot. Now let's see it in sample questions. "
         "[pause] Okay. I'll see you in the next video.")),
@@ -2215,7 +2257,8 @@ CAMERA_SPLITS = globals().get('CAMERA_SPLITS', []) + [
     ('pt51-plug-numbers', 'Plugging In Numbers', [
         (1, None),
         (5, "Let's continue with plugging in numbers, and how to choose the number."),
-        (9, "Let's continue with two more cases, and one more rule."),
+        (8, "Let's continue with two letters, and two more cases."),
+        (12, "Let's continue with what is always true, and a special kind of choice."),
     ]),
 ]
 
@@ -2236,8 +2279,7 @@ f3a6b = I('f3a6b', '$=\\sqrt{x+2-x+4}$', size=34)
 f3a6c = I('f3a6c', '$=\\sqrt6$', size=34)
 video('solve-pt-q10', 'solution', qid='pt-q10', slides=[
     S('Method 1 · Plugging in numbers',
-      L("Given: x is greater than or equal to four. The square root of x plus two, minus the square root of x squared "
-        "minus eight x plus sixteen. What does it equal?", pt('stem', 'Given', 'hl', 8.0), voice='calm', pause=0.5),
+      L('Given: x is greater than or equal to four. We have a square root inside another square root. Inside the outer root is x plus two, minus the square root of x squared minus eight x plus sixteen. What does this whole expression equal?', pt('stem', 'Given', 'hl', 8.0), voice='calm', pause=0.5),
       L("So it's an expression with x, and they ask what it equals. And all four choices are numbers. That's the first sign "
         "for plugging in numbers. [short pause] We'll solve it two ways, by plugging in a number, and then with algebra.",
         pt('stem: ask', 'they ask what it equals')),
@@ -2248,16 +2290,15 @@ video('solve-pt-q10', 'solution', qid='pt-q10', slides=[
         "two. There's no square root of a negative number.", show(f3a0, 'Careful, zero is not allowed')),
       L("So x equals four. Inside the inner root, four squared is sixteen, and eight times four is thirty-two. Sixteen minus "
         "thirty-two plus sixteen is zero, and the root of zero is zero.", show(f3a2, 'So x equals four'), show(f3a2b, 'Sixteen minus')),
-      L("We're left with the root of four plus two, minus zero. That's the root of six. Choice number four is our answer.",
-        show(f3a3, "We're left with the root"), mk('tick', 'choice 4', 'Choice number four is our answer'))),
+      L('The inner root is now zero. Inside the outer root, we have four plus two minus zero, which is six. So the whole expression is the root of six. Choice number four is our answer.',
+        show(f3a3, 'So the whole expression is the root'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
     S('Method 2 · The math way',
       L("[pause] Now the math way, with algebra. Remember the shortcut formula. The bracket x minus four, squared, is x squared minus "
         "eight x plus sixteen.", show(f3a4, 'Remember the shortcut formula')),
       L("The root of a square gives back the number, as long as it isn't negative. x is at least four, so x minus four is "
         "zero or more. So the inner root is x minus four.", show(f3a5, 'The root of a square')),
-      L("Then it's x plus two, minus the bracket x minus four. The minus goes to both parts, so it's x plus two minus x "
-        "plus four. The x's cancel, and two plus four is six. The root of six, choice number four again.",
-        show(f3a6, 'Then it'), show(f3a6b, 'The minus goes to both parts'), show(f3a6c, 'The x'),
+      L('Inside the outer root, we subtract x minus four from x plus two. We subtract both terms of x minus four. So that becomes x plus two minus x plus four. The x terms cancel, and two plus four is six. The outer root is still there, so the answer is the root of six. Choice number four again.',
+        show(f3a6, 'Inside the outer root'), show(f3a6b, 'We subtract both terms'), show(f3a6c, 'The x'),
         mk('tick', 'choice 4', 'choice number four again')),
       L("For the algebra you had to spot the formula and keep the signs right. The number took one line, and it's a "
         "safety net when you don't see the formula. [pause] Okay. I'll see you in the next question.",
@@ -2322,16 +2363,12 @@ video('solve-pt-q11', 'solution', qid='pt-q11', slides=[
       L("Beta is the angle where A B crosses D C. And all the choices have alpha in them. Letters in the choices, that's "
         "the second sign for plugging in numbers. [short pause] We'll solve it two ways, by plugging in a number, and then "
         "with the angles in letters.", show(f3g11['line'], 'Beta is the angle')),
-      L("For every alpha there's a matching beta. So let's choose one alpha and calculate beta. Which number? One that "
-        "fits the figure. Alpha is in a right triangle, so it's less than ninety, and in the drawing it looks like about "
-        "fifty or sixty. Let's take fifty, a round number.", show(f3g11['a50'], "Let's take fifty")),
-      L("In triangle A B C, the angles are fifty and ninety. They add up to a hundred eighty, so angle B is forty.",
-        show(f3g11['b1'], 'so angle B is forty')),
+      L("For every alpha there's a matching beta. So let's choose one alpha and calculate beta. Which number? An easy one that fits the angle conditions. Alpha is in a right triangle, so it's less than ninety. Let's take fifty, a round number. We'll check the other triangle's angles too.", show(f3g11['a50'], "Let's take fifty")),
+      L("In triangle A B C, two angles are fifty and ninety. Together they're a hundred forty. The three angles must total a hundred eighty. So angle B is a hundred eighty minus a hundred forty, which is forty.",
+        show(f3g11['b1'], 'So angle B is a hundred eighty')),
       L("A B bisects angle D B C, so the angle above it is also forty. So the whole angle D B C is eighty.",
         show(f3g11['b2'], 'the angle above it is also forty')),
-      L("D B equals D C, so the base angles are equal, and angle C is also eighty. That's also why the number must fit the "
-        "figure. With alpha forty, the base angles would be a hundred each, and a triangle can't have two angles of a "
-        "hundred.", show(f3g11['c80'], 'angle C is also eighty')),
+      L("D B equals D C, so the base angles are equal, and angle C is also eighty. That's why our number must fit the angle conditions, not just the drawing. With alpha forty, the base angles would be a hundred each, and a triangle can't have two angles of a hundred.", show(f3g11['c80'], 'angle C is also eighty')),
       L("Eighty plus eighty is a hundred sixty. The angles of a triangle add up to a hundred eighty, so angle D is a hundred eighty minus a hundred sixty, twenty degrees.",
         show(f3g11['d20'], 'So angle D is')),
       L("Now look at the triangle with corners D, B and the crossing point. Its angles are twenty at D and forty at B. "
@@ -2360,9 +2397,8 @@ video('solve-pt-q11', 'solution', qid='pt-q11', slides=[
       L("Angle C is the other base angle, so it's the same, a hundred eighty minus two alpha. So angle D is a hundred eighty minus two times that. That's "
         "a hundred eighty minus three hundred sixty plus four alpha, so four alpha minus a hundred eighty.",
         show(f3j2, 'So angle D is'), show(f3j2b, 'so four alpha minus')),
-      L("And beta is a hundred eighty, minus angle D, minus angle B, because D and B are the other angles of the small triangle. A hundred eighty, minus four alpha plus a hundred "
-        "eighty, minus ninety plus alpha. That's two hundred seventy minus three alpha, choice number four again.",
-        show(f3j3, 'And beta is a hundred eighty'), show(f3j3b, "That's two hundred seventy"), mk('tick', 'choice 4', 'choice number four again')),
+      L('Now look at the small triangle with angle beta. Its other angles are D and B. So beta is a hundred eighty, minus angle D, minus angle B. Angle D is four alpha minus a hundred eighty. Subtracting that gives minus four alpha plus a hundred eighty. Angle B is ninety minus alpha. Subtracting that gives minus ninety plus alpha. The numbers give two hundred seventy, and minus four alpha plus alpha gives minus three alpha. So beta is two hundred seventy minus three alpha, choice number four again.',
+        show(f3j3, 'So beta is a hundred eighty'), show(f3j3b, 'So beta is two hundred seventy'), mk('tick', 'choice 4', 'choice number four again')),
       L("Look at what the number did. With fifty instead of alpha, this is an easy angle question from the beginning of the "
         "section. The letters are what made it hard. [pause] Okay. I'll see you in the next question.",
         pt('f3j3b', 'Look at what the number did'))),
@@ -2429,8 +2465,7 @@ video('solve-pt-q12', 'solution', qid='pt-q12', slides=[
       L("Three choices are out, so choice number four is our answer.", show(f3p8, 'Three choices are out'),
         mk('tick', 'choice 4', 'so choice number four is our answer'))),
     S('Method 2 · The math way',
-      L("[pause] Now the math way, the short algebra. The bracket a plus two, factorial, is a plus two, times a plus one, times a, times "
-        "all the numbers below a. And a times all the numbers below it is just a factorial.",
+      L('Now the math way, the short algebra. The factorial of a plus two starts with a plus two, times a plus one. After those two factors, we have a, times all the whole numbers below it down to one. That last part is a factorial. So we can write the factorial of a plus two as a plus two, times a plus one, times a factorial.',
         show(f3p9, 'Now the math way')),
       L("So the question is a factorial, times a factorial, times a plus one, times a plus two. That's a factorial squared, "
         "times a plus one, times a plus two. Choice number four again. [pause] Okay. I'll see you in the next question.",
@@ -2462,8 +2497,7 @@ video('solve-pt-q13', 'solution', qid='pt-q13', slides=[
       L("One pen holds x cubic centimeters of ink. To write one word, you need y cubic centimeters of ink. Hagai's pens "
         "were enough for him to write x cubed times y words. How many pens did Hagai have?",
         pt('stem', 'One pen holds', 'hl', 9.0), voice='calm', pause=0.5),
-      L("Let's try to understand it. A pen has x of ink, and a word needs y, so one pen writes x over y words. Then we'd "
-        "divide x cubed y by x over y, and that's where many students get tangled.", pt('stem', 'A pen has x of ink')),
+      L("Let's try to understand it. A pen holds x cubic centimeters of ink, and each word needs y cubic centimeters, so one pen writes x over y words. Then we'd divide x cubed y by x over y, and that's where many students get tangled.", pt('stem', 'A pen holds x cubic centimeters of ink')),
       L("But look at the choices. They have x and y in them, so we can plug in numbers. [short pause] We'll solve it by "
         "plugging in, and then finish the algebra.", pt('choice 1', 'look at the choices')),
       L("Which numbers? The easiest would be x and y both one. But look at the choices first. They have powers, a product "
@@ -2487,9 +2521,7 @@ video('solve-pt-q13', 'solution', qid='pt-q13', slides=[
     S('Method 2 · The math way',
       L("[pause] Now the math way, the algebra we started. One pen writes x over y words. The number of pens is all the words, divided "
         "by the words a pen writes.", show(f3i7, 'One pen writes x over y')),
-      L("So it's x cubed y divided by x over y. Dividing by a fraction is multiplying by its flip, y over x. An x cancels, "
-        "so x cubed becomes x squared, and y times y is y squared. x squared y squared, choice number one again. [pause] "
-        "Okay. I'll see you in the next question.", show(f3i8, 'So it'), show(f3i8b, 'Dividing by a fraction'), show(f3i8c, 'An x cancels'),
+      L("So it's x cubed y divided by x over y. Dividing by a fraction is multiplying by its reciprocal. We swap the top and bottom, so we multiply by y over x. An x cancels, so x cubed becomes x squared, and y times y is y squared. x squared y squared, choice number one again. [pause] Okay. I'll see you in the next question.", show(f3i8, 'So it'), show(f3i8b, 'Dividing by a fraction'), show(f3i8c, 'An x cancels'),
         mk('tick', 'choice 1', 'choice number one again'))),
 ])
 
@@ -2518,9 +2550,7 @@ video('solve-pt-q14', 'solution', qid='pt-q14', slides=[
       L("First, what is a percent? Percent means out of a hundred. A discount of forty shekels on a price of a hundred "
         "shekels is a discount of forty percent. The percent always compares to the whole price, the price before the "
         "discount.", show(f3c1, 'Percent means out of a hundred')),
-      L("So where do we put a number? In percent questions we put a hundred, and we put it at the whole. Why? Some students "
-        "put the hundred at x, the price after the discount. Then the price before is a hundred forty, and we'd need forty "
-        "out of a hundred forty. That's not a nice calculation.", show(f3c2, 'Some students put the hundred at x')),
+      L("So where do we put a number? In this percent question, we choose a hundred for the whole price, the price before the discount. Why? Some students put the hundred at x, the price after the discount. Then the price before is a hundred forty, and we'd need forty out of a hundred forty. That's not a nice calculation.", show(f3c2, 'Some students put the hundred at x')),
       L("So we put the hundred at the price before. The discount is forty, so the price after is a hundred minus forty, "
         "sixty. So x is sixty.", show(f3c3, 'The discount is forty, so')),
       L("And the discount is forty out of a hundred, forty percent. So the right choice must give forty when x is sixty.",
@@ -2541,9 +2571,8 @@ video('solve-pt-q14', 'solution', qid='pt-q14', slides=[
         show(f3c8, "it's two hundred fifty"), mk('cross', 'choice 4', "it's two hundred fifty"),
         mk('tick', 'choice 1', 'So choice number one is our answer'))),
     S('Method 2 · The math way',
-      L("[pause] Now the math way. With algebra, the price before is x plus forty. The discount in percent is forty out of x plus forty, "
-        "times a hundred. That's choice number one. [pause] Okay. I'll see you in the next question.",
-        show(f3c9, 'the price before is x plus forty'), show(f3c9b, 'The discount in percent'), mk('tick', 'choice 1', "That's choice number one"))),
+      L("Now the math way. The price after the discount is x. To get the original price, we add back the forty-shekel discount. So the price before is x plus forty. We divide the discount, forty, by that original price. Then we multiply by a hundred to get the percent. That's forty over x plus forty, times a hundred, choice number one. I'll see you in the next question.",
+        show(f3c9, 'the price before is x plus forty'), show(f3c9b, 'We divide the discount'), mk('tick', 'choice 1', 'choice number one'))),
 ])
 
 
@@ -2600,8 +2629,7 @@ video('solve-pt-q24', 'solution', qid='pt-q24', slides=[
         pt('choice 4', 'they choose cannot be determined')),
       L("This is the case of more letters than equations. [short pause] We'll solve it by plugging in numbers, and then "
         "see why it works the math way.", show(f3y1, 'more letters than equations')),
-      L("If y has one value, it's the same for every allowed x. So I may choose x myself. Which x? Zero, because it kills "
-        "every term with x. And it's allowed, because the only condition is that x isn't negative five.",
+      L("If y has one value, it's the same for every allowed x. So I may choose x myself. Which x? Zero, because it makes every term with x equal to zero. And it's allowed, because the only condition is that x isn't negative five.",
         pt('stem: g1', 'the only condition')),
       L("So x equals zero. x y is zero, and two x is zero. We're left with five y equals ten, so y is two.",
         show(f3y2, "We're left with five y")),
@@ -2614,8 +2642,7 @@ video('solve-pt-q24', 'solution', qid='pt-q24', slides=[
       L("Two examples gave the same y. That's a strong hint, but a few examples never prove always. So let's see why it's "
         "always two.", show(f3y4, 'a few examples never prove always'))),
     S('Method 2 · The math way',
-      L("[pause] Now the math way. On the left, take y out. x y plus five y is y times the bracket x plus five. On the right, take two out. "
-        "Two x plus ten is two times the bracket x plus five. Now both sides have the same bracket.", show(f3y5, 'On the left, take y out')),
+      L('Now the math way. On the left, both terms contain y. We can write x y plus five y as y times the sum x plus five. Multiplying y by each part gives x y and five y again. On the right, both terms contain a factor of two. Two x plus ten is two times the sum x plus five. So both sides contain the same factor, x plus five.', show(f3y5, 'We can write x y plus five y')),
       L("x plus five is not zero, because x is not negative five. So we may divide both sides by it, and y is two, for "
         "every allowed x. Choice number two is our answer.", show(f3y6, 'x plus five is not zero'), show(f3y6b, 'and y is two'),
         mk('tick', 'choice 2', 'Choice number two is our answer')),
@@ -2627,7 +2654,8 @@ video('solve-pt-q24', 'solution', qid='pt-q24', slides=[
 # ------------------------------------------------------------------------------------------------ V4: the bubble corner
 # lesson right-column items start below the face bubble (top right, x 1344-1594, y 6-256); text lines wrap before it
 for _it, _y in ((f3e2r1, 300), (f3e2r2, 360), (f3e2r3, 420), (f3e2r4, 480), (f3e2n, 540), (f3net, 620),
-                (f3t4, 300), (f3t5, 360), (f3t6, 420), (f3t7, 480)):
+                (f3t4, 300), (f3t5, 360), (f3t6, 420), (f3t7, 480),
+                (f3c3a, 300), (f3c3b, 360), (f3c3c, 420), (f3c4, 500), (f3c4b, 560)):
     _R(_it, _y, x=1010)
 for _v in ('pt51-plug-numbers',):
     for _sl in VIDEOS[_v]['slides']:
@@ -2730,17 +2758,13 @@ video('pt51-estimation', 'lesson', slides=[
       L("Let's see why it works. How much is nineteen times fifty-one? The choices are ninety-six point nine, nine "
         "hundred sixty-nine, nine thousand six hundred ninety, and ninety-six thousand nine hundred.",
         show(f4e1q, 'How much is nineteen')),
-      L("Let's put them on a line. They all have the same digits, so the last digit can't help here. But each choice is "
-        "ten times the one before it. They're very far apart in size.", show(f4e1n['line'], "Let's put them on a line"),
-        show(f4e1n['ten'], 'each choice is ten times')),
+      L("Let's put the choices on a line. Each one is ten times the one before it. So they're very far apart in size. Here we can use that difference in size instead of calculating the exact product.", show(f4e1n['line'], "Let's put the choices on a line"),
+        show(f4e1n['ten'], 'Each one is ten times')),
       L("So let's round. Nineteen is almost twenty, and fifty-one is almost fifty. So we need twenty times fifty. Two times "
         "five is ten, and then we add the two zeros. That's a thousand.", show(f4e1r, 'So we need twenty times fifty')),
-      L("So the answer is about a thousand. On the line, only nine hundred sixty-nine is near a thousand. The other "
-        "choices are ten times smaller, or ten times bigger, so they're out. The answer is nine hundred sixty-nine, and "
-        "we never multiplied.", show(f4e1n['est'], 'So the answer is about a thousand'),
+      L("So the answer is about a thousand. On the line, only nine hundred sixty-nine is near a thousand. The other choices are ten times smaller, or ten times bigger, so they're out. The answer is nine hundred sixty-nine, and we never did the exact multiplication.", show(f4e1n['est'], 'So the answer is about a thousand'),
         show(f4e1n['x'], 'The other choices'), show(f4e1s, 'The answer is nine hundred')),
-      L("That's why it works. Rounding makes a small mistake, only a few tens. But the choices are hundreds and thousands "
-        "apart, so a small mistake can't move us to another choice.", show(f4e1w, "That's why it works"))),
+      L("That's why it works. Here, rounding changes the result by only a little, a few tens. But the choices are hundreds and thousands apart, so a small mistake can't move us to another choice.", show(f4e1w, "That's why it works"))),
     S('Numbers we know',
       L("To estimate, we use round numbers that we know by heart. Ten times ten is a hundred. Twenty squared is four "
         "hundred, and thirty squared is nine hundred.", show(f4b1, 'Ten times ten')),
@@ -2763,8 +2787,7 @@ video('pt51-estimation', 'lesson', slides=[
         show(f4e2a, 'Ninety is between')),
       L("Now root twenty-six. Twenty-six is between twenty-five and thirty-six, so root twenty-six is between five and "
         "six.", show(f4e2b, 'Twenty-six is between')),
-      L("Let's add the small ends, nine plus five is fourteen. That's the least the sum can be. And the big ends, ten plus six is sixteen, the most it can be. So the sum is "
-        "between fourteen and sixteen.", show(f4e2c, "Let's add the small ends")),
+      L('Each root is bigger than its lower bound. So their sum is bigger than nine plus five, fourteen. Each root is also smaller than its upper bound. So the sum is smaller than ten plus six, sixteen. The sum is strictly between fourteen and sixteen.', show(f4e2c, 'So their sum is bigger')),
       L("Here it is on a number line, with the four choices. Our sum is somewhere in this band, between fourteen and "
         "sixteen.", show(f4e2n['line'], 'Here it is on a number line'), show(f4e2n['ch'], 'with the four choices'),
         show(f4e2n['band'], 'Our sum is somewhere')),
@@ -2846,10 +2869,15 @@ f4g16 = PIN(GEO('f4g16', [
     ('tri', [('tint', [f4O, f4F, f4A], 'orange'), ('seg', *f4O, *f4F, 'orange', 4), ('seg', *f4F, *f4A, 'orange', 4),
              ('seg', *f4A, *f4O, 'orange', 4)]),
 ], vb='40 60 380 380', w=200, title='Sector AOB and the right triangle inside it'))
-_R(f4g16, 360)
+_R(f4g16, 330)
 f4h0 = I('f4h0', 'Shaded $=$ sector $-$ triangle', size=26, col=1)
-f4h1 = I('f4h1', 'Sector: $\\ $has $\\pi$. $\\quad$ Triangle: $\\ $no $\\pi$', size=26, col=1)
-f4h3 = I('f4h3', 'Shaded: $\\ $(some $\\pi$) $-$ (a number)', size=26, col=1)
+f4h1 = IH('f4h1', 'Equal leg squares: $2+2=4$', size=28, col=1)
+f4h3 = IH('f4h3', 'Triangle: $\\frac{2}{2}=1$', size=28, col=1)
+f4sector = IH('f4sector', 'Sector: $\\frac18\\cdot4\\pi=\\frac\\pi2$', size=28, col=1)
+f4bound = IH('f4bound', '$3<\\pi<3.2$', size=28, col=1)
+f4range = IH('f4range', '$0.5<$ shaded area $<0.6$', size=28, col=1)
+f4reject1 = IH('f4reject1', '(1) $4-\\pi>0.8$, too big', size=26, col=1)
+f4reject3 = IH('f4reject3', '(3) $\\frac\\pi{\\sqrt2}>\\frac\\pi2>1.5$', size=26, col=1)
 f4n0 = I('f4n0', 'So far: $\\ $(1), (3) out', size=26, col=1)
 f4n1 = IH('f4n1', '$3<\\pi<4$', size=32, col=1)
 f4n2 = IH('f4n2', '$\\pi<4$ $\\ \\to\\ $ $\\frac{\\pi}{2}<2$', size=32, col=1)
@@ -2867,35 +2895,30 @@ f4g16b = PIN(GEO('f4g16b', [
 _R(f4g16b, 360)
 f4p1 = IH('f4p1', 'Circle: $\\ \\pi\\cdot2^2=4\\pi$', size=32, col=1)
 f4p2 = IH('f4p2', 'Sector: $\\ \\frac{4\\pi}{8}=\\frac{\\pi}{2}$', size=32, col=1)
-f4p3 = I('f4p3', 'Shaded $=\\frac{\\pi}{2}-$ (triangle)', size=26, col=1)
+f4p3 = IH('f4p3', 'Shaded $=\\frac{\\pi}{2}-1$', size=28, col=1)
 for _it, _y in ((f4n0, 330), (f4n1, 390), (f4n2, 450), (f4n3, 520), (f4n4, 590)):
     _R(_it, _y)
 for _it, _y, _x in ((f4h0, 575, 1040), (f4h1, 620, 1040), (f4h3, 665, 1040),
                      (f4p1, 565, 1040), (f4p2, 615, 1040), (f4p3, 665, 1040)):
     _R(_it, _y, x=_x)
+for _it, _yy in ((f4h0, 330), (f4h1, 375), (f4h3, 420), (f4sector, 465), (f4bound, 510),
+                 (f4range, 555), (f4reject1, 600), (f4reject3, 645)):
+    _R(_it, _yy)
 
 video('solve-pt-q16', 'solution', qid='pt-q16', slides=[
-    SM('Method 1 · Estimation', 'Where is the pi?',
+    SM('Method 1 · Estimation', 'A justified size bound',
       L("A O B is a sector of a circle with center O and a radius of two centimeters. Based on this and the figure, what "
         "is the area of the shaded region, in square centimeters?", pt('stem', 'A O B is a sector', 'hl', 8.0),
         voice='calm', pause=0.5),
       L("The shaded region is the sector, minus the right triangle inside it. So shaded equals sector minus triangle. "
         "[short pause] We'll solve it two ways, by estimating the choices, and then with a partial calculation.",
-        show(f4g16['line'], 'The shaded region'), show(f4g16['sec'], 'is the sector'),
-        show(f4g16['tri'], 'minus the right triangle'), show(f4h0, 'So shaded equals')),
-      L("With an estimate, we don't look for the right answer. We rule out three. And in an area question, the first "
-        "thing to check is where the pi is."),
-      L("The area of a sector is a part of the circle's area, pi r squared, so it has pi in it. The triangle's area is "
-        "base times height over two. That's a plain number, with no pi.", show(f4h1, 'The area of a sector')),
-      L("So the shaded area must look like this. Some amount of pi, minus a number.",
-        show(f4h3, 'Some amount of pi, minus a number')),
-      L("Choice number one is four minus pi. That's a number minus pi, the opposite order, so it's out.",
-        mk('cross', 'choice 1', 'the opposite order')),
-      L("Choice number three is pi over root two. There's no minus at all, so nothing was taken away. It's out too.",
-        mk('cross', 'choice 3', 'There\'s no minus at all')),
-      L("Choice number two and choice number four both have pi minus a number, so they stay. Two choices are out, just "
-        "from where the pi is. In some questions every choice has the pi in the right place, and this check rules out "
-        "nothing. In others, it rules out three choices at once.")),
+        show(f4h0, 'So shaded equals')),
+      L("Let's start with an estimate, after one small calculation. We'll find the triangle's area first. Then we'll estimate the sector, and compare the choices."),
+      L('The triangle has a right angle and an angle of forty-five degrees. So its third angle is forty-five too, and its legs are equal. The hypotenuse is the radius, two. By Pythagoras, the two equal legs squared add up to four. So each leg squared is two.', show(f4h1, 'each leg squared is two')),
+      L("The legs are equal, so their product is also two. The triangle's area is that product divided by two. Two divided by two is one. Now the sector. Forty-five degrees is one eighth of a full circle. The whole circle has area four pi, so this sector is pi over two.", show(f4h3, 'Two divided by two is one'), show(f4sector, 'this sector is pi over two')),
+      L("For this estimate, use these bounds for pi: more than three, and less than three point two. We need closer bounds here because the choices are close in size. Half of pi is therefore between one point five and one point six. Take away the triangle's area, one. The shaded area is between zero point five and zero point six.", show(f4bound, 'more than three, and less than three point two'), show(f4range, 'between zero point five and zero point six')),
+      L("Choice number one is four minus pi. Pi is less than three point two, so four minus pi is more than zero point eight. Our area is less than zero point six. So choice number one is too big, and it's out.", show(f4reject1, 'more than zero point eight'), mk('cross','choice 1',"it's out")),
+      L("Choice number three is pi over root two. Root two is less than two, so dividing pi by root two gives more than dividing pi by two. That's more than one point five, much bigger than our area. So choice number three is out. Choice numbers two and four are left.", show(f4reject3, 'more than one point five'), mk('cross','choice 3','choice number three is out'))),
     SM('Method 1 · Estimation', 'A negative area?',
       L("[pause] Two choices are left. Now let's estimate their size. Pi is a bit more than three, and less than four.",
         show(f4n0, 'Two choices are left'), show(f4n1, 'Pi is a bit more than three')),
@@ -2919,14 +2942,9 @@ video('solve-pt-q16', 'solution', qid='pt-q16', slides=[
       L("The area of the circle is pi r squared. The radius is two, and two squared is four, so the circle is four pi. "
         "One eighth of four pi is four pi over eight, which is pi over two.", show(f4p1, 'The area of the circle'),
         show(f4p2, 'One eighth of four pi')),
-      L("Now, instead of calculating the triangle, let's peek at the choices. The shaded area is pi over two, minus the "
-        "triangle. Only choice number four starts with pi over two.", show(f4p3, 'The shaded area is pi over two'),
-        mk('tick', 'choice 4', 'Only choice number four')),
-      L("Choice number two has a half in front of the bracket. Half of pi over two is pi over four, not pi over two, so "
-        "it doesn't fit. Choice number four again, and we never calculated the triangle.",
-        mk('cross', 'choice 2', "so it doesn't fit"), mk('tick', 'choice 4', 'Choice number four again')),
-      L("This is called a partial calculation. We calculate only the part that tells the choices apart, and then we "
-        "look at the choices. [pause] Okay. I'll see you in the next question.")),
+      L("The shaded area is pi over two, minus the triangle's area. We found that the triangle's area is one. So the result is pi over two minus one. Choice number four matches both pieces, not just the way the expression looks.", show(f4p3, 'pi over two minus one'), mk('tick','choice 4','Choice number four matches')),
+      L("Choice number two has a half outside its whole bracket. It gives pi over four minus one, not pi over two minus one. So it's out. We compare the actual values of the pieces, not just whether a minus sign is written. Choice number four again.", mk('cross','choice 2',"So it's out")),
+      L("This is a partial calculation: find a useful piece, then look at the choices. A piece can rule choices out, but the answer still has to fit the whole shaded area. I'll see you in the next question.")),
 ])
 
 
@@ -2937,8 +2955,8 @@ f4a1 = IH('f4a1', '$\\frac{\\sqrt2}{2+\\sqrt2}\\cdot\\frac{2-\\sqrt2}{2-\\sqrt2}
 f4a2 = IH('f4a2', 'Bottom: $\\ (2+\\sqrt2)(2-\\sqrt2)=4-2=2$', size=32)
 f4a3 = IH('f4a3', 'Top: $\\ \\sqrt2(2-\\sqrt2)=2\\sqrt2-2$', size=32)
 f4a4 = IH('f4a4', '$\\frac{2\\sqrt2-2}{2}=\\sqrt2-1$', size=34)
-f4c1 = IH('f4c1', '$1^2=1,\\ \\ 2^2=4$ $\\ \\to\\ $ $1<\\sqrt2<2$', size=32)
-f4c2 = IH('f4c2', '$\\left(1\\frac12\\right)^2=2\\frac14>2$ $\\ \\to\\ $ $\\sqrt2<1\\frac12$', size=32)
+f4c1 = IH('f4c1', '$1<\\sqrt2<2$', size=32)
+f4c2 = IH('f4c2', '$1<\\sqrt2<1\\frac12$', size=32)
 f4c3 = I('f4c3', 'Bottom $>$ top $\\ \\to\\ $ fraction $<1$', size=32)
 f4c4 = I('f4c4', '(2) $\\ 2\\sqrt2>2$ ✗ $\\qquad$ (3) $\\ \\sqrt2+1>2$ ✗', size=28, col=1)
 f4c5 = I('f4c5', '(4) $\\ \\sqrt2-1<\\frac12$', size=28, col=1)
@@ -2954,9 +2972,7 @@ video('solve-pt-q17', 'solution', qid='pt-q17', slides=[
                                                                                  'hl', 4.0), voice='calm', pause=0.5),
       L("It's a fraction with a root on the bottom, and none of the choices is a fraction. So we need to get rid of the "
         "bottom. [short pause] We'll solve it two ways, the math way, with algebra, and then with an estimate."),
-      L("In the roots topic we learned how. When the bottom is a sum with a root, we multiply the top and the bottom by "
-        "its partner. The partner of two plus root two is two minus root two. The top and the bottom are multiplied by "
-        "the same thing, so it's like multiplying by one, and the value doesn't change.",
+      L("In the roots topic we learned how. When the bottom is a sum with a root, we multiply the top and the bottom by its partner, called the conjugate. The partner of two plus root two is two minus root two. The top and the bottom are multiplied by the same thing, so it's like multiplying by one, and the value doesn't change.",
         show(f4a1, 'we multiply the top and the bottom')),
       L("Why the partner? On the bottom we get two plus root two, times two minus root two. That's the difference of "
         "squares, a squared minus b squared. Two squared is four, and root two squared is two. Four minus two is two, "
@@ -2969,10 +2985,10 @@ video('solve-pt-q17', 'solution', qid='pt-q17', slides=[
       L("Many students don't think of the partner here, and they get stuck. That's exactly when an estimate helps.")),
     S('Method 2 · Estimation',
       L("[pause] Now the estimate. We don't need root two exactly. We only need to know between which numbers it is."),
-      L("One squared is one, and two squared is four. Two is between them, so root two is between one and two.",
-        show(f4c1, 'One squared is one')),
-      L("We need a bit more. One and a half squared is two and a quarter. That's more than two, so root two is less than "
-        "one and a half. So root two is between one and one and a half.", show(f4c2, 'One and a half squared')),
+      L("From the estimate we learned, root two is between one and two.",
+        show(f4c1, 'root two is between one and two')),
+      L("We also narrowed that down: root two is between one and one and a half. We'll use these bounds to compare "
+        "the choices.", show(f4c2, 'root two is between one and one and a half')),
       L("Now the size of our fraction. The bottom is the top plus two, so the bottom is bigger than the top. That means "
         "the fraction is less than one.", show(f4c3, 'The bottom is the top plus two')),
       L("Choice number two, two root two, is more than two, because root two is more than one. Choice number three, root "
@@ -2981,8 +2997,7 @@ video('solve-pt-q17', 'solution', qid='pt-q17', slides=[
         mk('cross', 'choice 3', 'so both are out')),
       L("Two choices are left. Choice number four, root two minus one, is less than a half, because root two is less "
         "than one and a half.", show(f4c5, 'Choice number four, root two minus one')),
-      L("Choice number one is the same number, squared. A half squared is a quarter, and a smaller number squared is even "
-        "smaller. So choice number one is less than a quarter.", show(f4c6, 'Choice number one is the same number')),
+      L('Choice number one is root two minus one, squared. Root two is between one and one and a half. So root two minus one is positive and less than a half. A half squared is a quarter. Squaring a smaller positive number gives less than a quarter. So choice number one is less than a quarter.', show(f4c6, 'Choice number one is root two')),
       L("So is our fraction more than a quarter? The top, root two, is more than one. The bottom, two plus root two, is "
         "less than two plus two, which is four. A bigger top and a smaller bottom both make a fraction bigger. So the "
         "fraction is more than one over four, a quarter.", show(f4c7, 'The top, root two, is more than one')),
@@ -3022,10 +3037,10 @@ f4g18b = PIN(GEO('f4g18b', [
             ('seg', 200, 336, 380, 336, 'ink', 6), ('txt', 180, 338, '4', 'ink', 26)]),
 ], vb='40 15 430 340', w=300, title='The middle part compared with a radius and a diameter'))
 _R(f4g18b, 330)
-f4s1 = I('f4s1', 'Regular shapes $\\to$ accurate', size=26, col=1)
-f4s2 = I('f4s2', 'One way to draw it $\\to$ same ratios', size=26, col=1)
-f4u1 = IH('f4u1', '$2<\\ ?\\ <4$', size=30, col=1)
-f4u2 = IH('f4u2', '$AD=2+\\ ?\\ +2$', size=30, col=1)
+f4s1 = IH('f4s1', '$AO=2+2=4$, $\\ AH=2$', size=28, col=1)
+f4s2 = IH('f4s2', '$x^2=4^2-2^2=16-4=12$', size=28, col=1)
+f4u1 = IH('f4u1', '$3^2<12<4^2\\quad\\to\\quad3<x<4$', size=28, col=1)
+f4u2 = IH('f4u2', '$AD=x+x=2x$', size=30, col=1)
 f4u2b = IH('f4u2b', '$6<AD<8$', size=30, col=1)
 f4u3 = IH('f4u3', '$4\\cdot6=24$, $\\ 4\\cdot8=32$ $\\ \\to\\ $ $24<$ area $<32$', size=28, col=1)
 f4k0 = I('f4k0', 'So far: $\\ 24<$ area $<32$', size=26, col=1)
@@ -3039,6 +3054,32 @@ for _it, _y in ((f4s1, 560), (f4s2, 610), (f4u1, 595), (f4u2, 645), (f4u2b, 695)
     _R(_it, _y)
 for _it, _y in ((f4k0, 330), (f4k1, 390), (f4k2, 450), (f4k3, 510), (f4k4, 570), (f4k5, 630), (f4k6, 695)):
     _R(_it, _y)
+f4helperbase = f4rect
+f4helpertriangle = [('dot', 110, 150), ('txt', 94, 150, 'H', 'ink', 22, True), ('seg', 110, 60, 265.9, 150, 'teal', 3, True),
+    ('seg', 110, 150, 265.9, 150, 'teal', 3, True),
+    ('right', 110, 150, 0, 270, 12), ('txt', 178, 85, '4', 'teal', 24),
+    ('txt', 129, 110, '2', 'teal', 24), ('txt', 183, 170, 'x', 'teal', 24, True)]
+f4helperother = [('seg', 265.9, 150, 421.8, 150, 'orange', 3, True),
+    ('seg', 265.9, 150, 421.8, 60, 'orange', 3, True),
+    ('right', 421.8, 150, 180, 270, 12), ('txt', 346, 85, '4', 'orange', 24),
+    ('txt', 403, 110, '2', 'orange', 24), ('txt', 343, 170, 'x', 'orange', 24, True)]
+f4help = PIN(GEO('f4help', [('line', f4helperbase),
+    ('radii', [('seg', 265.9, 60, 265.9, 240, 'teal', 2, True), ('txt', 281, 110, '2', 'teal', 22), ('txt', 281, 200, '2', 'teal', 22)]),
+    ('triangle', f4helpertriangle)], vb='40 15 430 260', w=300, title='Use the given lengths, not measurements'))
+f4help2 = PIN(GEO('f4help2', [('line', f4helperbase+f4helpertriangle), ('other', f4helperother)],
+    vb='40 15 430 260', w=300, title='Two equal horizontal lengths'))
+_R(f4help, 330); _R(f4help2, 330)
+f4help['line']['over'] = 1
+f4help['line']['of'] = f4g18['line']['_name']
+for _key in ('radii', 'triangle'):
+    f4help[_key]['of'] = f4g18['line']['_name']
+# The original question remains at the left; the helper copy replaces the old measured-length comparison.
+f4exact1 = IH('f4exact1', '$x^2=12\\quad\\to\\quad x=\\sqrt{12}$', size=30, col=1)
+f4exact2 = IH('f4exact2', '$\\sqrt{12}=\\sqrt{4\\times3}=2\\sqrt3$', size=30, col=1)
+f4exact3 = IH('f4exact3', '$AD=2x=4\\sqrt3$', size=30, col=1)
+f4exact4 = IH('f4exact4', 'Area $=4\\times4\\sqrt3=16\\sqrt3$', size=30, col=1)
+for _it, _yy in ((f4exact1, 330), (f4exact2, 390), (f4exact3, 450), (f4exact4, 510)):
+    _R(_it, _yy)
 
 video('solve-pt-q18', 'solution', qid='pt-q18', slides=[
     SM('Estimation', 'The width is the problem',
@@ -3050,24 +3091,16 @@ video('solve-pt-q18', 'solution', qid='pt-q18', slides=[
         "So we need the long side, A D.", show(f4g18['line'], 'The area of a rectangle')),
       L("Along A D, the first part is a radius of the quarter circle at A, so it's two. The last part is a radius of the "
         "quarter circle at D, so it's also two.", show(f4g18['r'], 'the first part is a radius')),
-      L("But the part in the middle is hard. To calculate it, we need a helper line and Pythagoras. And if we don't see "
-        "the helper line, we're stuck. So we'll solve it with an estimate.", show(f4g18['mid'], 'the part in the middle')),
+      L("We want to estimate that middle part. Let's draw helper lines to get bounds from the given lengths. We won't need to calculate the missing length exactly.", show(f4g18['mid'], 'that middle part')),
       L("But wait. On the exam, a figure is not necessarily drawn to scale. So can I estimate from the figure?"),
-      L("Usually, yes. First, most figures on the exam are drawn quite accurately. Second, a rule of thumb. With regular "
-        "shapes, like a square, a circle, an equilateral triangle or a cube, the figure is accurate.",
-        show(f4s1, 'With regular shapes')),
-      L("Why? Here, the circle in the middle touches the four quarter circles and two sides. There's only one way to draw "
-        "that. If we make the figure bigger or smaller, all the parts keep the same ratios. So we can trust this figure. "
-        "There's a whole lesson later about when a figure is accurate.", show(f4s2, "There's only one way to draw"))),
+      L("No, we shouldn't measure the sketch. Let's use the lengths. The middle circle touches the top and bottom sides, four apart. Its diameter is four, so its radius is two. Draw a line from A to O, joining two touching circles' centers.", show(f4help['line'], "Let's use the lengths"), show(f4help['radii'], 'Its diameter is four')),
+      L('The corner circle has radius two, and the middle circle has radius two. The circles touch from the outside, so A O is two plus two, four. From O, draw a perpendicular to side A B. Call its foot H. O is two below the top side, so A H is two. Now A H O is a right triangle, with hypotenuse four and one leg two.', show(f4help['triangle'], 'A O is two plus two, four'), show(f4s1, 'hypotenuse four and one leg two'))),
     SM('Estimation', 'Estimate the middle',
-      L("[pause] So let's compare the middle part with lengths we know. Here it is again, under the rectangle.",
-        show(f4g18b['line'], "let's compare the middle part")),
-      L("It's longer than a radius, which is two. And it's shorter than the diameter of the circle in the middle, which "
-        "is four.", show(f4g18b['c1'], "It's longer than a radius"), show(f4g18b['c2'], "it's shorter than the diameter")),
-      L("If it's hard to see, use your eraser on the exam. Mark the length of a radius on it, and compare."),
-      L("So the middle part is between two and four.", show(f4u1, 'So the middle part is between')),
-      L("The whole side A D is made of two, plus the middle, plus two. Two plus two plus two is six, and two plus four plus two is "
-        "eight. So A D is between six and eight.", show(f4u2, 'The whole side A D'), show(f4u2b, 'So A D is between')),
+      L('Call O H x. By Pythagoras, x squared plus two squared is four squared. Four squared is sixteen, and two squared is four. Subtract four, and x squared is twelve. We only need bounds for x, not its exact root.', show(f4help2['line'], 'Call O H x'), show(f4s2, 'x squared is twelve')),
+      L('Three squared is nine, below twelve. Four squared is sixteen, above twelve. So the positive length x is more than three and less than four.', show(f4u1, 'more than three and less than four')),
+      L("The same construction on the right has the same hypotenuse, four, and the same vertical leg, two. So its horizontal length is also x. The whole rectangle is x plus x across. That's why A D is two x, not just x.", show(f4help2['other'], 'same construction on the right'), show(f4u2, 'A D is two x')),
+      L('Each x is between three and four. Double both bounds, and A D is between six and eight. We got that from the right triangles, not from measuring the picture.', show(f4u2b, 'A D is between six and eight')),
+      L('This also explains the middle part we started with. A D is between six and eight. Take away the two radius pieces, two at each end, four altogether. The middle part is therefore between two and four. Either way, the full side A D is between six and eight.'),
       L("The area is four times A D. Four times six is twenty-four, and four times eight is thirty-two. So the area is "
         "between twenty-four and thirty-two, and it isn't equal to either one.", show(f4u3, 'The area is four times'))),
     SM('Estimation', 'Check the choices',
@@ -3082,9 +3115,11 @@ video('solve-pt-q18', 'solution', qid='pt-q18', slides=[
         show(f4k4, 'But one and a half squared'), show(f4k5, 'sixteen root two is less than twenty-four'),
         mk('cross', 'choice 2', "It's out")),
       L("Three choices are out, so choice number one, sixteen root three, is our answer.",
-        show(f4k6, 'Three choices are out'), mk('tick', 'choice 1', 'so choice number one')),
-      L("This is a hard question from the end of the section, and we never found the middle part. A rough size and the "
-        "choices were enough. [pause] Okay. I'll see you in the next question.")),
+        show(f4k6, 'Three choices are out'), mk('tick', 'choice 1', 'so choice number one'))),
+    SM('A quicker exam finish', 'If you spot the square factor',
+      L("Now let's go back to x squared is twelve. If you spot a square factor inside twelve, you can finish even sooner. Twelve is four times three. So the root of twelve is the root of four times the root of three: two root three. That's x. The whole long side is two x, so it's four root three. The other side is four. Four times four root three gives sixteen root three, choice number one, without checking all the other choices. If you don't spot the root shortcut, our bounds still give a safe way to eliminate them. I'll see you in the next question.",
+        show(f4exact1, 'x squared is twelve'), show(f4exact2, 'two root three. That\'s x'), show(f4exact3, 'so it\'s four root three'),
+        show(f4exact4, 'gives sixteen root three'), mk('tick', 'choice 1', 'choice number one'))),
 ])
 
 
@@ -3116,8 +3151,7 @@ video('solve-pt-q19', 'solution', qid='pt-q19', slides=[
         "can be."),
       L("Ten percent of two is zero point two. Three percent is less than ten percent, so it's less than zero point two. "
         "It's a tiny amount.", show(f4q4, 'Ten percent of two')),
-      L("So the total is zero point six four, plus a little. It's less than zero point six four plus zero point two, "
-        "which is zero point eight four.", show(f4q5, 'So the total is zero point six four')),
+      L('We add the alcohol from the two bottles. Bottle A contributes zero point six four liters. Bottle B contributes a positive amount less than zero point two. So the total is more than zero point six four, but less than zero point eight four liters.', show(f4q5, 'So the total is more than')),
       L("Now the choices. Choice number one, zero point seven, is zero point six four and a little more, so it fits. "
         "Choice number two, zero point nine five, is more than zero point eight four, so it's out.",
         show(f4q6, 'Now the choices'), mk('cross', 'choice 2', 'so it\'s out')),
@@ -3142,7 +3176,7 @@ CARRY51.update({'solve-pt-q19': {1: ['Bottle A: $\\ 0.64$ liters']}})
 # results only when they are said, the text column 860 wide (the face bubble, top right, stays clear).
 u51d1 = I('u51d1', 'Understanding: $\\ $reason with rules we already know', size=34)
 u51d2 = I('u51d2', 'signs · size · even and odd · order', size=32)
-u51d3 = I('u51d3', 'no calculation', size=32)
+u51d3 = I('u51d3', 'no long calculation', size=32)
 u51d4 = I('u51d4', 'e.g. $\\ $ends in $6$, squared $\\to$ ends in $6$', size=32)
 u51a0 = I('u51a0', '$a<0,\\ \\ b>0$. $\\ $Which is necessarily negative?', size=34)
 u51a1 = I('u51a1', '$a\\cdot b$: $\\ $different signs $\\to$ negative ✓', size=32)
@@ -3166,15 +3200,13 @@ u51w4 = I('u51w4', 'Not sure the rule always holds? $\\ $Plug in numbers.', size
 
 video('pt51-understanding', 'lesson', slides=[
     S('Understanding',
-      L("Psychometric thinking, solving by understanding.")),
+      L('In psychometric thinking, we also solve by understanding.')),
     S('What is understanding?',
       L("We have one more way to solve, and we'll use it all through the course. We call it understanding.",
         show(u51d1, 'We call it understanding')),
-      L("In understanding, we don't calculate. We reason with rules we already know, about signs, about size, about even "
-        "and odd numbers, and about order. Each rule is always true, so the answer we get is always right.",
-        show(u51d2, 'about signs, about size'), show(u51d3, "we don't calculate")),
-      L("You already used it in the very first question of this topic. When we square a number that ends in six, the result ends in six. "
-        "That's a rule about the last digit, so we ruled out two choices without calculating.", show(u51d4, 'When we square a number that ends in six'))),
+      L("When we solve by understanding, we don't start with a long calculation. We use rules we already know about positive and negative numbers, size, even and odd numbers, and order. We check which rule fits the given conditions. Then we use it to decide what must be true.",
+        show(u51d3, "we don't start with a long calculation"), show(u51d2, 'about positive and negative numbers')),
+      L("You already used it in the very first question of this topic. When we square a number that ends in six, the result ends in six. That's a rule about the last digit, so we ruled out two choices without doing the full multiplication.", show(u51d4, 'When we square a number that ends in six'))),
     S('Example 1 · Signs',
       L("Here's the first example. a is negative and b is positive. Which of the following is necessarily negative?",
         show(u51a0, 'a is negative and b is positive')),
@@ -3184,8 +3216,7 @@ video('pt51-understanding', 'lesson', slides=[
         "positive plus positive. It's positive.", show(u51a2, "It's positive.")),
       L("a squared times b. a times a has the same signs, so it's positive. And positive times positive b is positive.",
         show(u51a3, 'And positive times positive b')),
-      L("And a plus b. Here no rule decides it. It depends on which number is bigger in size, so it isn't necessarily "
-        "negative.", show(u51a4, "so it isn't necessarily"))),
+      L("And a plus b can be positive, negative, or zero. It depends on whether the positive amount or the negative amount has the bigger absolute value. The given conditions don't decide that. So a plus b isn't necessarily negative.", show(u51a4, "So a plus b isn't necessarily"))),
     S('Example 2 · Even and odd',
       L("The second example. n is an integer. Which is necessarily odd, four n plus three, or n plus three?",
         show(u51b0, 'n is an integer')),
@@ -3199,13 +3230,11 @@ video('pt51-understanding', 'lesson', slides=[
       L("And the third example. x is between zero and one. Which is bigger, x, or x squared?",
         show(u51c0, 'x is between zero and one')),
       L("x squared is x times x. So it's x, times a number smaller than one.", show(u51c1, 'x squared is x times x')),
-      L("When we multiply a positive number by a number smaller than one, we take only a part of it, so it gets smaller. "
-        "So x squared is smaller than x.", show(u51c2, 'So x squared is smaller')),
+      L('When we multiply a positive number by a positive number smaller than one, we take only a part of it, so it gets smaller. So x squared is smaller than x.', show(u51c2, 'So x squared is smaller')),
       L("We can check with one number. A third times a third is a ninth, and a ninth is smaller than a third. The check "
         "agrees with the rule.", show(u51c3, 'and a ninth is smaller'))),
     S('Understanding or insight?',
-      L("How is this different from an insight? An insight is one idea that belongs to one question. It doesn't come "
-        "back.", show(u51e1, 'An insight is one idea')),
+      L("How is this different from an insight? With an insight, we notice something special in that question. There isn't one fixed procedure we can repeat for every insight question.", show(u51e1, 'With an insight')),
       L("Understanding uses general rules, the same ones again and again, in many questions. That's why it's worth "
         "learning as a method.", show(u51e2, 'Understanding uses general rules'))),
     S('When do I use it?',

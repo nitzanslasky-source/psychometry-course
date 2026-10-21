@@ -63,15 +63,15 @@
   ],
   [
    {
-    "say": "[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, because it's easy and it's not zero. Zero is allowed too, but zero turns many of these products into zero. Choice number one. With x as one, six x is six, so the left side is diamond of six, which is thirty-six. The right side is thirty-six times diamond of one. That's thirty-six times one, thirty-six. Both sides are thirty-six, so they're equal. Choice number two. Root one is one, so the left side is diamond of one, times diamond of one. That's one times one, which is one. The right side is diamond of one, which is one too. Equal.",
+    "say": "Now let's plug in a number. Here we can calculate with numbers instead of expanding expressions. Let's take x is one, because it's easy and it's not zero. Zero is allowed, but it turns many of these products into zero. Choice number one compares diamond of six x with thirty-six times diamond of x. With x as one, six x is six. Diamond of six is thirty-six. On the right, diamond of one is one. Thirty-six times one is thirty-six too, so both sides match. Choice number two compares diamond of root x times itself with diamond of x. Root one is one, and diamond of one is one. On the left, one times one is one. On the right, diamond of one is one too, so both sides match.",
     "at": [
      "Now let's",
      "take x is one",
      "it's easy and",
-     "number one. With",
-     "six, which is",
-     "number two. Root",
-     "of one, times"
+     "number one compares",
+     "diamond of x",
+     "number two compares",
+     "diamond of x. Root"
     ]
    },
    {

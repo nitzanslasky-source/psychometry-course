@@ -29,15 +29,14 @@
     ]
    },
    {
-    "say": "One squared is one, plus one squared, one. The bracket one minus one is zero, and zero squared is zero. So the top is two. The bottom, two times one times one, is two. Two over two is one, and one plus one is two. So the question gives two.",
+    "say": "Let's put one in for both letters. One squared is one, and the other one squared is one too. One minus one is zero, and zero squared is zero. So the top is one plus one plus zero, which is two. The bottom is two times one times one, also two. Two over two is one. Then we add the one outside the fraction, and get two.",
     "at": [
      "One squared is one",
-     "The bracket one",
+     "One minus one",
      "The bottom",
-     "times one, is",
+     "one times one",
      "Two over two is one",
-     "and one plus",
-     "the question gives"
+     "Then we add"
     ]
    }
   ],
@@ -93,10 +92,11 @@
     ]
    },
    {
-    "say": "This is a very important point. When we plug in numbers, we don't look for the right answer. We rule out three. Why? Because a wrong expression can give the right number by chance. For example, a plus b also gives two when a and b are one, but it's another expression. And if two choices are still left, we plug in a second pair of numbers, and check only those two.",
+    "say": "This is a very important point. One matching result doesn't prove a choice is right. We need to rule out the other three. A wrong expression can match by chance. For example, a plus b also gives two when both letters are one. But it isn't always equal to our expression. If two choices remain, we try another easy pair. We check the question again, and only those two choices.",
     "at": [
-     "We rule out three",
-     "Because a wrong"
+     "We need to rule out",
+     "the other three",
+     "the question again"
     ]
    }
   ],

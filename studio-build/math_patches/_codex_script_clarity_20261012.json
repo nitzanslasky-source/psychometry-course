@@ -17993,17 +17993,17 @@
         "slide": 0,
         "paragraph": 3,
         "original": "But careful, the smallest case only gives a candidate, the biggest number that could work. Fifteen, five and three all divide fifteen, so I need a second case.",
-        "revised": "But fifteen does divide by fifteen, five and three. So all three of those choices still work for this example. We need another group to tell them apart.",
+        "revised": "But fifteen is divisible by fifteen, five and three. So all three of those choices still work for this example. We need another group to tell them apart.",
         "cue_anchors": [
           {
             "index": 0,
             "original": "only gives a candidate",
-            "revised": "fifteen does divide"
+            "revised": "fifteen is divisible"
           },
           {
             "index": 1,
             "original": "biggest number that",
-            "revised": "divide by fifteen"
+            "revised": "divisible by fifteen"
           },
           {
             "index": 3,

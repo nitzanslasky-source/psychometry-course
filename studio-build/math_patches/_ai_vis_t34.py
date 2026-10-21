@@ -1080,6 +1080,76 @@ p104dia6 = PIN(GEO('p104dia6', [
 p104dg1 = IH('p104dg1', '$108° \\div 3 = 36°$', size=36, col=1)
 p104dg2 = IH('p104dg2', '$120° \\div 4 = 30°$', size=36, col=1)
 
+# ---- 2026-10-21 external-course fix: "count the sides" (an angle at a corner = the sides between its arms x 180 / n).
+# Prerequisites: the diagonals split the angle (just above), the central angle 360 / n (part 3), the inscribed angle is
+# half the central angle on the same arc (topic 33). Conditions said and shown: regular; the angle's corner is a corner;
+# both arms go through corners. The pentagon (why + the whole-angle check), a regular decagon (a 2026_spring_q2_19-type
+# angle between two diagonals, new numbers: 3 x 18 = 54, check 8 x 18 = 144) and a regular hexagon with crossing
+# diagonals (a 2023_spring_q2_03-type angle at a crossing, new shape: 30 + 30 -> 120 = the hexagon's angle; the pentagon
+# 108 as the second run).
+_Ok = (160, 175); _Rk = 125
+_K5 = rp(_Ok[0], _Ok[1], _Rk, 5, 270)        # corner 0 at the bottom
+p104cnt = PIN(GEO('p104cnt', [
+    ('line', [('poly', _K5, 'ink', 3)] + [pdot(q) for q in _K5] + fan(_K5, 0, 'teal', 3, False)
+             + [('circ', _Ok[0], _Ok[1], _Rk, 'teal', 2.5, True)]),
+    ('one', [ang(_K5[0], _K5[2], _K5[3], 60, 'teal'), ('arcw', _Ok[0], _Ok[1], _Rk, 270 + 144 + 1, 270 + 216 - 1, 'teal', 8),
+             alab(_K5[0], _K5[2], _K5[3], 84, '36°', 'teal', 22)]),
+    ('cen', [('dot', *_Ok), sg(_Ok, _K5[2], 'orange', 3, True), sg(_Ok, _K5[3], 'orange', 3, True),
+             angw(_Ok, _K5[2], _K5[3], 30, 'orange'), ('txt', _Ok[0] + 22, _Ok[1] + 14, 'O', 'ink', 22, True)]),
+    ('c72', [('txt', _Ok[0], _Ok[1] - 48, '72°', 'orange', 22)]),
+    ('whole', [ang(_K5[0], _K5[4], _K5[1], 28, 'orange')]
+              + [sg(_K5[k], _K5[k + 1], 'teal', 7) for k in (1, 2, 3)]
+              + [side_lab(_K5[k], _K5[k + 1], str(k), _Ok, 20, 'teal', 24) for k in (1, 2, 3)]),
+    ('w108', [('txt', _K5[0][0], _K5[0][1] + 30, '108°', 'orange', 24)]),
+], vb='20 30 290 320', w=480, col=0, title='One side adds 180 over n'))
+p104k1 = IH('p104k1', 'pentagon: $180° \\div 5 = 36°$', size=30, col=1)
+p104k2 = IH('p104k2', 'hexagon: $180° \\div 6 = 30°$', size=30, col=1)
+p104k3 = I('p104k3', 'central angle of one side $= \\dfrac{360°}{n}$', size=30, col=1)
+p104k3b = I('p104k3b', 'inscribed angle $=$ half $= \\dfrac{180°}{n}$', size=30, col=1)
+p104k4 = I('p104k4', 'each side between the arms: $\\dfrac{180°}{n}$', size=30, col=1)
+p104k5 = IH('p104k5', '$3 \\cdot 36° = 108°$', size=30, col=1)
+p104k6 = I('p104k6', 'Only: regular, corner on a corner, arms through corners', size=26, col=1)
+
+# a regular decagon A ... J, A at the bottom; the diagonals A D and A G; alpha = 3 sides
+_Oe = (200, 190); _Re = 140
+_E10 = rp(_Oe[0], _Oe[1], _Re, 10, 270)
+_EN = 'ABCDEFGHIJ'
+p104dec = PIN(GEO('p104dec', [
+    ('line', [('poly', _E10, 'ink', 3)] + [pdot(q) for q in _E10] + [nm(_E10[k], _EN[k], _Oe, 22, 'ink', 24) for k in range(10)]
+             + [sg(_E10[0], _E10[3], 'ink', 3), sg(_E10[0], _E10[6], 'ink', 3), ang(_E10[0], _E10[3], _E10[6], 46, 'teal'),
+                alab(_E10[0], _E10[3], _E10[6], 66, 'α', 'teal', 24)]),
+    ('sides', [sg(_E10[k], _E10[k + 1], 'teal', 7) for k in (3, 4, 5)]
+              + [side_lab(_E10[k], _E10[k + 1], str(k - 2), _Oe, 18, 'teal', 22) for k in (3, 4, 5)]),
+    ('val', [alab(_E10[0], _E10[3], _E10[6], 100, '54°', 'teal', 24)]),
+    ('whole', [ang(_E10[0], _E10[9], _E10[1], 24, 'orange')] + [sg(_E10[k], _E10[k + 1], 'orange', 4) for k in range(1, 9)]),
+    ('w144', [('txt', _E10[0][0], _E10[0][1] + 52, '144°', 'orange', 24)]),
+], vb='40 0 320 400', w=500, col=0, title='A regular polygon with ten sides'))
+p104e1 = IH('p104e1', 'one side: $180° \\div 10 = 18°$', size=34, col=1)
+p104e2 = IH('p104e2', '$3 \\cdot 18° = 54°$', size=34, col=1)
+p104e3 = IH('p104e3', 'whole angle: $8 \\cdot 18° = 144°$', size=34, col=1)
+p104e4 = IH('p104e4', '$180° - 36° = 144°$', size=34, col=1)
+
+# a regular hexagon A ... F with B C at the bottom; the diagonals A C and B D cross at P
+_Oc6 = (200, 190); _Rc6 = 160
+_C6 = rp(_Oc6[0], _Oc6[1], _Rc6, 6, 180)      # A left, B bottom left, C bottom right, D right, E, F
+_CP = (_Oc6[0], _C6[0][1] + (_C6[2][1] - _C6[0][1]) * 2.0 / 3.0)
+p104hxc = PIN(GEO('p104hxc', [
+    ('line', [('poly', _C6, 'ink', 3)] + [pdot(q) for q in _C6] + [nm(_C6[k], 'ABCDEF'[k], _Oc6, 24, 'ink', 26) for k in range(6)]
+             + [sg(_C6[0], _C6[2], 'ink', 3), sg(_C6[1], _C6[3], 'ink', 3), pdot(_CP), ('txt', _CP[0], _CP[1] - 24, 'P', 'ink', 24, True)]),
+    ('tri', [('tint', [_C6[1], _CP, _C6[2]], 'teal')]),
+    ('b', [ang(_C6[1], _C6[2], _C6[3], 30, 'teal'), sg(_C6[2], _C6[3], 'teal', 7)]),
+    ('b30', [alab(_C6[1], _C6[2], _C6[3], 54, '30°', 'teal', 18)]),
+    ('c', [ang(_C6[2], _C6[1], _C6[0], 30, 'orange'), sg(_C6[0], _C6[1], 'orange', 7)]),
+    ('c30', [alab(_C6[2], _C6[1], _C6[0], 54, '30°', 'orange', 18)]),
+    ('p', [ang(_CP, _C6[1], _C6[2], 16, 'ink'), ('txt', _CP[0], _CP[1] + 29, '120°', 'ink', 16)]),
+], vb='10 20 380 340', w=520, col=0, title='Two diagonals of a regular hexagon cross'))
+p104h1 = IH('p104h1', 'one side: $180° \\div 6 = 30°$', size=34, col=1)
+p104h2 = IH('p104h2', '$\\angle PBC = 30°$', size=34, col=1)
+p104h3 = IH('p104h3', '$\\angle PCB = 30°$', size=34, col=1)
+p104h4 = IH('p104h4', '$\\angle BPC = 180° - 30° - 30° = 120°$', size=32, col=1)
+p104h5 = IH('p104h5', 'pentagon: $180° - 36° - 36° = 108°$', size=32, col=1)
+p104h6 = I('p104h6', 'Neighboring corners, each skips one: the polygon\'s angle', size=28, col=1)
+
 # ---- radii: n isosceles triangles (the pentagon 72 / 54 / 54); the hexagon: six equilateral triangles
 _Or = (170, 170); _R5 = rp(_Or[0], _Or[1], 130, 5, 90)
 p104rad = PIN(GEO('p104rad', [
@@ -1112,7 +1182,7 @@ p104hx3 = I('p104hx3', 'radius $=$ side', size=36, col=1)
 p104z1 = I('p104z1', 'Sum $= 180°(n-2)$ $\\cdot$ $n-2$ triangles $\\cdot$ $+180°$ a side', size=34)
 p104z2 = I('p104z2', 'Regular: one angle $=$ sum $\\div n$: $108°, 120°, 135°$', size=34)
 p104z3 = I('p104z3', 'Central angle $=$ exterior angle $= 360° \\div n$', size=34)
-p104z4 = I('p104z4', 'Diagonals from a corner: equal angles', size=34)
+p104z4 = I('p104z4', 'Angle at a corner $=$ sides between the arms $\\cdot \\dfrac{180°}{n}$', size=34)
 p104z5 = I('p104z5', 'Radii: $n$ isosceles triangles $\\cdot$ hexagon: 6 equilateral', size=34)
 
 
@@ -1303,6 +1373,67 @@ video('geo-104', 'lesson', slides=[
         "hundred twenty into four equal angles. One hundred twenty divided by four is thirty.",
         show(p104dia6['line'], 'the same in a regular hexagon'), show(p104dia6['four'], 'into four equal angles'),
         show(p104dg2, 'One hundred twenty divided by four'))),
+    S('Count the sides',
+      L("Let's look at those small angles again. In the regular pentagon, each one was thirty-six. In the regular hexagon, "
+        "each one was thirty. And there's a pattern here. Thirty-six is one hundred eighty divided by five. And thirty is "
+        "one hundred eighty divided by six.",
+        show(p104cnt['line'], 'In the regular pentagon'), show(p104cnt['one'], 'each one was thirty-six'),
+        show(p104k1, 'Thirty-six is one hundred eighty divided by five'), show(p104k2, 'thirty is one hundred eighty divided by six')),
+      L("Why one hundred eighty divided by n? Because each small angle is an inscribed angle, and it intercepts the arc "
+        "under one side. The central angle on that same arc is three hundred sixty divided by n. In the pentagon, that's "
+        "seventy-two. And an inscribed angle is half of the central angle on the same arc. So each small angle is half of "
+        "three hundred sixty over n. That's one hundred eighty over n, and in the pentagon, half of seventy-two is thirty-six.",
+        show(p104cnt['cen'], 'The central angle on that same arc'), show(p104k3, 'is three hundred sixty divided by n'),
+        show(p104cnt['c72'], "In the pentagon, that's seventy-two"), show(p104k3b, "That's one hundred eighty over n")),
+      L("So every side adds one hundred eighty over n to an angle like this. Here's the rule. Take an angle whose corner is "
+        "a corner of the polygon, and whose two arms go through two other corners. Count the sides between the two arms, "
+        "on the far side from the corner. The angle is that number of sides, times one hundred eighty over n.",
+        show(p104k4, "Here's the rule")),
+      L("Let's check it on the whole angle of the pentagon. Its arms are the two sides at the corner. Between them, on the "
+        "far side, there are three sides. Three times thirty-six is one hundred eight. That's exactly the pentagon's angle, "
+        "like we found before.",
+        show(p104cnt['whole'], 'Between them, on the far side'), show(p104k5, 'Three times thirty-six'),
+        show(p104cnt['w108'], "That's exactly the pentagon's angle")),
+      L("This works only in a regular polygon, because only there are all the sides equal, so all their arcs are equal. "
+        "And the angle's corner must be a corner of the polygon, and both arms must go through corners too. Only then is "
+        "it an inscribed angle on those arcs.",
+        show(p104k6, 'This works only in a regular polygon'))),
+    S('Ten sides',
+      L("Let's use it. Here's a regular polygon with ten sides, A to J. From corner A, we draw two diagonals, to D and to "
+        "G. What is the angle alpha between them?",
+        show(p104dec['line'], "Here's a regular polygon with ten sides")),
+      L("First, what one side adds. One hundred eighty divided by ten is eighteen. So every side between the arms adds "
+        "eighteen degrees.", show(p104e1, 'One hundred eighty divided by ten')),
+      L("Now we count the sides between the arms, from D to G. They are D E, E F and F G. That's three sides. So alpha is three "
+        "times eighteen, which is fifty-four.",
+        show(p104dec['sides'], 'D E, E F and F G'), show(p104e2, 'So alpha is three'), show(p104dec['val'], 'which is fifty-four')),
+      L("Let's check the rule on the whole angle at A. Its arms are the sides A B and A J. From B to J there are eight "
+        "sides. Eight times eighteen is one hundred forty-four. Let's also check it with the formula sheet. Three hundred "
+        "sixty divided by ten is thirty-six. One hundred eighty minus thirty-six is one hundred forty-four. That's the same angle.",
+        show(p104dec['whole'], 'From B to J there are eight'), show(p104e3, 'Eight times eighteen'),
+        show(p104dec['w144'], "is one hundred forty-four. Let's"), show(p104e4, 'eighty minus thirty-six is one hundred forty-four'))),
+    S('Crossing diagonals',
+      L("Now an angle where two diagonals cross. A B C D E F is a regular hexagon. The diagonals A C and B D cross at the "
+        "point P. What is angle B P C?", show(p104hxc['line'], 'A B C D E F is a regular hexagon')),
+      L("P isn't a corner of the hexagon, so we can't count sides at P. But look at triangle B P C. Its other two angles "
+        "are at B and at C, and those are corners. So let's find those two angles, and then use the triangle's one "
+        "hundred eighty.", show(p104hxc['tri'], 'look at triangle B P C')),
+      L("In a hexagon, one side adds one hundred eighty divided by six, thirty. The angle at B is between B C and B D. Its "
+        "arms go through C and D, and between them there's one side, C D. So angle P B C is thirty.",
+        show(p104h1, 'one hundred eighty divided by six'), show(p104hxc['b'], 'The angle at B is between'),
+        show(p104h2, 'So angle P B C is thirty'), show(p104hxc['b30'], 'So angle P B C is thirty')),
+      L("The angle at C is between C B and C A. Its arms go through B and A, and between them there's one side, A B. So "
+        "angle P C B is thirty too.",
+        show(p104hxc['c'], 'The angle at C is between'), show(p104h3, 'So angle P C B is thirty too'),
+        show(p104hxc['c30'], 'So angle P C B is thirty too')),
+      L("The angles of triangle B P C add up to one hundred eighty. So angle B P C is one hundred eighty minus thirty "
+        "minus thirty. That's one hundred twenty.",
+        show(p104h4, 'one hundred eighty minus thirty'), show(p104hxc['p'], "That's one hundred twenty")),
+      L("One hundred twenty is exactly the hexagon's angle. In a regular pentagon, the same two diagonals cross at one "
+        "hundred eighty minus thirty-six minus thirty-six. That's one hundred eight, the pentagon's angle. So "
+        "when two diagonals start at two neighboring corners, and each one skips just one corner, they cross at the "
+        "polygon's own angle.",
+        show(p104h5, 'hundred eighty minus thirty-six minus thirty-six'), show(p104h6, 'So when two diagonals start'))),
     S('Triangles from the center',
       L("Now let's draw the radii again, from O to every corner. A regular polygon splits into n triangles. Two sides of "
         "each triangle are radii, so every triangle is isosceles. And all the triangles are the same, because all the "
@@ -1335,7 +1466,9 @@ video('geo-104', 'lesson', slides=[
         show(p104z2, 'Regular means')),
       L("The central angle and the exterior angle are both three hundred sixty divided by n. Each one completes the "
         "polygon's angle to one hundred eighty.", show(p104z3, 'The central angle and the exterior angle')),
-      L("The diagonals from one corner cut its angle into equal parts. The radii cut the polygon into n isosceles "
+      L("The diagonals from one corner cut its angle into equal parts, one hundred eighty over n each. So an angle at a "
+        "corner, with its arms through two other corners, is the sides between its arms, times one hundred eighty over n. "
+        "The radii cut the polygon into n isosceles "
         "triangles, and in the hexagon, six equilateral triangles. Take a moment to memorize these, and I'll see you in "
         "the next video.", show(p104z4, 'The diagonals from one corner'), show(p104z5, 'The radii cut'))),
 ])
@@ -1345,6 +1478,7 @@ CAMERA_SPLIT = ('geo-104', 'Polygons', [
     (8, "Let's continue with polygons."),
     (11, "Let's continue with the angles of regular polygons."),
     (14, "Let's continue with the lines inside a regular polygon."),
+    (17, "Let's continue with the diagonals of a regular polygon."),
 ])
 
 

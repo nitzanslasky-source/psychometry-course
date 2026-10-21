@@ -14,49 +14,55 @@
    {
     "say": "The shaded region is the sector, minus the right triangle inside it. So shaded equals sector minus triangle. [short pause] We'll solve it two ways, by estimating the choices, and then with a partial calculation.",
     "at": [
-     "The shaded region",
-     "is the sector",
-     "minus the right triangle",
      "So shaded equals",
      "ways, by estimating"
     ]
    },
-   "With an estimate, we don't look for the right answer. We rule out three. And in an area question, the first thing to check is where the pi is.",
+   "Let's start with an estimate, after one small calculation. We'll find the triangle's area first. Then we'll estimate the sector, and compare the choices.",
    {
-    "say": "The area of a sector is a part of the circle's area, pi r squared, so it has pi in it. The triangle's area is base times height over two. That's a plain number, with no pi.",
+    "say": "The triangle has a right angle and an angle of forty-five degrees. So its third angle is forty-five too, and its legs are equal. The hypotenuse is the radius, two. By Pythagoras, the two equal legs squared add up to four. So each leg squared is two.",
     "at": [
-     "The area of a sector",
-     "is a part"
+     "each leg squared is two"
     ]
    },
    {
-    "say": "So the shaded area must look like this. Some amount of pi, minus a number.",
+    "say": "The legs are equal, so their product is also two. The triangle's area is that product divided by two. Two divided by two is one. Now the sector. Forty-five degrees is one eighth of a full circle. The whole circle has area four pi, so this sector is pi over two.",
     "at": [
-     "Some amount of pi, minus a number"
+     "The legs are",
+     "Two divided by two is one",
+     "one. Now the",
+     "this sector is pi over two"
     ]
    },
    {
-    "say": "Choice number one is four minus pi. That's a number minus pi, the opposite order, so it's out.",
+    "say": "For this estimate, use these bounds for pi: more than three, and less than three point two. We need closer bounds here because the choices are close in size. Half of pi is therefore between one point five and one point six. Take away the triangle's area, one. The shaded area is between zero point five and zero point six.",
+    "at": [
+     "these bounds for",
+     "more than three, and less than three point two",
+     "than three point",
+     "between zero point five and zero point six",
+     "zero point six"
+    ]
+   },
+   {
+    "say": "Choice number one is four minus pi. Pi is less than three point two, so four minus pi is more than zero point eight. Our area is less than zero point six. So choice number one is too big, and it's out.",
     "at": [
      "number one is",
-     "pi. That's a",
-     "the opposite order"
+     "minus pi is",
+     "more than zero point eight",
+     "Our area is",
+     "it's out"
     ]
    },
    {
-    "say": "Choice number three is pi over root two. There's no minus at all, so nothing was taken away. It's out too.",
+    "say": "Choice number three is pi over root two. Root two is less than two, so dividing pi by root two gives more than dividing pi by two. That's more than one point five, much bigger than our area. So choice number three is out. Choice numbers two and four are left.",
     "at": [
      "number three is",
-     "There's no minus at all",
-     "so nothing was"
-    ]
-   },
-   {
-    "say": "Choice number two and choice number four both have pi minus a number, so they stay. Two choices are out, just from where the pi is. In some questions every choice has the pi in the right place, and this check rules out nothing. In others, it rules out three choices at once.",
-    "at": [
-     "number two and",
-     "number four both",
-     "from where the"
+     "two, so dividing",
+     "more than one point five",
+     "much bigger than",
+     "choice number three is out",
+     "numbers two and"
     ]
    }
   ],
@@ -133,23 +139,28 @@
     ]
    },
    {
-    "say": "Now, instead of calculating the triangle, let's peek at the choices. The shaded area is pi over two, minus the triangle. Only choice number four starts with pi over two.",
+    "say": "The shaded area is pi over two, minus the triangle's area. We found that the triangle's area is one. So the result is pi over two minus one. Choice number four matches both pieces, not just the way the expression looks.",
     "at": [
-     "The shaded area is pi over two",
-     "over two, minus",
-     "Only choice number four"
+     "pi over two minus one",
+     "Choice number four matches",
+     "pieces, not just"
     ]
    },
    {
-    "say": "Choice number two has a half in front of the bracket. Half of pi over two is pi over four, not pi over two, so it doesn't fit. Choice number four again, and we never calculated the triangle.",
+    "say": "Choice number two has a half outside its whole bracket. It gives pi over four minus one, not pi over two minus one. So it's out. We compare the actual values of the pieces, not just whether a minus sign is written. Choice number four again.",
     "at": [
      "number two has",
-     "is pi over",
-     "so it doesn't fit",
-     "Choice number four again"
+     "minus one, not",
+     "So it's out",
+     "number four again"
     ]
    },
-   "This is called a partial calculation. We calculate only the part that tells the choices apart, and then we look at the choices. [pause] Okay. I'll see you in the next question."
+   {
+    "say": "This is a partial calculation: find a useful piece, then look at the choices. A piece can rule choices out, but the answer still has to fit the whole shaded area. I'll see you in the next question.",
+    "at": [
+     "look at the"
+    ]
+   }
   ]
  ]
 }

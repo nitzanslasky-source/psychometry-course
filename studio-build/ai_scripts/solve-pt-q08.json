@@ -67,13 +67,12 @@
   ],
   [
    {
-    "say": "I'm a little disappointed. I tried a round answer and it didn't work. But that's fine, we go on. The next round one is a hundred fifty. Then the pants are five hundred minus a hundred fifty, three hundred fifty.",
+    "say": "Fifty didn't fit, so we cross it out and try another easy choice. Let's try a hundred fifty. Then the pants cost five hundred minus a hundred fifty, three hundred fifty, before the discount.",
     "at": [
-     "I'm a",
-     "I tried a",
-     "The next round one",
-     "a hundred fifty",
-     "Then the pants are five hundred minus",
+     "Fifty didn't",
+     "we cross it",
+     "Let's try a hundred fifty",
+     "Then the pants cost five hundred minus",
      "three hundred fifty"
     ]
    },
@@ -97,10 +96,10 @@
   ],
   [
    {
-    "say": "What's going on here? We said the right answer is usually one of the round ones, and here it isn't. Usually doesn't mean always. This question is here exactly so we learn what to do when it doesn't work out. And what do we do? We just go on as usual.",
+    "say": "Both convenient choices failed. That's fine: round numbers make checking easier, but they don't have to be right. We've ruled out two choices. Now we check one of the two that remain.",
     "at": [
-     "What's going",
-     "We said the"
+     "Both convenient",
+     "That's fine: round"
     ]
    },
    {
@@ -150,12 +149,15 @@
     ]
    },
    {
-    "say": "And two hundred eighty is much closer to two hundred seventy than to three hundred ten. It's ten away from one, and thirty away from the other. So the shirt is much closer to fifty than to a hundred fifty.",
+    "say": "Why does closeness help here? The original total stays five hundred. If the shirt's original price goes up by ten, the pants' original price goes down by ten. The shirt's discount takes away a tenth of the extra ten, which is one. So we pay nine more for the shirt. The pants are half price, so we save only five there. Nine more minus five saved is four more paid. Each extra ten changes the paid total by the same four. Two hundred eighty is ten above two hundred seventy. It's thirty below three hundred ten. So the needed shirt price is closer to fifty than to a hundred fifty.",
     "at": [
-     "much closer to two hundred seventy",
-     "seventy than to",
-     "So the shirt is much closer",
-     "closer to fifty"
+     "the pants' original price goes down by ten",
+     "The shirt's discount",
+     "four more paid",
+     "paid total by",
+     "It's thirty below three hundred ten",
+     "So the needed shirt price is closer",
+     "is closer to"
     ]
    },
    {

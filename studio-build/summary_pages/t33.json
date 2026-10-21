@@ -709,6 +709,11 @@
        "$65°\\Rightarrow115°$"
       ],
       [
+       "Trapezoid in a circle: always **isosceles**",
+       "same leg $180°$ + opposite $180°$: equal base angles",
+       "$70°$: $\\angle D=\\angle C=110°$"
+      ],
+      [
        "The perpendicular from the center halves a chord",
        "$d^2+\\left(\\frac{\\text{chord}}{2}\\right)^2=r^2$",
        "$r=17,\\ d=8\\Rightarrow$ chord $30$"
@@ -829,7 +834,7 @@
    "blocks": [
     {
      "type": "p",
-     "text": "Shaded areas: **what minus what?** A segment is a sector minus a triangle. Nested shapes: square-circle-square and circle-square-circle **twice**, triangle-circle-triangle **four times**. Radii and tangents make right, **gold** ($30°$-$60°$-$90°$) and **silver** ($45°$-$45°$-$90°$) triangles; two radii with $60°$ make an equilateral triangle. They ask for a total? Find the total directly."
+     "text": "Shaded areas: **what minus what?** A segment is a sector minus a triangle. Nested shapes: square-circle-square and circle-square-circle **twice**, triangle-circle-triangle **four times**, circle-triangle-circle (equilateral) **four times**: $R=2r$, the ring is 3 small circles. Radii and tangents make right, **gold** ($30°$-$60°$-$90°$) and **silver** ($45°$-$45°$-$90°$) triangles; two radii with $60°$ make an equilateral triangle. They ask for a total? Find the total directly."
     }
    ]
   },

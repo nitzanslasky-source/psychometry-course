@@ -26,62 +26,70 @@
     ]
    },
    {
-    "say": "But the part in the middle is hard. To calculate it, we need a helper line and Pythagoras. And if we don't see the helper line, we're stuck. So we'll solve it with an estimate.",
+    "say": "We want to estimate that middle part. Let's draw helper lines to get bounds from the given lengths. We won't need to calculate the missing length exactly.",
     "at": [
-     "the part in the middle",
-     "To calculate it"
-    ]
-   },
-   "But wait. On the exam, a figure is not necessarily drawn to scale. So can I estimate from the figure?",
-   {
-    "say": "Usually, yes. First, most figures on the exam are drawn quite accurately. Second, a rule of thumb. With regular shapes, like a square, a circle, an equilateral triangle or a cube, the figure is accurate.",
-    "at": [
-     "With regular shapes",
-     "square, a circle"
+     "that middle part",
+     "helper lines to",
+     "the given lengths"
     ]
    },
    {
-    "say": "Why? Here, the circle in the middle touches the four quarter circles and two sides. There's only one way to draw that. If we make the figure bigger or smaller, all the parts keep the same ratios. So we can trust this figure. There's a whole lesson later about when a figure is accurate.",
+    "say": "But wait. On the exam, a figure is not necessarily drawn to scale. So can I estimate from the figure?",
     "at": [
-     "There's only one way to draw",
-     "If we make"
+     "On the exam"
+    ]
+   },
+   {
+    "say": "No, we shouldn't measure the sketch. Let's use the lengths. The middle circle touches the top and bottom sides, four apart. Its diameter is four, so its radius is two. Draw a line from A to O, joining two touching circles' centers.",
+    "at": [
+     "Let's use the lengths",
+     "The middle circle",
+     "Its diameter is four",
+     "its radius is"
+    ]
+   },
+   {
+    "say": "The corner circle has radius two, and the middle circle has radius two. The circles touch from the outside, so A O is two plus two, four. From O, draw a perpendicular to side A B. Call its foot H. O is two below the top side, so A H is two. Now A H O is a right triangle, with hypotenuse four and one leg two.",
+    "at": [
+     "A O is two plus two, four",
+     "From O, draw",
+     "hypotenuse four and one leg two"
     ]
    }
   ],
   [
    {
-    "say": "[pause] So let's compare the middle part with lengths we know. Here it is again, under the rectangle.",
+    "say": "Call O H x. By Pythagoras, x squared plus two squared is four squared. Four squared is sixteen, and two squared is four. Subtract four, and x squared is twelve. We only need bounds for x, not its exact root.",
     "at": [
-     "let's compare the middle part",
-     "with lengths we"
+     "Call O H x",
+     "By Pythagoras, x",
+     "x squared is twelve",
+     "x, not its"
     ]
    },
    {
-    "say": "It's longer than a radius, which is two. And it's shorter than the diameter of the circle in the middle, which is four.",
+    "say": "Three squared is nine, below twelve. Four squared is sixteen, above twelve. So the positive length x is more than three and less than four.",
     "at": [
-     "It's longer than a radius",
-     "which is two",
-     "it's shorter than the diameter",
-     "middle, which is"
-    ]
-   },
-   "If it's hard to see, use your eraser on the exam. Mark the length of a radius on it, and compare.",
-   {
-    "say": "So the middle part is between two and four.",
-    "at": [
-     "So the middle part is between",
-     "between two and"
+     "more than three and less than four"
     ]
    },
    {
-    "say": "The whole side A D is made of two, plus the middle, plus two. Two plus two plus two is six, and two plus four plus two is eight. So A D is between six and eight.",
+    "say": "The same construction on the right has the same hypotenuse, four, and the same vertical leg, two. So its horizontal length is also x. The whole rectangle is x plus x across. That's why A D is two x, not just x.",
     "at": [
-     "The whole side A D",
-     "is made of",
-     "So A D is between",
-     "six and eight"
+     "same construction on the right",
+     "has the same",
+     "A D is two x"
     ]
    },
+   {
+    "say": "Each x is between three and four. Double both bounds, and A D is between six and eight. We got that from the right triangles, not from measuring the picture.",
+    "at": [
+     "Each x is",
+     "A D is between six and eight",
+     "We got that"
+    ]
+   },
+   "This also explains the middle part we started with. A D is between six and eight. Take away the two radius pieces, two at each end, four altogether. The middle part is therefore between two and four. Either way, the full side A D is between six and eight.",
    {
     "say": "The area is four times A D. Four times six is twenty-four, and four times eight is thirty-two. So the area is between twenty-four and thirty-two, and it isn't equal to either one.",
     "at": [
@@ -133,8 +141,23 @@
      "so choice number one",
      "root three, is"
     ]
-   },
-   "This is a hard question from the end of the section, and we never found the middle part. A rough size and the choices were enough. [pause] Okay. I'll see you in the next question."
+   }
+  ],
+  [
+   {
+    "say": "Now let's go back to x squared is twelve. If you spot a square factor inside twelve, you can finish even sooner. Twelve is four times three. So the root of twelve is the root of four times the root of three: two root three. That's x. The whole long side is two x, so it's four root three. The other side is four. Four times four root three gives sixteen root three, choice number one, without checking all the other choices. If you don't spot the root shortcut, our bounds still give a safe way to eliminate them. I'll see you in the next question.",
+    "at": [
+     "x squared is twelve",
+     "If you spot",
+     "two root three. That's x",
+     "The whole long",
+     "so it's four root three",
+     "The other side",
+     "gives sixteen root three",
+     "choice number one",
+     "all the other"
+    ]
+   }
   ]
  ]
 }

@@ -82,17 +82,17 @@
   ],
   [
    {
-    "say": "[pause] Now let's plug in numbers. Instead of the letter r, we pick an easy number for the radius, and we solve with numbers. Then we put the same number into the choices. The right choice gives the same value. It also saves us algebra mistakes.",
+    "say": "Now let's plug in numbers. We choose an easy radius and calculate the two perimeters with that number. Then we use the same radius in the choices, and rule out choices that give a different ratio.",
     "at": [
      "Now let's plug in numbers",
-     "Instead of the"
+     "We choose an"
     ]
    },
    {
-    "say": "The easiest number is one, so the radius is one. K M and K N are one, and the triangle is equilateral, so M N is one too. The triangle's perimeter is three.",
+    "say": "The easiest radius is one. K M and K N are radii, so both are one. Their opposite angles are equal, and the angle at M is sixty. So the other two angles are sixty too, and the triangle is equilateral. M N is one, so the triangle's perimeter is three.",
     "at": [
-     "so the radius is one",
-     "so the radius is one",
+     "The easiest radius is one",
+     "The easiest radius is one",
      "K M and",
      "The triangle's perimeter is three"
     ]
@@ -168,10 +168,12 @@
   ],
   [
    {
-    "say": "[pause] And the third way, estimation. Say the radius is one again. The triangle is equilateral, so each of its sides is one, and its perimeter is three.",
+    "say": "And the third way, estimation. Let's choose radius one again. The two radii K M and K N are equal, so the angles at M and N are equal. The given angle at M is sixty, so all three angles are sixty. The triangle is equilateral, each side is one, and its perimeter is three.",
     "at": [
-     "Say the radius is one again",
-     "again. The triangle",
+     "Let's choose radius one again",
+     "The two radii",
+     "The given angle",
+     "is equilateral, each",
      "and its perimeter is three"
     ]
    },
@@ -253,9 +255,9 @@
     ]
    },
    {
-    "say": "Careful, that's only for this kind of comparison, the same kind of thing in one shape. In an area over a perimeter, an r can stay, because an area has r squared and a perimeter has only r.",
+    "say": "That cancellation works here because we compare two perimeters while every length grows by the same factor. Don't apply it to an area divided by a perimeter. An area has r squared, but a perimeter has only r, so a factor of r can remain.",
     "at": [
-     "Careful, that's only"
+     "That cancellation works"
     ]
    },
    {

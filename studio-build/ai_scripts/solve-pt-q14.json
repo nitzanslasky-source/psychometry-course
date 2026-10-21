@@ -27,7 +27,7 @@
     ]
    },
    {
-    "say": "So where do we put a number? In percent questions we put a hundred, and we put it at the whole. Why? Some students put the hundred at x, the price after the discount. Then the price before is a hundred forty, and we'd need forty out of a hundred forty. That's not a nice calculation.",
+    "say": "So where do we put a number? In this percent question, we choose a hundred for the whole price, the price before the discount. Why? Some students put the hundred at x, the price after the discount. Then the price before is a hundred forty, and we'd need forty out of a hundred forty. That's not a nice calculation.",
     "at": [
      "Some students put the hundred at x",
      "at x, the"
@@ -93,13 +93,13 @@
   ],
   [
    {
-    "say": "[pause] Now the math way. With algebra, the price before is x plus forty. The discount in percent is forty out of x plus forty, times a hundred. That's choice number one. [pause] Okay. I'll see you in the next question.",
+    "say": "Now the math way. The price after the discount is x. To get the original price, we add back the forty-shekel discount. So the price before is x plus forty. We divide the discount, forty, by that original price. Then we multiply by a hundred to get the percent. That's forty over x plus forty, times a hundred, choice number one. I'll see you in the next question.",
     "at": [
      "Now the",
      "the price before is x plus forty",
-     "The discount in percent",
-     "forty out of",
-     "That's choice number one"
+     "We divide the discount",
+     "by that original",
+     "choice number one"
     ]
    }
   ]

@@ -75,15 +75,15 @@
     ]
    },
    {
-    "say": "Nine, six and two hundred forty all divide by three. So we divide every term of the equation by three. Three L plus two S is eighty.",
+    "say": "Nine, six and two hundred forty all are divisible by three. So we divide every term of the equation by three. Three L plus two S is eighty.",
     "at": [
      "Three L plus two S is eighty"
     ]
    },
    {
-    "say": "Now we multiply every term by four. Three L times four is twelve L. Two S times four is eight S. And eighty times four is three hundred twenty. That's exactly the crates they asked about.",
+    "say": "They ask for twelve large crates and eight small ones. Our equation has three L and two S. Four times each count gives the counts they ask for. So we multiply every term by four. Three L times four is twelve L. Two S times four is eight S. And eighty times four is three hundred twenty. That's exactly the crates they asked about.",
     "at": [
-     "Now we multiply",
+     "They ask for",
      "Two S times four",
      "And eighty times four",
      "three hundred twenty"

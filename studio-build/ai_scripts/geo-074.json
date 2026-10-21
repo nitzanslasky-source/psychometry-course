@@ -14,25 +14,25 @@
     ]
    },
    {
-    "say": "Strictly speaking, the circle is only the round line itself, the line around the outside. Everything inside it, the whole flat shape, is the inside of the circle. Think of a round wooden board. Its edge is the circle, and all the wood is the inside.",
+    "say": "The circle itself is the curved line around the outside. Everything inside that line is the region inside the circle. Think of a round wooden board. Its edge is the circle, and the flat wooden surface is the region inside.",
     "at": [
-     "the circle is only",
-     "round line itself",
-     "Everything inside it",
-     "flat shape, is"
+     "The circle itself",
+     "curved line around",
+     "Everything inside that line",
+     "the region inside"
     ]
    },
    {
-    "say": "On the exam they don't keep this difference. They say circle for both. The area of the circle means the area inside, all the wood. The circumference is the length of the round line, the edge. That's fine, as long as we know which is which.",
+    "say": "On the exam, the word circle can refer to the line or the region inside it. The area of the circle means the space inside. The circumference means the length all the way around the edge. So check whether the question asks for an area or a length.",
     "at": [
-     "They say circle for both",
-     "The area of"
+     "the word circle can refer",
+     "to the line"
     ]
    }
   ],
   [
    {
-    "say": "First, let's look at a radius. A radius is a straight line from the center of the circle to any point on the circle. We call the center O. Here's a radius, from O to the circle. We usually mark the radius with the letter r.",
+    "say": "First, let's look at a radius. A radius is a straight line segment from the center of the circle to any point on the circle. We call the center O. Here's a radius, from O to the circle. We usually mark the radius with the letter r.",
     "at": [
      "a radius. A",
      "We call the center O",
@@ -73,18 +73,18 @@
     ]
    },
    {
-    "say": "Narrow, wide, or very wide, it's always the same. Two radii and the chord between them give an isosceles triangle. If the two points and the center are on one straight line, there's no triangle. That line is a diameter, and we'll meet it in a moment. In questions, when you see two radii, mark them equal right away.",
+    "say": "The triangle can be narrow, wide, or very wide. The two radii are still equal, so the triangle is isosceles. If the two points and the center lie on one straight line, there is no triangle. That line is a diameter, and we'll meet it in a moment. In questions, when you see two radii of the same circle, mark them equal right away.",
     "at": [
-     "Narrow, wide",
+     "narrow, wide",
      "or very wide",
-     "Two radii and the chord between them",
-     "between them give"
+     "The two radii are still equal",
+     "equal, so the"
     ]
    }
   ],
   [
    {
-    "say": "Now let's join two points on the circle with a straight line. A line like that is called a chord. Let's mark two points on the circle, A and B, and join them. That's a chord. Two more points, C and D. Join them. That's also a chord.",
+    "say": "Now let's join two points on the circle with a straight line segment. That segment is called a chord. Let's mark two points on the circle, A and B, and join them. That's a chord. Two more points, C and D. Join them. That's also a chord.",
     "at": [
      "points on the",
      "Let's mark two points",

@@ -44,11 +44,11 @@
     ]
    },
    {
-    "say": "From one and a half to two isn't a whole multiplier, so we use the triangle value. Multiply along the diagonal, two times one, and divide by what's left, one and a half.",
+    "say": "We need two pineapples, and every one and a half pineapples costs one credit. So we divide two by one and a half to find the cost. In our ratio table, the triangle value gives two times one, divided by one and a half.",
     "at": [
-     "From one and",
-     "Multiply along the diagonal",
-     "and divide by what"
+     "We need two",
+     "two times one",
+     "divided by one and a half"
     ]
    },
    {

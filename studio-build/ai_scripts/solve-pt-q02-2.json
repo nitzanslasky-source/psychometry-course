@@ -37,7 +37,7 @@
     ]
    },
    {
-    "say": "Now we compare with the given. A has to be nine thirteenths of B, so we look at A over B. Four hundred fifty over six hundred fifty. Drop a zero from the top and the bottom, and we get forty-five over sixty-five. Both divide by five. Forty-five divided by five is nine, and sixty-five divided by five is thirteen. Nine thirteenths, exactly what the question asked. Choice number two is our answer.",
+    "say": "Now we compare with the given. A has to be nine thirteenths of B, so we look at A over B. Four hundred fifty over six hundred fifty. Divide the top and the bottom by ten, and we get forty-five over sixty-five. Both are divisible by five. Forty-five divided by five is nine, and sixty-five divided by five is thirteen. Nine thirteenths, exactly what the question asked. Choice number two is our answer.",
     "at": [
      "Now we compare",
      "A has to",
@@ -46,9 +46,11 @@
     ]
    },
    {
-    "say": "Once a choice fits, we can mark it, because a question has only one correct answer. By the way, in many questions where we plug in the answers, the round answer we try first really is the right one. Why? Because the exam gives an advantage to whoever thinks this way. Not in every question, but in quite a few.",
+    "say": "Once a choice fits every given, we can mark it. The question has only one correct answer. Starting with a round number makes the check easier. But it doesn't guarantee that the round number is right. We still have to check it.",
     "at": [
-     "Once a choice"
+     "Once a choice",
+     "The question has",
+     "makes the check"
     ]
    }
   ],

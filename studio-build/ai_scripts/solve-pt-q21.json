@@ -11,7 +11,7 @@
     ],
     "pause": 0.5
    },
-   "We can solve this in seconds, without calculating at all. But we haven't learned percents yet, so first, what does a percent mean? A profit of eight percent means that for every hundred shekels you invest, you earn eight shekels.",
+   "We can solve this without calculating the profit in shekels. Remember, eight percent means eight for every hundred invested. Here, only half the total money earns that rate.",
    {
     "say": "Before the idea behind the question, let's take a simpler example. Say I have a hundred shekels, and a plan that gives ten percent. If I invest all hundred shekels, I earn ten shekels, which is ten percent of my money.",
     "at": [
@@ -30,7 +30,7 @@
      "And out of"
     ]
    },
-   "So I invested half the money, and I earned only half the percent. That's the whole idea."
+   "The plan still pays ten percent on the money I put in. But I invested only half of all my money, so the profit is five percent of the whole amount. That's the whole idea."
   ],
   [
    {
@@ -50,13 +50,13 @@
     ]
    },
    {
-    "say": "Now we add up both halves. Careful here. If you just add eight to four and to sixteen, you get twelve and twenty-four, and that's choice number one. But each plan has only half the money, so we add the halves.",
+    "say": "Now we add the two profits, both measured as percentages of all his money. Careful: don't add the plans' full rates, eight plus four or eight plus sixteen. That would give twelve and twenty-four, choice number one. Each rate applies to only half his money. So we add their contributions to the whole, after halving each rate.",
     "at": [
-     "and that's choice number one"
+     "choice number one"
     ]
    },
    {
-    "say": "The plan always gives four percent, so only the fund changes. At the least, four plus two, six percent. At the most, four plus eight, twelve percent. So between six and twelve percent. Choice number three is our answer. We solved it just by understanding, without calculating anything.",
+    "say": "The plan always contributes four percent of the total money, so only the fund changes. At the least, four plus two, six percent. At the most, four plus eight, twelve percent. So between six and twelve percent. Choice number three is our answer. We solved it just by understanding, without calculating the profit in shekels.",
     "at": [
      "At the least, four plus two",
      "two, six percent",

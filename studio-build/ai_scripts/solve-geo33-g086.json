@@ -107,10 +107,10 @@
     ]
    },
    {
-    "say": "Now fold the figure along the line through A and the midpoint of B C. The fold swaps B and C. A B is equal to A C, so A stays where it is. And O B is equal to O C, so the center O is on that fold line too. So the radius O A lies right on the fold.",
+    "say": "Imagine folding along the line through A and the midpoint of B C. Because A B equals A C, the fold brings B onto C and makes the two sides match. O B equals O C too, so O lies on that same symmetry line. So the radius O A is part of the line we fold along.",
     "at": [
-     "fold the figure along the line",
-     "midpoint of B"
+     "folding along the line",
+     "A and the"
     ]
    },
    {

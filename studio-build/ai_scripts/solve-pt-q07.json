@@ -39,11 +39,11 @@
   ],
   [
    {
-    "say": "Two choices are left, forty-eight and fifty. Which one do we plug in? The more convenient one, the round one, fifty. It's easier to work with, and the right answer is often the round one.",
+    "say": "Two choices are left, forty-eight and fifty. Which one do we plug in? Let's start with fifty, because it's a round number. Finding one fifth of fifty will be easy.",
     "at": [
      "forty-eight and fifty",
-     "fifty. It",
-     "with, and the"
+     "Let's start with fifty",
+     "it's a round"
     ]
    },
    {
@@ -63,7 +63,12 @@
      "Choice number four is our answer"
     ]
    },
-   "This idea of starting with the convenient choices is very important. It saves work, and the exam often puts the right answer exactly there, among the round answers we'd want to try first. The exam is built to reward thinking, not long calculations. [pause] Okay. I'll see you in the next question."
+   {
+    "say": "Starting with a convenient choice can save work. Here fifty made the check easy, and it fitted every given. In another question, the convenient choice may fail. Then we cross it out and try another. We always choose easy arithmetic first, and still check the given conditions. I'll see you in the next question.",
+    "at": [
+     "the given conditions"
+    ]
+   }
   ]
  ]
 }

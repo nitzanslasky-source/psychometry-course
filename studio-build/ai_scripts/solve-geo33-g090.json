@@ -43,24 +43,29 @@
   ],
   [
    {
-    "say": "Let's check Pythagoras. Does twelve squared plus thirty-five squared equal thirty-seven squared? Twelve squared is one hundred forty-four. Thirty-five squared is thirty-five times thirty-five, one thousand two hundred twenty-five. Together, one thousand three hundred sixty-nine.",
+    "say": "Let's check Pythagoras. Does twelve squared plus thirty-five squared equal thirty-seven squared? Twelve squared is a hundred forty-four. For thirty-five squared, split the second thirty-five into thirty and five. Thirty-five times thirty is three times thirty-five, a hundred five, times ten: a thousand fifty. Thirty-five times five is half of three hundred fifty, a hundred seventy-five. Add them: a thousand two hundred twenty-five. Add the hundred forty-four, and we get a thousand three hundred sixty-nine.",
     "at": [
      "Let's check Pythagoras",
      "Does twelve squared",
      "Twelve squared is",
-     "Thirty-five squared is",
-     "thirty-five, one thousand",
-     "Together, one thousand three hundred sixty-nine"
+     "For thirty-five squared",
+     "Add them: a thousand two hundred twenty-five",
+     "a thousand two hundred twenty-five",
+     "Add the hundred",
+     "we get a thousand three hundred sixty-nine"
     ]
    },
    {
-    "say": "And thirty-seven squared? Thirty-seven times thirty is one thousand one hundred ten. Thirty-seven times seven is two hundred fifty-nine. Together, one thousand three hundred sixty-nine. The same.",
+    "say": "And thirty-seven squared? Split the second thirty-seven into thirty and seven. Thirty-seven times thirty is a thousand one hundred ten. For thirty-seven times seven, thirty times seven is two hundred ten. Seven times seven is forty-nine. Together that's two hundred fifty-nine. Add it to a thousand one hundred ten, and we get a thousand three hundred sixty-nine. The same.",
     "at": [
+     "Split the second",
      "Thirty-seven times thirty",
      "thousand one hundred",
-     "Thirty-seven times seven",
-     "Together, one thousand three hundred sixty-nine. The same",
-     "sixty-nine. The same"
+     "Together that's two hundred fifty-nine",
+     "Together that's two hundred fifty-nine",
+     "Add it to",
+     "we get a thousand three hundred sixty-nine. The same",
+     "hundred sixty-nine. The"
     ]
    },
    {
@@ -70,16 +75,15 @@
      "from the longest"
     ]
    },
-   "This is new. Until now, they gave us a right triangle with two of its sides, and we found the third. Here they gave us all three sides, and we had to see from them that the triangle is a right triangle.",
+   "This is the Pythagorean test we learned in the triangles topic.",
    {
-    "say": "So when a question gives all three sides, check Pythagoras first. If the squares of the two shorter sides add up to the square of the longest side, the triangle is a right triangle. The right angle is across from the longest side. For example, five, twelve and thirteen. Twenty-five plus a hundred forty-four is a hundred sixty-nine. And thirteen squared is a hundred sixty-nine too. So that's a right triangle.",
+    "say": "Use this test when all three sides are given, but no right angle is marked.",
     "at": [
-     "check Pythagoras first",
-     "to the square"
+     "Use this test"
     ]
    },
    {
-    "say": "Now let's draw the circle around the triangle, and remember one more rule. The angle at A sits on the circle, so it's an inscribed angle. We learned that an inscribed angle that rests on a diameter is ninety degrees. And the other way around. If an inscribed angle is ninety degrees, it must rest on a diameter.",
+    "say": "Now let's draw the circle around the triangle, and remember one more rule. The angle at A sits on the circle, so it's an inscribed angle. We learned that an inscribed angle that lies on a diameter is ninety degrees. And the other way around. If an inscribed angle is ninety degrees, it must lie on a diameter.",
     "at": [
      "let's draw the circle around",
      "the triangle, and"
@@ -101,11 +105,17 @@
      "Pi times thirty-seven is",
      "Choice number two is our answer"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "Careful with the traps. Thirty-seven is the diameter, not the radius. If we put it in as r, two pi times thirty-seven gives seventy-four pi, choice number one. And the radius is eighteen and a half. Pi times eighteen and a half is eighteen and a half pi, choice number three. It forgets the two. [pause] Okay. I'll see you in the next question.",
+    "say": "Now let's go back to the Pythagorean check. We can save the big squares with the difference-of-squares formula we know. Thirty-seven squared minus thirty-five squared is thirty-seven minus thirty-five, times thirty-seven plus thirty-five. That's two times seventy-two. Double seventy is a hundred forty, and double two is four: a hundred forty-four. That's twelve squared. So the two shorter sides really do satisfy Pythagoras, without finding twelve twenty-five or thirteen sixty-nine. Careful with the traps. Thirty-seven is the diameter, not the radius. If we put it in as r, two pi times thirty-seven gives seventy-four pi, choice number one. And the radius is eighteen and a half. Pi times eighteen and a half is eighteen and a half pi, choice number three. It forgets the two. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "Thirty-seven is the",
+     "to the Pythagorean",
+     "Thirty-seven squared minus thirty-five squared",
+     "is thirty-seven minus",
+     "a hundred forty-four. That's twelve squared",
+     "So the two",
      "two pi times thirty-seven gives",
      "choice number one",
      "And the radius",

@@ -674,6 +674,88 @@ def VENN2(name, la, lb, layers, tot=None, col=0, w=None, title='Two groups'):
     return MV.items(_layers, name, out, w=w, col=col, own=True)
 
 
+_V3_FILL = {'three': MV.BAND, 'two': '#fbe3cf', 'one': _BLUEF}
+
+
+def VENN3(name, names, layers, col=0, w=None, title='Three groups'):
+    """three equal overlapping circles (2026-10-21, exact three-group counts; no frame: everyone is in a circle).
+    names = the three circle names (top left, top right, bottom). Each region kind is its own exact shape (arcs sampled
+    into a polygon), so the layers can be shown in any order. layers = [(key, [mark, ...])]:
+      ('tint', kind)           shade every region of a kind: 'three' (the middle) | 'two' (the 3 pair regions, outside
+                               the middle) | 'one' (the 3 outer parts)
+      ('lab', kind, text)      the text ('\\n' = a second line) in every region of that kind
+      ('val', kind, text)      a big value in the region (only for 'three': one region)
+      ('tag', kind, text)      a small teal tag under the label in every region of that kind (x1, x2, x3)"""
+    import math
+    W, H, r, d = 470, 440, 124, 132; xm = W / 2.0
+    C = [(xm - d / 2.0, 178), (xm + d / 2.0, 178), (xm, 178 + d * 3 ** .5 / 2)]
+    G = (xm, sum(c[1] for c in C) / 3.0)
+    ins = lambda p, i: (p[0] - C[i][0]) ** 2 + (p[1] - C[i][1]) ** 2 < r * r - 1e-6
+    def cross(i, j):
+        (x1, y1), (x2, y2) = C[i], C[j]
+        dx, dy = x2 - x1, y2 - y1; L = math.hypot(dx, dy); a = L / 2.0; h = (r * r - a * a) ** .5
+        mx, my = x1 + dx / 2.0, y1 + dy / 2.0
+        return [(mx - h * dy / L, my + h * dx / L), (mx + h * dy / L, my - h * dx / L)]
+    def pts(i, j):                          # (inner = inside the third circle, outer)
+        k = 3 - i - j; p, q = cross(i, j)
+        return (p, q) if ins(p, k) else (q, p)
+    def arc(i, p, q, want):                 # on circle i from p to q, the way whose middle has membership `want`
+        cx, cy = C[i]; a1 = math.atan2(p[1] - cy, p[0] - cx); a2 = math.atan2(q[1] - cy, q[0] - cx)
+        for s in (1, -1):
+            span = (a2 - a1) * s % (2 * math.pi)
+            am = a1 + s * span / 2.0; m = (cx + r * math.cos(am), cy + r * math.sin(am))
+            if all(ins(m, k) == want[k] for k in range(3) if k != i):
+                n = max(8, int(span * 40))
+                return [(cx + r * math.cos(a1 + s * span * t / n), cy + r * math.sin(a1 + s * span * t / n)) for t in range(n + 1)]
+        raise ValueError('arc')
+    def poly(ps): return 'M ' + ' L '.join('%.1f %.1f' % p for p in ps) + ' Z'
+    I = {(i, j): pts(i, j) for i, j in ((0, 1), (0, 2), (1, 2))}
+    P = lambda i, j: I[tuple(sorted((i, j)))][0]
+    O = lambda i, j: I[tuple(sorted((i, j)))][1]
+    T3 = (True, True, True)
+    reg = {'three': [poly(arc(0, P(0, 1), P(0, 2), T3) + arc(2, P(0, 2), P(1, 2), T3) + arc(1, P(1, 2), P(0, 1), T3))]}
+    reg['two'] = []; reg['one'] = []
+    for i, j in ((0, 1), (0, 2), (1, 2)):
+        k = 3 - i - j; w2 = [True] * 3; w2[k] = False
+        reg['two'].append(poly(arc(i, O(i, j), P(i, k), w2) + arc(k, P(i, k), P(j, k), T3) + arc(j, P(j, k), O(i, j), w2)))
+    for i in range(3):
+        j, k = [x for x in range(3) if x != i]; w1 = [False] * 3; w1[i] = True
+        wj = [False] * 3; wj[i] = True                     # the inner edges: inside i only
+        reg['one'].append(poly(arc(i, O(i, j), O(i, k), w1) + arc(k, O(i, k), P(j, k), wj) + arc(j, P(j, k), O(i, j), wj)))
+    def mid(u, want):                       # the middle of the region with membership `want` along the ray G + t u
+        ts = [t * .5 for t in range(1, 900) if [ins((G[0] + u[0] * t * .5, G[1] + u[1] * t * .5), k) for k in range(3)] == want]
+        t = sum(ts) / len(ts); return (G[0] + u[0] * t, G[1] + u[1] * t)
+    unit = lambda v: (v[0] / math.hypot(*v), v[1] / math.hypot(*v))
+    POS = {'three': [G], 'two': [], 'one': []}
+    for i, j in ((0, 1), (0, 2), (1, 2)):
+        k = 3 - i - j; w2 = [True] * 3; w2[k] = False
+        POS['two'].append(mid(unit((G[0] - C[k][0], G[1] - C[k][1])), w2))
+    for i in range(3):
+        w1 = [False] * 3; w1[i] = True
+        POS['one'].append(mid(unit((C[i][0] - G[0], C[i][1] - G[1])), w1))
+    cols = (_BLUE, _TEAL, ORANGE)
+    rings = ''.join('<circle cx="%.1f" cy="%.1f" r="%d" fill="none" stroke="%s" stroke-width="2.8"/>' % (x, y, r, c)
+                    for (x, y), c in zip(C, cols))
+    nm = (_tx(C[0][0] - 92, 40, names[0], 28, cols[0]) + _tx(C[1][0] + 92, 40, names[1], 28, cols[1]) +
+          _tx(C[2][0] + 118, C[2][1] + r - 4, names[2], 28, cols[2], 'start'))
+    out = [('line', MV._svg(W, H, rings + nm, '%s: %s' % (title, ', '.join(names))))]
+    for key, marks in layers:
+        b = ''
+        for m in marks:
+            k = m[0]
+            if k == 'tint':
+                b += ''.join('<path d="%s" fill="%s" stroke="none"/>' % (p, _V3_FILL[m[1]]) for p in reg[m[1]]) + rings + nm
+            elif k == 'lab':
+                b += ''.join(_ml(x, y + 2, m[2], 20 if m[1] != 'three' else 23, _INK) for x, y in POS[m[1]])
+            elif k == 'val':
+                x, y = POS[m[1]][0]
+                b += _tx(x, y + 50, m[2], 34, _TEAL)
+            elif k == 'tag':
+                b += ''.join(_tx(x, y + 40, m[2], 21, _TEAL) for x, y in POS[m[1]])
+        out.append((key, MV._svg(W, H, b, '%s: %s' % (title, key))))
+    return MV.items(_layers, name, out, w=w, col=col, own=True)
+
+
 def STRIP(name, lb, la, layers, col=0, w=None, title='The squares method'):
     """the squares method: boxes 0..3 = neither | lb only | both | la only (left to right).
       lb = the group whose bracket is drawn OVER boxes 1-2, la = the group whose bracket is UNDER boxes 2-3.
@@ -2104,6 +2186,26 @@ t_p4 = IH('t_p4', 'chess: $\\ 12+9=21\\le40$', size=30, col=1)
 t_p5 = IH('t_p5', 'drama: $\\ 12+15=27\\le35$', size=30, col=1)
 t_p6 = IH('t_p6', 'music: $\\ 9+15=24\\le30$', size=30, col=1)
 t_p7 = IH('t_p7', 'all three: $\\ $from $0$ to $9$', size=30, col=1)
+# 2026-10-21 (external-course review, approved): exact three-group counts by counting appearances (memberships), not
+# people: 3 performances x 9 actors = 27 appearances; all three 3 x 3 = 9, exactly two 6 x 2 = 12, 27 - 21 = 6 -> 6
+# actors in exactly one (15 actors). New numbers (not the other course's 3 x 7). The pair regions are never filled one by
+# one (their split is unknown); the link back to two groups (wp-069: exactly one = A + B - 2 x both).
+t_e0 = I('t_e0', 'A play: $\\ 3$ performances, $\\ 9$ actors in each', size=28)
+t_e1 = I('t_e1', 'all three: $\\ 3$ actors, $\\ $exactly two: $\\ 6$ actors', size=28)
+t_ev = VENN3('t_ev', ['first', 'second', 'third'], [
+    ('three', [('tint', 'three'), ('lab', 'three', 'all\nthree')]),
+    ('two', [('tint', 'two'), ('lab', 'two', 'exactly\ntwo')]),
+    ('one', [('tint', 'one'), ('lab', 'one', 'exactly\none')]),
+    ('x1', [('tag', 'one', '×1')]), ('x2', [('tag', 'two', '×2')]), ('x3', [('tag', 'three', '×3')])], w=560)
+t_e2 = IH('t_e2', '$3\\times9=27$ appearances', size=30, col=1)
+t_e4 = IH('t_e4', 'all three: $\\ 3\\times3=9$', size=30, col=1)
+t_e5 = IH('t_e5', 'exactly two: $\\ 6\\times2=12$', size=30, col=1)
+t_e6 = IH('t_e6', '$9+12=21$', size=30, col=1)
+t_e7 = IH('t_e7', '$27-21=6$', size=30, col=1)
+t_e8 = IH('t_e8', 'exactly one: $\\ 6$ actors', size=30, col=1)
+t_e9 = IH('t_e9', 'actors: $\\ 3+6+6=15$', size=30, col=1)
+t_ek = I('t_ek', 'Add the groups: $\\ $appearances, not people', size=26, col=1)
+t_el = I('t_el', 'The totals only, $\\ $not who is in which pair', size=26, col=1)
 video('r26-t24-three-groups', 'lesson', slides=[
     S('Three Groups',
       L("Welcome back, and now three groups. Sometimes the exam adds a third group, and asks how many must be in all "
@@ -2149,8 +2251,44 @@ video('r26-t24-three-groups', 'lesson', slides=[
         "twelve plus fifteen is twenty-seven, and that fits in thirty-five. In music, nine plus fifteen is twenty-four, "
         "and that fits in thirty. So the pairs can all be different people.", show(t_p4, 'twelve plus nine is twenty-one'),
         show(t_p5, 'twelve plus fifteen is twenty-seven'), show(t_p6, 'nine plus fifteen is twenty-four')),
-      L("So here it's from zero to nine. Now let's see a guided question. Try it first, and I'll see you in the next "
-        "video.", show(t_p7, 'from zero to nine'))),
+      L("So here it's from zero to nine.", show(t_p7, 'from zero to nine'))),
+    S('Count the appearances',
+      L("Now a question with exact numbers. A school play had three performances, with nine actors in each "
+        "performance.", show(t_e0, 'A school play had three performances')),
+      L("Three actors were in all three performances, and six actors were in exactly two. How many actors were in "
+        "exactly one performance?", show(t_e1, 'Three actors were in all three')),
+      L("Let's draw the three performances as three circles. Each circle holds the nine actors of one performance.",
+        show(t_ev['line'], 'as three circles')),
+      L("The circles make three kinds of regions. In the middle are the actors in all three performances.",
+        show(t_ev['three'], 'In the middle are the actors')),
+      L("Where just two circles overlap, outside the middle, are the actors in exactly two.",
+        show(t_ev['two'], 'Where just two circles overlap')),
+      L("And the outer part of each circle is for the actors in exactly one performance. That's what we're looking "
+        "for.", show(t_ev['one'], 'And the outer part of each circle')),
+      L("We don't know how the six actors in exactly two are split among the three pairs. And we don't need it. "
+        "So instead of people, we count appearances. Every time an actor plays in one performance, that's one appearance."),
+      L("There are three performances, with nine actors in each. So three times nine is twenty-seven appearances.",
+        show(t_e2, 'So three times nine')),
+      L("Now, how many appearances does each actor make? An actor in exactly one performance appears once. An actor "
+        "in exactly two appears twice. And an actor in all three appears three times.",
+        show(t_ev['x1'], 'An actor in exactly one performance appears once'),
+        show(t_ev['x2'], 'in exactly two appears twice'), show(t_ev['x3'], 'And an actor in all three')),
+      L("Remember, with two groups, we took both away twice, because the people in both are counted in each group. "
+        "Here it's the same idea, with three groups."),
+      L("The three actors in all three performances make three times three, nine appearances.",
+        show(t_e4, 'three times three, nine')),
+      L("The six actors in exactly two make six times two, twelve appearances.", show(t_e5, 'six times two, twelve')),
+      L("Together that's nine plus twelve, twenty-one appearances. Twenty-seven minus twenty-one leaves six "
+        "appearances.", show(t_e6, 'nine plus twelve'), show(t_e7, 'Twenty-seven minus twenty-one')),
+      L("Who made those six appearances? Only the actors in exactly one performance are left, and each of them appears "
+        "once. So six actors were in exactly one performance.", show(t_e8, 'So six actors were in exactly one')),
+      L("So when we add up the groups, we count appearances, not people. How many different actors were there? Three "
+        "plus six plus six is fifteen. So there were fifteen actors, not twenty-seven.", show(t_ek, 'we count appearances, not people'),
+        show(t_e9, 'Three plus six plus six')),
+      L("Counting appearances works when we know the size of every group, and the question asks about all the people "
+        "in exactly one group, or all the people in exactly two, together. Counting appearances doesn't tell us which "
+        "pair each actor was in, and we don't need that.", show(t_el, "doesn't tell us which pair")),
+      L("Now let's see a guided question. Try it first, and I'll see you in the next video.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t24-03 (added: three groups, the least in all three)

@@ -188,18 +188,19 @@
   ],
   [
    {
-    "say": "[pause] Now let's solve it by estimation. It helps when you're stuck after the givens, or short on time. From the math way, we already know the triangle is thirty-six.",
+    "say": "Now let's solve it by estimation. Start from the givens again. The triangle is right and isosceles. The radius O C is six, perpendicular to A B. It cuts the base into two equal parts of six, so A B is twelve. The triangle's area is twelve times six, over two, which is thirty-six.",
     "at": [
      "Now let's solve it by estimation",
-     "estimation. It helps",
-     "the givens, or",
-     "we already know the triangle"
+     "estimation. Start from",
+     "the givens again",
+     "six, perpendicular to",
+     "The triangle's area is",
+     "times six, over"
     ]
    },
    {
     "say": "The shaded part is only a piece of the triangle. So the shaded area is more than zero, and less than thirty-six.",
     "at": [
-     "The shaded part",
      "So the shaded area is more than zero",
      "more than zero"
     ]

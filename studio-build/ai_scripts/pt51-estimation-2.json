@@ -28,10 +28,10 @@
     ]
    },
    {
-    "say": "Let's add the small ends, nine plus five is fourteen. That's the least the sum can be. And the big ends, ten plus six is sixteen, the most it can be. So the sum is between fourteen and sixteen.",
+    "say": "Each root is bigger than its lower bound. So their sum is bigger than nine plus five, fourteen. Each root is also smaller than its upper bound. So the sum is smaller than ten plus six, sixteen. The sum is strictly between fourteen and sixteen.",
     "at": [
-     "Let's add the small ends",
-     "That's the least"
+     "So their sum is bigger",
+     "Each root is also"
     ]
    },
    {

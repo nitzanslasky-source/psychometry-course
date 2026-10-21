@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "We need the number that, times itself, gives nineteen thousand forty-four. To find it exactly, I'd need a calculator, and on the exam there's no calculator. [short pause] No calculator, but I do have four answers.",
+    "say": "We need the number that, times itself, gives nineteen thousand forty-four. Working out that square root directly would take a long calculation, and on the exam there's no calculator. [short pause] No calculator, but I do have four answers.",
     "at": [
      "I do have four answers"
     ]
@@ -31,10 +31,10 @@
     ]
    },
    {
-    "say": "And to see how a square ends, we only need the last digit. Why? Take a hundred fifty-six. It's a hundred fifty plus six. Everything that comes from the hundred fifty is a whole number of tens, so it ends in zero. Only six times six reaches the units.",
+    "say": "And to see how a square ends, we only need the last digit. Why? Take a hundred fifty-six. It's a hundred fifty plus six. When we multiply this by itself, any part containing a hundred fifty ends in zero. Only six times six can change the last digit.",
     "at": [
      "It's a hundred fifty plus six",
-     "Everything that comes"
+     "When we multiply"
     ]
    },
    {
@@ -54,12 +54,12 @@
     ]
    },
    {
-    "say": "A hundred thirty-eight: eight times eight is sixty-four, which ends in four, so it fits. Two hundred twelve: two times two is four, so it fits too.",
+    "say": "Now a hundred thirty-eight. Its last digit is eight. Eight times eight is sixty-four, which ends in four, so this choice stays. For two hundred twelve, two times two is four. That choice stays too.",
     "at": [
-     "A hundred thirty-eight: eight",
-     "eight is sixty-four",
-     "Two hundred twelve: two",
-     "two is four"
+     "Now a hundred thirty-eight",
+     "Its last digit",
+     "For two hundred twelve",
+     "times two is"
     ]
    },
    "So the last digit ruled out two answers, and two are still left. That's its limit. It can only rule choices out. When two choices both end the right way, it can't choose between them."
@@ -95,7 +95,7 @@
      "Choice number one is our answer"
     ]
    },
-   "We solved it without calculating at all. First by understanding, with a rule about the last digit, and then with an order-of-magnitude estimate. Both get a lesson of their own later in this topic. [pause] Okay. I'll see you in the next part."
+   "We solved it without doing the full calculation. First by understanding, with a rule about the last digit, and then with an order-of-magnitude estimate. Both get a lesson of their own later in this topic. [pause] Okay. I'll see you in the next part."
   ]
  ]
 }

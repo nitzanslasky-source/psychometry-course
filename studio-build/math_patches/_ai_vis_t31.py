@@ -2344,7 +2344,7 @@ f4x = GEO('f4x', [
 f4r0 = I('f4r0', '$3^2+4^2=9+16=25=5^2$', size=30)
 f4r1 = I('f4r1', 'Area $=c^2+4\\cdot\\frac{ab}{2}$', size=32, col=0)
 f4r2 = I('f4r2', 'Area $=(a+b)^2$', size=32, col=0)
-f4r2b = I('f4r2b', '$(a+b)(a+b)=a^2+ab+ab+b^2$', size=30, col=0)
+f4r2b = I('f4r2b', '$(a+b)^2=a^2+2ab+b^2$', size=30, col=0)
 f4r3 = I('f4r3', '$a^2+2ab+b^2=c^2+2ab$', size=32, col=0)
 f4r4 = I('f4r4', '$a^2+b^2=c^2$', size=36, col=0)
 video('geo-023', 'lesson', slides=[
@@ -2363,11 +2363,8 @@ video('geo-023', 'lesson', slides=[
         "hypotenuse. With legs three and four and hypotenuse five, nine plus sixteen is twenty-five.",
         show(f4r0, 'With legs three and four'))),
     S('See it',
-      L("Now let's see why. Take a big square, and put four copies of our right triangle in its corners. Their hypotenuses "
-        "make one tilted shape in the middle. Is that shape really square? Its four sides are all c, the hypotenuses. And at "
-        "each of its corners, the two sharp angles of the triangles add up to ninety, so together with that corner they make "
-        "one straight line. So each corner is ninety too. The part the triangles don't cover is that middle square, c squared.",
-        show(f4w['line'], 'Take a big square'), show(f4w['t1'], 'put four copies'), show(f4w['h1'], "The part the triangles don't cover")),
+      L("Now let's see why. Take a big square, and put four copies of our right triangle in its corners. Their hypotenuses make one tilted shape in the middle. Is that shape really square? Its four sides are all c, the hypotenuses. Each corner of the middle shape sits between two acute angles of the triangles. Those two angles add up to ninety degrees. Together with the middle corner, they make a straight angle of a hundred eighty. So the middle corner is ninety degrees too. The uncovered shape is a square with side c and area c squared.",
+        show(f4w['line'], 'Take a big square'), show(f4w['t1'], 'put four copies'), show(f4w['h1'], 'The uncovered shape')),
       L("Now take the same big square, and move the same four triangles into new places, two at the top right and two at "
         "the bottom left. The pieces haven't changed: the same four triangles, with the same legs a and b. Now the part they "
         "don't cover is one square with side a and one square with side b.",
@@ -2382,10 +2379,9 @@ video('geo-023', 'lesson', slides=[
         show(f4x['line'], 'Look at the first picture again'), show(f4r1, 'and four triangles around it')),
       L("But the big square also has its own area formula, side times side. Its side is a plus b, so its area is the "
         "bracket a plus b, squared.", pt('f4x_line', 'Its side is a plus b'), show(f4r2, 'so its area is the')),
-      L("Both describe the same area, so they're equal. Now open the bracket. a plus b, times a plus b, is four products: "
-        "a times a, a times b, b times a, and b times b. That's a squared, plus two a b, plus b squared. If this step feels "
-        "new, that's fine. You can come back to it after the lesson on algebraic identities.",
-        show(f4r2b, 'is four products')),
+      L("Both describe the same area, so they're equal. Using the square-of-a-sum formula we learned, a plus b, squared, "
+        "is a squared, plus two a b, plus b squared.",
+        show(f4r2b, 'Using the square-of-a-sum formula')),
       L("On the other side, four times a b over two is two a b. Two a b is on both sides, so it cancels, and we're left with "
         "a squared plus b squared equals c squared. That's the theorem, and it was simpler than you thought. [pause] Okay. "
         "I'll see you in the next video.", show(f4r3, 'On the other side'), show(f4r4, "and we're left with"))),

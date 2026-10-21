@@ -46,14 +46,14 @@
     ]
    },
    {
-    "say": "Let's draw a line from E straight up, parallel to A B. It cuts A D into two pieces. The right piece is as long as E C, because they're opposite sides of a rectangle, so it's y, and it cancels with E C. The left piece is as long as B E, for the same reason, x minus y.",
+    "say": "Let's draw a line from E straight up, parallel to A B. It divides the square into two rectangles. The right piece of A D is opposite E C, so those lengths are equal. Both are y. In our subtraction, that plus y and minus E C cancel. The left piece of A D is opposite B E. Those lengths are equal too, and each is x minus y.",
     "at": [
      "Let's draw a line from E",
      "E straight up",
-     "The right piece is as long",
-     "long as E",
-     "The left piece is as long",
-     "long as B"
+     "The right piece of A D",
+     "D is opposite",
+     "The left piece of A D",
+     "D is opposite B"
     ]
    },
    {
@@ -64,7 +64,7 @@
      "Choice number two is our answer"
     ]
    },
-   "When a question asks for the difference between two shapes, look for the parts they share, and cancel them before you calculate anything. [pause] Okay. I'll see you in the next question."
+   "When a question asks for the difference between two perimeters, look for the parts they share, and cancel them before you calculate anything. [pause] Okay. I'll see you in the next question."
   ]
  ]
 }

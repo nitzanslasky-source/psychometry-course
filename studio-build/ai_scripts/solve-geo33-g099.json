@@ -50,10 +50,10 @@
   ],
   [
    {
-    "say": "[short pause] Here's the figure again, with the square. Now I see how to find the grey area. It cuts into three pieces we know, with no overlap. The left three-quarter circle, the square, and the right three-quarter circle. Some people call each three-quarter circle a Pac-Man. It's a circle without its quarter.",
+    "say": "Here's the figure again, with the square. We can divide the grey area into three familiar pieces, with no overlap: the left three-quarter circle, the square, and the right three-quarter circle. Each three-quarter circle is a whole circle with one quarter removed.",
     "at": [
      "Here's the figure again",
-     "Now I see",
+     "the square. We",
      "The left three-quarter circle",
      "square, and the"
     ]
@@ -146,18 +146,22 @@
     ]
    },
    {
-    "say": "And the grey shape has more than that. O P is the diagonal of the square, so it's longer than the side, six. Every point of the right half of circle P is at least that far from O. So that half is outside circle O.",
+    "say": "The grey shape contains more than that one circle. From the givens again, the four radii of six form a square, O A P B. O P is its diagonal, so it's longer than the side, six. Now divide circle P in half with a line through P, perpendicular to O P. Take the right half of circle P, away from O. The closest point on that dividing line to O is P. Even P is more than six from O. Every point on the far side is at least that far away, so that whole half is outside circle O.",
     "at": [
-     "And the grey",
-     "O P is the diagonal",
-     "of the square",
+     "The grey shape",
+     "the givens again",
+     "O P is its diagonal",
+     "so it's longer",
+     "Now divide circle P in half",
+     "half with a",
      "the right half of circle P",
-     "P is at"
+     "P, away from"
     ]
    },
    {
     "say": "It adds eighteen pi, and the middle piece between them adds a bit more. So the union is more than thirty-six pi plus eighteen pi, fifty-four pi.",
     "at": [
+     "It adds eighteen pi",
      "It adds eighteen pi",
      "the middle piece",
      "So the union is more than",

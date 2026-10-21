@@ -1,0 +1,176 @@
+{
+ "videoId": "pt51-plug-numbers-4",
+ "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with what is always true, and a special kind of choice."
+  ],
+  [
+   {
+    "say": "Now, questions about what is always true, or not always true. To show that something is not always true, one example where it fails is enough.",
+    "at": [
+     "is always true"
+    ]
+   },
+   {
+    "say": "For example, is a squared plus b squared always equal to the bracket a plus b, squared? Let a equal one and b equal two, two small, easy numbers. One plus four is five, and three squared is nine. Five is not nine, so it's not always true. One counterexample, and we're done.",
+    "at": [
+     "For example, is a squared",
+     "plus b squared",
+     "Let a equal one",
+     "One plus four",
+     "One counterexample"
+    ]
+   },
+   {
+    "say": "But always is different. A few examples that work don't prove always, because the next number might fail. In a question with choices, we don't prove it. We rule out the other three choices, and the one that's left is the answer.",
+    "at": [
+     "But always is different",
+     "A few examples"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Some questions have a last choice like, it cannot be determined, or, none of the above is necessarily true. You'll see it often on the exam. No number can rule that choice out.",
+    "at": [
+     "last choice like",
+     "No number can rule"
+    ]
+   },
+   {
+    "say": "Why? That choice says the answer isn't always the same. And we just saw that examples can't prove always. So when we plug in numbers, that choice always stays.",
+    "at": [
+     "That choice says"
+    ]
+   },
+   {
+    "say": "For example, given: x is not equal to zero. Which of the following is necessarily true? Choice number one, x squared is greater than or equal to x. Choice number two, x squared is smaller than x. Choice number three, x squared is equal to x. And choice number four, none of the above is necessarily true.",
+    "at": [
+     "For example, given",
+     "not equal to",
+     "Choice number one",
+     "is greater than",
+     "Choice number three",
+     "is equal to",
+     "And choice number four",
+     "of the above"
+    ]
+   },
+   {
+    "say": "Necessarily true means true for every allowed x. So one x where a choice is false rules it out. Zero isn't allowed, so the easiest number is one. One squared is one.",
+    "at": [
+     "One squared is one"
+    ]
+   },
+   {
+    "say": "Choice number one says x squared is greater than or equal to x. One is equal to one, so it stays. Choice number two says x squared is smaller than x. One isn't smaller than one, so it's out.",
+    "at": [
+     "Choice number one",
+     "One is equal to one",
+     "so it stays",
+     "One isn't smaller",
+     "so it's out"
+    ]
+   },
+   {
+    "say": "Choice number three says x squared is equal to x. One equals one, so it stays too. And choice number four stays, because no number can rule it out.",
+    "at": [
+     "One equals one",
+     "And choice number"
+    ]
+   },
+   {
+    "say": "Now we try another easy number, two, and we check only choice numbers one and three. Two squared is four. Four is greater than two, so choice number one stays. Four isn't equal to two, so choice number three is out.",
+    "at": [
+     "Two squared is four",
+     "Four is greater",
+     "Four isn't equal to two",
+     "so choice number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number one and choice number four are left. No number can rule out choice number four. So we ask: is choice number one always true? Three or ten would keep choice number one true, just like two.",
+    "at": [
+     "Choice number one and",
+     "number four are"
+    ]
+   },
+   {
+    "say": "To show that the answer can change, we try a different kind of number. Zero, a big number, a negative number, or a fraction, as long as the restriction allows it. Zero isn't allowed here.",
+    "at": [
+     "we try a different kind of number",
+     "Zero, a big"
+    ]
+   },
+   {
+    "say": "A negative number, minus two. Its square is four, and four is greater than minus two. So choice number one still stays.",
+    "at": [
+     "A negative number, minus two",
+     "Its square is"
+    ]
+   },
+   {
+    "say": "A fraction, one half. One half times one half is one quarter. Is one quarter greater than or equal to one half? No, it's smaller. So choice number one isn't always true, and it's out.",
+    "at": [
+     "One half times one half",
+     "is one quarter",
+     "No, it's smaller",
+     "So choice number"
+    ]
+   },
+   {
+    "say": "Only choice number four is left. None of the above is necessarily true, so that's the answer.",
+    "at": [
+     "Only choice number four is left",
+     "None of the"
+    ]
+   },
+   {
+    "say": "And what if every kind of number gives the same result? Then examples alone aren't enough. Back them with a reason, like with six x plus nine y. It's one and a half times four x plus six y, so it's always twenty-seven.",
+    "at": [
+     "Back them with a reason",
+     "like with six"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So, when do I plug in numbers? When there's an expression with a letter and the choices are numbers. When there are letters in the choices. When the amount doesn't matter, like in a ratio. And when there are more letters than equations.",
+    "at": [
+     "when do I plug in numbers",
+     "When there's an",
+     "When the amount",
+     "like in a"
+    ]
+   },
+   {
+    "say": "And how? First, check every restriction. Then choose an easy allowed number, often zero, and say why before you use it. See which choices it rules out. If more than one is left, try another easy number, and check only those.",
+    "at": [
+     "check every restriction",
+     "Then choose an easy allowed number",
+     "number, often zero",
+     "See which choices",
+     "If more than one is left",
+     "left, try another"
+    ]
+   },
+   {
+    "say": "A choice like cannot be determined is never ruled out by a number. If one other choice is left with it, try to break that choice with a different kind of number. And remember, it's your safety net.",
+    "at": [
+     "A choice like cannot be determined",
+     "determined is never",
+     "it's your safety net"
+    ]
+   },
+   {
+    "say": "It's the most important technique on the exam, so practice it a lot. Now let's see it in sample questions. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "It's the most"
+    ]
+   }
+  ]
+ ]
+}

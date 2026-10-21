@@ -3,50 +3,46 @@
  "style": "the teacher reads it herself (Reading Studio), topic-22 scripts (2026-10-18): math_patches/_ai_vis_t22.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Welcome back. Here are three more tools the exam loves. The first one we'll learn here, knowing when we can't find the answer. The other two we'll learn in the questions."
+   "Welcome back. Let's briefly recall when an answer cannot be determined. The next questions will use our other two tools."
   ],
   [
    {
-    "say": "Say a question gives us one equation with two unknowns. Two a plus three p is thirteen. Without any other conditions, can we find one value for each? No, because many pairs work.",
+    "say": "Remember the crates question. Knowing the combined weight didn't tell us each crate's weight. Different pairs could fit. We can use that idea to check whether an answer can be determined.",
     "at": [
-     "us one equation",
-     "Two a plus three p is thirteen",
-     "Without any other"
+     "Knowing the combined"
     ]
    },
    {
-    "say": "For example, a is two and p is three. Two times two is four. Three times three is nine. And four plus nine is thirteen. Or a is five and p is one. Ten plus three is thirteen too. Both pairs fit.",
+    "say": "Suppose two a plus three p is thirteen. If a is two and p is three, we get four plus nine, thirteen. If a is five and p is one, we get ten plus three, thirteen too. Both pairs fit the given equation.",
     "at": [
+     "two a plus three p is thirteen",
+     "is thirteen. If",
      "a is two and p is three",
-     "Two times two",
-     "And four plus nine",
-     "Or a is five and p is one",
-     "Ten plus three"
+     "is three, we",
+     "four plus nine",
+     "a is five and p is one",
+     "plus three, thirteen"
     ]
    },
    {
-    "say": "But what if they ask for four a plus six p? That's exactly double the equation. Every term is times two, so the total is times two too. Two times thirteen is twenty-six. That we can find.",
+    "say": "Now they ask for three a plus two p. With the first pair, three times two is six, and two times three is six. Six plus six is twelve.",
     "at": [
-     "That's exactly double",
-     "Every term is",
-     "Two times thirteen is",
-     "That we can"
+     "Six plus six is twelve"
     ]
    },
    {
-    "say": "And three a plus two p? That's not a multiple of the equation. With the first pair, it's six plus six, twelve. With the second pair, it's fifteen plus two, seventeen. Two different results, so it cannot be determined.",
+    "say": "With the second pair, three times five is fifteen, and two times one is two. Fifteen plus two is seventeen. Both pairs fit the given, but they give different answers: twelve and seventeen. So the answer cannot be determined.",
     "at": [
-     "With the first pair",
-     "six plus six",
-     "With the second pair",
-     "Two different results"
+     "With the second",
+     "Fifteen plus two is seventeen",
+     "Both pairs fit",
+     "So the answer cannot be determined"
     ]
    },
    {
-    "say": "So one equation may leave several possible pairs of values. A multiple of its left side still has a fixed value. For another expression, check whether allowed pairs give different results. If they do, the answer cannot be determined. The exam does offer that as a choice. Let's see the other two tools in the questions. I'll see you in the next video.",
+    "say": "That's the check: two allowed cases give different results. Then there isn't one answer fixed by the givens. Let's see the other two tools in the questions. I'll see you in the next video.",
     "at": [
-     "So one equation may leave",
-     "several possible pairs"
+     "That's the check:"
     ]
    }
   ]

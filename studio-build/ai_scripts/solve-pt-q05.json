@@ -52,10 +52,10 @@
     ]
    },
    {
-    "say": "In the language of probability, the chance of a red one is one sixth, and the chance of a good blue is six sixths. When both must happen, we multiply. One sixth times six sixths is six thirty-sixths. It's the same as counting, six good pairs out of thirty-six.",
+    "say": "We can write that same count as a probability. The chance of a red one is one sixth. The blue die can show any of its six numbers, so its chance of being good here is six sixths. The dice are independent: the red result doesn't change the blue result. So for these two results together, we multiply. One sixth times six sixths is six thirty-sixths. That's the same six good pairs out of thirty-six.",
     "at": [
-     "When both must happen",
-     "One sixth times"
+     "So for these two results together",
+     "together, we multiply"
     ]
    },
    {
@@ -68,14 +68,14 @@
     ]
    },
    {
-    "say": "These cases are linked with or. This one happens, or this one, or this one. With or, we add. Six plus five plus four plus three plus two plus one is twenty-one.",
+    "say": "The red die can show one, or two, and so on. These cases can't happen together in one toss. So we add their good pairs. Six plus five is eleven. Four plus three is seven, and two plus one is three. Eleven plus seven plus three is twenty-one good pairs.",
     "at": [
-     "With or, we add",
+     "So we add their good pairs",
      "Six plus five"
     ]
    },
    {
-    "say": "So the probability is twenty-one out of thirty-six. Both divide by three, so it's seven twelfths, and choice number four is our answer.",
+    "say": "So the probability is twenty-one out of thirty-six. Both are divisible by three, so it's seven twelfths, and choice number four is our answer.",
     "at": [
      "So the probability is",
      "out of thirty-six",
@@ -86,10 +86,12 @@
   ],
   [
    {
-    "say": "[pause] So far, we've met super-methods. In this question there's also an insight. What's an insight? An idea that belongs to one specific question. It's not a method you learn once and use again, because in another question it will be something completely different. These questions are rarer, but they're on the exam, so we'll practice them.",
+    "say": "[pause] So far, we've met super-methods. In this question there's also an insight. What's an insight? We notice something special in this question that makes the work easier. There's no fixed procedure for finding it. A different question may need a different idea. These questions are rarer, but they're on the exam, so we'll practice them.",
     "at": [
      "super-methods. In this",
-     "to one specific"
+     "in this question that",
+     "fixed procedure for",
+     "are rarer, but"
     ]
    },
    {

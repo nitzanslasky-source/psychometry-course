@@ -21,7 +21,7 @@
   ],
   [
    {
-    "say": "[short pause] Here's the figure again, bigger. To find the length of an arc here, we need its central angle. But no central angle stands on arc A G, or on arc E D. So let's draw radii that give us central angles. Let's draw the radius O A and the radius O D.",
+    "say": "[short pause] Here's the figure again, bigger. To find the length of an arc here, we need its central angle. But no central angle is drawn on arc A G, or on arc E D. So let's draw radii that give us central angles. Let's draw the radius O A and the radius O D.",
     "at": [
      "Here's the figure again",
      "To find the",
@@ -32,11 +32,11 @@
     ]
    },
    {
-    "say": "Now let's use the givens. Angle B is twenty-eight degrees. Which arc does it stand on? On A G plus G F, so on the whole arc A F. An inscribed angle doesn't give us a central angle directly. But remember, the central angle on the same arc is twice as big.",
+    "say": "Now let's use the givens. Angle A B F is twenty-eight degrees. It intercepts the whole arc A F, made of A G and G F together. We know the central angle intercepting that same arc is twice the inscribed angle. So we'll use twenty-eight to find the central angle A O F.",
     "at": [
      "the givens. Angle",
-     "Angle B is twenty-eight degrees",
-     "On A G"
+     "Angle A B F is twenty-eight degrees",
+     "A F, made"
     ]
    },
    {
@@ -49,10 +49,10 @@
     ]
    },
    {
-    "say": "Next, angle C is fifty-seven degrees, and it stands on arc F D. The central angle on that arc is twice as big. Two times fifty-seven is a hundred fourteen degrees.",
+    "say": "Next, angle C is fifty-seven degrees, and it intercepts arc F D. The central angle on that arc is twice as big. Two times fifty-seven is a hundred fourteen degrees.",
     "at": [
      "angle C is fifty-seven",
-     "and it stands",
+     "and it intercepts",
      "Two times fifty-seven",
      "is a hundred fourteen degrees"
     ]
@@ -67,10 +67,10 @@
     ]
    },
    {
-    "say": "Together with the middle angle, G O E, they make the whole angle A O D. Angle A O D is fifty-six plus a hundred fourteen. That's a hundred seventy degrees.",
+    "say": "The two end angles and the middle angle G O E together make the whole angle A O D. We can also find that whole angle by adding A O F and F O D. Fifty-six plus a hundred fourteen is a hundred seventy degrees.",
     "at": [
-     "Angle A O D is fifty-six plus",
-     "fifty-six plus a"
+     "Fifty-six plus",
+     "is a hundred"
     ]
    },
    {

@@ -741,6 +741,11 @@
        "pentagon $3\\cdot36°$, hexagon $4\\cdot30°$"
       ],
       [
+       "Angle at a corner, arms through corners (regular)",
+       "$\\frac{180°}{n}$ for every side between the arms",
+       "10 sides, 3 between: $3\\cdot18°=54°$"
+      ],
+      [
        "Radii (regular)",
        "$n$ isosceles triangles; hexagon: 6 equilateral, radius = side",
        "pentagon: $72°$, $54°$, $54°$"

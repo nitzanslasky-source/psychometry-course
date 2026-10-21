@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "Given: x is greater than or equal to four. The square root of x plus two, minus the square root of x squared minus eight x plus sixteen. What does it equal?",
+    "say": "Given: x is greater than or equal to four. We have a square root inside another square root. Inside the outer root is x plus two, minus the square root of x squared minus eight x plus sixteen. What does this whole expression equal?",
     "voice": "calm",
     "at": [
      "Given"
@@ -45,10 +45,10 @@
     ]
    },
    {
-    "say": "We're left with the root of four plus two, minus zero. That's the root of six. Choice number four is our answer.",
+    "say": "The inner root is now zero. Inside the outer root, we have four plus two minus zero, which is six. So the whole expression is the root of six. Choice number four is our answer.",
     "at": [
-     "We're left with the root",
-     "of four plus",
+     "So the whole expression is the root",
+     "the root of",
      "Choice number four is our answer"
     ]
    }
@@ -69,14 +69,14 @@
     ]
    },
    {
-    "say": "Then it's x plus two, minus the bracket x minus four. The minus goes to both parts, so it's x plus two minus x plus four. The x's cancel, and two plus four is six. The root of six, choice number four again.",
+    "say": "Inside the outer root, we subtract x minus four from x plus two. We subtract both terms of x minus four. So that becomes x plus two minus x plus four. The x terms cancel, and two plus four is six. The outer root is still there, so the answer is the root of six. Choice number four again.",
     "at": [
-     "Then it",
-     "minus the bracket",
-     "The minus goes to both parts",
-     "parts, so it's",
+     "Inside the outer root",
+     "subtract x minus",
+     "We subtract both terms",
+     "x minus four. So",
      "The x",
-     "plus four is",
+     "two plus four",
      "choice number four again"
     ]
    },

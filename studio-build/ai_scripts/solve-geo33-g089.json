@@ -77,28 +77,30 @@
     ]
    },
    {
-    "say": "But sixteen pi isn't in the choices. The choices are ranges, so they want us to estimate. How much is pi? Its digits go on forever, three point one four one five nine, and so on. So pi is more than three point one four, and less than three point one five.",
+    "say": "Sixteen pi is not in the choices. The choices give ranges, so we need to estimate its value. For these close ranges, using three for pi is too rough. We use more accurate bounds: pi is more than three point one four, and less than three point one five.",
     "at": [
-     "So pi is more than three point one four",
-     "three point one four, and"
+     "pi is more than three point one four",
+     "point one four"
     ]
    },
    {
-    "say": "First the lower end, sixteen times three point one four. Sixteen times three is forty-eight. Now sixteen times point one four. Point one four is fourteen hundredths, so we work out sixteen times fourteen, and then make it hundredths. Sixteen times fourteen is two hundred twenty-four, so it's two point two four.",
+    "say": "First the lower end, sixteen times three point one four. Sixteen times three is forty-eight. Now sixteen times point one four. That's fourteen hundredths, so first calculate sixteen times fourteen. Sixteen times ten is a hundred sixty. Sixteen times four is sixty-four. Together, two hundred twenty-four. Make that hundredths, and we get two point two four.",
     "at": [
      "Sixteen times three is forty-eight",
      "Now sixteen times",
-     "Sixteen times fourteen is two hundred",
-     "hundred twenty-four, so"
+     "Together, two hundred twenty-four",
+     "Make that hundredths",
+     "get two point"
     ]
    },
    {
-    "say": "Together, fifty point two four. So sixteen pi is more than fifty point two four. Now let's find the upper end. Sixteen times point one five is two point four. So sixteen times three point one five is fifty point four.",
+    "say": "Together, forty-eight plus two point two four is fifty point two four. So sixteen pi is more than fifty point two four. Now the upper end, sixteen times three point one five. The three gives forty-eight again. Point one five is a tenth plus half a tenth. A tenth of sixteen is one point six, and half of that is zero point eight. Together that's two point four. Forty-eight plus two point four is fifty point four.",
     "at": [
-     "Together, fifty point two four",
-     "So sixteen pi",
-     "So sixteen times three point one five",
-     "one five is fifty"
+     "forty-eight plus two point two four is fifty point two four",
+     "four is fifty",
+     "Together that's two point four",
+     "Forty-eight plus two point four is fifty point four",
+     "is fifty point four"
     ]
    },
    {

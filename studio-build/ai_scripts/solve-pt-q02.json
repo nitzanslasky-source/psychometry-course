@@ -46,10 +46,10 @@
     ]
    },
    {
-    "say": "Open the brackets. Thirteen times five hundred is six thousand five hundred, and thirteen times x is thirteen x. Nine times six hundred is five thousand four hundred, and nine times x is nine x.",
+    "say": "Let's multiply each term inside the brackets. On the left, thirteen times five hundred is six thousand five hundred. Thirteen times minus x is minus thirteen x. On the right, nine times six hundred is five thousand four hundred. Nine times x is nine x. So we have six thousand five hundred minus thirteen x, equal to five thousand four hundred plus nine x.",
     "at": [
-     "Open the brackets",
-     "six thousand five"
+     "Let's multiply each term",
+     "On the left"
     ]
    },
    {

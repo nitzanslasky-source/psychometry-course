@@ -7,9 +7,9 @@
   ],
   [
    {
-    "say": "The number must obey every condition in the question. If it says x is at least four, x can't be two.",
+    "say": "How do we choose the number? First, we check every restriction in the question. The number must obey all of them. If it says x is at least four, x can't be two.",
     "at": [
-     "every condition in",
+     "the number? First",
      "If it says x is at least four",
      "at least four"
     ]
@@ -24,10 +24,10 @@
     ]
    },
    {
-    "say": "In a figure, choose a value that looks right in the drawing. If an angle looks like about fifty degrees, don't plug in a hundred twenty.",
+    "say": "In a figure, choose values that fit the given conditions. Don't choose an angle just because it looks that size in the drawing. The figure may not be drawn to scale.",
     "at": [
      "In a figure",
-     "value that looks"
+     "that fit the"
     ]
    },
    {
@@ -40,106 +40,120 @@
   ],
   [
    {
-    "say": "Second, check that the choices come out different. Here's an example. x squared times x cubed, over x. The choices are x to the fourth, x to the fifth, x to the sixth, and x cubed.",
+    "say": "Second, we choose an easy number that's allowed. Zero is often the fastest, because every term with zero in it becomes zero. Zero is out only when it breaks a restriction, like the bottom of a fraction.",
     "at": [
-     "choices come out",
+     "easy number that's",
+     "Zero is often the fastest",
+     "because every term"
+    ]
+   },
+   {
+    "say": "Here's an example. x times the bracket x plus one. The choices are x squared plus x, three x, x squared plus one, and four x.",
+    "at": [
      "Here's an example",
-     "x squared times"
-    ]
-   },
-   {
-    "say": "Say I plug in x equals one. One to any power is one. So the question gives one, and all four choices give one too. Nothing is ruled out.",
-    "at": [
-     "So the question gives one",
-     "and all four"
-    ]
-   },
-   {
-    "say": "Zero does the same. Zero to any power is zero, so all four choices give zero. So zero and one often make the choices come out the same, and then they can't tell them apart.",
-    "at": [
-     "Zero does the same",
-     "zero, so all",
-     "So zero and one often",
-     "make the choices"
-    ]
-   },
-   {
-    "say": "Now x equals two. Two squared is four, and two cubed is eight. Four times eight is thirty-two, and thirty-two over two is sixteen. The choices give sixteen, thirty-two, sixty-four and eight. They're all different, and only x to the fourth gives sixteen.",
-    "at": [
-     "Now x equals two",
-     "two cubed is",
-     "Four times eight",
-     "and thirty-two over",
-     "The choices give sixteen",
-     "sixty-four and eight"
-    ]
-   },
-   {
-    "say": "So before you calculate, look at the choices. If they have powers, products or fractions, skip zero and one, and start with two or three. When the choices are numbers, zero and one are fine, because there's nothing to tie.",
-    "at": [
-     "So before you calculate",
-     "or fractions, skip"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Third, give different letters different numbers. Look at two choices, a squared b, and a b squared.",
-    "at": [
-     "Look at two choices",
-     "squared b, and"
-    ]
-   },
-   {
-    "say": "If a and b are both two, both choices give eight. Two squared times two is eight, and two times two squared is eight. They tie.",
-    "at": [
-     "They tie"
-    ]
-   },
-   {
-    "say": "With a equals two and b equals three, a squared b is four times three, twelve. And a b squared is two times nine, eighteen. Now they're different.",
-    "at": [
-     "With a equals",
-     "Now they're different"
-    ]
-   },
-   {
-    "say": "Different letters may be equal, unless the question says they're not. But equal numbers often hide the difference, so we choose different ones.",
-    "at": [
-     "Different letters may be equal",
-     "unless the question"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Fourth, rule out three choices. Sometimes even a good number leaves two. For example, x times the bracket x plus one. The choices are x squared plus x, three x, x squared plus one, and four x.",
-    "at": [
-     "choices. Sometimes even",
-     "For example, x times",
-     "bracket x plus",
+     "x times the",
      "The choices are",
      "plus x, three"
     ]
    },
    {
-    "say": "Let's take x equals two. Two times three is six, so the right choice must give six. x squared plus x is four plus two, six. Three x is six too. x squared plus one is five, out. And four x is eight, out.",
+    "say": "Is there a restriction? No, x can be any number. So zero is allowed, and we take x equals zero. Zero times one is zero. So the right choice must give zero when x is zero.",
     "at": [
-     "Let's take x equals two",
-     "Two times three",
-     "x squared plus x is four plus two",
-     "four plus two"
+     "Zero times one is zero",
+     "give zero when"
     ]
    },
-   "Two choices give six, so we can't decide yet. This is why we don't stop at the first choice that fits. We take a tie-breaker number, and we check only the two choices that are left. The ones that are out stay out.",
    {
-    "say": "Now x equals three. Three times four is twelve. x squared plus x is nine plus three, also twelve. Three x is nine, not twelve, out. The answer is x squared plus x. [pause] Okay. I'll see you in the next part.",
+    "say": "Third, we check what zero rules out. Choice number one says x squared plus x. Zero plus zero is zero, so it stays. Choice number two says three x. Three times zero is zero, so it stays too.",
     "at": [
-     "Three times four is twelve",
-     "x squared plus x is nine plus three",
-     "nine plus three",
-     "Three x is nine",
-     "The answer is"
+     "Zero plus zero is zero",
+     "so it stays",
+     "Three times zero is zero",
+     "so it stays too"
+    ]
+   },
+   {
+    "say": "Choice number three says x squared plus one. Zero plus one is one, not zero, so it's out. Choice number four says four x. Four times zero is zero, so it stays.",
+    "at": [
+     "Zero plus one is one",
+     "not zero, so",
+     "Four times zero is zero",
+     "so it stays"
+    ]
+   },
+   {
+    "say": "Three choices give zero, so zero can't tell them apart. That's why we don't stop at the first choice that fits. Fourth, we try another easy allowed number, and we check only the three choices that are left.",
+    "at": [
+     "Three choices give zero",
+     "zero can't tell"
+    ]
+   },
+   {
+    "say": "Now x equals one. One times two is two, so the right choice must give two. x squared plus x is one plus one, two, so it stays. Three x is three, and four x is four. They aren't two, so they're out.",
+    "at": [
+     "Now x equals one",
+     "One times two",
+     "x squared plus x is one plus one",
+     "one plus one",
+     "Three x is three",
+     "four x is"
+    ]
+   },
+   {
+    "say": "Only x squared plus x is left, so it's the answer. No third try is needed. So that's how we choose. Check the restrictions, choose an easy allowed number, and see what it rules out. Try another number only if more than one choice is left.",
+    "at": [
+     "Only x squared plus x is left",
+     "is left, so",
+     "Check the",
+     "easy allowed number",
+     "Try another number only if",
+     "more than one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's an example where zero isn't allowed. x squared times x to the power of three, all divided by x. The choices are x to the power of four, x to the power of five, x to the power of six, and x to the power of three.",
+    "at": [
+     "Here's an example",
+     "x squared times"
+    ]
+   },
+   {
+    "say": "First the restrictions. x is at the bottom of the fraction, and we can't divide by zero. So zero isn't allowed here.",
+    "at": [
+     "First the restrictions",
+     "x is at"
+    ]
+   },
+   {
+    "say": "The next easy number is one. One to any power is one. So the question gives one, and all four choices give one too. Nothing is ruled out, so we need another try.",
+    "at": [
+     "So the question gives one",
+     "Nothing is ruled"
+    ]
+   },
+   {
+    "say": "Now x equals two. Two squared is four, and two to the power of three is eight. Four times eight is thirty-two, and thirty-two over two is sixteen. So the right choice must give sixteen.",
+    "at": [
+     "Now x equals two",
+     "two to the",
+     "Four times eight",
+     "and thirty-two over"
+    ]
+   },
+   {
+    "say": "The choices give sixteen, thirty-two, sixty-four and eight. Only x to the power of four gives sixteen. So this one try rules out the other three.",
+    "at": [
+     "The choices give sixteen",
+     "sixty-four and eight"
+    ]
+   },
+   {
+    "say": "So zero and one are fine to start with. But with powers in the choices, they often make every choice give the same result. Then we just take the next easy allowed number. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "they often make every choice",
+     "give the same"
     ]
    }
   ]

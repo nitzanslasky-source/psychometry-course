@@ -3,7 +3,53 @@
  "style": "the teacher reads it herself (Reading Studio), topic-51 scripts (2026-10-14): math_patches/_ai_vis_t51.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Let's continue with two more cases, and one more rule."
+   "Let's continue with two letters, and two more cases."
+  ],
+  [
+   {
+    "say": "Two letters may get the same number, unless the question says they're different. Giving them the same number is often the fastest. For example, the bracket a plus three, times the bracket b plus three. From that product we subtract three a, three b, and a b. The choices are zero, three, six and nine.",
+    "at": [
+     "the same number",
+     "For example",
+     "plus three, times",
+     "The choices are zero",
+     "six and nine"
+    ]
+   },
+   {
+    "say": "There's no restriction, so let's take zero for both letters. Zero plus three is three, and three times three is nine. Three a, three b and a b are all zero. So the expression is nine.",
+    "at": [
+     "three times three is nine",
+     "Three a, three",
+     "are all zero"
+    ]
+   },
+   {
+    "say": "The choices are numbers, so only one of them can be nine, choice number four. One try is enough.",
+    "at": [
+     "The choices are numbers",
+     "only one of"
+    ]
+   },
+   {
+    "say": "With letters in the choices, the same number can make two choices tie. Look at two choices, a squared b, and a b squared. With a and b both one, both choices give one.",
+    "at": [
+     "Look at two choices",
+     "squared b, and",
+     "With a and b both one"
+    ]
+   },
+   {
+    "say": "So we keep a as one, and we change b to two. Then we check only those two choices. a squared b is one times two, two. And a b squared is one times four, four. Now they're different. So different letters don't need different numbers. We change one only when the same number makes choices tie.",
+    "at": [
+     "So we keep",
+     "a squared b is one times two",
+     "And a b squared is one times four",
+     "one times four",
+     "So different letters don't need",
+     "We change one"
+    ]
+   }
   ],
   [
    {
@@ -40,14 +86,14 @@
      "six y equals"
     ]
    },
-   "One equation with two letters has many solutions. But they ask for one number, so it must come out the same for every solution. So I may take the easiest solution.",
+   "An equation with two letters can have many allowed solutions. Sometimes the result they ask for changes between them. Then it cannot be determined. But here, both terms they ask for are one and a half times the terms in the given equation. So their sum is fixed too. Let's use one easy solution to calculate it.",
    {
-    "say": "I give one letter a value, and I solve the equation for the other. x equals zero, because zero kills a whole term. Then six y equals eighteen, so y is three.",
+    "say": "I give one letter a value, and I solve the equation for the other. x equals zero, because multiplying by zero makes the whole x term zero. Then six y equals eighteen, so y is three.",
     "at": [
      "I give one letter a value",
      "value, and I",
      "x equals zero",
-     "kills a whole"
+     "by zero makes"
     ]
    },
    {
@@ -57,7 +103,7 @@
      "and nine times"
     ]
    },
-   "Here zero is perfect, because the answer is a number, so there's nothing to tie. And I chose only x. If I chose both letters, the equation probably wouldn't hold.",
+   "Here zero makes the calculation easy, and it's allowed. But I chose only x. The equation then made y equal to three. I can't choose both letters freely: they still have to satisfy the equation.",
    {
     "say": "And it's really true. Six x plus nine y is one and a half times four x plus six y, because each part is one and a half times as big. And one and a half times eighteen is twenty-seven.",
     "at": [
@@ -68,13 +114,13 @@
   ],
   [
    {
-    "say": "One more trick for choosing the number. In a story with letters, look for the value where nothing happens. Then you know the answer without any formula.",
+    "say": "One more trick for choosing the number. In a story with letters, look for an allowed value where nothing changes. If nobody joins or nothing is added, sometimes we know the result without a formula. But that value must still be allowed by the question.",
     "at": [
      "choosing the number"
     ]
    },
    {
-    "say": "For example, n friends rent a boat for P shekels and share the cost. Then k more friends join, and they share it again. By how much less does each one pay?",
+    "say": "For example, n friends rent a boat for P shekels and share the cost. Then k more friends may join. In this example k may be zero: nobody has to join. They share the cost again. By how much less does each one pay?",
     "at": [
      "For example, n friends",
      "a boat for"
@@ -90,70 +136,10 @@
     ]
    },
    {
-    "say": "This value often leaves two choices. Then use a tie-breaker, an ordinary number like k equals one, and check only the two that are left.",
+    "say": "This value often leaves two choices. Then use a tie-breaker, an ordinary number like k equals one, and check only the two that are left. [pause] Okay. I'll see you in the next part.",
     "at": [
      "This value often leaves",
      "Then use a"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "Last, questions about what is always true, or not always true. To show that something is not always true, one example where it fails is enough.",
-    "at": [
-     "is always true"
-    ]
-   },
-   {
-    "say": "For example, is a squared plus b squared always equal to the bracket a plus b, squared? Let a equal one and b equal two, two small, different numbers. One plus four is five, and three squared is nine. Five is not nine, so it's not always true. One counterexample, and we're done.",
-    "at": [
-     "For example, is a squared",
-     "plus b squared",
-     "Let a equal one",
-     "One plus four",
-     "One counterexample"
-    ]
-   },
-   {
-    "say": "But always is different. A few examples that work don't prove always, because the next number might fail. In a question with choices, we don't prove it. We rule out the other three choices, and the one that's left is the answer.",
-    "at": [
-     "But always is different",
-     "A few examples"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "So, when do I plug in numbers? When there's an expression with a letter and the choices are numbers. When there are letters in the choices. When the amount doesn't matter, like in a ratio. And when there are more letters than equations.",
-    "at": [
-     "when do I plug in numbers",
-     "When there's an",
-     "When the amount",
-     "like in a"
-    ]
-   },
-   {
-    "say": "And how? Say which number and why, before you use it. Check that the choices come out different, so when the choices have letters, skip zero and one, because they often make choices tie.",
-    "at": [
-     "Say which number and why",
-     "before you use",
-     "Check that the choices",
-     "out different, so"
-    ]
-   },
-   {
-    "say": "Give different letters different numbers. Rule out three choices, and if two are left, use a tie-breaker number. And remember, it's your safety net.",
-    "at": [
-     "Give different letters",
-     "Rule out three choices",
-     "if two are",
-     "it's your safety net"
-    ]
-   },
-   {
-    "say": "It's the most important technique on the exam, so practice it a lot. Now let's see it in sample questions. [pause] Okay. I'll see you in the next video.",
-    "at": [
-     "It's the most"
     ]
    }
   ]

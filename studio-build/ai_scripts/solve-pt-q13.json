@@ -12,9 +12,9 @@
     "pause": 0.5
    },
    {
-    "say": "Let's try to understand it. A pen has x of ink, and a word needs y, so one pen writes x over y words. Then we'd divide x cubed y by x over y, and that's where many students get tangled.",
+    "say": "Let's try to understand it. A pen holds x cubic centimeters of ink, and each word needs y cubic centimeters, so one pen writes x over y words. Then we'd divide x cubed y by x over y, and that's where many students get tangled.",
     "at": [
-     "we'd divide x"
+     "divide x cubed"
     ]
    },
    {
@@ -87,7 +87,7 @@
     ]
    },
    {
-    "say": "So it's x cubed y divided by x over y. Dividing by a fraction is multiplying by its flip, y over x. An x cancels, so x cubed becomes x squared, and y times y is y squared. x squared y squared, choice number one again. [pause] Okay. I'll see you in the next question.",
+    "say": "So it's x cubed y divided by x over y. Dividing by a fraction is multiplying by its reciprocal. We swap the top and bottom, so we multiply by y over x. An x cancels, so x cubed becomes x squared, and y times y is y squared. x squared y squared, choice number one again. [pause] Okay. I'll see you in the next question.",
     "at": [
      "So it",
      "divided by x",

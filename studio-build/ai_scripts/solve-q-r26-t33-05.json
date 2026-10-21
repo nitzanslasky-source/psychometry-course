@@ -163,7 +163,7 @@
     ]
    },
    {
-    "say": "We know both of these from expressions. First, big R plus small r, all squared, is big R squared, plus two big R small r, plus small r squared. [short pause] Then, big R minus small r, all squared, is big R squared, minus two big R small r, plus small r squared.",
+    "say": "We can expand both brackets using the identities we know. First, big R plus small r, all squared, is big R squared, plus two big R small r, plus small r squared. [short pause] Then, big R minus small r, all squared, is big R squared, minus two big R small r, plus small r squared.",
     "at": [
      "First, big R plus small r",
      "r, all squared",
@@ -179,12 +179,12 @@
     ]
    },
    {
-    "say": "So D C squared is four big R small r. A length is positive, so D C is the root of four big R small r. That's two times the root of big R times small r. [short pause] Here it's two times the root of eight times two, two times the root of sixteen. Two times four is eight, the same answer.",
+    "say": "So D C squared is four big R small r. A length is positive, so D C is the square root of that whole product. The square root of four is two. So D C is two times the square root of the whole product, big R times small r. Here the product is eight times two, sixteen. Two times the root of sixteen is two times four, eight. The same answer.",
     "at": [
-     "so D C is the root of four",
-     "That's two times",
-     "Here it's two times the root",
-     "root of eight"
+     "so D C is the square root of that whole product",
+     "The square root of four",
+     "Here the product is eight times two",
+     "times two, sixteen"
     ]
    }
   ],
@@ -211,13 +211,13 @@
     ]
    },
    {
-    "say": "So remember when it works. Two circles touch each other from the outside, and D C is the piece of a common tangent line between its two touching points. Then D C is two times the root of big R times small r.",
+    "say": "Remember when this formula works. The circles touch each other from the outside. D C joins the two different points where one outside tangent line touches them, like the line in our figure. Then D C is two times the square root of the whole product, big R times small r.",
     "at": [
-     "So remember when it works",
-     "Two circles touch"
+     "Remember when this formula works",
+     "The circles touch"
     ]
    },
-   "If the circles don't touch, but there's still a common tangent like this, cut off the same right triangle. Its hypotenuse is the distance between the centers. And if one circle is inside the other, there's no such tangent at all. [pause] Okay. I'll see you in the next question."
+   "If the circles don't touch, but there is an outside tangent like this, we can still draw the same right triangle. Its hypotenuse is the distance between the centers. But we cannot use the same short formula, because that distance is no longer the sum of the radii. If one circle is inside the other, there is no segment like D C joining two different touching points. Okay. I'll see you in the next question."
   ]
  ]
 }

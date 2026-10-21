@@ -21,7 +21,7 @@
     ]
    },
    {
-    "say": "[short pause] So let's drop a height from D down to B C, and call its foot E. Now we've split the trapezoid into a rectangle, A B E D, and a right triangle, D E C.",
+    "say": "[short pause] So let's drop a height from D down to B C, and call its foot E, the point where the height meets the base. Now we've split the trapezoid into a rectangle, A B E D, and a right triangle, D E C.",
     "at": [
      "let's drop a height from D",
      "D down to",

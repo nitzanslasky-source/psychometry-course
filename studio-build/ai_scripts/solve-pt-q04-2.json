@@ -16,7 +16,7 @@
     ]
    },
    {
-    "say": "The volume of a cube is its edge, times itself three times. Three a times three a times three a. Three times three times three is twenty-seven, so the cube is twenty-seven a cubed.",
+    "say": "The volume of a cube is its edge length cubed. Three a times three a times three a. Three times three times three is twenty-seven, so the cube is twenty-seven a cubed.",
     "at": [
      "Three times three times three",
      "is twenty-seven, so"
@@ -30,9 +30,9 @@
     ]
    },
    {
-    "say": "Every choice has a cubed with pi in front. Pi is a little more than three, and for an estimate, three is enough.",
+    "say": "Every choice is a number times a to the power of three. The cube's volume is twenty-seven times that same positive quantity. So we can compare the numbers in front of it. Pi is a little more than three. We'll use three to estimate those numbers.",
     "at": [
-     "three is enough"
+     "We'll use three to estimate"
     ]
    },
    {
@@ -80,7 +80,7 @@
    },
    "Look at the choices they gave. Not three quarters, two thirds and four fifths of the cube, which would be hard to tell apart. They gave three choices that are each bigger than the whole cube. That's the exam's way of giving an advantage to whoever thinks. If you calculate the long way, it takes time, and you might slip. If you estimate, the choices help you.",
    {
-    "say": "So when do I estimate? When the choices are far apart in size, and you can compare the answer with something you know, like the whole shape around it. Replace pi with three, and rule out what's too big or too small.",
+    "say": "So when do I estimate? When the choices are far apart in size, and you can compare the answer with something you know, like the whole shape around it. Use a rough estimate, like three for pi here, to rule out what's too big or too small.",
     "at": [
      "So when do I estimate",
      "When the choices"

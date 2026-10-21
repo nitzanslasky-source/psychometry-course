@@ -39,15 +39,15 @@
     ]
    },
    {
-    "say": "Now the tangent rule. The sides are tangents, so I draw the radii to the two legs. Each radius is perpendicular to its leg.",
+    "say": "Now the tangent rule. Each side touches the circle, so each side is tangent to it. I draw radii from the center to the points where the circle touches the two legs. Each radius is perpendicular to its leg, so each gives us a right angle.",
     "at": [
-     "The sides are",
-     "so I draw the radii",
-     "Each radius is"
+     "Each side touches",
+     "I draw radii from the center",
+     "center to the"
     ]
    },
    {
-    "say": "So the little corner shape has three right angles, and its fourth angle is a right angle too. Its two sides from the center are radii, so both are r. A rectangle with two equal sides next to each other is a square. So it's a square, r by r, in the corner.",
+    "say": "Look at the small quadrilateral in the right-angle corner. It has the triangle's right angle and the two right angles we just found. So it has three right angles, and its fourth angle must also be ninety degrees. Its two sides from the center are radii, so both are r. A rectangle with two equal sides next to each other is a square. So the corner shape is a square with side r.",
     "at": [
      "Its two sides from",
      "center are radii"
@@ -61,10 +61,10 @@
     ]
    },
    {
-    "say": "Now let's use the second rule. Two tangents from the same point are equal. From the top corner come two tangents, so the top piece of the hypotenuse is also eight minus r. From the bottom corner on the right, the other piece is fifteen minus r.",
+    "say": "Now let's use the second rule. Two tangent segments from the same point to the same circle are equal. From the top corner, one segment on the short leg is eight minus r. So the matching piece of the hypotenuse is also eight minus r. From the bottom corner on the right, the matching piece of the hypotenuse is fifteen minus r.",
     "at": [
      "From the top corner",
-     "two tangents, so"
+     "segment on the"
     ]
    },
    {

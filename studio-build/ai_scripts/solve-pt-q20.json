@@ -30,7 +30,7 @@
     ]
    },
    {
-    "say": "Now we divide. Dividing by a fraction means multiplying by it upside down. So it's eleven over thirty, times thirty over twenty-two. The thirties cancel, and we're left with eleven over twenty-two, which is one half.",
+    "say": "Now we divide. Dividing by a fraction means multiplying by its reciprocal, with the top and bottom swapped. So it's eleven over thirty, times thirty over twenty-two. The thirties cancel, and we're left with eleven over twenty-two, which is one half.",
     "at": [
      "Dividing by a",
      "So it's eleven over thirty",
@@ -62,10 +62,10 @@
     ]
    },
    {
-    "say": "Maybe it's easier to see it like this. On top we have a banana and an apple, and on the bottom, two bananas and two apples. The bottom is exactly double the top, so it's one half.",
+    "say": "Maybe it's easier to see it like this. Call one fifth a banana, and one sixth an apple. The top has one banana and one apple. The bottom has two bananas and two apples: twice that same total. So the top is half of the bottom, and the fraction is one half.",
     "at": [
-     "On top we have a banana",
-     "banana and an"
+     "The top has one banana",
+     "and one apple"
     ]
    },
    {

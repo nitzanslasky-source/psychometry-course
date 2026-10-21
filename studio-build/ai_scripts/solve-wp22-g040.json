@@ -105,14 +105,23 @@
      "a hundred nineteen",
      "five, so it's"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "Let's keep the idea from this question. Enough for six, but not enough for seven, gives two inequalities. Six tickets cost the money or less, and seven tickets cost more than the money. So the price must fit both limits. Whenever you see enough for some number, but not for one more, write both of them.",
+    "say": "Now let's go back to our first inequality. The price is at most seventeen and a half. That already rules out eighteen and twenty. Only fifteen and seventeen remain. Can we avoid solving the second inequality? Yes, but we still have to check its given: she cannot buy seven tickets. If the price were fifteen, seven tickets would cost seven times fifteen, a hundred five. That's exactly her money, so she could buy seven. Fifteen is out. Only seventeen remains, so choice number two is our answer. We saved the second inequality, not the second condition. Don't just choose the answer nearest the upper limit; cross out the other remaining answer for a reason.",
     "at": [
-     "gives two inequalities",
-     "cost the money",
-     "seven tickets cost more than the money",
-     "So the price"
+     "to our first",
+     "price is at",
+     "rules out eighteen",
+     "Only fifteen and seventeen remain",
+     "Can we avoid",
+     "seven times fifteen, a hundred five",
+     "That's exactly her",
+     "Fifteen is out",
+     "Only seventeen remains",
+     "choice number two is our answer",
+     "We saved the"
     ]
    },
    {

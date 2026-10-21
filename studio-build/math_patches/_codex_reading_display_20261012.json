@@ -9837,6 +9837,28 @@
       "the bracket a plus b, squared",
       "(a + b)²"
      ]
+    ],
+    "2.4": [
+     [
+      "two choices, a squared b, and a b squared",
+      "two choices, a²b and ab²"
+     ]
+    ],
+    "2.5": [
+     [
+      "a squared b is one times two, two. And a b squared is one times four, four.",
+      "a²b = 1 × 2 = 2. And ab² = 1 × 4 = 4."
+     ]
+    ],
+    "2.1": [
+     [
+      "the bracket a plus three, times the bracket b plus three",
+      "(a + 3)(b + 3)"
+     ],
+     [
+      "three a, three b, and a b.",
+      "3a, 3b and ab."
+     ]
     ]
    }
   },

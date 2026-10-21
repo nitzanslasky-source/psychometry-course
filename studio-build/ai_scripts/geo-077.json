@@ -55,12 +55,12 @@
     ]
    },
    {
-    "say": "Why? The tangent touches the circle only at D. Every other point of the tangent is outside the circle, so it's farther from O than the radius. So D is the point of the tangent that is closest to O. And we know the shortest way from a point to a line is the perpendicular. So O D is perpendicular to the tangent.",
+    "say": "Why are they perpendicular? The tangent touches the circle only at D. Every other point of the tangent is outside the circle, so it is farther from O than D is. So D is the point of the tangent closest to O. The shortest segment from a point to a line is perpendicular to that line. That shortest segment is O D, so O D is perpendicular to the tangent.",
     "at": [
      "Every other point of the tangent",
      "tangent is outside",
      "So D is the point of the tangent",
-     "of the tangent that"
+     "of the tangent closest"
     ]
    },
    {

@@ -1640,12 +1640,12 @@ video('solve-q-r26-t22-20', 'solution', qid='q-r26-t22-20', slides=[
 # Hebrew (wp 1931-1934): "give it to the little guy" («תן למסכן», the approved English version), a very important
 # technique when building equations; it sounds funny but really helps, even strong students slip. Taught in g039.
 l_1 = I('l_1', 'Building an equation: $\\ $twice $\\cdot$ three times $\\cdot$ ages', size=30)
+l_eq = IH('l_eq', '$2\\times$ Tom\'s age $=$ Maya\'s age', size=32)
 video('wp-039', 'lesson', slides=[
     S('Give It to the Little Guy',
-      L('Now a technique that sounds a bit funny, but it really saves points, even for strong students. We call it give it to the little guy. That means multiply the smaller amount to make the amounts equal.')),
+      L("Now a technique that helps us build equations. We call it give it to the little guy. When one amount is twice another, it's easy to put the times two on the wrong side. Let's understand which amount we multiply, and why.")),
     S('Where it helps',
-      L("We use it when we build an equation with words like twice, or three times. It comes up a lot in age questions, "
-        "and in questions about money.", show(l_1, 'with words like twice')),
+      L("Suppose Maya is twice Tom's age. Their ages aren't equal. But two times Tom's age is equal to Maya's age. That's the equality we write: two times Tom equals Maya. We multiply Tom's age because doubling the smaller age gives the bigger age. If we doubled Maya's age instead, we'd make the bigger age even bigger. That's why the times two goes with Tom. We use this with words like twice, or three times, often with ages and money.", show(l_eq, 'two times Tom equals Maya'), show(l_1, 'with words like twice')),
       L("Let's see it in an age question. And after it, one more question about building, this time with an inequality. "
         "I'll see you in the next video.")),
 ])
@@ -1678,9 +1678,17 @@ y_8 = IH('y_8', '(3) $14\\to9$, $\\ $Maya $18$', size=30, col=1)
 y_8b = IH('y_8b', 'gap $18-9=9$ ✓', size=30, col=1)
 y_9a = IH('y_9a', 'gap $9$, $\\ $Maya $=2\\cdot$Tom', size=30)
 y_9 = IH('y_9', '$9$ and $18$', size=30)
-y_10 = IH('y_10', 'Tom $t$, $\\ $Maya $2t$', size=30, col=1)
-y_10b = IH('y_10b', 'gap $2t-t=t=9$', size=30, col=1)
+y_10 = IH('y_10', 'One part $=9$ years', size=30, col=1)
+y_10b = IH('y_10b', 'Difference $=$ one part $=9$', size=30, col=1)
 y_11 = IH('y_11', 'Tom now: $\\ 9+5=14$', size=30)
+y_parts = UNITS('y_parts', [('Tom', 1), ('Maya', 2)], [
+    ('double', [('fill', 0, 0, 1), ('fill', 1, 0, 2)]),
+    ('gap', [('br', 1, 1, 2, '9 years'), ('in', 0, 0, '9')]),
+], unit=120, boxh=50, gap=68, labw=100, w=580, title='Ages five years ago: one equal part and two')
+for _part in y_parts.values():
+    _part['_x'] = 400; _part['_y'] = 365; _part['_col'] = 0
+for _item, _yy in ((y_9a, 330), (y_10, 400), (y_10b, 460), (y_9, 520), (y_11, 580)):
+    _item['_x'] = 1040; _item['_y'] = _yy; _item['_col'] = 1
 video('solve-wp22-g039', 'solution', qid='wp22-g039', slides=[
     S('Method 1 · The math way: a table',
       L("Maya is nine years older than her cousin Tom. Five years ago, Maya was twice Tom's age. How old is Tom now?",
@@ -1722,12 +1730,8 @@ video('solve-wp22-g039', 'solution', qid='wp22-g039', slides=[
         "the exam, you'd mark it and move on.", show(y_8, 'Five years ago Tom was nine'), show(y_8b, 'The gap is nine'),
         mk('tick', 'choice 3', 'The gap is nine. It fits'))),
     S('Method 3 · Insight',
-      L("[pause] And an insight. We start again from the givens. The gap is always nine. And five years ago, Maya was "
-        "twice Tom. A gap of nine, and one of them twice the other. That can only be nine and eighteen.",
-        pt('stem', 'The gap is always nine'), show(y_9a, 'And five years ago, Maya was'),
-        show(y_9, 'That can only be nine and eighteen')),
-      L("Why only those? If Tom is some number, and Maya is twice it, the gap is twice the number minus the number, which "
-        "is the number itself. So Tom was nine, the size of the gap.", show(y_10, 'If Tom is some number'), show(y_10b, 'the gap is twice the number')),
+      L("Now the insight. Let's look at their ages five years ago. The gap is always nine years. Maya was twice Tom's age. Think of Tom's age as one part. Maya's age is two equal parts, each the same size as Tom's whole age.", pt('stem', 'The gap is always nine'), show(y_9a, "Maya was twice Tom's age"), show(y_parts['line'], "Tom's age as one part"), show(y_parts['double'], "Maya's age is two equal parts")),
+      L("One of Maya's parts matches Tom's whole age. The extra part is how much older Maya is: nine years. So one part is nine years. Tom was nine, and Maya was two times nine, eighteen. We found those ages because the difference is one whole part.", show(y_parts['gap'], 'The extra part'), show(y_10, 'So one part is nine years'), show(y_10b, 'difference is one whole part'), show(y_9, 'Tom was nine')),
       L("Careful, nine is choice number one, but that's Tom five years ago. Now he's nine plus five, fourteen.",
         show(y_11, 'Now he\'s nine plus five')),
       L("And this works for anything that grows by the same amount, like two plants that each grow the same number of "
@@ -1753,6 +1757,9 @@ d_5 = IH('d_5', '(1) $15$: $\\ 6\\cdot15=90\\le105$ ✓', size=30)
 d_5b = IH('d_5b', '$7\\cdot15=105$, $\\ $not more, no', size=30)
 d_6 = IH('d_6', '(2) $17$: $\\ 6\\cdot17=102\\le105$ ✓', size=30)
 d_6b = IH('d_6b', '$7\\cdot17=70+49=119>105$ ✓', size=30)
+d_fast1 = IH('d_fast1', '$p\\le17\\frac12$: $15$ or $17$', size=30)
+d_fast2 = IH('d_fast2', '$7\\times15=105$: can buy $7$, no', size=30)
+d_fast3 = IH('d_fast3', 'Only $17$ remains: choice $2$', size=30)
 video('solve-wp22-g040', 'solution', qid='wp22-g040', slides=[
     S('Method 1 · The math way: two inequalities',
       L("Dana has a hundred five credits. That is enough for six identical movie tickets, but not enough for seven. Which "
@@ -1789,9 +1796,11 @@ video('solve-wp22-g040', 'solution', qid='wp22-g040', slides=[
         "exactly what she has. So she can buy seven, and the question says she can't. Out.",
         show(d_5, 'Six tickets cost ninety'), show(d_5b, 'But seven tickets cost'), mk('cross', 'choice 1', "and the question says she can't")),
       L("Choice number two, seventeen. Six tickets cost a hundred two, which is enough. Seven tickets cost seven times seventeen. Seven times ten is seventy, and seven times seven is forty-nine. Seventy plus forty-nine is a hundred nineteen. That's more than a hundred five, so it's not enough. Both tests pass.", show(d_6, 'Six tickets cost a hundred two'),
-        show(d_6b, 'a hundred nineteen')),
-      L("Let's keep the idea from this question. Enough for six, but not enough for seven, gives two inequalities. Six tickets cost the money or less, and seven tickets cost more than the money. So the price must fit both limits. Whenever you see enough for some number, but not for one more, write both of them.",
-        show(d_tc, 'gives two inequalities'), show(d_tc2, 'seven tickets cost more than the money')),
+        show(d_6b, 'a hundred nineteen'))),
+    S('A quicker exam finish',
+      L("Now let's go back to our first inequality. The price is at most seventeen and a half. That already rules out eighteen and twenty. Only fifteen and seventeen remain. Can we avoid solving the second inequality? Yes, but we still have to check its given: she cannot buy seven tickets. If the price were fifteen, seven tickets would cost seven times fifteen, a hundred five. That's exactly her money, so she could buy seven. Fifteen is out. Only seventeen remains, so choice number two is our answer. We saved the second inequality, not the second condition. Don't just choose the answer nearest the upper limit; cross out the other remaining answer for a reason.",
+        show(d_fast1, 'Only fifteen and seventeen remain'), show(d_fast2, 'seven times fifteen, a hundred five'),
+        mk('cross', 'choice 1', 'Fifteen is out'), show(d_fast3, 'Only seventeen remains'), mk('tick', 'choice 2', 'choice number two is our answer')),
       L("A question that builds an equation or an inequality can almost always be solved by plugging in the answers too. "
         "Choice number two is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
@@ -1847,8 +1856,7 @@ video('solve-wp22-g042', 'solution', qid='wp22-g042', slides=[
         "ratio table, one column for credits and one for pineapples. One credit, one and a half pineapples. And a question mark for two "
         "pineapples.", show(n_t['line'], "Let's put it in a"), show(n_t['r1'], 'One credit, one and a half'),
         show(n_t['r2'], 'And a question mark')),
-      L("From one and a half to two isn't a whole multiplier, so we use the triangle value. Multiply along the diagonal, "
-        "two times one, and divide by what's left, one and a half.", show(n_t['dg'], 'Multiply along the diagonal'), show(n_3a, 'and divide by what')),
+      L('We need two pineapples, and every one and a half pineapples costs one credit. So we divide two by one and a half to find the cost. In our ratio table, the triangle value gives two times one, divided by one and a half.', show(n_t['dg'], 'two times one'), show(n_3a, 'divided by one and a half')),
       L("Let's remove the half from the denominator to make division easier. We could multiply the top and the bottom by ten, but that only makes bigger numbers. Times two is enough. Two times two is four. One and a half times two is three. So four thirds of a credit.", show(n_3, 'Times two is enough'), show(n_3c, 'So four thirds of a credit'),
         show(n_t['ans'], 'four thirds of a credit'))),
     S('Method 1 · The math way: equal ratios',
@@ -2125,8 +2133,7 @@ video('solve-wp22-g047', 'solution', qid='wp22-g047', slides=[
         show(z_1, 'so B is x and A is four x')),
       L("Six students move from A to B. A loses six, so A has four x minus six. B gains six, so B has x plus six.",
         show(z_2, 'A loses six'), show(z_2b, 'B gains six')),
-      L("Afterwards, B carries half as many as A. So B is the little guy, and it gets the times two. Two times B is equal "
-        "to A. Two times x plus six is equal to four x minus six.", pt('stem', 'Afterwards, B carries half'),
+      L("Afterwards, B carries half as many as A. So two times B's new number is equal to A's new number. B has x plus six, and A has four x minus six. So two times x plus six is equal to four x minus six.", pt('stem', 'Afterwards, B carries half'),
         show(z_3, 'Two times x plus six')),
       L('Now we open the brackets. So two x plus twelve is equal to four x minus six. We take two x from both sides, and add six to both sides. Twelve plus six is eighteen, so eighteen is two x. Divide both sides by two, and x is nine.', show(z_4, 'Two x plus twelve'),
         show(z_5, 'Twelve plus six is eighteen'), show(z_5b, 'so eighteen is two x'))),
@@ -2136,17 +2143,15 @@ video('solve-wp22-g047', 'solution', qid='wp22-g047', slides=[
         "is our answer.", pt('stem: ask', 'they ask about both buses'), show(z_6, 'so the total is x plus four x'), show(z_6b, 'Five times nine'),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('Method 2 · Understanding: divisibility',
-      L("[pause] Now by understanding. We start again from the givens. At the start, A has four times B. So for every one "
-        "student on B, there are four on A. One part and four parts, five parts in all. So the total divides by five.",
+      L("Now by understanding. We start again from the givens. At the start, A has four times B. So for every one student on B, there are four on A. One part and four parts, five parts in all. One part is B's number of students, a whole number. So the total is five times that whole number, and is divisible by five.",
         pt('stem', 'At the start, A has four times'), show(z_7, 'One part and four parts'), show(z_7b, 'So the total')),
-      L("Forty-eight doesn't divide by five, so choice number three is out.", mk('cross', 'choice 3', 'Forty-eight')),
-      L("After the move, B has half of A. One part and two parts, three parts in all. And the total didn't change, because "
-        "the students only moved. So the total also divides by three.", show(z_8, 'One part and two parts'), show(z_8b, 'So the total')),
-      L("Forty is thirty-nine plus one. And thirty-nine is three times thirteen. So forty doesn't divide by three. Fifty "
+      L("Forty-eight isn't divisible by five, so choice number three is out.", mk('cross', 'choice 3', 'Forty-eight')),
+      L("After the move, B has half of A. So B is one part and A is two parts: three parts in all. One part is again B's whole number of students. So the total is divisible by three. And it's the same total as before, because the students only moved between the buses.", show(z_8, 'three parts in all'), show(z_8b, 'So the total')),
+      L("Forty is thirty-nine plus one. And thirty-nine is three times thirteen. So forty isn't divisible by three. Fifty "
         "is forty-eight plus two. And forty-eight is three times sixteen. So fifty doesn't either. Choice numbers one and "
         "four are out.", show(z_9, 'Forty is thirty-nine plus one'), show(z_9b, 'Fifty is forty-eight'), mk('cross', 'choice 1', 'Choice numbers one and'),
         mk('cross', 'choice 4', 'four are out')),
-      L("Only forty-five is left, and it divides by both. Forty-five is five times nine. It's also three times fifteen. For whole numbers of students, use a fully reduced whole-number ratio. The total is divisible by the sum of its parts. Check that condition before and after the move. Choice number two is our answer, and I'll see you in the next question.", show(z_10, 'Forty-five is five times nine'), show(z_10b, "It's also three times"),
+      L("Only forty-five is left, and it is divisible by both. Forty-five is five times nine. It's also three times fifteen. For whole numbers of students, use a fully reduced whole-number ratio. The total is divisible by the sum of its parts. Check that condition before and after the move. Choice number two is our answer, and I'll see you in the next question.", show(z_10, 'Forty-five is five times nine'), show(z_10b, "It's also three times"),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
 
@@ -2255,10 +2260,9 @@ video('solve-wp22-g049', 'solution', qid='wp22-g049', slides=[
     S('Method 2 · The math way: shrink, then grow',
       L("[pause] Now the math way. We start again from the given equation. Nine L plus six S is two hundred forty.",
         show(x_7, 'Nine L plus six S')),
-      L("Nine, six and two hundred forty all divide by three. So we divide every term of the equation by three. Three L "
+      L("Nine, six and two hundred forty all are divisible by three. So we divide every term of the equation by three. Three L "
         "plus two S is eighty.", show(x_8, 'Three L plus two S is eighty')),
-      L("Now we multiply every term by four. Three L times four is twelve L. Two S times four is eight S. And eighty times "
-        "four is three hundred twenty. That's exactly the crates they asked about.", show(x_9, 'Two S times four'), show(x_9b, 'And eighty times four')),
+      L("They ask for twelve large crates and eight small ones. Our equation has three L and two S. Four times each count gives the counts they ask for. So we multiply every term by four. Three L times four is twelve L. Two S times four is eight S. And eighty times four is three hundred twenty. That's exactly the crates they asked about.", show(x_9, 'Two S times four'), show(x_9b, 'And eighty times four')),
       L("We may do this, because we divided and multiplied every term, on both sides. Choice number two is our answer, and "
         "I'll see you in the next question.", mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
@@ -2312,32 +2316,28 @@ video('solve-wp22-g050', 'solution', qid='wp22-g050', slides=[
 
 # ------------------------------------------------------------------------------------------------ r26-t22-exam-tools (lesson)
 # English addition (real exam: one equation, two unknowns 2020_autumn_q1_01, 2021_spring_q2_06; "It cannot be
-# determined" choices 2024_autumn_q1_14, 2025_autumn_q1_06). Taught here (no question video teaches it); the two other
-# tools (letters in the choices, assume all the same) are taught in the next two questions.
+# determined" choices 2024_autumn_q1_14, 2025_autumn_q1_06). 19Oct teacher-approved trim:
+# topic51 and the preceding crates question already teach the underlying idea.
+# Keep a reminder and the two-valid-pairs/different-results check, not another scaling lesson.
 j_1 = I('j_1', '$2a+3p=13$', size=34)
 j_2 = IH('j_2', '$a=2,\\ p=3$', size=30)
 j_2b = IH('j_2b', '$4+9=13$ ✓', size=30)
 j_3 = IH('j_3', '$a=5,\\ p=1$: $\\ 10+3=13$', size=30)
-j_4 = IH('j_4', '$4a+6p=2(2a+3p)$', size=30)
-j_4b = IH('j_4b', '$=2\\cdot13=26$ ✓', size=30)
 j_5 = IH('j_5', '$3a+2p$: $\\ 6+6=12$', size=30)
-j_5b = IH('j_5b', 'or $\\ 15+2=17$: $\\ $cannot be determined', size=30)
+j_5b = IH('j_5b', 'other pair: $\\ 15+2=17$', size=30)
 j_6 = I('j_6', 'Different allowed results: $\\ $cannot be determined', size=30)
 video('r26-t22-exam-tools', 'lesson', slides=[
     S('Three Exam Tools',
-      L("Welcome back. Here are three more tools the exam loves. The first one we'll learn here, knowing when we can't find "
-        "the answer. The other two we'll learn in the questions.")),
+      L("Welcome back. Let's briefly recall when an answer cannot be determined. The next questions will use our other two tools.")),
     S('One equation, two unknowns',
-      L('Say a question gives us one equation with two unknowns. Two a plus three p is thirteen. Without any other conditions, can we find one value for each? No, because many pairs work.', show(j_1, 'Two a plus three p is thirteen')),
-      L("For example, a is two and p is three. Two times two is four. Three times three is nine. And four plus nine is "
-        "thirteen. Or a is five and p is one. Ten plus three is thirteen too. Both pairs fit.",
-        show(j_2, 'a is two and p is three'), show(j_2b, 'And four plus nine'), show(j_3, 'Or a is five and p is one')),
-      L("But what if they ask for four a plus six p? That's exactly double the equation. Every term is times two, so the "
-        "total is times two too. Two times thirteen is twenty-six. That we can find.", show(j_4, "That's exactly double"), show(j_4b, 'Two times thirteen is')),
-      L("And three a plus two p? That's not a multiple of the equation. With the first pair, it's six plus six, twelve. "
-        "With the second pair, it's fifteen plus two, seventeen. Two different results, so it cannot be determined.",
-        show(j_5, 'With the first pair'), show(j_5b, 'With the second pair')),
-      L("So one equation may leave several possible pairs of values. A multiple of its left side still has a fixed value. For another expression, check whether allowed pairs give different results. If they do, the answer cannot be determined. The exam does offer that as a choice. Let's see the other two tools in the questions. I'll see you in the next video.", show(j_6, 'So one equation may leave'))),
+      L("Remember the crates question. Knowing the combined weight didn't tell us each crate's weight. Different pairs could fit. We can use that idea to check whether an answer can be determined."),
+      L("Suppose two a plus three p is thirteen. If a is two and p is three, we get four plus nine, thirteen. If a is five and p is one, we get ten plus three, thirteen too. Both pairs fit the given equation.",
+        show(j_1, 'two a plus three p is thirteen'), show(j_2, 'a is two and p is three'), show(j_2b, 'four plus nine'), show(j_3, 'a is five and p is one')),
+      L("Now they ask for three a plus two p. With the first pair, three times two is six, and two times three is six. Six plus six is twelve.",
+        show(j_5, 'Six plus six is twelve')),
+      L("With the second pair, three times five is fifteen, and two times one is two. Fifteen plus two is seventeen. Both pairs fit the given, but they give different answers: twelve and seventeen. So the answer cannot be determined.",
+        show(j_5b, 'Fifteen plus two is seventeen'), show(j_6, 'So the answer cannot be determined')),
+      L("That's the check: two allowed cases give different results. Then there isn't one answer fixed by the givens. Let's see the other two tools in the questions. I'll see you in the next video.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t22-04 (added: letters in the choices)
@@ -2780,6 +2780,12 @@ assert not _lp, ('figure layers out of order', _lp)
 _mn_spec = importlib.util.spec_from_file_location('_method_names_vocab', os.path.join(HERE, '_method_names.py'))
 _mn = importlib.util.module_from_spec(_mn_spec); _mn_spec.loader.exec_module(_mn)
 _mn.check_vocab(VIDEOS)
+
+# 2026-10-19 teacher scope decision: worker-days/inverse consumption are
+# already taught in topic26. Keep the archived spec available, but never
+# offer its duplicate as an active topic22 recording or generation target.
+WITHDRAWN22 = {'solve-q-r26-t22-02'}
+ORDER[:] = [v for v in ORDER if v not in WITHDRAWN22]
 
 if __name__ == '__main__':
     _bad = 0

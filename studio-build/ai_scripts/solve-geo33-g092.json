@@ -76,13 +76,16 @@
     ]
    },
    {
-    "say": "Twenty, twenty-one, twenty-nine. We need the angle at A, so let's check Pythagoras, to see if it's a right angle. Twenty squared is four hundred. Twenty-one squared is four hundred forty-one. Together, eight hundred forty-one.",
+    "say": "Twenty, twenty-one, twenty-nine. We need the angle at A, so let's check Pythagoras, to see if it's a right angle. Twenty squared is four hundred. For twenty-one squared, twenty-one times twenty is four hundred twenty. Add one more twenty-one, and we get four hundred forty-one. Four hundred plus four hundred forty-one is eight hundred forty-one.",
     "at": [
      "let's check Pythagoras",
      "if it's a",
      "Twenty squared is four hundred",
-     "Twenty-one squared is",
-     "Together, eight hundred forty-one"
+     "For twenty-one squared",
+     "Add one more twenty-one",
+     "we get four hundred forty-one",
+     "Four hundred plus",
+     "is eight hundred forty-one"
     ]
    },
    {
@@ -121,14 +124,18 @@
     ]
    },
    {
-    "say": "Three quarters of twelve pi. Let's find a quarter first. Twelve pi divided by four is three pi. So three quarters is three times three pi, which is nine pi. Choice number three is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "Three quarters of twelve pi. Let's find a quarter first. Twelve pi divided by four is three pi. So three quarters is three times three pi, which is nine pi. Choice number three is our answer. Now go back to the Pythagorean check. We can use the difference of squares again. Twenty-nine squared minus twenty-one squared is twenty-nine minus twenty-one, times twenty-nine plus twenty-one. That's eight times fifty, four hundred. Four hundred is twenty squared. So the triangle is right, without calculating either big square. If you notice that, you can reach the ninety-degree angle sooner. I'll see you in the next question.",
     "at": [
      "Three quarters of",
      "Twelve pi divided by four",
      "is three pi",
      "So three quarters is three",
      "times three pi",
-     "Choice number three is our answer"
+     "Choice number three is our answer",
+     "Twenty-nine squared minus twenty-one squared",
+     "is twenty-nine minus",
+     "four hundred. Four hundred is twenty squared",
+     "Four hundred is"
     ]
    }
   ]

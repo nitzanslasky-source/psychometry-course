@@ -1153,28 +1153,18 @@ video('solve-q-r26-t16-04', 'solution', qid='q-r26-t16-04', slides=[
       L("But careful, the smallest case only gives a candidate, the biggest number that could work. Fifteen, five and three "
         "all divide fifteen, so I need a second case.", show(k3, 'only gives a candidate'))),
     S('Method 1 · Plugging in numbers',
-      L("Now we need a second group, and we have to choose it carefully. Take three, five and seven. Five is in the "
-        "multiplication, and so is three. So the product divides by fifteen, and it can't rule out fifteen. Five, seven "
-        "and nine has the same problem. So we need a group with no multiple of five.", show(k0, 'Now we need'),
-        show(k6, 'Take three, five and seven'), show(k6b, 'So the product divides by fifteen'),
+      L("Now we need a second group, and we have to choose it carefully. Take three, five and seven. Five is in the multiplication, and so is three. So the product is divisible by fifteen, and it can't rule out fifteen. Five, seven and nine has the same problem. So we need a group with no multiple of five.", show(k0, 'Now we need'),
+        show(k6, 'Take three, five and seven'), show(k6b, 'So the product is divisible by fifteen'),
         show(k6c, 'Five, seven and nine')),
-      L("Let's choose seven, nine and eleven. To check five, we only need the last digit of the product, because a "
-        "number divides by five only when it ends in zero or five. The last digit of a product comes only from the last digits. Seven times nine is sixty-three, which ends in three. Times eleven, it still ends "
-        "in three, because three times one is three.", show(k4, 'seven, nine and eleven'),
+      L("Let's choose seven, nine and eleven. To check five, we only need the last digit of the product, because a number is divisible by five only when it ends in zero or five. The last digit of a product comes only from the last digits. Seven times nine is sixty-three, which ends in three. Times eleven, it still ends in three, because three times one is three.", show(k4, 'seven, nine and eleven'),
         show(k4b, 'Seven times nine is sixty-three'), show(k4c, 'because three times one')),
-      L("A number that ends in three doesn't divide by five. So it doesn't divide by fifteen either, because fifteen is "
-        "five times three. Choice numbers two and four are out. Only three is left, and choice number three is our answer.", show(k5, "doesn't divide by five"),
-        show(k5b, "So it doesn't divide by fifteen"), mk('cross', 'choice 2', 'Choice numbers two'),
+      L("A number that ends in three isn't divisible by five. So it isn't divisible by fifteen either, because fifteen is five times three. Choice numbers two and four are out. Only three is left, and choice number three is our answer.", show(k5, "isn't divisible by five"),
+        show(k5b, "So it isn't divisible by fifteen"), mk('cross', 'choice 2', 'Choice numbers two'),
         mk('cross', 'choice 4', 'four are out'), mk('tick', 'choice 3', 'choice number three is our answer'))),
     S('Method 2 · Understanding',
-      L("[pause] Now by understanding. Why does the product always divide by three? Let's write the odd numbers in a row: "
-        "one, three, five, seven, nine, eleven, thirteen, fifteen. Three, nine and fifteen divide by three. They come once "
-        "in every three odd numbers, with two odd numbers between them. So any three odd numbers in a row include a "
-        "multiple of three.", show(k8, 'one, three, five, seven'), pt('k8: m', 'Three, nine and fifteen divide'),
-        pt('k8: m', 'They come once')),
-      L("Seven, nine and eleven include nine. Eleven, thirteen and fifteen include fifteen. So one number in the "
-        "multiplication divides by three, and the whole product divides by three too. Choice number three is our answer, "
-        "and I'll see you in the next question.", show(k7, 'Seven, nine and'), mk('tick', 'choice 3', 'Choice number three'))),
+      L("Now by understanding. Why is the product always divisible by three? Let's write the odd numbers in a row: one, three, five, seven, nine, eleven, thirteen, fifteen. Three, nine and fifteen are divisible by three. Why every third odd number? Multiples of three go three, six, nine, twelve, fifteen. They alternate odd and even. So the odd multiples are six apart. The odd numbers go up by two, so six is three steps along that list. Every three odd numbers in a row therefore include a multiple of three.", show(k8, 'one, three, five, seven'), pt('k8: m', 'Three, nine and fifteen are divisible'),
+        pt('k8: m', 'Every three odd numbers in a row')),
+      L("Seven, nine and eleven include nine. Eleven, thirteen and fifteen include fifteen. So one number in the multiplication is divisible by three, and the whole product is divisible by three too. Choice number three is our answer, and I'll see you in the next question.", show(k7, 'Seven, nine and'), mk('tick', 'choice 3', 'Choice number three'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-465 (Q13)

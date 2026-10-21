@@ -1065,6 +1065,30 @@ b_j4 = IH('b_j4', '$4\\times20=80$', size=36, col=1)
 b_j5 = IH('b_j5', '$80+30=110$', size=36, col=1)
 b_j6 = IH('b_j6', '$110\\div5=22$', size=36, col=1)
 b_j7 = I('b_j7', 'Before: $\\ 4$. $\\ $After: $\\ 5$. $\\ $Read what they ask.', size=36, col=1)
+# 2026-10-21 (external-course review, approved): the newcomer average as an EXPLANATION, "sharing the extra" (no boxed
+# formula): the newcomer's distance from the OLD average is shared by everyone in the NEW group (the newcomer too), so
+# the average moves by that distance / the new count. Shown on the towers of wp-080 (6, 6, 6, 6 and 11: 5 extra blocks,
+# 1 each -> 7), then the exam's question (2024_spring_q1_07 type, new numbers): 3 suitcases, average 20, with a 4th the
+# average is 18 -> 2 less each x 4 = 8 below 20 -> 12 kg (the trap at its step: x 3 -> 14). The balance stays for "how
+# many before".
+b_n0 = I('b_n0', '$4$ numbers, $\\ $average $6$. $\\ 11$ joins. $\\ $The new average?', size=36)
+b_nt = TOWERS('b_nt', [6, 6, 6, 6, 11], [
+    ('old', [('lvl', 6, 'old average 6')]), ('extra', [('extra', 6)]), ('move', [('move', 7)]),
+    ('new', [('lvl', 7, 'new average 7')])], cube=30, w=500)
+b_n1 = IH('b_n1', '$11-6=5$ $\\ $extra', size=34, col=1)
+b_n2 = IH('b_n2', '$5\\div5=1$ $\\ $each', size=34, col=1)
+b_n3 = IH('b_n3', '$6+1=7$', size=34, col=1)
+b_n4 = IH('b_n4', '$4\\times6+11=35$', size=34, col=1)
+b_n5 = IH('b_n5', '$35\\div5=7$', size=34, col=1)
+b_n6 = I('b_n6', 'Share by the new count: $\\ 5$, $\\ $not $4$', size=32, col=1)
+b_g0 = I('b_g0', '$3$ suitcases, $\\ $average $20$ kg. $\\ $With a fourth: $\\ $average $18$ kg. $\\ $The fourth?', size=32)
+b_g1 = IH('b_g1', '$20-18=2$ $\\ $less, each', size=34)
+b_g2 = IH('b_g2', '$4\\times2=8$ $\\ $below $20$', size=34)
+b_g3 = IH('b_g3', '$20-8=12$ kg', size=34)
+b_g4 = IH('b_g4', '$3\\times20=60$, $\\ 4\\times18=72$', size=34, col=1)
+b_g5 = IH('b_g5', '$72-60=12$', size=34, col=1)
+b_g6 = IH('b_g6', '$3\\times2=6$: $\\ 14$ kg, $\\ $the trap', size=34, col=1)
+b_g7 = I('b_g7', 'How many? $\\ $The balance. $\\ $The newcomer or the new average? $\\ $Share it.', size=30)
 b_l0 = I('b_l0', 'Average $50$. $\\ 80$ leaves. $\\ $Now the average is $45$. $\\ $How many are left?', size=36)
 b_l1 = IH('b_l1', '$80-50=30$ $\\ $above', size=36)
 b_l2 = IH('b_l2', '$50-45=5$ $\\ $below, each', size=36)
@@ -1072,7 +1096,7 @@ b_l3 = IH('b_l3', '$30\\div5=6$ $\\ $numbers left', size=36)
 b_l4 = IH('b_l4', '$6\\times45=270$', size=36, col=1)
 b_l5 = IH('b_l5', '$270+80=350$', size=36, col=1)
 b_l6 = IH('b_l6', '$7\\times50=350$', size=36, col=1)
-b_l7 = I('b_l7', 'Compare the number to the average of the group it is in', size=36)
+b_l7 = I('b_l7', 'The balance: $\\ $compare the number to the average of the group it is in', size=34)
 b_x0 = I('b_x0', '$5$ positive whole numbers, $\\ $average $10$. $\\ $The biggest one?', size=36)
 b_x1 = IH('b_x1', '$5\\times10=50$', size=36)
 b_x2 = IH('b_x2', '$1+1+1+1=4$', size=36)
@@ -1115,7 +1139,8 @@ b_r5 = IH('b_r5', '$a=2,\\ b=9,\\ c=10$: $\\ 21\\div3=7$', size=36, col=1)
 b_r6 = IH('b_r6', '$a=2$ is below $6$', size=36, col=1)
 b_r7 = I('b_r7', 'Must be true? $\\ $Test the others with numbers.', size=36, col=1)
 b_z1 = I('b_z1', 'the sum $=$ how many $\\times$ the average', size=36)
-b_z2 = I('b_z2', 'A number joins or leaves: $\\ $compare it to the average of the group it is in', size=34)
+b_z2 = I('b_z2', 'Joins or leaves, how many? $\\ $Compare it to the average of the group it is in', size=32)
+b_z5 = I('b_z5', 'The newcomer or the new average? $\\ $Share its distance from the old average', size=32)
 b_z3 = I('b_z3', 'The biggest one: $\\ $the others as small as they can be', size=36)
 b_z4 = I('b_z4', 'Letters: $\\ $plug in equal values, $\\ $or write the sum', size=36)
 video('wp-081', 'lesson', slides=[
@@ -1155,8 +1180,44 @@ video('wp-081', 'lesson', slides=[
         "twenty-two. Correct.", show(b_j5, 'Eighty plus thirty'), show(b_j6, 'A hundred ten divided by five')),
       L("And careful. They asked how many there were before. After the new number joined, there are five. So always read "
         "which one they ask.", show(b_j7, 'They asked how many there were before'))),
+    S('Share the extra',
+      L("Often we know how many numbers there are, and the question asks for the new average. Here's a way to see it. "
+        "Four numbers have an average of six. A fifth number, eleven, joins. What's the new average?",
+        show(b_n0, 'Four numbers have an average of six')),
+      L("Each of the four numbers counts as six, like we saw before. So let's draw four towers of six blocks, and a tower "
+        "of eleven for the new number.", show(b_nt['line'], "let's draw four towers")),
+      L("The old average is six. The new number is eleven, so it's five above the old average. That's five extra "
+        "blocks.", show(b_nt['old'], 'The old average is six'), show(b_n1, "so it's five above"),
+        show(b_nt['extra'], "That's five extra blocks")),
+      L("Those five extra blocks are shared equally by everyone in the new group. That's all five numbers, the new one "
+        "too. Five divided by five is one block each.", show(b_nt['move'], 'shared equally by everyone'),
+        show(b_n2, 'Five divided by five')),
+      L("So every tower is one block above six. The new average is six plus one, seven.", show(b_n3, 'six plus one, seven'),
+        show(b_nt['new'], 'The new average is')),
+      L("Let's check with sums. Four times six is twenty-four. Twenty-four plus eleven is thirty-five. And thirty-five "
+        "divided by five is seven.", show(b_n4, 'Four times six is twenty-four'), show(b_n5, 'Thirty-five divided by five')),
+      L("Careful, we share the extra among five numbers, not four, because the new number gets its share too.",
+        show(b_n6, 'among five numbers, not four'))),
+    S('Find the newcomer',
+      L("Now the way the exam asks it. Three suitcases have an average weight of twenty kilos. A fourth suitcase is "
+        "added, and now the average of the four is eighteen kilos. How heavy is the fourth suitcase?",
+        show(b_g0, 'Three suitcases have an average')),
+      L("This time the average went down, from twenty to eighteen. That's two kilos less for each of the four "
+        "suitcases.", show(b_g1, 'from twenty to eighteen')),
+      L("So the fourth suitcase is below the old average, and that missing weight is shared by all four. Two kilos for "
+        "each of the four is four times two, eight kilos.", show(b_g2, 'four times two, eight')),
+      L("So the fourth suitcase is eight kilos below twenty. Twenty minus eight is twelve kilos.",
+        show(b_g3, 'Twenty minus eight')),
+      L("Let's check with sums. Three times twenty is sixty kilos before. Four times eighteen is seventy-two kilos after. "
+        "Seventy-two minus sixty is twelve, the same weight.", show(b_g4, 'Three times twenty is sixty'),
+        show(b_g5, 'Seventy-two minus sixty')),
+      L("There's a trap here. If we multiply the two kilos by three, we get six below, and fourteen kilos. But the fourth "
+        "suitcase shares the drop too, so we multiply by four.", show(b_g6, 'by three, we get six below')),
+      L("So when they ask how many numbers there were, we use the balance, like before. When we know how many, and they "
+        "ask for the newcomer or the new average, we share its distance from the old average among the new group.",
+        show(b_g7, 'When we know how many'))),
     S('A number leaves',
-      L("It works the same when a number leaves. The average of a group is fifty. One number, eighty, leaves. Now the "
+      L("The balance works the same when a number leaves. The average of a group is fifty. One number, eighty, leaves. Now the "
         "average is forty-five. How many numbers are left?", show(b_l0, 'One number, eighty, leaves')),
       L("This time eighty was in the old group, so we compare it to the old average. Eighty minus fifty is thirty. So "
         "eighty is thirty above.", show(b_l1, 'Eighty minus fifty')),
@@ -1166,8 +1227,8 @@ video('wp-081', 'lesson', slides=[
       L("Let's check. Six times forty-five is two hundred seventy. Plus eighty is three hundred fifty. And seven numbers "
         "with an average of fifty also give seven times fifty, three hundred fifty.", show(b_l4, 'Six times forty-five'),
         show(b_l5, 'Plus eighty'), show(b_l6, 'seven times fifty')),
-      L("So compare the number to the average of the group it is in. Joins, the new average. Leaves, the old average.",
-        show(b_l7, 'So compare the number'))),
+      L("So in the balance, we compare the number to the average of the group it is in. Joins, the new average. Leaves, "
+        "the old average.", show(b_l7, 'So in the balance'))),
     S('The biggest possible value',
       L("Now a different kind of question. Five positive whole numbers have an average of ten. What's the biggest possible "
         "value of one of them?", show(b_x0, 'Five positive whole numbers')),
@@ -1237,15 +1298,18 @@ video('wp-081', 'lesson', slides=[
         "numbers.", show(b_r7, 'When they ask what must be true'))),
     S('Summary',
       L("Let's sum up. The sum is equal to how many numbers there are, times the average.", show(b_z1, 'The sum is equal to how many')),
-      L("When a number joins or leaves, compare it to the average of the group it is in.", show(b_z2, 'When a number joins')),
+      L("When a number joins or leaves, and they ask how many, compare it to the average of the group it is in.",
+        show(b_z2, 'When a number joins')),
+      L("When they ask for the newcomer or the new average, share its distance from the old average among the new "
+        "group.", show(b_z5, 'When they ask for the newcomer')),
       L("For the biggest possible value, make the others as small as they can be.", show(b_z3, 'For the biggest possible')),
       L("And with letters, plug in equal values, or write the sum.", show(b_z4, 'And with letters')),
       L("Take a moment to memorize this. Now let's use it in the questions. I'll see you in the next video.")),
 ])
 SPLITS.append(('wp-081', 'Sum from the Average', [
     (1, None),
-    (5, "Let's continue, and find the biggest and the smallest possible values."),
-    (8, "Let's continue, and work with letters.")]))
+    (6, "Let's continue. First a number that leaves, and then the biggest and the smallest possible values."),
+    (10, "Let's continue, and work with letters.")]))
 
 
 # ------------------------------------------------------------------------------------------------ wp25-g082 (Hebrew: the gifted class, 8 x 6)

@@ -135,48 +135,111 @@
   ],
   [
    {
-    "say": "It works the same when a number leaves. The average of a group is fifty. One number, eighty, leaves. Now the average is forty-five. How many numbers are left?",
+    "say": "Often we know how many numbers there are, and the question asks for the new average. Here's a way to see it. Four numbers have an average of six. A fifth number, eleven, joins. What's the new average?",
     "at": [
-     "when a number",
-     "One number, eighty, leaves",
-     "Now the average"
+     "many numbers there",
+     "Four numbers have an average of six",
+     "A fifth number"
     ]
    },
    {
-    "say": "This time eighty was in the old group, so we compare it to the old average. Eighty minus fifty is thirty. So eighty is thirty above.",
+    "say": "Each of the four numbers counts as six, like we saw before. So let's draw four towers of six blocks, and a tower of eleven for the new number.",
     "at": [
-     "Eighty minus fifty",
-     "So eighty is"
+     "let's draw four towers",
+     "six blocks, and"
     ]
    },
    {
-    "say": "The numbers that are left have an average of forty-five. Fifty minus forty-five is five. So each one is five below fifty.",
+    "say": "The old average is six. The new number is eleven, so it's five above the old average. That's five extra blocks.",
     "at": [
-     "Fifty minus forty-five",
-     "So each one"
+     "The old average is six",
+     "The new number",
+     "so it's five above",
+     "That's five extra blocks"
     ]
    },
    {
-    "say": "Thirty divided by five is six. So six numbers are left.",
+    "say": "Those five extra blocks are shared equally by everyone in the new group. That's all five numbers, the new one too. Five divided by five is one block each.",
     "at": [
-     "Thirty divided by five",
-     "So six numbers"
+     "shared equally by everyone",
+     "the new group",
+     "Five divided by five",
+     "one block each"
     ]
    },
    {
-    "say": "Let's check. Six times forty-five is two hundred seventy. Plus eighty is three hundred fifty. And seven numbers with an average of fifty also give seven times fifty, three hundred fifty.",
+    "say": "So every tower is one block above six. The new average is six plus one, seven.",
     "at": [
-     "Six times forty-five",
-     "Plus eighty",
-     "fifty. And seven",
-     "seven times fifty"
+     "The new average is",
+     "six plus one, seven"
     ]
    },
    {
-    "say": "So compare the number to the average of the group it is in. Joins, the new average. Leaves, the old average. [pause] Okay. I'll see you in the next part.",
+    "say": "Let's check with sums. Four times six is twenty-four. Twenty-four plus eleven is thirty-five. And thirty-five divided by five is seven.",
     "at": [
-     "So compare the number",
-     "the average of"
+     "Four times six is twenty-four",
+     "Twenty-four plus eleven",
+     "Thirty-five divided by five"
+    ]
+   },
+   {
+    "say": "Careful, we share the extra among five numbers, not four, because the new number gets its share too.",
+    "at": [
+     "among five numbers, not four",
+     "because the new"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the way the exam asks it. Three suitcases have an average weight of twenty kilos. A fourth suitcase is added, and now the average of the four is eighteen kilos. How heavy is the fourth suitcase?",
+    "at": [
+     "exam asks it",
+     "Three suitcases have an average",
+     "weight of twenty"
+    ]
+   },
+   {
+    "say": "This time the average went down, from twenty to eighteen. That's two kilos less for each of the four suitcases.",
+    "at": [
+     "from twenty to eighteen",
+     "That's two kilos"
+    ]
+   },
+   {
+    "say": "So the fourth suitcase is below the old average, and that missing weight is shared by all four. Two kilos for each of the four is four times two, eight kilos.",
+    "at": [
+     "four times two, eight"
+    ]
+   },
+   {
+    "say": "So the fourth suitcase is eight kilos below twenty. Twenty minus eight is twelve kilos.",
+    "at": [
+     "So the fourth",
+     "Twenty minus eight"
+    ]
+   },
+   {
+    "say": "Let's check with sums. Three times twenty is sixty kilos before. Four times eighteen is seventy-two kilos after. Seventy-two minus sixty is twelve, the same weight.",
+    "at": [
+     "Three times twenty is sixty",
+     "Four times eighteen",
+     "Seventy-two minus sixty",
+     "the same weight"
+    ]
+   },
+   {
+    "say": "There's a trap here. If we multiply the two kilos by three, we get six below, and fourteen kilos. But the fourth suitcase shares the drop too, so we multiply by four.",
+    "at": [
+     "by three, we get six below",
+     "But the fourth"
+    ]
+   },
+   {
+    "say": "So when they ask how many numbers there were, we use the balance, like before. When we know how many, and they ask for the newcomer or the new average, we share its distance from the old average among the new group. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "When we know how many",
+     "and they ask"
     ]
    }
   ]

@@ -12,11 +12,11 @@
     "pause": 0.5
    },
    {
-    "say": "We know one angle, outside the circle, and we want an angle at A, on the circle. [short pause] We'll go from P to the center, and from the center to A. There's also a second way, with symmetry.",
+    "say": "We know the outside angle at P, and we want the angle at A, on the circle. We'll use the math way to find the central angle first, then the angle at A. After that, we'll solve it by understanding, using symmetry.",
     "at": [
-     "We know one angle",
-     "the circle, and",
-     "P to the"
+     "We know the outside angle at P",
+     "at P, and",
+     "we'll solve it"
     ]
    }
   ],
@@ -39,12 +39,12 @@
     ]
    },
    {
-    "say": "The two right angles already give a hundred eighty. So the other two angles need another hundred eighty. Sixty-eight plus the angle at O is a hundred eighty. So the central angle is a hundred eighty minus sixty-eight, which is a hundred twelve.",
+    "say": "The two right angles add up to a hundred eighty. A quadrilateral has three hundred sixty degrees altogether, so the angles at P and O must add up to the other hundred eighty. The angle at P is sixty-eight. So the central angle is a hundred eighty minus sixty-eight, which is a hundred twelve.",
     "at": [
-     "The two right angles already give",
-     "give a hundred",
-     "Sixty-eight plus the angle at O",
-     "O is a",
+     "The two right angles add up",
+     "up to a",
+     "the angles at P and O must add up",
+     "O must add",
      "So the central angle is",
      "a hundred eighty minus",
      "which is a hundred twelve"
@@ -58,10 +58,10 @@
     ]
    },
    {
-    "say": "Now it's very easy. Stand at A and look between the two lines, A D and A E. You see the short arc D E, the same arc the central angle sees.",
+    "say": "Now look at angle D A E. Its sides are the chords A D and A E. They end at D and E, so the angle intercepts the short arc D E, opposite A. The central angle D O E intercepts that same arc.",
     "at": [
-     "You see the short arc",
-     "D E, the"
+     "the angle intercepts the short arc",
+     "arc D E"
     ]
    },
    {

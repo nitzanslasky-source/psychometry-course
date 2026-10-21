@@ -53,97 +53,89 @@
   ],
   [
    {
-    "say": "Now let's draw the radii again, from O to every corner. A regular polygon splits into n triangles. Two sides of each triangle are radii, so every triangle is isosceles. And all the triangles are the same, because all the sides of the polygon are equal.",
+    "say": "Let's look at those small angles again. In the regular pentagon, each one was thirty-six. In the regular hexagon, each one was thirty. And there's a pattern here. Thirty-six is one hundred eighty divided by five. And thirty is one hundred eighty divided by six.",
     "at": [
-     "from O to every corner",
-     "A regular polygon",
-     "splits into n triangles",
-     "so every triangle is isosceles",
-     "And all the"
+     "small angles again",
+     "In the regular pentagon",
+     "each one was thirty-six",
+     "In the regular hexagon",
+     "Thirty-six is one hundred eighty divided by five",
+     "divided by five",
+     "thirty is one hundred eighty divided by six",
+     "divided by six"
     ]
    },
    {
-    "say": "Let's see it in a regular pentagon. There are five triangles. The angle at the center is three hundred sixty divided by five, seventy-two.",
+    "say": "Why one hundred eighty divided by n? Because each small angle is an inscribed angle, and it intercepts the arc under one side. The central angle on that same arc is three hundred sixty divided by n. In the pentagon, that's seventy-two. And an inscribed angle is half of the central angle on the same arc. So each small angle is half of three hundred sixty over n. That's one hundred eighty over n, and in the pentagon, half of seventy-two is thirty-six.",
     "at": [
-     "The angle at the center",
-     "is three hundred",
-     "divided by five, seventy-two"
+     "The central angle on that same arc",
+     "is three hundred sixty divided by n",
+     "In the pentagon, that's seventy-two",
+     "And an inscribed",
+     "That's one hundred eighty over n",
+     "n, and in"
     ]
    },
    {
-    "say": "The two base angles share what's left. One hundred eighty minus seventy-two is one hundred eight. The two base angles are equal, so each one is half of one hundred eight, fifty-four.",
+    "say": "So every side adds one hundred eighty over n to an angle like this. Here's the rule. Take an angle whose corner is a corner of the polygon, and whose two arms go through two other corners. Count the sides between the two arms, on the far side from the corner. The angle is that number of sides, times one hundred eighty over n.",
     "at": [
-     "The two base",
-     "One hundred eighty minus seventy-two",
-     "is one hundred",
-     "each one is half",
-     "one hundred eight, fifty-four",
-     "fifty-four"
+     "Here's the rule",
+     "Take an angle"
     ]
    },
    {
-    "say": "Now look at one corner of the pentagon. Two base angles meet there, one from each triangle. Fifty-four plus fifty-four is one hundred eight. That's exactly the pentagon's angle. So the radius cuts the corner's angle into two equal halves.",
+    "say": "Let's check it on the whole angle of the pentagon. Its arms are the two sides at the corner. Between them, on the far side, there are three sides. Three times thirty-six is one hundred eight. That's exactly the pentagon's angle, like we found before.",
     "at": [
-     "of the pentagon",
-     "Two base angles meet there",
-     "Fifty-four plus",
-     "That's exactly the"
+     "Between them, on the far side",
+     "side, there are",
+     "Three times thirty-six",
+     "That's exactly the pentagon's angle",
+     "like we found"
+    ]
+   },
+   {
+    "say": "This works only in a regular polygon, because only there are all the sides equal, so all their arcs are equal. And the angle's corner must be a corner of the polygon, and both arms must go through corners too. Only then is it an inscribed angle on those arcs.",
+    "at": [
+     "This works only in a regular polygon",
+     "regular polygon, because"
     ]
    }
   ],
   [
    {
-    "say": "The regular hexagon is special. Its central angle is sixty. So each triangle has sixty at the top. The two base angles share one hundred twenty, so each one is sixty too.",
+    "say": "Let's use it. Here's a regular polygon with ten sides, A to J. From corner A, we draw two diagonals, to D and to G. What is the angle alpha between them?",
     "at": [
-     "The regular hexagon is special",
-     "Its central angle is sixty",
-     "So each triangle",
-     "The two base angles share",
-     "one hundred twenty",
-     "so each one is sixty too"
+     "Here's a regular polygon with ten sides",
+     "ten sides, A"
     ]
    },
    {
-    "say": "All three angles are sixty, so the triangle is equilateral. A regular hexagon is made of six equilateral triangles. And that means the radius is equal to the side. If the side is five, the radius is five too.",
+    "say": "First, what one side adds. One hundred eighty divided by ten is eighteen. So every side between the arms adds eighteen degrees.",
     "at": [
-     "All three angles",
-     "six equilateral triangles",
-     "the radius is equal to the side",
-     "If the side is five",
-     "the radius is five"
-    ]
-   },
-   "This split of the hexagon is very important. We'll use it for areas and for angles in the next lessons."
-  ],
-  [
-   {
-    "say": "Let's sum up. The angle sum is one hundred eighty times the bracket, n minus two. Or split from one corner into n minus two triangles. And every extra side adds one hundred eighty.",
-    "at": [
-     "Let's sum up",
-     "The angle sum"
+     "One hundred eighty divided by ten",
+     "ten is eighteen"
     ]
    },
    {
-    "say": "Regular means all the sides and all the angles are equal. Then one angle is the sum divided by n. The pentagon is one hundred eight, the hexagon is one hundred twenty, and the octagon is one hundred thirty-five.",
+    "say": "Now we count the sides between the arms, from D to G. They are D E, E F and F G. That's three sides. So alpha is three times eighteen, which is fifty-four.",
     "at": [
-     "Regular means",
-     "and all the"
+     "D E, E F and F G",
+     "F G. That's",
+     "So alpha is three",
+     "which is fifty-four"
     ]
    },
    {
-    "say": "The central angle and the exterior angle are both three hundred sixty divided by n. Each one completes the polygon's angle to one hundred eighty.",
+    "say": "Let's check the rule on the whole angle at A. Its arms are the sides A B and A J. From B to J there are eight sides. Eight times eighteen is one hundred forty-four. Let's also check it with the formula sheet. Three hundred sixty divided by ten is thirty-six. One hundred eighty minus thirty-six is one hundred forty-four. That's the same angle. [pause] Okay. I'll see you in the next part.",
     "at": [
-     "The central angle and the exterior angle",
-     "exterior angle are"
-    ]
-   },
-   {
-    "say": "The diagonals from one corner cut its angle into equal parts. The radii cut the polygon into n isosceles triangles, and in the hexagon, six equilateral triangles. Take a moment to memorize these, and I'll see you in the next video.",
-    "at": [
-     "The diagonals from one corner",
-     "cut its angle",
-     "The radii cut",
-     "into n isosceles"
+     "Let's check the",
+     "From B to J there are eight",
+     "are eight sides",
+     "Eight times eighteen",
+     "is one hundred forty-four. Let's",
+     "Let's also check",
+     "eighty minus thirty-six is one hundred forty-four",
+     "hundred forty-four. That's"
     ]
    }
   ]

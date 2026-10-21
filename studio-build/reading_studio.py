@@ -330,6 +330,11 @@ def math_display(text):
     s = re.sub(r'(?<![\d.,])(\d{5,})(?![\d.])', lambda m: '{:,}'.format(int(m.group(1))), s)
     # 2026-10-21 (topic 34): spoken "times the bracket, n minus two" -> × (n − 2)
     s = re.sub(r'\btimes the bracket, (\S+(?: [+−] [^\s,.]+)+)', r'× (\1)', s)
+    s = re.sub(r'\bthe bracket,? (\S+(?: [+−] [^\s,.]+)+)', r'(\1)', s)   # 'the bracket a + 3' -> (a + 3)
+    s = re.sub(r'\btimes \(', '× (', s)
+    # 2026-10-21 (topic 33): "nine π" / "36 π" -> 9π / 36π
+    s = re.sub(r'\b(%s) (?:π|pi)\b' % '|'.join(_UNITS[1:] + _TEENS), lambda m: '%dπ' % _INT_WORD[m.group(1).lower()], s, flags=re.I)
+    s = re.sub(r'(\d) (?:π|pi)\b', r'\1π', s)
     return s
 
 

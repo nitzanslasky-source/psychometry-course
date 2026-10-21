@@ -13,7 +13,7 @@
    },
    "It's a fraction with a root on the bottom, and none of the choices is a fraction. So we need to get rid of the bottom. [short pause] We'll solve it two ways, the math way, with algebra, and then with an estimate.",
    {
-    "say": "In the roots topic we learned how. When the bottom is a sum with a root, we multiply the top and the bottom by its partner. The partner of two plus root two is two minus root two. The top and the bottom are multiplied by the same thing, so it's like multiplying by one, and the value doesn't change.",
+    "say": "In the roots topic we learned how. When the bottom is a sum with a root, we multiply the top and the bottom by its partner, called the conjugate. The partner of two plus root two is two minus root two. The top and the bottom are multiplied by the same thing, so it's like multiplying by one, and the value doesn't change.",
     "at": [
      "In the",
      "we multiply the top and the bottom",
@@ -52,17 +52,16 @@
     ]
    },
    {
-    "say": "One squared is one, and two squared is four. Two is between them, so root two is between one and two.",
+    "say": "From the estimate we learned, root two is between one and two.",
     "at": [
-     "One squared is one",
-     "two squared is"
+     "root two is between one and two"
     ]
    },
    {
-    "say": "We need a bit more. One and a half squared is two and a quarter. That's more than two, so root two is less than one and a half. So root two is between one and one and a half.",
+    "say": "We also narrowed that down: root two is between one and one and a half. We'll use these bounds to compare the choices.",
     "at": [
-     "One and a half squared",
-     "is two and"
+     "root two is between one and one and a half",
+     "and one and"
     ]
    },
    {
@@ -91,11 +90,11 @@
     ]
    },
    {
-    "say": "Choice number one is the same number, squared. A half squared is a quarter, and a smaller number squared is even smaller. So choice number one is less than a quarter.",
+    "say": "Choice number one is root two minus one, squared. Root two is between one and one and a half. So root two minus one is positive and less than a half. A half squared is a quarter. Squaring a smaller positive number gives less than a quarter. So choice number one is less than a quarter.",
     "at": [
-     "Choice number one is the same number",
+     "Choice number one is root two",
      "number one is",
-     "A half squared",
+     "minus one, squared",
      "number one is less"
     ]
    },

@@ -1,0 +1,159 @@
+{
+ "videoId": "geo-104-5",
+ "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with the diagonals of a regular polygon."
+  ],
+  [
+   {
+    "say": "Now an angle where two diagonals cross. A B C D E F is a regular hexagon. The diagonals A C and B D cross at the point P. What is angle B P C?",
+    "at": [
+     "two diagonals cross",
+     "A B C D E F is a regular hexagon",
+     "F is a"
+    ]
+   },
+   {
+    "say": "P isn't a corner of the hexagon, so we can't count sides at P. But look at triangle B P C. Its other two angles are at B and at C, and those are corners. So let's find those two angles, and then use the triangle's one hundred eighty.",
+    "at": [
+     "look at triangle B P C",
+     "Its other two"
+    ]
+   },
+   {
+    "say": "In a hexagon, one side adds one hundred eighty divided by six, thirty. The angle at B is between B C and B D. Its arms go through C and D, and between them there's one side, C D. So angle P B C is thirty.",
+    "at": [
+     "one hundred eighty divided by six",
+     "The angle at B is between",
+     "between B C",
+     "So angle P B C is thirty",
+     "So angle P B C is thirty"
+    ]
+   },
+   {
+    "say": "The angle at C is between C B and C A. Its arms go through B and A, and between them there's one side, A B. So angle P C B is thirty too.",
+    "at": [
+     "The angle at C is between",
+     "between C B",
+     "So angle P C B is thirty too",
+     "So angle P C B is thirty too",
+     "is thirty too"
+    ]
+   },
+   {
+    "say": "The angles of triangle B P C add up to one hundred eighty. So angle B P C is one hundred eighty minus thirty minus thirty. That's one hundred twenty.",
+    "at": [
+     "one hundred eighty minus thirty",
+     "That's one hundred twenty"
+    ]
+   },
+   {
+    "say": "One hundred twenty is exactly the hexagon's angle. In a regular pentagon, the same two diagonals cross at one hundred eighty minus thirty-six minus thirty-six. That's one hundred eight, the pentagon's angle. So when two diagonals start at two neighboring corners, and each one skips just one corner, they cross at the polygon's own angle.",
+    "at": [
+     "One hundred twenty",
+     "hundred eighty minus thirty-six minus thirty-six",
+     "That's one hundred",
+     "So when two diagonals start",
+     "at two neighboring"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's draw the radii again, from O to every corner. A regular polygon splits into n triangles. Two sides of each triangle are radii, so every triangle is isosceles. And all the triangles are the same, because all the sides of the polygon are equal.",
+    "at": [
+     "from O to every corner",
+     "A regular polygon",
+     "splits into n triangles",
+     "so every triangle is isosceles",
+     "And all the"
+    ]
+   },
+   {
+    "say": "Let's see it in a regular pentagon. There are five triangles. The angle at the center is three hundred sixty divided by five, seventy-two.",
+    "at": [
+     "The angle at the center",
+     "is three hundred",
+     "divided by five, seventy-two"
+    ]
+   },
+   {
+    "say": "The two base angles share what's left. One hundred eighty minus seventy-two is one hundred eight. The two base angles are equal, so each one is half of one hundred eight, fifty-four.",
+    "at": [
+     "The two base",
+     "One hundred eighty minus seventy-two",
+     "is one hundred",
+     "each one is half",
+     "one hundred eight, fifty-four",
+     "fifty-four"
+    ]
+   },
+   {
+    "say": "Now look at one corner of the pentagon. Two base angles meet there, one from each triangle. Fifty-four plus fifty-four is one hundred eight. That's exactly the pentagon's angle. So the radius cuts the corner's angle into two equal halves.",
+    "at": [
+     "of the pentagon",
+     "Two base angles meet there",
+     "Fifty-four plus",
+     "That's exactly the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The regular hexagon is special. Its central angle is sixty. So each triangle has sixty at the top. The two base angles share one hundred twenty, so each one is sixty too.",
+    "at": [
+     "The regular hexagon is special",
+     "Its central angle is sixty",
+     "So each triangle",
+     "The two base angles share",
+     "one hundred twenty",
+     "so each one is sixty too"
+    ]
+   },
+   {
+    "say": "All three angles are sixty, so the triangle is equilateral. A regular hexagon is made of six equilateral triangles. And that means the radius is equal to the side. If the side is five, the radius is five too.",
+    "at": [
+     "All three angles",
+     "six equilateral triangles",
+     "the radius is equal to the side",
+     "If the side is five",
+     "the radius is five"
+    ]
+   },
+   "This split of the hexagon is very important. We'll use it for areas and for angles in the next lessons."
+  ],
+  [
+   {
+    "say": "Let's sum up. The angle sum is one hundred eighty times the bracket, n minus two. Or split from one corner into n minus two triangles. And every extra side adds one hundred eighty.",
+    "at": [
+     "Let's sum up",
+     "The angle sum"
+    ]
+   },
+   {
+    "say": "Regular means all the sides and all the angles are equal. Then one angle is the sum divided by n. The pentagon is one hundred eight, the hexagon is one hundred twenty, and the octagon is one hundred thirty-five.",
+    "at": [
+     "Regular means",
+     "and all the"
+    ]
+   },
+   {
+    "say": "The central angle and the exterior angle are both three hundred sixty divided by n. Each one completes the polygon's angle to one hundred eighty.",
+    "at": [
+     "The central angle and the exterior angle",
+     "exterior angle are"
+    ]
+   },
+   {
+    "say": "The diagonals from one corner cut its angle into equal parts, one hundred eighty over n each. So an angle at a corner, with its arms through two other corners, is the sides between its arms, times one hundred eighty over n. The radii cut the polygon into n isosceles triangles, and in the hexagon, six equilateral triangles. Take a moment to memorize these, and I'll see you in the next video.",
+    "at": [
+     "The diagonals from one corner",
+     "cut its angle",
+     "The radii cut",
+     "into n isosceles"
+    ]
+   }
+  ]
+ ]
+}

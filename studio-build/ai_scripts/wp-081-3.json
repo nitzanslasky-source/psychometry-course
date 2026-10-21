@@ -125,10 +125,17 @@
     ]
    },
    {
-    "say": "When a number joins or leaves, compare it to the average of the group it is in.",
+    "say": "When a number joins or leaves, and they ask how many, compare it to the average of the group it is in.",
     "at": [
      "When a number joins",
-     "leaves, compare it"
+     "leaves, and they"
+    ]
+   },
+   {
+    "say": "When they ask for the newcomer or the new average, share its distance from the old average among the new group.",
+    "at": [
+     "When they ask for the newcomer",
+     "newcomer or the"
     ]
    },
    {

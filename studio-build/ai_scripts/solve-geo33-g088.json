@@ -63,13 +63,13 @@
     ]
    },
    {
-    "say": "Compare that with circles that touch from the inside. Here a small circle sits inside a big one and touches it once. The touching point is on the line through the two centers, but now both radii go the same way. So the distance between the centers is the big radius minus the small one. With radii five and two, it's five minus two, which is three. In our question the circles touch from the outside, so it's seven plus seven.",
+    "say": "Compare that with circles that touch from the inside. The small circle is inside the big one, and they share one touching point. Draw both radii to that point. They overlap along the same straight line. The part between the centers is the big radius minus the small radius. With radii five and two, the distance between the centers is five minus two, three. In our question the circles touch from the outside, so we add the radii, seven plus seven.",
     "at": [
      "Compare that with circles",
      "touch from the",
-     "but now both radii go the same way",
-     "the same way",
-     "it's five minus",
+     "They overlap along the same straight line",
+     "The part between",
+     "is five minus",
      "In our question"
     ]
    }

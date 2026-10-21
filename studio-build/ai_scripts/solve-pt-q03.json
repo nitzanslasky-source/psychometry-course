@@ -47,14 +47,14 @@
     ]
    },
    {
-    "say": "Why split it? Because the third fraction, two a b over two a b, is one. So we have minus one and plus one, and they cancel each other.",
+    "say": "Why split it? The third fraction is minus two a b over two a b. The top and bottom have the same size, so that fraction is minus one. The expression also has plus one outside the fraction. Minus one plus one is zero, so those two parts cancel.",
     "at": [
      "two a b over two a b",
-     "cancel each other"
+     "fraction is minus one"
     ]
    },
    {
-    "say": "Now reduce the other two. In two a squared over two a b, the twos cancel, and one a cancels, so we're left with a over b. In two b squared over two a b, the twos cancel, and a b cancels too, so we get b over a.",
+    "say": "Now reduce the other two. In two a squared over two a b, the twos cancel, and one a cancels, so we're left with a over b. In two b squared over two a b, the twos cancel, and one factor of b cancels too, so we get b over a.",
     "at": [
      "Now reduce the other two",
      "In two a"

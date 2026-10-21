@@ -564,7 +564,8 @@ def UNITS(name, rows, layers, unit=46, boxh=44, labw=150, gap=58, col=0, w=None,
       ('fill', r, i0, i1[, colour])    tint boxes i0 .. i1-1 of row r (teal; 'orange')
       ('br', r, i0, i1, text[, 'up'])  a bracket under (or over) boxes i0 .. i1-1, with its text
       ('in', r, i, text)               a value inside box i
-      ('right', r, text)               a value after the row"""
+      ('right', r, text)               a value after the row
+      ('tick', r, i, text)             a clock time over the edge before box i (a timeline)"""
     n = max(c for _, c in rows); x0 = 10 + labw; y0 = 46
     W = x0 + n * unit + 20 + extra; H = y0 + len(rows) * (boxh + gap) + 6
     rt = lambda r: y0 + r * (boxh + gap)
@@ -599,6 +600,10 @@ def UNITS(name, rows, layers, unit=46, boxh=44, labw=150, gap=58, col=0, w=None,
                 r, t = m[1], m[2]
                 c = rows[r][1]
                 b += _tx(bx(c) + 14, rt(r) + boxh * .7, t, 28, _TEAL, 'start')
+            elif k == 'tick':                    # 2026-10-21 a clock time above the edge before box i (a timeline)
+                r, i, t = m[1], m[2], m[3]
+                b += ('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="%s" stroke-width="3"/>' % (bx(i), rt(r) - 10, bx(i), rt(r) + boxh, _INK)
+                      + _tx(bx(i), rt(r) - 16, t, 26, _INK))
         out.append((key, MV._svg(W, H, b, '%s: %s' % (title, key))))
     return MV.items(_layers, name, out, w=w, col=col, own=True)
 
@@ -1725,6 +1730,41 @@ t9d6 = IH('t9d6', 'in total: $\\ 5+2=7$ minutes', size=34)
 t9d7 = I('t9d7', 'The whole job $-$ done $=$ left', size=34)
 t9k2 = I('t9k2', 'Share them among any team. $\\ $Stages: $\\ $add them up.', size=34)
 t9k3 = I('t9k3', 'Joins or leaves: $\\ $the whole job $-$ done $=$ left', size=34)
+# 2026-10-21 (external-course review, approved): two more time questions, after "someone joins in the middle" (part 2):
+# staggered arrival (real exam 2023_spring_q2_07, the bees; new story and numbers): 30 flyers, a volunteer joins every
+# minute, 2 flyers a minute each -> minute by minute in a table: 2, 6, 12, 20, 30 -> the first worked 5 minutes = 10
+# (the check 10 + 8 + 6 + 4 + 2 = 30); and work-rest cycles (real exams 2019_winter_q1_20, 2025_autumn_q2_11): 8 boxes
+# every 5 minutes of work, 10 minutes' rest after every 30 minutes of work; in one hour: work 0-30, rest 30-40, work
+# 40-60 (the next break would start at 40 + 30 = 70) -> 50 working minutes = 10 x 5 -> 80 boxes (the trap 96).
+t9e0 = I('t9e0', '$30$ flyers. $\\ $A volunteer joins every minute. $\\ 2$ flyers a minute each.', size=30)
+t9e1 = I('t9e1', 'The first volunteer: $\\ $how many flyers?', size=30)
+t9et = TBL('t9et', ['minute', 'volunteers', 'this minute', 'so far'], ['', '', '', '', ''], [
+    ('r1', [('c', 0, 0, '1'), ('c', 0, 1, '1'), ('c', 0, 2, '1×2=2'), ('c', 0, 3, '2')]),
+    ('r2', [('c', 1, 0, '2'), ('c', 1, 1, '2'), ('c', 1, 2, '2×2=4'), ('c', 1, 3, '2+4=6')]),
+    ('r3', [('c', 2, 0, '3'), ('c', 2, 1, '3'), ('c', 2, 2, '3×2=6'), ('c', 2, 3, '6+6=12')]),
+    ('r4', [('c', 3, 0, '4'), ('c', 3, 1, '4'), ('c', 3, 2, '4×2=8'), ('c', 3, 3, '12+8=20')]),
+    ('r5', [('c', 4, 0, '5'), ('c', 4, 1, '5'), ('c', 4, 2, '5×2=10'), ('c', 4, 3, '20+10=30')]),
+    ('end', [('box', 4, 3)])], colw=170, rowh=64, size=30, w=560)
+t9e2 = IH('t9e2', 'the first: $\\ 5\\times2=10$ flyers', size=30, col=1)
+t9e3 = IH('t9e3', 'the third: $\\ 3\\times2=6$', size=30, col=1)
+t9e4 = IH('t9e4', '$10+8+6+4+2=30$', size=30, col=1)
+t9e5 = I('t9e5', 'Step by step, $\\ $until the whole job is done', size=30, col=1)
+t9f0 = I('t9f0', '$8$ boxes every $5$ minutes of work. $\\ $After every $30$ minutes of work: $\\ 10$ minutes\' rest.', size=28)
+t9f1 = I('t9f1', 'How many boxes in one hour?', size=30)
+t9ft = UNITS('t9ft', [('', 12)], [
+    ('t0', [('tick', 0, 0, '0'), ('tick', 0, 12, '60')]),
+    ('w1', [('fill', 0, 0, 6), ('br', 0, 0, 6, 'work 30'), ('tick', 0, 6, '30')]),
+    ('r', [('fill', 0, 6, 8, 'grey'), ('br', 0, 6, 8, 'rest 10'), ('tick', 0, 8, '40')]),
+    ('w2', [('fill', 0, 8, 12), ('br', 0, 8, 12, 'work 20')])], unit=50, boxh=46, labw=10, gap=62, w=560,
+    title='One hour, in steps of 5 minutes')
+t9f2 = IH('t9f2', 'next break: $\\ 40+30=70$, $\\ $after the hour', size=30, col=1)
+t9f3 = IH('t9f3', '$30+20=50$ minutes of work', size=30, col=1)
+t9f4 = IH('t9f4', '$50\\div5=10$', size=30, col=1)
+t9f5 = IH('t9f5', '$10\\times8=80$ boxes', size=30, col=1)
+t9f6 = IH('t9f6', '$60\\div5=12$, $\\ 12\\times8=96$: $\\ $the trap', size=30, col=1)
+t9f7 = I('t9f7', 'Breaks: $\\ $draw the timeline, $\\ $count only the working minutes', size=30)
+t9k4 = I('t9k4', 'One after another: $\\ $step by step, in a table', size=34)
+t9k5 = I('t9k5', 'Breaks: $\\ $count only the working minutes', size=34)
 video('wp-099', 'lesson', slides=[
     S('Worker-Hours',
       L("Now the last type, worker-hours."),
@@ -1769,14 +1809,72 @@ video('wp-099', 'lesson', slides=[
         show(t9d6, 'five plus two, seven minutes')),
       L("So the whole job, minus what's done, is what's left. Then we divide what's left by the new rate.",
         show(t9d7, 'So the whole job, minus'))),
+    S('One after another',
+      L("Sometimes workers don't join just once. They join one after another, at fixed times. Then we go step by step, "
+        "minute by minute, in a table."),
+      L("A box holds thirty flyers. One volunteer starts handing them out. A minute later a second volunteer joins, a "
+        "minute after that a third, and so on. Each volunteer hands out two flyers a minute, until the box is empty.",
+        show(t9e0, 'A box holds thirty flyers')),
+      L("How many flyers did the first volunteer hand out?", show(t9e1, 'How many flyers did the first')),
+      L("Let's make a table. For each minute, we write how many volunteers are working, how many flyers they hand out "
+        "in that minute, and how many are gone so far.", show(t9et['line'], "Let's make a table")),
+      L("In the first minute, only one volunteer works. One times two is two flyers. So far, two flyers are gone.",
+        show(t9et['r1'], 'In the first minute')),
+      L("In the second minute, two volunteers work. Two times two is four flyers. Two plus four is six so far.",
+        show(t9et['r2'], 'In the second minute')),
+      L("In the third minute, three volunteers work. Three times two is six. Six plus six is twelve so far.",
+        show(t9et['r3'], 'In the third minute')),
+      L("In the fourth minute, four volunteers hand out four times two, eight. Twelve plus eight is twenty so far.",
+        show(t9et['r4'], 'In the fourth minute')),
+      L("In the fifth minute, five volunteers hand out five times two, ten. Twenty plus ten is thirty. That's the whole "
+        "box, so they stop after five minutes.", show(t9et['r5'], 'In the fifth minute'), show(t9et['end'], "That's the whole box")),
+      L("Now we can answer the question. The first volunteer worked all five minutes, at two flyers a minute. Five times two is ten "
+        "flyers.", show(t9e2, 'Five times two is ten')),
+      L("Careful, the volunteers didn't all hand out the same. The third volunteer joined in the third minute, so she "
+        "worked three minutes. Three times two is six flyers.", show(t9e3, 'Three times two is six flyers')),
+      L("Let's check. From the first volunteer to the fifth, they handed out ten, eight, six, four and two flyers. That "
+        "adds up to thirty, the whole box.", show(t9e4, 'they handed out ten, eight')),
+      L("Here the box ran out exactly at the end of a minute. If it runs out in the middle of a minute, the last step is "
+        "only part of a minute. So we go step by step, and stop when the total reaches the whole job.",
+        show(t9e5, 'stop when the total reaches'))),
+    S('Clock time and working time',
+      L("One more kind of question. Sometimes a worker takes breaks. Then the time on the clock is not the same as the "
+        "time she works."),
+      L("A worker packs eight boxes every five minutes of work. After every thirty minutes of work, she rests for ten "
+        "minutes.", show(t9f0, 'A worker packs eight boxes')),
+      L("How many boxes does she pack in one hour?", show(t9f1, 'How many boxes does she pack')),
+      L("Let's draw the hour as a timeline, in steps of five minutes. It starts at zero and ends at sixty.",
+        show(t9ft['line'], "Let's draw the hour"), show(t9ft['t0'], 'It starts at zero')),
+      L("She works for the first thirty minutes. So the clock shows thirty when her first break starts.",
+        show(t9ft['w1'], 'She works for the first thirty')),
+      L("She rests for ten minutes, from thirty to forty.", show(t9ft['r'], 'She rests for ten minutes')),
+      L("Then she works again, from forty to sixty. That's twenty minutes of work.",
+        show(t9ft['w2'], 'Then she works again')),
+      L("Why is there no second break in the hour? Her next break comes after thirty more minutes of work. Forty plus "
+        "thirty is seventy, and the hour ends at sixty.", show(t9f2, 'Forty plus thirty is seventy')),
+      L("So her working time is thirty plus twenty, fifty minutes.", show(t9f3, 'thirty plus twenty, fifty')),
+      L("She packs eight boxes in every five minutes of work. So how many five-minute parts are in fifty minutes? Fifty "
+        "divided by five is ten.", show(t9f4, 'Fifty divided by five is ten')),
+      L("Ten parts, eight boxes in each. Ten times eight is eighty boxes.", show(t9f5, 'Ten times eight is eighty')),
+      L("A lot of students divide the whole hour by five. Sixty divided by five is twelve. And twelve times eight is "
+        "ninety-six. But she doesn't pack while she rests.", show(t9f6, 'Sixty divided by five is twelve')),
+      L("So draw the timeline, mark when each break starts, and count only the working minutes inside the time they "
+        "ask about. And read the question carefully. Does the break come after thirty minutes of work, or every thirty "
+        "minutes on the clock?", show(t9f7, 'count only the working minutes'))),
     S('Recap',
       L("So let's sum it up. Worker-hours are the workers times the hours. That's how long one worker alone would need.",
         show(t9a4, 'Worker-hours are the workers times')),
       L("We can share the worker-hours among any team. And in stages, we count each stage and add.",
         show(t9k2, 'We can share the worker-hours')),
       L("When someone joins or leaves, the whole job minus what's done is what's left.", show(t9k3, 'When someone joins')),
+      L("When workers join one after another, we go step by step in a table, until the whole job is done.",
+        show(t9k4, 'When workers join one after another')),
+      L("And with breaks, we count only the working minutes.", show(t9k5, 'And with breaks')),
       L("Take a moment to memorize this, and I'll see you in the next video.")),
 ])
+SPLITS.append(('wp-099', 'Worker-Hours', [
+    (1, None),
+    (5, "Let's continue, with two more questions where we follow the time step by step.")]))
 
 # ------------------------------------------------------------------------------------------------ g100 (the fence)
 # Hebrew (wp 6362-6382, the road 20 x 10 + 15 x 10 = 350): "I'm the contractor, how many days of pay?", each stage

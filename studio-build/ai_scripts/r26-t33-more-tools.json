@@ -3,7 +3,7 @@
  "style": "the teacher reads it herself (Reading Studio), topic-33 scripts (2026-10-14): math_patches/_ai_vis_t33.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Here are two more circle tools. They come up in some of the harder circle questions. And right after this lesson, two questions teach two more tools."
+   "Here are three more circle tools. They come up in some of the harder circle questions. And right after this lesson, two questions teach two more tools."
   ],
   [
    {
@@ -100,27 +100,28 @@
     ]
    },
    {
-    "say": "Now triangle A O B. The four radii make a rhombus, O A P B. Let's take it out. O P cuts it into our two equilateral triangles. Remember, the area of every equilateral triangle is a squared, times root three, over four. Here a is six. Six squared is thirty-six, and thirty-six over four is nine. So each one is nine root three.",
+    "say": "Now we need the area of triangle A O B. It is not equilateral, but the rhombus O A P B helps us find its area. Its diagonal O P cuts it into two equilateral triangles. Use the equilateral area formula, a squared times root three, over four. Here a is six. Six squared is thirty-six, and thirty-six over four is nine. So each equilateral triangle has area nine root three.",
     "at": [
-     "Now triangle A",
-     "make a rhombus",
-     "Let's take it out",
+     "Now we need",
+     "the rhombus O A P B",
+     "the rhombus O A P B helps us find its area",
+     "B helps us",
      "O P cuts it",
-     "our two equilateral",
-     "Remember, the area of every",
-     "equilateral triangle is",
+     "two equilateral triangles",
+     "Use the equilateral area formula",
+     "a squared times",
      "Six squared is thirty-six",
      "thirty-six over four",
-     "So each one is nine root three",
-     "So each one is nine root three"
+     "So each equilateral triangle has area nine root three",
+     "So each equilateral triangle has area nine root three",
+     "area nine root"
     ]
    },
    {
     "say": "Now cut the same rhombus the other way, with the chord A B. A diagonal cuts a rhombus into two equal halves, and triangle A O B is one of them. So it's half of the rhombus, the same as one equilateral triangle, nine root three.",
     "at": [
-     "rhombus the other",
      "with the chord A B",
-     "into two equal"
+     "A diagonal cuts"
     ]
    }
   ],
@@ -153,112 +154,10 @@
     ]
    },
    {
-    "say": "So the shared region is two times, four pi over three minus root three. That's eight pi over three, minus two root three.",
+    "say": "So the shared region is two times, four pi over three minus root three. That's eight pi over three, minus two root three. [pause] Okay. I'll see you in the next part.",
     "at": [
      "So the shared region is two times",
      "two times, four"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "The second tool is a ring. Two circles with the same center, O, and the ring between them. Circles with the same center are called concentric. Call the big radius big R, and the small radius r. The ring is the big circle minus the small circle, pi big R squared minus pi r squared.",
-    "at": [
-     "Two circles with the same center",
-     "center, O, and",
-     "The ring is the big circle",
-     "circle minus the"
-    ]
-   },
-   {
-    "say": "Now a chord A B of the big circle that just touches the small circle, at the point M. M is a point of tangency, so the automatic helper line is the radius O M. It's perpendicular to the chord.",
-    "at": [
-     "Now a chord A B",
-     "of the big",
-     "the automatic helper line",
-     "the radius O"
-    ]
-   },
-   {
-    "say": "Draw O A and O B too. They're radii of the big circle, so triangle A O B is isosceles. O M is the height to its base, and in an isosceles triangle that height is also a median. So M cuts the chord in half. Call each half h.",
-    "at": [
-     "Draw O A and O B",
-     "They're radii of",
-     "So M cuts the chord in half",
-     "in half. Call"
-    ]
-   },
-   {
-    "say": "Look at the right triangle O M B. Its legs are r and h, and its hypotenuse is big R. By Pythagoras, r squared plus h squared is big R squared. Now subtract r squared from both sides. So big R squared minus r squared is h squared.",
-    "at": [
-     "Look at the right triangle",
-     "O M B",
-     "By Pythagoras",
-     "h squared is",
-     "Now subtract r squared from both sides",
-     "So big R"
-    ]
-   },
-   {
-    "say": "And the ring? Let's go back to the whole ring. Pi big R squared minus pi r squared is pi times, big R squared minus r squared. That's pi times h squared. So the ring depends only on the chord.",
-    "at": [
-     "Let's go back to the whole ring",
-     "Pi big R squared minus pi r squared is",
-     "pi r squared"
-    ]
-   }
-  ],
-  [
-   {
-    "say": "So if the chord is ten, then h is half of it, five. And the ring is pi times five squared, twenty-five pi. We don't need either radius.",
-    "at": [
-     "So if the chord is ten",
-     "ten, then h",
-     "And the ring is pi times",
-     "times five squared"
-    ]
-   },
-   {
-    "say": "Let's check it on rings with a chord of ten. Radii twelve and thirteen, the five, twelve, thirteen triangle. The big circle is pi times thirteen squared, a hundred sixty-nine pi. The small one is pi times twelve squared, a hundred forty-four pi.",
-    "at": [
-     "Radii twelve and thirteen",
-     "five, twelve, thirteen",
-     "The big circle is pi",
-     "The small one"
-    ]
-   },
-   {
-    "say": "The ring is the big circle minus the small one. A hundred sixty-nine pi minus a hundred forty-four pi is twenty-five pi, just like the rule says.",
-    "at": [
-     "A hundred sixty-nine pi minus",
-     "a hundred forty-four"
-    ]
-   },
-   {
-    "say": "Radii five and five root two, a silver triangle with legs five and five. Five root two, squared, is fifty. Fifty pi minus twenty-five pi is twenty-five pi again.",
-    "at": [
-     "Radii five and five root two",
-     "two, a silver",
-     "Five root two, squared",
-     "Fifty pi minus twenty-five pi",
-     "is twenty-five pi"
-    ]
-   },
-   {
-    "say": "And here's the limiting picture, where the small circle has shrunk to a single point, the center. Then the chord goes through the center, so it's a diameter of ten. The ring becomes a whole circle with radius five, twenty-five pi. The same answer.",
-    "at": [
-     "the limiting picture",
-     "small circle has",
-     "twenty-five pi. The same"
-    ]
-   },
-   {
-    "say": "So when two circles have the same center, and a chord of the big circle touches the small circle, the ring is pi times half the chord, squared. Now let's see the other two tools in questions. [pause] Okay. I'll see you in the next video.",
-    "at": [
-     "So when two circles have the same center",
-     "the same center",
-     "the ring is pi",
-     "half the chord"
     ]
    }
   ]

@@ -359,10 +359,6 @@
      "type": "fig",
      "ref": "triangle",
      "caption": "Not whole: the **triangle value**, multiply along the diagonal, divide by what's left: $\\frac{20\\cdot18}{12}=30$. Or cross-multiply: $12x=360$."
-    },
-    {
-     "type": "p",
-     "text": "**Inverse:** one goes up, the other goes down, the **product** stays: $6$ workers $\\times10$ days $=60=4\\times15$. First ask: more or fewer?"
     }
    ]
   },
@@ -521,7 +517,7 @@
      "type": "checklist",
      "items": [
       "What exactly did they ask: $x$, $2x$, $x-1$, the total?",
-      "Same rate? Bigger or smaller? Direct or inverse?",
+      "Same rate? Should the result be bigger or smaller?",
       "Which part stays the same?",
       "Where does the $\\times2$ go? On the smaller side.",
       "Can it really be found, or only a multiple?"
@@ -538,7 +534,6 @@
      "type": "traps",
      "items": [
       "A ratio read in the wrong order.",
-      "A ratio table for workers and days ($6\\frac23$ days instead of $15$).",
       "Units instead of people ($27$ units, $54$ members).",
       "A part out of the other part instead of out of everyone ($\\frac58$ vs $\\frac5{13}$).",
       "The cost instead of the profit; $x$ instead of what they asked."

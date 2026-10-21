@@ -21,7 +21,7 @@
     ]
    },
    {
-    "say": "[short pause] Let's start with understanding. One height, D E, is given. Here a second height lets us compare the two end triangles, so we drop it from A down to the base. Call its foot F. In general, heights often split a trapezoid into a rectangle and right triangles.",
+    "say": "[short pause] Let's start with understanding. One height, D E, is given. Here a second height lets us compare the two end triangles, so we drop it from A down to the base. Call its foot F. That's the point where the height meets the base. In general, heights often split a trapezoid into a rectangle and right triangles.",
     "at": [
      "Let's start with understanding",
      "One height, D",

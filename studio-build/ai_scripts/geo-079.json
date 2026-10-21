@@ -25,20 +25,21 @@
     ]
    },
    {
-    "say": "This sign is a letter called pi, and the radius we know. Notice that only the area has r squared. The area is in square centimeters, and the circumference is a length, so it's in centimeters.",
+    "say": "The symbol pi stands for a fixed number. The letter r is our radius. Notice that only the area formula has r squared. Area is measured in square centimeters. Circumference is a length, measured in centimeters.",
     "at": [
-     "called pi, and",
-     "only the area has r squared",
-     "The area is"
+     "a fixed number",
+     "only the area formula has r squared",
+     "Area is measured"
     ]
    }
   ],
   [
    {
-    "say": "So what is pi? Let's really see. Take a circle, and here is its diameter, d.",
+    "say": "We used pi in the circumference formula earlier. Now let's see what that number means on the picture. Take a circle, and here is its diameter, d.",
     "at": [
-     "Let's really see",
-     "Take a circle"
+     "the circumference formula",
+     "Now let's see what that number means",
+     "number means on"
     ]
    },
    {
@@ -92,10 +93,10 @@
     ]
    },
    {
-    "say": "Its height is the side of a slice, the radius r. Its bottom is made of half the slices' arcs, so it's half the circumference. Half of two pi r is pi r.",
+    "say": "The height of this almost-rectangle is the radius r. Its long edge is made from half of the circle's curved edge. So that length is half the circumference. Half of two pi r is pi r.",
     "at": [
-     "Its height is",
-     "of a slice",
+     "The height of this almost-rectangle",
+     "is the radius",
      "Half of two pi r",
      "is pi r"
     ]
@@ -124,7 +125,7 @@
      "It's not an"
     ]
    },
-   "It just isn't a round number. Its digits after the point never end, so instead of writing them, we give it a special sign, the letter pi. That's easier to write and easier to see in the formula.",
+   "It just isn't a round number. Its digits after the decimal point never end, so instead of writing them, we give it a special sign, the letter pi. That's easier to write and easier to see in the formula.",
    {
     "say": "So the area, pi r squared, is a bit more than three times r squared. For a rough comparison, like the next one, that's all we need to know about pi. It's a bit more than three.",
     "at": [
@@ -140,10 +141,10 @@
     ]
    },
    {
-    "say": "And when the answers have pi in them, keep the pi. Don't change it into a number.",
+    "say": "And when the answers have pi in them, keep the pi. Don't replace it with a rounded decimal.",
     "at": [
      "keep the pi",
-     "Don't change it"
+     "Don't replace it"
     ]
    }
   ],

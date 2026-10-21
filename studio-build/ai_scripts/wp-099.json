@@ -166,36 +166,12 @@
     ]
    },
    {
-    "say": "So the whole job, minus what's done, is what's left. Then we divide what's left by the new rate.",
+    "say": "So the whole job, minus what's done, is what's left. Then we divide what's left by the new rate. [pause] Okay. I'll see you in the next part.",
     "at": [
      "So the whole job, minus",
      "what's done, is"
     ]
    }
-  ],
-  [
-   {
-    "say": "So let's sum it up. Worker-hours are the workers times the hours. That's how long one worker alone would need.",
-    "at": [
-     "Worker-hours are the workers times",
-     "That's how long"
-    ]
-   },
-   {
-    "say": "We can share the worker-hours among any team. And in stages, we count each stage and add.",
-    "at": [
-     "We can share the worker-hours",
-     "among any team"
-    ]
-   },
-   {
-    "say": "When someone joins or leaves, the whole job minus what's done is what's left.",
-    "at": [
-     "When someone joins",
-     "the whole job"
-    ]
-   },
-   "Take a moment to memorize this, and I'll see you in the next video."
   ]
  ]
 }

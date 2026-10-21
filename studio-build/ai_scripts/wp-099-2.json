@@ -1,0 +1,234 @@
+{
+ "videoId": "wp-099-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-26 scripts (2026-10-21): math_patches/_ai_vis_t26.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue, with two more questions where we follow the time step by step."
+  ],
+  [
+   {
+    "say": "Sometimes workers don't join just once. They join one after another, at fixed times. Then we go step by step, minute by minute, in a table.",
+    "at": [
+     "just once. They"
+    ]
+   },
+   {
+    "say": "A box holds thirty flyers. One volunteer starts handing them out. A minute later a second volunteer joins, a minute after that a third, and so on. Each volunteer hands out two flyers a minute, until the box is empty.",
+    "at": [
+     "A box holds thirty flyers",
+     "One volunteer starts"
+    ]
+   },
+   {
+    "say": "How many flyers did the first volunteer hand out?",
+    "at": [
+     "How many flyers did the first",
+     "first volunteer hand"
+    ]
+   },
+   {
+    "say": "Let's make a table. For each minute, we write how many volunteers are working, how many flyers they hand out in that minute, and how many are gone so far.",
+    "at": [
+     "Let's make a table",
+     "For each minute"
+    ]
+   },
+   {
+    "say": "In the first minute, only one volunteer works. One times two is two flyers. So far, two flyers are gone.",
+    "at": [
+     "In the first minute",
+     "one volunteer works"
+    ]
+   },
+   {
+    "say": "In the second minute, two volunteers work. Two times two is four flyers. Two plus four is six so far.",
+    "at": [
+     "In the second minute",
+     "Two times two"
+    ]
+   },
+   {
+    "say": "In the third minute, three volunteers work. Three times two is six. Six plus six is twelve so far.",
+    "at": [
+     "In the third minute",
+     "Three times two"
+    ]
+   },
+   {
+    "say": "In the fourth minute, four volunteers hand out four times two, eight. Twelve plus eight is twenty so far.",
+    "at": [
+     "In the fourth minute",
+     "volunteers hand out"
+    ]
+   },
+   {
+    "say": "In the fifth minute, five volunteers hand out five times two, ten. Twenty plus ten is thirty. That's the whole box, so they stop after five minutes.",
+    "at": [
+     "In the fifth minute",
+     "volunteers hand out",
+     "That's the whole box",
+     "they stop after"
+    ]
+   },
+   {
+    "say": "Now we can answer the question. The first volunteer worked all five minutes, at two flyers a minute. Five times two is ten flyers.",
+    "at": [
+     "Five times two is ten"
+    ]
+   },
+   {
+    "say": "Careful, the volunteers didn't all hand out the same. The third volunteer joined in the third minute, so she worked three minutes. Three times two is six flyers.",
+    "at": [
+     "Careful, the volunteers",
+     "Three times two is six flyers"
+    ]
+   },
+   {
+    "say": "Let's check. From the first volunteer to the fifth, they handed out ten, eight, six, four and two flyers. That adds up to thirty, the whole box.",
+    "at": [
+     "first volunteer to",
+     "they handed out ten, eight",
+     "six, four and"
+    ]
+   },
+   {
+    "say": "Here the box ran out exactly at the end of a minute. If it runs out in the middle of a minute, the last step is only part of a minute. So we go step by step, and stop when the total reaches the whole job.",
+    "at": [
+     "stop when the total reaches",
+     "the whole job"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more kind of question. Sometimes a worker takes breaks. Then the time on the clock is not the same as the time she works.",
+    "at": [
+     "question. Sometimes a"
+    ]
+   },
+   {
+    "say": "A worker packs eight boxes every five minutes of work. After every thirty minutes of work, she rests for ten minutes.",
+    "at": [
+     "A worker packs eight boxes",
+     "every five minutes"
+    ]
+   },
+   {
+    "say": "How many boxes does she pack in one hour?",
+    "at": [
+     "How many boxes does she pack",
+     "pack in one"
+    ]
+   },
+   {
+    "say": "Let's draw the hour as a timeline, in steps of five minutes. It starts at zero and ends at sixty.",
+    "at": [
+     "Let's draw the hour",
+     "a timeline, in",
+     "It starts at zero",
+     "ends at sixty"
+    ]
+   },
+   {
+    "say": "She works for the first thirty minutes. So the clock shows thirty when her first break starts.",
+    "at": [
+     "She works for the first thirty",
+     "So the clock"
+    ]
+   },
+   {
+    "say": "She rests for ten minutes, from thirty to forty.",
+    "at": [
+     "She rests for ten minutes",
+     "from thirty to"
+    ]
+   },
+   {
+    "say": "Then she works again, from forty to sixty. That's twenty minutes of work.",
+    "at": [
+     "Then she works again",
+     "That's twenty minutes"
+    ]
+   },
+   {
+    "say": "Why is there no second break in the hour? Her next break comes after thirty more minutes of work. Forty plus thirty is seventy, and the hour ends at sixty.",
+    "at": [
+     "Forty plus thirty is seventy"
+    ]
+   },
+   {
+    "say": "So her working time is thirty plus twenty, fifty minutes.",
+    "at": [
+     "thirty plus twenty, fifty"
+    ]
+   },
+   {
+    "say": "She packs eight boxes in every five minutes of work. So how many five-minute parts are in fifty minutes? Fifty divided by five is ten.",
+    "at": [
+     "She packs eight",
+     "Fifty divided by five is ten"
+    ]
+   },
+   {
+    "say": "Ten parts, eight boxes in each. Ten times eight is eighty boxes.",
+    "at": [
+     "Ten parts, eight",
+     "Ten times eight is eighty"
+    ]
+   },
+   {
+    "say": "A lot of students divide the whole hour by five. Sixty divided by five is twelve. And twelve times eight is ninety-six. But she doesn't pack while she rests.",
+    "at": [
+     "A lot of",
+     "Sixty divided by five is twelve",
+     "And twelve times"
+    ]
+   },
+   {
+    "say": "So draw the timeline, mark when each break starts, and count only the working minutes inside the time they ask about. And read the question carefully. Does the break come after thirty minutes of work, or every thirty minutes on the clock?",
+    "at": [
+     "count only the working minutes",
+     "inside the time"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. Worker-hours are the workers times the hours. That's how long one worker alone would need.",
+    "at": [
+     "Worker-hours are the workers times",
+     "That's how long"
+    ]
+   },
+   {
+    "say": "We can share the worker-hours among any team. And in stages, we count each stage and add.",
+    "at": [
+     "We can share the worker-hours",
+     "among any team"
+    ]
+   },
+   {
+    "say": "When someone joins or leaves, the whole job minus what's done is what's left.",
+    "at": [
+     "When someone joins",
+     "the whole job"
+    ]
+   },
+   {
+    "say": "When workers join one after another, we go step by step in a table, until the whole job is done.",
+    "at": [
+     "When workers join one after another",
+     "another, we go"
+    ]
+   },
+   {
+    "say": "And with breaks, we count only the working minutes.",
+    "at": [
+     "And with breaks",
+     "only the working"
+    ]
+   },
+   "Take a moment to memorize this, and I'll see you in the next video."
+  ]
+ ]
+}

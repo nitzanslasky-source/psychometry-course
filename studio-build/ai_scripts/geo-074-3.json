@@ -7,15 +7,15 @@
   ],
   [
    {
-    "say": "Here's one more arc, a bigger one, from P to Q, along the bottom. The central angle at O intercepts it. And an inscribed angle from D, up at the top, intercepts it too. Stand at D and look down between the two chords. What you see is the arc P Q. So the arc an angle intercepts is always the one between its arms, on the side it opens to.",
+    "say": "Here's one more arc, from P to Q, along the bottom. The central angle at O intercepts it. And an inscribed angle from D, up at the top, intercepts it too. Look at the chords D P and D Q. Their ends are P and Q. The intercepted arc is the arc P Q opposite D, not the arc that passes through D.",
     "at": [
      "Here's one more arc",
-     "bigger one, from",
+     "P to Q",
      "The central angle at O",
      "And an inscribed angle from D",
      "D, up at",
-     "Stand at D",
-     "down between the"
+     "Look at the chords D P and D Q",
+     "P and D"
     ]
    }
   ],
@@ -51,13 +51,13 @@
   ],
   [
    {
-    "say": "A sector. Take two radii, O A and O B, and the arc between them. The part of the circle they close off is a sector. It's a slice of the circle, like a slice of pizza.",
+    "say": "Now let's look at a sector. Take two radii, O A and O B, and the arc between them. The region inside the circle, bounded by those two radii and that arc, is a sector. It looks like a slice of pizza.",
     "at": [
-     "A sector",
+     "a sector",
      "Take two radii",
      "and O B",
      "is a sector",
-     "It's a slice"
+     "It looks like"
     ]
    },
    {

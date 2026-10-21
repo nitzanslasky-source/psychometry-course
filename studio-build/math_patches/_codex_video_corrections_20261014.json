@@ -2,6 +2,86 @@
   "label": "Video correction",
   "purpose": "User-approved rerecords from video/audio QA; preserve scripts, originals, indices and original recording workflow.",
   "lessons": {
+    "solve-geo31-g034": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        2
+      ],
+      "notes": [
+        {
+          "index": 2,
+          "note": "Reread only paragraph 3. Clearly say that the base angles across from the two equal legs are EQUAL too. Nitzan approved this paragraph-only reread; all other paragraphs remain usable."
+        }
+      ],
+      "requestedAt": "2026-10-20T05:10:34Z",
+      "scriptParagraphs": {
+        "2": "[short pause] In an isosceles triangle, the two legs are equal, and the base angles across from them are equal too."
+      }
+    },
+    "solve-geo31-g038": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        0
+      ],
+      "notes": [
+        {
+          "index": 0,
+          "note": "Reread only paragraph 1. Clearly say the difference between the areas of ADC and ABD, not ABC. Nitzan approved this paragraph-only reread; all later paragraphs can stay."
+        }
+      ],
+      "requestedAt": "2026-10-20T05:10:34Z",
+      "scriptParagraphs": {
+        "0": "Triangle A B C has an area of fifty-six square centimeters. Point D lies on B C, and D C is three times B D. What is the difference between the areas of A D C and A B D, in square centimeters?"
+      }
+    },
+    "geo-047": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        33
+      ],
+      "notes": [
+        {
+          "index": 33,
+          "note": "Reread only paragraph 34. Clearly say the height is half the slanted SIDE, so it is 4, not half the area. Keep the remainder of the current paragraph. Nitzan approved this correction; all other paragraphs remain usable."
+        }
+      ],
+      "requestedAt": "2026-10-20T05:10:34Z",
+      "scriptParagraphs": {
+        "33": "And with a hundred fifty degrees at B, the height from A lands outside, past B. So we extend C B beyond B. The angle next to the hundred fifty, on the straight line, is a hundred eighty minus a hundred fifty, which is thirty. So again the height is half the slanted side, four. [pause] Okay. I'll see you in the next video."
+      }
+    },
+    "geo-052": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        8
+      ],
+      "notes": [
+        {
+          "index": 8,
+          "note": "Reread only paragraph 9. Clearly say: The main diagonal is the kite's LINE OF SYMMETRY. Keep the rest of the paragraph. Nitzan approved this paragraph-only reread; the rest of the lesson is usable."
+        }
+      ],
+      "requestedAt": "2026-10-20T05:10:34Z",
+      "scriptParagraphs": {
+        "8": "The main diagonal is the kite's line of symmetry. It joins the two corners that sit between equal sides, here A and C. It cuts the kite into two triangles, left and right, that are exactly the same."
+      }
+    },
+    "geo-013": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        8
+      ],
+      "notes": [
+        {
+          "index": 8,
+          "note": "Reread only paragraph 9. For the red median, clearly say: Here it ISN’T perpendicular, and it doesn’t cut the angle in half. The current recording is heard as its perpendicular by three speech checks. Nitzan approved this paragraph-only correction; all other paragraphs remain usable."
+        }
+      ],
+      "requestedAt": "2026-10-18T04:19:26Z",
+      "scriptParagraphs": {
+        "8": "In this triangle, which is not equilateral, only this line does all three. A line from a corner of the base to the middle of a leg is a median too, but it does not necessarily do the other two jobs. Here it isn't perpendicular, and it doesn't cut the angle in half."
+      }
+    },
     "solve-q-401": {
       "mode": "paragraphs",
       "paragraphs": [
@@ -130,6 +210,204 @@
       "requestedAt": "2026-10-14T13:15:05.924Z",
       "scriptParagraphs": {
         "5": "Choice number three, five x plus five. Five times three is fifteen, and fifteen plus five is twenty. Twenty is not twenty-one. So this rule cannot turn three into twenty-one, and it cannot be the definition. Choice number three is our answer."
+      }
+    },
+    "solve-q-432": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        0
+      ],
+      "notes": [
+        {
+          "index": 0,
+          "note": "Say 5a³ − 5a clearly as five a cubed minus five a. Only opening paragraph 1 needs rereading; Nitzan approved this correction."
+        }
+      ],
+      "requestedAt": "2026-10-16T09:13:53.005738Z",
+      "scriptParagraphs": {
+        "0": "Given: x is equal to five a cubed minus five a, and a is a positive integer. x is necessarily divisible by:"
+      }
+    },
+    "whole-numbers": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        3
+      ],
+      "notes": [
+        {
+          "index": 3,
+          "note": "Video speech check: clearly say −3 × −6 = 18, negative three times negative SIX is eighteen. SMALL, BASE and MEDIUM hear eight in the current take. Reread only paragraph 4; the other paragraphs remain usable. Paragraph 3's final twenty-too is a separate confirmation, not automatically marked for rereading."
+        }
+      ],
+      "requestedAt": "2026-10-16T13:27:59Z",
+      "scriptParagraphs": {
+        "3": "Careful here. A positive product doesn't mean both numbers are positive. Negative three times negative six is eighteen, which is positive, but both numbers are negative. So a positive product only tells us that the two numbers have the same sign. A negative product tells us their signs are different. And a product of zero means at least one of them is zero."
+      }
+    },
+    "divisibility": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        11
+      ],
+      "notes": [
+        {
+          "index": 11,
+          "note": "Nitzan approved rereading paragraph 12 only. Say 1,000 = 125 × 8 clearly: one thousand is one hundred twenty-five TIMES eight, not divided by eight. The current full take says divided by eight; SMALL, BASE and MEDIUM checks agree. Keep the rest of this paragraph as written. The other paragraphs remain usable."
+        }
+      ],
+      "requestedAt": "2026-10-16T12:50:55Z",
+      "scriptParagraphs": {
+        "11": "For eight, we do the same thing with the last three digits, because a thousand is a hundred twenty-five eights. So every whole thousand is divisible by eight. In seven thousand two hundred forty, we check two hundred forty. Two hundred forty is thirty eights, so seven thousand two hundred forty is divisible by eight. Now change it by one, to seven thousand two hundred forty-one. Then we check two hundred forty-one. That's thirty eights plus one, so it's not divisible by eight."
+      }
+    },
+    "solve-q-551": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        0
+      ],
+      "notes": [
+        {
+          "index": 0,
+          "note": "For the hash operation, say x² + 2xy + y² clearly: x squared plus TWO X Y plus y squared. Four independent/focused checks hear 2x without y in the opening. Only paragraph 1 needs rereading; Nitzan approved it. All later calculations remain usable."
+        }
+      ],
+      "requestedAt": "2026-10-16T09:13:53.005738Z",
+      "scriptParagraphs": {
+        "0": "For every two numbers x and y, two operations are defined. Diamond of x, y is x squared minus two x y plus y squared, and hash of x, y is x squared plus two x y plus y squared. Hash of diamond of ten, six, and diamond of five, four, is equal to what?"
+      }
+    },
+    "solve-geo32-g068": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        0
+      ],
+      "notes": [
+        {
+          "index": 0,
+          "note": "Nitzan approved rereading ONLY paragraph 1. Clearly say triangles F E G and E G C are shaded, not F E D. The opening audio was checked with SMALL, BASE and MEDIUM. Keep all the givens as written. The other 14 paragraphs remain usable; no full rerecord is needed."
+        }
+      ],
+      "requestedAt": "2026-10-20T08:04:58.355634+00:00",
+      "scriptParagraphs": {
+        "0": "A B C D is a rectangle. E lies on A D, G lies on B C, and F lies on A B. A E is three times E D, and B G is three times G C. Triangles F E G and E G C are shaded. Which of the following additional data is sufficient to determine the total shaded area?"
+      }
+    },
+    "r26-t32-perimeter": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        4
+      ],
+      "notes": [
+        {
+          "index": 4,
+          "note": "Nitzan approved rereading ONLY paragraph 5 after hearing the original clip. Clearly say: Every outside side is counted ONCE, just like before. Only the new cut is counted TWICE because it belongs to both pieces. Keep the rest of this paragraph as written. The other 14 paragraphs remain usable; no full rerecord is needed."
+        }
+      ],
+      "requestedAt": "2026-10-20T13:38:46.949220+00:00",
+      "scriptParagraphs": {
+        "4": "Every outside side is counted once, just like before. But the cut is a side of both pieces, so it's counted twice. The cut is six, so the pieces add up to thirty-two plus two times six, forty-four."
+      }
+    },
+    "solve-geo33-g076": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        19
+      ],
+      "notes": [
+        {
+          "index": 19,
+          "note": "Nitzan confirmed she said 140 and approved rereading ONLY paragraph 20. Clearly say: Now subtract one hundred FOUR from both sides. Keep the rest of paragraph 20 as written, including 256 = 2α + 2β and x = 128. The other 19 paragraphs remain usable; no full rerecord is needed."
+        }
+      ],
+      "requestedAt": "2026-10-20T19:34:38.411580+00:00",
+      "scriptParagraphs": {
+        "19": "Now subtract one hundred four from both sides. Two hundred fifty-six is equal to two alpha plus two beta. And x is alpha plus beta, so we divide both sides by two. That's one hundred twenty-eight. Choice number two once more. Okay. I'll see you in the next question."
+      }
+    },
+    "new-operation-2": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        5
+      ],
+      "notes": [
+        {
+          "index": 5,
+          "note": "Video speech check: original SMALL/fresh SMALL/focused BASE/MEDIUM hear x + 2 equals x² + 4x + 4, without squared on the left. Please reread ONLY paragraph 6, clearly saying: The bracket x + 2, SQUARED, is x² + 4x + 4. Keep the rest of this paragraph as written. All other 13 paragraphs remain usable. Original clip shown to Nitzan; no full rerecord needed. Script is already correct and unchanged."
+        }
+      ],
+      "requestedAt": "2026-10-20T19:58:11.388260+00:00",
+      "scriptParagraphs": {
+        "5": "Now open the brackets. The bracket x plus two, squared, is x squared plus four x plus four. Three times the bracket x plus two is three x plus six, because the three multiplies both parts. Now add the x's together, and the numbers together. Four x plus three x is seven x, and four plus six is ten. Together, that's x squared plus seven x plus ten."
+      }
+    },
+    "solve-q-361": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        0
+      ],
+      "notes": [
+        {
+          "index": 0,
+          "note": "Teacher approved rereading ONLY paragraph 1. Clearly say which of the following CANNOT be the value of x, not can. Keep the written question and rest of paragraph as given. All other paragraphs remain usable."
+        }
+      ],
+      "requestedAt": "2026-10-20T20:00:17.529205+00:00",
+      "scriptParagraphs": {
+        "0": "Given: eight is smaller than x plus one, in absolute value. Which of the following cannot be the value of x?"
+      }
+    },
+    "solve-q-363": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        9
+      ],
+      "notes": [
+        {
+          "index": 9,
+          "note": "Teacher approved rereading ONLY paragraph 10. Clearly say n has to be different from M, not from n. Keep the rest as written; all other paragraphs remain usable."
+        }
+      ],
+      "requestedAt": "2026-10-20T20:00:17.530203+00:00",
+      "scriptParagraphs": {
+        "9": "Now n. Let's try n is four. The absolute value of four is four, that's m. But n has to be different from m, so this pick is bad. Let's change it."
+      }
+    },
+    "geo-024": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        10
+      ],
+      "notes": [
+        {
+          "index": 10,
+          "note": "Teacher approved rereading ONLY paragraph 11. Clearly say But if 36 is the HYPOTENUSE, not the long leg. Keep the remaining paragraph as written; all other paragraphs remain usable."
+        }
+      ],
+      "requestedAt": "2026-10-20T20:00:17.530497+00:00",
+      "scriptParagraphs": {
+        "10": "But if thirty-six is the hypotenuse, the numbers aren't in the same places as three, four, five, and the triple doesn't fit. So first find the right angle, then match the triple. Okay. I'll see you in the next video."
+      }
+    },
+    "geo-026": {
+      "mode": "paragraphs",
+      "paragraphs": [
+        8,
+        15
+      ],
+      "notes": [
+        {
+          "index": 8,
+          "note": "Teacher approved rereading paragraph 9: short leg opposite 30°, long leg opposite 60°, hypotenuse opposite 90°. Keep full paragraph as written. Only paragraphs 9 and 16 need rereading; the rest remain usable."
+        },
+        {
+          "index": 15,
+          "note": "Teacher approved rereading paragraph 16. Clearly say the hypotenuse is double the SHORT leg, so 10/√3. Keep warning that only short leg is doubled, never the long leg. Only paragraphs 9 and 16 need rereading."
+        }
+      ],
+      "requestedAt": "2026-10-20T20:00:17.531041+00:00",
+      "scriptParagraphs": {
+        "8": "How do we know which side is which? By the angles, not by how the drawing is turned. The short leg is opposite the thirty degree angle. The long leg is opposite the sixty. And the hypotenuse is opposite the ninety.",
+        "15": "And the hypotenuse is double the short leg, so ten over root three. Careful, we only ever double the short leg, never the long one. That's the most common mix-up."
       }
     }
   }

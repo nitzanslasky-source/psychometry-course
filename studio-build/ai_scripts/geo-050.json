@@ -3,7 +3,7 @@
  "style": "the teacher reads it herself (Reading Studio), topic-32 scripts (2026-10-14): math_patches/_ai_vis_t32.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "The rhombus."
+   "Now let's look at the rhombus."
   ],
   [
    {
@@ -15,11 +15,11 @@
     ]
    },
    {
-    "say": "A rhombus is a parallelogram with all four sides equal. So, like every parallelogram, its opposite sides are equal and parallel, and on top of that, all four sides are equal. In the quadrilaterals lesson, we shortened a parallelogram until all its sides were equal, and that gave us a rhombus.",
+    "say": "A rhombus is a special parallelogram: all four sides are equal. Like every parallelogram, its opposite sides are equal and parallel. Remember the quadrilaterals lesson? We shortened a parallelogram until all its sides were equal, and that gave us a rhombus.",
     "at": [
      "A rhombus is",
      "its opposite sides are equal and parallel",
-     "and parallel, and"
+     "and parallel. Remember"
     ]
    },
    {
@@ -42,12 +42,12 @@
     ]
    },
    {
-    "say": "Are they equal? Not necessarily. Usually there's a long diagonal and a short one, like here. Only if the two diagonals are equal, the rhombus is a square, like this one.",
+    "say": "Are the diagonals equal? Not necessarily. Usually there's a long diagonal and a short one, like here. If the two diagonals are equal, then the rhombus is a square, like this one.",
     "at": [
      "Usually there's a long diagonal",
      "and a short",
-     "Only if the two",
-     "are equal, the"
+     "If the two",
+     "equal, then the"
     ]
    },
    {
@@ -83,16 +83,16 @@
     ]
    },
    {
-    "say": "So all the sides are equal, opposite angles are equal, and the diagonals are perpendicular, cut each other in half, and cut the angles in half.",
+    "say": "So all the sides are equal. Opposite angles are equal too. The diagonals are perpendicular. They cut each other in half, and they cut the angles in half.",
     "at": [
      "So all the sides are equal",
-     "cut each other"
+     "The diagonals are"
     ]
    }
   ],
   [
    {
-    "say": "The area of a rhombus is the product of the diagonals, over two. Why? The diagonals meet at ninety degrees, and they cut each other in half. So they split the rhombus into four equal right triangles. Look at one of them. Its legs are half of one diagonal and half of the other.",
+    "say": "The area of a rhombus is the product of the diagonals, divided by two. Product means we multiply. So we multiply the two diagonal lengths, then divide the result by two. Why does this work? The diagonals meet at ninety degrees, and they cut each other in half. So they split the rhombus into four equal right triangles. Look at one of them. Its legs are half of one diagonal and half of the other.",
     "at": [
      "The area of a rhombus",
      "is the product",
@@ -101,22 +101,22 @@
     ]
    },
    {
-    "say": "Its area is leg times leg, over two. Half of one diagonal times half of the other is the product of the diagonals, over four. Then we divide by two, so one triangle is the product of the diagonals, over eight.",
+    "say": "Its area is leg times leg, divided by two. Half of one diagonal times half of the other is the product of the diagonals, divided by four. Then we divide by two, because we're finding the area of a triangle. So one triangle has an area equal to the product of the diagonals, divided by eight.",
     "at": [
      "Half of one diagonal times",
      "half of the",
      "Then we divide by two",
-     "product of the diagonals, over eight"
+     "of a triangle"
     ]
    },
    {
-    "say": "The rhombus is four of these triangles, so we multiply by four. Four times that is the product of the diagonals, over two. That's diagonal times diagonal, over two.",
+    "say": "The whole rhombus is made of four of these triangles, so we multiply one triangle's area by four. Four times that is the product of the diagonals, divided by two. That's diagonal times diagonal, divided by two.",
     "at": [
-     "The rhombus is four",
-     "these triangles, so",
+     "The whole rhombus is made of four",
+     "of four of",
      "Four times that is",
      "That's diagonal times diagonal",
-     "diagonal times diagonal, over two"
+     "diagonal times diagonal, divided by two"
     ]
    }
   ],

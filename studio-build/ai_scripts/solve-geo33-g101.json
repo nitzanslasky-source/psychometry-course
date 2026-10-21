@@ -106,12 +106,12 @@
     ]
    },
    {
-    "say": "Where do we start? In order, the choices are two, three, four and five. Here the shaded area grows when r grows. C B stays ten, so capital R is always r plus five. And in the first way we saw that the shaded area is ten r plus twenty-five, times pi. So a bigger r always gives a bigger area.",
+    "say": "Where do we start? The choices in order are two, three, four and five. From the diameters, the big radius is the small radius plus five. The shaded area is the large circle's area minus the small circle's area. Using the square formula to expand that difference gives pi times the whole bracket, ten r plus twenty-five. This grows as r grows, so a bigger radius gives a bigger shaded area.",
     "at": [
-     "In order, the choices are",
+     "The choices in order are",
      "two, three, four",
-     "the shaded area is ten r plus",
-     "r plus twenty-five"
+     "gives pi times the whole bracket, ten r plus",
+     "bracket, ten r"
     ]
    },
    {
@@ -153,7 +153,7 @@
   ],
   [
    {
-    "say": "Three gave fifty-five pi, too small, so two and three are out. We need sixty-five pi. Let's try four. The small diameter is eight, so the big diameter is eight plus ten, so the big diameter is eight plus ten, eighteen. The big radius is nine.",
+    "say": "Three gave fifty-five pi, too small, so two and three are out. We need sixty-five pi. Let's try four. The small diameter is eight, so the big diameter is eight plus ten, eighteen. The big radius is nine.",
     "at": [
      "Three gave fifty-five pi",
      "so two and three are out",

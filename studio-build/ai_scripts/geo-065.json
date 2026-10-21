@@ -13,10 +13,10 @@
     ]
    },
    {
-    "say": "There are questions about which shape is also which, and they're solved by reading the definitions carefully.",
+    "say": "Some questions ask whether every shape of one type also belongs to another type. We solve them by reading the definitions carefully.",
     "at": [
-     "which shape is also which",
-     "and they're solved"
+     "whether every shape of one type",
+     "type also belongs"
     ]
    },
    {

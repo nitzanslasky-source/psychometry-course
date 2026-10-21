@@ -197,6 +197,10 @@
        "$\\frac{-5}{|-5|}=-1$"
       ]
      ]
+    },
+    {
+     "type": "p",
+     "text": "**Anything bigger than an absolute value is positive.** If $a>|x|$, then $a>0$. Why? $|x|$ is never negative, and $a$ is bigger than it. E.g. $a>|-3|$: $a$ is bigger than $3$, so positive. In $|a+b|<a$, the letter $a$ is positive."
     }
    ]
   },
@@ -319,7 +323,7 @@
     },
     {
      "type": "p",
-     "text": "Avoid $0$, $1$, $-1$ and numbers from the choices. Check the choices come out different. Two survive? Plug in again."
+     "text": "Check the conditions first, then take an easy allowed number. Here, try a negative too: bars change only negatives. If $0$ or $1$ make the choices tie, or more than one survives, plug in again and check only those left."
     }
    ]
   },
@@ -436,6 +440,9 @@
   "solve(lambda x: abs(x - 4) < -2) == []",
   "all(abs(x - 4) > -2 for x in GRID)",
   "solve(lambda x: abs(x - 4) <= 0) == [4]",
-  "x = -3; abs(x) - x == 3 + 3 == 6 == -2 * x"
+  "x = -3; abs(x) - x == 3 + 3 == 6 == -2 * x",
+  "abs(-3) == 3",
+  "all(a > 0 for a in GRID for x in GRID if a > abs(x))",
+  "all(a > 0 for a in GRID for b in GRID if abs(a+b) < a)"
  ]
 }

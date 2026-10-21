@@ -99,6 +99,10 @@
     {
      "type": "p",
      "text": "A rate always says **per what**: $45$ bottles in $5$ minutes $=$ $9$ bottles **per minute** (not just $9$). **Match the units first**: hours $\\to$ minutes $\\times60$, minutes $\\to$ hours $\\div60$ ($20$ minutes $=\\frac{1}{3}$ hour). $4$ parts a minute for $2$ hours $=4\\times120=480$, not $8$."
+    },
+    {
+     "type": "p",
+     "text": "**Clock time is not always working time.** Work 30 minutes, rest 10: in one hour she works $0$–$30$ and $40$–$60$, so $50$ working minutes (the next break would start at $70$). **Helpers joining one after another:** fill a minute-by-minute table and add up what each one did."
     }
    ]
   },

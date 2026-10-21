@@ -137,12 +137,119 @@
     ]
    },
    {
-    "say": "So here it's from zero to nine. Now let's see a guided question. Try it first, and I'll see you in the next video.",
+    "say": "So here it's from zero to nine.",
     "at": [
-     "from zero to nine",
-     "question. Try it"
+     "from zero to nine"
     ]
    }
+  ],
+  [
+   {
+    "say": "Now a question with exact numbers. A school play had three performances, with nine actors in each performance.",
+    "at": [
+     "A school play had three performances",
+     "performances, with nine"
+    ]
+   },
+   {
+    "say": "Three actors were in all three performances, and six actors were in exactly two. How many actors were in exactly one performance?",
+    "at": [
+     "Three actors were in all three",
+     "three performances, and"
+    ]
+   },
+   {
+    "say": "Let's draw the three performances as three circles. Each circle holds the nine actors of one performance.",
+    "at": [
+     "as three circles",
+     "Each circle holds"
+    ]
+   },
+   {
+    "say": "The circles make three kinds of regions. In the middle are the actors in all three performances.",
+    "at": [
+     "In the middle are the actors",
+     "actors in all"
+    ]
+   },
+   {
+    "say": "Where just two circles overlap, outside the middle, are the actors in exactly two.",
+    "at": [
+     "Where just two circles overlap",
+     "outside the middle"
+    ]
+   },
+   {
+    "say": "And the outer part of each circle is for the actors in exactly one performance. That's what we're looking for.",
+    "at": [
+     "And the outer part of each circle",
+     "each circle is"
+    ]
+   },
+   "We don't know how the six actors in exactly two are split among the three pairs. And we don't need it. So instead of people, we count appearances. Every time an actor plays in one performance, that's one appearance.",
+   {
+    "say": "There are three performances, with nine actors in each. So three times nine is twenty-seven appearances.",
+    "at": [
+     "So three times nine"
+    ]
+   },
+   {
+    "say": "Now, how many appearances does each actor make? An actor in exactly one performance appears once. An actor in exactly two appears twice. And an actor in all three appears three times.",
+    "at": [
+     "Now, how many",
+     "An actor in exactly one performance appears once",
+     "performance appears once",
+     "in exactly two appears twice",
+     "And an actor in all three",
+     "three appears three"
+    ]
+   },
+   "Remember, with two groups, we took both away twice, because the people in both are counted in each group. Here it's the same idea, with three groups.",
+   {
+    "say": "The three actors in all three performances make three times three, nine appearances.",
+    "at": [
+     "three times three, nine"
+    ]
+   },
+   {
+    "say": "The six actors in exactly two make six times two, twelve appearances.",
+    "at": [
+     "exactly two make",
+     "six times two, twelve"
+    ]
+   },
+   {
+    "say": "Together that's nine plus twelve, twenty-one appearances. Twenty-seven minus twenty-one leaves six appearances.",
+    "at": [
+     "nine plus twelve",
+     "Twenty-seven minus twenty-one"
+    ]
+   },
+   {
+    "say": "Who made those six appearances? Only the actors in exactly one performance are left, and each of them appears once. So six actors were in exactly one performance.",
+    "at": [
+     "Who made those",
+     "So six actors were in exactly one"
+    ]
+   },
+   {
+    "say": "So when we add up the groups, we count appearances, not people. How many different actors were there? Three plus six plus six is fifteen. So there were fifteen actors, not twenty-seven.",
+    "at": [
+     "up the groups",
+     "we count appearances, not people",
+     "How many different",
+     "Three plus six plus six",
+     "So there were"
+    ]
+   },
+   {
+    "say": "Counting appearances works when we know the size of every group, and the question asks about all the people in exactly one group, or all the people in exactly two, together. Counting appearances doesn't tell us which pair each actor was in, and we don't need that.",
+    "at": [
+     "doesn't tell us which pair",
+     "each actor was"
+    ]
+   },
+   "Now let's see a guided question. Try it first, and I'll see you in the next video."
   ]
  ]
 }

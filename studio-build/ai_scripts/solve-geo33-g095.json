@@ -139,10 +139,10 @@
     ]
    },
    {
-    "say": "Which part? The central angle D O E is sixty degrees. Sixty out of three hundred sixty is a sixth. A sixth of sixteen pi is sixteen pi over six. Divide the top and the bottom by two, and it's eight pi over three.",
+    "say": "Which part of the circle is the sector? E lies on O C, so angle D O E is the same angle as D O C, sixty degrees. Sixty out of three hundred sixty is a sixth. A sixth of sixteen pi is sixteen pi over six. Divide the top and the bottom by two, and it's eight pi over three.",
     "at": [
      "Which part",
-     "The central angle",
+     "is the sector",
      "Sixty out of three hundred sixty",
      "sixty is a",
      "A sixth of sixteen pi",

@@ -42,21 +42,21 @@
   ],
   [
    {
-    "say": "Here's the circle near B, bigger. Angle B is still ninety minus two theta. Its sides go through D and E, so it's an inscribed angle in the circle, and it stands on the bold arc D E. The central angle on the same arc is twice as big.",
+    "say": "Here's the circle near B, bigger. The angle at B is still ninety minus two theta. Its two sides meet the circle at D and E, so it is an inscribed angle. It intercepts the bold arc D E opposite B, not the arc through B. The central angle intercepting that same arc is twice as big.",
     "at": [
      "Here's the circle near B",
-     "Angle B is",
-     "Its sides go through D and E",
-     "and E, so"
+     "The angle at",
+     "Its two sides meet the circle at D and E",
+     "circle at D"
     ]
    },
    {
-    "say": "So let's draw the radii O D and O E. The central angle is two times, ninety minus two theta. Two times ninety is a hundred eighty, and two times two theta is four theta. So the central angle is a hundred eighty minus four theta.",
+    "say": "So let's draw the radii O D and O E. The central angle is two times the whole bracket, ninety minus two theta. Two times ninety is a hundred eighty. Two times two theta is four theta, and that part is still subtracted. So the central angle is a hundred eighty minus four theta.",
     "at": [
      "draw the radii O D and O E",
      "and O E",
      "The central angle is two times",
-     "Two times ninety",
+     "minus two theta",
      "So the central angle is a hundred eighty",
      "a hundred eighty minus"
     ]
@@ -65,19 +65,19 @@
   ],
   [
    {
-    "say": "An arc is the part of the circumference set by the central angle, out of three hundred sixty. So the arc is a hundred eighty minus four theta, over three hundred sixty, times two pi r.",
+    "say": "To find the arc length, divide its central angle by three hundred sixty, then multiply by the whole circumference. So we divide the whole expression, a hundred eighty minus four theta, by three hundred sixty. Then we multiply that fraction by two pi r.",
     "at": [
-     "An arc is the part",
-     "of the circumference",
-     "So the arc is",
-     "hundred eighty minus"
+     "To find the arc length",
+     "divide its central",
+     "So we divide the whole expression",
+     "expression, a hundred"
     ]
    },
    {
-    "say": "There are many letters, so let's glance at the choices and work toward them. Every choice has pi r, and we have two pi r. So we cancel the two with the three hundred sixty, and we're left with a hundred eighty at the bottom, times pi r.",
+    "say": "Let's look at the choices. Every choice has pi r, but our expression has two pi r. We can cancel the factor two against three hundred sixty, leaving a hundred eighty in the denominator. So we have the whole expression, a hundred eighty minus four theta, over a hundred eighty, times pi r.",
     "at": [
-     "So we cancel the two",
-     "with the three"
+     "We can cancel the factor two",
+     "two against three"
     ]
    },
    {

@@ -876,16 +876,12 @@ h5e = I('h5e', '$11\\ \\xrightarrow{+4}\\ 15$', size=30, col=1)
 h5f = I('h5f', '$15\\ \\xrightarrow{\\div3}\\ 5$ ✓', size=30, col=1)
 video('operation-patterns', 'lesson', slides=[
     S('Operation Patterns',
-      L("Welcome back. Now we move to the more advanced operation questions. Each question that follows shows one type, and "
-        "teaches it right there. But first, one type that appears only in the practice, the inverse operation.")),
+      L("Welcome back. Now we move to the more advanced operation questions. Each question that follows shows one type, and teaches it right there. But first, let's look at one type that appears only in the practice: the inverse operation.")),
     S('The inverse operation',
       L("The inverse operation undoes the diamond. You put in the result, and you get the original x back. Let's take "
         "diamond of x equals two x plus three. First, read its steps in order. It multiplies x by two, and then it adds "
         "three.", show(h1, 'The inverse operation undoes')),
-      L("Let's call the result y. That's the number that came out of the diamond, and the inverse should give us back the "
-        "original x. To undo it, we go backwards. The last step comes off first, like taking off your shoes before your "
-        "socks. So first we subtract three from y. Then we divide the result by two. The inverse is y minus three, all "
-        "divided by two.", show(h2, 'The last step comes off first')),
+      L("Let's call the result y. That's the number that came out of the diamond. The inverse should give us back the original x. The diamond added three last, so we undo that first. We subtract three from y. Before adding three, it multiplied x by two. So now we divide by two. The inverse is y minus three, all divided by two.", show(h2, 'The diamond added three last')),
       L("Let's check it with a number. Four goes into the diamond. Two times four is eight, and eight plus three is eleven. "
         "Now undo it. Eleven minus three is eight, and eight over two is four. We're back at four, so the inverse works.",
         show(h3, 'Two times four is eight'), show(h3b, 'eight plus three is eleven'), show(h3c, 'Eleven minus three is eight'),
@@ -893,11 +889,7 @@ video('operation-patterns', 'lesson', slides=[
       L("Here's the trap. A lot of students undo the steps in the same order, not backwards. First divide by two, then "
         "subtract three. That's y over two, minus three. With eleven, eleven over two is five point five, and five point "
         "five minus three is two point five. That's not four, so the order matters.", show(h4, "Here's the trap")),
-      L("One more example. Diamond of x is three x minus four. Its steps are times three, then minus four. Again, y is "
-        "the result we want to undo. So the inverse adds four first. Then it divides the result by three. "
-        "That's y plus four, all divided by three. Let's check with five. Three times five is "
-        "fifteen, and fifteen minus four is eleven. Eleven plus four is fifteen, and fifteen over three is five. Back to "
-        "five.", show(h5, 'Diamond of x is three x minus four'), show(h5b, 'So the inverse adds four first'),
+      L("One more example. Diamond of x is three x minus four. It multiplies x by three, then subtracts four. Again, y is the result we want to undo. So the inverse adds four first. Then it divides the result by three. That's y plus four, all divided by three. Let's check with five. Three times five is fifteen, and fifteen minus four is eleven. Eleven plus four is fifteen, and fifteen over three is five. Back to five.", show(h5, 'Diamond of x is three x minus four'), show(h5b, 'So the inverse adds four first'),
         show(h5c, 'is fifteen'), show(h5d, 'fifteen minus four is eleven'), show(h5e, 'Eleven plus four is fifteen'),
         show(h5f, 'fifteen over three is five')),
       L("So to undo an operation, read its steps, and undo them in reverse order, the last step first. [pause] I'll "
@@ -1119,11 +1111,7 @@ video('solve-q-549', 'solution', qid='q-549', slides=[
         "x minus seven is equal to diamond of seven minus x. x minus seven and seven minus x are opposites, and opposites have the same square. So the two sides are always equal.",
         pt('choice 4', 'It says: diamond of', 'hl', 3.5), show(r5, 'are opposites'), mk('cross', 'choice 4', 'always equal'))),
     S('Method 2 · Plugging in numbers',
-      L("[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, because "
-        "it's easy and it's not zero. Zero is allowed too, but zero turns many of these products into zero. Choice number one. With x as one, six x is six, so the left side is diamond of six, which is thirty-six. "
-        "The right side is thirty-six times diamond of one. That's thirty-six times one, thirty-six. Both sides are thirty-six, "
-        "so they're equal. Choice number two. Root one is one, so the left side is diamond of one, times diamond of one. "
-        "That's one times one, which is one. The right side is diamond of one, which is one too. Equal.", show(s1, 'take x is one')),
+      L("Now let's plug in a number. Here we can calculate with numbers instead of expanding expressions. Let's take x is one, because it's easy and it's not zero. Zero is allowed, but it turns many of these products into zero. Choice number one compares diamond of six x with thirty-six times diamond of x. With x as one, six x is six. Diamond of six is thirty-six. On the right, diamond of one is one. Thirty-six times one is thirty-six too, so both sides match. Choice number two compares diamond of root x times itself with diamond of x. Root one is one, and diamond of one is one. On the left, one times one is one. On the right, diamond of one is one too, so both sides match.", show(s1, 'take x is one')),
       L("Choice number three. With x as one, five x is five, so the left side is diamond of five. Diamond of five is "
         "twenty-five. But the right side is five times diamond of one. That's five times one, which is five. Twenty-five is not five, so choice number three fails.", show(s2, 'Diamond of five is twenty-five')),
       L("One allowed example where a choice fails proves it's not always true, so we can stop here without checking "

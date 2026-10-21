@@ -61,14 +61,14 @@
    },
    "That's one equation with two unknowns. We can't find alpha or beta on its own, but we can find their sum. And the sum is all we need.",
    {
-    "say": "Let's read the equation another way. The circle is made of five alpha plus beta pairs, all the same. So five times alpha plus beta is three hundred sixty. Now divide both sides by five. Alpha plus beta is seventy-two.",
+    "say": "Let's read the equation another way. There are five pairs, each with one alpha and one beta. So five times the whole bracket, alpha plus beta, is three hundred sixty. Divide both sides by five. Alpha plus beta is seventy-two. That's the total angle of one shaded pair.",
     "at": [
-     "The circle is made of five alpha plus beta pairs",
-     "five alpha plus",
-     "So five times alpha plus beta",
-     "beta is three",
-     "Now divide both sides by five",
-     "Alpha plus beta is seventy-two"
+     "There are five pairs",
+     "with one alpha",
+     "So five times the whole bracket, alpha plus beta",
+     "bracket, alpha plus",
+     "Divide both sides by five",
+     "Alpha plus beta is"
     ]
    },
    {

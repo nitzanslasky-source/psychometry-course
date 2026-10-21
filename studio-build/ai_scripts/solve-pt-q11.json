@@ -19,31 +19,31 @@
     ]
    },
    {
-    "say": "For every alpha there's a matching beta. So let's choose one alpha and calculate beta. Which number? One that fits the figure. Alpha is in a right triangle, so it's less than ninety, and in the drawing it looks like about fifty or sixty. Let's take fifty, a round number.",
+    "say": "For every alpha there's a matching beta. So let's choose one alpha and calculate beta. Which number? An easy one that fits the angle conditions. Alpha is in a right triangle, so it's less than ninety. Let's take fifty, a round number. We'll check the other triangle's angles too.",
     "at": [
-     "Let's take fifty"
+     "Let's take fifty",
+     "We'll check the"
     ]
    },
    {
-    "say": "In triangle A B C, the angles are fifty and ninety. They add up to a hundred eighty, so angle B is forty.",
+    "say": "In triangle A B C, two angles are fifty and ninety. Together they're a hundred forty. The three angles must total a hundred eighty. So angle B is a hundred eighty minus a hundred forty, which is forty.",
     "at": [
-     "In triangle A",
-     "so angle B is forty"
+     "So angle B is a hundred eighty",
+     "hundred eighty minus"
     ]
    },
    {
     "say": "A B bisects angle D B C, so the angle above it is also forty. So the whole angle D B C is eighty.",
     "at": [
-     "D B C",
      "the angle above it is also forty",
-     "B C is"
+     "So the whole"
     ]
    },
    {
-    "say": "D B equals D C, so the base angles are equal, and angle C is also eighty. That's also why the number must fit the figure. With alpha forty, the base angles would be a hundred each, and a triangle can't have two angles of a hundred.",
+    "say": "D B equals D C, so the base angles are equal, and angle C is also eighty. That's why our number must fit the angle conditions, not just the drawing. With alpha forty, the base angles would be a hundred each, and a triangle can't have two angles of a hundred.",
     "at": [
      "angle C is also eighty",
-     "That's also why"
+     "That's why our"
     ]
    },
    {
@@ -128,20 +128,17 @@
     ]
    },
    {
-    "say": "And beta is a hundred eighty, minus angle D, minus angle B, because D and B are the other angles of the small triangle. A hundred eighty, minus four alpha plus a hundred eighty, minus ninety plus alpha. That's two hundred seventy minus three alpha, choice number four again.",
+    "say": "Now look at the small triangle with angle beta. Its other angles are D and B. So beta is a hundred eighty, minus angle D, minus angle B. Angle D is four alpha minus a hundred eighty. Subtracting that gives minus four alpha plus a hundred eighty. Angle B is ninety minus alpha. Subtracting that gives minus ninety plus alpha. The numbers give two hundred seventy, and minus four alpha plus alpha gives minus three alpha. So beta is two hundred seventy minus three alpha, choice number four again.",
     "at": [
-     "And beta is a hundred eighty",
+     "Now look at",
+     "So beta is a hundred eighty",
      "eighty, minus angle",
-     "That's two hundred seventy",
+     "So beta is two hundred seventy",
+     "seventy minus three",
      "choice number four again"
     ]
    },
-   {
-    "say": "Look at what the number did. With fifty instead of alpha, this is an easy angle question from the beginning of the section. The letters are what made it hard. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Look at what the number did"
-    ]
-   }
+   "Look at what the number did. With fifty instead of alpha, this is an easy angle question from the beginning of the section. The letters are what made it hard. [pause] Okay. I'll see you in the next question."
   ]
  ]
 }

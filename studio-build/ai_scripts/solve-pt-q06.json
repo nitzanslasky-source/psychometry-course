@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "x is an integer, a whole number. We're given two conditions. x squared is less than twenty-five, and three x plus six is less than zero. What is x?",
+    "say": "x is an integer. We're given two conditions. x squared is less than twenty-five, and three x plus six is less than zero. What is x?",
     "voice": "calm",
     "at": [
      "x is an integer"

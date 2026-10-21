@@ -63,7 +63,7 @@
     ]
    },
    {
-    "say": "First we cross out choices that make no sense. Then we start with a round, convenient choice. And when the choices are in order, we start with a middle one.",
+    "say": "First we cross out choices that make no sense. Then we start with a round, convenient choice. And when a bigger trial number gives a bigger result, a middle choice can help us rule out more of the ordered choices.",
     "at": [
      "First we cross out",
      "that make no"

@@ -107,19 +107,19 @@
     ]
    },
    {
-    "say": "When an angle closes off an arc like this, we say that the angle intercepts the arc. What does that mean? Imagine I'm standing inside the angle, at O. The two radii are walls, tall walls. From where I stand, the part of the circle I can see is only this arc.",
+    "say": "When an angle meets an arc at both ends like this, we say that the angle intercepts the arc. Here the central angle has its vertex at O. Its two radii end at A and B. The teal arc between A and B is the arc it intercepts.",
     "at": [
-     "The two radii are walls",
-     "From where I"
+     "Its two radii end at A and B",
+     "A and B"
     ]
    },
    {
-    "say": "We can also close off the same arc with an inscribed angle. Take a point C on the other side of the circle, on the long arc, away from the teal arc. Draw two chords from C to A and to B. If I stand at C, the chords are tall walls, and again, the part of the circle I can see is only this arc.",
+    "say": "An inscribed angle can intercept that same arc. Take a point C on the other side of the circle, on the long arc, away from the teal arc. Draw two chords from C to A and to B. The angle at C intercepts the teal arc A B, the arc opposite C, not the arc that passes through C.",
     "at": [
      "Take a point C",
      "the other side",
-     "the chords are tall walls",
-     "and again, the"
+     "The angle at C intercepts",
+     "the teal arc A"
     ]
    },
    {

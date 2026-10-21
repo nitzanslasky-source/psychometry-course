@@ -53,10 +53,10 @@
     ]
    },
    {
-    "say": "So the total is zero point six four, plus a little. It's less than zero point six four plus zero point two, which is zero point eight four.",
+    "say": "We add the alcohol from the two bottles. Bottle A contributes zero point six four liters. Bottle B contributes a positive amount less than zero point two. So the total is more than zero point six four, but less than zero point eight four liters.",
     "at": [
-     "So the total is zero point six four",
-     "It's less than"
+     "So the total is more than",
+     "but less than"
     ]
    },
    {

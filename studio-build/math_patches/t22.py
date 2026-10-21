@@ -2593,3 +2593,43 @@ _apply_before_ai_redo_t22 = apply
 def apply(M):
     _apply_before_ai_redo_t22(M)
     ai_redo_t22(M)   # 2026-10-18 topic 22 for the teacher's reading: runs LAST
+
+
+# 2026-10-19 Nitzan: specialised work-rate teaching belongs in topic26.
+# Its inverse-rate, worker-hours/days and food-consumption lessons already
+# cover these concepts. Do not add a second copy there or back into topic22.
+# This final pass runs after all older additions/restorations above, so the
+# removed questions cannot reappear on a rebuild. Source scripts/takes stay.
+_apply_before_work_scope_20261019 = apply
+
+
+def apply(M):
+    _apply_before_work_scope_20261019(M)
+    for ref in ('q-r26-t22-02', 'solve-q-r26-t22-02', 'q-r26-t22-08'):
+        M.unplace(ref)
+    M.D['videos'].pop('solve-q-r26-t22-02', None)
+    card = M.D.get('references', {}).get('mem-ratios', {})
+    for table in card.get('tables', []):
+        table['rows'] = [row for row in table.get('rows', [])
+                         if 'workers and days' not in str(row).lower()
+                         and 'inverse:' not in str(row).lower()]
+    # The legacy summary video is replaced by the printable page, but keep
+    # its dormant content consistent too, should it ever be inspected.
+    summary = M.D.get('videos', {}).get('r26-t22-summary')
+    if summary:
+        beats = summary.get('beats', [])
+        removed = {i for i, b in enumerate(beats) if 'inverse' in str(b.get('title', '')).lower()}
+        summary['beats'] = [b for i, b in enumerate(beats) if i not in removed]
+        summary['sidebar'] = [x for i, x in enumerate(summary.get('sidebar', [])) if i not in removed]
+        for b in summary['beats']:
+            lines = []
+            for line in b.get('lines', []):
+                s = line.get('say', '')
+                if 'workers and days' in s.lower():
+                    continue
+                if 'Direct or inverse?' in s:
+                    line = dict(line, say=s.replace('Direct or inverse?', 'Does the same ratio apply?'))
+                if 'Direct or inverse?' in line.get('t', ''):
+                    line = dict(line, t=line['t'].replace('Direct or inverse?', 'Does the same ratio apply?'))
+                lines.append(line)
+            b['lines'] = lines

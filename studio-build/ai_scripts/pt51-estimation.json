@@ -37,11 +37,10 @@
     ]
    },
    {
-    "say": "Let's put them on a line. They all have the same digits, so the last digit can't help here. But each choice is ten times the one before it. They're very far apart in size.",
+    "say": "Let's put the choices on a line. Each one is ten times the one before it. So they're very far apart in size. Here we can use that difference in size instead of calculating the exact product.",
     "at": [
-     "Let's put them on a line",
-     "They all have",
-     "each choice is ten times",
+     "Let's put the choices on a line",
+     "Each one is ten times",
      "the one before"
     ]
    },
@@ -53,7 +52,7 @@
     ]
    },
    {
-    "say": "So the answer is about a thousand. On the line, only nine hundred sixty-nine is near a thousand. The other choices are ten times smaller, or ten times bigger, so they're out. The answer is nine hundred sixty-nine, and we never multiplied.",
+    "say": "So the answer is about a thousand. On the line, only nine hundred sixty-nine is near a thousand. The other choices are ten times smaller, or ten times bigger, so they're out. The answer is nine hundred sixty-nine, and we never did the exact multiplication.",
     "at": [
      "So the answer is about a thousand",
      "On the line",
@@ -64,10 +63,10 @@
     ]
    },
    {
-    "say": "That's why it works. Rounding makes a small mistake, only a few tens. But the choices are hundreds and thousands apart, so a small mistake can't move us to another choice.",
+    "say": "That's why it works. Here, rounding changes the result by only a little, a few tens. But the choices are hundreds and thousands apart, so a small mistake can't move us to another choice.",
     "at": [
      "That's why it works",
-     "Rounding makes a"
+     "Here, rounding changes"
     ]
    }
   ],

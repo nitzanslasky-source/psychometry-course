@@ -12,9 +12,9 @@
     "pause": 0.5
    },
    {
-    "say": "Let's find which fraction of the circle is shaded. That's what the sector formula means anyway. We have a forty and a hundred twenty, and we know what part of the circle each one is.",
+    "say": "Let's solve it by understanding. We'll find which fraction of the circle is shaded. The two shaded sectors have central angles of forty degrees and a hundred twenty degrees. We'll compare each angle with the full circle, three hundred sixty degrees.",
     "at": [
-     "Let's find which fraction",
+     "We'll find which fraction",
      "the circle is"
     ]
    },

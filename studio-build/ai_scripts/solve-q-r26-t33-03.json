@@ -78,7 +78,7 @@
   ],
   [
    {
-    "say": "[pause] Now let's check it by plugging in numbers. The question doesn't give a radius, so it promises the same answer for every circle. So a circle that we choose must give it too. Let's pick a radius of two, because it's small and easy.",
+    "say": "Now let's check it by plugging in numbers. Only the change in size matters here, not the starting radius. Let's pick a radius of two, because it's small and easy.",
     "at": [
      "by plugging in",
      "Let's pick a radius of two",

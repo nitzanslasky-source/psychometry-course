@@ -72,7 +72,7 @@
     ]
    },
    {
-    "say": "Which choice do we try first? Here the choices are in order, from the smallest to the biggest. So we start in the middle. Why? Because then one try tells us more than yes or no. It also tells us if we need a bigger number or a smaller one.",
+    "say": "Which choice do we try first? Here the choices go from smallest to biggest. For positive x, a bigger x gives a bigger product. So we can start with a middle choice. If its result is too small, smaller choices are out too. If it's too big, bigger choices are out too.",
     "at": [
      "Which choice do"
     ]
@@ -143,17 +143,17 @@
     ]
    },
    {
-    "say": "Then start with a convenient choice, a round number that's easy to work with. The right answer is often there. Not always, but often.",
+    "say": "Then start with a convenient choice, such as a round number. It makes the arithmetic easier. We choose it for an easy check, not because it must be right.",
     "at": [
      "Then start with a convenient choice",
-     "choice, a round"
+     "choice, such as"
     ]
    },
    {
-    "say": "And when the choices are in order, start in the middle, so one try tells you if you need bigger or smaller, like we just did with four.",
+    "say": "In a question like our example, a bigger trial number gives a bigger result. Then it helps to start in the middle of the ordered choices. One try can show whether we need a bigger or smaller number.",
     "at": [
-     "when the choices are in order",
-     "order, start in"
+     "Then it helps to start in the middle",
+     "in the middle"
     ]
    },
    {

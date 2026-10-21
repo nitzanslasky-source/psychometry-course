@@ -28,7 +28,7 @@
     ]
    },
    {
-    "say": "If y has one value, it's the same for every allowed x. So I may choose x myself. Which x? Zero, because it kills every term with x. And it's allowed, because the only condition is that x isn't negative five.",
+    "say": "If y has one value, it's the same for every allowed x. So I may choose x myself. Which x? Zero, because it makes every term with x equal to zero. And it's allowed, because the only condition is that x isn't negative five.",
     "at": [
      "the only condition"
     ]
@@ -72,11 +72,11 @@
   ],
   [
    {
-    "say": "[pause] Now the math way. On the left, take y out. x y plus five y is y times the bracket x plus five. On the right, take two out. Two x plus ten is two times the bracket x plus five. Now both sides have the same bracket.",
+    "say": "Now the math way. On the left, both terms contain y. We can write x y plus five y as y times the sum x plus five. Multiplying y by each part gives x y and five y again. On the right, both terms contain a factor of two. Two x plus ten is two times the sum x plus five. So both sides contain the same factor, x plus five.",
     "at": [
      "Now the",
-     "On the left, take y out",
-     "x y plus"
+     "We can write x y plus five y",
+     "plus five y"
     ]
    },
    {

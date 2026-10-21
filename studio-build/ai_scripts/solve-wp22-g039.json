@@ -132,28 +132,31 @@
   ],
   [
    {
-    "say": "[pause] And an insight. We start again from the givens. The gap is always nine. And five years ago, Maya was twice Tom. A gap of nine, and one of them twice the other. That can only be nine and eighteen.",
+    "say": "Now the insight. Let's look at their ages five years ago. The gap is always nine years. Maya was twice Tom's age. Think of Tom's age as one part. Maya's age is two equal parts, each the same size as Tom's whole age.",
     "at": [
-     "And an",
-     "the givens. The",
-     "And five years ago, Maya was",
-     "was twice Tom",
-     "That can only be nine and eighteen"
+     "look at their",
+     "Maya was twice Tom's age",
+     "Tom's age as one part",
+     "Maya's age is two equal parts",
+     "parts, each the"
     ]
    },
    {
-    "say": "Why only those? If Tom is some number, and Maya is twice it, the gap is twice the number minus the number, which is the number itself. So Tom was nine, the size of the gap.",
+    "say": "One of Maya's parts matches Tom's whole age. The extra part is how much older Maya is: nine years. So one part is nine years. Tom was nine, and Maya was two times nine, eighteen. We found those ages because the difference is one whole part.",
     "at": [
-     "If Tom is some number",
-     "and Maya is",
-     "the gap is twice the number",
-     "number minus the"
+     "The extra part",
+     "much older Maya",
+     "So one part is nine years",
+     "Tom was nine",
+     "was two times",
+     "difference is one whole part"
     ]
    },
    {
     "say": "Careful, nine is choice number one, but that's Tom five years ago. Now he's nine plus five, fourteen.",
     "at": [
      "number one, but",
+     "five years ago",
      "Now he's nine plus five"
     ]
    },
