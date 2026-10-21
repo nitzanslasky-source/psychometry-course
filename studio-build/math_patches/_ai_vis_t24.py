@@ -1198,7 +1198,8 @@ video('wp-068', 'lesson', slides=[
         "maximum.", show(r_w1, 'At most, the most, the greatest')),
       L("At least, the least, the smallest. These ask for the smallest value that must be. At least has the word least, "
         "so think minimum.", show(r_w2, 'At least, the least, the smallest')),
-      L("What could be, or which of these is possible. There's no single answer, so it's a range.",
+      L("What could be, or which of these is possible. The givens may allow several overlaps. We find their range, then "
+        "choose the answer inside it.",
         show(r_w3, 'What could be')),
       L("And sometimes the choices give it away. A choice like between three and nine, or at least three and at most "
         "eight, is a range.", show(r_w4, 'A choice like between three and nine')),
@@ -1358,8 +1359,8 @@ e_w1 = I('e_w1', 'Together: $\\ 20$ different stamps. $\\ $One has $12$, $\\ $on
 e_w2 = IH('e_w2', '$12+11=23$', size=30)
 e_w3 = IH('e_w3', '$23-20=3$', size=30)
 e_w4 = I('e_w4', 'A class of $20$: $\\ 12$ chess, $\\ 11$ music', size=28)
-e_w5 = IH('e_w5', 'neither? $\\ $not given: $\\ $a range, $\\ 3$ to $11$', size=30)
-e_w6 = I('e_w6', 'different $\\cdot$ together $\\cdot$ each one did one: $\\ $neither $=0$', size=28)
+e_w5 = IH('e_w5', 'neither not given: $\\ $BOTH ranges from $3$ to $11$', size=30)
+e_w6 = I('e_w6', 'The total counts only members of at least one group: $\\ $neither $=0$', size=28)
 e_z1 = I('e_z1', 'Four boxes: $\\ $neither $\\cdot$ B only $\\cdot$ both $\\cdot$ A only', size=30)
 e_z2 = I('e_z2', 'The brackets share "both"; $\\ $all four $=$ the total', size=30)
 e_z3 = I('e_z3', 'Put in what you know, $\\ $then fill it like a sudoku', size=30)
@@ -1438,15 +1439,15 @@ video('wp-069', 'lesson', slides=[
         show(e_w4, 'a class of twenty students')),
       L("Here some students may play nothing, so neither isn't given. Then it's a range again. Both is from three, the "
         "sum minus the total, to eleven, the smaller group.", show(e_w5, 'so neither isn')),
-      L("So when you see words like different, together, or each one did at least one, neither is zero. And that's the "
-        "box to start from.", show(e_w6, 'when you see words like different'))),
+      L("So check what the total counts, not just one word. If it counts only people or things in at least one group, "
+        "neither is zero. That's the box to start from.", show(e_w6, 'If it counts only people or things'))),
     S('Exactly one',
       L("There's one more region a question can ask about, exactly one. Exactly one means one group, but not both. So art "
         "only, or drama only.", show(e_o['line'], 'There\'s one more region'), show(e_o['base'], 'exactly one'),
         show(e_o['h1'], 'So art only'), show(e_o['h3'], 'or drama only')),
       L("In our boxes, that's four plus three, seven.", show(e_o1, 'four plus three')),
-      L("Without the boxes, we take both away twice. Why twice? Because the six in both are inside the art group, and "
-        "also inside the drama group.", show(e_o2, 'we take both away twice')),
+      L("Without the boxes, add the two groups, then subtract both twice. Why twice? The six in both were counted in "
+        "art and in drama. We don't want them in exactly one, so we remove both copies.", show(e_o2, 'then subtract both twice')),
       L("Ten plus nine is nineteen. Two times six is twelve. Nineteen minus twelve is seven. The same seven.",
         show(e_o3, 'Ten plus nine'), show(e_o4, 'Two times six'), show(e_o5, 'Nineteen minus twelve'))),
     S('Summary',
@@ -1583,10 +1584,10 @@ g72e = IH('g72e', '$8x:3x=8:3$', size=32, col=1)
 g72p0 = IH('g72p0', 'both $=2$', size=30)
 g72p1 = IH('g72p1', 'chess: $\\ 9\\cdot2=18$', size=30)
 g72p2 = IH('g72p2', 'robotics: $\\ 4\\cdot2=8$', size=30)
-g72p3 = IH('g72p3', '$18-2=16$, $\\ 8-2=6$', size=30)
-g72p4 = IH('g72p4', '$16:6=8:3$', size=32)
-g72f1 = IH('g72f1', 'chess : robotics $=9:4$', size=30, col=1)
-g72f2 = IH('g72f2', '$\\frac{1}{9}\\cdot9=1$, $\\ \\frac{1}{4}\\cdot4=1$', size=30, col=1)
+g72p3 = IH('g72p3', '$18-2=16$, $\\ 8-2=6$', size=30, col=1)
+g72p4 = IH('g72p4', '$16:6=8:3$', size=32, col=1)
+g72f1 = IH('g72f1', 'chess : robotics $=9:4$', size=30)
+g72f2 = IH('g72f2', '$\\frac{1}{9}\\cdot9=1$, $\\ \\frac{1}{4}\\cdot4=1$', size=30)
 g72f3 = IH('g72f3', '$9-1=8$, $\\ 4-1=3$', size=30, col=1)
 g72f4 = IH('g72f4', '$8:3$', size=32, col=1)
 video('solve-wp24-g072', 'solution', qid='wp24-g072', slides=[
@@ -1617,7 +1618,7 @@ video('solve-wp24-g072', 'solution', qid='wp24-g072', slides=[
         mk('cross', 'choice 3', 'the whole chess club'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now let's plug in numbers. We start again from the givens. Both is a ninth of chess and a quarter of "
-        "robotics. Any number works for both, because the ratio stays the same. Let's say two students are in both.",
+        "robotics. Any positive whole number works for both, because the ratio stays the same. Let's say two students are in both.",
         show(g72p0, 'two students are in both')),
       L("Two is a ninth of the chess club, so the chess club is nine times two, eighteen. Two is a quarter of the robotics "
         "club, so the robotics club is four times two, eight.", show(g72p1, 'nine times two'), show(g72p2, 'four times two')),
@@ -1716,7 +1717,7 @@ g77f = IH('g77f', '$8\\cdot4=32$', size=32, col=1)
 g77u = STRIP('g77u', 'evening', 'morning', [
     ('T', [('T', 'all four: 48')]), ('A', [('A', 'morning: 12')]), ('B', [('B', 'evening: 8')]), ('v2', [('v', 2, '4')]),
     ('v1', [('v', 1, '4')]), ('top', [('top', 0, 2, 'not morning: 36')]), ('v0', [('v', 0, '32')])], w=560)
-g77g = IH('g77g', '$12\\cdot4=48$', size=30, col=1)
+g77g = IH('g77g', '$12\\cdot4=48$', size=30)
 g77h = IH('g77h', '$48\\div4=12$, $\\ 48\\div6=8$', size=30, col=1)
 g77i = IH('g77i', '$8-4=4$', size=30, col=1)
 g77j = IH('g77j', '$48-12=36$', size=30, col=1)
@@ -1798,8 +1799,19 @@ g74v = VENN2('g74v', 'artist 45%', 'owner 70%', [
     ('out', [('val', 'out', '0')])], w=560)
 g74n = IH('g74n', '$45-15=30$, $\\ 70-15=55$', size=30, col=1)
 g74o = IH('g74o', '$30+15+55=100$', size=30, col=1)
-g74p = IH('g74p', 'both $20$: $\\ 25+20+50=95$, $\\ $neither $5$', size=28, col=1)
-g74q = IH('g74q', 'both $45$: $\\ 0+45+25=70$, $\\ $neither $30$', size=28, col=1)
+g74v20 = VENN2('g74v20', 'artist 45%', 'owner 70%', [
+    ('both', [('tint', 'both'), ('val', 'both', '20%')]), ('a', [('val', 'a', '25%')]),
+    ('b', [('val', 'b', '50%')]), ('out', [('val', 'out', '5%')])], w=560)
+g74v45 = VENN2('g74v45', 'artist 45%', 'owner 70%', [
+    ('both', [('tint', 'both'), ('val', 'both', '45%')]), ('a', [('val', 'a', '0')]),
+    ('b', [('val', 'b', '25%')]), ('out', [('val', 'out', '30%')])], w=560)
+g74p = IH('g74p', 'artist only: $45-20=25\\%$', size=30, col=1)
+g74p2 = IH('g74p2', 'owner only: $70-20=50\\%$', size=30, col=1)
+g74p3 = IH('g74p3', '$25+20+50=95\\%$', size=30, col=1)
+g74p4 = IH('g74p4', 'neither: $100-95=5\\%$', size=30, col=1)
+g74q = IH('g74q', 'artist only: $0$', size=30, col=1)
+g74q2 = IH('g74q2', 'owner only: $70-45=25\\%$', size=30, col=1)
+g74q3 = IH('g74q3', 'neither: $100-70=30\\%$', size=30, col=1)
 g74r = IH('g74r', 'both: $\\ $from $15\\%$ to $45\\%$', size=30, col=1)
 video('solve-wp24-g074', 'solution', qid='wp24-g074', slides=[
     S('Method 1 · The math way',
@@ -1846,10 +1858,24 @@ video('solve-wp24-g074', 'solution', qid='wp24-g074', slides=[
         "percent.", show(g74n, 'forty-five minus fifteen'), show(g74v['a'], 'thirty percent'), show(g74v['b'], 'fifty-five percent')),
       L("Thirty plus fifteen plus fifty-five is a hundred percent. So neither is zero.",
         show(g74o, 'Thirty plus fifteen plus'), show(g74v['out'], 'So neither is zero')),
-      L("Must the overlap be fifteen? No, fifteen is only the smallest. Say twenty percent know both. Then artist only "
-        "is twenty-five, owner only is fifty, and five percent know neither.", show(g74p, 'Say twenty percent know both')),
-      L("And the biggest overlap is the whole artist group inside the owner group, forty-five percent. Then artist only "
-        "is zero, owner only is twenty-five, and thirty percent know neither.", show(g74q, 'the whole artist group')),
+    ),
+    S('Method 3 · Understanding: the two circles',
+      L("Must the overlap be fifteen? No, fifteen is only the smallest. Say twenty percent know both. Artist only is "
+        "forty-five minus twenty, twenty-five. Owner only is seventy minus twenty, fifty. Together, twenty-five plus "
+        "twenty plus fifty is ninety-five percent. So a hundred minus ninety-five, five percent know neither.",
+        show(g74v20['line'], 'Say twenty percent know both'), show(g74v20['both'], 'twenty percent know both'),
+        show(g74p, 'forty-five minus twenty'), show(g74v20['a'], 'twenty-five. Owner'),
+        show(g74p2, 'seventy minus twenty'), show(g74v20['b'], 'fifty. Together'),
+        show(g74p3, 'twenty-five plus twenty plus fifty'), show(g74p4, 'a hundred minus ninety-five'),
+        show(g74v20['out'], 'five percent know neither'))),
+    S('Method 3 · Understanding: the two circles',
+      L("And the biggest overlap is forty-five percent. Put the whole artist group inside the owner group. Then artist "
+        "only is zero. Owner only is seventy minus forty-five, twenty-five. Everyone in either group is in the owner's "
+        "seventy percent. So a hundred minus seventy, thirty percent know neither.",
+        show(g74v45['line'], 'the biggest overlap is forty-five percent'), show(g74v45['both'], 'forty-five percent'),
+        show(g74q, 'artist only is zero'), show(g74v45['a'], 'artist only is zero'),
+        show(g74q2, 'seventy minus forty-five'), show(g74v45['b'], 'twenty-five. Everyone'),
+        show(g74q3, 'a hundred minus seventy'), show(g74v45['out'], 'thirty percent know neither')),
       L("So the overlap can be anything from fifteen to forty-five percent. They ask for the least, fifteen percent, "
         "fifty-four guests. Choice number one is our answer, and I'll see you in the next question.",
         show(g74r, 'anything from fifteen to forty-five'), mk('tick', 'choice 1', 'Choice number one is our answer'))),
@@ -1902,8 +1928,9 @@ video('solve-wp24-g075', 'solution', qid='wp24-g075', slides=[
       L("So neither is from fifteen to twenty-eight, and nineteen fits. Choice number three is our answer.",
         show(g75f, 'from fifteen to twenty-eight'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · Insight',
-      L("[pause] Now an insight that saves a calculation. We start again from the givens. Not in the library is "
-        "twenty-eight, so neither is at most twenty-eight. That rules out thirty-six and thirty-one.",
+      L("[pause] Now an insight that saves a calculation. We start again from the givens. Fifty-two minus twenty-four "
+        "is twenty-eight students not in the library. Neither must be among those students, so neither is at most "
+        "twenty-eight. That rules out thirty-six and thirty-one.",
         show(g75g, 'so neither is at most twenty-eight'), mk('cross', 'choice 1', 'That rules out'),
         mk('cross', 'choice 4', 'thirty-six and thirty-one')),
       L("Two choices are left, thirteen and nineteen. A question has only one right answer. So one of them is inside the "
@@ -1987,13 +2014,13 @@ video('solve-q-r26-t24-01', 'solution', qid='q-r26-t24-01', slides=[
 # do! in the exam, convert to percent". APPLICATION (R37): must an overlap exist? (the smallest-overlap rule, wp-068), fractions -> percent (wp-068 part 2). W17: every
 # choice read in full first.
 g76r = I('g76r', 'Over the whole? $\\ $An overlap must exist', size=28, col=1)
-g76a = IH('g76a', 'not new $\\frac{3}{4}$, $\\ $not nights $\\frac{7}{10}$', size=34, col=1)
+g76a = IH('g76a', 'not new $\\frac{3}{4}$, $\\ $not nights $\\frac{7}{10}$', size=34)
 g76b = IH('g76b', '$\\frac{15}{20}+\\frac{14}{20}=\\frac{29}{20}>1$', size=34, col=1)
 g76c = IH('g76c', '$\\frac{6}{20}+\\frac{15}{20}=\\frac{21}{20}>1$', size=34, col=1)
 g76d = IH('g76d', '$\\frac{1}{4}+\\frac{3}{4}=1$', size=34, col=1)
-g76e = IH('g76e', '$20$ nurses: $\\ 5$ new, $\\ 15$ drive', size=28, col=1)
+g76e = IH('g76e', '$20$ nurses: $\\ 5$ new, $\\ 15$ drive', size=28)
 g76f = IH('g76f', '$\\frac{5}{10}+\\frac{7}{10}=\\frac{12}{10}>1$', size=34, col=1)
-g76g = IH('g76g', 'nights $30$, $\\ $drive $75$, $\\ $new $25$, $\\ $part time $50$', size=28, col=1)
+g76g = IH('g76g', 'nights $30$, $\\ $drive $75$, $\\ $new $25$, $\\ $part time $50$', size=28)
 g76h = IH('g76h', 'not new $75$, $\\ $not nights $70$', size=28, col=1)
 g76i = IH('g76i', '(1) $\\ 75+70=145$', size=28, col=1)
 g76j = IH('g76j', '(2) $\\ 30+75=105$', size=28, col=1)
@@ -2037,7 +2064,7 @@ video('solve-wp24-g076', 'solution', qid='wp24-g076', slides=[
         "The smallest overlap is zero, never negative.", mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · Insight: work in percent',
       L("[pause] Now an insight, the one from the lesson. Adding fractions takes time, and percents are much faster. We "
-        "start again from the givens, and turn every fraction into percent."),
+        "start again from the givens, and turn every fraction into percent. Again, we need the claim that isn't forced."),
       L("Three tenths is thirty percent. Three quarters is seventy-five percent. A quarter is twenty-five percent, and a "
         "half is fifty percent.",
         show(g76g, 'Three tenths is thirty percent')),
@@ -2046,13 +2073,14 @@ video('solve-wp24-g076', 'solution', qid='wp24-g076', slides=[
       L("If a fraction were a third, we'd just write thirty-three. The small part we drop only matters when a sum lands "
         "right next to a hundred.")),
     S('Method 2 · Insight: work in percent',
-      L("Choice number one, not new and not nights. Seventy-five plus seventy is a hundred forty-five. That's more "
-        "than a hundred. Choice number two, nights and drive. Thirty plus seventy-five is a hundred five, also more than a "
-        "hundred.",
+      L("Choice number one says at least one nurse who is not new does not work night shifts. Seventy-five plus seventy "
+        "is a hundred forty-five. That's more than a hundred, so the overlap is forced. Choice number two says at least "
+        "one night-shift nurse drives to work. Thirty plus seventy-five is a hundred five. Again, the overlap is forced.",
         show(g76i, 'Seventy-five plus seventy'), show(g76j, 'Thirty plus seventy-five'))),
     S('Method 2 · Insight: work in percent',
-      L("Choice number three, new and drive. Twenty-five plus seventy-five is exactly a hundred, so it's not forced. "
-        "Choice number four, part time and not nights. Fifty plus seventy is a hundred twenty, more than a hundred.",
+      L("Choice number three says at least one new nurse drives to work. Twenty-five plus seventy-five is exactly a "
+        "hundred, so the overlap isn't forced. Choice number four says at least one part-time nurse does not work night "
+        "shifts. Fifty plus seventy is a hundred twenty, more than a hundred. That overlap is forced.",
         show(g76k, 'Twenty-five plus seventy-five'), show(g76l, 'Fifty plus seventy')),
       L("So in the exam, turn the fractions into percent. Choice number three is our answer, and I'll see you in the next "
         "question.", mk('tick', 'choice 3', 'Choice number three is our answer'))),
@@ -2068,11 +2096,15 @@ w_t = TBL('w_t', ['Walk', "Don't walk", 'Total'], ['Upper', 'Lower', 'Total'], [
     ('reg', [('box', 0, 0), ('box', 0, 1), ('box', 1, 0), ('box', 1, 1)])], colw=170, labw=130, size=30)
 w_a = IH('w_a', '$20\\%$ of the women, $\\ 30\\%$ of the men', size=30)
 w_b = IH('w_b', '$20\\%+30\\%=50\\%$? $\\ $No', size=30, col=1)
-w_c = IH('w_c', 'average $25\\%$? $\\ $No', size=30, col=1)
+w_c = IH('w_c', 'average $25\\%$? $\\ $Not guaranteed', size=30, col=1)
+w_ex = TBL('w_ex', ['Glasses', 'No glasses', 'Total'], ['Women', 'Men', 'Total'], [
+    ('women', [('c', 0, 2, '40')]), ('men', [('c', 1, 2, '60')]), ('all', [('c', 2, 2, '100')]),
+    ('wg', [('c', 0, 0, '8')]), ('mg', [('c', 1, 0, '18')]), ('glasses', [('c', 2, 0, '26')])],
+    colw=150, labw=110, rowh=62, headh=48, size=30, w=560)
 w_d = IH('w_d', '$40$ women: $\\ 20\\%$ of $40=8$', size=30, col=1)
 w_e = IH('w_e', '$60$ men: $\\ 30\\%$ of $60=18$', size=30, col=1)
 w_f = IH('w_f', '$8+18=26$: $\\ 26\\%$', size=32, col=1)
-w_g = I('w_g', 'Different wholes: $\\ $don\'t add, $\\ $don\'t average. $\\ $Plug in $100$, $\\ $fill a table.', size=28)
+w_g = I('w_g', 'Find each group\'s count first. $\\ $Then add counts, not percents.', size=28)
 video('r26-t24-two-way', 'lesson', slides=[
     S('Two-Way Tables',
       L("Welcome back. Sometimes every person in a question has two traits. For example, a student is in the upper "
@@ -2085,17 +2117,21 @@ video('r26-t24-two-way', 'lesson', slides=[
     S('The trap: different wholes',
       L("Here's the trap in these questions. Say twenty percent of the women wear glasses, and thirty percent of the men "
         "wear glasses. What percent of everyone wears glasses?", show(w_a, 'Say twenty percent of the women')),
-      L("A lot of students add, and say fifty percent. Others take the average, twenty-five percent. Both are wrong.",
+      L("A lot of students add, and say fifty percent. Others take the average, twenty-five percent. But twenty-five "
+        "isn't guaranteed either. We don't know the group sizes yet.",
         show(w_b, 'A lot of students add'), show(w_c, 'Others take the average')),
       L("Why? Because the twenty percent is of the women, and the thirty percent is of the men. These are percents of "
         "different wholes."),
-      L("Let's see it in numbers. Say there are forty women and sixty men, a hundred people. Twenty percent of forty is "
-        "eight. Thirty percent of sixty is eighteen.", show(w_d, 'Twenty percent of forty'), show(w_e, 'Thirty percent of sixty')),
+      L("Let's see it in numbers. Put women and men in rows. Say there are forty women and sixty men, a hundred people. "
+        "In the glasses column, twenty percent of forty is eight. Thirty percent of sixty is eighteen.",
+        show(w_ex['line'], 'Put women and men in rows'), show(w_ex['women'], 'forty women'), show(w_ex['men'], 'sixty men'),
+        show(w_ex['all'], 'a hundred people'), show(w_d, 'twenty percent of forty'), show(w_ex['wg'], 'is eight'),
+        show(w_e, 'Thirty percent of sixty'), show(w_ex['mg'], 'is eighteen')),
       L("Eight plus eighteen is twenty-six. So twenty-six people out of a hundred wear glasses, twenty-six percent. Not "
-        "fifty, and not twenty-five.", show(w_f, 'Eight plus eighteen')),
-      L("So we don't add percents of different groups, and we don't average them. We plug in a hundred, and fill a "
-        "table. Let's see it in a guided question. Try it first, and I'll see you in the next video.",
-        show(w_g, "So we don't add percents"))),
+        "fifty, and not twenty-five.", show(w_f, 'Eight plus eighteen'), show(w_ex['glasses'], 'Eight plus eighteen')),
+      L("So find how many wear glasses in each group first. Add those counts, and compare with the total number of "
+        "people. The table keeps the groups clear. Let's see it in a guided question. Try it first, and I'll see you in the next video.",
+        show(w_g, 'Add those counts'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t24-02 (added: a two-way table, percent of the walkers)
@@ -2109,7 +2145,7 @@ q2t = TBL('q2t', ['Walk', "Don't walk", 'Total'], ['Upper', 'Lower', 'Total'], [
 q2t2 = TBL('q2t2', ['Walk', "Don't walk", 'Total'], ['Upper', 'Lower', 'Total'], [
     ('vals', [('c', 2, 2, '100'), ('c', 0, 2, '40'), ('c', 1, 2, '60'), ('c', 0, 0, '12'), ('c', 1, 0, '36'), ('c', 2, 0, '48')]),
     ('col', [('box', 0, 0), ('box', 1, 0), ('box', 2, 0)])], colw=150, labw=110, rowh=62, headh=48, size=30, col=0, w=560)
-q2a = IH('q2a', '$100-40=60$', size=30, col=1)
+q2a = IH('q2a', '$100-40=60$', size=30)
 q2b = IH('q2b', '$10\\%$ of $40=4$, $\\ 30\\%=12$', size=30, col=1)
 q2c = IH('q2c', '$10\\%$ of $60=6$, $\\ 60\\%=36$', size=30, col=1)
 q2d = IH('q2d', '$12+36=48$', size=30, col=1)
@@ -2285,8 +2321,8 @@ video('r26-t24-three-groups', 'lesson', slides=[
       L("So when we add up the groups, we count appearances, not people. How many different actors were there? Three "
         "plus six plus six is fifteen. So there were fifteen actors, not twenty-seven.", show(t_ek, 'we count appearances, not people'),
         show(t_e9, 'Three plus six plus six')),
-      L("Counting appearances works when we know the size of every group, and the question asks about all the people "
-        "in exactly one group, or all the people in exactly two, together. Counting appearances doesn't tell us which "
+      L("Here we know every group's size, and the counts in all three and exactly two. So we can subtract their "
+        "appearances to find exactly one. We need those other counts too, not just the group sizes. Counting appearances doesn't tell us which "
         "pair each actor was in, and we don't need that.", show(t_el, "doesn't tell us which pair")),
       L("Now let's see a guided question. Try it first, and I'll see you in the next video.")),
 ])
@@ -2315,8 +2351,8 @@ video('solve-q-r26-t24-03', 'solution', qid='q-r26-t24-03', slides=[
       L("In a survey, eighty percent of the people own a phone, seventy-five percent own a laptop, and seventy percent "
         "own a tablet. At least what percent of the people own all three?", pt('stem', 'In a survey', 'hl', 8.0),
         voice='calm', pause=0.5),
-      L("So three groups, and at least about all three. We'll solve it in two different ways, by counting who is missing, "
-        "and then with a short formula.", pt('stem', 'So three groups')),
+      L("They ask for the smallest percent who own all three items. We'll solve it in two different ways, by counting "
+        "who is missing, and then with a short formula.", pt('stem', 'the smallest percent who own all three items')),
       L("Let's start by understanding. There are only percents here, so let's plug in a hundred people. Then each percent "
         "is a number of people.", show(q3u['line'], "let's plug in a hundred people")),
       L("Who doesn't own each item? A hundred minus eighty, twenty have no phone. A hundred minus seventy-five, "
@@ -2334,14 +2370,128 @@ video('solve-q-r26-t24-03', 'solution', qid='q-r26-t24-03', slides=[
       L("Eighty plus seventy-five plus seventy is two hundred twenty-five. Two times a hundred is two hundred. Two hundred "
         "twenty-five minus two hundred is twenty-five.", show(q3f, 'Eighty plus seventy-five plus seventy'),
         show(q3g, 'Two hundred twenty-five minus two hundred')),
-      L("Why twice? The missing people are three hundred minus two hundred twenty-five, seventy-five. And a hundred minus "
-        "seventy-five is the same as two hundred twenty-five minus two hundred.", show(q3h, 'three hundred minus two hundred')),
+      L("Why subtract two hundreds? If everyone owned all three items, we'd count everyone three times, three hundred. "
+        "We actually count two hundred twenty-five. So three hundred minus two hundred twenty-five is seventy-five missing "
+        "places in the groups. Those can belong to at most seventy-five different people. A hundred minus seventy-five "
+        "leaves at least twenty-five with all three. That's the same as two hundred twenty-five minus two hundred.", show(q3h, 'three hundred minus two hundred')),
       L("Careful with choice number three, fifty-five percent. That's eighty plus seventy-five minus a hundred, only the "
         "phone and the laptop.", show(q3i, 'eighty plus seventy-five minus a hundred'), mk('cross', 'choice 3', 'only the phone and the laptop')),
       L("And choice number four, seventy percent, is the most, the smallest group. They ask for the least. Choice number "
         "two is our answer, and I'll see you in the next question.", mk('cross', 'choice 4', 'They ask for the least'),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
+# 21 Oct Codex review: independent results get individual spoken-clause rows.
+def _clause_rows(vid, name, *pieces):
+    found = 0
+    for sl in VIDEOS[vid]['slides']:
+        for ln in sl['lines']:
+            cues = []
+            for cue in ln['cues']:
+                if cue[0] == 'show' and cue[1]['_name'] == name:
+                    old = cue[1]; found += 1
+                    for j, (tex, anchor) in enumerate(pieces):
+                        assert anchor.lower() in ln['say'].lower(), (vid, name, anchor)
+                        it = IH(name if not j else name+'_clause'+str(j), tex,
+                                size=old.get('size',30), col=old['_col'])
+                        cues.append(show(it, anchor))
+                else: cues.append(cue)
+            def cue_pos(c):
+                anchor = c[2] if c[0] in ('show','point') else c[3]
+                return -1 if anchor.startswith('<') else ln['say'].lower().find(anchor.lower())
+            ln['cues'] = sorted(cues, key=cue_pos)
+    assert found == 1, (vid, name, found)
+
+_clause_rows('wp-067', 'a_f5',
+    ('$22+$ neither $=30$', 'So twenty-two plus neither is thirty'),
+    ('neither $=8$', 'neither is eight'))
+_clause_rows('wp-068', 'r_m3',
+    ('dog $8$, cat $12$: $\\ $biggest $8$', 'The biggest overlap is eight'))
+_clause_rows('wp-068', 'r_m4',
+    ('$6$ and $6$: $\\ $biggest $6$', 'Then the biggest overlap is six'))
+_clause_rows('wp-068', 'r_z4',
+    ('$17-20=-3$: $\\ $not an overlap', 'seventeen minus twenty, and get minus three'),
+    ('smallest overlap: $0$', 'so the smallest overlap is zero'))
+_clause_rows('wp-068', 'r_p4',
+    ('$10\\%$ of $200=20$', 'Ten percent of two hundred is twenty'),
+    ('$5\\%$ of $200=10$', 'five percent is ten'),
+    ('$15\\%$: $20+10=30$ people', 'So fifteen percent is twenty plus ten'))
+_clause_rows('wp-068', 'r_f4',
+    ('$70\\%+50\\%=120\\%$', 'Seventy plus fifty is a hundred twenty'),
+    ('$120\\%-100\\%=20\\%$', 'so twenty percent'))
+_clause_rows('wp-068', 'r_e5',
+    ('$5+6=11$', 'Five plus six is eleven'),
+    ('$11<15$: $\\ $smallest $0$', 'so the smallest overlap is zero'))
+_clause_rows('solve-wp24-g072', 'g72p3',
+    ('chess only: $18-2=16$', 'Chess only is eighteen minus two'),
+    ('robotics only: $8-2=6$', 'Robotics only is eight minus two'))
+_clause_rows('solve-wp24-g072', 'g72f2',
+    ('$\\frac{1}{9}\\cdot9=1$', 'A ninth of nine is one'),
+    ('$\\frac{1}{4}\\cdot4=1$', 'a quarter of four is one'))
+_clause_rows('solve-wp24-g072', 'g72f3',
+    ('$9-1=8$', 'Nine minus one is eight'),
+    ('$4-1=3$', 'four minus one is three'))
+_clause_rows('solve-wp24-g077', 'g77h',
+    ('morning: $48\\div4=12$', 'a quarter of forty-eight, twelve'),
+    ('evening: $48\\div6=8$', 'a sixth of forty-eight, eight'))
+_clause_rows('solve-wp24-g074', 'g74n',
+    ('artist only: $45-15=30$', 'forty-five minus fifteen'),
+    ('owner only: $70-15=55$', 'seventy minus fifteen'))
+# Restore the already-spoken subtraction in the independent shortcut method.
+for _sl in VIDEOS['solve-wp24-g075']['slides']:
+    for _ln in _sl['lines']:
+        if _ln['say'].startswith('[pause] Now an insight that saves a calculation.'):
+            _ln['cues'].insert(0, show(IH('g75g_start', '$52-24=28$ not in the library', size=30, col=1),
+                                      'Fifty-two minus twenty-four'))
+for _sl in VIDEOS['solve-q-r26-t24-03']['slides']:
+    for _ln in _sl['lines']:
+        if 'Two times a hundred is two hundred.' in _ln['say']:
+            _ln['cues'].insert(1, show(IH('q3_twice_total', '$2\\cdot100=200$', size=30, col=1),
+                                      'Two times a hundred is two hundred'))
+_clause_rows('solve-q-r26-t24-01', 'q1e',
+    ('$32+27=59$', 'Thirty-two plus twenty-seven is fifty-nine'),
+    ('$59-50=9$', 'Fifty-nine minus fifty is nine'))
+_clause_rows('solve-wp24-g076', 'g76a',
+    ('not new: $1-\\frac{1}{4}=\\frac{3}{4}$', 'Not new is one minus a quarter'),
+    ('not nights: $1-\\frac{3}{10}=\\frac{7}{10}$', 'Not nights is one minus three tenths'))
+_clause_rows('solve-wp24-g076', 'g76e',
+    ('$20$ nurses: $\\ 5$ new', 'A quarter, five, are new'),
+    ('$15$ drive', 'Three quarters, fifteen, drive'))
+_clause_rows('solve-wp24-g076', 'g76g',
+    ('nights: $30\\%$', 'Three tenths is thirty percent'),
+    ('drive: $75\\%$', 'Three quarters is seventy-five percent'),
+    ('new: $25\\%$', 'A quarter is twenty-five percent'),
+    ('part time: $50\\%$', 'a half is fifty percent'))
+_clause_rows('solve-wp24-g076', 'g76h',
+    ('not new: $100-25=75\\%$', 'Not new is a hundred minus twenty-five'),
+    ('not nights: $100-30=70\\%$', 'Not nights is a hundred minus thirty'))
+# Keep the four conversions in two readable columns, clear of the choices.
+for _sl in VIDEOS['solve-wp24-g076']['slides']:
+    for _ln in _sl['lines']:
+        for _cue in _ln['cues']:
+            if _cue[0] == 'show' and _cue[1]['_name'] in ('g76g_clause2', 'g76g_clause3'):
+                _cue[1]['_col'] = 1
+_clause_rows('r26-t24-two-way', 'w_f',
+    ('$8+18=26$ people', 'Eight plus eighteen is twenty-six'),
+    ('$26$ out of $100=26\\%$', 'twenty-six people out of a hundred'))
+_clause_rows('solve-q-r26-t24-02', 'q2b',
+    ('$10\\%$ of $40=4$', 'Ten percent of forty is four'),
+    ('$30\\%$ of $40=12$', 'so thirty percent is twelve'))
+_clause_rows('solve-q-r26-t24-02', 'q2c',
+    ('$10\\%$ of $60=6$', 'Ten percent of sixty is six'),
+    ('$60\\%$ of $60=36$', 'so sixty percent is thirty-six'))
+_clause_rows('r26-t24-three-groups', 't_x2',
+    ('no tea: $2$', "Two don't like tea"),
+    ('no coffee: $1$', "one doesn't like coffee"),
+    ('no juice: $3$', "three don't like juice"))
+_clause_rows('r26-t24-three-groups', 't_y1',
+    ('$5+6=11$', 'Five plus six is eleven'),
+    ('$15-11=4$', 'fifteen minus eleven, four are in both'))
+_clause_rows('r26-t24-three-groups', 't_z3',
+    ('fiction and history only: $15$', 'Fifteen read fiction and history'),
+    ('fiction and science only: $15$', 'Fifteen read fiction and science'),
+    ('history and science only: $10$', 'Ten read history and science'),
+    ('history only: $10$', 'And ten read only history'))
+
 CARRY24 = {}
 # =================================================================================================================
 # Extra-visual pass (about one event every 2-4 s): in a solution video every spoken "number N" that has no cue on that

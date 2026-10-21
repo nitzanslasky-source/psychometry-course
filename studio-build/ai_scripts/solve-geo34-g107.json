@@ -13,12 +13,10 @@
     "pause": 0.5
    },
    {
-    "say": "There's no area formula for a hexagon. But like in the lesson, a regular hexagon is made of six equilateral triangles. So we find the area of one triangle, and then we multiply by six.",
+    "say": "Like in the lesson, a regular hexagon is made of six equilateral triangles. So we find the area of one triangle, and then we multiply by six.",
     "at": [
-     "There's no area",
-     "a regular hexagon",
-     "So we find",
-     "of one triangle"
+     "Like in the",
+     "regular hexagon is"
     ]
    },
    {

@@ -15,9 +15,9 @@
    },
    "You know it from school. A big final exam counts more than a small quiz.",
    {
-    "say": "The heavier value pulls the average toward itself. So the average isn't in the middle anymore. It's closer to the heavier value.",
+    "say": "With two different values, the heavier one pulls the average toward itself. The average is closer to the heavier value, not halfway between them.",
     "at": [
-     "The heavier value pulls",
+     "the heavier one pulls",
      "average toward itself"
     ]
    },
@@ -80,7 +80,9 @@
     "say": "For Dan, eighty times three plus forty times one, divided by three plus one. That's two hundred eighty divided by four, seventy.",
     "at": [
      "For Dan",
-     "by three plus"
+     "plus forty times",
+     "That's two hundred eighty divided by four",
+     "by four, seventy"
     ]
    },
    {
@@ -101,7 +103,8 @@
    {
     "say": "Ninety plus a hundred twenty is two hundred ten. Plus two hundred forty is four hundred fifty.",
     "at": [
-     "Ninety plus a",
+     "Ninety plus a hundred twenty is two hundred ten",
+     "is two hundred",
      "Plus two hundred forty is four hundred fifty",
      "four hundred fifty"
     ]

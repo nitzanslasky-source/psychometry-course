@@ -128,13 +128,13 @@
     "say": "Each hour, the two hoses add four plus four, eight units. The outlet takes away three. So the pond gains eight minus three, five units an hour.",
     "at": [
      "Each hour, the",
-     "The outlet takes away three",
-     "So the pond"
+     "minus three, five units"
     ]
    },
    {
     "say": "Sixty units at five units an hour. Sixty divided by five is twelve hours. The same twelve hours, so again, seven p.m.",
     "at": [
+     "Sixty units at",
      "Sixty divided by five",
      "The same twelve"
     ]

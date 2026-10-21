@@ -85,15 +85,14 @@
    {
     "say": "A painter paints three walls an hour, for five hours. Three times five is fifteen walls.",
     "at": [
-     "A painter paints three walls an hour",
-     "Three times five"
+     "Three times five is fifteen"
     ]
    },
    {
     "say": "Now she paints twice as fast, six walls an hour, in the same five hours. Six times five is thirty walls.",
     "at": [
-     "Now she paints twice as fast",
-     "in the same"
+     "Now she paints",
+     "Six times five is thirty"
     ]
    },
    {
@@ -122,8 +121,7 @@
    {
     "say": "In two hours, that's half the time, three times two is six walls. That's half the work.",
     "at": [
-     "In two hours",
-     "the time, three"
+     "three times two is six"
     ]
    },
    {
@@ -145,14 +143,14 @@
    {
     "say": "She has twelve walls to paint. At three walls an hour, twelve divided by three is four hours.",
     "at": [
-     "At three walls an hour"
+     "twelve divided by three"
     ]
    },
    {
     "say": "At six walls an hour, twice as fast, twelve divided by six is two hours. That's half the time.",
     "at": [
-     "At six walls an hour",
-     "by six is"
+     "hour, twice as",
+     "twelve divided by six"
     ]
    },
    {

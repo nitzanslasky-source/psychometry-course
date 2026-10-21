@@ -43,20 +43,21 @@
    {
     "say": "Four hours to twelve is times three. Two hundred times three is six hundred square meters.",
     "at": [
-     "Four hours to twelve",
-     "Two hundred times"
+     "Four hours to",
+     "Two hundred times three is six hundred",
+     "six hundred square"
     ]
    },
    {
     "say": "Six hours to twelve is times two. Thirty times two is sixty square meters.",
     "at": [
-     "Six hours to twelve",
-     "Thirty times two"
+     "Thirty times two is sixty"
     ]
    },
    {
     "say": "In the same twelve hours, together they polish six hundred plus sixty, six hundred sixty square meters.",
     "at": [
+     "hours, together they",
      "six hundred plus sixty",
      "hundred sixty square"
     ]

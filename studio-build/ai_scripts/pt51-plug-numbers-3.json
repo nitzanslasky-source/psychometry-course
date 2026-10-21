@@ -21,7 +21,7 @@
     "at": [
      "three times three is nine",
      "Three a, three",
-     "are all zero"
+     "So the expression is nine"
     ]
    },
    {
@@ -36,7 +36,7 @@
     "at": [
      "Look at two choices",
      "squared b, and",
-     "With a and b both one"
+     "both choices give one"
     ]
    },
    {
@@ -71,9 +71,10 @@
     "say": "Which number? Six, because both two and three go into it. Half of six is three, and a third of six is two. Together five, out of six. So it's five sixths of the number, whatever the number is.",
     "at": [
      "Half of six is three",
-     "and a third",
+     "a third of six is two",
      "Together five",
-     "So it's five"
+     "So it's five sixths",
+     "the number, whatever"
     ]
    }
   ],
@@ -88,19 +89,21 @@
    },
    "An equation with two letters can have many allowed solutions. Sometimes the result they ask for changes between them. Then it cannot be determined. But here, both terms they ask for are one and a half times the terms in the given equation. So their sum is fixed too. Let's use one easy solution to calculate it.",
    {
-    "say": "I give one letter a value, and I solve the equation for the other. x equals zero, because multiplying by zero makes the whole x term zero. Then six y equals eighteen, so y is three.",
+    "say": "I give one letter a value, and I solve the equation for the other. x equals zero, because multiplying by zero makes the whole x term zero. Then six y equals eighteen. Divide both sides by six to find y. Eighteen divided by six is three, so y is three.",
     "at": [
      "I give one letter a value",
      "value, and I",
-     "x equals zero",
-     "by zero makes"
+     "Then six y equals eighteen",
+     "Divide both sides",
+     "Eighteen divided by six is three",
+     "three, so y"
     ]
    },
    {
     "say": "Now what they ask. Six times zero is zero, and nine times three is twenty-seven. So six x plus nine y is twenty-seven.",
     "at": [
-     "Six times zero is zero",
-     "and nine times"
+     "nine times three is twenty-seven",
+     "So six x"
     ]
    },
    "Here zero makes the calculation easy, and it's allowed. But I chose only x. The equation then made y equal to three. I can't choose both letters freely: they still have to satisfy the equation.",

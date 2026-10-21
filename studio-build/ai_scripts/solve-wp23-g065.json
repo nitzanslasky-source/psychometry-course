@@ -67,8 +67,9 @@
    {
     "say": "How many times does eighty-one go into two hundred forty-three? Eighty times three is two hundred forty. So eighty-one times three is two hundred forty-three. So one percent is three liters.",
     "at": [
-     "Eighty times three",
-     "So eighty-one times",
+     "Eighty times three is two hundred forty",
+     "So eighty-one times three",
+     "two hundred forty-three. So",
      "So one percent is three"
     ]
    },

@@ -142,14 +142,15 @@
    {
     "say": "Now only part of it is inside the sixty. How much? Sixty plus fifty is a hundred ten.",
     "at": [
-     "Sixty plus fifty"
+     "is a hundred ten"
     ]
    },
    {
-    "say": "But there are only eighty vehicles. A hundred ten minus eighty is thirty. So at least thirty are both.",
+    "say": "But there are only eighty thousand vehicles. A hundred ten minus eighty is thirty. So at least thirty thousand are both.",
     "at": [
      "But there are",
-     "A hundred ten minus eighty",
+     "is thirty",
+     "is thirty",
      "So at least"
     ]
    },
@@ -190,17 +191,12 @@
      "is the total"
     ]
    },
-   {
-    "say": "And how many commercial vehicles were sold in two thousand twelve? The grey part goes from sixty up to a hundred ten.",
-    "at": [
-     "The grey part goes from sixty",
-     "sixty up to"
-    ]
-   },
+   "And how many commercial vehicles were sold in two thousand twelve? The grey part goes from sixty up to a hundred ten.",
    {
     "say": "So it's a hundred ten minus sixty, fifty thousand.",
     "at": [
-     "a hundred ten minus sixty"
+     "fifty thousand",
+     "fifty thousand"
     ]
    },
    {

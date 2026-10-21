@@ -42,12 +42,14 @@
     "say": "Now an easy number. Half of two hundred is a hundred. Half the sheep make the hay last twice as long. Nine times two is eighteen days.",
     "at": [
      "Half of two hundred is a hundred",
-     "Half the sheep"
+     "Half the sheep",
+     "Nine times two is eighteen"
     ]
    },
    {
     "say": "But we have a hundred fifty sheep, more than a hundred. More sheep finish the hay sooner. So fewer than eighteen days.",
     "at": [
+     "hundred fifty sheep",
      "more than a hundred",
      "So fewer than"
     ]
@@ -86,8 +88,8 @@
    {
     "say": "One thousand eight hundred divided by a hundred fifty. Fifteen hundred is ten times a hundred fifty, and three hundred is two more hundred fifties. So twelve days.",
     "at": [
-     "One thousand eight hundred divided by",
-     "by a hundred"
+     "One thousand eight",
+     "So twelve days"
     ]
    },
    {
@@ -141,11 +143,15 @@
    {
     "say": "Four thirds times nine. Nine divided by three is three. Then three times four is twelve days.",
     "at": [
-     "Four thirds times nine",
-     "Nine divided by"
+     "three times four is twelve"
     ]
    },
-   "The hard part was to see who the team is. Sometimes a supply gets used up at a constant rate, like hay, water or fuel. Then the ones who use it are the team. And the supply is the work. If you don't see it, the estimate and plugging in numbers work too.",
+   {
+    "say": "The hard part was to see who the team is. Sometimes a supply gets used up at a constant rate, like hay, water or fuel. Then the ones who use it are the team. And the supply is the work. If you don't see it, the estimate and plugging in numbers work too.",
+    "at": [
+     "The hard part"
+    ]
+   },
    {
     "say": "Choice number one is our answer, and I'll see you in the next question.",
     "at": [

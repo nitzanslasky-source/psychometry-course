@@ -32,20 +32,20 @@
    {
     "say": "Four hours to twelve is times three. So in twelve hours, Ella fills three bags.",
     "at": [
-     "Four hours to twelve",
-     "So in twelve"
+     "Ella fills three bags"
     ]
    },
    {
     "say": "Six hours to twelve is times two. So in twelve hours, Tom fills two bags.",
     "at": [
-     "Six hours to twelve",
-     "So in twelve"
+     "Six hours to",
+     "Tom fills two bags"
     ]
    },
    {
     "say": "Now the times match. In the same twelve hours, together they fill three plus two, five bags.",
     "at": [
+     "In the same",
      "together they fill three plus two",
      "five bags"
     ]
@@ -120,11 +120,16 @@
    {
     "say": "Twenty units at five units an hour. Twenty divided by five is four hours.",
     "at": [
-     "Twenty units at five",
-     "Twenty divided by"
+     "Twenty units at",
+     "Twenty divided by five is four"
     ]
    },
-   "It's just like plugging in numbers. The tank's real size doesn't matter, so we choose an easy one."
+   {
+    "say": "It's just like plugging in numbers. The tank's real size doesn't matter, so we choose an easy one.",
+    "at": [
+     "It's just like"
+    ]
+   }
   ],
   [
    {
@@ -134,17 +139,17 @@
     ]
    },
    {
-    "say": "Together is always faster than the fastest worker alone. So it takes less time than the fastest worker needs.",
+    "say": "Take two workers who both help with the same job. Together they finish sooner than the faster worker alone.",
     "at": [
-     "Together is always faster",
-     "the fastest worker"
+     "Together they finish sooner",
+     "the faster worker"
     ]
    },
    {
-    "say": "And two workers as fast as the fastest one would need half his time. The other worker is slower, so together it takes more than that half.",
+    "say": "Two workers as fast as the faster one would need half that time. If the other worker is slower, together they take more than that half. If their rates are equal, they take exactly half. This half-time limit is for two workers, not three or more.",
     "at": [
-     "two workers as fast as the fastest one",
-     "the fastest one"
+     "If the other worker is slower",
+     "slower, together they"
     ]
    },
    {
@@ -228,10 +233,10 @@
     ]
    },
    {
-    "say": "And together is less than the fastest one alone, and more than half of it.",
+    "say": "And for two workers with different positive rates, the time together is less than the faster one's time alone, but more than half of it.",
     "at": [
-     "And together is less",
-     "the fastest one"
+     "for two workers with different positive rates",
+     "positive rates, the"
     ]
    },
    "Take a moment to memorize this, and I'll see you in the next video."

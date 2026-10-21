@@ -145,19 +145,22 @@
    {
     "say": "[pause] And there's the two-worker shortcut from the lesson. We multiply the two times, and divide by their sum.",
     "at": [
-     "And there's"
+     "shortcut from the",
+     "multiply the two"
     ]
    },
    {
     "say": "Six times ten is sixty. Six plus ten is sixteen. So sixty over sixteen.",
     "at": [
      "Six times ten is sixty",
-     "Six plus ten"
+     "Six plus ten is sixteen",
+     "So sixty over sixteen"
     ]
    },
    {
     "say": "We divide the top and the bottom by four. Sixty over sixteen is fifteen over four. That's three and three quarters hours again.",
     "at": [
+     "We divide the",
      "Sixty over sixteen is fifteen over four",
      "That's three and"
     ]

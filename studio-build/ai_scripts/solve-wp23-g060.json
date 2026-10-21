@@ -76,13 +76,15 @@
     "say": "Zero point nine eight x is ninety-eight percent of x. She started with a hundred percent of x, so now she has two percent fewer. Choice number two is our answer.",
     "at": [
      "ninety-eight percent of x",
-     "She started with",
+     "started with a",
+     "so now she has two percent fewer",
      "Choice number two is our answer"
     ]
    },
    {
     "say": "So, just like in the lesson, each change is one multiplier. To go down thirty percent, we multiply by zero point seven, what stays. To go up forty percent, we multiply by one point four. And for two changes in a row, we multiply the multipliers.",
     "at": [
+     "So, just like",
      "To go down thirty percent",
      "we multiply by",
      "To go up forty percent",
@@ -94,8 +96,7 @@
    {
     "say": "[pause] Now let's plug in numbers. We start again from the givens. No number of coins is given, so we plug in a hundred. Where? Into the whole, the coins she had at the start.",
     "at": [
-     "Now let's",
-     "the givens. No",
+     "numbers. We start",
      "Into the whole",
      "she had at"
     ]
@@ -117,14 +118,16 @@
    {
     "say": "Seventy plus twenty-eight is ninety-eight coins. That's two fewer than a hundred, so two percent fewer.",
     "at": [
-     "Seventy plus twenty-eight",
-     "That's two fewer"
+     "Seventy plus twenty-eight is ninety-eight coins",
+     "coins. That's two",
+     "so two percent fewer"
     ]
    },
    {
     "say": "The trap is choice number three, ten percent more. That's forty minus thirty. But the forty percent is taken from a smaller amount, seventy.",
     "at": [
-     "The trap is choice number three"
+     "The trap is choice number three",
+     "three, ten percent"
     ]
    }
   ],
@@ -154,7 +157,7 @@
     ]
    },
    {
-    "say": "So any number works. We pick a hundred for two reasons. The number we get is already the percent. And percents of a hundred are the easiest to find. Choice number two is our answer, and I'll see you in the next question.",
+    "say": "So any allowed starting number gives the same percent change. We pick a hundred for two reasons. The number we get is already the percent. And percents of a hundred are the easiest to find. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
      "Choice number two is our answer"
     ]

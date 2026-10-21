@@ -17,8 +17,10 @@
     "at": [
      "For example, is a squared",
      "plus b squared",
-     "Let a equal one",
-     "One plus four",
+     "One plus four is five",
+     "three squared is nine",
+     "Five is not nine",
+     "it's not always",
      "One counterexample"
     ]
    },
@@ -32,16 +34,16 @@
   ],
   [
    {
-    "say": "Some questions have a last choice like, it cannot be determined, or, none of the above is necessarily true. You'll see it often on the exam. No number can rule that choice out.",
+    "say": "Some questions have a choice that says cannot be determined. That means the givens don't fix one answer. Another choice you may see is none of the above is necessarily true. That means none of the listed statements is true in every allowed case.",
     "at": [
-     "last choice like",
-     "No number can rule"
+     "choice that says"
     ]
    },
    {
-    "say": "Why? That choice says the answer isn't always the same. And we just saw that examples can't prove always. So when we plug in numbers, that choice always stays.",
+    "say": "One working example doesn't rule out either kind of choice. Why? Because another allowed example might give a different result, or make the statement false. We need to look beyond that one example.",
     "at": [
-     "That choice says"
+     "One working example doesn't rule out",
+     "out either kind"
     ]
    },
    {
@@ -51,6 +53,8 @@
      "not equal to",
      "Choice number one",
      "is greater than",
+     "Choice number two",
+     "is smaller than",
      "Choice number three",
      "is equal to",
      "And choice number four",
@@ -74,17 +78,17 @@
     ]
    },
    {
-    "say": "Choice number three says x squared is equal to x. One equals one, so it stays too. And choice number four stays, because no number can rule it out.",
+    "say": "Choice number three says x squared is equal to x. One equals one, so it stays too. Choice number four stays too. We haven't shown that either remaining statement is always true.",
     "at": [
      "One equals one",
-     "And choice number"
+     "Choice number four"
     ]
    },
    {
     "say": "Now we try another easy number, two, and we check only choice numbers one and three. Two squared is four. Four is greater than two, so choice number one stays. Four isn't equal to two, so choice number three is out.",
     "at": [
-     "Two squared is four",
-     "Four is greater",
+     "Four is greater than two",
+     "so choice number",
      "Four isn't equal to two",
      "so choice number three"
     ]
@@ -92,14 +96,14 @@
   ],
   [
    {
-    "say": "Choice number one and choice number four are left. No number can rule out choice number four. So we ask: is choice number one always true? Three or ten would keep choice number one true, just like two.",
+    "say": "Choice number one and choice number four are left. Our examples haven't proved choice number one. So we ask: is choice number one always true? Three or ten would keep choice number one true, just like two.",
     "at": [
      "Choice number one and",
      "number four are"
     ]
    },
    {
-    "say": "To show that the answer can change, we try a different kind of number. Zero, a big number, a negative number, or a fraction, as long as the restriction allows it. Zero isn't allowed here.",
+    "say": "To check whether choice number one can fail, we try a different kind of number. Zero, a big number, a negative number, or a fraction, as long as the restriction allows it. Zero isn't allowed here.",
     "at": [
      "we try a different kind of number",
      "Zero, a big"
@@ -108,8 +112,8 @@
    {
     "say": "A negative number, minus two. Its square is four, and four is greater than minus two. So choice number one still stays.",
     "at": [
-     "A negative number, minus two",
-     "Its square is"
+     "four is greater than minus two",
+     "So choice number"
     ]
    },
    {
@@ -129,10 +133,10 @@
     ]
    },
    {
-    "say": "And what if every kind of number gives the same result? Then examples alone aren't enough. Back them with a reason, like with six x plus nine y. It's one and a half times four x plus six y, so it's always twenty-seven.",
+    "say": "And what if all the numbers we tried agree? That still doesn't prove always. We need a reason covering every allowed case, like in our earlier equation example. There the requested expression was always one and a half times the given eighteen, so its value was fixed.",
     "at": [
-     "Back them with a reason",
-     "like with six"
+     "That still doesn't prove always",
+     "We need a"
     ]
    }
   ],
@@ -158,10 +162,10 @@
     ]
    },
    {
-    "say": "A choice like cannot be determined is never ruled out by a number. If one other choice is left with it, try to break that choice with a different kind of number. And remember, it's your safety net.",
+    "say": "Don't cross out none of the above or cannot be determined just because your examples agreed. Test a different kind of allowed number, or explain why the result must stay the same. And remember, it's your safety net.",
     "at": [
-     "A choice like cannot be determined",
-     "determined is never",
+     "Don't cross out none of the above",
+     "the above or",
      "it's your safety net"
     ]
    },

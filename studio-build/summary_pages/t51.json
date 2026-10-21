@@ -100,7 +100,7 @@
       ],
       [
        "\"Cannot be determined\" / \"None\"",
-       "No number rules it out. Break the other choice with another KIND of number ($0$, big, negative, fraction). $x\\ne0$: $x^2\\ge x$ holds for $1, 2, -2$, but $x=\\frac12$: $\\frac14<\\frac12$. The same result every time? Find the reason."
+       "Examples that work don't prove \"always\" and don't fix one answer. Try to break the other choice with another KIND of number ($0$, big, negative, fraction). $x\\ne0$: $x^2\\ge x$ holds for $1, 2, -2$, but $x=\\frac12$: $\\frac14<\\frac12$. The same result every time? Find the reason."
       ]
      ]
     }

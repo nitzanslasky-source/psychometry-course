@@ -37,11 +37,11 @@
     ]
    },
    {
-    "say": "And the other way around. A rectangle has four equal angles, but its sides are not all equal. So a rectangle is not regular. The regular quadrilateral is the square. And the regular triangle is the equilateral triangle.",
+    "say": "And the other way around. This rectangle has four equal angles, but its sides are not all equal. So this rectangle is not regular. The regular quadrilateral is the square. And the regular triangle is the equilateral triangle.",
     "at": [
      "And the other",
-     "A rectangle has four equal angles",
-     "not all equal",
+     "This rectangle has four equal angles",
+     "angles, but its",
      "The regular quadrilateral is the square",
      "And the regular"
     ]
@@ -109,7 +109,8 @@
      "A regular octagon",
      "The sum is",
      "Half is five hundred forty",
-     "Half again is",
+     "Half again is two hundred seventy",
+     "And half again is one hundred thirty-five",
      "And half again is one hundred thirty-five"
     ]
    },

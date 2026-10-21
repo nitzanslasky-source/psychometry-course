@@ -32,10 +32,10 @@
    },
    "Five L is twice ten S. So which side gets the times two? A lot of students double the bigger side, because it's the one that's twice as big.",
    {
-    "say": "Remember from topic twenty-two, give it to the little guy. Five L is the bigger one, so the times two goes on the smaller side, ten S. Then both sides are equal.",
+    "say": "Remember from topic twenty-two, give it to the little guy. Here that means the smaller combined rate, ten S. We want equal sides, so the times two goes on ten S, not five L. Doubling the smaller rate makes it equal to the larger one.",
     "at": [
-     "so the times two goes on",
-     "on the smaller"
+     "so the times two goes on ten S",
+     "on ten S"
     ]
    },
    {
@@ -48,22 +48,22 @@
    {
     "say": "We divide both sides by five, so that one L is left alone. Twenty divided by five is four. So L is equal to four S.",
     "at": [
-     "We divide both sides by five",
-     "five, so that"
+     "four S"
     ]
    },
    {
     "say": "Careful with choice number one. If we double five L, we get ten L is equal to ten S. Then L is equal to S, and that's one.",
     "at": [
      "number one. If",
-     "If we double five L",
-     "equal to ten",
+     "If we double",
+     "and that's one",
      "and that's one"
     ]
    },
    {
     "say": "So one large dishwasher is four times as fast as a small one. That's choice number four.",
     "at": [
+     "So one large",
      "number four"
     ]
    }

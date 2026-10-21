@@ -27,12 +27,13 @@
      "The average was seventy",
      "The average was seventy",
      "Seventy is thirty from forty",
-     "and ten from"
+     "ten from eighty"
     ]
    },
    {
-    "say": "So the side of eighty is three times heavier, and it's three times closer. The weights are three to one, and the distances are one to three.",
+    "say": "So the side of eighty is three times heavier, and it's three times closer. For eighty compared with forty, the weights are three to one, and the distances are one to three.",
     "at": [
+     "So the side",
      "The weights are three to one",
      "one, and the"
     ]
@@ -88,9 +89,8 @@
    {
     "say": "The heavy side gets the small part. So the average is one unit from eighty. Eighty minus ten is seventy.",
     "at": [
-     "So the average is one unit",
-     "unit from eighty",
-     "Eighty minus ten"
+     "Eighty minus ten",
+     "is seventy"
     ]
    },
    {

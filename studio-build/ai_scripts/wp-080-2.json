@@ -143,8 +143,11 @@
    {
     "say": "Four is three below, minus three. Nine is plus two. Three is minus four. Eleven is plus four. Eight is plus one.",
     "at": [
-     "Four is three below",
-     "three. Nine is"
+     "minus three",
+     "Nine is plus two",
+     "Three is minus four",
+     "Eleven is plus four",
+     "Eight is plus one"
     ]
    },
    {
@@ -242,9 +245,9 @@
    {
     "say": "So the other number is seven above the average. Forty-seven plus seven is fifty-four.",
     "at": [
-     "So the other number is seven above",
-     "seven above the",
-     "Forty-seven plus seven"
+     "So the other",
+     "Forty-seven plus seven",
+     "is fifty-four"
     ]
    },
    {

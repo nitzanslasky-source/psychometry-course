@@ -30,15 +30,14 @@
    {
     "say": "Fifth place is ten thousand, and fourth place is twenty thousand. Ten thousand plus twenty thousand is thirty thousand.",
     "at": [
-     "Ten thousand plus twenty thousand",
      "is thirty thousand"
     ]
    },
    {
     "say": "First place is a hundred twenty thousand. Thirty thousand plus a hundred twenty thousand is a hundred fifty thousand.",
     "at": [
-     "Thirty thousand plus a hundred twenty",
-     "twenty thousand is"
+     "First place is",
+     "is a hundred fifty thousand"
     ]
    },
    {
@@ -46,14 +45,14 @@
     "at": [
      "Iron Eagles are seven",
      "six, seven, five",
-     "Two times ten thousand"
+     "is twenty thousand"
     ]
    },
    {
     "say": "The difference is a hundred fifty thousand minus twenty thousand, a hundred thirty thousand.",
     "at": [
-     "The difference is",
-     "a hundred thirty"
+     "hundred fifty thousand",
+     "a hundred thirty thousand"
     ]
    },
    {

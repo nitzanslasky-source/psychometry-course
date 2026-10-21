@@ -26,10 +26,11 @@
     "at": [
      "Choice number two says",
      "A O B",
-     "Both are central angles",
-     "the regular polygon",
+     "Like in the",
+     "central angle is",
      "Three hundred sixty divided by nine",
      "nine is forty",
+     "So both angles are forty",
      "so choice number two is out"
     ]
    },
@@ -64,10 +65,10 @@
     ]
    },
    {
-    "say": "So the two triangles have the same three sides. They're the same triangle, so their angles are equal. Angle B C O is equal to angle O C D. It's true, so choice number four is out.",
+    "say": "So the two triangles have matching side lengths. They're congruent: the same shape and size. Their matching angles are equal. Angle B C O is equal to angle O C D. It's true, so choice number four is out.",
     "at": [
-     "the same three sides",
-     "They're the same",
+     "matching side lengths",
+     "They're congruent: the",
      "Angle B C O",
      "equal to angle",
      "so choice number four is out"
@@ -136,20 +137,20 @@
     "say": "With more sides, each side gets shorter than the radius. Take seven sides. The whole circle is two pi r. Pi is less than three and a half, so the circle is less than seven r. And the polygon is shorter than the circle. So its perimeter is less than seven r.",
     "at": [
      "With more sides",
-     "The whole circle is two pi r",
-     "Pi is less"
+     "its perimeter is less than seven r"
     ]
    },
    {
     "say": "With fewer sides, it's the other way around. In a pentagon, the side is across from seventy-two, and the radius is across from fifty-four. So the side is longer than the radius, and the perimeter is more than five r.",
     "at": [
-     "In a pentagon",
-     "is across from"
+     "With fewer sides",
+     "perimeter is more than five r"
     ]
    },
    {
     "say": "So the hexagon is the balance point. With more than six sides, the perimeter is less than n radii. That's our question, with nine sides. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
+     "So the hexagon",
      "With more than six sides",
      "the perimeter is",
      "Choice number three is our answer"

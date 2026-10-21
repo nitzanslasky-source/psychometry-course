@@ -57,15 +57,14 @@
     "at": [
      "How much came",
      "Seventy minus fifty",
-     "Seventy minus fifty",
-     "That's the twenty"
+     "is twenty"
     ]
    },
    {
     "say": "Let's try March. At March it's fifty, and at February it's twenty. Fifty minus twenty is thirty. So thirty thousand came in March.",
     "at": [
-     "Fifty minus twenty",
-     "So thirty thousand"
+     "At March it's",
+     "is thirty"
     ]
    },
    {
@@ -137,7 +136,7 @@
     "at": [
      "nothing was added",
      "Up to April",
-     "Fifty minus fifty"
+     "is zero"
     ]
    },
    {
@@ -159,9 +158,8 @@
    {
     "say": "The last point is the total. At June it's eighty, so eighty thousand shekels.",
     "at": [
-     "The last point is the total",
      "At June",
-     "eighty thousand shekels"
+     "so eighty thousand shekels"
     ]
    },
    {

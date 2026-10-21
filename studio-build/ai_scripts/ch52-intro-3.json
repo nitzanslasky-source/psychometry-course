@@ -60,14 +60,14 @@
     ]
    },
    {
-    "say": "In charts, the drawing is always accurate. So we can trust it, and we should use it.",
+    "say": "In charts, we can read values from the drawing. But first, check the scale, the units, and any break in the axis.",
     "at": [
-     "the drawing is always accurate",
-     "So we can"
+     "check the scale",
+     "and any break"
     ]
    },
    {
-    "say": "Often the fastest way is just to look. For example, a steeper line means a bigger change.",
+    "say": "Often the fastest way is just to look. On the same axes, over the same time interval, a steeper line means a bigger change.",
     "at": [
      "a steeper line means"
     ]

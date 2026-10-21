@@ -122,28 +122,32 @@
     ]
    },
    {
-    "say": "What does relative increase mean? It's the increase compared with where we started. How many times bigger did it get?",
+    "say": "What does relative increase mean? It's the increase compared with where we started. What fraction of the starting amount was added?",
     "at": [
      "What does relative",
      "compared with where we started",
-     "How many times"
+     "What fraction of"
     ]
    },
    {
     "say": "Let's see it in numbers. From a hundred to a hundred fifty is fifty more. That's half of a hundred, so half more.",
     "at": [
-     "From a hundred to a hundred fifty",
-     "That's half of"
+     "so half more"
     ]
    },
    {
     "say": "From four hundred to four hundred fifty is also fifty more. But fifty is only an eighth of four hundred.",
     "at": [
-     "From four hundred to four hundred fifty",
-     "But fifty is"
+     "From four hundred",
+     "an eighth of four hundred"
     ]
    },
-   "The same fifty, but the first one is a much bigger relative increase. Because it started lower."
+   {
+    "say": "The same fifty, but the first one is a much bigger relative increase. Because it started lower.",
+    "at": [
+     "The same fifty"
+    ]
+   }
   ],
   [
    {
@@ -161,15 +165,16 @@
     ]
    },
    {
-    "say": "Eighty times four is three hundred twenty. So it grew almost four times.",
+    "say": "Eighty times four is three hundred twenty. So the final number is a little less than four times the starting number.",
     "at": [
      "Eighty times four",
-     "So it grew"
+     "less than four times the starting number"
     ]
    },
    {
     "say": "Now the other three hours. Before sixteen, twenty-one and twenty-three, the line rises only a little, and it starts high, at three hundred fifty or more.",
     "at": [
+     "Now the other",
      "the line rises only a little",
      "it starts high",
      "hundred fifty or"
@@ -187,7 +192,7 @@
      "So the answer"
     ]
    },
-   "One warning. A steeper slope means a bigger relative rise only when the starting values are close. Here nine o'clock wins both ways, steeper and lower.",
+   "One warning. Compare the same time interval, and check the starting value too. A steeper line alone doesn't tell us the relative rise. Here nine o'clock wins both ways, steeper and lower.",
    "I'll see you in the next video."
   ]
  ]

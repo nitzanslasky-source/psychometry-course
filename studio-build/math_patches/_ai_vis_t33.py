@@ -3556,7 +3556,7 @@ f6g89y = [IH('f6g89y%d' % i, t, size=29) for i, t in enumerate([
 ROWS(268, 54, *f6g89y)
 f6g89fast1 = IH('f6g89fast1', '$16\\times14=160+64=224$', size=28)
 f6g89fast2 = IH('f6g89fast2', '$16\\times0.15=1.6+0.8=2.4$', size=28)
-ROWS(680, 55, f6g89fast1, f6g89fast2, x=400, w=580)
+ROWS(435, 65, f6g89fast1, f6g89fast2, x=1180, w=420)
 NOFIG33.add(('solve-geo33-g089', 1))
 video('solve-geo33-g089', 'solution', qid='geo33-g089', slides=[
     SM('From the small circle to the large one', 'From the small circle to the large one',
@@ -4676,16 +4676,28 @@ f7nE = PIN(GEO('f7nE', [
     ('ring', [('region', _dring, 'teal', 0.3)]),
     ('side', [('txt', 200, _dM[1] + 26, '6√3', 'ink', 24)]),
 ], vb='35 25 330 360', w=520, col=0, title='Circle, triangle, circle with a small radius of 3'))
+f7nF = PIN(GEO('f7nF', [
+    ('line', [('circ', 200, 215, _dR), ('circ', 200, 215, _dr)] + _dtri + _dlab
+             + [f7_seg(_dO, _dM, 'teal', 4, True), f7_seg(_dO, _dC, 'orange', 4)]),
+    ('r2', [('txt', 188, 256, '2', 'teal', 26)]),
+    ('R4', [('txt', 262, 236, '4', 'orange', 26)]),
+], vb='35 25 330 360', w=520, col=0, title='Second example: small radius 2 and big radius 4'))
 f7t12 = I('f7t12', 'The triangle is equilateral', size=30, col=1)
 f7t13 = I('f7t13', 'Big radius $=2\\times$ small radius', size=30, col=1)
 f7t14 = I('f7t14', 'Across from $30°$: half the hypotenuse', size=30, col=1)
-f7t15 = I('f7t15', '$r=\\frac{R}{2}$, so $R=2r$', size=30, col=1)
-f7t16 = I('f7t16', 'Side $=2r\\sqrt3=R\\sqrt3$', size=30, col=1)
+f7t15 = IH('f7t15', '$r=\\frac{R}{2}$', size=30, col=1)
+f7t15b = IH('f7t15b', '$R=2r$', size=30, col=1)
+f7t16 = IH('f7t16', 'Side $=2r\\sqrt3$', size=30, col=1)
+f7t16b = IH('f7t16b', 'Side $=R\\sqrt3$', size=30, col=1)
 f7t17 = IH('f7t17', 'Small: $\\pi\\cdot3^2=9\\pi$', size=30, col=1)
 f7t18 = IH('f7t18', 'Big: $\\pi\\cdot6^2=36\\pi$', size=30, col=1)
 f7t19 = I('f7t19', 'Big area $=4\\times$ small area', size=30, col=1)
-f7t20 = IH('f7t20', 'Ring: $36\\pi-9\\pi=27\\pi=3\\cdot9\\pi$', size=30, col=1)
-f7t21 = IH('f7t21', '$r=2$: $16\\pi-4\\pi=12\\pi=3\\cdot4\\pi$', size=30, col=1)
+f7t20 = IH('f7t20', 'Ring: $36\\pi-9\\pi=27\\pi$', size=30, col=1)
+f7t20b = IH('f7t20b', '$27\\pi=3\\cdot9\\pi$', size=30, col=1)
+f7t21a = IH('f7t21a', 'Big: $\\pi\\cdot4^2=16\\pi$', size=30, col=1)
+f7t21b = IH('f7t21b', 'Small: $\\pi\\cdot2^2=4\\pi$', size=30, col=1)
+f7t21 = IH('f7t21', 'Ring: $16\\pi-4\\pi=12\\pi$', size=30, col=1)
+f7t21c = IH('f7t21c', '$12\\pi=3\\cdot4\\pi$', size=30, col=1)
 f7t22 = IH('f7t22', 'Side $=6\\sqrt3$', size=30, col=1)
 f7t10d = I('f7t10d', 'Circle, triangle, circle: lengths $\\times2$, areas $\\times4$', size=32, col=0)
 video('geo-097-after', 'lesson', slides=[
@@ -4760,10 +4772,11 @@ video('geo-097-after', 'lesson', slides=[
         show(f7nD['c30'], 'so it\'s thirty')),
       L("In a gold triangle, the side across from the thirty is half of the hypotenuse. Here the side across from the "
         "thirty is r, and the hypotenuse is big R. So r is half of big R, and big R is two times r.",
-        show(f7t14, 'In a gold triangle'), show(f7t15, 'So r is half of big R')),
+        show(f7t14, 'In a gold triangle'), show(f7t15, 'So r is half of big R'), show(f7t15b, 'big R is two times r')),
       L("The gold triangle also gives us the side. The long leg, M C, is r root three. M is the middle of the side B C, so "
         "the whole side is two r root three. And two r is big R, so the side is big R root three.",
-        show(f7nD['mc'], 'The long leg, M C'), show(f7t16, 'so the whole side is two r root three'))),
+        show(f7nD['mc'], 'is r root three'), show(f7t16, 'so the whole side is two r root three'),
+        show(f7t16b, 'so the side is big R root three'))),
     S('The ring',
       L("Let's try it in numbers. Say the small radius is three. The big radius is twice that, six. The small circle's "
         "area is pi times three squared, nine pi. The big circle's area is pi times six squared, thirty-six pi.",
@@ -4776,12 +4789,19 @@ video('geo-097-after', 'lesson', slides=[
       L("Questions like to ask about the ring, the part between the two circles. The ring is the big circle minus the "
         "small one. Thirty-six pi minus nine pi is twenty-seven pi. And twenty-seven pi is three times nine pi. So the "
         "ring is three small circles.",
-        show(f7nE['ring'], 'Questions like to ask about the ring'), show(f7t20, 'Thirty-six pi minus nine pi')),
-      L("It's three small circles for any radius. With a small radius of two, the big radius is four. The big circle is "
-        "sixteen pi, the small one is four pi, and the ring is twelve pi. Twelve pi is three times four pi.",
-        show(f7t21, 'With a small radius of two')),
+        show(f7nE['ring'], 'Questions like to ask about the ring'), show(f7t20, 'Thirty-six pi minus nine pi'),
+        show(f7t20b, 'twenty-seven pi is three times nine pi')),
       L("And the triangle's side is big R root three. Here big R is six, so the side is six root three.",
-        show(f7nE['side'], "And the triangle's side"), show(f7t22, 'so the side is six root three'))),
+        show(f7nE['side'], 'so the side is six root three'), show(f7t22, 'so the side is six root three'))),
+    S('Try a different radius',
+      L("The ring's area is three times the small circle's area, whatever the radius. Let's try a small radius of two. "
+        "The big radius is four. Its area is pi times four squared, sixteen pi. The small circle's area is pi times "
+        "two squared, four pi. Sixteen pi minus four pi leaves twelve pi for the ring. "
+        "Twelve pi is three times four pi, so the same area ratio holds.",
+        show(f7nF['line'], "Let's try a small radius of two"), show(f7nF['r2'], 'a small radius of two'),
+        show(f7nF['R4'], 'The big radius is four'), show(f7t21a, 'pi times four squared'),
+        show(f7t21b, 'pi times two squared'), show(f7t21, 'Sixteen pi minus four pi'),
+        show(f7t21c, 'Twelve pi is three times four pi'))),
     S('Length factor, area factor',
       L("Now, this is important. A length factor isn't an area factor. The area factor is the length factor, squared.",
         show(f7t9, 'The area factor is the length factor')),
@@ -5512,7 +5532,8 @@ f9eq = PIN(GEO('f9eq', [
     ('tri', [('tint', [F9O, F9A, F9P], 'teal'), ('tint', [F9O, F9B, F9P], 'teal'),
              ('arc', *F9O, 24, 0, 60, 'teal'), ('arc', *F9O, 24, 300, 360, 'teal'), ('arc', *F9P, 24, 120, 180, 'teal'),
              ('arc', *F9P, 24, 180, 240, 'teal'), ('arc', *F9A, 24, 240, 300, 'teal'), ('arc', *F9B, 24, 60, 120, 'teal'),
-             ('txt', 305, 162, '60°', 'teal', 20), ('txt', 305, 218, '60°', 'teal', 20)]),
+             ]),
+    ('sixty', [('txt', 305, 162, '60°', 'teal', 20), ('txt', 305, 218, '60°', 'teal', 20)]),
     ('a120', [('arc', *F9O, 44, 300, 60, 'orange'), ('txt', 214, 160, '120°', 'orange', 26)]),
 ], vb='120 50 380 290', w=640, col=0, title='Two equal circles, each through the center of the other'))
 
@@ -5562,7 +5583,8 @@ f9num = PIN(GEO('f9num', [
     ('aob', [('seg', *_f9R2[1], *_f9R2[3], 'orange', 3), ('tint', [_f9R2[0], _f9R2[1], _f9R2[3]], 'orange'),
              ('txt', _f9R2[0][0] + 38, 190, '9√3', 'orange', 22), ('txt', 265, 356, 'each half = one equilateral triangle', 'ink', 22)]),
 ], vb='0 40 520 330', w=460, col=1, title='The rhombus OAPB cut two ways'))
-f9t1 = I('f9t1', 'All five segments $=r\\ \\Rightarrow$ two equilateral triangles', size=28, col=1)
+f9t1 = I('f9t1', 'All five segments $=r$', size=28, col=1)
+f9t1b = I('f9t1b', 'Two equilateral triangles', size=28, col=1)
 f9t2b = I('f9t2b', 'Needs: equal circles, each center on the other', size=26, col=1)
 f9t2 = I('f9t2', '$\\angle AOB=60°+60°=120°$, a third of the circle', size=28, col=1)
 f9t3 = I('f9t3', 'Shared region $=2\\times($sector $-$ triangle$)$', size=28, col=1)
@@ -5598,7 +5620,8 @@ f9ring = PIN(GEO('f9ring', [
 f9t7 = IH('f9t7', 'Ring $=\\pi R^2-\\pi r^2$', size=32, col=1)
 f9t8 = IH('f9t8', '$r^2+h^2=R^2$', size=32, col=1)
 f9t8b = IH('f9t8b', '$R^2-r^2=h^2$', size=32, col=1)
-f9t9 = IH('f9t9', 'Ring $=\\pi(R^2-r^2)=\\pi h^2$', size=32, col=1)
+f9t9 = IH('f9t9', 'Ring $=\\pi(R^2-r^2)$', size=32, col=1)
+f9t9b = IH('f9t9b', 'Ring $=\\pi h^2$', size=32, col=1)
 f9t10 = I('f9t10', 'Chord $10\\ \\Rightarrow\\ h=10\\div2=5$', size=32, col=1)
 f9t10b = IH('f9t10b', 'Ring $=\\pi\\cdot5^2=25\\pi$', size=32, col=1)
 f9t11a = I('f9t11a', 'Same center, a chord of the big circle touching the small one:', size=24, col=1)
@@ -5637,10 +5660,26 @@ f9trap = PIN(GEO('f9trap', [
 f9z1 = I('f9z1', '$AB \\parallel DC$', size=32, col=1)
 f9z2 = IH('f9z2', 'leg $AD$: $\\angle D = 180° - 70° = 110°$', size=30, col=1)
 f9z3 = IH('f9z3', 'opposite: $\\angle C = 180° - 70° = 110°$', size=30, col=1)
-f9z4 = I('f9z4', '$\\angle C = \\angle D$, so $\\angle A = \\angle B = 70°$', size=30, col=1)
+f9z4 = IH('f9z4', '$\\angle C = \\angle D$, $\\angle A = \\angle B = 70°$', size=30, col=1)
+f9z4b = IH('f9z4b', '$\\angle B=180°-110°=70°$', size=30, col=1)
 f9z5 = I('f9z5', 'Legs: $AD = BC$, isosceles', size=30, col=1)
-f9z6 = IH('f9z6', '$64°$: $\\angle D = \\angle C = 116°$', size=30, col=1)
+f9z6 = IH('f9z6', '$\\angle A=64°$: $\\angle D=180°-64°=116°$', size=28, col=1)
+f9z6b = IH('f9z6b', '$\\angle C=180°-64°=116°$', size=28, col=1)
 f9z7 = I('f9z7', 'Trapezoid in a circle $\\Rightarrow$ isosceles', size=32, col=1)
+_z64C, _z64D = gpt(200, 185, 140, 67), gpt(200, 185, 140, 113)
+f9trap64 = PIN(GEO('f9trap64', [
+    ('line', [('circ', 200, 185, 140)] + f7_poly([_zA, _zB, _z64C, _z64D])
+             + [('par', *_zA, *_zB, 1, 'ink'), ('par', *_z64D, *_z64C, 1, 'ink'),
+                ('txt', _zA[0]-16, _zA[1]+14, 'A', 'ink', 24, True),
+                ('txt', _zB[0]+16, _zB[1]+14, 'B', 'ink', 24, True),
+                ('txt', _z64C[0]+16, _z64C[1]-14, 'C', 'ink', 24, True),
+                ('txt', _z64D[0]-16, _z64D[1]-14, 'D', 'ink', 24, True)]),
+    ('a64', _zang(_zA, _zB, _z64D, 30, 'teal', '64°', 46)),
+    ('d116', _zang(_z64D, _zA, _z64C, 26, 'orange', '116°', 52)),
+    ('c116', _zang(_z64C, _z64D, _zB, 26, 'orange', '116°', 52)),
+    ('legs', [('tick', *_zA, *_z64D, 2, 'orange'), ('tick', *_zB, *_z64C, 2, 'orange')]),
+    ('b64', _zang(_zB, _z64C, _zA, 30, 'teal', '64°', 46)),
+], vb='20 20 360 330', w=540, col=0, title='Second trapezoid: 64 degrees and 116 degrees'))
 
 # ---- same chord, same ring: three rings to scale (1 unit = 7), each with a chord of 10
 def _f9rp(cx, R, r, t1):
@@ -5653,7 +5692,8 @@ def _f9rp(cx, R, r, t1):
 f9rv = lambda cx, k, t, col='ink': [('txt', cx, 290 + 24 * k, t, col, 18)]
 f9rings = PIN(GEO('f9rings', [
     ('line', _f9rp(92, 13, 12, 'r = 12, R = 13')),
-    ('r1a', f9rv(92, 1, 'π · 13² = 169π') + f9rv(92, 2, 'π · 12² = 144π')),
+    ('r1a', f9rv(92, 1, 'π · 13² = 169π')),
+    ('r1small', f9rv(92, 2, 'π · 12² = 144π')),
     ('r1b', f9rv(92, 3, '169π − 144π = 25π', 'teal')),
     ('p2', _f9rp(268, 50 ** 0.5, 5, 'r = 5, R = 5√2')),
     ('p2a', f9rv(268, 1, '(5√2)² = 50')),
@@ -5677,7 +5717,8 @@ video('r26-t33-more-tools', 'lesson', slides=[
         "circle, so O P is also a radius. The circles are equal, so all five segments have the same length, r.",
         show(f9eq['op'], 'so O P is also a radius'), show(f9t1, 'all five segments')),
       L("So triangle O A P has three equal sides. It's equilateral, and triangle O B P is equilateral too. Every angle in "
-        "them is sixty degrees.", show(f9eq['tri'], 'So triangle O A P')),
+        "them is sixty degrees.", show(f9eq['tri'], 'So triangle O A P'), show(f9t1b, 'triangle O B P is equilateral too'),
+        show(f9eq['sixty'], 'Every angle in them is sixty')),
       L("Now the angle A O B. It's made of the two angles at O, one from each equilateral triangle. It's sixty plus sixty, a hundred twenty degrees. And a hundred twenty degrees is a third of "
         "the circle, because three times a hundred twenty is three hundred sixty.",
         show(f9eq['a120'], "It's sixty plus sixty"), show(f9t2, 'is a third of')),
@@ -5736,13 +5777,15 @@ video('r26-t33-more-tools', 'lesson', slides=[
         show(f9ring['tri'], 'Look at the right triangle'), show(f9t8, 'By Pythagoras'),
         show(f9t8b, 'Now subtract r squared from both sides')),
       L("Now return to the whole ring. Its area is pi big R squared minus pi r squared. Take pi as a common factor: pi times the whole bracket, big R squared minus r squared. We just found that the difference inside is h squared. So the ring's area is pi h squared. We need only half the chord, h, not either radius.",
-        show(f9ring['back'], 'Now return to the whole ring'), show(f9t9, 'Take pi as a common factor'))),
+        show(f9ring['back'], 'Now return to the whole ring'), show(f9t9, 'Take pi as a common factor'),
+        show(f9t9b, "So the ring's area is pi h squared"))),
     S('Same chord, same ring',
       L("So if the chord is ten, then h is half of it, five. And the ring is pi times five squared, twenty-five pi. We "
         "don't need either radius.", show(f9t10, 'So if the chord is ten'), show(f9t10b, 'And the ring is pi times')),
       L("Let's check it on rings with a chord of ten. Radii twelve and thirteen, the five, twelve, thirteen triangle. The "
         "big circle is pi times thirteen squared, a hundred sixty-nine pi. The small one is pi times twelve squared, a "
-        "hundred forty-four pi.", show(f9rings['line'], 'Radii twelve and thirteen'), show(f9rings['r1a'], 'The big circle is pi')),
+        "hundred forty-four pi.", show(f9rings['line'], 'Radii twelve and thirteen'), show(f9rings['r1a'], 'The big circle is pi'),
+        show(f9rings['r1small'], 'The small one is pi')),
       L("The ring is the big circle minus the small one. A hundred sixty-nine pi minus a hundred forty-four pi is "
         "twenty-five pi, just like the rule says.", show(f9rings['r1b'], 'A hundred sixty-nine pi minus')),
       L("Radii five and five root two, a silver triangle with legs five and five. Five root two, squared, is fifty. Fifty "
@@ -5761,26 +5804,31 @@ video('r26-t33-more-tools', 'lesson', slides=[
         show(f9z1, 'A B is parallel to D C'), show(f9trap['a70'], 'Say angle A is seventy')),
       L("First, the trapezoid rule. Two angles on the same leg add up to one hundred eighty. Angles A and D are both on "
         "the leg A D. So angle D is one hundred eighty minus seventy, which is one hundred ten.",
-        show(f9trap['d110'], 'So angle D is one hundred eighty minus'), show(f9z2, 'So angle D is one hundred eighty minus')),
+        show(f9z2, 'So angle D is one hundred eighty minus'), show(f9trap['d110'], 'which is one hundred ten')),
       L("Now the circle rule. In an inscribed quadrilateral, opposite angles add up to one hundred eighty. Angle C is "
         "opposite angle A. So angle C is one hundred eighty minus seventy, which is one hundred ten too.",
-        show(f9trap['c110'], 'So angle C is one hundred eighty minus'), show(f9z3, 'So angle C is one hundred eighty minus')),
+        show(f9z3, 'So angle C is one hundred eighty minus'), show(f9trap['c110'], 'which is one hundred ten too')),
       L("So angle C and angle D are equal, and they're the two angles on the base D C. Angle B is on the same leg as C, so "
         "it's one hundred eighty minus one hundred ten, which is seventy. That's the same as angle A. So the base angles "
         "are equal on both bases.",
-        show(f9trap['b70'], 'minus one hundred ten, which is seventy'), show(f9z4, 'So the base angles')),
-      L("And equal base angles give equal legs. Drop the heights from D and from C to the base A B. We get two right "
-        "triangles with the same height and the same angle of seventy at the bottom. So they're the same triangle, and "
-        "their long sides are equal. Those long sides are the legs A D and B C. So the trapezoid is isosceles.",
-        show(f9trap['h'], 'Drop the heights'), show(f9trap['legs'], 'Those long sides are the legs'),
-        show(f9z5, 'So the trapezoid is isosceles')),
+        show(f9z4b, "it's one hundred eighty minus one hundred ten"), show(f9trap['b70'], 'which is seventy'),
+        show(f9z4, 'So the base angles')),
+      L("And equal base angles give equal legs. Drop the heights from D and from C to the base A B. "
+        "Both heights measure the distance between the parallel bases, so they're equal. We get two right triangles. "
+        "Each has that same height and a seventy-degree base angle. So they have the same size and shape. "
+        "Their hypotenuses are the legs A D and B C, so those legs are equal. So the trapezoid is isosceles.",
+        show(f9trap['h'], 'Drop the heights'), show(f9trap['legs'], 'so those legs are equal'),
+        show(f9z5, 'So the trapezoid is isosceles'))),
+    S('Try another angle',
       L("Seventy was just an example. Say angle A is sixty-four. Then angle D is one hundred sixteen, because it's on the "
         "same leg as A. And angle C is one hundred sixteen too, because it's opposite A. They're equal again, for any angle.",
-        show(f9z6, 'Then angle D is one hundred sixteen')),
+        show(f9trap64['line'], 'Seventy was just an example'), show(f9trap64['a64'], 'Say angle A is sixty-four'),
+        show(f9z6, 'Then angle D is one hundred sixteen'), show(f9trap64['d116'], 'Then angle D is one hundred sixteen'),
+        show(f9z6b, 'angle C is one hundred sixteen too'), show(f9trap64['c116'], 'angle C is one hundred sixteen too')),
       L("So when a question says a trapezoid is inscribed in a circle, you know right away that it's isosceles. Its legs "
         "are equal, its base angles are equal, and its diagonals are equal too. And a trapezoid with unequal legs can "
         "never be inscribed in a circle. Now let's see the other two tools in questions, and I'll see you in the next "
-        "video.", pt('f9z7', 'you know right away'))),
+        "video.", show(f9trap64['legs'], 'Its legs are equal'), show(f9trap64['b64'], 'its base angles are equal'))),
 ])
 
 

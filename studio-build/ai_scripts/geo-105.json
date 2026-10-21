@@ -3,13 +3,13 @@
  "style": "the teacher reads it herself (Reading Studio), topic-34 scripts (2026-10-21): math_patches/_ai_vis_t34.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "Now let's find the area of a polygon. Here's the truth. There's no area formula for a polygon. Only the triangle has one. It's a side, times the height to that side, divided by two."
+   "Now let's find the area of a polygon. We don't have one simple formula to use for every shape here. But we know how to find a triangle's area: a side, times the height to that side, divided by two."
   ],
   [
    {
-    "say": "Even a general quadrilateral has no formula. We know the special ones, like the square, the rectangle and the trapezoid. But for just any quadrilateral, there's no formula. So there are two ways. We cut the polygon into shapes we know. Or we see it as a bigger shape, minus the pieces that are missing.",
+    "say": "We also know the special quadrilaterals, like the square, the rectangle and the trapezoid. For a general quadrilateral, we don't have one of those ready-made formulas. So there are two ways. We cut the polygon into shapes we know. Or we see it as a bigger shape, minus the pieces that are missing.",
     "at": [
-     "has no formula"
+     "special quadrilaterals, like"
     ]
    },
    {
@@ -27,22 +27,22 @@
      "we get two",
      "The square is six times six",
      "thirty-six. The",
-     "The triangle is its base",
      "six, times its",
-     "Six times four is twenty-four",
-     "and half of"
+     "half of that is twelve",
+     "half of that is twelve"
     ]
    },
    {
     "say": "So the area of the pentagon is thirty-six plus twelve, forty-eight.",
     "at": [
+     "the pentagon is",
      "thirty-six plus twelve"
     ]
    }
   ],
   [
    {
-    "say": "Here's a hexagon shaped like the letter L. All its angles are right angles. The bottom is ten long, and the left side is six high. The top is four long, and the short side on the right is three.",
+    "say": "Here's a hexagon shaped like the letter L. Its sides are horizontal or vertical. The bottom is ten long, and the left side is six high. The top is four long, and the short side on the right is three.",
     "at": [
      "Here's a hexagon shaped like the letter L",
      "the letter L"
@@ -53,7 +53,7 @@
     "at": [
      "One line across",
      "The bottom one",
-     "long and three",
+     "Ten times three is thirty",
      "Ten times three is thirty"
     ]
    },
@@ -81,7 +81,8 @@
     "say": "The missing corner is ten minus four, six long, and it's three high. Six times three is eighteen. So the area is sixty minus eighteen, forty-two. The same answer.",
     "at": [
      "ten minus four",
-     "and it's three high",
+     "and it's three",
+     "Six times three is eighteen",
      "Six times three is eighteen",
      "So the area",
      "sixty minus eighteen"
@@ -114,10 +115,8 @@
    {
     "say": "Let's take a hexagon with side four. One triangle is four squared, sixteen, times root three, divided by four. Sixteen divided by four is four. So one triangle is four root three.",
     "at": [
-     "One triangle is four squared",
-     "sixteen, times root",
-     "Sixteen divided by four",
-     "So one triangle"
+     "So one triangle is four root three",
+     "So one triangle is four root three"
     ]
    },
    {
@@ -152,8 +151,7 @@
    {
     "say": "Let's take an octagon with side two. The square in the middle has side two, so its area is two times two, four.",
     "at": [
-     "The square in the middle",
-     "has side two",
+     "two times two, four",
      "two times two, four"
     ]
    },
@@ -168,8 +166,7 @@
    {
     "say": "So the area of one triangle is root two times root two, divided by two. Root two times root two is two, and half of that is one. Four triangles make four.",
     "at": [
-     "Root two times root two is two",
-     "is two, and",
+     "half of that is one",
      "Four triangles make four"
     ]
    },
@@ -184,8 +181,7 @@
    {
     "say": "Each rectangle is two long, and its width is the leg of a triangle, root two. So it's two root two. Four rectangles make eight root two.",
     "at": [
-     "Each rectangle is two long",
-     "and its width",
+     "So it's two root two",
      "So it's two root two",
      "Four rectangles make"
     ]
@@ -193,8 +189,8 @@
    {
     "say": "So the octagon is four, plus four, plus eight root two. That's eight plus eight root two. Always cut the octagon like this, even when they ask for only a part of it. And I'll see you in the next video.",
     "at": [
-     "So the octagon is four",
-     "plus four, plus"
+     "That's eight plus eight root two",
+     "Always cut the"
     ]
    }
   ]

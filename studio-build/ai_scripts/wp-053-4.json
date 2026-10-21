@@ -52,7 +52,11 @@
     "say": "Let's check with numbers. Dan has a hundred fifty, and Gil has a hundred. Twenty percent of a hundred fifty is thirty, and thirty percent of a hundred is thirty. They're equal.",
     "at": [
      "Dan has a hundred fifty",
-     "and Gil has"
+     "and Gil has",
+     "Twenty percent of a hundred fifty is thirty",
+     "fifty is thirty",
+     "thirty percent of a hundred is thirty",
+     "is thirty. They're"
     ]
    },
    "The trap is to keep the order, twenty to thirty. That gives Gil more, but the bigger percent goes with the smaller whole. And one warning. The flip works only when the two amounts are equal. If one amount is ten more than the other, we write the equation."
@@ -72,7 +76,9 @@
     "say": "Let's plug in a hundred for the coat. Then the shirt costs forty, and the shoes cost a hundred twenty.",
     "at": [
      "Let's plug in a hundred for the coat",
-     "for the coat"
+     "for the coat",
+     "Then the shirt costs forty",
+     "the shoes cost a hundred twenty"
     ]
    },
    {
@@ -92,12 +98,12 @@
   ],
   [
    {
-    "say": "Let's sum up. When the whole isn't given, plug in a hundred. A change in percent is divided by the original.",
+    "say": "Let's sum up. If only percent relationships are given, we can try a hundred. Check that there's no fixed amount first. To find the percent change, divide the change by the original amount, then multiply by a hundred.",
     "at": [
-     "When the whole",
-     "plug in a",
-     "A change in percent",
-     "divided by the"
+     "If only percent relationships",
+     "given, we can",
+     "To find the percent change",
+     "divide the change"
     ]
    },
    {

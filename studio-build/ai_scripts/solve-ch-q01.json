@@ -56,14 +56,14 @@
     "at": [
      "Now we count",
      "First the Mercury dots",
-     "One, two, three"
+     "three"
     ]
    },
    {
     "say": "Then the Neptune rings. Four, five, six.",
     "at": [
      "Then the Neptune rings",
-     "Four, five, six"
+     "six"
     ]
    },
    {
@@ -85,7 +85,7 @@
    {
     "say": "So three Mercury samples and three Neptune samples. Three plus three is six. That's choice number two.",
     "at": [
-     "Three plus three",
+     "is six",
      "number two"
     ]
    }

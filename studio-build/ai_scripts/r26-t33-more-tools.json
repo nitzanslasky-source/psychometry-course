@@ -36,12 +36,14 @@
     "say": "So triangle O A P has three equal sides. It's equilateral, and triangle O B P is equilateral too. Every angle in them is sixty degrees.",
     "at": [
      "So triangle O A P",
-     "It's equilateral, and"
+     "triangle O B P is equilateral too",
+     "Every angle in them is sixty"
     ]
    },
    {
     "say": "Now the angle A O B. It's made of the two angles at O, one from each equilateral triangle. It's sixty plus sixty, a hundred twenty degrees. And a hundred twenty degrees is a third of the circle, because three times a hundred twenty is three hundred sixty.",
     "at": [
+     "Now the angle",
      "It's sixty plus sixty",
      "hundred twenty degrees",
      "is a third of",

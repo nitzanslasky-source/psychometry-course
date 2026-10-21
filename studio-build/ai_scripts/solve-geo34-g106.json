@@ -14,10 +14,11 @@
     "pause": 0.5
    },
    {
-    "say": "This pentagon is not regular. It has a few right angles, but its sides are not all equal. And there's no area formula for a polygon. So like in the lesson, we cut it into shapes we know.",
+    "say": "This pentagon is not regular. It has a few right angles, but its sides are not all equal. We don't have a ready-made formula for this shape. So like in the lesson, we cut it into shapes we know.",
     "at": [
      "angles, but its",
-     "for a polygon"
+     "So like in",
+     "we cut it"
     ]
    },
    {
@@ -32,6 +33,7 @@
     "say": "The area of a right triangle is one leg times the other, divided by two. Fifteen times eight is one hundred twenty. Half of that is sixty.",
     "at": [
      "Fifteen times eight",
+     "Half of that is sixty",
      "Half of that is sixty"
     ]
    },
@@ -68,10 +70,8 @@
    {
     "say": "Now look at triangle A H D. It's a right triangle, because A H is a height. Its hypotenuse is A D, seventeen, and one leg is A H, fifteen. That's eight, fifteen, seventeen again. So the other leg, H D, is eight.",
     "at": [
-     "Now look at triangle A H D",
-     "A H is",
      "So the other leg",
-     "D, is eight"
+     "H D, is eight"
     ]
    }
   ],
@@ -80,15 +80,16 @@
     "say": "Now the pentagon is made of three shapes we know. The square A B C H is fifteen times fifteen, two hundred twenty-five.",
     "at": [
      "three shapes we know",
-     "The square A B C H",
-     "fifteen times fifteen"
+     "square A B",
+     "fifteen times fifteen",
+     "two hundred twenty-five"
     ]
    },
    {
     "say": "Triangle A H D has legs fifteen and eight. So its area is fifteen times eight, divided by two, sixty.",
     "at": [
-     "Triangle A H D",
-     "legs fifteen and",
+     "Triangle A H",
+     "divided by two, sixty",
      "divided by two, sixty"
     ]
    },
@@ -105,8 +106,7 @@
    {
     "say": "Triangle A E D is sixty too, as we found. So the area is two hundred twenty-five, plus sixty, plus sixty. Two hundred twenty-five plus one hundred twenty is three hundred forty-five. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
-     "So the area is two hundred twenty-five",
-     "Two hundred twenty-five plus",
+     "is three hundred forty-five",
      "Choice number two is our answer"
     ]
    }

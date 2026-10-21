@@ -15,10 +15,12 @@
     ]
    },
    {
-    "say": "P isn't a corner of the hexagon, so we can't count sides at P. But look at triangle B P C. Its other two angles are at B and at C, and those are corners. So let's find those two angles, and then use the triangle's one hundred eighty.",
+    "say": "P isn't a corner of the hexagon, so we can't count sides at P. But look at triangle B P C. Its other two angles are at B and at C, and those are corners. Here's the same triangle enlarged below. We'll find its two base angles first. Then subtract their sum from one hundred eighty to find angle B P C.",
     "at": [
      "look at triangle B P C",
-     "Its other two"
+     "Its other two",
+     "Here's the same triangle enlarged below",
+     "We'll find its"
     ]
    },
    {
@@ -27,6 +29,7 @@
      "one hundred eighty divided by six",
      "The angle at B is between",
      "between B C",
+     "So angle P B C is thirty",
      "So angle P B C is thirty",
      "So angle P B C is thirty"
     ]
@@ -38,6 +41,7 @@
      "between C B",
      "So angle P C B is thirty too",
      "So angle P C B is thirty too",
+     "So angle P C B is thirty too",
      "is thirty too"
     ]
    },
@@ -45,11 +49,12 @@
     "say": "The angles of triangle B P C add up to one hundred eighty. So angle B P C is one hundred eighty minus thirty minus thirty. That's one hundred twenty.",
     "at": [
      "one hundred eighty minus thirty",
+     "That's one hundred twenty",
      "That's one hundred twenty"
     ]
    },
    {
-    "say": "One hundred twenty is exactly the hexagon's angle. In a regular pentagon, the same two diagonals cross at one hundred eighty minus thirty-six minus thirty-six. That's one hundred eight, the pentagon's angle. So when two diagonals start at two neighboring corners, and each one skips just one corner, they cross at the polygon's own angle.",
+    "say": "One hundred twenty is exactly the hexagon's angle. In a regular pentagon, the same two diagonals cross at one hundred eighty minus thirty-six minus thirty-six. That's one hundred eight, the pentagon's angle. So when two diagonals start at two neighboring corners, and each one skips just one corner, look at the angle facing the side between the two middle corners. Here that's angle B P C, facing B C. That angle equals the polygon's interior angle, not the angle next to it.",
     "at": [
      "One hundred twenty",
      "hundred eighty minus thirty-six minus thirty-six",

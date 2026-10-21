@@ -617,17 +617,16 @@ def PTREE(name, root, first, second, col=0, w=None, title='Percent tree'):
     W, H = 640, 300; ry = 132
     out = [('line', MV._svg(W, H, _tx(8, ry - 4, root[0], 30, _INK, 'start') + _tx(8, ry + 30, root[1], 28, _TEAL, 'start'), title))]
     ys = [48, 216]
-    b = ''
-    for (lab, p), y in zip(first, ys):
-        b += '<line x1="104" y1="%d" x2="218" y2="%d" stroke="%s" stroke-width="3"/>' % (ry, y, _INK)
+    for j, ((lab, p), y) in enumerate(zip(first, ys)):
+        b = '<line x1="104" y1="%d" x2="218" y2="%d" stroke="%s" stroke-width="3"/>' % (ry, y, _INK)
         b += _tx(228, y + 10, lab, 30, _INK, 'start') + _tx(150, (ry + y) / 2.0 + (-12 if y < ry else 34), p, 28, _TEAL)
-    out.append(('b1', MV._svg(W, H, b, title + ': first split')))
-    k, kids = second; y0 = ys[k]; x0 = 228 + 17 * len(first[k][0]) + 14; b = ''
+        out.append(('b1'+str(j), MV._svg(W, H, b, title + ': first branch '+str(j))))
+    k, kids = second; y0 = ys[k]; x0 = 228 + 17 * len(first[k][0]) + 14
     for j, (l2, p2) in enumerate(kids):
         y2 = y0 + (-1 if j == 0 else 1) * 52
-        b += '<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="%s" stroke-width="2.8"/>' % (x0, y0, x0 + 96, y2, _INK)
+        b = '<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="%s" stroke-width="2.8"/>' % (x0, y0, x0 + 96, y2, _INK)
         b += _tx(x0 + 106, y2 + 10, l2, 30, _INK, 'start') + _tx(x0 + 40, (y0 + y2) / 2.0 + (-10 if j == 0 else 32), p2, 27, _TEAL)
-    out.append(('b2', MV._svg(W, H, b, title + ': second split')))
+        out.append(('b2'+str(j), MV._svg(W, H, b, title + ': second branch '+str(j))))
     return MV.items(_layers, name, out, w=w, col=col, own=True)
 
 
@@ -641,8 +640,10 @@ def AMAP(name, nodes, arrows, gap=250, col=0, w=None, title='Arrow map'):
         hw = lambda k: 13 * len(nodes[k]) + 16
         d = 1 if j > i else -1
         xa, xb = X(i) + d * hw(i), X(j) - d * hw(j)
-        b = MV._arrow(xa, yn - 11, xb, yn - 11, _TEAL, 3) + _tx((X(i) + X(j)) / 2.0, yn - 34, lab, 30, _TEAL)
+        b = MV._arrow(xa, yn - 11, xb, yn - 11, _TEAL, 3)
         out.append((key, MV._svg(W, H, b, '%s: %s' % (title, key))))
+        out.append((key+'_label', MV._svg(W, H,
+            _tx((X(i) + X(j)) / 2.0, yn - 34, lab, 30, _TEAL), '%s: %s multiplier' % (title, key))))
     return MV.items(_layers, name, out, w=w, col=col, own=True)
 
 
@@ -999,8 +1000,8 @@ p_27 = IH('p_27', '$80+16=96$ again', size=30, col=1)
 p_27b = IH('p_27b', '$1.2\\cdot0.8=0.96$', size=30)
 p_28 = I('p_28', 'Up $p\\%$, then down $p\\%$: $\\ $a loss of $\\dfrac{p^2}{100}\\%$', size=34, hand='Up p%, then down p%:  a loss of {p^2/100}%')
 p_29 = IH('p_29', '$20^2=400$, $\\ 400\\div100=4$', size=30)
-p_30 = IH('p_30', '$30^2=900$, $\\ 900\\div100=9$', size=30)
-p_31 = IH('p_31', '$100\\to130\\to91$: $\\ 9\\%$ lower', size=30)
+p_30 = IH('p_30', '$30^2=900$, $\\ 900\\div100=9$', size=30, col=1)
+p_31 = IH('p_31', '$100\\to130\\to91$: $\\ 9\\%$ lower', size=30, col=1)
 p_32 = I('p_32', 'Rise $10\\%$, then add a fixed $20$ credits', size=30)
 p_33 = IH('p_33', '$100\\to110\\to130$: $\\ +30\\%$', size=30)
 p_34 = IH('p_34', '$200\\to220\\to240$: $\\ +20\\%$', size=30)
@@ -1040,10 +1041,11 @@ pw_10 = IH('pw_10', '$40\\%$ of the start $=40$', size=30)
 pw_11 = IH('pw_11', '$1\\%=1$, $\\ 100\\%=100$', size=30, col=1)
 pw_12 = IH('pw_12', 'check: $\\ 100\\to80\\to40$', size=30, col=1)
 # the arrow map (R37: moved back from g061)
-pa_1 = AMAP('pa_1', ['Ben', 'Tal', 'Eli'], [('a', 0, 1, '×1.6'), ('b', 1, 2, '×0.55')], gap=250)
+pa_1 = AMAP('pa_1', ['Ben', 'Tal', 'Eli'], [('a', 0, 1, '×1.6'), ('b', 1, 2, '×0.55')], gap=250, w=560)
 pa_2 = IH('pa_2', '$1.6\\cdot0.55$', size=30, col=1)
 pa_3 = IH('pa_3', '$16\\cdot55=800+80=880$', size=30, col=1)
-pa_4 = IH('pa_4', '$0.88$: $\\ 12\\%$ lower', size=30, col=1)
+pa_4 = IH('pa_4', '$0.88$', size=30, col=1)
+pa_4b = IH('pa_4b', '$12\\%$ lower', size=30, col=1)
 pa_5 = IH('pa_5', '$x$ is $25\\%$ more than $y$', size=30)
 pa_6 = AMAP('pa_6', ['y', 'x'], [('a', 0, 1, '×1.25')], gap=260)
 pa_7 = IH('pa_7', 'along the arrow: $\\ \\times$', size=30)
@@ -1066,7 +1068,7 @@ pf_10 = IH('pf_10', 'coat $100$: $\\ 40$ and $120$', size=30)
 pf_11 = IH('pf_11', 'shoes : shirt $=120:40=3:1$', size=30, col=1)
 pf_12 = IH('pf_12', 'the same part: $\\ $flip', size=30, col=1)
 pf_13 = IH('pf_13', 'the same whole: $\\ $keep', size=30, col=1)
-p_s1 = I('p_s1', 'Whole not given? $\\ $Plug in $100$.', size=30)
+p_s1 = I('p_s1', 'Only percent relationships, no fixed amount? $\\ $Try $100$.', size=30)
 p_sc = I('p_sc', 'A change: $\\ $divide by the original', size=30)
 p_s2 = I('p_s2', 'Changes in a row: $\\ $multiply the multipliers', size=30)
 p_sw = I('p_sw', 'Know the end? $\\ $Go back to $100\\%$.', size=30)
@@ -1231,12 +1233,14 @@ video('wp-053', 'lesson', slides=[
         "back to a hundred percent.")),
     # ---- part 3: who is the hundred, the arrow map
     S('Who is the hundred?',
-      L("Now, where do we put the hundred? Here's a question with three people.", show(p_14, 'three people')),
+      L("Now, where do we put the hundred? Tal earns sixty percent more than Ben. Eli earns forty-five percent less than "
+        "Tal. By what percent is Eli's pay lower than Ben's?", show(p_14, 'Tal earns sixty percent more than Ben')),
       L("Here's the rule. The words of and than point at the whole. The whole is whatever comes right after them.",
         show(p_15, 'The whole is whatever')),
       L("For example, thirty percent of the students. The students come after of, so the students are the whole. Or, Tal "
         "earns sixty percent more than Ben. Ben comes after than, so Ben is the whole in that sentence."),
-      L("But this question has three thans. Tal than Ben, Eli than Tal, and Eli than Ben. So who gets the hundred?"),
+      L("We compare Tal with Ben, Eli with Tal, then Eli with Ben. Each comparison has its own whole. Which whole do "
+        "we choose for the hundred?"),
       L("The one that decides is the than in the question itself, lower than Ben's. So Ben gets the hundred.",
         pt('p_14', 'lower than Ben'), show(p_16, 'So Ben gets the hundred'))),
     S('Who is the hundred?',
@@ -1252,21 +1256,24 @@ video('wp-053', 'lesson', slides=[
         "at the whole, and the multiplier is written on it.", show(p_14c, 'For chains like this'),
         show(pa_1['line'], 'the arrow map')),
       L("Tal earns sixty percent more than Ben. Ben comes after than, so the arrow starts at Ben and goes to Tal. Sixty "
-        "percent more is a hundred sixty percent, so we write times one point six.", show(pa_1['a'], 'so the arrow starts at Ben')),
+        "percent more is a hundred sixty percent, so we write times one point six.", show(pa_1['a'], 'so the arrow starts at Ben'),
+        show(pa_1['a_label'], 'so we write times one point six')),
       L("Eli earns forty-five percent less than Tal. So the next arrow goes from Tal to Eli. Forty-five percent less "
-        "leaves fifty-five percent, so it's times zero point five five.", show(pa_1['b'], 'So the next arrow goes')),
+        "leaves fifty-five percent, so it's times zero point five five.", show(pa_1['b'], 'So the next arrow goes'),
+        show(pa_1['b_label'], "so it's times zero point five five")),
       L("The question compares Eli with Ben, so we walk from Ben to Eli. Both arrows point our way, so we multiply, one "
         "point six times zero point five five.", show(pa_2, 'so we multiply')),
       L("Sixteen times fifty is eight hundred, and sixteen times five is eighty. So sixteen times fifty-five is eight "
         "hundred eighty, and the product is zero point eight eight.", show(pa_3, 'Sixteen times fifty is'),
         show(pa_4, 'and the product is')),
       L("Zero point eight eight is eighty-eight percent of Ben's pay. So it's twelve percent lower, the same answer as "
-        "before.")),
+        "before.", show(pa_4b, "So it's twelve percent lower"))),
     S('Against the arrow',
       L("Now the most common trap with these chains. x is twenty-five percent more than y. What percent of x is y?",
         show(pa_5, 'x is twenty-five percent more')),
       L("The whole is y, the word after than. So the arrow goes from y to x, times one point two five.",
-        show(pa_6['line'], 'The whole is y'), show(pa_6['a'], 'So the arrow goes from y')),
+        show(pa_6['line'], 'The whole is y'), show(pa_6['a'], 'So the arrow goes from y'),
+        show(pa_6['a_label'], 'times one point two five')),
       L("Along the arrow, we multiply. Against the arrow, we divide. We want y, so we go from x back to y, against the "
         "arrow. So we divide by one point two five.", show(pa_7, 'Along the arrow, we multiply'),
         show(pa_7b, 'Against the arrow, we divide')),
@@ -1310,8 +1317,9 @@ video('wp-053', 'lesson', slides=[
       L("So when you see two percents, ask what is shared. The same part, flip the percents. The same whole, keep them.",
         show(pf_12, 'The same part, flip'), show(pf_13, 'The same whole, keep'))),
     S('Summary',
-      L("Let's sum up. When the whole isn't given, plug in a hundred. A change in percent is divided by the original.",
-        show(p_s1, 'When the whole'), show(p_sc, 'A change in percent')),
+      L("Let's sum up. If only percent relationships are given, we can try a hundred. Check that there's no fixed "
+        "amount first. To find the percent change, divide the change by the original amount, then multiply by a hundred.",
+        show(p_s1, 'If only percent relationships'), show(p_sc, 'To find the percent change')),
       L("Each new percent is taken from the new amount, so for changes in a row, we multiply the multipliers. And when "
         "we know the end, we go back to a hundred percent.", show(p_s2, 'Each new percent'), show(p_sw, 'And when')),
       L("The whole comes after of or than. On the arrow map, along the arrow we multiply, against it we divide.",
@@ -1372,11 +1380,13 @@ video('solve-wp23-g054', 'solution', qid='wp23-g054', slides=[
       L("[pause] Now the same question with a percent tree. We start again from the givens. At the root of the tree, all "
         "the students, a hundred percent.", show(s_tr['line'], 'At the root of the tree')),
       L("The survey splits in two. Thirty-five percent don't play, and the rest, sixty-five percent, play. The two "
-        "branches add up to a hundred percent.", show(s_tr['b1'], 'The survey splits in two')),
+        "branches add up to a hundred percent.", show(s_tr['b10'], "Thirty-five percent don't play"),
+        show(s_tr['b11'], 'sixty-five percent, play')),
       L("Now the players split again, into piano and guitar only. And here's the classic mistake. When we go down a "
         "branch, that group becomes the new hundred percent."),
       L("So now the players are a hundred percent. Eighty percent play the piano, and twenty percent play only the "
-        "guitar. Again the branches add up to a hundred.", show(s_tr['b2'], 'So now the players are')),
+        "guitar. Again the branches add up to a hundred.", show(s_tr['b20'], 'Eighty percent play the piano'),
+        show(s_tr['b21'], 'twenty percent play only the guitar')),
       L("Many students see twenty percent and stop there. That's choice number one. But it's twenty percent of the "
         "players, not of everyone. Eighty percent on the piano wouldn't even fit inside the sixty-five percent who play.",
         show(s_10, "But it's twenty percent of the players"), mk('cross', 'choice 1', "That's choice number one")),
@@ -1588,7 +1598,7 @@ video('solve-wp23-g060', 'solution', qid='wp23-g060', slides=[
         show(n_16, 'A hundred forty plus fifty-six')),
       L("That's four fewer, out of two hundred. Four over two hundred is two over a hundred, two percent again.",
         show(n_17, 'Four over two hundred')),
-      L("So any number works. We pick a hundred for two reasons. The number we get is already the percent. And percents "
+      L("So any allowed starting number gives the same percent change. We pick a hundred for two reasons. The number we get is already the percent. And percents "
         "of a hundred are the easiest to find. Choice number two is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
@@ -1660,8 +1670,9 @@ video('solve-q-r26-t23-01', 'solution', qid='q-r26-t23-01', slides=[
         show(a_17, 'Twenty-five minus twelve')),
       L("Twenty-five times twelve is three hundred, so p times q is minus three hundred. Over a hundred, that's minus "
         "three. Thirteen minus three is ten.", show(a_18, 'so p times q is'), show(a_19, 'Thirteen minus three')),
-      L("Ten percent higher, the same answer. The extra part, p times q over a hundred, is exactly what students forget "
-        "when they just add the percents. Choice number four is our answer, and I'll see you in the next question.",
+      L("Why the extra minus three? With a start of a hundred, the rise adds twenty-five. The twelve percent fall also "
+        "takes twelve percent of that extra twenty-five, which is three. That's why we subtract three from thirteen. "
+        "Choice number four is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 4', 'Choice number four is our answer'))),
 ])
 
@@ -1684,9 +1695,9 @@ d_9 = IH('d_9', '$\\frac{1}{7}$ of $7$ sixths $=1$ sixth', size=30)
 d_10 = IH('d_10', '$7-1=6$ sixths: $\\ $back', size=30)
 d_11 = IH('d_11', '$5$ fifths $+1=6$ fifths, $\\ -1=5$ fifths', size=30, col=1)
 d_12 = IH('d_12', '$2$ halves $+1=3$ halves, $\\ -1=2$ halves', size=30, col=1)
-d_13 = IH('d_13', 'add $\\frac{1}{n}$, then take away $\\frac{1}{n+1}$: $\\ $back', size=30, col=1)
+d_13 = IH('d_13', 'add $\\frac{1}{n}$ of the start; remove $\\frac{1}{n+1}$ of the new amount', size=30, col=1)
 d_14 = IH('d_14', 'along the arrows: $\\ \\times$', size=30, col=1)
-d_m2 = AMAP('d_m2', ['Omer', 'Dana', 'Lior'], [('a', 0, 1, '×1.5'), ('b', 1, 2, '×2/3')], gap=250)
+d_m2 = AMAP('d_m2', ['Omer', 'Dana', 'Lior'], [('a', 0, 1, '×1.5'), ('b', 1, 2, '×2/3')], gap=250, w=560)
 d_18a = IH('d_18a', '$1.5=\\frac{3}{2}$', size=30)
 d_18 = IH('d_18', '$\\frac{3}{2}\\cdot\\frac{2}{3}=1$', size=30)
 video('solve-wp23-g061', 'solution', qid='wp23-g061', slides=[
@@ -1720,17 +1731,19 @@ video('solve-wp23-g061', 'solution', qid='wp23-g061', slides=[
         "fifths, and we're back to five fifths.", show(d_11, 'A whole is five fifths')),
       L("Now our question. A whole is two halves. Add a half, and we have three halves. Take away a third, one of the "
         "three halves, and we're back to two halves.", show(d_12, 'A whole is two halves')),
-      L("So adding one over n, and then taking away one over n plus one, always brings us back. Lior earns exactly what "
-        "Omer earns. Choice number one is our answer.", show(d_13, 'So adding one over n'),
+      L("Here n counts the equal parts in the start. Add one over n of the starting amount. Then take away one over n plus one of the new amount. That removes "
+        "the part we added, so we're back at the start. Lior earns exactly what Omer earns. Choice number one is our answer.", show(d_13, 'Then take away one over n plus one'),
         mk('tick', 'choice 1', 'Choice number one is our answer'))),
     S('Method 3 · The math way: the arrow map',
       L("[pause] Now a third way, the arrow map, like in the lesson. Each sentence becomes one arrow. The arrow starts at "
         "the whole, the word after than, and its multiplier is written on it."),
       L("We start again from the givens. Dana earns fifty percent more than Omer. The whole is Omer, so the arrow goes "
         "from Omer to Dana. Fifty percent more is a hundred fifty percent, so it's times one point five.",
-        show(d_m2['line'], 'Dana earns fifty percent more'), show(d_m2['a'], 'so the arrow goes from Omer')),
+        show(d_m2['line'], 'Dana earns fifty percent more'), show(d_m2['a'], 'so the arrow goes from Omer'),
+        show(d_m2['a_label'], "so it's times one point five")),
       L("Lior earns thirty-three and a third percent less than Dana. So the arrow goes from Dana to Lior. A third less "
-        "leaves two thirds, so it's times two thirds.", show(d_m2['b'], 'So the arrow goes from Dana')),
+        "leaves two thirds, so it's times two thirds.", show(d_m2['b'], 'So the arrow goes from Dana'),
+        show(d_m2['b_label'], "so it's times two thirds")),
       L("We want Lior divided by Omer, so we walk from Omer to Lior. Along an arrow we multiply, and both arrows point "
         "our way. So we multiply both multipliers.", show(d_14, 'Along an arrow we multiply')),
       L("One point five is three halves, and three halves times two thirds is one.", show(d_18a, 'One point five is three halves'),
@@ -1848,14 +1861,15 @@ video('solve-wp23-g063', 'solution', qid='wp23-g063', slides=[
         "multiplied by some number, the percent must be divided by the same number.", show(h_9, 'So when the whole is'), show(h_9b, 'divided by the same number')),
       L("Now let's check the choices. We start again from the givens, sixteen percent of five y. Choice number one says forty "
         "percent of two y. Forty is sixteen times two and a half. And two y is five y divided by two and a half. So it's "
-        "balanced, and it's equal. Out.", show(h_10, 'Forty is sixteen times'), show(h_10b, 'And two y is five y'), mk('cross', 'choice 1', "balanced, and it's equal")),
-      L("Choice number two says eight percent of ten y. The percent is halved, and the whole is doubled. Balanced, out.",
-        show(h_11, 'The percent is halved'), mk('cross', 'choice 2', 'Balanced, out')),
+        "the same amount. Multiplying by two and a half and dividing by two and a half cancel each other. Equal, so it's out.", show(h_10, 'Forty is sixteen times'), show(h_10b, 'And two y is five y'), mk('cross', 'choice 1', "Equal, so it's out")),
+      L("Choice number two says eight percent of ten y. The percent is halved, and the whole is doubled. Half of twice "
+        "the amount is the original amount. Equal, so it's out.",
+        show(h_11, 'The percent is halved'), mk('cross', 'choice 2', "Equal, so it's out")),
       L("Choice number three says thirty-two percent of five y. The percent is doubled, but the whole stays five y. "
-        "Nothing balances it, so the amount doubles. It's not equal.", show(h_12, 'The percent is doubled')),
-      L("And in choice number four, twenty times four is eighty, the same as sixteen times five. So that one is balanced "
-        "too. Choice number three is our answer, and I'll see you in the next question.",
-        show(h_13, 'twenty times four is eighty'), mk('cross', 'choice 4', 'balanced'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
+        "We're taking twice the percent of the same whole. So the amount doubles. It's not equal.", show(h_12, 'The percent is doubled')),
+      L("Choice number four says twenty percent of four y. Twenty times four is eighty, the same as sixteen times five. "
+        "Both give eighty y over a hundred, so they're equal. Choice number three is our answer, and I'll see you in the next question.",
+        show(h_13, 'Twenty times four is eighty'), mk('cross', 'choice 4', "so they're equal"), mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t23-16 (added: the flip rule)
@@ -2072,7 +2086,7 @@ r_8 = IH('r_8', '$\\frac{100}{150}=\\frac{2}{3}=66\\frac{2}{3}\\%$', size=30)
 r_9 = IH('r_9', '(3) $\\ 100$ credits $\\ne100\\%$', size=30, col=1)
 r_10 = IH('r_10', '(1) $\\ \\frac{100}{250}=40\\%$: $\\ $wrong whole', size=30, col=1)
 r_11 = IH('r_11', '(4) $\\ 50\\%$: $\\ $forgets "more"', size=30, col=1)
-r_m = AMAP('r_m', ['desk', 'chair', 'table'], [('a', 1, 0, '×1.5'), ('b', 1, 2, '×2.5')], gap=250)
+r_m = AMAP('r_m', ['desk', 'chair', 'table'], [('a', 1, 0, '×1.5'), ('b', 1, 2, '×2.5')], gap=250, w=560)
 r_12 = IH('r_12', '$2.5\\div1.5=\\frac{25}{15}=\\frac{5}{3}$', size=30)
 r_13 = IH('r_13', '$\\frac{5}{3}=166\\frac{2}{3}\\%$: $\\ 66\\frac{2}{3}\\%$ higher', size=30)
 video('solve-q-r26-t23-03', 'solution', qid='q-r26-t23-03', slides=[
@@ -2111,9 +2125,9 @@ video('solve-q-r26-t23-03', 'solution', qid='q-r26-t23-03', slides=[
       L("[pause] Now the arrow map, like in Lior's question. We start again from the givens. Both sentences start at the "
         "chair, the whole.", show(r_m['line'], 'Both sentences start at the')),
       L("The desk is a hundred fifty percent of the chair. So the arrow from the chair to the desk is times one point "
-        "five.", show(r_m['a'], 'So the arrow from the chair to the desk')),
+        "five.", show(r_m['a'], 'So the arrow from the chair to the desk'), show(r_m['a_label'], 'times one point five')),
       L("The table is a hundred fifty percent more, two hundred fifty percent. So the arrow from the chair to the table "
-        "is times two point five.", show(r_m['b'], 'So the arrow from the chair to the table')),
+        "is times two point five.", show(r_m['b'], 'So the arrow from the chair to the table'), show(r_m['b_label'], 'times two point five')),
       L("We go from the desk to the table. First back to the chair, against the arrow, so we divide by one point five. "
         "Then on to the table, along the arrow, so we multiply by two point five."),
       L("Two point five divided by one point five is twenty-five over fifteen, five thirds.", show(r_12, 'twenty-five over fifteen')),
@@ -2127,7 +2141,7 @@ video('solve-q-r26-t23-03', 'solution', qid='q-r26-t23-03', slides=[
 # structure). NEW here: in a mixture, find what stays the same (add water: the salt stays; add sugar: the water stays).
 # REMINDER: what is left (g058), from a percent to the whole (camera lesson), plugging in the answers (51).
 m_1 = IH('m_1', 'add water: $\\ $the salt stays', size=30)
-m_2 = IH('m_2', 'add sugar: $\\ $the water stays', size=30)
+m_2 = IH('m_2', 'add salt: $\\ $the amount of water stays', size=30)
 m_3 = IH('m_3', 'water: $\\ 100\\%-20\\%=80\\%$', size=30)
 m_4 = IH('m_4', '$80\\%$ of $300=8\\cdot30=240$ g', size=30, col=1)
 m_5 = IH('m_5', 'after: $\\ 100\\%-40\\%=60\\%$ water', size=30, col=1)
@@ -2148,7 +2162,7 @@ video('solve-q-r26-t23-04', 'solution', qid='q-r26-t23-04', slides=[
         "to find what stays the same. We'll solve it in two different ways, the math way, and then by plugging in the "
         "answers.", pt('stem', 'This is a mixture question')),
       L("Let's start with the math way, and the rule first. Think of a cup of salty water. If we add water, the salt is "
-        "still the same salt. If we add salt, the water is still the same water.", show(m_1, 'If we add water'),
+        "still the same amount. If we add salt, the amount of water stays the same.", show(m_1, 'If we add water'),
         show(m_2, 'If we add salt')),
       L("Here we add sugar. So the sugar changes, and the total changes. What stays the same? The water."),
       L("So let's find the water before. The mixture is twenty percent sugar, so it's a hundred minus twenty, eighty "
@@ -2184,16 +2198,16 @@ video('solve-q-r26-t23-04', 'solution', qid='q-r26-t23-04', slides=[
 
 # ------------------------------------------------------------------------------------------------ q-r26-t23-05 (added: letters in the choices)
 # English addition (real exam: 2024_spring_q1_16, 2024_winter_q1_15, 2021_spring_q1_13). REMINDER: plugging in numbers
-# and its rules (topic 51: easy numbers, a different number for each letter, usually not 0 or 1; two choices left ->
+# and its rules (topic 51: easy allowed numbers; change them if choices tie; two choices left ->
 # new numbers), the percent = part / whole x 100. NEW here: why these numbers (a quarter of g is whole, g < N).
 q_1 = IH('q_1', '$N=200,\\ \\ g=80$', size=30)
 q_2 = IH('q_2', '$25\\%$ of $80=20$ girls', size=30)
 q_3 = IH('q_3', '$\\frac{20}{200}=\\frac{10}{100}=10\\%$', size=30)
-q_4 = IH('q_4', 'target: $\\ 10$', size=30)
-q_5 = IH('q_5', '(1) $\\ \\frac{80}{800}=\\frac{1}{10}$', size=30, col=1)
-q_6 = IH('q_6', '(2) $\\ \\frac{8000}{200}=40$', size=30, col=1)
+q_4 = IH('q_4', 'target: $\\ 10\\%$', size=30)
+q_5 = IH('q_5', '(1) $\\ \\frac{80}{800}\\%=\\frac{1}{10}\\%$', size=30, col=1)
+q_6 = IH('q_6', '(2) $\\ \\frac{8000}{200}\\%=40\\%$', size=30, col=1)
 q_7 = IH('q_7', '(3) $\\ \\frac{25\\cdot80}{200}=\\frac{2000}{200}=10$', size=30, col=1)
-q_8 = IH('q_8', '(4) $\\ \\frac{5000}{80}>60$', size=30, col=1)
+q_8 = IH('q_8', '(4) $\\ \\frac{5000}{80}\\%>60\\%$', size=30, col=1)
 q_9 = IH('q_9', 'chess girls: $\\ \\frac{g}{4}$', size=30)
 q_10 = I('q_10', 'percent $=\\frac{\\text{part}}{\\text{whole}}\\times100$', size=30, hand='percent = {part/whole}×100')
 q_11 = IH('q_11', '$\\frac{g}{4}\\div N=\\frac{g}{4N}$', size=30, col=1)
@@ -2205,24 +2219,24 @@ video('solve-q-r26-t23-05', 'solution', qid='q-r26-t23-05', slides=[
         "all the students are girls who play chess?", pt('stem', 'A school has N students', 'hl', 8.0), voice='calm', pause=0.5),
       L("There are letters in the question and in the choices. That's a hint that we can plug in numbers. We'll solve it "
         "in two different ways, by plugging in numbers, and then the math way.", pt('stem', 'There are letters')),
-      L("Let's start by plugging in numbers. Remember the rules from psychometric thinking. Easy numbers, a different "
-        "number for each letter, and usually not zero or one."),
+      L("Let's start by plugging in numbers. Like in psychometric thinking, check the restrictions first. Then choose "
+        "easy allowed numbers. If choices give the same result, try another allowed example."),
       L("Let's say there are two hundred students, so N is two hundred. And eighty of them are girls, so g is eighty. Why "
         "eighty? Because a quarter of eighty is a whole number, and eighty is less than two hundred.", show(q_1, 'so g is eighty')),
       L("Twenty-five percent of the girls play chess. A quarter of eighty is twenty girls.", show(q_2, 'A quarter of eighty is')),
       L("Now, what percent of all the students is that? Twenty out of two hundred is ten out of a hundred, ten percent. "
-        "So our target is ten.", show(q_3, 'Twenty out of two hundred'), show(q_4, 'So our target is ten'))),
+        "So our target is ten percent.", show(q_3, 'Twenty out of two hundred'), show(q_4, 'So our target is ten'))),
     S('Method 1 · Plugging in numbers',
-      L("Now we put N is two hundred and g is eighty into every choice. Choice number one says g over four N. Four times two "
-        "hundred is eight hundred, so it's eighty over eight hundred. That's a tenth, not ten. Out.", show(q_5, 'Eighty over eight hundred'), mk('cross', 'choice 1', 'not ten. Out')),
-      L("Choice number two says a hundred g over N. A hundred times eighty is eight thousand, and eight thousand over two hundred is forty. That's the percent of girls, "
-        "not of chess players. Out.", show(q_6, 'Eight thousand over two hundred'), mk('cross', 'choice 2', 'not of chess players')),
-      L("Choice number three says twenty-five g over N. Twenty-five times eighty is two thousand, and two thousand over two "
-        "hundred is ten. That's our target.", show(q_7, 'Twenty-five times eighty')),
+      L("Now we put N is two hundred and g is eighty into every choice. Choice number one says g over four N percent. Four times two "
+        "hundred is eight hundred, so it's eighty over eight hundred percent. That's a tenth of a percent, not ten percent. Out.", show(q_5, 'Eighty over eight hundred'), mk('cross', 'choice 1', 'not ten percent. Out')),
+      L("Choice number two says a hundred g over N percent. A hundred times eighty is eight thousand, and eight thousand over two hundred is forty. That's forty percent of the students, "
+        "all the girls, not just the girls who play chess. Out.", show(q_6, 'Eight thousand over two hundred'), mk('cross', 'choice 2', 'not just the girls who play chess')),
+      L("Choice number three says twenty-five g over N percent. Twenty-five times eighty is two thousand, and two thousand over two "
+        "hundred is ten. So this choice gives ten percent, our target.", show(q_7, 'Twenty-five times eighty')),
       L("In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four says twenty-five "
-        "N over g. Twenty-five times two hundred is five thousand. Five thousand over eighty is more than sixty, because eighty times sixty is only four thousand eight hundred. Out.",
-        show(q_8, 'Five thousand over eighty'), mk('cross', 'choice 4', 'more than sixty')),
-      L("Only choice number three gives ten. If two choices had given ten, we'd pick new numbers and test only those "
+        "N over g percent. Twenty-five times two hundred is five thousand. Five thousand over eighty is more than sixty, because eighty times sixty is only four thousand eight hundred. So it's more than sixty percent, not ten percent. Out.",
+        show(q_8, "So it's more than sixty percent"), mk('cross', 'choice 4', 'not ten percent')),
+      L("Only choice number three gives ten percent. If two choices had given ten percent, we'd pick new numbers and test only those "
         "two. Choice number three is our answer.", mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · The math way',
       L("[pause] Now the math way, with the letters. We start again from the givens. Twenty-five percent of the girls is "
@@ -2232,12 +2246,129 @@ video('solve-q-r26-t23-05', 'solution', qid='q-r26-t23-05', slides=[
       L("g over four, divided by N, is g over four N.", show(q_11, 'divided by N')),
       L("Times a hundred, it's a hundred g over four N. A hundred over four is twenty-five, so it's twenty-five g over N.",
         show(q_12, 'Times a hundred'), show(q_12b, 'A hundred over four is twenty-five')),
-      L("Choice number one, g over four N, is only the fraction of the students. We still need to multiply by a hundred "
-        "to get a percent. Choice number three is our answer, and I'll see you in the next question.",
+      L("g over four N is the fraction of the students. To write it as a percent, we multiply that number by a hundred "
+        "first. Choice number three is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
 # =================================================================================================================
+# 21 Oct Codex review: split independent calculations into their spoken clauses.
+# Scoped to unrecorded parts only; the recorded wp-052 parts 2–4 and wp-053 part 1
+# are intentionally unchanged. First row retains the old name for explicit points.
+def _clause_rows(vid, name, *pieces):
+    found = 0
+    for sl in VIDEOS[vid]['slides']:
+        for ln in sl['lines']:
+            cues = []
+            for cue in ln['cues']:
+                if cue[0] == 'show' and cue[1]['_name'] == name:
+                    old = cue[1]; found += 1
+                    for j, (tex, anchor) in enumerate(pieces):
+                        assert anchor.lower() in ln['say'].lower(), (vid, name, anchor)
+                        it = IH(name if not j else name+'_clause'+str(j), tex,
+                                size=old.get('size',30), col=old['_col'])
+                        cues.append(show(it, anchor))
+                else: cues.append(cue)
+            ln['cues'] = cues
+    assert found == 1, (vid, name, found)
+
+_clause_rows('wp-052', 'k_10',
+    ('$64\\div4=16$', 'Sixty-four divided by four is sixteen'),
+    ('$100\\div4=25$', 'A hundred divided by four is twenty-five'))
+_clause_rows('wp-053', 'pm_8',
+    ('$56\\%$ stays', 'So fifty-six percent stays'),
+    ('$44\\%$ lost', 'forty-four percent is lost'))
+_clause_rows('wp-053', 'p_24',
+    ('$120-24=96$', 'A hundred twenty minus twenty-four'),
+    ('$4\\%$ lower', 'So we end four percent lower'))
+_clause_rows('wp-053', 'p_29',
+    ('$20^2=400$', 'Twenty squared is four hundred'),
+    ('$400\\div100=4$', 'Four hundred over a hundred is four'))
+_clause_rows('wp-053', 'p_30',
+    ('$30^2=900$', 'Thirty squared is nine hundred'),
+    ('$900\\div100=9$', "Over a hundred, that's nine"))
+_clause_rows('wp-053', 'p_31',
+    ('$100+30=130$', 'up thirty percent is a hundred thirty'),
+    ('$30\\%$ of $130=39$', 'Thirty percent of a hundred thirty is thirty-nine'),
+    ('$130-39=91$', 'A hundred thirty minus thirty-nine is ninety-one'),
+    ('$9\\%$ lower', 'nine percent lower'))
+_clause_rows('wp-053', 'pw_11',
+    ('$1\\%=1$ fish', 'so one percent is one fish'),
+    ('$100\\%=100$ fish', 'A hundred percent is a hundred fish'))
+_clause_rows('wp-053', 'p_19',
+    ('$50\\%$: $\\ 80$', 'So fifty percent is eighty'),
+    ('$5\\%$: $\\ 8$', 'five percent is eight'))
+_clause_rows('wp-053', 'pa_3',
+    ('$16\\cdot50=800$', 'Sixteen times fifty is eight hundred'),
+    ('$16\\cdot5=80$', 'sixteen times five is eighty'),
+    ('$16\\cdot55=880$', 'So sixteen times fifty-five'))
+_clause_rows('wp-053', 'pa_10',
+    ('$1.2=\\frac{6}{5}$', 'One point two is six fifths'),
+    ('$\\div\\frac{6}{5}=\\times\\frac{5}{6}$', 'against the arrow we multiply'),
+    ('$\\frac{5}{6}=83\\frac{1}{3}\\%$', 'Five sixths is eighty-three'))
+_clause_rows('wp-053', 'pf_7',
+    ('$D=150,\\ G=100$', 'Dan has a hundred fifty'),
+    ('$20\\%$ of $150=30$', 'Twenty percent of a hundred fifty is thirty'),
+    ('$30\\%$ of $100=30$', 'thirty percent of a hundred is thirty'))
+_clause_rows('wp-053', 'pf_10',
+    ('coat: $100$', "Let's plug in a hundred for the coat"),
+    ('shirt: $40$', 'Then the shirt costs forty'),
+    ('shoes: $120$', 'the shoes cost a hundred twenty'))
+_clause_rows('wp-053', 'pa_4', ('$0.88$', 'and the product is zero point eight eight'))
+_clause_rows('wp-053', 'pa_8b',
+    ('$\\div\\frac{5}{4}=\\times\\frac{4}{5}$', 'Dividing by five quarters'),
+    ('$\\frac{4}{5}=80\\%$', 'four fifths is eighty percent'))
+_clause_rows('solve-wp23-g054', 's_5',
+    ('$8\\cdot6=48$', 'Eight times six is forty-eight'),
+    ('$8\\cdot0.5=4$', 'eight halves are four'))
+_clause_rows('solve-wp23-g058', 'c_3',
+    ('$7\\cdot60=420$', 'Seven times sixty is four hundred twenty'),
+    ('$7\\cdot8=56$', 'Seven times eight is fifty-six'))
+_clause_rows('solve-wp23-g057', 'f_4',
+    ('$85\\div5=17$', 'Eighty-five divided by five is seventeen'),
+    ('$200\\div5=40$', 'Two hundred divided by five is forty'))
+_clause_rows('solve-wp23-g061', 'd_11',
+    ('$5$ fifths $+1=6$ fifths', 'Add a fifth, and we have six fifths'),
+    ('$6-1=5$ fifths', "we're back to five fifths"))
+_clause_rows('solve-wp23-g061', 'd_12',
+    ('$2$ halves $+1=3$ halves', 'Add a half, and we have three halves'),
+    ('$3-1=2$ halves', "we're back to two halves"))
+_clause_rows('solve-wp23-g061', 'd_13',
+    ('add $\\frac{1}{n}$ of the start', 'Add one over n of the starting amount'),
+    ('remove $\\frac{1}{n+1}$ of the new amount', 'Then take away one over n plus one'))
+_clause_rows('solve-wp23-g062', 'e_7',
+    ('$3\\%=6$', 'Three percent is six'),
+    ('$0.5\\%=1$', 'half a percent is one'))
+_clause_rows('solve-wp23-g060', 'n_8',
+    ('$98\\%$ of $x$', 'ninety-eight percent of x'),
+    ('$2\\%$ fewer', 'so now she has two percent fewer'))
+_clause_rows('solve-wp23-g060', 'n_13',
+    ('$70+28=98$ coins', 'Seventy plus twenty-eight is ninety-eight coins'),
+    ('$2\\%$ fewer', 'so two percent fewer'))
+_clause_rows('solve-q-r26-t23-16', 'l_8',
+    ('$2+3=5$ parts', 'Two plus three is five parts'),
+    ('$600\\div5=120$ books per part', 'So one part is six hundred divided'))
+_clause_rows('solve-q-r26-t23-16', 'l_15',
+    ('novels: $240$', "Let's try two hundred forty"),
+    ('textbooks: $600-240=360$', 'Then the textbooks are six hundred minus'))
+_clause_rows('solve-q-r26-t23-05', 'q_7',
+    ('$25\\cdot80=2000$', 'Twenty-five times eighty is two thousand'),
+    ('$2000\\div200=10$', 'two thousand over two hundred is ten'))
+_clause_rows('solve-wp23-g064', 'b_6',
+    ('$48\\div4=12$', 'Forty-eight divided by four is twelve'),
+    ('$3\\cdot12=36$', 'Three times twelve is thirty-six'))
+_clause_rows('solve-wp23-g065', 'w_6',
+    ('$80\\cdot3=240$', 'Eighty times three is two hundred forty'),
+    ('$81\\cdot3=243$', 'So eighty-one times three'))
+_clause_rows('r26-t23-traps', 'x_3',
+    ('half of $320=160$', 'Half of it is a hundred sixty'),
+    ('quarter of $320=80$', 'half again is eighty'))
+_clause_rows('r26-t23-traps', 'x_4',
+    ('$10\\%$ of $320=32$', 'Ten percent is thirty-two'),
+    ('$30\\%$ of $320=3\\cdot32=96$', 'so thirty percent is three times'))
+_clause_rows('r26-t23-traps', 'x_6',
+    ('$25\\%<\\ ?\\ <30\\%$', 'So the percent is between'))
+
 QBOT23 = {'solve-q-r26-t23-01': 181, 'solve-q-r26-t23-03': 239, 'solve-q-r26-t23-04': 242, 'solve-q-r26-t23-05': 242,
           'solve-q-r26-t23-16': 242, 'solve-wp23-g054': 286, 'solve-wp23-g057': 181, 'solve-wp23-g058': 181,
           'solve-wp23-g059': 242, 'solve-wp23-g060': 286, 'solve-wp23-g061': 192, 'solve-wp23-g062': 150,
@@ -2253,7 +2384,7 @@ CARRY23 = {
     'solve-q-r26-t23-03': {1: ['chair $100$, desk $150$, table $250$']},
     'solve-q-r26-t23-04': {1: ['water $240$ g $=60\\%$']},
     'solve-wp23-g064': {1: ['factory $30\\%$, $\\ 40\\%=48$ kg']},
-    'solve-q-r26-t23-05': {1: ['$N=200$, $g=80$: $\\ $target $10$']},
+    'solve-q-r26-t23-05': {1: ['$N=200$, $g=80$: $\\ $target $10\\%$']},
 }
 STEMS23 = {
  "wp23-g054": "In a survey, 35% of the students do not play a musical instrument. Of the students who play an instrument, 80% play the piano and the rest play only the guitar. What percentage of all the surveyed students play only the guitar?",

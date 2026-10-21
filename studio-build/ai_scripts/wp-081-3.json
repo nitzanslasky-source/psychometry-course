@@ -101,11 +101,15 @@
     ]
    },
    {
-    "say": "What about a alone? It can be below six. For example, a is two, b is nine, and c is ten. Their sum is twenty-one, and twenty-one divided by three is seven. That's more than six, so it fits.",
+    "say": "What about a alone? It can be below six. For example, a is two, b is nine, and c is ten. Their sum is twenty-one, and twenty-one divided by three is seven, above six. Choose d as one. The four add up to twenty-two, divided by four, five point five. That's below six, so both givens hold.",
     "at": [
      "It can be below six",
      "a is two, b is nine",
-     "Their sum is"
+     "Their sum is",
+     "twenty-one divided by three",
+     "seven, above six",
+     "divided by four, five point five",
+     "That's below six"
     ]
    },
    {

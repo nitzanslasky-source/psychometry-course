@@ -11,8 +11,7 @@
     "at": [
      "Here's the way we know",
      "A regular hexagon",
-     "All six are equal",
-     "each one is"
+     "is exactly one sixth"
     ]
    },
    {
@@ -85,15 +84,14 @@
    {
     "say": "Let's check it in numbers. Take a hexagon with side four. The formula gives sixteen root three over four, which is four root three.",
     "at": [
-     "Take a hexagon with side four",
-     "The formula gives"
+     "is four root three"
     ]
    },
    {
     "say": "Now let's find it the long way. The corner triangle's base is the short diagonal, four root three. Its height is half the side, two, from the golden triangle. So the area is four root three times two, divided by two. That's four root three again.",
     "at": [
-     "Now let's find it the long way",
-     "The corner triangle's"
+     "Now let's find",
+     "That's four root three again"
     ]
    },
    {

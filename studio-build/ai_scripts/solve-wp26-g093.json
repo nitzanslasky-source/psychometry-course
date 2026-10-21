@@ -145,20 +145,22 @@
    {
     "say": "[pause] Now let's plug in numbers. It's a safety net when the answers have letters. We start again from the givens.",
     "at": [
-     "Now let's",
-     "the givens"
+     "numbers. It's a",
+     "We start again"
     ]
    },
    {
-    "say": "Let's say x is six flyers and y is two minutes. We pick two different numbers, not one, and six divides by two. Six divided by two is three flyers a minute.",
+    "say": "Let's say x is six flyers and y is two minutes. Both are allowed, and six divides easily by two. Six divided by two is three flyers a minute.",
     "at": [
-     "Let's say x is six flyers",
-     "We pick two"
+     "Let's say x is six",
+     "Both are allowed",
+     "Six divided by two is three"
     ]
    },
    {
     "say": "Her rate becomes three times as great. Three times three is nine flyers a minute.",
     "at": [
+     "Her rate becomes",
      "Three times three is nine",
      "flyers a minute"
     ]
@@ -190,6 +192,7 @@
     "at": [
      "number two says",
      "Five times six is thirty",
+     "Then thirty divided by three",
      "divided by three is ten. Out"
     ]
    },

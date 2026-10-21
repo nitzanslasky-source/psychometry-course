@@ -87,11 +87,11 @@
     ]
    },
    {
-    "say": "Private cars get a dot. Privately owned gets a white star. And the commercial vehicles get an x.",
+    "say": "Private cars get a dot. Privately owned vehicles get a white star. And privately owned commercial vehicles get an x.",
     "at": [
      "Private cars get a dot",
-     "Privately owned gets",
-     "the commercial vehicles get an x"
+     "Privately owned vehicles",
+     "privately owned commercial vehicles get an x"
     ]
    },
    {
@@ -234,29 +234,36 @@
     "say": "The average per dealer is the vehicles divided by the dealers. Two thousand ten. Sixty thousand vehicles, five dealers. Sixty divided by five is twelve.",
     "at": [
      "The average per",
-     "Sixty divided by five"
+     "is twelve"
     ]
    },
    {
     "say": "Two thousand eleven. Eighty divided by eight is ten.",
     "at": [
-     "Eighty divided by eight"
+     "divided by eight",
+     "is ten"
     ]
    },
    {
     "say": "Two thousand twelve. Eighty divided by ten is eight.",
     "at": [
-     "Eighty divided by ten"
+     "divided by ten",
+     "is eight"
     ]
    },
    {
-    "say": "Two thousand thirteen. A hundred divided by fifteen. Do we need the exact number? No. A hundred divided by ten is ten, and fifteen dealers is more than ten. So each one gets less than ten.",
+    "say": "Two thousand thirteen. A hundred divided by fifteen. Do we need the exact number? No. A hundred divided by ten is ten, and fifteen dealers is more than ten. So the average is less than ten thousand per dealer.",
     "at": [
-     "A hundred divided by fifteen",
-     "Do we need"
+     "A hundred divided",
+     "the average is less than ten thousand per dealer"
     ]
    },
-   "Twelve is the greatest. So the answer is two thousand ten, choice number one."
+   {
+    "say": "Twelve is the greatest. So the answer is two thousand ten, choice number one.",
+    "at": [
+     "So the answer"
+    ]
+   }
   ],
   [
    {

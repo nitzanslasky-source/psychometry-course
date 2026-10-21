@@ -29,7 +29,7 @@
     ]
    },
    {
-    "say": "Thirty divided by five is six. So six numbers are left.",
+    "say": "The eighty was thirty above fifty. So those left must be thirty below fifty together. Each counts as five below. Thirty divided by five is six. So six numbers are left.",
     "at": [
      "Thirty divided by five",
      "So six numbers"
@@ -135,14 +135,15 @@
     "say": "So five calls on the busiest day, and four other days with four calls each. Four times four is sixteen, plus five is twenty-one. That's less than twenty-two, so five is not enough.",
     "at": [
      "Four times four is sixteen",
-     "plus five is"
+     "plus five is twenty-one",
+     "That's less than"
     ]
    },
    {
-    "say": "Let's try six. The other days can have up to five each. Four times five is twenty, plus six is twenty-six. That's enough, and the other days can simply have fewer calls. So the answer is six.",
+    "say": "Let's try six. The other four days can have four calls each. Six plus four plus four plus four plus four is twenty-two. Six is more than every other day, so the answer is six.",
     "at": [
-     "Four times five is twenty",
-     "plus six is"
+     "Six plus four plus four",
+     "plus four plus four is"
     ]
    },
    {

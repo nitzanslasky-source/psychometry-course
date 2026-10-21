@@ -20,37 +20,40 @@
     "say": "Let's start with the math way, in thousands. In two thousand seventeen, the prizes are the prize table. A hundred twenty plus eighty is two hundred.",
     "at": [
      "the prizes are the prize table",
-     "A hundred twenty plus eighty",
+     "table. A hundred",
      "is two hundred"
     ]
    },
    {
     "say": "Plus fifty, twenty and ten is two hundred eighty. Places six and seven add zero.",
     "at": [
-     "Plus fifty, twenty and ten",
-     "is two hundred"
+     "is two hundred eighty",
+     "Places six and"
     ]
    },
    {
     "say": "Seven teams, so the average is two hundred eighty divided by seven. That's forty thousand.",
     "at": [
-     "divided by seven"
+     "That's forty thousand"
     ]
    },
    {
     "say": "Now two thousand sixteen. The two winners share a hundred twenty plus eighty, two hundred. Two hundred divided by two is a hundred each.",
     "at": [
      "The two winners",
-     "Two hundred divided by two",
-     "is a hundred"
+     "is a hundred each"
     ]
    },
-   "The other five teams get places three to seven, the same prizes as before. Fifty, twenty, ten, zero and zero, that's eighty.",
+   {
+    "say": "The other five teams get places three to seven, the same prizes as before. Fifty, twenty, ten, zero and zero, that's eighty.",
+    "at": [
+     "The other five"
+    ]
+   },
    {
     "say": "So the total is a hundred plus a hundred, two hundred. Plus eighty is two hundred eighty again. Divided by the same seven teams, forty thousand.",
     "at": [
-     "So the total is",
-     "Plus eighty is",
+     "Plus eighty is two hundred eighty again",
      "Divided by the same",
      "teams, forty thousand"
     ]

@@ -33,10 +33,10 @@
     ]
    },
    {
-    "say": "Each weight times its number of boxes, divided by all two thousand boxes, is three point four.",
+    "say": "Multiply each box weight by its number of boxes. Add the two totals. Divide that sum by all two thousand boxes, and the average is three point four.",
     "at": [
-     "Each weight times its number",
-     "of boxes, divided"
+     "Divide that sum",
+     "average is three"
     ]
    },
    {
@@ -84,7 +84,7 @@
     "say": "Three point four is zero point four from three, and one point six from five.",
     "at": [
      "is zero point four from three",
-     "three, and one"
+     "one point six from five"
     ]
    },
    {
@@ -133,9 +133,9 @@
     ]
    },
    {
-    "say": "This works every time the average is given and they ask about the groups. The distances from the average, flipped, give the sizes of the groups. The closer value has the bigger group.",
+    "say": "With two known values and their average, the distances, flipped, give the ratio of the group sizes. The closer value has the bigger group. We also need the total to find how many are in each group.",
     "at": [
-     "This works every"
+     "With two known"
     ]
    }
   ],

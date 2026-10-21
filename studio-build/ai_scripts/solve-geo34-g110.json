@@ -50,9 +50,9 @@
    {
     "say": "The same happens on the other side, in triangle S T P. T S and T P are equal sides, and the angle at T is one hundred eight. So angle T S P is thirty-six too.",
     "at": [
-     "the other side",
-     "in triangle S T P",
-     "angle at T"
+     "The same happens",
+     "So angle T S P is thirty-six too",
+     "is thirty-six too"
     ]
    },
    {
@@ -78,10 +78,9 @@
    {
     "say": "In a trapezoid, two angles on the same leg add up to one hundred eighty. Look at the leg R S. Angle R is one hundred eight, because the pentagon is regular. So angle R S P is one hundred eighty minus one hundred eight, seventy-two.",
     "at": [
-     "Look at the leg R S",
-     "Angle R is",
      "So angle R S P is",
-     "is one hundred eighty"
+     "is one hundred eighty",
+     "seventy-two"
     ]
    },
    {
@@ -89,7 +88,7 @@
     "at": [
      "The other diagonal, S Q",
      "does the same",
-     "Angle T is one hundred eight",
+     "so angle T S Q is seventy-two",
      "so angle T S Q"
     ]
    },

@@ -50,7 +50,9 @@
      "Now return to the whole ring",
      "Its area is",
      "Take pi as a common factor",
-     "factor: pi times"
+     "factor: pi times",
+     "So the ring's area is pi h squared",
+     "pi h squared"
     ]
    }
   ],
@@ -70,7 +72,8 @@
      "Radii twelve and thirteen",
      "five, twelve, thirteen",
      "The big circle is pi",
-     "The small one"
+     "The small one is pi",
+     "times twelve squared"
     ]
    },
    {

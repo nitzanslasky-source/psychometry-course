@@ -22,8 +22,11 @@
    {
     "say": "Ninety-seven is three below, so minus three. A hundred two is two above, so plus two. A hundred four is four above, so plus four. Ninety-nine is one below, so minus one.",
     "at": [
-     "Ninety-seven is three below",
-     "A hundred two"
+     "so minus three",
+     "two is two",
+     "so plus two",
+     "so plus four",
+     "so minus one"
     ]
    },
    {
@@ -154,10 +157,10 @@
     ]
    },
    {
-    "say": "So when every value changes in the same way, the average changes in the same way.",
+    "say": "So adding the same amount to every value adds it to the average. Multiplying every value by the same number multiplies the average by that number too.",
     "at": [
-     "So when every value changes",
-     "in the same"
+     "So adding the same amount",
+     "to every value"
     ]
    }
   ],
@@ -165,11 +168,18 @@
    {
     "say": "Here's a classic. The average age in a family is thirty-one. In four years, everyone is four years older. So the average age will be thirty-one plus four, thirty-five.",
     "at": [
-     "The average age in a family",
-     "In four years"
+     "The average age in a family is thirty-one",
+     "In four years",
+     "four years older",
+     "thirty-one plus four, thirty-five"
     ]
    },
-   "And what if every value is multiplied by two, and then one is added? We do the same steps to the average, in the same order.",
+   {
+    "say": "And what if every value is multiplied by two, and then one is added? We do the same steps to the average, in the same order.",
+    "at": [
+     "And what if"
+    ]
+   },
    {
     "say": "For two, four and nine, the average is five. Five times two is ten, and ten plus one is eleven.",
     "at": [
@@ -214,10 +224,10 @@
     ]
    },
    {
-    "say": "And when every value changes in the same way, the average changes in the same way.",
+    "say": "And adding the same amount, or multiplying by the same number, changes the average in that same way.",
     "at": [
-     "And when every value changes",
-     "in the same"
+     "And adding the same amount",
+     "or multiplying by"
     ]
    },
    "Take a moment to memorize this. Next, we'll turn the formula around. I'll see you in the next video."

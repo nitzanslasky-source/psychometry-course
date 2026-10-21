@@ -50,16 +50,19 @@
      "In a gold triangle",
      "side across from",
      "So r is half of big R",
-     "big R, and"
+     "big R, and",
+     "big R is two times r"
     ]
    },
    {
     "say": "The gold triangle also gives us the side. The long leg, M C, is r root three. M is the middle of the side B C, so the whole side is two r root three. And two r is big R, so the side is big R root three.",
     "at": [
-     "The long leg, M C",
-     "is r root",
+     "The gold triangle",
+     "is r root three",
+     "is the middle",
      "so the whole side is two r root three",
-     "two r root"
+     "two r root",
+     "so the side is big R root three"
     ]
    }
   ],
@@ -90,22 +93,35 @@
      "Questions like to ask about the ring",
      "the ring, the",
      "Thirty-six pi minus nine pi",
-     "is twenty-seven pi"
-    ]
-   },
-   {
-    "say": "It's three small circles for any radius. With a small radius of two, the big radius is four. The big circle is sixteen pi, the small one is four pi, and the ring is twelve pi. Twelve pi is three times four pi.",
-    "at": [
-     "With a small radius of two",
-     "two, the big"
+     "is twenty-seven pi",
+     "twenty-seven pi is three times nine pi",
+     "So the ring"
     ]
    },
    {
     "say": "And the triangle's side is big R root three. Here big R is six, so the side is six root three.",
     "at": [
-     "And the triangle's side",
-     "big R root",
+     "so the side is six root three",
      "so the side is six root three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The ring's area is three times the small circle's area, whatever the radius. Let's try a small radius of two. The big radius is four. Its area is pi times four squared, sixteen pi. The small circle's area is pi times two squared, four pi. Sixteen pi minus four pi leaves twelve pi for the ring. Twelve pi is three times four pi, so the same area ratio holds.",
+    "at": [
+     "three times the",
+     "Let's try a small radius of two",
+     "a small radius of two",
+     "The big radius is four",
+     "Its area is",
+     "pi times four squared",
+     "pi. The small",
+     "pi times two squared",
+     "Sixteen pi minus four pi",
+     "leaves twelve pi",
+     "Twelve pi is three times four pi",
+     "four pi, so"
     ]
    }
   ],

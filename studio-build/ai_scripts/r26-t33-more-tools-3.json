@@ -27,50 +27,60 @@
     "at": [
      "Two angles on",
      "So angle D is one hundred eighty minus",
-     "So angle D is one hundred eighty minus",
-     "hundred eighty minus"
+     "hundred eighty minus",
+     "which is one hundred ten"
     ]
    },
    {
     "say": "Now the circle rule. In an inscribed quadrilateral, opposite angles add up to one hundred eighty. Angle C is opposite angle A. So angle C is one hundred eighty minus seventy, which is one hundred ten too.",
     "at": [
+     "In an inscribed",
      "So angle C is one hundred eighty minus",
-     "So angle C is one hundred eighty minus",
-     "hundred eighty minus"
+     "hundred eighty minus",
+     "which is one hundred ten too"
     ]
    },
    {
     "say": "So angle C and angle D are equal, and they're the two angles on the base D C. Angle B is on the same leg as C, so it's one hundred eighty minus one hundred ten, which is seventy. That's the same as angle A. So the base angles are equal on both bases.",
     "at": [
-     "minus one hundred ten, which is seventy",
-     "That's the same",
+     "So angle C",
+     "it's one hundred eighty minus one hundred ten",
+     "one hundred ten",
+     "which is seventy",
      "So the base angles",
      "equal on both"
     ]
    },
    {
-    "say": "And equal base angles give equal legs. Drop the heights from D and from C to the base A B. We get two right triangles with the same height and the same angle of seventy at the bottom. So they're the same triangle, and their long sides are equal. Those long sides are the legs A D and B C. So the trapezoid is isosceles.",
+    "say": "And equal base angles give equal legs. Drop the heights from D and from C to the base A B. Both heights measure the distance between the parallel bases, so they're equal. We get two right triangles. Each has that same height and a seventy-degree base angle. So they have the same size and shape. Their hypotenuses are the legs A D and B C, so those legs are equal. So the trapezoid is isosceles.",
     "at": [
      "Drop the heights",
      "and from C",
-     "Those long sides are the legs",
-     "legs A D",
+     "so those legs are equal",
      "So the trapezoid is isosceles"
     ]
-   },
+   }
+  ],
+  [
    {
     "say": "Seventy was just an example. Say angle A is sixty-four. Then angle D is one hundred sixteen, because it's on the same leg as A. And angle C is one hundred sixteen too, because it's opposite A. They're equal again, for any angle.",
     "at": [
-     "Seventy was just",
+     "Seventy was just an example",
+     "Say angle A is sixty-four",
      "Then angle D is one hundred sixteen",
-     "hundred sixteen, because"
+     "Then angle D is one hundred sixteen",
+     "hundred sixteen, because",
+     "angle C is one hundred sixteen too",
+     "angle C is one hundred sixteen too",
+     "sixteen too, because"
     ]
    },
    {
     "say": "So when a question says a trapezoid is inscribed in a circle, you know right away that it's isosceles. Its legs are equal, its base angles are equal, and its diagonals are equal too. And a trapezoid with unequal legs can never be inscribed in a circle. Now let's see the other two tools in questions, and I'll see you in the next video.",
     "at": [
-     "you know right away",
-     "base angles are"
+     "Its legs are equal",
+     "its base angles are equal",
+     "and its diagonals"
     ]
    }
   ]

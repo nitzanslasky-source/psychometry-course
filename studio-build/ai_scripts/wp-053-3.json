@@ -77,12 +77,13 @@
     "say": "Forty percent is forty fish, so one percent is one fish. A hundred percent is a hundred fish.",
     "at": [
      "so one percent is one fish",
-     "A hundred percent"
+     "A hundred percent is a hundred fish"
     ]
    },
    {
     "say": "Let's check. A hundred fish lose twenty percent, so eighty are left. Half of eighty is forty. It works.",
     "at": [
+     "A hundred fish",
      "Half of eighty is forty"
     ]
    },
@@ -95,22 +96,22 @@
   ],
   [
    {
-    "say": "Now, where do we put the hundred? Here's a question with three people.",
+    "say": "Now, where do we put the hundred? Tal earns sixty percent more than Ben. Eli earns forty-five percent less than Tal. By what percent is Eli's pay lower than Ben's?",
     "at": [
      "put the hundred",
-     "three people"
+     "Tal earns sixty percent more than Ben",
+     "Eli earns forty-five"
     ]
    },
    {
     "say": "Here's the rule. The words of and than point at the whole. The whole is whatever comes right after them.",
     "at": [
-     "The words of",
      "The whole is whatever",
      "right after them"
     ]
    },
    "For example, thirty percent of the students. The students come after of, so the students are the whole. Or, Tal earns sixty percent more than Ben. Ben comes after than, so Ben is the whole in that sentence.",
-   "But this question has three thans. Tal than Ben, Eli than Tal, and Eli than Ben. So who gets the hundred?",
+   "We compare Tal with Ben, Eli with Tal, then Eli with Ben. Each comparison has its own whole. Which whole do we choose for the hundred?",
    {
     "say": "The one that decides is the than in the question itself, lower than Ben's. So Ben gets the hundred.",
     "at": [
@@ -142,7 +143,7 @@
      "Ten percent of a hundred sixty",
      "sixty is sixteen",
      "So fifty percent is eighty",
-     "and five percent",
+     "five percent is eight",
      "Eighty plus eight"
     ]
    },
@@ -169,19 +170,23 @@
     "say": "Tal earns sixty percent more than Ben. Ben comes after than, so the arrow starts at Ben and goes to Tal. Sixty percent more is a hundred sixty percent, so we write times one point six.",
     "at": [
      "so the arrow starts at Ben",
-     "Ben and goes"
+     "Ben and goes",
+     "so we write times one point six"
     ]
    },
    {
     "say": "Eli earns forty-five percent less than Tal. So the next arrow goes from Tal to Eli. Forty-five percent less leaves fifty-five percent, so it's times zero point five five.",
     "at": [
+     "Eli earns forty-five",
      "So the next arrow goes",
-     "from Tal to"
+     "from Tal to",
+     "so it's times zero point five five"
     ]
    },
    {
     "say": "The question compares Eli with Ben, so we walk from Ben to Eli. Both arrows point our way, so we multiply, one point six times zero point five five.",
     "at": [
+     "The question compares",
      "so we multiply",
      "six times zero"
     ]
@@ -189,13 +194,21 @@
    {
     "say": "Sixteen times fifty is eight hundred, and sixteen times five is eighty. So sixteen times fifty-five is eight hundred eighty, and the product is zero point eight eight.",
     "at": [
-     "Sixteen times fifty is",
-     "hundred, and sixteen",
-     "and the product is",
+     "Sixteen times fifty is eight hundred",
+     "sixteen times five is eighty",
+     "So sixteen times fifty-five",
+     "eight hundred eighty",
+     "and the product is zero point eight eight",
      "point eight eight"
     ]
    },
-   "Zero point eight eight is eighty-eight percent of Ben's pay. So it's twelve percent lower, the same answer as before."
+   {
+    "say": "Zero point eight eight is eighty-eight percent of Ben's pay. So it's twelve percent lower, the same answer as before.",
+    "at": [
+     "So it's twelve percent lower",
+     "the same answer"
+    ]
+   }
   ],
   [
    {
@@ -212,7 +225,7 @@
      "The whole is y",
      "word after than",
      "So the arrow goes from y",
-     "point two five"
+     "times one point two five"
     ]
    },
    {
@@ -228,12 +241,14 @@
     "at": [
      "One point two five is five quarters",
      "Dividing by five quarters",
-     "multiplying by four"
+     "multiplying by four",
+     "four fifths is eighty percent"
     ]
    },
    {
     "say": "So y is eighty percent of x. That's twenty percent less, not twenty-five percent. Why? Because the twenty-five percent was of y. Now the whole is x, a bigger whole.",
     "at": [
+     "So y is",
      "That's twenty percent less",
      "twenty-five percent. Why"
     ]
@@ -242,8 +257,11 @@
    {
     "say": "With twenty percent more, it's the same idea. One point two is six fifths, so against the arrow we multiply by five sixths. Five sixths is eighty-three and a third percent. Many students say eighty percent, but that's the trap. [pause] Okay. I'll see you in the next part.",
     "at": [
-     "With twenty percent more",
-     "the same idea"
+     "One point two is six fifths",
+     "against the arrow we multiply",
+     "by five sixths",
+     "Five sixths is eighty-three",
+     "a third percent"
     ]
    }
   ]

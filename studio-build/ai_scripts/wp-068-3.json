@@ -103,7 +103,8 @@
     "say": "And the smallest? Five plus six is eleven. That's not over fifteen, so the smallest overlap is zero.",
     "at": [
      "Five plus six is eleven",
-     "That's not over"
+     "That's not over",
+     "so the smallest overlap is zero"
     ]
    },
    {

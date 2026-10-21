@@ -81,11 +81,11 @@
     ]
    },
    {
-    "say": "Does that mean seventy thousand vehicles were sold there? No. There's no year two thousand ten and a half. Nobody measured anything there.",
+    "say": "Does that give us another sales figure? No. Each value here is a full-year total. The line doesn't give us a separate total halfway between the years.",
     "at": [
-     "Does that mean",
-     "There's no year two thousand ten",
-     "ten and a"
+     "Does that give",
+     "Each value here is a full-year total",
+     "The line doesn't"
     ]
    },
    {
@@ -122,9 +122,9 @@
   ],
   [
    {
-    "say": "The angle of the line tells us more. A steeper line means a bigger rise. Let's see it in numbers.",
+    "say": "Each step here is one year, on the same axes. So a steeper line means a bigger rise in that year. Let's see it in numbers.",
     "at": [
-     "line tells us"
+     "one year, on"
     ]
    },
    {
@@ -137,8 +137,7 @@
    {
     "say": "Fifty minus forty is ten. So that's a rise of ten thousand.",
     "at": [
-     "Fifty minus forty",
-     "So that's a"
+     "is ten"
     ]
    },
    {
@@ -151,13 +150,13 @@
    {
     "say": "Sixty-five minus fifty is fifteen. A rise of fifteen thousand.",
     "at": [
-     "Sixty-five minus fifty",
-     "A rise of"
+     "is fifteen"
     ]
    },
    {
     "say": "Fifteen is more than ten. And on the chart, the second part is steeper. So the steeper part is the bigger rise.",
     "at": [
+     "Fifteen is more",
      "the steeper part is the bigger rise"
     ]
    }
@@ -173,7 +172,8 @@
     "say": "From two thousand ten to two thousand eleven, it goes from sixty to eighty. Eighty minus sixty is twenty.",
     "at": [
      "it goes from sixty to eighty",
-     "Eighty minus sixty"
+     "eighty. Eighty minus",
+     "is twenty"
     ]
    },
    {
@@ -181,7 +181,7 @@
     "at": [
      "to two thousand",
      "from eighty to a hundred",
-     "A hundred minus eighty"
+     "is twenty again"
     ]
    },
    {
@@ -215,8 +215,13 @@
    }
   ],
   [
-   "So a line graph helps us see the trend, and how steep each part is.",
-   "But remember, the line itself has no values. Only the marked points do.",
+   {
+    "say": "So a line graph helps us see the trend, and how steep each part is.",
+    "at": [
+     "helps us see"
+    ]
+   },
+   "But remember, in this yearly chart, only the marked years have given sales totals. The connecting line doesn't give us extra totals.",
    "Next, the same data as bars. I'll see you in the next video."
   ]
  ]

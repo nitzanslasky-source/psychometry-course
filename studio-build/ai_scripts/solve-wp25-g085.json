@@ -29,13 +29,16 @@
     "say": "Omar's geography score isn't given, so let's call it g. Lena's geography score is six points higher, so it's g plus six.",
     "at": [
      "so let's call it g",
-     "Lena's geography score"
+     "Lena's geography score",
+     "so it's g plus six"
     ]
    },
    {
     "say": "The music scores aren't given either. Let's call Omar's m, and Lena's L.",
     "at": [
-     "Let's call Omar's m"
+     "The music scores",
+     "Let's call Omar's m",
+     "and Lena's L"
     ]
    },
    {
@@ -46,10 +49,10 @@
     ]
    },
    {
-    "say": "Omar's average is five more than Lena's. So g plus m over two is equal to g plus six plus L over two, plus five.",
+    "say": "Omar's average is five more than Lena's. Divide the whole sum, g plus m, by two. That equals the whole sum, g plus six plus L, divided by two, plus five.",
     "at": [
-     "So g plus m over two",
-     "plus six plus"
+     "Divide the whole sum",
+     "plus m, by"
     ]
    },
    {
@@ -93,15 +96,18 @@
    {
     "say": "Omar's geography score isn't given, so let's pick a round number, seventy. Lena's is six points higher, seventy-six.",
     "at": [
-     "so let's pick a round number",
-     "Lena's is six"
+     "given, so let's",
+     "seventy.",
+     "seventy-six"
     ]
    },
    {
     "say": "Omar's music score isn't given either. Let's pick seventy again. Why? Because then his average is simply seventy, with no calculation.",
     "at": [
+     "Omar's music score",
      "Let's pick seventy again",
-     "Because then his"
+     "his average is simply seventy",
+     "with no calculation"
     ]
    },
    {

@@ -69,8 +69,9 @@
    {
     "say": "[pause] Now let's plug in numbers. We start again from the givens. The job size isn't given, so we choose it.",
     "at": [
-     "Now let's",
-     "the givens. The"
+     "numbers. We start",
+     "the givens. The",
+     "isn't given, so"
     ]
    },
    {
@@ -91,12 +92,14 @@
     "say": "The speed increases by twenty percent. Twenty percent of five is one. So the new speed is five plus one, six pages a minute.",
     "at": [
      "Twenty percent of five is one",
-     "So the new"
+     "one. So the",
+     "five plus one, six"
     ]
    },
    {
     "say": "The job is still three hundred pages. So the time is the work divided by the new rate. Three hundred divided by six is fifty minutes. The same answer.",
     "at": [
+     "The job is",
      "Three hundred divided by six",
      "is fifty minutes"
     ]

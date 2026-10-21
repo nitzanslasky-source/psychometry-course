@@ -87,22 +87,27 @@
    {
     "say": "Here's another one. A whole is five fifths. Add a fifth, and we have six fifths. Take away a sixth, one of the six fifths, and we're back to five fifths.",
     "at": [
-     "A whole is five fifths",
-     "have six fifths"
+     "Add a fifth, and we have six fifths",
+     "a sixth, one",
+     "we're back to five fifths"
     ]
    },
    {
     "say": "Now our question. A whole is two halves. Add a half, and we have three halves. Take away a third, one of the three halves, and we're back to two halves.",
     "at": [
-     "A whole is two halves",
-     "have three halves"
+     "A whole is",
+     "Add a half, and we have three halves",
+     "a third, one",
+     "we're back to two halves"
     ]
    },
    {
-    "say": "So adding one over n, and then taking away one over n plus one, always brings us back. Lior earns exactly what Omer earns. Choice number one is our answer.",
+    "say": "Here n counts the equal parts in the start. Add one over n of the starting amount. Then take away one over n plus one of the new amount. That removes the part we added, so we're back at the start. Lior earns exactly what Omer earns. Choice number one is our answer.",
     "at": [
-     "So adding one over n",
-     "over n plus",
+     "Here n counts",
+     "Add one over n of the starting amount",
+     "Then take away one over n plus one",
+     "That removes the",
      "Choice number one is our answer"
     ]
    }
@@ -111,29 +116,33 @@
    {
     "say": "[pause] Now a third way, the arrow map, like in the lesson. Each sentence becomes one arrow. The arrow starts at the whole, the word after than, and its multiplier is written on it.",
     "at": [
-     "the arrow map",
-     "one arrow. The"
+     "Now a"
     ]
    },
    {
     "say": "We start again from the givens. Dana earns fifty percent more than Omer. The whole is Omer, so the arrow goes from Omer to Dana. Fifty percent more is a hundred fifty percent, so it's times one point five.",
     "at": [
+     "the givens. Dana",
      "Dana earns fifty percent more",
      "than Omer. The",
      "so the arrow goes from Omer",
-     "Fifty percent more is"
+     "more is a",
+     "so it's times one point five"
     ]
    },
    {
     "say": "Lior earns thirty-three and a third percent less than Dana. So the arrow goes from Dana to Lior. A third less leaves two thirds, so it's times two thirds.",
     "at": [
+     "Lior earns thirty-three",
      "So the arrow goes from Dana",
-     "Dana to Lior"
+     "Dana to Lior",
+     "so it's times two thirds"
     ]
    },
    {
     "say": "We want Lior divided by Omer, so we walk from Omer to Lior. Along an arrow we multiply, and both arrows point our way. So we multiply both multipliers.",
     "at": [
+     "We want Lior",
      "Along an arrow we multiply",
      "and both arrows"
     ]

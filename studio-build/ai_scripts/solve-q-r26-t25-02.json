@@ -81,15 +81,16 @@
    {
     "say": "Seventy-eight is seven below, so minus seven. Eighty-five is the average itself, so zero.",
     "at": [
-     "Seventy-eight is seven below",
-     "Eighty-five is the"
+     "so minus seven",
+     "the average itself",
+     "so zero"
     ]
    },
    {
     "say": "Ninety-one is six above, plus six. Eighty-eight is three above, plus three.",
     "at": [
-     "Ninety-one is six above",
-     "Eighty-eight is three"
+     "plus six",
+     "plus three"
     ]
    },
    {

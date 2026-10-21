@@ -15,12 +15,12 @@
     ]
    },
    {
-    "say": "If a must be positive and whole, it can't be zero, and it can't be one half. And if a letter is in the bottom of a fraction, it can't be zero, because we can't divide by zero.",
+    "say": "If a must be positive and whole, it can't be zero, and it can't be one half. Now look at five divided by x. Here x is the denominator, the bottom of the fraction. x can't be zero, because we can't divide by zero.",
     "at": [
      "If a must be positive and whole",
      "and whole, it",
-     "in the bottom of a fraction",
-     "fraction, it can't"
+     "five divided by x",
+     "Here x is"
     ]
    },
    {
@@ -40,11 +40,11 @@
   ],
   [
    {
-    "say": "Second, we choose an easy number that's allowed. Zero is often the fastest, because every term with zero in it becomes zero. Zero is out only when it breaks a restriction, like the bottom of a fraction.",
+    "say": "Second, we choose an easy number that's allowed. Zero is often the fastest, because multiplying by zero gives zero. But check every restriction first. We can't use zero if it makes the denominator zero.",
     "at": [
      "easy number that's",
      "Zero is often the fastest",
-     "because every term"
+     "because multiplying by"
     ]
    },
    {
@@ -89,14 +89,15 @@
     ]
    },
    {
-    "say": "Now x equals one. One times two is two, so the right choice must give two. x squared plus x is one plus one, two, so it stays. Three x is three, and four x is four. They aren't two, so they're out.",
+    "say": "Now x equals one. One times two is two, so the right choice must give two. x squared plus x is one plus one, two, so it stays. Three x is three, not two, so it's out. Four x is four, not two, so it's out too.",
     "at": [
-     "Now x equals one",
-     "One times two",
+     "One times two is two",
+     "so the right",
      "x squared plus x is one plus one",
      "one plus one",
-     "Three x is three",
-     "four x is"
+     "so it's out",
+     "is four, not",
+     "so it's out too"
     ]
    },
    {
@@ -138,19 +139,25 @@
     "at": [
      "Now x equals two",
      "two to the",
-     "Four times eight",
-     "and thirty-two over"
+     "thirty-two over two is sixteen",
+     "So the right"
     ]
    },
    {
-    "say": "The choices give sixteen, thirty-two, sixty-four and eight. Only x to the power of four gives sixteen. So this one try rules out the other three.",
+    "say": "Now check each choice with x as two. Choice number one is x to the power of four, which gives sixteen. Choice number two is x to the power of five, which gives thirty-two, not sixteen. Choice number three is x to the power of six, which gives sixty-four, not sixteen. Choice number four is x to the power of three, which gives eight, not sixteen. Only choice number one matches the expression's sixteen.",
     "at": [
-     "The choices give sixteen",
-     "sixty-four and eight"
+     "which gives sixteen",
+     "two is x",
+     "which gives thirty-two",
+     "Choice number three",
+     "which gives sixty-four",
+     "Choice number four",
+     "which gives eight",
+     "Only choice number"
     ]
    },
    {
-    "say": "So zero and one are fine to start with. But with powers in the choices, they often make every choice give the same result. Then we just take the next easy allowed number. [pause] Okay. I'll see you in the next part.",
+    "say": "So zero and one are fine to start with, when allowed. But with powers in the choices, they often make every choice give the same result. Then we just take the next easy allowed number. [pause] Okay. I'll see you in the next part.",
     "at": [
      "they often make every choice",
      "give the same"

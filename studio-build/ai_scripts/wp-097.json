@@ -130,15 +130,14 @@
    {
     "say": "The pies go from thirty to forty. That's times four thirds. More work takes more time, the same way. So the time is times four thirds too.",
     "at": [
-     "The pies go from thirty to forty",
-     "to forty. That's"
+     "time is times four thirds too"
     ]
    },
    {
     "say": "The cooks go from six to four. That's times two thirds. Fewer cooks take more time. That's the opposite way, so we flip it. The time is times three halves.",
     "at": [
-     "The cooks go from six to four",
-     "Fewer cooks take"
+     "The cooks go",
+     "The time is times three halves"
     ]
    },
    {

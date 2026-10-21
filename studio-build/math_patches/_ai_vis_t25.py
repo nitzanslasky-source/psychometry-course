@@ -796,7 +796,8 @@ a_f6 = IH('a_f6', '$2+5+11=18$', size=36, col=1)
 a_f7 = IH('a_f7', '$18\\div3=6$', size=36, col=1)
 a_f8 = IH('a_f8', '$6$ is between $2$ and $11$', size=36, col=1)
 a_b0 = TBL('a_b0', ['4', '9', '3', '11', '8'], ['vs. 7'], [
-    ('d', [('c', 0, 0, '−3'), ('c', 0, 1, '+2'), ('c', 0, 2, '−4'), ('c', 0, 3, '+4'), ('c', 0, 4, '+1')])],
+    ('d1', [('c', 0, 0, '−3')]), ('d2', [('c', 0, 1, '+2')]), ('d3', [('c', 0, 2, '−4')]),
+    ('d4', [('c', 0, 3, '+4')]), ('d5', [('c', 0, 4, '+1')])],
     colw=110, labw=150, rowh=66, w=760)
 a_b1 = IH('a_b1', '$+2+4+1=+7$ $\\ $above', size=36)
 a_b2 = IH('a_b2', '$-3-4=-7$ $\\ $below', size=36)
@@ -817,7 +818,8 @@ a_d3 = IH('a_d3', '$47+7=54$', size=36, col=1)
 # part 3
 a_g0 = I('a_g0', '$97,\\ 102,\\ 104,\\ 99$', size=40)
 a_g1 = TBL('a_g1', ['97', '102', '104', '99'], ['vs. 100'], [
-    ('d', [('c', 0, 0, '−3'), ('c', 0, 1, '+2'), ('c', 0, 2, '+4'), ('c', 0, 3, '−1')])], colw=110, labw=150, rowh=66, w=560)
+    ('d1', [('c', 0, 0, '−3')]), ('d2', [('c', 0, 1, '+2')]), ('d3', [('c', 0, 2, '+4')]),
+    ('d4', [('c', 0, 3, '−1')])], colw=110, labw=150, rowh=66, w=560)
 a_g2 = IH('a_g2', 'minus: $\\ -3-1=-4$', size=36, col=1)
 a_g3 = IH('a_g3', 'plus: $\\ 2+4=6$', size=36, col=1)
 a_g4 = IH('a_g4', '$6-4=2$', size=36, col=1)
@@ -839,15 +841,15 @@ a_v6 = I('a_v6', '$\\times2$: $\\ 4,\\ 8,\\ 18$', size=38, col=1)
 a_v7 = IH('a_v7', '$4+8+18=30$', size=36, col=1)
 a_v8 = IH('a_v8', '$30\\div3=10$', size=36, col=1)
 a_v8b = IH('a_v8b', '$10=5\\times2$', size=36, col=1)
-a_v9 = I('a_v9', 'Every value changes the same way: $\\ $so does the average', size=36)
+a_v9 = I('a_v9', 'Add the same amount or multiply by the same number: $\\ $do the same to the average', size=34)
 a_w1 = IH('a_w1', 'ages: $\\ $average $31$, $\\ $in $4$ years: $\\ 35$', size=36)
-a_w2 = IH('a_w2', '$\\times2$, then $+1$: $\\ 5\\times2=10$', size=36)
-a_w3 = IH('a_w3', '$10+1=11$', size=36)
+a_w2 = IH('a_w2', '$\\times2$, then $+1$: $\\ 5\\times2=10$', size=36, col=1)
+a_w3 = IH('a_w3', '$10+1=11$', size=36, col=1)
 a_s1 = I('a_s1', 'Symmetric or evenly spaced: $\\ $the middle', size=36)
 a_s2 = I('a_s2', 'Between the smallest and the biggest number', size=36)
 a_s3 = I('a_s3', 'average $=$ the sum $\\div$ how many numbers', size=36)
 a_s4 = I('a_s4', 'The balance: $\\ $the differences add up to $0$', size=36)
-a_s5 = I('a_s5', 'Every value changes the same way: $\\ $so does the average', size=36)
+a_s5 = I('a_s5', 'Add the same amount or multiply by the same number: $\\ $do the same to the average', size=34)
 video('wp-080', 'lesson', slides=[
     S('Averages',
       L("Welcome back, and now a new topic, averages."),
@@ -866,9 +868,9 @@ video('wp-080', 'lesson', slides=[
     S('Symmetric numbers',
       L("Now four numbers. Six, ten, fourteen and eighteen.", show(a_m4, 'Six, ten, fourteen'), show(a_z2['line'], 'Six, ten, fourteen')),
       L("Six and eighteen are a pair. Their middle is twelve, because six plus six is twelve, and twelve plus six is eighteen.",
-        show(a_m5, 'Six and eighteen are a pair')),
+        show(a_m5, 'Their middle is twelve')),
       L("Ten and fourteen are also a pair. Ten plus two is twelve, and twelve plus two is fourteen. So their middle is twelve "
-        "too.", show(a_m6, 'Ten and fourteen are also a pair')),
+        "too.", show(a_m6, 'So their middle is twelve')),
       L("Every pair has the same middle, twelve. So the average of all four numbers is twelve.",
         show(a_z2['mid'], 'Every pair has the same middle')),
       L("So when the numbers are symmetric, the average is the middle. We don't need to calculate.",
@@ -945,7 +947,8 @@ video('wp-080', 'lesson', slides=[
       L("Let's write how far each number is from the average, seven. Plus above the average, and minus below it.",
         show(a_b0['line'], "Let's write how far")),
       L("Four is three below, minus three. Nine is plus two. Three is minus four. Eleven is plus four. Eight is plus one.",
-        show(a_b0['d'], 'Four is three below')),
+        show(a_b0['d1'], 'minus three'), show(a_b0['d2'], 'Nine is plus two'), show(a_b0['d3'], 'Three is minus four'),
+        show(a_b0['d4'], 'Eleven is plus four'), show(a_b0['d5'], 'Eight is plus one')),
       L("Above the average, two plus four plus one is seven. Below it, three plus four is seven.",
         show(a_b1, 'Above the average'), show(a_b2, 'Below it')),
       L("So the amount above the average is equal to the amount below it. And that's always true, for any group."),
@@ -971,7 +974,7 @@ video('wp-080', 'lesson', slides=[
       L("Forty is seven below forty-seven, because forty-seven minus forty is seven.", show(a_z3['a'], 'Forty is seven below'),
         show(a_z3['m'], 'Forty is seven below'), show(a_d2, 'forty-seven minus forty')),
       L("So the other number is seven above the average. Forty-seven plus seven is fifty-four.",
-        show(a_z3['b'], 'So the other number is seven above'), show(a_d3, 'Forty-seven plus seven')),
+        show(a_d3, 'Forty-seven plus seven'), show(a_z3['b'], 'is fifty-four')),
       L("So when you see an average and one missing number, think of the balance.")),
     S('A base number',
       L("The balance also helps with calculations. Let's find the average of ninety-seven, a hundred two, a hundred four "
@@ -979,7 +982,8 @@ video('wp-080', 'lesson', slides=[
       L("We don't add them up. These numbers are all near a hundred. So we pick a hundred as a base, and we write only the "
         "differences.", show(a_g1['line'], 'we write only the differences')),
       L("Ninety-seven is three below, so minus three. A hundred two is two above, so plus two. A hundred four is four "
-        "above, so plus four. Ninety-nine is one below, so minus one.", show(a_g1['d'], 'Ninety-seven is three below')),
+        "above, so plus four. Ninety-nine is one below, so minus one.", show(a_g1['d1'], 'so minus three'),
+        show(a_g1['d2'], 'so plus two'), show(a_g1['d3'], 'so plus four'), show(a_g1['d4'], 'so minus one')),
       L("The minuses are minus three and minus one. Together, that's minus four.", show(a_g2, 'The minuses are')),
       L("The pluses are two and four. Together, that's plus six.", show(a_g3, 'The pluses are')),
       L("Together, six minus four is plus two. So the four numbers have two extra above the base.",
@@ -1008,8 +1012,8 @@ video('wp-080', 'lesson', slides=[
       L("Four plus eight plus eighteen is thirty. Thirty divided by three is ten. And ten is five times two.",
         show(a_v7, 'Four plus eight plus eighteen'), show(a_v8, 'Thirty divided by three'), show(a_v8b, 'And ten is five times two')),
       L("Every value doubled, so the sum doubled, and the average doubled too."),
-      L("So when every value changes in the same way, the average changes in the same way.",
-        show(a_v9, 'So when every value changes'))),
+      L("So adding the same amount to every value adds it to the average. Multiplying every value by the same number "
+        "multiplies the average by that number too.", show(a_v9, 'So adding the same amount'))),
     S('Every value changes: examples',
       L("Here's a classic. The average age in a family is thirty-one. In four years, everyone is four years older. So the "
         "average age will be thirty-one plus four, thirty-five.", show(a_w1, 'The average age in a family')),
@@ -1025,8 +1029,8 @@ video('wp-080', 'lesson', slides=[
       L("The average is always between the smallest number and the biggest number.", show(a_s2, 'The average is always between')),
       L("The average is equal to the sum, divided by how many numbers there are.", show(a_s3, 'The average is equal to the sum')),
       L("The balance. The differences from the average add up to zero.", show(a_s4, 'The differences from the average')),
-      L("And when every value changes in the same way, the average changes in the same way.",
-        show(a_s5, 'And when every value changes')),
+      L("And adding the same amount, or multiplying by the same number, changes the average in that same way.",
+        show(a_s5, 'And adding the same amount')),
       L("Take a moment to memorize this. Next, we'll turn the formula around. I'll see you in the next video.")),
 ])
 CAMERA_SPLIT = ('wp-080', 'Averages', [
@@ -1109,7 +1113,7 @@ b_y0 = I('b_y0', '$5$ days, $\\ 22$ calls. $\\ $One day had more calls than any 
 b_y1 = IH('b_y1', '$22\\div5$: $\\ $between $4$ and $5$', size=36)
 b_y2 = IH('b_y2', '$5$: $\\ $the others at most $4$', size=36)
 b_y3 = IH('b_y3', '$5+4\\times4=21$, $\\ $not $22$', size=36)
-b_y4 = IH('b_y4', '$6+4\\times5=26$, $\\ $enough', size=36)
+b_y4 = IH('b_y4', '$6+4+4+4+4=22$', size=36)
 b_y5 = I('b_y5', 'The biggest? $\\ $The others as small as they can be.', size=36, col=1)
 b_y6 = I('b_y6', 'The smallest biggest? $\\ $The others as big as they can be.', size=36, col=1)
 b_p0 = I('b_p0', 'average of $a,\\ b,\\ c$ $=8$', size=38)
@@ -1135,7 +1139,9 @@ b_r1 = I('b_r1', 'average of $a,\\ b,\\ c,\\ d$ $<6$', size=38)
 b_r2 = IH('b_r2', '$a+b+c>3\\times6=18$', size=36)
 b_r3 = IH('b_r3', '$a+b+c+d<4\\times6=24$', size=36)
 b_r4 = IH('b_r4', 'so $d<24-18=6$', size=36)
-b_r5 = IH('b_r5', '$a=2,\\ b=9,\\ c=10$: $\\ 21\\div3=7$', size=36, col=1)
+b_r5 = IH('b_r5', '$a=2,\\ b=9,\\ c=10$', size=36, col=1)
+b_r5a = IH('b_r5a', '$21\\div3=7>6$', size=36, col=1)
+b_r5b = IH('b_r5b', '$d=1$: $\\ (21+1)\\div4=5.5<6$', size=34, col=1)
 b_r6 = IH('b_r6', '$a=2$ is below $6$', size=36, col=1)
 b_r7 = I('b_r7', 'Must be true? $\\ $Test the others with numbers.', size=36, col=1)
 b_z1 = I('b_z1', 'the sum $=$ how many $\\times$ the average', size=36)
@@ -1170,8 +1176,8 @@ video('wp-081', 'lesson', slides=[
         "group. Now the average is twenty-two. How many numbers were there before?", show(b_j0, 'A new number, thirty')),
       L("Let's use the balance. Now thirty is in the group, so we compare it to the new average. Thirty minus twenty-two is "
         "eight. So thirty is eight above the new average.", show(b_j1, 'Thirty minus twenty-two')),
-      L("The old numbers had an average of twenty. So each one counts as twenty, like we just saw. That's two below "
-        "the new average.", show(b_j2, "That's two below")),
+      L("The old numbers had an average of twenty. For the balance, we replace them by twenties. Their total stays the "
+        "same. Each twenty is two below the new average.", show(b_j2, 'two below the new average')),
       L("The eight above must balance the old numbers below. Each old number is two below. Eight divided by two is four. So "
         "there were four numbers before.", show(b_j3, 'Eight divided by two')),
       L("Let's check with sums. Before, four numbers with an average of twenty. Four times twenty is eighty.",
@@ -1223,7 +1229,8 @@ video('wp-081', 'lesson', slides=[
         "eighty is thirty above.", show(b_l1, 'Eighty minus fifty')),
       L("The numbers that are left have an average of forty-five. Fifty minus forty-five is five. So each one is five "
         "below fifty.", show(b_l2, 'Fifty minus forty-five')),
-      L("Thirty divided by five is six. So six numbers are left.", show(b_l3, 'Thirty divided by five')),
+      L("The eighty was thirty above fifty. So those left must be thirty below fifty together. Each counts as five below. "
+        "Thirty divided by five is six. So six numbers are left.", show(b_l3, 'Thirty divided by five')),
       L("Let's check. Six times forty-five is two hundred seventy. Plus eighty is three hundred fifty. And seven numbers "
         "with an average of fifty also give seven times fifty, three hundred fifty.", show(b_l4, 'Six times forty-five'),
         show(b_l5, 'Plus eighty'), show(b_l6, 'seven times fifty')),
@@ -1250,8 +1257,8 @@ video('wp-081', 'lesson', slides=[
       L("Let's try five. Then every other day had fewer calls, so at most four.", show(b_y2, "Let's try five")),
       L("So five calls on the busiest day, and four other days with four calls each. Four times four is sixteen, plus "
         "five is twenty-one. That's less than twenty-two, so five is not enough.", show(b_y3, 'Four times four is sixteen')),
-      L("Let's try six. The other days can have up to five each. Four times five is twenty, plus six is twenty-six. That's "
-        "enough, and the other days can simply have fewer calls. So the answer is six.", show(b_y4, 'Four times five is twenty')),
+      L("Let's try six. The other four days can have four calls each. Six plus four plus four plus four plus four is "
+        "twenty-two. Six is more than every other day, so the answer is six.", show(b_y4, 'Six plus four plus four')),
       L("So for the biggest possible value, make the others as small as they can be. For the smallest possible biggest "
         "value, make the others as big as they can be.", show(b_y5, 'So for the biggest possible'),
         show(b_y6, 'For the smallest possible biggest'))),
@@ -1292,8 +1299,9 @@ video('wp-081', 'lesson', slides=[
       L("And all four add up to less than four times six, twenty-four.", show(b_r3, 'less than four times six')),
       L("So d is less than twenty-four minus eighteen, six.", show(b_r4, 'So d is less than')),
       L("What about a alone? It can be below six. For example, a is two, b is nine, and c is ten. Their sum is twenty-one, "
-        "and twenty-one divided by three is seven. That's more than six, so it fits.", show(b_r6, 'It can be below six'),
-        show(b_r5, 'a is two, b is nine')),
+        "and twenty-one divided by three is seven, above six. Choose d as one. The four add up to twenty-two, divided "
+        "by four, five point five. That's below six, so both givens hold.", show(b_r6, 'It can be below six'),
+        show(b_r5, 'a is two, b is nine'), show(b_r5a, 'twenty-one divided by three'), show(b_r5b, 'divided by four, five point five')),
       L("So a doesn't have to be above six. Only d is sure. When they ask what must be true, test the other letters with "
         "numbers.", show(b_r7, 'When they ask what must be true'))),
     S('Summary',
@@ -1353,7 +1361,8 @@ g83d = IH('g83d', '$158+1=159$', size=30, col=1)
 g83e = IH('g83e', '$159+20=179$', size=30, col=1)
 g83g = IH('g83g', '$179-2=177$', size=30, col=1)
 g83h = IH('g83h', '$164+18=182$: $\\ $the trap', size=30, col=1)
-g83z = OWN(ZL('g83z', 155, 173, [('e', [('ink', 169, 'Ethan'), ('arrow', 164, 169, '5'), ('below', 169, '169')]),
+g83z = OWN(ZL('g83z', 155, 173, [('e', [('ink', 169, 'Ethan'), ('below', 169, '169')]),
+                                 ('gap', [('arrow', 164, 169, '5')]),
                                  ('c', [('arrow', 164, 159, '5'), ('pt', 159, 'Chloe'), ('below', 159, '159')])],
               ticks=((164, '164'),), w=560, title='Ethan, Chloe and their average 164'), 'g83z')
 g83i = IH('g83i', '$169-164=5$', size=30, col=1)
@@ -1387,7 +1396,8 @@ video('solve-wp25-g083', 'solution', qid='wp25-g083', slides=[
       L("[pause] Now by understanding, with the balance. We start again from the givens. Like in the lesson, the average "
         "of two numbers is exactly in the middle between them.", show(g83z['line'], 'exactly in the middle')),
       L("Ethan is a hundred sixty-nine. A hundred sixty-nine minus a hundred sixty-four is five. So Ethan is five above "
-        "the average.", show(g83z['e'], 'Ethan is a hundred sixty-nine'), show(g83i, 'A hundred sixty-nine minus')),
+        "the average.", show(g83z['e'], 'Ethan is a hundred sixty-nine'), show(g83i, 'A hundred sixty-nine minus'),
+        show(g83z['gap'], 'is five')),
       L("So Chloe must be five below the average, on the other side. A hundred sixty-four minus five is a hundred "
         "fifty-nine.", show(g83z['c'], 'So Chloe must be five below'), show(g83j, 'A hundred sixty-four minus five')),
       L("That's the same Chloe, with almost no calculation. Ryan is eighteen centimeters more. A hundred fifty-nine plus "
@@ -1409,7 +1419,8 @@ q2g = IH('q2g', '$163+179=342$', size=30, col=1)
 q2h = IH('q2h', '$425-340=85$', size=30, col=1)
 q2i = IH('q2i', '$85-2=83$', size=30, col=1)
 q2t = TBL('q2t', ['78', '85', '91', '88', '?'], ['vs. 85'], [
-    ('d1', [('c', 0, 0, '−7'), ('c', 0, 1, '0')]), ('d2', [('c', 0, 2, '+6'), ('c', 0, 3, '+3')]), ('d3', [('c', 0, 4, '−2', _TEAL)])],
+    ('d1', [('c', 0, 0, '−7')]), ('zero', [('c', 0, 1, '0')]), ('d2', [('c', 0, 2, '+6')]),
+    ('three', [('c', 0, 3, '+3')]), ('d3', [('c', 0, 4, '−2', _TEAL)])],
     colw=96, labw=130, rowh=64, w=560)
 q2j = IH('q2j', '$-7+6=-1$', size=30, col=1)
 q2k = IH('q2k', '$-1+3=2$', size=30, col=1)
@@ -1438,8 +1449,9 @@ video('solve-q-r26-t25-02', 'solution', qid='q-r26-t25-02', slides=[
         "differences from the average add up to zero. So we compare each score to eighty-five.",
         show(q2t['line'], 'So we compare each score')),
       L("Seventy-eight is seven below, so minus seven. Eighty-five is the average itself, so zero.",
-        show(q2t['d1'], 'Seventy-eight is seven below')),
-      L("Ninety-one is six above, plus six. Eighty-eight is three above, plus three.", show(q2t['d2'], 'Ninety-one is six above')),
+        show(q2t['d1'], 'so minus seven'), show(q2t['zero'], 'so zero')),
+      L("Ninety-one is six above, plus six. Eighty-eight is three above, plus three.", show(q2t['d2'], 'plus six'),
+        show(q2t['three'], 'plus three')),
       L("Together, minus seven plus six is minus one. Minus one plus three is plus two.", show(q2j, 'minus seven plus six'),
         show(q2k, 'Minus one plus three')),
       L("So the four scores are two points above the average, together. The fifth score must balance them. So it's two "
@@ -1543,7 +1555,8 @@ video('solve-q-r26-t25-03', 'solution', qid='q-r26-t25-03', slides=[
 # numbers" is NEW here (topic 16 comes later): explained with an example. Traps at the step: 34 (steps of one), 39 (odd).
 q4a = IH('q4a', 'like $12,\\ 14,\\ 16$: $\\ +2$ each', size=30)
 q4t = TBL('q4t', ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th', '9th'], [''], [
-    ('m', [('c', 0, 4, '30', _TEAL)]), ('u', [('c', 0, 5, '32'), ('c', 0, 6, '34'), ('c', 0, 7, '36'), ('c', 0, 8, '38')]),
+    ('m', [('c', 0, 4, '30', _TEAL)]), ('u1', [('c', 0, 5, '32')]), ('u2', [('c', 0, 6, '34')]),
+    ('u3', [('c', 0, 7, '36')]), ('u4', [('c', 0, 8, '38')]),
     ('b', [('box', 0, 8)])], colw=84, rowh=64, size=30, w=780)
 q4b = IH('q4b', '$30+4=34$: $\\ $steps of $1$, no', size=30)
 q4c = IH('q4c', '$39$ is odd, no', size=30)
@@ -1568,7 +1581,7 @@ video('solve-q-r26-t25-04', 'solution', qid='q-r26-t25-04', slides=[
       L("There are nine numbers. The middle one is the fifth, with four numbers before it and four after it. So the fifth "
         "number is thirty.", show(q4t['m'], 'So the fifth number is thirty')),
       L("Now we go up four numbers, two each time. Thirty-two, thirty-four, thirty-six, thirty-eight.",
-        show(q4t['u'], 'Thirty-two, thirty-four')),
+        show(q4t['u1'], 'Thirty-two'), show(q4t['u2'], 'thirty-four'), show(q4t['u3'], 'thirty-six'), show(q4t['u4'], 'thirty-eight')),
       L("So the biggest is thirty-eight.", show(q4t['b'], 'So the biggest is thirty-eight')),
       L("Careful with thirty-four, choice number one. That's thirty plus four, as if each step were one. But each step is "
         "two, because the numbers are even.", show(q4b, "That's thirty plus four"), mk('cross', 'choice 1', 'But each step is two')),
@@ -1700,14 +1713,16 @@ video('solve-wp25-g084', 'solution', qid='wp25-g084', slides=[
 # order. English (September): Omar and Lena, 6 and 5 -> 16. REMINDERS: the formula, the two-number balance, plugging in.
 # Trap at the step: 11 = 6 + 5.
 g85t = TBL('g85t', ['geography', 'music', 'average'], ['Omar', 'Lena'], [
-    ('g', [('c', 0, 0, 'g'), ('c', 1, 0, 'g+6')]), ('m', [('c', 0, 1, 'm'), ('c', 1, 1, 'L')]),
+    ('g', [('c', 0, 0, 'g')]), ('lg', [('c', 1, 0, 'g+6')]),
+    ('m', [('c', 0, 1, 'm')]), ('lm', [('c', 1, 1, 'L')]),
     ('a', [('c', 0, 2, '(g+m)÷2', None), ('c', 1, 2, '(g+6+L)÷2')])], colw=170, labw=120, rowh=62, size=28, w=560)
 g85a = IH('g85a', '$\\frac{g+m}{2}=\\frac{g+6+L}{2}+5$', size=30, col=1)
 g85b = IH('g85b', '$g+m=g+6+L+10$', size=30, col=1)
 g85c = IH('g85c', '$m=L+16$', size=30, col=1)
 g85d = IH('g85d', '$6+5=11$: $\\ $the trap', size=30, col=1)
 g85u = TBL('g85u', ['geography', 'music', 'average'], ['Omar', 'Lena'], [
-    ('g', [('c', 0, 0, '70'), ('c', 1, 0, '76')]), ('m', [('c', 0, 1, '70'), ('c', 0, 2, '70')]),
+    ('g', [('c', 0, 0, '70')]), ('lg', [('c', 1, 0, '76')]),
+    ('m', [('c', 0, 1, '70')]), ('om', [('c', 0, 2, '70')]),
     ('a', [('c', 1, 2, '65')]), ('l', [('c', 1, 1, '54', _TEAL)])], colw=170, labw=120, rowh=62, size=30, w=560)
 g85e = IH('g85e', '$70-5=65$', size=30, col=1)
 g85f = IH('g85f', '$76-65=11$', size=30, col=1)
@@ -1724,11 +1739,12 @@ video('solve-wp25-g085', 'solution', qid='wp25-g085', slides=[
       L("Let's start with the math way. Two people and two tests. So we make a row for each person, a column for each "
         "test, and a column for the average.", show(g85t['line'], 'So we make a row for each person')),
       L("Omar's geography score isn't given, so let's call it g. Lena's geography score is six points higher, so it's g "
-        "plus six.", show(g85t['g'], "so let's call it g")),
-      L("The music scores aren't given either. Let's call Omar's m, and Lena's L.", show(g85t['m'], "Let's call Omar's m")),
+        "plus six.", show(g85t['g'], "so let's call it g"), show(g85t['lg'], "so it's g plus six")),
+      L("The music scores aren't given either. Let's call Omar's m, and Lena's L.", show(g85t['m'], "Let's call Omar's m"),
+        show(g85t['lm'], "and Lena's L")),
       L("Each average is the sum of the two tests, divided by two.", show(g85t['a'], 'Each average is the sum')),
-      L("Omar's average is five more than Lena's. So g plus m over two is equal to g plus six plus L over two, plus five.",
-        show(g85a, 'So g plus m over two')),
+      L("Omar's average is five more than Lena's. Divide the whole sum, g plus m, by two. That equals the whole sum, "
+        "g plus six plus L, divided by two, plus five.", show(g85a, 'Divide the whole sum')),
       L("We multiply both sides by two, to get rid of the twos. Five times two is ten.", show(g85b, 'Five times two is ten')),
       L("Now g is on both sides, so we take it away. And six plus ten is sixteen. So m is equal to L plus sixteen.",
         show(g85c, 'So m is equal to L plus sixteen')),
@@ -1740,9 +1756,9 @@ video('solve-wp25-g085', 'solution', qid='wp25-g085', slides=[
       L("[pause] Now let's plug in numbers. We start again from the givens, with the same table.",
         show(g85u['line'], 'with the same table')),
       L("Omar's geography score isn't given, so let's pick a round number, seventy. Lena's is six points higher, "
-        "seventy-six.", show(g85u['g'], "so let's pick a round number")),
+        "seventy-six.", show(g85u['g'], 'seventy.'), show(g85u['lg'], 'seventy-six')),
       L("Omar's music score isn't given either. Let's pick seventy again. Why? Because then his average is simply seventy, "
-        "with no calculation.", show(g85u['m'], "Let's pick seventy again")),
+        "with no calculation.", show(g85u['m'], "Let's pick seventy again"), show(g85u['om'], 'his average is simply seventy')),
       L("Omar's average is five points higher than Lena's. So Lena's average is seventy minus five, sixty-five.",
         show(g85e, 'seventy minus five'), show(g85u['a'], 'sixty-five')),
       L("Now Lena's music score. Like in the lesson, the average of two numbers is exactly in the middle between them."),
@@ -1840,7 +1856,7 @@ c_f7 = IH('c_f7', '$1+2+3=6$', size=36, col=1)
 c_f8 = IH('c_f8', '$450\\div6=75$', size=36, col=1)
 c_f9 = I('c_f9', 'Divide by the sum of the weights, $\\ $not by how many values', size=34)
 c_w1 = SAW('c_w1', '40', '80', [('vals', [('vals',)]), ('wts', [('wts', '×1', '×3'), ('heavy', 1)]), ('units', [('units', 4)]),
-                                ('pivot', [('pivot', 3, 4, '70')]), ('dist', [('dl', 3, 4, '30'), ('dr', 3, 4, '10')])], w=560)
+                                ('pivot', [('pivot', 3, 4, '70')]), ('dist1', [('dl', 3, 4, '30')]), ('dist2', [('dr', 3, 4, '10')])], w=560)
 c_w2 = I('c_w2', 'weights $3:1$, $\\ $distances $1:3$', size=30, col=1)
 c_w3 = IH('c_w3', '$3\\times10=30$', size=36, col=1)
 c_w4 = IH('c_w4', '$1\\times30=30$', size=36, col=1)
@@ -1869,8 +1885,9 @@ c_p1 = IH('c_p1', '$50-30=20$', size=36)
 c_p2 = IH('c_p2', '$10\\%$ of $20$ $=2$', size=36)
 c_p3 = IH('c_p3', '$30\\%$ of $20$ $=6$', size=36)
 c_p4 = IH('c_p4', '$30+6=36$', size=36)
-c_p5 = I('c_p5', 'Start at the low value, $\\ $add its share of the gap', size=34, col=1)
+c_p5 = I('c_p5', 'Start at the low value. $\\ $Add the HIGH-price group\'s share of the gap.', size=32, col=1)
 c_p6 = IH('c_p6', '$40$: $\\ $only for $50\\%$ and $50\\%$', size=36, col=1)
+c_p7 = IH('c_p7', '$50-36=14$', size=36, col=1)
 c_s1 = I('c_s1', 'Each value $\\times$ its weight, $\\ \\div$ the sum of the weights', size=36)
 c_s2 = I('c_s2', 'Closer to the heavy side: $\\ $the distances are the weights, flipped', size=36)
 c_s3 = I('c_s3', 'Groups: $\\ $the weight is the size. $\\ $Percents are weights too.', size=36)
@@ -1882,8 +1899,8 @@ video('wp-086', 'lesson', slides=[
       L("In a weighted average, some values are more important than others. We say they have a bigger weight.",
         show(c_d0, 'In a weighted average')),
       L("You know it from school. A big final exam counts more than a small quiz."),
-      L("The heavier value pulls the average toward itself. So the average isn't in the middle anymore. It's closer to "
-        "the heavier value.", show(c_d1, 'The heavier value pulls')),
+      L("With two different values, the heavier one pulls the average toward itself. The average is closer to the "
+        "heavier value, not halfway between them.", show(c_d1, 'the heavier one pulls')),
       L("And on the exam it usually just says average, not weighted average. So it's up to us to notice that the values "
         "have different weights.")),
     S('As if there were copies',
@@ -1920,8 +1937,9 @@ video('wp-086', 'lesson', slides=[
       L("How far? Let's go back to Dan. Forty with weight one, and eighty with weight three.",
         show(c_w1['line'], "Let's go back to Dan"), show(c_w1['vals'], 'Forty with weight one'), show(c_w1['wts'], 'eighty with weight three')),
       L("The average was seventy. Seventy is thirty from forty, and ten from eighty.", show(c_w1['units'], 'The average was seventy'),
-        show(c_w1['pivot'], 'The average was seventy'), show(c_w1['dist'], 'Seventy is thirty from forty')),
-      L("So the side of eighty is three times heavier, and it's three times closer. The weights are three to one, and the distances "
+        show(c_w1['pivot'], 'The average was seventy'), show(c_w1['dist1'], 'Seventy is thirty from forty'),
+        show(c_w1['dist2'], 'ten from eighty')),
+      L("So the side of eighty is three times heavier, and it's three times closer. For eighty compared with forty, the weights are three to one, and the distances "
         "are one to three.", show(c_w2, 'The weights are three to one')),
       L("Why? Weight times distance is the same on both sides. Three times ten is thirty. And one times thirty is thirty. "
         "That's why the seesaw balances.", show(c_w3, 'Three times ten'), show(c_w4, 'one times thirty')),
@@ -1937,7 +1955,7 @@ video('wp-086', 'lesson', slides=[
       L("The gap is eighty minus thirty, fifty. Fifty divided by five is ten. So each unit is ten.",
         show(c_x2, 'eighty minus thirty'), show(c_x3, 'Fifty divided by five')),
       L("The heavy side gets the small part. So the average is one unit from eighty. Eighty minus ten is seventy.",
-        show(c_x1['pivot'], 'So the average is one unit'), show(c_x4, 'Eighty minus ten')),
+        show(c_x4, 'Eighty minus ten'), show(c_x1['pivot'], 'is seventy')),
       L("Let's check with the formula. Eighty times four is three hundred twenty, plus thirty is three hundred fifty. Three "
         "hundred fifty divided by five is seventy. The same.", show(c_x5, 'Eighty times four'), show(c_x5b, 'plus thirty is three hundred fifty'), show(c_x6, 'Three hundred fifty divided')),
       L("So remember. The heavy side gets the small part of the gap.", show(c_x7, 'The heavy side gets the small part of the gap'))),
@@ -1969,7 +1987,7 @@ video('wp-086', 'lesson', slides=[
         show(c_p3, 'so thirty percent is six')),
       L("Thirty plus six is thirty-six. So the average price is thirty-six dollars.", show(c_p4, 'Thirty plus six')),
       L("Why does it work? It's the seesaw again. Seventy percent is the heavy side, so it gets the small part of the gap, "
-        "six. The light side gets the big part, fourteen."),
+        "six. The light side gets the big part, fourteen.", show(c_p7, 'fourteen')),
       L("The trap is forty, the plain middle. It's only right when the shares are fifty percent and fifty percent.",
         show(c_p6, 'The trap is forty'))),
     S('Summary',
@@ -2034,7 +2052,7 @@ video('solve-wp25-g087', 'solution', qid='wp25-g087', slides=[
       L("The gap is ninety-seven minus sixty-one, thirty-six. Thirty-six divided by three is twelve. So each unit is "
         "twelve.", show(g87i, 'ninety-seven minus sixty-one'), show(g87j, 'Thirty-six divided by three')),
       L("The heavy side gets the small part. So the average is one unit from sixty-one. Sixty-one plus twelve is "
-        "seventy-three.", show(g87s['pivot'], 'So the average is one unit'), show(g87k, 'Sixty-one plus twelve'))),
+        "seventy-three.", show(g87k, 'Sixty-one plus twelve'), show(g87s['pivot'], 'seventy-three'))),
     S('Method 2 · Understanding: the seesaw',
       L("Let's check from the other side. That's two units from ninety-seven. Two times twelve is twenty-four. And "
         "ninety-seven minus twenty-four is seventy-three.", show(g87l, 'Two times twelve'), show(g87m, 'ninety-seven minus twenty-four')),
@@ -2081,7 +2099,7 @@ video('solve-wp25-g088', 'solution', qid='wp25-g088', slides=[
       L("The gap is ninety-one minus fifty-five, thirty-six. Thirty-six divided by six is six. So each unit is six.",
         show(g88a, 'ninety-one minus fifty-five'), show(g88b, 'Thirty-six divided by six')),
       L("The heavy side gets the small part, one unit. Ninety-one minus six is eighty-five.",
-        show(g88s['pivot'], 'The heavy side gets the small part'), show(g88c, 'Ninety-one minus six')),
+        show(g88c, 'Ninety-one minus six'), show(g88s['pivot'], 'is eighty-five')),
       L("Careful with sixty-one, choice number three. That's one unit from fifty-five, the light side.",
         show(g88d, "That's one unit from fifty-five"), mk('cross', 'choice 3', 'the light side')),
       L("So the score is eighty-five. That's choice number two.")),
@@ -2159,7 +2177,7 @@ video('solve-wp25-g089', 'solution', qid='wp25-g089', slides=[
       L("The heavy side, seventy-eight, gets the small part, two units. Two times four is eight. Seventy-eight minus eight "
         "is seventy.", show(g89j, 'Two times four'), show(g89k, 'Seventy-eight minus eight'), show(g89t['pivot'], 'is seventy.')),
       L("Let's check from the other side, three units from fifty-eight. Three times four is twelve. And fifty-eight plus "
-        "twelve is seventy.", show(g89t['dl'], 'three units from fifty-eight'), show(g89l, 'fifty-eight plus twelve')),
+        "twelve is seventy.", show(g89t['dl'], 'is twelve'), show(g89l, 'fifty-eight plus twelve')),
       L("Choice number one is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 1', 'Choice number one is our answer'))),
 ])
@@ -2177,7 +2195,8 @@ g90d = IH('g90d', '$5x+3(2000-x)=6800$', size=30, col=1)
 g90e = IH('g90e', '$5x+6000-3x=6800$', size=30, col=1)
 g90f = IH('g90f', '$2x=800$', size=30, col=1)
 g90g = IH('g90g', '$x=400$', size=30, col=1)
-g90s = SAW('g90s', '3', '5', [('vals', [('vals',)]), ('pivot', [('pivot', 1, 5, '3.4')]), ('dist', [('dl', 1, 5, '0.4'), ('dr', 1, 5, '1.6')]),
+g90s = SAW('g90s', '3', '5', [('vals', [('vals',)]), ('pivot', [('pivot', 1, 5, '3.4')]),
+                              ('dist1', [('dl', 1, 5, '0.4')]), ('dist2', [('dr', 1, 5, '1.6')]),
                               ('wts', [('wts', '×4', '×1')])], w=560)
 g90h = IH('g90h', '$1.6\\div0.4=4$', size=30, col=1)
 g90i = IH('g90i', '$4+1=5$ parts', size=30, col=1)
@@ -2200,8 +2219,8 @@ video('solve-wp25-g090', 'solution', qid='wp25-g090', slides=[
       L("Let's start with the math way. The values are three and five kilograms. The weights are the numbers of boxes."),
       L("The number of five-kilogram boxes isn't given, so let's call it x. The rest, two thousand minus x boxes, weigh "
         "three kilograms.", show(g90a, "so let's call it x"), show(g90b, 'The rest, two thousand minus x')),
-      L("Each weight times its number of boxes, divided by all two thousand boxes, is three point four.",
-        show(g90c, 'Each weight times its number')),
+      L("Multiply each box weight by its number of boxes. Add the two totals. Divide that sum by all two thousand "
+        "boxes, and the average is three point four.", show(g90c, 'Divide that sum')),
       L("We multiply both sides by two thousand. Two thousand times three is six thousand. And two thousand times zero "
         "point four is eight hundred. So the right side is six thousand eight hundred.", show(g90d, 'So the right side is')),
       L("We open the brackets. Three times two thousand is six thousand. And three times x is three x.",
@@ -2214,7 +2233,8 @@ video('solve-wp25-g090', 'solution', qid='wp25-g090', slides=[
       L("[pause] Now by understanding, with the seesaw, but backwards. We start again from the givens. This time we know "
         "where the pivot is, three point four. And we look for the weights.", show(g90s['line'], 'with the seesaw, but backwards'),
         show(g90s['vals'], 'with the seesaw, but backwards'), show(g90s['pivot'], 'where the pivot is')),
-      L("Three point four is zero point four from three, and one point six from five.", show(g90s['dist'], 'is zero point four from three')),
+      L("Three point four is zero point four from three, and one point six from five.", show(g90s['dist1'], 'is zero point four from three'),
+        show(g90s['dist2'], 'one point six from five')),
       L("One point six divided by zero point four is four. So the average is four times closer to three.",
         show(g90h, 'One point six divided by')),
       L("Like in the lesson, the heavy side is the closer side. So the three-kilogram group is four times bigger. The "
@@ -2227,8 +2247,8 @@ video('solve-wp25-g090', 'solution', qid='wp25-g090', slides=[
         "one, is two thousand divided by four. But there are five parts, not four.", mk('cross', 'choice 2', "That's the three-kilogram boxes"),
         show(g90l, 'is two thousand divided by four'), mk('cross', 'choice 1', 'But there are five parts')),
       L("So four hundred again, choice number three."),
-      L("This works every time the average is given and they ask about the groups. The distances from the average, "
-        "flipped, give the sizes of the groups. The closer value has the bigger group.")),
+      L("With two known values and their average, the distances, flipped, give the ratio of the group sizes. The closer "
+        "value has the bigger group. We also need the total to find how many are in each group.")),
     S('Method 3 · Insight: start at the low value',
       L("[pause] Now an insight. We start again from the givens. Let's pretend every box weighs three kilograms. Two "
         "thousand times three is six thousand kilograms.", show(g90m, 'Two thousand times three')),
@@ -2244,6 +2264,89 @@ video('solve-wp25-g090', 'solution', qid='wp25-g090', slides=[
 ])
 
 CARRY25['solve-wp25-g087'] = {2: ['$1$ unit $=12$', 'average: $\\ 61+12=73$']}
+# 21 Oct clarity review: independent calculations reveal at their own spoken clauses.
+def _clause_rows(vid, name, *pieces):
+    found = 0
+    for sl in VIDEOS[vid]['slides']:
+        for ln in sl['lines']:
+            cues = []
+            for cue in ln['cues']:
+                if cue[0] == 'show' and cue[1]['_name'] == name:
+                    old = cue[1]; found += 1
+                    for j, (tex, anchor) in enumerate(pieces):
+                        assert anchor.lower() in ln['say'].lower(), (vid, name, anchor)
+                        make = IH if old.get('_hand') else I
+                        it = make(name if not j else name+'_clause'+str(j), tex,
+                                  size=old.get('size',30), col=old['_col'])
+                        cues.append(show(it, anchor))
+                else: cues.append(cue)
+            def pos(c):
+                anchor = c[2] if c[0] in ('show','point') else c[3]
+                return -1 if anchor.startswith('<') else ln['say'].lower().find(anchor.lower())
+            ln['cues'] = sorted(cues, key=pos)
+    assert found == 1, (vid, name, found)
+
+_clause_rows('wp-080', 'a_k1',
+    ('$3,\\ 5,\\ 7$', 'Take three, five and seven'),
+    ('average $5$', 'The average is five'))
+_clause_rows('wp-080', 'a_k2',
+    ('$3,\\ 5,\\ 5,\\ 7$', "What's the average of three, five, five"),
+    ('average still $5$', 'So the average is still five'))
+_clause_rows('wp-080', 'a_k4',
+    ('average $10$, $\\ $add $10$', 'four numbers have an average of ten'),
+    ('average stays $10$', 'The average stays ten'))
+_clause_rows('wp-080', 'a_k5',
+    ('add $12>10$', 'But if we add twelve'),
+    ('the average goes up', 'So the average goes up'))
+_clause_rows('wp-080', 'a_e3',
+    ('$3$ and $19$', 'Three and nineteen are a pair'),
+    ('$7$ and $15$', 'Seven and fifteen are a pair'),
+    ('middle $11$', 'eleven is in the middle'))
+_clause_rows('wp-080', 'a_w1',
+    ('family: average $31$', 'The average age in a family is thirty-one'),
+    ('in $4$ years: everyone $+4$', 'In four years'),
+    ('$31+4=35$', 'thirty-one plus four, thirty-five'))
+_clause_rows('wp-081', 'b_n4',
+    ('$4\\times6=24$', 'Four times six is twenty-four'),
+    ('$24+11=35$', 'Twenty-four plus eleven is thirty-five'))
+_clause_rows('wp-081', 'b_g4',
+    ('$3\\times20=60$ kg before', 'Three times twenty is sixty'),
+    ('$4\\times18=72$ kg after', 'Four times eighteen is seventy-two'))
+_clause_rows('wp-081', 'b_g6',
+    ('$3\\times2=6$ below', 'by three, we get six below'),
+    ('$20-6=14$ kg: trap', 'and fourteen kilos'))
+_clause_rows('wp-081', 'b_y3',
+    ('$4\\times4=16$', 'Four times four is sixteen'),
+    ('$16+5=21<22$', 'plus five is twenty-one'))
+_clause_rows('wp-081', 'b_q8',
+    ('$n=2$', 'n is two'),
+    ('$m=6$', 'so m is six'))
+_clause_rows('wp-086', 'c_f1',
+    ('$\\frac{80\\times3+40\\times1}{3+1}$', 'For Dan'),
+    ('$280\\div4=70$', "That's two hundred eighty divided by four"))
+_clause_rows('wp-086', 'c_f6',
+    ('$90+120=210$', 'Ninety plus a hundred twenty is two hundred ten'),
+    ('$210+240=450$', 'Plus two hundred forty is four hundred fifty'))
+_clause_rows('solve-wp25-p18', 'p18h',
+    ('$y=0$', "Let's pick y as zero"),
+    ('$z=10$', 'And z as ten'))
+
+# An answer label must not arrive before the corresponding calculation.
+_later = {
+    'solve-wp25-g083': {'g83z_c':'fifty-nine.'},
+    'solve-wp25-g084': {'g84m':'Four times one is four', 'g84n':'Two times one is two',
+                        'g84o':'Six times one is six', 'g84p':'Three times one is three'},
+}
+for _vid, _anchors in _later.items():
+    for _sl in VIDEOS[_vid]['slides']:
+        for _ln in _sl['lines']:
+            for _j, _cue in enumerate(_ln['cues']):
+                if _cue[0]=='show' and _cue[1]['_name'] in _anchors:
+                    _anchor=_anchors[_cue[1]['_name']]
+                    assert _anchor.lower() in _ln['say'].lower(), (_vid,_anchor)
+                    _ln['cues'][_j]=show(_cue[1],_anchor)
+            _ln['cues'].sort(key=lambda c: -1 if (c[2] if c[0] in ('show','point') else c[3]).startswith('<') else
+                            _ln['say'].lower().find((c[2] if c[0] in ('show','point') else c[3]).lower()))
 # =================================================================================================================
 # Extra-visual pass (about one event every 2-4 s): in a solution video every spoken "number N" that has no cue on that
 # choice in the same sentence gets a POINT on choice N; every "the given(s)" / "the question" without a cue points at the

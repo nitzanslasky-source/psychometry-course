@@ -23,16 +23,16 @@
     "say": "Sunday. Sixty percent plus twenty percent is eighty percent.",
     "at": [
      "Sixty percent plus twenty",
-     "Sixty percent plus twenty",
      "is eighty percent"
     ]
    },
    {
     "say": "Eighty percent of three hundred. Ten percent of three hundred is thirty. So eighty percent is eight times thirty, two hundred forty.",
     "at": [
-     "Ten percent of three hundred",
-     "is thirty. So",
-     "eight times thirty"
+     "Eighty percent of",
+     "is thirty",
+     "is eight times",
+     "two hundred forty"
     ]
    }
   ],
@@ -40,32 +40,37 @@
    {
     "say": "Monday. Fifty plus twenty-five is seventy-five percent, of four hundred guests.",
     "at": [
-     "Fifty plus twenty-five",
-     "percent, of four"
+     "is seventy-five percent",
+     "of four hundred guests"
     ]
    },
    {
     "say": "Seventy-five percent is three quarters. A quarter of four hundred is a hundred, so three quarters is three hundred.",
     "at": [
-     "A quarter of four hundred",
-     "is a hundred"
+     "Seventy-five percent is",
+     "so three quarters is three hundred"
     ]
    },
    {
     "say": "Tuesday. Twenty-five plus twenty-five is fifty percent, of five hundred. That's half, two hundred fifty.",
     "at": [
      "Twenty-five plus twenty-five",
-     "percent, of five"
+     "two hundred fifty"
     ]
    },
    {
     "say": "Thursday. Thirty plus twenty is fifty percent, of three hundred fifty. Half of three hundred fifty is a hundred seventy-five.",
     "at": [
      "Thirty plus twenty",
-     "percent, of three"
+     "is a hundred seventy-five"
     ]
    },
-   "The greatest is Monday, three hundred.",
+   {
+    "say": "The greatest is Monday, three hundred.",
+    "at": [
+     "The greatest is"
+    ]
+   },
    {
     "say": "Look at the two traps. The tallest bar is Tuesday. The biggest percent is Sunday. But neither one wins, because we need both numbers together.",
     "at": [

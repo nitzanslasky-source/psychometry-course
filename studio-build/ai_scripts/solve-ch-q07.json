@@ -69,13 +69,14 @@
    {
     "say": "Now we add them up. Two plus three is five. Five plus one is six, and six plus one is seven. Seven plus two is nine.",
     "at": [
-     "Now we add them up",
-     "Two plus three"
+     "Now we add",
+     "is nine"
     ]
    },
    {
     "say": "Careful, if we count only changes of more than three, we get three, choice number three. But three or more includes exactly three.",
     "at": [
+     "only changes of",
      "choice number three"
     ]
    },

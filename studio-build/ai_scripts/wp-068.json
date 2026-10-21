@@ -103,14 +103,14 @@
    {
     "say": "Let's see it with other numbers. There are twenty students. Eight have a dog, and twelve have a cat. The biggest overlap is eight, the smaller group. All eight dog owners can also have a cat.",
     "at": [
-     "Eight have a dog",
-     "The biggest overlap"
+     "The biggest overlap is eight",
+     "the smaller group"
     ]
    },
    {
     "say": "And if the groups are equal? Say six and six. Then the biggest overlap is six. The two groups can be the very same six people.",
     "at": [
-     "Say six and six",
+     "Then the biggest overlap is six",
      "The two groups"
     ]
    }
@@ -181,13 +181,15 @@
    {
     "say": "A lot of students take seventeen minus twenty, and get minus three. But an overlap can't be negative. Nothing goes over the total, so the smallest overlap is zero.",
     "at": [
-     "A lot of students take",
-     "But an overlap"
+     "seventeen minus twenty, and get minus three",
+     "But an overlap",
+     "so the smallest overlap is zero"
     ]
    },
    {
     "say": "So we always ask, how far do the groups go over the total? If they don't go over it, the smallest overlap is zero. [pause] Okay. I'll see you in the next part.",
     "at": [
+     "So we always",
      "If they don't go over it",
      "it, the smallest"
     ]

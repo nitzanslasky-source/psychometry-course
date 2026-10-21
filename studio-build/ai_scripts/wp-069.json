@@ -271,10 +271,10 @@
     ]
    },
    {
-    "say": "So when you see words like different, together, or each one did at least one, neither is zero. And that's the box to start from.",
+    "say": "So check what the total counts, not just one word. If it counts only people or things in at least one group, neither is zero. That's the box to start from.",
     "at": [
-     "when you see words like different",
-     "different, together, or"
+     "If it counts only people or things",
+     "or things in"
     ]
    }
   ],
@@ -297,10 +297,11 @@
     ]
    },
    {
-    "say": "Without the boxes, we take both away twice. Why twice? Because the six in both are inside the art group, and also inside the drama group.",
+    "say": "Without the boxes, add the two groups, then subtract both twice. Why twice? The six in both were counted in art and in drama. We don't want them in exactly one, so we remove both copies.",
     "at": [
-     "we take both away twice",
-     "Because the six"
+     "the two groups",
+     "then subtract both twice",
+     "The six in"
     ]
    },
    {

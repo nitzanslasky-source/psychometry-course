@@ -152,9 +152,9 @@
     ]
    },
    {
-    "say": "Ten percent higher, the same answer. The extra part, p times q over a hundred, is exactly what students forget when they just add the percents. Choice number four is our answer, and I'll see you in the next question.",
+    "say": "Why the extra minus three? With a start of a hundred, the rise adds twenty-five. The twelve percent fall also takes twelve percent of that extra twenty-five, which is three. That's why we subtract three from thirteen. Choice number four is our answer, and I'll see you in the next question.",
     "at": [
-     "Ten percent higher",
+     "Why the extra",
      "Choice number four is our answer"
     ]
    }

@@ -77,10 +77,10 @@
     ]
    },
    {
-    "say": "So every side adds one hundred eighty over n to an angle like this. Here's the rule. Take an angle whose corner is a corner of the polygon, and whose two arms go through two other corners. Count the sides between the two arms, on the far side from the corner. The angle is that number of sides, times one hundred eighty over n.",
+    "say": "Use this rule in a regular polygon. The angle's corner must be on the polygon. Both arms must pass through other corners. Count the sides along the arc between those corners. Use the arc that doesn't pass through the angle's corner. Each counted side gives one hundred eighty over n. So multiply that by the number of sides you counted.",
     "at": [
-     "Here's the rule",
-     "Take an angle"
+     "Each counted side gives",
+     "hundred eighty over"
     ]
    },
    {
@@ -94,10 +94,10 @@
     ]
    },
    {
-    "say": "This works only in a regular polygon, because only there are all the sides equal, so all their arcs are equal. And the angle's corner must be a corner of the polygon, and both arms must go through corners too. Only then is it an inscribed angle on those arcs.",
+    "say": "Use this rule for a regular polygon. Its equal sides give equal arcs on the circle. And the angle's corner must be a corner of the polygon, and both arms must go through corners too. Only then is it an inscribed angle on those arcs.",
     "at": [
-     "This works only in a regular polygon",
-     "regular polygon, because"
+     "Use this rule for a regular polygon",
+     "Its equal sides"
     ]
    }
   ],
@@ -134,6 +134,8 @@
      "Eight times eighteen",
      "is one hundred forty-four. Let's",
      "Let's also check",
+     "Three hundred sixty divided by ten",
+     "ten is thirty-six",
      "eighty minus thirty-six is one hundred forty-four",
      "hundred forty-four. That's"
     ]

@@ -24,34 +24,33 @@
     "at": [
      "Second place three times",
      "Each one is",
-     "Three times eighty thousand",
-     "two hundred forty"
+     "is two hundred forty thousand"
     ]
    },
    {
     "say": "Third place twice. Two times fifty thousand is a hundred thousand.",
     "at": [
-     "Two times fifty thousand",
-     "a hundred thousand"
+     "times fifty thousand",
+     "is a hundred thousand"
     ]
    },
    {
     "say": "Fourth place once, twenty thousand.",
     "at": [
-     "Fourth place once"
+     "twenty thousand"
     ]
    },
    {
     "say": "Now the sum. Two hundred forty thousand plus a hundred thousand is three hundred forty thousand. Plus twenty thousand is three hundred sixty thousand.",
     "at": [
      "Two hundred forty",
-     "Plus twenty thousand is three",
-     "hundred sixty thousand"
+     "is three hundred sixty thousand"
     ]
    },
    {
     "say": "And how many years? From two thousand seventeen to two thousand twenty-two. Twenty-two minus seventeen is five, plus one, because we count both ends. Six years.",
     "at": [
+     "From two thousand",
      "Six years"
     ]
    },
@@ -95,13 +94,13 @@
    {
     "say": "Each prize, compared with sixty thousand. Eighty gives plus twenty. Fifty gives minus ten. Eighty gives plus twenty again.",
     "at": [
-     "Eighty gives plus twenty",
-     "gives minus ten"
+     "Eighty gives plus twenty again"
     ]
    },
    {
     "say": "Then fifty gives minus ten, eighty gives plus twenty, and twenty gives minus forty.",
     "at": [
+     "ten, eighty gives",
      "twenty gives minus forty"
     ]
    },

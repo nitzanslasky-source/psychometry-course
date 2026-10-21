@@ -33,7 +33,7 @@
     "at": [
      "Choice number one says",
      "Not new is one minus a quarter",
-     "Not nights is"
+     "Not nights is one minus three tenths"
     ]
    },
    {
@@ -72,13 +72,14 @@
    {
     "say": "Exactly one doesn't force an overlap. The two groups can sit side by side. Let's see it in numbers. Say there are twenty nurses. A quarter, five, are new. Three quarters, fifteen, drive.",
     "at": [
-     "Say there are twenty nurses",
-     "A quarter, five"
+     "A quarter, five, are new",
+     "Three quarters, fifteen, drive"
     ]
    },
    {
     "say": "The five new nurses come by bus, and the other fifteen drive. Every fraction still works, and no new nurse drives. So choice number three is not necessarily true.",
     "at": [
+     "The five new",
      "number three is"
     ]
    }
@@ -104,7 +105,7 @@
   ],
   [
    {
-    "say": "[pause] Now an insight, the one from the lesson. Adding fractions takes time, and percents are much faster. We start again from the givens, and turn every fraction into percent.",
+    "say": "[pause] Now an insight, the one from the lesson. Adding fractions takes time, and percents are much faster. We start again from the givens, and turn every fraction into percent. Again, we need the claim that isn't forced.",
     "at": [
      "Now an",
      "the givens, and"
@@ -114,39 +115,48 @@
     "say": "Three tenths is thirty percent. Three quarters is seventy-five percent. A quarter is twenty-five percent, and a half is fifty percent.",
     "at": [
      "Three tenths is thirty percent",
-     "A quarter is"
+     "Three quarters is seventy-five percent",
+     "A quarter is twenty-five percent",
+     "a half is fifty percent"
     ]
    },
    {
     "say": "Not new is a hundred minus twenty-five, seventy-five. Not nights is a hundred minus thirty, seventy.",
     "at": [
-     "Not new is a hundred minus",
-     "Not nights is"
+     "Not new is a hundred minus twenty-five",
+     "Not nights is a hundred minus thirty"
     ]
    },
-   "If a fraction were a third, we'd just write thirty-three. The small part we drop only matters when a sum lands right next to a hundred."
-  ],
-  [
    {
-    "say": "Choice number one, not new and not nights. Seventy-five plus seventy is a hundred forty-five. That's more than a hundred. Choice number two, nights and drive. Thirty plus seventy-five is a hundred five, also more than a hundred.",
+    "say": "If a fraction were a third, we'd just write thirty-three. The small part we drop only matters when a sum lands right next to a hundred.",
     "at": [
-     "number one, not",
-     "Seventy-five plus seventy",
-     "That's more than",
-     "number two, nights",
-     "Thirty plus seventy-five",
-     "hundred five, also"
+     "If a fraction"
     ]
    }
   ],
   [
    {
-    "say": "Choice number three, new and drive. Twenty-five plus seventy-five is exactly a hundred, so it's not forced. Choice number four, part time and not nights. Fifty plus seventy is a hundred twenty, more than a hundred.",
+    "say": "Choice number one says at least one nurse who is not new does not work night shifts. Seventy-five plus seventy is a hundred forty-five. That's more than a hundred, so the overlap is forced. Choice number two says at least one night-shift nurse drives to work. Thirty plus seventy-five is a hundred five. Again, the overlap is forced.",
     "at": [
-     "number three, new",
+     "number one says",
+     "one nurse who",
+     "Seventy-five plus seventy",
+     "That's more than",
+     "number two says",
+     "Thirty plus seventy-five",
+     "Again, the overlap"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number three says at least one new nurse drives to work. Twenty-five plus seventy-five is exactly a hundred, so the overlap isn't forced. Choice number four says at least one part-time nurse does not work night shifts. Fifty plus seventy is a hundred twenty, more than a hundred. That overlap is forced.",
+    "at": [
+     "number three says",
+     "one new nurse",
      "Twenty-five plus seventy-five",
      "a hundred, so",
-     "number four, part",
+     "number four says",
      "Fifty plus seventy",
      "hundred twenty, more"
     ]

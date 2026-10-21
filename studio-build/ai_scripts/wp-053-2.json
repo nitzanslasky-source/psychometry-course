@@ -68,7 +68,8 @@
     "say": "Zero point five six is fifty-six percent. So fifty-six percent stays, and forty-four percent is lost. The same answer as before, in one line.",
     "at": [
      "So fifty-six percent stays",
-     "forty-four percent is"
+     "forty-four percent is lost",
+     "The same answer"
     ]
    },
    {
@@ -123,7 +124,8 @@
     "say": "A hundred twenty minus twenty-four is ninety-six. So we end four percent lower than the start. We're not back where we started.",
     "at": [
      "A hundred twenty minus twenty-four",
-     "So we end"
+     "So we end four percent lower",
+     "lower than the"
     ]
    },
    {
@@ -156,21 +158,26 @@
     "say": "Twenty squared is four hundred. Four hundred over a hundred is four. That's our four percent.",
     "at": [
      "Twenty squared is four hundred",
-     "Four hundred over"
+     "Four hundred over a hundred is four",
+     "is four. That's"
     ]
    },
    {
     "say": "Let's check the rule once more, with thirty percent. Thirty squared is nine hundred. Over a hundred, that's nine. So up thirty and down thirty should lose nine percent.",
     "at": [
      "Thirty squared is nine hundred",
-     "Over a hundred"
+     "Over a hundred, that's nine",
+     "So up thirty"
     ]
    },
    {
     "say": "With a hundred, up thirty percent is a hundred thirty. Thirty percent of a hundred thirty is thirty-nine. A hundred thirty minus thirty-nine is ninety-one, nine percent lower. It works. [pause] Okay. I'll see you in the next part.",
     "at": [
-     "A hundred thirty minus thirty-nine",
-     "is ninety-one, nine"
+     "up thirty percent is a hundred thirty",
+     "Thirty percent of a hundred thirty is thirty-nine",
+     "thirty is thirty-nine",
+     "A hundred thirty minus thirty-nine is ninety-one",
+     "nine percent lower"
     ]
    }
   ]

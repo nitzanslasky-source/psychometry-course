@@ -25,34 +25,43 @@
     ]
    },
    {
-    "say": "A lot of students add, and say fifty percent. Others take the average, twenty-five percent. Both are wrong.",
+    "say": "A lot of students add, and say fifty percent. Others take the average, twenty-five percent. But twenty-five isn't guaranteed either. We don't know the group sizes yet.",
     "at": [
      "A lot of students add",
      "and say fifty",
      "Others take the average",
-     "percent. Both are"
+     "But twenty-five isn't"
     ]
    },
    "Why? Because the twenty percent is of the women, and the thirty percent is of the men. These are percents of different wholes.",
    {
-    "say": "Let's see it in numbers. Say there are forty women and sixty men, a hundred people. Twenty percent of forty is eight. Thirty percent of sixty is eighteen.",
+    "say": "Let's see it in numbers. Put women and men in rows. Say there are forty women and sixty men, a hundred people. In the glasses column, twenty percent of forty is eight. Thirty percent of sixty is eighteen.",
     "at": [
-     "Twenty percent of forty",
-     "Thirty percent of sixty"
+     "Put women and men in rows",
+     "rows. Say there",
+     "forty women",
+     "sixty men",
+     "a hundred people",
+     "twenty percent of forty",
+     "is eight",
+     "Thirty percent of sixty",
+     "is eighteen"
     ]
    },
    {
     "say": "Eight plus eighteen is twenty-six. So twenty-six people out of a hundred wear glasses, twenty-six percent. Not fifty, and not twenty-five.",
     "at": [
+     "Eight plus eighteen is twenty-six",
      "Eight plus eighteen",
-     "So twenty-six people"
+     "twenty-six people out of a hundred",
+     "hundred wear glasses"
     ]
    },
    {
-    "say": "So we don't add percents of different groups, and we don't average them. We plug in a hundred, and fill a table. Let's see it in a guided question. Try it first, and I'll see you in the next video.",
+    "say": "So find how many wear glasses in each group first. Add those counts, and compare with the total number of people. The table keeps the groups clear. Let's see it in a guided question. Try it first, and I'll see you in the next video.",
     "at": [
-     "So we don't add percents",
-     "of different groups"
+     "Add those counts",
+     "with the total"
     ]
    }
   ]

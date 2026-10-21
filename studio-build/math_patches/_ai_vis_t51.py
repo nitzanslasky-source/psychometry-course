@@ -1946,10 +1946,16 @@ f3s2 = I('f3s2', 'Sign 2: $\\ $letters in the choices $\\ (x+4,\\ \\ x^2y,\\ \\d
 f3s3 = I('f3s3', 'Not here: $\\ 3x+5=20$ $\\ \\to\\ $ $x$ has one value $\\to$ plug in the answers', size=30)
 f3e1 = I('f3e1', 'Example: $\\ (x+2)^2-x(x+4)=\\ ?$ $\\quad$ choices: numbers', size=34)
 f3e1a = IH('f3e1a', '$x=1$: $\\ (1+2)^2-1\\cdot(1+4)$', size=34)
+f3e1a0 = IH('f3e1a0', '$1+2=3$, $\\ 3^2=9$', size=32)
+f3e1a1 = IH('f3e1a1', '$1+4=5$, $\\ 1\\cdot5=5$', size=32)
 f3e1a2 = IH('f3e1a2', '$=9-5=4$', size=34)
 f3e1b = IH('f3e1b', '$x=3$: $\\ (3+2)^2-3\\cdot(3+4)$', size=34)
+f3e1b0 = IH('f3e1b0', '$3+2=5$, $\\ 5^2=25$', size=32)
+f3e1b1 = IH('f3e1b1', '$3+4=7$, $\\ 3\\cdot7=21$', size=32)
 f3e1b2 = IH('f3e1b2', '$=25-21=4$', size=34)
-f3e1c = I('f3e1c', 'Algebra: $\\ x^2+4x+4-x^2-4x=4$ $\\ $ for every $x$', size=30)
+f3e1c = IH('f3e1c', '$(x+2)^2=x^2+4x+4$', size=30, col=1)
+f3e1d = IH('f3e1d', '$x(x+4)=x^2+4x$', size=30, col=1)
+f3e1e = IH('f3e1e', '$x^2+4x+4-(x^2+4x)=4$', size=30, col=1)
 f3e2 = I('f3e2', '$(x+3)^2-(x+1)^2=\\ ?$', size=36)
 f3e2c = I('f3e2c', 'Choices: $\\ 4x+8,\\quad 2x+8,\\quad 4x+10,\\quad 8$', size=32)
 f3e2x0 = IH('f3e2x0', '$x=2$: $\\ (2+3)^2-(2+1)^2$', size=34)
@@ -1980,7 +1986,8 @@ f3t3b2 = IH('f3t3b2', '$4x=0$', size=32)
 f3t3c = I('f3t3c', 'Three left $\\to$ again, only those three', size=30)
 f3t4 = IH('f3t4', '$x=1$: $\\ 1\\cdot2=2$', size=34, col=1)
 f3t5 = IH('f3t5', '$x^2+x=1+1=2$', size=32, col=1)
-f3t6 = IH('f3t6', '$3x=3$, no $\\ \\ 4x=4$, no', size=32, col=1)
+f3t6 = IH('f3t6', '$3x=3$, no', size=32, col=1)
+f3t6b = IH('f3t6b', '$4x=4$, no', size=32, col=1)
 f3t7 = I('f3t7', 'One left $\\to$ no third try', size=30, col=1)
 f3t8 = I('f3t8', 'Restrictions $\\to$ easy number $\\to$ what is out?', size=28)
 f3t8b = I('f3t8b', 'Another number only if needed', size=28)
@@ -1989,7 +1996,10 @@ f3z2 = I('f3z2', 'Restriction: $\\ x$ is at the bottom $\\to$ $x\\ne0$', size=32
 f3z1 = IH('f3z1', '$x=1$: $\\ 1$, $\\ $and the choices $1,\\ 1,\\ 1,\\ 1$', size=32)
 f3z3 = IH('f3z3', '$x=2$: $\\ \\frac{2^2\\cdot2^3}{2}=\\frac{4\\cdot8}{2}$', size=32)
 f3z3b = IH('f3z3b', '$=\\frac{32}{2}=16$', size=32)
-f3z3c = I('f3z3c', 'Choices: $\\ 16,\\ 32,\\ 64,\\ 8$ $\\ \\to\\ $ only $x^4$ is $16$', size=32)
+f3z3c = IH('f3z3c', '(1) $\\ 2^4=16$', size=32, col=1)
+f3z3d = IH('f3z3d', '(2) $\\ 2^5=32$, no', size=32, col=1)
+f3z3e = IH('f3z3e', '(3) $\\ 2^6=64$, no', size=32, col=1)
+f3z3f = IH('f3z3f', '(4) $\\ 2^3=8$, no', size=32, col=1)
 f3z4 = I('f3z4', 'Zero or one make the choices tie? $\\ \\to$ the next easy allowed number', size=30)
 f3d0 = I('f3d0', '$(a+3)(b+3)-3a-3b-ab=\\ ?$', size=34)
 f3d0c = I('f3d0c', 'Choices: $\\ 0,\\quad 3,\\quad 6,\\quad 9$', size=32)
@@ -2004,10 +2014,13 @@ f3d5 = I('f3d5', 'The same number is allowed; $\\ $change one only for a tie', s
 # part 3: two more cases, and "always"
 f3r0 = I('f3r0', '$1:2\\ =\\ 2:4\\ =\\ 10:20$', size=36)
 f3r1 = I('f3r1', 'Half of a number $+$ a third of it $=$ what part of it?', size=32)
-f3r2 = IH('f3r2', 'Number $=6$: $\\ 3+2=5$', size=34)
+f3r2a = IH('f3r2a', 'Number $=6$: $\\ 6\\div2=3$', size=34)
+f3r2c = IH('f3r2c', '$6\\div3=2$', size=34)
+f3r2 = IH('f3r2', '$3+2=5$', size=34)
 f3r2b = I('f3r2b', '$5$ out of $6$ $\\to\\ \\frac56$ of the number', size=34)
 f3q0 = I('f3q0', '$4x+6y=18$ $\\qquad 6x+9y=\\ ?$', size=36)
-f3q1 = IH('f3q1', '$x=0$: $\\ 6y=18$, $\\ y=3$', size=34)
+f3q1 = IH('f3q1', '$x=0$: $\\ 6y=18$', size=34)
+f3q1b = IH('f3q1b', '$y=18\\div6=3$', size=34)
 f3q2 = IH('f3q2', '$6\\cdot0+9\\cdot3=27$', size=34)
 f3q3 = I('f3q3', 'Choose one letter, solve for the other', size=32)
 f3q4 = I('f3q4', '$6x+9y=1\\frac12\\,(4x+6y)=1\\frac12\\cdot18=27$', size=32)
@@ -2016,15 +2029,18 @@ f3v1 = I('f3v1', '$k=0$: $\\ $nobody joins $\\to$ $0$ less', size=34)
 f3v2 = I('f3v2', 'A choice that isn\'t $0$ at $k=0$ $\\to$ out', size=32)
 f3v3 = I('f3v3', 'Two left $\\to$ a tie-breaker, $\\ k=1$', size=32)
 f3n0 = I('f3n0', 'Is $\\ a^2+b^2=(a+b)^2\\ $ always?', size=34)
-f3n1 = IH('f3n1', '$a=1,\\ b=2$: $\\ 1+4=5$, $\\ 3^2=9$ ✗', size=34)
+f3n1 = IH('f3n1', '$a=1,\\ b=2$: $\\ a^2+b^2=1+4=5$', size=34)
+f3n1b = IH('f3n1b', '$(a+b)^2=3^2=9$', size=34)
+f3n1c = IH('f3n1c', '$5\\ne9$', size=34)
 f3n2 = I('f3n2', 'Not always: $\\ $one counterexample is enough', size=32)
 f3n3 = I('f3n3', 'Always: $\\ $examples don\'t prove it $\\to$ rule out the other three', size=30)
 # "cannot be determined" / "none of the above" (2026-10-21 external fixes): no number rules it out; the last other
 # choice is broken by a different KIND of number (0, big, negative, fraction, within the restrictions); the same
 # result every time -> a reason. Example (ours): x != 0; x^2 >= x / x^2 < x / x^2 = x / none -> 1, 2, -2, 1/2.
-f3c9 = I('f3c9', '"Cannot be determined", $\\ $"None of the above": $\\ $no number rules it out', size=28)
+f3c9 = I('f3c9', 'One working example does not rule out "None"', size=28)
 f3c0 = I('f3c0', 'Given: $\\ x\\ne0$. $\\ $Necessarily true?', size=32)
-f3c1 = I('f3c1', '(1) $\\ x^2\\ge x$ $\\qquad$ (2) $\\ x^2<x$', size=32)
+f3c1 = I('f3c1', '(1) $\\ x^2\\ge x$', size=32)
+f3c1d = I('f3c1d', '(2) $\\ x^2<x$', size=32)
 f3c1c = I('f3c1c', '(3) $\\ x^2=x$', size=32)
 f3c1b = I('f3c1b', '(4) $\\ $None of the above is necessarily true', size=28)
 f3c2 = IH('f3c2', '$x=0$ not allowed. $\\ x=1$: $\\ 1^2=1$', size=32)
@@ -2039,14 +2055,14 @@ f3c6 = IH('f3c6', '$x=-2$: $\\ 4\\ge-2$, (1) stays', size=32)
 f3c7 = IH('f3c7', '$x=\\frac12$: $\\ \\frac12\\cdot\\frac12=\\frac14$', size=32)
 f3c7b = IH('f3c7b', '$\\frac14\\ge\\frac12$, no $\\ \\to$ (1) is out', size=32)
 f3c8 = I('f3c8', 'Answer: $\\ $(4) None of the above', size=32)
-f3c11 = I('f3c11', 'The same result every time? $\\ \\to$ find the reason', size=30)
+f3c11 = I('f3c11', 'Examples agree? $\\ \\to$ still need the reason', size=30)
 f3m1 = I('f3m1', 'When: $\\ =?$ with number choices $\\ $·$\\ $ letters in choices', size=30)
 f3m1b = I('f3m1b', '$\\qquad\\quad$ a ratio $\\ $·$\\ $ more letters than equations', size=30)
 f3m2 = I('f3m2', '1. Check every restriction', size=30)
 f3m3 = I('f3m3', '2. An easy allowed number (often zero); $\\ $say why', size=30)
 f3m4 = I('f3m4', '3. Which choices does it rule out?', size=30)
 f3m5 = I('f3m5', '4. More than one left $\\to$ another number, only those', size=30)
-f3m7 = I('f3m7', '"Cannot be determined": never ruled out $\\to$ change the kind', size=28)
+f3m7 = I('f3m7', '"None" or "Cannot be determined": examples alone are not proof', size=28)
 f3m6 = I('f3m6', 'It\'s your safety net', size=30)
 
 video('pt51-plug-numbers', 'lesson', slides=[
@@ -2073,11 +2089,11 @@ video('pt51-plug-numbers', 'lesson', slides=[
         "four? And the choices are numbers.", show(f3e1, "Let's see an example")),
       L("x can be any number here. But the answer is one number, so the expression must give the same number for every x. "
         "And if it's right for every number, then it's right for the number I choose."),
-      L("So which number? x equals one, because it's small and easy. One plus two is three, and three squared is nine. In the part we subtract, x is one and x plus four is five. One times five is five. Nine minus five is four.", show(f3e1a, 'x equals one, because'), show(f3e1a2, 'Nine minus five')),
+      L("So which number? x equals one, because it's small and easy. One plus two is three, and three squared is nine. In the part we subtract, x is one and x plus four is five. One times five is five. Nine minus five is four.", show(f3e1a, 'x equals one, because'), show(f3e1a0, 'One plus two is three'), show(f3e1a1, 'One times five is five'), show(f3e1a2, 'Nine minus five')),
       L("Let's check with another number, x equals three, to see that it really gives the same result. Three plus two is five, and five squared is twenty-five. Three "
-        "times seven is twenty-one. Twenty-five minus twenty-one is four again.", show(f3e1b, 'x equals three'),
+        "times seven is twenty-one. Twenty-five minus twenty-one is four again.", show(f3e1b, 'x equals three'), show(f3e1b0, 'Three plus two is five'), show(f3e1b1, 'Three times seven is twenty-one'),
         show(f3e1b2, 'Twenty-five minus twenty-one')),
-      L('Both examples gave four. They show what happens with our chosen numbers. The algebra explains why it always works: x plus two, squared, is x squared plus four x plus four. And x times x plus four is x squared plus four x. Subtracting leaves four. So in this question, where the choices are numbers, one allowed trial gives the answer.', show(f3e1c, 'The algebra explains why'))),
+      L('Both examples gave four. They show what happens with our chosen numbers. The algebra explains why it always works: x plus two, squared, is x squared plus four x plus four. And x times x plus four is x squared plus four x. Subtracting leaves four. So in this question, where the choices are numbers, one allowed trial gives the answer.', show(f3e1c, 'x plus two, squared, is'), show(f3e1d, 'And x times x plus four'), show(f3e1e, 'Subtracting leaves four'))),
     S('Letters in the choices',
       L("Now the second sign, letters in the choices. The bracket x plus three, squared, minus the bracket x plus one, "
         "squared. The choices are four x plus eight, two x plus eight, four x plus ten, and eight.",
@@ -2101,15 +2117,15 @@ video('pt51-plug-numbers', 'lesson', slides=[
       L("How do we choose the number? First, we check every restriction in the question. The number must obey "
         "all of them. If it says x is at least four, x can't be two.",
         show(f3k1, 'If it says x is at least four')),
-      L("If a must be positive and whole, it can't be zero, and it can't be one half. And if a letter is in the bottom of a "
-        "fraction, it can't be zero, because we can't divide by zero.", show(f3k2, 'If a must be positive and whole'),
-        show(f3k3, 'in the bottom of a fraction')),
+      L("If a must be positive and whole, it can't be zero, and it can't be one half. Now look at five divided by x. "
+        "Here x is the denominator, the bottom of the fraction. x can't be zero, because we can't divide by zero.",
+        show(f3k2, 'If a must be positive and whole'), show(f3k3, 'five divided by x')),
       L("In a figure, choose values that fit the given conditions. Don't choose an angle just because it looks that size in the drawing. The figure may not be drawn to scale.", show(f3k4, 'In a figure')),
       L("And a good first try is often the edge of what's allowed. If x is at least four, try four itself.",
         show(f3k5, 'the edge of what'))),
     S('Choose, check, try again',
-      L("Second, we choose an easy number that's allowed. Zero is often the fastest, because every term with zero in it "
-        "becomes zero. Zero is out only when it breaks a restriction, like the bottom of a fraction.",
+      L("Second, we choose an easy number that's allowed. Zero is often the fastest, because multiplying by zero gives "
+        "zero. But check every restriction first. We can't use zero if it makes the denominator zero.",
         show(f3t9, 'Zero is often the fastest')),
       L("Here's an example. x times the bracket x plus one. The choices are x squared plus x, three x, x squared plus one, "
         "and four x.", show(f3t0, "Here's an example"), show(f3t1, 'The choices are')),
@@ -2124,8 +2140,9 @@ video('pt51-plug-numbers', 'lesson', slides=[
         "Fourth, we try another easy allowed number, and we check only the three choices that are left.",
         show(f3t3c, 'Three choices give zero')),
       L("Now x equals one. One times two is two, so the right choice must give two. x squared plus x is one plus one, two, "
-        "so it stays. Three x is three, and four x is four. They aren't two, so they're out.",
-        show(f3t4, 'Now x equals one'), show(f3t5, 'x squared plus x is one plus one'), show(f3t6, 'Three x is three')),
+        "so it stays. Three x is three, not two, so it's out. Four x is four, not two, so it's out too.",
+        show(f3t4, 'One times two is two'), show(f3t5, 'x squared plus x is one plus one'),
+        show(f3t6, "so it's out"), show(f3t6b, "so it's out too")),
       L("Only x squared plus x is left, so it's the answer. No third try is needed. So that's how we choose. Check the "
         "restrictions, choose an easy allowed number, and see what it rules out. Try another number only if more than one "
         "choice is left.", show(f3t7, 'Only x squared plus x is left'), show(f3t8, 'Check the'),
@@ -2140,10 +2157,15 @@ video('pt51-plug-numbers', 'lesson', slides=[
         "too. Nothing is ruled out, so we need another try.", show(f3z1, 'So the question gives one')),
       L("Now x equals two. Two squared is four, and two to the power of three is eight. Four times eight is thirty-two, and "
         "thirty-two over two is sixteen. So the right choice must give sixteen.", show(f3z3, 'Now x equals two'),
-        show(f3z3b, 'Four times eight')),
-      L("The choices give sixteen, thirty-two, sixty-four and eight. Only x to the power of four gives sixteen. So this one "
-        "try rules out the other three.", show(f3z3c, 'The choices give sixteen')),
-      L("So zero and one are fine to start with. But with powers in the choices, they often make every choice give the "
+        show(f3z3b, 'thirty-two over two is sixteen')),
+      L("Now check each choice with x as two. Choice number one is x to the power of four, which gives sixteen. "
+        "Choice number two is x to the power of five, which gives thirty-two, not sixteen. "
+        "Choice number three is x to the power of six, which gives sixty-four, not sixteen. "
+        "Choice number four is x to the power of three, which gives eight, not sixteen. "
+        "Only choice number one matches the expression's sixteen.",
+        show(f3z3c, 'which gives sixteen'), show(f3z3d, 'which gives thirty-two'),
+        show(f3z3e, 'which gives sixty-four'), show(f3z3f, 'which gives eight')),
+      L("So zero and one are fine to start with, when allowed. But with powers in the choices, they often make every choice give the "
         "same result. Then we just take the next easy allowed number.",
         show(f3z4, 'they often make every choice'))),
     S('Two letters',
@@ -2154,12 +2176,12 @@ video('pt51-plug-numbers', 'lesson', slides=[
         show(f3d0c, 'The choices are zero')),
       L("There's no restriction, so let's take zero for both letters. Zero plus three is three, and three times three is "
         "nine. Three a, three b and a b are all zero. So the expression is nine.",
-        show(f3d1, 'three times three is nine'), show(f3d1c, 'are all zero')),
+        show(f3d1, 'three times three is nine'), show(f3d1c, 'So the expression is nine')),
       L("The choices are numbers, so only one of them can be nine, choice number four. One try is enough.",
         show(f3d1b, 'The choices are numbers')),
       L("With letters in the choices, the same number can make two choices tie. Look at two choices, a squared b, and a b "
         "squared. With a and b both one, both choices give one.", show(f3d2, 'Look at two choices'),
-        show(f3d3, 'With a and b both one')),
+        show(f3d3, 'both choices give one')),
       L("So we keep a as one, and we change b to two. Then we check only those two choices. a squared b is one times two, "
         "two. And a b squared is one times four, four. Now they're different. So different letters don't need different "
         "numbers. We change one only when the same number makes choices tie.", show(f3d4, 'a squared b is one times two'), show(f3d4c, 'And a b squared is one times four'),
@@ -2173,14 +2195,15 @@ video('pt51-plug-numbers', 'lesson', slides=[
         "number is it?", show(f3r1, 'half of a number plus a third')),
       L("Which number? Six, because both two and three go into it. Half of six is three, and a third of six is two. "
         "Together five, out of six. So it's five sixths of the number, whatever the number is.",
-        show(f3r2, 'Half of six is three'), show(f3r2b, 'Together five'))),
+        show(f3r2a, 'Half of six is three'), show(f3r2c, 'a third of six is two'),
+        show(f3r2, 'Together five'), show(f3r2b, "So it's five sixths"))),
     S('Case 4: pick values',
       L("The fourth case. An equation, but with more letters than equations, and they ask for one value. For example, four x "
         "plus six y equals eighteen. What is six x plus nine y?", show(f3q0, 'For example, four x')),
       L("An equation with two letters can have many allowed solutions. Sometimes the result they ask for changes between them. Then it cannot be determined. But here, both terms they ask for are one and a half times the terms in the given equation. So their sum is fixed too. Let's use one easy solution to calculate it."),
-      L('I give one letter a value, and I solve the equation for the other. x equals zero, because multiplying by zero makes the whole x term zero. Then six y equals eighteen, so y is three.', show(f3q3, 'I give one letter a value'), show(f3q1, 'x equals zero')),
+      L('I give one letter a value, and I solve the equation for the other. x equals zero, because multiplying by zero makes the whole x term zero. Then six y equals eighteen. Divide both sides by six to find y. Eighteen divided by six is three, so y is three.', show(f3q3, 'I give one letter a value'), show(f3q1, 'Then six y equals eighteen'), show(f3q1b, 'Eighteen divided by six is three')),
       L("Now what they ask. Six times zero is zero, and nine times three is twenty-seven. So six x plus nine y is "
-        "twenty-seven.", show(f3q2, 'Six times zero is zero')),
+        "twenty-seven.", show(f3q2, 'nine times three is twenty-seven')),
       L("Here zero makes the calculation easy, and it's allowed. But I chose only x. The equation then made y equal to three. I can't choose both letters freely: they still have to satisfy the equation."),
       L("And it's really true. Six x plus nine y is one and a half times four x plus six y, because each part is one and a half times as big. And one and a half times "
         "eighteen is twenty-seven.", show(f3q4, "And it's really true"))),
@@ -2197,47 +2220,49 @@ video('pt51-plug-numbers', 'lesson', slides=[
         "example where it fails is enough."),
       L("For example, is a squared plus b squared always equal to the bracket a plus b, squared? Let a equal one and b "
         "equal two, two small, easy numbers. One plus four is five, and three squared is nine. Five is not nine, so it's not always true. One "
-        "counterexample, and we're done.", show(f3n0, 'For example, is a squared'), show(f3n1, 'Let a equal one'),
-        show(f3n2, 'One counterexample')),
+        "counterexample, and we're done.", show(f3n0, 'For example, is a squared'), show(f3n1, 'One plus four is five'),
+        show(f3n1b, 'three squared is nine'), show(f3n1c, 'Five is not nine'), show(f3n2, 'One counterexample')),
       L("But always is different. A few examples that work don't prove always, because the next number might fail. In a "
         "question with choices, we don't prove it. We rule out the other three choices, and the one that's left is the "
         "answer.", show(f3n3, 'But always is different'))),
     S('Cannot be determined',
-      L("Some questions have a last choice like, it cannot be determined, or, none of the above is necessarily true. You'll "
-        "see it often on the exam. No number can rule that choice out.", show(f3c9, 'No number can rule')),
-      L("Why? That choice says the answer isn't always the same. And we just saw that examples can't prove always. So when "
-        "we plug in numbers, that choice always stays."),
+      L("Some questions have a choice that says cannot be determined. That means the givens don't fix one answer. "
+        "Another choice you may see is none of the above is necessarily true. That means none of the listed statements "
+        "is true in every allowed case."),
+      L("One working example doesn't rule out either kind of choice. Why? Because another allowed example might give "
+        "a different result, or make the statement false. We need to look beyond that one example.",
+        show(f3c9, "One working example doesn't rule out")),
       L("For example, given: x is not equal to zero. Which of the following is necessarily true? Choice number one, x "
         "squared is greater than or equal to x. Choice number two, x squared is smaller than x. Choice number three, x "
         "squared is equal to x. And choice number four, none of the above is necessarily true.",
-        show(f3c0, 'For example, given'), show(f3c1, 'Choice number one'), show(f3c1c, 'Choice number three'),
+        show(f3c0, 'For example, given'), show(f3c1, 'Choice number one'), show(f3c1d, 'Choice number two'), show(f3c1c, 'Choice number three'),
         show(f3c1b, 'And choice number four')),
       L("Necessarily true means true for every allowed x. So one x where a choice is false rules it out. Zero isn't "
         "allowed, so the easiest number is one. One squared is one.", show(f3c2, 'One squared is one')),
       L("Choice number one says x squared is greater than or equal to x. One is equal to one, so it stays. Choice number "
         "two says x squared is smaller than x. One isn't smaller than one, so it's out.",
         show(f3c3a, 'One is equal to one'), show(f3c3b, "One isn't smaller")),
-      L("Choice number three says x squared is equal to x. One equals one, so it stays too. And choice number four stays, "
-        "because no number can rule it out.", show(f3c3c, 'One equals one')),
+      L("Choice number three says x squared is equal to x. One equals one, so it stays too. Choice number four stays too. "
+        "We haven't shown that either remaining statement is always true.", show(f3c3c, 'One equals one')),
       L("Now we try another easy number, two, and we check only choice numbers one and three. Two squared is four. Four is "
         "greater than two, so choice number one stays. Four isn't equal to two, so choice number three is out.",
-        show(f3c4, 'Two squared is four'), show(f3c4b, "Four isn't equal to two"))),
+        show(f3c4, 'Four is greater than two'), show(f3c4b, "Four isn't equal to two"))),
     S('Change the kind of number',
-      L("Choice number one and choice number four are left. No number can rule out choice number four. So we ask: is "
+      L("Choice number one and choice number four are left. Our examples haven't proved choice number one. So we ask: is "
         "choice number one always true? Three or ten would keep choice number one true, just like two.", show(f3c10, 'Choice number one and')),
-      L("To show that the answer can change, we try a different kind of number. Zero, a big number, a negative number, or "
+      L("To check whether choice number one can fail, we try a different kind of number. Zero, a big number, a negative number, or "
         "a fraction, as long as the restriction allows it. Zero isn't allowed here.",
         show(f3c5, 'we try a different kind of number')),
       L("A negative number, minus two. Its square is four, and four is greater than minus two. So choice number one still "
-        "stays.", show(f3c6, 'A negative number, minus two')),
+        "stays.", show(f3c6, 'four is greater than minus two')),
       L("A fraction, one half. One half times one half is one quarter. Is one quarter greater than or equal to one half? "
         "No, it's smaller. So choice number one isn't always true, and it's out.",
         show(f3c7, 'One half times one half'), show(f3c7b, "No, it's smaller")),
       L("Only choice number four is left. None of the above is necessarily true, so that's the answer.",
         show(f3c8, 'Only choice number four is left')),
-      L("And what if every kind of number gives the same result? Then examples alone aren't enough. Back them with a "
-        "reason, like with six x plus nine y. It's one and a half times four x plus six y, so it's always twenty-seven.",
-        show(f3c11, 'Back them with a reason'))),
+      L("And what if all the numbers we tried agree? That still doesn't prove always. We need a reason covering every "
+        "allowed case, like in our earlier equation example. There the requested expression was always one and a half "
+        "times the given eighteen, so its value was fixed.", show(f3c11, "That still doesn't prove always"))),
     S('So when do I use it?',
       L("So, when do I plug in numbers? When there's an expression with a letter and the choices are numbers. When there "
         "are letters in the choices. When the amount doesn't matter, like in a ratio. And when there are more letters than "
@@ -2246,8 +2271,9 @@ video('pt51-plug-numbers', 'lesson', slides=[
         "use it. See which choices it rules out. If more than one is left, try another easy number, and check only those.",
         show(f3m2, 'check every restriction'), show(f3m3, 'Then choose an easy allowed number'),
         show(f3m4, 'See which choices'), show(f3m5, 'If more than one is left')),
-      L("A choice like cannot be determined is never ruled out by a number. If one other choice is left with it, try to "
-        "break that choice with a different kind of number. And remember, it's your safety net.", show(f3m7, 'A choice like cannot be determined'),
+      L("Don't cross out none of the above or cannot be determined just because your examples agreed. Test a different "
+        "kind of allowed number, or explain why the result must stay the same. And remember, it's your safety net.",
+        show(f3m7, "Don't cross out none of the above"),
         show(f3m6, "it's your safety net")),
       L("It's the most important technique on the exam, so practice it a lot. Now let's see it in sample questions. "
         "[pause] Okay. I'll see you in the next video.")),
@@ -2653,8 +2679,10 @@ video('solve-pt-q24', 'solution', qid='pt-q24', slides=[
 
 # ------------------------------------------------------------------------------------------------ V4: the bubble corner
 # lesson right-column items start below the face bubble (top right, x 1344-1594, y 6-256); text lines wrap before it
-for _it, _y in ((f3e2r1, 300), (f3e2r2, 360), (f3e2r3, 420), (f3e2r4, 480), (f3e2n, 540), (f3net, 620),
-                (f3t4, 300), (f3t5, 360), (f3t6, 420), (f3t7, 480),
+for _it, _y in ((f3e1c, 300), (f3e1d, 365), (f3e1e, 430),
+                (f3e2r1, 300), (f3e2r2, 360), (f3e2r3, 420), (f3e2r4, 480), (f3e2n, 540), (f3net, 620),
+                (f3t4, 300), (f3t5, 360), (f3t6, 420), (f3t6b, 480), (f3t7, 540),
+                (f3z3c, 300), (f3z3d, 360), (f3z3e, 420), (f3z3f, 480),
                 (f3c3a, 300), (f3c3b, 360), (f3c3c, 420), (f3c4, 500), (f3c4b, 560)):
     _R(_it, _y, x=1010)
 for _v in ('pt51-plug-numbers',):

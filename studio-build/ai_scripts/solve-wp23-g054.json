@@ -47,8 +47,8 @@
     "at": [
      "Ten percent of sixty-five",
      "six and a",
-     "Eight times six",
-     "and eight halves",
+     "Eight times six is forty-eight",
+     "eight halves are four",
      "So forty-eight plus four",
      "players play the"
     ]
@@ -99,16 +99,18 @@
    {
     "say": "The survey splits in two. Thirty-five percent don't play, and the rest, sixty-five percent, play. The two branches add up to a hundred percent.",
     "at": [
-     "The survey splits in two",
-     "Thirty-five percent don't"
+     "Thirty-five percent don't play",
+     "sixty-five percent, play",
+     "The two branches"
     ]
    },
    "Now the players split again, into piano and guitar only. And here's the classic mistake. When we go down a branch, that group becomes the new hundred percent.",
    {
     "say": "So now the players are a hundred percent. Eighty percent play the piano, and twenty percent play only the guitar. Again the branches add up to a hundred.",
     "at": [
-     "So now the players are",
-     "a hundred percent"
+     "Eighty percent play the piano",
+     "twenty percent play only the guitar",
+     "Again the branches"
     ]
    },
    {

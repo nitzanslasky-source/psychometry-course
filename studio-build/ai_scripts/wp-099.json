@@ -13,7 +13,7 @@
   ],
   [
    {
-    "say": "Worker-hours tell us how big a job is. We count it in hours of one worker.",
+    "say": "Worker-hours tell us how big a job is. Here all workers have the same constant rate. So we can count the job in hours of one worker.",
     "at": [
      "big a job"
     ]

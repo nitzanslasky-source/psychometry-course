@@ -12,9 +12,9 @@
     "pause": 0.5
    },
    {
-    "say": "So three groups, and at least about all three. We'll solve it in two different ways, by counting who is missing, and then with a short formula.",
+    "say": "They ask for the smallest percent who own all three items. We'll solve it in two different ways, by counting who is missing, and then with a short formula.",
     "at": [
-     "So three groups"
+     "the smallest percent who own all three items"
     ]
    },
    {
@@ -73,15 +73,16 @@
     "at": [
      "Eighty plus seventy-five plus seventy",
      "is two hundred",
+     "Two times a hundred is two hundred",
      "Two hundred twenty-five minus two hundred",
      "hundred is twenty-five"
     ]
    },
    {
-    "say": "Why twice? The missing people are three hundred minus two hundred twenty-five, seventy-five. And a hundred minus seventy-five is the same as two hundred twenty-five minus two hundred.",
+    "say": "Why subtract two hundreds? If everyone owned all three items, we'd count everyone three times, three hundred. We actually count two hundred twenty-five. So three hundred minus two hundred twenty-five is seventy-five missing places in the groups. Those can belong to at most seventy-five different people. A hundred minus seventy-five leaves at least twenty-five with all three. That's the same as two hundred twenty-five minus two hundred.",
     "at": [
      "three hundred minus two hundred",
-     "And a hundred"
+     "twenty-five is seventy-five"
     ]
    },
    {

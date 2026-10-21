@@ -1074,8 +1074,8 @@ video('solve-wp26-g093', 'solution', qid='wp26-g093', slides=[
     S('Method 4 · Plugging in numbers',
       L("[pause] Now let's plug in numbers. It's a safety net when the answers have letters. We start again from the "
         "givens."),
-      L("Let's say x is six flyers and y is two minutes. We pick two different numbers, not one, and six divides by "
-        "two. Six divided by two is three flyers a minute.", show(g93j, "Let's say x is six flyers")),
+      L("Let's say x is six flyers and y is two minutes. Both are allowed, and six divides easily by two. "
+        "Six divided by two is three flyers a minute.", show(g93j, "Let's say x is six flyers")),
       L("Her rate becomes three times as great. Three times three is nine flyers a minute.",
         show(g93k, 'Three times three is nine')),
       L("The time is five y. Five times two is ten minutes.", show(g93l, 'Five times two is ten')),
@@ -1237,8 +1237,8 @@ t4g3 = IH('t4g3', 'A: $\\ 20\\div5=4$ an hour', size=36)
 t4g4 = IH('t4g4', 'B: $\\ 20\\div20=1$ an hour', size=36)
 t4g5 = IH('t4g5', 'together: $\\ 4+1=5$ an hour', size=36)
 t4g6 = IH('t4g6', '$20\\div5=4$ hours', size=36)
-t4h1 = I('t4h1', 'Together: $\\ $less than the fastest one alone', size=36)
-t4h2 = I('t4h2', 'and more than half of the fastest one\'s time', size=36)
+t4h1 = I('t4h1', 'Two workers helping: less time than the faster one alone', size=34)
+t4h2 = I('t4h2', 'Different rates: more than half the faster one\'s time', size=34)
 t4h3 = IH('t4h3', 'Ella and Tom: $\\ 4$ and $6$ hours', size=34)
 t4h4 = IH('t4h4', 'less than $4$ hours', size=34)
 t4h4b = IH('t4h4b', 'more than $4\\div2=2$ hours', size=34)
@@ -1251,7 +1251,7 @@ t4s1 = I('t4s1', 'Together: $\\ $add the rates, $\\ $never the times', size=34)
 t4s2 = I('t4s2', 'Working against: $\\ $a minus', size=34)
 t4s3 = I('t4s3', 'One job in $4$ hours: $\\ \\frac{1}{4}$ of the job an hour', size=34)
 t4s4 = I('t4s4', 'Or: $\\ $equal times, $\\ $or choose a job size', size=34)
-t4s5 = I('t4s5', 'Less than the fastest alone, $\\ $more than half of it', size=34)
+t4s5 = I('t4s5', 'Two workers, different rates: between half the faster time and that full time', size=30)
 _wp094 += [
     S('Equal times',
       L("There's another way, without fractions. We stretch the workers to the same time, and then we add the work."),
@@ -1282,10 +1282,11 @@ _wp094 += [
       L("It's just like plugging in numbers. The tank's real size doesn't matter, so we choose an easy one.")),
     S('Check the range first',
       L("Before we calculate, we can often rule out choices. Here's how."),
-      L("Together is always faster than the fastest worker alone. So it takes less time than the fastest worker needs.",
-        show(t4h1, 'Together is always faster')),
-      L("And two workers as fast as the fastest one would need half his time. The other worker is slower, so together "
-        "it takes more than that half.", show(t4h2, 'two workers as fast as the fastest one')),
+      L("Take two workers who both help with the same job. Together they finish sooner than the faster worker alone.",
+        show(t4h1, 'Together they finish sooner')),
+      L("Two workers as fast as the faster one would need half that time. If the other worker is slower, together "
+        "they take more than that half. If their rates are equal, they take exactly half. This half-time limit is "
+        "for two workers, not three or more.", show(t4h2, 'If the other worker is slower')),
       L("Ella needs four hours, and Tom needs six. So together, less than four hours.",
         show(t4h3, 'Ella needs four hours'), show(t4h4, 'So together, less than four hours')),
       L("And more than half of four, two hours. Our answer, two hours and twenty-four minutes, is between them.",
@@ -1305,7 +1306,8 @@ _wp094 += [
       L("A worker who works against the others gets a minus.", show(t4s2, 'gets a minus')),
       L("One job in four hours is a quarter of the job an hour.", show(t4s3, 'One job in four hours')),
       L("Or we stretch the workers to equal times, or we choose a job size.", show(t4s4, 'Or we stretch the workers')),
-      L("And together is less than the fastest one alone, and more than half of it.", show(t4s5, 'And together is less')),
+      L("And for two workers with different positive rates, the time together is less than the faster one's time "
+        "alone, but more than half of it.", show(t4s5, 'for two workers with different positive rates')),
       L("Take a moment to memorize this, and I'll see you in the next video.")),
 ]
 video('wp-094', 'lesson', slides=_wp094)
@@ -1468,7 +1470,7 @@ q2g = IH('q2g', 'B: $\\ 30\\div15=2$ an hour', size=30)
 q2h = IH('q2h', '$3+2=5$ an hour', size=30)
 q2i = IH('q2i', '$30\\div5=6$ hours', size=30)
 q2j = IH('q2j', '$\\frac{10\\cdot15}{10+15}=\\frac{150}{25}$', size=30)
-q2k = IH('q2k', '$=6$ hours', size=30)
+q2k = IH('q2k', '$150\\div25=6$ hours', size=30)
 video('solve-q-r26-t26-02', 'solution', qid='q-r26-t26-02', slides=[
     S('Method 1 · Estimation',
       L("Worker A can do a job alone in ten hours. Worker B can do the same job alone in fifteen hours. How many hours "
@@ -1608,8 +1610,8 @@ _wp097 += [
         show(t7x3, 'So on top, six times ten')),
       L("And a hundred twenty divided by thirty is four. So four hours, the same as with ratios.",
         show(t7x4, 'And a hundred twenty divided by thirty')),
-      L("And we didn't have to think about the directions at all. The V does the same flipping for us. We don't need to "
-        "prove it.")),
+      L("The V gives the same calculation as ratios: multiply by forty over thirty for the pies, and six over four "
+        "for the cooks. The cooks are flipped because fewer cooks need more time.")),
     S('The V upside down',
       L("The V must join three numbers. So it depends on where the question mark is."),
       L("When the question mark is in the team or the time, we use the V like before."),
@@ -1739,11 +1741,16 @@ t9k3 = I('t9k3', 'Joins or leaves: $\\ $the whole job $-$ done $=$ left', size=3
 t9e0 = I('t9e0', '$30$ flyers. $\\ $A volunteer joins every minute. $\\ 2$ flyers a minute each.', size=30)
 t9e1 = I('t9e1', 'The first volunteer: $\\ $how many flyers?', size=30)
 t9et = TBL('t9et', ['minute', 'volunteers', 'this minute', 'so far'], ['', '', '', '', ''], [
-    ('r1', [('c', 0, 0, '1'), ('c', 0, 1, '1'), ('c', 0, 2, '1×2=2'), ('c', 0, 3, '2')]),
-    ('r2', [('c', 1, 0, '2'), ('c', 1, 1, '2'), ('c', 1, 2, '2×2=4'), ('c', 1, 3, '2+4=6')]),
-    ('r3', [('c', 2, 0, '3'), ('c', 2, 1, '3'), ('c', 2, 2, '3×2=6'), ('c', 2, 3, '6+6=12')]),
-    ('r4', [('c', 3, 0, '4'), ('c', 3, 1, '4'), ('c', 3, 2, '4×2=8'), ('c', 3, 3, '12+8=20')]),
-    ('r5', [('c', 4, 0, '5'), ('c', 4, 1, '5'), ('c', 4, 2, '5×2=10'), ('c', 4, 3, '20+10=30')]),
+    ('r1', [('c', 0, 0, '1'), ('c', 0, 1, '1')]),
+    ('r1work', [('c', 0, 2, '1×2=2')]), ('r1sum', [('c', 0, 3, '2')]),
+    ('r2', [('c', 1, 0, '2'), ('c', 1, 1, '2')]),
+    ('r2work', [('c', 1, 2, '2×2=4')]), ('r2sum', [('c', 1, 3, '2+4=6')]),
+    ('r3', [('c', 2, 0, '3'), ('c', 2, 1, '3')]),
+    ('r3work', [('c', 2, 2, '3×2=6')]), ('r3sum', [('c', 2, 3, '6+6=12')]),
+    ('r4', [('c', 3, 0, '4'), ('c', 3, 1, '4')]),
+    ('r4work', [('c', 3, 2, '4×2=8')]), ('r4sum', [('c', 3, 3, '12+8=20')]),
+    ('r5', [('c', 4, 0, '5'), ('c', 4, 1, '5')]),
+    ('r5work', [('c', 4, 2, '5×2=10')]), ('r5sum', [('c', 4, 3, '20+10=30')]),
     ('end', [('box', 4, 3)])], colw=170, rowh=64, size=30, w=560)
 t9e2 = IH('t9e2', 'the first: $\\ 5\\times2=10$ flyers', size=30, col=1)
 t9e3 = IH('t9e3', 'the third: $\\ 3\\times2=6$', size=30, col=1)
@@ -1770,7 +1777,8 @@ video('wp-099', 'lesson', slides=[
       L("Now the last type, worker-hours."),
       L("It's a small twist on team questions. And it helps a lot when the team changes during the job.")),
     S('What worker-hours are',
-      L("Worker-hours tell us how big a job is. We count it in hours of one worker."),
+      L("Worker-hours tell us how big a job is. Here all workers have the same constant rate. So we can count the job "
+        "in hours of one worker."),
       L("Let's see it in numbers. Three workers clean a hall in four hours. Each of them works four hours.",
         show(t9a1, 'Three workers clean a hall')),
       L("So three workers, four hours each. Three times four is twelve worker-hours.", show(t9a2, 'Three times four is twelve')),
@@ -1819,15 +1827,21 @@ video('wp-099', 'lesson', slides=[
       L("Let's make a table. For each minute, we write how many volunteers are working, how many flyers they hand out "
         "in that minute, and how many are gone so far.", show(t9et['line'], "Let's make a table")),
       L("In the first minute, only one volunteer works. One times two is two flyers. So far, two flyers are gone.",
-        show(t9et['r1'], 'In the first minute')),
+        show(t9et['r1'], 'In the first minute'), show(t9et['r1work'], 'One times two is two'),
+        show(t9et['r1sum'], 'So far, two flyers')),
       L("In the second minute, two volunteers work. Two times two is four flyers. Two plus four is six so far.",
-        show(t9et['r2'], 'In the second minute')),
+        show(t9et['r2'], 'In the second minute'), show(t9et['r2work'], 'Two times two is four'),
+        show(t9et['r2sum'], 'Two plus four is six')),
       L("In the third minute, three volunteers work. Three times two is six. Six plus six is twelve so far.",
-        show(t9et['r3'], 'In the third minute')),
+        show(t9et['r3'], 'In the third minute'), show(t9et['r3work'], 'Three times two is six'),
+        show(t9et['r3sum'], 'Six plus six is twelve')),
       L("In the fourth minute, four volunteers hand out four times two, eight. Twelve plus eight is twenty so far.",
-        show(t9et['r4'], 'In the fourth minute')),
+        show(t9et['r4'], 'In the fourth minute'), show(t9et['r4work'], 'four times two, eight'),
+        show(t9et['r4sum'], 'Twelve plus eight is twenty')),
       L("In the fifth minute, five volunteers hand out five times two, ten. Twenty plus ten is thirty. That's the whole "
-        "box, so they stop after five minutes.", show(t9et['r5'], 'In the fifth minute'), show(t9et['end'], "That's the whole box")),
+        "box, so they stop after five minutes.", show(t9et['r5'], 'In the fifth minute'),
+        show(t9et['r5work'], 'five times two, ten'), show(t9et['r5sum'], 'Twenty plus ten is thirty'),
+        show(t9et['end'], "That's the whole box")),
       L("Now we can answer the question. The first volunteer worked all five minutes, at two flyers a minute. Five times two is ten "
         "flyers.", show(t9e2, 'Five times two is ten')),
       L("Careful, the volunteers didn't all hand out the same. The third volunteer joined in the third minute, so she "
@@ -1862,7 +1876,8 @@ video('wp-099', 'lesson', slides=[
         "ask about. And read the question carefully. Does the break come after thirty minutes of work, or every thirty "
         "minutes on the clock?", show(t9f7, 'count only the working minutes'))),
     S('Recap',
-      L("So let's sum it up. Worker-hours are the workers times the hours. That's how long one worker alone would need.",
+      L("So let's sum it up. With workers at the same constant rate, worker-hours are the workers times the hours. "
+        "That's how long one worker alone would need.",
         show(t9a4, 'Worker-hours are the workers times')),
       L("We can share the worker-hours among any team. And in stages, we count each stage and add.",
         show(t9k2, 'We can share the worker-hours')),
@@ -1932,7 +1947,7 @@ q3h = IH('q3h', '$3+3=6$ in total: $\\ $the trap', size=30, col=1)
 q3i = IH('q3i', '$12\\div3=4$: $\\ $from the start', size=30, col=1)
 q3j = IH('q3j', 'A: $\\ \\frac{1}{12}$ an hour, $\\ 3\\times\\frac{1}{12}=\\frac{1}{4}$', size=30)
 q3k = IH('q3k', 'left: $\\ 1-\\frac{1}{4}=\\frac{3}{4}$', size=30)
-q3l = IH('q3l', '$\\frac{1}{12}+\\frac{1}{6}=\\frac{1}{12}+\\frac{2}{12}=\\frac{3}{12}$', size=30)
+q3l = IH('q3l', '$\\frac{1}{12}+\\frac{1}{6}=\\frac{1}{12}+\\frac{2}{12}=\\frac{3}{12}$', size=30, col=1)
 q3m = IH('q3m', '$\\frac{3}{12}=\\frac{1}{4}$ an hour', size=30, col=1)
 q3n = IH('q3n', '$\\frac{3}{4}$ at $\\frac{1}{4}$ an hour: $\\ 3$ hours', size=30, col=1)
 video('solve-q-r26-t26-03', 'solution', qid='q-r26-t26-03', slides=[
@@ -1998,8 +2013,9 @@ video('solve-wp26-g101', 'solution', qid='wp26-g101', slides=[
         "a rate of ten S.", show(g01a, 'five large ones have a rate')),
       L("Five L is twice ten S. So which side gets the times two? A lot of students double the bigger side, because it's "
         "the one that's twice as big."),
-      L("Remember from topic twenty-two, give it to the little guy. Five L is the bigger one, so the times two goes on "
-        "the smaller side, ten S. Then both sides are equal.", show(g01b, 'so the times two goes on')),
+      L("Remember from topic twenty-two, give it to the little guy. Here that means the smaller combined rate, ten S. "
+        "We want equal sides, so the times two goes on ten S, not five L. Doubling the smaller rate makes it equal "
+        "to the larger one.", show(g01b, 'so the times two goes on ten S')),
       L("Two times ten S is twenty S. So five L is equal to twenty S.", show(g01c, 'Two times ten S is twenty S')),
       L("We divide both sides by five, so that one L is left alone. Twenty divided by five is four. So L is equal to "
         "four S.", show(g01d, 'We divide both sides by five')),
@@ -2150,8 +2166,9 @@ video('solve-q-r26-t26-04', 'solution', qid='q-r26-t26-04', slides=[
         "spend the same time at each rate.", show(q4e, "That's the average of thirty"), mk('cross', 'choice 1', "doesn't spend the same time")),
       L("So the average rate is twenty-four parts an hour. That's choice number two.")),
     S('Method 2 · Estimation',
-      L("[pause] Now let's estimate. We start again from the givens. The machine works three hours at twenty, and only two "
-        "hours at thirty.", show(q4g, 'The machine works three hours at twenty')),
+      L("[pause] Now let's estimate. We start again from the givens. Sixty divided by twenty is three hours. Sixty "
+        "divided by thirty is two hours. So the machine works three hours at twenty, and only two hours at thirty.",
+        show(q4g, 'So the machine works three hours at twenty')),
       L("It spends more time at the slow rate. So the average is closer to twenty than to thirty. That means it's below "
         "twenty-five.", show(q4h, 'So the average is closer to twenty')),
       L("So twenty-five, choice number one, is out. And fifty, choice number three, is more than both rates, so it's out "
@@ -2462,10 +2479,10 @@ f6e2 = IH('f6e2', '$10$ and $12$: $\\ 20\\%$ more', size=32)
 f6e3 = IH('f6e3', '$4$ and $6$: $\\ 50\\%$ more', size=32)
 f6e4 = IH('f6e4', 'Ben: $\\ x$, $\\ $Lia: $\\ x+2$: $\\ $an equation', size=32)
 f6e5 = I('f6e5', 'times, as many as, a fraction of, a percent of: $\\ $factors', size=30)
-f6e6 = I('f6e6', 'more than, by a number: $\\ $an equation', size=30)
+f6e6 = I('f6e6', 'Fixed amount more: multiplier still unknown; an equation can help', size=30)
 f6s1 = I('f6s1', 'Only relations given: $\\ $multiply the factors', size=34)
 f6s2 = I('f6s2', 'The same way: $\\ $as it is. $\\ $Opposite: $\\ $flipped. $\\ $Shared: $\\ $gone.', size=32)
-f6s3 = I('f6s3', 'A fixed amount more: $\\ $an equation', size=34)
+f6s3 = I('f6s3', 'Unknown starting value + fixed amount more: no fixed multiplier yet', size=30)
 video('r26-t26-factors', 'lesson', slides=[
     S('Compare by Factors',
       L("Now a general tool, compare by factors."),
@@ -2525,13 +2542,15 @@ video('r26-t26-factors', 'lesson', slides=[
       L("So the factor depends on Ben's real number, and we don't know it. Here we give Ben's rate a letter, x. Lia's rate "
         "is x plus two, and we write an equation.", show(f6e4, "Here we give Ben's rate a letter")),
       L("So look at the words. Times, as many as, a fraction of, or a percent of, are factors.", show(f6e5, 'So look at the words')),
-      L("More than by a number needs an equation.", show(f6e6, 'More than by a number'))),
+      L("If we only know a fixed amount more, we don't yet know the multiplier. An equation can help us find it.",
+        show(f6e6, "we don't yet know the multiplier"))),
     S('Recap',
       L("So let's sum it up. When only relations are given, we multiply the old value by every factor that changed.",
         show(f6s1, 'When only relations are given')),
       L("The same way, as it is. The opposite way, flipped. And what is the same for both cancels.",
         show(f6s2, 'The same way, as it is')),
-      L("And a fixed amount more is not a factor. Then we write an equation.", show(f6s3, 'a fixed amount more')),
+      L("A fixed amount more doesn't give a fixed multiplier when the starting value is unknown. Then an equation "
+        "can help.", show(f6s3, 'A fixed amount more')),
       L("Take a moment to memorize this, and I'll see you in the next video.")),
 ])
 
@@ -2594,6 +2613,96 @@ video('solve-q-r26-t26-21', 'solution', qid='q-r26-t26-21', slides=[
       L("Choice number three is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
+# 21 Oct direct clarity review: independent results reveal at their spoken clauses.
+def _clause_rows(vid, name, *pieces):
+    found = 0
+    for sl in VIDEOS[vid]['slides']:
+        for ln in sl['lines']:
+            cues = []
+            for cue in ln['cues']:
+                if cue[0] == 'show' and cue[1]['_name'] == name:
+                    old = cue[1]; found += 1
+                    for j, (tex, anchor) in enumerate(pieces):
+                        assert anchor.lower() in ln['say'].lower(), (vid, name, anchor)
+                        make = IH if old.get('_hand') else I
+                        it = make(name if not j else name+'_clause'+str(j), tex,
+                                  size=old.get('size',30), col=old['_col'])
+                        cues.append(show(it, anchor))
+                else: cues.append(cue)
+            ln['cues'] = sorted(cues, key=lambda c: _phrase_pos(ln['say'],c))
+    assert found == 1, (vid, name, found)
+
+def _later(vid, name, anchor):
+    found = 0
+    for sl in VIDEOS[vid]['slides']:
+        for ln in sl['lines']:
+            for j,c in enumerate(ln['cues']):
+                if c[0]=='show' and c[1]['_name']==name:
+                    assert anchor.lower() in ln['say'].lower(), (vid,name,anchor)
+                    ln['cues'][j]=(c[0],c[1],anchor); found+=1
+            ln['cues'].sort(key=lambda c: _phrase_pos(ln['say'],c))
+    assert found==1,(vid,name,found)
+
+# Position helper here because these edits run before the automatic visual passes.
+def _phrase_pos(say, c):
+    ph = c[2] if c[0] in ('show', 'point') else c[3]
+    return -1 if ph.startswith('<') else say.lower().find(ph.lower())
+
+for _name,_anchor in [('c_d1','Three times five is fifteen'),('c_d2','Six times five is thirty'),
+                      ('c_d6','three times two is six'),('c_i1','twelve divided by three'),
+                      ('c_i2','twelve divided by six')]:
+    _later('wp-092',_name,_anchor)
+_clause_rows('wp-092','c_m4',('$20$ pages a minute','Twice as fast is twenty'),
+             ('$12$ minutes','Four times as long is twelve'))
+_clause_rows('solve-wp26-g093','g93j',('$x=6$ flyers, $y=2$ minutes',"Let's say x is six"),
+             ('$6\\div2=3$ flyers a minute','Six divided by two is three'))
+_clause_rows('solve-wp26-g093','g93o',('$5\\times6=30$','Five times six is thirty'),
+             ('$30\\div3=10$','Then thirty divided by three'))
+_clause_rows('solve-q-r26-t26-01','q1h',('$20\\%$ of $5$ is $1$','Twenty percent of five is one'),
+             ('$5+1=6$ pages a minute','five plus one, six'))
+_clause_rows('wp-094','t4e3',('$\\frac{1}{4}=\\frac{3}{12}$','A quarter is three twelfths'),
+             ('$\\frac{3}{12}+\\frac{1}{12}=\\frac{4}{12}$','Three twelfths plus one twelfth'))
+_later('wp-094','t4t_e','Ella fills three bags')
+_later('wp-094','t4t_t','Tom fills two bags')
+_later('wp-094','t4g6','Twenty divided by five is four')
+_later('wp-097','t7w1',"time is times four thirds too")
+_later('wp-097','t7w2','The time is times three halves')
+_clause_rows('wp-097','t7y2',('$4\\times30=120$','Four times thirty is a hundred twenty'),
+             ('$120\\div2=60$ pies','a hundred twenty divided by two'))
+_clause_rows('solve-q-r26-t26-03','q3j',('A: $\\frac{1}{12}$ of the pool an hour','Pipe A fills a twelfth'),
+             ('$3\\times\\frac{1}{12}=\\frac{1}{4}$ of the pool','In three hours'))
+_later('solve-wp26-g101','g01d','four S')
+_later('solve-wp26-g101','g01e',"and that's one")
+_clause_rows('solve-q-r26-t26-04','q4i',('$30-20=10$','The gap is thirty minus twenty'),
+             ('$10\\div5=2$','Ten divided by five'))
+# The seesaw layer contains 24 and distances 4/6: do not reveal it while merely describing the pivot.
+_pivot = next(c for ln in VIDEOS['solve-q-r26-t26-04']['slides'][2]['lines'] for c in ln['cues']
+              if c[0]=='show' and c[1]['_name']=='q4w_pivot')
+_sl = VIDEOS['solve-q-r26-t26-04']['slides'][2]
+for _ln in _sl['lines']:
+    _ln['cues']=[c for c in _ln['cues'] if c is not _pivot]
+_sl['lines'][4]['cues'].append(show(_pivot[1],'is twenty-four'))
+_sl['lines'][4]['cues'].sort(key=lambda c:_phrase_pos(_sl['lines'][4]['say'],c))
+_later('solve-wp26-g103','g03t_a','Two hundred times three is six hundred')
+_later('solve-wp26-g103','g03t_b','Thirty times two is sixty')
+_clause_rows('solve-wp26-g105b','g5bb',('$200\\div2=100$ sheep','Half of two hundred is a hundred'),
+             ('$9\\times2=18$ days','Nine times two is eighteen'))
+_later('solve-wp26-g105b','g5bg','So twelve days')
+_later('solve-wp26-g105b','g5bk','three times four is twelve')
+_clause_rows('r26-t26-factors','f6c4',('$900\\div3=300$','Nine hundred divided by three'),
+             ('$300\\times4=1200$ km','Then three hundred times four'))
+_clause_rows('wp-099','t9f6',('$60\\div5=12$','Sixty divided by five is twelve'),
+             ('$12\\times8=96$: the trap','twelve times eight'))
+_later('wp-099','t9ft_w2',"That's twenty minutes of work")
+_later('wp-099','t9e4','adds up to thirty')
+_later('solve-wp26-g095','g95l','minus three, five units')
+_clause_rows('solve-wp26-g096','g96l',('$6\\times10=60$','Six times ten is sixty'),
+             ('$6+10=16$','Six plus ten is sixteen'),
+             ('$\\frac{60}{16}$','So sixty over sixteen'))
+_clause_rows('solve-q-r26-t26-02','q2j',('$10\\times15=150$','Ten times fifteen is a hundred fifty'),
+             ('$10+15=25$','Ten plus fifteen is twenty-five'))
+_later('solve-wp26-g098','g98c','The time is times three quarters')
+
 # =================================================================================================================
 # Extra-visual pass (about one event every 2-4 s): in a solution video every spoken "number N" that has no cue on that
 # choice in the same sentence gets a POINT on choice N; every "the given(s)" / "the question" without a cue points at the

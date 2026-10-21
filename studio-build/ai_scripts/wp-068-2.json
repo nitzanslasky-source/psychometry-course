@@ -27,7 +27,7 @@
     ]
    },
    {
-    "say": "What could be, or which of these is possible. There's no single answer, so it's a range.",
+    "say": "What could be, or which of these is possible. The givens may allow several overlaps. We find their range, then choose the answer inside it.",
     "at": [
      "What could be",
      "of these is"
@@ -157,8 +157,11 @@
    {
     "say": "Only now we turn it into people, because they ask how many people. Ten percent of two hundred is twenty, and five percent is ten. So fifteen percent is twenty plus ten, thirty people.",
     "at": [
-     "Ten percent of two hundred",
-     "is twenty, and"
+     "Ten percent of two hundred is twenty",
+     "is twenty, and",
+     "five percent is ten",
+     "So fifteen percent is twenty plus ten",
+     "plus ten, thirty"
     ]
    },
    {
@@ -201,11 +204,16 @@
    {
     "say": "Often it's faster in percent. Seven tenths is seventy percent, and a half is fifty percent. Seventy plus fifty is a hundred twenty, so twenty percent. That's the same fifth.",
     "at": [
-     "Seventy plus fifty",
-     "hundred twenty, so"
+     "Seventy plus fifty is a hundred twenty",
+     "so twenty percent"
     ]
    },
-   "So when you see percents or fractions of everyone, the whole is a hundred percent, or one. And in an exact question too, all four boxes together make the whole. [pause] Okay. I'll see you in the next part."
+   {
+    "say": "So when you see percents or fractions of everyone, the whole is a hundred percent, or one. And in an exact question too, all four boxes together make the whole. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "So when you"
+    ]
+   }
   ]
  ]
 }

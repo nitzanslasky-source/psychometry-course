@@ -23,13 +23,15 @@
    {
     "say": "Twenty-five percent is a quarter. To find a quarter of three hundred twenty, we halve twice. Half of it is a hundred sixty, and half again is eighty.",
     "at": [
-     "and half again is eighty"
+     "Half of it is a hundred sixty",
+     "half again is eighty"
     ]
    },
    {
     "say": "Thirty percent of three hundred twenty. Ten percent is thirty-two, so thirty percent is three times thirty-two, ninety-six.",
     "at": [
      "Thirty percent of",
+     "Ten percent is thirty-two",
      "so thirty percent is three times",
      "times thirty-two, ninety-six"
     ]

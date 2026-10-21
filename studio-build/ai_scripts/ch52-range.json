@@ -72,8 +72,7 @@
     "say": "It goes from two thousand five hundred to four thousand five hundred. The middle of that is three thousand five hundred.",
     "at": [
      "five hundred to",
-     "The middle of that",
-     "three thousand five"
+     "is three thousand five hundred"
     ]
    },
    {
@@ -84,7 +83,7 @@
     ]
    },
    {
-    "say": "Say there's just one cheap flat, at two thousand five hundred. All the other flats cost four thousand or more. The many dear flats pull the mean up.",
+    "say": "Say there's just one cheap flat, at two thousand five hundred. All the other flats cost four thousand or more. The many expensive flats pull the mean up.",
     "at": [
      "pull the mean up"
     ]
@@ -142,15 +141,15 @@
    {
     "say": "The least for two rooms is two thousand five hundred. Seven thousand five hundred minus two thousand five hundred is five thousand.",
     "at": [
-     "Seven thousand five hundred minus",
-     "two thousand five hundred is"
+     "is five thousand"
     ]
    },
    {
     "say": "And the least she can save? She gets the least, four thousand five hundred. And she pays the most, also four thousand five hundred.",
     "at": [
+     "And the least",
      "She gets the least",
-     "thousand five hundred"
+     "And she pays"
     ]
    },
    {
@@ -173,7 +172,7 @@
    {
     "say": "Seven thousand minus two thousand is five thousand.",
     "at": [
-     "Seven thousand minus two thousand"
+     "is five thousand"
     ]
    },
    {
@@ -200,8 +199,7 @@
    {
     "say": "And five thousand five hundred? The biggest difference is when one saves the most and the other saves the least. Five thousand minus zero is only five thousand.",
     "at": [
-     "The biggest difference",
-     "one saves the"
+     "is only five thousand"
     ]
    },
    {

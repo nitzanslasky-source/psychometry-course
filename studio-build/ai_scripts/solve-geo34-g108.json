@@ -13,12 +13,11 @@
     "pause": 0.5
    },
    {
-    "say": "There's no formula for the area of an octagon. So like in the lesson, we cut it the way we always cut an octagon. We get a square in the middle, four rectangles, and four silver triangles in the corners.",
+    "say": "Like in the lesson, we find the area by cutting the regular octagon into shapes we know. We get a square in the middle, four rectangles, and four silver triangles in the corners.",
     "at": [
-     "There's no formula",
-     "area of an",
-     "we cut it the way",
-     "we always cut",
+     "we find the",
+     "cutting the regular octagon",
+     "shapes we know",
      "We get a square in the middle",
      "the middle, four"
     ]
@@ -26,8 +25,7 @@
    {
     "say": "Let's start with the square. Its side is a side of the octagon, ten. So its area is ten times ten, one hundred.",
     "at": [
-     "Let's start with the square",
-     "Its side is",
+     "ten times ten, one hundred",
      "ten times ten"
     ]
    }
@@ -105,10 +103,10 @@
    {
     "say": "Let's try it with side three. Three squared is nine. Double it, eighteen. So the area is eighteen plus eighteen root two. With side seven, seven squared is forty-nine. Double it, ninety-eight. So the area is ninety-eight plus ninety-eight root two.",
     "at": [
-     "Let's try it with side three",
-     "three. Three squared",
-     "With side seven",
-     "is forty-nine. Double"
+     "So the area is eighteen plus eighteen",
+     "plus eighteen root",
+     "So the area is ninety-eight plus",
+     "plus ninety-eight root"
     ]
    },
    {

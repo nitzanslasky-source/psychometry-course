@@ -140,11 +140,11 @@
     ]
    },
    {
-    "say": "What does most mean? More than half. Say there are three hundred visitors, and a hundred sixty are in the forum. That's most of them.",
+    "say": "Say there are three hundred visitors, and a hundred sixty are in the forum. That's more than half, but it still doesn't mean everyone.",
     "at": [
-     "More than half",
-     "three hundred visitors",
-     "forum. That's most"
+     "hundred visitors, and",
+     "a hundred sixty are in the forum",
+     "That's more than"
     ]
    },
    "The other hundred forty can be anywhere, also in the practice area. So after twenty o'clock, some people may still practise. Or maybe nobody does.",

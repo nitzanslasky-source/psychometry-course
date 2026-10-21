@@ -1011,7 +1011,9 @@ p104one = PIN(GEO('p104one', [
 p104o1 = I('p104o1', 'One angle $= \\dfrac{180° \\cdot (n-2)}{n}$', size=36, col=1)
 p104o2 = IH('p104o2', '$540° \\div 5 = 108°$', size=36, col=1)
 p104o3 = IH('p104o3', '$720° \\div 6 = 120°$', size=36, col=1)
-p104o4 = IH('p104o4', '$1080° \\to 540° \\to 270° \\to 135°$', size=34, col=1)
+p104o4 = IH('p104o4', '$1080°\\div2=540°$', size=32, col=1)
+p104o4b = IH('p104o4b', '$540°\\div2=270°$', size=32, col=1)
+p104o4c = IH('p104o4c', '$270°\\div2=135°$', size=32, col=1)
 p104o5 = I('p104o5', 'Only when the polygon is regular', size=32, col=1)
 
 # ---- the formula sheet
@@ -1127,6 +1129,7 @@ p104dec = PIN(GEO('p104dec', [
 p104e1 = IH('p104e1', 'one side: $180° \\div 10 = 18°$', size=34, col=1)
 p104e2 = IH('p104e2', '$3 \\cdot 18° = 54°$', size=34, col=1)
 p104e3 = IH('p104e3', 'whole angle: $8 \\cdot 18° = 144°$', size=34, col=1)
+p104e3b = IH('p104e3b', '$360° \\div 10=36°$', size=34, col=1)
 p104e4 = IH('p104e4', '$180° - 36° = 144°$', size=34, col=1)
 
 # a regular hexagon A ... F with B C at the bottom; the diagonals A C and B D cross at P
@@ -1141,14 +1144,25 @@ p104hxc = PIN(GEO('p104hxc', [
     ('b30', [alab(_C6[1], _C6[2], _C6[3], 54, '30°', 'teal', 18)]),
     ('c', [ang(_C6[2], _C6[1], _C6[0], 30, 'orange'), sg(_C6[0], _C6[1], 'orange', 7)]),
     ('c30', [alab(_C6[2], _C6[1], _C6[0], 54, '30°', 'orange', 18)]),
-    ('p', [ang(_CP, _C6[1], _C6[2], 16, 'ink'), ('txt', _CP[0], _CP[1] + 29, '120°', 'ink', 16)]),
+    ('p', [ang(_CP, _C6[1], _C6[2], 16, 'ink')]),
 ], vb='10 20 380 340', w=520, col=0, title='Two diagonals of a regular hexagon cross'))
+# The same highlighted triangle, enlarged without changing its orientation or point names.
+_cutB, _cutP, _cutC = (40, 185), (200, 185 - 160 / (3 ** .5)), (360, 185)
+p104cut = PIN(GEO('p104cut', [
+    ('line', [('poly', [_cutB, _cutP, _cutC], 'teal', 3), ('tint', [_cutB, _cutP, _cutC], 'teal'),
+              ('txt', 26, 215, 'B', 'ink', 24, True), ('txt', 200, 70, 'P', 'ink', 24, True),
+              ('txt', 374, 215, 'C', 'ink', 24, True)]),
+    ('b30', [ang(_cutB, _cutC, _cutP, 32, 'teal'), alab(_cutB, _cutC, _cutP, 58, '30°', 'teal', 24)]),
+    ('c30', [ang(_cutC, _cutB, _cutP, 32, 'orange'), alab(_cutC, _cutB, _cutP, 58, '30°', 'orange', 24)]),
+    ('p120', [ang(_cutP, _cutB, _cutC, 28, 'ink'), ('txt', 200, 140, '120°', 'ink', 24)]),
+], vb='0 45 400 190', w=520, col=0, title='Triangle BPC enlarged, same orientation'))
+LEFT(p104cut, y=570, x=410, w=520)
 p104h1 = IH('p104h1', 'one side: $180° \\div 6 = 30°$', size=34, col=1)
 p104h2 = IH('p104h2', '$\\angle PBC = 30°$', size=34, col=1)
 p104h3 = IH('p104h3', '$\\angle PCB = 30°$', size=34, col=1)
 p104h4 = IH('p104h4', '$\\angle BPC = 180° - 30° - 30° = 120°$', size=32, col=1)
 p104h5 = IH('p104h5', 'pentagon: $180° - 36° - 36° = 108°$', size=32, col=1)
-p104h6 = I('p104h6', 'Neighboring corners, each skips one: the polygon\'s angle', size=28, col=1)
+p104h6 = I('p104h6', 'AC and BD: angle BPC equals the polygon\'s angle', size=28, col=1)
 
 # ---- radii: n isosceles triangles (the pentagon 72 / 54 / 54); the hexagon: six equilateral triangles
 _Or = (170, 170); _R5 = rp(_Or[0], _Or[1], 130, 5, 90)
@@ -1275,9 +1289,9 @@ video('geo-104', 'lesson', slides=[
         show(p104reg['fold'], 'fold them inward'), show(p104reg['notreg'], 'the angles are not equal any more')),
       L("It still has six sides, so it's still a hexagon. Its angles still add up to seven hundred twenty. One angle now "
         "points inward, and it's bigger than one hundred eighty.", show(p104reg['big'], "it's bigger than one hundred eighty")),
-      L("And the other way around. A rectangle has four equal angles, but its sides are not all equal. So a rectangle is "
+      L("And the other way around. This rectangle has four equal angles, but its sides are not all equal. So this rectangle is "
         "not regular. The regular quadrilateral is the square. And the regular triangle is the equilateral triangle.",
-        show(p104reg['rect'], 'A rectangle has four equal angles'), show(p104reg['sq'], 'The regular quadrilateral is the square'))),
+        show(p104reg['rect'], 'This rectangle has four equal angles'), show(p104reg['sq'], 'The regular quadrilateral is the square'))),
     S('In a circle',
       L("Every regular polygon fits in a circle. We can draw a circle around it, so all its corners are on the circle. "
         "The center of that circle, O, is also the center of the polygon.",
@@ -1303,6 +1317,7 @@ video('geo-104', 'lesson', slides=[
         "eight is two times two times two. Half is five hundred forty. Half again is two hundred seventy. And half again "
         "is one hundred thirty-five.",
         show(p104one['o'], 'A regular octagon'), show(p104o4, 'Half is five hundred forty'),
+        show(p104o4b, 'Half again is two hundred seventy'), show(p104o4c, 'And half again is one hundred thirty-five'),
         show(p104one['v8'], 'And half again is one hundred thirty-five')),
       L("Remember these three angles, one hundred eight, one hundred twenty and one hundred thirty-five. The exam uses "
         "them all the time. And we divide only when the polygon is regular. If it's not regular, the angles are not equal.",
@@ -1385,19 +1400,19 @@ video('geo-104', 'lesson', slides=[
         "three hundred sixty over n. That's one hundred eighty over n, and in the pentagon, half of seventy-two is thirty-six.",
         show(p104cnt['cen'], 'The central angle on that same arc'), show(p104k3, 'is three hundred sixty divided by n'),
         show(p104cnt['c72'], "In the pentagon, that's seventy-two"), show(p104k3b, "That's one hundred eighty over n")),
-      L("So every side adds one hundred eighty over n to an angle like this. Here's the rule. Take an angle whose corner is "
-        "a corner of the polygon, and whose two arms go through two other corners. Count the sides between the two arms, "
-        "on the far side from the corner. The angle is that number of sides, times one hundred eighty over n.",
-        show(p104k4, "Here's the rule")),
+      L("Use this rule in a regular polygon. The angle's corner must be on the polygon. Both arms must pass through "
+        "other corners. Count the sides along the arc between those corners. Use the arc that doesn't pass through "
+        "the angle's corner. Each counted side gives one hundred eighty over n. So multiply that by the number of "
+        "sides you counted.", show(p104k4, 'Each counted side gives')),
       L("Let's check it on the whole angle of the pentagon. Its arms are the two sides at the corner. Between them, on the "
         "far side, there are three sides. Three times thirty-six is one hundred eight. That's exactly the pentagon's angle, "
         "like we found before.",
         show(p104cnt['whole'], 'Between them, on the far side'), show(p104k5, 'Three times thirty-six'),
         show(p104cnt['w108'], "That's exactly the pentagon's angle")),
-      L("This works only in a regular polygon, because only there are all the sides equal, so all their arcs are equal. "
+      L("Use this rule for a regular polygon. Its equal sides give equal arcs on the circle. "
         "And the angle's corner must be a corner of the polygon, and both arms must go through corners too. Only then is "
         "it an inscribed angle on those arcs.",
-        show(p104k6, 'This works only in a regular polygon'))),
+        show(p104k6, 'Use this rule for a regular polygon'))),
     S('Ten sides',
       L("Let's use it. Here's a regular polygon with ten sides, A to J. From corner A, we draw two diagonals, to D and to "
         "G. What is the angle alpha between them?",
@@ -1411,28 +1426,33 @@ video('geo-104', 'lesson', slides=[
         "sides. Eight times eighteen is one hundred forty-four. Let's also check it with the formula sheet. Three hundred "
         "sixty divided by ten is thirty-six. One hundred eighty minus thirty-six is one hundred forty-four. That's the same angle.",
         show(p104dec['whole'], 'From B to J there are eight'), show(p104e3, 'Eight times eighteen'),
-        show(p104dec['w144'], "is one hundred forty-four. Let's"), show(p104e4, 'eighty minus thirty-six is one hundred forty-four'))),
+        show(p104dec['w144'], "is one hundred forty-four. Let's"), show(p104e3b, 'Three hundred sixty divided by ten'),
+        show(p104e4, 'eighty minus thirty-six is one hundred forty-four'))),
     S('Crossing diagonals',
       L("Now an angle where two diagonals cross. A B C D E F is a regular hexagon. The diagonals A C and B D cross at the "
         "point P. What is angle B P C?", show(p104hxc['line'], 'A B C D E F is a regular hexagon')),
       L("P isn't a corner of the hexagon, so we can't count sides at P. But look at triangle B P C. Its other two angles "
-        "are at B and at C, and those are corners. So let's find those two angles, and then use the triangle's one "
-        "hundred eighty.", show(p104hxc['tri'], 'look at triangle B P C')),
+        "are at B and at C, and those are corners. Here's the same triangle enlarged below. "
+        "We'll find its two base angles first. Then subtract their sum from one hundred eighty to find angle B P C.",
+        show(p104hxc['tri'], 'look at triangle B P C'), show(p104cut['line'], "Here's the same triangle enlarged below")),
       L("In a hexagon, one side adds one hundred eighty divided by six, thirty. The angle at B is between B C and B D. Its "
         "arms go through C and D, and between them there's one side, C D. So angle P B C is thirty.",
         show(p104h1, 'one hundred eighty divided by six'), show(p104hxc['b'], 'The angle at B is between'),
-        show(p104h2, 'So angle P B C is thirty'), show(p104hxc['b30'], 'So angle P B C is thirty')),
+        show(p104h2, 'So angle P B C is thirty'), show(p104hxc['b30'], 'So angle P B C is thirty'),
+        show(p104cut['b30'], 'So angle P B C is thirty')),
       L("The angle at C is between C B and C A. Its arms go through B and A, and between them there's one side, A B. So "
         "angle P C B is thirty too.",
         show(p104hxc['c'], 'The angle at C is between'), show(p104h3, 'So angle P C B is thirty too'),
-        show(p104hxc['c30'], 'So angle P C B is thirty too')),
+        show(p104hxc['c30'], 'So angle P C B is thirty too'), show(p104cut['c30'], 'So angle P C B is thirty too')),
       L("The angles of triangle B P C add up to one hundred eighty. So angle B P C is one hundred eighty minus thirty "
         "minus thirty. That's one hundred twenty.",
-        show(p104h4, 'one hundred eighty minus thirty'), show(p104hxc['p'], "That's one hundred twenty")),
+        show(p104h4, 'one hundred eighty minus thirty'), show(p104hxc['p'], "That's one hundred twenty"),
+        show(p104cut['p120'], "That's one hundred twenty")),
       L("One hundred twenty is exactly the hexagon's angle. In a regular pentagon, the same two diagonals cross at one "
         "hundred eighty minus thirty-six minus thirty-six. That's one hundred eight, the pentagon's angle. So "
-        "when two diagonals start at two neighboring corners, and each one skips just one corner, they cross at the "
-        "polygon's own angle.",
+        "when two diagonals start at two neighboring corners, and each one skips just one corner, look at the angle "
+        "facing the side between the two middle corners. Here that's angle B P C, facing B C. "
+        "That angle equals the polygon's interior angle, not the angle next to it.",
         show(p104h5, 'hundred eighty minus thirty-six minus thirty-six'), show(p104h6, 'So when two diagonals start'))),
     S('Triangles from the center',
       L("Now let's draw the radii again, from O to every corner. A regular polygon splits into n triangles. Two sides of "
@@ -1579,11 +1599,11 @@ p105o7 = IH('p105o7', '$4 + 4 + 4 \\cdot 2\\sqrt2 = 8 + 8\\sqrt2$', size=34, col
 
 video('geo-105', 'lesson', slides=[
     S('Polygon Areas',
-      L("Now let's find the area of a polygon. Here's the truth. There's no area formula for a polygon. Only the triangle "
-        "has one. It's a side, times the height to that side, divided by two.")),
+      L("Now let's find the area of a polygon. We don't have one simple formula to use for every shape here. But we "
+        "know how to find a triangle's area: a side, times the height to that side, divided by two.")),
     S('Cut it into shapes',
-      L("Even a general quadrilateral has no formula. We know the special ones, like the square, the rectangle and the "
-        "trapezoid. But for just any quadrilateral, there's no formula. So there are two ways. We cut the polygon into "
+      L("We also know the special quadrilaterals, like the square, the rectangle and the trapezoid. For a general "
+        "quadrilateral, we don't have one of those ready-made formulas. So there are two ways. We cut the polygon into "
         "shapes we know. Or we see it as a bigger shape, minus the pieces that are missing."),
       L("Let's start with an easy one. This pentagon looks like a house. Its bottom part is a square with side six. On "
         "top there's a triangle, and its height is four.",
@@ -1594,7 +1614,7 @@ video('geo-105', 'lesson', slides=[
         show(p105house['tr'], 'The triangle is its base'), show(p105h2, 'Six times four is twenty-four')),
       L("So the area of the pentagon is thirty-six plus twelve, forty-eight.", show(p105h3, 'thirty-six plus twelve'))),
     S('Two ways',
-      L("Here's a hexagon shaped like the letter L. All its angles are right angles. The bottom is ten long, and the left "
+      L("Here's a hexagon shaped like the letter L. Its sides are horizontal or vertical. The bottom is ten long, and the left "
         "side is six high. The top is four long, and the short side on the right is three.",
         show(p105L['line'], "Here's a hexagon shaped like the letter L")),
       L("The first way is to cut it. One line across gives two rectangles. The bottom one is ten long and three high. "
@@ -1692,7 +1712,8 @@ _vb106 = '60 22 530 320'
 f106a = PIN(GEO('f106a', [
     ('line', _g106_base()),
     ('ad', [sg(_A6, _D6, 'teal', 3, True)]),
-    ('aed', [('tint', [_A6, _E6, _D6], 'teal'), ('txt', 196, 205, '60', 'teal', 34)]),
+    ('aed', [('tint', [_A6, _E6, _D6], 'teal')]),
+    ('aedarea', [('txt', 196, 205, '60', 'teal', 34)]),
     ('trap', [('poly', [_A6, _B6, _C6, _D6], 'orange', 5), ('txt', 420, 250, '?', 'orange', 30), ('txt', 345, 322, 'C D = ?', 'orange', 30)]),
 ], vb=_vb106, w=520, title='The pentagon'))
 f106b = PIN(GEO('f106b', [
@@ -1728,13 +1749,14 @@ video('solve-geo34-g106', 'solution', qid='geo34-g106', slides=[
       L("In pentagon A B C D E, angles B, C and E are right angles, and A B is parallel to C D. A B, B C and A E are each "
         "fifteen, and D E is eight. What is the area of the pentagon?",
         pt('stem', 'In pentagon A B C D E', 'hl', 9.0), show(f106a['line'], 'A B, B C and A E'), voice='calm', pause=0.5),
-      L("This pentagon is not regular. It has a few right angles, but its sides are not all equal. And there's no area "
-        "formula for a polygon. So like in the lesson, we cut it into shapes we know."),
+      L("This pentagon is not regular. It has a few right angles, but its sides are not all equal. We don't have a "
+        "ready-made formula for this shape. So like in the lesson, we cut it into shapes we know."),
       L("Let's draw a line from A to D. Now look at triangle A E D. The angle at E is a right angle, so it's a right "
         "triangle. Its legs are A E, fifteen, and E D, eight.",
         show(f106a['ad'], 'draw a line from A to D'), show(f106a['aed'], 'Now look at triangle A E D')),
       L("The area of a right triangle is one leg times the other, divided by two. Fifteen times eight is one hundred "
-        "twenty. Half of that is sixty.", show(f106r1, 'Fifteen times eight'), show(f106r2, 'Half of that is sixty')),
+        "twenty. Half of that is sixty.", show(f106r1, 'Fifteen times eight'), show(f106r2, 'Half of that is sixty'),
+        show(f106a['aedarea'], 'Half of that is sixty')),
       L("What's left is A B C D. A B is parallel to C D, so it's a trapezoid. For its area we need both bases and the "
         "height. We have the top base, fifteen, and the height, B C, fifteen. But we don't have the bottom base, C D.",
         show(f106a['trap'], "What's left is A B C D"))),
@@ -1797,7 +1819,7 @@ video('solve-geo34-g107', 'solution', qid='geo34-g107', slides=[
     S('Six equilateral triangles',
       L("A regular hexagon has side length twelve. What is its area?", pt('stem', 'A regular hexagon', 'hl', 4.0),
         show(f107['line'], 'A regular hexagon'), voice='calm', pause=0.5),
-      L("There's no area formula for a hexagon. But like in the lesson, a regular hexagon is made of six equilateral "
+      L("Like in the lesson, a regular hexagon is made of six equilateral "
         "triangles. So we find the area of one triangle, and then we multiply by six."),
       L("Let's draw the three long diagonals, through the center. We get six equilateral triangles. The side of each one "
         "is the side of the hexagon, twelve.", show(f107['cut'], 'draw the three long diagonals'),
@@ -1887,9 +1909,9 @@ video('solve-geo34-g108', 'solution', qid='geo34-g108', slides=[
     S('The octagon split',
       L("A regular octagon has side length ten. What is its area?", pt('stem', 'A regular octagon', 'hl', 4.0),
         show(f108a['line'], 'A regular octagon'), voice='calm', pause=0.5),
-      L("There's no formula for the area of an octagon. So like in the lesson, we cut it the way we always cut an "
-        "octagon. We get a square in the middle, four rectangles, and four silver triangles in the corners.",
-        show(f108a['cut'], 'we cut it the way'), show(f108r1, 'We get a square in the middle')),
+      L("Like in the lesson, we find the area by cutting the regular octagon into shapes we know. We get a square in "
+        "the middle, four rectangles, and four silver triangles in the corners.",
+        show(f108a['cut'], 'cutting the regular octagon'), show(f108r1, 'We get a square in the middle')),
       L("Let's start with the square. Its side is a side of the octagon, ten. So its area is ten times ten, one hundred.",
         show(f108a['sq'], "Let's start with the square"), show(f108r2, 'ten times ten'))),
     S('Triangles and rectangles',
@@ -2233,7 +2255,7 @@ for _g in (f111a, f111b, f111c): LEFT(_g, y=QY('g111', 250), x=410, w=320)
 LEFT(f111d, y=QY('g111', 240), x=410, w=330)
 f111r1 = IH('f111r1', '$360° \\div 9 = 40°$', size=34)
 f111r2 = I('f111r2', 'arc $>$ side, for every side', size=30)
-f111s1 = I('f111s1', 'three equal sides: the same triangle', size=30)
+f111s1 = I('f111s1', 'matching side lengths: congruent triangles', size=30)
 f111t1 = IH('f111t1', '$180° - 40° = 140°$', size=34)
 f111t2 = IH('f111t2', '$140° \\div 2 = 70°$', size=34)
 f111t3 = I('f111t3', 'side (across $40°$) $<$ radius (across $70°$)', size=28)
@@ -2272,9 +2294,10 @@ video('solve-geo34-g111', 'solution', qid='geo34-g111', slides=[
         "are all radii, so they're equal. And B C and C D are sides of the regular polygon, so they're equal too.",
         pt('choice 4', 'Choice number four says'), show(f111b['line'], 'Look at triangles O B C and O C D'),
         show(f111b['two'], 'are all radii')),
-      L("So the two triangles have the same three sides. They're the same triangle, so their angles are equal. Angle B C O "
+      L("So the two triangles have matching side lengths. They're congruent: the same shape and size. Their matching "
+        "angles are equal. Angle B C O "
         "is equal to angle O C D. It's true, so choice number four is out.",
-        show(f111s1, 'the same three sides'), show(f111b['half'], 'Angle B C O'), mk('cross', 'choice 4', 'so choice number four is out')),
+        show(f111s1, 'matching side lengths'), show(f111b['half'], 'Angle B C O'), mk('cross', 'choice 4', 'so choice number four is out')),
       L("So a radius to a corner cuts the corner's angle into two equal halves. It's like the pentagon in the lesson, "
         "where the radius cut one hundred eight into fifty-four and fifty-four."),
       L("Three statements are out. On the exam, you'd mark choice number three and move on. Here, let's see why it's not "
@@ -2559,7 +2582,8 @@ _M12 = mid(_A2, _C2)
 f112ar = PIN(GEO('f112ar', [
     ('line', _g112a_base([side_lab(_A2, _B2, '10', _O112, 20, 'ink', 26)])),
     ('h', [sg(_B2, _M12, 'orange', 3, True), rt(_M12, _B2, _C2, 10, 'orange'), at(_B2, '120°', -52, 26, 'orange', 22)]),
-    ('half', [('tint', [_A2, _B2, _M12], 'orange'), at(mid(_B2, _M12), '5', 20, 6, 'orange', 26)]),
+    ('half', [('tint', [_A2, _B2, _M12], 'orange')]),
+    ('heightvalue', [at(mid(_B2, _M12), '5', 20, 6, 'orange', 26)]),
     ('base', [side_lab(_A2, _C2, '10√3', _O112, -32, 'teal', 24)]),
 ], vb='150 25 340 300', w=480, title='The hexagon with side 10'))
 f112as = PIN(GEO('f112as', [
@@ -2591,7 +2615,8 @@ video('solve-geo34-g112-area', 'solution', qid='geo34-g112-area', slides=[
         show(f112ar['h'], 'Let\'s drop the height from B'), show(f112ar['half'], 'two golden triangles')),
       L("The short leg, across from thirty, is half the hypotenuse. Ten divided by two is five. That's the height. The "
         "long leg is five root three. That's half of the base, so the base A C is ten root three.",
-        show(f112a1, 'Ten divided by two is five'), show(f112a2, 'The long leg is five root three'), show(f112ar['base'], 'so the base A C')),
+        show(f112a1, 'Ten divided by two is five'), show(f112ar['heightvalue'], 'Ten divided by two is five'),
+        show(f112a2, 'The long leg is five root three'), show(f112ar['base'], 'so the base A C')),
       L("So the area of A B C is the base, ten root three, times the height, five, divided by two. Ten times five is "
         "fifty, and half of that is twenty-five. So it's twenty-five root three. Careful, that's choice number one, but "
         "it's only one triangle.", show(f112a3, 'Ten times five is fifty'), mk('cross', 'choice 1', "that's choice number one")),
@@ -2973,7 +2998,8 @@ video('solve-geo34-g117', 'solution', qid='geo34-g117', slides=[
       L("A has fourteen sides. So A is one hundred eighty times the bracket, fourteen minus two, which is one hundred eighty times "
         "twelve.", show(f117r2, 'So A is one hundred eighty')),
       L("We won't calculate each one and subtract. Both have one hundred eighty in them, so let's take it out as a common "
-        "factor. B minus A is one hundred eighty times the bracket, eighteen minus twelve. Eighteen minus twelve is six. So it's six "
+        "factor. That means we keep the shared multiplier, one hundred eighty, and subtract eighteen minus twelve. "
+        "B minus A is one hundred eighty times the bracket, eighteen minus twelve. Eighteen minus twelve is six. So it's six "
         "times one hundred eighty. Six times one hundred is six hundred, and six times eighty is four hundred eighty. "
         "Together, one thousand eighty.",
         show(f117r3, 'B minus A is one hundred eighty times'), show(f117r4, 'Eighteen minus twelve is six')),
@@ -3140,7 +3166,7 @@ p_tri = PIN(GEO('p_tri', [
     ('line', [('poly', _hx, 'ink', 3), ('poly', _sq, 'ink', 3), ang(_S, _hn, _sn, 26, 'red'), at(_S, '150°', 4, -50, 'red', 24)]),
     ('close', [sg(_hn, _sn, 'teal', 3, True), ('tint', [_S, _hn, _sn], 'teal')]),
     ('eq', [sg(_S, _hn, 'teal', 5), sg(_S, _sn, 'teal', 5), tk(_S, _hn, 1), tk(_S, _sn, 1), tk(_S, _Sb, 1, 'ink')]),
-    ('b', [ang(_hn, _S, _sn, 40, 'orange'), ang(_sn, _hn, _S, 40, 'orange'), at(_hn, '15°', 74, 14, 'orange', 20), at(_sn, '15°', -74, 14, 'orange', 20)]),
+    ('b', [ang(_hn, _S, _sn, 40, 'orange'), ang(_sn, _hn, _S, 40, 'orange'), at(_hn, '15°', 20, -12, 'orange', 20), at(_sn, '15°', -20, -12, 'orange', 20)]),
 ], vb='60 20 360 270', w=580, col=0, title='Close the gap'))
 p_tri1 = I('p_tri1', 'both sides $=$ the common side: isosceles', size=30, col=1)
 p_tri2 = IH('p_tri2', '$180° - 150° = 30°$', size=34, col=1)
@@ -3152,8 +3178,8 @@ p_two = PIN(GEO('p_two', [
     ('line', [('poly', _px, 'ink', 3), ('poly', _hy, 'ink', 3), ('circ', _S2[0], _S2[1], 10, 'red', 3)]),
     ('a', [at(_S2, '108°', -50, 30, 'teal', 22), at(_S2, '120°', 50, 30, 'orange', 22), ang(_S2, _px[2], _hy[-1], 24, 'red'),
            at(_S2, '132°', 0, -46, 'red', 24)]),
-    ('t', [sg(_px[2], _hy[-1], 'teal', 3, True), ('tint', [_S2, _px[2], _hy[-1]], 'teal'), tk(_S2, _px[2]), tk(_S2, _hy[-1]),
-           at(_px[2], '24°', 72, 14, 'orange', 20), at(_hy[-1], '24°', -72, 14, 'orange', 20)]),
+    ('t', [sg(_px[2], _hy[-1], 'teal', 3, True), ('tint', [_S2, _px[2], _hy[-1]], 'teal'), tk(_S2, _px[2]), tk(_S2, _hy[-1])]),
+    ('basevalues', [at(_px[2], '24°', 20, -12, 'orange', 20), at(_hy[-1], '24°', -20, -12, 'orange', 20)]),
 ], vb='60 0 400 300', w=580, col=0, title='A regular pentagon and a regular hexagon'))
 p_two1 = IH('p_two1', '$360° - 120° - 108° = 132°$', size=34, col=1)
 p_two2 = IH('p_two2', '$180° - 132° = 48°$', size=34, col=1)
@@ -3202,7 +3228,8 @@ video('r26-t34-meet', 'lesson', slides=[
         show(p_two1, 'Minus one hundred eight')),
       L("Again, the two sides of the gap are equal to the common side, so the triangle is isosceles. One hundred eighty "
         "minus one hundred thirty-two is forty-eight. Half of that is twenty-four. So each base angle is twenty-four.",
-        show(p_two['t'], 'the two sides of the gap'), show(p_two2, 'minus one hundred thirty-two'), show(p_two3, 'Half of that'))),
+        show(p_two['t'], 'the two sides of the gap'), show(p_two2, 'minus one hundred thirty-two'), show(p_two3, 'Half of that'),
+        show(p_two['basevalues'], 'So each base angle is twenty-four'))),
     S('Filling a point',
       L("And when regular polygons fill the space around a point with no gaps, their angles add up to exactly three "
         "hundred sixty. Three regular hexagons fit, because three times one hundred twenty is three hundred sixty. That's "
@@ -3278,6 +3305,81 @@ video('solve-q-r26-t34-03', 'solution', qid='q-r26-t34-03', slides=[
         mk('cross', 'choice 1', 'eighteen is choice number one'), show(f03s3, 'Each one is half of eighteen'),
         show(f03b['b'], 'So angle A D G is nine'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
+# 21 Oct clarity review: preserve the board and methods; derived figure values wait for their spoken conclusions.
+def _cue_pos(say,c):
+    ph=c[2] if c[0] in ('show','point') else c[3]
+    return -1 if ph.startswith('<') else say.lower().find(ph.lower())
+
+def _later(vid,name,anchor):
+    found=0
+    for sl in VIDEOS[vid]['slides']:
+        for ln in sl['lines']:
+            for j,c in enumerate(ln['cues']):
+                if c[0]=='show' and c[1]['_name']==name:
+                    assert anchor.lower() in ln['say'].lower(),(vid,name,anchor)
+                    ln['cues'][j]=show(c[1],anchor);found+=1
+            ln['cues'].sort(key=lambda c:_cue_pos(ln['say'],c))
+    assert found==1,(vid,name,found)
+
+def _move(vid,name,contains,anchor):
+    lines=[ln for sl in VIDEOS[vid]['slides'] for ln in sl['lines']]
+    cue=[c for ln in lines for c in ln['cues'] if c[0]=='show' and c[1]['_name']==name]
+    target=[ln for ln in lines if contains.lower() in ln['say'].lower()]
+    assert len(cue)==len(target)==1,(vid,name,len(cue),len(target))
+    assert anchor.lower() in target[0]['say'].lower(),(vid,name,anchor)
+    for ln in lines:ln['cues']=[c for c in ln['cues'] if c is not cue[0]]
+    target[0]['cues'].append(show(cue[0][1],anchor))
+    target[0]['cues'].sort(key=lambda c:_cue_pos(target[0]['say'],c))
+
+for _v,_nm,_ph in [
+ ('geo-105','p105house_tr','half of that is twelve'),
+ ('geo-105','p105h2','half of that is twelve'),
+ ('geo-105','p105L_b','Ten times three is thirty'),
+ ('geo-105','p105L2_miss','Six times three is eighteen'),
+ ('geo-105','p105hex_one','So one triangle is four root three'),
+ ('geo-105','p105x2','So one triangle is four root three'),
+ ('geo-105','p105oct_sq','two times two, four'),
+ ('geo-105','p105o5','half of that is one'),
+ ('geo-105','p105oct_rect',"So it's two root two"),
+ ('geo-105','p105o7',"That's eight plus eight root two"),
+ ('solve-geo34-g106','f106b_ahd','H D, is eight'),
+ ('solve-geo34-g106','f106c_sq','two hundred twenty-five'),
+ ('solve-geo34-g106','f106c_ahd','divided by two, sixty'),
+ ('solve-geo34-g106','f106t4','is three hundred forty-five'),
+ ('solve-geo34-g108','f108a_sq','ten times ten, one hundred'),
+ ('solve-geo34-g108','f108p2','So the area is eighteen plus eighteen'),
+ ('solve-geo34-g108','f108p3','So the area is ninety-eight plus'),
+ ('geo-109','p109c_a4','each base angle is forty-five'),
+ ('geo-109','p109c_a5','Half of seventy-two is thirty-six'),
+ ('geo-109','p109c_a6','So each base angle is thirty'),
+ ('geo-109','p109cut_sides','long leg is a over two, times root three'),
+ ('geo-109','p109n1','And the short diagonal is two root three'),
+ ('geo-109','p109n2','short diagonal is five root three'),
+ ('geo-109','p109n3','which is three root three'),
+ ('solve-geo34-g110','f110a_stp','So angle T S P is thirty-six too'),
+ ('solve-geo34-g110','f110b_a1','seventy-two'),
+ ('solve-geo34-g110','f110b_a2','so angle T S Q is seventy-two'),
+ ('solve-geo34-g111','f111a_cent','So both angles are forty'),
+ ('solve-geo34-g111','f111u2','its perimeter is less than seven r'),
+ ('solve-geo34-g111','f111u3','perimeter is more than five r'),
+ ('solve-geo34-g112','f112s5','So the perimeter is twenty-eight root three'),
+ ('geo-112-after','p112std_t','is exactly one sixth'),
+ ('geo-112-after','p112n2','is four root three'),
+ ('geo-112-after','p112n3',"That's four root three again"),
+ ('solve-geo34-g112-area','f112a2','so the base A C is ten root three'),
+ ('solve-geo34-g113','f113r6','And three is less than five'),
+ ('solve-geo34-g113','f113s1','eighteen, not twenty'),
+ ('solve-geo34-g114','f114r2','two times one, two'),
+ ('solve-geo34-g115','f115r4','The shaded area is twelve plus'),
+ ('solve-geo34-g116','f116s1','an octagon is one thousand eighty'),
+ ('solve-geo34-g116','f116s3',"That's nine sides"),
+ ('solve-geo34-g116','f116s4',"That's our sum, with ten sides"),
+ ('solve-geo34-g117','f117r4','Together, one thousand eighty'),
+ ('solve-q-r26-t34-02','f02r2','n is seven plus three, ten'),
+ ('solve-q-r26-t34-02','f02s3','and half of that is five'),
+ ('r26-t34-meet','p_two_a','Minus one hundred eight is one hundred thirty-two'),
+]: _later(_v,_nm,_ph)
+
 # carry-over boxes on the continuation slides (V2): the next step uses these results
 CARRY34 = globals().get('CARRY34', {})
 

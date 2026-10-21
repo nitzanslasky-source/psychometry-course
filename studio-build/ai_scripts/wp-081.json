@@ -97,9 +97,9 @@
     ]
    },
    {
-    "say": "The old numbers had an average of twenty. So each one counts as twenty, like we just saw. That's two below the new average.",
+    "say": "The old numbers had an average of twenty. For the balance, we replace them by twenties. Their total stays the same. Each twenty is two below the new average.",
     "at": [
-     "That's two below"
+     "two below the new average"
     ]
    },
    {
@@ -178,7 +178,7 @@
     "say": "Let's check with sums. Four times six is twenty-four. Twenty-four plus eleven is thirty-five. And thirty-five divided by five is seven.",
     "at": [
      "Four times six is twenty-four",
-     "Twenty-four plus eleven",
+     "Twenty-four plus eleven is thirty-five",
      "Thirty-five divided by five"
     ]
    },
@@ -223,7 +223,7 @@
     "say": "Let's check with sums. Three times twenty is sixty kilos before. Four times eighteen is seventy-two kilos after. Seventy-two minus sixty is twelve, the same weight.",
     "at": [
      "Three times twenty is sixty",
-     "Four times eighteen",
+     "Four times eighteen is seventy-two",
      "Seventy-two minus sixty",
      "the same weight"
     ]
@@ -232,7 +232,8 @@
     "say": "There's a trap here. If we multiply the two kilos by three, we get six below, and fourteen kilos. But the fourth suitcase shares the drop too, so we multiply by four.",
     "at": [
      "by three, we get six below",
-     "But the fourth"
+     "and fourteen kilos",
+     "the drop too"
     ]
    },
    {

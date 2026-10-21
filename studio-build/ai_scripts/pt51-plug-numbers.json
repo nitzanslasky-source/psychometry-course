@@ -65,6 +65,9 @@
     "at": [
      "x equals one, because",
      "small and easy",
+     "One plus two is three",
+     "and three squared",
+     "One times five is five",
      "Nine minus five"
     ]
    },
@@ -72,7 +75,9 @@
     "say": "Let's check with another number, x equals three, to see that it really gives the same result. Three plus two is five, and five squared is twenty-five. Three times seven is twenty-one. Twenty-five minus twenty-one is four again.",
     "at": [
      "x equals three",
-     "Three plus two",
+     "Three plus two is five",
+     "and five squared",
+     "Three times seven is twenty-one",
      "Twenty-five minus twenty-one"
     ]
    },
@@ -80,8 +85,12 @@
     "say": "Both examples gave four. They show what happens with our chosen numbers. The algebra explains why it always works: x plus two, squared, is x squared plus four x plus four. And x times x plus four is x squared plus four x. Subtracting leaves four. So in this question, where the choices are numbers, one allowed trial gives the answer.",
     "at": [
      "They show what",
-     "The algebra explains why",
-     "always works: x"
+     "x plus two, squared, is",
+     "x squared plus",
+     "And x times x plus four",
+     "four is x",
+     "Subtracting leaves four",
+     "So in this"
     ]
    }
   ],

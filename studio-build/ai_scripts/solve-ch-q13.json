@@ -22,8 +22,7 @@
    {
     "say": "One percent is the number divided by a hundred. Sunday has three hundred guests, so one percent is three people. Monday, four hundred, four people. Tuesday, five hundred, five people.",
     "at": [
-     "Sunday has three hundred",
-     "so one percent"
+     "five people"
     ]
    },
    {
@@ -36,8 +35,7 @@
    {
     "say": "Three hundred fifty divided by a hundred is three and a half. Half a person? That's impossible.",
     "at": [
-     "Three hundred fifty divided by",
-     "a hundred is",
+     "is three and a half",
      "Half a person"
     ]
    },

@@ -60,13 +60,13 @@
     "say": "Now by understanding, with an anchor. Which sums do we know by heart? A triangle is one hundred eighty, and a quadrilateral is three hundred sixty. Like in the lesson, a pentagon is five hundred forty, a hexagon is seven hundred twenty, and an octagon is one thousand eighty.",
     "at": [
      "an anchor. Which",
-     "a pentagon is five hundred forty",
-     "forty, a hexagon"
+     "an octagon is one thousand eighty"
     ]
    },
    {
     "say": "One thousand four hundred forty isn't one we know. But the octagon is close. And one thousand four hundred forty is bigger, so the polygon has more than eight sides. So choice number four, eight, is out.",
     "at": [
+     "One thousand four",
      "so the polygon has more than eight sides",
      "So choice number four, eight, is out"
     ]
@@ -75,15 +75,14 @@
     "say": "Remember, every extra side adds one hundred eighty. Let's start from the octagon and add one hundred eighty. An easy way is to add two hundred and take away twenty. One thousand eighty plus two hundred is one thousand two hundred eighty. Minus twenty is one thousand two hundred sixty. That's nine sides.",
     "at": [
      "Remember, every extra",
-     "One thousand eighty plus two hundred",
-     "Minus twenty is"
+     "That's nine sides"
     ]
    },
    {
     "say": "Let's add one hundred eighty again. One thousand two hundred sixty plus two hundred is one thousand four hundred sixty. Minus twenty is one thousand four hundred forty. That's our sum, with ten sides. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
-     "Let's add one hundred eighty again",
-     "One thousand two",
+     "Let's add one",
+     "That's our sum, with ten sides",
      "Choice number three is our answer"
     ]
    }

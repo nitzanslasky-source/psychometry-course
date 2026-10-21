@@ -39,7 +39,7 @@
      "One planet, and"
     ]
    },
-   "A steady link means the samples of that planet form a line, going up or going down. Is there such a planet? Let's look at the whole chart.",
+   "For more carbon and more hydrogen, every move right must also go up. For more carbon and less hydrogen, it must go down. The points don't have to form a straight line. Let's look at the whole chart.",
    {
     "say": "One planet jumps out. The Mercury dots form a straight line going up. More carbon, and more hydrogen too.",
     "at": [
@@ -49,9 +49,10 @@
     ]
    },
    {
-    "say": "The other planets are more like clouds, with no clear line. So choice number three looks right. Now let's check it properly.",
+    "say": "So choice number three looks right. But a quick look is not enough to prove necessarily true. Now let's check it properly.",
     "at": [
-     "number three looks"
+     "number three looks",
+     "Now let's check"
     ]
    }
   ],
@@ -84,8 +85,8 @@
     "say": "From forty-six to fifty-two percent carbon, the hydrogen goes up, from twelve to sixteen percent.",
     "at": [
      "From forty-six to fifty-two",
-     "the hydrogen goes up",
-     "twelve to sixteen"
+     "carbon, the hydrogen",
+     "from twelve to sixteen percent"
     ]
    },
    {

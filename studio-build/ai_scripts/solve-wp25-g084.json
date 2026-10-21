@@ -127,34 +127,32 @@
     "at": [
      "Now let's",
      "choices. We need",
-     "Choice number one says",
      "number one says",
-     "Four times one",
+     "Four times one is four",
      "So it's out"
     ]
    },
    {
     "say": "Choice number two says two times the average. Two times one is two, not six. Out.",
     "at": [
-     "Choice number two says",
      "number two says",
-     "the average. Two",
+     "Two times one is two",
      "not six. Out"
     ]
    },
    {
     "say": "Choice number three says six times the average. Six times one is six. It fits, but when we plug in numbers, we don't stop at the first match.",
     "at": [
-     "Choice number three says",
      "number three says",
-     "Six times one"
+     "Six times one is six",
+     "It fits, but"
     ]
    },
    {
     "say": "Choice number four says three times the average. Three times one is three, not six. Out.",
     "at": [
-     "Choice number four says",
      "number four says",
+     "Three times one is three",
      "Three times one is three",
      "not six. Out"
     ]

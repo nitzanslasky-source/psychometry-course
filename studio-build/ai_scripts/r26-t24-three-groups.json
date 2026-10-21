@@ -29,7 +29,8 @@
     "say": "Two don't like tea, one doesn't like coffee, and three don't like juice. Two plus one plus three is six.",
     "at": [
      "Two don't like tea",
-     "doesn't like coffee",
+     "one doesn't like coffee",
+     "three don't like juice",
      "Two plus one plus three"
     ]
    },
@@ -45,7 +46,9 @@
     "say": "It's the same idea as with two groups. Fifteen students, ten in art and nine in drama. Five miss art, and six miss drama. Five plus six is eleven, so at least fifteen minus eleven, four are in both. The same four as the sum minus the total.",
     "at": [
      "Five plus six is eleven",
-     "eleven, four are"
+     "so at least",
+     "fifteen minus eleven, four are in both",
+     "The same four"
     ]
    }
   ],
@@ -75,7 +78,10 @@
     "say": "Is zero really possible? Here's one way. Fifteen read fiction and history. Fifteen read fiction and science. Ten read history and science. And ten read only history.",
     "at": [
      "Here's one way",
-     "Fifteen read fiction"
+     "Fifteen read fiction and history",
+     "Fifteen read fiction and science",
+     "Ten read history and science",
+     "And ten read only history"
     ]
    },
    {
@@ -243,7 +249,7 @@
     ]
    },
    {
-    "say": "Counting appearances works when we know the size of every group, and the question asks about all the people in exactly one group, or all the people in exactly two, together. Counting appearances doesn't tell us which pair each actor was in, and we don't need that.",
+    "say": "Here we know every group's size, and the counts in all three and exactly two. So we can subtract their appearances to find exactly one. We need those other counts too, not just the group sizes. Counting appearances doesn't tell us which pair each actor was in, and we don't need that.",
     "at": [
      "doesn't tell us which pair",
      "each actor was"

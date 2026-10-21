@@ -1,0 +1,11 @@
+# Repetition fixes applied — 19 October 2026
+
+Nitzan authorized direct fixes. Updated only four unrecorded lessons: #252 geo-023 paragraph 10, #329 solve-geo33-g090 paragraphs 9–10, #375 solve-pt-q17 paragraphs 9–10, and #380 solve-pt-q21 paragraph 2.
+
+Known identities, the right-triangle test, root bounds and percent meaning are now short reminders. Kept the optional geometric proof, actual right-triangle check/circumcircle application, all choice comparisons, and the new half-investment explanation. No methods, question numbers, answers, examples needed for the application, slide titles, paragraph indices, fonts or voice settings changed. The two recorded repetition cases (#294/#307) were not edited and need no reread for pacing.
+
+Matched the identity/root-bound board rows and cue anchors to the shortened narration. All four spec checks and ai_check pass in private typed and handwriting builds. Rendered 78 native step frames with no render failures; inspected the changed formula/inequality/geometry and investment steps. Canonical hashes confirm exactly four JSONs changed; unrelated Reading Studio lesson data and correction labels unchanged. Private typed hybrid differs from the prior live hybrid in exactly the four target videos.
+
+Published both current Downloads HTML files; Reading Studio version **19 October, 15:47**. Previous scripts/specs/HTML are backed up in Codex workspace `work/repetition-fixes-2026-10-19/before`. No audio/video files or recording mechanisms changed. Headless Chrome layout check did not return diagnostics in this environment; it is not counted as a pass. Native frame inspection and source/cue checks completed; broader math-check receipts are in the same workspace.
+
+Recording clarity status: topics21/22 (current #161–220) have the direct full-script pass and matched reviewed visuals; all60 live scripts match their reviewed canonical versions. Circles (#308–345) had Codex's original full batch-C review and Claude's full fix/frame pass; not a new claim that Codex independently recertified all38 corrected final scenes. Topic51's earlier English pass is not a completed independent full teaching review. Nitzan subsequently requested a direct clarity pass on remaining unrecorded circle scripts; that is a separate ongoing job.

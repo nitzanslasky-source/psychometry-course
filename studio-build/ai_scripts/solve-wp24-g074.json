@@ -148,20 +148,40 @@
      "is a hundred",
      "So neither is zero"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "Must the overlap be fifteen? No, fifteen is only the smallest. Say twenty percent know both. Then artist only is twenty-five, owner only is fifty, and five percent know neither.",
+    "say": "Must the overlap be fifteen? No, fifteen is only the smallest. Say twenty percent know both. Artist only is forty-five minus twenty, twenty-five. Owner only is seventy minus twenty, fifty. Together, twenty-five plus twenty plus fifty is ninety-five percent. So a hundred minus ninety-five, five percent know neither.",
     "at": [
-     "No, fifteen is",
+     "fifteen? No, fifteen",
      "Say twenty percent know both",
-     "owner only is"
+     "twenty percent know both",
+     "forty-five minus twenty",
+     "twenty-five. Owner",
+     "seventy minus twenty",
+     "fifty. Together",
+     "twenty-five plus twenty plus fifty",
+     "is ninety-five percent",
+     "a hundred minus ninety-five",
+     "five percent know neither"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "And the biggest overlap is the whole artist group inside the owner group, forty-five percent. Then artist only is zero, owner only is twenty-five, and thirty percent know neither.",
+    "say": "And the biggest overlap is forty-five percent. Put the whole artist group inside the owner group. Then artist only is zero. Owner only is seventy minus forty-five, twenty-five. Everyone in either group is in the owner's seventy percent. So a hundred minus seventy, thirty percent know neither.",
     "at": [
-     "the whole artist group",
-     "Then artist only"
+     "the biggest overlap is forty-five percent",
+     "forty-five percent",
+     "Put the whole",
+     "artist only is zero",
+     "artist only is zero",
+     "seventy minus forty-five",
+     "twenty-five. Everyone",
+     "Everyone in either",
+     "a hundred minus seventy",
+     "thirty percent know neither"
     ]
    },
    {

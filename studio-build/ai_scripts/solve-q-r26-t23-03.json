@@ -105,8 +105,8 @@
    {
     "say": "[pause] Now the arrow map, like in Lior's question. We start again from the givens. Both sentences start at the chair, the whole.",
     "at": [
-     "like in Lior's",
-     "start again from",
+     "Now the",
+     "the givens. Both",
      "Both sentences start at the",
      "chair, the whole"
     ]
@@ -115,17 +115,25 @@
     "say": "The desk is a hundred fifty percent of the chair. So the arrow from the chair to the desk is times one point five.",
     "at": [
      "So the arrow from the chair to the desk",
-     "chair to the"
+     "chair to the",
+     "times one point five"
     ]
    },
    {
     "say": "The table is a hundred fifty percent more, two hundred fifty percent. So the arrow from the chair to the table is times two point five.",
     "at": [
+     "fifty percent more",
      "So the arrow from the chair to the table",
-     "chair to the"
+     "chair to the",
+     "times two point five"
     ]
    },
-   "We go from the desk to the table. First back to the chair, against the arrow, so we divide by one point five. Then on to the table, along the arrow, so we multiply by two point five.",
+   {
+    "say": "We go from the desk to the table. First back to the chair, against the arrow, so we divide by one point five. Then on to the table, along the arrow, so we multiply by two point five.",
+    "at": [
+     "to the table"
+    ]
+   },
    {
     "say": "Two point five divided by one point five is twenty-five over fifteen, five thirds.",
     "at": [

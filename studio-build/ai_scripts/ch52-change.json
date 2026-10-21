@@ -39,8 +39,7 @@
    {
     "say": "Let's say there were a hundred volunteers at the end of week one. Then at the end of week two there were a hundred ten.",
     "at": [
-     "a hundred volunteers",
-     "end of week"
+     "a hundred ten"
     ]
    }
   ],
@@ -62,8 +61,7 @@
    {
     "say": "So it's a rise. A hundred ten plus five is a hundred fifteen.",
     "at": [
-     "A hundred ten plus five",
-     "is a hundred"
+     "is a hundred fifteen"
     ]
    },
    {
@@ -141,14 +139,16 @@
     "say": "Week three is plus five. Seventy-five plus five is eighty.",
     "at": [
      "Week three is plus five",
-     "Seventy-five plus five"
+     "Seventy-five plus five",
+     "is eighty"
     ]
    },
    {
     "say": "Week four is plus five again. Eighty plus five is eighty-five.",
     "at": [
      "Week four is plus five",
-     "Eighty plus five"
+     "again. Eighty plus",
+     "is eighty-five"
     ]
    },
    {
@@ -162,7 +162,8 @@
     "say": "Week six is minus ten. Eighty-five minus ten is seventy-five.",
     "at": [
      "Week six is minus ten",
-     "Eighty-five minus ten"
+     "Eighty-five minus ten",
+     "is seventy-five"
     ]
    },
    {

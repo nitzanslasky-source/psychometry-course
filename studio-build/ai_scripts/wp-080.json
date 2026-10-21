@@ -65,15 +65,15 @@
    {
     "say": "Six and eighteen are a pair. Their middle is twelve, because six plus six is twelve, and twelve plus six is eighteen.",
     "at": [
-     "Six and eighteen are a pair",
-     "Their middle is"
+     "Six and eighteen",
+     "Their middle is twelve",
+     "six plus six"
     ]
    },
    {
     "say": "Ten and fourteen are also a pair. Ten plus two is twelve, and twelve plus two is fourteen. So their middle is twelve too.",
     "at": [
-     "Ten and fourteen are also a pair",
-     "Ten plus two"
+     "So their middle is twelve"
     ]
    },
    {
@@ -115,7 +115,8 @@
     "say": "Evenly spaced numbers are symmetric around the middle one. Three and nineteen are a pair. Seven and fifteen are a pair. And eleven is in the middle.",
     "at": [
      "Three and nineteen are a pair",
-     "Seven and fifteen"
+     "Seven and fifteen are a pair",
+     "eleven is in the middle"
     ]
    },
    {
@@ -187,18 +188,29 @@
     "at": [
      "number to a",
      "Take three, five and seven",
-     "The average is"
+     "The average is five"
     ]
    },
-   "And five is also one of the numbers. It sits right on the middle.",
+   {
+    "say": "And five is also one of the numbers. It sits right on the middle.",
+    "at": [
+     "And five is"
+    ]
+   },
    {
     "say": "Now let's add another five. What's the average of three, five, five and seven? Three and seven are still a pair around five. So the average is still five.",
     "at": [
      "What's the average of three, five, five",
-     "five, five and"
+     "five, five and",
+     "So the average is still five"
     ]
    },
-   "Why? A number that is equal to the average sits on the middle. It doesn't pull the middle up, and it doesn't pull it down.",
+   {
+    "say": "Why? A number that is equal to the average sits on the middle. It doesn't pull the middle up, and it doesn't pull it down.",
+    "at": [
+     "A number that"
+    ]
+   },
    {
     "say": "So here's our first rule. If we add or remove a number equal to the average, the average doesn't change.",
     "at": [
@@ -210,14 +222,16 @@
     "say": "For example, four numbers have an average of ten. We add a fifth number, ten. The average stays ten.",
     "at": [
      "four numbers have an average of ten",
-     "We add a"
+     "We add a",
+     "The average stays ten"
     ]
    },
    {
     "say": "But if we add twelve, that's more than the average. So the average goes up. [pause] Okay. I'll see you in the next part.",
     "at": [
      "But if we add twelve",
-     "So the average"
+     "that's more than",
+     "So the average goes up"
     ]
    }
   ]

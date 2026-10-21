@@ -129,7 +129,9 @@
     "say": "Nine hundred times four thirds. Nine hundred divided by three is three hundred. Then three hundred times four is twelve hundred kilometers.",
     "at": [
      "Nine hundred divided by three",
-     "is three hundred"
+     "is three hundred",
+     "Then three hundred times four",
+     "is twelve hundred"
     ]
    },
    "Does it make sense? Both changes make the drive longer, so the answer must be more than six hundred. And twelve hundred is more."
@@ -194,10 +196,10 @@
     ]
    },
    {
-    "say": "More than by a number needs an equation.",
+    "say": "If we only know a fixed amount more, we don't yet know the multiplier. An equation can help us find it.",
     "at": [
-     "More than by a number",
-     "needs an equation"
+     "we don't yet know the multiplier",
+     "An equation can"
     ]
    }
   ],
@@ -217,10 +219,10 @@
     ]
    },
    {
-    "say": "And a fixed amount more is not a factor. Then we write an equation.",
+    "say": "A fixed amount more doesn't give a fixed multiplier when the starting value is unknown. Then an equation can help.",
     "at": [
-     "a fixed amount more",
-     "not a factor"
+     "A fixed amount more",
+     "give a fixed"
     ]
    },
    "Take a moment to memorize this, and I'll see you in the next video."

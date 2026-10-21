@@ -38,7 +38,10 @@
     "say": "Now we go up four numbers, two each time. Thirty-two, thirty-four, thirty-six, thirty-eight.",
     "at": [
      "Now we go",
-     "Thirty-two, thirty-four"
+     "Thirty-two",
+     "thirty-four",
+     "thirty-six",
+     "thirty-eight"
     ]
    },
    {

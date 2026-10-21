@@ -34,16 +34,16 @@
     "say": "The short leg, across from thirty, is half the hypotenuse. Ten divided by two is five. That's the height. The long leg is five root three. That's half of the base, so the base A C is ten root three.",
     "at": [
      "Ten divided by two is five",
+     "Ten divided by two is five",
      "five. That's the",
-     "The long leg is five root three",
-     "root three. That's",
-     "so the base A C"
+     "so the base A C is ten root three",
+     "so the base A C",
+     "is ten root"
     ]
    },
    {
     "say": "So the area of A B C is the base, ten root three, times the height, five, divided by two. Ten times five is fifty, and half of that is twenty-five. So it's twenty-five root three. Careful, that's choice number one, but it's only one triangle.",
     "at": [
-     "So the area",
      "Ten times five is fifty",
      "and half of",
      "that's choice number one"

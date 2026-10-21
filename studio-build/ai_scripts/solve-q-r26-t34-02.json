@@ -41,8 +41,8 @@
    {
     "say": "In our question there are seven. So n minus three is seven, and n is seven plus three, ten. It's a polygon with ten sides.",
     "at": [
-     "So n minus three is seven",
-     "seven, and n"
+     "n is seven plus three, ten",
+     "It's a polygon"
     ]
    }
   ],
@@ -66,8 +66,7 @@
     "say": "Let's check this way of counting on the pentagon. Five corners, two diagonals from each. Five times two is ten, and half of that is five. And a pentagon really has five diagonals. They make the star inside it.",
     "at": [
      "Let's check this",
-     "Five times two is ten",
-     "and half of",
+     "and half of that is five",
      "a pentagon really has",
      "They make the star"
     ]

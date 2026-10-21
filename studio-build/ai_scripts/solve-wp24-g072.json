@@ -84,11 +84,10 @@
   ],
   [
    {
-    "say": "[pause] Now let's plug in numbers. We start again from the givens. Both is a ninth of chess and a quarter of robotics. Any number works for both, because the ratio stays the same. Let's say two students are in both.",
+    "say": "[pause] Now let's plug in numbers. We start again from the givens. Both is a ninth of chess and a quarter of robotics. Any positive whole number works for both, because the ratio stays the same. Let's say two students are in both.",
     "at": [
-     "numbers. We start",
+     "Now let's",
      "the givens. Both",
-     "works for both",
      "two students are in both"
     ]
    },
@@ -104,13 +103,14 @@
    {
     "say": "Chess only is eighteen minus two, sixteen. Robotics only is eight minus two, six.",
     "at": [
-     "eighteen minus two",
-     "Robotics only is"
+     "Chess only is eighteen minus two",
+     "Robotics only is eight minus two"
     ]
    },
    {
     "say": "So it's sixteen to six. Both divide by two, so it's eight to three. Choice number two again.",
     "at": [
+     "So it's sixteen",
      "Both divide by two",
      "it's eight to",
      "number two again"
@@ -137,14 +137,15 @@
     "at": [
      "Let's check with",
      "A ninth of nine is one",
-     "four is one"
+     "a quarter of four is one",
+     "The same one"
     ]
    },
    {
     "say": "So chess has nine parts, robotics has four parts, and one part is in both. We take the shared part out of each club. Nine minus one is eight, and four minus one is three.",
     "at": [
      "Nine minus one is eight",
-     "and four minus"
+     "four minus one is three"
     ]
    },
    {

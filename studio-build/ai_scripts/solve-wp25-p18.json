@@ -83,12 +83,14 @@
     "say": "Let's pick y as zero, so it adds nothing. And z as ten, a round number.",
     "at": [
      "Let's pick y as zero",
-     "so it adds"
+     "so it adds",
+     "And z as ten"
     ]
    },
    {
     "say": "The second average is of zero, ten and seventeen. Zero plus ten plus seventeen is twenty-seven. Twenty-seven divided by three is nine.",
     "at": [
+     "The second average",
      "Zero plus ten plus seventeen",
      "Twenty-seven divided by three"
     ]

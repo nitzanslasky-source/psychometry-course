@@ -44,12 +44,14 @@
     "say": "Two plus three is five parts, and the five parts are six hundred books. So one part is six hundred divided by five, a hundred twenty.",
     "at": [
      "Two plus three is five parts",
-     "are six hundred"
+     "parts, and the",
+     "So one part is six hundred divided"
     ]
    },
    {
     "say": "The novels are two parts. Two times a hundred twenty is two hundred forty. Choice number two is our answer.",
     "at": [
+     "The novels are",
      "Two times a hundred twenty",
      "is two hundred",
      "Choice number two is our answer"
@@ -102,7 +104,8 @@
     "say": "Let's try two hundred forty. Then the textbooks are six hundred minus two hundred forty, three hundred sixty.",
     "at": [
      "Let's try two hundred forty",
-     "Then the textbooks"
+     "Then the textbooks are six hundred minus",
+     "three hundred sixty"
     ]
    },
    {

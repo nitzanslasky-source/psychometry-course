@@ -99,7 +99,7 @@
     ]
    },
    {
-    "say": "Now let's check the choices. We start again from the givens, sixteen percent of five y. Choice number one says forty percent of two y. Forty is sixteen times two and a half. And two y is five y divided by two and a half. So it's balanced, and it's equal. Out.",
+    "say": "Now let's check the choices. We start again from the givens, sixteen percent of five y. Choice number one says forty percent of two y. Forty is sixteen times two and a half. And two y is five y divided by two and a half. So it's the same amount. Multiplying by two and a half and dividing by two and a half cancel each other. Equal, so it's out.",
     "at": [
      "Now let's check",
      "the givens, sixteen",
@@ -108,33 +108,33 @@
      "and a half",
      "And two y is five y",
      "y divided by",
-     "balanced, and it's equal"
+     "Equal, so it's out"
     ]
    },
    {
-    "say": "Choice number two says eight percent of ten y. The percent is halved, and the whole is doubled. Balanced, out.",
+    "say": "Choice number two says eight percent of ten y. The percent is halved, and the whole is doubled. Half of twice the amount is the original amount. Equal, so it's out.",
     "at": [
      "number two says",
      "The percent is halved",
      "the whole is",
-     "Balanced, out"
+     "Equal, so it's out"
     ]
    },
    {
-    "say": "Choice number three says thirty-two percent of five y. The percent is doubled, but the whole stays five y. Nothing balances it, so the amount doubles. It's not equal.",
+    "say": "Choice number three says thirty-two percent of five y. The percent is doubled, but the whole stays five y. We're taking twice the percent of the same whole. So the amount doubles. It's not equal.",
     "at": [
      "number three says",
      "The percent is doubled",
-     "Nothing balances it"
+     "We're taking twice"
     ]
    },
    {
-    "say": "And in choice number four, twenty times four is eighty, the same as sixteen times five. So that one is balanced too. Choice number three is our answer, and I'll see you in the next question.",
+    "say": "Choice number four says twenty percent of four y. Twenty times four is eighty, the same as sixteen times five. Both give eighty y over a hundred, so they're equal. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
-     "number four, twenty",
-     "twenty times four is eighty",
+     "number four says",
+     "Twenty times four is eighty",
      "the same as",
-     "balanced",
+     "so they're equal",
      "Choice number three is our answer"
     ]
    }

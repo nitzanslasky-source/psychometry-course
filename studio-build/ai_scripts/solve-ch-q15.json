@@ -15,7 +15,7 @@
     "say": "What can be said about the average gift of a guest at Monday's wedding?",
     "voice": "calm"
    },
-   "A lot of students say two hundred fifty. It's the middle of a hundred fifty, two hundred fifty and three hundred fifty. But that's only true if the three groups are the same size.",
+   "A lot of students say two hundred fifty. It's the middle of a hundred fifty, two hundred fifty and three hundred fifty. But we can't just average the three amounts without checking the group sizes.",
    "We'll solve it in two different ways. The math way, and then by understanding, with the seesaw from averages.",
    {
     "say": "Let's start with the math way. Monday's bar is four hundred guests. And the pie says fifty, twenty-five and twenty-five percent.",
@@ -25,45 +25,42 @@
     ]
    },
    {
-    "say": "Fifty percent of four hundred is two hundred guests. They gave a hundred fifty each.",
+    "say": "Fifty percent of four hundred is two hundred guests. Their average gift was a hundred fifty.",
     "at": [
-     "Fifty percent of four hundred",
-     "is two hundred"
+     "two hundred guests"
     ]
    },
    {
-    "say": "Twenty-five percent of four hundred is a hundred guests. They gave two hundred fifty each.",
+    "say": "Twenty-five percent of four hundred is a hundred guests. Their average gift was two hundred fifty.",
     "at": [
-     "Twenty-five percent of four hundred",
-     "is a hundred"
+     "a hundred guests"
     ]
    },
    {
-    "say": "And the other hundred guests, the shared ones, gave three hundred fifty each.",
+    "say": "And the other hundred guests, the shared ones, gave three hundred fifty on average.",
     "at": [
-     "the other hundred guests",
-     "shared ones, gave"
+     "guests, the shared",
+     "three hundred fifty on average"
     ]
    },
    {
-    "say": "Now the money. Two hundred times a hundred fifty is thirty thousand.",
+    "say": "Now the total money from each group is its number of guests times its average gift. Two hundred times a hundred fifty is thirty thousand.",
     "at": [
-     "Two hundred times a hundred fifty",
-     "fifty is thirty"
+     "Now the total",
+     "is thirty thousand"
     ]
    },
    {
     "say": "A hundred times two hundred fifty is twenty-five thousand.",
     "at": [
-     "A hundred times two hundred fifty",
-     "fifty is twenty-five"
+     "is twenty-five thousand"
     ]
    },
    {
     "say": "And a hundred times three hundred fifty is thirty-five thousand.",
     "at": [
-     "a hundred times three hundred fifty",
-     "fifty is thirty-five"
+     "three hundred fifty",
+     "is thirty-five thousand"
     ]
    }
   ],
@@ -72,20 +69,20 @@
     "say": "Thirty thousand plus twenty-five thousand is fifty-five thousand. Plus thirty-five thousand is ninety thousand shekels.",
     "at": [
      "thousand is fifty-five",
-     "Plus thirty-five thousand"
+     "is ninety thousand shekels"
     ]
    },
    {
     "say": "The average is the total divided by the four hundred guests. Ninety thousand divided by four hundred is nine hundred divided by four. That's two hundred twenty-five.",
     "at": [
      "The average is",
-     "nine hundred divided by four",
-     "That's two hundred"
+     "That's two hundred twenty-five"
     ]
    },
    {
     "say": "Two hundred twenty-five is less than two hundred fifty. That's choice number one.",
     "at": [
+     "Two hundred twenty-five",
      "number one"
     ]
    }
@@ -105,7 +102,7 @@
     ]
    },
    {
-    "say": "The pie says half of the guests are on the groom's side only. They gave a hundred fifty, the smallest gift. The three hundred fifty group is only a quarter.",
+    "say": "The pie says half of the guests are on the groom's side only. Their average gift was a hundred fifty, the lowest group average. The three hundred fifty group is only a quarter.",
     "at": [
      "The pie says half",
      "the guests are"

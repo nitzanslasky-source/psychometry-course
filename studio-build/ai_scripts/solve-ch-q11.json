@@ -68,11 +68,15 @@
    {
     "say": "Wednesday, thirty-five and thirty-five. Thursday, thirty and fifty.",
     "at": [
-     "Wednesday, thirty-five",
-     "thirty and fifty"
+     "Thursday, thirty and fifty"
     ]
    },
-   "Only Wednesday is equal. That's the happy wedding.",
+   {
+    "say": "Only Wednesday is equal. That's the happy wedding.",
+    "at": [
+     "That's the happy"
+    ]
+   },
    {
     "say": "Careful with Tuesday. The groom's side only plus the shared is twenty-five plus twenty-five, fifty. That's equal to the bride's side only, fifty. But then we gave the shared guests to one side only.",
     "at": [

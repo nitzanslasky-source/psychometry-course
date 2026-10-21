@@ -71,12 +71,12 @@
   ],
   [
    {
-    "say": "[pause] Now let's estimate. We start again from the givens. The machine works three hours at twenty, and only two hours at thirty.",
+    "say": "[pause] Now let's estimate. We start again from the givens. Sixty divided by twenty is three hours. Sixty divided by thirty is two hours. So the machine works three hours at twenty, and only two hours at thirty.",
     "at": [
      "Now let's",
-     "the givens. The",
-     "The machine works three hours at twenty",
-     "at twenty, and"
+     "the givens. Sixty",
+     "So the machine works three hours at twenty",
+     "two hours at"
     ]
    },
    {
@@ -117,25 +117,25 @@
     "at": [
      "we cut the gap into five",
      "five equal units",
+     "The gap is thirty minus twenty",
      "Ten divided by five",
      "So each unit"
     ]
    },
-   {
-    "say": "The pivot is closer to the heavy side. It's two units from twenty, and three units from thirty.",
-    "at": [
-     "The pivot is closer to the heavy side",
-     "It's two units"
-    ]
-   },
+   "The pivot is closer to the heavy side. It's two units from twenty, and three units from thirty.",
    {
     "say": "Two units is two times two, four. Twenty plus four is twenty-four. The same answer.",
     "at": [
      "Twenty plus four",
-     "The same answer"
+     "is twenty-four"
     ]
    },
-   "So whenever they ask for an average rate, we divide the total work by the total time. The plain average of the rates works only when the times are equal. Otherwise, the answer is closer to the rate with more time.",
+   {
+    "say": "So whenever they ask for an average rate, we divide the total work by the total time. The plain average of the rates works only when the times are equal. Otherwise, the answer is closer to the rate with more time.",
+    "at": [
+     "So whenever they"
+    ]
+   },
    {
     "say": "Choice number two is our answer, and I'll see you in the next question.",
     "at": [

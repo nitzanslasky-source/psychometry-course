@@ -22,7 +22,7 @@
    {
     "say": "Let's start with the math way. The price drops by seventy-five percent of six hundred eighty. Let's use ten percent chunks. Ten percent of six hundred eighty is sixty-eight.",
     "at": [
-     "Let's start",
+     "by seventy-five percent",
      "Ten percent of six hundred eighty",
      "eighty is sixty-eight"
     ]
@@ -32,8 +32,8 @@
     "at": [
      "Seventy-five percent is seventy",
      "plus five percent",
-     "Seven times sixty",
-     "Seven times sixty is",
+     "Seven times sixty is four hundred twenty",
+     "Seven times eight is fifty-six",
      "So that's four hundred"
     ]
    },

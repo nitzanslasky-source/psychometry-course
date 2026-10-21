@@ -107,7 +107,12 @@
      "So the average"
     ]
    },
-   "Why does it work? It's the seesaw again. Seventy percent is the heavy side, so it gets the small part of the gap, six. The light side gets the big part, fourteen.",
+   {
+    "say": "Why does it work? It's the seesaw again. Seventy percent is the heavy side, so it gets the small part of the gap, six. The light side gets the big part, fourteen.",
+    "at": [
+     "fourteen"
+    ]
+   },
    {
     "say": "The trap is forty, the plain middle. It's only right when the shares are fifty percent and fifty percent.",
     "at": [

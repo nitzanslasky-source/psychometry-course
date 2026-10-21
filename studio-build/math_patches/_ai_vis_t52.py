@@ -651,8 +651,8 @@ i_m4 = I('i_m4', 'We choose the chart that shows our data best', size=30)
 SIM_A = MA.sim_chart(MA.SIM_A)
 i_s0 = CH('i_s0', SIM_A, LX, LY, LW, [('a', MA.sim_chart(MA.SIM_A, marks=[('col', 1, 5)])),
                                       ('b', MA.sim_chart(MA.SIM_A, marks=[('col', 1, 5), ('col', 8, 15)]))])
-i_a1 = I('i_a1', 'Geometry: not necessarily to scale. $\\ $Charts: always accurate', size=28, col=1)
-i_a2 = I('i_a2', 'Steeper line: a bigger change', size=28, col=1)
+i_a1 = I('i_a1', 'Charts: use the scale, units and any axis break', size=28, col=1)
+i_a2 = I('i_a2', 'Same axes and time interval: steeper means a bigger change', size=28, col=1)
 i_a3 = I('i_a3', 'Tests $1$ to $5$: steep, a big improvement', size=28, col=1)
 i_a4 = I('i_a4', 'From test $8$: almost flat', size=28, col=1)
 SIB6 = MA.sib_table(6)
@@ -778,9 +778,9 @@ video('ch52-intro', 'lesson', slides=[
         "the next lessons.", show(i_m4, 'We choose the chart')), pre=[i_m3['base']]),
     S('Charts are accurate',
       L("Here's an important difference from geometry. In geometry, a figure is not necessarily drawn to scale."),
-      L("In charts, the drawing is always accurate. So we can trust it, and we should use it.",
-        show(i_a1, 'the drawing is always accurate')),
-      L("Often the fastest way is just to look. For example, a steeper line means a bigger change.",
+      L("In charts, we can read values from the drawing. But first, check the scale, the units, and any break in the axis.",
+        show(i_a1, 'check the scale')),
+      L("Often the fastest way is just to look. On the same axes, over the same time interval, a steeper line means a bigger change.",
         show(i_a2, 'a steeper line means')),
       L("Let's see it on this chart. It shows a score, by the number of full practice tests a student did."),
       L("At the start the line is very steep. From the first test to the fifth, the score jumps a lot.",
@@ -969,7 +969,7 @@ video('ch52-tables', 'lesson', slides=[
       L("And all the vehicles together, sixty thousand.", show(t_sq['t'], 'all the vehicles together')),
       L("Commercial vehicles that are privately owned, four thousand. That's one square, commercial and privately owned.",
         show(t_sq['f'], "That's one square")),
-      L("Now it's like a sudoku. The privately owned column is forty, and four of them are commercial. Forty minus four is "
+      L("Now we use the column total. The privately owned column is forty, and four of them are commercial. Forty minus four is "
         "thirty-six.", show(t_o1, 'Forty minus four'), show(t_sq['x'], 'is thirty-six')),
       L("So thirty-six thousand private cars are privately owned."),
       L("The private car row is forty-five. Forty-five minus thirty-six is nine.", show(t_o2, 'Forty-five minus thirty-six'),
@@ -1077,8 +1077,8 @@ video('ch52-scatter', 'lesson', slides=[
         show(p_n6, 'Each point sits exactly')), pre=[p_c1['base']]),
     S('All four columns',
       L("We mark the other columns the same way. Each one gets its own mark in the key."),
-      L("Private cars get a dot. Privately owned gets a white star. And the commercial vehicles get an x.",
-        show(p_c2['all'], 'Private cars get a dot'), show(p_n7, 'the commercial vehicles get an x')),
+      L("Private cars get a dot. Privately owned vehicles get a white star. And privately owned commercial vehicles get an x.",
+        show(p_c2['all'], 'Private cars get a dot'), show(p_n7, 'privately owned commercial vehicles get an x')),
       L("Now every number of the table is a point on the chart. It's the same data, as a picture.",
         show(p_n8, 'every number of the table')), pre=[p_c2['base']]),
     S('Easy to see',
@@ -1120,7 +1120,7 @@ video('ch52-scatter', 'lesson', slides=[
       L("Two thousand eleven. Eighty divided by eight is ten.", show(p_v2, 'Eighty divided by eight')),
       L("Two thousand twelve. Eighty divided by ten is eight.", show(p_v3, 'Eighty divided by ten')),
       L("Two thousand thirteen. A hundred divided by fifteen. Do we need the exact number? No. A hundred divided by ten is ten, "
-        "and fifteen dealers is more than ten. So each one gets less than ten.", show(p_v4, 'A hundred divided by fifteen')),
+        "and fifteen dealers is more than ten. So the average is less than ten thousand per dealer.", show(p_v4, 'A hundred divided by fifteen')),
       L("Twelve is the greatest. So the answer is two thousand ten, choice number one."), pre=[p_c7['base']]),
     S('Below zero',
       L("A few more things about axes. An axis can go below zero."),
@@ -1174,8 +1174,8 @@ LS = car_lines(4, points=False)
 l_c4 = CH('l_c4', LS, 345, 92, 740, [
     ('x', car_lines(4, points=False, marks=[('cross', 0.5, 70)])),
     ('p', car_lines(4, points=False, marks=[('cross', 0.5, 70), ('pt', 0, 60), ('pt', 1, 80), ('pt', 2, 80), ('pt', 3, 100)]))])
-l_n6 = I('l_n6', 'No year $2010\\frac{1}{2}$: $\\ $nothing was measured there', size=28, col=1)
-l_n7 = I('l_n7', 'Values only at the marked years', size=28, col=1)
+l_n6 = I('l_n6', 'Each value is a full-year total', size=28, col=1)
+l_n7 = I('l_n7', 'In this yearly chart: values only at the marked years', size=28, col=1)
 l_c5 = CH('l_c5', LS, 345, 92, 740, [
     ('f', car_lines(4, points=False, marks=[('seg', 1, 80, 2, 80)])),
     ('u', car_lines(4, points=False, marks=[('seg', 1, 80, 2, 80), ('seg', 2, 80, 3, 100)]))])
@@ -1186,7 +1186,7 @@ l_c6 = CH('l_c6', LS, 345, 92, 740, [
     ('b', car_lines(4, points=False, marks=[('seg', 0, 40, 1, 50), ('seg', 2, 50, 3, 65)]))])
 l_r1 = IH('l_r1', '$50-40=10$', size=30, col=1)
 l_r2 = IH('l_r2', '$65-50=15$', size=30, col=1)
-l_n10 = I('l_n10', 'Steeper line: $\\ $a bigger rise', size=28, col=1)
+l_n10 = I('l_n10', 'Same one-year interval: $\\ $steeper means a bigger rise', size=28, col=1)
 l_c7 = CH('l_c7', LS, 345, 92, 740, [
     ('a', car_lines(4, points=False, marks=[('seg', 0, 60, 1, 80)])),
     ('b', car_lines(4, points=False, marks=[('seg', 0, 60, 1, 80), ('seg', 2, 80, 3, 100)]))])
@@ -1223,8 +1223,8 @@ video('ch52-line', 'lesson', slides=[
       L("Now something very important. The line has values only at the marked years."),
       L("Look halfway between two thousand ten and two thousand eleven. The bold line passes seventy there.",
         show(l_c4['x'], 'The bold line passes seventy')),
-      L("Does that mean seventy thousand vehicles were sold there? No. There's no year two thousand ten and a half. Nobody "
-        "measured anything there.", show(l_n6, "There's no year two thousand ten")),
+      L("Does that give us another sales figure? No. Each value here is a full-year total. The line doesn't give us a "
+        "separate total halfway between the years.", show(l_n6, 'Each value here is a full-year total')),
       L("The values are only at the points. Two thousand ten, two thousand eleven, two thousand twelve and two thousand thirteen.",
         show(l_c4['p'], 'The values are only at the points'), show(l_n7, 'only at the points')), pre=[l_c4['base']]),
     S('The line shows the trend',
@@ -1234,7 +1234,7 @@ video('ch52-line', 'lesson', slides=[
       L("Where the line goes up, there's a rise. Like the bold line from two thousand twelve to two thousand thirteen.",
         show(l_c5['u'], 'Where the line goes up')), pre=[l_c5['base']]),
     S('Steeper means more',
-      L("The angle of the line tells us more. A steeper line means a bigger rise. Let's see it in numbers."),
+      L("Each step here is one year, on the same axes. So a steeper line means a bigger rise in that year. Let's see it in numbers."),
       L("Look at privately owned, the dashed line. From two thousand ten to two thousand eleven it goes from forty to fifty.",
         show(l_c6['a'], 'From two thousand ten to two thousand eleven')),
       L("Fifty minus forty is ten. So that's a rise of ten thousand.", show(l_r1, 'Fifty minus forty')),
@@ -1257,8 +1257,9 @@ video('ch52-line', 'lesson', slides=[
         show(l_n13, 'the steeper line shows it')), pre=[l_c8['base'], l_c9['base']]),
     S('Line graph: in short',
       L("So a line graph helps us see the trend, and how steep each part is."),
-      L("But remember, the line itself has no values. Only the marked points do."),
-      L("Next, the same data as bars. I'll see you in the next video.")),
+      L("But remember, in this yearly chart, only the marked years have given sales totals. The connecting line doesn't give us extra totals."),
+      L("Next, the same data as bars. I'll see you in the next video."),
+      pre=[CH('l_recap', car_lines(), 345, 92, 740)['base']]),
 ])
 
 
@@ -1294,7 +1295,8 @@ b_n7 = I('b_n7', 'The white bar: $\\ $all the vehicles sold, $60$', size=28, col
 b_n8 = I('b_n8', 'The black bar inside: $\\ $the private cars, $45$', size=28, col=1)
 b_n9 = I('b_n9', 'The black bar is a part of the white bar', size=28, col=1)
 b_o1 = CH('b_o1', MA.overlap_fig(1), 345, 92, 740)
-b_o2 = CH('b_o2', MA.overlap_fig(2), 345, 92, 740)
+b_o2 = CH('b_o2', MA.overlap_fig(2).replace('both: 30', 'both: ?'), 345, 92, 740,
+          [('!value', MA.overlap_fig(2))])
 b_n10 = I('b_n10', '$2011$: $\\ 80$ sold, $\\ 60$ private cars, $\\ 50$ privately owned', size=28, col=1)
 b_n11 = I('b_n11', 'Both? $\\ $All $50$ inside the $60$: $\\ 50$', size=28, col=1)
 b_n12 = IH('b_n12', '$60+50=110$', size=30, col=1)
@@ -1355,8 +1357,8 @@ video('ch52-bar', 'lesson', slides=[
     S('The smallest overlap',
       L("Or we can push the fifty up, as high as it goes, to the top of the eighty.", show(b_o2['base'], 'push the fifty up')),
       L("Now only part of it is inside the sixty. How much? Sixty plus fifty is a hundred ten.", show(b_n12, 'Sixty plus fifty')),
-      L("But there are only eighty vehicles. A hundred ten minus eighty is thirty. So at least thirty are both.",
-        show(b_n13, 'A hundred ten minus eighty')),
+      L("But there are only eighty thousand vehicles. A hundred ten minus eighty is thirty. So at least thirty thousand are both.",
+        show(b_n13, 'A hundred ten minus eighty'), show(b_o2['value'], 'is thirty')),
       L("So both can be anywhere from thirty to fifty thousand. It's the same as in overlap questions.",
         show(b_n14, 'anywhere from thirty to fifty')), pre=[]),
     S('Stacked bars',
@@ -1470,8 +1472,8 @@ video('ch52-continuous', 'lesson', slides=[
     S('A relative increase',
       L("Here's a sample question. At which hour was the relative increase in visitors, compared with the hour before, "
         "the greatest?", show(s_q1, 'At which hour'), show(s_q1c, 'the greatest')),
-      L("What does relative increase mean? It's the increase compared with where we started. How many times bigger did "
-        "it get?", show(s_r3, 'compared with where we started')),
+      L("What does relative increase mean? It's the increase compared with where we started. What fraction of the starting "
+        "amount was added?", show(s_r3, 'compared with where we started')),
       L("Let's see it in numbers. From a hundred to a hundred fifty is fifty more. That's half of a hundred, so half "
         "more.", show(s_r1, 'From a hundred to a hundred fifty')),
       L("From four hundred to four hundred fifty is also fifty more. But fifty is only an eighth of four hundred.",
@@ -1482,7 +1484,7 @@ video('ch52-continuous', 'lesson', slides=[
       L("Now the question. Let's look at the line just before each of the four hours."),
       L("Nine o'clock. At eight there were about eighty visitors, and at nine about three hundred.",
         show(s_c5['a'], 'At eight there were about eighty'), show(s_r4, 'about three hundred')),
-      L("Eighty times four is three hundred twenty. So it grew almost four times.", show(s_r5, 'Eighty times four')),
+      L("Eighty times four is three hundred twenty. So the final number is a little less than four times the starting number.", show(s_r5, 'Eighty times four')),
       L("Now the other three hours. Before sixteen, twenty-one and twenty-three, the line rises only a little, and it "
         "starts high, at three hundred fifty or more.", show(s_c5['b'], 'the line rises only a little'),
         show(s_r6, 'it starts high')),
@@ -1490,7 +1492,7 @@ video('ch52-continuous', 'lesson', slides=[
         "the steepest rise, from the lowest start.", show(s_r7, 'the steepest rise')),
       L("So the answer is nine o'clock, choice number one. We saw it with our eyes, by the slope, almost with no "
         "calculation."),
-      L("One warning. A steeper slope means a bigger relative rise only when the starting values are close. Here nine "
+      L("One warning. Compare the same time interval, and check the starting value too. A steeper line alone doesn't tell us the relative rise. Here nine "
         "o'clock wins both ways, steeper and lower."),
       L("I'll see you in the next video."), pre=[s_c5['base']]),
 ])
@@ -1522,7 +1524,7 @@ r_n6 = I('r_n6', '$6$ rooms: $\\ 4{,}500$ to $8{,}000$, $\\ $mean $6{,}500$', si
 r_c3 = CH('r_c3', RC, 345, 92, 740, [('b', MA.rent_chart(hl=[(1, 'bar')]))])
 r_n7 = I('r_n7', '$2$ rooms: $\\ 2{,}500$ to $4{,}500$, $\\ $the middle is $3{,}500$', size=28, col=1)
 r_n8 = I('r_n8', 'The mean is $4{,}000$: $\\ $above the middle', size=28, col=1)
-r_n9 = I('r_n9', 'One cheap flat, many dear ones: $\\ $the mean goes up', size=28, col=1)
+r_n9 = I('r_n9', 'One cheap flat, many expensive ones: $\\ $the mean goes up', size=28, col=1)
 r_c4 = CH('r_c4', RC, 345, 92, 700, [('e1', MA.rent_chart(hl=[(4, 'max'), (1, 'min')])),
                                      ('e2', MA.rent_chart(hl=[(4, 'max'), (1, 'min'), (4, 'min'), (1, 'max')]))])
 r_q1 = I('r_q1', 'Ella rents a $2$-room flat and rents out a $5$-room flat.', size=24, col=1)
@@ -1577,7 +1579,7 @@ video('ch52-range', 'lesson', slides=[
         "hundred.", show(r_n7, 'The middle of that')),
       L("But the mean is four thousand, higher than the middle. Why?", show(r_n8, 'But the mean is four thousand')),
       L("Say there's just one cheap flat, at two thousand five hundred. All the other flats cost four thousand or more. "
-        "The many dear flats pull the mean up.", show(r_n9, 'pull the mean up')),
+        "The many expensive flats pull the mean up.", show(r_n9, 'pull the mean up')),
       L("So the bar shows where the rents start and end. The bold line shows the average. They're different things."),
       pre=[r_c3['base']]),
     S('Ella and Daniel',
@@ -1755,8 +1757,8 @@ video('ch52-circle', 'lesson', slides=[
         show(c_c3['pr'], 'its last dark part ends'), show(c_n10, 'ends at twenty')),
       L("So is the answer twenty o'clock? A lot of students mark it. But let's read what the dark areas mean."),
       L("They show where most of the visitors are in that hour. Most, not all.", show(c_n11, 'Most, not all')),
-      L("What does most mean? More than half. Say there are three hundred visitors, and a hundred sixty are in the forum. "
-        "That's most of them.", show(c_n12, 'three hundred visitors')),
+      L("Say there are three hundred visitors, and a hundred sixty are in the forum. That's more than half, but it still "
+        "doesn't mean everyone.", show(c_n12, 'three hundred visitors')),
       L("The other hundred forty can be anywhere, also in the practice area. So after twenty o'clock, some people may "
         "still practise. Or maybe nobody does."),
       L("The chart can't tell us. So the latest hour cannot be known.", show(c_n13, 'cannot be known')),
@@ -2255,11 +2257,11 @@ video('solve-ch-q04', 'solution', qid='ch-q04', slides=[
       L("Choice number three says the same as choice number one, on Mercury. And choice number four says, on Saturn, the "
         "lower the carbon, the higher the hydrogen.", pt('choice 3', 'Choice number three says'), pt('choice 4', 'And choice number four')),
       L("So it's the same idea every time. One planet, and a steady link between carbon and hydrogen.", show(q4a, 'the same idea every time')),
-      L("A steady link means the samples of that planet form a line, going up or going down. Is there such a planet? Let's "
-        "look at the whole chart."),
+      L("For more carbon and more hydrogen, every move right must also go up. For more carbon and less hydrogen, it must "
+        "go down. The points don't have to form a straight line. Let's look at the whole chart."),
       L("One planet jumps out. The Mercury dots form a straight line going up. More carbon, and more hydrogen too.",
         show(q4c['me'], 'One planet jumps out'), show(q4b, 'form a straight line')),
-      L("The other planets are more like clouds, with no clear line. So choice number three looks right. Now let's check "
+      L("So choice number three looks right. But a quick look is not enough to prove necessarily true. Now let's check "
         "it properly."), pre=q4_pre),
     S('Method 2 · Understanding: each planet',
       L("Now we check each planet, from the givens. Choice number one, Venus, the squares. Is it true that more carbon "
@@ -2693,9 +2695,9 @@ video('solve-ch-q14', 'solution', qid='ch-q14', slides=[
 
 # ------------------------------------------------------------------------------------------------ solve-ch-q15
 q15_pre, q15c = QPRE('ch-q15', 'q15c', [('m', plus(S3, BAR3('Monday', '400'), PIE3('Monday')))])
-q15a = IH('q15a', '$50\\%$ of $400=200$ gave $150$', size=24, col=1)
-q15b = IH('q15b', '$25\\%$ of $400=100$ gave $250$', size=24, col=1)
-q15d = IH('q15d', '$100$ gave $350$', size=24, col=1)
+q15a = IH('q15a', '$50\\%$ of $400=200$; mean gift $150$', size=24, col=1)
+q15b = IH('q15b', '$25\\%$ of $400=100$; mean gift $250$', size=24, col=1)
+q15d = IH('q15d', '$100$ guests; mean gift $350$', size=24, col=1)
 q15e = IH('q15e', '$200\\cdot150=30{,}000$', size=24, col=1)
 q15f = IH('q15f', '$100\\cdot250=25{,}000$', size=24, col=1)
 q15g = IH('q15g', '$100\\cdot350=35{,}000$', size=24, col=1)
@@ -2704,7 +2706,7 @@ q15h = IH('q15h', 'total: $\\ 90{,}000$', size=24, col=1)
 q15i = IH('q15i', '$90{,}000\\div400=900\\div4=225$', size=24, col=1)
 q15_3pre, q15m = QPRE('ch-q15', 'q15m', [('m', plus(S3, PIE3('Monday')))])
 q15j = I('q15j', '$250$: $\\ $exactly between $150$ and $350$', size=24, col=1)
-q15l = I('q15l', 'Half the guests gave $150$: $\\ $the average is pulled down', size=24, col=1)
+q15l = I('q15l', 'More guests in the low-average group: $\\ $the overall average is below $250$', size=24, col=1)
 
 video('solve-ch-q15', 'solution', qid='ch-q15', slides=[
     S('Method 1 · The math way',
@@ -2713,14 +2715,14 @@ video('solve-ch-q15', 'solution', qid='ch-q15', slides=[
         "on average.", pt('stem', 'At the wedding on Monday'), voice='calm', pause=0.5),
       L("What can be said about the average gift of a guest at Monday's wedding?", pt('stem', 'What can be said'), voice='calm'),
       L("A lot of students say two hundred fifty. It's the middle of a hundred fifty, two hundred fifty and three hundred "
-        "fifty. But that's only true if the three groups are the same size."),
+        "fifty. But we can't just average the three amounts without checking the group sizes."),
       L("We'll solve it in two different ways. The math way, and then by understanding, with the seesaw from averages."),
       L("Let's start with the math way. Monday's bar is four hundred guests. And the pie says fifty, twenty-five and "
         "twenty-five percent.", show(q15c['m'], "Monday's bar is four hundred")),
-      L("Fifty percent of four hundred is two hundred guests. They gave a hundred fifty each.", show(q15a, 'Fifty percent of four hundred')),
-      L("Twenty-five percent of four hundred is a hundred guests. They gave two hundred fifty each.", show(q15b, 'Twenty-five percent of four hundred')),
-      L("And the other hundred guests, the shared ones, gave three hundred fifty each.", show(q15d, 'the other hundred guests')),
-      L("Now the money. Two hundred times a hundred fifty is thirty thousand.", show(q15e, 'Two hundred times a hundred fifty')),
+      L("Fifty percent of four hundred is two hundred guests. Their average gift was a hundred fifty.", show(q15a, 'Fifty percent of four hundred')),
+      L("Twenty-five percent of four hundred is a hundred guests. Their average gift was two hundred fifty.", show(q15b, 'Twenty-five percent of four hundred')),
+      L("And the other hundred guests, the shared ones, gave three hundred fifty on average.", show(q15d, 'the other hundred guests')),
+      L("Now the total money from each group is its number of guests times its average gift. Two hundred times a hundred fifty is thirty thousand.", show(q15e, 'Two hundred times a hundred fifty')),
       L("A hundred times two hundred fifty is twenty-five thousand.", show(q15f, 'A hundred times two hundred fifty')),
       L("And a hundred times three hundred fifty is thirty-five thousand.", show(q15g, 'a hundred times three hundred fifty')),
       pre=q15_pre),
@@ -2734,7 +2736,7 @@ video('solve-ch-q15', 'solution', qid='ch-q15', slides=[
       L("[pause] Now by understanding, from the givens again. Remember the seesaw. The average sits nearer the heavier "
         "group."),
       L("Two hundred fifty is exactly in the middle between a hundred fifty and three hundred fifty.", show(q15j, 'exactly in the middle')),
-      L("The pie says half of the guests are on the groom's side only. They gave a hundred fifty, the smallest gift. The "
+      L("The pie says half of the guests are on the groom's side only. Their average gift was a hundred fifty, the lowest group average. The "
         "three hundred fifty group is only a quarter.", show(q15m['m'], 'The pie says half')),
       L("So the low side is heavier, and it pulls the average down, below two hundred fifty.", show(q15l, 'pulls the average down')),
       L("Choice number one is our answer, and I'll see you in the next question.", mk('tick', 'choice 1', 'Choice number one is our answer')),
@@ -2962,6 +2964,76 @@ def _no_stem(vid):
                 new.append(c)
             ln['cues'] = new
 
+
+# 21 Oct, direct review L: derived rows wait for their spoken result, not merely
+# the question or the first input. Chart data themselves remain visible as givens.
+def _result_at(vid, name, phrase):
+    found = []
+    for sl in VIDEOS[vid]['slides']:
+        for ln in sl['lines']:
+            for j, c in enumerate(ln['cues']):
+                if c[0] == 'show' and c[1]['_name'] == name:
+                    assert phrase.lower() in ln['say'].lower(), (vid, name, phrase)
+                    ln['cues'][j] = show(c[1], phrase)
+                    ln['cues'].sort(key=lambda q: _phrase_pos(ln['say'], q))
+                    found.append(name)
+    assert len(found) == 1, (vid, name, found)
+
+_RESULTS52 = {
+ 'ch52-tables': {
+  't_a1':'is a hundred forty', 't_a2':'is two hundred twenty', 't_a3':'is three hundred twenty',
+  't_a4':'is eighty', 't_s1':'is twenty', 't_s2':'is zero', 't_s3':'is twenty again',
+  't_p1':'is two thirds', 't_e3':"it's sixty-two and a half percent", 't_e4':'Sixty-two and a half percent again',
+  't_e5':"That's simply sixty-five percent", 't_o1':'is thirty-six', 't_o2':'is nine'},
+ 'ch52-scatter': {'p_v1':'is twelve', 'p_v2':'is ten', 'p_v3':'is eight',
+                  'p_v4':'the average is less than ten thousand per dealer'},
+ 'ch52-line': {'l_r1':'is ten', 'l_r2':'is fifteen', 'l_r3':'is twenty', 'l_r4':'is twenty again'},
+ 'ch52-bar': {'b_n10':'Look at two thousand eleven', 'b_n12':'is a hundred ten',
+              'b_n13':'is thirty', 'b_n17':'fifty thousand'},
+ 'ch52-continuous': {'s_r1':'so half more', 's_r2':'an eighth of four hundred',
+                     's_r5':'less than four times the starting number'},
+ 'ch52-range': {'r_n7':'is three thousand five hundred', 'r_e2':'is five thousand',
+                'r_d1':'is five thousand', 'r_d4':'is only five thousand'},
+ 'ch52-circle': {'c_n12':'a hundred sixty are in the forum'},
+ 'ch52-cumulative': {'u_n6':'is twenty', 'u_n7':'is thirty', 'u_n10':'is zero',
+                     'u_n11':'so eighty thousand shekels'},
+ 'ch52-change': {'h_n4':'a hundred ten', 'h_n6':'is a hundred fifteen',
+                 'h_r1':'is eighty', 'h_r2':'is eighty-five', 'h_r4':'is seventy-five'},
+ 'solve-ch-q01': {'q1a':'three', 'q1b':'six', 'q1e':'is six'},
+ 'solve-ch-q04': {'q4f':'from twelve to sixteen percent'},
+ 'solve-ch-q07': {'q7i':'is nine'},
+ 'solve-ch-q08': {'q8b':'is two hundred forty thousand', 'q8d':'is a hundred thousand',
+                  'q8e':'twenty thousand', 'q8f':'is three hundred sixty thousand',
+                  'q8i':'Eighty gives plus twenty again'},
+ 'solve-ch-q09': {'q9b':'is thirty thousand', 'q9d':'is a hundred fifty thousand',
+                  'q9e':'is twenty thousand', 'q9f':'a hundred thirty thousand'},
+ 'solve-ch-q10': {'q10a':'is two hundred', 'q10b':'is two hundred eighty',
+                  'q10d':"That's forty thousand", 'q10e':'is a hundred each',
+                  'q10f':'Plus eighty is two hundred eighty again'},
+ 'solve-ch-q11': {'q11e':'Thursday, thirty and fifty'},
+ 'solve-ch-q12': {'q12d':'is two hundred fifty'},
+ 'solve-ch-q13': {'q13b':'five people', 'q13d':'is three and a half'},
+ 'solve-ch-q14': {'q14b':'is eighty percent', 'q14d':'is thirty', 'q14e':'two hundred forty',
+                  'q14f':'of four hundred guests', 'q14g':'so three quarters is three hundred',
+                  'q14h':'two hundred fifty', 'q14i':'is a hundred seventy-five'},
+ 'solve-ch-q15': {'q15a':'two hundred guests', 'q15b':'a hundred guests',
+                  'q15d':'three hundred fifty on average', 'q15e':'is thirty thousand',
+                  'q15f':'is twenty-five thousand', 'q15g':'is thirty-five thousand',
+                  'q15h':'is ninety thousand shekels', 'q15i':"That's two hundred twenty-five"},
+}
+for _vid, _rows in _RESULTS52.items():
+    for _name, _phrase in _rows.items(): _result_at(_vid, _name, _phrase)
+
+# The stacked-bar bracket contains the derived 50; move it to the calculation.
+_sl52 = next(sl for sl in VIDEOS['ch52-bar']['slides']
+             if any(c[0]=='show' and c[1]['_name']=='b_c5_g' for ln in sl['lines'] for c in ln['cues']))
+_g52 = [(ln,c) for ln in _sl52['lines'] for c in ln['cues'] if c[0]=='show' and c[1]['_name']=='b_c5_g']
+assert len(_g52)==1, ('stacked-bar bracket',len(_g52))
+_old52,_cue52 = _g52[0]
+_old52['cues'].remove(_cue52)
+_to52 = next(ln for ln in _sl52['lines'] if 'minus sixty, fifty thousand' in ln['say'])
+_to52['cues'].append(show(_cue52[1], 'fifty thousand'))
+_to52['cues'].sort(key=lambda q:_phrase_pos(_to52['say'],q))
 
 # the camera lesson in parts of about 3-4 minutes (math_patches/_camera_parts.py), the long lessons in parts (not on
 # camera), before the visual passes

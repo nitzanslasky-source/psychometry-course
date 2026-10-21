@@ -37,28 +37,34 @@
     "say": "In the first minute, only one volunteer works. One times two is two flyers. So far, two flyers are gone.",
     "at": [
      "In the first minute",
-     "one volunteer works"
+     "one volunteer works",
+     "One times two is two",
+     "So far, two flyers"
     ]
    },
    {
     "say": "In the second minute, two volunteers work. Two times two is four flyers. Two plus four is six so far.",
     "at": [
      "In the second minute",
-     "Two times two"
+     "Two times two is four",
+     "Two plus four is six"
     ]
    },
    {
     "say": "In the third minute, three volunteers work. Three times two is six. Six plus six is twelve so far.",
     "at": [
      "In the third minute",
-     "Three times two"
+     "Three times two is six",
+     "Six plus six is twelve"
     ]
    },
    {
     "say": "In the fourth minute, four volunteers hand out four times two, eight. Twelve plus eight is twenty so far.",
     "at": [
      "In the fourth minute",
-     "volunteers hand out"
+     "volunteers hand out",
+     "four times two, eight",
+     "Twelve plus eight is twenty"
     ]
    },
    {
@@ -66,6 +72,8 @@
     "at": [
      "In the fifth minute",
      "volunteers hand out",
+     "five times two, ten",
+     "Twenty plus ten is thirty",
      "That's the whole box",
      "they stop after"
     ]
@@ -86,14 +94,14 @@
    {
     "say": "Let's check. From the first volunteer to the fifth, they handed out ten, eight, six, four and two flyers. That adds up to thirty, the whole box.",
     "at": [
-     "first volunteer to",
-     "they handed out ten, eight",
-     "six, four and"
+     "From the first",
+     "adds up to thirty"
     ]
    },
    {
     "say": "Here the box ran out exactly at the end of a minute. If it runs out in the middle of a minute, the last step is only part of a minute. So we go step by step, and stop when the total reaches the whole job.",
     "at": [
+     "Here the box",
      "stop when the total reaches",
      "the whole job"
     ]
@@ -146,13 +154,13 @@
    {
     "say": "Then she works again, from forty to sixty. That's twenty minutes of work.",
     "at": [
-     "Then she works again",
-     "That's twenty minutes"
+     "That's twenty minutes of work"
     ]
    },
    {
     "say": "Why is there no second break in the hour? Her next break comes after thirty more minutes of work. Forty plus thirty is seventy, and the hour ends at sixty.",
     "at": [
+     "Why is there",
      "Forty plus thirty is seventy"
     ]
    },
@@ -181,7 +189,8 @@
     "at": [
      "A lot of",
      "Sixty divided by five is twelve",
-     "And twelve times"
+     "twelve times eight",
+     "But she doesn't"
     ]
    },
    {
@@ -194,8 +203,9 @@
   ],
   [
    {
-    "say": "So let's sum it up. Worker-hours are the workers times the hours. That's how long one worker alone would need.",
+    "say": "So let's sum it up. With workers at the same constant rate, worker-hours are the workers times the hours. That's how long one worker alone would need.",
     "at": [
+     "up. With workers",
      "Worker-hours are the workers times",
      "That's how long"
     ]

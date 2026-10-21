@@ -7974,6 +7974,10 @@
      [
       "Thirty-seven squared minus thirty-five squared is thirty-seven minus thirty-five, times thirty-seven plus thirty-five",
       "37² − 35² = (37 − 35) × (37 + 35)"
+     ],
+     [
+      "twelve twenty-five or thirteen sixty-nine",
+      "1,225 or 1,369"
      ]
     ]
    }
@@ -11356,6 +11360,18 @@
      [
       "g over four N",
       "g/(4N)"
+     ],
+     [
+      "g over four N percent",
+      "(g/(4N))%"
+     ],
+     [
+      "eighty over eight hundred percent",
+      "(80/800)%"
+     ],
+     [
+      "a tenth of a percent",
+      "1/10 of a percent"
      ]
     ],
     "3.3": [
@@ -11382,6 +11398,24 @@
      [
       "g over four N",
       "g/(4N)"
+     ]
+    ],
+    "2.2": [
+     [
+      "a hundred g over N percent",
+      "(100g/N)%"
+     ]
+    ],
+    "2.3": [
+     [
+      "twenty-five g over N percent",
+      "(25g/N)%"
+     ]
+    ],
+    "2.4": [
+     [
+      "twenty-five N over g percent",
+      "(25N/g)%"
      ]
     ]
    }

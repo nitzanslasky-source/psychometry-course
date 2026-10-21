@@ -130,31 +130,35 @@
    {
     "say": "Sixty plus eighty is a hundred forty.",
     "at": [
-     "Sixty plus eighty"
+     "is a hundred forty"
     ]
    },
    {
     "say": "A hundred forty plus eighty is two hundred twenty.",
     "at": [
-     "A hundred forty plus eighty",
-     "is two hundred"
+     "is two hundred twenty"
     ]
    },
    {
     "say": "And two hundred twenty plus a hundred is three hundred twenty.",
     "at": [
-     "two hundred twenty plus a hundred",
-     "hundred is three"
+     "plus a hundred",
+     "is three hundred twenty"
     ]
    },
    {
     "say": "There are four years, so we divide by four. Three hundred twenty divided by four is eighty.",
     "at": [
-     "Three hundred twenty divided by four",
-     "four is eighty"
+     "There are four",
+     "is eighty"
     ]
    },
-   "So the average is eighty thousand vehicles a year."
+   {
+    "say": "So the average is eighty thousand vehicles a year.",
+    "at": [
+     "So the average"
+    ]
+   }
   ],
   [
    {
@@ -168,25 +172,25 @@
    {
     "say": "Let's check the steps. From sixty to eighty is twenty.",
     "at": [
-     "From sixty to eighty"
+     "is twenty"
     ]
    },
    {
     "say": "From eighty to eighty is zero.",
     "at": [
-     "From eighty to eighty"
+     "is zero"
     ]
    },
    {
     "say": "And from eighty to a hundred is twenty again.",
     "at": [
-     "from eighty to a hundred",
      "is twenty again"
     ]
    },
    {
     "say": "The steps from both ends are the same, so the numbers are symmetric around eighty. The average is the middle, eighty, with no calculation.",
     "at": [
+     "The steps from",
      "The average is the middle",
      "eighty, with no"
     ]
@@ -216,7 +220,7 @@
    {
     "say": "Two thousand ten. Forty thousand were privately owned, out of sixty thousand. Forty over sixty is two thirds.",
     "at": [
-     "Forty over sixty"
+     "is two thirds"
     ]
    },
    {
@@ -253,22 +257,21 @@
    {
     "say": "Five eighths is five times twelve and a half. Five times twelve is sixty, and five halves are two and a half. So it's sixty-two and a half percent.",
     "at": [
-     "Five eighths is five times",
-     "twelve and a"
+     "it's sixty-two and a half percent"
     ]
    },
    {
     "say": "Two thousand twelve is the same, fifty out of eighty. Sixty-two and a half percent again.",
     "at": [
-     "Two thousand twelve is the same",
-     "same, fifty out"
+     "Two thousand twelve",
+     "Sixty-two and a half percent again"
     ]
    },
    {
     "say": "And two thousand thirteen is sixty-five out of a hundred. That's simply sixty-five percent.",
     "at": [
-     "sixty-five out of a hundred",
-     "That's simply sixty-five"
+     "And two thousand",
+     "That's simply sixty-five percent"
     ]
    }
   ],
@@ -322,10 +325,10 @@
     ]
    },
    {
-    "say": "Now it's like a sudoku. The privately owned column is forty, and four of them are commercial. Forty minus four is thirty-six.",
+    "say": "Now we use the column total. The privately owned column is forty, and four of them are commercial. Forty minus four is thirty-six.",
     "at": [
-     "Now it's like",
-     "Forty minus four",
+     "Now we use",
+     "is thirty-six",
      "is thirty-six"
     ]
    },
@@ -338,7 +341,7 @@
    {
     "say": "The private car row is forty-five. Forty-five minus thirty-six is nine.",
     "at": [
-     "Forty-five minus thirty-six",
+     "is nine",
      "is nine"
     ]
    },

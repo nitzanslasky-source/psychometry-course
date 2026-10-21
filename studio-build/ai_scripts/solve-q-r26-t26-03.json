@@ -103,7 +103,8 @@
     "say": "Pipe A fills a twelfth of the pool an hour. In three hours, three twelfths, that's a quarter of the pool.",
     "at": [
      "Pipe A fills a twelfth",
-     "In three hours"
+     "In three hours",
+     "that's a quarter"
     ]
    },
    {

@@ -20,7 +20,7 @@
     ]
    },
    {
-    "say": "Let's start by plugging in numbers. Remember the rules from psychometric thinking. Easy numbers, a different number for each letter, and usually not zero or one.",
+    "say": "Let's start by plugging in numbers. Like in psychometric thinking, check the restrictions first. Then choose easy allowed numbers. If choices give the same result, try another allowed example.",
     "at": [
      "Let's start"
     ]
@@ -39,7 +39,7 @@
     ]
    },
    {
-    "say": "Now, what percent of all the students is that? Twenty out of two hundred is ten out of a hundred, ten percent. So our target is ten.",
+    "say": "Now, what percent of all the students is that? Twenty out of two hundred is ten out of a hundred, ten percent. So our target is ten percent.",
     "at": [
      "Now, what percent",
      "Twenty out of two hundred",
@@ -50,49 +50,50 @@
   ],
   [
    {
-    "say": "Now we put N is two hundred and g is eighty into every choice. Choice number one says g over four N. Four times two hundred is eight hundred, so it's eighty over eight hundred. That's a tenth, not ten. Out.",
+    "say": "Now we put N is two hundred and g is eighty into every choice. Choice number one says g over four N percent. Four times two hundred is eight hundred, so it's eighty over eight hundred percent. That's a tenth of a percent, not ten percent. Out.",
     "at": [
      "Now we",
      "is two hundred",
      "number one says",
-     "four N. Four",
-     "hundred is eight",
+     "four N percent",
+     "two hundred is",
      "Eighty over eight hundred",
-     "not ten. Out"
+     "That's a tenth",
+     "not ten percent. Out"
     ]
    },
    {
-    "say": "Choice number two says a hundred g over N. A hundred times eighty is eight thousand, and eight thousand over two hundred is forty. That's the percent of girls, not of chess players. Out.",
+    "say": "Choice number two says a hundred g over N percent. A hundred times eighty is eight thousand, and eight thousand over two hundred is forty. That's forty percent of the students, all the girls, not just the girls who play chess. Out.",
     "at": [
      "number two says",
-     "g over N",
      "Eight thousand over two hundred",
      "is forty. That's",
-     "not of chess players"
+     "not just the girls who play chess"
     ]
    },
    {
-    "say": "Choice number three says twenty-five g over N. Twenty-five times eighty is two thousand, and two thousand over two hundred is ten. That's our target.",
+    "say": "Choice number three says twenty-five g over N percent. Twenty-five times eighty is two thousand, and two thousand over two hundred is ten. So this choice gives ten percent, our target.",
     "at": [
      "number three says",
-     "Twenty-five times eighty",
-     "thousand, and two"
+     "Twenty-five times eighty is two thousand",
+     "two thousand over two hundred is ten",
+     "So this choice"
     ]
    },
    {
-    "say": "In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four says twenty-five N over g. Twenty-five times two hundred is five thousand. Five thousand over eighty is more than sixty, because eighty times sixty is only four thousand eight hundred. Out.",
+    "say": "In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four says twenty-five N over g percent. Twenty-five times two hundred is five thousand. Five thousand over eighty is more than sixty, because eighty times sixty is only four thousand eight hundred. So it's more than sixty percent, not ten percent. Out.",
     "at": [
      "number four says",
-     "Five thousand over eighty",
-     "more than sixty",
-     "times sixty is"
+     "Five thousand over",
+     "So it's more than sixty percent",
+     "not ten percent"
     ]
    },
    {
-    "say": "Only choice number three gives ten. If two choices had given ten, we'd pick new numbers and test only those two. Choice number three is our answer.",
+    "say": "Only choice number three gives ten percent. If two choices had given ten percent, we'd pick new numbers and test only those two. Choice number three is our answer.",
     "at": [
      "number three gives",
-     "and test only",
+     "If two choices",
      "Choice number three is our answer"
     ]
    }
@@ -130,10 +131,8 @@
     ]
    },
    {
-    "say": "Choice number one, g over four N, is only the fraction of the students. We still need to multiply by a hundred to get a percent. Choice number three is our answer, and I'll see you in the next question.",
+    "say": "g over four N is the fraction of the students. To write it as a percent, we multiply that number by a hundred first. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
-     "number one, g",
-     "We still need",
      "Choice number three is our answer"
     ]
    }

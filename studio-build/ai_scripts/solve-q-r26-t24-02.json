@@ -21,7 +21,7 @@
    {
     "say": "Let's plug in numbers. There are only percents in the question, so let's say there are a hundred students. A hundred makes every percent of the school a number of students.",
     "at": [
-     "Let's plug",
+     "There are only",
      "let's say there are a hundred",
      "A hundred makes every percent",
      "of the school"
@@ -40,7 +40,8 @@
      "Now let's fill",
      "The question says thirty percent",
      "So it's thirty",
-     "Ten percent of forty",
+     "Ten percent of forty is four",
+     "so thirty percent is twelve",
      "so thirty percent is twelve"
     ]
    },
@@ -48,15 +49,15 @@
     "say": "Sixty percent of the sixty lower-grade students walk. Ten percent of sixty is six, so sixty percent is thirty-six.",
     "at": [
      "Sixty percent of",
-     "Ten percent of sixty",
-     "six, so sixty",
+     "Ten percent of sixty is six",
+     "so sixty percent is thirty-six",
      "thirty-six"
     ]
    },
    {
     "say": "Rows add across, and columns add down. So down the walk column, twelve plus thirty-six is forty-eight students who walk.",
     "at": [
-     "add down. So",
+     "Rows add across",
      "twelve plus thirty-six",
      "forty-eight students"
     ]

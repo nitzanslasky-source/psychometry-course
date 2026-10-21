@@ -84,10 +84,12 @@
   ],
   [
    {
-    "say": "[pause] Now an insight that saves a calculation. We start again from the givens. Not in the library is twenty-eight, so neither is at most twenty-eight. That rules out thirty-six and thirty-one.",
+    "say": "[pause] Now an insight that saves a calculation. We start again from the givens. Fifty-two minus twenty-four is twenty-eight students not in the library. Neither must be among those students, so neither is at most twenty-eight. That rules out thirty-six and thirty-one.",
     "at": [
      "Now an",
-     "the givens. Not",
+     "the givens. Fifty-two",
+     "Fifty-two minus twenty-four",
+     "students not in",
      "so neither is at most twenty-eight",
      "That rules out",
      "thirty-six and thirty-one"

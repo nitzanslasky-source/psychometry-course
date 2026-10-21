@@ -93,21 +93,22 @@
     "at": [
      "Ethan is a hundred sixty-nine",
      "A hundred sixty-nine minus",
-     "hundred sixty-four is"
+     "is five",
+     "So Ethan is"
     ]
    },
    {
     "say": "So Chloe must be five below the average, on the other side. A hundred sixty-four minus five is a hundred fifty-nine.",
     "at": [
-     "So Chloe must be five below",
-     "below the average",
      "A hundred sixty-four minus five",
-     "is a hundred"
+     "is a hundred",
+     "fifty-nine."
     ]
    },
    {
     "say": "That's the same Chloe, with almost no calculation. Ryan is eighteen centimeters more. A hundred fifty-nine plus eighteen is a hundred seventy-seven.",
     "at": [
+     "almost no calculation",
      "A hundred fifty-nine plus eighteen",
      "is a hundred"
     ]

@@ -27,17 +27,17 @@
     ]
    },
    {
-    "say": "We won't calculate each one and subtract. Both have one hundred eighty in them, so let's take it out as a common factor. B minus A is one hundred eighty times the bracket, eighteen minus twelve. Eighteen minus twelve is six. So it's six times one hundred eighty. Six times one hundred is six hundred, and six times eighty is four hundred eighty. Together, one thousand eighty.",
+    "say": "We won't calculate each one and subtract. Both have one hundred eighty in them, so let's take it out as a common factor. That means we keep the shared multiplier, one hundred eighty, and subtract eighteen minus twelve. B minus A is one hundred eighty times the bracket, eighteen minus twelve. Eighteen minus twelve is six. So it's six times one hundred eighty. Six times one hundred is six hundred, and six times eighty is four hundred eighty. Together, one thousand eighty.",
     "at": [
      "B minus A is one hundred eighty times",
-     "eighteen minus twelve",
-     "Eighteen minus twelve is six",
-     "So it's six"
+     "eighteen minus twelve. Eighteen",
+     "Together, one thousand eighty"
     ]
    },
    {
     "say": "Which polygon has a sum of one thousand eighty? Six times one hundred eighty means six triangles. And there are always two more sides than triangles. Six plus two is eight sides, an octagon. Choice number two is our answer.",
     "at": [
+     "Which polygon has",
      "Six plus two is eight sides",
      "Choice number two is our answer"
     ]

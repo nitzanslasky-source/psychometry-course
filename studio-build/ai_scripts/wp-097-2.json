@@ -63,7 +63,7 @@
      "by thirty is"
     ]
    },
-   "And we didn't have to think about the directions at all. The V does the same flipping for us. We don't need to prove it."
+   "The V gives the same calculation as ratios: multiply by forty over thirty for the pies, and six over four for the cooks. The cooks are flipped because fewer cooks need more time."
   ],
   [
    {
@@ -107,8 +107,10 @@
    {
     "say": "The sixes cancel. Four times thirty is a hundred twenty. And a hundred twenty divided by two is sixty pies.",
     "at": [
-     "The sixes cancel",
-     "And a hundred"
+     "Four times thirty is a hundred twenty",
+     "hundred twenty. And",
+     "a hundred twenty divided by two",
+     "two is sixty"
     ]
    },
    {
