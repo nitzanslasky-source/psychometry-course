@@ -1246,7 +1246,7 @@ function togglePause(){const r=S.rec;if(!r)return;
   if(!r.paused){MIC.ctl('pause');if(r.cam&&r.cam.mr.state==='recording'){r.cam.mr.pause();r.cam.pauses.push({pause:performance.now()})}r.paused=true;r.pauses.push({at:+recTime().toFixed(3)})}
   else{if(r.cam&&r.cam.mr.state==='paused'){r.cam.mr.resume();r.cam.pauses.push({resume:performance.now()})}MIC.ctl('start');r.paused=false}
   setUI()}
-function mistake(){const r=S.rec;if(!r||r.paused)return;const t=recTime();r.events.push({type:'mistake',para:S.para,t});
+function mistake(){const r=S.rec;if(!r){toast('Mistakes are marked only while recording. Press Record first.',2200);return}if(r.paused){toast('Paused: resume (P) before marking a mistake.',2200);return}const t=recTime();r.events.push({type:'mistake',para:S.para,t});
   const el=document.querySelector('#paras .p.cur');if(el){el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');let mk=el.querySelector('.mk');if(!mk){mk=document.createElement('span');mk.className='mk';el.appendChild(mk)}mk.dataset.n=(+(mk.dataset.n||0))+1;mk.textContent='✕ '+mk.dataset.n}
   toast('Mistake marked at '+fmt(t,true)+'. Repeat the sentence.',2200)}
 async function stopRec(){
@@ -1339,13 +1339,16 @@ $('#bNext').onclick=()=>selectVideo(S.cur+1);
    reload the page while recording. Not recording: a toast confirms each clicker key (to test the clicker). */
 const CLICKER={PageDown:'next paragraph',PageUp:'back',b:'mistake',B:'mistake','.':'mistake'};
 document.addEventListener('keydown',e=>{
-  const k=e.key;
+  /* 2026-10-22 (teacher: "pressing M for mistakes doesn't work"): use the PHYSICAL key too, so M / B / P work with the
+     Hebrew keyboard layout (there the M key types צ), and say why when a mistake can't be marked. */
+  const PHYS={KeyM:'m',KeyB:'b',KeyP:'p',Period:'.'};
+  const k=(PHYS[e.code]&&!(e.metaKey||e.ctrlKey||e.altKey))?PHYS[e.code]:e.key;
   if(k==='F5'&&S.rec){e.preventDefault();toast('Reload blocked while recording (a clicker\'s “present” button sends F5).');return}
   if(CLICKER[k]&&!(e.metaKey||e.ctrlKey||e.altKey)&&!(e.target.closest&&e.target.closest('select,textarea,input:not([type=checkbox])'))){
     e.preventDefault();if(e.repeat)return;if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();
     if(!S.rec)toast('Clicker: '+(k==='.'?'“.”':k)+' = '+CLICKER[k]+(CLICKER[k]==='mistake'?' (works while recording)':''),1800);
     if(CLICKER[k]==='next paragraph'){if(!S.rec||!S.rec.paused)nextPara()}else if(CLICKER[k]==='back')step(-1);else mistake();return}
-  if(e.target.closest&&e.target.closest('select,input,textarea'))return;if(e.metaKey||e.ctrlKey||e.altKey)return;
+  if(e.target.closest&&e.target.closest('select,textarea,input:not([type=checkbox]):not([type=radio])'))return;if(e.metaKey||e.ctrlKey||e.altKey)return;
   if(k===' '||k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'){e.preventDefault();if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();if(!S.rec||!S.rec.paused)nextPara()}
   else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){e.preventDefault();step(-1)}
   else if(k==='m'||k==='M'){e.preventDefault();mistake()}
