@@ -1,0 +1,2677 @@
+{
+"note": "video ids of base-v18.html = the English course translated from the teacher's Hebrew course, before any additions (used by reading_studio.py to mark each video \"from your Hebrew course\" or \"added\")",
+"videos": {
+"numbers": {
+"topic": 1,
+"title": "The Language of Algebra"
+},
+"add-subtract": {
+"topic": 1,
+"title": "Addition & Subtraction"
+},
+"multiply-divide": {
+"topic": 1,
+"title": "Multiplication & Division"
+},
+"fraction-basics": {
+"topic": 2,
+"title": "What Is a Fraction?"
+},
+"fraction-multiply": {
+"topic": 2,
+"title": "Multiplying & Dividing Fractions"
+},
+"fraction-add": {
+"topic": 2,
+"title": "Adding & Subtracting Fractions"
+},
+"decimals": {
+"topic": 2,
+"title": "Decimal Fractions"
+},
+"compare-fractions": {
+"topic": 3,
+"title": "Comparing Fractions"
+},
+"expression-basics": {
+"topic": 4,
+"title": "Expressions — Fundamentals"
+},
+"expression-strategy": {
+"topic": 5,
+"title": "Working with Expressions"
+},
+"linear-equations": {
+"topic": 6,
+"title": "Equations — Fundamentals"
+},
+"systems": {
+"topic": 6,
+"title": "Systems of Equations"
+},
+"equation-strategy": {
+"topic": 7,
+"title": "Solving Equations Smarter"
+},
+"exponents": {
+"topic": 8,
+"title": "Exponent Laws"
+},
+"roots": {
+"topic": 9,
+"title": "Roots — Fundamentals"
+},
+"powers-techniques": {
+"topic": 10,
+"title": "Exponents & Roots — Techniques"
+},
+"advanced-powers": {
+"topic": 11,
+"title": "Advanced Exponents & Roots"
+},
+"inequalities": {
+"topic": 12,
+"title": "Inequalities"
+},
+"absolute-value": {
+"topic": 13,
+"title": "Absolute Value"
+},
+"primes": {
+"topic": 14,
+"title": "Prime Numbers"
+},
+"prime-tools": {
+"topic": 14,
+"title": "Factor Tools"
+},
+"divisibility": {
+"topic": 15,
+"title": "Division & Remainder"
+},
+"whole-numbers": {
+"topic": 16,
+"title": "Integers"
+},
+"number-line": {
+"topic": 17,
+"title": "The Number Line"
+},
+"digit-puzzles": {
+"topic": 18,
+"title": "Exercises with Letters"
+},
+"new-operation": {
+"topic": 19,
+"title": "Defining a New Operation"
+},
+"algebraic-understanding": {
+"topic": 20,
+"title": "Algebraic Understanding"
+},
+"consecutive-integers": {
+"topic": 16,
+"title": "Consecutive Integers"
+},
+"parity": {
+"topic": 16,
+"title": "Even & Odd"
+},
+"powers-on-number-line": {
+"topic": 17,
+"title": "Powers on the Number Line"
+},
+"inequality-systems": {
+"topic": 12,
+"title": "Systems of Inequalities"
+},
+"consecutive-products": {
+"topic": 16,
+"title": "Products of Consecutive Integers"
+},
+"operation-patterns": {
+"topic": 19,
+"title": "Operation Patterns"
+},
+"solve-q-fraction-compare": {
+"topic": 3,
+"title": "Which comparison is correct?"
+},
+"solve-q-091": {
+"topic": 3,
+"title": " \\left(1 - \\frac{1}{2}\\right)\\left(1 - \\frac{1}{3}\\right)\\left(1 - \\frac{1}{4}\\right) = ? "
+},
+"solve-q-092": {
+"topic": 3,
+"title": " 4.5 \\cdot  0.2 :  30 = ? "
+},
+"solve-q-093": {
+"topic": 3,
+"title": " Given: P, Q, R, S \\ne  0 (positive numbers). \\frac{S}{Q} \\cdot  \\frac{P}{S} + \\frac{R}{Q} = ? "
+},
+"solve-q-094": {
+"topic": 3,
+"title": " Given X, Y \\ne  0. Which of the following ratios is NOT necessarily equal to the ratio \\frac{X}{Y}? "
+},
+"solve-q-095": {
+"topic": 3,
+"title": " Given: b > 1, and a = \\frac{b - 0.25}{b - 1}. Which of the following must be true? "
+},
+"solve-q-096": {
+"topic": 3,
+"title": " Given: 0 < \\frac{x}{y} < 1. Which of the following must be true? "
+},
+"solve-q-097": {
+"topic": 3,
+"title": " Which of the following numbers is the largest? "
+},
+"solve-q-098": {
+"topic": 3,
+"title": " Given: 0 < p < 1 < q. Which of the following expressions is the largest? "
+},
+"solve-q-099": {
+"topic": 3,
+"title": " Given the three fractions \\frac{5}{26}, \\frac{4}{21}, \\frac{3}{16}. Which of the following inequalities is correct? "
+},
+"solve-q-120": {
+"topic": 4,
+"title": " What is the value of the expression: {\\left(a + b\\right)}^{2} - {\\left(a - b\\right)}^{2} = ? "
+},
+"solve-q-121": {
+"topic": 4,
+"title": " What is the value of the expression: \\left(m - 2\\right)\\left(m + 2\\right) - \\left(n - 2\\right)\\left(n + 2\\right) = ? "
+},
+"solve-q-135": {
+"topic": 5,
+"title": " \\frac{12}{\\frac{1}{\\frac{1}{3} + \\frac{1}{6}}} = ? "
+},
+"solve-q-136": {
+"topic": 5,
+"title": " Given: p \\ne  q. 7 - \\frac{p - q}{q - p} = ? "
+},
+"solve-q-137": {
+"topic": 5,
+"title": " \\left(c + d\\right)\\left(t - 3\\right) + \\left(c + d\\right)\\left(t + 3\\right) = ? "
+},
+"solve-q-138": {
+"topic": 5,
+"title": " What is the value of the expression: {\\left(a + b + c + d\\right)}^{2} - {\\left(a + b - c - d\\right)}^{2} = ? "
+},
+"solve-q-125": {
+"topic": 5,
+"title": " \\left({18}^{2} - 18\\right) - \\left({17}^{2} + 17\\right) = ? "
+},
+"solve-q-126": {
+"topic": 5,
+"title": " {\\left[\\left(p - q\\right) - r\\right] - s + q} = ? "
+},
+"solve-q-127": {
+"topic": 5,
+"title": " The value of which of the following expressions necessarily equals the value of the expression: {x}^{2} + 11\\,x + 24? "
+},
+"solve-q-128": {
+"topic": 5,
+"title": " If ___ then the value of the expression \\frac{\\left|x\\right|}{x} + 5 equals ___. "
+},
+"solve-q-129": {
+"topic": 5,
+"title": " Given \\left(A \\ne  0\\right): Daniel claims that \\frac{A + B}{A} = 1 + \\frac{B}{A} always. Given \\left(A \\ne  -B,\\;B \\ne  0\\right): Maya claims that \\"
+},
+"solve-q-130": {
+"topic": 5,
+"title": " Given: p \\ne  q. \\frac{\\left(p - q\\right) - \\left(q - p\\right)}{p - q} = ? "
+},
+"solve-q-131": {
+"topic": 5,
+"title": " Given: x \\ne  0. \\left({x}^{-2} + \\frac{4\\,{x}^{2}}{{x}^{4}}\\right) \\cdot  \\left(\\frac{1}{5}\\right) \\cdot  \\left(\\frac{5}{{x}^{-2}}\\right) = ? "
+},
+"solve-q-132": {
+"topic": 5,
+"title": "Given: a is a positive integer . Which of the following expressions is a constant number that does not depend on a?"
+},
+"solve-q-133": {
+"topic": 5,
+"title": " Given: a \\ne  \\pm b. 1 + \\frac{4\\,{b}^{2} + 4\\,ab}{{a}^{2} - {b}^{2}} = ? "
+},
+"solve-q-134": {
+"topic": 5,
+"title": " \\frac{32{,}004}{63} = ? "
+},
+"solve-q-171": {
+"topic": 6,
+"title": " Given: x \\ne  2, x \\ne  4. \\frac{3}{x - 4} = \\frac{1}{x - 2}. x = ? "
+},
+"solve-q-164": {
+"topic": 6,
+"title": " Given: 6\\,x + 3\\,y = 36, x + y = 7. x = ? "
+},
+"solve-q-165": {
+"topic": 6,
+"title": " Given: 2\\,x + y = 19, 3\\,x + 2\\,y = 31. x = ? "
+},
+"solve-q-191": {
+"topic": 7,
+"title": " Given: {x}^{7} = {x}^{6} \\cdot  y. y = ? "
+},
+"solve-q-192": {
+"topic": 7,
+"title": " Given: {x}^{4} - 16\\,{x}^{2} = 0. The number of solutions of the given equation is — "
+},
+"solve-q-193": {
+"topic": 7,
+"title": " Given: {\\left(x - 6\\right)}^{2} = 49. How many different values can x take? "
+},
+"solve-q-194": {
+"topic": 7,
+"title": " Given: \\frac{a - 5\\,b}{4} = 1 - b. Which of the following statements is necessarily true? "
+},
+"solve-q-195": {
+"topic": 7,
+"title": " Given: 3\\,x + 7\\,y = 23, 7\\,x + 3\\,y = 27. x + y = ? "
+},
+"solve-q-196": {
+"topic": 7,
+"title": " Given: x - y = 5, {x}^{2} + {y}^{2} = 73. x \\cdot  y = ? "
+},
+"solve-q-197": {
+"topic": 7,
+"title": " Given: 2\\,a + 3\\,b + 3\\,c = 23, a + b = 3, 2\\,b + c = 4, a + c = 10. c = ? "
+},
+"solve-q-184": {
+"topic": 7,
+"title": " Given: 22 - \\left(\\frac{2}{5}\\right)x = \\left(\\frac{1}{3}\\right)x. x = ? "
+},
+"solve-q-185": {
+"topic": 7,
+"title": " Given: x \\ne  0. {x}^{2} \\cdot  \\pi  + {x}^{3} = 2\\,{x}^{2}. x = ? "
+},
+"solve-q-186": {
+"topic": 7,
+"title": " Given: a, b, c, d \\ne  0 and \\frac{a}{b} = \\frac{c}{d}. Which of the following statements is NOT necessarily true? "
+},
+"solve-q-187": {
+"topic": 7,
+"title": " The sum of the squares of two integers equals the square of their sum. Which of the following is necessarily true? "
+},
+"solve-q-188": {
+"topic": 7,
+"title": " Given: 2\\,x + 3\\,y + z = 15, 3\\,x - 3\\,y + 2\\,z = 16, 4\\,x + 3\\,z = 26. x = ? "
+},
+"solve-q-189": {
+"topic": 7,
+"title": " Given: 1\\,\\frac{1}{4}x + 2\\,\\frac{1}{3}y = 2\\,a, and 2\\,\\frac{3}{4}x + 1\\,\\frac{2}{3}y = 2\\,b. x + y = ? "
+},
+"solve-q-190": {
+"topic": 7,
+"title": " Given: a + b + c = x, and a + 3\\,b + 5\\,c = z. 4\\,a + 2\\,b = ? "
+},
+"solve-q-178": {
+"topic": 7,
+"title": " The difference between two integers is 4. The difference between the squares of the numbers is 72. What is their sum? "
+},
+"solve-q-179": {
+"topic": 7,
+"title": " Given: x, y, z, w \\ne  0. \\frac{x}{y} = 2, \\frac{y}{z} = 6, \\frac{z}{w} = 3. \\frac{x}{w} = ? "
+},
+"solve-q-180": {
+"topic": 7,
+"title": " Given: m, n \\ne  0, m \\cdot  n = 1. \\frac{m}{n} = ? "
+},
+"solve-q-181": {
+"topic": 7,
+"title": " Given: 2\\,x = 3\\,y + 1. 2\\,{x}^{2} - 4\\,\\frac{1}{2}{y}^{2} = ? "
+},
+"solve-q-182": {
+"topic": 7,
+"title": " For every x and y: {\\left(ax + by\\right)}^{2} = 4\\,{x}^{2} + 9\\,{y}^{2} - 12\\,xy. \\left|a - b\\right| = ? "
+},
+"solve-q-183": {
+"topic": 7,
+"title": " Given: {a}^{2} + {b}^{2} = \\frac{1}{3}{b}^{2}. a = ? "
+},
+"solve-q-248": {
+"topic": 10,
+"title": " \\frac{{9}^{6} \\cdot  {8}^{-2}}{{3}^{8} \\cdot  {4}^{-2}} = ? "
+},
+"solve-q-249": {
+"topic": 10,
+"title": " \\frac{\\sqrt{27} + \\sqrt{27}}{\\sqrt{48} - \\sqrt{12}} = ? "
+},
+"solve-q-250": {
+"topic": 10,
+"title": " Given: {4}^{2\\,x} = {\\left(\\frac{1}{8}\\right)}^{4 - 2\\,x}. x = ? "
+},
+"solve-q-251": {
+"topic": 10,
+"title": " Given the equation: \\sqrt{x - 7} = 3. x = ? "
+},
+"solve-q-252": {
+"topic": 10,
+"title": " Given: x \\ne  0 and x\\sqrt{5} = 5\\,\\sqrt{x}. x = ? "
+},
+"solve-q-288": {
+"topic": 11,
+"title": " Given x \\ne  0: \\frac{{\\left(3\\,x\\right)}^{4} \\cdot  {\\left(5\\,x\\right)}^{3}}{{\\left(15\\,{x}^{2}\\right)}^{3}} \\cdot  \\left(\\frac{1}{3}\\right)x = ? "
+},
+"solve-q-289": {
+"topic": 11,
+"title": " Given: a, b, c and d are nonzero. \\frac{{a}^{-2} \\cdot  {b}^{3}}{{c}^{4} \\cdot  {d}^{-5}} = ? "
+},
+"solve-q-290": {
+"topic": 11,
+"title": "Let x be real and y be an integer, with x ≠ 1 and x^(y+2) = 1. Which claim must be true?"
+},
+"solve-q-291": {
+"topic": 11,
+"title": " Given 1 < x, y: {x}^{y} = {y}^{x} and x = {y}^{2}. y = ? "
+},
+"solve-q-292": {
+"topic": 11,
+"title": "For real x and y, 5^x · 5^y = 125 and 2xy = 4. What is x² + y²?"
+},
+"solve-q-293": {
+"topic": 11,
+"title": " Given: {2}^{x} = {2}^{y} + {2}^{y} + {2}^{y} + {2}^{y}. x - y = ? "
+},
+"solve-q-294": {
+"topic": 11,
+"title": " \\frac{\\sqrt{\\frac{1}{2}} \\cdot  \\sqrt{40} \\cdot  \\sqrt[8]{{2}^{4}}}{\\sqrt{10}} = ? "
+},
+"solve-q-295": {
+"topic": 11,
+"title": " Which of the following numbers is the largest? "
+},
+"solve-q-296": {
+"topic": 11,
+"title": " \\frac{3}{2\\,\\sqrt{2}} + \\frac{\\sqrt{2}}{4} = ? "
+},
+"solve-q-297": {
+"topic": 11,
+"title": " \\sqrt{x \\cdot  \\sqrt{x}} = ? "
+},
+"solve-q-298": {
+"topic": 11,
+"title": " Given a \\ne  b: \\frac{a - b}{\\sqrt{a} - \\sqrt{b}} = ? "
+},
+"solve-q-299": {
+"topic": 11,
+"title": " Given the equation: \\sqrt{x} \\cdot  \\left(\\sqrt{x} - 3\\right) = 0. The number of solutions of the equation is — "
+},
+"solve-q-300": {
+"topic": 11,
+"title": " Given: 2\\,x + y = \\sqrt{108} and x - y = \\sqrt{27}. x = ? "
+},
+"solve-q-301": {
+"topic": 11,
+"title": " Given: {x}^{\\frac{-1}{2}} = 4. x = ? "
+},
+"solve-q-322": {
+"topic": 12,
+"title": " Given: 3 + x < 15 + 3\\,x. For which values of x does the inequality hold? "
+},
+"solve-q-323": {
+"topic": 12,
+"title": " Given: 3\\,\\left(4 - 3\\,x\\right) - 7 < 8 - 9\\,x. For which values of x does the inequality hold? "
+},
+"solve-q-324": {
+"topic": 12,
+"title": " Given: 2\\,x - 5 < x + 3 < 3\\,x - 9. What is the precise domain in which x can be found? "
+},
+"solve-q-325": {
+"topic": 12,
+"title": " Given: 3\\,x + 30 < 12 + 6\\,x < 30. For which values of x does the inequality hold? "
+},
+"solve-q-326": {
+"topic": 12,
+"title": " x is an integer satisfying: {x}^{4} < 90 < {x}^{5}. What is x? "
+},
+"solve-q-327": {
+"topic": 12,
+"title": " Given: x < y + 2 and 2\\,y - 2 < x. From this it must follow that: "
+},
+"solve-q-328": {
+"topic": 12,
+"title": " Given: \\frac{5\\,{x}^{2} - 2}{3} < \\frac{2\\,{x}^{2} + 20}{2}. Which of the following is correct regarding x? "
+},
+"solve-q-329": {
+"topic": 12,
+"title": " Given: a + b = c and a < c < b. Which of the following must follow? "
+},
+"solve-q-330": {
+"topic": 12,
+"title": " x is a positive integer. Given: \\frac{40}{80} < \\frac{x}{x + 1} < \\frac{70}{80}. How many values of x satisfy the inequality? "
+},
+"solve-q-331": {
+"topic": 12,
+"title": "Given (ab)² < ab², which answer gives the most precise range that a must satisfy?"
+},
+"solve-q-332": {
+"topic": 12,
+"title": " Given: \\frac{x - 3}{9 - x} < 0, where x \\ne  9. Which of the following ranges does NOT satisfy the given condition? "
+},
+"solve-q-333": {
+"topic": 12,
+"title": " x and y are positive integers. Given: {\\left(x + y\\right)}^{2} = 100 and 0 < x - 3. From the given, it necessarily follows that: "
+},
+"solve-q-334": {
+"topic": 12,
+"title": " Given: c + b < a and a < c < b. Which of the following statements is NOT necessarily true? "
+},
+"solve-q-335": {
+"topic": 12,
+"title": " x is an integer. Given: 2 \\le  {x}^{2} - 2 \\le  34. How many values of x satisfy the inequality? "
+},
+"solve-q-336": {
+"topic": 12,
+"title": " Given: -4 < x < 10 and -30 < y < 6. What is the possible domain for the product x \\cdot  y? "
+},
+"solve-q-337": {
+"topic": 12,
+"title": " Given: x < y. Which of the following statements is necessarily true? "
+},
+"solve-q-358": {
+"topic": 13,
+"title": " Given: a \\cdot  b < 0 and a < \\left|a\\right|. Which of the following statements is correct? "
+},
+"solve-q-359": {
+"topic": 13,
+"title": " Given: \\left|x + 3\\right| = 8. What could the value of x be? "
+},
+"solve-q-360": {
+"topic": 13,
+"title": " Given: \\left|x + 5\\right| < 8. What could the value of x be? "
+},
+"solve-q-361": {
+"topic": 13,
+"title": " Given: 6 < \\left|x + 3\\right|. What CANNOT be the value of x? "
+},
+"solve-q-362": {
+"topic": 13,
+"title": " Given: x < 0. What is 5 + \\frac{2\\,x}{\\left|x\\right|}? "
+},
+"solve-q-363": {
+"topic": 13,
+"title": " Given: \\left|b\\right| = a, b \\ne  a, and 3\\,c = a. Which of the following statements necessarily follows? "
+},
+"solve-q-364": {
+"topic": 13,
+"title": " Given: p < q < 0 < r < s. Which of the following statements necessarily follows? "
+},
+"solve-q-365": {
+"topic": 13,
+"title": " Given: d < c < b and \\left|b\\right| < \\left|c\\right|. Which of the following statements is NOT necessarily correct? "
+},
+"solve-q-366": {
+"topic": 13,
+"title": " a and b are integers. Given: 2 < \\left|a + b\\right|. Which of the following statements is POSSIBLE but NOT NECESSARILY correct? "
+},
+"solve-q-367": {
+"topic": 13,
+"title": " Given: 3|x| +6|y| = 27 and x + 2|y| = 3. What is x? "
+},
+"solve-q-368": {
+"topic": 13,
+"title": " Given: \\left|x + 3\\,y\\right| = \\left|3\\,x + y\\right|. Which of the following statements necessarily follows? "
+},
+"solve-q-369": {
+"topic": 13,
+"title": " Given: 11 < \\left|2\\,x + 1\\right| < 13. Which of the following ranges is possible? "
+},
+"solve-q-370": {
+"topic": 13,
+"title": " Given: x + \\left|x\\right| < 14. What is the most precise domain for x? "
+},
+"solve-q-386": {
+"topic": 14,
+"title": " x and y are integers that are NOT prime, such that x < 20 < y. Between x and 20 there are exactly 2 prime numbers (not including x). Between 20 and y"
+},
+"solve-q-387": {
+"topic": 14,
+"title": " Given: x is a prime number, and {x}^{5} is a two-digit number. What is the value of 7\\,x? "
+},
+"solve-q-388": {
+"topic": 14,
+"title": " Given: x = 3 \\cdot  {2}^{3} \\cdot  {10}^{2}. Which of the following numbers does NOT divide x? "
+},
+"solve-q-389": {
+"topic": 14,
+"title": " a, b, c, d are distinct prime numbers (each different from the others). Given: x = {a}^{2} \\cdot  b \\cdot  {c}^{4} \\cdot  d and y = {a}^{3} \\cdot  {c"
+},
+"solve-q-390": {
+"topic": 14,
+"title": " A number divides without remainder by both 8 and 12. What is the greatest GUARANTEED divisor of the number? "
+},
+"solve-q-398": {
+"topic": 14,
+"title": " x is a 3-digit number (digits not necessarily distinct) made only from the digits 1–3. Which of the following CANNOT be the product of x's digits? "
+},
+"solve-q-399": {
+"topic": 14,
+"title": " x and y are positive integers, x, y \\ne  1. Given: x \\cdot  y = 36. Let A = \\left|x - y\\right|. What is the difference between the maximal value of A"
+},
+"solve-q-400": {
+"topic": 14,
+"title": " What is the sum of all numbers obtainable by multiplying together two or more of the following numbers: 2, 3, and 7? "
+},
+"solve-q-401": {
+"topic": 14,
+"title": " Given: {y}^{2} is a prime number. What is correct to say about y? "
+},
+"solve-q-402": {
+"topic": 14,
+"title": " n is a positive integer with exactly 3 distinct divisors (including 1 and n itself). Given: B = \\sqrt{n}. How many divisors does B have (including 1 "
+},
+"solve-q-391": {
+"topic": 14,
+"title": " a and b are prime numbers. Which of the following numbers CANNOT be their sum? "
+},
+"solve-q-392": {
+"topic": 14,
+"title": " a and b are prime numbers. Exactly two of the numbers 10, 15, and 7 are divisible by a. Exactly one of the numbers 22, 15, and 30 is divisible by b. "
+},
+"solve-q-393": {
+"topic": 14,
+"title": " a and b are positive integers with a < b. Given: a \\cdot  b + 2\\,a = 36. Then a + b CANNOT be equal to: "
+},
+"solve-q-394": {
+"topic": 14,
+"title": " a, b, c, d are prime numbers with a < b < c < d. Given: y = {a}^{d} \\cdot  {b}^{c}. Then y necessarily divides by: "
+},
+"solve-q-395": {
+"topic": 14,
+"title": " a, b, c are distinct positive integers. Given: x = a \\cdot  b \\cdot  c divides by 15 without remainder. Which of the following statements is NOT nece"
+},
+"solve-q-396": {
+"topic": 14,
+"title": " a and b are positive integers. The prime factors of a are 2 and 5 only. The prime factors of b are 2 and 7 only. Given: b < a. The expression a \\cdot"
+},
+"solve-q-397": {
+"topic": 14,
+"title": " a is an integer. Given: 1 < a < 150, and a has exactly 3 distinct divisors (including 1 and a). How many different values of a exist? "
+},
+"solve-q-423": {
+"topic": 15,
+"title": " In Maya's class, \\frac{1}{3} of the students are girls who play chess, and among those, \\frac{1}{4} also play the piano. What could be the number of "
+},
+"solve-q-424": {
+"topic": 15,
+"title": " Nora is arranging her beads. If she lays them in rows of 4 with an equal number in each row, 3 beads are left over. If she lays them in rows of 5 wit"
+},
+"solve-q-425": {
+"topic": 15,
+"title": " a and b are positive integers. x is the remainder of a divided by 7, and y is the remainder of b divided by 4. What is the maximal value of the expre"
+},
+"solve-q-426": {
+"topic": 15,
+"title": " A number leaves a remainder of 1 when divided by 3. Which of the following expressions COULD represent the number (x is an integer)? "
+},
+"solve-q-427": {
+"topic": 15,
+"title": " 60\\% of the students in a school study French. Which of the following numbers COULD be the number of students studying French? "
+},
+"solve-q-428": {
+"topic": 15,
+"title": " A slot machine generates a 3-digit number displayed as \"8 5 X\" (the number 85\\,X: hundreds 8, tens 5, units X). Payout rules: divisible by 2 but not "
+},
+"solve-q-429": {
+"topic": 15,
+"title": " Which of the following numbers is NOT divisible by 12? "
+},
+"solve-q-430": {
+"topic": 15,
+"title": " Eitan claims: \"There are more 3-digit numbers divisible by both 2 and 5 than 3-digit numbers divisible by 11.\" Dana claims: \"There are more 3-digit n"
+},
+"solve-q-431": {
+"topic": 15,
+"title": " a, b, c are natural numbers. Given: c = 5\\,a and a = \\frac{b}{3}. Which claim is NOT necessarily correct? "
+},
+"solve-q-432": {
+"topic": 15,
+"title": " a is a positive integer. Given: x = 3\\,{a}^{3} - 3\\,a. Then x is necessarily divisible by: "
+},
+"solve-q-433": {
+"topic": 15,
+"title": " a is a positive integer. Given: x = 12\\,a + 8, and x is divisible by 10 without remainder. Then a could be equal to: "
+},
+"solve-q-434": {
+"topic": 15,
+"title": " Omar entered a casino with 500 tokens. In round 1 he lost x tokens, in round 2 he lost 2\\,x tokens, and in round 3 he lost 3\\,x tokens. Which of the "
+},
+"solve-q-435": {
+"topic": 15,
+"title": " The remainder of x divided by 6 is 3. Adam claims: \"2\\,x is necessarily divisible by 6 without remainder.\" Ben claims: \"x is necessarily divisible by"
+},
+"solve-q-436": {
+"topic": 15,
+"title": " Three integers have a sum that is divisible by 3 without remainder. Which statement is NOT necessarily correct? "
+},
+"solve-q-457": {
+"topic": 16,
+"title": " Given: y \\ne  0 and \\frac{{x}^{6} \\cdot  {y}^{5}}{\\left|y\\right|} < 0. Which of the following must be true? "
+},
+"solve-q-458": {
+"topic": 16,
+"title": " Given: a, b and c are consecutive even numbers, such that 0 < a < b < c. \\frac{{c}^{2} - {a}^{2}}{b} = ? "
+},
+"solve-q-459": {
+"topic": 16,
+"title": " Given: a, b, c and d are integers and consecutive, such that a < b < c < d. \\frac{d - a}{c - b} - \\frac{a - c}{d - c} = ? "
+},
+"solve-q-460": {
+"topic": 16,
+"title": "Let x and y be positive integers. Given: ( x+y ) is odd. Which of the following statements guarantees that the expression x^y + y^x + 7 + 6x will nece"
+},
+"solve-q-461": {
+"topic": 16,
+"title": "Let x be a nonzero integer. Given: x is even and y is odd. The expression 4y:x³ will always be — Choose the most precise classification."
+},
+"solve-q-462": {
+"topic": 16,
+"title": " x and y are integers. Given: x - y = 4. Which of the following expressions will necessarily be even? "
+},
+"solve-q-463": {
+"topic": 16,
+"title": "Given: x is an odd number. The expression (x²−1):2 will always be — Choose the most precise classification."
+},
+"solve-q-464": {
+"topic": 16,
+"title": " x is an integer. The expression \\frac{{x}^{3} - x}{3} will always be — "
+},
+"solve-q-465": {
+"topic": 16,
+"title": " On a number line, the marked numbers p, q, 0, r, s appear in that order \\left(p < q < 0 < r < s\\right). Which of the following expressions is necessa"
+},
+"solve-q-466": {
+"topic": 16,
+"title": " Given: a < b and a \\cdot  b < 0. Which of the following expressions is necessarily POSITIVE? "
+},
+"solve-q-467": {
+"topic": 16,
+"title": " Given: d < e and 0 < d + e + f. If we add the additional given ______, then f must necessarily be a positive number. Which additional given completes"
+},
+"solve-q-468": {
+"topic": 16,
+"title": " Given: m < n, and m,n are consecutive even numbers; p < q, and p,q are consecutive even numbers \\left(p + n \\ne  0\\right). \\frac{{n}^{2} - {m}^{2} + "
+},
+"solve-q-469": {
+"topic": 16,
+"title": " Given: a, b, and c are consecutive integers, a < b < c, and {a}^{2} + {b}^{2} = {c}^{2}. Which of the following COULD be the sum of a, b, and c? "
+},
+"solve-q-470": {
+"topic": 16,
+"title": " Given: a and x are integers, and x = {\\left(a - 6\\right)}^{2} + {\\left(a + 5\\right)}^{3}. Which of the following statements is necessarily correct? "
+},
+"solve-q-471": {
+"topic": 16,
+"title": " Given: m, p, q, r are integers, and 2\\,m + 1 = {\\left(p + 1\\right)}^{2} \\cdot  {q}^{5} \\cdot  {\\left(r - 1\\right)}^{2}. Which of the numbers m, p, q,"
+},
+"solve-q-472": {
+"topic": 16,
+"title": " Given: m is an even positive number and n is an odd positive number. Which of the following expressions is NOT necessarily an integer? "
+},
+"solve-q-493": {
+"topic": 17,
+"title": " Given: 1 < a < b < c < d. Which of the following statements is NOT correct? "
+},
+"solve-q-494": {
+"topic": 17,
+"title": " Given: -1 < t < 0. Which of the following expressions is the SMALLEST? "
+},
+"solve-q-495": {
+"topic": 17,
+"title": " Given: 1 < a < b < c. Which of the following expressions is the SMALLEST? "
+},
+"solve-q-496": {
+"topic": 17,
+"title": " Given: 0 < p < q < 1 < r < s. Which of the following statements is NOT necessarily correct? "
+},
+"solve-q-497": {
+"topic": 17,
+"title": " Given: -1 < a < 0 < b < c < 1. Which of the following expressions is the LARGEST? "
+},
+"solve-q-498": {
+"topic": 17,
+"title": " Given: {x}^{6} < {x}^{5}. In which range is x found? "
+},
+"solve-q-499": {
+"topic": 17,
+"title": " Given: -1 < x < 0. Which of the following orderings is necessarily correct for the values {x}^{5}, x, \\sqrt[5]{x}, and {x}^{-5}? "
+},
+"solve-q-500": {
+"topic": 17,
+"title": " Given: 0 < x < 1. Which of the following expressions is the LARGEST? "
+},
+"solve-q-501": {
+"topic": 17,
+"title": " Given: {a}^{2} < a < c \\cdot  b < b < c. Which of the following statements is POSSIBLE but NOT necessarily correct? "
+},
+"solve-q-512": {
+"topic": 18,
+"title": " A, B, C and D are letters representing digits from 0 to 9. Given: AB + CB = DDB (where AB and CB are two-digit numbers and DDB is a three-digit numbe"
+},
+"solve-q-513": {
+"topic": 18,
+"title": " A, B and C are letters representing digits from 0 to 9. Given: BA \\cdot  A = CA (BA and CA are two-digit numbers). What could the value of A be? "
+},
+"solve-q-514": {
+"topic": 18,
+"title": " A and B are letters representing digits. The result of the expression AB + BA is necessarily divisible by — "
+},
+"solve-q-515": {
+"topic": 18,
+"title": " A, B and C are letters representing digits between 0 and 9. Given: ABC + AB = CCC (ABC is a three-digit number, AB a two-digit number, CCC a three-di"
+},
+"solve-q-516": {
+"topic": 18,
+"title": " A, B and C are letters representing digits between 0 and 9. Given: AAA - 37 = BC (AAA is a three-digit repdigit, BC a two-digit number). B + C = ? "
+},
+"solve-q-517": {
+"topic": 18,
+"title": " A, B and C are letters representing digits between 0 and 9. Given: AB \\times  AB = 6\\,CB (AB squared is a three-digit number whose hundreds digit is "
+},
+"solve-q-518": {
+"topic": 18,
+"title": " A, B and C are letters representing digits between 0 and 9. Given: \\frac{CBA}{AA} = 13 (CBA is a three-digit number, AA a two-digit repdigit). A + B "
+},
+"solve-q-519": {
+"topic": 18,
+"title": " A, B, C and D are letters representing distinct PRIME digits (i.e. each is one of 2, 3, 5, 7). Given: AC + CD = BA. C = ? "
+},
+"solve-q-520": {
+"topic": 18,
+"title": " Given: x is a two-digit number. x equals its units digit cubed, plus the sum of its digits. What is the tens digit of x? "
+},
+"solve-q-541": {
+"topic": 19,
+"title": " The operation ◆ is defined for every number a as: \\blacklozenge \\left(a\\right) = {a}^{2} - 2\\,a. \\blacklozenge \\left(5\\right) = ? "
+},
+"solve-q-542": {
+"topic": 19,
+"title": " The operation ◆ is defined for every number x as: \\blacklozenge \\left(x\\right) = {x}^{2}. \\blacklozenge \\left(\\blacklozenge \\left(2\\right)\\right) = ?"
+},
+"solve-q-543": {
+"topic": 19,
+"title": " Regarding the operation ◆ it is known that: \\blacklozenge \\left(2\\right) = 10. What CANNOT be the definition of the operation ◆? "
+},
+"solve-q-544": {
+"topic": 19,
+"title": " The operation ◆ is defined for every number x as: \\blacklozenge \\left(3\\,x\\right) = x + 4. \\blacklozenge \\left(12\\right) = ? "
+},
+"solve-q-545": {
+"topic": 19,
+"title": " The operation ◆ is defined for every integer x as follows: if x is odd, \\blacklozenge \\left(x\\right) = 2\\,x; if x is even, \\blacklozenge \\left(x\\righ"
+},
+"solve-q-546": {
+"topic": 19,
+"title": " For every non - \\text{negative} even integer x, the operation ◆ is defined as follows: if x > 1: \\blacklozenge \\left(x\\right) = 7 - \\blacklozenge \\le"
+},
+"solve-q-547": {
+"topic": 19,
+"title": " For every positive integer x, the operation ◆ is defined as follows: if x > 1: \\blacklozenge \\left(x\\right) = \\blacklozenge \\left(x - 1\\right); if x "
+},
+"solve-q-548": {
+"topic": 19,
+"title": " Given: 3 \\cdot  \\blacklozenge \\left(x\\right) - 4\\,x = 10 + 2 \\cdot  \\blacklozenge \\left(x\\right). \\blacklozenge \\left(3\\right) = ? "
+},
+"solve-q-549": {
+"topic": 19,
+"title": "Define ◆(t) = t² for every real t. In the following choices let x ≥ 0. Which identity is NOT always correct?"
+},
+"solve-q-550": {
+"topic": 19,
+"title": " For every three numbers x, y, z: \\blacklozenge \\left(x,\\;y,\\;z\\right) = {x}^{yz} + {y}^{xz} + {z}^{xy}. \\blacklozenge \\left(1,\\;1,\\;\\blacklozenge \\le"
+},
+"solve-q-551": {
+"topic": 19,
+"title": " For every two numbers x, y, two operations ◆ and # are defined: \\blacklozenge \\left(x,\\;y\\right) = {x}^{2} - 2\\,xy + {y}^{2}, and #\\left(x,\\;y\\right)"
+},
+"solve-q-552": {
+"topic": 19,
+"title": " For every two numbers x, y: \\blacklozenge \\left(x,\\;y\\right) = \\sqrt{3\\,{x}^{2} + {y}^{2}}. Given that a is a positive number, \\frac{\\blacklozenge \\l"
+},
+"solve-q-553": {
+"topic": 19,
+"title": " For every two different numbers x, y (x \\ne  y, both nonzero): \\blacklozenge \\left(x,\\;y\\right) = \\frac{{\\left(x - y\\right)}^{2}}{{x}^{2}y}. Given a "
+},
+"solve-q-554": {
+"topic": 19,
+"title": " A, B and C are letters representing digits from 1 to 9. For every three-digit number ABC, the operation ◆ is defined: \\blacklozenge \\left(ABC\\right) "
+},
+"solve-q-555": {
+"topic": 19,
+"title": " For every number x \\left(x \\ne  0\\right): \\blacklozenge \\left(x\\right) = \\frac{1}{x}. Which of the following statements is necessarily correct for al"
+},
+"solve-q-556": {
+"topic": 19,
+"title": " For every positive integer x, ⟦x⟧ is defined as: the number of times 3 appears in the prime factorization of x. Example: ⟦18⟧ = 2 (since 18 = 2 \\cdot"
+},
+"solve-q-577": {
+"topic": 20,
+"title": " Given: a, b and c are three integers, c < b < a, and a + b < 12. Which of the following numbers CANNOT be the value of (b + c)? "
+},
+"solve-q-578": {
+"topic": 20,
+"title": " Given: 0 < a and 0 < x, and {x}^{2} = {a}^{3}. If a is increased by a factor of 9, then x increases by a factor of — "
+},
+"solve-q-579": {
+"topic": 20,
+"title": " Given: a, b and c are three integers, distinct and positive, and \\frac{{c}^{2}}{ab} = \\frac{a}{b} + \\frac{b}{a}. Which of the following statements is"
+},
+"solve-q-580": {
+"topic": 20,
+"title": " A plant's growth rate is determined by a formula: it increases the more sunlight (S) the plant receives and the more water (W) it gets, and decreases"
+},
+"fast-calculation": {
+"topic": 1,
+"title": "Fast Calculation"
+},
+"wp-001": {
+"topic": 21,
+"title": "How to Approach Word Problems"
+},
+"wp-003": {
+"topic": 21,
+"title": "General Problems"
+},
+"wp-006": {
+"topic": 21,
+"title": "Minimum & Maximum"
+},
+"wp-008": {
+"topic": 21,
+"title": "Patterns"
+},
+"wp-012": {
+"topic": 21,
+"title": "Smart Trial & Error"
+},
+"wp-016": {
+"topic": 21,
+"title": "Minimum & Maximum"
+},
+"wp-022": {
+"topic": 21,
+"title": "Patterns & Cycles"
+},
+"wp-027": {
+"topic": 22,
+"title": "From Words to Equations"
+},
+"wp-028": {
+"topic": 22,
+"title": "Equal Ratios"
+},
+"wp-031": {
+"topic": 22,
+"title": "Read, Organise, Calculate"
+},
+"wp-034": {
+"topic": 22,
+"title": "Ratios"
+},
+"wp-037": {
+"topic": 22,
+"title": "Build the Equation"
+},
+"wp-039": {
+"topic": 22,
+"title": "Give It to the Little Guy"
+},
+"wp-052": {
+"topic": 23,
+"title": "Calculating Percentages"
+},
+"wp-053": {
+"topic": 23,
+"title": "Percent of a Percent"
+},
+"wp-067": {
+"topic": 24,
+"title": "Overlapping Groups"
+},
+"wp-068": {
+"topic": 24,
+"title": "Overlap Ranges"
+},
+"wp-069": {
+"topic": 24,
+"title": "Exact Overlap"
+},
+"wp-080": {
+"topic": 25,
+"title": "Averages"
+},
+"wp-081": {
+"topic": 25,
+"title": "Sum from the Average"
+},
+"wp-086": {
+"topic": 25,
+"title": "Weighted Averages"
+},
+"wp-092": {
+"topic": 26,
+"title": "Work, Rate and Time"
+},
+"wp-094": {
+"topic": 26,
+"title": "Working Together"
+},
+"wp-097": {
+"topic": 26,
+"title": "Team Questions"
+},
+"wp-099": {
+"topic": 26,
+"title": "Work Time"
+},
+"wp-106": {
+"topic": 27,
+"title": "Distance, Speed and Time"
+},
+"wp-108-after": {
+"topic": 27,
+"title": "Average Speed"
+},
+"wp-110": {
+"topic": 27,
+"title": "Speed Ratios"
+},
+"wp-113": {
+"topic": 27,
+"title": "Relative Speed"
+},
+"wp-123": {
+"topic": 28,
+"title": "Counting Possibilities"
+},
+"wp-124-after": {
+"topic": 28,
+"title": "Multiply the Choices"
+},
+"wp-127": {
+"topic": 28,
+"title": "With or Without Repetition"
+},
+"wp-131": {
+"topic": 28,
+"title": "Two-Way Connections"
+},
+"wp-134": {
+"topic": 28,
+"title": "Add or Subtract Cases"
+},
+"wp-137": {
+"topic": 28,
+"title": "Choosing a Group"
+},
+"wp-140-after": {
+"topic": 28,
+"title": "Factorial Expressions"
+},
+"wp-141-after": {
+"topic": 28,
+"title": "Forced Digits"
+},
+"wp-146": {
+"topic": 29,
+"title": "Probability"
+},
+"wp-147-after": {
+"topic": 29,
+"title": "Probability"
+},
+"wp-151": {
+"topic": 29,
+"title": "Probability"
+},
+"wp-159": {
+"topic": 29,
+"title": "Probability"
+},
+"solve-wp21-g004": {
+"topic": 21,
+"title": "A game begins with 2 large crystals. Breaking a large crystal replaces it with 4 small crystals. Breaking a small crystal removes it. After exactly 3 "
+},
+"solve-wp21-g005": {
+"topic": 21,
+"title": "A queue contains at least one delivery van of length 5 m and at least one scooter of length 2 m. There is a 1 m gap between consecutive vehicles and n"
+},
+"solve-wp21-g007": {
+"topic": 21,
+"title": "A mentor shares 32 pins among apprentices. Each receives a different positive whole number of pins, and all pins are distributed. What is the largest "
+},
+"solve-wp21-g009": {
+"topic": 21,
+"title": "A training drill begins with 46 repetitions. In each later round, the athlete does half the previous round’s repetitions, then subtracts 1. How many r"
+},
+"solve-wp21-g010": {
+"topic": 21,
+"title": "A charity receives 3 crates on day 1, and twice as many as the previous day on every later day. How many crates are received in total through day n?"
+},
+"solve-wp21-g013": {
+"topic": 21,
+"title": "A token shows 4 on one side and 9 on the other. It is tossed exactly 6 times. Which total is impossible?"
+},
+"solve-wp21-g014": {
+"topic": 21,
+"title": "At a festival there are dancers, singers, and actors only. There are three times as many dancers as singers, and more actors than dancers. There are 7"
+},
+"solve-wp21-g015": {
+"topic": 21,
+"title": "Twenty-four boxes contain 86 markers altogether. Every box contains at least 3 markers. Which number cannot be the number of boxes containing exactly "
+},
+"solve-wp21-g017": {
+"topic": 21,
+"title": "A quiz has between 12 and 20 questions, inclusive. Each of 16 students answers at least \\frac14 of the quiz correctly. What are the smallest and large"
+},
+"solve-wp21-g018": {
+"topic": 21,
+"title": "Nine jars stand in a row. The first has 6 beads and the last has 42. Each jar has at least 3 more beads than the jar before it. What is the exact rang"
+},
+"solve-wp21-g019": {
+"topic": 21,
+"title": "Seventeen campers each receive 4 to 6 stickers from one leader and 2 to 5 from another. Each camper then gives away 1 to 3 stickers. What is the small"
+},
+"solve-wp21-g020": {
+"topic": 21,
+"title": "Amir, Beth, and Cara share 30 counters. Their counts are different positive integers, with Amir having the most and Cara the fewest. What is the small"
+},
+"solve-wp21-g021": {
+"topic": 21,
+"title": "Twenty-four boxes contain 86 markers altogether. Every box contains at least 3 markers. Which number cannot be the number of boxes containing exactly "
+},
+"solve-wp21-g023": {
+"topic": 21,
+"title": "A digital collection starts day 1 with 58 files. During each day the number doubles, and at the end of the day 16 files are deleted. How many files ar"
+},
+"solve-wp21-g024": {
+"topic": 21,
+"title": "Fifty-six lamps stand in a row. In every group of four consecutive lamps, exactly one is blue. Lamp 2 is blue. Which lamp can also be blue?"
+},
+"solve-wp21-g025": {
+"topic": 21,
+"title": "Two reminder lights flash together at 07:30. One then flashes every 18 minutes and the other every 24 minutes. Counting 07:30 as the first joint flash"
+},
+"solve-wp22-g029": {
+"topic": 22,
+"title": "Six trays hold 42 biscuits. At the same number per tray, how many biscuits fit on 15 trays?"
+},
+"solve-wp22-g030": {
+"topic": 22,
+"title": "At a constant pace, a student completes 12 exercises in 8 minutes. How many exercises does she complete in 14 minutes?"
+},
+"solve-wp22-g032": {
+"topic": 22,
+"title": "A bakery sells a tart for 58 credits. Making it uses 300 g of pastry at 6 credits per 100 g, 200 g of filling at 9 credits per 100 g, and 4 berries at"
+},
+"solve-wp22-g033": {
+"topic": 22,
+"title": "Hire company A charges 3 credits for every minute or part of a minute. Company B charges 14 credits for every 5-minute block or part of a block. What "
+},
+"solve-wp22-g035": {
+"topic": 22,
+"title": "In a class, boys make up \\frac38 of all students. Which could be the difference between the numbers of girls and boys?"
+},
+"solve-wp22-g036": {
+"topic": 22,
+"title": "The prices of a scooter and a small car are in the ratio 3:8. The car costs 15,000 credits more. What is their combined price?"
+},
+"solve-wp22-g038": {
+"topic": 22,
+"title": "A centre plans to put the same number of students in each of 6 rooms. One room becomes a storeroom, so each of the 5 remaining rooms must hold 3 more "
+},
+"solve-wp22-g039": {
+"topic": 22,
+"title": "Iris is 6 years older than Leo. Four years ago, Iris was twice Leo’s age. How old is Leo now?"
+},
+"solve-wp22-g040": {
+"topic": 22,
+"title": "A shopper has 84 credits, enough for 5 identical notebooks but not enough for 6. Which could be the price of one notebook?"
+},
+"solve-wp22-g042": {
+"topic": 22,
+"title": "One credit buys 2 oranges, 3.5 pears, or 8 plums, with costs proportional to quantity. What is the cost of 6 oranges, 5 pears, and 8 plums? Fractional"
+},
+"solve-wp22-g043": {
+"topic": 22,
+"title": "A selection programme starts with 144 applicants. At the end of each round, \\frac56 of the applicants who began that round remain. How many remain aft"
+},
+"solve-wp22-g044": {
+"topic": 22,
+"title": "There are \\frac35 as many apprentices as supervisors in a room. What fraction of all the people are apprentices?"
+},
+"solve-wp22-g045": {
+"topic": 22,
+"title": "A grower sends four times as many pears to shops as to a market. One quarter of the shop pears and one third of the market pears are rejected. What fr"
+},
+"solve-wp22-g046": {
+"topic": 22,
+"title": "A maker owns red and blue tiles. She gives away \\frac14 of the red tiles and \\frac16 of the blue tiles, always giving whole tiles. The remaining colou"
+},
+"solve-wp22-g047": {
+"topic": 22,
+"title": "Club A has three times as many members as Club B. Three members move from A to B. Afterwards B has half as many members as A. How many members do the "
+},
+"solve-wp22-g048": {
+"topic": 22,
+"title": "A freelancer receives a fixed monthly payment plus the same extra amount for each completed task. Ten tasks bring 320 credits; six tasks bring 208 cre"
+},
+"solve-wp22-g049": {
+"topic": 22,
+"title": "Eight large blocks and twelve small blocks weigh 1,000 g altogether. All large blocks have equal weight, and all small blocks have equal weight. How m"
+},
+"solve-wp22-g050": {
+"topic": 22,
+"title": "Ari and Bea have 60 counters altogether. Ari gives Bea 9 counters, after which they have equal numbers. What was Ari’s original count divided by Bea’s"
+},
+"solve-wp23-g054": {
+"topic": 23,
+"title": "In a survey, 55% of people do not own a bicycle. Of the bicycle owners, 40% own an electric bicycle and the rest own only ordinary bicycles. What perc"
+},
+"solve-wp23-g057": {
+"topic": 23,
+"title": "A battery has used 72.5% of its original charge. What fraction remains?"
+},
+"solve-wp23-g058": {
+"topic": 23,
+"title": "A display item originally costs 760 credits. Its price is reduced by 75%. What is the new price?"
+},
+"solve-wp23-g059": {
+"topic": 23,
+"title": "A membership fee rises from 60 credits to 66, then to 72. How do the two percentage increases compare?"
+},
+"solve-wp23-g060": {
+"topic": 23,
+"title": "A player gives away 25% of her points. She then receives a bonus equal to 30% of the points she has left. Compared with her original score, what is he"
+},
+"solve-wp23-g061": {
+"topic": 23,
+"title": "Rae earns 20% more than Sol. Tia earns 16\\frac23% less than Rae. What is Tia’s wage divided by Sol’s wage?"
+},
+"solve-wp23-g062": {
+"topic": 23,
+"title": "50% of 15% of x equals 12. What is 22.5% of x?"
+},
+"solve-wp23-g063": {
+"topic": 23,
+"title": "For x>0, which expression is NOT equal to 15% of 4x?"
+},
+"solve-wp23-g064": {
+"topic": 23,
+"title": "A workshop uses 80% of its timber on Monday and all the rest on Tuesday. Monday’s use is 36 planks greater than Tuesday’s. How many planks are used on"
+},
+"solve-wp23-g065": {
+"topic": 23,
+"title": "At the end of each hour, 20% of the water then in a tank is removed. After two hours, 128 litres remain. How many litres were there at the start?"
+},
+"solve-wp24-g070": {
+"topic": 24,
+"title": "Of 45 campers, 28 bring a torch, 23 bring a map, and 16 bring both. How many bring neither?"
+},
+"solve-wp24-g071": {
+"topic": 24,
+"title": "A workshop has 22 machines. Fourteen cut, twelve polish, and three do neither. How many both cut and polish?"
+},
+"solve-wp24-g072": {
+"topic": 24,
+"title": "The people who both volunteer and study photography make up \\frac16 of the photography students and \\frac14 of all volunteers. What is the ratio of ph"
+},
+"solve-wp24-g074": {
+"topic": 24,
+"title": "At a community event with 240 guests, 35% know the organiser and 80% know the host. What is the minimum number who know both?"
+},
+"solve-wp24-g075": {
+"topic": 24,
+"title": "A class has 48 students. Twenty-one work in the greenhouse and eleven work in the orchard. Which could be the number who work in neither place?"
+},
+"solve-wp24-g076": {
+"topic": 24,
+"title": "Of a company’s employees, \\frac25 can code, \\frac45 work remotely, \\frac15 are juniors, and \\frac12 are in training. Which statement is NOT necessaril"
+},
+"solve-wp24-g077": {
+"topic": 24,
+"title": "At lunch, \\frac25 of the staff choose soup, \\frac14 choose salad, and \\frac1{10} choose both. Exactly 8 people choose both. How many choose neither?"
+},
+"solve-wp24-g078": {
+"topic": 24,
+"title": "Two researchers photograph different butterflies. One photographs 31 butterflies and the other 22. Together their photographs show 40 distinct butterf"
+},
+"solve-wp25-g082": {
+"topic": 25,
+"title": "Nine students solve an average of 8 puzzles each in one afternoon. How many puzzles do they solve altogether?"
+},
+"solve-wp25-g083": {
+"topic": 25,
+"title": "Leo is 176 cm tall. The average height of Leo and Mina is 171 cm. Noor is 13 cm taller than Mina. How tall is Noor?"
+},
+"solve-wp25-g084": {
+"topic": 25,
+"title": "Four numbers are given. Take the average of each of the six different pairs, then add those six averages. The result equals which of the following?"
+},
+"solve-wp25-g085": {
+"topic": 25,
+"title": "Kai and Zara take two tests, art and science. Zara’s art score is 5 points higher than Kai’s. Kai’s two-test average is 3 points higher than Zara’s. H"
+},
+"solve-wp25-g087": {
+"topic": 25,
+"title": "A course grade gives an exam twice the weight of a project. A student scores 68 on the exam and 92 on the project. What is the course grade?"
+},
+"solve-wp25-g088": {
+"topic": 25,
+"title": "An exam has weight 5 and a presentation weight 1. A student scores 94 on the exam and 64 on the presentation. What is the weighted course score?"
+},
+"solve-wp25-g089": {
+"topic": 25,
+"title": "Six numbers have an average of 62, and nine other numbers have an average of 82. What is the average of all fifteen numbers?"
+},
+"solve-wp25-g090": {
+"topic": 25,
+"title": "A booklet has 1,200 lines. Every line contains either 4 or 6 words, and the average is 4.5 words per line. How many lines contain 6 words?"
+},
+"solve-wp26-g093": {
+"topic": 26,
+"title": "A robot packs x samples in y minutes at a constant rate, where x and y are positive. How many samples will it pack in 4y minutes if its rate becomes t"
+},
+"solve-wp26-g095": {
+"topic": 26,
+"title": "One inlet fills a tank in 8 hours. An identical inlet has the same rate. A drain empties a full tank in 12 hours. Starting with an empty tank at 09:00"
+},
+"solve-wp26-g096": {
+"topic": 26,
+"title": "Machine A fills one order in 4 hours, while machine B fills the same order in 6 hours. If they work together at their usual constant rates, how many m"
+},
+"solve-wp26-g098": {
+"topic": 26,
+"title": "Five identical workers make 30 display boards in 4 hours. How many hours do eight such workers need to make 72 display boards?"
+},
+"solve-wp26-g100": {
+"topic": 26,
+"title": "A path is completed by 18 workers working for 8 days, followed by 12 workers working for 7 days. All work at the same constant rate. How many days wou"
+},
+"solve-wp26-g101": {
+"topic": 26,
+"title": "The combined rate of 3 high-speed scanners is twice the combined rate of 9 standard scanners. Scanners of the same type are identical. How many times "
+},
+"solve-wp26-g102": {
+"topic": 26,
+"title": "A machine adds 24 unfinished pieces to a queue each hour. A technician finishes 35 pieces every 75 minutes. There are initially 50 unfinished pieces. "
+},
+"solve-wp26-g103": {
+"topic": 26,
+"title": "Cleaner A covers 360 square metres in 3 hours. Cleaner B covers 40 square metres in 2 hours. Working together at these constant rates, how many minute"
+},
+"solve-wp26-g104": {
+"topic": 26,
+"title": "Ava, Ben and Cleo each work at a constant rate. Together they complete a job in 8 hours. Ava and Ben together complete it in 16 hours. What fraction o"
+},
+"solve-wp26-g105": {
+"topic": 26,
+"title": "Eight identical makers can build one cabinet in 6 hours. Nine such makers can build one bench in 8 hours. How many makers are needed to finish one cab"
+},
+"solve-wp26-g105b": {
+"topic": 26,
+"title": "A supply of feed is enough for 240 identical animals for 6 days. Each animal eats the same constant amount per day. For how many days would that suppl"
+},
+"solve-wp27-g107": {
+"topic": 27,
+"title": "A small cart moves at 4 metres per second. How many kilometres does it travel in 25 minutes?"
+},
+"solve-wp27-g108": {
+"topic": 27,
+"title": "A drone climbs along a straight line at 390 kilometres per hour. After 2 minutes, its horizontal displacement is 12 kilometres. How high above its sta"
+},
+"solve-wp27-g109": {
+"topic": 27,
+"title": "A shuttle travels from a station to a hotel at 72 kilometres per hour and returns along the same route at 48 kilometres per hour, without stopping. Wh"
+},
+"solve-wp27-g111": {
+"topic": 27,
+"title": "Noor and Eli start at the same time from opposite ends of a path and walk towards one another. Eli walks at 1.75 times Noor’s speed. What fraction of "
+},
+"solve-wp27-g112": {
+"topic": 27,
+"title": "Two boats leave opposite ends of a canal at the same time. Boat B is 3.5 times as fast as boat A. By the time B has travelled the full length of the c"
+},
+"solve-wp27-g114": {
+"topic": 27,
+"title": "Two walkers leave the same gate at the same time in opposite directions along a straight path. Their speeds are 5 and 7 kilometres per hour. After how"
+},
+"solve-wp27-g115": {
+"topic": 27,
+"title": "At 08:00 a van leaves Pine for Lake at 60 kilometres per hour. At 08:30 a car leaves Lake for Pine at 90 kilometres per hour. The towns are 105 kilome"
+},
+"solve-wp27-g116": {
+"topic": 27,
+"title": "Mina walks from home at 3 kilometres per hour. Twenty minutes later, Owen leaves the same home along the same route and catches Mina 40 minutes after "
+},
+"solve-wp27-g117": {
+"topic": 27,
+"title": "Vehicle A travels 9 kilometres in 12 minutes. Vehicle B travels 12 kilometres in 9 minutes. What is the difference between their speeds, in kilometres"
+},
+"solve-wp27-g118": {
+"topic": 27,
+"title": "A cable carriage normally travels along a 180-metre cable in 12 seconds at a constant speed. On one trip, it travels the first half at twice its norma"
+},
+"solve-wp27-g119": {
+"topic": 27,
+"title": "B is the midpoint of a straight route from A to C. One cyclist rides from A to C at 24 kilometres per hour. Another takes 20 minutes from A to B, then"
+},
+"solve-wp27-g120": {
+"topic": 27,
+"title": "A train covers a 1,350-kilometre route in 9 hours. A replacement train travels 80% faster. How many hours does the replacement take on the same route?"
+},
+"solve-wp27-g121": {
+"topic": 27,
+"title": "Two cyclists start together from the same point of a circular track, riding in the same direction. The track is 600 metres long. Their speeds are 30 a"
+},
+"solve-wp28-g124": {
+"topic": 28,
+"title": "How many three-digit numbers can be made from the digits 2, 4, 6 and 8 if the hundreds digit is smaller than the tens digit and the tens digit is smal"
+},
+"solve-wp28-g125": {
+"topic": 28,
+"title": "A café offers 4 sandwich fillings and 6 drinks. A meal contains one filling and one drink. How many different meals are possible?"
+},
+"solve-wp28-g126": {
+"topic": 28,
+"title": "A two-character access code uses decimal digits from 0 to 9. The sum of its two digits must be 12. How many codes are possible?"
+},
+"solve-wp28-g128": {
+"topic": 28,
+"title": "A lock code has three positions, each filled with one of the symbols A, B, C, D, E or F. Symbols may repeat. How many codes are possible?"
+},
+"solve-wp28-g129": {
+"topic": 28,
+"title": "A lock code has three positions filled with symbols chosen from A, B, C, D, E and F. No symbol may appear twice. How many codes are possible?"
+},
+"solve-wp28-g130": {
+"topic": 28,
+"title": "In how many ways can 6 distinct framed photographs be placed in a row?"
+},
+"solve-wp28-g132": {
+"topic": 28,
+"title": "Five islands are connected so that every pair has exactly one two-way ferry route. How many routes are there?"
+},
+"solve-wp28-g133": {
+"topic": 28,
+"title": "How many diagonals does a seven-sided polygon have?"
+},
+"solve-wp28-g135": {
+"topic": 28,
+"title": "A shop offers 5 drinks and 4 snacks. A customer chooses one of each. If the drink is cocoa, the snack must be a biscuit; with any other drink, any sna"
+},
+"solve-wp28-g136": {
+"topic": 28,
+"title": "A red die and a blue die each show a number from 1 to 6. How many ordered outcomes have a sum different from 5?"
+},
+"solve-wp28-g138": {
+"topic": 28,
+"title": "Eight children are split between two teachers, Maya and Alex, with four children assigned to each. How many different assignments are possible?"
+},
+"solve-wp28-g139": {
+"topic": 28,
+"title": "In how many ways can a committee of 7 people be chosen from 8 people?"
+},
+"solve-wp28-g140": {
+"topic": 28,
+"title": "What is the ratio of the number of row arrangements of 7 distinct objects to the number of row arrangements of 5 distinct objects?"
+},
+"solve-wp28-g141": {
+"topic": 28,
+"title": "How many three-digit numbers have a hundreds digit and a units digit whose sum is 7?"
+},
+"solve-wp28-g142": {
+"topic": 28,
+"title": "The digits 3, 4, 7 and 8 are placed once each in a square: A and B on the top row, C and D on the bottom row. B must be even, and C×D must be even. Ho"
+},
+"solve-wp28-g143": {
+"topic": 28,
+"title": "In a chess event, each pair of players plays exactly one game. There are 45 games altogether. How many players take part?"
+},
+"solve-wp28-g144": {
+"topic": 28,
+"title": "Seven students all have different heights. A teacher chooses six and places them in a row from tallest to shortest. How many different rows can be for"
+},
+"solve-wp29-g147": {
+"topic": 29,
+"title": "A fair eight-sided die is numbered 1 through 8. What is the probability of rolling an even number?"
+},
+"solve-wp29-g148": {
+"topic": 29,
+"title": "A bag contains 5 green counters and 4 orange counters. One counter is chosen uniformly at random. What is the probability that it is green?"
+},
+"solve-wp29-g149": {
+"topic": 29,
+"title": "A bag initially contains 8 purple beads and 5 white beads. Three purple beads have already been removed and not replaced. What is the probability that"
+},
+"solve-wp29-g150": {
+"topic": 29,
+"title": "A box contains 28 tokens, all either gold or silver. A uniformly random token is gold with probability \\frac37. How many silver tokens are in the box?"
+},
+"solve-wp29-g152": {
+"topic": 29,
+"title": "A fair coin is tossed and an independent fair eight-sided die numbered 1 through 8 is rolled. What is the probability of heads and a 5?"
+},
+"solve-wp29-g153": {
+"topic": 29,
+"title": "A fair coin is tossed independently four times. What is the probability of tails on all four tosses?"
+},
+"solve-wp29-g154": {
+"topic": 29,
+"title": "A fair six-sided die is rolled twice independently. What is the probability that the two results add to 8?"
+},
+"solve-wp29-g155": {
+"topic": 29,
+"title": "Rosa has tossed a fair coin and obtained tails six times in a row. Sam has tossed another fair coin and obtained heads six times in a row. All tosses "
+},
+"solve-wp29-g156": {
+"topic": 29,
+"title": "Two fair eight-sided dice, each numbered 1 through 8, are rolled independently. What is the probability that they show the same number?"
+},
+"solve-wp29-g157": {
+"topic": 29,
+"title": "A bag contains 4 red counters and 4 yellow counters. Two are drawn uniformly at random without replacement. What is the probability that their colours"
+},
+"solve-wp29-g158": {
+"topic": 29,
+"title": "A prize is equally likely to be in any of 7 closed lockers. You may open 2 different lockers, choosing without any extra information. What is the prob"
+},
+"solve-wp29-g160": {
+"topic": 29,
+"title": "Two fair six-sided dice are rolled. Let A be the probability of a sum of 9 and B the probability of a sum of 5. Which statement is true?"
+},
+"solve-wp29-g161": {
+"topic": 29,
+"title": "Lina chooses one of the 26 English letters uniformly at random. Independently, Noah chooses one of the four letters in NOAH uniformly at random. What "
+},
+"solve-wp29-g162": {
+"topic": 29,
+"title": "A workshop has r groups, each containing s participants with different ages. One participant is selected uniformly from each group, independently acro"
+},
+"solve-wp29-g163": {
+"topic": 29,
+"title": "Factory A makes 800 buttons a day, including 40 blue buttons. Factory B makes 400 buttons a day, including 110 blue buttons. One button is chosen unif"
+},
+"solve-wp29-g164": {
+"topic": 29,
+"title": "A music app offers five genres. Each day, Tia chooses uniformly from the four genres she did not choose the previous day. On Monday she chose jazz. Wh"
+},
+"solve-wp29-g165": {
+"topic": 29,
+"title": "A jar contains 6 red sweets and 1 blue sweet. All seven are drawn in a uniformly random order without replacement. What is the probability that the fi"
+},
+"solve-geo33-g094": {
+"topic": 33,
+"title": "Two shaded pieces: subtraction and answer elimination"
+},
+"solve-geo33-g095": {
+"topic": 33,
+"title": "A tangent, a special triangle and a sector"
+},
+"solve-geo33-g096": {
+"topic": 33,
+"title": "A semicircle perimeter ratio: algebra, substitution and scale"
+},
+"solve-geo33-g097": {
+"topic": 33,
+"title": "Two squares sharing a circle"
+},
+"geo-097-after": {
+"topic": 33,
+"title": "Three Nested Shapes"
+},
+"solve-geo33-g098": {
+"topic": 33,
+"title": "Two separated arcs: find their total directly"
+},
+"solve-geo33-g099": {
+"topic": 33,
+"title": "Overlapping circles: partition or subtract the overlap"
+},
+"solve-geo33-g100": {
+"topic": 33,
+"title": "Equal areas: a short equation or a geometric bound"
+},
+"solve-geo33-g101": {
+"topic": 33,
+"title": "Internally tangent circles: equation, factoring and choice testing"
+},
+"solve-geo33-g102": {
+"topic": 33,
+"title": "An arc formula: derive it or test a valid case"
+},
+"geo-084": {
+"topic": 33,
+"title": "Circles in Questions"
+},
+"solve-geo33-g085": {
+"topic": 33,
+"title": "Equal radii reveal an equilateral triangle"
+},
+"solve-geo33-g086": {
+"topic": 33,
+"title": "An inscribed isosceles triangle: two angle methods"
+},
+"solve-geo33-g087": {
+"topic": 33,
+"title": "Equal chords, equal arcs and one false statement"
+},
+"solve-geo33-g088": {
+"topic": 33,
+"title": "Tangent circles reveal a special right triangle"
+},
+"solve-geo33-g089": {
+"topic": 33,
+"title": "From an inner circumference to an outer circumference"
+},
+"solve-geo33-g090": {
+"topic": 33,
+"title": "Recognise a diameter from three triangle sides"
+},
+"solve-geo33-g091": {
+"topic": 33,
+"title": "Find the combined angle rather than each angle"
+},
+"solve-geo33-g092": {
+"topic": 33,
+"title": "Three tangent circles and a major arc"
+},
+"geo-093": {
+"topic": 33,
+"title": "Advanced Circles"
+},
+"geo-081": {
+"topic": 33,
+"title": "Sectors and Arcs"
+},
+"solve-geo33-g082": {
+"topic": 33,
+"title": "From an arc length to a central angle"
+},
+"solve-geo33-g083": {
+"topic": 33,
+"title": "Add the areas of two separate sectors"
+},
+"geo-074": {
+"topic": 33,
+"title": "Circle Vocabulary"
+},
+"geo-075": {
+"topic": 33,
+"title": "Angles in a Circle"
+},
+"solve-geo33-g076": {
+"topic": 33,
+"title": "An inscribed angle on the major arc"
+},
+"geo-077": {
+"topic": 33,
+"title": "Tangents"
+},
+"solve-geo33-g078": {
+"topic": 33,
+"title": "Tangents lead to an inscribed angle"
+},
+"geo-079": {
+"topic": 33,
+"title": "Area and Circumference"
+},
+"solve-geo33-g080": {
+"topic": 33,
+"title": "A numerical relationship between area and circumference"
+},
+"geo-154": {
+"topic": 37,
+"title": "The Coordinate Plane"
+},
+"geo-155": {
+"topic": 37,
+"title": "Lengths on the Plane"
+},
+"solve-geo37-g156": {
+"topic": 37,
+"title": "A triangle perimeter from three coordinates"
+},
+"geo-157": {
+"topic": 37,
+"title": "Circles on the Plane"
+},
+"solve-geo37-g158": {
+"topic": 37,
+"title": "A coordinate on a circle reveals a special angle"
+},
+"solve-geo37-g162": {
+"topic": 37,
+"title": "A trapezoid with its side midpoint at the origin"
+},
+"solve-geo37-g163": {
+"topic": 37,
+"title": "Rotate a coordinate rectangle to form a cylinder"
+},
+"solve-geo37-g164": {
+"topic": 37,
+"title": "Two shaded circle regions: subtraction, bounds and scaling"
+},
+"solve-geo37-g165": {
+"topic": 37,
+"title": "A regular hexagon positioned on the axes"
+},
+"solve-geo37-g166": {
+"topic": 37,
+"title": "Parallel lines: find the y-intercept from matching steps"
+},
+"solve-geo37-g167": {
+"topic": 37,
+"title": "How many times can a line meet an axis?"
+},
+"solve-geo37-g168": {
+"topic": 37,
+"title": "Which coordinate stays fixed on a line?"
+},
+"solve-geo37-g169": {
+"topic": 37,
+"title": "A point that would force a forbidden direction"
+},
+"geo-159": {
+"topic": 37,
+"title": "Slope"
+},
+"solve-geo37-g160": {
+"topic": 37,
+"title": "Which coordinate pair cannot stay on an origin line?"
+},
+"geo-161": {
+"topic": 37,
+"title": "Coordinates in Questions"
+},
+"geo-001": {
+"topic": 30,
+"title": "Lines and Angles"
+},
+"solve-geo30-g002": {
+"topic": 30,
+"title": "In the accompanying figure, a\\parallel b. The marked lines are perpendicular. What is the value of x?"
+},
+"geo-004": {
+"topic": 30,
+"title": "Lines and Angles: Advanced"
+},
+"solve-geo30-g005": {
+"topic": 30,
+"title": "In the accompanying figure, a\\parallel b and c\\parallel d. What is the value of x?"
+},
+"solve-geo30-g006": {
+"topic": 30,
+"title": "Four lines intersect at one point, as shown in the accompanying figure. Which expression equals \\theta?"
+},
+"solve-geo30-g007": {
+"topic": 30,
+"title": "In the accompanying figure, a\\parallel b. What is the value of x?"
+},
+"solve-geo34-g114": {
+"topic": 34,
+"title": "An octagon comparison: match segments instead of measuring"
+},
+"solve-geo34-g115": {
+"topic": 34,
+"title": "Equal shaded and white areas in an octagon"
+},
+"solve-geo34-g116": {
+"topic": 34,
+"title": "Recover the number of sides from an angle sum"
+},
+"solve-geo34-g117": {
+"topic": 34,
+"title": "Compare polygon angle sums by counting the added sides"
+},
+"geo-104": {
+"topic": 34,
+"title": "Polygons"
+},
+"geo-105": {
+"topic": 34,
+"title": "Polygon Areas"
+},
+"solve-geo34-g106": {
+"topic": 34,
+"title": "An irregular pentagon: two useful partitions"
+},
+"solve-geo34-g107": {
+"topic": 34,
+"title": "A regular hexagon area from six equilateral triangles"
+},
+"solve-geo34-g108": {
+"topic": 34,
+"title": "A regular octagon area: add pieces or remove corners"
+},
+"geo-109": {
+"topic": 34,
+"title": "Advanced Polygons"
+},
+"solve-geo34-g110": {
+"topic": 34,
+"title": "A pentagon angle: triangles, a trapezoid and a circle"
+},
+"solve-geo34-g111": {
+"topic": 34,
+"title": "Regular polygon statements: angles, chords and radius sums"
+},
+"solve-geo34-g112": {
+"topic": 34,
+"title": "A hexagon perimeter: special triangles or answer bounds"
+},
+"geo-112-after": {
+"topic": 34,
+"title": "Two Hexagon Partitions"
+},
+"solve-geo34-g112-area": {
+"topic": 34,
+"title": "Practice the half-hexagon area shortcut"
+},
+"solve-geo34-g113": {
+"topic": 34,
+"title": "Four attached squares: compare perimeter and area"
+},
+"geo-065": {
+"topic": 32,
+"title": "Advanced Quadrilaterals"
+},
+"solve-geo32-g066": {
+"topic": 32,
+"title": "Which quadrilateral properties are guaranteed?"
+},
+"solve-geo32-g067": {
+"topic": 32,
+"title": "A triangle’s area equals the two corner areas"
+},
+"geo-067-after": {
+"topic": 32,
+"title": "Equal Heights, Equal Halves"
+},
+"solve-geo32-g068": {
+"topic": 32,
+"title": "Which area information is sufficient?"
+},
+"solve-geo32-g069": {
+"topic": 32,
+"title": "A trapezoid area without calculating its height"
+},
+"solve-geo32-g070": {
+"topic": 32,
+"title": "A shaded grid polygon: three exact area methods"
+},
+"solve-geo32-g071": {
+"topic": 32,
+"title": "An angle expression: algebra and numerical substitution"
+},
+"solve-geo32-g072": {
+"topic": 32,
+"title": "Congruent rectangles determine a hidden side ratio"
+},
+"geo-056": {
+"topic": 32,
+"title": "Quadrilaterals in Questions"
+},
+"solve-geo32-g057": {
+"topic": 32,
+"title": "An angle bound in a general quadrilateral"
+},
+"solve-geo32-g058": {
+"topic": 32,
+"title": "Use an angle bisector to find a parallelogram perimeter"
+},
+"solve-geo32-g059": {
+"topic": 32,
+"title": "Three ways to find an area inside a rectangle"
+},
+"solve-geo32-g060": {
+"topic": 32,
+"title": "A rhombus area: diagonals or two equilateral triangles"
+},
+"solve-geo32-g061": {
+"topic": 32,
+"title": "A square and an equilateral triangle share equal sides"
+},
+"solve-geo32-g062": {
+"topic": 32,
+"title": "A kite area from a partial diagonal and a side"
+},
+"solve-geo32-g063": {
+"topic": 32,
+"title": "A trapezoid perimeter from a special right triangle"
+},
+"geo-042": {
+"topic": 32,
+"title": "Quadrilaterals"
+},
+"geo-043": {
+"topic": 32,
+"title": "The Square"
+},
+"solve-geo32-g044": {
+"topic": 32,
+"title": "Square area from a diagonal"
+},
+"geo-045": {
+"topic": 32,
+"title": "The Rectangle"
+},
+"solve-geo32-g046": {
+"topic": 32,
+"title": "A rectangle hides a special right triangle"
+},
+"geo-047": {
+"topic": 32,
+"title": "The Parallelogram"
+},
+"solve-geo32-g048": {
+"topic": 32,
+"title": "Use an angle sum without solving every angle"
+},
+"solve-geo32-g049": {
+"topic": 32,
+"title": "A missing parallelogram height"
+},
+"geo-050": {
+"topic": 32,
+"title": "The Rhombus"
+},
+"solve-geo32-g051": {
+"topic": 32,
+"title": "From diagonal sum and difference to a rhombus perimeter"
+},
+"geo-052": {
+"topic": 32,
+"title": "The Kite"
+},
+"solve-geo32-g053": {
+"topic": 32,
+"title": "A kite joins an equilateral and a right isosceles triangle"
+},
+"geo-054": {
+"topic": 32,
+"title": "The Trapezoid"
+},
+"solve-geo32-g055": {
+"topic": 32,
+"title": "An isosceles trapezoid: subtract the matching triangles"
+},
+"solve-geo38-g182": {
+"topic": 38,
+"title": "Which sphere cut creates more surface area?"
+},
+"solve-geo38-g183": {
+"topic": 38,
+"title": "Equal side lengths, different angles and areas"
+},
+"solve-geo38-g184": {
+"topic": 38,
+"title": "What an angle bisector must—and need not—imply"
+},
+"solve-geo38-g185": {
+"topic": 38,
+"title": "Three different ways to compare regular polygons"
+},
+"solve-geo38-g186": {
+"topic": 38,
+"title": "Count faces after one plane cut"
+},
+"solve-geo38-g187": {
+"topic": 38,
+"title": "Count tangency points by sides or by columns"
+},
+"solve-geo38-g178": {
+"topic": 38,
+"title": "A trapezoid whose area comparison can change"
+},
+"solve-geo38-g179": {
+"topic": 38,
+"title": "Symmetry without assuming a second diameter"
+},
+"solve-geo38-g180": {
+"topic": 38,
+"title": "An exact angle range in a parallelogram"
+},
+"solve-geo38-g181": {
+"topic": 38,
+"title": "Compare slanted crossings of parallel lines"
+},
+"geo-172": {
+"topic": 38,
+"title": "Shape Efficiency"
+},
+"solve-geo38-g173": {
+"topic": 38,
+"title": "Equal perimeters: choose the greatest area"
+},
+"solve-geo38-g174": {
+"topic": 38,
+"title": "Equal areas: which plot needs more fencing?"
+},
+"geo-175": {
+"topic": 38,
+"title": "Minimum and Maximum"
+},
+"solve-geo38-g176": {
+"topic": 38,
+"title": "Compare a triangle with a Pythagorean reference"
+},
+"geo-177": {
+"topic": 38,
+"title": "Diagrams That Can Change"
+},
+"solve-geo36-g147": {
+"topic": 36,
+"title": "Two claims about concentric circles"
+},
+"solve-geo36-g148": {
+"topic": 36,
+"title": "A midpoint segment: three ways to compare areas"
+},
+"solve-geo36-g149": {
+"topic": 36,
+"title": "From hexagon areas to a perimeter ratio"
+},
+"solve-geo36-g150": {
+"topic": 36,
+"title": "Two spheres: a volume difference from a diameter comparison"
+},
+"solve-geo36-g151": {
+"topic": 36,
+"title": "Measuring a cone’s capacity with a smaller cone"
+},
+"solve-geo36-g144": {
+"topic": 36,
+"title": "A parallel cut: equations or corresponding differences"
+},
+"solve-geo36-g145": {
+"topic": 36,
+"title": "A square inside a right triangle: similarity and substitution"
+},
+"solve-geo36-g146": {
+"topic": 36,
+"title": "The altitude to a hypotenuse: a geometric mean"
+},
+"geo-134": {
+"topic": 36,
+"title": "Similarity"
+},
+"geo-135": {
+"topic": 36,
+"title": "Similarity in Regular Shapes"
+},
+"solve-geo36-g136": {
+"topic": 36,
+"title": "A regular polygon: how its perimeter changes"
+},
+"solve-geo36-g137": {
+"topic": 36,
+"title": "A row of circles: add diameters before circumferences"
+},
+"solve-geo36-g138": {
+"topic": 36,
+"title": "A small disk compared with the surrounding region"
+},
+"geo-139": {
+"topic": 36,
+"title": "Similar Triangles and Rectangles"
+},
+"solve-geo36-g140": {
+"topic": 36,
+"title": "A parallel cut: small triangle versus trapezoid"
+},
+"geo-141": {
+"topic": 36,
+"title": "Similar Solids"
+},
+"solve-geo36-g142": {
+"topic": 36,
+"title": "From a cube’s face-area ratio to its volume ratio"
+},
+"geo-143": {
+"topic": 36,
+"title": "Volume Changes"
+},
+"solve-geo35-g125": {
+"topic": 35,
+"title": "Equal volumes, different surface areas"
+},
+"solve-geo35-g126": {
+"topic": 35,
+"title": "A cylinder inside a box: compare volumes or base areas"
+},
+"solve-geo35-g127": {
+"topic": 35,
+"title": "A pyramid removed from a cube"
+},
+"solve-geo35-g128": {
+"topic": 35,
+"title": "A pyramid height: calculate it or bound it"
+},
+"solve-geo35-g129": {
+"topic": 35,
+"title": "A triangle made from three cube-face diagonals"
+},
+"solve-geo35-g130": {
+"topic": 35,
+"title": "Edges, face diagonals and body diagonals"
+},
+"solve-geo35-g131": {
+"topic": 35,
+"title": "Packing cubes: count complete fits in three directions"
+},
+"solve-geo35-g132": {
+"topic": 35,
+"title": "Removing a corner cube: volume and exposed faces"
+},
+"solve-geo35-g121": {
+"topic": 35,
+"title": "Which container can hold all the water?"
+},
+"solve-geo35-g122": {
+"topic": 35,
+"title": "A cone and cylinder: height from a volume ratio"
+},
+"solve-geo35-g123": {
+"topic": 35,
+"title": "A triangular prism as a fraction of a box"
+},
+"solve-geo35-g124": {
+"topic": 35,
+"title": "The lateral area of a triangular prism"
+},
+"geo-119": {
+"topic": 35,
+"title": "Solids: Surface and Volume"
+},
+"geo-120": {
+"topic": 35,
+"title": "Solids in Questions"
+},
+"solve-geo31-g031": {
+"topic": 31,
+"title": "ABC is an equilateral triangle. D, A and E lie on one line, E lies on BC, and F lies on the extension of BA beyond A. Based on the figure, which expre"
+},
+"solve-geo31-g032": {
+"topic": 31,
+"title": "In triangle ABC, \\angle ABC=40° and \\alpha>\\beta, as shown. Which side must be the longest?"
+},
+"solve-geo31-g033": {
+"topic": 31,
+"title": "ABC is an obtuse triangle, with \\angle ACB>90° and AB=6 cm. Which of the following could be its perimeter (in cm)?"
+},
+"solve-geo31-g034": {
+"topic": 31,
+"title": "Which of the following triangles is not necessarily isosceles?"
+},
+"solve-geo31-g035": {
+"topic": 31,
+"title": "Triangles ABC and ACD in the figure are right triangles. The marked lengths are in cm. What is the area of quadrilateral ABCD (in cm²)?"
+},
+"solve-geo31-g036": {
+"topic": 31,
+"title": "Triangles ABD and BCD in the figure are right triangles. Given: AD=12 cm. What is the perimeter of quadrilateral ABCD (in cm)?"
+},
+"solve-geo31-g037": {
+"topic": 31,
+"title": "In triangle ABC, AE is an altitude to BC. Point D lies on AE, and DBC is equilateral. Given: BE=3 cm and AD=2\\sqrt3 cm. What is the shaded area (in cm"
+},
+"solve-geo31-g038": {
+"topic": 31,
+"title": "Triangle ABC has area 32 cm². Point D lies on BC, and DC=3BD. What is the difference between the areas of ADC and ABD (in cm²)?"
+},
+"solve-geo31-g039": {
+"topic": 31,
+"title": "Four congruent squares, each with side 3 cm, are arranged as shown. What is the perimeter of AEF minus the perimeter of AFG (in cm)?"
+},
+"solve-geo31-g040": {
+"topic": 31,
+"title": "The figure shows two equilateral triangles with side lengths a and b, where a<b. The total length of the bold segments is twice the perimeter of the s"
+},
+"geo-013": {
+"topic": 31,
+"title": "Special Triangles"
+},
+"solve-geo31-g014": {
+"topic": 31,
+"title": "ABC is an equilateral triangle. Point D lies on BC. Given: \\angle DAC=30° and DC=6 cm. What is AB (in cm)?"
+},
+"solve-geo31-g015": {
+"topic": 31,
+"title": "In triangle ABC, AB=AC and \\angle BAC=24°. Point D lies on AB, and BC=CD. What is \\angle ACD?"
+},
+"geo-016": {
+"topic": 31,
+"title": "Area of Triangles"
+},
+"solve-geo31-g017": {
+"topic": 31,
+"title": "Points A and B lie on one line, and C, D and E lie on a parallel line. Given: DE=4CD. What is \\frac{\\text{area of }BDE}{\\text{area of }ACD}?"
+},
+"geo-017-after": {
+"topic": 31,
+"title": "Equilateral Triangle Area"
+},
+"solve-geo31-g018": {
+"topic": 31,
+"title": "ABC is an equilateral triangle with perimeter 18 cm. Points D and E are the midpoints of AB and BC, respectively. What is the area of quadrilateral AD"
+},
+"geo-018-after": {
+"topic": 31,
+"title": "A Median Halves the Area"
+},
+"geo-009": {
+"topic": 31,
+"title": "Triangles"
+},
+"solve-geo31-g010": {
+"topic": 31,
+"title": "In triangle ABC, the marked angle outside the triangle is vertically opposite the interior angle at A. Based on the figure, what is the value of x?"
+},
+"solve-geo31-g011": {
+"topic": 31,
+"title": "In the accompanying figure, the angles at A and C are equal. What is the value of p+\\frac{q}{2}?"
+},
+"solve-geo31-g012": {
+"topic": 31,
+"title": "In triangle ABC, AC=7 cm and BC=12 cm. Which of the following could be the length of AB (in cm)?"
+},
+"geo-019": {
+"topic": 31,
+"title": "The Pythagorean Theorem"
+},
+"solve-geo31-g020": {
+"topic": 31,
+"title": "In right triangle ABC, \\angle ABC=90°, AB=8 cm and BC=15 cm. What is AC (in cm)?"
+},
+"solve-geo31-g021": {
+"topic": 31,
+"title": "In right triangle ABC, \\angle ABC=90°, AB=4 cm and BC=7 cm. What is AC (in cm)?"
+},
+"solve-geo31-g022": {
+"topic": 31,
+"title": "In right triangle ABC, \\angle ABC=90°, AB=8 cm and AC=11 cm. What is BC (in cm)?"
+},
+"geo-023": {
+"topic": 31,
+"title": "Why Pythagoras Works"
+},
+"geo-024": {
+"topic": 31,
+"title": "Pythagorean Triples"
+},
+"solve-geo31-g025": {
+"topic": 31,
+"title": "The accompanying figure shows three right triangles. The marked side lengths are in cm. What is CD (in cm)?"
+},
+"geo-026": {
+"topic": 31,
+"title": "The 30°-60°-90° Triangle"
+},
+"solve-geo31-g027": {
+"topic": 31,
+"title": "In right triangle ABC, \\angle ABC=90°, \\angle ACB=30°, and AB=6 cm. What is the perimeter of the triangle (in cm)?"
+},
+"geo-027-after": {
+"topic": 31,
+"title": "The 45°-45°-90° Triangle"
+},
+"solve-geo31-g028": {
+"topic": 31,
+"title": "In right triangle ABC, \\angle ABC=90°, \\angle ACB=45°, and AC=14 cm. What is its perimeter (in cm)?"
+},
+"vr-active-reading": {
+"topic": 39,
+"title": "Active reading: make meaning as you go"
+},
+"solve-vr39-g001": {
+"topic": 39,
+"title": "A contrast without an invented cause"
+},
+"solve-vr39-g002": {
+"topic": 39,
+"title": "Who holds the opinion?"
+},
+"vr-analogy-method": {
+"topic": 40,
+"title": "Analogies: start with the word that needs the other"
+},
+"solve-vr40-g001": {
+"topic": 40,
+"title": "Peak and whole"
+},
+"solve-vr40-g002": {
+"topic": 40,
+"title": "An action and its noun"
+},
+"solve-vr40-g003": {
+"topic": 40,
+"title": "Removing a state"
+},
+"solve-vr40-g004": {
+"topic": 40,
+"title": "Weak degree, not component"
+},
+"solve-vr40-g005": {
+"topic": 40,
+"title": "Putting something into a medium"
+},
+"solve-vr40-g006": {
+"topic": 40,
+"title": "Giving something to someone"
+},
+"solve-vr40-g007": {
+"topic": 40,
+"title": "Who acts on whom?"
+},
+"solve-vr40-g008": {
+"topic": 40,
+"title": "A safeguard and the event it prevents"
+},
+"solve-vr40-g009": {
+"topic": 40,
+"title": "A request and the response sought"
+},
+"solve-vr40-g010": {
+"topic": 40,
+"title": "Reversing a change"
+},
+"solve-vr40-g011": {
+"topic": 40,
+"title": "Manufacturing, not storage"
+},
+"solve-vr40-g012": {
+"topic": 40,
+"title": "Too little relief"
+},
+"solve-vr40-g013": {
+"topic": 40,
+"title": "A word with two senses"
+},
+"solve-vr40-g014": {
+"topic": 40,
+"title": "Causing versus merely inviting"
+},
+"solve-vr40-g015": {
+"topic": 40,
+"title": "Collecting material for a product"
+},
+"solve-vr40-g016": {
+"topic": 40,
+"title": "A stronger degree"
+},
+"solve-vr40-g017": {
+"topic": 40,
+"title": "A simple relation in unfamiliar vocabulary"
+},
+"solve-vr40-g018": {
+"topic": 40,
+"title": "Taking out a substance"
+},
+"vr-sentence-meaning": {
+"topic": 43,
+"title": "Understanding sentences: scope, emphasis and implication"
+},
+"solve-vr43-g001": {
+"topic": 43,
+"title": "The meaning of “not without reason”"
+},
+"solve-vr43-g002": {
+"topic": 43,
+"title": "The roles in a long sentence"
+},
+"solve-vr43-g003": {
+"topic": 43,
+"title": "A chain of negatives"
+},
+"solve-vr43-g004": {
+"topic": 43,
+"title": "What does “only” restrict?"
+},
+"solve-vr43-g005": {
+"topic": 43,
+"title": "One advantage, one disadvantage"
+},
+"solve-vr43-g006": {
+"topic": 43,
+"title": "When does the condition apply?"
+},
+"vr-paragraph-method": {
+"topic": 44,
+"title": "Understanding paragraphs: evidence, purpose and scope"
+},
+"solve-vr44-g001": {
+"topic": 44,
+"title": "Observation and artistic choice"
+},
+"solve-vr44-g002": {
+"topic": 44,
+"title": "Locate the disagreement"
+},
+"solve-vr44-g003": {
+"topic": 44,
+"title": "Collecting is not inventing"
+},
+"solve-vr44-g004": {
+"topic": 44,
+"title": "A whole process and one stage"
+},
+"solve-vr44-g005": {
+"topic": 44,
+"title": "Recreate the English wordplay"
+},
+"vr-comparison-method": {
+"topic": 45,
+"title": "Parables and comparisons: match the roles"
+},
+"solve-vr45-g001": {
+"topic": 45,
+"title": "Appearance is not behavior"
+},
+"solve-vr45-g002": {
+"topic": 45,
+"title": "A gesture outlives its origin"
+},
+"solve-vr45-g003": {
+"topic": 45,
+"title": "Reverse the causal story"
+},
+"solve-vr45-g004": {
+"topic": 45,
+"title": "At the front is not necessarily leading"
+},
+"solve-vr45-g005": {
+"topic": 45,
+"title": "Spending a gain before securing it"
+},
+"solve-vr45-g006": {
+"topic": 45,
+"title": "Repair the cause"
+},
+"vr-argument-method": {
+"topic": 46,
+"title": "Strengthen or weaken: find the gap"
+},
+"solve-vr46-g001": {
+"topic": 46,
+"title": "A second change at the same time"
+},
+"solve-vr46-g002": {
+"topic": 46,
+"title": "Repair counts need a denominator"
+},
+"solve-vr46-g003": {
+"topic": 46,
+"title": "A before-and-after comparison"
+},
+"solve-vr46-g004": {
+"topic": 46,
+"title": "Three rivals and one irrelevant fact"
+},
+"solve-vr46-g005": {
+"topic": 46,
+"title": "A missing necessary condition"
+},
+"solve-vr46-g006": {
+"topic": 46,
+"title": "Who entered the sample?"
+},
+"vr-completion-method": {
+"topic": 41,
+"title": "Sentence completion: hear how the parts fit"
+},
+"solve-vr41-g001": {
+"topic": 41,
+"title": "A prediction and its example"
+},
+"solve-vr41-g002": {
+"topic": 41,
+"title": "A long sentence in plain English"
+},
+"solve-vr41-g003": {
+"topic": 41,
+"title": "A counterfactual with stated facts"
+},
+"solve-vr41-g004": {
+"topic": 41,
+"title": "A double negative without losing scope"
+},
+"vr-logic-condition-result": {
+"topic": 42,
+"title": "Deductions: condition → result"
+},
+"solve-vr42-g001": {
+"topic": 42,
+"title": "The four cases in a new setting"
+},
+"solve-vr42-g002": {
+"topic": 42,
+"title": "Only and a shared witness"
+},
+"solve-vr42-g003": {
+"topic": 42,
+"title": "A two-way description"
+},
+"solve-vr42-g004": {
+"topic": 42,
+"title": "No overlap does not mean existence"
+},
+"solve-vr42-g005": {
+"topic": 42,
+"title": "One counterexample"
+},
+"solve-vr42-g006": {
+"topic": 42,
+"title": "Refuting two claims at once"
+},
+"solve-vr42-g007": {
+"topic": 42,
+"title": "Joining a negative chain"
+},
+"solve-vr42-g008": {
+"topic": 42,
+"title": "A shared result is not a chain"
+},
+"solve-vr42-g009": {
+"topic": 42,
+"title": "Add the missing bridge"
+},
+"solve-vr42-g010": {
+"topic": 42,
+"title": "Which premise supplies the conclusion?"
+},
+"solve-vr42-g011": {
+"topic": 42,
+"title": "Exceptions through two layers"
+},
+"solve-vr42-g012": {
+"topic": 42,
+"title": "Exclusive either-or"
+},
+"solve-vr42-g013": {
+"topic": 42,
+"title": "Knowing one feature completely"
+},
+"solve-vr42-g014": {
+"topic": 42,
+"title": "Which claim follows from the other two?"
+},
+"vr-reading-strategy": {
+"topic": 49,
+"title": "Reading comprehension: build a map, then use the evidence"
+},
+"vr-passage-1-map": {
+"topic": 49,
+"title": "Read and map: When an audience changes performance"
+},
+"solve-vr49-g001": {
+"topic": 49,
+"title": "When an audience changes performance · Example role"
+},
+"solve-vr49-g002": {
+"topic": 49,
+"title": "When an audience changes performance · Mechanism"
+},
+"solve-vr49-g003": {
+"topic": 49,
+"title": "When an audience changes performance · Reference"
+},
+"solve-vr49-g004": {
+"topic": 49,
+"title": "When an audience changes performance · Detail"
+},
+"solve-vr49-g005": {
+"topic": 49,
+"title": "When an audience changes performance · Unsupported claim"
+},
+"solve-vr49-g006": {
+"topic": 49,
+"title": "When an audience changes performance · Main idea"
+},
+"vr-passage-2-map": {
+"topic": 49,
+"title": "Read and map: Two books by an imaginary scholar"
+},
+"solve-vr49-g007": {
+"topic": 49,
+"title": "Two books by an imaginary scholar · Distinguish works"
+},
+"solve-vr49-g008": {
+"topic": 49,
+"title": "Two books by an imaginary scholar · Authorial method"
+},
+"solve-vr49-g009": {
+"topic": 49,
+"title": "Two books by an imaginary scholar · Inference"
+},
+"solve-vr49-g010": {
+"topic": 49,
+"title": "Two books by an imaginary scholar · Reference"
+},
+"solve-vr49-g011": {
+"topic": 49,
+"title": "Two books by an imaginary scholar · Application"
+},
+"solve-vr49-g012": {
+"topic": 49,
+"title": "Two books by an imaginary scholar · Main idea"
+},
+"vr-passage-3-map": {
+"topic": 49,
+"title": "Read and map: Where ambiguity comes from"
+},
+"solve-vr49-g013": {
+"topic": 49,
+"title": "Where ambiguity comes from · Central distinction"
+},
+"solve-vr49-g014": {
+"topic": 49,
+"title": "Where ambiguity comes from · Context"
+},
+"solve-vr49-g015": {
+"topic": 49,
+"title": "Where ambiguity comes from · Structural ambiguity"
+},
+"solve-vr49-g016": {
+"topic": 49,
+"title": "Where ambiguity comes from · Disambiguation"
+},
+"solve-vr49-g017": {
+"topic": 49,
+"title": "Where ambiguity comes from · Scope"
+},
+"solve-vr49-g018": {
+"topic": 49,
+"title": "Where ambiguity comes from · Title"
+},
+"vr-passage-4-map": {
+"topic": 49,
+"title": "Read and map: A signal without a messenger"
+},
+"solve-vr49-g019": {
+"topic": 49,
+"title": "A signal without a messenger · Detail"
+},
+"solve-vr49-g020": {
+"topic": 49,
+"title": "A signal without a messenger · Evidence"
+},
+"solve-vr49-g021": {
+"topic": 49,
+"title": "A signal without a messenger · Sequence"
+},
+"solve-vr49-g022": {
+"topic": 49,
+"title": "A signal without a messenger · Meaning in context"
+},
+"solve-vr49-g023": {
+"topic": 49,
+"title": "A signal without a messenger · Unsupported inference"
+},
+"solve-vr49-g024": {
+"topic": 49,
+"title": "A signal without a messenger · Purpose"
+},
+"vr-rules-method": {
+"topic": 48,
+"title": "Rules and arrangements: build a small working model"
+},
+"solve-vr48-g001": {
+"topic": 48,
+"title": "Exactly one of two courses"
+},
+"solve-vr48-g002": {
+"topic": 48,
+"title": "A classification rule"
+},
+"solve-vr48-g003": {
+"topic": 48,
+"title": "Use floor slots"
+},
+"solve-vr48-g004": {
+"topic": 48,
+"title": "A fixed cycle"
+},
+"solve-vr48-g005": {
+"topic": 48,
+"title": "Seats and incompatible preferences"
+},
+"solve-vr48-g006": {
+"topic": 48,
+"title": "Count the true statements"
+},
+"solve-vr48-g007": {
+"topic": 48,
+"title": "Two separate rankings"
+},
+"vr-science-method": {
+"topic": 47,
+"title": "Scientific reasoning: what did the comparison show?"
+},
+"solve-vr47-g001": {
+"topic": 47,
+"title": "A factor hidden inside a comparison"
+},
+"solve-vr47-g002": {
+"topic": 47,
+"title": "A fair test of encouragement"
+},
+"solve-vr47-g003": {
+"topic": 47,
+"title": "Different predictions make a useful test"
+},
+"solve-vr47-g004": {
+"topic": 47,
+"title": "Valence is not frequency"
+},
+"solve-vr47-g005": {
+"topic": 47,
+"title": "Which direction does the link run?"
+},
+"order-of-operations": {
+"topic": 1,
+"title": "Order of Operations"
+}
+}
+}

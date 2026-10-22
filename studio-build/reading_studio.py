@@ -594,6 +594,25 @@ def scan_recorded(videos):
     return rec
 
 
+_BASE_IDS = None
+
+def _origin(vid, topic):
+    """2026-10-22 (teacher: "mark every video that is equivalent to the Hebrew and all the videos that were added"):
+    'hebrew' = the video (or the lesson it is a part of) is in base-v18 = the English translation of her Hebrew course,
+    or it is a topic-51 / topic-52 video built from her Hebrew material; 'added' = no Hebrew video behind it."""
+    global _BASE_IDS
+    if _BASE_IDS is None:
+        try: _BASE_IDS = set(json.load(open(os.path.join(HERE, 'base_v18_videos.json')))['videos'])
+        except Exception: _BASE_IDS = set()
+    base = re.sub(r'-\d+$', '', vid)
+    if re.match(r'(r26-|solve-q-r26-)', vid): return {'kind': 'added', 'why': 'added in the course review'}
+    if topic in (51, 52) or vid.startswith(('pt51-', 'solve-pt-', 'ch52-', 'solve-ch-')):
+        return {'kind': 'hebrew', 'part': base != vid}
+    if vid in _BASE_IDS: return {'kind': 'hebrew', 'part': False}
+    if base in _BASE_IDS: return {'kind': 'hebrew', 'part': True, 'of': base}
+    return {'kind': 'added', 'why': 'not in your Hebrew course'}
+
+
 def build(topics=(), ids=None, out=OUT):
     groups = []
     if ids:
@@ -624,6 +643,7 @@ def build(topics=(), ids=None, out=OUT):
                 v['title'] = re.split(r'(?<=[.?!])\s', v['paras'][0][0])[0][:110]
             v['group'] = g['topic']
             v['camera'] = v['id'] in cams                          # camera lesson: "Camera on" by default
+            v['origin'] = _origin(v['id'], g['topic'])               # 2026-10-22: from her Hebrew course, or added
             allv.append(v)
     import datetime as _dt
     now = _dt.datetime.now().astimezone()
@@ -705,6 +725,8 @@ aside{width:300px;flex:none;border-right:1px solid var(--line);background:var(--
 .cam .caminfo .bad{color:var(--rec);font-weight:600}
 .cam.on label{color:var(--accent)}
 .pill.cam{background:var(--accent-soft);color:var(--accent)}
+.pill.heb{background:#e0f2fe;color:#075985;border:1px solid #7dd3fc}
+.pill.added{background:#fff7ed;color:#9a3412;border:1px solid #fdba74}
 .recdot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--rec);margin-right:5px;vertical-align:1px}
 .head{display:flex;gap:18px;align-items:center;padding:14px 22px 10px}
 .head h1{font-size:18px;margin:0;font-weight:650;flex:1;min-width:0}
@@ -994,6 +1016,7 @@ function completedCorrectionIndices(id,side){
 function pendingVideoCorrections(id,full,patches){const task=(DATA.videoCorrections||{})[id];if(!task)return [];
   const done=new Set([full,...patches].flatMap(s=>completedCorrectionIndices(id,s)));return task.paragraphs.filter(i=>!done.has(i))}
 function videoCorrectionList(id=V[S.cur].id){return (S.status[id]||{}).videoCorrections||[]}
+function originBadge(v){const o=v.origin||{};return o.kind==='added'?' <span class="pill added" title="No video in your Hebrew course ('+esc(o.why||'')+')">added · no Hebrew video</span>':' <span class="pill heb" title="Equivalent to a video in your Hebrew course">Hebrew'+(o.part?' (part)':'')+'</span>'}
 function correctionBadge(id){const pending=videoCorrectionList(id),task=(DATA.videoCorrections||{})[id];return pending.length?'<span class="pill vfix">Video correction · '+(task.mode==='full'?'new full take':pending.length+' paragraph'+(pending.length>1?'s':''))+'</span>':''}
 function changedOf(id,full,patches){/* same rule as the generator: current paragraphs not in the last full take's sidecar nor in a later patch */
   if(!full||!full.paragraphs)return null;const known=new Set(full.paragraphs.map(p=>norm(p.text!=null?p.text:p)));
@@ -1022,7 +1045,7 @@ function renderList(){
     h+='<div class="grp"><span>'+esc(g.topic?('Topic '+g.topic+(g.title?' · '+g.title:'')):g.title)+'</span><span>'+done+'/'+g.ids.length+'</span></div>';
     for(const id of g.ids){const v=BYID[id],i=V.indexOf(v),st=S.status[id];n++;
       h+='<div class="vid'+(i===S.cur?' cur':'')+'" data-i="'+i+'"><span class="n">'+(i+1)+'</span><span class="t" title="'+esc(v.title)+'">'+esc(v.title)+'</span><span class="m">'+v.minutes.toFixed(1)+' min</span>'+
-        '<span class="id">'+esc(id)+'</span><span class="st">'+(st?'<span class="pill yes">recorded ✓'+(st.seconds?' · '+fmt(st.seconds):'')+(st.takes>1?' · '+st.takes+' takes':'')+(st.patches?' · '+st.patches+' patch'+(st.patches>1?'es':''):'')+'</span>'+(st.changed&&st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length?' <span class="pill chg">script re-read: '+st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length+'</span>':''):'<span class="pill no">not recorded</span>')+correctionBadge(id)+(camWanted(v)?' <span class="pill cam" title="Recorded with the camera on">camera</span>':'')+'</span></div>'}}
+        '<span class="id">'+esc(id)+'</span><span class="st">'+(st?'<span class="pill yes">recorded ✓'+(st.seconds?' · '+fmt(st.seconds):'')+(st.takes>1?' · '+st.takes+' takes':'')+(st.patches?' · '+st.patches+' patch'+(st.patches>1?'es':''):'')+'</span>'+(st.changed&&st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length?' <span class="pill chg">script re-read: '+st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length+'</span>':''):'<span class="pill no">not recorded</span>')+correctionBadge(id)+originBadge(v)+(camWanted(v)?' <span class="pill cam" title="Recorded with the camera on">camera</span>':'')+'</span></div>'}}
   L.innerHTML=h;
   L.querySelectorAll('.vid').forEach(el=>el.onclick=()=>selectVideo(+el.dataset.i));
 }
