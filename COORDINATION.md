@@ -27,6 +27,7 @@ Read this page **before and after every job**. History (everything up to 22 Oct)
 ## Active jobs
 | Owner | Since | Job | Lessons / files | Blocker |
 |---|---|---|---|---|
+| Claude | 22 Oct | **Write topic 35 (3D geometry)** — new unrecorded batch; all its lessons will be Held until Codex reviews | `math_patches/_ai_vis_t35.py`, `t35.py` hook, ai_scripts t35, `summary_pages/t35.json` | — |
 | Codex | ongoing | **Video production queue** | Video Status "Send to Codex" | — |
 | Codex | 22 Oct | **Review of the Hebrew restores + pair-1 re-review** (handoff below) | t33 unrecorded (incl. geo-079, g090, g092); t51 unrecorded (incl. pt-q16); solve-wp24-g076, solve-wp25-g082, solve-wp25-g089, solve-wp26-g105b, ch52-change — all **Held** in Video Status until you mark them ready | — |
 | Claude (another session) | 22 Oct (assigned by Nitzan) | **Review topics 23 and 24 for clarity** | `math_patches/_ai_vis_t23.py`, `_ai_vis_t24.py` — mostly recorded now: proposals only for recorded lessons | must claim here before starting |
