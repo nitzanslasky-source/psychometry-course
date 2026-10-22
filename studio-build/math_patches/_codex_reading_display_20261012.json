@@ -11614,6 +11614,66 @@
    "paras": [],
    "disp": [],
    "scope_replacements": {}
+  },
+  "solve-geo35-g123": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "2.3": [
+     [
+      "x times y, divided by two, times z. That's x times y times z, divided by two.",
+      "(x × y)/2 × z. That's (x × y × z)/2."
+     ]
+    ]
+   }
+  },
+  "solve-geo35-g126": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "1.7": [
+     [
+      "one minus pi over four. Choice",
+      "1 − π/4. Choice"
+     ]
+    ],
+    "2.2": [
+     [
+      "become one minus pi over four",
+      "become 1 − π/4"
+     ]
+    ],
+    "2.5": [
+     [
+      "one hundred sixty minus forty pi, over one hundred sixty. That's one minus pi over four.",
+      "(160 − 40π)/160. That's 1 − π/4."
+     ]
+    ],
+    "3.1": [
+     [
+      "one minus two pi over four, that's one minus pi over two",
+      "1 − 2π/4, that's 1 − π/2"
+     ],
+     [
+      "Choice number three gives one minus pi over eight",
+      "Choice number three gives 1 − π/8"
+     ],
+     [
+      "Choice number two is one minus pi over two",
+      "Choice number two is 1 − π/2"
+     ],
+     [
+      "None of them is one minus pi over four",
+      "None of them is 1 − π/4"
+     ]
+    ],
+    "4.3": [
+     [
+      "Choice number two is one minus pi over two",
+      "Choice number two is 1 − π/2"
+     ]
+    ]
+   }
   }
  }
 }

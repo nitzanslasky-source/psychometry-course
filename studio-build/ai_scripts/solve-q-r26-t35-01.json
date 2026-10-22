@@ -1,0 +1,104 @@
+{
+ "videoId": "solve-q-r26-t35-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Water in a box-shaped container with a base of ten by eight reaches a height of nine. All the water is poured into an empty cube with an edge of twelve. How high is the water in the cube?",
+    "voice": "calm",
+    "at": [
+     "Water in a box-shaped container",
+     "Water in a box-shaped container",
+     "All the water"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Like in the lesson, when we pour, the volume of the water stays the same. Only its height changes. We'll solve it in two different ways.",
+    "at": [
+     "we pour, the",
+     "Only its height",
+     "solve it in"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. First, how much water is there? The water in the box is a box itself, ten by eight by nine.",
+    "at": [
+     "First, how much",
+     "The water in the box is a box itself",
+     "by eight by"
+    ]
+   },
+   {
+    "say": "Ten times eight is eighty, and eighty times nine is seven hundred twenty. So there are seven hundred twenty cubic centimeters of water.",
+    "at": [
+     "Ten times eight is eighty",
+     "eighty times nine",
+     "So there are"
+    ]
+   },
+   {
+    "say": "Now the cube. Its base is twelve by twelve, one hundred forty-four.",
+    "at": [
+     "Now the cube",
+     "twelve by twelve"
+    ]
+   },
+   {
+    "say": "The height of the water is its volume divided by the base area. So it's seven hundred twenty divided by one hundred forty-four.",
+    "at": [
+     "The height of",
+     "seven hundred twenty divided by",
+     "one hundred forty-four"
+    ]
+   },
+   {
+    "say": "Let's check with five. One hundred forty-four times five is seven hundred twenty, because a hundred times five is five hundred, and forty-four times five is two hundred twenty. So the height is five.",
+    "at": [
+     "One hundred forty-four times five",
+     "is seven hundred",
+     "So the height is five"
+    ]
+   },
+   {
+    "say": "Careful, nine is choice number one. That's the old height, and the height doesn't carry over. Only the volume does. Choice number three is our answer.",
+    "at": [
+     "nine is choice number one",
+     "That's the old",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now by understanding, without the volume. The same water spreads over a new base. Its old base was ten times eight, eighty. The new base is twelve times twelve, one hundred forty-four.",
+    "at": [
+     "Now by understanding",
+     "The same water",
+     "Its old base was",
+     "times eight, eighty"
+    ]
+   },
+   {
+    "say": "So the new base is one hundred forty-four over eighty times as big. Let's simplify. Divide both by sixteen, and it's nine over five.",
+    "at": [
+     "Divide both by sixteen",
+     "it's nine over"
+    ]
+   },
+   {
+    "say": "The volume is the base area times the height, and it stays the same. So if the base is multiplied by nine over five, the height is divided by nine over five. That means we multiply the old height by five over nine.",
+    "at": [
+     "we multiply the old height",
+     "by five over"
+    ]
+   },
+   {
+    "say": "Nine times five over nine is five. Five again. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

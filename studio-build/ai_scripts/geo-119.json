@@ -1,0 +1,128 @@
+{
+ "videoId": "geo-119",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now three-dimensional geometry, solids.",
+   {
+    "say": "A lot of students are afraid of this topic. They don't remember it from school, or they never learned it.",
+    "at": [
+     "are afraid of"
+    ]
+   },
+   "And that's a shame, because the questions here are usually not hard. A simple formula or a simple idea is enough, and you solve them quite fast.",
+   "It looks much scarier than it really is. So stay with me, and you'll see."
+  ],
+  [
+   {
+    "say": "First, let's learn some basic words, so we share one language. Here's a box.",
+    "at": [
+     "basic words, so",
+     "Here's a box"
+    ]
+   },
+   {
+    "say": "An edge is a side of the solid, a line like this one. We measure it in centimeters, like a side of a triangle.",
+    "at": [
+     "An edge is a side",
+     "of the solid"
+    ]
+   },
+   {
+    "say": "A face is a flat wall of the solid, like a wall of a room. Here's the right face. The box also has a left face, a front face and a back face.",
+    "at": [
+     "Here's the right face",
+     "The box also"
+    ]
+   },
+   {
+    "say": "The bottom face and the top face are called the bases. So a box has six faces, and two of them are the bases.",
+    "at": [
+     "are called the bases",
+     "So a box"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A prism is a solid whose two bases are the same polygon, one exactly above the other.",
+    "at": [
+     "A prism is a solid",
+     "same polygon, one"
+    ]
+   },
+   {
+    "say": "Let's take a triangle. That's the bottom base. Now let's lift a copy of it straight up. The copy is the top base, and we've made a prism.",
+    "at": [
+     "Let's take a triangle",
+     "the bottom base",
+     "lift a copy of it straight up",
+     "The copy is"
+    ]
+   },
+   "The bottom base and the top base are identical triangles. And the side faces are rectangles.",
+   {
+    "say": "Now the same with a rectangle. We lift a copy straight up, and we get a box. So a box is a prism too.",
+    "at": [
+     "the same with a rectangle",
+     "We lift a",
+     "we get a box"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now careful, because sometimes a prism lies on its side. Here's a triangular prism lying down.",
+    "at": [
+     "a prism lies",
+     "Here's a triangular prism lying down"
+    ]
+   },
+   {
+    "say": "Where are the bases now? Not at the bottom. The bases are the two identical faces, the two triangles, one at the front and one at the back.",
+    "at": [
+     "Where are the",
+     "the two identical faces",
+     "two triangles, one"
+    ]
+   },
+   {
+    "say": "The height of a prism is the distance between its two bases. Here, the height is this edge, and it lies flat on the floor.",
+    "at": [
+     "The height of a prism",
+     "two bases. Here",
+     "the height is this edge"
+    ]
+   },
+   {
+    "say": "So don't look for a height that goes up. First find the two identical faces. The height is the edge that joins them.",
+    "at": [
+     "So don't look"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "On the exam we also have the cylinder. Take a circle, and lift a copy of it straight up.",
+    "at": [
+     "also have the",
+     "Take a circle",
+     "lift a copy of it straight up"
+    ]
+   },
+   {
+    "say": "Now both bases are circles, one above the other. That's a cylinder, like a can of soda or a roll of paper towels.",
+    "at": [
+     "Now both bases"
+    ]
+   },
+   {
+    "say": "The radius of the cylinder is the radius of its base, r. Its height is the distance between the two circles, h. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "The radius of the cylinder",
+     "is the radius"
+    ]
+   }
+  ]
+ ]
+}

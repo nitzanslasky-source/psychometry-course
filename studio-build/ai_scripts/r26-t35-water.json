@@ -1,0 +1,161 @@
+{
+ "videoId": "r26-t35-water",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now let's look at water in containers. These questions use the volume formula, turned around.",
+   {
+    "say": "There are three things to know. The units, the height of the water, and what happens when we pour or drop something in.",
+    "at": [
+     "to know. The"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Often the water is in liters, and the container is in centimeters. So first, the units.",
+    "at": [
+     "in liters, and"
+    ]
+   },
+   {
+    "say": "Remember, one milliliter is one cubic centimeter.",
+    "at": [
+     "one milliliter is one cubic centimeter"
+    ]
+   },
+   {
+    "say": "A liter is a thousand milliliters, so it's a thousand cubic centimeters. That's a cube, ten by ten by ten.",
+    "at": [
+     "thousand milliliters, so",
+     "it's a thousand cubic centimeters",
+     "That's a cube"
+    ]
+   },
+   {
+    "say": "And a cubic meter is a hundred centimeters in each direction. A hundred times a hundred times a hundred is a million cubic centimeters.",
+    "at": [
+     "A hundred times a hundred",
+     "million cubic centimeters"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Water takes the shape of its container, and its top is flat. So the water in a box is a box itself.",
+    "at": [
+     "Water takes the shape",
+     "its container, and",
+     "the water in a box is a box itself",
+     "is a box"
+    ]
+   },
+   {
+    "say": "Its volume is the base area times its height. So its height is the volume divided by the base area. It's the same formula, turned around.",
+    "at": [
+     "So its height is the volume",
+     "divided by the base area",
+     "It's the same"
+    ]
+   },
+   "Let's pour two liters into a box whose base is twenty by ten. How high is the water?",
+   {
+    "say": "First, the same units. Two liters are two thousand cubic centimeters.",
+    "at": [
+     "Two liters are"
+    ]
+   },
+   {
+    "say": "The base area is twenty times ten, two hundred.",
+    "at": [
+     "twenty times ten"
+    ]
+   },
+   {
+    "say": "So the height is two thousand divided by two hundred, ten centimeters.",
+    "at": [
+     "two thousand divided by two hundred",
+     "hundred, ten centimeters"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now we pour water from one container into another. Here's a box, ten by ten, with water six centimeters high.",
+    "at": [
+     "from one container",
+     "Here's a box, ten by ten",
+     "ten, with water"
+    ]
+   },
+   {
+    "say": "So the water is ten times ten times six, six hundred cubic centimeters.",
+    "at": [
+     "ten times ten times six",
+     "six hundred cubic"
+    ]
+   },
+   {
+    "say": "We pour all of it into a box whose base is twenty by fifteen. The volume of the water doesn't change. It's the same six hundred. Only the height changes.",
+    "at": [
+     "a box whose base is twenty by fifteen",
+     "twenty by fifteen"
+    ]
+   },
+   {
+    "say": "The new base area is twenty times fifteen, three hundred. So the new height is six hundred divided by three hundred, two centimeters.",
+    "at": [
+     "twenty times fifteen",
+     "So the new",
+     "six hundred divided by three hundred",
+     "two centimeters"
+    ]
+   },
+   {
+    "say": "Does it make sense? The new base is bigger, so the water spreads out, and it's lower. Six went down to two. The trap is to keep the same height. The height doesn't carry over, the volume does.",
+    "at": [
+     "The new base"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And one more case. Here's a tank whose base is sixteen by eight, with some water in it.",
+    "at": [
+     "Here's a tank whose base",
+     "is sixteen by"
+    ]
+   },
+   {
+    "say": "We drop in a cube with edge four, and it goes all the way under the water. What happens to the water?",
+    "at": [
+     "We drop in a cube",
+     "with edge four"
+    ]
+   },
+   {
+    "say": "The cube pushes the water up. The water rises by a layer whose volume is exactly the volume of the cube.",
+    "at": [
+     "The water rises by a layer",
+     "layer whose volume"
+    ]
+   },
+   {
+    "say": "The cube is four times four times four, sixty-four. The base of the tank is sixteen times eight, one hundred twenty-eight.",
+    "at": [
+     "four times four times four",
+     "sixty-four. The base",
+     "sixteen times eight"
+    ]
+   },
+   {
+    "say": "So the water rises by sixty-four divided by one hundred twenty-eight. That's one half of a centimeter.",
+    "at": [
+     "So the water rises by",
+     "That's one half"
+    ]
+   },
+   "So again, same units first. The height of the water is its volume divided by the base area. When we pour, the volume stays the same. And I'll see you in the next video."
+  ]
+ ]
+}

@@ -1,0 +1,140 @@
+{
+ "videoId": "solve-geo35-g131",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Identical cubes with edge four are placed in a box, eighteen by nine by eleven. The cube edges must be parallel to the box edges. What is the greatest number of cubes that can fit entirely inside the box?",
+    "voice": "calm",
+    "at": [
+     "Identical cubes with edge four",
+     "Identical cubes with edge four",
+     "The cube edges"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "In these questions, we first ask one thing. Do we fill the box with a liquid, or with solids?",
+    "at": [
+     "ask one thing",
+     "with a liquid"
+    ]
+   },
+   {
+    "say": "A liquid spreads evenly. It fills every corner, and no empty space is left. That's what we did with water.",
+    "at": [
+     "It fills every",
+     "no empty space"
+    ]
+   },
+   {
+    "say": "Solids are different. Sometimes they fit exactly. Small cubes with edge three fill a cube with edge six exactly, two in each direction, eight cubes. But often the box isn't a whole number of cubes long, and a gap is left.",
+    "at": [
+     "they fit exactly",
+     "But often the",
+     "a whole number"
+    ]
+   },
+   {
+    "say": "Here we put cubes into a box, a solid into a solid. So we can't just divide the volumes.",
+    "at": [
+     "So we can't"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's start by drawing it, floor by floor. Along the length, eighteen, how many cubes with edge four fit? Four cubes take four times four, sixteen. A fifth one would need twenty. So four fit, and two centimeters are left.",
+    "at": [
+     "Let's start by drawing it",
+     "floor by floor",
+     "Four cubes take four times four",
+     "A fifth one",
+     "two centimeters are left"
+    ]
+   },
+   {
+    "say": "Along the width, nine, two cubes take eight, and one centimeter is left. So two fit.",
+    "at": [
+     "two cubes take eight",
+     "one centimeter is"
+    ]
+   },
+   {
+    "say": "So the bottom floor has four rows of two, eight cubes.",
+    "at": [
+     "So the bottom floor",
+     "four rows of",
+     "eight cubes"
+    ]
+   },
+   {
+    "say": "Now the height, eleven. One floor is four high. Two floors are eight high, so a second floor fits, and three centimeters are left.",
+    "at": [
+     "One floor is",
+     "Two floors are eight high",
+     "a second floor fits",
+     "three centimeters are"
+    ]
+   },
+   {
+    "say": "A third floor would need twelve, and we only have eleven. So the third floor doesn't fit. We can't close the lid.",
+    "at": [
+     "A third floor would need twelve",
+     "twelve, and we"
+    ]
+   },
+   {
+    "say": "So two floors of eight, sixteen cubes.",
+    "at": [
+     "So two floors of eight",
+     "sixteen cubes"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "On the exam there's no time to draw. So we do the same thing with the numbers. How many times does four go into each length?",
+    "at": [
+     "On the exam there's no time to draw",
+     "time to draw"
+    ]
+   },
+   {
+    "say": "Four goes into eighteen four whole times, with two left over. We ignore the remainder.",
+    "at": [
+     "Four goes into eighteen",
+     "whole times, with"
+    ]
+   },
+   {
+    "say": "Four goes into nine twice, with one left over. And four goes into eleven twice, with three left over. We ignore those too.",
+    "at": [
+     "Four goes into nine twice",
+     "with one left",
+     "four goes into eleven twice",
+     "with three left"
+    ]
+   },
+   {
+    "say": "Now we multiply. Four times two times two is sixteen.",
+    "at": [
+     "Four times two times two"
+    ]
+   },
+   {
+    "say": "And the trap? Twenty-seven, choice number four, is what we'd get by dividing the volumes, as if the cubes were water and could fill the gaps. Solids in a box aren't water.",
+    "at": [
+     "Twenty-seven, choice number four",
+     "what we'd get"
+    ]
+   },
+   {
+    "say": "These questions look hard because of their place in the section, but they're simple once you know them. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

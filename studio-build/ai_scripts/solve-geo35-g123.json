@@ -1,0 +1,130 @@
+{
+ "videoId": "solve-geo35-g123",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The volume of box A B C D E F G H is three hundred twenty. M lies on A B, so that A M to M B is one to three. N lies right above M, on E F. What is the volume of the triangular prism A M D, E N H?",
+    "voice": "calm",
+    "at": [
+     "The volume of box",
+     "The volume of box",
+     "M lies on"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We'll solve it in two different ways, the math way, and then with an insight. Let's start with the math way.",
+    "at": [
+     "two different ways",
+     "Let's start with"
+    ]
+   },
+   {
+    "say": "The volume of the box is given, three hundred twenty. A box is straight, so its volume is length times width times height.",
+    "at": [
+     "is given, three"
+    ]
+   },
+   {
+    "say": "The only other given is the ratio, one to three. So let's call A M x, and M B three x. Then the length, A B, is four x.",
+    "at": [
+     "The only other",
+     "the ratio, one",
+     "is four x"
+    ]
+   },
+   {
+    "say": "Nothing is given about the width or the height. So let's add unknowns, the width y and the height z. What we'll do with them isn't clear yet. But we'll need them.",
+    "at": [
+     "Nothing is given",
+     "let's add unknowns",
+     "y and the"
+    ]
+   },
+   {
+    "say": "So four x times y times z is three hundred twenty.",
+    "at": [
+     "four x times y times z",
+     "z is three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now, they ask for the volume of the shaded solid. Is it straight or pointed? Its bottom base, A M D, and its top base, E N H, are the same triangle. So it's straight, a triangular prism.",
+    "at": [
+     "Now, they",
+     "Now, they ask",
+     "the volume of the shaded solid",
+     "Is it straight"
+    ]
+   },
+   {
+    "say": "Its base is triangle A M D. The angle at A is a right angle, because the base of a box is a rectangle. So the triangle's area is x times y, divided by two.",
+    "at": [
+     "Its base is triangle A M D",
+     "The angle at",
+     "x times y, divided by two"
+    ]
+   },
+   {
+    "say": "The prism's height is the box's height, z. So its volume is x times y, divided by two, times z. That's x times y times z, divided by two.",
+    "at": [
+     "The prism's height",
+     "So its volume is",
+     "That's x times"
+    ]
+   },
+   {
+    "say": "Now it clears up. Four x times y times z is three hundred twenty. So x times y times z is three hundred twenty divided by four, eighty. And half of eighty is forty. Choice number three is our answer.",
+    "at": [
+     "divided by four, eighty",
+     "half of eighty is forty",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the insight. There's a much shorter way. Let's look at the box from above, so we see only its base, the rectangle A B C D.",
+    "at": [
+     "a much shorter",
+     "Let's look at the box from above",
+     "from above, so"
+    ]
+   },
+   {
+    "say": "A M to M B is one to three. So the line through M cuts the base into four equal parts. The strip on the left is one quarter of the base.",
+    "at": [
+     "the line through M",
+     "the base into",
+     "The strip on the left",
+     "one quarter of the base"
+    ]
+   },
+   {
+    "say": "The diagonal from M to D cuts this strip in half. So triangle A M D is half of a quarter, one eighth of the base.",
+    "at": [
+     "The diagonal from M to D",
+     "D cuts this",
+     "half of a quarter"
+    ]
+   },
+   {
+    "say": "In the box, instead of a line we have a wall, straight up, at the same height. So the prism is one eighth of the box too. Three hundred twenty divided by eight is forty.",
+    "at": [
+     "In the box",
+     "Three hundred twenty divided by eight",
+     "eight is forty"
+    ]
+   },
+   {
+    "say": "So the insight was much shorter. On the exam, there's almost always a shorter way. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,106 @@
+{
+ "videoId": "geo-120",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "In the last lesson we learned the basic rules of solids. Now let's learn the ideas that come back again and again in the exam questions.",
+   {
+    "say": "There are three of them. Volume ratios, right triangles inside solids, and solids made of cubes. Let's start with volume ratios.",
+    "at": [
+     "them. Volume ratios"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's a cylinder. Its base area is fifteen, and its height is six. So its volume is fifteen times six, ninety.",
+    "at": [
+     "Here's a cylinder",
+     "Its base area",
+     "fifteen times six"
+    ]
+   },
+   {
+    "say": "Now let's put a cone inside it, with the same base and the same height. Like in the last lesson, the cone is one third of the cylinder. Ninety divided by three is thirty.",
+    "at": [
+     "let's put a cone inside it",
+     "it, with the",
+     "Ninety divided by three"
+    ]
+   },
+   {
+    "say": "If we carve the cone out of the cylinder, what's left? Ninety minus thirty, sixty. That's two thirds of the cylinder.",
+    "at": [
+     "If we carve",
+     "Ninety minus thirty",
+     "That's two thirds"
+    ]
+   },
+   {
+    "say": "So we can think in ratio units, like in word problems. The cone is one unit. The whole cylinder is three units. And what's left is two units.",
+    "at": [
+     "think in ratio units",
+     "in word problems"
+    ]
+   },
+   "Now let's turn it around. A cone is carved out of a cylinder with the same base and height, and what's left is forty. How much was the cone?",
+   {
+    "say": "What's left is two units, so two units are forty. One unit is forty divided by two, twenty. So the cone is twenty, and the whole cylinder is sixty.",
+    "at": [
+     "two units are forty",
+     "One unit is forty divided by two",
+     "by two, twenty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's keep the base the same, and change only the height. Here's a cylinder with base area ten, and two more like it.",
+    "at": [
+     "base the same",
+     "Here's a cylinder with base area ten",
+     "area ten, and"
+    ]
+   },
+   {
+    "say": "With height three, the volume is ten times three, thirty. With height six, it's sixty. With height nine, it's ninety.",
+    "at": [
+     "ten times three",
+     "With height six",
+     "it's sixty",
+     "With height nine",
+     "it's ninety"
+    ]
+   },
+   {
+    "say": "So when the base stays the same, the volume grows exactly like the height. Twice the height, twice the volume. Three times the height, three times the volume.",
+    "at": [
+     "So when the"
+    ]
+   },
+   {
+    "say": "Now a cone and a cylinder with the same base. The cylinder has base area ten and height four, so its volume is forty.",
+    "at": [
+     "so its volume is forty"
+    ]
+   },
+   {
+    "say": "A cone with the same base and height four is only one third of that. How tall must the cone be to hold forty too? Three times as tall, twelve. Ten times twelve, divided by three, is forty.",
+    "at": [
+     "A cone with",
+     "Ten times twelve, divided by three",
+     "three, is forty"
+    ]
+   },
+   {
+    "say": "Careful, this works for the height, not for the radius. The radius is squared in the base. A radius of one gives a base of pi. A radius of two gives four pi, four times bigger, not two. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "A radius of one",
+     "a base of",
+     "A radius of two",
+     "four pi, four"
+    ]
+   }
+  ]
+ ]
+}

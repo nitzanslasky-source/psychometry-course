@@ -1,0 +1,172 @@
+{
+ "videoId": "solve-geo35-g121",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A cone-shaped container with base radius root six and height twelve is full of water. Which of the following empty containers can hold all the water?",
+    "voice": "calm",
+    "at": [
+     "A cone-shaped container",
+     "A cone-shaped container",
+     "Which of the"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So first we need to know how much water there is. That's the volume of the cone. Then we look for a container whose volume is the same, or bigger.",
+    "at": [
+     "know how much",
+     "Then we look",
+     "container whose volume"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. A cone is a pointed solid. So, like in the first lesson, its volume is the base area, times the height, divided by three.",
+    "at": [
+     "A cone is",
+     "lesson, its volume"
+    ]
+   },
+   {
+    "say": "The base is a circle, so its area is pi r squared. The square of root six is six, so the base area is six pi.",
+    "at": [
+     "The base is a circle",
+     "so its area",
+     "The square of root six",
+     "is six, so"
+    ]
+   },
+   {
+    "say": "Now times the height, twelve, and divided by three. Twelve divided by three is four. And six pi times four is twenty-four pi. So there's twenty-four pi of water.",
+    "at": [
+     "times the height, twelve",
+     "divided by three",
+     "Twelve divided by three",
+     "six pi times four",
+     "So there's twenty-four pi"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "How much is twenty-four pi? We don't need pi exactly. Pi is more than three, and less than three and a half.",
+    "at": [
+     "How much is twenty-four pi",
+     "We don't need",
+     "Pi is more than three",
+     "and less than"
+    ]
+   },
+   {
+    "say": "Twenty-four times three is seventy-two. Twenty-four times three and a half is seventy-two, plus half of twenty-four, twelve. That's eighty-four.",
+    "at": [
+     "Twenty-four times three is",
+     "Twenty-four times three and a half",
+     "half is seventy-two"
+    ]
+   },
+   {
+    "say": "So the water is more than seventy-two, and less than eighty-four.",
+    "at": [
+     "So the water is more than",
+     "than seventy-two, and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the choices. If a container's volume is the same as the water, or bigger, all the water fits. If it's smaller, it's out. And for each container we ask first, is it straight or pointed?",
+    "at": [
+     "a container's volume",
+     "If it's smaller"
+    ]
+   },
+   {
+    "say": "Choice number one says, a cube with edge four. A cube is a straight solid, edge times edge times edge. Four times four times four is sixty-four.",
+    "at": [
+     "number one says",
+     "with edge four",
+     "Four times four times four"
+    ]
+   },
+   {
+    "say": "Sixty-four is less than seventy-two, so it's less than the water. Choice number one is out.",
+    "at": [
+     "Sixty-four is less",
+     "Choice number one is out"
+    ]
+   },
+   {
+    "say": "Choice number two says, a square pyramid with base edge six and height seven. A pyramid is pointed. So it's the base area, times the height, divided by three.",
+    "at": [
+     "number two says",
+     "a square pyramid",
+     "edge six and",
+     "height seven",
+     "times the height"
+    ]
+   },
+   {
+    "say": "The base is a square, six times six, thirty-six. Thirty-six divided by three is twelve. And twelve times seven is eighty-four.",
+    "at": [
+     "six times six",
+     "Thirty-six divided by three",
+     "twelve times seven",
+     "is eighty-four"
+    ]
+   },
+   {
+    "say": "So the pyramid holds eighty-four, and the water is less than eighty-four. All the water fits. In the exam you'd circle it and move on. Here, let's check the others too.",
+    "at": [
+     "So the pyramid holds eighty-four",
+     "than eighty-four. All"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number three says, a box measuring six by four by three. A box is straight, so we multiply its three edges. Six times four is twenty-four, and twenty-four times three is seventy-two.",
+    "at": [
+     "number three says",
+     "a box measuring six by four by three",
+     "four by three",
+     "Six times four is twenty-four",
+     "twenty-four times three is seventy-two"
+    ]
+   },
+   {
+    "say": "Careful here, it's close. Pi is more than three, not equal to three. So the water is a bit more than seventy-two, and this box is just too small. Choice number three is out.",
+    "at": [
+     "Pi is more than three, not equal",
+     "not equal to",
+     "Choice number three is out"
+    ]
+   },
+   {
+    "say": "Choice number four says, a cylinder with base radius root two and height ten. The square of root two is two, so the base is two pi. Times ten, that's twenty pi.",
+    "at": [
+     "number four says",
+     "a cylinder with base radius root two",
+     "The square of root two",
+     "is two, so",
+     "Times ten",
+     "that's twenty pi"
+    ]
+   },
+   {
+    "say": "Twenty pi is less than twenty-four pi, so choice number four is out too.",
+    "at": [
+     "than twenty-four pi",
+     "so choice number four is out"
+    ]
+   },
+   {
+    "say": "So again, straight or pointed? Straight, the base area times the height. Pointed, the same, divided by three. Only the pyramid holds all the water. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

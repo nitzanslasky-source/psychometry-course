@@ -39,8 +39,8 @@ Update this file whenever a finding changes state.
 | 33 | Cyclic trapezoid is isosceles | Claude C/E, Codex synthesis #13 | IMPLEMENTED r26-t33-more-tools-3 — **Held** (topic 33 re-review) |
 | 33 | Tangential quadrilateral side sums | Claude C (skip), Codex | NOT ADOPTED — only if a course question needs it |
 | 34 | Regular-polygon "count the sides" rule (inscribed vertex, correct arc) | Claude C/D2/E, Codex synthesis #5 | IMPLEMENTED geo-104-4/-5 (Codex-reviewed, batches Q/K) |
-| 35 | Longest segment in a cylinder | Claude E #3, Codex synthesis #7 | PENDING (t35 to write) |
-| 35 | A cut exposes two new faces; corner vs face-centre cube removal | Codex final §2.1, §2.3 | PENDING (t35 to write) |
+| 35 | Longest segment in a cylinder | Claude E #3, Codex synthesis #7 | IMPLEMENTED r26-t35-cubefacts — **Held** (Codex review) |
+| 35 | A cut exposes two new faces; corner vs face-centre cube removal | Codex final §2.1, §2.3 | IMPLEMENTED geo-120-3 (cut) + solve-geo35-g132 (removal) — **Held** (Codex review) |
 | 36 | Crossing chords → similar triangles | Claude C, Codex (optional) | PENDING (t36 to write) |
 | 37 | geo-159: introduce y = mx + b before m and b | Codex final §1F | PENDING (t37 to write) |
 | 37 | The line y = x (region, swapping) | audit | PENDING (t37 to write) |

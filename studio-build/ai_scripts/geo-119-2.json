@@ -1,0 +1,245 @@
+{
+ "videoId": "geo-119-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with the areas of solids."
+  ],
+  [
+   {
+    "say": "Now let's talk about areas. The lateral surface is everything that wraps around the solid, without the two bases.",
+    "at": [
+     "areas. The lateral"
+    ]
+   },
+   {
+    "say": "Think of a roll of toilet paper. Tear off one full turn, and stretch it out flat. What do we get? A rectangle.",
+    "at": [
+     "Think of a roll",
+     "Tear off one full turn",
+     "and stretch it",
+     "A rectangle"
+    ]
+   },
+   {
+    "say": "The height of this rectangle is the height of the cylinder, h.",
+    "at": [
+     "the height of the cylinder"
+    ]
+   },
+   {
+    "say": "And its width? This side went once around the circle. So it's the circumference of the base, two pi r.",
+    "at": [
+     "This side went",
+     "two pi r"
+    ]
+   },
+   {
+    "say": "So the lateral area of a cylinder is the area of this rectangle, two pi r, times h.",
+    "at": [
+     "the lateral area of a cylinder",
+     "cylinder is the"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. A cylinder with radius three and height five. Two pi times three is six pi. And six pi times five is thirty pi.",
+    "at": [
+     "Two pi times three",
+     "six pi. And",
+     "six pi times five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a box. Its base is two by three, and its height is four. What wraps around it? The four side faces, without the top and the bottom.",
+    "at": [
+     "Now a box",
+     "Its base is"
+    ]
+   },
+   {
+    "say": "The front face is two times four, eight. The back face is the same, eight.",
+    "at": [
+     "The front face",
+     "two times four",
+     "The back face"
+    ]
+   },
+   {
+    "say": "The right face is three times four, twelve. And the left face is twelve too.",
+    "at": [
+     "The right face",
+     "three times four",
+     "And the left"
+    ]
+   },
+   {
+    "say": "So the lateral area is eight plus eight, plus twelve plus twelve. That's forty.",
+    "at": [
+     "eight plus eight",
+     "plus twelve. That's"
+    ]
+   },
+   {
+    "say": "A cube is a box whose edges are all equal. Let's take a cube with edge five. Each side face is a square, five times five, twenty-five.",
+    "at": [
+     "a cube with edge five",
+     "Each side face is a square",
+     "five times five"
+    ]
+   },
+   {
+    "say": "There are four side faces, so the lateral area is four times twenty-five, one hundred.",
+    "at": [
+     "faces, so the",
+     "four times twenty-five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So do we need a different formula for every shape? No. There's one rule for every prism, and for the cylinder too.",
+    "at": [
+     "a different formula"
+    ]
+   },
+   {
+    "say": "The lateral area is the perimeter of the base, times the height.",
+    "at": [
+     "The lateral area is the perimeter",
+     "perimeter of the"
+    ]
+   },
+   "Why? Unroll the side faces, like the toilet paper. We get one long rectangle. Its width is the whole way around the base, the perimeter. And its height is the height of the solid.",
+   {
+    "say": "Let's check it on our box. The base is two by three. Its perimeter is two plus three plus two plus three, ten.",
+    "at": [
+     "Let's check it on our box",
+     "The base is",
+     "Its perimeter is",
+     "two plus three plus two",
+     "plus three, ten"
+    ]
+   },
+   {
+    "say": "Ten times the height, four, is forty. That's the same forty we got face by face.",
+    "at": [
+     "Ten times the height",
+     "four, is forty",
+     "That's the same"
+    ]
+   },
+   {
+    "say": "And the cube with edge five. The perimeter of its base is four times five, twenty. Twenty times the height, five, is one hundred. Again, the same.",
+    "at": [
+     "four times five, twenty",
+     "Twenty times the height",
+     "is one hundred"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And it works for any prism. Here's a triangular prism lying on its side. Its base is the triangle at the front, with sides five, five and six. Its height is the edge going back, ten.",
+    "at": [
+     "Here's a triangular prism",
+     "on its side"
+    ]
+   },
+   {
+    "say": "The perimeter of the base is five plus five plus six, sixteen.",
+    "at": [
+     "The perimeter of the base",
+     "five plus five plus six"
+    ]
+   },
+   {
+    "say": "Sixteen times the height, ten, is one hundred sixty. So the lateral area is one hundred sixty.",
+    "at": [
+     "Sixteen times the height",
+     "one hundred sixty. So",
+     "So the lateral"
+    ]
+   },
+   "Remember this one rule, perimeter times height. Then you can find the lateral area of any prism they give you."
+  ],
+  [
+   {
+    "say": "Now the total surface area. It's the area of the solid from every direction. So it's the lateral area, plus the two bases.",
+    "at": [
+     "area. It's the"
+    ]
+   },
+   {
+    "say": "Let's go back to the cube with edge five. Around it, we had four faces, one hundred.",
+    "at": [
+     "the cube with edge five",
+     "we had four faces"
+    ]
+   },
+   {
+    "say": "Now we add the bottom and the top, twenty-five each. One hundred plus twenty-five plus twenty-five is one hundred fifty.",
+    "at": [
+     "we add the bottom and the top",
+     "the top, twenty-five",
+     "One hundred plus twenty-five",
+     "twenty-five is one"
+    ]
+   },
+   {
+    "say": "And that makes sense. A cube has six equal faces, and six times twenty-five is one hundred fifty.",
+    "at": [
+     "six times twenty-five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now our box, two by three by four. Its lateral area was forty. Each base is two times three, six.",
+    "at": [
+     "Now our box",
+     "three by four",
+     "Each base is two times three",
+     "two times three, six"
+    ]
+   },
+   {
+    "say": "So the total surface area is forty, plus six, plus six. That's fifty-two.",
+    "at": [
+     "forty, plus six, plus six"
+    ]
+   },
+   {
+    "say": "We can also count it face by face. Every face has a twin on the other side. Front and back are eight each. Right and left are twelve each. Bottom and top are six each.",
+    "at": [
+     "We can also"
+    ]
+   },
+   {
+    "say": "So we add one of each, eight plus twelve plus six, twenty-six. Then we double it. Two times twenty-six is fifty-two again.",
+    "at": [
+     "eight plus twelve plus six, twenty-six",
+     "twenty-six. Then we"
+    ]
+   },
+   {
+    "say": "Now the cylinder, with radius three and height five. Its lateral area was thirty pi. One base is a circle, pi times three squared, nine pi.",
+    "at": [
+     "Now the cylinder",
+     "three and height",
+     "One base is a circle",
+     "pi times three squared"
+    ]
+   },
+   {
+    "say": "So the total is thirty pi, plus nine pi, plus nine pi, forty-eight pi.",
+    "at": [
+     "So the total is thirty pi",
+     "pi, plus nine"
+    ]
+   },
+   "So in every solid, the total surface area is the lateral area plus the two bases. If you understand that, you don't need to memorize a formula for each shape. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}

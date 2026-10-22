@@ -1,0 +1,84 @@
+{
+ "videoId": "r26-t35-cones",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now two more ideas about cones and cylinders. Solids we make by turning a flat shape, and the slant height of a cone."
+  ],
+  [
+   {
+    "say": "Take a rectangle, two by four. Hold it by the side of four, and turn it one full turn around that side.",
+    "at": [
+     "Take a rectangle",
+     "Hold it by"
+    ]
+   },
+   {
+    "say": "What do we get? A cylinder. The side we hold stays where it is, and it becomes the height. The other side sweeps a circle, so it becomes the radius.",
+    "at": [
+     "A cylinder",
+     "The side we"
+    ]
+   },
+   {
+    "say": "So the radius is two and the height is four. The volume is pi times two squared, times four, sixteen pi.",
+    "at": [
+     "So the radius is two",
+     "and the height",
+     "pi times two squared",
+     "four, sixteen pi"
+    ]
+   },
+   {
+    "say": "Now turn the same rectangle around the side of two. Now the radius is four and the height is two. Pi times four squared, times two, is thirty-two pi. That's twice as much.",
+    "at": [
+     "Now the radius is four",
+     "and the height",
+     "is thirty-two pi"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a right triangle with legs three and six. We turn it around the leg of six.",
+    "at": [
+     "a right triangle with legs",
+     "three and six"
+    ]
+   },
+   {
+    "say": "We get a cone. Again, the side on the axis, six, is the height. The other leg, three, is the radius. And the hypotenuse becomes the slant height, the line along the outside of the cone.",
+    "at": [
+     "We get a cone",
+     "Again, the side"
+    ]
+   },
+   {
+    "say": "The volume is pi times three squared, times six, divided by three. Nine times six is fifty-four, and divided by three that's eighteen. So it's eighteen pi.",
+    "at": [
+     "Nine times six is fifty-four",
+     "and divided by"
+    ]
+   },
+   {
+    "say": "Now around the leg of three. The radius is six and the height is three. Pi times thirty-six, times three, divided by three, is thirty-six pi. That's twice as much again.",
+    "at": [
+     "Now around the leg of three",
+     "The radius is",
+     "Pi times thirty-six",
+     "divided by three"
+    ]
+   },
+   "Why does it matter which side is on the axis? Because the radius is squared, and the height isn't. So the radius counts more."
+  ],
+  [
+   {
+    "say": "And remember, the slant height is not the height. Like in the lesson on right triangles, the height, the radius and the slant height make a right triangle. The slant height is its hypotenuse.",
+    "at": [
+     "height is not"
+    ]
+   },
+   "So when they give the slant height, we use Pythagoras to find the height first. Let's see it in a question, and I'll see you in the next video."
+  ]
+ ]
+}

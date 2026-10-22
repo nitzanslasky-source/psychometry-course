@@ -1,0 +1,106 @@
+{
+ "videoId": "solve-geo35-g124",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The bases of a right triangular prism are right triangles. Each base has a leg of nine and a hypotenuse of fifteen. The height of the prism is five. What is its lateral surface area?",
+    "voice": "calm",
+    "at": [
+     "The bases of a right triangular prism",
+     "The bases of a right triangular prism",
+     "Each base has"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Careful here, this prism lies on its side. Like in the first lesson, the bases are the two identical faces, the triangles at the front and at the back.",
+    "at": [
+     "on its side",
+     "the bases are the two identical faces",
+     "identical faces, the"
+    ]
+   },
+   {
+    "say": "The height is the distance between them, the edge B E. It's five, and it lies flat on the floor.",
+    "at": [
+     "the edge B E",
+     "It's five, and"
+    ]
+   },
+   "The lateral area is the side faces only, without the two bases. We'll find it in two different ways. Let's start with the math way, the perimeter of the base times the height.",
+   {
+    "say": "For the perimeter we need all three sides of the triangle. We have nine and fifteen. Nine and fifteen are three times three and three times five. So this is the triple three, four, five, times three, and the missing leg is three times four, twelve.",
+    "at": [
+     "So this is the triple",
+     "the missing leg is",
+     "times four, twelve"
+    ]
+   },
+   {
+    "say": "So the perimeter is nine plus twelve plus fifteen, thirty-six. Or, quicker, the middle number is twelve, and three sides around twelve make three times twelve, thirty-six.",
+    "at": [
+     "nine plus twelve plus fifteen",
+     "thirty-six. Or, quicker",
+     "three times twelve"
+    ]
+   },
+   {
+    "say": "Thirty-six times the height, five, is one hundred eighty.",
+    "at": [
+     "Thirty-six times the height",
+     "is one hundred"
+    ]
+   },
+   {
+    "say": "Careful with two traps. The two triangle bases together are nine times twelve, which is one hundred eight, and that's choice number two. Adding them to one hundred eighty gives two hundred eighty-eight, choice number four. That's the total surface area, not the lateral area.",
+    "at": [
+     "The two triangle bases together",
+     "are nine times",
+     "that's choice number two",
+     "Adding them to one hundred eighty",
+     "eighty gives two",
+     "choice number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the second way, the math way face by face. There are three side faces, and each one is a rectangle. Its length is a side of the triangle, and its width is the height, five.",
+    "at": [
+     "Now the second way",
+     "math way face"
+    ]
+   },
+   {
+    "say": "The bottom face is nine times five, forty-five.",
+    "at": [
+     "The bottom face",
+     "nine times five"
+    ]
+   },
+   {
+    "say": "The face at the back is twelve times five, sixty.",
+    "at": [
+     "The face at the back",
+     "twelve times five"
+    ]
+   },
+   {
+    "say": "And the slanted face is fifteen times five, seventy-five.",
+    "at": [
+     "the slanted face",
+     "fifteen times five"
+    ]
+   },
+   {
+    "say": "Forty-five plus seventy-five is one hundred twenty, plus sixty, one hundred eighty. Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Forty-five plus seventy-five",
+     "hundred twenty, plus",
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

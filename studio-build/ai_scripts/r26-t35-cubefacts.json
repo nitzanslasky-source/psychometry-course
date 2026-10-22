@@ -1,0 +1,193 @@
+{
+ "videoId": "r26-t35-cubefacts",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now some more facts about boxes, cubes and cylinders. None of them is on the formula page, and each one comes up on the exam."
+  ],
+  [
+   {
+    "say": "What's the longest straight rod that fits inside a box? It goes from one corner to the opposite corner, through the inside. That's the body diagonal.",
+    "at": [
+     "What's the longest straight rod",
+     "that fits inside",
+     "That's the body diagonal"
+    ]
+   },
+   {
+    "say": "Like in the lesson on right triangles, the body diagonal is the square root of the three edges squared. Take a box two by four by four. Two squared plus four squared plus four squared is four plus sixteen plus sixteen.",
+    "at": [
+     "Like in the",
+     "Two squared plus four squared",
+     "plus four squared is"
+    ]
+   },
+   {
+    "say": "That's thirty-six, and the root of thirty-six is six. So the longest rod is six.",
+    "at": [
+     "That's thirty-six",
+     "of thirty-six is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And in a cylinder? Here's a cylinder with radius three and height eight. What's the longest segment inside it?",
+    "at": [
+     "Here's a cylinder with radius three",
+     "three and height"
+    ]
+   },
+   {
+    "say": "The longest one goes from the edge of the bottom circle, through the middle, to the opposite edge of the top circle. So it lies in a rectangle that cuts the cylinder through its middle.",
+    "at": [
+     "it lies in a rectangle",
+     "that cuts the"
+    ]
+   },
+   {
+    "say": "This rectangle is the diameter wide and the height tall. So it's two r by h. The longest segment is its diagonal.",
+    "at": [
+     "Two r by h",
+     "The longest segment is its diagonal"
+    ]
+   },
+   {
+    "say": "Let's pull it out. The diameter is two times three, six, and the height is eight. Six squared plus eight squared is thirty-six plus sixty-four, one hundred.",
+    "at": [
+     "Let's pull it out",
+     "The diameter is",
+     "Six squared plus eight",
+     "is thirty-six plus"
+    ]
+   },
+   {
+    "say": "The root of one hundred is ten. So the longest segment is ten. That's the triple six, eight, ten.",
+    "at": [
+     "The root of one hundred",
+     "So the longest segment is ten",
+     "That's the triple"
+    ]
+   },
+   {
+    "say": "Sometimes the question asks for the longest segment whose length is a whole number. Say the radius is two and the height is five. The diameter is four. Four squared plus five squared is sixteen plus twenty-five, forty-one.",
+    "at": [
+     "Four squared plus five squared",
+     "is sixteen plus"
+    ]
+   },
+   {
+    "say": "Root forty-one isn't whole. It's between six and seven, because six squared is thirty-six, and seven squared is forty-nine.",
+    "at": [
+     "six squared is thirty-six",
+     "seven squared is"
+    ]
+   },
+   {
+    "say": "So any segment inside is at most root forty-one long. Seven is too long, and six fits. So the greatest whole length is six.",
+    "at": [
+     "So the greatest whole length"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now counting. Some questions ask how many faces, edges or vertices a solid has. Here's a triangular prism.",
+    "at": [
+     "ask how many",
+     "Here's a triangular prism"
+    ]
+   },
+   {
+    "say": "First the faces. Three side faces, one on each side of the triangle, plus the two bases. Three plus two is five.",
+    "at": [
+     "Three side faces",
+     "each side of"
+    ]
+   },
+   {
+    "say": "Now the edges. Three around the bottom, three around the top, and three going up. Three times three is nine.",
+    "at": [
+     "Three around the bottom",
+     "around the top"
+    ]
+   },
+   {
+    "say": "And the vertices, the corners. Three at the bottom and three at the top, six.",
+    "at": [
+     "Three at the bottom and three",
+     "three at the top"
+    ]
+   },
+   {
+    "say": "So if the base has n sides, a prism has n plus two faces, three n edges and two n vertices.",
+    "at": [
+     "a prism has n plus two faces",
+     "two faces, three"
+    ]
+   },
+   {
+    "say": "Let's check it on a cube. Its base is a square, so n is four. Six faces, twelve edges, eight vertices. That is exactly what a cube has.",
+    "at": [
+     "Six faces, twelve edges",
+     "That is exactly"
+    ]
+   },
+   {
+    "say": "A pyramid has n side faces and one base, so n plus one faces. Its edges are n around the base and n up to the top, so two n. Its vertices are n around the base and the top point, n plus one.",
+    "at": [
+     "so n plus one faces",
+     "Its edges are"
+    ]
+   },
+   {
+    "say": "A square pyramid has five faces, eight edges and five vertices.",
+    "at": [
+     "A square pyramid has five faces",
+     "faces, eight edges"
+    ]
+   },
+   {
+    "say": "And one more. A box has twelve edges, four of each length. So the sum of all its edges is four times the sum of the length, the width and the height. For a box two by three by four, that's four times nine, thirty-six.",
+    "at": [
+     "four times nine"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes they give the areas of three faces that meet at one corner, instead of the edges. Here they're six, ten and fifteen. What's the volume?",
+    "at": [
+     "the areas of three faces",
+     "that meet at",
+     "six, ten and fifteen"
+    ]
+   },
+   {
+    "say": "Each face is two edges multiplied. So when we multiply the three areas, every edge appears twice. That's the length times the width times the height, squared. So it's the volume, squared.",
+    "at": [
+     "Each face is",
+     "every edge appears twice",
+     "That's the length"
+    ]
+   },
+   {
+    "say": "Six times ten is sixty, and sixty times fifteen is nine hundred. The root of nine hundred is thirty. So the volume is thirty.",
+    "at": [
+     "Six times ten is sixty",
+     "and sixty times",
+     "The root of nine hundred",
+     "So the volume"
+    ]
+   },
+   {
+    "say": "Let's check. The edges here are two, three and five. Two times three is six, two times five is ten, three times five is fifteen. And two times three times five is thirty.",
+    "at": [
+     "The edges here are",
+     "Two times three"
+    ]
+   },
+   "Take a moment to memorize these facts, and I'll see you in the next video."
+  ]
+ ]
+}

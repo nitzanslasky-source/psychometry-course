@@ -1,0 +1,196 @@
+{
+ "videoId": "geo-120-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with right triangles inside solids."
+  ],
+  [
+   {
+    "say": "The second idea is right triangles inside solids. Many 3D questions are solved with Pythagoras, once we find the right triangle.",
+    "at": [
+     "right triangles inside"
+    ]
+   },
+   {
+    "say": "Why are there right triangles? The height stands straight on the base, like a pole on a flat floor.",
+    "at": [
+     "The height stands straight",
+     "like a pole on a flat floor"
+    ]
+   },
+   {
+    "say": "So the height makes a right angle with every line on the floor that starts at its foot. Not only with one of them, with all of them.",
+    "at": [
+     "a right angle",
+     "with every line on the floor",
+     "Not only with"
+    ]
+   },
+   {
+    "say": "Let's see it in a cone. The radius is five, and the slant height, the line along the outside, is thirteen. What's the height?",
+    "at": [
+     "Let's see it in a cone",
+     "The radius is"
+    ]
+   },
+   {
+    "say": "The height, the radius and the slant height make a triangle. The radius lies on the base, so the angle between the height and the radius is a right angle.",
+    "at": [
+     "make a triangle",
+     "The radius lies"
+    ]
+   },
+   {
+    "say": "Let's pull this triangle out. The slant height, thirteen, is the hypotenuse. The radius, five, is a leg.",
+    "at": [
+     "Let's pull this triangle out",
+     "The slant height"
+    ]
+   },
+   {
+    "say": "So h squared plus five squared is thirteen squared. One hundred sixty-nine minus twenty-five is one hundred forty-four, so h is twelve. That's the triple five, twelve, thirteen.",
+    "at": [
+     "So h squared plus five squared",
+     "squared is thirteen",
+     "One hundred sixty-nine minus twenty-five",
+     "is one hundred",
+     "so h is twelve",
+     "so h is twelve"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a pyramid with a square base. The side of the base is eight, and each slanted edge is nine. What's the height?",
+    "at": [
+     "Now a pyramid with a square base",
+     "The side of"
+    ]
+   },
+   {
+    "say": "The height comes down to the middle of the square, where the diagonals meet.",
+    "at": [
+     "where the diagonals meet"
+    ]
+   },
+   {
+    "say": "So we have a triangle. The height, half of a diagonal, and a slanted edge. The angle at the middle is a right angle, because half the diagonal lies on the base.",
+    "at": [
+     "So we have a triangle",
+     "The height, half"
+    ]
+   },
+   {
+    "say": "Remember the silver triangle. The diagonal of a square is the side times root two. So the diagonal is eight root two, and half of it is four root two.",
+    "at": [
+     "the diagonal is eight root two",
+     "two, and half"
+    ]
+   },
+   {
+    "say": "Now let's pull the triangle out. The edge, nine, is the hypotenuse. The square of four root two is sixteen times two, thirty-two.",
+    "at": [
+     "let's pull the triangle out",
+     "The edge, nine",
+     "sixteen times two"
+    ]
+   },
+   {
+    "say": "So h squared is eighty-one minus thirty-two, forty-nine. And h is seven.",
+    "at": [
+     "eighty-one minus thirty-two",
+     "And h is seven"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a cube with edge four. A diagonal on a face is like the diagonal of a square, the edge times root two. So it's four root two.",
+    "at": [
+     "Now a cube with edge four",
+     "A diagonal on a face",
+     "is like the",
+     "So it's four root two"
+    ]
+   },
+   {
+    "say": "Now the diagonal through the inside of the cube, the body diagonal. Look at this triangle. The vertical edge stands on the bottom face, so it makes a right angle with the face diagonal.",
+    "at": [
+     "Now the diagonal",
+     "Look at this triangle",
+     "The vertical edge"
+    ]
+   },
+   {
+    "say": "Let's pull it out. The legs are four and four root two. Four squared is sixteen, and the square of four root two is thirty-two. Together, forty-eight.",
+    "at": [
+     "Let's pull it out",
+     "The legs are",
+     "Four squared is sixteen",
+     "the square of"
+    ]
+   },
+   {
+    "say": "Root forty-eight is root sixteen times root three, four root three. So the body diagonal is four root three.",
+    "at": [
+     "Root forty-eight is",
+     "times root three",
+     "So the body diagonal is"
+    ]
+   },
+   {
+    "say": "This is true in every cube. The face diagonal is the edge times root two. The body diagonal is the edge times root three. Why root three? Edge squared, plus two edges squared, makes three edges squared.",
+    "at": [
+     "This is true",
+     "The face diagonal is the edge times",
+     "edge times root",
+     "The body diagonal is the edge times",
+     "edge times root three"
+    ]
+   },
+   {
+    "say": "So a cube with edge five has a face diagonal of five root two, and a body diagonal of five root three.",
+    "at": [
+     "a cube with edge five",
+     "has a face"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "In a box, the edges are not equal, so there's no fixed ratio. We use the same two right triangles. Here's a box, two by three, with height six.",
+    "at": [
+     "edges are not",
+     "Here's a box",
+     "three, with height"
+    ]
+   },
+   {
+    "say": "First the diagonal of the base. Its square is two squared plus three squared, four plus nine, thirteen. We don't even need its root.",
+    "at": [
+     "First the diagonal of the base",
+     "squared plus three",
+     "four plus nine",
+     "We don't even"
+    ]
+   },
+   {
+    "say": "Then the second triangle, with the height. Thirteen plus six squared is thirteen plus thirty-six, forty-nine. So the body diagonal is root forty-nine, seven.",
+    "at": [
+     "Then the second triangle",
+     "Thirteen plus six squared",
+     "thirteen plus thirty-six",
+     "root forty-nine, seven"
+    ]
+   },
+   {
+    "say": "Or in one step, the square root of the three edges squared. Two squared plus three squared plus six squared is forty-nine, and its root is seven. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "Or in one step",
+     "Two squared plus"
+    ]
+   }
+  ]
+ ]
+}

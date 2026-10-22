@@ -1,0 +1,99 @@
+{
+ "videoId": "solve-geo35-g127",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A pyramid is removed from a cube. The pyramid's base is the whole bottom face of the cube, and its top point is on the top face. The solid that's left has volume sixty. What was the volume of the pyramid?",
+    "voice": "calm",
+    "at": [
+     "A pyramid is removed from a cube",
+     "A pyramid is removed",
+     "The pyramid's base"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We'll solve it in two different ways, the math way, and then by understanding. Let's start with the math way. We build a scheme. The cube, minus the pyramid, is what's left, sixty.",
+    "at": [
+     "two different ways",
+     "Let's start with",
+     "way. We build",
+     "minus the pyramid",
+     "is what's left, sixty",
+     "what's left, sixty"
+    ]
+   },
+   {
+    "say": "No edge is given, so let's call it a. The cube is a to the power of three.",
+    "at": [
+     "No edge is"
+    ]
+   },
+   {
+    "say": "The pyramid has the same base as the cube. Its top point is on the top face, so its height is the cube's height too. So it's a pointed solid with the same base and height, one third of the cube.",
+    "at": [
+     "one third of the cube"
+    ]
+   },
+   {
+    "say": "A whole cube minus one third of it is two thirds of it. So two thirds of a to the power of three is sixty.",
+    "at": [
+     "A whole cube",
+     "two thirds of a to the power of three",
+     "the power of"
+    ]
+   },
+   {
+    "say": "To find a to the power of three, we multiply sixty by three over two. Sixty divided by two is thirty, times three, ninety.",
+    "at": [
+     "we multiply sixty by three over two",
+     "Sixty divided by"
+    ]
+   },
+   {
+    "say": "Careful, ninety is choice number four. But ninety is the whole cube, not the pyramid.",
+    "at": [
+     "ninety is choice number four"
+    ]
+   },
+   {
+    "say": "Here a isn't even a whole number. But we don't need a. The pyramid is a to the power of three, divided by three. Ninety divided by three is thirty. Choice number three is our answer.",
+    "at": [
+     "ninety divided by three",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now by understanding, with ratio units, like the cone in the cylinder in the lesson.",
+    "at": [
+     "Now by understanding",
+     "units, like the"
+    ]
+   },
+   {
+    "say": "The pyramid has the same base and height as the cube, so it's one third of the cube. So the pyramid is one unit, the whole cube is three units, and what's left is two units.",
+    "at": [
+     "the pyramid is one unit",
+     "the whole cube"
+    ]
+   },
+   {
+    "say": "What's left is sixty, so two units are sixty. One unit is sixty divided by two, thirty. And the pyramid is one unit.",
+    "at": [
+     "two units are sixty",
+     "One unit is sixty divided by two",
+     "by two, thirty"
+    ]
+   },
+   {
+    "say": "So the pyramid is thirty. Volume ratios really help on the exam. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,113 @@
+{
+ "videoId": "solve-geo35-g132",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Twenty-seven identical cubes, each with edge four, form a big cube. One corner cube is removed. How do the volume and the total surface area of the solid change?",
+    "voice": "calm",
+    "at": [
+     "Twenty-seven identical cubes",
+     "Twenty-seven identical cubes",
+     "One corner cube"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We call these Rubik's cube questions, and the idea comes back quite a lot on the exam. We'll solve it by understanding, one part at a time.",
+    "at": [
+     "questions, and the",
+     "by understanding, one"
+    ]
+   },
+   {
+    "say": "First the volume. We take one cube out, so the volume goes down. One small cube is four times four times four, sixty-four. So the volume goes down by sixty-four.",
+    "at": [
+     "We take one",
+     "so the volume",
+     "One small cube",
+     "four times four times four",
+     "So the volume goes down by"
+    ]
+   },
+   {
+    "say": "Choice number one says the volume doesn't change, so it's out. The other three choices all say it goes down by sixty-four.",
+    "at": [
+     "so it's out"
+    ]
+   },
+   {
+    "say": "Now the surface area. This part is harder to see. What does the corner cube give to the surface? Three faces, the top, the front and the side.",
+    "at": [
+     "Three faces",
+     "front and the"
+    ]
+   },
+   {
+    "say": "Each face is four times four, sixteen. So if we take the cube away, it looks like we lose three faces, forty-eight. That's choice number three, and it's a trap.",
+    "at": [
+     "Each face is four times four",
+     "So if we",
+     "That's choice number three"
+    ]
+   },
+   {
+    "say": "Why a trap? Once the corner cube is gone, we can see three faces that it was hiding. These are faces of its neighbors.",
+    "at": [
+     "Once the corner cube is gone",
+     "we can see three faces",
+     "that it was"
+    ]
+   },
+   {
+    "say": "So we lost three faces, and we gained three faces. The surface area doesn't change. Choice number two is our answer.",
+    "at": [
+     "So we lost three faces",
+     "The surface area",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Careful, this is not a rule for every cube we remove. It depends on where the cube is. In Rubik's cube questions, there are three places to tell apart.",
+    "at": [
+     "a rule for",
+     "there are three places"
+    ]
+   },
+   {
+    "say": "A corner, like in our question. It shows three faces, and three new faces appear. Minus three, plus three, no change.",
+    "at": [
+     "A corner, like in our question",
+     "It shows three",
+     "Minus three, plus three"
+    ]
+   },
+   {
+    "say": "The middle of an edge. It shows two faces. Take it out, and four faces appear. So the surface goes up by two faces. Here that's two times sixteen, thirty-two.",
+    "at": [
+     "The middle of an edge",
+     "It shows two",
+     "Here that's two times sixteen"
+    ]
+   },
+   {
+    "say": "The middle of a face. It shows only one face. Take it out, or push it in, and five faces appear. So the surface goes up by four faces, sixty-four.",
+    "at": [
+     "The middle of a face",
+     "It shows only",
+     "goes up by four faces"
+    ]
+   },
+   {
+    "say": "There's a pattern here. The faces we lose plus the faces we gain always make six, the six faces of the cube we removed. And I'll see you in the next question.",
+    "at": [
+     "The faces we",
+     "always make six",
+     "faces of the"
+    ]
+   }
+  ]
+ ]
+}

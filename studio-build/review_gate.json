@@ -197,6 +197,42 @@
   "by": "Claude",
   "since": "2026-10-22T18:48+03:00"
  },
+ "geo-119": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "geo-119-2": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "geo-119-3": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "geo-120": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "geo-120-2": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "geo-120-3": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
  "operation-patterns": {
   "state": "ready",
   "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
@@ -310,6 +346,24 @@
   "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
   "by": "Claude",
   "since": "2026-10-22T18:48+03:00"
+ },
+ "r26-t35-cones": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "r26-t35-cubefacts": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "r26-t35-water": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
  },
  "solve-ch-q01": {
   "state": "ready",
@@ -598,6 +652,78 @@
   "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
   "by": "Claude",
   "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo35-g121": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-geo35-g122": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-geo35-g123": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-geo35-g124": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-geo35-g125": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-geo35-g126": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-geo35-g127": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-geo35-g128": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-geo35-g129": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-geo35-g130": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-geo35-g131": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-geo35-g132": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
  },
  "solve-pt-q01": {
   "state": "held",
@@ -899,6 +1025,24 @@
   "by": "Claude",
   "since": "2026-10-22T18:48+03:00"
  },
+ "solve-q-r26-t35-01": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-q-r26-t35-02": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
+ "solve-q-r26-t35-03": {
+  "state": "held",
+  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-22T23:24+03:00"
+ },
  "solve-wp24-g070": {
   "state": "ready",
   "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
@@ -1104,10 +1248,10 @@
   "since": "2026-10-22T19:02+03:00"
  },
  "wp-080-3": {
-  "state": "held",
-  "why": "external-review fix (22 Oct): new 'Several values change' slide — waiting for Codex review",
-  "by": "Claude",
-  "since": "2026-10-22T19:02+03:00"
+  "state": "ready",
+  "why": "Independent review passed: several-values example, math, unchanged speech/prompter, typed and handwriting cues/frames/layout. Board denominator clarified to number of values. Frozen; optional summary not required.",
+  "by": "Codex",
+  "since": "2026-10-22T19:49+03:00"
  },
  "wp-081": {
   "state": "ready",

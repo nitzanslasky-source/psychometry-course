@@ -1,0 +1,146 @@
+{
+ "videoId": "solve-geo35-g128",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A pyramid has a square base with side four root two. Each slanted edge is seven. What is the height of the pyramid?",
+    "voice": "calm",
+    "at": [
+     "A pyramid has a square base",
+     "A pyramid has a square base",
+     "Each slanted edge"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "We'll solve it in two different ways, the math way, and then with an estimate. Let's start with the math way.",
+    "at": [
+     "two different ways",
+     "Let's start with"
+    ]
+   },
+   {
+    "say": "We want the height, so let's call it h. Honestly, at first it's not clear where to start. The height just hangs there in the middle. What's given? The slanted edge, seven.",
+    "at": [
+     "let's call it",
+     "clear where to",
+     "in the middle",
+     "The slanted edge"
+    ]
+   },
+   {
+    "say": "So, like in the lesson, we build a triangle inside the pyramid. We join the foot of the height, O, to the corner B. Now P O B is a triangle.",
+    "at": [
+     "we build a",
+     "Now P O B is a triangle"
+    ]
+   },
+   {
+    "say": "It's a right triangle. Why? The height stands straight on the base, so it makes a right angle with every line on the base from its foot. O B is such a line.",
+    "at": [
+     "The height stands"
+    ]
+   },
+   {
+    "say": "The hypotenuse is the edge, seven. We need the other leg, O B. The foot of the height is the middle of the square, where the diagonals meet. So O B is half of a diagonal.",
+    "at": [
+     "where the diagonals meet",
+     "So O B"
+    ]
+   },
+   {
+    "say": "Remember the silver triangle. The diagonal of a square is the side times root two. Four root two times root two is four times two, eight. Half of it is four. So O B is four.",
+    "at": [
+     "Four root two times root two",
+     "two is four",
+     "Half of it is four",
+     "So O B"
+    ]
+   },
+   {
+    "say": "Let's pull the triangle out. A leg of four and a hypotenuse of seven. That's not a triple we know, so we use Pythagoras. h squared plus four squared is seven squared.",
+    "at": [
+     "Let's pull the triangle out",
+     "a hypotenuse of",
+     "h squared plus four squared",
+     "is seven squared"
+    ]
+   },
+   {
+    "say": "So h squared is forty-nine minus sixteen, thirty-three. Thirty-three has no whole root, so h is root thirty-three. Choice number two is our answer.",
+    "at": [
+     "forty-nine minus sixteen",
+     "has no whole",
+     "so h is root",
+     "so h is root",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's estimate. The slanted edge is seven. Must the height be less than seven?",
+    "at": [
+     "Now let's estimate",
+     "The slanted edge"
+    ]
+   },
+   {
+    "say": "Yes. The height is the shortest way from the top point down to the base. The edge is slanted, so it's longer. So the height is less than seven.",
+    "at": [
+     "The edge is slanted",
+     "So the height"
+    ]
+   },
+   {
+    "say": "Our anchor is root forty-nine, which is exactly seven. So the height is less than root forty-nine.",
+    "at": [
+     "Our anchor is root forty-nine",
+     "which is exactly"
+    ]
+   },
+   {
+    "say": "Choice number one, seven root two. Root two is more than one, so this is more than seven. Out.",
+    "at": [
+     "number one, seven",
+     "seven root two",
+     "Root two is",
+     "Out."
+    ]
+   },
+   {
+    "say": "Choice number two, root thirty-three. It's less than root forty-nine. So it's possible. Not certain yet, but possible, so we keep it.",
+    "at": [
+     "number two, root",
+     "root thirty-three",
+     "So it's possible"
+    ]
+   },
+   {
+    "say": "Choice number three, root sixty-five. It's more than root forty-nine, more than seven. Out.",
+    "at": [
+     "number three, root",
+     "root sixty-five",
+     "more than seven. Out."
+    ]
+   },
+   {
+    "say": "Choice number four, five root two. Let's put the five under the root. Five squared is twenty-five, times two is fifty. Root fifty is just above root forty-nine, so it's out.",
+    "at": [
+     "number four, five",
+     "Let's put the",
+     "Five squared is twenty-five",
+     "two is fifty",
+     "so it's out"
+    ]
+   },
+   {
+    "say": "Three choices are out, so it's the fourth one left. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,150 @@
+{
+ "videoId": "solve-geo35-g129",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The edge of cube A B C D E F G H is four root two. What is the area of triangle B D G?",
+    "voice": "calm",
+    "at": [
+     "The edge of cube",
+     "The edge of cube",
+     "What is the"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A triangle inside a cube again. We'll solve it in two different ways, the math way, and then with an insight.",
+    "at": [
+     "again. We'll solve"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. The area of a triangle is a base times its height, divided by two. Let's take B D as the base.",
+    "at": [
+     "Let's start with",
+     "is a base"
+    ]
+   },
+   {
+    "say": "B D is a diagonal of the bottom face, a square. Like in the lesson, a face diagonal is the edge times root two. Four root two times root two is four times two, eight.",
+    "at": [
+     "B D is a diagonal of the bottom face",
+     "of the bottom",
+     "Four root two times root two",
+     "two is four"
+    ]
+   },
+   {
+    "say": "Now the height from G down to B D. G B and G D are diagonals of two equal squares, so they're equal. So the height falls on the middle of B D. Call it M. It's the middle of the bottom face.",
+    "at": [
+     "Call it M",
+     "It's the middle"
+    ]
+   },
+   {
+    "say": "Look at triangle G C M. The edge C G stands on the bottom face, so it makes a right angle with C M.",
+    "at": [
+     "Look at triangle G C M",
+     "The edge C"
+    ]
+   },
+   {
+    "say": "C M is half of the other diagonal, A C. The diagonals of a square are equal and halve each other. So C M is eight divided by two, four.",
+    "at": [
+     "eight divided by two"
+    ]
+   },
+   {
+    "say": "Let's pull the triangle out. The legs are four and four root two. That's not a triple, so full Pythagoras. Four squared is sixteen, and the square of four root two is thirty-two. Together, forty-eight.",
+    "at": [
+     "Let's pull the triangle out",
+     "The legs are",
+     "full Pythagoras",
+     "Four squared is sixteen",
+     "the square of"
+    ]
+   },
+   {
+    "say": "Root forty-eight is root sixteen times root three, four root three. That's the height.",
+    "at": [
+     "Root forty-eight is",
+     "times root three",
+     "That's the height"
+    ]
+   },
+   {
+    "say": "So the area is eight times four root three, divided by two, sixteen root three. Choice number three is our answer.",
+    "at": [
+     "So the area is eight times",
+     "times four root",
+     "Choice number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the insight. Some students look at triangle B D G and see that it's equilateral. Why?",
+    "at": [
+     "Now the insight",
+     "Some students look"
+    ]
+   },
+   {
+    "say": "B D is a diagonal of the bottom face. D G is a diagonal of the back face. And G B is a diagonal of the right face. All the faces are equal squares, so all their diagonals are equal. Each one is eight.",
+    "at": [
+     "B D is a diagonal of the bottom face",
+     "of the bottom",
+     "Each one is eight"
+    ]
+   },
+   {
+    "say": "Remember the area of an equilateral triangle. The side squared, times root three, divided by four. Eight squared is sixty-four, and sixty-four divided by four is sixteen. So it's sixteen root three.",
+    "at": [
+     "Remember the area",
+     "Eight squared is sixty-four",
+     "sixty-four divided by"
+    ]
+   },
+   {
+    "say": "Choice number three again, and much shorter.",
+    "at": [
+     "Choice number three again"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "I want to use this question to show you three angles in a cube. They come up on the exam.",
+    "at": [
+     "this question to",
+     "three angles in a cube",
+     "They come up"
+    ]
+   },
+   {
+    "say": "The first one is an edge, and a diagonal of the face that the edge stands on, from the same corner. The edge is perpendicular to that whole face, so the angle is ninety.",
+    "at": [
+     "an edge, and a diagonal of the face",
+     "of the face"
+    ]
+   },
+   "Careful, they must meet at one corner, and the edge must stand on that face. Otherwise the angle is different.",
+   {
+    "say": "The second one is an edge and a diagonal on the same face. That's the diagonal of a square with its side, so the angle is forty-five.",
+    "at": [
+     "an edge and a diagonal on the same face",
+     "on the same"
+    ]
+   },
+   {
+    "say": "The third one is two face diagonals that start at the same corner. The angle between them is always sixty. Why? Join their ends with the third diagonal. All three are equal, so it's an equilateral triangle, just like B D G.",
+    "at": [
+     "two face diagonals that start at the same corner",
+     "at the same"
+    ]
+   },
+   "So ninety, forty-five and sixty. And I'll see you in the next question."
+  ]
+ ]
+}

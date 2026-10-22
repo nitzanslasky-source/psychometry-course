@@ -1,0 +1,218 @@
+{
+ "videoId": "geo-119-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with volume."
+  ],
+  [
+   {
+    "say": "Now volume. The volume is what's inside the solid, how much it can hold.",
+    "at": [
+     "is what's inside"
+    ]
+   },
+   "Think of a bottle of water. The label says five hundred milliliters. That's the volume of the water.",
+   {
+    "say": "A cubic centimeter is a tiny cube, one centimeter by one centimeter by one centimeter.",
+    "at": [
+     "A cubic centimeter is a tiny cube",
+     "tiny cube, one"
+    ]
+   },
+   {
+    "say": "And one milliliter is exactly one cubic centimeter. So the bottle holds five hundred cubic centimeters.",
+    "at": [
+     "one milliliter is exactly",
+     "So the bottle holds",
+     "hundred cubic centimeters"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now look at a rectangle, two by three. It has an area, but no volume. It's flat.",
+    "at": [
+     "look at a rectangle",
+     "It has an"
+    ]
+   },
+   {
+    "say": "Let's put another rectangle on top of it, and another, and another. Each one alone is flat. But together they make a box, and the box takes up space.",
+    "at": [
+     "and another, and another",
+     "Each one alone",
+     "together they make a box"
+    ]
+   },
+   {
+    "say": "So the volume of the box is the area of its base, times its height. We take the base area again and again, as many times as the height.",
+    "at": [
+     "So the volume of the box",
+     "box is the"
+    ]
+   },
+   {
+    "say": "Our box is two by three, with height four. The base area is two times three, six. And six times four is twenty-four. So for a box, it's length times width times height.",
+    "at": [
+     "two times three, six",
+     "six times four",
+     "So for a"
+    ]
+   },
+   {
+    "say": "A cube with edge five is five times five times five, one hundred twenty-five. That's five to the power of three.",
+    "at": [
+     "five times five times five",
+     "one hundred twenty-five"
+    ]
+   },
+   {
+    "say": "The cylinder works the same way. Its base is a circle, pi r squared, and we multiply it by the height. With radius three and height five, the base is nine pi, and nine pi times five is forty-five pi.",
+    "at": [
+     "nine pi times five"
+    ]
+   },
+   {
+    "say": "And the same for any prism. If the base of a triangular prism has area twelve and its height is ten, its volume is twelve times ten, one hundred twenty.",
+    "at": [
+     "And the same",
+     "twelve times ten"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "On the exam we also have pointed solids. They're not prisms.",
+    "at": [
+     "also have pointed"
+    ]
+   },
+   {
+    "say": "A cone has a circle at the bottom, and at the top only a point, like a party hat.",
+    "at": [
+     "A cone has a circle",
+     "at the bottom"
+    ]
+   },
+   {
+    "say": "Put a cylinder around it, with the same base and the same height. The cone's volume is one third of that cylinder.",
+    "at": [
+     "Put a cylinder around it",
+     "with the same",
+     "The cone's volume is one third",
+     "third of that"
+    ]
+   },
+   {
+    "say": "Our cylinder had radius three and height five, and its volume was forty-five pi. So a cone with the same base and height is forty-five pi divided by three, fifteen pi.",
+    "at": [
+     "forty-five pi divided by three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A pyramid has a polygon at the bottom, a triangle, a square, a hexagon, it doesn't matter. And at the top, one point.",
+    "at": [
+     "A pyramid has a polygon",
+     "at the bottom"
+    ]
+   },
+   {
+    "say": "Its volume is the base area, times the height, divided by three.",
+    "at": [
+     "Its volume is the base area",
+     "area, times the"
+    ]
+   },
+   {
+    "say": "Let's take a pyramid with a square base, six by six, and height five. The base area is six times six, thirty-six.",
+    "at": [
+     "and height five",
+     "six times six"
+    ]
+   },
+   {
+    "say": "Thirty-six times five is one hundred eighty. Divided by three, that's sixty.",
+    "at": [
+     "Thirty-six times five",
+     "Divided by three"
+    ]
+   },
+   {
+    "say": "And one hundred eighty is the box around the pyramid, six by six by five. So the pyramid is one third of that box.",
+    "at": [
+     "the box around the pyramid",
+     "six by six"
+    ]
+   },
+   "So a pointed solid is always one third of the straight solid with the same base and the same height.",
+   {
+    "say": "One more thing. The height goes straight down, from the point to the middle of the base. It is not this slanted edge, which is longer.",
+    "at": [
+     "It is not this slanted edge",
+     "edge, which is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Good news. At the start of every quantitative section, there's a formula page.",
+    "at": [
+     "start of every",
+     "there's a formula page"
+    ]
+   },
+   {
+    "say": "It has the volume and the surface area of a box and of a cube. It has the cylinder's lateral area, total area and volume. And it has the volume of a cone and of a pyramid.",
+    "at": [
+     "It has the volume",
+     "the surface area",
+     "the cylinder's lateral area",
+     "area and volume",
+     "the volume of a cone",
+     "and of a pyramid"
+    ]
+   },
+   {
+    "say": "It doesn't have the general rules we learned for any prism. And it doesn't have the ideas of the next lessons. Those you need to know yourself.",
+    "at": [
+     "It doesn't have the general rules",
+     "rules we learned"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum up. The lateral area is everything that wraps around. It's the perimeter of the base, times the height.",
+    "at": [
+     "The lateral area is everything",
+     "that wraps around"
+    ]
+   },
+   {
+    "say": "The total surface area is the lateral area plus the two bases.",
+    "at": [
+     "The total surface area",
+     "the lateral area"
+    ]
+   },
+   {
+    "say": "The volume is everything inside. It's the base area, times the height.",
+    "at": [
+     "The volume is everything inside",
+     "It's the base"
+    ]
+   },
+   {
+    "say": "And a pointed solid, a cone or any pyramid, has the same volume divided by three. Always.",
+    "at": [
+     "And a pointed solid",
+     "cone or any"
+    ]
+   },
+   "Take a moment to memorize these, and I'll see you in the next video."
+  ]
+ ]
+}

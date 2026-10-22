@@ -1,0 +1,78 @@
+{
+ "videoId": "solve-q-r26-t35-02",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A cone has a base radius of six and a slant height of ten. What is its volume?",
+    "voice": "calm",
+    "at": [
+     "A cone has a base radius of six",
+     "A cone has a base radius"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The volume of a cone is pi r squared, times the height, divided by three. We have the radius, six. But we don't have the height yet.",
+    "at": [
+     "The volume of",
+     "is pi r",
+     "But we don't"
+    ]
+   },
+   {
+    "say": "Careful, ten is not the height. It's the slant height, the line along the outside. Like in the lesson, the height, the radius and the slant height make a right triangle.",
+    "at": [
+     "line along the",
+     "in the lesson",
+     "make a right triangle"
+    ]
+   },
+   {
+    "say": "Let's pull it out. The slant height, ten, is the hypotenuse, and the radius, six, is a leg.",
+    "at": [
+     "Let's pull it out",
+     "The slant height"
+    ]
+   },
+   {
+    "say": "Six and ten are two times three and two times five. So it's the triple three, four, five, times two. The height is two times four, eight.",
+    "at": [
+     "two times three and two times five",
+     "So it's the",
+     "The height is two times four",
+     "eight."
+    ]
+   },
+   {
+    "say": "Now the volume. Pi times six squared, times eight, divided by three.",
+    "at": [
+     "Pi times six squared",
+     "eight, divided by"
+    ]
+   },
+   {
+    "say": "Six squared is thirty-six, and thirty-six divided by three is twelve. Twelve times eight is ninety-six. So the volume is ninety-six pi.",
+    "at": [
+     "thirty-six divided by three is twelve",
+     "Twelve times eight",
+     "So the volume is"
+    ]
+   },
+   {
+    "say": "Look at the traps. If we use ten as the height, we get one hundred twenty pi, choice number one. If we forget to divide by three, we get two hundred eighty-eight pi, choice number three.",
+    "at": [
+     "If we use",
+     "choice number one",
+     "choice number three"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

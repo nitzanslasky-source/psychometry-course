@@ -1,0 +1,140 @@
+{
+ "videoId": "solve-geo35-g125",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Eighteen identical cubes, each with edge one, are joined face to face to form a block. Which block has the smallest total surface area?",
+    "voice": "calm",
+    "at": [
+     "Eighteen identical cubes"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So this is a minimum question in geometry. Each block is made of the same eighteen cubes, and we want the one whose surface is the smallest. The surface area is all the faces, also the ones we can't see, the back and the bottom.",
+    "at": [
+     "block is made"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, counting faces, like in the lesson. One small face has area one. These four blocks are boxes, so there's also a formula. But counting is the same thing, and it works for any shape.",
+    "at": [
+     "two different ways",
+     "One small face",
+     "boxes, so there's"
+    ]
+   },
+   {
+    "say": "Choice number one, a block one by two by nine. From the front we see two rows of nine, eighteen faces.",
+    "at": [
+     "number one, a",
+     "a block one by two by nine",
+     "From the front",
+     "two rows of"
+    ]
+   },
+   {
+    "say": "From above, nine faces. And from the side, two.",
+    "at": [
+     "From above",
+     "from the side, two"
+    ]
+   },
+   {
+    "say": "Eighteen plus nine plus two is twenty-nine. Every face has a twin on the opposite side, so we double it. Two times twenty-nine is fifty-eight.",
+    "at": [
+     "Eighteen plus nine plus two",
+     "Every face has",
+     "Two times twenty-nine"
+    ]
+   },
+   {
+    "say": "Choice number two, a block two by three by three. From the front, three rows of three, nine. From above, six. From the side, six.",
+    "at": [
+     "number two, a",
+     "a block two by three by three",
+     "by three. From",
+     "three rows of three",
+     "From above, six",
+     "From the side, six"
+    ]
+   },
+   {
+    "say": "Nine plus six plus six is twenty-one, and two times twenty-one is forty-two. That's already less than fifty-eight. We want the smallest, so choice number one is out.",
+    "at": [
+     "Nine plus six plus six",
+     "is twenty-one, and",
+     "two times twenty-one",
+     "That's already less",
+     "so choice number one is out"
+    ]
+   },
+   "This kind of question usually comes near the end of the section. So if time runs short, cross out what you already can, and move on."
+  ],
+  [
+   {
+    "say": "Choice number three, the long stick, one by one by eighteen. Eighteen from the front, eighteen from above, and one from the side. That's thirty-seven, and twice that is seventy-four. Bigger, so it's out.",
+    "at": [
+     "number three, the",
+     "one by one",
+     "That's thirty-seven",
+     "Bigger, so it's out"
+    ]
+   },
+   {
+    "say": "Choice number four, one by three by six. From the front eighteen, from above six, and from the side three. That's twenty-seven, and twice that is fifty-four. Also bigger than forty-two, so it's out.",
+    "at": [
+     "number four, one",
+     "From the front",
+     "That's twenty-seven",
+     "Also bigger than forty-two"
+    ]
+   },
+   {
+    "say": "So we counted all four, and choice number two has the smallest surface, forty-two. It's not hard, but it's long.",
+    "at": [
+     "choice number two has the smallest surface",
+     "smallest surface, forty-two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the insight. When is the surface area the biggest? Let's think the other way round.",
+    "at": [
+     "is the surface"
+    ]
+   },
+   {
+    "say": "Each cube has six faces. If the eighteen cubes lie apart, all eighteen times six, one hundred eight faces, count. Nothing is hidden. That's the biggest surface.",
+    "at": [
+     "faces. If the",
+     "one hundred eight faces",
+     "Nothing is hidden"
+    ]
+   },
+   {
+    "say": "Now we push them together. Like in the lesson, every place where two cubes touch hides two faces, one from each cube. So the more contacts, the smaller the surface.",
+    "at": [
+     "every place where two cubes touch",
+     "touch hides two"
+    ]
+   },
+   {
+    "say": "The most contacts are in the tightest block, the one closest to a cube. Of our four blocks, that's two by three by three.",
+    "at": [
+     "the tightest block",
+     "closest to a"
+    ]
+   },
+   {
+    "say": "So choice number two, without counting a single face. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "number two, without",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

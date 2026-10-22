@@ -1,0 +1,133 @@
+{
+ "videoId": "solve-geo35-g130",
+ "style": "the teacher reads it herself (Reading Studio), topic-35 scripts (2026-10-22): math_patches/_ai_vis_t35.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The edge of cube A B C D E F G H is three. What is the perimeter of triangle A E G?",
+    "voice": "calm",
+    "at": [
+     "The edge of cube",
+     "The edge of cube",
+     "What is the"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "For the perimeter we need all three sides. Each side is a different kind of segment in the cube. We'll solve it in two different ways.",
+    "at": [
+     "all three sides"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. A E is an edge, so it's three.",
+    "at": [
+     "Let's start with",
+     "A E is an edge",
+     "so it's three"
+    ]
+   },
+   {
+    "say": "E G is a diagonal of the top face, a square with side three. A face diagonal is the edge times root two, so it's three root two.",
+    "at": [
+     "E G is a diagonal of the top face",
+     "of the top",
+     "it's three root two"
+    ]
+   },
+   {
+    "say": "And A G goes through the inside of the cube. What's the angle at E? Like in the last question, the edge A E stands on the top face, and E G is a diagonal of that face, from the same corner. So it's ninety.",
+    "at": [
+     "And A G",
+     "So it's ninety"
+    ]
+   },
+   {
+    "say": "So A E G is a right triangle with legs three and three root two. Three squared is nine. The square of three root two is nine times two, eighteen. Together, twenty-seven.",
+    "at": [
+     "a right triangle with legs",
+     "three and three",
+     "Three squared is nine",
+     "The square of"
+    ]
+   },
+   {
+    "say": "Root twenty-seven is root nine times root three, three root three.",
+    "at": [
+     "Root twenty-seven is",
+     "times root three",
+     "three root three."
+    ]
+   },
+   {
+    "say": "So the perimeter is three, plus three root two, plus three root three. Choice number four is our answer.",
+    "at": [
+     "So the perimeter is",
+     "plus three root",
+     "Choice number four is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a second, shorter way, with the rule from the lesson. In every cube, the face diagonal is the edge times root two, and the body diagonal is the edge times root three.",
+    "at": [
+     "Now a second, shorter way",
+     "with the rule"
+    ]
+   },
+   {
+    "say": "E G is a face diagonal, so it's three root two. A G is the body diagonal, so it's three root three. We don't need any triangles here.",
+    "at": [
+     "E G is a face diagonal",
+     "diagonal, so it's",
+     "A G is the body diagonal",
+     "diagonal, so it's three root three"
+    ]
+   },
+   {
+    "say": "So again, three plus three root two plus three root three. Choice number four.",
+    "at": [
+     "Choice number four."
+    ]
+   },
+   {
+    "say": "A question like this was on the exam. A cube has edge eight. What's its body diagonal? Eight root three, at once.",
+    "at": [
+     "eight root three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And the other way round. Say the body diagonal is twenty-seven. What's the edge? The diagonal is the edge times root three. So the edge is twenty-seven divided by root three.",
+    "at": [
+     "Say the body diagonal is twenty-seven",
+     "twenty-seven. What's the"
+    ]
+   },
+   {
+    "say": "Here's a quick way. Ignore the root for a moment. Twenty-seven divided by three is nine. Now put the root back. So the edge is nine root three.",
+    "at": [
+     "Ignore the root for a moment",
+     "Twenty-seven divided by"
+    ]
+   },
+   {
+    "say": "Why does it work? Multiply the top and the bottom by root three. On the bottom, root three times root three is three. So it's twenty-seven root three over three, and twenty-seven over three is nine.",
+    "at": [
+     "Multiply the top and the bottom",
+     "bottom by root"
+    ]
+   },
+   {
+    "say": "The same with root two. If a face diagonal is fourteen, the edge is fourteen over root two. Fourteen divided by two is seven, so it's seven root two.",
+    "at": [
+     "Fourteen divided by two is seven",
+     "seven, so it's"
+    ]
+   },
+   "And in a box, the edges aren't equal, so there's no fixed ratio. Like in the lesson, we use two right triangles. And I'll see you in the next question."
+  ]
+ ]
+}
