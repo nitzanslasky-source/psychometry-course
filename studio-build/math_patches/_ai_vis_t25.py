@@ -743,7 +743,8 @@ def SAW(name, v1, v2, layers, col=0, w=None, title='The seesaw'):
 # short ones get). English (camera lesson, 2-3 examples per idea, numbers differ from the Hebrew): 16 and 30, 6-10-14-18;
 # evenly spaced 3 ... 19, numbers in a row 20 ... 30, an even count 4, 6, 8, 10; 3, 5, 7 plus another 5; towers 4, 9, 3,
 # 11, 8 (the limits, the move, the level 7); the formula with a second example; the balance (differences add up to 0,
-# a missing score, two numbers: exactly in the middle); a base number; one value changes; every value changes (+3, x2,
+# a missing score, two numbers: exactly in the middle); a base number; one value changes; several values change (6
+# scores, 80, four +3: +12 / 6 = +2, 2026-10-22); every value changes (+3, x2,
 # ages, both). Real exam: 2024_winter_q2_07 (evenly spaced), 2024_spring_q1_07 / 2025_autumn_q1_18 (balance),
 # 2025_autumn_q2_15 / 2022_winter_q1_08 (every value changes). NEW (all).
 a_m0 = I('a_m0', 'An average describes the middle of a group of numbers', size=36)
@@ -830,6 +831,15 @@ a_h2 = IH('a_h2', 'the sum: $\\ +10$', size=36)
 a_h3 = IH('a_h3', '$10\\div5=2$: $\\ $the average $+2$', size=36)
 a_h4 = I('a_h4', '$4$ numbers: $\\ $one goes down by $12$', size=38)
 a_h5 = IH('a_h5', '$12\\div4=3$: $\\ $the average $-3$', size=36)
+# 2026-10-22 (Codex final external report, section 2 item 2, approved): several values change by the same amount - the
+# "one value changes" sum-sharing, extended (no new formula): the total change in the sum first, then shared by ALL the
+# values (the count stays the same). Numbers differ from Codex's (10 scores, 70, five +6).
+a_j1 = I('a_j1', '$6$ scores, $\\ $average $80$', size=38)
+a_j2 = I('a_j2', '$4$ of them: $\\ +3$ each', size=38)
+a_j3 = IH('a_j3', 'the sum goes up: $\\ 4\\times3=12$', size=36)
+a_j4 = IH('a_j4', '$12\\div6=2$: $\\ $the average $+2$', size=36)
+a_j5 = IH('a_j5', '$80+2=82$', size=36)
+a_j6 = I('a_j6', 'Same number of values: $\\ $the change in the sum $\\div$ all the values', size=34)
 a_v0 = I('a_v0', '$2,\\ 4,\\ 9$', size=40)
 a_v1 = IH('a_v1', '$2+4+9=15$', size=36)
 a_v2 = IH('a_v2', '$15\\div3=5$', size=36)
@@ -1000,6 +1010,17 @@ video('wp-080', 'lesson', slides=[
       L("And we didn't need any of the scores. The change in the sum is shared among all the values."),
       L("One more. One of four numbers goes down by twelve. Twelve divided by four is three. So the average goes down by "
         "three.", show(a_h4, 'One of four numbers'), show(a_h5, 'Twelve divided by four'))),
+    S('Several values change',
+      L("And what if several values change by the same amount? Six students took a test, and their average score is "
+        "eighty. Four of them each get three more points.", show(a_j1, 'Six students took a test'),
+        show(a_j2, 'Four of them each get')),
+      L("First, the sum. Four scores go up by three points each, so the sum goes up by four times three, that's twelve "
+        "points.", show(a_j3, 'four times three')),
+      L("Now we share those twelve points among all six scores, not only the four that changed. Twelve divided by six is "
+        "two, so the average goes up by two.", show(a_j4, 'Twelve divided by six')),
+      L("So the new average is eighty plus two, eighty-two.", show(a_j5, 'eighty plus two')),
+      L("This works whenever the number of values stays the same. Find the total change in the sum, then share it among "
+        "all the values.", show(a_j6, 'whenever the number of values stays the same'))),
     S('Every value changes',
       L("Now every value changes in the same way. Take two, four and nine.", show(a_v0, 'Take two, four and nine')),
       L("Two plus four plus nine is fifteen. Fifteen divided by three is five. So the average is five.",

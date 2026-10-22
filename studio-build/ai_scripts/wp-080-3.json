@@ -100,6 +100,45 @@
   ],
   [
    {
+    "say": "And what if several values change by the same amount? Six students took a test, and their average score is eighty. Four of them each get three more points.",
+    "at": [
+     "values change by",
+     "Six students took a test",
+     "and their average",
+     "Four of them each get",
+     "three more points"
+    ]
+   },
+   {
+    "say": "First, the sum. Four scores go up by three points each, so the sum goes up by four times three, that's twelve points.",
+    "at": [
+     "four times three"
+    ]
+   },
+   {
+    "say": "Now we share those twelve points among all six scores, not only the four that changed. Twelve divided by six is two, so the average goes up by two.",
+    "at": [
+     "Now we share",
+     "Twelve divided by six",
+     "up by two"
+    ]
+   },
+   {
+    "say": "So the new average is eighty plus two, eighty-two.",
+    "at": [
+     "eighty plus two"
+    ]
+   },
+   {
+    "say": "This works whenever the number of values stays the same. Find the total change in the sum, then share it among all the values.",
+    "at": [
+     "whenever the number of values stays the same",
+     "stays the same"
+    ]
+   }
+  ],
+  [
+   {
     "say": "Now every value changes in the same way. Take two, four and nine.",
     "at": [
      "in the same",

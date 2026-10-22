@@ -1092,40 +1092,40 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "wp-080": {
-  "state": "held",
-  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "state": "ready",
+  "why": "unchanged by the external-review job; hold released (were Codex-reviewed in batch I)",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-22T19:02+03:00"
  },
  "wp-080-2": {
-  "state": "held",
-  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "state": "ready",
+  "why": "unchanged by the external-review job; hold released (were Codex-reviewed in batch I)",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-22T19:02+03:00"
  },
  "wp-080-3": {
   "state": "held",
-  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "why": "external-review fix (22 Oct): new 'Several values change' slide — waiting for Codex review",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-22T19:02+03:00"
  },
  "wp-081": {
-  "state": "held",
-  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "state": "ready",
+  "why": "unchanged by the external-review job; hold released (were Codex-reviewed in batch I)",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-22T19:02+03:00"
  },
  "wp-081-2": {
-  "state": "held",
-  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "state": "ready",
+  "why": "unchanged by the external-review job; hold released (were Codex-reviewed in batch I)",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-22T19:02+03:00"
  },
  "wp-081-3": {
-  "state": "held",
-  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "state": "ready",
+  "why": "unchanged by the external-review job; hold released (were Codex-reviewed in batch I)",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-22T19:02+03:00"
  },
  "wp-086": {
   "state": "ready",
