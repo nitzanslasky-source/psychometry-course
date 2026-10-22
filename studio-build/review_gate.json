@@ -1,0 +1,1202 @@
+{
+ "ch52-bar": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-change": {
+  "state": "held",
+  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-circle": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-continuous": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-cumulative": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-intro": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-intro-2": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-intro-3": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-line": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-practice-intro": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-range": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-regions": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-scatter": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "ch52-tables": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-023": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-074": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-074-2": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-074-3": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-077": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-079": {
+  "state": "held",
+  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-081": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-084": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-093": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-097-after": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-097-after-2": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-104": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-104-2": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-104-3": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-104-4": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-104-5": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-105": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-109": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "geo-112-after": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "operation-patterns": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "pt51-estimation": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "pt51-estimation-2": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "pt51-insights": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "pt51-intro": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "pt51-intro-wrap": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "pt51-plug-answers": {
+  "state": "held",
+  "why": "waiting for Nitzan's decision (measuring the figure / the round answer) + Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "pt51-plug-numbers": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "pt51-plug-numbers-2": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "pt51-plug-numbers-3": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "pt51-plug-numbers-4": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "pt51-understanding": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "r26-t24-three-groups": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "r26-t24-two-way": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "r26-t26-factors": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "r26-t33-more-tools": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "r26-t33-more-tools-2": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "r26-t33-more-tools-3": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "r26-t34-meet": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q01": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q02": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q03": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q04": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q05": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q06": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q07": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q08": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q09": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q10": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q11": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q12": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q13": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q14": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-ch-q15": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g078": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g080": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g082": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g083": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g085": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g086": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g087": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g088": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g089": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g090": {
+  "state": "held",
+  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g091": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g092": {
+  "state": "held",
+  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g094": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g095": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g096": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g097": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g098": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g099": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g100": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g101": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo33-g102": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g106": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g107": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g108": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g110": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g111": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g112": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g112-area": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g113": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g114": {
+  "state": "held",
+  "why": "waiting for Nitzan's decision (trust the drawing in regular polygons?)",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g115": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g116": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-geo34-g117": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q01": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q01-2": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q02": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q02-2": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q03": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q03-2": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q04": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q04-2": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q05": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q06": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q07": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q08": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q09": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q10": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q11": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q12": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q13": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q14": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q15": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q16": {
+  "state": "held",
+  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q17": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q18": {
+  "state": "held",
+  "why": "waiting for Nitzan's decision (measuring the figure / the round answer) + Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q19": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q20": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q21": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q22": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q23": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-pt-q24": {
+  "state": "held",
+  "why": "topic 51 — Codex deep review not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-549": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t16-04": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t24-01": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t24-02": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t24-03": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t25-01": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t25-02": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t25-03": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t25-04": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t25-05": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t26-01": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t26-02": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t26-03": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t26-04": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t26-21": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t33-02": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t33-03": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t33-04": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t33-05": {
+  "state": "held",
+  "why": "topic 33 — Codex re-review of circles not finished",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t34-01": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t34-02": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-q-r26-t34-03": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp24-g070": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp24-g071": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp24-g072": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp24-g074": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp24-g075": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp24-g076": {
+  "state": "held",
+  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp24-g077": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp24-g078": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp25-g082": {
+  "state": "held",
+  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp25-g083": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp25-g084": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp25-g085": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp25-g087": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp25-g088": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp25-g089": {
+  "state": "held",
+  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp25-g090": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp25-p18": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp26-g093": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp26-g095": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp26-g096": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp26-g098": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp26-g100": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp26-g101": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp26-g102": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp26-g103": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp26-g104": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp26-g105": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "solve-wp26-g105b": {
+  "state": "held",
+  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-001": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-027": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-052": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-067": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-080": {
+  "state": "held",
+  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-080-2": {
+  "state": "held",
+  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-080-3": {
+  "state": "held",
+  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-081": {
+  "state": "held",
+  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-081-2": {
+  "state": "held",
+  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-081-3": {
+  "state": "held",
+  "why": "Claude editing (external-review fixes, 22 Oct), then Codex review",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-086": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-086-2": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-086-3": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-092": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-092-2": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-092-3": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-094": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-094-2": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-097": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-097-2": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-099": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-099-2": {
+  "state": "ready",
+  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "by": "Claude",
+  "since": "2026-10-22T18:48+03:00"
+ }
+}

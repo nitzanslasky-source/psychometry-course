@@ -18,18 +18,19 @@ Read this page **before and after every job**. History (everything up to 22 Oct)
 5. **Finish agreed batches before opening new ones.** Script review and video production are separate queues.
 6. **Never rebuild from an older version or overwrite the other's changes.** Before a rebuild or commit, check no one else is mid-build; commit only your own files.
 7. **Where things live:** each lesson's status → **Video Status** (`studio-build/video_status.py` → `~/Downloads/Video-Status.html`, the single source of truth). This page → only active jobs, owners, blockers, handoffs. Details and before → after → review reports in `reviews/`.
-8. **A handoff names:** the exact lesson IDs, the files/version, what changed, what was checked, what is unresolved. Never mark a lesson ready while required checks are outstanding.
+8. **Ready to record lives in Video Status.** Unrecorded lessons are either **Ready to record** (reviewed, frozen) or **Held** (with the reason). Set it with `python3 studio-build/video_status.py --ready ID ... --by Codex --why "..."` or `--hold ID ... --why "..." --by NAME`; list with `--list record --gate ready|held`. **Before editing a lesson, hold it; only Codex (after its review) marks it ready.**
+9. **A handoff names:** the exact lesson IDs, the files/version, what changed, what was checked, what is unresolved. Never mark a lesson ready while required checks are outstanding.
 
 ## Active jobs
 | Owner | Since | Job | Lessons / files | Blocker |
 |---|---|---|---|---|
 | Codex | ongoing | **Video production queue** | Video Status "Send to Codex" | — |
-| Codex | 22 Oct | **Review of the Hebrew restores + pair-1 re-review** (handoff below) | t33 unrecorded (incl. geo-079, g090, g092); t51 unrecorded (incl. pt-q16); solve-wp25-g082, solve-wp25-g089, solve-wp26-g105b, ch52-change | — |
+| Codex | 22 Oct | **Review of the Hebrew restores + pair-1 re-review** (handoff below) | t33 unrecorded (incl. geo-079, g090, g092); t51 unrecorded (incl. pt-q16); solve-wp24-g076, solve-wp25-g082, solve-wp25-g089, solve-wp26-g105b, ch52-change — all **Held** in Video Status until you mark them ready | — |
 | Claude (another session) | 22 Oct (assigned by Nitzan) | **Review topics 23 and 24 for clarity** | `math_patches/_ai_vis_t23.py`, `_ai_vis_t24.py` — mostly recorded now: proposals only for recorded lessons | must claim here before starting |
 | Claude | 22 Oct | **External-review fixes (bounded job)** — Codex's `work/external-expanded-2026-10-22/Complete-review-and-recommendations.txt` | edits only `math_patches/_ai_vis_t25.py` (wp-080 … wp-081-3, unrecorded); everything else → proposals / writing checklists | — |
 
 ## Handoffs (open)
-- **Claude → Codex, 22 Oct — Hebrew restores: please review before Ready to record.** All unrecorded at edit time; sources released. Reports: `reviews/hebrew-restore-wp.md` (g076 — now recorded; g082, g089, g105b), `reviews/hebrew-restore-geo-51-52.md` (geo-079, g090, g092, pt-q16, ch52-change), `reviews/t23-hebrew-restore.md` (g062, g064 — both now recorded, read in the new version). Checked: build, ai_check, math_check both modes, frames, prompter. Unresolved: Nitzan's decisions below (g089 π, pt-q18, g114, the round answer).
+- **Claude → Codex, 22 Oct — Hebrew restores: please review before Ready to record.** All unrecorded at edit time; sources released. Reports: `reviews/hebrew-restore-wp.md` (g076, g082, g089, g105b), `reviews/hebrew-restore-geo-51-52.md` (geo-079, g090, g092, pt-q16, ch52-change), `reviews/t23-hebrew-restore.md` (g062, g064 — both now recorded, read in the new version). Checked: build, ai_check, math_check both modes, frames, prompter. Unresolved: Nitzan's decisions below (g089 π, pt-q18, g114, the round answer).
 
 ## Waiting for Nitzan
 - **Decisions** (`~/Downloads/Hebrew-vs-English-check.md`, section D): measuring the figure (pt-q18, g114); "the round answer is usually right"; g138 tip (topic 36); π ≈ 3.14 in g089.

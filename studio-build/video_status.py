@@ -54,6 +54,19 @@ STATUSES = [('record', 'Record'), ('reread', 'Re-read needed (you)'), ('send', '
             ('done', 'Done'), ('check', 'Check')]
 LABEL = dict(STATUSES)
 
+# 2026-10-22 (Nitzan's workflow: Claude prepares -> Codex reviews and fixes -> READY TO RECORD -> she records -> Codex
+# produces). An unrecorded lesson ('record') is either READY (reviewed, frozen) or HELD (in review / waiting, with why).
+# The gate lives in review_gate.json: {id: {"state": "ready"|"held", "why": ..., "by": ..., "since": ...}}. A lesson with
+# no entry counts as HELD ("not reviewed yet"). Set it with --ready ID [ID ...] / --hold ID [ID ...] --why "..." --by NAME.
+GATE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'review_gate.json')
+
+def load_gate():
+    try: return json.load(open(GATE))
+    except Exception: return {}
+
+def save_gate(G):
+    json.dump(dict(sorted(G.items())), open(GATE, 'w'), ensure_ascii=False, indent=1)
+
 _s = importlib.util.spec_from_file_location('reading_studio', os.path.join(HERE, 'reading_studio.py'))
 RS = importlib.util.module_from_spec(_s); _s.loader.exec_module(RS)
 
@@ -463,6 +476,8 @@ def entry(state, parts, path, rendered_at, source, note, made_from=None):
 
 # ------------------------------------------------------------------------------------------------------ evaluate
 def evaluate(reseed=False, save=True):
+    global GATEMAP
+    GATEMAP = load_gate()
     vids = video_list()
     ids = {v['id'] for v in vids}
     hyb = hybrid_videos(ids)
@@ -538,7 +553,14 @@ def evaluate(reseed=False, save=True):
         for bname, b in batches.items():
             if vid in b['ids'] and not b['finished'] and b['made_from'] > (newest['time'] if newest else 0):
                 notes.append('Codex started a new render on %s (%s), not finished yet' % (when(b['made_from']), bname))
-        row.update(status=st, label=LABEL[st], why=why, notes=notes)
+        if st == 'record':
+            g = GATEMAP.get(vid) or {'state': 'held', 'why': 'not reviewed yet'}
+            row['gate'] = g['state']
+            if g['state'] == 'ready':
+                why = 'READY TO RECORD — reviewed and frozen' + (' (%s)' % g['why'] if g.get('why') else '')
+            else:
+                why = 'HELD — ' + (g.get('why') or 'in review')
+        row.update(status=st, label=(LABEL[st] if st != 'record' else ('Ready to record' if row.get('gate') == 'ready' else 'Held (not ready)')), why=why, notes=notes)
         rows.append(row)
     if save and (changed_ledger or reseed):
         save_ledger(L)
@@ -729,8 +751,18 @@ def main():
     ap.add_argument('--rendered', nargs=2, metavar=('ID', 'PATH'), help='Codex: register a finished render')
     ap.add_argument('--rendered-from-index', metavar='VIDEO_INDEX_JSON', help='register the renders of a Codex index')
     ap.add_argument('--reseed', action='store_true', help='forget guessed ledger entries and guess them again')
+    ap.add_argument('--ready', nargs='+', metavar='ID', help='mark unrecorded lessons READY TO RECORD (reviewed, frozen)')
+    ap.add_argument('--hold', nargs='+', metavar='ID', help='mark unrecorded lessons HELD (use --why)')
+    ap.add_argument('--why', default='', help='reason for --hold / note for --ready')
+    ap.add_argument('--by', default='', help='who sets the gate (Claude / Codex)')
+    ap.add_argument('--gate', choices=['ready', 'held'], help='with --list record: only ready or only held lessons')
     ap.add_argument('-o', '--out', default=OUT)
     a = ap.parse_args()
+    if a.ready or a.hold:
+        G = load_gate(); now = dt.datetime.now().astimezone().isoformat(timespec='minutes')
+        for vid in (a.ready or []): G[vid] = {'state': 'ready', 'why': a.why, 'by': a.by, 'since': now}
+        for vid in (a.hold or []): G[vid] = {'state': 'held', 'why': a.why or 'in review', 'by': a.by, 'since': now}
+        save_gate(G)
     if a.rendered:
         cmd_rendered(*a.rendered)
         rows = evaluate()
@@ -739,12 +771,13 @@ def main():
     else:
         rows = evaluate(reseed=a.reseed)
     if a.list:
-        print('\n'.join(r['id'] for r in rows if r['status'] == a.list))
+        print('\n'.join(r['id'] for r in rows if r['status'] == a.list and (not a.gate or r.get('gate') == a.gate)))
         return
     out = write_page(rows, a.out)
     c = {k: sum(1 for r in rows if r['status'] == k) for k, _ in STATUSES}
     print('%s  (%d videos)' % (out, len(rows)))
     print('  ' + ' · '.join('%s: %d' % (LABEL[k], c[k]) for k, _ in STATUSES))
+    print('  of Record: Ready to record %d · Held %d' % (sum(1 for r in rows if r.get('gate') == 'ready'), sum(1 for r in rows if r['status'] == 'record' and r.get('gate') != 'ready')))
 
 
 if __name__ == '__main__':
