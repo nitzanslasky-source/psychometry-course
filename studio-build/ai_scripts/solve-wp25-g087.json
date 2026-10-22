@@ -102,7 +102,7 @@
     ]
    },
    {
-    "say": "The heavy side gets the small part. So the average is one unit from sixty-one. Sixty-one plus twelve is seventy-three.",
+    "say": "The written exam counts twice, so the average is closer to sixty-one. It's one unit away. Sixty-one plus twelve is seventy-three.",
     "at": [
      "Sixty-one plus twelve",
      "seventy-three"
@@ -120,12 +120,12 @@
     ]
    },
    {
-    "say": "Careful with eighty-five, choice number three. That's one unit from ninety-seven, the light side. The small part goes to the heavy side.",
+    "say": "Careful with eighty-five, choice number three. That's one unit from ninety-seven, the score with less weight. The average must be closer to sixty-one, not ninety-seven.",
     "at": [
      "number three. That's",
      "one unit from ninety-seven",
-     "The small part goes",
-     "the heavy side"
+     "score with less",
+     "The average must be closer"
     ]
    },
    {

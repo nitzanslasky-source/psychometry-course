@@ -1754,43 +1754,61 @@ video('solve-wp23-g061', 'solution', qid='wp23-g061', slides=[
 
 
 # ------------------------------------------------------------------------------------------------ wp23-g062 (Hebrew: 25% of 50% of x is 6)
-# Hebrew (wp 3892-4007): "of" is times, so it's all one multiplication: 1/4 * 1/2 * x = 6, x = 48, 3/8 of 48 = 18;
-# then the insight: 73% of 84 = 84% of 73 (one multiplication, the order doesn't matter), so 25% of 50% = half of 25%
-# = 12.5%; 37.5 is 3 times 12.5, so 3 * 6. REMINDER: of = times, the fraction table. NEW here (a one-off trick, R37:
-# stays in this question): a% of b = b% of a (two examples, new numbers), a percent of a percent is one multiplication.
+# Hebrew (wp 3892-4007): "of" is times, so it's all one multiplication: 1/4 * 1/2 * x = 6, x = 48, 37.5% = 3/8 from the
+# fraction table ("review the tables you must know by heart"), 3/8 of 48 = 18; then the insight: 73% of 84 = 84% of 73
+# (one multiplication, the order doesn't matter), so 25% of 50% = half of 25% = 12.5%; 37.5 is 3 times 12.5, so 3 * 6.
+# 22 Oct 2026 (teacher-approved Hebrew restore, reviews/t23-hebrew-restore.md): new English numbers whose target is a
+# fraction-table percent again (13.5% had lost her 3/8 step): 25% of 30% of y = 9 -> y = 120, 37.5% of y = 45.
+# REMINDER: of = times, the fraction table (37.5% = 3/8, wp-052 part 2). NEW here (a one-off trick, R37: stays in this
+# question): a% of b = b% of a (two examples, new numbers), a percent of a percent is one multiplication.
 e_1 = IH('e_1', '$25\\%=\\frac{1}{4}$', size=30)
-e_2 = IH('e_2', '$18\\%=\\frac{18}{100}=\\frac{9}{50}$', size=30)
-e_3 = IH('e_3', '$\\frac{1}{4}\\cdot\\frac{9}{50}\\cdot y=9$', size=30)
-e_4 = IH('e_4', '$\\frac{9}{200}y=9$', size=30, col=1)
-e_5 = IH('e_5', '$y=200$', size=30, col=1)
-e_6 = IH('e_6', '$10\\%$ of $200=20$', size=30, col=1)
-e_7 = IH('e_7', '$3\\%=6,\\ \\ 0.5\\%=1$', size=30, col=1)
-e_8 = IH('e_8', '$20+6+1=27$', size=30, col=1)
+e_2 = IH('e_2', '$30\\%=\\frac{30}{100}=\\frac{3}{10}$', size=30)
+e_3 = IH('e_3', '$\\frac{1}{4}\\cdot\\frac{3}{10}\\cdot y=9$', size=30)
+e_4 = IH('e_4', '$\\frac{3}{40}y=9$', size=30)
+e_5 = IH('e_5', '$\\frac{1}{40}y=9\\div3=3$', size=30, col=1)
+e_5b = IH('e_5b', '$y=40\\cdot3=120$', size=30, col=1)
+e_5c = IH('e_5c', '(4) $\\ 120=y$, not the answer', size=30, col=1)
+e_6 = IH('e_6', '$37.5\\%=\\frac{3}{8}$', size=30, col=1)
+e_6b = IH('e_6b', '$12.5\\%=\\frac{1}{8}$, $\\ 37.5=3\\cdot12.5$', size=30, col=1)
+e_7 = IH('e_7', '$120\\div2=60$', size=30, col=1)
+e_7b = IH('e_7b', '$60\\div2=30$', size=30, col=1)
+e_7c = IH('e_7c', '$\\frac{1}{8}$ of $120$: $\\ 30\\div2=15$', size=30, col=1)
+e_8 = IH('e_8', '$\\frac{3}{8}$ of $120=3\\cdot15=45$', size=30, col=1)
 e_9 = IH('e_9', '$32\\%$ of $50=\\frac{32\\cdot50}{100}$', size=30)
 e_10 = IH('e_10', '$50\\%$ of $32=\\frac{50\\cdot32}{100}$', size=30)
 e_11 = IH('e_11', 'half of $32=16$', size=30)
 e_12 = IH('e_12', '$x\\%$ of $y=y\\%$ of $x$', size=32)
 e_13 = IH('e_13', '$4\\%$ of $75=75\\%$ of $4=3$', size=30)
-e_14 = IH('e_14', '$\\frac{1}{4}$ of $18\\%=4.5\\%$', size=30, col=1)
-e_15 = IH('e_15', '$4.5\\%$ of $y=9$', size=30, col=1)
-e_16 = IH('e_16', '$13.5=3\\cdot4.5$', size=30, col=1)
-e_17 = IH('e_17', '$3\\cdot9=27$', size=30, col=1)
+e_14 = IH('e_14', '$\\frac14$ of $30\\%=7.5\\%$', size=30, col=1)
+e_15 = IH('e_15', '$7.5\\%$ of $y=9$', size=30, col=1)
+e_16 = IH('e_16', '$37.5=5\\cdot7.5$', size=30, col=1)
+e_17 = IH('e_17', '$5\\cdot9=45$', size=30, col=1)
 video('solve-wp23-g062', 'solution', qid='wp23-g062', slides=[
     S('Method 1 · The math way',
-      L("Twenty-five percent of eighteen percent of y is equal to nine. What is thirteen point five percent of y?",
-        pt('stem', 'of eighteen percent', 'hl', 6.0), voice='calm', pause=0.5),
+      L("Twenty-five percent of thirty percent of y is equal to nine. What is thirty-seven point five percent of y?",
+        pt('stem', 'of thirty percent', 'hl', 6.0), voice='calm', pause=0.5),
       L("The wording is a bit heavy. But of means times, so the whole left side is one multiplication. We'll solve it in "
         "two different ways, the math way, and then with an insight.", pt('stem', 'The wording is a bit heavy')),
-      L("Let's start with the math way. Twenty-five percent is a quarter. Eighteen percent is eighteen over a hundred, "
-        "which reduces to nine over fifty.", show(e_1, 'Twenty-five percent is a quarter'), show(e_2, 'Eighteen percent is')),
-      L("So a quarter, times nine over fifty, times y, is equal to nine.", show(e_3, 'So a quarter, times nine')),
-      L("A quarter times nine over fifty is nine over two hundred. So nine two hundredths of y is nine.",
-        show(e_4, 'So nine two hundredths')),
-      L("Nine two hundredths of y is nine, so one two hundredth of y is one. So y is two hundred.", show(e_5, 'So y is two hundred')),
-      L("Now what they ask, thirteen point five percent of two hundred. Ten percent of two hundred is twenty. Three "
-        "percent is six. And half a percent is one.", show(e_6, 'Ten percent of two hundred'), show(e_7, 'Three percent is six')),
-      L("Twenty plus six plus one is twenty-seven. Choice number two is our answer.", show(e_8, 'Twenty plus six plus one'),
-        mk('tick', 'choice 2', 'Choice number two is our answer'))),
+      L("Let's start with the math way. Twenty-five percent is a quarter. Thirty percent is thirty over a hundred, "
+        "which reduces to three tenths.", show(e_1, 'Twenty-five percent is a quarter'), show(e_2, 'Thirty percent is')),
+      L("So a quarter, times three tenths, times y, is equal to nine.", show(e_3, 'So a quarter, times three')),
+      L("A quarter times three tenths: one times three is three, and four times ten is forty. So three fortieths of y "
+        "is nine.", show(e_4, 'So three fortieths of y')),
+      L("Three fortieths of y is nine. So one fortieth of y is nine divided by three, three.",
+        show(e_5, 'So one fortieth of y')),
+      L("The whole y is forty fortieths, so y is forty times three, a hundred twenty.", show(e_5b, 'so y is forty times three')),
+      L("Careful, a hundred twenty is y, not what they ask. That's choice number four, a trap.",
+        show(e_5c, 'not what they ask'), mk('cross', 'choice 4', "That's choice number four"))),
+    S('Method 1 · The math way',
+      L("Now what they ask, thirty-seven point five percent of a hundred twenty. Thirty-seven point five percent is in "
+        "our fraction table. It's three eighths.", show(e_6, "It's three eighths")),
+      L("Remember why. Twelve point five percent is an eighth. And thirty-seven point five is three times twelve point "
+        "five, so it's three eighths. This is why we memorize the table.", show(e_6b, 'Twelve point five percent is an eighth')),
+      L("So first an eighth of a hundred twenty. We halve three times. Half of a hundred twenty is sixty, half again is "
+        "thirty, and half again is fifteen.", show(e_7, 'Half of a hundred twenty is sixty'),
+        show(e_7b, 'half again is thirty'), show(e_7c, 'and half again is fifteen')),
+      L("So three eighths of a hundred twenty is three times fifteen, forty-five. Choice number three is our answer.",
+        show(e_8, 'So three eighths of a hundred twenty'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · Insight: swap the order',
       L("[pause] Now the insight. Let's start with a question. Which is bigger, thirty-two percent of fifty, or fifty percent of "
         "thirty-two?"),
@@ -1803,14 +1821,16 @@ video('solve-wp23-g062', 'solution', qid='wp23-g062', slides=[
       L("Here's another one. Four percent of seventy-five looks hard. But seventy-five percent of four is three quarters of four, "
         "three.", show(e_13, 'three quarters of four'))),
     S('Method 2 · Insight: swap the order',
-      L("Now our question. We start again from the givens. Twenty-five percent of eighteen percent is one multiplication, "
-        "so we can read it in the easy order. A quarter of eighteen percent is four point five percent.",
-        show(e_14, 'A quarter of eighteen percent')),
-      L("So four point five percent of y is nine.", show(e_15, 'So four point five percent of y')),
-      L("They ask for thirteen point five percent. Thirteen point five is three times four point five. So it's three "
-        "times nine, twenty-seven.", show(e_16, 'Thirteen point five is three times'), show(e_17, 'So it\'s three times nine')),
-      L("We never even found y. Choice number two is our answer, and I'll see you in the next question.",
-        mk('tick', 'choice 2', 'Choice number two is our answer'))),
+      L("Now our question. We start again from the givens. Twenty-five percent of thirty percent is one multiplication, "
+        "so we can do it in whichever order is easier. Here, a quarter of thirty percent is easy. It's thirty divided by four, "
+        "seven point five percent.", show(e_14, 'Here, a quarter of thirty percent')),
+      L("So seven point five percent of y is nine.", show(e_15, 'So seven point five percent of y')),
+      L("They ask for thirty-seven point five percent. Five times seven is thirty-five, and five times a half is two "
+        "and a half. So thirty-seven point five is five times seven point five.", show(e_16, 'So thirty-seven point five is five times')),
+      L("The same y, with five times the percent, gives five times the amount. So it's five times nine, forty-five.",
+        show(e_17, "So it's five times nine")),
+      L("We never even found y. Choice number three is our answer, and I'll see you in the next question.",
+        mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ wp23-g063 (Hebrew: not equal to 20% of 2x)
@@ -1936,6 +1956,9 @@ video('solve-q-r26-t23-16', 'solution', qid='q-r26-t23-16', slides=[
 # Hebrew (wp 4148-4228): the difference is the key (85 - 15 = 70% is 14), the ratio table / triangle value (15 * 14 /
 # 70 = 3); shortcuts: drop a zero, or a middle step through 10% (70% -> 10% is / 7, then x 1.5). REMINDER: the ratio
 # table and the triangle value (22, camera lesson). NEW here: the difference as a percent; a middle step through 10%.
+# 22 Oct 2026 (teacher-approved Hebrew restore, reviews/t23-hebrew-restore.md): her shortcut (a) "drop a zero to see the
+# ratio" (wp 4205-4213: 70 -> 7, 14 is x2, so 15 -> 1.5 -> 3) restored before the 10% middle step, English numbers:
+# 40 -> 4, 4 -> 48 is x12, so 30 -> 3 -> 36. Condition said: both percents divided by the same ten.
 b_1 = IH('b_1', 'factory: $\\ 100\\%-70\\%=30\\%$', size=30)
 b_2 = IH('b_2', 'difference: $\\ 70\\%-30\\%=40\\%$', size=30)
 b_3 = IH('b_3', '$40\\%=48$ kg', size=30)
@@ -1946,15 +1969,21 @@ b_4 = IH('b_4', '$?=\\frac{30\\cdot48}{40}$', size=30, col=1)
 b_5 = IH('b_5', '$=\\frac{3\\cdot48}{4}$', size=30, col=1)
 b_6 = IH('b_6', '$48\\div4=12,\\ \\ 3\\cdot12=36$', size=30, col=1)
 b_7 = IH('b_7', '$40\\%=48$', size=30)
-b_8 = IH('b_8', '$10\\%=48\\div4=12$', size=30)
-b_9 = IH('b_9', '$30\\%=3\\cdot12=36$', size=30)
+b_z1 = IH('b_z1', '$40\\to48$: $\\ \\times1.2$', size=30)
+b_z2 = IH('b_z2', 'drop a zero: $\\ 40\\to4$', size=30)
+b_z2b = IH('b_z2b', '$30\\to3$', size=30)
+b_z3 = IH('b_z3', 'both $\\div10$: $\\ 3:4=30:40$', size=30)
+b_z4 = IH('b_z4', '$4\\to48$: $\\ \\times12$', size=30, col=1)
+b_z5 = IH('b_z5', '$3\\cdot12=36$ kg', size=30, col=1)
+b_8 = IH('b_8', '$10\\%=48\\div4=12$', size=30, col=1)
+b_9 = IH('b_9', '$30\\%=3\\cdot12=36$', size=30, col=1)
 video('solve-wp23-g064', 'solution', qid='wp23-g064', slides=[
     S('Method 1 · The math way: the triangle value',
       L("A farmer sells seventy percent of his apples at a market and all the rest to a juice factory. The market gets "
         "forty-eight kilograms more apples than the factory. How many kilograms of apples does the factory get?",
         pt('stem', 'A farmer sells seventy', 'hl', 10.0), voice='calm', pause=0.5),
       L("The key here is the difference. They don't give us the factory's amount. They give the difference between the "
-        "two. We'll solve it in two different ways, with the ratio table, and then with ten percent.",
+        "two. We'll solve it in two different ways, with the ratio table, and then with two shortcuts.",
         pt('stem', 'They give the difference')),
       L("Let's start with the math way. All the apples are a hundred percent. The market gets seventy percent, so the "
         "factory gets the rest, a hundred minus seventy, thirty percent.", show(b_1, 'so the factory gets the rest')),
@@ -1974,12 +2003,24 @@ video('solve-wp23-g064', 'solution', qid='wp23-g064', slides=[
         show(b_6, 'Forty-eight divided by four'), show(b_t['ans'], 'three times twelve is thirty-six')),
       L("So the factory gets thirty-six kilograms. Choice number two is our answer.",
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    S('Method 2 · The math way: through ten percent',
-      L("[pause] Now a shorter way. We start again from the givens. The factory gets the rest, thirty percent. The "
+    S('Method 2 · The math way: two shortcuts',
+      L("[pause] Now two shortcuts. We start again from the givens. The factory gets the rest, thirty percent. The "
         "difference is seventy minus thirty, forty percent, and that's forty-eight kilograms.", show(b_7, 'forty-eight kilograms')),
-      L("From forty percent to thirty percent isn't one easy step. So let's take a middle step, ten percent. Forty "
-        "percent divided by four is ten percent. So we divide the kilograms by four too. Forty-eight divided by four is "
-        "twelve.", show(b_8, 'Forty-eight divided by four is')),
+      L("The first shortcut is to drop a zero. In the ratio table, forty percent goes with forty-eight kilograms. From "
+        "forty to forty-eight, across the row, is times one point two. That step isn't easy to see.", show(b_z1, 'From forty to forty-eight')),
+      L("So let's drop the zero from both percents. Forty becomes four, and thirty becomes three.",
+        show(b_z2, 'Forty becomes four'), show(b_z2b, 'thirty becomes three')),
+      L("We divided both percents by the same number, ten. Three to four is the same ratio as thirty to forty. So "
+        "the kilograms column stays as it is, forty-eight and the question mark.", show(b_z3, 'We divided both percents')),
+      L("Now the step across is easy to see. From four to forty-eight is times twelve.", show(b_z4, 'From four to forty-eight')),
+      L("The factory's row has the same step across. Three times twelve is thirty-six kilograms.",
+        show(b_z5, 'Three times twelve is')),
+      L("Drop a zero when it makes the step across easy to see. Choice number two is our answer.",
+        mk('tick', 'choice 2', 'Choice number two is our answer'))),
+    S('Method 2 · The math way: two shortcuts',
+      L("Now the second shortcut. From forty percent to thirty percent isn't one easy step. So let's take a middle "
+        "step, ten percent. Forty percent divided by four is ten percent. So we divide the kilograms by four too. Forty-eight divided by "
+        "four is twelve.", show(b_8, 'Forty-eight divided by four is')),
       L("Thirty percent is three times ten percent. Three times twelve is thirty-six kilograms.", show(b_9, 'Three times twelve')),
       L("So when the step isn't easy to see, go through ten percent first. Choice number two is our answer, and I'll see "
         "you in the next question.", mk('tick', 'choice 2', 'Choice number two is our answer'))),
@@ -2336,9 +2377,6 @@ _clause_rows('solve-wp23-g061', 'd_12',
 _clause_rows('solve-wp23-g061', 'd_13',
     ('add $\\frac{1}{n}$ of the start', 'Add one over n of the starting amount'),
     ('remove $\\frac{1}{n+1}$ of the new amount', 'Then take away one over n plus one'))
-_clause_rows('solve-wp23-g062', 'e_7',
-    ('$3\\%=6$', 'Three percent is six'),
-    ('$0.5\\%=1$', 'half a percent is one'))
 _clause_rows('solve-wp23-g060', 'n_8',
     ('$98\\%$ of $x$', 'ninety-eight percent of x'),
     ('$2\\%$ fewer', 'so now she has two percent fewer'))
@@ -2379,11 +2417,11 @@ CARRY23 = {
     'solve-wp23-g059': {1: ['$40\\to50$: $\\ +25\\%$']},
     'solve-wp23-g060': {1: ['$0.7x$ left'], 3: ['start $100$: $\\ 98$, $\\ 2\\%$ fewer']},
     'solve-q-r26-t23-01': {1: ['$1.25\\cdot0.88$']},
-    'solve-wp23-g062': {2: ['$x\\%$ of $y=y\\%$ of $x$']},
+    'solve-wp23-g062': {1: ['$y=120$'], 3: ['$x\\%$ of $y=y\\%$ of $x$']},
     'solve-wp23-g065': {1: ['$81\\%$ of the start is left']},
     'solve-q-r26-t23-03': {1: ['chair $100$, desk $150$, table $250$']},
     'solve-q-r26-t23-04': {1: ['water $240$ g $=60\\%$']},
-    'solve-wp23-g064': {1: ['factory $30\\%$, $\\ 40\\%=48$ kg']},
+    'solve-wp23-g064': {1: ['factory $30\\%$, $\\ 40\\%=48$ kg'], 3: ['factory $30\\%$, $\\ 40\\%=48$ kg']},
     'solve-q-r26-t23-05': {1: ['$N=200$, $g=80$: $\\ $target $10\\%$']},
 }
 STEMS23 = {
@@ -2394,7 +2432,7 @@ STEMS23 = {
  "wp23-g060": "In a computer game, Noa loses 30% of her coins. She then wins a prize equal to 40% of the coins she has left. Compared with the number of coins she had at the start, how many coins does she have now?",
  "q-r26-t23-01": "A price rises by 25%. Later, the new price falls by 12%. By what percent is the final price higher than the original price?",
  "wp23-g061": "Dana earns 50% more than Omer. Lior earns 33 1/3% less than Dana. What is Lior’s wage divided by Omer’s wage?",
- "wp23-g062": "25% of 18% of y equals 9. What is 13.5% of y?",
+ "wp23-g062": "25% of 30% of y equals 9. What is 37.5% of y?",
  "wp23-g063": "For y>0, which expression is not equal to 16% of 5y?",
  "q-r26-t23-16": "A library has only novels and textbooks, 600 books in all. 45% of the novels is the same number of books as 30% of the textbooks. How many novels does the library have?",
  "wp23-g064": "A farmer sells 70% of his apples at a market and all the rest to a juice factory. The market gets 48 kg more apples than the factory. How many kilograms of apples does the factory get?",

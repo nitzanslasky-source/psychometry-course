@@ -657,7 +657,7 @@ f1i14 = I('f1i14', '1 · Plugging in the answers', size=42)
 f1i15 = I('f1i15', '2 · Plugging in numbers', size=42)
 f1i16 = I('f1i16', '3 · Order-of-magnitude estimation: the size of the answer', size=38)
 f1i17 = I('f1i17', 'And here and there: insight questions', size=38)
-f1i18 = I('f1i18', 'Homework: solve every question two ways', size=40)
+f1i18 = I('f1i18', 'Practice both ways when both fit the question', size=36)
 f1i19 = I('f1i19', 'The math way, and the psychometric way', size=38)
 
 video('pt51-intro', 'lesson', slides=[
@@ -705,8 +705,8 @@ video('pt51-intro', 'lesson', slides=[
       L("In the next sample questions, we'll meet each of them for the first time. Later, each method gets a lesson of "
         "its own.")),
     S('How to practice',
-      L("From now on, when you do your homework, solve every question two ways. The mathematical way, and the "
-        "psychometric way.", show(f1i18, 'solve every question two ways'), show(f1i19, 'The mathematical way')),
+      L("When you do your homework, practice both ways when both fit the question. The mathematical way, and the "
+        "psychometric way. Don't force a second method if it adds nothing.", show(f1i18, 'practice both ways'), show(f1i19, 'The mathematical way')),
       L("That's the right way to learn and to practice. Let's start with a sample question. [pause] Okay. I'll see you in "
         "the next video.")),
 ])
@@ -1085,7 +1085,7 @@ video('solve-pt-q04', 'solution', qid='pt-q04', slides=[
       L("The cylinder is inside the cube, so its volume must be less than the cube's. How much less? We don't know, and "
         "we don't need to. A part can't be bigger than the whole.",
         show(f1kk['cyl'], 'The cylinder is inside the cube')),
-      L("Every choice is a number times a to the power of three. The cube's volume is twenty-seven times that same positive quantity. So we can compare the numbers in front of it. Pi is a little more than three. We'll use three to estimate those numbers.",
+      L("Every choice is a number times a to the power of three. The cube's volume is twenty-seven times that same positive quantity. So we can compare the numbers in front of it. Pi is more than three. We'll use three to estimate those numbers. This makes each choice smaller. If even that smaller amount is above twenty-seven, the real choice is too big too.",
         show(f1kk['pi'], "We'll use three to estimate")),
       L("Choice number one says twenty-seven pi over two, times a cubed. Twenty-seven times three is eighty-one, and over two, that's forty and a half. That's more "
         "than twenty-seven, so the cylinder would be bigger than the cube. That makes no sense, so choice number one is "
@@ -1216,7 +1216,7 @@ f1w8 = I('f1w8', 'Choices far apart in size $\\to$ estimate with round numbers',
 f1w9 = I('f1w9', 'One number asked, numbers in the choices $\\to$ plug in the answers', size=32)
 f1w10 = I('f1w10', 'Letters in the question and the choices $\\to$ plug in numbers', size=32)
 f1w11 = I('f1w11', 'A very long way, many cases $\\to$ look for an insight', size=32)
-f1w12 = I('f1w12', 'At home: the math way AND the psychometric way', size=36)
+f1w12 = I('f1w12', 'At home: practice both ways when useful', size=36)
 f1w13 = I('f1w13', 'On the exam: whatever comes to mind first', size=36)
 
 video('pt51-intro-wrap', 'lesson', slides=[
@@ -1244,8 +1244,8 @@ video('pt51-intro-wrap', 'lesson', slides=[
     S('Solve both ways',
       L("From here, each method gets a lesson of its own. It's very important to watch them, and to practice as much as "
         "you can."),
-      L("Remember, when you solve at home, solve the mathematical way, and also the psychometric way. That opens the most "
-        "options for you on the exam.", show(f1w12, 'when you solve at home')),
+      L("Remember, when you solve at home, practice the mathematical way and the psychometric way when both are useful. "
+        "That gives you more options on the exam, without repeating work for no reason.", show(f1w12, 'when you solve at home')),
       L("You'll be able to use whichever is more convenient, whatever comes to mind first at that moment. [pause] Okay. "
         "I'll see you in the next video.", show(f1w13, 'whichever is more convenient'))),
 ])
@@ -1517,9 +1517,9 @@ video('solve-pt-q08', 'solution', qid='pt-q08', slides=[
       L("Kobi bought a pair of pants at a fifty percent discount, and a shirt at a ten percent discount. He paid two "
         "hundred eighty shekels in total, instead of five hundred shekels. What was the price of the shirt before the "
         "discount?", pt('stem', 'Kobi bought a pair of pants', 'hl', 10.0), voice='calm', pause=0.5),
-      L("If we solve it the math way, we need two unknowns and two equations, and few students really manage that. But we "
-        "have answers. The choices are numbers, and the story gives conditions we can check. So we look for the choice "
-        "that fits everything in the story when we plug it in.", pt('choice 1', 'The choices are numbers')),
+      L("The math way would use two unknowns and two equations. But we can also test the answers. The choices are numbers, "
+        "and the story gives conditions we can check. We'll try a shirt price from the choices. Then we'll check "
+        "whether the discounted prices add up to two hundred eighty.", pt('choice 1', 'The choices are numbers')),
       L("We haven't learned percents yet, so here's all we need. Fifty percent off means half the price is taken off, so "
         "he pays half. Ten percent off means a tenth of the price is taken off.", show(f2q8p, 'Fifty percent off means'), show(f2q8p2, 'Ten percent off means')),
       L("And one more thing from the story. Before the discounts, the pants and the shirt cost five hundred together. So "
@@ -1716,7 +1716,7 @@ video('solve-pt-q20', 'solution', qid='pt-q20', slides=[
       L("Now the insight. Some students look at this and see right away that it's one half. How? Look at the bottom. Two "
         "fifths is exactly twice one fifth, and two sixths is exactly twice one sixth.", pt('stem', 'Look at the bottom')),
       L("So every part of the bottom is twice its partner on the top, and the whole bottom is twice the whole top. Why? "
-        "Two fifths plus two sixths is two times, the bracket one fifth plus one sixth. And a number over twice itself is "
+        "Two fifths plus two sixths is two times, the bracket one fifth plus one sixth. And a nonzero number over twice itself is "
         "always one half.", show(f2q20d, 'Two fifths plus two sixths is two times')),
       L("Maybe it's easier to see it like this. Call one fifth a banana, and one sixth an apple. The top has one banana and one apple. The bottom has two bananas and two apples: twice that same total. So the top is half of the bottom, and the fraction is one half.", show(f2q20e, 'The top has one banana')),
       L("By the way, notice that the exam wrote two sixths, and not one third. They're the same number, but two sixths "
@@ -2056,6 +2056,12 @@ f3c7 = IH('f3c7', '$x=\\frac12$: $\\ \\frac12\\cdot\\frac12=\\frac14$', size=32)
 f3c7b = IH('f3c7b', '$\\frac14\\ge\\frac12$, no $\\ \\to$ (1) is out', size=32)
 f3c8 = I('f3c8', 'Answer: $\\ $(4) None of the above', size=32)
 f3c11 = I('f3c11', 'Examples agree? $\\ \\to$ still need the reason', size=30)
+f3cd0 = I('f3cd0', 'Given: $x+y=6$. $\\ $Find $x-y$.', size=32)
+f3cd1 = IH('f3cd1', '$x=1,\\ y=5:\\ 1+5=6$', size=30)
+f3cd2 = IH('f3cd2', '$x-y=1-5=-4$', size=32, col=1)
+f3cd3 = IH('f3cd3', '$x=2,\\ y=4:\\ 2+4=6$', size=30)
+f3cd4 = IH('f3cd4', '$x-y=2-4=-2$', size=32, col=1)
+f3cd5 = I('f3cd5', 'Both fit the given; different answers: cannot be determined', size=28)
 f3m1 = I('f3m1', 'When: $\\ =?$ with number choices $\\ $·$\\ $ letters in choices', size=30)
 f3m1b = I('f3m1b', '$\\qquad\\quad$ a ratio $\\ $·$\\ $ more letters than equations', size=30)
 f3m2 = I('f3m2', '1. Check every restriction', size=30)
@@ -2263,6 +2269,14 @@ video('pt51-plug-numbers', 'lesson', slides=[
       L("And what if all the numbers we tried agree? That still doesn't prove always. We need a reason covering every "
         "allowed case, like in our earlier equation example. There the requested expression was always one and a half "
         "times the given eighteen, so its value was fixed.", show(f3c11, "That still doesn't prove always"))),
+    S('When the answer is not fixed',
+      L("Now let's see cannot be determined in numbers. Given, x plus y is six. What is x minus y?", show(f3cd0, 'x plus y is six')),
+      L("Try x equals one and y equals five. One plus five is six, so they fit the given. But one minus five is minus four.",
+        show(f3cd1, 'One plus five is six'), show(f3cd2, 'is minus four')),
+      L("Now try x equals two and y equals four. Two plus four is six, so this pair fits too. Two minus four is minus two.",
+        show(f3cd3, 'Two plus four is six'), show(f3cd4, 'is minus two')),
+      L("Both pairs fit the same given, but the requested answers are different. So the given doesn't fix x minus y. "
+        "It cannot be determined. Two different results are enough to show that.", show(f3cd5, 'It cannot be determined'))),
     S('So when do I use it?',
       L("So, when do I plug in numbers? When there's an expression with a letter and the choices are numbers. When there "
         "are letters in the choices. When the amount doesn't matter, like in a ratio. And when there are more letters than "
@@ -2530,7 +2544,7 @@ video('solve-pt-q13', 'solution', qid='pt-q13', slides=[
         "and fractions. With ones, every choice is one, and nothing is ruled out. So one can't tell them apart here.",
         show(f3i1, 'With ones, every choice is one')),
       L("So let's take x equals two. And y? If y is two as well, x squared y squared and x cubed y are both sixteen, a tie "
-        "again. Different letters, different numbers.", show(f3i2, 'If y is two as well')),
+        "again. Those numbers still don't separate the choices.", show(f3i2, 'If y is two as well')),
       L("So y equals one, which keeps the story easy. Now the choices give four, eight, a quarter and an eighth. They're all "
         "different, good.", show(f3i3, 'So y equals one')),
       L("Now the story with these numbers. A pen holds two cubic centimeters, and a word needs one. So each pen writes two "
@@ -2765,9 +2779,9 @@ f4m3 = I('f4m3', '3. $\\ $"About", "approximately", "closest to"', size=34)
 f4m4 = I('f4m4', 'Areas and volumes with $\\pi$ or roots in the choices', size=32)
 f4t1 = I('f4t1', '$29\\cdot41=\\ ?$', size=36)
 f4t1b = I('f4t1b', 'Choices: $\\ 1{,}189,\\ \\ 1{,}196,\\ \\ 1{,}204,\\ \\ 1{,}212$', size=32)
-f4t2 = IH('f4t2', '$30\\cdot40=1{,}200$ $\\ \\to\\ $ all four are close ✗', size=34)
-f4t3 = IH('f4t3', 'Last digit: $\\ 9\\cdot1=9$ $\\ \\to\\ 1{,}189$ ✓', size=34)
-f4t4 = I('f4t4', 'Far apart $\\to$ estimate. $\\quad$ Close $\\to$ calculate, or the last digit', size=30)
+f4t2 = IH('f4t2', '$30\\cdot40=1200$ $\\ \\to\\ $ all four are close ✗', size=34)
+f4t3 = IH('f4t3', 'Last digit: $\\ 9\\cdot1=9$ $\\ \\to\\ 1189$ ✓', size=34)
+f4t4 = I('f4t4', 'Close choices: tighter bounds, calculate, or check the last digit', size=30)
 
 video('pt51-estimation', 'lesson', slides=[
     S('Estimation',
@@ -2847,7 +2861,7 @@ video('pt51-estimation', 'lesson', slides=[
       L("And estimates are very strong in areas and volumes, when the choices have pi or roots in them. We'll see that "
         "in the next questions.", show(f4m4, 'in areas and volumes'))),
     S('The trap: close choices',
-      L("Now the trap. An estimate works only when the choices are far apart. Look at twenty-nine times forty-one. The "
+      L("Now the trap. A rough estimate may not separate close choices. Look at twenty-nine times forty-one. The "
         "choices are one thousand one hundred eighty-nine, one thousand one hundred ninety-six, one thousand two hundred "
         "four, and one thousand two hundred twelve.", show(f4t1, 'Look at twenty-nine times'), show(f4t1b, 'The choices are one thousand')),
       L("Thirty times forty is twelve hundred. But all four choices are close to twelve hundred, so the estimate can't "
@@ -2855,8 +2869,9 @@ video('pt51-estimation', 'lesson', slides=[
         show(f4t2, 'Thirty times forty is twelve hundred')),
       L("When the choices are close, use another tool. Here the last digit works. Nine times one is nine, so the answer "
         "ends in nine. Only one thousand one hundred eighty-nine ends in nine.", show(f4t3, 'Here the last digit works')),
-      L("So before you estimate, look at the choices. If they're far apart, estimate. If they're close, calculate, or "
-        "check the last digit. [pause] Okay. I'll see you in the next video.", show(f4t4, 'So before you estimate'))),
+      L("So before you estimate, look at the choices. If they're far apart, a rough estimate may be enough. "
+        "Close choices need tighter bounds, an exact calculation, or another check, like the last digit. "
+        "[pause] Okay. I'll see you in the next video.", show(f4t4, 'So before you estimate'))),
 ])
 
 CAMERA_SPLITS = globals().get('CAMERA_SPLITS', []) + [
@@ -2872,6 +2887,10 @@ CAMERA_SPLITS = globals().get('CAMERA_SPLITS', []) + [
 # named, the right triangle orange; the "pi part minus a number" lines under it. Slide 2: the bound pi < 4 and the
 # negative bracket. Slide 3 (partial calculation): a fresh copy, the pizza cut into 4 (dashed) and then 8, the slice
 # marked one eighth, then the circle and sector areas.
+# 2026-10-22 Hebrew restore (reviews/hebrew-vs-english-t51.md row 4b): slide 1 is her "where is the pi?" pattern (the pi
+# is in the sector -> pi minus a number; (1) number minus pi and (3) pi over a number out before any numbers). It replaces
+# the triangle area + the decimal bound 3 < pi < 3.2 (no decimal estimates); the triangle moved into method 2 as the check
+# after the sector piece leaves only choice 4.
 f4O = (230.0, 250.0)
 f4A, f4B = gpt(*f4O, 170, 65), gpt(*f4O, 170, 20)
 
@@ -2902,10 +2921,12 @@ f4h0 = I('f4h0', 'Shaded $=$ sector $-$ triangle', size=26, col=1)
 f4h1 = IH('f4h1', 'Equal leg squares: $2+2=4$', size=28, col=1)
 f4h3 = IH('f4h3', 'Triangle: $\\frac{2}{2}=1$', size=28, col=1)
 f4sector = IH('f4sector', 'Sector: $\\frac18\\cdot4\\pi=\\frac\\pi2$', size=28, col=1)
-f4bound = IH('f4bound', '$3<\\pi<3.2$', size=28, col=1)
-f4range = IH('f4range', '$0.5<$ shaded area $<0.6$', size=28, col=1)
-f4reject1 = IH('f4reject1', '(1) $4-\\pi>0.8$, too big', size=26, col=1)
-f4reject3 = IH('f4reject3', '(3) $\\frac\\pi{\\sqrt2}>\\frac\\pi2>1.5$', size=26, col=1)
+# 2026-10-22 Hebrew restore: her "where is the pi?" pattern replaces the decimal bound 3 < pi < 3.2 (no decimal estimates)
+f4w1 = I('f4w1', 'Where is the $\\pi$? $\\ $In the sector', size=30, col=1)
+f4w2 = I('f4w2', 'Pattern: $\\ \\pi$ (with a fraction) $-$ a number', size=29, col=1)
+f4w3 = IH('f4w3', '(1) $\\ 4-\\pi$: $\\ $a number $-\\ \\pi$, no', size=29, col=1)
+f4w4 = IH('f4w4', '(3) $\\ \\frac{\\pi}{\\sqrt2}$: $\\ $nothing taken away, no', size=29, col=1)
+f4w5 = IH('f4w5', '(2) $\\ \\frac{\\pi}{4}-1$ $\\quad$ (4) $\\ \\frac{\\pi}{2}-1$', size=29, col=1)
 f4n0 = I('f4n0', 'So far: $\\ $(1), (3) out', size=26, col=1)
 f4n1 = IH('f4n1', '$3<\\pi<4$', size=32, col=1)
 f4n2 = IH('f4n2', '$\\pi<4$ $\\ \\to\\ $ $\\frac{\\pi}{2}<2$', size=32, col=1)
@@ -2926,27 +2947,36 @@ f4p2 = IH('f4p2', 'Sector: $\\ \\frac{4\\pi}{8}=\\frac{\\pi}{2}$', size=32, col=
 f4p3 = IH('f4p3', 'Shaded $=\\frac{\\pi}{2}-1$', size=28, col=1)
 for _it, _y in ((f4n0, 330), (f4n1, 390), (f4n2, 450), (f4n3, 520), (f4n4, 590)):
     _R(_it, _y)
-for _it, _y, _x in ((f4h0, 575, 1040), (f4h1, 620, 1040), (f4h3, 665, 1040),
-                     (f4p1, 565, 1040), (f4p2, 615, 1040), (f4p3, 665, 1040)):
+for _it, _y, _x in ((f4p1, 380, 1250), (f4p2, 440, 1250),
+                     (f4h1, 545, 1040), (f4h3, 595, 1040), (f4p3, 650, 1040)):
     _R(_it, _y, x=_x)
-for _it, _yy in ((f4h0, 330), (f4h1, 375), (f4h3, 420), (f4sector, 465), (f4bound, 510),
-                 (f4range, 555), (f4reject1, 600), (f4reject3, 645)):
+for _it, _yy in ((f4h0, 330), (f4w1, 378), (f4w2, 426), (f4w3, 474), (f4w4, 526), (f4w5, 590)):
     _R(_it, _yy)
 
 video('solve-pt-q16', 'solution', qid='pt-q16', slides=[
-    SM('Method 1 · Estimation', 'A justified size bound',
+    SM('Method 1 · Estimation', 'Where is the π?',
       L("A O B is a sector of a circle with center O and a radius of two centimeters. Based on this and the figure, what "
         "is the area of the shaded region, in square centimeters?", pt('stem', 'A O B is a sector', 'hl', 8.0),
         voice='calm', pause=0.5),
       L("The shaded region is the sector, minus the right triangle inside it. So shaded equals sector minus triangle. "
         "[short pause] We'll solve it two ways, by estimating the choices, and then with a partial calculation.",
         show(f4h0, 'So shaded equals')),
-      L("Let's start with an estimate, after one small calculation. We'll find the triangle's area first. Then we'll estimate the sector, and compare the choices."),
-      L('The triangle has a right angle and an angle of forty-five degrees. So its third angle is forty-five too, and its legs are equal. The hypotenuse is the radius, two. By Pythagoras, the two equal legs squared add up to four. So each leg squared is two.', show(f4h1, 'each leg squared is two')),
-      L("The legs are equal, so their product is also two. The triangle's area is that product divided by two. Two divided by two is one. Now the sector. Forty-five degrees is one eighth of a full circle. The whole circle has area four pi, so this sector is pi over two.", show(f4h3, 'Two divided by two is one'), show(f4sector, 'this sector is pi over two')),
-      L("For this estimate, use these bounds for pi: more than three, and less than three point two. We need closer bounds here because the choices are close in size. Half of pi is therefore between one point five and one point six. Take away the triangle's area, one. The shaded area is between zero point five and zero point six.", show(f4bound, 'more than three, and less than three point two'), show(f4range, 'between zero point five and zero point six')),
-      L("Choice number one is four minus pi. Pi is less than three point two, so four minus pi is more than zero point eight. Our area is less than zero point six. So choice number one is too big, and it's out.", show(f4reject1, 'more than zero point eight'), mk('cross','choice 1',"it's out")),
-      L("Choice number three is pi over root two. Root two is less than two, so dividing pi by root two gives more than dividing pi by two. That's more than one point five, much bigger than our area. So choice number three is out. Choice numbers two and four are left.", show(f4reject3, 'more than one point five'), mk('cross','choice 3','choice number three is out'))),
+      L("Let's start with estimation, before any numbers. First we look at the pattern of the calculation, and ask, "
+        "where is the pi?", show(f4w1, 'where is the pi')),
+      L("The pi is in the sector. The sector is part of the circle, and the circle's area is pi r squared. The triangle "
+        "has only straight sides, so its area has no pi. So sector minus triangle gives the pattern pi minus a number. "
+        "The pi can come with a fraction, like pi over two. But it comes first, and a number is taken away from it.",
+        pt('f4w1', 'The pi is in the sector'), show(f4w2, 'gives the pattern pi minus a number')),
+      L("Choice number one says four minus pi. That's a number minus pi, the opposite pattern. Here the pi is the part "
+        "taken away, so choice number one is out.", show(f4w3, 'the opposite pattern'), mk('cross', 'choice 1', 'so choice number one is out')),
+      L("Choice number three says pi over root two. That's pi divided by a number, and nothing is taken away. The "
+        "triangle is missing, so choice number three is out too.", show(f4w4, 'nothing is taken away'),
+        mk('cross', 'choice 3', 'so choice number three is out too')),
+      L("Choice number two says one half, times pi over two minus two. The half multiplies both parts, so it's pi over "
+        "four, minus one. Choice number four says pi over two, minus one. Both have the pattern pi minus a number, so "
+        "this test can't split them.", show(f4w5, "so it's pi over"), pt('f4w5', 'Choice number four says')),
+      L("Sometimes the pattern rules out three choices, and sometimes none. Here it ruled out two, in seconds. And it "
+        "works only because we know which part has the pi: here, the sector.")),
     SM('Method 1 · Estimation', 'A negative area?',
       L("[pause] Two choices are left. Now let's estimate their size. Pi is a bit more than three, and less than four.",
         show(f4n0, 'Two choices are left'), show(f4n1, 'Pi is a bit more than three')),
@@ -2970,9 +3000,20 @@ video('solve-pt-q16', 'solution', qid='pt-q16', slides=[
       L("The area of the circle is pi r squared. The radius is two, and two squared is four, so the circle is four pi. "
         "One eighth of four pi is four pi over eight, which is pi over two.", show(f4p1, 'The area of the circle'),
         show(f4p2, 'One eighth of four pi')),
-      L("The shaded area is pi over two, minus the triangle's area. We found that the triangle's area is one. So the result is pi over two minus one. Choice number four matches both pieces, not just the way the expression looks.", show(f4p3, 'pi over two minus one'), mk('tick','choice 4','Choice number four matches')),
-      L("Choice number two has a half outside its whole bracket. It gives pi over four minus one, not pi over two minus one. So it's out. We compare the actual values of the pieces, not just whether a minus sign is written. Choice number four again.", mk('cross','choice 2',"So it's out")),
-      L("This is a partial calculation: find a useful piece, then look at the choices. A piece can rule choices out, but the answer still has to fit the whole shaded area. I'll see you in the next question.")),
+      L("Now let's peek at the choices. Which of them has the sector, pi over two? Choice number four, pi over two minus "
+        "one, has it. Choice number two has a half outside. The half multiplies the pi over two too, so it gives pi over "
+        "four. That's not our sector, so choice number two is out.", mk('cross', 'choice 2', 'so choice number two is out')),
+      L("Choice number one has minus pi, and choice number three has pi over root two. Those two don't have pi over two at all. So the "
+        "sector alone leaves only choice number four. To be sure, let's check the other piece, the triangle."),
+      L("The triangle has a right angle and an angle of forty-five degrees. So its third angle is forty-five too, and its "
+        "legs are equal. The hypotenuse is the radius, two. By Pythagoras, the two equal legs squared add up to four. So "
+        "each leg squared is two.", show(f4h1, 'each leg squared is two')),
+      L("The triangle's area is leg times leg, divided by two. The legs are equal, so leg times leg is a leg squared, two. "
+        "Two divided by two is one. So the shaded area is pi over two minus one. That's exactly choice number four, our "
+        "answer.", show(f4h3, 'Two divided by two is one'), show(f4p3, 'pi over two minus one'),
+        mk('tick', 'choice 4', "That's exactly choice number four")),
+      L("This is a partial calculation: find a useful piece, then look at the choices. Here the sector alone ruled out "
+        "every choice but one. I'll see you in the next question.")),
 ])
 
 

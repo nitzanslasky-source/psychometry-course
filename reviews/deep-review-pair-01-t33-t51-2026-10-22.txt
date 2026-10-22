@@ -1,0 +1,216 @@
+DEEP TEACHING REVIEW — PAIR 1: TOPICS 51 AND 33 — 22 OCTOBER 2026
+
+STATUS: PARTIAL COMPLETION. The pair and whole course are NOT newly cleared.
+All 77 baseline unrecorded scripts personally reread in full this turn: t51 39 parts / 19,619 words; t33 38 parts / 22,810 words; total 42,429 words. Fresh teaching-depth review, not credit for earlier reviews.
+Six Topic 51 parts edited, tested and published to BOTH Downloads HTMLs, version 2026-10-22T08:22:51+03:00. Eight Circles source edits were prepared but NOT published. Concurrent Hebrew restores changed Circles questions/data and solve-pt-q16 during the review. Those new versions need fresh review before approval. Other pairs have not received this new pass.
+
+REVIEW STANDARD
+Check the target, meaning of every quantity, why the next step works, simple spoken English, retained exam terms, easy allowed trial values, immediate choice elimination and corresponding board results. Keep original exam methods. Do not add high-school proof requirements or choose test values using the known answer. Leave clear passages alone.
+
+PUBLISHED TEACHING FIXES
+Cannot be determined: fixed sum x+y=6, compare (1,5) and (2,4). Both fit, but x-y=-4 versus -2. Explain why that means the requested value is not fixed. This is a worked case of the category already introduced, not a new method.
+Estimation: explain safe direction of the cylinder lower-bound comparison. Taking pi as 3 makes each positive candidate smaller; if even that is too large, the actual candidate is too large. Close choices may need tighter bounds, exact calculation or the already-taught last-digit check.
+Practice two methods when both fit; do not force a second solution if it adds nothing.
+Insight: add nonzero before the general half-of-itself statement to protect the denominator restriction.
+Handwriting: retained original fonts. Removed thousands commas only inside two handwritten results (1200/1189), because the original handwriting split those numbers awkwardly. Givens and choices unchanged.
+
+CIRCLES SOURCE WORK — HELD, NOT PUBLISHED
+geo-077: teach joining centers before g088/g092/common-tangent applications. Outside touch: radii 3+2=5; inside touch: 5-2=3, with the small radius included inside the big one. Explain the segment meanings and why addition/subtraction differs. Latest label explicitly says OT=5.
+geo-093: replace a mere announcement of shaded-area tools with two contrasting existing-method warmups. Quarter-circle minus triangle = pi-2; triangle minus quarter-circle = 4-pi. Identify whole region and removed piece, calculate each and explain subtraction order. Latest source retains radius/right-angle labels after the subtraction fill.
+g088: justify the matching lower triangle using the kite's symmetry. g094/g095: qualify partial calculation because these choices already have separate, expanded area parts. g088/g092/g101: retain externally/internally tangent plus its plain meaning.
+g090: the initial 35x5 halving clarification was superseded by Claude's 9/12/15 question restore. Do NOT reinsert old 12/35/37 data from this receipt. Reconcile current question, speech, JSON and visuals first.
+Concurrent geo-079 pi restore and g090/g091/g092 restores require a fresh final-version check. The prior baseline read is not approval of their later changes.
+
+BEFORE -> AFTER RECEIPT
+These are this review's initial edits relative to the protected baseline. Circles entries are source work pending reconciliation, not authority to overwrite concurrent restores.
+
+#406 geo-077 — Tangents — SOURCE ONLY / RECONCILE
+Paragraph counts: 1/4/5/5/6/2 -> 1/4/5/5/6/4/4/2; source words 726 -> 910.
+BEFORE: Now let's learn about tangents to a circle. It's a short lesson, with two rules that come up a lot.
+AFTER: Now let's learn two useful rules about tangents. Then we'll see what to draw when two circles touch.
+BEFORE: [No worked example here]
+AFTER: When two circles touch, join their centers. First, circles that are externally tangent. That means they touch from the outside, like these two circles.
+Join O to P through the touching point T. O T is a radius of the first circle, three. T P is a radius of the second circle, two.
+Those two radii meet end to end. So the distance between the centers is three plus two, five.
+With circles touching from the outside, add the radii to find the distance between their centers.
+Now circles that are internally tangent. One circle is inside the other, and they share one touching point, T.
+The centers and T are on one straight line. The big radius O T is five. It includes O P and the small radius P T, which is two.
+We want only O P, the distance between the centers. So take the small radius off the big radius. Five minus two is three.
+So first check how the circles touch. Outside means add the radii. Inside means subtract them. Don't use the sum when one circle is inside the other.
+
+#419 solve-geo33-g088 — Two congruent circles with centers O and M are externally tangent. Each has radius 7 cm. MA and MB are tangent to the circle with center O at A and B. What is the smaller angle AOB? — SOURCE ONLY / RECONCILE
+Paragraph counts: 6/3/4/4 -> 6/3/4/4; source words 736 -> 749.
+BEFORE: Two congruent circles, with centers O and M, touch each other from the outside. Each one has a radius of seven centimeters. M A and M B are tangent to the circle with center O, at A and B. What is the smaller angle A O B?
+AFTER: Two congruent circles, with centers O and M, are externally tangent. That means they touch each other from the outside. Each one has a radius of seven centimeters. M A and M B are tangent to the circle with center O, at A and B. What is the smaller angle A O B?
+BEFORE: The lower triangle, O B M, is the same triangle, so the angle at M there is thirty too. This time we went backwards, from the sides to the angle.
+AFTER: The kite is symmetric about O M. So the lower triangle, O B M, matches the upper one, and its angle at M is thirty too. This time we went backwards, from the sides to the angle.
+
+#421 solve-geo33-g090 — The sides of triangle ABC are 12 cm, 35 cm and 37 cm. What is the circumference of the circle circumscribed about the triangle (in cm)? — SOURCE ONLY / RECONCILE
+Paragraph counts: 5/8/1 -> 5/8/1; source words 612 -> 627.
+BEFORE: Let's check Pythagoras. Does twelve squared plus thirty-five squared equal thirty-seven squared? Twelve squared is a hundred forty-four. For thirty-five squared, split the second thirty-five into thirty and five. Thirty-five times thirty is three times thirty-five, a hundred five, times ten: a thousand fifty. Thirty-five times five is half of three hundred fifty, a hundred seventy-five. Add them: a thousand two hundred twenty-five. Add the hundred forty-four, and we get a thousand three hundred sixty-nine.
+AFTER: Let's check Pythagoras. Does twelve squared plus thirty-five squared equal thirty-seven squared? Twelve squared is a hundred forty-four. For thirty-five squared, split the second thirty-five into thirty and five. Thirty-five times thirty is three times thirty-five, a hundred five, times ten: a thousand fifty. For thirty-five times five, first find thirty-five times ten, three hundred fifty. Five is half of ten, so halve three hundred fifty. That gives a hundred seventy-five. Add them: a thousand two hundred twenty-five. Add the hundred forty-four, and we get a thousand three hundred sixty-nine.
+
+#423 solve-geo33-g092 — Three circles with centers A, B and C are externally tangent to one another. Their radii are 6 cm, 14 cm and 15 cm, respectively. What is the length of the highlighted arc of the circle with center A (in cm)? — SOURCE ONLY / RECONCILE
+Paragraph counts: 6/5/3 -> 6/5/3; source words 600 -> 606.
+BEFORE: Three circles with centers A, B and C touch one another from the outside. Their radii are six centimeters, fourteen centimeters and fifteen centimeters. What is the length of the highlighted arc of the circle with center A, in centimeters?
+AFTER: Three circles with centers A, B and C are externally tangent. That means they touch one another from the outside. Their radii are six centimeters, fourteen centimeters and fifteen centimeters. What is the length of the highlighted arc of the circle with center A, in centimeters?
+
+#424 geo-093 — Advanced Circles — SOURCE ONLY / RECONCILE
+Paragraph counts: 1/5 -> 1/5/5/5; source words 195 -> 450.
+BEFORE: We'll explain each one in the question that uses it. Let's start. [pause] Okay. I'll see you in the next video.
+AFTER: First, let's practise choosing the two areas. The order of subtraction depends on the picture.
+Here the two radii are both two, with a right angle between them. We want the shaded segment between chord A B and the arc.
+The quarter circle contains the triangle and the shaded segment. So take the whole quarter circle, then remove triangle A O B. What's left is the shaded segment.
+The full circle has area pi times two squared, four pi. Ninety degrees is a quarter of the circle. Four pi divided by four is pi, so the quarter is pi.
+The triangle is right, with legs of two. Its area is two times two, divided by two. That's two.
+So the shaded area is pi minus two. We subtract the triangle because it's the piece inside the sector that we don't want.
+Now the shaded parts are outside the circle but inside this triangle. The base is four, and the height is the radius, two. The angle at O is ninety degrees.
+This time the whole triangle contains a quarter circle and the shaded parts. Take the triangle, then remove the quarter circle. The shaded parts are what remain.
+The triangle's area is four times two, divided by two, which is four.
+The radius is two again, so the quarter circle's area is pi, just as before.
+So this shaded area is four minus pi. Same subtraction method, but the whole shape is different. First name the whole region. Then name the piece you remove. Don't always subtract in the same order. Now let's use this in the questions, and I'll see you in the next video.
+
+#425 solve-geo33-g094 — AB is tangent to a circle with center O and radius 6 cm. Given: OA=OB and angle AOB is 90°. What is the area inside triangle AOB but outside the circle (in cm²)? — SOURCE ONLY / RECONCILE
+Paragraph counts: 11/3/9/8 -> 11/3/9/8; source words 984 -> 1008.
+BEFORE: We stop halfway, and we use what we already know to rule out choices. This is called a partial calculation. In this question the triangle is exactly thirty-six. We take away a sector, a quarter of a circle with radius six. Its area is some number times pi. So here the answer must be thirty-six, minus some number of pi.
+AFTER: We stop halfway, and we use what we already know to rule out choices. This is called a partial calculation. In this question the triangle is exactly thirty-six. We take away a sector, a quarter of a circle with radius six. Its area is some number times pi. The choices are already written without brackets, with the two area parts separate. So here the answer must be thirty-six, minus some number of pi. If a choice has brackets, expand them before comparing its parts.
+
+#426 solve-geo33-g095 — ABC is a right triangle whose sides AB and AC are tangent to a circle with center O at B and D, respectively. B, O, E and C lie on one straight line, and E is on the circle. Given: OE=EC=4 cm. What is the area of the shaded region between CD, CE and the minor arc DE (in cm²)? — SOURCE ONLY / RECONCILE
+Paragraph counts: 9/5/7 -> 9/5/7; source words 729 -> 746.
+BEFORE: [pause] Should we find the sector now? In the last question we stopped halfway and looked at the choices. Here the triangle is eight root three. We take away a sector of this circle, so its area is some number of pi. So we're looking for eight root three, minus a number of pi.
+AFTER: [pause] Should we find the sector now? In the last question we stopped halfway and looked at the choices. Here the triangle is eight root three. We take away a sector of this circle, so its area is some number of pi. So we're looking for eight root three, minus a number of pi. These choices already have the two area parts separate, so we can compare the triangle part first.
+
+#434 solve-geo33-g101 — A smaller circle lies inside a larger circle and is internally tangent to it at A. AB is a diameter of the larger circle, AC is a diameter of the smaller circle, and CB=10 cm. The area inside the larger circle but outside the smaller one is 65pi cm². What is the radius of the smaller circle (in cm)? — SOURCE ONLY / RECONCILE
+Paragraph counts: 5/5/6/2 -> 5/5/6/2; source words 729 -> 738.
+BEFORE: A smaller circle lies inside a larger circle and touches it from the inside at A. A B is a diameter of the larger circle, A C is a diameter of the smaller circle, and C B is ten centimeters. The area inside the larger circle but outside the smaller one is sixty-five pi. What is the radius of the smaller circle?
+AFTER: A smaller circle lies inside a larger circle and is internally tangent to it at A. That means they touch from the inside at A. A B is a diameter of the larger circle, A C is a diameter of the smaller circle, and C B is ten centimeters. The area inside the larger circle but outside the smaller one is sixty-five pi. What is the radius of the smaller circle?
+
+#465 pt51-intro — Psychometric Thinking — PUBLISHED / READY
+Paragraph counts: 1/2/2/3/4/2/3/2 -> 1/2/2/3/4/2/3/2; source words 512 -> 521.
+BEFORE: From now on, when you do your homework, solve every question two ways. The mathematical way, and the psychometric way.
+AFTER: When you do your homework, practice both ways when both fit the question. The mathematical way, and the psychometric way. Don't force a second method if it adds nothing.
+
+#473 solve-pt-q04-2 — A cylinder is inscribed in a cube whose edge is 3a (see figure). What is the volume of the cylinder? (Part 2 of 2) — PUBLISHED / READY
+Paragraph counts: 1/8/5 -> 1/8/5; source words 540 -> 558.
+BEFORE: Every choice is a number times a to the power of three. The cube's volume is twenty-seven times that same positive quantity. So we can compare the numbers in front of it. Pi is a little more than three. We'll use three to estimate those numbers.
+AFTER: Every choice is a number times a to the power of three. The cube's volume is twenty-seven times that same positive quantity. So we can compare the numbers in front of it. Pi is more than three. We'll use three to estimate those numbers. This makes each choice smaller. If even that smaller amount is above twenty-seven, the real choice is too big too.
+
+#475 pt51-intro-wrap — Thinking vs Calculating — PUBLISHED / READY
+Paragraph counts: 1/2/2/3/3 -> 1/2/2/3/3; source words 252 -> 259.
+BEFORE: Remember, when you solve at home, solve the mathematical way, and also the psychometric way. That opens the most options for you on the exam.
+AFTER: Remember, when you solve at home, practice the mathematical way and the psychometric way when both are useful. That gives you more options on the exam, without repeating work for no reason.
+
+#484 pt51-plug-numbers-4 — Let's continue with what is always true, and a special kind of choice. — PUBLISHED / READY
+Paragraph counts: 1/3/7/6/4 -> 1/3/7/6/4/4; source words 757 -> 858.
+BEFORE: [No worked example here]
+AFTER: Now let's see cannot be determined in numbers. Given, x plus y is six. What is x minus y?
+Try x equals one and y equals five. One plus five is six, so they fit the given. But one minus five is minus four.
+Now try x equals two and y equals four. Two plus four is six, so this pair fits too. Two minus four is minus two.
+Both pairs fit the same given, but the requested answers are different. So the given doesn't fix x minus y. It cannot be determined. Two different results are enough to show that.
+
+#493 pt51-estimation-2 — Estimation (Part 2 of 2) — PUBLISHED / READY
+Paragraph counts: 1/7/4/4/4 -> 1/7/4/4/4; source words 577 -> 586.
+BEFORE: Now the trap. An estimate works only when the choices are far apart. Look at twenty-nine times forty-one. The choices are one thousand one hundred eighty-nine, one thousand one hundred ninety-six, one thousand two hundred four, and one thousand two hundred twelve.
+AFTER: Now the trap. A rough estimate may not separate close choices. Look at twenty-nine times forty-one. The choices are one thousand one hundred eighty-nine, one thousand one hundred ninety-six, one thousand two hundred four, and one thousand two hundred twelve.
+BEFORE: So before you estimate, look at the choices. If they're far apart, estimate. If they're close, calculate, or check the last digit. [pause] Okay. I'll see you in the next video.
+AFTER: So before you estimate, look at the choices. If they're far apart, a rough estimate may be enough. Close choices need tighter bounds, an exact calculation, or another check, like the last digit. [pause] Okay. I'll see you in the next video.
+
+#499 solve-pt-q20 — 1/5+1/62/5+2/6=? — PUBLISHED / READY
+Paragraph counts: 6/5 -> 6/5; source words 366 -> 367.
+BEFORE: So every part of the bottom is twice its partner on the top, and the whole bottom is twice the whole top. Why? Two fifths plus two sixths is two times, the bracket one fifth plus one sixth. And a number over twice itself is always one half.
+AFTER: So every part of the bottom is twice its partner on the top, and the whole bottom is twice the whole top. Why? Two fifths plus two sixths is two times, the bracket one fifth plus one sixth. And a nonzero number over twice itself is always one half.
+
+PER-LESSON FRESH-READ LEDGER
+Numbers are snapshot ordinals; stable IDs are authoritative.
+#400 geo-074 — Circle Vocabulary (Part 1 of 3) — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#401 geo-074-2 — Circle Vocabulary (Part 2 of 3) — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#402 geo-074-3 — Circle Vocabulary (Part 3 of 3) — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#406 geo-077 — Tangents — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#407 solve-geo33-g078 — PD and PE are tangent to the circle at D and E. A lies on the major arc DE. Given: angle DPE is 68°. What is angle DAE? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#408 solve-q-r26-t33-02 — A circle is inscribed in a right triangle whose legs are 8 cm and 15 cm. What is the radius of the circle (in cm)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#409 geo-079 — Area and Circumference — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#410 solve-geo33-g080 — The numerical value of a circle’s area in cm² is 4 times as much as the numerical value of its circumference in cm. What is its radius (in cm)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#411 solve-q-r26-t33-03 — The circumference of a circle increases by 50%. By what percent does its area increase? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#412 geo-081 — Sectors and Arcs — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#413 solve-geo33-g082 — A circle with center O has radius 10 cm. The highlighted arc AB has length 4pi cm. What is α? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#414 solve-geo33-g083 — A circle with center O has radius 3 cm. Two non-overlapping shaded sectors have central angles of 40° and 120°. What is their total area (in cm²)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#415 geo-084 — Circles in Questions — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#416 solve-geo33-g085 — AB is a diameter of a circle with center O, and AB=20 cm. Given: angle AOC is 120°. What is the area of the shaded triangle OBC (in cm²)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#417 solve-geo33-g086 — An isosceles triangle ABC is inscribed in a circle with center O, with AB=AC. Given: angle BAC is 56°. What is angle ABO? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#418 solve-geo33-g087 — AE is a diameter of a circle with center O. B, C and D lie on the same semicircle, in that order. Given: AB=BC=CD=DE ; AO=5text cm Which of the following statements is not true? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#419 solve-geo33-g088 — Two congruent circles with centers O and M are externally tangent. Each has radius 7 cm. MA and MB are tangent to the circle with center O at A and B. What is the smaller angle AOB? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#420 solve-geo33-g089 — The circumference of the smaller circle is 10pi cm, and the shaded area inside the larger circle but outside the smaller one is 39pi cm². Between which two values is the circumference of the larger circle (in cm)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#421 solve-geo33-g090 — The sides of triangle ABC are 12 cm, 35 cm and 37 cm. What is the circumference of the circle circumscribed about the triangle (in cm)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#422 solve-geo33-g091 — A circle has radius √35 cm. Its central angles are alpha and beta in turn, five of each, as in the figure. One sector with angle alpha and one sector with angle beta are shaded. What is their total area (in cm²)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#423 solve-geo33-g092 — Three circles with centers A, B and C are externally tangent to one another. Their radii are 6 cm, 14 cm and 15 cm, respectively. What is the length of the highlighted arc of the circle with center A (in cm)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#424 geo-093 — Advanced Circles — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#425 solve-geo33-g094 — AB is tangent to a circle with center O and radius 6 cm. Given: OA=OB and angle AOB is 90°. What is the area inside triangle AOB but outside the circle (in cm²)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#426 solve-geo33-g095 — ABC is a right triangle whose sides AB and AC are tangent to a circle with center O at B and D, respectively. B, O, E and C lie on one straight line, and E is on the circle. Given: OE=EC=4 cm. What is the area of the shaded region between CD, CE and the minor arc DE (in cm²)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#427 solve-geo33-g096 — A semicircle has center K and radius r. M and N lie on its curved boundary, and angle KMN is 60°. What is the ratio of the perimeter of the semicircle to the perimeter of triangle KMN? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#428 solve-geo33-g097 — Square KLMN is circumscribed about a circle, and square PQRS is inscribed in the circle. What is the ratio of the area of PQRS to the area of KLMN? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#429 geo-097-after — Three Nested Shapes — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#430 geo-097-after-2 — Let's continue with nested shapes. — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#431 solve-geo33-g098 — A circle with center O has radius 8 cm. A, G, F, E and D lie on the same arc, in that order. B and C lie on the arc AD that does not contain F. Given: angle ABF=28° ; angle FCD=57° ; angle GOE=80° What is the sum of the lengths of the highlighted arcs AG and ED (in cm)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#432 solve-geo33-g099 — Two congruent circles with centers O and P have radius 6 cm and intersect at A and B. The minor arc AB is one quarter of the circumference of each circle. What is the area of the union of the two circles (in cm²)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#433 solve-geo33-g100 — A circle with center O has radius 4 cm. The opposite sides AD and BC of rectangle ABCD are tangent to the circle at E and F, respectively. The area of the rectangle equals the area of the circle. What is the length of BC (in cm)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#434 solve-geo33-g101 — A smaller circle lies inside a larger circle and is internally tangent to it at A. AB is a diameter of the larger circle, AC is a diameter of the smaller circle, and CB=10 cm. The area inside the larger circle but outside the smaller one is 65pi cm². What is the radius of the smaller circle (in cm)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#435 solve-geo33-g102 — ABC is an isosceles triangle. Given: AB=AC ; angle BAC=4thetatext degrees, where 0<theta<45 B lies on a circle with center O and radius r. AB and BC meet the circle again at D and E, respectively. What is the length of the arc DE that does not contain B? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#436 r26-t33-more-tools — More Circle Tools — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#437 r26-t33-more-tools-2 — Let's continue with more circle tools. — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#438 r26-t33-more-tools-3 — Here's one more circle tool. — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#439 solve-q-r26-t33-04 — In a circle with center O and radius 6 cm, angle AOB is 60°. What is the area of the shaded region between chord AB and arc AB (in cm²)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#440 solve-q-r26-t33-05 — Two circles with centers A and B touch each other from the outside. Their radii are 8 cm and 2 cm. A line touches the two circles at D and C, as in the figure. What is the length of DC (in cm)? — BASELINE READ; current restore reconciliation pending, NOT newly cleared
+#465 pt51-intro — Psychometric Thinking — EDITED / PUBLISHED / READY
+#466 solve-pt-q01 — √19,044=? (Part 1 of 2) — BASELINE READY unchanged; no must/should finding in fresh read
+#467 solve-pt-q01-2 — √19,044=? (Part 2 of 2) — BASELINE READY unchanged; no must/should finding in fresh read
+#468 solve-pt-q02 — Basket A contains 500 eggs, and basket B contains 600 eggs. How many eggs must be moved from basket A to basket B so that basket A will contain 9/13 of the number of eggs in basket B? (Part 1 of 2) — BASELINE READY unchanged; no must/should finding in fresh read
+#469 solve-pt-q02-2 — Basket A contains 500 eggs, and basket B contains 600 eggs. How many eggs must be moved from basket A to basket B so that basket A will contain 9/13 of the number of eggs in basket B? (Part 2 of 2) — BASELINE READY unchanged; no must/should finding in fresh read
+#470 solve-pt-q03 — Given: a≠0 and b≠0 (a²+b²+(a-b)²)/(2ab)+1=? (Part 1 of 2) — BASELINE READY unchanged; no must/should finding in fresh read
+#471 solve-pt-q03-2 — Given: a≠0 and b≠0 (a²+b²+(a-b)²)/(2ab)+1=? (Part 2 of 2) — BASELINE READY unchanged; no must/should finding in fresh read
+#472 solve-pt-q04 — A cylinder is inscribed in a cube whose edge is 3a (see figure). What is the volume of the cylinder? (Part 1 of 2) — BASELINE READY unchanged; no must/should finding in fresh read
+#473 solve-pt-q04-2 — A cylinder is inscribed in a cube whose edge is 3a (see figure). What is the volume of the cylinder? (Part 2 of 2) — EDITED / PUBLISHED / READY
+#474 solve-pt-q05 — Two fair dice, one blue and one red, are tossed. What is the probability that the number obtained on the blue die will be at least as large as the number obtained on the red die? — BASELINE READY unchanged; no must/should finding in fresh read
+#475 pt51-intro-wrap — Thinking vs Calculating — EDITED / PUBLISHED / READY
+#476 pt51-plug-answers — Plugging In the Answers — BASELINE READY unchanged; no must/should finding in fresh read
+#477 solve-pt-q06 — x is an integer. Given: x²<25 ; 3x+6<0 x=? — BASELINE READY unchanged; no must/should finding in fresh read
+#478 solve-pt-q07 — Nadav and Amit have a total of 90 cards. Nadav has more cards than Amit. The difference between the numbers of cards the two of them have is equal to 1/5 of the number of cards Nadav has. How many cards does Nadav have? — BASELINE READY unchanged; no must/should finding in fresh read
+#479 solve-pt-q08 — Kobi bought a pair of pants at a 50% discount and a shirt at a 10% discount, and paid a total of 280 shekels instead of 500 shekels. What was the price of the shirt before the discount (in shekels)? — BASELINE READY unchanged; no must/should finding in fresh read
+#480 solve-pt-q09 — If Ron gives Miri 4 stamps, the number of stamps she has will be 2 times the number of stamps he will have. If it is known that the two of them now have the same number of stamps, how many stamps does Miri have now? — BASELINE READY unchanged; no must/should finding in fresh read
+#481 pt51-plug-numbers — Plugging In Numbers (Part 1 of 3) — BASELINE READY unchanged; no must/should finding in fresh read
+#482 pt51-plug-numbers-2 — Plugging In Numbers (Part 2 of 3) — BASELINE READY unchanged; no must/should finding in fresh read
+#483 pt51-plug-numbers-3 — Plugging In Numbers (Part 3 of 3) — BASELINE READY unchanged; no must/should finding in fresh read
+#484 pt51-plug-numbers-4 — Let's continue with what is always true, and a special kind of choice. — EDITED / PUBLISHED / READY
+#485 solve-pt-q10 — Given: x≥4 √x+2-√(x²-8x+16)=? — BASELINE READY unchanged; no must/should finding in fresh read
+#486 solve-pt-q11 — In the accompanying figure, ABC is a right triangle, and DBC is an isosceles triangle (DB=DC). Given: AB bisects angle DBC. Based on this information and the information in the figure, beta=? — BASELINE READY unchanged; no must/should finding in fresh read
+#487 solve-pt-q12 — a is a positive integer. a!·(a+2)!=? — BASELINE READY unchanged; no must/should finding in fresh read
+#488 solve-pt-q13 — One pen contains x cm³ of ink. To write one word, y cm³ of ink are needed. Hagai's supply of pens was enough for him to write x³y words. How many pens did Hagai have? — BASELINE READY unchanged; no must/should finding in fresh read
+#489 solve-pt-q14 — Dana bought a dress at a discount of 40 shekels. The price of the dress after the discount was x shekels. What was the discount on the dress, in percent? — BASELINE READY unchanged; no must/should finding in fresh read
+#490 solve-pt-q15 — Orit and Batya decided to go on a trip and to share the expenses. Each of them undertook to pay 1/2 of the total. In the end, Orit paid only 1/3 of the amount she had undertaken to pay, and Batya paid all the rest of the expenses. What is the ratio between the amount of money Batya actually paid and the amount of money she undertook to pay? — BASELINE READY unchanged; no must/should finding in fresh read
+#491 solve-pt-q24 — Given: x≠-5 xy+5y=2x+10 y=? — BASELINE READY unchanged; no must/should finding in fresh read
+#492 pt51-estimation — Estimation (Part 1 of 2) — BASELINE READY unchanged; no must/should finding in fresh read
+#493 pt51-estimation-2 — Estimation (Part 2 of 2) — EDITED / PUBLISHED / READY
+#494 solve-pt-q16 — AOB is a sector of a circle with center O and a radius of 2 cm. Based on this information and the information in the figure, what is the area of the shaded region (in cm²)? — BASELINE READ; new concurrent version NOT reviewed
+#495 solve-pt-q17 — √2/(2+√2)=? — BASELINE READY unchanged; no must/should finding in fresh read
+#496 solve-pt-q18 — In the accompanying figure, each of the vertices of rectangle ABCD is the center of a circle with a radius of 2 cm. Point O is the center of a circle that is tangent to the four quarter circles and to sides AD and BC of the rectangle. What is the area of rectangle ABCD (in cm²)? — BASELINE READY unchanged; no must/should finding in fresh read
+#497 solve-pt-q19 — Bottle A contains 3.2 liters of a solution with an alcohol concentration of 20%. Bottle B contains 2 liters of a solution with an alcohol concentration of 3%. How many liters of alcohol are there in the two bottles together? — BASELINE READY unchanged; no must/should finding in fresh read
+#498 pt51-insights — Insight Questions — BASELINE READY unchanged; no must/should finding in fresh read
+#499 solve-pt-q20 — 1/5+1/62/5+2/6=? — EDITED / PUBLISHED / READY
+#500 solve-pt-q21 — Roni has 60,000 shekels. He invests half of the money in a savings plan that yields a profit of 8% per year. He invests the rest of the money in a mutual fund that yields a profit ranging from 4% to 16% per year. Roni's profit in the coming year will be at least ____ of the total amount he invested, and at most ____ of the total amount he invested. — BASELINE READY unchanged; no must/should finding in fresh read
+#501 solve-pt-q22 — In the accompanying figure, ABCD is a square. Based on this information and the information in the figure, what is the difference between the perimeter of quadrilateral ABED and the perimeter of triangle ECD (in cm)? — BASELINE READY unchanged; no must/should finding in fresh read
+#502 solve-pt-q23 — In a certain season, a basketball team won 30% of its first 40 games. From the 41st game on, the team won all of its games until the end of the season, and as a result, its overall winning percentage rose to 50%. How many games in total did the team win in this season? — BASELINE READY unchanged; no must/should finding in fresh read
+#503 pt51-understanding — Understanding — BASELINE READY unchanged; no must/should finding in fresh read
+
+QA AND PRESERVATION
+Fresh video_status.py --list record plus no original takes before edits/regeneration; fresh guards again for all six published IDs. No recording, reread job, video, cut manifest, or status ledger changed.
+Initial full-course private typed/HW builds succeeded; 77 ai_check OK in each; initial math33/51 checks 0 problems/warnings. Initial changed-slide direct Chrome layouts 62 slides / 492 items / 0 problems both modes. All 139 initial changed-slide native states personally inspected. Found/fixed two diagram-layer issues and awkward handwritten commas. Initial QA is NOT approval of subsequent concurrent Circles restores.
+A later global build encountered an unrelated in-progress topic25 source/JSON cue mismatch. Did not edit t25. Final selected-topic private previews check 33/51 only, not unrelated base videos. Five final published targets match their successful initial full-course video objects exactly; the sixth contains the reviewed comma-format repair.
+Final t51 ai_check 39 OK each mode. Final math33/51 checks 0 problems/0 warnings; that data lint is not a claim to approve all latest Circles teaching. Final direct Chrome layouts for six published parts: 29 slides / 144 items / 0 problems in both modes. Generated 156 native reveal frames; all 40 changed-slide states personally inspected after final build. 1200/1189 legible. Preview checks are not final spoken-video timing checks.
+Exact final Reading Studio browser test: 532 lessons / 7,525 paragraphs map to their display text. Targeted/long paragraphs tested at 3 sizes in camera and audio layouts: no overflow. Full/patch fake WAV capture, exact text/IDs, next/back, mistake/pause and read-lines toggle passed. Fake data stayed in isolated browser memory, not real take folders.
+Publication: DATA changes only six lessons plus version stamp; recording UI/JS unchanged. Hybrid merged only those six video objects. All other video objects, questions, choices/answers, course order, recorded flags, and camera defaults preserved. Published bytes match tested files. Original backups/receipts: workspace work/deep-review-2026-10-22/pair-01.
+
+NEEDS CLAUDE / NEXT
+Finish concurrent restores and post exact changed IDs on COORDINATION.md. Retain new geo-077 and geo-093 worked teaching. Reconcile source/JSON/question data and then re-review new Circles scripts and solve-pt-q16. Pair1 cannot be marked fully complete yet.
+Some new prompter maths is only partly converted by the existing formatter (e.g. '3 + 2, five', 'four minus pi'). No shared display registry or formatter changed. If needed add scoped mathematical displays through the normal registry, preserving speech and rerunning recorder tests.
+Nice-only additions: none implemented. No new unrelated methods/tricks.
+Published t51 word delta: 145. Main growth: four-paragraph worked cannot-be-determined case.
+

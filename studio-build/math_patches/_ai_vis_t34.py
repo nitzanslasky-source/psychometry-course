@@ -1631,7 +1631,7 @@ video('geo-105', 'lesson', slides=[
         "is sixty minus eighteen, forty-two. The same answer.",
         show(p105L_6, 'ten minus four'), show(p105L2['miss'], 'and it\'s three high'), show(p105L_7, 'Six times three is eighteen'),
         show(p105L_8, 'sixty minus eighteen')),
-      L("So when a polygon has no formula, look for lines that cut it into shapes you know. Or close it into a big "
+      L("So when no familiar area formula fits, look for lines that cut the polygon into shapes you know. Or complete it to a big "
         "shape, and take away what's missing.")),
     S('The regular hexagon',
       L("For two regular polygons, there's one cut we always use. The first one is the regular hexagon. Like in the "
@@ -2935,7 +2935,7 @@ video('solve-geo34-g116', 'solution', qid='geo34-g116', slides=[
       L("The sum of the interior angles of a polygon is one thousand four hundred forty. How many sides does it have?",
         pt('stem', 'The sum of the interior angles', 'hl', 6.0), voice='calm', pause=0.5),
       L("So we go from the sum back to the number of sides, like in the lesson. We'll solve it in two different ways, the "
-        "math way, and then by understanding, with an anchor."),
+        "math way, and then by understanding, starting from an angle sum we know."),
       L("Let's start with the math way. The sum of the angles is one hundred eighty times the bracket, n minus two. Here the sum is one "
         "thousand four hundred forty. So one hundred eighty times the bracket, n minus two is equal to one thousand four hundred forty.",
         show(f116r1, 'So one hundred eighty times the bracket, n minus two')),
@@ -2951,7 +2951,7 @@ video('solve-geo34-g116', 'solution', qid='geo34-g116', slides=[
         mk('cross', 'choice 4', "it's choice number four"), show(f116r5, 'n is eight plus two'),
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
     SM('Method 2 · Understanding: an anchor', 'An anchor',
-      L("Now by understanding, with an anchor. Which sums do we know by heart? A triangle is one hundred eighty, and a "
+      L("Now by understanding. Let's start from an angle sum we know. A triangle is one hundred eighty, and a "
         "quadrilateral is three hundred sixty. Like in the lesson, a pentagon is five hundred forty, a hexagon is seven "
         "hundred twenty, and an octagon is one thousand eighty.", show(f116s1, 'a pentagon is five hundred forty')),
       L("One thousand four hundred forty isn't one we know. But the octagon is close. And one thousand four hundred forty "

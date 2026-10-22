@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "Two congruent circles, with centers O and M, touch each other from the outside. Each one has a radius of seven centimeters. M A and M B are tangent to the circle with center O, at A and B. What is the smaller angle A O B?",
+    "say": "Two congruent circles, with centers O and M, are externally tangent. That means they touch each other from the outside. Each one has a radius of seven centimeters. M A and M B are tangent to the circle with center O, at A and B. What is the smaller angle A O B?",
     "voice": "calm",
     "at": [
      "Two congruent circles"
@@ -93,10 +93,10 @@
     ]
    },
    {
-    "say": "The lower triangle, O B M, is the same triangle, so the angle at M there is thirty too. This time we went backwards, from the sides to the angle.",
+    "say": "The kite is symmetric about O M. So the lower triangle, O B M, matches the upper one, and its angle at M is thirty too. This time we went backwards, from the sides to the angle.",
     "at": [
      "The lower triangle",
-     "so the angle"
+     "M, matches the"
     ]
    }
   ],

@@ -1,0 +1,43 @@
+CURRENT RECORDING STUDIO — SPOKEN ENGLISH / CLARITY CHECK, 22 OCTOBER 2026
+
+Scope and review coverage
+532 lessons on the current page; 225 live Record lessons with no original takes.
+207 of those match scripts personally reviewed in the completed P/Q/G–L and 19 October clarity work. Exact paragraph comparison, not approval based on titles. These were not all reread from scratch today.
+The remaining 18 full current scripts were personally read again. Their IDs are the eligible rows with empty prior_exact in the workspace inventory. Additional cross-course checks looked for vague slogans, idioms, long sentences, headline speech, and overbroad plugging-in advice; flagged passages were considered in context, not automatically rewritten.
+
+Edits: 18 paragraphs in 13 lessons, all freshly Record/no original takes before editing and regeneration. Those lessons' total speech changes from 6,286 to 6,319 words, +33 words (0.53%). Same methods, examples, question data, answers, paragraph positions and exam terminology. No recorded speech, takes, finished videos or ledger changed.
+
+Before -> after
+#253 solve-wp24-g072, 4.2–4.3: "A small part needs a big whole" -> name the identical overlap, compare its fractions (1/9 versus 1/4), explain why the whole chess club is bigger, then flip the fractions for the same 9:4 ratio.
+#259 solve-wp24-g076, 4.4: "we'd just write thirty-three" -> 33% is only an estimate of 1/3; do not round near 100%, since that can change whether an overlap is forced.
+#281 wp-086-2, 3.5/3.7: "heavy side gets the small part" -> the test's score has more weight, so the average is closer to 80. Keep the one-unit distance and 80−10=70. Matching board reminder now says "More weight: closer to the average."
+#282 wp-086-3, 3.7: replace abstract heavy/light shares with the actual shirt groups and dollar distances: more shirts at $30, average $6 above $30 and $14 below $50.
+#283 solve-wp25-g087, 2.5/3.2: name the written exam's double weight and the average's distance from 61; the 85 trap is too close to the score with less weight, 97.
+#284 solve-wp25-g088, 1.8: name 91 as the score with more weight, then keep the one-unit distance and 91−6=85.
+#285 solve-wp25-g089, 3.4: name the bigger group at 78 before using its shorter distance to the average; same 2×4=8 and 78−8=70.
+#293 wp-094-2, 2.1/6.4: "stretch the workers" -> compare their work over the same number of hours, then add the work; recap uses the same concrete wording. Existing example and methods unchanged.
+#446 geo-105, 3.6: "when a polygon has no formula" -> when no familiar area formula fits, cut it into known shapes or complete a bigger shape and subtract. Same method, not a claim that no formula exists.
+#459 solve-geo34-g116, 1.2/2.1: unexplained "anchor" in speech -> start from an angle sum we know. Same 1,080 -> 1,260 -> 1,440 method and board labels retained.
+#479 solve-pt-q08, 1.2: remove discouraging "few students really manage" and vague "fits everything"; say we try a shirt price and check whether discounted prices add to 280. Same answer tests, equations alternative and shortcut retained.
+#488 solve-pt-q13, 1.5: remove blanket "Different letters, different numbers." Say those values still tie the choices. Original easy trials and reason for switching remain, consistent with the revised plugging-in lesson.
+#505 ch52-intro-2, 4.3: "pull out one value" -> "read one value from the chart," also on the board.
+
+Safeguards and checks
+- Source specs and generated scripts updated, not an HTML-only patch that a rebuild would lose.
+- Both fresh full private preview builds: all 225 eligible lesson alignment checks OK.
+- Both topic math checks (24/25/26/34/51): 188 questions, 97 videos touched, zero problems/warnings. Topic 52 is not covered by that standalone checker; its current charts were reviewed in L, and this change is wording only.
+- Both direct preview layout checks for all 13 changed lessons: 50 slides/444 items, zero problems.
+- Native handwriting previews: 13 lessons/360 states, zero render failures. All 145 states on changed slides personally inspected across 19 contact sheets.
+- All 18 revised paragraphs read against their prompter notation and planned screens. Existing scoped maths displays remain; no global formatter or display-registry edit.
+- Browser tests: every rendered paragraph matches its display data (532 lessons/7,521 paragraphs); selected audio/camera layouts at three sizes have zero overflow. Full/patch fake WAV tests, original patch indices, next/back, mistake, pause and reading-line toggle pass. Fake test files captured in memory only, never saved into real recordings. Zero browser errors.
+- Publication changes only the 13 lesson objects plus the Reading Studio version stamp. All other lesson payloads, UI/recorder code, question/answer data, order, camera defaults and correction tasks preserved. Recorded lesson source hashes unchanged.
+
+Publication
+Same Downloads/Reading-Studio.html and matching Psychometric-Teacher-Studio-v19-hybrid.html, following fresh final eligibility/hash gates. Refresh the recording page only between takes.
+Original HTMLs, original script JSONs, source backups, exact before/after changes, all checks and publication receipts:
+/Users/nitzanslasky/Documents/Codex/2026-10-11/https-github-com-nitzanslasky-source-psychometry/work/spoken-review-2026-10-22/
+
+For Claude
+Keep these six topic specs (24/25/26/34/51/52), their 13 generated JSONs and the revised phrase/cue anchors on rebuild. The shared HTML is already updated by Codex under the teacher's direct request. No further publication needed for these edits. Do not reintroduce the blanket different-letters rule in worked questions.
+
+This is clarity review of the current unrecorded studio scripts, not final recording/video QA or approval of unseen future topics. No additional methods or long lesson expansion.

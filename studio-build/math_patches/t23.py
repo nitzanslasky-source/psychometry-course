@@ -1244,28 +1244,31 @@ def rn_guided(M):
         ])])
 
     # ---------- G8 wp23-g062: 50% of 15% of x = 12, 22.5% of x? -> 36  ==>  25% of 18% of y = 9, 13.5% of y? -> 27
+    #            ==> (22 Oct 2026, Hebrew restore: the target is a fraction-table percent again, 37.5% = 3/8)
+    #                25% of 30% of y = 9, 37.5% of y? -> 45 (traps: 15 = an eighth only, 36 = 30% of y, 120 = y)
     g = 'wp23-g062'
-    _rn_q(M, g, '$25\\%$ of $18\\%$ of $y$ equals $9$. What is $13.5\\%$ of $y$?',
-          ['$18$', '$27$', '$22.5$', '$36$'], 2, [
-              '$25\\%$ of $18\\%$ is a quarter of $18\\%$: $4.5\\%$. So $4.5\\%$ of $y$ is $9$.',
-              '$13.5\\%=3\\times4.5\\%$, so $13.5\\%$ of $y$ is $3\\times9=27$. There is no need to find $y$.'])
+    _rn_q(M, g, '$25\\%$ of $30\\%$ of $y$ equals $9$. What is $37.5\\%$ of $y$?',
+          ['$15$', '$36$', '$45$', '$120$'], 3, [
+              '$25\\%$ of $30\\%$ of $y$ is $\\frac14\\cdot\\frac{3}{10}\\cdot y=\\frac{3}{40}y=9$, so $\\frac{1}{40}y=3$ and $y=120$.',
+              '$37.5\\%=\\frac38$ (the fraction table): $\\frac18$ of $120$ is $15$, so $\\frac38$ of $120$ is $3\\times15=45$.',
+              'Or swap the order: $25\\%$ of $30\\%$ is a quarter of $30\\%$, $7.5\\%$. So $7.5\\%$ of $y$ is $9$. $37.5\\%=5\\times7.5\\%$, so $37.5\\%$ of $y$ is $5\\times9=45$. There is no need to find $y$.'])
     _rn_video(M, g, None, [
         (None, [
-            "Twenty-five percent of eighteen percent of y is nine. \"Of\" means times — so it's all one multiplication.",
-            D('Write "1/4 × 9/50 × y = 9"'),
-            "Twenty-five percent: a quarter. Eighteen percent: eighteen hundredths — nine fiftieths.",
-            D('Write "9y/200 = 9 → y = 200"'),
-            "Nine two-hundredths of y is nine. So one two-hundredth of y is one, and y is two hundred.",
-            D('Write "13.5% of 200 = 20 + 6 + 1 = 27" and circle choice 2'),
-            "Thirteen and a half percent of two hundred: ten percent is twenty, three percent is six, half a percent is one. Twenty-seven. Choice two.",
+            "Twenty-five percent of thirty percent of y is nine. \"Of\" means times — so it's all one multiplication.",
+            D('Write "1/4 × 3/10 × y = 9"'),
+            "Twenty-five percent: a quarter. Thirty percent: thirty hundredths — three tenths.",
+            D('Write "3y/40 = 9 → y = 120"'),
+            "Three fortieths of y is nine. So one fortieth of y is three, and y is a hundred twenty.",
+            D('Write "37.5% = 3/8: 3/8 of 120 = 3 × 15 = 45" and circle choice 3'),
+            "Thirty-seven and a half percent is three eighths. An eighth of a hundred twenty is fifteen, three eighths is forty-five. Choice three.",
         ]),
         (None, [
             "Now the trick. a percent of b equals b percent of a — you can swap them. It's one multiplication. Thirty-seven percent of sixty-four is sixty-four percent of thirty-seven.",
-            "So twenty-five percent of eighteen: just a quarter of eighteen. Four and a half.",
-            D('Write "4.5% of y = 9"'),
-            "Four and a half percent of y is nine.",
-            D('Write "13.5% = 3 × 4.5% → 3 × 9 = 27" and circle choice 2'),
-            "Thirteen and a half is exactly three times four and a half. So three times nine: twenty-seven. We never even needed y.",
+            "So twenty-five percent of thirty: just a quarter of thirty. Seven and a half.",
+            D('Write "7.5% of y = 9"'),
+            "Seven and a half percent of y is nine.",
+            D('Write "37.5% = 5 × 7.5% → 5 × 9 = 45" and circle choice 3'),
+            "Thirty-seven and a half is exactly five times seven and a half. So five times nine: forty-five. We never even needed y.",
         ])])
 
     # ---------- G9 wp23-g063: not equal to 15% of 4x (10% of 6x, 60% of x, 5% of 12x, 30% of 4x)

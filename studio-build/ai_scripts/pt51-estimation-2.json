@@ -122,9 +122,9 @@
   ],
   [
    {
-    "say": "Now the trap. An estimate works only when the choices are far apart. Look at twenty-nine times forty-one. The choices are one thousand one hundred eighty-nine, one thousand one hundred ninety-six, one thousand two hundred four, and one thousand two hundred twelve.",
+    "say": "Now the trap. A rough estimate may not separate close choices. Look at twenty-nine times forty-one. The choices are one thousand one hundred eighty-nine, one thousand one hundred ninety-six, one thousand two hundred four, and one thousand two hundred twelve.",
     "at": [
-     "estimate works only",
+     "rough estimate may",
      "Look at twenty-nine times",
      "The choices are one thousand",
      "one hundred eighty-nine"
@@ -145,7 +145,7 @@
     ]
    },
    {
-    "say": "So before you estimate, look at the choices. If they're far apart, estimate. If they're close, calculate, or check the last digit. [pause] Okay. I'll see you in the next video.",
+    "say": "So before you estimate, look at the choices. If they're far apart, a rough estimate may be enough. Close choices need tighter bounds, an exact calculation, or another check, like the last digit. [pause] Okay. I'll see you in the next video.",
     "at": [
      "So before you estimate",
      "at the choices"

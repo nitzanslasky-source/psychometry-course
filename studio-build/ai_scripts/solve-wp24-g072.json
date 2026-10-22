@@ -125,9 +125,9 @@
      "the givens. The"
     ]
    },
-   "Remember the rule. When the same amount is a part of two different wholes, the ratio of the wholes is the parts, flipped. A small part needs a big whole.",
+   "Remember the flip rule. The overlap is the same number of students in both clubs. But it's a smaller fraction of the chess club, one ninth rather than one quarter. So the whole chess club must be bigger.",
    {
-    "say": "A ninth is the smaller part, so chess is the bigger club. Chess to robotics is nine to four.",
+    "say": "We flip the two fractions to get the ratio of the whole clubs. Chess to robotics is nine to four.",
     "at": [
      "Chess to robotics is nine to four"
     ]

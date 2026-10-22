@@ -30,9 +30,10 @@
     ]
    },
    {
-    "say": "Every choice is a number times a to the power of three. The cube's volume is twenty-seven times that same positive quantity. So we can compare the numbers in front of it. Pi is a little more than three. We'll use three to estimate those numbers.",
+    "say": "Every choice is a number times a to the power of three. The cube's volume is twenty-seven times that same positive quantity. So we can compare the numbers in front of it. Pi is more than three. We'll use three to estimate those numbers. This makes each choice smaller. If even that smaller amount is above twenty-seven, the real choice is too big too.",
     "at": [
-     "We'll use three to estimate"
+     "We'll use three to estimate",
+     "This makes each"
     ]
    },
    {

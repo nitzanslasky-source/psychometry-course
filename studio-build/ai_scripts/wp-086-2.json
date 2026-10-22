@@ -87,7 +87,7 @@
     ]
    },
    {
-    "say": "The heavy side gets the small part. So the average is one unit from eighty. Eighty minus ten is seventy.",
+    "say": "The test has more weight, so the average is closer to eighty. It's one unit from eighty. Eighty minus ten is seventy.",
     "at": [
      "Eighty minus ten",
      "is seventy"
@@ -104,10 +104,10 @@
     ]
    },
    {
-    "say": "So remember. The heavy side gets the small part of the gap. [pause] Okay. I'll see you in the next part.",
+    "say": "So remember, the score with more weight is closer to the average. [pause] Okay. I'll see you in the next part.",
     "at": [
-     "The heavy side gets the small part of the gap",
-     "small part of"
+     "the score with more weight is closer",
+     "is closer to"
     ]
    }
   ]

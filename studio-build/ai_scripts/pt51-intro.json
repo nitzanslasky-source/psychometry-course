@@ -127,19 +127,15 @@
   ],
   [
    {
-    "say": "From now on, when you do your homework, solve every question two ways. The mathematical way, and the psychometric way.",
+    "say": "When you do your homework, practice both ways when both fit the question. The mathematical way, and the psychometric way. Don't force a second method if it adds nothing.",
     "at": [
-     "you do your",
-     "solve every question two ways",
-     "The mathematical way"
+     "practice both ways",
+     "fit the question",
+     "The mathematical way",
+     "Don't force a"
     ]
    },
-   {
-    "say": "That's the right way to learn and to practice. Let's start with a sample question. [pause] Okay. I'll see you in the next video.",
-    "at": [
-     "That's the right"
-    ]
-   }
+   "That's the right way to learn and to practice. Let's start with a sample question. [pause] Okay. I'll see you in the next video."
   ]
  ]
 }

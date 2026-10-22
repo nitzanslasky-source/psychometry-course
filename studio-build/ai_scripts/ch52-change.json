@@ -172,6 +172,26 @@
      "So at the"
     ]
    },
+   {
+    "say": "Now let's bring the line back, to see how it fooled us here. Into week four, the line is flat, so it looks like no change. But the point of week four is plus five, so five volunteers joined.",
+    "at": [
+     "bring the line back",
+     "see how it",
+     "Into week four, the line is flat",
+     "like no change",
+     "But the point of week four",
+     "four is plus"
+    ]
+   },
+   {
+    "say": "Into week five, the line goes down, so it looks like a drop. But the point is zero, so nothing changed. So a flat line can still be a rise, and a line going down can be no change.",
+    "at": [
+     "Into week five, the line goes down",
+     "goes down, so",
+     "But the point is zero",
+     "so nothing changed"
+    ]
+   },
    "This graph is confusing, so watch this video again if you need to. And remember the one rule. Ignore the line, and look only at the points.",
    "That's the last type of chart. Next, we'll solve full chart sets. I'll see you in the next video."
   ]

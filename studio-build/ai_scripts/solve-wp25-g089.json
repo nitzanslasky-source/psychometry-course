@@ -83,17 +83,35 @@
     ]
    },
    {
-    "say": "So sixty-eight, choice number two, and sixty-six, choice number four, are out.",
+    "say": "So sixty-eight, choice number two, and sixty-six, choice number three, are out.",
     "at": [
      "choice number two",
-     "choice number four",
+     "choice number three",
      "are out"
     ]
    },
    {
-    "say": "Sometimes that alone gives the answer. Here two choices are left, seventy and seventy-two. So we need one more step, the seesaw.",
+    "say": "Choice number four says the average cannot be determined from the information given. Remember, an answer cannot be determined only when the givens allow different answers.",
     "at": [
-     "Sometimes that alone"
+     "Choice number four says",
+     "average cannot be",
+     "the givens allow"
+    ]
+   },
+   {
+    "say": "But here every number we need is given, the size of each group and its average. With a calculator, we'd find the average right away. So it has one exact value. Choice number four is just there to scare us, so it's out.",
+    "at": [
+     "need is given",
+     "So it has one exact value",
+     "just there to",
+     "so it's out"
+    ]
+   },
+   {
+    "say": "Only seventy, choice number one, is left. We found it without calculating anything, only from the idea that the average is closer to the bigger group.",
+    "at": [
+     "number one, is",
+     "that the average"
     ]
    }
   ],
@@ -101,7 +119,6 @@
    {
     "say": "[pause] Now by understanding, with the seesaw. The weights are eight to twelve, so two to three. So the distances are three to two.",
     "at": [
-     "Now by",
      "Now by understanding",
      "The weights are eight to twelve",
      "so two to three",
@@ -123,7 +140,7 @@
     ]
    },
    {
-    "say": "The heavy side, seventy-eight, gets the small part, two units. Two times four is eight. Seventy-eight minus eight is seventy.",
+    "say": "The group at seventy-eight is bigger, so the average is closer to seventy-eight, two units away. Two times four is eight. Seventy-eight minus eight is seventy.",
     "at": [
      "Two times four",
      "Seventy-eight minus eight",

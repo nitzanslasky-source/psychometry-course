@@ -1628,9 +1628,9 @@ video('solve-wp24-g072', 'solution', qid='wp24-g072', slides=[
     S('Method 3 · Understanding: the flip rule',
       L("[pause] And now by understanding, with the flip rule from percents. We start again from the givens. The same "
         "students are a ninth of chess and a quarter of robotics."),
-      L("Remember the rule. When the same amount is a part of two different wholes, the ratio of the wholes is the parts, "
-        "flipped. A small part needs a big whole."),
-      L("A ninth is the smaller part, so chess is the bigger club. Chess to robotics is nine to four.",
+      L("Remember the flip rule. The overlap is the same number of students in both clubs. But it's a smaller fraction "
+        "of the chess club, one ninth rather than one quarter. So the whole chess club must be bigger."),
+      L("We flip the two fractions to get the ratio of the whole clubs. Chess to robotics is nine to four.",
         show(g72f1, 'Chess to robotics is nine to four')),
       L("Let's check with nine and four. A ninth of nine is one, and a quarter of four is one. The same one student is in "
         "both.", show(g72f2, 'A ninth of nine is one')),
@@ -2013,22 +2013,25 @@ video('solve-q-r26-t24-01', 'solution', qid='q-r26-t24-01', slides=[
 # percent (1/3 = 33%, "I wrote 33 and not 33 and a third, the third is negligible unless near 100"); "this is what you
 # do! in the exam, convert to percent". APPLICATION (R37): must an overlap exist? (the smallest-overlap rule, wp-068), fractions -> percent (wp-068 part 2). W17: every
 # choice read in full first.
+# W23 (2026-10-22): night shifts 3/10 -> 1/3, so her "write 33, not 33 and a third: the third only matters right next to
+# 100, and 33 + 75 is far above it" acts on a fraction that is in the question again.
 g76r = I('g76r', 'Over the whole? $\\ $An overlap must exist', size=28, col=1)
-g76a = IH('g76a', 'not new $\\frac{3}{4}$, $\\ $not nights $\\frac{7}{10}$', size=34)
-g76b = IH('g76b', '$\\frac{15}{20}+\\frac{14}{20}=\\frac{29}{20}>1$', size=34, col=1)
-g76c = IH('g76c', '$\\frac{6}{20}+\\frac{15}{20}=\\frac{21}{20}>1$', size=34, col=1)
+g76a = IH('g76a', 'not new $\\frac{3}{4}$, $\\ $not nights $\\frac{2}{3}$', size=34)
+g76b = IH('g76b', '$\\frac{9}{12}+\\frac{8}{12}=\\frac{17}{12}>1$', size=34, col=1)
+g76c = IH('g76c', '$\\frac{4}{12}+\\frac{9}{12}=\\frac{13}{12}>1$', size=34, col=1)
 g76d = IH('g76d', '$\\frac{1}{4}+\\frac{3}{4}=1$', size=34, col=1)
-g76e = IH('g76e', '$20$ nurses: $\\ 5$ new, $\\ 15$ drive', size=28)
-g76f = IH('g76f', '$\\frac{5}{10}+\\frac{7}{10}=\\frac{12}{10}>1$', size=34, col=1)
-g76g = IH('g76g', 'nights $30$, $\\ $drive $75$, $\\ $new $25$, $\\ $part time $50$', size=28)
-g76h = IH('g76h', 'not new $75$, $\\ $not nights $70$', size=28, col=1)
-g76i = IH('g76i', '(1) $\\ 75+70=145$', size=28, col=1)
-g76j = IH('g76j', '(2) $\\ 30+75=105$', size=28, col=1)
+g76e = IH('g76e', '$12$ nurses: $\\ 3$ new, $\\ 9$ drive', size=28)
+g76f = IH('g76f', '$\\frac{3}{6}+\\frac{4}{6}=\\frac{7}{6}>1$', size=34, col=1)
+g76g = IH('g76g', 'nights $33$, $\\ $drive $75$, $\\ $new $25$, $\\ $part time $50$', size=28)
+g76h = IH('g76h', 'not new $75$, $\\ $not nights $67$', size=28, col=1)
+g76i = IH('g76i', '(1) $\\ 75+67=142$', size=28, col=1)
+g76j = IH('g76j', '(2) $\\ 33+75=108$', size=28, col=1)
+g76m = IH('g76m', 'with the third: $\\ 108\\frac{1}{3}$, $\\ $far above $100$', size=28, col=1)
 g76k = IH('g76k', '(3) $\\ 25+75=100$', size=28, col=1)
-g76l = IH('g76l', '(4) $\\ 50+70=120$', size=28, col=1)
+g76l = IH('g76l', '(4) $\\ 50+67=117$', size=28, col=1)
 video('solve-wp24-g076', 'solution', qid='wp24-g076', slides=[
     S('Method 1 · The math way: add the fractions',
-      L("Of a hospital's nurses, three tenths work night shifts, three quarters drive to work, one quarter are new, and "
+      L("Of a hospital's nurses, one third work night shifts, three quarters drive to work, one quarter are new, and "
         "one half work part time. Which statement is not necessarily true?", pt('stem', "Of a hospital's nurses", 'hl', 8.0),
         voice='calm', pause=0.5),
       L("Every choice says that at least one nurse is in two groups at once. So every choice claims that an overlap must "
@@ -2038,50 +2041,53 @@ video('solve-wp24-g076', 'solution', qid='wp24-g076', slides=[
         "groups add up to more than the total. Here the givens are fractions, so like in the lesson, the total is one.",
         show(g76r, 'Only when the two groups add up')),
       L("Choice number one says, at least one nurse who is not new does not work night shifts. Not new is one minus a "
-        "quarter, three quarters. Not nights is one minus three tenths, seven tenths.", pt('choice 1', 'Choice number one says'),
+        "quarter, three quarters. Not nights is one minus a third, two thirds.", pt('choice 1', 'Choice number one says'),
         show(g76a, 'Not new is one minus a quarter')),
-      L("Three quarters is fifteen twentieths, and seven tenths is fourteen twentieths. Together, that's twenty-nine twentieths. "
-        "That's more than one, so an overlap must exist.", show(g76b, 'Three quarters is fifteen twentieths')),
+      L("Three quarters is nine twelfths, and two thirds is eight twelfths. Together, that's seventeen twelfths. "
+        "That's more than one, so an overlap must exist.", show(g76b, 'Three quarters is nine twelfths')),
       L("So the statement is true. They ask for the one that's not necessarily true, so choice number one is out.",
         mk('cross', 'choice 1', 'so choice number one is out'))),
     S('Method 1 · The math way: add the fractions',
-      L("Choice number two says, at least one night-shift nurse drives to work. Three tenths plus three quarters. Six "
-        "twentieths plus fifteen twentieths is twenty-one twentieths. More than one, so it's true, and choice number two "
-        "is out.", pt('choice 2', 'Choice number two says'), show(g76c, 'Six twentieths plus fifteen'),
+      L("Choice number two says, at least one night-shift nurse drives to work. A third plus three quarters. Four "
+        "twelfths plus nine twelfths is thirteen twelfths. More than one, so it's true, and choice number two "
+        "is out.", pt('choice 2', 'Choice number two says'), show(g76c, 'Four twelfths plus nine'),
         mk('cross', 'choice 2', "so it's true, and choice number two")),
       L("Choice number three says, at least one new nurse drives to work. A quarter plus three quarters is exactly one. "
         "It's not more than one.", pt('choice 3', 'Choice number three says'), show(g76d, 'A quarter plus three quarters')),
       L("Exactly one doesn't force an overlap. The two groups can sit side by side. Let's see it in numbers. Say there are "
-        "twenty nurses. A quarter, five, are new. Three quarters, fifteen, drive.", show(g76e, 'Say there are twenty nurses')),
-      L("The five new nurses come by bus, and the other fifteen drive. Every fraction still works, and no new nurse "
+        "twelve nurses, because twelve splits into thirds and quarters. A quarter, three, are new. Three quarters, nine, "
+        "drive.", show(g76e, 'Say there are twelve nurses')),
+      L("The three new nurses come by bus, and the other nine drive. Every fraction still works, and no new nurse "
         "drives. So choice number three is not necessarily true.")),
     S('Method 1 · The math way: add the fractions',
       L("In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four says, at least "
-        "one part-time nurse does not work night shifts. A half plus seven tenths is five tenths plus seven tenths, twelve "
-        "tenths. More than one, so it's true.", pt('choice 4', 'Choice number four says'), show(g76f, 'five tenths plus seven tenths'),
+        "one part-time nurse does not work night shifts. A half plus two thirds is three sixths plus four sixths, seven "
+        "sixths. More than one, so it's true.", pt('choice 4', 'Choice number four says'), show(g76f, 'three sixths plus four sixths'),
         mk('cross', 'choice 4', "More than one, so it's true")),
       L("Choice number three is our answer. And if two groups add up to less than one, then no overlap is forced either. "
         "The smallest overlap is zero, never negative.", mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · Insight: work in percent',
       L("[pause] Now an insight, the one from the lesson. Adding fractions takes time, and percents are much faster. We "
         "start again from the givens, and turn every fraction into percent. Again, we need the claim that isn't forced."),
-      L("Three tenths is thirty percent. Three quarters is seventy-five percent. A quarter is twenty-five percent, and a "
-        "half is fifty percent.",
-        show(g76g, 'Three tenths is thirty percent')),
-      L("Not new is a hundred minus twenty-five, seventy-five. Not nights is a hundred minus thirty, seventy.",
-        show(g76h, 'Not new is a hundred minus')),
-      L("If a fraction were a third, we'd just write thirty-three. The small part we drop only matters when a sum lands "
-        "right next to a hundred.")),
+      L("A third is thirty-three and a third percent. Let's write just thirty-three, and in a moment we'll see why that's "
+        "fine. Three quarters is seventy-five percent. A quarter is twenty-five percent, and a half is fifty percent.",
+        show(g76g, 'A third is thirty-three')),
+      L("Not new is a hundred minus twenty-five, seventy-five. Not nights is a hundred minus thirty-three, sixty-seven.",
+        show(g76h, 'Not new is a hundred minus'))),
     S('Method 2 · Insight: work in percent',
-      L("Choice number one says at least one nurse who is not new does not work night shifts. Seventy-five plus seventy "
-        "is a hundred forty-five. That's more than a hundred, so the overlap is forced. Choice number two says at least "
-        "one night-shift nurse drives to work. Thirty plus seventy-five is a hundred five. Again, the overlap is forced.",
-        show(g76i, 'Seventy-five plus seventy'), show(g76j, 'Thirty plus seventy-five'))),
+      L("Choice number one says at least one nurse who is not new does not work night shifts. Seventy-five plus sixty-seven "
+        "is a hundred forty-two. That's more than a hundred, so the overlap is forced. Choice number two says at least "
+        "one night-shift nurse drives to work. Thirty-three plus seventy-five is a hundred eight. Again, the overlap is forced.",
+        show(g76i, 'Seventy-five plus sixty-seven'), show(g76j, 'Thirty-three plus seventy-five')),
+      L("Now, why could we drop the third of a percent? With it, choice number two would be a hundred eight and a third. "
+        "Dropping the third changes a sum by less than one. So it matters only when the sum lands right next to a hundred, like "
+        "ninety-nine and a bit. A hundred eight is far above a hundred, so the overlap is forced with or without the third.",
+        show(g76m, 'With it, choice number two would be'))),
     S('Method 2 · Insight: work in percent',
       L("Choice number three says at least one new nurse drives to work. Twenty-five plus seventy-five is exactly a "
         "hundred, so the overlap isn't forced. Choice number four says at least one part-time nurse does not work night "
-        "shifts. Fifty plus seventy is a hundred twenty, more than a hundred. That overlap is forced.",
-        show(g76k, 'Twenty-five plus seventy-five'), show(g76l, 'Fifty plus seventy')),
+        "shifts. Fifty plus sixty-seven is a hundred seventeen, more than a hundred. That overlap is forced.",
+        show(g76k, 'Twenty-five plus seventy-five'), show(g76l, 'Fifty plus sixty-seven')),
       L("So in the exam, turn the fractions into percent. Choice number three is our answer, and I'll see you in the next "
         "question.", mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
@@ -2452,18 +2458,18 @@ _clause_rows('solve-q-r26-t24-01', 'q1e',
     ('$59-50=9$', 'Fifty-nine minus fifty is nine'))
 _clause_rows('solve-wp24-g076', 'g76a',
     ('not new: $1-\\frac{1}{4}=\\frac{3}{4}$', 'Not new is one minus a quarter'),
-    ('not nights: $1-\\frac{3}{10}=\\frac{7}{10}$', 'Not nights is one minus three tenths'))
+    ('not nights: $1-\\frac{1}{3}=\\frac{2}{3}$', 'Not nights is one minus a third'))
 _clause_rows('solve-wp24-g076', 'g76e',
-    ('$20$ nurses: $\\ 5$ new', 'A quarter, five, are new'),
-    ('$15$ drive', 'Three quarters, fifteen, drive'))
+    ('$12$ nurses: $\\ 3$ new', 'A quarter, three, are new'),
+    ('$9$ drive', 'Three quarters, nine, drive'))
 _clause_rows('solve-wp24-g076', 'g76g',
-    ('nights: $30\\%$', 'Three tenths is thirty percent'),
+    ('nights: $33\\%$', 'Let\'s write just thirty-three'),
     ('drive: $75\\%$', 'Three quarters is seventy-five percent'),
     ('new: $25\\%$', 'A quarter is twenty-five percent'),
     ('part time: $50\\%$', 'a half is fifty percent'))
 _clause_rows('solve-wp24-g076', 'g76h',
     ('not new: $100-25=75\\%$', 'Not new is a hundred minus twenty-five'),
-    ('not nights: $100-30=70\\%$', 'Not nights is a hundred minus thirty'))
+    ('not nights: $100-33=67\\%$', 'Not nights is a hundred minus thirty-three'))
 # Keep the four conversions in two readable columns, clear of the choices.
 for _sl in VIDEOS['solve-wp24-g076']['slides']:
     for _ln in _sl['lines']:
@@ -2698,7 +2704,7 @@ STEMS = {
  "wp24-g074": "At a gallery opening with 360 guests, 45% know the artist and 70% know the gallery owner. What is the minimum number of guests who know both?",
  "wp24-g075": "A class has 52 students. Of them, 24 help in the library and 13 help in the kitchen. Which of the following could be the number of students who help in neither place?",
  "q-r26-t24-01": "A club has 50 members. Of them, 32 swim and 27 run. At least how many members swim but do not run?",
- "wp24-g076": "Of a hospital's nurses, $\\frac{3}{10}$ work night shifts, $\\frac34$ drive to work, $\\frac14$ are new, and $\\frac12$ work part time. Which statement is not necessarily true?",
+ "wp24-g076": "Of a hospital's nurses, $\\frac13$ work night shifts, $\\frac34$ drive to work, $\\frac14$ are new, and $\\frac12$ work part time. Which statement is not necessarily true?",
  "q-r26-t24-02": "In a school, $40\\%$ of the students are in the upper grades and the rest are in the lower grades. $30\\%$ of the upper-grade students and $60\\%$ of the lower-grade students walk to school. What percent of the students who walk to school are in the upper grades?",
  "q-r26-t24-03": "In a survey, $80\\%$ of the people own a phone, $75\\%$ own a laptop, and $70\\%$ own a tablet. At least what percent of the people own all three?",
 }   # word stems: "given" = the story, "ask" = the question sentence

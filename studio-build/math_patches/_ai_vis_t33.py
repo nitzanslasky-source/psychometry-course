@@ -1938,9 +1938,30 @@ f3t5 = PIN(GEO('f3t5', [
 f3k9 = I('f3k9', '1. Radius to the point of tangency $\\perp$ tangent: draw it', size=30, col=0)
 f3k10 = I('f3k10', '2. From one outside point, the two tangent segments are equal: a kite', size=30, col=0)
 
+# The joining-centers construction is reused in g088, g092 and the common-tangent question.
+# Teach its two cases before those applications; no computed distance in a base figure.
+f3join_out = PIN(GEO('f3join_out', [
+    ('line', [('circ',150,150,90),('circ',300,150,60),
+              ('dot',150,150,'O',-12,28),('dot',300,150,'P',8,28),('dot',240,150,'T',0,28)]),
+    ('radii', [('seg',150,150,240,150,'teal',4),('seg',240,150,300,150,'orange',4),
+               ('txt',195,130,'3','teal',26),('txt',270,130,'2','orange',26)]),
+],vb='35 30 350 245',w=520,col=0,title='External tangency: the radii meet end to end'))
+f3join_in = PIN(GEO('f3join_in', [
+    ('line', [('circ',180,160,120),('circ',252,160,48),
+              ('dot',180,160,'O',-12,28),('dot',252,160,'P',0,28),('dot',300,160,'T',18,12)]),
+    ('radii', [('seg',180,160,300,160,'teal',4),('seg',252,160,300,160,'orange',5),
+               ('txt',235,105,'OT = 5','teal',22),('txt',276,145,'2','orange',24)]),
+],vb='35 20 300 285',w=480,col=0,title='Internal tangency: the small radius lies inside the big radius'))
+LEFT(f3join_out,y=240,x=390,w=520);LEFT(f3join_in,y=230,x=405,w=470)
+f3join_a = IH('f3join_a','$OP=3+2=5$',size=34,col=1)
+f3join_b = IH('f3join_b','$OP=5-2=3$',size=34,col=1)
+f3join_rule1 = I('f3join_rule1','Outside: add the radii',size=30,col=1)
+f3join_rule2 = I('f3join_rule2','Inside: subtract the radii',size=30,col=1)
+ROWS(290,90,f3join_a,f3join_rule1);ROWS(290,90,f3join_b,f3join_rule2)
+
 video('geo-077', 'lesson', slides=[
     S('Tangents',
-      L("Now let's learn about tangents to a circle. It's a short lesson, with two rules that come up a lot.")),
+      L("Now let's learn two useful rules about tangents. Then we'll see what to draw when two circles touch.")),
     S('Touches at one point',
       L("A tangent is a straight line that touches the circle at one point only. It doesn't go inside the circle.",
         show(f3t1['line'], 'A tangent is a straight line'), show(f3t1['tan'], 'that touches the circle at one point'),
@@ -1994,6 +2015,23 @@ video('geo-077', 'lesson', slides=[
         "sides next to each other, so it's a kite, five, five, twelve, twelve.", show(f3t4['kite'], 'Two pairs of equal sides')),
       L("Remember from the kite lesson, a kite has a line of symmetry. Here it's O P. So O P cuts the angle at P into two "
         "equal halves.", show(f3t4['sym'], 'Here it\'s O P'))),
+    S('Two circles touching outside',
+      L("When two circles touch, join their centers. First, circles that are externally tangent. That means they touch "
+        "from the outside, like these two circles.",show(f3join_out['line'],'like these two circles')),
+      L("Join O to P through the touching point T. O T is a radius of the first circle, three. T P is a radius "
+        "of the second circle, two.",show(f3join_out['radii'],'Join O to P')),
+      L("Those two radii meet end to end. So the distance between the centers is three plus two, five.",show(f3join_a,'five')),
+      L("With circles touching from the outside, add the radii to find the distance between their centers.",
+        show(f3join_rule1,'add the radii'))),
+    S('Two circles touching inside',
+      L("Now circles that are internally tangent. One circle is inside the other, and they share one touching point, T.",
+        show(f3join_in['line'],'One circle is inside the other')),
+      L("The centers and T are on one straight line. The big radius O T is five. It includes O P and the small radius "
+        "P T, which is two.",show(f3join_in['radii'],'The big radius O T is five')),
+      L("We want only O P, the distance between the centers. So take the small radius off the big radius. Five minus "
+        "two is three.",show(f3join_b,'is three')),
+      L("So first check how the circles touch. Outside means add the radii. Inside means subtract them. Don't use the "
+        "sum when one circle is inside the other.",show(f3join_rule2,'Inside means subtract'))),
     S('Two rules',
       L("So we have two important rules for tangents. One, the radius is perpendicular to the tangent at the point of "
         "tangency. So when you see a tangent, draw the radius, and you have ninety degrees.", show(f3k9, 'One, the radius')),
@@ -2207,7 +2245,8 @@ video('solve-q-r26-t33-02', 'solution', qid='q-r26-t33-02', slides=[
 # Hebrew (geo 3655-3719): two very basic formulas, used a lot; S = pi r squared, C = 2 pi r; pi is a letter, the radius we
 # know; what is pi: peel off the circumference, lay it straight, count the diameters: three and a bit -> C is a bit more
 # than 6r -> 2 pi a bit more than 6 -> pi a bit more than 3; pi is a fixed number, not an unknown like x; it isn't round,
-# so we write a letter (her 3.14 / 6.28 move is said with "a bit more than three", teacher 2026-10-14: no decimals);
+# so we write a letter; pi = 3.14159... is said again (Hebrew restore 2026-10-22: g089 needs 3.14 / 3.15),
+# "a bit more than three" stays the rough tool (no decimal estimates);
 # examples: r -> S and C ("I put 5 in place of the radius"), C -> r ("the formula backwards"), S -> r (r squared, the root,
 # minus not relevant). The course's numbers: r 6 -> 36 pi, 12 pi; C 22 pi -> 11; S 121 pi -> 11. Kept from the English
 # lesson: only the area has r squared (units), "keep the pi", the wheels. Added: the diameter 14 trap example (R5) and a
@@ -2238,6 +2277,7 @@ f3b4 = IH('f3b4', '$C=3d+$ a bit $=6r+$ a bit', size=30, col=1)
 f3b5 = I('f3b5', '$2π$: a bit more than $6$', size=30, col=1)
 f3b6 = I('f3b6', '$π$: a bit more than $3$', size=34, col=1)
 f3b7 = I('f3b7', '$π$ is a fixed number, not an unknown like $x$', size=28, col=0)
+f3b7b = I('f3b7b', '$π=3.14159\\ldots$', size=30, col=0)
 
 # ---- 2026-10-18 batch C: why S = pi r squared - eight equal slices laid in a row make almost a rectangle (r by pi r)
 def _f3x_slices():
@@ -2358,9 +2398,9 @@ video('geo-079', 'lesson', slides=[
     S('π is a number',
       L("So pi is a number. It's a fixed number, always the same. It's not an unknown like x or y in an equation.",
         show(f3b7, "It's a fixed number")),
-      L("It just isn't a round number. Its digits after the decimal point never end, so instead of writing them, we give it a special sign, the letter pi. That's easier to write and easier to see in the formula.", pt('f3b7', 'It just isn')),
+      L("It just isn't a round number. Pi is three point one four one five nine, and so on. Its digits after the decimal point never end, so instead of writing them, we give it a special sign, the letter pi. That's easier to write and easier to see in the formula.", show(f3b7b, 'Pi is three point one four one five nine')),
       L("So the area, pi r squared, is a bit more than three times r squared. For a rough comparison, like the next one, "
-        "that's all we need to know about pi. It's a bit more than three.", show(f3b8, 'is a bit more than three times')),
+        "that's all we need to know about pi. It's a bit more than three. We need its first digits, three point one four, only when the choices are close ranges of numbers.", show(f3b8, 'is a bit more than three times'), pt('f3b7b', 'We need its first digits')),
       L("For example, is four pi more than twelve? Four times three is twelve, and pi is a bit more than three, so four pi is "
         "a bit more than twelve. Yes.", show(f3b9, 'is four pi more than twelve')),
       L("And when the answers have pi in them, keep the pi. Don't replace it with a rounded decimal.", show(f3b10, 'keep the pi'))),
@@ -3432,7 +3472,7 @@ ROWS(280, 70, f5g88y1, f5g88y2, f5g88y3, f5g88y4)
 NOFIG33.add(('solve-geo33-g088', 3))
 video('solve-geo33-g088', 'solution', qid='geo33-g088', slides=[
     S('Radius to the tangent',
-      L("Two congruent circles, with centers O and M, touch each other from the outside. Each one has a radius of seven "
+      L("Two congruent circles, with centers O and M, are externally tangent. That means they touch each other from the outside. Each one has a radius of seven "
         "centimeters. M A and M B are tangent to the circle with center O, at A and B. What is the smaller angle A O B?",
         pt('stem', 'Two congruent circles', 'hl', 11.0), voice='calm', pause=0.5),
       L("We need an angle, but the only number we have is a length, the radius seven. [short pause] Let's use the math "
@@ -3468,7 +3508,7 @@ video('solve-geo33-g088', 'solution', qid='geo33-g088', slides=[
         "leg. The silver triangle doesn't fit here, because its hypotenuse is the leg times root two."),
       L("So O A is the short leg, and the angle across from it, at M, is thirty degrees.",
         show(f5g88c['m30'], 'the angle across from it')),
-      L("The lower triangle, O B M, is the same triangle, so the angle at M there is thirty too. This time we went "
+      L("The kite is symmetric about O M. So the lower triangle, O B M, matches the upper one, and its angle at M is thirty too. This time we went "
         "backwards, from the sides to the angle.", show(f5g88c['low'], 'The lower triangle'))),
     S('Angle A O B',
       L("[pause] In each gold triangle, the angles are thirty, sixty and ninety. The thirty is at M and the ninety is at A, "
@@ -3606,9 +3646,11 @@ video('solve-geo33-g089', 'solution', qid='geo33-g089', slides=[
 # triangle and asked for the third side; here three sides, and we had to see the right angle"; draw the circle around it;
 # A is an inscribed angle; an inscribed angle on a diameter is 90, and the other way: an inscribed angle of 90 must rest
 # on a diameter -> BC is a diameter; the circumference: no need to halve 13 and double again, 2πr = 2r · π = diameter
-# times π -> 13π. English numbers 12, 35, 37 (not a well-known triple, so the squares are worked out) -> 37π.
+# times π -> 13π. English numbers 9, 12, 15 (2026-10-22 Hebrew restore: 3-4-5 times 3, so her "spot the triple" step
+# works; was 12, 35, 37 -> 37π) -> 15π. Kept: the Pythagoras check as the fallback, the difference of squares as a tool
+# for big sides, the traps 30π (d as r) and 7.5π (no 2). Her "this is new: three sides, see the right angle" said.
 # V3: rule one on two generic triangles (acute, obtuse), each getting its dashed circle (variations); the copy: the
-# squares typed beside it; the right angle at A; the dashed circumscribed circle drawn in; BC traced teal with d = 37;
+# triple rows (9 = 3 x 3 ...) beside it; the right angle at A; the dashed circumscribed circle; BC traced teal with d = 15;
 # the circumference row; the traps in red.
 f6gA1, f6gB1, f6gC1 = gpt(110, 100, 70, 100), gpt(110, 100, 70, 215), gpt(110, 100, 70, 330)
 f6gA2, f6gB2, f6gC2 = gpt(330, 100, 70, 140), gpt(330, 100, 70, 220), gpt(330, 100, 70, 70)
@@ -3620,40 +3662,37 @@ f6g90r = PIN(GEO('f6g90r', [
     ('one', [('txt', 220, 196, 'one circle for every triangle', 'teal', 22)]),
 ], vb='30 22 380 190', w=460, title='Every triangle has a circumscribed circle'))
 _R(f6g90r, 380, x=1070)
-f6A0, f6B0, f6C0, f6O0 = (280.0, 300.0), (364.0, 300.0), (280.0, 55.0), (322.0, 177.5)
+f6A0, f6B0, f6C0, f6O0 = (254.0, 281.0), (409.25, 281.0), (254.0, 74.0), (331.625, 177.5)   # 9 : 12 : 15, unit 17.25
 f6g90 = PIN(GEO('f6g90', [
     ('line', [f6_seg(f6A0, f6B0), f6_seg(f6B0, f6C0), f6_seg(f6C0, f6A0), f6_name(f6A0, 'A', -16, 14), f6_name(f6B0, 'B', 16, 14),
-              f6_name(f6C0, 'C', -12, -16), ('txt', 322, 322, '12', 'ink', 24), ('txt', 258, 178, '35', 'ink', 24),
-              ('txt', 348, 150, '37', 'ink', 24)]),
+              f6_name(f6C0, 'C', -12, -16), ('txt', 331, 303, '9', 'ink', 24), ('txt', 234, 178, '12', 'ink', 24),
+              ('txt', 352, 160, '15', 'ink', 24)]),
     ('right', [('tint', [f6A0, f6B0, f6C0], 'teal'), ('right', f6A0[0], f6A0[1], 0, 90, 22)]),
-    ('circ', [('circ', f6O0[0], f6O0[1], 129.5, 'teal', 3, True)]),
+    ('circ', [('circ', f6O0[0], f6O0[1], 129.375, 'teal', 3, True)]),
     ('diam', [f6_seg(f6B0, f6C0, 'teal', 6), ('dot', *f6O0)]),
 ], vb='182 22 280 314', w=300, title='Triangle ABC and its circumscribed circle'))
 LEFT(f6g90, y=280, x=430, w=300)
-f6g90x1 = IH('f6g90x1', '$12^2 = 144$', size=28)
-f6g90x2 = IH('f6g90x2', '$35^2 = 35 \\times 35 = 1225$', size=28)
-f6g90x3 = IH('f6g90x3', '$144 + 1225 = 1369$', size=28)
-f6g90x4 = IH('f6g90x4', '$37 \\times 30 = 1110$', size=28)
-f6g90x5 = IH('f6g90x5', '$37 \\times 7 = 259$', size=28)
-f6g90x6 = IH('f6g90x6', '$37^2 = 1110 + 259 = 1369$', size=28)
-f6g90x7 = IH('f6g90x7', '$BC = d = 37$', size=28)
+f6g90x1 = IH('f6g90x1', '$9 = 3 \\times 3$', size=28)
+f6g90x2 = IH('f6g90x2', '$12 = 3 \\times 4$', size=28)
+f6g90x3 = IH('f6g90x3', '$15 = 3 \\times 5$', size=28)
+f6g90x4 = IH('f6g90x4', 'the triple $3, 4, 5$ times $3$', size=26)
+f6g90x5 = IH('f6g90x5', '$9^2 + 12^2 = 81 + 144 = 225$', size=26)
+f6g90x6 = IH('f6g90x6', '$15^2 = 225$', size=28)
+f6g90x7 = IH('f6g90x7', '$BC = d = 15$', size=28)
 f6g90x8a = IH('f6g90x8a', '$C = 2πr = π \\times d$', size=28)
-f6g90x8 = IH('f6g90x8', '$C = π \\times 37 = 37π$', size=28)
-f6g90x9 = IH('f6g90x9', '$2π \\times 37 = 74π$: d used as r', size=28)
-f6g90x10 = IH('f6g90x10', '$π \\times 18.5 = 18.5π$: no 2', size=26)
-ROWS(290, 56, f6g90x1, f6g90x2, f6g90x3, f6g90x4, f6g90x5, x=820, w=350)
+f6g90x8 = IH('f6g90x8', '$C = π \\times 15 = 15π$', size=28)
+f6g90x9 = IH('f6g90x9', '$2π \\times 15 = 30π$: d used as r', size=28)
+f6g90x10 = IH('f6g90x10', '$π \\times 7.5 = 7.5π$: no 2', size=26)
+ROWS(290, 56, f6g90x1, f6g90x2, f6g90x3, f6g90x4, f6g90x5, x=820, w=370)
 ROWS(290, 56, f6g90x6, f6g90x7, f6g90x8a, f6g90x8, x=1200, w=380)
 for _it, _y in ((f6g90x9, 626), (f6g90x10, 668)): _it['_col'] = 0; _it['_x'] = 410; _it['_y'] = _y
-f6g90fast1 = IH('f6g90fast1', '$35\\times35=1050+175$', size=24)
-f6g90fast2 = IH('f6g90fast2', '$37\\times7=210+49=259$', size=24)
-ROWS(550, 55, f6g90fast1, f6g90fast2, x=1200, w=380)
-f6g90short1 = IH('f6g90short1', '$37^2-35^2=(37-35)(37+35)$', size=28)
-f6g90short2 = IH('f6g90short2', '$=2\\times72=144=12^2$', size=30)
+f6g90short1 = IH('f6g90short1', '$15^2-12^2=(15-12)(15+12)$', size=28)
+f6g90short2 = IH('f6g90short2', '$=3\\times27=81=9^2$', size=30)
 ROWS(330, 65, f6g90short1, f6g90short2, x=1040, w=560)
 NOFIG33.add(('solve-geo33-g090', 1))
 video('solve-geo33-g090', 'solution', qid='geo33-g090', slides=[
     SM('Two rules', 'Two rules',
-      L("The sides of triangle A B C are twelve centimeters, thirty-five centimeters, and thirty-seven centimeters. What is "
+      L("The sides of triangle A B C are nine centimeters, twelve centimeters, and fifteen centimeters. What is "
         "the circumference of the circle circumscribed about the triangle, in centimeters?",
         pt('stem', 'The sides of triangle', 'hl', 8.0), voice='calm', pause=0.5),
       L("A circle circumscribed about a triangle passes through all three of its vertices. But wait, there's no circle in "
@@ -3664,36 +3703,44 @@ video('solve-geo33-g090', 'solution', qid='geo33-g090', slides=[
       L("And here's the second fact. Every triangle has exactly one circle through its three corners. What does that mean? "
         "With these same three corners on the circle, we can't choose a different radius. So this triangle has exactly "
         "one circumscribed circle, and we need to find its size.", show(f6g90r['one'], 'exactly one circle through its three corners')),
-      L("[short pause] So let's look for something special in this triangle. Its sides are twelve, thirty-five and "
-        "thirty-seven.", pt('fig: 35', 'Its sides are twelve'))),
+      L("[short pause] So let's look for something special in this triangle. Its sides are nine, twelve and "
+        "fifteen.", pt('fig: 15', 'Its sides are nine'))),
     SM('The hypotenuse is a diameter', 'A right triangle',
-      L("Let's check Pythagoras. Does twelve squared plus thirty-five squared equal thirty-seven squared? Twelve squared is a hundred forty-four. For thirty-five squared, split the second thirty-five into thirty and five. Thirty-five times thirty is three times thirty-five, a hundred five, times ten: a thousand fifty. Thirty-five times five is half of three hundred fifty, a hundred seventy-five. Add them: a thousand two hundred twenty-five. Add the hundred forty-four, and we get a thousand three hundred sixty-nine.", show(f6g90['line'], "Let's check Pythagoras"),
-        show(f6g90x1, 'Twelve squared is'), show(f6g90fast1, 'Add them: a thousand two hundred twenty-five'), show(f6g90x2, 'a thousand two hundred twenty-five'),
-        show(f6g90x3, 'we get a thousand three hundred sixty-nine')),
-      L("And thirty-seven squared? Split the second thirty-seven into thirty and seven. Thirty-seven times thirty is a thousand one hundred ten. For thirty-seven times seven, thirty times seven is two hundred ten. Seven times seven is forty-nine. Together that's two hundred fifty-nine. Add it to a thousand one hundred ten, and we get a thousand three hundred sixty-nine. The same.",
-        show(f6g90x4, 'Thirty-seven times thirty'), show(f6g90fast2, "Together that's two hundred fifty-nine"), show(f6g90x5, "Together that's two hundred fifty-nine"),
-        show(f6g90x6, 'we get a thousand three hundred sixty-nine. The same')),
-      L("The sides satisfy Pythagoras, so the triangle must be a right triangle. The right angle is across from the longest "
-        "side, thirty-seven. That's the angle at A.", show(f6g90['right'], 'The right angle is across')),
-      L("This is the Pythagorean test we learned in the triangles topic."),
-      L("Use this test when all three sides are given, but no right angle is marked.",
-        pt('f6g90x6', 'Use this test')),
+      L("Do these three numbers look familiar? They all divide by three. Nine is three times three. Twelve is three times "
+        "four. And fifteen is three times five.", show(f6g90['line'], 'Do these three numbers look familiar'),
+        show(f6g90x1, 'Nine is three times three'), show(f6g90x2, 'Twelve is three times'), show(f6g90x3, 'And fifteen is three times five')),
+      L("So the sides are the Pythagorean triple three, four, five, times three. We learned that a triple times any number "
+        "is still a right triangle. So we see the right angle without calculating any squares.",
+        show(f6g90x4, 'So the sides are the Pythagorean triple')),
+      L("If you don't spot the triple, check Pythagoras. Nine squared plus twelve squared is eighty-one plus a hundred "
+        "forty-four, which is two hundred twenty-five. And fifteen squared is two hundred twenty-five too.",
+        show(f6g90x5, 'which is two hundred twenty-five'), show(f6g90x6, 'And fifteen squared is')),
+      L("So the triangle is a right triangle. The right angle is across from the longest side, fifteen. That's the angle "
+        "at A.", show(f6g90['right'], 'The right angle is across')),
+      L("This step is new. Until now, we got a right triangle and found a missing side. Here we get three sides, and we "
+        "have to see the right angle ourselves. So when all three sides are given, but no right angle is marked, look for a "
+        "triple.", pt('f6g90x4', 'This step is new')),
       L("Now let's draw the circle around the triangle, and remember one more rule. The angle at A sits on the circle, so "
         "it's an inscribed angle. We learned that an inscribed angle that lies on a diameter is ninety degrees. And the "
         "other way around. If an inscribed angle is ninety degrees, it must lie on a diameter.",
         show(f6g90['circ'], "let's draw the circle around")),
-      L("So B C, the hypotenuse, is a diameter of the circle. The diameter is thirty-seven.",
-        show(f6g90['diam'], 'is a diameter of the circle'), show(f6g90x7, 'The diameter is thirty-seven')),
-      L("Now we need the circumference of a circle with a diameter of thirty-seven. The formula is two pi r. Two r is the "
+      L("So B C, the hypotenuse, is a diameter of the circle. The diameter is fifteen.",
+        show(f6g90['diam'], 'is a diameter of the circle'), show(f6g90x7, 'The diameter is fifteen')),
+      L("Now we need the circumference of a circle with a diameter of fifteen. The formula is two pi r. Two r is the "
         "diameter, so two pi r is pi times the diameter. We already know the diameter, so let's use it directly. Pi times "
-        "thirty-seven is thirty-seven pi. Choice number two is our answer.",
-        show(f6g90x8a, 'so two pi r is pi times the diameter'), show(f6g90x8, 'Pi times thirty-seven is'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
-    SM('A quicker exam check', 'Avoid the big squares',
-      L("Now let's go back to the Pythagorean check. We can save the big squares with the difference-of-squares formula we know. Thirty-seven squared minus thirty-five squared is thirty-seven minus thirty-five, times thirty-seven plus thirty-five. That's two times seventy-two. Double seventy is a hundred forty, and double two is four: a hundred forty-four. That's twelve squared. So the two shorter sides really do satisfy Pythagoras, without finding twelve twenty-five or thirteen sixty-nine. Careful with the traps. Thirty-seven is the diameter, not the radius. If we put it in as r, two pi times "
-        "thirty-seven gives seventy-four pi, choice number one. And the radius is eighteen and a half. Pi times eighteen "
-        "and a half is eighteen and a half pi, choice number three. It forgets the two. [pause] Okay. I'll see you in "
-        "the next question.", show(f6g90short1, 'Thirty-seven squared minus thirty-five squared'), show(f6g90short2, 'a hundred forty-four. That\'s twelve squared'), show(f6g90x9, 'two pi times thirty-seven gives'), mk('cross', 'choice 1', 'choice number one'),
-        show(f6g90x10, 'Pi times eighteen and a half'), mk('cross', 'choice 3', 'choice number three'))),
+        "fifteen is fifteen pi. Choice number two is our answer.",
+        show(f6g90x8a, 'so two pi r is pi times the diameter'), show(f6g90x8, 'Pi times fifteen is'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
+    SM('A quicker exam check', 'Big sides, no triple',
+      L("Now one more tool, for sides that aren't a triple you know. The difference-of-squares formula checks Pythagoras "
+        "without the big squares. Here it is with our numbers. Fifteen squared minus twelve squared is fifteen minus "
+        "twelve, times fifteen plus twelve. That's three times twenty-seven, which is eighty-one. And eighty-one is nine "
+        "squared. So the check works again. With big sides, this way saves a lot of work.",
+        show(f6g90short1, 'Fifteen squared minus twelve squared'), show(f6g90short2, 'which is eighty-one')),
+      L("Careful with the traps. Fifteen is the diameter, not the radius. If we put it in as r, two pi times "
+        "fifteen gives thirty pi, choice number one. And the radius is seven and a half. Pi times seven "
+        "and a half is seven and a half pi, choice number three. It forgets the two. [pause] Okay. I'll see you in "
+        "the next question.", show(f6g90x9, 'two pi times fifteen gives'), mk('cross', 'choice 1', 'choice number one'),
+        show(f6g90x10, 'Pi times seven'), mk('cross', 'choice 3', 'choice number three'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g091 (Hebrew: alpha and beta in turn)
@@ -3776,12 +3823,13 @@ video('solve-geo33-g091', 'solution', qid='geo33-g091', slides=[
 # by a psychometric idea -> solve; if out of time guess one of them: 1 in 2 instead of 1 in 4; put in the radii 1,1 2,2
 # 3,3; 1+2, 1+3, 2+3 -> 3, 4, 5, a Pythagorean triple -> the angle at A (opposite the hypotenuse 5) is 90; the angle we
 # don't need is 90 = a quarter; the highlighted arc = 3/4 of the circumference; 3/4 of 2π: cancel 2 and 4 -> 1.5π.
-# English numbers 6, 14, 15 -> 20, 21, 29 (20² + 21² = 841 = 29²), circumference 12π, 3/4 · 12π = 9π (a quarter is 3π).
+# English numbers 3, 6, 9 -> 9, 12, 15 = 3-4-5 times 3 (2026-10-22 Hebrew restore: her "again a Pythagorean triple"
+# works; was 6, 14, 15 -> 20-21-29), circumference 6π, 3/4 · 6π = 4.5π (a quarter is 1.5π). Pythagoras kept as fallback.
 # V3: the copy with the highlighted arc in orange; 12π typed; the triangle of centers drawn dashed (construction) with its
 # angle at A for the elimination; the radii written as she names them; the sums and the squares typed; the right angle at
 # A; the unwanted quarter arc traced teal; the answer.
-f6A, f6B, f6C = (259.2, 250.4), (387.2, 250.4), (259.2, 116.0)
-f6rA, f6rB, f6rC = 38.4, 89.6, 96.0
+f6A, f6B, f6C = (284.0, 270.0), (392.0, 270.0), (284.0, 126.0)      # radii 3, 6, 9 at 12 px per cm (as rn_fig_g092)
+f6rA, f6rB, f6rC = 36.0, 72.0, 108.0
 f6g92_q = [('circ', f6A[0], f6A[1], f6rA), ('circ', f6B[0], f6B[1], f6rB), ('circ', f6C[0], f6C[1], f6rC),
            ('dot', *f6A), ('dot', *f6B), ('dot', *f6C), f6_name(f6A, 'A', -12, 16), f6_name(f6B, 'B', 15, 16),
            f6_name(f6C, 'C', 15, -16), ('arcw', f6A[0], f6A[1], f6rA, 90, 360, 'orange', 7)]
@@ -3791,33 +3839,26 @@ f6g92 = PIN(GEO('f6g92', [
     ('tri', f6g92_tri + [('arc', f6A[0], f6A[1], 20, 0, 90, 'small')]),
 ], vb='158 12 330 335', w=260, title='Three circles that touch'))
 _R(f6g92, 410)
-f6g92y1 = IH('f6g92y1', '$C = 2π \\cdot 6 = 12π$', size=30, col=1)
-f6g92y2 = IH('f6g92y2', 'half the circle: $\\angle A = 180°$ ✗', size=26, col=1)
+f6g92y1 = IH('f6g92y1', '$C = 2π \\cdot 3 = 6π$', size=30, col=1)
+f6g92y2 = IH('f6g92y2', 'half the circle: $\\angle A = 180°$, no', size=26, col=1)
 ROWS(290, 54, f6g92y1, f6g92y2)
 # batch C: slide 2 - the same three circles, enlarged on their own (the triangle of centres), the working in rows
 f6g92x = PIN(GEO('f6g92x', [
     ('line', f6g92_q),
     ('tri', f6g92_tri),
-    ('rA', [('txt', 280, 268, '6', 'teal', 22), ('txt', 245, 228, '6', 'teal', 22)]),
-    ('rB', [('txt', 342, 270, '14', 'teal', 22), ('txt', 371, 204, '14', 'teal', 22)]),
-    ('rC', [('txt', 241, 160, '15', 'teal', 22), ('txt', 306, 138, '15', 'teal', 22)]),
+    ('rA', [('txt', 302, 290, '3', 'teal', 22), ('txt', 270, 254, '3', 'teal', 22)]),
+    ('rB', [('txt', 356, 290, '6', 'teal', 22), ('txt', 384, 232, '6', 'teal', 22)]),
+    ('rC', [('txt', 268, 182, '9', 'teal', 22), ('txt', 330, 160, '9', 'teal', 22)]),
     ('right', [('tint', [f6A, f6B, f6C], 'teal'), ('right', f6A[0], f6A[1], 0, 90, 14)]),
-], vb='158 12 330 335', w=410, title='Three circles that touch: the triangle of centers'))
-LEFT(f6g92x, y=290, x=420, w=340)
-f6g92x1 = IH('f6g92x1', '$AB = 6 + 14 = 20$', size=28)
-f6g92x2 = IH('f6g92x2', '$AC = 6 + 15 = 21$', size=28)
-f6g92x3 = IH('f6g92x3', '$BC = 14 + 15 = 29$', size=28)
-f6g92x4 = IH('f6g92x4', '$20^2 + 21^2 = 29^2$ ?', size=28)
-f6g92x5 = IH('f6g92x5', '$20^2 = 400$', size=28)
-f6g92x6 = IH('f6g92x6', '$21^2 = 441$', size=28)
-f6g92x7 = IH('f6g92x7', '$400 + 441 = 841$', size=28)
-f6g92x8 = IH('f6g92x8', '$29 \\times 30 = 870$', size=28)
-f6g92x9 = IH('f6g92x9', '$29^2 = 870 - 29 = 841$', size=28)
+], vb='168 12 304 335', w=410, title='Three circles that touch: the triangle of centers'))
+LEFT(f6g92x, y=290, x=420, w=380)
+f6g92x1 = IH('f6g92x1', '$AB = 3 + 6 = 9$', size=28)
+f6g92x2 = IH('f6g92x2', '$AC = 3 + 9 = 12$', size=28)
+f6g92x3 = IH('f6g92x3', '$BC = 6 + 9 = 15$', size=28)
+f6g92x4 = IH('f6g92x4', '$9, 12, 15$: the triple $3, 4, 5$ times $3$', size=26)
+f6g92x5 = IH('f6g92x5', '$81 + 144 = 225 = 15^2$', size=28)
 f6g92x10 = IH('f6g92x10', '$\\angle A = 90°$', size=28)
-ROWS(300, 58, f6g92x1, f6g92x2, f6g92x3, f6g92x4, f6g92x5, x=790, w=380)
-ROWS(300, 58, f6g92x6, f6g92x7, f6g92x8, f6g92x9, f6g92x10, x=1200, w=380)
-f6g92fast = IH('f6g92fast', '$21^2=21\\times20+21=420+21$', size=26)
-ROWS(650, 50, f6g92fast, x=790, w=790)
+ROWS(300, 60, f6g92x1, f6g92x2, f6g92x3, f6g92x4, f6g92x5, f6g92x10, x=820, w=600)
 # batch C: slide 3 - circle A alone, clean and big: the quarter we don't need (teal) and the highlighted 3/4 (orange)
 f6g92aO, f6g92ar = (200.0, 175.0), 110.0
 f6g92a = PIN(GEO('f6g92a', [
@@ -3833,26 +3874,23 @@ f6g92a = PIN(GEO('f6g92a', [
 ], vb='60 0 330 315', w=380, title='Circle A: a quarter and three quarters'))
 LEFT(f6g92a, y=280, x=520, w=380)
 f6g92z1 = IH('f6g92z1', '$\\frac{90°}{360°} = \\frac{1}{4}$', size=30)
-f6g92z2 = IH('f6g92z2', 'highlighted arc: $\\frac{3}{4}$ of $12π$', size=30)
-f6g92z3 = IH('f6g92z3', '$12π \\div 4 = 3π$', size=30)
-f6g92z4 = IH('f6g92z4', '$3 \\times 3π = 9π$', size=30)
+f6g92z2 = IH('f6g92z2', 'highlighted arc: $\\frac{3}{4}$ of $6π$', size=30)
+f6g92z3 = IH('f6g92z3', '$6π \\div 4 = 1.5π$', size=30)
+f6g92z4 = IH('f6g92z4', '$3 \\times 1.5π = 4.5π$', size=30)
 ROWS(275, 80, f6g92z1, f6g92z2, f6g92z3, f6g92z4)
-f6g92short1 = IH('f6g92short1', '$29^2-21^2=(29-21)(29+21)$', size=26)
-f6g92short2 = IH('f6g92short2', '$=8\\times50=400=20^2$', size=28)
-ROWS(595, 55, f6g92short1, f6g92short2, x=1040, w=560)
 NOFIG33.update({('solve-geo33-g092', 1), ('solve-geo33-g092', 2)})
 video('solve-geo33-g092', 'solution', qid='geo33-g092', slides=[
     SM('Eliminate, then find the angle', 'Eliminate, then find the angle',
-      L("Three circles with centers A, B and C touch one another from the outside. Their radii are six centimeters, "
-        "fourteen centimeters and fifteen centimeters. What is the length of the highlighted arc of the circle with center "
+      L("Three circles with centers A, B and C are externally tangent. That means they touch one another from the outside. Their radii are three centimeters, "
+        "six centimeters and nine centimeters. What is the length of the highlighted arc of the circle with center "
         "A, in centimeters?", pt('stem', 'Three circles with centers', 'hl', 10.0), voice='calm', pause=0.5),
       L("We need the length of an arc. An arc is part of the circumference. Its length is the angle out of three hundred "
         "sixty, times two pi r, the whole circumference.", show(f6g92['line'], 'We need the length of an arc')),
-      L("[short pause] The radius of circle A is given, so the whole circumference is easy. Two pi r is two pi times six, "
-        "which is twelve pi.", show(f6g92y1, 'Two pi r is two pi times six')),
-      L("Let's peek at the choices. Choice number one is twelve pi. That's the whole circle, and the highlighted arc is "
+      L("[short pause] The radius of circle A is given, so the whole circumference is easy. Two pi r is two pi times three, "
+        "which is six pi.", show(f6g92y1, 'Two pi r is two pi times three')),
+      L("Let's peek at the choices. Choice number one is six pi. That's the whole circle, and the highlighted arc is "
         "only part of it, so it has to be less. Choice number one is out.", mk('cross', 'choice 1', 'Choice number one is out')),
-      L("We can also cross out choice number four, six pi. Six pi is exactly half the circle. Let's connect the three centers. "
+      L("We can also cross out choice number four, three pi. Three pi is exactly half the circle. Let's connect the three centers. "
         "The highlighted arc's angle at A is three hundred sixty minus the triangle's angle at A. For the arc to be "
         "exactly half, that triangle angle would have to be one hundred eighty. But an angle of a triangle is always less "
         "than one hundred eighty. So the highlighted arc is more than half, and choice number four is out too.",
@@ -3861,23 +3899,21 @@ video('solve-geo33-g092', 'solution', qid='geo33-g092', slides=[
       L("To choose between choice number two and choice number three, let's find the angle. If you're ever out of time "
         "at this point, guess one of the two. That's a one in two chance instead of one in four.")),
     SM('Eliminate, then find the angle', 'The triangle of centers',
-      L("[short pause] Here are the three circles again, bigger. Let's put in the givens. The radius of circle A is six, "
-        "so we write six and six on its two radii. Circle B, fourteen and fourteen. Circle C, fifteen and fifteen.",
+      L("[short pause] Here are the three circles again, bigger. Let's put in the givens. The radius of circle A is three, "
+        "so we write three and three on its two radii. Circle B, six and six. Circle C, nine and nine.",
         show(f6g92x['line'], 'Here are the three circles again'), show(f6g92x['tri'], 'Let\'s put in the givens'),
-        show(f6g92x['rA'], 'we write six and six'), show(f6g92x['rB'], 'Circle B, fourteen'),
-        show(f6g92x['rC'], 'Circle C, fifteen')),
+        show(f6g92x['rA'], 'we write three and three'), show(f6g92x['rB'], 'Circle B, six'),
+        show(f6g92x['rC'], 'Circle C, nine')),
       L("The circles touch, so the line between two centers passes through the point where they touch. It's made of the "
-        "two radii. So A B is six plus fourteen, twenty. A C is six plus fifteen, twenty-one. And B C is fourteen plus "
-        "fifteen, twenty-nine.", show(f6g92x1, 'So A B is six plus fourteen'), show(f6g92x2, 'A C is six plus fifteen'),
-        show(f6g92x3, 'And B C is fourteen plus')),
-      L("Twenty, twenty-one, twenty-nine. We need the angle at A, so let's check Pythagoras, to see if it's a right angle. Twenty squared is four hundred. For twenty-one squared, twenty-one times twenty is four hundred twenty. Add one more twenty-one, and we get four hundred forty-one. Four hundred plus four hundred forty-one is eight hundred forty-one.",
-        show(f6g92x4, "let's check Pythagoras"), show(f6g92x5, 'Twenty squared is four hundred'),
-        show(f6g92fast, 'Add one more twenty-one'), show(f6g92x6, 'we get four hundred forty-one'), show(f6g92x7, 'is eight hundred forty-one')),
-      L("And twenty-nine squared? It's twenty-nine times thirty, minus twenty-nine. Twenty-nine times thirty is eight "
-        "hundred seventy. Eight hundred seventy minus twenty-nine is eight hundred forty-one. The same, so it's a "
-        "Pythagorean triple.", show(f6g92x8, 'Twenty-nine times thirty is eight'),
-        show(f6g92x9, 'Eight hundred seventy minus twenty-nine')),
-      L("B C, twenty-nine, is the hypotenuse, so the angle across from it, the angle at A, is ninety degrees.",
+        "two radii. So A B is three plus six, nine. A C is three plus nine, twelve. And B C is six plus "
+        "nine, fifteen.", show(f6g92x1, 'So A B is three plus six'), show(f6g92x2, 'A C is three plus nine'),
+        show(f6g92x3, 'And B C is six plus')),
+      L("Nine, twelve, fifteen. We need the angle at A, so let's look at the three sides. Do they look familiar? They're "
+        "three, four, five, times three. Again a Pythagorean triple, like in the circumscribed circle question.",
+        show(f6g92x4, "They're three, four, five, times three")),
+      L("If you don't spot it, check Pythagoras. Eighty-one plus a hundred forty-four is two hundred twenty-five, and "
+        "that's fifteen squared.", show(f6g92x5, "that's fifteen squared")),
+      L("B C, fifteen, is the hypotenuse, so the angle across from it, the angle at A, is ninety degrees.",
         show(f6g92x['right'], 'the angle at A, is ninety'), show(f6g92x10, 'is ninety degrees'))),
     SM('Eliminate, then find the angle', 'Three quarters of the circle',
       L("[short pause] Now let's look only at circle A. The angle at A is ninety degrees. So the arc we don't need, inside "
@@ -3886,10 +3922,10 @@ video('solve-geo33-g092', 'solution', qid='geo33-g092', slides=[
         show(f6g92z1, "That's a quarter of the circle")),
       L("And the highlighted arc is the rest, three quarters of the circumference.",
         show(f6g92a['tq'], 'the highlighted arc is the rest'), show(f6g92z2, 'three quarters of the circumference')),
-      L("Three quarters of twelve pi. Let's find a quarter first. Twelve pi divided by four is three pi. So three quarters is three "
-        "times three pi, which is nine pi. Choice number three is our answer. Now go back to the Pythagorean check. We can use the difference of squares again. Twenty-nine squared minus twenty-one squared is twenty-nine minus twenty-one, times twenty-nine plus twenty-one. That's eight times fifty, four hundred. Four hundred is twenty squared. So the triangle is right, without calculating either big square. If you notice that, you can reach the ninety-degree angle sooner. I'll see you in the next "
-        "question.", show(f6g92z3, 'Twelve pi divided by four'), show(f6g92z4, 'So three quarters is three'),
-        mk('tick', 'choice 3', 'Choice number three is our answer'), show(f6g92short1, 'Twenty-nine squared minus twenty-one squared'), show(f6g92short2, 'four hundred. Four hundred is twenty squared'))),
+      L("Three quarters of six pi. Let's find a quarter first. Six pi divided by four is one and a half pi. So three "
+        "quarters is three times one and a half pi, which is four and a half pi. Choice number three is our answer, and "
+        "I'll see you in the next question.", show(f6g92z3, 'Six pi divided by four'), show(f6g92z4, 'So three'),
+        mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
 # =================================================================================================================
@@ -3942,6 +3978,45 @@ f7h2 = I('f7h2', 'Shapes in circles: $\\ $a length that depends on the radius is
 f7h3 = I('f7h3', 'The math way: $\\ $stop halfway and look at the choices', size=30)
 f7h4 = I('f7h4', 'Plugging in numbers: $\\ $a number instead of a letter', size=30)
 f7h5 = I('f7h5', 'Estimation: $\\ $rule out choices by their size', size=30)
+
+# Two contrasting warm-ups for the existing area-subtraction method.
+# The given 2/4 lengths are visible; no computed area is in either base figure.
+d93O,d93A,d93B=(90,220),(90,60),(250,220)
+d93tri=f7_pd([d93O,d93A,d93B])
+d93one=PIN(GEO('d93one',[
+    ('line',[('arc',90,220,160,0,90,'ink'),*f7_poly([d93O,d93A,d93B]),
+             ('cseg',90,220,160,0,90,'teal'),('right',90,220,0,90,17),
+             ('txt',65,140,'2','ink',25),('txt',170,245,'2','ink',25),
+             ('txt',70,245,'O','ink',24,True),('txt',75,42,'A','ink',24,True),('txt',270,225,'B','ink',24,True)]),
+    ('whole',[('wedge',90,220,160,0,90,'orange')]),
+    ('cut',[('region',d93tri,'f7white',1),*f7_poly([d93O,d93A,d93B]),
+            ('right',90,220,0,90,17)]),
+],vb='35 15 265 265',w=480,col=0,title='Shaded segment: quarter circle minus triangle'))
+LEFT(d93one,y=245,x=380,w=480)
+d93a=IH('d93a','circle: $\\pi\\times2^2=4\\pi$',size=32,col=1)
+d93b=IH('d93b','quarter: $4\\pi\\div4=\\pi$',size=32,col=1)
+d93c=IH('d93c','triangle: $2\\times2\\div2=2$',size=32,col=1)
+d93d=IH('d93d','shaded: $\\pi-2$',size=34,col=1)
+ROWS(270,85,d93a,d93b,d93c,d93d)
+d93O2,d93A2,d93B2=(180,240),(60,120),(300,120)
+d93tri2=f7_pd([d93O2,d93A2,d93B2]);d93sec2=f7_sd(180,240,120,45,135)
+d93two=PIN(GEO('d93two',[
+    ('line',[('circ',180,240,120),*f7_poly([d93O2,d93A2,d93B2]),
+             ('region',d93tri2+' '+d93sec2,'teal'),('right',180,240,45,135,17),
+             ('seg',180,240,180,120,'teal',3,True),('right',180,120,270,0,13),
+             ('dot',180,240,'O',0,26),('txt',42,108,'A','ink',24,True),('txt',318,108,'B','ink',24,True),
+             ('txt',180,94,'4','ink',26),('txt',201,185,'2','ink',26)]),
+    ('whole',[('region',d93tri2,'orange')]),
+    ('cut',[('region',d93sec2,'f7white',1),('arc',180,240,120,45,135,'ink'),
+            ('seg',180,240,180,120,'teal',3,True),('txt',201,185,'2','ink',26),
+            ('right',180,120,270,0,13),('right',180,240,45,135,17)]),
+],vb='25 65 320 320',w=480,col=0,title='Shaded corners: triangle minus quarter circle'))
+LEFT(d93two,y=245,x=380,w=480)
+d93e=IH('d93e','triangle: $4\\times2\\div2=4$',size=32,col=1)
+d93f=IH('d93f','quarter circle: $\\pi\\times2^2\\div4=\\pi$',size=30,col=1)
+d93g=IH('d93g','shaded: $4-\\pi$',size=34,col=1)
+ROWS(280,95,d93e,d93f,d93g)
+
 video('geo-093', 'lesson', slides=[
     S('Advanced Circles',
       L("In the last lessons we learned the basic rules of the circle, and we practiced basic questions and harder ones. "
@@ -3958,8 +4033,30 @@ video('geo-093', 'lesson', slides=[
         "choices by their size. These ways are often faster, and they help even when we're not sure of the full "
         "solution.", show(f7h3, 'stop halfway and look at the choices'), show(f7h4, 'With plugging in numbers'),
         show(f7h5, 'And with estimation')),
-      L("We'll explain each one in the question that uses it. Let's start. [pause] Okay. I'll see you in the next video.",
-        pt('f7h5', "We'll explain each one"))),
+      L("First, let's practise choosing the two areas. The order of subtraction depends on the picture.",
+        pt('f7h1', 'choosing the two areas'))),
+    S('A sector minus a triangle',
+      L("Here the two radii are both two, with a right angle between them. We want the shaded segment between chord A B "
+        "and the arc.",show(d93one['line'],'Here the two radii')),
+      L("The quarter circle contains the triangle and the shaded segment. So take the whole quarter circle, then remove "
+        "triangle A O B. What's left is the shaded segment.",show(d93one['whole'],'take the whole quarter circle'),
+        show(d93one['cut'],'remove triangle A O B')),
+      L("The full circle has area pi times two squared, four pi. Ninety degrees is a quarter of the circle. "
+        "Four pi divided by four is pi, so the quarter is pi.",show(d93a,'four pi.'),show(d93b,'so the quarter is pi')),
+      L("The triangle is right, with legs of two. Its area is two times two, divided by two. That's two.",show(d93c,"That's two")),
+      L("So the shaded area is pi minus two. We subtract the triangle because it's the piece inside the sector that we don't want.",
+        show(d93d,'pi minus two'))),
+    S('A triangle minus a sector',
+      L("Now the shaded parts are outside the circle but inside this triangle. The base is four, and the height is the "
+        "radius, two. The angle at O is ninety degrees.",show(d93two['line'],'inside this triangle')),
+      L("This time the whole triangle contains a quarter circle and the shaded parts. Take the triangle, then remove "
+        "the quarter circle. The shaded parts are what remain.",show(d93two['whole'],'Take the triangle'),
+        show(d93two['cut'],'remove the quarter circle')),
+      L("The triangle's area is four times two, divided by two, which is four.",show(d93e,'which is four')),
+      L("The radius is two again, so the quarter circle's area is pi, just as before.",show(d93f,"area is pi")),
+      L("So this shaded area is four minus pi. Same subtraction method, but the whole shape is different. "
+        "First name the whole region. Then name the piece you remove. Don't always subtract in the same order. "
+        "Now let's use this in the questions, and I'll see you in the next video.",show(d93g,'four minus pi'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ geo33-g094 (Hebrew: the tangent and the silver triangle)
@@ -4086,7 +4183,8 @@ video('solve-geo33-g094', 'solution', qid='geo33-g094', slides=[
         show(f7g94b['line'], 'Now we could go on'), show(f7g94y1, 'we also have the choices')),
       L("We stop halfway, and we use what we already know to rule out choices. This is called a partial calculation. In "
         "this question the triangle is exactly thirty-six. We take away a sector, a quarter of a circle with radius six. "
-        "Its area is some number times pi. So here the answer must be thirty-six, minus some number of pi.",
+        "Its area is some number times pi. The choices are already written without brackets, with the two area parts separate. "
+        "So here the answer must be thirty-six, minus some number of pi. If a choice has brackets, expand them before comparing its parts.",
         show(f7g94y2, 'So here the answer must be')),
       L("Choice number three is eighteen pi minus eighteen. Here the pi part is added, and only eighteen is taken away. "
         "That's not thirty-six minus a sector, so it's out.", show(f7g94y3, 'Choice number three is eighteen pi'),
@@ -4245,7 +4343,8 @@ video('solve-geo33-g095', 'solution', qid='geo33-g095', slides=[
     SM('Triangle O D C', 'The sector',
       L("[pause] Should we find the sector now? In the last question we stopped halfway and looked at the choices. Here "
         "the triangle is eight root three. We take away a sector of this circle, so its area is some number of pi. So "
-        "we're looking for eight root three, minus a number of pi.", show(f7g95c['line'], 'Should we find the sector now'),
+        "we're looking for eight root three, minus a number of pi. These choices already have the two area parts separate, "
+        "so we can compare the triangle part first.", show(f7g95c['line'], 'Should we find the sector now'),
         show(f7g95y1, 'Here the triangle is eight root three'), show(f7g95y2, "So we're looking for eight root three")),
       L("Choice number two has sixteen root three, and choice number four has four root three. Neither has eight root "
         "three, so they're both out.", mk('cross', 'choice 2', 'Choice number two has'), mk('cross', 'choice 4', "so they're both out")),
@@ -5242,7 +5341,7 @@ NOFIG33.update({('solve-geo33-g101', 1), ('solve-geo33-g101', 2)})
 f8x1v0 = IH('f8x1v0', '$r = 3$: $\\ 55\\pi$, too small', size=28)
 video('solve-geo33-g101', 'solution', qid='geo33-g101', slides=[
     SM('Method 1 · The math way', 'R with r',
-      L("A smaller circle lies inside a larger circle and touches it from the inside at A. A B is a diameter of the larger "
+      L("A smaller circle lies inside a larger circle and is internally tangent to it at A. That means they touch from the inside at A. A B is a diameter of the larger "
         "circle, A C is a diameter of the smaller circle, and C B is ten centimeters. The area inside the larger circle "
         "but outside the smaller one is sixty-five pi. What is the radius of the smaller circle?",
         pt('stem', 'A smaller circle lies inside', 'hl', 10.0), voice='calm', pause=0.5),

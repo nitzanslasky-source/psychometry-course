@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "So we go from the sum back to the number of sides, like in the lesson. We'll solve it in two different ways, the math way, and then by understanding, with an anchor.",
+    "say": "So we go from the sum back to the number of sides, like in the lesson. We'll solve it in two different ways, the math way, and then by understanding, starting from an angle sum we know.",
     "at": [
      "the sum back"
     ]
@@ -57,9 +57,9 @@
   ],
   [
    {
-    "say": "Now by understanding, with an anchor. Which sums do we know by heart? A triangle is one hundred eighty, and a quadrilateral is three hundred sixty. Like in the lesson, a pentagon is five hundred forty, a hexagon is seven hundred twenty, and an octagon is one thousand eighty.",
+    "say": "Now by understanding. Let's start from an angle sum we know. A triangle is one hundred eighty, and a quadrilateral is three hundred sixty. Like in the lesson, a pentagon is five hundred forty, a hexagon is seven hundred twenty, and an octagon is one thousand eighty.",
     "at": [
-     "an anchor. Which",
+     "start from an",
      "an octagon is one thousand eighty"
     ]
    },

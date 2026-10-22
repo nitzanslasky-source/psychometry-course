@@ -1912,11 +1912,11 @@ def rn_fig_g083():
 
 
 def rn_fig_g090():
-    A0, B0, C0 = (280.0, 300.0), (364.0, 300.0), (280.0, 55.0)
+    A0, B0, C0 = (228.0, 300.0), (411.75, 300.0), (228.0, 55.0)      # 9 : 12 : 15, one unit = 20.42
     b = _poly([A0, B0, C0])
-    b += _t(264, 314, 'A') + _t(380, 314, 'B') + _t(268, 39, 'C')
-    b += _t(322, 322, '12') + _t(260, 178, '35') + _t(340, 176, '37')
-    return _svg('A triangle with sides 12, 35 and 37', b)
+    b += _t(212, 314, 'A') + _t(428, 314, 'B') + _t(216, 39, 'C')
+    b += _t(320, 322, '9') + _t(208, 178, '12') + _t(338, 166, '15')
+    return _svg('A triangle with sides 9, 12 and 15', b)
 
 
 def rn_fig_g091():
@@ -1934,9 +1934,9 @@ def rn_fig_g091():
 
 
 def rn_fig_g092():
-    k, x0, y0 = 6.4, 259.2, 250.4
-    A0, B0, C0 = (x0, y0), (x0 + 20 * k, y0), (x0, y0 - 21 * k)
-    ra, rb, rc = 6 * k, 14 * k, 15 * k
+    k, x0, y0 = 12.0, 284.0, 270.0                       # radii 3, 6, 9 -> AB 9, AC 12, BC 15
+    A0, B0, C0 = (x0, y0), (x0 + 9 * k, y0), (x0, y0 - 12 * k)
+    ra, rb, rc = 3 * k, 6 * k, 9 * k
     b = _c(A0[0], A0[1], ra) + _c(B0[0], B0[1], rb) + _c(C0[0], C0[1], rc) + _dot(A0) + _dot(B0) + _dot(C0)
     b += _t(A0[0] - 14, A0[1] + 14, 'A') + _t(B0[0] + 15, B0[1] + 15, 'B') + _t(C0[0] + 15, C0[1] - 15, 'C')
     b += ('<path d="M %.3f %.3f A %.3f %.3f 0 1 0 %.3f %.3f" fill="none" stroke="%s" stroke-width="7"/>'
@@ -2200,15 +2200,17 @@ def rn_guided(M):
                                 ('18', '16'), ('54', '48'), ('2.5', '2.2'), ('56.52', '50.24'),
                                 ('56 and a half', '50 and a quarter'), ('56 and 57', '50 and 51')], {1: 3, 2: 4, 3: 1, 4: 2})
 
-    # ---------- g090: sides 7, 24, 25 -> 25π  ==>  sides 12, 35, 37 -> 37π
+    # ---------- g090: sides 7, 24, 25 -> 25π  ==>  sides 9, 12, 15 -> 15π (2026-10-22 Hebrew restore: 3-4-5 times 3, so
+    # her "spot the triple" step works; was 12, 35, 37 -> 37π, which had to be squared out)
     g = 'geo33-g090'
-    _rn_q(M, g, _rn_stem(M, g, ('7 cm, 24 cm and 25 cm', '12 cm, 35 cm and 37 cm')),
-          ['$74\\pi$', '$37\\pi$', '$18.5\\pi$', '$144\\pi$'], 2, [
-        '$12^2+35^2=144+1225=1369=37^2$, so the triangle is a right triangle. The right angle is opposite the side 37.',
-        'An inscribed right angle rests on a diameter. So the hypotenuse is a diameter of the circle: $d=37$.',
-        '$C=\\pi d=37\\pi$.'], rn_fig_g090(), '200 20 230 330')
-    _rn_video(M, 'solve-' + g, [('7', '12'), ('24', '35'), ('25', '37'), ('49', '144'), ('576', '1225'),
-                                ('625', '1369'), ('12.5', '18.5')], {1: 4, 2: 1, 3: 2, 4: 3})
+    _rn_q(M, g, _rn_stem(M, g, ('7 cm, 24 cm and 25 cm', '9 cm, 12 cm and 15 cm')),
+          ['$30\\pi$', '$15\\pi$', '$7.5\\pi$', '$81\\pi$'], 2, [
+        '$9, 12, 15$ is the triple $3, 4, 5$ times 3 (check: $9^2+12^2=81+144=225=15^2$), so the triangle is a right '
+        'triangle. The right angle is opposite the side 15.',
+        'An inscribed right angle rests on a diameter. So the hypotenuse is a diameter of the circle: $d=15$.',
+        '$C=\\pi d=15\\pi$.'], rn_fig_g090(), '200 20 230 330')
+    _rn_video(M, 'solve-' + g, [('7', '9'), ('24', '12'), ('25', '15'), ('49', '81'), ('576', '144'),
+                                ('625', '225'), ('12.5', '7.5')], {1: 4, 2: 1, 3: 2, 4: 3})
 
     # ---------- g091: radius √30, six of each -> 60° -> 5π  ==>  radius √35, five of each -> 72° -> 7π
     g = 'geo33-g091'
@@ -2221,44 +2223,45 @@ def rn_guided(M):
                                 ('5', '7'), ('20 and 40, could be 10 and 50', '30 and 42, could be 12 and 60')],
               {1: 4, 2: 1, 3: 2, 4: 3})
 
-    # ---------- g092: radii 2, 4, 6 (6-8-10) -> 3π  ==>  radii 6, 14, 15 (20-21-29) -> ¾ of 12π = 9π
+    # ---------- g092: radii 2, 4, 6 (6-8-10) -> 3π  ==>  radii 3, 6, 9 (9-12-15 = 3-4-5 times 3) -> ¾ of 6π = 4.5π
+    # (2026-10-22 Hebrew restore: her "again a Pythagorean triple" step works; was radii 6, 14, 15 -> 20-21-29 -> 9π)
     g = 'geo33-g092'
-    _rn_q(M, g, _rn_stem(M, g, ('2 cm, 4 cm and 6 cm', '6 cm, 14 cm and 15 cm')),
-          ['$12\\pi$', '$8\\pi$', '$9\\pi$', '$6\\pi$'], 3, [
-        'For tangent circles, the distance between the centers is the sum of the radii: $AB=6+14=20$, $AC=6+15=21$ '
-        'and $BC=14+15=29$.',
-        '$20^2+21^2=400+441=841=29^2$, so the angle at A is $90°$.',
+    _rn_q(M, g, _rn_stem(M, g, ('2 cm, 4 cm and 6 cm', '3 cm, 6 cm and 9 cm')),
+          ['$6\\pi$', '$4\\pi$', '$4.5\\pi$', '$3\\pi$'], 3, [
+        'For tangent circles, the distance between the centers is the sum of the radii: $AB=3+6=9$, $AC=3+9=12$ '
+        'and $BC=6+9=15$.',
+        '$9, 12, 15$ is the triple $3, 4, 5$ times 3 ($81+144=225=15^2$), so the angle at A is $90°$.',
         'The arc inside that angle is $\\frac14$ of circle A. The highlighted arc is the other $\\frac34$.',
-        'Circumference of circle A: $2\\pi\\cdot6=12\\pi$. Highlighted arc: $\\frac34\\cdot12\\pi=9\\pi$.'],
+        'Circumference of circle A: $2\\pi\\cdot3=6\\pi$. Highlighted arc: $\\frac34\\cdot6\\pi=4.5\\pi$.'],
         rn_fig_g092(), '150 10 340 340')
     _rn_video(M, 'solve-' + g, slides={
         2: (None, [
-            'Three circles, centers A, B and C, all touching. Radii 6, 14 and 15. How long is the highlighted arc of circle A?',
+            'Three circles, centers A, B and C, all touching. Radii 3, 6 and 9. How long is the highlighted arc of circle A?',
             'An arc is a part of the circumference: the angle out of 360, times 2 pi r.',
-            A('C_A = 2π · 6 = 12π appears', _bt('$C_A=2\\pi\\cdot6=12\\pi$', 1, 40)),
-            "Circle A's radius is 6, so the whole circle is 12 pi."]),
+            A('C_A = 2π · 3 = 6π appears', _bt('$C_A=2\\pi\\cdot3=6\\pi$', 1, 40)),
+            "Circle A's radius is 3, so the whole circle is 6 pi."]),
         3: (None, [
             'Peek at the answers.',
             D('Cross out choice 1'),
-            '12 pi — the whole circle. The arc must be less. Out.',
+            '6 pi — the whole circle. The arc must be less. Out.',
             D('Cross out choice 4'),
-            "Sharp-eyed students cross out 6 pi too. That's exactly half — it needs an angle of 180 at A. But that angle "
+            "Sharp-eyed students cross out 3 pi too. That's exactly half — it needs an angle of 180 at A. But that angle "
             "is part of a triangle — less than 180.",
             'Choices two and three — no quick way to split them. We have to solve.',
             'Out of time? Guess one of them: a 50 percent chance instead of 25.']),
-        4: ('A 20-21-29 triangle', [
-            D("Write 6, 6 on circle A's radii; 14, 14 on B's; 15, 15 on C's"),
+        4: ('A 9-12-15 triangle', [
+            D("Write 3, 3 on circle A's radii; 6, 6 on B's; 9, 9 on C's"),
             'Put in the radii. Tangent circles — the distance between centers is the two radii together.',
-            A('AB = 20 · AC = 21 · BC = 29 appears', _bt('$AB=6+14=20$, $AC=6+15=21$, $BC=14+15=29$', 1, 34)),
-            '6 plus 14 — 20. 6 plus 15 — 21. 14 plus 15 — 29.',
-            '20, 21, 29 — check Pythagoras: 400 plus 441 is 841. And 29 squared is 841. A Pythagorean triple.',
+            A('AB = 9 · AC = 12 · BC = 15 appears', _bt('$AB=3+6=9$, $AC=3+9=12$, $BC=6+9=15$', 1, 34)),
+            '3 plus 6 — 9. 3 plus 9 — 12. 6 plus 9 — 15.',
+            '9, 12, 15 — that is 3, 4, 5 times 3. A Pythagorean triple.',
             D('Mark the right angle at A'),
-            '29 is the hypotenuse — so the angle at A, opposite it, is 90.']),
+            '15 is the hypotenuse — so the angle at A, opposite it, is 90.']),
         5: (None, [
             "The angle at A — the part we don't need — is 90. A quarter of the circle.",
             'So the highlighted arc is three quarters of the circumference.',
-            A('L = ¾ × 12π = 9π appears', _bt('$L=\\frac34\\times12\\pi=9\\pi$', 1, 40)),
-            'Three quarters of 12 pi — 9 pi.',
+            A('L = ¾ × 6π = 4.5π appears', _bt('$L=\\frac34\\times6\\pi=4.5\\pi$', 1, 40)),
+            'Three quarters of 6 pi — 4.5 pi.',
             D('Circle choice 3'),
             "Choice three. That's the end of the basic circle questions."])})
 

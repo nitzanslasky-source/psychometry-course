@@ -12,7 +12,7 @@
     "pause": 0.5
    },
    {
-    "say": "The key here is the difference. They don't give us the factory's amount. They give the difference between the two. We'll solve it in two different ways, with the ratio table, and then with ten percent.",
+    "say": "The key here is the difference. They don't give us the factory's amount. They give the difference between the two. We'll solve it in two different ways, with the ratio table, and then with two shortcuts.",
     "at": [
      "in two different"
     ]
@@ -81,17 +81,65 @@
   ],
   [
    {
-    "say": "[pause] Now a shorter way. We start again from the givens. The factory gets the rest, thirty percent. The difference is seventy minus thirty, forty percent, and that's forty-eight kilograms.",
+    "say": "[pause] Now two shortcuts. We start again from the givens. The factory gets the rest, thirty percent. The difference is seventy minus thirty, forty percent, and that's forty-eight kilograms.",
     "at": [
-     "Now a",
-     "the givens. The",
+     "start again from",
+     "difference is seventy",
      "forty-eight kilograms"
     ]
    },
    {
-    "say": "From forty percent to thirty percent isn't one easy step. So let's take a middle step, ten percent. Forty percent divided by four is ten percent. So we divide the kilograms by four too. Forty-eight divided by four is twelve.",
+    "say": "The first shortcut is to drop a zero. In the ratio table, forty percent goes with forty-eight kilograms. From forty to forty-eight, across the row, is times one point two. That step isn't easy to see.",
     "at": [
+     "The first shortcut",
+     "From forty to forty-eight",
+     "the row, is"
+    ]
+   },
+   {
+    "say": "So let's drop the zero from both percents. Forty becomes four, and thirty becomes three.",
+    "at": [
+     "Forty becomes four",
+     "thirty becomes three"
+    ]
+   },
+   {
+    "say": "We divided both percents by the same number, ten. Three to four is the same ratio as thirty to forty. So the kilograms column stays as it is, forty-eight and the question mark.",
+    "at": [
+     "We divided both percents",
+     "the same number",
+     "the question mark"
+    ]
+   },
+   {
+    "say": "Now the step across is easy to see. From four to forty-eight is times twelve.",
+    "at": [
+     "From four to forty-eight"
+    ]
+   },
+   {
+    "say": "The factory's row has the same step across. Three times twelve is thirty-six kilograms.",
+    "at": [
+     "The factory's row",
+     "Three times twelve is"
+    ]
+   },
+   {
+    "say": "Drop a zero when it makes the step across easy to see. Choice number two is our answer.",
+    "at": [
+     "Drop a zero",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the second shortcut. From forty percent to thirty percent isn't one easy step. So let's take a middle step, ten percent. Forty percent divided by four is ten percent. So we divide the kilograms by four too. Forty-eight divided by four is twelve.",
+    "at": [
+     "Now the",
      "From forty percent",
+     "So let's take",
+     "kilograms by four",
      "Forty-eight divided by four is"
     ]
    },

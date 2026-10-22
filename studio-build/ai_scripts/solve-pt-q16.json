@@ -18,53 +18,49 @@
      "ways, by estimating"
     ]
    },
-   "Let's start with an estimate, after one small calculation. We'll find the triangle's area first. Then we'll estimate the sector, and compare the choices.",
    {
-    "say": "The triangle has a right angle and an angle of forty-five degrees. So its third angle is forty-five too, and its legs are equal. The hypotenuse is the radius, two. By Pythagoras, the two equal legs squared add up to four. So each leg squared is two.",
+    "say": "Let's start with estimation, before any numbers. First we look at the pattern of the calculation, and ask, where is the pi?",
     "at": [
-     "each leg squared is two"
+     "where is the pi"
     ]
    },
    {
-    "say": "The legs are equal, so their product is also two. The triangle's area is that product divided by two. Two divided by two is one. Now the sector. Forty-five degrees is one eighth of a full circle. The whole circle has area four pi, so this sector is pi over two.",
+    "say": "The pi is in the sector. The sector is part of the circle, and the circle's area is pi r squared. The triangle has only straight sides, so its area has no pi. So sector minus triangle gives the pattern pi minus a number. The pi can come with a fraction, like pi over two. But it comes first, and a number is taken away from it.",
     "at": [
-     "The legs are",
-     "Two divided by two is one",
-     "one. Now the",
-     "this sector is pi over two"
+     "The pi is in the sector",
+     "gives the pattern pi minus a number",
+     "The pi can"
     ]
    },
    {
-    "say": "For this estimate, use these bounds for pi: more than three, and less than three point two. We need closer bounds here because the choices are close in size. Half of pi is therefore between one point five and one point six. Take away the triangle's area, one. The shaded area is between zero point five and zero point six.",
+    "say": "Choice number one says four minus pi. That's a number minus pi, the opposite pattern. Here the pi is the part taken away, so choice number one is out.",
     "at": [
-     "these bounds for",
-     "more than three, and less than three point two",
-     "than three point",
-     "between zero point five and zero point six",
-     "zero point six"
+     "number one says",
+     "the opposite pattern",
+     "pi is the",
+     "so choice number one is out"
     ]
    },
    {
-    "say": "Choice number one is four minus pi. Pi is less than three point two, so four minus pi is more than zero point eight. Our area is less than zero point six. So choice number one is too big, and it's out.",
+    "say": "Choice number three says pi over root two. That's pi divided by a number, and nothing is taken away. The triangle is missing, so choice number three is out too.",
     "at": [
-     "number one is",
-     "minus pi is",
-     "more than zero point eight",
-     "Our area is",
-     "it's out"
+     "number three says",
+     "nothing is taken away",
+     "triangle is missing",
+     "so choice number three is out too"
     ]
    },
    {
-    "say": "Choice number three is pi over root two. Root two is less than two, so dividing pi by root two gives more than dividing pi by two. That's more than one point five, much bigger than our area. So choice number three is out. Choice numbers two and four are left.",
+    "say": "Choice number two says one half, times pi over two minus two. The half multiplies both parts, so it's pi over four, minus one. Choice number four says pi over two, minus one. Both have the pattern pi minus a number, so this test can't split them.",
     "at": [
-     "number three is",
-     "two, so dividing",
-     "more than one point five",
-     "much bigger than",
-     "choice number three is out",
-     "numbers two and"
+     "number two says",
+     "so it's pi over",
+     "Choice number four says",
+     "number four says",
+     "minus a number"
     ]
-   }
+   },
+   "Sometimes the pattern rules out three choices, and sometimes none. Here it ruled out two, in seconds. And it works only because we know which part has the pi: here, the sector."
   ],
   [
    {
@@ -139,26 +135,44 @@
     ]
    },
    {
-    "say": "The shaded area is pi over two, minus the triangle's area. We found that the triangle's area is one. So the result is pi over two minus one. Choice number four matches both pieces, not just the way the expression looks.",
+    "say": "Now let's peek at the choices. Which of them has the sector, pi over two? Choice number four, pi over two minus one, has it. Choice number two has a half outside. The half multiplies the pi over two too, so it gives pi over four. That's not our sector, so choice number two is out.",
     "at": [
-     "pi over two minus one",
-     "Choice number four matches",
-     "pieces, not just"
-    ]
-   },
-   {
-    "say": "Choice number two has a half outside its whole bracket. It gives pi over four minus one, not pi over two minus one. So it's out. We compare the actual values of the pieces, not just whether a minus sign is written. Choice number four again.",
-    "at": [
+     "number four, pi",
      "number two has",
-     "minus one, not",
-     "So it's out",
-     "number four again"
+     "over two too",
+     "so choice number two is out"
     ]
    },
    {
-    "say": "This is a partial calculation: find a useful piece, then look at the choices. A piece can rule choices out, but the answer still has to fit the whole shaded area. I'll see you in the next question.",
+    "say": "Choice number one has minus pi, and choice number three has pi over root two. Those two don't have pi over two at all. So the sector alone leaves only choice number four. To be sure, let's check the other piece, the triangle.",
     "at": [
-     "look at the"
+     "number one has",
+     "number three has",
+     "over two at",
+     "number four. To"
+    ]
+   },
+   {
+    "say": "The triangle has a right angle and an angle of forty-five degrees. So its third angle is forty-five too, and its legs are equal. The hypotenuse is the radius, two. By Pythagoras, the two equal legs squared add up to four. So each leg squared is two.",
+    "at": [
+     "The triangle has",
+     "each leg squared is two"
+    ]
+   },
+   {
+    "say": "The triangle's area is leg times leg, divided by two. The legs are equal, so leg times leg is a leg squared, two. Two divided by two is one. So the shaded area is pi over two minus one. That's exactly choice number four, our answer.",
+    "at": [
+     "The triangle's area",
+     "Two divided by two is one",
+     "one. So the",
+     "pi over two minus one",
+     "That's exactly choice number four"
+    ]
+   },
+   {
+    "say": "This is a partial calculation: find a useful piece, then look at the choices. Here the sector alone ruled out every choice but one. I'll see you in the next question.",
+    "at": [
+     "This is a"
     ]
    }
   ]

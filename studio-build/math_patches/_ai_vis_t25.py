@@ -1323,13 +1323,16 @@ SPLITS.append(('wp-081', 'Sum from the Average', [
 # ------------------------------------------------------------------------------------------------ wp25-g082 (Hebrew: the gifted class, 8 x 6)
 # Hebrew (wp 5289-5324): 8 students solve 6 puzzles on average -> treat each one as the average: 48 together ("we don't
 # know what each one solves, but together surely 48"); one student can't solve 49. One method. English: 12 volunteers x
-# 7 bags. REMINDER: sum = how many x the average (wp-081). The Hebrew "one alone can't be more than all" kept as a line.
+# 7 bags. REMINDER: sum = how many x the average (wp-081). The Hebrew "one alone can't be more than all" (48 if the
+# others solve 0, never 49) restored 2026-10-22 (W23): one volunteer up to 84, never 85.
 g82a = I('g82a', '$12$ volunteers, $\\ $average $7$ bags', size=30)
 g82b = I('g82b', 'the sum $=$ how many $\\times$ the average', size=30)
 g82c = IH('g82c', '$12\\times7$', size=30)
 g82d = IH('g82d', '$10\\times7=70$', size=30, col=1)
 g82e = IH('g82e', '$2\\times7=14$', size=30, col=1)
 g82f = IH('g82f', '$70+14=84$', size=30, col=1)
+g82g = IH('g82g', 'one volunteer: $\\ $up to $84$', size=30, col=1)
+g82h = IH('g82h', '$85$? $\\ $No, more than the total', size=30, col=1)
 video('solve-wp25-g082', 'solution', qid='wp25-g082', slides=[
     S('Method 1 · The math way: the sum',
       L("Twelve volunteers clean a beach. On average, each volunteer fills seven bags of litter. How many bags do they fill "
@@ -1345,6 +1348,9 @@ video('solve-wp25-g082', 'solution', qid='wp25-g082', slides=[
         show(g82d, 'Ten times seven'), show(g82e, 'two times seven'), show(g82f, 'Seventy plus fourteen')),
       L("Maybe one volunteer filled twenty bags, and another only two. It doesn't matter. Together they still fill "
         "eighty-four bags."),
+      L("So one volunteer alone can't fill more than the whole group's total. One volunteer could fill all eighty-four "
+        "bags, if the other eleven filled none. But never eighty-five, because then the others would have to fill minus "
+        "one bag.", show(g82g, 'One volunteer could fill all eighty-four'), show(g82h, 'But never eighty-five')),
       L("Choice number one is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 1', 'Choice number one is our answer'))),
 ])
@@ -1870,7 +1876,7 @@ c_x4 = IH('c_x4', '$80-10=70$', size=36, col=1)
 c_x5 = IH('c_x5', '$80\\times4=320$', size=36, col=1)
 c_x5b = IH('c_x5b', '$320+30=350$', size=36, col=1)
 c_x6 = IH('c_x6', '$350\\div5=70$', size=36, col=1)
-c_x7 = I('c_x7', 'The heavy side gets the small part of the gap', size=36)
+c_x7 = I('c_x7', 'More weight: closer to the average', size=36)
 c_g0 = I('c_g0', '$6$ numbers at $40$, $\\ 9$ numbers at $50$', size=36)
 c_g1 = SAW('c_g1', '40', '50', [('vals', [('vals',)]), ('mid', [('mid', 'middle 45')]), ('wts', [('wts', '6', '9'), ('heavy', 1)]),
                                 ('units', [('units', 5)]), ('pivot', [('pivot', 3, 5, '46')])], w=560)
@@ -1954,11 +1960,11 @@ video('wp-086', 'lesson', slides=[
         "units.", show(c_x1['units'], 'five equal units')),
       L("The gap is eighty minus thirty, fifty. Fifty divided by five is ten. So each unit is ten.",
         show(c_x2, 'eighty minus thirty'), show(c_x3, 'Fifty divided by five')),
-      L("The heavy side gets the small part. So the average is one unit from eighty. Eighty minus ten is seventy.",
+      L("The test has more weight, so the average is closer to eighty. It's one unit from eighty. Eighty minus ten is seventy.",
         show(c_x4, 'Eighty minus ten'), show(c_x1['pivot'], 'is seventy')),
       L("Let's check with the formula. Eighty times four is three hundred twenty, plus thirty is three hundred fifty. Three "
         "hundred fifty divided by five is seventy. The same.", show(c_x5, 'Eighty times four'), show(c_x5b, 'plus thirty is three hundred fifty'), show(c_x6, 'Three hundred fifty divided')),
-      L("So remember. The heavy side gets the small part of the gap.", show(c_x7, 'The heavy side gets the small part of the gap'))),
+      L("So remember, the score with more weight is closer to the average.", show(c_x7, 'the score with more weight is closer'))),
     S('Groups as weights',
       L("Now two groups of numbers. Six numbers have an average of forty. Nine other numbers have an average of fifty. "
         "What's the average of all fifteen?", show(c_g0, 'Six numbers have an average')),
@@ -1986,8 +1992,8 @@ video('wp-086', 'lesson', slides=[
       L("Thirty percent of twenty. Ten percent of twenty is two, so thirty percent is six.", show(c_p2, 'Ten percent of twenty'),
         show(c_p3, 'so thirty percent is six')),
       L("Thirty plus six is thirty-six. So the average price is thirty-six dollars.", show(c_p4, 'Thirty plus six')),
-      L("Why does it work? It's the seesaw again. Seventy percent is the heavy side, so it gets the small part of the gap, "
-        "six. The light side gets the big part, fourteen.", show(c_p7, 'fourteen')),
+      L("Why does it work? It's the seesaw again. More shirts cost thirty dollars, so the average is closer to thirty. "
+        "It's six dollars above thirty, and fourteen below fifty.", show(c_p7, 'fourteen')),
       L("The trap is forty, the plain middle. It's only right when the shares are fifty percent and fifty percent.",
         show(c_p6, 'The trap is forty'))),
     S('Summary',
@@ -2051,13 +2057,14 @@ video('solve-wp25-g087', 'solution', qid='wp25-g087', slides=[
         show(g87s['units'], 'three units')),
       L("The gap is ninety-seven minus sixty-one, thirty-six. Thirty-six divided by three is twelve. So each unit is "
         "twelve.", show(g87i, 'ninety-seven minus sixty-one'), show(g87j, 'Thirty-six divided by three')),
-      L("The heavy side gets the small part. So the average is one unit from sixty-one. Sixty-one plus twelve is "
+      L("The written exam counts twice, so the average is closer to sixty-one. It's one unit away. Sixty-one plus twelve is "
         "seventy-three.", show(g87k, 'Sixty-one plus twelve'), show(g87s['pivot'], 'seventy-three'))),
     S('Method 2 · Understanding: the seesaw',
       L("Let's check from the other side. That's two units from ninety-seven. Two times twelve is twenty-four. And "
         "ninety-seven minus twenty-four is seventy-three.", show(g87l, 'Two times twelve'), show(g87m, 'ninety-seven minus twenty-four')),
-      L("Careful with eighty-five, choice number three. That's one unit from ninety-seven, the light side. The small part "
-        "goes to the heavy side.", show(g87n, 'one unit from ninety-seven'), mk('cross', 'choice 3', 'The small part goes')),
+      L("Careful with eighty-five, choice number three. That's one unit from ninety-seven, the score with less weight. "
+        "The average must be closer to sixty-one, not ninety-seven.", show(g87n, 'one unit from ninety-seven'),
+        mk('cross', 'choice 3', 'The average must be closer')),
       L("Choice number four is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 4', 'Choice number four is our answer'))),
 ])
@@ -2098,7 +2105,7 @@ video('solve-wp25-g088', 'solution', qid='wp25-g088', slides=[
       L("We cut the gap into five plus one, six units.", show(g88s['units'], 'six units')),
       L("The gap is ninety-one minus fifty-five, thirty-six. Thirty-six divided by six is six. So each unit is six.",
         show(g88a, 'ninety-one minus fifty-five'), show(g88b, 'Thirty-six divided by six')),
-      L("The heavy side gets the small part, one unit. Ninety-one minus six is eighty-five.",
+      L("The average is one unit from the score with more weight, ninety-one. Ninety-one minus six is eighty-five.",
         show(g88c, 'Ninety-one minus six'), show(g88s['pivot'], 'is eighty-five')),
       L("Careful with sixty-one, choice number three. That's one unit from fifty-five, the light side.",
         show(g88d, "That's one unit from fifty-five"), mk('cross', 'choice 3', 'the light side')),
@@ -2121,8 +2128,12 @@ video('solve-wp25-g088', 'solution', qid='wp25-g088', slides=[
 # ------------------------------------------------------------------------------------------------ wp25-g089 (Hebrew: 5 numbers 70, 10 numbers 85, Q5)
 # Hebrew (wp 5791-5859): the formula (the weight = the group's size; reduce by 3 first; "is it chance? No, always": the
 # common factor cancels), the middle 77.5 + "closer to the bigger group" rules out two choices, then the ratios 1 : 2
-# flipped. All three kept, in her order. English (September): 8 numbers 58, 12 numbers 78 -> 70; the estimate leaves 70
-# and 72, so the seesaw finishes it. REMINDERS (wp-086, part 3).
+# flipped; her estimate rules out choices 1 and 2, then "can't be determined from the data" ("we already learned what to
+# do with it; here, with a calculator, I could know the average; it's just a scary choice") -> only 80 is left, "we
+# solved it without calculating anything". All three kept, in her order. English (September): 8 numbers 58, 12 numbers
+# 78 -> 70. W23 (2026-10-22): the wrong choice 72 became "It cannot be determined from the information given." (choice 4,
+# the exam's place for it), so her no-calculation solve decides again: 68 and 66 out, "cannot be determined" out, 70.
+# REMINDERS (wp-086, part 3; "cannot be determined" r26-t22-exam-tools).
 g89a = IH('g89a', '$\\frac{8\\times58+12\\times78}{20}$', size=30)
 g89b = IH('g89b', '$8:12=2:3$', size=30)
 g89c = IH('g89c', '$2\\times58=116$', size=30, col=1)
@@ -2130,14 +2141,15 @@ g89d = IH('g89d', '$3\\times78=234$', size=30, col=1)
 g89e = IH('g89e', '$116+234=350$', size=30, col=1)
 g89f = IH('g89f', '$350\\div5=70$', size=30, col=1)
 g89s = SAW('g89s', '58', '78', [('vals', [('vals',)]), ('mid', [('mid', 'middle 68')]), ('wts', [('wts', '8', '12'), ('heavy', 1)])], w=560)
-g89g = IH('g89g', 'above $68$: $\\ $(2), (4) out', size=30, col=1)
+g89g = IH('g89g', 'above $68$: $\\ $(2), (3) out', size=30, col=1)
+g89m = IH('g89m', 'everything given: $\\ $(4) out', size=30, col=1)
 g89t = SAW('g89t', '58', '78', [('vals', [('vals',)]), ('wts', [('wts', '2', '3'), ('heavy', 1)]), ('units', [('units', 5)]),
                                 ('pivot', [('pivot', 3, 5, '70'), ('dr', 3, 5, '8')]), ('dl', [('dl', 3, 5, '12')])], w=560)
 g89h = IH('g89h', '$78-58=20$', size=30, col=1)
 g89i = IH('g89i', '$20\\div5=4$', size=30, col=1)
 g89j = IH('g89j', '$2\\times4=8$', size=30, col=1)
 g89k = IH('g89k', '$78-8=70$', size=30, col=1)
-g89l = IH('g89l', '$58+3\\times4=70$', size=30, col=1)
+g89l = IH('g89l', '$58+3\\times4=70$', size=30)   # left, under the seesaw: the right column is full (4 tall choice rows)
 video('solve-wp25-g089', 'solution', qid='wp25-g089', slides=[
     S('Method 1 · The math way: the formula',
       L("Eight numbers have an average of fifty-eight, and twelve other numbers have an average of seventy-eight. What is "
@@ -2163,10 +2175,15 @@ video('solve-wp25-g089', 'solution', qid='wp25-g089', slides=[
       L("The middle would be right only if the groups were the same size. Here the group at seventy-eight is bigger, "
         "twelve numbers. So the average is closer to seventy-eight. It's above sixty-eight.",
         show(g89s['wts'], 'Here the group at seventy-eight is bigger')),
-      L("So sixty-eight, choice number two, and sixty-six, choice number four, are out.", mk('cross', 'choice 2', 'choice number two'),
-        mk('cross', 'choice 4', 'choice number four'), show(g89g, 'are out')),
-      L("Sometimes that alone gives the answer. Here two choices are left, seventy and seventy-two. So we need one more "
-        "step, the seesaw.")),
+      L("So sixty-eight, choice number two, and sixty-six, choice number three, are out.", mk('cross', 'choice 2', 'choice number two'),
+        mk('cross', 'choice 3', 'choice number three'), show(g89g, 'are out')),
+      L("Choice number four says the average cannot be determined from the information given. Remember, an answer cannot "
+        "be determined only when the givens allow different answers.", pt('choice 4', 'Choice number four says')),
+      L("But here every number we need is given, the size of each group and its average. With a calculator, we'd find "
+        "the average right away. So it has one exact value. Choice number four is just there to scare us, so it's out.",
+        show(g89m, 'So it has one exact value'), mk('cross', 'choice 4', "so it's out")),
+      L("Only seventy, choice number one, is left. We found it without calculating anything, only from the idea that the "
+        "average is closer to the bigger group.")),
     S('Method 3 · Understanding: the seesaw',
       L("[pause] Now by understanding, with the seesaw. The weights are eight to twelve, so two to three. So the distances "
         "are three to two.", show(g89t['line'], 'Now by understanding'), show(g89t['vals'], 'The weights are eight to twelve'),
@@ -2174,7 +2191,7 @@ video('solve-wp25-g089', 'solution', qid='wp25-g089', slides=[
       L("We cut the gap into three plus two, five units.", show(g89t['units'], 'five units')),
       L("The gap is seventy-eight minus fifty-eight, twenty. Twenty divided by five is four. So each unit is four.",
         show(g89h, 'seventy-eight minus fifty-eight'), show(g89i, 'Twenty divided by five')),
-      L("The heavy side, seventy-eight, gets the small part, two units. Two times four is eight. Seventy-eight minus eight "
+      L("The group at seventy-eight is bigger, so the average is closer to seventy-eight, two units away. Two times four is eight. Seventy-eight minus eight "
         "is seventy.", show(g89j, 'Two times four'), show(g89k, 'Seventy-eight minus eight'), show(g89t['pivot'], 'is seventy.')),
       L("Let's check from the other side, three units from fifty-eight. Three times four is twelve. And fifty-eight plus "
         "twelve is seventy.", show(g89t['dl'], 'is twelve'), show(g89l, 'fifty-eight plus twelve')),

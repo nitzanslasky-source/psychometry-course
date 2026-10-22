@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "Of a hospital's nurses, three tenths work night shifts, three quarters drive to work, one quarter are new, and one half work part time. Which statement is not necessarily true?",
+    "say": "Of a hospital's nurses, one third work night shifts, three quarters drive to work, one quarter are new, and one half work part time. Which statement is not necessarily true?",
     "voice": "calm",
     "at": [
      "Of a hospital's nurses"
@@ -29,18 +29,18 @@
     ]
    },
    {
-    "say": "Choice number one says, at least one nurse who is not new does not work night shifts. Not new is one minus a quarter, three quarters. Not nights is one minus three tenths, seven tenths.",
+    "say": "Choice number one says, at least one nurse who is not new does not work night shifts. Not new is one minus a quarter, three quarters. Not nights is one minus a third, two thirds.",
     "at": [
      "Choice number one says",
      "Not new is one minus a quarter",
-     "Not nights is one minus three tenths"
+     "Not nights is one minus a third"
     ]
    },
    {
-    "say": "Three quarters is fifteen twentieths, and seven tenths is fourteen twentieths. Together, that's twenty-nine twentieths. That's more than one, so an overlap must exist.",
+    "say": "Three quarters is nine twelfths, and two thirds is eight twelfths. Together, that's seventeen twelfths. That's more than one, so an overlap must exist.",
     "at": [
-     "Three quarters is fifteen twentieths",
-     "and seven tenths"
+     "Three quarters is nine twelfths",
+     "and two thirds"
     ]
    },
    {
@@ -52,12 +52,12 @@
   ],
   [
    {
-    "say": "Choice number two says, at least one night-shift nurse drives to work. Three tenths plus three quarters. Six twentieths plus fifteen twentieths is twenty-one twentieths. More than one, so it's true, and choice number two is out.",
+    "say": "Choice number two says, at least one night-shift nurse drives to work. A third plus three quarters. Four twelfths plus nine twelfths is thirteen twelfths. More than one, so it's true, and choice number two is out.",
     "at": [
      "Choice number two says",
      "least one night-shift",
-     "Six twentieths plus fifteen",
-     "is twenty-one twentieths",
+     "Four twelfths plus nine",
+     "is thirteen twelfths",
      "so it's true, and choice number two"
     ]
    },
@@ -70,28 +70,29 @@
     ]
    },
    {
-    "say": "Exactly one doesn't force an overlap. The two groups can sit side by side. Let's see it in numbers. Say there are twenty nurses. A quarter, five, are new. Three quarters, fifteen, drive.",
+    "say": "Exactly one doesn't force an overlap. The two groups can sit side by side. Let's see it in numbers. Say there are twelve nurses, because twelve splits into thirds and quarters. A quarter, three, are new. Three quarters, nine, drive.",
     "at": [
-     "A quarter, five, are new",
-     "Three quarters, fifteen, drive"
+     "A quarter, three, are new",
+     "Three quarters, nine, drive"
     ]
    },
    {
-    "say": "The five new nurses come by bus, and the other fifteen drive. Every fraction still works, and no new nurse drives. So choice number three is not necessarily true.",
+    "say": "The three new nurses come by bus, and the other nine drive. Every fraction still works, and no new nurse drives. So choice number three is not necessarily true.",
     "at": [
-     "The five new",
+     "The three new",
      "number three is"
     ]
    }
   ],
   [
    {
-    "say": "In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four says, at least one part-time nurse does not work night shifts. A half plus seven tenths is five tenths plus seven tenths, twelve tenths. More than one, so it's true.",
+    "say": "In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four says, at least one part-time nurse does not work night shifts. A half plus two thirds is three sixths plus four sixths, seven sixths. More than one, so it's true.",
     "at": [
      "circle it and",
      "Choice number four says",
      "least one part-time",
-     "five tenths plus seven tenths",
+     "half plus two",
+     "three sixths plus four sixths",
      "More than one, so it's true"
     ]
    },
@@ -112,53 +113,56 @@
     ]
    },
    {
-    "say": "Three tenths is thirty percent. Three quarters is seventy-five percent. A quarter is twenty-five percent, and a half is fifty percent.",
+    "say": "A third is thirty-three and a third percent. Let's write just thirty-three, and in a moment we'll see why that's fine. Three quarters is seventy-five percent. A quarter is twenty-five percent, and a half is fifty percent.",
     "at": [
-     "Three tenths is thirty percent",
+     "Let's write just thirty-three",
+     "in a moment",
      "Three quarters is seventy-five percent",
      "A quarter is twenty-five percent",
      "a half is fifty percent"
     ]
    },
    {
-    "say": "Not new is a hundred minus twenty-five, seventy-five. Not nights is a hundred minus thirty, seventy.",
+    "say": "Not new is a hundred minus twenty-five, seventy-five. Not nights is a hundred minus thirty-three, sixty-seven.",
     "at": [
      "Not new is a hundred minus twenty-five",
-     "Not nights is a hundred minus thirty"
-    ]
-   },
-   {
-    "say": "If a fraction were a third, we'd just write thirty-three. The small part we drop only matters when a sum lands right next to a hundred.",
-    "at": [
-     "If a fraction"
+     "Not nights is a hundred minus thirty-three"
     ]
    }
   ],
   [
    {
-    "say": "Choice number one says at least one nurse who is not new does not work night shifts. Seventy-five plus seventy is a hundred forty-five. That's more than a hundred, so the overlap is forced. Choice number two says at least one night-shift nurse drives to work. Thirty plus seventy-five is a hundred five. Again, the overlap is forced.",
+    "say": "Choice number one says at least one nurse who is not new does not work night shifts. Seventy-five plus sixty-seven is a hundred forty-two. That's more than a hundred, so the overlap is forced. Choice number two says at least one night-shift nurse drives to work. Thirty-three plus seventy-five is a hundred eight. Again, the overlap is forced.",
     "at": [
      "number one says",
      "one nurse who",
-     "Seventy-five plus seventy",
+     "Seventy-five plus sixty-seven",
      "That's more than",
      "number two says",
-     "Thirty plus seventy-five",
+     "Thirty-three plus seventy-five",
      "Again, the overlap"
+    ]
+   },
+   {
+    "say": "Now, why could we drop the third of a percent? With it, choice number two would be a hundred eight and a third. Dropping the third changes a sum by less than one. So it matters only when the sum lands right next to a hundred, like ninety-nine and a bit. A hundred eight is far above a hundred, so the overlap is forced with or without the third.",
+    "at": [
+     "With it, choice number two would be",
+     "number two would",
+     "hundred eight and"
     ]
    }
   ],
   [
    {
-    "say": "Choice number three says at least one new nurse drives to work. Twenty-five plus seventy-five is exactly a hundred, so the overlap isn't forced. Choice number four says at least one part-time nurse does not work night shifts. Fifty plus seventy is a hundred twenty, more than a hundred. That overlap is forced.",
+    "say": "Choice number three says at least one new nurse drives to work. Twenty-five plus seventy-five is exactly a hundred, so the overlap isn't forced. Choice number four says at least one part-time nurse does not work night shifts. Fifty plus sixty-seven is a hundred seventeen, more than a hundred. That overlap is forced.",
     "at": [
      "number three says",
      "one new nurse",
      "Twenty-five plus seventy-five",
      "a hundred, so",
      "number four says",
-     "Fifty plus seventy",
-     "hundred twenty, more"
+     "Fifty plus sixty-seven",
+     "hundred seventeen, more"
     ]
    },
    {

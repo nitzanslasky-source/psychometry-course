@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "A supply of hay is enough for two hundred identical sheep for nine days. Each sheep eats the same constant amount per day. For how many days would that supply feed a hundred fifty sheep?",
+    "say": "A supply of hay is enough for two hundred identical sheep for nine days. Each sheep eats the same constant amount per day. For how many days would that supply feed ninety sheep?",
     "voice": "calm",
     "at": [
      "A supply of hay is enough"
@@ -32,14 +32,20 @@
     ]
    },
    {
-    "say": "So six point seven five, choice number three, is out. That's fewer days.",
+    "say": "And really, all four choices are more than nine days. So the question is how many more.",
     "at": [
-     "number three, is",
-     "That's fewer days"
+     "And really, all",
+     "the question is"
     ]
    },
    {
-    "say": "Now an easy number. Half of two hundred is a hundred. Half the sheep make the hay last twice as long. Nine times two is eighteen days.",
+    "say": "Ninety is close to a hundred, and a hundred is exactly half of two hundred. Half is the easiest to work with, so let's go through it first.",
+    "at": [
+     "exactly half of"
+    ]
+   },
+   {
+    "say": "Half of two hundred is a hundred. Half the sheep make the hay last twice as long. Nine times two is eighteen days.",
     "at": [
      "Half of two hundred is a hundred",
      "Half the sheep",
@@ -47,20 +53,33 @@
     ]
    },
    {
-    "say": "But we have a hundred fifty sheep, more than a hundred. More sheep finish the hay sooner. So fewer than eighteen days.",
+    "say": "But we have ninety sheep, a bit fewer than a hundred. Fewer sheep make the hay last longer. So a bit more than eighteen days.",
     "at": [
-     "hundred fifty sheep",
-     "more than a hundred",
-     "So fewer than"
+     "a bit fewer than a hundred",
+     "So a bit"
     ]
    },
    {
-    "say": "So eighteen, choice number two, is out.",
+    "say": "So eighteen, choice number two, is out. And fifteen, choice number one, is fewer than eighteen, so it's out too.",
     "at": [
-     "So eighteen, choice number two, is out"
+     "So eighteen, choice number two",
+     "so it's out too"
     ]
    },
-   "Twelve and fifteen are left. Both are between nine and eighteen, so the estimate can't decide. Let's find it exactly."
+   {
+    "say": "Twenty and twenty-seven are left. Ninety sheep are only ten fewer than a hundred, a small change. So the days grow only a little above eighteen. Twenty-seven is nine days more than eighteen, half as much again. That's far too much, so twenty-seven is out.",
+    "at": [
+     "Twenty-seven is nine days more",
+     "than eighteen, half",
+     "so twenty-seven is out"
+    ]
+   },
+   {
+    "say": "So the estimate alone picks twenty, choice number three. Now let's see two exact ways.",
+    "at": [
+     "number three. Now"
+    ]
+   }
   ],
   [
    {
@@ -80,29 +99,29 @@
     ]
    },
    {
-    "say": "A hundred fifty sheep eat a hundred fifty units a day.",
+    "say": "Ninety sheep eat ninety units a day.",
     "at": [
-     "A hundred fifty sheep eat"
+     "Ninety sheep eat"
     ]
    },
    {
-    "say": "One thousand eight hundred divided by a hundred fifty. Fifteen hundred is ten times a hundred fifty, and three hundred is two more hundred fifties. So twelve days.",
+    "say": "One thousand eight hundred divided by ninety. We can drop a zero from both numbers. A hundred eighty divided by nine is twenty. So twenty days.",
     "at": [
      "One thousand eight",
-     "So twelve days"
+     "So twenty days"
     ]
    },
    {
-    "say": "Let's check it. A hundred fifty times twelve is one thousand eight hundred. That's all the hay.",
+    "say": "Let's check it. Ninety times twenty is one thousand eight hundred. That's all the hay.",
     "at": [
-     "A hundred fifty times twelve",
-     "is one thousand"
+     "Ninety times twenty",
+     "thousand eight hundred"
     ]
    },
    {
-    "say": "So twelve days. That's choice number one.",
+    "say": "So twenty days. That's choice number three, just like the estimate.",
     "at": [
-     "number one"
+     "number three, just"
     ]
    }
   ],
@@ -125,25 +144,25 @@
     ]
    },
    {
-    "say": "The question mark is in the time. So the V joins two hundred, one and nine. We divide by the other two, one and a hundred fifty.",
+    "say": "The question mark is in the time. So the V joins two hundred, one and nine. We divide by the rest, one and ninety.",
     "at": [
      "The question mark",
      "So the V joins two hundred",
-     "We divide by the other two",
-     "one and a hundred fifty"
+     "We divide by the rest",
+     "one and ninety"
     ]
    },
    {
-    "say": "Two hundred over a hundred fifty is four thirds, because we divide both by fifty.",
+    "say": "Two hundred over ninety is twenty ninths, because we divide both by ten.",
     "at": [
-     "Two hundred over a hundred fifty",
-     "fifty is four"
+     "Two hundred over ninety",
+     "twenty ninths, because"
     ]
    },
    {
-    "say": "Four thirds times nine. Nine divided by three is three. Then three times four is twelve days.",
+    "say": "Twenty ninths times nine. The nine cancels the ninth, and that leaves twenty days.",
     "at": [
-     "three times four is twelve"
+     "that leaves twenty days"
     ]
    },
    {
@@ -153,9 +172,9 @@
     ]
    },
    {
-    "say": "Choice number one is our answer, and I'll see you in the next question.",
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
     "at": [
-     "Choice number one is our answer"
+     "Choice number three is our answer"
     ]
    }
   ]

@@ -12,17 +12,17 @@
     "pause": 0.5
    },
    {
-    "say": "If we solve it the math way, we need two unknowns and two equations, and few students really manage that. But we have answers. The choices are numbers, and the story gives conditions we can check. So we look for the choice that fits everything in the story when we plug it in.",
+    "say": "The math way would use two unknowns and two equations. But we can also test the answers. The choices are numbers, and the story gives conditions we can check. We'll try a shirt price from the choices. Then we'll check whether the discounted prices add up to two hundred eighty.",
     "at": [
      "The choices are numbers",
      "the story gives",
-     "for the choice"
+     "shirt price from",
+     "Then we'll check"
     ]
    },
    {
     "say": "We haven't learned percents yet, so here's all we need. Fifty percent off means half the price is taken off, so he pays half. Ten percent off means a tenth of the price is taken off.",
     "at": [
-     "yet, so here's",
      "Fifty percent off means",
      "the price is",
      "Ten percent off means",

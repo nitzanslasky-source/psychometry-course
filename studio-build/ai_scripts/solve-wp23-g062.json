@@ -4,57 +4,88 @@
  "slides": [
   [
    {
-    "say": "Twenty-five percent of eighteen percent of y is equal to nine. What is thirteen point five percent of y?",
+    "say": "Twenty-five percent of thirty percent of y is equal to nine. What is thirty-seven point five percent of y?",
     "voice": "calm",
     "at": [
-     "of eighteen percent"
+     "of thirty percent"
     ],
     "pause": 0.5
    },
    "The wording is a bit heavy. But of means times, so the whole left side is one multiplication. We'll solve it in two different ways, the math way, and then with an insight.",
    {
-    "say": "Let's start with the math way. Twenty-five percent is a quarter. Eighteen percent is eighteen over a hundred, which reduces to nine over fifty.",
+    "say": "Let's start with the math way. Twenty-five percent is a quarter. Thirty percent is thirty over a hundred, which reduces to three tenths.",
     "at": [
      "Let's start",
      "Twenty-five percent is a quarter",
-     "Eighteen percent is",
+     "Thirty percent is",
      "a hundred, which"
     ]
    },
    {
-    "say": "So a quarter, times nine over fifty, times y, is equal to nine.",
+    "say": "So a quarter, times three tenths, times y, is equal to nine.",
     "at": [
-     "So a quarter, times nine",
-     "over fifty, times"
+     "So a quarter, times three",
+     "tenths, times y"
     ]
    },
    {
-    "say": "A quarter times nine over fifty is nine over two hundred. So nine two hundredths of y is nine.",
+    "say": "A quarter times three tenths: one times three is three, and four times ten is forty. So three fortieths of y is nine.",
     "at": [
-     "So nine two hundredths"
+     "So three fortieths of y"
     ]
    },
    {
-    "say": "Nine two hundredths of y is nine, so one two hundredth of y is one. So y is two hundred.",
+    "say": "Three fortieths of y is nine. So one fortieth of y is nine divided by three, three.",
     "at": [
-     "Nine two hundredths",
-     "So y is two hundred"
+     "Three fortieths of",
+     "So one fortieth of y",
+     "is nine divided"
     ]
    },
    {
-    "say": "Now what they ask, thirteen point five percent of two hundred. Ten percent of two hundred is twenty. Three percent is six. And half a percent is one.",
+    "say": "The whole y is forty fortieths, so y is forty times three, a hundred twenty.",
     "at": [
-     "Now what they",
-     "Ten percent of two hundred",
-     "Three percent is six",
-     "half a percent is one"
+     "so y is forty times three",
+     "three, a hundred"
     ]
    },
    {
-    "say": "Twenty plus six plus one is twenty-seven. Choice number two is our answer.",
+    "say": "Careful, a hundred twenty is y, not what they ask. That's choice number four, a trap.",
     "at": [
-     "Twenty plus six plus one",
-     "Choice number two is our answer"
+     "not what they ask",
+     "That's choice number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now what they ask, thirty-seven point five percent of a hundred twenty. Thirty-seven point five percent is in our fraction table. It's three eighths.",
+    "at": [
+     "Now what",
+     "thirty-seven point five",
+     "It's three eighths"
+    ]
+   },
+   {
+    "say": "Remember why. Twelve point five percent is an eighth. And thirty-seven point five is three times twelve point five, so it's three eighths. This is why we memorize the table.",
+    "at": [
+     "Twelve point five percent is an eighth",
+     "And thirty-seven point"
+    ]
+   },
+   {
+    "say": "So first an eighth of a hundred twenty. We halve three times. Half of a hundred twenty is sixty, half again is thirty, and half again is fifteen.",
+    "at": [
+     "Half of a hundred twenty is sixty",
+     "half again is thirty",
+     "and half again is fifteen"
+    ]
+   },
+   {
+    "say": "So three eighths of a hundred twenty is three times fifteen, forty-five. Choice number three is our answer.",
+    "at": [
+     "So three eighths of a hundred twenty",
+     "Choice number three is our answer"
     ]
    }
   ],
@@ -96,35 +127,40 @@
   ],
   [
    {
-    "say": "Now our question. We start again from the givens. Twenty-five percent of eighteen percent is one multiplication, so we can read it in the easy order. A quarter of eighteen percent is four point five percent.",
+    "say": "Now our question. We start again from the givens. Twenty-five percent of thirty percent is one multiplication, so we can do it in whichever order is easier. Here, a quarter of thirty percent is easy. It's thirty divided by four, seven point five percent.",
     "at": [
      "Now our",
      "start again from",
-     "eighteen percent is",
-     "A quarter of eighteen percent",
-     "is four point"
+     "thirty percent is",
+     "Here, a quarter of thirty percent",
+     "percent is easy"
     ]
    },
    {
-    "say": "So four point five percent of y is nine.",
+    "say": "So seven point five percent of y is nine.",
     "at": [
-     "So four point five percent of y",
+     "So seven point five percent of y",
      "of y is"
     ]
    },
    {
-    "say": "They ask for thirteen point five percent. Thirteen point five is three times four point five. So it's three times nine, twenty-seven.",
+    "say": "They ask for thirty-seven point five percent. Five times seven is thirty-five, and five times a half is two and a half. So thirty-seven point five is five times seven point five.",
     "at": [
-     "Thirteen point five is three times",
-     "times four point",
-     "So it's three times nine"
+     "So thirty-seven point five is five times",
+     "five times seven point"
     ]
    },
    {
-    "say": "We never even found y. Choice number two is our answer, and I'll see you in the next question.",
+    "say": "The same y, with five times the percent, gives five times the amount. So it's five times nine, forty-five.",
+    "at": [
+     "So it's five times nine"
+    ]
+   },
+   {
+    "say": "We never even found y. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
      "We never even",
-     "Choice number two is our answer"
+     "Choice number three is our answer"
     ]
    }
   ]

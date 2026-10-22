@@ -123,9 +123,10 @@
     ]
    },
    {
-    "say": "We stop halfway, and we use what we already know to rule out choices. This is called a partial calculation. In this question the triangle is exactly thirty-six. We take away a sector, a quarter of a circle with radius six. Its area is some number times pi. So here the answer must be thirty-six, minus some number of pi.",
+    "say": "We stop halfway, and we use what we already know to rule out choices. This is called a partial calculation. In this question the triangle is exactly thirty-six. We take away a sector, a quarter of a circle with radius six. Its area is some number times pi. The choices are already written without brackets, with the two area parts separate. So here the answer must be thirty-six, minus some number of pi. If a choice has brackets, expand them before comparing its parts.",
     "at": [
-     "So here the answer must be"
+     "So here the answer must be",
+     "If a choice"
     ]
    },
    {

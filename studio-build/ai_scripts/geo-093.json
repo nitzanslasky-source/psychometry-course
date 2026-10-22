@@ -36,7 +36,90 @@
      "out choices by"
     ]
    },
-   "We'll explain each one in the question that uses it. Let's start. [pause] Okay. I'll see you in the next video."
+   {
+    "say": "First, let's practise choosing the two areas. The order of subtraction depends on the picture.",
+    "at": [
+     "choosing the two areas",
+     "on the picture"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here the two radii are both two, with a right angle between them. We want the shaded segment between chord A B and the arc.",
+    "at": [
+     "Here the two radii",
+     "both two, with"
+    ]
+   },
+   {
+    "say": "The quarter circle contains the triangle and the shaded segment. So take the whole quarter circle, then remove triangle A O B. What's left is the shaded segment.",
+    "at": [
+     "take the whole quarter circle",
+     "remove triangle A O B",
+     "What's left is"
+    ]
+   },
+   {
+    "say": "The full circle has area pi times two squared, four pi. Ninety degrees is a quarter of the circle. Four pi divided by four is pi, so the quarter is pi.",
+    "at": [
+     "four pi.",
+     "Ninety degrees is",
+     "so the quarter is pi"
+    ]
+   },
+   {
+    "say": "The triangle is right, with legs of two. Its area is two times two, divided by two. That's two.",
+    "at": [
+     "The triangle is",
+     "That's two"
+    ]
+   },
+   {
+    "say": "So the shaded area is pi minus two. We subtract the triangle because it's the piece inside the sector that we don't want.",
+    "at": [
+     "pi minus two",
+     "We subtract the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the shaded parts are outside the circle but inside this triangle. The base is four, and the height is the radius, two. The angle at O is ninety degrees.",
+    "at": [
+     "are outside the",
+     "inside this triangle",
+     "The base is"
+    ]
+   },
+   {
+    "say": "This time the whole triangle contains a quarter circle and the shaded parts. Take the triangle, then remove the quarter circle. The shaded parts are what remain.",
+    "at": [
+     "Take the triangle",
+     "remove the quarter circle",
+     "The shaded parts are"
+    ]
+   },
+   {
+    "say": "The triangle's area is four times two, divided by two, which is four.",
+    "at": [
+     "which is four"
+    ]
+   },
+   {
+    "say": "The radius is two again, so the quarter circle's area is pi, just as before.",
+    "at": [
+     "again, so the",
+     "area is pi"
+    ]
+   },
+   {
+    "say": "So this shaded area is four minus pi. Same subtraction method, but the whole shape is different. First name the whole region. Then name the piece you remove. Don't always subtract in the same order. Now let's use this in the questions, and I'll see you in the next video.",
+    "at": [
+     "four minus pi",
+     "Same subtraction method"
+    ]
+   }
   ]
  ]
 }

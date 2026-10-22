@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "Three circles with centers A, B and C touch one another from the outside. Their radii are six centimeters, fourteen centimeters and fifteen centimeters. What is the length of the highlighted arc of the circle with center A, in centimeters?",
+    "say": "Three circles with centers A, B and C are externally tangent. That means they touch one another from the outside. Their radii are three centimeters, six centimeters and nine centimeters. What is the length of the highlighted arc of the circle with center A, in centimeters?",
     "voice": "calm",
     "at": [
      "Three circles with centers"
@@ -19,24 +19,24 @@
     ]
    },
    {
-    "say": "[short pause] The radius of circle A is given, so the whole circumference is easy. Two pi r is two pi times six, which is twelve pi.",
+    "say": "[short pause] The radius of circle A is given, so the whole circumference is easy. Two pi r is two pi times three, which is six pi.",
     "at": [
-     "Two pi r is two pi times six"
+     "Two pi r is two pi times three",
+     "pi times three"
     ]
    },
    {
-    "say": "Let's peek at the choices. Choice number one is twelve pi. That's the whole circle, and the highlighted arc is only part of it, so it has to be less. Choice number one is out.",
+    "say": "Let's peek at the choices. Choice number one is six pi. That's the whole circle, and the highlighted arc is only part of it, so it has to be less. Choice number one is out.",
     "at": [
-     "Let's peek at",
      "number one is",
      "part of it",
      "Choice number one is out"
     ]
    },
    {
-    "say": "We can also cross out choice number four, six pi. Six pi is exactly half the circle. Let's connect the three centers. The highlighted arc's angle at A is three hundred sixty minus the triangle's angle at A. For the arc to be exactly half, that triangle angle would have to be one hundred eighty. But an angle of a triangle is always less than one hundred eighty. So the highlighted arc is more than half, and choice number four is out too.",
+    "say": "We can also cross out choice number four, three pi. Three pi is exactly half the circle. Let's connect the three centers. The highlighted arc's angle at A is three hundred sixty minus the triangle's angle at A. For the arc to be exactly half, that triangle angle would have to be one hundred eighty. But an angle of a triangle is always less than one hundred eighty. So the highlighted arc is more than half, and choice number four is out too.",
     "at": [
-     "number four, six",
+     "number four, three",
      "Connect the three centers",
      "The highlighted arc's",
      "would have to be one hundred eighty",
@@ -55,51 +55,45 @@
   ],
   [
    {
-    "say": "[short pause] Here are the three circles again, bigger. Let's put in the givens. The radius of circle A is six, so we write six and six on its two radii. Circle B, fourteen and fourteen. Circle C, fifteen and fifteen.",
+    "say": "[short pause] Here are the three circles again, bigger. Let's put in the givens. The radius of circle A is three, so we write three and three on its two radii. Circle B, six and six. Circle C, nine and nine.",
     "at": [
      "Here are the three circles again",
      "Let's put in the givens",
      "The radius of",
-     "we write six and six",
-     "Circle B, fourteen",
-     "Circle C, fifteen"
+     "we write three and three",
+     "on its two",
+     "Circle B, six",
+     "Circle C, nine"
     ]
    },
    {
-    "say": "The circles touch, so the line between two centers passes through the point where they touch. It's made of the two radii. So A B is six plus fourteen, twenty. A C is six plus fifteen, twenty-one. And B C is fourteen plus fifteen, twenty-nine.",
+    "say": "The circles touch, so the line between two centers passes through the point where they touch. It's made of the two radii. So A B is three plus six, nine. A C is three plus nine, twelve. And B C is six plus nine, fifteen.",
     "at": [
      "The circles touch",
-     "So A B is six plus fourteen",
-     "A C is six plus fifteen",
-     "And B C is fourteen plus",
-     "plus fifteen, twenty-nine"
+     "So A B is three plus six",
+     "plus six, nine",
+     "A C is three plus nine",
+     "And B C is six plus"
     ]
    },
    {
-    "say": "Twenty, twenty-one, twenty-nine. We need the angle at A, so let's check Pythagoras, to see if it's a right angle. Twenty squared is four hundred. For twenty-one squared, twenty-one times twenty is four hundred twenty. Add one more twenty-one, and we get four hundred forty-one. Four hundred plus four hundred forty-one is eight hundred forty-one.",
+    "say": "Nine, twelve, fifteen. We need the angle at A, so let's look at the three sides. Do they look familiar? They're three, four, five, times three. Again a Pythagorean triple, like in the circumscribed circle question.",
     "at": [
-     "let's check Pythagoras",
-     "if it's a",
-     "Twenty squared is four hundred",
-     "For twenty-one squared",
-     "Add one more twenty-one",
-     "we get four hundred forty-one",
-     "Four hundred plus",
-     "is eight hundred forty-one"
+     "We need the",
+     "They're three, four, five, times three",
+     "Again a Pythagorean"
     ]
    },
    {
-    "say": "And twenty-nine squared? It's twenty-nine times thirty, minus twenty-nine. Twenty-nine times thirty is eight hundred seventy. Eight hundred seventy minus twenty-nine is eight hundred forty-one. The same, so it's a Pythagorean triple.",
+    "say": "If you don't spot it, check Pythagoras. Eighty-one plus a hundred forty-four is two hundred twenty-five, and that's fifteen squared.",
     "at": [
-     "It's twenty-nine times",
-     "Twenty-nine times thirty is eight",
-     "Eight hundred seventy minus twenty-nine",
-     "is eight hundred forty-one"
+     "that's fifteen squared"
     ]
    },
    {
-    "say": "B C, twenty-nine, is the hypotenuse, so the angle across from it, the angle at A, is ninety degrees.",
+    "say": "B C, fifteen, is the hypotenuse, so the angle across from it, the angle at A, is ninety degrees.",
     "at": [
+     "the hypotenuse, so",
      "the angle at A, is ninety",
      "is ninety degrees"
     ]
@@ -124,18 +118,14 @@
     ]
    },
    {
-    "say": "Three quarters of twelve pi. Let's find a quarter first. Twelve pi divided by four is three pi. So three quarters is three times three pi, which is nine pi. Choice number three is our answer. Now go back to the Pythagorean check. We can use the difference of squares again. Twenty-nine squared minus twenty-one squared is twenty-nine minus twenty-one, times twenty-nine plus twenty-one. That's eight times fifty, four hundred. Four hundred is twenty squared. So the triangle is right, without calculating either big square. If you notice that, you can reach the ninety-degree angle sooner. I'll see you in the next question.",
+    "say": "Three quarters of six pi. Let's find a quarter first. Six pi divided by four is one and a half pi. So three quarters is three times one and a half pi, which is four and a half pi. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
      "Three quarters of",
-     "Twelve pi divided by four",
-     "is three pi",
-     "So three quarters is three",
-     "times three pi",
-     "Choice number three is our answer",
-     "Twenty-nine squared minus twenty-one squared",
-     "is twenty-nine minus",
-     "four hundred. Four hundred is twenty squared",
-     "Four hundred is"
+     "Six pi divided by four",
+     "is one and",
+     "So three",
+     "times one and",
+     "Choice number three is our answer"
     ]
    }
   ]

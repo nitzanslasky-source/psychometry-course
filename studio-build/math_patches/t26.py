@@ -1472,40 +1472,41 @@ def rn_guided(M):
     ]])
 
     # ---------- A7 g105b: feed for 240 animals 6 days -> 90 animals 16 days (Hebrew: water, 220 dunam 5 days -> 100 dunam 11)
-    #            ==>  hay for 200 sheep 9 days -> 150 sheep 12 days
+    #            ==>  hay for 200 sheep 9 days -> 90 sheep 20 days (W23, 2026-10-22: was 150 sheep -> 12, where her
+    #            half-benchmark estimate could not decide; with 90 it lands next to the answer again: 18 -> a bit more -> 20)
     q = 'wp26-g105b'
     _rn_q(M, q, 'A supply of hay is enough for 200 identical sheep for 9 days. Each sheep eats the same constant amount per day. '
-                'For how many days would that supply feed 150 sheep?',
-          ['12', '18', '6.75', '15'], 1, [
+                'For how many days would that supply feed 90 sheep?',
+          ['15', '18', '20', '27'], 3, [
         'Sheep-days (like worker-days): $200\\times9=1{,}800$.',
-        '150 sheep: $1{,}800\\div150=12$ days.'])
+        '90 sheep: $1{,}800\\div90=20$ days.',
+        'Estimate: half the sheep, $100$, would make the hay last twice as long, $9\\times2=18$ days. $90$ sheep are a bit '
+        'fewer than $100$, therefore the hay lasts a bit more than $18$ days. Only $20$ fits.'])
     _rn_sub(M, 'solve-' + q, 1, [('Last question.', 'The last team question.')])   # (a factors question follows it)
     _rn_video(M, q, [[
         "This time let's start the psychometric way — estimate.",
-        "Fewer sheep — the same hay lasts LONGER. More than nine days.",
-        D('Cross out choice 3'),
-        "Six point seven five is out — that's fewer days.",
+        "Fewer sheep — the same hay lasts LONGER. More than nine days. All four choices are.",
         D('Write "200 → 100 sheep: 9 → 18 days"'),
         "Half of two hundred is a hundred. Half the sheep — double the days: eighteen.",
-        D('Cross out choice 2'),
-        "But a hundred fifty is more than a hundred — so FEWER than eighteen days. Eighteen is out.",
-        D('Write "150 = 3/2 of 100 → 18 × 2/3 = 12"'),
-        "A hundred fifty is three halves of a hundred — so two thirds of the time. Twelve.",
-        D('Circle choice 1'),
+        D('Cross out choices 1 and 2'),
+        "But ninety is a bit fewer than a hundred — so a bit MORE than eighteen days. Fifteen and eighteen are out.",
+        D('Cross out choice 4'),
+        "Twenty-seven is far too much for ten fewer sheep. A bit more than eighteen: twenty.",
+        D('Circle choice 3'),
     ], [
         "Plug in. Say each sheep eats one unit a day.",
         D('Write "200 × 9 = 1,800 units"'),
         "Two hundred sheep, nine days: one thousand eight hundred units of hay.",
-        D('Write "1,800 ÷ 150 = 12"'),
-        "A hundred fifty sheep eat a hundred fifty a day. Eighteen hundred over a hundred fifty: twelve days.",
-        D('Circle choice 1'),
+        D('Write "1,800 ÷ 90 = 20"'),
+        "Ninety sheep eat ninety a day. Eighteen hundred over ninety: twenty days.",
+        D('Circle choice 3'),
     ], [
         "It's even a team question — once you see who the team is.",
         "The sheep are the workers. Their job — eating. The hay is the work, and it never changes.",
-        A('The table appears: 200 · 1 · 9 and 150 · 1 · ?', TABLE(['Team', 'Work', 'Time'], [['200', '1', '9'], ['150', '1', '?']])),
-        D('Draw a V through 200, 1, 9 and write "(200 · 1 · 9) ÷ (150 · 1) = 12"'),
-        "V method: two hundred times one times nine, over a hundred fifty. Twelve.",
-        D('Circle choice 1'),
+        A('The table appears: 200 · 1 · 9 and 90 · 1 · ?', TABLE(['Team', 'Work', 'Time'], [['200', '1', '9'], ['90', '1', '?']])),
+        D('Draw a V through 200, 1, 9 and write "(200 · 1 · 9) ÷ (90 · 1) = 20"'),
+        "V method: two hundred times one times nine, over ninety. Twenty.",
+        D('Circle choice 3'),
         "The hard part was seeing who the team is. If you can't — estimate or plug in.",
     ]])
 
@@ -1745,7 +1746,7 @@ def spread_methods(M):
         D('Circle choice 2'),
         'Choice two — exact, with no division by the total time.'])
     # Q15 hay: compare by factors (the V made general)
-    _sp_line(M, 'wp26-g105b', r'Method 2 · Compare by factors: the sheep are $\times\frac{150}{200}=\times\frac34$. Fewer sheep, more days (opposite way) → flip to $\frac43$: $9\cdot\frac43=12$ days.')
+    _sp_line(M, 'wp26-g105b', r'Method 2 · Compare by factors: the sheep are $\times\frac{90}{200}=\times\frac{9}{20}$. Fewer sheep, more days (opposite way) → flip to $\frac{20}{9}$: $9\cdot\frac{20}{9}=20$ days.')
     # practice
     _pm_add(M, 'wp26-p09', [r'Method 2 · Percent shares as weights (the weights are the days): $2$ of the $10$ days ($20\%$) are at $20$ bowls a day, the rest at $5$. Average $=5+0.2\cdot15=8$ bowls a day.'])
     _pm_add(M, 'wp26-p23', [r'Method 2 · Compare by factors: after $4$ days, six workers would need $14-4=10$ more days. The team is $\times\frac46=\frac23$; fewer workers, more days (opposite way) → flip to $\frac32$: $10\cdot\frac32=15$ days.'])
@@ -1797,7 +1798,7 @@ def _po_say(M, vid, n, old, new):
 
 def plan_order_fix(M):
     # wp26-g105b comes before the lesson "Compare by Factors" (r26-t26-factors) in this topic.
-    _po_line(M, 'wp26-g105b', 'Method 2 · Compare by factors:', "Shortcut · Compare by factors: only the number of sheep changes, and the days go the opposite way (fewer sheep, more days), so multiply the days by the flipped factor. The sheep are $\\times\\frac{150}{200}=\\times\\frac34$ → the days are $\\times\\frac43$: $9\\cdot\\frac43=12$ days.")
+    _po_line(M, 'wp26-g105b', 'Method 2 · Compare by factors:', "Shortcut · Compare by factors: only the number of sheep changes, and the days go the opposite way (fewer sheep, more days), so multiply the days by the flipped factor. The sheep are $\\times\\frac{90}{200}=\\times\\frac{9}{20}$ → the days are $\\times\\frac{20}{9}$: $9\\cdot\\frac{20}{9}=20$ days.")
 
 
 _apply_before_plan_order_fix = apply

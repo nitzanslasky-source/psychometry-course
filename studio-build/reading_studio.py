@@ -335,6 +335,10 @@ def math_display(text):
     # 2026-10-21 (topic 33): "nine π" / "36 π" -> 9π / 36π
     s = re.sub(r'\b(%s) (?:π|pi)\b' % '|'.join(_UNITS[1:] + _TEENS), lambda m: '%dπ' % _INT_WORD[m.group(1).lower()], s, flags=re.I)
     s = re.sub(r'(\d) (?:π|pi)\b', r'\1π', s)
+    # 2026-10-22 (topic 51 q16): "π over two" / "four π over eight" -> π/2, 4π/8
+    _W = {w: str(_INT_WORD[w]) for w in _UNITS[1:] + _TEENS}
+    s = re.sub(r'(?:\b(%s) )?(\d*)(?:π|pi) over (\d+|%s)\b' % ('|'.join(_UNITS[1:]), '|'.join(_UNITS[1:] + _TEENS)),
+               lambda m: (_W.get((m.group(1) or '').lower(), '') + m.group(2) + 'π/' + _W.get(m.group(3).lower(), m.group(3))), s, flags=re.I)
     return s
 
 

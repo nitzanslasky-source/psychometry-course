@@ -142,6 +142,41 @@
   ],
   [
    {
+    "say": "Now let's see cannot be determined in numbers. Given, x plus y is six. What is x minus y?",
+    "at": [
+     "be determined in",
+     "x plus y is six",
+     "What is x"
+    ]
+   },
+   {
+    "say": "Try x equals one and y equals five. One plus five is six, so they fit the given. But one minus five is minus four.",
+    "at": [
+     "One plus five is six",
+     "so they fit",
+     "is minus four"
+    ]
+   },
+   {
+    "say": "Now try x equals two and y equals four. Two plus four is six, so this pair fits too. Two minus four is minus two.",
+    "at": [
+     "Now try x",
+     "Two plus four is six",
+     "so this pair",
+     "is minus two"
+    ]
+   },
+   {
+    "say": "Both pairs fit the same given, but the requested answers are different. So the given doesn't fix x minus y. It cannot be determined. Two different results are enough to show that.",
+    "at": [
+     "Both pairs fit",
+     "It cannot be determined",
+     "Two different results"
+    ]
+   }
+  ],
+  [
+   {
     "say": "So, when do I plug in numbers? When there's an expression with a letter and the choices are numbers. When there are letters in the choices. When the amount doesn't matter, like in a ratio. And when there are more letters than equations.",
     "at": [
      "when do I plug in numbers",

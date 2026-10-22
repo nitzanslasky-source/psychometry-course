@@ -125,12 +125,20 @@
      "It's not an"
     ]
    },
-   "It just isn't a round number. Its digits after the decimal point never end, so instead of writing them, we give it a special sign, the letter pi. That's easier to write and easier to see in the formula.",
    {
-    "say": "So the area, pi r squared, is a bit more than three times r squared. For a rough comparison, like the next one, that's all we need to know about pi. It's a bit more than three.",
+    "say": "It just isn't a round number. Pi is three point one four one five nine, and so on. Its digits after the decimal point never end, so instead of writing them, we give it a special sign, the letter pi. That's easier to write and easier to see in the formula.",
+    "at": [
+     "Pi is three point one four one five nine",
+     "four one five"
+    ]
+   },
+   {
+    "say": "So the area, pi r squared, is a bit more than three times r squared. For a rough comparison, like the next one, that's all we need to know about pi. It's a bit more than three. We need its first digits, three point one four, only when the choices are close ranges of numbers.",
     "at": [
      "is a bit more than three times",
-     "three times r"
+     "three times r",
+     "We need its first digits",
+     "ranges of numbers"
     ]
    },
    {

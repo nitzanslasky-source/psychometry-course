@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "A smaller circle lies inside a larger circle and touches it from the inside at A. A B is a diameter of the larger circle, A C is a diameter of the smaller circle, and C B is ten centimeters. The area inside the larger circle but outside the smaller one is sixty-five pi. What is the radius of the smaller circle?",
+    "say": "A smaller circle lies inside a larger circle and is internally tangent to it at A. That means they touch from the inside at A. A B is a diameter of the larger circle, A C is a diameter of the smaller circle, and C B is ten centimeters. The area inside the larger circle but outside the smaller one is sixty-five pi. What is the radius of the smaller circle?",
     "voice": "calm",
     "at": [
      "A smaller circle lies inside"

@@ -635,7 +635,7 @@ i_u2 = I('i_u2', '$40$ on a percent axis $= 40\\%$', size=28, col=1)
 i_u3 = I('i_u3', 'Read every note: it is there for a reason', size=28, col=1)
 i_p6 = PAGE_CH('i_p6', 'qs')
 i_q1 = I('i_q1', 'From easy to hard: the last one is the hardest', size=28, col=1)
-i_q2 = I('i_q2', 'The first question: usually pull out one value', size=28, col=1)
+i_q2 = I('i_q2', 'The first question: usually read one value', size=28, col=1)
 i_q3 = I('i_q3', 'Later questions: a calculation, or deeper understanding', size=28, col=1)
 i_p7 = PAGE_CH('i_p7', 'chart')
 i_d1 = I('i_d1', 'At the start of the section: easy. $\\ $At the end: hard', size=28, col=1)
@@ -746,8 +746,8 @@ video('ch52-intro', 'lesson', slides=[
       L("After the chart come the questions. They go from easy to hard.", show(i_p6['hl'], 'After the chart come the questions')),
       L("So the first question is the easiest, and the last is the hardest. The last one can be harder, or just longer to "
         "calculate.", show(i_q1, 'the last is the hardest')),
-      L("The first question usually checks one thing. Do we understand the chart? It asks us to pull out one value.",
-        show(i_q2, 'pull out one value')),
+      L("The first question usually checks one thing. Do we understand the chart? It asks us to read one value from the chart.",
+        show(i_q2, 'read one value from the chart')),
       L("For example, how many vehicles were sold in two thousand eleven? We read eighty thousand, and that's it."),
       L("The later questions go further. Some need a calculation, and some need a deeper understanding of the chart.",
         show(i_q3, 'The later questions go further')), pre=[i_p6['base']]),
@@ -1879,12 +1879,21 @@ h_c4 = CH('h_c4', VOLC, 345, 92, 740, [('z', MA.vol_chart(hl=[4, 8]))])
 h_n10 = I('h_n10', 'Into week $5$ the line falls, $\\ $but the change is $0$', size=28, col=1)
 h_n11 = I('h_n11', 'Into week $9$ the line rises, $\\ $but the change is $0$', size=28, col=1)
 h_c5 = CH('h_c5', VOLN, 345, 92, 700, [('a', MA.vol_chart(show_line=False, hl=[2])), ('b', MA.vol_chart(show_line=False, hl=[2, 3])),
-                                       ('c', MA.vol_chart(show_line=False, hl=[2, 3, 4])), ('d', MA.vol_chart(show_line=False, hl=[2, 3, 4, 5]))])
+                                       ('c', MA.vol_chart(show_line=False, hl=[2, 3, 4])), ('d', MA.vol_chart(show_line=False, hl=[2, 3, 4, 5])),
+                                       # 2026-10-22: the line comes back (a redraw), then its two pieces into weeks 4 and 5
+                                       ('!ln', MA.vol_chart(hl=[2, 3, 4, 5])),
+                                       ('flat', MA.vol_chart(hl=[2, 3, 4, 5], marks=[('seg', 2, 5, 3, 5)])),
+                                       ('down', MA.vol_chart(hl=[2, 3, 4, 5], marks=[('seg', 2, 5, 3, 5), ('seg', 3, 5, 4, 0)]))])
 h_q2 = I('h_q2', 'At the end of week $2$ there were $75$ volunteers. How many were there at the end of week $6$?', size=26, col=1)
 h_r1 = IH('h_r1', 'week $3$: $\\ 75+5=80$', size=28, col=1)
 h_r2 = IH('h_r2', 'week $4$: $\\ 80+5=85$', size=28, col=1)
 h_r3 = IH('h_r3', 'week $5$: $\\ 85+0=85$', size=28, col=1)
 h_r4 = IH('h_r4', 'week $6$: $\\ 85-10=75$', size=28, col=1)
+# 2026-10-22 Hebrew restore (reviews/hebrew-vs-english-t52.md row 11d): her recap with the line back - week 4's flat line
+# hides a rise, week 5's falling line is no change. h_c5 turns back into the chart with the line ('ln'), then the two
+# pieces of the line are traced in amber ('flat', 'down').
+h_n12 = I('h_n12', 'Into week $4$ the line is flat, $\\ $but $+5$: a rise', size=28, col=1)
+h_n13 = I('h_n13', 'Into week $5$ the line falls, $\\ $but $0$: no change', size=28, col=1)
 
 video('ch52-change', 'lesson', slides=[
     S('Change Graph',
@@ -1932,6 +1941,12 @@ video('ch52-change', 'lesson', slides=[
       L("Week six is minus ten. Eighty-five minus ten is seventy-five.", show(h_c5['d'], 'Week six is minus ten'),
         show(h_r4, 'Eighty-five minus ten')),
       L("So at the end of week six there were seventy-five volunteers."),
+      L("Now let's bring the line back, to see how it fooled us here. Into week four, the line is flat, so it looks like no "
+        "change. But the point of week four is plus five, so five volunteers joined.", show(h_c5['ln'], 'bring the line back'),
+        show(h_c5['flat'], 'Into week four, the line is flat'), show(h_n12, 'But the point of week four')),
+      L("Into week five, the line goes down, so it looks like a drop. But the point is zero, so nothing changed. So a flat "
+        "line can still be a rise, and a line going down can be no change.", show(h_c5['down'], 'Into week five, the line goes down'),
+        show(h_n13, 'But the point is zero')),
       L("This graph is confusing, so watch this video again if you need to. And remember the one rule. Ignore the line, "
         "and look only at the points."),
       L("That's the last type of chart. Next, we'll solve full chart sets. I'll see you in the next video."),

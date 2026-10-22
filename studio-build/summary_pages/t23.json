@@ -187,8 +187,10 @@
    ],
    "layers": [
     "line",
-    "b1",
-    "b2"
+    "b10",
+    "b11",
+    "b20",
+    "b21"
    ]
   },
   "arrows": {
@@ -222,6 +224,37 @@
   }
  },
  "sections": [
+  {
+   "title": "The percent equation",
+   "span": "full",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Every percent calculation is one equation: $\\text{part}=\\frac{\\text{percent}}{100}\\times\\text{whole}$ $\\;$ (**“of” = times**). The three versions are the same equation, with a different unknown."
+    },
+    {
+     "type": "rules",
+     "head": [
+      "Find",
+      "Example"
+     ],
+     "rows": [
+      [
+       "**the part**",
+       "$45\\%$ of $80$ is what? $\\ \\frac{45}{100}\\cdot80=36$"
+      ],
+      [
+       "**the percent**",
+       "$21$ is what percent of $75$? $\\ \\frac{21}{75}\\cdot100=28\\%$ $\\;$ (A is what percent of B: $\\ \\frac{A}{B}\\times100$)"
+      ],
+      [
+       "**the whole**",
+       "$30\\%$ of what is $63$? $\\ \\frac{30}{100}\\cdot x=63,\\ x=210$"
+      ]
+     ]
+    }
+   ]
+  },
   {
    "title": "Percents and fractions",
    "col": "L",
@@ -266,12 +299,8 @@
    "col": "R",
    "blocks": [
     {
-     "type": "ex",
-     "label": "The percent equation (works every time)",
-     "lines": [
-      "$45\\%$ of $80=\\frac{45}{100}\\cdot80=36$",
-      "$x\\%$ of $75$ is $21$: $\\ \\frac{x}{100}\\cdot75=21,\\ \\frac34x=21,\\ x=28$"
-     ]
+     "type": "p",
+     "text": "**The percent equation** (box 1) works every time. Two faster ways:"
     },
     {
      "type": "cols",
@@ -488,6 +517,7 @@
   "abs(1/1.2 - 5/6) < 1e-9",
   "abs(0.3*100 - 0.15*200) < 1e-9",
   "abs(20*20/100 - 4) < 1e-9",
-  "abs(0.75*680 - 510) < 1e-9"
+  "abs(0.75*680 - 510) < 1e-9",
+  "abs(21/75*100 - 28) < 1e-9"
  ]
 }

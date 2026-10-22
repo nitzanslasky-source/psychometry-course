@@ -83,9 +83,9 @@
     ]
    },
    {
-    "say": "The first question usually checks one thing. Do we understand the chart? It asks us to pull out one value.",
+    "say": "The first question usually checks one thing. Do we understand the chart? It asks us to read one value from the chart.",
     "at": [
-     "pull out one value"
+     "read one value from the chart"
     ]
    },
    {

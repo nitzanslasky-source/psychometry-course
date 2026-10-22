@@ -1254,7 +1254,8 @@ t4s4 = I('t4s4', 'Or: $\\ $equal times, $\\ $or choose a job size', size=34)
 t4s5 = I('t4s5', 'Two workers, different rates: between half the faster time and that full time', size=30)
 _wp094 += [
     S('Equal times',
-      L("There's another way, without fractions. We stretch the workers to the same time, and then we add the work."),
+      L("There's another way, without adding fractions. Compare both workers over the same number of hours. "
+        "Then add how much work they finish."),
       L("Ella fills one bag of leaves in four hours. Tom fills one bag in six hours.", show(t4t['line'], 'Ella fills one bag'),
         show(t4t['r1'], 'Ella fills one bag'), show(t4t['r3'], 'Tom fills one bag')),
       L("We can't add them yet, because the times are different. So we pick a time that works for both, twelve hours. "
@@ -1305,7 +1306,8 @@ _wp094 += [
       L("So let's sum it up. Working together, we add the rates, never the times.", show(t4s1, 'we add the rates, never')),
       L("A worker who works against the others gets a minus.", show(t4s2, 'gets a minus')),
       L("One job in four hours is a quarter of the job an hour.", show(t4s3, 'One job in four hours')),
-      L("Or we stretch the workers to equal times, or we choose a job size.", show(t4s4, 'Or we stretch the workers')),
+      L("Or compare both workers over the same time. Another option is to choose an easy job size.",
+        show(t4s4, 'compare both workers over the same time')),
       L("And for two workers with different positive rates, the time together is less than the faster one's time "
         "alone, but more than half of it.", show(t4s5, 'for two workers with different positive rates')),
       L("Take a moment to memorize this, and I'll see you in the next video.")),
@@ -2386,68 +2388,76 @@ video('solve-wp26-g105', 'solution', qid='wp26-g105', slides=[
 
 # ------------------------------------------------------------------------------------------------ g105b (the hay)
 # Hebrew (wp 6859-6981, the water tower: 220 dunams for 5 days -> 100 dunams): "this time I'll start, on purpose, with
-# the psychometric way, an estimate" (less land lasts longer; 110 is half of 220 -> 10 days; 100 is a bit less -> a bit
-# more than 10); way 2 plugging in numbers (each dunam "drinks" a liter a day: 1,100 liters / 100 = 11); way 3 the team
-# question: "who is the team and who is the work?" - the trees are the workers, their job is drinking, the water is the
-# work and it doesn't change (5 . 1 . 220 / 100). "There are such questions lately." English keeps the three, in her
-# order. Here the estimate rules out two choices and leaves 12 or 15 (said honestly); the exact ways decide.
+# the psychometric way, an estimate" (less land lasts longer, and all the choices are more than 5 days; 110 is half of
+# 220 -> 10 days; 100 is a bit less -> a bit more than 10 -> the estimate alone picks 11; "why the estimate? 100 is
+# almost half, the half is easy to compute"); way 2 plugging in numbers (each dunam "drinks" a liter a day: 1,100 liters
+# / 100 = 11); way 3 the team question: "who is the team and who is the work?" - the trees are the workers, their job is
+# drinking, the water is the work and it doesn't change (5 . 1 . 220 / 100). "There are such questions lately." English
+# keeps the three, in her order. W23 (2026-10-22): 150 sheep -> 90 sheep, so that her half-benchmark lands next to the
+# answer again (100 sheep -> 18 days; 90 a bit fewer -> a bit more than 18 -> 20) and the estimate decides by itself.
 g5ba = IH('g5ba', 'fewer sheep: $\\ $more than $9$ days', size=30)
 g5bb = IH('g5bb', '$200\\div2=100$ sheep: $\\ 9\\times2=18$ days', size=30)
-g5bc = IH('g5bc', '$150$ is more than $100$: $\\ $fewer than $18$', size=30)
+g5bc = IH('g5bc', '$90$ sheep: $\\ $a bit more than $18$', size=30)
+g5bl = IH('g5bl', '$27=18+9$: $\\ $far too much', size=30, col=1)
 g5bd = IH('g5bd', 'each sheep: $\\ 1$ unit a day', size=30)
 g5be = IH('g5be', '$200\\times9=1800$ units', size=30)
-g5bf = IH('g5bf', '$150$ sheep: $\\ 150$ units a day', size=30)
-g5bg = IH('g5bg', '$1800\\div150=12$ days', size=30)
-g5bh = IH('g5bh', '$150\\times12=1800$', size=30)
-g5bt = VT('g5bt', ('200', '1', '9'), ('150', '1', '?'), col=1)
-g5bi = IH('g5bi', '$?=\\frac{200\\cdot1\\cdot9}{1\\cdot150}$', size=30)
-g5bj = IH('g5bj', '$\\frac{200}{150}=\\frac{4}{3}$', size=30)
-g5bk = IH('g5bk', '$\\frac{4}{3}\\cdot9=12$ days', size=30)
+g5bf = IH('g5bf', '$90$ sheep: $\\ 90$ units a day', size=30)
+g5bg = IH('g5bg', '$1800\\div90=20$ days', size=30)
+g5bh = IH('g5bh', '$90\\times20=1800$', size=30)
+g5bt = VT('g5bt', ('200', '1', '9'), ('90', '1', '?'), col=1)
+g5bi = IH('g5bi', '$?=\\frac{200\\cdot1\\cdot9}{1\\cdot90}$', size=30)
+g5bj = IH('g5bj', '$\\frac{200}{90}=\\frac{20}{9}$', size=30)
+g5bk = IH('g5bk', '$\\frac{20}{9}\\cdot9=20$ days', size=30)
 video('solve-wp26-g105b', 'solution', qid='wp26-g105b', slides=[
     S('Method 1 · Estimation',
       L("A supply of hay is enough for two hundred identical sheep for nine days. Each sheep eats the same constant amount "
-        "per day. For how many days would that supply feed a hundred fifty sheep?",
+        "per day. For how many days would that supply feed ninety sheep?",
         pt('stem', 'A supply of hay is enough', 'hl', 9.0), voice='calm', pause=0.5),
       L("So the hay stays the same, and the number of sheep changes. They ask for the number of days.",
         pt('stem: ask', 'They ask for the number of days')),
       L("We'll solve it in three different ways. This time I'll start, on purpose, with an estimate. It helps us "
         "understand the question, because this one isn't simple."),
       L("Fewer sheep eat the same hay more slowly. So the hay lasts longer, more than nine days.", show(g5ba, 'So the hay lasts longer')),
-      L("So six point seven five, choice number three, is out. That's fewer days.", mk('cross', 'choice 3', "That's fewer days")),
-      L("Now an easy number. Half of two hundred is a hundred. Half the sheep make the hay last twice as long. Nine times "
+      L("And really, all four choices are more than nine days. So the question is how many more."),
+      L("Ninety is close to a hundred, and a hundred is exactly half of two hundred. Half is the easiest to work with, so "
+        "let's go through it first."),
+      L("Half of two hundred is a hundred. Half the sheep make the hay last twice as long. Nine times "
         "two is eighteen days.", show(g5bb, 'Half of two hundred is a hundred')),
-      L("But we have a hundred fifty sheep, more than a hundred. More sheep finish the hay sooner. So fewer than eighteen "
-        "days.", show(g5bc, 'more than a hundred')),
-      L("So eighteen, choice number two, is out.", mk('cross', 'choice 2', 'So eighteen, choice number two, is out')),
-      L("Twelve and fifteen are left. Both are between nine and eighteen, so the estimate can't decide. Let's find it "
-        "exactly.")),
+      L("But we have ninety sheep, a bit fewer than a hundred. Fewer sheep make the hay last longer. So a bit more than "
+        "eighteen days.", show(g5bc, 'a bit fewer than a hundred')),
+      L("So eighteen, choice number two, is out. And fifteen, choice number one, is fewer than eighteen, so it's out too.",
+        mk('cross', 'choice 2', 'So eighteen, choice number two'), mk('cross', 'choice 1', "so it's out too")),
+      L("Twenty and twenty-seven are left. Ninety sheep are only ten fewer than a hundred, a small change. So the days grow "
+        "only a little above eighteen. Twenty-seven is nine days more than eighteen, half as much again. That's far too "
+        "much, so twenty-seven is out.", show(g5bl, 'Twenty-seven is nine days more'), mk('cross', 'choice 4', 'so twenty-seven is out')),
+      L("So the estimate alone picks twenty, choice number three. Now let's see two exact ways.")),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now let's plug in numbers. We start again from the givens. The amount each sheep eats isn't given. So "
         "let's say each sheep eats one unit of hay a day.", show(g5bd, 'each sheep eats one unit')),
       L("Two hundred sheep for nine days. Two hundred times nine is one thousand eight hundred units. That's all the hay.",
         show(g5be, 'Two hundred times nine')),
-      L("A hundred fifty sheep eat a hundred fifty units a day.", show(g5bf, 'A hundred fifty sheep eat')),
-      L("One thousand eight hundred divided by a hundred fifty. Fifteen hundred is ten times a hundred fifty, and three "
-        "hundred is two more hundred fifties. So twelve days.", show(g5bg, 'One thousand eight hundred divided by')),
-      L("Let's check it. A hundred fifty times twelve is one thousand eight hundred. That's all the hay.",
-        show(g5bh, 'A hundred fifty times twelve')),
-      L("So twelve days. That's choice number one.")),
+      L("Ninety sheep eat ninety units a day.", show(g5bf, 'Ninety sheep eat')),
+      L("One thousand eight hundred divided by ninety. We can drop a zero from both numbers. A hundred eighty divided by "
+        "nine is twenty. So twenty days.", show(g5bg, 'One thousand eight hundred divided by')),
+      L("Let's check it. Ninety times twenty is one thousand eight hundred. That's all the hay.",
+        show(g5bh, 'Ninety times twenty')),
+      L("So twenty days. That's choice number three, just like the estimate.")),
     S('Method 3 · The math way: the V method',
       L("[pause] And this is even a team question, once we see who the team is. We start again from the givens."),
       L("The sheep are the workers. Their job is eating. The hay is the work, and the hay doesn't change. So the work is "
         "one supply in both rows.", show(g5bt['line'], 'The sheep are the workers'), show(g5bt['r1'], 'The hay is the work'),
         show(g5bt['r2'], 'one supply in both rows')),
-      L("The question mark is in the time. So the V joins two hundred, one and nine. We divide by the other two, one and "
-        "a hundred fifty.", show(g5bt['v'], 'So the V joins two hundred'), show(g5bt['calc'], 'We divide by the other two'),
-        show(g5bi, 'one and a hundred fifty')),
-      L("Two hundred over a hundred fifty is four thirds, because we divide both by fifty.", show(g5bj, 'Two hundred over a hundred fifty')),
-      L("Four thirds times nine. Nine divided by three is three. Then three times four is twelve days.",
-        show(g5bk, 'Four thirds times nine')),
+      L("The question mark is in the time. So the V joins two hundred, one and nine. We divide by the rest, one and "
+        "ninety.", show(g5bt['v'], 'So the V joins two hundred'), show(g5bt['calc'], 'We divide by the rest'),
+        show(g5bi, 'one and ninety')),
+      L("Two hundred over ninety is twenty ninths, because we divide both by ten.", show(g5bj, 'Two hundred over ninety')),
+      L("Twenty ninths times nine. The nine cancels the ninth, and that leaves twenty days.",
+        show(g5bk, 'Twenty ninths times nine')),
       L("The hard part was to see who the team is. Sometimes a supply gets used up at a constant rate, like hay, water or "
         "fuel. Then the ones who use it are the team. And the supply is the work. If you don't see it, the estimate and plugging in "
         "numbers work too."),
-      L("Choice number one is our answer, and I'll see you in the next question.",
-        mk('tick', 'choice 1', 'Choice number one is our answer'))),
+      L("Choice number three is our answer, and I'll see you in the next question.",
+        mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ r26-t26-factors (lesson)
@@ -2687,8 +2697,8 @@ _later('solve-wp26-g103','g03t_a','Two hundred times three is six hundred')
 _later('solve-wp26-g103','g03t_b','Thirty times two is sixty')
 _clause_rows('solve-wp26-g105b','g5bb',('$200\\div2=100$ sheep','Half of two hundred is a hundred'),
              ('$9\\times2=18$ days','Nine times two is eighteen'))
-_later('solve-wp26-g105b','g5bg','So twelve days')
-_later('solve-wp26-g105b','g5bk','three times four is twelve')
+_later('solve-wp26-g105b','g5bg','So twenty days')
+_later('solve-wp26-g105b','g5bk','that leaves twenty days')
 _clause_rows('r26-t26-factors','f6c4',('$900\\div3=300$','Nine hundred divided by three'),
              ('$300\\times4=1200$ km','Then three hundred times four'))
 _clause_rows('wp-099','t9f6',('$60\\div5=12$','Sixty divided by five is twelve'),
@@ -2914,7 +2924,7 @@ STEMS = {
  "wp26-g103": "Polisher A polishes 200 m² of floor in 4 hours. Polisher B polishes 30 m² in 6 hours. Working together at these constant rates, how many minutes do they need for 110 m²?",
  "wp26-g104": "Omar, Priya and Sam each work at a constant rate. Together they complete a job in 9 hours. Omar and Priya together complete it in 18 hours. What fraction of the job does Sam complete in one hour?",
  "wp26-g105": "Twelve identical workers can set up one stage in 2 hours. Fourteen such workers can set up the seating in 4 hours. How many workers are needed to set up one stage and the seating in 8 hours?",
- "wp26-g105b": "A supply of hay is enough for 200 identical sheep for 9 days. Each sheep eats the same constant amount per day. For how many days would that supply feed 150 sheep?",
+ "wp26-g105b": "A supply of hay is enough for 200 identical sheep for 9 days. Each sheep eats the same constant amount per day. For how many days would that supply feed 90 sheep?",
  "q-r26-t26-21": "Last month Dana spent her whole budget on notebooks and bought 30 of them. This month her budget is 20% larger, and each notebook costs 1.5 times as much as last month. How many notebooks can she buy this month with her whole budget?",
 }   # word stems: "given" = the story, "ask" = the question sentence
 

@@ -1375,41 +1375,45 @@ def rn_guided(M):
 
     # ---------- g076: company 2/5 code, 4/5 remote, 1/5 juniors, 1/2 training; not necessarily: juniors & remote (=1)
     #            ==>  hospital nurses 3/10 nights, 3/4 drive, 1/4 new, 1/2 part time; not necessarily: new & drive (=1)
-    _rn_q(M, 'wp24-g076', "Of a hospital's nurses, $\\frac{3}{10}$ work night shifts, $\\frac34$ drive to work, $\\frac14$ are new, "
+    #            W23 (2026-10-22): nights 3/10 -> 1/3, so her "1/3 -> 33%, the third only matters next to 100" works again
+    _rn_q(M, 'wp24-g076', "Of a hospital's nurses, $\\frac13$ work night shifts, $\\frac34$ drive to work, $\\frac14$ are new, "
                           "and $\\frac12$ work part time. Which statement is not necessarily true?",
           ['At least one nurse who is not new does not work night shifts', 'At least one night-shift nurse drives to work',
            'At least one new nurse drives to work', 'At least one part-time nurse does not work night shifts'], 3, [
         '"At least one is in both groups" must be true only when the two groups add up to more than the whole.',
-        'Choice 1: nurses who are not new and nurses who do not work nights, $\\frac34+\\frac{7}{10}=\\frac{29}{20}>1$ — forced. '
-        'Choice 2: $\\frac{3}{10}+\\frac34=\\frac{21}{20}>1$ — forced. '
-        'Choice 4: part time and not nights, $\\frac12+\\frac{7}{10}=\\frac65>1$ — forced.',
+        'Choice 1: nurses who are not new and nurses who do not work nights, $\\frac34+\\frac23=\\frac{17}{12}>1$ — forced. '
+        'Choice 2: $\\frac13+\\frac34=\\frac{13}{12}>1$ — forced. '
+        'Choice 4: part time and not nights, $\\frac12+\\frac23=\\frac76>1$ — forced.',
         'Choice 3: new nurses and nurses who drive, $\\frac14+\\frac34=1$ exactly. This does not force an overlap. '
-        'Out of $20$ nurses, the $5$ new nurses can come by bus and the other $15$ drive. '
-        'So, choice 3 is not necessarily true.'])
+        'Out of $12$ nurses, the $3$ new nurses can come by bus and the other $9$ drive. '
+        'So, choice 3 is not necessarily true.',
+        'In percent: $\\frac13\\approx33\\%$ (the missing third of a percent changes a sum by less than $1$, so it matters '
+        'only when a sum is right next to $100$). Choice 1: $75+67=142$, choice 2: $33+75=108$, choice 4: $50+67=117$, all far '
+        'above $100$ — forced. Choice 3: $25+75=100$ exactly — not forced.'])
     _rn_video(M, 'wp24-g076', [[
         'Each choice claims an overlap MUST exist. It must — if the two groups add up to more than one whole.',
-        D('Choice 1: not new 3/4 + not nights 7/10 = 29/20'),
-        'Choice one: nurses who are not new are three quarters, no night shifts seven tenths. Twenty-nine twentieths — more than one. Forced.',
+        D('Choice 1: not new 3/4 + not nights 2/3 = 17/12'),
+        'Choice one: nurses who are not new are three quarters, no night shifts two thirds. Seventeen twelfths — more than one. Forced.',
         D('Cross out choice 1'),
         "That statement is true — so it's not our answer.",
-        D('Choice 2: nights 3/10 + drive 3/4 = 21/20'),
-        'Choice two: three tenths plus three quarters — twenty-one twentieths. More than one. Forced.',
+        D('Choice 2: nights 1/3 + drive 3/4 = 13/12'),
+        'Choice two: a third plus three quarters — thirteen twelfths. More than one. Forced.',
         D('Cross out choice 2'),
         D('Choice 3: new 1/4 + drive 3/4 = 1'),
         'Choice three: a quarter plus three quarters — exactly one.',
         'Exactly one does NOT force an overlap. The groups can sit side by side.',
         D('Circle choice 3'),
-        D('Write 20 nurses: 5 new come by bus · 15 not new drive'),
-        'Picture twenty nurses: the five new nurses come by bus, the other fifteen drive. Every fraction holds — and no new nurse drives.',
+        D('Write 12 nurses: 3 new come by bus · 9 not new drive'),
+        'Picture twelve nurses: the three new nurses come by bus, the other nine drive. Every fraction holds — and no new nurse drives.',
         "So choice three is NOT necessarily true. That's the answer.",
         'And if two groups add up to LESS than one? Even more so — no overlap is forced. The minimum is zero, never negative.',
-        'Just to check: choice four — a half plus seven tenths, forced.',
+        'Just to check: choice four — a half plus two thirds, forced.',
     ], [
         'On the exam, do it in percent. Much faster than adding fractions.',
-        D('Write nights 30 · drive 75 · new 25 · part time 50 · not nights 70 · not new 75'),
-        'Nights thirty, drive seventy-five, new twenty-five, part time fifty. Not nights seventy, not new seventy-five.',
-        D('Choice 1: 75 + 70 = 145 · Choice 2: 30 + 75 = 105 · Choice 3: 25 + 75 = 100'),
-        'Choice one: a hundred forty-five — forced. Choice two: a hundred five — forced. Choice three: exactly a hundred — not forced.',
+        D('Write nights 33 · drive 75 · new 25 · part time 50 · not nights 67 · not new 75'),
+        'Nights thirty-three, drive seventy-five, new twenty-five, part time fifty. Not nights sixty-seven, not new seventy-five.',
+        D('Choice 1: 75 + 67 = 142 · Choice 2: 33 + 75 = 108 · Choice 3: 25 + 75 = 100'),
+        'Choice one: a hundred forty-two — forced. Choice two: a hundred eight — forced. Choice three: exactly a hundred — not forced.',
         D('Circle choice 3'),
         'Choice three, again. This is the way to do it on the exam — percent is much faster than fractions.',
     ]])
@@ -1693,7 +1697,7 @@ def _cf_replace(M, vid, title, sub, new):
 
 def coverage_fixes(M):
     # #36 (Hebrew 4993-4998): a third? write 33% and ignore the leftover - it only matters when the sum is close to 100
-    if not CF.add_lines(M, 'solve-wp24-g076', 'Method 2 · Plugging in numbers', 'Nights thirty, drive seventy-five', [
+    if not CF.add_lines(M, 'solve-wp24-g076', 'Method 2 · Plugging in numbers', 'Nights thirty-three, drive seventy-five', [
             "And if you get a third? Just write thirty-three. The missing bit only matters when a sum lands right next to a hundred."]):
         CF.add_expl(M, 'wp24-g076', "A third? Write $33\\%$. The leftover only matters when a sum lands right next to $100$.")
 

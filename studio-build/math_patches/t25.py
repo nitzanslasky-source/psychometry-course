@@ -1086,7 +1086,9 @@ def rn_guided(M):
     _rn_q(M, 'wp25-g082', 'Twelve volunteers clean a beach. On average, each volunteer fills 7 bags of litter. How many bags '
                           'do they fill altogether?', ['84', '91', '96', '72'], 1, [
         'Sum $=$ number $\\times$ average: $12\\times7=84$.',
-        'The volunteers do not each need to fill exactly $7$ bags. The average gives only their total.'])
+        'The volunteers do not each need to fill exactly $7$ bags. The average gives only their total.',
+        'So one volunteer alone can fill at most $84$ bags (if the other $11$ fill none), never $85$: no one can do more '
+        'than the whole group together.'])
     _rn_video(M, 'wp25-g082', {2: [
         "Twelve volunteers, seven bags each on average. How many altogether?",
         "We don't know what each volunteer filled — and we don't need to.",
@@ -1297,11 +1299,16 @@ def rn_guided(M):
 
     # ---- g089: 6 numbers avg 62, 9 numbers avg 82 -> 74  (Hebrew: 5 / 70, 10 / 85 -> 80)
     #      ==>  8 numbers avg 58, 12 numbers avg 78 -> 70 (midpoint 68; flipped 66)
+    #      W23 (2026-10-22): the wrong choice 72 -> "It cannot be determined from the information given." (choice 4, like
+    #      her "can't be determined from the data"), so her estimate + ruling that choice out decide with no calculation.
     _rn_q(M, 'wp25-g089', 'Eight numbers have an average of 58, and twelve other numbers have an average of 78. What is the '
-                          'average of all twenty numbers?', ['70', '68', '72', '66'], 1, [
+                          'average of all twenty numbers?',
+          ['70', '68', '66', 'It cannot be determined from the information given.'], 1, [
         'The group sizes are the weights. Size ratio $8:12=2:3$.',
         '$\\frac{2\\cdot58+3\\cdot78}{5}=\\frac{116+234}{5}=\\frac{350}{5}=70$.',
-        'Check: the bigger group is at $78$, therefore the answer must be above the midpoint $68$.'])
+        'Check: the bigger group is at $78$, therefore the answer must be above the midpoint $68$.',
+        'Without calculating: above $68$ rules out $68$ and $66$. Both group sizes and both averages are given, therefore '
+        'the average has one exact value, and "It cannot be determined" is out too. Only $70$ is left.'])
     _rn_video(M, 'wp25-g089', {
         2: ["The values are the averages. The weights are the group sizes.",
             D('Write "(8·58 + 12·78) / 20"'),
@@ -1313,9 +1320,11 @@ def rn_guided(M):
             "Choice one. Reducing the weights always gives the same average — it's just a common factor."],
         3: ["Now without calculating. The midpoint of fifty-eight and seventy-eight is sixty-eight.",
             "The bigger group is at seventy-eight — so the average must be above sixty-eight.",
-            D('Cross out choices 2 and 4'),
+            D('Cross out choices 2 and 3'),
             "Sixty-eight and sixty-six are out.",
-            "Sometimes that alone settles it. Here two choices survive — seventy and seventy-two — so we finish with ratios.",
+            D('Cross out choice 4'),
+            "Cannot be determined? Both sizes and both averages are given — the average has one value. Out.",
+            "Only seventy is left — no calculation at all. Now the same with ratios.",
             A('An axis appears: 58 (weight 2) and 78 (weight 3)',
               {'k': 'vis', 'v': {'type': 'numberline', 'min': 56, 'max': 80, 'points': [58, 78],
                                  'labels': ['58 · w2', '78 · w3']}, 'w': 1000, 'h': 250, 'y': 330}),

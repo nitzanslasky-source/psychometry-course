@@ -105,20 +105,20 @@
   ],
   [
    {
-    "say": "[pause] Should we find the sector now? In the last question we stopped halfway and looked at the choices. Here the triangle is eight root three. We take away a sector of this circle, so its area is some number of pi. So we're looking for eight root three, minus a number of pi.",
+    "say": "[pause] Should we find the sector now? In the last question we stopped halfway and looked at the choices. Here the triangle is eight root three. We take away a sector of this circle, so its area is some number of pi. So we're looking for eight root three, minus a number of pi. These choices already have the two area parts separate, so we can compare the triangle part first.",
     "at": [
      "Should we find the sector now",
      "In the last",
      "Here the triangle is eight root three",
      "We take away",
-     "So we're looking for eight root three"
+     "So we're looking for eight root three",
+     "These choices already"
     ]
    },
    {
     "say": "Choice number two has sixteen root three, and choice number four has four root three. Neither has eight root three, so they're both out.",
     "at": [
      "Choice number two has",
-     "root three, and",
      "number four has",
      "so they're both out"
     ]

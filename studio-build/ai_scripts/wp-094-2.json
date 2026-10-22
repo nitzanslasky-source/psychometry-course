@@ -7,9 +7,9 @@
   ],
   [
    {
-    "say": "There's another way, without fractions. We stretch the workers to the same time, and then we add the work.",
+    "say": "There's another way, without adding fractions. Compare both workers over the same number of hours. Then add how much work they finish.",
     "at": [
-     "fractions. We stretch"
+     "adding fractions. Compare"
     ]
    },
    {
@@ -226,10 +226,10 @@
     ]
    },
    {
-    "say": "Or we stretch the workers to equal times, or we choose a job size.",
+    "say": "Or compare both workers over the same time. Another option is to choose an easy job size.",
     "at": [
-     "Or we stretch the workers",
-     "to equal times"
+     "compare both workers over the same time",
+     "Another option is"
     ]
    },
    {
