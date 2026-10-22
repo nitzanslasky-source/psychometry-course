@@ -1128,7 +1128,7 @@ Marks per sentence, located from the point where the failed attempt broke off (9
   - Questions: "Choice number N is our answer, and I'll see you in the next question." She said "next lesson" by mistake 5 times.
   - Lessons: "Take a moment to memorize this … and I'll see you in the next video."
 
-### WRITING RULES for scripts she will read (topic 21 onward): W1-W22
+### WRITING RULES for scripts she will read (topic 21 onward): W1-W23
 These add to R1-R37 and the Codex review standard. Where they differ from the AI-voice rules, these apply to **teacher-read** scripts.
 
 1. **W1. Keep sentences short.** Aim for 6-12 words and split anything over 14. Her M rate doubles from 0.21 per sentence (6-10 words) to 0.45-0.51 (14-22 words). Put a trailing clause in its own sentence ("Now calculate with the two ends. That gives the new range.").
@@ -1210,6 +1210,11 @@ These add to R1-R37 and the Codex review standard. Where they differ from the AI
     - Don't make scripts longer for its own sake: cut repetition, remind briefly of what was learned, spend the words on the NEW reasoning. One efficient method shown clearly; another method only when it adds something.
     - **Read-aloud check before "ready":** read every changed paragraph aloud while following the planned screen. If a student would have to guess what "this", "that" or "it" refers to, name it.
     - **Shortcuts:** state the conditions every time a shortcut is taught (e.g. "only in a regular polygon", "only when both amounts are multiplied by the same number"), and place it after its prerequisites.
+
+23. **W23. Hebrew preservation check — required before every Codex review** (teacher, 2026-10-22: "how can I trust you and know that maybe other important content was dropped?"). Two of her shortcuts in topic 23 had been lost in the September translation: one condensed away, and one broken when the numbers were changed.
+    - For every topic: split her Hebrew section into her actual videos and compare METHOD BY METHOD with the English (SAME / CHANGED / PARTIAL / MISSING), then the reverse (what English added). Model: `reviews/hebrew-vs-english-t23.md`.
+    - **When numbers are changed** (English questions must differ from hers), re-check that EVERY one of her methods and named shortcuts still works with the new numbers. If one stops working, choose other new numbers; never drop the method.
+    - Missing items in unrecorded videos are restored before she records; items in recorded videos go on a list for her decision.
 
 **Put her most frequent elaborations in the script from the start:**
 1. the reason after each claim;
