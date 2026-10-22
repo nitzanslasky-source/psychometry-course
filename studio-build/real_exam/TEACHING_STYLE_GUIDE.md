@@ -1128,7 +1128,7 @@ Marks per sentence, located from the point where the failed attempt broke off (9
   - Questions: "Choice number N is our answer, and I'll see you in the next question." She said "next lesson" by mistake 5 times.
   - Lessons: "Take a moment to memorize this … and I'll see you in the next video."
 
-### WRITING RULES for scripts she will read (topic 21 onward): W1-W23
+### WRITING RULES for scripts she will read (topic 21 onward): W1-W24
 These add to R1-R37 and the Codex review standard. Where they differ from the AI-voice rules, these apply to **teacher-read** scripts.
 
 1. **W1. Keep sentences short.** Aim for 6-12 words and split anything over 14. Her M rate doubles from 0.21 per sentence (6-10 words) to 0.45-0.51 (14-22 words). Put a trailing clause in its own sentence ("Now calculate with the two ends. That gives the new range.").
@@ -1215,6 +1215,18 @@ These add to R1-R37 and the Codex review standard. Where they differ from the AI
     - For every topic: split her Hebrew section into her actual videos and compare METHOD BY METHOD with the English (SAME / CHANGED / PARTIAL / MISSING), then the reverse (what English added). Model: `reviews/hebrew-vs-english-t23.md`.
     - **When numbers are changed** (English questions must differ from hers), re-check that EVERY one of her methods and named shortcuts still works with the new numbers. If one stops working, choose other new numbers; never drop the method.
     - Missing items in unrecorded videos are restored before she records; items in recorded videos go on a list for her decision.
+
+24. **W24. Lessons from Codex's reviews — write these from the start** (Nitzan, 22 Oct: "Codex's review findings should become guidance for your future writing, so the same problems don't keep recurring"). Collected from Codex's batch reviews A–L, P, Q and its external-course reports:
+    - **Start each question explicitly:** "Now a new question. We are given … We need …".
+    - **Name what each number measures** before calculating, and keep units / total / each / remaining / per-hour attached to the numbers on the board.
+    - **Definitions describe the value, not a way of writing it** ("a fraction writes a division; it can equal a whole number").
+    - **State what is held equal** before a comparison ("for the same perimeter …") and the conditions of every shortcut (regular polygon, same multiplier, nonzero, inscribed vertex …). Never "always" when a special case breaks it.
+    - **Geometry:** name a helper line and its purpose before drawing it; match similar triangles by angles, not by how they look.
+    - **Full method first; an exam shortcut afterwards only when it saves work, and say why stopping early is enough.**
+    - **Plugging in:** easy allowed numbers (0 and 1 are fine unless ruled out; letters may share a value); check the choices at once; change a feature only for the survivors. A few agreeing trials never prove "always".
+    - **Prompter maths must group correctly:** whole fractions, brackets, percent signs outside a whole fraction; no bare "over"/"times" between numbers.
+    - **A result is written when it is said**, never before; split bundled rows; keep needed results in a "So far" box when a slide clears.
+    - **Don't promise "we'll learn it later"** for something already taught — give a one-line reminder instead.
 
 **Put her most frequent elaborations in the script from the start:**
 1. the reason after each claim;

@@ -43,3 +43,9 @@ Claude and Codex: add ideas here instead of starting them. Keep each item short:
 
 ## Course / site
 - (add here)
+
+## Optional practice variety from Codex's final external report (22 Oct 2026) — only if Nitzan wants them
+- t24: waiting-room overlap timeline (AB 7, BC 8, triple 5 → B's covered time 10; source z8Pb4bHslrk).
+- t20/21: "one of EACH colour" worst case, contrasted with any three of one colour.
+- t31/38: hypotenuse 17, opposite leg 8 → the angle is under 30° (half the hypotenuse is 8.5).
+- t4/5/51: eliminate choices by one distinctive polynomial coefficient (only when it excludes the rest).
