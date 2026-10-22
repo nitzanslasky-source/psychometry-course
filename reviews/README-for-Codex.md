@@ -87,3 +87,6 @@ end of your report (Claude parks them in IMPROVEMENTS.md).
 - **Report:** `reviews/batch-E-edited.md` / `batch-F-edited.md`: per lesson READY or each change as before → after (just
   the changed sentences / board items), then "Needs Claude" and "Nice". Mark the job Done in COORDINATION.md and post
   "For Claude: batch E/F edited". Claude then rebuilds the Reading Studio, spot-checks, and handles "Needs Claude".
+
+## ADDED 22 Oct (Nitzan): acceptance standard — required before `--ready`
+Clarity and read-aloud usability are required acceptance checks, not polish (guide W25). Check every reviewed script sentence by sentence against the board: explicit introductions of new questions/examples/methods; every step = what we find + what the quantities mean + why + what it tells us; simple spoken English with clear pauses; readable prompter maths; no ambiguous "this/that/it"; no unexplained jumps; her methods and exam terms preserved. Maths and automated checks passing does not make a lesson ready. Mark ready only after this independent explanation/transition review: `python3 studio-build/video_status.py --ready <ids> --by Codex --why "…"`.

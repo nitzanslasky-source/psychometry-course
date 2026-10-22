@@ -1128,7 +1128,7 @@ Marks per sentence, located from the point where the failed attempt broke off (9
   - Questions: "Choice number N is our answer, and I'll see you in the next question." She said "next lesson" by mistake 5 times.
   - Lessons: "Take a moment to memorize this … and I'll see you in the next video."
 
-### WRITING RULES for scripts she will read (topic 21 onward): W1-W24
+### WRITING RULES for scripts she will read (topic 21 onward): W1-W25
 These add to R1-R37 and the Codex review standard. Where they differ from the AI-voice rules, these apply to **teacher-read** scripts.
 
 1. **W1. Keep sentences short.** Aim for 6-12 words and split anything over 14. Her M rate doubles from 0.21 per sentence (6-10 words) to 0.45-0.51 (14-22 words). Put a trailing clause in its own sentence ("Now calculate with the two ends. That gives the new range.").
@@ -1227,6 +1227,8 @@ These add to R1-R37 and the Codex review standard. Where they differ from the AI
     - **Prompter maths must group correctly:** whole fractions, brackets, percent signs outside a whole fraction; no bare "over"/"times" between numbers.
     - **A result is written when it is said**, never before; split bundled rows; keep needed results in a "So far" box when a slide clears.
     - **Don't promise "we'll learn it later"** for something already taught — give a one-line reminder instead.
+
+25. **W25. Acceptance standard — clarity and read-aloud usability are REQUIRED** (Nitzan, 22 Oct): a script is not ready because its maths and automated checks pass. Every sentence is checked against its board: new questions / examples / methods introduced explicitly ("Now a new question. We are given … We need …"); each step = what we're finding + what the quantities mean + why + what it tells us; natural simple spoken English with clear pauses; readable maths on the prompter; no ambiguous references or unexplained jumps; her methods and exam terms kept. Writers self-check this before handing off; Codex independently reviews it before marking Ready.
 
 **Put her most frequent elaborations in the script from the start:**
 1. the reason after each claim;
