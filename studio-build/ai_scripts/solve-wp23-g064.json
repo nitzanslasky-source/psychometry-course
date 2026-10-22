@@ -89,38 +89,37 @@
     ]
    },
    {
-    "say": "The first shortcut is to drop a zero. In the ratio table, forty percent goes with forty-eight kilograms. From forty to forty-eight, across the row, is times one point two. That step isn't easy to see.",
+    "say": "The first shortcut is to drop a zero from both numbers in the percent column. Forty percent goes with forty-eight kilograms. Those numbers don't give an easy whole-number step.",
     "at": [
      "The first shortcut",
-     "From forty to forty-eight",
-     "the row, is"
+     "Forty percent goes with forty-eight kilograms",
+     "Those numbers don't"
     ]
    },
    {
-    "say": "So let's drop the zero from both percents. Forty becomes four, and thirty becomes three.",
+    "say": "Why can we do that? We count units of ten percent. Forty becomes four units, and thirty becomes three units.",
     "at": [
      "Forty becomes four",
      "thirty becomes three"
     ]
    },
    {
-    "say": "We divided both percents by the same number, ten. Three to four is the same ratio as thirty to forty. So the kilograms column stays as it is, forty-eight and the question mark.",
+    "say": "We divided both percents by ten. Three to four is the same ratio as thirty to forty. Four units still represent forty-eight kilograms, not four percent of the apples.",
     "at": [
      "We divided both percents",
-     "the same number",
-     "the question mark"
+     "Three to four"
     ]
    },
    {
-    "say": "Now the step across is easy to see. From four to forty-eight is times twelve.",
+    "say": "Now we find the kilograms in one unit. From four to forty-eight is times twelve. So each unit is twelve kilograms.",
     "at": [
-     "From four to forty-eight"
+     "From four to forty-eight",
+     "So each unit"
     ]
    },
    {
     "say": "The factory's row has the same step across. Three times twelve is thirty-six kilograms.",
     "at": [
-     "The factory's row",
      "Three times twelve is"
     ]
    },

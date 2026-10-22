@@ -117,8 +117,9 @@
   ],
   [
    {
-    "say": "The smallest overlap is the sum of the two groups, minus the total. In other words, how far do the two groups go over the total?",
+    "say": "When the two groups add up to more than the total, some overlap is forced. The smallest overlap is the sum of the two groups, minus the total. That is the extra count above the total.",
     "at": [
+     "add up to",
      "The smallest overlap is the sum",
      "sum of the"
     ]

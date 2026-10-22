@@ -73,14 +73,25 @@
      "twelfth, and we",
      "So neither is eight twelfths"
     ]
+   }
+  ],
+  [
+   {
+    "say": "We found that eight twelfths attend neither workshop. Now we need a number of people.",
+    "at": [
+     "We found",
+     "eight twelfths attend neither",
+     "Now we need"
+    ]
    },
    {
-    "say": "But the choices are numbers of people. The question says the twelfth in both is four people. So each twelfth is four people, and we have eight twelfths. Eight times four is thirty-two people.",
+    "say": "But the choices are numbers of people. The question says the twelfth in both is four people. We want the people in eight twelfths. Use the triangle value from ratios. Eight twelfths times four, divided by one twelfth. The twelfths cancel. Each twelfth is four people, so eight times four is thirty-two people.",
     "at": [
-     "But the choices",
      "The question says the twelfth",
      "is four people",
-     "people, and we",
+     "Use the triangle",
+     "Eight twelfths times four",
+     "by one twelfth",
      "Eight times four"
     ]
    },

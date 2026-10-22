@@ -89,15 +89,11 @@
     ]
    },
    {
-    "say": "Choice number one divides by the table's price. A hundred over two hundred fifty is forty percent, the wrong whole. And choice number four, fifty percent, reads both sentences as of. It forgets the word more.",
+    "say": "Choice number one divides by the table's price. A hundred over two hundred fifty is forty percent, the wrong whole.",
     "at": [
      "number one divides",
      "A hundred over two hundred fifty",
-     "the wrong",
-     "number four, fifty",
-     "both sentences as",
-     "It forgets the word more",
-     "It forgets the word more"
+     "the wrong"
     ]
    }
   ],

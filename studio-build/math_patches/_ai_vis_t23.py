@@ -1331,7 +1331,7 @@ SPLIT053 = ('wp-053', 'Percent of a Percent', [
     (1, None),
     (6, "Let's continue with percent of a percent, and learn a fast tool, multipliers."),
     (10, "Let's continue with percent of a percent. Now we go back from the end to the start, and compare people."),
-    (16, "Let's continue with percent of a percent. Now two percents that share something.")])
+    (16, "Let's continue with percent of a percent. Now we'll compare amounts described with percents.")])
 
 # ------------------------------------------------------------------------------------------------ wp23-g054 (Hebrew: the smokers' survey)
 # Hebrew (wp 3266-3402): who is the 100? the survey; 60 don't smoke, the rest 40, 30% of THEM (of 40), 12, the rest 28
@@ -1388,7 +1388,7 @@ video('solve-wp23-g054', 'solution', qid='wp23-g054', slides=[
         "guitar. Again the branches add up to a hundred.", show(s_tr['b20'], 'Eighty percent play the piano'),
         show(s_tr['b21'], 'twenty percent play only the guitar')),
       L("Many students see twenty percent and stop there. That's choice number one. But it's twenty percent of the "
-        "players, not of everyone. Eighty percent on the piano wouldn't even fit inside the sixty-five percent who play.",
+        "players, not of everyone. The same applies to the piano group. It's eighty percent of the players, not of all students.",
         show(s_10, "But it's twenty percent of the players"), mk('cross', 'choice 1', "That's choice number one")),
       L("To get a branch at the bottom, we multiply the percents along its path. Twenty percent of sixty-five percent. A "
         "fifth of sixty-five is thirteen, so it's thirteen percent.", show(s_11, 'A fifth of sixty-five')),
@@ -1428,13 +1428,13 @@ video('solve-wp23-g058', 'solution', qid='wp23-g058', slides=[
       L("So the new price is six hundred eighty minus five hundred ten, a hundred seventy. Choice number two is our "
         "answer.", show(c_7, 'So the new price is'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S("Method 2 · The math way: what's left",
-      L("[pause] Now a shorter way. We start again from the givens. The whole price is a hundred percent. It drops by "
+      L("[pause] Now the math way, using what's left. We start again from the givens. The whole price is a hundred percent. It drops by "
         "seventy-five percent, so twenty-five percent is left.", show(c_8, 'so twenty-five percent is left')),
       L("Twenty-five percent is a quarter. So the new price is a quarter of six hundred eighty.",
         show(c_9, 'Twenty-five percent is a quarter')),
       L("To find a quarter, we halve twice. Half of six hundred eighty is three hundred forty. Half of three hundred forty "
         "is a hundred seventy.", show(c_10, 'Half of six hundred eighty'), show(c_11, 'Half of three hundred forty')),
-      L("The same hundred seventy, with much less work. So when a price drops, think about what stays. Choice number two "
+      L("So the new price is a hundred seventy. When a price drops, we can calculate what stays. Choice number two "
         "is our answer, and I'll see you in the next question.", mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
 
@@ -1450,6 +1450,9 @@ f_5 = IH('f_5', '$=\\frac{17}{40}$', size=32, col=1)
 f_6 = IH('f_6', '(3) $\\frac{17}{20}=17\\cdot5\\%=85\\%$', size=30)
 f_7 = IH('f_7', '(2) $\\frac{17}{40}$ $=$ half of $85\\%=42.5\\%$', size=30)
 f_8 = IH('f_8', '(1) $\\frac{23}{40}=1-\\frac{17}{40}$: $\\ $the used ink', size=30)
+f_unit = IH('f_unit', '$1/20=5\\%$', size=30)
+f_fortieth = IH('f_fortieth', '$1/40=2.5\\%$', size=30)
+f_other = IH('f_other', '$17\\times2.5=34+8.5=42.5\\%$', size=30, col=1)
 video('solve-wp23-g057', 'solution', qid='wp23-g057', slides=[
     S('Method 1 · The math way',
       L("A printer cartridge has used fifty-seven point five percent of its ink. What fraction of the ink remains?",
@@ -1471,7 +1474,8 @@ video('solve-wp23-g057', 'solution', qid='wp23-g057', slides=[
     S('Method 2 · Insight: the choices',
       L("[pause] Now the insight. These choices are not random. We start again from the givens. Fifty-seven point five "
         "percent was used, so forty-two point five percent is left."),
-      L("Look at choice number three, seventeen over twenty. Many students know that a twentieth is five percent. So "
+      L("Start with an easy fraction from our table. A twentieth is five percent.", show(f_unit, 'A twentieth is five percent')),
+      L("Look at choice number three, seventeen over twenty. It has seventeen twentieths. So "
         "seventeen twentieths is seventeen times five, eighty-five percent. That's not forty-two point five, so it's out.",
         show(f_6, 'seventeen times five'), mk('cross', 'choice 3', "so it's out")),
       L("But look at choice number two, seventeen over forty. Its bottom is twice as big, so it's exactly half of "
@@ -1481,7 +1485,14 @@ video('solve-wp23-g057', 'solution', qid='wp23-g057', slides=[
         "cartridge, the fifty-seven point five percent that was used. That's the trap.",
         show(f_8, 'Twenty-three is forty minus seventeen'), mk('cross', 'choice 1', "That's the trap")),
       L("The exam often builds the choices like this, so a student who looks at them carefully gets there fast. Choice "
-        "number two is our answer, and I'll see you in the next question.")),
+        "number two is our answer.")),
+    S('Method 2 · Insight: one fortieth first',
+      L("We can also start with one fortieth. It is half of one twentieth. Half of five percent is two point five percent.",
+        show(f_fortieth, 'Half of five percent is two point five')),
+      L("Seventeen fortieths are seventeen times that amount. Seventeen times two is thirty-four. "
+        "Seventeen times a half is eight point five. Thirty-four plus eight point five is forty-two point five percent.",
+        show(f_other, 'Thirty-four plus eight point five')),
+      L("That is the ink left. Choice number two is our answer, and I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ wp23-g059 (Hebrew: 40 -> 44 -> 48)
@@ -1690,10 +1701,10 @@ d_4 = IH('d_4', '$\\frac{1}{3}$ of $150=50$', size=30, col=1)
 d_5 = IH('d_5', 'Lior: $\\ 150-50=100$', size=30, col=1)
 d_6 = IH('d_6', '$100\\div100=1$', size=30, col=1)
 d_7 = IH('d_7', '$+\\frac{1}{2}$, then $-\\frac{1}{3}$', size=30)
-d_8 = IH('d_8', '$6$ sixths $+1$ sixth $=7$ sixths', size=30)
-d_9 = IH('d_9', '$\\frac{1}{7}$ of $7$ sixths $=1$ sixth', size=30)
-d_10 = IH('d_10', '$7-1=6$ sixths: $\\ $back', size=30)
-d_11 = IH('d_11', '$5$ fifths $+1=6$ fifths, $\\ -1=5$ fifths', size=30, col=1)
+d_8 = IH('d_8', '$3$ thirds $+1$ third $=4$ thirds', size=30)
+d_9 = IH('d_9', '$\\frac{1}{4}$ of $4$ thirds $=1$ third', size=30)
+d_10 = IH('d_10', '$4-1=3$ thirds: $\\ $back', size=30)
+d_11 = IH('d_11', '$4$ quarters $+1=5$ quarters, $\\ -1=4$ quarters', size=30, col=1)
 d_12 = IH('d_12', '$2$ halves $+1=3$ halves, $\\ -1=2$ halves', size=30, col=1)
 d_13 = IH('d_13', 'add $\\frac{1}{n}$ of the start; remove $\\frac{1}{n+1}$ of the new amount', size=30, col=1)
 d_14 = IH('d_14', 'along the arrows: $\\ \\times$', size=30, col=1)
@@ -1720,15 +1731,14 @@ video('solve-wp23-g061', 'solution', qid='wp23-g061', slides=[
         "percent, sixteen and two thirds percent more. But the third is taken from Dana's wage, which is bigger.",
         mk('cross', 'choice 3', 'The trap is choice number three'))),
     S('Method 2 · Insight',
-      L("[pause] Now the insight. We added fifty percent, took away thirty-three and a third percent, and came back to "
-        "the start. Is that luck? No. Fifty percent is a half, and thirty-three and a third percent is a third.",
+      L("[pause] Now the insight. Can these two changes cancel each other? Fifty percent is a half, and thirty-three and a third percent is a third.",
         show(d_7, 'Fifty percent is a half')),
-      L("Let's see it on other fractions first. A whole is six sixths. Add a sixth, and we have seven sixths.",
-        show(d_8, 'Add a sixth, and we have')),
-      L("Now take away a seventh. A seventh of seven sixths is one sixth. Seven sixths minus one sixth is six sixths, the "
-        "whole again.", show(d_9, 'A seventh of seven sixths'), show(d_10, 'Seven sixths minus one sixth')),
-      L("Here's another one. A whole is five fifths. Add a fifth, and we have six fifths. Take away a sixth, one of the six "
-        "fifths, and we're back to five fifths.", show(d_11, 'A whole is five fifths')),
+      L("Let's see the pattern with thirds. A whole is three thirds. Add a third, and we have four thirds.",
+        show(d_8, 'Add a third, and we have')),
+      L("Now take away a quarter of the new amount. A quarter of four thirds is one third. Four thirds minus one third is three thirds, the "
+        "whole again.", show(d_9, 'A quarter of four thirds'), show(d_10, 'Four thirds minus one third')),
+      L("Here's another one. A whole is four quarters. Add a quarter, and we have five quarters. Take away a fifth of the new amount. "
+        "That's one of the five quarters, so we're back to four quarters.", show(d_11, 'A whole is four quarters')),
       L("Now our question. A whole is two halves. Add a half, and we have three halves. Take away a third, one of the "
         "three halves, and we're back to two halves.", show(d_12, 'A whole is two halves')),
       L("Here n counts the equal parts in the start. Add one over n of the starting amount. Then take away one over n plus one of the new amount. That removes "
@@ -1800,7 +1810,7 @@ video('solve-wp23-g062', 'solution', qid='wp23-g062', slides=[
       L("Careful, a hundred twenty is y, not what they ask. That's choice number four, a trap.",
         show(e_5c, 'not what they ask'), mk('cross', 'choice 4', "That's choice number four"))),
     S('Method 1 · The math way',
-      L("Now what they ask, thirty-seven point five percent of a hundred twenty. Thirty-seven point five percent is in "
+      L("Now we find the requested amount, thirty-seven point five percent of a hundred twenty. Thirty-seven point five percent is in "
         "our fraction table. It's three eighths.", show(e_6, "It's three eighths")),
       L("Remember why. Twelve point five percent is an eighth. And thirty-seven point five is three times twelve point "
         "five, so it's three eighths. This is why we memorize the table.", show(e_6b, 'Twelve point five percent is an eighth')),
@@ -1969,9 +1979,9 @@ b_4 = IH('b_4', '$?=\\frac{30\\cdot48}{40}$', size=30, col=1)
 b_5 = IH('b_5', '$=\\frac{3\\cdot48}{4}$', size=30, col=1)
 b_6 = IH('b_6', '$48\\div4=12,\\ \\ 3\\cdot12=36$', size=30, col=1)
 b_7 = IH('b_7', '$40\\%=48$', size=30)
-b_z1 = IH('b_z1', '$40\\to48$: $\\ \\times1.2$', size=30)
-b_z2 = IH('b_z2', 'drop a zero: $\\ 40\\to4$', size=30)
-b_z2b = IH('b_z2b', '$30\\to3$', size=30)
+b_z1 = IH('b_z1', '$40\\%$ of the apples: $48$ kg', size=30)
+b_z2 = IH('b_z2', 'difference: $40\\%=4$ units of $10\\%$', size=30)
+b_z2b = IH('b_z2b', 'factory: $30\\%=3$ units of $10\\%$', size=30)
 b_z3 = IH('b_z3', 'both $\\div10$: $\\ 3:4=30:40$', size=30)
 b_z4 = IH('b_z4', '$4\\to48$: $\\ \\times12$', size=30, col=1)
 b_z5 = IH('b_z5', '$3\\cdot12=36$ kg', size=30, col=1)
@@ -2006,13 +2016,13 @@ video('solve-wp23-g064', 'solution', qid='wp23-g064', slides=[
     S('Method 2 · The math way: two shortcuts',
       L("[pause] Now two shortcuts. We start again from the givens. The factory gets the rest, thirty percent. The "
         "difference is seventy minus thirty, forty percent, and that's forty-eight kilograms.", show(b_7, 'forty-eight kilograms')),
-      L("The first shortcut is to drop a zero. In the ratio table, forty percent goes with forty-eight kilograms. From "
-        "forty to forty-eight, across the row, is times one point two. That step isn't easy to see.", show(b_z1, 'From forty to forty-eight')),
-      L("So let's drop the zero from both percents. Forty becomes four, and thirty becomes three.",
+      L("The first shortcut is to drop a zero from both numbers in the percent column. Forty percent goes with forty-eight kilograms. "
+        "Those numbers don't give an easy whole-number step.", show(b_z1, 'Forty percent goes with forty-eight kilograms')),
+      L("Why can we do that? We count units of ten percent. Forty becomes four units, and thirty becomes three units.",
         show(b_z2, 'Forty becomes four'), show(b_z2b, 'thirty becomes three')),
-      L("We divided both percents by the same number, ten. Three to four is the same ratio as thirty to forty. So "
-        "the kilograms column stays as it is, forty-eight and the question mark.", show(b_z3, 'We divided both percents')),
-      L("Now the step across is easy to see. From four to forty-eight is times twelve.", show(b_z4, 'From four to forty-eight')),
+      L("We divided both percents by ten. Three to four is the same ratio as thirty to forty. "
+        "Four units still represent forty-eight kilograms, not four percent of the apples.", show(b_z3, 'We divided both percents')),
+      L("Now we find the kilograms in one unit. From four to forty-eight is times twelve. So each unit is twelve kilograms.", show(b_z4, 'From four to forty-eight')),
       L("The factory's row has the same step across. Three times twelve is thirty-six kilograms.",
         show(b_z5, 'Three times twelve is')),
       L("Drop a zero when it makes the step across easy to see. Choice number two is our answer.",
@@ -2078,7 +2088,7 @@ video('solve-wp23-g065', 'solution', qid='wp23-g065', slides=[
       L("On day two, ten percent of the water now, of two hundred seventy, is twenty-seven. Two hundred seventy minus "
         "twenty-seven is two hundred forty-three.", show(w_10, 'Two hundred seventy minus twenty-seven')),
       L("That's exactly what's left, so three hundred works.", mk('tick', 'choice 3', 'so three hundred works')),
-      L("The round answer isn't always right. But it's usually the smartest one to try first, because it's quick to "
+      L("The round answer isn't always right. Here it's a convenient first choice, because it's quick to "
         "check. Choice number three is our answer, and I'll see you in the next question.")),
 ])
 
@@ -2108,8 +2118,54 @@ video('r26-t23-traps', 'lesson', slides=[
       L("Ninety is between eighty and ninety-six. So the percent is between twenty-five and thirty.",
         show(x_5, 'Ninety is between'), show(x_6, 'So the percent is between')),
       L("Only choice number two, twenty-eight point one two five percent, is in that range. So that's the answer, with "
-        "no long division. [pause] Now three questions. Try each one first, and then watch the solution. I'll see you in "
-        "the next video.")),
+        "no long division.")),
+    S('Mixtures: what stays unchanged',
+      L("Now mixtures. A concentration is the percent of a mixture made of one ingredient. We divide that ingredient's amount by the total amount.",
+        show(I('mix_rule', 'concentration $=\\dfrac{\\text{ingredient}}{\\text{total mixture}}\\times100\\%$', size=30), 'We divide that ingredient')),
+      L("Start with a hundred grams of twenty-percent salt water. Twenty grams are salt, and eighty grams are water.",
+        show(IH('mix_a', '$100$ g: $20$ g salt, $80$ g water', size=30), 'Twenty grams are salt')),
+      L("We add a hundred grams of pure water. No salt was added. So the salt stays twenty grams. The total becomes two hundred grams.",
+        show(IH('mix_b', 'salt: $20$ g; total: $100+100=200$ g', size=30), 'The total becomes two hundred grams')),
+      L("The new concentration is twenty out of two hundred, one tenth, ten percent. When we add only water, track the unchanged salt.",
+        show(IH('mix_c', '$20/200=1/10=10\\%$', size=30, col=1), 'twenty out of two hundred'))),
+    S('Adding the other ingredient',
+      L("Now start with a hundred grams of twenty-five-percent sugar water. We add pure sugar until the mixture is fifty percent sugar. How much do we add?",
+        show(I('mix_d', '$100$ g, $25\\%$ sugar $\\to50\\%$ sugar; add pure sugar', size=30), 'We add pure sugar')),
+      L("This time the water stays unchanged. A hundred minus twenty-five is seventy-five grams of water.",
+        show(IH('mix_e', 'unchanged water: $100-25=75$ g', size=30), 'A hundred minus twenty-five')),
+      L("The final mixture is fifty percent sugar, so it is also fifty percent water. Seventy-five grams are half the final total.",
+        show(IH('mix_f', '$50\\%$ of final total $=75$ g water', size=30), 'Seventy-five grams are half')),
+      L("So the final total is twice seventy-five, a hundred fifty grams. We started with a hundred. We added fifty grams of sugar.",
+        show(IH('mix_g', 'final: $2\\times75=150$ g', size=30, col=1), 'twice seventy-five, a hundred fifty'),
+        show(IH('mix_h', 'added: $150-100=50$ g sugar', size=30, col=1), 'We added fifty grams')),
+      L("The trap is keeping the old total. Adding either ingredient changes the total. First ask which ingredient stays unchanged.")),
+    S('People must be whole numbers',
+      L("One more exam condition. People are counted in whole numbers. Suppose twelve percent of a class play chess. Could the class have twenty-five students?",
+        show(I('int_a', '$12\\%$ play chess; could the class have $25$ students?', size=30), 'Could the class have twenty-five students')),
+      L("Twelve percent is twelve over a hundred, or three over twenty-five. Three twenty-fifths of twenty-five students is three students. So yes.",
+        show(IH('int_b', '$12/100=3/25$', size=30), 'or three over twenty-five'),
+        show(IH('int_c', '$\\frac{3}{25}\\times25=3$ students', size=30), 'is three students')),
+      L("Now six percent of a club are children. What is the smallest possible number of members? Six percent is three over fifty.",
+        show(I('int_d', '$6\\%$ are children; smallest possible club?', size=30), 'What is the smallest possible number'),
+        show(IH('int_e', '$6/100=3/50$', size=30), 'Six percent is three over fifty')),
+      L("This fraction is fully reduced. Three shares no factor with fifty. So the total must cancel the fifty. "
+        "For three fiftieths of the members to be whole, the total must be a multiple of fifty.",
+        show(IH('int_f', 'whole-number total: $50,100,150,\\ldots$', size=30, col=1), 'the total must be a multiple of fifty')),
+      L("Fifty members give three children. A hundred give six. So fifty is the smallest club.",
+        show(IH('int_g', '$50\\to3$ children; $100\\to6$ children', size=30, col=1), 'Fifty members give three children')),
+      L("Use this condition for whole-number counts, not any unknown amount. A mass or a length can be a fraction.")),
+    S('What must be a whole number?',
+      L("Now x is positive, but x itself need not be whole. Three percent of x is a positive integer. "
+        "What is the smallest x?", show(I('int_h', '$x>0$, $\\ 3\\%$ of $x$ is a positive integer', size=30), 'Three percent of x')),
+      L("The smallest positive integer is one. A smaller x gives a smaller three percent of x. "
+        "So the smallest allowed result, one, gives the smallest x.",
+        show(IH('int_i', '$\\frac{3}{100}x=1$', size=30), 'the smallest allowed result, one')),
+      L("To remove the denominator, multiply both sides by a hundred. Now three x is a hundred. "
+        "To leave x alone, divide by three. x is a hundred over three, thirty-three and a third.",
+        show(IH('int_j', '$3x=100$', size=30), 'Now three x is a hundred'),
+        show(IH('int_k', '$x=100/3=33\\frac{1}{3}$', size=30, col=1), 'x is a hundred over three')),
+      L("That's allowed because x was not a whole-number count. Check which quantity must be whole. "
+        "Now try the guided questions first, and then watch the solutions. I'll see you in the next video.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t23-03 (added: "of" or "more than")
@@ -2126,7 +2182,6 @@ r_7 = IH('r_7', 'change: $\\ 250-150=100$', size=30)
 r_8 = IH('r_8', '$\\frac{100}{150}=\\frac{2}{3}=66\\frac{2}{3}\\%$', size=30)
 r_9 = IH('r_9', '(3) $\\ 100$ credits $\\ne100\\%$', size=30, col=1)
 r_10 = IH('r_10', '(1) $\\ \\frac{100}{250}=40\\%$: $\\ $wrong whole', size=30, col=1)
-r_11 = IH('r_11', '(4) $\\ 50\\%$: $\\ $forgets "more"', size=30, col=1)
 r_m = AMAP('r_m', ['desk', 'chair', 'table'], [('a', 1, 0, '×1.5'), ('b', 1, 2, '×2.5')], gap=250, w=560)
 r_12 = IH('r_12', '$2.5\\div1.5=\\frac{25}{15}=\\frac{5}{3}$', size=30)
 r_13 = IH('r_13', '$\\frac{5}{3}=166\\frac{2}{3}\\%$: $\\ 66\\frac{2}{3}\\%$ higher', size=30)
@@ -2159,9 +2214,7 @@ video('solve-q-r26-t23-03', 'solution', qid='q-r26-t23-03', slides=[
       L("Choice number three, a hundred percent, is a trap. The difference is a hundred credits, but that's not a "
         "hundred percent. We divide it by the desk's price.", show(r_9, 'is a trap'), mk('cross', 'choice 3', 'is a trap')),
       L("Choice number one divides by the table's price. A hundred over two hundred fifty is forty percent, the wrong "
-        "whole. And choice number four, fifty percent, reads both sentences as of. It forgets the word more.",
-        show(r_10, 'A hundred over two hundred fifty'), mk('cross', 'choice 1', 'the wrong'),
-        show(r_11, 'It forgets the word more'), mk('cross', 'choice 4', 'It forgets the word more'))),
+        "whole.", show(r_10, 'A hundred over two hundred fifty'), mk('cross', 'choice 1', 'the wrong'))),
     S('Method 2 · The math way: the arrow map',
       L("[pause] Now the arrow map, like in Lior's question. We start again from the givens. Both sentences start at the "
         "chair, the whole.", show(r_m['line'], 'Both sentences start at the')),
@@ -2241,14 +2294,14 @@ video('solve-q-r26-t23-04', 'solution', qid='q-r26-t23-04', slides=[
 # English addition (real exam: 2024_spring_q1_16, 2024_winter_q1_15, 2021_spring_q1_13). REMINDER: plugging in numbers
 # and its rules (topic 51: easy allowed numbers; change them if choices tie; two choices left ->
 # new numbers), the percent = part / whole x 100. NEW here: why these numbers (a quarter of g is whole, g < N).
-q_1 = IH('q_1', '$N=200,\\ \\ g=80$', size=30)
-q_2 = IH('q_2', '$25\\%$ of $80=20$ girls', size=30)
-q_3 = IH('q_3', '$\\frac{20}{200}=\\frac{10}{100}=10\\%$', size=30)
+q_1 = IH('q_1', '$N=100,\\ \\ g=40$', size=30)
+q_2 = IH('q_2', '$25\\%$ of $40=10$ girls', size=30)
+q_3 = IH('q_3', '$\\frac{10}{100}=10\\%$', size=30)
 q_4 = IH('q_4', 'target: $\\ 10\\%$', size=30)
-q_5 = IH('q_5', '(1) $\\ \\frac{80}{800}\\%=\\frac{1}{10}\\%$', size=30, col=1)
-q_6 = IH('q_6', '(2) $\\ \\frac{8000}{200}\\%=40\\%$', size=30, col=1)
-q_7 = IH('q_7', '(3) $\\ \\frac{25\\cdot80}{200}=\\frac{2000}{200}=10$', size=30, col=1)
-q_8 = IH('q_8', '(4) $\\ \\frac{5000}{80}\\%>60\\%$', size=30, col=1)
+q_5 = IH('q_5', '(1) $\\ \\frac{40}{400}\\%=\\frac{1}{10}\\%$', size=30, col=1)
+q_6 = IH('q_6', '(2) $\\ \\frac{4000}{100}\\%=40\\%$', size=30, col=1)
+q_7 = IH('q_7', '(3) $\\ \\frac{25\\cdot40}{100}=\\frac{1000}{100}=10$', size=30, col=1)
+q_8 = IH('q_8', '(4) $\\ \\frac{2500}{40}\\%\\ne10\\%$', size=30, col=1)
 q_9 = IH('q_9', 'chess girls: $\\ \\frac{g}{4}$', size=30)
 q_10 = I('q_10', 'percent $=\\frac{\\text{part}}{\\text{whole}}\\times100$', size=30, hand='percent = {part/whole}×100')
 q_11 = IH('q_11', '$\\frac{g}{4}\\div N=\\frac{g}{4N}$', size=30, col=1)
@@ -2262,21 +2315,22 @@ video('solve-q-r26-t23-05', 'solution', qid='q-r26-t23-05', slides=[
         "in two different ways, by plugging in numbers, and then the math way.", pt('stem', 'There are letters')),
       L("Let's start by plugging in numbers. Like in psychometric thinking, check the restrictions first. Then choose "
         "easy allowed numbers. If choices give the same result, try another allowed example."),
-      L("Let's say there are two hundred students, so N is two hundred. And eighty of them are girls, so g is eighty. Why "
-        "eighty? Because a quarter of eighty is a whole number, and eighty is less than two hundred.", show(q_1, 'so g is eighty')),
-      L("Twenty-five percent of the girls play chess. A quarter of eighty is twenty girls.", show(q_2, 'A quarter of eighty is')),
-      L("Now, what percent of all the students is that? Twenty out of two hundred is ten out of a hundred, ten percent. "
-        "So our target is ten percent.", show(q_3, 'Twenty out of two hundred'), show(q_4, 'So our target is ten'))),
+      L("Let's use a hundred students, so each percent is one student. Let forty be girls. Forty is allowed and divides easily into quarters. "
+        "So N is a hundred, and g is forty.", show(q_1, 'So N is a hundred')),
+      L("Twenty-five percent of the girls play chess. A quarter of forty is ten girls.", show(q_2, 'A quarter of forty is')),
+      L("We compare those ten girls with all the students. Ten out of a hundred is ten percent. "
+        "So our target is ten percent.", show(q_3, 'Ten out of a hundred'), show(q_4, 'So our target is ten'))),
     S('Method 1 · Plugging in numbers',
-      L("Now we put N is two hundred and g is eighty into every choice. Choice number one says g over four N percent. Four times two "
-        "hundred is eight hundred, so it's eighty over eight hundred percent. That's a tenth of a percent, not ten percent. Out.", show(q_5, 'Eighty over eight hundred'), mk('cross', 'choice 1', 'not ten percent. Out')),
-      L("Choice number two says a hundred g over N percent. A hundred times eighty is eight thousand, and eight thousand over two hundred is forty. That's forty percent of the students, "
-        "all the girls, not just the girls who play chess. Out.", show(q_6, 'Eight thousand over two hundred'), mk('cross', 'choice 2', 'not just the girls who play chess')),
-      L("Choice number three says twenty-five g over N percent. Twenty-five times eighty is two thousand, and two thousand over two "
-        "hundred is ten. So this choice gives ten percent, our target.", show(q_7, 'Twenty-five times eighty')),
-      L("In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four says twenty-five "
-        "N over g percent. Twenty-five times two hundred is five thousand. Five thousand over eighty is more than sixty, because eighty times sixty is only four thousand eight hundred. So it's more than sixty percent, not ten percent. Out.",
-        show(q_8, "So it's more than sixty percent"), mk('cross', 'choice 4', 'not ten percent')),
+      L("Now test the choices with these numbers. Choice number one says g over four N percent. Four times a hundred is four hundred. "
+        "Forty over four hundred percent is a tenth of a percent, not ten percent. Out.", show(q_5, 'Forty over four hundred percent'), mk('cross', 'choice 1', 'not ten percent. Out')),
+      L("Choice number two says a hundred g over N percent. A hundred times forty is four thousand. Four thousand over a hundred is forty. That's forty percent of the students, "
+        "all the girls, not just the girls who play chess. Out.", show(q_6, 'Four thousand over a hundred'), mk('cross', 'choice 2', 'not just the girls who play chess')),
+      L("Choice number three says twenty-five g over N percent. Twenty-five times forty is a thousand. A thousand over a "
+        "hundred is ten. So this choice gives ten percent, our target.", show(q_7, 'Twenty-five times forty')),
+      L("Choice number three matches, but we must check choice number four too. A match doesn't rule out an untested choice. Choice number four says twenty-five "
+        "N over g percent. Twenty-five times a hundred is two thousand five hundred. Dividing by forty cannot give ten. "
+        "Ten times forty is only four hundred. So this is not ten percent. Out.",
+        show(q_8, "So this is not ten percent"), mk('cross', 'choice 4', 'not ten percent')),
       L("Only choice number three gives ten percent. If two choices had given ten percent, we'd pick new numbers and test only those "
         "two. Choice number three is our answer.", mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · The math way',
@@ -2368,9 +2422,13 @@ _clause_rows('solve-wp23-g058', 'c_3',
 _clause_rows('solve-wp23-g057', 'f_4',
     ('$85\\div5=17$', 'Eighty-five divided by five is seventeen'),
     ('$200\\div5=40$', 'Two hundred divided by five is forty'))
+_clause_rows('solve-wp23-g057', 'f_other',
+    ('$17\\times2=34$', 'Seventeen times two is thirty-four'),
+    ('$17\\times0.5=8.5$', 'Seventeen times a half is eight point five'),
+    ('$34+8.5=42.5\\%$', 'Thirty-four plus eight point five'))
 _clause_rows('solve-wp23-g061', 'd_11',
-    ('$5$ fifths $+1=6$ fifths', 'Add a fifth, and we have six fifths'),
-    ('$6-1=5$ fifths', "we're back to five fifths"))
+    ('$4$ quarters $+1=5$ quarters', 'Add a quarter, and we have five quarters'),
+    ('$5-1=4$ quarters', "we're back to four quarters"))
 _clause_rows('solve-wp23-g061', 'd_12',
     ('$2$ halves $+1=3$ halves', 'Add a half, and we have three halves'),
     ('$3-1=2$ halves', "we're back to two halves"))
@@ -2390,8 +2448,8 @@ _clause_rows('solve-q-r26-t23-16', 'l_15',
     ('novels: $240$', "Let's try two hundred forty"),
     ('textbooks: $600-240=360$', 'Then the textbooks are six hundred minus'))
 _clause_rows('solve-q-r26-t23-05', 'q_7',
-    ('$25\\cdot80=2000$', 'Twenty-five times eighty is two thousand'),
-    ('$2000\\div200=10$', 'two thousand over two hundred is ten'))
+    ('$25\\cdot40=1000$', 'Twenty-five times forty is a thousand'),
+    ('$1000\\div100=10$', 'A thousand over a hundred is ten'))
 _clause_rows('solve-wp23-g064', 'b_6',
     ('$48\\div4=12$', 'Forty-eight divided by four is twelve'),
     ('$3\\cdot12=36$', 'Three times twelve is thirty-six'))
@@ -2422,7 +2480,7 @@ CARRY23 = {
     'solve-q-r26-t23-03': {1: ['chair $100$, desk $150$, table $250$']},
     'solve-q-r26-t23-04': {1: ['water $240$ g $=60\\%$']},
     'solve-wp23-g064': {1: ['factory $30\\%$, $\\ 40\\%=48$ kg'], 3: ['factory $30\\%$, $\\ 40\\%=48$ kg']},
-    'solve-q-r26-t23-05': {1: ['$N=200$, $g=80$: $\\ $target $10\\%$']},
+    'solve-q-r26-t23-05': {1: ['$N=100$, $g=40$: $\\ $target $10\\%$']},
 }
 STEMS23 = {
  "wp23-g054": "In a survey, 35% of the students do not play a musical instrument. Of the students who play an instrument, 80% play the piano and the rest play only the guitar. What percentage of all the surveyed students play only the guitar?",

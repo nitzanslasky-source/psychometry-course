@@ -106,7 +106,7 @@
   ],
   [
    {
-    "say": "[pause] Now an insight, the one from the lesson. Adding fractions takes time, and percents are much faster. We start again from the givens, and turn every fraction into percent. Again, we need the claim that isn't forced.",
+    "say": "[pause] Now an insight, the one from the lesson. We can compare with a hundred percent instead of one. We start again from the givens, and turn every fraction into percent. Again, we need the claim that isn't forced.",
     "at": [
      "Now an",
      "the givens, and"
@@ -126,7 +126,8 @@
     "say": "Not new is a hundred minus twenty-five, seventy-five. Not nights is a hundred minus thirty-three, sixty-seven.",
     "at": [
      "Not new is a hundred minus twenty-five",
-     "Not nights is a hundred minus thirty-three"
+     "Not nights is a hundred minus thirty-three",
+     "minus thirty-three, sixty-seven"
     ]
    }
   ],
@@ -166,7 +167,7 @@
     ]
    },
    {
-    "say": "So in the exam, turn the fractions into percent. Choice number three is our answer, and I'll see you in the next question.",
+    "say": "Here fractions or percents show which overlap is forced. Choice number three is our answer, and I'll see you in the next question.",
     "at": [
      "Choice number three is our answer"
     ]

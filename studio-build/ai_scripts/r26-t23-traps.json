@@ -44,7 +44,144 @@
      "twenty-five and thirty"
     ]
    },
-   "Only choice number two, twenty-eight point one two five percent, is in that range. So that's the answer, with no long division. [pause] Now three questions. Try each one first, and then watch the solution. I'll see you in the next video."
+   "Only choice number two, twenty-eight point one two five percent, is in that range. So that's the answer, with no long division."
+  ],
+  [
+   {
+    "say": "Now mixtures. A concentration is the percent of a mixture made of one ingredient. We divide that ingredient's amount by the total amount.",
+    "at": [
+     "is the percent",
+     "We divide that ingredient",
+     "by the total"
+    ]
+   },
+   {
+    "say": "Start with a hundred grams of twenty-percent salt water. Twenty grams are salt, and eighty grams are water.",
+    "at": [
+     "Twenty grams are salt"
+    ]
+   },
+   {
+    "say": "We add a hundred grams of pure water. No salt was added. So the salt stays twenty grams. The total becomes two hundred grams.",
+    "at": [
+     "We add a",
+     "The total becomes two hundred grams"
+    ]
+   },
+   {
+    "say": "The new concentration is twenty out of two hundred, one tenth, ten percent. When we add only water, track the unchanged salt.",
+    "at": [
+     "twenty out of two hundred",
+     "one tenth, ten"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now start with a hundred grams of twenty-five-percent sugar water. We add pure sugar until the mixture is fifty percent sugar. How much do we add?",
+    "at": [
+     "hundred grams of",
+     "We add pure sugar",
+     "the mixture is"
+    ]
+   },
+   {
+    "say": "This time the water stays unchanged. A hundred minus twenty-five is seventy-five grams of water.",
+    "at": [
+     "A hundred minus twenty-five"
+    ]
+   },
+   {
+    "say": "The final mixture is fifty percent sugar, so it is also fifty percent water. Seventy-five grams are half the final total.",
+    "at": [
+     "The final mixture",
+     "Seventy-five grams are half"
+    ]
+   },
+   {
+    "say": "So the final total is twice seventy-five, a hundred fifty grams. We started with a hundred. We added fifty grams of sugar.",
+    "at": [
+     "twice seventy-five, a hundred fifty",
+     "We started with",
+     "We added fifty grams"
+    ]
+   },
+   {
+    "say": "The trap is keeping the old total. Adding either ingredient changes the total. First ask which ingredient stays unchanged.",
+    "at": [
+     "The trap is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more exam condition. People are counted in whole numbers. Suppose twelve percent of a class play chess. Could the class have twenty-five students?",
+    "at": [
+     "People are counted",
+     "Could the class have twenty-five students"
+    ]
+   },
+   {
+    "say": "Twelve percent is twelve over a hundred, or three over twenty-five. Three twenty-fifths of twenty-five students is three students. So yes.",
+    "at": [
+     "over a hundred",
+     "or three over twenty-five",
+     "twenty-fifths of twenty-five",
+     "is three students"
+    ]
+   },
+   {
+    "say": "Now six percent of a club are children. What is the smallest possible number of members? Six percent is three over fifty.",
+    "at": [
+     "Now six percent",
+     "What is the smallest possible number",
+     "number of members",
+     "Six percent is three over fifty"
+    ]
+   },
+   {
+    "say": "This fraction is fully reduced. Three shares no factor with fifty. So the total must cancel the fifty. For three fiftieths of the members to be whole, the total must be a multiple of fifty.",
+    "at": [
+     "This fraction is",
+     "the total must be a multiple of fifty",
+     "multiple of fifty"
+    ]
+   },
+   {
+    "say": "Fifty members give three children. A hundred give six. So fifty is the smallest club.",
+    "at": [
+     "Fifty members give three children",
+     "A hundred give"
+    ]
+   },
+   "Use this condition for whole-number counts, not any unknown amount. A mass or a length can be a fraction."
+  ],
+  [
+   {
+    "say": "Now x is positive, but x itself need not be whole. Three percent of x is a positive integer. What is the smallest x?",
+    "at": [
+     "but x itself",
+     "Three percent of x",
+     "a positive integer"
+    ]
+   },
+   {
+    "say": "The smallest positive integer is one. A smaller x gives a smaller three percent of x. So the smallest allowed result, one, gives the smallest x.",
+    "at": [
+     "the smallest allowed result, one",
+     "gives the smallest"
+    ]
+   },
+   {
+    "say": "To remove the denominator, multiply both sides by a hundred. Now three x is a hundred. To leave x alone, divide by three. x is a hundred over three, thirty-three and a third.",
+    "at": [
+     "Now three x is a hundred",
+     "To leave x",
+     "x is a hundred over three",
+     "three, thirty-three and"
+    ]
+   },
+   "That's allowed because x was not a whole-number count. Check which quantity must be whole. Now try the guided questions first, and then watch the solutions. I'll see you in the next video."
   ]
  ]
 }

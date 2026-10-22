@@ -457,11 +457,15 @@
     },
     {
      "type": "p",
-     "text": "**Mixtures:** find what stays the same. Add sugar → the water stays: $80\\%$ of $300=240=60\\%$ → $400$ g, add $100$ g."
+     "text": "**Mixtures:** find the unchanged ingredient, not the unchanged percent. Add sugar → water stays $240$ g. It was $80\\%$ of $300$ g; it becomes $60\\%$ of the new $400$ g. Sugar added: $400-300=100$ g."
     },
     {
      "type": "p",
-     "text": "**Letters in the choices:** plug in easy numbers ($N=200,\\ g=80$), test every choice. $\\;$ **Estimate:** $90$ of $320$ is between $25\\%$ ($80$) and $30\\%$ ($96$)."
+     "text": "**Letters in the choices:** plug in easy allowed numbers ($N=100,\\ g=40$). Cross out each mismatch immediately; check untested choices before choosing a match. **Estimate:** $90$ of $320$ is between $25\\%$ ($80$) and $30\\%$ ($96$)."
+    },
+    {
+     "type": "p",
+     "text": "**Whole-number counts:** reduce the percentage fraction. If $6\\%=3/50$ of a whole-number club size are children, the total must be a multiple of $50$. This condition is not a rule for lengths or masses."
     }
    ]
   },

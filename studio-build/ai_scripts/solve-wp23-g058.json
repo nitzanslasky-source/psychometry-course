@@ -68,9 +68,9 @@
   ],
   [
    {
-    "say": "[pause] Now a shorter way. We start again from the givens. The whole price is a hundred percent. It drops by seventy-five percent, so twenty-five percent is left.",
+    "say": "[pause] Now the math way, using what's left. We start again from the givens. The whole price is a hundred percent. It drops by seventy-five percent, so twenty-five percent is left.",
     "at": [
-     "Now a",
+     "Now the",
      "the givens. The",
      "so twenty-five percent is left"
     ]
@@ -92,7 +92,7 @@
     ]
    },
    {
-    "say": "The same hundred seventy, with much less work. So when a price drops, think about what stays. Choice number two is our answer, and I'll see you in the next question.",
+    "say": "So the new price is a hundred seventy. When a price drops, we can calculate what stays. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
      "Choice number two is our answer"
     ]

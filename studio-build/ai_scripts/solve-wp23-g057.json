@@ -65,9 +65,16 @@
     ]
    },
    {
-    "say": "Look at choice number three, seventeen over twenty. Many students know that a twentieth is five percent. So seventeen twentieths is seventeen times five, eighty-five percent. That's not forty-two point five, so it's out.",
+    "say": "Start with an easy fraction from our table. A twentieth is five percent.",
+    "at": [
+     "A twentieth is five percent"
+    ]
+   },
+   {
+    "say": "Look at choice number three, seventeen over twenty. It has seventeen twentieths. So seventeen twentieths is seventeen times five, eighty-five percent. That's not forty-two point five, so it's out.",
     "at": [
      "number three, seventeen",
+     "It has seventeen",
      "seventeen times five",
      "That's not forty-two",
      "so it's out"
@@ -93,7 +100,33 @@
     ]
    },
    {
-    "say": "The exam often builds the choices like this, so a student who looks at them carefully gets there fast. Choice number two is our answer, and I'll see you in the next question.",
+    "say": "The exam often builds the choices like this, so a student who looks at them carefully gets there fast. Choice number two is our answer.",
+    "at": [
+     "number two is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "We can also start with one fortieth. It is half of one twentieth. Half of five percent is two point five percent.",
+    "at": [
+     "We can",
+     "Half of five percent is two point five",
+     "two point five"
+    ]
+   },
+   {
+    "say": "Seventeen fortieths are seventeen times that amount. Seventeen times two is thirty-four. Seventeen times a half is eight point five. Thirty-four plus eight point five is forty-two point five percent.",
+    "at": [
+     "Seventeen times two is thirty-four",
+     "Seventeen times a half is eight point five",
+     "eight point five",
+     "Thirty-four plus eight point five",
+     "is forty-two point"
+    ]
+   },
+   {
+    "say": "That is the ink left. Choice number two is our answer, and I'll see you in the next question.",
     "at": [
      "number two is"
     ]

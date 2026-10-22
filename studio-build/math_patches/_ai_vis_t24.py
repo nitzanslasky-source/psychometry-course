@@ -1169,8 +1169,9 @@ video('wp-068', 'lesson', slides=[
       L("And if the groups are equal? Say six and six. Then the biggest overlap is six. The two groups can be the very "
         "same six people.", show(r_m4, 'Say six and six'))),
     S('The smallest overlap',
-      L("The smallest overlap is the sum of the two groups, minus the total. In other words, how far do the two groups go "
-        "over the total?", show(r_n1, 'The smallest overlap is the sum')),
+      L("When the two groups add up to more than the total, some overlap is forced. "
+        "The smallest overlap is the sum of the two groups, minus the total. That is the extra count above the total.",
+        show(r_n1, 'The smallest overlap is the sum')),
       L("Ten plus nine is nineteen. But there are only fifteen students. Nineteen minus fifteen is four.",
         show(r_n2, 'Ten plus nine is nineteen'), show(r_n3, 'Nineteen minus fifteen')),
       L("Why does this work? Think of nineteen places in art and drama, for only fifteen students. Even if every student "
@@ -1207,7 +1208,7 @@ video('wp-068', 'lesson', slides=[
     S('One more example',
       L("Let's do one more, from start to end. A team has twenty-four players. Eighteen wear a cap, and fourteen wear "
         "gloves. How many could wear both?", show(r_x1, 'A team has twenty-four players')),
-      L("Could means a range. The biggest overlap is the smaller group, fourteen. All fourteen players with gloves can "
+      L("Here we need the range of possible overlaps. The biggest overlap is the smaller group, fourteen. All fourteen players with gloves can "
         "also wear a cap.", show(r_x2, 'The biggest overlap is the smaller group')),
       L("The smallest overlap is the sum minus the total. Eighteen plus fourteen is thirty-two. Thirty-two minus "
         "twenty-four is eight.", show(r_x3, 'Eighteen plus fourteen'), show(r_x4, 'Thirty-two minus')),
@@ -1249,8 +1250,9 @@ video('wp-068', 'lesson', slides=[
         show(r_f2, 'Seven tenths plus five tenths')),
       L("The whole is one, and one is ten tenths. So twelve tenths minus one is two tenths, and that's one fifth. At least "
         "a fifth of the workers drink both.", show(r_f3, 'So twelve tenths minus one')),
-      L("Often it's faster in percent. Seven tenths is seventy percent, and a half is fifty percent. Seventy plus fifty is "
-        "a hundred twenty, so twenty percent. That's the same fifth.", show(r_f4, 'Seventy plus fifty')),
+      L("We can also use percent. Seven tenths is seventy percent, and a half is fifty percent. Seventy plus fifty is "
+        "a hundred twenty. That is twenty percent above the whole, a hundred percent. "
+        "So at least twenty percent are in both. That's the same fifth.", show(r_f4, 'Seventy plus fifty')),
       L("So when you see percents or fractions of everyone, the whole is a hundred percent, or one. And in an exact "
         "question too, all four boxes together make the whole.")),
     S('Other regions: only',
@@ -1284,8 +1286,8 @@ video('wp-068', 'lesson', slides=[
         show(r_e5, 'Five plus six is eleven')),
       L("So neither is from zero to five. And look, the most neither comes when all nine drama students also take art. "
         "Then only ten students are in a group, and fifteen minus ten is five.", show(r_e6, 'So neither is from zero to five')),
-      L("So a big overlap gives a big neither. Before you pick a rule, ask which overlap makes the region they ask about "
-        "small or big.")),
+      L("Here the total and both group sizes stay fixed. More students in both means fewer different students in the groups. "
+        "That leaves more students in neither. Ask which overlap makes the requested region small or big.")),
     S('Summary',
       L("Let's sum up. The biggest overlap is the smaller group. We put the small group inside the big one.",
         show(r_s1, 'The biggest overlap is the smaller group')),
@@ -1363,7 +1365,7 @@ e_w5 = IH('e_w5', 'neither not given: $\\ $BOTH ranges from $3$ to $11$', size=3
 e_w6 = I('e_w6', 'The total counts only members of at least one group: $\\ $neither $=0$', size=28)
 e_z1 = I('e_z1', 'Four boxes: $\\ $neither $\\cdot$ B only $\\cdot$ both $\\cdot$ A only', size=30)
 e_z2 = I('e_z2', 'The brackets share "both"; $\\ $all four $=$ the total', size=30)
-e_z3 = I('e_z3', 'Put in what you know, $\\ $then fill it like a sudoku', size=30)
+e_z3 = I('e_z3', 'Start with the given box; $\\ $use the bracket totals', size=30)
 video('wp-069', 'lesson', slides=[
     S('Exact Overlap',
       L("Welcome back, and now the second kind of overlap question. Here the question gives us every fact we need. So we "
@@ -1375,8 +1377,8 @@ video('wp-069', 'lesson', slides=[
       L("Let's hand out the places again. The ten shaded boxes are the art students, so five students don't take art.",
         show(e_u['line'], "Let's hand out the places again"), show(e_u['a'], 'The ten shaded boxes')),
       L("Exactly two of those five take neither. Let's mark them in grey.", show(e_u['n'], "Let's mark them in grey")),
-      L("So the other three students without art must take drama. Five minus two is three, and nobody else is outside "
-        "art.", show(e_u['d1'], 'So the other three'), show(e_u1, 'Five minus two is three')),
+      L("So the other three students without art must take drama. Otherwise, more than two students would take neither. "
+        "Five minus two is three.", show(e_u['d1'], 'So the other three'), show(e_u1, 'Five minus two is three')),
       L("Drama has nine students, and three of them are drama only. So nine minus three, six drama places are left. They "
         "go to art students.", show(e_u2, 'So nine minus three'), show(e_u['d2'], 'They go to art students')),
       L("So exactly six students take both. Not a range this time, one number. The fact about neither fixed it.",
@@ -1391,9 +1393,9 @@ video('wp-069', 'lesson', slides=[
       L("The drama bracket covers drama only and both. Together they're nine.", show(e_s['B'], 'The drama bracket')),
       L("Careful here, this is a common mistake. The two brackets must share the middle box, both. If they don't share a "
         "box, there's no overlap at all.", show(e_k, 'The two brackets must share'))),
-    S('Fill it like a sudoku',
-      L("Now we fill the boxes like a sudoku, starting from what we know. Neither is two.",
-        show(e_f['line'], 'Now we fill the boxes'), show(e_f['base'], 'like a sudoku'), show(e_f['v0'], 'Neither is two')),
+    S('Fill one box at a time',
+      L("Now we fill one box at a time, starting from the given information. Neither is two.",
+        show(e_f['line'], 'Now we fill'), show(e_f['base'], 'starting from the given information'), show(e_f['v0'], 'Neither is two')),
       L("Neither plus the whole drama bracket is two plus nine, eleven. That's every box except art only.",
         show(e_s1, 'two plus nine'), show(e_f['h'], "That's every box except")),
       L("The four boxes make fifteen. So art only is fifteen minus eleven, four.", show(e_s2, 'fifteen minus eleven'),
@@ -1455,7 +1457,7 @@ video('wp-069', 'lesson', slides=[
         show(e_z1, 'we draw the four boxes')),
       L("The two brackets share the middle box, and all four boxes make the total.", show(e_z2, 'The two brackets share')),
       L("And when everyone is in a group, neither is zero."),
-      L("We put in what we know, and fill the rest like a sudoku. Now let's practice it on three questions. I'll see you "
+      L("We put in what we know, then use each bracket's total to find the missing boxes. Now let's practice it on three questions. I'll see you "
         "in the next video.", show(e_z3, 'We put in what we know'))),
 ])
 
@@ -1506,8 +1508,8 @@ video('solve-wp24-g070', 'solution', qid='wp24-g070', slides=[
     S('Method 2 · The math way: count each once',
       L("[pause] Now the second way, with the rule from the first lesson. We start again from the givens. A plus B, minus "
         "both, plus neither, is equal to the total.", show(g70r, 'A plus B, minus both')),
-      L("Thirty-one plus twenty-six is fifty-seven. That's more than the fifty-two guests, so some guests were counted "
-        "twice. They're the seventeen in both.", show(g70e, 'Thirty-one plus twenty-six')),
+      L("Thirty-one plus twenty-six is fifty-seven. This is a count of pool uses and gym uses, not different guests. "
+        "The question gives seventeen guests in both. Each of those seventeen was counted twice.", show(g70e, 'Thirty-one plus twenty-six')),
       L("So we subtract them once. Fifty-seven minus seventeen is forty. That's every guest who uses at least one.",
         show(g70f, 'Fifty-seven minus seventeen')),
       L("Then forty plus neither is fifty-two. So neither is fifty-two minus forty, twelve again.",
@@ -1746,9 +1748,15 @@ video('solve-wp24-g077', 'solution', qid='wp24-g077', slides=[
         show(g77s2['top'], 'Not in the morning is one minus'),
         show(g77c, 'three quarters')),
       L("Three quarters is nine twelfths. Take away evening only, one twelfth, and we get eight twelfths. So neither is "
-        "eight twelfths.", show(g77d, 'Take away evening only'), show(g77s2['v0'], 'So neither is eight twelfths')),
-      L("But the choices are numbers of people. The question says the twelfth in both is four people. So each twelfth is "
-        "four people, and we have eight twelfths. Eight times four is thirty-two people.", pt('stem', 'The question says the twelfth'), show(g77e, 'is four people'),
+        "eight twelfths.", show(g77d, 'Take away evening only'), show(g77s2['v0'], 'So neither is eight twelfths'))),
+    S('Method 1 · The math way: convert to people',
+      L("We found that eight twelfths attend neither workshop. Now we need a number of people.",
+        show(IH('g77_fraction_keep', 'neither: $8/12$ of the participants', size=30), 'eight twelfths attend neither')),
+      L("But the choices are numbers of people. The question says the twelfth in both is four people. "
+        "We want the people in eight twelfths. Use the triangle value from ratios. "
+        "Eight twelfths times four, divided by one twelfth. The twelfths cancel. "
+        "Each twelfth is four people, so eight times four is thirty-two people.", pt('stem', 'The question says the twelfth'), show(g77e, 'is four people'),
+        show(IH('g77_triangle', '$\\dfrac{(8/12)\\times4}{1/12}=8\\times4$', size=30, col=1), 'Eight twelfths times four'),
         show(g77f, 'Eight times four')),
       L("Choice number two is our answer.", mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('Method 2 · Insight: the total first',
@@ -2067,7 +2075,7 @@ video('solve-wp24-g076', 'solution', qid='wp24-g076', slides=[
       L("Choice number three is our answer. And if two groups add up to less than one, then no overlap is forced either. "
         "The smallest overlap is zero, never negative.", mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · Insight: work in percent',
-      L("[pause] Now an insight, the one from the lesson. Adding fractions takes time, and percents are much faster. We "
+      L("[pause] Now an insight, the one from the lesson. We can compare with a hundred percent instead of one. We "
         "start again from the givens, and turn every fraction into percent. Again, we need the claim that isn't forced."),
       L("A third is thirty-three and a third percent. Let's write just thirty-three, and in a moment we'll see why that's "
         "fine. Three quarters is seventy-five percent. A quarter is twenty-five percent, and a half is fifty percent.",
@@ -2088,7 +2096,7 @@ video('solve-wp24-g076', 'solution', qid='wp24-g076', slides=[
         "hundred, so the overlap isn't forced. Choice number four says at least one part-time nurse does not work night "
         "shifts. Fifty plus sixty-seven is a hundred seventeen, more than a hundred. That overlap is forced.",
         show(g76k, 'Twenty-five plus seventy-five'), show(g76l, 'Fifty plus sixty-seven')),
-      L("So in the exam, turn the fractions into percent. Choice number three is our answer, and I'll see you in the next "
+      L("Here fractions or percents show which overlap is forced. Choice number three is our answer, and I'll see you in the next "
         "question.", mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
@@ -2111,6 +2119,10 @@ w_d = IH('w_d', '$40$ women: $\\ 20\\%$ of $40=8$', size=30, col=1)
 w_e = IH('w_e', '$60$ men: $\\ 30\\%$ of $60=18$', size=30, col=1)
 w_f = IH('w_f', '$8+18=26$: $\\ 26\\%$', size=32, col=1)
 w_g = I('w_g', 'Find each group\'s count first. $\\ $Then add counts, not percents.', size=28)
+w_adult = VENN2('w_adult', 'art', 'language', [
+    ('tot', [('tot', '80 adults')]),
+    ('values', [('val', 'a', '0'), ('val', 'both', '5'), ('val', 'b', '5')]),
+    ('neither', [('val', 'out', '70')])], w=560, title='One possible arrangement: adults only')
 video('r26-t24-two-way', 'lesson', slides=[
     S('Two-Way Tables',
       L("Welcome back. Sometimes every person in a question has two traits. For example, a student is in the upper "
@@ -2136,8 +2148,42 @@ video('r26-t24-two-way', 'lesson', slides=[
       L("Eight plus eighteen is twenty-six. So twenty-six people out of a hundred wear glasses, twenty-six percent. Not "
         "fifty, and not twenty-five.", show(w_f, 'Eight plus eighteen'), show(w_ex['glasses'], 'Eight plus eighteen')),
       L("So find how many wear glasses in each group first. Add those counts, and compare with the total number of "
-        "people. The table keeps the groups clear. Let's see it in a guided question. Try it first, and I'll see you in the next video.",
+        "people. The table keeps the groups clear.",
         show(w_g, 'Add those counts'))),
+    S('Overlap inside a subgroup',
+      L("Now a club has eighty adults and twenty children. Twenty-five members take art, and thirty take language. "
+        "At most how many adults take neither?", show(I('sub_a', '$80$ adults, $20$ children; art $25$, language $30$', size=30), 'Twenty-five members take art')),
+      L("We want as many adults outside the classes as possible. So we need as few adults in the classes as possible."),
+      L("Let the children take the class places first. All twenty children can take both classes. "
+        "That leaves twenty-five minus twenty, five art places for adults. Thirty minus twenty leaves ten language places for adults.",
+        show(IH('sub_b', 'adult art: $25-20=5$', size=30), 'twenty-five minus twenty'),
+        show(IH('sub_c', 'adult language: $30-20=10$', size=30), 'Thirty minus twenty')),
+      L("Those ten language places need ten different adults. Can the five art students be among them? Yes. "
+        "Then only ten adults take a class.", show(w_adult['line'], 'Those ten language places'),
+        show(w_adult['tot'], 'ten different adults'), show(w_adult['values'], 'Then only ten adults take a class')),
+      L("So eighty minus ten, seventy adults take neither. Our arrangement works. "
+        "And we cannot have more, because at least ten adults must take language.",
+        show(IH('sub_d', 'adult neither: $80-10=70$', size=30, col=1), 'eighty minus ten, seventy'),
+        show(w_adult['neither'], 'seventy adults take neither')),
+      L("The trap is answering about all members. Here the requested group is adults. Keep children and adults separate.")),
+    S('Count vehicles, then people',
+      L("One more application. There are twenty-four cars. Fourteen have air conditioning. Sixteen carry three people each. "
+        "Every other car carries one person. At least how many people are in air-conditioned cars?",
+        show(I('car_a', '$24$ cars: $14$ with AC, $16$ carry three people', size=30), 'Fourteen have air conditioning')),
+      L("The groups count cars, not people. We want as few people as possible in the air-conditioned cars. "
+        "So first minimize the overlap with three-person cars."),
+      L("Fourteen plus sixteen is thirty. Thirty minus twenty-four is six. So at least six air-conditioned cars carry three people.",
+        show(IH('car_b', '$14+16=30$ car places', size=30), 'Fourteen plus sixteen is thirty'),
+        show(IH('car_c', 'minimum both: $30-24=6$ cars', size=30), 'Thirty minus twenty-four is six')),
+      L("The other fourteen minus six, eight air-conditioned cars carry one person. Six times three is eighteen people. "
+        "Eight times one is eight people. Eighteen plus eight is twenty-six people.",
+        show(IH('car_d', 'AC, one person: $14-6=8$ cars', size=30), 'fourteen minus six, eight'),
+        show(IH('car_e', '$6\\times3=18$ people', size=30, col=1), 'Six times three is eighteen'),
+        show(IH('car_f', '$8\\times1=8$ people', size=30, col=1), 'Eight times one is eight'),
+        show(IH('car_g', '$18+8=26$ people', size=30, col=1), 'Eighteen plus eight is twenty-six')),
+      L("Why is this the minimum? Replacing a one-person car with a three-person car adds two people. "
+        "We used the smallest possible overlap, so we used the fewest people. "
+        "Check what each group counts before using the answer. Now try the guided question. I'll see you in the next video.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t24-02 (added: a two-way table, percent of the walkers)
@@ -2423,7 +2469,7 @@ _clause_rows('wp-068', 'r_p4',
     ('$15\\%$: $20+10=30$ people', 'So fifteen percent is twenty plus ten'))
 _clause_rows('wp-068', 'r_f4',
     ('$70\\%+50\\%=120\\%$', 'Seventy plus fifty is a hundred twenty'),
-    ('$120\\%-100\\%=20\\%$', 'so twenty percent'))
+    ('$120\\%-100\\%=20\\%$', 'That is twenty percent above'))
 _clause_rows('wp-068', 'r_e5',
     ('$5+6=11$', 'Five plus six is eleven'),
     ('$11<15$: $\\ $smallest $0$', 'so the smallest overlap is zero'))
@@ -2463,13 +2509,13 @@ _clause_rows('solve-wp24-g076', 'g76e',
     ('$12$ nurses: $\\ 3$ new', 'A quarter, three, are new'),
     ('$9$ drive', 'Three quarters, nine, drive'))
 _clause_rows('solve-wp24-g076', 'g76g',
-    ('nights: $33\\%$', 'Let\'s write just thirty-three'),
+    ('nights: $\\approx33\\%$', 'Let\'s write just thirty-three'),
     ('drive: $75\\%$', 'Three quarters is seventy-five percent'),
     ('new: $25\\%$', 'A quarter is twenty-five percent'),
     ('part time: $50\\%$', 'a half is fifty percent'))
 _clause_rows('solve-wp24-g076', 'g76h',
     ('not new: $100-25=75\\%$', 'Not new is a hundred minus twenty-five'),
-    ('not nights: $100-33=67\\%$', 'Not nights is a hundred minus thirty-three'))
+    ('not nights: $\\approx100\\%-33\\%=67\\%$', 'Not nights is a hundred minus thirty-three'))
 # Keep the four conversions in two readable columns, clear of the choices.
 for _sl in VIDEOS['solve-wp24-g076']['slides']:
     for _ln in _sl['lines']:

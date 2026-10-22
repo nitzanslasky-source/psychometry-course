@@ -61,7 +61,7 @@
   ],
   [
    {
-    "say": "[pause] Now the insight. We added fifty percent, took away thirty-three and a third percent, and came back to the start. Is that luck? No. Fifty percent is a half, and thirty-three and a third percent is a third.",
+    "say": "[pause] Now the insight. Can these two changes cancel each other? Fifty percent is a half, and thirty-three and a third percent is a third.",
     "at": [
      "Now the",
      "Fifty percent is a half",
@@ -69,27 +69,26 @@
     ]
    },
    {
-    "say": "Let's see it on other fractions first. A whole is six sixths. Add a sixth, and we have seven sixths.",
+    "say": "Let's see the pattern with thirds. A whole is three thirds. Add a third, and we have four thirds.",
     "at": [
-     "Add a sixth, and we have"
+     "Add a third, and we have"
     ]
    },
    {
-    "say": "Now take away a seventh. A seventh of seven sixths is one sixth. Seven sixths minus one sixth is six sixths, the whole again.",
+    "say": "Now take away a quarter of the new amount. A quarter of four thirds is one third. Four thirds minus one third is three thirds, the whole again.",
     "at": [
      "Now take away",
-     "A seventh of seven sixths",
-     "is one sixth",
-     "Seven sixths minus one sixth",
-     "is six sixths"
+     "A quarter of four thirds",
+     "Four thirds minus one third",
+     "is three thirds"
     ]
    },
    {
-    "say": "Here's another one. A whole is five fifths. Add a fifth, and we have six fifths. Take away a sixth, one of the six fifths, and we're back to five fifths.",
+    "say": "Here's another one. A whole is four quarters. Add a quarter, and we have five quarters. Take away a fifth of the new amount. That's one of the five quarters, so we're back to four quarters.",
     "at": [
-     "Add a fifth, and we have six fifths",
-     "a sixth, one",
-     "we're back to five fifths"
+     "Add a quarter, and we have five quarters",
+     "Take away a",
+     "we're back to four quarters"
     ]
    },
    {

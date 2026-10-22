@@ -96,15 +96,17 @@
     ]
    },
    {
-    "say": "Thirty-one plus twenty-six is fifty-seven. That's more than the fifty-two guests, so some guests were counted twice. They're the seventeen in both.",
+    "say": "Thirty-one plus twenty-six is fifty-seven. This is a count of pool uses and gym uses, not different guests. The question gives seventeen guests in both. Each of those seventeen was counted twice.",
     "at": [
      "Thirty-one plus twenty-six",
-     "That's more than"
+     "This is a",
+     "The question gives"
     ]
    },
    {
     "say": "So we subtract them once. Fifty-seven minus seventeen is forty. That's every guest who uses at least one.",
     "at": [
+     "So we subtract",
      "Fifty-seven minus seventeen",
      "That's every guest"
     ]

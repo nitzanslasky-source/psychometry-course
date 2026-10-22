@@ -52,7 +52,7 @@
     ]
    },
    {
-    "say": "Could means a range. The biggest overlap is the smaller group, fourteen. All fourteen players with gloves can also wear a cap.",
+    "say": "Here we need the range of possible overlaps. The biggest overlap is the smaller group, fourteen. All fourteen players with gloves can also wear a cap.",
     "at": [
      "The biggest overlap is the smaller group",
      "smaller group, fourteen"
@@ -202,18 +202,14 @@
     ]
    },
    {
-    "say": "Often it's faster in percent. Seven tenths is seventy percent, and a half is fifty percent. Seventy plus fifty is a hundred twenty, so twenty percent. That's the same fifth.",
+    "say": "We can also use percent. Seven tenths is seventy percent, and a half is fifty percent. Seventy plus fifty is a hundred twenty. That is twenty percent above the whole, a hundred percent. So at least twenty percent are in both. That's the same fifth.",
     "at": [
      "Seventy plus fifty is a hundred twenty",
-     "so twenty percent"
+     "That is twenty percent above",
+     "the whole, a"
     ]
    },
-   {
-    "say": "So when you see percents or fractions of everyone, the whole is a hundred percent, or one. And in an exact question too, all four boxes together make the whole. [pause] Okay. I'll see you in the next part.",
-    "at": [
-     "So when you"
-    ]
-   }
+   "So when you see percents or fractions of everyone, the whole is a hundred percent, or one. And in an exact question too, all four boxes together make the whole. [pause] Okay. I'll see you in the next part."
   ]
  ]
 }

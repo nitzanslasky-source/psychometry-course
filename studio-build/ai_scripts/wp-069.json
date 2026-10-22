@@ -36,17 +36,17 @@
     ]
    },
    {
-    "say": "So the other three students without art must take drama. Five minus two is three, and nobody else is outside art.",
+    "say": "So the other three students without art must take drama. Otherwise, more than two students would take neither. Five minus two is three.",
     "at": [
      "So the other three",
      "without art must",
-     "Five minus two is three",
-     "and nobody else"
+     "Five minus two is three"
     ]
    },
    {
     "say": "Drama has nine students, and three of them are drama only. So nine minus three, six drama places are left. They go to art students.",
     "at": [
+     "Drama has nine",
      "So nine minus three",
      "drama places are",
      "They go to art students"
@@ -105,11 +105,11 @@
   ],
   [
    {
-    "say": "Now we fill the boxes like a sudoku, starting from what we know. Neither is two.",
+    "say": "Now we fill one box at a time, starting from the given information. Neither is two.",
     "at": [
-     "Now we fill the boxes",
-     "like a sudoku",
-     "what we know",
+     "Now we fill",
+     "at a time",
+     "starting from the given information",
      "Neither is two"
     ]
    },
@@ -332,10 +332,10 @@
    },
    "And when everyone is in a group, neither is zero.",
    {
-    "say": "We put in what we know, and fill the rest like a sudoku. Now let's practice it on three questions. I'll see you in the next video.",
+    "say": "We put in what we know, then use each bracket's total to find the missing boxes. Now let's practice it on three questions. I'll see you in the next video.",
     "at": [
      "We put in what we know",
-     "know, and fill"
+     "know, then use"
     ]
    }
   ]

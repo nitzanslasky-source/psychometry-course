@@ -325,7 +325,7 @@
     },
     {
      "type": "ex",
-     "label": "Fill it like a sudoku",
+     "label": "Fill one box at a time, using the bracket totals",
      "lines": [
       "neither $2$ $+$ drama $9=11$, $\\;$ so art only $=15-11=4$",
       "both $=10-4=6$, $\\;$ drama only $=9-6=3$"
@@ -353,7 +353,7 @@
        "$10$ and $9$: $\\;9$"
       ],
       [
-       "Smallest overlap $=A+B-$ total",
+       "When $A+B$ exceeds the total: smallest overlap $=A+B-$ total",
        "$10+9-15=4$"
       ],
       [
@@ -422,7 +422,15 @@
     },
     {
      "type": "p",
-     "text": "Percents of **different** groups: don't add them, don't average them. $\\;20\\%$ of $40$ women $+\\;30\\%$ of $60$ men $=26\\%$."
+     "text": "Percents of **different** groups: find counts first. $20\\%$ of $40$ women is $8$; $30\\%$ of $60$ men is $18$. Total: $26$ out of $100$, or $26\\%$. Don't add or simply average their percents."
+    },
+    {
+     "type": "p",
+     "text": "**A subgroup:** keep adults and children separate. $30$ language places with only $20$ children require at least $10$ adults. To maximize adults in neither class, minimize the different adults taking classes; check that the arrangement works."
+    },
+    {
+     "type": "p",
+     "text": "**Vehicles ≠ people:** first find the overlap in cars, then count their passengers. Minimum $6$ AC cars with $3$ people plus $8$ AC cars with $1$ person gives $6\\times3+8=26$ people."
     }
    ]
   },

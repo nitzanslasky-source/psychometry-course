@@ -26,66 +26,67 @@
     ]
    },
    {
-    "say": "Let's say there are two hundred students, so N is two hundred. And eighty of them are girls, so g is eighty. Why eighty? Because a quarter of eighty is a whole number, and eighty is less than two hundred.",
+    "say": "Let's use a hundred students, so each percent is one student. Let forty be girls. Forty is allowed and divides easily into quarters. So N is a hundred, and g is forty.",
     "at": [
-     "so g is eighty",
-     "Because a quarter"
+     "So N is a hundred",
+     "and g is"
     ]
    },
    {
-    "say": "Twenty-five percent of the girls play chess. A quarter of eighty is twenty girls.",
+    "say": "Twenty-five percent of the girls play chess. A quarter of forty is ten girls.",
     "at": [
-     "A quarter of eighty is"
+     "A quarter of forty is"
     ]
    },
    {
-    "say": "Now, what percent of all the students is that? Twenty out of two hundred is ten out of a hundred, ten percent. So our target is ten percent.",
+    "say": "We compare those ten girls with all the students. Ten out of a hundred is ten percent. So our target is ten percent.",
     "at": [
-     "Now, what percent",
-     "Twenty out of two hundred",
-     "is ten out",
+     "We compare those",
+     "Ten out of a hundred",
+     "is ten percent",
      "So our target is ten"
     ]
    }
   ],
   [
    {
-    "say": "Now we put N is two hundred and g is eighty into every choice. Choice number one says g over four N percent. Four times two hundred is eight hundred, so it's eighty over eight hundred percent. That's a tenth of a percent, not ten percent. Out.",
+    "say": "Now test the choices with these numbers. Choice number one says g over four N percent. Four times a hundred is four hundred. Forty over four hundred percent is a tenth of a percent, not ten percent. Out.",
     "at": [
-     "Now we",
-     "is two hundred",
+     "Now test",
+     "with these numbers",
      "number one says",
      "four N percent",
-     "two hundred is",
-     "Eighty over eight hundred",
-     "That's a tenth",
+     "a hundred is",
+     "Forty over four hundred percent",
+     "is a tenth",
      "not ten percent. Out"
     ]
    },
    {
-    "say": "Choice number two says a hundred g over N percent. A hundred times eighty is eight thousand, and eight thousand over two hundred is forty. That's forty percent of the students, all the girls, not just the girls who play chess. Out.",
+    "say": "Choice number two says a hundred g over N percent. A hundred times forty is four thousand. Four thousand over a hundred is forty. That's forty percent of the students, all the girls, not just the girls who play chess. Out.",
     "at": [
      "number two says",
-     "Eight thousand over two hundred",
+     "Four thousand over a hundred",
      "is forty. That's",
      "not just the girls who play chess"
     ]
    },
    {
-    "say": "Choice number three says twenty-five g over N percent. Twenty-five times eighty is two thousand, and two thousand over two hundred is ten. So this choice gives ten percent, our target.",
+    "say": "Choice number three says twenty-five g over N percent. Twenty-five times forty is a thousand. A thousand over a hundred is ten. So this choice gives ten percent, our target.",
     "at": [
      "number three says",
-     "Twenty-five times eighty is two thousand",
-     "two thousand over two hundred is ten",
+     "Twenty-five times forty is a thousand",
+     "A thousand over a hundred is ten",
      "So this choice"
     ]
    },
    {
-    "say": "In the exam you'd circle it and move on. Here, let's check the last one too. Choice number four says twenty-five N over g percent. Twenty-five times two hundred is five thousand. Five thousand over eighty is more than sixty, because eighty times sixty is only four thousand eight hundred. So it's more than sixty percent, not ten percent. Out.",
+    "say": "Choice number three matches, but we must check choice number four too. A match doesn't rule out an untested choice. Choice number four says twenty-five N over g percent. Twenty-five times a hundred is two thousand five hundred. Dividing by forty cannot give ten. Ten times forty is only four hundred. So this is not ten percent. Out.",
     "at": [
-     "number four says",
-     "Five thousand over",
-     "So it's more than sixty percent",
+     "number three matches",
+     "number four too",
+     "over g percent",
+     "So this is not ten percent",
      "not ten percent"
     ]
    },

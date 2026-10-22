@@ -58,10 +58,83 @@
     ]
    },
    {
-    "say": "So find how many wear glasses in each group first. Add those counts, and compare with the total number of people. The table keeps the groups clear. Let's see it in a guided question. Try it first, and I'll see you in the next video.",
+    "say": "So find how many wear glasses in each group first. Add those counts, and compare with the total number of people. The table keeps the groups clear.",
     "at": [
      "Add those counts",
      "with the total"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a club has eighty adults and twenty children. Twenty-five members take art, and thirty take language. At most how many adults take neither?",
+    "at": [
+     "eighty adults and",
+     "Twenty-five members take art",
+     "thirty take language"
+    ]
+   },
+   "We want as many adults outside the classes as possible. So we need as few adults in the classes as possible.",
+   {
+    "say": "Let the children take the class places first. All twenty children can take both classes. That leaves twenty-five minus twenty, five art places for adults. Thirty minus twenty leaves ten language places for adults.",
+    "at": [
+     "twenty-five minus twenty",
+     "places for adults",
+     "Thirty minus twenty",
+     "language places for"
+    ]
+   },
+   {
+    "say": "Those ten language places need ten different adults. Can the five art students be among them? Yes. Then only ten adults take a class.",
+    "at": [
+     "Those ten language places",
+     "ten different adults",
+     "Can the five",
+     "Then only ten adults take a class"
+    ]
+   },
+   {
+    "say": "So eighty minus ten, seventy adults take neither. Our arrangement works. And we cannot have more, because at least ten adults must take language.",
+    "at": [
+     "eighty minus ten, seventy",
+     "seventy adults take neither",
+     "And we cannot"
+    ]
+   },
+   "The trap is answering about all members. Here the requested group is adults. Keep children and adults separate."
+  ],
+  [
+   {
+    "say": "One more application. There are twenty-four cars. Fourteen have air conditioning. Sixteen carry three people each. Every other car carries one person. At least how many people are in air-conditioned cars?",
+    "at": [
+     "are twenty-four cars",
+     "Fourteen have air conditioning",
+     "Sixteen carry three"
+    ]
+   },
+   "The groups count cars, not people. We want as few people as possible in the air-conditioned cars. So first minimize the overlap with three-person cars.",
+   {
+    "say": "Fourteen plus sixteen is thirty. Thirty minus twenty-four is six. So at least six air-conditioned cars carry three people.",
+    "at": [
+     "Fourteen plus sixteen is thirty",
+     "Thirty minus twenty-four is six",
+     "So at least"
+    ]
+   },
+   {
+    "say": "The other fourteen minus six, eight air-conditioned cars carry one person. Six times three is eighteen people. Eight times one is eight people. Eighteen plus eight is twenty-six people.",
+    "at": [
+     "fourteen minus six, eight",
+     "cars carry one",
+     "Six times three is eighteen",
+     "Eight times one is eight",
+     "Eighteen plus eight is twenty-six"
+    ]
+   },
+   {
+    "say": "Why is this the minimum? Replacing a one-person car with a three-person car adds two people. We used the smallest possible overlap, so we used the fewest people. Check what each group counts before using the answer. Now try the guided question. I'll see you in the next video.",
+    "at": [
+     "Why is this"
     ]
    }
   ]
