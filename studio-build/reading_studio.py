@@ -600,6 +600,12 @@ def scan_recorded(videos):
 
 _BASE_IDS = None
 
+try:   # 2026-10-23: the Ready-to-record gate from Video Status, shown on unrecorded lessons
+    GATE = {k: {'state': g.get('state'), 'why': g.get('why', '')} for k, g in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'review_gate.json'))).items()}
+except Exception:
+    GATE = {}
+
+
 def _origin(vid, topic):
     """2026-10-22 (teacher: "mark every video that is equivalent to the Hebrew and all the videos that were added"):
     'hebrew' = the video (or the lesson it is a part of) is in base-v18 = the English translation of her Hebrew course,
@@ -648,6 +654,7 @@ def build(topics=(), ids=None, out=OUT):
             v['group'] = g['topic']
             v['camera'] = v['id'] in cams                          # camera lesson: "Camera on" by default
             v['origin'] = _origin(v['id'], g['topic'])               # 2026-10-22: from her Hebrew course, or added
+            v['gate'] = GATE.get(v['id']) or {'state': 'held', 'why': 'not reviewed yet'}   # 2026-10-23: Video Status gate (review_gate.json)
             allv.append(v)
     import datetime as _dt
     now = _dt.datetime.now().astimezone()
@@ -730,6 +737,8 @@ aside{width:300px;flex:none;border-right:1px solid var(--line);background:var(--
 .cam.on label{color:var(--accent)}
 .pill.cam{background:var(--accent-soft);color:var(--accent)}
 .pill.heb{background:#e0f2fe;color:#075985;border:1px solid #7dd3fc}
+.pill.ready{background:#dcfce7;color:#166534;border:1px solid #86efac;font-weight:600}
+.pill.held{background:#fee2e2;color:#991b1b;border:1px solid #fca5a5}
 .pill.added{background:#fff7ed;color:#9a3412;border:1px solid #fdba74}
 .recdot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--rec);margin-right:5px;vertical-align:1px}
 .head{display:flex;gap:18px;align-items:center;padding:14px 22px 10px}
@@ -1020,6 +1029,7 @@ function completedCorrectionIndices(id,side){
 function pendingVideoCorrections(id,full,patches){const task=(DATA.videoCorrections||{})[id];if(!task)return [];
   const done=new Set([full,...patches].flatMap(s=>completedCorrectionIndices(id,s)));return task.paragraphs.filter(i=>!done.has(i))}
 function videoCorrectionList(id=V[S.cur].id){return (S.status[id]||{}).videoCorrections||[]}
+function gateBadge(v){const g=v.gate||{};return g.state==='ready'?' <span class="pill ready" title="Reviewed by Codex — you can record it">Ready to record</span>':' <span class="pill held" title="'+esc(g.why||'')+'">Held — don\'t record yet</span>'}
 function originBadge(v){const o=v.origin||{};return o.kind==='added'?' <span class="pill added" title="No video in your Hebrew course ('+esc(o.why||'')+')">added · no Hebrew video</span>':' <span class="pill heb" title="Equivalent to a video in your Hebrew course">Hebrew'+(o.part?' (part)':'')+'</span>'}
 function correctionBadge(id){const pending=videoCorrectionList(id),task=(DATA.videoCorrections||{})[id];return pending.length?'<span class="pill vfix">Video correction · '+(task.mode==='full'?'new full take':pending.length+' paragraph'+(pending.length>1?'s':''))+'</span>':''}
 function changedOf(id,full,patches){/* same rule as the generator: current paragraphs not in the last full take's sidecar nor in a later patch */
@@ -1049,7 +1059,7 @@ function renderList(){
     h+='<div class="grp"><span>'+esc(g.topic?('Topic '+g.topic+(g.title?' · '+g.title:'')):g.title)+'</span><span>'+done+'/'+g.ids.length+'</span></div>';
     for(const id of g.ids){const v=BYID[id],i=V.indexOf(v),st=S.status[id];n++;
       h+='<div class="vid'+(i===S.cur?' cur':'')+'" data-i="'+i+'"><span class="n">'+(i+1)+'</span><span class="t" title="'+esc(v.title)+'">'+esc(v.title)+'</span><span class="m">'+v.minutes.toFixed(1)+' min</span>'+
-        '<span class="id">'+esc(id)+'</span><span class="st">'+(st?'<span class="pill yes">recorded ✓'+(st.seconds?' · '+fmt(st.seconds):'')+(st.takes>1?' · '+st.takes+' takes':'')+(st.patches?' · '+st.patches+' patch'+(st.patches>1?'es':''):'')+'</span>'+(st.changed&&st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length?' <span class="pill chg">script re-read: '+st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length+'</span>':''):'<span class="pill no">not recorded</span>')+correctionBadge(id)+originBadge(v)+(camWanted(v)?' <span class="pill cam" title="Recorded with the camera on">camera</span>':'')+'</span></div>'}}
+        '<span class="id">'+esc(id)+'</span><span class="st">'+(st?'<span class="pill yes">recorded ✓'+(st.seconds?' · '+fmt(st.seconds):'')+(st.takes>1?' · '+st.takes+' takes':'')+(st.patches?' · '+st.patches+' patch'+(st.patches>1?'es':''):'')+'</span>'+(st.changed&&st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length?' <span class="pill chg">script re-read: '+st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length+'</span>':''):'<span class="pill no">not recorded</span>'+gateBadge(v))+correctionBadge(id)+originBadge(v)+(camWanted(v)?' <span class="pill cam" title="Recorded with the camera on">camera</span>':'')+'</span></div>'}}
   L.innerHTML=h;
   L.querySelectorAll('.vid').forEach(el=>el.onclick=()=>selectVideo(+el.dataset.i));
 }
