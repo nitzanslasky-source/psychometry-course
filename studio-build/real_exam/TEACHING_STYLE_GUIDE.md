@@ -1227,6 +1227,7 @@ These add to R1-R37 and the Codex review standard. Where they differ from the AI
     - **Prompter maths must group correctly:** whole fractions, brackets, percent signs outside a whole fraction; no bare "over"/"times" between numbers.
     - **A result is written when it is said**, never before; split bundled rows; keep needed results in a "So far" box when a slide clears.
     - **Don't promise "we'll learn it later"** for something already taught — give a one-line reminder instead.
+    - **(Codex, topic 35 review, 23 Oct)** State a formula's conditions when it is first used (right prism, two equal bases, nothing spills); say WHY a midpoint or a cancellation follows, not only that it does; introduce letters (a, b, c) in words before they appear on the board; say "the square root of the SUM of the squares", never the ambiguous "edges squared".
 
 25. **W25. Acceptance standard — clarity and read-aloud usability are REQUIRED** (Nitzan, 22 Oct): a script is not ready because its maths and automated checks pass. Every sentence is checked against its board: new questions / examples / methods introduced explicitly ("Now a new question. We are given … We need …"); each step = what we're finding + what the quantities mean + why + what it tells us; natural simple spoken English with clear pauses; readable maths on the prompter; no ambiguous references or unexplained jumps; her methods and exam terms kept. Writers self-check this before handing off; Codex independently reviews it before marking Ready.
 
