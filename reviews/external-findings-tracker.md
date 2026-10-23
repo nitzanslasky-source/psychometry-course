@@ -29,7 +29,7 @@ Update this file whenever a finding changes state.
 | 25 | Newcomer average as "share the extra" (balance kept) | Claude D2, Codex synthesis #4 | IMPLEMENTED wp-081 (Codex-reviewed, batch I) |
 | 25 | Several values change by a fixed amount | Codex final §2.2 | IMPLEMENTED wp-080-3 — Codex Ready, frozen |
 | 26 | Work–rest cycles; staggered arrivals | Claude B #3, E #6; Codex synthesis #8 | IMPLEMENTED wp-099-2 (Codex-reviewed, batch J) |
-| 27 | Chase: time from whose start? | Claude B #2, Codex synthesis #10, final §1G | PENDING (t27 to write) |
+| 27 | Chase: time from whose start? | Claude B #2, Codex synthesis #10, final §1G | IMPLEMENTED wp-113-2 (Ava/Ben example, both readings) + g116 — **Held** (Codex review) |
 | 28 | Identical arrangements: show AAAB rows before BANANA | Claude B #7, Codex synthesis #12 | PENDING (t28 to write) |
 | 28 | Factorials as a real lesson (prime counting, sums) | audit | PENDING (t28 to write) |
 | 31 | geo-009 "2:1 not needed" is wrong | audit | PROPOSED (E2) |

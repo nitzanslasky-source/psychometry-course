@@ -1,0 +1,101 @@
+{
+ "videoId": "solve-q-r26-t27-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A train three hundred meters long travels at a constant speed. It passes a signal post in fifteen seconds. How many seconds does it take to cross a bridge five hundred meters long completely?",
+    "voice": "calm",
+    "at": [
+     "A train three hundred meters long"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the train has a length, and they ask for the time on the bridge. The speed isn't given, so the post gives it to us.",
+    "at": [
+     "a length, and",
+     "isn't given, so"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, like in the lesson. Passing a post, the train moves its own length, three hundred meters, in fifteen seconds.",
+    "at": [
+     "We'll solve",
+     "three hundred meters, in fifteen seconds"
+    ]
+   },
+   {
+    "say": "The speed is three hundred divided by fifteen, twenty meters a second.",
+    "at": [
+     "three hundred divided by fifteen",
+     "twenty meters a"
+    ]
+   },
+   "Next, we use the speed of twenty meters a second on the bridge."
+  ],
+  [
+   {
+    "say": "Now the bridge. It starts when the front gets on the bridge, and ends when the back gets off.",
+    "at": [
+     "Now the bridge",
+     "Now the bridge",
+     "when the front gets on",
+     "the bridge, and",
+     "when the back gets off"
+    ]
+   },
+   {
+    "say": "So the front moves the bridge plus one train length. Five hundred plus three hundred is eight hundred meters.",
+    "at": [
+     "bridge plus one",
+     "Five hundred plus three hundred",
+     "is eight hundred"
+    ]
+   },
+   {
+    "say": "Eight hundred divided by twenty is forty seconds.",
+    "at": [
+     "Eight hundred divided by twenty",
+     "is forty seconds"
+    ]
+   },
+   {
+    "say": "Twenty-five, choice number one, divides only the bridge. It forgets the train's own length.",
+    "at": [
+     "number one, divides",
+     "divides only the bridge",
+     "forgets the train's own length"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with ratios. We start again from the givens. The speed is the same the whole time, so the time and the distance go the same way.",
+    "at": [
+     "Now by",
+     "the givens. The"
+    ]
+   },
+   {
+    "say": "Three hundred meters take fifteen seconds. So a hundred meters take a third of that, five seconds.",
+    "at": [
+     "So a hundred meters take a third",
+     "a third of"
+    ]
+   },
+   {
+    "say": "Crossing the bridge completely, the front moves the bridge plus the train, eight hundred meters. That's eight hundreds, so eight times five, forty seconds.",
+    "at": [
+     "eight times five"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

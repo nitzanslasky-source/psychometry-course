@@ -1,0 +1,141 @@
+{
+ "videoId": "solve-wp27-g118",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "An elevator normally rises sixty meters in twenty seconds, at a constant speed. On one trip, it rises the first half of the way at twice its normal speed, and the second half at half its normal speed. How many seconds does this trip take?",
+    "voice": "calm",
+    "at": [
+     "An elevator normally rises"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Your instinct may say twenty, because twice the speed and half the speed seem to cancel. They don't. Let's see why.",
+    "at": [
+     "twice the speed and half the speed",
+     "They don't. Let's"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. Let's start with the math way, with the speeds. The normal speed is sixty divided by twenty, three meters a second.",
+    "at": [
+     "We'll solve",
+     "sixty divided by twenty",
+     "meters a second"
+    ]
+   },
+   {
+    "say": "Each half of the way is sixty divided by two, thirty meters.",
+    "at": [
+     "sixty divided by two"
+    ]
+   },
+   {
+    "say": "The first half is at twice the normal speed, three times two, six meters a second.",
+    "at": [
+     "at twice the",
+     "three times two, six"
+    ]
+   },
+   {
+    "say": "Thirty meters at six meters a second takes thirty divided by six, five seconds.",
+    "at": [
+     "meters a second",
+     "thirty divided by six"
+    ]
+   },
+   {
+    "say": "The second half is at half the normal speed, one and a half meters a second.",
+    "at": [
+     "at half the",
+     "one and a half meters a second"
+    ]
+   },
+   {
+    "say": "Thirty divided by one and a half is twenty, because one and a half times twenty is thirty. That's twenty seconds for the second half.",
+    "at": [
+     "Thirty divided by one and a half",
+     "a half is"
+    ]
+   },
+   {
+    "say": "Five plus twenty is twenty-five seconds.",
+    "at": [
+     "Five plus twenty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with ratios and no speeds at all. We start again from the givens. The distance of each half is fixed, so the speed and the time go opposite ways.",
+    "at": [
+     "Now by",
+     "the givens. The"
+    ]
+   },
+   {
+    "say": "On a normal trip, each half takes half of twenty seconds, ten seconds.",
+    "at": [
+     "each half takes half of twenty",
+     "twenty seconds, ten"
+    ]
+   },
+   {
+    "say": "The first half is twice as fast, so it takes half the time. Ten divided by two is five seconds.",
+    "at": [
+     "Ten divided by two"
+    ]
+   },
+   {
+    "say": "The second half is half as fast, so it takes twice the time. Ten times two is twenty seconds.",
+    "at": [
+     "The second half",
+     "Ten times two"
+    ]
+   },
+   {
+    "say": "Five plus twenty is twenty-five seconds again.",
+    "at": [
+     "Five plus twenty is twenty-five seconds again"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And now the insight. It's quick, but only if you happen to see it. If you don't, the ratios always work.",
+    "at": [
+     "And now"
+    ]
+   },
+   {
+    "say": "At half the speed, the second half alone takes twenty seconds. That's as long as the whole normal trip.",
+    "at": [
+     "the second half alone takes twenty",
+     "That's as long"
+    ]
+   },
+   {
+    "say": "And the fast half still takes some time on top of that. So the answer is more than twenty seconds.",
+    "at": [
+     "more than twenty seconds"
+    ]
+   },
+   {
+    "say": "So twenty, ten and fifteen are all out. Only twenty-five is left.",
+    "at": [
+     "So twenty",
+     "ten and fifteen",
+     "are all out"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

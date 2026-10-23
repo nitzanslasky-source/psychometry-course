@@ -1,0 +1,146 @@
+{
+ "videoId": "solve-wp27-g119",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "B is the midpoint of a straight road from A to C. One motorcyclist rides from A to C at forty-eight kilometers per hour. Another takes twenty minutes from A to B, then rides from B to C at thirty-six kilometers per hour. Their total travel times are equal. How many kilometers long is A C?",
+    "voice": "calm",
+    "at": [
+     "B is the midpoint"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we have two riders, and the link is equal times. They ask for the whole road, A to C.",
+    "at": [
+     "They ask for the whole road"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, with the table from the lesson. B is the midpoint, so let's call each half x. Then we don't need x over two.",
+    "at": [
+     "We'll solve",
+     "with the table from the lesson",
+     "B is the"
+    ]
+   },
+   {
+    "say": "The first rider covers the whole road, two x, at forty-eight. His time is two x over forty-eight.",
+    "at": [
+     "The first rider covers the whole road",
+     "whole road, two"
+    ]
+   },
+   {
+    "say": "The second rider covers the first half, x, in twenty minutes. The speed is per hour, so we stay in hours. Twenty minutes is a third of an hour.",
+    "at": [
+     "The second rider covers the first half",
+     "first half, x"
+    ]
+   },
+   "We don't even need his speed on that half. We only need the time, and it's given.",
+   {
+    "say": "Then he covers the other half, x, at thirty-six. That time is x over thirty-six.",
+    "at": [
+     "Then he covers the other half",
+     "half, x, at"
+    ]
+   },
+   {
+    "say": "The times are equal. So two x over forty-eight is equal to a third, plus x over thirty-six.",
+    "at": [
+     "The times are equal",
+     "So two x"
+    ]
+   },
+   "Now we solve this equation. Both sides are times in hours, so x will come out in kilometers."
+  ],
+  [
+   {
+    "say": "Here is our equation again.",
+    "at": [
+     "Here is our equation again"
+    ]
+   },
+   {
+    "say": "Two x over forty-eight is x over twenty-four.",
+    "at": [
+     "Two x over forty-eight is x over twenty-four",
+     "x over twenty-four"
+    ]
+   },
+   {
+    "say": "We multiply everything by seventy-two, the smallest number that twenty-four, three and thirty-six all divide. That gives three x is equal to twenty-four plus two x.",
+    "at": [
+     "We multiply everything by seventy-two",
+     "the smallest number"
+    ]
+   },
+   {
+    "say": "We take two x off both sides, and x is twenty-four.",
+    "at": [
+     "and x is twenty-four"
+    ]
+   },
+   {
+    "say": "Careful, twenty-four is choice number one, but it's only x, half of the road.",
+    "at": [
+     "number one, but",
+     "it's only x, half of the road",
+     "half of the road"
+    ]
+   },
+   {
+    "say": "The whole road is two x, two times twenty-four, forty-eight kilometers.",
+    "at": [
+     "two times twenty-four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers. We start again from the givens, and with the friendliest choice. Let's try forty-eight. Then each half is twenty-four kilometers.",
+    "at": [
+     "Now let's",
+     "the givens, and",
+     "Let's try"
+    ]
+   },
+   {
+    "say": "Forty-eight is friendly, because the first rider rides forty-eight kilometers at forty-eight. That's exactly one hour.",
+    "at": [
+     "Forty-eight is friendly",
+     "That's exactly one"
+    ]
+   },
+   {
+    "say": "The second rider takes twenty minutes, a third of an hour, to B. Then twenty-four kilometers at thirty-six. Twenty-four over thirty-six is two thirds of an hour.",
+    "at": [
+     "The second rider",
+     "Twenty-four over thirty-six"
+    ]
+   },
+   {
+    "say": "A third plus two thirds is one hour. Both times are one hour, so they are equal, just like the given says.",
+    "at": [
+     "A third plus two thirds",
+     "are one hour",
+     "the given says"
+    ]
+   },
+   {
+    "say": "It worked on the first try, and that's not luck. The exam checks whether you know which answer to plug in first. Start with the round, friendly one.",
+    "at": [
+     "The exam checks"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

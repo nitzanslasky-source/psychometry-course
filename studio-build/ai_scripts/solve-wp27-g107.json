@@ -1,0 +1,100 @@
+{
+ "videoId": "solve-wp27-g107",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "An electric scooter moves at six meters per second. How many kilometers does it travel in fifty minutes?",
+    "voice": "calm",
+    "at": [
+     "An electric scooter moves"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the speed is in meters per second, but they ask for kilometers, after fifty minutes. The units don't match.",
+    "at": [
+     "in meters per"
+    ]
+   },
+   {
+    "say": "Let's solve it the math way, with identical ratios, like in the lesson. We change the time step by step, and the distance in the same way.",
+    "at": [
+     "Let's solve",
+     "with identical ratios",
+     "We change the"
+    ]
+   },
+   {
+    "say": "We start from the given. The scooter goes six meters in one second.",
+    "at": [
+     "the given. The",
+     "The scooter goes six meters"
+    ]
+   },
+   {
+    "say": "Careful here. A lot of students multiply six by fifty right away. But six meters is for one second, and fifty is minutes.",
+    "at": [
+     "multiply six by fifty",
+     "But six meters"
+    ]
+   },
+   {
+    "say": "That gives three hundred meters, which is zero point three kilometers, choice number one. It mixes seconds with minutes.",
+    "at": [
+     "number one. It",
+     "It mixes seconds"
+    ]
+   },
+   {
+    "say": "So first, from one second to one minute. The time is times sixty, because a minute is sixty seconds.",
+    "at": [
+     "from one second to one minute",
+     "The time is"
+    ]
+   },
+   {
+    "say": "So the distance is times sixty too. Six times sixty is three hundred sixty meters in one minute.",
+    "at": [
+     "Six times sixty",
+     "three hundred sixty meters in one minute"
+    ]
+   },
+   {
+    "say": "Now from one minute to fifty minutes. The time is times fifty, so the distance is times fifty too.",
+    "at": [
+     "from one minute to fifty minutes",
+     "The time is"
+    ]
+   },
+   {
+    "say": "Times fifty is times a hundred, and then half. Three hundred sixty times a hundred is thirty-six thousand.",
+    "at": [
+     "Three hundred sixty times a hundred",
+     "hundred is thirty-six"
+    ]
+   },
+   {
+    "say": "Half of thirty-six thousand is eighteen thousand. So in fifty minutes the scooter goes eighteen thousand meters.",
+    "at": [
+     "Half of thirty-six thousand",
+     "eighteen thousand. So",
+     "eighteen thousand meters"
+    ]
+   },
+   {
+    "say": "They ask for kilometers. A thousand meters is one kilometer. So eighteen thousand meters is eighteen kilometers.",
+    "at": [
+     "A thousand meters",
+     "eighteen thousand meters is eighteen"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

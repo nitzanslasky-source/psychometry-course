@@ -1,0 +1,100 @@
+{
+ "videoId": "solve-wp27-g114",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Two runners leave the same gate at the same time, and run in opposite directions along a straight path. Their speeds are eight and ten kilometers per hour. After how many minutes are they one thousand eight hundred meters apart?",
+    "voice": "calm",
+    "at": [
+     "Two runners leave the same gate"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they move apart, and they ask when the gap is one thousand eight hundred meters. They ask for minutes.",
+    "at": [
+     "So they move apart",
+     "So they move apart",
+     "So they move apart",
+     "they ask when",
+     "They ask for minutes"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, with relative speed, like in the lesson. They move in opposite directions, so we add the speeds.",
+    "at": [
+     "with the math",
+     "with relative speed",
+     "They move in"
+    ]
+   },
+   {
+    "say": "Eight plus ten is eighteen. So the gap grows by eighteen kilometers every hour.",
+    "at": [
+     "Eight plus ten is eighteen",
+     "So the gap"
+    ]
+   },
+   {
+    "say": "The gap is in meters, but the speed is in kilometers per hour. The units must match. One thousand eight hundred meters is one point eight kilometers.",
+    "at": [
+     "One thousand eight hundred meters is one point eight",
+     "is one point"
+    ]
+   },
+   {
+    "say": "The time is the gap divided by the speed. One point eight divided by eighteen is one tenth. So it takes a tenth of an hour.",
+    "at": [
+     "One point eight divided by eighteen",
+     "eighteen is one"
+    ]
+   },
+   {
+    "say": "Careful, a tenth of an hour is not ten minutes. Ten, choice number two, is the trap.",
+    "at": [
+     "a tenth of an hour is not ten minutes",
+     "choice number two",
+     "is the trap"
+    ]
+   },
+   {
+    "say": "They ask for minutes. A tenth of sixty minutes is six minutes.",
+    "at": [
+     "A tenth of sixty minutes"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with identical ratios. We start again from the givens. Moving apart, the gap grows by eight plus ten, eighteen kilometers in sixty minutes.",
+    "at": [
+     "Now by",
+     "the givens. Moving",
+     "Moving apart",
+     "by eight plus",
+     "eighteen kilometers in sixty minutes"
+    ]
+   },
+   {
+    "say": "We need a gap of one point eight kilometers. From eighteen to one point eight, we divide by ten.",
+    "at": [
+     "We need a gap of one point eight",
+     "one point eight"
+    ]
+   },
+   {
+    "say": "So we divide the time by ten too. Sixty divided by ten is six minutes.",
+    "at": [
+     "Sixty divided by ten"
+    ]
+   },
+   {
+    "say": "Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

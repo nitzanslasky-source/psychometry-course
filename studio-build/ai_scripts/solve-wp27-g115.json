@@ -1,0 +1,147 @@
+{
+ "videoId": "solve-wp27-g115",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "At nine o'clock a bus leaves Oakton for Bayside at seventy-two kilometers per hour. At nine twenty a car leaves Bayside for Oakton at a hundred eight kilometers per hour. The towns are two hundred four kilometers apart. When do they meet?",
+    "voice": "calm",
+    "at": [
+     "a bus leaves Oakton"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they drive toward each other, but the bus leaves twenty minutes earlier. They ask for the clock time of the meeting.",
+    "at": [
+     "each other, but",
+     "They ask for the clock time",
+     "time of the"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, in two stages, like in the lesson. First we draw the sketch.",
+    "at": [
+     "two different ways",
+     "First we draw the sketch",
+     "First we draw the sketch"
+    ]
+   },
+   {
+    "say": "Let's start with stage one. From nine to nine twenty, only the bus drives.",
+    "at": [
+     "Let's start with",
+     "only the bus drives"
+    ]
+   },
+   {
+    "say": "Twenty minutes is a third of an hour. The bus drives seventy-two times a third, twenty-four kilometers.",
+    "at": [
+     "Twenty minutes is a third",
+     "of an hour",
+     "seventy-two times a third",
+     "twenty-four kilometers."
+    ]
+   },
+   {
+    "say": "The whole road is two hundred four kilometers. So at nine twenty, two hundred four minus twenty-four, a hundred eighty kilometers are left between them.",
+    "at": [
+     "The whole road",
+     "two hundred four minus twenty-four",
+     "a hundred eighty kilometers are left",
+     "left between them"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now stage two. At nine twenty the car starts, toward the bus.",
+    "at": [
+     "Now stage two",
+     "Now stage two",
+     "Now stage two",
+     "At nine twenty the car starts",
+     "starts, toward the"
+    ]
+   },
+   {
+    "say": "They drive toward each other, so we add the speeds. Seventy-two plus a hundred eight is a hundred eighty kilometers per hour.",
+    "at": [
+     "Seventy-two plus a hundred eight"
+    ]
+   },
+   {
+    "say": "The distance that matters is the gap between them, a hundred eighty kilometers. A hundred eighty divided by a hundred eighty is one hour.",
+    "at": [
+     "The distance that",
+     "A hundred eighty divided by a hundred eighty",
+     "a hundred eighty is"
+    ]
+   },
+   {
+    "say": "Careful, that's one hour after nine twenty, when the gap started. It's not one hour after nine.",
+    "at": [
+     "one hour after nine twenty",
+     "when the gap"
+    ]
+   },
+   {
+    "say": "Nine twenty plus one hour is ten twenty.",
+    "at": [
+     "Nine twenty plus one hour",
+     "is ten twenty"
+    ]
+   },
+   {
+    "say": "Ten oh eight, choice number one, starts both at nine and forgets the head start.",
+    "at": [
+     "forgets the head start"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers. We start again from the givens. We'll check ten twenty.",
+    "at": [
+     "Now let's",
+     "the givens. We'll"
+    ]
+   },
+   {
+    "say": "Until ten twenty, the bus drives from nine, so one hour and twenty minutes. That's one and a third hours.",
+    "at": [
+     "the bus drives from nine",
+     "That's one and"
+    ]
+   },
+   {
+    "say": "Seventy-two times four thirds. A third of seventy-two is twenty-four, and times four is ninety-six kilometers.",
+    "at": [
+     "Seventy-two times four thirds",
+     "A third of seventy-two",
+     "times four is ninety-six"
+    ]
+   },
+   {
+    "say": "The car drives from nine twenty, so exactly one hour. That's a hundred eight kilometers.",
+    "at": [
+     "The car drives from nine twenty",
+     "That's a hundred"
+    ]
+   },
+   {
+    "say": "When they meet, together they have covered the whole road. Ninety-six plus a hundred eight is two hundred four. That's exactly the road.",
+    "at": [
+     "Ninety-six plus a hundred eight",
+     "is two hundred"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

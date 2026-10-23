@@ -1,0 +1,172 @@
+{
+ "videoId": "wp-106",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now a new topic, motion.",
+   {
+    "say": "Motion questions come up in almost every exam. Cars, trains, runners and boats all cover some distance in some time.",
+    "at": [
+     "in almost every"
+    ]
+   },
+   "And the good news is that you already know the idea, from work and rate."
+  ],
+  [
+   {
+    "say": "Remember the work formula? Rate times time is equal to work.",
+    "at": [
+     "Rate times time is equal to work"
+    ]
+   },
+   {
+    "say": "In motion, the work is the distance we cover. And the rate is our speed.",
+    "at": [
+     "In motion, the"
+    ]
+   },
+   {
+    "say": "In work, a machine packs twenty-five boxes an hour.",
+    "at": [
+     "packs twenty-five boxes an hour"
+    ]
+   },
+   {
+    "say": "In motion, a car covers twenty-five kilometers an hour. It's the same idea, with new names.",
+    "at": [
+     "a car covers twenty-five kilometers an hour",
+     "It's the same"
+    ]
+   },
+   {
+    "say": "So the motion formula is this. Distance is equal to speed times time.",
+    "at": [
+     "Distance is equal to speed times time"
+    ]
+   },
+   {
+    "say": "The speed is the distance we cover in one unit of time. Kilometers per hour means how many kilometers we cover in one hour.",
+    "at": [
+     "The speed is",
+     "Kilometers per hour means",
+     "many kilometers we"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's see it in numbers. A cyclist rides at fifteen kilometers per hour, for three hours. How far does she ride?",
+    "at": [
+     "A cyclist rides at fifteen kilometers per hour",
+     "kilometers per hour"
+    ]
+   },
+   "Fifteen kilometers per hour means fifteen kilometers in each hour. So every hour adds fifteen more kilometers.",
+   {
+    "say": "Three hours is fifteen times three, forty-five. So she rides forty-five kilometers.",
+    "at": [
+     "fifteen times three, forty-five",
+     "So she rides"
+    ]
+   },
+   "So to find the distance, we multiply the speed by the time."
+  ],
+  [
+   {
+    "say": "If you're not sure when to multiply and when to divide, use the motion triangle.",
+    "at": [
+     "when to multiply",
+     "use the motion triangle"
+    ]
+   },
+   {
+    "say": "The distance goes on top. The speed and the time go at the bottom, side by side.",
+    "at": [
+     "The distance goes on top",
+     "The speed and"
+    ]
+   },
+   "Now we cover the one we want. What's left tells us what to do.",
+   {
+    "say": "Cover the distance. The speed and the time are left, side by side. So the distance is the speed times the time.",
+    "at": [
+     "Cover the distance",
+     "The speed and",
+     "So the distance is the speed times"
+    ]
+   },
+   {
+    "say": "Cover the time. The distance is left, over the speed. So the time is the distance divided by the speed.",
+    "at": [
+     "Cover the time",
+     "The distance is",
+     "So the time is the distance divided"
+    ]
+   },
+   {
+    "say": "And cover the speed. The distance is left, over the time. So the speed is the distance divided by the time.",
+    "at": [
+     "And cover the speed",
+     "The distance is",
+     "So the speed is the distance divided"
+    ]
+   },
+   {
+    "say": "If you know the formula by heart, that's enough. If you need the triangle, here it is.",
+    "at": [
+     "If you know"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. A train travels a hundred twenty kilometers at forty kilometers per hour. How long does the trip take?",
+    "at": [
+     "A train travels a hundred twenty kilometers",
+     "twenty kilometers at"
+    ]
+   },
+   {
+    "say": "They ask for the time. So we cover the time, and the time is the distance divided by the speed.",
+    "at": [
+     "the time is the distance divided by the speed"
+    ]
+   },
+   {
+    "say": "A hundred twenty divided by forty is three, because forty times three is a hundred twenty. So the trip takes three hours.",
+    "at": [
+     "A hundred twenty divided by forty",
+     "forty is three"
+    ]
+   },
+   {
+    "say": "Now the other way. A bus travels a hundred fifty kilometers in two hours. What is its speed?",
+    "at": [
+     "A bus travels a hundred fifty kilometers",
+     "fifty kilometers in"
+    ]
+   },
+   {
+    "say": "We cover the speed. The speed is the distance divided by the time.",
+    "at": [
+     "The speed is the distance divided",
+     "divided by the"
+    ]
+   },
+   {
+    "say": "A hundred fifty divided by two is seventy-five. So the bus travels at seventy-five kilometers per hour.",
+    "at": [
+     "A hundred fifty divided by two",
+     "two is seventy-five"
+    ]
+   },
+   {
+    "say": "Let's check it. Seventy-five kilometers in each hour, for two hours, is a hundred fifty. That's the distance they gave us. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "for two hours, is a hundred fifty",
+     "That's the distance"
+    ]
+   }
+  ]
+ ]
+}

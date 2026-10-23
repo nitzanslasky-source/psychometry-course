@@ -7244,13 +7244,13 @@
    "disp": [],
    "recorded_when_published": false,
    "scope_replacements": {
-    "1.6": [
+    "2.3": [
      [
-      "need another hundred eighty",
-      "need another 180"
+      "the other hundred eighty",
+      "the other 180"
      ]
     ],
-    "1.9": [
+    "2.6": [
      [
       "the same arc as the hundred twelve",
       "the same arc as the 112"
@@ -7263,16 +7263,22 @@
    "disp": [],
    "recorded_when_published": false,
    "scope_replacements": {
-    "1.3": [
+    "2.2": [
      [
-      "Eight, fifteen, seventeen is a Pythagorean triple",
-      "8, 15, 17 is a Pythagorean triple"
+      "Squared, that's four hundred minus a hundred twenty, plus nine, two hundred eighty-nine",
+      "(20 − 3)² = 400 − 120 + 9 = 289"
      ]
     ],
-    "1.7": [
+    "2.7": [
      [
       "eight minus r plus fifteen minus r is seventeen",
       "(8 − r) + (15 − r) = 17"
+     ]
+    ],
+    "3.1": [
+     [
+      "a plus b minus c, all over two",
+      "(a + b − c)/2"
      ]
     ]
    }
@@ -7539,6 +7545,14 @@
    "scope_replacements": {
     "3.1": [
      [
+      "Alpha over three hundred sixty",
+      "α/360"
+     ],
+     [
+      "alpha over three hundred sixty",
+      "α/360"
+     ],
+     [
       "pi r squared",
       "πr²"
      ]
@@ -7569,6 +7583,10 @@
     ],
     "6.2": [
      [
+      "Alpha over three hundred sixty",
+      "α/360"
+     ],
+     [
       "two pi r",
       "2πr"
      ]
@@ -7587,6 +7605,12 @@
      [
       "eighteen pi divided by three, six pi",
       "18π ÷ 3, 6π"
+     ]
+    ],
+    "9.4": [
+     [
+      "alpha over three hundred sixty",
+      "α/360"
      ]
     ],
     "10.1": [
@@ -7684,6 +7708,12 @@
    "disp": [],
    "recorded_when_published": false,
    "scope_replacements": {
+    "1.2": [
+     [
+      "the hundred twenty degree angle",
+      "the 120 degree angle"
+     ]
+    ],
     "2.3": [
      [
       "a squared, times root three, over four",
@@ -7997,7 +8027,7 @@
       "√35 centimeters"
      ]
     ],
-    "1.4": [
+    "2.2": [
      [
       "Root thirty-five, squared",
       "(√35)²"
@@ -8544,6 +8574,19 @@
     ]
    }
   },
+  "r26-t33-more-tools-2": {
+   "paras": [],
+   "disp": [],
+   "recorded_when_published": false,
+   "scope_replacements": {
+    "3.4": [
+     [
+      "Five root two, squared, is fifty",
+      "(5√2)² = 50"
+     ]
+    ]
+   }
+  },
   "solve-geo33-g099": {
    "paras": [
     [
@@ -8586,7 +8629,7 @@
     ],
     [
      "Here's the figure again, with the square.\nWe can divide the grey area into three familiar pieces, with no overlap: the left three-quarter circle, the square, and the right three-quarter circle.\nEach three-quarter circle is a whole circle with 1/4 removed.",
-     "One whole circle is pi r², pi times 6², 36 pi. A quarter of 36 pi is nine pi.\nSo 3/4 = 3 × 9 pi, 27 pi.",
+     "One whole circle is πr², π × 6², 36π. A quarter of 36π is 9π.\nSo the three-quarter circle's area is 3 × 9π = 27π.",
      "The square is 6², 36. So the union is 27 pi, plus 36 + 27 pi, which is 54 pi plus 36.\nChoice number 3 is our answer."
     ],
     [
@@ -8607,14 +8650,14 @@
    ],
    "recorded_when_published": false,
    "scope_replacements": {
-    "1.8": [
+    "2.2": [
      [
       "pi r squared, pi times six squared, thirty-six pi",
       "πr² = π × 6² = 36π"
      ],
      [
-      "three quarters of thirty-six pi is twenty-seven pi",
-      "¾ × 36π = 27π"
+      "So three quarters is three times nine pi, twenty-seven pi",
+      "So the three-quarter circle's area is 3 × 9π = 27π"
      ]
     ],
     "1.9": [
@@ -10053,14 +10096,26 @@
     ],
     "4.1": [
      [
-      "The bracket a plus two, factorial",
+      "The factorial of a plus two",
       "(a + 2)!"
+     ],
+     [
+      "That last part is a factorial",
+      "That last part is a!"
+     ],
+     [
+      "the factorial of a plus two as a plus two, times a plus one, times a factorial",
+      "(a + 2)! as (a + 2) × (a + 1) × a!"
      ]
     ],
     "4.2": [
      [
       "a factorial squared, times a plus one, times a plus two",
       "(a!)² · (a + 1)(a + 2)"
+     ],
+     [
+      "a factorial, times a factorial, times a plus one, times a plus two",
+      "a! × a! × (a + 1) × (a + 2)"
      ]
     ]
    }
@@ -10088,13 +10143,13 @@
       "x²y² and x³y"
      ]
     ],
-    "1.8": [
+    "1.7": [
      [
       "x cubed times y",
       "x³y"
      ]
     ],
-    "1.9": [
+    "1.8": [
      [
       "x squared y squared",
       "x²y²"
@@ -11671,6 +11726,144 @@
      [
       "Choice number two is one minus pi over two",
       "Choice number two is 1 − π/2"
+     ]
+    ]
+   }
+  },
+  "solve-wp27-g115": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "1.1": [
+     [
+      "At nine o'clock",
+      "At 9:00"
+     ],
+     [
+      "At nine twenty",
+      "At 9:20"
+     ]
+    ],
+    "1.4": [
+     [
+      "From nine to nine twenty",
+      "From 9:00 to 9:20"
+     ]
+    ],
+    "1.6": [
+     [
+      "So at nine twenty,",
+      "So at 9:20,"
+     ]
+    ],
+    "2.1": [
+     [
+      "At nine twenty",
+      "At 9:20"
+     ]
+    ],
+    "2.4": [
+     [
+      "one hour after nine twenty,",
+      "one hour after 9:20,"
+     ],
+     [
+      "one hour after nine.",
+      "one hour after 9:00."
+     ]
+    ],
+    "2.5": [
+     [
+      "Nine twenty plus one hour is ten twenty.",
+      "9:20 + 1 hour is 10:20."
+     ]
+    ],
+    "2.6": [
+     [
+      "Ten oh eight, choice number one, starts both at nine",
+      "10:08, choice number one, starts both at 9:00"
+     ]
+    ],
+    "3.1": [
+     [
+      "We'll check ten twenty.",
+      "We'll check 10:20."
+     ]
+    ],
+    "3.2": [
+     [
+      "Until ten twenty, the bus drives from nine,",
+      "Until 10:20, the bus drives from 9:00,"
+     ]
+    ],
+    "3.4": [
+     [
+      "drives from nine twenty,",
+      "drives from 9:20,"
+     ]
+    ]
+   }
+  },
+  "solve-q-r26-t27-06": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "1.5": [
+     [
+      "k t over sixty d",
+      "kt/(60d)"
+     ]
+    ],
+    "1.7": [
+     [
+      "sixty k t over d",
+      "60kt/d"
+     ]
+    ],
+    "1.8": [
+     [
+      "k d over sixty t",
+      "kd/(60t)"
+     ]
+    ],
+    "2.2": [
+     [
+      "k divided by d over t",
+      "k ÷ (d/t)"
+     ],
+     [
+      "k t over d hours",
+      "kt/d hours"
+     ]
+    ],
+    "2.3": [
+     [
+      "sixty k t over d",
+      "60kt/d"
+     ]
+    ]
+   }
+  },
+  "solve-wp27-g108": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "3.2": [
+     [
+      "the triple eight, fifteen, seventeen, just like three, four, five",
+      "the triple 8, 15, 17, just like 3, 4, 5"
+     ]
+    ]
+   }
+  },
+  "solve-wp27-g111": {
+   "paras": [],
+   "disp": [],
+   "scope_replacements": {
+    "1.5": [
+     [
+      "One point two five is one and a quarter.",
+      "1.25 is 1¼."
      ]
     ]
    }

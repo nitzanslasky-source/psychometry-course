@@ -1,0 +1,465 @@
+{
+ "_about": "Topic 27 summary page (replaces the r26-t27-summary video). Content = the topic-27 scripts (math_patches/_ai_vis_t27.py), the Hebrew lessons (wp 6984-8288) and the memory cards mem-motion and mem-r26-t27-special. Build: python3 summary_pages.py 27. Course numbers only (none from the Hebrew course).",
+ "topic": 27,
+ "replaces": "r26-t27-summary",
+ "intro": "Motion is a work question: distance $=$ speed $\\times$ time. The units must **match**, two travelers or two parts go into **the table**, ratios save calculation, and two travelers at once are about **the gap** between them.",
+ "figures": {
+  "tri": {
+   "builder": "t27.TRI27",
+   "args": [],
+   "kwargs": {
+    "w": 240
+   },
+   "layers": [
+    "line",
+    "vals"
+   ]
+  },
+  "road": {
+   "builder": "t27.ROAD",
+   "args": [
+    [
+     [
+      "ends",
+      [
+       [
+        "end",
+        0,
+        "home"
+       ]
+      ]
+     ],
+     [
+      "a",
+      [
+       [
+        "dot",
+        0,
+        ""
+       ],
+       [
+        "arrow",
+        0,
+        0.3,
+        "Dan: 4 kph, from 0 min"
+       ]
+      ]
+     ],
+     [
+      "a2",
+      [
+       [
+        "dot",
+        0.4,
+        "Dan at 30 min"
+       ]
+      ]
+     ],
+     [
+      "b",
+      [
+       [
+        "dot",
+        0,
+        "",
+        "orange"
+       ],
+       [
+        "arrow",
+        0,
+        0.3,
+        "sister: 12 kph, from 30 min",
+        1,
+        "orange"
+       ]
+      ]
+     ],
+     [
+      "gap",
+      [
+       [
+        "gap",
+        0,
+        0.4,
+        "gap: 2 km"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "w": 560
+   },
+   "layers": [
+    "line",
+    "ends",
+    "a",
+    "a2",
+    "b",
+    "gap"
+   ]
+  },
+  "vt": {
+   "builder": "t27.VT27",
+   "args": [
+    [
+     "3",
+     "90",
+     "1"
+    ],
+    [
+     "1",
+     "?",
+     "2"
+    ],
+    "distance"
+   ],
+   "kwargs": {},
+   "layers": [
+    "line",
+    "r1",
+    "r2",
+    "v",
+    "calc"
+   ]
+  },
+  "track": {
+   "builder": "t27.TRACK",
+   "args": [
+    [
+     [
+      "s",
+      [
+       [
+        "start",
+        "start"
+       ]
+      ]
+     ],
+     [
+      "d",
+      [
+       [
+        "dir",
+        8,
+        110,
+        "subtract"
+       ],
+       [
+        "dir",
+        -8,
+        -110,
+        "add",
+        "orange"
+       ]
+      ]
+     ],
+     [
+      "c",
+      [
+       [
+        "center",
+        "one lap gained"
+       ],
+       [
+        "center",
+        "or one lap together",
+        1
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "w": 380
+   },
+   "layers": [
+    "line",
+    "s",
+    "d",
+    "c"
+   ]
+  }
+ },
+ "sections": [
+  {
+   "title": "The formula and the units",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "tri",
+     "caption": "Cover the one you want: what is left tells you to multiply or divide."
+    },
+    {
+     "type": "rules",
+     "head": [
+      "They ask",
+      "Do",
+      "Example"
+     ],
+     "rows": [
+      [
+       "the distance",
+       "speed $\\times$ time",
+       "$15$ kph for $3$ hours: $\\;15\\times3=45$ km"
+      ],
+      [
+       "the time",
+       "distance $\\div$ speed",
+       "$120$ km at $40$ kph: $\\;120\\div40=3$ hours"
+      ],
+      [
+       "the speed",
+       "distance $\\div$ time",
+       "$150$ km in $2$ hours: $\\;150\\div2=75$ kph"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**The units must match.** Minutes are parts of an hour: $12=\\frac15$, $15=\\frac14$, $20=\\frac13$, $30=\\frac12$, $40=\\frac23$, $45=\\frac34$. $60$ kph for $40$ minutes $=60\\times\\frac23=40$ km. $1.25$ hours $=1$ hour $15$ minutes (not $25$)."
+    },
+    {
+     "type": "p",
+     "text": "**A speed in other units: identical ratios** (forget $\\times3.6$). $90$ km in $60$ min $\\to$ $\\div3$ $\\to$ $30$ km in $20$ min. $10$ m in $1$ s $\\to$ $\\times60$ $\\to$ $600$ m a minute $\\to$ $\\times60$ $\\to$ $36000$ m an hour $=36$ kph."
+    }
+   ]
+  },
+  {
+   "title": "The table and the sketch",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "",
+      "Speed",
+      "Distance",
+      "Time"
+     ],
+     "rows": [
+      [
+       "part 1",
+       "$15$",
+       "$30$",
+       "$2$"
+      ],
+      [
+       "part 2",
+       "$10$",
+       "$20$",
+       "$2$"
+      ],
+      [
+       "total",
+       "not added",
+       "$50$",
+       "$4$"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Distance in the **middle**. In every row: distance $=$ speed $\\times$ time. In the total row add the distances and the times, **never the speeds**. Then use the link: equal times, equal distances, or a total."
+    },
+    {
+     "type": "fig",
+     "ref": "road",
+     "caption": "Draw every motion question: the ends, a dot and start time for each traveler, an arrow and speed for each direction, the gap, the meeting point."
+    },
+    {
+     "type": "p",
+     "text": "Directions at an angle (a climb, north and west): a right triangle, $a^2+b^2=c^2$; the distance is the real path."
+    }
+   ]
+  },
+  {
+   "title": "Average speed",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Average speed $=\\dfrac{\\text{total distance}}{\\text{total time}}$, and **stops count as time** ($180$ km in $4$ hours with a stop: $45$, not $60$). **Not the average of the speeds.**"
+    },
+    {
+     "type": "rules",
+     "head": [
+      "First ask",
+      "Then",
+      "Example"
+     ],
+     "rows": [
+      [
+       "equal **distances**",
+       "closer to the slower speed",
+       "there $120$, back $60$, pick $120$ km: $240\\div3=80$ (not $90$)"
+      ],
+      [
+       "equal **times**",
+       "the plain average works",
+       "$1$ hour at $40$, $1$ hour at $80$: $120\\div2=60$"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "No distance given? Pick a friendly one that both speeds divide."
+    }
+   ]
+  },
+  {
+   "title": "Speed ratios",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Fixed",
+      "Then",
+      "Example"
+     ],
+     "rows": [
+      [
+       "the time",
+       "speed and distance **the same way**",
+       "speeds $2:3$ $\\to$ distances $2:3$"
+      ],
+      [
+       "the speed",
+       "time and distance **the same way**",
+       "$10$ kph: $1$ h $10$ km, $2$ h $20$ km"
+      ],
+      [
+       "the distance",
+       "speed and time **opposite ways** (flip)",
+       "$12$ km at $4$ and $6$ kph: $3$ and $2$ hours"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**A meeting:** the same time, so the road is cut into the sum of the ratio parts ($10$ and $20$ kph: $1+2=3$ parts, the slow one covers $\\frac13$). **One crosses the whole road** while the other is still on the way: the whole road is the fast one's parts only."
+    },
+    {
+     "type": "fig",
+     "ref": "vt",
+     "caption": "Two things change: the V, distance in the middle. A is 3 times as fast for half as long and covers 90 km: B covers $\\frac{1\\cdot90\\cdot2}{3\\cdot1}=60$ km."
+    },
+    {
+     "type": "p",
+     "text": "**A percent change of the speed, same route:** write it as a fraction and flip it for the time. $+25\\%$: $\\times\\frac54$, time $\\times\\frac45$ ($20\\%$ less). $+50\\%$: time $\\times\\frac23$. $-20\\%$: time $\\times\\frac54$ ($25\\%$ more)."
+    }
+   ]
+  },
+  {
+   "title": "Relative speed",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "They move",
+      "Do",
+      "Example"
+     ],
+     "rows": [
+      [
+       "toward each other, or apart",
+       "**add** the speeds",
+       "$3$ and $5$ kph, $24$ km apart: $24\\div8=3$ hours"
+      ],
+      [
+       "the same direction (a chase)",
+       "**subtract** the speeds",
+       "$9$ and $6$ kph, $2$ km behind: $2\\div3=\\frac23$ h $=40$ min"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "In a chase **only the starting gap** counts ($100$ and $102$ kph: it still closes $2$ km an hour). One leaves earlier? **Find the head start first.** A chase gives how much **faster** the chaser is, not his speed."
+    },
+    {
+     "type": "p",
+     "text": "**From whose start is the time counted?** Ava starts, Ben waits $10$ s and catches her $30$ s after **Ava's** start: Ava $30$ s, Ben $20$ s, the same distance, so Ben is $\\frac{30}{20}=\\frac32$ times as fast. $30$ s after **his** start: $\\frac{40}{30}=\\frac43$."
+    }
+   ]
+  },
+  {
+   "title": "Special cases",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "**A train has a length.** Past a post (or a man): its own length ($200$ m at $25$ m a second: $8$ s). A bridge, a platform or a tunnel: **its length plus the train** ($300+200=500$ m: $20$ s, not $12$)."
+    },
+    {
+     "type": "fig",
+     "ref": "track",
+     "caption": "A circular track. The same direction (teal): subtract, they meet once every lap the fast one gains (any two meetings in a row; \"laps it\" is the same question). Opposite directions (orange): add, they meet once every lap they cover together."
+    },
+    {
+     "type": "p",
+     "text": "**A river:** downstream $=$ boat $+$ current, upstream $=$ boat $-$ current. The current is half the difference, the boat the average ($24$ and $16$: current $4$, boat $20$). Wind works the same way. **A circular route:** one lap $=2\\pi r$."
+    }
+   ]
+  },
+  {
+   "title": "Letters in the choices",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Plug in easy allowed numbers, find the target, test **every** choice; two hits, new numbers on those two. Or count the units: a time must come out as a time (minutes $=$ hours $\\times60$)."
+    }
+   ]
+  },
+  {
+   "title": "Before each question, ask",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "Do the units match? Minutes into parts of an hour.",
+      "Two travelers or two parts? The table, and the link.",
+      "What is fixed: the time, the speed or the distance?",
+      "Toward each other, apart, or a chase? Add or subtract.",
+      "Did one start earlier? The head start is the gap.",
+      "From whose start is the time counted?",
+      "Average speed: total distance over total time."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "Multiplying a speed per hour by minutes ($60\\times40$ instead of $60\\times\\frac23$).",
+      "A tenth of an hour is $6$ minutes, not $10$.",
+      "The average of the speeds instead of total distance over total time.",
+      "In a chase, the whole way instead of the starting gap; the difference of the speeds taken as the speed.",
+      "A percent faster taken as the same percent less time ($60\\%$ faster: not $40\\%$ of the time).",
+      "A bridge without the train's own length.",
+      "On a track, subtracting when they run toward each other."
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "15*3==45",
+  "120/40==3",
+  "150/2==75",
+  "60*2/3==40",
+  "90/3==30",
+  "10*60*60==36000",
+  "240/3==80",
+  "120/2==60",
+  "24/(3+5)==3",
+  "2/(9-6)*60==40",
+  "1*90*2/(3*1)==60",
+  "200/25==8",
+  "(300+200)/25==20",
+  "(24-16)/2==4",
+  "(24+16)/2==20",
+  "abs(30/20-1.5)<1e-9",
+  "abs(40/30-4/3)<1e-9"
+ ]
+}

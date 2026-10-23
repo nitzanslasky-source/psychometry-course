@@ -1,0 +1,147 @@
+{
+ "videoId": "solve-wp27-g116",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Zoe rides her bike from home at fifteen kilometers per hour. Twelve minutes later, her brother Sam leaves home along the same route, and catches up with Zoe twenty minutes after he starts. What is Sam's speed?",
+    "voice": "calm",
+    "at": [
+     "Zoe rides her bike from home"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So it's a chase, with a head start. And the twenty minutes are counted from Sam's start, because they say after he starts.",
+    "at": [
+     "twenty minutes are counted from Sam"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, with relative speed, like in the lesson. First, the sketch.",
+    "at": [
+     "two different ways",
+     "with the math",
+     "First, the sketch",
+     "First, the sketch",
+     "First, the sketch"
+    ]
+   },
+   {
+    "say": "How far ahead is Zoe when Sam leaves? Twelve minutes is a fifth of an hour.",
+    "at": [
+     "How far ahead",
+     "Twelve minutes is a fifth",
+     "of an hour"
+    ]
+   },
+   {
+    "say": "Fifteen times a fifth is three. So Zoe is three kilometers ahead.",
+    "at": [
+     "Fifteen times a fifth",
+     "So Zoe is three kilometers ahead"
+    ]
+   },
+   {
+    "say": "Now Sam starts. The only distance that matters is that three-kilometer gap. Not the whole way they ride.",
+    "at": [
+     "Now Sam starts",
+     "distance that matters",
+     "that three-kilometer gap",
+     "Not the whole way they ride"
+    ]
+   },
+   {
+    "say": "So Sam has a gap of three kilometers to close.",
+    "at": [
+     "So Sam has"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sam closes the three-kilometer gap in twenty minutes, a third of an hour.",
+    "at": [
+     "twenty minutes, a third of an hour"
+    ]
+   },
+   {
+    "say": "The gap divided by the time is three divided by a third. That's three times three, nine.",
+    "at": [
+     "the time is",
+     "three divided by a third",
+     "That's three times"
+    ]
+   },
+   {
+    "say": "Now careful, because nine is not Sam's speed. In a chase we subtract, so nine is how much faster Sam is than Zoe.",
+    "at": [
+     "nine is not Sam",
+     "so nine is"
+    ]
+   },
+   {
+    "say": "At nine kilometers per hour he would never catch her, because she rides at fifteen. Nine, choice number one, is the trap.",
+    "at": [
+     "is the trap"
+    ]
+   },
+   {
+    "say": "So Sam's speed is Zoe's fifteen plus nine, twenty-four kilometers per hour.",
+    "at": [
+     "Zoe's fifteen plus nine",
+     "kilometers per hour"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way, with the distances. We start again from the givens. When Sam catches Zoe, they are at the same place. So they both rode the same distance from home.",
+    "at": [
+     "Now the",
+     "the givens. When"
+    ]
+   },
+   {
+    "say": "Zoe rode twelve minutes before Sam, and twenty minutes with him. Twelve plus twenty is thirty-two minutes.",
+    "at": [
+     "Twelve plus twenty is thirty-two"
+    ]
+   },
+   {
+    "say": "Fifteen kilometers per hour is fifteen kilometers in sixty minutes. That's a quarter of a kilometer every minute.",
+    "at": [
+     "Fifteen kilometers per",
+     "a quarter of a kilometer every minute"
+    ]
+   },
+   {
+    "say": "Thirty-two times a quarter is eight. So Zoe rode eight kilometers.",
+    "at": [
+     "Thirty-two times a quarter",
+     "So Zoe rode"
+    ]
+   },
+   {
+    "say": "Sam rode the same eight kilometers in twenty minutes, a third of an hour.",
+    "at": [
+     "Sam rode the same eight",
+     "kilometers in twenty"
+    ]
+   },
+   {
+    "say": "Eight divided by a third is eight times three, twenty-four kilometers per hour. The same answer.",
+    "at": [
+     "Eight divided by a third",
+     "is eight times"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

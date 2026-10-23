@@ -1,0 +1,121 @@
+{
+ "videoId": "solve-wp27-g112",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A rowboat and a motorboat leave opposite ends of a lake at the same time, each heading for the other end. The motorboat is four point five times as fast as the rowboat. By the time the motorboat reaches the far end, what fraction of the length of the lake has the rowboat traveled?",
+    "voice": "calm",
+    "at": [
+     "A rowboat and a motorboat"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "It looks like the last question, but it isn't. They don't stop when they meet. They stop when the motorboat reaches the far end.",
+    "at": [
+     "They stop when the motorboat",
+     "reaches the far"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. First by understanding, with ratio parts. Both boats move for the same time, so the distances follow the speeds.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "The speeds are one to four point five. We multiply both by two, to make them whole. That's two to nine.",
+    "at": [
+     "The speeds are one to four point five",
+     "four point five",
+     "That's two to nine"
+    ]
+   },
+   {
+    "say": "So while the rowboat covers two parts, the motorboat covers nine parts.",
+    "at": [
+     "So while the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the sketch. The motorboat goes all the way across the lake. So the whole lake is the motorboat's nine parts.",
+    "at": [
+     "Now the sketch",
+     "Now the sketch",
+     "The motorboat goes all the way",
+     "way across the",
+     "nine parts."
+    ]
+   },
+   {
+    "say": "The rowboat started at the other end, and it covered only two of those parts.",
+    "at": [
+     "the other end",
+     "it covered only two"
+    ]
+   },
+   {
+    "say": "So the whole lake is nine parts, not two plus nine.",
+    "at": [
+     "is nine parts",
+     "not two plus nine"
+    ]
+   },
+   {
+    "say": "So the rowboat traveled two ninths of the lake.",
+    "at": [
+     "two ninths of the lake"
+    ]
+   },
+   {
+    "say": "Two elevenths, choice number one, would be right in a meeting question, where the road is the sum of both parts. Here, the motorboat covers the whole length alone.",
+    "at": [
+     "number one, would",
+     "in a meeting",
+     "covers the whole length alone"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in numbers. We start again from the givens. Let's say the rowboat moves at four kilometers per hour. Four times four point five is eighteen, so the motorboat moves at eighteen.",
+    "at": [
+     "Now let's",
+     "the givens. Let's",
+     "the rowboat moves at four",
+     "Four times four"
+    ]
+   },
+   {
+    "say": "Let's say the motorboat reaches the far end after one hour, the simplest time. So the lake is eighteen kilometers long.",
+    "at": [
+     "the motorboat reaches the far end after one hour",
+     "So the lake"
+    ]
+   },
+   {
+    "say": "In that same hour, the rowboat covers four kilometers.",
+    "at": [
+     "the rowboat covers four kilometers"
+    ]
+   },
+   {
+    "say": "That's four out of eighteen. We divide both by two, and that's two ninths again.",
+    "at": [
+     "That's four out",
+     "We divide both by two",
+     "and that's two"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

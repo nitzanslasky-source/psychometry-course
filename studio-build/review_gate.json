@@ -6,10 +6,10 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "ch52-change": {
-  "state": "held",
-  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "ch52-circle": {
   "state": "ready",
@@ -90,64 +90,64 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "geo-074": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "geo-074-2": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "geo-074-3": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "geo-077": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "geo-079": {
-  "state": "held",
-  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "geo-081": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "geo-084": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "geo-093": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "geo-097-after": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "geo-097-after-2": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "geo-104": {
   "state": "ready",
@@ -198,40 +198,40 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "geo-119": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "geo-119-2": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "geo-119-3": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "geo-120": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "geo-120-2": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "geo-120-3": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "operation-patterns": {
   "state": "ready",
@@ -240,34 +240,34 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "pt51-estimation": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "pt51-estimation-2": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "pt51-insights": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "pt51-intro": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "pt51-intro-wrap": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "pt51-plug-answers": {
   "state": "held",
@@ -300,10 +300,10 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "pt51-understanding": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "r26-t24-three-groups": {
   "state": "ready",
@@ -323,23 +323,41 @@
   "by": "Claude",
   "since": "2026-10-22T18:48+03:00"
  },
- "r26-t33-more-tools": {
+ "r26-t27-graphs": {
   "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "r26-t27-special": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "r26-t27-special-2": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "r26-t33-more-tools": {
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "r26-t33-more-tools-2": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "r26-t33-more-tools-3": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "r26-t34-meet": {
   "state": "ready",
@@ -354,16 +372,16 @@
   "since": "2026-10-22T23:24+03:00"
  },
  "r26-t35-cubefacts": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "r26-t35-water": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-ch-q01": {
   "state": "ready",
@@ -456,52 +474,52 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-geo33-g078": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g080": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g082": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g083": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g085": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g086": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g087": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g088": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g089": {
   "state": "held",
@@ -510,76 +528,76 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-geo33-g090": {
-  "state": "held",
-  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "solve-geo33-g091": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g092": {
-  "state": "held",
-  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "solve-geo33-g094": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g095": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g096": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g097": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g098": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g099": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g100": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g101": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g102": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo34-g106": {
   "state": "ready",
@@ -660,22 +678,22 @@
   "since": "2026-10-22T23:24+03:00"
  },
  "solve-geo35-g122": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-geo35-g123": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-geo35-g124": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-geo35-g125": {
   "state": "held",
@@ -684,64 +702,64 @@
   "since": "2026-10-22T23:24+03:00"
  },
  "solve-geo35-g126": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-geo35-g127": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-geo35-g128": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-geo35-g129": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-geo35-g130": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-geo35-g131": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-geo35-g132": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-pt-q01": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q01-2": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q02": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q02-2": {
   "state": "held",
@@ -750,40 +768,40 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-pt-q03": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q03-2": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q04": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q04-2": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q05": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q06": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q07": {
   "state": "held",
@@ -804,52 +822,52 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-pt-q10": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q11": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q12": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q13": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q14": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q15": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q16": {
-  "state": "held",
-  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "solve-pt-q17": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q18": {
   "state": "held",
@@ -858,40 +876,40 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-pt-q19": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q20": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q21": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q22": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q23": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q24": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-q-549": {
   "state": "ready",
@@ -983,29 +1001,65 @@
   "by": "Claude",
   "since": "2026-10-22T18:48+03:00"
  },
- "solve-q-r26-t33-02": {
+ "solve-q-r26-t27-01": {
   "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-q-r26-t27-02": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-q-r26-t27-03": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-q-r26-t27-05": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-q-r26-t27-06": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-q-r26-t27-31": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-q-r26-t33-02": {
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-q-r26-t33-03": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-q-r26-t33-04": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-q-r26-t33-05": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T10:20+03:00"
  },
  "solve-q-r26-t34-01": {
   "state": "ready",
@@ -1026,22 +1080,22 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-q-r26-t35-01": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-q-r26-t35-02": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-q-r26-t35-03": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T11:00+03:00"
  },
  "solve-wp24-g070": {
   "state": "ready",
@@ -1074,10 +1128,10 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-wp24-g076": {
-  "state": "held",
-  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "solve-wp24-g077": {
   "state": "ready",
@@ -1092,10 +1146,10 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-wp25-g082": {
-  "state": "held",
-  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "solve-wp25-g083": {
   "state": "ready",
@@ -1128,10 +1182,10 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-wp25-g089": {
-  "state": "held",
-  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
  },
  "solve-wp25-g090": {
   "state": "ready",
@@ -1206,10 +1260,88 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-wp26-g105b": {
+  "state": "ready",
+  "why": "W25 sentence/board/read-through/prompter review passed 23 Oct; current Hebrew methods preserved; report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
+  "by": "Codex",
+  "since": "2026-10-23T09:08+03:00"
+ },
+ "solve-wp27-g107": {
   "state": "held",
-  "why": "Hebrew restore (22 Oct) — waiting for Codex review",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g108": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g109": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g111": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g112": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g114": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g115": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g116": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g117": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g118": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g119": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g120": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "solve-wp27-g121": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
  },
  "wp-001": {
   "state": "ready",
@@ -1342,5 +1474,53 @@
   "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
   "by": "Claude",
   "since": "2026-10-22T18:48+03:00"
+ },
+ "wp-106": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "wp-106-2": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "wp-106-3": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "wp-108-after": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "wp-110": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "wp-110-2": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "wp-113": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
+ },
+ "wp-113-2": {
+  "state": "held",
+  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "by": "Claude",
+  "since": "2026-10-23T14:12+03:00"
  }
 }

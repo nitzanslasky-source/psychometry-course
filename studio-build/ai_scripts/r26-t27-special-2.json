@@ -1,0 +1,165 @@
+{
+ "videoId": "r26-t27-special-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with the special cases, and look at circular tracks."
+  ],
+  [
+   {
+    "say": "Now circular tracks. Two runners start together from the same point, and run in the same direction.",
+    "at": [
+     "Now circular tracks",
+     "Two runners start together",
+     "from the same point",
+     "run in the"
+    ]
+   },
+   {
+    "say": "The fast one pulls away. Then it chases the slow one from behind, all the way around.",
+    "at": [
+     "The fast one pulls away",
+     "one from behind"
+    ]
+   },
+   {
+    "say": "They meet again when the fast one has gained one full lap.",
+    "at": [
+     "gained one full lap"
+    ]
+   },
+   {
+    "say": "That's a chase, so we subtract the speeds. Imagine the slow one stands still. Then the fast one moves at the difference, and it needs one lap.",
+    "at": [
+     "That's a chase, so we subtract",
+     "Imagine the slow"
+    ]
+   },
+   {
+    "say": "Now a new example. The track is six hundred meters, and the speeds are ten and seven kilometers per hour. Ten minus seven is three.",
+    "at": [
+     "Ten minus seven is three"
+    ]
+   },
+   {
+    "say": "Six hundred meters is zero point six kilometers.",
+    "at": [
+     "Six hundred meters is zero point six",
+     "point six kilometers"
+    ]
+   },
+   {
+    "say": "Three kilometers take sixty minutes. Zero point six is a fifth of three, so it takes a fifth of sixty minutes, twelve minutes.",
+    "at": [
+     "Three kilometers take sixty minutes",
+     "Zero point six",
+     "a fifth of sixty minutes"
+    ]
+   },
+   {
+    "say": "So they meet every twelve minutes.",
+    "at": [
+     "So they meet"
+    ]
+   },
+   {
+    "say": "Now a second example, from a real exam. Car B is twice as fast as car A, in the same direction. Where do they meet first?",
+    "at": [
+     "Car B is twice as fast",
+     "the same direction"
+    ]
+   },
+   {
+    "say": "They meet when B has gained one lap. B covers twice what A covers. So when A has done one lap, B has done two.",
+    "at": [
+     "So when A has done one lap"
+    ]
+   },
+   {
+    "say": "A is back at the start after one lap. So they meet at the start.",
+    "at": [
+     "A is back",
+     "So they meet at the start"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the runners start together, but run in opposite directions. They run toward each other around the track.",
+    "at": [
+     "run in opposite directions",
+     "run in opposite directions",
+     "They run toward each other",
+     "around the track"
+    ]
+   },
+   {
+    "say": "They meet when together they have covered one full lap.",
+    "at": [
+     "They meet when together",
+     "one full lap"
+    ]
+   },
+   {
+    "say": "They move toward each other, so we add the speeds.",
+    "at": [
+     "so we add the speeds"
+    ]
+   },
+   {
+    "say": "Now a new example. The track is six hundred meters, and the speeds are ten and eight kilometers per hour. Ten plus eight is eighteen.",
+    "at": [
+     "The track is",
+     "Ten plus eight is eighteen"
+    ]
+   },
+   {
+    "say": "Eighteen kilometers take sixty minutes. Zero point six is eighteen divided by thirty. So the time is sixty divided by thirty, two minutes.",
+    "at": [
+     "Eighteen kilometers take sixty minutes",
+     "Zero point six",
+     "So the time is sixty"
+    ]
+   },
+   {
+    "say": "Another example. A one-kilometer track, with speeds seven and five. Seven plus five is twelve.",
+    "at": [
+     "A one-kilometer track",
+     "Seven plus five is twelve"
+    ]
+   },
+   {
+    "say": "Twelve kilometers take sixty minutes. So one kilometer takes sixty divided by twelve, five minutes.",
+    "at": [
+     "Twelve kilometers take sixty minutes",
+     "one kilometer takes sixty divided by twelve",
+     "by twelve, five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. A train passing a post covers its own length. A bridge, a platform or a tunnel means its length plus the train.",
+    "at": [
+     "A train passing a post",
+     "covers its own"
+    ]
+   },
+   {
+    "say": "On a circular track in the same direction, we subtract the speeds. They meet once every lap the fast one gains.",
+    "at": [
+     "in the same direction",
+     "subtract the speeds"
+    ]
+   },
+   {
+    "say": "In opposite directions, we add the speeds. They meet once every lap they cover together.",
+    "at": [
+     "In opposite directions",
+     "They meet once"
+    ]
+   },
+   "Take a moment to memorize this. Now try the next question, and I'll see you in the next video."
+  ]
+ ]
+}

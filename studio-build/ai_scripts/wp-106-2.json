@@ -1,0 +1,223 @@
+{
+ "videoId": "wp-106-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with motion, and look at the units."
+  ],
+  [
+   {
+    "say": "Motion questions love to mix units. So before we calculate, the units must match.",
+    "at": [
+     "mix units. So"
+    ]
+   },
+   "If the speed is in kilometers per hour, the distance must be in kilometers, and the time in hours.",
+   {
+    "say": "One kilometer is a thousand meters.",
+    "at": [
+     "One kilometer is a thousand meters"
+    ]
+   },
+   {
+    "say": "One hour is sixty minutes, and one minute is sixty seconds. So meters per second means how many meters we cover in one second.",
+    "at": [
+     "One hour is sixty minutes",
+     "So meters per"
+    ]
+   },
+   "Now the most common case. The speed is per hour, but the time is in minutes. So we turn the minutes into part of an hour.",
+   {
+    "say": "Thirty minutes is thirty out of sixty. That's half an hour.",
+    "at": [
+     "Thirty minutes is thirty out of sixty"
+    ]
+   },
+   {
+    "say": "Twenty minutes is twenty out of sixty. We divide both by twenty, and that's one third of an hour.",
+    "at": [
+     "Twenty minutes is twenty out of sixty",
+     "We divide both"
+    ]
+   },
+   {
+    "say": "In the same way, twelve minutes is a fifth of an hour, and fifteen minutes is a quarter. Forty minutes is two thirds, and forty-five minutes is three quarters.",
+    "at": [
+     "In the same way",
+     "In the same way",
+     "twelve minutes is a fifth",
+     "of an hour",
+     "fifteen minutes is a quarter",
+     "Forty minutes is two thirds",
+     "forty-five minutes is three quarters"
+    ]
+   },
+   {
+    "say": "Take a moment to learn this row by heart. It comes up in almost every motion question.",
+    "at": [
+     "Take a moment"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. A car drives at sixty kilometers per hour, for forty minutes. How far does it go?",
+    "at": [
+     "A car drives at sixty kilometers per hour",
+     "kilometers per hour"
+    ]
+   },
+   {
+    "say": "The speed is per hour, so the time must be in hours too. Forty minutes is two thirds of an hour.",
+    "at": [
+     "Forty minutes is two thirds of an hour",
+     "of an hour"
+    ]
+   },
+   {
+    "say": "The distance is the speed times the time, so sixty times two thirds. Sixty divided by three is twenty.",
+    "at": [
+     "Sixty divided by three is twenty"
+    ]
+   },
+   {
+    "say": "Then twenty times two is forty. So the car goes forty kilometers.",
+    "at": [
+     "twenty times two is forty",
+     "So the car"
+    ]
+   },
+   {
+    "say": "A lot of students write sixty times forty. That mixes hours with minutes, so the answer is far too big.",
+    "at": [
+     "sixty times forty",
+     "so the answer"
+    ]
+   },
+   {
+    "say": "Careful with decimals of an hour too. One point two five hours is one hour and a quarter of an hour.",
+    "at": [
+     "One point two five hours is one hour and a quarter",
+     "quarter of an"
+    ]
+   },
+   {
+    "say": "A quarter of an hour is fifteen minutes. So one point two five hours is one hour and fifteen minutes, not one hour and twenty-five.",
+    "at": [
+     "So one point two five hours is one hour and fifteen",
+     "fifteen minutes, not"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes we need to change the units of a speed. Some books teach a rule. To go from meters per second to kilometers per hour, multiply by three point six.",
+    "at": [
+     "change the units"
+    ]
+   },
+   {
+    "say": "You can forget that rule. It almost never comes up on the exam, and almost nobody remembers whether to multiply or to divide.",
+    "at": [
+     "You can forget that rule",
+     "It almost never"
+    ]
+   },
+   "Instead, we use identical ratios, like in topic twenty-two. If we multiply the time by some number, the distance is multiplied by the same number.",
+   {
+    "say": "Now a new example. A car drives at ninety kilometers per hour. How far does it go in twenty minutes?",
+    "at": [
+     "A car drives at ninety kilometers per hour",
+     "kilometers per hour"
+    ]
+   },
+   {
+    "say": "One hour is sixty minutes. So the car goes ninety kilometers in sixty minutes.",
+    "at": [
+     "So the car goes ninety kilometers",
+     "So the car goes ninety kilometers",
+     "kilometers in sixty"
+    ]
+   },
+   {
+    "say": "We want twenty minutes. From sixty minutes to twenty minutes, we divide by three.",
+    "at": [
+     "We want twenty minutes",
+     "sixty minutes to",
+     "we divide by three"
+    ]
+   },
+   {
+    "say": "So we divide the distance by three too. Ninety divided by three is thirty. So in twenty minutes the car goes thirty kilometers.",
+    "at": [
+     "So we divide",
+     "Ninety divided by three is thirty",
+     "thirty. So in",
+     "the car goes thirty kilometers"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the other way. A runner runs ten meters every second. What is his speed in kilometers per hour?",
+    "at": [
+     "A runner runs ten meters every second",
+     "What is his"
+    ]
+   },
+   {
+    "say": "We write ten meters in one second. Then we grow the time, one step at a time.",
+    "at": [
+     "We write ten meters in one second",
+     "We write ten meters in one second",
+     "Then we grow"
+    ]
+   },
+   {
+    "say": "From one second to one minute, the time is times sixty, because a minute is sixty seconds.",
+    "at": [
+     "From one second to one minute",
+     "minute, the time"
+    ]
+   },
+   {
+    "say": "So the distance is times sixty too. Ten times sixty is six hundred meters in one minute.",
+    "at": [
+     "Ten times sixty is six hundred",
+     "six hundred meters in one minute"
+    ]
+   },
+   {
+    "say": "From one minute to one hour, the time is times sixty again.",
+    "at": [
+     "From one minute to one hour",
+     "hour, the time"
+    ]
+   },
+   {
+    "say": "So six hundred times sixty. Six hundred times six is three thousand six hundred. So six hundred times sixty is thirty-six thousand meters in one hour.",
+    "at": [
+     "Six hundred times six is three thousand",
+     "three thousand six",
+     "So six hundred times sixty is thirty-six thousand",
+     "thirty-six thousand meters in one hour"
+    ]
+   },
+   {
+    "say": "A thousand meters is one kilometer, so thirty-six thousand meters is thirty-six kilometers.",
+    "at": [
+     "one kilometer, so",
+     "thirty-six thousand meters is thirty-six kilometers"
+    ]
+   },
+   {
+    "say": "So his speed is thirty-six kilometers per hour.",
+    "at": [
+     "So his speed is thirty-six",
+     "kilometers per hour"
+    ]
+   },
+   "So when a speed comes in other units, don't look for a rule. Change the time step by step, and change the distance in the same way. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}

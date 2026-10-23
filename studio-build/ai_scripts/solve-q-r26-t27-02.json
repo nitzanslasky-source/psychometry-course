@@ -1,0 +1,131 @@
+{
+ "videoId": "solve-q-r26-t27-02",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A boat travels forty-eight kilometers downstream in two hours. The return trip upstream, along the same route, takes three hours. The boat's speed in still water does not change. What is the speed of the current, in kilometers per hour?",
+    "voice": "calm",
+    "at": [
+     "A boat travels forty-eight kilometers"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for the speed of the river's current. I want to use this question to show you how a current works.",
+    "at": [
+     "they ask for the speed of the river's current"
+    ]
+   },
+   {
+    "say": "Downstream means with the current. The water carries the boat, so we add the current to the boat's speed.",
+    "at": [
+     "current. The water",
+     "we add the current"
+    ]
+   },
+   {
+    "say": "Upstream means against the current. The water pushes back, so we subtract it.",
+    "at": [
+     "Upstream means against",
+     "so we subtract it"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. A boat goes ten kilometers per hour in still water, and the current is two. Downstream it goes ten plus two, twelve. Upstream, ten minus two, eight.",
+    "at": [
+     "A boat goes ten kilometers per hour",
+     "per hour in",
+     "Downstream it goes ten plus two",
+     "Upstream, ten minus two"
+    ]
+   },
+   {
+    "say": "A plane works the same way. A wind from behind adds to its speed, and a wind against it subtracts.",
+    "at": [
+     "A plane works"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way. First the two real speeds. Downstream, forty-eight kilometers in two hours is twenty-four kilometers per hour.",
+    "at": [
+     "We'll solve",
+     "Downstream, forty-eight kilometers",
+     "hours is twenty-four"
+    ]
+   },
+   {
+    "say": "Upstream, forty-eight kilometers in three hours is sixteen kilometers per hour.",
+    "at": [
+     "Upstream, forty-eight kilometers",
+     "hours is sixteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's call the boat's speed b, and the current's speed c. Then b plus c is twenty-four, and b minus c is sixteen.",
+    "at": [
+     "speed b, and",
+     "Then b plus c is twenty-four"
+    ]
+   },
+   {
+    "say": "We subtract the second equation from the first. The b's cancel. Twenty-four minus sixteen is eight, so two c is eight.",
+    "at": [
+     "We subtract the second equation",
+     "from the first"
+    ]
+   },
+   {
+    "say": "So c is half of eight, four kilometers per hour. The current is half the difference of the two speeds.",
+    "at": [
+     "So c is half of eight",
+     "eight, four kilometers"
+    ]
+   },
+   {
+    "say": "Careful with eight, choice number one. It forgets to halve. And twenty, choice number three, is the boat, not the current.",
+    "at": [
+     "number one. It",
+     "It forgets to halve",
+     "It forgets to halve",
+     "is the boat, not the current"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers. We start again from the givens. Let's try a current of four. Downstream the speed is twenty-four, so the boat is twenty-four minus four, twenty.",
+    "at": [
+     "Now let's",
+     "the givens. Let's",
+     "Let's try a current of four",
+     "so the boat"
+    ]
+   },
+   {
+    "say": "Upstream, the boat goes twenty minus four, sixteen kilometers per hour.",
+    "at": [
+     "twenty minus four, sixteen"
+    ]
+   },
+   {
+    "say": "At sixteen, the forty-eight kilometers take forty-eight divided by sixteen, three hours. That's exactly the given.",
+    "at": [
+     "forty-eight divided by sixteen",
+     "hours. That's exactly",
+     "the given"
+    ]
+   },
+   {
+    "say": "Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

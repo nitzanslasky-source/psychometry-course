@@ -1,0 +1,171 @@
+{
+ "videoId": "wp-113-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with relative speed, and look at chases."
+  ],
+  [
+   {
+    "say": "Here's the classic mistake, and it's almost always in a chase.",
+    "at": [
+     "and it's almost"
+    ]
+   },
+   {
+    "say": "The only distance that matters is the gap between them when the chase starts. Not the whole way they ride, and not where they end up.",
+    "at": [
+     "The only distance that matters",
+     "is the gap"
+    ]
+   },
+   {
+    "say": "Imagine the runner at a hundred kilometers per hour, and the cyclist at a hundred and two. They travel very far, but the gap still closes by only two kilometers every hour.",
+    "at": [
+     "the gap still closes by only two",
+     "only two kilometers"
+    ]
+   },
+   "So in a chase, we only look at the starting gap, and at the difference between the speeds."
+  ],
+  [
+   {
+    "say": "And when one of them leaves earlier, we first find the head start. That head start is the gap.",
+    "at": [
+     "them leaves earlier"
+    ]
+   },
+   {
+    "say": "Now a new example. Dan walks from home at four kilometers per hour. Half an hour later, his sister rides after him at twelve kilometers per hour. When does she catch him?",
+    "at": [
+     "Dan walks from home",
+     "Dan walks from home",
+     "at four kilometers per hour",
+     "Half an hour"
+    ]
+   },
+   {
+    "say": "Let's find the head start. In half an hour, Dan walks four times a half, two kilometers.",
+    "at": [
+     "Dan walks four times a half",
+     "two kilometers."
+    ]
+   },
+   {
+    "say": "Now his sister starts, so we mark her start time on the sketch. The gap between them is two kilometers.",
+    "at": [
+     "Now his sister starts",
+     "we mark her",
+     "The gap between them is two kilometers"
+    ]
+   },
+   {
+    "say": "It's a chase, so we subtract. She gains twelve minus four, eight kilometers every hour.",
+    "at": [
+     "It's a chase",
+     "She gains twelve minus four",
+     "eight kilometers every"
+    ]
+   },
+   {
+    "say": "Two divided by eight is a quarter of an hour. So she catches him fifteen minutes after she starts.",
+    "at": [
+     "Two divided by eight",
+     "So she catches"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now careful with the time in a chase. Is it counted from the chaser's start, or from the first one's start? We read the question, and we mark both start times on the sketch.",
+    "at": [
+     "time in a",
+     "Is it counted from the chaser",
+     "chaser's start, or"
+    ]
+   },
+   {
+    "say": "Now a new example. Ava starts running. Ben waits ten seconds, and then chases her on the same route. He catches her thirty seconds after Ava started. How many times as fast as Ava is Ben?",
+    "at": [
+     "Ava starts running",
+     "Ava starts running",
+     "Ava starts running",
+     "Ben waits ten seconds",
+     "then chases her",
+     "thirty seconds after Ava started",
+     "How many times"
+    ]
+   },
+   {
+    "say": "The thirty seconds are counted from Ava's start. So Ava runs thirty seconds, and Ben runs only thirty minus ten, twenty seconds.",
+    "at": [
+     "Ben runs only thirty minus ten"
+    ]
+   },
+   {
+    "say": "They both run the same distance, from the start to the meeting point. The distance is fixed, so the times flip, like in speed ratios.",
+    "at": [
+     "They both run",
+     "The distance is fixed, so the times flip"
+    ]
+   },
+   {
+    "say": "Ava's time to Ben's time is thirty to twenty, three to two. So Ben's speed is three halves of Ava's. He is one and a half times as fast.",
+    "at": [
+     "thirty to twenty, three to two",
+     "So Ben's speed",
+     "one and a half times as fast"
+    ]
+   },
+   {
+    "say": "Now the other reading. If he caught her thirty seconds after he started, Ben runs thirty seconds, and Ava runs ten more, forty.",
+    "at": [
+     "If he caught her thirty seconds after he started",
+     "runs thirty seconds"
+    ]
+   },
+   {
+    "say": "Then Ben is forty over thirty, four thirds times as fast.",
+    "at": [
+     "forty over thirty"
+    ]
+   },
+   {
+    "say": "Two readings, two different answers. So always ask, from whose start is the time counted?",
+    "at": [
+     "Two readings, two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. Toward each other, or apart, we add the speeds.",
+    "at": [
+     "Toward each other, or apart",
+     "we add the"
+    ]
+   },
+   {
+    "say": "In a chase, we subtract them.",
+    "at": [
+     "In a chase, we subtract them"
+    ]
+   },
+   {
+    "say": "Only the starting gap counts. And if one leaves earlier, we find the head start first.",
+    "at": [
+     "Only the starting gap counts",
+     "And if one"
+    ]
+   },
+   {
+    "say": "And we mark every start time on the sketch, and ask from whose start the time is counted.",
+    "at": [
+     "we mark every start time",
+     "on the sketch"
+    ]
+   },
+   "Chases are where students slip, so take a moment to memorize this. I'll see you in the next video."
+  ]
+ ]
+}

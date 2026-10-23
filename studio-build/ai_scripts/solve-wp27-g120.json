@@ -1,0 +1,137 @@
+{
+ "videoId": "solve-wp27-g120",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A ferry covers a route of three hundred sixty kilometers in twelve hours. A new ferry travels sixty percent faster. How many hours does the new ferry take on the same route?",
+    "voice": "calm",
+    "at": [
+     "A ferry covers a route"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the route is the same, and only the speed changes. They ask for the new time.",
+    "at": [
+     "the same, and"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. Let's start with the math way. The old speed is the distance divided by the time. Three hundred sixty divided by twelve is thirty kilometers per hour.",
+    "at": [
+     "We'll solve",
+     "Three hundred sixty divided by twelve",
+     "twelve is thirty"
+    ]
+   },
+   {
+    "say": "Sixty percent faster means a hundred sixty percent of the old speed. So we multiply by one point six.",
+    "at": [
+     "So we multiply by one point six"
+    ]
+   },
+   {
+    "say": "Thirty times one point six is forty-eight kilometers per hour.",
+    "at": [
+     "Thirty times one point six",
+     "is forty-eight kilometers"
+    ]
+   },
+   {
+    "say": "The new time is three hundred sixty divided by forty-eight. That's seven and a half hours.",
+    "at": [
+     "three hundred sixty divided by forty-eight",
+     "That's seven and"
+    ]
+   },
+   {
+    "say": "Let's check it. Forty-eight times seven is three hundred thirty-six. Half of forty-eight is twenty-four, and three hundred thirty-six plus twenty-four is three hundred sixty.",
+    "at": [
+     "Forty-eight times seven",
+     "hundred thirty-six. Half",
+     "three hundred thirty-six plus twenty-four",
+     "is three hundred sixty"
+    ]
+   },
+   {
+    "say": "Careful, sixty percent faster doesn't mean sixty percent less time. Twelve minus sixty percent of twelve is four point eight, choice number two. That's the trap.",
+    "at": [
+     "Twelve minus sixty percent",
+     "twelve is four",
+     "number two. That's",
+     "That's the trap"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with ratios. We start again from the givens. The route is the same, so the speed and the time go opposite ways.",
+    "at": [
+     "Now by",
+     "the givens. The"
+    ]
+   },
+   {
+    "say": "Twice as fast takes half the time. Three times as fast takes a third of the time.",
+    "at": [
+     "Twice as fast takes half",
+     "Three times as"
+    ]
+   },
+   {
+    "say": "So one point six times as fast takes the time divided by one point six.",
+    "at": [
+     "one point six times as fast",
+     "by one point"
+    ]
+   },
+   {
+    "say": "Twelve divided by one point six. We multiply both by ten, so it's a hundred twenty divided by sixteen. That's seven and a half again.",
+    "at": [
+     "a hundred twenty divided by sixteen",
+     "That's seven and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's estimate, with one easy number. We start again from the givens. If the new ferry were twice as fast, it would take half the time, twelve divided by two, six hours.",
+    "at": [
+     "Now let's",
+     "the givens. If",
+     "twelve divided by two"
+    ]
+   },
+   {
+    "say": "But it's less than twice as fast. So it takes more than six hours. Six and four point eight are out.",
+    "at": [
+     "But it's less",
+     "So it takes more than six hours",
+     "Six and four point eight",
+     "are out"
+    ]
+   },
+   {
+    "say": "And it's faster than the old ferry, so it takes less than twelve hours. Nineteen point two is out too.",
+    "at": [
+     "the old ferry",
+     "so it takes less than twelve",
+     "Nineteen point two is out"
+    ]
+   },
+   {
+    "say": "One easy number ruled out three choices. Only seven and a half is left.",
+    "at": [
+     "One easy number"
+    ]
+   },
+   {
+    "say": "Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

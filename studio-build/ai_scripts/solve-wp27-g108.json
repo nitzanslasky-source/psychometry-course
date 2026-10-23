@@ -1,0 +1,147 @@
+{
+ "videoId": "solve-wp27-g108",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A gondola lift climbs along a straight cable at seventeen kilometers per hour. After six minutes, its horizontal distance from the bottom station is one point five kilometers. How high above the bottom station is it, in kilometers?",
+    "voice": "calm",
+    "at": [
+     "A gondola lift climbs"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the gondola climbs at an angle, and they ask for its height. The directions are not on one line, so we draw a right triangle, like in the lesson.",
+    "at": [
+     "at an angle",
+     "The directions are"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way. First we find how far the gondola really moves, along the cable.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "The speed is per hour, but the time is in minutes. Six minutes is six out of sixty, a tenth of an hour.",
+    "at": [
+     "Six minutes is six out of sixty"
+    ]
+   },
+   {
+    "say": "The distance is the speed times the time. Seventeen times a tenth is one point seven kilometers.",
+    "at": [
+     "The distance is",
+     "Seventeen times a tenth",
+     "one point seven"
+    ]
+   },
+   {
+    "say": "Careful, one point seven is choice number one, but it's not our final answer. It's the path along the cable, not the height.",
+    "at": [
+     "number one, but",
+     "It's the path along the cable",
+     "not the height"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the sketch, the right triangle.",
+    "at": [
+     "Now the sketch"
+    ]
+   },
+   {
+    "say": "The path along the cable is the long side, one point seven.",
+    "at": [
+     "The path along the cable is the long side",
+     "is the long"
+    ]
+   },
+   {
+    "say": "The ground is one point five. And the height is the side we need.",
+    "at": [
+     "The ground is one point five",
+     "And the height is the side",
+     "side we need"
+    ]
+   },
+   {
+    "say": "Let's count in tenths of a kilometer, so the numbers are whole. One point seven is seventeen tenths, and one point five is fifteen tenths.",
+    "at": [
+     "Let's count in tenths",
+     "a kilometer, so"
+    ]
+   },
+   {
+    "say": "Pythagoras says the height squared plus fifteen squared is equal to seventeen squared.",
+    "at": [
+     "Pythagoras says",
+     "plus fifteen squared"
+    ]
+   },
+   {
+    "say": "So the height squared is seventeen squared minus fifteen squared.",
+    "at": [
+     "So the height squared is seventeen",
+     "seventeen squared minus"
+    ]
+   },
+   {
+    "say": "Remember the shortcut from topic four. A difference of two squares is the difference of the numbers, times their sum.",
+    "at": [
+     "A difference of two squares",
+     "is the difference"
+    ]
+   },
+   {
+    "say": "Seventeen minus fifteen is two, and seventeen plus fifteen is thirty-two. Two times thirty-two is sixty-four.",
+    "at": [
+     "Two times thirty-two"
+    ]
+   },
+   {
+    "say": "So the height squared is sixty-four, and the height is eight tenths of a kilometer. That's zero point eight.",
+    "at": [
+     "is sixty-four, and",
+     "the height is eight tenths",
+     "of a kilometer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with a known triple. It's the same first step. The path along the cable is one point seven kilometers, seventeen tenths.",
+    "at": [
+     "Now by",
+     "seventeen tenths"
+    ]
+   },
+   {
+    "say": "The ground is fifteen tenths. And fifteen and seventeen belong to the triple eight, fifteen, seventeen, just like three, four, five.",
+    "at": [
+     "The ground is",
+     "the triple eight, fifteen, seventeen",
+     "just like three"
+    ]
+   },
+   {
+    "say": "Why is it a triple? Eight squared is sixty-four, and fifteen squared is two hundred twenty-five. Together that's two hundred eighty-nine, and that's seventeen squared.",
+    "at": [
+     "Together that",
+     "and that's seventeen"
+    ]
+   },
+   "You don't have to know this triple by heart. But if you know it, the height is eight tenths right away.",
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

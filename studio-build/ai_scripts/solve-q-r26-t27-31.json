@@ -1,0 +1,135 @@
+{
+ "videoId": "solve-q-r26-t27-31",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A delivery van travels three times as far as a scooter, at one point five times the scooter's speed. The scooter's trip takes forty minutes. How many minutes does the van's trip take?",
+    "voice": "calm",
+    "at": [
+     "A delivery van travels"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So two things change at once, the distance and the speed. And they ask for the van's time.",
+    "at": [
+     "at once, the",
+     "they ask for the van's time"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, with the V, like in the lesson. The table is speed, distance and time, with the distance in the middle.",
+    "at": [
+     "two different ways",
+     "with the V, like in the lesson",
+     "The table is"
+    ]
+   },
+   {
+    "say": "There are no real speeds or distances, only relations. So the scooter gets speed one and distance one. Its time is forty minutes.",
+    "at": [
+     "the scooter gets speed one",
+     "and distance one"
+    ]
+   },
+   {
+    "say": "The van goes one and a half times as fast, so its speed is one point five. It goes three times as far, so its distance is three. Its time is the question.",
+    "at": [
+     "so its speed is one point five",
+     "It goes three",
+     "the question"
+    ]
+   },
+   {
+    "say": "The unknown is in the time column. So it's a normal V. It joins the scooter's speed, the van's distance, and the scooter's time.",
+    "at": [
+     "So it's a normal V",
+     "It joins the"
+    ]
+   },
+   {
+    "say": "We multiply the V. One times three times forty is a hundred twenty.",
+    "at": [
+     "We multiply the V",
+     "One times three times forty",
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "Then we divide by the other two, one times one and a half. A hundred twenty divided by one and a half is eighty.",
+    "at": [
+     "A hundred twenty divided by one and a half",
+     "one and a half is"
+    ]
+   },
+   {
+    "say": "Why eighty? Because one and a half times eighty is eighty plus forty, a hundred twenty.",
+    "at": [
+     "one and a half times eighty",
+     "eighty is eighty"
+    ]
+   },
+   "So the van's trip takes eighty minutes."
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with factors, one change at a time. We start again from the givens. The time is the distance divided by the speed.",
+    "at": [
+     "Now by",
+     "the givens. The",
+     "The time is the distance divided by the speed"
+    ]
+   },
+   {
+    "say": "The van goes three times as far. More distance means more time, so the time goes the same way, times three.",
+    "at": [
+     "The van goes",
+     "More distance means more time",
+     "so the time"
+    ]
+   },
+   {
+    "say": "Forty times three is a hundred twenty.",
+    "at": [
+     "Forty times three"
+    ]
+   },
+   {
+    "say": "The van is one and a half times as fast. More speed means less time, so the time goes the opposite way. We flip three halves to two thirds.",
+    "at": [
+     "The van is",
+     "We flip three halves to two thirds"
+    ]
+   },
+   {
+    "say": "A hundred twenty times two thirds. A third of a hundred twenty is forty, so two thirds of it is eighty. The same answer.",
+    "at": [
+     "A hundred twenty times two thirds",
+     "A third of"
+    ]
+   },
+   {
+    "say": "Careful with a hundred eighty, choice number four. It multiplies by three halves, so it didn't flip the speed.",
+    "at": [
+     "number four. It",
+     "It multiplies by three halves",
+     "so it didn't flip the speed"
+    ]
+   },
+   {
+    "say": "And a hundred twenty, choice number three, forgets the speed completely.",
+    "at": [
+     "choice number three",
+     "forgets the speed completely"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

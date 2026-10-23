@@ -1,0 +1,147 @@
+{
+ "videoId": "solve-q-r26-t27-06",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A car travels d kilometers in t hours. At the same speed, how many minutes does it take to travel k kilometers?",
+    "voice": "calm",
+    "at": [
+     "A car travels d kilometers"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So there are letters in the question and letters in the choices. And they ask for minutes, while t is in hours.",
+    "at": [
+     "the question and",
+     "they ask for minutes",
+     "t is in"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. First, let's plug in numbers, like in the lesson. We pick easy numbers that divide well. Let's say d is forty kilometers and t is two hours. The speed is forty divided by two, twenty kilometers per hour.",
+    "at": [
+     "We'll solve",
+     "Let's say d is forty",
+     "The speed is"
+    ]
+   },
+   {
+    "say": "Let's say k is ten kilometers. Ten kilometers at twenty takes half an hour. They ask for minutes, so thirty minutes. That's our target.",
+    "at": [
+     "Let's say k is ten",
+     "half an hour"
+    ]
+   },
+   {
+    "say": "Now every choice, with the same numbers. Choice number one says k t over sixty d. That's twenty over two thousand four hundred, tiny. Out.",
+    "at": [
+     "number one says",
+     "That's twenty over two",
+     "tiny. Out"
+    ]
+   },
+   {
+    "say": "Choice number two says sixty d over k t. That's two thousand four hundred over twenty, a hundred twenty. Out.",
+    "at": [
+     "number two says",
+     "over k t",
+     "That's two thousand four hundred over twenty",
+     "a hundred twenty. Out"
+    ]
+   },
+   {
+    "say": "Choice number three says sixty k t over d. Sixty times ten times two is twelve hundred, and twelve hundred over forty is thirty. That's our target.",
+    "at": [
+     "Choice number three says",
+     "number three says",
+     "t over d",
+     "twelve hundred over forty is thirty",
+     "thirty. That's our"
+    ]
+   },
+   {
+    "say": "Choice number four says k d over sixty t. That's four hundred over a hundred twenty, a bit more than three. Out.",
+    "at": [
+     "number four says",
+     "That's four hundred over",
+     "a bit more than three. Out"
+    ]
+   },
+   {
+    "say": "Here's one warning. Don't pick a speed of sixty here. Then choice number three and choice number four both give the target. If two choices hit, try new numbers on those two.",
+    "at": [
+     "Don't pick a speed of sixty",
+     "number three and",
+     "number four both",
+     "If two choices"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way, with the letters. We start again from the givens. The speed is the distance divided by the time, d over t.",
+    "at": [
+     "Now the",
+     "the givens. The",
+     "d over t"
+    ]
+   },
+   {
+    "say": "The time for k kilometers is k divided by d over t. Dividing by a fraction is multiplying by its flip. So it's k t over d hours.",
+    "at": [
+     "The time for",
+     "Dividing by a fraction",
+     "So it's k"
+    ]
+   },
+   {
+    "say": "They ask for minutes, so we multiply the hours by sixty. That's sixty k t over d, choice number three.",
+    "at": [
+     "we multiply the hours by sixty",
+     "over d, choice",
+     "number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with the units only. We start again from the givens. k and d are kilometers, and t is hours.",
+    "at": [
+     "Now by",
+     "the givens. k",
+     "k and d are kilometers",
+     "and t is"
+    ]
+   },
+   "The answer is a time. So the kilometers must cancel.",
+   {
+    "say": "Choice number two gives one over hours, and choice number four gives kilometers squared over hours. Neither one is a time, so both are out.",
+    "at": [
+     "number two gives",
+     "number four gives",
+     "Neither one is a time",
+     "so both are out",
+     "so both are out"
+    ]
+   },
+   {
+    "say": "Choice number one and choice number three are both hours times a number. Minutes are sixty times the hours, so the sixty must be on top. That's choice number three.",
+    "at": [
+     "number one and",
+     "number three are",
+     "times a number",
+     "so the sixty must be on top",
+     "must be on top"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

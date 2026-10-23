@@ -2111,3 +2111,94 @@ _apply_before_choice_order = apply
 def apply(M):
     _apply_before_choice_order(M)
     _co_load().choice_order(M, 27)   # 2026-10-09 choice order: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-23 topic 27 for the teacher's own-voice reading, built like topic 26 (t26.py ai_redo_t26). Every topic-27
+# video, the camera lesson 'wp-106' included (she reads it with the camera on, in three parts of about 3-4 minutes,
+# math_patches/_camera_parts.py), has ONE spec in _ai_vis_t27.py that drives the script (ai_scripts/<vid>.json), the
+# visual plan (_ai_visual.py format) and the slides: each video is rebuilt from the spec and _ai_visual.apply() adds the
+# click items, POINT highlights and pen marks around it. R37: the lessons that carry the core methods are split into parts
+# too (not on camera; CP.add_to_course adds the parts). A non-camera video with a take recorded before AI27_CUTOFF (UTC)
+# keeps that version (none are recorded). The summary video r26-t27-summary is not rebuilt: the summary page
+# summary_pages/t27.json replaces it (the old ai_scripts/r26-t27-summary.json is not used by this hook).
+# Also here (topic-27 course data, teacher decisions in ~/Downloads/Topic-27-AI-scripts-review.md):
+#   - R37 order: the lesson 'r26-t27-special' (trains, circular tracks) moves before g121, the first circular-track
+#     question, so every lesson comes before the first question that uses it;
+#   - g120: choice "8" becomes "4.8" (60% less time, the classic trap), so her estimate "twice as fast -> 6 h" rules out
+#     three choices with one easy number again (Hebrew-vs-English report, section 3 #3);
+#   - one practice question with a circumference route (real exam 2021_spring_q2_13; circles are topic 33, earlier in the
+#     plan): q-r26-t27-40.
+# Runs LAST. (env AIVIS_T27 = another spec file, for tests)
+# =====================================================================================================================
+AI27_CUTOFF = '2026-10-23T00-00-00'
+AI27_CAMERA = 'wp-106'
+
+
+def _ai27_recorded(vid):
+    import glob, os, re
+    pat = re.compile(re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in glob.glob(os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(os.path.basename(f))
+        if m and m.group(1) < AI27_CUTOFF: return True
+    return False
+
+
+def _ai27_mod(name, path=None):
+    import importlib.util, os, sys
+    if name not in sys.modules:
+        p = path or os.path.join(os.path.dirname(os.path.abspath(__file__)), name + '.py')
+        if not os.path.exists(p): return None
+        spec = importlib.util.spec_from_file_location(name, p); m = importlib.util.module_from_spec(spec)
+        sys.modules[name] = m; spec.loader.exec_module(m)
+    return sys.modules[name]
+
+
+def _ai27_course(M):
+    # R37 order: the special-cases lesson (circular tracks) before g121, the first circular-track question
+    if 'r26-t27-special' in M.D['videos'] and M._flow_index('r26-t27-special') > M._flow_index('wp27-g121'):
+        M.move('r26-t27-special', M.section_of('r26-t27-special'), before='wp27-g121')
+    # g120: the choice 8 -> 4.8 (60% less time), so "twice as fast: 6 hours" rules out 4.8, 6 and 19.2 at once
+    q = M.q('wp27-g120')
+    if q['choicesRich'][1] in ('$8$', '8'):
+        M.set_q('wp27-g120', choices=['$6$', '$4.8$', '$19.2$', '$7.5$'], correct=4, expl=[
+            '60% faster: the new speed is $1.6$ times the old speed.',
+            'Same distance: the time is divided by $1.6$. $12\\div1.6=\\frac{120}{16}=7.5$ hours.',
+            'Estimate: twice as fast would take $\\frac{12}{2}=6$ hours. The new ferry is less than twice as fast, so it '
+            'takes more than $6$ hours: $6$ and $4.8$ are out. It is faster than the old ferry, so it takes less than '
+            '$12$ hours: $19.2$ is out. Only $7.5$ is left.',
+            'Trap: 60% faster does not mean 60% less time. $12-0.6\\times12=4.8$ is that mistake; the time is multiplied by '
+            '$\\frac{1}{1.6}=\\frac{5}{8}$. And $19.2=12\\times1.6$ multiplies instead of dividing.'])
+    # a practice question with a circumference route (2021_spring_q2_13 type; new numbers)
+    if 'q-r26-t27-40' not in M.D['questions']:
+        M.new_q('q-r26-t27-40', 27,
+                'A cyclist rides 3 laps of a circular route whose radius is 2 km, at a constant speed of $4\\pi$ kph. '
+                'How many hours does she ride?',
+                ['$6$', '$2$', '$3$', '$1\\frac{1}{2}$'], 3,
+                ['One lap is the circumference: $2\\pi r=2\\pi\\cdot2=4\\pi$ km.',
+                 'Three laps: $3\\cdot4\\pi=12\\pi$ km.',
+                 'Time $=$ distance $\\div$ speed $=12\\pi\\div4\\pi=3$ hours. The $\\pi$ cancels.',
+                 'Trap: $1\\frac{1}{2}$ uses $\\pi r$ for a lap (half the circumference); $6$ uses the diameter as the radius.'])
+        M.place_q('q-r26-t27-40', 'wp27-practice', after='wp27-p19')
+
+
+def ai_redo_t27(M):
+    import os
+    _ai27_course(M)
+    S = _ai27_mod('_ai_vis_t27', os.environ.get('AIVIS_T27'))
+    if S is None: return
+    AV = _ai27_mod('_ai_visual')
+    CP = _ai27_mod('_camera_parts'); CP.add_to_course(M, S, 27)
+    for vid in S.ORDER:
+        if vid not in M.D['videos'] or (not CP.is_part(AI27_CAMERA, vid) and _ai27_recorded(vid)): continue
+        S.rebuild(M, vid)
+        AV.VIS[vid] = S.vis(vid)
+        AV.apply(M, vid)
+
+
+_apply_before_ai_redo_t27 = apply
+
+
+def apply(M):
+    _apply_before_ai_redo_t27(M)
+    ai_redo_t27(M)   # 2026-10-23 topic 27 for the teacher's reading: runs LAST

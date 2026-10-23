@@ -1,0 +1,90 @@
+{
+ "videoId": "solve-q-r26-t27-05",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A cyclist rides from home to work at a constant speed. If she rode twenty-five percent faster, the trip would take twelve minutes less. How many minutes does the trip take at her usual speed?",
+    "voice": "calm",
+    "at": [
+     "A cyclist rides from home to work"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the route is the same, and the speed changes by a percent. They ask for the usual time, not the new one.",
+    "at": [
+     "They ask for the usual time"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. First by understanding, like in the lesson. Twenty-five percent faster is times five quarters. On the same route we flip it, so the time is times four fifths.",
+    "at": [
+     "We'll solve",
+     "so the time is times four fifths"
+    ]
+   },
+   {
+    "say": "Times four fifths means one fifth of the trip is saved. And the question says the saving is twelve minutes.",
+    "at": [
+     "one fifth of the trip is saved",
+     "the question says",
+     "is twelve minutes"
+    ]
+   },
+   {
+    "say": "So one fifth of the trip is twelve minutes. The whole trip is five times twelve, sixty minutes.",
+    "at": [
+     "five times twelve"
+    ]
+   },
+   {
+    "say": "Careful with forty-eight, choice number two. It's sixty minus twelve, the new time. And it's also what you get if you think the time drops by twenty-five percent. They ask for the usual time.",
+    "at": [
+     "number two. It's",
+     "It's sixty minus twelve",
+     "And it's also",
+     "They ask for the usual time"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers. We start again from the givens. Let's try sixty minutes. To make it easy, say the trip is sixty kilometers at sixty kilometers per hour. That takes one hour, sixty minutes.",
+    "at": [
+     "Now let's",
+     "the givens. Let's",
+     "Let's try sixty minutes",
+     "To make it"
+    ]
+   },
+   {
+    "say": "Now she rides twenty-five percent faster. A quarter of sixty is fifteen, so sixty plus fifteen, seventy-five kilometers per hour.",
+    "at": [
+     "sixty plus fifteen"
+    ]
+   },
+   {
+    "say": "Sixty kilometers at seventy-five is sixty over seventy-five, four fifths of an hour. That's forty-eight minutes.",
+    "at": [
+     "sixty over seventy-five",
+     "of an hour"
+    ]
+   },
+   {
+    "say": "Sixty minus forty-eight is twelve minutes less. That's exactly the given.",
+    "at": [
+     "Sixty minus forty-eight",
+     "minutes less. That's",
+     "the given"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

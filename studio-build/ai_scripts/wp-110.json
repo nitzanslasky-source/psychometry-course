@@ -1,0 +1,145 @@
+{
+ "videoId": "wp-110",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now speed ratios.",
+   {
+    "say": "Some motion questions need almost no calculation. We only need ratios, the same way and opposite ways.",
+    "at": [
+     "almost no calculation"
+    ]
+   },
+   "Ratios run through the whole quantitative section. And in motion, they save a lot of work."
+  ],
+  [
+   {
+    "say": "These rules are just like the ones in work and rate. First, when the time is fixed, the speed and the distance go the same way.",
+    "at": [
+     "like the ones",
+     "when the time is fixed",
+     "the speed and"
+    ]
+   },
+   {
+    "say": "Say I have one hour to run. At eight kilometers per hour, I cover eight kilometers.",
+    "at": [
+     "At eight kilometers per hour",
+     "I cover eight"
+    ]
+   },
+   {
+    "say": "At twelve kilometers per hour, I cover twelve kilometers. The faster I run, the farther I get.",
+    "at": [
+     "At twelve kilometers per hour",
+     "I cover twelve"
+    ]
+   },
+   {
+    "say": "Eight to twelve is two to three. So if the speeds are two to three, the distances are two to three too.",
+    "at": [
+     "if the speeds are two to three",
+     "two to three too"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Second, when the speed is fixed, the time and the distance go the same way too.",
+    "at": [
+     "when the speed is fixed",
+     "the time and"
+    ]
+   },
+   {
+    "say": "I run at ten kilometers per hour. In one hour I cover ten kilometers. In two hours, twenty.",
+    "at": [
+     "I run at ten kilometers per hour",
+     "In one hour"
+    ]
+   },
+   {
+    "say": "In three hours, thirty. The more time I have, the farther I get.",
+    "at": [
+     "In three hours, thirty",
+     "The more time"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Third, when the distance is fixed, the speed and the time go opposite ways. This is where students slip.",
+    "at": [
+     "when the distance is fixed",
+     "the speed and"
+    ]
+   },
+   {
+    "say": "From my house to a friend's house is twelve kilometers. At four kilometers per hour, twelve divided by four is three hours.",
+    "at": [
+     "At four kilometers per hour",
+     "twelve divided by"
+    ]
+   },
+   {
+    "say": "At six kilometers per hour, twelve divided by six is two hours. The faster I go, the less time it takes.",
+    "at": [
+     "At six kilometers per hour",
+     "The faster I"
+    ]
+   },
+   {
+    "say": "The speeds are four to six, that's two to three. And the times are three to two. The ratio flips.",
+    "at": [
+     "The ratio flips"
+    ]
+   },
+   {
+    "say": "Why does it flip? Because the speed times the time must stay twelve. Four times three is twelve, and six times two is twelve.",
+    "at": [
+     "Because the speed",
+     "Four times three is twelve",
+     "and six times"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So the real skill is to spot when to use these rules. Before we use a rule, we ask, what is fixed here? The time, the speed, or the distance?",
+    "at": [
+     "is to spot",
+     "what is fixed here",
+     "The time, the"
+    ]
+   },
+   {
+    "say": "Let's try four quick situations. Two cars drive the same three hours. The time is fixed, so the distances follow the speeds.",
+    "at": [
+     "Two cars drive the same three hours",
+     "The time is"
+    ]
+   },
+   {
+    "say": "Someone drives to a town and back on the same road. The distance is fixed, so the times flip.",
+    "at": [
+     "on the same road",
+     "The distance is"
+    ]
+   },
+   {
+    "say": "Two people start together and stop together, when they meet. The time is fixed, so the distances follow the speeds.",
+    "at": [
+     "Two people start together",
+     "stop together, when"
+    ]
+   },
+   {
+    "say": "A train keeps the same speed all day. The speed is fixed, so more time means more distance. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "A train keeps the same speed",
+     "speed all day"
+    ]
+   }
+  ]
+ ]
+}

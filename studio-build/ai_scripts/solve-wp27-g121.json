@@ -1,0 +1,120 @@
+{
+ "videoId": "solve-wp27-g121",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Two runners start together from the same point of a circular track, running in the same direction. The track is four hundred meters long. Their speeds are twelve and nine kilometers per hour. How many minutes pass between consecutive meetings?",
+    "voice": "calm",
+    "at": [
+     "Two runners start together"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "First, what do consecutive meetings mean? They are two meetings that come one right after the other.",
+    "at": [
+     "consecutive meetings mean",
+     "consecutive meetings mean",
+     "consecutive meetings mean",
+     "They are two"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, with relative speed, like in the lesson. They run the same way, so the fast one meets the slow one again when it has gained one full lap.",
+    "at": [
+     "We'll solve",
+     "They run the same way",
+     "so the fast",
+     "one full lap"
+    ]
+   },
+   {
+    "say": "And it doesn't have to start at the start line. Any two meetings in a row are exactly one lap apart.",
+    "at": [
+     "And it doesn't",
+     "Any two meetings in a row"
+    ]
+   },
+   {
+    "say": "Some questions ask instead, when does the fast one lap the slow one? It's the same question, in other words.",
+    "at": [
+     "Some questions ask"
+    ]
+   },
+   "So we need the time it takes the fast one to gain one lap."
+  ],
+  [
+   {
+    "say": "It's a chase, so we subtract the speeds. Twelve minus nine is three. Imagine the slow one stands still, and the fast one runs at three kilometers per hour.",
+    "at": [
+     "we subtract the",
+     "Twelve minus nine is three",
+     "Imagine the slow"
+    ]
+   },
+   {
+    "say": "The fast one needs one lap, four hundred meters. That's zero point four kilometers.",
+    "at": [
+     "That's zero point four kilometers"
+    ]
+   },
+   {
+    "say": "Three kilometers take sixty minutes. So one kilometer takes sixty divided by three, twenty minutes.",
+    "at": [
+     "Three kilometers take sixty minutes",
+     "one kilometer takes sixty divided by three",
+     "by three, twenty"
+    ]
+   },
+   {
+    "say": "Zero point four of a kilometer takes zero point four times twenty, eight minutes.",
+    "at": [
+     "zero point four times twenty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the math way, with an equation, as a check. We start again from the givens. Both runners run for the same time. Let's call it t, in hours.",
+    "at": [
+     "Now the",
+     "the givens. Both"
+    ]
+   },
+   {
+    "say": "The fast one covers twelve t, and the slow one covers nine t. The fast one covers one more lap, zero point four kilometers. So twelve t is equal to nine t plus zero point four.",
+    "at": [
+     "So twelve t is equal to nine t",
+     "to nine t"
+    ]
+   },
+   {
+    "say": "We take nine t off both sides. Three t is zero point four.",
+    "at": [
+     "Three t is zero point four"
+    ]
+   },
+   {
+    "say": "So t is zero point four divided by three. That's four thirtieths, two fifteenths of an hour.",
+    "at": [
+     "zero point four divided by three",
+     "That's four thirtieths"
+    ]
+   },
+   {
+    "say": "Two fifteenths of sixty minutes. Sixty divided by fifteen is four, and four times two is eight minutes. The same answer.",
+    "at": [
+     "Sixty divided by fifteen is four",
+     "four, and four"
+    ]
+   },
+   {
+    "say": "Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

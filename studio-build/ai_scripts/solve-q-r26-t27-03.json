@@ -1,0 +1,102 @@
+{
+ "videoId": "solve-q-r26-t27-03",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Two cyclists start together from the same point of a circular track one point two kilometers long, and ride in opposite directions. Their speeds are twenty and sixteen kilometers per hour. After how many minutes do they meet for the first time?",
+    "voice": "calm",
+    "at": [
+     "Two cyclists start together"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ride toward each other around the track. They ask when they first meet, in minutes.",
+    "at": [
+     "they ride toward each other",
+     "they ride toward each other",
+     "around the track",
+     "They ask when they first meet",
+     "meet, in minutes"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, like in the lesson. In opposite directions, they meet when together they have covered one full lap, one point two kilometers.",
+    "at": [
+     "We'll solve",
+     "together they have covered one full lap",
+     "full lap, one"
+    ]
+   },
+   {
+    "say": "They move toward each other, so we add the speeds. Twenty plus sixteen is thirty-six kilometers per hour.",
+    "at": [
+     "Twenty plus sixteen"
+    ]
+   },
+   {
+    "say": "So we need the time for one lap at thirty-six kilometers per hour.",
+    "at": [
+     "So we need"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The time is one point two divided by thirty-six. We multiply both by ten, so it's twelve over three hundred sixty. That's one thirtieth of an hour.",
+    "at": [
+     "The time is one point two divided by thirty-six",
+     "two divided by",
+     "so it's twelve over three hundred",
+     "hundred sixty. That's",
+     "one thirtieth of an hour"
+    ]
+   },
+   {
+    "say": "A thirtieth of sixty minutes is two minutes.",
+    "at": [
+     "A thirtieth of sixty minutes"
+    ]
+   },
+   {
+    "say": "Eighteen, choice number one, is the same-direction answer. It subtracts the speeds, but here they ride toward each other.",
+    "at": [
+     "number one, is",
+     "It subtracts the speeds",
+     "here they ride toward each other"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with identical ratios. We start again from the givens. Together they cover twenty plus sixteen, thirty-six kilometers in sixty minutes.",
+    "at": [
+     "Now by",
+     "the givens. Together",
+     "Together they cover",
+     "thirty-six kilometers in sixty minutes"
+    ]
+   },
+   {
+    "say": "We need one lap, one point two kilometers. Thirty-six divided by thirty is one point two. So we divide by thirty.",
+    "at": [
+     "We need one lap",
+     "point two kilometers"
+    ]
+   },
+   {
+    "say": "So the time is divided by thirty too. Sixty divided by thirty is two minutes.",
+    "at": [
+     "Sixty divided by thirty"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

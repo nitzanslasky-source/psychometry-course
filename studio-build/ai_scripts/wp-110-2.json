@@ -1,0 +1,155 @@
+{
+ "videoId": "wp-110-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with speed ratios, and see them in a meeting."
+  ],
+  [
+   {
+    "say": "Now a new example. Two cyclists start at the same time from the two ends of a ninety-kilometer road, and ride toward each other.",
+    "at": [
+     "Two cyclists start at the same time",
+     "from the two ends",
+     "ninety-kilometer road"
+    ]
+   },
+   {
+    "say": "The slow one rides at ten kilometers per hour, and the fast one at twenty. What part of the road does the slow one cover until they meet?",
+    "at": [
+     "The slow one rides at ten",
+     "ten kilometers per",
+     "and the fast one at twenty",
+     "does the slow"
+    ]
+   },
+   {
+    "say": "They start together, and they stop together when they meet. So the time is fixed, and the distances follow the speeds. Ten to twenty is one to two.",
+    "at": [
+     "Ten to twenty is one to two"
+    ]
+   },
+   {
+    "say": "So we cut the road into one plus two, three equal parts.",
+    "at": [
+     "road into one",
+     "three equal parts"
+    ]
+   },
+   {
+    "say": "The slow cyclist covers one part, and the fast one covers two parts. So the slow one covers one third of the road.",
+    "at": [
+     "The slow cyclist covers one part",
+     "part, and the",
+     "So the slow one covers one third"
+    ]
+   },
+   {
+    "say": "Let's check it. They meet after three hours. The slow one rides thirty kilometers, and the fast one sixty. Thirty plus sixty is ninety, the whole road.",
+    "at": [
+     "They meet after three hours",
+     "kilometers, and the"
+    ]
+   },
+   "So in a meeting, the road is cut into the sum of the ratio parts."
+  ],
+  [
+   {
+    "say": "One more tool. What if two things change at once, the speed and the time? Then we use the V, like in the work topic.",
+    "at": [
+     "if two things"
+    ]
+   },
+   {
+    "say": "Now a new example. Car A drives three times as fast as car B, but for half as long. Car A covers ninety kilometers. How far does car B go?",
+    "at": [
+     "Car A drives three times as fast",
+     "as fast as"
+    ]
+   },
+   {
+    "say": "We make the table speed, distance and time, with the distance in the middle. The distance is the speed times the time, just like work is the team times the time.",
+    "at": [
+     "We make the table speed, distance and time",
+     "distance and time"
+    ]
+   },
+   {
+    "say": "No real speeds or times are given, so we put in the relations. Car A gets speed three, and time one. It covers ninety.",
+    "at": [
+     "Car A gets speed three",
+     "and time one"
+    ]
+   },
+   {
+    "say": "Car B gets speed one. Its time is two, because car A drives half as long as car B. Its distance is the question.",
+    "at": [
+     "Car B gets speed one",
+     "Its time is"
+    ]
+   },
+   {
+    "say": "The unknown is in the middle column. So the V is upside down. It joins car B's speed, car A's distance, and car B's time.",
+    "at": [
+     "So the V is upside down",
+     "It joins car"
+    ]
+   },
+   {
+    "say": "We multiply the V, and divide by the other two. One times ninety times two is a hundred eighty. Divided by three times one, that's sixty kilometers.",
+    "at": [
+     "We multiply the V",
+     "divide by the",
+     "One times ninety times two",
+     "is a hundred",
+     "Divided by three times one",
+     "that's sixty kilometers"
+    ]
+   },
+   {
+    "say": "Why does it work? Car B has a third of car A's speed, so in the same time it covers a third of the distance. Ninety times a third is thirty.",
+    "at": [
+     "Ninety times a third"
+    ]
+   },
+   {
+    "say": "But car B drives twice as long, so it covers twice that. Thirty times two is sixty kilometers.",
+    "at": [
+     "But car B",
+     "Thirty times two is sixty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. When the time or the speed is fixed, the other two go the same way.",
+    "at": [
+     "When the time or the speed is fixed",
+     "speed is fixed"
+    ]
+   },
+   {
+    "say": "When the distance is fixed, the speed and the time go opposite ways, so the ratio flips.",
+    "at": [
+     "When the distance is fixed",
+     "the speed and"
+    ]
+   },
+   {
+    "say": "In a meeting, the distances follow the speeds, and the road is cut into the sum of the parts.",
+    "at": [
+     "In a meeting",
+     "follow the speeds"
+    ]
+   },
+   {
+    "say": "And when two things change at once, use the V, with the distance in the middle.",
+    "at": [
+     "when two things change",
+     "once, use the"
+    ]
+   },
+   "Take a moment to memorize this. Now try the next questions, and I'll see you in the next video."
+  ]
+ ]
+}

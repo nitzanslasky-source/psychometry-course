@@ -1,0 +1,126 @@
+{
+ "videoId": "r26-t27-special",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now three special cases from the exam. Trains that have a length, boats on a river, and circular tracks.",
+   {
+    "say": "The formula stays the same. Distance is equal to speed times time. Only the distance, or the speed, is different.",
+    "at": [
+     "same. Distance is"
+    ]
+   },
+   "In this lesson we learn the trains and the circular tracks. The river comes in its own question."
+  ],
+  [
+   {
+    "say": "Until now, every traveler was a dot. But a train is not a dot. It has a length.",
+    "at": [
+     "was a dot"
+    ]
+   },
+   {
+    "say": "Now a new example. A train two hundred meters long passes a post, at twenty-five meters a second. How long does that take?",
+    "at": [
+     "A train two hundred meters long",
+     "A train two hundred meters long",
+     "passes a post",
+     "meters a second"
+    ]
+   },
+   {
+    "say": "The train starts passing when its front reaches the post. It finishes when its back passes the post.",
+    "at": [
+     "It finishes when its back passes",
+     "passes the post"
+    ]
+   },
+   {
+    "say": "So the front moves exactly one train length, two hundred meters. Past a post, the train covers its own length.",
+    "at": [
+     "Past a post, the train covers its own length"
+    ]
+   },
+   {
+    "say": "The time is the distance divided by the speed. Two hundred divided by twenty-five is eight seconds.",
+    "at": [
+     "The time is",
+     "Two hundred divided by twenty-five",
+     "is eight seconds"
+    ]
+   },
+   "Now a second example, from a real exam. A train passes a man on a platform at a hundred twenty kilometers per hour. It takes half a minute. How long is the train?",
+   {
+    "say": "A hundred twenty kilometers in sixty minutes is two kilometers every minute.",
+    "at": [
+     "two kilometers every minute"
+    ]
+   },
+   {
+    "say": "In half a minute, the train moves one kilometer.",
+    "at": [
+     "In half a minute",
+     "train moves one"
+    ]
+   },
+   {
+    "say": "Passing a man is like passing a post. So the distance it moves is its own length. The train is one kilometer long.",
+    "at": [
+     "The train is one kilometer long"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a bridge. The same train, two hundred meters long, at twenty-five meters a second, crosses a bridge three hundred meters long completely.",
+    "at": [
+     "Now a bridge",
+     "train, two hundred",
+     "crosses a bridge",
+     "meters long completely"
+    ]
+   },
+   {
+    "say": "It starts when the front gets on the bridge.",
+    "at": [
+     "It starts when the front gets on"
+    ]
+   },
+   {
+    "say": "And it ends when the back gets off the bridge.",
+    "at": [
+     "it ends when the back gets off",
+     "gets off the"
+    ]
+   },
+   {
+    "say": "So the front moves across the whole bridge, and then one more train length. A bridge means the bridge plus the train.",
+    "at": [
+     "A bridge means the bridge plus the train"
+    ]
+   },
+   {
+    "say": "Three hundred plus two hundred is five hundred meters.",
+    "at": [
+     "Three hundred plus two hundred",
+     "is five hundred"
+    ]
+   },
+   {
+    "say": "Five hundred divided by twenty-five is twenty seconds.",
+    "at": [
+     "Five hundred divided by twenty-five",
+     "is twenty seconds"
+    ]
+   },
+   {
+    "say": "A lot of students divide only the bridge, three hundred divided by twenty-five, twelve seconds. That forgets the train's own length.",
+    "at": [
+     "three hundred divided by twenty-five",
+     "That forgets the"
+    ]
+   },
+   "A platform or a tunnel works the same way as a bridge. Its length, plus the train. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}

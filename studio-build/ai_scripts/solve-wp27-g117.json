@@ -1,0 +1,164 @@
+{
+ "videoId": "solve-wp27-g117",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A motorbike travels nine kilometers in fifteen minutes. A train travels fifteen kilometers in nine minutes. What is the difference between their speeds, in kilometers per hour?",
+    "voice": "calm",
+    "at": [
+     "A motorbike travels"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for speeds in kilometers per hour, but the times are in minutes. The units don't match.",
+    "at": [
+     "they ask for speeds",
+     "units don't match"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way. We turn the minutes into hours.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "Let's start with the motorbike. Fifteen minutes is fifteen out of sixty, a quarter of an hour.",
+    "at": [
+     "Fifteen minutes is fifteen out of sixty",
+     "of sixty, a"
+    ]
+   },
+   {
+    "say": "The speed is the distance divided by the time. Nine divided by a quarter is nine times four, thirty-six kilometers per hour.",
+    "at": [
+     "Nine divided by a quarter",
+     "is nine times"
+    ]
+   },
+   {
+    "say": "Now the train. Nine minutes is nine sixtieths of an hour.",
+    "at": [
+     "Nine minutes is nine sixtieths",
+     "of an hour"
+    ]
+   },
+   {
+    "say": "Fifteen divided by nine sixtieths is fifteen times sixty, over nine.",
+    "at": [
+     "Fifteen divided by nine sixtieths",
+     "is fifteen times"
+    ]
+   },
+   {
+    "say": "Fifteen times sixty is nine hundred, and nine hundred divided by nine is a hundred. So the train goes a hundred kilometers per hour.",
+    "at": [
+     "nine hundred divided by nine",
+     "is a hundred"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "They ask for the difference, so a hundred minus thirty-six. Before a long subtraction, here are two quick ways.",
+    "at": [
+     "They ask for the difference",
+     "a hundred minus thirty-six",
+     "a long subtraction"
+    ]
+   },
+   {
+    "say": "Here's the first way. We add four to both numbers, so the second one is a round forty. A hundred four minus forty is sixty-four.",
+    "at": [
+     "A hundred four minus forty"
+    ]
+   },
+   {
+    "say": "Here's another way. We walk from thirty-six to a round forty, that's four. Then from forty to a hundred, that's sixty.",
+    "at": [
+     "We walk from thirty-six",
+     "a round forty"
+    ]
+   },
+   {
+    "say": "Four plus sixty is sixty-four. So the difference is sixty-four kilometers per hour.",
+    "at": [
+     "Four plus sixty",
+     "So the difference"
+    ]
+   },
+   {
+    "say": "A hundred thirty-six, choice number four, adds the speeds instead.",
+    "at": [
+     "adds the speeds instead"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding, with identical ratios. This way saves most of the work. We start again from the givens.",
+    "at": [
+     "identical ratios. This",
+     "start again from"
+    ]
+   },
+   {
+    "say": "The motorbike goes nine kilometers in fifteen minutes. We want one hour, sixty minutes.",
+    "at": [
+     "The motorbike goes nine kilometers",
+     "The motorbike goes nine kilometers",
+     "in fifteen minutes",
+     "We want one hour"
+    ]
+   },
+   {
+    "say": "From fifteen to sixty is times four. So the distance is times four too. Nine times four is thirty-six kilometers in one hour.",
+    "at": [
+     "From fifteen to",
+     "Nine times four is thirty-six",
+     "kilometers in one"
+    ]
+   },
+   {
+    "say": "The train goes fifteen kilometers in nine minutes. From nine to sixty isn't a whole step. So first we divide both by three. That's five kilometers every three minutes.",
+    "at": [
+     "The train goes fifteen kilometers",
+     "The train goes fifteen kilometers",
+     "in nine minutes",
+     "five kilometers every three minutes"
+    ]
+   },
+   {
+    "say": "An hour is twenty times three minutes. So five times twenty, a hundred kilometers in one hour.",
+    "at": [
+     "An hour is twenty times three",
+     "three minutes. So",
+     "a hundred kilometers in one hour"
+    ]
+   },
+   {
+    "say": "If you don't see that step, use the triangle value from topic twenty-two. Multiply along the diagonal, fifteen times sixty, and divide by what's left, nine. That's a hundred too.",
+    "at": [
+     "If you don't",
+     "Multiply along the diagonal",
+     "times sixty, and"
+    ]
+   },
+   {
+    "say": "A hundred minus thirty-six is sixty-four. The same answer.",
+    "at": [
+     "A hundred minus thirty-six is sixty-four",
+     "sixty-four. The same"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

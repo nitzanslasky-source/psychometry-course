@@ -1,0 +1,245 @@
+{
+ "videoId": "wp-108-after",
+ "style": "the teacher reads it herself (Reading Studio), topic-27 scripts (2026-10-23): math_patches/_ai_vis_t27.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now average speed.",
+   {
+    "say": "Honestly, it's rare on the exam. But the idea behind it shows up in other words, and it hides a classic trap. So let's understand it properly.",
+    "at": [
+     "the exam. But"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Picture my hand moving across this page. Slow at first, then fast, then slow again, and then it stops.",
+    "at": [
+     "across this page"
+    ]
+   },
+   "My speed kept changing. So what is my average speed?",
+   "The average speed is the one constant speed that covers the same distance in the same time.",
+   "The exam may not say average speed. It may say, if it had moved at a constant speed. That's the same thing."
+  ],
+  [
+   {
+    "say": "Here is how we find it. The average speed is the total distance divided by the total time.",
+    "at": [
+     "The average speed is the total distance divided",
+     "total distance divided"
+    ]
+   },
+   "We don't care how fast we went in each part. We only ask, how far in total, and how long in total.",
+   {
+    "say": "Now a new example. A runner runs twenty-four kilometers in two hours, at twelve kilometers per hour. Then she runs six more kilometers in one hour, at six kilometers per hour.",
+    "at": [
+     "Now a new example",
+     "A runner runs twenty-four kilometers",
+     "in two hours",
+     "Then she runs six more kilometers",
+     "kilometers in one"
+    ]
+   },
+   {
+    "say": "The total distance is twenty-four plus six, thirty kilometers.",
+    "at": [
+     "twenty-four plus six",
+     "thirty kilometers"
+    ]
+   },
+   {
+    "say": "The total time is two plus one, three hours.",
+    "at": [
+     "two plus one",
+     "three hours"
+    ]
+   },
+   {
+    "say": "So the average speed is thirty divided by three, ten kilometers per hour.",
+    "at": [
+     "thirty divided by three",
+     "ten kilometers per hour"
+    ]
+   },
+   {
+    "say": "And the middle of twelve and six is nine, not ten. So here, adding the two speeds and halving them gives a wrong answer.",
+    "at": [
+     "the middle of twelve and six is nine",
+     "So here, adding"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example, with a stop. A bus drives a hundred twenty kilometers in two hours. Then it stops for one hour. Then it drives sixty more kilometers in one hour.",
+    "at": [
+     "with a stop",
+     "A bus drives a hundred twenty kilometers",
+     "twenty kilometers in"
+    ]
+   },
+   {
+    "say": "The total distance is a hundred twenty plus sixty, a hundred eighty kilometers.",
+    "at": [
+     "a hundred twenty plus sixty",
+     "a hundred eighty"
+    ]
+   },
+   {
+    "say": "The total time includes the stop, because the trip includes it. Two plus one plus one is four hours.",
+    "at": [
+     "Two plus one plus one",
+     "is four hours"
+    ]
+   },
+   {
+    "say": "A hundred eighty divided by four is forty-five. So the average speed is forty-five kilometers per hour.",
+    "at": [
+     "A hundred eighty divided by four",
+     "four is forty-five"
+    ]
+   },
+   {
+    "say": "Without the stop, it would be a hundred eighty divided by three, sixty. So the stop matters.",
+    "at": [
+     "it would be a hundred eighty divided by three",
+     "eighty divided by"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And here's the big trap. The average speed is not the average of the two speeds. At least, not necessarily.",
+    "at": [
+     "trap. The average"
+    ]
+   },
+   {
+    "say": "Now a new example. A car drives to a town at a hundred twenty kilometers per hour. It comes back on the same road at sixty.",
+    "at": [
+     "A car drives to a town",
+     "town at a"
+    ]
+   },
+   {
+    "say": "Most students say ninety, the middle of a hundred twenty and sixty. Let's check it.",
+    "at": [
+     "Most students say ninety",
+     "middle of a"
+    ]
+   },
+   {
+    "say": "The distance isn't given, so we pick a friendly one, a number that both speeds divide. Let's say a hundred twenty kilometers each way.",
+    "at": [
+     "a hundred twenty kilometers each way"
+    ]
+   },
+   {
+    "say": "There, a hundred twenty kilometers at a hundred twenty kilometers per hour takes one hour.",
+    "at": [
+     "There, a hundred twenty kilometers",
+     "at a hundred"
+    ]
+   },
+   {
+    "say": "Back, a hundred twenty kilometers at sixty takes two hours.",
+    "at": [
+     "Back, a hundred twenty kilometers",
+     "at sixty takes"
+    ]
+   },
+   {
+    "say": "So the car drives two hundred forty kilometers in three hours.",
+    "at": [
+     "two hundred forty kilometers in three"
+    ]
+   },
+   {
+    "say": "Two hundred forty divided by three is eighty. So the average speed is eighty, not ninety.",
+    "at": [
+     "Two hundred forty divided by three",
+     "three is eighty"
+    ]
+   },
+   "Why is it lower? The two distances are equal, but the slow part takes more time. So the car spends more time at sixty, and that pulls the average toward sixty.",
+   "Remember weighted averages, from topic twenty-five? The bigger group pulls the average toward it. Here, the longer time does the pulling."
+  ],
+  [
+   {
+    "say": "Now a different case. A car drives one hour at forty kilometers per hour, and then one more hour at eighty.",
+    "at": [
+     "A car drives one hour at forty",
+     "at forty kilometers"
+    ]
+   },
+   {
+    "say": "The total distance is forty plus eighty, a hundred twenty kilometers.",
+    "at": [
+     "forty plus eighty"
+    ]
+   },
+   {
+    "say": "The total time is two hours. So the average speed is a hundred twenty divided by two, sixty.",
+    "at": [
+     "The total time",
+     "a hundred twenty divided by two"
+    ]
+   },
+   {
+    "say": "And sixty is exactly the middle of forty and eighty.",
+    "at": [
+     "exactly the middle of forty and eighty"
+    ]
+   },
+   {
+    "say": "Why? Each speed lasts the same time, so each one pulls the same.",
+    "at": [
+     "Each speed lasts"
+    ]
+   },
+   {
+    "say": "So before we calculate, we ask, equal distances or equal times? With equal times, the plain average works.",
+    "at": [
+     "With equal times"
+    ]
+   },
+   {
+    "say": "With equal distances, the answer is closer to the slower speed.",
+    "at": [
+     "With equal distances",
+     "is closer to"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. The average speed is the total distance divided by the total time. And a stop counts as time.",
+    "at": [
+     "The average speed is the total distance",
+     "total distance divided"
+    ]
+   },
+   {
+    "say": "It's not the average of the speeds.",
+    "at": [
+     "It's not the average of the speeds"
+    ]
+   },
+   {
+    "say": "First ask, equal distances, or equal times?",
+    "at": [
+     "First ask"
+    ]
+   },
+   {
+    "say": "And if the distance is missing, pick a friendly number.",
+    "at": [
+     "if the distance is missing",
+     "pick a friendly"
+    ]
+   },
+   "Now try the next question, and I'll see you in the next video."
+  ]
+ ]
+}
