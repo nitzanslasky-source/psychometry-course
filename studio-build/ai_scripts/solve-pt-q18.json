@@ -26,70 +26,53 @@
     ]
    },
    {
-    "say": "We want to estimate that middle part. Let's draw helper lines to get bounds from the given lengths. We won't need to calculate the missing length exactly.",
+    "say": "We'll solve it in two different ways. Let's start with estimation. To calculate that middle part exactly, we'd need a helper line and Pythagoras. But what if we don't see the helper line? Then we estimate the middle part from the figure.",
     "at": [
      "that middle part",
-     "helper lines to",
-     "the given lengths"
+     "need a helper"
     ]
    },
+   "But wait. On the exam, a figure is not necessarily drawn to scale. So how can we estimate from the figure?",
    {
-    "say": "But wait. On the exam, a figure is not necessarily drawn to scale. So can I estimate from the figure?",
+    "say": "In most cases, we can tell. First, most figures on the exam are accurate. Second, a rule of thumb. Regular shapes are drawn accurately: a square, a circle, an equilateral triangle, a cube.",
     "at": [
-     "On the exam"
+     "most figures on the exam are accurate",
+     "Second, a rule",
+     "Regular shapes are drawn accurately",
+     "a square, a circle",
+     "equilateral triangle, a"
     ]
    },
-   {
-    "say": "No, we shouldn't measure the sketch. Let's use the lengths. The middle circle touches the top and bottom sides, four apart. Its diameter is four, so its radius is two. Draw a line from A to O, joining two touching circles' centers.",
-    "at": [
-     "Let's use the lengths",
-     "The middle circle",
-     "Its diameter is four",
-     "its radius is"
-    ]
-   },
-   {
-    "say": "The corner circle has radius two, and the middle circle has radius two. The circles touch from the outside, so A O is two plus two, four. From O, draw a perpendicular to side A B. Call its foot H. O is two below the top side, so A H is two. Now A H O is a right triangle, with hypotenuse four and one leg two.",
-    "at": [
-     "A O is two plus two, four",
-     "From O, draw",
-     "hypotenuse four and one leg two"
-    ]
-   }
+   "Why? A regular shape can't be drawn any other way. Here we have circles, and the middle circle touches all four quarter circles. If we make the figure bigger or smaller, the ratios between the parts stay the same. So here we can estimate from the figure."
   ],
   [
    {
-    "say": "Call O H x. By Pythagoras, x squared plus two squared is four squared. Four squared is sixteen, and two squared is four. Subtract four, and x squared is twelve. We only need bounds for x, not its exact root.",
+    "say": "Look at the middle part. It's longer than a radius of the corner circles, and that radius is two.",
     "at": [
-     "Call O H x",
-     "By Pythagoras, x",
-     "x squared is twelve",
-     "x, not its"
+     "Look at the middle part",
+     "It's longer than a radius",
+     "of the corner"
     ]
    },
    {
-    "say": "Three squared is nine, below twelve. Four squared is sixteen, above twelve. So the positive length x is more than three and less than four.",
+    "say": "And it's shorter than the diameter of the middle circle. That diameter goes from the top side to the bottom side, so it's four.",
     "at": [
-     "more than three and less than four"
+     "it's shorter than the diameter",
+     "of the middle"
     ]
    },
+   "Can't tell by eye? Use your eraser. Mark the length of the middle part on its edge. Then hold it against a radius, and against the diameter.",
    {
-    "say": "The same construction on the right has the same hypotenuse, four, and the same vertical leg, two. So its horizontal length is also x. The whole rectangle is x plus x across. That's why A D is two x, not just x.",
+    "say": "So the middle part is more than two and less than four. A D is made of three parts: two, the middle part, and two. Two plus two plus two is six, and two plus four plus two is eight. So A D is between six and eight.",
     "at": [
-     "same construction on the right",
-     "has the same",
-     "A D is two x"
+     "So the middle part is more than two",
+     "more than two",
+     "A D is made of three parts",
+     "part, and two",
+     "So A D is between six and eight",
+     "six and eight"
     ]
    },
-   {
-    "say": "Each x is between three and four. Double both bounds, and A D is between six and eight. We got that from the right triangles, not from measuring the picture.",
-    "at": [
-     "Each x is",
-     "A D is between six and eight",
-     "We got that"
-    ]
-   },
-   "This also explains the middle part we started with. A D is between six and eight. Take away the two radius pieces, two at each end, four altogether. The middle part is therefore between two and four. Either way, the full side A D is between six and eight.",
    {
     "say": "The area is four times A D. Four times six is twenty-four, and four times eight is thirty-two. So the area is between twenty-four and thirty-two, and it isn't equal to either one.",
     "at": [
@@ -145,17 +128,62 @@
   ],
   [
    {
-    "say": "Now let's go back to x squared is twelve. If you spot a square factor inside twelve, you can finish even sooner. Twelve is four times three. So the root of twelve is the root of four times the root of three: two root three. That's x. The whole long side is two x, so it's four root three. The other side is four. Four times four root three gives sixteen root three, choice number one, without checking all the other choices. If you don't spot the root shortcut, our bounds still give a safe way to eliminate them. I'll see you in the next question.",
+    "say": "[pause] Now the math way. The estimate came from the figure. The math way uses only the given lengths, so it proves the answer. The middle circle touches the top and bottom sides, four apart. Its diameter is four, so its radius is two. Draw a line from A to O, joining two touching circles' centers.",
     "at": [
-     "x squared is twelve",
-     "If you spot",
-     "two root three. That's x",
-     "The whole long",
+     "Now the math way",
+     "The estimate came",
+     "the given lengths",
+     "top and bottom",
+     "Its diameter is four",
+     "its radius is"
+    ]
+   },
+   {
+    "say": "The corner circle has radius two, and the middle circle has radius two. The circles touch from the outside, so A O is two plus two, four. From O, draw a perpendicular to side A B. Call its foot H. O is two below the top side, so A H is two. Now A H O is a right triangle, with hypotenuse four and one leg two.",
+    "at": [
+     "A O is two plus two, four",
+     "From O, draw",
+     "hypotenuse four and one leg two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Call O H x. By Pythagoras, x squared plus two squared is four squared. Four squared is sixteen, and two squared is four. Subtract four, and x squared is twelve.",
+    "at": [
+     "Call O H x",
+     "By Pythagoras, x",
+     "x squared is twelve"
+    ]
+   },
+   {
+    "say": "The same construction on the right has the same hypotenuse, four, and the same vertical leg, two. So its horizontal length is also x. The whole rectangle is x plus x across. That's why A D is two x, not just x.",
+    "at": [
+     "same construction on the right",
+     "has the same",
+     "A D is two x"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now x itself. x squared is twelve, so x is the root of twelve. Twelve is four times three. So the root of twelve is the root of four, times the root of three. That's two root three.",
+    "at": [
+     "squared is twelve",
+     "so x is the root of twelve",
+     "Twelve is four",
+     "That's two root three"
+    ]
+   },
+   {
+    "say": "A D is two x, so it's four root three. The other side is four. Four times four root three is sixteen root three. That's choice number one, just like the estimate. Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
      "so it's four root three",
      "The other side",
-     "gives sixteen root three",
-     "choice number one",
-     "all the other"
+     "Four times four root three",
+     "is sixteen root",
+     "number one, just",
+     "Choice number one is our answer"
     ]
    }
   ]

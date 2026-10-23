@@ -324,6 +324,9 @@ STEMW = 0.8       # the question stem's width (renderer_patch.py it.stemw): it e
 
 def rebuild(M, vid):
     """replace the studio video's slides by the spec (spoken lines only); _ai_visual.apply adds cues + items."""
+    if vid == 'solve-pt-q06':
+        # Both -4 and -3 satisfy the givens; the choices ask for a possible value.
+        M.set_q('pt-q06', stem=STEMS['pt-q06'])
     v = M.video(vid); beats, sb = studio_slides(vid)
     v['beats'] = [M._beat(v, b) for b in beats]
     v.setdefault('hybrid', {})['sidebar'] = sb
@@ -814,12 +817,14 @@ f1e4 = IH('f1e4', '$13(500-x)=9(600+x)$', size=34)
 f1e5 = IH('f1e5', '$6500-13x=5400+9x$', size=34)
 f1e6 = IH('f1e6', '$1100=22x$', size=34)
 f1e7 = IH('f1e7', '$100=2x\\ \\Rightarrow\\ x=50$', size=34)
+for _it, _y in ((f1e5, 440), (f1e6, 510), (f1e7, 580)):
+    _R(_it, _y, x=1040)
 f1f1 = I('f1f1', '(1) $\\ 25$: $\\ \\frac{475}{625}=\\frac{9}{13}\\ ?$ $\\ $long to check', size=32)
 f1f2 = I('f1f2', 'Start with the most convenient answer, usually a round one', size=28)
 f1f3 = IH('f1f3', '(2) $\\ 50$: $\\ A=450,\\ \\ B=650$', size=32)
 f1f4 = IH('f1f4', '$\\frac{450}{650}=\\frac{45}{65}=\\frac{9}{13}$ ✓', size=34)
 f1f5 = I('f1f5', 'When? One number is asked, the choices are numbers, and a check is easy', size=28)
-f1f6 = IH('f1f6', '$x^2+x=110,\\quad x=?$', size=34)
+f1f6 = IH('f1f6', '$x>0,\\quad x^2+x=110,\\quad x=?$', size=34)
 f1f7 = I('f1f7', '$9\\qquad 10\\qquad 11\\qquad 12$', size=34)
 f1f8 = IH('f1f8', '$10$: $\\ 10^2+10=100+10=110$ ✓', size=34)
 
@@ -867,7 +872,7 @@ video('solve-pt-q02', 'solution', qid='pt-q02', slides=[
       L("So when do I plug in the answers? When the question asks for one number, the choices are plain numbers, and "
         "it's easy to put a choice back into the question. It helps most when the equation is long, or when you don't "
         "know how to solve it at all. It's a safety net.", show(f1f5, 'So when do I plug in the answers')),
-      L("Let's see one more example. x squared plus x equals a hundred ten. What is x, if the choices are nine, ten, "
+      L("Let's see one more example. x is positive. x squared plus x equals a hundred ten. What is x, if the choices are nine, ten, "
         "eleven, and twelve? An equation with x squared and x together, we haven't learned to solve yet. But we don't "
         "need to.", show(f1f6, 'x squared plus x equals'), show(f1f7, 'if the choices are')),
       L("Start with the round answer, ten. Ten squared is a hundred, and a hundred plus ten is a hundred ten. That's exactly what the equation needs, so it fits. So "
@@ -906,6 +911,12 @@ f1j5 = IH('f1j5', '(1) $\\ 2^3=8$ ✗', size=30)
 f1j6 = IH('f1j6', '(2) $\\ 3\\cdot2=6$ ✓', size=30)
 f1j7 = IH('f1j7', '(3) $\\ 4$ ✗', size=30)
 f1j8 = IH('f1j8', '(4) $\\ 2^4=16$ ✗', size=30)
+# Keep the new example's checks beside its calculation, clear of the old answer strip.
+for _it, _y in ((f1j1, 300), (f1j2, 360), (f1j3, 425), (f1j4, 500)):
+    _it['_x'] = 410; _it['_y'] = _y
+f1j3['w'] = 1100
+for _it, _y in ((f1j5, 500), (f1j6, 560), (f1j7, 620), (f1j8, 680)):
+    _R(_it, _y, x=1040)
 
 video('solve-pt-q03', 'solution', qid='pt-q03', slides=[
     S('Method 1 · The math way',
@@ -1031,8 +1042,8 @@ f1k = f1_fig('f1k', [
 f1m1 = I('f1m1', '$V=\\pi r^2\\cdot h$', size=34)
 f1m2 = I('f1m2', '$r=\\frac{3a}{2}$', size=32)
 f1m3 = I('f1m3', '$h=3a$', size=32)
-f1n1 = IH('f1n1', '$V=\\pi\\left(\\frac{3a}{2}\\right)^2\\cdot3a$', size=34)
-f1n2 = IH('f1n2', '$\\left(\\frac{3a}{2}\\right)^2=\\frac{9a^2}{4}$', size=34)
+f1n1 = IH('f1n1', '$V=\\pi(\\frac{3a}{2})^2\\cdot3a$', size=34)
+f1n2 = IH('f1n2', '$(\\frac{3a}{2})^2=\\frac{9a^2}{4}$', size=34)
 f1n3 = IH('f1n3', '$V=\\pi\\cdot\\frac{9a^2}{4}\\cdot3a=\\frac{27\\pi a^3}{4}$', size=34)
 f1kk = f1_fig('f1kk', [
     ('line', f1_cube),
@@ -1392,7 +1403,7 @@ f2q6d = I('f2q6d', '$x=-7:\\quad (-7)\\cdot(-7)=49,\\ $ not less than 25', size=
 CARRY51['solve-pt-q06'] = {2: ['choices 1 and 3 are out']}
 video('solve-pt-q06', 'solution', qid='pt-q06', slides=[
     S('Why is it here?',
-      L("x is an integer. We're given two conditions. x squared is less than twenty-five, and three x plus six is less than zero. What is x?", pt('stem', 'x is an integer', 'hl', 8.0), voice='calm', pause=0.5),
+      L("x is an integer. We're given two conditions. x squared is less than twenty-five, and three x plus six is less than zero. Which of the following could be the value of x?", pt('stem', 'x is an integer', 'hl', 8.0), voice='calm', pause=0.5),
       L("This question comes at the beginning of the section, where the easy questions usually are. But two conditions "
         "with less than, and one of them with x squared? We haven't learned to solve conditions like that yet. So why is "
         "it here?", pt('stem', 'two conditions')),
@@ -1417,7 +1428,7 @@ video('solve-pt-q06', 'solution', qid='pt-q06', slides=[
       L("So minus four passes both givens. And that's exactly why we check both. Choice number four is minus seven, and it's "
         "the trap. It passes the second given, but minus seven times minus seven is forty-nine, and forty-nine is not less "
         "than twenty-five.", show(f2q6d, 'minus seven times minus seven'), mk('cross', 'choice 4', 'and forty-nine is not less')),
-      L("Minus four fits every given, so it's the answer, because only one choice can be right. Choice number two is our "
+      L("Minus four fits every given, so it's a possible value of x. Among the four choices, only this one fits both conditions. Choice number two is our "
         "answer.", mk('tick', 'choice 2', 'Choice number two is our answer'))),
     S('A test of thinking',
       L("By the way, it's no accident that a question that looks this hard sits at the beginning of the section. The exam "
@@ -1751,7 +1762,7 @@ f2q21g2 = PIN(GEO('f2q21g2', [
                ('txt', 450, 175, '→ 2% to 8% of all', 'orange', 30)]),
     ('least', [('txt', 320, 222, 'least: 4% + 2% = 6%', 'ink', 30)]),
     ('most', [('txt', 320, 260, 'most: 4% + 8% = 12%', 'ink', 30)]),
-], vb='40 0 560 280', w=820, col=0, title="Roni's money in two halves"))
+], vb='40 0 560 280', w=730, col=0, title="Roni's money in two halves"))
 f2q21a = IH('f2q21a', '$1\\%$ of 30,000 $=300$', size=30)
 f2q21a2 = IH('f2q21a2', '$8\\%=8\\cdot300=2{,}400$', size=30)
 f2q21b = IH('f2q21b', '$4\\%=2{,}400\\div2=1{,}200$', size=30)
@@ -2307,7 +2318,7 @@ CAMERA_SPLITS = globals().get('CAMERA_SPLITS', []) + [
 # Hebrew: an expression with x, number choices -> any allowed x gives the same value; x >= 3 (course: 4) -> the
 # smallest, most convenient; inside the root 0; root 6. "The school way: spot the shortcut formula, brackets, root".
 # Added: x = 0 breaks the root (keep the conditions, at the step); the school way as a short second method.
-f3a1 = I('f3a1', 'Number choices $\\to$ one value for every $x\\ge4$', size=30)
+f3a1 = I('f3a1', 'Asked: one value valid for every allowed $x\\ge4$', size=30)
 f3a2 = IH('f3a2', '$x=4$: $\\ 4^2-8\\cdot4+16$', size=34)
 f3a2b = IH('f3a2b', '$=16-32+16=0$', size=34)
 f3a3 = I('f3a3', '$\\sqrt{4+2-\\sqrt0}=\\sqrt6$', size=36)
@@ -2323,8 +2334,8 @@ video('solve-pt-q10', 'solution', qid='pt-q10', slides=[
       L("So it's an expression with x, and they ask what it equals. And all four choices are numbers. That's the first sign "
         "for plugging in numbers. [short pause] We'll solve it two ways, by plugging in a number, and then with algebra.",
         pt('stem: ask', 'they ask what it equals')),
-      L("x can be any number that is four or more. The choices are numbers, so the expression has the same value for every "
-        "allowed x. So we may check one case.", show(f3a1, 'x can be any number')),
+      L("x can be any number that is four or more. Here they ask for one value that works for every allowed x. "
+        "The correct choice must therefore work for an easy example too. So we may check one case.", show(f3a1, 'x can be any number')),
       L("Which number? Four, because it's the smallest number allowed. It's the edge, and at the edge things often become "
         "zero. Careful, zero is not allowed here. If you try it, the inner root is four, and two minus four is negative "
         "two. There's no square root of a negative number.", show(f3a0, 'Careful, zero is not allowed')),
@@ -2517,11 +2528,12 @@ video('solve-pt-q12', 'solution', qid='pt-q12', slides=[
 # Hebrew: each pen writes x/y words, "and then times..." - confusing; letters in the answers -> plug in; x = y = 1: one
 # pen, one word -> every choice gives 1 (power, product, quotient: 1 changes nothing) -> choose values that give
 # different results; x = 2, y = 1: 2 words a pen, (course) 8 words -> 4 pens; 8 out, the fractions out -> choice 1.
-# Added: the ties checked on the choices BEFORE the story (R15), x = y = 2 would tie two choices (different letters,
-# different numbers), the algebra finished.
+# Check the choices for a tie before the story (R15). After x=y=1 ties them all,
+# change only x to 2, keeping y=1 easy. Equal letters are allowed; different
+# letters never require different values without a given. Finish the algebra too.
 f3i1 = IH('f3i1', '$x=y=1$: $\\ 1,\\ 1,\\ 1,\\ 1$ ✗ tie', size=32)
 f3i2 = IH('f3i2', '$x=y=2$: $\\ 16,\\ 16$ ✗ tie', size=32)
-f3i3 = IH('f3i3', '$x=2,\\ y=1$: $\\ 4,\\ 8,\\ \\frac14,\\ \\frac18$ ✓', size=32)
+f3i3 = IH('f3i3', '$x=2,\\ y=1$', size=32)
 f3i4 = I('f3i4', 'A pen: $2$ cm³, $\\ $a word: $1$ cm³ $\\to$ $2$ words a pen', size=30, col=1)
 f3i5 = I('f3i5', 'Words: $2^3\\cdot1=8$', size=30, col=1)
 f3i5b = I('f3i5b', 'Pens: $\\ 8\\div2=4$', size=30, col=1)
@@ -2543,10 +2555,8 @@ video('solve-pt-q13', 'solution', qid='pt-q13', slides=[
       L("Which numbers? The easiest would be x and y both one. But look at the choices first. They have powers, a product "
         "and fractions. With ones, every choice is one, and nothing is ruled out. So one can't tell them apart here.",
         show(f3i1, 'With ones, every choice is one')),
-      L("So let's take x equals two. And y? If y is two as well, x squared y squared and x cubed y are both sixteen, a tie "
-        "again. Those numbers still don't separate the choices.", show(f3i2, 'If y is two as well')),
-      L("So y equals one, which keeps the story easy. Now the choices give four, eight, a quarter and an eighth. They're all "
-        "different, good.", show(f3i3, 'So y equals one')),
+      L("Let's keep y as one, and change only x to two. That changes how much ink a pen holds. "
+        "The ink needed for one word stays at one.", show(f3i3, 'change only x to two')),
       L("Now the story with these numbers. A pen holds two cubic centimeters, and a word needs one. So each pen writes two "
         "words.", show(f3i4, 'A pen holds two cubic')),
       L("He wrote x cubed times y words. Two cubed is eight, and eight times one is eight words. Eight words, two words a pen, so he "
@@ -2705,6 +2715,12 @@ for _v in ('pt51-plug-numbers',):
             for _c in _ln['cues']:
                 if _c[0] == 'show' and _c[1]['k'] == 't' and _c[1]['_col'] == 0: _c[1]['w'] = 860
 
+# f3c4 above is now the dress-discount reminder, not the earlier counterexample.
+# Keep it with the price on the left, away from the choice calculations.
+f3c4['_col'] = 0
+f3c4.pop('_x', None)
+f3c4.pop('_y', None)
+
 # =================================================================================================================
 # Topic-51 fragment f4 (TAG D, 2026-10-14): the lesson "Estimation" (camera, in 2 parts) and its sample questions
 # pt-q16 ... pt-q19 (Hebrew: pt_src/seg4_estimation.txt, order-of-magnitude estimation).
@@ -2723,7 +2739,10 @@ for _v in ('pt51-plug-numbers',):
 #        "figures need not be accurate?" - most are, and regular shapes are (one way to draw it, the ratios stay; a
 #        whole lesson later); more than a radius, less than the diameter; the eraser; width between 6 and 8 -> area
 #        between 24 and 32, not equal to either; 32 and 40 out. Her sqrt3 = 1.7 / sqrt2 = 1.4 replaced by: area / 16
-#        must be more than 1 1/2, and sqrt2 < 1 1/2 (squaring).
+#        must be more than 1 1/2, and sqrt2 < 1 1/2 (squaring). 2026-10-23 (Nitzan: "whatever the Hebrew version does"):
+#        her figure estimate is Method 1 again (it had been replaced by "we shouldn't measure the sketch"); the helper
+#        line + Pythagoras is Method 2, the math way, ending exactly (root 12 = 2 root 3); her "a whole lesson later"
+#        is not promised.
 #   q19  20% of 3.2 (10% = divide by 10); 3% of 2 is negligible -> "0.64 and a little more"; built on purpose to reward
 #        whoever thinks; most students can do the 20%, the 3% takes time. Added: percent and concentration explained
 #        on the spot (topic 23 is later), and the bound that makes "negligible" valid (3% < 10% of 2 = 0.2).
@@ -2963,8 +2982,9 @@ video('solve-pt-q16', 'solution', qid='pt-q16', slides=[
         show(f4h0, 'So shaded equals')),
       L("Let's start with estimation, before any numbers. First we look at the pattern of the calculation, and ask, "
         "where is the pi?", show(f4w1, 'where is the pi')),
-      L("The pi is in the sector. The sector is part of the circle, and the circle's area is pi r squared. The triangle "
-        "has only straight sides, so its area has no pi. So sector minus triangle gives the pattern pi minus a number. "
+      L("The pi is in the sector. The sector is part of the circle, and the circle's area is pi r squared. "
+        "For this triangle, Pythagoras gives the side lengths without using pi. So its area has no pi term. "
+        "So sector minus triangle gives the pattern pi minus a number. "
         "The pi can come with a fraction, like pi over two. But it comes first, and a number is taken away from it.",
         pt('f4w1', 'The pi is in the sector'), show(f4w2, 'gives the pattern pi minus a number')),
       L("Choice number one says four minus pi. That's a number minus pi, the opposite pattern. Here the pi is the part "
@@ -3143,15 +3163,29 @@ f4help['line']['of'] = f4g18['line']['_name']
 for _key in ('radii', 'triangle'):
     f4help[_key]['of'] = f4g18['line']['_name']
 # The original question remains at the left; the helper copy replaces the old measured-length comparison.
+# 2026-10-23 (Nitzan: "whatever the Hebrew version does"): her estimate from the figure is Method 1 again, with her
+# accuracy rule (not necessarily drawn to scale, but most figures are accurate; regular shapes are; the eraser); the
+# helper line + Pythagoras is Method 2, the math way, finished exactly (root 12 = 2 root 3 -> 16 root 3).
+f4a1 = I('f4a1', 'Most exam figures are accurate', size=26, col=1)
+f4a2 = I('f4a2', 'Regular shapes are accurate:', size=26, col=1)
+f4a3 = I('f4a3', 'square, circle, equilateral triangle, cube', size=26, col=1)
+f4e1 = IH('f4e1', '$2<$ middle part $<4$', size=26, col=1)
+f4e2 = IH('f4e2', '$AD=2+$ middle part $+2$', size=26, col=1)
 f4exact1 = IH('f4exact1', '$x^2=12\\quad\\to\\quad x=\\sqrt{12}$', size=30, col=1)
 f4exact2 = IH('f4exact2', '$\\sqrt{12}=\\sqrt{4\\times3}=2\\sqrt3$', size=30, col=1)
 f4exact3 = IH('f4exact3', '$AD=2x=4\\sqrt3$', size=30, col=1)
 f4exact4 = IH('f4exact4', 'Area $=4\\times4\\sqrt3=16\\sqrt3$', size=30, col=1)
-for _it, _yy in ((f4exact1, 330), (f4exact2, 390), (f4exact3, 450), (f4exact4, 510)):
+for _it, _y in ((f4a1, 560), (f4a2, 605), (f4a3, 650)):
+    _R(_it, _y)
+for _it, _y in ((f4e1, 590), (f4e2, 635), (f4u2b, 680), (f4u3, 725)):
+    _R(_it, _y)
+for _it, _yy in ((f4s2, 560), (f4u2, 610)):
+    _R(_it, _yy)
+for _it, _yy in ((f4exact1, 330), (f4exact2, 390), (f4exact3, 450), (f4exact4, 510)):     # their own slide, no figure
     _R(_it, _yy)
 
 video('solve-pt-q18', 'solution', qid='pt-q18', slides=[
-    SM('Estimation', 'The width is the problem',
+    SM('Method 1 · Estimation', 'The width is the problem',
       L("In the figure, each vertex of rectangle A B C D is the center of a circle with a radius of two centimeters. "
         "Point O is the center of a circle that is tangent to the four quarter circles, and to sides A D and B C. What "
         "is the area of rectangle A B C D, in square centimeters?", pt('stem', 'In the figure', 'hl', 10.0),
@@ -3160,19 +3194,31 @@ video('solve-pt-q18', 'solution', qid='pt-q18', slides=[
         "So we need the long side, A D.", show(f4g18['line'], 'The area of a rectangle')),
       L("Along A D, the first part is a radius of the quarter circle at A, so it's two. The last part is a radius of the "
         "quarter circle at D, so it's also two.", show(f4g18['r'], 'the first part is a radius')),
-      L("We want to estimate that middle part. Let's draw helper lines to get bounds from the given lengths. We won't need to calculate the missing length exactly.", show(f4g18['mid'], 'that middle part')),
-      L("But wait. On the exam, a figure is not necessarily drawn to scale. So can I estimate from the figure?"),
-      L("No, we shouldn't measure the sketch. Let's use the lengths. The middle circle touches the top and bottom sides, four apart. Its diameter is four, so its radius is two. Draw a line from A to O, joining two touching circles' centers.", show(f4help['line'], "Let's use the lengths"), show(f4help['radii'], 'Its diameter is four')),
-      L('The corner circle has radius two, and the middle circle has radius two. The circles touch from the outside, so A O is two plus two, four. From O, draw a perpendicular to side A B. Call its foot H. O is two below the top side, so A H is two. Now A H O is a right triangle, with hypotenuse four and one leg two.', show(f4help['triangle'], 'A O is two plus two, four'), show(f4s1, 'hypotenuse four and one leg two'))),
-    SM('Estimation', 'Estimate the middle',
-      L('Call O H x. By Pythagoras, x squared plus two squared is four squared. Four squared is sixteen, and two squared is four. Subtract four, and x squared is twelve. We only need bounds for x, not its exact root.', show(f4help2['line'], 'Call O H x'), show(f4s2, 'x squared is twelve')),
-      L('Three squared is nine, below twelve. Four squared is sixteen, above twelve. So the positive length x is more than three and less than four.', show(f4u1, 'more than three and less than four')),
-      L("The same construction on the right has the same hypotenuse, four, and the same vertical leg, two. So its horizontal length is also x. The whole rectangle is x plus x across. That's why A D is two x, not just x.", show(f4help2['other'], 'same construction on the right'), show(f4u2, 'A D is two x')),
-      L('Each x is between three and four. Double both bounds, and A D is between six and eight. We got that from the right triangles, not from measuring the picture.', show(f4u2b, 'A D is between six and eight')),
-      L('This also explains the middle part we started with. A D is between six and eight. Take away the two radius pieces, two at each end, four altogether. The middle part is therefore between two and four. Either way, the full side A D is between six and eight.'),
+      L("We'll solve it in two different ways. Let's start with estimation. To calculate that middle part exactly, we'd "
+        "need a helper line and Pythagoras. But what if we don't see the helper line? Then we estimate the middle part "
+        "from the figure.", show(f4g18['mid'], 'that middle part')),
+      L("But wait. On the exam, a figure is not necessarily drawn to scale. So how can we estimate from the figure?"),
+      L("In most cases, we can tell. First, most figures on the exam are accurate. Second, a rule of thumb. Regular "
+        "shapes are drawn accurately: a square, a circle, an equilateral triangle, a cube.",
+        show(f4a1, 'most figures on the exam are accurate'), show(f4a2, 'Regular shapes are drawn accurately'),
+        show(f4a3, 'a square, a circle')),
+      L("Why? A regular shape can't be drawn any other way. Here we have circles, and the middle circle touches all "
+        "four quarter circles. If we make the figure bigger or smaller, the ratios between the parts stay the same. So "
+        "here we can estimate from the figure.")),
+    SM('Method 1 · Estimation', 'Estimate the middle',
+      L("Look at the middle part. It's longer than a radius of the corner circles, and that radius is two.",
+        show(f4g18b['line'], 'Look at the middle part'), show(f4g18b['c1'], "It's longer than a radius")),
+      L("And it's shorter than the diameter of the middle circle. That diameter goes from the top side to the bottom "
+        "side, so it's four.", show(f4g18b['c2'], "it's shorter than the diameter")),
+      L("Can't tell by eye? Use your eraser. Mark the length of the middle part on its edge. Then hold it against a "
+        "radius, and against the diameter."),
+      L("So the middle part is more than two and less than four. A D is made of three parts: two, the middle part, and "
+        "two. Two plus two plus two is six, and two plus four plus two is eight. So A D is between six and eight.",
+        show(f4e1, 'So the middle part is more than two'), show(f4e2, 'A D is made of three parts'),
+        show(f4u2b, 'So A D is between six and eight')),
       L("The area is four times A D. Four times six is twenty-four, and four times eight is thirty-two. So the area is "
         "between twenty-four and thirty-two, and it isn't equal to either one.", show(f4u3, 'The area is four times'))),
-    SM('Estimation', 'Check the choices',
+    SM('Method 1 · Estimation', 'Check the choices',
       L("[pause] Now the choices. Choice number four, forty, is more than thirty-two. It's out.",
         show(f4k0, 'Now the choices'), show(f4k1, 'Choice number four, forty'), mk('cross', 'choice 4', "It's out")),
       L("Choice number three, thirty-two. The middle part is less than four, so the area is less than thirty-two. It's "
@@ -3185,10 +3231,23 @@ video('solve-pt-q18', 'solution', qid='pt-q18', slides=[
         mk('cross', 'choice 2', "It's out")),
       L("Three choices are out, so choice number one, sixteen root three, is our answer.",
         show(f4k6, 'Three choices are out'), mk('tick', 'choice 1', 'so choice number one'))),
-    SM('A quicker exam finish', 'If you spot the square factor',
-      L("Now let's go back to x squared is twelve. If you spot a square factor inside twelve, you can finish even sooner. Twelve is four times three. So the root of twelve is the root of four times the root of three: two root three. That's x. The whole long side is two x, so it's four root three. The other side is four. Four times four root three gives sixteen root three, choice number one, without checking all the other choices. If you don't spot the root shortcut, our bounds still give a safe way to eliminate them. I'll see you in the next question.",
-        show(f4exact1, 'x squared is twelve'), show(f4exact2, 'two root three. That\'s x'), show(f4exact3, 'so it\'s four root three'),
-        show(f4exact4, 'gives sixteen root three'), mk('tick', 'choice 1', 'choice number one'))),
+    SM('Method 2 · The math way: Pythagoras', 'A helper line',
+      L("[pause] Now the math way. The estimate came from the figure. The math way uses only the given lengths, so it "
+        "proves the answer. The middle circle touches the top and bottom sides, four apart. Its diameter is four, so its "
+        "radius is two. Draw a line from A to O, joining two touching circles' centers.",
+        show(f4help['line'], 'Now the math way'), show(f4help['radii'], 'Its diameter is four')),
+      L('The corner circle has radius two, and the middle circle has radius two. The circles touch from the outside, so A O is two plus two, four. From O, draw a perpendicular to side A B. Call its foot H. O is two below the top side, so A H is two. Now A H O is a right triangle, with hypotenuse four and one leg two.', show(f4help['triangle'], 'A O is two plus two, four'), show(f4s1, 'hypotenuse four and one leg two'))),
+    SM('Method 2 · The math way: Pythagoras', 'The exact width',
+      L('Call O H x. By Pythagoras, x squared plus two squared is four squared. Four squared is sixteen, and two squared is four. Subtract four, and x squared is twelve.', show(f4help2['line'], 'Call O H x'), show(f4s2, 'x squared is twelve')),
+      L("The same construction on the right has the same hypotenuse, four, and the same vertical leg, two. So its horizontal length is also x. The whole rectangle is x plus x across. That's why A D is two x, not just x.", show(f4help2['other'], 'same construction on the right'), show(f4u2, 'A D is two x'))),
+    SM('Method 2 · The math way: Pythagoras', 'Finish exactly',
+      L("Now x itself. x squared is twelve, so x is the root of twelve. Twelve is four times three. So the root of twelve "
+        "is the root of four, times the root of three. That's two root three.",
+        show(f4exact1, 'so x is the root of twelve'), show(f4exact2, "That's two root three")),
+      L("A D is two x, so it's four root three. The other side is four. Four times four root three is sixteen root "
+        "three. That's choice number one, just like the estimate. Choice number one is our answer, and I'll see you in "
+        "the next question.", show(f4exact3, "so it's four root three"), show(f4exact4, 'Four times four root three'),
+        mk('tick', 'choice 1', 'Choice number one is our answer'))),
 ])
 
 
@@ -3534,7 +3593,7 @@ STEMS = {
  "pt-q03": "Given: $a\\ne0$ and $b\\ne0$\n$\\frac{a^2+b^2+(a-b)^2}{2ab}+1=?$",
  "pt-q04": "A cylinder is inscribed in a cube whose edge is 3a (see figure).\nWhat is the volume of the cylinder?",
  "pt-q05": "Two fair dice, one blue and one red, are tossed.\nWhat is the probability that the number obtained on the blue die will be at least as large as the number obtained on the red die?",
- "pt-q06": "x is an integer.\nGiven:\n$\\begin{cases} x^2<25 \\\\ 3x+6<0 \\end{cases}$\n$x=?$",
+ "pt-q06": "x is an integer.\nGiven:\n$\\begin{cases} x^2<25 \\\\ 3x+6<0 \\end{cases}$\nWhich of the following could be the value of $x$?",
  "pt-q07": "Nadav and Amit have a total of 90 cards. Nadav has more cards than Amit. The difference between the numbers of cards the two of them have is equal to $\\frac{1}{5}$ of the number of cards Nadav has.\nHow many cards does Nadav have?",
  "pt-q08": "Kobi bought a pair of pants at a 50% discount and a shirt at a 10% discount, and paid a total of 280 shekels instead of 500 shekels.\nWhat was the price of the shirt before the discount (in shekels)?",
  "pt-q09": "If Ron gives Miri 4 stamps, the number of stamps she has will be 2 times the number of stamps he will have. If it is known that the two of them now have the same number of stamps, how many stamps does Miri have now?",

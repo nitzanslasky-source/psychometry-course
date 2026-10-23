@@ -116,6 +116,13 @@
     ]
    },
    {
+    "say": "You could also see it in the figure. On the exam, a figure is not necessarily drawn to scale, so usually we don't rely on it. But a regular polygon is the exception. It can't be drawn any other way, so its figure is accurate. Measure the two lengths with your fingers, and you'll see that L T is longer than two times K T. That's only a quick check. The proof is what we just did, with the hypotenuse.",
+    "at": [
+     "But a regular polygon is the exception",
+     "It can't be"
+    ]
+   },
+   {
     "say": "Now Ben. The perimeter of K M T is K T plus M T plus K M. And M N is M T, plus the side of the square, plus the leg on the right.",
     "at": [
      "The perimeter of K M T",

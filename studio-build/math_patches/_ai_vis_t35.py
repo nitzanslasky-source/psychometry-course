@@ -15,7 +15,7 @@ the cylinder, lateral area = base perimeter x height, total surface = lateral + 
 pointed = one third; geo-120 (3 parts, was an overview): volume ratios and ratio units, right triangles inside solids
 (the height, the cone, the pyramid, the cube's diagonals), surfaces of solids made of cubes (count by direction, a
 contact hides two faces, a cut adds two faces); r26-t35-water: units, water height, pouring, sinking an object;
-r26-t35-cones: solids made by turning; r26-t35-cubefacts: the longest segment in a box and in a cylinder, counting faces,
+(r26-t35-cones, solids made by turning, removed 2026-10-23); r26-t35-cubefacts: the longest segment in a box and in a cylinder, counting faces,
 edges and vertices, three face areas. The first question that uses a method applies it slowly with a one-sentence link to
 the lesson; one-off tricks (the three angles in a cube, the corner / edge / face-centre cube, the painted cube, solids in a
 box) are taught in their question.
@@ -1054,7 +1054,7 @@ p119cyl = G('p119cyl', [
             sg((340, 100), (340, 290), 'orange', 4, True), ('txt', 362, 196, 'h', 'orange', 30, True)]),
 ], vb='60 60 340 290', w=420, title='A cylinder: two circles, one above the other')
 
-p119r1 = H35('p119r1', 'prism: two identical bases')
+p119r1 = H35('p119r1', 'right prism: two identical bases')
 p119r2 = H35('p119r2', 'height: from base to base')
 
 _S119 = [
@@ -1067,15 +1067,15 @@ _S119 = [
     S('Edge, face, base',
       L("First, let's learn some basic words, so we share one language. Here's a box.",
         show(p119box['line'], "Here's a box")),
-      L("An edge is a side of the solid, a line like this one. We measure it in centimeters, like a side of a "
-        "triangle.", show(p119box['edge'], 'An edge is a side')),
+      L("An edge is a straight line where two flat faces meet. Like this line on our box. We measure its length in "
+        "centimeters, like a side of a triangle.", show(p119box['edge'], 'An edge is a straight line')),
       L("A face is a flat wall of the solid, like a wall of a room. Here's the right face. The box also has a left "
         "face, a front face and a back face.", show(p119box['face'], "Here's the right face")),
       L("The bottom face and the top face are called the bases. So a box has six faces, and two of them are the "
         "bases.", show(p119box['bases'], 'are called the bases'))),
     S('Prism',
-      L("A prism is a solid whose two bases are the same polygon, one exactly above the other.",
-        show(p119r1, 'A prism is a solid')),
+      L("Here we work with right prisms. Each has two identical polygon bases, one exactly above the other.",
+        show(p119r1, 'right prisms')),
       L("Let's take a triangle. That's the bottom base. Now let's lift a copy of it straight up. The copy is the top "
         "base, and we've made a prism.", show(p119prism['line'], "Let's take a triangle"),
         show(p119prism['lift'], 'lift a copy of it straight up')),
@@ -1183,7 +1183,7 @@ _S119 += [
       L("There are four side faces, so the lateral area is four times twenty-five, one hundred.",
         show(p119b5, 'four times twenty-five'))),
     S('Perimeter times height',
-      L("So do we need a different formula for every shape? No. There's one rule for every prism, and for the "
+      L("So do we need a different formula for every shape? No. There's one rule for every right prism, and for the "
         "cylinder too."),
       L("The lateral area is the perimeter of the base, times the height.", show(p119c1, 'The lateral area is the perimeter')),
       L("Why? Unroll the side faces, like the toilet paper. We get one long rectangle. Its width is the whole way "
@@ -1195,14 +1195,14 @@ _S119 += [
         show(p119rule['h'], 'Ten times the height'), show(p119c3, 'four, is forty')),
       L("And the cube with edge five. The perimeter of its base is four times five, twenty. Twenty times the height, "
         "five, is one hundred. Again, the same.", show(p119c4, 'four times five, twenty'), show(p119c5, 'Twenty times the height'))),
-    S('Any prism',
-      L("And it works for any prism. Here's a triangular prism lying on its side. Its base is the triangle at the "
+    S('Any right prism',
+      L("And it works for any right prism. Here's a triangular prism lying on its side. Its base is the triangle at the "
         "front, with sides five, five and six. Its height is the edge going back, ten.", show(p119tri['line'], "Here's a triangular prism")),
       L("The perimeter of the base is five plus five plus six, sixteen.", show(p119tri['per'], 'The perimeter of the base'),
         show(p119d1, 'five plus five plus six')),
       L("Sixteen times the height, ten, is one hundred sixty. So the lateral area is one hundred sixty.",
         show(p119tri['h'], 'Sixteen times the height'), show(p119d2, 'one hundred sixty. So')),
-      L("Remember this one rule, perimeter times height. Then you can find the lateral area of any prism they give "
+      L("Remember this one rule, perimeter times height. Then you can find the lateral area of any right prism they give "
         "you.")),
 ]
 
@@ -1243,9 +1243,13 @@ _slab = lambda k: boxpts(40, 310 - 50 * k, 100, 50, 150)
 p119stack = G('p119stack', [
     ('line', [('tint', [_B2['A'], _B2['B'], _B2['C'], _B2['D']], 'teal'), ('poly', [_B2['A'], _B2['B'], _B2['C'], _B2['D']], 'ink', 3),
               ('txt', 90, 334, '2', 'ink', 26), ('txt', 196, 300, '3', 'ink', 26)]),
-    ('stack', [x for k in range(4) for x in box_el(_slab(k), fill=False, w=2)]),
+    ('stack', [x for k in range(4) for x in box_el(_slab(k), fill=False, w=2)] +
+              [('seg', 245, 260, 245, 310, 'teal', 2),
+               ('seg', 240, 260, 250, 260, 'teal', 2),
+               ('seg', 240, 310, 250, 310, 'teal', 2),
+               ('txt', 273, 285, '1 cm', 'teal', 20)]),
     ('box', box_el(_B2, w=3) + [('txt', 22, 210, '4', 'orange', 28)]),
-], vb='0 40 300 310', w=360, title='Rectangles stacked into a box')
+], vb='0 40 300 310', w=360, title='One-centimeter layers stacked into a box')
 p119h1 = I('p119h1', 'volume $=$ base area $\\times$ height', size=32, col=1)
 p119h2 = H35('p119h2', '$2 \\cdot 3 = 6$')
 p119h3 = H35('p119h3', '$6 \\cdot 4 = 24$')
@@ -1283,10 +1287,10 @@ p119n3 = I('p119n3', 'cylinder: lateral area, total area, volume', size=30, col=
 p119n4 = I('p119n4', 'cone and pyramid: volume', size=30, col=0)
 p119n5 = I('p119n5', 'Not on it: the general rules, units, the next lessons', size=30, col=0)
 
-p119z1 = I('p119z1', 'lateral area $=$ perimeter of the base $\\times$ height', size=30, col=0)
-p119z2 = I('p119z2', 'total surface area $=$ lateral area $+$ 2 bases', size=30, col=0)
-p119z3 = I('p119z3', 'volume $=$ base area $\\times$ height', size=30, col=0)
-p119z4 = I('p119z4', 'cone, pyramid: the same volume $\\div 3$', size=30, col=0)
+p119z1 = I('p119z1', 'Prism, cylinder: lateral area $=$ base perimeter $\\times$ height', size=30, col=0)
+p119z2 = I('p119z2', 'Prism, cylinder: total area $=$ lateral area $+$ 2 bases', size=30, col=0)
+p119z3 = I('p119z3', 'Prism, cylinder: volume $=$ base area $\\times$ height', size=30, col=0)
+p119z4 = I('p119z4', 'Cone, pyramid: volume $=$ base area $\\times$ height $\\div 3$', size=30, col=0)
 
 _S119 += [
     S('Total surface area',
@@ -1310,7 +1314,7 @@ _S119 += [
         "times three squared, nine pi.", show(p119bc['cyl'], 'Now the cylinder'), show(p119bc['cb'], 'One base is a circle'),
         show(p119f4, 'pi times three squared')),
       L("So the total is thirty pi, plus nine pi, plus nine pi, forty-eight pi.", show(p119f5, 'So the total is thirty pi')),
-      L("So in every solid, the total surface area is the lateral area plus the two bases. If you understand that, "
+      L("So for a prism or a cylinder, the total surface area is the lateral area plus the two bases. If you understand that, "
         "you don't need to memorize a formula for each shape.")),
     S('Volume',
       L("Now volume. The volume is what's inside the solid, how much it can hold."),
@@ -1322,11 +1326,11 @@ _S119 += [
     S('Base area times height',
       L("Now look at a rectangle, two by three. It has an area, but no volume. It's flat.",
         show(p119stack['line'], 'look at a rectangle')),
-      L("Let's put another rectangle on top of it, and another, and another. Each one alone is flat. But together they "
-        "make a box, and the box takes up space.", show(p119stack['stack'], 'and another, and another'),
-        show(p119stack['box'], 'together they make a box')),
-      L("So the volume of the box is the area of its base, times its height. We take the base area again and again, "
-        "as many times as the height.", show(p119h1, 'So the volume of the box')),
+      L("Now imagine a layer above that rectangle, one centimeter thick. Stack four of these layers. Together they "
+        "make a box, four centimeters high.", show(p119stack['stack'], 'Stack four of these layers'),
+        show(p119stack['box'], 'Together they make a box')),
+      L("So the volume of the box is the area of its base, times its height. Multiplying the base area by one centimeter "
+        "gives one layer's volume. Four layers give four times that volume.", show(p119h1, 'So the volume of the box')),
       L("Our box is two by three, with height four. The base area is two times three, six. And six times four is "
         "twenty-four. So for a box, it's length times width times height.",
         show(p119h2, 'two times three, six'), show(p119h3, 'six times four')),
@@ -1356,7 +1360,8 @@ _S119 += [
       L("And one hundred eighty is the box around the pyramid, six by six by five. So the pyramid is one third of that "
         "box.", show(p119pyr['box'], 'the box around the pyramid')),
       L("So a pointed solid is always one third of the straight solid with the same base and the same height."),
-      L("One more thing. The height goes straight down, from the point to the middle of the base. It is not this "
+      L("One more thing. The height goes from the top point straight to the base, at a right angle. In this picture, "
+        "it reaches the middle of the base. It is not this "
         "slanted edge, which is longer.", show(p119pyr['edge'], 'It is not this slanted edge'))),
     S('On the formula page',
       L("Good news. At the start of every quantitative section, there's a formula page.", show(p119n1, 'there\'s a formula page')),
@@ -1366,11 +1371,11 @@ _S119 += [
       L("It doesn't have the general rules we learned for any prism. And it doesn't have the ideas of the next "
         "lessons. Those you need to know yourself.", show(p119n5, "It doesn't have the general rules"))),
     S('Recap',
-      L("So let's sum up. The lateral area is everything that wraps around. It's the perimeter of the base, times the "
-        "height.", show(p119z1, 'The lateral area is everything')),
-      L("The total surface area is the lateral area plus the two bases.", show(p119z2, 'The total surface area')),
-      L("The volume is everything inside. It's the base area, times the height.", show(p119z3, 'The volume is everything inside')),
-      L("And a pointed solid, a cone or any pyramid, has the same volume divided by three. Always.",
+      L("So let's sum up. For a prism or cylinder, the lateral area is everything that wraps around, without the bases. "
+        "It's the perimeter of the base, times the height.", show(p119z1, 'the lateral area is everything')),
+      L("For these prisms and cylinders, the total surface area is the lateral area plus the two bases.", show(p119z2, 'the total surface area')),
+      L("Their volume is the base area, times the height.", show(p119z3, 'Their volume is')),
+      L("And a pointed solid, a cone or any pyramid, has volume equal to its base area, times its height, divided by three.",
         show(p119z4, 'And a pointed solid')),
       L("Take a moment to memorize these, and I'll see you in the next video.")),
 ]
@@ -1595,7 +1600,8 @@ video('geo-120', 'lesson', slides=[
     S('In a pyramid',
       L("Now a pyramid with a square base. The side of the base is eight, and each slanted edge is nine. What's the "
         "height?", show(p120pyr['line'], 'Now a pyramid with a square base')),
-      L("The height comes down to the middle of the square, where the diagonals meet.", show(p120pyr['diag'], 'where the diagonals meet')),
+      L("All four slanted edges are equal. So the top point is directly above the center of the square. "
+        "The height meets the base there, where the diagonals meet.", show(p120pyr['diag'], 'where the diagonals meet')),
       L("So we have a triangle. The height, half of a diagonal, and a slanted edge. The angle at the middle is a right "
         "angle, because half the diagonal lies on the base.", show(p120pyr['tri'], 'So we have a triangle')),
       L("Remember the silver triangle. The diagonal of a square is the side times root two. So the diagonal is eight "
@@ -1628,7 +1634,7 @@ video('geo-120', 'lesson', slides=[
       L("Then the second triangle, with the height. Thirteen plus six squared is thirteen plus thirty-six, forty-nine. "
         "So the body diagonal is root forty-nine, seven.", show(p120box['body'], 'Then the second triangle'),
         show(p120f2, 'Thirteen plus six squared'), show(p120f3, 'root forty-nine, seven')),
-      L("Or in one step, the square root of the three edges squared. Two squared plus three squared plus six squared "
+      L("Or in one step: square each edge length, then add the three squares. Take the square root of that sum. Two squared plus three squared plus six squared "
         "is forty-nine, and its root is seven.", show(p120f4, 'Or in one step'))),
     S('Count by direction',
       L("The third idea is solids made of cubes. The surface area is all the faces we can touch from the outside. Here "
@@ -1725,9 +1731,11 @@ def QW(qid):
 # much water; a container that is bigger or equal holds it -> mark; smaller -> out; a cone is pointed, one third of the
 # straight solid (the cylinder around it); the cube = edge cubed ("a cube is a square in 3D"); the box = multiply the
 # dimensions; the square pyramid = base x height / 3; "straight or pointed - the two most important principles of volume".
-# CHANGED on purpose (decided earlier, no decimal estimates): her pi = 3.14 -> the bounds 3 < pi < 3 and a half (72 and
-# 84); the right choice is choice 2, so "in the exam you'd circle it and move on, here let's check the others" (R24); the
-# close call (the box is 72, pi is MORE than 3) at its step. R37: geo-119 taught the formulas; a reminder here.
+# 2026-10-23 (Nitzan's decision: pi as 3.14, like her Hebrew and like solve-geo33-g089): 3.14 < pi < 3.15, each end
+# worked in easy mental steps (24 x 3 = 72; 24 x 14 = 240 + 96 = 336 -> 3.36; a tenth of 24 = 2.4, half of it 1.2 -> 3.6)
+# -> 75.36 < water < 75.6, so 75 < water < 76, which decides every choice (64 and 72 below, 84 above, 20 pi < 24 pi). Was
+# 3 < pi < 3 and a half (72 and 84). The right choice is choice 2, so "in the exam you'd circle it and move on, here
+# let's check the others" (R24); the pi = 3 trap (the box is exactly 72) at its step. R37: geo-119 taught the formulas.
 # V3: the cone copy, its base tinted, the height teal, 24 pi written; the pyramid with 6, 6, 7; the box and the cylinder.
 # =================================================================================================================
 f121a = PIN(GEO('f121a', [
@@ -1755,25 +1763,32 @@ for _g in (f121a, f121b, f121c): QLEFT(_g, 'geo35-g121')
 f121r1 = IH('f121r1', '$(\\sqrt6)^2 = 6$, base $6π$', size=30)
 f121r2 = IH('f121r2', '$12 \\div 3 = 4$', size=30)
 f121r3 = IH('f121r3', '$6π \\cdot 4 = 24π$', size=30)
-f121r4 = IH('f121r4', '$3 < π < 3.5$', size=30)
+f121r4 = IH('f121r4', '$3.14 < π < 3.15$', size=30)
 f121r5 = IH('f121r5', '$24 \\cdot 3 = 72$', size=30)
-f121r6 = IH('f121r6', '$24 \\cdot 3.5 = 72 + 12 = 84$', size=30)
-f121r7 = IH('f121r7', '$72 <$ water $< 84$', size=30)
-f121s1 = IH('f121s1', '(1) $4 \\cdot 4 \\cdot 4 = 64 < 72$', size=30)
+f121r6 = IH('f121r6', '$24 \\cdot 14 = 240 + 96 = 336$', size=30)
+f121r7 = IH('f121r7', '$24 \\cdot 0.14 = 3.36$', size=30)
+f121u1 = IH('f121u1', '$24 \\cdot 3.14 = 72 + 3.36 = 75.36$', size=30)
+f121u2 = IH('f121u2', '$24 \\cdot 0.15 = 2.4 + 1.2 = 3.6$', size=30)
+f121u3 = IH('f121u3', '$24 \\cdot 3.15 = 72 + 3.6 = 75.6$', size=30)
+f121u4 = IH('f121u4', '$75 <$ water $< 76$', size=30)
+f121s1 = IH('f121s1', '(1) $4 \\cdot 4 \\cdot 4 = 64 < 75$', size=30)
 f121s2 = IH('f121s2', '(2) $6 \\cdot 6 = 36$', size=30)
 f121s3 = IH('f121s3', '$36 \\div 3 = 12$', size=30)
 f121s4 = IH('f121s4', '$12 \\cdot 7 = 84 >$ water', size=30)
 f121t1 = IH('f121t1', '(3) $6 \\cdot 4 \\cdot 3 = 72$', size=30)
-f121t2 = IH('f121t2', '$π > 3$, so water $> 72$', size=30)
+f121t2 = IH('f121t2', '$π > 3.14$, so water $> 75 > 72$', size=30)
 f121t3 = IH('f121t3', '(4) $(\\sqrt2)^2 = 2$, base $2π$', size=30)
 f121t4 = IH('f121t4', '$2π \\cdot 10 = 20π < 24π$', size=30)
 FLOW([f121r1, f121r2, f121r3], QC('geo35-g121'))
 FLOW([f121r4, f121r5, f121r6, f121r7], QC('geo35-g121'))
+FLOW([f121u1, f121u2, f121u3, f121u4], QC('geo35-g121'))
 FLOW([f121s1, f121s2, f121s3, f121s4], QC('geo35-g121'))
 FLOW([f121t1, f121t2, f121t3, f121t4], QC('geo35-g121'))
-NOFIG('solve-geo35-g121', 0, 1, 2, 3)
+NOFIG('solve-geo35-g121', 0, 1, 2, 3, 4)
 f121a2 = PIN(GEO('f121a2', [('line', [qraw('geo35-g121'), ('txt', 430, 180, '24π', 'teal', 34)])], vb='200 40 300 300', w=420, title='The cone of water'))
 QLEFT(f121a2, 'geo35-g121')
+f121a3 = PIN(GEO('f121a3', [('line', [qraw('geo35-g121'), ('txt', 430, 180, '24π', 'teal', 34)])], vb='200 40 300 300', w=420, title='The cone of water'))
+QLEFT(f121a3, 'geo35-g121')
 
 video('solve-geo35-g121', 'solution', qid='geo35-g121', slides=[
     SM('Method 1 · The math way', 'How much water?',
@@ -1790,18 +1805,32 @@ video('solve-geo35-g121', 'solution', qid='geo35-g121', slides=[
         "twenty-four pi. So there's twenty-four pi of water.", show(f121a['h'], 'times the height, twelve'),
         show(f121r2, 'Twelve divided by three'), show(f121r3, 'six pi times four'), show(f121a['v'], "So there's twenty-four pi"))),
     SM('Method 1 · The math way', 'How much is 24 pi?',
-      L("How much is twenty-four pi? We don't need pi exactly. Pi is more than three, and less than three and a half.",
-        show(f121a2['line'], 'How much is twenty-four pi'), show(f121r4, 'Pi is more than three')),
-      L("Twenty-four times three is seventy-two. Twenty-four times three and a half is seventy-two, plus half of "
-        "twenty-four, twelve. That's eighty-four.", show(f121r5, 'Twenty-four times three is'),
-        show(f121r6, 'Twenty-four times three and a half')),
-      L("So the water is more than seventy-two, and less than eighty-four.", show(f121r7, 'So the water is more than'))),
+      L("How much is twenty-four pi? We don't need pi exactly. Pi is more than three point one four, and less than "
+        "three point one five.", show(f121a2['line'], 'How much is twenty-four pi'),
+        show(f121r4, 'Pi is more than three point one four')),
+      L("First the lower end, twenty-four times three point one four. We take the three first. Twenty-four times three "
+        "is seventy-two.", show(f121r5, 'Twenty-four times three is')),
+      L("Now twenty-four times point one four. That's fourteen hundredths, so first we calculate twenty-four times "
+        "fourteen. Twenty-four times ten is two hundred forty. Twenty-four times four is ninety-six. Together, three "
+        "hundred thirty-six.", show(f121r6, 'Together, three hundred thirty-six')),
+      L("Make that hundredths, and we get three point three six.", show(f121r7, 'Make that hundredths'))),
+    SM('Method 1 · The math way', 'Between which numbers?',
+      L("Now we add the two parts. Seventy-two plus three point three six is seventy-five point three six. So the water "
+        "is more than seventy-five point three six.", show(f121a3['line'], 'Now we add the two parts'),
+        show(f121u1, 'Seventy-two plus three point three six')),
+      L("Now the upper end, twenty-four times three point one five. The three gives seventy-two again. Point one five is "
+        "a tenth, plus half a tenth. A tenth of twenty-four is two point four, and half of that is one point two. "
+        "Together that's three point six.", show(f121u2, "Together that's three point six")),
+      L("Seventy-two plus three point six is seventy-five point six. So the water is less than seventy-five point six.",
+        show(f121u3, 'Seventy-two plus three point six')),
+      L("So the water is between seventy-five point three six and seventy-five point six. That's more than seventy-five, "
+        "and less than seventy-six.", show(f121u4, "That's more than seventy-five"))),
     SM('Method 1 · The math way', 'Go through the choices',
       L("Now the choices. If a container's volume is the same as the water, or bigger, all the water fits. If it's "
         "smaller, it's out. And for each container we ask first, is it straight or pointed?"),
       L("Choice number one says, a cube with edge four. A cube is a straight solid, edge times edge times edge. Four "
         "times four times four is sixty-four.", show(f121s1, 'Four times four times four')),
-      L("Sixty-four is less than seventy-two, so it's less than the water. Choice number one is out.",
+      L("Sixty-four is less than seventy-five, so it's less than the water. Choice number one is out.",
         mk('cross', 'choice 1', 'Choice number one is out')),
       L("Choice number two says, a square pyramid with base edge six and height seven. A pyramid is pointed. So it's "
         "the base area, times the height, divided by three.", show(f121b['line'], 'a square pyramid'),
@@ -1809,16 +1838,17 @@ video('solve-geo35-g121', 'solution', qid='geo35-g121', slides=[
       L("The base is a square, six times six, thirty-six. Thirty-six divided by three is twelve. And twelve times seven "
         "is eighty-four.", show(f121s2, 'six times six'), show(f121s3, 'Thirty-six divided by three'),
         show(f121s4, 'twelve times seven'), show(f121b['v'], 'is eighty-four')),
-      L("So the pyramid holds eighty-four, and the water is less than eighty-four. All the water fits. In the exam you'd "
+      L("So the pyramid holds eighty-four, and the water is less than seventy-six. All the water fits. In the exam you'd "
         "circle it and move on. Here, let's check the others too.", pt('choice 2', 'So the pyramid holds eighty-four'))),
     SM('Method 1 · The math way', 'The other two',
       L("Choice number three says, a box measuring six by four by three. A box is straight, so we multiply its three "
         "edges. Six times four is twenty-four, and twenty-four times three is seventy-two.",
         show(f121c['line'], 'a box measuring six by four by three'), show(f121t1, 'Six times four is twenty-four'),
         show(f121c['v'], 'twenty-four times three is seventy-two')),
-      L("Careful here, it's close. Pi is more than three, not equal to three. So the water is a bit more than "
-        "seventy-two, and this box is just too small. Choice number three is out.",
-        show(f121t2, 'Pi is more than three, not equal'), mk('cross', 'choice 3', 'Choice number three is out')),
+      L("Careful here. If you take pi as just three, the water is exactly seventy-two, and this box looks big enough. "
+        "But pi is more than three point one four, so the water is more than seventy-five. This box is too small. "
+        "Choice number three is out.",
+        show(f121t2, 'But pi is more than three point one four'), mk('cross', 'choice 3', 'Choice number three is out')),
       L("Choice number four says, a cylinder with base radius root two and height ten. The square of root two is two, so "
         "the base is two pi. Times ten, that's twenty pi.", show(f121c['cyl'], 'a cylinder with base radius root two'),
         show(f121t3, 'The square of root two'), show(f121t4, 'Times ten'), show(f121c['cv'], "that's twenty pi")),
@@ -1849,7 +1879,7 @@ p_w1 = G('p_w1', [
 ], vb='0 50 420 300', w=480, title='2 liters of water in a box with base 20 by 10')
 p_wa1 = H35('p_wa1', '$1$ ml $= 1$ cm$^3$')
 p_wa2 = H35('p_wa2', '$1$ liter $= 10 \\cdot 10 \\cdot 10 = 1000$ cm$^3$')
-p_wa3 = H35('p_wa3', '$1$ m$^3 = 100 \\cdot 100 \\cdot 100 = 1{,}000{,}000$ cm$^3$')
+p_wa3 = H35('p_wa3', '$1$ m$^3 = 100 \\cdot 100 \\cdot 100 = 1000000$ cm$^3$')
 p_wb1 = I('p_wb1', 'height $=$ volume $\\div$ base area', size=32, col=1)
 p_wb2 = H35('p_wb2', '$2$ liters $= 2000$ cm$^3$')
 p_wb3 = H35('p_wb3', 'base: $20 \\cdot 10 = 200$')
@@ -1913,7 +1943,7 @@ video('r26-t35-water', 'lesson', slides=[
     S('Dropping in a solid',
       L("And one more case. Here's a tank whose base is sixteen by eight, with some water in it.",
         show(p_w4['line'], "Here's a tank whose base")),
-      L("We drop in a cube with edge four, and it goes all the way under the water. What happens to the water?",
+      L("We drop in a cube with edge four. It goes all the way under, and no water spills out. What happens to the water?",
         show(p_w4['cube'], 'We drop in a cube')),
       L("The cube pushes the water up. The water rises by a layer whose volume is exactly the volume of the cube.",
         show(p_w4['rise'], 'The water rises by a layer')),
@@ -2119,8 +2149,8 @@ video('solve-geo35-g123', 'solution', qid='geo35-g123', slides=[
         "times height."),
       L("The only other given is the ratio, one to three. So let's call A M x, and M B three x. Then the length, A B, "
         "is four x.", show(f123r1, 'is four x')),
-      L("Nothing is given about the width or the height. So let's add unknowns, the width y and the height z. What we'll "
-        "do with them isn't clear yet. But we'll need them.", show(f123a['dims'], "let's add unknowns")),
+      L("Nothing is given about the width or the height. So let's add unknowns, the width y and the height z. We don't "
+        "know their values, but we can use these letters to write both volumes.", show(f123a['dims'], "let's add unknowns")),
       L("So four x times y times z is three hundred twenty.", show(f123r2, 'four x times y times z')),
     ),
     SM('Method 1 · The math way: add unknowns', 'The shaded prism',
@@ -2136,8 +2166,8 @@ video('solve-geo35-g123', 'solution', qid='geo35-g123', slides=[
     SM('Method 2 · Insight: from above', 'Look from above',
       L("Now the insight. There's a much shorter way. Let's look at the box from above, so we see only its base, the "
         "rectangle A B C D.", show(f123b['line'], "Let's look at the box from above")),
-      L("A M to M B is one to three. So the line through M cuts the base into four equal parts. The strip on the left "
-        "is one quarter of the base.", show(f123b['cut'], 'the line through M'), show(f123b['strip'], 'The strip on the left'),
+      L("A M to M B is one to three, so A B has four equal units. Draw parallel lines to divide the base into four "
+        "equal strips, each as wide as A M. The strip on the left is one quarter of the base.", show(f123b['cut'], 'Draw parallel lines'), show(f123b['strip'], 'The strip on the left'),
         show(f123s1, 'one quarter of the base')),
       L("The diagonal from M to D cuts this strip in half. So triangle A M D is half of a quarter, one eighth of the "
         "base.", show(f123b['half'], 'The diagonal from M to D'), show(f123s2, 'half of a quarter')),
@@ -2199,8 +2229,9 @@ video('solve-geo35-g124', 'solution', qid='geo35-g124', slides=[
       L("For the perimeter we need all three sides of the triangle. We have nine and fifteen. Nine and fifteen are three "
         "times three and three times five. So this is the triple three, four, five, times three, and the missing leg is "
         "three times four, twelve.", show(f124r1, 'So this is the triple'), show(f124a['ac'], 'the missing leg is')),
-      L("So the perimeter is nine plus twelve plus fifteen, thirty-six. Or, quicker, the middle number is twelve, and "
-        "three sides around twelve make three times twelve, thirty-six.", show(f124r2, 'nine plus twelve plus fifteen'),
+      L("So the perimeter is nine plus twelve plus fifteen, thirty-six. Or use twelve for all three sides. "
+        "Nine is three below twelve, and fifteen is three above twelve. The three taken away and the three added cancel. "
+        "So the sum is three times twelve, thirty-six.", show(f124r2, 'nine plus twelve plus fifteen'),
         show(f124r3, 'three times twelve')),
       L("Thirty-six times the height, five, is one hundred eighty.", show(f124r4, 'Thirty-six times the height')),
       L("Careful with two traps. The two triangle bases together are nine times twelve, which is one hundred eight, and "
@@ -2334,7 +2365,7 @@ for _g in (f126a, f126b): QLEFT(_g, 'geo35-g126')
 f126r1 = IH('f126r1', 'box: $(2k)^2 \\cdot 5k = 20k^3$', size=30)
 f126r2 = IH('f126r2', '$2r = 2k$, so $r = k$', size=30)
 f126r3 = IH('f126r3', 'cylinder: $πk^2 \\cdot 5k = 5πk^3$', size=30)
-f126r4 = IH('f126r4', '$\\frac{20k^3 - 5πk^3}{20k^3} = 1 - \\frac{5π}{20}$', size=30)
+f126r4 = IH('f126r4', '$\\frac{20k^3 - 5πk^3}{20k^3}$', size=30)
 f126r5 = IH('f126r5', '$= 1 - \\frac{π}{4}$', size=30)
 f126s1 = IH('f126s1', '$k = 1$: (1), (3), (4) the same', size=30)
 f126s2 = IH('f126s2', 'box: $4 \\cdot 4 \\cdot 10 = 160$', size=30)
@@ -2369,7 +2400,9 @@ video('solve-geo35-g126', 'solution', qid='geo35-g126', slides=[
       L("So the cylinder is pi times k squared, times five k. That's five pi k to the power of three.", show(f126r3, 'pi times k squared')),
       L("The part outside is the box minus the cylinder. To get a fraction of the box, we divide it by the box.",
         show(f126r4, 'we divide it by the box')),
-      L("k to the power of three cancels, and five over twenty is one over four. So it's one minus pi over four. Choice "
+      L("Divide each term on top by the box's volume, twenty k cubed. The first term gives one. In the second, "
+        "k cubed cancels, and five over twenty is one over four. So the second term is pi over four. "
+        "We subtract it, so it's one minus pi over four. Choice "
         "number four, but it was long.", show(f126r5, 'one minus pi over four'), mk('tick', 'choice 4', 'Choice number four, but'))),
     SM('Method 2 · Plugging in numbers', 'Plug in a number',
       L("Now let's plug in numbers, like with inscribed shapes in circles. Usually we'd think one is the easiest "
@@ -2523,8 +2556,8 @@ video('solve-geo35-g128', 'solution', qid='geo35-g128', slides=[
         "corner B. Now P O B is a triangle.", show(f128a['tri'], 'Now P O B is a triangle')),
       L("It's a right triangle. Why? The height stands straight on the base, so it makes a right angle with every line "
         "on the base from its foot. O B is such a line."),
-      L("The hypotenuse is the edge, seven. We need the other leg, O B. The foot of the height is the middle of the "
-        "square, where the diagonals meet. So O B is half of a diagonal.", show(f128a['diag'], 'where the diagonals meet')),
+      L("The hypotenuse is the edge, seven. We need the other leg, O B. All four slanted edges are equal, so the height "
+        "meets the square at its center, where the diagonals meet. So O B is half of a diagonal.", show(f128a['diag'], 'where the diagonals meet')),
       L("Remember the silver triangle. The diagonal of a square is the side times root two. Four root two times root "
         "two is four times two, eight. Half of it is four. So O B is four.", show(f128r1, 'Four root two times root two'),
         show(f128r2, 'Half of it is four')),
@@ -2549,73 +2582,16 @@ video('solve-geo35-g128', 'solution', qid='geo35-g128', slides=[
       L("Choice number four, five root two. Let's put the five under the root. Five squared is twenty-five, times two is "
         "fifty. Root fifty is just above root forty-nine, so it's out.", show(f128s5, 'Five squared is twenty-five'),
         mk('cross', 'choice 4', "so it's out")),
-      L("Three choices are out, so it's the fourth one left. Choice number two is our answer, and I'll see you in the next "
+      L("Three choices are out, so only one choice remains. Choice number two is our answer, and I'll see you in the next "
         "question.", mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
 
 
 # =================================================================================================================
-# r26-t35-cones (lesson) - Solids made by turning, and the slant height
-# No Hebrew lesson (added in the 2026-09 review; practice p01 rectangle turned, p21 triangle turned about each leg). Kept:
-# a rectangle turned about a side -> a cylinder (the side on the axis = the height, the other = the radius), a right
-# triangle turned about a leg -> a cone, the hypotenuse = the slant height; legs 3 and 6 -> 18 pi or 36 pi ("the radius is
-# squared, it counts more"). R37: a one-off (no question video uses it; the practice does), taught here with two
-# examples each. The slant height (the cone's right triangle) is a short reminder of geo-120 part 2, before q-r26-t35-02.
-# NOTE for the teacher: no real exam question 2019-2026 turns a shape (decision in the review file).
-# Visuals: the flat shape with its axis, then the solid it makes, the axis side orange, the radius side teal.
-# =================================================================================================================
-p_tr1 = G('p_tr1', [
-    ('line', [('tint', [(60, 300), (140, 300), (140, 140), (60, 140)], 'teal'), ('poly', [(60, 300), (140, 300), (140, 140), (60, 140)], 'ink', 3),
-              sg((60, 120), (60, 320), 'orange', 3, True), ('txt', 40, 220, '4', 'orange', 28), ('txt', 100, 326, '2', 'teal', 28)]),
-    ('solid', cyl_el(330, 300, 80, 160, 22) + [sg((330, 120), (330, 320), 'orange', 3, True), sg((330, 300), (410, 300), 'teal', 4),
-                                              ('txt', 370, 326, '2', 'teal', 28), ('txt', 430, 220, '4', 'orange', 28)]),
-], vb='20 100 460 250', w=480, title='A rectangle turned about its side makes a cylinder')
-p_tra1 = H35('p_tra1', '$r = 2$, $\\ h = 4$')
-p_tra2 = H35('p_tra2', '$π \\cdot 2^2 \\cdot 4 = 16π$')
-p_tra3 = H35('p_tra3', '$r = 4$, $\\ h = 2$')
-p_tra4 = H35('p_tra4', '$π \\cdot 4^2 \\cdot 2 = 32π$')
-p_tr2 = G('p_tr2', [
-    ('line', [('tint', [(60, 300), (120, 300), (60, 120)], 'teal'), ('poly', [(60, 300), (120, 300), (60, 120)], 'ink', 3),
-              sg((60, 100), (60, 320), 'orange', 3, True), ('txt', 40, 210, '6', 'orange', 28), ('txt', 90, 326, '3', 'teal', 28),
-              ('txt', 110, 200, 'slant', 'ink', 20)]),
-    ('solid', cone_el(300, 300, 60, 180, 18) + [sg((300, 100), (300, 320), 'orange', 3, True), sg((300, 300), (360, 300), 'teal', 4),
-                                               ('txt', 330, 326, '3', 'teal', 28), ('txt', 280, 210, '6', 'orange', 28)]),
-    ('other', cone_el(540, 300, 110, 90, 30) + [sg((540, 190), (540, 320), 'orange', 3, True), sg((540, 300), (650, 300), 'teal', 4),
-                                               ('txt', 595, 326, '6', 'teal', 28), ('txt', 522, 250, '3', 'orange', 28)]),
-], vb='20 80 650 270', w=600, title='A right triangle turned about a leg makes a cone')
-p_trb1 = H35('p_trb1', '$\\frac{π \\cdot 3^2 \\cdot 6}{3} = \\frac{54π}{3} = 18π$')
-p_trb2 = H35('p_trb2', '$\\frac{π \\cdot 6^2 \\cdot 3}{3} = 36π$')
-
-video('r26-t35-cones', 'lesson', slides=[
-    S('Cones: Slant Height and Turning',
-      L("Now two more ideas about cones and cylinders. Solids we make by turning a flat shape, and the slant height of a "
-        "cone.")),
-    S('Turn a rectangle',
-      L("Take a rectangle, two by four. Hold it by the side of four, and turn it one full turn around that side.",
-        show(p_tr1['line'], 'Take a rectangle')),
-      L("What do we get? A cylinder. The side we hold stays where it is, and it becomes the height. The other side "
-        "sweeps a circle, so it becomes the radius.", show(p_tr1['solid'], 'A cylinder')),
-      L("So the radius is two and the height is four. The volume is pi times two squared, times four, sixteen pi.",
-        show(p_tra1, 'So the radius is two'), show(p_tra2, 'pi times two squared')),
-      L("Now turn the same rectangle around the side of two. Now the radius is four and the height is two. Pi times "
-        "four squared, times two, is thirty-two pi. That's twice as much.", show(p_tra3, 'Now the radius is four'), show(p_tra4, 'is thirty-two pi'))),
-    S('Turn a right triangle',
-      L("Now a right triangle with legs three and six. We turn it around the leg of six.", show(p_tr2['line'], 'a right triangle with legs')),
-      L("We get a cone. Again, the side on the axis, six, is the height. The other leg, three, is the radius. And the "
-        "hypotenuse becomes the slant height, the line along the outside of the cone.", show(p_tr2['solid'], 'We get a cone')),
-      L("The volume is pi times three squared, times six, divided by three. Nine times six is fifty-four, and divided "
-        "by three that's eighteen. So it's eighteen pi.", show(p_trb1, 'Nine times six is fifty-four')),
-      L("Now around the leg of three. The radius is six and the height is three. Pi times thirty-six, times three, "
-        "divided by three, is thirty-six pi. That's twice as much again.", show(p_tr2['other'], 'Now around the leg of three'),
-        show(p_trb2, 'Pi times thirty-six')),
-      L("Why does it matter which side is on the axis? Because the radius is squared, and the height isn't. So the "
-        "radius counts more.")),
-    S('The slant height',
-      L("And remember, the slant height is not the height. Like in the lesson on right triangles, the height, the "
-        "radius and the slant height make a right triangle. The slant height is its hypotenuse."),
-      L("So when they give the slant height, we use Pythagoras to find the height first. Let's see it in a question, "
-        "and I'll see you in the next video.")),
-])
+# r26-t35-cones (lesson) - REMOVED 2026-10-23 (Nitzan's decision: "no"). The lesson (solids made by turning, and a
+# slant-height reminder) is out of the course: t35.py drop_cones_t35() unplaces it, and this spec no longer writes its
+# script. The slant height is taught in geo-120 part 2 (r 5, slant 13 -> h 12), which solve-q-r26-t35-02 links to.
+# Turning a shape stays only in practice geo35-core-p01 (p21 was already out), whose written explanation teaches it.
 
 
 # =================================================================================================================
@@ -2730,8 +2706,9 @@ video('solve-geo35-g129', 'solution', qid='geo35-g129', slides=[
       L("B D is a diagonal of the bottom face, a square. Like in the lesson, a face diagonal is the edge times root two. "
         "Four root two times root two is four times two, eight.", show(f129a['bd'], 'B D is a diagonal of the bottom face'),
         show(f129r1, 'Four root two times root two')),
-      L("Now the height from G down to B D. G B and G D are diagonals of two equal squares, so they're equal. So the "
-        "height falls on the middle of B D. Call it M. It's the middle of the bottom face.", show(f129a['gm'], 'Call it M')),
+      L("Now the height from G down to B D. G B and G D are diagonals of two equal squares, so they're equal. "
+        "Triangle B D G is isosceles. Its height is also a median, so it meets B D at its middle. "
+        "Call it M. It's the middle of the bottom face.", show(f129a['gm'], 'Call it M')),
       L("Look at triangle G C M. The edge C G stands on the bottom face, so it makes a right angle with C M.",
         show(f129a['tri'], 'Look at triangle G C M')),
       L("C M is half of the other diagonal, A C. The diagonals of a square are equal and halve each other. So C M is "
@@ -2897,7 +2874,7 @@ video('solve-geo35-g131', 'solution', qid='geo35-g131', slides=[
         "to the box edges. What is the greatest number of cubes that can fit entirely inside the box?",
         pt('stem', 'Identical cubes with edge four', 'hl', 11.0), show(f131b['line'], 'Identical cubes with edge four'), voice='calm', pause=0.5),
       L("In these questions, we first ask one thing. Do we fill the box with a liquid, or with solids?"),
-      L("A liquid spreads evenly. It fills every corner, and no empty space is left. That's what we did with water."),
+      L("Liquid can spread into small gaps. If we fill a container with liquid, we can use its whole volume."),
       L("Solids are different. Sometimes they fit exactly. Small cubes with edge three fill a cube with edge six "
         "exactly, two in each direction, eight cubes. But often the box isn't a whole number of cubes long, and a gap "
         "is left."),
@@ -2921,7 +2898,7 @@ video('solve-geo35-g131', 'solution', qid='geo35-g131', slides=[
       L("Four goes into nine twice, with one left over. And four goes into eleven twice, with three left over. We "
         "ignore those too.", show(f131s2, 'Four goes into nine twice'), show(f131s3, 'four goes into eleven twice')),
       L("Now we multiply. Four times two times two is sixteen.", show(f131s4, 'Four times two times two')),
-      L("And the trap? Twenty-seven, choice number four, is what we'd get by dividing the volumes, as if the cubes were "
+      L("And the trap? Twenty-seven, choice number four, is what we'd get by dividing the volumes and keeping only the whole number, as if the cubes were "
         "water and could fill the gaps. Solids in a box aren't water.", mk('cross', 'choice 4', 'Twenty-seven, choice number four')),
       L("These questions look hard because of their place in the section, but they're simple once you know them. "
         "Choice number two is our answer, and I'll see you in the next question.", mk('tick', 'choice 2', 'Choice number two is our answer'))),
@@ -3014,7 +2991,7 @@ video('solve-geo35-g132', 'solution', qid='geo35-g132', slides=[
       L("The middle of an edge. It shows two faces. Take it out, and four faces appear. So the surface goes up by two "
         "faces. Here that's two times sixteen, thirty-two.", show(f132c['edge'], 'The middle of an edge'),
         show(f132s2, 'Here that\'s two times sixteen')),
-      L("The middle of a face. It shows only one face. Take it out, or push it in, and five faces appear. So the surface "
+      L("The middle of a face. It shows only one face. Take it out, and five faces appear. So the surface "
         "goes up by four faces, sixty-four.", show(f132c['face'], 'The middle of a face'), show(f132s3, 'goes up by four faces')),
       L("There's a pattern here. The faces we lose plus the faces we gain always make six, the six faces of the cube we "
         "removed. And I'll see you in the next question.", show(f132s4, 'always make six'))),
@@ -3084,6 +3061,7 @@ p_cf4 = G('p_cf4', [
                ('tint', [_B5['E'], _B5['F'], _B5['G'], _B5['H']], 'red'), ('txt', 180, 165, '15', 'red', 28)]),
 ], vb='0 60 340 280', w=380, title='A box with three face areas')
 p_cfd1 = H35('p_cfd1', '$ab \\cdot bc \\cdot ca = (abc)^2$')
+p_cfd0 = H35('p_cfd0', 'edges $a,b,c$: faces $ab,bc,ca$')
 p_cfd2 = H35('p_cfd2', '$6 \\cdot 10 \\cdot 15 = 60 \\cdot 15 = 900$')
 p_cfd3 = H35('p_cfd3', 'volume $= \\sqrt{900} = 30$')
 p_cfd4 = H35('p_cfd4', 'edges $2, 3, 5$: $\\ 2 \\cdot 3 \\cdot 5 = 30$')
@@ -3096,7 +3074,8 @@ video('r26-t35-cubefacts', 'lesson', slides=[
       L("What's the longest straight rod that fits inside a box? It goes from one corner to the opposite corner, "
         "through the inside. That's the body diagonal.", show(p_cf1['line'], "What's the longest straight rod"),
         show(p_cf1['rod'], "That's the body diagonal")),
-      L("Like in the lesson on right triangles, the body diagonal is the square root of the three edges squared. Take a "
+      L("Like in the lesson on right triangles, square each edge length and add the three squares. The body diagonal "
+        "is the square root of that sum. Take a "
         "box two by four by four. Two squared plus four squared plus four squared is four plus sixteen plus sixteen.",
         show(p_cfa1, 'Two squared plus four squared')),
       L("That's thirty-six, and the root of thirty-six is six. So the longest rod is six.", show(p_cfa2, "That's thirty-six"))),
@@ -3116,8 +3095,8 @@ video('r26-t35-cubefacts', 'lesson', slides=[
         "forty-one.", show(p_cfb4, 'Four squared plus five squared')),
       L("Root forty-one isn't whole. It's between six and seven, because six squared is thirty-six, and seven squared "
         "is forty-nine.", show(p_cfb5, 'six squared is thirty-six')),
-      L("So any segment inside is at most root forty-one long. Seven is too long, and six fits. So the greatest whole "
-        "length is six.", show(p_cfb6, 'So the greatest whole length'))),
+      L("So any segment inside is at most root forty-one long. Seven is too long. A shorter segment fits along that "
+        "same line, so six fits. So the greatest whole length is six.", show(p_cfb6, 'So the greatest whole length'))),
     S('Faces, edges, vertices',
       L("Now counting. Some questions ask how many faces, edges or vertices a solid has. Here's a triangular prism.",
         show(p_cf3['line'], "Here's a triangular prism")),
@@ -3138,8 +3117,9 @@ video('r26-t35-cubefacts', 'lesson', slides=[
     S('Three faces, one volume',
       L("Sometimes they give the areas of three faces that meet at one corner, instead of the edges. Here they're six, "
         "ten and fifteen. What's the volume?", show(p_cf4['line'], 'the areas of three faces'), show(p_cf4['faces'], 'six, ten and fifteen')),
-      L("Each face is two edges multiplied. So when we multiply the three areas, every edge appears twice. That's the "
-        "length times the width times the height, squared. So it's the volume, squared.", show(p_cfd1, 'every edge appears twice')),
+      L("Call the length a, the width b and the height c. The three face areas are a times b, b times c, and c times a. "
+        "So when we multiply the three areas, every edge appears twice. That's the whole product, length times width "
+        "times height, all squared. So it's the volume, squared.", show(p_cfd0, 'Call the length a'), show(p_cfd1, 'every edge appears twice')),
       L("Six times ten is sixty, and sixty times fifteen is nine hundred. The root of nine hundred is thirty. So the "
         "volume is thirty.", show(p_cfd2, 'Six times ten is sixty'), show(p_cfd3, 'The root of nine hundred')),
       L("Let's check. The edges here are two, three and five. Two times three is six, two times five is ten, three times "

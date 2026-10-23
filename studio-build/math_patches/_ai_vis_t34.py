@@ -2751,8 +2751,10 @@ video('solve-geo34-g113', 'solution', qid='geo34-g113', slides=[
 # triangles = the square, four rectangles; "draw it when it's not drawn"); plug in AE = 1 (KT here), not the side (we'd
 # divide by root 2; we prefer to multiply); the hypotenuse root 2 = every side; Hillel wrong (1 + root 2 vs 2; here Sara is
 # RIGHT); cross out; Naomi: 2 + root 2 both. Understanding: one leg cancels; the rest: the square's side against a leg
-# (her "measure with your fingers" replaced in 2026-09 by the reason: the hypotenuse is the longest side); Ben: which piece
-# cancels which. R37: the octagon cut is taught in geo-105 (link). R15: the number 1 with its reason (multiply, not divide).
+# (the reason: the hypotenuse is the longest side); then her exception, restored 2026-10-23 (Nitzan: "whatever the Hebrew
+# does", geo 5834-5845): we don't rely on a figure, except in a regular polygon - it can't be drawn any other way, so its
+# figure is accurate; check with your fingers; the proof stays, so it isn't a guess. Ben: which piece cancels which.
+# R37: the octagon cut is taught in geo-105 (link). R15: the number 1 with its reason (multiply, not divide).
 # V3: the copy; the two missing cut lines dashed teal, the corner triangle KMT tinted; method 1: values 1, 1, root 2 written,
 # LT traced teal with root 2 + 1, MN traced orange; method 2: matching pieces in the same colours, the cancelled ones red.
 # =================================================================================================================
@@ -2796,9 +2798,10 @@ f114r4 = IH('f114r4', '$KMT$: $1 + 1 + \\sqrt2 = 2 + \\sqrt2$', size=34)
 f114r5 = IH('f114r5', '$MN = 1 + \\sqrt2 + 1 = 2 + \\sqrt2$', size=34)
 f114s1 = I('f114s1', 'Sara: $KT + KT$ against side $+ KT$', size=28)
 f114s2 = I('f114s2', '$KT$ (a leg) $<$ side (the hypotenuse)', size=28)
+f114s2b = I('f114s2b', 'A regular polygon: the figure is accurate', size=28)
 f114s3 = I('f114s3', 'Ben: $KT + MT + KM$ against $MT +$ side $+$ leg', size=28)
 FLOW([f114r1, f114r2, f114r3, f114r4, f114r5], [(870, 710, 330, 700)])
-FLOW([f114s1, f114s2, f114s3], [(870, 710, 330, 700)])
+FLOW([f114s1, f114s2, f114s2b, f114s3], [(870, 710, 330, 700)])
 NOFIG('solve-geo34-g114', 0, 1, 2)
 
 video('solve-geo34-g114', 'solution', qid='geo34-g114', slides=[
@@ -2844,6 +2847,11 @@ video('solve-geo34-g114', 'solution', qid='geo34-g114', slides=[
       L("The side of the square is a side of the octagon, like the hypotenuse K M. And K T is only a leg. In a right "
         "triangle, the hypotenuse is the longest side. So L T is more than two times K T, and Sara is right.",
         show(f114b['rest'], 'The side of the square is a side'), show(f114s2, 'the hypotenuse is the longest side')),
+      L("You could also see it in the figure. On the exam, a figure is not necessarily drawn to scale, so usually we "
+        "don't rely on it. But a regular polygon is the exception. It can't be drawn any other way, so its figure is "
+        "accurate. Measure the two lengths with your fingers, and you'll see that L T is longer than two times K T. That's "
+        "only a quick check. The proof is what we just did, with the hypotenuse.",
+        show(f114s2b, 'But a regular polygon is the exception')),
       L("Now Ben. The perimeter of K M T is K T plus M T plus K M. And M N is M T, plus the side of the square, plus the "
         "leg on the right.", show(f114s3, 'The perimeter of K M T')),
       L("M T is on both sides, so it cancels. K M is a side of the octagon, the same as the side of the square. And K T "

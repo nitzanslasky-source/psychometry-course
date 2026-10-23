@@ -2088,6 +2088,7 @@ def _nd_expl(M, qid, subs):
 
 def no_decimal_estimates(M):
     # solve-geo35-g121 · the water: 3 < π < 3.5 gives 72 < 24π < 84, which decides every choice (no 24 × 3.14 ≈ 75.4)
+    # (2026-10-23 Nitzan: π as 3.14 after all; the video comes from _ai_vis_t35.py, the written explanation below uses 3.14 < π < 3.15)
     v = 'solve-geo35-g121'
     if not _nd_recorded(v):
         _nd_item(M, v, 'The water in the cone', r'$24\pi\approx24\times3.14\approx75.4$',
@@ -2107,13 +2108,13 @@ def no_decimal_estimates(M):
             ('say', "Careful — that one's close. If you round π to 3, the water is 72 and the box suddenly looks big enough. Use 3.14.",
              "Careful — that one's close. Pi is MORE than 3, not equal to 3. So the water is a bit more than 72 — the box is just too small.")])
     _nd_expl(M, 'geo35-g121', [
-        (0, 'The cone holds', 'The cone holds $\\frac{\\pi(\\sqrt6)^2\\cdot12}{3}=24\\pi$ cm³ of water. Since $3<\\pi<3.5$: '
-                              '$24\\cdot3<24\\pi<24\\cdot3.5$, so the water is more than $72$ and less than $84$.'),
+        (0, 'The cone holds', 'The cone holds $\\frac{\\pi(\\sqrt6)^2\\cdot12}{3}=24\\pi$ cm³ of water. Since $3.14<\\pi<3.15$: '
+                              '$24\\cdot3.14=75.36$ and $24\\cdot3.15=75.6$, so the water is more than $75$ and less than $76$.'),
         (1, 'Check each container.', 'Check each container. The cube (choice 1): $4^3=64$, too small. The pyramid (choice 2): '
                                      '$\\frac{6^2\\times7}{3}=84$, more than $24\\pi$: big enough. The box (choice 3): $6\\times4\\times3=72$, '
                                      'less than $24\\pi$: too small. The cylinder (choice 4): $\\pi(\\sqrt2)^2\\times10=20\\pi$, less than $24\\pi$.'),
-        (2, 'Only the pyramid', 'Only the pyramid (84 cm³) can hold all the water. Careful with π: it is more than 3, so the water is '
-                                'more than 72, and the box (72) is just too small.')])
+        (2, 'Only the pyramid', 'Only the pyramid (84 cm³) can hold all the water. Careful with π: it is more than 3.14, so the water is '
+                                'more than 75, and the box (72) is too small. Taking π as just 3 would give exactly 72.')])
     # solve-geo35-g126 · Estimate: π > 3 so π/2 > 3/2 > 1 (no 1.57)
     v = 'solve-geo35-g126'
     if not _nd_recorded(v):
@@ -2385,3 +2386,26 @@ _apply_before_ai_redo_t35 = apply
 def apply(M):
     _apply_before_ai_redo_t35(M)
     ai_redo_t35(M)   # 2026-10-22 topic 35 for the teacher's reading: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-23 Nitzan's decision on r26-t35-cones ("no"): the lesson "Cones: Slant Height and Turning" is dropped from the
+# course. Its spec (_ai_vis_t35.py) no longer writes a script for it; here it leaves the flow and the videos. The guided
+# question q-r26-t35-02 (slant height) and its video stay where they are: its "like in the lesson" is geo-120 part 2,
+# which teaches the cone's right triangle (r 5, slant 13 -> h 12). Turning a shape stays only in practice geo35-core-p01 (p21 was already
+# out of the practice, rn_practice).
+# Runs LAST (after ai_redo_t35).
+# =====================================================================================================================
+def drop_cones_t35(M):
+    vid = 'r26-t35-cones'
+    if any(f['ref'] == vid for f in M.D['flow']): M.unplace(vid)
+    M.D['videos'].pop(vid, None)
+    assert any(f['ref'] == 'q-r26-t35-02' for f in M.D['flow']) and 'solve-q-r26-t35-02' in M.D['videos']
+
+
+_apply_before_drop_cones_t35 = apply
+
+
+def apply(M):
+    _apply_before_drop_cones_t35(M)
+    drop_cones_t35(M)   # 2026-10-23 r26-t35-cones removed (Nitzan's decision): runs LAST

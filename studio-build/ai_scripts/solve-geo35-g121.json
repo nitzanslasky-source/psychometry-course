@@ -50,27 +50,62 @@
   ],
   [
    {
-    "say": "How much is twenty-four pi? We don't need pi exactly. Pi is more than three, and less than three and a half.",
+    "say": "How much is twenty-four pi? We don't need pi exactly. Pi is more than three point one four, and less than three point one five.",
     "at": [
      "How much is twenty-four pi",
      "We don't need",
-     "Pi is more than three",
-     "and less than"
+     "Pi is more than three point one four",
+     "point one four"
     ]
    },
    {
-    "say": "Twenty-four times three is seventy-two. Twenty-four times three and a half is seventy-two, plus half of twenty-four, twelve. That's eighty-four.",
+    "say": "First the lower end, twenty-four times three point one four. We take the three first. Twenty-four times three is seventy-two.",
     "at": [
-     "Twenty-four times three is",
-     "Twenty-four times three and a half",
-     "half is seventy-two"
+     "Twenty-four times three is"
     ]
    },
    {
-    "say": "So the water is more than seventy-two, and less than eighty-four.",
+    "say": "Now twenty-four times point one four. That's fourteen hundredths, so first we calculate twenty-four times fourteen. Twenty-four times ten is two hundred forty. Twenty-four times four is ninety-six. Together, three hundred thirty-six.",
     "at": [
-     "So the water is more than",
-     "than seventy-two, and"
+     "Now twenty-four times",
+     "Together, three hundred thirty-six"
+    ]
+   },
+   {
+    "say": "Make that hundredths, and we get three point three six.",
+    "at": [
+     "Make that hundredths",
+     "get three point"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now we add the two parts. Seventy-two plus three point three six is seventy-five point three six. So the water is more than seventy-five point three six.",
+    "at": [
+     "Now we add the two parts",
+     "Seventy-two plus three point three six",
+     "six is seventy-five"
+    ]
+   },
+   {
+    "say": "Now the upper end, twenty-four times three point one five. The three gives seventy-two again. Point one five is a tenth, plus half a tenth. A tenth of twenty-four is two point four, and half of that is one point two. Together that's three point six.",
+    "at": [
+     "Together that's three point six"
+    ]
+   },
+   {
+    "say": "Seventy-two plus three point six is seventy-five point six. So the water is less than seventy-five point six.",
+    "at": [
+     "Seventy-two plus three point six",
+     "is seventy-five point"
+    ]
+   },
+   {
+    "say": "So the water is between seventy-five point three six and seventy-five point six. That's more than seventy-five, and less than seventy-six.",
+    "at": [
+     "That's more than seventy-five",
+     "less than seventy-six"
     ]
    }
   ],
@@ -91,7 +126,7 @@
     ]
    },
    {
-    "say": "Sixty-four is less than seventy-two, so it's less than the water. Choice number one is out.",
+    "say": "Sixty-four is less than seventy-five, so it's less than the water. Choice number one is out.",
     "at": [
      "Sixty-four is less",
      "Choice number one is out"
@@ -117,10 +152,10 @@
     ]
    },
    {
-    "say": "So the pyramid holds eighty-four, and the water is less than eighty-four. All the water fits. In the exam you'd circle it and move on. Here, let's check the others too.",
+    "say": "So the pyramid holds eighty-four, and the water is less than seventy-six. All the water fits. In the exam you'd circle it and move on. Here, let's check the others too.",
     "at": [
      "So the pyramid holds eighty-four",
-     "than eighty-four. All"
+     "than seventy-six. All"
     ]
    }
   ],
@@ -136,10 +171,11 @@
     ]
    },
    {
-    "say": "Careful here, it's close. Pi is more than three, not equal to three. So the water is a bit more than seventy-two, and this box is just too small. Choice number three is out.",
+    "say": "Careful here. If you take pi as just three, the water is exactly seventy-two, and this box looks big enough. But pi is more than three point one four, so the water is more than seventy-five. This box is too small. Choice number three is out.",
     "at": [
-     "Pi is more than three, not equal",
-     "not equal to",
+     "If you take",
+     "But pi is more than three point one four",
+     "the water is more",
      "Choice number three is out"
     ]
    },
