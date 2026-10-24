@@ -606,6 +606,12 @@ except Exception:
     GATE = {}
 
 
+try:   # 2026-10-24: lessons deferred until after launch (video_status.py --defer), shown and hideable
+    DEFER = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'deferred.json')))
+except Exception:
+    DEFER = {}
+
+
 def _origin(vid, topic):
     """2026-10-22 (teacher: "mark every video that is equivalent to the Hebrew and all the videos that were added"):
     'hebrew' = the video (or the lesson it is a part of) is in base-v18 = the English translation of her Hebrew course,
@@ -655,6 +661,7 @@ def build(topics=(), ids=None, out=OUT):
             v['camera'] = v['id'] in cams                          # camera lesson: "Camera on" by default
             v['origin'] = _origin(v['id'], g['topic'])               # 2026-10-22: from her Hebrew course, or added
             v['gate'] = GATE.get(v['id']) or {'state': 'held', 'why': 'not reviewed yet'}   # 2026-10-23: Video Status gate (review_gate.json)
+            v['deferred'] = DEFER.get(v['id'], {}).get('why') if v['id'] in DEFER else None   # 2026-10-24: after launch
             allv.append(v)
     import datetime as _dt
     now = _dt.datetime.now().astimezone()
@@ -737,6 +744,8 @@ aside{width:300px;flex:none;border-right:1px solid var(--line);background:var(--
 .cam.on label{color:var(--accent)}
 .pill.cam{background:var(--accent-soft);color:var(--accent)}
 .pill.heb{background:#e0f2fe;color:#075985;border:1px solid #7dd3fc}
+.pill.later{background:#e5e7eb;color:#374151;border:1px solid #9ca3af;font-weight:600}
+body.hidelater .vid.later{display:none}
 .pill.ready{background:#dcfce7;color:#166534;border:1px solid #86efac;font-weight:600}
 .pill.held{background:#fee2e2;color:#991b1b;border:1px solid #fca5a5}
 .pill.added{background:#fff7ed;color:#9a3412;border:1px solid #fdba74}
@@ -932,6 +941,7 @@ body.camlayout{--band:44vh;padding-top:var(--band)}
       <div class="opts">
         <span class="mode" title="Full read = the whole script. Re-read = only the paragraphs you select (a patch take)."><button id="mFull" class="on">Full read</button><button id="mPatch">Re-read paragraphs</button></span>
         <label><input type="checkbox" id="auto" checked> Auto-scroll</label>
+        <label class="read-setting" title="Hide the videos marked After launch (deferred) that are not recorded yet."><input type="checkbox" id="hideLater" checked> Hide after-launch</label>
         <label class="read-setting" title="Put each sentence on a new reading line. Same words and recording paragraphs; untick for the original layout."><input type="checkbox" id="readLines" checked> Reading lines</label>
         <label class="mirrorbox" title="Flip the script left-right, for a teleprompter glass in front of the camera"><input type="checkbox" id="mirror"> Mirror</label>
         <button id="aMinus" title="Smaller text">A−</button><button id="aPlus" title="Bigger text">A+</button>
@@ -1029,7 +1039,7 @@ function completedCorrectionIndices(id,side){
 function pendingVideoCorrections(id,full,patches){const task=(DATA.videoCorrections||{})[id];if(!task)return [];
   const done=new Set([full,...patches].flatMap(s=>completedCorrectionIndices(id,s)));return task.paragraphs.filter(i=>!done.has(i))}
 function videoCorrectionList(id=V[S.cur].id){return (S.status[id]||{}).videoCorrections||[]}
-function gateBadge(v){const g=v.gate||{};return g.state==='ready'?' <span class="pill ready" title="Reviewed by Codex — you can record it">Ready to record</span>':' <span class="pill held" title="'+esc(g.why||'')+'">Held — don\'t record yet</span>'}
+function gateBadge(v){if(v.deferred!=null)return ' <span class="pill later" title="'+esc(v.deferred||'')+'">After launch — skip for now</span>';const g=v.gate||{};return g.state==='ready'?' <span class="pill ready" title="Reviewed by Codex — you can record it">Ready to record</span>':' <span class="pill held" title="'+esc(g.why||'')+'">Held — don\'t record yet</span>'}
 function originBadge(v){const o=v.origin||{};return o.kind==='added'?' <span class="pill added" title="No video in your Hebrew course ('+esc(o.why||'')+')">added · no Hebrew video</span>':' <span class="pill heb" title="Equivalent to a video in your Hebrew course">Hebrew'+(o.part?' (part)':'')+'</span>'}
 function correctionBadge(id){const pending=videoCorrectionList(id),task=(DATA.videoCorrections||{})[id];return pending.length?'<span class="pill vfix">Video correction · '+(task.mode==='full'?'new full take':pending.length+' paragraph'+(pending.length>1?'s':''))+'</span>':''}
 function changedOf(id,full,patches){/* same rule as the generator: current paragraphs not in the last full take's sidecar nor in a later patch */
@@ -1058,7 +1068,7 @@ function renderList(){
   for(const g of DATA.groups){const done=g.ids.filter(id=>S.status[id]).length;
     h+='<div class="grp"><span>'+esc(g.topic?('Topic '+g.topic+(g.title?' · '+g.title:'')):g.title)+'</span><span>'+done+'/'+g.ids.length+'</span></div>';
     for(const id of g.ids){const v=BYID[id],i=V.indexOf(v),st=S.status[id];n++;
-      h+='<div class="vid'+(i===S.cur?' cur':'')+'" data-i="'+i+'"><span class="n">'+(i+1)+'</span><span class="t" title="'+esc(v.title)+'">'+esc(v.title)+'</span><span class="m">'+v.minutes.toFixed(1)+' min</span>'+
+      h+='<div class="vid'+(i===S.cur?' cur':'')+(v.deferred!=null&&!st?' later':'')+'" data-i="'+i+'"><span class="n">'+(i+1)+'</span><span class="t" title="'+esc(v.title)+'">'+esc(v.title)+'</span><span class="m">'+v.minutes.toFixed(1)+' min</span>'+
         '<span class="id">'+esc(id)+'</span><span class="st">'+(st?'<span class="pill yes">recorded ✓'+(st.seconds?' · '+fmt(st.seconds):'')+(st.takes>1?' · '+st.takes+' takes':'')+(st.patches?' · '+st.patches+' patch'+(st.patches>1?'es':''):'')+'</span>'+(st.changed&&st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length?' <span class="pill chg">script re-read: '+st.changed.filter(k=>!videoCorrectionList(id).includes(k)).length+'</span>':''):'<span class="pill no">not recorded</span>'+gateBadge(v))+correctionBadge(id)+originBadge(v)+(camWanted(v)?' <span class="pill cam" title="Recorded with the camera on">camera</span>':'')+'</span></div>'}}
   L.innerHTML=h;
   L.querySelectorAll('.vid').forEach(el=>el.onclick=()=>selectVideo(+el.dataset.i));
@@ -1125,6 +1135,7 @@ function fontSize(d){let f=LS.get('font',30);f=Math.max(18,Math.min(48,f+d));LS.
 $('#bList').onclick=()=>{const h=!document.body.classList.contains('listhidden');document.body.classList.toggle('listhidden',h);LS.set('listHidden',h);if(document.body.classList.contains('recording')&&!h)toast('The list comes back when you stop recording.');requestAnimationFrame(fitCur)};
 document.body.classList.toggle('listhidden',LS.get('listHidden',false));
 $('#aMinus').onclick=()=>fontSize(-2);$('#aPlus').onclick=()=>fontSize(2);
+$('#hideLater').checked=LS.get('hideLater',true);document.body.classList.toggle('hidelater',$('#hideLater').checked);$('#hideLater').onchange=()=>{LS.set('hideLater',$('#hideLater').checked);document.body.classList.toggle('hidelater',$('#hideLater').checked)};
 $('#readLines').checked=LS.get('readLines',true);document.body.classList.toggle('readlines',$('#readLines').checked);
 $('#readLines').onchange=()=>{LS.set('readLines',$('#readLines').checked);document.body.classList.toggle('readlines',$('#readLines').checked);requestAnimationFrame(fitCur)};
 $('#mirror').checked=LS.get('mirror',false);document.body.classList.toggle('mirror',$('#mirror').checked);

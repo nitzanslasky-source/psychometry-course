@@ -67,6 +67,17 @@ def load_gate():
 def save_gate(G):
     json.dump(dict(sorted(G.items())), open(GATE, 'w'), ensure_ascii=False, indent=1)
 
+# 2026-10-24 (Nitzan: "cut off videos that can be pushed off" — scripts still written and reviewed, recorded after launch).
+# deferred.json: {id: {"why": ..., "by": ..., "since": ...}}. Independent of the Ready/Held review gate.
+DEFER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'deferred.json')
+
+def load_defer():
+    try: return json.load(open(DEFER))
+    except Exception: return {}
+
+def save_defer(F):
+    json.dump(dict(sorted(F.items())), open(DEFER, 'w'), ensure_ascii=False, indent=1)
+
 _s = importlib.util.spec_from_file_location('reading_studio', os.path.join(HERE, 'reading_studio.py'))
 RS = importlib.util.module_from_spec(_s); _s.loader.exec_module(RS)
 
@@ -478,6 +489,7 @@ def entry(state, parts, path, rendered_at, source, note, made_from=None):
 def evaluate(reseed=False, save=True):
     global GATEMAP
     GATEMAP = load_gate()
+    DEFMAP = load_defer()
     vids = video_list()
     ids = {v['id'] for v in vids}
     hyb = hybrid_videos(ids)
@@ -560,7 +572,10 @@ def evaluate(reseed=False, save=True):
                 why = 'READY TO RECORD — reviewed and frozen' + (' (%s)' % g['why'] if g.get('why') else '')
             else:
                 why = 'HELD — ' + (g.get('why') or 'in review')
-        row.update(status=st, label=(LABEL[st] if st != 'record' else ('Ready to record' if row.get('gate') == 'ready' else 'Held (not ready)')), why=why, notes=notes)
+            if vid in DEFMAP:
+                row['deferred'] = True
+                why = 'AFTER LAUNCH (deferred) — ' + (DEFMAP[vid].get('why') or '') + ' · review: ' + why
+        row.update(status=st, label=(LABEL[st] if st != 'record' else ('After launch (deferred)' if row.get('deferred') else 'Ready to record' if row.get('gate') == 'ready' else 'Held (not ready)')), why=why, notes=notes)
         rows.append(row)
     if save and (changed_ledger or reseed):
         save_ledger(L)
@@ -755,7 +770,9 @@ def main():
     ap.add_argument('--hold', nargs='+', metavar='ID', help='mark unrecorded lessons HELD (use --why)')
     ap.add_argument('--why', default='', help='reason for --hold / note for --ready')
     ap.add_argument('--by', default='', help='who sets the gate (Claude / Codex)')
-    ap.add_argument('--gate', choices=['ready', 'held'], help='with --list record: only ready or only held lessons')
+    ap.add_argument('--gate', choices=['ready', 'held', 'deferred'], help='with --list record: only ready / held (both without deferred) or only deferred lessons')
+    ap.add_argument('--defer', nargs='+', metavar='ID', help='mark lessons AFTER LAUNCH (deferred; use --why)')
+    ap.add_argument('--undefer', nargs='+', metavar='ID', help='bring deferred lessons back into the launch')
     ap.add_argument('-o', '--out', default=OUT)
     a = ap.parse_args()
     if a.ready or a.hold:
@@ -763,6 +780,11 @@ def main():
         for vid in (a.ready or []): G[vid] = {'state': 'ready', 'why': a.why, 'by': a.by, 'since': now}
         for vid in (a.hold or []): G[vid] = {'state': 'held', 'why': a.why or 'in review', 'by': a.by, 'since': now}
         save_gate(G)
+    if a.defer or a.undefer:
+        F = load_defer(); now = dt.datetime.now().astimezone().isoformat(timespec='minutes')
+        for vid in (a.defer or []): F[vid] = {'why': a.why, 'by': a.by, 'since': now}
+        for vid in (a.undefer or []): F.pop(vid, None)
+        save_defer(F)
     if a.rendered:
         cmd_rendered(*a.rendered)
         rows = evaluate()
@@ -771,13 +793,15 @@ def main():
     else:
         rows = evaluate(reseed=a.reseed)
     if a.list:
-        print('\n'.join(r['id'] for r in rows if r['status'] == a.list and (not a.gate or r.get('gate') == a.gate)))
+        sel = lambda r: (not a.gate) or (r.get('deferred') if a.gate == 'deferred' else (not r.get('deferred') and r.get('gate') == a.gate))
+        print('\n'.join(r['id'] for r in rows if r['status'] == a.list and sel(r)))
         return
     out = write_page(rows, a.out)
     c = {k: sum(1 for r in rows if r['status'] == k) for k, _ in STATUSES}
     print('%s  (%d videos)' % (out, len(rows)))
     print('  ' + ' · '.join('%s: %d' % (LABEL[k], c[k]) for k, _ in STATUSES))
-    print('  of Record: Ready to record %d · Held %d' % (sum(1 for r in rows if r.get('gate') == 'ready'), sum(1 for r in rows if r['status'] == 'record' and r.get('gate') != 'ready')))
+    rec = [r for r in rows if r['status'] == 'record']
+    print('  of Record: Ready to record %d · Held %d · After launch (deferred) %d' % (sum(1 for r in rec if r.get('gate') == 'ready' and not r.get('deferred')), sum(1 for r in rec if r.get('gate') != 'ready' and not r.get('deferred')), sum(1 for r in rec if r.get('deferred'))))
 
 
 if __name__ == '__main__':
