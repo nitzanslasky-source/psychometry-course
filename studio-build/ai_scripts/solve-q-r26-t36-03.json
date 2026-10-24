@@ -1,0 +1,124 @@
+{
+ "videoId": "solve-q-r26-t36-03",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. Each edge of a cube is increased by twenty percent. By what percent does the volume of the cube increase?",
+    "voice": "calm",
+    "at": [
+     "Now a new question"
+    ],
+    "pause": 0.5
+   },
+   "So the edge grows by a percent, and we need the volume's growth, also as a percent. We'll solve it in two different ways.",
+   {
+    "say": "A lot of students say three times twenty, sixty percent. It feels right, because a cube has three directions. But percents don't add up like that. Sixty percent is choice number one, and it's a trap.",
+    "at": [
+     "Sixty percent is choice number one"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. First we turn the percent into a factor. Remember from percents, plus twenty percent means times one point two.",
+    "at": [
+     "plus twenty percent means",
+     "one point two"
+    ]
+   },
+   {
+    "say": "The new cube is similar to the old one. So, like in the lesson, the volume gets the factor to the power of three.",
+    "at": [
+     "the volume gets the factor",
+     "to the power"
+    ]
+   },
+   {
+    "say": "One point two squared is one point four four, because twelve times twelve is a hundred forty-four.",
+    "at": [
+     "One point two squared",
+     "twelve times twelve"
+    ]
+   },
+   {
+    "say": "Now times one point two again. One point four four times one is one point four four. One point four four times zero point two is zero point two eight eight.",
+    "at": [
+     "Now times one point two again",
+     "one is one"
+    ]
+   },
+   {
+    "say": "Together, that's one point seven two eight.",
+    "at": [
+     "Together, that's"
+    ]
+   },
+   {
+    "say": "Times one point seven two eight means the old volume, plus zero point seven two eight of it. That's an increase of seventy-two point eight percent.",
+    "at": [
+     "Times one point",
+     "That's an increase of seventy-two",
+     "point eight percent"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's plug in numbers. Let's take an edge of ten, because ten is easy to cube, and twenty percent of ten is easy to find. The old volume is ten to the power of three, a thousand.",
+    "at": [
+     "numbers. Let's take",
+     "The old volume is ten",
+     "to the power"
+    ]
+   },
+   {
+    "say": "Twenty percent of ten is two, so the new edge is twelve.",
+    "at": [
+     "so the new edge is twelve"
+    ]
+   },
+   {
+    "say": "Twelve squared is a hundred forty-four. Now times twelve. A hundred forty-four times ten is one thousand four hundred forty, and a hundred forty-four times two is two hundred eighty-eight.",
+    "at": [
+     "Twelve squared is",
+     "A hundred forty-four times ten",
+     "is one thousand"
+    ]
+   },
+   {
+    "say": "Together, the new volume is one thousand seven hundred twenty-eight.",
+    "at": [
+     "Together, the new volume",
+     "one thousand seven"
+    ]
+   },
+   {
+    "say": "The volume grew by one thousand seven hundred twenty-eight minus one thousand. That's seven hundred twenty-eight.",
+    "at": [
+     "The volume grew by",
+     "thousand seven hundred"
+    ]
+   },
+   {
+    "say": "Seven hundred twenty-eight out of a thousand is seventy-two point eight percent. The same answer.",
+    "at": [
+     "Seven hundred twenty-eight out of",
+     "a thousand is"
+    ]
+   },
+   {
+    "say": "And forty-four percent? That's what happens to one face, one point two squared. But they asked about the volume.",
+    "at": [
+     "And forty-four percent",
+     "And forty-four percent",
+     "That's what happens"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

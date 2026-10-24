@@ -1,0 +1,172 @@
+{
+ "videoId": "geo-141",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now similarity in three-dimensional shapes, solids.",
+   {
+    "say": "Until now we talked about lengths and areas. An area is two-dimensional, so the area ratio is the linear ratio, squared.",
+    "at": [
+     "about lengths and"
+    ]
+   },
+   "A cube, a box and a cylinder are three-dimensional. So now we'll talk about volumes."
+  ],
+  [
+   {
+    "say": "In similar solids, the volume ratio is the linear ratio to the power of three.",
+    "at": [
+     "volume ratio is"
+    ]
+   },
+   {
+    "say": "So lengths keep the ratio, areas get it squared, and volumes get it to the power of three. If the ratio is k, that's k, k squared and k to the power of three.",
+    "at": [
+     "If the ratio is k",
+     "k to the"
+    ]
+   },
+   "And the surface area of a solid? It's still an area, so it gets the ratio squared.",
+   "Now, this is important. Two solids are similar only when all their matching edges have the same ratio.",
+   "In a cube or a box, these are the edges. In a cylinder or a cone, it's the radius and the height.",
+   "So a box is similar to another box only if all three of its edges grow by the same factor. The length, the width and the height.",
+   "And spheres? Like circles, every sphere has the same shape. So all spheres are similar."
+  ],
+  [
+   {
+    "say": "Let's start with a regular solid, the cube. All the cubes in the world are similar, just like all the squares.",
+    "at": [
+     "regular solid, the"
+    ]
+   },
+   {
+    "say": "Here's a small cube, and a big cube whose edge is four times as long. So the linear ratio is one to four.",
+    "at": [
+     "Here's a small cube",
+     "a big cube",
+     "So the linear ratio is one to four",
+     "one to four"
+    ]
+   },
+   {
+    "say": "How many small cubes fit inside the big one? Let's count. One layer is four by four, sixteen cubes.",
+    "at": [
+     "One layer is four by four",
+     "One layer is four by four"
+    ]
+   },
+   {
+    "say": "And there are four layers. Sixteen times four is sixty-four.",
+    "at": [
+     "And there are four layers",
+     "Sixteen times four"
+    ]
+   },
+   {
+    "say": "So the areas are one squared to four squared, one to sixteen. And the volumes are one to the power of three, to four to the power of three, one to sixty-four.",
+    "at": [
+     "So the areas are one squared",
+     "And the volumes are one",
+     "to the power"
+    ]
+   },
+   "Why to the power of three? The cube grows four times in its length, four times in its width and four times in its height. Four times four times four is sixty-four."
+  ],
+  [
+   {
+    "say": "The cube was easy, because it's regular. A cylinder isn't regular, so two cylinders aren't always similar.",
+    "at": [
+     "because it's regular"
+    ]
+   },
+   "Two cylinders are similar only if their radii and their heights have the same ratio. The same goes for cones.",
+   {
+    "say": "Here the radii are two and four. Two to four is one to two.",
+    "at": [
+     "Here the radii are two and four",
+     "Here the radii",
+     "Two to four is one to two"
+    ]
+   },
+   {
+    "say": "The heights are four and eight. Four to eight is also one to two. The same ratio, so these cylinders are similar.",
+    "at": [
+     "The heights are four and eight",
+     "Four to eight is also",
+     "one to two"
+    ]
+   },
+   {
+    "say": "So their areas are one to four, and their volumes are one to the power of three to two to the power of three. That's one to eight.",
+    "at": [
+     "So their areas are one to four",
+     "to four, and",
+     "That's one to eight"
+    ]
+   },
+   {
+    "say": "Careful. If only the radius doubled, and the height stayed the same, they wouldn't be similar. Then the power of three doesn't work. We'll see that case in the next lesson.",
+    "at": [
+     "If only the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here's a famous trap. A glass shaped like a cone stands on its point. We fill it with water up to half its height.",
+    "at": [
+     "A glass shaped like a cone",
+     "cone stands on",
+     "We fill it with water"
+    ]
+   },
+   {
+    "say": "Is the glass half full? It looks like it, but no.",
+    "at": [
+     "Is the glass"
+    ]
+   },
+   "The water is a small cone. Its surface is parallel to the top of the glass, like a line parallel to the base. So the water cone is similar to the glass.",
+   {
+    "say": "Its height is half the glass's height, so the linear ratio is one to two.",
+    "at": [
+     "Its height is half",
+     "so the linear ratio is one to two",
+     "one to two"
+    ]
+   },
+   {
+    "say": "The volumes are one to the power of three to two to the power of three, one to eight. So the water fills only one eighth of the glass.",
+    "at": [
+     "The volumes are one",
+     "the power of"
+    ]
+   },
+   "The other seven eighths are in the wide part at the top."
+  ],
+  [
+   {
+    "say": "So let's sum up. In similar solids, lengths keep the ratio, areas get it squared, and volumes get it to the power of three.",
+    "at": [
+     "In similar solids",
+     "the ratio, areas"
+    ]
+   },
+   {
+    "say": "Solids are similar only when every matching edge has the same ratio.",
+    "at": [
+     "Solids are similar only",
+     "every matching edge"
+    ]
+   },
+   {
+    "say": "In a cylinder or a cone, check both the radius and the height. Cubes and spheres are always similar.",
+    "at": [
+     "In a cylinder or a cone",
+     "cone, check both"
+    ]
+   },
+   "Take a moment to memorize this, and I'll see you in the next video."
+  ]
+ ]
+}

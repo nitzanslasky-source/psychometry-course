@@ -1,0 +1,110 @@
+{
+ "videoId": "geo-139-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with the pictures of similar triangles on the exam."
+  ],
+  [
+   {
+    "say": "Now, how do similar triangles usually show up on the exam? They come in three pictures. Let's start with the first one, a line parallel to the base.",
+    "at": [
+     "triangles usually show"
+    ]
+   },
+   {
+    "say": "Here's a triangle, A B C. Inside it we draw D E, parallel to the base, B C.",
+    "at": [
+     "Here's a triangle",
+     "C. Inside it",
+     "parallel to the base"
+    ]
+   },
+   {
+    "say": "The lines are parallel, so the angle at D is equal to the angle at B. These are corresponding angles, like we learned with parallel lines. In the same way, the angle at E is equal to the angle at C.",
+    "at": [
+     "the angle at D is equal",
+     "equal to the"
+    ]
+   },
+   {
+    "say": "So the small triangle, A D E, and the big triangle, A B C, have the same angles. They're similar.",
+    "at": [
+     "So the small triangle",
+     "D E, and"
+    ]
+   },
+   "This picture is a bit confusing, and here's why. Let's match the sides by the angles.",
+   {
+    "say": "D E sits opposite the angle at A, in the small triangle. In the big one, B C sits opposite that angle. So D E matches B C.",
+    "at": [
+     "D E sits opposite",
+     "angle at A",
+     "So D E matches"
+    ]
+   },
+   {
+    "say": "Now A E. A common mistake is to say that A E matches E C. But E C isn't a side of either triangle. It's a side of the trapezoid at the bottom.",
+    "at": [
+     "A common mistake",
+     "say that A"
+    ]
+   },
+   {
+    "say": "A E is opposite alpha, the angle at D, in the small triangle. Opposite alpha in the big triangle, the angle at B, is the whole side, A C. So A E matches the whole A C.",
+    "at": [
+     "A E is opposite alpha",
+     "the angle at",
+     "So A E matches the whole"
+    ]
+   },
+   {
+    "say": "In the same way, A D is opposite beta, so it matches the whole side, A B. Always check which angle a side is opposite.",
+    "at": [
+     "A D is",
+     "so it matches the whole side",
+     "Always check which"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "There's one more rule here. It's only about the two sides, A B and A C.",
+    "at": [
+     "There's one more rule here",
+     "It's only about"
+    ]
+   },
+   {
+    "say": "A line parallel to the base cuts these two sides in the same ratio. So A D to D B is equal to A E to E C. That's the part to part rule.",
+    "at": [
+     "So A D to D B",
+     "E to E"
+    ]
+   },
+   {
+    "say": "Here A D is three and D B is two. A E is six and E C is four. Three over two is one and a half, and six over four is also one and a half.",
+    "at": [
+     "Three over two",
+     "and a half"
+    ]
+   },
+   {
+    "say": "So why did we say that A E doesn't match E C? Because of D E. D E isn't a part of a side. It matches the whole B C.",
+    "at": [
+     "Because of D E",
+     "D E isn't"
+    ]
+   },
+   {
+    "say": "A B is three plus two, five. So D E to B C is three to five, like A D to the whole A B. It's not three to two.",
+    "at": [
+     "A B is three plus two",
+     "So D E to B C is three to five",
+     "like A D"
+    ]
+   },
+   "So for the parts of the two sides, part to part is fine. But the parallel line itself always goes with the whole side. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}

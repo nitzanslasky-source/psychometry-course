@@ -1,0 +1,135 @@
+{
+ "videoId": "solve-geo36-g138",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. A B is a diameter of a circle. Point C lies on A B, and A C is a quarter of A B. A smaller circle has diameter A C. What is the ratio of the area of the smaller circle to the area inside the larger circle but outside the smaller circle?",
+    "voice": "calm",
+    "at": [
+     "Now a new question",
+     "Now a new question",
+     "A B is"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we compare two areas. The small circle, and the part of the big circle that's left outside it. We'll solve it in two different ways.",
+    "at": [
+     "part of the",
+     "solve it in"
+    ]
+   },
+   {
+    "say": "Let's start by understanding, with similarity. The two circles are similar. The small diameter, A C, is a quarter of the big diameter, A B.",
+    "at": [
+     "The two circles",
+     "The small diameter, A C",
+     "the big diameter, A B"
+    ]
+   },
+   {
+    "say": "So the linear ratio is one to four. And the area ratio is one squared to four squared, one to sixteen.",
+    "at": [
+     "the linear ratio is one to four",
+     "to four. And",
+     "one to sixteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Careful, sixteen isn't our final answer yet. They didn't ask for the small circle against the whole big circle. They asked for the small circle against what's left outside it.",
+    "at": [
+     "Careful, sixteen",
+     "They didn't ask",
+     "They asked for the small circle"
+    ]
+   },
+   {
+    "say": "Here's a tip about the choices. The choices are there to help us. If the answer we got isn't among them, we read the question again.",
+    "at": [
+     "Here's a tip",
+     "the question again"
+    ]
+   },
+   {
+    "say": "And sometimes a trap is there too. Here one to sixteen is choice number one. So before we circle anything, we check exactly what they compare.",
+    "at": [
+     "one to sixteen is choice number one",
+     "So before we"
+    ]
+   },
+   {
+    "say": "So let's count in ratio units. The small circle is one unit, and the whole big circle is sixteen units.",
+    "at": [
+     "let's count in ratio units",
+     "The small circle is one unit",
+     "unit, and the"
+    ]
+   },
+   {
+    "say": "The part that's left is the big circle minus the small one. Sixteen minus one is fifteen units.",
+    "at": [
+     "The part that's left",
+     "the big circle",
+     "Sixteen minus one"
+    ]
+   },
+   {
+    "say": "So the small circle to the part that's left is one to fifteen. That's choice number two.",
+    "at": [
+     "to the part",
+     "is one to fifteen",
+     "number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's plug in numbers. We can always calculate with real radii. The radii must be one to four, so let's take a small radius of one, and a big radius of four.",
+    "at": [
+     "Now let's plug in numbers",
+     "We can always",
+     "take a small radius of one",
+     "a small radius of one",
+     "and a big"
+    ]
+   },
+   {
+    "say": "The small area is pi times one squared, so it's pi.",
+    "at": [
+     "The small area is pi times",
+     "times one squared"
+    ]
+   },
+   {
+    "say": "The big area is pi times four squared. Four squared is sixteen, so it's sixteen pi.",
+    "at": [
+     "The big area is pi times",
+     "times four squared"
+    ]
+   },
+   {
+    "say": "What's left is sixteen pi minus pi, fifteen pi.",
+    "at": [
+     "What's left is sixteen pi",
+     "minus pi, fifteen"
+    ]
+   },
+   {
+    "say": "So it's pi to fifteen pi. Pi is in both, so it cancels, and we get one to fifteen again.",
+    "at": [
+     "Pi is in both",
+     "it cancels, and"
+    ]
+   },
+   {
+    "say": "With similarity and ratio units, it takes only a few seconds. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

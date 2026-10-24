@@ -1,0 +1,171 @@
+{
+ "videoId": "solve-geo36-g145",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. A B C is a right triangle with the right angle at C. D E C F is a square. D lies on A B, E lies on B C, and F lies on A C. A F is five, and the side of the square is x. What is the length of B E?",
+    "voice": "calm",
+    "at": [
+     "Now a new question",
+     "Now a new question",
+     "A B C"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the answer is an expression with x. There are letters in the question and in the choices, so later we can also plug in numbers. We'll solve it in two different ways.",
+    "at": [
+     "expression with x",
+     "the question and"
+    ]
+   },
+   {
+    "say": "First, let's understand the picture. It hides three similar triangles. The big one, A B C, the top one, A F D, and the bottom one, D E B.",
+    "at": [
+     "First, let's understand",
+     "C, the top"
+    ]
+   },
+   {
+    "say": "Let's prove it. In the big triangle, C is ninety. Let's call the angle at A alpha. The angles add up to a hundred eighty, so the angle at B is ninety minus alpha.",
+    "at": [
+     "Let",
+     "In the big"
+    ]
+   },
+   {
+    "say": "Now the bottom triangle. The square's corner at E is ninety, so the angle next to it, inside the triangle, is ninety too. It has ninety minus alpha at B, so the angle at D is alpha.",
+    "at": [
+     "Now the bottom triangle",
+     "The square's corner"
+    ]
+   },
+   {
+    "say": "And the top triangle. The angle at F is ninety, for the same reason, and the angle at A is alpha. So the angle at D is ninety minus alpha.",
+    "at": [
+     "And the top triangle",
+     "The angle at"
+    ]
+   },
+   {
+    "say": "All three triangles have the same angles, so all three are similar.",
+    "at": [
+     "All three triangles",
+     "same angles, so"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's start with the math way. All the sides of the square are x. We could compare the big triangle with a small one, but I think the two small triangles give a simpler solution.",
+    "at": [
+     "Let's start with the math way",
+     "All the sides"
+    ]
+   },
+   {
+    "say": "We'll make the table, with the top triangle and the bottom triangle, always in this order.",
+    "at": [
+     "We'll make the table",
+     "the top triangle"
+    ]
+   },
+   {
+    "say": "Opposite ninety minus alpha in the top triangle is A F, five. In the bottom one, it's D E, x.",
+    "at": [
+     "Opposite ninety minus alpha",
+     "the top triangle"
+    ]
+   },
+   {
+    "say": "Opposite alpha in the top triangle is F D, x. In the bottom one, it's B E. That's what we're looking for.",
+    "at": [
+     "Opposite alpha in the top triangle",
+     "triangle is F"
+    ]
+   },
+   {
+    "say": "We're looking for one of the four, so we use the triangle value. Multiply along the diagonal, and divide by what's left. x times x, divided by five. That's x squared over five.",
+    "at": [
+     "Multiply along the diagonal",
+     "divide by what's",
+     "x times x, divided by five",
+     "That's x squared"
+    ]
+   },
+   {
+    "say": "x squared over five is choice number three. Now let's check it in another way.",
+    "at": [
+     "x squared over five is choice"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's plug in numbers. Our usual first try is one. But is one convenient here?",
+    "at": [
+     "Now let's plug in numbers",
+     "Our usual first"
+    ]
+   },
+   "With x equal to one, the top triangle has legs five and one. That's not a triangle we know, so we'd still need the whole similarity to find B E.",
+   {
+    "say": "So let's choose x to make a special case. Let's take x equal to five, the same as A F. Then the top triangle has two legs of five.",
+    "at": [
+     "Let",
+     "a special case",
+     "Let's take x equal to five",
+     "five, the same"
+    ]
+   },
+   "Its corner is a right angle, so it's a silver triangle, forty-five, forty-five, ninety. And the bottom triangle has the same angles, and the side D E is also five, like A F.",
+   {
+    "say": "So the two small triangles aren't only similar. They're identical, a ratio of one to one. So B E is equal to F D, five.",
+    "at": [
+     "So B E is equal",
+     "So B E is equal",
+     "to F D"
+    ]
+   },
+   {
+    "say": "Now we put five into every choice, and look for five. Choice number one says five x. Five times five is twenty-five, so it's out.",
+    "at": [
+     "number one says",
+     "Five times five",
+     "so it's out"
+    ]
+   },
+   {
+    "say": "Choice number two says x squared. That's twenty-five too, so it's out.",
+    "at": [
+     "Choice number two says",
+     "number two says",
+     "That"
+    ]
+   },
+   {
+    "say": "Choice number three says x squared over five. Twenty-five over five is five. It stays.",
+    "at": [
+     "number three says",
+     "Twenty-five over five"
+    ]
+   },
+   {
+    "say": "Choice number four says x over five. Five over five is one, so it's out.",
+    "at": [
+     "Choice number four says",
+     "number four says",
+     "Five over five is one",
+     "so it's out"
+    ]
+   },
+   {
+    "say": "Remember, plugging in numbers only rules choices out. Three are out, so one is left. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

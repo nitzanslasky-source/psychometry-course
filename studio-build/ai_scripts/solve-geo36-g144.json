@@ -1,0 +1,216 @@
+{
+ "videoId": "solve-geo36-g144",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. In triangle A B C, point D lies on B C and point E lies on A C, and E D is parallel to A B. Given, B D is ten, D C is fifteen, and A E is four. What is the length of A C?",
+    "voice": "calm",
+    "at": [
+     "Now a new question",
+     "Now a new question",
+     "In triangle A"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we need the whole side A C. We know only its top part, A E. We'll solve it in two different ways.",
+    "at": [
+     "side A C",
+     "it in two"
+    ]
+   },
+   {
+    "say": "First, we prove that the small triangle, E D C, is similar to the big triangle, A B C. On the exam, one rule is enough. We need two equal angles.",
+    "at": [
+     "First, we prove",
+     "is similar to"
+    ]
+   },
+   {
+    "say": "Let's call the angle at A alpha. E D is parallel to A B, so the angle at E is also alpha. They're corresponding angles between parallel lines.",
+    "at": [
+     "Let's call the angle at A alpha",
+     "E D is"
+    ]
+   },
+   {
+    "say": "The angle at B, let's call it beta. For the same reason, the angle at D is also beta.",
+    "at": [
+     "The angle at B",
+     "call it beta"
+    ]
+   },
+   {
+    "say": "And the angle at C is in both triangles. So all the angles are equal, and the small triangle E D C is similar to the big triangle A B C.",
+    "at": [
+     "And the angle at C",
+     "is in both",
+     "So all the angles are equal",
+     "E D C"
+    ]
+   },
+   {
+    "say": "Let's pull the two triangles apart, so we can see them side by side, the same way up. Alpha, beta and the angle at C are in both.",
+    "at": [
+     "Let's pull the two triangles apart",
+     "apart, so we",
+     "Alpha, beta",
+     "at C are"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's start with the math way. To compare the triangles, we need matching sides, opposite equal angles. Like in the lesson, let's make the small-big table.",
+    "at": [
+     "Let's start with the math way",
+     "To compare the",
+     "let's make the small-big table"
+    ]
+   },
+   {
+    "say": "Opposite alpha in the small triangle is D C, fifteen. Opposite alpha in the big one is the whole side B C. Ten plus fifteen is twenty-five.",
+    "at": [
+     "Opposite alpha in the small triangle",
+     "triangle is D"
+    ]
+   },
+   {
+    "say": "Opposite beta in the small triangle is E C. We don't know it, so let's call it x. Opposite beta in the big one is A C. That's x plus four.",
+    "at": [
+     "Opposite beta in the small triangle",
+     "triangle is E"
+    ]
+   },
+   {
+    "say": "Here x is in both cells of the row, so the triangle value won't help. We write the ratios in a fixed order, small over big. Fifteen over twenty-five is equal to x over x plus four.",
+    "at": [
+     "Fifteen over twenty-five is equal",
+     "to x over"
+    ]
+   },
+   {
+    "say": "Fifteen and twenty-five both divide by five. So it's three fifths.",
+    "at": [
+     "So it"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So three fifths is equal to x over x plus four.",
+    "at": [
+     "So three fifths",
+     "So three fifths",
+     "to x over"
+    ]
+   },
+   {
+    "say": "Now we cross-multiply. Three times x plus four is equal to five x. That's three x plus twelve, equal to five x.",
+    "at": [
+     "Three times x plus four",
+     "is equal to",
+     "That's three x plus twelve"
+    ]
+   },
+   {
+    "say": "We gather the x's on the side that has more x. Five x minus three x is two x, so twelve is equal to two x, and x is six.",
+    "at": [
+     "We gather the",
+     "so twelve is equal to two x",
+     "two x, and"
+    ]
+   },
+   {
+    "say": "Careful, six isn't our final answer yet. Six is E C, and it's choice number one. They asked for A C. Six plus four is ten.",
+    "at": [
+     "Six is E C",
+     "Six plus four is ten"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Some students write the ratio inside each triangle instead. In the small triangle, fifteen over x. In the big triangle, twenty-five over x plus four.",
+    "at": [
+     "Some students write the ratio",
+     "inside each triangle",
+     "In the small triangle",
+     "In the big"
+    ]
+   },
+   "Like in the lesson, the ratio of two sides inside one triangle is the same in both triangles. So these fractions are equal.",
+   "Swap the x and the twenty-five in our first equation, and you get exactly this one. So it gives the same x, six. Both ways are correct.",
+   {
+    "say": "So A C is ten. In the exam, you'd circle choice number three and move on. Now the second way.",
+    "at": [
+     "number three and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the second way, with the part to part rule from the lesson. E D is parallel to A B. So it cuts the other two sides in the same ratio.",
+    "at": [
+     "Now the second way",
+     "the part to"
+    ]
+   },
+   {
+    "say": "On side C B, B D is ten and D C is fifteen. Ten to fifteen is two to three.",
+    "at": [
+     "On side C B",
+     "D is ten",
+     "Ten to fifteen"
+    ]
+   },
+   {
+    "say": "So on side C A, A E to E C is also two to three. Part to part is fine here.",
+    "at": [
+     "A E to E C is also",
+     "Part to part"
+    ]
+   },
+   {
+    "say": "A E is four, and it's two parts. So one part is two.",
+    "at": [
+     "A E is four, and it's two parts",
+     "So one part"
+    ]
+   },
+   {
+    "say": "E C is three parts, three times two, six. And all of A C is four plus six, ten.",
+    "at": [
+     "E C is three parts",
+     "three times two, six",
+     "And all of"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "We can also compare across. B D is ten, and the part next to it on the other side, A E, is four. Four is two fifths of ten.",
+    "at": [
+     "across. B D",
+     "Four is two fifths"
+    ]
+   },
+   {
+    "say": "So E C is two fifths of D C. A fifth of fifteen is three, so two fifths is six. Again A C is four plus six, ten.",
+    "at": [
+     "So E C is two fifths",
+     "A fifth of"
+    ]
+   },
+   "Only the parallel line itself, E D, must go with a whole side. The parts of the sides can go part to part.",
+   {
+    "say": "And twenty-five is B C, the other side. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "And twenty-five is B C",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

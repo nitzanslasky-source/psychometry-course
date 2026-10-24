@@ -1,0 +1,142 @@
+{
+ "videoId": "solve-q-r26-t36-02",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. A B C D is a trapezoid with A B parallel to D C. Its diagonals meet at O. Given, A B is four and D C is six. The area of triangle A O B is eight. What is the area of the trapezoid?",
+    "voice": "calm",
+    "at": [
+     "Now a new question",
+     "Now a new question",
+     "A B C"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we know one small triangle, and we need the whole trapezoid. The diagonals cut the trapezoid into four triangles.",
+    "at": [
+     "triangle, and we",
+     "into four triangles"
+    ]
+   },
+   {
+    "say": "Look at the top triangle, A O B, and the bottom one, C O D. A B is parallel to D C, so this is an hourglass, like in the lesson.",
+    "at": [
+     "Look at the top triangle",
+     "bottom one, C"
+    ]
+   },
+   {
+    "say": "So the two triangles are similar. A B matches D C, because both are opposite the vertical angles at O. Four to six is two to three.",
+    "at": [
+     "the vertical angles at O",
+     "Four to six is two to three"
+    ]
+   },
+   {
+    "say": "The area ratio is the square. Two squared is four, and three squared is nine. So the top triangle is four units, and the bottom one is nine units.",
+    "at": [
+     "The area ratio",
+     "Two squared is four",
+     "three squared is",
+     "So the top triangle is four",
+     "one is nine"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the triangles on the sides. Look at A O D and A O B. They're not similar. But they have the same height, from A down to the diagonal B D.",
+    "at": [
+     "Now the triangles on the sides",
+     "Look at A O D",
+     "and A O",
+     "the same height",
+     "down to the"
+    ]
+   },
+   {
+    "say": "So their areas follow their bases on B D. The bases are O B and O D.",
+    "at": [
+     "The bases are O B and O D",
+     "and O D"
+    ]
+   },
+   {
+    "say": "O B is in the top triangle, and O D is in the bottom one. In the hourglass, they're matching sides. So O B to O D is two to three, like A B to D C.",
+    "at": [
+     "So O B to O D",
+     "like A B"
+    ]
+   },
+   {
+    "say": "So A O B to A O D is two to three as well. A O B is four units, and four is two times two. So A O D is three times two, six units.",
+    "at": [
+     "So A O B to A O D",
+     "to three as",
+     "four is two times two",
+     "three times two"
+    ]
+   },
+   {
+    "say": "The other side triangle, B O C, works the same way, from C. It's also six units.",
+    "at": [
+     "The other side triangle",
+     "O C, works",
+     "It's also six units"
+    ]
+   },
+   {
+    "say": "In all, four plus six plus six plus nine is twenty-five units.",
+    "at": [
+     "four plus six plus six",
+     "plus nine is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The top triangle is four units, and its area is eight. So one unit is eight divided by four, two.",
+    "at": [
+     "The top triangle is four units",
+     "units, and its",
+     "eight divided by four"
+    ]
+   },
+   {
+    "say": "The trapezoid is twenty-five units. Twenty-five times two is fifty.",
+    "at": [
+     "The trapezoid is",
+     "Twenty-five times two"
+    ]
+   },
+   {
+    "say": "Careful with twenty-six. That's only the top and the bottom, four plus nine units, times two. It forgets the side triangles.",
+    "at": [
+     "Careful with twenty-six",
+     "That's only the"
+    ]
+   },
+   {
+    "say": "And forty-two treats each side triangle as four units, like the top one.",
+    "at": [
+     "And forty-two"
+    ]
+   },
+   {
+    "say": "Here's one fact worth remembering. When the bases are a and b, the four triangles are always a squared, a times b, a times b, and b squared. Here that's four, six, six and nine.",
+    "at": [
+     "Here's one fact worth remembering",
+     "When the bases"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

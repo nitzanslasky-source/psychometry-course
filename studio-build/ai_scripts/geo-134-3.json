@@ -1,0 +1,155 @@
+{
+ "videoId": "geo-134-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with the area ratio."
+  ],
+  [
+   {
+    "say": "So remember this rule. It's very, very important. Many similarity questions are about exactly this, the linear ratio and the area ratio.",
+    "at": [
+     "It's very, very"
+    ]
+   },
+   {
+    "say": "The ratio doesn't need a one in it. Say the linear ratio is four to five.",
+    "at": [
+     "the linear ratio is four to five"
+    ]
+   },
+   {
+    "say": "We square both numbers. Four squared is sixteen, and five squared is twenty-five. So the areas are sixteen to twenty-five.",
+    "at": [
+     "Four squared is",
+     "So the areas are sixteen"
+    ]
+   },
+   {
+    "say": "And we can go back. Say the areas are twenty-five to forty-nine. What's the linear ratio?",
+    "at": [
+     "And we can",
+     "Say the areas are twenty-five",
+     "to forty-nine. What's"
+    ]
+   },
+   {
+    "say": "From lengths to areas we squared. So from areas back to lengths, we take the square root of both numbers. The root of twenty-five is five, and the root of forty-nine is seven.",
+    "at": [
+     "the root of forty-nine is seven"
+    ]
+   },
+   {
+    "say": "So the linear ratio is five to seven. A lot of students keep twenty-five to forty-nine for the sides too. But that's the ratio of the areas, not of the lengths.",
+    "at": [
+     "So the linear"
+    ]
+   },
+   "So from lengths to areas, we square. From areas back to lengths, we take the root."
+  ],
+  [
+   {
+    "say": "Now let's look at circles. Here's a big circle and its diameter.",
+    "at": [
+     "Here's a big circle"
+    ]
+   },
+   {
+    "say": "Inside it, a small circle. Its diameter is exactly half of the big diameter.",
+    "at": [
+     "Inside it, a small circle",
+     "Its diameter is exactly half",
+     "of the big"
+    ]
+   },
+   {
+    "say": "So the linear ratio here is one to two. And the area ratio is one squared to two squared, one to four.",
+    "at": [
+     "the linear ratio here is one to two",
+     "one to two",
+     "one to four"
+    ]
+   },
+   {
+    "say": "So the small circle's area is exactly a quarter of the big circle's area.",
+    "at": [
+     "So the small"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now let's add a second small circle, the same size, next to the first one. Together, their diameters fill the big diameter.",
+    "at": [
+     "Now let",
+     "add a second small circle",
+     "the same size"
+    ]
+   },
+   "This picture comes back a lot on the exam, so it's worth knowing well.",
+   {
+    "say": "We don't know the real areas. So let's count in ratio units. Say each small circle is one unit.",
+    "at": [
+     "Say each small circle is one unit",
+     "is one unit"
+    ]
+   },
+   {
+    "say": "The big circle is four times a small one, so it's four units.",
+    "at": [
+     "four times a",
+     "so it's four units"
+    ]
+   },
+   {
+    "say": "The two small circles together are two units. Four minus two is two, so two units are left outside them.",
+    "at": [
+     "The two small",
+     "Four minus two is two",
+     "so two units"
+    ]
+   },
+   {
+    "say": "The diameter cuts the picture into two mirror halves. So the two units split equally. One unit is on top, and one unit is at the bottom.",
+    "at": [
+     "One unit is on top",
+     "one unit is at the bottom"
+    ]
+   },
+   {
+    "say": "So the white part on top has exactly the same area as one small circle.",
+    "at": [
+     "So the white part on top",
+     "area as one"
+    ]
+   },
+   "I call this shape the man with glasses. The two small circles are his glasses. Some people see Kenny from South Park in it, or a Batman mask.",
+   "Some questions ask which is bigger, the top part or a small circle. We don't need to calculate and subtract. We already know they're equal."
+  ],
+  [
+   "Let's sum up the lesson.",
+   {
+    "say": "Similar shapes have the same shape, in another size. If the size is the same too, they're congruent.",
+    "at": [
+     "Similar shapes have the same shape",
+     "shape, in another"
+    ]
+   },
+   {
+    "say": "The linear ratio is the ratio between matching lines. It's the same for every pair of matching lines.",
+    "at": [
+     "The linear ratio is the ratio",
+     "ratio between matching"
+    ]
+   },
+   {
+    "say": "And the area ratio is the linear ratio, squared. To go back from areas to lengths, we take the square root.",
+    "at": [
+     "the area ratio is the linear ratio, squared",
+     "linear ratio, squared"
+    ]
+   },
+   "Next we'll see similarity in regular shapes. Take a moment to memorize these rules, and I'll see you in the next video."
+  ]
+ ]
+}

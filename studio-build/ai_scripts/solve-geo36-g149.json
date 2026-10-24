@@ -1,0 +1,140 @@
+{
+ "videoId": "solve-geo36-g149",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. Two regular hexagons have areas one hundred fifty root three and thirty root three. What is the ratio of the perimeter of the first hexagon to the perimeter of the second?",
+    "voice": "calm",
+    "at": [
+     "Now a new question",
+     "Now a new question",
+     "Two regular hexagons"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we know the two areas, and they ask about the perimeters. We'll solve it in two different ways.",
+    "at": [
+     "areas, and they",
+     "in two different"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, with polygons and no similarity. Remember, a regular hexagon is made of six equilateral triangles.",
+    "at": [
+     "a regular hexagon is made of six",
+     "of six equilateral"
+    ]
+   },
+   {
+    "say": "An equilateral triangle with side a has the area a squared root three over four. So the hexagon is six times that.",
+    "at": [
+     "An equilateral triangle with side a",
+     "a has the"
+    ]
+   },
+   {
+    "say": "For the first hexagon, six times a squared root three over four is equal to one hundred fifty root three.",
+    "at": [
+     "For the first hexagon",
+     "times a squared"
+    ]
+   },
+   {
+    "say": "Root three is on both sides, so it cancels. And one hundred fifty divided by six is twenty-five. So a squared over four is twenty-five.",
+    "at": [
+     "one hundred fifty divided by six",
+     "six is twenty-five"
+    ]
+   },
+   {
+    "say": "We multiply by four, so a squared is one hundred. So a is ten.",
+    "at": [
+     "a squared is one hundred",
+     "So a is"
+    ]
+   },
+   {
+    "say": "For the second hexagon, let's call its side b. In the same way, thirty divided by six is five. So b squared over four is five.",
+    "at": [
+     "thirty divided by six",
+     "So b squared"
+    ]
+   },
+   {
+    "say": "So b squared is twenty, and b is root twenty. Twenty is four times five, so root twenty is two root five.",
+    "at": [
+     "So b squared is twenty",
+     "and b is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the perimeters. A hexagon has six sides. So the first perimeter is six times ten, and the second is six times two root five.",
+    "at": [
+     "Now the perimeters",
+     "A hexagon has",
+     "So the first perimeter",
+     "six times ten"
+    ]
+   },
+   {
+    "say": "The sixes cancel, so it's ten to two root five. We divide both by two, and it's five to root five.",
+    "at": [
+     "The sixes cancel",
+     "ten to two"
+    ]
+   },
+   {
+    "say": "And five is root five times root five. So we divide both by root five, and it's root five to one.",
+    "at": [
+     "And five is root five times",
+     "times root five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now with similarity. Two regular hexagons are similar, because they're regular shapes of the same kind.",
+    "at": [
+     "Now with similarity",
+     "Two regular hexagons"
+    ]
+   },
+   {
+    "say": "The areas give us the area ratio. One hundred fifty root three is five times thirty root three. So the area ratio is five to one.",
+    "at": [
+     "So the area ratio is five to one"
+    ]
+   },
+   {
+    "say": "From lengths to areas we square. So from areas back to lengths, we take the square root. Root five to root one, which is root five to one.",
+    "at": [
+     "From lengths to",
+     "Root five to root one"
+    ]
+   },
+   {
+    "say": "A perimeter is a line, so the perimeters keep that linear ratio, root five to one. All we did was go back from the area ratio to the linear ratio.",
+    "at": [
+     "A perimeter is"
+    ]
+   },
+   {
+    "say": "Careful with five to one. That's the area ratio, without the root. And twenty-five to one squares it again.",
+    "at": [
+     "Careful with five to one",
+     "And twenty-five to one"
+    ]
+   },
+   {
+    "say": "Choice number one is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number one is our answer"
+    ]
+   }
+  ]
+ ]
+}

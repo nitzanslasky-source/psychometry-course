@@ -1,0 +1,228 @@
+{
+ "videoId": "geo-139",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now similarity in shapes that aren't regular.",
+   {
+    "say": "In regular shapes, the similarity was easy to see. Here it's harder. Not to see that the shapes are similar, but to know what matches what.",
+    "at": [
+     "similarity was easy"
+    ]
+   },
+   "This lesson is long and very important, so I'll take it in parts. Let's start with triangles."
+  ],
+  [
+   {
+    "say": "Similar triangles are triangles whose angles are all equal. And it's enough that two angles are equal.",
+    "at": [
+     "whose angles are"
+    ]
+   },
+   "Why? The three angles of a triangle always add up to a hundred eighty. So if two angles are equal, the third one must be equal too.",
+   {
+    "say": "Here are two triangles. Both have a right angle, and both have an angle of thirty degrees.",
+    "at": [
+     "Here are two triangles",
+     "Both have a"
+    ]
+   },
+   {
+    "say": "So the third angle is a hundred eighty minus ninety minus thirty, sixty, in both of them. They're similar.",
+    "at": [
+     "a hundred eighty minus ninety",
+     "sixty, in both of them"
+    ]
+   },
+   {
+    "say": "But a triangle with ninety and forty degrees isn't similar to them. Its third angle is fifty, not sixty.",
+    "at": [
+     "ninety and forty degrees",
+     "Its third angle"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here are two more similar triangles. Both have a right angle.",
+    "at": [
+     "Here are two more similar triangles",
+     "Both have a"
+    ]
+   },
+   {
+    "say": "The other angles are the same in both too. Let's call them alpha and beta.",
+    "at": [
+     "Let's call them alpha and beta"
+    ]
+   },
+   {
+    "say": "In a regular polygon, there's no question of matching. Every side is the same. But in this triangle, the sides are different. There's a short leg, a long leg, and a hypotenuse.",
+    "at": [
+     "In a regular"
+    ]
+   },
+   "So how do we know which side matches which? Here's the rule. In similar triangles, the matching sides are the sides opposite the equal angles.",
+   {
+    "say": "Twelve is opposite alpha in the small triangle. Opposite alpha in the big one is eighteen. So twelve goes with eighteen.",
+    "at": [
+     "Twelve is opposite alpha",
+     "the small triangle"
+    ]
+   },
+   {
+    "say": "Sixteen is opposite beta. Opposite beta in the big one is twenty-four. So sixteen goes with twenty-four.",
+    "at": [
+     "Sixteen is opposite beta",
+     "Opposite beta in"
+    ]
+   },
+   {
+    "say": "And the hypotenuse is opposite the right angle in both. So twenty goes with thirty.",
+    "at": [
+     "the hypotenuse is opposite the right angle",
+     "right angle in"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now I strongly recommend something, and I'm telling you this from years of experience.",
+    "at": [
+     "Now I strongly recommend",
+     "and I'm telling"
+    ]
+   },
+   "Students used to work with ratios and divisions, the way they learned in school. And they got tangled.",
+   {
+    "say": "So make a little table. One column for the small triangle, and one column for the big triangle.",
+    "at": [
+     "make a little table",
+     "One column for"
+    ]
+   },
+   {
+    "say": "In each row we write one pair of matching sides. Twelve and eighteen, opposite alpha.",
+    "at": [
+     "Twelve and eighteen"
+    ]
+   },
+   {
+    "say": "Sixteen and twenty-four, opposite beta.",
+    "at": [
+     "Sixteen and twenty-four"
+    ]
+   },
+   {
+    "say": "And twenty and thirty, the two hypotenuses.",
+    "at": [
+     "And twenty and thirty"
+    ]
+   },
+   {
+    "say": "Look at each row. Eighteen is twelve plus half of twelve. So every row is times one and a half. The table shows us exactly what matches what.",
+    "at": [
+     "Eighteen is twelve",
+     "So every row is times one and a half",
+     "one and a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The table also finds a missing side. Say we didn't know the twenty-four. We know twelve goes with eighteen, and sixteen goes with a question mark.",
+    "at": [
+     "a missing side",
+     "Say we didn",
+     "twenty-four. We know",
+     "twelve goes with eighteen",
+     "sixteen goes with a question mark"
+    ]
+   },
+   {
+    "say": "Like in word problems, we use the triangle value. We multiply along the diagonal, and divide by what's left.",
+    "at": [
+     "Like in word",
+     "We multiply along the diagonal",
+     "and divide by"
+    ]
+   },
+   {
+    "say": "The diagonal is sixteen and eighteen, and what's left is twelve. So it's sixteen times eighteen, divided by twelve.",
+    "at": [
+     "So it",
+     "divided by twelve"
+    ]
+   },
+   {
+    "say": "Let's make the numbers smaller first. Eighteen and twelve both divide by six. Eighteen becomes three, and twelve becomes two.",
+    "at": [
+     "Eighteen and twelve both divide by six",
+     "Eighteen becomes three"
+    ]
+   },
+   {
+    "say": "So it's sixteen times three, divided by two. Sixteen times three is forty-eight, and half of forty-eight is twenty-four. That's our missing side.",
+    "at": [
+     "Sixteen times three is forty-eight",
+     "and half of"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here it was easy, because the triangles stood the same way. But even if we turn a triangle, we can still find the matching sides.",
+    "at": [
+     "because the triangles",
+     "even if we turn a triangle",
+     "triangle, we can"
+    ]
+   },
+   {
+    "say": "Here the big triangle is upside down. We don't look at left or right. We look at the angles.",
+    "at": [
+     "We look at the angles"
+    ]
+   },
+   {
+    "say": "Eighteen is still opposite alpha, and twenty-four is still opposite beta. So the pairs haven't changed.",
+    "at": [
+     "Eighteen is still opposite alpha",
+     "and twenty-four is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And here's something useful. The ratio between two sides of the same triangle is also equal in both triangles.",
+    "at": [
+     "here's something useful",
+     "The ratio between"
+    ]
+   },
+   {
+    "say": "Twelve over sixteen is three quarters. Eighteen over twenty-four is also three quarters.",
+    "at": [
+     "Twelve over sixteen",
+     "Twelve over sixteen is three quarters",
+     "Eighteen over twenty-four"
+    ]
+   },
+   {
+    "say": "Another pair. Sixteen over twenty is four fifths, and twenty-four over thirty is four fifths too.",
+    "at": [
+     "Sixteen over twenty is four fifths",
+     "twenty-four over thirty"
+    ]
+   },
+   {
+    "say": "Until now we wrote ratios with a colon, like four to five. A fraction is exactly the same thing. We write it as a fraction, because fractions are easy to reduce. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "Until now we",
+     "A fraction is exactly the same thing",
+     "We write it"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,161 @@
+{
+ "videoId": "geo-134",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Today we start a new topic in geometry, similarity.",
+   {
+    "say": "We left it for almost the end, and that's on purpose.",
+    "at": [
+     "almost the end"
+    ]
+   },
+   "Similarity shows up in every shape we've learned. In triangles, in quadrilaterals, in polygons and in circles.",
+   "So first we had to learn all those shapes. Only now can we talk about similarity."
+  ],
+  [
+   {
+    "say": "So first, what is similarity? Here's a triangle.",
+    "at": [
+     "Here's a triangle"
+    ]
+   },
+   {
+    "say": "Now let's copy it, exactly as it is. The copy has the same shape and the same size. Two shapes like this are called congruent.",
+    "at": [
+     "Now let's copy it",
+     "as it is",
+     "are called congruent"
+    ]
+   },
+   {
+    "say": "Now let's take the same triangle and make it bigger. It's the same shape, just in another size. Two shapes like this are called similar.",
+    "at": [
+     "same triangle and",
+     "make it bigger",
+     "in another size",
+     "are called similar"
+    ]
+   },
+   {
+    "say": "So similar means the same shape, but not necessarily the same size. One shape is an enlarged copy of the other.",
+    "at": [
+     "So similar means"
+    ]
+   },
+   {
+    "say": "And here's a shape that is not similar. We stretched the triangle only sideways. It got wider, but not taller, so it's not the same shape anymore.",
+    "at": [
+     "We stretched the triangle only sideways",
+     "It got wider"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now, the linear ratio. To understand it, we first need matching lines.",
+    "at": [
+     "To understand it"
+    ]
+   },
+   {
+    "say": "Matching lines are lines of the same kind, one in each shape. Let's see it with two circles.",
+    "at": [
+     "with two circles"
+    ]
+   },
+   {
+    "say": "Two circles really are similar. A small circle and a big circle have the same shape.",
+    "at": [
+     "Two circles really"
+    ]
+   },
+   {
+    "say": "Take the radius of the small circle. Its matching line is the radius of the big circle. And the circumference matches the circumference.",
+    "at": [
+     "Its matching line is the radius",
+     "radius of the big",
+     "the circumference matches"
+    ]
+   },
+   {
+    "say": "What we can't do is compare a diameter in one circle with a chord in the other. They're not the same kind of line.",
+    "at": [
+     "compare a diameter",
+     "circle with a"
+    ]
+   },
+   {
+    "say": "So the linear ratio is the ratio between two matching lines.",
+    "at": [
+     "So the linear ratio is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Here are two similar triangles. I took the small one and enlarged it.",
+    "at": [
+     "Here are two similar triangles",
+     "I took the"
+    ]
+   },
+   {
+    "say": "The base of the small triangle is four. The matching base in the big one is six. They match, because it's the same side of the triangle.",
+    "at": [
+     "The base of the small triangle",
+     "triangle is four"
+    ]
+   },
+   "For now we just look. Soon we'll learn how to know exactly what matches what.",
+   {
+    "say": "So the linear ratio, from small to big, is four to six. Both numbers divide by two, so it's two to three.",
+    "at": [
+     "from small to big, is four to six",
+     "four to six"
+    ]
+   },
+   {
+    "say": "Six is four, plus half of four. So the big triangle is one and a half times the small one.",
+    "at": [
+     "So the big triangle is one and a half",
+     "one and a"
+    ]
+   },
+   "And here's the important part. This ratio is the same for every pair of matching lines.",
+   {
+    "say": "We don't know the other sides. But if this side is eight, its partner is eight plus half of eight, twelve. If this side is two, its partner is three.",
+    "at": [
+     "if this side is eight",
+     "its partner is eight plus half",
+     "half of eight",
+     "its partner is three"
+    ]
+   },
+   {
+    "say": "Why is it always the same ratio? Because the big triangle is an enlarged copy. Every line in it was multiplied by the same number, one and a half.",
+    "at": [
+     "Why is it"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now look at the angles. The angles of the two triangles don't change.",
+    "at": [
+     "Now look at the angles",
+     "Now look at the angles",
+     "The angles of"
+    ]
+   },
+   "The angle on the left of the base is the same in both triangles. So is the angle on the right of the base, and so is the top angle.",
+   {
+    "say": "So when we enlarge a shape, the lengths grow, but the angles stay the same. We'll use this a lot with similar triangles. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "the lengths grow",
+     "We'll use this"
+    ]
+   }
+  ]
+ ]
+}

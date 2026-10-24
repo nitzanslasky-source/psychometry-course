@@ -1,0 +1,112 @@
+{
+ "videoId": "solve-geo36-g140",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. In triangle A B C, point D lies on A B and point E lies on A C, and D E is parallel to B C. Given, A D is four and D B is three. What is the ratio of the area of triangle A D E to the area of trapezoid D B C E?",
+    "voice": "calm",
+    "at": [
+     "Now a new question",
+     "Now a new question",
+     "In triangle A"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we compare the small triangle at the top with the trapezoid below it. Careful, the second shape isn't the big triangle. It's what's left of it.",
+    "at": [
+     "triangle at the",
+     "It's what's left"
+    ]
+   },
+   {
+    "say": "Like in the lesson, D E is parallel to the base. So the small triangle, A D E, is similar to the big triangle, A B C.",
+    "at": [
+     "D E is parallel to the base",
+     "So the small triangle",
+     "D E, is"
+    ]
+   },
+   {
+    "say": "Now the common mistake. A lot of students say the linear ratio is four to three. But three is D B, and D B isn't a side of either triangle. It's a side of the trapezoid.",
+    "at": [
+     "But three is D B",
+     "and D B"
+    ]
+   },
+   {
+    "say": "Four to three is choice number two, and it's a trap.",
+    "at": [
+     "Four to three is choice number two"
+    ]
+   },
+   {
+    "say": "So we match by the angles. A D is opposite the angle at E. In the big triangle, the matching angle is at C. The side opposite it is the whole side, A B.",
+    "at": [
+     "So we match by the angles",
+     "A D is opposite the angle at E",
+     "angle at E",
+     "In the big",
+     "the whole side, A B"
+    ]
+   },
+   {
+    "say": "A B is four plus three, seven. So the linear ratio, small to big, is four to seven.",
+    "at": [
+     "A B is four plus three",
+     "A B is four plus three",
+     "three, seven. So",
+     "is four to seven"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the areas. The area ratio is the linear ratio squared. Four squared is sixteen, and seven squared is forty-nine.",
+    "at": [
+     "Now the areas",
+     "The area ratio",
+     "Four squared is sixteen",
+     "seven squared is"
+    ]
+   },
+   {
+    "say": "Careful, sixteen to forty-nine isn't our answer yet. That's the small triangle against the whole big triangle. It's choice number one, and it's a trap.",
+    "at": [
+     "It's choice number one"
+    ]
+   },
+   {
+    "say": "So let's count in ratio units. The small triangle is sixteen units, and the whole big triangle is forty-nine units.",
+    "at": [
+     "The small triangle is sixteen units",
+     "the whole big triangle is forty-nine"
+    ]
+   },
+   {
+    "say": "The trapezoid is the big triangle minus the small one. Forty-nine minus sixteen is thirty-three units.",
+    "at": [
+     "The trapezoid is the big triangle",
+     "triangle minus the",
+     "Forty-nine minus sixteen"
+    ]
+   },
+   {
+    "say": "So the small triangle to the trapezoid is sixteen to thirty-three.",
+    "at": [
+     "to the trapezoid",
+     "is sixteen to thirty-three"
+    ]
+   },
+   {
+    "say": "And four to seven, choice number four, forgot to square. Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "choice number four",
+     "forgot to square",
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

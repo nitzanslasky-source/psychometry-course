@@ -41,12 +41,13 @@ Update this file whenever a finding changes state.
 | 34 | Regular-polygon "count the sides" rule (inscribed vertex, correct arc) | Claude C/D2/E, Codex synthesis #5 | IMPLEMENTED geo-104-4/-5 (Codex-reviewed, batches Q/K) |
 | 35 | Longest segment in a cylinder | Claude E #3, Codex synthesis #7 | IMPLEMENTED r26-t35-cubefacts — **Held** (Codex review) |
 | 35 | A cut exposes two new faces; corner vs face-centre cube removal | Codex final §2.1, §2.3 | IMPLEMENTED geo-120-3 (cut) + solve-geo35-g132 (removal) — **Held** (Codex review) |
-| 36 | Crossing chords → similar triangles | Claude C, Codex (optional) | PENDING (t36 to write) |
+| 36 | Crossing chords → similar triangles | Claude C, Codex (optional) | NOT ADOPTED — no real NITE item uses it (quant_real.md); practice p04 keeps its written solution |
 | 37 | geo-159: introduce y = mx + b before m and b | Codex final §1F | PENDING (t37 to write) |
 | 37 | The line y = x (region, swapping) | audit | PENDING (t37 to write) |
 | 38 | geo-172: state what is held equal | Codex final §1C | PENDING (t38 to write) |
 | 38 | Spatial "whole pieces" questions | audit | PENDING (t38 to write) |
 | 51 | Plugging-in decision rule; cannot-be-determined | Claude D1/D2, Codex | IMPLEMENTED pt51-plug-numbers 1–4 (Codex Ready) |
+| 36 | Reverse volume scaling (volume ×k → edge ×∛k → surface ×∛k²), 2026_spring_q1_20 | audit D2 | IMPLEMENTED geo-143-2 — **Held** (Codex review) |
 | 52 | Fraction comparison without dividing | Claude E #4, Codex synthesis #14 | PENDING (chart lessons are Codex-reviewed and Ready; add only in a later chart batch) |
 | 52 | Timeline and network chart lessons (≈55 exam items) | audit | PENDING (new chart lessons to write) |
 | — | Divisibility by 7, teen×teen, "ears" division, difference of cubes, 3D coordinates, liar puzzles, "always test ±", "the person after 'than' gets the letter" | both | NOT ADOPTED (low value or unsafe as written) |

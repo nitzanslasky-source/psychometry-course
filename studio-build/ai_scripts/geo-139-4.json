@@ -1,0 +1,131 @@
+{
+ "videoId": "geo-139-4",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with rectangles."
+  ],
+  [
+   {
+    "say": "Now similarity in another shape that isn't regular, the rectangle.",
+    "at": [
+     "shape that isn't"
+    ]
+   },
+   "To know that two rectangles are similar, we must check both ratios. The ratio of the lengths, and the ratio of the widths.",
+   {
+    "say": "Here's a rectangle five by three, and a rectangle ten by six.",
+    "at": [
+     "Here's a rectangle five by three",
+     "three, and a"
+    ]
+   },
+   {
+    "say": "Five to ten is times two, and three to six is times two. The same factor, so they're similar.",
+    "at": [
+     "Five to ten is times two",
+     "three to six is times two",
+     "The same factor"
+    ]
+   },
+   {
+    "say": "But if the length grows two times and the width three times, it's not the same shape. A rectangle ten by nine isn't similar to them.",
+    "at": [
+     "A rectangle ten by nine",
+     "isn't similar to"
+    ]
+   },
+   {
+    "say": "There's another way to check. Compare the length to the width inside each rectangle. Five over three, and ten over six, which is also five over three.",
+    "at": [
+     "Five over three, and ten",
+     "over six, which"
+    ]
+   },
+   {
+    "say": "And since the linear ratio is one to two, the areas are one to four.",
+    "at": [
+     "the areas are one to four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "On the exam, similar rectangles usually come in this picture. A rectangle with its diagonal, and a smaller rectangle whose corner sits on that diagonal.",
+    "at": [
+     "rectangles usually come",
+     "A rectangle with its diagonal",
+     "a smaller rectangle whose corner",
+     "sits on that"
+    ]
+   },
+   "In this picture the two rectangles are similar. We can prove it, but we won't. Let's see how we use it.",
+   "The big rectangle is twelve by eight. The small one has length A P, nine. What is its width, A R?",
+   {
+    "say": "The width over the length is the same in both. In the big one, it's eight over twelve, two thirds.",
+    "at": [
+     "eight over twelve, two thirds"
+    ]
+   },
+   {
+    "say": "So A R is two thirds of nine. A third of nine is three, so two thirds is six.",
+    "at": [
+     "So A R is two thirds",
+     "of nine is",
+     "so two thirds is six"
+    ]
+   },
+   {
+    "say": "And the leftover pieces keep the ratio too. The top piece, R D, is eight minus six, two. The piece on the right, P B, is twelve minus nine, three.",
+    "at": [
+     "the ratio too",
+     "The top piece",
+     "eight minus six",
+     "piece on the",
+     "twelve minus nine"
+    ]
+   },
+   {
+    "say": "Two over six is a third, and three over nine is a third. The same ratio.",
+    "at": [
+     "Two over six is a third",
+     "third, and three"
+    ]
+   },
+   "So when you see a rectangle inside a rectangle, with its corner on the big diagonal, think similar rectangles."
+  ],
+  [
+   "Let's sum up this lesson.",
+   {
+    "say": "Two equal angles are enough for similar triangles.",
+    "at": [
+     "Two equal angles",
+     "for similar triangles"
+    ]
+   },
+   {
+    "say": "We match the sides by the angles they're opposite, and we write them in the small-big table.",
+    "at": [
+     "We match the sides",
+     "the angles they're"
+    ]
+   },
+   {
+    "say": "On the exam we usually see three pictures. A line parallel to the base, the altitude to the hypotenuse, and the hourglass.",
+    "at": [
+     "three pictures",
+     "A line parallel"
+    ]
+   },
+   {
+    "say": "Rectangles are similar when both sides grow by the same factor.",
+    "at": [
+     "Rectangles are similar",
+     "sides grow by"
+    ]
+   },
+   "In about nine questions out of ten, similarity is about triangles or rectangles, and mostly triangles. There are two more ways to prove similar triangles, with three sides, or two sides and the angle between them. You'll rarely need them.",
+   "Take a moment to memorize the three pictures, and I'll see you in the next video."
+  ]
+ ]
+}

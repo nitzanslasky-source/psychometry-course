@@ -1,0 +1,112 @@
+{
+ "videoId": "solve-geo36-g142",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. A large cube-shaped box is filled completely with small cubic blocks. The area of one face of the box is thirty-six times the area of one face of a block. How many blocks fill the box?",
+    "voice": "calm",
+    "at": [
+     "Now a new question",
+     "Now a new question",
+     "A large cube-shaped"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "They mix us up a little. We're given an area, not an edge. And they ask about volumes, because the number of blocks is the big volume divided by the small one. So we need a step in between. We'll solve it in two different ways.",
+    "at": [
+     "because the number",
+     "So we need",
+     "in between. We'll"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. The box and the blocks are cubes, so they're similar. The faces give us the area ratio, one to thirty-six.",
+    "at": [
+     "The box and",
+     "are cubes, so",
+     "The faces give us the area ratio",
+     "one to thirty-six"
+    ]
+   },
+   {
+    "say": "Like in the lesson, to go from areas back to lengths, we take the square root. The root of thirty-six is six. So the edges are one to six.",
+    "at": [
+     "Like in the",
+     "The root of thirty-six is six",
+     "So the edges are one to six"
+    ]
+   },
+   {
+    "say": "Now from lengths to volumes, we take the power of three. So the volumes are one to the power of three, to six to the power of three.",
+    "at": [
+     "Now from lengths",
+     "So the volumes are one",
+     "to the power"
+    ]
+   },
+   {
+    "say": "Six times six is thirty-six. Now thirty-six times six. Thirty times six is a hundred eighty, and six times six is thirty-six. Together, that's two hundred sixteen.",
+    "at": [
+     "Six times six is thirty-six",
+     "Now thirty-six times",
+     "Together, that's two hundred sixteen"
+    ]
+   },
+   {
+    "say": "So if a block is one unit, the box is two hundred sixteen units. Two hundred sixteen blocks fill the box.",
+    "at": [
+     "So if a"
+    ]
+   },
+   {
+    "say": "Careful with thirty-six. That's the area ratio, not the volume. And one thousand two hundred ninety-six is thirty-six squared. It squares the area ratio, instead of going back to the edge.",
+    "at": [
+     "Careful with thirty-six",
+     "one thousand two hundred ninety-six",
+     "is thirty-six squared",
+     "It squares the area ratio"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now by understanding, by counting. Look at one face of the box. It's thirty-six times a block's face.",
+    "at": [
+     "Now by understanding",
+     "Look at one"
+    ]
+   },
+   {
+    "say": "Thirty-six is six times six. So the face of the box is a square of six rows of six block faces.",
+    "at": [
+     "Thirty-six is six times six",
+     "So the face",
+     "six rows of six"
+    ]
+   },
+   {
+    "say": "So six blocks fit along each edge. The bottom layer of the box holds six times six, thirty-six blocks.",
+    "at": [
+     "So six blocks fit along",
+     "The bottom layer",
+     "box holds six"
+    ]
+   },
+   {
+    "say": "The box is a cube, so it's six blocks high. That's six layers. Thirty-six times six is two hundred sixteen.",
+    "at": [
+     "Thirty-six times six"
+    ]
+   },
+   {
+    "say": "Two hundred sixteen blocks again. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Two hundred sixteen",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

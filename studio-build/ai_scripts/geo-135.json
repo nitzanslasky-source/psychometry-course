@@ -1,0 +1,239 @@
+{
+ "videoId": "geo-135",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now let's look at similarity in regular shapes.",
+   {
+    "say": "Remember, in a regular shape all the sides are equal, and all the angles are equal. A square and an equilateral triangle are regular shapes.",
+    "at": [
+     "shape all the"
+    ]
+   },
+   "Regular shapes of the same kind are always similar. Let's see why, and how it helps us."
+  ],
+  [
+   {
+    "say": "Why are they always similar? Think of a circle. Every circle in the world looks exactly the same. Only the size changes.",
+    "at": [
+     "similar? Think of"
+    ]
+   },
+   "It's the same with squares, with equilateral triangles and with regular hexagons. Each kind has only one shape.",
+   {
+    "say": "But the number of sides must be the same. A regular pentagon and a regular hexagon aren't similar. They're different shapes.",
+    "at": [
+     "the number of sides must be the same",
+     "regular hexagon aren't"
+    ]
+   },
+   {
+    "say": "Careful, other shapes are not always similar. Here are two rectangles. One is long and thin, and the other is almost a square.",
+    "at": [
+     "Here are two rectangles",
+     "One is long"
+    ]
+   },
+   {
+    "say": "And here are two right triangles. Their sharp angles are different, so they don't have the same shape.",
+    "at": [
+     "here are two right triangles",
+     "Their sharp angles"
+    ]
+   },
+   "For shapes like these, we have to check. We'll learn how in the next lesson."
+  ],
+  [
+   {
+    "say": "First example, the equilateral triangle. Every equilateral triangle has three angles of sixty degrees. So all equilateral triangles are similar.",
+    "at": [
+     "First example",
+     "Every equilateral triangle"
+    ]
+   },
+   "Here the small triangle has side a, and the big one has side three a. The big one is an enlarged picture of the small one.",
+   {
+    "say": "How many small triangles fit inside the big one? Let's count. One, two, three, and so on, up to nine.",
+    "at": [
+     "How many small triangles",
+     "inside the big",
+     "Let's count",
+     "on, up to"
+    ]
+   },
+   {
+    "say": "That's exactly what we learned in the last lesson. The linear ratio is one to three. So the area ratio is one squared to three squared, one to nine.",
+    "at": [
+     "The linear ratio is one to three",
+     "to three. So",
+     "one to nine"
+    ]
+   },
+   {
+    "say": "And the perimeters? A perimeter is a line, so it keeps the linear ratio. The perimeters are one to three too.",
+    "at": [
+     "A perimeter is",
+     "The perimeters are one to three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Squares are similar too. Here the sides are four and seven.",
+    "at": [
+     "Here the sides are four and seven"
+    ]
+   },
+   {
+    "say": "Cutting the big square into small ones would be hard here. So we don't. We just use the rule. The area ratio is the linear ratio, squared.",
+    "at": [
+     "Cutting the big"
+    ]
+   },
+   {
+    "say": "Four squared is sixteen, and seven squared is forty-nine. So the areas are sixteen to forty-nine.",
+    "at": [
+     "Four squared is sixteen",
+     "seven squared is"
+    ]
+   },
+   {
+    "say": "What does that mean? If the small square is sixteen square centimeters, the big one is forty-nine.",
+    "at": [
+     "the big one is forty-nine"
+    ]
+   },
+   {
+    "say": "If the small square is thirty-two, that's double sixteen. So the big one is double forty-nine, ninety-eight.",
+    "at": [
+     "If the small",
+     "double forty-nine, ninety-eight"
+    ]
+   },
+   {
+    "say": "So we think of it as sixteen ratio units against forty-nine ratio units. One unit can be any number, but it's the same number in both squares.",
+    "at": [
+     "sixteen ratio units against",
+     "One unit can"
+    ]
+   },
+   {
+    "say": "Let's use it. Say the small square is forty-eight. Then sixteen units are forty-eight.",
+    "at": [
+     "sixteen units are forty-eight"
+    ]
+   },
+   {
+    "say": "So one unit is forty-eight divided by sixteen. That's three, because sixteen times three is forty-eight.",
+    "at": [
+     "So one unit is forty-eight divided by",
+     "divided by sixteen"
+    ]
+   },
+   {
+    "say": "The big square is forty-nine units. Forty times three is a hundred twenty, and nine times three is twenty-seven. So it's a hundred forty-seven.",
+    "at": [
+     "The big square is forty-nine units",
+     "Forty times three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A regular hexagon is a regular shape too. So all regular hexagons are similar.",
+    "at": [
+     "a regular shape"
+    ]
+   },
+   {
+    "say": "Here's a small hexagon and a big hexagon. Their sides are five and six.",
+    "at": [
+     "Here's a small hexagon",
+     "a big hexagon"
+    ]
+   },
+   "What's the area ratio? Try to think about it before I say it.",
+   {
+    "say": "Twenty-five to thirty-six. Five squared is twenty-five, and six squared is thirty-six.",
+    "at": [
+     "Twenty-five to thirty-six",
+     "Five squared is twenty-five",
+     "six squared is"
+    ]
+   },
+   "We don't need to cut each hexagon into six equilateral triangles. The similarity already did the work."
+  ],
+  [
+   {
+    "say": "Now circles. Here the radii are two and five. So the linear ratio is two to five.",
+    "at": [
+     "Now circles",
+     "Here the radii are two and five",
+     "So the linear ratio",
+     "two to five"
+    ]
+   },
+   {
+    "say": "The area ratio is two squared to five squared, four to twenty-five.",
+    "at": [
+     "The area ratio is two squared",
+     "squared to five"
+    ]
+   },
+   {
+    "say": "Now careful. Say they tell us the small circumference is eight. What's the big circumference?",
+    "at": [
+     "the small circumference is eight",
+     "What's the big"
+    ]
+   },
+   "A circumference is a line. So we stay with the linear ratio, and we don't square it.",
+   {
+    "say": "Five divided by two is two and a half. So the big circle is two and a half times the small one.",
+    "at": [
+     "Five divided by two",
+     "two and a"
+    ]
+   },
+   {
+    "say": "Eight times two is sixteen, and half of eight is four. Sixteen plus four is twenty. So the big circumference is twenty.",
+    "at": [
+     "Eight times two is sixteen",
+     "and half of",
+     "So the big circumference is"
+    ]
+   },
+   {
+    "say": "So we treat the circumference as a line, because that's what it is. Only areas get squared.",
+    "at": [
+     "So we treat"
+    ]
+   }
+  ],
+  [
+   "So let's sum up.",
+   {
+    "say": "Regular shapes of the same kind are always similar, if they have the same number of sides.",
+    "at": [
+     "Regular shapes of the same kind",
+     "kind are always"
+    ]
+   },
+   {
+    "say": "Lines, like sides, perimeters and circumferences, keep the linear ratio.",
+    "at": [
+     "Lines, like sides",
+     "circumferences, keep the"
+    ]
+   },
+   {
+    "say": "Areas get the linear ratio squared. And with ratio units, we turn the ratio into real numbers.",
+    "at": [
+     "Areas get the linear ratio squared",
+     "And with ratio"
+    ]
+   },
+   "Take a moment to memorize this, and I'll see you in the next video."
+  ]
+ ]
+}

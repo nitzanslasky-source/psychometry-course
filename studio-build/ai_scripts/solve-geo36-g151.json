@@ -1,0 +1,114 @@
+{
+ "videoId": "solve-geo36-g151",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. A cone-shaped container with base radius r and height h is filled with sand, using a cone-shaped scoop. The scoop's radius is r over two, and its height is h over six. How many full scoops are needed to fill the container? No sand is spilled.",
+    "voice": "calm",
+    "at": [
+     "Now a new question",
+     "Now a new question",
+     "A cone-shaped container"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we need how many times the container's volume is bigger than the scoop's. It looks like a three-dimensional question, but we can also solve it with similarity. We'll solve it in two different ways.",
+    "at": [
+     "times the container's",
+     "It looks like",
+     "question, but we"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, with both volumes. The volume of a cone is the base area, times the height, divided by three. So the container is pi r squared, times h, divided by three.",
+    "at": [
+     "Let's start with",
+     "way, with both",
+     "So the container is",
+     "So the container is pi"
+    ]
+   },
+   {
+    "say": "The scoop's radius is r over two. To square a fraction, we square the top and the bottom. So it's r squared over four.",
+    "at": [
+     "The scoop's radius",
+     "To square a fraction",
+     "square the top"
+    ]
+   },
+   {
+    "say": "So the scoop is pi, times r squared over four, times h over six, divided by three.",
+    "at": [
+     "So the scoop is pi",
+     "times r squared"
+    ]
+   },
+   {
+    "say": "Four times six is twenty-four. So the top is pi r squared h, divided by twenty-four.",
+    "at": [
+     "Four times six is twenty-four",
+     "So the top"
+    ]
+   },
+   {
+    "say": "Let's save some work. Both volumes are divided by three, so we can compare only the tops. The container's top is pi r squared h. The scoop's top is the same, divided by twenty-four.",
+    "at": [
+     "Let",
+     "Both volumes are"
+    ]
+   },
+   "So the container is twenty-four times the scoop. That's twenty-four scoops."
+  ],
+  [
+   {
+    "say": "Now by understanding, with partial similarity. The two cones aren't similar. The height changed by six, but the radius changed by two. For similar cones, both would change by the same number.",
+    "at": [
+     "Now by understanding",
+     "The two cones"
+    ]
+   },
+   "But some parts are similar. The bases are circles, and all circles are similar. And the heights are lines. So we look at each part on its own, like in the lesson about volume changes.",
+   {
+    "say": "First, the height. From the scoop to the container, the height is six times as big. A height is a line, so the volume grows six times too.",
+    "at": [
+     "First, the height",
+     "From the scoop",
+     "A height is a line",
+     "so the volume"
+    ]
+   },
+   {
+    "say": "Now the radius. It's two times as big. The base is a circle, so its area grows two squared, four times. And the volume grows four times with it.",
+    "at": [
+     "Now the radius",
+     "The base is",
+     "so its area grows",
+     "squared, four times"
+    ]
+   },
+   {
+    "say": "Together, six times four, twenty-four.",
+    "at": [
+     "six times four"
+    ]
+   },
+   {
+    "say": "Careful with twelve. That's six times two. It forgets to square the radius's change. And eight is two to the power of three, as if the cones were similar.",
+    "at": [
+     "Careful with twelve",
+     "Careful with twelve",
+     "It forgets to",
+     "And eight is two"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

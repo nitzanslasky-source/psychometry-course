@@ -1,0 +1,158 @@
+{
+ "videoId": "solve-geo36-g137",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. A B is a diameter of a circle with radius nine. Six identical smaller circles have their centers on A B. Their diameters cover A B from end to end. What is the sum of the circumferences of the six smaller circles?",
+    "voice": "calm",
+    "at": [
+     "Now a new question",
+     "Now a new question",
+     "A B is"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we need the six small circumferences, all added together. We'll solve it in two different ways.",
+    "at": [
+     "small circumferences, all"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. The big radius is nine, so the diameter A B is two times nine, eighteen.",
+    "at": [
+     "Let's start with",
+     "way. The big",
+     "so the diameter A B",
+     "two times nine"
+    ]
+   },
+   {
+    "say": "Six small diameters fill A B. So each small diameter is eighteen divided by six, three.",
+    "at": [
+     "Six small diameters fill A B",
+     "B. So each",
+     "eighteen divided by six"
+    ]
+   },
+   {
+    "say": "A radius is half a diameter. So the small radius is three divided by two, one and a half.",
+    "at": [
+     "A radius is",
+     "three divided by two",
+     "and a half"
+    ]
+   },
+   "Honestly, a radius of one and a half is a bit annoying. It's a fraction. But we can still calculate. The circumference is two pi r.",
+   {
+    "say": "Two times one and a half is three. So one small circumference is three pi.",
+    "at": [
+     "Two times one and a half",
+     "half is three"
+    ]
+   },
+   {
+    "say": "There are six of them. Six times three pi is eighteen pi. Now let's see a faster way, with no annoying radius.",
+    "at": [
+     "Six times three pi",
+     "Now let's see"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now by understanding, with similarity. All circles are similar to each other.",
+    "at": [
+     "Now by understanding",
+     "All circles are"
+    ]
+   },
+   {
+    "say": "Let's call the small radius r. The big diameter is six small diameters. So the big radius is six small radii, six r.",
+    "at": [
+     "call the small radius r",
+     "The big diameter",
+     "So the big radius is",
+     "six small radii"
+    ]
+   },
+   {
+    "say": "So the linear ratio is one to six. A circumference is a line. So the circumferences are one to six too.",
+    "at": [
+     "the linear ratio is one to six",
+     "A circumference is",
+     "the circumferences are one to six"
+    ]
+   },
+   {
+    "say": "So each small circumference is a sixth of the big one. Six sixths make a whole. So the six small circumferences together are exactly the big circumference.",
+    "at": [
+     "So each small",
+     "Six sixths make a whole",
+     "So the six"
+    ]
+   },
+   {
+    "say": "The big circumference is easy, two pi r. The radius is nine, and two times nine is eighteen. So it's eighteen pi.",
+    "at": [
+     "The big circumference is easy",
+     "two pi r",
+     "two times nine is eighteen",
+     "So it's eighteen pi"
+    ]
+   },
+   {
+    "say": "We got eighteen pi again, and we didn't need the small radius at all.",
+    "at": [
+     "We got eighteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "By the way, this is always true. Take circles whose diameters fill the diameter of a big circle. Their circumferences always add up to the big circumference.",
+    "at": [
+     "is always true",
+     "whose diameters fill"
+    ]
+   },
+   {
+    "say": "It doesn't matter how many circles there are. They don't even need to be the same size.",
+    "at": [
+     "It doesn't matter how many",
+     "circles there are"
+    ]
+   },
+   {
+    "say": "Why? A circumference is pi times the diameter. The small diameters add up to the big diameter. So pi times them adds up too.",
+    "at": [
+     "A circumference is pi times",
+     "The small diameters"
+    ]
+   },
+   {
+    "say": "For example, circles with diameters six and twelve sit on a diameter of eighteen. Six pi plus twelve pi is eighteen pi, the big circumference.",
+    "at": [
+     "circles with diameters six and twelve",
+     "twelve sit on",
+     "Six pi plus twelve pi",
+     "is eighteen pi"
+    ]
+   },
+   {
+    "say": "But careful, this is only for circumferences. Each small circle has a sixth of the radius, so a thirty-sixth of the area. Six of them cover only six thirty-sixths, a sixth of the big area.",
+    "at": [
+     "Six of them cover only",
+     "the big area"
+    ]
+   },
+   {
+    "say": "So the sum of the circumferences is eighteen pi. Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,171 @@
+{
+ "videoId": "geo-143",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now questions about a change in volume. How many times did the volume grow, or shrink?",
+   {
+    "say": "In most of these questions, we don't need to put numbers into the formula. We just need to understand how each change affects the volume.",
+    "at": [
+     "questions, we don't"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The edge of a cube is made five times longer. How many times does the volume grow?",
+    "at": [
+     "The edge of a cube",
+     "is made five"
+    ]
+   },
+   "Now the length, the width and the height of the cube are each five small cubes long.",
+   {
+    "say": "Let's count. One layer is five by five, twenty-five cubes.",
+    "at": [
+     "One layer is five by five",
+     "One layer is five by five"
+    ]
+   },
+   {
+    "say": "And there are five layers. Twenty-five times five is a hundred twenty-five.",
+    "at": [
+     "And there are five layers",
+     "Twenty-five times five"
+    ]
+   },
+   {
+    "say": "Now let's understand why, with the formula. The volume of a cube is its edge to the power of three, a to the power of three.",
+    "at": [
+     "Now let's understand",
+     "The volume of a cube is",
+     "is its edge"
+    ]
+   },
+   {
+    "say": "We make the edge five times longer, five a. So the new volume is five a, to the power of three.",
+    "at": [
+     "So the new volume is five a",
+     "five a, to"
+    ]
+   },
+   {
+    "say": "Each part inside the brackets gets the power of three. Five to the power of three is a hundred twenty-five, and a to the power of three stays.",
+    "at": [
+     "Five to the power of three",
+     "three is a"
+    ]
+   },
+   "And a to the power of three is the old volume. So the volume grew a hundred twenty-five times.",
+   {
+    "say": "So when we multiply the edge of a cube by some number, the volume is multiplied by that number to the power of three.",
+    "at": [
+     "So when we multiply the edge",
+     "edge of a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A cylinder or a cone is different. The volume changes by what they changed, the radius or the height, and by how much.",
+    "at": [
+     "cone is different"
+    ]
+   },
+   "Remember from the solids lesson. If only the height changes, and the radius stays, the volume changes in the same way.",
+   {
+    "say": "Think of a soda can. Put another can on top of it. The height is twice as much, and so is the volume.",
+    "at": [
+     "Think of a soda can",
+     "Put another can on top",
+     "The height is twice",
+     "much, and so"
+    ]
+   },
+   {
+    "say": "Put a third can on top. Three times the height, three times the volume.",
+    "at": [
+     "Put a third can",
+     "Three times the"
+    ]
+   },
+   {
+    "say": "So height times five gives volume times five, as long as the radius stays the same.",
+    "at": [
+     "So height times five",
+     "volume times five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Our problem is when they change the radius. When the radius changes, the volume changes by the square of the change.",
+    "at": [
+     "they change the"
+    ]
+   },
+   {
+    "say": "Radius times two gives volume times two squared, four. Radius times three gives volume times three squared, nine.",
+    "at": [
+     "Radius times two",
+     "times two squared",
+     "Radius times three",
+     "times three squared"
+    ]
+   },
+   {
+    "say": "Why? Here it's hard to see, because the old cylinder sits inside the wider one. So let's see it in the formula.",
+    "at": [
+     "Here it's hard to see",
+     "because the old",
+     "inside the wider one"
+    ]
+   },
+   {
+    "say": "The volume of a cylinder is pi r squared, times h.",
+    "at": [
+     "The volume of a cylinder",
+     "is pi r"
+    ]
+   },
+   {
+    "say": "The new radius is two r. So the new volume is pi, times the square of two r, times h.",
+    "at": [
+     "The new radius is two r",
+     "So the new"
+    ]
+   },
+   {
+    "say": "Inside the brackets, each part gets squared. Two squared is four, and r squared stays. So it's four pi r squared h.",
+    "at": [
+     "Two squared is four",
+     "r squared stays"
+    ]
+   },
+   "And pi r squared h is the old volume. So the volume is four times as big. The four came from the two, squared.",
+   "Careful with the brackets. If we square only the r, we lose the four."
+  ],
+  [
+   {
+    "say": "A cone works the same way. Its volume is the cylinder's volume, divided by three.",
+    "at": [
+     "Its volume is",
+     "volume, divided by"
+    ]
+   },
+   {
+    "say": "Let's make its height five times bigger. The new volume is pi r squared, times five h, divided by three.",
+    "at": [
+     "times five h"
+    ]
+   },
+   {
+    "say": "We take the five out, and we get five times the old volume. The divided by three is in both volumes, so it doesn't change the factor.",
+    "at": [
+     "We take the"
+    ]
+   },
+   "So for a cone too, height times five gives volume times five. And radius times two gives volume times four. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}

@@ -1,0 +1,192 @@
+{
+ "videoId": "r26-t36-map-scale",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. The last part of the topic is scale.",
+   {
+    "say": "A map is a similar copy of the real world, only much smaller. So everything we learned about similarity works on maps.",
+    "at": [
+     "similar copy of"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The scale is a ratio. A length on the map, to the same length in reality.",
+    "at": [
+     "ratio. A length"
+    ]
+   },
+   {
+    "say": "Say the scale is one to fifty thousand. Every centimeter on the map is fifty thousand centimeters in reality.",
+    "at": [
+     "Say the scale is",
+     "to fifty thousand",
+     "Every centimeter on the map",
+     "is fifty thousand"
+    ]
+   },
+   "The map and the land are similar shapes, and the scale is their linear ratio. So every real length is fifty thousand times the length on the map."
+  ],
+  [
+   {
+    "say": "Fifty thousand centimeters isn't a useful distance. So we change the units, step by step, like on a ladder.",
+    "at": [
+     "a useful distance",
+     "So we change the units",
+     "step by step"
+    ]
+   },
+   {
+    "say": "From centimeters to meters, we divide by a hundred, because a meter is a hundred centimeters.",
+    "at": [
+     "From centimeters to meters",
+     "divide by a"
+    ]
+   },
+   {
+    "say": "From meters to kilometers, we divide by a thousand, because a kilometer is a thousand meters.",
+    "at": [
+     "From meters to kilometers",
+     "divide by a"
+    ]
+   },
+   {
+    "say": "So fifty thousand centimeters is fifty thousand divided by a hundred, five hundred meters.",
+    "at": [
+     "five hundred meters"
+    ]
+   },
+   {
+    "say": "And five hundred meters is five hundred divided by a thousand, half a kilometer.",
+    "at": [
+     "is five hundred",
+     "half a kilometer"
+    ]
+   },
+   {
+    "say": "So on this map, one centimeter is half a kilometer in reality.",
+    "at": [
+     "So on this"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now on numbers. On this map, two towns are six centimeters apart. How far apart are they really?",
+    "at": [
+     "this map, two"
+    ]
+   },
+   {
+    "say": "Every map centimeter is half a kilometer. So six centimeters are six halves, three kilometers.",
+    "at": [
+     "six halves"
+    ]
+   },
+   {
+    "say": "And backwards. Two towns are really four kilometers apart. How far apart are they on the map?",
+    "at": [
+     "Two towns are"
+    ]
+   },
+   {
+    "say": "One centimeter is half a kilometer, so each kilometer is two map centimeters. So four kilometers are four times two, eight centimeters.",
+    "at": [
+     "four times two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes they give both distances, and ask for the scale. Say three kilometers in reality are six centimeters on the map.",
+    "at": [
+     "distances, and ask"
+    ]
+   },
+   {
+    "say": "First we write both in centimeters. Three kilometers are three thousand meters, and three thousand meters are three hundred thousand centimeters.",
+    "at": [
+     "Three kilometers are three thousand meters",
+     "meters, and three"
+    ]
+   },
+   {
+    "say": "So six map centimeters are three hundred thousand real centimeters. One map centimeter is three hundred thousand divided by six, fifty thousand.",
+    "at": [
+     "divided by six"
+    ]
+   },
+   {
+    "say": "So the scale is one to fifty thousand.",
+    "at": [
+     "So the scale is one",
+     "to fifty thousand"
+    ]
+   },
+   "And remember, a bigger number in the scale means a smaller map. On a scale of one to two hundred, a house is big. On one to fifty thousand, it's only a dot."
+  ],
+  [
+   {
+    "say": "Now areas. The map and the land are similar. So, like any similar shapes, the areas use the scale squared.",
+    "at": [
+     "and the land"
+    ]
+   },
+   "Here's the easiest way. First change one map centimeter into the real unit they want. Then square it.",
+   {
+    "say": "On our map, one centimeter is half a kilometer. So one square centimeter on the map is a real square, half a kilometer by half a kilometer.",
+    "at": [
+     "one square centimeter on the map",
+     "a real square",
+     "kilometer by half"
+    ]
+   },
+   {
+    "say": "Half times half is a quarter. So it's a quarter of a square kilometer.",
+    "at": [
+     "Half times half",
+     "So it's a"
+    ]
+   },
+   {
+    "say": "So a lake of eight square centimeters on the map is eight quarters, two square kilometers.",
+    "at": [
+     "eight quarters"
+    ]
+   },
+   {
+    "say": "Be careful here. A lot of students multiply eight by half a kilometer, and get four. That forgets to square.",
+    "at": [
+     "lot of students",
+     "and get four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's sum up. The scale is the linear ratio between the map and reality. Lengths are multiplied by the scale, and areas by the scale squared.",
+    "at": [
+     "The scale is the linear ratio",
+     "ratio between the"
+    ]
+   },
+   {
+    "say": "Change units with the ladder, step by step.",
+    "at": [
+     "Change units with the ladder",
+     "step by step"
+    ]
+   },
+   {
+    "say": "And for areas, change one map centimeter into the real unit first. Then square it.",
+    "at": [
+     "And for areas",
+     "map centimeter into"
+    ]
+   },
+   "Take a moment to memorize this, and I'll see you in the next video."
+  ]
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "videoId": "solve-geo36-g136",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. The side length of a regular decagon is multiplied by five. By what factor is its perimeter multiplied?",
+    "voice": "calm",
+    "at": [
+     "Now a new question",
+     "Now a new question",
+     "The side length"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we're given a regular decagon, a shape with ten equal sides. We need to find how many times bigger its perimeter gets.",
+    "at": [
+     "decagon, a shape"
+    ]
+   },
+   {
+    "say": "Regular means that the big decagon and the small one are similar. And we just talked about perimeters. We'll solve it in two different ways.",
+    "at": [
+     "Regular means that",
+     "decagon and the"
+    ]
+   },
+   {
+    "say": "Let's start with the math way, and draw it. Say each side of the decagon is s.",
+    "at": [
+     "Let's start with",
+     "way, and draw",
+     "Say each side"
+    ]
+   },
+   {
+    "say": "It has ten sides, so its perimeter is ten times s, ten s.",
+    "at": [
+     "It has ten sides",
+     "so its perimeter is ten times s",
+     "so its perimeter is ten times s",
+     "times s, ten"
+    ]
+   },
+   {
+    "say": "Now a second decagon, with a side five times as long. So each of its sides is five s.",
+    "at": [
+     "each of its sides is five s"
+    ]
+   },
+   {
+    "say": "Its perimeter is ten sides of five s. Ten times five is fifty, so its perimeter is fifty s.",
+    "at": [
+     "Its perimeter is",
+     "Ten times five is fifty",
+     "so its perimeter"
+    ]
+   },
+   {
+    "say": "Fifty s against ten s. Fifty divided by ten is five. So the perimeter is five times as big.",
+    "at": [
+     "Fifty divided by ten is five",
+     "So the perimeter"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now by understanding. Honestly, we didn't need the drawing.",
+    "at": [
+     "Now by understanding",
+     "Honestly, we didn't"
+    ]
+   },
+   "The decagon is regular, so the two decagons are similar. The side grew five times, and a side is a line.",
+   {
+    "say": "The perimeter is a line too. So, like in the lesson, it keeps the same linear ratio. It also grows five times.",
+    "at": [
+     "The perimeter is a line too",
+     "So, like in",
+     "It also grows five times"
+    ]
+   },
+   {
+    "say": "Careful with twenty-five. That's five squared, so that's what happens to the area. But they asked about the perimeter, and the perimeter is a line.",
+    "at": [
+     "Careful with twenty-five",
+     "Careful with twenty-five",
+     "That's five squared"
+    ]
+   },
+   {
+    "say": "And fifty is ten sides times five. That's the new perimeter, written with s. It isn't the factor.",
+    "at": [
+     "And fifty is ten sides"
+    ]
+   },
+   {
+    "say": "So the perimeter is multiplied by five. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

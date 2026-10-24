@@ -1,0 +1,155 @@
+{
+ "videoId": "solve-geo36-g146",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. A B C is a right triangle with the right angle at A. A D is perpendicular to B C. Given, B D is three and D C is twenty-seven. What is the length of A D?",
+    "voice": "calm",
+    "at": [
+     "Now a new question",
+     "Now a new question",
+     "A B C"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we need the altitude, A D. It looks like a number is missing, and that's what makes this question hard. Let's see how we deal with it. We'll solve it in two different ways.",
+    "at": [
+     "is missing, and",
+     "in two different"
+    ]
+   },
+   {
+    "say": "Let's start with the math way. Like in the lesson, the altitude to the hypotenuse makes three similar triangles. The left one, A B D, the right one, A D C, and the big one, A B C.",
+    "at": [
+     "Like in the",
+     "altitude to the",
+     "The left one",
+     "D, the right"
+    ]
+   },
+   {
+    "say": "Until now we wrote alpha and ninety minus alpha. Most students find it easier with a number. So let's plug in an angle. C is a sharp angle, so let's say C is twenty degrees.",
+    "at": [
+     "Most students find",
+     "with a number",
+     "angle. C is",
+     "let's say C is twenty"
+    ]
+   },
+   {
+    "say": "A is ninety, so B is a hundred eighty minus ninety minus twenty, seventy.",
+    "at": [
+     "A is ninety, so B is",
+     "so B is",
+     "eighty minus ninety"
+    ]
+   },
+   {
+    "say": "The left triangle has ninety at D, and seventy at B. So the angle at the top is twenty.",
+    "at": [
+     "The left triangle",
+     "The left triangle has ninety",
+     "at D, and"
+    ]
+   },
+   {
+    "say": "The right triangle has ninety at D, and twenty at C. So its angle at the top is seventy.",
+    "at": [
+     "The right triangle",
+     "The right triangle has ninety",
+     "at D, and"
+    ]
+   },
+   "Twenty, seventy and ninety in all three triangles. So they're similar.",
+   "Here's a small warning. We plug in angles only to see what matches what. We can't plug in forty-five and forty-five, and then use a silver triangle. Then A D would be three, like B D, and also twenty-seven, like D C. That's impossible."
+  ],
+  [
+   {
+    "say": "Why is it hard? We have only two numbers, three and twenty-seven. But an equation of two fractions has four parts. Usually we need three of them.",
+    "at": [
+     "Why is it hard",
+     "We have only"
+    ]
+   },
+   {
+    "say": "To find A D, we compare the two triangles that contain A D, the left one and the right one. Let's pull them out and turn them the same way. This time, we work inside each triangle.",
+    "at": [
+     "that contain A D",
+     "left one and"
+    ]
+   },
+   "In the left triangle, opposite seventy is the long leg, A D. Opposite twenty is the short leg, B D.",
+   "In the right triangle, opposite seventy is the long leg, D C, twenty-seven. Opposite twenty is the short leg, A D.",
+   {
+    "say": "Long leg over short leg is the same in both triangles. So A D over B D is equal to D C over A D.",
+    "at": [
+     "So A D over B D",
+     "C over A"
+    ]
+   },
+   {
+    "say": "Now we put in the numbers. A D over three is equal to twenty-seven over A D.",
+    "at": [
+     "A D over three",
+     "equal to twenty-seven"
+    ]
+   },
+   "A D appears twice. That's why two numbers are enough. It's one unknown in one equation.",
+   {
+    "say": "Cross-multiply. A D squared is three times twenty-seven, eighty-one.",
+    "at": [
+     "A D squared is three times",
+     "times twenty-seven, eighty-one"
+    ]
+   },
+   {
+    "say": "The square root of eighty-one is nine. So A D is nine.",
+    "at": [
+     "The square root of eighty-one",
+     "So A D is nine"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the shortcut from the lesson. The altitude to the hypotenuse, squared, is the two parts of the hypotenuse multiplied.",
+    "at": [
+     "Now the shortcut",
+     "The altitude to the hypotenuse",
+     "squared, is the"
+    ]
+   },
+   {
+    "say": "Three times twenty-seven is eighty-one. So the altitude is the root of eighty-one, nine. That's the whole solution, in one line.",
+    "at": [
+     "Three times twenty-seven",
+     "So the altitude"
+    ]
+   },
+   {
+    "say": "And a quick check with the figure. Most exam figures are drawn accurately. Here A D looks about three times B D, so about nine. That fits.",
+    "at": [
+     "Here A D looks about three times",
+     "three times B"
+    ]
+   },
+   {
+    "say": "Careful with fifteen. That's half of B C, thirty divided by two. It's the length of the median from A, not of the altitude.",
+    "at": [
+     "Careful with fifteen",
+     "thirty divided by two",
+     "It's the length"
+    ]
+   },
+   {
+    "say": "And three root ten is the leg A B. Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "And three root ten",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

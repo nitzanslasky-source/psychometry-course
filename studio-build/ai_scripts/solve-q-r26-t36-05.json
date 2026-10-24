@@ -1,0 +1,66 @@
+{
+ "videoId": "solve-q-r26-t36-05",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Now a new question. A map has a scale of one to forty thousand. A lake covers five square centimeters on the map. What is the real area of the lake, in square kilometers?",
+    "voice": "calm",
+    "at": [
+     "Now a new question"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we know an area on the map, and we need the real area, in square kilometers. It's an area, so the scale will be squared.",
+    "at": [
+     "area on the"
+    ]
+   },
+   {
+    "say": "Like in the lesson, first we change one map centimeter into kilometers. Forty thousand centimeters are four hundred meters, and four hundred meters are zero point four kilometers.",
+    "at": [
+     "Forty thousand centimeters are",
+     "hundred meters, and"
+    ]
+   },
+   {
+    "say": "Now the area. One square centimeter on the map is a real square, zero point four kilometers by zero point four kilometers.",
+    "at": [
+     "One square centimeter on the map",
+     "map is a"
+    ]
+   },
+   {
+    "say": "Four times four is sixteen, so zero point four times zero point four is zero point one six square kilometers.",
+    "at": [
+     "Four times four is sixteen",
+     "so zero point"
+    ]
+   },
+   {
+    "say": "The lake is five square centimeters. Five times zero point one six is zero point eight. So the lake is zero point eight square kilometers.",
+    "at": [
+     "Five times zero point one six",
+     "six is zero"
+    ]
+   },
+   {
+    "say": "Careful with two. That's five times zero point four, without squaring. And eight and zero point zero eight are one step of the decimal point away.",
+    "at": [
+     "Careful with two",
+     "Careful with two",
+     "four, without squaring",
+     "And eight and",
+     "zero point zero eight"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

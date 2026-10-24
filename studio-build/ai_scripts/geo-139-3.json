@@ -1,0 +1,188 @@
+{
+ "videoId": "geo-139-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-36 scripts (2026-10-24): math_patches/_ai_vis_t36.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R37 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with two more pictures."
+  ],
+  [
+   {
+    "say": "The second picture is the altitude to the hypotenuse. Here's a right triangle, with the right angle at A. From A we draw the altitude, A D, to the hypotenuse, B C.",
+    "at": [
+     "the altitude to",
+     "Here's a right triangle",
+     "the right angle"
+    ]
+   },
+   "Why do we call it that? We could draw a slanted line in any triangle. But on the exam, this picture comes almost only in a right triangle.",
+   {
+    "say": "Look at the small triangle, A B D, and the whole triangle, C B A. Both have a right angle, at D and at A. And the angle at B is in both of them.",
+    "at": [
+     "Look at the small triangle",
+     "A B D",
+     "and the whole triangle",
+     "at D and",
+     "the angle at B is in both"
+    ]
+   },
+   {
+    "say": "Two equal angles, so they're similar. But careful, the matching sides sit in different places in the drawing.",
+    "at": [
+     "Two equal angles"
+    ]
+   },
+   {
+    "say": "A B is the hypotenuse of the small triangle. In the big one, it's a leg. So again, we match by the angles, with the table.",
+    "at": [
+     "with the table"
+    ]
+   },
+   {
+    "say": "The hypotenuses go together, fifteen and twenty-five.",
+    "at": [
+     "The hypotenuses go together"
+    ]
+   },
+   {
+    "say": "A D is opposite the angle at B in the small triangle. In the big triangle, C A is opposite B. So A D goes with twenty.",
+    "at": [
+     "A D is opposite the angle at B",
+     "angle at B"
+    ]
+   },
+   {
+    "say": "And B D goes with the last side, B A, fifteen.",
+    "at": [
+     "And B D goes with",
+     "the last side"
+    ]
+   },
+   {
+    "say": "Fifteen over twenty-five is three fifths. So A D is three fifths of twenty, twelve. And B D is three fifths of fifteen, nine.",
+    "at": [
+     "Fifteen over twenty-five",
+     "So A D is three fifths",
+     "And B D is three fifths",
+     "fifteen, nine"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "This picture gives two shortcuts that save a lot of time. Here they are, with the reason.",
+    "at": [
+     "This picture gives two shortcuts",
+     "that save a"
+    ]
+   },
+   {
+    "say": "Look at the two small triangles, on the left and on the right. They're similar too.",
+    "at": [
+     "Look at the two small triangles",
+     "triangles, on the"
+    ]
+   },
+   "In the left one, the short leg is B D, and the long leg is A D. In the right one, the short leg is A D, and the long leg is D C.",
+   {
+    "say": "Long leg over short leg is the same in both. So A D over B D is equal to D C over A D.",
+    "at": [
+     "So A D over B D",
+     "C over A"
+    ]
+   },
+   {
+    "say": "Multiply crosswise, and A D squared is equal to B D times D C. The altitude squared is the two parts of the hypotenuse, multiplied.",
+    "at": [
+     "A D squared is equal to",
+     "to B D"
+    ]
+   },
+   {
+    "say": "Let's check it. Twelve squared is a hundred forty-four. And nine times sixteen is also a hundred forty-four.",
+    "at": [
+     "Twelve squared is",
+     "And nine times"
+    ]
+   },
+   {
+    "say": "The second shortcut comes from our table. B D went with B A, and A B went with C B. So B D over A B is equal to A B over C B.",
+    "at": [
+     "The second shortcut",
+     "B D went",
+     "So B D over A B",
+     "B over C"
+    ]
+   },
+   {
+    "say": "Multiply crosswise, and A B squared is B D times B C. A leg squared is its own part of the hypotenuse, times the whole hypotenuse.",
+    "at": [
+     "A B squared is B D times",
+     "D times B"
+    ]
+   },
+   {
+    "say": "Fifteen squared is two hundred twenty-five. And nine times twenty-five is also two hundred twenty-five.",
+    "at": [
+     "Fifteen squared is",
+     "And nine times"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The third picture is the hourglass. A B is parallel to D E, and two lines cross between them at C. So we get two triangles.",
+    "at": [
+     "The third picture is the hourglass",
+     "A B is parallel to D E",
+     "D E, and"
+    ]
+   },
+   {
+    "say": "Between the parallel lines we have a Z. It looks more like an S here, but we still call it a Z. It shows us two equal angles.",
+    "at": [
+     "Between the parallel lines",
+     "have a Z"
+    ]
+   },
+   {
+    "say": "The angles at C are vertical angles, so they're equal too. And the angles at A and E are equal, by another Z.",
+    "at": [
+     "The angles at C are vertical angles",
+     "vertical angles, so"
+    ]
+   },
+   {
+    "say": "So the triangles are similar. Let's make the table. A B and E D are both opposite the angle at C.",
+    "at": [
+     "Let's make the table",
+     "A B and E D",
+     "are both opposite"
+    ]
+   },
+   {
+    "say": "Now notice. A C goes with E C. So here a side matches its own continuation, on the other side of C.",
+    "at": [
+     "A C goes with E C",
+     "So here a"
+    ]
+   },
+   {
+    "say": "And B C goes with D C, its continuation too.",
+    "at": [
+     "And B C goes with D C",
+     "D C, its"
+    ]
+   },
+   {
+    "say": "A B is four and D E is eight, so the big one is twice the small one. A C is three, so E C is three times two, six.",
+    "at": [
+     "A B is four and D E is eight",
+     "D E is",
+     "so E C is three times two",
+     "times two, six"
+    ]
+   },
+   "So on the exam, similar triangles come in three pictures. A line parallel to the base, the altitude to the hypotenuse, and the hourglass. When you see one of them, think similar triangles, and make the table. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}
