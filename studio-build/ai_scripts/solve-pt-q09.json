@@ -19,17 +19,59 @@
     ]
    },
    {
-    "say": "Which choice first? None of them is rounder or more convenient than the others. They're all small, easy numbers. So I'll simply start with the first choice, twelve.",
+    "say": "Which choice first? None of them is rounder or more convenient than the others. They're all small, easy numbers. But we can put them in order, four, eight, twelve, sixteen. So let's start with a middle one, eight, choice number two. Why the middle? If eight doesn't fit, it shows us whether we need a bigger number or a smaller one. Then we can rule out more choices at once.",
     "at": [
-     "start with the first choice"
+     "we can put them in order",
+     "order, four, eight",
+     "eight, choice number two",
+     "shows us whether"
     ]
    }
   ],
   [
    {
-    "say": "They ask how many stamps Miri has now. So let's say Miri has twelve stamps now. How many does Ron have? The story says that right now they have the same number, so Ron also has twelve.",
+    "say": "They ask how many stamps Miri has now. So let's say Miri has eight stamps now. How many does Ron have? The story says that right now they have the same number, so Ron also has eight.",
     "at": [
      "stamps Miri has",
+     "let's say Miri has eight",
+     "How many does"
+    ]
+   },
+   {
+    "say": "Now Ron gives Miri four stamps. Miri gets four more, eight plus four, twelve. Ron has four fewer, eight minus four, four.",
+    "at": [
+     "Miri gets four more",
+     "plus four, twelve",
+     "Ron has four fewer",
+     "minus four, four"
+    ]
+   },
+   {
+    "say": "Is Miri's number twice Ron's? Two times four is eight, not twelve. Twelve is three times four. So eight doesn't fit, and choice number two is out.",
+    "at": [
+     "Twelve is three times four",
+     "So eight doesn't",
+     "choice number two is out"
+    ]
+   },
+   {
+    "say": "What does that tell us? After the gift, Miri is too far ahead of Ron. Four stamps move, no matter how many they start with. But with bigger piles, those four stamps make less of a difference. So we need a bigger number. Four is smaller than eight, so choice number four is out too.",
+    "at": [
+     "So we need a bigger number",
+     "number. Four is",
+     "choice number four is out too"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Eight gave Miri twelve and Ron four, three times as many, so eight and four are out. Now let's try twelve, choice number one, the next one up. So let's say Miri has twelve stamps now. How many does Ron have? The story says that right now they have the same number, so Ron also has twelve.",
+    "at": [
+     "Eight gave Miri twelve",
+     "Ron four, three",
+     "so eight and four are out",
+     "so eight and four are out",
+     "number one, the",
      "let's say Miri has twelve",
      "How many does"
     ]
@@ -63,7 +105,7 @@
     ]
    },
    {
-    "say": "First we cross out choices that make no sense. Then we start with a round, convenient choice. And when a bigger trial number gives a bigger result, a middle choice can help us rule out more of the ordered choices.",
+    "say": "First we cross out choices that make no sense. Then we start with a round, convenient choice. And when no choice is round, but the choices can be put in order, we start with a middle one. If it fails, it shows us which way to go, so we rule out more choices at once.",
     "at": [
      "First we cross out",
      "that make no"

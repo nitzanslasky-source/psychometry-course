@@ -1913,7 +1913,7 @@ def HOURS(name, lo, hi, rows, layers, w=1150, gapcol=True, title='Hour by hour',
         body += ('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="#9aa7b0" stroke-width="2" stroke-dasharray="6 6"/>'
                  % (X(g), ys[0] + 10, X(g), H - 8))
     if gapcol:
-        body += _T(GX, 36, 'the gap', 30, _TEAL)
+        body += _T(GX, 36, 'gap (km)', 30, _TEAL)
         body += '<line x1="800" y1="%d" x2="800" y2="%d" stroke="#c9d3d9" stroke-width="2"/>' % (14, H - 6)
     body += road(0)
     out = [('line', MV._svg(W, H, body, title))]
@@ -2121,6 +2121,12 @@ rsVa = IH('rsVa', '$70-50=20$ km closer every hour', size=32)
 rsVb = IH('rsVb', '$10\\div20=\\frac{1}{2}$ hour', size=32)
 rsVc = IH('rsVc', '$\\frac{1}{2}$ hour $=30$ minutes', size=32)
 rsVd = IH('rsVd', 'the car in front: $\\ $the gap grows by $20$ km an hour', size=32)
+rsVfront = ROAD('rsVfront', [
+    ('bus', [('dot', 0, 'bus', 'orange')]),
+    ('arrB', [('arrow', 0, .3, '50 kph', 1, 'orange')]),
+    ('car', [('dot', .5, 'car')]),
+    ('arrC', [('arrow', .5, .8, '70 kph')]),
+    ('gap', [('gap', 0, .5, 'the gap grows')])], w=1100, title='The faster car is in front')
 _wp113 = [
     S('Relative Speed',
       L("Welcome back. Now relative speed."),
@@ -2128,7 +2134,7 @@ _wp113 = [
     S('What it is',
       L("Relative speed is the rate at which the gap between two travelers changes.",
         show(s3meaning, 'Relative speed is the rate')),
-      L("We don't follow each one on its own. We follow the gap between them."),
+      L("We don't follow each one on its own. We follow the gap between them. In these examples, each speed stays the same."),
       L("How many kilometers does the gap change in one hour? That's the relative speed.")),
     S('Toward each other, hour by hour',
       L("Now a new example. Mia and Leo stand twenty-four kilometers apart, on the same road.",
@@ -2175,7 +2181,7 @@ _wp113 = [
         show(rsC['arrC'], 'A car drives toward it')),
       L("In one hour, the truck covers twenty kilometers, and the car covers fifty."),
       L("So together, they close twenty plus fifty, seventy kilometers every hour.", show(rsCa, 'twenty plus fifty, seventy')),
-      L("If they crash, it's like a crash at seventy. Toward each other, we add the speeds.",
+      L("That's how fast they approach each other. Toward each other, we add the speeds.",
         show(rsCk, 'Toward each other, we add'))),
     S('Another example',
       L("Now a new example, with different numbers."),
@@ -2241,7 +2247,7 @@ _wp113 = [
       L("When are they a hundred fifty kilometers apart? The gap grows by a hundred every hour. So a hundred fifty "
         "divided by a hundred is one and a half hours.",
         show(rsQd, 'A hundred fifty divided by a hundred')),
-      L("So toward each other or apart, we add the speeds.", show(rsQk, 'toward each other or apart'))),
+      L("So moving in opposite directions, toward each other or apart, we add the speeds.", show(rsQk, 'toward each other or apart'))),
     # ---- part 2
     S('A chase, hour by hour',
       L("In a chase, both of them move the same way, and one tries to catch the other."),
@@ -2266,9 +2272,9 @@ _wp113 = [
         show(rsS['c3'], 'He gained three once more'), show(rsS['g3'], 'Three minus three'), show(rsS['m3'], 'He catches her')),
       L("Look at the gap column. Nine, six, three, zero.", show(rsS['box'], 'Look at the gap column')),
       L("Every hour, the gap closes by the same three kilometers."),
-      L("Why three? Because he rides nine, but she runs away six. Nine minus six is three.",
-        show(rsSk, 'Nine minus six is three')),
-      L("Imagine the slow one stands still. Then the cyclist comes closer at only three kilometers per hour."),
+      L("Why three? He rides nine kilometers while she runs six. So the gap closes by nine minus six, three kilometers.",
+        show(rsSk, 'nine minus six, three kilometers')),
+      L("We can imagine the runner standing still. Compared with her, the cyclist gets three kilometers closer each hour. His real speed is still nine kilometers per hour."),
       L("So in a chase, we subtract the speeds.")),
     S('He catches her: the whole head start',
       L("Now look at the moment he catches her, after three hours.", show(rsU['line'], 'the moment he catches her'),
@@ -2291,8 +2297,12 @@ _wp113 = [
       L("It's a chase, so we subtract. The car gains seventy minus fifty, twenty kilometers every hour.",
         show(rsVa, 'seventy minus fifty')),
       L("It needs to gain ten kilometers. Ten divided by twenty is half an hour.", show(rsVb, 'Ten divided by twenty')),
-      L("So the car catches the bus after thirty minutes.", show(rsVc, 'after thirty minutes')),
-      L("And what if the faster one is in front? Then the gap doesn't close. It grows."),
+      L("So the car catches the bus after thirty minutes.", show(rsVc, 'after thirty minutes'))),
+    S('The faster one in front',
+      L("Now change their positions. What if the faster car is in front? Then the gap doesn't close. It grows.",
+        show(rsVfront['line'], 'Now change their positions'), show(rsVfront['bus'], 'Now change their positions'),
+        show(rsVfront['arrB'], 'Now change their positions'), show(rsVfront['car'], 'the faster car is in front'),
+        show(rsVfront['arrC'], 'the faster car is in front'), show(rsVfront['gap'], 'It grows')),
       L("Say the car is in front and drives away from the bus. The gap grows by seventy minus fifty, twenty kilometers every hour.",
         show(rsVd, 'The gap grows by seventy minus fifty')),
       L("The same direction, so we still subtract the speeds.")),
@@ -2320,9 +2330,9 @@ s5d = IH('s5d', 'Ben is $\\frac{3}{2}$ times as fast', size=32)
 s5e = IH('s5e', 'from Ben\'s start: $\\ $Ben $30$ s, $\\ $Ava $40$ s', size=32)
 s5f = IH('s5f', 'Ben is $\\frac{40}{30}=\\frac{4}{3}$ times as fast', size=32)
 s5g = I('s5g', 'From whose start is the time counted?', size=34)
-s6a = I('s6a', 'Toward each other or apart: $\\ $add the speeds', size=34)
+s6a = I('s6a', 'Opposite directions: $\\ $add the speeds', size=34)
 s6b = I('s6b', 'A chase: $\\ $subtract the speeds', size=34)
-s6e = I('s6e', 'Meet: $\\ $together they cover the whole gap', size=34)
+s6e = I('s6e', 'Toward each other: $\\ $together they cover the starting gap', size=34)
 s6f = I('s6f', 'time $=$ the gap $\\div$ the relative speed', size=34)
 s6c = I('s6c', 'Only the starting gap counts. $\\ $A head start: $\\ $find it first.', size=34)
 s6d = I('s6d', 'Mark every start time. $\\ $From whose start?', size=34)
@@ -2331,7 +2341,7 @@ _wp113 += [
       L("Here's the classic mistake, and it's almost always in a chase."),
       L("The only distance that matters is the gap between them when the chase starts. Not the whole way they ride, and "
         "not where they end up.", show(s4a, 'The only distance that matters')),
-      L("Imagine the runner at a hundred kilometers per hour, and the cyclist at a hundred and two. They travel very far, "
+      L("Imagine two vehicles instead. One travels at a hundred kilometers per hour. The one behind travels at a hundred and two. They travel very far, "
         "but the gap still closes by only two kilometers every hour.", show(s4b, 'the gap still closes by only two')),
       L("So in a chase, we only look at the starting gap, and at the difference between the speeds.")),
     S('A head start',
@@ -2359,18 +2369,18 @@ _wp113 += [
         "twenty seconds.", show(s5a, 'Ben runs only thirty minus ten')),
       L("They both run the same distance, from the start to the meeting point. The distance is fixed, so the times flip, "
         "like in speed ratios.", show(s5b, 'The distance is fixed, so the times flip')),
-      L("Ava's time to Ben's time is thirty to twenty, three to two. So Ben's speed is three halves of Ava's. He is one "
-        "and a half times as fast.", show(s5c, 'thirty to twenty, three to two'), show(s5d, 'one and a half times as fast'))),
+      L("Ava's time to Ben's time is thirty to twenty, three to two. Ben covers the same distance in less time. So Ben's speed divided by Ava's is thirty divided by twenty, three halves. He is one "
+        "and a half times as fast.", show(s5c, 'thirty to twenty, three to two'), show(s5d, 'thirty divided by twenty, three halves'))),
     S('Change whose start we count from',
       L("Now change just the last part of the question. Ben still starts ten seconds after Ava. But suppose Ben catches Ava thirty seconds after Ben starts. Ben runs thirty seconds, and Ava runs "
         "ten more, forty.", show(s5e, 'Ben runs thirty seconds')),
-      L("Then Ben is forty over thirty, four thirds times as fast.", show(s5f, 'forty over thirty')),
+      L("They still cover the same distance. Ava runs forty seconds, and Ben runs thirty. So Ben's speed is forty over thirty, four thirds times Ava's speed.", show(s5f, 'forty over thirty')),
       L("Two readings, two different answers. So always ask, from whose start is the time counted?")),
     S('Recap',
-      L("So let's sum it up. Toward each other, or apart, we add the speeds.", show(s6a, 'Toward each other, or apart')),
+      L("So let's sum it up. Moving in opposite directions, we add the speeds. They may move toward each other or apart.", show(s6a, 'Moving in opposite directions')),
       L("In a chase, we subtract them.", show(s6b, 'In a chase, we subtract them')),
-      L("They meet when together they cover the whole gap. And the time is the gap divided by the relative speed.",
-        show(s6e, 'They meet when together'), show(s6f, 'the time is the gap divided')),
+      L("When moving toward each other, they meet after covering the starting gap together. In a chase, the faster one must gain the whole starting gap. In both cases, the time is the gap divided by the relative speed.",
+        show(s6e, 'When moving toward each other'), show(s6f, 'the time is the gap divided')),
       L("Only the starting gap counts. And if one leaves earlier, we find the head start first.", show(s6c, 'Only the starting gap counts')),
       L("And we mark every start time on the sketch, and ask from whose start the time is counted.", show(s6d, 'we mark every start time')),
       L("Chases are where students slip, so take a moment to memorize this. I'll see you in the next video.")),
@@ -3202,11 +3212,19 @@ video('r26-t27-graphs', 'lesson', slides=[
 # No Hebrew (an English question; real exams 2023_winter_q1_16, 2020_spring_q1_20 on rates). First use after the lesson:
 # the flip ("like in the lesson"). Two methods: the fraction (1/5 of the trip = 12 min -> 60), plugging in the answers
 # (60 minutes: a 60 km trip at 60 kph; 25% faster = 75 kph -> 48 minutes -> 12 less). Trap at its step: 48 (the new
-# time; also "25% less time").
+# time; also "25% less time"). 2026-10-25 W26: method 2 first tries 48 (the middle of the ordered choices): a fifth of 48
+# is less than 10, not 12 -> too small, a longer trip saves more -> 36 and 48 out -> then 60 (a fifth is 12; the story check).
+def SM27(sb, title, *lines): return S(title, *lines, sb=sb)
 q5a = IH('q5a', 'speed $\\times\\frac{5}{4}$ $\\ \\to\\ $ time $\\times\\frac{4}{5}$', size=30)
 q5b = IH('q5b', 'saved: $\\ \\frac{1}{5}$ of the usual time $=12$ minutes', size=30)
 q5c = IH('q5c', 'usual time: $\\ 5\\times12=60$ minutes', size=30)
 q5d = IH('q5d', '$48$: $\\ $the new time', size=30, col=1)
+q5o = IH('q5o', 'in order: $\\ 36,\\ 48,\\ 60,\\ 72$', size=30)
+q5p = IH('q5p', 'try $48$: $\\ $saved $=\\frac{1}{5}$ of $48$', size=30)
+q5q = IH('q5q', '$\\frac{1}{5}$ of $48<10$ $\\ (5\\cdot10=50)$, $\\ $not $12$ ✗', size=30, col=1)
+q5r = I('q5r', 'saves too little $\\ \\to\\ $ the time is bigger', size=30, col=1)
+q5t = IH('q5t', '$\\frac{1}{5}$ of $60=12$ ✓', size=30, col=1)
+CARRY27['solve-q-r26-t27-05'] = {2: ['$48$: saves less than $10$ ✗']}
 q5e = IH('q5e', 'try $60$: $\\ 60$ km at $60$ kph', size=30)
 q5f = IH('q5f', '$25\\%$ faster: $\\ 60+15=75$ kph', size=30)
 q5g = IH('q5g', '$\\frac{60}{75}=\\frac{4}{5}$ hour $=48$ minutes', size=30, col=1)
@@ -3228,9 +3246,27 @@ video('solve-q-r26-t27-05', 'solution', qid='q-r26-t27-05', slides=[
         "if you wrongly treat twelve as a quarter of the usual time. They ask for the usual time.", show(q5d, "It's sixty minus twelve"),
         mk('cross', 'choice 2', 'They ask for the usual time'))),
     S('Method 2 · Plugging in the answers',
-      L("[pause] Now let's plug in the answers. We start again from the givens. Let's try sixty minutes. To make it easy, "
-        "say the trip is sixty kilometers at sixty kilometers per hour. That takes one hour, sixty minutes.",
-        show(q5e, "Let's try sixty minutes")),
+      L("[pause] Now let's plug in the answers. We start again from the givens. Which choice do we try first? The choices "
+        "are in order, thirty-six, forty-eight, sixty and seventy-two. So let's start with a middle one, forty-eight, choice "
+        "number two. If it doesn't fit, it shows us which way to go.", show(q5o, 'The choices are in order'),
+        pt('choice 2', 'forty-eight, choice number two')),
+      L("So say the usual trip takes forty-eight minutes. Twenty-five percent faster on the same route means the time is "
+        "times four fifths, like in the lesson. So she saves one fifth of the usual time.",
+        show(q5p, 'she saves one fifth of the usual time')),
+      L("A fifth of forty-eight is less than ten, because five times ten is fifty. But the question says she saves twelve "
+        "minutes. So forty-eight saves too little.", show(q5q, 'A fifth of forty-eight is less than ten')),
+      L("What does that tell us? The saving is always one fifth of the trip, so a longer trip saves more minutes. So the "
+        "usual time must be bigger than forty-eight. Forty-eight is out, and thirty-six is out too.",
+        show(q5r, 'a longer trip saves more minutes'), mk('cross', 'choice 2', 'Forty-eight is out'),
+        mk('cross', 'choice 1', 'thirty-six is out too'))),
+    SM27('Method 2 · Plugging in the answers', 'Now try sixty',
+      L("Forty-eight saved less than ten minutes, so thirty-six and forty-eight are out. Now let's try sixty minutes, "
+        "choice number three, the next one up. A fifth of sixty is twelve, exactly the saving we need.",
+        mk('cross', 'choice 2', 'so thirty-six and forty-eight are out'), mk('cross', 'choice 1', 'so thirty-six and forty-eight are out'),
+        pt('choice 3', "let's try sixty minutes"), show(q5t, 'A fifth of sixty is twelve')),
+      L("Let's also check sixty in the story itself. To make it easy, say the trip is sixty kilometers at sixty kilometers "
+        "per hour. That takes one hour, sixty minutes.",
+        show(q5e, "Let's also check sixty")),
       L("Now she rides twenty-five percent faster. A quarter of sixty is fifteen, so sixty plus fifteen, seventy-five kilometers per "
         "hour.", show(q5f, 'sixty plus fifteen')),
       L("Sixty kilometers at seventy-five is sixty over seventy-five, four fifths of an hour. That's forty-eight minutes.",

@@ -171,6 +171,7 @@ def _layout(vid):
                 d['w'] = 560
             if it.get('_y'): d['y'] = it['_y']          # topic 17: a question with its own figure - place below it
             if it.get('_x'): d['x'] = it['_x']
+            if it.get('_w'): d['w'] = it['_w']  # explicit width, used only by q18's two separately cued squares
             out.append((it, d))
         per.append(out)
     return names, per
@@ -809,7 +810,8 @@ video('solve-pt-q01', 'solution', qid='pt-q01', slides=[
 # Hebrew: a before / after table, x eggs; 7/11 -> multiply by 11, open, 900 = 18x, divide by 9 first, x = 50; then
 # plugging in the answers: one of the four must be right; 25 is long to check; don't go in order, start from the most
 # convenient (round) answer; 50 -> 35/55 = 7/11; the first round answer is often right (the exam gives an advantage).
-# Course numbers: 500, 600, 9/13, 50. Added: the why of plugging in, the trap (forget to add to B), "when", x^2 + x = 110.
+# Course numbers: 500, 600, 9/13, 50. Added: the why of plugging in, the trap (forget to add to B), "when", x^2 + x = 132
+# (2026-10-25 W26: was = 110, a first-try hit; now the round 10 gives 110, too small -> 9 and 10 out -> 11 gives 132).
 f1e1 = IH('f1e1', 'Before: $\\ A=500,\\ \\ B=600$', size=32)
 f1e2 = IH('f1e2', 'After: $\\ A=500-x,\\ \\ B=600+x$', size=32)
 f1e3 = IH('f1e3', '$500-x=\\frac{9}{13}(600+x)$', size=34)
@@ -824,9 +826,11 @@ f1f2 = I('f1f2', 'Start with the most convenient answer, usually a round one', s
 f1f3 = IH('f1f3', '(2) $\\ 50$: $\\ A=450,\\ \\ B=650$', size=32)
 f1f4 = IH('f1f4', '$\\frac{450}{650}=\\frac{45}{65}=\\frac{9}{13}$ ✓', size=34)
 f1f5 = I('f1f5', 'When? One number is asked, the choices are numbers, and a check is easy', size=28)
-f1f6 = IH('f1f6', '$x>0,\\quad x^2+x=110,\\quad x=?$', size=34)
+f1f6 = IH('f1f6', '$x>0,\\quad x^2+x=132,\\quad x=?$', size=34)
 f1f7 = I('f1f7', '$9\\qquad 10\\qquad 11\\qquad 12$', size=34)
-f1f8 = IH('f1f8', '$10$: $\\ 10^2+10=100+10=110$ ✓', size=34)
+f1f8 = IH('f1f8', '$10$: $\\ 10^2+10=100+10=110$ ✗ $\\ $too small', size=34)
+f1f9 = I('f1f9', 'bigger $x$ $\\ \\to\\ $ bigger $x^2+x$: $\\ 9,\\ 10$ out', size=30)
+f1f10 = IH('f1f10', '$11$: $\\ 11^2+11=121+11=132$ ✓', size=32)
 
 video('solve-pt-q02', 'solution', qid='pt-q02', slides=[
     S('Method 1 · The math way',
@@ -872,12 +876,19 @@ video('solve-pt-q02', 'solution', qid='pt-q02', slides=[
       L("So when do I plug in the answers? When the question asks for one number, the choices are plain numbers, and "
         "it's easy to put a choice back into the question. It helps most when the equation is long, or when you don't "
         "know how to solve it at all. It's a safety net.", show(f1f5, 'So when do I plug in the answers')),
-      L("Let's see one more example. x is positive. x squared plus x equals a hundred ten. What is x, if the choices are nine, ten, "
+      L("Let's see one more example. x is positive. x squared plus x equals a hundred thirty-two. What is x, if the choices are nine, ten, "
         "eleven, and twelve? An equation with x squared and x together, we haven't learned to solve yet. But we don't "
         "need to.", show(f1f6, 'x squared plus x equals'), show(f1f7, 'if the choices are')),
-      L("Start with the round answer, ten. Ten squared is a hundred, and a hundred plus ten is a hundred ten. That's exactly what the equation needs, so it fits. So "
-        "x is ten, and we're done without solving anything. [pause] Okay. I'll see you in the next question.",
-        show(f1f8, 'Ten squared is a hundred'))),
+      L("Start with the round answer, ten, because it's the easiest to square. Ten squared is a hundred, and a hundred plus "
+        "ten is a hundred ten. The equation needs a hundred thirty-two, so ten is too small.",
+        show(f1f8, 'Ten squared is a hundred')),
+      L("What does that tell us? x is positive, so a bigger x gives a bigger x squared, so x squared plus x gets bigger too. We "
+        "need a bigger result, so we need a bigger x. So ten is out, and nine is out too.",
+        show(f1f9, 'So ten is out')),
+      L("Let's try eleven. Eleven squared is a hundred twenty-one, and a hundred twenty-one plus eleven is a hundred "
+        "thirty-two. That's exactly what the equation needs, so it fits. So x is eleven, and we're done without solving "
+        "anything. [pause] Okay. I'll see you in the next question.",
+        show(f1f10, 'Eleven squared is a hundred twenty-one'))),
 ])
 
 
@@ -1583,6 +1594,16 @@ video('solve-pt-q08', 'solution', qid='pt-q08', slides=[
 # choice -> start with the first; 9 -> both 9, after 12 and 6, 12 = 2 x 6 -> the answer; "the end of the section, should
 # be very hard, simple with the answers"; then the lesson's summary (kept here, at the end of the method's block).
 # Course numbers: 4 stamps, choices 12, 8, 16, 4 (real-exam order) -> 12. Visuals: now / after rows, then the summary lines.
+# 2026-10-25 W26 (teacher: plugging in is not always right on the first try): instead of "start with the first", start
+# with 8, the middle of the ordered values 4, 8, 12, 16 -> after the gift 12 and 4, three times, not twice -> Miri too
+# far ahead; bigger piles make the same 4 stamps matter less -> a bigger number -> 8 and 4 out -> then 12 -> 16 and 8.
+f2q9o = I('f2q9o', 'In order: $\\ 4,\\ 8,\\ 12,\\ 16$', size=32)
+f2q9x = IH('f2q9x', 'now: $\\ $ Miri 8, $\\ $ Ron 8', size=32)
+f2q9y = IH('f2q9y', 'after: $\\ $ Miri $8+4=12$', size=32)
+f2q9y2 = IH('f2q9y2', 'Ron $8-4=4$', size=32)
+f2q9z = I('f2q9z', '$12=3\\cdot4$, $\\ $not $2\\cdot4$ $\\quad$ ✗', size=32)
+f2q9w = I('f2q9w', 'Miri too far ahead $\\ \\to\\ $ a bigger number', size=30)
+f2q9k = I('f2q9k', '$8$: $\\ 12$ and $4$, $\\ $three times $\\ $✗', size=30)
 f2q9a = IH('f2q9a', 'now: $\\ $ Miri 12, $\\ $ Ron 12', size=32)
 f2q9b = IH('f2q9b', 'after: $\\ $ Miri $12+4=16$', size=32)
 f2q9b2 = IH('f2q9b2', 'Ron $12-4=8$', size=32)
@@ -1600,10 +1621,28 @@ video('solve-pt-q09', 'solution', qid='pt-q09', slides=[
         "what we did in this whole lesson, and plug in the answers. The choices are numbers, and the story gives "
         "conditions we can check.", pt('choice 1', 'The choices are numbers')),
       L("Which choice first? None of them is rounder or more convenient than the others. They're all small, easy "
-        "numbers. So I'll simply start with the first choice, twelve.", pt('choice 1', 'start with the first choice'))),
+        "numbers. But we can put them in order, four, eight, twelve, sixteen. So let's start with a middle one, eight, "
+        "choice number two. Why the middle? If eight doesn't fit, it shows us whether we need a bigger number or a "
+        "smaller one. Then we can rule out more choices at once.", show(f2q9o, 'we can put them in order'),
+        pt('choice 2', 'eight, choice number two'))),
+    S('Plug in eight',
+      L("They ask how many stamps Miri has now. So let's say Miri has eight stamps now. How many does Ron have? The "
+        "story says that right now they have the same number, so Ron also has eight.",
+        show(f2q9x, "let's say Miri has eight")),
+      L("Now Ron gives Miri four stamps. Miri gets four more, eight plus four, twelve. Ron has four fewer, eight minus "
+        "four, four.", show(f2q9y, 'Miri gets four more'), show(f2q9y2, 'Ron has four fewer')),
+      L("Is Miri's number twice Ron's? Two times four is eight, not twelve. Twelve is three times four. So eight doesn't "
+        "fit, and choice number two is out.", show(f2q9z, 'Twelve is three times four'),
+        mk('cross', 'choice 2', 'choice number two is out')),
+      L("What does that tell us? After the gift, Miri is too far ahead of Ron. Four stamps move, no matter how many "
+        "they start with. But with bigger piles, those four stamps make less of a difference. So we need a bigger number. Four "
+        "is smaller than eight, so choice number four is out too.", show(f2q9w, 'So we need a bigger number'),
+        mk('cross', 'choice 4', 'choice number four is out too'))),
     S('Plug in twelve',
-      L("They ask how many stamps Miri has now. So let's say Miri has twelve stamps now. How many does Ron have? The "
-        "story says that right now they have the same number, so Ron also has twelve.",
+      L("Eight gave Miri twelve and Ron four, three times as many, so eight and four are out. Now let's try twelve, choice number "
+        "one, the next one up. So let's say Miri has twelve stamps now. How many does Ron have? The story says that right "
+        "now they have the same number, so Ron also has twelve.", show(f2q9k, 'Eight gave Miri twelve'),
+        mk('cross', 'choice 2', 'so eight and four are out'), mk('cross', 'choice 4', 'so eight and four are out'),
         show(f2q9a, "let's say Miri has twelve")),
       L("Now Ron gives Miri four stamps. Miri gets four more, twelve plus four, sixteen. Ron has four fewer, twelve minus "
         "four, eight.", show(f2q9b, 'Miri gets four more'), show(f2q9b2, 'Ron has four fewer')),
@@ -1615,7 +1654,7 @@ video('solve-pt-q09', 'solution', qid='pt-q09', slides=[
     S('What we learned',
       L("Let's sum up plugging in the answers. When the choices are numbers, and the question gives conditions we can "
         "check, we can put each choice into the question and check it.", show(f2q9s1, "Let's sum up")),
-      L('First we cross out choices that make no sense. Then we start with a round, convenient choice. And when a bigger trial number gives a bigger result, a middle choice can help us rule out more of the ordered choices.', show(f2q9s2, 'First we cross out')),
+      L('First we cross out choices that make no sense. Then we start with a round, convenient choice. And when no choice is round, but the choices can be put in order, we start with a middle one. If it fails, it shows us which way to go, so we rule out more choices at once.', show(f2q9s2, 'First we cross out')),
       L("The moment a choice fits every given, we mark it, and we don't need to check the rest. And if three choices are "
         "out, the fourth is right, even without checking. [pause] Okay. I'll see you in the next video.",
         show(f2q9s3, 'The moment a choice fits'), show(f2q9s4, 'if three choices are out'))),
@@ -3124,43 +3163,58 @@ f4g18b = PIN(GEO('f4g18b', [
             ('seg', 200, 308, 290, 308, 'teal', 6), ('txt', 180, 310, '2', 'teal', 26)]),
     ('c2', [('seg', 175.9, 150, 355.9, 150, 'teal', 2.5, True),
             ('seg', 200, 336, 380, 336, 'ink', 6), ('txt', 180, 338, '4', 'ink', 26)]),
-], vb='40 15 430 340', w=300, title='The middle part compared with a radius and a diameter'))
-_R(f4g18b, 330)
-f4s1 = IH('f4s1', '$AO=2+2=4$, $\\ AH=2$', size=28, col=1)
-f4s2 = IH('f4s2', '$x^2=4^2-2^2=16-4=12$', size=28, col=1)
+], vb='40 15 430 340', w=420, title='Compare the middle part with 2 and 4'))
+_R(f4g18b, 290)
+f4s1 = IH('f4s1', '$AO=2+2=4$', size=28, col=1)
+f4ah = IH('f4ah', '$AH=2$', size=28, col=1)
+f4pyth = IH('f4pyth', '$x^2+2^2=4^2$', size=28, col=1)
+f4sq4 = IH('f4sq4', '$4^2=16$', size=28, col=1)
+f4sq2 = IH('f4sq2', '$2^2=4$', size=28, col=1)
+f4s2 = IH('f4s2', '$x^2=16-4=12$', size=28, col=1)
 f4u1 = IH('f4u1', '$3^2<12<4^2\\quad\\to\\quad3<x<4$', size=28, col=1)
 f4u2 = IH('f4u2', '$AD=x+x=2x$', size=30, col=1)
 f4u2b = IH('f4u2b', '$6<AD<8$', size=30, col=1)
 f4u3 = IH('f4u3', '$4\\cdot6=24$, $\\ 4\\cdot8=32$ $\\ \\to\\ $ $24<$ area $<32$', size=28, col=1)
+f4area0 = I('f4area0', 'So far: $6<AD<8$, $AB=4$', size=28, col=1)
+f4area1 = IH('f4area1', 'Area $=4\\times AD$', size=30, col=1)
+f4area2 = IH('f4area2', '$4\\times6=24$', size=30, col=1)
+f4area3 = IH('f4area3', '$4\\times8=32$', size=30, col=1)
+f4area4 = IH('f4area4', '$24<$ area $<32$', size=30, col=1)
 f4k0 = I('f4k0', 'So far: $\\ 24<$ area $<32$', size=26, col=1)
 f4k1 = I('f4k1', '(4) $\\ 40>32$ ✗', size=30, col=1)
 f4k2 = I('f4k2', '(3) $\\ 32$: $\\ $the area is less than $32$ ✗', size=30, col=1)
 f4k3 = IH('f4k3', '(2) $\\ 16\\cdot1\\frac12=24$', size=30, col=1)
 f4k4 = IH('f4k4', '$\\left(1\\frac12\\right)^2=2\\frac14>2$ $\\to$ $\\sqrt2<1\\frac12$', size=30, col=1)
 f4k5 = I('f4k5', '$\\to\\ 16\\sqrt2<24$ ✗', size=30, col=1)
-f4k6 = I('f4k6', 'Three out $\\to$ (1) $\\ 16\\sqrt3$ ✓', size=30, col=1)
 for _it, _y in ((f4s1, 560), (f4s2, 610), (f4u1, 595), (f4u2, 645), (f4u2b, 695), (f4u3, 745)):
     _R(_it, _y)
-for _it, _y in ((f4k0, 330), (f4k1, 390), (f4k2, 450), (f4k3, 510), (f4k4, 570), (f4k5, 630), (f4k6, 695)):
+for _it, _y in ((f4k0, 315), (f4k1, 365), (f4k2, 415), (f4k3, 465), (f4k4, 520), (f4k5, 580)):
     _R(_it, _y)
+    _it['gap'] = 2
 f4helperbase = f4rect
-f4helpertriangle = [('dot', 110, 150), ('txt', 94, 150, 'H', 'ink', 22, True), ('seg', 110, 60, 265.9, 150, 'teal', 3, True),
+f4helperao = [('seg', 110, 60, 265.9, 150, 'teal', 3, True)]
+f4helperao_value = [('txt', 178, 85, '4', 'teal', 24)]
+f4helpertriangle = [('dot', 110, 150), ('txt', 124, 169, 'H', 'ink', 22, True),
     ('seg', 110, 150, 265.9, 150, 'teal', 3, True),
-    ('right', 110, 150, 0, 270, 12), ('txt', 178, 85, '4', 'teal', 24),
-    ('txt', 129, 110, '2', 'teal', 24), ('txt', 183, 170, 'x', 'teal', 24, True)]
+    ('right', 110, 150, 0, 90, 12)]
+f4helperah = [('txt', 129, 110, '2', 'teal', 24)]
+f4helperx = [('txt', 193, 173, 'x', 'teal', 24, True)]
 f4helperother = [('seg', 265.9, 150, 421.8, 150, 'orange', 3, True),
     ('seg', 265.9, 150, 421.8, 60, 'orange', 3, True),
-    ('right', 421.8, 150, 180, 270, 12), ('txt', 346, 85, '4', 'orange', 24),
+    ('right', 421.8, 150, 180, 90, 12), ('txt', 346, 85, '4', 'orange', 24),
     ('txt', 403, 110, '2', 'orange', 24), ('txt', 343, 170, 'x', 'orange', 24, True)]
 f4help = PIN(GEO('f4help', [('line', f4helperbase),
     ('radii', [('seg', 265.9, 60, 265.9, 240, 'teal', 2, True), ('txt', 281, 110, '2', 'teal', 22), ('txt', 281, 200, '2', 'teal', 22)]),
-    ('triangle', f4helpertriangle)], vb='40 15 430 260', w=300, title='Use the given lengths, not measurements'))
-f4help2 = PIN(GEO('f4help2', [('line', f4helperbase+f4helpertriangle), ('other', f4helperother)],
+    ('ao', f4helperao), ('ao_value', f4helperao_value), ('triangle', f4helpertriangle), ('ah', f4helperah)], vb='40 15 430 260', w=330, title='Use the given lengths, not measurements'))
+f4help2 = PIN(GEO('f4help2', [('line', f4helperbase+f4helperao+f4helperao_value+f4helpertriangle+f4helperah+f4helperx), ('other', f4helperother)],
     vb='40 15 430 260', w=300, title='Two equal horizontal lengths'))
+f4help3 = PIN(GEO('f4help3', [('line', f4helperbase+f4helperao+f4helperao_value+f4helpertriangle+f4helperah+f4helperx), ('other', f4helperother)],
+    vb='40 15 430 260', w=420, title='The two equal horizontal lengths make AD'))
 _R(f4help, 330); _R(f4help2, 330)
+_R(f4help3, 330)
 f4help['line']['over'] = 1
 f4help['line']['of'] = f4g18['line']['_name']
-for _key in ('radii', 'triangle'):
+for _key in ('radii', 'ao', 'ao_value', 'triangle', 'ah'):
     f4help[_key]['of'] = f4g18['line']['_name']
 # The original question remains at the left; the helper copy replaces the old measured-length comparison.
 # 2026-10-23 (Nitzan: "whatever the Hebrew version does"): her estimate from the figure is Method 1 again, with her
@@ -3177,9 +3231,17 @@ f4exact3 = IH('f4exact3', '$AD=2x=4\\sqrt3$', size=30, col=1)
 f4exact4 = IH('f4exact4', 'Area $=4\\times4\\sqrt3=16\\sqrt3$', size=30, col=1)
 for _it, _y in ((f4a1, 560), (f4a2, 605), (f4a3, 650)):
     _R(_it, _y)
-for _it, _y in ((f4e1, 590), (f4e2, 635), (f4u2b, 680), (f4u3, 725)):
+for _it, _y in ((f4e1, 350), (f4e2, 420), (f4u2b, 490)):
     _R(_it, _y)
-for _it, _yy in ((f4s2, 560), (f4u2, 610)):
+    _it['gap'] = 2
+for _it, _yy in ((f4s1, 570), (f4ah, 620), (f4pyth, 530), (f4sq4, 575), (f4s2, 620), (f4u2, 660)):
+    _R(_it, _yy)
+_R(f4sq2, 575, x=1260)
+f4sq4['_w'] = 190; f4sq2['_w'] = 190
+for _it in (f4pyth, f4sq4, f4sq2, f4s2, f4u2):
+    _it['gap'] = 2
+    _it['size'] = 26
+for _it, _yy in ((f4area0, 330), (f4area1, 390), (f4area2, 450), (f4area3, 510), (f4area4, 570)):
     _R(_it, _yy)
 for _it, _yy in ((f4exact1, 330), (f4exact2, 390), (f4exact3, 450), (f4exact4, 510)):     # their own slide, no figure
     _R(_it, _yy)
@@ -3211,13 +3273,17 @@ video('solve-pt-q18', 'solution', qid='pt-q18', slides=[
       L("And it's shorter than the diameter of the middle circle. That diameter goes from the top side to the bottom "
         "side, so it's four.", show(f4g18b['c2'], "it's shorter than the diameter")),
       L("Can't tell by eye? Use your eraser. Mark the length of the middle part on its edge. Then hold it against a "
-        "radius, and against the diameter."),
+        "radius, and against the diameter.")),
+    SM('Method 1 · Estimation', 'The whole long side',
       L("So the middle part is more than two and less than four. A D is made of three parts: two, the middle part, and "
         "two. Two plus two plus two is six, and two plus four plus two is eight. So A D is between six and eight.",
         show(f4e1, 'So the middle part is more than two'), show(f4e2, 'A D is made of three parts'),
-        show(f4u2b, 'So A D is between six and eight')),
+        show(f4u2b, 'So A D is between six and eight'))),
+    SM('Method 1 · Estimation', 'From length to area',
       L("The area is four times A D. Four times six is twenty-four, and four times eight is thirty-two. So the area is "
-        "between twenty-four and thirty-two, and it isn't equal to either one.", show(f4u3, 'The area is four times'))),
+        "between twenty-four and thirty-two, and it isn't equal to either one.", show(f4area0, 'The area is four times'),
+        show(f4area1, 'The area is four times'), show(f4area2, 'Four times six is twenty-four'),
+        show(f4area3, 'four times eight is thirty-two'), show(f4area4, 'So the area is between'))),
     SM('Method 1 · Estimation', 'Check the choices',
       L("[pause] Now the choices. Choice number four, forty, is more than thirty-two. It's out.",
         show(f4k0, 'Now the choices'), show(f4k1, 'Choice number four, forty'), mk('cross', 'choice 4', "It's out")),
@@ -3230,16 +3296,18 @@ video('solve-pt-q18', 'solution', qid='pt-q18', slides=[
         show(f4k4, 'But one and a half squared'), show(f4k5, 'sixteen root two is less than twenty-four'),
         mk('cross', 'choice 2', "It's out")),
       L("Three choices are out, so choice number one, sixteen root three, is our answer.",
-        show(f4k6, 'Three choices are out'), mk('tick', 'choice 1', 'so choice number one'))),
+        mk('tick', 'choice 1', 'so choice number one'))),
     SM('Method 2 · The math way: Pythagoras', 'A helper line',
       L("[pause] Now the math way. The estimate came from the figure. The math way uses only the given lengths, so it "
         "proves the answer. The middle circle touches the top and bottom sides, four apart. Its diameter is four, so its "
         "radius is two. Draw a line from A to O, joining two touching circles' centers.",
-        show(f4help['line'], 'Now the math way'), show(f4help['radii'], 'Its diameter is four')),
-      L('The corner circle has radius two, and the middle circle has radius two. The circles touch from the outside, so A O is two plus two, four. From O, draw a perpendicular to side A B. Call its foot H. O is two below the top side, so A H is two. Now A H O is a right triangle, with hypotenuse four and one leg two.', show(f4help['triangle'], 'A O is two plus two, four'), show(f4s1, 'hypotenuse four and one leg two'))),
+        show(f4help['line'], 'Now the math way'), show(f4help['radii'], 'Its diameter is four'), show(f4help['ao'], 'Draw a line from A to O')),
+      L('The corner circle has radius two, and the middle circle has radius two. The circles touch from the outside, so A O is two plus two, four. From O, draw a perpendicular to side A B. Call its foot H. O is two below the top side, so A H is two. Now A H O is a right triangle, with hypotenuse four and one leg two.', show(f4help['ao_value'], 'A O is two plus two, four'), show(f4s1, 'A O is two plus two, four'), show(f4help['triangle'], 'From O, draw a perpendicular'), show(f4help['ah'], 'so A H is two'), show(f4ah, 'so A H is two'))),
     SM('Method 2 · The math way: Pythagoras', 'The exact width',
-      L('Call O H x. By Pythagoras, x squared plus two squared is four squared. Four squared is sixteen, and two squared is four. Subtract four, and x squared is twelve.', show(f4help2['line'], 'Call O H x'), show(f4s2, 'x squared is twelve')),
-      L("The same construction on the right has the same hypotenuse, four, and the same vertical leg, two. So its horizontal length is also x. The whole rectangle is x plus x across. That's why A D is two x, not just x.", show(f4help2['other'], 'same construction on the right'), show(f4u2, 'A D is two x'))),
+      L('Call O H x. By Pythagoras, x squared plus two squared is four squared. Four squared is sixteen, and two squared is four. Subtract four, and x squared is twelve.', show(f4help2['line'], 'Call O H x'), show(f4pyth, 'By Pythagoras'), show(f4sq4, 'Four squared is sixteen'), show(f4sq2, 'two squared is four'), show(f4s2, 'Subtract four')),
+      ),
+    SM('Method 2 · The math way: Pythagoras', 'The whole rectangle',
+      L("The same construction on the right has the same hypotenuse, four, and the same vertical leg, two. So its horizontal length is also x. The whole rectangle is x plus x across. That's why A D is two x, not just x.", show(f4help3['line'], 'The same construction on the right'), show(f4help3['other'], 'same construction on the right'), show(f4u2, 'A D is two x'))),
     SM('Method 2 · The math way: Pythagoras', 'Finish exactly',
       L("Now x itself. x squared is twelve, so x is the root of twelve. Twelve is four times three. So the root of twelve "
         "is the root of four, times the root of three. That's two root three.",

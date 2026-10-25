@@ -67,19 +67,33 @@
     ]
    },
    {
-    "say": "Let's see one more example. x squared plus x equals a hundred ten. What is x, if the choices are nine, ten, eleven, and twelve? An equation with x squared and x together, we haven't learned to solve yet. But we don't need to.",
+    "say": "Let's see one more example. x is positive. x squared plus x equals a hundred thirty-two. What is x, if the choices are nine, ten, eleven, and twelve? An equation with x squared and x together, we haven't learned to solve yet. But we don't need to.",
     "at": [
      "x squared plus x equals",
-     "a hundred ten",
+     "a hundred thirty-two",
      "if the choices are",
      "ten, eleven, and"
     ]
    },
    {
-    "say": "Start with the round answer, ten. Ten squared is a hundred, and a hundred plus ten is a hundred ten. That's exactly what the equation needs, so it fits. So x is ten, and we're done without solving anything. [pause] Okay. I'll see you in the next question.",
+    "say": "Start with the round answer, ten, because it's the easiest to square. Ten squared is a hundred, and a hundred plus ten is a hundred ten. The equation needs a hundred thirty-two, so ten is too small.",
     "at": [
      "Ten squared is a hundred",
      "is a hundred ten"
+    ]
+   },
+   {
+    "say": "What does that tell us? x is positive, so a bigger x gives a bigger x squared, so x squared plus x gets bigger too. We need a bigger result, so we need a bigger x. So ten is out, and nine is out too.",
+    "at": [
+     "So ten is out",
+     "nine is out"
+    ]
+   },
+   {
+    "say": "Let's try eleven. Eleven squared is a hundred twenty-one, and a hundred twenty-one plus eleven is a hundred thirty-two. That's exactly what the equation needs, so it fits. So x is eleven, and we're done without solving anything. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Eleven squared is a hundred twenty-one",
+     "twenty-one, and a"
     ]
    }
   ]

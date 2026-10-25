@@ -233,6 +233,72 @@
   "by": "Codex",
   "since": "2026-10-23T11:00+03:00"
  },
+ "geo-134": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "geo-134-2": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "geo-134-3": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "geo-135": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "geo-139": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "geo-139-2": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "geo-139-3": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "geo-139-4": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "geo-141": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "geo-143": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "geo-143-2": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
  "operation-patterns": {
   "state": "ready",
   "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
@@ -270,10 +336,10 @@
   "since": "2026-10-23T10:20+03:00"
  },
  "pt51-plug-answers": {
-  "state": "held",
-  "why": "waiting for Nitzan's decision (measuring the figure / the round answer) + Codex review",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "pt51-plug-numbers": {
   "state": "ready",
@@ -324,22 +390,22 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "r26-t27-graphs": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "r26-t27-special": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "r26-t27-special-2": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "r26-t33-more-tools": {
   "state": "ready",
@@ -365,12 +431,6 @@
   "by": "Claude",
   "since": "2026-10-22T18:48+03:00"
  },
- "r26-t35-cones": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
- },
  "r26-t35-cubefacts": {
   "state": "ready",
   "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
@@ -382,6 +442,12 @@
   "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
   "by": "Codex",
   "since": "2026-10-23T11:00+03:00"
+ },
+ "r26-t36-map-scale": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-ch-q01": {
   "state": "ready",
@@ -426,10 +492,10 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-ch-q08": {
-  "state": "ready",
-  "why": "Codex-reviewed (batches A–L, P, Q); seeded 22 Oct",
+  "state": "held",
+  "why": "W26 edit (Nitzan 25 Oct): plugging in the answers gets a failed first try — then Codex review",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-25T09:00+02:00"
  },
  "solve-ch-q09": {
   "state": "ready",
@@ -522,10 +588,10 @@
   "since": "2026-10-23T10:20+03:00"
  },
  "solve-geo33-g089": {
-  "state": "held",
-  "why": "topic 33 — Codex re-review of circles not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-geo33-g090": {
   "state": "ready",
@@ -648,10 +714,10 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-geo34-g114": {
-  "state": "held",
-  "why": "waiting for Nitzan's decision (trust the drawing in regular polygons?)",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-geo34-g115": {
   "state": "ready",
@@ -672,10 +738,10 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-geo35-g121": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-geo35-g122": {
   "state": "ready",
@@ -696,10 +762,10 @@
   "since": "2026-10-23T11:00+03:00"
  },
  "solve-geo35-g125": {
-  "state": "held",
-  "why": "topic 35 newly written (22 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-22T23:24+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-geo35-g126": {
   "state": "ready",
@@ -743,6 +809,84 @@
   "by": "Codex",
   "since": "2026-10-23T11:00+03:00"
  },
+ "solve-geo36-g136": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g137": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g138": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g140": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g142": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g144": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g145": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g146": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g147": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g148": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g149": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g150": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-geo36-g151": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
  "solve-pt-q01": {
   "state": "ready",
   "why": "W25 sentence-by-sentence script, board, read-through and prompter review passed 23 Oct; original methods kept. Report reviews/codex-held-w25-2026-10-23.txt. Frozen.",
@@ -763,9 +907,9 @@
  },
  "solve-pt-q02-2": {
   "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
+  "why": "W26 edit (Nitzan 25 Oct): plugging in the answers gets a failed first try — then Codex review",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-25T09:00+02:00"
  },
  "solve-pt-q03": {
   "state": "ready",
@@ -804,22 +948,22 @@
   "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q07": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-pt-q08": {
-  "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-pt-q09": {
   "state": "held",
-  "why": "topic 51 — Codex deep review not finished",
+  "why": "W26 edit (Nitzan 25 Oct): plugging in the answers gets a failed first try — then Codex review",
   "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "since": "2026-10-25T09:00+02:00"
  },
  "solve-pt-q10": {
   "state": "ready",
@@ -870,10 +1014,10 @@
   "since": "2026-10-23T10:20+03:00"
  },
  "solve-pt-q18": {
-  "state": "held",
-  "why": "waiting for Nitzan's decision (measuring the figure / the round answer) + Codex review",
-  "by": "Claude",
-  "since": "2026-10-22T18:48+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-pt-q19": {
   "state": "ready",
@@ -1002,40 +1146,40 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "solve-q-r26-t27-01": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-q-r26-t27-02": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-q-r26-t27-03": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-q-r26-t27-05": {
   "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
+  "why": "W26 edit (Nitzan 25 Oct): plugging in the answers gets a failed first try — then Codex review",
   "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "since": "2026-10-25T09:00+02:00"
  },
  "solve-q-r26-t27-06": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-q-r26-t27-31": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-q-r26-t33-02": {
   "state": "ready",
@@ -1096,6 +1240,36 @@
   "why": "W25 sentence/board/read-through/prompter review, maths and both layouts passed23Oct. Hebrew methods kept. reviews/codex-topic35-w25-2026-10-23.txt. Frozen.",
   "by": "Codex",
   "since": "2026-10-23T11:00+03:00"
+ },
+ "solve-q-r26-t36-01": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-q-r26-t36-02": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-q-r26-t36-03": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-q-r26-t36-04": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
+ },
+ "solve-q-r26-t36-05": {
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp24-g070": {
   "state": "ready",
@@ -1266,82 +1440,82 @@
   "since": "2026-10-23T09:08+03:00"
  },
  "solve-wp27-g107": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g108": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g109": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g111": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g112": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g114": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g115": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g116": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g117": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g118": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g119": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g120": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "solve-wp27-g121": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "wp-001": {
   "state": "ready",
@@ -1476,51 +1650,51 @@
   "since": "2026-10-22T18:48+03:00"
  },
  "wp-106": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "wp-106-2": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "wp-106-3": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "wp-108-after": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "wp-110": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "wp-110-2": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 sentence/board/read-through/prompter review; all final typed+handwriting checks pass. Teacher methods/decisions kept. Frozen. reviews/codex-topic36-w25-2026-10-24.txt",
+  "by": "Codex",
+  "since": "2026-10-24T22:21+02:00"
  },
  "wp-113": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 review passed:132 paragraphs,19 boards,189 step states; spoken read-through/every prompter paragraph; both maths and layout modes0/0/0. Full NEW recordings authorized AFTER this review. Do NOT produce superseded25Oct takes. reviews/codex-relative-speed-w25-2026-10-25.txt",
+  "by": "Codex",
+  "since": "2026-10-25T08:53+02:00"
  },
  "wp-113-2": {
-  "state": "held",
-  "why": "topic 27 newly written (23 Oct) — waiting for Codex review (W25)",
-  "by": "Claude",
-  "since": "2026-10-23T14:12+03:00"
+  "state": "ready",
+  "why": "Independent W25 review passed:132 paragraphs,19 boards,189 step states; spoken read-through/every prompter paragraph; both maths and layout modes0/0/0. Full NEW recordings authorized AFTER this review. Do NOT produce superseded25Oct takes. reviews/codex-relative-speed-w25-2026-10-25.txt",
+  "by": "Codex",
+  "since": "2026-10-25T08:53+02:00"
  }
 }

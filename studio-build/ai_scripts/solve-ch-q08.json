@@ -84,11 +84,54 @@
     ]
    },
    {
-    "say": "Remember, the differences from the average add up to zero. Let's try choice number three, sixty thousand. It's a round number in the middle of the choices.",
+    "say": "Remember, the differences from the average add up to zero. Which choice do we try first? The choices are in order, fifty thousand, fifty-five thousand, sixty thousand, and seventy-two thousand. So let's start with a middle one, choice number two, fifty-five thousand. If the differences don't add up to zero, they show us which way to go.",
     "at": [
      "Remember, the differences",
-     "Let's try choice number three",
-     "the middle of"
+     "let's start with a middle one",
+     "If the differences"
+    ]
+   },
+   {
+    "say": "Each prize, compared with fifty-five thousand. Eighty gives plus twenty-five. Fifty gives minus five. Eighty gives plus twenty-five again.",
+    "at": [
+     "Eighty gives plus twenty-five again"
+    ]
+   },
+   {
+    "say": "Then fifty gives minus five, eighty gives plus twenty-five, and twenty gives minus thirty-five.",
+    "at": [
+     "five, eighty gives",
+     "twenty gives minus thirty-five"
+    ]
+   },
+   {
+    "say": "The plus side is twenty-five, twenty-five and twenty-five, seventy-five. The minus side is five, five and thirty-five, forty-five. Seventy-five minus forty-five is plus thirty, not zero.",
+    "at": [
+     "The plus side",
+     "is plus thirty, not zero"
+    ]
+   },
+   {
+    "say": "What does that tell us? The prizes are above fifty-five thousand more than they're below it. So the average is bigger than fifty-five thousand. Choice number two is out, and choice number one, fifty thousand, is out too.",
+    "at": [
+     "What does that",
+     "So the average is",
+     "than fifty-five thousand",
+     "Choice number two is out",
+     "is out too"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Fifty-five thousand gave plus thirty, not zero, so choice number one and choice number two are out. Now let's try the next one up, choice number three, sixty thousand.",
+    "at": [
+     "Fifty-five thousand gave",
+     "gave plus thirty",
+     "so choice number one",
+     "and choice number two are out",
+     "let's try the next one up",
+     "up, choice number"
     ]
    },
    {

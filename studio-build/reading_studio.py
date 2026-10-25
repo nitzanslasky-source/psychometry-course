@@ -327,7 +327,7 @@ def math_display(text):
                  ('a quarter', '¼'), ('one quarter', '¼'), ('three quarters', '¾')):
         s = re.sub(r'\b(\d+) and %s( percent)?' % re.escape(w), lambda m, g=g: m.group(1) + g + ('%' if m.group(2) else ''), s)
     # 2026-10-21 (topic 52): thousands separators for numbers of 5+ digits (60000 -> 60,000; years stay 2010)
-    s = re.sub(r'(?<![\d.,])(\d{5,})(?![\d.])', lambda m: '{:,}'.format(int(m.group(1))), s)
+    s = re.sub(r'(?<![\d.,])(\d{5,})(?!\d|\.\d)', lambda m: '{:,}'.format(int(m.group(1))), s)   # 2026-10-25: also before a full stop (60000. -> 60,000.)
     # 2026-10-21 (topic 34): spoken "times the bracket, n minus two" -> × (n − 2)
     s = re.sub(r'\btimes the bracket, (\S+(?: [+−] [^\s,.]+)+)', r'× (\1)', s)
     s = re.sub(r'\bthe bracket,? (\S+(?: [+−] [^\s,.]+)+)', r'(\1)', s)   # 'the bracket a + 3' -> (a + 3)
@@ -424,7 +424,7 @@ CAMERA_FALLBACK = (
     'number-line digit-puzzles new-operation algebraic-understanding wp-001 wp-027 wp-052 wp-067 wp-080 wp-092 wp-106 '
     'wp-123 wp-146 geo-001 geo-009 geo-042 geo-074 geo-104 geo-119 geo-134 geo-154 geo-172 ch52-intro').split()
 FULL_COURSE = os.path.join(os.path.dirname(HERE), 'content', 'full-course')
-CAMERA_PARTS_FALLBACK = set(('geo-134-2 geo-134-3 wp-106-2 wp-106-3 absolute-value-2 absolute-value-3 primes-2 primes-3 divisibility-2 divisibility-3 divisibility-4 '
+CAMERA_PARTS_FALLBACK = set(('geo-119-2 geo-119-3 geo-134-2 geo-134-3 wp-106-2 wp-106-3 absolute-value-2 absolute-value-3 primes-2 primes-3 divisibility-2 divisibility-3 divisibility-4 '
                              'number-line-2 number-line-3 digit-puzzles-2 new-operation-2 new-operation-3').split())   # 2026-10-14 camera lessons in parts
 
 

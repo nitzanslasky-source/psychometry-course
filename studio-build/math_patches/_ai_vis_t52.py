@@ -2460,6 +2460,14 @@ q8_2pre, q8k = QPRE('ch-q08', 'q8k', [('r', plus(S2, ROW2('Night Owls')))])
 q8i = IH('q8i', 'vs. $60{,}000$: $\\ +20,\\ -10,\\ +20$', size=26, col=1)
 q8j = IH('q8j', '$-10,\\ +20,\\ -40$', size=26, col=1)
 q8l = IH('q8l', '$+60-60=0$', size=26, col=1)
+# 2026-10-25 W26: method 2 first tries 55,000 (the middle of the ordered choices): +25, -5, +25, -5, +25, -35 -> +75 - 45
+# = +30, not zero -> the prizes are above 55,000 on balance, the average is bigger -> 50,000 and 55,000 out -> then 60,000.
+q8m = IH('q8m', 'vs. $55{,}000$: $\\ +25,\\ -5,\\ +25$', size=26, col=1)
+q8n = IH('q8n', '$-5,\\ +25,\\ -35$', size=26, col=1)
+q8o = IH('q8o', '$+75-45=+30$ ✗ $\\ $not zero', size=26, col=1)
+q8p = I('q8p', 'more above $\\ \\to\\ $ the average is bigger', size=26, col=1)
+q8_3pre, q8q = QPRE('ch-q08', 'q8q', [('r', plus(S2, ROW2('Night Owls')))])
+q8s = I('q8s', '$55{,}000$: $\\ +30$, $\\ $too small', size=26, col=1)
 
 video('solve-ch-q08', 'solution', qid='ch-q08', slides=[
     S('Method 1 · The math way',
@@ -2485,15 +2493,32 @@ video('solve-ch-q08', 'solution', qid='ch-q08', slides=[
     S('Method 2 · Plugging in the answers',
       L("[pause] Now let's plug in the answers, with the balance from averages. We start again from the Night Owls row.",
         show(q8k['r'], 'from the Night Owls row')),
-      L("Remember, the differences from the average add up to zero. Let's try choice number three, sixty thousand. It's "
-        "a round number in the middle of the choices.", pt('choice 3', "Let's try choice number three")),
+      L("Remember, the differences from the average add up to zero. Which choice do we try first? The choices are in "
+        "order, fifty thousand, fifty-five thousand, sixty thousand, and seventy-two thousand. So let's start with a middle one, choice number two, "
+        "fifty-five thousand. If the differences don't add up to zero, they show us which way to go.",
+        pt('choice 2', "let's start with a middle one")),
+      L("Each prize, compared with fifty-five thousand. Eighty gives plus twenty-five. Fifty gives minus five. Eighty gives "
+        "plus twenty-five again.", show(q8m, 'Eighty gives plus twenty-five')),
+      L("Then fifty gives minus five, eighty gives plus twenty-five, and twenty gives minus thirty-five.",
+        show(q8n, 'twenty gives minus thirty-five')),
+      L("The plus side is twenty-five, twenty-five and twenty-five, seventy-five. The minus side is five, five and thirty-five, forty-five. "
+        "Seventy-five minus forty-five is plus thirty, not zero.", show(q8o, 'is plus thirty, not zero')),
+      L("What does that tell us? The prizes are above fifty-five thousand more than they're below it. So the average is "
+        "bigger than fifty-five thousand. Choice number two is out, and choice number one, fifty thousand, is out too.",
+        show(q8p, 'So the average is'), mk('cross', 'choice 2', 'Choice number two is out'),
+        mk('cross', 'choice 1', 'is out too')), pre=q8_2pre),
+    S('Method 2 · Plugging in the answers',
+      L("Fifty-five thousand gave plus thirty, not zero, so choice number one and choice number two are out. Now let's try the next one "
+        "up, choice number three, sixty thousand.", show(q8q['r'], 'Fifty-five thousand gave'), show(q8s, 'gave plus thirty'),
+        mk('cross', 'choice 1', 'so choice number one'), mk('cross', 'choice 2', 'and choice number two are out'),
+        pt('choice 3', "let's try the next one up")),
       L("Each prize, compared with sixty thousand. Eighty gives plus twenty. Fifty gives minus ten. Eighty gives plus twenty again.",
         show(q8i, 'Eighty gives plus twenty')),
       L("Then fifty gives minus ten, eighty gives plus twenty, and twenty gives minus forty.", show(q8j, 'twenty gives minus forty')),
       L("The plus side is twenty, twenty and twenty, sixty. The minus side is ten, ten and forty, also sixty. Sixty minus "
         "sixty is zero. So sixty thousand is the average.", show(q8l, 'Sixty minus sixty is zero')),
       L("Choice number three is our answer, and I'll see you in the next question.", mk('tick', 'choice 3', 'Choice number three is our answer')),
-      pre=q8_2pre),
+      pre=q8_3pre),
 ])
 
 # ------------------------------------------------------------------------------------------------ solve-ch-q09
@@ -3019,7 +3044,7 @@ _RESULTS52 = {
  'solve-ch-q07': {'q7i':'is nine'},
  'solve-ch-q08': {'q8b':'is two hundred forty thousand', 'q8d':'is a hundred thousand',
                   'q8e':'twenty thousand', 'q8f':'is three hundred sixty thousand',
-                  'q8i':'Eighty gives plus twenty again'},
+                  'q8i':'Eighty gives plus twenty again', 'q8m':'Eighty gives plus twenty-five again'},
  'solve-ch-q09': {'q9b':'is thirty thousand', 'q9d':'is a hundred fifty thousand',
                   'q9e':'is twenty thousand', 'q9f':'a hundred thirty thousand'},
  'solve-ch-q10': {'q10a':'is two hundred', 'q10b':'is two hundred eighty',
