@@ -27,6 +27,8 @@ Read this page **before and after every job**. History (everything up to 22 Oct)
 ## Active jobs
 | Owner | Since | Job | Lessons / files | Blocker |
 |---|---|---|---|---|
+| Claude | 25 Oct | **Write topic 37 (coordinates)** — next in plan order; all Held until Codex reviews | `math_patches/_ai_vis_t37.py`, `t37.py` hook, ai_scripts t37, `summary_pages/t37.json` | — |
+| Codex | 25 Oct | Topic28 independent W25 review | `_ai_vis_t28.py`, 39 generated scripts, gate/review evidence; read-only factorial/display audit | All Held until board/read-through/prompter and maths/layout checks pass; recheck no takes before edits/release. No video production in this job. |
 | Claude (another session) | 22 Oct (assigned by Nitzan) | **Review topics 23 and 24 for clarity** | `math_patches/_ai_vis_t23.py`, `_ai_vis_t24.py` — mostly recorded now: proposals only for recorded lessons | must claim here before starting |
 
 ## Handoffs (open)
