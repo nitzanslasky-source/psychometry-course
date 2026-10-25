@@ -1,0 +1,160 @@
+{
+ "videoId": "wp-141-after",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "In the last question, choosing the hundreds digit also decided the units digit. That idea deserves a closer look.",
+   {
+    "say": "When one choice forces another, the forced position gets exactly one option. Let's see it in three examples.",
+    "at": [
+     "another, the forced"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "How many four-digit numbers have all their digits the same?",
+    "at": [
+     "How many four-digit numbers",
+     "all their digits"
+    ]
+   },
+   {
+    "say": "The first digit can't be zero, so it's one to nine. Nine options.",
+    "at": [
+     "The first digit",
+     "zero, so it's",
+     "Nine options"
+    ]
+   },
+   {
+    "say": "And the second digit? You might think nine options too. It could be one, in one one one one. Or two, in two two two two.",
+    "at": [
+     "You might think"
+    ]
+   },
+   {
+    "say": "But that's not really true. Once the first digit is chosen, the others must be the same digit. If we pick five, the number is five five five five. So each of the other positions gets one option.",
+    "at": [
+     "So each of the other positions",
+     "positions gets one"
+    ]
+   },
+   {
+    "say": "Nine times one times one times one is nine.",
+    "at": [
+     "Nine times one",
+     "times one is nine"
+    ]
+   },
+   {
+    "say": "Here they are, one one one one, two two two two, up to nine nine nine nine. Just nine numbers.",
+    "at": [
+     "Here they are",
+     "two, up to"
+    ]
+   },
+   {
+    "say": "Careful, not nine to the power of four. That would let every digit be anything.",
+    "at": [
+     "not nine to the power of four",
+     "That would let"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. How many four-digit numbers have the same first digit and last digit?",
+    "at": [
+     "How many four-digit",
+     "the same first digit"
+    ]
+   },
+   {
+    "say": "The first digit, one to nine. Nine options.",
+    "at": [
+     "The first digit, one to nine",
+     "Nine options"
+    ]
+   },
+   {
+    "say": "The second and third digits have no restriction. Each one has ten options, zero included.",
+    "at": [
+     "The second and",
+     "Each one has ten options"
+    ]
+   },
+   {
+    "say": "And the last digit must copy the first. One option. So choosing the first digit really chooses two digits.",
+    "at": [
+     "And the last",
+     "One option",
+     "really chooses two"
+    ]
+   },
+   {
+    "say": "Nine times ten times ten times one is nine hundred.",
+    "at": [
+     "Nine times ten",
+     "Nine times ten",
+     "is nine hundred"
+    ]
+   },
+   {
+    "say": "And one zero zero one counts too, so don't drop the zero from the middle.",
+    "at": [
+     "one zero zero one counts",
+     "too, so don't"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more example. Four-digit numbers like three three seven seven, where the second digit copies the first, and the fourth copies the third.",
+    "at": [
+     "like three three seven seven",
+     "where the second"
+    ]
+   },
+   {
+    "say": "The first digit, one to nine, nine options. The second copies it, one option.",
+    "at": [
+     "The first digit",
+     "nine options",
+     "one option"
+    ]
+   },
+   {
+    "say": "The third digit is free, zero to nine, ten options. The fourth copies it, one option.",
+    "at": [
+     "free, zero to",
+     "ten options",
+     "The fourth copies it"
+    ]
+   },
+   {
+    "say": "Nine times one times ten times one is ninety. From one one zero zero, up to nine nine nine nine.",
+    "at": [
+     "Nine times one times ten",
+     "is ninety",
+     "From one one zero zero"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. A forced position gets one option.",
+    "at": [
+     "A forced position gets one"
+    ]
+   },
+   {
+    "say": "Count each free choice once, and the copies get one. Take a moment to memorize this, and I'll see you in the next video.",
+    "at": [
+     "Count each free choice once",
+     "and the copies"
+    ]
+   }
+  ]
+ ]
+}

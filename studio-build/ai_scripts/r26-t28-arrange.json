@@ -1,0 +1,170 @@
+{
+ "videoId": "r26-t28-arrange",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now rows with a rule. Some people must stand together, some must stand apart. Some items repeat. And sometimes the row is a round table.",
+   {
+    "say": "Each rule changes how we count, and each one has its own trick. We'll see each trick on a tiny case first.",
+    "at": [
+     "we count, and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's start with a tiny case. A, B and C stand in a row. A and B must stand together. How many orders?",
+    "at": [
+     "A, B and C stand in a row",
+     "in a row"
+    ]
+   },
+   {
+    "say": "Here are all six orders of A, B and C.",
+    "at": [
+     "all six orders",
+     "all six orders",
+     "B and C"
+    ]
+   },
+   {
+    "say": "A and B are next to each other in A B C, B A C, C A B and C B A. That's four orders.",
+    "at": [
+     "That's four orders"
+    ]
+   },
+   {
+    "say": "Now the trick. We glue A and B into one block. Then we have two items, the block and C.",
+    "at": [
+     "We glue A and B",
+     "into one block",
+     "the block and C"
+    ]
+   },
+   {
+    "say": "Two items in a row, two factorial, two orders.",
+    "at": [
+     "two factorial, two orders"
+    ]
+   },
+   {
+    "say": "And inside the block, A and B can stand in two orders, A B or B A.",
+    "at": [
+     "inside the block",
+     "B can stand"
+    ]
+   },
+   {
+    "say": "Two times two is four. The same four orders.",
+    "at": [
+     "Two times two is four",
+     "The same four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. Five friends stand in a row. Dan and Mia must stand together.",
+    "at": [
+     "Five friends stand in a row",
+     "Dan and Mia"
+    ]
+   },
+   {
+    "say": "We glue Dan and Mia into a block. The block and the three other friends are four items. Four factorial is twenty-four.",
+    "at": [
+     "Four factorial is twenty-four"
+    ]
+   },
+   {
+    "say": "Inside the block, Dan and Mia can stand in two orders.",
+    "at": [
+     "and Mia can",
+     "in two orders"
+    ]
+   },
+   {
+    "say": "Twenty-four times two is forty-eight. Don't forget the order inside the block.",
+    "at": [
+     "Twenty-four times two",
+     "Don't forget the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the opposite rule, apart. Back to A, B and C. Now A and B may not stand together.",
+    "at": [
+     "apart. Back to"
+    ]
+   },
+   {
+    "say": "Apart is everything except together. All six orders, minus the four together. Six minus four is two.",
+    "at": [
+     "All six orders",
+     "All six orders",
+     "Six minus four is two",
+     "Six minus four is two"
+    ]
+   },
+   {
+    "say": "Now a new example. Four friends in a row, and Dan and Mia must stand apart.",
+    "at": [
+     "Four friends in a row",
+     "and Dan and"
+    ]
+   },
+   {
+    "say": "All the orders, four factorial, twenty-four.",
+    "at": [
+     "four factorial, twenty-four"
+    ]
+   },
+   {
+    "say": "Together, we glue them. Three items, three factorial, six. Times two inside the block, twelve.",
+    "at": [
+     "Together, we glue them",
+     "Times two inside"
+    ]
+   },
+   {
+    "say": "All minus together. Twenty-four minus twelve is twelve.",
+    "at": [
+     "Twenty-four minus twelve"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "There's a second way for apart, the gaps. We place the other two friends first, Ann and Ben. They can stand in two orders.",
+    "at": [
+     "for apart, the",
+     "We place the other two friends first",
+     "Ann and Ben",
+     "two orders"
+    ]
+   },
+   {
+    "say": "Ann and Ben make three gaps. One before them, one between them, and one after them.",
+    "at": [
+     "make three gaps",
+     "One before them"
+    ]
+   },
+   {
+    "say": "Dan goes into one of the three gaps. Mia goes into one of the two other gaps. That way they're never next to each other.",
+    "at": [
+     "Dan goes into one of the three gaps",
+     "Mia goes into"
+    ]
+   },
+   {
+    "say": "Two times three times two is twelve. The same twelve. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "Two times three times two",
+     "is twelve. The"
+    ]
+   }
+  ]
+ ]
+}

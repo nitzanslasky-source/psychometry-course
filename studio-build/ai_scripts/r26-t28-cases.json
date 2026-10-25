@@ -1,0 +1,244 @@
+{
+ "videoId": "r26-t28-cases",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "In this lesson, three more kinds of counting question. At least one, objects that go into boxes, and the most tries we might need.",
+   {
+    "say": "Each one has its own trick, so let's see them one at a time.",
+    "at": [
+     "own trick, so"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's start with a tiny case. We toss two coins. In how many outcomes do we get at least one head?",
+    "at": [
+     "We toss two coins",
+     "In how many"
+    ]
+   },
+   {
+    "say": "Here are all the outcomes. Head head, head tail, tail head, and tail tail. Two times two is four.",
+    "at": [
+     "Here are all the outcomes",
+     "Head head",
+     "head, and tail",
+     "Two times two is four"
+    ]
+   },
+   {
+    "say": "At least one head means one head or two heads. Only tail tail has no head at all.",
+    "at": [
+     "At least one",
+     "Only tail tail",
+     "Only tail tail",
+     "head at all"
+    ]
+   },
+   {
+    "say": "So the outcomes we want are all of them, minus the one with no head. Four minus one is three.",
+    "at": [
+     "Four minus one",
+     "Four minus one is three"
+    ]
+   },
+   {
+    "say": "So at least one is all, minus none. Why? Because the opposite of at least one is none, and none is easy to count.",
+    "at": [
+     "So at least one is all, minus none",
+     "all, minus none"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. Two-digit codes from the digits one to five, and digits may repeat. How many codes have at least one five?",
+    "at": [
+     "Two-digit codes from",
+     "How many codes have at least one five",
+     "least one five"
+    ]
+   },
+   {
+    "say": "All the codes first. Five times five is twenty-five.",
+    "at": [
+     "Five times five is twenty-five"
+    ]
+   },
+   {
+    "say": "Now the codes with no five at all. Each digit has only four options, one to four. Four times four is sixteen.",
+    "at": [
+     "Now the codes",
+     "Four times four is sixteen"
+    ]
+   },
+   {
+    "say": "All minus none. Twenty-five minus sixteen is nine.",
+    "at": [
+     "Twenty-five minus sixteen"
+    ]
+   },
+   {
+    "say": "Let's check with a list. Fifteen, twenty-five, thirty-five, forty-five, and fifty-one up to fifty-five. Nine codes.",
+    "at": [
+     "Let's check with a list",
+     "Fifteen, twenty-five",
+     "fifty-one up to"
+    ]
+   },
+   {
+    "say": "Why not count directly? Many students say a five first gives five codes, and a five second gives five more. Five plus five is ten.",
+    "at": [
+     "Five plus five is ten"
+    ]
+   },
+   {
+    "say": "But fifty-five was counted twice, once in each group. That's why all minus none is safer.",
+    "at": [
+     "fifty-five was counted twice",
+     "in each group"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new kind of question. Two letters, A and B, go into two boxes. A box may get both letters, or none. In how many ways can we do it?",
+    "at": [
+     "Two letters, A and B",
+     "go into two"
+    ]
+   },
+   {
+    "say": "Let's list them. Both letters in box one. A in box one and B in box two. A in box two and B in box one. And both in box two. Four ways.",
+    "at": [
+     "Let's list them",
+     "Both letters in box one",
+     "A in box one and B in box two",
+     "B in box",
+     "A in box two and B in box one",
+     "both in box two"
+    ]
+   },
+   {
+    "say": "In stages, who chooses? Each letter chooses a box. Letter A has two options, and letter B has two options. Two times two is four.",
+    "at": [
+     "Each letter chooses a box",
+     "Letter A has two options",
+     "letter B has two options",
+     "Two times two",
+     "Two times two is four"
+    ]
+   },
+   {
+    "say": "So every object is a stage, and each stage has as many options as there are boxes.",
+    "at": [
+     "every object is a stage",
+     "and each stage"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. Three children each choose one of four ice cream flavours. Two children may choose the same flavour. In how many ways can they choose?",
+    "at": [
+     "Three children each choose",
+     "of four ice"
+    ]
+   },
+   {
+    "say": "Who chooses? Each child chooses a flavour. So each child is a stage, with four options.",
+    "at": [
+     "Each child chooses",
+     "So each child",
+     "with four options"
+    ]
+   },
+   {
+    "say": "Four times four times four is sixty-four.",
+    "at": [
+     "Four times four",
+     "Four times four times four",
+     "is sixty-four"
+    ]
+   },
+   {
+    "say": "The trap is to turn it around. Three times three times three times three is eighty-one. That lets every flavour choose a child, and that's not the story.",
+    "at": [
+     "The trap is",
+     "Three times three times three",
+     "That lets every"
+    ]
+   },
+   "If you're not sure which number is the base, try a tiny case you can list, like the two letters and two boxes."
+  ],
+  [
+   {
+    "say": "And the last kind. A question that asks at most how many tries. Remember worst luck from topic twenty-one? We use it here.",
+    "at": [
+     "A question that"
+    ]
+   },
+   {
+    "say": "Noa has four keys for four lockers. She doesn't know which key opens which locker. She never tries a key that she already knows doesn't fit. At most how many tries does she need to open all four? A try that opens a locker counts too.",
+    "at": [
+     "Noa has four keys",
+     "She doesn't know"
+    ]
+   },
+   {
+    "say": "The first locker. With the worst luck, the right key is the last one she tries. Three wrong keys, and then the right one. That's four tries.",
+    "at": [
+     "The first locker",
+     "With the worst",
+     "That's four tries"
+    ]
+   },
+   {
+    "say": "That key is used now, so three keys are left for the second locker. With the worst luck, three tries.",
+    "at": [
+     "That key is",
+     "three tries"
+    ]
+   },
+   {
+    "say": "Then two tries for the third locker, and one try for the last one.",
+    "at": [
+     "Then two tries",
+     "third locker, and",
+     "one try for the last one"
+    ]
+   },
+   {
+    "say": "Four plus three plus two plus one is ten tries.",
+    "at": [
+     "Four plus three plus two plus one",
+     "plus one is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. At least one is all, minus none.",
+    "at": [
+     "At least one is all"
+    ]
+   },
+   {
+    "say": "When objects go into boxes, ask who chooses. Each object chooses a box.",
+    "at": [
+     "ask who chooses",
+     "Each object chooses"
+    ]
+   },
+   {
+    "say": "And for at most how many tries, imagine the worst luck at every step. Take a moment to memorize this, and I'll see you in the next video.",
+    "at": [
+     "imagine the worst luck",
+     "Take a moment"
+    ]
+   }
+  ]
+ ]
+}

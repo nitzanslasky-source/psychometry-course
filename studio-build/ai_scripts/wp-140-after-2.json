@@ -1,0 +1,173 @@
+{
+ "videoId": "wp-140-after-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with factorials, now with letters."
+  ],
+  [
+   {
+    "say": "Sometimes a factorial question has only letters. What is n plus one, factorial, over n minus one, factorial?",
+    "at": [
+     "has only letters",
+     "What is n plus one, factorial",
+     "factorial, over n"
+    ]
+   },
+   "The psychometric way first. We plug in a number. Let's take n is three, a small number that is easy to calculate.",
+   {
+    "say": "Then we get four factorial over two factorial. Twenty-four over two is twelve. Now we look for the choice that also gives twelve when n is three.",
+    "at": [
+     "four factorial over two factorial",
+     "Twenty-four over two"
+    ]
+   },
+   {
+    "say": "For example, n times n plus one. Three times four is twelve, so it matches.",
+    "at": [
+     "Three times four is twelve",
+     "so it matches"
+    ]
+   },
+   {
+    "say": "Now the math, so we really understand it. n plus one, factorial, is n plus one, times n, times n minus one, factorial. We stop there.",
+    "at": [
+     "Now the math",
+     "really understand it"
+    ]
+   },
+   {
+    "say": "n minus one, factorial, cancels on top and below. What's left is n times n plus one. The same answer.",
+    "at": [
+     "cancels on top and below",
+     "What's left is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. What is n factorial times n plus two, factorial?",
+    "at": [
+     "What is n factorial times",
+     "n plus two"
+    ]
+   },
+   {
+    "say": "Plug in first. n is two. Two factorial times four factorial is two times twenty-four, forty-eight.",
+    "at": [
+     "n is two",
+     "is two times"
+    ]
+   },
+   {
+    "say": "Now the math. We expand n plus two, factorial, until we reach n factorial. That's n plus two, times n plus one, times n factorial.",
+    "at": [
+     "We expand n plus two",
+     "That's n plus"
+    ]
+   },
+   {
+    "say": "Now n factorial appears twice. And n factorial times n factorial is n factorial squared. So we get n factorial squared, times n plus one, times n plus two.",
+    "at": [
+     "n factorial squared",
+     "So we get"
+    ]
+   },
+   {
+    "say": "Check with n is two. Two squared is four, times three, times four. That's forty-eight again.",
+    "at": [
+     "Check with n is two",
+     "Two squared is"
+    ]
+   },
+   {
+    "say": "And a trap. A product of factorials is not one big factorial. Two factorial times four factorial is forty-eight, but six factorial is seven hundred twenty.",
+    "at": [
+     "A product of factorials is not",
+     "not one big"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The next tool is for a plus or a minus between factorials. We take out the smaller factorial.",
+    "at": [
+     "for a plus"
+    ]
+   },
+   {
+    "say": "Now a new example. Six factorial plus five factorial.",
+    "at": [
+     "Six factorial plus five factorial"
+    ]
+   },
+   {
+    "say": "The smaller one is five factorial. And six factorial is six times five factorial.",
+    "at": [
+     "The smaller one",
+     "six factorial is six times"
+    ]
+   },
+   {
+    "say": "So we have six times five factorial, plus one times five factorial. That's five factorial, times six plus one.",
+    "at": [
+     "So we have six times five factorial",
+     "That's five factorial"
+    ]
+   },
+   {
+    "say": "Don't forget the one. Six plus one is seven. Then seven times a hundred twenty is eight hundred forty.",
+    "at": [
+     "seven times a hundred twenty",
+     "is eight hundred"
+    ]
+   },
+   {
+    "say": "Let's check. Seven hundred twenty plus a hundred twenty is eight hundred forty.",
+    "at": [
+     "Seven hundred twenty plus",
+     "hundred twenty is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now with a minus. Seven factorial minus six factorial. The smaller one is six factorial, and seven factorial is seven times six factorial.",
+    "at": [
+     "Seven factorial minus six factorial",
+     "The smaller one"
+    ]
+   },
+   {
+    "say": "So it's six factorial times seven minus one. That's six times seven hundred twenty.",
+    "at": [
+     "six factorial times seven minus one",
+     "That's six times"
+    ]
+   },
+   {
+    "say": "Six times seven hundred is four thousand two hundred. And six times twenty is a hundred twenty. Together four thousand three hundred twenty.",
+    "at": [
+     "Six times seven hundred",
+     "four thousand two",
+     "And six times twenty",
+     "a hundred twenty",
+     "Together four"
+    ]
+   },
+   {
+    "say": "Check. Five thousand forty minus seven hundred twenty is four thousand three hundred twenty.",
+    "at": [
+     "Five thousand forty minus",
+     "hundred twenty is"
+    ]
+   },
+   {
+    "say": "Careful, we never subtract inside the exclamation mark. Seven factorial minus six factorial is not one factorial. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "is not one factorial"
+    ]
+   }
+  ]
+ ]
+}

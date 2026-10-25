@@ -130,7 +130,7 @@ def reading_display(text,legacy,digits=False):
     s=notation(text,legacy,digits)
     # Line breaks are only between full sentences. They do not create new
     # paragraphs, timing markers, pauses, or audio-segmentation positions.
-    sentences=re.split(r'(?<=[.!?])\s+(?=[A-Za-z−\d(])',s)
+    sentences=re.split(r'(?:(?<=[.?])|(?<=[^\w)]!))\s+(?=[A-Za-z−\d(])',s)   # 2026-10-25 Claude: '4!' / '(n + 1)!' is a factorial, not a sentence end
     groups=[];current=[];words=0
     for sentence in sentences:
         count=len(sentence.split())

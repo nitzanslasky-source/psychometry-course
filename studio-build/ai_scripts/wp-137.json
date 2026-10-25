@@ -1,0 +1,166 @@
+{
+ "videoId": "wp-137",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Until now, the order we picked in mattered. A row changes when two people swap places.",
+   {
+    "say": "Now we choose a group, where the order doesn't matter. Picking Ann and then Ben gives the same group as picking Ben and then Ann.",
+    "at": [
+     "group, where the"
+    ]
+   },
+   "A general group question is rare on the exam, and hard. But one simple kind of group question comes up more often. We'll see both."
+  ],
+  [
+   {
+    "say": "Let's start small. Four friends, A, B, C and D. We choose two of them for a trip. How many pairs can we choose?",
+    "at": [
+     "Four friends, A, B, C and D",
+     "We choose two"
+    ]
+   },
+   {
+    "say": "First, let's count as usual, as if the order mattered. Four options for the first, and three for the second. Four times three is twelve.",
+    "at": [
+     "Four times three is twelve"
+    ]
+   },
+   {
+    "say": "Here are the twelve, in order.",
+    "at": [
+     "Here are the twelve",
+     "Here are the twelve"
+    ]
+   },
+   {
+    "say": "Look at A B and B A. Picking A first and B second, or B first and A second, gives the same pair. It's the same trip.",
+    "at": [
+     "Look at A B and B A",
+     "Picking A first"
+    ]
+   },
+   {
+    "say": "And that's true for every pair. Each pair appears twice in our twelve.",
+    "at": [
+     "Each pair appears twice"
+    ]
+   },
+   {
+    "say": "So twelve divided by two is six pairs.",
+    "at": [
+     "twelve divided by two"
+    ]
+   },
+   {
+    "say": "Let's write them. A B, A C, A D, B C, B D and C D. Six pairs.",
+    "at": [
+     "Let's write them",
+     "D, B C"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. Five friends, A to E. We choose three of them. How many groups?",
+    "at": [
+     "Five friends, A to E",
+     "We choose three"
+    ]
+   },
+   {
+    "say": "As usual first. Five, then four, then three. Five times four is twenty. Then twenty times three is sixty.",
+    "at": [
+     "Five times four is twenty",
+     "Then twenty times three"
+    ]
+   },
+   {
+    "say": "But how many times does each group appear in the sixty? Take the group A, B and C. We could pick it in this order, A, B, C.",
+    "at": [
+     "But how many",
+     "Take the group A, B and C",
+     "We could pick"
+    ]
+   },
+   {
+    "say": "Or A, C, B. Or B first, or C first. Here are all the orders. It's six orders, and it's one group.",
+    "at": [
+     "Here are all the orders",
+     "It's six orders",
+     "and it's one group"
+    ]
+   },
+   {
+    "say": "Six is three factorial, the number of ways to line up three people in a row.",
+    "at": [
+     "Six is three factorial",
+     "number of ways"
+    ]
+   },
+   {
+    "say": "So every group was counted six times. Sixty divided by six is ten groups.",
+    "at": [
+     "Sixty divided by six"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So here's the rule for a group. Count as usual, as if the order mattered. Then divide by k factorial.",
+    "at": [
+     "for a group",
+     "Count as usual",
+     "the order mattered"
+    ]
+   },
+   {
+    "say": "k is the number of people we choose.",
+    "at": [
+     "k is the number",
+     "people we choose"
+    ]
+   },
+   "Why k factorial? The k people we chose can be lined up in k factorial orders. In the usual count, each of those orders was counted. But all of them are the same group.",
+   {
+    "say": "So two chosen, divide by two. Three chosen, divide by six. Four chosen, divide by twenty-four.",
+    "at": [
+     "two chosen",
+     "Three chosen",
+     "Four chosen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. Six people, and we choose four of them.",
+    "at": [
+     "Six people",
+     "four of them"
+    ]
+   },
+   {
+    "say": "As usual, six times five times four times three. Then we divide by four factorial, four times three times two times one.",
+    "at": [
+     "Then we divide by four factorial",
+     "factorial, four times"
+    ]
+   },
+   {
+    "say": "Don't multiply it all out. Cancel first. The four on top cancels with the four below, and the three with the three. What's left is six times five, over two times one.",
+    "at": [
+     "Cancel first",
+     "with the four"
+    ]
+   },
+   {
+    "say": "Six times five is thirty. Then thirty divided by two is fifteen groups. [pause] Okay. I'll see you in the next part.",
+    "at": [
+     "Six times five is thirty",
+     "Then thirty divided by two",
+     "is fifteen groups"
+    ]
+   }
+  ]
+ ]
+}

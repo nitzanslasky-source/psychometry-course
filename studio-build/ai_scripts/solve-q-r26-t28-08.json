@@ -1,0 +1,101 @@
+{
+ "videoId": "solve-q-r26-t28-08",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "How many different arrangements of all the letters of the word banana are there? An arrangement does not have to be a real word.",
+    "voice": "calm",
+    "at": [
+     "How many different arrangements"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we arrange six letters, B, A, N, A, N, A. Some letters repeat. A appears three times, and N twice.",
+    "at": [
+     "we arrange six letters",
+     "three times, and"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, like the A A A B example in the lesson. First we count as if all six letters were different. Six factorial is seven hundred twenty.",
+    "at": [
+     "We'll solve",
+     "Six factorial is seven hundred twenty"
+    ]
+   },
+   {
+    "say": "But A appears three times. Swapping the As gives nothing new, so we divide by three factorial, six.",
+    "at": [
+     "But A appears",
+     "we divide by three factorial"
+    ]
+   },
+   {
+    "say": "And N appears twice. Swapping the Ns gives nothing new either, so we divide by two factorial, two.",
+    "at": [
+     "Swapping the Ns",
+     "divide by two factorial"
+    ]
+   },
+   {
+    "say": "Six times two is twelve. Then seven hundred twenty divided by twelve is sixty.",
+    "at": [
+     "Six times two",
+     "seven hundred twenty divided by twelve",
+     "twelve is sixty"
+    ]
+   },
+   {
+    "say": "The traps forget one of the repeats. Dividing only by six gives a hundred twenty, choice number two. Dividing only by two gives three hundred sixty, choice number four.",
+    "at": [
+     "Dividing only by six",
+     "choice number two",
+     "Dividing only by two",
+     "choice number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now another way. We have six places, and we choose where each letter goes.",
+    "at": [
+     "Now another"
+    ]
+   },
+   {
+    "say": "First the three As. We choose three places out of six. That's a group, so six times five times four, divided by three factorial. A hundred twenty divided by six is twenty.",
+    "at": [
+     "We choose three places out of six",
+     "That's a group"
+    ]
+   },
+   {
+    "say": "Three places are left. The two Ns take two of them. Choosing two of three is the same as choosing the one that stays out, three ways.",
+    "at": [
+     "three ways"
+    ]
+   },
+   {
+    "say": "And B takes the last place. One way.",
+    "at": [
+     "B takes the last place"
+    ]
+   },
+   {
+    "say": "Twenty times three times one is sixty again.",
+    "at": [
+     "Twenty times three times one",
+     "is sixty again"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

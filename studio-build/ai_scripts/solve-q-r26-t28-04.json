@@ -1,0 +1,104 @@
+{
+ "videoId": "solve-q-r26-t28-04",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A code has four digits. Each digit is from zero to nine, digits may repeat, and the code may start with zero. How many codes contain the digit five at least once?",
+    "voice": "calm",
+    "at": [
+     "A code has four digits"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for at least once. Like in the lesson, that's our signal for all minus none.",
+    "at": [
+     "at least once",
+     "the lesson, that's"
+    ]
+   },
+   {
+    "say": "Let's solve it the math way. Why all minus none? The opposite of at least one five is no five at all, and no five is one easy count.",
+    "at": [
+     "Let's solve"
+    ]
+   },
+   {
+    "say": "All the codes first. Each of the four digits has ten options. Ten times ten times ten times ten is ten thousand.",
+    "at": [
+     "Ten times ten times ten times ten"
+    ]
+   },
+   {
+    "say": "Now the codes with no five. Each digit has nine options, every digit except five. That's nine times nine times nine times nine, nine to the power of four.",
+    "at": [
+     "Now the codes",
+     "nine to the power of four"
+    ]
+   },
+   {
+    "say": "Nine squared is eighty-one. And nine to the power of four is eighty-one times eighty-one.",
+    "at": [
+     "Nine squared is eighty-one",
+     "And nine to"
+    ]
+   },
+   {
+    "say": "Eighty-one times eighty is six thousand four hundred eighty. And one more eighty-one is six thousand five hundred sixty-one.",
+    "at": [
+     "Eighty-one times eighty",
+     "thousand four hundred",
+     "And one more eighty-one",
+     "six thousand five"
+    ]
+   },
+   {
+    "say": "Careful, six thousand five hundred sixty-one is choice number three. It's the codes with no five, not our answer yet.",
+    "at": [
+     "number three. It's",
+     "not our answer yet"
+    ]
+   },
+   {
+    "say": "All minus none. Ten thousand minus six thousand five hundred sixty-one is three thousand four hundred thirty-nine.",
+    "at": [
+     "Ten thousand minus",
+     "five hundred sixty-one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why not count directly? Put a five in the first place, then ten, ten, ten. That's a thousand codes. Four places, four thousand. That's choice number one.",
+    "at": [
+     "Why not",
+     "Put a five",
+     "Four places, four thousand",
+     "That's choice number one"
+    ]
+   },
+   {
+    "say": "But the code five five zero zero was counted twice, once for the first place and once for the second.",
+    "at": [
+     "five zero zero",
+     "was counted twice",
+     "the first place"
+    ]
+   },
+   {
+    "say": "And two thousand nine hundred sixteen is four times nine to the power of three. That counts exactly one five. But at least once also includes two, three and four fives.",
+    "at": [
+     "exactly one five",
+     "includes two, three"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,157 @@
+{
+ "videoId": "wp-140-after-3",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue, with primes in a factorial."
+  ],
+  [
+   {
+    "say": "Now a question about dividing a factorial. For that, we break every factor into primes, like in the primes topic.",
+    "at": [
+     "dividing a factorial"
+    ]
+   },
+   {
+    "say": "Six factorial is six times five times four times three times two times one.",
+    "at": [
+     "Six factorial is six times",
+     "five times four"
+    ]
+   },
+   {
+    "say": "Six is two times three, and four is two times two.",
+    "at": [
+     "Six is two times three",
+     "four is two times two"
+    ]
+   },
+   {
+    "say": "Let's count the twos. One in the six, two in the four, and one in the two. That's four twos.",
+    "at": [
+     "Let's count the twos",
+     "One in the"
+    ]
+   },
+   {
+    "say": "The threes are in the six and in the three, so two threes. And one five.",
+    "at": [
+     "The threes",
+     "so two threes"
+    ]
+   },
+   {
+    "say": "So six factorial is two to the power of four, times three squared, times five.",
+    "at": [
+     "two to the power of four",
+     "four, times three"
+    ]
+   },
+   {
+    "say": "Let's check. Sixteen times nine is a hundred forty-four. Times five, it's seven hundred twenty.",
+    "at": [
+     "Sixteen times nine",
+     "Times five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Is six factorial divisible by thirty-two? Thirty-two is two to the power of five. But we have only four twos, so no.",
+    "at": [
+     "Is six",
+     "Is six factorial divisible by thirty-two",
+     "Thirty-two is two"
+    ]
+   },
+   {
+    "say": "Is it divisible by forty-five? Forty-five is three squared times five. We have both, so yes.",
+    "at": [
+     "Is it divisible by forty-five",
+     "Forty-five is three"
+    ]
+   },
+   {
+    "say": "Careful here. A lot of students count the even numbers. There are three even numbers, six, four and two. But there are four twos, because four hides two of them.",
+    "at": [
+     "There are three even numbers",
+     "six, four and"
+    ]
+   },
+   {
+    "say": "Seven factorial is the same, times one more prime, seven.",
+    "at": [
+     "Seven factorial is the same",
+     "times one more"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And a last fact, rare on the exam. Three factorial times two to the power of three is six times eight, forty-eight.",
+    "at": [
+     "rare on the",
+     "Three factorial times two",
+     "the power of"
+    ]
+   },
+   {
+    "say": "And two times four times six is also forty-eight.",
+    "at": [
+     "two times four times six",
+     "is also forty-eight"
+    ]
+   },
+   {
+    "say": "Why? Give each factor of three factorial its own two. One times two, two times two, and three times two. That's two, four and six.",
+    "at": [
+     "One times two, two times two",
+     "two, and three"
+    ]
+   },
+   {
+    "say": "So k factorial times two to the power of k is the product of the even numbers from two up to two k.",
+    "at": [
+     "the product of the even numbers",
+     "numbers from two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. Know a hundred twenty, seven hundred twenty and five thousand forty by sight.",
+    "at": [
+     "up. Know a",
+     "by sight"
+    ]
+   },
+   {
+    "say": "Expand a factorial only as far as you need.",
+    "at": [
+     "Expand a factorial only",
+     "far as you"
+    ]
+   },
+   {
+    "say": "A big factorial over a smaller one is a run of neighbours.",
+    "at": [
+     "a run of neighbours"
+    ]
+   },
+   {
+    "say": "For a sum or a difference, take out the smaller factorial, and don't forget the one.",
+    "at": [
+     "take out the smaller",
+     "and don't forget"
+    ]
+   },
+   {
+    "say": "And for dividing, count the primes. Take a moment to memorize this, and I'll see you in the next video.",
+    "at": [
+     "count the primes",
+     "Take a moment"
+    ]
+   }
+  ]
+ ]
+}

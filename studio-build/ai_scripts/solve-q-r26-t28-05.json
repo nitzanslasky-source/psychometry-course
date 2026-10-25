@@ -1,0 +1,92 @@
+{
+ "videoId": "solve-q-r26-t28-05",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Five different letters are put into three mailboxes. A mailbox may get any number of letters, or none. In how many different ways can the letters be put into the mailboxes?",
+    "voice": "calm",
+    "at": [
+     "Five different letters"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So every letter goes into some mailbox. And one mailbox may get several letters.",
+    "at": [
+     "into some mailbox"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way. Like in the lesson, we ask who chooses. Each letter must go somewhere, so each letter chooses a mailbox.",
+    "at": [
+     "with the math",
+     "in the lesson",
+     "each letter chooses a mailbox"
+    ]
+   },
+   {
+    "say": "Letter one has three options. Letter two also has three, because a mailbox can take more than one letter. And so on, five letters with three options each.",
+    "at": [
+     "Letter one has",
+     "five letters with three options each"
+    ]
+   },
+   {
+    "say": "Three times three times three times three times three. Three, nine, twenty-seven, eighty-one, two hundred forty-three.",
+    "at": [
+     "Three times three",
+     "times three times three. Three",
+     "Three, nine, twenty-seven"
+    ]
+   },
+   {
+    "say": "That's three to the power of five.",
+    "at": [
+     "That's three to the power of five"
+    ]
+   },
+   {
+    "say": "The trap is five to the power of three, a hundred twenty-five, choice number one. That lets each mailbox choose one letter. But a mailbox can get two letters, or none.",
+    "at": [
+     "five to the power of three",
+     "choice number one",
+     "That lets each"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Not sure which number is the base? Let's plug in small numbers, two letters and two boxes, and list.",
+    "at": [
+     "Not sure"
+    ]
+   },
+   {
+    "say": "Both letters in box one, or both in box two. Or one in each box, in two ways. Four ways.",
+    "at": [
+     "Four ways"
+    ]
+   },
+   {
+    "say": "Four is two squared. That's the number of boxes, to the power of the number of letters.",
+    "at": [
+     "Four is two squared",
+     "to the power"
+    ]
+   },
+   {
+    "say": "So here it's three to the power of five again.",
+    "at": [
+     "three to the power of five again"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

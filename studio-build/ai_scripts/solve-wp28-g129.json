@@ -1,0 +1,99 @@
+{
+ "videoId": "solve-wp28-g129",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A suitcase lock has three wheels. Each wheel shows one of the digits one to nine, and no digit may appear twice. How many codes are possible?",
+    "voice": "calm",
+    "at": [
+     "A suitcase lock has three wheels"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "It's the same lock as in the last question, with one change. Now no digit may appear twice.",
+    "at": [
+     "as in the"
+    ]
+   },
+   {
+    "say": "Let's solve it the math way, in stages. This time it's without repetition.",
+    "at": [
+     "Let's solve",
+     "in stages",
+     "This time it's"
+    ]
+   },
+   {
+    "say": "The first wheel has nine options. Say we pick four.",
+    "at": [
+     "The first wheel has nine",
+     "Say we pick four"
+    ]
+   },
+   {
+    "say": "Now the four leaves the pool. It can't come back, because no digit may appear twice.",
+    "at": [
+     "the four leaves the pool",
+     "It can't come"
+    ]
+   },
+   {
+    "say": "So the second wheel has only eight options left.",
+    "at": [
+     "only eight options left",
+     "only eight options"
+    ]
+   },
+   {
+    "say": "Two digits are used now, so the third wheel has seven options.",
+    "at": [
+     "the third wheel has seven"
+    ]
+   },
+   {
+    "say": "Nine times eight is seventy-two.",
+    "at": [
+     "Nine times eight",
+     "Nine times eight is seventy-two"
+    ]
+   },
+   {
+    "say": "Then seventy-two times seven. Seventy times seven is four hundred ninety. And two times seven is fourteen.",
+    "at": [
+     "Seventy times seven",
+     "hundred ninety. And",
+     "two times seven is fourteen"
+    ]
+   },
+   {
+    "say": "Four hundred ninety plus fourteen is five hundred four.",
+    "at": [
+     "Four hundred ninety plus fourteen",
+     "is five hundred four"
+    ]
+   },
+   {
+    "say": "Compare with the last question. The same digits, but the pool shrinks after every pick. Nine, nine, nine became nine, eight, seven.",
+    "at": [
+     "Compare with the"
+    ]
+   },
+   {
+    "say": "And careful, we don't divide by anything here. One two three and two one three are different codes. Dividing by six gives eighty-four, choice number two, and that's a trap.",
+    "at": [
+     "One two three and two one three",
+     "Dividing by six",
+     "eighty-four, choice number two"
+    ]
+   },
+   {
+    "say": "Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

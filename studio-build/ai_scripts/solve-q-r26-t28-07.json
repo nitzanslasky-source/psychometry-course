@@ -1,0 +1,87 @@
+{
+ "videoId": "solve-q-r26-t28-07",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Three boys and two girls stand in a row. All five are different people. The two girls may not stand next to each other. How many orders are possible?",
+    "voice": "calm",
+    "at": [
+     "Three boys and two girls"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So this is the apart rule from the lesson. The girls must have at least one boy between them.",
+    "at": [
+     "the apart rule",
+     "lesson. The girls",
+     "at least one"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, the gaps. We place the boys first. Three boys in a row, three factorial, six orders.",
+    "at": [
+     "with the math",
+     "We place the boys first",
+     "Three boys in a row",
+     "three factorial, six orders"
+    ]
+   },
+   {
+    "say": "The three boys make four gaps. Before the first boy, between the boys twice, and after the last boy.",
+    "at": [
+     "make four gaps",
+     "first boy, between"
+    ]
+   },
+   {
+    "say": "The first girl picks one of the four gaps. The second girl picks one of the three other gaps. So the girls are never side by side. Four times three is twelve.",
+    "at": [
+     "Four times three is twelve"
+    ]
+   },
+   {
+    "say": "Six times twelve is seventy-two.",
+    "at": [
+     "Six times twelve"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now all minus together. All the orders of five different people is five factorial, a hundred twenty.",
+    "at": [
+     "Now all",
+     "five factorial, a hundred twenty"
+    ]
+   },
+   {
+    "say": "Together, we glue the two girls. Four items, four factorial, twenty-four. Times two inside the block is forty-eight.",
+    "at": [
+     "Together, we glue",
+     "Times two inside the block"
+    ]
+   },
+   {
+    "say": "Careful, forty-eight is choice number one, and it's the trap. That's the together count, not apart.",
+    "at": [
+     "number one, and",
+     "it's the trap"
+    ]
+   },
+   {
+    "say": "A hundred twenty minus forty-eight is seventy-two.",
+    "at": [
+     "A hundred twenty minus forty-eight"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

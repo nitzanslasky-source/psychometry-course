@@ -1,0 +1,259 @@
+{
+ "videoId": "wp-124-after",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "In the first lesson we counted in stages. Now let's see what happens when a stage has a restriction.",
+   {
+    "say": "Restrictions are what make counting questions hard. So we'll go slowly, with three kinds of restriction.",
+    "at": [
+     "counting questions hard"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The first restriction is a number can't start with zero. Let's count all the two-digit numbers.",
+    "at": [
+     "a number can't",
+     "all the two-digit numbers"
+    ]
+   },
+   {
+    "say": "Two stages, the tens digit and the units digit.",
+    "at": [
+     "Two stages",
+     "and the units"
+    ]
+   },
+   {
+    "say": "Can the tens digit be zero? No. There is no number zero seven. We just write seven, and that's a one-digit number.",
+    "at": [
+     "There is no number zero seven",
+     "We just write"
+    ]
+   },
+   {
+    "say": "So the tens digit is one to nine. That's nine options.",
+    "at": [
+     "That's nine options"
+    ]
+   },
+   {
+    "say": "The units digit has no restriction. It can be anything from zero to nine. That's ten options.",
+    "at": [
+     "The units digit",
+     "That's ten options"
+    ]
+   },
+   {
+    "say": "Nine times ten is ninety. So there are ninety two-digit numbers.",
+    "at": [
+     "Nine times ten",
+     "Nine times ten is ninety",
+     "So there are ninety"
+    ]
+   },
+   {
+    "say": "Let's check it another way. The two-digit numbers go from ten to ninety-nine. Ninety-nine minus ten, plus one, is ninety. The same answer.",
+    "at": [
+     "Let's check it",
+     "Ninety-nine minus ten",
+     "is ninety. The"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. How many three-digit numbers are even?",
+    "at": [
+     "How many three-digit numbers are even"
+    ]
+   },
+   {
+    "say": "Three stages, the hundreds, the tens and the units.",
+    "at": [
+     "Three stages",
+     "tens and the"
+    ]
+   },
+   "Which stage has the restriction? An even number ends in an even digit. So the units digit is the one with the restriction. We start with it.",
+   {
+    "say": "The units digit can be zero, two, four, six or eight. That's five options.",
+    "at": [
+     "That's five options"
+    ]
+   },
+   {
+    "say": "The hundreds digit can't be zero, so one to nine. Nine options.",
+    "at": [
+     "so one to nine"
+    ]
+   },
+   {
+    "say": "And the tens digit is free. Ten options.",
+    "at": [
+     "the tens digit is free"
+    ]
+   },
+   {
+    "say": "Nine times ten is ninety. Then ninety times five is four hundred fifty.",
+    "at": [
+     "Nine times ten is ninety",
+     "Nine times ten is ninety",
+     "ninety times five",
+     "is four hundred fifty"
+    ]
+   },
+   {
+    "say": "A check. There are nine hundred three-digit numbers, from a hundred to nine hundred ninety-nine. Half of them are even, and half of nine hundred is four hundred fifty.",
+    "at": [
+     "There are nine hundred three-digit numbers",
+     "nine hundred ninety-nine"
+    ]
+   },
+   "So always start with the stage that has the restriction. The free stages can wait, because they work with anything."
+  ],
+  [
+   {
+    "say": "The third restriction is the hardest one. Sometimes one choice decides another choice.",
+    "at": [
+     "the hardest one"
+    ]
+   },
+   {
+    "say": "Let's see it. How many two-digit numbers have a digit sum of eleven? That means the two digits add up to eleven.",
+    "at": [
+     "How many two-digit numbers have a digit sum",
+     "a digit sum"
+    ]
+   },
+   {
+    "say": "We start with the first digit. Can it be zero? Then the second digit would need to be eleven. But eleven is a number, not a digit.",
+    "at": [
+     "Can it be zero",
+     "need to be"
+    ]
+   },
+   {
+    "say": "Can it be one? Then the second digit would need to be ten, and ten isn't a digit either.",
+    "at": [
+     "Can it be one",
+     "Then the second"
+    ]
+   },
+   {
+    "say": "Two works, because two plus nine is eleven. So the first digit is two to nine. That's eight options.",
+    "at": [
+     "So the first digit is two to nine",
+     "two to nine",
+     "That's eight options"
+    ]
+   },
+   {
+    "say": "Now the second digit. Imagine we already picked the first digit, say six. What completes six to eleven? Only five.",
+    "at": [
+     "Imagine we already",
+     "say six"
+    ]
+   },
+   {
+    "say": "And if we picked nine? Only two completes it. Whatever we pick first, exactly one digit completes it.",
+    "at": [
+     "if we picked nine",
+     "Whatever we pick"
+    ]
+   },
+   {
+    "say": "So the second stage is forced. It has one option. Eight times one is eight.",
+    "at": [
+     "It has one option",
+     "Eight times one",
+     "Eight times one is eight"
+    ]
+   },
+   {
+    "say": "Let's list them to see it. Twenty-nine, thirty-eight, forty-seven, and so on up to ninety-two. Eight numbers.",
+    "at": [
+     "Let's list them",
+     "Twenty-nine, thirty-eight",
+     "on up to"
+    ]
+   },
+   {
+    "say": "Careful here. A lot of students give the second digit ten options, or eight. But the second digit isn't free. It depends on the first one, so it gets one.",
+    "at": [
+     "A lot of students",
+     "But the second"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more example. How many two-digit numbers have a units digit that is twice the tens digit?",
+    "at": [
+     "How many two-digit numbers have a units digit",
+     "a units digit"
+    ]
+   },
+   {
+    "say": "The tens digit first. It can't be zero. Can it be five? Two times five is ten, and ten isn't a digit.",
+    "at": [
+     "Can it be five",
+     "and ten isn't"
+    ]
+   },
+   {
+    "say": "So the tens digit is one, two, three or four. Four options.",
+    "at": [
+     "So the tens digit is one",
+     "one, two, three",
+     "Four options"
+    ]
+   },
+   {
+    "say": "Once we pick the tens digit, the units digit is forced. It must be twice the tens digit. One option.",
+    "at": [
+     "digit, the units",
+     "One option"
+    ]
+   },
+   {
+    "say": "Four times one is four. And here they are, twelve, twenty-four, thirty-six and forty-eight.",
+    "at": [
+     "Four times one",
+     "Four times one is four",
+     "And here they are",
+     "twelve, twenty-four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. A number never starts with zero.",
+    "at": [
+     "A number never starts with zero"
+    ]
+   },
+   {
+    "say": "Start with the stage that has the restriction.",
+    "at": [
+     "Start with the stage",
+     "has the restriction"
+    ]
+   },
+   {
+    "say": "And if one choice decides another, imagine you already picked the first one. Then ask what completes it. The forced stage gets one.",
+    "at": [
+     "The forced stage gets one"
+    ]
+   },
+   {
+    "say": "Take a moment to memorize this, and I'll see you in the next video.",
+    "at": [
+     "Take a moment"
+    ]
+   }
+  ]
+ ]
+}

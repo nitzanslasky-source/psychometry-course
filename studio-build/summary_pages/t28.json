@@ -1,0 +1,581 @@
+{
+ "_about": "Topic 28 summary page (replaces the r26-t28-summary video). Content = the topic-28 scripts (math_patches/_ai_vis_t28.py), the Hebrew lessons (wp 8289-9793) and the old summary's points. Build: python3 summary_pages.py 28. Course numbers only (none from the Hebrew course).",
+ "topic": 28,
+ "replaces": "r26-t28-summary",
+ "intro": "Counting questions ask **in how many ways**. A short list? **List it in order.** Otherwise work in **stages**: the options at each stage, then **multiply**. Then ask: does the order matter, can items repeat, is anything forced, was anything counted twice?",
+ "figures": {
+  "slots": {
+   "builder": "t28.SLOTS28",
+   "args": [
+    [
+     "sandwich",
+     "drink",
+     "dessert"
+    ],
+    [
+     [
+      "a",
+      [
+       [
+        "n",
+        0,
+        "4"
+       ],
+       [
+        "n",
+        1,
+        "3"
+       ],
+       [
+        "n",
+        2,
+        "2"
+       ]
+      ]
+     ],
+     [
+      "x",
+      [
+       [
+        "x"
+       ]
+      ]
+     ],
+     [
+      "eq",
+      [
+       [
+        "eq",
+        "24"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "w": 420
+   },
+   "layers": [
+    "line",
+    "a",
+    "x",
+    "eq"
+   ]
+  },
+  "tree": {
+   "builder": "t28.TREE28",
+   "args": [
+    [
+     "shirt 1",
+     "shirt 2",
+     "shirt 3"
+    ],
+    [
+     "cap",
+     "sun hat"
+    ],
+    [
+     [
+      "b",
+      [
+       [
+        "br",
+        0
+       ],
+       [
+        "br",
+        1
+       ],
+       [
+        "br",
+        2
+       ],
+       [
+        "cnt",
+        0,
+        "2"
+       ],
+       [
+        "cnt",
+        1,
+        "2"
+       ],
+       [
+        "cnt",
+        2,
+        "2"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "rowh": 40,
+    "right": 80,
+    "w": 300
+   },
+   "layers": [
+    "line",
+    "b"
+   ]
+  },
+  "dots": {
+   "builder": "t28.DOTS28",
+   "args": [
+    [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E"
+    ],
+    [
+     [
+      "a",
+      [
+       [
+        "all",
+        0
+       ],
+       [
+        "ln",
+        1,
+        2
+       ],
+       [
+        "ln",
+        1,
+        3
+       ],
+       [
+        "ln",
+        1,
+        4
+       ],
+       [
+        "ln",
+        2,
+        3
+       ],
+       [
+        "ln",
+        2,
+        4
+       ],
+       [
+        "ln",
+        3,
+        4
+       ]
+      ]
+     ],
+     [
+      "u",
+      [
+       [
+        "under",
+        "4 + 3 + 2 + 1 = 10"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "R": 110,
+    "pad": 56,
+    "w": 260
+   },
+   "layers": [
+    "line",
+    "a",
+    "u"
+   ]
+  },
+  "aaab": {
+   "builder": "t28.LIST28",
+   "args": [
+    6,
+    4,
+    [
+     [
+      "a",
+      [
+       [
+        "r",
+        0,
+        [
+         "A₁",
+         "A₂",
+         "A₃",
+         "B"
+        ]
+       ],
+       [
+        "r",
+        1,
+        [
+         "A₁",
+         "A₃",
+         "A₂",
+         "B"
+        ]
+       ],
+       [
+        "r",
+        2,
+        [
+         "A₂",
+         "A₁",
+         "A₃",
+         "B"
+        ]
+       ],
+       [
+        "r",
+        3,
+        [
+         "A₂",
+         "A₃",
+         "A₁",
+         "B"
+        ]
+       ],
+       [
+        "r",
+        4,
+        [
+         "A₃",
+         "A₁",
+         "A₂",
+         "B"
+        ]
+       ],
+       [
+        "r",
+        5,
+        [
+         "A₃",
+         "A₂",
+         "A₁",
+         "B"
+        ]
+       ]
+      ]
+     ],
+     [
+      "g",
+      [
+       [
+        "ring",
+        0,
+        5,
+        "all AAAB"
+       ]
+      ]
+     ]
+    ]
+   ],
+   "kwargs": {
+    "cellw": 58,
+    "cellh": 42,
+    "right": 150,
+    "gapc": 4,
+    "w": 300
+   },
+   "layers": [
+    "line",
+    "a",
+    "g"
+   ]
+  }
+ },
+ "sections": [
+  {
+   "title": "Two ways to count",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "**A short list: list it in order**, smallest first, so nothing is missed and nothing repeats. Two-digit numbers from $2,4,7$ with tens $<$ units: $24, 27, 47$, so $3$. We counted, we checked."
+    },
+    {
+     "type": "fig",
+     "ref": "tree",
+     "caption": "Why we multiply: each shirt goes with $2$ hats, $2+2+2=3\\times2=6$. Hats first gives $2\\times3$, the same."
+    },
+    {
+     "type": "fig",
+     "ref": "slots",
+     "caption": "Stages: a box per stage, the number of options in it, then multiply. Never add: $4+3+2=9$ counts menu items, not meals."
+    }
+   ]
+  },
+  {
+   "title": "Restrictions",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "A number never starts with $0$",
+       "two-digit numbers: $9\\times10=90$"
+      ],
+      [
+       "Start with the restricted stage",
+       "even three-digit numbers: $9\\times10\\times5=450$"
+      ],
+      [
+       "A forced stage gets $1$",
+       "digit sum $11$: first $2$ to $9$, second forced: $8\\times1=8$"
+      ],
+      [
+       "Copies get $1$",
+       "four-digit, first $=$ last: $9\\times10\\times10\\times1=900$; all the same: $9$"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Imagine you already picked the first choice, then ask **what completes it**. Choosing the first digit can choose two digits at once."
+    }
+   ]
+  },
+  {
+   "title": "The pool and factorial",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "",
+      "Codes of 3 letters from A to F"
+     ],
+     "rows": [
+      [
+       "may repeat: the pool stays full",
+       "$6\\times6\\times6=216$"
+      ],
+      [
+       "no repeats: the pool shrinks",
+       "$6\\times5\\times4=120$"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "$n$ different items **in a row**: $n!=n\\times(n-1)\\times\\dots\\times1$. $3!=6$, $4!=24$, $5!=120$, $6!=720$, $7!=5040$; $0!=1$."
+    }
+   ]
+  },
+  {
+   "title": "Mutual action",
+   "blocks": [
+    {
+     "type": "fig",
+     "ref": "dots",
+     "caption": "$5$ friends shake hands: $5\\times4=20$ counts each handshake twice, $20\\div2=10$; or $4+3+2+1=10$."
+    },
+    {
+     "type": "p",
+     "text": "Handshakes, games between two teams, two-way roads, lines between points: $\\frac{n(n-1)}{2}$. $11$ teams: $\\frac{11\\times10}{2}=55$ games. **Different roles** (captain and vice captain): don't divide, $5\\times4=20$."
+    },
+    {
+     "type": "p",
+     "text": "Diagonals of a polygon: $\\frac{n(n-3)}{2}$, or all the lines minus the sides. Backwards ($66$ matches): $n(n-1)=132=12\\times11$, $12$ players, not $11$."
+    }
+   ]
+  },
+  {
+   "title": "Cases, and all minus forbidden",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Can't count in one go? **Split into cases that don't overlap, and add.** Thin base forces cheese ($4$ bases, $3$ toppings): $1\\times1+3\\times3=10$."
+    },
+    {
+     "type": "p",
+     "text": "**\"Not\", \"different from\", \"at least one\": all minus forbidden.** The same pizzas: $12-2=10$. Not the same colour: $30-(6+4)=20$. At least one $5$ in two-digit codes from $1$ to $5$: $25-16=9$ (counting $5+5$ counts $55$ twice). Rare on the exam, and hard."
+    }
+   ]
+  },
+  {
+   "title": "Groups",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Order doesn't matter: **count as usual, then divide by $k!$** ($k$ chosen). $3$ of $5$: $\\frac{5\\times4\\times3}{3!}=\\frac{60}{6}=10$. Cancel before multiplying: $\\frac{6\\times5\\times4\\times3}{4\\times3\\times2\\times1}=15$."
+    },
+    {
+     "type": "p",
+     "text": "**Choose who stays out**: $n-1$ out of $n$ $=n$ ($4$ of $5$: $5$). Count the smaller side: $7$ of $9$ $=$ $2$ of $9$ $=\\frac{9\\times8}{2}=36$. Roles: $7\\times6\\times5=210$; a group: $\\frac{210}{6}=35$."
+    }
+   ]
+  },
+  {
+   "title": "Boxes and the worst case",
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Objects into boxes: **each object chooses**. $3$ children, $4$ flavours: $4\\times4\\times4=64$ (not $3^4$). Not sure of the base? Try $2$ letters and $2$ boxes: $4=2^2$."
+    },
+    {
+     "type": "p",
+     "text": "At most how many tries ($4$ keys, $4$ lockers)? The worst luck: $4+3+2+1=10$."
+    }
+   ]
+  },
+  {
+   "title": "Rows with a rule",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Rule",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Together: glue, times the order inside",
+       "$5$ friends, two together: $4!\\times2=48$"
+      ],
+      [
+       "Apart: all minus together, or the gaps",
+       "$4$ friends, two apart: $24-12=12=2\\times3\\times2$"
+      ],
+      [
+       "Repeats: divide by each repeat's factorial",
+       "AAAB: $\\frac{4!}{3!}=4$; AABB: $\\frac{4!}{2!\\times2!}=6$"
+      ],
+      [
+       "A round table: fix one person",
+       "$n$ people: $(n-1)!$; $5$ people: $4!=24$"
+      ]
+     ]
+    },
+    {
+     "type": "fig",
+     "ref": "aaab",
+     "caption": "Name the As: $3!=6$ orders of $A_1A_2A_3B$ are one word, AAAB."
+    }
+   ]
+  },
+  {
+   "title": "Factorials",
+   "blocks": [
+    {
+     "type": "rules",
+     "head": [
+      "Tool",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Know them by sight",
+       "$a!=12\\times10=120$, so $a=5$"
+      ],
+      [
+       "Stop early",
+       "$\\frac{10!}{8!}=\\frac{10\\times9\\times8!}{8!}=90$; $\\frac{n!}{(n-1)!}=n$"
+      ],
+      [
+       "A run of neighbours",
+       "$\\frac{b!}{a!}=30=5\\times6$: $b=6$, $a=4$"
+      ],
+      [
+       "Letters: plug in first",
+       "$\\frac{(n+1)!}{(n-1)!}$ at $n=3$: $12=3\\times4$, so $n(n+1)$"
+      ],
+      [
+       "Take out the smaller one",
+       "$6!+5!=5!\\times7=840$; $7!-6!=6!\\times6=4320$"
+      ],
+      [
+       "Count the primes",
+       "$6!=2^4\\times3^2\\times5$: four twos, not three"
+      ],
+      [
+       "$k!\\times2^k$",
+       "$3!\\times2^3=48=2\\times4\\times6$"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "A product of factorials is **not** one factorial: $2!\\times4!=48$, $6!=720$."
+    }
+   ]
+  },
+  {
+   "title": "Before each question, ask",
+   "blocks": [
+    {
+     "type": "checklist",
+     "items": [
+      "Does the order matter? A row or a code: yes. A group: no, divide by $k!$.",
+      "Can items repeat? The pool stays full, or it shrinks.",
+      "A restriction? Start with it. A forced stage gets $1$, and no number starts with $0$.",
+      "Was anything counted twice? Divide by $2$, or by $k!$.",
+      "One count, or cases? \"Not\" or \"at least one\": all minus forbidden.",
+      "\"At most\" or \"at least\" how many? Topic 21: push to the extreme, the worst luck."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "⚠ Common traps",
+   "blocks": [
+    {
+     "type": "traps",
+     "items": [
+      "Adding the stages instead of multiplying ($7+3=10$ menu items, not $21$ lunches).",
+      "A free second digit where it is forced ($5\\times5=25$ instead of $5\\times1$).",
+      "A leading zero ($058$ is not a three-digit number).",
+      "Forgetting to halve a mutual action ($30$ bus lines instead of $15$), or halving when the roles differ.",
+      "Dividing a code by $k!$: $123$ and $213$ are different codes.",
+      "Forgetting the order inside a glued block, or treating a round table like a row.",
+      "Forgetting one of the repeats (BANANA: $\\frac{720}{6}=120$ or $\\frac{720}{2}=360$ instead of $60$).",
+      "$10!-9!$ is not $1!$: take out the smaller factorial."
+     ]
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "2*2+2==3*2==6",
+  "4*3*2==24",
+  "9*10==90 and 99-10+1==90",
+  "9*10*5==450 and 900//2==450",
+  "8*1==8",
+  "9*10*10*1==900",
+  "6*6*6==216",
+  "6*5*4==120",
+  "5*4//2==10 and 4+3+2+1==10",
+  "11*10//2==55",
+  "12*11==132 and 12*11//2==66",
+  "8*5//2==20",
+  "1*1+3*3==10 and 4*3-2==10",
+  "6*5-(2*3+4*1)==20",
+  "5*5-4*4==9",
+  "5*4*3//6==10",
+  "6*5*4*3//24==15",
+  "9*8//2==36",
+  "7*6*5==210 and 210//6==35",
+  "4**3==64",
+  "4+3+2+1==10",
+  "24*2==48",
+  "24-6*2==12 and 2*3*2==12",
+  "24//6==4 and 24//4==6",
+  "12*10==120",
+  "10*9==90",
+  "6*5==30",
+  "4*3*2//2==12 and 3*4==12",
+  "720+120==840 and 120*7==840",
+  "5040-720==4320 and 720*6==4320",
+  "2**4*3**2*5==720",
+  "6*8==48 and 2*4*6==48",
+  "2*24==48",
+  "720//12==60"
+ ]
+}

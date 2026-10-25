@@ -1,0 +1,91 @@
+{
+ "videoId": "solve-q-r26-t28-06",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Six different books are placed on a shelf in a row. The three math books among them must stand together, in any order. How many arrangements are possible?",
+    "voice": "calm",
+    "at": [
+     "Six different books"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the three math books stand next to each other, and inside their group any order is fine.",
+    "at": [
+     "stand next to each other"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way. Together means glue, like in the lesson. We tie the three math books into one block.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "The block and the three other books are four items.",
+    "at": [
+     "are four items"
+    ]
+   },
+   {
+    "say": "Four items in a row, four factorial, twenty-four.",
+    "at": [
+     "four factorial, twenty-four"
+    ]
+   },
+   {
+    "say": "Inside the block, the three math books can stand in three factorial orders, six.",
+    "at": [
+     "three math books",
+     "three factorial orders, six"
+    ]
+   },
+   {
+    "say": "Twenty-four times six is a hundred forty-four.",
+    "at": [
+     "Twenty-four times six"
+    ]
+   },
+   {
+    "say": "Careful, twenty-four is choice number one, and it's a trap. It forgets the order inside the block.",
+    "at": [
+     "number one, and",
+     "it's a trap"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now another way. Let's ask where the block of three can stand on a shelf of six places. It can start at place one, two, three or four.",
+    "at": [
+     "Now another",
+     "where the block of three can stand",
+     "can stand on",
+     "It can start at place one",
+     "place one, two, three or four"
+    ]
+   },
+   {
+    "say": "For each place, the math books have three factorial orders inside, six. And the three other books fill the three other places in three factorial orders, six.",
+    "at": [
+     "For each place"
+    ]
+   },
+   {
+    "say": "Four times six times six. Four times six is twenty-four. Then twenty-four times six is a hundred forty-four again.",
+    "at": [
+     "Four times six times six",
+     "Four times six is"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,250 @@
+{
+ "videoId": "wp-131",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Now a new kind of counting question. A mutual action is an action between two people, or two things, at the same time.",
+   {
+    "say": "Like a handshake. When Ann shakes Ben's hand, Ben shakes Ann's hand at the same moment. It's one handshake.",
+    "at": [
+     "Ann shakes Ben's"
+    ]
+   },
+   "Mutual action is quite common on the exam, so let's understand it well."
+  ],
+  [
+   {
+    "say": "Let's start with an example. Five friends, A, B, C, D and E, meet. Every two of them shake hands once. How many handshakes are there?",
+    "at": [
+     "Five friends",
+     "D and E"
+    ]
+   },
+   {
+    "say": "First, let's count as usual, in stages. Stage one is the person who starts the handshake. That's five options.",
+    "at": [
+     "let's count as usual",
+     "Stage one is",
+     "That's five options"
+    ]
+   },
+   {
+    "say": "Stage two is the other person. Nobody shakes their own hand, so that's four options.",
+    "at": [
+     "Stage two is",
+     "so that's four options"
+    ]
+   },
+   {
+    "say": "Five times four is twenty. But twenty is not the answer. Let's see why.",
+    "at": [
+     "Five times four",
+     "Five times four is twenty",
+     "But twenty is"
+    ]
+   },
+   {
+    "say": "Here are all twenty pairs. A first, with B, C, D or E.",
+    "at": [
+     "Here are all twenty pairs",
+     "A first",
+     "D or E"
+    ]
+   },
+   {
+    "say": "Then B first, C first, D first and E first.",
+    "at": [
+     "Then B first",
+     "C first",
+     "D first",
+     "and E first"
+    ]
+   },
+   {
+    "say": "Look at A B and B A. A B is A shaking B's hand. B A is B shaking A's hand. But that's the same handshake.",
+    "at": [
+     "Look at A B and B A",
+     "A B is",
+     "that's the same handshake"
+    ]
+   },
+   {
+    "say": "And it's the same for every handshake. A C is also there as C A, and C D is there as D C. Every handshake appears twice in our twenty.",
+    "at": [
+     "And it's the",
+     "A C is also there",
+     "as C A"
+    ]
+   },
+   {
+    "say": "So we divide by two. Twenty divided by two is ten handshakes.",
+    "at": [
+     "Twenty divided by two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's check it with a drawing. Five points, one for each friend.",
+    "at": [
+     "Five points"
+    ]
+   },
+   {
+    "say": "From A, we draw a line to each of the other four. That's four handshakes.",
+    "at": [
+     "From A, we draw a line",
+     "line to each",
+     "That's four handshakes"
+    ]
+   },
+   {
+    "say": "From B, the line to A is already there. So B adds only three new lines.",
+    "at": [
+     "From B, the line to A",
+     "A is already",
+     "B adds only three new lines"
+    ]
+   },
+   {
+    "say": "C adds two new lines, and D adds one. E has no new lines left.",
+    "at": [
+     "C adds two new lines",
+     "C adds two new lines",
+     "D adds one",
+     "E has no"
+    ]
+   },
+   {
+    "say": "Four plus three plus two plus one is ten. The same ten handshakes.",
+    "at": [
+     "Four plus three plus two plus one",
+     "Four plus three plus two plus one is ten",
+     "plus one is"
+    ]
+   },
+   "So this is another way to count. Each point adds one fewer new line than the point before it, because one of its lines is already drawn."
+  ],
+  [
+   {
+    "say": "So here's the rule. In a mutual action, we count as usual, and then we divide by two.",
+    "at": [
+     "In a mutual",
+     "we count as usual",
+     "then we divide"
+    ]
+   },
+   "Why divide by two? Because counting in order counts every pair twice, once from each side.",
+   {
+    "say": "With n people, that's n times n minus one, divided by two.",
+    "at": [
+     "n times n minus one",
+     "divided by two"
+    ]
+   },
+   {
+    "say": "Now a new example. Eleven teams play in a league. Every two teams play each other once. How many games are played?",
+    "at": [
+     "Eleven teams play in a league",
+     "Every two teams"
+    ]
+   },
+   {
+    "say": "Count as usual. Eleven teams, and each one plays ten others. Eleven times ten is a hundred ten.",
+    "at": [
+     "Eleven times ten"
+    ]
+   },
+   {
+    "say": "A game between two teams is a mutual action. When team A plays team B, team B plays team A. So we divide by two. A hundred ten divided by two is fifty-five games.",
+    "at": [
+     "A game between",
+     "A hundred ten divided by two",
+     "two is fifty-five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "How do you spot a mutual action on the exam? Here are the usual stories.",
+    "at": [
+     "a mutual action"
+    ]
+   },
+   {
+    "say": "Handshakes, and games between two teams.",
+    "at": [
+     "Handshakes"
+    ]
+   },
+   {
+    "say": "Two-way roads, bus lines or flights between cities.",
+    "at": [
+     "Two-way roads",
+     "flights between cities"
+    ]
+   },
+   {
+    "say": "And lines between points, like the diagonals of a polygon.",
+    "at": [
+     "And lines between points",
+     "the diagonals of"
+    ]
+   },
+   "In all of them, the pair A and B is the same as the pair B and A."
+  ],
+  [
+   {
+    "say": "But careful. Sometimes the two people have different roles. Then we don't divide.",
+    "at": [
+     "two people have"
+    ]
+   },
+   {
+    "say": "For example, we choose a captain and a vice captain from five players.",
+    "at": [
+     "a captain and a vice captain",
+     "captain from five"
+    ]
+   },
+   {
+    "say": "The captain has five options, and the vice captain four. Five times four is twenty.",
+    "at": [
+     "Five times four is twenty"
+    ]
+   },
+   {
+    "say": "Here, A as captain with B as vice is not the same as B as captain with A as vice. The roles are different.",
+    "at": [
+     "A as captain with B as vice",
+     "same as B"
+    ]
+   },
+   {
+    "say": "So there's no double counting, and the answer is twenty. We divide by two only when the pair is the same from both sides.",
+    "at": [
+     "So there's no double counting",
+     "and the answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. If every pair was counted from both sides, divide by two.",
+    "at": [
+     "up. If every",
+     "divide by two"
+    ]
+   },
+   {
+    "say": "Or count the new lines and add them, four plus three plus two plus one. One fewer each time.",
+    "at": [
+     "count the new lines",
+     "add them, four"
+    ]
+   },
+   "And if the two have different roles, don't divide.",
+   "Take a moment to memorize this, and I'll see you in the next video."
+  ]
+ ]
+}

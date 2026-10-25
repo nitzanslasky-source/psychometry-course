@@ -1,0 +1,91 @@
+{
+ "videoId": "solve-wp28-g140",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "What is the ratio of the number of row arrangements of nine distinct objects, to the number of row arrangements of seven distinct objects?",
+    "voice": "calm",
+    "at": [
+     "What is the ratio"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for the rows of nine, divided by the rows of seven. Distinct means different. This is an easy one, and a good reminder of factorials.",
+    "at": [
+     "the rows of nine, divided by",
+     "an easy one"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way. How many ways can n different objects stand in a row? n factorial, like in the lesson on the pool. So the ratio is nine factorial over seven factorial.",
+    "at": [
+     "many ways can",
+     "n factorial, like",
+     "So the ratio is nine factorial",
+     "factorial over seven"
+    ]
+   },
+   {
+    "say": "Let's write both of them out. Nine factorial is nine times eight times seven, and so on down to one. Seven factorial is seven times six, and so on down to one.",
+    "at": [
+     "Let's write both of them out",
+     "Nine factorial is"
+    ]
+   },
+   {
+    "say": "Everything from seven down to one is on top and below, so it cancels.",
+    "at": [
+     "so it cancels"
+    ]
+   },
+   {
+    "say": "What's left is nine times eight. That's seventy-two.",
+    "at": [
+     "What's left is nine times eight",
+     "eight. That's seventy-two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a shorter way. Some students don't write all that. They shorten it, because they understand what a factorial is.",
+    "at": [
+     "Now a"
+    ]
+   },
+   "Look at nine factorial. After nine and eight comes seven times six, and so on down to one. And that tail is exactly seven factorial.",
+   {
+    "say": "So nine factorial is nine times eight times seven factorial. We stop there, because that's what we need.",
+    "at": [
+     "So nine factorial is nine times eight",
+     "times eight times"
+    ]
+   },
+   {
+    "say": "Now seven factorial cancels, on top and below, in one move. Nine times eight is seventy-two again. And we never had to calculate nine factorial, which is a huge number.",
+    "at": [
+     "seven factorial cancels",
+     "and below, in",
+     "Nine times eight is seventy-two again",
+     "And we never"
+    ]
+   },
+   {
+    "say": "Careful with choice number four, sixty-three. That's nine times seven, and it skips the eight. The run goes nine, then eight, then the seven factorial.",
+    "at": [
+     "choice number four",
+     "That's nine times seven",
+     "it skips the"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

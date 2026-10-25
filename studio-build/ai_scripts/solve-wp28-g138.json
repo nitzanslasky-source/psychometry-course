@@ -1,0 +1,128 @@
+{
+ "videoId": "solve-wp28-g138",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Ten hikers are split between two guides, Lena and Omar, with five hikers assigned to each guide. How many different splits are possible?",
+    "voice": "calm",
+    "at": [
+     "Ten hikers are split"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So each guide gets a group of five. Inside a group, the order doesn't matter.",
+    "at": [
+     "each guide gets a group of five",
+     "the order doesn't"
+    ]
+   },
+   {
+    "say": "We'll solve it the math way, with the group rule from the lesson, and then check one more thing by understanding. Let's choose Lena's five hikers first, as usual, as if the order mattered.",
+    "at": [
+     "We'll solve"
+    ]
+   },
+   {
+    "say": "The first hiker has ten options, then nine, eight, seven and six.",
+    "at": [
+     "The first hiker has ten options",
+     "options, then nine"
+    ]
+   },
+   {
+    "say": "But picking Rita first and Ben second, or Ben first and Rita second, gives the same group. So we divide by the orders of five hikers, five factorial.",
+    "at": [
+     "So we divide by the orders",
+     "orders of five"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's cancel, one step at a time. Five times two is ten, and that cancels the ten on top.",
+    "at": [
+     "Let's cancel",
+     "at a time",
+     "Five times two is ten"
+    ]
+   },
+   {
+    "say": "Nine divided by three is three.",
+    "at": [
+     "Nine divided by three"
+    ]
+   },
+   {
+    "say": "Eight divided by four is two.",
+    "at": [
+     "Eight divided by four"
+    ]
+   },
+   {
+    "say": "What's left is three times two times seven times six.",
+    "at": [
+     "What's left is three times two",
+     "two times seven"
+    ]
+   },
+   {
+    "say": "Three times two is six. Then six times seven is forty-two. Forty-two times six is two hundred fifty-two.",
+    "at": [
+     "Three times two is six",
+     "Then six times seven",
+     "Forty-two times six"
+    ]
+   },
+   {
+    "say": "And Omar's group? There's no choice left. The other five hikers go to Omar, so that's one way.",
+    "at": [
+     "And Omar's group",
+     "The other five"
+    ]
+   },
+   {
+    "say": "If you forget to divide, you get thirty thousand two hundred forty, choice number four. That counts every order of Lena's group.",
+    "at": [
+     "choice number four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now by understanding. Should we also divide by two, because there are two groups? Let's think.",
+    "at": [
+     "Now by"
+    ]
+   },
+   {
+    "say": "Say hikers one to five go with Lena, and six to ten go with Omar.",
+    "at": [
+     "hikers one to five go with Lena",
+     "ten go with"
+    ]
+   },
+   {
+    "say": "Now swap them. Six to ten with Lena, and one to five with Omar. Is it the same split? No, because the guides have names. Each hiker has a different guide now.",
+    "at": [
+     "Now swap them",
+     "and one to"
+    ]
+   },
+   {
+    "say": "So we don't divide by two. Only if the two groups had no names would swapping them change nothing. Then we would get a hundred twenty-six, choice number one. Here that's a trap.",
+    "at": [
+     "a hundred twenty-six",
+     "choice number one"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

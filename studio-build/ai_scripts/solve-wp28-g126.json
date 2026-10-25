@@ -1,0 +1,124 @@
+{
+ "videoId": "solve-wp28-g126",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A locker number has two digits, each from zero to nine. The sum of the two digits must be fourteen. How many locker numbers are possible?",
+    "voice": "calm",
+    "at": [
+     "A locker number has two digits"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the two digits must add up to fourteen. This is the restriction from the lesson, where one choice decides another.",
+    "at": [
+     "the two digits must add up to fourteen"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, in stages. Stage one is the first digit, and stage two is the second digit.",
+    "at": [
+     "with the math",
+     "Stage one is the first digit",
+     "digit, and stage"
+    ]
+   },
+   {
+    "say": "Can the first digit be zero? Then the second digit would need to be fourteen. But fourteen is a number, not a digit.",
+    "at": [
+     "Can the first digit be zero",
+     "Then the second"
+    ]
+   },
+   {
+    "say": "What about one, two, three or four? They would need thirteen, twelve, eleven or ten. None of those is a digit.",
+    "at": [
+     "What about one, two, three or four",
+     "They would need"
+    ]
+   },
+   {
+    "say": "Five works, because five plus nine is fourteen. So the first digit is five, six, seven, eight or nine. That's five options.",
+    "at": [
+     "five plus nine is fourteen",
+     "So the first",
+     "That's five options"
+    ]
+   },
+   {
+    "say": "Now the second digit. Imagine we picked six first. What completes six to fourteen? Only eight.",
+    "at": [
+     "Imagine we picked six first",
+     "What completes six"
+    ]
+   },
+   {
+    "say": "Picked nine? Only five completes it. Whatever we pick first, exactly one digit completes it.",
+    "at": [
+     "Picked nine",
+     "Whatever we pick"
+    ]
+   },
+   {
+    "say": "So the second stage is forced, and it gets one option. Five times one is five.",
+    "at": [
+     "it gets one option",
+     "Five times one",
+     "Five times one is five"
+    ]
+   },
+   {
+    "say": "This is where many students slip. They give the second digit five options too, and five times five is twenty-five. That's choice number two. But the second digit isn't free. It depends on the first one.",
+    "at": [
+     "This is where",
+     "five times five is twenty-five",
+     "That's choice number two",
+     "But the second"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a second way, by listing. The list is short, so we can write it all.",
+    "at": [
+     "Now a"
+    ]
+   },
+   {
+    "say": "We start with the smallest first digit, five. Fifty-nine. Then sixty-eight, seventy-seven, eighty-six and ninety-five.",
+    "at": [
+     "We start with the smallest first digit",
+     "first digit, five",
+     "Fifty-nine"
+    ]
+   },
+   {
+    "say": "Fifty-nine and ninety-five are two different locker numbers, because the digits are in different places. So we count both.",
+    "at": [
+     "Fifty-nine and ninety-five",
+     "different locker numbers"
+    ]
+   },
+   {
+    "say": "And seventy-seven is allowed. Nothing says the digits must be different. We count it once. If you skip it, you get four, choice number four.",
+    "at": [
+     "you get four"
+    ]
+   },
+   {
+    "say": "So there are five locker numbers again.",
+    "at": [
+     "So there are five locker numbers"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

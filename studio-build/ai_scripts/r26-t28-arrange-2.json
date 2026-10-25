@@ -1,0 +1,177 @@
+{
+ "videoId": "r26-t28-arrange-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue, with items that repeat."
+  ],
+  [
+   {
+    "say": "Now items that repeat. Four different letters, A, B, C and D, can stand in four factorial orders, twenty-four.",
+    "at": [
+     "Four different letters",
+     "four factorial orders, twenty-four"
+    ]
+   },
+   {
+    "say": "But what about A, A, A and B? Let's list them.",
+    "at": [
+     "what about A, A, A and B",
+     "Let's list them"
+    ]
+   },
+   {
+    "say": "The B can be last, third, second or first. A A A B, A A B A, A B A A, and B A A A. Only four.",
+    "at": [
+     "The B can be last",
+     "third, second or",
+     "Only four"
+    ]
+   },
+   {
+    "say": "Why so few? Let's give the As names for a moment, A one, A two and A three. Now they are four different letters, with twenty-four orders.",
+    "at": [
+     "Let's give the"
+    ]
+   },
+   {
+    "say": "But look at these six orders. A one, A two, A three, B. Then A one, A three, A two, B, and so on.",
+    "at": [
+     "look at these six orders",
+     "look at these six orders",
+     "A one, A"
+    ]
+   },
+   {
+    "say": "When we take the names off, all six are the same word, A A A B. Swapping the As changes nothing.",
+    "at": [
+     "all six are the same word",
+     "word, A A"
+    ]
+   },
+   {
+    "say": "Six is three factorial, the orders of the three As.",
+    "at": [
+     "Six is three factorial",
+     "orders of the"
+    ]
+   },
+   {
+    "say": "So every word was counted six times. Twenty-four divided by six is four.",
+    "at": [
+     "Twenty-four divided by six"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. A, A, B and B.",
+    "at": [
+     "A, A, B and B"
+    ]
+   },
+   {
+    "say": "Four letters, twenty-four orders, as if all were different. The two As repeat, so we divide by two factorial. The two Bs repeat, so we divide by two factorial again. Twenty-four divided by four is six.",
+    "at": [
+     "Four letters, twenty-four",
+     "Twenty-four divided by four"
+    ]
+   },
+   {
+    "say": "Let's list them to check. A A B B, A B A B, A B B A, B A A B, B A B A and B B A A. Six.",
+    "at": [
+     "Let's list them",
+     "A A B B",
+     "B A B"
+    ]
+   },
+   {
+    "say": "So for repeated items, count as if all were different, then divide by the factorial of each repeat.",
+    "at": [
+     "divide by the factorial"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "And the last rule, a round table. Three people, A, B and C, sit around a round table.",
+    "at": [
+     "a round table",
+     "Three people, A, B and C",
+     "C, sit around"
+    ]
+   },
+   {
+    "say": "In a row, A B C and B C A are different. But at a round table, B C A is the same seating, just turned. Everyone has the same neighbours.",
+    "at": [
+     "at a round table",
+     "B C A is the same seating",
+     "same seating, just"
+    ]
+   },
+   {
+    "say": "So A B C, B C A and C A B are one seating. And A C B, C B A and B A C are another.",
+    "at": [
+     "are another",
+     "are another"
+    ]
+   },
+   {
+    "say": "Three factorial is six rows, but only two seatings.",
+    "at": [
+     "Three factorial is six rows",
+     "but only two"
+    ]
+   },
+   {
+    "say": "The trick is to fix one person. A sits in a seat. Then the others fill the remaining seats in two factorial ways, two.",
+    "at": [
+     "A sits in a seat",
+     "Then the others",
+     "two factorial ways"
+    ]
+   },
+   {
+    "say": "So n people around a table can sit in n minus one, factorial, ways.",
+    "at": [
+     "n people around a table",
+     "can sit in"
+    ]
+   },
+   {
+    "say": "For example, five people around a table. Four factorial, twenty-four.",
+    "at": [
+     "Four factorial, twenty-four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. Together, glue them into a block, and then multiply by the order inside.",
+    "at": [
+     "glue them into a block",
+     "and then multiply"
+    ]
+   },
+   {
+    "say": "Apart, take all minus together, or use the gaps.",
+    "at": [
+     "all minus together"
+    ]
+   },
+   {
+    "say": "Repeats, divide by the factorial of each repeat.",
+    "at": [
+     "divide by the factorial"
+    ]
+   },
+   {
+    "say": "And a round table is n minus one, factorial. Take a moment to memorize this, and I'll see you in the next video.",
+    "at": [
+     "n minus one, factorial",
+     "Take a moment"
+    ]
+   }
+  ]
+ ]
+}

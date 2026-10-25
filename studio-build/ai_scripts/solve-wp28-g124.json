@@ -1,0 +1,124 @@
+{
+ "videoId": "solve-wp28-g124",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "How many three-digit numbers can be made from the digits three, five, six and nine, if the hundreds digit is smaller than the tens digit, and the tens digit is smaller than the units digit?",
+    "voice": "calm",
+    "at": [
+     "How many three-digit numbers"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So every digit must be bigger than the digit before it. The digits go up, from left to right. We have only four digits, so the list will be short.",
+    "at": [
+     "every digit must be bigger",
+     "than the digit"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, by listing, like in the lesson. We list in order, with the smallest hundreds digit first.",
+    "at": [
+     "two different ways",
+     "We list in order",
+     "the smallest hundreds"
+    ]
+   },
+   "The hundreds digit is three. Then the tens digit must be bigger than three, so five, six or nine.",
+   {
+    "say": "Three and five, and then a units digit bigger than five. That's six or nine. So three hundred fifty-six, and three hundred fifty-nine.",
+    "at": [
+     "So three hundred fifty-six",
+     "three hundred fifty-nine"
+    ]
+   },
+   {
+    "say": "Three and six, and then a units digit bigger than six. That's only nine. So three hundred sixty-nine.",
+    "at": [
+     "Three and six",
+     "So three hundred sixty-nine"
+    ]
+   },
+   {
+    "say": "Three and nine? No digit is bigger than nine, so nothing works here.",
+    "at": [
+     "Three and nine",
+     "nine, so nothing"
+    ]
+   },
+   {
+    "say": "Now the hundreds digit is five. The tens digit is six, and the units digit is nine. That's five hundred sixty-nine.",
+    "at": [
+     "That's five hundred sixty-nine"
+    ]
+   },
+   {
+    "say": "Can the hundreds digit be six? Then we need two bigger digits after it. But only nine is bigger than six, so no. And nine can't start a number here either.",
+    "at": [
+     "Can the hundreds digit be six",
+     "Then we need"
+    ]
+   },
+   {
+    "say": "So there are four numbers. What did we do? We counted, and we checked.",
+    "at": [
+     "So there are four numbers",
+     "What did we"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the insight. Every number here uses three of the four digits. And three different digits can go up in only one order, smallest first.",
+    "at": [
+     "Now the",
+     "only one order"
+    ]
+   },
+   {
+    "say": "So choosing the number is the same as choosing the three digits. And that's the same as choosing the one digit we leave out.",
+    "at": [
+     "So choosing the",
+     "the one digit"
+    ]
+   },
+   {
+    "say": "We can leave out three, and then the number is five hundred sixty-nine.",
+    "at": [
+     "We can leave out three",
+     "and then the"
+    ]
+   },
+   {
+    "say": "Or we leave out five, or six, or nine. Each time, one number.",
+    "at": [
+     "Or we leave out five",
+     "or six",
+     "or nine"
+    ]
+   },
+   {
+    "say": "Four digits to leave out, so four numbers again.",
+    "at": [
+     "Four digits to"
+    ]
+   },
+   {
+    "say": "Choice number two, twenty-four, is a trap. Four times three times two counts every order of three digits. But only one of those orders goes up.",
+    "at": [
+     "is a trap",
+     "Four times three times two",
+     "counts every order"
+    ]
+   },
+   {
+    "say": "Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

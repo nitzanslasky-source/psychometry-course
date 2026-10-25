@@ -1,0 +1,167 @@
+{
+ "videoId": "solve-wp28-g142",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The digits two, five, six and nine go once each into a square. A and B are on top, C and D below. A is even. C times D is even. How many arrangements are possible?",
+    "voice": "calm",
+    "at": [
+     "The digits two, five, six and nine"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So each digit is used once, with two conditions. A is even, and the bottom product is even. This is a hard one.",
+    "at": [
+     "each digit is used once",
+     "each digit is used once",
+     "with two conditions",
+     "A is even"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. Let's start with the math way, in stages. A is even. How many even digits do we have? Two, the two and the six. So A has two options.",
+    "at": [
+     "We'll solve",
+     "in stages",
+     "How many even",
+     "So A has two options"
+    ]
+   },
+   {
+    "say": "Now the bottom product. When is a product odd? Only when both numbers are odd.",
+    "at": [
+     "When is a",
+     "Only when both numbers are odd"
+    ]
+   },
+   {
+    "say": "So for an even product, C or D must be even.",
+    "at": [
+     "C or D must be even"
+    ]
+   },
+   {
+    "say": "Some students get stuck here. Which bottom square gets the even digit? But there's an easier conclusion.",
+    "at": [
+     "Some students get"
+    ]
+   },
+   {
+    "say": "One even digit is already in A. The other even digit must go to the bottom. So it can't be in B. So B must be odd.",
+    "at": [
+     "So B must be odd"
+    ]
+   },
+   {
+    "say": "B is odd, five or nine. Two options.",
+    "at": [
+     "B is odd",
+     "Two options"
+    ]
+   },
+   {
+    "say": "Two digits are left, and no more restrictions. C has two options, and D gets the last one.",
+    "at": [
+     "no more restrictions",
+     "C has two options"
+    ]
+   },
+   {
+    "say": "Two times two times two times one is eight.",
+    "at": [
+     "Two times two times two",
+     "Two times two times two",
+     "times one is eight"
+    ]
+   },
+   {
+    "say": "And this time it's a square, not a row. But that doesn't matter. We count the options at each stage, and multiply.",
+    "at": [
+     "And this time"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in numbers, with trial and error. Say you're not sure what to do. Let's try, and list, in an organized way.",
+    "at": [
+     "Now let's"
+    ]
+   },
+   {
+    "say": "We fix A as two. Then B must be odd, otherwise the bottom gets two odd digits.",
+    "at": [
+     "We fix A as two",
+     "Then B must"
+    ]
+   },
+   {
+    "say": "B is five. Then six and nine go below, six then nine, or nine then six.",
+    "at": [
+     "B is five",
+     "and nine go",
+     "or nine then six"
+    ]
+   },
+   {
+    "say": "B is nine. Then five and six go below, in two orders. That's four arrangements with A as two.",
+    "at": [
+     "B is nine",
+     "Then five and",
+     "That's four arrangements"
+    ]
+   },
+   {
+    "say": "Now A is six. It's exactly the same pattern, so there are four more. We don't need to draw them.",
+    "at": [
+     "Now A is six",
+     "so there are"
+    ]
+   },
+   {
+    "say": "Four plus four is eight.",
+    "at": [
+     "Four plus four is eight"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And a third way, all minus forbidden. First, only the rule for A. A has two options, and the other three digits can go in any order, three factorial, six. Two times six is twelve.",
+    "at": [
+     "And a",
+     "Two times six is twelve"
+    ]
+   },
+   {
+    "say": "Careful, twelve is choice number one. It forgets the bottom rule.",
+    "at": [
+     "number one. It",
+     "It forgets the bottom rule"
+    ]
+   },
+   {
+    "say": "When does the bottom rule fail? When the other even digit sits in B, because then both bottom digits are odd. A has two options, B is forced, and the two odd digits go below in two orders. Two times one times two is four.",
+    "at": [
+     "When does the",
+     "Two times one times two is four"
+    ]
+   },
+   {
+    "say": "Twelve minus four is eight. The same answer.",
+    "at": [
+     "Twelve minus four",
+     "The same answer"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

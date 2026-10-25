@@ -1,0 +1,134 @@
+{
+ "videoId": "solve-wp28-g141",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "How many three-digit numbers have a hundreds digit and a units digit whose sum is eight?",
+    "voice": "calm",
+    "at": [
+     "How many three-digit numbers"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So the hundreds digit and the units digit must add up to eight. The tens digit isn't mentioned at all. These questions are not simple, so let's go slowly.",
+    "at": [
+     "and the units",
+     "simple, so let's"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way, in stages. Three-digit numbers, so three positions, hundreds, tens and units.",
+    "at": [
+     "We'll solve",
+     "three positions"
+    ]
+   },
+   {
+    "say": "Here's a tip that keeps us organized. Above each position, we write how many options it has. Below it, we list what they are.",
+    "at": [
+     "Here's a tip"
+    ]
+   },
+   {
+    "say": "Like in the lesson, we start with a position that has a restriction, the hundreds digit. Can it be nine? Nine plus even zero is already nine, more than eight. So no.",
+    "at": [
+     "Can it be nine",
+     "already nine, more"
+    ]
+   },
+   {
+    "say": "Can it be zero? No. A number can't start with zero. There's no such number as zero five eight.",
+    "at": [
+     "Can it be zero",
+     "There's no such"
+    ]
+   },
+   {
+    "say": "So the hundreds digit is one to eight. That's eight options.",
+    "at": [
+     "That's eight options"
+    ]
+   },
+   {
+    "say": "Now the units digit. Once the hundreds digit is chosen, the units digit is already decided. It must complete the sum to eight.",
+    "at": [
+     "Once the hundreds"
+    ]
+   },
+   {
+    "say": "If the hundreds digit is three, the units digit must be five. If it's eight, the units digit must be zero. One option every time.",
+    "at": [
+     "If the hundreds digit is three",
+     "If it's eight",
+     "digit must be zero",
+     "One option every time"
+    ]
+   },
+   {
+    "say": "So choosing the hundreds digit really chooses two digits at once.",
+    "at": [
+     "really chooses two"
+    ]
+   },
+   {
+    "say": "And the tens digit? The condition doesn't mention it, so it's free. Zero to nine, ten options. A free position can be filled at any point, even first.",
+    "at": [
+     "ten options",
+     "A free position"
+    ]
+   },
+   {
+    "say": "Eight times ten times one is eighty.",
+    "at": [
+     "Eight times ten times one",
+     "Eight times ten times one",
+     "is eighty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a quick check, by listing the hundreds and units pairs. The tens digit sits in the middle of each pair.",
+    "at": [
+     "by listing the"
+    ]
+   },
+   {
+    "say": "One and seven, two and six, three and five, four and four.",
+    "at": [
+     "One and seven",
+     "One and seven",
+     "six, three and"
+    ]
+   },
+   {
+    "say": "Five and three, six and two, seven and one, and eight and zero. That's eight pairs.",
+    "at": [
+     "That's eight pairs"
+    ]
+   },
+   {
+    "say": "What about zero and eight? That would start with zero, so it's only a two-digit number. If you count it, you get nine pairs, and nine times ten is ninety. That's choice number one, the trap.",
+    "at": [
+     "What about zero and eight",
+     "That would start",
+     "That's choice number one"
+    ]
+   },
+   {
+    "say": "Any of the ten digits can go in the middle of each pair. Eight times ten is eighty again.",
+    "at": [
+     "Eight times ten is eighty again"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

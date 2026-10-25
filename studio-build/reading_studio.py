@@ -339,6 +339,19 @@ def math_display(text):
     _W = {w: str(_INT_WORD[w]) for w in _UNITS[1:] + _TEENS}
     s = re.sub(r'(?:\b(%s) )?(\d*)(?:π|pi) over (\d+|%s)\b' % ('|'.join(_UNITS[1:]), '|'.join(_UNITS[1:] + _TEENS)),
                lambda m: (_W.get((m.group(1) or '').lower(), '') + m.group(2) + 'π/' + _W.get(m.group(3).lower(), m.group(3))), s, flags=re.I)
+    # 2026-10-25 (topic 28): factorials as n! — "four factorial" -> 4!, "n plus one, factorial" -> (n + 1)!,
+    # "the bracket a plus two, factorial" -> (a + 2)!. The letter a is left alone (it is also the article "a factorial").
+    _NW = '|'.join(_UNITS[1:] + _TEENS + ['twenty', 'thirty'])
+    _num = lambda w: _W.get(w.lower(), {'twenty': '20', 'thirty': '30'}.get(w.lower(), w))
+    s = re.sub(r'\b([bknxyBKNXY]|\d+|%s) ([+−]) (\d+|%s),? factorial\b' % (_NW, _NW),
+               lambda m: '(%s %s %s)!' % (_num(m.group(1)), m.group(2), _num(m.group(3))), s, flags=re.I)
+    s = re.sub(r'\)\s*,? factorial\b', ')!', s)
+    s = re.sub(r'\b(\d+|%s|[bknxy]) factorial\b' % _NW, lambda m: _num(m.group(1)) + '!', s, flags=re.I)
+    s = re.sub(r'!\s+−(?=\d)', '! − ', s)
+    s = re.sub(r'\)!, (?=is\b|over\b|cancels\b|times\b|ways\b)', ')! ', s)
+    s = re.sub(r'(?:(?<=over )|(?<=\. )|^)a factorial(?= is\b| over\b|,)', 'a!', s)   # the variable a (not the article)
+    s = re.sub(r'!, −(?=\d)', '! − ', s)
+    s = re.sub(r'\bn × n ([+−]) (\d+)\b', r'n × (n \1 \2)', s)   # 2026-10-25 (topic 28): 'n times n minus one' = n(n − 1) (handshakes, diagonals)
     return s
 
 
@@ -424,7 +437,7 @@ CAMERA_FALLBACK = (
     'number-line digit-puzzles new-operation algebraic-understanding wp-001 wp-027 wp-052 wp-067 wp-080 wp-092 wp-106 '
     'wp-123 wp-146 geo-001 geo-009 geo-042 geo-074 geo-104 geo-119 geo-134 geo-154 geo-172 ch52-intro').split()
 FULL_COURSE = os.path.join(os.path.dirname(HERE), 'content', 'full-course')
-CAMERA_PARTS_FALLBACK = set(('geo-119-2 geo-119-3 geo-134-2 geo-134-3 wp-106-2 wp-106-3 absolute-value-2 absolute-value-3 primes-2 primes-3 divisibility-2 divisibility-3 divisibility-4 '
+CAMERA_PARTS_FALLBACK = set(('wp-123-2 geo-119-2 geo-119-3 geo-134-2 geo-134-3 wp-106-2 wp-106-3 absolute-value-2 absolute-value-3 primes-2 primes-3 divisibility-2 divisibility-3 divisibility-4 '
                              'number-line-2 number-line-3 digit-puzzles-2 new-operation-2 new-operation-3').split())   # 2026-10-14 camera lessons in parts
 
 
@@ -986,7 +999,7 @@ function fmt(s,tenths){s=Math.max(0,s);const m=Math.floor(s/60),r=s-m*60;return 
 // 2026-10-15 display only: one-letter math variables (marked \ue010x\ue011 by math_patches/_math_vars_display.py) as math italics
 function mvars(h){return String(h).replace(/\ue010([^\ue011]+)\ue011/g,'<i class="mv">$1</i>')}
 // Only wrap existing display text. No paraphrasing, number parsing or new paragraph events.
-function readingText(text){return String(text).split(/(?<=[.!?])([ \t]+)(?=\S)/).map(s=>/^\s*$/.test(s)?s:'<span class="read-sentence">'+mvars(esc(s)).replace(/\n/g,'<br>')+'</span>').join('')}
+function readingText(text){return String(text).split(/(?:(?<=[.?])|(?<=[^\w)]!))([ \t]+)(?=\S)/).map(s=>/^\s*$/.test(s)?s:'<span class="read-sentence">'+mvars(esc(s)).replace(/\n/g,'<br>')+'</span>').join('')}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 
 /* ---------------- state ---------------- */

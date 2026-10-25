@@ -30,8 +30,8 @@ Update this file whenever a finding changes state.
 | 25 | Several values change by a fixed amount | Codex final §2.2 | IMPLEMENTED wp-080-3 — Codex Ready, frozen |
 | 26 | Work–rest cycles; staggered arrivals | Claude B #3, E #6; Codex synthesis #8 | IMPLEMENTED wp-099-2 (Codex-reviewed, batch J) |
 | 27 | Chase: time from whose start? | Claude B #2, Codex synthesis #10, final §1G | IMPLEMENTED wp-113-2 (Ava/Ben example, both readings) + g116 — **Held** (Codex review) |
-| 28 | Identical arrangements: show AAAB rows before BANANA | Claude B #7, Codex synthesis #12 | PENDING (t28 to write) |
-| 28 | Factorials as a real lesson (prime counting, sums) | audit | PENDING (t28 to write) |
+| 28 | Identical arrangements: show AAAB rows before BANANA | Claude B #7, Codex synthesis #12 | IMPLEMENTED r26-t28-arrange(-2) — **Held** (Codex review) |
+| 28 | Factorials as a real lesson (prime counting, sums) | audit | IMPLEMENTED wp-140-after (3 parts, F1–F5) — **Held** (Codex review) |
 | 31 | geo-009 "2:1 not needed" is wrong | audit | PROPOSED (E2) |
 | 31 | Equal sides → equal angles only in the same triangle | Claude D1, Codex synthesis #14 | PENDING (t31 optional practice) |
 | 32 | Trapezoid midline (with a real proof) | Claude D1, Codex synthesis (lower priority) | PROPOSED (O9) |

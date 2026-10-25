@@ -1,0 +1,107 @@
+{
+ "videoId": "solve-q-r26-t28-09",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Six people sit around a round table. Two arrangements are the same if one is a rotation of the other. Dana and Eli must sit next to each other. How many arrangements are possible?",
+    "voice": "calm",
+    "at": [
+     "Six people sit around a round table"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So there are two rules at once. Dana and Eli together, and a round table. Let's do them one at a time.",
+    "at": [
+     "rules at once"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start with the math way. Together means glue. Dana and Eli become one block.",
+    "at": [
+     "We'll solve",
+     "Dana and Eli become one block"
+    ]
+   },
+   {
+    "say": "The block and the four other people are five items around the table.",
+    "at": [
+     "four other people",
+     "are five items"
+    ]
+   },
+   {
+    "say": "A round table, like in the lesson. Turning the table changes nobody's neighbours. So five items around a table is five minus one, factorial. Four factorial is twenty-four.",
+    "at": [
+     "A round table",
+     "Four factorial is twenty-four"
+    ]
+   },
+   {
+    "say": "Inside the block, Dana can sit on Eli's left or on his right. Two orders.",
+    "at": [
+     "Inside the block",
+     "Two orders"
+    ]
+   },
+   {
+    "say": "Twenty-four times two is forty-eight.",
+    "at": [
+     "Twenty-four times two"
+    ]
+   },
+   {
+    "say": "The traps. If we treat the table like a row, we get five factorial times two, two hundred forty. That's choice number one.",
+    "at": [
+     "treat the table",
+     "two hundred forty",
+     "That's choice number one"
+    ]
+   },
+   {
+    "say": "And twenty-four, choice number three, forgets the order inside the block.",
+    "at": [
+     "forgets the order inside"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now a check, with the trick from the lesson. We fix Dana in her seat. Turning the table can't change anything now.",
+    "at": [
+     "Now a",
+     "We fix Dana",
+     "We fix Dana",
+     "Turning the table"
+    ]
+   },
+   {
+    "say": "Eli must sit next to her. That's one of two seats, on her left or on her right.",
+    "at": [
+     "one of two seats",
+     "one of two seats",
+     "her left or"
+    ]
+   },
+   {
+    "say": "The other four people fill the four other seats in four factorial ways, twenty-four.",
+    "at": [
+     "four factorial ways"
+    ]
+   },
+   {
+    "say": "Two times twenty-four is forty-eight again.",
+    "at": [
+     "Two times twenty-four"
+    ]
+   },
+   {
+    "say": "Choice number four is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

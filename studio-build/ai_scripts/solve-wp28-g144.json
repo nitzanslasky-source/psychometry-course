@@ -1,0 +1,123 @@
+{
+ "videoId": "solve-wp28-g144",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Eight children all have different heights. A photographer chooses seven of them and places them in a row from shortest to tallest. How many different rows can be formed?",
+    "voice": "calm",
+    "at": [
+     "Eight children all have different heights"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we choose seven of eight, and their order is forced, from shortest to tallest. This one is medium plus, maybe even hard.",
+    "at": [
+     "of eight, and",
+     "one is medium"
+    ]
+   },
+   {
+    "say": "We'll solve it in two different ways. Let's start by plugging in numbers, with trial and error. We give the heights the numbers one to eight. One is the shortest, and eight is the tallest.",
+    "at": [
+     "We'll solve",
+     "We give the heights the numbers",
+     "numbers one to",
+     "One is the"
+    ]
+   },
+   {
+    "say": "Now we build rows of seven, always from shortest to tallest. The first row is one to seven.",
+    "at": [
+     "The first row",
+     "The first row is one to seven"
+    ]
+   },
+   {
+    "say": "To stay organized, we change only the right end. We swap the seven for an eight.",
+    "at": [
+     "To stay organized",
+     "We swap the seven for an eight"
+    ]
+   },
+   {
+    "say": "Next, we leave out the six instead. One to five, then seven and eight.",
+    "at": [
+     "we leave out the six",
+     "One to five"
+    ]
+   },
+   {
+    "say": "And we keep moving the missing child one place to the left, until we leave out the one.",
+    "at": [
+     "keep moving the missing child",
+     "one place to"
+    ]
+   },
+   {
+    "say": "No more options. That's eight rows.",
+    "at": [
+     "That's eight rows"
+    ]
+   },
+   {
+    "say": "Let's check against the choices. Seven is too few, because we already found eight different rows.",
+    "at": [
+     "Let's check against",
+     "Seven is too few",
+     "Seven is too few",
+     "we already found"
+    ]
+   },
+   {
+    "say": "Five thousand forty is seven factorial. That would let the seven stand in any order, but here the order is forced. Far too many, and fifty-six is too many as well, because we found every row.",
+    "at": [
+     "Five thousand forty is seven factorial",
+     "That would let",
+     "Far too many",
+     "fifty-six is too many"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the insight. Imagine you are the photographer. Instead of choosing seven children, you choose the one child who stays out.",
+    "at": [
+     "Now the"
+    ]
+   },
+   {
+    "say": "You say to one child, you stay. Everyone else, come here. And they line up from shortest to tallest, in only one way.",
+    "at": [
+     "in only one way"
+    ]
+   },
+   {
+    "say": "Any of the eight children can be the one who stays out. So that's eight options.",
+    "at": [
+     "Any of the eight children",
+     "stays out. So"
+    ]
+   },
+   {
+    "say": "Eight times one is eight.",
+    "at": [
+     "Eight times one is eight"
+    ]
+   },
+   {
+    "say": "This is the complementary event. It isn't magic. It's a technique worth knowing, and it helps in many questions.",
+    "at": [
+     "This is the"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

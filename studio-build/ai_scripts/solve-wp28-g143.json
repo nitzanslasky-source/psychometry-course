@@ -1,0 +1,157 @@
+{
+ "videoId": "solve-wp28-g143",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "In a table-tennis league, each pair of players plays exactly one match. There are sixty-six matches altogether. How many players take part?",
+    "voice": "calm",
+    "at": [
+     "In a table-tennis league"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So this time they give the number of matches, and they ask for the players. We go backwards.",
+    "at": [
+     "give the number",
+     "We go backwards"
+    ]
+   },
+   {
+    "say": "We'll solve it in three different ways. Let's start with the math way. Each pair plays once. Does that remind you of something? It's a mutual action, like in the lesson.",
+    "at": [
+     "three different ways",
+     "with the math",
+     "pair plays once",
+     "remind you of",
+     "a mutual action"
+    ]
+   },
+   {
+    "say": "When the red player plays the black player, the black player plays the red one at the same time. So with n players, it's n times n minus one, divided by two. And that's sixty-six.",
+    "at": [
+     "And that's sixty-six"
+    ]
+   },
+   {
+    "say": "We multiply both sides by two. n times n minus one is a hundred thirty-two.",
+    "at": [
+     "We multiply both",
+     "n times n minus one is",
+     "is a hundred"
+    ]
+   },
+   {
+    "say": "n and n minus one are neighbours, numbers in a row. Which two neighbours multiply to a hundred thirty-two? Twelve times eleven is a hundred thirty-two.",
+    "at": [
+     "Twelve times eleven"
+    ]
+   },
+   {
+    "say": "So n is twelve. Twelve players.",
+    "at": [
+     "So n is twelve"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's plug in the answers, still with the mutual action rule. Let's put the choices in order. Nine, eleven, twelve and thirteen.",
+    "at": [
+     "Now let's",
+     "Let's put the choices in order",
+     "Nine, eleven, twelve"
+    ]
+   },
+   "Why start from the middle? Because if the middle choice fails, we learn in which direction to go, and we can rule out more than one choice. Let's try eleven.",
+   {
+    "say": "Eleven players. Eleven times ten is a hundred ten. Divided by two, it's fifty-five matches. That's too few, we need sixty-six.",
+    "at": [
+     "Eleven times ten is a hundred ten",
+     "Divided by two",
+     "That's too few"
+    ]
+   },
+   {
+    "say": "Fewer players means fewer matches. So nine players gives even fewer, and nine is out too. We need more players.",
+    "at": [
+     "So nine players gives even fewer",
+     "nine is out too",
+     "need more players"
+    ]
+   },
+   {
+    "say": "Let's try twelve. Twelve times eleven is a hundred thirty-two. Divided by two, it's sixty-six. That's exactly it.",
+    "at": [
+     "Twelve times eleven is a hundred thirty-two",
+     "Divided by two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And a third way, less known, but it really shows what mutual action means. We build a table, and we add one player at a time.",
+    "at": [
+     "less known, but",
+     "We build a table",
+     "we add one"
+    ]
+   },
+   {
+    "say": "One player alone plays no matches. With a second player, there's one match.",
+    "at": [
+     "One player alone",
+     "With a second player"
+    ]
+   },
+   {
+    "say": "A third player joins and plays each of the two already there. So the third player adds two matches. One plus two is three.",
+    "at": [
+     "A third player joins",
+     "plays each of"
+    ]
+   },
+   {
+    "say": "A fourth player adds three matches, one against each player already there. Three plus three is six.",
+    "at": [
+     "A fourth player",
+     "matches, one against"
+    ]
+   },
+   {
+    "say": "And so on. Every new player adds one match for every player who was already there.",
+    "at": [
+     "And so on",
+     "Every new player"
+    ]
+   },
+   {
+    "say": "On the exam, we don't draw the whole table. We write it across the page. One plus two plus three, and so on. We keep adding until we reach sixty-six.",
+    "at": [
+     "One plus two plus three",
+     "and so on"
+    ]
+   },
+   {
+    "say": "One plus two and so on, up to eleven, is sixty-six.",
+    "at": [
+     "up to eleven, is sixty-six"
+    ]
+   },
+   {
+    "say": "Careful here. The last number we added is eleven. But it comes from the twelfth player, who played the eleven players before. So twelve players, not eleven.",
+    "at": [
+     "The last number we added is eleven",
+     "But it comes"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

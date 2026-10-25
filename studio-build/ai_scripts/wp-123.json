@@ -1,0 +1,180 @@
+{
+ "videoId": "wp-123",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back, and now a new topic, counting possibilities.",
+   {
+    "say": "In these questions we count how many ways there are to arrange something, or to choose something. We always count according to the data in the question.",
+    "at": [
+     "count how many"
+    ]
+   },
+   "The math name for this is combinatorics. It comes from the word combination, and a combination is simply one possibility.",
+   "Counting questions come up in almost every exam. So let's learn them step by step."
+  ],
+  [
+   {
+    "say": "Before we count anything, we decide what counts as a different result.",
+    "at": [
+     "we decide what"
+    ]
+   },
+   {
+    "say": "Two friends, Dan and Mia, stand in a row. Dan, then Mia, is one row.",
+    "at": [
+     "Two friends, Dan and Mia",
+     "stand in a",
+     "Dan, then Mia, is one row"
+    ]
+   },
+   {
+    "say": "Mia, then Dan, is another row. We swapped them, so the order changed. So here we have two different rows.",
+    "at": [
+     "Mia, then Dan, is another row",
+     "We swapped them"
+    ]
+   },
+   {
+    "say": "Now we pick the same two friends for a team. Dan and Mia is the same team as Mia and Dan. The order doesn't matter in a team.",
+    "at": [
+     "Dan and Mia is the same team",
+     "same team as"
+    ]
+   },
+   {
+    "say": "And in a code, one two and two one are different codes, because the digits are in different places.",
+    "at": [
+     "one two and two one are different codes",
+     "are different codes"
+    ]
+   },
+   {
+    "say": "So in every question, first ask yourself one thing. Does the order matter? We'll come back to this question all through the topic.",
+    "at": [
+     "Does the order matter",
+     "We'll come back"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more thing before we start. Some questions with the same kind of story ask at most how many, or at least how many.",
+    "at": [
+     "we start. Some"
+    ]
+   },
+   {
+    "say": "Those are not counting questions. They are the extreme questions from topic twenty-one. Remember, we push to the extreme, and we give the others as little as possible.",
+    "at": [
+     "They are the extreme questions",
+     "from topic twenty-one"
+    ]
+   },
+   "So when you see at most or at least, use the topic twenty-one way. Everything else in this topic, we count."
+  ],
+  [
+   {
+    "say": "The first way to count is the simplest one. We just write the options, check which ones fit, and count them. This is trial and error.",
+    "at": [
+     "count is the"
+    ]
+   },
+   {
+    "say": "Let's see an example. How many two-digit numbers can we make from the digits two, four and seven, if the tens digit is smaller than the units digit?",
+    "at": [
+     "How many two-digit numbers can we make",
+     "we make from"
+    ]
+   },
+   {
+    "say": "We list them in order, with the smallest tens digit first. The tens digit is two. Then the units digit can be four, so twenty-four.",
+    "at": [
+     "We list them in order",
+     "with the smallest",
+     "so twenty-four"
+    ]
+   },
+   {
+    "say": "Or the units digit can be seven, so twenty-seven. Both units digits are bigger than two, so both numbers fit.",
+    "at": [
+     "can be seven",
+     "so twenty-seven",
+     "than two, so"
+    ]
+   },
+   {
+    "say": "Now the tens digit is four. The units digit must be bigger than four, so only seven. That's forty-seven.",
+    "at": [
+     "That's forty-seven"
+    ]
+   },
+   {
+    "say": "And the tens digit seven? No digit here is bigger than seven. So seventy-two, for example, doesn't fit.",
+    "at": [
+     "And the tens",
+     "seventy-two, for example"
+    ]
+   },
+   {
+    "say": "So there are three numbers. What did we do? We counted, and we checked.",
+    "at": [
+     "So there are three numbers",
+     "What did we"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now another example. In how many ways can we write eight as a sum of two whole numbers bigger than zero? The order doesn't matter here.",
+    "at": [
+     "In how many ways can we write eight",
+     "we write eight"
+    ]
+   },
+   {
+    "say": "Again we list in order. We start with the smallest first number, one. One plus seven.",
+    "at": [
+     "Again we list in order",
+     "We start with",
+     "One plus seven"
+    ]
+   },
+   {
+    "say": "Then two plus six, and three plus five.",
+    "at": [
+     "Then two plus six",
+     "three plus five"
+    ]
+   },
+   {
+    "say": "Then four plus four. Four plus four is eight, so it fits too.",
+    "at": [
+     "Then four plus four",
+     "Four plus four is"
+    ]
+   },
+   {
+    "say": "What about five plus three? It's the same as three plus five, and the order doesn't matter. So we stop here.",
+    "at": [
+     "What about five plus three",
+     "It's the same"
+    ]
+   },
+   {
+    "say": "So there are four ways.",
+    "at": [
+     "So there are four ways"
+    ]
+   },
+   {
+    "say": "That's why we list in order, smallest first. Nothing is missed, and nothing is counted twice.",
+    "at": [
+     "smallest first",
+     "Nothing is missed"
+    ]
+   },
+   "Listing works well when the list is short. When the list is long, we need a faster way. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}

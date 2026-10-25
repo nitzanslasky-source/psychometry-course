@@ -1,0 +1,92 @@
+{
+ "videoId": "solve-wp28-g128",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A suitcase lock has three wheels. Each wheel shows one of the digits one to nine, and digits may repeat. How many codes are possible?",
+    "voice": "calm",
+    "at": [
+     "A suitcase lock has three wheels"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we choose a digit for each wheel. And the question says digits may repeat.",
+    "at": [
+     "digit for each",
+     "the question says",
+     "digits may repeat"
+    ]
+   },
+   {
+    "say": "Let's solve it the math way, in stages. Remember the lesson. With or without repetition? Here it's with repetition.",
+    "at": [
+     "Let's solve",
+     "in stages",
+     "With or without"
+    ]
+   },
+   {
+    "say": "The pool is the nine digits, one to nine. The first wheel has nine options. Say we pick four.",
+    "at": [
+     "The pool is the nine digits",
+     "digits, one to",
+     "The first wheel has nine",
+     "Say we pick four"
+    ]
+   },
+   {
+    "say": "Digits may repeat, so the four goes right back into the pool.",
+    "at": [
+     "goes right back into the pool"
+    ]
+   },
+   {
+    "say": "So the second wheel has nine options again, and so does the third wheel.",
+    "at": [
+     "the second wheel has nine",
+     "options again, and",
+     "so does the third wheel"
+    ]
+   },
+   {
+    "say": "Now we multiply. Nine times nine is eighty-one.",
+    "at": [
+     "Now we multiply",
+     "Nine times nine is eighty-one"
+    ]
+   },
+   {
+    "say": "Then eighty-one times nine. Eighty times nine is seven hundred twenty, and one more nine makes seven hundred twenty-nine.",
+    "at": [
+     "Eighty times nine",
+     "hundred twenty, and",
+     "one more nine",
+     "seven hundred twenty-nine"
+    ]
+   },
+   {
+    "say": "So codes like seven seven seven, or three seven three, are included. The question allows them.",
+    "at": [
+     "seven seven seven",
+     "seven three, are",
+     "The question allows"
+    ]
+   },
+   {
+    "say": "Choice number one, five hundred four, is the count when digits can't repeat. That's the next question, not this one.",
+    "at": [
+     "five hundred four",
+     "count when digits"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

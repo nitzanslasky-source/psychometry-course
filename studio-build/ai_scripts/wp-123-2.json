@@ -1,0 +1,263 @@
+{
+ "videoId": "wp-123-2",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Let's continue with counting."
+  ],
+  [
+   {
+    "say": "Now the main tool of the topic, multiplying the possibilities. Let's see it on a tiny example first.",
+    "at": [
+     "of the topic"
+    ]
+   },
+   {
+    "say": "Lia has three shirts and two hats, a cap and a sun hat. An outfit is one shirt and one hat. How many outfits can she make?",
+    "at": [
+     "Lia has three shirts and two hats",
+     "two hats, a"
+    ]
+   },
+   {
+    "say": "Let's draw it. Here are the three shirts.",
+    "at": [
+     "Here are the three shirts"
+    ]
+   },
+   {
+    "say": "Say she picks shirt one. With it, she can wear the cap, or the sun hat. That's two outfits.",
+    "at": [
+     "Say she picks shirt one",
+     "With it, she"
+    ]
+   },
+   {
+    "say": "Now shirt two. Again, the cap or the sun hat. Two more outfits.",
+    "at": [
+     "Now shirt two",
+     "Again, the cap"
+    ]
+   },
+   {
+    "say": "And shirt three, the same. Two more.",
+    "at": [
+     "And shirt three"
+    ]
+   },
+   {
+    "say": "So we have two, plus two, plus two. That's six outfits.",
+    "at": [
+     "two, plus two, plus two",
+     "That's six outfits"
+    ]
+   },
+   {
+    "say": "Two plus two plus two is three groups of two. And three groups of two is three times two. That's why we multiply.",
+    "at": [
+     "three groups of two is three times two",
+     "three times two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So here's the rule. A stage of choice is a moment where we pick something.",
+    "at": [
+     "A stage of choice is",
+     "a moment where"
+    ]
+   },
+   {
+    "say": "Lia has two stages. Stage one is the shirt, with three options. We write three in its box.",
+    "at": [
+     "Lia has two stages",
+     "Stage one is",
+     "We write three in its box"
+    ]
+   },
+   {
+    "say": "Stage two is the hat, with two options. We write two in its box.",
+    "at": [
+     "Stage two is",
+     "We write two in its box"
+    ]
+   },
+   {
+    "say": "Then we multiply the options. Three times two is six outfits. It's the same six we counted on the tree.",
+    "at": [
+     "Then we multiply the options",
+     "Three times two is six",
+     "It's the same"
+    ]
+   },
+   {
+    "say": "So we count the options at each stage, and we multiply them.",
+    "at": [
+     "we count the options at each stage",
+     "each stage, and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Does it matter which stage we write first? Let's check. This time Lia picks the hat first.",
+    "at": [
+     "stage we write",
+     "Lia picks the hat first"
+    ]
+   },
+   {
+    "say": "With the cap, she can wear any of the three shirts. That's three outfits.",
+    "at": [
+     "With the cap",
+     "wear any of"
+    ]
+   },
+   {
+    "say": "With the sun hat, again three shirts. Three more outfits.",
+    "at": [
+     "With the sun hat",
+     "three shirts. Three"
+    ]
+   },
+   {
+    "say": "Three plus three is six. The same six outfits.",
+    "at": [
+     "Three plus three is six",
+     "The same six"
+    ]
+   },
+   {
+    "say": "Two times three is the same as three times two. In multiplication, the order doesn't change the result.",
+    "at": [
+     "Two times three is the same",
+     "same as three"
+    ]
+   },
+   {
+    "say": "So the order of the stages doesn't matter. Write the stages in any order, and you get the same answer.",
+    "at": [
+     "the order of the stages",
+     "Write the stages"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example, with three stages. A cafe sells four kinds of sandwich, three drinks and two desserts. A meal is one of each. How many meals are possible?",
+    "at": [
+     "with three stages",
+     "A cafe sells four kinds of sandwich",
+     "of sandwich, three"
+    ]
+   },
+   {
+    "say": "Three stages, three boxes. The sandwich has four options, the drink three, and the dessert two.",
+    "at": [
+     "Three stages, three boxes",
+     "The sandwich has four options",
+     "the drink three",
+     "and the dessert two"
+    ]
+   },
+   {
+    "say": "Why multiply again? Each of the four sandwiches goes with each of the three drinks. Four times three is twelve pairs.",
+    "at": [
+     "Each of the",
+     "Four times three is twelve"
+    ]
+   },
+   {
+    "say": "And each of those twelve pairs goes with each of the two desserts. Twelve times two is twenty-four.",
+    "at": [
+     "And each of",
+     "Twelve times two is twenty-four"
+    ]
+   },
+   {
+    "say": "So we multiply all three boxes. Four times three times two is twenty-four meals.",
+    "at": [
+     "So we multiply all three boxes",
+     "boxes. Four times",
+     "is twenty-four meals"
+    ]
+   },
+   {
+    "say": "Careful here. A lot of students add the numbers. Four plus three plus two is nine.",
+    "at": [
+     "A lot of",
+     "Four plus three plus two is nine"
+    ]
+   },
+   {
+    "say": "But nine counts the items on the menu, not the meals. Remember Lia. Three shirts plus two hats is five items, but she had six outfits.",
+    "at": [
+     "But nine counts",
+     "Three shirts plus two hats is five items",
+     "had six outfits"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "One more example. A locker code is one letter from A to D, and then one digit from zero to nine. How many codes are possible?",
+    "at": [
+     "A locker code is one letter",
+     "letter from A"
+    ]
+   },
+   {
+    "say": "Let's see the codes that start with A. A zero, A one, and so on up to A nine. That's ten codes.",
+    "at": [
+     "Let's see the codes that start with A",
+     "start with A",
+     "A zero, A one",
+     "That's ten codes"
+    ]
+   },
+   {
+    "say": "The codes that start with B are ten more, and so are C and D.",
+    "at": [
+     "The codes that start with B",
+     "B are ten"
+    ]
+   },
+   {
+    "say": "So four letters, and ten digits for each letter. Four times ten is forty codes.",
+    "at": [
+     "So four letters",
+     "So four letters",
+     "and ten digits",
+     "Four times ten",
+     "is forty codes"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. If the list is short, we list it in order, and we count.",
+    "at": [
+     "up. If the",
+     "we list it in order",
+     "and we count"
+    ]
+   },
+   {
+    "say": "If it's long, we work in stages. We write the number of options in each box, and we multiply.",
+    "at": [
+     "we work in stages",
+     "We write the"
+    ]
+   },
+   {
+    "say": "And we never add the stages. Adding counts the items, not the results.",
+    "at": [
+     "we never add the stages",
+     "Adding counts the"
+    ]
+   },
+   "Take a moment to memorize this. Now try the first question, and I'll see you in the next video."
+  ]
+ ]
+}

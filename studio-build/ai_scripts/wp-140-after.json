@@ -1,0 +1,204 @@
+{
+ "videoId": "wp-140-after",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "In the last question we used factorials. Factorials come up on the exam quite often, also as pure math, with no story at all.",
+   {
+    "say": "So let's learn the tools, one at a time, with examples.",
+    "at": [
+     "tools, one at"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "First, the factorials to know by heart. One factorial is one, two factorial is two, and three factorial is six.",
+    "at": [
+     "the factorials to know by heart",
+     "heart. One factorial",
+     "three factorial is six"
+    ]
+   },
+   {
+    "say": "Four factorial is twenty-four. Five factorial is five times twenty-four, a hundred twenty.",
+    "at": [
+     "Five factorial is five times",
+     "Five factorial is five times",
+     "twenty-four, a hundred"
+    ]
+   },
+   {
+    "say": "Each one is the one before, times the next number. Six factorial is six times a hundred twenty, seven hundred twenty.",
+    "at": [
+     "Six factorial is six times",
+     "a hundred twenty",
+     "seven hundred twenty"
+    ]
+   },
+   {
+    "say": "And seven factorial is seven times seven hundred twenty, five thousand forty.",
+    "at": [
+     "seven times seven hundred twenty",
+     "five thousand forty"
+    ]
+   },
+   {
+    "say": "One more fact. Zero factorial is one, by definition. It comes up rarely, but now you know it.",
+    "at": [
+     "Zero factorial is one",
+     "It comes up"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Why know them by sight? Because the exam hides them. Now a new example. a factorial is twelve times ten. What is a?",
+    "at": [
+     "sight? Because the",
+     "a factorial is twelve times ten",
+     "ten. What is"
+    ]
+   },
+   {
+    "say": "Twelve times ten is a hundred twenty, and a hundred twenty is five factorial. So a is five.",
+    "at": [
+     "Twelve times ten",
+     "twenty is five"
+    ]
+   },
+   {
+    "say": "One more. b factorial is eight times ninety. Eight times ninety is seven hundred twenty, and that's six factorial. So b is six.",
+    "at": [
+     "b factorial is eight times ninety",
+     "Eight times ninety is seven hundred twenty",
+     "hundred twenty, and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "The second tool is the one from the last question. We expand a factorial only as far as we need.",
+    "at": [
+     "the one from"
+    ]
+   },
+   {
+    "say": "Eight factorial is eight times seven factorial. Or, if we need it, eight times seven times six factorial.",
+    "at": [
+     "Eight factorial is eight times seven factorial",
+     "seven factorial. Or",
+     "eight times seven times six factorial"
+    ]
+   },
+   {
+    "say": "For example, ten factorial over eight factorial. Ten factorial is ten times nine times eight factorial. Eight factorial cancels, on top and below. We get ten times nine, ninety.",
+    "at": [
+     "ten factorial over eight factorial",
+     "Ten factorial is"
+    ]
+   },
+   {
+    "say": "The same works with letters. n plus one, factorial, is n plus one, times n factorial.",
+    "at": [
+     "The same works with letters",
+     "n plus one"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. Four factorial is four times three factorial. Twenty-four is four times six.",
+    "at": [
+     "Four factorial is four times three factorial",
+     "Twenty-four is four"
+    ]
+   },
+   {
+    "say": "So a factorial over the factorial just before it is the bigger number. Twelve factorial over eleven factorial is twelve.",
+    "at": [
+     "Twelve factorial over eleven factorial"
+    ]
+   },
+   {
+    "say": "And n factorial over n minus one, factorial, is n.",
+    "at": [
+     "n factorial over n minus one",
+     "one, factorial, is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the third tool. A big factorial over a smaller one. For example, seven factorial over four factorial.",
+    "at": [
+     "A big factorial"
+    ]
+   },
+   {
+    "say": "Seven factorial is seven times six times five times four factorial. Four factorial cancels, on top and below.",
+    "at": [
+     "Seven factorial is seven times six",
+     "six times five"
+    ]
+   },
+   {
+    "say": "What's left is seven times six times five. Seven times six is forty-two. Then forty-two times five is two hundred ten.",
+    "at": [
+     "seven times six times five",
+     "Seven times six is"
+    ]
+   },
+   {
+    "say": "So b factorial over a factorial is always a run of neighbours. That means whole numbers in a row, from a plus one up to b.",
+    "at": [
+     "a run of neighbours",
+     "That means whole"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now backwards, a type the exam likes. b factorial over a factorial is thirty, and b is bigger than a. What are a and b?",
+    "at": [
+     "the exam likes",
+     "b factorial over a factorial is thirty",
+     "is thirty, and"
+    ]
+   },
+   {
+    "say": "We need neighbours that multiply to thirty. Five times six is thirty.",
+    "at": [
+     "Five times six is thirty"
+    ]
+   },
+   {
+    "say": "The run ends at b, so b is six.",
+    "at": [
+     "The run ends at b"
+    ]
+   },
+   {
+    "say": "The run starts right after a, at five. So a is four, not five. Careful, that's the common slip.",
+    "at": [
+     "The run starts right after a",
+     "So a is"
+    ]
+   },
+   {
+    "say": "Let's check. Six factorial over four factorial is six times five, thirty.",
+    "at": [
+     "Six factorial over four factorial",
+     "is six times"
+    ]
+   },
+   {
+    "say": "One more. b factorial over a factorial is ninety. Nine times ten is ninety. So b is ten, and a is eight.",
+    "at": [
+     "b factorial over a factorial is ninety",
+     "Nine times ten is ninety",
+     "So b is"
+    ]
+   },
+   "The exam usually limits the numbers, for example to below ten. That way only one run of neighbours fits. [pause] Okay. I'll see you in the next part."
+  ]
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "videoId": "solve-wp28-g125",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A food truck offers seven soups and three kinds of bread. A lunch contains one soup and one kind of bread. How many different lunches are possible?",
+    "voice": "calm",
+    "at": [
+     "A food truck offers"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask how many lunches, not how many items. A lunch is a pair, one soup and one bread.",
+    "at": [
+     "So they ask how many lunches",
+     "A lunch is"
+    ]
+   },
+   {
+    "say": "Let's solve it the math way, in stages, like in the lesson. We have two stages of choice, the soup and the bread.",
+    "at": [
+     "math way, in",
+     "two stages of choice",
+     "soup and the"
+    ]
+   },
+   {
+    "say": "The soup has seven options. We write seven in its box.",
+    "at": [
+     "We write seven in its box"
+    ]
+   },
+   {
+    "say": "The bread has three options. We write three in its box.",
+    "at": [
+     "The bread has",
+     "We write three in its box"
+    ]
+   },
+   {
+    "say": "Why do we multiply? Take the first soup. With it, we can take any of the three breads. That's three lunches.",
+    "at": [
+     "Take the first soup",
+     "With it, we",
+     "That's three lunches"
+    ]
+   },
+   {
+    "say": "The second soup also goes with three breads. Three more lunches.",
+    "at": [
+     "The second soup",
+     "with three breads"
+    ]
+   },
+   {
+    "say": "And so on for all seven soups. Three lunches for each soup, seven times.",
+    "at": [
+     "Three lunches for each soup"
+    ]
+   },
+   {
+    "say": "Three, seven times, is seven times three. That's twenty-one lunches.",
+    "at": [
+     "is seven times three",
+     "That's twenty-one lunches",
+     "That's twenty-one lunches"
+    ]
+   },
+   {
+    "say": "Careful here. A lot of students add, seven plus three is ten. That's choice number one. But ten counts the items on the menu, not the lunches.",
+    "at": [
+     "of students add",
+     "seven plus three is ten",
+     "That's choice number one",
+     "But ten counts"
+    ]
+   },
+   {
+    "say": "And if we start with the bread? Each bread goes with seven soups. Three times seven is twenty-one again. The order of the stages doesn't matter.",
+    "at": [
+     "Three times seven is twenty-one",
+     "The order of"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

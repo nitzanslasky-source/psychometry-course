@@ -1,0 +1,96 @@
+{
+ "videoId": "solve-wp28-g136",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A green dice and a yellow dice each show a number from one to six. How many ordered outcomes have a sum different from eight?",
+    "voice": "calm",
+    "at": [
+     "A green dice and a yellow dice"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they ask for the outcomes whose sum is not eight. The word different is our cue, like in the lesson.",
+    "at": [
+     "whose sum is not eight"
+    ]
+   },
+   {
+    "say": "We could list every outcome whose sum isn't eight, but that's long and messy. It's much easier to work backwards. We'll solve it in two different ways. Let's start with the math way, all minus forbidden.",
+    "at": [
+     "We could"
+    ]
+   },
+   {
+    "say": "All the outcomes first. The green dice has six options, and the yellow dice six. Six times six is thirty-six.",
+    "at": [
+     "Six times six is thirty-six",
+     "Six times six",
+     "Six times six is thirty-six",
+     "Six times six is thirty-six"
+    ]
+   },
+   {
+    "say": "Now the forbidden ones, a sum of eight. Two and six, three and five, four and four, five and three, and six and two.",
+    "at": [
+     "Now the forbidden",
+     "Two and six",
+     "Two and six",
+     "five, four and"
+    ]
+   },
+   "Why are two and six, and six and two, both there? Because the dice have colours. A two on the green and a six on the yellow is a different outcome from a six on the green and a two on the yellow.",
+   "And four and four is just one outcome. So there are five forbidden outcomes.",
+   {
+    "say": "Thirty-six minus five is thirty-one.",
+    "at": [
+     "Thirty-six minus five"
+    ]
+   },
+   {
+    "say": "If you ignore the colours, you count only three forbidden pairs, and you get thirty-three. That's choice number one, a trap.",
+    "at": [
+     "colours, you count",
+     "you get thirty-three",
+     "That's choice number one"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's count the allowed outcomes directly, row by row. This way is longer, but it's a good check.",
+    "at": [
+     "Now let's"
+    ]
+   },
+   {
+    "say": "If the green dice shows one, the yellow would need seven for a sum of eight. That's impossible. So all six yellow numbers are allowed.",
+    "at": [
+     "all six yellow numbers are allowed"
+    ]
+   },
+   {
+    "say": "If the green dice shows two, three, four, five or six, exactly one yellow number makes eight. So five yellow numbers are allowed each time. Five times five is twenty-five.",
+    "at": [
+     "If the green",
+     "Five times five is twenty-five"
+    ]
+   },
+   {
+    "say": "Six plus twenty-five is thirty-one. The same answer.",
+    "at": [
+     "Six plus twenty-five",
+     "The same answer"
+    ]
+   },
+   {
+    "say": "Choice number three is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number three is our answer"
+    ]
+   }
+  ]
+ ]
+}

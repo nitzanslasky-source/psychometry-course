@@ -1,0 +1,322 @@
+{
+ "videoId": "wp-127",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Many counting questions have us choose from a pool. The pool can be digits, letters, books or people.",
+   {
+    "say": "And after every pick, we ask one question. Did the item leave the pool, or can we pick it again?",
+    "at": [
+     "we ask one"
+    ]
+   },
+   "That one question changes the count. Let's see how."
+  ],
+  [
+   {
+    "say": "Let's start with a tiny case. How many two-digit codes can we make from the digits one, two and three, if digits may repeat?",
+    "at": [
+     "tiny case. How"
+    ]
+   },
+   {
+    "say": "Here's the pool, one, two and three. For the first digit we have three options. Say we pick one.",
+    "at": [
+     "Here's the pool",
+     "For the first",
+     "Say we pick one"
+    ]
+   },
+   {
+    "say": "Digits may repeat. So the one goes back into the pool, and we can pick it again.",
+    "at": [
+     "goes back into the pool",
+     "and we can"
+    ]
+   },
+   {
+    "say": "Let's list every code. Eleven, twelve, thirteen.",
+    "at": [
+     "Let's list every code",
+     "Eleven, twelve"
+    ]
+   },
+   {
+    "say": "Twenty-one, twenty-two, twenty-three.",
+    "at": [
+     "Twenty-one, twenty-two"
+    ]
+   },
+   {
+    "say": "Thirty-one, thirty-two, thirty-three. That's nine codes.",
+    "at": [
+     "Thirty-one, thirty-two",
+     "That's nine codes"
+    ]
+   },
+   {
+    "say": "In stages, the first digit has three options, and the second digit has three options too, because the pool stayed full. Three times three is nine.",
+    "at": [
+     "In stages",
+     "the first digit has three",
+     "the second digit has three",
+     "options too, because",
+     "Three times three",
+     "Three times three is nine"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the same digits, but no digit may repeat.",
+    "at": [
+     "but no digit"
+    ]
+   },
+   {
+    "say": "The first digit again has three options. Say we pick one. This time the one leaves the pool. Only two digits are left.",
+    "at": [
+     "The first digit again",
+     "three options. Say",
+     "the one leaves the pool",
+     "Only two digits are left"
+    ]
+   },
+   {
+    "say": "Let's look at the same nine codes.",
+    "at": [
+     "the same nine codes",
+     "the same nine codes"
+    ]
+   },
+   {
+    "say": "Eleven, twenty-two and thirty-three use a digit twice. They are not allowed now.",
+    "at": [
+     "Eleven, twenty-two and thirty-three",
+     "a digit twice"
+    ]
+   },
+   {
+    "say": "Nine minus three leaves six codes.",
+    "at": [
+     "Nine minus three"
+    ]
+   },
+   {
+    "say": "In stages, the first digit has three options, and the second digit only two. Three times two is six. The pool shrinks after every pick.",
+    "at": [
+     "In stages",
+     "the first digit has three",
+     "the second digit only two",
+     "Three times two",
+     "Three times two is six",
+     "The pool shrinks"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a bigger example. A code has three letters, from A, B, C, D, E and F. That's a pool of six letters.",
+    "at": [
+     "A code has three letters",
+     "from A, B"
+    ]
+   },
+   {
+    "say": "If letters may repeat, every letter goes back to the pool. Each place has six options.",
+    "at": [
+     "If letters may repeat",
+     "letter goes back",
+     "Each place has six options"
+    ]
+   },
+   {
+    "say": "Six times six is thirty-six. Then thirty-six times six is two hundred sixteen codes.",
+    "at": [
+     "Six times six",
+     "Six times six is thirty-six",
+     "Then thirty-six times six",
+     "two hundred sixteen codes"
+    ]
+   },
+   {
+    "say": "If no letter may appear twice, the pool shrinks. The first place has six options.",
+    "at": [
+     "If no letter may appear twice",
+     "twice, the pool",
+     "The first place has six options"
+    ]
+   },
+   {
+    "say": "One letter is used, so the second place has five. Two are used, so the third place has four.",
+    "at": [
+     "the second place has five",
+     "Two are used",
+     "the third place has four"
+    ]
+   },
+   {
+    "say": "Six times five is thirty. Then thirty times four is a hundred twenty codes.",
+    "at": [
+     "Six times five",
+     "Six times five is thirty",
+     "Then thirty times four",
+     "a hundred twenty codes"
+    ]
+   },
+   {
+    "say": "The same letters, and a different answer. The only difference is whether a letter leaves the pool.",
+    "at": [
+     "The same letters"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Putting different items in a row is choosing without repetition. Once an item is in its place, it's out of the pool.",
+    "at": [
+     "a row is"
+    ]
+   },
+   {
+    "say": "Let's see it with three letters, A, B and C, in a row. Let's list every order.",
+    "at": [
+     "three letters, A, B and C",
+     "C, in a",
+     "Let's list every order"
+    ]
+   },
+   {
+    "say": "A first, then the other two in two orders. A B C, and A C B.",
+    "at": [
+     "A first",
+     "two in two"
+    ]
+   },
+   {
+    "say": "B first, B A C, and B C A. C first, C A B, and C B A. That's six orders.",
+    "at": [
+     "B first",
+     "and B C",
+     "C first",
+     "That's six orders"
+    ]
+   },
+   {
+    "say": "Now in stages. The first place has three options. The second place has two, because one letter is already placed.",
+    "at": [
+     "Now in stages",
+     "The first place has three",
+     "The second place has two",
+     "because one letter"
+    ]
+   },
+   {
+    "say": "And the last place has only one letter left. No choice at all, so it gets one.",
+    "at": [
+     "the last place has only one",
+     "one letter left"
+    ]
+   },
+   {
+    "say": "Three times two times one is six. The same six orders we listed.",
+    "at": [
+     "Three times two times one",
+     "Three times two times one is six",
+     "The same six"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. Four different mugs stand in a row on a shelf. In how many orders can they stand?",
+    "at": [
+     "Four different mugs",
+     "a row on"
+    ]
+   },
+   {
+    "say": "The first place has four options, then three, then two, and the last place one.",
+    "at": [
+     "The first place has four",
+     "The first place has four",
+     "options, then three"
+    ]
+   },
+   {
+    "say": "Four times three is twelve. Times two, it's twenty-four. And times one, it's still twenty-four.",
+    "at": [
+     "Four times three is twelve",
+     "Times two, it's",
+     "And times one"
+    ]
+   },
+   {
+    "say": "This product has a name. It's called a factorial, and we write it with an exclamation mark. Four times three times two times one is four factorial.",
+    "at": [
+     "This product has",
+     "is four factorial"
+    ]
+   },
+   {
+    "say": "So n factorial is n, times every whole number below it, all the way down to one.",
+    "at": [
+     "So n factorial is n",
+     "times every whole"
+    ]
+   },
+   {
+    "say": "For example, three factorial is three times two times one, that's six.",
+    "at": [
+     "three factorial is three",
+     "two times one"
+    ]
+   },
+   {
+    "say": "Four factorial is four times three factorial. Four times six is twenty-four.",
+    "at": [
+     "Four factorial is four times",
+     "Four times six"
+    ]
+   },
+   {
+    "say": "Five factorial is five times four factorial. Five times twenty-four is a hundred twenty.",
+    "at": [
+     "Five factorial is five times",
+     "Five times twenty-four"
+    ]
+   },
+   {
+    "say": "So n different items in a row can stand in n factorial orders. We'll use factorial again later in this topic, when we choose groups.",
+    "at": [
+     "n different items in a row",
+     "row can stand"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "So let's sum it up. After every pick, ask if the item can be picked again. If it can, the pool stays full.",
+    "at": [
+     "up. After every",
+     "If it can, the pool stays full"
+    ]
+   },
+   {
+    "say": "If it left the pool, the pool shrinks by one at every stage.",
+    "at": [
+     "If it left the pool",
+     "the pool shrinks"
+    ]
+   },
+   {
+    "say": "And different items in a row are a choice without repetition. That's n factorial.",
+    "at": [
+     "different items in a row",
+     "are a choice"
+    ]
+   },
+   "Take a moment to memorize this, and I'll see you in the next video."
+  ]
+ ]
+}

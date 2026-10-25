@@ -1,0 +1,164 @@
+{
+ "videoId": "solve-wp28-g133",
+ "style": "the teacher reads it herself (Reading Studio), topic-28 scripts (2026-10-25): math_patches/_ai_vis_t28.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "How many diagonals does an eight-sided polygon have?",
+    "voice": "calm",
+    "at": [
+     "How many diagonals"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "This question type is rare, but it does show up on the exam. A diagonal joins two vertices that are not next to each other. So a side is not a diagonal.",
+    "at": [
+     "This question type is rare",
+     "joins two vertices"
+    ]
+   },
+   {
+    "say": "We'll solve it in four different ways. Let's start with the simplest math way. We draw it, and we count. Exam polygons are small, so drawing and counting is a real option.",
+    "at": [
+     "We draw it",
+     "Exam polygons are"
+    ]
+   },
+   {
+    "say": "Here are the eight vertices and the eight sides.",
+    "at": [
+     "the eight sides"
+    ]
+   },
+   {
+    "say": "From vertex one, we draw a line to every vertex that is not next to it. Vertex one has five diagonals.",
+    "at": [
+     "From vertex one",
+     "a line to"
+    ]
+   },
+   {
+    "say": "From vertex two, also five new diagonals.",
+    "at": [
+     "From vertex two"
+    ]
+   },
+   {
+    "say": "From vertex three, four new ones, because the diagonal to vertex one is already drawn.",
+    "at": [
+     "From vertex three",
+     "ones, because the"
+    ]
+   },
+   {
+    "say": "Then three, two and one new diagonals from the next vertices.",
+    "at": [
+     "Then three",
+     "two and one",
+     "two and one",
+     "from the next"
+    ]
+   },
+   {
+    "say": "Five plus five plus four plus three plus two plus one is twenty diagonals. With eight sides it's already crowded, so let's see faster ways.",
+    "at": [
+     "Five plus five plus four",
+     "plus three plus"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now the second way, with mutual action. A line between two vertices is a mutual action. The line from one to two is the same as the line from two to one.",
+    "at": [
+     "Now the"
+    ]
+   },
+   {
+    "say": "We count as usual. Eight vertices to start from, and seven others to go to. Eight times seven is fifty-six.",
+    "at": [
+     "Eight times seven is fifty-six"
+    ]
+   },
+   {
+    "say": "Every line was counted from both ends, so we divide by two. Fifty-six divided by two is twenty-eight lines.",
+    "at": [
+     "Every line was",
+     "Fifty-six divided by two"
+    ]
+   },
+   {
+    "say": "But twenty-eight is all the lines, and eight of them are the sides of the polygon. Sides are not diagonals. That's why twenty-eight, choice number one, is a trap.",
+    "at": [
+     "But twenty-eight is",
+     "choice number one, is a trap"
+    ]
+   },
+   {
+    "say": "Twenty-eight minus eight is twenty diagonals.",
+    "at": [
+     "Twenty-eight minus eight"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] The third way is like the drawing in the lesson. From the first vertex, seven new lines. From the next one, six new lines, then five, four, three, two and one.",
+    "at": [
+     "The third"
+    ]
+   },
+   {
+    "say": "Each time it's one fewer, because one line already came from the vertex before. Seven plus six plus five plus four plus three plus two plus one is twenty-eight lines.",
+    "at": [
+     "Seven plus six plus five",
+     "plus four plus"
+    ]
+   },
+   {
+    "say": "Again, eight of those lines are sides. Twenty-eight minus eight is twenty.",
+    "at": [
+     "Twenty-eight minus eight"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And the fourth way, a formula. The number of diagonals is n times n minus three, divided by two.",
+    "at": [
+     "And the",
+     "n times n minus three",
+     "divided by two"
+    ]
+   },
+   "Why minus three? From each vertex there's no diagonal to itself, and none to its two neighbours. So each vertex has n minus three diagonals. And we divide by two, because each diagonal has two ends.",
+   {
+    "say": "Here n is eight. Eight times five is forty.",
+    "at": [
+     "Eight times five is forty"
+    ]
+   },
+   {
+    "say": "Careful, forty is choice number four, and it's a trap. Forty counts every diagonal from both of its ends.",
+    "at": [
+     "number four, and",
+     "it's a trap"
+    ]
+   },
+   {
+    "say": "Forty divided by two is twenty. Four ways, and one answer.",
+    "at": [
+     "Forty divided by two",
+     "Four ways, and"
+    ]
+   },
+   {
+    "say": "Choice number two is our answer, and I'll see you in the next question.",
+    "at": [
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}
