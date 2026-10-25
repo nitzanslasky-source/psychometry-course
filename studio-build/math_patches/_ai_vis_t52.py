@@ -1731,7 +1731,7 @@ video('ch52-circle', 'lesson', slides=[
     S('Check the example',
       L("The example says, at nine o'clock there were three hundred visitors. And between nine and ten, most of them were "
         "in the forum.", show(c_n4, 'The example says')),
-      L("Let's find nine o'clock on the clock. We go in along that line, to the teal curve. It's on the circle of three "
+      L("Let's find nine o'clock on the clock. We go in along that line, to the blue curve. It's on the circle of three "
         "hundred.", show(c_c1['h9'], 'We go in along that line'), show(c_n5, 'on the circle of three')),
       L("And between nine and ten, the dark part is in the third ring. The third ring is the forum. It matches."),
       pre=[c_c1['base']]),
@@ -2468,6 +2468,8 @@ q8o = IH('q8o', '$+75-45=+30$ ✗ $\\ $not zero', size=26, col=1)
 q8p = I('q8p', 'more above $\\ \\to\\ $ the average is bigger', size=26, col=1)
 q8_3pre, q8q = QPRE('ch-q08', 'q8q', [('r', plus(S2, ROW2('Night Owls')))])
 q8s = I('q8s', '$55{,}000$: $\\ +30$, $\\ $too small', size=26, col=1)
+q8units = I('q8units', 'Differences in thousands of shekels', size=24, col=1)
+q8units2 = I('q8units2', 'Differences in thousands of shekels', size=24, col=1)
 
 video('solve-ch-q08', 'solution', qid='ch-q08', slides=[
     S('Method 1 · The math way',
@@ -2491,8 +2493,9 @@ video('solve-ch-q08', 'solution', qid='ch-q08', slides=[
         mk('cross', 'choice 4', "That's choice number four")),
       L("So the average is sixty thousand, choice number three."), pre=q8_pre),
     S('Method 2 · Plugging in the answers',
-      L("[pause] Now let's plug in the answers, with the balance from averages. We start again from the Night Owls row.",
-        show(q8k['r'], 'from the Night Owls row')),
+      L("[pause] Now let's plug in the answers, with the balance from averages. We start again from the Night Owls row. "
+        "For these calculations, we'll use thousands of shekels.",
+        show(q8k['r'], 'from the Night Owls row'), show(q8units, "we'll use thousands of shekels")),
       L("Remember, the differences from the average add up to zero. Which choice do we try first? The choices are in "
         "order, fifty thousand, fifty-five thousand, sixty thousand, and seventy-two thousand. So let's start with a middle one, choice number two, "
         "fifty-five thousand. If the differences don't add up to zero, they show us which way to go.",
@@ -2503,16 +2506,17 @@ video('solve-ch-q08', 'solution', qid='ch-q08', slides=[
         show(q8n, 'twenty gives minus thirty-five')),
       L("The plus side is twenty-five, twenty-five and twenty-five, seventy-five. The minus side is five, five and thirty-five, forty-five. "
         "Seventy-five minus forty-five is plus thirty, not zero.", show(q8o, 'is plus thirty, not zero')),
-      L("What does that tell us? The prizes are above fifty-five thousand more than they're below it. So the average is "
+      L("What does that tell us? The extra amounts above fifty-five thousand total more than the missing amounts below it. So the average is "
         "bigger than fifty-five thousand. Choice number two is out, and choice number one, fifty thousand, is out too.",
         show(q8p, 'So the average is'), mk('cross', 'choice 2', 'Choice number two is out'),
         mk('cross', 'choice 1', 'is out too')), pre=q8_2pre),
     S('Method 2 · Plugging in the answers',
-      L("Fifty-five thousand gave plus thirty, not zero, so choice number one and choice number two are out. Now let's try the next one "
-        "up, choice number three, sixty thousand.", show(q8q['r'], 'Fifty-five thousand gave'), show(q8s, 'gave plus thirty'),
+      L("Fifty-five thousand gave a total difference of plus thirty thousand, not zero. So choice number one and choice number two are out. Now let's try the next one "
+        "up, choice number three, sixty thousand.", show(q8q['r'], 'Fifty-five thousand gave'),
+        show(q8units2, 'Fifty-five thousand gave'), show(q8s, 'plus thirty thousand'),
         mk('cross', 'choice 1', 'so choice number one'), mk('cross', 'choice 2', 'and choice number two are out'),
         pt('choice 3', "let's try the next one up")),
-      L("Each prize, compared with sixty thousand. Eighty gives plus twenty. Fifty gives minus ten. Eighty gives plus twenty again.",
+      L("We still calculate in thousands of shekels. Each prize, compared with sixty thousand. Eighty gives plus twenty. Fifty gives minus ten. Eighty gives plus twenty again.",
         show(q8i, 'Eighty gives plus twenty')),
       L("Then fifty gives minus ten, eighty gives plus twenty, and twenty gives minus forty.", show(q8j, 'twenty gives minus forty')),
       L("The plus side is twenty, twenty and twenty, sixty. The minus side is ten, ten and forty, also sixty. Sixty minus "

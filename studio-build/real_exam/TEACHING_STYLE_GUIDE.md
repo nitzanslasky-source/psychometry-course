@@ -1233,6 +1233,8 @@ These add to R1-R37 and the Codex review standard. Where they differ from the AI
 
 26. **W26. Plugging in the answers is not always right on the first try** (Nitzan, 25 Oct: "when you plug in the answers you always get it in the first plug in, and that's not the case in reality — stop doing that"). Across a topic, many plugging-in-the-answers solutions must try a choice that FAILS first, the way it happens on the exam. Choose the first choice by a real, stated reason (the most convenient / round one, or the middle one when the choices are ordered) — never pick it because it is the answer. When it fails, say what it shows ("too big, so the answer is smaller") and use that to rule out more choices before the next try. Some solutions may still hit on the first try when the reason picks it — but not most of them. Never change a question's correct answer or choices only to stage a failure; change the starting reason or the order of tries instead.
 
+27. **W27. Colour words students know** (Nitzan, 25 Oct: "some people don't know the word teal"). Never say "teal" (or other uncommon colour names like magenta, cyan, navy) in a spoken script. Say "blue", "green", "orange", "red", "grey"… — and if two elements in the picture would get the same simple name, name the thing instead ("the curve of three hundred"). Drawing colours can stay.
+
 **Put her most frequent elaborations in the script from the start:**
 1. the reason after each claim;
 2. a second and third run of number examples for "every / always" rules;
