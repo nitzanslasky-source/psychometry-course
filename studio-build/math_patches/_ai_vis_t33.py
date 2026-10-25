@@ -1110,9 +1110,9 @@ video('geo-074', 'lesson', slides=[
       L("Now here's an arc, from A to B. We can close it off with two radii. That's a central angle that closes off our "
         "arc.", show(f1lean['line'], "Now here's an arc"), show(f1lean['arc'], 'from A to B'),
         show(f1lean['cent'], 'with two radii')),
-      L('When an angle meets an arc at both ends like this, we say that the angle intercepts the arc. Here the central angle has its vertex at O. Its two radii end at A and B. The teal arc between A and B is the arc it intercepts.', show(f1lean['walls'], 'Its two radii end at A and B')),
-      L('An inscribed angle can intercept that same arc. Take a point C on the other side of the circle, on the long arc, away from the teal arc. Draw two chords from C to A and to B. The angle at C intercepts the teal arc A B, the arc opposite C, not the arc that passes through C.', show(f1lean['insc'], 'Take a point C'), show(f1lean['walls2'], 'The angle at C intercepts')),
-      L("So this central angle and this inscribed angle both intercept the same arc, the teal arc A B.",
+      L('When an angle meets an arc at both ends like this, we say that the angle intercepts the arc. Here the central angle has its vertex at O. Its two radii end at A and B. The blue arc between A and B is the arc it intercepts.', show(f1lean['walls'], 'Its two radii end at A and B')),
+      L('An inscribed angle can intercept that same arc. Take a point C on the other side of the circle, on the long arc, away from the blue arc. Draw two chords from C to A and to B. The angle at C intercepts the blue arc A B, the arc opposite C, not the arc that passes through C.', show(f1lean['insc'], 'Take a point C'), show(f1lean['walls2'], 'The angle at C intercepts')),
+      L("So this central angle and this inscribed angle both intercept the same arc, the blue arc A B.",
         show(f1lean['both'], 'both intercept the same arc'))),
     S('Another arc',
       L("Here's one more arc, from P to Q, along the bottom. The central angle at O intercepts it. And an inscribed angle from D, up at the top, intercepts it too. Look at the chords D P and D Q. Their ends are P and Q. The intercepted arc is the arc P Q opposite D, not the arc that passes through D.", show(f1lean2['line'], "Here's one more arc"), show(f1lean2['cent'], 'The central angle at O'),
@@ -2177,13 +2177,14 @@ NOFIG33.update({('solve-q-r26-t33-02', 1), ('solve-q-r26-t33-02', 2)})
 f3g02r1 = IH('f3g02r1', '$8^2 = 64$', size=28)
 f3g02r1b = IH('f3g02r1b', '$15^2 = 225$', size=28)
 f3g02r2 = IH('f3g02r2', '$64 + 225 = 289$', size=28)
+f3g02check = IH('f3g02check', '$(20-3)^2=400-120+9=289$', size=28)
 f3g02r3 = IH('f3g02r3', '$17^2 = 289,\\ \\ \\text{hypotenuse } 17$', size=28)
 f3g02r4 = IH('f3g02r4', '$(8 - r) + (15 - r) = 17$', size=28)
 f3g02r5 = IH('f3g02r5', '$23 - 2r = 17$', size=28)
 f3g02r6 = IH('f3g02r6', '$23 = 17 + 2r$', size=28)
 f3g02r7 = IH('f3g02r7', '$6 = 2r$', size=28)
 f3g02r8 = IH('f3g02r8', '$r = 3$', size=30)
-ROWS(266, 50, f3g02r1, f3g02r1b, f3g02r2, f3g02r3, f3g02r4, f3g02r5, f3g02r6, f3g02r7, f3g02r8)
+ROWS(266, 50, f3g02r1, f3g02r1b, f3g02r2, f3g02check, f3g02r3, f3g02r4, f3g02r5, f3g02r6, f3g02r7, f3g02r8)
 f3g02s1 = IH('f3g02s1', '$r = \\frac{a + b - c}{2}$', size=32)
 f3g02s2 = I('f3g02s2', '$a, b$: the legs, $c$: the hypotenuse (right triangle)', size=24)
 f3g02s3 = IH('f3g02s3', '$8 + 15 - 17 = 6$', size=30)
@@ -2206,8 +2207,10 @@ video('solve-q-r26-t33-02', 'solution', qid='q-r26-t33-02', slides=[
         show(f3g02['line'], "Here's the triangle again"), show(f3g02r1, 'Eight squared is sixty-four'),
         show(f3g02r1b, 'Fifteen squared is'),
         show(f3g02r2, 'Together that')),
-      L("Eight, fifteen, seventeen is a Pythagorean triple, and seventeen squared really is two hundred eighty-nine. So the "
-        "hypotenuse is seventeen.", show(f3g02r3, 'So the hypotenuse is seventeen'), show(f3g02['hyp'], 'is seventeen')),
+      L("The positive square root is seventeen. You don't need to memorize this triple. Let's check seventeen squared "
+        "with the square formula. Seventeen is twenty minus three. Squared, that's four hundred minus a hundred twenty, "
+        "plus nine, two hundred eighty-nine. So the hypotenuse is seventeen.",
+        show(f3g02check, 'Squared, that'), show(f3g02r3, 'So the hypotenuse is seventeen'), show(f3g02['hyp'], 'is seventeen')),
       L('Now the tangent rule. Each side touches the circle, so each side is tangent to it. I draw radii from the center to the points where the circle touches the two legs. Each radius is perpendicular to its leg, so each gives us a right angle.', show(f3g02['rad'], 'I draw radii from the center')),
       L("Look at the small quadrilateral in the right-angle corner. It has the triangle's right angle and the two right angles we just found. So it has three right angles, and its fourth angle must also be ninety degrees. Its two sides from the center are radii, so both are r. A rectangle with two equal sides next to each other is a square. So the corner shape is a square with side r.", show(f3g02['sq'], 'Its two sides from')),
       L("So the corner pieces of the legs are r and r. The rest of the short leg is eight minus r, and the rest of the long "
@@ -3269,7 +3272,7 @@ video('solve-geo33-g086', 'solution', qid='geo33-g086', slides=[
         "use equal radii and symmetry, instead of finding the whole angle at B.",
         show(f5g86c['line'], "Now let's solve it by Understanding")),
       L("From the center O, let's draw a radius to the vertex A.", show(f5g86c['oa'], "let's draw a radius")),
-      L('Imagine folding along the line through A and the midpoint of B C. Because A B equals A C, the fold brings B onto C and makes the two sides match. O B equals O C too, so O lies on that same symmetry line. So the radius O A is part of the line we fold along.', show(f5g86c['axis'], 'folding along the line')),
+      L('Imagine folding along the line through A and the midpoint of B C. Because A B equals A C, the fold brings B onto C and makes the two sides match. O B equals O C too, so triangle O B C is isosceles with the same base B C. Its symmetry line also passes through the midpoint of B C, at a right angle. So both triangles share the same symmetry line, through A and O. The radius O A is part of that line.', show(f5g86c['axis'], 'folding along the line')),
       L("The fold also swaps the two halves of the angle at A. So O A cuts the angle at A into two equal parts. Fifty-six "
         "divided by two is twenty-eight, so we get twenty-eight and twenty-eight.",
         show(f5g86c['split'], 'Fifty-six divided by two'), show(f5g86z1, 'divided by two is twenty-eight')),
@@ -3922,9 +3925,9 @@ video('solve-geo33-g092', 'solution', qid='geo33-g092', slides=[
         show(f6g92z1, "That's a quarter of the circle")),
       L("And the highlighted arc is the rest, three quarters of the circumference.",
         show(f6g92a['tq'], 'the highlighted arc is the rest'), show(f6g92z2, 'three quarters of the circumference')),
-      L("Three quarters of six pi. Let's find a quarter first. Six pi divided by four is one and a half pi. So three "
-        "quarters is three times one and a half pi, which is four and a half pi. Choice number three is our answer, and "
-        "I'll see you in the next question.", show(f6g92z3, 'Six pi divided by four'), show(f6g92z4, 'So three'),
+      L("We need three quarters of six pi. Let's find one quarter first. Six pi divided by four is one and a half pi. "
+        "Now multiply that quarter by three. Three times one and a half pi is four and a half pi. Choice number three is our answer, and "
+        "I'll see you in the next question.", show(f6g92z3, 'Six pi divided by four'), show(f6g92z4, 'Three times one and a half pi'),
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
 
@@ -4649,7 +4652,8 @@ video('solve-geo33-g097', 'solution', qid='geo33-g097', slides=[
         show(f7g97t['line'], "the question doesn't say where"), show(f7g97t['turn'], "So let's turn it"))),
     SM('Method 1 · Plugging in numbers', 'Plugging in a number',
       L("[short pause] No length is given. If we make this whole figure bigger, every length grows by the same factor. So "
-        "both areas grow by the same factor, and their ratio stays the same. So we don't need letters. Like in the last "
+        "the areas grow by the square of that factor, as in the square lesson. Both areas get the same multiplier, "
+        "so it cancels in their ratio. So we don't need letters. Like in the last "
         "question, we pick an easy radius, one.", show(f7g97['line'], 'No length is given'),
         show(f7g97['r1'], 'an easy radius, one'), show(f7g97p1, 'an easy radius, one')),
       L("Look at the big square's side, L M. It's as long as the diameter of the circle, because the circle touches both "
@@ -4887,7 +4891,7 @@ video('geo-097-after', 'lesson', slides=[
         show(f7t19, 'So the big circle\'s area is four times')),
       L("Questions like to ask about the ring, the part between the two circles. The ring is the big circle minus the "
         "small one. Thirty-six pi minus nine pi is twenty-seven pi. And twenty-seven pi is three times nine pi. So the "
-        "ring is three small circles.",
+        "ring's area is three times the small circle's area.",
         show(f7nE['ring'], 'Questions like to ask about the ring'), show(f7t20, 'Thirty-six pi minus nine pi'),
         show(f7t20b, 'twenty-seven pi is three times nine pi')),
       L("And the triangle's side is big R root three. Here big R is six, so the side is six root three.",
@@ -5553,10 +5557,9 @@ video('solve-geo33-g102', 'solution', qid='geo33-g102', slides=[
       L("Choice number three says pi r, times one minus theta over ninety. Fifteen over ninety is a sixth, and one minus "
         "a sixth is five sixths. Five pi over six, not two pi over three, so it's out.", pt('choice 3', 'Choice number three says', 'hl', 3.0),
         show(f8p3, 'Fifteen over ninety'), mk('cross', 'choice 3', 'Five pi over six')),
-      L("Now the other three are out, so choice number four is the only one left. Let's still check it. Choice number four "
-        "says pi r, times one minus theta over forty-five. Fifteen over forty-five is a third, and one minus a third is "
-        "two thirds. Two pi over three, it fits. Choice number four is our answer, and I'll see you in the next question.", pt('choice 4', 'Choice number four says', 'hl', 3.0),
-        show(f8p4, 'Fifteen over forty-five'), mk('tick', 'choice 4', 'Choice number four is our answer'))),
+      L("Now the other three are out, so choice number four is the only one left. We don't need another calculation. "
+        "Choice number four is our answer, and I'll see you in the next question.",
+        mk('tick', 'choice 4', 'Choice number four is our answer'))),
 ])
 
 

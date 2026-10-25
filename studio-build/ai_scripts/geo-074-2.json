@@ -107,26 +107,26 @@
     ]
    },
    {
-    "say": "When an angle meets an arc at both ends like this, we say that the angle intercepts the arc. Here the central angle has its vertex at O. Its two radii end at A and B. The teal arc between A and B is the arc it intercepts.",
+    "say": "When an angle meets an arc at both ends like this, we say that the angle intercepts the arc. Here the central angle has its vertex at O. Its two radii end at A and B. The blue arc between A and B is the arc it intercepts.",
     "at": [
      "Its two radii end at A and B",
      "A and B"
     ]
    },
    {
-    "say": "An inscribed angle can intercept that same arc. Take a point C on the other side of the circle, on the long arc, away from the teal arc. Draw two chords from C to A and to B. The angle at C intercepts the teal arc A B, the arc opposite C, not the arc that passes through C.",
+    "say": "An inscribed angle can intercept that same arc. Take a point C on the other side of the circle, on the long arc, away from the blue arc. Draw two chords from C to A and to B. The angle at C intercepts the blue arc A B, the arc opposite C, not the arc that passes through C.",
     "at": [
      "Take a point C",
      "the other side",
      "The angle at C intercepts",
-     "the teal arc A"
+     "the blue arc A"
     ]
    },
    {
-    "say": "So this central angle and this inscribed angle both intercept the same arc, the teal arc A B. [pause] Okay. I'll see you in the next part.",
+    "say": "So this central angle and this inscribed angle both intercept the same arc, the blue arc A B. [pause] Okay. I'll see you in the next part.",
     "at": [
      "both intercept the same arc",
-     "the teal arc"
+     "the blue arc"
     ]
    }
   ]
