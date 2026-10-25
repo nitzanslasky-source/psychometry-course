@@ -7,6 +7,218 @@
   ],
   [
    {
+    "say": "In a chase, both of them move the same way, and one tries to catch the other.",
+    "at": [
+     "of them move"
+    ]
+   },
+   {
+    "say": "Now a new example. A runner runs at six kilometers per hour.",
+    "at": [
+     "A runner runs",
+     "A runner runs",
+     "six kilometers per hour"
+    ]
+   },
+   {
+    "say": "A cyclist rides behind her on the same road, at nine kilometers per hour.",
+    "at": [
+     "A cyclist rides behind her",
+     "on the same",
+     "at nine kilometers"
+    ]
+   },
+   {
+    "say": "At the start, the runner is nine kilometers ahead of him.",
+    "at": [
+     "nine kilometers ahead",
+     "nine kilometers ahead"
+    ]
+   },
+   {
+    "say": "After one hour, the cyclist rode nine kilometers.",
+    "at": [
+     "After one hour",
+     "the cyclist rode nine"
+    ]
+   },
+   {
+    "say": "But the runner didn't wait. She ran six kilometers further.",
+    "at": [
+     "But the runner",
+     "She ran six kilometers"
+    ]
+   },
+   {
+    "say": "So he gained only nine minus six, three kilometers. The gap is nine minus three, six.",
+    "at": [
+     "nine minus six, three",
+     "The gap is nine minus three"
+    ]
+   },
+   {
+    "say": "After two hours, he rode eighteen kilometers, and she ran twelve.",
+    "at": [
+     "After two hours",
+     "he rode eighteen",
+     "she ran twelve"
+    ]
+   },
+   {
+    "say": "He gained three kilometers again. Six minus three is three.",
+    "at": [
+     "He gained three kilometers again",
+     "Six minus three"
+    ]
+   },
+   {
+    "say": "After three hours, he rode twenty-seven kilometers, and she ran eighteen.",
+    "at": [
+     "After three hours",
+     "he rode twenty-seven",
+     "she ran eighteen"
+    ]
+   },
+   {
+    "say": "He gained three once more. Three minus three is zero. He catches her.",
+    "at": [
+     "He gained three once more",
+     "Three minus three",
+     "He catches her"
+    ]
+   },
+   {
+    "say": "Look at the gap column. Nine, six, three, zero.",
+    "at": [
+     "Look at the gap column",
+     "Nine, six, three"
+    ]
+   },
+   "Every hour, the gap closes by the same three kilometers.",
+   {
+    "say": "Why three? Because he rides nine, but she runs away six. Nine minus six is three.",
+    "at": [
+     "Nine minus six is three"
+    ]
+   },
+   {
+    "say": "Imagine the slow one stands still. Then the cyclist comes closer at only three kilometers per hour.",
+    "at": [
+     "Imagine the slow"
+    ]
+   },
+   "So in a chase, we subtract the speeds."
+  ],
+  [
+   {
+    "say": "Now look at the moment he catches her, after three hours.",
+    "at": [
+     "the moment he catches her",
+     "the moment he catches her",
+     "after three hours"
+    ]
+   },
+   {
+    "say": "The runner ran eighteen kilometers, from her start to the meeting point.",
+    "at": [
+     "The runner ran eighteen",
+     "from her start"
+    ]
+   },
+   {
+    "say": "The cyclist rode twenty-seven kilometers. He rode her nine-kilometer head start, and then her eighteen kilometers too.",
+    "at": [
+     "The cyclist rode twenty-seven",
+     "her nine-kilometer head start",
+     "then her eighteen"
+    ]
+   },
+   {
+    "say": "So his distance minus her distance is the head start. Twenty-seven minus eighteen is nine.",
+    "at": [
+     "Twenty-seven minus eighteen"
+    ]
+   },
+   {
+    "say": "He catches her when he has gained the whole starting gap.",
+    "at": [
+     "He catches her when",
+     "has gained the"
+    ]
+   },
+   {
+    "say": "He gains three kilometers every hour, and he needs nine. Nine divided by three is three hours.",
+    "at": [
+     "Nine divided by three"
+    ]
+   },
+   {
+    "say": "So in a chase, the time is the starting gap divided by the difference of the speeds.",
+    "at": [
+     "the time is the starting gap",
+     "gap divided by"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example. A bus drives at fifty kilometers per hour. A car drives behind it, at seventy.",
+    "at": [
+     "A bus drives",
+     "A bus drives",
+     "fifty kilometers per hour",
+     "A car drives behind it",
+     "at seventy"
+    ]
+   },
+   {
+    "say": "At the start, the bus is ten kilometers ahead of the car.",
+    "at": [
+     "ten kilometers ahead"
+    ]
+   },
+   {
+    "say": "It's a chase, so we subtract. The car gains seventy minus fifty, twenty kilometers every hour.",
+    "at": [
+     "It's a chase",
+     "seventy minus fifty"
+    ]
+   },
+   {
+    "say": "It needs to gain ten kilometers. Ten divided by twenty is half an hour.",
+    "at": [
+     "It needs to",
+     "Ten divided by twenty",
+     "half an hour"
+    ]
+   },
+   {
+    "say": "So the car catches the bus after thirty minutes.",
+    "at": [
+     "after thirty minutes"
+    ]
+   },
+   {
+    "say": "And what if the faster one is in front? Then the gap doesn't close. It grows.",
+    "at": [
+     "And what if"
+    ]
+   },
+   {
+    "say": "Say the car is in front and drives away from the bus. The gap grows by seventy minus fifty, twenty kilometers every hour.",
+    "at": [
+     "The gap grows by seventy minus fifty"
+    ]
+   },
+   {
+    "say": "The same direction, so we still subtract the speeds.",
+    "at": [
+     "The same direction"
+    ]
+   }
+  ],
+  [
+   {
     "say": "Here's the classic mistake, and it's almost always in a chase.",
     "at": [
      "and it's almost"
@@ -44,18 +256,19 @@
      "Half an hour"
     ]
    },
+   "We solve it in two stages. In the first stage, only Dan walks. In the second stage, both of them move.",
    {
-    "say": "Let's find the head start. In half an hour, Dan walks four times a half, two kilometers.",
+    "say": "So first, the head start. In half an hour, Dan walks four times a half, two kilometers.",
     "at": [
      "Dan walks four times a half",
      "two kilometers."
     ]
    },
    {
-    "say": "Now his sister starts, so we mark her start time on the sketch. The gap between them is two kilometers.",
+    "say": "Now the second stage. His sister starts, so we mark her start time on the sketch. The gap between them is two kilometers.",
     "at": [
-     "Now his sister starts",
-     "we mark her",
+     "His sister starts",
+     "mark her start",
      "The gap between them is two kilometers"
     ]
    },
@@ -116,12 +329,14 @@
      "So Ben's speed",
      "one and a half times as fast"
     ]
-   },
+   }
+  ],
+  [
    {
-    "say": "Now the other reading. If he caught her thirty seconds after he started, Ben runs thirty seconds, and Ava runs ten more, forty.",
+    "say": "Now change just the last part of the question. Ben still starts ten seconds after Ava. But suppose Ben catches Ava thirty seconds after Ben starts. Ben runs thirty seconds, and Ava runs ten more, forty.",
     "at": [
-     "If he caught her thirty seconds after he started",
-     "runs thirty seconds"
+     "last part of",
+     "Ben runs thirty seconds"
     ]
    },
    {
@@ -149,6 +364,15 @@
     "say": "In a chase, we subtract them.",
     "at": [
      "In a chase, we subtract them"
+    ]
+   },
+   {
+    "say": "They meet when together they cover the whole gap. And the time is the gap divided by the relative speed.",
+    "at": [
+     "They meet when together",
+     "cover the whole",
+     "the time is the gap divided",
+     "divided by the"
     ]
    },
    {

@@ -15,109 +15,478 @@
    {
     "say": "Relative speed is the rate at which the gap between two travelers changes.",
     "at": [
-     "rate at which"
+     "Relative speed is the rate",
+     "at which the"
     ]
    },
-   "We don't follow each one on its own. We follow the gap between them. How many kilometers does the gap change in one hour?"
+   "We don't follow each one on its own. We follow the gap between them.",
+   "How many kilometers does the gap change in one hour? That's the relative speed."
   ],
   [
    {
-    "say": "Now a new example. Two walkers start twenty-four kilometers apart, and walk toward each other. One walks at three kilometers per hour, and the other at five.",
+    "say": "Now a new example. Mia and Leo stand twenty-four kilometers apart, on the same road.",
     "at": [
-     "Two walkers start",
-     "twenty-four kilometers apart",
-     "and walk toward each other",
-     "One walks at three",
-     "per hour, and"
-    ]
-   },
-   "In one hour, the first walker covers three kilometers, and the second covers five. Both of them make the gap smaller.",
-   {
-    "say": "So the gap shrinks by three plus five, eight kilometers every hour.",
-    "at": [
-     "three plus five, eight"
+     "Mia and Leo stand",
+     "Mia and Leo stand",
+     "twenty-four kilometers apart"
     ]
    },
    {
-    "say": "Picture a head-on crash. The two cars hit with both speeds together. That's why we add the speeds.",
+    "say": "They walk toward each other. Mia walks three kilometers per hour, and Leo walks five.",
     "at": [
-     "The two cars"
+     "They walk toward",
+     "Mia walks three",
+     "Leo walks five"
     ]
    },
    {
-    "say": "The gap is twenty-four kilometers, and it shrinks by eight every hour. Twenty-four divided by eight is three. So they meet after three hours.",
+    "say": "Let's see where they are after one hour.",
     "at": [
-     "Twenty-four divided by eight",
-     "So they meet"
+     "after one hour"
+    ]
+   },
+   {
+    "say": "In one hour, Mia walks three kilometers. So she's three kilometers from her start.",
+    "at": [
+     "Mia walks three kilometers",
+     "So she's three"
+    ]
+   },
+   {
+    "say": "Leo walks five kilometers toward her. So he's five kilometers from his start.",
+    "at": [
+     "Leo walks five kilometers",
+     "So he's five"
+    ]
+   },
+   {
+    "say": "Together, they closed three plus five, eight kilometers. So the gap is twenty-four minus eight, sixteen.",
+    "at": [
+     "three plus five, eight",
+     "So the gap",
+     "twenty-four minus eight, sixteen"
+    ]
+   },
+   {
+    "say": "Now after two hours. Each of them walks for one more hour.",
+    "at": [
+     "after two hours",
+     "Each of them"
+    ]
+   },
+   {
+    "say": "Mia walks three more kilometers. So she's six kilometers from her start.",
+    "at": [
+     "six kilometers from her start"
+    ]
+   },
+   {
+    "say": "Leo walks five more. So he's ten kilometers from his start.",
+    "at": [
+     "ten kilometers from his start"
+    ]
+   },
+   {
+    "say": "The gap shrinks by eight again. Sixteen minus eight is eight kilometers.",
+    "at": [
+     "shrinks by eight again",
+     "Sixteen minus eight"
+    ]
+   },
+   {
+    "say": "And after three hours? Mia is nine kilometers from her start. Leo is fifteen kilometers from his.",
+    "at": [
+     "after three hours",
+     "Mia is nine kilometers",
+     "Leo is fifteen kilometers"
+    ]
+   },
+   {
+    "say": "The gap shrinks by eight once more. Eight minus eight is zero. They meet.",
+    "at": [
+     "by eight once more",
+     "Eight minus eight is zero",
+     "They meet"
+    ]
+   },
+   {
+    "say": "Now look only at the gap column. Twenty-four, sixteen, eight, zero.",
+    "at": [
+     "look only at the gap column",
+     "column. Twenty-four, sixteen"
+    ]
+   },
+   "Every hour, the gap shrinks by the same eight kilometers.",
+   "Why eight? Because every hour, Mia closes three kilometers, and Leo closes five.",
+   {
+    "say": "Three plus five is eight. So the gap shrinks by eight every hour.",
+    "at": [
+     "Three plus five is eight",
+     "eight every hour"
+    ]
+   },
+   "So we don't need to find where each of them is. We only follow the gap."
+  ],
+  [
+   {
+    "say": "Now look at the moment they meet, after three hours.",
+    "at": [
+     "the moment they meet",
+     "the moment they meet"
+    ]
+   },
+   {
+    "say": "Mia walked nine kilometers, from her start to the meeting point.",
+    "at": [
+     "Mia walked nine kilometers",
+     "her start to"
+    ]
+   },
+   {
+    "say": "Leo walked fifteen kilometers, from his start to the same point.",
+    "at": [
+     "Leo walked fifteen kilometers",
+     "his start to"
+    ]
+   },
+   {
+    "say": "Together, their two pieces make the whole road between them. Nine plus fifteen is twenty-four.",
+    "at": [
+     "make the whole road",
+     "Nine plus fifteen"
+    ]
+   },
+   {
+    "say": "So they meet when together they have covered the whole gap.",
+    "at": [
+     "they meet when together",
+     "have covered the"
+    ]
+   },
+   "Every hour, together they cover eight kilometers. They need to cover twenty-four.",
+   {
+    "say": "How many hours is that? Twenty-four divided by eight is three hours.",
+    "at": [
+     "Twenty-four divided by eight"
+    ]
+   },
+   {
+    "say": "That's the quick way. The time is the gap divided by the relative speed.",
+    "at": [
+     "The time is the gap divided",
+     "divided by the"
     ]
    }
   ],
   [
    {
-    "say": "Now the same two walkers start from the same point, and walk in opposite directions, away from each other.",
+    "say": "Here's an easy way to remember that we add.",
     "at": [
-     "walkers start from",
-     "walk in opposite directions",
-     "walk in opposite directions",
-     "away from each other"
+     "to remember that"
     ]
    },
    {
-    "say": "In one hour, one walks three kilometers one way, and the other walks five kilometers the other way.",
+    "say": "Imagine a truck that drives at twenty kilometers per hour. A car drives toward it at fifty.",
+    "at": [
+     "Imagine a truck",
+     "Imagine a truck",
+     "twenty kilometers per hour",
+     "A car drives toward it"
+    ]
+   },
+   {
+    "say": "In one hour, the truck covers twenty kilometers, and the car covers fifty.",
     "at": [
      "In one hour"
     ]
    },
    {
-    "say": "So the gap grows by three plus five, eight kilometers every hour. Opposite directions, so again we add.",
+    "say": "So together, they close twenty plus fifty, seventy kilometers every hour.",
     "at": [
-     "So the gap grows by three plus five",
-     "Opposite directions, so"
+     "twenty plus fifty, seventy"
+    ]
+   },
+   {
+    "say": "If they crash, it's like a crash at seventy. Toward each other, we add the speeds.",
+    "at": [
+     "If they crash",
+     "Toward each other, we add"
     ]
    }
   ],
   [
    {
-    "say": "Now a chase. A runner runs at six kilometers per hour. A cyclist rides behind her, on the same road, at nine.",
+    "say": "Now a new example, with different numbers.",
     "at": [
-     "Now a chase",
-     "A runner runs at six",
-     "kilometers per hour",
-     "A cyclist rides behind her"
+     "with different numbers"
     ]
    },
    {
-    "say": "In one hour, the runner moves six kilometers ahead, and the cyclist moves nine. The runner keeps running away, while the cyclist tries to catch up.",
+    "say": "Sara and Tom start fifty kilometers apart, and ride toward each other.",
     "at": [
-     "In one hour"
+     "Sara and Tom start",
+     "Sara and Tom start",
+     "fifty kilometers apart",
+     "toward each other"
     ]
    },
    {
-    "say": "So the cyclist gains only nine minus six, three kilometers every hour. In a chase, we subtract.",
+    "say": "Sara rides at twelve kilometers per hour, and Tom rides at eight.",
     "at": [
-     "nine minus six, three",
-     "In a chase"
+     "Sara rides at twelve",
+     "Tom rides at eight"
     ]
    },
    {
-    "say": "Say the cyclist starts two kilometers behind her. He closes two kilometers at three kilometers an hour.",
+    "say": "They ride toward each other, so we add the speeds. Twelve plus eight is twenty.",
     "at": [
-     "two kilometers behind her",
-     "He closes two"
+     "They ride toward",
+     "Twelve plus eight"
     ]
    },
    {
-    "say": "Two divided by three is two thirds of an hour. Two thirds of sixty minutes is forty minutes.",
+    "say": "So the gap shrinks by twenty kilometers every hour. Let's follow the gap.",
     "at": [
-     "Two divided by three",
-     "Two thirds of sixty"
+     "So the gap"
     ]
    },
    {
-    "say": "So toward each other or apart, we add. In a chase, we subtract. [pause] Okay. I'll see you in the next part.",
+    "say": "At the start, the gap is fifty kilometers.",
+    "at": [
+     "At the start, the gap",
+     "is fifty kilometers"
+    ]
+   },
+   {
+    "say": "After one hour, it's fifty minus twenty, thirty.",
+    "at": [
+     "fifty minus twenty, thirty"
+    ]
+   },
+   {
+    "say": "After two hours, it's thirty minus twenty, ten.",
+    "at": [
+     "thirty minus twenty, ten"
+    ]
+   },
+   {
+    "say": "Now only ten kilometers are left. That's less than one hour of riding.",
+    "at": [
+     "Now only ten"
+    ]
+   },
+   {
+    "say": "Ten is half of twenty. So they need half an hour more. They meet after two and a half hours.",
+    "at": [
+     "They meet after two and a half",
+     "a half hours"
+    ]
+   },
+   {
+    "say": "The quick way gives the same answer. Fifty divided by twenty is two and a half hours.",
+    "at": [
+     "Fifty divided by twenty",
+     "two and a"
+    ]
+   },
+   {
+    "say": "Two and a half hours is two hours and thirty minutes.",
+    "at": [
+     "two hours and thirty minutes"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's check that they really meet after two and a half hours.",
+    "at": [
+     "Let's check",
+     "Let's check",
+     "meet after two"
+    ]
+   },
+   {
+    "say": "In two and a half hours, Sara rides twelve times two and a half. That's thirty kilometers.",
+    "at": [
+     "Sara rides twelve times",
+     "and a half. That's",
+     "That's thirty kilometers"
+    ]
+   },
+   {
+    "say": "Tom rides eight times two and a half. That's twenty kilometers.",
+    "at": [
+     "Tom rides eight times",
+     "and a half",
+     "That's twenty kilometers"
+    ]
+   },
+   {
+    "say": "Thirty plus twenty is fifty. Together they covered the whole gap, so they meet.",
+    "at": [
+     "Thirty plus twenty",
+     "covered the whole gap"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now a new example, with the same Mia and Leo. This time, they start from the same point.",
+    "at": [
+     "with the same",
+     "start from the same point",
+     "start from the same point"
+    ]
+   },
+   {
+    "say": "They walk in opposite directions, away from each other.",
+    "at": [
+     "They walk in"
+    ]
+   },
+   {
+    "say": "At the start, the gap between them is zero.",
+    "at": [
+     "the gap between them is zero"
+    ]
+   },
+   {
+    "say": "Mia walks three kilometers per hour, and Leo walks five.",
+    "at": [
+     "Mia walks three",
+     "Leo walks five"
+    ]
+   },
+   {
+    "say": "After one hour, Mia is three kilometers from the start, on one side.",
+    "at": [
+     "After one hour",
+     "Mia is three kilometers",
+     "the start, on"
+    ]
+   },
+   {
+    "say": "Leo is five kilometers from the start, on the other side.",
+    "at": [
+     "Leo is five kilometers"
+    ]
+   },
+   {
+    "say": "So the gap is three plus five, eight kilometers.",
+    "at": [
+     "three plus five",
+     "eight kilometers"
+    ]
+   },
+   {
+    "say": "After two hours, Mia is six kilometers from the start, and Leo is ten.",
+    "at": [
+     "After two hours",
+     "Mia is six kilometers",
+     "the start, and",
+     "Leo is ten"
+    ]
+   },
+   {
+    "say": "The gap grows by eight again. Eight plus eight is sixteen.",
+    "at": [
+     "grows by eight again",
+     "Eight plus eight"
+    ]
+   },
+   {
+    "say": "After three hours, Mia is nine kilometers from the start, and Leo is fifteen.",
+    "at": [
+     "After three hours",
+     "Mia is nine kilometers",
+     "the start, and",
+     "Leo is fifteen"
+    ]
+   },
+   {
+    "say": "The gap grows by eight once more. Sixteen plus eight is twenty-four.",
+    "at": [
+     "by eight once more",
+     "Sixteen plus eight"
+    ]
+   },
+   {
+    "say": "Look at the gap column again. Zero, eight, sixteen, twenty-four.",
+    "at": [
+     "Look at the gap column",
+     "again. Zero, eight"
+    ]
+   },
+   "Every hour, the gap grows by the same eight kilometers.",
+   {
+    "say": "They walk in opposite directions, so again we add. Three plus five is eight.",
+    "at": [
+     "Three plus five is eight"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now two quick questions about Mia and Leo.",
+    "at": [
+     "about Mia and"
+    ]
+   },
+   "How far apart are they after five hours? The gap grows by eight every hour.",
+   {
+    "say": "So after five hours, the gap is five times eight, forty kilometers.",
+    "at": [
+     "five times eight"
+    ]
+   },
+   {
+    "say": "And when are they twenty kilometers apart? We need a gap of twenty.",
+    "at": [
+     "And when are"
+    ]
+   },
+   {
+    "say": "The gap grows by eight every hour. Twenty divided by eight is two and a half hours.",
+    "at": [
+     "Twenty divided by eight"
+    ]
+   },
+   {
+    "say": "Now a new example. Two cars leave the same town at the same time, in opposite directions.",
+    "at": [
+     "Two cars leave",
+     "Two cars leave",
+     "the same town",
+     "same time, in"
+    ]
+   },
+   {
+    "say": "One drives at forty kilometers per hour, and the other at sixty.",
+    "at": [
+     "One drives at forty",
+     "per hour, and",
+     "the other at sixty"
+    ]
+   },
+   {
+    "say": "Opposite directions, so we add. Forty plus sixty is a hundred kilometers every hour.",
+    "at": [
+     "Forty plus sixty"
+    ]
+   },
+   {
+    "say": "When are they a hundred fifty kilometers apart? The gap grows by a hundred every hour. So a hundred fifty divided by a hundred is one and a half hours.",
+    "at": [
+     "When are they",
+     "A hundred fifty divided by a hundred",
+     "a hundred is"
+    ]
+   },
+   {
+    "say": "So toward each other or apart, we add the speeds. [pause] Okay. I'll see you in the next part.",
     "at": [
      "toward each other or apart",
-     "In a chase"
+     "we add the"
     ]
    }
   ]

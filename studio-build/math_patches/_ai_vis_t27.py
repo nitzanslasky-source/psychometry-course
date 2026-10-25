@@ -900,7 +900,7 @@ def ROAD(name, layers, col=0, w=None, title='The sketch', H=None, Y=None):
     return MV.items(_layers, name, out, w=w, col=col, own=True)
 
 
-def TRACK(name, layers, col=0, w=None, title='The circular track'):
+def TRACK(name, layers, col=0, w=None, title='The circular track', label_size=26):
     """a circular track; angles in degrees, 0 = the start at the bottom, growing counter-clockwise. layers:
       ('start', text)                     the start line at the bottom, its text under it
       ('runner', a, text[, colour])       a runner at angle a, its name outside the track
@@ -925,7 +925,7 @@ def TRACK(name, layers, col=0, w=None, title='The circular track'):
             elif k == 'runner':
                 c = col_(m[3] if len(m) > 3 else ''); x, y = P(m[1]); xo, yo = P(m[1], r - 46)
                 b += '<circle cx="%.1f" cy="%.1f" r="12" fill="%s" stroke="#ffffff" stroke-width="2"/>' % (x, y, c)
-                b += _tx(xo, yo + 9, m[2], 26, c)
+                b += _tx(xo, yo + 9, m[2], label_size, c)
             elif k == 'dir':
                 a0, a1 = m[1], m[2]; c = col_(m[4] if len(m) > 4 else ''); rr = r + 26 if len(m) <= 5 else m[5]
                 n = 24; pts = [P(a0 + (a1 - a0) * j / float(n), rr) for j in range(n + 1)]
@@ -933,14 +933,14 @@ def TRACK(name, layers, col=0, w=None, title='The circular track'):
                 (x1, y1), (x2, y2) = pts[-3], pts[-1]
                 b += MV._arrow(x1, y1, x2, y2, c, 3.2)
                 xm, ym = P((a0 + a1) / 2.0, rr + 40)
-                b += _tx(xm, ym + 9, m[3], 26, c)
+                b += _tx(xm, ym + 9, m[3], label_size, c)
             elif k == 'center':
-                b += _tx(cx, cy - 6 + 40 * (m[2] if len(m) > 2 else 0), m[1], 28, _TEAL)
+                b += _tx(cx, cy - 6 + 40 * (m[2] if len(m) > 2 else 0), m[1], max(28,label_size), _TEAL)
             elif k == 'meet':
                 x, y = P(m[1]); xo, yo = P(m[1], r + 44)
                 pts = ' '.join('%.1f,%.1f' % (x + (17 if i % 2 == 0 else 7) * math.cos(math.pi * (i / 5.0 - .5)),
                                               y + (17 if i % 2 == 0 else 7) * math.sin(math.pi * (i / 5.0 - .5))) for i in range(10))
-                b += '<polygon points="%s" fill="%s" stroke="#ffffff" stroke-width="1.5"/>' % (pts, _RED27) + _tx(xo, yo + 9, m[2], 26, _RED27)
+                b += '<polygon points="%s" fill="%s" stroke="#ffffff" stroke-width="1.5"/>' % (pts, _RED27) + _tx(xo, yo + 9, m[2], label_size, _RED27)
         out.append((key, MV._svg(W, H, b, '%s: %s' % (title, key))))
     return MV.items(_layers, name, out, w=w, col=col, own=True)
 
@@ -1036,8 +1036,8 @@ _wp106 = [
         "ride?", show(m_e1, 'A cyclist rides at fifteen kilometers per hour')),
       L("Fifteen kilometers per hour means fifteen kilometers in each hour. So every hour adds fifteen more "
         "kilometers."),
-      L("Three hours is fifteen times three, forty-five. So she rides forty-five kilometers.",
-        show(m_e2, 'fifteen times three, forty-five')),
+      L("For three hours, we multiply fifteen by three. Fifteen times three is forty-five. So she rides forty-five kilometers.",
+        show(m_e2, 'Fifteen times three is forty-five')),
       L("So to find the distance, we multiply the speed by the time.")),
     S('The triangle',
       L("If you're not sure when to multiply and when to divide, use the motion triangle.",
@@ -1184,8 +1184,8 @@ m_sk = ROAD('m_sk', [
     ('ends', [('end', 0, 'town A'), ('end', 1, 'town B')]),
     ('dots', [('dot', 0, 'Dan 8:00'), ('dot', 1, 'Eli 9:00', 'orange')]),
     ('arr', [('arrow', 0, .3, '40 kph'), ('arrow', 1, .7, '60 kph', 0, 'orange')]),
-    ('gap', [('gap', 0, 1, 'the gap: 100 km')]),
-    ('meet', [('meet', .55, 'they meet')])], w=900)
+    ('gap', [('gap', 0, 1, 'initial gap: 100 km')]),
+    ('meet', [('meet', .64, 'they meet')])], w=900)
 m_p0 = RTRI('m_p0', [('height', [('height', 'height'), ('right',)]), ('path', [('path', 'the path')]), ('ground', [('ground', 'the ground')])], w=600)
 m_p1 = IH('m_p1', '$a^2+b^2=c^2$', size=38)
 m_p2 = IH('m_p2', '$3^2+4^2=9+16=25=5^2$', size=34)
@@ -1216,33 +1216,34 @@ _wp106 += [
       L("The times add up too. Two plus two is four hours.", show(m_b4, 'Two plus two is four'),
         show(m_tb['t2'], 'is four hours')),
       L("But the speeds don't add up. Fifteen plus ten is not her speed on the whole trip. We'll see why in the "
-        "next lesson, average speed.", show(m_b5, 'Fifteen plus ten is not'), show(m_tb['t3'], 'is not her speed')),
+        "average-speed lesson.", show(m_b5, 'Fifteen plus ten is not'), show(m_tb['t3'], 'is not her speed')),
       L("Then we look for the link the question gives us. Equal times, equal distances, or a total.",
         show(m_b6, 'Equal times, equal distances, or a total')),
       L("For example, if two travelers ride for the same time, we write their two times as equal. That gives us the equation.")),
     S('Draw a sketch',
       L("And in every motion question, draw a sketch. It takes a few seconds, and it shows what really happens."),
+      L("Let's build an example sketch without solving it yet. Dan leaves town A at eight, at forty kilometers per hour. Eli leaves town B at nine, at sixty. The towns are a hundred kilometers apart."),
       L("Draw the road, and mark where it starts and ends.", show(m_sk['line'], 'Draw the road'),
         show(m_sk['ends'], 'mark where it starts and ends')),
       L("Put a dot for each traveler, and write the time each one starts.", show(m_sk['dots'], 'Put a dot for each traveler')),
       L("Draw an arrow for each direction, and write the speed on it.", show(m_sk['arr'], 'Draw an arrow for each direction')),
-      L("Mark the distance between them. That's the gap.", show(m_sk['gap'], 'Mark the distance between them')),
+      L("Mark the initial distance between the towns, a hundred kilometers. That's the gap before anyone moves.",
+        show(m_sk['gap'], 'Mark the initial distance between the towns')),
       L("And when they meet, mark the meeting point. We'll solve questions like this one in the relative speed "
         "lesson.", show(m_sk['meet'], 'mark the meeting point'))),
     S('Directions at an angle',
       L("Sometimes the directions are not on one line. A plane climbs at an angle. Or one person walks north, and "
         "another walks west."),
-      L("Then the sketch is a right triangle.", show(m_p0['line'], 'Then the sketch is a right triangle')),
-      L("The height and the ground are the two short sides. The path along the slope is the long side.",
-        show(m_p0['height'], 'The height and'), show(m_p0['ground'], 'and the ground'),
-        show(m_p0['path'], 'The path along the slope')),
+      L("For the plane climbing above level ground, the sketch is a right triangle.", show(m_p0['line'], 'the sketch is a right triangle')),
+      L("The vertical height and the horizontal ground meet at a right angle. They are the two legs. The sloping path is the hypotenuse, the longest side.",
+        show(m_p0['height'], 'The vertical height'), show(m_p0['ground'], 'and the horizontal ground'),
+        show(m_p0['path'], 'The sloping path')),
       L("Remember Pythagoras, from topic thirty-one. We call the two short sides a and b, and the long side c. Then a "
         "squared plus b squared is equal to c squared.", show(m_p1, 'Then a squared plus b squared')),
       L("For example, short sides three and four. Three squared is nine, and four squared is sixteen. Nine plus sixteen is "
         "twenty-five, and twenty-five is five squared. "
         "So the long side is five.", show(m_p2, 'Nine plus sixteen is twenty-five')),
-      L("So when the directions are different, always draw. And the distance in the formula is the real path, along "
-        "the slope.")),
+      L("So when the directions are different, draw a sketch. Use Pythagoras only if the triangle has a right angle. Here, speed times time gives the path along the slope, not the height.")),
     S('Recap',
       L("So let's sum it up. Distance is equal to speed times time. In the triangle, cover the one you want.",
         show(m_s1, 'Distance is equal to speed times time')),
@@ -1311,7 +1312,7 @@ video('solve-wp27-g107', 'solution', qid='wp27-g107', slides=[
 # Two methods: Pythagoras with the shortcut a² - b² = (a - b)(a + b) (topic 4; R36: no 17² by heart), and her move, a
 # known triple (8, 15, 17, said honestly as "if you know it"). Pythagoras and the triple are REMINDERS (topic 31). The
 # path first, at the step: "1.7 is not our final answer yet" (choice 1 is the path).
-g8r = RTRI('g8r', [('height', [('height', '?'), ('right',)]), ('path', [('path', '1.7 km')]), ('ground', [('ground', '1.5 km')])], w=400, col=1)
+g8r = RTRI('g8r', [('height', [('height', '?'), ('right',)]), ('path', [('path', '1.7 km')]), ('ground', [('ground', '1.5 km')])], w=540, col=1)
 g8a = IH('g8a', '$6$ minutes $=\\frac{6}{60}=\\frac{1}{10}$ hour', size=30)
 g8b = IH('g8b', '$17\\times\\frac{1}{10}=1.7$ km', size=30)
 g8c = IH('g8c', '$1.7$ km: $\\ $the path, $\\ $not the height', size=30)
@@ -1377,6 +1378,7 @@ video('solve-wp27-g108', 'solution', qid='wp27-g108', slides=[
 # friendly 120 km -> 80, not 90; equal TIMES -> the plain average (1 h at 40 + 1 h at 80 -> 60; real-exam audit A7);
 # "equal distances or equal times?". Numbers differ from g109 (105 / 70), q-r26-t27-21 / -22 and the Hebrew (60 / 40).
 v8f = I('v8f', 'Average speed $=\\dfrac{\\text{total distance}}{\\text{total time}}$', size=42)
+v8meaning = I('v8meaning', 'Average speed: $\\ $one constant speed for the same distance in the same total time', size=36)
 v8t = TBL('v8t', ['Speed', 'Distance', 'Time'], ['part 1', 'part 2', 'total'], [
     ('r1', [('c', 0, 0, '12'), ('c', 0, 1, '24'), ('c', 0, 2, '2')]),
     ('r2', [('c', 1, 0, '6'), ('c', 1, 1, '6'), ('c', 1, 2, '1')]),
@@ -1405,7 +1407,7 @@ v8q3 = IH('v8q3', '$\\frac{40+80}{2}=60$: $\\ $the same', size=32)
 v8q4 = I('v8q4', 'Equal times: $\\ $the plain average works', size=34)
 v8q5 = I('v8q5', 'Equal distances: $\\ $closer to the slower speed', size=34)
 v8r1 = I('v8r1', 'Total distance $\\div$ total time. $\\ $Stops count as time.', size=34)
-v8r2 = I('v8r2', 'Not the average of the speeds', size=34)
+v8r2 = I('v8r2', 'Ordinary average of speeds: $\\ $only for equal times', size=34)
 v8r3 = I('v8r3', 'First ask: $\\ $equal distances, or equal times?', size=34)
 v8r4 = I('v8r4', 'No distance given? $\\ $Pick a friendly one.', size=34)
 video('wp-108-after', 'lesson', slides=[
@@ -1414,9 +1416,10 @@ video('wp-108-after', 'lesson', slides=[
       L("Honestly, it's rare on the exam. But the idea behind it shows up in other words, and it hides a classic trap. "
         "So let's understand it properly.")),
     S('What it means',
-      L("Picture my hand moving across this page. Slow at first, then fast, then slow again, and then it stops."),
-      L("My speed kept changing. So what is my average speed?"),
-      L("The average speed is the one constant speed that covers the same distance in the same time."),
+      L("Imagine moving your hand across a page. Move slowly, then quickly, then slowly again, and stop."),
+      L("The hand's speed kept changing. So what is its average speed?"),
+      L("The average speed is the one constant speed that covers the same distance in the same time.",
+        show(v8meaning, 'The average speed is the one constant speed')),
       L("The exam may not say average speed. It may say, if it had moved at a constant speed. That's the same thing.")),
     S('Total distance over total time',
       L("Here is how we find it. The average speed is the total distance divided by the total time.",
@@ -1468,14 +1471,14 @@ video('wp-108-after', 'lesson', slides=[
       L("The total time is two hours. So the average speed is a hundred twenty divided by two, sixty.",
         show(v8q2, 'a hundred twenty divided by two')),
       L("And sixty is exactly the middle of forty and eighty.", show(v8q3, 'exactly the middle of forty and eighty')),
-      L("Why? Each speed lasts the same time, so each one pulls the same."),
+      L("Why? Each speed lasts one hour. So we add forty and eighty kilometers, then divide by two hours. That is exactly the ordinary average of the speeds."),
       L("So before we calculate, we ask, equal distances or equal times? With equal times, the plain average works.",
         show(v8q4, 'With equal times')),
       L("With equal distances, the answer is closer to the slower speed.", show(v8q5, 'With equal distances'))),
     S('Recap',
       L("So let's sum it up. The average speed is the total distance divided by the total time. And a stop counts as "
         "time.", show(v8r1, 'The average speed is the total distance')),
-      L("It's not the average of the speeds.", show(v8r2, "It's not the average of the speeds")),
+      L("Don't simply average the speeds unless the two travel times are equal.", show(v8r2, "Don't simply average the speeds")),
       L("First ask, equal distances, or equal times?", show(v8r3, 'First ask')),
       L("And if the distance is missing, pick a friendly number.", show(v8r4, 'if the distance is missing')),
       L("Now try the next question, and I'll see you in the next video.")),
@@ -1641,7 +1644,7 @@ _wp110 += [
       L("So we cut the road into one plus two, three equal parts.", show(r4s['parts'], 'three equal parts')),
       L("The slow cyclist covers one part, and the fast one covers two parts. So the slow one covers one third of the "
         "road.", show(r4s['shares'], 'The slow cyclist covers one part'), show(r4b, 'So the slow one covers one third')),
-      L("Let's check it. They meet after three hours. The slow one rides thirty kilometers, and the fast one sixty. "
+      L("Let's check it. They meet after three hours. The slow cyclist rides thirty kilometers. The fast cyclist rides sixty kilometers. "
         "Thirty plus sixty is ninety, the whole road.", show(r4c, 'They meet after three hours')),
       L("So in a meeting, the road is cut into the sum of the ratio parts.")),
     S('Two things change: the V',
@@ -1651,8 +1654,8 @@ _wp110 += [
         "kilometers. How far does car B go?", show(r5s, 'Car A drives three times as fast')),
       L("We make the table speed, distance and time, with the distance in the middle. The distance is the speed times "
         "the time, just like work is the team times the time.", show(r5v['line'], 'We make the table speed, distance and time')),
-      L("No real speeds or times are given, so we put in the relations. Car A gets speed three, and time one. It covers "
-        "ninety.", show(r5v['r1'], 'Car A gets speed three')),
+      L("We use ratio parts for the speed and time, not real units. Car A gets speed three, and time one. Its real distance is "
+        "ninety kilometers.", show(r5v['r1'], 'Car A gets speed three')),
       L("Car B gets speed one. Its time is two, because car A drives half as long as car B. Its distance is the "
         "question.", show(r5v['r2'], 'Car B gets speed one')),
       L("The unknown is in the middle column. So the V is upside down. It joins car B's speed, car A's distance, and "
@@ -1818,7 +1821,7 @@ video('solve-q-r26-t27-31', 'solution', qid='q-r26-t27-31', slides=[
         pt('stem: ask', "they ask for the van's time")),
       L("We'll solve it in two different ways. Let's start with the math way, with the V, like in the lesson. The table "
         "is speed, distance and time, with the distance in the middle.", show(q31v['line'], 'with the V, like in the lesson')),
-      L("There are no real speeds or distances, only relations. So the scooter gets speed one and distance one. Its time "
+      L("We use ratio parts for the speeds and distances, not real units. So the scooter gets speed one and distance one. Its real time "
         "is forty minutes.", show(q31v['r1'], 'the scooter gets speed one')),
       L("The van goes one and a half times as fast, so its speed is one point five. It goes three times as far, so its "
         "distance is three. Its time is the question.", show(q31v['r2'], 'so its speed is one point five')),
@@ -1848,96 +1851,479 @@ video('solve-q-r26-t27-31', 'solution', qid='q-r26-t27-31', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ wp-113 (lesson: relative speed)
+# REWRITTEN 25 Oct at the teacher's request ("show where runner A is after an hour and where B is after an hour, and then
+# after 2 hours and after 3 hours, and show that the gap just expands or closes every hour by the same, so I don't have
+# to calculate each person ... explaining that the meeting point is where they cover together the whole thing ... make it
+# visually well"). Two parts (teacher, 25 Oct: exactly 2, longer parts are fine).
 # Hebrew (wp 7442-7498, 7639-7643): the rate the gap closes or opens; opposite directions (toward: the truck and the car
-# crash "at 70"; apart: the gap grows) -> add; the same direction (a chase) -> subtract; "only the gap between them
-# matters, not the whole way"; her closing recap: chases are where students slip; "Miki could be 100 and the father 102,
-# only the gap matters" (Hebrew-vs-English #4: restored here). R37 (the core of g114, g115, g116, g121, q-r26-t27-03 and
-# the practice): toward (3 + 5 = 8; a 24 km gap -> 3 h), apart (the gap grows 8 km an hour), a chase (6 and 9 -> 3;
-# 2 km behind -> 40 minutes); part 2: the starting gap only (100 and 102), a head start first (4 kph, half an hour,
-# 12 kph -> a 2 km gap -> 15 minutes), and - external findings, real exam 2026_spring_q2_17 - from whose start the time
-# is counted (Ava and Ben: 30 s from Ava's start -> 3/2; 30 s from Ben's start -> 4/3), with both start times and the
-# meeting time on the sketch. The times flip (distance fixed) is a REMINDER from wp-110.
-s3a = ROAD('s3a', [
-    ('dots', [('dot', 0, 'walker 1'), ('dot', 1, 'walker 2', 'orange')]),
-    ('arr', [('arrow', 0, .35, '3 kph'), ('arrow', 1, .65, '5 kph', 0, 'orange')]),
-    ('gap', [('gap', 0, 1, 'the gap: 24 km')])], w=820)
-s3b = IH('s3b', 'the gap shrinks by $3+5=8$ km an hour', size=32)
-s3c = IH('s3c', '$24\\div8=3$ hours', size=32)
-s3d = ROAD('s3d', [
-    ('dots', [('dot', .37, 'walker 1'), ('dot', .63, 'walker 2', 'orange')]),
-    ('arr', [('arrow', .37, .05, '3 kph'), ('arrow', .63, .95, '5 kph', 0, 'orange')])], w=820)
-s3e = IH('s3e', 'the gap grows by $3+5=8$ km an hour', size=32)
-s3f = ROAD('s3f', [
-    ('dots', [('dot', 0, 'cyclist'), ('dot', .3, 'runner', 'orange')]),
-    ('arr', [('arrow', 0, .25, '9 kph'), ('arrow', .3, .5, '6 kph', 0, 'orange')]),
-    ('gap', [('gap', 0, .3, '2 km')])], w=820)
-s3g = IH('s3g', 'the cyclist gains $9-6=3$ km an hour', size=32)
-s3h = IH('s3h', '$2\\div3=\\frac{2}{3}$ hour $=40$ minutes', size=32)
-s3i = I('s3i', 'Toward each other or apart: $\\ $add. $\\ $A chase: $\\ $subtract.', size=34)
+# crash "at 70"; apart: the gap grows) -> add; the same direction (a chase) -> subtract, the car covers the truck's way
+# plus the gap between them; "only the gap between them matters, not the whole way"; her closing recap: chases are where
+# students slip; "Miki could be 100 and the father 102, only the gap matters".
+# Part 1: the definition; TOWARD hour by hour (Mia 3 kph, Leo 5 kph, 24 km: the gap 24 -> 16 -> 8 -> 0, the same 8 every
+# hour = 3 + 5); the meeting = together they cover the whole gap (9 + 15 = 24); the quick way 24 / 8 = 3, time = the gap
+# divided by the relative speed; her truck 20 + car 50 = a crash at 70; a second example (Sara 12, Tom 8, 50 km: 50 -> 30
+# -> 10 -> 0, 2 1/2 h, checked 30 + 20 = 50); APART hour by hour (0 -> 8 -> 16 -> 24), after 5 h -> 40 km, 20 km apart ->
+# 2 1/2 h; cars 40 + 60, 150 km -> 1 1/2 h.
+# Part 2: the CHASE hour by hour (cyclist 9 kph, runner 6 kph 9 km ahead: 9 -> 6 -> 3 -> 0, the same 3 every hour);
+# "imagine the slow one stands still"; catching up = he covers her head start plus her way (27 - 18 = 9); time = the
+# starting gap / the difference (9 / 3 = 3); a second chase (car 70, bus 50, 10 km -> 1/2 h = 30 min) and the faster one
+# in front (the gap grows by the difference); the classic mistake (only the starting gap, 100 and 102); a head start first,
+# in two stages (Dan 4 kph, half an hour, sister 12 kph -> 2 km -> 8 -> 15 min); from whose start the time is counted
+# (external findings, real exam 2026_spring_q2_17: Ava and Ben, 30 s from Ava's start -> 3/2; from Ben's start -> 4/3),
+# every start time on the sketch; the recap. The later questions lean on these words: "with relative speed, like in the
+# lesson", "in two stages", "toward each other, so we add", "in a chase we subtract", "the head start", "from whose start",
+# "imagine the slow one stands still", "the time is the gap divided by the speed", "together they cover the whole lap".
+_RS_TEAL_BAND = MV.BAND
+
+
+def HOURS(name, lo, hi, rows, layers, w=1150, gapcol=True, title='Hour by hour', guides=(), y0=136, bottom=56):
+    """the hour-by-hour picture (wp-113, 2026-10-25): the same road drawn once per row (start, after 1 hour, after 2 hours
+    ...), positions in km from lo to hi, and the gap in a column at the right. The base: the column title, row 0's road
+    and its label, the faint start guides. layers = [(key, [mark, ...])]:
+      ('road', r)                          row r's road and its label (rows[r])
+      ('dot', r, km, text, colour[, side]) a mover and its name above it (side -1: name to the left, 1: to the right)
+      ('spd', r, km, d, text, colour)      a speed arrow above the mover, direction d (1 right, -1 left), its text
+      ('trail', r, a, b, text, colour, lvl) the way covered from a to b and the mover at b; lvl 0: a band on the road, its
+                                           text under the road; lvl 1: a thick line just above the road, its text above
+      ('note', r, km, text, colour)        a text under the road
+      ('above', r, km, text, colour[, lift]) a text above the road (lift: px higher)
+      ('gap', r, text)                     the gap in the column
+      ('chg', r, text)                     the change from the row above: an arrow down the column and its text
+      ('star', r, km)                      the meeting point (a red star)
+      ('brace', r, a, b, text, colour, lvl) a bracket under the road (lvl 1, 2: lower) and its text
+      ('colbox',)                          a frame around the gap column"""
+    import math
+    W = 1000; X0, X1 = 170, (770 if gapcol else 960); GX = 885
+    RH = 106; n = len(rows)
+    ys = [y0 + RH * r for r in range(n)]
+    H = ys[-1] + bottom
+    X = lambda km: X0 + (km - lo) * (X1 - X0) / float(hi - lo)
+    col_ = lambda c: {'orange': ORANGE, 'red': _RED27, 'ink': _INK}.get(c, _TEAL)
+    def _T(x, y, t, size=28, col=None, anchor='middle'):     # a centred label near an edge stays inside the picture
+        w2 = len(t) * size * 0.3
+        if anchor == 'middle' and x + w2 > W - 6: return _tx(W - 6, y, t, size, col, 'end')
+        if anchor == 'middle' and x - w2 < 6: return _tx(6, y, t, size, col, 'start')
+        return _tx(x, y, t, size, col, anchor)
+    def road(r):
+        y = ys[r]
+        return (_T(6, y + 11, rows[r], 30, _INK, 'start') +
+                '<rect x="%d" y="%d" width="%d" height="14" rx="7" fill="%s" stroke="%s" stroke-width="2.4"/>' % (X0, y - 7, X1 - X0, _LIGHT, _INK))
+    body = ''
+    for g in guides:
+        body += ('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="#9aa7b0" stroke-width="2" stroke-dasharray="6 6"/>'
+                 % (X(g), ys[0] + 10, X(g), H - 8))
+    if gapcol:
+        body += _T(GX, 36, 'the gap', 30, _TEAL)
+        body += '<line x1="800" y1="%d" x2="800" y2="%d" stroke="#c9d3d9" stroke-width="2"/>' % (14, H - 6)
+    body += road(0)
+    out = [('line', MV._svg(W, H, body, title))]
+    for key, marks in layers:
+        b = ''
+        for m in marks:
+            k = m[0]
+            if k == 'road':
+                b += road(m[1])
+            elif k == 'dot':
+                y = ys[m[1]]; c = col_(m[4]); x = X(m[2]); side = m[5] if len(m) > 5 else 0
+                b += '<circle cx="%.1f" cy="%d" r="12" fill="%s" stroke="#ffffff" stroke-width="2"/>' % (x, y, c)
+                b += _T(x + 14 * side, y - 22, m[3], 32, c, {-1: 'end', 0: 'middle', 1: 'start'}[side])
+            elif k == 'spd':
+                y = ys[m[1]] - 66; d = m[3]; x = X(m[2]) + 14 * d; c = col_(m[5])
+                b += MV._arrow(x, y, x + 96 * d, y, c, 3.2) + _T(x + 48 * d, y - 12, m[4], 30, c)
+            elif k == 'trail':
+                r, a, e, t, c, lvl = m[1:7]; y = ys[r]; cc = col_(c)
+                xa, xe = sorted((X(a), X(e)))
+                if lvl == 0:
+                    f = '#fbd9b9' if c == 'orange' else _RS_TEAL_BAND
+                    b += ('<rect x="%.1f" y="%d" width="%.1f" height="14" fill="%s" stroke="%s" stroke-width="2.4"/>'
+                          % (xa, y - 7, xe - xa, f, cc)) + _T((xa + xe) / 2, y + 42, t, 30, cc)
+                else:
+                    b += ('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-width="7" stroke-linecap="round"/>'
+                          % (xa, y - 18, xe, y - 18, cc)) + _T((xa + xe) / 2, y - 30, t, 30, cc)
+                b += '<circle cx="%.1f" cy="%d" r="12" fill="%s" stroke="#ffffff" stroke-width="2"/>' % (X(e), y, cc)
+            elif k == 'note':
+                b += _T(X(m[2]), ys[m[1]] + 42, m[3], 30, col_(m[4]))
+            elif k == 'above':
+                b += _T(X(m[2]), ys[m[1]] - 26 - (m[5] if len(m) > 5 else 0), m[3], 30, col_(m[4]))
+            elif k == 'gap':
+                b += _T(GX, ys[m[1]] + 15, m[2], 42, _TEAL)
+            elif k == 'chg':
+                r = m[1]
+                b += MV._arrow(GX, ys[r - 1] + 24, GX, ys[r] - 24, _TEAL, 3) + _T(GX + 20, (ys[r - 1] + ys[r]) / 2.0 + 10, m[2], 30, _TEAL, 'start')
+            elif k == 'star':
+                x = X(m[2]); y = ys[m[1]]
+                pts = ' '.join('%.1f,%.1f' % (x + (21 if i % 2 == 0 else 9) * math.cos(math.pi * (i / 5.0 - .5)),
+                                              y + (21 if i % 2 == 0 else 9) * math.sin(math.pi * (i / 5.0 - .5))) for i in range(10))
+                b += '<polygon points="%s" fill="%s" stroke="#ffffff" stroke-width="1.5"/>' % (pts, _RED27)
+            elif k == 'brace':
+                r, a, e, t, c, lvl = m[1:7]; cc = col_(c); y = ys[r] + 22 + 58 * lvl
+                xa, xe = X(a) + 2, X(e) - 2
+                b += ('<path d="M %.1f %d L %.1f %d L %.1f %d L %.1f %d" fill="none" stroke="%s" stroke-width="2.8"/>'
+                      % (xa, y - 12, xa, y, xe, y, xe, y - 12, cc)) + _T((xa + xe) / 2, y + 34, t, 30, cc)
+            elif k == 'colbox':
+                b += '<rect x="806" y="6" width="188" height="%d" rx="12" fill="none" stroke="%s" stroke-width="4"/>' % (H - 12, _TEAL)
+        out.append((key, MV._svg(W, H, b, '%s: %s' % (title, key))))
+    return MV.items(_layers, name, out, w=w, col=0, own=True)
+
+
+def STRIP(name, cells, w=1000, title='The gap, hour by hour'):
+    """the gap hour by hour as a strip of boxes (wp-113): cells = [(time, gap, change)] (change '' for the first);
+    layers 'line' (box 0), 'c1', 'c2', ... (an arrow with the change, then the next box)."""
+    cw, ag = 180, 84; n = len(cells); W = 20 + n * cw + (n - 1) * ag; H = 136
+    xs = [10 + i * (cw + ag) for i in range(n)]
+    def box(i):
+        t, g, _ = cells[i]; x = xs[i]
+        return (_tx(x + cw / 2.0, 30, t, 28, _INK) +
+                '<rect x="%d" y="44" width="%d" height="84" rx="10" fill="%s" stroke="%s" stroke-width="2.6"/>' % (x, cw, _LIGHT, _TEAL) +
+                _tx(x + cw / 2.0, 100, g, 40, _TEAL))
+    out = [('line', MV._svg(W, H, box(0), title + ': ' + cells[0][1]))]
+    for i in range(1, n):
+        b = MV._arrow(xs[i - 1] + cw + 8, 92, xs[i] - 8, 92, _TEAL, 3) + _tx((xs[i - 1] + cw + xs[i]) / 2.0, 76, cells[i][2], 28, _TEAL)
+        out.append(('c%d' % i, MV._svg(W, H, b + box(i), '%s: %s' % (title, cells[i][1]))))
+    return MV.items(_layers, name, out, w=w, col=0, own=True)
+
+
+s3meaning = I('s3meaning', 'Relative speed: $\\ $how fast the gap between them changes', size=36)
+# ---- part 1: toward each other, hour by hour (Mia 3 kph from km 0, Leo 5 kph from km 24)
+rsH = HOURS('rsH', 0, 24, ['start', '1 hour', '2 hours', '3 hours'], [
+    ('d0', [('dot', 0, 0, 'Mia', 'teal'), ('dot', 0, 24, 'Leo', 'orange')]),
+    ('g0', [('gap', 0, '24')]),
+    ('vA', [('spd', 0, 0, 1, '3 kph', 'teal')]),
+    ('vB', [('spd', 0, 24, -1, '5 kph', 'orange')]),
+    ('r1', [('road', 1)]),
+    ('a1', [('trail', 1, 0, 3, '3 km', 'teal', 0)]),
+    ('b1', [('trail', 1, 24, 19, '5 km', 'orange', 0)]),
+    ('c1', [('chg', 1, '−8')]),
+    ('g1', [('gap', 1, '16')]),
+    ('r2', [('road', 2)]),
+    ('a2', [('trail', 2, 0, 6, '6 km', 'teal', 0)]),
+    ('b2', [('trail', 2, 24, 14, '10 km', 'orange', 0)]),
+    ('c2', [('chg', 2, '−8')]),
+    ('g2', [('gap', 2, '8')]),
+    ('r3', [('road', 3)]),
+    ('a3', [('trail', 3, 0, 9, '9 km', 'teal', 0)]),
+    ('b3', [('trail', 3, 24, 9, '15 km', 'orange', 0)]),
+    ('c3', [('chg', 3, '−8')]),
+    ('g3', [('gap', 3, '0')]),
+    ('m3', [('star', 3, 9)]),
+    ('box', [('colbox',)])], guides=(0, 24), title='Toward each other, hour by hour')
+rsHk = IH('rsHk', 'every hour: $\\ 3+5=8$ km closer', size=32)
+rsT = HOURS('rsT', 0, 24, ['3 hours'], [
+    ('ends', [('above', 0, 0, "Mia's start", 'teal'), ('above', 0, 24, "Leo's start", 'orange')]),
+    ('a', [('trail', 0, 0, 9, 'Mia: 9 km', 'teal', 0)]),
+    ('b', [('trail', 0, 24, 9, 'Leo: 15 km', 'orange', 0), ('star', 0, 9)]),
+    ('all', [('brace', 0, 0, 24, 'the whole gap: 24 km', 'red', 1)])],
+    gapcol=False, y0=60, bottom=120, title='They meet')
+rsTa = IH('rsTa', '$9+15=24$', size=32)
+rsTk = I('rsTk', 'They meet when together they cover the whole gap.', size=34)
+rsTb = IH('rsTb', '$24\\div8=3$ hours', size=32)
+rsTf = I('rsTf', 'time $=$ the gap $\\div$ the relative speed', size=34)
+rsC = ROAD('rsC', [
+    ('dots', [('dot', .06, 'truck'), ('dot', .94, 'car', 'orange')]),
+    ('arrT', [('arrow', .06, .36, '20 kph')]),
+    ('arrC', [('arrow', .94, .64, '50 kph', 0, 'orange')])], w=1100, title='A truck and a car')
+rsCa = IH('rsCa', '$20+50=70$ km closer every hour', size=32)
+rsCk = I('rsCk', 'Toward each other: $\\ $add the speeds.', size=34)
+rsE = ROAD('rsE', [
+    ('dots', [('dot', 0, 'Sara'), ('dot', 1, 'Tom', 'orange')]),
+    ('gap', [('gap', 0, 1, 'the gap: 50 km')]),
+    ('arrS', [('arrow', 0, .3, '12 kph')]),
+    ('arrT', [('arrow', 1, .7, '8 kph', 0, 'orange')])], w=1100, title='Sara and Tom')
+rsEa = IH('rsEa', '$12+8=20$ km closer every hour', size=32)
+rsEs = STRIP('rsEs', [('start', '50', ''), ('1 hour', '30', '−20'), ('2 hours', '10', '−20'), ('2½ hours', '0', '−10')])
+rsEb = IH('rsEb', '$50\\div20=2\\frac{1}{2}$ hours', size=32)
+rsEc = IH('rsEc', '$2\\frac{1}{2}$ hours $=2$ hours $30$ minutes', size=32)
+rsK = HOURS('rsK', 0, 50, ['2½ hours'], [
+    ('ends', [('above', 0, 0, "Sara's start", 'teal'), ('above', 0, 50, "Tom's start", 'orange')]),
+    ('a', [('trail', 0, 0, 30, 'Sara: 30 km', 'teal', 0)]),
+    ('b', [('trail', 0, 50, 30, 'Tom: 20 km', 'orange', 0), ('star', 0, 30)]),
+    ('all', [('brace', 0, 0, 50, 'the whole gap: 50 km', 'red', 1)])],
+    gapcol=False, y0=60, bottom=120, title='Check: they meet')
+rsKa = IH('rsKa', 'Sara: $\\ 12\\times2\\frac{1}{2}=30$ km', size=32)
+rsKb = IH('rsKb', 'Tom: $\\ 8\\times2\\frac{1}{2}=20$ km', size=32)
+rsKc = IH('rsKc', '$30+20=50$', size=32)
+# apart, hour by hour (both from km 0; Mia to the left at 3 kph, Leo to the right at 5 kph)
+rsA = HOURS('rsA', -9, 15, ['start', '1 hour', '2 hours', '3 hours'], [
+    ('d0', [('dot', 0, 0, 'Mia', 'teal', -1), ('dot', 0, 0, 'Leo', 'orange', 1)]),
+    ('g0', [('gap', 0, '0')]),
+    ('vA', [('spd', 0, 0, -1, '3 kph', 'teal')]),
+    ('vB', [('spd', 0, 0, 1, '5 kph', 'orange')]),
+    ('r1', [('road', 1)]),
+    ('a1', [('trail', 1, 0, -3, '3 km', 'teal', 0)]),
+    ('b1', [('trail', 1, 0, 5, '5 km', 'orange', 0)]),
+    ('c1', [('chg', 1, '+8')]),
+    ('g1', [('gap', 1, '8')]),
+    ('r2', [('road', 2)]),
+    ('a2', [('trail', 2, 0, -6, '6 km', 'teal', 0)]),
+    ('b2', [('trail', 2, 0, 10, '10 km', 'orange', 0)]),
+    ('c2', [('chg', 2, '+8')]),
+    ('g2', [('gap', 2, '16')]),
+    ('r3', [('road', 3)]),
+    ('a3', [('trail', 3, 0, -9, '9 km', 'teal', 0)]),
+    ('b3', [('trail', 3, 0, 15, '15 km', 'orange', 0)]),
+    ('c3', [('chg', 3, '+8')]),
+    ('g3', [('gap', 3, '24')]),
+    ('box', [('colbox',)])], guides=(0,), title='Apart, hour by hour')
+rsAk = IH('rsAk', 'every hour: $\\ 3+5=8$ km farther', size=32)
+rsQa = IH('rsQa', 'after $5$ hours: $\\ 5\\times8=40$ km', size=32)
+rsQb = IH('rsQb', '$20$ km apart: $\\ 20\\div8=2\\frac{1}{2}$ hours', size=32)
+rsQ = ROAD('rsQ', [
+    ('town', [('end', .5, 'the town')]),
+    ('dots', [('dot', .5, '', 'ink')]),
+    ('arr1', [('arrow', .47, .17, '40 kph')]),
+    ('arr2', [('arrow', .53, .83, '60 kph', 0, 'orange')])], w=1100, title='Two cars from one town')
+rsQc = IH('rsQc', '$40+60=100$ km farther every hour', size=32)
+rsQd = IH('rsQd', '$150\\div100=1\\frac{1}{2}$ hours', size=32)
+rsQk = I('rsQk', 'Toward each other or apart: $\\ $add.', size=34)
+# ---- part 2: a chase, hour by hour (the cyclist 9 kph from km 0, the runner 6 kph from km 9)
+rsS = HOURS('rsS', 0, 27, ['start', '1 hour', '2 hours', '3 hours'], [
+    ('dR', [('dot', 0, 9, 'runner', 'orange')]),
+    ('vR', [('spd', 0, 9, 1, '6 kph', 'orange')]),
+    ('dC', [('dot', 0, 0, 'cyclist', 'teal')]),
+    ('vC', [('spd', 0, 0, 1, '9 kph', 'teal')]),
+    ('h0', [('note', 0, 4.5, '9 km ahead', 'ink')]),
+    ('g0', [('gap', 0, '9')]),
+    ('r1', [('road', 1)]),
+    ('a1', [('trail', 1, 0, 9, '9 km', 'teal', 0)]),
+    ('b1', [('trail', 1, 9, 15, '6 km', 'orange', 1)]),
+    ('c1', [('chg', 1, '−3')]),
+    ('g1', [('gap', 1, '6')]),
+    ('r2', [('road', 2)]),
+    ('a2', [('trail', 2, 0, 18, '18 km', 'teal', 0)]),
+    ('b2', [('trail', 2, 9, 21, '12 km', 'orange', 1)]),
+    ('c2', [('chg', 2, '−3')]),
+    ('g2', [('gap', 2, '3')]),
+    ('r3', [('road', 3)]),
+    ('a3', [('trail', 3, 0, 27, '27 km', 'teal', 0)]),
+    ('b3', [('trail', 3, 9, 27, '18 km', 'orange', 1)]),
+    ('c3', [('chg', 3, '−3')]),
+    ('g3', [('gap', 3, '0')]),
+    ('m3', [('star', 3, 27)]),
+    ('box', [('colbox',)])], guides=(0, 9), title='A chase, hour by hour')
+rsSk = IH('rsSk', 'every hour: $\\ 9-6=3$ km closer', size=32)
+rsU = HOURS('rsU', 0, 27, ['3 hours'], [
+    ('ends', [('above', 0, 0, "his start", 'teal'), ('above', 0, 9, "her start", 'orange', 36)]),
+    ('r', [('trail', 0, 9, 27, 'runner: 18 km', 'orange', 1)]),
+    ('c', [('trail', 0, 0, 27, 'cyclist: 27 km', 'teal', 0), ('star', 0, 27)]),
+    ('h', [('brace', 0, 0, 9, 'head start: 9 km', 'red', 1)])],
+    gapcol=False, y0=120, bottom=120, title='He catches her')
+rsUa = IH('rsUa', '$27-18=9$', size=32)
+rsUk = I('rsUk', 'He catches her when he gains the whole starting gap.', size=34)
+rsUb = IH('rsUb', '$9\\div3=3$ hours', size=32)
+rsUf = I('rsUf', 'A chase: $\\ $time $=$ the starting gap $\\div$ the difference', size=34)
+rsV = ROAD('rsV', [
+    ('bus', [('dot', .4, 'bus', 'orange')]),
+    ('arrB', [('arrow', .4, .62, '50 kph', 1, 'orange')]),
+    ('car', [('dot', 0, 'car')]),
+    ('arrC', [('arrow', 0, .3, '70 kph')]),
+    ('gap', [('gap', 0, .4, 'the gap: 10 km')])], w=1100, title='A car chases a bus')
+rsVa = IH('rsVa', '$70-50=20$ km closer every hour', size=32)
+rsVb = IH('rsVb', '$10\\div20=\\frac{1}{2}$ hour', size=32)
+rsVc = IH('rsVc', '$\\frac{1}{2}$ hour $=30$ minutes', size=32)
+rsVd = IH('rsVd', 'the car in front: $\\ $the gap grows by $20$ km an hour', size=32)
 _wp113 = [
     S('Relative Speed',
       L("Welcome back. Now relative speed."),
       L("This is about two travelers at once. How fast do they get closer, or farther apart?")),
     S('What it is',
-      L("Relative speed is the rate at which the gap between two travelers changes."),
-      L("We don't follow each one on its own. We follow the gap between them. How many kilometers does the gap change "
-        "in one hour?")),
+      L("Relative speed is the rate at which the gap between two travelers changes.",
+        show(s3meaning, 'Relative speed is the rate')),
+      L("We don't follow each one on its own. We follow the gap between them."),
+      L("How many kilometers does the gap change in one hour? That's the relative speed.")),
+    S('Toward each other, hour by hour',
+      L("Now a new example. Mia and Leo stand twenty-four kilometers apart, on the same road.",
+        show(rsH['line'], 'Mia and Leo stand'), show(rsH['d0'], 'Mia and Leo stand'), show(rsH['g0'], 'twenty-four kilometers apart')),
+      L("They walk toward each other. Mia walks three kilometers per hour, and Leo walks five.",
+        show(rsH['vA'], 'Mia walks three'), show(rsH['vB'], 'Leo walks five')),
+      L("Let's see where they are after one hour.", show(rsH['r1'], 'after one hour')),
+      L("In one hour, Mia walks three kilometers. So she's three kilometers from her start.",
+        show(rsH['a1'], 'Mia walks three kilometers')),
+      L("Leo walks five kilometers toward her. So he's five kilometers from his start.",
+        show(rsH['b1'], 'Leo walks five kilometers')),
+      L("Together, they closed three plus five, eight kilometers. So the gap is twenty-four minus eight, sixteen.",
+        show(rsH['c1'], 'three plus five, eight'), show(rsH['g1'], 'twenty-four minus eight, sixteen')),
+      L("Now after two hours. Each of them walks for one more hour.", show(rsH['r2'], 'after two hours')),
+      L("Mia walks three more kilometers. So she's six kilometers from her start.", show(rsH['a2'], 'six kilometers from her start')),
+      L("Leo walks five more. So he's ten kilometers from his start.", show(rsH['b2'], 'ten kilometers from his start')),
+      L("The gap shrinks by eight again. Sixteen minus eight is eight kilometers.",
+        show(rsH['c2'], 'shrinks by eight again'), show(rsH['g2'], 'Sixteen minus eight')),
+      L("And after three hours? Mia is nine kilometers from her start. Leo is fifteen kilometers from his.",
+        show(rsH['r3'], 'after three hours'), show(rsH['a3'], 'Mia is nine kilometers'), show(rsH['b3'], 'Leo is fifteen kilometers')),
+      L("The gap shrinks by eight once more. Eight minus eight is zero. They meet.",
+        show(rsH['c3'], 'by eight once more'), show(rsH['g3'], 'Eight minus eight is zero'), show(rsH['m3'], 'They meet')),
+      L("Now look only at the gap column. Twenty-four, sixteen, eight, zero.", show(rsH['box'], 'look only at the gap column')),
+      L("Every hour, the gap shrinks by the same eight kilometers."),
+      L("Why eight? Because every hour, Mia closes three kilometers, and Leo closes five."),
+      L("Three plus five is eight. So the gap shrinks by eight every hour.", show(rsHk, 'Three plus five is eight')),
+      L("So we don't need to find where each of them is. We only follow the gap.")),
+    S('They meet: together, the whole gap',
+      L("Now look at the moment they meet, after three hours.", show(rsT['line'], 'the moment they meet'),
+        show(rsT['ends'], 'the moment they meet')),
+      L("Mia walked nine kilometers, from her start to the meeting point.", show(rsT['a'], 'Mia walked nine kilometers')),
+      L("Leo walked fifteen kilometers, from his start to the same point.", show(rsT['b'], 'Leo walked fifteen kilometers')),
+      L("Together, their two pieces make the whole road between them. Nine plus fifteen is twenty-four.",
+        show(rsT['all'], 'make the whole road'), show(rsTa, 'Nine plus fifteen')),
+      L("So they meet when together they have covered the whole gap.", show(rsTk, 'they meet when together')),
+      L("Every hour, together they cover eight kilometers. They need to cover twenty-four."),
+      L("How many hours is that? Twenty-four divided by eight is three hours.", show(rsTb, 'Twenty-four divided by eight')),
+      L("That's the quick way. The time is the gap divided by the relative speed.",
+        show(rsTf, 'The time is the gap divided'))),
     S('Toward each other: add',
-      L("Now a new example. Two walkers start twenty-four kilometers apart, and walk toward each other. One walks at "
-        "three kilometers per hour, and the other at five.", show(s3a['line'], 'Two walkers start'),
-        show(s3a['gap'], 'twenty-four kilometers apart'), show(s3a['dots'], 'and walk toward each other'),
-        show(s3a['arr'], 'One walks at three')),
-      L("In one hour, the first walker covers three kilometers, and the second covers five. Both of them make the gap "
-        "smaller."),
-      L("So the gap shrinks by three plus five, eight kilometers every hour.", show(s3b, 'three plus five, eight')),
-      L("Picture a head-on crash. The two cars hit with both speeds together. That's why we add the speeds."),
-      L("The gap is twenty-four kilometers, and it shrinks by eight every hour. Twenty-four divided by eight is three. "
-        "So they meet after three hours.", show(s3c, 'Twenty-four divided by eight'))),
-    S('Moving apart: add',
-      L("Now the same two walkers start from the same point, and walk in opposite directions, away from each other.",
-        show(s3d['line'], 'walk in opposite directions'), show(s3d['dots'], 'walk in opposite directions'),
-        show(s3d['arr'], 'away from each other')),
-      L("In one hour, one walks three kilometers one way, and the other walks five kilometers the other way."),
-      L("So the gap grows by three plus five, eight kilometers every hour. Opposite directions, so again we add.",
-        show(s3e, 'So the gap grows by three plus five'))),
-    S('The same direction: subtract',
-      L("Now a chase. A runner runs at six kilometers per hour. A cyclist rides behind her, on the same road, at nine.",
-        show(s3f['line'], 'Now a chase'), show(s3f['dots'], 'A runner runs at six'), show(s3f['arr'], 'A cyclist rides behind her')),
-      L("In one hour, the runner moves six kilometers ahead, and the cyclist moves nine. The runner keeps running away, "
-        "while the cyclist tries to catch up."),
-      L("So the cyclist gains only nine minus six, three kilometers every hour. In a chase, we subtract.",
-        show(s3g, 'nine minus six, three')),
-      L("Say the cyclist starts two kilometers behind her. He closes two kilometers at three kilometers an hour.",
-        show(s3f['gap'], 'two kilometers behind her')),
-      L("Two divided by three is two thirds of an hour. Two thirds of sixty minutes is forty minutes.",
-        show(s3h, 'Two divided by three')),
-      L("So toward each other or apart, we add. In a chase, we subtract.", show(s3i, 'toward each other or apart'))),
+      L("Here's an easy way to remember that we add."),
+      L("Imagine a truck that drives at twenty kilometers per hour. A car drives toward it at fifty.",
+        show(rsC['line'], 'Imagine a truck'), show(rsC['dots'], 'Imagine a truck'), show(rsC['arrT'], 'twenty kilometers per hour'),
+        show(rsC['arrC'], 'A car drives toward it')),
+      L("In one hour, the truck covers twenty kilometers, and the car covers fifty."),
+      L("So together, they close twenty plus fifty, seventy kilometers every hour.", show(rsCa, 'twenty plus fifty, seventy')),
+      L("If they crash, it's like a crash at seventy. Toward each other, we add the speeds.",
+        show(rsCk, 'Toward each other, we add'))),
+    S('Another example',
+      L("Now a new example, with different numbers."),
+      L("Sara and Tom start fifty kilometers apart, and ride toward each other.",
+        show(rsE['line'], 'Sara and Tom start'), show(rsE['dots'], 'Sara and Tom start'), show(rsE['gap'], 'fifty kilometers apart')),
+      L("Sara rides at twelve kilometers per hour, and Tom rides at eight.",
+        show(rsE['arrS'], 'Sara rides at twelve'), show(rsE['arrT'], 'Tom rides at eight')),
+      L("They ride toward each other, so we add the speeds. Twelve plus eight is twenty.", show(rsEa, 'Twelve plus eight')),
+      L("So the gap shrinks by twenty kilometers every hour. Let's follow the gap."),
+      L("At the start, the gap is fifty kilometers.", show(rsEs['line'], 'At the start, the gap')),
+      L("After one hour, it's fifty minus twenty, thirty.", show(rsEs['c1'], 'fifty minus twenty, thirty')),
+      L("After two hours, it's thirty minus twenty, ten.", show(rsEs['c2'], 'thirty minus twenty, ten')),
+      L("Now only ten kilometers are left. That's less than one hour of riding."),
+      L("Ten is half of twenty. So they need half an hour more. They meet after two and a half hours.",
+        show(rsEs['c3'], 'They meet after two and a half')),
+      L("The quick way gives the same answer. Fifty divided by twenty is two and a half hours.",
+        show(rsEb, 'Fifty divided by twenty')),
+      L("Two and a half hours is two hours and thirty minutes.", show(rsEc, 'two hours and thirty minutes'))),
+    S('Check: together, the whole gap',
+      L("Let's check that they really meet after two and a half hours.", show(rsK['line'], "Let's check"),
+        show(rsK['ends'], "Let's check")),
+      L("In two and a half hours, Sara rides twelve times two and a half. That's thirty kilometers.",
+        show(rsKa, 'Sara rides twelve times'), show(rsK['a'], "That's thirty kilometers")),
+      L("Tom rides eight times two and a half. That's twenty kilometers.",
+        show(rsKb, 'Tom rides eight times'), show(rsK['b'], "That's twenty kilometers")),
+      L("Thirty plus twenty is fifty. Together they covered the whole gap, so they meet.",
+        show(rsKc, 'Thirty plus twenty'), show(rsK['all'], 'covered the whole gap'))),
+    S('Moving apart, hour by hour',
+      L("Now a new example, with the same Mia and Leo. This time, they start from the same point.",
+        show(rsA['line'], 'start from the same point'), show(rsA['d0'], 'start from the same point')),
+      L("They walk in opposite directions, away from each other."),
+      L("At the start, the gap between them is zero.", show(rsA['g0'], 'the gap between them is zero')),
+      L("Mia walks three kilometers per hour, and Leo walks five.", show(rsA['vA'], 'Mia walks three'),
+        show(rsA['vB'], 'Leo walks five')),
+      L("After one hour, Mia is three kilometers from the start, on one side.", show(rsA['r1'], 'After one hour'),
+        show(rsA['a1'], 'Mia is three kilometers')),
+      L("Leo is five kilometers from the start, on the other side.", show(rsA['b1'], 'Leo is five kilometers')),
+      L("So the gap is three plus five, eight kilometers.", show(rsA['c1'], 'three plus five'), show(rsA['g1'], 'eight kilometers')),
+      L("After two hours, Mia is six kilometers from the start, and Leo is ten.", show(rsA['r2'], 'After two hours'),
+        show(rsA['a2'], 'Mia is six kilometers'), show(rsA['b2'], 'Leo is ten')),
+      L("The gap grows by eight again. Eight plus eight is sixteen.", show(rsA['c2'], 'grows by eight again'),
+        show(rsA['g2'], 'Eight plus eight')),
+      L("After three hours, Mia is nine kilometers from the start, and Leo is fifteen.", show(rsA['r3'], 'After three hours'),
+        show(rsA['a3'], 'Mia is nine kilometers'), show(rsA['b3'], 'Leo is fifteen')),
+      L("The gap grows by eight once more. Sixteen plus eight is twenty-four.", show(rsA['c3'], 'by eight once more'),
+        show(rsA['g3'], 'Sixteen plus eight')),
+      L("Look at the gap column again. Zero, eight, sixteen, twenty-four.", show(rsA['box'], 'Look at the gap column')),
+      L("Every hour, the gap grows by the same eight kilometers."),
+      L("They walk in opposite directions, so again we add. Three plus five is eight.", show(rsAk, 'Three plus five is eight'))),
+    S('Moving apart: two questions',
+      L("Now two quick questions about Mia and Leo."),
+      L("How far apart are they after five hours? The gap grows by eight every hour."),
+      L("So after five hours, the gap is five times eight, forty kilometers.", show(rsQa, 'five times eight')),
+      L("And when are they twenty kilometers apart? We need a gap of twenty."),
+      L("The gap grows by eight every hour. Twenty divided by eight is two and a half hours.",
+        show(rsQb, 'Twenty divided by eight')),
+      L("Now a new example. Two cars leave the same town at the same time, in opposite directions.",
+        show(rsQ['line'], 'Two cars leave'), show(rsQ['town'], 'Two cars leave'), show(rsQ['dots'], 'the same town')),
+      L("One drives at forty kilometers per hour, and the other at sixty.", show(rsQ['arr1'], 'One drives at forty'),
+        show(rsQ['arr2'], 'the other at sixty')),
+      L("Opposite directions, so we add. Forty plus sixty is a hundred kilometers every hour.",
+        show(rsQc, 'Forty plus sixty')),
+      L("When are they a hundred fifty kilometers apart? The gap grows by a hundred every hour. So a hundred fifty "
+        "divided by a hundred is one and a half hours.",
+        show(rsQd, 'A hundred fifty divided by a hundred')),
+      L("So toward each other or apart, we add the speeds.", show(rsQk, 'toward each other or apart'))),
+    # ---- part 2
+    S('A chase, hour by hour',
+      L("In a chase, both of them move the same way, and one tries to catch the other."),
+      L("Now a new example. A runner runs at six kilometers per hour.", show(rsS['line'], 'A runner runs'),
+        show(rsS['dR'], 'A runner runs'), show(rsS['vR'], 'six kilometers per hour')),
+      L("A cyclist rides behind her on the same road, at nine kilometers per hour.",
+        show(rsS['dC'], 'A cyclist rides behind her'), show(rsS['vC'], 'at nine kilometers')),
+      L("At the start, the runner is nine kilometers ahead of him.", show(rsS['h0'], 'nine kilometers ahead'),
+        show(rsS['g0'], 'nine kilometers ahead')),
+      L("After one hour, the cyclist rode nine kilometers.", show(rsS['r1'], 'After one hour'),
+        show(rsS['a1'], 'the cyclist rode nine')),
+      L("But the runner didn't wait. She ran six kilometers further.", show(rsS['b1'], 'She ran six kilometers')),
+      L("So he gained only nine minus six, three kilometers. The gap is nine minus three, six.",
+        show(rsS['c1'], 'nine minus six, three'), show(rsS['g1'], 'The gap is nine minus three')),
+      L("After two hours, he rode eighteen kilometers, and she ran twelve.", show(rsS['r2'], 'After two hours'),
+        show(rsS['a2'], 'he rode eighteen'), show(rsS['b2'], 'she ran twelve')),
+      L("He gained three kilometers again. Six minus three is three.", show(rsS['c2'], 'He gained three kilometers again'),
+        show(rsS['g2'], 'Six minus three')),
+      L("After three hours, he rode twenty-seven kilometers, and she ran eighteen.", show(rsS['r3'], 'After three hours'),
+        show(rsS['a3'], 'he rode twenty-seven'), show(rsS['b3'], 'she ran eighteen')),
+      L("He gained three once more. Three minus three is zero. He catches her.",
+        show(rsS['c3'], 'He gained three once more'), show(rsS['g3'], 'Three minus three'), show(rsS['m3'], 'He catches her')),
+      L("Look at the gap column. Nine, six, three, zero.", show(rsS['box'], 'Look at the gap column')),
+      L("Every hour, the gap closes by the same three kilometers."),
+      L("Why three? Because he rides nine, but she runs away six. Nine minus six is three.",
+        show(rsSk, 'Nine minus six is three')),
+      L("Imagine the slow one stands still. Then the cyclist comes closer at only three kilometers per hour."),
+      L("So in a chase, we subtract the speeds.")),
+    S('He catches her: the whole head start',
+      L("Now look at the moment he catches her, after three hours.", show(rsU['line'], 'the moment he catches her'),
+        show(rsU['ends'], 'the moment he catches her')),
+      L("The runner ran eighteen kilometers, from her start to the meeting point.", show(rsU['r'], 'The runner ran eighteen')),
+      L("The cyclist rode twenty-seven kilometers. He rode her nine-kilometer head start, and then her eighteen kilometers too.",
+        show(rsU['c'], 'The cyclist rode twenty-seven'), show(rsU['h'], 'her nine-kilometer head start')),
+      L("So his distance minus her distance is the head start. Twenty-seven minus eighteen is nine.",
+        show(rsUa, 'Twenty-seven minus eighteen')),
+      L("He catches her when he has gained the whole starting gap.", show(rsUk, 'He catches her when')),
+      L("He gains three kilometers every hour, and he needs nine. Nine divided by three is three hours.",
+        show(rsUb, 'Nine divided by three')),
+      L("So in a chase, the time is the starting gap divided by the difference of the speeds.",
+        show(rsUf, 'the time is the starting gap'))),
+    S('Another chase',
+      L("Now a new example. A bus drives at fifty kilometers per hour. A car drives behind it, at seventy.",
+        show(rsV['line'], 'A bus drives'), show(rsV['bus'], 'A bus drives'), show(rsV['arrB'], 'fifty kilometers per hour'),
+        show(rsV['car'], 'A car drives behind it'), show(rsV['arrC'], 'at seventy')),
+      L("At the start, the bus is ten kilometers ahead of the car.", show(rsV['gap'], 'ten kilometers ahead')),
+      L("It's a chase, so we subtract. The car gains seventy minus fifty, twenty kilometers every hour.",
+        show(rsVa, 'seventy minus fifty')),
+      L("It needs to gain ten kilometers. Ten divided by twenty is half an hour.", show(rsVb, 'Ten divided by twenty')),
+      L("So the car catches the bus after thirty minutes.", show(rsVc, 'after thirty minutes')),
+      L("And what if the faster one is in front? Then the gap doesn't close. It grows."),
+      L("Say the car is in front and drives away from the bus. The gap grows by seventy minus fifty, twenty kilometers every hour.",
+        show(rsVd, 'The gap grows by seventy minus fifty')),
+      L("The same direction, so we still subtract the speeds.")),
 ]
 s4a = IH('s4a', 'only the starting gap counts', size=32)
 s4b = IH('s4b', '$102-100=2$ km an hour', size=32)
 s4s = ROAD('s4s', [
-    ('ends', [('end', 0, 'home')]),
+    ('ends', [('end', 0, ''), ('above', 0, 'home')]),
     ('dan', [('dot', 0, ''), ('arrow', 0, .3, 'Dan: 4 kph, from 0 min')]),
     ('dan2', [('dot', .4, 'Dan at 30 min')]),
     ('sis', [('dot', 0, '', 'orange'), ('arrow', 0, .3, 'sister: 12 kph, from 30 min', 1, 'orange')]),
-    ('gap', [('gap', 0, .4, 'gap: 2 km')])], w=820)
-s4c = IH('s4c', 'half an hour: $\\ 4\\times\\frac{1}{2}=2$ km', size=32, col=1)
-s4d = IH('s4d', 'she gains $12-4=8$ km an hour', size=32, col=1)
-s4e = IH('s4e', '$2\\div8=\\frac{1}{4}$ hour $=15$ minutes', size=32, col=1)
+    ('gap', [('gap', 0, .4, 'gap: 2 km')])], w=1100)
+s4c = IH('s4c', 'half an hour: $\\ 4\\times\\frac{1}{2}=2$ km', size=32)
+s4d = IH('s4d', 'she gains $12-4=8$ km an hour', size=32)
+s4e = IH('s4e', '$2\\div8=\\frac{1}{4}$ hour $=15$ minutes', size=32)
 s5s = ROAD('s5s', [
     ('ends', [('end', 0, 'start')]),
     ('ava', [('dot', 0, ''), ('arrow', 0, .35, 'Ava starts at 0 s')]),
     ('ben', [('dot', 0, '', 'orange'), ('arrow', 0, .35, 'Ben starts at 10 s', 1, 'orange')]),
-    ('meet', [('meet', .8, 'they meet: 30 s')])], w=820)
+    ('meet', [('meet', .8, 'meet: 30 s after Ava starts')])], w=1100)
 s5a = IH('s5a', 'Ava runs $30$ s, $\\ $Ben runs $30-10=20$ s', size=32)
 s5b = IH('s5b', 'the same distance: $\\ $the times flip', size=32)
-s5c = IH('s5c', 'times $30:20=3:2$', size=32, col=1)
-s5d = IH('s5d', 'Ben is $\\frac{3}{2}$ times as fast', size=32, col=1)
+s5c = IH('s5c', 'times $30:20=3:2$', size=32)
+s5d = IH('s5d', 'Ben is $\\frac{3}{2}$ times as fast', size=32)
 s5e = IH('s5e', 'from Ben\'s start: $\\ $Ben $30$ s, $\\ $Ava $40$ s', size=32)
-s5f = IH('s5f', 'Ben is $\\frac{40}{30}=\\frac{4}{3}$ times as fast', size=32, col=1)
+s5f = IH('s5f', 'Ben is $\\frac{40}{30}=\\frac{4}{3}$ times as fast', size=32)
 s5g = I('s5g', 'From whose start is the time counted?', size=34)
 s6a = I('s6a', 'Toward each other or apart: $\\ $add the speeds', size=34)
 s6b = I('s6b', 'A chase: $\\ $subtract the speeds', size=34)
+s6e = I('s6e', 'Meet: $\\ $together they cover the whole gap', size=34)
+s6f = I('s6f', 'time $=$ the gap $\\div$ the relative speed', size=34)
 s6c = I('s6c', 'Only the starting gap counts. $\\ $A head start: $\\ $find it first.', size=34)
 s6d = I('s6d', 'Mark every start time. $\\ $From whose start?', size=34)
 _wp113 += [
@@ -1953,10 +2339,11 @@ _wp113 += [
       L("Now a new example. Dan walks from home at four kilometers per hour. Half an hour later, his sister rides after "
         "him at twelve kilometers per hour. When does she catch him?", show(s4s['line'], 'Dan walks from home'),
         show(s4s['ends'], 'Dan walks from home'), show(s4s['dan'], 'at four kilometers per hour')),
-      L("Let's find the head start. In half an hour, Dan walks four times a half, two kilometers.",
+      L("We solve it in two stages. In the first stage, only Dan walks. In the second stage, both of them move."),
+      L("So first, the head start. In half an hour, Dan walks four times a half, two kilometers.",
         show(s4c, 'Dan walks four times a half'), show(s4s['dan2'], 'two kilometers.')),
-      L("Now his sister starts, so we mark her start time on the sketch. The gap between them is two kilometers.",
-        show(s4s['sis'], 'Now his sister starts'), show(s4s['gap'], 'The gap between them is two kilometers')),
+      L("Now the second stage. His sister starts, so we mark her start time on the sketch. The gap between them is two kilometers.",
+        show(s4s['sis'], 'His sister starts'), show(s4s['gap'], 'The gap between them is two kilometers')),
       L("It's a chase, so we subtract. She gains twelve minus four, eight kilometers every hour.",
         show(s4d, 'She gains twelve minus four')),
       L("Two divided by eight is a quarter of an hour. So she catches him fifteen minutes after she starts.",
@@ -1973,14 +2360,17 @@ _wp113 += [
       L("They both run the same distance, from the start to the meeting point. The distance is fixed, so the times flip, "
         "like in speed ratios.", show(s5b, 'The distance is fixed, so the times flip')),
       L("Ava's time to Ben's time is thirty to twenty, three to two. So Ben's speed is three halves of Ava's. He is one "
-        "and a half times as fast.", show(s5c, 'thirty to twenty, three to two'), show(s5d, 'one and a half times as fast')),
-      L("Now the other reading. If he caught her thirty seconds after he started, Ben runs thirty seconds, and Ava runs "
-        "ten more, forty.", show(s5e, 'If he caught her thirty seconds after he started')),
+        "and a half times as fast.", show(s5c, 'thirty to twenty, three to two'), show(s5d, 'one and a half times as fast'))),
+    S('Change whose start we count from',
+      L("Now change just the last part of the question. Ben still starts ten seconds after Ava. But suppose Ben catches Ava thirty seconds after Ben starts. Ben runs thirty seconds, and Ava runs "
+        "ten more, forty.", show(s5e, 'Ben runs thirty seconds')),
       L("Then Ben is forty over thirty, four thirds times as fast.", show(s5f, 'forty over thirty')),
       L("Two readings, two different answers. So always ask, from whose start is the time counted?")),
     S('Recap',
       L("So let's sum it up. Toward each other, or apart, we add the speeds.", show(s6a, 'Toward each other, or apart')),
       L("In a chase, we subtract them.", show(s6b, 'In a chase, we subtract them')),
+      L("They meet when together they cover the whole gap. And the time is the gap divided by the relative speed.",
+        show(s6e, 'They meet when together'), show(s6f, 'the time is the gap divided')),
       L("Only the starting gap counts. And if one leaves earlier, we find the head start first.", show(s6c, 'Only the starting gap counts')),
       L("And we mark every start time on the sketch, and ask from whose start the time is counted.", show(s6d, 'we mark every start time')),
       L("Chases are where students slip, so take a moment to memorize this. I'll see you in the next video.")),
@@ -1988,7 +2378,7 @@ _wp113 += [
 video('wp-113', 'lesson', slides=_wp113)
 SPLITS.append(('wp-113', 'Relative Speed', [
     (1, None),
-    (5, "Let's continue with relative speed, and look at chases.")]))
+    (9, "Let's continue with relative speed, and look at chases.")]))
 
 # ------------------------------------------------------------------------------------------------ g114 (runners moving apart)
 # Hebrew (wp 7501-7528, Shimon and Roi, 6 and 4 kph apart, 500 m): apart -> add (10); 500 m = half a km (same units);
@@ -2091,7 +2481,7 @@ video('solve-wp27-g115', 'solution', qid='wp27-g115', slides=[
       L("Nine twenty plus one hour is ten twenty.", show(g15f, 'Nine twenty plus one hour')),
       L("Ten oh eight, choice number one, starts both at nine and forgets the head start.", mk('cross', 'choice 1', 'forgets the head start'))),
     S('Method 2 · Plugging in the answers',
-      L("[pause] Now let's plug in the answers. We start again from the givens. We'll check ten twenty."),
+      L("[pause] Now let's plug in the answers. We'll check ten twenty first. That gives the car exactly one hour, so the calculation is easy."),
       L("Until ten twenty, the bus drives from nine, so one hour and twenty minutes. That's one and a third hours.",
         show(g15g, 'the bus drives from nine')),
       L("Seventy-two times four thirds. A third of seventy-two is twenty-four, and times four is ninety-six kilometers.",
@@ -2142,7 +2532,7 @@ video('solve-wp27-g116', 'solution', qid='wp27-g116', slides=[
       L("Fifteen times a fifth is three. So Zoe is three kilometers ahead.", show(g16b, 'Fifteen times a fifth'),
         show(g16s['zoe2'], 'So Zoe is three kilometers ahead')),
       L("Now Sam starts. The only distance that matters is that three-kilometer gap. Not the whole way they ride.",
-        show(g16s['sam'], 'Now Sam starts'), show(g16s['gap'], 'that three-kilometer gap'), show(g16s['meet'], 'Not the whole way they ride')),
+        show(g16s['sam'], 'Now Sam starts'), show(g16s['gap'], 'that three-kilometer gap')),
       L("So Sam has a gap of three kilometers to close.")),
     S('Method 1 · The math way: relative speed',
       L("Sam closes the three-kilometer gap in twenty minutes, a third of an hour.", show(g16c, 'twenty minutes, a third of an hour')),
@@ -2271,7 +2661,7 @@ video('solve-wp27-g118', 'solution', qid='wp27-g118', slides=[
       L("Each half of the way is sixty divided by two, thirty meters.", show(g18b, 'sixty divided by two')),
       L("The first half is at twice the normal speed, three times two, six meters a second.", show(g18c, 'three times two, six')),
       L("Thirty meters at six meters a second takes thirty divided by six, five seconds.", show(g18d, 'thirty divided by six')),
-      L("The second half is at half the normal speed, one and a half meters a second.", show(g18e, 'one and a half meters a second')),
+      L("The second half is at half the normal speed. Three divided by two is one and a half meters a second.", show(g18e, 'Three divided by two')),
       L("Thirty divided by one and a half is twenty, because one and a half times twenty is thirty. That's twenty seconds for the second half.",
         show(g18f, 'Thirty divided by one and a half')),
       L("Five plus twenty is twenty-five seconds.", show(g18g, 'Five plus twenty'))),
@@ -2307,9 +2697,9 @@ video('solve-wp27-g118', 'solution', qid='wp27-g118', slides=[
 g20a = IH('g20a', 'old speed: $\\ 360\\div12=30$ kph', size=30)
 g20b = IH('g20b', '$60\\%$ faster: $\\ \\times1.6$', size=30)
 g20c = IH('g20c', '$30\\times1.6=48$ kph', size=30)
-g20d = IH('g20d', '$360\\div48=7.5$ hours', size=30, col=1)
-g20e = IH('g20e', '$48\\times7=336$', size=30, col=1)
-g20e2 = IH('g20e2', '$336+24=360$', size=30, col=1)
+g20d = IH('g20d', 'time $=360\\div48$ hours', size=30, col=1)
+g20e = IH('g20e', '$360\\div12=30$, $\\ 48\\div12=4$', size=30, col=1)
+g20e2 = IH('g20e2', '$30\\div4=7.5$ hours', size=30, col=1)
 g20f = IH('g20f', '$12-60\\%$ of $12=4.8$: $\\ $the trap', size=30, col=1)
 g20g = IH('g20g', 'twice as fast: $\\ $half the time', size=30)
 g20h = IH('g20h', '$1.6$ times as fast: $\\ $time $\\div1.6$', size=30)
@@ -2328,11 +2718,10 @@ video('solve-wp27-g120', 'solution', qid='wp27-g120', slides=[
       L("Sixty percent faster means a hundred sixty percent of the old speed. So we multiply by one point six.",
         show(g20b, 'So we multiply by one point six')),
       L("Thirty times one point six is forty-eight kilometers per hour.", show(g20c, 'Thirty times one point six')),
-      L("The new time is three hundred sixty divided by forty-eight. That's seven and a half hours.",
+      L("The new time is the route's distance divided by the new speed. So we need three hundred sixty divided by forty-eight.",
         show(g20d, 'three hundred sixty divided by forty-eight')),
-      L("Let's check it. Forty-eight times seven is three hundred thirty-six. Half of forty-eight is twenty-four, and "
-        "three hundred thirty-six plus twenty-four is three hundred sixty.", show(g20e, 'Forty-eight times seven'),
-        show(g20e2, 'three hundred thirty-six plus twenty-four')),
+      L("Divide both numbers by twelve to make the division easier. Three hundred sixty divided by twelve is thirty. Forty-eight divided by twelve is four. So thirty divided by four is seven and a half hours.",
+        show(g20e, 'Three hundred sixty divided by twelve'), show(g20e2, 'thirty divided by four')),
       L("Careful, sixty percent faster doesn't mean sixty percent less time. Twelve minus sixty percent of twelve is four "
         "point eight, choice number two. That's the trap.", show(g20f, 'Twelve minus sixty percent'),
         mk('cross', 'choice 2', "That's the trap"))),
@@ -2397,8 +2786,8 @@ video('solve-wp27-g119', 'solution', qid='wp27-g119', slides=[
     S('Method 1 · The math way: the table',
       L("Here is our equation again.", show(g19a2, 'Here is our equation again')),
       L("Two x over forty-eight is x over twenty-four.", show(g19b, 'Two x over forty-eight is x over twenty-four')),
-      L("We multiply everything by seventy-two, the smallest number that twenty-four, three and thirty-six all divide. "
-        "That gives three x is equal to twenty-four plus two x.", show(g19c, 'We multiply everything by seventy-two')),
+      L("We multiply every term by seventy-two to remove the denominators. Twenty-four, three and thirty-six all divide seventy-two. "
+        "That gives three x is equal to twenty-four plus two x.", show(g19c, 'That gives three x')),
       L("We take two x off both sides, and x is twenty-four.", show(g19d, 'and x is twenty-four')),
       L("Careful, twenty-four is choice number one, but it's only x, half of the road.", show(g19f, "it's only x, half of the road"),
         mk('cross', 'choice 1', 'half of the road')),
@@ -2431,17 +2820,17 @@ video('solve-wp27-g119', 'solution', qid='wp27-g119', slides=[
 # are her karts lines (g121, Hebrew-vs-English #1), said again there.
 x1s = ROAD('x1s', [
     ('post', [('post', .7, 'post')]),
-    ('front', [('block', .4, .7, 'train 200 m')]),
-    ('back', [('block', .7, 1, 'train 200 m'), ('gap', .7, 1, 'the front moves 200 m')])], w=860)
+    ('front', [('block', .4, .7, 'start: 200 m')]),
+    ('back', [('block', .7, 1, 'finish: 200 m'), ('gap', .7, 1, 'the front moves 200 m')])], w=860)
 x1a = IH('x1a', 'past a post: $\\ $the train\'s own length', size=32)
 x1b = IH('x1b', '$200\\div25=8$ seconds', size=32)
 x1c = IH('x1c', '$120$ kph $=2$ km a minute', size=32, col=1)
 x1d = IH('x1d', 'half a minute: $\\ 1$ km', size=32, col=1)
 x1e = IH('x1e', 'the train is $1$ km long', size=32, col=1)
 x2s = ROAD('x2s', [
-    ('bridge', [('seg', .25, .75, 'orange'), ('below', .5, 'bridge 300 m', 'orange')]),
-    ('front', [('block', .02, .25, 'train')]),
-    ('back', [('block', .75, .98, 'train'), ('gap', .25, .98, 'the front moves: bridge + train')])], w=860)
+    ('bridge', [('seg', .28, .70, 'orange'), ('below', .49, 'bridge 300 m', 'orange')]),
+    ('front', [('block', 0, .28, 'start')]),
+    ('back', [('block', .70, .98, 'finish'), ('gap', .28, .98, 'the front moves: bridge + train')])], w=860)
 x2a = IH('x2a', 'a bridge: $\\ $the bridge $+$ the train', size=32)
 x2b = IH('x2b', '$300+200=500$ m', size=32)
 x2c = IH('x2c', '$500\\div25=20$ seconds', size=32)
@@ -2458,7 +2847,7 @@ _x27 = [
       L("Now a new example. A train two hundred meters long passes a post, at twenty-five meters a second. How long does "
         "that take?", show(x1s['line'], 'A train two hundred meters long'), show(x1s['post'], 'passes a post'),
         show(x1s['front'], 'A train two hundred meters long')),
-      L("The train starts passing when its front reaches the post. It finishes when its back passes the post.",
+      L("The train starts passing when its front reaches the post. It finishes when its back passes the post. These are two positions of the same train.",
         show(x1s['back'], 'It finishes when its back passes')),
       L("So the front moves exactly one train length, two hundred meters. Past a post, the train covers its own length.",
         show(x1a, 'Past a post, the train covers its own length')),
@@ -2497,8 +2886,8 @@ x3f = IH('x3f', 'when A has done $1$ lap, $\\ $B has done $2$', size=32)
 x3g = IH('x3g', 'they meet at the start', size=32)
 x4s = TRACK('x4s', [
     ('start', [('start', 'start')]),
-    ('dir', [('dir', 8, 110, '10 kph'), ('dir', -8, -110, '8 kph', 'orange')]),
-    ('meet', [('meet', 160, 'they meet')]),
+    ('dir', [('dir', 8, 110, 'runner 1'), ('dir', -8, -110, 'runner 2', 'orange')]),
+    ('meet', [('meet', 200, 'they meet')]),
     ('lap', [('center', 'together:'), ('center', 'one full lap', 1)])], w=640, col=1)
 x4a = IH('x4a', 'opposite directions: $\\ $add', size=32)
 x4b = IH('x4b', '$10+8=18$ kph', size=32)
@@ -2522,7 +2911,7 @@ _x27 += [
       L("Three kilometers take sixty minutes. Zero point six is a fifth of three, so it takes a fifth of sixty minutes, "
         "twelve minutes.", show(x3d, 'Three kilometers take sixty minutes')),
       L("So they meet every twelve minutes."),
-      L("Now a second example, from a real exam. Car B is twice as fast as car A, in the same direction. Where do they "
+      L("Now a second example, from a real exam. Two cars start together from the same point on a circular track. Car B is twice as fast as car A, in the same direction. Where do they "
         "meet first?", show(x3e, 'Car B is twice as fast')),
       L("They meet when B has gained one lap. B covers twice what A covers. So when A has done one lap, B has done two.",
         show(x3f, 'So when A has done one lap')),
@@ -2566,7 +2955,7 @@ SPLITS.append(('r26-t27-special', 'Special Motion Cases', [
 g21s = TRACK('g21s', [
     ('start', [('start', 'start')]),
     ('dir', [('dir', 8, 120, '12 kph'), ('dir', 8, 50, '9 kph', 'orange', 236)]),
-    ('lap', [('center', '1 lap = 400 m'), ('center', '= 0.4 km', 1)])], w=440, col=1)
+    ('lap', [('center', '1 lap = 400 m')])], w=540, col=1)
 g21a = IH('g21a', 'any two meetings in a row: $\\ $one lap gained', size=30)
 g21b = IH('g21b', '$12-9=3$ kph', size=30)
 g21c = IH('g21c', '$400$ m $=0.4$ km', size=30)
@@ -2586,8 +2975,8 @@ video('solve-wp27-g121', 'solution', qid='wp27-g121', slides=[
       L("We'll solve it in two different ways. Let's start with the math way, with relative speed, like in the lesson. "
         "They run the same way, so the fast one meets the slow one again when it has gained one full lap.",
         show(g21s['dir'], 'They run the same way'), show(g21s['lap'], 'one full lap')),
-      L("And it doesn't have to start at the start line. Any two meetings in a row are exactly one lap apart.",
-        show(g21a, 'Any two meetings in a row')),
+      L("We can count from any meeting, wherever it happens on the track. Before the next meeting, the fast runner gains one more full lap on the slow runner.",
+        show(g21a, 'the fast runner gains one more full lap')),
       L("Some questions ask instead, when does the fast one lap the slow one? It's the same question, in other words."),
       L("So we need the time it takes the fast one to gain one lap.")),
     S('Method 1 · The math way: relative speed',
@@ -2617,9 +3006,9 @@ video('solve-wp27-g121', 'solution', qid='wp27-g121', slides=[
 # gives the speed (its own length), the bridge plus the train. Method 2 (English): ratios (the same speed, the distance
 # x8/3, so the time x8/3). Trap at its step: 25 (the bridge alone).
 q1s = ROAD('q1s', [
-    ('bridge', [('seg', .3, .8, 'orange'), ('below', .55, 'bridge 500 m', 'orange')]),
-    ('front', [('block', .0, .3, 'train 300 m')]),
-    ('back', [('block', .8, 1, 'train'), ('gap', .3, 1, 'the front moves: bridge + train')])], w=860)
+    ('bridge', [('seg', .27, .72, 'orange'), ('below', .495, 'bridge 500 m', 'orange')]),
+    ('front', [('block', 0, .27, 'start: 300 m')]),
+    ('back', [('block', .72, .99, 'finish: 300 m'), ('gap', .27, .99, 'the front moves: bridge + train')])], w=860)
 q1a = IH('q1a', 'post: $\\ 300$ m in $15$ s', size=30)
 q1b = IH('q1b', '$300\\div15=20$ m a second', size=30)
 q1c = IH('q1c', '$500+300=800$ m', size=30)
@@ -2694,7 +3083,7 @@ video('solve-q-r26-t27-02', 'solution', qid='q-r26-t27-02', slides=[
         "forty-eight kilometers in two hours is twenty-four kilometers per hour.", show(q2d, 'Downstream, forty-eight kilometers')),
       L("Upstream, forty-eight kilometers in three hours is sixteen kilometers per hour.", show(q2e, 'Upstream, forty-eight kilometers'))),
     S('Method 1 · The math way: two equations',
-      L("Let's call the boat's speed b, and the current's speed c. Then b plus c is twenty-four, and b minus c is "
+      L("Let's call the boat's speed in still water b. Call the current's speed c. Then b plus c is twenty-four, and b minus c is "
         "sixteen.", show(q2f, 'Then b plus c is twenty-four')),
       L("We subtract the second equation from the first. The b's cancel. Twenty-four minus sixteen is eight, so two c is "
         "eight.", show(q2g, 'We subtract the second equation')),
@@ -2720,7 +3109,8 @@ video('solve-q-r26-t27-02', 'solution', qid='q-r26-t27-02', slides=[
 q3s = TRACK('q3s', [
     ('start', [('start', 'start')]),
     ('dir', [('dir', 8, 110, '20 kph'), ('dir', -8, -110, '16 kph', 'orange')]),
-    ('lap', [('center', 'together:'), ('center', '1 lap = 1.2 km', 1)])], w=360, col=1)
+    ('lap', [('dir', 0, 200, '', 'ink', 180), ('dir', 0, -160, '', 'orange', 180),
+             ('meet', 200, 'meet'), ('center', 'together:'), ('center', '1 lap = 1.2 km', 1)])], w=540, col=1, label_size=34)
 q3a = IH('q3a', 'opposite directions: $\\ 20+16=36$ kph', size=30)
 q3b = IH('q3b', 'time $=1.2\\div36=\\frac{12}{360}=\\frac{1}{30}$ hour', size=30)
 q3c = IH('q3c', '$\\frac{1}{30}$ of $60$ minutes $=2$ minutes', size=30, col=1)
@@ -2814,8 +3204,8 @@ video('r26-t27-graphs', 'lesson', slides=[
 # (60 minutes: a 60 km trip at 60 kph; 25% faster = 75 kph -> 48 minutes -> 12 less). Trap at its step: 48 (the new
 # time; also "25% less time").
 q5a = IH('q5a', 'speed $\\times\\frac{5}{4}$ $\\ \\to\\ $ time $\\times\\frac{4}{5}$', size=30)
-q5b = IH('q5b', 'saved: $\\ \\frac{1}{5}$ of the trip $=12$ minutes', size=30)
-q5c = IH('q5c', 'the trip: $\\ 5\\times12=60$ minutes', size=30)
+q5b = IH('q5b', 'saved: $\\ \\frac{1}{5}$ of the usual time $=12$ minutes', size=30)
+q5c = IH('q5c', 'usual time: $\\ 5\\times12=60$ minutes', size=30)
 q5d = IH('q5d', '$48$: $\\ $the new time', size=30, col=1)
 q5e = IH('q5e', 'try $60$: $\\ 60$ km at $60$ kph', size=30)
 q5f = IH('q5f', '$25\\%$ faster: $\\ 60+15=75$ kph', size=30)
@@ -2830,12 +3220,12 @@ video('solve-q-r26-t27-05', 'solution', qid='q-r26-t27-05', slides=[
         pt('stem: ask', 'They ask for the usual time')),
       L("We'll solve it in two different ways. First by understanding, like in the lesson. Twenty-five percent faster is "
         "times five quarters. On the same route we flip it, so the time is times four fifths.", show(q5a, 'so the time is times four fifths')),
-      L("Times four fifths means one fifth of the trip is saved. And the question says the saving is twelve minutes.",
-        show(q5b, 'one fifth of the trip is saved')),
-      L("So one fifth of the trip is twelve minutes. The whole trip is five times twelve, sixty minutes.",
+      L("The new time is four fifths of the usual time. So we save the remaining one fifth. The question says that saving is twelve minutes.",
+        show(q5b, 'that saving is twelve minutes')),
+      L("So one fifth of the usual time is twelve minutes. The usual time is five times twelve, sixty minutes.",
         show(q5c, 'five times twelve')),
       L("Careful with forty-eight, choice number two. It's sixty minus twelve, the new time. And it's also what you get "
-        "if you think the time drops by twenty-five percent. They ask for the usual time.", show(q5d, "It's sixty minus twelve"),
+        "if you wrongly treat twelve as a quarter of the usual time. They ask for the usual time.", show(q5d, "It's sixty minus twelve"),
         mk('cross', 'choice 2', 'They ask for the usual time'))),
     S('Method 2 · Plugging in the answers',
       L("[pause] Now let's plug in the answers. We start again from the givens. Let's try sixty minutes. To make it easy, "
@@ -2860,13 +3250,14 @@ q6c = IH('q6c', '(1) $\\ \\frac{10\\cdot2}{60\\cdot40}$: $\\ $tiny, no', size=30
 q6d = IH('q6d', '(2) $\\ \\frac{60\\cdot40}{10\\cdot2}=120$, no', size=30, col=1)
 q6e = IH('q6e', '(3) $\\ \\frac{60\\cdot10\\cdot2}{40}=\\frac{1200}{40}=30$', size=30, col=1)
 q6f = IH('q6f', '(4) $\\ \\frac{10\\cdot40}{60\\cdot2}=\\frac{400}{120}$, no', size=30)
-q6g = IH('q6g', 'speed $60$: $\\ $choices $3$ and $4$ both hit', size=30)
+q6g = IH('q6g', 'A tie is possible: $\\ $test the survivors with new numbers', size=30)
 q6h = IH('q6h', 'speed $=\\frac{d}{t}$', size=30)
 q6i = IH('q6i', 'time $=k\\div\\frac{d}{t}=\\frac{kt}{d}$ hours', size=30)
 q6j = IH('q6j', 'minutes: $\\ \\frac{kt}{d}\\times60=\\frac{60kt}{d}$', size=30)
 q6k = IH('q6k', '$k,\\ d$: $\\ $km. $\\ t$: $\\ $hours', size=30)
 q6l = IH('q6l', '(2) $\\ \\frac{1}{\\text{hours}}$, $\\ $(4) $\\ \\frac{\\text{km}^2}{\\text{hours}}$: $\\ $out', size=30)
 q6m = IH('q6m', 'minutes $=$ hours $\\times60$: $\\ 60$ on top', size=30)
+q6ratio = IH('q6ratio', 'time $=\\frac{k}{d}\\times t=\\frac{kt}{d}$ hours', size=30)
 video('solve-q-r26-t27-06', 'solution', qid='q-r26-t27-06', slides=[
     S('Method 1 · Plugging in numbers',
       L("A car travels d kilometers in t hours. At the same speed, how many minutes does it take to travel k kilometers?",
@@ -2886,8 +3277,8 @@ video('solve-q-r26-t27-06', 'solution', qid='q-r26-t27-06', slides=[
         "forty is thirty. That's our target.", show(q6e, 'Choice number three says')),
       L("Choice number four says k d over sixty t. That's four hundred over a hundred twenty, a bit more than three. Out.",
         show(q6f, "That's four hundred over"), mk('cross', 'choice 4', 'a bit more than three. Out')),
-      L("Here's one warning. Don't pick a speed of sixty here. Then choice number three and choice number four both give the target. If two "
-        "choices hit, try new numbers on those two.", show(q6g, "Don't pick a speed of sixty"))),
+      L("A speed of sixty is allowed too. But it makes two choices match here. That doesn't make both correct. If two choices match, try new easy numbers on those two.",
+        show(q6g, 'If two choices match'))),
     S('Method 2 · The math way',
       L("[pause] Now the math way, with the letters. We start again from the givens. The speed is the distance divided by "
         "the time, d over t.", show(q6h, 'd over t')),
@@ -2896,14 +3287,16 @@ video('solve-q-r26-t27-06', 'solution', qid='q-r26-t27-06', slides=[
       L("They ask for minutes, so we multiply the hours by sixty. That's sixty k t over d, choice number three.",
         show(q6j, 'we multiply the hours by sixty'))),
     S('Method 3 · Understanding: the units',
-      L("[pause] Now by understanding, with the units only. We start again from the givens. k and d are kilometers, and t "
+      L("[pause] Now by understanding, starting with the units. We start again from the givens. k and d are kilometers, and t "
         "is hours.", show(q6k, 'k and d are kilometers')),
       L("The answer is a time. So the kilometers must cancel."),
-      L("Choice number two gives one over hours, and choice number four gives kilometers squared over hours. Neither one "
+      L("Choice number two is sixty d over k t. The kilometers cancel, leaving one over hours. Choice number four is k d over sixty t. It has kilometers squared over hours. Neither one "
         "is a time, so both are out.", show(q6l, 'Neither one is a time'), mk('cross', 'choice 2', 'so both are out'),
         mk('cross', 'choice 4', 'so both are out')),
-      L("Choice number one and choice number three are both hours times a number. Minutes are sixty times the hours, so the sixty "
-        "must be on top. That's choice number three.", show(q6m, 'so the sixty must be on top'), mk('cross', 'choice 1', 'must be on top')),
+      L("The units alone leave two choices. Choice number one is k t over sixty d. Choice number three is sixty k t over d."),
+      L("We still need the distance ratio. k over d tells us how many copies of the original distance we travel. At the same speed, the time is that many copies of t hours."),
+      L("So k t over d is the time in hours. To convert hours to minutes, we multiply by sixty, not divide. So the sixty must be on top. That's choice number three.",
+        show(q6ratio, 'k t over d is the time in hours'), show(q6m, 'so the sixty must be on top'), mk('cross', 'choice 1', 'must be on top')),
       L("Choice number three is our answer, and I'll see you in the next question.",
         mk('tick', 'choice 3', 'Choice number three is our answer'))),
 ])
@@ -3035,6 +3428,11 @@ def _layout(vid):
 
 
 # 2026-10-23 visual check (V4): each result at its own clause
+_clause_rows('wp-106', 'm_u2', ('$1$ hour $=60$ minutes', 'One hour is sixty minutes'),
+             ('$1$ minute $=60$ seconds', 'one minute is sixty seconds'))
+_clause_rows('wp-106', 'm_p2', ('$3^2=9$', 'Three squared is nine'),
+             ('$4^2=16$', 'four squared is sixteen'), ('$9+16=25$', 'Nine plus sixteen is twenty-five'),
+             ('$25=5^2$', 'twenty-five is five squared'))
 _clause_rows('r26-t27-special', 'x3d', ('$3$ km: $\\ 60$ min', 'Three kilometers take sixty minutes'),
              ('$0.6=\\frac{1}{5}$ of $3$: $\\ 60\\div5=12$ min', 'a fifth of sixty minutes'))
 _clause_rows('r26-t27-special', 'x4c', ('$18$ km: $\\ 60$ min', 'Eighteen kilometers take sixty minutes'),
@@ -3047,6 +3445,8 @@ _clause_rows('solve-wp27-g109', 'g9c2', ('$105\\times2=210$', 'a hundred five ti
              ('$70\\times3=210$', 'seventy times three is two hundred ten'))
 _clause_rows('solve-wp27-g115', 'g15h', ('$72\\times\\frac{4}{3}$', 'Seventy-two times four thirds'),
              ('$72\\div3=24$', 'A third of seventy-two'), ('$24\\times4=96$ km', 'times four is ninety-six'))
+_clause_rows('solve-wp27-g120', 'g20e', ('$360\\div12=30$', 'Three hundred sixty divided by twelve'),
+             ('$48\\div12=4$', 'Forty-eight divided by twelve'))
 _clause_rows('solve-q-r26-t27-02', 'q2c', ('boat $10$, $\\ $current $2$', 'A boat goes ten kilometers per hour'),
              ('down: $\\ 10+2=12$', 'Downstream it goes ten plus two'), ('up: $\\ 10-2=8$', 'Upstream, ten minus two'))
 _clause_rows('solve-q-r26-t27-03', 'q3b', ('time $=1.2\\div36$', 'The time is one point two divided by thirty-six'),
