@@ -416,8 +416,8 @@ def clean_title(t):
 # with CAMERA_EXTRA / CAMERA_SKIP. On the page "Camera on" defaults to on for these and can be switched per video.
 # =================================================================================================================
 CAMERA_SUBJECTS = ('algebra', 'word-problems', 'geometry', 'charts')     # the math subjects
-CAMERA_ALL_TOPICS = (51,)                                                   # every video of these topics
-CAMERA_EXTRA, CAMERA_SKIP = set(), set()
+CAMERA_ALL_TOPICS = ()   # 2026-10-25 (Nitzan): topic 51 no longer all on camera — only its first lesson, like every topic
+CAMERA_EXTRA, CAMERA_SKIP = {'pt51-intro', 'pt51-intro-wrap'}, set()   # topic 51's first lesson (opening + closing); 'thinking' is not in CAMERA_SUBJECTS
 CAMERA_FALLBACK = (
     'numbers fraction-basics compare-fractions expression-basics expression-strategy linear-equations equation-strategy '
     'exponents roots powers-techniques advanced-powers inequalities absolute-value primes divisibility whole-numbers '
